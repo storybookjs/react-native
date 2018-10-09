@@ -27,6 +27,8 @@ If you still need to configure jest you can use the resources mentioned below:
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
 >
 > Note: Make sure you have added the ```json``` extention to ```moduleFileExtensions``` in ```jest.config.json```. If this is missing it leads to the [following error](https://github.com/storybooks/storybook/issues/3728): ```Cannot find module 'spdx-license-ids' from 'scan.js'```.
+>
+> Note: Please make sure you are using ```jsdom``` as the testEnvironment on your jest config file.
 
 
 ### Configure Jest to work with Webpack's [require.context()](https://webpack.js.org/guides/dependency-management/#require-context)
@@ -45,11 +47,11 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
-The problem here is that it will work only during the build with webpack, 
-other tools may lack this feature. Since Storyshot is running under Jest, 
-we need to polyfill this functionality to work with Jest. The easiest 
-way is to integrate it to babel. One of the possible babel plugins to 
-polyfill this functionality might be 
+The problem here is that it will work only during the build with webpack,
+other tools may lack this feature. Since Storyshot is running under Jest,
+we need to polyfill this functionality to work with Jest. The easiest
+way is to integrate it to babel. One of the possible babel plugins to
+polyfill this functionality might be
 [babel-plugin-require-context-hook](https://github.com/smrq/babel-plugin-require-context-hook).
 
 To register it, add the following to your jest setup:
@@ -73,8 +75,8 @@ And after, add the plugin to `.babelrc`:
 }
 ```
 
-Make sure **not** to include this babel plugin in the config 
-environment that applies to webpack, otherwise it may 
+Make sure **not** to include this babel plugin in the config
+environment that applies to webpack, otherwise it may
 replace a real `require.context` functionality.
 
 ### Configure Jest for React
@@ -185,6 +187,21 @@ initStoryshots({
 })
 ```
 
+Provide a function to have story-specific options:
+
+
+```js
+initStoryshots({
+  test: snapshotWithOptions(story =>({
+    createNodeMock: (element) => {
+      if(story.name == 'foobar') {
+        return null
+      }
+      return element
+    },
+  })),
+})
+```
 
 ### StoryShots for async rendered components
 
@@ -223,11 +240,11 @@ const Environment = () =>
   });
 
 /**
-  
+
   NOTICE that the QueryRenderer render its children via its render props.
-  
-  If we don't take the StoryShot async then we will only see the QueryRenderer in the StoryShot. 
-  
+
+  If we don't take the StoryShot async then we will only see the QueryRenderer in the StoryShot.
+
   The following QueryRenderer returns null in the first render (it can be a loading indicator instead in real file) and then when it gets the data to respond to query, it renders again with props containing the data for the Component
  */
 const renderStory = (query, environment, variables = {}) => (
@@ -297,9 +314,9 @@ initStoryshots({
 ```
 NOTICE that When using the `asyncJest: true` option, you also must specify a `test` method that calls the `done()` callback.
 
-This is a really powerful technique to write stories of Relay components because it integrates data fetching with component rendering. So instead of passing data props manually, we can let Relay do the job for us as it does in our application. 
+This is a really powerful technique to write stories of Relay components because it integrates data fetching with component rendering. So instead of passing data props manually, we can let Relay do the job for us as it does in our application.
 
-Whenever you change you're data requirements by adding (and rendering) or (accidentally) deleting fields in your graphql query fragments, you'll get a different snapshot and thus an error in the StoryShot test. 
+Whenever you change you're data requirements by adding (and rendering) or (accidentally) deleting fields in your graphql query fragments, you'll get a different snapshot and thus an error in the StoryShot test.
 
 ## Options
 
@@ -424,23 +441,30 @@ initStoryshots({
 ```
 
 If you are using enzyme, you need to make sure jest knows how to serialize rendered components.
-You can either pass in a serializer (see below) or specify an enzyme-compatible serializer (like [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json), [jest-serializer-enzyme](https://github.com/rogeliog/jest-serializer-enzyme) etc.) as the default `snapshotSerializer` in your config.
+For that, you can pass an enzyme-compatible snapshotSerializer (like [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json), [jest-serializer-enzyme](https://github.com/rogeliog/jest-serializer-enzyme) etc.) with the `snapshotSerializer` option (see below). 
 
-Example for jest config in `package.json`:
-```json
-"devDependencies": {
-    "enzyme-to-json": "^3.2.2"
-},
-"jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
-  }
+
+### `snapshotSerializers`
+
+Pass an array of snapshotSerializers to the jest runtime that serializes your story (such as enzyme-to-json).
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+import { createSerializer } from 'enzyme-to-json';
+
+initStoryshots({
+  renderer: mount,
+  snapshotSerializers: [createSerializer()],
+});
 ```
 
-### `serializer`
+This option needs to be set if either:
+* the multiSnapshot function is used to create multiple snapshot files (i.e. one per story), since it ignores any serializers specified in your jest config.
+* serializers not specified in your jest config should be used when snapshotting stories.
 
-Pass a custom serializer (such as enzyme-to-json) to serialize components to snapshot-comparable data.
+### `serializer` (deprecated)
+
+Pass a custom serializer (such as enzyme-to-json) to serialize components to snapshot-comparable data. The functionality of this option is completely covered by [snapshotSerializers](`snapshotSerializers`) which should be used instead.
 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';

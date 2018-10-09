@@ -1,4 +1,5 @@
 import { describe, it } from 'global';
+import { addSerializer } from 'jest-specific-snapshot';
 
 function snapshotTest({
   asyncJest,
@@ -48,7 +49,14 @@ function snapshotTestSuite({ kind, stories, suite, storyNameRegex, ...restParams
   });
 }
 
-function snapshotsTests({ groups, storyKindRegex, ...restParams }) {
+function snapshotsTests({ groups, storyKindRegex, snapshotSerializers, ...restParams }) {
+  if (snapshotSerializers) {
+    snapshotSerializers.forEach(serializer => {
+      addSerializer(serializer);
+      expect.addSnapshotSerializer(serializer);
+    });
+  }
+
   // eslint-disable-next-line
   for (const group of groups) {
     const { fileName, kind, stories } = group;

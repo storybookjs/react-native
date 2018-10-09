@@ -17,7 +17,7 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
     SVELTE("Svelte", "svelte-kitchen-sink"),
     RIOT("Riot", "riot-kitchen-sink"),
     HYPERAPP("Hyperapp", "hyperapp-kitchen-sink", false),
-    EMBER("Ember", "ember-cli", false);
+    EMBER("Ember", "ember-cli");
 
     val lowerName = appName.toLowerCase()
 

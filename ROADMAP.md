@@ -11,7 +11,6 @@
 * [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
   + [Polymer & Webcomponents](#polymer---webcomponents)
   + [Aurelia](#aurelia)
-  + [Ember](#ember)
 * [Breaking changes](#breaking-changes)
   + [Addon API](#addon-api)
   + [API for adding stories](#api-for-adding-stories)
@@ -69,10 +68,6 @@ Storybook for Polymer is currently in development, and will support custom eleme
 
 We're reaching out to the Aurelia maintainers to cooperate on this.
 
-### Ember
-
-We're reaching out to the Ember maintainers to cooperate on this.
-
 ## Breaking changes
 
 ### Addon API
@@ -92,7 +87,7 @@ We have a new logo, so next step is a overhaul of our documentation site.
 
 ### Record videos and write blog post on how to use, tweak & develop storybook
 
--   writing addons, 
+-   writing addons,
 -   choosing the right addons.
 -   how to start developing on our codebase.
 -   how to use storybook itself and the CLI.

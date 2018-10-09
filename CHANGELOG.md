@@ -1,3 +1,20 @@
+# 4.0.0-alpha.24
+
+2018-October-04
+
+#### Features
+
+-   Ember: add ember support [#4237](https://github.com/storybooks/storybook/pull/4237)
+-   Riot: support the tagConstructor option [#4258](https://github.com/storybooks/storybook/pull/4258)
+-   Presets: Add "addons" and "config" to preset extensions [#4240](https://github.com/storybooks/storybook/pull/4240)
+
+#### Bug Fixes
+
+-   Webpack: Fix broken SVGs [#4260](https://github.com/storybooks/storybook/pull/4260)
+-   Babel/minify: use `builtIns: false` [#4262](https://github.com/storybooks/storybook/pull/4262)
+-   Addon-Notes: Fix how markdownOptions are passed to marked [#4242](https://github.com/storybooks/storybook/pull/4242)
+-   Addon-Knobs: Fix broken colorpicker [#4222](https://github.com/storybooks/storybook/pull/4222)
+
 # 4.0.0-alpha.23
 
 2018-September-25

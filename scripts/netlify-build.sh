@@ -42,6 +42,13 @@ elif [ "$BUILD_CONTEXT" = "ANGULAR" ]; then
   yarn build-storybook
   mv storybook-static ../../netlify-build
   popd
+elif [ "$BUILD_CONTEXT" = "EMBER" ]; then
+  echo "netlify-build Ember examples"
+  pushd examples/ember-cli
+  yarn
+  yarn build-storybook
+  mv storybook-static ../../netlify-build
+  popd
 elif [ "$BUILD_CONTEXT" = "POLYMER" ]; then
   echo "netlify-build Polymer examples"
   pushd examples/polymer-cli
