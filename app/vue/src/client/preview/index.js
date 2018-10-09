@@ -13,7 +13,12 @@ const decorateStory = (getStory, decorators) =>
   decorators.reduce(
     (decorated, decorator) => context => {
       const story = () => decorated(context);
-      const decoratedStory = decorator(story, context);
+      let decoratedStory = decorator(story, context);
+
+      if (typeof decoratedStory === 'string') {
+        decoratedStory = { template: decoratedStory };
+      }
+
       decoratedStory.components = decoratedStory.components || {};
       decoratedStory.components.story = createWrapperComponent(story());
       return decoratedStory;
