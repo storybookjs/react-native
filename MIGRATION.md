@@ -5,10 +5,12 @@
 - [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
   - [Keyboard shortcuts moved](#keyboard-shortcuts-moved)
   - [Removed addWithInfo](#removed-add-with-info)
+  - [Removed RN packager](#removed-rn-packager)
   - [Removed RN addons](#removed-rn-addons)
   - [Storyshots changes](#storyshots-changes)
   - [Webpack 4](#webpack-4)
   - [Babel 7](#babel-7)
+  - [Create-react-app](#create-react-app)
 - [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
 - [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
   - [Refactored Knobs](#refactored-knobs)
@@ -24,9 +26,9 @@
   - [Packages renaming](#packages-renaming)
   - [Deprecated embedded addons](#deprecated-embedded-addons)
 
-## From 3.4.x to 4.0
+## From version 3.4.x to 4.0.x
 
-With 4.0 as our first major release in over a year, we've collected a lot of cleanup tasks. All deprecations have been marked for months, so we hope that there will be no significant impact on your project.
+With 4.0 as our first major release in over a year, we've collected a lot of cleanup tasks. Most of the deprecations have been marked for months, so we hope that there will be no significant impact on your project.
 
 ### Generic addons
 
@@ -57,6 +59,14 @@ import { number } from "@storybook/addon-knobs";
 
 `Addon-info`'s `addWithInfo` has been marked deprecated since 3.2. In 4.0 we've removed it completely. See the package [README](https://github.com/storybooks/storybook/blob/master/addons/info/README.md) for the proper usage.
 
+### Removed RN packager
+
+Since storybook version v4.0 packager is removed from storybook. The suggested storybook usage is to include it inside your app.
+If you want to keep the old behaviour, you have to start the packager yourself with a different project root.
+`npm run storybook start -p 7007 | react-native start --projectRoot storybook`
+
+Removed cli options: `--packager-port --root --projectRoots -r, --reset-cache --skip-packager --haul  --platform --metro-config` 
+
 ### Removed RN addons
 
 The `@storybook/react-native` had built-in addons (`addon-actions` and `addon-links`) that have been marked as deprecated since 3.x. They have been fully removed in 4.x. If your project still uses the built-ins, you'll need to add explicit dependencies on `@storybook/addon-actions` and/or `@storybook/addon-links` and import directly from those packages.
@@ -82,11 +92,43 @@ Storybook now uses webpack 4. If you have a [custom webpack config](https://stor
 
 Storybook now uses Babel 7. There's a couple of cases when it can break with your app:
 
-* If you aren't using Babel yourself, and don't have .babelrc, install following dependencies:
+- If you aren't using Babel yourself, and don't have .babelrc, install following dependencies:
   ```
   npm i -D @babel/core babel-loader@next
   ```
-* If you're using Babel 6, make sure that you have direct dependencies on `babel-core@6` and `babel-loader@7`.
+- If you're using Babel 6, make sure that you have direct dependencies on `babel-core@6` and `babel-loader@7` and that you have a `.babelrc` in your project directory.
+
+### Create-react-app
+
+If you are using `create-react-app` (aka CRA), you may need to do some manual steps to upgrade, depending on the setup.
+
+- `create-react-app@1` may require manual migrations.
+  - If you're adding storybook for the first time, it should just work: `storybook init` should add the correct dependencies.
+  - If you've upgrading an existing project, your `package.json` probably already uses Babel 6, making it incompatible with `@storybook/react@4` which uses Babel 7. There are two ways to make it compatible, each of which is spelled out in detail in the next section:
+    - Upgrade to Babel 7 if you are not dependent on Babel 6-specific features.
+    - Migrate Babel 6 if you're heavily dependent on some Babel 6-specific features).
+- `create-react-app@2` should be compatible as is, since it uses babel 7.
+
+#### Upgrade CRA1 to babel 7
+
+```
+yarn remove babel-core babel-runtime
+yarn add @babel/core babel-loader --dev
+```
+
+#### Migrate CRA1 while keeping babel 6
+
+```
+yarn add babel-loader@7
+```
+
+Also make sure you have a `.babelrc` in your project directory. You probably already do if you are using Babel 6 features (otherwise you should consider upgrading to Babel 7 instead). If you don't have one, here's a simple one that works:
+
+```json
+{
+  "presets": ["env", "react"]
+}
+```
 
 ### start-storybook opens browser automatically
 

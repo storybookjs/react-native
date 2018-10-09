@@ -21,6 +21,7 @@ module.exports = {
     '<rootDir>/examples/riot-kitchen-sink',
     '<rootDir>/examples/html-kitchen-sink',
     '<rootDir>/examples/official-storybook',
+    '<rootDir>/examples/ember-cli',
     '<rootDir>/examples/angular-cli',
   ],
   snapshotSerializers: ['@emotion/snapshot-serializer'],
