@@ -25,13 +25,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "^7.1.2",
     "@ember/test-helpers": "^0.7.25",
     "@storybook/core": "4.0.0-alpha.24",
     "common-tags": "^1.8.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "global": "^4.3.2"
+    "global": "^4.3.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",

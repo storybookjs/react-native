@@ -30,7 +30,7 @@
     "@storybook/components": "4.0.0-alpha.24",
     "core-js": "2.5.7",
     "global": "^4.3.2",
-    "marksy": "^6.0.3",
+    "marksy": "^6.1.0",
     "nested-object-assign": "^1.0.1",
     "prop-types": "^15.6.2",
     "react-addons-create-fragment": "^15.5.3",
@@ -38,7 +38,7 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "react-test-renderer": "^16.4.2"
+    "react-test-renderer": "^16.5.2"
   },
   "peerDependencies": {
     "react": "*"

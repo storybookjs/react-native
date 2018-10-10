@@ -9,7 +9,7 @@
     "storybook": "yarn build && cp -r public/* dist; start-storybook -p 9009 -s dist"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.1.2",
     "@storybook/addon-a11y": "4.0.0-alpha.24",
     "@storybook/addon-actions": "4.0.0-alpha.24",
     "@storybook/addon-backgrounds": "4.0.0-alpha.24",
@@ -25,7 +25,7 @@
     "babel-loader": "^8",
     "broccoli-asset-rev": "^2.4.5",
     "cross-env": "^5.2.0",
-    "ember-ajax": "^3.0.0",
+    "ember-ajax": "^3.1.2",
     "ember-cli": "~3.4.0",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
@@ -40,7 +40,7 @@
     "ember-source": "~3.4.0",
     "loader.js": "^4.2.3",
     "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.2"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
