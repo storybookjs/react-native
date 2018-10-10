@@ -12,6 +12,7 @@
     "riot": "^3.11.2"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "style-loader": "^0.22.1",
@@ -25,7 +26,6 @@
     "riot": "latest",
     "webpack": "latest",
     "webpack-cli": "latest",
-    "uglifyjs-webpack-plugin": "latest",
     "webpack-bundle-analyzer": "latest",
     "packer-webpack-plugin": "latest",
     "babel-loader": "latest",

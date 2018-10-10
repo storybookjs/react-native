@@ -60,13 +60,6 @@ You can also pick suites from CLI.  Suites available are listed below.
 This option executes test from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`.
 Before the tests are ran, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core`
 
-##### React-Native example Tests
-
-`yarn test --reactnative`
-
-This option executes tests from `<rootdir>/app/react-native`.
-Before these tests are ran, the project must be bootstrapped with the React Native example enabled.  You can accomplish this by running `yarn bootstrap --reactnative`
-
 ##### CRA-kitchen-sink - Image snapshots using Storyshots
 
 `yarn test --image`

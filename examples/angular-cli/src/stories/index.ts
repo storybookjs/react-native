@@ -2,6 +2,11 @@ import { storiesOf } from '@storybook/angular';
 import { Welcome, Button } from '@storybook/angular/demo';
 import { moduleMetadata } from '@storybook/angular';
 import { linkTo } from '@storybook/addon-links';
+import { environment } from 'environments/environment';
+
+if (environment) {
+  // This ensures that the basePath typeScript feature works with storybook
+}
 
 storiesOf('Welcome', module).add('to Storybook', () => ({
   template: `<storybook-welcome-component (showApp)="showApp()"></storybook-welcome-component>`,
