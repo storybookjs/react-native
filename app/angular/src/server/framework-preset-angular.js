@@ -31,7 +31,7 @@ export function webpack(config, { configDir }) {
           exclude: /\.async\.html$/,
         },
         {
-          test: /\.scss$/,
+          test: /\.(scss|sass)$/,
           use: [require.resolve('raw-loader'), require.resolve('sass-loader')],
         },
       ],
