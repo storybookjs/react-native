@@ -58,7 +58,7 @@
     "raw-loader": "^0.5.1",
     "react-dev-utils": "6.0.4",
     "react-native-compat": "^1.0.0",
-    "react-native-iphone-x-helper": "^1.0.3",
+    "react-native-iphone-x-helper": "^1.2.0",
     "shelljs": "^0.8.2",
     "universal-dotenv": "^1.9.1",
     "url-parse": "^1.4.3",
