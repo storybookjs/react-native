@@ -7,6 +7,7 @@ import { isBuildAngularInstalled, normalizeAssetPatterns } from './angular-cli_u
 function getTsConfigOptions(tsConfigPath) {
   const basicOptions = {
     options: {},
+    raw: {},
     fileNames: [],
     errors: [],
   };
