@@ -2209,91 +2209,15 @@
   dependencies:
     "@types/node" "*"
 
-"@types/prop-types@*":
-  version "15.5.6"
-  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.6.tgz#9c03d3fed70a8d517c191b7734da2879b50ca26c"
-  integrity sha512-ZBFR7TROLVzCkswA3Fmqq+IIJt62/T7aY/Dmz+QkU7CaW2QFqAitCE8Ups7IzmGhcN1YWMBT4Qcoc07jU9hOJQ==
-
-"@types/puppeteer@*":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.9.0.tgz#9a4bcca1902259e2cea6e6be7b4a540aad13785e"
-  integrity sha512-ZP3wL4Lqpgu4xZbz/0vQhbIZnllNEawVW3oTpEXyJg+uhf/YQgL8oeTrfoUwj9JXE9UUe53eqmgLl29/d2gjqQ==
-  dependencies:
-    "@types/node" "*"
-
 "@types/q@^0.0.32":
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-0.0.32.tgz#bd284e57c84f1325da702babfc82a5328190c0c5"
   integrity sha1-vShOV8hPEyXacCur/IKlMoGQwMU=
 
-"@types/react@*":
-  version "16.4.16"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.16.tgz#99f91b1200ae8c2062030402006d3b3c3a177043"
-  integrity sha512-lxyoipLWweAnLnSsV4Ho2NAZTKKmxeYgkTQ6PaDiPDU9JJBUY2zJVVGiK1smzYv8+ZgbqEmcm5xM74GCpunSEA==
-  dependencies:
-    "@types/prop-types" "*"
-    csstype "^2.2.0"
-
 "@types/selenium-webdriver@^3.0.0":
   version "3.0.10"
   resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-3.0.10.tgz#e98cc6f05b4b436277671c784ee2f9d05a634f9b"
   integrity sha512-ikB0JHv6vCR1KYUQAzTO4gi/lXLElT4Tx+6De2pc/OZwizE9LRNiTa+U8TBFKBD/nntPnr/MPSHSnOTybjhqNA==
-
-"@types/storybook__addon-actions@^3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-actions/-/storybook__addon-actions-3.4.1.tgz#8f90d76b023b58ee794170f2fe774a3fddda2c1d"
-  integrity sha512-An8pNb1/7QhkdOT8Ht5WjJsSxAh2mWti/J4eILwUHpXVZ1j3xlVaOzwTbg8twN4DjgOAggjEDOj6Bx8YOWh9Pg==
-
-"@types/storybook__addon-backgrounds@^3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-backgrounds/-/storybook__addon-backgrounds-3.2.1.tgz#07a5f97fe87068b95763a35d36f05fba413b7695"
-  integrity sha512-08kYHoBfG1oZx4OMvLWcSzZB2ToKDBd7sjsJ6iooev5Fi1TRIQTAc4/Ts9s4IZjCv/LpTCqcCSd3ZPVb/BZ2UA==
-
-"@types/storybook__addon-centered@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-centered/-/storybook__addon-centered-3.3.1.tgz#3ba6deb76da8742a9452e588956cf16a306fa752"
-  integrity sha512-7tqMf2oO0k9zg6bk3nGirrfaojQRogpAuh4U3uqg+7KRUy/Nh6jUOXkq5tAEEwQ7hPYDU04HyRxriZA4eC88Bg==
-  dependencies:
-    "@types/react" "*"
-
-"@types/storybook__addon-jest@^3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-jest/-/storybook__addon-jest-3.4.1.tgz#a77c93b84ee467d9571567d16f14143e210b39f1"
-  integrity sha512-EMtbMjo7JARfYlBKOoEQU1Ygp2U1N2uF6fYfs/ig5OubiREY8huIoKMPKwQ02kg38dfP5V0hixGhSUinhVY5mA==
-
-"@types/storybook__addon-knobs@^3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-knobs/-/storybook__addon-knobs-3.4.1.tgz#36a9ff38c50b00b198bfdc04f6c0aaf747e0ed86"
-  integrity sha512-OmksSeipn3T3zMaWxxrOKck1yG26KXjjrwtss1IgjXz0HnkhRjUEYQMF0mnq5awj72YTflinWimokDRp4FPMRw==
-  dependencies:
-    "@types/react" "*"
-
-"@types/storybook__addon-links@^3.3.2":
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-links/-/storybook__addon-links-3.3.2.tgz#913f6dae27903da7b1f117e9b51ca473770dba50"
-  integrity sha512-Fu1CG6WmIMCe8wZFmz17lnneJzNYrcLw4NKi/g+AKJisq0K/smGE9CRz4/Bj23vp3rz298bDJBIH/lStZRIW0A==
-  dependencies:
-    "@types/react" "*"
-
-"@types/storybook__addon-notes@^3.3.3":
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-notes/-/storybook__addon-notes-3.3.3.tgz#621e5a4936b0ba4d505c1a582da2d58e4c8572b9"
-  integrity sha512-mvG644Yh5bR7S03y5MY65YuX7XoG6R7/+l9v2cQH39huK8/pWNmIetGcGBz0RS+1lKBvqtZr55OQyj/9ZCy4jA==
-  dependencies:
-    "@types/react" "*"
-
-"@types/storybook__addon-options@^3.2.2":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-options/-/storybook__addon-options-3.2.2.tgz#f42f81414fa9692cf20d947e9b49c60c4bdfbc4d"
-  integrity sha512-QYWklZ37+QOcjwuolrvb121oXR6kA+5ucg9ieb2w0J0lATUp8DeQ804oGvf3GUXzJPzJiTnbhcX/aE+F1vvxGQ==
-
-"@types/storybook__addon-storyshots@^3.4.3":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-storyshots/-/storybook__addon-storyshots-3.4.3.tgz#fd39387b6bb3b3f5bd857b7de857b6574926217f"
-  integrity sha512-xn8V+3heUFbpMeVkkhG97CB0UaiWdr7QklmhZ7OftH4uS7VgposNybp+2/iwduoKQyfB7tLSxth9t5rOvDHWMA==
-  dependencies:
-    "@types/puppeteer" "*"
-    "@types/react" "*"
 
 "@types/tapable@1.0.2":
   version "1.0.2"
@@ -7614,11 +7538,6 @@ cssstyle@^1.0.0, cssstyle@^1.1.1:
   integrity sha512-364AI1l/M5TYcFH83JnOH/pSqgaNnKmYgKrm0didZMGKWjQB60dymwWy1rKUgL3J1ffdq9xVi2yGLHdSjjSNog==
   dependencies:
     cssom "0.3.x"
-
-csstype@^2.2.0:
-  version "2.5.7"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.7.tgz#bf9235d5872141eccfb2d16d82993c6b149179ff"
-  integrity sha512-Nt5VDyOTIIV4/nRFswoCKps1R5CD1hkiyjBE9/thNaNZILLEviVw9yWQw15+O+CpNjQKB/uvdcxFFOrSflY3Yw==
 
 csurf@~1.8.3:
   version "1.8.3"
