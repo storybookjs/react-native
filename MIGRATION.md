@@ -11,6 +11,7 @@
   - [Webpack 4](#webpack-4)
   - [Babel 7](#babel-7)
   - [Create-react-app](#create-react-app)
+  - [CLI rename](#cli-rename)
 - [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
 - [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
   - [Refactored Knobs](#refactored-knobs)
@@ -65,7 +66,7 @@ Since storybook version v4.0 packager is removed from storybook. The suggested s
 If you want to keep the old behaviour, you have to start the packager yourself with a different project root.
 `npm run storybook start -p 7007 | react-native start --projectRoot storybook`
 
-Removed cli options: `--packager-port --root --projectRoots -r, --reset-cache --skip-packager --haul  --platform --metro-config` 
+Removed cli options: `--packager-port --root --projectRoots -r, --reset-cache --skip-packager --haul --platform --metro-config`
 
 ### Removed RN addons
 
@@ -133,6 +134,14 @@ Also make sure you have a `.babelrc` in your project directory. You probably alr
 ### start-storybook opens browser automatically
 
 If you're using `start-storybook` on CI, you may need to opt out of this using the new `--ci` flag.
+
+### CLI Rename
+
+We've deprecated the `getstorybook` CLI in 4.0. The new way to install storybook is `sb init`. We recommend using `npx` for convenience and to make sure you're always using the latest version of the CLI:
+
+```
+npx -p @storybook/cli sb init
+```
 
 ## From version 3.3.x to 3.4.x
 
