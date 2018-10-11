@@ -30,6 +30,7 @@
     "@emotion/styled": "^0.10.6",
     "@reach/router": "^1.1.1",
     "@storybook/core-events": "4.0.0-alpha.23",
+    "@storybook/addons": "4.0.0-alpha.23",
     "global": "^4.3.2",
     "immer": "^1.5.0",
     "js-beautify": "^1.8.6",
