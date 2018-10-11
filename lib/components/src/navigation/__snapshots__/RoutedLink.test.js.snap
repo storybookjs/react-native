@@ -1,26 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`manager.ui.components.routed_link render should not render onClick when not provided 1`] = `
-<a
+<ForwardRef
   href="href"
 >
   Content
-</a>
+</ForwardRef>
 `;
 
 exports[`manager.ui.components.routed_link render should render other properties 1`] = `
-<a
+<ForwardRef
   href="href"
 >
   Other content
-</a>
+</ForwardRef>
 `;
 
 exports[`manager.ui.components.routed_link render should render with onClick when provided 1`] = `
-<a
+<ForwardRef
   href="#"
   onClick={[Function]}
 >
   Content
-</a>
+</ForwardRef>
 `;
