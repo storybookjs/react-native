@@ -39,6 +39,7 @@ function testStorySnapshots(options = {}) {
     stories2snapsConverter,
     testMethod,
     integrityOptions,
+    snapshotSerializers,
   } = ensureOptionsDefaults(options);
 
   const testMethodParams = {
@@ -58,6 +59,7 @@ function testStorySnapshots(options = {}) {
     storyNameRegex,
     testMethod,
     testMethodParams,
+    snapshotSerializers,
   });
 
   integrityTest(integrityOptions, stories2snapsConverter);

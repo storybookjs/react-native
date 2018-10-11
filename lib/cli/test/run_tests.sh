@@ -24,7 +24,8 @@ while getopts ":uosf:" opt; do
 done
 
 # copy all files from fixtures directory to `run`
-rsync -rl --delete --exclude=yarn.lock $fixtures_dir/ run
+rm -rfd run
+cp -r $fixtures_dir run
 cd run
 
 for dir in *

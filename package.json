@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "4.0.0-alpha.23",
+  "version": "4.0.0-alpha.24",
   "private": true,
   "repository": {
     "type": "git",
@@ -25,8 +25,6 @@
     "bootstrap": "node ./scripts/bootstrap.js",
     "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
     "bootstrap:docs": "yarn install --cwd docs",
-    "bootstrap:react-native-typescript": "npm --prefix examples/react-native-typescript install",
-    "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
     "build-storybooks": "./scripts/build-storybooks.sh",
     "changelog": "pr-log --sloppy",

@@ -9,8 +9,6 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
     id = "OpenSourceProjects_Storybook_ReactNative"
     name = "React Native"
 
-    artifactRules = "examples/react-native-vanilla/coverage/lcov-report => coverage.zip"
-
     params {
         param("env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD", "true")
     }
@@ -26,15 +24,7 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
             name = "Bootstrap"
             scriptContent = """
                 yarn
-                yarn bootstrap --core --reactnative --reactnativeapp
-            """.trimIndent()
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
-            name = "react-native-vanilla"
-            scriptContent = """
-                cd examples/react-native-vanilla
-                yarn storybook --smoke-test
+                yarn bootstrap --core --reactnativeapp
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
@@ -43,14 +33,6 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
             scriptContent = """
                 cd examples/crna-kitchen-sink
                 yarn storybook --smoke-test
-            """.trimIndent()
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
-            name = "Test"
-            scriptContent = """
-                yarn test --reactnative --coverage --runInBand --teamcity
-                yarn coverage
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
