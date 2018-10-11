@@ -1980,6 +1980,13 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@ndelangen/html-webpack-harddisk-plugin@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@ndelangen/html-webpack-harddisk-plugin/-/html-webpack-harddisk-plugin-0.2.0.tgz#d2eb570597c83c1aa93d1f2fcb3d874a5855de07"
+  integrity sha512-55Mo2b5WtIT0l653y6ocu7C6QzznbasEnlixGzA26WK8Fj81wuEY3xf5N5bNAvDVfrwTLIPTXdEUGgPdrPLszw==
+  dependencies:
+    mkdirp "^0.5.1"
+
 "@ngrx/store@^6.1.0":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.1.0.tgz#5b027647a797bf027912568214b10375dd75af38"
@@ -11348,7 +11355,7 @@ html-webpack-plugin@4.0.0-alpha.2:
     tapable "^1.0.0"
     util.promisify "1.0.0"
 
-html-webpack-plugin@^3.0.6, html-webpack-plugin@^3.2.0:
+html-webpack-plugin@^3.0.6:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-3.2.0.tgz#b01abbd723acaaa7b37b6af4492ebda03d9dd37b"
   integrity sha1-sBq71yOsqqeze2r0SS69oD2d03s=
@@ -11359,6 +11366,19 @@ html-webpack-plugin@^3.0.6, html-webpack-plugin@^3.2.0:
     pretty-error "^2.0.2"
     tapable "^1.0.0"
     toposort "^1.0.0"
+    util.promisify "1.0.0"
+
+html-webpack-plugin@^4.0.0-beta.1:
+  version "4.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-4.0.0-beta.1.tgz#15b3b3634af47c79ac46c185f64e2007e0b0d14c"
+  integrity sha512-O+stuSCY5rdzX5O1l1FdH1bZqRQ7ybTi12OHzgD8u5Ogu2Usu3K7e633vxj4uOjM49ST+qCcu5rWYhqNKlpomQ==
+  dependencies:
+    "@types/tapable" "1.0.2"
+    html-minifier "^3.2.3"
+    loader-utils "^1.1.0"
+    lodash "^4.17.10"
+    pretty-error "^2.0.2"
+    tapable "^1.0.0"
     util.promisify "1.0.0"
 
 htmlescape@^1.1.0:
