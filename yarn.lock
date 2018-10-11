@@ -7582,9 +7582,9 @@ damerau-levenshtein@^1.0.4:
   integrity sha1-AxkcQyy27qFou3fzpV/9zLiXhRQ=
 
 danger@^4.4.6:
-  version "4.4.6"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-4.4.6.tgz#319642e933d75bff83597ff4fbdb9eb0d8c33e95"
-  integrity sha512-sqHIPsXOnHmJa8HvVpssu6iFVtevLpcov6M52eaoAHLx4oaZTGlet+bz7wKe3Wz9oH4YJtv6w5SI21WDVrNGUg==
+  version "4.4.7"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-4.4.7.tgz#d6544631bfad3648d3e79293911322486ea938ee"
+  integrity sha512-h3R6DhjrjQxkjhEq5BPuOEXAX8sWhKyIjBEBVrtbl+74X7FfhwZJOBwjCXwf9xYA+yIpWJIKAgd8q//J7lfYww==
   dependencies:
     "@babel/polyfill" "^7.0.0"
     "@octokit/rest" "^15.12.1"
