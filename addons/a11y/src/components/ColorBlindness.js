@@ -1,8 +1,11 @@
 import React, { Component, Fragment } from 'react';
+import { document } from 'global';
 
 import styled from '@emotion/styled';
 
 import { Popout, Item, Icons, Icon, IconButton, Title, List } from '@storybook/components';
+
+const storybookIframe = 'storybook-preview-iframe';
 
 const ColorIcon = styled.span(
   {
@@ -20,6 +23,22 @@ const Hidden = styled.div(() => ({
 class ColorBlindness extends Component {
   state = {
     filter: false,
+  };
+
+  componentDidMount() {
+    this.iframe = document.getElementById(storybookIframe);
+  }
+
+  setFilter = filter => {
+    if (!this.iframe) {
+      throw new Error('Cannot find Storybook iframe');
+    }
+
+    this.iframe.style.filter = filter === 'mono' ? 'grayscale(100%)' : `url('#${filter}')`;
+
+    this.setState({
+      filter,
+    });
   };
 
   render() {
@@ -108,7 +127,7 @@ class ColorBlindness extends Component {
                 <Item
                   key={i}
                   onClick={() => {
-                    this.setState({ filter: filter === i ? null : i });
+                    this.setFilter(filter === i ? null : i);
                     hide();
                   }}
                 >
@@ -118,7 +137,7 @@ class ColorBlindness extends Component {
               ))}
               <Item
                 onClick={() => {
-                  this.setState({ filter: filter === 'mono' ? null : 'mono' });
+                  this.setFilter(filter === 'mono' ? null : 'mono');
                   hide();
                 }}
               >
@@ -127,7 +146,7 @@ class ColorBlindness extends Component {
               </Item>
               <Item
                 onClick={() => {
-                  this.setState({ filter: null });
+                  this.setFilter(null);
                   hide();
                 }}
               >
