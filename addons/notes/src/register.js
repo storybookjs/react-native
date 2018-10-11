@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import addons from '@storybook/addons';
-
-import { Placeholder } from '@storybook/components';
+import { SyntaxHighlighter, Placeholder } from '@storybook/components';
+import Markdown from 'markdown-to-jsx';
 import { ADDON_ID, PANEL_ID } from './shared';
 
 const Panel = styled.div({
@@ -14,8 +14,12 @@ const Panel = styled.div({
 
 export class NotesPanel extends React.Component {
   state = {
-    text: '',
+    markdown: '',
   };
+
+  // use our SyntaxHighlighter component in place of a <code> element when
+  // converting markdown to react elements
+  markdownOpts = { overrides: { code: SyntaxHighlighter } };
 
   componentDidMount() {
     this.mounted = true;
@@ -39,29 +43,22 @@ export class NotesPanel extends React.Component {
     channel.removeListener('storybook/notes/add_notes', this.onAddNotes);
   }
 
-  onAddNotes = text => {
-    this.setState({ text });
+  onAddNotes = markdown => {
+    this.setState({ markdown });
   };
 
   render() {
     const { active } = this.props;
-    const { text } = this.state;
-    const textAfterFormatted = text
-      ? text
-          .trim()
-          .replace(/(<\S+.*>)\n/g, '$1')
-          .replace(/\n/g, '<br />')
-      : '';
+    const { markdown } = this.state;
 
     if (!active) {
       return null;
     }
 
-    return textAfterFormatted ? (
-      <Panel
-        className="addon-notes-container"
-        dangerouslySetInnerHTML={{ __html: textAfterFormatted }}
-      />
+    return markdown ? (
+      <Panel className="addon-notes-container">
+        <Markdown options={this.markdownOpts}>{markdown}</Markdown>
+      </Panel>
     ) : (
       <Placeholder>There is no info/note</Placeholder>
     );
