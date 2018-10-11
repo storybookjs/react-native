@@ -36,7 +36,7 @@ import React from 'react';
 import { Provider } from '@storybook/ui';
 
 export default class MyProvider extends Provider {
-  getPanels() {
+  getElements(type) {
     return {};
   }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import addons from '@storybook/addons';
+import addons, { types } from '@storybook/addons';
 
 import { Placeholder } from '@storybook/components';
 import { ADDON_ID, PANEL_ID } from './shared';
@@ -88,13 +88,11 @@ addons.register(ADDON_ID, api => {
   // eslint-disable-next-line react/prop-types
   const render = ({ active }) => <NotesPanel channel={channel} api={api} active={active} />;
   const title = 'Notes';
-  const type = 'tab';
 
-  if (addons.addMain) {
-    addons.addMain(PANEL_ID, {
-      type,
+  if (addons.add) {
+    addons.add(PANEL_ID, {
+      type: types.TAB,
       title,
-      route: '/info/',
       render,
     });
   } else {
