@@ -360,7 +360,7 @@ describe('Viewport/Panel', () => {
     });
 
     it('passes the children', () => {
-      expect(select.props().children).toHaveLength(15);
+      expect(select.props().children).toHaveLength(17);
     });
 
     it('onChange it updates the viewport', () => {
