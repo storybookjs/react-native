@@ -22,6 +22,6 @@
     "@storybook/addon-viewport": "4.0.0-alpha.24",
     "@storybook/addons": "4.0.0-alpha.24",
     "@storybook/mithril": "4.0.0-alpha.24",
-    "webpack": "^4.20.0"
+    "webpack": "^4.20.2"
   }
 }

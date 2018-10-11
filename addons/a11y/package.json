@@ -33,7 +33,7 @@
     "@storybook/client-logger": "4.0.0-alpha.24",
     "@storybook/components": "4.0.0-alpha.24",
     "@storybook/core-events": "4.0.0-alpha.24",
-    "axe-core": "^3.0.3",
+    "axe-core": "^3.1.2",
     "global": "^4.3.2",
     "prop-types": "^15.6.2"
   },
