@@ -165,7 +165,7 @@ export default class ViewportTool extends Component {
     return (
       <Fragment>
         <Popout key="viewports">
-          <IconButton key="viewport">
+          <IconButton key="viewport" title="Change Viewport">
             <Icons icon="browser" />
           </IconButton>
           {({ hide }) => (

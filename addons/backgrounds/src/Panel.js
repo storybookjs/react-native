@@ -60,7 +60,7 @@ const Instructions = () => (
   </Wrapper>
 );
 
-export default class BackgroundPanel extends Component {
+export default class Panel extends Component {
   constructor(props) {
     super(props);
 
@@ -138,7 +138,7 @@ export default class BackgroundPanel extends Component {
     );
   }
 }
-BackgroundPanel.propTypes = {
+Panel.propTypes = {
   active: PropTypes.bool.isRequired,
   api: PropTypes.shape({
     getQueryParam: PropTypes.func,
@@ -150,6 +150,6 @@ BackgroundPanel.propTypes = {
     removeListener: PropTypes.func,
   }),
 };
-BackgroundPanel.defaultProps = {
+Panel.defaultProps = {
   channel: undefined,
 };

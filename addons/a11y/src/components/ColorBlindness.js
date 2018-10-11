@@ -109,7 +109,7 @@ class ColorBlindness extends Component {
           </svg>
         </Hidden>
         <Popout key="filters">
-          <IconButton key="filter" active={!!filter}>
+          <IconButton key="filter" active={!!filter} title="Color Blindness Emulation">
             <Icons icon="mirror" />
           </IconButton>
           {({ hide }) => (
