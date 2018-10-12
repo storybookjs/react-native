@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "build": "ember build",
-    "build-storybook": "yarn build && cp -r public/* dist; build-storybook -s dist",
+    "build-storybook": "yarn build && cp -r public/* dist && build-storybook -s dist",
     "dev": "ember serve",
-    "storybook": "yarn build && cp -r public/* dist; start-storybook -p 9009 -s dist"
+    "storybook": "yarn build && start-storybook -p 9009 -s dist, public"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
