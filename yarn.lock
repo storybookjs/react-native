@@ -1980,13 +1980,6 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@ndelangen/html-webpack-harddisk-plugin@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@ndelangen/html-webpack-harddisk-plugin/-/html-webpack-harddisk-plugin-0.2.0.tgz#d2eb570597c83c1aa93d1f2fcb3d874a5855de07"
-  integrity sha512-55Mo2b5WtIT0l653y6ocu7C6QzznbasEnlixGzA26WK8Fj81wuEY3xf5N5bNAvDVfrwTLIPTXdEUGgPdrPLszw==
-  dependencies:
-    mkdirp "^0.5.1"
-
 "@ngrx/store@^6.1.0":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.1.0.tgz#5b027647a797bf027912568214b10375dd75af38"
