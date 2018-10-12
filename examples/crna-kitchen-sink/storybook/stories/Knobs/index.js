@@ -11,7 +11,7 @@ import {
   array,
   date,
   object,
-} from '@storybook/addon-knobs/react';
+} from '@storybook/addon-knobs';
 
 export default () => {
   const name = text('Name', 'Storyteller');
