@@ -11,7 +11,7 @@ export function getNavigatorPanelPosition(animatedValue, previewWidth) {
         {
           translateX: animatedValue.interpolate({
             inputRange: [NAVIGATOR, PREVIEW],
-            outputRange: [0, -panelWidth(previewWidth)],
+            outputRange: [0, -panelWidth(previewWidth) - 1],
           }),
         },
       ],
