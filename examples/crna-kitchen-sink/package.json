@@ -8,7 +8,7 @@
     "eject": "react-native-scripts eject",
     "ios": "react-native-scripts ios",
     "start": "react-native-scripts start",
-    "storybook": "storybook start -p 7007",
+    "storybook": "storybook start",
     "test": "node node_modules/jest/bin/jest.js --watch"
   },
   "jest": {
@@ -35,6 +35,10 @@
     "@storybook/core-events": "file:../../packs/storybook-core-events.tgz",
     "@storybook/node-logger": "file:../../packs/storybook-node-logger.tgz",
     "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
+    "@storybook/addon-notes": "file:../../packs/storybook-addon-notes.tgz",
+    "@storybook/addon-ondevice-backgrounds": "file:../../packs/storybook-addon-ondevice-backgrounds.tgz",
+    "@storybook/addon-ondevice-knobs": "file:../../packs/storybook-addon-ondevice-knobs.tgz",
+    "@storybook/addon-ondevice-notes": "file:../../packs/storybook-addon-ondevice-notes.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
     "jest-expo": "^24.0.0",
     "react-dom": "^16.2.0",
