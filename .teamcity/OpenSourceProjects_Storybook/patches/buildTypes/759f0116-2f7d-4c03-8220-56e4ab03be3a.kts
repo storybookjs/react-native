@@ -12,6 +12,15 @@ To apply the patch, change the buildType with uuid = '759f0116-2f7d-4c03-8220-56
 accordingly, and delete the patch script.
 */
 changeBuildType("759f0116-2f7d-4c03-8220-56e4ab03be3a") {
+    params {
+        expect {
+            param("env.PULL_REQUEST_URL", "https://github.com/storybooks/storybook/%teamcity.build.branch%")
+        }
+        update {
+            param("env.PULL_REQUEST_URL", "https://github.com/storybooks/storybook/pull/%teamcity.build.branch%")
+        }
+    }
+
     triggers {
         val trigger1 = find<VcsTrigger> {
             vcs {
