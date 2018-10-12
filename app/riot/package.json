@@ -31,7 +31,6 @@
     "@storybook/core": "4.0.0-alpha.24",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
-    "moment": "^2.22.2",
     "raw-loader": "^0.5.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
