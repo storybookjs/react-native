@@ -5,8 +5,8 @@ import program from 'commander';
 import Server from '../server';
 
 program
-  .option('-h, --host <host>', 'host to listen on')
-  .option('-p, --port <port>', 'port to listen on')
+  .option('-h, --host <host>', 'host to listen on', 'localhost')
+  .option('-p, --port <port>', 'port to listen on', 7007)
   .option('-s, --secured', 'whether server is running on https')
   .option('-c, --config-dir [dir-name]', 'storybook config directory')
   .option('-e, --environment [environment]', 'DEVELOPMENT/PRODUCTION environment for webpack')
@@ -33,7 +33,7 @@ server.listen(...listenAddr, err => {
   if (err) {
     throw err;
   }
-  const address = `http://${program.host || 'localhost'}:${program.port}/`;
+  const address = `http://${program.host}:${program.port}/`;
   console.info(`\nReact Native Storybook started on => ${address}\n`);
   if (program.smokeTest) {
     process.exit(0);
