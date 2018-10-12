@@ -11,7 +11,7 @@ exports[`Storyshots Another Button with some emoji 1`] = `
   margin: 10px;
 }
 
-<ForwardRef
+<Button
   onClick={[Function]}
 >
   <Styled(button)
@@ -29,7 +29,7 @@ exports[`Storyshots Another Button with some emoji 1`] = `
       </span>
     </button>
   </Styled(button)>
-</ForwardRef>
+</Button>
 `;
 
 exports[`Storyshots Another Button with text 1`] = `
@@ -43,7 +43,7 @@ exports[`Storyshots Another Button with text 1`] = `
   margin: 10px;
 }
 
-<ForwardRef
+<Button
   onClick={[Function]}
 >
   <Styled(button)
@@ -56,7 +56,7 @@ exports[`Storyshots Another Button with text 1`] = `
       Hello Button
     </button>
   </Styled(button)>
-</ForwardRef>
+</Button>
 `;
 
 exports[`Storyshots Async with 5ms timeout simulating async operation 1`] = `
@@ -76,7 +76,7 @@ exports[`Storyshots Button with some emoji 1`] = `
   margin: 10px;
 }
 
-<ForwardRef
+<Button
   onClick={[Function]}
 >
   <Styled(button)
@@ -94,7 +94,7 @@ exports[`Storyshots Button with some emoji 1`] = `
       </span>
     </button>
   </Styled(button)>
-</ForwardRef>
+</Button>
 `;
 
 exports[`Storyshots Button with text 1`] = `
@@ -108,7 +108,7 @@ exports[`Storyshots Button with text 1`] = `
   margin: 10px;
 }
 
-<ForwardRef
+<Button
   onClick={[Function]}
 >
   <Styled(button)
@@ -121,7 +121,7 @@ exports[`Storyshots Button with text 1`] = `
       Hello Button
     </button>
   </Styled(button)>
-</ForwardRef>
+</Button>
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
