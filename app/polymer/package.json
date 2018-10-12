@@ -28,14 +28,14 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "^7.1.2",
     "@storybook/core": "4.0.0-alpha.24",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "webpack": "^4.20.0"
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "webpack": "^4.20.2"
   },
   "devDependencies": {
     "lit-html": "^0.10.2",

@@ -28,17 +28,17 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "^7.1.2",
     "@storybook/core": "4.0.0-alpha.24",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   },
   "devDependencies": {
     "babel-preset-vue": "^2.0.2",
     "vue": "^2.5.17",
-    "vue-loader": "15.4.1",
+    "vue-loader": "15.4.2",
     "vue-template-compiler": "^2.5.17"
   },
   "peerDependencies": {
