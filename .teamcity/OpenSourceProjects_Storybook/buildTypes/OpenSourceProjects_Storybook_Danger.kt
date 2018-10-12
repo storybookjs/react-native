@@ -14,7 +14,7 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
 
     params {
         password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:8fa112e0-d0e0-4f9f-9f18-01471a999b4d", display = ParameterDisplay.HIDDEN)
-        param("env.PULL_REQUEST_URL", "https://github.com/storybooks/storybook/%teamcity.build.branch%")
+        param("env.PULL_REQUEST_URL", "https://github.com/storybooks/storybook/pull/%teamcity.build.branch%")
     }
 
     vcs {
@@ -39,7 +39,6 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
     triggers {
         vcs {
             quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
-            triggerRules = "-:comment=^TeamCity change:**"
             branchFilter = """
                 +:*
                 -:master
@@ -63,7 +62,8 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
         feature {
             type = "pullRequests"
             param("filterAuthorRole", "EVERYBODY")
-            param("authenticationType", "vcsRoot")
+            param("authenticationType", "token")
+            param("secure:accessToken", "credentialsJSON:5ffe2d7e-531e-4f6f-b1fc-a41bfea26eaa")
         }
     }
 
