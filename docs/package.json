@@ -16,7 +16,8 @@
     "deploy:manual": "gh-pages -t -r git@github.com:storybooks/storybook.git -d public -o origin -b gh-pages",
     "dev": "gatsby develop",
     "serve": "gatsby serve",
-    "storybook": "start-storybook -p 9009 -s src/pages"
+    "storybook": "start-storybook -p 9009 -s src/pages",
+    "snyk-protect": "snyk protect"
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.4.8",
@@ -26,7 +27,7 @@
     "babel-loader": "^6.4.1",
     "bootstrap": "^4.1.3",
     "common-tags": "^1.8.0",
-    "gatsby": "^1.9.273",
+    "gatsby": "^1.9.275",
     "gatsby-link": "^1.6.45",
     "gatsby-plugin-sharp": "^1.6.48",
     "gatsby-remark-autolink-headers": "^1.4.19",
@@ -41,12 +42,14 @@
     "lodash": "^4.17.10",
     "marked": "^0.4.0",
     "prop-types": "^15.6.2",
-    "react": "^15.6.1",
+    "react": "^15.6.2",
     "react-document-title": "^2.0.3",
-    "react-dom": "^15.6.1",
-    "react-helmet": "^5.0.3",
+    "react-dom": "^15.6.2",
+    "react-helmet": "^5.2.0",
     "react-router": "^4.3.1",
     "react-stack-grid": "^0.7.1",
-    "sitemap": "^2.0.1"
-  }
+    "sitemap": "^2.0.1",
+    "snyk": "^1.103.4"
+  },
+  "snyk": true
 }
