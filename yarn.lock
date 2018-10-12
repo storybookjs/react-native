@@ -10451,11 +10451,6 @@ gaze@^1.0.0:
   dependencies:
     globule "^1.0.0"
 
-generate-page-webpack-plugin@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/generate-page-webpack-plugin/-/generate-page-webpack-plugin-1.1.1.tgz#82208fb599f45d70940cbd6327a7a46e77c5ee2c"
-  integrity sha512-b782eo6JiJ06jYn4mcOtR/wkACN6eGRwAElM5djb/JCgbGbSzrPsnPTlX2Aa91sXe5pNszAQP6MRE1fVSGIz4g==
-
 genfun@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/genfun/-/genfun-4.0.1.tgz#ed10041f2e4a7f1b0a38466d17a5c3e27df1dfc1"
