@@ -17,8 +17,7 @@
     "dev": "gatsby develop",
     "serve": "gatsby serve",
     "storybook": "start-storybook -p 9009 -s src/pages",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "snyk-protect": "snyk protect"
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.4.8",
