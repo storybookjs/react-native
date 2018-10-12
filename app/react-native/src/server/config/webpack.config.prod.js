@@ -45,7 +45,7 @@ const getConfig = options => {
           version,
           ...entriesMeta.manager,
         }),
-        template: require.resolve(`@storybook/core/dist/server/templates/index.html.ejs`),
+        template: require.resolve(`@storybook/core/src/server/templates/index.ejs`),
       }),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"production"',
