@@ -1,6 +1,7 @@
 package OpenSourceProjects_Storybook.patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
+import jetbrains.buildServer.configs.kotlin.v2017_2.BuildFeature
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2017_2.ui.*
@@ -24,6 +25,20 @@ changeBuildType("759f0116-2f7d-4c03-8220-56e4ab03be3a") {
         }
         trigger1.apply {
             triggerRules = ""
+        }
+    }
+
+    features {
+        val feature1 = find<BuildFeature> {
+            feature {
+                type = "pullRequests"
+                param("authenticationType", "vcsRoot")
+                param("filterAuthorRole", "EVERYBODY")
+            }
+        }
+        feature1.apply {
+            param("authenticationType", "token")
+            param("secure:accessToken", "credentialsJSON:5ffe2d7e-531e-4f6f-b1fc-a41bfea26eaa")
         }
     }
 }
