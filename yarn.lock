@@ -7634,9 +7634,9 @@ damerau-levenshtein@^1.0.4:
   integrity sha1-AxkcQyy27qFou3fzpV/9zLiXhRQ=
 
 danger@^4.4.6:
-  version "4.4.6"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-4.4.6.tgz#319642e933d75bff83597ff4fbdb9eb0d8c33e95"
-  integrity sha512-sqHIPsXOnHmJa8HvVpssu6iFVtevLpcov6M52eaoAHLx4oaZTGlet+bz7wKe3Wz9oH4YJtv6w5SI21WDVrNGUg==
+  version "4.4.7"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-4.4.7.tgz#d6544631bfad3648d3e79293911322486ea938ee"
+  integrity sha512-h3R6DhjrjQxkjhEq5BPuOEXAX8sWhKyIjBEBVrtbl+74X7FfhwZJOBwjCXwf9xYA+yIpWJIKAgd8q//J7lfYww==
   dependencies:
     "@babel/polyfill" "^7.0.0"
     "@octokit/rest" "^15.12.1"
@@ -10512,11 +10512,6 @@ gaze@^1.0.0:
   dependencies:
     globule "^1.0.0"
 
-generate-page-webpack-plugin@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/generate-page-webpack-plugin/-/generate-page-webpack-plugin-1.1.1.tgz#82208fb599f45d70940cbd6327a7a46e77c5ee2c"
-  integrity sha512-b782eo6JiJ06jYn4mcOtR/wkACN6eGRwAElM5djb/JCgbGbSzrPsnPTlX2Aa91sXe5pNszAQP6MRE1fVSGIz4g==
-
 genfun@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/genfun/-/genfun-4.0.1.tgz#ed10041f2e4a7f1b0a38466d17a5c3e27df1dfc1"
@@ -11409,7 +11404,7 @@ html-webpack-plugin@4.0.0-alpha.2:
     tapable "^1.0.0"
     util.promisify "1.0.0"
 
-html-webpack-plugin@^3.0.6, html-webpack-plugin@^3.2.0:
+html-webpack-plugin@^3.0.6:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-3.2.0.tgz#b01abbd723acaaa7b37b6af4492ebda03d9dd37b"
   integrity sha1-sBq71yOsqqeze2r0SS69oD2d03s=
@@ -11420,6 +11415,19 @@ html-webpack-plugin@^3.0.6, html-webpack-plugin@^3.2.0:
     pretty-error "^2.0.2"
     tapable "^1.0.0"
     toposort "^1.0.0"
+    util.promisify "1.0.0"
+
+html-webpack-plugin@^4.0.0-beta.1:
+  version "4.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-4.0.0-beta.1.tgz#15b3b3634af47c79ac46c185f64e2007e0b0d14c"
+  integrity sha512-O+stuSCY5rdzX5O1l1FdH1bZqRQ7ybTi12OHzgD8u5Ogu2Usu3K7e633vxj4uOjM49ST+qCcu5rWYhqNKlpomQ==
+  dependencies:
+    "@types/tapable" "1.0.2"
+    html-minifier "^3.2.3"
+    loader-utils "^1.1.0"
+    lodash "^4.17.10"
+    pretty-error "^2.0.2"
+    tapable "^1.0.0"
     util.promisify "1.0.0"
 
 htmlescape@^1.1.0:
@@ -11611,9 +11619,9 @@ humanize-ms@^1.2.1:
     ms "^2.0.0"
 
 husky@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-1.1.1.tgz#7179043184f68a4d1ffc975cbd1c6132ef1fd7b3"
-  integrity sha512-D8ly8eIZdWzWVG4mh4apaX1PP47uLSaN8CS0RyuuLtHJ20Gt6Ccky5pSecaPsqxNzQj0zon3x6QX/0kCc5/TOQ==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-1.1.2.tgz#574c2bb16958db8a8120b63306efaff110525c23"
+  integrity sha512-9TdkUpBeEOjz0AnFdUN4i3w8kEbOsVs9/WSeJqWLq2OO6bcKQhVW64Zi+pVd/AMRLpN3QTINb6ZXiELczvdmqQ==
   dependencies:
     cosmiconfig "^5.0.6"
     execa "^0.9.0"

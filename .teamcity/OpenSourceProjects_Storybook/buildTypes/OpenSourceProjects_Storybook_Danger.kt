@@ -60,6 +60,11 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
             }
             param("github_oauth_user", "Hypnosphi")
         }
+        feature {
+            type = "pullRequests"
+            param("filterAuthorRole", "EVERYBODY")
+            param("authenticationType", "vcsRoot")
+        }
     }
 
     requirements {

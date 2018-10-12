@@ -1,167 +1,155 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { ifIphoneX } from 'react-native-iphone-x-helper';
-
-import { Dimensions, View, TouchableWithoutFeedback, Image, Text } from 'react-native';
+import { SafeAreaView, Animated, TouchableOpacity } from 'react-native';
 import Events from '@storybook/core-events';
-import style from './style';
+
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
+import Addons from './addons';
+import Panel from './panel';
+import Navigation from './navigation';
+import AbsolutePositionedKeyboardAwareView from './absolute-positioned-keyboard-aware-view';
 
-/**
- * Returns true if the screen is in portrait mode
- */
-const isDeviceInPortrait = () => {
-  const dim = Dimensions.get('screen');
-  return dim.height >= dim.width;
-};
+import { PREVIEW } from './navigation/consts';
 
-const openMenuImage = require('./menu_open.png');
-const closeMenuImage = require('./menu_close.png');
+import {
+  getPreviewPosition,
+  getPreviewScale,
+  getAddonPanelPosition,
+  getNavigatorPanelPosition,
+} from './animation';
 
-const DRAWER_WIDTH = 250;
+import style from './style';
 
-export default class OnDeviceUI extends Component {
-  constructor(...args) {
-    super(...args);
+const ANIMATION_DURATION = 300;
+
+export default class OnDeviceUI extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    const tabOpen = props.tabOpen || PREVIEW;
 
     this.state = {
-      isMenuOpen: false,
-      selectedKind: null,
-      selectedStory: null,
-      isPortrait: isDeviceInPortrait(),
+      tabOpen,
+      slideBetweenAnimation: false,
+      selection: props.initialStory || {},
+      storyFn: props.initialStory ? props.initialStory.storyFn : null,
+      previewWidth: 0,
+      previewHeight: 0,
     };
+
+    this.animatedValue = new Animated.Value(tabOpen);
+    this.forceRender = this.forceUpdate.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const { events } = this.props;
-
-    Dimensions.addEventListener('change', this.handleDeviceRotation);
     events.on(Events.SELECT_STORY, this.handleStoryChange);
+    events.on(Events.FORCE_RE_RENDER, this.forceRender);
   }
 
   componentWillUnmount() {
     const { events } = this.props;
-
-    Dimensions.removeEventListener('change', this.handleDeviceRotation);
     events.removeListener(Events.SELECT_STORY, this.handleStoryChange);
+    events.removeListener(Events.FORCE_RE_RENDER, this.forceRender);
   }
 
-  handleDeviceRotation = () => {
-    this.setState({
-      isPortrait: isDeviceInPortrait(),
-    });
+  onLayout = ({ previewWidth, previewHeight }) => {
+    this.setState({ previewWidth, previewHeight });
+  };
+
+  handleOpenPreview = () => {
+    this.handleToggleTab(PREVIEW);
   };
 
   handleStoryChange = selection => {
-    const { kind, story } = selection;
     this.setState({
-      selectedKind: kind,
-      selectedStory: story,
+      selection: {
+        kind: selection.kind,
+        story: selection.story,
+      },
+      storyFn: selection.storyFn,
     });
   };
 
-  handleToggleMenu = () => {
-    const { isMenuOpen } = this.state;
+  handleToggleTab = newTabOpen => {
+    const { tabOpen } = this.state;
+
+    if (newTabOpen === tabOpen) {
+      return;
+    }
+
+    Animated.timing(this.animatedValue, {
+      toValue: newTabOpen,
+      duration: ANIMATION_DURATION,
+      useNativeDriver: true,
+    }).start();
 
     this.setState({
-      isMenuOpen: !isMenuOpen,
+      tabOpen: newTabOpen,
+      // True if swiping between navigator and addons
+      slideBetweenAnimation: tabOpen + newTabOpen === PREVIEW,
     });
   };
 
   render() {
-    const { stories, events, url } = this.props;
-    const { isPortrait, isMenuOpen, selectedKind, selectedStory } = this.state;
+    const { stories, events, url, isUIHidden } = this.props;
+    const {
+      tabOpen,
+      slideBetweenAnimation,
+      selection,
+      storyFn,
+      previewWidth,
+      previewHeight,
+    } = this.state;
 
-    const iPhoneXStyles = ifIphoneX(
-      isPortrait
-        ? {
-            marginVertical: 30,
-          }
-        : {
-            marginHorizontal: 30,
-          },
-      {}
-    );
-
-    const menuStyles = [
-      style.menuContainer,
-      {
-        transform: [
-          {
-            translateX: isMenuOpen ? 0 : -DRAWER_WIDTH - 30,
-          },
-        ],
-      },
-      iPhoneXStyles,
+    const previewWrapperStyles = [
+      style.flex,
+      getPreviewPosition(this.animatedValue, previewWidth, previewHeight, slideBetweenAnimation),
     ];
 
-    const headerStyles = [
-      style.headerContainer,
-      {
-        opacity: +!isMenuOpen,
-      },
+    const previewStyles = [
+      style.flex,
+      tabOpen !== 0 && style.previewMinimized,
+      getPreviewScale(this.animatedValue, slideBetweenAnimation),
     ];
-
-    const previewContainerStyles = [style.previewContainer, iPhoneXStyles];
-
-    const previewWrapperStyles = [style.previewWrapper, iPhoneXStyles];
-
-    /*
-      Checks if import is a base64 encoded string uri.
-      If using haul as bundler, some projects are set up to include small files as base64 strings.
-     */
-    let openIcon = openMenuImage;
-    if (typeof openIcon === 'string') {
-      openIcon = { uri: openMenuImage };
-    }
-    let closeIcon = closeMenuImage;
-    if (typeof closeIcon === 'string') {
-      closeIcon = { uri: closeMenuImage };
-    }
 
     return (
-      <View style={style.main}>
-        <View style={previewContainerStyles}>
-          <View style={headerStyles}>
-            <TouchableWithoutFeedback
-              onPress={this.handleToggleMenu}
-              testID="Storybook.OnDeviceUI.open"
-              accessibilityLabel="Storybook.OnDeviceUI.open"
-            >
-              <View>
-                <Image source={openIcon} style={style.icon} />
-              </View>
-            </TouchableWithoutFeedback>
-            <Text style={style.headerText} numberOfLines={1}>
-              {selectedKind} {selectedStory}
-            </Text>
-          </View>
-          <View style={previewWrapperStyles}>
-            <View style={style.preview}>
-              <StoryView url={url} events={events} />
-            </View>
-          </View>
-        </View>
-        <View style={menuStyles}>
-          <TouchableWithoutFeedback
-            onPress={this.handleToggleMenu}
-            testID="Storybook.OnDeviceUI.close"
-            accessibilityLabel="Storybook.OnDeviceUI.close"
-          >
-            <View style={style.closeButton}>
-              <Image source={closeIcon} style={style.icon} />
-            </View>
-          </TouchableWithoutFeedback>
-          <StoryListView
-            stories={stories}
-            events={events}
-            width={DRAWER_WIDTH}
-            selectedKind={selectedKind}
-            selectedStory={selectedStory}
-          />
-        </View>
-      </View>
+      <SafeAreaView style={style.flex}>
+        <AbsolutePositionedKeyboardAwareView
+          onLayout={this.onLayout}
+          previewHeight={previewHeight}
+          previewWidth={previewWidth}
+        >
+          <Animated.View style={previewWrapperStyles}>
+            <Animated.View style={previewStyles}>
+              <TouchableOpacity
+                style={style.flex}
+                disabled={tabOpen === PREVIEW}
+                onPress={this.handleOpenPreview}
+              >
+                <StoryView url={url} events={events} selection={selection} storyFn={storyFn} />
+              </TouchableOpacity>
+            </Animated.View>
+          </Animated.View>
+          <Panel style={getNavigatorPanelPosition(this.animatedValue, previewWidth)}>
+            <StoryListView
+              stories={stories}
+              events={events}
+              selectedKind={selection.kind}
+              selectedStory={selection.story}
+            />
+          </Panel>
+          <Panel style={getAddonPanelPosition(this.animatedValue, previewWidth)}>
+            <Addons />
+          </Panel>
+        </AbsolutePositionedKeyboardAwareView>
+        <Navigation
+          tabOpen={tabOpen}
+          onChangeTab={this.handleToggleTab}
+          initialUiVisible={!isUIHidden}
+        />
+      </SafeAreaView>
     );
   }
 }
@@ -179,8 +167,18 @@ OnDeviceUI.propTypes = {
     removeListener: PropTypes.func.isRequired,
   }).isRequired,
   url: PropTypes.string,
+  tabOpen: PropTypes.number,
+  isUIHidden: PropTypes.bool,
+  initialStory: PropTypes.shape({
+    story: PropTypes.string.isRequired,
+    kind: PropTypes.string.isRequired,
+    storyFn: PropTypes.func.isRequired,
+  }),
 };
 
 OnDeviceUI.defaultProps = {
   url: '',
+  tabOpen: 0,
+  isUIHidden: false,
+  initialStory: null,
 };

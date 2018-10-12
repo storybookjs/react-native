@@ -4,8 +4,7 @@ import { getEnvironment } from 'universal-dotenv';
 import Dotenv from 'dotenv-webpack';
 import WatchMissingNodeModulesPlugin from 'react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
-
-import GeneratePagePlugin from 'generate-page-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 import { getManagerHeadHtml } from '@storybook/core/server';
 
@@ -31,21 +30,20 @@ const getConfig = options => {
       publicPath: '/',
     },
     plugins: [
-      new GeneratePagePlugin(
-        {
-          template: require.resolve('@storybook/core/dist/server/templates/index.html.ejs'),
-          // eslint-disable-next-line global-require
-          parser: require('ejs'),
-          filename: entry => (entry === 'manager' ? 'index' : entry),
-        },
-        {
-          data: { version },
-          headHtmlSnippet: entry =>
-            entriesMeta[entry] ? entriesMeta[entry].headHtmlSnippet : null,
-          bodyHtmlSnippet: entry =>
-            entriesMeta[entry] ? entriesMeta[entry].bodyHtmlSnippet : null,
-        }
-      ),
+      new HtmlWebpackPlugin({
+        filename: `index.html`,
+        chunksSortMode: 'none',
+        alwaysWriteToDisk: true,
+        inject: false,
+        templateParameters: (compilation, files, o) => ({
+          compilation,
+          files,
+          options: o,
+          version,
+          ...entriesMeta.manager,
+        }),
+        template: require.resolve(`@storybook/core/src/server/templates/index.ejs`),
+      }),
       new webpack.HotModuleReplacementPlugin(),
       new CaseSensitivePathsPlugin(),
       new WatchMissingNodeModulesPlugin(nodeModulesPaths),

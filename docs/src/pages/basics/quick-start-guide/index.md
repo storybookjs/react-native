@@ -32,8 +32,8 @@ Storybook should now be available in the browser with a link provided in the con
 ---
 
 To learn more about what `getstorybook` command does, have a look at the slow start guides:
-
 - [React](/basics/guide-react/)
+- [React Native](/basics/guide-react-native/)
 - [Vue](/basics/guide-vue/)
 - [Angular](/basics/guide-angular/)
 - [Mithril](/basics/guide-mithril/)
