@@ -121,7 +121,7 @@
     "@angular-devkit/core" "0.8.5"
     rxjs "~6.2.0"
 
-"@angular/cli@6.2.5":
+"@angular/cli@^6.2.5":
   version "6.2.5"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-6.2.5.tgz#20f97fd7f6750756be0b280afb0e2b607d0492bc"
   integrity sha512-QG568QHq3X8CZ0D7aPbq9SlFiYyBEhrsfhGFr6jHNeljoCID2071GfnVsvuwj4vpeBT6axgOj0Dpm3M1r6UMMQ==
@@ -9573,7 +9573,7 @@ express-session@~1.11.3:
     uid-safe "~2.0.0"
     utils-merge "1.0.0"
 
-express@4.16.4, express@^4.10.7, express@^4.16.2, express@^4.16.3:
+express@^4.10.7, express@^4.16.2, express@^4.16.3:
   version "4.16.4"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.4.tgz#fddef61926109e24c515ea97fd2f1bdbf62df12e"
   integrity sha512-j12Uuyb4FMrd/qQAm6uCHAkPtO8FDTRJZBDd5D2KOL2eLaz1yUNdUB/NOIyq0iU4q4cFarsUCrnFDPBcnksuOg==
@@ -14060,10 +14060,10 @@ listr@^0.14.1:
     rxjs "^6.1.0"
     strip-ansi "^3.0.1"
 
-lit-html@^0.10.2:
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-0.10.2.tgz#53c846afcf91bb1e6623179ef22e327ab8ac0e0e"
-  integrity sha512-ue0pIX3Fj5gUsNSozdRQIb1MAgNqFQsHgvHE/FU34xyu9NN/af3EISr7Bb+vP9YeLXIA4vLLOoYp2Z22dVYhww==
+lit-html@0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-0.12.0.tgz#d994420fda74744f9d4a79401b086de929643e6a"
+  integrity sha512-NyFgq8yTlGEjUFQOmNnK/kj+ZdDVJzTwsLunNSewGiOns7SjuJi6ymCCqzZZ81uW2VwEmliMbOlFZc9QmOJPLA==
 
 livereload-js@^2.3.0:
   version "2.3.0"
