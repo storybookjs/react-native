@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
+import { Input } from '@storybook/components';
 
-const styles = {
-  display: 'table-cell',
-  boxSizing: 'border-box',
-  verticalAlign: 'middle',
-  height: '25px',
-  width: '100%',
-  outline: 'none',
-  border: '1px solid #f7f4f4',
-  borderRadius: 2,
-  fontSize: 11,
-  padding: '5px',
-  color: '#444',
+const FlexSpaced = styled.div({
   flex: 1,
-};
+  display: 'flex',
+  '& > *': {
+    marginLeft: 10,
+  },
+  '& > *:first-child': {
+    marginLeft: 0,
+  },
+});
+const FlexInput = styled(Input)({ flex: 1 });
 
 const formatDate = date => {
   const year = `000${date.getFullYear()}`.slice(-4);
@@ -32,7 +31,6 @@ const formatTime = date => {
 
 class DateType extends Component {
   static getDerivedStateFromProps() {
-    console.log('should be true');
     return { valid: true };
   }
 
@@ -98,9 +96,8 @@ class DateType extends Component {
     const { valid } = this.state;
 
     return name ? (
-      <div style={{ display: 'flex' }}>
-        <input
-          style={styles}
+      <FlexSpaced style={{ display: 'flex' }}>
+        <FlexInput
           type="date"
           max="9999-12-31" // I do this because of a rendering bug in chrome
           ref={el => {
@@ -109,8 +106,7 @@ class DateType extends Component {
           id={`${name}date`}
           onChange={this.onDateChange}
         />
-        <input
-          style={styles}
+        <FlexInput
           type="time"
           id={`${name}time`}
           ref={el => {
@@ -119,7 +115,7 @@ class DateType extends Component {
           onChange={this.onTimeChange}
         />
         {!valid ? <div>invalid</div> : null}
-      </div>
+      </FlexSpaced>
     ) : null;
   }
 }
