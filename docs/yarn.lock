@@ -5664,7 +5664,7 @@ gatsby-transformer-remark@^1.7.44:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.275:
+gatsby@^1.9.279:
   version "1.9.279"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.279.tgz#e035bcac78b8280e12d42a3d068af4dcda5fcfd6"
   integrity sha512-JpXW0l2bWpqxlrjnFm4GSoy1JgFaI9p9rlKOzDGBaLnwFHDHp2G8tgbcQmIH+RNf5m5okPDSgJySS/PjaKjWeg==
