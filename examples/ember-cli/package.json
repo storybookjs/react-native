@@ -36,7 +36,7 @@
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
     "ember-load-initializers": "^1.1.0",
-    "ember-resolver": "^4.0.0",
+    "ember-resolver": "^5.0.1",
     "ember-source": "~3.5.0",
     "loader.js": "^4.2.3",
     "webpack": "^4.17.1",
