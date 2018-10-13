@@ -79,6 +79,12 @@ const stylesheetBase = {
       fontWeight: 400,
       fontSize: '22px',
     },
+    h3: {
+      margin: '0 0 10px 0',
+      padding: 0,
+      fontWeight: 400,
+      fontSize: '18px',
+    },
     body: {
       borderBottom: '1px solid #eee',
       paddingTop: 10,
@@ -338,7 +344,7 @@ class Story extends Component {
     propTables = array.map((type, i) => (
       // eslint-disable-next-line react/no-array-index-key
       <div key={`${getName(type)}_${i}`}>
-        <h2 style={stylesheet.propTableHead}>"{getName(type)}" Component</h2>
+        <h3 style={stylesheet.propTableHead}>"{getName(type)}" Component</h3>
         <this.props.PropTable
           type={type}
           maxPropObjectKeys={maxPropObjectKeys}
