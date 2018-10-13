@@ -11,10 +11,6 @@ accordingly, and delete the patch script.
 changeBuildType("9f9177e7-9ec9-4e2e-aabb-d304fd667711") {
     dependencies {
         add("OpenSourceProjects_Storybook_Bootstrap") {
-            snapshot {
-                onDependencyFailure = FailureAction.FAIL_TO_START
-            }
-
             artifacts {
                 artifactRules = """
                     dependencies/**
