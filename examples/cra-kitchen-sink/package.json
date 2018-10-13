@@ -6,7 +6,7 @@
     "build": "react-scripts build",
     "build-storybook": "build-storybook -s public",
     "eject": "react-scripts eject",
-    "start": "react-scripts start",
+    "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
     "storybook": "start-storybook -p 9010 -s public",
     "test": "react-scripts test --env=jsdom"
   },
