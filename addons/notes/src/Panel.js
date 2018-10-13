@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { SyntaxHighlighter, Placeholder } from '@storybook/components';
 import Markdown from 'markdown-to-jsx';
+import Events from '@storybook/core-events';
+import { EVENT_ID } from './shared';
 
 const Panel = styled.div({
   padding: 10,
@@ -30,7 +32,8 @@ export default class NotesPanel extends React.Component {
         this.onAddNotes('');
       }
     });
-    channel.on('storybook/notes/add_notes', this.onAddNotes);
+    channel.on(EVENT_ID, this.onAddNotes);
+    channel.on(Events.SET_CURRENT_STORY, this.clearNotes);
   }
 
   componentWillUnmount() {
@@ -43,6 +46,10 @@ export default class NotesPanel extends React.Component {
 
   onAddNotes = markdown => {
     this.setState({ markdown });
+  };
+
+  clearNotes = () => {
+    this.setState({ markdown: '' });
   };
 
   render() {

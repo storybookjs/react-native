@@ -1,4 +1,5 @@
 import addons, { makeDecorator } from '@storybook/addons';
+import { EVENT_ID } from './shared';
 
 export const withNotes = makeDecorator({
   name: 'withNotes',
@@ -18,7 +19,7 @@ export const withNotes = makeDecorator({
       throw new Error('You must set of one of `text` or `markdown` on the `notes` parameter');
     }
 
-    channel.emit('storybook/notes/add_notes', text || markdown);
+    channel.emit(EVENT_ID, text || markdown);
 
     return getStory(context);
   },
