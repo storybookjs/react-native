@@ -4,19 +4,19 @@ title: "Quick Start Guide"
 ---
 
 Storybook supports many different frontend view layers with more coming!
-React, Vue, Angular, Mithril, Marko, HTML and Svelte are currently supported. Follow these steps to get started with Storybook.
+React, Vue, Angular, Mithril, Marko, HTML, Svelte, Meteor, and Ember are currently supported. Follow these steps to get started with Storybook.
 
 Get started using the automated command line tool. This command adds a set of boilerplate files for Storybook in your project:
 
 ```sh
 cd my-project-directory
-npx -p @storybook/cli sb init
+npx -p @storybook/cli@alpha sb init
 ```
 
-The tool inspects your `package.json` to determine which view layer you're using. If you want to develop HTML snippets in storybook, we can't determine that automatically. So to install storybook for HTML, add the `--html` argument:
+The tool inspects your `package.json` to determine which view layer you're using. If you want to develop HTML snippets in storybook, we can't determine that automatically. So to install storybook for HTML, use the `--type` flag to force that the HTML project type:
 
 ```
-npx -p @storybook/cli sb init --html
+npx -p @storybook/cli@alpha sb init --type html
 ```
 
 To setup a project manually, take a look at the [Slow Start Guide](/basics/slow-start-guide/).
@@ -31,7 +31,8 @@ Storybook should now be available in the browser with a link provided in the con
 
 ---
 
-To learn more about what `getstorybook` command does, have a look at the slow start guides:
+To learn more about what the Storybook CLI command `sb init` command does, have a look at the slow start guides:
+
 - [React](/basics/guide-react/)
 - [React Native](/basics/guide-react-native/)
 - [Vue](/basics/guide-vue/)
