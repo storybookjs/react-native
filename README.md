@@ -21,7 +21,7 @@ It allows you to browse a component library, view the different states of each c
 ## Intro
 
 <center>
-    <img src="media/storybook-intro.gif" width="100%" />
+  <img src="media/storybook-intro.gif" width="100%" />
 </center>
 
 README for:
@@ -55,7 +55,7 @@ First install storybook:
 
 ```sh
 cd my-react-app
-npx -p @storybook/cli sb init
+npx -p @storybook/cli@alpha sb init
 ```
 
 If you'd rather set up your project manually, take a look at our [Slow Start Guide](https://storybook.js.org/basics/slow-start-guide/).
@@ -66,7 +66,7 @@ Once it's installed, you can `npm run storybook` and it will run the development
 
 ```sh
 cd my-storybook-v2-app
-npx -p @storybook/cli sb init
+npx -p @storybook/cli@alpha sb init
 ```
 
 It runs a codemod to update all package names. Read all migration details in our [Migration Guide](MIGRATION.md)
@@ -142,12 +142,16 @@ If you're looking for material to use in your presentation about storybook, like
 
 ## Contributing
 
-[![Good First Issue](https://img.shields.io/github/issues/storybooks/storybook/good%20first%20issue.svg)](https://github.com/storybooks/storybook/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
-
 We welcome contributions to Storybook!
 
-- ⇄ Pull requests and ★ Stars are always welcome.
+- 📥 Pull requests and 🌟 Stars are always welcome.
 - Read our [contributing guide](CONTRIBUTING.md) to get started.
+  or find us on [Discord](https://discord.gg/sMFvFsG), we're will take the time to guide you 
+
+Looking for a first issue to tackle? 
+
+- We tag issues with [![Good First Issue](https://img.shields.io/github/issues/storybooks/storybook/good%20first%20issue.svg)](https://github.com/storybooks/storybook/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) when we think they are well suited for people who are new to the codebase or OSS in general.
+- [Talk to us](https://discord.gg/sMFvFsG), we'll find something to suits your skills and learning interest.
 
 ### Development scripts
 

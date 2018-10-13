@@ -32,7 +32,7 @@ ng new your-angular-prj
 cd your-angular-prj
 ```
 
-## Add @storybook/angular and @babel/core
+## Add @storybook/angular, @babel/core, and babel-loader
 
 Next, install `@storybook/angular`, `@babel/core`, and `babel-loader` (it's a peerDependency) to your project:
 
@@ -75,7 +75,7 @@ Just like that, you can load stories from wherever you want to.
 
 ## Storybook TypeScript configuration
 
-**Note:** You only need this if you are using Storybook `>= 4.0.0-alpha.24`.
+**Note:** You only need this if you are using Storybook `>= 4.0.0-alpha.23`.
 
 `@storybook/angular` is using [ForkTsCheckerWebpackPlugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to boost the build performance. 
 This makes it necessary to create a `tsconfig.json` file at `.storybook/tsconfig.json` with the following content:

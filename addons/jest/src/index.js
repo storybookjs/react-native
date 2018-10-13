@@ -1,18 +1,20 @@
 import addons from '@storybook/addons';
 import deprecate from 'util-deprecate';
+import { normalize } from 'upath';
+
 import { ADD_TESTS } from './shared';
 
-const findTestResults = (testFiles, jestTestResults, jestTestFilesExt) =>
+const findTestResults = (testFiles, jestTestResults, jestTestFilesOptions) =>
   Object.values(testFiles).map(name => {
+    const fileName = `${name}${jestTestFilesOptions.filesExt}`;
     if (jestTestResults && jestTestResults.testResults) {
       return {
+        fileName,
         name,
-        result: jestTestResults.testResults.find(t =>
-          new RegExp(`${name}${jestTestFilesExt}`).test(t.name)
-        ),
+        result: jestTestResults.testResults.find(t => normalize(t.name).includes(fileName)),
       };
     }
-    return { name };
+    return { fileName, name };
   });
 
 const emitAddTests = ({ kind, story, testFiles, options }) => {

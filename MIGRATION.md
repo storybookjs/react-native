@@ -94,7 +94,7 @@ Storybook now uses webpack 4. If you have a [custom webpack config](https://stor
 Storybook now uses Babel 7. There's a couple of cases when it can break with your app:
 
 - If you aren't using Babel yourself, and don't have .babelrc, install following dependencies:
-  ```
+  ```sh
   npm i -D @babel/core babel-loader@next
   ```
 - If you're using Babel 6, make sure that you have direct dependencies on `babel-core@6` and `babel-loader@7` and that you have a `.babelrc` in your project directory.
@@ -112,14 +112,14 @@ If you are using `create-react-app` (aka CRA), you may need to do some manual st
 
 #### Upgrade CRA1 to babel 7
 
-```
+```sh
 yarn remove babel-core babel-runtime
 yarn add @babel/core babel-loader --dev
 ```
 
 #### Migrate CRA1 while keeping babel 6
 
-```
+```sh
 yarn add babel-loader@7
 ```
 
@@ -139,8 +139,8 @@ If you're using `start-storybook` on CI, you may need to opt out of this using t
 
 We've deprecated the `getstorybook` CLI in 4.0. The new way to install storybook is `sb init`. We recommend using `npx` for convenience and to make sure you're always using the latest version of the CLI:
 
-```
-npx -p @storybook/cli sb init
+```sh
+npx -p @storybook/cli@alpha sb init
 ```
 
 ## From version 3.3.x to 3.4.x
@@ -156,7 +156,7 @@ Also read on if you're using `addon-knobs`: we advise an update to your code for
 
 This affects you if you don't use babel in your project. You may need to add `babel-core` as dev dependency:
 
-```
+```sh
 npm install --save-dev babel-core
 ```
 
@@ -176,9 +176,8 @@ In the case of React or React-Native, import knobs like this:
 import { withKnobs, text, boolean, number } from "@storybook/addon-knobs/react";
 ```
 
-In the case of Vue: `import { ... } from '@storybook/addon-knobs/vue';`
-
-In the case of Angular: `import { ... } from '@storybook/addon-knobs/angular';`
+- In the case of Vue: `import { ... } from '@storybook/addon-knobs/vue';`
+- In the case of Angular: `import { ... } from '@storybook/addon-knobs/angular';`
 
 ## From version 3.1.x to 3.2.x
 
@@ -254,7 +253,7 @@ All our packages have been renamed and published to npm as version 3.0.0 under t
 
 To update your app to use the new package names, you can use the cli:
 
-```bash
+```sh
 npm install --global @storybook/cli
 
 # if you run this inside a v2 app, it should perform the necessary codemods.

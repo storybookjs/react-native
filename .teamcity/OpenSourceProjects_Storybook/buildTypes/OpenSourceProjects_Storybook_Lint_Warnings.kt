@@ -42,7 +42,6 @@ object OpenSourceProjects_Storybook_Lint_Warnings : BuildType({
                 +:pull/*
                 +:release/*
                 +:master
-                +:dependencies.io-*
             """.trimIndent()
         }
     }
