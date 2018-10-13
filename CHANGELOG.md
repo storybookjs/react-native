@@ -6,6 +6,7 @@
 
 -   CLI: Rename CLI to sb [#4345](https://github.com/storybooks/storybook/pull/4345)
 -   React Native: Remove the packager from storybook [#4261](https://github.com/storybooks/storybook/pull/4261)
+-   React-Native: On-device addons [#4381](https://github.com/storybooks/storybook/pull/4381)
 
 #### Features
 
@@ -13,7 +14,8 @@
 -   CLI: specify project type interactively or as option [#4184](https://github.com/storybooks/storybook/pull/4184)
 -   Addon-Jest: expand supported file types [#3983](https://github.com/storybooks/storybook/pull/3983)
 -   CLI-less Node api [#4344](https://github.com/storybooks/storybook/pull/4344)
--   React-Native: [onDeviceUI] Updated channel to support async option [#4326](https://github.com/storybooks/storybook/pull/4326)
+-   React-Native: Updated channel to support async option [#4326](https://github.com/storybooks/storybook/pull/4326)
+-   React-Native: On-device addons for notes, knobs, backgrounds [#4327](https://github.com/storybooks/storybook/pull/4327)
 -   Angular: Add support for "baseUrl" and "paths" from angular-cli [#4162](https://github.com/storybooks/storybook/pull/4162)
 -   Angular: Added basePath support [#4323](https://github.com/storybooks/storybook/pull/4323)
 -   Vue: support string-only component [#4285](https://github.com/storybooks/storybook/pull/4285)
