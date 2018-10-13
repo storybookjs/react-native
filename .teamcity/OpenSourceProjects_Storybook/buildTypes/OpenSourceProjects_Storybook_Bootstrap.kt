@@ -3,20 +3,20 @@ package OpenSourceProjects_Storybook.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 
-object OpenSourceProjects_Storybook_ReactNative : BuildType({
-    uuid = "ac276912-df1a-44f1-8de2-056276193ce8"
-    id = "OpenSourceProjects_Storybook_ReactNative"
-    name = "React Native"
+object OpenSourceProjects_Storybook_Bootstrap : BuildType({
+    uuid = "9f9177e7-9ec9-4e2e-aabb-d304fd667712"
+    id = "OpenSourceProjects_Storybook_Bootstrap"
+    name = "Bootstrap"
 
-    params {
-        param("env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD", "true")
-    }
+    artifactRules = """
+        node_modules/** => dependencies.zip/node_modules
+        addons/*/node_modules/** => dependencies.zip/addons
+    """.trimIndent()
 
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
-
-        cleanCheckout = true
     }
 
     steps {
@@ -24,17 +24,15 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
             name = "Bootstrap"
             scriptContent = """
                 yarn
-                yarn bootstrap --core --reactnativeapp
+                yarn bootstrap --core
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
-        script {
-            name = "crna-kitchen-sink"
-            scriptContent = """
-                cd examples/crna-kitchen-sink
-                yarn storybook --smoke-test
-            """.trimIndent()
-            dockerImage = "node:%docker.node.version%"
+    }
+
+    triggers {
+        vcs {
+            enabled = false
         }
     }
 
@@ -52,5 +50,9 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
 
     requirements {
         doesNotContain("env.OS", "Windows")
+    }
+
+    cleanup {
+        artifacts(days = 1)
     }
 })

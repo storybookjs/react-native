@@ -3,18 +3,20 @@ package OpenSourceProjects_Storybook.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 
-object OpenSourceProjects_Storybook_Test : BuildType({
-    uuid = "9f9177e7-9ec9-4e2e-aabb-d304fd667711"
-    id = "OpenSourceProjects_Storybook_Test"
-    name = "Test"
+object OpenSourceProjects_Storybook_NativeSmokeTests : BuildType({
+    uuid = "ac276912-df1a-44f1-8de2-056276193ce8"
+    id = "OpenSourceProjects_Storybook_NativeSmokeTests"
+    name = "Native Smoke Tests"
 
-    artifactRules = "coverage/lcov-report => coverage.zip"
+    params {
+        param("env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD", "true")
+    }
 
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
 
+        cleanCheckout = true
     }
 
     steps {
@@ -22,22 +24,17 @@ object OpenSourceProjects_Storybook_Test : BuildType({
             name = "Bootstrap"
             scriptContent = """
                 yarn
-                yarn bootstrap --core
+                yarn bootstrap --core --reactnativeapp
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
         script {
-            name = "Test"
+            name = "crna-kitchen-sink"
             scriptContent = """
-                yarn test --core --coverage --runInBand --teamcity
+                cd examples-native/crna-kitchen-sink
+                yarn storybook --smoke-test
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
-        }
-    }
-
-    triggers {
-        vcs {
-            enabled = false
         }
     }
 
@@ -55,9 +52,5 @@ object OpenSourceProjects_Storybook_Test : BuildType({
 
     requirements {
         doesNotContain("env.OS", "Windows")
-    }
-
-    cleanup {
-        artifacts(days = 1)
     }
 })
