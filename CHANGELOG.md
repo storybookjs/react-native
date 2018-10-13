@@ -9,6 +9,7 @@
 
 #### Features
 
+-   Storybook version update check [#4334](https://github.com/storybooks/storybook/pull/4334)
 -   CLI: specify project type interactively or as option [#4184](https://github.com/storybooks/storybook/pull/4184)
 -   Addon-Jest: expand supported file types [#3983](https://github.com/storybooks/storybook/pull/3983)
 -   CLI-less Node api [#4344](https://github.com/storybooks/storybook/pull/4344)
@@ -37,6 +38,7 @@
 
 #### Dependency Upgrades
 
+-   Knobs/replace datepicker [#4380](https://github.com/storybooks/storybook/pull/4380)
 -   Re-generate lockfiles [#4404](https://github.com/storybooks/storybook/pull/4404)
 -   Run `yarn upgrade-interactive --latest` in root and docs [#4403](https://github.com/storybooks/storybook/pull/4403)
 -   chore(deps): #4267 upgrade lodash to latest [#4284](https://github.com/storybooks/storybook/pull/4284)
