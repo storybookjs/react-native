@@ -21,6 +21,7 @@ object OpenSourceProjects_Storybook_Test : BuildType({
         script {
             name = "Test"
             scriptContent = """
+                yarn
                 yarn test --core --coverage --runInBand --teamcity
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
@@ -53,8 +54,8 @@ object OpenSourceProjects_Storybook_Test : BuildType({
 
             artifacts {
                 artifactRules = """
-                    dependencies.zip!
-                    dist.zip!
+                    dependencies.zip!**
+                    dist.zip!**
                 """.trimIndent()
             }
         }
