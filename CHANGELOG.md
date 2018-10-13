@@ -22,6 +22,8 @@
 
 #### Bug Fixes
 
+-   React-native: Remove deprecated attempt to load default addons [#4308](https://github.com/storybooks/storybook/pull/4308)
+-   Fix panel layouts [#4304](https://github.com/storybooks/storybook/pull/4304)
 -   [logging] better error logging for when opn fails to opn [#4348](https://github.com/storybooks/storybook/pull/4348)
 -   Fix iPhone viewport dimensions [#4293](https://github.com/storybooks/storybook/pull/4293)
 -   Fix Array.js value to string [#4336](https://github.com/storybooks/storybook/pull/4336)
