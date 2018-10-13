@@ -18,6 +18,7 @@ object Project : Project({
     vcsRoot(OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster1)
     vcsRoot(OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
 
+    buildType(OpenSourceProjects_Storybook_Bootstrap)
     buildType(OpenSourceProjects_Storybook_CliTestLatestCra)
     buildType(OpenSourceProjects_Storybook_Examples)
     buildType(OpenSourceProjects_Storybook_Danger)
