@@ -24,7 +24,6 @@ changeBuildType("9f9177e7-9ec9-4e2e-aabb-d304fd667711") {
             name = "Test"
             scriptContent = """
                 yarn test --core --coverage --runInBand --teamcity
-                yarn coverage
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
