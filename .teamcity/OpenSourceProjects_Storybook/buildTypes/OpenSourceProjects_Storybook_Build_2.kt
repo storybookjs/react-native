@@ -32,7 +32,6 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
                 +:pull/*
                 +:release/*
                 +:master
-                +:dependencies.io-*
                 +:snyk-fix-*
             """.trimIndent()
         }
@@ -65,7 +64,6 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
         }
         merge {
             branchFilter = """
-                +:dependencies.io-*
                 +:snyk-fix-*
             """.trimIndent()
             destinationBranch = "<default>"
@@ -89,7 +87,7 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
                 onDependencyCancel = FailureAction.ADD_PROBLEM
             }
         }
-        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_ReactNative) {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_NativeSmokeTests) {
             snapshot {
                 onDependencyCancel = FailureAction.ADD_PROBLEM
             }

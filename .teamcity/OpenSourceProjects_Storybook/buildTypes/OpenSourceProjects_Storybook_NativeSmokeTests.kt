@@ -4,10 +4,10 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 
-object OpenSourceProjects_Storybook_ReactNative : BuildType({
+object OpenSourceProjects_Storybook_NativeSmokeTests : BuildType({
     uuid = "ac276912-df1a-44f1-8de2-056276193ce8"
-    id = "OpenSourceProjects_Storybook_ReactNative"
-    name = "React Native"
+    id = "OpenSourceProjects_Storybook_NativeSmokeTests"
+    name = "Native Smoke Tests"
 
     params {
         param("env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD", "true")
@@ -31,7 +31,7 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
         script {
             name = "crna-kitchen-sink"
             scriptContent = """
-                cd examples/crna-kitchen-sink
+                cd examples-native/crna-kitchen-sink
                 yarn storybook --smoke-test
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
