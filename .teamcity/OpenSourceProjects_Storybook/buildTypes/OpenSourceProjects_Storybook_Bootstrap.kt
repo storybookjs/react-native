@@ -20,7 +20,6 @@ object OpenSourceProjects_Storybook_Bootstrap : BuildType({
         addons/*/dist/** => dist.zip/addons
         addons/storyshots/*/dist/** => dist.zip/addons/storyshots
         app/*/dist/** => dist.zip/app
-        examples/*/dist/** => dist.zip/examples
         lib/*/dist/** => dist.zip/lib
     """.trimIndent()
 
