@@ -40,7 +40,7 @@ jobs:
             - addons
             - app
             - lib
-  example-kitchen-sinks:
+  examples:
     <<: *defaults
     steps:
       - checkout
@@ -217,7 +217,7 @@ jobs:
       - run:
           name: Lint
           command: yarn lint
-  unit-test:
+  test:
     <<: *defaults
     steps:
       - checkout
@@ -239,7 +239,7 @@ jobs:
       - run:
           name: Upload coverage
           command: yarn coverage
-  cli:
+  cli-test:
     <<: *defaults
     environment:
       BASH_ENV: ~/.bashrc
@@ -251,7 +251,7 @@ jobs:
           name: Test
           command: yarn test --cli
           no_output_timeout: 1800
-  cli-latest-cra:
+  cli-test-latest-cra:
     <<: *defaults
     environment:
       BASH_ENV: ~/.bashrc
@@ -272,7 +272,7 @@ workflows:
           requires:
             - docs
             - build
-      - example-kitchen-sinks:
+      - examples:
           requires:
             - build
       - smoke-tests:
@@ -281,15 +281,15 @@ workflows:
       - native-smoke-tests:
           requires:
             - build
-      - unit-test:
+      - test:
           requires:
             - build
       - coverage:
           requires:
-            - unit-test
-      - cli:
+            - test
+      - cli-test:
           requires:
             - build
-      - cli-latest-cra:
+      - cli-test-latest-cra:
           requires:
             - build
