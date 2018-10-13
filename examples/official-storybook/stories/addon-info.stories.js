@@ -320,7 +320,7 @@ storiesOf('Addons|Info/deprecated', module).add(
 );
 
 storiesOf('Addons|Info/Story Source', module)
-  .addDecorator(withInfo({ inline: true }))
+  .addDecorator(withInfo())
   .add('Simple', () => <BaseButton />)
   .add('One prop', () => <BaseButton label="Button" />)
   .add('Many props', () => <BaseButton label="Button" onClick={action('clicked')} disabled />)
