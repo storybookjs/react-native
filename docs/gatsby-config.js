@@ -10,6 +10,7 @@ module.exports = {
         '/basics/quick-start-guide/',
         '/basics/slow-start-guide/',
         '/basics/guide-react/',
+        '/basics/guide-react-native/',
         '/basics/guide-vue/',
         '/basics/guide-angular/',
         '/basics/guide-mithril/',

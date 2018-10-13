@@ -54,6 +54,10 @@ With this addon, you can switch between background colors and background images 
 
 Viewport allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybook.js.org).  This helps build responsive components inside of Storybook.
 
+### [Google Analytics](https://github.com/storybooks/storybook/tree/master/addons/google-analytics)
+
+Support google analytics in [Storybook](https://storybook.js.org)
+
 ## Community Addons
 
 You need to install these addons directly from NPM in order to use them.

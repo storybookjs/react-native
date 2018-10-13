@@ -33,6 +33,7 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
                 +:release/*
                 +:master
                 +:dependencies.io-*
+                +:snyk-fix-*
             """.trimIndent()
         }
         retryBuild {
@@ -63,7 +64,10 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
             param("github_oauth_user", "Hypnosphi")
         }
         merge {
-            branchFilter = "+:dependencies.io-*"
+            branchFilter = """
+                +:dependencies.io-*
+                +:snyk-fix-*
+            """.trimIndent()
             destinationBranch = "<default>"
             commitMessage = "Merge branch '%teamcity.build.branch%'"
         }

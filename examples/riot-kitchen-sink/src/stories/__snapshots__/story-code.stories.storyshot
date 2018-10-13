@@ -61,6 +61,22 @@ exports[`Storyshots Story|How to create a story built with tag 1`] = `
 </div>
 `;
 
+exports[`Storyshots Story|How to create a story tags, template and tagConstructor at once 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <simpletest
+    hacked="true"
+    test="with a parameter"
+  >
+    <div>
+      HACKED : true ; simple test (with a parameter). Oh, by the way (value is mapped to riotValue)
+    </div>
+  </simpletest>
+</div>
+`;
+
 exports[`Storyshots Story|How to create a story the mount instruction is not necessary 1`] = `
 <div
   data-is="anothertest"

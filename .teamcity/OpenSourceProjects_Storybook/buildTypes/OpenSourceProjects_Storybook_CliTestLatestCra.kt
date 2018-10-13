@@ -21,15 +21,17 @@ object OpenSourceProjects_Storybook_CliTestLatestCra : BuildType({
         script {
             name = "Bootstrap"
             scriptContent = """
+                set -e -x
+
                 yarn
                 yarn bootstrap --core
             """.trimIndent()
-            dockerImage = "andthensome/docker-node-rsync"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Test"
             scriptContent = "yarn test-latest-cra"
-            dockerImage = "andthensome/docker-node-rsync"
+            dockerImage = "node:%docker.node.version%"
         }
     }
 
@@ -37,6 +39,11 @@ object OpenSourceProjects_Storybook_CliTestLatestCra : BuildType({
         vcs {
             quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
             triggerRules = "-:comment=^TeamCity change:**"
+            branchFilter = """
+                +:pull/*
+                +:release/*
+                +:master
+            """.trimIndent()
         }
         retryBuild {}
     }

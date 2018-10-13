@@ -38,5 +38,5 @@ export const Wrapper = styled.div({
   flex: 1,
   display: 'flex',
   position: 'relative',
-  minHeight: '100%',
+  height: '100%',
 });

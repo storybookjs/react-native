@@ -4,12 +4,9 @@ import React, { Component, createElement } from 'react';
 import { polyfill } from 'react-lifecycles-compat';
 import PropTypes from 'prop-types';
 import global from 'global';
-import { baseFonts } from '@storybook/components';
-
+import { baseFonts, SyntaxHighlighter } from '@storybook/components';
 import marksy from 'marksy';
-
-import Node from './Node';
-import { Pre } from './markdown';
+import reactElToString from 'react-element-to-jsx-string';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
 const { STORYBOOK_REACT_CLASSES } = global;
@@ -81,6 +78,12 @@ const stylesheetBase = {
       padding: 0,
       fontWeight: 400,
       fontSize: '22px',
+    },
+    h3: {
+      margin: '0 0 10px 0',
+      padding: 0,
+      fontWeight: 400,
+      fontSize: '18px',
     },
     body: {
       borderBottom: '1px solid #eee',
@@ -260,36 +263,22 @@ class Story extends Component {
   }
 
   _getSourceCode() {
-    const {
-      showSource,
-      maxPropsIntoLine,
-      maxPropObjectKeys,
-      maxPropArrayLength,
-      maxPropStringLength,
-      children,
-    } = this.props;
+    const { showSource, children } = this.props;
     const { stylesheet } = this.state;
 
     if (!showSource) {
       return null;
     }
 
+    const stringified = reactElToString(children, {
+      sortProps: false,
+      showDefaultProps: false,
+      maxInlineAttributesLineLength: 60,
+    });
     return (
       <div>
         <h1 style={stylesheet.source.h1}>Story Source</h1>
-        <Pre>
-          {React.Children.map(children, (root, idx) => (
-            <Node
-              key={idx}
-              node={root}
-              depth={0}
-              maxPropsIntoLine={maxPropsIntoLine}
-              maxPropObjectKeys={maxPropObjectKeys}
-              maxPropArrayLength={maxPropArrayLength}
-              maxPropStringLength={maxPropStringLength}
-            />
-          ))}
-        </Pre>
+        <SyntaxHighlighter language="jsx">{stringified}</SyntaxHighlighter>
       </div>
     );
   }
@@ -355,7 +344,7 @@ class Story extends Component {
     propTables = array.map((type, i) => (
       // eslint-disable-next-line react/no-array-index-key
       <div key={`${getName(type)}_${i}`}>
-        <h2 style={stylesheet.propTableHead}>"{getName(type)}" Component</h2>
+        <h3 style={stylesheet.propTableHead}>"{getName(type)}" Component</h3>
         <this.props.PropTable
           type={type}
           maxPropObjectKeys={maxPropObjectKeys}
@@ -404,7 +393,6 @@ Story.propTypes = {
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   components: PropTypes.shape({}),
-  maxPropsIntoLine: PropTypes.number.isRequired,
   maxPropObjectKeys: PropTypes.number.isRequired,
   maxPropArrayLength: PropTypes.number.isRequired,
   maxPropStringLength: PropTypes.number.isRequired,

@@ -10,7 +10,6 @@ addons.register(ADDON_ID, api => {
 
   addons.addPanel(PANEL_ID, {
     title: 'tests',
-    // title: () => <PanelTitle channel={channel} api={api} />,
     // eslint-disable-next-line react/prop-types
     render: ({ active }) => <Panel channel={channel} api={api} active={active} />,
   });

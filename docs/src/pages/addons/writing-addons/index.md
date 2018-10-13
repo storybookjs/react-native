@@ -69,6 +69,12 @@ Then it will appear in the Notes panel like this:
 
 ![With notes](../static/stories-with-notes.png)
 
+> To avoid having addons show up at the same time as each other, each addon should be aware of the active prop sent by Storybook and only render addon when active is true.
+
+```js
+render: ({ active }) => <Notes channel={channel} api={api} active={active} />,
+```
+
 ## Setup
 
 First, create an `addons.js` inside the Storybook config directory and add the following content to it.

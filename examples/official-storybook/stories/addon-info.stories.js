@@ -258,124 +258,6 @@ storiesOf('Addons|Info/GitHub issues', module)
     }
   );
 
-storiesOf('Addons|Info/Options.maxPropsIntoLine === 0', module)
-  .addDecorator(withInfo)
-  .add(
-    'Object and array props are broken to lines',
-    () => (
-      <BaseButton
-        label="Button"
-        object={{
-          one: 'Object and array properties',
-          two: 'will be broken to different lines',
-          three: 'if greater than `maxPropsIntoLine` option threshold.',
-        }}
-        array={['one', 'two', 'three', 'four']}
-        arrayOfObjects={[
-          {
-            one: 'Object and array properties will be broken to different lines',
-            two: 'if greater than `maxPropsIntoLine` option threshold.',
-            object: {
-              object1: {
-                one: 'one',
-                two: 'two',
-                three: 'three',
-              },
-              array: ['one', 'two', 'three'],
-              object2: {
-                object: {
-                  one: 'one',
-                  two: 'two',
-                  three: 'three',
-                },
-                array: [
-                  'one',
-                  'two',
-                  {
-                    object: {
-                      object: {
-                        one: 'one',
-                        two: 'two',
-                        three: 'three',
-                      },
-                      array: ['one', 'two', 'three'],
-                    },
-                  },
-                ],
-              },
-            },
-          },
-        ]}
-      />
-    ),
-    {
-      info: {
-        text: 'Component should be inlined between description and PropType table',
-        inline: true,
-        maxPropsIntoLine: 0,
-      },
-    }
-  );
-
-storiesOf('Addons|Info/Options.maxPropsIntoLine === 3', module)
-  .addDecorator(withInfo)
-  .add(
-    'Object and array props are broken to lines',
-    () => (
-      <BaseButton
-        label="Button"
-        object={{
-          one: 'Object and array properties',
-          two: 'will be broken to different lines',
-          three: 'if greater than `maxPropsIntoLine` option threshold.',
-        }}
-        array={['one', 'two', 'three', 'four']}
-        arrayOfObjects={[
-          {
-            one: 'Object and array properties will be broken to different lines',
-            two: 'if greater than `maxPropsIntoLine` option threshold.',
-            object: {
-              object1: {
-                one: 'one',
-                two: 'two',
-                three: 'three',
-              },
-              array: ['one', 'two', 'three'],
-              object2: {
-                object: {
-                  one: 'one',
-                  two: 'two',
-                  three: 'three',
-                },
-                array: [
-                  'one',
-                  'two',
-                  {
-                    object: {
-                      object: {
-                        one: 'one',
-                        two: 'two',
-                        three: 'three',
-                      },
-                      array: ['one', 'two', 'three'],
-                    },
-                  },
-                ],
-              },
-            },
-          },
-        ]}
-      />
-    ),
-    {
-      info: {
-        text: 'Component should be inlined between description and PropType table',
-        inline: true,
-        maxPropsIntoLine: 3,
-      },
-    }
-  );
-
 storiesOf('Addons|Info/Parameters', module)
   .addDecorator(
     withInfo({
@@ -436,3 +318,56 @@ storiesOf('Addons|Info/deprecated', module).add(
   'Displays Markdown in description',
   withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label="Button" />)
 );
+
+storiesOf('Addons|Info/Story Source', module)
+  .addDecorator(withInfo())
+  .add('Simple', () => <BaseButton />)
+  .add('One prop', () => <BaseButton label="Button" />)
+  .add('Many props', () => <BaseButton label="Button" onClick={action('clicked')} disabled />)
+  .add('Children', () => (
+    <div>
+      <p>Here is my nice button:</p>
+      <BaseButton label="Button" onClick={action('clicked')} />
+    </div>
+  ))
+  .add('Array prop', () => {
+    const propDefs = [
+      {
+        property: 'label',
+        propType: { name: 'string' },
+        required: true,
+        description: 'Text to display inside button',
+      },
+      {
+        property: 'disabled',
+        propType: { name: 'boolean' },
+        defaultValue: false,
+      },
+      {
+        property: 'onClick',
+        propType: { name: 'function' },
+        description: 'Callback for when button is clicked',
+        defaultValue: () => {},
+      },
+      {
+        property: 'style',
+        propType: { name: 'object' },
+        description: 'Styles to apply to button',
+        defaultValue: {},
+      },
+    ];
+    return <TableComponent propDefinitions={propDefs} />;
+  })
+  .add('Object prop', () => (
+    <BaseButton
+      label="Button"
+      style={{
+        color: 'midnightblue',
+        backgroundColor: 'powderblue',
+        fontSize: '16px',
+        boxShadow: '1px 1px rgba(0, 0, 0, .07)',
+        borderRadius: '5px',
+        padding: '4px 8px',
+      }}
+    />
+  ));

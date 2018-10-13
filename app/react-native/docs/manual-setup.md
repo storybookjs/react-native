@@ -6,31 +6,37 @@ First, install the `@storybook/react-native` module
 npm install @storybook/react-native
 ```
 
-Create a new directory called `storybook` in your project root and create an entry file (index.ios.js or index.android.js) as given below. (Don't forget to replace "MyApplicationName" with your app name).
+Create a new directory called `storybook` in your project root and create an entry file (index.js) as given below.
+(Don't forget to replace "MyApplicationName" with your app name).
 
+**storybook/index.js**
 ```js
 import { AppRegistry } from 'react-native';
 import { getStorybookUI, configure } from '@storybook/react-native';
-import './addons';
+import './rn-addons';
 
-// import your stories
-configure(function() {
+// import stories
+configure(() => {
+  // eslint-disable-next-line global-require
   require('./stories');
 }, module);
 
-const StorybookUI = getStorybookUI({
-  port: 7007,
-  host: 'localhost',
-});
-AppRegistry.registerComponent('MyApplicationName', () => StorybookUI);
+const StorybookUIRoot = getStorybookUI();
+
+AppRegistry.registerComponent('MyApplicationName', () => StorybookUIRoot);
+export default StorybookUIRoot;
 ```
 
-Create a file named `addons.js` file in `storybook` directory to use addons. Here is a list of default addons:
+Create a file called `rn-addons.js`
+In this file you can import on device addons.
 
-```js
-import '@storybook/addon-actions';
-import '@storybook/addon-links';
+**storybook/rn-addons.js**
 ```
+import '@storybook/addon-ondevice-knobs/register';
+import '@storybook/addon-ondevice-notes/register';
+...
+```
+
 
 Then write your first story in the `stories` directory like this:
 
@@ -58,12 +64,31 @@ storiesOf('CenteredView')
   ));
 ```
 
-Then add following NPM script into your `package.json` file:
+Finally replace your app entry with
+```js
+import './storybook';
+```
+If you cannot replace your entry point just make sure that the component exported from `./storybook` is displayed
+somewhere in your app. `StorybookUI` is simply a RN `View` component that can be embedded anywhere in your 
+RN application, e.g. on a tab or within an admin screen.
+
+## Server support
+
+If you want to support having a storybook server running add following NPM script into your `package.json` file:
 
 ```json
 {
   "scripts": {
-    "storybook": "storybook start -p 7007"
+    "storybook": "storybook start"
   }
 }
 ```
+
+If you want to have addons inside browser, create a file named `addons.js` file in `storybook`. Here is a list of default addons:
+
+**storybook/addons.js**
+```js
+import '@storybook/addon-actions';
+import '@storybook/addon-links';
+```
+
