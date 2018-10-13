@@ -36,17 +36,7 @@ jobs:
           root: .
           paths:
             - node_modules
-            - examples/angular-cli/node_modules
-            - examples/ember-cli/node_modules
-            - examples/cra-kitchen-sink/node_modules
-            - examples/mithril-kitchen-sink/node_modules
-            - examples/official-storybook/node_modules
-            - examples/polymer-cli/node_modules
-            - examples/vue-kitchen-sink/node_modules
-            - examples/svelte-kitchen-sink/node_modules
-            - examples/marko-cli/node_modules
-            - examples/html-kitchen-sink/node_modules
-            - examples/riot-kitchen-sink/node_modules
+            - examples
             - addons
             - app
             - lib
@@ -176,7 +166,7 @@ jobs:
           command: |
             cd examples/riot-kitchen-sink
             yarn storybook --smoke-test
-  react-native:
+  native-smoke-tests:
     <<: *defaults
     steps:
       - checkout
@@ -188,7 +178,7 @@ jobs:
       - run:
           name: Run React-Native-App example
           command: |
-            cd examples/crna-kitchen-sink
+            cd examples-native/crna-kitchen-sink
             yarn storybook --smoke-test
   docs:
     <<: *defaults
@@ -288,7 +278,7 @@ workflows:
       - smoke-tests:
           requires:
             - build
-      - react-native:
+      - native-smoke-tests:
           requires:
             - build
       - unit-test:

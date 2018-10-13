@@ -31,7 +31,7 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
         script {
             name = "crna-kitchen-sink"
             scriptContent = """
-                cd examples/crna-kitchen-sink
+                cd examples-native/crna-kitchen-sink
                 yarn storybook --smoke-test
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
