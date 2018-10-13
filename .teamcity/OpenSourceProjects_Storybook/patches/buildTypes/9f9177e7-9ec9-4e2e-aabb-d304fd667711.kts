@@ -14,6 +14,13 @@ changeBuildType("9f9177e7-9ec9-4e2e-aabb-d304fd667711") {
             snapshot {
                 onDependencyFailure = FailureAction.FAIL_TO_START
             }
+
+            artifacts {
+                artifactRules = """
+                    dependencies.zip
+                    dist.zip
+                """.trimIndent()
+            }
         }
 
     }
