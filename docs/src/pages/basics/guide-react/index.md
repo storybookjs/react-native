@@ -29,13 +29,14 @@ First of all, you need to add `@storybook/react` to your project. To do that, si
 npm i --save-dev @storybook/react
 ```
 
-## Add react, react-dom, and babel-core
+## Add react, react-dom, babel-core, and babel-loader
 
-Make sure that you have `react`, `react-dom`, and `babel-core` in your dependencies as well because we list these as a peerDependency:
+Make sure that you have `react`, `react-dom`, `babel-core`, and `babel-loader` in your dependencies as well because we list these as a peerDependency:
 
 ```sh
 npm i --save react react-dom
 npm i --save-dev babel-core
+npm i --save-dev babel-loader
 ```
 
 Then add the following NPM script to your package json in order to start the storybook later in this guide:

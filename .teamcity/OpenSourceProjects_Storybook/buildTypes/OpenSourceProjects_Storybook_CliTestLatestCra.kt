@@ -39,6 +39,11 @@ object OpenSourceProjects_Storybook_CliTestLatestCra : BuildType({
         vcs {
             quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
             triggerRules = "-:comment=^TeamCity change:**"
+            branchFilter = """
+                +:pull/*
+                +:release/*
+                +:master
+            """.trimIndent()
         }
         retryBuild {}
     }

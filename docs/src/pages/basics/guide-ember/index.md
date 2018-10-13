@@ -42,7 +42,7 @@ Then add the following NPM script to your package json in order to start the sto
 ```json
 {
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -s dist"
   }
 }
 ```
@@ -130,13 +130,42 @@ storiesOf('Demo', module)
     return {
       template: hbs`{{foo-bar
         click=onClick
-      }}`
-    },
-    context: {
-      onClick: (e) => console.log(e)
+      }}`,
+      context: {
+        onClick: (e) => console.log(e)
+      }
     }
   });
+```
 
+> If you are using an older version of ember <= 3.1 please use this story style
+
+```js
+import { compile } from 'ember-source/dist/ember-template-compiler';
+import { storiesOf } from '@storybook/ember';
+
+storiesOf('Demo', module)
+  .add('heading', () => compile(`<h1>Hello World</h1>`))
+  .add('button', () => {
+    return {
+      template: compile(`<button {{action onClick}}>
+        Hello Button
+      </button>`),
+      context: {
+        onClick: (e) => console.log(e)
+      }
+    }
+  })
+  .add('component', () => {
+    return {
+      template: compile(`{{foo-bar
+        click=onClick
+      }}`),
+      context: {
+        onClick: (e) => console.log(e)
+      }
+    }
+  });
 ```
 
 A story is either:

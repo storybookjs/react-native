@@ -146,4 +146,10 @@ lucid-ui:
   demo: https://appnexus.github.io/lucid/
   source: https://github.com/appnexus/lucid
   site: https://appnexus.com/
-
+trunx:
+  thumbnail: trunks.png
+  title: Trunx
+  description: Super Saiyan react components, son of awesome Bulma
+  demo: https://g14n.info/trunx
+  source: https://github.com/fibo/trunx
+  site: https://github.com/fibo/trunx
