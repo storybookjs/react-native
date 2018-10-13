@@ -20,6 +20,7 @@ changeBuildType("9f9177e7-9ec9-4e2e-aabb-d304fd667711") {
                     dependencies/**
                     docs/**
                 """.trimIndent()
+                enabled = false
             }
         }
 
