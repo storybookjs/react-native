@@ -14,7 +14,7 @@ changeBuildType("759f0116-2f7d-4c03-8220-56e4ab03be3a") {
             password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:8fa112e0-d0e0-4f9f-9f18-01471a999b4d", display = ParameterDisplay.HIDDEN)
         }
         update {
-            text("env.DANGER_GITHUB_API_TOKEN", "3936790cd2069ba42e6f7074f428302760bcefd5", display = ParameterDisplay.HIDDEN, allowEmpty = true)
+            password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:7f0943ab-dfca-49dd-b926-03062007bfd0")
         }
     }
 }
