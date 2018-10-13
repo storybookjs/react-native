@@ -11,17 +11,8 @@ object OpenSourceProjects_Storybook_Bootstrap : BuildType({
     name = "Bootstrap"
 
     artifactRules = """
-        node_modules => dependencies.zip
-        addons/*/node_modules => dependencies.zip
-        addons/storyshots/*/node_modules => dependencies.zip
-        app/*/node_modules => dependencies.zip
-        examples/*/node_modules => dependencies.zip
-        lib/*/node_modules => dependencies.zip
-        addons/*/dist => dist.zip
-        addons/storyshots/*/dist => dist.zip
-        app/*/dist => dist.zip
-        examples/*/dist => dist.zip
-        lib/*/dist => dist.zip
+        node_modules/** => dependencies.zip/node_modules
+        addons/*/node_modules/** => dependencies.zip/addons
     """.trimIndent()
 
     vcs {
