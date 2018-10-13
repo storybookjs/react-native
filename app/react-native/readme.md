@@ -11,8 +11,8 @@ For more information visit: [storybook.js.org](https://storybook.js.org)
 The `storybook` CLI tool can be used to add Storybook to your React Native app. Install the `storybook` tool if necessary and run it from your project directory with these commands:
 
 ```shell
-npm -g i @storybook/cli
-storybook init
+cd my-rn-app
+npx -p @storybook/cli@alpha sb init
 ```
 
 The next thing you need to do is make Storybook UI visible in your app.
@@ -22,16 +22,16 @@ The next thing you need to do is make Storybook UI visible in your app.
 The easiest way to use Storybook is to simply replace your App with the Storybook UI, which is possible by replacing `App.js` with a single line of code:
 
 ```js
-export default from './storybook';
+export default from "./storybook";
 ```
 
 This will get you up and running quickly, but then you lose your app!
 There are multiple options here. for example, you can export conditionally:
 
 ```js
-import StorybookUI from './storybook';
+import StorybookUI from "./storybook";
 
-import App from './app';
+import App from "./app";
 
 module.exports = __DEV__ ? StorybookUI : App;
 ```
@@ -40,8 +40,8 @@ module.exports = __DEV__ ? StorybookUI : App;
 
 `StorybookUI` is simply a RN `View` component that can be embedded anywhere in your RN application, e.g. on a tab or within an admin screen.
 
-
 ## Start Storybook server (optional)
+
 If you want to control storybook from browser/VS Code/websockets you need to start the server.
 After initial setup start the storybook server with the storybook npm script.
 
@@ -52,10 +52,11 @@ npm run storybook
 Now, you can open <http://localhost:7007> to view your storybook menus in the browser.
 
 ## Old standalone behaviour
+
 Since storybook version v4.0 packager is removed from storybook.
 The suggested storybook usage is to include it inside your app.
 If you want to keep the old behaviour, you have to start the packager yourself with a different project root.
- 
+
 ```
 npm run storybook start -p 7007 | react-native start --projectRoot storybook
 ```
@@ -82,7 +83,7 @@ If you are using Android and you get the following error after running the app: 
 The following parameters can be passed to the start command:
 
 ```
--h, --host <host> 
+-h, --host <host>
     host to listen on
 -p, --port <port>
     port to listen on
@@ -104,17 +105,17 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 
 ```
 {
-    onDeviceUI: Boolean (true) 
+    onDeviceUI: Boolean (true)
         -- display navigator and addons on the device
-    disableWebsockets: Boolean (false) 
+    disableWebsockets: Boolean (false)
         -- allows to display stories without running storybook server. Should be used with onDeviceUI
-    secured: Boolean (false) 
+    secured: Boolean (false)
         -- use wss/https instead of ws/http
-    host: String (NativeModules.SourceCode.scriptURL) 
+    host: String (NativeModules.SourceCode.scriptURL)
         -- host to use
     port: Number (7007)
         -- port to use
-    query: String ("") 
+    query: String ("")
         -- additional query string to pass to websockets
     isUIHidden: Boolean (false)
         -- should the ui be closed initialy.
@@ -122,7 +123,6 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
         -- which tab should be open. -1 Navigator, 0 Preview, 1 Addons
 }
 ```
-
 
 ## Learn More
 

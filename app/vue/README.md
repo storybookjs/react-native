@@ -11,21 +11,21 @@ So you can develop UI components in isolation without worrying about app specifi
 ## Getting Started
 
 ```sh
-npm i -g @storybook/cli
 cd my-vue-app
-storybook init
+npx -p @storybook/cli@alpha sb init
 ```
 
 For more information visit: [storybook.js.org](https://storybook.js.org)
 
 ## Starter Storybook-for-Vue Boilerplate project with [Vuetify](https://github.com/vuetifyjs/vuetify) Material Component Framework
+
 <https://github.com/white-rabbit-japan/vuetify-storyboard-boilerplate>
 
-* * *
+---
 
 Storybook also comes with a lot of [addons](https://storybook.js.org/addons/introduction) and a great API to customize as you wish.
 You can also build a [static version](https://storybook.js.org/basics/exporting-storybook) of your storybook and deploy it anywhere you want.
 
 ## Vue Notes
 
--   When using global custom components or extension (e.g `Vue.use`). You will need to declare those in the `./storybook/config.js`.
+- When using global custom components or extension (e.g `Vue.use`). You will need to declare those in the `./storybook/config.js`.
