@@ -1,3 +1,54 @@
+# 4.0.0-alpha.25
+
+2018-October-13
+
+#### Breaking Changes
+
+-   CLI: Rename CLI to sb [#4345](https://github.com/storybooks/storybook/pull/4345)
+-   React Native: Remove the packager from storybook [#4261](https://github.com/storybooks/storybook/pull/4261)
+
+#### Features
+
+-   CLI: specify project type interactively or as option [#4184](https://github.com/storybooks/storybook/pull/4184)
+-   Addon-Jest: expand supported file types [#3983](https://github.com/storybooks/storybook/pull/3983)
+-   CLI-less Node api [#4344](https://github.com/storybooks/storybook/pull/4344)
+-   React-Native: [onDeviceUI] Updated channel to support async option [#4326](https://github.com/storybooks/storybook/pull/4326)
+-   Angular: Add support for "baseUrl" and "paths" from angular-cli [#4162](https://github.com/storybooks/storybook/pull/4162)
+-   Angular: Added basePath support [#4323](https://github.com/storybooks/storybook/pull/4323)
+-   Vue: support string-only component [#4285](https://github.com/storybooks/storybook/pull/4285)
+-   Storyshots: Add snapshot serializer option [#4283](https://github.com/storybooks/storybook/pull/4283)
+-   Storyshots: Support story-specific options as function [#4282](https://github.com/storybooks/storybook/pull/4282)
+
+#### Bug Fixes
+
+-   [logging] better error logging for when opn fails to opn [#4348](https://github.com/storybooks/storybook/pull/4348)
+-   Fix iPhone viewport dimensions [#4293](https://github.com/storybooks/storybook/pull/4293)
+-   Fix Array.js value to string [#4336](https://github.com/storybooks/storybook/pull/4336)
+-   Fixes to cli ember support [#4318](https://github.com/storybooks/storybook/pull/4318)
+-   Update `addon-jest` to new propType [#4252](https://github.com/storybooks/storybook/pull/4252)
+
+#### Maintenance
+
+-   Remove CRNA fixture [#4346](https://github.com/storybooks/storybook/pull/4346)
+-   Try to fix cli tests [#4338](https://github.com/storybooks/storybook/pull/4338)
+-   Updated installation for Angular [#4302](https://github.com/storybooks/storybook/pull/4302)
+-   Fix the broken lint [#4310](https://github.com/storybooks/storybook/pull/4310)
+-   [ember] add dependencies to root application [#4309](https://github.com/storybooks/storybook/pull/4309)
+
+#### Dependency Upgrades
+
+-   Re-generate lockfiles [#4404](https://github.com/storybooks/storybook/pull/4404)
+-   Run `yarn upgrade-interactive --latest` in root and docs [#4403](https://github.com/storybooks/storybook/pull/4403)
+-   chore(deps): #4267 upgrade lodash to latest [#4284](https://github.com/storybooks/storybook/pull/4284)
+-   Bump express from 4.16.3 to 4.16.4 [#4370](https://github.com/storybooks/storybook/pull/4370)
+-   Bump @angular/cli from 6.2.4 to 6.2.5 [#4390](https://github.com/storybooks/storybook/pull/4390)
+-   CHANGE back to use html-webpack-plugin to keep compatibility with plugins that depend on it [#4375](https://github.com/storybooks/storybook/pull/4375)
+-   Bump danger from 4.4.6 to 4.4.7 [#4365](https://github.com/storybooks/storybook/pull/4365)
+-   Bump @storybook/react from 3.4.8 to 3.4.11 in /docs [#4354](https://github.com/storybooks/storybook/pull/4354)
+-   Bump sitemap from 1.13.0 to 2.0.1 in /docs [#4356](https://github.com/storybooks/storybook/pull/4356)
+-   Bump husky from 1.1.1 to 1.1.2 [#4358](https://github.com/storybooks/storybook/pull/4358)
+-   Tech/upgrades 5 [#4347](https://github.com/storybooks/storybook/pull/4347)
+
 # 4.0.0-alpha.24
 
 2018-October-04
