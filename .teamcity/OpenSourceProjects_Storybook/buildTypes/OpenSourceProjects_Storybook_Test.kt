@@ -53,8 +53,8 @@ object OpenSourceProjects_Storybook_Test : BuildType({
 
             artifacts {
                 artifactRules = """
-                    dependencies.zip
-                    dist.zip
+                    dependencies.zip!
+                    dist.zip!
                 """.trimIndent()
             }
         }
