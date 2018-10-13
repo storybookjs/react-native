@@ -30,6 +30,7 @@ object OpenSourceProjects_Storybook_Test : BuildType({
             name = "Test"
             scriptContent = """
                 yarn test --core --coverage --runInBand --teamcity
+                yarn coverage
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
