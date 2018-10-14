@@ -9,7 +9,7 @@
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "graphql": "node ./graphql-server/index.js",
     "image-snapshots": "yarn run build-storybook && yarn run do-image-snapshots",
-    "storybook": "start-storybook -p 9011 -c ./ -s built-storybooks"
+    "storybook": "STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 9011 -c ./ -s built-storybooks"
   },
   "devDependencies": {
     "@emotion/core": "^0.13.1",

@@ -1,6 +1,6 @@
 import { document } from 'global';
 
-export default function addHeadWarning(text, className) {
+export default function addHeadWarning(text, className = '') {
   const warning = document.createElement('h1');
   warning.textContent = text;
   warning.className = className;

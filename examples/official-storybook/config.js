@@ -9,6 +9,20 @@ import 'react-chromatic/storybook-addon';
 import addHeadWarning from './head-warning';
 import extraViewports from './extra-viewports.json';
 
+if (process.env.NODE_ENV === 'development') {
+  if (!process.env.DOTENV_DEVELOPMENT_DISPLAY_WARNING) {
+    addHeadWarning('Dotenv development file not loaded');
+  }
+
+  if (!process.env.STORYBOOK_DISPLAY_WARNING) {
+    addHeadWarning('Global storybook env var not loaded');
+  }
+
+  if (process.env.DISPLAY_WARNING) {
+    addHeadWarning('Global non-storybook env var loaded');
+  }
+}
+
 addHeadWarning('Preview head not loaded', 'preview-head-not-loaded');
 addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
 
