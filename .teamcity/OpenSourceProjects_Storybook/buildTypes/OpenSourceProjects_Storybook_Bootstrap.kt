@@ -11,12 +11,6 @@ object OpenSourceProjects_Storybook_Bootstrap : BuildType({
     name = "Bootstrap"
 
     artifactRules = """
-        node_modules/** => dependencies.zip/node_modules
-        addons/*/node_modules/** => dependencies.zip/addons
-        addons/storyshots/*/node_modules/** => dependencies.zip/addons/storyshots
-        app/*/node_modules/** => dependencies.zip/app
-        examples/*/node_modules/** => dependencies.zip/examples
-        lib/*/node_modules/** => dependencies.zip/lib
         addons/*/dist/** => dist.zip/addons
         addons/storyshots/*/dist/** => dist.zip/addons/storyshots
         app/*/dist/** => dist.zip/app
@@ -31,6 +25,10 @@ object OpenSourceProjects_Storybook_Bootstrap : BuildType({
         script {
             name = "Bootstrap"
             scriptContent = """
+                #!/bin/sh
+
+                set -e -x
+
                 yarn
                 yarn bootstrap --core
             """.trimIndent()

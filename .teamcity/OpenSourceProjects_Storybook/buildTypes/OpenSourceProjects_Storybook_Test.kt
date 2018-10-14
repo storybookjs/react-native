@@ -21,6 +21,10 @@ object OpenSourceProjects_Storybook_Test : BuildType({
         script {
             name = "Test"
             scriptContent = """
+                #!/bin/sh
+
+                set -e -x
+
                 yarn
                 yarn test --core --coverage --runInBand --teamcity
             """.trimIndent()
@@ -53,10 +57,7 @@ object OpenSourceProjects_Storybook_Test : BuildType({
             }
 
             artifacts {
-                artifactRules = """
-                    dependencies.zip!**
-                    dist.zip!**
-                """.trimIndent()
+                artifactRules = "dist.zip!**"
             }
         }
     }
