@@ -57,6 +57,7 @@ module.exports = {
       {
         devDependencies: [
           'examples/**',
+          'examples-native/**',
           '**/example/**',
           '*.js',
           '**/*.test.js',

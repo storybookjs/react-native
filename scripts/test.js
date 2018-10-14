@@ -50,13 +50,6 @@ const tasks = {
     projectLocation: path.join(__dirname, '..'),
     isJest: true,
   }),
-  'react-native-vanilla': createProject({
-    name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
-    defaultValue: true,
-    option: '--reactnative',
-    projectLocation: path.join(__dirname, '..', 'examples/react-native-vanilla'),
-    isJest: true,
-  }),
   image: createProject({
     name: `Image snapshots for Official storybook ${chalk.gray('(image)')}`,
     defaultValue: false,
@@ -70,7 +63,7 @@ const tasks = {
   //   )}`,
   //   defaultValue: false,
   //   option: '--reactnativeapp',
-  //   projectLocation: './examples/crna-kitchen-sink',
+  //   projectLocation: './examples-native/crna-kitchen-sink',
   //   isJest: true,
   // }),
   cli: createProject({

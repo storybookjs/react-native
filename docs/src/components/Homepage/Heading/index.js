@@ -5,9 +5,9 @@ import storybookLogo from '../../../design/homepage/storybook-logo.svg';
 
 const Heading = () => (
   <div id="heading" className="row">
-    <div className="col-xs-12">
+    <div className="col-xs-12 col-sm-12">
       <img className="sb-title" src={storybookLogo} alt="Storybook Logo" />
-      <h3 className="sb-tagline">
+      <h3 className="mt-4 sb-tagline">
         The UI Development Environment
         <br />
         You'll ♥️ to use

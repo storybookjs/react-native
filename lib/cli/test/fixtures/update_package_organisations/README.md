@@ -1175,16 +1175,10 @@ You can also deploy your Storybook as a static app. This way, everyone in your t
 
 **Here’s how to setup your app with Storybook:**
 
-First, install the following npm package globally:
-
-```sh
-npm install -g getstorybook
-```
-
 Then, run the following command inside your app’s directory:
 
 ```sh
-getstorybook
+npx -p @storybook/cli@alpha sb init
 ```
 
 After that, follow the instructions on the screen.

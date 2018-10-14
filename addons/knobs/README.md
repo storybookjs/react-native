@@ -263,13 +263,15 @@ Allows you to get a value from a list of radio buttons from the user.
 ```js
 import { radios } from '@storybook/addon-knobs';
 
+const label = 'Fruits';
 const options = {
       Kiwi: 'kiwi',
       Guava: 'guava',
       Watermelon: 'watermelon',
-    };
+};
+const defaultValue = 'kiwi';
 
-const  = radios(name, options, defaultValue);
+const value = radios(label, options, defaultValue);
 ```
 
 ### files

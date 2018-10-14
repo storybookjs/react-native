@@ -1,6 +1,6 @@
 // Based on http://backbonejs.org/docs/backbone.html#section-164
 import { document, Element } from 'global';
-import isEqual from 'lodash.isequal';
+import isEqual from 'lodash/isEqual';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
 

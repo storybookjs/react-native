@@ -3,7 +3,6 @@ package OpenSourceProjects_Storybook.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 
 object OpenSourceProjects_Storybook_Test : BuildType({
     uuid = "9f9177e7-9ec9-4e2e-aabb-d304fd667711"
@@ -19,26 +18,16 @@ object OpenSourceProjects_Storybook_Test : BuildType({
 
     steps {
         script {
-            name = "Bootstrap"
-            scriptContent = """
-                yarn
-                yarn bootstrap --core
-            """.trimIndent()
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
             name = "Test"
             scriptContent = """
+                #!/bin/sh
+
+                set -e -x
+
+                yarn
                 yarn test --core --coverage --runInBand --teamcity
-                yarn coverage
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
-        }
-    }
-
-    triggers {
-        vcs {
-            enabled = false
         }
     }
 
@@ -51,6 +40,18 @@ object OpenSourceProjects_Storybook_Test : BuildType({
                 }
             }
             param("github_oauth_user", "Hypnosphi")
+        }
+    }
+
+    dependencies {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+            snapshot {
+                onDependencyFailure = FailureAction.FAIL_TO_START
+            }
+
+            artifacts {
+                artifactRules = "dist.zip!**"
+            }
         }
     }
 

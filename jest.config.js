@@ -21,9 +21,10 @@ module.exports = {
     '<rootDir>/examples/riot-kitchen-sink',
     '<rootDir>/examples/html-kitchen-sink',
     '<rootDir>/examples/official-storybook',
+    '<rootDir>/examples/ember-cli',
     '<rootDir>/examples/angular-cli',
   ],
-  snapshotSerializers: ['jest-emotion/serializer'],
+  snapshotSerializers: ['@emotion/snapshot-serializer'],
   transform: {
     '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
     '^.+[/\\\\].storybook[/\\\\]config\\.ts$': '<rootDir>/scripts/jest-ts-babel.js',
@@ -48,6 +49,7 @@ module.exports = {
   setupTestFrameworkScriptFile: './scripts/jest.init.js',
   setupFiles: ['raf/polyfill'],
   testURL: 'http://localhost',
+  modulePathIgnorePatterns: ['/dist/.*/__mocks__/'],
   moduleFileExtensions: [
     'ts',
     'tsx',

@@ -32,12 +32,12 @@ ng new your-angular-prj
 cd your-angular-prj
 ```
 
-## Add @storybook/angular and babel-core
+## Add @storybook/angular, @babel/core, and babel-loader
 
-Next, install `@storybook/angular` and `babel-core` (it's a peerDependency) to your project:
+Next, install `@storybook/angular`, `@babel/core`, and `babel-loader` (it's a peerDependency) to your project:
 
 ```sh
-npm i --save-dev @storybook/angular babel-core
+npm i --save-dev @storybook/angular @babel/core babel-loader
 ```
 
 Then add the following NPM script to your package json in order to start the storybook later in this guide:
@@ -72,6 +72,31 @@ configure(loadStories, module);
 That'll load stories in `../src/stories/index.ts`.
 
 Just like that, you can load stories from wherever you want to.
+
+## Storybook TypeScript configuration
+
+**Note:** You only need this if you are using Storybook `>= 4.0.0-alpha.23`.
+
+`@storybook/angular` is using [ForkTsCheckerWebpackPlugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to boost the build performance. 
+This makes it necessary to create a `tsconfig.json` file at `.storybook/tsconfig.json` with the following content:
+
+```json
+{
+  "extends": "../tsconfig.json",
+  "exclude": [
+    "../src/test.ts",
+    "../src/**/*.spec.ts",
+    "../projects/**/*.spec.ts"
+  ],
+  "include": [
+    "../src/**/*",
+    "../projects/**/*"
+  ]
+}
+```
+
+> Only files that are included in the `include` or `files` section are checked for semantic TypeScript errors.
+> For more information visit the [ForkTsCheckerWebpackPlugin documentation](https://github.com/Realytics/fork-ts-checker-webpack-plugin#modules-resolution).
 
 ## Write your stories
 
