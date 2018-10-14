@@ -1,7 +1,9 @@
 package OpenSourceProjects_Storybook.patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.finishBuildTrigger
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2017_2.ui.*
 
 /*
@@ -11,6 +13,21 @@ accordingly, and delete the patch script.
 */
 changeBuildType("2b9c73e2-0a6e-47ca-95ae-729cac42be2b") {
     triggers {
+        val trigger1 = find<VcsTrigger> {
+            vcs {
+                quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
+                triggerRules = "-:comment=^TeamCity change:**"
+                branchFilter = """
+                    +:pull/*
+                    +:release/*
+                    +:master
+                    +:snyk-fix-*
+                """.trimIndent()
+            }
+        }
+        trigger1.apply {
+            enabled = false
+        }
         add {
             finishBuildTrigger {
                 buildTypeExtId = "OpenSourceProjects_Storybook_Bootstrap"
