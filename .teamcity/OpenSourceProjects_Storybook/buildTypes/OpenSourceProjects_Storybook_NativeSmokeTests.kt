@@ -21,16 +21,14 @@ object OpenSourceProjects_Storybook_NativeSmokeTests : BuildType({
 
     steps {
         script {
-            name = "Bootstrap"
-            scriptContent = """
-                yarn
-                yarn bootstrap --core --reactnativeapp
-            """.trimIndent()
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
             name = "crna-kitchen-sink"
             scriptContent = """
+                #!/bin/sh
+
+                set -e -x
+
+                yarn
+                yarn bootstrap --reactnativeapp
                 cd examples-native/crna-kitchen-sink
                 yarn storybook --smoke-test
             """.trimIndent()
@@ -47,6 +45,18 @@ object OpenSourceProjects_Storybook_NativeSmokeTests : BuildType({
                 }
             }
             param("github_oauth_user", "Hypnosphi")
+        }
+    }
+
+    dependencies {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+            snapshot {
+                onDependencyFailure = FailureAction.FAIL_TO_START
+            }
+
+            artifacts {
+                artifactRules = "dist.zip!**"
+            }
         }
     }
 

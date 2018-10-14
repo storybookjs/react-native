@@ -19,16 +19,13 @@ object OpenSourceProjects_Storybook_Test : BuildType({
 
     steps {
         script {
-            name = "Bootstrap"
-            scriptContent = """
-                yarn
-                yarn bootstrap --core
-            """.trimIndent()
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
             name = "Test"
             scriptContent = """
+                #!/bin/sh
+
+                set -e -x
+
+                yarn
                 yarn test --core --coverage --runInBand --teamcity
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
@@ -50,6 +47,18 @@ object OpenSourceProjects_Storybook_Test : BuildType({
                 }
             }
             param("github_oauth_user", "Hypnosphi")
+        }
+    }
+
+    dependencies {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+            snapshot {
+                onDependencyFailure = FailureAction.FAIL_TO_START
+            }
+
+            artifacts {
+                artifactRules = "dist.zip!**"
+            }
         }
     }
 

@@ -25,13 +25,15 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
 
     steps {
         script {
-            name = "Install"
-            scriptContent = "yarn"
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
             name = "Danger"
-            scriptContent = "yarn danger ci"
+            scriptContent = """
+                #!/bin/sh
+
+                set -e -x
+
+                yarn
+                yarn danger ci
+            """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
     }

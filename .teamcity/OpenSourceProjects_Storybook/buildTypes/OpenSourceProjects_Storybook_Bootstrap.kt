@@ -11,8 +11,10 @@ object OpenSourceProjects_Storybook_Bootstrap : BuildType({
     name = "Bootstrap"
 
     artifactRules = """
-        node_modules/** => dependencies.zip/node_modules
-        addons/*/node_modules/** => dependencies.zip/addons
+        addons/*/dist/** => dist.zip/addons
+        addons/storyshots/*/dist/** => dist.zip/addons/storyshots
+        app/*/dist/** => dist.zip/app
+        lib/*/dist/** => dist.zip/lib
     """.trimIndent()
 
     vcs {
@@ -23,6 +25,10 @@ object OpenSourceProjects_Storybook_Bootstrap : BuildType({
         script {
             name = "Bootstrap"
             scriptContent = """
+                #!/bin/sh
+
+                set -e -x
+
                 yarn
                 yarn bootstrap --core
             """.trimIndent()
