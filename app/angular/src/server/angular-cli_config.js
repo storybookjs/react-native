@@ -7,6 +7,7 @@ import { isBuildAngularInstalled, normalizeAssetPatterns } from './angular-cli_u
 function getTsConfigOptions(tsConfigPath) {
   const basicOptions = {
     options: {},
+    raw: {},
     fileNames: [],
     errors: [],
   };
@@ -110,7 +111,10 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
   // because @angular-devkit/build-angular created rules have include/exclude for global style files.
   const rulesExcludingStyles = baseConfig.module.rules.filter(
     rule =>
-      !rule.test || (rule.test.toString() !== '/\\.css$/' && rule.test.toString() !== '/\\.sass$/' && rule.test.toString() !== '/\\.scss$/')
+      !rule.test ||
+      (rule.test.toString() !== '/\\.css$/' &&
+        rule.test.toString() !== '/\\.sass$/' &&
+        rule.test.toString() !== '/\\.scss$/')
   );
 
   // cliStyleConfig.entry adds global style files to the webpack context

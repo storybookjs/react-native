@@ -4,8 +4,9 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.finishBuildTrigger
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.retryBuild
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.merge
 import jetbrains.buildServer.configs.kotlin.v2017_2.ui.*
@@ -32,11 +33,17 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
                 +:pull/*
                 +:release/*
                 +:master
-                +:dependencies.io-*
+                +:snyk-fix-*
             """.trimIndent()
         }
         retryBuild {
             delaySeconds = 60
+        }
+        finishBuildTrigger {
+            enabled = false
+            buildTypeExtId = "OpenSourceProjects_Storybook_Bootstrap"
+            successfulOnly = true
+            branchFilter = ""
         }
     }
 
@@ -63,7 +70,9 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
             param("github_oauth_user", "Hypnosphi")
         }
         merge {
-            branchFilter = "+:dependencies.io-*"
+            branchFilter = """
+                +:snyk-fix-*
+            """.trimIndent()
             destinationBranch = "<default>"
             commitMessage = "Merge branch '%teamcity.build.branch%'"
         }
@@ -85,7 +94,7 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
                 onDependencyCancel = FailureAction.ADD_PROBLEM
             }
         }
-        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_ReactNative) {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_NativeSmokeTests) {
             snapshot {
                 onDependencyCancel = FailureAction.ADD_PROBLEM
             }

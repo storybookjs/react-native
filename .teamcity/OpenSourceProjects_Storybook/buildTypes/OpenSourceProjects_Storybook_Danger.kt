@@ -13,8 +13,8 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
     name = "Danger"
 
     params {
-        password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:8fa112e0-d0e0-4f9f-9f18-01471a999b4d", display = ParameterDisplay.HIDDEN)
-        param("env.PULL_REQUEST_URL", "https://github.com/storybooks/storybook/%teamcity.build.branch%")
+        password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:7f0943ab-dfca-49dd-b926-03062007bfd0")
+        param("env.PULL_REQUEST_URL", "https://github.com/storybooks/storybook/pull/%teamcity.build.branch%")
     }
 
     vcs {
@@ -25,13 +25,15 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
 
     steps {
         script {
-            name = "Install"
-            scriptContent = "yarn"
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
             name = "Danger"
-            scriptContent = "yarn danger ci"
+            scriptContent = """
+                #!/bin/sh
+
+                set -e -x
+
+                yarn
+                yarn danger ci
+            """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
     }
@@ -39,7 +41,6 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
     triggers {
         vcs {
             quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
-            triggerRules = "-:comment=^TeamCity change:**"
             branchFilter = """
                 +:*
                 -:master
@@ -59,6 +60,12 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
                 }
             }
             param("github_oauth_user", "Hypnosphi")
+        }
+        feature {
+            type = "pullRequests"
+            param("filterAuthorRole", "EVERYBODY")
+            param("authenticationType", "token")
+            param("secure:accessToken", "credentialsJSON:5ffe2d7e-531e-4f6f-b1fc-a41bfea26eaa")
         }
     }
 

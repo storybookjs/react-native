@@ -16,7 +16,6 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
     MARKO("Marko", "marko-cli"),
     SVELTE("Svelte", "svelte-kitchen-sink"),
     RIOT("Riot", "riot-kitchen-sink"),
-    HYPERAPP("Hyperapp", "hyperapp-kitchen-sink", false),
     EMBER("Ember", "ember-cli");
 
     val lowerName = appName.toLowerCase()
@@ -38,20 +37,13 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
 
         steps {
             script {
-                name = "Bootstrap"
-                scriptContent = """
-                    yarn
-                    yarn bootstrap --core
-                """.trimIndent()
-                dockerImage = "node:%docker.node.version%"
-            }
-            script {
                 name = "build"
                 scriptContent = """
                     #!/bin/sh
 
                     set -e -x
 
+                    yarn
                     cd examples/$exampleDir
                     yarn build-storybook
                 """.trimIndent()
@@ -80,6 +72,18 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
                     }
                 }
                 param("github_oauth_user", "Hypnosphi")
+            }
+        }
+
+        dependencies {
+            dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+                snapshot {
+                    onDependencyFailure = FailureAction.FAIL_TO_START
+                }
+
+                artifacts {
+                    artifactRules = "dist.zip!**"
+                }
             }
         }
 

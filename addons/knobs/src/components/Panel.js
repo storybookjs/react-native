@@ -15,6 +15,8 @@ const getTimestamp = () => +new Date();
 const DEFAULT_GROUP_ID = 'ALL';
 
 const PanelWrapper = styled.div({
+  height: '100%',
+  overflow: 'auto',
   width: '100%',
 });
 

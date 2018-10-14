@@ -49,6 +49,7 @@ module.exports = {
   setupTestFrameworkScriptFile: './scripts/jest.init.js',
   setupFiles: ['raf/polyfill'],
   testURL: 'http://localhost',
+  modulePathIgnorePatterns: ['/dist/.*/__mocks__/'],
   moduleFileExtensions: [
     'ts',
     'tsx',
