@@ -35,7 +35,6 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
                 +:master
                 +:snyk-fix-*
             """.trimIndent()
-            enabled = false
         }
         retryBuild {
             delaySeconds = 60
