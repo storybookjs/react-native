@@ -13336,6 +13336,17 @@ lazy-cache@^1.0.3:
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
   integrity sha1-odePw6UEdMuAhF07O24dpJpEbo4=
 
+lazy-universal-dotenv@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/lazy-universal-dotenv/-/lazy-universal-dotenv-1.9.1.tgz#d3fe9d5dd30309fc84eea1dab2a03585491474f9"
+  integrity sha512-Xd8XLG1S1TgoOcuPJZcxzAadRhXG5HLzOHUMPlon9VV/ewhAc56HGKPWbES99owbBoextbG8nb/AQA3c0S7TIQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    app-root-dir "^1.0.2"
+    core-js "^2.5.7"
+    dotenv "^6.0.0"
+    dotenv-expand "^4.2.0"
+
 lcid@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/lcid/-/lcid-1.0.0.tgz#308accafa0bc483a3867b4b6f2b9506251d1b835"
@@ -22097,17 +22108,6 @@ unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.1:
   integrity sha512-FiGu34ziNsZA3ZUteZxSFaczIjGmksfSgdKqBfOejrrfzyUy5b7YrlzT1Bcvi+djkYDituJDy2XB7tGTeBieKw==
   dependencies:
     unist-util-visit-parents "^2.0.0"
-
-universal-dotenv@^1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/universal-dotenv/-/universal-dotenv-1.9.1.tgz#b19730a2d8a83b8c5b72e5db09ef44dc30539b83"
-  integrity sha512-38GhLyN0rAz7040sltVEDSkO/yTcShKJFBIX5/4Hi/c//wUS9UgvnP1GDTLVs9CR+XARLsihPBciSS9y+USyKA==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    app-root-dir "^1.0.2"
-    core-js "^2.5.7"
-    dotenv "^6.0.0"
-    dotenv-expand "^4.2.0"
 
 universal-user-agent@^2.0.0:
   version "2.0.1"
