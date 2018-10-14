@@ -48,9 +48,11 @@ object OpenSourceProjects_Storybook_Bootstrap : BuildType({
                 +:master
                 +:snyk-fix-*
             """.trimIndent()
+            enabled = false
         }
         retryBuild {
             delaySeconds = 60
+            enabled = false
         }
     }
 

@@ -4,6 +4,8 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.finishBuildTrigger
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.retryBuild
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.merge
@@ -24,10 +26,22 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
     }
 
     triggers {
+        vcs {
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
+            triggerRules = "-:comment=^TeamCity change:**"
+            branchFilter = """
+                +:pull/*
+                +:release/*
+                +:master
+                +:snyk-fix-*
+            """.trimIndent()
+            enabled = false
+        }
         retryBuild {
             delaySeconds = 60
         }
         finishBuildTrigger {
+            enabled = false
             buildTypeExtId = "OpenSourceProjects_Storybook_Bootstrap"
             successfulOnly = true
             branchFilter = ""
