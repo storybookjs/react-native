@@ -3,7 +3,6 @@ package OpenSourceProjects_Storybook.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 
 object OpenSourceProjects_Storybook_Test : BuildType({
     uuid = "9f9177e7-9ec9-4e2e-aabb-d304fd667711"
@@ -29,12 +28,6 @@ object OpenSourceProjects_Storybook_Test : BuildType({
                 yarn test --core --coverage --runInBand --teamcity
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
-        }
-    }
-
-    triggers {
-        vcs {
-            enabled = false
         }
     }
 
