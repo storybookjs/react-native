@@ -13336,10 +13336,10 @@ lazy-cache@^1.0.3:
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
   integrity sha1-odePw6UEdMuAhF07O24dpJpEbo4=
 
-lazy-universal-dotenv@^1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/lazy-universal-dotenv/-/lazy-universal-dotenv-1.9.1.tgz#d3fe9d5dd30309fc84eea1dab2a03585491474f9"
-  integrity sha512-Xd8XLG1S1TgoOcuPJZcxzAadRhXG5HLzOHUMPlon9VV/ewhAc56HGKPWbES99owbBoextbG8nb/AQA3c0S7TIQ==
+lazy-universal-dotenv@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/lazy-universal-dotenv/-/lazy-universal-dotenv-2.0.0.tgz#e015ad9f77be9ef811956d53ea9519b1c0ab0214"
+  integrity sha512-1Wi0zgZMfRLaRAK21g3odYuU+HE1d85Loe2tb44YhcNwIzhmD49mTPR9aKckpB9Q9Q9mA+hUMLI2xlkcCAe3yw==
   dependencies:
     "@babel/runtime" "^7.0.0"
     app-root-dir "^1.0.2"
