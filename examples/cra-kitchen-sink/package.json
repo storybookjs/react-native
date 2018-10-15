@@ -37,6 +37,6 @@
     "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
     "jest": "^23.6.0",
-    "react-scripts": "^2.0.4"
+    "react-scripts": "^2.0.5"
   }
 }
