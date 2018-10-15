@@ -55,7 +55,7 @@
     "file-system-cache": "^1.0.5",
     "find-cache-dir": "^2.0.0",
     "global": "^4.3.2",
-    "html-webpack-plugin": "^4.0.0-beta.1",
+    "html-webpack-plugin": "^4.0.0-beta.2",
     "inquirer": "^6.2.0",
     "interpret": "^1.1.0",
     "ip": "^1.1.5",
