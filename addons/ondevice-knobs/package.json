@@ -28,7 +28,7 @@
     "prop-types": "^15.6.2",
     "react-native-color-picker": "^0.4.0",
     "react-native-modal-datetime-picker": "^5.1.0",
-    "react-native-modal-selector": "^0.0.27",
+    "react-native-modal-selector": "^0.0.29",
     "react-native-switch": "^1.5.0"
   },
   "peerDependencies": {

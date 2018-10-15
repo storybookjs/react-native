@@ -18136,10 +18136,10 @@ react-native-modal-datetime-picker@^5.1.0:
     prop-types "^15.6.1"
     react-native-modal "^5.4.0"
 
-react-native-modal-selector@^0.0.27:
-  version "0.0.27"
-  resolved "https://registry.yarnpkg.com/react-native-modal-selector/-/react-native-modal-selector-0.0.27.tgz#27f51168596f7ac6ed5edfbaa3e43c0ddfee6415"
-  integrity sha512-+fRU70AHTMnrXKGeSJ1N/qkdIrIGqJy/3i3/pA7OgMN1UGYWC1TSQDaLcevcqbr3vM1+GqRWISkbpd5SJHMsNw==
+react-native-modal-selector@^0.0.29:
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/react-native-modal-selector/-/react-native-modal-selector-0.0.29.tgz#e33326a9191ce6a6ed07c222366eb13ba5e03e21"
+  integrity sha512-wgsgMEPtZrSFt2VfYErDPw6K6m7QI/QVix/9zO6bn3+1rmEhjfDS/0ju1V0zqiMXR8LdxiRxqrFlzW7db+2Kig==
   dependencies:
     prop-types "^15.5.10"
 
