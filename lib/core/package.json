@@ -60,7 +60,7 @@
     "interpret": "^1.1.0",
     "ip": "^1.1.5",
     "json5": "^2.1.0",
-    "lazy-universal-dotenv": "^1.9.1",
+    "lazy-universal-dotenv": "^2.0.0",
     "node-fetch": "^2.2.0",
     "opn": "^5.4.0",
     "postcss-flexbugs-fixes": "^4.1.0",
