@@ -8108,10 +8108,10 @@ ember-cli-htmlbars@^3.0.1:
     json-stable-stringify "^1.0.0"
     strip-bom "^3.0.0"
 
-ember-cli-inject-live-reload@^1.10.1:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/ember-cli-inject-live-reload/-/ember-cli-inject-live-reload-1.10.1.tgz#c89b3948c756f17164362c0647a545e8e33e8079"
-  integrity sha512-KoPxnGId4rlB5ZWAyl6IuFsrEVgf+RRpRNlmlhZ08xY0bRs1gXE62SCrmPi2Y48+od2pzw/yhFVKQTPSxi30kA==
+ember-cli-inject-live-reload@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-inject-live-reload/-/ember-cli-inject-live-reload-2.0.0.tgz#6808b46f17a9625861f66c3b86aff169001cd65d"
+  integrity sha512-AUGORo3Y2eIhEI/TgW3Bmvr6cESmEbfjuv6SuGV9rwXCZ74QM2Kf4SSaVcU4LSY779kDIm47nB8FIg0O7ckgww==
   dependencies:
     clean-base-url "^1.0.0"
     ember-cli-version-checker "^2.1.2"
