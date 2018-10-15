@@ -6,6 +6,9 @@
     "addon",
     "storybook"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/google-analytics",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
