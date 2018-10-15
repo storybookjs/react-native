@@ -3,9 +3,9 @@ coursera:
   title: Coursera
   description: Coursera UI component library
   demo: https://building.coursera.org/coursera-ui/
-grommit:
-  thumbnail: grommit.png
-  title: Grommit
+grommet:
+  thumbnail: grommet.png
+  title: Grommet
   description: Styled components for Reactjs
   demo: https://storybook.grommet.io/
   site: https://v2.grommet.io/
