@@ -65,3 +65,8 @@ patch:
   'npm:moment:20170905':
     - gatsby > webpack-validator > joi > moment:
         patched: '2018-10-12T13:09:42.105Z'
+  'npm:tunnel-agent:20170305':
+    - gatsby-plugin-sharp > imagemin-mozjpeg > mozjpeg > bin-build > download > caw > tunnel-agent:
+        patched: '2018-10-16T09:11:57.220Z'
+    - gatsby-plugin-sharp > imagemin-mozjpeg > mozjpeg > bin-wrapper > download > caw > tunnel-agent:
+        patched: '2018-10-16T09:11:57.220Z'
