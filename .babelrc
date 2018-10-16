@@ -28,6 +28,25 @@
         "@babel/preset-env",
         "babel-preset-vue"
       ]
+    },
+    {
+      "test": [
+        "./lib/core/src/server",
+        "./lib/node-logger",
+        "./addons/storyshots",
+        "./addons/storysource/src/loader",
+        "./app/**/src/server/**"
+      ],
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "8.11"
+            }
+          }
+        ]
+      ]
     }
   ]
 }
