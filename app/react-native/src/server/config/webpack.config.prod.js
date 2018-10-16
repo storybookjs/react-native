@@ -1,14 +1,20 @@
 import path from 'path';
 import webpack from 'webpack';
-import { getEnvironment } from 'universal-dotenv';
 import Dotenv from 'dotenv-webpack';
-import GeneratePagePlugin from 'generate-page-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 import { getManagerHeadHtml } from '@storybook/core/dist/server/utils';
 import { version } from '../../../package.json';
-import { includePaths, excludePaths } from './utils';
+import { includePaths, excludePaths, loadEnv } from './utils';
 
 const getConfig = options => {
+  const environment = loadEnv({ production: true });
+  const entriesMeta = {
+    manager: {
+      headHtmlSnippet: getManagerHeadHtml(options.configDir, process.env),
+    },
+  };
+
   const config = {
     mode: 'production',
     bail: true,
@@ -27,24 +33,25 @@ const getConfig = options => {
       publicPath: '/',
     },
     plugins: [
-      new GeneratePagePlugin(
-        {
-          template: require.resolve('@storybook/core/dist/server/templates/index.html.ejs'),
-          // eslint-disable-next-line global-require
-          parser: require('ejs'),
-          filename: entry => (entry === 'manager' ? 'index' : entry),
-        },
-        {
-          data: { version },
-          headHtmlSnippet: getManagerHeadHtml(options.configDir, process.env),
-        }
-      ),
+      new HtmlWebpackPlugin({
+        filename: `index.html`,
+        chunksSortMode: 'none',
+        alwaysWriteToDisk: true,
+        inject: false,
+        templateParameters: (compilation, files, o) => ({
+          compilation,
+          files,
+          options: o,
+          version,
+          ...entriesMeta.manager,
+        }),
+        template: require.resolve(`@storybook/core/src/server/templates/index.ejs`),
+      }),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"production"',
         storybookOptions: JSON.stringify(options),
       }),
       new webpack.optimize.DedupePlugin(),
-      new webpack.DefinePlugin(getEnvironment().webpack),
+      new webpack.DefinePlugin(environment),
       new Dotenv({ silent: true }),
     ],
     module: {

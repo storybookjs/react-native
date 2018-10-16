@@ -1,18 +1,17 @@
 import path from 'path';
 import webpack from 'webpack';
-import { getEnvironment } from 'universal-dotenv';
 import Dotenv from 'dotenv-webpack';
 import WatchMissingNodeModulesPlugin from 'react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
-
-import GeneratePagePlugin from 'generate-page-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 import { getManagerHeadHtml } from '@storybook/core/server';
 
-import { includePaths, excludePaths, nodeModulesPaths } from './utils';
+import { includePaths, excludePaths, nodeModulesPaths, loadEnv } from './utils';
 import { version } from '../../../package.json';
 
 const getConfig = options => {
+  const environment = loadEnv();
   const entriesMeta = {
     manager: {
       headHtmlSnippet: getManagerHeadHtml(options.configDir, process.env),
@@ -31,29 +30,28 @@ const getConfig = options => {
       publicPath: '/',
     },
     plugins: [
-      new GeneratePagePlugin(
-        {
-          template: require.resolve('@storybook/core/dist/server/templates/index.html.ejs'),
-          // eslint-disable-next-line global-require
-          parser: require('ejs'),
-          filename: entry => (entry === 'manager' ? 'index' : entry),
-        },
-        {
-          data: { version },
-          headHtmlSnippet: entry =>
-            entriesMeta[entry] ? entriesMeta[entry].headHtmlSnippet : null,
-          bodyHtmlSnippet: entry =>
-            entriesMeta[entry] ? entriesMeta[entry].bodyHtmlSnippet : null,
-        }
-      ),
-      new webpack.HotModuleReplacementPlugin(),
-      new CaseSensitivePathsPlugin(),
-      new WatchMissingNodeModulesPlugin(nodeModulesPaths),
-      new webpack.DefinePlugin(getEnvironment().webpack),
-      new Dotenv({ silent: true }),
+      new HtmlWebpackPlugin({
+        filename: `index.html`,
+        chunksSortMode: 'none',
+        alwaysWriteToDisk: true,
+        inject: false,
+        templateParameters: (compilation, files, o) => ({
+          compilation,
+          files,
+          options: o,
+          version,
+          ...entriesMeta.manager,
+        }),
+        template: require.resolve(`@storybook/core/src/server/templates/index.ejs`),
+      }),
       new webpack.DefinePlugin({
         storybookOptions: JSON.stringify(options),
       }),
+      new webpack.HotModuleReplacementPlugin(),
+      new CaseSensitivePathsPlugin(),
+      new WatchMissingNodeModulesPlugin(nodeModulesPaths),
+      new webpack.DefinePlugin(environment),
+      new Dotenv({ silent: true }),
     ],
     module: {
       rules: [

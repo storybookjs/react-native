@@ -43,25 +43,16 @@ export default class StoryListView extends Component {
     };
 
     this.storyAddedHandler = this.handleStoryAdded.bind(this);
-    this.changeStoryHandler = this.changeStory.bind(this);
 
     props.stories.on(Events.STORY_ADDED, this.storyAddedHandler);
   }
 
   componentDidMount() {
-    const { stories } = this.props;
-
     this.handleStoryAdded();
-    const dump = stories.dumpStoryBook();
-    const nonEmptyKind = dump.find(kind => kind.stories.length > 0);
-    if (nonEmptyKind) {
-      this.changeStory(nonEmptyKind.kind, nonEmptyKind.stories[0]);
-    }
   }
 
   componentWillUnmount() {
     const { stories } = this.props;
-
     stories.removeListener(Events.STORY_ADDED, this.storyAddedHandler);
   }
 
@@ -93,13 +84,13 @@ export default class StoryListView extends Component {
   }
 
   render() {
-    const { width, selectedKind, selectedStory } = this.props;
+    const { selectedKind, selectedStory } = this.props;
     const { data } = this.state;
 
     return (
       <SectionList
         testID="Storybook.ListView"
-        style={[style.list, { width }]}
+        style={[style.list]}
         renderItem={({ item }) => (
           <ListItem
             title={item.name}
@@ -133,7 +124,6 @@ StoryListView.propTypes = {
   }).isRequired,
   selectedKind: PropTypes.string,
   selectedStory: PropTypes.string,
-  width: PropTypes.number.isRequired,
 };
 
 StoryListView.defaultProps = {

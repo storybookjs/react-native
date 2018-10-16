@@ -22,16 +22,15 @@ object OpenSourceProjects_Storybook_Chromatic : BuildType({
 
     steps {
         script {
-            name = "Bootstrap"
-            scriptContent = """
-                yarn
-                yarn bootstrap --core
-            """.trimIndent()
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
             name = "Chromatic"
-            scriptContent = "yarn chromatic"
+            scriptContent = """
+                #!/bin/sh
+
+                set -e -x
+
+                yarn
+                yarn chromatic
+            """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
     }
@@ -49,6 +48,15 @@ object OpenSourceProjects_Storybook_Chromatic : BuildType({
     }
 
     dependencies {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+            snapshot {
+                onDependencyFailure = FailureAction.FAIL_TO_START
+            }
+
+            artifacts {
+                artifactRules = "dist.zip!**"
+            }
+        }
         allApps {
             dependency(config) {
                 snapshot {}

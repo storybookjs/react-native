@@ -1,42 +1,46 @@
-import { StyleSheet } from 'react-native-compat';
-
 export default {
   main: {
     flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'white',
-  },
-  icon: {
-    width: 30,
-    height: 30,
-  },
-  headerContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    margin: 10,
   },
   headerText: {
     marginLeft: 10,
     fontSize: 20,
     color: 'black',
   },
-  menuContainer: {
-    ...StyleSheet.absoluteFillObject,
-    right: null,
-    paddingHorizontal: 10,
-    paddingBottom: 10,
-    backgroundColor: 'white',
+  text: {
+    fontSize: 18,
   },
-  previewContainer: {
+  center: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  hideButtonText: {
+    fontSize: 14,
+    color: '#999999',
+  },
+  hideButton: {
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    right: 8,
+    bottom: 12,
+  },
+  previewMinimized: {
+    borderWidth: 1,
+    borderColor: '#b3b3b3',
+  },
+  tab: {
+    marginRight: 15,
+  },
+  addonList: {
+    flexDirection: 'row',
+  },
+  invisible: {
+    height: 0,
+    width: 0,
+    opacity: 0,
+    position: 'absolute',
+  },
+  flex: {
     flex: 1,
-  },
-  previewWrapper: {
-    flex: 1,
-  },
-  closeButton: {
-    marginVertical: 10,
-  },
-  preview: {
-    ...StyleSheet.absoluteFillObject,
   },
 };
