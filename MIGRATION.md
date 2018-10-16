@@ -110,7 +110,7 @@ Storybook now uses Babel 7. There's a couple of cases when it can break with you
 If you are using `create-react-app` (aka CRA), you may need to do some manual steps to upgrade, depending on the setup.
 
 - `create-react-app@1` may require manual migrations.
-  - If you're adding storybook for the first time, it should just work: `storybook init` should add the correct dependencies.
+  - If you're adding storybook for the first time, it should just work: `sb init` should add the correct dependencies.
   - If you've upgrading an existing project, your `package.json` probably already uses Babel 6, making it incompatible with `@storybook/react@4` which uses Babel 7. There are two ways to make it compatible, each of which is spelled out in detail in the next section:
     - Upgrade to Babel 7 if you are not dependent on Babel 6-specific features.
     - Migrate Babel 6 if you're heavily dependent on some Babel 6-specific features).
