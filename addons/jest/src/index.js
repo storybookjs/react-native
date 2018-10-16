@@ -2,9 +2,9 @@ import addons from '@storybook/addons';
 import deprecate from 'util-deprecate';
 import { normalize } from 'upath';
 
-const findTestResults = (testFiles, jestTestResults, jestTestFilesOptions) =>
+const findTestResults = (testFiles, jestTestResults, jestTestFilesExt) =>
   Object.values(testFiles).map(name => {
-    const fileName = `${name}${jestTestFilesOptions.filesExt}`;
+    const fileName = `${name}${jestTestFilesExt}`;
     if (jestTestResults && jestTestResults.testResults) {
       return {
         fileName,
