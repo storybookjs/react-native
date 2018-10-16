@@ -40,7 +40,7 @@
     "global": "^4.3.2",
     "highlight.js": "^9.13.0",
     "lodash": "^4.17.11",
-    "marked": "^0.4.0",
+    "marked": "^0.5.1",
     "prop-types": "^15.6.2",
     "react": "^15.6.2",
     "react-document-title": "^2.0.3",
