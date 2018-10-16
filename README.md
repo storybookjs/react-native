@@ -101,7 +101,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 ### Addons
 
 | Addons                                      |                                                                            |
-| --------------------------------------------| -------------------------------------------------------------------------- |
+| ------------------------------------------- | -------------------------------------------------------------------------- |
 | [a11y](addons/a11y/)                        | Test components for user accessibility in Storybook                        |
 | [actions](addons/actions/)                  | Log actions as users interact with components in the Storybook UI          |
 | [backgrounds](addons/backgrounds/)          | Let users choose backgrounds in the Storybook UI                           |
