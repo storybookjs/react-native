@@ -49,6 +49,12 @@ import { number } from "@storybook/addon-knobs";
 
 4.0 also reversed the order of addon-knob's `select` knob keys/values, which had been called `selectV2` prior to this breaking change. See the knobs [package README](https://github.com/storybooks/storybook/blob/master/addons/knobs/README.md#select) for usage.
 
+### Knobs URL parameters
+
+Addon-knobs no longer updates the URL parameters interactively as you edit a knob. This is a UI change but it shouldn't break any code because old URLs are still supported.
+
+In 3.x, editing knobs updated the URL parameters interactively. The implementation had performance and architectural problems. So in 4.0, we changed this to a "copy" button tp the addon which generates a URL with the updated knob values and copies it to the clipboard.
+
 ### Keyboard shortcuts moved
 
 - Addon Panel to `Z`
@@ -104,7 +110,7 @@ Storybook now uses Babel 7. There's a couple of cases when it can break with you
 If you are using `create-react-app` (aka CRA), you may need to do some manual steps to upgrade, depending on the setup.
 
 - `create-react-app@1` may require manual migrations.
-  - If you're adding storybook for the first time, it should just work: `storybook init` should add the correct dependencies.
+  - If you're adding storybook for the first time, it should just work: `sb init` should add the correct dependencies.
   - If you've upgrading an existing project, your `package.json` probably already uses Babel 6, making it incompatible with `@storybook/react@4` which uses Babel 7. There are two ways to make it compatible, each of which is spelled out in detail in the next section:
     - Upgrade to Babel 7 if you are not dependent on Babel 6-specific features.
     - Migrate Babel 6 if you're heavily dependent on some Babel 6-specific features).
@@ -140,7 +146,7 @@ If you're using `start-storybook` on CI, you may need to opt out of this using t
 We've deprecated the `getstorybook` CLI in 4.0. The new way to install storybook is `sb init`. We recommend using `npx` for convenience and to make sure you're always using the latest version of the CLI:
 
 ```
-npx -p @storybook/cli sb init
+npx -p @storybook/cli@alpha sb init
 ```
 
 ## From version 3.3.x to 3.4.x

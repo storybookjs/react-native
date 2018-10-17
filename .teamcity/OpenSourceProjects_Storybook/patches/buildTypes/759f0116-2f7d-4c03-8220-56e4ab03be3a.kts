@@ -11,10 +11,10 @@ accordingly, and delete the patch script.
 changeBuildType("759f0116-2f7d-4c03-8220-56e4ab03be3a") {
     params {
         expect {
-            password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:8fa112e0-d0e0-4f9f-9f18-01471a999b4d", display = ParameterDisplay.HIDDEN)
+            password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:7f0943ab-dfca-49dd-b926-03062007bfd0")
         }
         update {
-            password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:7f0943ab-dfca-49dd-b926-03062007bfd0")
+            password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:9ac87388-d267-4def-a10e-3e596369f644")
         }
     }
 }

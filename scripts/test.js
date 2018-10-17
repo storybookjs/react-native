@@ -63,7 +63,7 @@ const tasks = {
   //   )}`,
   //   defaultValue: false,
   //   option: '--reactnativeapp',
-  //   projectLocation: './examples/crna-kitchen-sink',
+  //   projectLocation: './examples-native/crna-kitchen-sink',
   //   isJest: true,
   // }),
   cli: createProject({
