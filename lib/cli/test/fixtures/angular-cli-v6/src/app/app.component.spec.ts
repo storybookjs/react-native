@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-cli-v7'`, () => {
+  it(`should have as title 'angular-cli-v6'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('angular-cli-v7');
+    expect(app.title).toEqual('angular-cli-v6');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-cli-v7!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-cli-v6!');
   });
 });

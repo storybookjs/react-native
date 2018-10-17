@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-cli-v7": {
+    "angular-cli-v6": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-cli-v7",
+            "outputPath": "dist/angular-cli-v6",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-cli-v7:build"
+            "browserTarget": "angular-cli-v6:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-cli-v7:build:production"
+              "browserTarget": "angular-cli-v6:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-cli-v7:build"
+            "browserTarget": "angular-cli-v6:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "angular-cli-v7-e2e": {
+    "angular-cli-v6-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-cli-v7:serve"
+            "devServerTarget": "angular-cli-v6:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-cli-v7:serve:production"
+              "devServerTarget": "angular-cli-v6:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "angular-cli-v7"
+  "defaultProject": "angular-cli-v6"
 }
