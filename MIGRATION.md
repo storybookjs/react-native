@@ -3,6 +3,7 @@
 ## Table of contents
 
 - [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
+  - [React 16.3](#react-163)
   - [Keyboard shortcuts moved](#keyboard-shortcuts-moved)
   - [Removed addWithInfo](#removed-add-with-info)
   - [Removed RN packager](#removed-rn-packager)
@@ -30,6 +31,16 @@
 ## From version 3.4.x to 4.0.x
 
 With 4.0 as our first major release in over a year, we've collected a lot of cleanup tasks. Most of the deprecations have been marked for months, so we hope that there will be no significant impact on your project.
+
+### React 16.3+
+
+Storybook uses [Emotion](https://emotion.sh/) for styling which currently requires React 16.3 and above.
+
+If you're using Storybook for anything other than React, you probably don't need to worry about this.
+
+However, if you're developing React components, this means you need to upgrade to 16.3 or higher to use Storybook 4.0.
+
+> **NOTE:** This is a temporary requirement, and we plan to restore 15.x compatibility in a near-term 4.x release.
 
 ### Generic addons
 
