@@ -1067,10 +1067,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@ember/test-helpers@^0.7.26":
-  version "0.7.26"
-  resolved "https://registry.yarnpkg.com/@ember/test-helpers/-/test-helpers-0.7.26.tgz#ae11cbde9cce2c872abbea6edcd849a31dd7bd1e"
-  integrity sha512-5HxPYmdeinI4f0lF2tKHyiNGTcNY3O5rw89AC6Z6hb9yEL3ktF8eaU7rZfvSTFEF3d3TlhR5Qidl27QzLGkUeA==
+"@ember/test-helpers@^0.7.27":
+  version "0.7.27"
+  resolved "https://registry.yarnpkg.com/@ember/test-helpers/-/test-helpers-0.7.27.tgz#c622cabd0cbb95b34efc1e1b6274ab5a14edc138"
+  integrity sha512-AQESk0FTFxRY6GyZ8PharR4SC7Fju0rXqNkfNYIntAjzefZ8xEqEM4iXDj5h7gAvfx/8dA69AQ9+p7ubc+KvJg==
   dependencies:
     broccoli-funnel "^2.0.1"
     ember-assign-polyfill "~2.4.0"
