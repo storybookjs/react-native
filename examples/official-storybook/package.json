@@ -9,7 +9,7 @@
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "graphql": "node ./graphql-server/index.js",
     "image-snapshots": "yarn run build-storybook && yarn run do-image-snapshots",
-    "storybook": "STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 9011 -c ./ -s built-storybooks"
+    "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 9011 -c ./ -s built-storybooks"
   },
   "devDependencies": {
     "@emotion/core": "^0.13.1",
@@ -37,6 +37,7 @@
     "@storybook/node-logger": "4.0.0-rc.0",
     "@storybook/react": "4.0.0-rc.0",
     "cors": "^2.8.4",
+    "cross-env": "^5.2.0",
     "enzyme-to-json": "^3.3.4",
     "eventemitter3": "^3.1.0",
     "express": "^4.16.3",
