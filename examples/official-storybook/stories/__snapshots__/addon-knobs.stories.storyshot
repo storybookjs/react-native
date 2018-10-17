@@ -12,6 +12,12 @@ exports[`Storyshots Addons|Knobs.withKnobs accepts story parameters 1`] = `
 </div>
 `;
 
+exports[`Storyshots Addons|Knobs.withKnobs complex select 1`] = `
+<pre>
+  string
+</pre>
+`;
+
 exports[`Storyshots Addons|Knobs.withKnobs dynamic knobs 1`] = `
 <div>
   <div>
