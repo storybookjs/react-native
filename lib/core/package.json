@@ -37,7 +37,7 @@
     "@storybook/node-logger": "4.0.0-rc.0",
     "@storybook/ui": "4.0.0-rc.0",
     "airbnb-js-shims": "^1 || ^2",
-    "autoprefixer": "^9.2.0",
+    "autoprefixer": "^9.2.1",
     "babel-plugin-macros": "^2.4.2",
     "babel-preset-minify": "^0.5.0",
     "boxen": "^2.0.0",
@@ -47,6 +47,7 @@
     "common-tags": "^1.8.0",
     "core-js": "^2.5.7",
     "css-loader": "^1.0.0",
+    "cli-table3": "0.5.1",
     "detect-port": "^1.2.3",
     "dotenv-webpack": "^1.5.7",
     "ejs": "^2.6.1",
@@ -76,7 +77,6 @@
     "shelljs": "^0.8.2",
     "style-loader": "^0.23.1",
     "svg-url-loader": "^2.3.2",
-    "tty-table": "^2.6.9",
     "url-loader": "^1.1.2",
     "webpack": "^4.20.2",
     "webpack-dev-middleware": "^3.4.0",
@@ -87,7 +87,7 @@
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
-    "react": ">=15.0.0",
-    "react-dom": ">=15.0.0"
+    "react": ">=16.3.0",
+    "react-dom": ">=16.3.0"
   }
 }

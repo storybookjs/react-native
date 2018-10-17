@@ -5,6 +5,7 @@ export default function(tsLoaderOptions) {
   if (tsLoaderOptions && tsLoaderOptions.configFile) {
     return new ForkTsCheckerWebpackPlugin({
       tsconfig: tsLoaderOptions.configFile,
+      async: false,
     });
   }
 

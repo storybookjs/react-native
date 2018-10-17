@@ -30,6 +30,7 @@ module.exports = {
         '/configurations/env-vars/',
         '/configurations/theming/',
         '/configurations/cli-options/',
+        '/configurations/standalone-options/',
       ],
       testing: [
         '/testing/react-ui-testing/',
