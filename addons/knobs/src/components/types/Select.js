@@ -36,7 +36,7 @@ SelectType.defaultProps = {
 SelectType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.any,
     options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   }),
   onChange: PropTypes.func,
