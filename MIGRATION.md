@@ -42,6 +42,22 @@ However, if you're developing React components, this means you need to upgrade t
 
 > **NOTE:** This is a temporary requirement, and we plan to restore 15.x compatibility in a near-term 4.x release.
 
+Also, here's the error you'll get if you're running an older version of React:
+
+```
+core.browser.esm.js:15 Uncaught TypeError: Object(...) is not a function
+    at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
+    at __webpack_require__ (bootstrap:724)
+    at fn (bootstrap:101)
+    at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
+    at __webpack_require__ (bootstrap:724)
+    at fn (bootstrap:101)
+    at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
+    at __webpack_require__ (bootstrap:724)
+    at fn (bootstrap:101)
+    at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
+```
+
 ### Generic addons
 
 4.x introduces generic addon decorators that are not tied to specific view layers [#3555](https://github.com/storybooks/storybook/pull/3555). So for example:
