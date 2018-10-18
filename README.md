@@ -55,7 +55,7 @@ First install storybook:
 
 ```sh
 cd my-react-app
-npx -p @storybook/cli@alpha sb init
+npx -p @storybook/cli@rc sb init
 ```
 
 If you'd rather set up your project manually, take a look at our [Slow Start Guide](https://storybook.js.org/basics/slow-start-guide/).
@@ -66,7 +66,7 @@ Once it's installed, you can `npm run storybook` and it will run the development
 
 ```sh
 cd my-storybook-v2-app
-npx -p @storybook/cli@alpha sb init
+npx -p @storybook/cli@rc sb init
 ```
 
 It runs a codemod to update all package names. Read all migration details in our [Migration Guide](MIGRATION.md)
@@ -91,7 +91,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 | [HTML](app/html) <sup>alpha</sup>       | -                                                                                                                              | [v4.0.0-alpha](https://storybooks-html.netlify.com/)    | [![HTML](https://img.shields.io/npm/dt/@storybook/html.svg)](app/html)                         |
 | [Svelte](app/svelte) <sup>alpha</sup>   | -                                                                                                                              | [v4.0.0-alpha](https://storybooks-svelte.netlify.com/)  | [![Svelte](https://img.shields.io/npm/dt/@storybook/svelte.svg)](app/svelte)                   |
 | [Riot](app/riot) <sup>alpha</sup>       | -                                                                                                                              | [v4.0.0-alpha](https://storybooks-riot.netlify.com/)    | [![Riot](https://img.shields.io/npm/dt/@storybook/riot.svg)](app/riot)                         |
-| [Ember](app/ember)                      | -                                                                                                                              | [v4.0.0-alpha](https://storybooks-ember.netlify.com/)   | [![Ember](https://img.shields.io/npm/dt/@storybook/ember.svg)](app/ember)                      |
+| [Ember](app/ember) <sup>alpha</sup>     | -                                                                                                                              | [v4.0.0-alpha](https://storybooks-ember.netlify.com/)   | [![Ember](https://img.shields.io/npm/dt/@storybook/ember.svg)](app/ember)                      |
 
 ### Sub Projects
 
@@ -100,23 +100,24 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 ### Addons
 
-| Addons                             |                                                                            |
-| ---------------------------------- | -------------------------------------------------------------------------- |
-| [a11y](addons/a11y/)               | Test components for user accessibility in Storybook                        |
-| [actions](addons/actions/)         | Log actions as users interact with components in the Storybook UI          |
-| [backgrounds](addons/backgrounds/) | Let users choose backgrounds in the Storybook UI                           |
-| [centered](addons/centered/)       | Center the alignment of your components within the Storybook UI            |
-| [events](addons/events/)           | Interactively fire events to components that respond to EventEmitter       |
-| [graphql](addons/graphql/)         | Query a GraphQL server within Storybook stories                            |
-| [info](addons/info/)               | Annotate stories with extra component usage information                    |
-| [jest](addons/jest/)               | View the results of components' unit tests in Storybook                    |
-| [knobs](addons/knobs/)             | Interactively edit component prop data in the Storybook UI                 |
-| [links](addons/links/)             | Create links between stories                                               |
-| [notes](addons/notes/)             | Annotate Storybook stories with notes                                      |
-| [options](addons/options/)         | Customize the Storybook UI in code                                         |
-| [storyshots](addons/storyshots/)   | Easy snapshot testing for components in Storybook                          |
-| [storysource](addons/storysource/) | View the code of your stories within the Storybook UI                      |
-| [viewport](addons/viewport/)       | Change display sizes and layouts for responsive components using Storybook |
+| Addons                                      |                                                                            |
+| ------------------------------------------- | -------------------------------------------------------------------------- |
+| [a11y](addons/a11y/)                        | Test components for user accessibility in Storybook                        |
+| [actions](addons/actions/)                  | Log actions as users interact with components in the Storybook UI          |
+| [backgrounds](addons/backgrounds/)          | Let users choose backgrounds in the Storybook UI                           |
+| [centered](addons/centered/)                | Center the alignment of your components within the Storybook UI            |
+| [events](addons/events/)                    | Interactively fire events to components that respond to EventEmitter       |
+| [graphql](addons/graphql/)                  | Query a GraphQL server within Storybook stories                            |
+| [google-analytics](addons/google-analytics) | Reports google analytics on stories                                        |
+| [info](addons/info/)                        | Annotate stories with extra component usage information                    |
+| [jest](addons/jest/)                        | View the results of components' unit tests in Storybook                    |
+| [knobs](addons/knobs/)                      | Interactively edit component prop data in the Storybook UI                 |
+| [links](addons/links/)                      | Create links between stories                                               |
+| [notes](addons/notes/)                      | Annotate Storybook stories with notes                                      |
+| [options](addons/options/)                  | Customize the Storybook UI in code                                         |
+| [storyshots](addons/storyshots/)            | Easy snapshot testing for components in Storybook                          |
+| [storysource](addons/storysource/)          | View the code of your stories within the Storybook UI                      |
+| [viewport](addons/viewport/)                | Change display sizes and layouts for responsive components using Storybook |
 
 See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 
