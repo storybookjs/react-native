@@ -3,6 +3,7 @@
 ## Table of contents
 
 - [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
+  - [React 16.3](#react-163)
   - [Keyboard shortcuts moved](#keyboard-shortcuts-moved)
   - [Removed addWithInfo](#removed-add-with-info)
   - [Removed RN packager](#removed-rn-packager)
@@ -31,6 +32,32 @@
 
 With 4.0 as our first major release in over a year, we've collected a lot of cleanup tasks. Most of the deprecations have been marked for months, so we hope that there will be no significant impact on your project.
 
+### React 16.3+
+
+Storybook uses [Emotion](https://emotion.sh/) for styling which currently requires React 16.3 and above.
+
+If you're using Storybook for anything other than React, you probably don't need to worry about this.
+
+However, if you're developing React components, this means you need to upgrade to 16.3 or higher to use Storybook 4.0.
+
+> **NOTE:** This is a temporary requirement, and we plan to restore 15.x compatibility in a near-term 4.x release.
+
+Also, here's the error you'll get if you're running an older version of React:
+
+```
+core.browser.esm.js:15 Uncaught TypeError: Object(...) is not a function
+    at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
+    at __webpack_require__ (bootstrap:724)
+    at fn (bootstrap:101)
+    at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
+    at __webpack_require__ (bootstrap:724)
+    at fn (bootstrap:101)
+    at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
+    at __webpack_require__ (bootstrap:724)
+    at fn (bootstrap:101)
+    at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
+```
+
 ### Generic addons
 
 4.x introduces generic addon decorators that are not tied to specific view layers [#3555](https://github.com/storybooks/storybook/pull/3555). So for example:
@@ -48,6 +75,12 @@ import { number } from "@storybook/addon-knobs";
 ### Knobs select ordering
 
 4.0 also reversed the order of addon-knob's `select` knob keys/values, which had been called `selectV2` prior to this breaking change. See the knobs [package README](https://github.com/storybooks/storybook/blob/master/addons/knobs/README.md#select) for usage.
+
+### Knobs URL parameters
+
+Addon-knobs no longer updates the URL parameters interactively as you edit a knob. This is a UI change but it shouldn't break any code because old URLs are still supported.
+
+In 3.x, editing knobs updated the URL parameters interactively. The implementation had performance and architectural problems. So in 4.0, we changed this to a "copy" button tp the addon which generates a URL with the updated knob values and copies it to the clipboard.
 
 ### Keyboard shortcuts moved
 
@@ -104,7 +137,7 @@ Storybook now uses Babel 7. There's a couple of cases when it can break with you
 If you are using `create-react-app` (aka CRA), you may need to do some manual steps to upgrade, depending on the setup.
 
 - `create-react-app@1` may require manual migrations.
-  - If you're adding storybook for the first time, it should just work: `storybook init` should add the correct dependencies.
+  - If you're adding storybook for the first time, it should just work: `sb init` should add the correct dependencies.
   - If you've upgrading an existing project, your `package.json` probably already uses Babel 6, making it incompatible with `@storybook/react@4` which uses Babel 7. There are two ways to make it compatible, each of which is spelled out in detail in the next section:
     - Upgrade to Babel 7 if you are not dependent on Babel 6-specific features.
     - Migrate Babel 6 if you're heavily dependent on some Babel 6-specific features).
@@ -140,7 +173,7 @@ If you're using `start-storybook` on CI, you may need to opt out of this using t
 We've deprecated the `getstorybook` CLI in 4.0. The new way to install storybook is `sb init`. We recommend using `npx` for convenience and to make sure you're always using the latest version of the CLI:
 
 ```
-npx -p @storybook/cli@alpha sb init
+npx -p @storybook/cli@rc sb init
 ```
 
 ## From version 3.3.x to 3.4.x

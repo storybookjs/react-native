@@ -1,14 +1,14 @@
 import path from 'path';
 import webpack from 'webpack';
-import { getEnvironment } from 'universal-dotenv';
 import Dotenv from 'dotenv-webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 import { getManagerHeadHtml } from '@storybook/core/dist/server/utils';
 import { version } from '../../../package.json';
-import { includePaths, excludePaths } from './utils';
+import { includePaths, excludePaths, loadEnv } from './utils';
 
 const getConfig = options => {
+  const environment = loadEnv({ production: true });
   const entriesMeta = {
     manager: {
       headHtmlSnippet: getManagerHeadHtml(options.configDir, process.env),
@@ -48,11 +48,10 @@ const getConfig = options => {
         template: require.resolve(`@storybook/core/src/server/templates/index.ejs`),
       }),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"production"',
         storybookOptions: JSON.stringify(options),
       }),
       new webpack.optimize.DedupePlugin(),
-      new webpack.DefinePlugin(getEnvironment().webpack),
+      new webpack.DefinePlugin(environment),
       new Dotenv({ silent: true }),
     ],
     module: {

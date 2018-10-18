@@ -1,3 +1,59 @@
+# 4.0.0-rc.1
+
+2018-October-18
+
+#### Bug Fixes
+
+-   Angular: expose webpackFinal extension [#4431](https://github.com/storybooks/storybook/pull/4431)
+-   Addon-Knobs: fix ints as values [#4465](https://github.com/storybooks/storybook/pull/4465)
+
+#### Maintenance
+
+-   Add Angular 6 fixture to the sb-cli tests [#4464](https://github.com/storybooks/storybook/pull/4464)
+
+#### Dependency Upgrades
+
+-   Require React 16.3 as a peer dependency [#4458](https://github.com/storybooks/storybook/pull/4458)
+-   Bump @ember/test-helpers from 0.7.26 to 0.7.27 [#4455](https://github.com/storybooks/storybook/pull/4455)
+-   Bump eslint-plugin-jest from 21.25.0 to 21.25.1 [#4456](https://github.com/storybooks/storybook/pull/4456)
+-   Bump autoprefixer from 9.2.0 to 9.2.1 [#4457](https://github.com/storybooks/storybook/pull/4457)
+-   Bump @types/node from 10.11.7 to 10.12.0 [#4434](https://github.com/storybooks/storybook/pull/4434)
+-   Bump ember-cli-inject-live-reload from 2.0.0 to 2.0.1 [#4435](https://github.com/storybooks/storybook/pull/4435)
+-   Bump gatsby-plugin-sharp from 1.6.48 to 2.0.7 in /docs [#4438](https://github.com/storybooks/storybook/pull/4438)
+-   Bump marked from 0.4.0 to 0.5.1 in /docs [#4437](https://github.com/storybooks/storybook/pull/4437)
+-   Bump highlight.js from 9.12.0 to 9.13.0 in /docs [#4440](https://github.com/storybooks/storybook/pull/4440)
+
+# 4.0.0-rc.0
+
+2018-October-15
+
+#### Features
+
+-   Addon: google analytics [#4138](https://github.com/storybooks/storybook/pull/4138)
+
+#### Bug Fixes
+
+-   Improve environment var loading [#4413](https://github.com/storybooks/storybook/pull/4413)
+
+#### Maintenance
+
+-   Skip preflight check when starting cra kitchen sink [#4408](https://github.com/storybooks/storybook/pull/4408)
+-   Change crna-kitchen-sink path and Some CI maintenance [#4409](https://github.com/storybooks/storybook/pull/4409)
+-   Create ember entry point to official storybook [#4426](https://github.com/storybooks/storybook/pull/4426)
+
+#### Dependency Upgrades
+
+-   Bump ember-cli from 3.4.3 to 3.5.0 [#4429](https://github.com/storybooks/storybook/pull/4429)
+-   Bump react-native-modal-selector from 0.0.27 to 0.0.29 [#4428](https://github.com/storybooks/storybook/pull/4428)
+-   Bump ember-cli-inject-live-reload from 1.8.2 to 1.10.1 [#4423](https://github.com/storybooks/storybook/pull/4423)
+-   Bump html-webpack-plugin from 4.0.0-beta.1 to 4.0.0-beta.2 [#4421](https://github.com/storybooks/storybook/pull/4421)
+-   Bump react-scripts from 2.0.4 to 2.0.5 [#4420](https://github.com/storybooks/storybook/pull/4420)
+-   Bump autoprefixer from 9.1.5 to 9.2.0 [#4417](https://github.com/storybooks/storybook/pull/4417)
+-   Bump redux from 4.0.0 to 4.0.1 [#4419](https://github.com/storybooks/storybook/pull/4419)
+-   Bump ts-loader from 5.2.1 to 5.2.2 [#4418](https://github.com/storybooks/storybook/pull/4418)
+-   Bump eslint-plugin-jest from 21.24.1 to 21.25.0 [#4424](https://github.com/storybooks/storybook/pull/4424)
+-   Bump lazy-universal-dotenv from 1.9.1 to 2.0.0 [#4422](https://github.com/storybooks/storybook/pull/4422)
+
 # 4.0.0-alpha.25
 
 2018-October-13
