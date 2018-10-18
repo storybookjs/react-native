@@ -50,6 +50,20 @@ export function isBuildAngularInstalled() {
   }
 }
 
+export function getAngularCliParts(cliWebpackConfigOptions) {
+  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+  const ngCliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
+
+  try {
+    return {
+      cliCommonConfig: ngCliConfigFactory.getCommonConfig(cliWebpackConfigOptions),
+      cliStyleConfig: ngCliConfigFactory.getStylesConfig(cliWebpackConfigOptions),
+    };
+  } catch (e) {
+    return null;
+  }
+}
+
 export function normalizeAssetPatterns(assetPatterns, dirToSearch, sourceRoot) {
   if (!assetPatterns || !assetPatterns.length) {
     return [];

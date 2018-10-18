@@ -6,6 +6,7 @@ import {
   isBuildAngularInstalled,
   normalizeAssetPatterns,
   filterOutStylingRules,
+  getAngularCliParts,
 } from './angular-cli_utils';
 
 function getTsConfigOptions(tsConfigPath) {
@@ -29,20 +30,6 @@ function getTsConfigOptions(tsConfigPath) {
   }
 
   return basicOptions;
-}
-
-function getAngularCliParts(cliWebpackConfigOptions) {
-  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  const ngCliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
-
-  try {
-    return {
-      cliCommonConfig: ngCliConfigFactory.getCommonConfig(cliWebpackConfigOptions),
-      cliStyleConfig: ngCliConfigFactory.getStylesConfig(cliWebpackConfigOptions),
-    };
-  } catch (e) {
-    return null;
-  }
 }
 
 export function getAngularCliWebpackConfigOptions(dirToSearch) {
