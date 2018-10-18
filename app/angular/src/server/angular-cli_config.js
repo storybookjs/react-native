@@ -2,7 +2,11 @@ import path from 'path';
 import fs from 'fs';
 import { logger } from '@storybook/node-logger';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
-import { isBuildAngularInstalled, normalizeAssetPatterns } from './angular-cli_utils';
+import {
+  isBuildAngularInstalled,
+  normalizeAssetPatterns,
+  filterOutStylingRules,
+} from './angular-cli_utils';
 
 function getTsConfigOptions(tsConfigPath) {
   const basicOptions = {
@@ -39,26 +43,6 @@ function getAngularCliParts(cliWebpackConfigOptions) {
   } catch (e) {
     return null;
   }
-}
-
-function isStylingRule(rule) {
-  const { test } = rule;
-
-  if (!test) {
-    return false;
-  }
-
-  if (!(test instanceof RegExp)) {
-    return false;
-  }
-
-  return test.test('.css') || test.test('.scss') || test.test('.sass');
-}
-
-function filterOutStylingRules(config) {
-  // Don't use storybooks .css/.sass/.scss rules because we have to use rules created by @angular-devkit/build-angular
-  // because @angular-devkit/build-angular created rules have include/exclude for global style files.
-  return config.module.rules.filter(rule => !isStylingRule(rule));
 }
 
 export function getAngularCliWebpackConfigOptions(dirToSearch) {
@@ -127,6 +111,8 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
 
   const { cliCommonConfig, cliStyleConfig } = cliParts;
 
+  // Don't use storybooks styling rules because we have to use rules created by @angular-devkit/build-angular
+  // because @angular-devkit/build-angular created rules have include/exclude for global style files.
   const rulesExcludingStyles = filterOutStylingRules(baseConfig);
 
   // cliStyleConfig.entry adds global style files to the webpack context
