@@ -107,14 +107,11 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
 
   const { cliCommonConfig, cliStyleConfig } = cliParts;
 
-  // Don't use storybooks .css/.scss/.sass rules because we have to use rules
-  // created by @angular-devkit/build-angular because
-  // @angular-devkit/build-angular created rules have include/exclude for global
-  // style files.
+  // Don't use storybooks .css/.scss rules because we have to use rules created by @angular-devkit/build-angular
+  // because @angular-devkit/build-angular created rules have include/exclude for global style files.
   const rulesExcludingStyles = baseConfig.module.rules.filter(
     rule =>
-      !rule.test ||
-      (!rule.test.test('.css') && !rule.test.test('.scss') && !rule.test.test('.sass'))
+      !rule.test || (rule.test.toString() !== '/\\.css$/' && rule.test.toString() !== '/\\.scss$/')
   );
 
   // cliStyleConfig.entry adds global style files to the webpack context
