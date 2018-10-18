@@ -14,7 +14,7 @@ So you can develop UI components in isolation without worrying about app specifi
 
 ```sh
 cd my-app
-npx -p @storybook/cli@alpha sb init -t html
+npx -p @storybook/cli@rc sb init -t html
 ```
 
 For more information visit: [storybook.js.org](https://storybook.js.org)
