@@ -41,6 +41,26 @@ function getAngularCliParts(cliWebpackConfigOptions) {
   }
 }
 
+function isStylingRule(rule) {
+  const { test } = rule;
+
+  if (!test) {
+    return false;
+  }
+
+  if (!(test instanceof RegExp)) {
+    return false;
+  }
+
+  return test.test('.css') || test.test('.scss') || test.test('.sass');
+}
+
+function filterOutStylingRules(config) {
+  // Don't use storybooks .css/.sass/.scss rules because we have to use rules created by @angular-devkit/build-angular
+  // because @angular-devkit/build-angular created rules have include/exclude for global style files.
+  return config.module.rules.filter(rule => !isStylingRule(rule));
+}
+
 export function getAngularCliWebpackConfigOptions(dirToSearch) {
   const fname = path.join(dirToSearch, 'angular.json');
 
@@ -107,15 +127,7 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
 
   const { cliCommonConfig, cliStyleConfig } = cliParts;
 
-  // Don't use storybooks .css/.sass/.scss rules because we have to use rules created by @angular-devkit/build-angular
-  // because @angular-devkit/build-angular created rules have include/exclude for global style files.
-  const rulesExcludingStyles = baseConfig.module.rules.filter(
-    rule =>
-      !rule.test ||
-      (rule.test.toString() !== '/\\.css$/' &&
-        rule.test.toString() !== '/\\.sass$/' &&
-        rule.test.toString() !== '/\\.scss$/')
-  );
+  const rulesExcludingStyles = filterOutStylingRules(baseConfig);
 
   // cliStyleConfig.entry adds global style files to the webpack context
   const entry = {
