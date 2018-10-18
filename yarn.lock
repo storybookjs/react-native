@@ -1880,6 +1880,13 @@
     "@storybook/react-simple-di" "^1.2.1"
     babel-runtime "6.x.x"
 
+"@storybook/node-logger@^3.4.11":
+  version "3.4.11"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-3.4.11.tgz#a6684a4c21f74dae937cd9f202deec0932d3f3b5"
+  integrity sha512-eCjvZsCwZTcjDOeG7JDEVs5bugyybpAFu/4+X3hfikxGBBjnx2NtjJIfIsriUKa1O559+aFGUG73wogYAjudhg==
+  dependencies:
+    npmlog "^4.1.2"
+
 "@storybook/podda@^1.2.3":
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@storybook/podda/-/podda-1.2.3.tgz#53c4a1a3f8c7bbd5755dff5c34576fd1af9d38ba"
