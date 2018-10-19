@@ -41,6 +41,16 @@ export function getStyleRules(rules) {
   }, []);
 }
 
+export function getCraWebpackConfig(mode) {
+  if (mode === 'production') {
+    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+    return require('react-scripts/config/webpack.config.prod');
+  }
+
+  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+  return require('react-scripts/config/webpack.config.dev');
+}
+
 export function applyCRAWebpackConfig(baseConfig) {
   // Remove style rules from baseConfig
   const baseRulesExcludingStyles = baseConfig.module.rules.filter(
@@ -48,14 +58,7 @@ export function applyCRAWebpackConfig(baseConfig) {
   );
 
   //  Load create-react-app config
-  let craWebpackConfig;
-  if (baseConfig.mode === 'production') {
-    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-    craWebpackConfig = require('react-scripts/config/webpack.config.prod');
-  } else {
-    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-    craWebpackConfig = require('react-scripts/config/webpack.config.dev');
-  }
+  const craWebpackConfig = getCraWebpackConfig(baseConfig.mode);
 
   //  Concat will ensure rules is an array
   const craStyleRules = getStyleRules([].concat(craWebpackConfig.module.rules));
