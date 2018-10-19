@@ -1,7 +1,7 @@
 import semver from 'semver';
+import { normalizeCondition } from 'webpack/lib/RuleSet';
 
 let MiniCssExtractPlugin;
-let normalizeCondition;
 
 export function isReactScriptsInstalled() {
   try {
@@ -9,8 +9,6 @@ export function isReactScriptsInstalled() {
     const reactScriptsJson = require('react-scripts/package.json');
     if (semver.lt(reactScriptsJson.version, '2.0.0')) return false;
 
-    // eslint-disable-next-line global-require, import/no-extraneous-dependencies, prefer-destructuring
-    normalizeCondition = require('webpack/lib/RuleSet').normalizeCondition;
     // eslint-disable-next-line global-require, import/no-extraneous-dependencies
     MiniCssExtractPlugin = require('mini-css-extract-plugin');
     return true;

@@ -40,7 +40,8 @@
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react-dev-utils": "^6.0.5",
-    "semver": "^5.6.0"
+    "semver": "^5.6.0",
+    "webpack": "^4.21.0"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
