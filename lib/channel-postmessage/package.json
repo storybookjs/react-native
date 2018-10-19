@@ -24,7 +24,10 @@
   },
   "dependencies": {
     "@storybook/channels": "4.0.0-alpha.25",
+    "flatted": "^1.0.3",
     "global": "^4.3.2",
-    "json-fn": "^1.1.1"
+    "is-function": "^1.0.1",
+    "is-regex": "^1.0.4",
+    "safe-eval": "^0.4.1"
   }
 }
