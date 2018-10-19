@@ -1,5 +1,3 @@
-import { logger } from '@storybook/node-logger';
-
 let MiniCssExtractPlugin;
 let normalizeCondition;
 
@@ -39,18 +37,12 @@ export function getStyleRules(rules) {
 }
 
 export function applyCRAWebpackConfig(baseConfig) {
-  if (!isReactScriptsInstalled()) {
-    logger.info('=> Using base config because react-scripts is not installed.');
-    return baseConfig;
-  }
-
-  logger.info('=> Loading create-react-app config.');
-
   // Remove style rules from baseConfig
   const baseRulesExcludingStyles = baseConfig.module.rules.filter(
     rule => !rule.test || !['.css', '.scss', '.sass'].some(normalizeCondition(rule.test))
   );
 
+  //  Load create-react-app config
   let craWebpackConfig;
   if (baseConfig.mode === 'production') {
     // eslint-disable-next-line global-require, import/no-extraneous-dependencies
