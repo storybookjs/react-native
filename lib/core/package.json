@@ -37,7 +37,7 @@
     "@storybook/node-logger": "4.0.0-rc.1",
     "@storybook/ui": "4.0.0-rc.1",
     "airbnb-js-shims": "^1 || ^2",
-    "autoprefixer": "^9.1.5",
+    "autoprefixer": "^9.2.1",
     "babel-plugin-macros": "^2.4.2",
     "babel-preset-minify": "^0.5.0",
     "boxen": "^2.0.0",
