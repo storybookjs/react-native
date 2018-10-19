@@ -1,11 +1,15 @@
 import { logger } from '@storybook/node-logger';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
-const { normalizeCondition } = require('webpack/lib/RuleSet');
+let MiniCssExtractPlugin;
+let normalizeCondition;
 
 export function isReactScriptsInstalled() {
   try {
     require.resolve('react-scripts/bin/react-scripts');
+    // eslint-disable-next-line global-require, import/no-extraneous-dependencies, prefer-destructuring
+    normalizeCondition = require('webpack/lib/RuleSet').normalizeCondition;
+    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+    MiniCssExtractPlugin = require('mini-css-extract-plugin');
     return true;
   } catch (e) {
     return false;
@@ -40,16 +44,36 @@ export function applyCRAWebpackConfig(baseConfig) {
     return baseConfig;
   }
 
+  logger.info('=> Loading create-react-app config.');
+
   // Remove style rules from baseConfig
   const baseRulesExcludingStyles = baseConfig.module.rules.filter(
     rule => !rule.test || !['.css', '.scss', '.sass'].some(normalizeCondition(rule.test))
   );
 
-  // TODO: Load based on NODE_ENV
-  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  const craWebpackConfig = require('react-scripts/config/webpack.config.dev');
+  let craWebpackConfig;
+  if (baseConfig.mode === 'production') {
+    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+    craWebpackConfig = require('react-scripts/config/webpack.config.prod');
+  } else {
+    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+    craWebpackConfig = require('react-scripts/config/webpack.config.dev');
+  }
+
   //  Concat will ensure rules is an array
   const craStyleRules = getStyleRules([].concat(craWebpackConfig.module.rules));
+
+  //  Add css minification for production
+  const plugins = [...baseConfig.plugins];
+  if (baseConfig.mode === 'production')
+    plugins.push(
+      new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // both options are optional
+        filename: 'static/css/[name].[contenthash:8].css',
+        chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
+      })
+    );
 
   return {
     ...baseConfig,
@@ -57,5 +81,6 @@ export function applyCRAWebpackConfig(baseConfig) {
       ...baseConfig.module,
       rules: [...baseRulesExcludingStyles, ...craStyleRules],
     },
+    plugins,
   };
 }
