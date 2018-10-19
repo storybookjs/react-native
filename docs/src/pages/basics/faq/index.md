@@ -1,8 +1,7 @@
-* * *
-
+---
 id: 'faq'
-
-## title: 'Frequently Asked Questions'
+title: 'Frequently Asked Questions'
+---
 
 Here are some answers to frequently asked questions. If you have a question, you can ask it by opening an issue on the [Storybook Repository](https://github.com/storybooks/storybook/).
 
