@@ -10,6 +10,7 @@ module.exports = {
         '/basics/quick-start-guide/',
         '/basics/slow-start-guide/',
         '/basics/guide-react/',
+        '/basics/guide-react-native/',
         '/basics/guide-vue/',
         '/basics/guide-angular/',
         '/basics/guide-mithril/',
@@ -29,12 +30,13 @@ module.exports = {
         '/configurations/env-vars/',
         '/configurations/theming/',
         '/configurations/cli-options/',
+        '/configurations/standalone-options/',
       ],
       testing: [
         '/testing/react-ui-testing/',
         '/testing/structural-testing/',
         '/testing/interaction-testing/',
-        '/testing/css-style-testing/',
+        '/testing/automated-visual-testing/',
         '/testing/manual-testing/',
       ],
       addons: [

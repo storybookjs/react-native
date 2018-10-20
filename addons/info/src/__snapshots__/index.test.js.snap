@@ -1,6 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`addon Info should render <Info /> and external markdown 1`] = `
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: .88em;
+  font-family: Menlo,Monaco,"Courier New",monospace;
+  background-color: #fafafa;
+  padding: .5rem;
+  line-height: 1.5;
+  overflow-x: scroll;
+}
+
+.emotion-2 {
+  overflow: hidden;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 3px 10px;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-2:hover {
+  background-color: #f4f7fa;
+  border-color: #ddd;
+}
+
+.emotion-2:active {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+.emotion-0 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  height: 16px;
+  -webkit-transform: translateY(-100%) translateY(-6px);
+  -ms-transform: translateY(-100%) translateY(-6px);
+  transform: translateY(-100%) translateY(-6px);
+}
+
 <deprecated>
   <Story
     PropTable={[Function]}
@@ -1262,6 +1319,63 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
 `;
 
 exports[`addon Info should render <Info /> and markdown 1`] = `
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: .88em;
+  font-family: Menlo,Monaco,"Courier New",monospace;
+  background-color: #fafafa;
+  padding: .5rem;
+  line-height: 1.5;
+  overflow-x: scroll;
+}
+
+.emotion-2 {
+  overflow: hidden;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 3px 10px;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-2:hover {
+  background-color: #f4f7fa;
+  border-color: #ddd;
+}
+
+.emotion-2:active {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+.emotion-0 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  height: 16px;
+  -webkit-transform: translateY(-100%) translateY(-6px);
+  -ms-transform: translateY(-100%) translateY(-6px);
+  transform: translateY(-100%) translateY(-6px);
+}
+
 <deprecated>
   <Story
     PropTable={[Function]}

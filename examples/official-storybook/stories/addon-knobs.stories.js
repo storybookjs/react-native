@@ -190,6 +190,20 @@ storiesOf('Addons|Knobs.withKnobs', module)
       </div>
     );
   })
+  .add('complex select', () => {
+    const m = select(
+      'complex',
+      {
+        number: 1,
+        string: 'string',
+        object: {},
+        array: [],
+      },
+      'string'
+    );
+    const value = m.toString();
+    return <pre>{value}</pre>;
+  })
   .add('triggers actions via button', () => {
     button('Toggle item list state', () => {
       if (!injectedIsLoading && injectedItems.length === 0) {

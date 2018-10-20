@@ -32,12 +32,14 @@ function testStorySnapshots(options = {}) {
   }
 
   const {
+    asyncJest,
     suite,
     storyNameRegex,
     storyKindRegex,
     stories2snapsConverter,
     testMethod,
     integrityOptions,
+    snapshotSerializers,
   } = ensureOptionsDefaults(options);
 
   const testMethodParams = {
@@ -50,12 +52,14 @@ function testStorySnapshots(options = {}) {
 
   snapshotsTests({
     groups: storiesGroups,
+    asyncJest,
     suite,
     framework,
     storyKindRegex,
     storyNameRegex,
     testMethod,
     testMethodParams,
+    snapshotSerializers,
   });
 
   integrityTest(integrityOptions, stories2snapsConverter);

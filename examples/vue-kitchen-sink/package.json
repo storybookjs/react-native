@@ -1,6 +1,6 @@
 {
   "name": "vue-example",
-  "version": "4.0.0-alpha.21",
+  "version": "4.0.0-rc.1",
   "private": true,
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
@@ -13,26 +13,26 @@
     "vuex": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@storybook/addon-actions": "4.0.0-alpha.21",
-    "@storybook/addon-backgrounds": "4.0.0-alpha.21",
-    "@storybook/addon-centered": "4.0.0-alpha.21",
-    "@storybook/addon-knobs": "4.0.0-alpha.21",
-    "@storybook/addon-links": "4.0.0-alpha.21",
-    "@storybook/addon-notes": "4.0.0-alpha.21",
-    "@storybook/addon-options": "4.0.0-alpha.21",
-    "@storybook/addon-storyshots": "4.0.0-alpha.21",
-    "@storybook/addon-storysource": "4.0.0-alpha.21",
-    "@storybook/addon-viewport": "4.0.0-alpha.21",
-    "@storybook/addons": "4.0.0-alpha.21",
-    "@storybook/vue": "4.0.0-alpha.21",
+    "@babel/core": "^7.1.2",
+    "@storybook/addon-actions": "4.0.0-rc.1",
+    "@storybook/addon-backgrounds": "4.0.0-rc.1",
+    "@storybook/addon-centered": "4.0.0-rc.1",
+    "@storybook/addon-knobs": "4.0.0-rc.1",
+    "@storybook/addon-links": "4.0.0-rc.1",
+    "@storybook/addon-notes": "4.0.0-rc.1",
+    "@storybook/addon-options": "4.0.0-rc.1",
+    "@storybook/addon-storyshots": "4.0.0-rc.1",
+    "@storybook/addon-storysource": "4.0.0-rc.1",
+    "@storybook/addon-viewport": "4.0.0-rc.1",
+    "@storybook/addons": "4.0.0-rc.1",
+    "@storybook/vue": "4.0.0-rc.1",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-loader": "^8.0.0-beta.6",
+    "babel-loader": "^8.0.4",
     "cross-env": "^5.2.0",
     "file-loader": "^2.0.0",
     "svg-url-loader": "^2.3.2",
-    "vue-loader": "^15.4.1",
-    "webpack": "^4.17.1",
-    "webpack-dev-server": "^3.1.6"
+    "vue-loader": "^15.4.2",
+    "webpack": "^4.21.0",
+    "webpack-dev-server": "^3.1.9"
   }
 }

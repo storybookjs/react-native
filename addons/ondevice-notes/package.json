@@ -1,0 +1,32 @@
+{
+  "name": "@storybook/addon-ondevice-notes",
+  "version": "4.0.0-rc.1",
+  "description": "Write notes for your Storybook stories.",
+  "keywords": [
+    "addon",
+    "notes",
+    "storybook"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addons": "4.0.0-rc.1",
+    "prop-types": "^15.6.2",
+    "react-native-simple-markdown": "^1.1.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}

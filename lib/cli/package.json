@@ -1,6 +1,6 @@
 {
   "name": "@storybook/cli",
-  "version": "4.0.0-alpha.21",
+  "version": "4.0.0-rc.1",
   "description": "Storybook's CLI - easiest method of adding storybook to your projects",
   "keywords": [
     "cli",
@@ -8,6 +8,9 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/cli",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -18,6 +21,7 @@
   "license": "MIT",
   "author": "Storybook Team",
   "bin": {
+    "sb": "./bin/index.js",
     "getstorybook": "./bin/index.js"
   },
   "scripts": {
@@ -25,48 +29,48 @@
     "test-latest-cra": "cd test && ./test_latest_cra.sh"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
-    "@babel/runtime": "^7.0.0",
-    "@storybook/codemod": "4.0.0-alpha.21",
+    "@babel/runtime": "^7.1.2",
+    "@storybook/codemod": "4.0.0-rc.1",
     "chalk": "^2.4.1",
     "child-process-promise": "^2.2.1",
-    "commander": "^2.17.0",
+    "commander": "^2.19.0",
     "cross-spawn": "^6.0.5",
+    "inquirer": "^6.2.0",
     "jscodeshift": "^0.5.1",
-    "json5": "^2.0.1",
+    "json5": "^2.1.0",
     "merge-dirs": "^0.2.1",
-    "semver": "^5.5.1",
+    "semver": "^5.6.0",
     "shelljs": "^0.8.2",
     "update-notifier": "^2.5.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.21",
-    "@storybook/addon-centered": "4.0.0-alpha.21",
-    "@storybook/addon-graphql": "4.0.0-alpha.21",
-    "@storybook/addon-info": "4.0.0-alpha.21",
-    "@storybook/addon-knobs": "4.0.0-alpha.21",
-    "@storybook/addon-links": "4.0.0-alpha.21",
-    "@storybook/addon-notes": "4.0.0-alpha.21",
-    "@storybook/addon-options": "4.0.0-alpha.21",
-    "@storybook/addon-storyshots": "4.0.0-alpha.21",
-    "@storybook/addons": "4.0.0-alpha.21",
-    "@storybook/angular": "4.0.0-alpha.21",
-    "@storybook/channel-postmessage": "4.0.0-alpha.21",
-    "@storybook/channel-websocket": "4.0.0-alpha.21",
-    "@storybook/channels": "4.0.0-alpha.21",
-    "@storybook/html": "4.0.0-alpha.21",
-    "@storybook/marko": "4.0.0-alpha.21",
-    "@storybook/mithril": "4.0.0-alpha.21",
-    "@storybook/polymer": "4.0.0-alpha.21",
-    "@storybook/react": "4.0.0-alpha.21",
-    "@storybook/react-native": "4.0.0-alpha.21",
-    "@storybook/riot": "4.0.0-alpha.21",
-    "@storybook/ui": "4.0.0-alpha.21",
-    "@storybook/vue": "4.0.0-alpha.21",
-    "check-node-version": "3.2.0",
-    "npx": "10.2.0"
+    "@storybook/addon-actions": "4.0.0-rc.1",
+    "@storybook/addon-centered": "4.0.0-rc.1",
+    "@storybook/addon-graphql": "4.0.0-rc.1",
+    "@storybook/addon-info": "4.0.0-rc.1",
+    "@storybook/addon-knobs": "4.0.0-rc.1",
+    "@storybook/addon-links": "4.0.0-rc.1",
+    "@storybook/addon-notes": "4.0.0-rc.1",
+    "@storybook/addon-options": "4.0.0-rc.1",
+    "@storybook/addon-storyshots": "4.0.0-rc.1",
+    "@storybook/addons": "4.0.0-rc.1",
+    "@storybook/angular": "4.0.0-rc.1",
+    "@storybook/channel-postmessage": "4.0.0-rc.1",
+    "@storybook/channel-websocket": "4.0.0-rc.1",
+    "@storybook/channels": "4.0.0-rc.1",
+    "@storybook/ember": "4.0.0-rc.1",
+    "@storybook/html": "4.0.0-rc.1",
+    "@storybook/marko": "4.0.0-rc.1",
+    "@storybook/mithril": "4.0.0-rc.1",
+    "@storybook/polymer": "4.0.0-rc.1",
+    "@storybook/react": "4.0.0-rc.1",
+    "@storybook/react-native": "4.0.0-rc.1",
+    "@storybook/riot": "4.0.0-rc.1",
+    "@storybook/ui": "4.0.0-rc.1",
+    "@storybook/vue": "4.0.0-rc.1"
   }
 }

@@ -60,13 +60,6 @@ You can also pick suites from CLI.  Suites available are listed below.
 This option executes test from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`.
 Before the tests are ran, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core`
 
-##### React-Native example Tests
-
-`yarn test --reactnative`
-
-This option executes tests from `<rootdir>/app/react-native`.
-Before these tests are ran, the project must be bootstrapped with the React Native example enabled.  You can accomplish this by running `yarn bootstrap --reactnative`
-
 ##### CRA-kitchen-sink - Image snapshots using Storyshots
 
 `yarn test --image`
@@ -311,6 +304,14 @@ The current manual release sequence is as follows:
 -   Push the changelog to master or the release branch
 -   Clean, build and publish the release
 -   Cut and paste the changelog to the github release page, and mark it as a (pre-) release
+
+**NOTE:** The very first time you publish a scoped package (`@storybook/x`) you need to make sure that it's package.json contains the following
+
+```js
+"publishConfig": {
+  "access": "public"
+}
+```
 
 This sequence applies to both releases and pre-releases, but differs slightly between the two.
 

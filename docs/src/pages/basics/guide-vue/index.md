@@ -31,13 +31,14 @@ First of all, you need to add `@storybook/vue` to your project. To do that, simp
 npm i --save-dev @storybook/vue
 ```
 
-## Add vue and babel-core
+## Add vue, babel-core, and babel-loader
 
-Make sure that you have `vue` and `babel-core` in your dependencies as well because we list it as a peerDependency:
+Make sure that you have `vue`, `babel-core`, `babel-loader` in your dependencies as well because we list it as a peerDependency:
 
 ```sh
 npm i --save vue
 npm i --save-dev babel-core
+npm i --save-dev babel-loader
 ```
 
 ## Create the NPM script

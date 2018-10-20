@@ -23,10 +23,12 @@ function getIntegrityOptions({ integrityOptions }) {
 function ensureOptionsDefaults(options) {
   const {
     suite = 'Storyshots',
+    asyncJest,
     storyNameRegex,
     storyKindRegex,
     renderer,
     serializer,
+    snapshotSerializers,
     stories2snapsConverter = defaultStories2SnapsConverter,
     test: testMethod = snapshotWithOptions({ renderer, serializer }),
   } = options;
@@ -34,11 +36,13 @@ function ensureOptionsDefaults(options) {
   const integrityOptions = getIntegrityOptions(options);
 
   return {
+    asyncJest,
     suite,
     storyNameRegex,
     storyKindRegex,
     stories2snapsConverter,
     testMethod,
+    snapshotSerializers,
     integrityOptions,
   };
 }

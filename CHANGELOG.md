@@ -1,3 +1,192 @@
+# 4.0.0-rc.1
+
+2018-October-18
+
+#### Bug Fixes
+
+-   Angular: expose webpackFinal extension [#4431](https://github.com/storybooks/storybook/pull/4431)
+-   Addon-Knobs: fix ints as values [#4465](https://github.com/storybooks/storybook/pull/4465)
+
+#### Maintenance
+
+-   Add Angular 6 fixture to the sb-cli tests [#4464](https://github.com/storybooks/storybook/pull/4464)
+
+#### Dependency Upgrades
+
+-   Require React 16.3 as a peer dependency [#4458](https://github.com/storybooks/storybook/pull/4458)
+-   Bump @ember/test-helpers from 0.7.26 to 0.7.27 [#4455](https://github.com/storybooks/storybook/pull/4455)
+-   Bump eslint-plugin-jest from 21.25.0 to 21.25.1 [#4456](https://github.com/storybooks/storybook/pull/4456)
+-   Bump autoprefixer from 9.2.0 to 9.2.1 [#4457](https://github.com/storybooks/storybook/pull/4457)
+-   Bump @types/node from 10.11.7 to 10.12.0 [#4434](https://github.com/storybooks/storybook/pull/4434)
+-   Bump ember-cli-inject-live-reload from 2.0.0 to 2.0.1 [#4435](https://github.com/storybooks/storybook/pull/4435)
+-   Bump gatsby-plugin-sharp from 1.6.48 to 2.0.7 in /docs [#4438](https://github.com/storybooks/storybook/pull/4438)
+-   Bump marked from 0.4.0 to 0.5.1 in /docs [#4437](https://github.com/storybooks/storybook/pull/4437)
+-   Bump highlight.js from 9.12.0 to 9.13.0 in /docs [#4440](https://github.com/storybooks/storybook/pull/4440)
+
+# 4.0.0-rc.0
+
+2018-October-15
+
+#### Features
+
+-   Addon: google analytics [#4138](https://github.com/storybooks/storybook/pull/4138)
+
+#### Bug Fixes
+
+-   Improve environment var loading [#4413](https://github.com/storybooks/storybook/pull/4413)
+
+#### Maintenance
+
+-   Skip preflight check when starting cra kitchen sink [#4408](https://github.com/storybooks/storybook/pull/4408)
+-   Change crna-kitchen-sink path and Some CI maintenance [#4409](https://github.com/storybooks/storybook/pull/4409)
+-   Create ember entry point to official storybook [#4426](https://github.com/storybooks/storybook/pull/4426)
+
+#### Dependency Upgrades
+
+-   Bump ember-cli from 3.4.3 to 3.5.0 [#4429](https://github.com/storybooks/storybook/pull/4429)
+-   Bump react-native-modal-selector from 0.0.27 to 0.0.29 [#4428](https://github.com/storybooks/storybook/pull/4428)
+-   Bump ember-cli-inject-live-reload from 1.8.2 to 1.10.1 [#4423](https://github.com/storybooks/storybook/pull/4423)
+-   Bump html-webpack-plugin from 4.0.0-beta.1 to 4.0.0-beta.2 [#4421](https://github.com/storybooks/storybook/pull/4421)
+-   Bump react-scripts from 2.0.4 to 2.0.5 [#4420](https://github.com/storybooks/storybook/pull/4420)
+-   Bump autoprefixer from 9.1.5 to 9.2.0 [#4417](https://github.com/storybooks/storybook/pull/4417)
+-   Bump redux from 4.0.0 to 4.0.1 [#4419](https://github.com/storybooks/storybook/pull/4419)
+-   Bump ts-loader from 5.2.1 to 5.2.2 [#4418](https://github.com/storybooks/storybook/pull/4418)
+-   Bump eslint-plugin-jest from 21.24.1 to 21.25.0 [#4424](https://github.com/storybooks/storybook/pull/4424)
+-   Bump lazy-universal-dotenv from 1.9.1 to 2.0.0 [#4422](https://github.com/storybooks/storybook/pull/4422)
+
+# 4.0.0-alpha.25
+
+2018-October-13
+
+#### Breaking Changes
+
+-   CLI: Rename CLI to sb [#4345](https://github.com/storybooks/storybook/pull/4345)
+-   React Native: Remove the packager from storybook [#4261](https://github.com/storybooks/storybook/pull/4261)
+-   React-Native: On-device addons [#4381](https://github.com/storybooks/storybook/pull/4381)
+
+#### Features
+
+-   Storybook version update check [#4334](https://github.com/storybooks/storybook/pull/4334)
+-   CLI: specify project type interactively or as option [#4184](https://github.com/storybooks/storybook/pull/4184)
+-   Addon-Jest: expand supported file types [#3983](https://github.com/storybooks/storybook/pull/3983)
+-   CLI-less Node api [#4344](https://github.com/storybooks/storybook/pull/4344)
+-   React-Native: Updated channel to support async option [#4326](https://github.com/storybooks/storybook/pull/4326)
+-   React-Native: On-device addons for notes, knobs, backgrounds [#4327](https://github.com/storybooks/storybook/pull/4327)
+-   Angular: Add support for "baseUrl" and "paths" from angular-cli [#4162](https://github.com/storybooks/storybook/pull/4162)
+-   Angular: Added basePath support [#4323](https://github.com/storybooks/storybook/pull/4323)
+-   Vue: support string-only component [#4285](https://github.com/storybooks/storybook/pull/4285)
+-   Storyshots: Add snapshot serializer option [#4283](https://github.com/storybooks/storybook/pull/4283)
+-   Storyshots: Support story-specific options as function [#4282](https://github.com/storybooks/storybook/pull/4282)
+
+#### Bug Fixes
+
+-   React-native: Remove deprecated attempt to load default addons [#4308](https://github.com/storybooks/storybook/pull/4308)
+-   Fix panel layouts [#4304](https://github.com/storybooks/storybook/pull/4304)
+-   [logging] better error logging for when opn fails to opn [#4348](https://github.com/storybooks/storybook/pull/4348)
+-   Fix iPhone viewport dimensions [#4293](https://github.com/storybooks/storybook/pull/4293)
+-   Fix Array.js value to string [#4336](https://github.com/storybooks/storybook/pull/4336)
+-   Fixes to cli ember support [#4318](https://github.com/storybooks/storybook/pull/4318)
+-   Update `addon-jest` to new propType [#4252](https://github.com/storybooks/storybook/pull/4252)
+
+#### Maintenance
+
+-   Remove CRNA fixture [#4346](https://github.com/storybooks/storybook/pull/4346)
+-   Try to fix cli tests [#4338](https://github.com/storybooks/storybook/pull/4338)
+-   Updated installation for Angular [#4302](https://github.com/storybooks/storybook/pull/4302)
+-   Fix the broken lint [#4310](https://github.com/storybooks/storybook/pull/4310)
+-   [ember] add dependencies to root application [#4309](https://github.com/storybooks/storybook/pull/4309)
+
+#### Dependency Upgrades
+
+-   Knobs/replace datepicker [#4380](https://github.com/storybooks/storybook/pull/4380)
+-   Re-generate lockfiles [#4404](https://github.com/storybooks/storybook/pull/4404)
+-   Run `yarn upgrade-interactive --latest` in root and docs [#4403](https://github.com/storybooks/storybook/pull/4403)
+-   chore(deps): #4267 upgrade lodash to latest [#4284](https://github.com/storybooks/storybook/pull/4284)
+-   Bump express from 4.16.3 to 4.16.4 [#4370](https://github.com/storybooks/storybook/pull/4370)
+-   Bump @angular/cli from 6.2.4 to 6.2.5 [#4390](https://github.com/storybooks/storybook/pull/4390)
+-   CHANGE back to use html-webpack-plugin to keep compatibility with plugins that depend on it [#4375](https://github.com/storybooks/storybook/pull/4375)
+-   Bump danger from 4.4.6 to 4.4.7 [#4365](https://github.com/storybooks/storybook/pull/4365)
+-   Bump @storybook/react from 3.4.8 to 3.4.11 in /docs [#4354](https://github.com/storybooks/storybook/pull/4354)
+-   Bump sitemap from 1.13.0 to 2.0.1 in /docs [#4356](https://github.com/storybooks/storybook/pull/4356)
+-   Bump husky from 1.1.1 to 1.1.2 [#4358](https://github.com/storybooks/storybook/pull/4358)
+-   Tech/upgrades 5 [#4347](https://github.com/storybooks/storybook/pull/4347)
+
+# 4.0.0-alpha.24
+
+2018-October-04
+
+#### Features
+
+-   Ember: add ember support [#4237](https://github.com/storybooks/storybook/pull/4237)
+-   Riot: support the tagConstructor option [#4258](https://github.com/storybooks/storybook/pull/4258)
+-   Presets: Add "addons" and "config" to preset extensions [#4240](https://github.com/storybooks/storybook/pull/4240)
+
+#### Bug Fixes
+
+-   Webpack: Fix broken SVGs [#4260](https://github.com/storybooks/storybook/pull/4260)
+-   Babel/minify: use `builtIns: false` [#4262](https://github.com/storybooks/storybook/pull/4262)
+-   Addon-Notes: Fix how markdownOptions are passed to marked [#4242](https://github.com/storybooks/storybook/pull/4242)
+-   Addon-Knobs: Fix broken colorpicker [#4222](https://github.com/storybooks/storybook/pull/4222)
+
+# 4.0.0-alpha.23
+
+2018-September-25
+
+#### Features
+
+-   Angular build time optimization [#4118](https://github.com/storybooks/storybook/pull/4118)
+-   Pass Jest done callback to testMethod [#3853](https://github.com/storybooks/storybook/pull/3853)
+
+#### Bug Fixes
+
+-   Fix getstorybook CLI [#4213](https://github.com/storybooks/storybook/pull/4213)
+-   FIX regression devtool, in case of cross domain parent, window.parent might throw [#4199](https://github.com/storybooks/storybook/pull/4199)
+
+#### Dependency Upgrades
+
+-   Upgrade deps dealing with license issues [#4228](https://github.com/storybooks/storybook/pull/4228)
+-   Use @emotion/snapshot-serializer [#4206](https://github.com/storybooks/storybook/pull/4206)
+
+# 4.0.0-alpha.22
+
+2018-September-19
+
+#### Features
+
+-   Storyshots: story params support [#4176](https://github.com/storybooks/storybook/pull/4176)
+-   Addon-options: story params support [#3965](https://github.com/storybooks/storybook/pull/3965)
+-   Presets - API generalization  [#4173](https://github.com/storybooks/storybook/pull/4173)
+-   start-storybook: open browser tab on first compilation [#4149](https://github.com/storybooks/storybook/pull/4149)
+-   start-storybook: suggest an alternative when the port is occupied [#4146](https://github.com/storybooks/storybook/pull/4146)
+-   Merge webpack optimisation configs [#4121](https://github.com/storybooks/storybook/pull/4121)
+
+#### Bug Fixes
+
+-   Angular cli - fix prebuild [#4187](https://github.com/storybooks/storybook/pull/4187)
+-   Presets - add babelDefault extension [#4155](https://github.com/storybooks/storybook/pull/4155)
+-   CHANGE index.html.ejs to use files over chunks && UPGRADE generate-page-webpack-plugin [#4134](https://github.com/storybooks/storybook/pull/4134)
+-   Allow replacing of stories (with warning rather than error) [#4061](https://github.com/storybooks/storybook/pull/4061)
+
+#### Maintenance
+
+-   CLI refactor [#4168](https://github.com/storybooks/storybook/pull/4168)
+-   Fix linter warnings [#4172](https://github.com/storybooks/storybook/pull/4172)
+-   Remove gh-pages deploy in favor of netlify [#4128](https://github.com/storybooks/storybook/pull/4128)
+
+#### Dependency Upgrades
+
+-   [core]: widen `airbnb-js-shims` dep range [#4189](https://github.com/storybooks/storybook/pull/4189)
+-   Updating react-split-pane to version 0.1.84 [#4153](https://github.com/storybooks/storybook/pull/4153)
+-   Riot tag loader missing in cli [#4122](https://github.com/storybooks/storybook/pull/4122)
+
+# 3.4.11
+
+2018-September-17
+
+#### Dependencies
+
+-   Allow v1 or v2 in airbnb-js-shims [#4190](https://github.com/storybooks/storybook/pull/4190)
+
 # 4.0.0-alpha.21
 
 2018-September-07
@@ -17,8 +206,8 @@
 
 #### Other
 
--   [WIP] Refactor core and frameworks to work with presets [#4043](https://github.com/storybooks/storybook/pull/4043)
--   [WIP] presets - merge default babel configs [#4107](https://github.com/storybooks/storybook/pull/4107)
+-   \[WIP\] Refactor core and frameworks to work with presets [#4043](https://github.com/storybooks/storybook/pull/4043)
+-   \[WIP\] presets - merge default babel configs [#4107](https://github.com/storybooks/storybook/pull/4107)
 
 # 4.0.0-alpha.20
 
@@ -95,7 +284,7 @@ Not published to NPM
 -   Temp revert the 36a2676 [#4062](https://github.com/storybooks/storybook/pull/4062)
 -   Remove deprecation of --db-path and --enable-db [#4030](https://github.com/storybooks/storybook/pull/4030)
 -   Remove git info extraction [#4031](https://github.com/storybooks/storybook/pull/4031)
--   Fixed homepage links [skip ci] [#4008](https://github.com/storybooks/storybook/pull/4008)
+-   Fixed homepage links \[skip ci\] [#4008](https://github.com/storybooks/storybook/pull/4008)
 -   CHANGE html-webpack-plugin for generate-page-plugin [#3919](https://github.com/storybooks/storybook/pull/3919)
 
 # 4.0.0-alpha.16
@@ -108,7 +297,7 @@ Not published to NPM
 
 #### Bug Fixes
 
--   [BUG FIX] Use fixed version of react-dev-utils [#3959](https://github.com/storybooks/storybook/pull/3959)
+-   \[BUG FIX\] Use fixed version of react-dev-utils [#3959](https://github.com/storybooks/storybook/pull/3959)
 -   Inline emotion css calls that require theme to avoid using state [#3950](https://github.com/storybooks/storybook/pull/3950)
 
 #### Dependency Upgrades
@@ -998,7 +1187,7 @@ Read on for more improvements, fixes, 1In addition, there are hundreds of depend
 
 #### Bug Fixes
 
--   [Addon-storyshots] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
+-   \[Addon-storyshots\] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
 -   CLI: add error handling for latest_version helper [#3297](https://github.com/storybooks/storybook/pull/3297)
 -   Refactor CLI to use `npm` and `yarn` instead of third party packages [#3275](https://github.com/storybooks/storybook/pull/3275)
 -   Fix issue when extending webpack config [#3279](https://github.com/storybooks/storybook/pull/3279)
@@ -1058,7 +1247,7 @@ Read on for more improvements, fixes, 1In addition, there are hundreds of depend
 
 #### Bug Fixes
 
--   [Hotfix]  Use published webpack 4 compatible fork of react-dev-utils [#3312](https://github.com/storybooks/storybook/pull/3312)
+-  \[Hotfix\]  Use published webpack 4 compatible fork of react-dev-utils [#3312](https://github.com/storybooks/storybook/pull/3312)
 
 # 4.0.0-alpha.0
 
@@ -1085,7 +1274,7 @@ Read on for more improvements, fixes, 1In addition, there are hundreds of depend
 #### Bug Fixes
 
 -   Update react-native symlink resolving and add support for flow [#3306](https://github.com/storybooks/storybook/pull/3306)
--   [Addon-storyshots] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
+-   \[Addon-storyshots\] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
 -   Remove onDeviceUI animation to support Detox screenshots [#3272](https://github.com/storybooks/storybook/pull/3272)
 -   Angular: use resolveLoader from cliCommonConfig [#3251](https://github.com/storybooks/storybook/pull/3251)
 

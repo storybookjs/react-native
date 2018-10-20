@@ -12,9 +12,9 @@
     "react-dom": "^16.4.2"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-optional-chaining": "7.0.0-rc.3",
-    "@babel/core": "7.0.0-rc.3",
-    "babel-loader": "8.0.0-beta.6",
+    "@babel/plugin-proposal-optional-chaining": "7.0.0",
+    "@babel/core": "7.1.0",
+    "babel-loader": "8.0.2",
     "@storybook/react": "^4.0.0-alpha.17"
   }
 }

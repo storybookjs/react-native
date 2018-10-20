@@ -1,8 +1,10 @@
 import path from 'path';
 import { ContextReplacementPlugin } from 'webpack';
-import loadTsConfig from './ts_config';
+import getTsLoaderOptions from './ts_config';
+import createForkTsCheckerInstance from './create-fork-ts-checker-plugin';
 
 export function webpack(config, { configDir }) {
+  const tsLoaderOptions = getTsLoaderOptions(configDir);
   return {
     ...config,
     module: {
@@ -14,7 +16,7 @@ export function webpack(config, { configDir }) {
           use: [
             {
               loader: require.resolve('ts-loader'),
-              options: loadTsConfig(configDir),
+              options: tsLoaderOptions,
             },
             require.resolve('angular2-template-loader'),
           ],
@@ -29,7 +31,7 @@ export function webpack(config, { configDir }) {
           exclude: /\.async\.html$/,
         },
         {
-          test: /\.scss$/,
+          test: /\.s(c|a)ss$/,
           use: [require.resolve('raw-loader'), require.resolve('sass-loader')],
         },
       ],
@@ -45,6 +47,7 @@ export function webpack(config, { configDir }) {
         /@angular(\\|\/)core(\\|\/)fesm5/,
         path.resolve(__dirname, '..')
       ),
+      createForkTsCheckerInstance(tsLoaderOptions),
     ],
   };
 }
