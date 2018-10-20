@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { Button } from '@storybook/components';
 import styled from '@emotion/styled';
 import AceEditor from 'react-ace';
+import 'brace/mode/javascript';
+import 'brace/theme/monokai';
 
 const storybookIframe = 'storybook-preview-iframe';
 const addedElAttr = 'addedbyaddon';
@@ -125,7 +127,7 @@ export default class ResourcePanel extends Component {
         <div>
           <AceEditor
             mode="javascript"
-            theme="chrome"
+            theme="monokai"
             setOptions={{ useWorker: false, fontSize: '15px' }}
             onChange={this.onChange.bind(this)}
             style={{ 'box-shadow': '5px 7px #888888' }}
