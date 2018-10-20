@@ -4,6 +4,7 @@ import { configure, addDecorator } from '@storybook/react';
 import { themes } from '@storybook/components';
 import { withOptions } from '@storybook/addon-options';
 import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { withResources } from '@storybook/addon-resources';
 
 import 'react-chromatic/storybook-addon';
 import addHeadWarning from './head-warning';
@@ -17,6 +18,21 @@ addDecorator(
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: /\|/,
     theme: themes.dark,
+  })
+);
+
+addDecorator(
+  withResources({
+    resources: `<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></link>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+<script type="text/javascript">
+  try {
+    jQuery( "button" ).click(function() {
+      alert( "Handler for .click() called." );
+    });
+  } catch(e){ }
+</script>`,
   })
 );
 

@@ -1,5 +1,7 @@
 import addons, { makeDecorator } from '@storybook/addons';
 
+let hasSetInitialResources = false;
+
 export const withResources = makeDecorator({
   name: 'withResources',
   parameterName: 'resources',
@@ -10,17 +12,17 @@ export const withResources = makeDecorator({
 
     const storyOptions = parameters || options;
 
-    if (!Array.isArray(storyOptions) && !Array.isArray(storyOptions.resources)) {
-      throw new Error('The `resources` parameter needs to be an Array of strings');
+    if (typeof storyOptions !== 'string' && typeof storyOptions.resources !== 'string') {
+      throw new Error('The `resources` parameter needs to be a string');
     }
 
-    // resources = union(resources,
-    //   Array.isArray(storyOptions) ? storyOptions : storyOptions.resources);
-
-    channel.emit(
-      'storybook/resources/add_resources',
-      Array.isArray(storyOptions) ? storyOptions : storyOptions.resources
-    );
+    if (!hasSetInitialResources) {
+      channel.emit(
+        'storybook/resources/add_resources',
+        typeof storyOptions === 'string' ? storyOptions : storyOptions.resources
+      );
+      hasSetInitialResources = true;
+    }
 
     return getStory(context);
   },

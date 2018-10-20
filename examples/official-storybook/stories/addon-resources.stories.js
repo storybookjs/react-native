@@ -1,56 +1,23 @@
-import { window } from 'global';
 import React from 'react';
-import { addDecorator, storiesOf } from '@storybook/react';
-import { withResources } from '@storybook/addon-resources';
+import { storiesOf } from '@storybook/react';
 
-const bootstrapButton = (label, className) => () => {
-  function handleClick() {
-    window.alert(window.jQuery ? 1 : 0);
-  }
-  return (
-    <button type="button" onClick={handleClick} className={className}>
-      {label}
-    </button>
-  );
-};
-const fontawesomeIcon = (label, className) => () => (
+const myButton = (label, className) => () => (
+  <button type="button" className={className}>
+    {label}
+  </button>
+);
+
+const myIcon = (label, className) => () => (
   <div>
     <i className={className} /> {label}
   </div>
 );
 
-addDecorator(
-  withResources({
-    resources: [
-      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
-      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', // ,
-      // 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'
-    ],
-  })
-);
-
 storiesOf('Addons|Resources', module)
-  .add('Dark Large Button', bootstrapButton('Dark Large Button', 'btn btn-lg btn-dark'))
-  .add('Inverse Large Button', bootstrapButton('Inverse Large Button', 'btn btn-lg btn-inverse'));
+  .add('Primary Large Button', myButton('Primary Large Button', 'btn btn-lg btn-primary'))
+  .add('Secondary Button', myButton('Secondary Button', 'btn btn-secondary'));
 
 storiesOf('Addons|Resources', module).add(
   'Camera Icon',
-  fontawesomeIcon('fa-camera-retro', 'fa fa-camera-retro')
+  myIcon('fa-camera-retro', 'fa fa-camera-retro')
 );
-
-// storiesOf('Addons|Resources', module)
-//   .addDecorator(withResources)
-//   .add('story 1', baseStory("hello world"), {
-//     resources: []
-//       // [ 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
-//       //   'https://code.jquery.com/jquery-3.3.1.js' ]
-//   }).add('story 2', baseStory("still hello world"), {
-//     resources:
-//       []
-//   });
-
-// storiesOf('Addons|Resources', module)
-//   .addDecorator(withResources)
-//   .add('story 1', baseStory("hello world"), {
-//     resources: [ 'https://code.jquery.com/jquery-3.3.1.js' ]
-//   }).add('story 2', baseStory("still hello world"));

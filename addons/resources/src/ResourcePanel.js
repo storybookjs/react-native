@@ -1,31 +1,25 @@
-import { document } from 'global';
+import { document, DOMParser } from 'global';
 import React, { Component } from 'react';
-// import Events from '@storybook/core-events';
 import PropTypes from 'prop-types';
-import { Input, ActionButton } from '@storybook/components';
+import { Button } from '@storybook/components';
 import styled from '@emotion/styled';
+import AceEditor from 'react-ace';
 
 const storybookIframe = 'storybook-preview-iframe';
+const addedElAttr = 'addedbyaddon';
 
 const PanelWrapper = styled.div({
   position: 'absolute',
   top: '10px',
   left: '10px',
-  width: '50%',
-});
-
-const PanelWrapperRow = styled.div({
-  display: 'flex',
-  'flex-direction': 'row',
-  padding: '3px',
 });
 
 export default class ResourcePanel extends Component {
   constructor(props) {
     super(props);
-    this.nodes = [];
-    this.state = { resources: [], addname: '' };
+    this.state = { resources: `` };
     this.onAddResources = this.onAddResources.bind(this);
+    this.parser = new DOMParser();
   }
 
   componentDidMount() {
@@ -37,78 +31,85 @@ export default class ResourcePanel extends Component {
     channel.on('storybook/resources/add_resources', this.onAddResources);
   }
 
-  componentDidUpdate() {
-    this.loadResources();
-  }
-
   componentWillUnmount() {
     const { channel } = this.props;
     channel.removeListener('storybook/resources/add_resources', this.onAddResources);
   }
 
+  onChange(newValue) {
+    this.setState({ resources: newValue });
+  }
+
   onAddResources(resources) {
     this.setState({ resources });
+    this.loadResources();
+  }
+
+  apply() {
+    const { resources = '' } = this.state;
+    this.setState({ resources });
+    this.loadResources();
+  }
+
+  convertStringToDom(str) {
+    const parsedHtml = this.parser.parseFromString(str, 'text/html');
+    const elements = parsedHtml.querySelectorAll('head > *');
+
+    // remove null elements if any!
+    return [...elements].map(eL => {
+      let newEl;
+      if (eL) {
+        /** Tried multiple easier ways to convert the string to dOM objects
+         DOMParser, jQuery etc. However, adding <script> elements to the iframe
+        seems to fail using those methods. The only way that seemed to work for all
+        cases was to createElements in this way! */
+        newEl = document.createElement(eL.tagName.toLowerCase());
+        [...Array(eL.attributes.length).keys()].forEach(idx => {
+          const attr = eL.attributes.item(idx).name;
+          newEl[attr] = eL[attr];
+        });
+        while (eL.hasChildNodes()) {
+          newEl.appendChild(eL.removeChild(eL.firstChild));
+        }
+        newEl.setAttribute(addedElAttr, '');
+      }
+      return newEl;
+    });
   }
 
   loadResources() {
-    function loadResource(filename) {
-      if (!filename) return null;
+    const { resources = `` } = this.state;
 
-      let eL;
-      if (filename.endsWith('js')) {
-        // if filename is a external JavaScript file
-        eL = document.createElement('script');
-        eL.setAttribute('type', 'text/javascript');
-        eL.setAttribute('src', filename);
-      } else if (filename.endsWith('css')) {
-        // if filename is an external CSS file
-        eL = document.createElement('link');
-        eL.setAttribute('rel', 'stylesheet');
-        eL.setAttribute('type', 'text/css');
-        eL.setAttribute('href', filename);
+    const addElements = (domElements, i) => {
+      if (i < 0 || i >= domElements.length) return;
+
+      const node = this.iframe.contentDocument.head.appendChild(domElements[i]);
+
+      // wait for script's to load before running others!
+      // example: load #2 only after loading #1
+      // #1  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      // #2  <script type="text/javascript">try{ alert(window.jQuery?'1':'0') } catch(e){ }</script>
+      if (node.tagName.toLowerCase() === 'script' && node.src !== '') {
+        node.onload = () => {
+          addElements(domElements, i + 1);
+        };
+      } else {
+        addElements(domElements, i + 1);
       }
+    };
 
-      return this.iframe && eL ? this.iframe.contentDocument.head.appendChild(eL) : null;
-    }
-
-    const { resources = [] } = this.state;
-    // const { channel } = this.props;
-
-    resources.map(loadResource.bind(this)).forEach(node => {
-      if (node) this.nodes.push(node);
+    // remove previously added elements!
+    this.iframe.contentDocument.head.querySelectorAll(`[${addedElAttr}]`).forEach(eL => {
+      if (eL) {
+        eL.parentNode.removeChild(eL);
+      }
     });
-  }
 
-  removeNodes() {
-    this.nodes.forEach(x => x.parentNode.removeChild(x));
-    this.nodes = [];
-  }
-
-  remove(i) {
-    const { resources = [] } = this.state;
-    this.setState({
-      resources: resources.splice(i, 1),
-    });
-  }
-
-  handleChange(e) {
-    this.setState({ addname: e.target.value });
-  }
-
-  add() {
-    const { resources = [], addname = '' } = this.state;
-    // const { channel } = this.props;
-
-    if (addname.trim() === '') return;
-
-    this.setState({
-      resources: resources.push(addname),
-      addname: '',
-    });
+    addElements(this.convertStringToDom(resources), 0);
   }
 
   render() {
-    const { resources = [], addname = '' } = this.state;
+    const { resources = '' } = this.state;
     const { active } = this.props;
 
     if (!active) {
@@ -117,18 +118,27 @@ export default class ResourcePanel extends Component {
 
     return (
       <PanelWrapper className="addon-resources-container">
-        {resources &&
-          resources.map((resource, i) => (
-            /* eslint-disable react/no-array-index-key */
-            <PanelWrapperRow key={i}>
-              <Input value={resource} size="100%" readOnly />
-              <ActionButton onClick={this.remove.bind(this, i)}>-</ActionButton>
-            </PanelWrapperRow>
-          ))}
-        <PanelWrapperRow>
-          <Input size="100%" value={addname} onChange={this.handleChange.bind(this)} />
-          <ActionButton onClick={this.add.bind(this)}>+</ActionButton>
-        </PanelWrapperRow>
+        <div style={{ 'font-size': '15px', 'padding-bottom': '12px', width: '800px' }}>
+          Note: Applying resources is sticky and will persist accross stories. However, in some
+          cases (like adding event listeners) you might need to re-apply resources.
+        </div>
+        <div>
+          <AceEditor
+            mode="javascript"
+            theme="chrome"
+            setOptions={{ useWorker: false, fontSize: '15px' }}
+            onChange={this.onChange.bind(this)}
+            style={{ 'box-shadow': '5px 7px #888888' }}
+            value={resources}
+            name="resourcesdiv"
+            height="300px"
+            width="800px"
+            editorProps={{ $blockScrolling: true }}
+          />
+        </div>
+        <div style={{ float: 'right', 'padding-top': '17px' }}>
+          <Button onClick={this.apply.bind(this)}>APPLY RESOURCES</Button>
+        </div>
       </PanelWrapper>
     );
   }

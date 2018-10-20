@@ -31,6 +31,7 @@
     "global": "^4.3.2",
     "lodash.union": "^4.6.0",
     "prop-types": "^15.6.2",
+    "react-ace": "^6.2.0",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {
