@@ -17,15 +17,19 @@ export function getStyleRules(rules) {
   const extensions = ['.css', '.scss', '.sass', '.module.css', '.module.scss', '.module.sass'];
 
   return rules.reduce((styleRules, rule) => {
+    // If at least one style extension satisfies the rule test, the rule is one
+    // we want to extract
     if (rule.test && extensions.some(normalizeCondition(rule.test))) {
       // If the base test is for styles, return early
       return styleRules.concat(rule);
     }
 
+    //  Get any style rules contained in rule.oneOf
     if (!rule.test && rule.oneOf) {
       styleRules.push(...getStyleRules(rule.oneOf));
     }
 
+    // Get any style rules contained in rule.rules
     if (!rule.test && rule.rules) {
       styleRules.push(...getStyleRules(rule.rules));
     }
