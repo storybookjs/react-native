@@ -1,16 +1,11 @@
 import semver from 'semver';
 import { normalizeCondition } from 'webpack/lib/RuleSet';
 
-let MiniCssExtractPlugin;
-
 export function isReactScriptsInstalled() {
   try {
     // eslint-disable-next-line global-require, import/no-extraneous-dependencies
     const reactScriptsJson = require('react-scripts/package.json');
     if (semver.lt(reactScriptsJson.version, '2.0.0')) return false;
-
-    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-    MiniCssExtractPlugin = require('mini-css-extract-plugin');
     return true;
   } catch (e) {
     return false;
@@ -63,7 +58,9 @@ export function applyCRAWebpackConfig(baseConfig) {
 
   //  Add css minification for production
   const plugins = [...baseConfig.plugins];
-  if (baseConfig.mode === 'production')
+  if (baseConfig.mode === 'production') {
+    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+    const MiniCssExtractPlugin = require('mini-css-extract-plugin');
     plugins.push(
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
@@ -72,6 +69,7 @@ export function applyCRAWebpackConfig(baseConfig) {
         chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
       })
     );
+  }
 
   return {
     ...baseConfig,
