@@ -49,7 +49,7 @@ export function getCraWebpackConfig(mode) {
 }
 
 export function applyCRAWebpackConfig(baseConfig) {
-  // Remove style rules from baseConfig
+  // Remove any rules from baseConfig that test true for any one of the extensions
   const baseRulesExcludingStyles = baseConfig.module.rules.filter(
     rule => !rule.test || !['.css', '.scss', '.sass'].some(normalizeCondition(rule.test))
   );
@@ -57,8 +57,7 @@ export function applyCRAWebpackConfig(baseConfig) {
   //  Load create-react-app config
   const craWebpackConfig = getCraWebpackConfig(baseConfig.mode);
 
-  //  Concat will ensure rules is an array
-  const craStyleRules = getStyleRules([].concat(craWebpackConfig.module.rules));
+  const craStyleRules = getStyleRules(craWebpackConfig.module.rules);
 
   //  Add css minification for production
   const plugins = [...baseConfig.plugins];
