@@ -6,7 +6,7 @@ export const withResources = makeDecorator({
   name: 'withResources',
   parameterName: 'resources',
   skipIfNoParametersOrOptions: true,
-  allowDeprecatedUsage: true,
+  allowDeprecatedUsage: false,
   wrapper: (getStory, context, { options, parameters }) => {
     const channel = addons.getChannel();
 

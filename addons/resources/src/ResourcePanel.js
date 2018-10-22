@@ -19,7 +19,7 @@ const PanelWrapper = styled.div({
 export default class ResourcePanel extends Component {
   constructor(props) {
     super(props);
-    this.state = { resources: `` };
+    this.state = { resources: ``, disable: false };
     this.onAddResources = this.onAddResources.bind(this);
     this.parser = new DOMParser();
   }
@@ -39,18 +39,36 @@ export default class ResourcePanel extends Component {
   }
 
   onChange(newValue) {
-    this.setState({ resources: newValue });
+    this.setState(prevState => ({ ...prevState, resources: newValue }));
   }
 
   onAddResources(resources) {
-    this.setState({ resources });
-    this.loadResources();
+    this.loadResources(resources);
+    this.setState(prevState => ({ ...prevState, resources, disable: false }));
+  }
+
+  addElements(domElements, i) {
+    if (i < 0 || i >= domElements.length) return;
+
+    const node = this.iframe.contentDocument.head.appendChild(domElements[i]);
+
+    // wait for script's to load before running others!
+    // example: load #2 only after loading #1
+    // #1  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    // #2  <script type="text/javascript">try{ alert(window.jQuery?'1':'0') } catch(e){ }</script>
+    if (node.tagName.toLowerCase() === 'script' && node.src !== '') {
+      node.onload = () => {
+        this.addElements(domElements, i + 1);
+      };
+    } else {
+      this.addElements(domElements, i + 1);
+    }
   }
 
   apply() {
     const { resources = '' } = this.state;
-    this.setState({ resources });
-    this.loadResources();
+    this.loadResources(resources);
+    this.setState(prevState => ({ ...prevState, disable: false }));
   }
 
   convertStringToDom(str) {
@@ -79,27 +97,12 @@ export default class ResourcePanel extends Component {
     });
   }
 
-  loadResources() {
-    const { resources = `` } = this.state;
+  disable() {
+    this.loadResources(``);
+    this.setState(prevState => ({ ...prevState, disable: true }));
+  }
 
-    const addElements = (domElements, i) => {
-      if (i < 0 || i >= domElements.length) return;
-
-      const node = this.iframe.contentDocument.head.appendChild(domElements[i]);
-
-      // wait for script's to load before running others!
-      // example: load #2 only after loading #1
-      // #1  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      // #2  <script type="text/javascript">try{ alert(window.jQuery?'1':'0') } catch(e){ }</script>
-      if (node.tagName.toLowerCase() === 'script' && node.src !== '') {
-        node.onload = () => {
-          addElements(domElements, i + 1);
-        };
-      } else {
-        addElements(domElements, i + 1);
-      }
-    };
-
+  loadResources(resources) {
     // remove previously added elements!
     this.iframe.contentDocument.head.querySelectorAll(`[${addedElAttr}]`).forEach(eL => {
       if (eL) {
@@ -107,11 +110,11 @@ export default class ResourcePanel extends Component {
       }
     });
 
-    addElements(this.convertStringToDom(resources), 0);
+    this.addElements(this.convertStringToDom(resources), 0);
   }
 
   render() {
-    const { resources = '' } = this.state;
+    const { resources = '', disable = false } = this.state;
     const { active } = this.props;
 
     if (!active) {
@@ -120,7 +123,7 @@ export default class ResourcePanel extends Component {
 
     return (
       <PanelWrapper className="addon-resources-container">
-        <div style={{ 'font-size': '15px', 'padding-bottom': '12px', width: '800px' }}>
+        <div style={{ fontSize: '15px', paddingBottom: '12px', width: '800px' }}>
           Note: Applying resources is sticky and will persist accross stories. However, in some
           cases (like adding event listeners) you might need to re-apply resources.
         </div>
@@ -128,9 +131,10 @@ export default class ResourcePanel extends Component {
           <AceEditor
             mode="javascript"
             theme="monokai"
+            readOnly={disable}
             setOptions={{ useWorker: false, fontSize: '15px' }}
             onChange={this.onChange.bind(this)}
-            style={{ 'box-shadow': '5px 7px #888888' }}
+            style={{ boxShadow: '5px 7px #888888', opacity: disable ? 0.5 : 1.0 }}
             value={resources}
             name="resourcesdiv"
             height="300px"
@@ -138,8 +142,10 @@ export default class ResourcePanel extends Component {
             editorProps={{ $blockScrolling: true }}
           />
         </div>
-        <div style={{ float: 'right', 'padding-top': '17px' }}>
+        <div style={{ float: 'right', paddingTop: '17px' }}>
           <Button onClick={this.apply.bind(this)}>APPLY RESOURCES</Button>
+          &nbsp;&nbsp;
+          <Button onClick={this.disable.bind(this)}>DISABLE</Button>
         </div>
       </PanelWrapper>
     );
