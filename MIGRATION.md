@@ -195,14 +195,16 @@ storiesOf('My component', module)
 Becomes:
 
 ```js
+// config.js
 addDecorator(withNotes);
-// applies notesto all stories, you can also add it only to specific stories by:
-// storiesOf(...).addDecorator(withNotes)
 
+// Component.stories.js
 storiesOf('My component', module)
   .add('story1', () => <Component ... />, { notes: 'some notes' })
   .add('story2', () => <Component ... />, { notes: 'other notes' });
 ```
+
+This example applies notes globally to all stories. You can apply it locally with `storiesOf(...).addDecorator(withNotes)`.
 
 The story parameters correspond directly to the old withX arguments, so it's easy to migrate your code. See the parameters documentation for the packages that have been upgraded:
 
