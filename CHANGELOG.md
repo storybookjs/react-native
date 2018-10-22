@@ -7,6 +7,7 @@
 -   Support css-modules [#4405](https://github.com/storybooks/storybook/pull/4405)
 -   Angular: Support sass files [#4343](https://github.com/storybooks/storybook/pull/4343)
 -   Support "mjs" extensions [#4466](https://github.com/storybooks/storybook/pull/4466)
+-   Allow presets to be async [#4450](https://github.com/storybooks/storybook/pull/4450)
 
 #### Bug Fixes
 
@@ -14,7 +15,6 @@
 
 #### Maintenance
 
--   Allow presets to be async [#4450](https://github.com/storybooks/storybook/pull/4450)
 -   Override babelrc for the node related code [#4451](https://github.com/storybooks/storybook/pull/4451)
 -   Use cross-env in official example [#4474](https://github.com/storybooks/storybook/pull/4474)
 
