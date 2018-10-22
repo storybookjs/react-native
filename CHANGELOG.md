@@ -1,3 +1,29 @@
+# 4.0.0-rc.2
+
+2018-October-22
+
+#### Features
+
+-   Support css-modules [#4405](https://github.com/storybooks/storybook/pull/4405)
+-   Angular: Support sass files [#4343](https://github.com/storybooks/storybook/pull/4343)
+-   Support "mjs" extensions [#4466](https://github.com/storybooks/storybook/pull/4466)
+
+#### Bug Fixes
+
+-   Addon-Jest: undefined file extension [#4452](https://github.com/storybooks/storybook/pull/4452)
+
+#### Maintenance
+
+-   Allow presets to be async [#4450](https://github.com/storybooks/storybook/pull/4450)
+-   Override babelrc for the node related code [#4451](https://github.com/storybooks/storybook/pull/4451)
+-   Use cross-env in official example [#4474](https://github.com/storybooks/storybook/pull/4474)
+
+#### Dependency Upgrades
+
+-   Bump copy-webpack-plugin from 4.5.3 to 4.5.4 [#4492](https://github.com/storybooks/storybook/pull/4492)
+-   Bump jest-image-snapshot from 2.5.0 to 2.6.0 [#4494](https://github.com/storybooks/storybook/pull/4494)
+-   Bump webpack from 4.20.2 to 4.21.0 [#4477](https://github.com/storybooks/storybook/pull/4477)
+
 # 4.0.0-rc.1
 
 2018-October-18
