@@ -25,11 +25,6 @@
   "dependencies": {
     "@storybook/channels": "4.0.0-alpha.25",
     "global": "^4.3.2",
-    "is-function": "^1.0.1",
-    "is-regex": "^1.0.4",
-    "is-symbol": "^1.0.2",
-    "isobject": "^3.0.1",
-    "lodash.get": "^4.4.2",
-    "safe-eval": "^0.4.1"
+    "telejson": "^1.0.0"
   }
 }
