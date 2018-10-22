@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import deepEqual from 'fast-deep-equal';
-import { CYCLIC_KEY, retrocycle } from '../../lib';
-import { isObject } from '../../lib/util';
+
+import { STORY_RENDERED } from '@storybook/core-events';
 
 import ActionLoggerComponent from '../../components/ActionLogger';
 import { EVENT_ID } from '../..';
@@ -12,19 +12,18 @@ export default class ActionLogger extends React.Component {
 
   componentDidMount() {
     this.mounted = true;
-    const { channel, api } = this.props;
+    const { api } = this.props;
 
-    channel.on(EVENT_ID, this.addAction);
-    this.stopListeningOnStory = api.onStory(this.handleStoryChange);
+    api.on(EVENT_ID, this.addAction);
+    api.on(STORY_RENDERED, this.handleStoryChange);
   }
 
   componentWillUnmount() {
     this.mounted = false;
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.removeListener(EVENT_ID, this.addAction);
-
-    this.stopListeningOnStory();
+    api.off(STORY_RENDERED, this.handleStoryChange);
+    api.off(EVENT_ID, this.addAction);
   }
 
   handleStoryChange = () => {
@@ -38,11 +37,9 @@ export default class ActionLogger extends React.Component {
     let { actions = [] } = this.state;
     actions = [...actions];
 
-    action.data.args = action.data.args.map(arg => retrocycle(arg)); // eslint-disable-line
-    const isCyclic = !!action.data.args.find(arg => isObject(arg) && arg[CYCLIC_KEY]);
     const previous = actions.length && actions[0];
 
-    if (previous && !isCyclic && deepEqual(previous.data, action.data, { strict: true })) {
+    if (previous && deepEqual(previous.data, action.data, { strict: true })) {
       previous.count++; // eslint-disable-line
     } else {
       action.count = 1; // eslint-disable-line

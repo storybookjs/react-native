@@ -8,6 +8,7 @@ export function register() {
     const channel = addons.getChannel();
     addons.addPanel(PANEL_ID, {
       title: 'Action Logger',
+      // render: () => console.log('AAAAAAAA!') || <div>hi!</div>,
       // eslint-disable-next-line react/prop-types
       render: ({ active }) => <ActionLogger channel={channel} api={api} active={active} />,
     });
