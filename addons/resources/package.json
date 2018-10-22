@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-resources",
-  "version": "4.0.0-rc.1",
+  "version": "4.0.0-rc.2",
   "description": "A storybook addon to add/remove resources for your story",
   "keywords": [
     "addon",
@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@emotion/styled": "0.10.5",
-    "@storybook/addons": "4.0.0-rc.1",
-    "@storybook/components": "4.0.0-rc.1",
-    "@storybook/core-events": "4.0.0-rc.1",
+    "@storybook/addons": "4.0.0-rc.2",
+    "@storybook/components": "4.0.0-rc.2",
+    "@storybook/core-events": "4.0.0-rc.2",
     "brace": "^0.11.1",
     "global": "^4.3.2",
     "lodash.union": "^4.6.0",
