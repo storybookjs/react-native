@@ -60,6 +60,7 @@ if (
 }
 
 import('fast-deep-equal').then(m => {
-  console.log('Core|Async', m);
-  storiesOf('Core|Async', module).add('story is added async', () => <div>yes</div>);
+  storiesOf('Core|Async', module).add('story is added async', () => (
+    <div>{m.default('foo', 'foo') ? 'TRUE' : 'FALSE'}</div>
+  ));
 });
