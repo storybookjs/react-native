@@ -1,46 +1,80 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
 
-const Main = styled.article({
-  margin: 15,
-  maxWidth: 600,
-  lineHeight: 1.4,
-  fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
-});
+const Main = props => (
+  <article
+    {...props}
+    style={{
+      margin: 15,
+      maxWidth: 600,
+      lineHeight: 1.4,
+      fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
+    }}
+  />
+);
 
-const Title = styled.h1({});
+const Title = ({ children, ...props }) => <h1 {...props}>{children}</h1>;
 
-const Note = styled.p({
-  opacity: 0.5,
-});
+const Note = props => (
+  <p
+    {...props}
+    style={{
+      opacity: 0.5,
+    }}
+  />
+);
 
-const InlineCode = styled.code({
-  fontSize: 15,
-  fontWeight: 600,
-  padding: '2px 5px',
-  border: '1px solid #eae9e9',
-  borderRadius: 4,
-  backgroundColor: '#f3f2f2',
-  color: '#3a3a3a',
-});
+const InlineCode = props => (
+  <code
+    {...props}
+    style={{
+      fontSize: 15,
+      fontWeight: 600,
+      padding: '2px 5px',
+      border: '1px solid #eae9e9',
+      borderRadius: 4,
+      backgroundColor: '#f3f2f2',
+      color: '#3a3a3a',
+    }}
+  />
+);
 
-const Link = styled.a({
-  color: '#1474f3',
-  textDecoration: 'none',
-  borderBottom: '1px solid #1474f3',
-  paddingBottom: 2,
-});
+const Link = ({ children, href, ...props }) => (
+  <a
+    href={href}
+    {...props}
+    style={{
+      color: '#1474f3',
+      textDecoration: 'none',
+      borderBottom: '1px solid #1474f3',
+      paddingBottom: 2,
+    }}
+  >
+    {children}
+  </a>
+);
 
-const NavButton = styled(Link.withComponent('button'))({
-  borderTop: 'none',
-  borderRight: 'none',
-  borderLeft: 'none',
-  backgroundColor: 'transparent',
-  padding: 0,
-  cursor: 'pointer',
-  font: 'inherit',
-});
+const NavButton = ({ children, ...props }) => (
+  <button
+    {...props}
+    type="button"
+    style={{
+      color: '#1474f3',
+      textDecoration: 'none',
+      borderBottom: '1px solid #1474f3',
+      paddingBottom: 2,
+      borderTop: 'none',
+      borderRight: 'none',
+      borderLeft: 'none',
+      backgroundColor: 'transparent',
+      padding: 0,
+      cursor: 'pointer',
+      font: 'inherit',
+    }}
+  >
+    {children}
+  </button>
+);
 
 const Welcome = ({ showApp }) => (
   <Main>
