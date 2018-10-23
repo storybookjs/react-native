@@ -19456,10 +19456,10 @@ riot-tmpl@^3.0.8:
   dependencies:
     eslint-config-riot "^1.0.0"
 
-riot@^3.12.0, riot@^3.3.1:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/riot/-/riot-3.12.0.tgz#92b1db2078b0d97ab4ba846b4cf194218a8e74b4"
-  integrity sha512-UB3j1ir6exYN9RTsldYU7KE+73rjcEdaUqmbyUCehItRMkLVgcLr3PL1hTkJmQu/qi0EcekUmrjedGgBcrOZ0w==
+riot@^3.13.0, riot@^3.3.1:
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/riot/-/riot-3.13.0.tgz#bc8332864733f266b40cc457ab12d6bd267c52fa"
+  integrity sha512-Mx8i8QWHK2EyJRfa0Uy+mHgxTou3G6UjMR7TR1fN/wfL0CTK2JrAg7A0zczRDdyxjx7XKKYGbJMQ7CyKJqj25Q==
   dependencies:
     riot-cli "^4.0.2"
     riot-compiler "^3.5.1"
