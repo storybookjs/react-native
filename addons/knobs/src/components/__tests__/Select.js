@@ -22,7 +22,7 @@ describe('Select', () => {
 
       const green = wrapper.find('option').first();
       expect(green.text()).toEqual('Green');
-      expect(green.prop('value')).toEqual('#00ff00');
+      expect(green.prop('value')).toEqual('Green');
     });
   });
 });
