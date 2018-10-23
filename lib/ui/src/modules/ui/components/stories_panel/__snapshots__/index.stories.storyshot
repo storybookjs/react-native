@@ -23,9 +23,11 @@ exports[`Storyshots UI|stories/StoriesPanel default 1`] = `
     class="css-79elbk eg9vth70"
   >
     <input
+      autocomplete="off"
       class="css-1yhj4t5 eg9vth71"
       name="filter-text"
       placeholder="Filter"
+      spellcheck="false"
       type="text"
       value=""
     />
@@ -56,9 +58,11 @@ exports[`Storyshots UI|stories/StoriesPanel storiesHierarchies exists but is emp
     class="css-79elbk eg9vth70"
   >
     <input
+      autocomplete="off"
       class="css-1yhj4t5 eg9vth71"
       name="filter-text"
       placeholder="Filter"
+      spellcheck="false"
       type="text"
       value=""
     />
@@ -89,9 +93,11 @@ exports[`Storyshots UI|stories/StoriesPanel when open on mobile device 1`] = `
     class="css-79elbk eg9vth70"
   >
     <input
+      autocomplete="off"
       class="css-1yhj4t5 eg9vth71"
       name="filter-text"
       placeholder="Filter"
+      spellcheck="false"
       type="text"
       value=""
     />
@@ -122,9 +128,11 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
     class="css-79elbk eg9vth70"
   >
     <input
+      autocomplete="off"
       class="css-1yhj4t5 eg9vth71"
       name="filter-text"
       placeholder="Filter"
+      spellcheck="false"
       type="text"
       value=""
     />
