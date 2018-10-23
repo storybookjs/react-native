@@ -1,32 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Select } from '@storybook/components';
 
-class SelectType extends Component {
-  renderOptionList({ options }) {
-    if (Array.isArray(options)) {
-      return options.map(val => this.renderOption(val, val));
-    }
-    return Object.keys(options).map(key => this.renderOption(key, options[key]));
-  }
+const SelectType = ({ knob, onChange }) => {
+  const { options } = knob;
+  const entries = Array.isArray(options)
+    ? options.reduce((acc, k) => Object.assign(acc, { k }), {})
+    : options;
 
-  renderOption(key, value) {
-    const opts = { key, value };
+  const selectedKey = Object.keys(entries).find(k => entries[k] === knob.value);
 
-    return <option {...opts}>{key}</option>;
-  }
-
-  render() {
-    const { knob, onChange } = this.props;
-
-    return (
-      <Select value={knob.value} onChange={e => onChange(e.target.value)} size="flex">
-        {this.renderOptionList(knob)}
-      </Select>
-    );
-  }
-}
+  return (
+    <Select
+      value={selectedKey}
+      onChange={e => {
+        onChange(entries[e.target.value]);
+      }}
+      size="flex"
+    >
+      {Object.entries(entries).map(([key]) => (
+        <option key={key} value={key}>
+          {key}
+        </option>
+      ))}
+    </Select>
+  );
+};
 
 SelectType.defaultProps = {
   knob: {},
