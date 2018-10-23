@@ -1,3 +1,18 @@
+# 4.0.0-rc.3
+
+2018-October-23
+
+#### Bug Fixes
+
+-   Fix knobs select to support rich values [#4522](https://github.com/storybooks/storybook/pull/4522)
+-   Turn off spell check in story filter [#4472](https://github.com/storybooks/storybook/pull/4472)-
+
+#### Maintenance
+
+-   ADD timeout to update check [#4530](https://github.com/storybooks/storybook/pull/4530)
+-   REMOVE emotion from demo components to make backwards compatibility easier && ADD demo components to official example [#4527](https://github.com/storybooks/storybook/pull/4527)
+-   Exclude story files from angular app build [#4485](https://github.com/storybooks/storybook/pull/4485)
+
 # 4.0.0-rc.2
 
 2018-October-22

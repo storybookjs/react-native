@@ -1980,10 +1980,10 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.38.tgz#c1be40aa933723c608820a99a373a16d215a1ca2"
   integrity sha512-F/v7t1LwS4vnXuPooJQGBRKRGIoxWUTmA4VHfqjOccFsNDThD5bfUNpITive6s352O7o384wcpEaDV8rHCehDA==
 
-"@types/jest@^23.3.1", "@types/jest@^23.3.5":
-  version "23.3.5"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.5.tgz#870a1434208b60603745bfd214fc3fc675142364"
-  integrity sha512-3LI+vUC3Wju28vbjIjsTKakhMB8HC4l+tMz+Z8WRzVK+kmvezE5jcOvKtBpznWSI5KDLFo+FouUhpTKoekadCA==
+"@types/jest@^23.3.1", "@types/jest@^23.3.7":
+  version "23.3.7"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.7.tgz#77f9a4332ccf8db680a31818ade3ee454c831a79"
+  integrity sha512-N0p6mHrS0RHC3A9hHN4QH1RM2fGSb2E8rt6ONEK5xKSnyKtn/JAhr1VritkCn6cdyDBephVB80THqJGWzK8FAw==
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -19459,10 +19459,10 @@ riot-tmpl@^3.0.8:
   dependencies:
     eslint-config-riot "^1.0.0"
 
-riot@^3.12.0, riot@^3.3.1:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/riot/-/riot-3.12.0.tgz#92b1db2078b0d97ab4ba846b4cf194218a8e74b4"
-  integrity sha512-UB3j1ir6exYN9RTsldYU7KE+73rjcEdaUqmbyUCehItRMkLVgcLr3PL1hTkJmQu/qi0EcekUmrjedGgBcrOZ0w==
+riot@^3.13.0, riot@^3.3.1:
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/riot/-/riot-3.13.0.tgz#bc8332864733f266b40cc457ab12d6bd267c52fa"
+  integrity sha512-Mx8i8QWHK2EyJRfa0Uy+mHgxTou3G6UjMR7TR1fN/wfL0CTK2JrAg7A0zczRDdyxjx7XKKYGbJMQ7CyKJqj25Q==
   dependencies:
     riot-cli "^4.0.2"
     riot-compiler "^3.5.1"
