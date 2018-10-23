@@ -55,7 +55,7 @@ First install storybook:
 
 ```sh
 cd my-react-app
-npx -p @storybook/cli@alpha sb init
+npx -p @storybook/cli@rc sb init
 ```
 
 If you'd rather set up your project manually, take a look at our [Slow Start Guide](https://storybook.js.org/basics/slow-start-guide/).
@@ -66,7 +66,7 @@ Once it's installed, you can `npm run storybook` and it will run the development
 
 ```sh
 cd my-storybook-v2-app
-npx -p @storybook/cli@alpha sb init
+npx -p @storybook/cli@rc sb init
 ```
 
 It runs a codemod to update all package names. Read all migration details in our [Migration Guide](MIGRATION.md)

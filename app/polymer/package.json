@@ -1,6 +1,6 @@
 {
   "name": "@storybook/polymer",
-  "version": "4.0.0-rc.0",
+  "version": "4.0.0-rc.2",
   "description": "Storybook for Polymer: Develop Polymer components in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -29,13 +29,13 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@babel/runtime": "^7.1.2",
-    "@storybook/core": "4.0.0-rc.0",
+    "@storybook/core": "4.0.0-rc.2",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "webpack": "^4.20.2"
+    "webpack": "^4.21.0"
   },
   "devDependencies": {
     "lit-html": "^0.12.0",
