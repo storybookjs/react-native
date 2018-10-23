@@ -1,6 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Welcome to Storybook 1`] = `
+exports[`Storyshots Other|Demo/Button with some emoji 1`] = `
+<button
+  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+  type="button"
+>
+  <span
+    aria-label="so cool"
+    role="img"
+  >
+    😀 😎 👍 💯
+  </span>
+</button>
+`;
+
+exports[`Storyshots Other|Demo/Button with text 1`] = `
+<button
+  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+  type="button"
+>
+  Hello Button
+</button>
+`;
+
+exports[`Storyshots Other|Demo/Welcome to Storybook 1`] = `
 <article
   style="margin:15px;max-width:600px;line-height:1.4;font-family:\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif"
 >
