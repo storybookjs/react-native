@@ -185,8 +185,8 @@ storiesOf('Addons|Knobs.withKnobs', module)
     const showOptional = select('Show optional', ['yes', 'no'], 'yes');
     return (
       <div>
-        <div>{text('compulsary', 'I must be here')}</div>
-        {showOptional === 'yes' ? <div>{text('optional', 'I can disapear')}</div> : null}
+        <div>{text('compulsory', 'I must be here')}</div>
+        {showOptional === 'yes' ? <div>{text('optional', 'I can disappear')}</div> : null}
       </div>
     );
   })
@@ -202,7 +202,11 @@ storiesOf('Addons|Knobs.withKnobs', module)
       'string'
     );
     const value = m.toString();
-    return <pre>{value}</pre>;
+    return (
+      <pre>
+        the type of {value} = {typeof m}
+      </pre>
+    );
   })
   .add('triggers actions via button', () => {
     button('Toggle item list state', () => {
