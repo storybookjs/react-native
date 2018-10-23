@@ -29,8 +29,6 @@
     "dev:js": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-js.js",
     "dev:ts": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-ts.js",
     "docs:build": "npm --prefix docs run build",
-    "docs:deploy:ci": "npm --prefix docs run deploy:ci",
-    "docs:deploy:manual": "npm --prefix docs run deploy:manual",
     "docs:dev": "npm --prefix docs run dev",
     "github-release": "github-release-from-changelog",
     "lint": "yarn lint:js . && yarn lint:ts **/*.ts && yarn lint:md .",
