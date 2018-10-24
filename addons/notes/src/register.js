@@ -15,11 +15,4 @@ addons.register(ADDON_ID, api => {
     route: '/info/',
     render,
   });
-
-  addons.add(PANEL_ID, {
-    type: types.PANEL,
-    title,
-    route: '/info/',
-    render,
-  });
 });
