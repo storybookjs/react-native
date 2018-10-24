@@ -111,7 +111,7 @@
     "npmlog": "^4.1.2",
     "prettier": "^1.14.3",
     "raf": "^3.4.0",
-    "react-test-renderer": "^16.5.2",
+    "react-test-renderer": "^16.6.0",
     "remark-cli": "^5.0.0",
     "remark-lint": "^6.0.2",
     "remark-preset-lint-recommended": "^3.0.2",

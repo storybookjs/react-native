@@ -38,7 +38,7 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "react-test-renderer": "^16.5.2"
+    "react-test-renderer": "^16.6.0"
   },
   "peerDependencies": {
     "react": "*"
