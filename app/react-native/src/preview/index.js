@@ -111,7 +111,7 @@ export default class Preview {
               events={channel}
               url={webUrl}
               isUIOpen={params.isUIOpen}
-              isStoryMenuOpen={params.isStoryMenuOpen}
+              tabOpen={params.tabOpen}
               initialStory={setInitialStory ? preview._getInitialStory() : null}
             />
           );

@@ -1505,16 +1505,11 @@ You can also deploy your Storybook or style guide as a static app. This way, eve
 
 Storybook is a development environment for React UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
 
-First, install the following npm package globally:
-
-```sh
-npm install -g @storybook/cli
-```
-
 Then, run the following command inside your app’s directory:
 
 ```sh
-storybook init
+cd my-react-app
+npx -p @storybook/cli@rc sb init
 ```
 
 After that, follow the instructions on the screen.

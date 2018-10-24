@@ -16,11 +16,8 @@ object OpenSourceProjects_Storybook_SmokeTests : BuildType({
 
     steps {
         script {
-            name = "Bootstrap"
-            scriptContent = """
-                yarn
-                yarn bootstrap --core
-            """.trimIndent()
+            name = "Install"
+            scriptContent = "yarn"
             dockerImage = "node:%docker.node.version%"
         }
         allApps {
@@ -62,6 +59,18 @@ object OpenSourceProjects_Storybook_SmokeTests : BuildType({
                 }
             }
             param("github_oauth_user", "Hypnosphi")
+        }
+    }
+
+    dependencies {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+            snapshot {
+                onDependencyFailure = FailureAction.FAIL_TO_START
+            }
+
+            artifacts {
+                artifactRules = "dist.zip!**"
+            }
         }
     }
 

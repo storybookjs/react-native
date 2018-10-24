@@ -9,13 +9,18 @@ To apply the patch, change the buildType with uuid = '759f0116-2f7d-4c03-8220-56
 accordingly, and delete the patch script.
 */
 changeBuildType("759f0116-2f7d-4c03-8220-56e4ab03be3a") {
-    features {
-        add {
-            feature {
-                type = "pullRequests"
-                param("filterAuthorRole", "EVERYBODY")
-                param("authenticationType", "vcsRoot")
-            }
+    params {
+        expect {
+            password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:7f0943ab-dfca-49dd-b926-03062007bfd0")
+        }
+        update {
+            password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:9ac87388-d267-4def-a10e-3e596369f644")
+        }
+        expect {
+            param("env.PULL_REQUEST_URL", "https://github.com/storybooks/storybook/pull/%teamcity.build.branch%")
+        }
+        update {
+            param("env.PULL_REQUEST_URL", "https://github.com/storybooks/storybook/%teamcity.build.branch%")
         }
     }
 }

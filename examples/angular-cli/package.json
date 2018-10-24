@@ -1,6 +1,6 @@
 {
   "name": "angular-cli",
-  "version": "4.0.0-alpha.24",
+  "version": "4.0.0-rc.3",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -51,24 +51,24 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.8.4",
-    "@angular/cli": "^6.2.4",
+    "@angular-devkit/build-angular": "^0.8.5",
+    "@angular/cli": "^6.2.5",
     "@angular/compiler-cli": "^6.1.10",
-    "@storybook/addon-actions": "4.0.0-alpha.24",
-    "@storybook/addon-backgrounds": "4.0.0-alpha.24",
-    "@storybook/addon-centered": "4.0.0-alpha.24",
-    "@storybook/addon-jest": "4.0.0-alpha.24",
-    "@storybook/addon-knobs": "4.0.0-alpha.24",
-    "@storybook/addon-links": "4.0.0-alpha.24",
-    "@storybook/addon-notes": "4.0.0-alpha.24",
-    "@storybook/addon-options": "4.0.0-alpha.24",
-    "@storybook/addon-storyshots": "4.0.0-alpha.24",
-    "@storybook/addon-storysource": "4.0.0-alpha.24",
-    "@storybook/addons": "4.0.0-alpha.24",
-    "@storybook/angular": "4.0.0-alpha.24",
+    "@storybook/addon-actions": "4.0.0-rc.3",
+    "@storybook/addon-backgrounds": "4.0.0-rc.3",
+    "@storybook/addon-centered": "4.0.0-rc.3",
+    "@storybook/addon-jest": "4.0.0-rc.3",
+    "@storybook/addon-knobs": "4.0.0-rc.3",
+    "@storybook/addon-links": "4.0.0-rc.3",
+    "@storybook/addon-notes": "4.0.0-rc.3",
+    "@storybook/addon-options": "4.0.0-rc.3",
+    "@storybook/addon-storyshots": "4.0.0-rc.3",
+    "@storybook/addon-storysource": "4.0.0-rc.3",
+    "@storybook/addons": "4.0.0-rc.3",
+    "@storybook/angular": "4.0.0-rc.3",
     "@types/core-js": "^2.5.0",
-    "@types/jest": "^23.3.5",
-    "@types/node": "~10.11.7",
+    "@types/jest": "^23.3.7",
+    "@types/node": "~10.12.0",
     "@types/webpack-env": "^1.13.6",
     "global": "^4.3.2",
     "jasmine-core": "~3.2.1",
@@ -77,6 +77,6 @@
     "jest-preset-angular": "^6.0.1",
     "protractor": "~5.4.1",
     "ts-node": "~7.0.0",
-    "typescript": "^3.1.2"
+    "typescript": "^3.1.3"
   }
 }

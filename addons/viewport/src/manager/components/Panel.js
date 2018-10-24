@@ -20,6 +20,8 @@ const Container = styled.div({
   padding: 15,
   width: '100%',
   boxSizing: 'border-box',
+  height: '100%',
+  overflow: 'auto',
 });
 Container.displayName = 'Container';
 
