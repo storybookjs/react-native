@@ -38,6 +38,7 @@
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "lodash": "^4.17.11",
+    "mini-css-extract-plugin": "^0.4.4",
     "prop-types": "^15.6.2",
     "react-dev-utils": "^6.0.5",
     "semver": "^5.6.0",

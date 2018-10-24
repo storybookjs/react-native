@@ -1,4 +1,6 @@
 import semver from 'semver';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
 import { normalizeCondition } from 'webpack/lib/RuleSet';
 
 export function isReactScriptsInstalled() {
@@ -62,8 +64,6 @@ export function applyCRAWebpackConfig(baseConfig) {
   //  Add css minification for production
   const plugins = [...baseConfig.plugins];
   if (baseConfig.mode === 'production') {
-    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-    const MiniCssExtractPlugin = require('mini-css-extract-plugin');
     plugins.push(
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
