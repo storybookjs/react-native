@@ -35,7 +35,7 @@
     "@storybook/react-komposer": "^2.0.4",
     "deep-equal": "^1.0.1",
     "events": "^3.0.0",
-    "fuse.js": "^3.2.1",
+    "fuse.js": "^3.3.0",
     "global": "^4.3.2",
     "keycode": "^2.2.0",
     "lodash": "^4.17.11",
