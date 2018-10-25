@@ -10,13 +10,13 @@ Get started using the automated command line tool. This command adds a set of bo
 
 ```sh
 cd my-project-directory
-npx -p @storybook/cli sb init
+npx -p @storybook/cli@rc sb init
 ```
 
 The tool inspects your `package.json` to determine which view layer you're using. If you want to develop HTML snippets in storybook, we can't determine that automatically. So to install storybook for HTML, use the `--type` flag to force that the HTML project type:
 
 ```
-npx -p @storybook/cli sb init --type html
+npx -p @storybook/cli@rc sb init --type html
 ```
 
 To setup a project manually, take a look at the [Slow Start Guide](/basics/slow-start-guide/).
