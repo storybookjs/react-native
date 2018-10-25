@@ -141,10 +141,10 @@
     source-map "^0.6.1"
     yargs "9.0.1"
 
-"@angular/compiler@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-7.0.0.tgz#f953a213a01e4736e94fe1a370b07e13e2393b71"
-  integrity sha512-4fkohfGyG1BEpeYenOartuJmduyZ/R3XQx46hDDiR/9A8/Go4qLGkgr9Bd/JL/gPIR1XAHH9D5ii2sh+28ZEmA==
+"@angular/compiler@^7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-7.0.1.tgz#29271bfdc9ac98f2f93c473a0cd82d6a043cf6e3"
+  integrity sha512-X/q51ZAFd0GBJyuZTOKpieyePhlNBAfYCPRi57S2BpxG6i9QjjeM+sPwzjsMmU1P6Qyt/pPpVG738mLocPvdpA==
   dependencies:
     tslib "^1.9.0"
 
