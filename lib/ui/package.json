@@ -32,7 +32,7 @@
     "@storybook/core-events": "4.0.0-rc.5",
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/podda": "^1.2.3",
-    "@storybook/react-komposer": "^2.0.4",
+    "@storybook/react-komposer": "^2.0.5",
     "deep-equal": "^1.0.1",
     "events": "^3.0.0",
     "fuse.js": "^3.3.0",
