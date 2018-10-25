@@ -48,7 +48,7 @@
     "@angular/common": "^7.0.0",
     "@angular/compiler": "^7.0.0",
     "@angular/core": "^7.0.0",
-    "@angular/forms": "^7.0.0",
+    "@angular/forms": "^7.0.1",
     "@angular/platform-browser": "^7.0.0",
     "@angular/platform-browser-dynamic": "^7.0.0",
     "@babel/cli": "^7.1.2",
