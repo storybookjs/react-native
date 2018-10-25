@@ -1,3 +1,28 @@
+# 4.0.0-rc.4
+
+2018-October-25
+
+#### Features
+
+-   Ember: update to not require any manual setup [#4544](https://github.com/storybooks/storybook/pull/4544)
+
+#### Bug Fixes
+
+-   React: dd mini-css-extract-plugin to app/react dependencies [#4534](https://github.com/storybooks/storybook/pull/4534)
+
+#### Maintenance
+
+-   Add angular@7 cli tests [#4524](https://github.com/storybooks/storybook/pull/4524)
+-   Fix the node-logger version in app/react [#4539](https://github.com/storybooks/storybook/pull/4539)
+
+#### Dependency Upgrades
+
+-   Bump danger from 4.4.8 to 6.0.2 [#4538](https://github.com/storybooks/storybook/pull/4538)
+-   Bump react-test-renderer from 16.5.2 to 16.6.0 [#4536](https://github.com/storybooks/storybook/pull/4536)
+-   Bump fuse.js from 3.2.1 to 3.3.0 [#4537](https://github.com/storybooks/storybook/pull/4537)
+-   Bump riot from 3.12.0 to 3.13.0 [#4511](https://github.com/storybooks/storybook/pull/4511)
+
+
 # 4.0.0-rc.3
 
 2018-October-23

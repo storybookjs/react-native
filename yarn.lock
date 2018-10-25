@@ -8180,6 +8180,14 @@ ember-cli-sri@^2.1.0:
   dependencies:
     broccoli-sri-hash "^2.1.0"
 
+ember-cli-storybook@*:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-storybook/-/ember-cli-storybook-0.0.0.tgz#4cf9049740402175db920a5b20f0c6c970556515"
+  integrity sha512-B6Czq/9KRtM3rMjQmDiBeHDm7ysOrWUdEoE6wfOEr/YJK3j9KaPISHJNjDIA/U7dJf85b4F2LpvwEXY58Z8r+Q==
+  dependencies:
+    cheerio "^1.0.0-rc.2"
+    ember-cli-babel "^7.1.2"
+
 ember-cli-string-utils@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-string-utils/-/ember-cli-string-utils-1.1.0.tgz#39b677fc2805f55173735376fcef278eaa4452a1"
