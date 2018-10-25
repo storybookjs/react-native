@@ -48,7 +48,7 @@ Every new feature, particularly significant ones (e.g. Vue support, deep
 hierarchy for stories) deserves more attention:
 
 1.  They should be well-tested by the community before we release.
-2.  They often have architectural implications for the entire Storybook ecosystem, so should be discussed thoroughly before release. Doing `alpha` releases allow us to test in the community without necessarily achieving agreement.
+2.  They often have architectural implications for the entire Storybook ecosystem, so should be discussed thoroughly before release. Doing `alpha` releases allow us to test in the community without necessarily achieving agreement. For example, currently `Vue` support is in `alpha`, although it contains potentially controversial changes to addons.
 3.  They often deserve proper marketing treatment (blog posts, release announcement, podcast, etc.)
 
 Therefore we merge these into a release branch of the form `release/MAJOR.MINOR`
@@ -88,6 +88,7 @@ or to understand what is blocking the release so they can actually do something
 about it. Discussion about which bugs are critical happens in the `#maintenance`
 channel [in our Slack](https://now-examples-slackin-rrirkqohko.now.sh/) [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 
+
 If you're experiencing a bug, the best way to make sure that it gets attention
 is to upvote it by adding a "thumbs-up" reaction in Github. This way important
 bugs quickly bubble to the top [with a
@@ -99,19 +100,20 @@ in a patch release.
 
 ## Decision-making
 
-- For PATCH changes, all discussion can occur in issue/PR comments (and random slack chat as needed).
-- For MINOR feature changes, there are multiple stages of discussion:
-  - The feature may be discussed in an issue before it is implemented (ex: <https://github.com/storybooks/storybook/issues/151>)
-  - Once it's implemented, the discussion may be occur on the PR (ex: <https://github.com/storybooks/storybook/pull/1329>)
-  - If people disagree on an implementation and it can't be resolved in discussion, they may issue alternative PR's with different ideas
-  - Ultimately the maintainers will reach a consensus before merging the changes. There is no set process for this, but we're all adults.
-  - Since MINOR features are released in alpha before they are fully released, new issues may be created by end users, etc.
-- For MAJOR infrastructural changes, the discussion may take place over time, in gists like this one, issues, slack discussions, etc.
-  - Once the breaking changes have been reduced to an actual implementation, it looks pretty much like a feature release (only with higher stakes and probably a longer stabilization process).
+-   For PATCH changes, all discussion can occur in issue/PR comments (and random slack chat as needed).
+-   For MINOR feature changes, there are multiple stages of discussion:
+    -   The feature may be discussed in an issue before it is implemented (ex: <https://github.com/storybooks/storybook/issues/151>)
+    -   Once it's implemented, the discussion may be occur on the PR (ex: <https://github.com/storybooks/storybook/pull/1329>)
+    -   If people disagree on an implementation and it can't be resolved in discussion, they may issue alternative PR's with different ideas
+    -   Ultimately the maintainers will reach a consensus before merging the changes. There is no set process for this, but we're all adults.
+    -   Since MINOR features are released in alpha before they are fully released, new issues may be created by end users, etc.
+-   For MAJOR infrastructural changes, the discussion may take place over time, in gists like this one, issues, slack discussions, etc.
+    -   Once the breaking changes have been reduced to an actual implementation, it looks pretty much like a feature release (only with higher stakes and probably a longer stabilization process).
 
 ## FAQ's
 
 #### How does my PR get merged?
 
-- For PATCH PR's, any maintainer can review, test, approve, and merge it.
-- For MINOR/MAJOR PR's, once a maintainer reviews, tests, and approves it, s/he should clear it with the other maintainers before merging it into the release branch.
+-   For PATCH PR's, any maintainer can review, test, approve, and merge it.
+-   For MINOR/MAJOR PR's, once a maintainer reviews, tests, and approves it, s/he should clear it with the other maintainers before merging it into the release branch.
+
