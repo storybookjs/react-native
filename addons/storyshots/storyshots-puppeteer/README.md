@@ -1,10 +1,11 @@
-## Configure Storyshots for image snapshots ( alpha )
+## Configure Storyshots for image snapshots
 
-/*\ **React-native** is **not supported** by this test function.
+/\*\ **React-native** is **not supported** by this test function.
 
 Internally, it uses [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot).
 
 When willing to generate and compare image snapshots for your stories, you have two options:
+
 - Have a storybook running (ie. accessible via http(s), for instance using `yarn run storybook`)
 - Have a static build of the storybook (for instance, using `yarn run build-storybook`)
 
@@ -13,59 +14,79 @@ Then you will need to reference the storybook URL (`file://...` if local, `http(
 ### Using default values for _imageSnapshots_
 
 Then you can either create a new Storyshots instance or edit the one you previously used:
+
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 
-initStoryshots({suite: 'Image storyshots', test: imageSnapshot()});
+initStoryshots({ suite: 'Image storyshots', test: imageSnapshot() });
 ```
+
 This will assume you have a storybook running on at _<http://localhost:6006>_.
 Internally here are the steps:
+
 - Launches a Chrome headless using [puppeteer](https://github.com/GoogleChrome/puppeteer)
 - Browses each stories (calling _<http://localhost:6006/iframe.html?...>_ URL),
-- Take screenshots & save all images under _\_image_snapshots\__ folder.
+- Take screenshots & save all images under \_\_image_snapshots\_\_ folder.
 
 ### Specifying the storybook URL
 
 If you want to set specific storybook URL, you can specify via the `storybookUrl` parameter, see below:
+
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 
-initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://my-specific-domain.com:9010'})});
+initStoryshots({
+  suite: 'Image storyshots',
+  test: imageSnapshot({ storybookUrl: 'http://my-specific-domain.com:9010' })
+});
 ```
+
 The above config will use _<https://my-specific-domain.com:9010>_ for screenshots. You can also use query parameters in your URL (e.g. for setting a different background for your storyshots, if you use `@storybook/addon-backgrounds`).
 
-
 You may also use a local static build of storybook if you do not want to run the webpack dev-server:
+
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 
-initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'file:///path/to/my/storybook-static'})});
+initStoryshots({
+  suite: 'Image storyshots',
+  test: imageSnapshot({ storybookUrl: 'file:///path/to/my/storybook-static' })
+});
 ```
 
 ### Specifying options to _jest-image-snapshots_
 
 If you wish to customize [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot), then you can provide a `getMatchOptions` parameter that should return the options config object. Additionally, you can provide `beforeScreenshot` which is called before the screenshot is captured.
+
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
-const getMatchOptions = ({context : {kind, story}, url}) => {
+const getMatchOptions = ({ context: { kind, story }, url }) => {
   return {
     failureThreshold: 0.2,
-    failureThresholdType: 'percent',
-  }
-}
-const beforeScreenshot = (page, {context : {kind, story}, url}) => {
+    failureThresholdType: 'percent'
+  };
+};
+const beforeScreenshot = (page, { context: { kind, story }, url }) => {
   return new Promise(resolve =>
-      setTimeout(() => {
-          resolve();
-      }, 600)
-  )
-}
-initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getMatchOptions, beforeScreenshot})});
+    setTimeout(() => {
+      resolve();
+    }, 600)
+  );
+};
+initStoryshots({
+  suite: 'Image storyshots',
+  test: imageSnapshot({
+    storybookUrl: 'http://localhost:6006',
+    getMatchOptions,
+    beforeScreenshot
+  })
+});
 ```
+
 `getMatchOptions` receives an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
 
 `beforeScreenshot` receives the [Puppeteer page instance](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#class-page) and an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot. `beforeScreenshot` is part of the promise chain and is called after the browser navigation is completed but before the screenshot is taken. It allows for triggering events on the page elements and delaying the screenshot and can be used avoid regressions due to mounting animations.
@@ -77,12 +98,15 @@ You might use `getGotoOptions` to specify options when the storybook is navigati
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
-const getGotoOptions = ({context, url}) => {
+const getGotoOptions = ({ context, url }) => {
   return {
-    waitUntil: 'networkidle0',
-  }
-}
-initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getGotoOptions})});
+    waitUntil: 'networkidle0'
+  };
+};
+initStoryshots({
+  suite: 'Image storyshots',
+  test: imageSnapshot({ storybookUrl: 'http://localhost:6006', getGotoOptions })
+});
 ```
 
 ### Specifying options to _screenshot()_ (puppeteer API)
@@ -112,14 +136,20 @@ import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 
 const chromeExecutablePath = '/usr/local/bin/chrome';
 
-initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', chromeExecutablePath})});
+initStoryshots({
+  suite: 'Image storyshots',
+  test: imageSnapshot({
+    storybookUrl: 'http://localhost:6006',
+    chromeExecutablePath
+  })
+});
 ```
 
 ### Customizing a `page` instance
 
-Sometimes, there is a need to customize a page before it calls the `goto` api. 
+Sometimes, there is a need to customize a page before it calls the `goto` api.
 
-An example of device emulation: 
+An example of device emulation:
 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
@@ -133,10 +163,10 @@ function customizePage(page) {
 }
 
 initStoryshots({
-  suite: 'Image storyshots', 
+  suite: 'Image storyshots',
   test: imageSnapshot({
-      storybookUrl: 'http://localhost:6006', 
-      customizePage,
+    storybookUrl: 'http://localhost:6006',
+    customizePage
   })
 });
 ```
@@ -154,19 +184,21 @@ You have two options here, you can either:
 
 - Create a custom test file using Jest outside of the CRA scope:
 
-    A more robust approach would be to separate existing test files ran by create-react-app (anything `(test|spec).js` suffixed files) from the test files to run storyshots with image snapshots.
-    This use case can be achieved by using a custom name for the test file, ie something like `image-storyshots.runner.js`. This file will contains the `initStoryshots` call with image snapshots configuration.
-    Then you will create a separate script entry in your package.json, for instance
-    ```json
-    {
-        "scripts": {
-            "image-snapshots" : "jest image-storyshots.runner.js --config path/to/custom/jest.config.json"
-        }
-    }
-    ```
-    Note that you will certainly need a custom config file for Jest as you run it outside of the CRA scope and thus you do not have the built-in config.
+  A more robust approach would be to separate existing test files ran by create-react-app (anything `(test|spec).js` suffixed files) from the test files to run storyshots with image snapshots.
+  This use case can be achieved by using a custom name for the test file, ie something like `image-storyshots.runner.js`. This file will contains the `initStoryshots` call with image snapshots configuration.
+  Then you will create a separate script entry in your package.json, for instance
 
-    Once that's setup, you can run `yarn run image-snapshots` (or `npm run image-snapshots`).
+  ```json
+  {
+    "scripts": {
+      "image-snapshots": "jest image-storyshots.runner.js --config path/to/custom/jest.config.json"
+    }
+  }
+  ```
+
+  Note that you will certainly need a custom config file for Jest as you run it outside of the CRA scope and thus you do not have the built-in config.
+
+  Once that's setup, you can run `yarn run image-snapshots` (or `npm run image-snapshots`).
 
 ### Reminder
 
