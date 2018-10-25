@@ -51,6 +51,6 @@
     "react-chromatic": "^0.8.4",
     "react-dom": "^16.5.2",
     "uuid": "^3.3.2",
-    "webpack": "^4.21.0"
+    "webpack": "^4.23.1"
   }
 }
