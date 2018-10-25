@@ -50,7 +50,7 @@
     "@angular/core": "^7.0.1",
     "@angular/forms": "^7.0.1",
     "@angular/platform-browser": "^7.0.0",
-    "@angular/platform-browser-dynamic": "^7.0.0",
+    "@angular/platform-browser-dynamic": "^7.0.1",
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
