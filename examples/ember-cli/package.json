@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "build": "ember build",
-    "build-storybook": "yarn build && cp -r public/* dist && build-storybook -s dist",
+    "build-storybook": "yarn build & cp -r public/* dist & build-storybook -s dist",
     "dev": "ember serve",
-    "storybook": "yarn build && start-storybook -p 9009 -s dist, public"
+    "storybook": "yarn dev --port 4222 & start-storybook -p 9009 -s dist, public"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -33,6 +33,7 @@
     "ember-cli-htmlbars-inline-precompile": "^1.0.5",
     "ember-cli-inject-live-reload": "^2.0.1",
     "ember-cli-shims": "^1.2.0",
+    "ember-cli-storybook": "*",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
     "ember-load-initializers": "^1.1.0",
