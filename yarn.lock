@@ -18987,10 +18987,10 @@ remark-lint-ordered-list-marker-style@^1.0.0:
     unist-util-position "^3.0.0"
     unist-util-visit "^1.1.1"
 
-remark-lint@^6.0.0, remark-lint@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/remark-lint/-/remark-lint-6.0.2.tgz#f4ac45536e4fbf3c9a523dfa1cca874c598554de"
-  integrity sha512-zrIx7InZLLOUYUViT6lSa8T80pDyl3Ywvliog+4hoc7LoiJZRV74ejq+RBZK70bg/p2dU/CV6ycedgypFFePPg==
+remark-lint@^6.0.0, remark-lint@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/remark-lint/-/remark-lint-6.0.3.tgz#6387f1123cbc539c577c4c04a5d97520122bdfc8"
+  integrity sha512-PQkF5vQos3iCJ7kXcvGLG/06UoC4cL1h6JORludnClFQYKIeWi9Z6HHLTJl439Q95OLf6ywwOdaKIU5Vul/Thg==
   dependencies:
     remark-message-control "^4.0.0"
 
