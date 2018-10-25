@@ -1,3 +1,11 @@
+# 4.0.0-rc.5
+
+2018-October-25
+
+#### Maintenance
+
+-   Fix issue with `sb init` on the Vue CLI [#4535](https://github.com/storybooks/storybook/pull/4535)
+
 # 4.0.0-rc.4
 
 2018-October-25
@@ -8,7 +16,7 @@
 
 #### Bug Fixes
 
--   React: dd mini-css-extract-plugin to app/react dependencies [#4534](https://github.com/storybooks/storybook/pull/4534)
+-   React: add mini-css-extract-plugin to app/react dependencies [#4534](https://github.com/storybooks/storybook/pull/4534)
 
 #### Maintenance
 
