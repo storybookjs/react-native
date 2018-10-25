@@ -12,7 +12,7 @@ The `storybook` CLI tool can be used to add Storybook to your React Native app. 
 
 ```shell
 cd my-rn-app
-npx -p @storybook/cli@rc sb init
+npx -p @storybook/cli sb init
 ```
 
 The next thing you need to do is make Storybook UI visible in your app.
