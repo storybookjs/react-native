@@ -13,5 +13,3 @@ build
 .DS_Store
 npm-debug.log
 tmp
-.env
-.storybook/preview-head.html
