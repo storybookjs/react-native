@@ -1,3 +1,11 @@
+# 4.0.0-rc.6
+
+2018-October-25
+
+#### Dependency Upgrades
+
+-   Upgrade react-komposer to 2.0.5 [#4547](https://github.com/storybooks/storybook/pull/4547)
+
 # 4.0.0-rc.5
 
 2018-October-25
