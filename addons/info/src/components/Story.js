@@ -180,11 +180,21 @@ class Story extends Component {
     return (
       <div>
         <div style={stylesheet.children}>{children}</div>
-        <button type="button" style={buttonStyle} onClick={openOverlay}>
+        <button
+          type="button"
+          style={buttonStyle}
+          onClick={openOverlay}
+          className="info__show-button"
+        >
           Show Info
         </button>
-        <div style={infoStyle}>
-          <button type="button" style={buttonStyle} onClick={closeOverlay}>
+        <div style={infoStyle} className="info__overlay">
+          <button
+            type="button"
+            style={buttonStyle}
+            onClick={closeOverlay}
+            className="info__close-button"
+          >
             ×
           </button>
           <div style={stylesheet.infoPage}>
