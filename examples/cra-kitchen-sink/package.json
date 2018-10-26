@@ -13,7 +13,7 @@
   "dependencies": {
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
-    "react": "^16.5.2",
+    "react": "^16.6.0",
     "react-dom": "^16.5.2",
     "react-lifecycles-compat": "^3.0.4"
   },
