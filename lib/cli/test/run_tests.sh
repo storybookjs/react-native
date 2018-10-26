@@ -50,6 +50,6 @@ do
   # check that storybook starts without errors
   cd $dir
   echo "Running smoke test in $dir"
-  yarn storybook --smoke-test
+  yarn storybook --smoke-test --quiet
   cd ..
 done
