@@ -1178,7 +1178,7 @@ You can also deploy your Storybook as a static app. This way, everyone in your t
 Then, run the following command inside your app’s directory:
 
 ```sh
-npx -p @storybook/cli sb init
+npx -p @storybook/cli@rc sb init
 ```
 
 After that, follow the instructions on the screen.

@@ -25,7 +25,7 @@
     "babel-loader": "^8",
     "broccoli-asset-rev": "^3.0.0",
     "cross-env": "^5.2.0",
-    "ember-ajax": "^3.1.2",
+    "ember-ajax": "^4.0.0",
     "ember-cli": "~3.5.0",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^7.1.2",
@@ -39,7 +39,7 @@
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.5.0",
     "loader.js": "^4.2.3",
-    "webpack": "^4.21.0",
+    "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2"
   },
   "engines": {

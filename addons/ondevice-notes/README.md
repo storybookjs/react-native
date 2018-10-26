@@ -23,7 +23,6 @@ import '@storybook/addon-ondevice-notes/register';
 ```
 
 Then import `rn-addons.js` next to your `getStorybookUI` call.
-
 ```js
 import './rn-addons';
 ```

@@ -39,11 +39,11 @@
   },
   "dependencies": {
     "@angular/common": "^7.0.0",
-    "@angular/compiler": "^7.0.0",
-    "@angular/core": "^7.0.0",
+    "@angular/compiler": "^7.0.1",
+    "@angular/core": "^7.0.1",
     "@angular/forms": "^7.0.1",
     "@angular/platform-browser": "^7.0.0",
-    "@angular/platform-browser-dynamic": "^7.0.0",
+    "@angular/platform-browser-dynamic": "^7.0.1",
     "@ngrx/store": "^6.1.0",
     "core-js": "^2.5.7",
     "rxjs": "^6.3.3",
@@ -51,7 +51,7 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.10.2",
+    "@angular-devkit/build-angular": "^0.10.3",
     "@angular/cli": "^7.0.3",
     "@angular/compiler-cli": "^7.0.0",
     "@storybook/addon-actions": "4.0.0-rc.6",

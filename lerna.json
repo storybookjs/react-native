@@ -1,7 +1,7 @@
 {
   "command": {
     "publish": {
-      "allowBranch": "master"
+      "allowBranch": "release/4.0"
     }
   },
   "npmClient": "yarn",
