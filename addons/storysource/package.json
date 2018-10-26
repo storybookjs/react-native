@@ -31,7 +31,7 @@
     "loader-utils": "^1.1.0",
     "prettier": "^1.14.3",
     "prop-types": "^15.6.2",
-    "react-syntax-highlighter": "^9.0.0"
+    "react-syntax-highlighter": "^9.0.1"
   },
   "peerDependencies": {
     "react": "*"
