@@ -3,7 +3,7 @@ import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-import { getManagerHeadHtml } from '@storybook/core/dist/server/utils';
+import { getManagerHeadHtml } from '@storybook/core/dist/server/utils/template';
 import { version } from '../../../package.json';
 import { includePaths, excludePaths, loadEnv } from './utils';
 
