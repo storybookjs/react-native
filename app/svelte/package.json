@@ -31,7 +31,7 @@
     "@storybook/core": "4.0.0-rc.6",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
-    "react": "^16.5.2",
+    "react": "^16.6.0",
     "react-dom": "^16.5.2"
   },
   "devDependencies": {
