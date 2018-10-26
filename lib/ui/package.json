@@ -46,8 +46,6 @@
     "lodash.sortby": "^4.7.0",
     "lodash.throttle": "^4.1.1",
     "memoizerific": "^1.11.3",
-    "mobx": "^5.0.3",
-    "mobx-react": "^5.2.3",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
     "react-draggable": "^3.0.5",

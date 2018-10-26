@@ -23,15 +23,8 @@ export default class NotesPanel extends React.Component {
 
   componentDidMount() {
     this.mounted = true;
-    const { channel, api } = this.props;
+    const { channel } = this.props;
 
-    // Clear the current notes on every story change.
-    this.stopListeningOnStory = api.onStory(() => {
-      const { text } = this.state;
-      if (this.mounted && text !== '') {
-        this.onAddNotes('');
-      }
-    });
     channel.on(EVENT_ID, this.onAddNotes);
     channel.on(Events.SET_CURRENT_STORY, this.clearNotes);
   }
