@@ -53,7 +53,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.10.3",
     "@angular/cli": "^7.0.3",
-    "@angular/compiler-cli": "^7.0.0",
+    "@angular/compiler-cli": "^7.0.1",
     "@storybook/addon-actions": "4.0.0-rc.6",
     "@storybook/addon-backgrounds": "4.0.0-rc.6",
     "@storybook/addon-centered": "4.0.0-rc.6",
