@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "4.0.0-rc.3",
+  "version": "4.0.0-rc.6",
   "private": true,
   "repository": {
     "type": "git",
@@ -42,7 +42,8 @@
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "yarn --cwd examples/official-storybook storybook",
     "test": "node ./scripts/test.js",
-    "test-latest-cra": "npm --prefix lib/cli run test-latest-cra"
+    "test-latest-cra": "npm --prefix lib/cli run test-latest-cra",
+    "test:cli": "npm --prefix lib/cli run test"
   },
   "devDependencies": {
     "@angular/common": "^7.0.1",

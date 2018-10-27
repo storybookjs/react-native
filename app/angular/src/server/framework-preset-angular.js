@@ -38,7 +38,7 @@ export function webpack(config, { configDir }) {
     },
     resolve: {
       ...config.resolve,
-      extensions: [...config.resolve.extensions, '.ts', '.tsx'],
+      extensions: ['.ts', '.tsx', ...config.resolve.extensions],
     },
     plugins: [
       ...config.plugins,
