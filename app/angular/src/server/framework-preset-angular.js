@@ -44,7 +44,7 @@ export function webpack(config, { configDir }) {
       ...config.plugins,
       // See https://github.com/angular/angular/issues/11580#issuecomment-401127742
       new ContextReplacementPlugin(
-        /@angular(\\|\/)core(\\|\/)fesm5/,
+        /@angular(\\|\/)core(\\|\/)(fesm5|bundles)/,
         path.resolve(__dirname, '..')
       ),
       createForkTsCheckerInstance(tsLoaderOptions),
