@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|Resources Camera Icon 1`] = `
+exports[`Storyshots Addons|Cssresources Camera Icon 1`] = `
 <i
   class="fa fa-camera-retro"
 >
@@ -8,7 +8,7 @@ exports[`Storyshots Addons|Resources Camera Icon 1`] = `
 </i>
 `;
 
-exports[`Storyshots Addons|Resources Primary Large Button 1`] = `
+exports[`Storyshots Addons|Cssresources Primary Large Button 1`] = `
 <button
   class="btn btn-lg btn-primary"
   type="button"
@@ -17,7 +17,7 @@ exports[`Storyshots Addons|Resources Primary Large Button 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Resources Secondary Button 1`] = `
+exports[`Storyshots Addons|Cssresources Secondary Button 1`] = `
 <button
   class="btn btn-secondary"
   type="button"

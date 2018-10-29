@@ -27,7 +27,7 @@
     "@storybook/addon-links": "4.0.0-rc.3",
     "@storybook/addon-notes": "4.0.0-rc.3",
     "@storybook/addon-options": "4.0.0-rc.3",
-    "@storybook/addon-resources": "4.0.0-rc.3",
+    "@storybook/addon-cssresources": "4.0.0-rc.3",
     "@storybook/addon-storyshots": "4.0.0-rc.3",
     "@storybook/addon-storyshots-puppeteer": "4.0.0-rc.3",
     "@storybook/addon-storysource": "4.0.0-rc.3",

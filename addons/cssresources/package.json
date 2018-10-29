@@ -1,10 +1,10 @@
 {
-  "name": "@storybook/addon-resources",
+  "name": "@storybook/addon-cssresources",
   "version": "4.0.0-rc.3",
-  "description": "A storybook addon to add/remove resources for your story",
+  "description": "A storybook addon to switch between css resources at runtime for your story",
   "keywords": [
     "addon",
-    "resources",
+    "cssresources",
     "react",
     "storybook"
   ],
@@ -31,8 +31,9 @@
     "brace": "^0.11.1",
     "global": "^4.3.2",
     "lodash.union": "^4.6.0",
+    "pretty-checkbox": "^3.0.3",
     "prop-types": "^15.6.2",
-    "react-ace": "^6.2.0",
+    "react-syntax-highlighter": "^9.0.1",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {
