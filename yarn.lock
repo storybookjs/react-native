@@ -8194,10 +8194,10 @@ ember-cli-sri@^2.1.0:
   dependencies:
     broccoli-sri-hash "^2.1.0"
 
-ember-cli-storybook@*:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-storybook/-/ember-cli-storybook-0.0.0.tgz#4cf9049740402175db920a5b20f0c6c970556515"
-  integrity sha512-B6Czq/9KRtM3rMjQmDiBeHDm7ysOrWUdEoE6wfOEr/YJK3j9KaPISHJNjDIA/U7dJf85b4F2LpvwEXY58Z8r+Q==
+ember-cli-storybook@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-storybook/-/ember-cli-storybook-0.0.1.tgz#63908e3b81d08de7a7e51dc18c618a398ca2357a"
+  integrity sha512-dmPNYEvVLefodAgA/JZQxazdMqcBjvEB+4SNE9ba37jOx8HS3sWvcd31RXCam+KfGaFbrR/u2c8FCZ59SC3jOQ==
   dependencies:
     cheerio "^1.0.0-rc.2"
     ember-cli-babel "^7.1.2"
@@ -10556,12 +10556,12 @@ graphql-request@^1.5.0:
   dependencies:
     cross-fetch "2.2.2"
 
-graphql@^0.13.2, graphql@^14.0.2:
-  version "0.13.2"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.13.2.tgz#4c740ae3c222823e7004096f832e7b93b2108270"
-  integrity sha512-QZ5BL8ZO/B20VA8APauGBg3GyEgZ19eduvpLWoq5x7gMmWnHoy8rlQWPLmWgFvo1yNgjSEFMesmS4R6pPr7xog==
+graphql@^14.0.2:
+  version "14.0.2"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.0.2.tgz#7dded337a4c3fd2d075692323384034b357f5650"
+  integrity sha512-gUC4YYsaiSJT1h40krG3J+USGlwhzNTXSb4IOZljn9ag5Tj+RkoXrWp+Kh7WyE3t1NCfab5kzCuxBIvOMERMXw==
   dependencies:
-    iterall "^1.2.1"
+    iterall "^1.2.2"
 
 grizzly@^3.0.3:
   version "3.0.3"
@@ -12296,7 +12296,7 @@ istextorbinary@2.1.0:
     editions "^1.1.1"
     textextensions "1 || 2"
 
-iterall@^1.2.1:
+iterall@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.2.tgz#92d70deb8028e0c39ff3164fdbf4d8b088130cd7"
   integrity sha512-yynBb1g+RFUPY64fTrFv7nsjRrENBQJaX2UL+2Szc9REFrSNm1rpSXHGzhmAy7a9uv3vlvgBlXnf9RqmPH1/DA==
