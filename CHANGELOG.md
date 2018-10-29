@@ -3,7 +3,7 @@
 
 2018-October-29
 
-Storybook 4.0 is our first major-version update in over a year! Key improvements include:
+[Storybook 4.0](https://medium.com/storybookjs/storybook-4-0-is-here-10b9857fc7de) is our first major-version update in over a year! Key improvements include:
 
 -   Build tools
     -   Webpack 4 [#3148](https://github.com/storybooks/storybook/pull/3148)
@@ -32,7 +32,7 @@ Storybook 4.0 is our first major-version update in over a year! Key improvements
     -   CLI-less Node api [#4344](https://github.com/storybooks/storybook/pull/4344)
     -   Rename CLI to sb [#4345](https://github.com/storybooks/storybook/pull/4345)
 
-There are hundreds of more fixes, features, and tweaks in the 4.0 release. See changelogs for `4.0.0-rc.*` and  `4.0.0-alpha.*` for details; check out our [migration guide](https://medium.com/storybookjs/storybook-4-0-is-here-10b9857fc7de) for a walkthrough of how to upgrade or the 
+There are hundreds of more fixes, features, and tweaks in the 4.0 release. See changelogs for `4.0.0-rc.*` and  `4.0.0-alpha.*` for details; check out our [migration guide](https://medium.com/storybookjs/migrating-to-storybook-4-c65b19a03d2c) for a walkthrough of how to upgrade or the 
 [migration docs](https://github.com/storybooks/storybook/blob/master/MIGRATION.md#from-version-34x-to-40x) for an enumeration of breaking changes.
 
 # 4.0.0-rc.6
