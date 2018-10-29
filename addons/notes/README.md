@@ -38,8 +38,9 @@ import { storiesOf } from '@storybook/react';
 
 import Component from './Component';
 
-storiesOf('Component', module)
-  .add('with some emoji', () => <Component />, { notes: 'A very simple component' });
+storiesOf('Component', module).add('with some emoji', () => <Component />, {
+  notes: 'A very simple component',
+});
 ```
 
 #### Using Markdown
@@ -51,9 +52,7 @@ import { storiesOf } from '@storybook/react';
 import Component from './Component';
 import someMarkdownText from './someMarkdownText.md';
 
-storiesOf('Component', module).add(
-  'With Markdown',
-  () => <Component />,
-  { notes: { markdown: someMarkdownText } }
-);
+storiesOf('Component', module).add('With Markdown', () => <Component />, {
+  notes: { markdown: someMarkdownText },
+});
 ```
