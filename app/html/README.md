@@ -1,4 +1,4 @@
-# Storybook for HTML <sup>alpha</sup>
+# Storybook for HTML
 
 ---
 

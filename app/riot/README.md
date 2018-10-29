@@ -1,4 +1,4 @@
-# Storybook for Riot <sup>alpha</sup>
+# Storybook for Riot
 
 ---
 
