@@ -1,3 +1,122 @@
+
+# 4.0.0
+
+2018-October-29
+
+[Storybook 4.0](https://medium.com/storybookjs/storybook-4-0-is-here-10b9857fc7de) is our first major-version update in over a year! Key improvements include:
+
+-   Build tools
+    -   Webpack 4 [#3148](https://github.com/storybooks/storybook/pull/3148)
+    -   Babel 7 [#3746](https://github.com/storybooks/storybook/pull/3746)
+-   View layers
+    -   Storybook for Ember [#4237](https://github.com/storybooks/storybook/pull/4237)
+    -   Storybook for MarkoJS [#3504](https://github.com/storybooks/storybook/pull/3504)
+    -   Storybook for Mithril [#3244](https://github.com/storybooks/storybook/pull/3244)
+    -   Storybook for HTML snippets [#3475](https://github.com/storybooks/storybook/pull/3475)
+    -   Storybook for Svelte [#3770](https://github.com/storybooks/storybook/pull/3770)
+    -   Storybook for Riot [#4070](https://github.com/storybooks/storybook/pull/4070)
+-   Mobile
+    -   Mobile device view: toggling stories panel with ☰ button  [#3337](https://github.com/storybooks/storybook/pull/3337)
+    -   React Native: Remove the packager from storybook [#4261](https://github.com/storybooks/storybook/pull/4261)
+    -   React-Native: On-device addons [#4381](https://github.com/storybooks/storybook/pull/4381)
+    -   React-Native: On-device addons for notes, knobs, backgrounds [#4327](https://github.com/storybooks/storybook/pull/4327)
+-   UI
+    -   Storybook UI theming [#3628](https://github.com/storybooks/storybook/pull/3628)
+-   Core
+    -   Story parameters [#2679](https://github.com/storybooks/storybook/pull/2679)
+    -   Generic addon decorators [#3555]
+    (https://github.com/storybooks/storybook/pull/3555)
+    -   Support css-modules [#4405](https://github.com/storybooks/storybook/pull/4405)
+    -   start-storybook: open browser tab on first compilation [#4149](https://github.com/storybooks/storybook/pull/4149)
+    -   start-storybook: suggest an alternative when the port is occupied [#4146](https://github.com/storybooks/storybook/pull/4146)
+    -   CLI-less Node api [#4344](https://github.com/storybooks/storybook/pull/4344)
+    -   Rename CLI to sb [#4345](https://github.com/storybooks/storybook/pull/4345)
+
+There are hundreds of more fixes, features, and tweaks in the 4.0 release. See changelogs for `4.0.0-rc.*` and  `4.0.0-alpha.*` for details; check out our [migration guide](https://medium.com/storybookjs/migrating-to-storybook-4-c65b19a03d2c) for a walkthrough of how to upgrade or the 
+[migration docs](https://github.com/storybooks/storybook/blob/master/MIGRATION.md#from-version-34x-to-40x) for an enumeration of breaking changes.
+
+# 4.0.0-rc.6
+
+2018-October-25
+
+#### Dependency Upgrades
+
+-   Upgrade react-komposer to 2.0.5 [#4547](https://github.com/storybooks/storybook/pull/4547)
+
+# 4.0.0-rc.5
+
+2018-October-25
+
+#### Maintenance
+
+-   Fix issue with `sb init` on the Vue CLI [#4535](https://github.com/storybooks/storybook/pull/4535)
+
+# 4.0.0-rc.4
+
+2018-October-25
+
+#### Features
+
+-   Ember: update to not require any manual setup [#4544](https://github.com/storybooks/storybook/pull/4544)
+
+#### Bug Fixes
+
+-   React: add mini-css-extract-plugin to app/react dependencies [#4534](https://github.com/storybooks/storybook/pull/4534)
+
+#### Maintenance
+
+-   Add angular@7 cli tests [#4524](https://github.com/storybooks/storybook/pull/4524)
+-   Fix the node-logger version in app/react [#4539](https://github.com/storybooks/storybook/pull/4539)
+
+#### Dependency Upgrades
+
+-   Bump danger from 4.4.8 to 6.0.2 [#4538](https://github.com/storybooks/storybook/pull/4538)
+-   Bump react-test-renderer from 16.5.2 to 16.6.0 [#4536](https://github.com/storybooks/storybook/pull/4536)
+-   Bump fuse.js from 3.2.1 to 3.3.0 [#4537](https://github.com/storybooks/storybook/pull/4537)
+-   Bump riot from 3.12.0 to 3.13.0 [#4511](https://github.com/storybooks/storybook/pull/4511)
+
+
+# 4.0.0-rc.3
+
+2018-October-23
+
+#### Bug Fixes
+
+-   Fix knobs select to support rich values [#4522](https://github.com/storybooks/storybook/pull/4522)
+-   Turn off spell check in story filter [#4472](https://github.com/storybooks/storybook/pull/4472)-
+
+#### Maintenance
+
+-   ADD timeout to update check [#4530](https://github.com/storybooks/storybook/pull/4530)
+-   REMOVE emotion from demo components to make backwards compatibility easier && ADD demo components to official example [#4527](https://github.com/storybooks/storybook/pull/4527)
+-   Exclude story files from angular app build [#4485](https://github.com/storybooks/storybook/pull/4485)
+
+# 4.0.0-rc.2
+
+2018-October-22
+
+#### Features
+
+-   Support css-modules [#4405](https://github.com/storybooks/storybook/pull/4405)
+-   Angular: Support sass files [#4343](https://github.com/storybooks/storybook/pull/4343)
+-   Support "mjs" extensions [#4466](https://github.com/storybooks/storybook/pull/4466)
+-   Allow presets to be async [#4450](https://github.com/storybooks/storybook/pull/4450)
+
+#### Bug Fixes
+
+-   Addon-Jest: undefined file extension [#4452](https://github.com/storybooks/storybook/pull/4452)
+
+#### Maintenance
+
+-   Override babelrc for the node related code [#4451](https://github.com/storybooks/storybook/pull/4451)
+-   Use cross-env in official example [#4474](https://github.com/storybooks/storybook/pull/4474)
+
+#### Dependency Upgrades
+
+-   Bump copy-webpack-plugin from 4.5.3 to 4.5.4 [#4492](https://github.com/storybooks/storybook/pull/4492)
+-   Bump jest-image-snapshot from 2.5.0 to 2.6.0 [#4494](https://github.com/storybooks/storybook/pull/4494)
+-   Bump webpack from 4.20.2 to 4.21.0 [#4477](https://github.com/storybooks/storybook/pull/4477)
+
 # 4.0.0-rc.1
 
 2018-October-18
@@ -117,7 +236,7 @@
 
 #### Features
 
--   Ember: add ember support [#4237](https://github.com/storybooks/storybook/pull/4237)
+-   Storybook for Ember [#4237](https://github.com/storybooks/storybook/pull/4237)
 -   Riot: support the tagConstructor option [#4258](https://github.com/storybooks/storybook/pull/4258)
 -   Presets: Add "addons" and "config" to preset extensions [#4240](https://github.com/storybooks/storybook/pull/4240)
 
@@ -219,7 +338,7 @@
 
 #### Features
 
--   Riot support [#4070](https://github.com/storybooks/storybook/pull/4070)
+-   Storybook for Riot [#4070](https://github.com/storybooks/storybook/pull/4070)
 -   Backgrounds addon: Allow setting background via name [#4081](https://github.com/storybooks/storybook/pull/4081)
 -   Storysource addon: injectDecorator option custom stories [#4012](https://github.com/storybooks/storybook/pull/4012)
 
@@ -268,7 +387,7 @@ Not published to NPM
 #### Features
 
 -   Emit messages when stories fail to render [#3967](https://github.com/storybooks/storybook/pull/3967)
--   Svelte support [#3770](https://github.com/storybooks/storybook/pull/3770)
+-   Storybook for Svelte [#3770](https://github.com/storybooks/storybook/pull/3770)
 -   Allow extending extensions without a full control mode [#3976](https://github.com/storybooks/storybook/pull/3976)
 
 #### Bug Fixes
@@ -695,7 +814,7 @@ NOTE: As part of the generic addon decorators, we've reversed the order of addon
 
 #### Features
 
--   Add marko support to storybooksJS [#3504](https://github.com/storybooks/storybook/pull/3504)
+-   Storybook for Marko [#3504](https://github.com/storybooks/storybook/pull/3504)
 -   Storybook addon Jest angular suport [#3532](https://github.com/storybooks/storybook/pull/3532)
 -   Storybook for HTML snippets [#3475](https://github.com/storybooks/storybook/pull/3475)
 -   Feature/config custom chrome executable path [#3518](https://github.com/storybooks/storybook/pull/3518)
@@ -1156,7 +1275,7 @@ Welcome to Storybook 3.4 with the following key improvements:
 -   Multiple story hierarchies [#2452](https://github.com/storybooks/storybook/pull/2452)
 -   Addon-storysource: story source in addon pane [#2885](https://github.com/storybooks/storybook/pull/2885)
 
-Read on for more improvements, fixes, 1In addition, there are hundreds of dependency upgrades in the 3.4 release, so to see the details, please see the changelogs for `3.4.0-rc.*` and  `3.4.0-alpha.*`.
+Read on for more improvements, fixes. In addition, there are hundreds of dependency upgrades in the 3.4 release, so to see the details, please see the changelogs for `3.4.0-rc.*` and  `3.4.0-alpha.*`.
 
 #### Features
 
@@ -1260,7 +1379,7 @@ Read on for more improvements, fixes, 1In addition, there are hundreds of depend
 #### Features
 
 -   Viewport-addon Allow setting callback to be called whenever viewport changes [#3283](https://github.com/storybooks/storybook/pull/3283)
--   App for Mithril [#3244](https://github.com/storybooks/storybook/pull/3244)
+-   Storybook for Mithril [#3244](https://github.com/storybooks/storybook/pull/3244)
 -   Feature request: adding aXe configuration for a11y addon [#3285](https://github.com/storybooks/storybook/pull/3285)
 -   files knob [#2860](https://github.com/storybooks/storybook/pull/2860)
 -   Using svg-url-loader for webpack configs that accept svgs [#3221](https://github.com/storybooks/storybook/pull/3221)

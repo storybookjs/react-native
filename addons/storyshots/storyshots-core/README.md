@@ -50,18 +50,30 @@ configure(loadStories, module);
 The problem here is that it will work only during the build with webpack,
 other tools may lack this feature. Since Storyshot is running under Jest,
 we need to polyfill this functionality to work with Jest. The easiest
-way is to integrate it to babel. One of the possible babel plugins to
+way is to integrate it to babel.
+
+One of the possible babel plugins to
 polyfill this functionality might be
 [babel-plugin-require-context-hook](https://github.com/smrq/babel-plugin-require-context-hook).
 
-To register it, add the following to your jest setup:
+First, install it:
+
+```sh
+npm install --save-dev babel-plugin-require-context-hook
+```
+
+Next, it needs to be registered and loaded before each test. To register it, create a file with the following register function `.jest/register-context.js`:
 
 ```js
 import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
 registerRequireContextHook();
 ```
+That file needs to be added as a setup file for Jest. To do that, add (or create) a property in Jest's config called [`setupFiles`](https://jestjs.io/docs/en/configuration.html#setupfiles-array). Add the file name and path to this array.
 
-And after, add the plugin to `.babelrc`:
+```json
+setupFiles: ['<rootDir>/.jest/register-context.js']
+```
+Finally, add the plugin to `.babelrc`:
 
 ```json
 {
@@ -74,10 +86,7 @@ And after, add the plugin to `.babelrc`:
   }
 }
 ```
-
-Make sure **not** to include this babel plugin in the config
-environment that applies to webpack, otherwise it may
-replace a real `require.context` functionality.
+The plugin is only added to the test environment otherwise it could replace webpack's version of it.
 
 ### Configure Jest for React
 StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but
