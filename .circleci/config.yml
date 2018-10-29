@@ -140,7 +140,7 @@ jobs:
           name: Run ember-cli (smoke test)
           command: |
             cd examples/ember-cli
-            yarn storybook:ci --smoke-test
+            yarn storybook --smoke-test
       - run:
           name: Run polymer-cli (smoke test)
           command: |
