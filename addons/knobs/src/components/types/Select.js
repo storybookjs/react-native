@@ -6,7 +6,7 @@ import { Select } from '@storybook/components';
 const SelectType = ({ knob, onChange }) => {
   const { options } = knob;
   const entries = Array.isArray(options)
-    ? options.reduce((acc, k) => Object.assign(acc, { k }), {})
+    ? options.reduce((acc, k) => Object.assign(acc, { [k]: k }), {})
     : options;
 
   const selectedKey = Object.keys(entries).find(k => entries[k] === knob.value);
