@@ -19,7 +19,7 @@
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-actions": "^4.0.0",
     "@storybook/addon-links": "^3.4.11",
     "@storybook/addons": "^3.4.11",
     "@storybook/react": "^3.4.11",
@@ -28,7 +28,7 @@
     "common-tags": "^1.8.0",
     "gatsby": "^1.9.279",
     "gatsby-link": "^1.6.45",
-    "gatsby-plugin-sharp": "^2.0.7",
+    "gatsby-plugin-sharp": "^2.0.10",
     "gatsby-remark-autolink-headers": "^1.4.19",
     "gatsby-remark-copy-linked-files": "^1.5.37",
     "gatsby-remark-images": "^1.5.67",
