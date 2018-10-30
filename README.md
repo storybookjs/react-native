@@ -115,7 +115,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 | [links](addons/links/)                      | Create links between stories                                               |
 | [notes](addons/notes/)                      | Annotate Storybook stories with notes                                      |
 | [options](addons/options/)                  | Customize the Storybook UI in code                                         |
-| [resources](addons/cssresources/)           | Dynamically add/remove css resources to the component iframe      |
+| [cssresources](addons/cssresources/)        | Dynamically add/remove css resources to the component iframe               |
 | [storyshots](addons/storyshots/)            | Easy snapshot testing for components in Storybook                          |
 | [storysource](addons/storysource/)          | View the code of your stories within the Storybook UI                      |
 | [viewport](addons/viewport/)                | Change display sizes and layouts for responsive components using Storybook |
