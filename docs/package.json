@@ -19,7 +19,7 @@
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-actions": "^4.0.0",
     "@storybook/addon-links": "^3.4.11",
     "@storybook/addons": "^3.4.11",
     "@storybook/react": "^3.4.11",
