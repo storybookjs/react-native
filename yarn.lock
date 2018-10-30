@@ -1192,7 +1192,7 @@
     chalk "^2.4.1"
     css "^2.2.1"
 
-"@emotion/styled-base@^0.10.5", "@emotion/styled-base@^0.10.6":
+"@emotion/styled-base@^0.10.6":
   version "0.10.6"
   resolved "https://registry.yarnpkg.com/@emotion/styled-base/-/styled-base-0.10.6.tgz#c95631b6b4f19da97e7b44ee4e3ee1931afde264"
   integrity sha512-7RfdJm2oEXiy3isFRY63mHRmWWjScFXFoZTFkCJPaL8NhX+H724WwIoQOt3WA1Jd+bb97xkJg31JbYYsSqnEaQ==
@@ -1200,13 +1200,6 @@
     "@emotion/is-prop-valid" "^0.6.8"
     "@emotion/serialize" "^0.9.1"
     "@emotion/utils" "^0.8.2"
-
-"@emotion/styled@0.10.5":
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/@emotion/styled/-/styled-0.10.5.tgz#4a0d3e5c80f8e80112af6d398ca06098e5b82775"
-  integrity sha512-RU2yXD90Seh+GPGm84Z7KPw+yf/hqasOZg5ikeFizcyII18JPsHJMJEDpwJdMSeB8o3ORyceyFrSaIkNR7mhpA==
-  dependencies:
-    "@emotion/styled-base" "^0.10.5"
 
 "@emotion/styled@^0.10.6":
   version "0.10.6"
