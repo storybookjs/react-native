@@ -4,7 +4,7 @@ exports[`Storyshots Addons|Cssresources Camera Icon 1`] = `
 <i
   class="fa fa-camera-retro"
 >
-  Camera Icon
+   Camera Icon
 </i>
 `;
 
@@ -14,14 +14,5 @@ exports[`Storyshots Addons|Cssresources Primary Large Button 1`] = `
   type="button"
 >
   Primary Large Button
-</button>
-`;
-
-exports[`Storyshots Addons|Cssresources Secondary Button 1`] = `
-<button
-  class="btn btn-secondary"
-  type="button"
->
-  Secondary Button
 </button>
 `;

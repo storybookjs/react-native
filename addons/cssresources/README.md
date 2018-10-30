@@ -6,12 +6,13 @@ Storybook Addon Cssresources to switch between css resources at runtime for your
 
 ![Storybook Addon Cssresources Demo](docs/demo.gif)
 
-### Getting Started
-**NOTE: Documentation on master branch is for alpha version, stable release is on [release/3.4](https://github.com/storybooks/storybook/tree/release/3.4/addons/)**
+## Installation
 
 ```sh
 yarn add -D @storybook/addon-cssresources
 ```
+
+## Configuration
 
 Then create a file called `addons.js` in your storybook config.
 
@@ -21,19 +22,42 @@ Add following content to it:
 import '@storybook/addon-cssresources/register';
 ```
 
-You need add the all the css resources at compile time using the `withCssresources` decorator. You can then choose which ones to load from the cssresources addon ui:
+## Usage
+
+You need add the all the css resources at compile time using the `withCssresources` decorator. They can be added globally or per story. You can then choose which ones to load from the cssresources addon ui:
 
 ```js
 // Import from @storybook/X where X is your framework
-import { configure, addDecorator } from '@storybook/react';
+import { configure, addDecorator, storiesOf } from '@storybook/react';
 import { withCssresources } from '@storybook/addon-cssresources';
 
+// global
 addDecorator(
   withCssresources({
-    cssresources: [
-      { name: `bootstrap`, code: `<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></link>`, picked: true },
-      { name: `mycss`, code: `body { background: yellow; }`, picked: true },
+    cssresources: [{
+        name: `bluetheme`,
+        code: `<style>body { background-color: lightblue; }</style>`,
+        picked: false,
+      },
     ],
   })
 );
+
+// per story
+storiesOf('Addons|Cssresources', module)
+  .addDecorator(
+    withCssresources({
+      cssresources: [{
+          name: `fontawesome`,
+          code: `<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>`,
+          picked: true,
+        }, {
+          name: `whitetheme`,
+          code: `<style>.fa { color: #fff }</style>`,
+          picked: true,
+        },
+      ],
+    })
+  )
+  .add('Camera Icon', () => <i className="fa fa-camera-retro"> Camera Icon</i>);
 ```
