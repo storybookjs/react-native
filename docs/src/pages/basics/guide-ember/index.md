@@ -42,7 +42,7 @@ Then add the following NPM script to your package json in order to start the sto
 ```json
 {
   "scripts": {
-    "build-storybook": "ember build & build-storybook -p 9001 -s dist",
+    "build-storybook": "ember build && build-storybook -p 9001 -s dist",
     "storybook": "ember serve & start-storybook -p 9001 -s dist"
   }
 }
