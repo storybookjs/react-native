@@ -4,7 +4,7 @@
 
 #### Bug Fixes
 
--   Fix Select array values showing k [#4586](https://github.com/storybooks/storybook/pull/4586)
+-   Addon-knobs: fix select array values showing k [#4586](https://github.com/storybooks/storybook/pull/4586)
 
 # 4.0.0
 
