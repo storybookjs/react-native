@@ -12,13 +12,18 @@ function cleanup {
 trap cleanup EXIT
 
 fixtures_dir='fixtures'
+teamcity=0
 
 # parse command-line options
 # '-f' sets fixtures directory
-while getopts ":uosf:" opt; do
+# '-t' adds teamcity reporting
+while getopts ":ft:" opt; do
   case $opt in
     f)
       fixtures_dir=$OPTARG
+      ;;
+    t)
+      teamcity=1
       ;;
   esac
 done
@@ -49,7 +54,27 @@ for dir in *
 do
   # check that storybook starts without errors
   cd $dir
+
+  if [ $teamcity -eq 1 ]
+  then
+    echo "##teamcity[testStarted name='$dir' captureStandardOutput='true']"
+  fi
+
   echo "Running smoke test in $dir"
-  yarn storybook --smoke-test
+  failed=0
+  yarn storybook --smoke-test || failed=1
+
+  if [ $teamcity -eq 1 ]
+  then
+    if [ $failed -eq 1 ]
+    then
+      echo "##teamcity[testFailed name='$dir']"
+    fi
+    echo "##teamcity[testFinished name='$dir']"
+  elif [ $failed -eq 1 ]
+  then
+    exit 0
+  fi
+
   cd ..
 done
