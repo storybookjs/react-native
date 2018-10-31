@@ -1,3 +1,10 @@
+# 4.0.1
+
+2018-October-31
+
+#### Bug Fixes
+
+-   Fix Select array values showing k [#4586](https://github.com/storybooks/storybook/pull/4586)
 
 # 4.0.0
 
