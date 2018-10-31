@@ -17,7 +17,7 @@ teamcity=0
 # parse command-line options
 # '-f' sets fixtures directory
 # '-t' adds teamcity reporting
-while getopts ":ft:" opt; do
+while getopts ":tf:" opt; do
   case $opt in
     f)
       fixtures_dir=$OPTARG
