@@ -47,7 +47,7 @@
     "commander": "^2.19.0",
     "common-tags": "^1.8.0",
     "core-js": "^2.5.7",
-    "css-loader": "^1.0.0",
+    "css-loader": "^1.0.1",
     "detect-port": "^1.2.3",
     "dotenv-webpack": "^1.5.7",
     "ejs": "^2.6.1",
