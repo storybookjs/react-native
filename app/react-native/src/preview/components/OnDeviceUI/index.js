@@ -124,6 +124,7 @@ export default class OnDeviceUI extends PureComponent {
           <Animated.View style={previewWrapperStyles}>
             <Animated.View style={previewStyles}>
               <TouchableOpacity
+                accessible={false}
                 style={style.flex}
                 disabled={tabOpen === PREVIEW}
                 onPress={this.handleOpenPreview}
