@@ -1818,10 +1818,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@ngrx/store@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.1.0.tgz#5b027647a797bf027912568214b10375dd75af38"
-  integrity sha512-H5BGym1WtAX84/R4pTQ2MrrP87qYfXc6CoPghCZCK9LYxCodsI7KeQfpyNCg5qapxdH2EDqlHXTBJfMTLRiRGg==
+"@ngrx/store@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.1.1.tgz#35a3d87f545df4d6a544087f5fa45e143f0a0e90"
+  integrity sha512-1XFTE5nB3sLNoXZ6pl1kCfoy3NgJOU9G/QTPDPSMkrOkIZuqmylczmgRedSWwdB/dz8tclIZa5tA24dE+N/apA==
 
 "@ngtools/webpack@7.0.3":
   version "7.0.3"
