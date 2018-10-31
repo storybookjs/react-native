@@ -6,8 +6,8 @@
     "build": "ember build",
     "build-storybook": "yarn build && cp -r public/* dist && build-storybook -s dist",
     "dev": "ember serve",
-    "storybook": "yarn build && start-storybook -p 9009 -s dist, public",
-    "storybook:dev": "yarn dev & start-storybook -p 9009 -s dist, public"
+    "storybook": "yarn build && start-storybook -p 9009 -s dist",
+    "storybook:dev": "yarn dev & start-storybook -p 9009 -s dist"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
