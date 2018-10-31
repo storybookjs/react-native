@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-google-analytics",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Storybook addon for google analytics",
   "keywords": [
     "addon",
@@ -24,7 +24,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0",
+    "@storybook/addons": "4.0.1",
     "global": "^4.3.2",
     "react-ga": "^2.5.3"
   }
