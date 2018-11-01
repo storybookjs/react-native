@@ -73,7 +73,7 @@ do
     echo "##teamcity[testFinished name='$dir']"
   elif [ $failed -eq 1 ]
   then
-    exit 0
+    exit 1
   fi
 
   cd ..
