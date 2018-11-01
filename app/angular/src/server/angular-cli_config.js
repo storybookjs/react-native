@@ -82,6 +82,8 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
     return baseConfig;
   }
 
+  console.log(cliWebpackConfigOptions.supportES2015);
+
   if (!isBuildAngularInstalled()) {
     logger.info('=> Using base config because @angular-devkit/build-angular is not installed.');
     return baseConfig;
@@ -93,8 +95,6 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
     logger.warn('=> Failed to get angular-cli webpack config.');
     return baseConfig;
   }
-
-  logger.info('=> Get angular-cli webpack config.');
 
   const { cliCommonConfig, cliStyleConfig } = cliParts;
 
@@ -126,6 +126,15 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
     plugins: [
       new TsconfigPathsPlugin({
         configFile: cliWebpackConfigOptions.buildOptions.tsConfig,
+        // After ng build my-lib the default value of 'main' in the package.json is 'umd'
+        // This causes that you cannot import components directly from dist
+        // https://github.com/angular/angular-cli/blob/9f114aee1e009c3580784dd3bb7299bdf4a5918c/packages/angular_devkit/build_angular/src/angular-cli-files/models/webpack-configs/browser.ts#L68
+        mainFields: [
+          ...(cliWebpackConfigOptions.supportES2015 ? ['es2015'] : []),
+          'browser',
+          'module',
+          'main',
+        ],
       }),
     ],
   };
