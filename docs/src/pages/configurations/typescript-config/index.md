@@ -10,6 +10,7 @@ This is a central reference for using Storybook with Typescript.
 ```bash
 yarn add -D typescript
 yarn add -D awesome-typescript-loader
+yarn add -D @types/storybook__react # typings
 yarn add -D @storybook/addon-info react-docgen-typescript-webpack-plugin # optional but recommended
 yarn add -D jest "@types/jest" ts-jest #testing
 ```
@@ -18,7 +19,7 @@ We have had the best experience using `awesome-typescript-loader`, but other tut
 
 ## Setting up Typescript to work with Storybook
 
-We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default):
+We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default) by creating a `webpack.config.js` file in our Storybook configuration directory (by default, it’s `.storybook`):
 
 ```js
 const path = require('path');
@@ -34,7 +35,7 @@ module.exports = (baseConfig, env, config) => {
 };
 ```
 
-The above example shows a working config with the TSDocgen plugin also integrated; remove the optional sections if you don't plan on using them.
+The above example shows a working Webpack config with the TSDocgen plugin also integrated; remove the optional sections if you don't plan on using them.
 
 ## `tsconfig.json`
 
@@ -84,7 +85,7 @@ const req = require.context('../stories', true, /.stories.tsx$/);
 The very handy [Storybook Info addon](https://github.com/storybooks/storybook/tree/master/addons/info) autogenerates prop tables documentation for each component, however it doesn't work with Typescript types. The current solution is to use [react-docgen-typescript-loader](https://github.com/strothj/react-docgen-typescript-loader) to preprocess the Typescript files to give the Info addon what it needs. The webpack config above does this, and so for the rest of your stories you use it as per normal:
 
 ```js
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import TicTacToeCell from './TicTacToeCell';
@@ -137,7 +138,7 @@ addDecorator({
 This can be used like so:
 
 ```js
-import React from 'react';
+import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { PrimaryButton } from './Button';
@@ -185,26 +186,17 @@ Note: Component docgen information can not be generated for components that are 
 
 The ts-jest [README](https://github.com/kulshekhar/ts-jest) explains pretty clearly how to get Jest to recognize TypeScript code.
 
-This is an example package.json config for jest:
+This is an example `jest.config.js` file for jest:
 
-```json
-"jest": {
-  "transform": {
-    ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-  },
-  "mapCoverage": true,
-  "testPathIgnorePatterns": [
-    "/node_modules/",
-    "/lib/"
-  ],
-  "testRegex": "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-  "moduleFileExtensions": [
-    "ts",
-    "tsx",
-    "js",
-    "json"
-  ]
-}
+```js
+module.exports = {
+    transform: {
+        ".(ts|tsx)": "ts-jest",
+    },
+    testPathIgnorePatterns: ["/node_modules/", "/lib/"],
+    testRegex: "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    moduleFileExtensions: ["ts", "tsx", "js", "json"],
+};
 ```
 
 ## Building your Typescript Storybook
