@@ -82,8 +82,6 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
     return baseConfig;
   }
 
-  console.log(cliWebpackConfigOptions.supportES2015);
-
   if (!isBuildAngularInstalled()) {
     logger.info('=> Using base config because @angular-devkit/build-angular is not installed.');
     return baseConfig;
@@ -95,6 +93,8 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
     logger.warn('=> Failed to get angular-cli webpack config.');
     return baseConfig;
   }
+
+  logger.info('=> Get angular-cli webpack config.');
 
   const { cliCommonConfig, cliStyleConfig } = cliParts;
 
