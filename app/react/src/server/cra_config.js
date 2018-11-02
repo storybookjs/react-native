@@ -7,9 +7,11 @@ export function isReactScriptsInstalled() {
   try {
     // eslint-disable-next-line global-require, import/no-extraneous-dependencies
     const reactScriptsJson = require('react-scripts/package.json');
+    // console.log(reactScriptsJson);
     if (semver.lt(reactScriptsJson.version, '2.0.0')) return false;
     return true;
   } catch (e) {
+    console.error(e);
     return false;
   }
 }
@@ -64,14 +66,7 @@ export function applyCRAWebpackConfig(baseConfig) {
   //  Add css minification for production
   const plugins = [...baseConfig.plugins];
   if (baseConfig.mode === 'production') {
-    plugins.push(
-      new MiniCssExtractPlugin({
-        // Options similar to the same options in webpackOptions.output
-        // both options are optional
-        filename: 'static/css/[name].[contenthash:8].css',
-        chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
-      })
-    );
+    plugins.push(new MiniCssExtractPlugin());
   }
 
   return {
