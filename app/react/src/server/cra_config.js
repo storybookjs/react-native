@@ -7,11 +7,9 @@ export function isReactScriptsInstalled() {
   try {
     // eslint-disable-next-line global-require, import/no-extraneous-dependencies
     const reactScriptsJson = require('react-scripts/package.json');
-    // console.log(reactScriptsJson);
     if (semver.lt(reactScriptsJson.version, '2.0.0')) return false;
     return true;
   } catch (e) {
-    console.error(e);
     return false;
   }
 }
