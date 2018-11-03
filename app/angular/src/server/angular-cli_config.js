@@ -106,9 +106,6 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
   const entry = [
     ...baseConfig.entry,
     ...Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), []),
-    // iframe: []
-    //   .concat(baseConfig.entry.iframe)
-    //   .concat(Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), [])),
   ];
 
   const module = {
