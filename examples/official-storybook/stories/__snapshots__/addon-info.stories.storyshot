@@ -2463,7 +2463,9 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
       </div>
     </div>
   </div>
-  <div>
+  <div
+    id="story-root"
+  >
     <button
       type="button"
     >
@@ -2735,7 +2737,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
       </div>
     </div>
   </div>
-  <div>
+  <div
+    id="story-root"
+  >
     <button
       type="button"
     >
@@ -3707,7 +3711,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
       </div>
     </div>
   </div>
-  <div>
+  <div
+    id="story-root"
+  >
     <button
       type="button"
     >
@@ -6346,7 +6352,9 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
       </div>
     </div>
   </div>
-  <div>
+  <div
+    id="story-root"
+  >
     <button
       type="button"
     >
@@ -6647,7 +6655,9 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
       </div>
     </div>
   </div>
-  <div>
+  <div
+    id="story-root"
+  >
     <button
       type="button"
     >
@@ -6894,7 +6904,9 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
       </div>
     </div>
   </div>
-  <div>
+  <div
+    id="story-root"
+  >
     <button
       type="button"
     >
