@@ -26,7 +26,7 @@ object OpenSourceProjects_Storybook_CliTestLatestCra : BuildType({
                 set -e -x
 
                 yarn
-                yarn test-latest-cra
+                yarn test-latest-cra -t
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
