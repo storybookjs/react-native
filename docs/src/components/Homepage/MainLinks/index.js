@@ -24,11 +24,9 @@ class MainLinks extends React.Component {
             <h2>Try Now</h2>
             <pre>
               <code>
-                npm i -g @storybook/cli
+                cd my-react-vue-angular-app
                 <br />
-                cd my-react-app
-                <br />
-                getstorybook
+                npx -p @storybook/cli sb init
                 <br />
               </code>
             </pre>

@@ -12,7 +12,7 @@ object OpenSourceProjects_Storybook_Docs : BuildType({
     artifactRules = "docs/public => docs.zip"
 
     params {
-        param("Deploy branch", "release/3.4")
+        param("Deploy branch", "release/4.0")
     }
 
     vcs {
