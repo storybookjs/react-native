@@ -100,7 +100,7 @@ const tasks = {
     name: `Use TeamCity reporter`,
     defaultValue: false,
     option: '--teamcity',
-    extraParam: '--testResultsProcessor=jest-teamcity-reporter',
+    extraParam: '-t --testResultsProcessor=jest-teamcity-reporter',
   }),
 };
 
