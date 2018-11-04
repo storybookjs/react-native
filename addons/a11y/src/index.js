@@ -15,7 +15,7 @@ export const configureA11y = (options = {}) => {
 const runA11yCheck = () => {
   const channel = addons.getChannel();
   const infoWrapper = document.getElementById('story-root').children;
-  const wrapper = document.getElementById('root').children;
+  const wrapper = document.getElementById('root');
 
   axe.reset();
   axe.configure(axeOptions);
