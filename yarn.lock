@@ -1818,10 +1818,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@ngrx/store@^6.1.1":
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.1.1.tgz#35a3d87f545df4d6a544087f5fa45e143f0a0e90"
-  integrity sha512-1XFTE5nB3sLNoXZ6pl1kCfoy3NgJOU9G/QTPDPSMkrOkIZuqmylczmgRedSWwdB/dz8tclIZa5tA24dE+N/apA==
+"@ngrx/store@^6.1.2":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.1.2.tgz#20fb5ab4d79571b804a348093aa11a167fe2946f"
+  integrity sha512-W9MbXrwhIRmN1BlINF9BT+rHR046e1HNk7GqykcDJrK9wW74PJW3aE5iuPb2sTPipBMjPHsXzc73E4U/+OTAyw==
 
 "@ngtools/webpack@7.0.3":
   version "7.0.3"
@@ -2007,15 +2007,10 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.38.tgz#c1be40aa933723c608820a99a373a16d215a1ca2"
   integrity sha512-F/v7t1LwS4vnXuPooJQGBRKRGIoxWUTmA4VHfqjOccFsNDThD5bfUNpITive6s352O7o384wcpEaDV8rHCehDA==
 
-"@types/jest@^23.3.1":
-  version "23.3.7"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.7.tgz#77f9a4332ccf8db680a31818ade3ee454c831a79"
-  integrity sha512-N0p6mHrS0RHC3A9hHN4QH1RM2fGSb2E8rt6ONEK5xKSnyKtn/JAhr1VritkCn6cdyDBephVB80THqJGWzK8FAw==
-
-"@types/jest@^23.3.8":
-  version "23.3.8"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.8.tgz#56b07c0c3d7c8a6c47abb4f785cab648c6eafd01"
-  integrity sha512-OKDxB/7woaQfUKkj+7+Zo3PmAxAYAy+SNwOwFhnYAc8JTaPhGOv8SC6QQg5D9+Giprhx/DzoKbJIpV9799VV0g==
+"@types/jest@^23.3.1", "@types/jest@^23.3.9":
+  version "23.3.9"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.9.tgz#c16b55186ee73ae65e001fbee69d392c51337ad1"
+  integrity sha512-wNMwXSUcwyYajtbayfPp55tSayuDVU6PfY5gzvRSj80UvxdXEJOVPnUVajaOp7NgXLm+1e2ZDLULmpsU9vDvQw==
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -6846,10 +6841,24 @@ copy-to-clipboard@^3.0.8:
   dependencies:
     toggle-selection "^1.0.3"
 
-copy-webpack-plugin@4.5.4, copy-webpack-plugin@^4.5.4:
+copy-webpack-plugin@4.5.4:
   version "4.5.4"
   resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-4.5.4.tgz#f2b2782b3cd5225535c3dc166a80067e7d940f27"
   integrity sha512-0lstlEyj74OAtYMrDxlNZsU7cwFijAI3Ofz2fD6Mpo9r4xCv4yegfa3uHIKvZY1NSuOtE9nvG6TAhJ+uz9gDaQ==
+  dependencies:
+    cacache "^10.0.4"
+    find-cache-dir "^1.0.0"
+    globby "^7.1.1"
+    is-glob "^4.0.0"
+    loader-utils "^1.1.0"
+    minimatch "^3.0.4"
+    p-limit "^1.0.0"
+    serialize-javascript "^1.4.0"
+
+copy-webpack-plugin@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-4.6.0.tgz#e7f40dd8a68477d405dd1b7a854aae324b158bae"
+  integrity sha512-Y+SQCF+0NoWQryez2zXn5J5knmr9z/9qSQt7fbL78u83rxmigOy8X5+BFn8CFSuX+nKT8gpYwJX68ekqtQt6ZA==
   dependencies:
     cacache "^10.0.4"
     find-cache-dir "^1.0.0"
@@ -14854,9 +14863,9 @@ merge2@^1.2.1:
   integrity sha512-bgM8twH86rWni21thii6WCMQMRMmwqqdW3sGWi9IipnVAszdLXRjwDwAnyrVXo6DuP3AjRMMttZKUB48QWIFGg==
 
 merge@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
-  integrity sha1-dTHjnUlJwoGma4xabgJl6LBYlNo=
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
+  integrity sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==
 
 method-override@~2.3.5:
   version "2.3.10"
