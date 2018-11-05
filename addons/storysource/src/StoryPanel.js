@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { RoutedLink, monoFonts } from '@storybook/components';
 import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism-light';
 import createElement from 'react-syntax-highlighter/dist/esm/create-element';
 import { EVENT_ID } from './events';
 
