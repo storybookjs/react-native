@@ -67,7 +67,7 @@
     "@storybook/addons": "4.0.0",
     "@storybook/angular": "4.0.0",
     "@types/core-js": "^2.5.0",
-    "@types/jest": "^23.3.8",
+    "@types/jest": "^23.3.9",
     "@types/node": "~10.12.1",
     "@types/webpack-env": "^1.13.6",
     "global": "^4.3.2",
