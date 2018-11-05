@@ -195,6 +195,6 @@ object Project : Project({
     }
 
     params {
-        param("docker.node.version", "latest")
+        param("docker.node.version", "dubnium")
     }
 })
