@@ -147,12 +147,14 @@ import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 import puppeteer from 'puppeteer';
 
-const customBrowser = puppeteer.connect('ws://yourUrl');
+(async function() {
+    const customBrowser = await puppeteer.connect('ws://yourUrl');
 
-initStoryshots({
-  suite: 'Image storyshots',
-  test: imageSnapshot({ storybookUrl: 'http://localhost:6006', customBrowser }),
-});
+    initStoryshots({
+      suite: 'Image storyshots',
+      test: imageSnapshot({ storybookUrl: 'http://localhost:6006', customBrowser }),
+    });
+})();
 ```
 
 
