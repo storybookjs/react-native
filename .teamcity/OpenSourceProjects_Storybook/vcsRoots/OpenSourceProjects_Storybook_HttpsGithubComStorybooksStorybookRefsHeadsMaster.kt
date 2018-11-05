@@ -8,7 +8,6 @@ object OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMa
     id = "OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster"
     name = "https://github.com/storybooks/storybook#refs/heads/master"
     url = "git@github.com:storybooks/storybook.git"
-    branch = "refs/heads/next"
     branchSpec = """
         +:refs/(pull/*)/head
         +:refs/heads/*
