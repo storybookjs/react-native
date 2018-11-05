@@ -40,7 +40,7 @@
   "dependencies": {
     "@angular/common": "^7.0.1",
     "@angular/compiler": "^7.0.1",
-    "@angular/core": "^7.0.1",
+    "@angular/core": "^7.0.2",
     "@angular/forms": "^7.0.1",
     "@angular/platform-browser": "^7.0.1",
     "@angular/platform-browser-dynamic": "^7.0.1",
@@ -77,6 +77,6 @@
     "jest-preset-angular": "^6.0.1",
     "protractor": "~5.4.1",
     "ts-node": "~7.0.0",
-    "typescript": "^3.1.4"
+    "typescript": "^3.1.6"
   }
 }
