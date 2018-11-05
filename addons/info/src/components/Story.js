@@ -350,7 +350,7 @@ class Story extends Component {
     extract(children);
 
     const array = Array.from(types.keys());
-    array.sort((a, b) => getName(a) > getName(b));
+    array.sort((a, b) => (getName(a) > getName(b) ? 1 : -1));
 
     propTables = array.map((type, i) => (
       // eslint-disable-next-line react/no-array-index-key
