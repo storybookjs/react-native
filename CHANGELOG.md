@@ -1,3 +1,18 @@
+# 4.0.2
+
+2018-October-31
+
+Fix broken 4.0.1 release
+
+#### Bug Fixes
+
+-   Addon-knobs: fix select array values showing k [#4586](https://github.com/storybooks/storybook/pull/4586)
+
+# 4.0.1
+
+2018-October-31
+
+Broken release - `@storybook/client-logger` [somehow didn't get published to NPM.](https://github.com/storybooks/storybook/issues/4660)
 
 # 4.0.0
 
