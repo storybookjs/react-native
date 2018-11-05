@@ -159,3 +159,10 @@ trunx:
   demo: https://g14n.info/trunx
   source: https://github.com/fibo/trunx
   site: https://github.com/fibo/trunx
+auth0:
+  thumbnail: cosmos.png
+  title: Cosmos
+  description: A Design System For Auth0 Products
+  demo: https://auth0-cosmos.now.sh/sandbox/
+  source: https://github.com/auth0/cosmos
+  site: https://auth0-cosmos.now.sh/

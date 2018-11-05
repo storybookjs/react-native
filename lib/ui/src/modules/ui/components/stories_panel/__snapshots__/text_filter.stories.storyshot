@@ -5,9 +5,11 @@ exports[`Storyshots UI|stories/TextFilter with filterText 1`] = `
   class="css-79elbk eg9vth70"
 >
   <input
+    autocomplete="off"
     class="css-1yhj4t5 eg9vth71"
     name="filter-text"
     placeholder="Filter"
+    spellcheck="false"
     type="text"
     value="Filter Text"
   />
@@ -24,9 +26,11 @@ exports[`Storyshots UI|stories/TextFilter without filterText 1`] = `
   class="css-79elbk eg9vth70"
 >
   <input
+    autocomplete="off"
     class="css-1yhj4t5 eg9vth71"
     name="filter-text"
     placeholder="Filter"
+    spellcheck="false"
     type="text"
     value=""
   />

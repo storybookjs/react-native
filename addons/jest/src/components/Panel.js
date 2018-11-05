@@ -142,7 +142,7 @@ const Content = styled(({ tests, className }) => (
 });
 
 const Panel = ({ tests }) =>
-  tests ? <Content tests={tests} /> : <NoTests>This story has no tests configures</NoTests>;
+  tests ? <Content tests={tests} /> : <NoTests>This story has no tests configured</NoTests>;
 
 Panel.defaultProps = {
   tests: null,

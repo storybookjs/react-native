@@ -2,11 +2,16 @@
 
 exports[`Storyshots Welcome to Storybook 1`] = `
 <article
-  className="css-3qkdq7 ensbfgf0"
+  style={
+    Object {
+      "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
+      "lineHeight": 1.4,
+      "margin": 15,
+      "maxWidth": 600,
+    }
+  }
 >
-  <h1
-    className="css-0 ensbfgf1"
-  >
+  <h1>
     Welcome to storybook
   </h1>
   <p>
@@ -15,7 +20,17 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     We've added some basic stories inside the 
     <code
-      className="css-1rxzob2 ensbfgf3"
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
     >
       src/stories
     </code>
@@ -28,15 +43,40 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     See these sample 
     <button
-      className="css-1otf2jm ensbfgf5"
       onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderBottom": "1px solid #1474f3",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "color": "#1474f3",
+          "cursor": "pointer",
+          "font": "inherit",
+          "padding": 0,
+          "paddingBottom": 2,
+          "textDecoration": "none",
+        }
+      }
+      type="button"
     >
       stories
     </button>
      for a component called
      
     <code
-      className="css-1rxzob2 ensbfgf3"
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
     >
       Button
     </code>
@@ -49,14 +89,34 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     (Try editing the 
     <code
-      className="css-1rxzob2 ensbfgf3"
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
     >
       Button
     </code>
      stories located at
      
     <code
-      className="css-1rxzob2 ensbfgf3"
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
     >
       src/stories/index.js
     </code>
@@ -68,9 +128,16 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     Have a look at the
      
     <a
-      className="css-4d3lbr ensbfgf4"
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
+      style={
+        Object {
+          "borderBottom": "1px solid #1474f3",
+          "color": "#1474f3",
+          "paddingBottom": 2,
+          "textDecoration": "none",
+        }
+      }
       target="_blank"
     >
       Writing Stories
@@ -79,7 +146,11 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     section in our documentation.
   </p>
   <p
-    className="css-1tzeee1 ensbfgf2"
+    style={
+      Object {
+        "opacity": 0.5,
+      }
+    }
   >
     <b>
       NOTE:
@@ -87,7 +158,17 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     Have a look at the 
     <code
-      className="css-1rxzob2 ensbfgf3"
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
     >
       .storybook/webpack.config.js
     </code>

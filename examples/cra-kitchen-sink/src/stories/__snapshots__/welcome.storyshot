@@ -2,11 +2,9 @@
 
 exports[`Storyshots Welcome to Storybook 1`] = `
 <article
-  class="css-3qkdq7 ensbfgf0"
+  style="margin:15px;max-width:600px;line-height:1.4;font-family:\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif"
 >
-  <h1
-    class="css-0 ensbfgf1"
-  >
+  <h1>
     Welcome to storybook
   </h1>
   <p>
@@ -15,7 +13,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     We've added some basic stories inside the 
     <code
-      class="css-1rxzob2 ensbfgf3"
+      style="font-size:15px;font-weight:600;padding:2px 5px;border:1px solid #eae9e9;border-radius:4px;background-color:#f3f2f2;color:#3a3a3a"
     >
       src/stories
     </code>
@@ -28,13 +26,14 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     See these sample 
     <button
-      class="css-1otf2jm ensbfgf5"
+      style="color:#1474f3;text-decoration:none;border-bottom:1px solid #1474f3;padding-bottom:2px;border-top:none;border-right:none;border-left:none;background-color:transparent;padding:0;cursor:pointer;font:inherit"
+      type="button"
     >
       stories
     </button>
      for a component called 
     <code
-      class="css-1rxzob2 ensbfgf3"
+      style="font-size:15px;font-weight:600;padding:2px 5px;border:1px solid #eae9e9;border-radius:4px;background-color:#f3f2f2;color:#3a3a3a"
     >
       Button
     </code>
@@ -47,13 +46,13 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     (Try editing the 
     <code
-      class="css-1rxzob2 ensbfgf3"
+      style="font-size:15px;font-weight:600;padding:2px 5px;border:1px solid #eae9e9;border-radius:4px;background-color:#f3f2f2;color:#3a3a3a"
     >
       Button
     </code>
      stories located at 
     <code
-      class="css-1rxzob2 ensbfgf3"
+      style="font-size:15px;font-weight:600;padding:2px 5px;border:1px solid #eae9e9;border-radius:4px;background-color:#f3f2f2;color:#3a3a3a"
     >
       src/stories/index.js
     </code>
@@ -64,9 +63,9 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     Have a look at the 
     <a
-      class="css-4d3lbr ensbfgf4"
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
+      style="color:#1474f3;text-decoration:none;border-bottom:1px solid #1474f3;padding-bottom:2px"
       target="_blank"
     >
       Writing Stories
@@ -74,7 +73,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
      section in our documentation.
   </p>
   <p
-    class="css-1tzeee1 ensbfgf2"
+    style="opacity:0.5"
   >
     <b>
       NOTE:
@@ -82,7 +81,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     Have a look at the 
     <code
-      class="css-1rxzob2 ensbfgf3"
+      style="font-size:15px;font-weight:600;padding:2px 5px;border:1px solid #eae9e9;border-radius:4px;background-color:#f3f2f2;color:#3a3a3a"
     >
       .storybook/webpack.config.js
     </code>

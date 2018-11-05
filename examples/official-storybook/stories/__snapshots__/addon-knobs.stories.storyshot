@@ -14,7 +14,7 @@ exports[`Storyshots Addons|Knobs.withKnobs accepts story parameters 1`] = `
 
 exports[`Storyshots Addons|Knobs.withKnobs complex select 1`] = `
 <pre>
-  string
+  the type of string = string
 </pre>
 `;
 
@@ -24,7 +24,7 @@ exports[`Storyshots Addons|Knobs.withKnobs dynamic knobs 1`] = `
     I must be here
   </div>
   <div>
-    I can disapear
+    I can disappear
   </div>
 </div>
 `;
