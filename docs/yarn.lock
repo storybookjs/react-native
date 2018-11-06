@@ -12722,10 +12722,10 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-sitemap@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-2.0.1.tgz#24f9ae89efeadd80e85e91b7247165497a5e655b"
-  integrity sha512-MRCugXgkX9BoKweEljgPPqEfvezcHdzjxLI2nKmemlkfsOiGumJBrjotEF+BtMaq7a/AREGXIMok+0GntJgdhw==
+sitemap@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-2.1.0.tgz#1633cb88c196d755ad94becfb1c1bcacc6d3425a"
+  integrity sha512-AkfA7RDVCITQo+j5CpXsMJlZ/8ENO2NtgMHYIh+YMvex2Hao/oe3MQgNa03p0aWY6srCfUA1Q02OgiWCAiuccA==
   dependencies:
     lodash "^4.17.10"
     url-join "^4.0.0"
