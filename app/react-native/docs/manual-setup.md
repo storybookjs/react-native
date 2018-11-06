@@ -42,6 +42,7 @@ Then write your first story in the `stories` directory like this:
 
 ```js
 import { storiesOf } from '@storybook/react-native';
+import React from 'react';
 import { View, Text } from 'react-native';
 
 const style = {
@@ -56,7 +57,7 @@ const CenteredView = ({ children }) => (
   </View>
 );
 
-storiesOf('CenteredView')
+storiesOf('CenteredView', module)
   .add('default view', () => (
     <CenteredView>
       <Text>Hello Storybook</Text>
@@ -68,6 +69,15 @@ Finally replace your app entry with
 ```js
 import './storybook';
 ```
+
+For example, if your entry app is named App.js/index.js (Expo/Vanilla). You can replace it with the following.
+
+```
+import StorybookUI from './storybook';
+
+export default StorybookUI;
+```
+
 If you cannot replace your entry point just make sure that the component exported from `./storybook` is displayed
 somewhere in your app. `StorybookUI` is simply a RN `View` component that can be embedded anywhere in your 
 RN application, e.g. on a tab or within an admin screen.
