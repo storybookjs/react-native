@@ -1,3 +1,20 @@
+# 4.0.4
+
+2018-November-06
+
+#### Bug Fixes
+
+-   Core: Change extensions ordering in webpack config [#4708](https://github.com/storybooks/storybook/pull/4708)
+-   Addon-Knobs: Fix PropTypes in NumberType [#4669](https://github.com/storybooks/storybook/pull/4669)
+-   Addon-Viewport: Fix "defaultViewport" configuration [#4683](https://github.com/storybooks/storybook/pull/4683)
+-   Addon-Jes: Fix test matching [#4689](https://github.com/storybooks/storybook/pull/4689)
+-   Fix tests in node 11 by using `Array#sort` correctly [#4720](https://github.com/storybooks/storybook/pull/4720)
+
+#### Dependency Upgrades
+
+-   Bump react-syntax-highlighter from 9.0.1 to 10.0.0 [#4654](https://github.com/storybooks/storybook/pull/4654)
+-   Remove SB deps from cli tests [#4705](https://github.com/storybooks/storybook/pull/4705)
+
 # 4.0.3
 
 2018-November-06
