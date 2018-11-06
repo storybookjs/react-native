@@ -47,7 +47,7 @@
     "react-router": "^4.3.1",
     "react-stack-grid": "^0.7.1",
     "sitemap": "^2.1.0",
-    "snyk": "^1.104.0"
+    "snyk": "^1.108.0"
   },
   "snyk": true
 }
