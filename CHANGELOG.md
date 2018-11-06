@@ -1,3 +1,60 @@
+# 4.0.3
+
+2018-November-06
+
+#### Bug Fixes
+
+-   React: Fix css relative asset urls [#4695](https://github.com/storybooks/storybook/pull/4695)
+-   Core: Fix a bug with buildStaticStandalone resolving too early [#4649](https://github.com/storybooks/storybook/pull/4649)
+-   Angular: Fixes component imports from dist  [#4682](https://github.com/storybooks/storybook/pull/4682)
+-   Addon-info: Improve accessibility with contrast [#4698](https://github.com/storybooks/storybook/pull/4698)
+-   Ember: update ergonomics to not require any manual setup [#4594](https://github.com/storybooks/storybook/pull/4594)
+
+#### Maintenance
+
+-   Update release process and `master` becomes the stable branch [#4719](https://github.com/storybooks/storybook/pull/4719)
+-   Report CLI tests to teamcity [#4671](https://github.com/storybooks/storybook/pull/4671)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+30 PRs
+</summary>
+
+-   Bump @angular/core from 7.0.1 to 7.0.2 [#4675](https://github.com/storybooks/storybook/pull/4675)
+-   [Security] Bump merge from 1.2.0 to 1.2.1 in /docs [#4687](https://github.com/storybooks/storybook/pull/4687)
+-   Bump typescript from 3.1.4 to 3.1.6 [#4699](https://github.com/storybooks/storybook/pull/4699)
+-   Set zone.js as a peer and dev dependency [#4663](https://github.com/storybooks/storybook/pull/4663)
+-   chore(core): update css-loader to latest [#4619](https://github.com/storybooks/storybook/pull/4619)
+-   Bump css-loader from 1.0.0 to 1.0.1 [#4655](https://github.com/storybooks/storybook/pull/4655)
+-   Bump @ngrx/store from 6.1.0 to 6.1.1 [#4653](https://github.com/storybooks/storybook/pull/4653)
+-   Allow for angular-devkit/core version aligned with Angular v7 [#4652](https://github.com/storybooks/storybook/pull/4652)
+-   Bump ember-load-initializers from 1.1.0 to 2.0.0 [#4634](https://github.com/storybooks/storybook/pull/4634)
+-   Bump @ember/test-helpers from 0.7.27 to 1.0.0 [#4630](https://github.com/storybooks/storybook/pull/4630)
+-   Bump @storybook/addon-actions from 3.4.11 to 4.0.0 in /docs [#4626](https://github.com/storybooks/storybook/pull/4626)
+-   Bump gatsby-plugin-sharp from 2.0.7 to 2.0.10 in /docs [#4627](https://github.com/storybooks/storybook/pull/4627)
+-   Bump typescript from 3.1.3 to 3.1.4 [#4629](https://github.com/storybooks/storybook/pull/4629)
+-   Bump react-scripts from 2.0.5 to 2.1.0 [#4631](https://github.com/storybooks/storybook/pull/4631)
+-   Bump ember-source from 3.5.0 to 3.5.1 [#4633](https://github.com/storybooks/storybook/pull/4633)
+-   Bump @types/node from 10.12.0 to 10.12.1 [#4635](https://github.com/storybooks/storybook/pull/4635)
+-   Bump react-dev-utils from 6.0.5 to 6.1.0 [#4636](https://github.com/storybooks/storybook/pull/4636)
+-   Bump eslint from 5.7.0 to 5.8.0 [#4613](https://github.com/storybooks/storybook/pull/4613)
+-   Bump express-graphql from 0.6.12 to 0.7.1 [#4610](https://github.com/storybooks/storybook/pull/4610)
+-   Bump tslint-plugin-prettier from 2.0.0 to 2.0.1 [#4609](https://github.com/storybooks/storybook/pull/4609)
+-   Bump eslint-plugin-jest from 21.26.1 to 21.26.2 [#4606](https://github.com/storybooks/storybook/pull/4606)
+-   Bump @types/jest from 23.3.7 to 23.3.8 [#4611](https://github.com/storybooks/storybook/pull/4611)
+-   Bump fork-ts-checker-webpack-plugin from 0.4.10 to 0.4.14 [#4607](https://github.com/storybooks/storybook/pull/4607)
+-   Bump autoprefixer from 9.2.1 to 9.3.1 [#4605](https://github.com/storybooks/storybook/pull/4605)
+-   Bump jasmine-core from 3.2.1 to 3.3.0 [#4581](https://github.com/storybooks/storybook/pull/4581)
+-   Bump react-dom from 16.5.2 to 16.6.0 [#4580](https://github.com/storybooks/storybook/pull/4580)
+-   Bump eslint-plugin-jest from 21.25.1 to 21.26.1 [#4583](https://github.com/storybooks/storybook/pull/4583)
+-   Bump react from 16.5.2 to 16.6.0 [#4584](https://github.com/storybooks/storybook/pull/4584)
+-   Bump react-syntax-highlighter from 9.0.0 to 9.0.1 [#4585](https://github.com/storybooks/storybook/pull/4585)
+-   Bump remark-cli from 5.0.0 to 6.0.0 [#4551](https://github.com/storybooks/storybook/pull/4551)
+
+</details>
+
 # 4.0.2
 
 2018-October-31
