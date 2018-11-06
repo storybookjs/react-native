@@ -63,6 +63,11 @@ export default class OnDeviceUI extends PureComponent {
   };
 
   handleStoryChange = selection => {
+    const { selection: prevSelection } = this.state;
+    if (selection.kind === prevSelection.kind && selection.story === prevSelection.story) {
+      this.handleToggleTab(PREVIEW);
+    }
+
     this.setState({
       selection: {
         kind: selection.kind,

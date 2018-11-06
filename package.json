@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "4.0.0-alpha.16",
+  "version": "4.0.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -37,8 +37,7 @@
     "lint:md": "remark -q",
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "publish": "lerna publish --exact --concurrency 1 --force-publish",
-    "publish:alpha": "npm run publish -- --npm-tag=alpha",
-    "publish:rc": "npm run publish -- --npm-tag=rc",
+    "publish:next": "npm run publish -- --npm-tag=next",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "yarn --cwd examples/official-storybook storybook",
     "test": "node ./scripts/test.js",
@@ -46,8 +45,8 @@
   },
   "devDependencies": {
     "@angular/common": "^7.0.1",
-    "@angular/compiler": "^7.0.1",
-    "@angular/core": "^7.0.1",
+    "@angular/compiler": "^7.0.2",
+    "@angular/core": "^7.0.2",
     "@angular/forms": "^7.0.1",
     "@angular/platform-browser": "^7.0.1",
     "@angular/platform-browser-dynamic": "^7.0.1",
@@ -121,7 +120,7 @@
     "tslint": "~5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.1.4"
+    "typescript": "^3.1.6"
   },
   "resolutions": {
     "graphql": "^0.13.2"

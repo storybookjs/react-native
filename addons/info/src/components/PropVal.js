@@ -33,7 +33,7 @@ const getValueStyles = (codeColors = {}) => ({
   },
 
   empty: {
-    color: '#777',
+    color: '#444',
   },
 });
 
