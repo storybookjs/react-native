@@ -6697,10 +6697,10 @@ he@1.1.x:
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
   integrity sha1-k0EP0hsAlzUVH4howvJx80J+I/0=
 
-highlight.js@^9.13.0:
-  version "9.13.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.13.0.tgz#ee96d5c5f4c456e440f2dbdb2752211dff56f671"
-  integrity sha512-2B90kcNnErqRTmzdZw6IPLEC9CdsiIMhj+r8L3LJKRCgtEJ+LY5yzWuQCVnADTI0wwocQinFzaaL/JjTQNqI/g==
+highlight.js@^9.13.1:
+  version "9.13.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.13.1.tgz#054586d53a6863311168488a0f58d6c505ce641e"
+  integrity sha512-Sc28JNQNDzaH6PORtRLMvif9RSn1mYuOoX3omVjnb0+HbpPygU2ALBI0R/wsiqCb4/fcp07Gdo8g+fhtFrQl6A==
 
 history@^4.6.2, history@^4.7.2:
   version "4.7.2"

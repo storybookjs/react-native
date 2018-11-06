@@ -36,7 +36,7 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
     "global": "^4.3.2",
-    "highlight.js": "^9.13.0",
+    "highlight.js": "^9.13.1",
     "lodash": "^4.17.11",
     "marked": "^0.5.1",
     "prop-types": "^15.6.2",
