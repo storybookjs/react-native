@@ -1,3 +1,24 @@
+# 4.1.0-alpha.1
+
+2018-November-06
+
+#### Features
+
+-   Core: add cursor images to webpack loader [#4498](https://github.com/storybooks/storybook/pull/4498)
+-   Storyshots-puppeteer: Allow specifying an existing browser [#4721](https://github.com/storybooks/storybook/pull/4721)
+
+#### Dependency Upgrades
+
+-   Bump @angular/compiler from 7.0.1 to 7.0.2 [#4677](https://github.com/storybooks/storybook/pull/4677)
+-   Bump @types/jest from 23.3.8 to 23.3.9 [#4658](https://github.com/storybooks/storybook/pull/4658)
+-   Bump copy-webpack-plugin from 4.5.4 to 4.6.0 [#4674](https://github.com/storybooks/storybook/pull/4674)
+-   Bump @ngrx/store from 6.1.1 to 6.1.2 [#4678](https://github.com/storybooks/storybook/pull/4678)
+-   [Security] Bump merge from 1.2.0 to 1.2.1 [#4686](https://github.com/storybooks/storybook/pull/4686)
+
+# 4.1.0-alpha.0
+
+Publish failed
+
 # 4.0.4
 
 2018-November-06

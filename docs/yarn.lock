@@ -166,7 +166,7 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
-"@storybook/addon-links@3.4.11", "@storybook/addon-links@^3.4.11":
+"@storybook/addon-links@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.11.tgz#097b4fcf4b3af3903762ac0d7e65c5d37d14af88"
   integrity sha512-DFTBj359ANqKJBhcSw2zAojlWF4A4+U48sKOhcPZ96qwPPtZwMtUR1TYxP+6ssfEP4tlA9zs4dn0+yRye+ydNQ==
@@ -175,6 +175,17 @@
     babel-runtime "^6.26.0"
     global "^4.3.2"
     prop-types "^15.6.1"
+
+"@storybook/addon-links@^4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-4.0.4.tgz#0b225c460335eb5da4af6d9061a82c2bb4cb9d74"
+  integrity sha512-f8uuwY9uqmG02Q+Zu10Hppq118JG2Ksih0BvpY2X3d2JAkcWllH0YosH6Sd5g1TgxMI+OMSXLDEsAojmmMX9MQ==
+  dependencies:
+    "@storybook/addons" "4.0.4"
+    "@storybook/components" "4.0.4"
+    "@storybook/core-events" "4.0.4"
+    global "^4.3.2"
+    prop-types "^15.6.2"
 
 "@storybook/addons@3.4.11", "@storybook/addons@^3.4.11":
   version "3.4.11"
@@ -188,6 +199,16 @@
   dependencies:
     "@storybook/channels" "4.0.0"
     "@storybook/components" "4.0.0"
+    global "^4.3.2"
+    util-deprecate "^1.0.2"
+
+"@storybook/addons@4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.0.4.tgz#133609c527435aba1149ead53ca91f694db1a490"
+  integrity sha512-e7S5kYCytPsAM2p8dMQNUV0QEnY9P9mf6zVgbVgdZ2O1b2uMwD/ABj/BhYLgsB7gdshGrcV5vkMXAAGwMsN6Sg==
+  dependencies:
+    "@storybook/channels" "4.0.4"
+    "@storybook/components" "4.0.4"
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
@@ -209,6 +230,11 @@
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-4.0.0.tgz#b712d711f67966028dbff5c57e6ddc6f53d5cbac"
   integrity sha512-VJdct5WajZweZgl532ufGZKefk0kI8QI+SCWW93YEPrvgo+vGPBOlsZpWNZw0ozhESgnJwvSjNWYZYsSt/j1dQ==
+
+"@storybook/channels@4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-4.0.4.tgz#fdf717cd726d15508ac80ff93a3893b75d3ab8b8"
+  integrity sha512-EeRby5oCyyYBkBrxI7Cg8F65FkYJjVK0jbGWpIugcjtnfOeP57xLcZuukcjhLjl/oaC/RYw7A/6c0nFW4kV0GQ==
 
 "@storybook/client-logger@3.4.11":
   version "3.4.11"
@@ -240,10 +266,31 @@
     react-textarea-autosize "^7.0.4"
     render-fragment "^0.1.1"
 
+"@storybook/components@4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-4.0.4.tgz#e07fc89cd7d64e0686c933da92a3e849d8c59d60"
+  integrity sha512-v13Tm5ACYrk01bszl0EpFGKe9YyCdQjdJOEE9laDiGS6rWEydl0T5QmzhBD6yNgf+k6gs96JylxswlyyqHe32Q==
+  dependencies:
+    "@emotion/core" "^0.13.1"
+    "@emotion/provider" "^0.11.2"
+    "@emotion/styled" "^0.10.6"
+    global "^4.3.2"
+    lodash "^4.17.11"
+    prop-types "^15.6.2"
+    react-inspector "^2.3.0"
+    react-split-pane "^0.1.84"
+    react-textarea-autosize "^7.0.4"
+    render-fragment "^0.1.1"
+
 "@storybook/core-events@4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-4.0.0.tgz#9fc5e094044f161e4484139833c4cc2e743ec34c"
   integrity sha512-RShVYSb8oB5ZGjxqZGAQuiHCYn+LCI9yFE2VLAc8a0UM4C+kQWxtFxIxjYgmF/ewTctz+Vl8miBAH3MhEDNXyA==
+
+"@storybook/core-events@4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-4.0.4.tgz#bf457afe9aec3fb2cd66d7cad3fa5e5821e01503"
+  integrity sha512-+OFFYTVSZd6zjZQMCUF2HQ0hIPfel9NyBBABbPxEtbvWEx/cp4RMfk5VFVISpwYJQMhnqCUU0/t3VoLTKFtm1g==
 
 "@storybook/core@3.4.11":
   version "3.4.11"
