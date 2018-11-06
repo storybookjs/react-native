@@ -7,7 +7,7 @@
 -   Core: Change extensions ordering in webpack config [#4708](https://github.com/storybooks/storybook/pull/4708)
 -   Addon-Knobs: Fix PropTypes in NumberType [#4669](https://github.com/storybooks/storybook/pull/4669)
 -   Addon-Viewport: Fix "defaultViewport" configuration [#4683](https://github.com/storybooks/storybook/pull/4683)
--   Addon-Jes: Fix test matching [#4689](https://github.com/storybooks/storybook/pull/4689)
+-   Addon-Jest: Fix test matching [#4689](https://github.com/storybooks/storybook/pull/4689)
 -   Fix tests in node 11 by using `Array#sort` correctly [#4720](https://github.com/storybooks/storybook/pull/4720)
 
 #### Dependency Upgrades
