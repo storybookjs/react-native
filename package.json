@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@angular/common": "^7.0.1",
-    "@angular/compiler": "^7.0.1",
+    "@angular/compiler": "^7.0.2",
     "@angular/core": "^7.0.2",
     "@angular/forms": "^7.0.1",
     "@angular/platform-browser": "^7.0.1",

@@ -114,4 +114,5 @@ in a patch release.
 #### How does my PR get merged?
 
 - For PATCH PR's, any maintainer can review, test, approve, and merge it.
+- For MINOR/MAJOR PR's, once a maintainer reviews, tests, and approves it, s/he should clear it with the other maintainers before merging it into the release branch.
 - Once a release date has been set and we cut off merging, we'll create a temporary branch to hold that release so that it doesn't block merging to `next`.
