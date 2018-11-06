@@ -26,12 +26,12 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.2",
-    "@ember/test-helpers": "^0.7.27",
+    "@ember/test-helpers": "^1.0.0",
     "@storybook/core": "4.0.2",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",

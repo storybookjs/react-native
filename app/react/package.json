@@ -40,7 +40,7 @@
     "lodash": "^4.17.11",
     "mini-css-extract-plugin": "^0.4.4",
     "prop-types": "^15.6.2",
-    "react-dev-utils": "^6.0.5",
+    "react-dev-utils": "^6.1.0",
     "semver": "^5.6.0",
     "webpack": "^4.23.1"
   },
