@@ -11,11 +11,11 @@ module.exports = {
     '\\.(md)$': '<rootDir>/__mocks__/htmlMock.js',
     '^riot$': 'riot/riot',
   },
+  projects: ['<rootDir>', '<rootDir>/examples/cra-kitchen-sink'],
   roots: [
     '<rootDir>/addons',
     '<rootDir>/app',
     '<rootDir>/lib',
-    '<rootDir>/examples/cra-kitchen-sink',
     '<rootDir>/examples/vue-kitchen-sink',
     '<rootDir>/examples/svelte-kitchen-sink',
     '<rootDir>/examples/riot-kitchen-sink',
