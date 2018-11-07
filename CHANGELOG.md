@@ -6,6 +6,7 @@
 
 -   Core: add cursor images to webpack loader [#4498](https://github.com/storybooks/storybook/pull/4498)
 -   Storyshots-puppeteer: Allow specifying an existing browser [#4721](https://github.com/storybooks/storybook/pull/4721)
+-   React-native: close StoryListView after tap again in the current story [#4714](https://github.com/storybooks/storybook/pull/4714)
 
 #### Dependency Upgrades
 
@@ -47,6 +48,7 @@ Publish failed
 -   Angular: Fixes component imports from dist  [#4682](https://github.com/storybooks/storybook/pull/4682)
 -   Addon-info: Improve accessibility with contrast [#4698](https://github.com/storybooks/storybook/pull/4698)
 -   Ember: update ergonomics to not require any manual setup [#4594](https://github.com/storybooks/storybook/pull/4594)
+-   React-native: fix accessibility for component preview (iOS+VoiceOver) [#4601](https://github.com/storybooks/storybook/pull/4601)
 
 #### Maintenance
 
