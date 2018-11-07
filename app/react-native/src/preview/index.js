@@ -67,7 +67,7 @@ export default class Preview {
         const port = params.port !== false ? `:${params.port || 7007}` : '';
 
         const query = params.query || '';
-        const { secured, shouldPersistSelection } = params;
+        const { initialSelection, secured, shouldPersistSelection } = params;
         const websocketType = secured ? 'wss' : 'ws';
         const httpType = secured ? 'https' : 'http';
 
@@ -77,7 +77,7 @@ export default class Preview {
           url,
           async: onDeviceUI,
           onError: () => {
-            this._setInitialStory(shouldPersistSelection);
+            this._setInitialStory(initialSelection, shouldPersistSelection);
 
             setInitialStory = true;
           },
@@ -135,14 +135,16 @@ export default class Preview {
     channel.emit(Events.GET_CURRENT_STORY);
   }
 
-  _setInitialStory = async (shouldPersistSelection = true) => {
+  _setInitialStory = async (initialSelection, shouldPersistSelection = true) => {
     let story = this._getInitialStory();
 
-    if (shouldPersistSelection) {
+    if (initialSelection && this._checkStory(initialSelection)) {
+      story = initialSelection;
+    } else if (shouldPersistSelection) {
       const value = await AsyncStorage.getItem(STORAGE_KEY);
       const previousStory = JSON.parse(value);
 
-      if (typeof previousStory === 'object' && previousStory.story) {
+      if (this._checkStory(previousStory)) {
         story = previousStory;
       }
     }
@@ -174,5 +176,21 @@ export default class Preview {
 
     channel.emit(Events.SELECT_STORY, this._getStory(selection));
     AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(selection));
+  }
+
+  _checkStory(selection) {
+    if (!selection || typeof selection !== 'object' || !selection.kind || !selection.story) {
+      console.warn('invalid storybook selection'); // eslint-disable-line no-console
+      return null;
+    }
+
+    const story = this._getStory(selection);
+
+    if (story.storyFn === null) {
+      console.warn('invalid storybook selection'); // eslint-disable-line no-console
+      return null;
+    }
+
+    return story;
   }
 }
