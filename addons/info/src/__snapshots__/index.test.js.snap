@@ -366,7 +366,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -410,7 +410,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -437,7 +437,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -465,7 +465,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 />
@@ -491,7 +491,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -539,7 +539,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -673,7 +673,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                     "color": "#a11",
                                                   },
                                                   "empty": Object {
-                                                    "color": "#777",
+                                                    "color": "#444",
                                                   },
                                                   "func": Object {
                                                     "color": "#170",
@@ -734,7 +734,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                         "color": "#a11",
                                                       },
                                                       "empty": Object {
-                                                        "color": "#777",
+                                                        "color": "#444",
                                                       },
                                                       "func": Object {
                                                         "color": "#170",
@@ -799,7 +799,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                         "color": "#a11",
                                                       },
                                                       "empty": Object {
-                                                        "color": "#777",
+                                                        "color": "#444",
                                                       },
                                                       "func": Object {
                                                         "color": "#170",
@@ -894,7 +894,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                     "color": "#a11",
                                                   },
                                                   "empty": Object {
-                                                    "color": "#777",
+                                                    "color": "#444",
                                                   },
                                                   "func": Object {
                                                     "color": "#170",
@@ -943,7 +943,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                           "color": "#a11",
                                                         },
                                                         "empty": Object {
-                                                          "color": "#777",
+                                                          "color": "#444",
                                                         },
                                                         "func": Object {
                                                           "color": "#170",
@@ -996,7 +996,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                           "color": "#a11",
                                                         },
                                                         "empty": Object {
-                                                          "color": "#777",
+                                                          "color": "#444",
                                                         },
                                                         "func": Object {
                                                           "color": "#170",
@@ -1049,7 +1049,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                           "color": "#a11",
                                                         },
                                                         "empty": Object {
-                                                          "color": "#777",
+                                                          "color": "#444",
                                                         },
                                                         "func": Object {
                                                           "color": "#170",
@@ -1190,7 +1190,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -1209,7 +1209,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1787,7 +1787,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1831,7 +1831,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -1858,7 +1858,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -1886,7 +1886,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 />
@@ -1912,7 +1912,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -1960,7 +1960,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -2094,7 +2094,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                     "color": "#a11",
                                                   },
                                                   "empty": Object {
-                                                    "color": "#777",
+                                                    "color": "#444",
                                                   },
                                                   "func": Object {
                                                     "color": "#170",
@@ -2155,7 +2155,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                         "color": "#a11",
                                                       },
                                                       "empty": Object {
-                                                        "color": "#777",
+                                                        "color": "#444",
                                                       },
                                                       "func": Object {
                                                         "color": "#170",
@@ -2220,7 +2220,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                         "color": "#a11",
                                                       },
                                                       "empty": Object {
-                                                        "color": "#777",
+                                                        "color": "#444",
                                                       },
                                                       "func": Object {
                                                         "color": "#170",
@@ -2315,7 +2315,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                     "color": "#a11",
                                                   },
                                                   "empty": Object {
-                                                    "color": "#777",
+                                                    "color": "#444",
                                                   },
                                                   "func": Object {
                                                     "color": "#170",
@@ -2364,7 +2364,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                           "color": "#a11",
                                                         },
                                                         "empty": Object {
-                                                          "color": "#777",
+                                                          "color": "#444",
                                                         },
                                                         "func": Object {
                                                           "color": "#170",
@@ -2417,7 +2417,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                           "color": "#a11",
                                                         },
                                                         "empty": Object {
-                                                          "color": "#777",
+                                                          "color": "#444",
                                                         },
                                                         "func": Object {
                                                           "color": "#170",
@@ -2470,7 +2470,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                           "color": "#a11",
                                                         },
                                                         "empty": Object {
-                                                          "color": "#777",
+                                                          "color": "#444",
                                                         },
                                                         "func": Object {
                                                           "color": "#170",
@@ -2611,7 +2611,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                 <span
                                   style={
                                     Object {
-                                      "color": "#777",
+                                      "color": "#444",
                                     }
                                   }
                                 >
@@ -2630,7 +2630,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >

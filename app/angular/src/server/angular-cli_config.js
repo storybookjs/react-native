@@ -2,7 +2,12 @@ import path from 'path';
 import fs from 'fs';
 import { logger } from '@storybook/node-logger';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
-import { isBuildAngularInstalled, normalizeAssetPatterns } from './angular-cli_utils';
+import {
+  isBuildAngularInstalled,
+  normalizeAssetPatterns,
+  filterOutStylingRules,
+  getAngularCliParts,
+} from './angular-cli_utils';
 
 function getTsConfigOptions(tsConfigPath) {
   const basicOptions = {
@@ -25,20 +30,6 @@ function getTsConfigOptions(tsConfigPath) {
   }
 
   return basicOptions;
-}
-
-function getAngularCliParts(cliWebpackConfigOptions) {
-  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  const ngCliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
-
-  try {
-    return {
-      cliCommonConfig: ngCliConfigFactory.getCommonConfig(cliWebpackConfigOptions),
-      cliStyleConfig: ngCliConfigFactory.getStylesConfig(cliWebpackConfigOptions),
-    };
-  } catch (e) {
-    return null;
-  }
 }
 
 export function getAngularCliWebpackConfigOptions(dirToSearch) {
@@ -107,12 +98,9 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
 
   const { cliCommonConfig, cliStyleConfig } = cliParts;
 
-  // Don't use storybooks .css/.scss rules because we have to use rules created by @angular-devkit/build-angular
+  // Don't use storybooks styling rules because we have to use rules created by @angular-devkit/build-angular
   // because @angular-devkit/build-angular created rules have include/exclude for global style files.
-  const rulesExcludingStyles = baseConfig.module.rules.filter(
-    rule =>
-      !rule.test || (rule.test.toString() !== '/\\.css$/' && rule.test.toString() !== '/\\.scss$/')
-  );
+  const rulesExcludingStyles = filterOutStylingRules(baseConfig);
 
   // cliStyleConfig.entry adds global style files to the webpack context
   const entry = {
@@ -138,6 +126,15 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
     plugins: [
       new TsconfigPathsPlugin({
         configFile: cliWebpackConfigOptions.buildOptions.tsConfig,
+        // After ng build my-lib the default value of 'main' in the package.json is 'umd'
+        // This causes that you cannot import components directly from dist
+        // https://github.com/angular/angular-cli/blob/9f114aee1e009c3580784dd3bb7299bdf4a5918c/packages/angular_devkit/build_angular/src/angular-cli-files/models/webpack-configs/browser.ts#L68
+        mainFields: [
+          ...(cliWebpackConfigOptions.supportES2015 ? ['es2015'] : []),
+          'browser',
+          'module',
+          'main',
+        ],
       }),
     ],
   };

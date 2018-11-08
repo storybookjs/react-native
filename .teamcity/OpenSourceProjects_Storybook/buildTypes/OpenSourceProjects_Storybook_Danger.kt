@@ -13,8 +13,8 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
     name = "Danger"
 
     params {
-        password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:8fa112e0-d0e0-4f9f-9f18-01471a999b4d", display = ParameterDisplay.HIDDEN)
-        param("env.PULL_REQUEST_URL", "https://github.com/storybooks/storybook/pull/%teamcity.build.branch%")
+        password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:9ac87388-d267-4def-a10e-3e596369f644")
+        param("env.PULL_REQUEST_URL", "https://github.com/storybooks/storybook/%teamcity.build.branch%")
     }
 
     vcs {
@@ -25,13 +25,15 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
 
     steps {
         script {
-            name = "Install"
-            scriptContent = "yarn"
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
             name = "Danger"
-            scriptContent = "yarn danger ci"
+            scriptContent = """
+                #!/bin/sh
+
+                set -e -x
+
+                yarn
+                yarn danger ci
+            """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
     }

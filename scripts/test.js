@@ -63,7 +63,7 @@ const tasks = {
   //   )}`,
   //   defaultValue: false,
   //   option: '--reactnativeapp',
-  //   projectLocation: './examples/crna-kitchen-sink',
+  //   projectLocation: './examples-native/crna-kitchen-sink',
   //   isJest: true,
   // }),
   cli: createProject({
@@ -100,7 +100,7 @@ const tasks = {
     name: `Use TeamCity reporter`,
     defaultValue: false,
     option: '--teamcity',
-    extraParam: '--testResultsProcessor=jest-teamcity-reporter',
+    extraParam: '-t --testResultsProcessor=jest-teamcity-reporter',
   }),
 };
 

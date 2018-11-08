@@ -36,21 +36,11 @@ jobs:
           root: .
           paths:
             - node_modules
-            - examples/angular-cli/node_modules
-            - examples/ember-cli/node_modules
-            - examples/cra-kitchen-sink/node_modules
-            - examples/mithril-kitchen-sink/node_modules
-            - examples/official-storybook/node_modules
-            - examples/polymer-cli/node_modules
-            - examples/vue-kitchen-sink/node_modules
-            - examples/svelte-kitchen-sink/node_modules
-            - examples/marko-cli/node_modules
-            - examples/html-kitchen-sink/node_modules
-            - examples/riot-kitchen-sink/node_modules
+            - examples
             - addons
             - app
             - lib
-  example-kitchen-sinks:
+  examples:
     <<: *defaults
     steps:
       - checkout
@@ -176,7 +166,7 @@ jobs:
           command: |
             cd examples/riot-kitchen-sink
             yarn storybook --smoke-test
-  react-native:
+  native-smoke-tests:
     <<: *defaults
     steps:
       - checkout
@@ -188,7 +178,7 @@ jobs:
       - run:
           name: Run React-Native-App example
           command: |
-            cd examples/crna-kitchen-sink
+            cd examples-native/crna-kitchen-sink
             yarn storybook --smoke-test
   docs:
     <<: *defaults
@@ -227,7 +217,7 @@ jobs:
       - run:
           name: Lint
           command: yarn lint
-  unit-test:
+  test:
     <<: *defaults
     steps:
       - checkout
@@ -249,7 +239,7 @@ jobs:
       - run:
           name: Upload coverage
           command: yarn coverage
-  cli:
+  cli-test:
     <<: *defaults
     environment:
       BASH_ENV: ~/.bashrc
@@ -261,7 +251,7 @@ jobs:
           name: Test
           command: yarn test --cli
           no_output_timeout: 1800
-  cli-latest-cra:
+  cli-test-latest-cra:
     <<: *defaults
     environment:
       BASH_ENV: ~/.bashrc
@@ -282,24 +272,24 @@ workflows:
           requires:
             - docs
             - build
-      - example-kitchen-sinks:
+      - examples:
           requires:
             - build
       - smoke-tests:
           requires:
             - build
-      - react-native:
+      - native-smoke-tests:
           requires:
             - build
-      - unit-test:
+      - test:
           requires:
             - build
       - coverage:
           requires:
-            - unit-test
-      - cli:
+            - test
+      - cli-test:
           requires:
             - build
-      - cli-latest-cra:
+      - cli-test-latest-cra:
           requires:
             - build

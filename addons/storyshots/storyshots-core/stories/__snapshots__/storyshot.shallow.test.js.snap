@@ -1,8 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Another Button with some emoji 1`] = `
-<Styled(button)
+<button
   onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "1px solid #eee",
+      "borderRadius": 3,
+      "cursor": "pointer",
+      "fontSize": 15,
+      "margin": 10,
+      "padding": "3px 10px",
+    }
+  }
+  type="button"
 >
   <span
     aria-label="so cool"
@@ -10,15 +22,27 @@ exports[`Storyshots Another Button with some emoji 1`] = `
   >
     😀 😎 👍 💯
   </span>
-</Styled(button)>
+</button>
 `;
 
 exports[`Storyshots Another Button with text 1`] = `
-<Styled(button)
+<button
   onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "1px solid #eee",
+      "borderRadius": 3,
+      "cursor": "pointer",
+      "fontSize": 15,
+      "margin": 10,
+      "padding": "3px 10px",
+    }
+  }
+  type="button"
 >
   Hello Button
-</Styled(button)>
+</button>
 `;
 
 exports[`Storyshots Async with 5ms timeout simulating async operation 1`] = `
@@ -28,8 +52,20 @@ exports[`Storyshots Async with 5ms timeout simulating async operation 1`] = `
 `;
 
 exports[`Storyshots Button with some emoji 1`] = `
-<Styled(button)
+<button
   onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "1px solid #eee",
+      "borderRadius": 3,
+      "cursor": "pointer",
+      "fontSize": 15,
+      "margin": 10,
+      "padding": "3px 10px",
+    }
+  }
+  type="button"
 >
   <span
     aria-label="so cool"
@@ -37,30 +73,42 @@ exports[`Storyshots Button with some emoji 1`] = `
   >
     😀 😎 👍 💯
   </span>
-</Styled(button)>
+</button>
 `;
 
 exports[`Storyshots Button with text 1`] = `
-<Styled(button)
+<button
   onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "1px solid #eee",
+      "borderRadius": 3,
+      "cursor": "pointer",
+      "fontSize": 15,
+      "margin": 10,
+      "padding": "3px 10px",
+    }
+  }
+  type="button"
 >
   Hello Button
-</Styled(button)>
+</button>
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
-<ForwardRef>
-  <ForwardRef>
+<Main>
+  <Title>
     Welcome to storybook
-  </ForwardRef>
+  </Title>
   <p>
     This is a UI component dev environment for your app.
   </p>
   <p>
     We've added some basic stories inside the 
-    <ForwardRef>
+    <InlineCode>
       src/stories
-    </ForwardRef>
+    </InlineCode>
      directory.
     <br />
     A story is a single state of one or more UI components. You can have as many stories as you want.
@@ -69,16 +117,16 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   </p>
   <p>
     See these sample 
-    <ForwardRef
+    <NavButton
       onClick={[Function]}
     >
       stories
-    </ForwardRef>
+    </NavButton>
      for a component called
      
-    <ForwardRef>
+    <InlineCode>
       Button
-    </ForwardRef>
+    </InlineCode>
     .
   </p>
   <p>
@@ -87,14 +135,14 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     You can also edit those components and see changes right away.
     <br />
     (Try editing the 
-    <ForwardRef>
+    <InlineCode>
       Button
-    </ForwardRef>
+    </InlineCode>
      stories located at
      
-    <ForwardRef>
+    <InlineCode>
       src/stories/index.js
-    </ForwardRef>
+    </InlineCode>
     .)
   </p>
   <p>
@@ -102,26 +150,26 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     Have a look at the
      
-    <ForwardRef
+    <Link
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
       target="_blank"
     >
       Writing Stories
-    </ForwardRef>
+    </Link>
      
     section in our documentation.
   </p>
-  <ForwardRef>
+  <Note>
     <b>
       NOTE:
     </b>
     <br />
     Have a look at the 
-    <ForwardRef>
+    <InlineCode>
       .storybook/webpack.config.js
-    </ForwardRef>
+    </InlineCode>
      to add webpack loaders and plugins you are using in this project.
-  </ForwardRef>
-</ForwardRef>
+  </Note>
+</Main>
 `;

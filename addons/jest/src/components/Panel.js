@@ -96,10 +96,10 @@ const SuiteTitle = styled.div({
 
 const Content = styled(({ tests, className }) => (
   <div className={className}>
-    {tests.filter(({ result } = {}) => !!result).map(({ name, result }) => {
-      // if (!result) {
-      //   return <NoTests key={name}>This story has tests configured, but no file was found</NoTests>;
-      // }
+    {tests.map(({ name, result }) => {
+      if (!result) {
+        return <NoTests key={name}>This story has tests configured, but no file was found</NoTests>;
+      }
 
       const successNumber = result.assertionResults.filter(({ status }) => status === 'passed')
         .length;
@@ -112,7 +112,7 @@ const Content = styled(({ tests, className }) => (
               <Indicator
                 color={result.status === 'passed' ? colors.success : colors.error}
                 size={16}
-                overrides={{ marginRight: 5 }}
+                styles={{ marginRight: 5 }}
               >
                 {result.status}
               </Indicator>
@@ -141,14 +141,14 @@ const Content = styled(({ tests, className }) => (
   flex: '1 1 0%',
 });
 
-const JestPanel = ({ tests }) =>
+const Panel = ({ tests }) =>
   tests ? <Content tests={tests} /> : <NoTests>This story has no tests configured</NoTests>;
 
-JestPanel.defaultProps = {
+Panel.defaultProps = {
   tests: null,
 };
 
-JestPanel.propTypes = {
+Panel.propTypes = {
   tests: PropTypes.arrayOf(
     PropTypes.shape({
       result: PropTypes.object,
@@ -156,4 +156,4 @@ JestPanel.propTypes = {
   ),
 };
 
-export default provideJestResult(JestPanel);
+export default provideJestResult(Panel);

@@ -3,9 +3,6 @@ package OpenSourceProjects_Storybook.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.retryBuild
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 
 object OpenSourceProjects_Storybook_CliTest : BuildType({
     uuid = "b1db1a3a-a4cf-46ea-8f55-98b86611f92e"
@@ -19,18 +16,15 @@ object OpenSourceProjects_Storybook_CliTest : BuildType({
 
     steps {
         script {
-            name = "Bootstrap"
+            name = "Test"
             scriptContent = """
+                #!/bin/sh
+
                 set -e -x
 
                 yarn
-                yarn bootstrap --core
+                yarn test --cli --teamcity
             """.trimIndent()
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
-            name = "Test"
-            scriptContent = "yarn test --cli"
             dockerImage = "node:%docker.node.version%"
         }
     }
@@ -44,6 +38,18 @@ object OpenSourceProjects_Storybook_CliTest : BuildType({
                 }
             }
             param("github_oauth_user", "Hypnosphi")
+        }
+    }
+
+    dependencies {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+            snapshot {
+                onDependencyFailure = FailureAction.FAIL_TO_START
+            }
+
+            artifacts {
+                artifactRules = "dist.zip!**"
+            }
         }
     }
 

@@ -31,11 +31,11 @@ npm i --save-dev @storybook/react
 
 ## Add react, react-dom, babel-core, and babel-loader
 
-Make sure that you have `react`, `react-dom`, `babel-core`, and `babel-loader` in your dependencies as well because we list these as a peerDependency:
+Make sure that you have `react`, `react-dom`, `@babel/core`, and `babel-loader` in your dependencies as well because we list these as a peerDependency:
 
 ```sh
 npm i --save react react-dom
-npm i --save-dev babel-core
+npm i --save-dev @babel/core
 npm i --save-dev babel-loader
 ```
 
@@ -81,7 +81,7 @@ Now you can write some stories inside the `../stories/index.js` file, like this:
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Button from '../components/Button';
+import { Button } from '@storybook/react/demo';
 
 storiesOf('Button', module)
   .add('with text', () => (

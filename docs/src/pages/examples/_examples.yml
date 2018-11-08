@@ -3,6 +3,12 @@ coursera:
   title: Coursera
   description: Coursera UI component library
   demo: https://building.coursera.org/coursera-ui/
+grommet:
+  thumbnail: grommet.png
+  title: Grommet
+  description: Styled components for Reactjs
+  demo: https://storybook.grommet.io/
+  site: https://v2.grommet.io/
 wix:
   thumbnail: wix.png
   title: Wix Style React
@@ -153,3 +159,10 @@ trunx:
   demo: https://g14n.info/trunx
   source: https://github.com/fibo/trunx
   site: https://github.com/fibo/trunx
+auth0:
+  thumbnail: cosmos.png
+  title: Cosmos
+  description: A Design System For Auth0 Products
+  demo: https://auth0-cosmos.now.sh/sandbox/
+  source: https://github.com/auth0/cosmos
+  site: https://auth0-cosmos.now.sh/

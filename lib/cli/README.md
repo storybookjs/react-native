@@ -10,7 +10,7 @@ Just go to your project and run:
 
 ```sh
 cd my-app
-npx -p @storybook/cli@alpha sb init
+npx -p @storybook/cli sb init
 ```
 
 That's all you've to do.
@@ -24,7 +24,7 @@ The CLI supports yarn. If you have installed yarn in your system, it'll detect i
 If you don't want to use `yarn` always you can use the `--use-npm` option like this:
 
 ```sh
-npx -p @storybook/cli@alpha sb init --use-npm
+npx -p @storybook/cli sb init --use-npm
 ```
 
 ---
@@ -34,7 +34,7 @@ npx -p @storybook/cli@alpha sb init --use-npm
 It also supports flow files. By default, [jscodeshift](https://github.com/facebook/jscodeshift), the tool used to transform the source files, uses babel to read the files. To be able to transform any flow annotated file, you need to use the flow parser.
 
 ```sh
-npx -p @storybook/cli@alpha sb init --parser flow
+npx -p @storybook/cli sb init --parser flow
 ```
 
 For more information visit: [storybook.js.org](https://storybook.js.org)
@@ -46,7 +46,7 @@ For more information visit: [storybook.js.org](https://storybook.js.org)
 If the CLI cannot detect your project type, it will ask you. You can also force it to use a particular project type:
 
 ```sh
-npx -p @storybook/cli@alpha sb init --type <type>
+npx -p @storybook/cli sb init --type <type>
 ```
 
 Where type is one of the project types defined in [project_types.js](https://github.com/storybooks/storybook/blob/master/lib/cli/lib/project_types.js)
