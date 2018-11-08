@@ -30,7 +30,7 @@ object OpenSourceProjects_Storybook_NativeSmokeTests : BuildType({
                 yarn
                 yarn bootstrap --reactnativeapp
                 cd examples-native/crna-kitchen-sink
-                yarn storybook --smoke-test --quiet
+                yarn storybook --smoke-test
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }

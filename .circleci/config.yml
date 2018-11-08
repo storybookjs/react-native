@@ -179,7 +179,7 @@ jobs:
           name: Run React-Native-App example
           command: |
             cd examples-native/crna-kitchen-sink
-            yarn storybook --smoke-test --quiet
+            yarn storybook --smoke-test
   docs:
     <<: *defaults
     steps:
