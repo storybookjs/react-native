@@ -37,7 +37,7 @@
   "devDependencies": {
     "@storybook/addon-actions": "4.1.0-alpha.1",
     "@storybook/addon-links": "4.1.0-alpha.1",
-    "@storybook/addons": "4.0.0",
+    "@storybook/addons": "4.1.0-alpha.1",
     "@storybook/react": "4.1.0-alpha.1",
     "enzyme-to-json": "^3.3.4",
     "react": "^16.6.0"
