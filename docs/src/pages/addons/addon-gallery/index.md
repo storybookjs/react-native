@@ -58,6 +58,10 @@ Viewport allows your stories to be displayed in different sizes and layouts in [
 
 Support google analytics in [Storybook](https://storybook.js.org)
 
+### [Storysource](https://github.com/storybooks/storybook/tree/master/addons/storysource)
+
+Show story source in the addon panel.
+
 ## Community Addons
 
 You need to install these addons directly from NPM in order to use them.
