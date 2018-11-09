@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { RoutedLink, monoFonts } from '@storybook/components';
-import jsx from 'react-syntax-highlighter/languages/prism/jsx';
-import { darcula } from 'react-syntax-highlighter/styles/prism';
-import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
-import { createElement } from 'react-syntax-highlighter';
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism-light';
+import createElement from 'react-syntax-highlighter/dist/esm/create-element';
 import { EVENT_ID } from './events';
 
 // TODO: take from theme
@@ -29,7 +29,7 @@ const highlighterTheme = {
   },
 };
 
-registerLanguage('jsx', jsx);
+SyntaxHighlighter.registerLanguage('jsx', jsx);
 
 const styles = {
   story: {

@@ -40,6 +40,7 @@ object OpenSourceProjects_Storybook_CliTestLatestCra : BuildType({
                 +:pull/*
                 +:release/*
                 +:master
+                +:next
             """.trimIndent()
         }
         retryBuild {}

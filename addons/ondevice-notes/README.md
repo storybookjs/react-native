@@ -8,7 +8,7 @@ Storybook Addon On Device Notes allows you to write notes (text or markdown) for
 
 ### Getting Started
 
-**NOTE: Documentation on master branch is for alpha version, stable release is on [release/4.0](https://github.com/storybooks/storybook/tree/release/4.0/addons/)**
+**NOTE: Documentation on master branch is for alpha version, stable release is on [master](https://github.com/storybooks/storybook/tree/master/addons/)**
 
 ```sh
 yarn add -D @storybook/addon-ondevice-notes

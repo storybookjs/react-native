@@ -31,11 +31,11 @@ npm i --save-dev @storybook/react
 
 ## Add react, react-dom, babel-core, and babel-loader
 
-Make sure that you have `react`, `react-dom`, `babel-core`, and `babel-loader` in your dependencies as well because we list these as a peerDependency:
+Make sure that you have `react`, `react-dom`, `@babel/core`, and `babel-loader` in your dependencies as well because we list these as a peerDependency:
 
 ```sh
 npm i --save react react-dom
-npm i --save-dev babel-core
+npm i --save-dev @babel/core
 npm i --save-dev babel-loader
 ```
 
