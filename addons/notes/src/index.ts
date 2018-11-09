@@ -16,7 +16,13 @@ export const withNotes = makeDecorator({
     const storyOptions = parameters || options;
 
     const { text, markdown, markdownOptions } =
-      typeof storyOptions === 'string' ? { text: storyOptions } : storyOptions;
+      typeof storyOptions === 'string'
+        ? {
+            text: storyOptions,
+            markdown: undefined,
+            markdownOptions: undefined,
+          }
+        : storyOptions;
 
     if (!text && !markdown) {
       throw new Error('You must set of one of `text` or `markdown` on the `notes` parameter');

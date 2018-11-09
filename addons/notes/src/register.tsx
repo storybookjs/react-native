@@ -1,18 +1,44 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import addons from '@storybook/addons';
 
 import styled from '@emotion/styled';
 
+interface NotesChannel {
+  on: (listener: string, callback: (text: string) => void) => any; // todo check correct return value definition
+  emit: any; // todo check correct definition
+  removeListener: (listener: string, callback: (text: string) => void) => void;
+}
+
+interface NotesApi {
+  onStory: (callback: () => void) => void;
+  getQueryParam: any; // todo check correct definition
+  setQueryParams: any; // todo check correct definition
+}
+
+interface NotesProps {
+  active: boolean;
+  channel: NotesChannel;
+  api: NotesApi;
+}
+
+interface NotesState {
+  text: string;
+}
+
 const Panel = styled.div({
   padding: 10,
   boxSizing: 'border-box',
-  width: '100%',
+  width: '100%'
 });
 
-export class Notes extends React.Component {
-  constructor(...args) {
-    super(...args);
+export class Notes extends React.Component<NotesProps, NotesState> {
+
+  // todo check how react typescript does this, especially unmounted
+  stopListeningOnStory: any; // todo check correct definition
+  unmounted: any; // todo check correct definition
+
+  constructor(...args: any) {
+    super(args /* todo: This was ...args before, check if this was a bug */);
     this.state = { text: '' };
     this.onAddNotes = this.onAddNotes.bind(this);
   }
@@ -48,9 +74,9 @@ export class Notes extends React.Component {
     const { text } = this.state;
     const textAfterFormatted = text
       ? text
-          .trim()
-          .replace(/(<\S+.*>)\n/g, '$1')
-          .replace(/\n/g, '<br />')
+        .trim()
+        .replace(/(<\S+.*>)\n/g, '$1')
+        .replace(/\n/g, '<br />')
       : '';
 
     return active ? (
@@ -62,25 +88,12 @@ export class Notes extends React.Component {
   }
 }
 
-Notes.propTypes = {
-  active: PropTypes.bool.isRequired,
-  channel: PropTypes.shape({
-    on: PropTypes.func,
-    emit: PropTypes.func,
-    removeListener: PropTypes.func,
-  }).isRequired,
-  api: PropTypes.shape({
-    onStory: PropTypes.func,
-    getQueryParam: PropTypes.func,
-    setQueryParams: PropTypes.func,
-  }).isRequired,
-};
 
 addons.register('storybook/notes', api => {
   const channel = addons.getChannel();
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
     // eslint-disable-next-line react/prop-types
-    render: ({ active }) => <Notes channel={channel} api={api} active={active} />,
+    render: ({ active }) => <Notes channel={channel} api={api} active={active}/>
   });
 });

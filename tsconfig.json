@@ -1,14 +1,20 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": ".",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "target": "es5",
     "lib": [
       "es2016",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@storybook/addons": [
+        "lib/addons/dist/index.js"
+      ]
+    }
   }
 }

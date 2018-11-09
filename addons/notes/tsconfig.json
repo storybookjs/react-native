@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "declaration": true,
+    "sourceMap": false,
+    "jsx": "react",
+    "inlineSources": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "types": [
+      "jest"
+    ],
+    "lib": [
+      "dom",
+      "es2015"
+    ]
+  },
+  "exclude": [
+    "__tests__/**/*"
+  ]
+}
