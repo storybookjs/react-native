@@ -1,12 +1,25 @@
+import fs from 'fs';
+import path from 'path';
 import semver from 'semver';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import { normalizeCondition } from 'webpack/lib/RuleSet';
 
+let reactScriptsPath;
+function getReactScriptsPath() {
+  if (reactScriptsPath) return reactScriptsPath;
+  const appDirectory = fs.realpathSync(process.cwd());
+  const reactScriptsScriptPath = fs.realpathSync(
+    path.join(appDirectory, '/node_modules/.bin/react-scripts')
+  );
+  reactScriptsPath = path.join(reactScriptsScriptPath, '../..');
+  return reactScriptsPath;
+}
+
 export function isReactScriptsInstalled() {
   try {
-    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-    const reactScriptsJson = require('react-scripts/package.json');
+    // eslint-disable-next-line global-require, import/no-dynamic-require
+    const reactScriptsJson = require(path.join(getReactScriptsPath(), 'package.json'));
     if (semver.lt(reactScriptsJson.version, '2.0.0')) return false;
     return true;
   } catch (e) {
@@ -42,12 +55,12 @@ export function getStyleRules(rules) {
 
 export function getCraWebpackConfig(mode) {
   if (mode === 'production') {
-    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-    return require('react-scripts/config/webpack.config.prod');
+    // eslint-disable-next-line global-require, import/no-dynamic-require
+    return require(path.join(getReactScriptsPath(), 'config/webpack.config.prod'));
   }
 
-  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  return require('react-scripts/config/webpack.config.dev');
+  // eslint-disable-next-line global-require, import/no-dynamic-require
+  return require(path.join(getReactScriptsPath(), 'config/webpack.config.dev'));
 }
 
 export function applyCRAWebpackConfig(baseConfig) {
@@ -64,14 +77,7 @@ export function applyCRAWebpackConfig(baseConfig) {
   //  Add css minification for production
   const plugins = [...baseConfig.plugins];
   if (baseConfig.mode === 'production') {
-    plugins.push(
-      new MiniCssExtractPlugin({
-        // Options similar to the same options in webpackOptions.output
-        // both options are optional
-        filename: 'static/css/[name].[contenthash:8].css',
-        chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
-      })
-    );
+    plugins.push(new MiniCssExtractPlugin());
   }
 
   return {

@@ -1,6 +1,6 @@
 {
   "name": "riot-example",
-  "version": "4.0.0-rc.6",
+  "version": "4.1.0-alpha.1",
   "private": true,
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
@@ -15,18 +15,18 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
-    "@storybook/addon-actions": "4.0.0-rc.6",
-    "@storybook/addon-backgrounds": "4.0.0-rc.6",
-    "@storybook/addon-centered": "4.0.0-rc.6",
-    "@storybook/addon-knobs": "4.0.0-rc.6",
-    "@storybook/addon-links": "4.0.0-rc.6",
-    "@storybook/addon-notes": "4.0.0-rc.6",
-    "@storybook/addon-options": "4.0.0-rc.6",
-    "@storybook/addon-storyshots": "4.0.0-rc.6",
-    "@storybook/addon-storysource": "4.0.0-rc.6",
-    "@storybook/addon-viewport": "4.0.0-rc.6",
-    "@storybook/addons": "4.0.0-rc.6",
-    "@storybook/riot": "4.0.0-rc.6",
+    "@storybook/addon-actions": "4.1.0-alpha.1",
+    "@storybook/addon-backgrounds": "4.1.0-alpha.1",
+    "@storybook/addon-centered": "4.1.0-alpha.1",
+    "@storybook/addon-knobs": "4.1.0-alpha.1",
+    "@storybook/addon-links": "4.1.0-alpha.1",
+    "@storybook/addon-notes": "4.1.0-alpha.1",
+    "@storybook/addon-options": "4.1.0-alpha.1",
+    "@storybook/addon-storyshots": "4.1.0-alpha.1",
+    "@storybook/addon-storysource": "4.1.0-alpha.1",
+    "@storybook/addon-viewport": "4.1.0-alpha.1",
+    "@storybook/addons": "4.1.0-alpha.1",
+    "@storybook/riot": "4.1.0-alpha.1",
     "babel-loader": "^8.0.4",
     "cross-env": "^5.2.0",
     "file-loader": "^2.0.0",
@@ -34,6 +34,6 @@
     "riot-tag-loader": "^2.1.0",
     "svg-url-loader": "^2.3.2",
     "webpack": "^4.23.1",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.10"
   }
 }

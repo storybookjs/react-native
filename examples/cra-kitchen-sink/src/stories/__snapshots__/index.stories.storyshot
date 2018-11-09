@@ -100,13 +100,13 @@ exports[`Storyshots Button addons composition 1`] = `
                   style="padding-left:18px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;div
                   </span>
                   <span />
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &gt;
                   </span>
@@ -115,14 +115,14 @@ exports[`Storyshots Button addons composition 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   />
                 </div>
                 <div
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     click the 
                   </span>
@@ -131,13 +131,13 @@ exports[`Storyshots Button addons composition 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;InfoButton
                   </span>
                   <span />
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     /&gt;
                   </span>
@@ -146,7 +146,7 @@ exports[`Storyshots Button addons composition 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                      label in top right for info about "
                   </span>
@@ -155,7 +155,7 @@ exports[`Storyshots Button addons composition 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     addons composition
                   </span>
@@ -164,7 +164,7 @@ exports[`Storyshots Button addons composition 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     "
                   </span>
@@ -173,7 +173,7 @@ exports[`Storyshots Button addons composition 1`] = `
                   style="padding-left:18px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;/div&gt;
                   </span>
@@ -304,13 +304,13 @@ exports[`Storyshots Button with new info 1`] = `
                   style="padding-left:18px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;Container
                   </span>
                   <span />
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &gt;
                   </span>
@@ -319,14 +319,14 @@ exports[`Storyshots Button with new info 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   />
                 </div>
                 <div
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     click the 
                   </span>
@@ -335,13 +335,13 @@ exports[`Storyshots Button with new info 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;InfoButton
                   </span>
                   <span />
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     /&gt;
                   </span>
@@ -350,7 +350,7 @@ exports[`Storyshots Button with new info 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                      label in top right for info about "
                   </span>
@@ -359,7 +359,7 @@ exports[`Storyshots Button with new info 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     with new info
                   </span>
@@ -368,7 +368,7 @@ exports[`Storyshots Button with new info 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     "
                   </span>
@@ -377,7 +377,7 @@ exports[`Storyshots Button with new info 1`] = `
                   style="padding-left:18px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;/Container&gt;
                   </span>

@@ -179,7 +179,7 @@ If you're using `start-storybook` on CI, you may need to opt out of this using t
 We've deprecated the `getstorybook` CLI in 4.0. The new way to install storybook is `sb init`. We recommend using `npx` for convenience and to make sure you're always using the latest version of the CLI:
 
 ```
-npx -p @storybook/cli@rc sb init
+npx -p @storybook/cli sb init
 ```
 
 ### Addon story parameters

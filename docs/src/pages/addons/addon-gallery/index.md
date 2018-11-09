@@ -11,34 +11,34 @@ This is a list of available addons for Storybook.
 
 With a11y you can test compliance of your stories with web accessibility standards.
 
-### [Actions](https://github.com/storybooks/storybook/tree/release/3.4/addons/actions)
+### [Actions](https://github.com/storybooks/storybook/tree/master/addons/actions)
 
 With actions, you can inspect events related to your components. This is pretty neat when you are manually testing your components.
 
 Also, you can think of this as a way to document events in your components.
 
-### [Links](https://github.com/storybooks/storybook/tree/release/3.4/addons/links)
+### [Links](https://github.com/storybooks/storybook/tree/master/addons/links)
 
 With links you can link stories together. With that, you can build demos and prototypes directly from your UI components.
 
-### [Knobs](https://github.com/storybooks/storybook/tree/release/3.4/addons/knobs)
+### [Knobs](https://github.com/storybooks/storybook/tree/master/addons/knobs)
 
 Knobs allow you to edit React props dynamically using the Storybook UI.
 You can also use Knobs as dynamic variables inside your stories.
 
-### [Notes](https://github.com/storybooks/storybook/tree/release/3.4/addons/notes)
+### [Notes](https://github.com/storybooks/storybook/tree/master/addons/notes)
 
 With this addon, you can write notes for each story in your component. This is pretty useful when you are working with a team.
 
-### [Info](https://github.com/storybooks/storybook/tree/release/3.4/addons/info)
+### [Info](https://github.com/storybooks/storybook/tree/master/addons/info)
 
 If you are using Storybook as a style guide, then this addon will help you to build a nice-looking style guide with docs, automatic sample source code with a PropType explorer.
 
-### [Options](https://github.com/storybooks/storybook/tree/release/3.4/addons/options)
+### [Options](https://github.com/storybooks/storybook/tree/master/addons/options)
 
 The Storybook webapp UI can be customised with this addon. It can be used to change the header, show/hide various UI elements and to enable full-screen mode by default.
 
-### [Storyshots](https://github.com/storybooks/storybook/tree/release/3.4/addons/storyshots)
+### [Storyshots](https://github.com/storybooks/storybook/tree/master/addons/storyshots)
 
 Storyshots is a way to automatically jest-snapshot all your stories. [More info here](/testing/structural-testing/).
 
@@ -46,17 +46,21 @@ Storyshots is a way to automatically jest-snapshot all your stories. [More info 
 
 Redirects console output (logs, errors, warnings) into Action Logger Panel. `withConsole` decorator notifies from what stories logs are coming.
 
-### [Backgrounds](https://github.com/storybooks/storybook/tree/release/3.4/addons/background)
+### [Backgrounds](https://github.com/storybooks/storybook/tree/master/addons/background)
 
 With this addon, you can switch between background colors and background images for your preview components. It is really helpful for styleguides.
 
-### [Viewport](https://github.com/storybooks/storybook/tree/release/3.4/addons/viewport)
+### [Viewport](https://github.com/storybooks/storybook/tree/master/addons/viewport)
 
-Viewport allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybook.js.org).  This helps build responsive components inside of Storybook.
+Viewport allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybook.js.org). This helps build responsive components inside of Storybook.
 
 ### [Google Analytics](https://github.com/storybooks/storybook/tree/master/addons/google-analytics)
 
 Support google analytics in [Storybook](https://storybook.js.org)
+
+### [Storysource](https://github.com/storybooks/storybook/tree/master/addons/storysource)
+
+Show story source in the addon panel.
 
 ## Community Addons
 
@@ -146,13 +150,17 @@ reset state.
 Convert stories into Sketch 💎 symbols.
 
 ### [styled components theme](https://github.com/echoulen/storybook-addon-styled-component-theme)
+
 styled components theme selection.
 
 ### [AngularJS](https://github.com/titonobre/storybook-addon-angularjs)
+
 Create stories with AngularJS(1.x) components.
 
 ### [JSS theme](https://github.com/vertexbz/storybook-addon-jss-theme)
+
 JSS theme selection.
 
 ### [React live edit](https://github.com/vertexbz/storybook-addon-react-live-edit)
+
 Provides live react story editing and preview.
