@@ -122,7 +122,9 @@
     "typescript": "^3.1.6"
   },
   "husky": {
-    "precommit": "yarn lint-staged"
+    "hooks": {
+      "pre-commit": "yarn lint-staged"
+    }
   },
   "resolutions": {
     "graphql": "^0.13.2"
