@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { stripIndents } from 'common-tags';
 import isReactRenderable from './element_check';
 
-const rootEl = document.getElementById('root');
+const rootEl = document ? document.getElementById('root') : null;
 
 function render(node, el) {
   ReactDOM.render(
