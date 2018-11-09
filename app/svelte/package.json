@@ -35,7 +35,7 @@
     "react-dom": "^16.6.0"
   },
   "devDependencies": {
-    "svelte": "^2.13.5",
+    "svelte": "^2.15.2",
     "svelte-loader": "^2.11.0"
   },
   "peerDependencies": {
