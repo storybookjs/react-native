@@ -1,7 +1,7 @@
 /* eslint-disable react/no-this-in-sfc, no-underscore-dangle */
 
 import React from 'react';
-import { NativeModules } from 'react-native';
+import { AsyncStorage, NativeModules } from 'react-native';
 import parse from 'url-parse';
 import addons from '@storybook/addons';
 
@@ -11,6 +11,8 @@ import createChannel from '@storybook/channel-websocket';
 import { StoryStore, ClientApi } from '@storybook/core/client';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
+
+const STORAGE_KEY = 'lastOpenedStory';
 
 export default class Preview {
   constructor() {
@@ -65,7 +67,7 @@ export default class Preview {
         const port = params.port !== false ? `:${params.port || 7007}` : '';
 
         const query = params.query || '';
-        const { secured } = params;
+        const { initialSelection, secured, shouldPersistSelection } = params;
         const websocketType = secured ? 'wss' : 'ws';
         const httpType = secured ? 'https' : 'http';
 
@@ -75,7 +77,7 @@ export default class Preview {
           url,
           async: onDeviceUI,
           onError: () => {
-            this._setInitialStory();
+            this._setInitialStory(initialSelection, shouldPersistSelection);
 
             setInitialStory = true;
           },
@@ -133,8 +135,20 @@ export default class Preview {
     channel.emit(Events.GET_CURRENT_STORY);
   }
 
-  _setInitialStory = () => {
-    const story = this._getInitialStory();
+  _setInitialStory = async (initialSelection, shouldPersistSelection = true) => {
+    let story = this._getInitialStory();
+
+    if (initialSelection && this._checkStory(initialSelection)) {
+      story = initialSelection;
+    } else if (shouldPersistSelection) {
+      const value = await AsyncStorage.getItem(STORAGE_KEY);
+      const previousStory = JSON.parse(value);
+
+      if (this._checkStory(previousStory)) {
+        story = previousStory;
+      }
+    }
+
     if (story) {
       this._selectStory(story);
     }
@@ -142,6 +156,7 @@ export default class Preview {
 
   _getInitialStory = () => {
     const dump = this._stories.dumpStoryBook();
+
     const nonEmptyKind = dump.find(kind => kind.stories.length > 0);
     if (nonEmptyKind) {
       return this._getStory({ kind: nonEmptyKind.kind, story: nonEmptyKind.stories[0] });
@@ -158,6 +173,24 @@ export default class Preview {
 
   _selectStory(selection) {
     const channel = addons.getChannel();
+
     channel.emit(Events.SELECT_STORY, this._getStory(selection));
+    AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(selection));
+  }
+
+  _checkStory(selection) {
+    if (!selection || typeof selection !== 'object' || !selection.kind || !selection.story) {
+      console.warn('invalid storybook selection'); // eslint-disable-line no-console
+      return null;
+    }
+
+    const story = this._getStory(selection);
+
+    if (story.storyFn === null) {
+      console.warn('invalid storybook selection'); // eslint-disable-line no-console
+      return null;
+    }
+
+    return story;
   }
 }

@@ -67,7 +67,7 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -93,7 +93,7 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -353,13 +353,13 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
                   style="padding-left:18px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;div
                   </span>
                   <span />
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &gt;
                   </span>
@@ -368,13 +368,13 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;Unknown
                   </span>
                   <span />
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     /&gt;
                   </span>
@@ -383,13 +383,13 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;Unknown
                   </span>
                   <span />
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     /&gt;
                   </span>
@@ -398,7 +398,7 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
                   style="padding-left:18px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;/div&gt;
                   </span>
@@ -539,7 +539,7 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -583,7 +583,7 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -872,7 +872,7 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -916,7 +916,7 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -1174,7 +1174,7 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -1218,7 +1218,7 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -1488,7 +1488,7 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -1532,7 +1532,7 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -1781,7 +1781,7 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -1807,7 +1807,7 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -1979,7 +1979,7 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -2005,7 +2005,7 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -2224,7 +2224,7 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -2250,7 +2250,7 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -2497,7 +2497,7 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
               style="padding-left:18px;padding-right:3px"
             >
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 &lt;BaseButton
               </span>
@@ -2523,7 +2523,7 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
                 </span>
               </span>
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 /&gt;
               </span>
@@ -2769,7 +2769,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
               style="padding-left:18px;padding-right:3px"
             >
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 &lt;BaseButton
               </span>
@@ -3495,7 +3495,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                 </span>
               </span>
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 /&gt;
               </span>
@@ -3741,7 +3741,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
               style="padding-left:18px;padding-right:3px"
             >
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 &lt;BaseButton
               </span>
@@ -4283,7 +4283,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                 </span>
               </span>
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 /&gt;
               </span>
@@ -4540,7 +4540,7 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -4566,7 +4566,7 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -4936,13 +4936,13 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                   style="padding-left:18px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;div
                   </span>
                   <span />
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &gt;
                   </span>
@@ -4951,7 +4951,7 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;BaseButton
                   </span>
@@ -4977,7 +4977,7 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                     </span>
                   </span>
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     /&gt;
                   </span>
@@ -4986,7 +4986,7 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                   style="padding-left:33px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;FlowTypeButton
                   </span>
@@ -5012,7 +5012,7 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                     </span>
                   </span>
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     /&gt;
                   </span>
@@ -5021,7 +5021,7 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                   style="padding-left:18px;padding-right:3px"
                 >
                   <span
-                    style="color:#777"
+                    style="color:#444"
                   >
                     &lt;/div&gt;
                   </span>
@@ -5491,7 +5491,7 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -5517,7 +5517,7 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -5766,7 +5766,7 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -5792,7 +5792,7 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -6089,7 +6089,7 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -6133,7 +6133,7 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -6391,7 +6391,7 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
               style="padding-left:18px;padding-right:3px"
             >
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 &lt;BaseButton
               </span>
@@ -6435,7 +6435,7 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
                 </span>
               </span>
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 /&gt;
               </span>
@@ -6681,7 +6681,7 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
               style="padding-left:18px;padding-right:3px"
             >
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 &lt;BaseButton
               </span>
@@ -6707,7 +6707,7 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
                 </span>
               </span>
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 /&gt;
               </span>
@@ -6928,7 +6928,7 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
               style="padding-left:18px;padding-right:3px"
             >
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 &lt;BaseButton
               </span>
@@ -6954,7 +6954,7 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
                 </span>
               </span>
               <span
-                style="color:#777"
+                style="color:#444"
               >
                 /&gt;
               </span>
@@ -7211,7 +7211,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;FlowTypeButton
                 </span>
@@ -7255,7 +7255,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -7463,7 +7463,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;DocgenButton
                 </span>
@@ -7708,7 +7708,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -8401,7 +8401,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -8445,7 +8445,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -8705,7 +8705,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;NamedExportButton
                 </span>
@@ -8749,7 +8749,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>
@@ -9038,7 +9038,7 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                 style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   &lt;BaseButton
                 </span>
@@ -9082,7 +9082,7 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                   </span>
                 </span>
                 <span
-                  style="color:#777"
+                  style="color:#444"
                 >
                   /&gt;
                 </span>

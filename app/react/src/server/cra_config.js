@@ -77,14 +77,7 @@ export function applyCRAWebpackConfig(baseConfig) {
   //  Add css minification for production
   const plugins = [...baseConfig.plugins];
   if (baseConfig.mode === 'production') {
-    plugins.push(
-      new MiniCssExtractPlugin({
-        // Options similar to the same options in webpackOptions.output
-        // both options are optional
-        filename: 'static/css/[name].[contenthash:8].css',
-        chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
-      })
-    );
+    plugins.push(new MiniCssExtractPlugin());
   }
 
   return {

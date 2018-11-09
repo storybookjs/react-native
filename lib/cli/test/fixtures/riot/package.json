@@ -16,7 +16,7 @@
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "style-loader": "^0.22.1",
-    "css-loader": "^1.0.0",
+    "css-loader": "^1.0.1",
     "raw-loader": "^0.5.1",
     "riot-hot-reload": "^1.0.0",
     "riot-compiler": "^3.5.1",

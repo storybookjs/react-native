@@ -121,6 +121,11 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
         -- should the ui be closed initialy.
     tabOpen: Number (0)
         -- which tab should be open. -1 Navigator, 0 Preview, 1 Addons
+    initialSelection: Object (null)
+        -- initialize storybook with a specific story. In case a valid object is passed, it will take precedence over `shouldPersistSelection. ex: `{ kind: 'Knobs', story: 'with knobs' }`
+    shouldPersistSelection: Boolean (true)
+        -- initialize storybook with the last selected story.`
+    )
 }
 ```
 
