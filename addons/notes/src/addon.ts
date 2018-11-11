@@ -1,8 +1,10 @@
 import addons, { makeDecorator } from '@storybook/addons';
-import marked from 'marked';
+import { MarkedOptions, parse as marked } from 'marked';
 
-function renderMarkdown(text, options) {
-  return marked(text, { ...marked.defaults, ...options });
+// todo why not just calling marked directly instead of wrapping it?
+// todo removed { marked.defaults, options } merge. I believe this was not necessary, have to check
+function renderMarkdown(text: string, options?: MarkedOptions) {
+  return marked(text, options);
 }
 
 export const withNotes = makeDecorator({
@@ -39,5 +41,3 @@ export const withMarkdownNotes = (text, options) =>
     markdown: text,
     markdownOptions: options,
   });
-
-export default withNotes;
