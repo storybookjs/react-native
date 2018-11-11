@@ -9,6 +9,7 @@
     "noImplicitAny": false,
     "target": "es5",
     "types": [
+      "node",
       "jest"
     ],
     "lib": [
