@@ -1,12 +1,9 @@
 {
   "extends": "../../tsconfig.json",
-  "compileOnSave": false,
   "compilerOptions": {
     "rootDir": "./src",
     "jsx": "react",
-    "types": [
-      "jest"
-    ]
+    "module": "commonjs"
   },
   "include": [
     "src/**/*.ts",
