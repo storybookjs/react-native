@@ -28,7 +28,7 @@ interface NotesState {
 const Panel = styled.div({
   padding: 10,
   boxSizing: 'border-box',
-  width: '100%'
+  width: '100%',
 });
 
 export class Notes extends React.Component<NotesProps, NotesState> {
@@ -93,7 +93,6 @@ addons.register('storybook/notes', api => {
   const channel = addons.getChannel();
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
-    // eslint-disable-next-line react/prop-types
-    render: ({ active }) => <Notes channel={channel} api={api} active={active}/>
+    render: ({ active }) => <Notes channel={channel} api={api} active={active} />,
   });
 });

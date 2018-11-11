@@ -28,12 +28,7 @@
   "dependencies": {
     "@emotion/styled": "^0.10.6",
     "@storybook/addons": "4.1.0-alpha.1",
-    "marked": "^0.5.1",
-    "prop-types": "^15.6.2"
-  },
-  "devDependencies": {
-    "@types/jest": "^23.3.9",
-    "@types/react": "^16.7.1"
+    "marked": "^0.5.1"
   },
   "peerDependencies": {
     "react": "*"
