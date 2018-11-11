@@ -1,5 +1,5 @@
 import { logger } from '@storybook/node-logger';
-import { applyCRAWebpackConfig, isReactScriptsInstalled } from './cra_config';
+import { applyCRAWebpackConfig, isReactScriptsInstalled } from './cra-config';
 
 export function webpackFinal(config) {
   if (!isReactScriptsInstalled()) {
