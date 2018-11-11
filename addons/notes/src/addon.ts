@@ -39,3 +39,5 @@ export const withMarkdownNotes = (text, options) =>
     markdown: text,
     markdownOptions: options,
   });
+
+export default withNotes;
