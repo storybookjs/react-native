@@ -4,3 +4,4 @@ export function addDecorator(decorator: any): IApi;
 export function configure(loaders: () => void, module: NodeModule): void;
 export function getStorybook(): IStoribookSection[];
 export function clearDecorators(): void;
+export function forceReRender(): void;
