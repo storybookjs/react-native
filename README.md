@@ -7,13 +7,13 @@
   <a href="https://snyk.io/test/github/storybooks/storybook"><img src="https://snyk.io/test/github/storybooks/storybook/badge.svg" alt="Known Vulnerabilities" /></a>
   <a href="https://bettercodehub.com/results/storybooks/storybook"><img src="https://bettercodehub.com/edge/badge/storybooks/storybook" alt="BCH compliance" /></a>
   <a href="https://codecov.io/gh/storybooks/storybook"><img src="https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg" alt="codecov" /></a>
+  <a href="https://github.com/storybooks/storybook/blob/master/LICENSE"><img src="https://img.shields.io/github/license/storybooks/storybook.svg" alt="License" /></a></p>
 </p>
 <p align="center">
   <a href="https://discord.gg/sMFvFsG"><img src="https://img.shields.io/badge/discord-join-7289DA.svg?logo=discord&longCache=true&style=flat" /></a>
   <a href="https://now-examples-slackin-rrirkqohko.now.sh/"><img src="https://now-examples-slackin-rrirkqohko.now.sh/badge.svg?logo=slack" alt="Storybook Slack" /></a>
   <a href="#backers"><img src="https://opencollective.com/storybook/backers/badge.svg" alt="Backers on Open Collective" /></a>
   <a href="#sponsors"><img src="https://opencollective.com/storybook/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://github.com/storybooks/storybook/blob/master/LICENSE"><img src="https://img.shields.io/github/license/storybooks/storybook.svg" alt="License" /></a></p>
 </p>
 
 ---
