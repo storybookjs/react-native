@@ -1,12 +1,49 @@
 import { stripIndents } from 'common-tags';
 import Vue from 'vue';
 
-let app = null;
+let root = null;
 
-function renderRoot(options) {
-  if (app) app.$destroy();
+function updateComponent(component) {
+  const [lastStory] = root.$children;
 
-  app = new Vue(options);
+  if (!lastStory) {
+    return false;
+  }
+
+  if (typeof component.data !== 'function') {
+    return false;
+  }
+
+  const data = component.data();
+
+  if (!data) {
+    return false;
+  }
+
+  Object.entries(data).forEach(([key, value]) => {
+    lastStory[key] = value;
+  });
+
+  lastStory.$forceUpdate();
+
+  return true;
+}
+
+function renderRoot({ forceRender, component }) {
+  if (root) {
+    if (forceRender === true && updateComponent(component)) {
+      return;
+    }
+
+    root.$destroy();
+  }
+
+  root = new Vue({
+    el: '#root',
+    render(h) {
+      return h('div', { attrs: { id: 'root' } }, [h(component)]);
+    },
+  });
 }
 
 export default function render({
@@ -16,6 +53,7 @@ export default function render({
   showMain,
   showError,
   showException,
+  forceRender,
 }) {
   Vue.config.errorHandler = showException;
 
@@ -33,10 +71,6 @@ export default function render({
   }
 
   showMain();
-  renderRoot({
-    el: '#root',
-    render(h) {
-      return h('div', { attrs: { id: 'root' } }, [h(component)]);
-    },
-  });
+
+  renderRoot({ forceRender, component });
 }
