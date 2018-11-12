@@ -19,6 +19,7 @@ const defaultConfig = {
   beforeScreenshot: noop,
   getGotoOptions: noop,
   customizePage: asyncNoop,
+  customBrowser: undefined,
 };
 
 export const imageSnapshot = (customConfig = {}) => {
@@ -30,9 +31,15 @@ export const imageSnapshot = (customConfig = {}) => {
     beforeScreenshot,
     getGotoOptions,
     customizePage,
+    customBrowser,
   } = { ...defaultConfig, ...customConfig };
+
   let browser; // holds ref to browser. (ie. Chrome)
   let page; // Hold ref to the page to screenshot.
+
+  if (customBrowser) {
+    browser = customBrowser;
+  }
 
   const testFn = async ({ context }) => {
     const { kind, framework, story } = context;
@@ -73,14 +80,22 @@ export const imageSnapshot = (customConfig = {}) => {
     expect(image).toMatchImageSnapshot(getMatchOptions({ context, url }));
   };
 
-  testFn.afterAll = () => browser.close();
+  testFn.afterAll = () => {
+    if (customBrowser) {
+      return page.close();
+    }
+
+    return browser.close();
+  };
 
   testFn.beforeAll = async () => {
-    // add some options "no-sandbox" to make it work properly on some Linux systems as proposed here: https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322851507
-    browser = await puppeteer.launch({
-      args: ['--no-sandbox ', '--disable-setuid-sandbox'],
-      executablePath: chromeExecutablePath,
-    });
+    if (!browser) {
+      // add some options "no-sandbox" to make it work properly on some Linux systems as proposed here: https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322851507
+      browser = await puppeteer.launch({
+        args: ['--no-sandbox ', '--disable-setuid-sandbox'],
+        executablePath: chromeExecutablePath,
+      });
+    }
 
     page = await browser.newPage();
   };

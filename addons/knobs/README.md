@@ -55,6 +55,39 @@ stories.add('as dynamic variables', () => {
 });
 ```
 
+### With Vue.js
+```js
+import { storiesOf } from '@storybook/vue';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+
+import MyButton from './Button.vue';
+
+const stories = storiesOf('Storybook Knobs', module);
+
+// Add the `withKnobs` decorator to add knobs support to your stories.
+// You can also configure `withKnobs` as a global decorator.
+stories.addDecorator(withKnobs);
+
+// Knobs for Vue props
+// Knobs for Vue props
+stories.add('with a button', () => ({
+  components: { MyButton },
+  template:
+    `<button disabled="${boolean('Disabled', false)}" >
+      ${text('Label', 'Hello Storybook')}
+    </button>`
+}));
+
+// Knobs as dynamic variables.
+stories.add('as dynamic variables', () => {
+  const name = text('Name', 'Arunoda Susiripala');
+  const age = number('Age', 89);
+
+  const content = `I am ${name} and I'm ${age} years old.`;
+  return `<div>${content}</div>`;
+});
+```
+
 ### With Angular
 ```js
 import { storiesOf } from '@storybook/angular';
