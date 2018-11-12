@@ -13,9 +13,9 @@ global.console.info = jest.fn().mockImplementation(() => {});
 
 // mock local storage calls
 const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  clear: jest.fn(),
+  getItem: jest.fn().mockName('getItem'),
+  setItem: jest.fn().mockName('setItem'),
+  clear: jest.fn().mockName('clear'),
 };
 global.localStorage = localStorageMock;
 
