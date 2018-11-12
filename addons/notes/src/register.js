@@ -12,7 +12,8 @@ addons.register(ADDON_ID, api => {
   addons.add(PANEL_ID, {
     type: types.TAB,
     title,
-    route: '/info/',
+    route: ({ componentId }) => `/info/${componentId}`,
+    match: ({ viewMode }) => viewMode === 'info',
     render,
   });
 });
