@@ -12,15 +12,20 @@ import {
   button,
 } from '@storybook/addon-knobs';
 
+import SimpleKnobExample from './SimpleKnobExample.vue';
+
 storiesOf('Addon|Knobs', module)
   .addDecorator(withKnobs)
   .add('Simple', () => {
     const name = text('Name', 'John Doe');
     const age = number('Age', 44);
-    const content = `I am ${name} and I'm ${age} years old.`;
 
     return {
-      template: `<div>${content}</div>`,
+      components: { SimpleKnobExample },
+      template: '<simple-knob-example :name="name" :age="age" />',
+      data() {
+        return { name, age };
+      },
     };
   })
   .add('All knobs', () => {
