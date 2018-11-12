@@ -11,6 +11,14 @@ registerRequireContextHook();
 // mock console.info calls for cleaner test execution
 global.console.info = jest.fn().mockImplementation(() => {});
 
+// mock local storage calls
+const localStorageMock = {
+  getItem: jest.fn().mockName('getItem'),
+  setItem: jest.fn().mockName('setItem'),
+  clear: jest.fn().mockName('clear'),
+};
+global.localStorage = localStorageMock;
+
 configure({ adapter: new Adapter() });
 
 /* Fail tests on PropType warnings
