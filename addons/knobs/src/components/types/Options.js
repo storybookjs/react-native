@@ -9,6 +9,7 @@ import CheckboxesType from './Checkboxes';
 const OptionsSelect = styled(ReactSelect)({
   width: '100%',
   maxWidth: '300px',
+  color: 'black',
 });
 
 const OptionsType = props => {
