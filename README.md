@@ -77,7 +77,7 @@ It runs a codemod to update all package names. Read all migration details in our
 
 For full documentation on using Storybook visit: [storybook.js.org](https://storybook.js.org)
 
-For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqohko.now.sh/)
+For additional help, join us [in our Discord](https://discord.gg/sMFvFsG/) or [Slack](https://now-examples-slackin-rrirkqohko.now.sh/)
 
 ## Projects
 
