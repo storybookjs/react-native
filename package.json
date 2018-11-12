@@ -40,7 +40,8 @@
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "yarn --cwd examples/official-storybook storybook",
     "test": "node ./scripts/test.js",
-    "test-latest-cra": "yarn --cwd lib/cli run test-latest-cra"
+    "test-latest-cra": "yarn --prefix --cwd lib/cli run test-latest-cra",
+    "test:cli": "npm --prefix lib/cli run test"
   },
   "devDependencies": {
     "@angular/common": "^7.0.1",
