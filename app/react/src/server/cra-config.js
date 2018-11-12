@@ -6,8 +6,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { normalizeCondition } from 'webpack/lib/RuleSet';
 
 let reactScriptsPath;
-function getReactScriptsPath() {
-  if (reactScriptsPath) return reactScriptsPath;
+export function getReactScriptsPath({ noCache } = {}) {
+  if (reactScriptsPath && !noCache) return reactScriptsPath;
   const appDirectory = fs.realpathSync(process.cwd());
   const reactScriptsScriptPath = fs.realpathSync(
     path.join(appDirectory, '/node_modules/.bin/react-scripts')

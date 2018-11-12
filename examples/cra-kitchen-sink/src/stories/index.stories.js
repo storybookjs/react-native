@@ -7,7 +7,8 @@ import centered from '@storybook/addon-centered';
 import { withInfo } from '@storybook/addon-info';
 import { Button } from '@storybook/react/demo';
 
-import App from '../App';
+// eslint-disable-next-line import/extensions,import/no-unresolved
+import App from 'App';
 import Container from './Container';
 import LifecycleLogger from '../components/LifecycleLogger';
 
