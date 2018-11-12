@@ -40,7 +40,7 @@ exports[`Storyshots Addon|Knobs All knobs 1`] = `
 
 exports[`Storyshots Addon|Knobs Simple 1`] = `
 <div>
-  I am John Doe and I'm 44 years old.
+  I am John Doe and I'm 44 years old. Inner State Counter 40
 </div>
 `;
 
