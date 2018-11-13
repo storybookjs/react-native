@@ -73,7 +73,7 @@ import '@storybook/addon-ondevice-notes/register';
  The easiest solution is to replace your app entry with:
  
 ```js
-import './storybook';
+export default from './storybook';
 ```
 
 If you cannot replace your entry point just make sure that the component exported from `./storybook` is displayed
@@ -86,6 +86,7 @@ RN application, e.g. on a tab or within an admin screen.
 Now you can write some stories inside the `storybook/stories/index.js` file, like this:
 
 ```js
+import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
