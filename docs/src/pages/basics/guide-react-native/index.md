@@ -103,7 +103,7 @@ const CenteredView = ({ children }) => (
   </View>
 );
 
-storiesOf('CenteredView')
+storiesOf('CenteredView', module)
   .add('default view', () => (
     <CenteredView>
       <Text>Hello Storybook</Text>
