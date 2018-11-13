@@ -1,4 +1,4 @@
-## 4.0.5 (November 13, 2018)
+# 4.0.6 (November 13, 2018)
 
 ### Features
 
@@ -7,6 +7,10 @@
 ### Bug Fixes
 
 * Fix NODE_PATH is not being loaded from .env ([#4706](https://github.com/storybooks/storybook/pull/4706))
+
+# 4.0.5 (November 13, 2018)
+
+Failed release
 
 # 4.0.4
 
