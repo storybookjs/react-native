@@ -4,7 +4,7 @@
 
 * Core: Interpolation for multiple environment variables ([#4761](https://github.com/storybooks/storybook/pull/4761))
 * UI: deep theming for stories nav panel ([#4702](https://github.com/storybooks/storybook/pull/4702))
-* React: Persist last displayed story, allow to set initial story. ([#4713](https://github.com/storybooks/storybook/pull/4713))
+* React-native: Persist last displayed story, allow to set initial story. ([#4713](https://github.com/storybooks/storybook/pull/4713))
 
 ### Bug Fixes
 
