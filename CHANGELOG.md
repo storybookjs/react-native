@@ -1,12 +1,47 @@
+# 4.1.0-alpha.2 (November 13, 2018)
+
+### Features
+
+* Core: Interpolation for multiple environment variables ([#4761](https://github.com/storybooks/storybook/pull/4761))
+* UI: deep theming for stories nav panel ([#4702](https://github.com/storybooks/storybook/pull/4702))
+* React: Persist last displayed story, allow to set initial story. ([#4713](https://github.com/storybooks/storybook/pull/4713))
+
+### Bug Fixes
+
+* Better a11y ([#4704](https://github.com/storybooks/storybook/pull/4704))
+* Remove z-index from vertical resizer ([#4651](https://github.com/storybooks/storybook/pull/4651))
+* React: Ensure @storybook/react can be imported in Node.js without errors ([#4757](https://github.com/storybooks/storybook/pull/4757))
+
+### Maintenance
+
+* Core: separate manager from preview ([#4590](https://github.com/storybooks/storybook/pull/4590))
+* Add tests for custom react-scripts packages ([#4768](https://github.com/storybooks/storybook/pull/4768))
+* FIX deprecation warning from husky ([#4755](https://github.com/storybooks/storybook/pull/4755))
+* Tech/silent smoke tests ([#4749](https://github.com/storybooks/storybook/pull/4749))
+
+### Dependency Upgrades
+
+* Bump lint-staged from 7.3.0 to 8.0.4 ([#4673](https://github.com/storybooks/storybook/pull/4673))
+* Bump svelte from 2.13.5 to 2.15.2 ([#4726](https://github.com/storybooks/storybook/pull/4726))
+* [Security] Bump cached-path-relative from 1.0.1 to 1.0.2 ([#4745](https://github.com/storybooks/storybook/pull/4745))
+* Update expo requirement from ^30.0.1 to ^31.0.4 in /examples-native/crna-kitchen-sink ([#4728](https://github.com/storybooks/storybook/pull/4728))
+* Bump @storybook/addon-links from 3.4.11 to 4.0.4 in /docs ([#4732](https://github.com/storybooks/storybook/pull/4732))
+* Bump react-syntax-highlighter from 9.0.1 to 10.0.0 ([#4654](https://github.com/storybooks/storybook/pull/4654))
+* Bump @angular/compiler from 7.0.1 to 7.0.2 ([#4677](https://github.com/storybooks/storybook/pull/4677))
+* Bump @types/jest from 23.3.8 to 23.3.9 ([#4658](https://github.com/storybooks/storybook/pull/4658))
+* Bump copy-webpack-plugin from 4.5.4 to 4.6.0 ([#4674](https://github.com/storybooks/storybook/pull/4674))
+* Bump @ngrx/store from 6.1.1 to 6.1.2 ([#4678](https://github.com/storybooks/storybook/pull/4678))
+* [Security] Bump merge from 1.2.0 to 1.2.1 ([#4686](https://github.com/storybooks/storybook/pull/4686))
+
 # 4.0.6 (November 13, 2018)
 
 ### Features
 
-* Add support for custom `react-scripts` packages ([#4712](https://github.com/storybooks/storybook/pull/4712))
+* React: add support for custom `react-scripts` packages ([#4712](https://github.com/storybooks/storybook/pull/4712))
 
 ### Bug Fixes
 
-* Fix NODE_PATH is not being loaded from .env ([#4706](https://github.com/storybooks/storybook/pull/4706))
+* Core: fix NODE_PATH is not being loaded from .env ([#4706](https://github.com/storybooks/storybook/pull/4706))
 
 # 4.0.5 (November 13, 2018)
 
