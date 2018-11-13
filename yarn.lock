@@ -1818,10 +1818,17 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@ndelangen/html-webpack-harddisk-plugin@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@ndelangen/html-webpack-harddisk-plugin/-/html-webpack-harddisk-plugin-0.2.0.tgz#d2eb570597c83c1aa93d1f2fcb3d874a5855de07"
+  integrity sha512-55Mo2b5WtIT0l653y6ocu7C6QzznbasEnlixGzA26WK8Fj81wuEY3xf5N5bNAvDVfrwTLIPTXdEUGgPdrPLszw==
+  dependencies:
+    mkdirp "^0.5.1"
 "@ngrx/store@^6.1.2":
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.1.2.tgz#20fb5ab4d79571b804a348093aa11a167fe2946f"
   integrity sha512-W9MbXrwhIRmN1BlINF9BT+rHR046e1HNk7GqykcDJrK9wW74PJW3aE5iuPb2sTPipBMjPHsXzc73E4U/+OTAyw==
+
 
 "@ngtools/webpack@7.0.3":
   version "7.0.3"
@@ -4318,7 +4325,7 @@ babel-preset-jest@^23.2.0:
     babel-plugin-jest-hoist "^23.2.0"
     babel-plugin-syntax-object-rest-spread "^6.13.0"
 
-babel-preset-minify@^0.5.0:
+"babel-preset-minify@^0.5.0 || 0.6.0-alpha.5":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/babel-preset-minify/-/babel-preset-minify-0.5.0.tgz#e25bb8d3590087af02b650967159a77c19bfb96b"
   integrity sha512-xj1s9Mon+RFubH569vrGCayA9Fm2GMsCgDRm1Jb8SgctOB7KFcrVc2o8K3YHUyMz+SWP8aea75BoS8YfsXXuiA==
@@ -17502,6 +17509,11 @@ pretty-format@^4.2.1:
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-4.3.1.tgz#530be5c42b3c05b36414a7a2a4337aa80acd0e8d"
   integrity sha1-UwvlxCs8BbNkFKeipDN6qArNDo0=
 
+pretty-hrtime@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
+  integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
+
 pretty-ms@^3.1.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/pretty-ms/-/pretty-ms-3.2.0.tgz#87a8feaf27fc18414d75441467d411d6e6098a25"
@@ -20637,6 +20649,13 @@ spawn-command@^0.0.2-1:
   version "0.0.2-1"
   resolved "https://registry.yarnpkg.com/spawn-command/-/spawn-command-0.0.2-1.tgz#62f5e9466981c1b796dc5929937e11c9c6921bd0"
   integrity sha1-YvXpRmmBwbeW3Fkpk34RycaSG9A=
+
+spawn-promise@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/spawn-promise/-/spawn-promise-0.1.8.tgz#a5bea98814c48f52cbe02720e7fe2d6fc3b5119a"
+  integrity sha512-pTkEOFxvYLq9SaI1d8bwepj0yD9Yyz65+4e979YZLv/L3oYPxZpDTabcm6e+KIZniGK9mQ+LGrwB5s1v2z67nQ==
+  dependencies:
+    co "^4.6.0"
 
 spawn-sync@^1.0.11, spawn-sync@^1.0.15:
   version "1.0.15"
