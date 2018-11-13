@@ -1,3 +1,13 @@
+## 4.0.5 (November 13, 2018)
+
+### Features
+
+* Add support for custom `react-scripts` packages ([#4712](https://github.com/storybooks/storybook/pull/4712))
+
+### Bug Fixes
+
+* Fix NODE_PATH is not being loaded from .env ([#4706](https://github.com/storybooks/storybook/pull/4706))
+
 # 4.1.0-alpha.1
 
 2018-November-06
