@@ -40,7 +40,7 @@
     "airbnb-js-shims": "^1 || ^2",
     "autoprefixer": "^9.3.1",
     "babel-plugin-macros": "^2.4.2",
-    "babel-preset-minify": "^0.5.0",
+    "babel-preset-minify": "^0.5.0 || 0.6.0-alpha.5",
     "boxen": "^2.0.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "chalk": "^2.4.1",

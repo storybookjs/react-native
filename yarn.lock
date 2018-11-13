@@ -4325,7 +4325,7 @@ babel-preset-jest@^23.2.0:
     babel-plugin-jest-hoist "^23.2.0"
     babel-plugin-syntax-object-rest-spread "^6.13.0"
 
-babel-preset-minify@^0.5.0:
+"babel-preset-minify@^0.5.0 || 0.6.0-alpha.5":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/babel-preset-minify/-/babel-preset-minify-0.5.0.tgz#e25bb8d3590087af02b650967159a77c19bfb96b"
   integrity sha512-xj1s9Mon+RFubH569vrGCayA9Fm2GMsCgDRm1Jb8SgctOB7KFcrVc2o8K3YHUyMz+SWP8aea75BoS8YfsXXuiA==
