@@ -29,19 +29,27 @@ export default function render({
 
   showMain();
 
-  const props = Object.entries(component.props)
+  const proxy = Object.entries(component.props)
     .map(([name, def]) => ({ [name]: def.default }))
-    .reduce((wrapper, prop) => ({ ...wrapper, ...prop }), {});
+    .reduce((wrap, prop) => ({ ...wrap, ...prop }), {});
 
-  if (!root) {
+  // at component creation || refresh by HMR
+  if (!root || !forceRender) {
+    if (root) root.$destroy();
+
     root = new Vue({
       el: '#root',
+      beforeCreate() {
+        this.proxy = proxy;
+      },
+
       render(h) {
-        return h('div', { attrs: { id: 'root' } }, [h(component, { props: this.proxy || null })]);
+        const props = this.proxy;
+        return h('div', { attrs: { id: 'root' } }, [h(component, { props })]);
       },
     });
-  } else if (forceRender) {
-    root.proxy = props;
+  } else {
+    root.proxy = proxy;
     root.$forceUpdate();
   }
 }
