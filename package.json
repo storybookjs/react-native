@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "4.1.0-alpha.1",
+  "version": "4.1.0-alpha.2",
   "private": true,
   "repository": {
     "type": "git",
@@ -40,7 +40,8 @@
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "yarn --cwd examples/official-storybook storybook",
     "test": "node ./scripts/test.js",
-    "test-latest-cra": "yarn --cwd lib/cli run test-latest-cra"
+    "test-latest-cra": "yarn --prefix --cwd lib/cli run test-latest-cra",
+    "test:cli": "npm --prefix lib/cli run test"
   },
   "dependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
