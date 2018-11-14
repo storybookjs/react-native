@@ -110,7 +110,7 @@ export withNotes = makeDecorator({
     // which we send to the channel
     channel.emit('MYADDON/add_notes', parameters);
 
-    return story(context);
+    return getStory(context);
   }
 })
 ```
