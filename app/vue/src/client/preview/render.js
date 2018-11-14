@@ -3,49 +3,6 @@ import Vue from 'vue';
 
 let root = null;
 
-function updateComponent(component) {
-  const [lastStory] = root.$children;
-
-  if (!lastStory) {
-    return false;
-  }
-
-  if (typeof component.data !== 'function') {
-    return false;
-  }
-
-  const data = component.data();
-
-  if (!data) {
-    return false;
-  }
-
-  Object.entries(data).forEach(([key, value]) => {
-    lastStory[key] = value;
-  });
-
-  lastStory.$forceUpdate();
-
-  return true;
-}
-
-function renderRoot({ forceRender, component }) {
-  if (root) {
-    if (forceRender === true && updateComponent(component)) {
-      return;
-    }
-
-    root.$destroy();
-  }
-
-  root = new Vue({
-    el: '#root',
-    render(h) {
-      return h('div', { attrs: { id: 'root' } }, [h(component)]);
-    },
-  });
-}
-
 export default function render({
   story,
   selectedKind,
@@ -72,5 +29,19 @@ export default function render({
 
   showMain();
 
-  renderRoot({ forceRender, component });
+  const props = Object.entries(component.props)
+    .map(([name, def]) => ({ [name]: def.default }))
+    .reduce((wrapper, prop) => ({ ...wrapper, ...prop }), {});
+
+  if (!root) {
+    root = new Vue({
+      el: '#root',
+      render(h) {
+        return h('div', { attrs: { id: 'root' } }, [h(component, { props: this.proxy || null })]);
+      },
+    });
+  } else if (forceRender) {
+    root.proxy = props;
+    root.$forceUpdate();
+  }
 }
