@@ -87,9 +87,9 @@ export const withKnobs = makeDecorator({
     const storyOptions = parameters || options;
     const allOptions = { ...defaultOptions, ...storyOptions };
 
-    manager.setOptions(allOptions);
     const channel = addons.getChannel();
     manager.setChannel(channel);
+    manager.setOptions(allOptions);
     channel.emit(SET_OPTIONS, allOptions);
 
     registerKnobs();

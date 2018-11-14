@@ -5,6 +5,7 @@ import { document } from 'global';
 import styled from '@emotion/styled';
 import copy from 'copy-to-clipboard';
 
+import { STORY_CHANGED } from '@storybook/core-events';
 import { Placeholder, TabWrapper, TabsState, ActionBar, ActionButton } from '@storybook/components';
 import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
@@ -37,11 +38,11 @@ export default class KnobPanel extends PureComponent {
     channel.on(SET, this.setKnobs);
     channel.on(SET_OPTIONS, this.setOptions);
 
-    this.stopListeningOnStory = api.onStory(() => {
+    this.stopListeningOnStory = api.on(STORY_CHANGED, () => {
       if (this.mounted) {
-        this.setState({ knobs: {} });
+        this.setKnobs({ knobs: {} });
       }
-      channel.emit(RESET);
+      this.setKnobs({ knobs: {} });
     });
   }
 
