@@ -41,4 +41,5 @@ declare module '@storybook/angular' {
   export function addParameters(parameters: any): IApi;
   export function configure(loaders: () => void, module: NodeModule): void;
   export function getStorybook(): IStoribookSection[];
+  export function forceReRender(): void;
 }
