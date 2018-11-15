@@ -1,3 +1,13 @@
+# 4.0.7 (November 15, 2018)
+
+### Bug Fixes
+
+* Add missing "forceReRender" and "addParameters" ([#4767](https://github.com/storybooks/storybook/pull/4767))
+
+### Documentation
+
+* Fix variable reference in docs: story → getStory ([#4785](https://github.com/storybooks/storybook/pull/4785))
+
 # 4.0.6 (November 13, 2018)
 
 ### Features
