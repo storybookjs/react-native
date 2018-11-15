@@ -47,11 +47,6 @@
     "reactjs-popup": "^1.2.0",
     "render-fragment": "^0.1.1"
   },
-  "devDependencies": {
-    "@storybook/addon-actions": "4.1.0-alpha.2",
-    "@storybook/addon-knobs": "4.1.0-alpha.2",
-    "@storybook/react": "4.1.0-alpha.2"
-  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
