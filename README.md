@@ -29,7 +29,7 @@ It allows you to browse a component library, view the different states of each c
 
 <p align="center">
 README for:<br/>
-<a href="https://img.shields.io/npm/v/@storybook/core/latest.svg" title="latest"><img alt="latest" src="https://img.shields.io/npm/v/@storybook/core/alpha.svg" /></a>
+<a href="https://img.shields.io/npm/v/@storybook/core/latest.svg" title="latest"><img alt="latest" src="https://img.shields.io/npm/v/@storybook/core/latest.svg" /></a>
 <a href="https://img.shields.io/npm/v/@storybook/core/next.svg" title="next"><img alt="next" src="https://img.shields.io/npm/v/@storybook/core/next.svg" /></a>
 </p>
 
