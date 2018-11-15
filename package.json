@@ -21,7 +21,7 @@
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
     "build-storybooks": "./scripts/build-storybooks.sh",
     "changelog": "pr-log --sloppy --cherry-pick",
-    "changelog:next": "pr-log --sloppy --prerelease",
+    "changelog:next": "pr-log --sloppy --since-prerelease",
     "chromatic": "npm --prefix examples/official-storybook run chromatic",
     "coverage": "codecov",
     "danger": "danger",
