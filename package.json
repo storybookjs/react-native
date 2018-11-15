@@ -20,7 +20,8 @@
     "bootstrap:docs": "yarn install --cwd docs",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
     "build-storybooks": "./scripts/build-storybooks.sh",
-    "changelog": "pr-log --sloppy",
+    "changelog": "pr-log --sloppy --cherry-pick",
+    "changelog:next": "pr-log --sloppy --prerelease",
     "chromatic": "npm --prefix examples/official-storybook run chromatic",
     "coverage": "codecov",
     "danger": "danger",
@@ -162,15 +163,39 @@
     "skipLabels": [
       "cleanup"
     ],
-    "validLabels": {
-      "BREAKING CHANGE": "Breaking Changes",
-      "feature request": "Features",
-      "bug": "Bug Fixes",
-      "documentation": "Documentation",
-      "maintenance": "Maintenance",
-      "dependencies:update": "Dependency Upgrades",
-      "dependencies": "Dependency Upgrades",
-      "other": "Other"
-    }
+    "validLabels": [
+      [
+        "BREAKING CHANGE",
+        "Breaking Changes"
+      ],
+      [
+        "feature request",
+        "Features"
+      ],
+      [
+        "bug",
+        "Bug Fixes"
+      ],
+      [
+        "documentation",
+        "Documentation"
+      ],
+      [
+        "maintenance",
+        "Maintenance"
+      ],
+      [
+        "dependencies:update",
+        "Dependency Upgrades"
+      ],
+      [
+        "dependencies",
+        "Dependency Upgrades"
+      ],
+      [
+        "other",
+        "Other"
+      ]
+    ]
   }
 }
