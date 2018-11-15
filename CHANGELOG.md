@@ -2,7 +2,7 @@
 
 ### Bug Fixes
 
-* Add missing "forceReRender" and "addParameters" ([#4767](https://github.com/storybooks/storybook/pull/4767))
+* Vue/Angular/Mithril/Polymer: add missing "forceReRender" and "addParameters" ([#4767](https://github.com/storybooks/storybook/pull/4767))
 
 # 4.0.6 (November 13, 2018)
 
