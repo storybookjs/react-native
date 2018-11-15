@@ -72,6 +72,7 @@
     "opn": "^5.4.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
+    "pretty-hrtime": "^1.0.3",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
     "raw-loader": "^0.5.1",
