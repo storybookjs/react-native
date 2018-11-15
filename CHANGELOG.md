@@ -1,3 +1,9 @@
+# 4.0.7 (November 15, 2018)
+
+### Bug Fixes
+
+* Vue/Angular/Mithril/Polymer: Add missing "forceReRender" and "addParameters" ([#4767](https://github.com/storybooks/storybook/pull/4767))
+
 # 4.1.0-alpha.2 (November 13, 2018)
 
 ### Features
