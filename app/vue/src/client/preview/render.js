@@ -29,7 +29,7 @@ export default function render({
 
   showMain();
 
-  const proxy = Object.entries(component.props)
+  const proxy = Object.entries(component.props || {})
     .map(([name, def]) => ({ [name]: def.default }))
     .reduce((wrap, prop) => ({ ...wrap, ...prop }), {});
 
