@@ -3,6 +3,26 @@ import Vue from 'vue';
 
 let root = null;
 
+function getComponentProxy(component) {
+  return Object.entries(component.props || {})
+    .map(([name, def]) => ({ [name]: def.default }))
+    .reduce((wrap, prop) => ({ ...wrap, ...prop }), {});
+}
+
+function renderRoot(component, proxy) {
+  root = new Vue({
+    el: '#root',
+    beforeCreate() {
+      this.proxy = proxy;
+    },
+
+    render(h) {
+      const props = this.proxy;
+      return h('div', { attrs: { id: 'root' } }, [h(component, { props })]);
+    },
+  });
+}
+
 export default function render({
   story,
   selectedKind,
@@ -29,25 +49,13 @@ export default function render({
 
   showMain();
 
-  const proxy = Object.entries(component.props || {})
-    .map(([name, def]) => ({ [name]: def.default }))
-    .reduce((wrap, prop) => ({ ...wrap, ...prop }), {});
+  const proxy = getComponentProxy(component);
 
   // at component creation || refresh by HMR
   if (!root || !forceRender) {
     if (root) root.$destroy();
 
-    root = new Vue({
-      el: '#root',
-      beforeCreate() {
-        this.proxy = proxy;
-      },
-
-      render(h) {
-        const props = this.proxy;
-        return h('div', { attrs: { id: 'root' } }, [h(component, { props })]);
-      },
-    });
+    renderRoot(component, proxy);
   } else {
     root.proxy = proxy;
     root.$forceUpdate();
