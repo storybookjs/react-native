@@ -1,3 +1,20 @@
+# 4.1.0-alpha.3 (November 15, 2018)
+
+### Maintenance
+
+* REFACTOR dev-serve to output less noise ([#4791](https://github.com/storybooks/storybook/pull/4791))
+* Separate manager and preview part.2 ([#4789](https://github.com/storybooks/storybook/pull/4789))
+
+### Dependency Upgrades
+
+* Use alpha minify dependency to upgrade transitive lodash dependencies ([#4771](https://github.com/storybooks/storybook/pull/4771))
+
+# 4.0.7 (November 15, 2018)
+
+### Bug Fixes
+
+* Vue/Angular/Mithril/Polymer: Add missing "forceReRender" and "addParameters" ([#4767](https://github.com/storybooks/storybook/pull/4767))
+
 # 4.1.0-alpha.2 (November 13, 2018)
 
 ### Features

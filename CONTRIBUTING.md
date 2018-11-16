@@ -325,7 +325,7 @@ git status
 
 # generate changelog and edit as appropriate
 # generates a Next section
-yarn changelog x.y.z-alpha.a
+yarn changelog:next x.y.z-alpha.a
 
 # Edit the changelog/PRs as needed, then commit
 git commit -m "x.y.z-alpha.a changelog"
