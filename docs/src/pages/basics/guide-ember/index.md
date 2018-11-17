@@ -90,10 +90,10 @@ storiesOf('Demo', module)
     return {
       template: hbs`<button {{action onClick}}>
         Hello Button
-      </button>`
-    },
-    context: {
-      onClick: (e) => console.log(e)
+      </button>`,
+      context: {
+        onClick: (e) => console.log(e)
+      }
     }
   })
   .add('component', () => {
