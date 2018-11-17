@@ -108,7 +108,6 @@ module.exports = {
         },
       },
     ],
-    'linebreak-style': ignore,
     'jsx-a11y/anchor-is-valid': [
       error,
       {
