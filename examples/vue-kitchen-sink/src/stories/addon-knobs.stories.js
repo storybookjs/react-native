@@ -12,6 +12,8 @@ import {
   button,
 } from '@storybook/addon-knobs';
 
+const logger = console;
+
 storiesOf('Addon|Knobs', module)
   .addDecorator(withKnobs)
   .add('Simple', () => ({
@@ -29,10 +31,10 @@ storiesOf('Addon|Knobs', module)
     },
 
     created() {
-      console.log('created');
+      logger.log('created');
     },
     destroyed() {
-      console.log('destroyed');
+      logger.log('destroyed');
     },
   }))
   .add('All knobs', () => {
