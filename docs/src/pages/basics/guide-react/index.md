@@ -16,7 +16,7 @@ In this guide, we will set up Storybook for your React project.
 ## Table of contents
 
 -   [Add @storybook/react](#add-storybookreact)
--   [Add react, react-dom, babel-core, and babel-loader](#add-react-react-dom-babel-core-and-babel-loader)
+-   [Add react, react-dom, @babel/core, and babel-loader](#add-react-react-dom-babel-core-and-babel-loader)
 -   [Create the config file](#create-the-config-file)
 -   [Write your stories](#write-your-stories)
 -   [Run your Storybook](#run-your-storybook)
@@ -29,9 +29,9 @@ First of all, you need to add `@storybook/react` to your project. To do that, ru
 npm i --save-dev @storybook/react
 ```
 
-## Add react, react-dom, babel-core, and babel-loader
+## Add react, react-dom, @babel/core, and babel-loader
 
-Make sure that you have `react`, `react-dom`, `babel-core`, and `babel-loader` in your dependencies as well because we list these as a peer dependencies:
+Make sure that you have `react`, `react-dom`, `@babel/core`, and `babel-loader` in your dependencies as well because we list these as a peer dependencies:
 
 ```sh
 npm i --save react react-dom
