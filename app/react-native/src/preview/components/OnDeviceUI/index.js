@@ -105,7 +105,7 @@ export default class OnDeviceUI extends PureComponent {
     });
 
     // close the keyboard opened from a TextInput from story list or knobs
-    if (newTabOpen === 0) {
+    if (newTabOpen === PREVIEW) {
       Keyboard.dismiss();
     }
   };
@@ -135,7 +135,7 @@ export default class OnDeviceUI extends PureComponent {
     return (
       <SafeAreaView style={style.flex}>
         <KeyboardAvoidingView
-          enabled={!shouldDisableKeyboardAvoidingView}
+          enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
           behavior={IS_IOS ? 'padding' : null}
           style={style.flex}
         >
