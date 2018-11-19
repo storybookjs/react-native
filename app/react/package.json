@@ -40,13 +40,13 @@
     "lodash": "^4.17.11",
     "mini-css-extract-plugin": "^0.4.4",
     "prop-types": "^15.6.2",
+    "react": "^16.6.0",
     "react-dev-utils": "^6.1.0",
+    "react-dom": "^16.6.0",
     "semver": "^5.6.0",
     "webpack": "^4.23.1"
   },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0",
-    "react": ">=15.0.0",
-    "react-dom": ">=15.0.0"
+    "babel-loader": "^7.0.0 || ^8.0.0"
   }
 }
