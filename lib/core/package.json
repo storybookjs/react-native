@@ -53,6 +53,7 @@
     "detect-port": "^1.2.3",
     "dotenv-webpack": "^1.5.7",
     "ejs": "^2.6.1",
+    "eventemitter3": "^3.1.0",
     "express": "^4.16.3",
     "file-loader": "^2.0.0",
     "file-system-cache": "^1.0.5",
