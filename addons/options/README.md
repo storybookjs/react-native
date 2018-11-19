@@ -137,3 +137,14 @@ storiesOf('Addons|Knobs/Hello', module)
 ```
 
 _NOTE_ that you must attach `withOptions` as a decorator (at the top-level) for this to work.
+
+## Typescript
+
+To install type definitions: `npm install -D @types/storybook__addon-options`
+
+Make sure you also have the type definitions installed for the following libs:
+
+ - node
+ - react
+ 
+You can install them using `npm install -D @types/node @types/react`, assuming you are using Typescript >2.0.
