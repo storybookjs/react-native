@@ -377,8 +377,8 @@ stories.addDecorator(withKnobs)
 stories.add('story name', () => ..., {
   knobs: {
     timestamps: true, // Doesn't emit events while user is typing.
-    escapeHTML: true // Escapes strings to be safe for inserting as innerHTML. This option is true by default in storybook for Vue, Angular, and Polymer, because those frameworks allow rendering plain HTML.
-                     // You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.  
+    escapeHTML: true // Escapes strings to be safe for inserting as innerHTML. This option is true by default. It's safe to set it to `false` with frameworks like React which do escaping on their side.
+                     // You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.
   }
 });
 ```
