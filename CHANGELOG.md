@@ -1,3 +1,9 @@
+## 4.0.8 (November 21, 2018)
+
+### Bug Fixes
+
+* Addon-knobs: Vue optimize on force render ([#4773](https://github.com/storybooks/storybook/pull/4773))
+
 # 4.0.7 (November 15, 2018)
 
 ### Bug Fixes
