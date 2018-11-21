@@ -1,4 +1,14 @@
-## 4.0.8 (November 21, 2018)
+# 4.1.0-alpha.4 (November 21, 2018)
+
+### Features
+
+* ADD support for all versions of react ([#4808](https://github.com/storybooks/storybook/pull/4808))
+
+### Bug Fixes
+
+* Use correct cache directory path ([#4792](https://github.com/storybooks/storybook/pull/4792))
+
+# 4.0.8 (November 21, 2018)
 
 ### Bug Fixes
 
