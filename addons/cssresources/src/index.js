@@ -1,7 +1,7 @@
 import addons, { makeDecorator } from '@storybook/addons';
 
-export const withCssresources = makeDecorator({
-  name: 'withCssresources',
+export const withCssResources = makeDecorator({
+  name: 'withCssResources',
   parameterName: 'cssresources',
   skipIfNoParametersOrOptions: true,
   allowDeprecatedUsage: false,

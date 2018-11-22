@@ -27,7 +27,7 @@ It allows you to browse a component library, view the different states of each c
 README for:
 
 - [![Alpha](https://img.shields.io/npm/v/@storybook/core/alpha.svg)](https://github.com/storybooks/storybook)
-- [![Latest](https://img.shields.io/npm/v/@storybook/core/latest.svg)](https://github.com/storybooks/storybook/tree/release/4.0)
+- [![Latest](https://img.shields.io/npm/v/@storybook/core/latest.svg)](https://github.com/storybooks/storybook/tree/master)
 
 Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
 
@@ -73,7 +73,7 @@ It runs a codemod to update all package names. Read all migration details in our
 
 For full documentation on using Storybook visit: [storybook.js.org](https://storybook.js.org)
 
-For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqohko.now.sh/)
+For additional help, join us [in our Discord](https://discord.gg/sMFvFsG) or [Slack](https://now-examples-slackin-rrirkqohko.now.sh/)
 
 ## Projects
 

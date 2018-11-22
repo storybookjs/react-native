@@ -24,16 +24,16 @@ import '@storybook/addon-cssresources/register';
 
 ## Usage
 
-You need add the all the css resources at compile time using the `withCssresources` decorator. They can be added globally or per story. You can then choose which ones to load from the cssresources addon ui:
+You need add the all the css resources at compile time using the `withCssResources` decorator. They can be added globally or per story. You can then choose which ones to load from the cssresources addon ui:
 
 ```js
 // Import from @storybook/X where X is your framework
 import { configure, addDecorator, storiesOf } from '@storybook/react';
-import { withCssresources } from '@storybook/addon-cssresources';
+import { withCssResources } from '@storybook/addon-cssresources';
 
 // global
 addDecorator(
-  withCssresources({
+  withCssResources({
     cssresources: [{
         name: `bluetheme`,
         code: `<style>body { background-color: lightblue; }</style>`,
@@ -46,7 +46,7 @@ addDecorator(
 // per story
 storiesOf('Addons|Cssresources', module)
   .addDecorator(
-    withCssresources({
+    withCssResources({
       cssresources: [{
           name: `fontawesome`,
           code: `<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>`,

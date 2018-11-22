@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withCssresources } from '@storybook/addon-cssresources';
+import { withCssResources } from '@storybook/addon-cssresources';
 
 storiesOf('Addons|Cssresources', module)
   .addDecorator(
-    withCssresources({
+    withCssResources({
       cssresources: [
         {
           name: `bootstrap v4.1.3`,
@@ -27,7 +27,7 @@ storiesOf('Addons|Cssresources', module)
 
 storiesOf('Addons|Cssresources', module)
   .addDecorator(
-    withCssresources({
+    withCssResources({
       cssresources: [
         {
           name: `fontawesome`,

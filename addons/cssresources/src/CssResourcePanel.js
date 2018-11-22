@@ -5,11 +5,11 @@ import { monoFonts } from '@storybook/components';
 import styled from '@emotion/styled';
 import 'pretty-checkbox/dist/pretty-checkbox.css';
 
-import css from 'react-syntax-highlighter/languages/prism/css';
-import { darcula } from 'react-syntax-highlighter/styles/prism';
-import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
+import css from 'react-syntax-highlighter/dist/esm/languages/prism/css';
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism-light';
 
-registerLanguage('css', css);
+SyntaxHighlighter.registerLanguage('css', css);
 
 const storybookIframe = 'storybook-preview-iframe';
 const addedElAttr = 'addedbycssresourcesaddon';

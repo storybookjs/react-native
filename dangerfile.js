@@ -10,7 +10,7 @@ const Versions = {
   MAJOR: 'MAJOR',
 };
 
-const branchVersion = Versions.PATCH;
+const branchVersion = Versions.MINOR;
 
 const checkRequiredLabels = labels => {
   const forbiddenLabels = flatten([
@@ -22,7 +22,7 @@ const checkRequiredLabels = labels => {
 
   const requiredLabels = flatten([
     prLogConfig.skipLabels || [],
-    Object.keys(prLogConfig.validLabels || {}),
+    (prLogConfig.validLabels || []).map(keyVal => keyVal[0]),
   ]);
 
   const blockingLabels = intersection(forbiddenLabels, labels);
