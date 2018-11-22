@@ -1,10 +1,10 @@
-## 4.1.0-alpha.6 (November 22, 2018)
+## 4.1.0-alpha.7 (November 22, 2018)
 
 ### Features
 
 * Add TypeScript support for react-scripts ([#4824](https://github.com/storybooks/storybook/pull/4824))
 
-## 4.1.0-alpha.5 (November 22, 2018)
+## 4.1.0-alpha.5/6 (November 22, 2018)
 
 Publish failed
 
