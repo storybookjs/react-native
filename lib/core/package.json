@@ -81,6 +81,7 @@
     "spawn-promise": "^0.1.8",
     "style-loader": "^0.23.1",
     "svg-url-loader": "^2.3.2",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.23.1",
     "webpack-dev-middleware": "^3.4.0",
