@@ -51,7 +51,6 @@ Then add the following NPM script to your `package.json` in order to start the s
 
 ## Create the config file
 
-Storybook can be configured in several different ways.
 That’s why we need a config directory. We've added a `-c` option to the above NPM script mentioning `.storybook` as the config directory.
 
 For a basic Storybook configuration, the only thing you need to do is tell Storybook where to find stories.

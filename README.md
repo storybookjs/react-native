@@ -110,6 +110,7 @@ For additional help, join us [in our Discord](https://discord.gg/sMFvFsG) or [Sl
 | [actions](addons/actions/)                  | Log actions as users interact with components in the Storybook UI          |
 | [backgrounds](addons/backgrounds/)          | Let users choose backgrounds in the Storybook UI                           |
 | [centered](addons/centered/)                | Center the alignment of your components within the Storybook UI            |
+| [cssresources](addons/cssresources/)        | Dynamically add/remove css resources to the component iframe               |
 | [events](addons/events/)                    | Interactively fire events to components that respond to EventEmitter       |
 | [graphql](addons/graphql/)                  | Query a GraphQL server within Storybook stories                            |
 | [google-analytics](addons/google-analytics) | Reports google analytics on stories                                        |
@@ -119,7 +120,6 @@ For additional help, join us [in our Discord](https://discord.gg/sMFvFsG) or [Sl
 | [links](addons/links/)                      | Create links between stories                                               |
 | [notes](addons/notes/)                      | Annotate Storybook stories with notes                                      |
 | [options](addons/options/)                  | Customize the Storybook UI in code                                         |
-| [cssresources](addons/cssresources/)        | Dynamically add/remove css resources to the component iframe               |
 | [storyshots](addons/storyshots/)            | Easy snapshot testing for components in Storybook                          |
 | [storysource](addons/storysource/)          | View the code of your stories within the Storybook UI                      |
 | [viewport](addons/viewport/)                | Change display sizes and layouts for responsive components using Storybook |

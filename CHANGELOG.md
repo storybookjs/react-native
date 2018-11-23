@@ -92,39 +92,25 @@ Publish failed
 
 ## 4.1.0-alpha.1
 
-### Bug Fixes
+2018-November-06
 
-* Addon-knobs: Vue optimize on force render ([#4773](https://github.com/storybooks/storybook/pull/4773))
+#### Features
 
-<<<<<<< HEAD
-# 4.0.7 (November 15, 2018)
-=======
 -   Core: add cursor images to webpack loader [#4498](https://github.com/storybooks/storybook/pull/4498)
 -   Storyshots-puppeteer: Allow specifying an existing browser [#4721](https://github.com/storybooks/storybook/pull/4721)
 -   React-native: close StoryListView after tap again in the current story [#4714](https://github.com/storybooks/storybook/pull/4714)
->>>>>>> 3b45a5920b9301db6190693f193c892db31309a2
 
-### Bug Fixes
+#### Dependency Upgrades
 
-* Vue/Angular/Mithril/Polymer: add missing "forceReRender" and "addParameters" ([#4767](https://github.com/storybooks/storybook/pull/4767))
+-   Bump @angular/compiler from 7.0.1 to 7.0.2 [#4677](https://github.com/storybooks/storybook/pull/4677)
+-   Bump @types/jest from 23.3.8 to 23.3.9 [#4658](https://github.com/storybooks/storybook/pull/4658)
+-   Bump copy-webpack-plugin from 4.5.4 to 4.6.0 [#4674](https://github.com/storybooks/storybook/pull/4674)
+-   Bump @ngrx/store from 6.1.1 to 6.1.2 [#4678](https://github.com/storybooks/storybook/pull/4678)
+-   [Security] Bump merge from 1.2.0 to 1.2.1 [#4686](https://github.com/storybooks/storybook/pull/4686)
 
-# 4.0.6 (November 13, 2018)
-
-### Features
-
-* Add support for custom `react-scripts` packages ([#4712](https://github.com/storybooks/storybook/pull/4712))
-
-### Bug Fixes
-
-* Fix NODE_PATH is not being loaded from .env ([#4706](https://github.com/storybooks/storybook/pull/4706))
-
-<<<<<<< HEAD
-# 4.0.5 (November 13, 2018)
-=======
 ## 4.1.0-alpha.0
->>>>>>> 3b45a5920b9301db6190693f193c892db31309a2
 
-Failed release
+Publish failed
 
 ## 4.0.4
 
