@@ -62,7 +62,7 @@ do
 
   echo "Running smoke test in $dir"
   failed=0
-  yarn storybook --smoke-test || failed=1
+  yarn storybook --smoke-test --quiet || failed=1
 
   if [ $teamcity -eq 1 ]
   then

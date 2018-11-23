@@ -6,6 +6,6 @@ export default {
   frameworkPresets: [
     require.resolve('./framework-preset-react.js'),
     require.resolve('./framework-preset-react-docgen.js'),
-    require.resolve('./framework-preset-cra-styles.js'),
+    require.resolve('./framework-preset-cra-rules.js'),
   ],
 };

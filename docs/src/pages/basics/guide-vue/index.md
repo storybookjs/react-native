@@ -37,8 +37,8 @@ Make sure that you have `vue`, `babel-core`, `babel-loader` in your dependencies
 
 ```sh
 npm i --save vue
-npm i --save-dev babel-core
-npm i --save-dev babel-loader
+npm i --save-dev babel-loader vue-loader vue-template-compiler
+npm i --save-dev @babel/core babel-preset-vue
 ```
 
 ## Create the NPM script
