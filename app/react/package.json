@@ -28,10 +28,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@babel/plugin-transform-react-constant-elements": "^7.0.0",
     "@babel/runtime": "^7.1.2",
     "@emotion/styled": "^0.10.6",
     "@storybook/core": "4.1.0-alpha.7",
     "@storybook/node-logger": "4.1.0-alpha.7",
+    "@svgr/webpack": "^4.0.3",
     "babel-plugin-named-asset-import": "^0.2.3",
     "babel-plugin-react-docgen": "^2.0.0",
     "babel-preset-react-app": "^6.1.0",
