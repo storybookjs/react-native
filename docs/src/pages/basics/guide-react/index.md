@@ -35,7 +35,7 @@ Make sure that you have `react`, `react-dom`, `babel-core`, and `babel-loader` i
 
 ```sh
 npm i --save react react-dom
-npm i --save-dev babel-core
+npm i --save-dev @babel/core
 npm i --save-dev babel-loader
 ```
 
