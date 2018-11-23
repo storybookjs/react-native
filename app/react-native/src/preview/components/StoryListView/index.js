@@ -116,9 +116,10 @@ export default class StoryListView extends Component {
     const { data } = this.state;
 
     return (
-      <React.Fragment>
+      <View style={style.flex}>
         <TextInput
           clearButtonMode="while-editing"
+          disableFullscreenUI
           onChangeText={this.handleChangeSearchText}
           placeholder="Filter"
           returnKeyType="search"
@@ -142,7 +143,7 @@ export default class StoryListView extends Component {
           sections={data}
           stickySectionHeadersEnabled={false}
         />
-      </React.Fragment>
+      </View>
     );
   }
 }
