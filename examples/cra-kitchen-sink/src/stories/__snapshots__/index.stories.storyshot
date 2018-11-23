@@ -1,33 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots App full app 1`] = `
-<div
-  class="App"
->
-  <div
-    class="App-header"
-  >
-    <img
-      alt="logo"
-      class="App-logo"
-      src="file-stub"
-    />
-    <h2>
-      Welcome to React
-    </h2>
-  </div>
-  <p
-    class="App-intro"
-  >
-    To get started, edit 
-    <code>
-      src/App.js
-    </code>
-     and save to reload.
-  </p>
-</div>
-`;
-
 exports[`Storyshots Button addons composition 1`] = `
 .emotion-4 {
   display: -webkit-box;
@@ -167,13 +139,6 @@ exports[`Storyshots Button addons composition 1`] = `
                   >
                     &gt;
                   </span>
-                </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
-                  />
                 </div>
                 <div
                   style="padding-left:33px;padding-right:3px"
@@ -444,13 +409,6 @@ exports[`Storyshots Button with new info 1`] = `
                   >
                     &gt;
                   </span>
-                </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
-                  />
                 </div>
                 <div
                   style="padding-left:33px;padding-right:3px"
@@ -767,27 +725,4 @@ exports[`Storyshots Button with text 1`] = `
 >
   Hello Button
 </button>
-`;
-
-exports[`Storyshots Lifecycle logging 1`] = `
-<div>
-  Lifecycle methods are logged to the console
-</div>
-`;
-
-exports[`Storyshots Some really long story kind description with text 1`] = `
-<div
-  style="position:fixed;top:0;left:0;bottom:0;right:0;display:flex;align-items:center;overflow:auto"
->
-  <div
-    style="margin:auto;max-height:100%"
-  >
-    <button
-      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-      type="button"
-    >
-      Hello Button
-    </button>
-  </div>
-</div>
 `;
