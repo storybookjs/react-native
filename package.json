@@ -161,7 +161,8 @@
   },
   "pr-log": {
     "skipLabels": [
-      "cleanup"
+      "cleanup",
+      "doc-dependencies:update"
     ],
     "validLabels": [
       [
