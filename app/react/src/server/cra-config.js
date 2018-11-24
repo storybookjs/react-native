@@ -65,13 +65,25 @@ const getStyleRules = getRules(cssExtensions.concat(cssModuleExtensions));
 const getTypeScriptRules = getRules(typeScriptExtensions);
 
 export function getCraWebpackConfig(mode) {
+  const pathToReactScripts = getReactScriptsPath();
+
   const craWebpackConfig =
     mode === 'production' ? 'config/webpack.config.prod' : 'config/webpack.config.dev';
 
-  const pathToWebpackConfig = path.join(getReactScriptsPath(), craWebpackConfig);
+  let pathToWebpackConfig = require.resolve(path.join(pathToReactScripts, craWebpackConfig));
+
+  if (!fs.existsSync(pathToWebpackConfig)) {
+    pathToWebpackConfig = path.join(pathToReactScripts, 'config/webpack.config');
+  }
 
   // eslint-disable-next-line import/no-dynamic-require,global-require
-  return require(pathToWebpackConfig);
+  const webpackConfig = require(pathToWebpackConfig);
+
+  if (typeof webpackConfig === 'function') {
+    return webpackConfig(mode);
+  }
+
+  return webpackConfig;
 }
 
 export function applyCRAWebpackConfig(baseConfig) {
