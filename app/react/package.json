@@ -28,7 +28,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-react-constant-elements": "^7.0.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
@@ -39,6 +38,7 @@
     "@svgr/webpack": "^4.0.3",
     "babel-plugin-named-asset-import": "^0.2.3",
     "babel-plugin-react-docgen": "^2.0.0",
+    "babel-preset-react-app": "^6.1.0",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "lodash": "^4.17.11",

@@ -19,9 +19,8 @@ export function babelDefault(config) {
 
   return {
     ...config,
+    presets: [require.resolve('babel-preset-react-app')],
     plugins: [
-      ...config.plugins,
-      require.resolve('@babel/plugin-syntax-dynamic-import'),
       [
         require.resolve('babel-plugin-named-asset-import'),
         {
