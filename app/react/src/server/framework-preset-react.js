@@ -1,17 +1,10 @@
-export function babelDefault() {
+export function babelDefault(config) {
   return {
-    presets: [require.resolve('babel-preset-react-app')],
-    plugins: [
-      [
-        require.resolve('babel-plugin-named-asset-import'),
-        {
-          loaderMap: {
-            svg: {
-              ReactComponent: '@svgr/webpack?-prettier,-svgo![path]',
-            },
-          },
-        },
-      ],
+    ...config,
+    presets: [
+      ...config.presets,
+      require.resolve('@babel/preset-react'),
+      require.resolve('@babel/preset-flow'),
     ],
   };
 }
