@@ -29,7 +29,6 @@
     "@storybook/components": "4.1.0-alpha.7",
     "@storybook/core-events": "4.1.0-alpha.7",
     "global": "^4.3.2",
-    "pretty-checkbox": "^3.0.3",
     "prop-types": "^15.6.2",
     "react-syntax-highlighter": "^10.0.0",
     "util-deprecate": "^1.0.2"

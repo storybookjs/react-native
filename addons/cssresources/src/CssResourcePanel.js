@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { monoFonts } from '@storybook/components';
 import styled from '@emotion/styled';
-import 'pretty-checkbox/dist/pretty-checkbox.css';
 
 import css from 'react-syntax-highlighter/dist/esm/languages/prism/css';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -108,23 +107,16 @@ export default class CssResourcePanel extends Component {
       <PanelWrapper className="addon-cssresources-container">
         {cssresources &&
           cssresources.map(({ name, code, picked }, i) => (
-            <div style={{ padding: 10 }}>
-              <div style={{ 'margin-bottom': 10 }} className="pretty p-svg p-curve p-smooth">
+            <div key={name} style={{ padding: 10 }}>
+              <div style={{ fontSize: '1.1em', marginBottom: 10 }}>
                 <input
-                  id={`cssresources${i}`}
+                  id={`cssresource${i}`}
+                  style={{ fontSize: '1.5em' }}
                   type="checkbox"
                   checked={picked}
-                  onClick={this.handleChange.bind(this, i)}
+                  onChange={this.handleChange.bind(this, i)}
                 />
-                <div className="state p-success" style={{ 'font-size': '14px' }}>
-                  <svg className="svg svg-icon" viewBox="0 0 20 20">
-                    <path
-                      d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
-                      style={{ stroke: 'white;fill:white;' }}
-                    />
-                  </svg>
-                  <label htmlFor={`cssresources${i}`}>#{name}</label>
-                </div>
+                <label htmlFor={`cssresource${i}`}>#{name}</label>
               </div>
               <SyntaxHighlighter
                 language="css"
