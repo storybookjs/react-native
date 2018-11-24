@@ -14,23 +14,16 @@ let reactScriptsPath;
 export function getReactScriptsPath({ noCache } = {}) {
   if (reactScriptsPath && !noCache) return reactScriptsPath;
 
-  try {
-    const appDirectory = fs.realpathSync(process.cwd());
-    const reactScriptsScriptPath = fs.realpathSync(
-      path.join(appDirectory, '/node_modules/.bin/react-scripts')
-    );
+  const appDirectory = fs.realpathSync(process.cwd());
+  const reactScriptsScriptPath = fs.realpathSync(
+    path.join(appDirectory, '/node_modules/.bin/react-scripts')
+  );
 
-    reactScriptsPath = path.join(reactScriptsScriptPath, '../..');
-    const scriptsPkgJson = path.join(reactScriptsPath, 'package.json');
+  reactScriptsPath = path.join(reactScriptsScriptPath, '../..');
+  const scriptsPkgJson = path.join(reactScriptsPath, 'package.json');
 
-    // eslint-disable-next-line import/no-dynamic-require,global-require
-    require(scriptsPkgJson);
-  } catch {
+  if (!fs.existsSync(scriptsPkgJson)) {
     reactScriptsPath = 'react-scripts';
-    const scriptsPkgJson = path.join(reactScriptsPath, 'package.json');
-
-    // eslint-disable-next-line import/no-dynamic-require,global-require
-    require(scriptsPkgJson);
   }
 
   return reactScriptsPath;
@@ -39,8 +32,8 @@ export function getReactScriptsPath({ noCache } = {}) {
 export function isReactScriptsInstalled(requiredVersion = '2.0.0') {
   try {
     // eslint-disable-next-line import/no-dynamic-require,global-require
-    const { version } = require(path.join(getReactScriptsPath(), 'package.json'));
-    return !semver.lt(version, requiredVersion);
+    const reactScriptsJson = require(path.join(getReactScriptsPath(), 'package.json'));
+    return !semver.lt(reactScriptsJson.version, requiredVersion);
   } catch (e) {
     return false;
   }
