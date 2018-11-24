@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import fs from 'fs';
 import path from 'path';
 import semver from 'semver';
@@ -20,12 +21,22 @@ export function getReactScriptsPath({ noCache } = {}) {
   return reactScriptsPath;
 }
 
-export function isReactScriptsInstalled(requiredVersion = '2.0.0') {
+function getReactScriptsVersion() {
   try {
     // eslint-disable-next-line global-require, import/no-dynamic-require
-    const reactScriptsJson = require(path.join(getReactScriptsPath(), 'package.json'));
-    if (semver.lt(reactScriptsJson.version, requiredVersion)) return false;
-    return true;
+    const { version } = require(path.join(getReactScriptsPath(), 'package.json'));
+    return version;
+  } catch {
+    // eslint-disable-next-line global-require
+    const { version } = require('react-scripts/package.json');
+    return version;
+  }
+}
+
+export function isReactScriptsInstalled(requiredVersion = '2.0.0') {
+  try {
+    const version = getReactScriptsVersion();
+    return !semver.lt(version, requiredVersion);
   } catch (e) {
     return false;
   }
