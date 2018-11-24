@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import fs from 'fs';
 import path from 'path';
 import semver from 'semver';
@@ -11,31 +10,36 @@ const cssModuleExtensions = ['.module.css', '.module.scss', '.module.sass'];
 const typeScriptExtensions = ['.ts', '.tsx'];
 
 let reactScriptsPath;
+
 export function getReactScriptsPath({ noCache } = {}) {
   if (reactScriptsPath && !noCache) return reactScriptsPath;
-  const appDirectory = fs.realpathSync(process.cwd());
-  const reactScriptsScriptPath = fs.realpathSync(
-    path.join(appDirectory, '/node_modules/.bin/react-scripts')
-  );
-  reactScriptsPath = path.join(reactScriptsScriptPath, '../..');
-  return reactScriptsPath;
-}
 
-function getReactScriptsVersion() {
   try {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    const { version } = require(path.join(getReactScriptsPath(), 'package.json'));
-    return version;
+    const appDirectory = fs.realpathSync(process.cwd());
+    const reactScriptsScriptPath = fs.realpathSync(
+      path.join(appDirectory, '/node_modules/.bin/react-scripts')
+    );
+
+    reactScriptsPath = path.join(reactScriptsScriptPath, '../..');
+    const scriptsPkgJson = path.join(reactScriptsPath, 'package.json');
+
+    // eslint-disable-next-line import/no-dynamic-require,global-require
+    require(scriptsPkgJson);
   } catch {
-    // eslint-disable-next-line global-require
-    const { version } = require('react-scripts/package.json');
-    return version;
+    reactScriptsPath = 'react-scripts';
+    const scriptsPkgJson = path.join(reactScriptsPath, 'package.json');
+
+    // eslint-disable-next-line import/no-dynamic-require,global-require
+    require(scriptsPkgJson);
   }
+
+  return reactScriptsPath;
 }
 
 export function isReactScriptsInstalled(requiredVersion = '2.0.0') {
   try {
-    const version = getReactScriptsVersion();
+    // eslint-disable-next-line import/no-dynamic-require,global-require
+    const { version } = require(path.join(getReactScriptsPath(), 'package.json'));
     return !semver.lt(version, requiredVersion);
   } catch (e) {
     return false;
@@ -68,13 +72,13 @@ const getStyleRules = getRules(cssExtensions.concat(cssModuleExtensions));
 const getTypeScriptRules = getRules(typeScriptExtensions);
 
 export function getCraWebpackConfig(mode) {
-  if (mode === 'production') {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    return require(path.join(getReactScriptsPath(), 'config/webpack.config.prod'));
-  }
+  const craWebpackConfig =
+    mode === 'production' ? 'config/webpack.config.prod' : 'config/webpack.config.dev';
 
-  // eslint-disable-next-line global-require, import/no-dynamic-require
-  return require(path.join(getReactScriptsPath(), 'config/webpack.config.dev'));
+  const pathToWebpackConfig = path.join(getReactScriptsPath(), craWebpackConfig);
+
+  // eslint-disable-next-line import/no-dynamic-require,global-require
+  return require(pathToWebpackConfig);
 }
 
 export function applyCRAWebpackConfig(baseConfig) {
