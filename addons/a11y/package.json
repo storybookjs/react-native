@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-a11y",
-  "version": "4.0.8",
+  "version": "4.0.9",
   "description": "a11y addon for storybook",
   "keywords": [
     "a11y",
@@ -29,9 +29,9 @@
   },
   "dependencies": {
     "@emotion/styled": "^0.10.6",
-    "@storybook/addons": "4.0.8",
+    "@storybook/addons": "4.0.9",
     "@storybook/client-logger": "4.0.8",
-    "@storybook/components": "4.0.8",
+    "@storybook/components": "4.0.9",
     "@storybook/core-events": "4.0.8",
     "axe-core": "^3.1.2",
     "global": "^4.3.2",
