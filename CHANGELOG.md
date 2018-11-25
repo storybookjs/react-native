@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 4.1.0-alpha.10 (December 1, 2018)
 
 ### Maintenance
@@ -59,6 +60,15 @@ Publish failed
 ### Bug Fixes
 
 * Use correct cache directory path ([#4792](https://github.com/storybooks/storybook/pull/4792))
+=======
+## 4.0.9 (November 26, 2018)
+
+### Bug Fixes
+
+* Core: Use correct cache directory path ([#4792](https://github.com/storybooks/storybook/pull/4792))
+* Addon-Info: fix docgen description display ([#4685](https://github.com/storybooks/storybook/pull/4685))
+* Addon-storyshots-puppeteer: fix peerDependencies ([#4828](https://github.com/storybooks/storybook/pull/4828))
+>>>>>>> 33a4355a6... 4.0.9 changelog
 
 ## 4.0.8 (November 21, 2018)
 
