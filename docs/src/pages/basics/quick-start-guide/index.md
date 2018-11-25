@@ -1,6 +1,6 @@
 ---
-id: "quick-start-guide"
-title: "Quick Start Guide"
+id: 'quick-start-guide'
+title: 'Quick Start Guide'
 ---
 
 Storybook supports many different frontend view layers with more coming!
@@ -43,5 +43,6 @@ To learn more about what the Storybook CLI command `sb init` command does, have 
 - [Svelte](/basics/guide-svelte/)
 - [Ember](/basics/guide-ember/)
 - [Riot](/basics/guide-riot/)
+- [Preact](/basics/guide-preact/)
 
 A tutorial is also available at [Learn Storybook](https://www.learnstorybook.com) for a step-by-step guide (only available for React).

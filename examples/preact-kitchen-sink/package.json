@@ -1,0 +1,36 @@
+{
+  "name": "preact-example",
+  "version": "4.1.0-alpha.3",
+  "private": true,
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build-storybook": "build-storybook -s public",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "storybook": "start-storybook -p 9009 -s public"
+  },
+  "dependencies": {
+    "preact": "^8.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@storybook/addon-actions": "4.1.0-alpha.7",
+    "@storybook/addon-backgrounds": "4.1.0-alpha.7",
+    "@storybook/addon-centered": "4.1.0-alpha.7",
+    "@storybook/addon-knobs": "4.1.0-alpha.7",
+    "@storybook/addon-links": "4.1.0-alpha.7",
+    "@storybook/addon-notes": "4.1.0-alpha.7",
+    "@storybook/addon-options": "4.1.0-alpha.7",
+    "@storybook/addon-storyshots": "4.1.0-alpha.7",
+    "@storybook/addon-storysource": "4.1.0-alpha.7",
+    "@storybook/addon-viewport": "4.1.0-alpha.7",
+    "@storybook/addons": "4.1.0-alpha.7",
+    "@storybook/preact": "4.1.0-alpha.7",
+    "babel-loader": "^8.0.4",
+    "cross-env": "^5.2.0",
+    "file-loader": "^2.0.0",
+    "raw-loader": "^0.5.1",
+    "svg-url-loader": "^2.3.2",
+    "webpack": "^4.23.1",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
