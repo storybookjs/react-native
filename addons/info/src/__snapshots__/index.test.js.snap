@@ -3039,7 +3039,7 @@ exports[`addon Info should render component description 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3084,7 +3084,7 @@ exports[`addon Info should render component description 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
@@ -3111,7 +3111,7 @@ exports[`addon Info should render component description 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3139,7 +3139,7 @@ exports[`addon Info should render component description 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3167,7 +3167,7 @@ exports[`addon Info should render component description 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3215,7 +3215,7 @@ exports[`addon Info should render component description 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3349,7 +3349,7 @@ exports[`addon Info should render component description 1`] = `
                                                   "color": "#a11",
                                                 },
                                                 "empty": Object {
-                                                  "color": "#777",
+                                                  "color": "#444",
                                                 },
                                                 "func": Object {
                                                   "color": "#170",
@@ -3410,7 +3410,7 @@ exports[`addon Info should render component description 1`] = `
                                                       "color": "#a11",
                                                     },
                                                     "empty": Object {
-                                                      "color": "#777",
+                                                      "color": "#444",
                                                     },
                                                     "func": Object {
                                                       "color": "#170",
@@ -3475,7 +3475,7 @@ exports[`addon Info should render component description 1`] = `
                                                       "color": "#a11",
                                                     },
                                                     "empty": Object {
-                                                      "color": "#777",
+                                                      "color": "#444",
                                                     },
                                                     "func": Object {
                                                       "color": "#170",
@@ -3570,7 +3570,7 @@ exports[`addon Info should render component description 1`] = `
                                                   "color": "#a11",
                                                 },
                                                 "empty": Object {
-                                                  "color": "#777",
+                                                  "color": "#444",
                                                 },
                                                 "func": Object {
                                                   "color": "#170",
@@ -3619,7 +3619,7 @@ exports[`addon Info should render component description 1`] = `
                                                         "color": "#a11",
                                                       },
                                                       "empty": Object {
-                                                        "color": "#777",
+                                                        "color": "#444",
                                                       },
                                                       "func": Object {
                                                         "color": "#170",
@@ -3672,7 +3672,7 @@ exports[`addon Info should render component description 1`] = `
                                                         "color": "#a11",
                                                       },
                                                       "empty": Object {
-                                                        "color": "#777",
+                                                        "color": "#444",
                                                       },
                                                       "func": Object {
                                                         "color": "#170",
@@ -3725,7 +3725,7 @@ exports[`addon Info should render component description 1`] = `
                                                         "color": "#a11",
                                                       },
                                                       "empty": Object {
-                                                        "color": "#777",
+                                                        "color": "#444",
                                                       },
                                                       "func": Object {
                                                         "color": "#170",
@@ -3866,7 +3866,7 @@ exports[`addon Info should render component description 1`] = `
                               <span
                                 style={
                                   Object {
-                                    "color": "#777",
+                                    "color": "#444",
                                   }
                                 }
                               >
@@ -3885,7 +3885,7 @@ exports[`addon Info should render component description 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#777",
+                                  "color": "#444",
                                 }
                               }
                             >
