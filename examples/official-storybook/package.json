@@ -20,6 +20,7 @@
     "@storybook/addon-actions": "4.1.0-alpha.8",
     "@storybook/addon-backgrounds": "4.1.0-alpha.8",
     "@storybook/addon-centered": "4.1.0-alpha.8",
+    "@storybook/addon-cssresources": "4.1.0-alpha.8",
     "@storybook/addon-events": "4.1.0-alpha.8",
     "@storybook/addon-graphql": "4.1.0-alpha.8",
     "@storybook/addon-info": "4.1.0-alpha.8",
