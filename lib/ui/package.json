@@ -6,9 +6,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/ui",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -20,8 +17,8 @@
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js",
-    "dll": "node -r esm ./dll/script.js"
+    "dll": "node -r esm ./scripts/script.js",
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@emotion/core": "^0.13.1",
@@ -45,8 +42,14 @@
     "react-modal": "^3.6.1",
     "react-treebeard": "^3.1.0"
   },
+  "devDependencies": {
+    "webpack": "^4.23.1"
+  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
