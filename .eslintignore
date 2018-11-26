@@ -1,5 +1,5 @@
 dist
-lib/ui/dll
+lib/**/dll
 build
 coverage
 node_modules
