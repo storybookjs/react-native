@@ -10,22 +10,30 @@ const cssModuleExtensions = ['.module.css', '.module.scss', '.module.sass'];
 const typeScriptExtensions = ['.ts', '.tsx'];
 
 let reactScriptsPath;
+
 export function getReactScriptsPath({ noCache } = {}) {
   if (reactScriptsPath && !noCache) return reactScriptsPath;
+
   const appDirectory = fs.realpathSync(process.cwd());
   const reactScriptsScriptPath = fs.realpathSync(
     path.join(appDirectory, '/node_modules/.bin/react-scripts')
   );
+
   reactScriptsPath = path.join(reactScriptsScriptPath, '../..');
+  const scriptsPkgJson = path.join(reactScriptsPath, 'package.json');
+
+  if (!fs.existsSync(scriptsPkgJson)) {
+    reactScriptsPath = 'react-scripts';
+  }
+
   return reactScriptsPath;
 }
 
 export function isReactScriptsInstalled(requiredVersion = '2.0.0') {
   try {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
+    // eslint-disable-next-line import/no-dynamic-require,global-require
     const reactScriptsJson = require(path.join(getReactScriptsPath(), 'package.json'));
-    if (semver.lt(reactScriptsJson.version, requiredVersion)) return false;
-    return true;
+    return !semver.lt(reactScriptsJson.version, requiredVersion);
   } catch (e) {
     return false;
   }
@@ -57,13 +65,25 @@ const getStyleRules = getRules(cssExtensions.concat(cssModuleExtensions));
 const getTypeScriptRules = getRules(typeScriptExtensions);
 
 export function getCraWebpackConfig(mode) {
-  if (mode === 'production') {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    return require(path.join(getReactScriptsPath(), 'config/webpack.config.prod'));
+  const pathToReactScripts = getReactScriptsPath();
+
+  const craWebpackConfig =
+    mode === 'production' ? 'config/webpack.config.prod' : 'config/webpack.config.dev';
+
+  let pathToWebpackConfig = require.resolve(path.join(pathToReactScripts, craWebpackConfig));
+
+  if (!fs.existsSync(pathToWebpackConfig)) {
+    pathToWebpackConfig = path.join(pathToReactScripts, 'config/webpack.config');
   }
 
-  // eslint-disable-next-line global-require, import/no-dynamic-require
-  return require(path.join(getReactScriptsPath(), 'config/webpack.config.dev'));
+  // eslint-disable-next-line import/no-dynamic-require,global-require
+  const webpackConfig = require(pathToWebpackConfig);
+
+  if (typeof webpackConfig === 'function') {
+    return webpackConfig(mode);
+  }
+
+  return webpackConfig;
 }
 
 export function applyCRAWebpackConfig(baseConfig) {
