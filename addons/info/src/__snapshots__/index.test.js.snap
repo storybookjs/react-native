@@ -2880,6 +2880,7 @@ exports[`addon Info should render component description 1`] = `
         </div>
       </div>
       <div
+        id="story-root"
         style={Object {}}
       >
         <div>
