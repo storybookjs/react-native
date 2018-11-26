@@ -68,6 +68,7 @@
     "babel-plugin-emotion": "^9.2.11",
     "babel-plugin-macros": "^2.4.2",
     "babel-plugin-require-context-hook": "^1.0.0",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-preset-vue": "^2.0.2",
     "chalk": "^2.4.1",
     "codecov": "^3.1.0",
