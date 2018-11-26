@@ -20,7 +20,7 @@
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js && yarn dll",
+    "prepare": "node ../../scripts/prepare.js",
     "dll": "node -r esm ./dll/script.js"
   },
   "dependencies": {

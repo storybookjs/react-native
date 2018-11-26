@@ -81,6 +81,8 @@ const tasks = {
       spawn('yarn install');
       log.info(prefix, 'prepare');
       spawn('lerna run prepare -- --silent');
+      log.info(prefix, 'dll');
+      spawn('lerna run dll --scope "@storybook/ui"');
     },
   }),
   docs: createTask({
