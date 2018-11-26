@@ -1,8 +1,9 @@
 import fs from 'fs';
-import { getReactScriptsPath } from '../cra-config';
+import { getReactScriptsPath } from './cra-config';
 
 jest.mock('fs', () => ({
   realpathSync: jest.fn(),
+  existsSync: () => true,
 }));
 jest.mock('mini-css-extract-plugin', () => {});
 

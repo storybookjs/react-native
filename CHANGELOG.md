@@ -1,3 +1,19 @@
+## 4.1.0-alpha.8 (November 25, 2018)
+
+### Features
+
+* React: use babel presets/plugins based on CRA. ([#4836](https://github.com/storybooks/storybook/pull/4836))
+* React-native: Add ability to filter story list ([#4806](https://github.com/storybooks/storybook/pull/4806))
+
+### Bug Fixes
+
+* Core: Don't mangle production build ([#4838](https://github.com/storybooks/storybook/pull/4838))
+* HTML: Don't change rootElement when received node is the same ([#4822](https://github.com/storybooks/storybook/pull/4822))
+
+### Maintenance
+
+* Fix snapshots to use "emotion/snapshot-serializer" ([#4837](https://github.com/storybooks/storybook/pull/4837))
+
 ## 4.1.0-alpha.7 (November 22, 2018)
 
 ### Features
