@@ -111,7 +111,14 @@ export default class OnDeviceUI extends PureComponent {
   };
 
   render() {
-    const { stories, events, url, isUIHidden, shouldDisableKeyboardAvoidingView } = this.props;
+    const {
+      stories,
+      events,
+      url,
+      isUIHidden,
+      shouldDisableKeyboardAvoidingView,
+      keyboardAvoidingViewVerticalOffset,
+    } = this.props;
     const {
       tabOpen,
       slideBetweenAnimation,
@@ -137,6 +144,7 @@ export default class OnDeviceUI extends PureComponent {
         <KeyboardAvoidingView
           enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
           behavior={IS_IOS ? 'padding' : null}
+          keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
           style={style.flex}
         >
           <AbsolutePositionedKeyboardAwareView
@@ -200,6 +208,7 @@ OnDeviceUI.propTypes = {
     storyFn: PropTypes.func.isRequired,
   }),
   shouldDisableKeyboardAvoidingView: PropTypes.bool,
+  keyboardAvoidingViewVerticalOffset: PropTypes.number,
 };
 
 OnDeviceUI.defaultProps = {
@@ -208,4 +217,5 @@ OnDeviceUI.defaultProps = {
   isUIHidden: false,
   initialStory: null,
   shouldDisableKeyboardAvoidingView: false,
+  keyboardAvoidingViewVerticalOffset: 0,
 };
