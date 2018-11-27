@@ -40,8 +40,8 @@ export default class OnDeviceUI extends PureComponent {
     this.state = {
       tabOpen,
       slideBetweenAnimation: false,
-      selection: props.initialStory || {},
-      storyFn: props.initialStory ? props.initialStory.storyFn : null,
+      selection: {},
+      storyFn: null,
       previewWidth: 0,
       previewHeight: 0,
     };
@@ -50,8 +50,18 @@ export default class OnDeviceUI extends PureComponent {
     this.forceRender = this.forceUpdate.bind(this);
   }
 
-  componentWillMount() {
-    const { events } = this.props;
+  async componentWillMount() {
+    const { events, getInitialStory } = this.props;
+
+    if (getInitialStory) {
+      const story = await getInitialStory();
+
+      this.setState({
+        selection: story || {},
+        storyFn: story ? story.storyFn : null,
+      });
+    }
+
     events.on(Events.SELECT_STORY, this.handleStoryChange);
     events.on(Events.FORCE_RE_RENDER, this.forceRender);
   }
@@ -202,11 +212,7 @@ OnDeviceUI.propTypes = {
   url: PropTypes.string,
   tabOpen: PropTypes.number,
   isUIHidden: PropTypes.bool,
-  initialStory: PropTypes.shape({
-    story: PropTypes.string.isRequired,
-    kind: PropTypes.string.isRequired,
-    storyFn: PropTypes.func.isRequired,
-  }),
+  getInitialStory: PropTypes.func,
   shouldDisableKeyboardAvoidingView: PropTypes.bool,
   keyboardAvoidingViewVerticalOffset: PropTypes.number,
 };
@@ -215,7 +221,7 @@ OnDeviceUI.defaultProps = {
   url: '',
   tabOpen: 0,
   isUIHidden: false,
-  initialStory: null,
+  getInitialStory: null,
   shouldDisableKeyboardAvoidingView: false,
   keyboardAvoidingViewVerticalOffset: 0,
 };
