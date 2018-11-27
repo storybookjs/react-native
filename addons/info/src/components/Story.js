@@ -117,7 +117,11 @@ class Story extends Component {
     const { stylesheet } = this.state;
     const { children } = this.props;
 
-    return <div style={stylesheet.infoStory}>{children}</div>;
+    return (
+      <div id="story-root" style={stylesheet.infoStory}>
+        {children}
+      </div>
+    );
   }
 
   _renderInline() {
@@ -250,7 +254,7 @@ class Story extends Component {
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
-        if (STORYBOOK_REACT_CLASSES[key].name === context.story) {
+        if (STORYBOOK_REACT_CLASSES[key].name === context.kind) {
           retDiv = <div>{STORYBOOK_REACT_CLASSES[key].docgenInfo.description}</div>;
         }
       });
@@ -350,7 +354,7 @@ class Story extends Component {
     extract(children);
 
     const array = Array.from(types.keys());
-    array.sort((a, b) => getName(a) > getName(b));
+    array.sort((a, b) => (getName(a) > getName(b) ? 1 : -1));
 
     propTables = array.map((type, i) => (
       // eslint-disable-next-line react/no-array-index-key

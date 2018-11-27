@@ -21,6 +21,7 @@ module.exports = async (baseConfig, env, defaultConfig) => ({
         test: /\.js/,
         use: defaultConfig.module.rules[0].use,
         include: [
+          path.resolve(__dirname, '../../app/react'),
           path.resolve(__dirname, '../../lib/ui/src'),
           path.resolve(__dirname, '../../lib/components/src'),
         ],

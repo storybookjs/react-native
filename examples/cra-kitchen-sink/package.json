@@ -1,6 +1,6 @@
 {
   "name": "cra-kitchen-sink",
-  "version": "4.0.0-rc.1",
+  "version": "4.1.0-alpha.8",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
@@ -13,30 +13,31 @@
   "dependencies": {
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-lifecycles-compat": "^3.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "4.0.0-rc.1",
-    "@storybook/addon-actions": "4.0.0-rc.1",
-    "@storybook/addon-backgrounds": "4.0.0-rc.1",
-    "@storybook/addon-centered": "4.0.0-rc.1",
-    "@storybook/addon-events": "4.0.0-rc.1",
-    "@storybook/addon-info": "4.0.0-rc.1",
-    "@storybook/addon-jest": "4.0.0-rc.1",
-    "@storybook/addon-knobs": "4.0.0-rc.1",
-    "@storybook/addon-links": "4.0.0-rc.1",
-    "@storybook/addon-notes": "4.0.0-rc.1",
-    "@storybook/addon-options": "4.0.0-rc.1",
-    "@storybook/addon-storyshots": "4.0.0-rc.1",
-    "@storybook/addons": "4.0.0-rc.1",
-    "@storybook/client-logger": "4.0.0-rc.1",
-    "@storybook/react": "4.0.0-rc.1",
+    "@emotion/snapshot-serializer": "^0.8.2",
+    "@storybook/addon-a11y": "4.1.0-alpha.8",
+    "@storybook/addon-actions": "4.1.0-alpha.8",
+    "@storybook/addon-backgrounds": "4.1.0-alpha.8",
+    "@storybook/addon-centered": "4.1.0-alpha.8",
+    "@storybook/addon-events": "4.1.0-alpha.8",
+    "@storybook/addon-info": "4.1.0-alpha.8",
+    "@storybook/addon-jest": "4.1.0-alpha.8",
+    "@storybook/addon-knobs": "4.1.0-alpha.8",
+    "@storybook/addon-links": "4.1.0-alpha.8",
+    "@storybook/addon-notes": "4.1.0-alpha.8",
+    "@storybook/addon-options": "4.1.0-alpha.8",
+    "@storybook/addon-storyshots": "4.1.0-alpha.8",
+    "@storybook/addons": "4.1.0-alpha.8",
+    "@storybook/client-logger": "4.1.0-alpha.8",
+    "@storybook/react": "4.1.0-alpha.8",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
     "jest": "^23.6.0",
-    "react-scripts": "^2.0.5"
+    "react-scripts": "^2.1.0"
   }
 }

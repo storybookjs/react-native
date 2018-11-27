@@ -2,12 +2,12 @@
   "name": "crna-kitchen-sink",
   "version": "0.1.0",
   "private": true,
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "android": "react-native-scripts android",
-    "eject": "react-native-scripts eject",
-    "ios": "react-native-scripts ios",
-    "start": "react-native-scripts start",
+    "android": "expo start --android",
+    "eject": "expo eject",
+    "ios": "expo start --ios",
+    "start": "expo start",
     "storybook": "storybook start",
     "test": "node node_modules/jest/bin/jest.js --watch"
   },
@@ -15,10 +15,11 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^24.0.2",
-    "prop-types": "^15.6.0",
+    "expo": "^31.0.4",
+    "prop-types": "^15.6.2",
     "react": "^16.2.0",
-    "react-native": "^0.51.0"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
@@ -40,9 +41,8 @@
     "@storybook/addon-ondevice-knobs": "file:../../packs/storybook-addon-ondevice-knobs.tgz",
     "@storybook/addon-ondevice-notes": "file:../../packs/storybook-addon-ondevice-notes.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
-    "jest-expo": "^24.0.0",
+    "jest-expo": "^31.0.0",
     "react-dom": "^16.2.0",
-    "react-native-scripts": "^1.8.1",
-    "react-test-renderer": "~16.2.0"
+    "react-test-renderer": "^16.6.0"
   }
 }

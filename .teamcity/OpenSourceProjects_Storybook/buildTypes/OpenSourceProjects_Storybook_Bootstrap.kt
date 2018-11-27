@@ -46,6 +46,7 @@ object OpenSourceProjects_Storybook_Bootstrap : BuildType({
                 +:pull/*
                 +:release/*
                 +:master
+                +:next
                 +:snyk-fix-*
             """.trimIndent()
             enabled = false

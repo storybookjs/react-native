@@ -37,50 +37,20 @@ npm init
 
 Then add the following NPM script to your package json in order to start the storybook later in this guide:
 
-> In order for your storybook to run properly be sure to be either run `ember serve` or `ember build` before running any storybook commands.
+> In order for your storybook to run properly be sure to be either run `ember serve` or `ember build` before running any storybook commands. Running `ember serve` before storybook will enable live reloading.
 
 ```json
 {
   "scripts": {
-    "storybook": "start-storybook -p 9001 -s dist"
+    "build-storybook": "ember build && build-storybook -p 9001 -s dist",
+    "storybook": "ember serve & start-storybook -p 9001 -s dist"
   }
 }
 ```
 
 ## Setup environment
 
-### Adding preview-head.html
-
-In order for storybook to register your ember application you must add the following file to `.storybook/preview-head.html`
-
-> These scripts may not contain everything you need, a good point of reference is to look at what is in the head tag in your applications `dist/index.html` file when you build.
-
-```
-<meta name="{ember-app-name}/config/environment" content="%7B%22modulePrefix%22%3A%22{ember-app-name}%22%2C%22environment%22%3A%22test%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22{ember-app-name}%22%2C%22version%22%3A%224.0.0-alpha.23+4f61a2fb%22%7D%7D" />
-
-<link integrity="" rel="stylesheet" href="./assets/vendor.css">
-<link integrity="" rel="stylesheet" href="./assets/{ember-app-name}.css">
-
-<script src="./assets/vendor.js"></script>
-<script>
-  runningTests = true;
-</script>
-<script src="./assets/{ember-app-name}.js"></script>
-```
-
-> Adding the runningTests script is extremely important don't forget to add this as it will result in your application binding multiple times.
-
-Substitute `ember-app-name` with the name of your ember application.
-
-> This is found by going to `package.json` and referencing the name field
-
-### Adding .env
-
-A file named `.env` is needed in the root directory with the following contents:
-
-```
-STORYBOOK_NAME={ember-app-name}
-```
+Your environment will be preconfigured using `ember-cli-storybook`. This will add a `preview-head.html`, a `.env` and make sure that your environment is configured to work with live reload.
 
 ## Create the config file
 
@@ -120,10 +90,10 @@ storiesOf('Demo', module)
     return {
       template: hbs`<button {{action onClick}}>
         Hello Button
-      </button>`
-    },
-    context: {
-      onClick: (e) => console.log(e)
+      </button>`,
+      context: {
+        onClick: (e) => console.log(e)
+      }
     }
   })
   .add('component', () => {
