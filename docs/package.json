@@ -19,8 +19,8 @@
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^4.0.8",
-    "@storybook/addon-links": "^4.0.7",
+    "@storybook/addon-actions": "^4.0.9",
+    "@storybook/addon-links": "^4.0.9",
     "@storybook/addons": "^3.4.11",
     "@storybook/react": "^3.4.11",
     "babel-loader": "^6.4.1",
@@ -47,7 +47,7 @@
     "react-router": "^4.3.1",
     "react-stack-grid": "^0.7.1",
     "sitemap": "^2.1.0",
-    "snyk": "^1.109.0"
+    "snyk": "^1.110.2"
   },
   "snyk": true
 }
