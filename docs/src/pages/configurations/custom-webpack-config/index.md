@@ -6,7 +6,7 @@ title: 'Custom Webpack Config'
 ## Default mode
 
 
-That's why we allow you to customize our webpack setup by providing a `webpack.config.js` file exporting a **webpack 2** compatible config exported as a **commonjs module**.
+That's why we allow you to customize our webpack setup by providing a `webpack.config.js` file exporting a **webpack 4** compatible config exported as a **commonjs module**.
 
 There are a few ways to do it:
 

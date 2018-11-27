@@ -1,22 +1,28 @@
 # Migration
 
-## Table of contents
-
 - [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
-  - [React 16.3](#react-163)
+  - [React 16.3+](#react-163)
+  - [Generic addons](#generic-addons)
+  - [Knobs select ordering](#knobs-select-ordering)
+  - [Knobs URL parameters](#knobs-url-parameters)
   - [Keyboard shortcuts moved](#keyboard-shortcuts-moved)
-  - [Removed addWithInfo](#removed-add-with-info)
+  - [Removed addWithInfo](#removed-addwithinfo)
   - [Removed RN packager](#removed-rn-packager)
   - [Removed RN addons](#removed-rn-addons)
-  - [Storyshots changes](#storyshots-changes)
+  - [Storyshots Changes](#storyshots-changes)
   - [Webpack 4](#webpack-4)
   - [Babel 7](#babel-7)
   - [Create-react-app](#create-react-app)
-  - [CLI rename](#cli-rename)
+    - [Upgrade CRA1 to babel 7](#upgrade-cra1-to-babel-7)
+    - [Migrate CRA1 while keeping babel 6](#migrate-cra1-while-keeping-babel-6)
+  - [start-storybook opens browser](#start-storybook-opens-browser)
+  - [CLI Rename](#cli-rename)
+  - [Addon story parameters](#addon-story-parameters)
 - [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
 - [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
+  - [`babel-core` is now a peer dependency (#2494)](#babel-core-is-now-a-peer-dependency-2494)
+  - [Base webpack config now contains vital plugins (#1775)](#base-webpack-config-now-contains-vital-plugins-1775)
   - [Refactored Knobs](#refactored-knobs)
-  - [Storyshots Jest configuration](#storyshots-jest-configuration)
 - [From version 3.1.x to 3.2.x](#from-version-31x-to-32x)
   - [Moved TypeScript addons definitions](#moved-typescript-addons-definitions)
   - [Updated Addons API](#updated-addons-api)
@@ -164,7 +170,7 @@ Also make sure you have a `.babelrc` in your project directory. You probably alr
 }
 ```
 
-### start-storybook opens browser automatically
+### start-storybook opens browser
 
 If you're using `start-storybook` on CI, you may need to opt out of this using the new `--ci` flag.
 
@@ -173,8 +179,41 @@ If you're using `start-storybook` on CI, you may need to opt out of this using t
 We've deprecated the `getstorybook` CLI in 4.0. The new way to install storybook is `sb init`. We recommend using `npx` for convenience and to make sure you're always using the latest version of the CLI:
 
 ```
-npx -p @storybook/cli@rc sb init
+npx -p @storybook/cli sb init
 ```
+
+### Addon story parameters
+
+Storybook 4 introduces story parameters, a more convenient way to configure how addons are configured.
+
+```js
+storiesOf('My component', module)
+  .add('story1', withNotes('some notes')(() => <Component ... />))
+  .add('story2', withNotes('other notes')(() => <Component ... />));
+```
+
+Becomes:
+
+```js
+// config.js
+addDecorator(withNotes);
+
+// Component.stories.js
+storiesOf('My component', module)
+  .add('story1', () => <Component ... />, { notes: 'some notes' })
+  .add('story2', () => <Component ... />, { notes: 'other notes' });
+```
+
+This example applies notes globally to all stories. You can apply it locally with `storiesOf(...).addDecorator(withNotes)`.
+
+The story parameters correspond directly to the old withX arguments, so it's easy to migrate your code. See the parameters documentation for the packages that have been upgraded:
+
+- [Notes](https://github.com/storybooks/storybook/blob/master/addons/notes/README.md)
+- [Jest](https://github.com/storybooks/storybook/blob/master/addons/jest/README.md)
+- [Knobs](https://github.com/storybooks/storybook/blob/master/addons/knobs/README.md)
+- [Viewport](https://github.com/storybooks/storybook/blob/master/addons/viewport/README.md)
+- [Backgrounds](https://github.com/storybooks/storybook/blob/master/addons/backgrounds/README.md)
+- [Options](https://github.com/storybooks/storybook/blob/master/addons/options/README.md)
 
 ## From version 3.3.x to 3.4.x
 
@@ -288,13 +327,10 @@ All our packages have been renamed and published to npm as version 3.0.0 under t
 To update your app to use the new package names, you can use the cli:
 
 ```bash
-npm install --global @storybook/cli
-
-# if you run this inside a v2 app, it should perform the necessary codemods.
-storybook init
+npx -p @storybook/cli sb init
 ```
 
-#### Details
+**Details**
 
 If the above doesn't work, or you want to make the changes manually, the details are below:
 
