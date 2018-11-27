@@ -7,17 +7,28 @@ Storybook's manager UI is theme-able! You can change theme variables using [addo
 
 ## Set a theme
 
-You can do this in an decorator, addon or in `config.js`. Changing theme at runtime is supported!
+You can do this in an decorator, addon or in `.storybook/config.js`. Changing theme at runtime is supported!
 
+First, create or modify `.storybook/addons.js` to include registering addon-options:  
 ```js
-import { setOptions } from '@storybook/addon-options';
+import '@storybook/addon-options/register';
+```
 
-setOptions({
-  theme: {},
+Then, modify `.storybook/config.js` to include your new options:  
+```js
+import { addDecorator, configure } from '@storybook/react';
+import { withOptions } from '@storybook/addon-options';
+
+addDecorator(
+  withOptions({
+    theme: {},
+  })
 });
 ```
 
 When setting a theme, set a full theme object, the theme is replaced, not combined.
+
+See more addon options at https://github.com/storybooks/storybook/tree/master/addons/options
 
 ## Get a theme
 
@@ -26,7 +37,17 @@ We have created 2 themes for you: "normal" (a light theme) and "dark" (a dark th
 You can get these themes like so:
 
 ```js
+import { addDecorator, configure } from '@storybook/react';
+import { withOptions } from '@storybook/addon-options';
 import { themes } from '@storybook/components';
+
+// Option defaults.
+addDecorator(
+  withOptions({
+    name: 'Foo',
+    theme: themes.dark,
+  })
+);
 ```
 
 ## Theme variables
