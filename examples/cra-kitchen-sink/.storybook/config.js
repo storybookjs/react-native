@@ -1,18 +1,20 @@
-import { configure } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addDecorator } from '@storybook/react';
+import { withOptions } from '@storybook/addon-options';
 
-setOptions({
-  name: 'CRA Kitchen Sink',
-  url: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
-  goFullScreen: false,
-  showAddonsPanel: true,
-  showSearchBox: false,
-  addonPanelInRight: true,
-  sortStoriesByKind: false,
-  hierarchySeparator: /\./,
-  hierarchyRootSeparator: /\|/,
-  enableShortcuts: true,
-});
+addDecorator(
+  withOptions({
+    name: 'CRA Kitchen Sink',
+    url: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
+    goFullScreen: false,
+    showAddonsPanel: true,
+    showSearchBox: false,
+    addonPanelInRight: true,
+    sortStoriesByKind: false,
+    hierarchySeparator: /\./,
+    hierarchyRootSeparator: /\|/,
+    enableShortcuts: true,
+  })
+);
 
 function loadStories() {
   // put welcome screen at the top of the list so it's the first one displayed

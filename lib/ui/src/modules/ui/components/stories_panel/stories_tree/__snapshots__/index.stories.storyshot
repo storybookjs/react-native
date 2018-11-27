@@ -1,18 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|stories/Stories empty 1`] = `
+.emotion-1 {
+  position: relative;
+}
+
+.emotion-3 {
+  padding-top: 20px;
+}
+
+.emotion-2 {
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 15px;
+  min-width: 200px;
+  margin-left: -19px;
+}
+
+.emotion-0 {
+  padding-left: 19px;
+  list-style: none;
+}
+
 <div
-  class="css-7w6khc emockhz0"
+  class="emotion-3 emotion-4"
 >
   <ul
-    class="css-h3ek8a"
+    class="emotion-2"
   >
     <li
-      class="css-79elbk"
+      class="emotion-1"
     >
       <div>
         <ul
-          class="css-vq3qyb"
+          class="emotion-0"
         />
       </div>
     </li>
@@ -21,21 +45,86 @@ exports[`Storyshots UI|stories/Stories empty 1`] = `
 `;
 
 exports[`Storyshots UI|stories/Stories simple 1`] = `
+.emotion-2 {
+  position: relative;
+}
+
+.emotion-20 {
+  padding-top: 20px;
+}
+
+.emotion-19 {
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 15px;
+  min-width: 200px;
+  margin-left: -19px;
+}
+
+.emotion-15 {
+  padding-left: 19px;
+  list-style: none;
+}
+
+.emotion-1 {
+  display: inline-block;
+  vertical-align: top;
+  max-width: calc(100% - 24px);
+}
+
+.emotion-0 {
+  line-height: 18px;
+  padding: 1px 0 5px;
+}
+
+.emotion-12 {
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 1px 5px 4px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 1;
+  color: inherit;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.07);
+  z-index: 0;
+}
+
+.emotion-7 {
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 1px 5px 4px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 1;
+}
+
 <div
-  class="css-7w6khc emockhz0"
+  class="emotion-20 emotion-21"
 >
   <ul
-    class="css-h3ek8a"
+    class="emotion-19"
   >
     <li
-      class="css-79elbk"
+      class="emotion-2"
     >
       <div>
         <ul
-          class="css-vq3qyb"
+          class="emotion-15"
         >
           <li
-            class="css-79elbk"
+            class="emotion-2"
           >
             <div
               data-name="a"
@@ -54,7 +143,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentcolor"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -67,10 +156,10 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-1si3szf"
+                  class="emotion-1"
                 >
                   <div
-                    class="css-h8sbw5"
+                    class="emotion-0"
                   >
                     a
                   </div>
@@ -80,7 +169,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
             <div />
           </li>
           <li
-            class="css-79elbk"
+            class="emotion-2"
           >
             <div
               data-name="b"
@@ -99,7 +188,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentcolor"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -112,10 +201,10 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-1si3szf"
+                  class="emotion-1"
                 >
                   <div
-                    class="css-h8sbw5"
+                    class="emotion-0"
                   >
                     b
                   </div>
@@ -124,21 +213,21 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
             </div>
             <div>
               <ul
-                class="css-vq3qyb"
+                class="emotion-15"
               >
                 <li
-                  class="css-79elbk"
+                  class="emotion-2"
                 >
                   <a
-                    class="css-1jhmhe9 e1s7lmdh0"
+                    class="emotion-7 emotion-8"
                     href="?selectedKind=b&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
                       <div
-                        class="css-1si3szf"
+                        class="emotion-1"
                       >
                         <div
-                          class="css-0"
+                          class="emotion-5"
                         >
                           b1
                         </div>
@@ -148,18 +237,18 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                   <div />
                 </li>
                 <li
-                  class="css-79elbk"
+                  class="emotion-2"
                 >
                   <a
-                    class="css-oato19 e1s7lmdh0"
+                    class="emotion-12 emotion-8"
                     href="?selectedKind=b&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
                       <div
-                        class="css-1si3szf"
+                        class="emotion-1"
                       >
                         <div
-                          class="css-0"
+                          class="emotion-5"
                         >
                           b2
                         </div>
@@ -179,21 +268,86 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
 `;
 
 exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is defined 1`] = `
+.emotion-2 {
+  position: relative;
+}
+
+.emotion-28 {
+  padding-top: 20px;
+}
+
+.emotion-27 {
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 15px;
+  min-width: 200px;
+  margin-left: -19px;
+}
+
+.emotion-19 {
+  padding-left: 19px;
+  list-style: none;
+}
+
+.emotion-1 {
+  display: inline-block;
+  vertical-align: top;
+  max-width: calc(100% - 24px);
+}
+
+.emotion-0 {
+  line-height: 18px;
+  padding: 1px 0 5px;
+}
+
+.emotion-16 {
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 1px 5px 4px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 1;
+  color: inherit;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.07);
+  z-index: 0;
+}
+
+.emotion-11 {
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 1px 5px 4px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 1;
+}
+
 <div
-  class="css-7w6khc emockhz0"
+  class="emotion-28 emotion-29"
 >
   <ul
-    class="css-h3ek8a"
+    class="emotion-27"
   >
     <li
-      class="css-79elbk"
+      class="emotion-2"
     >
       <div>
         <ul
-          class="css-vq3qyb"
+          class="emotion-19"
         >
           <li
-            class="css-79elbk"
+            class="emotion-2"
           >
             <div
               data-name="some"
@@ -212,7 +366,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentcolor"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -225,10 +379,10 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                   </div>
                 </div>
                 <div
-                  class="css-1si3szf"
+                  class="emotion-1"
                 >
                   <div
-                    class="css-h8sbw5"
+                    class="emotion-0"
                   >
                     some
                   </div>
@@ -238,7 +392,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
             <div />
           </li>
           <li
-            class="css-79elbk"
+            class="emotion-2"
           >
             <div
               data-name="another"
@@ -257,7 +411,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentcolor"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -270,10 +424,10 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                   </div>
                 </div>
                 <div
-                  class="css-1si3szf"
+                  class="emotion-1"
                 >
                   <div
-                    class="css-h8sbw5"
+                    class="emotion-0"
                   >
                     another
                   </div>
@@ -282,10 +436,10 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
             </div>
             <div>
               <ul
-                class="css-vq3qyb"
+                class="emotion-19"
               >
                 <li
-                  class="css-79elbk"
+                  class="emotion-2"
                 >
                   <div
                     data-name="space"
@@ -304,7 +458,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                             fill="currentColor"
                             height="10"
                             preserveAspectRatio="xMidYMid meet"
-                            style="vertical-align:top;fill:currentcolor"
+                            style="vertical-align:top;fill:currentColor"
                             viewBox="0 0 40 40"
                             width="10"
                           >
@@ -317,10 +471,10 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                         </div>
                       </div>
                       <div
-                        class="css-1si3szf"
+                        class="emotion-1"
                       >
                         <div
-                          class="css-h8sbw5"
+                          class="emotion-0"
                         >
                           space
                         </div>
@@ -329,10 +483,10 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                   </div>
                   <div>
                     <ul
-                      class="css-vq3qyb"
+                      class="emotion-19"
                     >
                       <li
-                        class="css-79elbk"
+                        class="emotion-2"
                       >
                         <div
                           data-name="20"
@@ -351,7 +505,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                                   fill="currentColor"
                                   height="10"
                                   preserveAspectRatio="xMidYMid meet"
-                                  style="vertical-align:top;fill:currentcolor"
+                                  style="vertical-align:top;fill:currentColor"
                                   viewBox="0 0 40 40"
                                   width="10"
                                 >
@@ -364,10 +518,10 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                               </div>
                             </div>
                             <div
-                              class="css-1si3szf"
+                              class="emotion-1"
                             >
                               <div
-                                class="css-h8sbw5"
+                                class="emotion-0"
                               >
                                 20
                               </div>
@@ -376,21 +530,21 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                         </div>
                         <div>
                           <ul
-                            class="css-vq3qyb"
+                            class="emotion-19"
                           >
                             <li
-                              class="css-79elbk"
+                              class="emotion-2"
                             >
                               <a
-                                class="css-1jhmhe9 e1s7lmdh0"
+                                class="emotion-11 emotion-12"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
                                   <div
-                                    class="css-1si3szf"
+                                    class="emotion-1"
                                   >
                                     <div
-                                      class="css-0"
+                                      class="emotion-9"
                                     >
                                       b1
                                     </div>
@@ -400,18 +554,18 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                               <div />
                             </li>
                             <li
-                              class="css-79elbk"
+                              class="emotion-2"
                             >
                               <a
-                                class="css-oato19 e1s7lmdh0"
+                                class="emotion-16 emotion-12"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
                                   <div
-                                    class="css-1si3szf"
+                                    class="emotion-1"
                                   >
                                     <div
-                                      class="css-0"
+                                      class="emotion-9"
                                     >
                                       b2
                                     </div>
@@ -437,21 +591,86 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
 `;
 
 exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is provided 1`] = `
+.emotion-10 {
+  position: relative;
+}
+
+.emotion-25 {
+  padding-top: 20px;
+}
+
+.emotion-24 {
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 15px;
+  min-width: 200px;
+  margin-left: -19px;
+}
+
+.emotion-16 {
+  padding-left: 19px;
+  list-style: none;
+}
+
+.emotion-1 {
+  display: inline-block;
+  vertical-align: top;
+  max-width: calc(100% - 24px);
+}
+
+.emotion-0 {
+  line-height: 18px;
+  padding: 1px 0 5px;
+}
+
+.emotion-13 {
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 1px 5px 4px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 1;
+  color: inherit;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.07);
+  z-index: 0;
+}
+
+.emotion-8 {
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 1px 5px 4px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 1;
+}
+
 <div
-  class="css-7w6khc emockhz0"
+  class="emotion-25 emotion-26"
 >
   <ul
-    class="css-h3ek8a"
+    class="emotion-24"
   >
     <li
-      class="css-79elbk"
+      class="emotion-10"
     >
       <div>
         <ul
-          class="css-vq3qyb"
+          class="emotion-16"
         >
           <li
-            class="css-79elbk"
+            class="emotion-10"
           >
             <div
               data-name="another"
@@ -470,7 +689,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentcolor"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -483,10 +702,10 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                   </div>
                 </div>
                 <div
-                  class="css-1si3szf"
+                  class="emotion-1"
                 >
                   <div
-                    class="css-h8sbw5"
+                    class="emotion-0"
                   >
                     <span>
                       ano
@@ -505,10 +724,10 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
             </div>
             <div>
               <ul
-                class="css-vq3qyb"
+                class="emotion-16"
               >
                 <li
-                  class="css-79elbk"
+                  class="emotion-10"
                 >
                   <div
                     data-name="space"
@@ -527,7 +746,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                             fill="currentColor"
                             height="10"
                             preserveAspectRatio="xMidYMid meet"
-                            style="vertical-align:top;fill:currentcolor"
+                            style="vertical-align:top;fill:currentColor"
                             viewBox="0 0 40 40"
                             width="10"
                           >
@@ -540,10 +759,10 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                         </div>
                       </div>
                       <div
-                        class="css-1si3szf"
+                        class="emotion-1"
                       >
                         <div
-                          class="css-h8sbw5"
+                          class="emotion-0"
                         >
                           space
                         </div>
@@ -552,10 +771,10 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                   </div>
                   <div>
                     <ul
-                      class="css-vq3qyb"
+                      class="emotion-16"
                     >
                       <li
-                        class="css-79elbk"
+                        class="emotion-10"
                       >
                         <div
                           data-name="20"
@@ -574,7 +793,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                                   fill="currentColor"
                                   height="10"
                                   preserveAspectRatio="xMidYMid meet"
-                                  style="vertical-align:top;fill:currentcolor"
+                                  style="vertical-align:top;fill:currentColor"
                                   viewBox="0 0 40 40"
                                   width="10"
                                 >
@@ -587,10 +806,10 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                               </div>
                             </div>
                             <div
-                              class="css-1si3szf"
+                              class="emotion-1"
                             >
                               <div
-                                class="css-h8sbw5"
+                                class="emotion-0"
                               >
                                 20
                               </div>
@@ -599,21 +818,21 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                         </div>
                         <div>
                           <ul
-                            class="css-vq3qyb"
+                            class="emotion-16"
                           >
                             <li
-                              class="css-79elbk"
+                              class="emotion-10"
                             >
                               <a
-                                class="css-1jhmhe9 e1s7lmdh0"
+                                class="emotion-8 emotion-9"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
                                   <div
-                                    class="css-1si3szf"
+                                    class="emotion-1"
                                   >
                                     <div
-                                      class="css-0"
+                                      class="emotion-6"
                                     >
                                       b1
                                     </div>
@@ -623,18 +842,18 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                               <div />
                             </li>
                             <li
-                              class="css-79elbk"
+                              class="emotion-10"
                             >
                               <a
-                                class="css-oato19 e1s7lmdh0"
+                                class="emotion-13 emotion-9"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
                                   <div
-                                    class="css-1si3szf"
+                                    class="emotion-1"
                                   >
                                     <div
-                                      class="css-0"
+                                      class="emotion-6"
                                     >
                                       b2
                                     </div>
@@ -660,21 +879,86 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
 `;
 
 exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is defined 1`] = `
+.emotion-2 {
+  position: relative;
+}
+
+.emotion-20 {
+  padding-top: 20px;
+}
+
+.emotion-19 {
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 15px;
+  min-width: 200px;
+  margin-left: -19px;
+}
+
+.emotion-15 {
+  padding-left: 19px;
+  list-style: none;
+}
+
+.emotion-1 {
+  display: inline-block;
+  vertical-align: top;
+  max-width: calc(100% - 24px);
+}
+
+.emotion-0 {
+  line-height: 18px;
+  padding: 1px 0 5px;
+}
+
+.emotion-12 {
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 1px 5px 4px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 1;
+  color: inherit;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.07);
+  z-index: 0;
+}
+
+.emotion-7 {
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 1px 5px 4px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 1;
+}
+
 <div
-  class="css-7w6khc emockhz0"
+  class="emotion-20 emotion-21"
 >
   <ul
-    class="css-h3ek8a"
+    class="emotion-19"
   >
     <li
-      class="css-79elbk"
+      class="emotion-2"
     >
       <div>
         <ul
-          class="css-vq3qyb"
+          class="emotion-15"
         >
           <li
-            class="css-79elbk"
+            class="emotion-2"
           >
             <div
               data-name="some.name.item1"
@@ -693,7 +977,7 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentcolor"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -706,10 +990,10 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                   </div>
                 </div>
                 <div
-                  class="css-1si3szf"
+                  class="emotion-1"
                 >
                   <div
-                    class="css-h8sbw5"
+                    class="emotion-0"
                   >
                     some.name.item1
                   </div>
@@ -719,7 +1003,7 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
             <div />
           </li>
           <li
-            class="css-79elbk"
+            class="emotion-2"
           >
             <div
               data-name="another.space.20"
@@ -738,7 +1022,7 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentcolor"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -751,10 +1035,10 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                   </div>
                 </div>
                 <div
-                  class="css-1si3szf"
+                  class="emotion-1"
                 >
                   <div
-                    class="css-h8sbw5"
+                    class="emotion-0"
                   >
                     another.space.20
                   </div>
@@ -763,21 +1047,21 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
             </div>
             <div>
               <ul
-                class="css-vq3qyb"
+                class="emotion-15"
               >
                 <li
-                  class="css-79elbk"
+                  class="emotion-2"
                 >
                   <a
-                    class="css-1jhmhe9 e1s7lmdh0"
+                    class="emotion-7 emotion-8"
                     href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
                       <div
-                        class="css-1si3szf"
+                        class="emotion-1"
                       >
                         <div
-                          class="css-0"
+                          class="emotion-5"
                         >
                           b1
                         </div>
@@ -787,18 +1071,18 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                   <div />
                 </li>
                 <li
-                  class="css-79elbk"
+                  class="emotion-2"
                 >
                   <a
-                    class="css-oato19 e1s7lmdh0"
+                    class="emotion-12 emotion-8"
                     href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
                       <div
-                        class="css-1si3szf"
+                        class="emotion-1"
                       >
                         <div
-                          class="css-0"
+                          class="emotion-5"
                         >
                           b2
                         </div>

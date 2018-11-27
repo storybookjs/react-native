@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "4.0.0-alpha.16",
+  "version": "4.1.0-alpha.1",
   "private": true,
   "repository": {
     "type": "git",
@@ -20,9 +20,9 @@
     "bootstrap:docs": "yarn install --cwd docs",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
     "build-storybooks": "./scripts/build-storybooks.sh",
-    "changelog": "pr-log --sloppy",
+    "changelog": "pr-log --sloppy --cherry-pick",
+    "changelog:next": "pr-log --sloppy --since-prerelease",
     "chromatic": "npm --prefix examples/official-storybook run chromatic",
-    "precommit": "lint-staged",
     "coverage": "codecov",
     "danger": "danger",
     "dev": "concurrently --kill-others \"yarn dev:ts\" \"yarn dev:js\"",
@@ -37,17 +37,17 @@
     "lint:md": "remark -q",
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "publish": "lerna publish --exact --concurrency 1 --force-publish",
-    "publish:alpha": "npm run publish -- --npm-tag=alpha",
-    "publish:rc": "npm run publish -- --npm-tag=rc",
+    "publish:next": "npm run publish -- --npm-tag=next",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "yarn --cwd examples/official-storybook storybook",
     "test": "node ./scripts/test.js",
-    "test-latest-cra": "npm --prefix lib/cli run test-latest-cra"
+    "test-latest-cra": "yarn --prefix --cwd lib/cli run test-latest-cra",
+    "test:cli": "npm --prefix lib/cli run test"
   },
   "devDependencies": {
     "@angular/common": "^7.0.1",
-    "@angular/compiler": "^7.0.1",
-    "@angular/core": "^7.0.1",
+    "@angular/compiler": "^7.0.2",
+    "@angular/core": "^7.0.2",
     "@angular/forms": "^7.0.1",
     "@angular/platform-browser": "^7.0.1",
     "@angular/platform-browser-dynamic": "^7.0.1",
@@ -60,7 +60,7 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.1.2",
-    "@emotion/snapshot-serializer": "0.8.2",
+    "@emotion/snapshot-serializer": "^0.8.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -68,6 +68,7 @@
     "babel-plugin-emotion": "^9.2.11",
     "babel-plugin-macros": "^2.4.2",
     "babel-plugin-require-context-hook": "^1.0.0",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-preset-vue": "^2.0.2",
     "chalk": "^2.4.1",
     "codecov": "^3.1.0",
@@ -98,7 +99,6 @@
     "jest-diff": "^23.6.0",
     "jest-environment-jsdom": "^23.4.0",
     "jest-enzyme": "^7.0.0",
-    "jest-glamor-react": "^4.3.1",
     "jest-image-snapshot": "^2.6.0",
     "jest-jasmine2": "^23.6.0",
     "jest-preset-angular": "^6.0.1",
@@ -106,7 +106,7 @@
     "jest-teamcity-reporter": "^0.9.0",
     "jest-vue-preprocessor": "^1.4.0",
     "lerna": "^3.4.3",
-    "lint-staged": "^7.3.0",
+    "lint-staged": "^8.0.4",
     "lodash": "^4.17.11",
     "npmlog": "^4.1.2",
     "prettier": "^1.14.3",
@@ -121,13 +121,18 @@
     "tslint": "~5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.1.4"
+    "typescript": "^3.1.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged"
+    }
   },
   "resolutions": {
     "graphql": "^0.13.2"
   },
   "engines": {
-    "node": ">=8.0.0",
+    "node": ">=8.6.0",
     "yarn": ">=1.3.2"
   },
   "browserslist": "defaults",
@@ -156,17 +161,42 @@
   },
   "pr-log": {
     "skipLabels": [
-      "cleanup"
+      "cleanup",
+      "doc-dependencies:update"
     ],
-    "validLabels": {
-      "BREAKING CHANGE": "Breaking Changes",
-      "feature request": "Features",
-      "bug": "Bug Fixes",
-      "documentation": "Documentation",
-      "maintenance": "Maintenance",
-      "dependencies:update": "Dependency Upgrades",
-      "dependencies": "Dependency Upgrades",
-      "other": "Other"
-    }
+    "validLabels": [
+      [
+        "BREAKING CHANGE",
+        "Breaking Changes"
+      ],
+      [
+        "feature request",
+        "Features"
+      ],
+      [
+        "bug",
+        "Bug Fixes"
+      ],
+      [
+        "documentation",
+        "Documentation"
+      ],
+      [
+        "maintenance",
+        "Maintenance"
+      ],
+      [
+        "dependencies:update",
+        "Dependency Upgrades"
+      ],
+      [
+        "dependencies",
+        "Dependency Upgrades"
+      ],
+      [
+        "other",
+        "Other"
+      ]
+    ]
   }
 }
