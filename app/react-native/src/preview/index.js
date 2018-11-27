@@ -116,6 +116,7 @@ export default class Preview {
               tabOpen={params.tabOpen}
               initialStory={setInitialStory ? preview._getInitialStory() : null}
               shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
+              keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
             />
           );
         }
