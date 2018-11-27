@@ -176,14 +176,14 @@
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addon-links@^4.0.7":
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-4.0.7.tgz#2579707052cfc9bcb2a97d21c7363c673574ae89"
-  integrity sha512-1MTWD+2Qu5txSxPykk7le8gEA66Yjm+USDC1Gbq0KqSLoQ0vh2Fxd6cXE+mIUBC2IIIqDio2SjkqV0974B8JgA==
+"@storybook/addon-links@^4.0.9":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-4.0.9.tgz#72f594c46d70d9e7008888517765fa452c338cd6"
+  integrity sha512-n5KUirtb5r8YcXXV/pLjx0wf9E9YbzUfaaj76Z4hNkLegtG/9AJCXe0paFqwFXM7gi2nQR0ldWopdZqgVpV77g==
   dependencies:
-    "@storybook/addons" "4.0.7"
-    "@storybook/components" "4.0.7"
-    "@storybook/core-events" "4.0.7"
+    "@storybook/addons" "4.0.9"
+    "@storybook/components" "4.0.9"
+    "@storybook/core-events" "4.0.8"
     global "^4.3.2"
     prop-types "^15.6.2"
 
@@ -192,16 +192,6 @@
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.11.tgz#f3e27c46d80ad1f171888c4aad0a19a8a032d072"
   integrity sha512-Uf01aZ1arcpG1prrrCrBCUYW63lDaoG+r/i3TNo1iG9ZaNc+2UHWeuiEedLfHg0fi/q7UnqMNWDiyO3AkEwwrA==
 
-"@storybook/addons@4.0.7":
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.0.7.tgz#52a98ebfa862b34ed47368590564a9638b86d211"
-  integrity sha512-rfumQnFLMhpGx3nvzhW+stTFKwp5SMOso7pryEBhxxskT4f6kBuzZyaChhnSBWBwVz5bPpplWj5l0H0F2/+5bg==
-  dependencies:
-    "@storybook/channels" "4.0.7"
-    "@storybook/components" "4.0.7"
-    global "^4.3.2"
-    util-deprecate "^1.0.2"
-
 "@storybook/addons@4.0.8":
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.0.8.tgz#841848c57406296f7b513708c15dc865f6b37fc7"
@@ -209,6 +199,16 @@
   dependencies:
     "@storybook/channels" "4.0.8"
     "@storybook/components" "4.0.8"
+    global "^4.3.2"
+    util-deprecate "^1.0.2"
+
+"@storybook/addons@4.0.9":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.0.9.tgz#cfa18fe10ddda454dbbc3aae17562e46d04d3955"
+  integrity sha512-D+RsN1fNywgk46UxG6Lue+p9Egf7/DpgEJtQb6RS+UoyOF24p3FlwWMh36kpRfSSgGqFZ+a0jIKhXuRSr31UNQ==
+  dependencies:
+    "@storybook/channels" "4.0.8"
+    "@storybook/components" "4.0.9"
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
@@ -225,11 +225,6 @@
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.4.11.tgz#853ec40fdfa6c3ae8cff23f0cd86b77a719823f5"
   integrity sha512-49A79anI04nhMsNzyk5cF8fa3+HKZkb9RLshtaqvQmM7olQxCrks6cIdE2Y1zMBuyZxX1ARhcBCFVw+PUxkJjA==
-
-"@storybook/channels@4.0.7":
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-4.0.7.tgz#bb7607c9d0036cbed884c11683d7c168c2663733"
-  integrity sha512-XSfMaD+GKQpNtHSAZb0aMjDH59rYIvTB3je0jM67NVHneIbZrxxEcY52QZ7KP2eAP9qRw3yK89VoNo7D0APdcQ==
 
 "@storybook/channels@4.0.8":
   version "4.0.8"
@@ -250,22 +245,6 @@
     glamorous "^4.12.1"
     prop-types "^15.6.1"
 
-"@storybook/components@4.0.7":
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-4.0.7.tgz#f5a51b6999df7bd137a02a968d17795c836bfa5b"
-  integrity sha512-edQdAx+Vy6ycg6wxj5vX2DzDIcH9hikj517wKunlv78zv+82aFgHI/UZoUhaSL2dqYWOx+dO1eSza5456y7llQ==
-  dependencies:
-    "@emotion/core" "^0.13.1"
-    "@emotion/provider" "^0.11.2"
-    "@emotion/styled" "^0.10.6"
-    global "^4.3.2"
-    lodash "^4.17.11"
-    prop-types "^15.6.2"
-    react-inspector "^2.3.0"
-    react-split-pane "^0.1.84"
-    react-textarea-autosize "^7.0.4"
-    render-fragment "^0.1.1"
-
 "@storybook/components@4.0.8":
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-4.0.8.tgz#0c0701e64b52538acb0d39412db476549a3d7579"
@@ -282,10 +261,21 @@
     react-textarea-autosize "^7.0.4"
     render-fragment "^0.1.1"
 
-"@storybook/core-events@4.0.7":
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-4.0.7.tgz#8fb7be5dd0fba5c6928b15cd2d92ffdb0a53da6f"
-  integrity sha512-rirZ/dtcA22BqZoxsYGeUHdS0IQFKNerTnNcDuL7NaTD79tl1JaWYvtLot3GqxLD7/lyUh0GQIGnxqr1ouGBhQ==
+"@storybook/components@4.0.9":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-4.0.9.tgz#c5cc9f52768fd7a6078d9601cecacd0e357dc130"
+  integrity sha512-EoPJitDUBkNdg4UiWyrmU6IkpLmJTjJO6KD382isHXA7qCxBJQTPb2m3GXy35KKF510NtJ9H0l4k5x7yg5Wzng==
+  dependencies:
+    "@emotion/core" "^0.13.1"
+    "@emotion/provider" "^0.11.2"
+    "@emotion/styled" "^0.10.6"
+    global "^4.3.2"
+    lodash "^4.17.11"
+    prop-types "^15.6.2"
+    react-inspector "^2.3.0"
+    react-split-pane "^0.1.84"
+    react-textarea-autosize "^7.0.4"
+    render-fragment "^0.1.1"
 
 "@storybook/core-events@4.0.8":
   version "4.0.8"
