@@ -78,7 +78,15 @@ Change `config.ts` inside the Storybook config directory (by default, it’s `.s
 ```js
 // automatically import all files ending in *.stories.js
 const req = require.context('../stories', true, /.stories.tsx$/);
+
+function loadStories() {
+  req.keys().forEach(req);
+}
+
+configure(loadStories, module);
 ```
+
+If you have your `/stories` directory in `src`, change the above `../stories` to `../src/stories`.
 
 ## Using Typescript with the TSDocgen addon
 
