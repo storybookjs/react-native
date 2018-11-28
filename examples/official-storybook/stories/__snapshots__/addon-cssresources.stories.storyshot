@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addons|Cssresources Camera Icon 1`] = `
+<i
+  class="fa fa-camera-retro"
+>
+   Camera Icon
+</i>
+`;
+
+exports[`Storyshots Addons|Cssresources Primary Large Button 1`] = `
+<button
+  class="btn btn-lg btn-primary"
+  type="button"
+>
+  Primary Large Button
+</button>
+`;

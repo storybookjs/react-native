@@ -1,4 +1,46 @@
-# 4.1.0-alpha.3 (November 15, 2018)
+## 4.1.0-alpha.8 (November 25, 2018)
+
+### Features
+
+* React: use babel presets/plugins based on CRA. ([#4836](https://github.com/storybooks/storybook/pull/4836))
+* React-native: Add ability to filter story list ([#4806](https://github.com/storybooks/storybook/pull/4806))
+
+### Bug Fixes
+
+* Core: Don't mangle production build ([#4838](https://github.com/storybooks/storybook/pull/4838))
+* HTML: Don't change rootElement when received node is the same ([#4822](https://github.com/storybooks/storybook/pull/4822))
+
+### Maintenance
+
+* Fix snapshots to use "emotion/snapshot-serializer" ([#4837](https://github.com/storybooks/storybook/pull/4837))
+
+## 4.1.0-alpha.7 (November 22, 2018)
+
+### Features
+
+* Add TypeScript support for react-scripts ([#4824](https://github.com/storybooks/storybook/pull/4824))
+
+## 4.1.0-alpha.5/6 (November 22, 2018)
+
+Publish failed
+
+## 4.1.0-alpha.4 (November 21, 2018)
+
+### Features
+
+* ADD support for all versions of react ([#4808](https://github.com/storybooks/storybook/pull/4808))
+
+### Bug Fixes
+
+* Use correct cache directory path ([#4792](https://github.com/storybooks/storybook/pull/4792))
+
+## 4.0.8 (November 21, 2018)
+
+### Bug Fixes
+
+* Addon-knobs: Vue optimize on force render ([#4773](https://github.com/storybooks/storybook/pull/4773))
+
+## 4.1.0-alpha.3 (November 15, 2018)
 
 ### Maintenance
 
@@ -9,13 +51,13 @@
 
 * Use alpha minify dependency to upgrade transitive lodash dependencies ([#4771](https://github.com/storybooks/storybook/pull/4771))
 
-# 4.0.7 (November 15, 2018)
+## 4.0.7 (November 15, 2018)
 
 ### Bug Fixes
 
 * Vue/Angular/Mithril/Polymer: Add missing "forceReRender" and "addParameters" ([#4767](https://github.com/storybooks/storybook/pull/4767))
 
-# 4.1.0-alpha.2 (November 13, 2018)
+## 4.1.0-alpha.2 (November 13, 2018)
 
 ### Features
 
@@ -50,7 +92,7 @@
 * Bump @ngrx/store from 6.1.1 to 6.1.2 ([#4678](https://github.com/storybooks/storybook/pull/4678))
 * [Security] Bump merge from 1.2.0 to 1.2.1 ([#4686](https://github.com/storybooks/storybook/pull/4686))
 
-# 4.0.6 (November 13, 2018)
+## 4.0.6 (November 13, 2018)
 
 ### Features
 
@@ -60,11 +102,11 @@
 
 * Core: fix NODE_PATH is not being loaded from .env ([#4706](https://github.com/storybooks/storybook/pull/4706))
 
-# 4.0.5 (November 13, 2018)
+## 4.0.5 (November 13, 2018)
 
 Publish failed
 
-# 4.1.0-alpha.1
+## 4.1.0-alpha.1
 
 2018-November-06
 
@@ -82,11 +124,11 @@ Publish failed
 -   Bump @ngrx/store from 6.1.1 to 6.1.2 [#4678](https://github.com/storybooks/storybook/pull/4678)
 -   [Security] Bump merge from 1.2.0 to 1.2.1 [#4686](https://github.com/storybooks/storybook/pull/4686)
 
-# 4.1.0-alpha.0
+## 4.1.0-alpha.0
 
 Publish failed
 
-# 4.0.4
+## 4.0.4
 
 2018-November-06
 
@@ -103,7 +145,7 @@ Publish failed
 -   Bump react-syntax-highlighter from 9.0.1 to 10.0.0 [#4654](https://github.com/storybooks/storybook/pull/4654)
 -   Remove SB deps from cli tests [#4705](https://github.com/storybooks/storybook/pull/4705)
 
-# 4.0.3
+##  4.0.3
 
 2018-November-06
 
@@ -161,7 +203,7 @@ Publish failed
 
 </details>
 
-# 4.0.2
+##  4.0.2
 
 2018-October-31
 
@@ -171,13 +213,13 @@ Fix broken 4.0.1 release
 
 -   Addon-knobs: fix select array values showing k [#4586](https://github.com/storybooks/storybook/pull/4586)
 
-# 4.0.1
+## 4.0.1
 
 2018-October-31
 
 Broken release - `@storybook/client-logger` [somehow didn't get published to NPM.](https://github.com/storybooks/storybook/issues/4660)
 
-# 4.0.0
+## 4.0.0
 
 2018-October-29
 
@@ -213,7 +255,7 @@ Broken release - `@storybook/client-logger` [somehow didn't get published to NPM
 There are hundreds of more fixes, features, and tweaks in the 4.0 release. See changelogs for `4.0.0-rc.*` and  `4.0.0-alpha.*` for details; check out our [migration guide](https://medium.com/storybookjs/migrating-to-storybook-4-c65b19a03d2c) for a walkthrough of how to upgrade or the 
 [migration docs](https://github.com/storybooks/storybook/blob/master/MIGRATION.md#from-version-34x-to-40x) for an enumeration of breaking changes.
 
-# 4.0.0-rc.6
+## 4.0.0-rc.6
 
 2018-October-25
 
@@ -221,7 +263,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 
 -   Upgrade react-komposer to 2.0.5 [#4547](https://github.com/storybooks/storybook/pull/4547)
 
-# 4.0.0-rc.5
+## 4.0.0-rc.5
 
 2018-October-25
 
@@ -229,7 +271,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 
 -   Fix issue with `sb init` on the Vue CLI [#4535](https://github.com/storybooks/storybook/pull/4535)
 
-# 4.0.0-rc.4
+## 4.0.0-rc.4
 
 2018-October-25
 
@@ -254,7 +296,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 -   Bump riot from 3.12.0 to 3.13.0 [#4511](https://github.com/storybooks/storybook/pull/4511)
 
 
-# 4.0.0-rc.3
+## 4.0.0-rc.3
 
 2018-October-23
 
@@ -269,7 +311,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 -   REMOVE emotion from demo components to make backwards compatibility easier && ADD demo components to official example [#4527](https://github.com/storybooks/storybook/pull/4527)
 -   Exclude story files from angular app build [#4485](https://github.com/storybooks/storybook/pull/4485)
 
-# 4.0.0-rc.2
+## 4.0.0-rc.2
 
 2018-October-22
 
@@ -295,7 +337,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 -   Bump jest-image-snapshot from 2.5.0 to 2.6.0 [#4494](https://github.com/storybooks/storybook/pull/4494)
 -   Bump webpack from 4.20.2 to 4.21.0 [#4477](https://github.com/storybooks/storybook/pull/4477)
 
-# 4.0.0-rc.1
+## 4.0.0-rc.1
 
 2018-October-18
 
@@ -320,7 +362,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 -   Bump marked from 0.4.0 to 0.5.1 in /docs [#4437](https://github.com/storybooks/storybook/pull/4437)
 -   Bump highlight.js from 9.12.0 to 9.13.0 in /docs [#4440](https://github.com/storybooks/storybook/pull/4440)
 
-# 4.0.0-rc.0
+## 4.0.0-rc.0
 
 2018-October-15
 
@@ -351,7 +393,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 -   Bump eslint-plugin-jest from 21.24.1 to 21.25.0 [#4424](https://github.com/storybooks/storybook/pull/4424)
 -   Bump lazy-universal-dotenv from 1.9.1 to 2.0.0 [#4422](https://github.com/storybooks/storybook/pull/4422)
 
-# 4.0.0-alpha.25
+## 4.0.0-alpha.25
 
 2018-October-13
 
@@ -408,6 +450,8 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 -   Bump husky from 1.1.1 to 1.1.2 [#4358](https://github.com/storybooks/storybook/pull/4358)
 -   Tech/upgrades 5 [#4347](https://github.com/storybooks/storybook/pull/4347)
 
+## 4.0.0-alpha.24
+
 2018-October-04
 
 #### Features
@@ -423,7 +467,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 -   Addon-Notes: Fix how markdownOptions are passed to marked [#4242](https://github.com/storybooks/storybook/pull/4242)
 -   Addon-Knobs: Fix broken colorpicker [#4222](https://github.com/storybooks/storybook/pull/4222)
 
-# 4.0.0-alpha.23
+## 4.0.0-alpha.23
 
 2018-September-25
 
@@ -442,7 +486,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 -   Upgrade deps dealing with license issues [#4228](https://github.com/storybooks/storybook/pull/4228)
 -   Use @emotion/snapshot-serializer [#4206](https://github.com/storybooks/storybook/pull/4206)
 
-# 4.0.0-alpha.22
+## 4.0.0-alpha.22
 
 2018-September-19
 
@@ -474,7 +518,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 -   Updating react-split-pane to version 0.1.84 [#4153](https://github.com/storybooks/storybook/pull/4153)
 -   Riot tag loader missing in cli [#4122](https://github.com/storybooks/storybook/pull/4122)
 
-# 3.4.11
+## 3.4.11
 
 2018-September-17
 
@@ -482,7 +526,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 
 -   Allow v1 or v2 in airbnb-js-shims [#4190](https://github.com/storybooks/storybook/pull/4190)
 
-# 4.0.0-alpha.21
+## 4.0.0-alpha.21
 
 2018-September-07
 
@@ -504,7 +548,7 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 -   \[WIP\] Refactor core and frameworks to work with presets [#4043](https://github.com/storybooks/storybook/pull/4043)
 -   \[WIP\] presets - merge default babel configs [#4107](https://github.com/storybooks/storybook/pull/4107)
 
-# 4.0.0-alpha.20
+## 4.0.0-alpha.20
 
 2018-August-31
 
@@ -532,13 +576,13 @@ There are hundreds of more fixes, features, and tweaks in the 4.0 release. See c
 
 -   UPGRADE packages [#3996](https://github.com/storybooks/storybook/pull/3996)
 
-# 4.0.0-alpha.19
+## 4.0.0-alpha.19
 
 2018-August-31
 
 Not published to NPM
 
-# 4.0.0-alpha.18
+## 4.0.0-alpha.18
 
 2018-August-25
 
@@ -552,7 +596,7 @@ Not published to NPM
 
 -   Faster CircleCI [#4068](https://github.com/storybooks/storybook/pull/4068)
 
-# 4.0.0-alpha.17
+## 4.0.0-alpha.17
 
 2018-August-24
 
@@ -582,7 +626,7 @@ Not published to NPM
 -   Fixed homepage links \[skip ci\] [#4008](https://github.com/storybooks/storybook/pull/4008)
 -   CHANGE html-webpack-plugin for generate-page-plugin [#3919](https://github.com/storybooks/storybook/pull/3919)
 
-# 4.0.0-alpha.16
+## 4.0.0-alpha.16
 
 2018-August-06
 
@@ -601,7 +645,7 @@ Not published to NPM
 -   More dependency upgrades (major version bumps) [#3957](https://github.com/storybooks/storybook/pull/3957)
 -   UPGRADE all minor dependencies [#3954](https://github.com/storybooks/storybook/pull/3954)
 
-# 4.0.0-alpha.15
+## 4.0.0-alpha.15
 
 2018-August-03
 
@@ -635,7 +679,7 @@ Not published to NPM
 
 -   Use react-dev-utils@next [#3852](https://github.com/storybooks/storybook/pull/3852)
 
-# 3.4.10
+## 3.4.10
 
 2018-August-03
 
@@ -646,7 +690,7 @@ NOTE: `3.4.9` publish failed
 -   addons-jest: bug with the jest parameter [#3923](https://github.com/storybooks/storybook/pull/3923)
 -   addon-info: fix copy button styling [#3896](https://github.com/storybooks/storybook/pull/3896)
 
-# 4.0.0-alpha.14
+## 4.0.0-alpha.14
 
 2018-July-11
 
@@ -654,7 +698,7 @@ NOTE: `3.4.9` publish failed
 
 -   Upgrade universal-dotenv to fix core-js dependency [#3874](https://github.com/storybooks/storybook/pull/3874)
 
-# 4.0.0-alpha.13
+## 4.0.0-alpha.13
 
 2018-July-09
 
@@ -670,7 +714,7 @@ NOTE: `3.4.9` publish failed
 
 -   Added a test for parameter combination [#3844](https://github.com/storybooks/storybook/pull/3844)
 
-# 4.0.0-alpha.12
+## 4.0.0-alpha.12
 
 2018-July-03
 
@@ -678,7 +722,7 @@ NOTE: `3.4.9` publish failed
 
 -   Fix non-polyfilled themed UI components [#3829](https://github.com/storybooks/storybook/pull/3829)
 
-# 4.0.0-alpha.11
+## 4.0.0-alpha.11
 
 2018-July-02
 
@@ -693,7 +737,7 @@ NOTE: `3.4.9` publish failed
 -   Marko: fix welcome component [#3796](https://github.com/storybooks/storybook/pull/3796)
 -   Addon-a11y: Run analysis on demand [#3690](https://github.com/storybooks/storybook/pull/3690)
 
-# 4.0.0-alpha.10
+## 4.0.0-alpha.10
 
 2018-June-21
 
@@ -714,7 +758,7 @@ NOTE: `3.4.9` publish failed
 
 -   Try to fix linter issues [#3748](https://github.com/storybooks/storybook/pull/3748)
 
-# 3.4.8
+## 3.4.8
 
 2018-June-21
 
@@ -723,7 +767,7 @@ NOTE: `3.4.9` publish failed
 -   Fix centered addon for IE11 [#3735](https://github.com/storybooks/storybook/pull/3735)
 -   Display functions as variables not invocations [#3761](https://github.com/storybooks/storybook/pull/3761)
 
-# 4.0.0-alpha.9
+## 4.0.0-alpha.9
 
 2018-June-10
 
@@ -852,7 +896,7 @@ NOTE: `3.4.9` publish failed
 
 </details>
 
-# 3.4.7
+## 3.4.7
 
 2018-June-10
 
@@ -860,7 +904,7 @@ NOTE: `3.4.9` publish failed
 
 -   Remove linebreaks in notes text when they are html elements [#3731](https://github.com/storybooks/storybook/pull/3731)
 
-# 4.0.0-alpha.8
+## 4.0.0-alpha.8
 
 2018-May-26
 
@@ -938,7 +982,7 @@ NOTE: `3.4.9` publish failed
 
 </details>
 
-# 3.4.6
+## 3.4.6
 
 2018-May-26
 
@@ -946,7 +990,7 @@ NOTE: `3.4.9` publish failed
 
 -   Addon-notes: Add classname to the container component to target with styles. [#3617](https://github.com/storybooks/storybook/pull/3617)
 
-# 4.0.0-alpha.7
+## 4.0.0-alpha.7
 
 2018-May-17
 
@@ -965,7 +1009,7 @@ NOTE: As part of the generic addon decorators, we've reversed the order of addon
 
 -   Refactor transitional decorator from addon-notes [#3559](https://github.com/storybooks/storybook/pull/3559)
 
-# 3.4.5
+## 3.4.5
 
 2018-May-17
 
@@ -980,7 +1024,7 @@ NOTE: As part of the generic addon decorators, we've reversed the order of addon
 -   Ignore any unstructured output from the package managers [#3563](https://github.com/storybooks/storybook/pull/3563)
 -   Use the --use-npm flag also for version checking [#3535](https://github.com/storybooks/storybook/pull/3535)
 
-# 4.0.0-alpha.6
+## 4.0.0-alpha.6
 
 2018-May-12
 
@@ -1004,11 +1048,11 @@ NOTE: As part of the generic addon decorators, we've reversed the order of addon
 -   Clean out the store if `configure` fails [#3558](https://github.com/storybooks/storybook/pull/3558)
 -   Fix render order in preview [#3520](https://github.com/storybooks/storybook/pull/3520)
 
-# 4.0.0-alpha.5
+## 4.0.0-alpha.5
 
 Broken release (@storybook/core-events had not been published publicly)
 
-# 3.4.4
+## 3.4.4
 
 2018-May-12
 
@@ -1023,7 +1067,7 @@ Broken release (@storybook/core-events had not been published publicly)
 
 -   jest-image-snapshot version to ^2.4.1 [#3500](https://github.com/storybooks/storybook/pull/3500)
 
-# 4.0.0-alpha.4
+## 4.0.0-alpha.4
 
 2018-April-27
 
@@ -1077,7 +1121,7 @@ Broken release (@storybook/core-events had not been published publicly)
 
 </details>
 
-# 3.4.3
+## 3.4.3
 
 2018-April-27
 
@@ -1094,7 +1138,7 @@ Broken release (@storybook/core-events had not been published publicly)
 
 -   Update webpack-hot-middleware to fix HMR [#3463](https://github.com/storybooks/storybook/pull/3463)
 
-# 4.0.0-alpha.3
+## 4.0.0-alpha.3
 
 2018-April-17
 
@@ -1227,7 +1271,7 @@ Also includes changes from 3.4.2
 
 </details>
 
-# 3.4.2
+## 3.4.2
 
 2018-April-17
 
@@ -1240,7 +1284,7 @@ Also includes changes from 3.4.2
 
 -   Fix storyshots readme for image snapshotting [#3397](https://github.com/storybooks/storybook/pull/3397)
 
-# 4.0.0-alpha.2
+## 4.0.0-alpha.2
 
 2018-April-10
 
@@ -1420,7 +1464,7 @@ Also includes changes from 3.4.1
 
 </details>
 
-# 3.4.1
+## 3.4.1
 
 2018-April-10
 
@@ -1439,7 +1483,7 @@ Also includes changes from 3.4.1
 -   Add typescript docs [#3361](https://github.com/storybooks/storybook/pull/3361)
 -   Update links of the live examples for the new release [#3197](https://github.com/storybooks/storybook/pull/3197)
 
-# 3.4.0
+## 3.4.0
 
 2018-March-30
 
@@ -1536,7 +1580,7 @@ Read on for more improvements, fixes. In addition, there are hundreds of depende
 -   Update prereq yarn install level [#2638](https://github.com/storybooks/storybook/pull/2638)
 -   Separate stories in angular-cli example [#2592](https://github.com/storybooks/storybook/pull/2592)
 
-# 4.0.0-alpha.1
+## 4.0.0-alpha.1
 
 2018-March-29
 
@@ -1544,7 +1588,7 @@ Read on for more improvements, fixes. In addition, there are hundreds of depende
 
 -  \[Hotfix\]  Use published webpack 4 compatible fork of react-dev-utils [#3312](https://github.com/storybooks/storybook/pull/3312)
 
-# 4.0.0-alpha.0
+## 4.0.0-alpha.0
 
 2018-March-28
 
@@ -1654,7 +1698,7 @@ Read on for more improvements, fixes. In addition, there are hundreds of depende
 
 </details>
 
-# 3.4.0-rc.4
+## 3.4.0-rc.4
 
 2018-March-28
 
@@ -1667,7 +1711,7 @@ Read on for more improvements, fixes. In addition, there are hundreds of depende
 -   Fix storyshots renderer and serializer options [#3252](https://github.com/storybooks/storybook/pull/3252)
 -   Angular: use resolveLoader from cliCommonConfig [#3251](https://github.com/storybooks/storybook/pull/3251)
 
-# 3.4.0-rc.3
+## 3.4.0-rc.3
 
 2018-March-19
 
@@ -1744,7 +1788,7 @@ Read on for more improvements, fixes. In addition, there are hundreds of depende
 
 </details>
 
-# 3.4.0-rc.2
+## 3.4.0-rc.2
 
 2018-March-13
 
@@ -1752,7 +1796,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 
 -   use exact versions for cross-dependencies between our own packages [#3183](https://github.com/storybooks/storybook/pull/3183)
 
-# 3.4.0-rc.1
+## 3.4.0-rc.1
 
 2018-March-13
 
@@ -1837,7 +1881,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 
 </details>
 
-# 3.4.0-rc.0
+## 3.4.0-rc.0
 
 2018-March-08
 
@@ -2104,7 +2148,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 
 </details>
 
-# 3.3.15
+## 3.3.15
 
 2018-March-07
 
@@ -2115,7 +2159,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 -   Added missing key prop to NoTests component. [#3111](https://github.com/storybooks/storybook/pull/3111)
 -   Events addon: fix React keys warning [#3072](https://github.com/storybooks/storybook/pull/3072)
 
-# 3.4.0-alpha.9
+## 3.4.0-alpha.9
 
 2018-February-22
 
@@ -2327,7 +2371,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 
 </details>
 
-# 3.3.14
+## 3.3.14
 
 2018-February-21
 
@@ -2340,7 +2384,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 -   Use @storybook/podda to fix npm engine version in podda [#3033](https://github.com/storybooks/storybook/pull/3033)
 -   Addon-backgrounds: set background on iframe instead of adding a wrapper in preview [#2807](https://github.com/storybooks/storybook/pull/3033)
 
-# 3.4.0-alpha.8
+## 3.4.0-alpha.8
 
 2018-February-11
 
@@ -2467,7 +2511,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 
 </details>
 
-# 3.3.13
+## 3.3.13
 
 2018-February-11
 
@@ -2476,7 +2520,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 -   Angular: add rule for .md to webpack.config.prod.js [#2924](https://github.com/storybooks/storybook/pull/2924)
 -   Check for correct props in Flow or prop-types [#2902](https://github.com/storybooks/storybook/pull/2902)
 
-# 3.4.0-alpha.7
+## 3.4.0-alpha.7
 
 2018-February-03
 
@@ -2587,7 +2631,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 
 </details>
 
-# 3.3.12
+## 3.3.12
 
 2018-February-02
 
@@ -2599,7 +2643,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 
 -   Update url-loader from 0.5.8 to 0.6.2 in app/angular [#2847](https://github.com/storybooks/storybook/pull/2847)
 
-# 3.4.0-alpha.6
+## 3.4.0-alpha.6
 
 2018-January-27
 
@@ -2710,7 +2754,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 
 </details>
 
-# 3.3.11
+## 3.3.11
 
 2018-January-26
 
@@ -2718,7 +2762,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 
 -   Angular: update helpers.ts [#2777](https://github.com/storybooks/storybook/pull/2777)
 
-# 3.4.0-alpha.5
+## 3.4.0-alpha.5
 
 2018-January-19
 
@@ -2850,7 +2894,7 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 
 </details>
 
-# 3.3.10
+## 3.3.10
 
 2018-January-19
 
@@ -2859,13 +2903,13 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 -   Addon-backgrounds: remove redundant scrollbars [#2744](https://github.com/storybooks/storybook/pull/2744)
 -   Addon-info: add keys for separator spans in OneOfType [#2743](https://github.com/storybooks/storybook/pull/2743)
 
-# 3.4.0-alpha.4
+## 3.4.0-alpha.4
 
 2018-January-13
 
 Republish `3.4.0-alpha.3` due to potential publishing errors
 
-# 3.4.0-alpha.3
+## 3.4.0-alpha.3
 
 2018-January-13
 
@@ -2948,7 +2992,7 @@ Republish `3.4.0-alpha.3` due to potential publishing errors
 
 </details>
 
-# 3.3.9
+## 3.3.9
 
 2018-January-13
 
@@ -2958,19 +3002,19 @@ Republish `3.4.0-alpha.3` due to potential publishing errors
 -   Reflect the new peer dependencies in docs and CLI templates [#2714](https://github.com/storybooks/storybook/pull/2714)
 -   Don't mangle function names for production builds [#2705](https://github.com/storybooks/storybook/pull/2705)
 
-# 3.4.0-alpha.2
+## 3.4.0-alpha.2
 
 2018-January-11
 
 This is a duplicate of `3.4.0-alpha.1`, re-published because I accidentally published `3.4.0-alpha.1` on the `latest` NPM tag.
 
-# 3.3.8
+## 3.3.8
 
 2018-January-11
 
 This is a duplicate of `3.3.7`, re-published because I accidentally published `3.4.0-alpha.1` on the `latest` NPM tag.
 
-# 3.4.0-alpha.1
+## 3.4.0-alpha.1
 
 2018-January-10
 
@@ -3095,7 +3139,7 @@ In addition to the changes listed here, also contains fixes from [3.3.5](#335) a
 
 </details>
 
-# 3.3.7
+## 3.3.7
 
 2018-January-10
 
@@ -3109,7 +3153,7 @@ In addition to the changes listed here, also contains fixes from [3.3.5](#335) a
 -   Angular: add entry components to modulemetadata - #2701 [#2702](https://github.com/storybooks/storybook/pull/2702)
 -   Add html and markup loaders to angular and vue apps [#2692](https://github.com/storybooks/storybook/pull/2692)
 
-# 3.3.6
+## 3.3.6
 
 2018-January-08
 
@@ -3117,7 +3161,7 @@ In addition to the changes listed here, also contains fixes from [3.3.5](#335) a
 
 -   Remove `src/` from remaining `.npmignore`s [#2678](https://github.com/storybooks/storybook/pull/2678)
 
-# 3.3.5
+## 3.3.5
 
 2018-January-08
 
@@ -3125,7 +3169,7 @@ In addition to the changes listed here, also contains fixes from [3.3.5](#335) a
 
 -   Remove src from individual .npmignore files [#2677](https://github.com/storybooks/storybook/pull/2677)
 
-# 3.4.0-alpha.0
+## 3.4.0-alpha.0
 
 2018-January-07
 
@@ -3241,7 +3285,7 @@ In addition to the changes listed here, also contains fixes from [3.3.5](#335) a
 
 </details>
 
-# 3.3.4
+## 3.3.4
 
 2018-January-07
 
@@ -3287,7 +3331,7 @@ In addition to the changes listed here, also contains fixes from [3.3.5](#335) a
 
 </details>
 
-# 3.3.3
+## 3.3.3
 
 2017-December-29
 
@@ -3308,7 +3352,7 @@ In addition to the changes listed here, also contains fixes from [3.3.5](#335) a
 -   Upgraded `@storybook/addons` in `/docs` from "3.2.18" to "3.3.1" [#2580](https://github.com/storybooks/storybook/pull/2580)
 -   Upgraded `@storybook/react` in `/docs` from "3.2.18" to "3.3.1" [#2580](https://github.com/storybooks/storybook/pull/2580)
 
-# 3.3.2
+## 3.3.2
 
 2017-December-28
 
@@ -3342,7 +3386,7 @@ In addition to the changes listed here, also contains fixes from [3.3.5](#335) a
 -   Upgraded `uglifyjs-webpack-plugin` in `app/vue` from "1.1.4" to "1.1.5" [#2581](https://github.com/storybooks/storybook/pull/2581)
 -   Upgraded `karma-coverage-istanbul-reporter` in `examples/angular-cli` from "1.3.1" to "1.3.3" [#2581](https://github.com/storybooks/storybook/pull/2581)
 
-# 3.3.1
+## 3.3.1
 
 2017-December-26
 
@@ -3354,7 +3398,7 @@ In addition to the changes listed here, also contains fixes from [3.3.5](#335) a
 
 -   Add migration note about #2570 [#2571](https://github.com/storybooks/storybook/pull/2571)
 
-# 3.3.0
+## 3.3.0
 
 2017-December-26
 
@@ -3562,7 +3606,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 </details>
 
-# 3.3.0-rc.1
+## 3.3.0-rc.1
 
 2017-December-26
 
@@ -3607,7 +3651,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 </details>
 
-# 3.3.0-rc.0
+## 3.3.0-rc.0
 
 2017-December-23
 
@@ -3619,7 +3663,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 -   UPGRADE jest & react-native [#2542](https://github.com/storybooks/storybook/pull/2542)
 
-# 3.3.0-alpha.6
+## 3.3.0-alpha.6
 
 2017-December-23
 
@@ -3711,7 +3755,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 </details>
 
-# 3.3.0-alpha.4
+## 3.3.0-alpha.4
 
 2017-November-22
 
@@ -3720,7 +3764,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 -   Fix HMR by saving the preview frame URL as the story changes [#2349](https://github.com/storybooks/storybook/pull/2349)
 -   Fix CLI babel transpilation [#2350](https://github.com/storybooks/storybook/pull/2350)
 
-# 3.3.0-alpha.3
+## 3.3.0-alpha.3
 
 2017-November-07
 
@@ -3763,7 +3807,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 -   React-Native - Docs - Add Issues section for Android Emulator [#2078](https://github.com/storybooks/storybook/pull/2078)
 -   Upgrade eslint-config-airbnb and make it pass [#2212](https://github.com/storybooks/storybook/pull/2212)
 
-# 3.3.0-alpha.2
+## 3.3.0-alpha.2
 
 2017-October-03
 
@@ -3815,7 +3859,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 -   Add config for dependencies.io [#1770](https://github.com/storybooks/storybook/pull/1770)
 
-# 3.3.0-alpha.0
+## 3.3.0-alpha.0
 
 2017-September-06
 
@@ -3865,7 +3909,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 -   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
 -   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
 
-# 3.2.19
+## 3.2.19
 
 2017-December-23
 
@@ -3945,7 +3989,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 </details>
 
-# 3.2.18
+## 3.2.18
 
 2017-December-18
 
@@ -4119,7 +4163,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 </details>
 
-# 3.2.17
+## 3.2.17
 
 2017-December-03
 
@@ -4234,7 +4278,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 </details>
 
-# 3.2.16
+## 3.2.16
 
 2017-November-15
 
@@ -4292,7 +4336,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 </details>
 
-# 3.2.15
+## 3.2.15
 
 2017-November-10
 
@@ -4333,7 +4377,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 </details>
 
-# 3.2.14
+## 3.2.14
 
 2017-November-01
 
@@ -4384,7 +4428,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 </details>
 
-# 3.2.13
+## 3.2.13
 
 2017-October-20
 
@@ -4475,7 +4519,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 </details>
 
-# 3.2.12
+## 3.2.12
 
 2017-October-02
 
@@ -4521,7 +4565,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 </details>
 
-# 3.2.11
+## 3.2.11
 
 2017-September-27
 
@@ -4538,7 +4582,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 -   Updated release process documentation [#1882](https://github.com/storybooks/storybook/pull/1882)
 
-# 3.2.10
+## 3.2.10
 
 2017-September-22
 
@@ -4577,7 +4621,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 -   Smoke test master [#1801](https://github.com/storybooks/storybook/pull/1801)
 -   Fixed Jest warnings [#1744](https://github.com/storybooks/storybook/pull/1744)
 
-# 3.2.9
+## 3.2.9
 
 2017-August-26
 
@@ -4597,7 +4641,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 -   Update lerna to the latest version 🚀 [#1727](https://github.com/storybooks/storybook/pull/1727)
 
-# 3.2.8
+## 3.2.8
 
 2017-August-23
 
@@ -4610,7 +4654,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 -   Add caveat about knobs date defaultValue [#1719](https://github.com/storybooks/storybook/pull/1719)
 
-# 3.2.7
+## 3.2.7
 
 2017-August-23
 
@@ -4626,7 +4670,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 -   Enable eslint for vue-related stuff [#1715](https://github.com/storybooks/storybook/pull/1715)
 -   CLI: ensure explicit dependency on `prop-types` for RN [#1714](https://github.com/storybooks/storybook/pull/1714)
 
-# 3.2.6
+## 3.2.6
 
 2017-August-22
 
@@ -4662,7 +4706,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 -   Upgrade react-native-compat to avoid PropTypes warnings [#1673](https://github.com/storybooks/storybook/pull/1673)
 -   Change React.PropTypes to prop-types [#1674](https://github.com/storybooks/storybook/pull/1674) [#1710](https://github.com/storybooks/storybook/pull/1710)
 
-# 3.2.5
+## 3.2.5
 
 2017-August-16
 
@@ -4681,7 +4725,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 -   Upgrade react-modal to v2.2.4 [#1666](https://github.com/storybooks/storybook/pull/1666)
 
-# 3.2.4
+## 3.2.4
 
 2017-August-12
 
@@ -4706,7 +4750,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 -   Use ReactModal for search box [#1548](https://github.com/storybooks/storybook/pull/1548)
 -   Limit react versions to >=15 [#1613](https://github.com/storybooks/storybook/pull/1613)
 
-# 3.2.3
+## 3.2.3
 
 2017-August-01
 
@@ -4719,7 +4763,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 -   Add short description to addon-options readme [#1566](https://github.com/storybooks/storybook/pull/1566)
 
-# 3.2.2
+## 3.2.2
 
 2017-July-31
 
@@ -4727,7 +4771,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 
 -   Fixed build-storybook for vue [#1564](https://github.com/storybooks/storybook/pull/1564)
 
-# 3.2.1
+## 3.2.1
 
 2017-July-31
 
@@ -4741,7 +4785,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 -   Fix typo with Vue README referring to react [#1556](https://github.com/storybooks/storybook/pull/1556)
 -   Add state-setting FAQ [#1559](https://github.com/storybooks/storybook/pull/1559)
 
-# 3.2.0
+## 3.2.0
 
 2017-July-31
 
@@ -4808,7 +4852,7 @@ Plus many more features, documentation improvements, and bugfixes below!
 -   Remove upper bound on react-native peerDependency [#1424](https://github.com/storybooks/storybook/pull/1424)
 -   Bump `react-split-pane` version [#1495](https://github.com/storybooks/storybook/pull/1495)
 
-# 3.1.9
+## 3.1.9
 
 2017-July-16
 
@@ -4834,7 +4878,7 @@ Plus many more features, documentation improvements, and bugfixes below!
 -   Update lerna to the latest version 🚀 [#1423](https://github.com/storybooks/storybook/pull/1423)
 -   Pin gatsby version and upgrade gh-pages [#1462](https://github.com/storybooks/storybook/pull/1462)
 
-# 3.1.8
+## 3.1.8
 
 2017-July-06
 
@@ -4853,7 +4897,7 @@ Plus many more features, documentation improvements, and bugfixes below!
 -   Support webpack 3.0.0 [#1410](https://github.com/storybooks/storybook/pull/1410)
 -   Update react inspector to fix #1385 [#1408](https://github.com/storybooks/storybook/pull/1408)
 
-# 3.1.7
+## 3.1.7
 
 2017-June-28
 
@@ -4866,7 +4910,7 @@ Plus many more features, documentation improvements, and bugfixes below!
 
 -   Document Storybook release process [#1348](https://github.com/storybooks/storybook/pull/1348)
 
-# 3.1.6
+## 3.1.6
 
 2017-June-26
 
@@ -4888,7 +4932,7 @@ Plus many more features, documentation improvements, and bugfixes below!
 
 -   Update lint-staged to the latest version 🚀 [#1315](https://github.com/storybooks/storybook/pull/1315)
 
-# 3.1.5
+## 3.1.5
 
 2017-June-22
 
@@ -4913,7 +4957,7 @@ Plus many more features, documentation improvements, and bugfixes below!
 -   Use a pack -> install technique to recreate local packages [#1332](https://github.com/storybooks/storybook/pull/1332)
 -   Import demo components from @storybook/react [#1303](https://github.com/storybooks/storybook/pull/1303)
 
-# 3.1.4
+## 3.1.4
 
 2017-June-15
 
@@ -4931,7 +4975,7 @@ Plus many more features, documentation improvements, and bugfixes below!
 
 -   Add versions plugin to docs [#1269](https://github.com/storybooks/storybook/pull/1269)
 
-# 3.1.3
+## 3.1.3
 
 2017-June-10
 
@@ -4939,7 +4983,7 @@ Plus many more features, documentation improvements, and bugfixes below!
 
 -   Fix `storybook-build` manager-head.html bug [#1248](https://github.com/storybooks/storybook/pull/1248)
 
-# 3.1.2
+## 3.1.2
 
 Minor features including a new "events" addon, as well as the usual bugfixes, cleanup, etc.
 
@@ -4976,7 +5020,7 @@ Minor features including a new "events" addon, as well as the usual bugfixes, cl
 -   Update babel docgen plugin to generate docs for React.createClass and createReactClass [#1206](https://github.com/storybooks/storybook/pull/1206)
 -   Update `marksy` dependecy due broken 1.1.0 version [#1204](https://github.com/storybooks/storybook/pull/1204)
 
-# 3.0.1
+## 3.0.1
 
 Minor bug fixes and documentation updates post 3.0.0 release.
 
@@ -5006,7 +5050,7 @@ Minor bug fixes and documentation updates post 3.0.0 release.
 
 -   Replaced deprecated `markdown-to-react-components` with `marksy` [#1188](https://github.com/storybooks/storybook/pull/1188)
 
-# 3.0.0
+## 3.0.0
 
 Storybook 3.0 is our first fully community-driven release! Notable changes:
 
@@ -5127,11 +5171,11 @@ Storybook 3.0 is our first fully community-driven release! Notable changes:
 
 </details>
 
-# v2.35.3
+## v2.35.3
 
 Allow customConfig to override devtool. [PR668](https://github.com/storybooks/react-storybook/pull/668)
 
-# v2.35.2
+## v2.35.2
 
 03-January-2017
 
@@ -5139,11 +5183,11 @@ Fixes issue [#601](https://github.com/storybooks/react-storybook/issues/601) whe
 
 This release comes with the updated `babel-plugin-react-docgen`.
 
-# v2.35.1
+## v2.35.1
 
 -   Revert [PR653](https://github.com/storybooks/react-storybook/pull/653) where it's causing HMR to not working properly.
 
-# v2.35.0
+## v2.35.0
 
 18-December-2016
 
@@ -5151,90 +5195,90 @@ This release comes with the updated `babel-plugin-react-docgen`.
 -   Update css-loader dependency [PR648](https://github.com/storybooks/react-storybook/pull/648)
 -   Check if stories are loaded from Jest [PR644](https://github.com/storybooks/react-storybook/pull/644)
 
-# v2.34.0
+## v2.34.0
 
 05-December-2016
 
 Open the express router for developers (middleware.js file). [PR435](https://github.com/storybooks/react-storybook/pull/435)
 
-# v2.33.1
+## v2.33.1
 
 01-December-2016
 
 Update Typescript definition file for global addDecorator. [PR634](https://github.com/storybooks/react-storybook/pull/634)
 
-# v2.33.0
+## v2.33.0
 
 28-November-2016
 
 Completely avoid re-rendering the preview iframe. [PR631](https://github.com/storybooks/react-storybook/pull/631)
 
-# v2.32.2
+## v2.32.2
 
 28-November-2016
 
 Update postmsg channel module version [PR627](https://github.com/storybooks/react-storybook/pull/627)
 
-# v2.32.1
+## v2.32.1
 
 22-November-2016
 
 Add support for react_perf comes with React 15.4.0. [PR623](https://github.com/storybooks/react-storybook/pull/623)
 
-# v2.32.0
+## v2.32.0
 
 Incorrect publish (error when running `npm publish`)
 
-# v2.31.0
+## v2.31.0
 
 20-November-2016
 
 Add the react-storybook version to the build output. [PR621](https://github.com/storybooks/react-storybook/pull/621)
 
-# v2.30.1
+## v2.30.1
 
 17-November-2016
 
 Update the postmsg channel module to fix issue [#555](https://github.com/storybooks/react-storybook/issues/555) with [PR611](https://github.com/storybooks/react-storybook/pull/611)
 
-# v2.30.0
+## v2.30.0
 
 16-November-2016
 
 Update to the new Storybook UI which doesn't use Redux.
 
-# v2.29.7
+## v2.29.7
 
 11-November-2016
 
 Update @kadira/storybook-ui to the latest.
 
-# v2.29.6
+## v2.29.6
 
 10-November-2016
 
 Fix a typo in the story syntax error messages. [PR610](https://github.com/storybooks/react-storybook/pull/610)
 
-# v2.29.5
+## v2.29.5
 
 09-November-2016
 
 Check if regex and regex.test is available before calling it. [PR608](https://github.com/storybooks/react-storybook/pull/608)
 
-# v2.29.3
+## v2.29.3
 
 08-November-2016
 
 Update webpack-hot-middleware to version 2.13.2 to fix the issue [#543](https://github.com/storybooks/react-storybook/issues/543).
 
-# v2.29.3
+## v2.29.3
 
 03-November-2016
 
 Fix a regression caused by v2.29.2.
 There was a text called undefined listed always on the top of the preview.
 
-# v2.29.2
+## v2.29.2
 
 03-November-2016
 
@@ -5246,33 +5290,33 @@ Add various fixes.
 -   Update postcss-loader to v1.1.0 [PR599](https://github.com/storybooks/react-storybook/pull/599)
 -   fix for `module.hot` is not available in a static build [PR600](https://github.com/storybooks/react-storybook/pull/600)
 
-# v2.29.1
+## v2.29.1
 
 03-November-2016
 
 Update babel-plugin-react-docgen to v1.4.1 to fix HOC [issue](https://github.com/kadirahq/babel-plugin-react-docgen/issues/19)
 
-# v2.29.0
+## v2.29.0
 
 01-November-2016
 
 Update babel-plugin-react-docgen to 1.4.0.
 This will fix some of the compilation issues such as #580.
 
-# v2.28.1
+## v2.28.1
 
 28-October-2016
 
 Remove preview decorator support. [PR583](https://github.com/storybooks/react-storybook/pull/583).
 
-# v2.28.0
+## v2.28.0
 
 28-October-2016
 
 Add preview decorator support. [PR582](https://github.com/storybooks/react-storybook/pull/582).
 This will help us bring storybook designer with some great power.
 
-# v2.27.0
+## v2.27.0
 
 27-October-2016
 
@@ -5284,7 +5328,7 @@ Add a few usability improvements to Storybook.
 -   Update `babel-preset-react-app` to the latest. [PR576](https://github.com/storybooks/react-storybook/pull/576)
 -   Ship `json-loader` by default. [PR575](https://github.com/storybooks/react-storybook/pull/575)
 
-# v2.26.0
+## v2.26.0
 
 24-October-2016
 
@@ -5294,13 +5338,13 @@ Get some new features from CRA.
 -   Allow to use postcss for CSS @imports [PR564](https://github.com/storybooks/react-storybook/pull/564)
 -   Use process.env as a proper object [PR565](https://github.com/storybooks/react-storybook/pull/565)
 
-# v2.25.1
+## v2.25.1
 
 23-October-2016
 
 Add a potential fix to [558](https://github.com/storybooks/react-storybook/issues/558) by updating babel-plugin-react-docgen to the latest(v1.3.2).
 
-# v2.25.0
+## v2.25.0
 
 21-October-2016
 
@@ -5312,25 +5356,25 @@ With this:
 
 Additionally, added `yarn.lock`.
 
-# v2.24.1
+## v2.24.1
 
 19-October-2016
 
 Do not show git command output. [PR554](https://github.com/storybooks/react-storybook/pull/554)
 
-# v2.24.0
+## v2.24.0
 
 07-October-2016
 
 -   Export git repository info to support custom tool integrations [PR536](https://github.com/storybooks/react-storybook/pull/536)
 
-# v2.23.0
+## v2.23.0
 
 06-October-2016
 
 -   Remove the experimental database addon from react-storybook [PR535](https://github.com/storybooks/react-storybook/pull/535)
 
-# v2.22.0
+## v2.22.0
 
 05-October-2016
 
@@ -5339,80 +5383,80 @@ Add some nice development experiment based on suggestion from Dan Abramov.
 -   Set a color to the Storybook URL in the console. [PR533](https://github.com/storybooks/react-storybook/pull/533)
 -   Add better error message when there's no React element in the story. [PR534](https://github.com/storybooks/react-storybook/pull/534)
 
-# v2.21.0
+## v2.21.0
 
 05-October-2016
 
 -   Get the latest features from CRA including NODE_PATH support, public folder support and some other minor changes. [#468](https://github.com/storybooks/react-storybook/issues/468)
 -   Also bumped `@kadira/storybook-channel-postmsg` to `^1.0.3`
 
-# v2.20.1
+## v2.20.1
 
 28-September-2016
 
 -   Fix story kind order bug [PR499](https://github.com/storybooks/react-storybook/pull/499)
 -   Prefix config environment variables [PR503](https://github.com/storybooks/react-storybook/pull/503)
 
-# v2.20.0
+## v2.20.0
 
 26-September-2016
 
 -   Use postMessage channel [PR498](https://github.com/storybooks/react-storybook/pull/498)
 -   Support dynamic panel titles [PR497](https://github.com/storybooks/react-storybook/pull/497)
 
-# v2.19.0
+## v2.19.0
 
 26-September-2016
 
 -   Support layout options [PR494](https://github.com/storybooks/react-storybook/pull/494)
 -   Update Typescript definitions [PR491](https://github.com/storybooks/react-storybook/pull/491) and [PR493](https://github.com/storybooks/react-storybook/pull/493)
 
-# v2.18.1
+## v2.18.1
 
 23-September-2016
 
 -   Stop uglifyjs from mangling names [PR483](https://github.com/storybooks/react-storybook/pull/483)
 
-# v2.18.0
+## v2.18.0
 
 23-September-2016
 
 -   Remove `STORYBOOK_` prefix from config env [PR481](https://github.com/storybooks/react-storybook/pull/481)
 
-# v2.17.0
+## v2.17.0
 
 22-September-2016
 
 -   Add support for StoryShots. [PR479](https://github.com/storybooks/react-storybook/pull/479)
 -   Fix some typos: [PR477](https://github.com/storybooks/react-storybook/pull/477) & [PR478](https://github.com/storybooks/react-storybook/pull/478)
 
-# v2.16.1
+## v2.16.1
 
 21-September-2016
 
 -   Fix the 404 error for `addon-db.json` file [PR472](https://github.com/storybooks/react-storybook/pull/472)
 -   Serve/Bundle the storybook favicon [PR473](https://github.com/storybooks/react-storybook/pull/473)
 
-# v2.16.0
+## v2.16.0
 
 21-September-2016
 
 -   Move the babel config loading logic into a seperate file. [PR469](https://github.com/storybooks/react-storybook/pull/469)
 -   Update airbnd eslint rules to the latest.
 
-# v2.15.1
+## v2.15.1
 
 19-September-2016
 
 Add a fix to webpack custom resolve.alias not working. [PR465](https://github.com/storybooks/react-storybook/pull/465)
 
-# v2.15.0
+## v2.15.0
 
 19-September-2016
 
 -   Use @kadira/storybook-addons as a resolve.alias. So, we can support addons for NPM2 too. [PR462](https://github.com/storybooks/react-storybook/pull/462)
 
-# v2.14.0
+## v2.14.0
 
 14-September-2016
 
@@ -5421,26 +5465,26 @@ Add a fix to webpack custom resolve.alias not working. [PR465](https://github.co
 -   Allow to reload if HMR goes crazy. [PR448](https://github.com/storybooks/react-storybook/pull/448)
 -   Add support to get custom env variables. [PR450](https://github.com/storybooks/react-storybook/pull/450)
 
-# v2.13.1
+## v2.13.1
 
 14-September-2016
 
 -   Fix 404 error when db file does not exist [PR449](https://github.com/storybooks/react-storybook/pull/449)
 
-# v2.13.0
+## v2.13.0
 
 9-September-2016
 
 -   Fix [#443](https://github.com/storybooks/react-storybook/issues/443) where the static version of Storybook doesn't like Safari.
 -   Update postcss-loader to 0.13.0.
 
-# v2.12.1
+## v2.12.1
 
 8-September-2016
 
 -   Parse static directory provided by env as a list. [PR436](https://github.com/storybooks/react-storybook/pull/436)
 
-# v2.12.0
+## v2.12.0
 
 8-September-2016
 
@@ -5448,86 +5492,86 @@ Add a fix to webpack custom resolve.alias not working. [PR465](https://github.co
 -   Update css-loader to version 0.25.0. [PR427](https://github.com/storybooks/react-storybook/pull/427)
 -   Get the head.html values for every page request. [PR432](https://github.com/storybooks/react-storybook/pull/432)
 
-# v2.11.0
+## v2.11.0
 
 4-September-2016
 
 -   Remove babel-polyfill since we don't use it.
 -   Update versions with the help from greenkeeper. [PR421](https://github.com/storybooks/react-storybook/pull/421)
 
-# v2.10.0
+## v2.10.0
 
 3-September-2016
 
 -   Adding airbnb-js-shims again. [PR419](https://github.com/storybooks/react-storybook/pull/419)
 
-# v2.9.1
+## v2.9.1
 
 2-September-2016.
 
 -   Use the config directory to store the addon database file [PR418](https://github.com/storybooks/react-storybook/pull/418).
 
-# v2.9.0
+## v2.9.0
 
 2-September-2016.
 
 -   Copy the addon-db.json file when building static storybooks [PR417](https://github.com/storybooks/react-storybook/pull/417).
 
-# v2.8.0
+## v2.8.0
 
 2-September-2016.
 
 -   Update @kadira/storybook to get the clean query params feature. See [storybook-ui-PR37](https://github.com/kadirahq/storybook-ui/pull/37)
 
-# v2.7.0
+## v2.7.0
 
 1-September-2016
 
 -   Add addon database feature [PR415](https://github.com/storybooks/react-storybook/pull/415).
 
-# v2.6.1
+## v2.6.1
 
 31-August-2016
 
 -   Bring back HMR dev logs. [PR412](https://github.com/storybooks/react-storybook/pull/412).
 
-# v2.6.0
+## v2.6.0
 
 30-August-2016
 
 -   Allow start/build params from env variables. [PR413](https://github.com/storybooks/react-storybook/pull/413)
 
-# v2.5.2
+## v2.5.2
 
 29-August-2016
 
 -   Remove the use of babel-runtime/core-js modules. [PR410](https://github.com/storybooks/react-storybook/pull/410)
 
-# v2.5.1
+## v2.5.1
 
 24-August-2016
 
 -   Update @kadira/storybook-ui to v3.3.2
 
-# v2.5.0
+## v2.5.0
 
 24-August-2016
 
 -   We are no longer shipping extra polyfills anymore. [PR402](https://github.com/storybooks/react-storybook/pull/402)
 
-# v2.4.2
+## v2.4.2
 
 24-August-2016
 
 -   Allow file-loader URLs to work on subpaths. [PR401](https://github.com/storybooks/react-storybook/pull/401)
 
-# v2.4.1
+## v2.4.1
 
 24-August-2016
 
 -   Bump @kadira/storybook ui to v3.3.1 to fix some UI related issues.
 
-# v2.4.0
+## v2.4.0
 
 23-August-2016
 
@@ -5536,32 +5580,32 @@ Add a fix to webpack custom resolve.alias not working. [PR465](https://github.co
 -   Add webpack2 support by changing the use of OccurenceOrderPlugin. [PR397](https://github.com/storybooks/react-storybook/pull/397)
 -   Use @kadira/storybook-ui 2.3.0, which has new APIs to set URL for addons.
 
-# v2.3.0
+## v2.3.0
 
 16-August-2016
 
 -   Implement anonymous usage tracking. [PR384](https://github.com/storybooks/react-storybook/pull/384)
 
-# v2.2.3
+## v2.2.3
 
 15-August-2016
 
 -   Add a hash to media file's filename. Otherwise, it'll cause issues when there are multiple images with the same filename but in different directories. [PR380](https://github.com/storybooks/react-storybook/pull/380)
 
-# v2.2.2
+## v2.2.2
 
 10-August-2016
 
 -   Remove unused extract-text-webpack-plugin. This will add webpack2 support. [PR369](https://github.com/storybooks/react-storybook/pull/369).
 
-# v2.2.1
+## v2.2.1
 
 09-August-2016
 
 -   Use @kadira/storybook-channel modules. [#PR359](https://github.com/storybooks/react-storybook/pull/359).
 -   Update @kadira/storybook-ui to the latest.
 
-# v2.2.0
+## v2.2.0
 
 05-August-2016
 
@@ -5572,7 +5616,7 @@ This release bring some webpack config related optimizations and the NPM2 suppor
 -   Add NPM2 support. [PR356](https://github.com/storybooks/react-storybook/pull/356)
 -   Add autofixer defaults. [PR357](https://github.com/storybooks/react-storybook/pull/357)
 
-# v2.1.1
+## v2.1.1
 
 03-August-2016
 
@@ -5581,7 +5625,7 @@ Remove default webpack config for all config types. [PR348](https://github.com/s
 Now we only use the Create React App based config if there's no custom webpack config.
 This will fix issues like [#347](https://github.com/storybooks/react-storybook/issues/347).
 
-# v2.1.0
+## v2.1.0
 
 02-August-2016
 
@@ -5597,7 +5641,7 @@ Unfortunately, as of this version, there are no docs for this feature. But, you 
 
 Have a look at [here](https://github.com/storybooks/react-storybook/blob/master/src/server/config.js#L88) to how to configure addons.
 
-# v2.0.0
+## v2.0.0
 
 01-August-2016
 
@@ -5611,151 +5655,151 @@ This is the starting of the next major version of Storybook. This version is alm
     -   Continue support for babel's stage-0 preset and add es2016 preset.
 -   Update @kadira/storybook-ui to v2.6.1 to remove some React warnings.
 
-# v1.41.0
+## v1.41.0
 
 -   Fix nodejs require errors [#337](https://github.com/storybooks/react-storybook/pull/337).
 -   Add getStorybook method to client API [#332](https://github.com/storybooks/react-storybook/pull/332).
 
-# v1.40.0
+## v1.40.0
 
 -   Fix duplicate decorator bug [#335](https://github.com/storybooks/react-storybook/pull/335).
 
-# v1.39.1
+## v1.39.1
 
 -   Update babel packages [#325](https://github.com/storybooks/react-storybook/pull/325).
 -   Hide HMR info logs [#331](https://github.com/storybooks/react-storybook/pull/331).
 
-# v1.39.0
+## v1.39.0
 
 -   Update @kadira/storybook-ui to get features from [v2.5.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v250) and [v2.6.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v260).
 
-# v1.38.3
+## v1.38.3
 
 -   Add names for action and linkTo functions [#321](https://github.com/storybooks/react-storybook/pull/321).
 
-# v1.38.2
+## v1.38.2
 
 -   Fix error in prepublish script [#319](https://github.com/storybooks/react-storybook/pull/319).
 
-# v1.38.1
+## v1.38.1
 
 -   Improve Windows support by writing prepublish script using shelljs [#308](https://github.com/storybooks/react-storybook/pull/308).
 
-# v1.38.0
+## v1.38.0
 
 -   v1.37.0 was a nightmare since it contains the npm-shrinkwrap.json. Fixed by removing it. See: [#306](https://github.com/storybooks/react-storybook/issues/306) and [#305](https://github.com/storybooks/react-storybook/pull/305).
 
-# v1.37.0
+## v1.37.0
 
 -   Update @kadira/storybook-ui to 2.4.0
 
-# v1.36.0
+## v1.36.0
 
 -   Support watchOptions configuration. See: [PR287](https://github.com/storybooks/react-storybook/pull/287)
 
-# v1.35.2
+## v1.35.2
 
 -   Add missing font-face to the ErrorDisplay's heading.
 
-# v1.35.1
+## v1.35.1
 
 -   Fix issue related to bad error handling. See issue [#275](https://github.com/storybooks/react-storybook/issues/275):
 
-# v1.35.0
+## v1.35.0
 
 -   Add fuzzy search powered search box and Redux DevTools support via [@kadira/storybook-ui@2.3.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v230).
 
-# v1.34.1
+## v1.34.1
 
 -   Don't always override NODE_ENV in build-storybook. [PR272](https://github.com/storybooks/react-storybook/pull/272)
 
-# v1.34.0
+## v1.34.0
 
 -   Use storybook-ui v2.2.0 which puts shortcut state into the URL.
 
-# v1.33.0
+## v1.33.0
 
 -   Introduce an [extension API](https://github.com/storybooks/react-storybook/blob/master/docs/extensions.md) for Storybook. See: [PR258](https://github.com/storybooks/react-storybook/pull/258)
 
-# v1.32.1
+## v1.32.1
 
 -   Extend @kadira/storybook-ui provider from it's base Provider.
 
-# v1.32.0
+## v1.32.0
 
 -   Use @kadira/storybook-ui as the manager UI with the implemented provider for React. See `client/manager` for more info.
 
-# v1.31.0
+## v1.31.0
 
 -   Pass a `context` argument to stories [PR250](https://github.com/storybooks/react-storybook/pull/250)
 
-# v1.30.0
+## v1.30.0
 
 -   Fuzzy search kinds [PR247](https://github.com/storybooks/react-storybook/pull/247)
 
-# v1.29.5
+## v1.29.5
 
 -   Update dependency version to fix filter crash [PR246](https://github.com/storybooks/react-storybook/pull/246)
 
-# v1.29.4
+## v1.29.4
 
 -   Protect index.html/iframe.html from being overwritten [PR243](https://github.com/storybooks/react-storybook/pull/243)
 
-# v1.29.3
+## v1.29.3
 
 -   Update @kadira/storybook-core version [PR241](https://github.com/storybooks/react-storybook/pull/241)
 -   Add es6-shim by default [PR238](https://github.com/storybooks/react-storybook/pull/238)
 
-# v1.29.2
+## v1.29.2
 
 -   Use url.resolve instead of path.join [PR240](https://github.com/storybooks/react-storybook/pull/240)
 
-# v1.29.1
+## v1.29.1
 
 -   Copy missed manager.js.map file on static build [PR236](https://github.com/storybooks/react-storybook/pull/236)
 
-# v1.29.0
+## v1.29.0
 
 -   Multiple static dirs (comma separated) [PR229](https://github.com/storybooks/react-storybook/pull/229)
 
-# v1.28.5
+## v1.28.5
 
 -   Support ECMAScript stage-0 [PR228](https://github.com/storybooks/react-storybook/pull/228) to fix [Issue #227](https://github.com/storybooks/react-storybook/issues/227)
 
-# v1.28.4
+## v1.28.4
 
 -   Support custom webpack public path for dev-server and static build started by [PR226](https://github.com/storybooks/react-storybook/pull/226)
 
-# v1.28.3
+## v1.28.3
 
 -   Revert [PR226](https://github.com/storybooks/react-storybook/pull/226)
 
-# v1.28.2
+## v1.28.2
 
 -   Support custom webpack publicPath [PR226](https://github.com/storybooks/react-storybook/pull/226)
 
-# v1.28.1
+## v1.28.1
 
 -   Add charset meta tags to HTML heads [PR216](https://github.com/storybooks/react-storybook/pull/216)
 
-# v1.28.0
+## v1.28.0
 
 -   Moved storybook serving code into a middleware to support more advanced use cases.
 -   Refactored dev server to use storybook middleware [PR211](https://github.com/storybooks/react-storybook/pull/211)
 
-# v1.27.0
+## v1.27.0
 
 -   Move modules to storybook-core repo. [PR196](https://github.com/storybooks/react-storybook/pull/196)
 -   Add stack-source-map again only for Chrome to get better error stacks.
 -   Add ability to control the hostname. See [PR195](https://github.com/storybooks/react-storybook/pull/195) and [PR198](https://github.com/storybooks/react-storybook/pull/198)
 
-# v1.26.0
+## v1.26.0
 
 12-May-2016
 
 -   Ensure asset directory exists in the static-builder.
 
-# v1.25.0
+## v1.25.0
 
 11-May-2016
 
@@ -5767,7 +5811,7 @@ This is the starting of the next major version of Storybook. This version is alm
 -   Make left panel scrollable with keeping the filterbox always. See: [PR182](https://github.com/storybooks/react-storybook/pull/182).
 -   Add `qs` as a direct dependency as it's used in preview.
 
-# v1.24.0
+## v1.24.0
 
 10-May-2016
 
@@ -5775,34 +5819,34 @@ This is the starting of the next major version of Storybook. This version is alm
 -   Add scrolling support to the left panel. Fixes [#177](https://github.com/storybooks/react-storybook/issues/177).
 -   Remove NODE_ENV=production flag. Fixes [#158](https://github.com/storybooks/react-storybook/issues/158)
 
-# v1.23.0
+## v1.23.0
 
 09-May-2016
 
 -   Add shortcuts to jump to previous and next stories. See [PR176](https://github.com/storybooks/react-storybook/pull/176)
 -   Fix loader concatenation bug specially when custom config doesn't have a loaders section. [PR173](https://github.com/storybooks/react-storybook/pull/173)
 
-# v1.22.1
+## v1.22.1
 
 06-May-2016
 
 -   Add a potential fix for [#167](https://github.com/storybooks/react-storybook/issues/167)
     -   basically, this moved back babel-packages required by webpack.
 
-# v1.22.0
+## v1.22.0
 
 06-May-2016
 
 -   Improve the static builder time.
 
-# v1.21.0
+## v1.21.0
 
 06-May-2016
 
 -   Add configType argument to custom config function. See: [PR169](https://github.com/storybooks/react-storybook/pull/169)
 -   Add the unicode version of the Keyboard Shortcut Icon. See: [PR170](https://github.com/storybooks/react-storybook/pull/170)
 
-# v1.20.0
+## v1.20.0
 
 05-May-2016
 
@@ -5812,7 +5856,7 @@ This is the starting of the next major version of Storybook. This version is alm
 -   Remove some typo in docs. See: [PR154](https://github.com/storybooks/react-storybook/pull/154)
 -   Move UI testing libraries to devDependencies. See: [PR153](https://github.com/storybooks/react-storybook/pull/153)
 
-# v1.19.0
+## v1.19.0
 
 27-April-2016
 
@@ -5820,38 +5864,38 @@ This is the starting of the next major version of Storybook. This version is alm
 -   Remove self-closing div tag, which is invalid HTML. See: [PR148](https://github.com/storybooks/react-storybook/pull/148)
 -   Search for a .babelrc in the storybook config directory first, then the project root. See: [PR149](https://github.com/storybooks/react-storybook/pull/149)
 
-# v1.18.0
+## v1.18.0
 
 26-April-2016
 
 -   Link Storybook menu to the repo. See: [PR137](https://github.com/storybooks/react-storybook/pull/137)
 -   Implement keyboard shortcuts and fuzzy search. See: [PR141](https://github.com/storybooks/react-storybook/pull/141)
 
-# v1.17.2
+## v1.17.2
 
 25-April-2016
 
 -   Fix an error which only occurs on Firefox. See: [PR144](https://github.com/storybooks/react-storybook/pull/144)
 
-# v1.17.1
+## v1.17.1
 
 21-April-2016
 
 -   Fix a regression introduce by `v1.17.0`. See: [PR133](https://github.com/storybooks/react-storybook/pull/133)
 
-# v1.17.0
+## v1.17.0
 
 21-April-2016
 
 -   Check all the arguments passed to action for events. See: [PR132](https://github.com/storybooks/react-storybook/pull/132)
 
-# v1.16.1
+## v1.16.1
 
 21-April-2016
 
 -   Fix action logs highlighting issue, which comes as a regression of [PR126](https://github.com/storybooks/react-storybook/pull/126).
 
-# v1.16.0
+## v1.16.0
 
 20-April-2016
 
@@ -5859,37 +5903,37 @@ This is the starting of the next major version of Storybook. This version is alm
     -   Related issue: [#116](https://github.com/storybooks/react-storybook/issues/116)
     -   Related PR: [PR126](https://github.com/storybooks/react-storybook/pull/126)
 
-# v1.15.0
+## v1.15.0
 
 20-April-2016
 
 -   Improve action logger UI and increase max log count to 10. See [PR123](https://github.com/storybooks/react-storybook/pull/123)
 
-# v1.14.0
+## v1.14.0
 
 19-April-2016
 
 -   Add syntax highlights to the logger. See: [PR118](https://github.com/storybooks/react-storybook/pull/118)
 
-# v1.13.0
+## v1.13.0
 
 -   Add some UI test cases. See [PR103](https://github.com/storybooks/react-storybook/pull/103)
 -   Implement `.addDecorator()` API. See [PR115](https://github.com/storybooks/react-storybook/pull/115)
 -   Add code folding support. See [PR111](https://github.com/storybooks/react-storybook/pull/111)
 
-# v1.12.0
+## v1.12.0
 
 14-April-2016
 
 -   Add support for webpack module preLoaders. See: [PR107](https://github.com/storybooks/react-storybook/pull/107)
 
-# v1.11.0
+## v1.11.0
 
 13-April-2016
 
 -   Add support for React DevTools. See: [PR104](https://github.com/storybooks/react-storybook/pull/104)
 
-# v1.10.2
+## v1.10.2
 
 12-April-2016
 
@@ -5899,13 +5943,13 @@ Fix various issues related to static bundling.
 -   Use relative urls so, static sites can be host with paths (GH Pages)
 -   Identify SyntheticEvent using feature detection. UglifyJS mangal class names, so we can't use classnames to detect a SyntheticEvent in the static build.
 
-# v1.10.1
+## v1.10.1
 
 -   Don't serve index.html in static directory as a site index. See [PR100](https://github.com/storybooks/react-storybook/pull/100)
 -   Use cjson for parsing .babelrc files (support comments). See [PR98](https://github.com/storybooks/react-storybook/pull/98)
 -   Remove the dist directory before running babel to avoid older code. See [PR101](https://github.com/storybooks/react-storybook/pull/101)
 
-# v1.10.0
+## v1.10.0
 
 -   Add custom head support inside the iframe. See [PR77](https://github.com/storybooks/react-storybook/pull/77)
 -   Unmount components before rendering into DOM node. Fix: [#81](https://github.com/storybooks/react-storybook/issues/81)
@@ -5913,7 +5957,7 @@ Fix various issues related to static bundling.
 -   Fix search box's lineHeight to work with all the browsers. See: [PR94](https://github.com/storybooks/react-storybook/pull/94)
 -   Add the search box. See: [PR91](https://github.com/storybooks/react-storybook/pull/91).
 
-# v1.9.0
+## v1.9.0
 
 Add some minor improvements.
 
@@ -5921,48 +5965,48 @@ Add some minor improvements.
 -   Fix the React Warning about CSS property. See: [PR84](https://github.com/storybooks/react-storybook/pull/84)
 -   Transition on latest logged action. See: [PR80](https://github.com/storybooks/react-storybook/pull/80)
 
-# v1.8.0
+## v1.8.0
 
 -   Add story linking functionality.
     -   [Documentation](https://github.com/storybooks/react-storybook/blob/master/docs/api.md#linking-stories).
     -   Original feature request: [#50](https://github.com/storybooks/react-storybook/issues/50)
     -   Implementation: [PR86](https://github.com/storybooks/react-storybook/pull/86)
 
-# v1.7.0
+## v1.7.0
 
 -   Add support to React v15.0.0.
 
-# v1.6.0
+## v1.6.0
 
 -   Make scrollable layout. See: [PR](https://github.com/storybooks/react-storybook/pull/70)
 -   Add npm3 requirement to the `package.json`.
 -   Add `react` and `react-dom` to devDependencies.
 
-# v1.5.0
+## v1.5.0
 
 -   Add support for most of the custom webpack configuration. See [PR64](https://github.com/storybooks/react-storybook/pull/64)
 
-# v1.4.0
+## v1.4.0
 
 -   Add CLI option to specify the config dir. See [PR52](https://github.com/storybooks/react-storybook/pull/52).
 
-# v1.3.0
+## v1.3.0
 
 -   Load the `.babelrc` manually. Fixed: [#41](https://github.com/storybooks/react-storybook/issues/41)
 -   Add a better contributing guide. See [CONTRIBUTING.md](https://github.com/storybooks/react-storybook/blob/master/CONTRIBUTING.md)
 -   Add a development utility `npm run dev` which watches "src" directory and run `npm run prepublish`.
 
-# v1.2.0
+## v1.2.0
 
 -   Add a button to clear logs in the ActionLogger. This is requested in [PR21](https://github.com/storybooks/react-storybook/issues/21).
 -   Remove navigation list order hijacking. See [commit](https://github.com/storybooks/react-storybook/commit/166365fd38f51f79e69e028a1c11e2620eddcb99).
 -   Fix a typo in .gitignore. See [PR31](https://github.com/storybooks/react-storybook/pull/31).
 -   Add support for JSX. See [PR18](https://github.com/storybooks/react-storybook/pull/18).
 
-# v1.1.0
+## v1.1.0
 
 -   v1.0.0 was a mistake and it contains very old code. That's why we had to do a 1.1.0 release.
 
-# v1.0.0
+## v1.0.0
 
 -   Yeah!
