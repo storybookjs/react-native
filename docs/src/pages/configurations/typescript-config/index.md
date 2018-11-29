@@ -86,8 +86,6 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
-If you have your `/stories` directory in `src`, change the above `../stories` to `../src/stories`.
-
 ## Using Typescript with the TSDocgen addon
 
 The very handy [Storybook Info addon](https://github.com/storybooks/storybook/tree/master/addons/info) autogenerates prop tables documentation for each component, however it doesn't work with Typescript types. The current solution is to use [react-docgen-typescript-loader](https://github.com/strothj/react-docgen-typescript-loader) to preprocess the Typescript files to give the Info addon what it needs. The webpack config above does this, and so for the rest of your stories you use it as per normal:
