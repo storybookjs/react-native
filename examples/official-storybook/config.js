@@ -5,6 +5,7 @@ import { configure, addDecorator } from '@storybook/react';
 import { themes } from '@storybook/components';
 import { withOptions } from '@storybook/addon-options';
 import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { withCssResources } from '@storybook/addon-cssresources';
 
 import 'react-chromatic/storybook-addon';
 import addHeadWarning from './head-warning';
@@ -43,6 +44,20 @@ const Reset = styled.div(({ theme }) => ({
 }));
 
 addDecorator((story, { kind }) => (kind === 'Core|Errors' ? story() : <Reset>{story()}</Reset>));
+
+addDecorator(
+  withCssResources({
+    cssresources: [
+      {
+        name: `bluetheme`,
+        code: `<style>body {
+  background-color: lightblue;
+}</style>`,
+        picked: false,
+      },
+    ],
+  })
+);
 
 addDecorator(
   (story, { kind }) =>

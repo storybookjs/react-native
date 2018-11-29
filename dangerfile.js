@@ -37,6 +37,8 @@ const checkRequiredLabels = labels => {
   const foundLabels = intersection(requiredLabels, labels);
   if (isEmpty(foundLabels)) {
     fail(`PR is not labeled with one of: ${JSON.stringify(requiredLabels)}`);
+  } else if (foundLabels.length > 1) {
+    fail(`Please choose only one of these labels: ${JSON.stringify(foundLabels)}`);
   }
 };
 

@@ -17,7 +17,7 @@ module.exports = {
   ],
   env: {
     test: {
-      plugins: ['babel-plugin-require-context-hook'],
+      plugins: ['babel-plugin-require-context-hook', 'babel-plugin-dynamic-import-node'],
     },
   },
   overrides: [

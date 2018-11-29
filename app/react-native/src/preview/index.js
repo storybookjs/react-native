@@ -1,4 +1,4 @@
-/* eslint-disable react/no-this-in-sfc, no-underscore-dangle */
+/* eslint-disable no-underscore-dangle */
 
 import React from 'react';
 import { AsyncStorage, NativeModules } from 'react-native';
@@ -46,7 +46,7 @@ export default class Preview {
     let channel = null;
 
     const onDeviceUI = params.onDeviceUI !== false;
-
+    const { initialSelection, shouldPersistSelection } = params;
     // should the initial story be sent to storybookUI
     // set to true if using disableWebsockets or if connection to WebsocketServer fails.
     let setInitialStory = false;
@@ -67,7 +67,7 @@ export default class Preview {
         const port = params.port !== false ? `:${params.port || 7007}` : '';
 
         const query = params.query || '';
-        const { initialSelection, secured, shouldPersistSelection } = params;
+        const { secured } = params;
         const websocketType = secured ? 'wss' : 'ws';
         const httpType = secured ? 'https' : 'http';
 
@@ -77,6 +77,8 @@ export default class Preview {
           url,
           async: onDeviceUI,
           onError: () => {
+            // We are both emitting event and telling the component to get initial story. It may happen that component is created before the error or vise versa.
+            // This way we handle both cases
             this._setInitialStory(initialSelection, shouldPersistSelection);
 
             setInitialStory = true;
@@ -90,7 +92,7 @@ export default class Preview {
     }
 
     channel.on(Events.GET_STORIES, () => this._sendSetStories());
-    channel.on(Events.SET_CURRENT_STORY, d => this._selectStory(d));
+    channel.on(Events.SET_CURRENT_STORY, d => this._selectStoryEvent(d));
     this._sendSetStories();
 
     // If the app is started with server running, set the story as the one selected in the browser
@@ -114,7 +116,13 @@ export default class Preview {
               url={webUrl}
               isUIOpen={params.isUIOpen}
               tabOpen={params.tabOpen}
-              initialStory={setInitialStory ? preview._getInitialStory() : null}
+              getInitialStory={
+                setInitialStory
+                  ? preview._getInitialStory(initialSelection, shouldPersistSelection)
+                  : null
+              }
+              shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
+              keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
             />
           );
         }
@@ -136,8 +144,15 @@ export default class Preview {
   }
 
   _setInitialStory = async (initialSelection, shouldPersistSelection = true) => {
-    let story = this._getInitialStory();
+    const story = await this._getInitialStory(initialSelection, shouldPersistSelection)();
 
+    if (story) {
+      this._selectStory(story);
+    }
+  };
+
+  _getInitialStory = (initialSelection, shouldPersistSelection = true) => async () => {
+    let story = null;
     if (initialSelection && this._checkStory(initialSelection)) {
       story = initialSelection;
     } else if (shouldPersistSelection) {
@@ -150,11 +165,9 @@ export default class Preview {
     }
 
     if (story) {
-      this._selectStory(story);
+      this._getStory(story);
     }
-  };
 
-  _getInitialStory = () => {
     const dump = this._stories.dumpStoryBook();
 
     const nonEmptyKind = dump.find(kind => kind.stories.length > 0);
@@ -171,11 +184,16 @@ export default class Preview {
     return { ...selection, storyFn };
   }
 
-  _selectStory(selection) {
-    const channel = addons.getChannel();
-
-    channel.emit(Events.SELECT_STORY, this._getStory(selection));
+  _selectStoryEvent(selection) {
     AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(selection));
+
+    const story = this._getStory(selection);
+    this._selectStory(story);
+  }
+
+  _selectStory(story) {
+    const channel = addons.getChannel();
+    channel.emit(Events.SELECT_STORY, story);
   }
 
   _checkStory(selection) {

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Lifecycle logging 1`] = `
+<div>
+  Lifecycle methods are logged to the console
+</div>
+`;

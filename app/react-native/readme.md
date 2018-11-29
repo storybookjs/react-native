@@ -22,16 +22,16 @@ The next thing you need to do is make Storybook UI visible in your app.
 The easiest way to use Storybook is to simply replace your App with the Storybook UI, which is possible by replacing `App.js` with a single line of code:
 
 ```js
-export default from "./storybook";
+export default from './storybook';
 ```
 
 This will get you up and running quickly, but then you lose your app!
 There are multiple options here. for example, you can export conditionally:
 
 ```js
-import StorybookUI from "./storybook";
+import StorybookUI from './storybook';
 
-import App from "./app";
+import App from './app';
 
 module.exports = __DEV__ ? StorybookUI : App;
 ```
@@ -127,8 +127,11 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
     initialSelection: Object (null)
         -- initialize storybook with a specific story. In case a valid object is passed, it will take precedence over `shouldPersistSelection. ex: `{ kind: 'Knobs', story: 'with knobs' }`
     shouldPersistSelection: Boolean (true)
-        -- initialize storybook with the last selected story.`
-    )
+        -- initialize storybook with the last selected story.
+    shouldDisableKeyboardAvoidingView: Boolean (false)
+        -- Disable KeyboardAvoidingView wrapping Storybook's view
+    keyboardAvoidingViewVerticalOffset: Number (0)
+        -- With shouldDisableKeyboardAvoidingView=true, this will set the keyboardverticaloffset (https://facebook.github.io/react-native/docs/keyboardavoidingview#keyboardverticaloffset) value for KeyboardAvoidingView wrapping Storybook's view
 }
 ```
 

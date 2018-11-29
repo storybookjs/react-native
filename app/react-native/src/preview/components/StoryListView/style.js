@@ -1,10 +1,17 @@
 export default {
-  list: {
+  searchBar: {
+    backgroundColor: '#eee',
+    borderRadius: 5,
+    fontSize: 16,
+    marginHorizontal: 5,
+    marginVertical: 5,
+    padding: 5,
+  },
+  flex: {
     flex: 1,
   },
   header: {
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingVertical: 5,
   },
   headerText: {
     fontSize: 20,

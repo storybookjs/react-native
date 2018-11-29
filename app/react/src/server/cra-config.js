@@ -5,74 +5,104 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import { normalizeCondition } from 'webpack/lib/RuleSet';
 
+const cssExtensions = ['.css', '.scss', '.sass'];
+const cssModuleExtensions = ['.module.css', '.module.scss', '.module.sass'];
+const typeScriptExtensions = ['.ts', '.tsx'];
+
 let reactScriptsPath;
+
 export function getReactScriptsPath({ noCache } = {}) {
   if (reactScriptsPath && !noCache) return reactScriptsPath;
+
   const appDirectory = fs.realpathSync(process.cwd());
   const reactScriptsScriptPath = fs.realpathSync(
     path.join(appDirectory, '/node_modules/.bin/react-scripts')
   );
+
   reactScriptsPath = path.join(reactScriptsScriptPath, '../..');
+  const scriptsPkgJson = path.join(reactScriptsPath, 'package.json');
+
+  if (!fs.existsSync(scriptsPkgJson)) {
+    reactScriptsPath = 'react-scripts';
+  }
+
   return reactScriptsPath;
 }
 
-export function isReactScriptsInstalled() {
+export function isReactScriptsInstalled(requiredVersion = '2.0.0') {
   try {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
+    // eslint-disable-next-line import/no-dynamic-require,global-require
     const reactScriptsJson = require(path.join(getReactScriptsPath(), 'package.json'));
-    if (semver.lt(reactScriptsJson.version, '2.0.0')) return false;
-    return true;
+    return !semver.lt(reactScriptsJson.version, requiredVersion);
   } catch (e) {
     return false;
   }
 }
 
-export function getStyleRules(rules) {
-  // Extensions of style rules we're interested in
-  const extensions = ['.css', '.scss', '.sass', '.module.css', '.module.scss', '.module.sass'];
-
-  return rules.reduce((styleRules, rule) => {
+export const getRules = extensions => rules =>
+  rules.reduce((craRules, rule) => {
     // If at least one style extension satisfies the rule test, the rule is one
     // we want to extract
     if (rule.test && extensions.some(normalizeCondition(rule.test))) {
       // If the base test is for styles, return early
-      return styleRules.concat(rule);
+      return craRules.concat(rule);
     }
 
     //  Get any style rules contained in rule.oneOf
     if (!rule.test && rule.oneOf) {
-      styleRules.push(...getStyleRules(rule.oneOf));
+      craRules.push(...getRules(extensions)(rule.oneOf));
     }
 
     // Get any style rules contained in rule.rules
     if (!rule.test && rule.rules) {
-      styleRules.push(...getStyleRules(rule.rules));
+      craRules.push(...getRules(extensions)(rule.rules));
     }
 
-    return styleRules;
+    return craRules;
   }, []);
-}
+
+const getStyleRules = getRules(cssExtensions.concat(cssModuleExtensions));
+const getTypeScriptRules = getRules(typeScriptExtensions);
 
 export function getCraWebpackConfig(mode) {
-  if (mode === 'production') {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    return require(path.join(getReactScriptsPath(), 'config/webpack.config.prod'));
+  const pathToReactScripts = getReactScriptsPath();
+
+  const craWebpackConfig =
+    mode === 'production' ? 'config/webpack.config.prod' : 'config/webpack.config.dev';
+
+  let pathToWebpackConfig = require.resolve(path.join(pathToReactScripts, craWebpackConfig));
+
+  if (!fs.existsSync(pathToWebpackConfig)) {
+    pathToWebpackConfig = path.join(pathToReactScripts, 'config/webpack.config');
   }
 
-  // eslint-disable-next-line global-require, import/no-dynamic-require
-  return require(path.join(getReactScriptsPath(), 'config/webpack.config.dev'));
+  // eslint-disable-next-line import/no-dynamic-require,global-require
+  const webpackConfig = require(pathToWebpackConfig);
+
+  if (typeof webpackConfig === 'function') {
+    return webpackConfig(mode);
+  }
+
+  return webpackConfig;
 }
 
 export function applyCRAWebpackConfig(baseConfig) {
+  // Check if the user can use TypeScript (react-scripts version 2.1+).
+  const hasTsSupport = isReactScriptsInstalled('2.1.0');
+
+  const tsExtensions = hasTsSupport ? typeScriptExtensions : [];
+  const extensions = [...cssExtensions, ...tsExtensions];
+
   // Remove any rules from baseConfig that test true for any one of the extensions
-  const baseRulesExcludingStyles = baseConfig.module.rules.filter(
-    rule => !rule.test || !['.css', '.scss', '.sass'].some(normalizeCondition(rule.test))
+  const filteredBaseRules = baseConfig.module.rules.filter(
+    rule => !rule.test || !extensions.some(normalizeCondition(rule.test))
   );
 
   //  Load create-react-app config
   const craWebpackConfig = getCraWebpackConfig(baseConfig.mode);
 
   const craStyleRules = getStyleRules(craWebpackConfig.module.rules);
+  const craTypeScriptRules = hasTsSupport ? getTypeScriptRules(craWebpackConfig.module.rules) : [];
 
   //  Add css minification for production
   const plugins = [...baseConfig.plugins];
@@ -84,8 +114,12 @@ export function applyCRAWebpackConfig(baseConfig) {
     ...baseConfig,
     module: {
       ...baseConfig.module,
-      rules: [...baseRulesExcludingStyles, ...craStyleRules],
+      rules: [...filteredBaseRules, ...craStyleRules, ...craTypeScriptRules],
     },
     plugins,
+    resolve: {
+      ...baseConfig.resolve,
+      extensions: [...baseConfig.resolve.extensions, ...tsExtensions],
+    },
   };
 }
