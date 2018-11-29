@@ -91,7 +91,7 @@ const tasks = {
     option: '--dll',
     command: () => {
       log.info(prefix, 'dll');
-      spawn('lerna run dll --scope "@storybook/ui"');
+      spawn('lerna run createDlls --scope "@storybook/ui"');
     },
   }),
   docs: createTask({
