@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-backgrounds",
-  "version": "4.1.0-alpha.8",
+  "version": "4.1.0-alpha.9",
   "description": "A storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",
@@ -26,7 +26,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.1.0-alpha.8",
+    "@storybook/addons": "4.1.0-alpha.9",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
