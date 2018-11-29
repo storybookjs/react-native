@@ -17,7 +17,7 @@
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "dll": "node -r esm ./scripts/script.js",
+    "dll": "node -r esm ./scripts/createDlls.js",
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
