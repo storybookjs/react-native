@@ -5,20 +5,19 @@ module.exports = {
     '@babel/preset-flow',
   ],
   plugins: [
-    ['emotion', { sourceMap: true, autoLabel: true }],
-    'babel-plugin-add-react-displayname',
-    'babel-plugin-macros',
-    '@babel/plugin-syntax-dynamic-import',
-    '@babel/plugin-proposal-object-rest-spread',
-    '@babel/plugin-proposal-class-properties',
-    '@babel/plugin-proposal-object-rest-spread',
+    ['@babel/plugin-proposal-object-rest-spread', { loose: true, useBuiltIns: true }],
     '@babel/plugin-proposal-export-default-from',
+    ['@babel/plugin-proposal-class-properties', { loose: true }],
+    '@babel/plugin-syntax-dynamic-import',
     [
       '@babel/plugin-transform-runtime',
       {
         regenerator: true,
       },
     ],
+    ['emotion', { sourceMap: true, autoLabel: true }],
+    'babel-plugin-add-react-displayname',
+    'babel-plugin-macros',
   ],
   env: {
     test: {
