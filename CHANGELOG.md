@@ -1,3 +1,23 @@
+## 4.1.0-alpha.9 (November 29, 2018)
+
+### Features
+
+* UI: Accessible success/fail colors ([#4843](https://github.com/storybooks/storybook/pull/4843))
+* React-native: add option to set keyboarVerticalOffset ([#4862](https://github.com/storybooks/storybook/pull/4862))
+* Addon-CSSResources: new adddon to dynamically add/remove css ([#4622](https://github.com/storybooks/storybook/pull/4622))
+
+### Bug Fixes
+
+* Core: Add try, catch for history API for IE11 ([#4870](https://github.com/storybooks/storybook/pull/4870))
+* Core: Don't copy index.html on build-storybook ([#4856](https://github.com/storybooks/storybook/pull/4856))
+* React-native: properly set initial story out of Async Storage. ([#4872](https://github.com/storybooks/storybook/pull/4872))
+* React-native: show webpack-related build issues ([#4883](https://github.com/storybooks/storybook/pull/4883))
+* Addon-info: fix docgen description display ([#4685](https://github.com/storybooks/storybook/pull/4685))
+
+### Dependency Upgrades
+
+* Bump svelte to 2.15.3, addresses !4478 ([#4842](https://github.com/storybooks/storybook/pull/4842))
+
 ## 4.1.0-alpha.8 (November 25, 2018)
 
 ### Features

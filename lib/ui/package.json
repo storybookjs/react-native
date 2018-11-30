@@ -1,14 +1,11 @@
 {
   "name": "@storybook/ui",
-  "version": "4.1.0-alpha.8",
+  "version": "4.1.0-alpha.9",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/ui",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -20,23 +17,22 @@
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js",
-    "publish-storybook": "bash ./.scripts/publish_storybook.sh",
-    "storybook": "start-storybook -p 9010"
+    "createDlls": "node -r esm ./scripts/createDlls.js",
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@emotion/core": "^0.13.1",
     "@emotion/provider": "^0.11.2",
     "@emotion/styled": "^0.10.6",
     "@reach/router": "^1.1.1",
-    "@storybook/addons": "4.1.0-alpha.8",
-    "@storybook/client-logger": "4.1.0-alpha.8",
-    "@storybook/components": "4.1.0-alpha.8",
-    "@storybook/core-events": "4.1.0-alpha.8",
+    "@storybook/addons": "4.1.0-alpha.9",
+    "@storybook/client-logger": "4.1.0-alpha.9",
+    "@storybook/components": "4.1.0-alpha.9",
+    "@storybook/core-events": "4.1.0-alpha.9",
     "emotion": "^9.2.8",
-    "events": "^3.0.0",
+    "eventemitter3": "^3.1.0",
     "fast-deep-equal": "^2.0.1",
-    "fuse.js": "^3.2.1",
+    "fuse.js": "^3.3.0",
     "global": "^4.3.2",
     "history": "^4.7.2",
     "keycode": "^2.2.0",
@@ -54,8 +50,15 @@
     "react-resize-detector": "^3.1.1",
     "to-camel-case": "^1.0.0"
   },
+  "devDependencies": {
+    "webpack": "^4.23.1",
+    "terser-webpack-plugin": "^1.1.0"
+  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
