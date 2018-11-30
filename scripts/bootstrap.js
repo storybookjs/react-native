@@ -82,7 +82,7 @@ const tasks = {
       log.info(prefix, 'prepare');
       spawn('lerna run prepare -- --silent');
       log.info(prefix, 'dll');
-      spawn('lerna run dll --scope "@storybook/ui"');
+      spawn('lerna run createDlls --scope "@storybook/ui"');
     },
   }),
   dll: createTask({
