@@ -82,6 +82,7 @@ When using latest create-react-app (CRA 2.0), Babel 7 has native TypeScript supp
 ```bash
 yarn add -D @types/storybook__react # typings
 ```
+
 ### Setting up TypeScript to work with Storybook
 
 We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default) by creating a `webpack.config.js` file in our Storybook configuration directory (by default, it’s `.storybook`):
@@ -92,14 +93,16 @@ module.exports = (baseConfig, env, config) => {
     test: /\.(ts|tsx)$/,
     loader: require.resolve('babel-loader'),
     options: {
-      presets: [['react-app', { flow: false, typescript: true }]]
-    }
+      presets: [['react-app', { flow: false, typescript: true }]],
+    },
   });
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
 };
 ```
+
 ### `tsconfig.json`
+
 The default `tsconfig.json` that comes with CRA works great. If your stories are outside the `src` folder, for example the `stories` folder in root, then `rootDirs": ["src", "stories"]` needs to be added to be added to `compilerOptions` so it knows what folders to compile. Make sure `jsx` is set to preserve. Should be unchanged.
 
 ## Import tsx stories
@@ -109,9 +112,12 @@ Change `config.ts` inside the Storybook config directory (by default, it’s `.s
 ```js
 // automatically import all files ending in *.stories.js
 const req = require.context('../stories', true, /.stories.tsx$/);
-configure(() => {
-  req.keys().forEach(filename => req(filename));
-}, module);
+
+function loadStories() {
+  req.keys().forEach(req);
+}
+
+configure(loadStories, module);
 ```
 
 ## Using TypeScript with the TSDocgen addon
@@ -224,12 +230,12 @@ This is an example `jest.config.js` file for jest:
 
 ```js
 module.exports = {
-    transform: {
-        ".(ts|tsx)": "ts-jest",
-    },
-    testPathIgnorePatterns: ["/node_modules/", "/lib/"],
-    testRegex: "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    moduleFileExtensions: ["ts", "tsx", "js", "json"],
+  transform: {
+    '.(ts|tsx)': 'ts-jest',
+  },
+  testPathIgnorePatterns: ['/node_modules/', '/lib/'],
+  testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
 };
 ```
 
