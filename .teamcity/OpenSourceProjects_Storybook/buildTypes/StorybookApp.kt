@@ -82,7 +82,9 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
                 }
 
                 artifacts {
-                    artifactRules = "dist.zip!**"
+                    artifactRules = """
+                        dist.zip!**
+                    """.trimIndent()
                 }
             }
         }

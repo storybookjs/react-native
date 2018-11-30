@@ -6,9 +6,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -30,7 +27,6 @@
     "@emotion/core": "^0.13.1",
     "@emotion/provider": "^0.11.2",
     "@emotion/styled": "^0.10.6",
-    "@ndelangen/html-webpack-harddisk-plugin": "^0.2.0",
     "@storybook/addons": "4.1.0-alpha.9",
     "@storybook/channel-postmessage": "4.1.0-alpha.9",
     "@storybook/client-logger": "4.1.0-alpha.9",
@@ -53,10 +49,12 @@
     "detect-port": "^1.2.3",
     "dotenv-webpack": "^1.5.7",
     "ejs": "^2.6.1",
+    "eventemitter3": "^3.1.0",
     "express": "^4.16.3",
     "file-loader": "^2.0.0",
     "file-system-cache": "^1.0.5",
     "find-cache-dir": "^2.0.0",
+    "fs-extra": "^7.0.1",
     "global": "^4.3.2",
     "html-webpack-plugin": "^4.0.0-beta.2",
     "inquirer": "^6.2.0",
@@ -94,5 +92,8 @@
     "babel-loader": "^7.0.0 || ^8.0.0",
     "react": ">=16.3.0",
     "react-dom": ">=16.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
