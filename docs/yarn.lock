@@ -187,12 +187,12 @@
     global "^4.3.2"
     prop-types "^15.6.2"
 
-"@storybook/addons@3.4.11", "@storybook/addons@^3.4.11":
+"@storybook/addons@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.11.tgz#f3e27c46d80ad1f171888c4aad0a19a8a032d072"
   integrity sha512-Uf01aZ1arcpG1prrrCrBCUYW63lDaoG+r/i3TNo1iG9ZaNc+2UHWeuiEedLfHg0fi/q7UnqMNWDiyO3AkEwwrA==
 
-"@storybook/addons@4.0.9":
+"@storybook/addons@4.0.9", "@storybook/addons@^4.0.9":
   version "4.0.9"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.0.9.tgz#cfa18fe10ddda454dbbc3aae17562e46d04d3955"
   integrity sha512-D+RsN1fNywgk46UxG6Lue+p9Egf7/DpgEJtQb6RS+UoyOF24p3FlwWMh36kpRfSSgGqFZ+a0jIKhXuRSr31UNQ==
