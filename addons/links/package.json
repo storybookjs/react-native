@@ -28,9 +28,7 @@
     "@storybook/components": "4.1.0-alpha.9",
     "@storybook/core-events": "4.1.0-alpha.9",
     "global": "^4.3.2",
-    "prop-types": "^15.6.2"
-  },
-  "peerDependencies": {
-    "react": "*"
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0-alpha.2"
   }
 }

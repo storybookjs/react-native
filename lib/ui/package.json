@@ -51,8 +51,8 @@
     "to-camel-case": "^1.0.0"
   },
   "devDependencies": {
-    "webpack": "^4.23.1",
-    "terser-webpack-plugin": "^1.1.0"
+    "terser-webpack-plugin": "^1.1.0",
+    "webpack": "^4.23.1"
   },
   "peerDependencies": {
     "react": "*",

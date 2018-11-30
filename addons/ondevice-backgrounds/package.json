@@ -27,10 +27,8 @@
   },
   "dependencies": {
     "@storybook/addons": "4.1.0-alpha.9",
-    "prop-types": "^15.6.2"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2"
   }
 }

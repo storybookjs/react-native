@@ -31,11 +31,9 @@
     "@storybook/core-events": "4.1.0-alpha.9",
     "format-json": "^1.0.3",
     "prop-types": "^15.6.2",
+    "react": "^16.7.0-alpha.2",
     "react-lifecycles-compat": "^3.0.4",
     "react-textarea-autosize": "^7.0.4",
     "util-deprecate": "^1.0.2"
-  },
-  "peerDependencies": {
-    "react": "*"
   }
 }

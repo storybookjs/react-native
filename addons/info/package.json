@@ -33,6 +33,7 @@
     "marksy": "^6.1.0",
     "nested-object-assign": "^1.0.1",
     "prop-types": "^15.6.2",
+    "react": "^16.7.0-alpha.2",
     "react-addons-create-fragment": "^15.5.3",
     "react-element-to-jsx-string": "^14.0.2",
     "react-lifecycles-compat": "^3.0.4",
@@ -40,8 +41,5 @@
   },
   "devDependencies": {
     "react-test-renderer": "^16.6.0"
-  },
-  "peerDependencies": {
-    "react": "*"
   }
 }

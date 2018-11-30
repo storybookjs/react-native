@@ -35,10 +35,8 @@
     "@storybook/components": "4.1.0-alpha.9",
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
+    "react": "^16.7.0-alpha.2",
     "upath": "^1.1.0",
     "util-deprecate": "^1.0.2"
-  },
-  "peerDependencies": {
-    "react": "*"
   }
 }
