@@ -1,9 +1,11 @@
-import { configure } from '@storybook/riot';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addDecorator } from '@storybook/riot';
+import { withOptions } from '@storybook/addon-options';
 
-setOptions({
-  hierarchyRootSeparator: /\|/,
-});
+addDecorator(
+  withOptions({
+    hierarchyRootSeparator: /\|/,
+  })
+);
 
 function loadStories() {
   require('../src/stories');
