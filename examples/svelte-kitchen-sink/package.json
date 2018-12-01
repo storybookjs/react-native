@@ -1,6 +1,6 @@
 {
   "name": "svelte-example",
-  "version": "4.1.0-alpha.9",
+  "version": "4.1.0-alpha.10",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook -s public",
@@ -10,17 +10,17 @@
     "global": "^4.3.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.1.0-alpha.9",
-    "@storybook/addon-backgrounds": "4.1.0-alpha.9",
-    "@storybook/addon-centered": "4.1.0-alpha.9",
-    "@storybook/addon-knobs": "4.1.0-alpha.9",
-    "@storybook/addon-links": "4.1.0-alpha.9",
-    "@storybook/addon-notes": "4.1.0-alpha.9",
-    "@storybook/addon-options": "4.1.0-alpha.9",
-    "@storybook/addon-storyshots": "4.1.0-alpha.9",
-    "@storybook/addon-storysource": "4.1.0-alpha.9",
-    "@storybook/addon-viewport": "4.1.0-alpha.9",
-    "@storybook/addons": "4.1.0-alpha.9",
-    "@storybook/svelte": "4.1.0-alpha.9"
+    "@storybook/addon-actions": "4.1.0-alpha.10",
+    "@storybook/addon-backgrounds": "4.1.0-alpha.10",
+    "@storybook/addon-centered": "4.1.0-alpha.10",
+    "@storybook/addon-knobs": "4.1.0-alpha.10",
+    "@storybook/addon-links": "4.1.0-alpha.10",
+    "@storybook/addon-notes": "4.1.0-alpha.10",
+    "@storybook/addon-options": "4.1.0-alpha.10",
+    "@storybook/addon-storyshots": "4.1.0-alpha.10",
+    "@storybook/addon-storysource": "4.1.0-alpha.10",
+    "@storybook/addon-viewport": "4.1.0-alpha.10",
+    "@storybook/addons": "4.1.0-alpha.10",
+    "@storybook/svelte": "4.1.0-alpha.10"
   }
 }

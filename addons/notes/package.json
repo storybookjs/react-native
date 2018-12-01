@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "4.1.0-alpha.9",
+  "version": "4.1.0-alpha.10",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@emotion/styled": "^0.10.6",
-    "@storybook/addons": "4.1.0-alpha.9",
+    "@storybook/addons": "4.1.0-alpha.10",
     "marked": "^0.5.1",
     "prop-types": "^15.6.2"
   },
