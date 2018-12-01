@@ -1,3 +1,9 @@
+## 4.1.0-alpha.10 (December 1, 2018)
+
+### Maintenance
+
+* Performance optimizations on separate manager preview split, improved cold start, restart & rebuild ([#4834](https://github.com/storybooks/storybook/pull/4834))
+
 ## 4.1.0-alpha.9 (November 29, 2018)
 
 ### Features
