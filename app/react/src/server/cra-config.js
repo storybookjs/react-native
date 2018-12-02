@@ -62,7 +62,15 @@ export const getRules = extensions => rules =>
   }, []);
 
 const getStyleRules = getRules(cssExtensions.concat(cssModuleExtensions));
-const getTypeScriptRules = getRules(typeScriptExtensions);
+const getTypeScriptRules = typescriptRules => {
+  const rules = getRules(typeScriptExtensions)(typescriptRules);
+  // Add support for using TypeScript in the `.storybook` folder.
+  const babelRule = rules[0];
+  // This line can be removed when this issue is resolved: https://github.com/storybooks/storybook/issues/4903
+  if (babelRule.include !== 'string') return rules;
+  babelRule.include = [babelRule.include, path.join(babelRule.include, '../.storybook')];
+  return rules;
+};
 
 export function getCraWebpackConfig(mode) {
   const pathToReactScripts = getReactScriptsPath();
