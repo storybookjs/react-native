@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "4.1.0-alpha.8",
+  "version": "4.1.0-alpha.9",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -29,8 +29,8 @@
     "@emotion/provider": "^0.11.2",
     "@emotion/styled": "^0.10.6",
     "@reach/router": "^1.1.1",
-    "@storybook/core-events": "4.1.0-alpha.8",
-    "@storybook/addons": "4.1.0-alpha.8",
+    "@storybook/core-events": "4.1.0-alpha.9",
+    "@storybook/addons": "4.1.0-alpha.9",
     "global": "^4.3.2",
     "immer": "^1.5.0",
     "js-beautify": "^1.8.6",
@@ -39,6 +39,8 @@
     "memoizerific": "^1.11.3",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
     "react-focus-lock": "^1.13.2",
     "react-inspector": "^2.3.0",
     "react-popper-tooltip": "^2.3.4",
@@ -46,9 +48,5 @@
     "react-textarea-autosize": "^7.0.4",
     "reactjs-popup": "^1.2.0",
     "render-fragment": "^0.1.1"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
   }
 }
