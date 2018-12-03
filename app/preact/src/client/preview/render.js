@@ -3,18 +3,10 @@ import { h, render } from 'preact';
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
 
+let renderedStory;
 const rootElement = document ? document.getElementById('root') : null;
 
-let renderedStory;
-
-export default function renderMain({
-  story,
-  selectedKind,
-  selectedStory,
-  showMain,
-  showError,
-  forceRender,
-}) {
+export default function renderMain({ story, selectedKind, selectedStory, showMain, showError }) {
   const element = story();
 
   if (!element) {
@@ -28,9 +20,7 @@ export default function renderMain({
     return;
   }
 
-  if (!forceRender) {
-    render(null, rootElement, renderedStory);
-  }
+  render(null, rootElement, renderedStory);
 
   showMain();
 

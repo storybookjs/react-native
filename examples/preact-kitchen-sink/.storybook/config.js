@@ -2,12 +2,14 @@ import { configure } from '@storybook/preact';
 import { setOptions } from '@storybook/addon-options';
 
 setOptions({
+  hierarchySeparator: /\/|\./,
   hierarchyRootSeparator: /\|/,
 });
 
-function loadStories() {
-  const req = require.context('../src/stories', true, /\.stories\.js$/);
-  req.keys().forEach(filename => req(filename));
-}
+const loadStories = () => {
+  const requireContext = require.context('../src', true, /\.stories\.js$/);
+
+  requireContext.keys().forEach(filename => requireContext(filename));
+};
 
 configure(loadStories, module);
