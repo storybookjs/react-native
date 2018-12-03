@@ -20,7 +20,6 @@ module.exports = {
     {
       test: './examples/vue-kitchen-sink',
       presets: [
-        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage' }],
         'babel-preset-vue',
       ],
     },
