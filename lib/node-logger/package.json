@@ -23,7 +23,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.2",
+    "core-js": "^2.5.7",
     "chalk": "^2.4.1",
     "npmlog": "^4.1.2",
     "pretty-hrtime": "^1.0.3"

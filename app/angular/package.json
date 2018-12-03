@@ -28,11 +28,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.2",
+    "core-js": "^2.5.7",
     "@storybook/core": "4.1.0-alpha.10",
     "@storybook/node-logger": "4.1.0-alpha.10",
     "angular2-template-loader": "^0.6.2",
-    "core-js": "^2.5.7",
     "fork-ts-checker-webpack-plugin": "^0.4.14",
     "global": "^4.3.2",
     "react": "^16.6.0",

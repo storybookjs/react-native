@@ -25,7 +25,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.2",
+    "core-js": "^2.5.7",
     "@ember/test-helpers": "^1.0.0",
     "@storybook/core": "4.1.0-alpha.10",
     "common-tags": "^1.8.0",

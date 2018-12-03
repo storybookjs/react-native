@@ -31,7 +31,7 @@
     "@babel/plugin-transform-react-constant-elements": "^7.0.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "^7.1.2",
+    "core-js": "^2.5.7",
     "@emotion/styled": "^0.10.6",
     "@storybook/core": "4.1.0-alpha.10",
     "@storybook/node-logger": "4.1.0-alpha.10",

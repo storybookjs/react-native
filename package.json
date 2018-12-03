@@ -59,7 +59,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "^7.1.2",
+    "core-js": "^2.5.7",
     "@emotion/snapshot-serializer": "^0.8.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
