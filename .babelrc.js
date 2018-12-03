@@ -1,6 +1,6 @@
 module.exports = {
   presets: [
-    ['@babel/preset-env', { shippedProposals: true }],
+    ['@babel/preset-env', { shippedProposals: true, useBuiltins: 'usage' }],
     '@babel/preset-react',
     '@babel/preset-flow',
   ],
@@ -25,7 +25,10 @@ module.exports = {
   overrides: [
     {
       test: './examples/vue-kitchen-sink',
-      presets: [['@babel/preset-env', { shippedProposals: true }], 'babel-preset-vue'],
+      presets: [
+        ['@babel/preset-env', { shippedProposals: true, useBuiltins: 'usage' }],
+        'babel-preset-vue',
+      ],
     },
     {
       test: [
