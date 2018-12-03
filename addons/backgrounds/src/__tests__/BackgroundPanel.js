@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import EventEmitter from 'eventemitter3';
 
+// eslint-disable-next-line import/no-unresolved
 import Panel from '../Panel';
 import Events from '../constants';
 
