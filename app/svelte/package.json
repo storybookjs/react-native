@@ -6,9 +6,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/svelte",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -42,5 +39,8 @@
     "babel-loader": "^7.0.0 || ^8.0.0",
     "svelte": "^2.7.2",
     "svelte-loader": "^2.9.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

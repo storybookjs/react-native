@@ -6,9 +6,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/codemod",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -25,5 +22,8 @@
   "dependencies": {
     "core-js": "^2.5.7",
     "jscodeshift": "^0.5.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

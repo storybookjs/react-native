@@ -6,9 +6,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/vue",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -28,9 +25,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "core-js": "^2.5.7",
     "@storybook/core": "4.1.0-alpha.10",
     "common-tags": "^1.8.0",
+    "core-js": "^2.5.7",
     "global": "^4.3.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
@@ -46,5 +43,8 @@
     "vue": ">=2.5.16",
     "vue-loader": ">=15.x.x",
     "vue-template-compiler": ">=2.5.16"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
