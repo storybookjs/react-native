@@ -165,7 +165,7 @@ export default class Preview {
     }
 
     if (story) {
-      this._getStory(story);
+      return this._getStory(story);
     }
 
     const dump = this._stories.dumpStoryBook();
