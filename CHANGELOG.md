@@ -1,3 +1,10 @@
+## 4.0.11 (December 3, 2018)
+
+### Bug Fixes
+
+* Restore index.html in cra-kitchen-sink ([#4856](https://github.com/storybooks/storybook/pull/4856))
+* Add try, catch for IE11 as it breaks script execution ([#4870](https://github.com/storybooks/storybook/pull/4870))
+
 ## 4.0.10 (December 2, 2018)
 
 Fixes 4.0.9
