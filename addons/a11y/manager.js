@@ -1,3 +1,1 @@
-const manager = require('./dist/register');
-
-manager.init();
+require('./dist/register').init();
