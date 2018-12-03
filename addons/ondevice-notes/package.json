@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-notes",
-  "version": "4.0.10",
+  "version": "4.0.11",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
