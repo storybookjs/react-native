@@ -4,6 +4,7 @@ import { configure, addDecorator } from '@storybook/react';
 import { themes } from '@storybook/components';
 import { withOptions } from '@storybook/addon-options';
 import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { withCssResources } from '@storybook/addon-cssresources';
 
 import 'react-chromatic/storybook-addon';
 import addHeadWarning from './head-warning';
@@ -31,6 +32,20 @@ addDecorator(
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: /\|/,
     theme: themes.dark,
+  })
+);
+
+addDecorator(
+  withCssResources({
+    cssresources: [
+      {
+        name: `bluetheme`,
+        code: `<style>body {
+  background-color: lightblue;
+}</style>`,
+        picked: false,
+      },
+    ],
   })
 );
 

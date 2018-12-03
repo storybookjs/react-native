@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import semver from 'semver';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-
 import { normalizeCondition } from 'webpack/lib/RuleSet';
 
 const cssExtensions = ['.css', '.scss', '.sass'];
@@ -41,19 +40,19 @@ export function isReactScriptsInstalled(requiredVersion = '2.0.0') {
 
 export const getRules = extensions => rules =>
   rules.reduce((craRules, rule) => {
-    // If at least one style extension satisfies the rule test, the rule is one
+    // If at least one extension satisfies the rule test, the rule is one
     // we want to extract
     if (rule.test && extensions.some(normalizeCondition(rule.test))) {
-      // If the base test is for styles, return early
+      // If the base test is for extensions, return early
       return craRules.concat(rule);
     }
 
-    //  Get any style rules contained in rule.oneOf
+    // Get any rules contained in rule.oneOf
     if (!rule.test && rule.oneOf) {
       craRules.push(...getRules(extensions)(rule.oneOf));
     }
 
-    // Get any style rules contained in rule.rules
+    // Get any rules contained in rule.rules
     if (!rule.test && rule.rules) {
       craRules.push(...getRules(extensions)(rule.rules));
     }
@@ -62,7 +61,22 @@ export const getRules = extensions => rules =>
   }, []);
 
 const getStyleRules = getRules(cssExtensions.concat(cssModuleExtensions));
-const getTypeScriptRules = getRules(typeScriptExtensions);
+
+export const getTypeScriptRules = (webpackConfigRules, configDir) => {
+  const rules = getRules(typeScriptExtensions)(webpackConfigRules);
+  // We know CRA only has one rule targetting TS for now, which is the first rule.
+  const babelRule = rules[0];
+  // Resolves an issue where this config is parsed twice (#4903).
+  if (typeof babelRule.include !== 'string') return rules;
+  // Adds support for using TypeScript in the `.storybook` (or config) folder.
+  return [
+    {
+      ...babelRule,
+      include: [babelRule.include, path.resolve(configDir)],
+    },
+    ...rules.slice(1),
+  ];
+};
 
 export function getCraWebpackConfig(mode) {
   const pathToReactScripts = getReactScriptsPath();
@@ -86,7 +100,7 @@ export function getCraWebpackConfig(mode) {
   return webpackConfig;
 }
 
-export function applyCRAWebpackConfig(baseConfig) {
+export function applyCRAWebpackConfig(baseConfig, configDir) {
   // Check if the user can use TypeScript (react-scripts version 2.1+).
   const hasTsSupport = isReactScriptsInstalled('2.1.0');
 
@@ -102,7 +116,9 @@ export function applyCRAWebpackConfig(baseConfig) {
   const craWebpackConfig = getCraWebpackConfig(baseConfig.mode);
 
   const craStyleRules = getStyleRules(craWebpackConfig.module.rules);
-  const craTypeScriptRules = hasTsSupport ? getTypeScriptRules(craWebpackConfig.module.rules) : [];
+  const craTypeScriptRules = hasTsSupport
+    ? getTypeScriptRules(craWebpackConfig.module.rules, configDir)
+    : [];
 
   //  Add css minification for production
   const plugins = [...baseConfig.plugins];

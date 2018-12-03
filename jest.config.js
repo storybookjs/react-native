@@ -35,6 +35,7 @@ module.exports = {
     '!**/cli/test/**',
     '!**/dist/**',
     '!**/generators/**',
+    '!app/**/__mocks__ /',
   ],
   coverageDirectory: 'coverage',
   testEnvironment: 'jsdom',

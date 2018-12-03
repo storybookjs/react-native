@@ -1,3 +1,62 @@
+## 4.0.11 (December 3, 2018)
+
+### Bug Fixes
+
+* Restore index.html in cra-kitchen-sink ([#4856](https://github.com/storybooks/storybook/pull/4856))
+* Add try, catch for IE11 as it breaks script execution ([#4870](https://github.com/storybooks/storybook/pull/4870))
+
+## 4.0.10 (December 2, 2018)
+
+Fixes 4.0.9
+
+### Bug Fixes
+
+* Core: Use correct cache directory path ([#4792](https://github.com/storybooks/storybook/pull/4792))
+* Addon-Info: fix docgen description display ([#4685](https://github.com/storybooks/storybook/pull/4685))
+* Addon-storyshots-puppeteer: fix peerDependencies ([#4828](https://github.com/storybooks/storybook/pull/4828))
+
+## 4.1.0-alpha.10 (December 1, 2018)
+
+### Maintenance
+
+* Performance optimizations on separate manager preview split, improved cold start, restart & rebuild ([#4834](https://github.com/storybooks/storybook/pull/4834))
+
+## 4.1.0-alpha.9 (November 29, 2018)
+
+### Features
+
+* UI: Accessible success/fail colors ([#4843](https://github.com/storybooks/storybook/pull/4843))
+* React-native: add option to set keyboarVerticalOffset ([#4862](https://github.com/storybooks/storybook/pull/4862))
+* Addon-CSSResources: new adddon to dynamically add/remove css ([#4622](https://github.com/storybooks/storybook/pull/4622))
+
+### Bug Fixes
+
+* Core: Add try, catch for history API for IE11 ([#4870](https://github.com/storybooks/storybook/pull/4870))
+* Core: Don't copy index.html on build-storybook ([#4856](https://github.com/storybooks/storybook/pull/4856))
+* React-native: properly set initial story out of Async Storage. ([#4872](https://github.com/storybooks/storybook/pull/4872))
+* React-native: show webpack-related build issues ([#4883](https://github.com/storybooks/storybook/pull/4883))
+* Addon-info: fix docgen description display ([#4685](https://github.com/storybooks/storybook/pull/4685))
+
+### Dependency Upgrades
+
+* Bump svelte to 2.15.3, addresses !4478 ([#4842](https://github.com/storybooks/storybook/pull/4842))
+
+## 4.1.0-alpha.8 (November 25, 2018)
+
+### Features
+
+* React: use babel presets/plugins based on CRA. ([#4836](https://github.com/storybooks/storybook/pull/4836))
+* React-native: Add ability to filter story list ([#4806](https://github.com/storybooks/storybook/pull/4806))
+
+### Bug Fixes
+
+* Core: Don't mangle production build ([#4838](https://github.com/storybooks/storybook/pull/4838))
+* HTML: Don't change rootElement when received node is the same ([#4822](https://github.com/storybooks/storybook/pull/4822))
+
+### Maintenance
+
+* Fix snapshots to use "emotion/snapshot-serializer" ([#4837](https://github.com/storybooks/storybook/pull/4837))
+
 ## 4.1.0-alpha.7 (November 22, 2018)
 
 ### Features
@@ -17,6 +76,10 @@ Publish failed
 ### Bug Fixes
 
 * Use correct cache directory path ([#4792](https://github.com/storybooks/storybook/pull/4792))
+
+## 4.0.9 (November 26, 2018)
+
+Broken release (see https://github.com/storybooks/storybook/issues/4897)
 
 ## 4.0.8 (November 21, 2018)
 
