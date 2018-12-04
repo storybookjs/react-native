@@ -67,6 +67,7 @@
     "@storybook/marko": "4.1.0-alpha.10",
     "@storybook/mithril": "4.1.0-alpha.10",
     "@storybook/polymer": "4.1.0-alpha.10",
+    "@storybook/preact": "4.1.0-alpha.10",
     "@storybook/react": "4.1.0-alpha.10",
     "@storybook/react-native": "4.1.0-alpha.10",
     "@storybook/riot": "4.1.0-alpha.10",
