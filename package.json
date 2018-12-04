@@ -122,8 +122,7 @@
     "tslint": "~5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.1.6",
-    "uglifyjs-webpack-plugin": "^2.0.1"
+    "typescript": "^3.1.6"
   },
   "husky": {
     "hooks": {
