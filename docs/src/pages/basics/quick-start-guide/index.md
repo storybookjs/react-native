@@ -4,7 +4,7 @@ title: 'Quick Start Guide'
 ---
 
 Storybook supports many different frontend view layers with more coming!
-React, Vue, Angular, Mithril, Marko, HTML, Svelte, Meteor, and Ember are currently supported. Follow these steps to get started with Storybook.
+React, Vue, Angular, Mithril, Marko, HTML, Svelte, Meteor, Ember and Preact are currently supported. Follow these steps to get started with Storybook.
 
 Get started using the automated command line tool. This command adds a set of boilerplate files for Storybook in your project:
 
