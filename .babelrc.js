@@ -13,6 +13,7 @@ module.exports = {
   ],
   env: {
     test: {
+      presets: [['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage' }]],
       plugins: ['babel-plugin-require-context-hook', 'babel-plugin-dynamic-import-node'],
     },
   },
