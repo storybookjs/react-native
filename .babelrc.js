@@ -30,6 +30,7 @@ module.exports = {
         './addons/storyshots',
         './addons/storysource/src/loader',
         './app/**/src/server/**',
+        './app/**/src/bin/**',
         './dangerfile.js',
       ],
       presets: [
