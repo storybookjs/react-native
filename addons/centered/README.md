@@ -51,7 +51,7 @@ example for Preact:
 
 ```js
 import { storiesOf } from '@storybook/preact';
-import centered from '@storybook/addon-centered';
+import centered from '@storybook/addon-centered/preact';
 
 import MyComponent from '../Component';
 
