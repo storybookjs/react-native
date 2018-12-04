@@ -6,9 +6,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/addons",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -27,5 +24,8 @@
     "@storybook/components": "4.1.0-alpha.10",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

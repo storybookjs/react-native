@@ -13,7 +13,7 @@
     "vuex": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.2.0",
     "@storybook/addon-actions": "4.1.0-alpha.10",
     "@storybook/addon-backgrounds": "4.1.0-alpha.10",
     "@storybook/addon-centered": "4.1.0-alpha.10",

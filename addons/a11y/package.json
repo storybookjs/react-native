@@ -11,9 +11,6 @@
     "verify"
   ],
   "homepage": "https://github.com/storybooks/storybook#readme",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -40,5 +37,8 @@
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
