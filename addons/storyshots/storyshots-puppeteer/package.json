@@ -24,7 +24,8 @@
     "@storybook/node-logger": "4.1.0-alpha.10",
     "core-js": "^2.5.7",
     "jest-image-snapshot": "^2.6.0",
-    "puppeteer": "^1.9.0"
+    "puppeteer": "^1.9.0",
+    "regenerator-runtime": "^0.12.1"
   },
   "peerDependencies": {
     "@storybook/addon-storyshots": "^4.0.0"

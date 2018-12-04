@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "core-js": "^2.5.7",
-    "jscodeshift": "^0.5.1"
+    "jscodeshift": "^0.5.1",
+    "regenerator-runtime": "^0.12.1"
   },
   "publishConfig": {
     "access": "public"

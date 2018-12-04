@@ -28,7 +28,8 @@
     "loader-utils": "^1.1.0",
     "prettier": "^1.14.3",
     "prop-types": "^15.6.2",
-    "react-syntax-highlighter": "^10.0.0"
+    "react-syntax-highlighter": "^10.0.0",
+    "regenerator-runtime": "^0.12.1"
   },
   "peerDependencies": {
     "react": "*"

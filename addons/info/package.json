@@ -25,7 +25,6 @@
     "@storybook/addons": "4.1.0-alpha.10",
     "@storybook/client-logger": "4.1.0-alpha.10",
     "@storybook/components": "4.1.0-alpha.10",
-    "core-js": "2.5.7",
     "global": "^4.3.2",
     "marksy": "^6.1.0",
     "nested-object-assign": "^1.0.1",

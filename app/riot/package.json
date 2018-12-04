@@ -30,11 +30,12 @@
     "global": "^4.3.2",
     "raw-loader": "^0.5.1",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0"
   },

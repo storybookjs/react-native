@@ -31,7 +31,8 @@
     "global": "^4.3.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "webpack": "^4.23.1"
+    "webpack": "^4.23.1",
+    "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
     "lit-html": "^0.12.0",

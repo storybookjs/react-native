@@ -29,11 +29,14 @@ module.exports = {
         './addons/storyshots',
         './addons/storysource/src/loader',
         './app/**/src/server/**',
+        './dangerfile.js',
       ],
       presets: [
         [
           '@babel/preset-env',
           {
+            shippedProposals: true,
+            useBuiltIns: 'usage',
             targets: {
               node: '8.11',
             },
