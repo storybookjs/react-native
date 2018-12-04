@@ -62,6 +62,7 @@
     "ip": "^1.1.5",
     "json5": "^2.1.0",
     "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.5.0",
     "lodash.mergewith": "^4.6.1",
     "memoizerific": "^1.11.3",
     "lazy-universal-dotenv": "^2.0.0",

@@ -1,11 +1,15 @@
 import React from 'react';
-import addons from '@storybook/addons';
-import CssResourcePanel from './CssResourcePanel';
+import addons, { types } from '@storybook/addons';
 
-addons.register('storybook/cssresources', api => {
+import { ADDON_ID, PANEL_ID } from './constants';
+
+import CssResourcePanel from './css-resource-panel';
+
+addons.register(ADDON_ID, api => {
   const channel = addons.getChannel();
-  addons.addPanel('storybook/cssresources/panel', {
-    title: 'Cssresources',
+  addons.add(PANEL_ID, {
+    type: types.PANEL,
+    title: 'CSS resources',
     // eslint-disable-next-line react/prop-types
     render: ({ active }) => <CssResourcePanel channel={channel} api={api} active={active} />,
   });
