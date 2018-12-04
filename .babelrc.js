@@ -19,9 +19,7 @@ module.exports = {
   overrides: [
     {
       test: './examples/vue-kitchen-sink',
-      presets: [
-        'babel-preset-vue',
-      ],
+      presets: ['babel-preset-vue'],
     },
     {
       test: [
