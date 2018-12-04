@@ -9,9 +9,6 @@
     "react-native",
     "storybook"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -35,5 +32,8 @@
     "@storybook/addon-knobs": "4.1.0-alpha.1",
     "react": "*",
     "react-native": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

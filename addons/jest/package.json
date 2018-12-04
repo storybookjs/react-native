@@ -12,9 +12,6 @@
     "unit-testing"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/jest",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -40,5 +37,8 @@
   },
   "peerDependencies": {
     "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

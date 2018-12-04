@@ -6,9 +6,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/svelte",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -30,9 +27,11 @@
   "dependencies": {
     "@storybook/core": "4.1.0-alpha.10",
     "common-tags": "^1.8.0",
+    "core-js": "^2.5.7",
     "global": "^4.3.2",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
     "svelte": "^2.15.3",
@@ -42,5 +41,8 @@
     "babel-loader": "^7.0.0 || ^8.0.0",
     "svelte": "^2.7.2",
     "svelte-loader": "^2.9.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

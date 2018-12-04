@@ -8,9 +8,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react-native",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -76,5 +73,8 @@
     "babel-runtime": ">=6.0.0",
     "react": "*",
     "react-native": ">=0.51.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

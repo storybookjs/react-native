@@ -6,9 +6,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -28,10 +25,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-transform-react-constant-elements": "^7.0.0",
+    "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "^7.1.2",
     "@emotion/styled": "^0.10.6",
     "@storybook/core": "4.1.0-alpha.10",
     "@storybook/node-logger": "4.1.0-alpha.10",
@@ -40,6 +36,7 @@
     "babel-plugin-react-docgen": "^2.0.0",
     "babel-preset-react-app": "^6.1.0",
     "common-tags": "^1.8.0",
+    "core-js": "^2.5.7",
     "global": "^4.3.2",
     "lodash": "^4.17.11",
     "mini-css-extract-plugin": "^0.4.4",
@@ -47,10 +44,14 @@
     "react": "^16.6.0",
     "react-dev-utils": "^6.1.0",
     "react-dom": "^16.6.0",
+    "regenerator-runtime": "^0.12.1",
     "semver": "^5.6.0",
     "webpack": "^4.23.1"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

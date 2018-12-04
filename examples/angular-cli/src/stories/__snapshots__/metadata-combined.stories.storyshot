@@ -19,10 +19,10 @@ exports[`Storyshots Metadata|Combined Combined 1 1`] = `
       <ul>
         
         <li>
-           Joe 
+          Joe
         </li>
         <li>
-           Jane 
+          Jane
         </li>
       </ul>
     </storybook-simple-token-component>
@@ -49,10 +49,10 @@ exports[`Storyshots Metadata|Combined Combined 2 1`] = `
       <ul>
         
         <li>
-           Joe 
+          Joe
         </li>
         <li>
-           Jane 
+          Jane
         </li>
       </ul>
     </storybook-simple-token-component>
