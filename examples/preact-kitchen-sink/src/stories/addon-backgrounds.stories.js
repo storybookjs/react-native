@@ -1,3 +1,5 @@
+/** @jsx h */
+
 import { h } from 'preact';
 
 import { storiesOf } from '@storybook/preact';

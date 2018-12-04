@@ -16,7 +16,7 @@
 |[notes](addons/notes)                       |+|+*|+|+|+|+|+|+| |+|+|+|
 |[options](addons/options)                   |+|+|+|+|+|+|+|+| |+|+|+|
 |[cssresources](addons/cssresources)         |+| |+|+|+|+|+|+|+|+|+|+|
-|[storyshots](addons/storyshots)             |+|+|+|+| | | |+| |+|+| |
+|[storyshots](addons/storyshots)             |+|+|+|+| |+| |+| |+|+| |
 |[storysource](addons/storysource)           |+| |+|+|+|+|+|+|+|+|+|+|
 |[viewport](addons/viewport)                 |+| |+|+|+|+|+|+|+|+|+|+|
 

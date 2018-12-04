@@ -1,3 +1,5 @@
+/** @jsx h */
+
 /* eslint-disable jsx-a11y/accessible-emoji */
 import { h } from 'preact';
 

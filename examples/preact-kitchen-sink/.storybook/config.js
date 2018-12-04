@@ -1,3 +1,4 @@
+/** @jsx h */
 import { configure } from '@storybook/preact';
 import { setOptions } from '@storybook/addon-options';
 
