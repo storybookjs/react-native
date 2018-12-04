@@ -1,3 +1,5 @@
+// Needed to prevent "Zone.js has detected that ZoneAwarePromise `(window|global).Promise` has been overwritten."
+import 'core-js/modules/es6.promise';
 import path from 'path';
 import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
 

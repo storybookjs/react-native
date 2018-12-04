@@ -138,22 +138,24 @@ export default class Panel extends PureComponent {
 
     let knobsArray = Object.keys(knobs).filter(key => knobs[key].used);
 
-    knobsArray.filter(key => knobs[key].groupId).forEach(key => {
-      const knobKeyGroupId = knobs[key].groupId;
-      groupIds.push(knobKeyGroupId);
-      groups[knobKeyGroupId] = {
-        render: ({ active: groupActive, selected }) => (
-          <TabWrapper active={groupActive || selected === DEFAULT_GROUP_ID}>
-            <PropForm
-              knobs={knobsArray.filter(knob => knob.groupId === knobKeyGroupId)}
-              onFieldChange={this.handleChange}
-              onFieldClick={this.handleClick}
-            />
-          </TabWrapper>
-        ),
-        title: knobKeyGroupId,
-      };
-    });
+    knobsArray
+      .filter(key => knobs[key].groupId)
+      .forEach(key => {
+        const knobKeyGroupId = knobs[key].groupId;
+        groupIds.push(knobKeyGroupId);
+        groups[knobKeyGroupId] = {
+          render: ({ active: groupActive, selected }) => (
+            <TabWrapper active={groupActive || selected === DEFAULT_GROUP_ID}>
+              <PropForm
+                knobs={knobsArray.filter(knob => knob.groupId === knobKeyGroupId)}
+                onFieldChange={this.handleChange}
+                onFieldClick={this.handleClick}
+              />
+            </TabWrapper>
+          ),
+          title: knobKeyGroupId,
+        };
+      });
 
     groups[DEFAULT_GROUP_ID] = {
       render: () => null,

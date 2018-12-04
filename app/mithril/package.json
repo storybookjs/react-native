@@ -6,9 +6,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/mithril",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -28,13 +25,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.0.0",
-    "@babel/runtime": "^7.1.2",
+    "@babel/plugin-transform-react-jsx": "^7.2.0",
     "@storybook/core": "4.1.0-alpha.10",
     "common-tags": "^1.8.0",
+    "core-js": "^2.5.7",
     "global": "^4.3.2",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
     "mithril": "^1.1.6"
@@ -42,5 +40,8 @@
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
     "mithril": "^1.1.6"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

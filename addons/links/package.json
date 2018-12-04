@@ -7,9 +7,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/links",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -32,5 +29,8 @@
   },
   "peerDependencies": {
     "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
