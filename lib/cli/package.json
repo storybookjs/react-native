@@ -31,7 +31,6 @@
     "@babel/register": "^7.0.0",
     "@storybook/codemod": "4.1.0-alpha.10",
     "chalk": "^2.4.1",
-    "child-process-promise": "^2.2.1",
     "commander": "^2.19.0",
     "core-js": "^2.5.7",
     "cross-spawn": "^6.0.5",
