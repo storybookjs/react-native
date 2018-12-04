@@ -49,13 +49,8 @@ addDecorator(
   })
 );
 
-addDecorator(
-  (story, { kind }) =>
-    kind === 'Core|Errors' ? (
-      story()
-    ) : (
-      <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>
-    )
+addDecorator((story, { kind }) =>
+  kind === 'Core|Errors' ? story() : <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>
 );
 
 configureViewport({
