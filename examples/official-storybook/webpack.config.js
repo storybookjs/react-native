@@ -28,11 +28,6 @@ module.exports = async ({ config }) => ({
       },
     ],
   },
-  resolve: {
-    ...config.resolve,
-    // https://github.com/graphql/graphql-js#using-in-a-browser
-    extensions: ['.mjs', ...config.resolve.extensions],
-  },
   plugins: [
     ...config.plugins,
     // graphql sources check process variable
