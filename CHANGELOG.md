@@ -1,3 +1,9 @@
+## 4.0.12 (December 5, 2018)
+
+### Bug Fixes
+
+* Addon-a11y: Fix runtime errors in older browsers ([#4904](https://github.com/storybooks/storybook/pull/4904))
+
 ## 4.1.0-alpha.11 (December 5, 2018)
 
 ### Features
@@ -7,7 +13,6 @@
 ### Bug Fixes
 
 * React-native: Fix async storage ([#4907](https://github.com/storybooks/storybook/pull/4907))
-* Addon-a11y: Fix runtime errors in older browsers ([#4904](https://github.com/storybooks/storybook/pull/4904))
 * Core: replace babel/runtime with core-js to fix some aliasing issues ([#4900](https://github.com/storybooks/storybook/pull/4900))
 
 ### Maintenance
