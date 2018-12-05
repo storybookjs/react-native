@@ -144,7 +144,7 @@ If you are using `create-react-app` (aka CRA), you may need to do some manual st
 
 - `create-react-app@1` may require manual migrations.
   - If you're adding storybook for the first time, it should just work: `sb init` should add the correct dependencies.
-  - If you've upgrading an existing project, your `package.json` probably already uses Babel 6, making it incompatible with `@storybook/react@4` which uses Babel 7. There are two ways to make it compatible, each of which is spelled out in detail in the next section:
+  - If you're upgrading an existing project, your `package.json` probably already uses Babel 6, making it incompatible with `@storybook/react@4` which uses Babel 7. There are two ways to make it compatible, each of which is spelled out in detail in the next section:
     - Upgrade to Babel 7 if you are not dependent on Babel 6-specific features.
     - Migrate Babel 6 if you're heavily dependent on some Babel 6-specific features).
 - `create-react-app@2` should be compatible as is, since it uses babel 7.
@@ -162,7 +162,7 @@ yarn add @babel/core babel-loader --dev
 yarn add babel-loader@7
 ```
 
-Also make sure you have a `.babelrc` in your project directory. You probably already do if you are using Babel 6 features (otherwise you should consider upgrading to Babel 7 instead). If you don't have one, here's a simple one that works:
+Also, make sure you have a `.babelrc` in your project directory. You probably already do if you are using Babel 6 features (otherwise you should consider upgrading to Babel 7 instead). If you don't have one, here's a simple one that works:
 
 ```json
 {
@@ -221,7 +221,7 @@ There are no expected breaking changes in the 3.4.x release, but 3.4 contains a 
 
 ## From version 3.2.x to 3.3.x
 
-There wasn't expected be any breaking changes in this release, but unfortunately it turned out that there are some. We're revisiting our [release strategy](https://github.com/storybooks/storybook/blob/master/RELEASES.md) to follow semver more strictly.
+It wasn't expected that there would be any breaking changes in this release, but unfortunately it turned out that there are some. We're revisiting our [release strategy](https://github.com/storybooks/storybook/blob/master/RELEASES.md) to follow semver more strictly.
 Also read on if you're using `addon-knobs`: we advise an update to your code for efficiency's sake.
 
 ### `babel-core` is now a peer dependency ([#2494](https://github.com/storybooks/storybook/pull/2494))
@@ -236,7 +236,7 @@ This was done to support different major versions of babel.
 
 ### Base webpack config now contains vital plugins ([#1775](https://github.com/storybooks/storybook/pull/1775))
 
-This affects you if you use custom webpack config in [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode) while not preserving the plugins from `storybookBaseConfig`. Before `3.3`, preserving them was just a reccomendation, but now it [became](https://github.com/storybooks/storybook/pull/2578) a requirement.
+This affects you if you use custom webpack config in [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode) while not preserving the plugins from `storybookBaseConfig`. Before `3.3`, preserving them was just a recommendation, but now it [became](https://github.com/storybooks/storybook/pull/2578) a requirement.
 
 ### Refactored Knobs
 
@@ -268,7 +268,7 @@ See also [TypeScript definitions in 3.1.x](#moved-typescript-definitions).
 
 ### Updated Addons API
 
-We're in the process of upgrading our addons APIs. As a first step, we've upgraded the Info and Notes addons. The old API will still work with your existing projects, but will be deprecated soon and removed in Storybook 4.0.
+We're in the process of upgrading our addons APIs. As a first step, we've upgraded the Info and Notes addons. The old API will still work with your existing projects but will be deprecated soon and removed in Storybook 4.0.
 
 Here's an example of using Notes and Info in 3.2 with the new API.
 
@@ -287,7 +287,7 @@ It's not beautiful, but we'll be adding a more convenient/idiomatic way of using
 
 ## From version 3.0.x to 3.1.x
 
-**NOTE:** technically this is a breaking change and should be a 4.0.0 release according to semver. However, we're still figuring things out, and didn't think this change necessitated a major release. Please bear with us!
+**NOTE:** technically this is a breaking change and should be a 4.0.0 release according to semver. However, we're still figuring things out and didn't think this change necessitated a major release. Please bear with us!
 
 ### Moved TypeScript definitions
 
@@ -334,7 +334,7 @@ npx -p @storybook/cli sb init
 
 If the above doesn't work, or you want to make the changes manually, the details are below:
 
-> We have adopted the same versioning strategy as have been adopted by babel, jest and apollo.
+> We have adopted the same versioning strategy that has been adopted by babel, jest and apollo.
 > It's a strategy best suited for ecosystem type tools, which consist of many separately installable features / packages.
 > We think this describes storybook pretty well.
 
@@ -379,7 +379,7 @@ You have to change your `package.json`, prune old and install new dependencies b
 
 ### Deprecated embedded addons
 
-We used to ship 2 addons with every single installation of storybook: `actions` and `links`. But in practice not everyone is using them, so we decided to deprecate this and in the future they will be completely removed. If you use `@storybook/react/addons` you will get a deprecation warning.
+We used to ship 2 addons with every single installation of storybook: `actions` and `links`. But in practice not everyone is using them, so we decided to deprecate this and in the future, they will be completely removed. If you use `@storybook/react/addons` you will get a deprecation warning.
 
 If you **are** using these addons, migrating is simple:
 
