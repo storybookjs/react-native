@@ -34,6 +34,10 @@ exports[`Storyshots UI|stories/TextFilter with filterText 1`] = `
   font-size: 20px;
 }
 
+.emotion-4 {
+  position: relative;
+}
+
 <div
   class="emotion-4 emotion-5"
 >
@@ -71,6 +75,10 @@ exports[`Storyshots UI|stories/TextFilter without filterText 1`] = `
   border: 0 none;
   outline: none;
   border-radius: 2px;
+}
+
+.emotion-2 {
+  position: relative;
 }
 
 <div

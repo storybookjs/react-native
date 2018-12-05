@@ -12,13 +12,13 @@
   },
   "dependencies": {
     "global": "^4.3.2",
+    "jest-emotion": "^10.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-lifecycles-compat": "^3.0.4"
   },
   "devDependencies": {
-    "@emotion/snapshot-serializer": "^0.8.2",
     "@storybook/addon-a11y": "4.1.0-alpha.10",
     "@storybook/addon-actions": "4.1.0-alpha.10",
     "@storybook/addon-backgrounds": "4.1.0-alpha.10",

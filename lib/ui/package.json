@@ -21,15 +21,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^0.13.1",
-    "@emotion/provider": "^0.11.2",
-    "@emotion/styled": "^0.10.6",
+    "@emotion/core": "^10.0.2",
+    "@emotion/styled": "^10.0.2",
     "@storybook/components": "4.1.0-alpha.10",
     "@storybook/core-events": "4.1.0-alpha.10",
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/podda": "^1.2.3",
     "@storybook/react-komposer": "^2.0.5",
     "deep-equal": "^1.0.1",
+    "emotion-theming": "^10.0.2",
     "eventemitter3": "^3.1.0",
     "fuse.js": "^3.3.0",
     "global": "^4.3.2",

@@ -22,7 +22,7 @@ module.exports = {
     '<rootDir>/lib',
     '<rootDir>/examples/official-storybook',
   ],
-  snapshotSerializers: ['@emotion/snapshot-serializer'],
+  snapshotSerializers: ['jest-emotion'],
   transform: {
     '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
   },

@@ -208,6 +208,10 @@ exports[`Storyshots UI|stories/StoriesPanel storiesHierarchies exists but is emp
   border-radius: 2px;
 }
 
+.emotion-8 {
+  position: relative;
+}
+
 <div
   class="emotion-10 emotion-11"
 >
@@ -327,6 +331,10 @@ exports[`Storyshots UI|stories/StoriesPanel when open on mobile device 1`] = `
 
 .emotion-10 {
   padding: 10px;
+}
+
+.emotion-8 {
+  position: relative;
 }
 
 <div
@@ -454,6 +462,23 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
   padding-top: 20px;
 }
 
+.emotion-14 {
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 1px 5px 4px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 1;
+  color: inherit;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.07);
+  z-index: 0;
+}
+
 .emotion-21 {
   color: inherit;
   list-style: none;
@@ -463,6 +488,10 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
   font-size: 15px;
   min-width: 200px;
   margin-left: -19px;
+}
+
+.emotion-8 {
+  position: relative;
 }
 
 .emotion-17 {
@@ -479,23 +508,6 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
 .emotion-10 {
   line-height: 18px;
   padding: 1px 0 5px;
-}
-
-.emotion-14 {
-  display: block;
-  color: rgba(0,0,0,0.4);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 13px;
-  line-height: 16px;
-  padding: 1px 5px 4px;
-  margin-left: 5px;
-  position: relative;
-  z-index: 1;
-  color: inherit;
-  font-weight: bold;
-  background-color: rgba(0,0,0,0.07);
-  z-index: 0;
 }
 
 <div

@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Swatch should render the value of the swatch and set it to be the background 1`] = `
-<ForwardRef
+<Styled(button)
   onClick={[Function]}
   onMouseDown={[Function]}
 >
-  <ForwardRef
+  <Styled(div)
     bg="bar"
   />
-  <ForwardRef>
-    <ForwardRef>
+  <Styled(div)>
+    <Styled(h4)>
       foo
       :
-    </ForwardRef>
-    <ForwardRef>
+    </Styled(h4)>
+    <Styled(h4)>
       <em>
         bar
       </em>
-    </ForwardRef>
-  </ForwardRef>
-</ForwardRef>
+    </Styled(h4)>
+  </Styled(div)>
+</Styled(button)>
 `;

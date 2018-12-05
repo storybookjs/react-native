@@ -20,6 +20,10 @@ exports[`Storyshots UI|stories/Stories empty 1`] = `
   margin-left: -19px;
 }
 
+.emotion-1 {
+  position: relative;
+}
+
 .emotion-0 {
   padding-left: 19px;
   list-style: none;
@@ -53,33 +57,6 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
   padding-top: 20px;
 }
 
-.emotion-19 {
-  color: inherit;
-  list-style: none;
-  margin: 0;
-  padding: 5px;
-  font-family: inherit;
-  font-size: 15px;
-  min-width: 200px;
-  margin-left: -19px;
-}
-
-.emotion-15 {
-  padding-left: 19px;
-  list-style: none;
-}
-
-.emotion-1 {
-  display: inline-block;
-  vertical-align: top;
-  max-width: calc(100% - 24px);
-}
-
-.emotion-0 {
-  line-height: 18px;
-  padding: 1px 0 5px;
-}
-
 .emotion-12 {
   display: block;
   color: rgba(0,0,0,0.4);
@@ -108,6 +85,37 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
   margin-left: 5px;
   position: relative;
   z-index: 1;
+}
+
+.emotion-19 {
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 15px;
+  min-width: 200px;
+  margin-left: -19px;
+}
+
+.emotion-2 {
+  position: relative;
+}
+
+.emotion-15 {
+  padding-left: 19px;
+  list-style: none;
+}
+
+.emotion-1 {
+  display: inline-block;
+  vertical-align: top;
+  max-width: calc(100% - 24px);
+}
+
+.emotion-0 {
+  line-height: 18px;
+  padding: 1px 0 5px;
 }
 
 <div
@@ -276,33 +284,6 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
   padding-top: 20px;
 }
 
-.emotion-27 {
-  color: inherit;
-  list-style: none;
-  margin: 0;
-  padding: 5px;
-  font-family: inherit;
-  font-size: 15px;
-  min-width: 200px;
-  margin-left: -19px;
-}
-
-.emotion-19 {
-  padding-left: 19px;
-  list-style: none;
-}
-
-.emotion-1 {
-  display: inline-block;
-  vertical-align: top;
-  max-width: calc(100% - 24px);
-}
-
-.emotion-0 {
-  line-height: 18px;
-  padding: 1px 0 5px;
-}
-
 .emotion-16 {
   display: block;
   color: rgba(0,0,0,0.4);
@@ -331,6 +312,37 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
   margin-left: 5px;
   position: relative;
   z-index: 1;
+}
+
+.emotion-27 {
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 15px;
+  min-width: 200px;
+  margin-left: -19px;
+}
+
+.emotion-2 {
+  position: relative;
+}
+
+.emotion-19 {
+  padding-left: 19px;
+  list-style: none;
+}
+
+.emotion-1 {
+  display: inline-block;
+  vertical-align: top;
+  max-width: calc(100% - 24px);
+}
+
+.emotion-0 {
+  line-height: 18px;
+  padding: 1px 0 5px;
 }
 
 <div
@@ -599,33 +611,6 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
   padding-top: 20px;
 }
 
-.emotion-24 {
-  color: inherit;
-  list-style: none;
-  margin: 0;
-  padding: 5px;
-  font-family: inherit;
-  font-size: 15px;
-  min-width: 200px;
-  margin-left: -19px;
-}
-
-.emotion-16 {
-  padding-left: 19px;
-  list-style: none;
-}
-
-.emotion-1 {
-  display: inline-block;
-  vertical-align: top;
-  max-width: calc(100% - 24px);
-}
-
-.emotion-0 {
-  line-height: 18px;
-  padding: 1px 0 5px;
-}
-
 .emotion-13 {
   display: block;
   color: rgba(0,0,0,0.4);
@@ -654,6 +639,37 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
   margin-left: 5px;
   position: relative;
   z-index: 1;
+}
+
+.emotion-24 {
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 15px;
+  min-width: 200px;
+  margin-left: -19px;
+}
+
+.emotion-10 {
+  position: relative;
+}
+
+.emotion-16 {
+  padding-left: 19px;
+  list-style: none;
+}
+
+.emotion-1 {
+  display: inline-block;
+  vertical-align: top;
+  max-width: calc(100% - 24px);
+}
+
+.emotion-0 {
+  line-height: 18px;
+  padding: 1px 0 5px;
 }
 
 <div
@@ -887,33 +903,6 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
   padding-top: 20px;
 }
 
-.emotion-19 {
-  color: inherit;
-  list-style: none;
-  margin: 0;
-  padding: 5px;
-  font-family: inherit;
-  font-size: 15px;
-  min-width: 200px;
-  margin-left: -19px;
-}
-
-.emotion-15 {
-  padding-left: 19px;
-  list-style: none;
-}
-
-.emotion-1 {
-  display: inline-block;
-  vertical-align: top;
-  max-width: calc(100% - 24px);
-}
-
-.emotion-0 {
-  line-height: 18px;
-  padding: 1px 0 5px;
-}
-
 .emotion-12 {
   display: block;
   color: rgba(0,0,0,0.4);
@@ -942,6 +931,37 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
   margin-left: 5px;
   position: relative;
   z-index: 1;
+}
+
+.emotion-19 {
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 15px;
+  min-width: 200px;
+  margin-left: -19px;
+}
+
+.emotion-2 {
+  position: relative;
+}
+
+.emotion-15 {
+  padding-left: 19px;
+  list-style: none;
+}
+
+.emotion-1 {
+  display: inline-block;
+  vertical-align: top;
+  max-width: calc(100% - 24px);
+}
+
+.emotion-0 {
+  line-height: 18px;
+  padding: 1px 0 5px;
 }
 
 <div
