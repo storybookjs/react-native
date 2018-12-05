@@ -1,3 +1,9 @@
+## 4.0.12 (December 5, 2018)
+
+### Bug Fixes
+
+* Addon-a11y: Fix runtime errors in older browsers ([#4904](https://github.com/storybooks/storybook/pull/4904))
+
 ## 4.0.11 (December 3, 2018)
 
 ### Bug Fixes
