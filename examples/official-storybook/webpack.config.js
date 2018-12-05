@@ -1,12 +1,12 @@
 const path = require('path');
 const { DefinePlugin, ContextReplacementPlugin } = require('webpack');
 
-module.exports = async (baseConfig, env, defaultConfig) => ({
-  ...defaultConfig,
+module.exports = async ({ config }) => ({
+  ...config,
   module: {
-    ...defaultConfig.module,
+    ...config.module,
     rules: [
-      ...defaultConfig.module.rules,
+      ...config.module.rules,
       {
         test: /\.stories\.jsx?$/,
         use: require.resolve('@storybook/addon-storysource/loader'),
@@ -19,7 +19,7 @@ module.exports = async (baseConfig, env, defaultConfig) => ({
       },
       {
         test: /\.js/,
-        use: defaultConfig.module.rules[0].use,
+        use: config.module.rules[0].use,
         include: [
           path.resolve(__dirname, '../../app/react'),
           path.resolve(__dirname, '../../lib/ui/src'),
@@ -29,12 +29,12 @@ module.exports = async (baseConfig, env, defaultConfig) => ({
     ],
   },
   resolve: {
-    ...defaultConfig.resolve,
+    ...config.resolve,
     // https://github.com/graphql/graphql-js#using-in-a-browser
-    extensions: ['.mjs', ...defaultConfig.resolve.extensions],
+    extensions: ['.mjs', ...config.resolve.extensions],
   },
   plugins: [
-    ...defaultConfig.plugins,
+    ...config.plugins,
     // graphql sources check process variable
     new DefinePlugin({
       process: JSON.stringify(true),
