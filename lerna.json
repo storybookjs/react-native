@@ -10,5 +10,5 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "registry": "https://registry.npmjs.org",
-  "version": "4.0.11"
+  "version": "4.0.12"
 }

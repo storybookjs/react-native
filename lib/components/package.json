@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "4.0.11",
+  "version": "4.0.12",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -37,9 +37,9 @@
     "render-fragment": "^0.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.11",
-    "@storybook/addon-knobs": "4.0.11",
-    "@storybook/react": "4.0.11"
+    "@storybook/addon-actions": "4.0.12",
+    "@storybook/addon-knobs": "4.0.12",
+    "@storybook/react": "4.0.12"
   },
   "peerDependencies": {
     "react": "*",
