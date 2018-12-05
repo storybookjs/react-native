@@ -34,10 +34,9 @@ export default class CssResourcePanel extends Component {
   onStoryChange = id => {
     const { api } = this.props;
     const list = api.getParameters(id, PARAM_KEY);
-    const picked = list.filter(res => res.picked);
-    console.log({ list });
 
     if (list) {
+      const picked = list.filter(res => res.picked);
       this.setState({ list }, () => this.emit(picked));
     }
   };
