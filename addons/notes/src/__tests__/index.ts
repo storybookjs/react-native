@@ -1,5 +1,5 @@
 import addons from '@storybook/addons';
-import { withNotes } from '../addon';
+import { withNotes } from '..';
 
 addons.getChannel = jest.fn();
 
