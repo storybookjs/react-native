@@ -31,12 +31,12 @@ Documentation is written in Markdown and located inside the [`docs/src/pages`](h
   - Indirect action (bad): `A refactor of this code is necessary`.
   - Direct action (good): `This code needs to be refactored`.
 4. Avoid the use of pronouns - documentation should not address the reader because not everything applies to the person reading our docs.
-* Don't use `you` to refer to the user or third party.
+* Don't use `you` to refer to the user or a third party.
   - Pronoun (bad): `You can also...`
   - Without pronoun (good): `Users can also...`
 * Don't use `we` to refer to Storybook, contributors, or Storybook users.
   - Pronoun (bad): `We can create this component...`
   - Without pronoun (good): `The component can be created...`
-* Don't use `he`, `she`, `him`, `her`, etc. to refer to third party unless referring to a specific person.
+* Don't use `he`, `she`, `him`, `her`, etc. to refer to a third party unless referring to a specific person.
 * Refer to contributors and the product as `Storybook`.
 * Refer to users as `users`.
