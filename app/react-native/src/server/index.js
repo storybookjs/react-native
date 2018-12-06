@@ -9,7 +9,13 @@ export default class Server {
     this.options = {
       ...options,
       ignorePreview: true,
-      corePresets: [require.resolve('./rn-manager-preset.js')],
+      corePresets: [
+        require.resolve('./rn-manager-preset.js'),
+        {
+          name: require.resolve('./rn-options-preset.js'),
+          options: { storybookOptions: options },
+        },
+      ],
     };
 
     this.httpServer = http.createServer();

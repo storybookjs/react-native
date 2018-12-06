@@ -33,6 +33,7 @@
     "@storybook/ui": "4.1.0-alpha.11",
     "commander": "^2.19.0",
     "core-js": "^2.5.7",
+    "express": "^4.16.3",
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
