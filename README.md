@@ -128,7 +128,7 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 
 ## Badges & Presentation materials
 
-We have a badge ! Link it to your live Storybook example.
+We have a badge! Link it to your live Storybook example.
 
 ![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)
 

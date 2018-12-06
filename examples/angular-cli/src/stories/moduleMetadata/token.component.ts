@@ -9,9 +9,7 @@ export const DEFAULT_NAME = new InjectionToken<string>('TokenComponent.DefaultNa
     <h3>{{ name }}</h3>
     <p>Items:</p>
     <ul>
-      <li *ngFor="let item of items">
-        {{ item }}
-      </li>
+      <li *ngFor="let item of items">{{ item }}</li>
     </ul>
   `,
 })

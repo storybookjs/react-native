@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "4.1.0-alpha.9",
+  "version": "4.1.0-alpha.11",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
@@ -8,9 +8,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/notes",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -26,11 +23,16 @@
   },
   "dependencies": {
     "@emotion/styled": "^0.10.6",
-    "@storybook/addons": "4.1.0-alpha.9",
-    "@storybook/components": "4.1.0-alpha.9",
-    "@storybook/core-events": "4.1.0-alpha.9",
+    "@storybook/addons": "4.1.0-alpha.11",
+    "@storybook/components": "4.1.0-alpha.11",
+    "@storybook/core-events": "4.1.0-alpha.11",
     "markdown-to-jsx": "^6.7.4",
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0-alpha.2"
+    "prop-types": "^15.6.2"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

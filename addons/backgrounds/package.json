@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-backgrounds",
-  "version": "4.1.0-alpha.9",
+  "version": "4.1.0-alpha.11",
   "description": "A storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",
@@ -9,9 +9,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/backgrounds",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -29,14 +26,20 @@
   "dependencies": {
     "@emotion/core": "^0.13.1",
     "@emotion/styled": "^0.10.6",
-    "@storybook/addons": "4.1.0-alpha.9",
-    "@storybook/components": "4.1.0-alpha.9",
-    "@storybook/core-events": "4.1.0-alpha.9",
+    "@storybook/addons": "4.1.0-alpha.11",
+    "@storybook/components": "4.1.0-alpha.11",
+    "@storybook/core-events": "4.1.0-alpha.11",
     "eventemitter3": "^3.1.0",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
     "prop-types": "^15.6.2",
     "react": "^16.7.0-alpha.2",
     "util-deprecate": "^1.0.2"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

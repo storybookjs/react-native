@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import 'core-js/fn/array/includes';
 import styled from '@emotion/styled';
+
 import { Table as BaseTable, Td as BaseTD, Th as BaseTH } from '@storybook/components';
+
 import PropVal from './PropVal';
 import PrettyPropType from './types/PrettyPropType';
 

@@ -1,3 +1,48 @@
+## 4.0.12 (December 5, 2018)
+
+### Bug Fixes
+
+* Addon-a11y: Fix runtime errors in older browsers ([#4904](https://github.com/storybooks/storybook/pull/4904))
+
+## 4.1.0-alpha.11 (December 5, 2018)
+
+### Features
+
+* Add CRA TypeScript support for .storybook folder ([#4902](https://github.com/storybooks/storybook/pull/4902))
+
+### Bug Fixes
+
+* React-native: Fix async storage ([#4907](https://github.com/storybooks/storybook/pull/4907))
+* Core: replace babel/runtime with core-js to fix some aliasing issues ([#4900](https://github.com/storybooks/storybook/pull/4900))
+
+### Maintenance
+
+* Core: More granular methods separation in "build-static" and "build-dev" ([#4919](https://github.com/storybooks/storybook/pull/4919))
+* Examples: replace deprecated setOptions with withOptions ([#4899](https://github.com/storybooks/storybook/pull/4899))
+
+## 4.0.11 (December 3, 2018)
+
+### Bug Fixes
+
+* Restore index.html in cra-kitchen-sink ([#4856](https://github.com/storybooks/storybook/pull/4856))
+* Add try, catch for IE11 as it breaks script execution ([#4870](https://github.com/storybooks/storybook/pull/4870))
+
+## 4.0.10 (December 2, 2018)
+
+Fixes 4.0.9
+
+### Bug Fixes
+
+* Core: Use correct cache directory path ([#4792](https://github.com/storybooks/storybook/pull/4792))
+* Addon-Info: fix docgen description display ([#4685](https://github.com/storybooks/storybook/pull/4685))
+* Addon-storyshots-puppeteer: fix peerDependencies ([#4828](https://github.com/storybooks/storybook/pull/4828))
+
+## 4.1.0-alpha.10 (December 1, 2018)
+
+### Maintenance
+
+* Performance optimizations on separate manager preview split, improved cold start, restart & rebuild ([#4834](https://github.com/storybooks/storybook/pull/4834))
+
 ## 4.1.0-alpha.9 (November 29, 2018)
 
 ### Features
@@ -53,6 +98,10 @@ Publish failed
 ### Bug Fixes
 
 * Use correct cache directory path ([#4792](https://github.com/storybooks/storybook/pull/4792))
+
+## 4.0.9 (November 26, 2018)
+
+Broken release (see https://github.com/storybooks/storybook/issues/4897)
 
 ## 4.0.8 (November 21, 2018)
 

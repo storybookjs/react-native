@@ -11,12 +11,8 @@ import * as Typography from '../components/addon-a11y/Typography';
 
 const text = 'Testing the a11y addon';
 
-storiesOf('Addons|A11y', module)
-  .addParameters({
-    options: {
-      selectedPanel: 'storybook/a11y/panel',
-    },
-  })
+storiesOf('Addons|a11y', module)
+  .addParameters({ options: { selectedAddonPanel: 'storybook/a11y/panel' } })
   .addDecorator(checkA11y)
   .add('Default', () => <BaseButton label="" />)
   .add('Label', () => <BaseButton label={text} />)

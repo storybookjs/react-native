@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-knobs",
-  "version": "4.1.0-alpha.9",
+  "version": "4.1.0-alpha.11",
   "description": "Display storybook story knobs on your deviced.",
   "keywords": [
     "addon",
@@ -9,9 +9,6 @@
     "react-native",
     "storybook"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -23,7 +20,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.1.0-alpha.9",
+    "@storybook/addons": "4.1.0-alpha.11",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.6.2",
     "react-native-color-picker": "^0.4.0",
@@ -32,8 +29,11 @@
     "react-native-switch": "^1.5.0"
   },
   "peerDependencies": {
-    "@storybook/addon-knobs": "4.1.0-alpha.9",
+    "@storybook/addon-knobs": "4.1.0-alpha.11",
     "react": "*",
     "react-native": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

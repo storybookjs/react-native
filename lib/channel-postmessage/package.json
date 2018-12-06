@@ -1,14 +1,11 @@
 {
   "name": "@storybook/channel-postmessage",
-  "version": "4.1.0-alpha.9",
+  "version": "4.1.0-alpha.11",
   "description": "",
   "keywords": [
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/channel-postmessage",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -23,8 +20,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "4.1.0-alpha.9",
+    "@storybook/channels": "4.1.0-alpha.11",
     "global": "^4.3.2",
     "telejson": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,15 +1,12 @@
 {
   "name": "@storybook/addon-graphql",
-  "version": "4.1.0-alpha.9",
+  "version": "4.1.0-alpha.11",
   "description": "Storybook addon to display the GraphiQL IDE",
   "keywords": [
     "addon",
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/graphql",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -27,7 +24,12 @@
     "global": "^4.3.2",
     "graphiql": "^0.12.0",
     "graphql": "^14.0.2",
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0-alpha.2"
+    "prop-types": "^15.6.2"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

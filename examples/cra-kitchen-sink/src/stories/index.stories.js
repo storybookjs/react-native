@@ -28,7 +28,7 @@ const InfoButton = () => (
 storiesOf('Button', module)
   .addDecorator(withNotes)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>, {
-    options: { selectedAddonPanel: 'storybook/actions/actions-panel' },
+    options: { selectedAddonPanel: 'storybook/actions/panel' },
   })
   .add(
     'with some emoji',
@@ -40,7 +40,7 @@ storiesOf('Button', module)
       </Button>
     ),
     {
-      options: { selectedAddonPanel: 'storybook/actions/actions-panel' },
+      options: { selectedAddonPanel: 'storybook/actions/panel' },
     }
   )
   .add('with notes', () => <Button>Check my notes in the notes panel</Button>, {
