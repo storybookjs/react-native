@@ -2,7 +2,7 @@ import express from 'express';
 import querystring from 'querystring';
 import http from 'http';
 import ws from 'ws';
-import { devServer as storybook } from '@storybook/core/server';
+import { devServer as storybook, managerPreset } from '@storybook/core/server';
 
 export default class Server {
   constructor(options) {
@@ -10,7 +10,10 @@ export default class Server {
       ...options,
       ignorePreview: true,
       corePresets: [
-        require.resolve('./rn-manager-preset.js'),
+        {
+          name: managerPreset,
+          options: { managerEntry: require.resolve('../client/manager') },
+        },
         {
           name: require.resolve('./rn-options-preset.js'),
           options: { storybookOptions: options },
