@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { document } from 'global';
-import styled from '@emotion/styled';
 import { Global, css } from '@emotion/core';
 import memoize from 'memoizerific';
 
@@ -9,13 +8,6 @@ import { Popout, Item, Icons, Icon, IconButton, Title, List } from '@storybook/c
 import { STORY_CHANGED } from '@storybook/core-events';
 
 import { PARAM_KEY } from './constants';
-
-const Container = styled.div({
-  padding: 15,
-  width: '100%',
-  boxSizing: 'border-box',
-});
-Container.displayName = 'Container';
 
 const toList = memoize(50)(viewports => Object.entries(viewports));
 
@@ -33,7 +25,7 @@ export default class ViewportTool extends Component {
   componentDidMount() {
     const { api } = this.props;
     this.iframe = document.getElementById('storybook-preview-iframe');
-    this.iframeClass = 'storybook-preview-iframe-bordered';
+    this.iframeClass = 'storybook-preview-iframe-viewport';
 
     if (!this.iframe) {
       throw new Error('Cannot find Storybook iframe');
@@ -94,6 +86,12 @@ export default class ViewportTool extends Component {
     const { iframeClass } = this;
     const { viewports, selected } = this.state;
 
+    const list = toList(viewports);
+
+    if (!list.length) {
+      return null;
+    }
+
     return (
       <Fragment>
         <Global
@@ -136,7 +134,7 @@ export default class ViewportTool extends Component {
                 </Fragment>
               ) : null}
 
-              {toList(viewports).map(([key, { name, type }]) => (
+              {list.map(([key, { name, type }]) => (
                 <Item
                   key={key}
                   onClick={() => {

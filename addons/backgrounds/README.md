@@ -29,30 +29,28 @@ Then write your stories like this:
 ```js
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withBackgrounds } from '@storybook/addon-backgrounds';
 
 storiesOf('Button', module)
-  .addDecorator(
-    withBackgrounds([
+  .addParameters({
+    backgrounds: [
       { name: 'twitter', value: '#00aced', default: true },
       { name: 'facebook', value: '#3b5998' },
-    ])
-  )
+    ],
+  })
   .add('with text', () => <button>Click me</button>);
 ```
 
-You can add the backgrounds to all stories with `addDecorator` in `.storybook/config.js`:
+You can add the backgrounds to all stories with `addParameters` in `.storybook/config.js`:
 
 ```js
-import { addDecorator } from '@storybook/react'; // <- or your storybook framework
-import { withBackgrounds } from '@storybook/addon-backgrounds';
+import { addParameters } from '@storybook/react'; // <- or your storybook framework
 
-addDecorator(
-  withBackgrounds([
+addParameters({
+  backgrounds: [
     { name: 'twitter', value: '#00aced', default: true },
     { name: 'facebook', value: '#3b5998' },
-  ])
-);
+  ],
+});
 ```
 
 If you want to override backgrounds for a single story or group of stories, pass the `backgrounds` parameter:
@@ -62,13 +60,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 storiesOf('Button', module)
-  .addParameters({
-    backgrounds: [
-      { name: 'red', value: '#F44336' },
-      { name: 'blue', value: '#2196F3', default: true },
-    ],
-  })
-  .add('with text', () => <button>Click me</button>);
+  .add('with text', () => <button>Click me</button>, {
+    backgrounds: [{
+      name: 'red', value: 'rgba(255, 0, 0)',
+    }]
+  });
 ```
 
 If you don't want to use backgrounds for a story, you can set the `backgrounds` parameter to `[]`, or use `{ disable: true }` to skip the addon:
@@ -77,9 +73,13 @@ If you don't want to use backgrounds for a story, you can set the `backgrounds` 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-storiesOf('Button', module).add('with text', () => <button>Click me</button>, {
-  backgrounds: { disable: true },
-});
-```
+storiesOf('Button', module)
+  .add('example 1', () => <button>Click me</button>, {
+    backgrounds: [],
+  });
 
-You can choose your background in a running storybook instance with the `background` query param and either set the background value or the name as the parameter value. E.g. `?background=twitter` or `?background=#00aced`.
+storiesOf('Button', module)
+  .add('example 2', () => <button>Click me</button>, {
+    backgrounds: { disable: true },
+  });
+```

@@ -1,92 +1,94 @@
 import { document } from 'global';
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
+import memoize from 'memoizerific';
 
-import { Popout, Item, Icons, Icon, IconButton, Title, List } from '@storybook/components';
+import { STORY_CHANGED } from '@storybook/core-events';
 
-import Events from './constants';
+import { Popout, Item, Icons, Icon, IconButton, Title, Detail, List } from '@storybook/components';
+import * as S from './components';
 
-const storybookIframe = 'storybook-preview-background';
-const style = {
-  iframe: {
-    transition: 'background 0.25s ease-in-out',
-  },
-};
+import { PARAM_KEY } from './constants';
 
-const ColorIcon = styled.span(({ background }) => ({
-  background,
-}));
+const toList = memoize(50)(viewports => Object.entries(viewports));
 
-const defaultBackground = {
-  name: 'default',
-  value: 'transparent',
-};
-
-export default class Tool extends Component {
+export default class BackgroundTool extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { backgrounds: [] };
+    this.state = {
+      backgrounds: {},
+      selected: undefined,
+    };
   }
 
   componentDidMount() {
-    const { api, channel } = this.props;
-    channel.on(Events.SET, data => {
-      this.iframe = document.getElementById(storybookIframe);
-
-      if (!this.iframe) {
-        return;
-        // throw new Error('Cannot find Storybook iframe');
-      }
-
-      Object.keys(style.iframe).forEach(prop => {
-        this.iframe.style[prop] = style.iframe[prop];
-      });
-
-      const backgrounds = [...data];
-
-      this.setState({ backgrounds });
-      const current = api.getQueryParam('background');
-      const defaultOrFirst = backgrounds.find(x => x.default) || backgrounds[0];
-
-      if (current && backgrounds.find(bg => bg.value === current)) {
-        this.updateIframe(current);
-      } else if (defaultOrFirst) {
-        this.updateIframe(defaultOrFirst.value);
-        api.setQueryParams({ background: defaultOrFirst.value });
-      }
-    });
-
-    channel.on(Events.UNSET, () => {
-      if (!this.iframe) {
-        return;
-        // throw new Error('Cannot find Storybook iframe');
-      }
-      this.setState({ backgrounds: [] });
-      this.updateIframe('none');
-    });
-  }
-
-  setBackgroundFromSwatch = background => {
     const { api } = this.props;
-    this.updateIframe(background);
-    api.setQueryParams({ background });
-  };
+    this.iframe = document.getElementById('storybook-preview-background');
 
-  updateIframe(background) {
-    this.iframe.style.background = background;
-  }
-
-  render() {
-    const { backgrounds = [] } = this.state;
-
-    if (!backgrounds.length) {
-      // we should just disable the button
+    if (!this.iframe) {
+      throw new Error('Cannot find Storybook iframe');
     }
 
-    const hasDefault = backgrounds.filter(x => x.default).length;
-    if (!hasDefault) backgrounds.push(defaultBackground);
+    api.on(STORY_CHANGED, this.onStoryChange);
+  }
+
+  componentWillUnmount() {
+    const { api } = this.props;
+    api.off(STORY_CHANGED, this.onStoryChange);
+  }
+
+  onStoryChange = id => {
+    const { api } = this.props;
+    const params = api.getParameters(id, PARAM_KEY);
+
+    if (params && !params.disable) {
+      const { backgrounds, selected } = params.reduce(
+        (acc, { name, value, default: isSelected }) => {
+          Object.assign(acc.backgrounds, { [name]: value });
+          if (isSelected) {
+            acc.selected = name;
+          }
+          return acc;
+        },
+        {
+          backgrounds: {},
+          selected: undefined,
+        }
+      );
+      this.setState({ backgrounds, selected }, this.apply);
+    } else {
+      this.setState({ backgrounds: {}, selected: undefined }, this.apply);
+    }
+  };
+
+  apply = () => {
+    const { iframe } = this;
+    const { selected, backgrounds } = this.state;
+
+    if (selected) {
+      const value = backgrounds[selected];
+      if (backgrounds[selected]) {
+        iframe.style.background = value;
+      } else {
+        console.error(selected, 'could not be set');
+      }
+    } else {
+      iframe.style.background = 'transparent';
+    }
+  };
+
+  change = key => {
+    this.setState({ selected: key }, this.apply);
+  };
+
+  render() {
+    const { backgrounds, selected } = this.state;
+    const list = toList(backgrounds);
+
+    if (!list.length) {
+      return null;
+    }
 
     return (
       <Fragment>
@@ -96,17 +98,33 @@ export default class Tool extends Component {
           </IconButton>
           {({ hide }) => (
             <List>
-              {backgrounds.map(({ value, name }) => (
-                <Item
-                  key={`${name} ${value}`}
-                  onClick={() => {
-                    this.setBackgroundFromSwatch(value);
+              {selected !== undefined ? (
+                <Fragment>
+                  <Item
+                    key="reset"
+                    onClick={() => {
+                      hide();
+                      this.change(undefined);
+                    }}
+                  >
+                    <Icon type="undo" />
+                    <Title>Reset</Title>
+                    <Detail>transparent</Detail>
+                  </Item>
+                </Fragment>
+              ) : null}
 
+              {list.map(([key, value]) => (
+                <Item
+                  key={key}
+                  onClick={() => {
                     hide();
+                    this.change(key);
                   }}
                 >
-                  <Icon type={<ColorIcon background={value} />} />
-                  <Title>{value}</Title>
+                  <Icon type={<S.ColorIcon background={value} />} />
+                  <Title>{key}</Title>
+                  <Detail>{value}</Detail>
                 </Item>
               ))}
             </List>
@@ -116,7 +134,7 @@ export default class Tool extends Component {
     );
   }
 }
-Tool.propTypes = {
+BackgroundTool.propTypes = {
   api: PropTypes.shape({
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,
@@ -127,6 +145,6 @@ Tool.propTypes = {
     removeListener: PropTypes.func,
   }),
 };
-Tool.defaultProps = {
+BackgroundTool.defaultProps = {
   channel: undefined,
 };

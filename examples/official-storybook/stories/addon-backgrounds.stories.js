@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import backgrounds, { withBackgrounds } from '@storybook/addon-backgrounds';
+import backgrounds from '@storybook/addon-backgrounds';
 import BaseButton from '../components/BaseButton';
 
 storiesOf('Addons|Backgrounds', module)
@@ -17,8 +17,6 @@ storiesOf('Addons|Backgrounds', module)
       selectedPanel: 'storybook/background/panel',
     },
   })
-  .addDecorator(withBackgrounds)
-
   .add('story 1', () => (
     <BaseButton label="You should be able to switch backgrounds for this story" />
   ))
