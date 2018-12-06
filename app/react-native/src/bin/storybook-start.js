@@ -30,13 +30,15 @@ const server = new Server({
   secured: program.secured,
 });
 
-server.listen(...listenAddr, err => {
-  if (err) {
-    throw err;
-  }
-  const address = `http://${program.host}:${program.port}/`;
-  console.info(`\nReact Native Storybook started on => ${address}\n`);
-  if (program.smokeTest) {
-    process.exit(0);
-  }
+server.start().then(() => {
+  server.listen(...listenAddr, err => {
+    if (err) {
+      throw err;
+    }
+    const address = `http://${program.host}:${program.port}/`;
+    console.info(`\nReact Native Storybook started on => ${address}\n`);
+    if (program.smokeTest) {
+      process.exit(0);
+    }
+  });
 });

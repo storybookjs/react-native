@@ -2,17 +2,27 @@ import express from 'express';
 import querystring from 'querystring';
 import http from 'http';
 import ws from 'ws';
-import storybook from './middleware';
+import { devServer as storybook } from '@storybook/core/server';
 
 export default class Server {
   constructor(options) {
-    this.options = options;
+    this.options = {
+      ...options,
+      ignorePreview: true,
+      corePresets: [require.resolve('./rn-manager-preset.js')],
+    };
+
     this.httpServer = http.createServer();
     this.expressApp = express();
-    this.expressApp.use(storybook(options));
-    this.httpServer.on('request', this.expressApp);
-    this.wsServer = new ws.Server({ server: this.httpServer });
-    this.wsServer.on('connection', (s, req) => this.handleWS(s, req));
+  }
+
+  start() {
+    return storybook(this.options).then(storybookMiddleware => {
+      this.expressApp.use(storybookMiddleware);
+      this.httpServer.on('request', this.expressApp);
+      this.wsServer = new ws.Server({ server: this.httpServer });
+      this.wsServer.on('connection', (s, req) => this.handleWS(s, req));
+    });
   }
 
   handleWS(socket, req) {
