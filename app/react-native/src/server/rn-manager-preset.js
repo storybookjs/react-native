@@ -16,7 +16,7 @@ export async function managerEntries(_, options) {
     entries.push(...installedAddons);
   }
 
-  entries.push(require.resolve('../manager'));
+  entries.push(require.resolve('../client/manager'));
 
   return entries;
 }

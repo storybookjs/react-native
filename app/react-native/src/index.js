@@ -1,4 +1,4 @@
-import Preview from './preview';
+import Preview from './client/preview';
 
 const preview = new Preview();
 
