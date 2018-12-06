@@ -1,23 +1,4 @@
-export const ADDON_ID = 'storybook/viewport';
-export const PANEL_ID = `${ADDON_ID}/panel`;
-export const UPDATE_VIEWPORT_EVENT_ID = `${ADDON_ID}/update`;
-export const CONFIGURE_VIEWPORT_EVENT_ID = `${ADDON_ID}/configure`;
-export const SET_STORY_DEFAULT_VIEWPORT_EVENT_ID = `${ADDON_ID}/setStoryDefaultViewport`;
-export const VIEWPORT_CHANGED_EVENT_ID = `${ADDON_ID}/viewportChanged`;
 export const INITIAL_VIEWPORTS = {
-  responsive: {
-    name: 'Responsive',
-    styles: {
-      width: '100%',
-      height: '100%',
-      border: 'none',
-      display: 'block',
-      boxShadow: 'none',
-      borderRadius: '0',
-      margin: '0',
-    },
-    type: 'desktop',
-  },
   iphone5: {
     name: 'iPhone 5',
     styles: {

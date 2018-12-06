@@ -33,7 +33,7 @@ export default class NotesPanel extends React.Component {
     this.mounted = false;
     const { channel } = this.props;
 
-    this.stopListeningOnStory();
+    // this.stopListeningOnStory();
     channel.removeListener('storybook/notes/add_notes', this.onAddNotes);
   }
 
