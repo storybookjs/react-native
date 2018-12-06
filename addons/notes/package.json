@@ -28,10 +28,10 @@
   "dependencies": {
     "@emotion/styled": "^0.10.6",
     "@storybook/addons": "4.1.0-alpha.1",
-    "marked": "^0.5.1"
+    "marked": "^0.5.2"
   },
   "devDependencies": {
-    "@types/marked": "^0.4.2"
+    "@types/marked": "^0.5.0"
   },
   "peerDependencies": {
     "react": "*"
