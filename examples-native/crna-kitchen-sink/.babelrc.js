@@ -1,0 +1,8 @@
+module.exports = {
+  presets: ['babel-preset-expo'],
+  env: {
+    development: {
+      plugins: ['@babel/plugin-transform-react-jsx-source'],
+    },
+  },
+};
