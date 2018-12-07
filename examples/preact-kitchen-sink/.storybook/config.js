@@ -8,6 +8,8 @@ setOptions({
 });
 
 const loadStories = () => {
+  require('../src/stories/index.stories');
+
   const requireContext = require.context('../src', true, /\.stories\.js$/);
 
   requireContext.keys().forEach(filename => requireContext(filename));
