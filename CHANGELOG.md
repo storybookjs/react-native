@@ -1,3 +1,25 @@
+## 4.0.12 (December 5, 2018)
+
+### Bug Fixes
+
+* Addon-a11y: Fix runtime errors in older browsers ([#4904](https://github.com/storybooks/storybook/pull/4904))
+
+## 4.1.0-alpha.11 (December 5, 2018)
+
+### Features
+
+* Add CRA TypeScript support for .storybook folder ([#4902](https://github.com/storybooks/storybook/pull/4902))
+
+### Bug Fixes
+
+* React-native: Fix async storage ([#4907](https://github.com/storybooks/storybook/pull/4907))
+* Core: replace babel/runtime with core-js to fix some aliasing issues ([#4900](https://github.com/storybooks/storybook/pull/4900))
+
+### Maintenance
+
+* Core: More granular methods separation in "build-static" and "build-dev" ([#4919](https://github.com/storybooks/storybook/pull/4919))
+* Examples: replace deprecated setOptions with withOptions ([#4899](https://github.com/storybooks/storybook/pull/4899))
+
 ## 4.0.11 (December 3, 2018)
 
 ### Bug Fixes

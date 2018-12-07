@@ -1,6 +1,6 @@
 {
   "name": "@storybook/preact",
-  "version": "4.1.0-alpha.10",
+  "version": "4.1.0-alpha.11",
   "description": "Storybook for Preact: Develop Preact Component in isolation.",
   "keywords": [
     "storybook"
@@ -25,13 +25,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.0.0",
-    "@babel/runtime": "^7.1.2",
-    "@storybook/core": "4.1.0-alpha.10",
+    "@babel/plugin-transform-react-jsx": "^7.2.0",
+    "@storybook/core": "4.1.0-alpha.11",
     "common-tags": "^1.8.0",
+    "core-js": "^2.5.7",
     "global": "^4.3.2",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
     "preact": "^8.3.1"
