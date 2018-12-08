@@ -1,6 +1,7 @@
 import addons, { makeDecorator } from '@storybook/addons';
 import { parse as renderMarkdown } from 'marked';
 
+// todo resolve any after @storybook/addons and @storybook/channels are migrated to TypeScript
 export const withNotes = makeDecorator({
   name: 'withNotes',
   parameterName: 'notes',
