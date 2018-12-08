@@ -10,8 +10,8 @@ interface NotesChannel {
 }
 
 interface NotesApi {
-  onStory: (callback: () => void) => void;
-  getQueryParam: any; // todo check correct definition
+  onStory(callback: () => void): () => void;
+  getQueryParam(queryParamName: string): any;
   setQueryParams: any; // todo check correct definition
 }
 
@@ -23,24 +23,23 @@ interface NotesProps {
 
 interface NotesState {
   text: string;
-  someDate: Date;
 }
 
 const Panel = styled.div({
   padding: 10,
   boxSizing: 'border-box',
-  width: '100%',
+  width: '100%'
 });
 
 export class Notes extends React.Component<NotesProps, NotesState> {
 
-  // todo check how react typescript does this, especially unmounted
-  stopListeningOnStory: any; // todo check correct definition
-  unmounted: any; // todo check correct definition
+  stopListeningOnStory: () => void;
+
+  isUnmounted = false;
 
   constructor(args: any) {
     super(args);
-    this.state = { text: 'add', someDate: new Date() };
+    this.state = { text: 'add' };
     this.onAddNotes = this.onAddNotes.bind(this);
   }
 
@@ -61,12 +60,12 @@ export class Notes extends React.Component<NotesProps, NotesState> {
       this.stopListeningOnStory();
     }
 
-    this.unmounted = true;
+    this.isUnmounted = true;
     const { channel } = this.props;
     channel.removeListener('storybook/notes/add_notes', this.onAddNotes);
   }
 
-  onAddNotes(text) {
+  onAddNotes(text: string) {
     this.setState({ text });
   }
 
@@ -89,10 +88,10 @@ export class Notes extends React.Component<NotesProps, NotesState> {
   }
 }
 
-addons.register('storybook/notes', api => {
+addons.register('storybook/notes', (api: any) => {
   const channel = addons.getChannel();
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
-    render: ({ active }) => <Notes channel={channel} api={api} active={active} />,
+    render: ({ active }: { active: boolean }) => <Notes channel={channel} api={api} active={active}/>
   });
 });

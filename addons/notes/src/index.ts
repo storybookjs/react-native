@@ -6,7 +6,7 @@ export const withNotes = makeDecorator({
   parameterName: 'notes',
   skipIfNoParametersOrOptions: true,
   allowDeprecatedUsage: true,
-  wrapper: (getStory, context, { options, parameters }) => {
+  wrapper: (getStory: (context: any) => any, context: any, { options, parameters }: any) => {
     const channel = addons.getChannel();
 
     const storyOptions = parameters || options;
@@ -30,7 +30,7 @@ export const withNotes = makeDecorator({
   },
 });
 
-export const withMarkdownNotes = (text, options) =>
+export const withMarkdownNotes = (text: string, options: any) =>
   withNotes({
     markdown: text,
     markdownOptions: options,
