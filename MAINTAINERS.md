@@ -3,7 +3,7 @@ This document will document some of the processes that members of the documentat
 # PR Process
 
 1. Triage with the correct [label](#labels)
-2. If there a change related to it ensure it has been published and tested before closing
+2. If there is a change related to it ensure it has been published and tested before closing
 
 # Labels
 

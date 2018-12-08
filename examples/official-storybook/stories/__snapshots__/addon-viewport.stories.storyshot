@@ -2,7 +2,7 @@
 
 exports[`Storyshots Addons|Viewport default 1`] = `
 <div
-  class="css-0 ehw333c0"
+  class="emotion-0 emotion-1"
 >
   I don't have problems being rendered using the default viewport.
 </div>
@@ -10,7 +10,7 @@ exports[`Storyshots Addons|Viewport default 1`] = `
 
 exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Inherited 1`] = `
 <div
-  class="css-0 ehw333c0"
+  class="emotion-0 emotion-1"
 >
   I've inherited 
   <b>
@@ -22,7 +22,7 @@ exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Inherited 1`]
 
 exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden via "withViewport" parameterized decorator 1`] = `
 <div
-  class="css-0 ehw333c0"
+  class="emotion-0 emotion-1"
 >
   I respect my parents but I should be looking good on 
   <b>
@@ -34,7 +34,7 @@ exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden vi
 
 exports[`Storyshots Addons|Viewport.deprecated Overridden via "Viewport" component 1`] = `
 <div
-  class="css-0 ehw333c0"
+  class="emotion-0 emotion-1"
 >
   I respect my parents but I should be looking good on 
   <b>
@@ -46,7 +46,7 @@ exports[`Storyshots Addons|Viewport.deprecated Overridden via "Viewport" compone
 
 exports[`Storyshots Addons|Viewport.deprecated Overridden via "withViewport" decorator 1`] = `
 <div
-  class="css-0 ehw333c0"
+  class="emotion-0 emotion-1"
 >
   I respect my parents but I should be looking good on 
   <b>
@@ -57,11 +57,19 @@ exports[`Storyshots Addons|Viewport.deprecated Overridden via "withViewport" dec
 `;
 
 exports[`Storyshots Addons|Viewport.withViewport onViewportChange 1`] = `
+.emotion-2 {
+  padding: 20px;
+}
+
+.emotion-0 {
+  margin: 0;
+}
+
 <div
-  class="css-1ruxp1v e1igy6c50"
+  class="emotion-2 emotion-3"
 >
   <h1
-    class="css-1uk1gs8 e1igy6c51"
+    class="emotion-0 emotion-1"
   >
     Select device/viewport
   </h1>

@@ -6,11 +6,13 @@ const sm = require('sitemap');
 const stripIndent = require('common-tags/lib/stripIndent');
 
 function pagesToSitemap(pages) {
-  return pages.filter(p => !!p.path).map(p => ({
-    url: p.path,
-    changefreq: 'daily',
-    priority: 0.7,
-  }));
+  return pages
+    .filter(p => !!p.path)
+    .map(p => ({
+      url: p.path,
+      changefreq: 'daily',
+      priority: 0.7,
+    }));
 }
 
 function generateSitemap(pages) {

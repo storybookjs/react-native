@@ -3,7 +3,9 @@ import { storiesOf } from '@storybook/angular';
 
 @Component({
   selector: 'storybook-with-ng-content',
-  template: `<div style="color: #1e88e5;"><ng-content></ng-content></div>`,
+  template: `
+    <div style="color: #1e88e5;"><ng-content></ng-content></div>
+  `,
 })
 class WithNgContentComponent {}
 

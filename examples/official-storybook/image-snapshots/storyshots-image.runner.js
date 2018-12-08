@@ -1,7 +1,7 @@
 /* This file is not suffixed by ".test.js" to not being run with all other test files.
-* This test needs the static build of the storybook to run.
-* `yarn run image-snapshots` generates the static build & uses the image snapshots behavior of storyshots.
-* */
+ * This test needs the static build of the storybook to run.
+ * `yarn run image-snapshots` generates the static build & uses the image snapshots behavior of storyshots.
+ * */
 import path from 'path';
 import fs from 'fs';
 import initStoryshots from '@storybook/addon-storyshots';

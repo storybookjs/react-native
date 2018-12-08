@@ -1,15 +1,12 @@
 {
   "name": "@storybook/addon-centered",
-  "version": "4.1.0-alpha.1",
+  "version": "4.1.0-alpha.11",
   "description": "Storybook decorator to center components",
   "keywords": [
     "addon",
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/centered",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -26,5 +23,8 @@
   },
   "dependencies": {
     "global": "^4.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

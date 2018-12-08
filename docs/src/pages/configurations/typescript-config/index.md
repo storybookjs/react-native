@@ -1,11 +1,13 @@
 ---
 id: 'typescript-config'
-title: 'Typescript Config'
+title: 'TypeScript Config'
 ---
 
-This is a central reference for using Storybook with Typescript.
+This is a central reference for using Storybook with TypeScript.
 
-## Dependencies you may need
+## Setting up TypeScript with awesome-typescript-loader
+
+### Dependencies you may need
 
 ```bash
 yarn add -D typescript
@@ -17,7 +19,7 @@ yarn add -D jest "@types/jest" ts-jest #testing
 
 We have had the best experience using `awesome-typescript-loader`, but other tutorials may use `ts-loader`, just configure accordingly. You can even use `babel-loader` with a `ts-loader` configuration.
 
-## Setting up Typescript to work with Storybook
+### Setting up TypeScript to work with Storybook
 
 We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default) by creating a `webpack.config.js` file in our Storybook configuration directory (by default, it’s `.storybook`):
 
@@ -37,7 +39,7 @@ module.exports = (baseConfig, env, config) => {
 
 The above example shows a working Webpack config with the TSDocgen plugin also integrated; remove the optional sections if you don't plan on using them.
 
-## `tsconfig.json`
+### `tsconfig.json`
 
 ```json
 {
@@ -71,18 +73,56 @@ The above example shows a working Webpack config with the TSDocgen plugin also i
 
 This is for the default configuration where `/stories` is a peer of `src`. If you have them all in just `src` you may wish to replace `"rootDirs": ["src", "stories"]` above with `"rootDir": "src",`.
 
-## Import tsx stories
+## Setting up TypeScript with babel-loader
 
-Change `config.ts` inside the Storybook config directory (by default, it’s `.storybook`) to import stories made with Typescript:
+When using latest create-react-app (CRA 2.0), Babel 7 has native TypeScript support. Setup becomes easier.
 
-```js
-// automatically import all files ending in *.stories.js
-const req = require.context('../stories', true, /.stories.tsx$/);
+### Dependencies you may need
+
+```bash
+yarn add -D @types/storybook__react # typings
 ```
 
-## Using Typescript with the TSDocgen addon
+### Setting up TypeScript to work with Storybook
 
-The very handy [Storybook Info addon](https://github.com/storybooks/storybook/tree/master/addons/info) autogenerates prop tables documentation for each component, however it doesn't work with Typescript types. The current solution is to use [react-docgen-typescript-loader](https://github.com/strothj/react-docgen-typescript-loader) to preprocess the Typescript files to give the Info addon what it needs. The webpack config above does this, and so for the rest of your stories you use it as per normal:
+We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default) by creating a `webpack.config.js` file in our Storybook configuration directory (by default, it’s `.storybook`):
+
+```js
+module.exports = (baseConfig, env, config) => {
+  config.module.rules.push({
+    test: /\.(ts|tsx)$/,
+    loader: require.resolve('babel-loader'),
+    options: {
+      presets: [['react-app', { flow: false, typescript: true }]],
+    },
+  });
+  config.resolve.extensions.push('.ts', '.tsx');
+  return config;
+};
+```
+
+### `tsconfig.json`
+
+The default `tsconfig.json` that comes with CRA works great. If your stories are outside the `src` folder, for example the `stories` folder in root, then `rootDirs": ["src", "stories"]` needs to be added to be added to `compilerOptions` so it knows what folders to compile. Make sure `jsx` is set to preserve. Should be unchanged.
+
+## Import tsx stories
+
+Change `config.ts` inside the Storybook config directory (by default, it’s `.storybook`) to import stories made with TypeScript:
+
+```js
+// automatically import all files ending in *.stories.tsx
+const req = require.context('../stories', true, /.stories.tsx$/);
+
+function loadStories() {
+  req.keys().forEach(req);
+}
+
+configure(loadStories, module);
+```
+
+## Using TypeScript with the TSDocgen addon
+
+The very handy [Storybook Info addon](https://github.com/storybooks/storybook/tree/master/addons/info) autogenerates prop tables documentation for each component, however it doesn't work with Typescript types. The current solution is to use [react-docgen-typescript-loader](https://github.com/strothj/react-docgen-typescript-loader) to preprocess the TypeScript files to give the Info addon what it needs. The webpack config above does this, and so for the rest of your stories you use it as per normal:
 
 ```js
 import * as React from 'react';
@@ -190,16 +230,16 @@ This is an example `jest.config.js` file for jest:
 
 ```js
 module.exports = {
-    transform: {
-        ".(ts|tsx)": "ts-jest",
-    },
-    testPathIgnorePatterns: ["/node_modules/", "/lib/"],
-    testRegex: "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    moduleFileExtensions: ["ts", "tsx", "js", "json"],
+  transform: {
+    '.(ts|tsx)': 'ts-jest',
+  },
+  testPathIgnorePatterns: ['/node_modules/', '/lib/'],
+  testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
 };
 ```
 
-## Building your Typescript Storybook
+## Building your TypeScript Storybook
 
 You will need to set up some scripts - these may help:
 

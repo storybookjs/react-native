@@ -1,14 +1,11 @@
 {
   "name": "@storybook/core",
-  "version": "4.1.0-alpha.1",
+  "version": "4.1.0-alpha.11",
   "description": "Storybook framework-agnostic API",
   "keywords": [
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -22,27 +19,25 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-transform-regenerator": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/runtime": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "@emotion/core": "^0.13.1",
     "@emotion/provider": "^0.11.2",
     "@emotion/styled": "^0.10.6",
-    "@storybook/addons": "4.1.0-alpha.1",
-    "@storybook/channel-postmessage": "4.1.0-alpha.1",
-    "@storybook/client-logger": "4.1.0-alpha.1",
-    "@storybook/core-events": "4.1.0-alpha.1",
-    "@storybook/node-logger": "4.1.0-alpha.1",
-    "@storybook/ui": "4.1.0-alpha.1",
+    "@storybook/addons": "4.1.0-alpha.11",
+    "@storybook/channel-postmessage": "4.1.0-alpha.11",
+    "@storybook/client-logger": "4.1.0-alpha.11",
+    "@storybook/core-events": "4.1.0-alpha.11",
+    "@storybook/node-logger": "4.1.0-alpha.11",
+    "@storybook/ui": "4.1.0-alpha.11",
     "airbnb-js-shims": "^1 || ^2",
     "autoprefixer": "^9.3.1",
     "babel-plugin-macros": "^2.4.2",
-    "babel-preset-minify": "^0.5.0",
+    "babel-preset-minify": "^0.5.0 || 0.6.0-alpha.5",
     "boxen": "^2.0.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "chalk": "^2.4.1",
+    "child-process-promise": "^2.2.1",
     "cli-table3": "0.5.1",
     "commander": "^2.19.0",
     "common-tags": "^1.8.0",
@@ -51,10 +46,12 @@
     "detect-port": "^1.2.3",
     "dotenv-webpack": "^1.5.7",
     "ejs": "^2.6.1",
+    "eventemitter3": "^3.1.0",
     "express": "^4.16.3",
     "file-loader": "^2.0.0",
     "file-system-cache": "^1.0.5",
     "find-cache-dir": "^2.0.0",
+    "fs-extra": "^7.0.1",
     "global": "^4.3.2",
     "html-webpack-plugin": "^4.0.0-beta.2",
     "inquirer": "^6.2.0",
@@ -66,17 +63,21 @@
     "opn": "^5.4.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
+    "pretty-hrtime": "^1.0.3",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
     "raw-loader": "^0.5.1",
     "react-dev-utils": "^6.1.0",
     "redux": "^4.0.1",
+    "regenerator-runtime": "^0.12.1",
     "resolve": "^1.8.1",
     "semver": "^5.6.0",
     "serve-favicon": "^2.5.0",
     "shelljs": "^0.8.2",
+    "spawn-promise": "^0.1.8",
     "style-loader": "^0.23.1",
     "svg-url-loader": "^2.3.2",
+    "terser-webpack-plugin": "^1.1.0",
     "url-loader": "^1.1.2",
     "webpack": "^4.23.1",
     "webpack-dev-middleware": "^3.4.0",
@@ -89,5 +90,8 @@
     "babel-loader": "^7.0.0 || ^8.0.0",
     "react": ">=16.3.0",
     "react-dom": ">=16.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

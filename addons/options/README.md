@@ -20,7 +20,9 @@ Add this line to your `addons.js` file (create this file inside your storybook c
 import '@storybook/addon-options/register';
 ```
 
-Import and use the `withOptions` decorator in your config.js file.
+###Set options globally
+
+Import and use the `withOptions` decorator in your `config.js` file.
 
 ```js
 import { addDecorator, configure } from '@storybook/react';
@@ -113,27 +115,29 @@ configure(() => require('./stories'), module);
 The options-addon accepts story parameters on the `options` key:
 
 ```js
-import { storiesOf } from '@storybook/marko';
-import { withKnobs, text, number } from '@storybook/addon-knobs';
-import Hello from '../components/hello/index.marko';
+import { storiesOf } from '@storybook/react';
+import MyComponent from './my-component';
 
-storiesOf('Addons|Knobs/Hello', module)
+storiesOf('Addons|Custom options', module)
   // If you want to set the option for all stories in of this kind
   .addParameters({ options: { addonPanelInRight: true } })
-  .addDecorator(withKnobs)
   .add(
-    'Simple',
-    () => {
-      const name = text('Name', 'John Doe');
-      const age = number('Age', 44);
-      return Hello.renderSync({
-        name,
-        age,
-      });
-    },
+    'Story for MyComponent',
+    () => <MyComponent />,
     // If you want to set the options for a specific story
     { options: { addonPanelInRight: false } }
   );
 ```
 
 _NOTE_ that you must attach `withOptions` as a decorator (at the top-level) for this to work.
+
+## Typescript
+
+To install type definitions: `npm install -D @types/storybook__addon-options`
+
+Make sure you also have the type definitions installed for the following libs:
+
+- node
+- react
+ 
+You can install them using `npm install -D @types/node @types/react`, assuming you are using Typescript >2.0.

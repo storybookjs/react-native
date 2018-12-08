@@ -1,14 +1,11 @@
 {
   "name": "@storybook/node-logger",
-  "version": "4.1.0-alpha.1",
+  "version": "4.1.0-alpha.11",
   "description": "",
   "keywords": [
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/node-logger",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -23,7 +20,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.2",
-    "npmlog": "^4.1.2"
+    "chalk": "^2.4.1",
+    "core-js": "^2.5.7",
+    "npmlog": "^4.1.2",
+    "pretty-hrtime": "^1.0.3",
+    "regenerator-runtime": "^0.12.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
