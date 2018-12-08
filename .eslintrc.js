@@ -27,7 +27,7 @@ module.exports = {
     'import/ignore': ['node_modules\\/(?!@storybook)'],
     'import/resolver': {
       node: {
-        extensions: ['.js'],
+        extensions: ['.js', '.ts'],
       },
     },
   },
