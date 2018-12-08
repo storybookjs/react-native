@@ -3,10 +3,11 @@ import addons from '@storybook/addons';
 
 import styled from '@emotion/styled';
 
+// todo this is going to be refactored after the migration of @storybook/channel to TypeScript
 interface NotesChannel {
-  on: (listener: string, callback: (text: string) => void) => any; // todo check correct return value definition
-  emit: any; // todo check correct definition
-  removeListener: (listener: string, callback: (text: string) => void) => void;
+  emit: any;
+  on(listener: string, callback: (text: string) => void): any;
+  removeListener(listener: string, callback: (text: string) => void): void;
 }
 
 interface NotesApi {
