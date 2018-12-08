@@ -10,9 +10,10 @@ interface NotesChannel {
 }
 
 interface NotesApi {
-  onStory(callback: () => void): () => void;
-  getQueryParam(queryParamName: string): any;
   setQueryParams: any; // todo check correct definition
+  getQueryParam(queryParamName: string): any;
+
+  onStory(callback: () => void): () => void;
 }
 
 interface NotesProps {
@@ -25,23 +26,22 @@ interface NotesState {
   text: string;
 }
 
-const Panel = styled.div({
+const Panel = styled('div')`
   padding: 10,
   boxSizing: 'border-box',
-  width: '100%'
-});
+  width: '100%',
+`;
 
 export class Notes extends React.Component<NotesProps, NotesState> {
 
   stopListeningOnStory: () => void;
-
+  foo: unknown;
   isUnmounted = false;
 
-  constructor(args: any) {
-    super(args);
-    this.state = { text: 'add' };
-    this.onAddNotes = this.onAddNotes.bind(this);
-  }
+  state: NotesState = { text: '' };
+
+  // todo is this even necessary? Is this some react magic? onAddNotes is a method of this class
+  // this.onAddNotes = this.onAddNotes.bind(this);
 
   componentDidMount() {
     const { channel, api } = this.props;
@@ -74,9 +74,9 @@ export class Notes extends React.Component<NotesProps, NotesState> {
     const { text } = this.state;
     const textAfterFormatted = text
       ? text
-          .trim()
-          .replace(/(<\S+.*>)\n/g, '$1')
-          .replace(/\n/g, '<br />')
+        .trim()
+        .replace(/(<\S+.*>)\n/g, '$1')
+        .replace(/\n/g, '<br />')
       : '';
 
     return active ? (
@@ -92,6 +92,6 @@ addons.register('storybook/notes', (api: any) => {
   const channel = addons.getChannel();
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
-    render: ({ active }: { active: boolean }) => <Notes channel={channel} api={api} active={active}/>
+    render: ({ active }: { active: boolean }) => <Notes channel={channel} api={api} active={active}/>,
   });
 });
