@@ -27,11 +27,11 @@ interface NotesState {
   text: string;
 }
 
-const Panel = styled('div')`
+const Panel = styled.div({
   padding: 10,
   boxSizing: 'border-box',
-  width: '100%',
-`;
+  width: '100%'
+});
 
 export class Notes extends React.Component<NotesProps, NotesState> {
 
