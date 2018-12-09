@@ -80,8 +80,18 @@ const NavButton = ({ children, ...props }) => (
 /* eslint-disable-next-line react/prop-types */
 const Welcome = ({ showApp }) => (
   <Main>
-    <Title>Welcome to storybook</Title>
-    <p>This is a UI component dev environment for your app.</p>
+    <Title>Welcome to storybook for Preact</Title>
+    <img
+      alt="Preact logo"
+      src="./logo.png"
+      style={{
+        'text-align': 'center',
+        height: '150px',
+        display: 'block',
+        margin: '0 auto',
+      }}
+    />
+    <p>This is a UI component dev environment for your Preact app.</p>
     <p>
       We've added some basic stories inside the <InlineCode>src/stories</InlineCode> directory.
       <br />A story is a single state of one or more UI components. You can have as many stories as
