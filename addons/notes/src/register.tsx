@@ -1,5 +1,6 @@
 import * as React from 'react';
 import addons from '@storybook/addons';
+import * as PropTypes from 'prop-types';
 
 import styled from '@emotion/styled';
 
@@ -34,6 +35,20 @@ const Panel = styled.div({
 });
 
 export class Notes extends React.Component<NotesProps, NotesState> {
+
+  static propTypes = {
+    active: PropTypes.bool.isRequired,
+    channel: PropTypes.shape({
+      on: PropTypes.func,
+      emit: PropTypes.func,
+      removeListener: PropTypes.func,
+    }).isRequired,
+    api: PropTypes.shape({
+      onStory: PropTypes.func,
+      getQueryParam: PropTypes.func,
+      setQueryParams: PropTypes.func,
+    }).isRequired,
+  };
 
   stopListeningOnStory: () => void;
   isUnmounted = false;
