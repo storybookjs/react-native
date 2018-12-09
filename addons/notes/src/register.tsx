@@ -30,19 +30,20 @@ interface NotesState {
 const Panel = styled.div({
   padding: 10,
   boxSizing: 'border-box',
-  width: '100%'
+  width: '100%',
 });
 
 export class Notes extends React.Component<NotesProps, NotesState> {
 
   stopListeningOnStory: () => void;
-  foo: unknown;
   isUnmounted = false;
 
-  state: NotesState = { text: '' };
+  readonly state: NotesState = { text: '' };
 
-  // todo is this even necessary? Is this some react magic? onAddNotes is a method of this class
-  // this.onAddNotes = this.onAddNotes.bind(this);
+  constructor(props: NotesProps) {
+    super(props);
+    this.onAddNotes = this.onAddNotes.bind(this);
+  }
 
   componentDidMount() {
     const { channel, api } = this.props;
