@@ -9,6 +9,7 @@
     "storybook": "start-storybook -p 9009 -s public"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "global": "^4.3.2",
     "preact": "^8.3.1"
   },
