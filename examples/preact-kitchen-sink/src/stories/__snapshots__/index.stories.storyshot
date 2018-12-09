@@ -35,10 +35,22 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   }
 >
   <h1>
-    Welcome to storybook
+    Welcome to storybook for Preact
   </h1>
+  <img
+    alt="Preact logo"
+    src="./logo.png"
+    style={
+      Object {
+        "display": "block",
+        "height": "150px",
+        "margin": "0 auto",
+        "text-align": "center",
+      }
+    }
+  />
   <p>
-    This is a UI component dev environment for your app.
+    This is a UI component dev environment for your Preact app.
   </p>
   <p>
     We've added some basic stories inside the 
