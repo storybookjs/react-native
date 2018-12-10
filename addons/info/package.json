@@ -30,6 +30,7 @@
     "nested-object-assign": "^1.0.1",
     "prop-types": "^15.6.2",
     "react-addons-create-fragment": "^15.5.3",
+    "react-is": "^16.6.1",
     "react-lifecycles-compat": "^3.0.4",
     "util-deprecate": "^1.0.2"
   },
