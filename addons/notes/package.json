@@ -28,7 +28,8 @@
     "@storybook/components": "4.1.0-alpha.11",
     "@storybook/core-events": "4.1.0-alpha.11",
     "markdown-to-jsx": "^6.7.4",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
     "@types/prop-types": "^15.5.7"

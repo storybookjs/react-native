@@ -1,10 +1,7 @@
 import hbs from 'htmlbars-inline-precompile';
 import { storiesOf } from '@storybook/ember';
-import { withNotes } from '@storybook/addon-notes';
 
 storiesOf('Addon|Notes', module)
-  .addDecorator(withNotes)
-  .addParameters({ options: { selectedAddonPanel: 'storybook/notes/panel' } })
   .add(
     'Simple note',
     () => ({

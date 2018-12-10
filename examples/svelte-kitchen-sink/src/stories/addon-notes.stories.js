@@ -1,10 +1,8 @@
 import { storiesOf } from '@storybook/svelte';
-import { withNotes } from '@storybook/addon-notes';
 
 import ButtonView from './views/ButtonView.svelte';
 
 storiesOf('Addon|Notes', module)
-  .addDecorator(withNotes)
   .add(
     'Simple note',
     () => ({

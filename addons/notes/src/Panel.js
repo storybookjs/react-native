@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { SyntaxHighlighter, Placeholder } from '@storybook/components';
+import { SyntaxHighlighter as SyntaxHighlighterBase, Placeholder } from '@storybook/components';
 import Markdown from 'markdown-to-jsx';
 import { STORY_CHANGED } from '@storybook/core-events';
 import { PARAM_KEY } from './shared';
@@ -14,6 +14,8 @@ const Panel = styled.div({
 
 const read = params => (typeof params === 'string' ? params : params.text || params.markdown);
 
+const SyntaxHighlighter = props => <SyntaxHighlighterBase bordered copyable {...props} />;
+
 export default class NotesPanel extends React.Component {
   state = {
     value: '',
@@ -21,7 +23,7 @@ export default class NotesPanel extends React.Component {
 
   // use our SyntaxHighlighter component in place of a <code> element when
   // converting markdown to react elements
-  markdownOpts = { overrides: { code: SyntaxHighlighter } };
+  options = { overrides: { code: SyntaxHighlighter } };
 
   componentDidMount() {
     this.mounted = true;
@@ -59,7 +61,7 @@ export default class NotesPanel extends React.Component {
 
     return value ? (
       <Panel className="addon-notes-container">
-        <Markdown options={this.markdownOpts}>{value}</Markdown>
+        <Markdown options={this.options}>{value}</Markdown>
       </Panel>
     ) : (
       <Placeholder>There is no info/note</Placeholder>

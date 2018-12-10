@@ -15,15 +15,22 @@ This is inline github-flavored markdown!
 
 ## Example Usage
 ~~~js
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import markdownNotes from './readme.md';
+
 storiesOf('Addons|Notes', module)
   .add(
-    'withNotes rendering imported markdown',
-    withNotes(markdownNotes)(() => (
+    'addon notes rendering imported markdown',
+    () => (
       <BaseButton label="Button with notes - check the notes panel for details" />
-    ))
+    ),
+    {
+      notes: markdownNotes,
+    }
   )
 ~~~
-    `;
+`;
 
 const markdownTable = `
 | Column1 | Column2 | Column3 |
@@ -35,14 +42,14 @@ const markdownTable = `
 `;
 
 storiesOf('Addons|Notes', module)
-  .add('withNotes', baseStory, {
+  .add('addon notes', baseStory, {
     notes:
       'This is the notes for a button. This is helpful for adding details about a story in a separate panel.',
   })
-  .add('withNotes rendering imported markdown', baseStory, {
+  .add('addon notes rendering imported markdown', baseStory, {
     notes: { markdown: markdownNotes },
   })
-  .add('withNotes rendering inline, github-flavored markdown', baseStory, {
+  .add('addon notes rendering inline, github-flavored markdown', baseStory, {
     notes: { markdown: markdownString },
   })
   .add('with a markdown table', baseStory, {

@@ -1,9 +1,7 @@
 import { storiesOf } from '@storybook/angular';
-import { withNotes } from '@storybook/addon-notes';
 import { Button } from '@storybook/angular/demo';
 
 storiesOf('Addon|Notes', module)
-  .addDecorator(withNotes)
   .add(
     'Simple note',
     () => ({
