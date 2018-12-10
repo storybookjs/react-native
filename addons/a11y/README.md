@@ -11,7 +11,7 @@ This storybook addon can be helpful to make your UI components more accessible.
 First, install the addon.
 
 ```sh
-$ npm install -D @storybook/addon-a11y
+$ yarn add @storybook/addon-a11y --dev
 ```
 
 Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
@@ -20,16 +20,18 @@ Add this line to your `addons.js` file (create this file inside your storybook c
 import '@storybook/addon-a11y/register';
 ```
 
-import the `'checkA11y'` decorator to check your stories for violations within your components.
+import the `withA11Y` decorator to check your stories for violations within your components.
 
 ```js
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withA11Y } from '@storybook/addon-a11y';
 
-import { checkA11y } from '@storybook/addon-a11y';
+// should only be added once
+// best place is in config.js
+addDecorator(withA11Y)
 
 storiesOf('button', module)
-  .addDecorator(checkA11y)
   .add('Accessible', () => (
     <button>
       Accessible button
@@ -42,55 +44,35 @@ storiesOf('button', module)
   ));
 ```
 
-For more customizability. Use the `'configureA11y'` function to configure [aXe options](https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#api-name-axeconfigure).
+For more customizability. Use the `addParameters` function to configure [aXe options](https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#api-name-axeconfigure).
+You can override these options at story level too.
 
 ```js
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, addDecorator, addParameters } from '@storybook/react';
 
-import { checkA11y, configureA11y } from '@storybook/addon-a11y';
+import { withA11Y } from '@storybook/addon-a11y';
 
-const whateverOptionsYouWant = {};
-configureA11y(whateverOptionsYouWant);
+addDecorator(withA11Y)
+addParameters({ a11y: {} });
 
 storiesOf('button', module)
-  .addDecorator(checkA11y)
   .add('Accessible', () => (
-    <button>
+    <button style={{ backgroundColor: 'black', color: 'white', }}>
       Accessible button
     </button>
   ))
   .add('Inaccessible', () => (
-    <button style={{ backgroundColor: 'red', color: 'darkRed', }}>
+    <button style={{ backgroundColor: 'black', color: 'black', }}>
       Inaccessible button
     </button>
   ));
-```
-
-If you want to add a11y globally to your stories, you can use the global Storybook decorator in your *.storybook/config.js* file:
-
-```js
-import { configure, addDecorator } from '@storybook/react';
-import { checkA11y } from '@storybook/addon-a11y';
-
-// pick all stories.js files within the src/ folder
-const req = require.context('../src', true, /stories\.js$/);
-
-addDecorator(checkA11y);
-
-function loadStories() {
-  req.keys().forEach(filename => req(filename));
-}
-
-configure(loadStories, module);
 ```
 
 ## Roadmap
 
 * Make UI accessibile
-* Add color blindness filters ([Example](http://lowvision.support/))
 * Show in story where violations are.
-* Make it configurable
 * Add more example tests
 * Add tests
 * Make CI integration possible

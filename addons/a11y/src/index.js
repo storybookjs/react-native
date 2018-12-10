@@ -1,39 +1,52 @@
 import { document } from 'global';
 import axe from 'axe-core';
-import addons from '@storybook/addons';
-import Events from '@storybook/core-events';
-import { logger } from '@storybook/client-logger';
+import addons, { makeDecorator } from '@storybook/addons';
+import { STORY_RENDERED } from '@storybook/core-events';
+import EVENTS, { PARAM_KEY } from './constants';
 
-import { CHECK_EVENT_ID, REQUEST_CHECK_EVENT_ID } from './shared';
+const channel = addons.getChannel();
+let progress = Promise.resolve();
+let options;
 
-let axeOptions = {};
+const getElement = () => {
+  const storyRoot = document.getElementById('story-root');
 
-export const configureA11y = (options = {}) => {
-  axeOptions = options;
+  if (storyRoot) {
+    return storyRoot.children;
+  }
+  return document.getElementById('root');
 };
 
-const runA11yCheck = () => {
-  const channel = addons.getChannel();
-  const infoWrapper = document.getElementById('story-root').children;
-  const wrapper = document.getElementById('root');
-
-  axe.reset();
-  axe.configure(axeOptions);
-  axe
-    .run(infoWrapper || wrapper)
-    .then(results => channel.emit(CHECK_EVENT_ID, results), logger.error);
+const report = input => {
+  channel.emit(EVENTS.RESULT, input);
 };
 
-const a11ySubscription = () => {
-  const channel = addons.getChannel();
-  channel.on(REQUEST_CHECK_EVENT_ID, runA11yCheck);
-
-  return () => {
-    channel.removeListener(REQUEST_CHECK_EVENT_ID, runA11yCheck);
-  };
+const run = o => {
+  progress = progress.then(() => {
+    axe.reset();
+    if (o) {
+      axe.configure(o);
+    }
+    return axe.run(getElement()).then(report);
+  });
 };
 
-export const checkA11y = story => {
-  addons.getChannel().emit(Events.REGISTER_SUBSCRIPTION, a11ySubscription);
-  return story();
-};
+export const withA11Y = makeDecorator({
+  name: 'withA11Y',
+  parameterName: PARAM_KEY,
+  skipIfNoParametersOrOptions: false,
+  allowDeprecatedUsage: false,
+
+  wrapper: (getStory, context, opt) => {
+    options = opt.parameters || opt.options;
+
+    return getStory(context);
+  },
+});
+
+channel.on(STORY_RENDERED, () => run(options));
+channel.on(EVENTS.REQUEST, () => run(options));
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline(() => {});
+}

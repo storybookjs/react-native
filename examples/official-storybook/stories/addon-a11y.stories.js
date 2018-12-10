@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { checkA11y } from '@storybook/addon-a11y';
 import BaseButton from '../components/BaseButton';
 import DelayedRender from '../components/DelayedRender';
 import Button from '../components/addon-a11y/Button';
@@ -10,15 +9,17 @@ import * as Form from '../components/addon-a11y/Form';
 import * as Typography from '../components/addon-a11y/Typography';
 
 const text = 'Testing the a11y addon';
+const image = 'http://placehold.it/350x150';
+// eslint-disable-next-line no-script-url
+const href = 'javascript:void 0';
 
 storiesOf('Addons|a11y', module)
   .addParameters({ options: { selectedAddonPanel: 'storybook/a11y/panel' } })
-  .addDecorator(checkA11y)
   .add('Default', () => <BaseButton label="" />)
   .add('Label', () => <BaseButton label={text} />)
   .add('Disabled', () => <BaseButton disabled label={text} />)
   .add('Invalid contrast', () => (
-    // FIXME has no effect on score
+    // FIXME: has no effect on score
     <BaseButton style={{ color: 'black', backgroundColor: 'black' }} label={text} />
   ))
   .add('delayed render', () => (
@@ -27,8 +28,9 @@ storiesOf('Addons|a11y', module)
     </DelayedRender>
   ));
 
+//
+
 storiesOf('Addons|A11y/Button', module)
-  .addDecorator(checkA11y)
   .add('Default', () => <Button />)
   .add('Content', () => <Button content={text} />)
   .add('Label', () => <Button label={text} />)
@@ -36,34 +38,24 @@ storiesOf('Addons|A11y/Button', module)
   .add('Invalid contrast', () => <Button contrast="wrong" content={text} />);
 
 storiesOf('Addons|A11y/Form', module)
-  .addDecorator(checkA11y)
   .add('Without Label', () => <Form.Row input={<Form.Input />} />)
   .add('With label', () => (
     <Form.Row label={<Form.Label content={text} id="1" />} input={<Form.Input id="1" />} />
   ))
   .add('With placeholder', () => <Form.Row input={<Form.Input id="1" placeholder={text} />} />);
 
-const image = 'http://placehold.it/350x150';
-
 storiesOf('Addons|A11y/Image', module)
-  .addDecorator(checkA11y)
   .add('Without alt', () => <Image src={image} />)
   .add('With alt', () => <Image src={image} alt={text} />)
   .add('Presentation', () => <Image presentation src={image} />);
 
-// eslint-disable-next-line no-script-url
-const href = 'javascript:void 0';
-
 storiesOf('Addons|A11y/Typography', module)
-  .addDecorator(checkA11y)
   .add('Correct', () => (
-    <div>
+    <Fragment>
       <Typography.Heading level={1}>{text}</Typography.Heading>
-
       <Typography.Text>{text}</Typography.Text>
-
       <Typography.Link content={`${text}...`} href={href} />
-    </div>
+    </Fragment>
   ))
   .add('Empty Heading', () => <Typography.Heading level={2} />)
   .add('Empty Paragraph', () => <Typography.Text />)

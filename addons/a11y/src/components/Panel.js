@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
 import { STORY_RENDERED } from '@storybook/core-events';
-import { ActionBar, ActionButton } from '@storybook/components';
+import { ActionBar, ActionButton, Icons } from '@storybook/components';
 
-import { CHECK_EVENT_ID, RERUN_EVENT_ID, REQUEST_CHECK_EVENT_ID } from '../shared';
+import EVENTS from '../constants';
 
 import Tabs from './Tabs';
 import Report from './Report';
@@ -22,59 +22,79 @@ const Violations = styled.span(({ theme }) => ({
 class A11YPanel extends Component {
   static propTypes = {
     active: PropTypes.bool.isRequired,
-    channel: PropTypes.shape({
+    api: PropTypes.shape({
       on: PropTypes.func,
       emit: PropTypes.func,
-      removeListener: PropTypes.func,
+      off: PropTypes.func,
     }).isRequired,
   };
 
   state = {
+    status: 'ready',
     passes: [],
     violations: [],
   };
 
   componentDidMount() {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.on(CHECK_EVENT_ID, this.onUpdate);
-    channel.on(STORY_RENDERED, this.requestCheck);
-    channel.on(RERUN_EVENT_ID, this.requestCheck);
+    api.on(STORY_RENDERED, this.request);
+    api.on(EVENTS.RESULT, this.onUpdate);
   }
 
   componentDidUpdate(prevProps) {
+    // TODO: might be able to remove this
     const { active } = this.props;
 
     if (!prevProps.active && active) {
-      this.requestCheck();
+      this.request();
     }
   }
 
   componentWillUnmount() {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.removeListener(CHECK_EVENT_ID, this.onUpdate);
-    channel.removeListener(STORY_RENDERED, this.requestCheck);
-    channel.removeListener(RERUN_EVENT_ID, this.requestCheck);
+    api.off(STORY_RENDERED, this.request);
+    api.off(EVENTS.RESULT, this.onUpdate);
   }
 
   onUpdate = ({ passes, violations }) => {
-    this.setState({
-      passes,
-      violations,
-    });
+    this.setState(
+      {
+        status: 'ran',
+        passes,
+        violations,
+      },
+      () => {
+        setTimeout(() => {
+          const { status } = this.state;
+          if (status === 'ran') {
+            this.setState({
+              status: 'ready',
+            });
+          }
+        }, 900);
+      }
+    );
   };
 
-  requestCheck = () => {
-    const { channel, active } = this.props;
+  request = () => {
+    const { api, active } = this.props;
 
     if (active) {
-      channel.emit(REQUEST_CHECK_EVENT_ID);
+      this.setState(
+        {
+          status: 'running',
+        },
+        () => {
+          api.emit(EVENTS.REQUEST);
+        }
+      );
     }
   };
 
   render() {
-    const { passes, violations } = this.state;
+    const { passes, violations, status } = this.state;
     const { active } = this.props;
 
     return active ? (
@@ -93,7 +113,19 @@ class A11YPanel extends Component {
           ]}
         />
         <ActionBar key="actionbar">
-          <ActionButton onClick={this.requestCheck}>RERUN TEST</ActionButton>
+          <ActionButton onClick={this.request}>
+            {status === 'ready' ? <span>RERUN TEST</span> : null}
+            {status === 'running' ? (
+              <Fragment>
+                <Icons inline icon="timer" /> <span>Running test</span>
+              </Fragment>
+            ) : null}
+            {status === 'ran' ? (
+              <Fragment>
+                <Icons inline icon="check" /> <span>Tests completed</span>
+              </Fragment>
+            ) : null}
+          </ActionButton>
         </ActionBar>
       </Fragment>
     ) : null;

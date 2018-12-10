@@ -34,3 +34,7 @@ export const withNotes = makeDecorator({
 
 export const withMarkdownNotes = deprecate((text: string, options: any) => {},
 'withMarkdownNotes is deprecated');
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline(() => {});
+}

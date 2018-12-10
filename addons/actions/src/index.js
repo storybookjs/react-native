@@ -21,3 +21,7 @@ export {
   PANEL_ID,
   EVENT_ID,
 };
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline(() => {});
+}

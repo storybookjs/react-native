@@ -101,3 +101,7 @@ export const withKnobsOptions = deprecate(
   withKnobs,
   'withKnobsOptions is deprecated. Instead, you can pass options into withKnobs(options) directly, or use the knobs parameter.'
 );
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline(() => {});
+}

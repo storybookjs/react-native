@@ -44,3 +44,7 @@ export default options => {
     return story();
   };
 };
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline(() => {});
+}

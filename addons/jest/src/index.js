@@ -58,3 +58,7 @@ export const withTests = userOptions => {
     return story();
   };
 };
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline(() => {});
+}

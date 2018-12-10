@@ -1,4 +1,3 @@
-// import { makeDecorator } from '@storybook/addons';
 import { document } from 'global';
 import addons, { makeDecorator } from '@storybook/addons';
 import EVENTS, { PARAM_KEY } from './constants';
@@ -58,7 +57,7 @@ const setResources = resources => {
   });
 };
 
-export const cssResources = makeDecorator({
+export const withCssResources = makeDecorator({
   name: 'withCssResources',
   parameterName: PARAM_KEY,
   skipIfNoParametersOrOptions: true,
@@ -75,3 +74,7 @@ export const cssResources = makeDecorator({
     return getStory(context);
   },
 });
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline(() => {});
+}

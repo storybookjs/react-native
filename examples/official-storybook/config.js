@@ -3,11 +3,13 @@ import ThemeProvider from '@emotion/provider';
 import styled from '@emotion/styled';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/components';
-import { withOptions } from '@storybook/addon-options';
+
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { cssResources } from '@storybook/addon-cssresources';
+import { withCssResources } from '@storybook/addon-cssresources';
+import { withA11Y } from '@storybook/addon-a11y';
 
 import 'react-chromatic/storybook-addon';
+
 import addHeadWarning from './head-warning';
 import extraViewports from './extra-viewports.json';
 
@@ -28,15 +30,8 @@ if (process.env.NODE_ENV === 'development') {
 addHeadWarning('Preview head not loaded', 'preview-head-not-loaded');
 addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
 
-addDecorator(cssResources);
-
-addDecorator(
-  withOptions({
-    hierarchySeparator: /\/|\./,
-    hierarchyRootSeparator: '|',
-    // theme: themes.dark,
-  })
-);
+addDecorator(withCssResources);
+addDecorator(withA11Y);
 
 const Reset = styled.div(({ theme }) => ({
   fontFamily: theme.mainTextFace,
@@ -52,6 +47,12 @@ addDecorator((story, { kind }) =>
 );
 
 addParameters({
+  a11y: {},
+  options: {
+    hierarchySeparator: /\/|\./,
+    hierarchyRootSeparator: '|',
+    // theme: themes.dark,
+  },
   viewports: {
     ...INITIAL_VIEWPORTS,
     ...extraViewports,

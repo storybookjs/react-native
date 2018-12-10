@@ -44,3 +44,7 @@ export default function(storyFn) {
 
   return wrapper;
 }
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline(() => {});
+}
