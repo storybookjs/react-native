@@ -47,7 +47,12 @@ module.exports = {
     'import/default': error,
     'import/named': error,
     'import/namespace': error,
-    'react/jsx-filename-extension': [warn, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-filename-extension': [
+      warn,
+      {
+        extensions: ['.js', '.jsx', '.tsx'],
+      },
+    ],
     'react/jsx-no-bind': [
       error,
       {

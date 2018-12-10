@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { SyntaxHighlighter, Placeholder } from '@storybook/components';
 import Markdown from 'markdown-to-jsx';
-import Events from '@storybook/core-events';
-import { EVENT_ID } from './shared';
+import { STORY_CHANGED } from '@storybook/core-events';
+import { PARAM_KEY } from './shared';
 
 const Panel = styled.div({
   padding: 10,
@@ -12,9 +12,11 @@ const Panel = styled.div({
   width: '100%',
 });
 
+const read = params => (typeof params === 'string' ? params : params.text || params.markdown);
+
 export default class NotesPanel extends React.Component {
   state = {
-    markdown: '',
+    value: '',
   };
 
   // use our SyntaxHighlighter component in place of a <code> element when
@@ -23,39 +25,41 @@ export default class NotesPanel extends React.Component {
 
   componentDidMount() {
     this.mounted = true;
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.on(EVENT_ID, this.onAddNotes);
-    channel.on(Events.SET_CURRENT_STORY, this.clearNotes);
+    api.on(STORY_CHANGED, this.onStoryChange);
   }
 
   componentWillUnmount() {
     this.mounted = false;
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    // this.stopListeningOnStory();
-    channel.removeListener('storybook/notes/add_notes', this.onAddNotes);
+    api.off(STORY_CHANGED, this.onStoryChange);
   }
 
-  onAddNotes = markdown => {
-    this.setState({ markdown });
-  };
+  onStoryChange = id => {
+    const { api } = this.props;
+    const params = api.getParameters(id, PARAM_KEY);
 
-  clearNotes = () => {
-    this.setState({ markdown: '' });
+    if (params && !params.disable) {
+      const value = read(params);
+      this.setState({ value });
+    } else {
+      this.setState({ value: undefined });
+    }
   };
 
   render() {
     const { active } = this.props;
-    const { markdown } = this.state;
+    const { value } = this.state;
 
     if (!active) {
       return null;
     }
 
-    return markdown ? (
+    return value ? (
       <Panel className="addon-notes-container">
-        <Markdown options={this.markdownOpts}>{markdown}</Markdown>
+        <Markdown options={this.markdownOpts}>{value}</Markdown>
       </Panel>
     ) : (
       <Placeholder>There is no info/note</Placeholder>
