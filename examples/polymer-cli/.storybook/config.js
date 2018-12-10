@@ -1,11 +1,10 @@
-import { configure, addDecorator } from '@storybook/polymer';
-import { withOptions } from '@storybook/addon-options';
+import { configure, addParameters } from '@storybook/polymer';
 
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     hierarchyRootSeparator: /\|/,
-  })
-);
+  },
+});
 
 function loadStories() {
   require('../src/stories/index.stories');

@@ -19,10 +19,10 @@ Then, modify `.storybook/config.js` to include your new options:
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
 
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     theme: {},
-  })
+  },
 });
 ```
 
@@ -42,12 +42,12 @@ import { withOptions } from '@storybook/addon-options';
 import { themes } from '@storybook/components';
 
 // Option defaults.
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     name: 'Foo',
     theme: themes.dark,
-  })
-);
+  },
+});
 ```
 
 ## Theme variables

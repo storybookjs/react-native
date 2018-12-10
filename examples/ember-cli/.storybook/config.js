@@ -1,12 +1,11 @@
-import { configure, addDecorator } from '@storybook/ember';
-import { withOptions } from '@storybook/addon-options';
+import { configure, addParameters } from '@storybook/ember';
 
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: /\|/,
-  })
-);
+  },
+});
 
 function loadStories() {
   require('../stories/index.stories');

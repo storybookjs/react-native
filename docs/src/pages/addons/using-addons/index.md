@@ -63,15 +63,15 @@ Sometimes you might want to configure an addon globally, as in the case of collo
 import { configure, addDecorator } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
 
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     name: 'CRA Kitchen Sink',
     goFullScreen: false,
     showAddonsPanel: true,
     showSearchBox: false
     // more configuration here
-  })
-);
+  }
+});
 ```
 
 Here's an example of a [production-ready config file](https://github.com/storybooks/storybook/blob/next/examples/cra-kitchen-sink/.storybook/config.js) from the cra-kitchen example.

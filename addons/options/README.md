@@ -25,12 +25,11 @@ import '@storybook/addon-options/register';
 Import and use the `withOptions` decorator in your `config.js` file.
 
 ```js
-import { addDecorator, configure } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { addParameters, configure } from '@storybook/react';
 
 // Option defaults:
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     /**
      * name to display in the top left corner
      * @type {String}
@@ -104,8 +103,8 @@ addDecorator(
      * @type {Boolean}
      */
     enableShortcuts: false, // true by default
-  })
-);
+  },
+});
 
 configure(() => require('./stories'), module);
 ```
