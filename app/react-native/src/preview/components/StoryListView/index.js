@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { SectionList, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { SectionList, Text, TextInput, TouchableOpacity, View, SafeAreaView } from 'react-native';
 import Events from '@storybook/core-events';
 import style from './style';
 
@@ -116,7 +116,7 @@ export default class StoryListView extends Component {
     const { data } = this.state;
 
     return (
-      <View style={style.flex}>
+      <SafeAreaView style={style.flex}>
         <TextInput
           clearButtonMode="while-editing"
           disableFullscreenUI
@@ -127,7 +127,7 @@ export default class StoryListView extends Component {
         />
         <SectionList
           testID="Storybook.ListView"
-          style={style.flex}
+          style={style.sectionList}
           renderItem={({ item }) => (
             <ListItem
               title={item.name}
@@ -143,7 +143,7 @@ export default class StoryListView extends Component {
           sections={data}
           stickySectionHeadersEnabled={false}
         />
-      </View>
+      </SafeAreaView>
     );
   }
 }

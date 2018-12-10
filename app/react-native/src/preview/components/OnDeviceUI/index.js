@@ -1,13 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Keyboard,
-  KeyboardAvoidingView,
-  Platform,
-  SafeAreaView,
-  Animated,
-  TouchableOpacity,
-} from 'react-native';
+import { Keyboard, KeyboardAvoidingView, Platform, Animated, TouchableOpacity } from 'react-native';
 import Events from '@storybook/core-events';
 
 import StoryListView from '../StoryListView';
@@ -150,49 +143,48 @@ export default class OnDeviceUI extends PureComponent {
     ];
 
     return (
-      <SafeAreaView style={style.flex}>
-        <KeyboardAvoidingView
-          enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
-          behavior={IS_IOS ? 'padding' : null}
-          keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
-          style={style.flex}
+      <KeyboardAvoidingView
+        enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
+        behavior={IS_IOS ? 'padding' : null}
+        keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
+        style={style.flex}
+      >
+        <AbsolutePositionedKeyboardAwareView
+          onLayout={this.onLayout}
+          previewHeight={previewHeight}
+          previewWidth={previewWidth}
         >
-          <AbsolutePositionedKeyboardAwareView
-            onLayout={this.onLayout}
-            previewHeight={previewHeight}
-            previewWidth={previewWidth}
-          >
-            <Animated.View style={previewWrapperStyles}>
-              <Animated.View style={previewStyles}>
-                <TouchableOpacity
-                  accessible={false}
-                  style={style.flex}
-                  disabled={tabOpen === PREVIEW}
-                  onPress={this.handleOpenPreview}
-                >
-                  <StoryView url={url} events={events} selection={selection} storyFn={storyFn} />
-                </TouchableOpacity>
-              </Animated.View>
+          <Animated.View style={previewWrapperStyles}>
+            <Animated.View style={previewStyles}>
+              <TouchableOpacity
+                accessible={false}
+                style={style.flex}
+                disabled={tabOpen === PREVIEW}
+                onPress={this.handleOpenPreview}
+              >
+                <StoryView url={url} events={events} selection={selection} storyFn={storyFn} />
+              </TouchableOpacity>
             </Animated.View>
-            <Panel style={getNavigatorPanelPosition(this.animatedValue, previewWidth)}>
-              <StoryListView
-                stories={stories}
-                events={events}
-                selectedKind={selection.kind}
-                selectedStory={selection.story}
-              />
-            </Panel>
-            <Panel style={getAddonPanelPosition(this.animatedValue, previewWidth)}>
-              <Addons />
-            </Panel>
-          </AbsolutePositionedKeyboardAwareView>
-          <Navigation
-            tabOpen={tabOpen}
-            onChangeTab={this.handleToggleTab}
-            initialUiVisible={!isUIHidden}
-          />
-        </KeyboardAvoidingView>
-      </SafeAreaView>
+          </Animated.View>
+          <Panel style={getNavigatorPanelPosition(this.animatedValue, previewWidth)}>
+            <StoryListView
+              stories={stories}
+              events={events}
+              selectedKind={selection.kind}
+              selectedStory={selection.story}
+            />
+          </Panel>
+          <Panel style={getAddonPanelPosition(this.animatedValue, previewWidth)}>
+            <Addons />
+          </Panel>
+        </AbsolutePositionedKeyboardAwareView>
+
+        <Navigation
+          tabOpen={tabOpen}
+          onChangeTab={this.handleToggleTab}
+          initialUiVisible={!isUIHidden}
+        />
+      </KeyboardAvoidingView>
     );
   }
 }

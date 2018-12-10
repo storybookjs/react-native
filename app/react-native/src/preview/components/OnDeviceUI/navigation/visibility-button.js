@@ -14,7 +14,7 @@ export default class VisibilityButton extends PureComponent {
         style={style.hideButton}
         hitSlop={{ top: 5, left: 5, bottom: 5, right: 5 }}
       >
-        <Text style={[style.hideButtonText]}>□</Text>
+        <Text style={style.hideButtonText}>□</Text>
       </TouchableOpacity>
     );
   }
