@@ -32,7 +32,8 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/prop-types": "^15.5.7"
+    "@types/prop-types": "^15.5.7",
+    "@types/util-deprecate": "^1.0.0"
   },
   "peerDependencies": {
     "react": "*"

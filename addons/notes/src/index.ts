@@ -1,5 +1,5 @@
-import addons, { makeDecorator } from '@storybook/addons';
-import deprecate from 'util-deprecate';
+import { makeDecorator } from '@storybook/addons';
+import { deprecate } from 'util';
 
 // todo resolve any after @storybook/addons and @storybook/channels are migrated to TypeScript
 export const withNotes = makeDecorator({
