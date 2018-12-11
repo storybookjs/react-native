@@ -119,6 +119,10 @@ export class Channel {
     }
   }
 
+  hasTransport() {
+    return !!this._transport;
+  }
+
   private _handleEvent(event: ChannelEvent, isPeer = false) {
     const listeners = this._listeners[event.type];
     if (listeners && (isPeer || event.from !== this._sender)) {

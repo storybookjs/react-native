@@ -1,4 +1,4 @@
-import { Channel, ChannelEvent, ChannelTransport } from '.';
+import { Channel, ChannelEvent, ChannelTransport, Listener } from '.';
 
 jest.useFakeTimers();
 
@@ -17,11 +17,9 @@ describe('Channel', () => {
       expect(transport.setHandler).toHaveBeenCalled();
     });
 
-    // todo this needs to be tested differently; _transport is a private property
     it('should not try to set handler if handler is missing', () => {
       channel = new Channel();
-      // expect(channel._transport).not.toBeDefined();
-      expect(true).toBe(false); // let it fail, until this is rewritten
+      expect(channel.hasTransport()).not.toBeFalsy();
     });
   });
 
@@ -80,9 +78,9 @@ describe('Channel', () => {
 
   describe('method:eventNames', () => {
     it('should return an array of strings', () => {
-      channel.on('type-1', 11);
-      channel.on('type-2', 21);
-      channel.on('type-2', 22);
+      channel.on('type-1', jest.fn());
+      channel.on('type-2', jest.fn());
+      channel.on('type-2', jest.fn());
       const expected = ['type-1', 'type-2'];
       expect(channel.eventNames()).toEqual(expected);
     });
@@ -90,168 +88,206 @@ describe('Channel', () => {
 
   describe('method:listenerCount', () => {
     it('should return the correct count', () => {
-      channel.on('type-1', 11);
-      channel.on('type-2', 21);
-      channel.on('type-2', 22);
+      channel.on('type-1', jest.fn());
+      channel.on('type-2', jest.fn());
+      channel.on('type-2', jest.fn());
       expect(channel.listenerCount('type-1')).toEqual(1);
       expect(channel.listenerCount('type-2')).toEqual(2);
     });
   });
 
   describe('method:listeners', () => {
+    const fn1 = jest.fn();
+    const fn2 = jest.fn();
+    const fn3 = jest.fn();
+
     it('should return an array of listeners', () => {
-      channel.on('type-1', 11);
-      channel.on('type-2', 21);
-      channel.on('type-2', 22);
-      expect(channel.listeners('type-1')).toEqual([11]);
-      expect(channel.listeners('type-2')).toEqual([21, 22]);
+      channel.on('type-1', fn1);
+      channel.on('type-2', fn2);
+      channel.on('type-2', fn3);
+      expect(channel.listeners('type-1')).toEqual([fn1]);
+      expect(channel.listeners('type-2')).toEqual([fn2, fn3]);
     });
   });
 
   describe('method:on', () => {
+    const fn1 = jest.fn();
+    const fn2 = jest.fn();
+    const fn3 = jest.fn();
+
+    // todo kinda duplicated? See method:listeners => should return an array of listeners
+    // todo _listeners is a private member now
     it('should add event listeners', () => {
-      channel.on('type-1', 11);
-      channel.on('type-2', 21);
-      channel.on('type-2', 22);
-      const expected = {
-        'type-1': [11],
-        'type-2': [21, 22],
-      };
-      expect(channel._listeners).toEqual(expected);
+      expect(true).toBeFalsy();
+      // channel.on('type-1', fn1);
+      // channel.on('type-2', fn2);
+      // channel.on('type-2', fn3);
+      // const expected = {
+      //   'type-1': [11],
+      //   'type-2': [21, 22],
+      // };
+      // expect(channel._listeners).toEqual(expected);
     });
 
+    // todo _handleEvent is private; rewrite test
     it('should call event listeners on event', () => {
-      const received = [];
-      channel.on('type-1', n => received.push(n));
-      channel._handleEvent({ type: 'type-1', args: [11] });
-      channel._handleEvent({ type: 'type-1', args: [12] });
-      expect(received).toEqual([11, 12]);
+      expect(true).toBeFalsy();
+      // const received: Listener[] = [];
+      // channel.on('type-1', n => received.push(n));
+      // channel._handleEvent({ type: 'type-1', args: [11] });
+      // channel._handleEvent({ type: 'type-1', args: [12] });
+      // expect(received).toEqual([11, 12]);
     });
   });
 
+  // todo _listeners is private; rewrite test
   describe('method:once', () => {
     it('should add event listeners', () => {
-      channel.once('type-1', 11);
-      channel.once('type-2', 21);
-      channel.once('type-2', 22);
-      expect(channel._listeners['type-1']).toHaveLength(1);
-      expect(channel._listeners['type-2']).toHaveLength(2);
+      expect(true).toBeFalsy();
+      // channel.once('type-1', 11);
+      // channel.once('type-2', 21);
+      // channel.once('type-2', 22);
+      // expect(channel._listeners['type-1']).toHaveLength(1);
+      // expect(channel._listeners['type-2']).toHaveLength(2);
     });
 
+    // todo _handleEvent is private; rewrite test
     it('should call event listeners only once', () => {
-      const received = [];
-      channel.once('type-1', n => received.push(n));
-      channel._handleEvent({ type: 'type-1', args: [11] });
-      channel._handleEvent({ type: 'type-1', args: [12] });
-      expect(received).toEqual([11]);
+      expect(true).toBeFalsy();
+      // const received = [];
+      // channel.once('type-1', n => received.push(n));
+      // channel._handleEvent({ type: 'type-1', args: [11] });
+      // channel._handleEvent({ type: 'type-1', args: [12] });
+      // expect(received).toEqual([11]);
     });
   });
 
+  // todo _listeners is private; rewrite test
   describe('method:addPeerListener', () => {
     it('should add event listeners', () => {
-      channel.addPeerListener('type-1', () => {});
-      channel.addPeerListener('type-2', () => {});
-      channel.addPeerListener('type-2', () => {});
-      expect(channel._listeners['type-1']).toHaveLength(1);
-      expect(channel._listeners['type-2']).toHaveLength(2);
+      expect(true).toBeFalsy();
+      // channel.addPeerListener('type-1', () => {});
+      // channel.addPeerListener('type-2', () => {});
+      // channel.addPeerListener('type-2', () => {});
+      // expect(channel._listeners['type-1']).toHaveLength(1);
+      // expect(channel._listeners['type-2']).toHaveLength(2);
     });
 
+    // todo _handleEvent is private; rewrite test
     it('should call event listeners on event', () => {
-      const received = [];
-      channel.addPeerListener('type-1', n => received.push(n));
-      channel._handleEvent({ type: 'type-1', args: [11] });
-      channel._handleEvent({ type: 'type-1', args: [12] });
-      expect(received).toEqual([11, 12]);
+      expect(true).toBeFalsy();
+      // const received = [];
+      // channel.addPeerListener('type-1', n => received.push(n));
+      // channel._handleEvent({ type: 'type-1', args: [11] });
+      // channel._handleEvent({ type: 'type-1', args: [12] });
+      // expect(received).toEqual([11, 12]);
     });
   });
 
+  // todo _listeners is private; rewrite test
   describe('method:prependListener', () => {
     it('should add event listeners', () => {
-      channel.prependListener('type-1', 11);
-      channel.prependListener('type-2', 21);
-      channel.prependListener('type-2', 22);
-      const expected = {
-        'type-1': [11],
-        'type-2': [22, 21],
-      };
-      expect(channel._listeners).toEqual(expected);
+      expect(true).toBeFalsy();
+      // channel.prependListener('type-1', 11);
+      // channel.prependListener('type-2', 21);
+      // channel.prependListener('type-2', 22);
+      // const expected = {
+      //   'type-1': [11],
+      //   'type-2': [22, 21],
+      // };
+      // expect(channel._listeners).toEqual(expected);
     });
   });
 
   describe('method:prependOnceListener', () => {
+    // todo _listeners is private; rewrite test
     it('should add event listeners', () => {
-      channel.prependOnceListener('type-1', 11);
-      channel.prependOnceListener('type-2', 21);
-      channel.prependOnceListener('type-2', 22);
-      expect(channel._listeners['type-1']).toHaveLength(1);
-      expect(channel._listeners['type-2']).toHaveLength(2);
+      expect(true).toBeFalsy();
+      // channel.prependOnceListener('type-1', 11);
+      // channel.prependOnceListener('type-2', 21);
+      // channel.prependOnceListener('type-2', 22);
+      // expect(channel._listeners['type-1']).toHaveLength(1);
+      // expect(channel._listeners['type-2']).toHaveLength(2);
     });
 
+    // todo _handleEvent is private; rewrite test
     it('should call event listeners only once', () => {
-      const received = [];
-      channel.prependOnceListener('type-1', n => received.push(n));
-      channel._handleEvent({ type: 'type-1', args: [11] });
-      channel._handleEvent({ type: 'type-1', args: [12] });
-      expect(received).toEqual([11]);
+      expect(true).toBeFalsy();
+      // const received = [];
+      // channel.prependOnceListener('type-1', n => received.push(n));
+      // channel._handleEvent({ type: 'type-1', args: [11] });
+      // channel._handleEvent({ type: 'type-1', args: [12] });
+      // expect(received).toEqual([11]);
     });
   });
 
+  // todo _listeners is private; rewrite test
   describe('method:removeAllListeners', () => {
     it('should remove all listeners', () => {
-      channel.on('type-1', 11);
-      channel.on('type-2', 21);
-      channel.on('type-2', 22);
-      channel.removeAllListeners();
-      expect(channel._listeners).toEqual({});
+      expect(true).toBeFalsy();
+      // channel.on('type-1', 11);
+      // channel.on('type-2', 21);
+      // channel.on('type-2', 22);
+      // channel.removeAllListeners();
+      // expect(channel._listeners).toEqual({});
     });
 
     it('should remove all listeners for a type', () => {
-      channel.on('type-1', 11);
-      channel.on('type-2', 21);
-      channel.on('type-2', 22);
-      channel.removeAllListeners('type-2');
-      expect(channel._listeners).toEqual({ 'type-1': [11] });
+      expect(true).toBeFalsy();
+      // channel.on('type-1', 11);
+      // channel.on('type-2', 21);
+      // channel.on('type-2', 22);
+      // channel.removeAllListeners('type-2');
+      // expect(channel._listeners).toEqual({ 'type-1': [11] });
     });
   });
 
+  // todo _listeners is private; rewrite test
   describe('method:removeListener', () => {
     it('should remove all listeners', () => {
-      channel.on('type-1', 11);
-      channel.on('type-2', 21);
-      channel.on('type-2', 22);
-      const expected = {
-        'type-1': [11],
-        'type-2': [21],
-      };
-      channel.removeListener('type-2', 22);
-      expect(channel._listeners).toEqual(expected);
+      expect(true).toBeFalsy();
+      // channel.on('type-1', 11);
+      // channel.on('type-2', 21);
+      // channel.on('type-2', 22);
+      // const expected = {
+      //   'type-1': [11],
+      //   'type-2': [21],
+      // };
+      // channel.removeListener('type-2', 22);
+      // expect(channel._listeners).toEqual(expected);
     });
   });
 
   describe('_miscellaneous', () => {
+    // todo _handleEvent is private; rewrite test
     it('should ignore if event came from own sender', () => {
-      const received = [];
-      channel.on('type-1', n => received.push(n));
-      channel._handleEvent({ type: 'type-1', args: [11] });
-      channel._handleEvent({ type: 'type-1', args: [12], from: channel._sender });
-      expect(received).toEqual([11]);
+      expect(true).toBeFalsy();
+      // const received = [];
+      // channel.on('type-1', n => received.push(n));
+      // channel._handleEvent({ type: 'type-1', args: [11] });
+      // channel._handleEvent({ type: 'type-1', args: [12], from: channel._sender });
+      // expect(received).toEqual([11]);
     });
 
+    // todo _handleEvent is private; rewrite test
     it('should not ignore peer event', () => {
-      const received = [];
-      channel.on('type-1', n => received.push(n));
-      channel._handleEvent({ type: 'type-1', args: [11] });
-      channel._handleEvent({ type: 'type-1', args: [12] }, true);
-      expect(received).toEqual([11, 12]);
+      expect(true).toBeFalsy();
+      // const received = [];
+      // channel.on('type-1', n => received.push(n));
+      // channel._handleEvent({ type: 'type-1', args: [11] });
+      // channel._handleEvent({ type: 'type-1', args: [12] }, true);
+      // expect(received).toEqual([11, 12]);
     });
 
+    // todo _handleEvent is private; rewrite test
     it('should ignore if event handled by addPeerListener', () => {
-      const received = [];
-      channel.addPeerListener('type-1', n => received.push(n));
-      channel._handleEvent({ type: 'type-1', args: [11], from: channel._sender });
-      channel._handleEvent({ type: 'type-1', args: [12], from: '_' });
-      channel._handleEvent({ type: 'type-1', args: [13] }, true);
-      expect(received).toEqual([12]);
+      expect(true).toBeFalsy();
+      // const received = [];
+      // channel.addPeerListener('type-1', n => received.push(n));
+      // channel._handleEvent({ type: 'type-1', args: [11], from: channel._sender });
+      // channel._handleEvent({ type: 'type-1', args: [12], from: '_' });
+      // channel._handleEvent({ type: 'type-1', args: [13] }, true);
+      // expect(received).toEqual([12]);
     });
   });
 });
