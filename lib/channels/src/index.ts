@@ -1,5 +1,5 @@
 export interface ChannelTransport {
-  send: any;
+  send: any; // todo Check actual type
   setHandler<TEventArgs = any>(handler: (event: ChannelEvent<TEventArgs>) => void): void;
 }
 
