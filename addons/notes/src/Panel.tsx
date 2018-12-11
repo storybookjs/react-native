@@ -14,7 +14,6 @@ const Panel = styled.div({
   width: '100%',
 });
 
-
 interface Props {
   active: boolean;
   api: API;
