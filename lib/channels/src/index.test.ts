@@ -1,4 +1,4 @@
-import { Channel, ChannelTransport } from '.';
+import { Channel, ChannelEvent, ChannelTransport } from '.';
 
 jest.useFakeTimers();
 
@@ -17,18 +17,22 @@ describe('Channel', () => {
       expect(transport.setHandler).toHaveBeenCalled();
     });
 
+    // todo this needs to be tested differently; _transport is a private property
     it('should not try to set handler if handler is missing', () => {
       channel = new Channel();
-      expect(channel._transport).not.toBeDefined();
+      // expect(channel._transport).not.toBeDefined();
+      expect(true).toBe(false); // let it fail, until this is rewritten
     });
   });
 
+  // todo before, addListener was called with numbers; is this still the correct test?
   describe('method:addListener', () => {
     it('should call channel.on with args', () => {
+      const testFn = jest.fn();
       channel.on = jest.fn();
-      channel.addListener(1, 2);
+      channel.addListener('A', testFn);
       expect(channel.on).toHaveBeenCalled();
-      expect(channel.on).toHaveBeenCalledWith(1, 2);
+      expect(channel.on).toHaveBeenCalledWith('A', testFn);
     });
   });
 
@@ -42,11 +46,21 @@ describe('Channel', () => {
       channel.emit(type, ...args);
       expect(transport.send).toHaveBeenCalled();
 
-      const event = transport.send.mock.calls[0][0];
+      const event: ChannelEvent = transport.send.mock.calls[0][0];
       expect(typeof event.from).toEqual('string');
 
       delete event.from;
       expect(event).toEqual(expected);
+    });
+
+    it('should be type safe', () => {
+      transport.send = jest.fn();
+      const type = 'test-type';
+      const args = [1, 2, 3];
+      const expected = { type, args };
+
+      // todo check if generic argument typing works
+      expect(true).toBe(false);
     });
 
     it('should call handle async option', () => {

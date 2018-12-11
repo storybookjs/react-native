@@ -54,7 +54,7 @@ export class Channel {
     this.on(type, peerListener);
   }
 
-  emit(type: string, ...args: any[]) {
+  emit<TEventArgs = any>(type: string, ...args: TEventArgs[]) {
     const event = { type, args, from: this._sender };
 
     const handler = () => {
