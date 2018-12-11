@@ -12,7 +12,7 @@ storiesOf('Addons|Options', module)
     () => <div>This story should have changed hidden the addons panel</div>,
     {
       options: {
-        showAddonPanel: false,
+        showPanel: false,
       },
     }
   );
