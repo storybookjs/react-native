@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-links",
-  "version": "4.1.0-alpha.11",
+  "version": "4.1.0-alpha.12",
   "description": "Story Links addon for storybook",
   "keywords": [
     "addon",
@@ -21,9 +21,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.1.0-alpha.11",
-    "@storybook/components": "4.1.0-alpha.11",
-    "@storybook/core-events": "4.1.0-alpha.11",
+    "@storybook/addons": "4.1.0-alpha.12",
+    "@storybook/components": "4.1.0-alpha.12",
+    "@storybook/core-events": "4.1.0-alpha.12",
     "global": "^4.3.2",
     "prop-types": "^15.6.2"
   },

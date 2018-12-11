@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "4.1.0-alpha.11",
+  "version": "4.1.0-alpha.12",
   "description": "A Storybook addon to show additional information for your stories.",
   "keywords": [
     "addon",
@@ -22,9 +22,9 @@
   },
   "dependencies": {
     "@emotion/styled": "^0.10.6",
-    "@storybook/addons": "4.1.0-alpha.11",
-    "@storybook/client-logger": "4.1.0-alpha.11",
-    "@storybook/components": "4.1.0-alpha.11",
+    "@storybook/addons": "4.1.0-alpha.12",
+    "@storybook/client-logger": "4.1.0-alpha.12",
+    "@storybook/components": "4.1.0-alpha.12",
     "global": "^4.3.2",
     "marksy": "^6.1.0",
     "nested-object-assign": "^1.0.1",
