@@ -1,10 +1,7 @@
 {
   "command": {
     "publish": {
-      "allowBranch": [
-        "master",
-        "next"
-      ]
+      "allowBranch": ["master", "next", "release/*"]
     }
   },
   "npmClient": "yarn",
