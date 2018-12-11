@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from 'react';
 import { document } from 'global';
-
+import React, { Component, Fragment } from 'react';
+import memoize from 'memoizerific';
 import styled from '@emotion/styled';
 
 import { Popout, Item, Icons, Icon, IconButton, Title, List } from '@storybook/components';
 
-const storybookIframe = 'storybook-preview-iframe';
+const getIframe = memoize(1)(() => document.getElementById('storybook-preview-iframe'));
 
 const ColorIcon = styled.span(
   {
@@ -25,20 +25,18 @@ class ColorBlindness extends Component {
     filter: false,
   };
 
-  componentDidMount() {
-    this.iframe = document.getElementById(storybookIframe);
-  }
-
   setFilter = filter => {
-    if (!this.iframe) {
-      throw new Error('Cannot find Storybook iframe');
+    const iframe = getIframe();
+
+    if (iframe) {
+      iframe.style.filter = filter === 'mono' ? 'grayscale(100%)' : `url('#${filter}')`;
+
+      this.setState({
+        filter,
+      });
+    } else {
+      console.error('Cannot find Storybook iframe');
     }
-
-    this.iframe.style.filter = filter === 'mono' ? 'grayscale(100%)' : `url('#${filter}')`;
-
-    this.setState({
-      filter,
-    });
   };
 
   render() {

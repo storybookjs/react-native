@@ -11,6 +11,7 @@ import * as S from './components';
 import { PARAM_KEY } from './constants';
 
 const toList = memoize(50)(viewports => Object.entries(viewports));
+const getIframe = memoize(1)(() => document.getElementById('storybook-preview-background'));
 
 export default class BackgroundTool extends Component {
   constructor(props) {
@@ -24,11 +25,6 @@ export default class BackgroundTool extends Component {
 
   componentDidMount() {
     const { api } = this.props;
-    this.iframe = document.getElementById('storybook-preview-background');
-
-    if (!this.iframe) {
-      throw new Error('Cannot find Storybook iframe');
-    }
 
     api.on(STORY_CHANGED, this.onStoryChange);
   }
@@ -63,18 +59,22 @@ export default class BackgroundTool extends Component {
   };
 
   apply = () => {
-    const { iframe } = this;
-    const { selected, backgrounds } = this.state;
+    const iframe = getIframe();
+    if (iframe) {
+      const { selected, backgrounds } = this.state;
 
-    if (selected) {
-      const value = backgrounds[selected];
-      if (backgrounds[selected]) {
-        iframe.style.background = value;
+      if (selected) {
+        const value = backgrounds[selected];
+        if (backgrounds[selected]) {
+          iframe.style.background = value;
+        } else {
+          console.error(selected, 'could not be set');
+        }
       } else {
-        console.error(selected, 'could not be set');
+        iframe.style.background = 'transparent';
       }
     } else {
-      iframe.style.background = 'transparent';
+      console.error('Cannot find Storybook iframe');
     }
   };
 

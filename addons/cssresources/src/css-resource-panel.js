@@ -1,12 +1,9 @@
-import { document } from 'global';
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { SyntaxHighlighter } from '@storybook/components';
 
 import { STORY_CHANGED } from '@storybook/core-events';
 import EVENTS, { PARAM_KEY } from './constants';
-
-const storybookIframe = 'storybook-preview-iframe';
 
 export default class CssResourcePanel extends Component {
   constructor(props) {
@@ -19,10 +16,6 @@ export default class CssResourcePanel extends Component {
 
   componentDidMount() {
     const { api } = this.props;
-    this.iframe = document.getElementById(storybookIframe);
-    if (!this.iframe) {
-      throw new Error('Cannot find Storybook iframe');
-    }
     api.on(STORY_CHANGED, this.onStoryChange);
   }
 

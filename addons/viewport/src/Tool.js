@@ -10,6 +10,8 @@ import { STORY_CHANGED } from '@storybook/core-events';
 import { PARAM_KEY } from './constants';
 
 const toList = memoize(50)(viewports => Object.entries(viewports));
+const getIframe = memoize(1)(() => document.getElementById('storybook-preview-iframe'));
+const iframeClass = 'storybook-preview-iframe-viewport';
 
 export default class ViewportTool extends Component {
   constructor(props) {
@@ -24,13 +26,6 @@ export default class ViewportTool extends Component {
 
   componentDidMount() {
     const { api } = this.props;
-    this.iframe = document.getElementById('storybook-preview-iframe');
-    this.iframeClass = 'storybook-preview-iframe-viewport';
-
-    if (!this.iframe) {
-      throw new Error('Cannot find Storybook iframe');
-    }
-
     api.on(STORY_CHANGED, this.onStoryChange);
   }
 
@@ -62,28 +57,31 @@ export default class ViewportTool extends Component {
   };
 
   apply = () => {
-    const { iframe, iframeClass } = this;
+    const iframe = getIframe();
     const { isRotated, selected, viewports } = this.state;
 
-    if (selected) {
-      const {
-        styles: { width: a, height: b },
-      } = viewports[selected];
-      iframe.style.width = isRotated ? b : a;
-      iframe.style.height = isRotated ? a : b;
+    if (iframe) {
+      if (selected) {
+        const {
+          styles: { width: a, height: b },
+        } = viewports[selected];
+        iframe.style.width = isRotated ? b : a;
+        iframe.style.height = isRotated ? a : b;
 
-      if (!iframe.classList.item(iframeClass)) {
-        iframe.classList.add(iframeClass);
+        if (!iframe.classList.item(iframeClass)) {
+          iframe.classList.add(iframeClass);
+        }
+      } else {
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.classList.remove(iframeClass);
       }
     } else {
-      iframe.style.width = '100%';
-      iframe.style.height = '100%';
-      iframe.classList.remove(iframeClass);
+      console.error('Cannot find Storybook iframe');
     }
   };
 
   render() {
-    const { iframeClass } = this;
     const { viewports, selected } = this.state;
 
     const list = toList(viewports);
