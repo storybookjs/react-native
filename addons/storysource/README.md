@@ -46,6 +46,7 @@ The parser that will be parsing your code to AST (based on [prettier](https://gi
 Alowed values:
 * `javascript` - default
 * `typescript`
+* `flow`
 
 Usage:
 
