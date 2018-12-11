@@ -1,12 +1,14 @@
 import * as React from 'react';
 import addons, { types } from '@storybook/addons';
-import Panel from './Panel'; // todo fix eslint in tslint (igor said he fixed it, should ask him)
-import { ADDON_ID, PANEL_ID } from './shared';
 
-// todo add api types
-addons.register(ADDON_ID, (api: any) => {
+import { ADDON_ID, PANEL_ID, API } from './shared';
+
+// TODO: fix eslint in tslint (igor said he fixed it, should ask him)
+import Panel from './Panel';
+
+addons.register(ADDON_ID, (api: API) => {
   const channel = addons.getChannel();
-  const render = ({ active }: { active: boolean }) => <Panel channel={channel} api={api} active={active}/>;
+  const render = ({ active }: { active: boolean }) => <Panel api={api} active={active} />;
   const title = 'Notes';
 
   addons.add(PANEL_ID, {
@@ -14,6 +16,6 @@ addons.register(ADDON_ID, (api: any) => {
     title,
     route: ({ componentId }: { componentId: any }) => `/info/${componentId}`, // todo add type
     match: ({ viewMode }: { viewMode: any }) => viewMode === 'info', // todo add type
-    render
+    render,
   });
 });

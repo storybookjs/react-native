@@ -33,7 +33,9 @@
   },
   "devDependencies": {
     "@types/prop-types": "^15.5.7",
-    "@types/util-deprecate": "^1.0.0"
+    "@types/node": "^10.12.5",
+    "@types/util-deprecate": "^1.0.0",
+    "@types/webpack-env": "^1.13.6"
   },
   "peerDependencies": {
     "react": "*"

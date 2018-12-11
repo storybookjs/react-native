@@ -1,57 +1,48 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+import { STORY_CHANGED } from '@storybook/core-events';
+
 import { SyntaxHighlighter as SyntaxHighlighterBase, Placeholder } from '@storybook/components';
 import Markdown from 'markdown-to-jsx';
-import { STORY_CHANGED } from '@storybook/core-events';
-import { PARAM_KEY } from './shared';
+
+import { PARAM_KEY, API, Parameters } from './shared';
 
 const Panel = styled.div({
   padding: 10,
   boxSizing: 'border-box',
-  width: '100%'
+  width: '100%',
 });
 
-interface NotesPanelProps {
+
+interface Props {
   active: boolean;
-  channel: {
-    emit: any;
-    on(listener: string, callback: (text: string) => void): any;
-    removeListener(listener: string, callback: (text: string) => void): void;
-  };
-  api: {
-    setQueryParams: any; // todo check correct definition
-    getQueryParam(queryParamName: string): any;
-    onStory(callback: () => void): () => void;
-  };
+  api: API;
 }
 
 interface NotesPanelState {
   value: string;
 }
 
-type ReadParams = string | { text: string; markdown: string };
-const read = (params: ReadParams) => (typeof params === 'string' ? params : params.text || params.markdown);
-const SyntaxHighlighter = (props: NotesPanelProps) => <SyntaxHighlighterBase bordered copyable {...props} />;
+const read = (params: Parameters): string =>
+  typeof params === 'string' ? params : params.text || params.markdown;
 
-export default class NotesPanel extends React.Component<NotesPanelProps, NotesPanelState> {
+const SyntaxHighlighter = (props: any) => <SyntaxHighlighterBase bordered copyable {...props} />;
 
+export default class NotesPanel extends React.Component<Props, NotesPanelState> {
   static propTypes = {
     active: PropTypes.bool.isRequired,
-    channel: PropTypes.shape({
-      on: PropTypes.func,
-      emit: PropTypes.func,
-      removeListener: PropTypes.func
-    }).isRequired,
     api: PropTypes.shape({
-      onStory: PropTypes.func,
-      getQueryParam: PropTypes.func,
-      setQueryParams: PropTypes.func
-    }).isRequired
+      on: PropTypes.func,
+      off: PropTypes.func,
+      emit: PropTypes.func,
+
+      getParameters: PropTypes.func,
+    }).isRequired,
   };
 
   readonly state: NotesPanelState = {
-    value: ''
+    value: '',
   };
 
   mounted: boolean;
@@ -61,20 +52,16 @@ export default class NotesPanel extends React.Component<NotesPanelProps, NotesPa
   options = { overrides: { code: SyntaxHighlighter } };
 
   componentDidMount() {
-    this.mounted = true;
     const { api } = this.props;
-
     api.on(STORY_CHANGED, this.onStoryChange);
   }
 
   componentWillUnmount() {
-    this.mounted = false;
     const { api } = this.props;
-
     api.off(STORY_CHANGED, this.onStoryChange);
   }
 
-  onStoryChange = id => {
+  onStoryChange = (id: string) => {
     const { api } = this.props;
     const params = api.getParameters(id, PARAM_KEY);
 
