@@ -1,11 +1,10 @@
-/* eslint no-underscore-dangle: 0 */
-import Channel from '.';
+import { Channel, ChannelTransport } from '.';
 
 jest.useFakeTimers();
 
 describe('Channel', () => {
-  let transport = null;
-  let channel = null;
+  let transport: ChannelTransport;
+  let channel: Channel;
 
   beforeEach(() => {
     transport = { setHandler: jest.fn(), send: jest.fn() };

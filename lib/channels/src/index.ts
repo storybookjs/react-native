@@ -1,27 +1,60 @@
-/* eslint no-underscore-dangle: 0 */
+export interface ChannelTransport {
+  send: any;
+  setHandler<TEventArgs = any>(handler: (event: ChannelEvent<TEventArgs>) => void): void;
+}
 
-export default class Channel {
-  constructor({ transport, async } = {}) {
-    this._sender = this._randomId();
+export interface ChannelEvent<TEventArgs = any> {
+  type: string;
+  from: string;
+  args: TEventArgs[];
+}
+
+interface Listener<TEventArgs = any> {
+  (...args: TEventArgs[]): void;
+  ignorePeer?: boolean;
+}
+
+interface ListenersKeyValue {
+  [key: string]: Listener[];
+}
+
+interface ChannelArgs {
+  transport?: ChannelTransport;
+  async?: boolean;
+}
+
+const generateRandomId = () => {
+  // generates a random 13 character string
+  return Math.random()
+    .toString(16)
+    .slice(2);
+};
+
+export class Channel {
+  private _sender = generateRandomId();
+  private _listeners: ListenersKeyValue = {};
+  private readonly _async: boolean = false;
+  private readonly _transport: ChannelTransport;
+
+  constructor({ transport, async }: ChannelArgs = {}) {
     this._async = async;
     if (transport) {
       this._transport = transport;
       this._transport.setHandler(event => this._handleEvent(event));
     }
-    this._listeners = {};
   }
 
-  addListener(type, listener) {
+  addListener(type: string, listener: Listener) {
     this.on(type, listener);
   }
 
-  addPeerListener(type, listener) {
+  addPeerListener(type: string, listener: Listener) {
     const peerListener = listener;
     peerListener.ignorePeer = true;
     this.on(type, peerListener);
   }
 
-  emit(type, ...args) {
+  emit(type: string, ...args: any[]) {
     const event = { type, args, from: this._sender };
 
     const handler = () => {
@@ -42,36 +75,36 @@ export default class Channel {
     return Object.keys(this._listeners);
   }
 
-  listenerCount(type) {
+  listenerCount(type: string) {
     const listeners = this._listeners[type];
     return listeners ? listeners.length : 0;
   }
 
-  listeners(type) {
+  listeners(type: string) {
     return this._listeners[type];
   }
 
-  on(type, listener) {
+  on(type: string, listener: Listener) {
     this._listeners[type] = this._listeners[type] || [];
     this._listeners[type].push(listener);
   }
 
-  once(type, listener) {
+  once(type: string, listener: Listener) {
     const onceListener = this._onceListener(type, listener);
     this.on(type, onceListener);
   }
 
-  prependListener(type, listener) {
+  prependListener(type: string, listener: Listener) {
     this._listeners[type] = this._listeners[type] || [];
     this._listeners[type].unshift(listener);
   }
 
-  prependOnceListener(type, listener) {
+  prependOnceListener(type: string, listener: Listener) {
     const onceListener = this._onceListener(type, listener);
     this.prependListener(type, onceListener);
   }
 
-  removeAllListeners(type) {
+  removeAllListeners(type: string) {
     if (!type) {
       this._listeners = {};
     } else if (this._listeners[type]) {
@@ -79,32 +112,27 @@ export default class Channel {
     }
   }
 
-  removeListener(type, listener) {
+  removeListener(type: string, listener: Listener) {
     const listeners = this._listeners[type];
     if (listeners) {
       this._listeners[type] = listeners.filter(l => l !== listener);
     }
   }
 
-  _randomId() {
-    // generates a random 13 character string
-    return Math.random()
-      .toString(16)
-      .slice(2);
-  }
-
-  _handleEvent(event, isPeer) {
+  private _handleEvent(event: ChannelEvent, isPeer = false) {
     const listeners = this._listeners[event.type];
     if (listeners && (isPeer || event.from !== this._sender)) {
       listeners.forEach(fn => !(isPeer && fn.ignorePeer) && fn(...event.args));
     }
   }
 
-  _onceListener(type, listener) {
-    const onceListener = (...args) => {
+  private _onceListener(type: string, listener: Listener) {
+    const onceListener = (...args: any[]) => {
       this.removeListener(type, onceListener);
       return listener(...args);
     };
     return onceListener;
   }
 }
+
+export default Channel;
