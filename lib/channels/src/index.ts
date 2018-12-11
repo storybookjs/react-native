@@ -9,7 +9,7 @@ export interface ChannelEvent<TEventArgs = any> {
   args: TEventArgs[];
 }
 
-interface Listener<TEventArgs = any> {
+export interface Listener<TEventArgs = any> {
   (...args: TEventArgs[]): void;
   ignorePeer?: boolean;
 }
