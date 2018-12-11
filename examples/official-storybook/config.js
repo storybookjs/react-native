@@ -49,6 +49,7 @@ addDecorator((story, { kind }) =>
 addParameters({
   a11y: {},
   options: {
+    name: 'Storybook',
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: '|',
     // theme: themes.dark,

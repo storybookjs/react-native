@@ -16,8 +16,7 @@ import '@storybook/addon-options/register';
 
 Then, modify `.storybook/config.js` to include your new options:  
 ```js
-import { addDecorator, configure } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { addParameters, configure } from '@storybook/react';
 
 addParameters({
   options: {
@@ -37,8 +36,7 @@ We have created 2 themes for you: "normal" (a light theme) and "dark" (a dark th
 You can get these themes like so:
 
 ```js
-import { addDecorator, configure } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { addParameters, configure } from '@storybook/react';
 import { themes } from '@storybook/components';
 
 // Option defaults.

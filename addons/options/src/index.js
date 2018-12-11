@@ -1,12 +1,7 @@
 import deprecate from 'util-deprecate';
 import addons, { makeDecorator } from '@storybook/addons';
-import { EVENT_ID } from '../shared';
 
-// init function will be executed once when the storybook loads for the
-// first time. This is a good place to add global listeners on channel.
-export function init() {
-  // NOTE nothing to do here
-}
+import EVENTS from './constants';
 
 function emitOptions(options) {
   const channel = addons.getChannel();
@@ -18,7 +13,7 @@ function emitOptions(options) {
 
   // since 'undefined' and 'null' are the valid values we don't want to
   // override the hierarchySeparator or hierarchyRootSeparator if the prop is missing
-  channel.emit(EVENT_ID, {
+  channel.emit(EVENTS.SET, {
     options,
   });
 }
@@ -35,7 +30,7 @@ export const withOptions = makeDecorator({
   name: 'withOptions',
   parameterName: 'options',
   skipIfNoParametersOrOptions: false,
-  wrapper: (getStory, context, { options: inputOptions, parameters }) => {
+  wrapper: deprecate((getStory, context, { options: inputOptions, parameters }) => {
     // do not send hierachy related options over the channel
     const { hierarchySeparator, hierarchyRootSeparator, ...change } = {
       ...globalOptions,
@@ -67,7 +62,7 @@ export const withOptions = makeDecorator({
         ...parameters,
       },
     });
-  },
+  }, 'withOptions is deprecated, use addParameters({ options: {} }) instead'),
 });
 
 if (module && module.hot && module.hot.decline) {

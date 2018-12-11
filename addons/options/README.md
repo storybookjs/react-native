@@ -22,7 +22,7 @@ import '@storybook/addon-options/register';
 
 ###Set options globally
 
-Import and use the `withOptions` decorator in your `config.js` file.
+Import and use the `addParameters` + `options`-key in your `config.js` file.
 
 ```js
 import { addParameters, configure } from '@storybook/react';
@@ -128,15 +128,13 @@ storiesOf('Addons|Custom options', module)
   );
 ```
 
-_NOTE_ that you must attach `withOptions` as a decorator (at the top-level) for this to work.
-
 ## Typescript
 
-To install type definitions: `npm install -D @types/storybook__addon-options`
+To install type definitions: `yarn add @types/storybook__addon-options --dev`
 
 Make sure you also have the type definitions installed for the following libs:
 
 - node
 - react
  
-You can install them using `npm install -D @types/node @types/react`, assuming you are using Typescript >2.0.
+You can install them using `yarn add @types/node @types/react --dev`, assuming you are using Typescript >2.0.

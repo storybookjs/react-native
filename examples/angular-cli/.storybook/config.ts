@@ -1,5 +1,4 @@
 import { configure, addParameters } from '@storybook/angular';
-import { withOptions } from '@storybook/addon-options';
 import addCssWarning from '../src/cssWarning';
 
 addCssWarning();

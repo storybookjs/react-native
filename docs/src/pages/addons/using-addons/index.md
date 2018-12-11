@@ -60,8 +60,7 @@ Then you'll be able to see those notes when you are viewing the story.
 Sometimes you might want to configure an addon globally, as in the case of collocating stories with components, or just simply to keep your stories file cleaner. To do that, you can add your decorators to a config file, typically in `.storybook/config.js`. Here's an example of how you might do that.
 
 ```js
-import { configure, addDecorator } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { configure, addParameters } from '@storybook/react';
 
 addParameters({
   options: {

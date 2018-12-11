@@ -15,7 +15,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
-  "main": "preview.js",
+  "main": "dist/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
