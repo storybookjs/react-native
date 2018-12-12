@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@storybook/addons": "4.1.0-alpha.12",
+    "core-js": "^2.5.7",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
