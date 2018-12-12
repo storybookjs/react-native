@@ -15,13 +15,13 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
-  "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@storybook/addons": "4.1.0-alpha.11",
+    "@storybook/core-events": "4.1.0-alpha.11",
     "global": "^4.3.2",
     "react-ga": "^2.5.3"
   },

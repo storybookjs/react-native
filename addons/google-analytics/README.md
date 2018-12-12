@@ -9,7 +9,7 @@ Storybook Addon Google Analytics can be used to support google analytics in [Sto
 Install:
 
 ```sh
-npm i -D @storybook/addon-google-analytics
+yarn add @storybook/addon-google-analytics --dev
 ```
 
 Then, add following content to `.storybook/addons.js`
