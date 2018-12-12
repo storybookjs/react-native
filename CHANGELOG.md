@@ -1,3 +1,10 @@
+## 4.1.0-alpha.12 (December 11, 2018)
+
+### Bug Fixes
+
+* Fix storyshots by compiling JS modules ([#4967](https://github.com/storybooks/storybook/pull/4967))
+* Angular: move 'core-js/modules/es6.promise' into storyshots ([#4929](https://github.com/storybooks/storybook/pull/4929))
+
 ## 4.0.12 (December 5, 2018)
 
 ### Bug Fixes

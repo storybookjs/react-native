@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "4.1.0-alpha.11",
+  "version": "4.1.0-alpha.12",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
@@ -16,16 +16,21 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
-  "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "main": "dist/public_api.js",
+  "types": "dist/public_api.d.ts",
+  "jsnext:main": "src/public_api.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@emotion/styled": "^0.10.6",
-    "@storybook/addons": "4.1.0-alpha.11",
-    "marked": "^0.5.1",
+    "@storybook/addons": "4.1.0-alpha.12",
+    "marked": "^0.5.2",
     "prop-types": "^15.6.2"
+  },
+  "devDependencies": {
+    "@types/marked": "^0.5.0",
+    "@types/prop-types": "^15.5.7"
   },
   "peerDependencies": {
     "react": "*"

@@ -3,12 +3,13 @@
     "publish": {
       "allowBranch": [
         "master",
-        "next"
+        "next",
+        "release/*"
       ]
     }
   },
   "npmClient": "yarn",
   "useWorkspaces": true,
   "registry": "https://registry.npmjs.org",
-  "version": "4.1.0-alpha.11"
+  "version": "4.1.0-alpha.12"
 }

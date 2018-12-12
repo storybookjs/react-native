@@ -86,7 +86,7 @@ import { number } from "@storybook/addon-knobs";
 
 Addon-knobs no longer updates the URL parameters interactively as you edit a knob. This is a UI change but it shouldn't break any code because old URLs are still supported.
 
-In 3.x, editing knobs updated the URL parameters interactively. The implementation had performance and architectural problems. So in 4.0, we changed this to a "copy" button tp the addon which generates a URL with the updated knob values and copies it to the clipboard.
+In 3.x, editing knobs updated the URL parameters interactively. The implementation had performance and architectural problems. So in 4.0, we changed this to a "copy" button in the addon which generates a URL with the updated knob values and copies it to the clipboard.
 
 ### Keyboard shortcuts moved
 

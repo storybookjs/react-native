@@ -1,6 +1,6 @@
 {
   "name": "mithril-example",
-  "version": "4.1.0-alpha.11",
+  "version": "4.1.0-alpha.12",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook",
@@ -10,18 +10,18 @@
     "mithril": "^1.1.6"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.1.0-alpha.11",
-    "@storybook/addon-backgrounds": "4.1.0-alpha.11",
-    "@storybook/addon-centered": "4.1.0-alpha.11",
-    "@storybook/addon-knobs": "4.1.0-alpha.11",
-    "@storybook/addon-links": "4.1.0-alpha.11",
-    "@storybook/addon-notes": "4.1.0-alpha.11",
-    "@storybook/addon-options": "4.1.0-alpha.11",
-    "@storybook/addon-storyshots": "4.1.0-alpha.11",
-    "@storybook/addon-storysource": "4.1.0-alpha.11",
-    "@storybook/addon-viewport": "4.1.0-alpha.11",
-    "@storybook/addons": "4.1.0-alpha.11",
-    "@storybook/mithril": "4.1.0-alpha.11",
+    "@storybook/addon-actions": "4.1.0-alpha.12",
+    "@storybook/addon-backgrounds": "4.1.0-alpha.12",
+    "@storybook/addon-centered": "4.1.0-alpha.12",
+    "@storybook/addon-knobs": "4.1.0-alpha.12",
+    "@storybook/addon-links": "4.1.0-alpha.12",
+    "@storybook/addon-notes": "4.1.0-alpha.12",
+    "@storybook/addon-options": "4.1.0-alpha.12",
+    "@storybook/addon-storyshots": "4.1.0-alpha.12",
+    "@storybook/addon-storysource": "4.1.0-alpha.12",
+    "@storybook/addon-viewport": "4.1.0-alpha.12",
+    "@storybook/addons": "4.1.0-alpha.12",
+    "@storybook/mithril": "4.1.0-alpha.12",
     "webpack": "^4.23.1"
   }
 }

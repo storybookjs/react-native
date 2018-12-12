@@ -77,7 +77,7 @@ module.exports = {
     'react/jsx-filename-extension': [
       warn,
       {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.tsx'],
       },
     ],
     'react/jsx-no-bind': [
