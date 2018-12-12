@@ -1,3 +1,9 @@
+## 4.1.1 (December 12, 2018)
+
+### Bug Fixes
+
+* FIX react native by adding an empty array named dlls to the templateParameters ([#4985](https://github.com/storybooks/storybook/pull/4985))
+
 ## 4.1.0 (December 12, 2018)
 
 Storybook 4.1 with performance and compatibility improvements! Highlights include:
