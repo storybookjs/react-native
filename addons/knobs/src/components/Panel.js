@@ -94,7 +94,7 @@ export default class KnobPanel extends PureComponent {
 
   copy = () => {
     const { location } = document;
-    const query = qs.parse(location.search.replace('?', ''));
+    const query = qs.parse(location.search, { ignoreQueryPrefix: true });
     const { knobs } = this.state;
 
     Object.entries(knobs).forEach(([name, knob]) => {
