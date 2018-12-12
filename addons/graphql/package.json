@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-graphql",
-  "version": "4.1.0-alpha.12",
+  "version": "4.1.0-alpha.13",
   "description": "Storybook addon to display the GraphiQL IDE",
   "keywords": [
     "addon",
@@ -21,6 +21,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "core-js": "^2.5.7",
     "global": "^4.3.2",
     "graphiql": "^0.12.0",
     "graphql": "^14.0.2",

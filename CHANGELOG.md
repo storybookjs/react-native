@@ -1,3 +1,9 @@
+## 4.1.0-alpha.13 (December 12, 2018)
+
+### Maintenance
+
+* React-native: add core-js to addons ([#4981](https://github.com/storybooks/storybook/pull/4981))
+
 ## 4.1.0-alpha.12 (December 11, 2018)
 
 ### Bug Fixes
