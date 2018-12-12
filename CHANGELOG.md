@@ -1,3 +1,22 @@
+## 4.1.0 (December 12, 2018)
+
+Storybook 4.1 with performance and compatibility improvements! Highlights include:
+
+* Core: Performance optimizations on separate manager preview split, improved cold start, restart & rebuild ([#4834](https://github.com/storybooks/storybook/pull/4834))
+* React: add support for all versions of react ([#4808](https://github.com/storybooks/storybook/pull/4808))
+* Addon-CSSResources: new adddon to dynamically add/remove css ([#4622](https://github.com/storybooks/storybook/pull/4622))
+* React: use babel presets/plugins based on CRA. ([#4836](https://github.com/storybooks/storybook/pull/4836))
+* React-native: Add ability to filter story list ([#4806](https://github.com/storybooks/storybook/pull/4806))
+* React: Add TypeScript support for react-scripts ([#4824](https://github.com/storybooks/storybook/pull/4824))
+
+There are dozens more fixes, features, and tweaks in the 4.1 release. See changelogs for `4.1.0-*` for details.
+
+## 4.1.0-alpha.13 (December 12, 2018)
+
+### Maintenance
+
+* React-native: add core-js to addons ([#4981](https://github.com/storybooks/storybook/pull/4981))
+
 ## 4.1.0-alpha.12 (December 11, 2018)
 
 ### Bug Fixes
