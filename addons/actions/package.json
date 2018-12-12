@@ -26,6 +26,7 @@
     "@storybook/addons": "4.1.0-alpha.12",
     "@storybook/components": "4.1.0-alpha.12",
     "@storybook/core-events": "4.1.0-alpha.12",
+    "core-js": "^2.5.7",
     "deep-equal": "^1.0.1",
     "global": "^4.3.2",
     "lodash": "^4.17.11",
