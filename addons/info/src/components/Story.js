@@ -117,7 +117,11 @@ class Story extends Component {
     const { stylesheet } = this.state;
     const { children } = this.props;
 
-    return <div style={stylesheet.infoStory}>{children}</div>;
+    return (
+      <div id="story-root" style={stylesheet.infoStory}>
+        {children}
+      </div>
+    );
   }
 
   _renderInline() {

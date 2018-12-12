@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-a11y",
-  "version": "4.0.12",
+  "version": "4.1.0-alpha.12",
   "description": "a11y addon for storybook",
   "keywords": [
     "a11y",
@@ -11,9 +11,6 @@
     "verify"
   ],
   "homepage": "https://github.com/storybooks/storybook#readme",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -29,10 +26,10 @@
   },
   "dependencies": {
     "@emotion/styled": "^0.10.6",
-    "@storybook/addons": "4.0.12",
-    "@storybook/client-logger": "4.0.12",
-    "@storybook/components": "4.0.12",
-    "@storybook/core-events": "4.0.12",
+    "@storybook/addons": "4.1.0-alpha.12",
+    "@storybook/client-logger": "4.1.0-alpha.12",
+    "@storybook/components": "4.1.0-alpha.12",
+    "@storybook/core-events": "4.1.0-alpha.12",
     "axe-core": "^3.1.2",
     "global": "^4.3.2",
     "prop-types": "^15.6.2"
@@ -40,5 +37,8 @@
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

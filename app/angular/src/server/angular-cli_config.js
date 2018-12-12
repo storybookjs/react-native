@@ -103,12 +103,10 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
   const rulesExcludingStyles = filterOutStylingRules(baseConfig);
 
   // cliStyleConfig.entry adds global style files to the webpack context
-  const entry = {
+  const entry = [
     ...baseConfig.entry,
-    iframe: []
-      .concat(baseConfig.entry.iframe)
-      .concat(Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), [])),
-  };
+    ...Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), []),
+  ];
 
   const module = {
     ...baseConfig.module,

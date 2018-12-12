@@ -78,11 +78,84 @@ overlayBackground: applied to overlay `background`, // 'linear-gradient(to botto
 All options above are single key options, in other words, they are variables, and their usage is fixed.
 
 We will extend the theming ability in the future and possibly add more deep theming ability.
-Right now we have identified the most likely thing you might want to change the appearance of more then just 1 variable so we allow you the deep-theme the header using: `brand`.
+Right now we allow to deep theme: `stories nav panel`. Below are the varaiables that are used to deep theme `stories nav panel`.
+
+storiesNav: deep theme for `stories nav`
+
+```
+storiesNav: {
+  backgroundColor: 'aqua',
+}
+```
+
+brand: deep theme for brand including `brand name` and `shortcuts`
 
 ```
 brand: {
   background: 'url("/path/to/logo.svg")',
+}
+```
+
+brandLink: deep theme for only `brand name`
+
+```
+brandLink: {
+  border: 'none'
+}
+```
+
+filter: deep thene for `stories filter section`
+
+```
+filter: {
+  backgroundColor: 'red',
+}
+```
+
+treeHeader: deep thene for `tree header`
+
+```
+treeHeader: {
+  color: 'blue',
+}
+```
+
+treeMenuHeader: deep thene for `tree menu header` of each menu
+
+```
+treeMenuHeader: {
+  color: 'aqua',
+}
+```
+
+menuLink: deep thene for `menu link` of each story
+
+```
+menuLink: {
+  color: 'black',
+}
+```
+
+activeMenuLink: deep thene for `active menu link` for the active story
+
+```
+activeMenuLink: {
+  fontWeight: 'light',
+}
+```
+
+treeArrow: deep theme for `tree arrow`. This accepts an object which receives `height`, `width`, `base` and `wrapper`
+
+```
+treeArrow: {
+  height: 5,
+  width: 5,
+  base: {
+    fontSize: '12px'
+  },
+  wrapper: {
+    backgroundColor: 'white'
+  }
 }
 ```
 

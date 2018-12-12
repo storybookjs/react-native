@@ -124,6 +124,12 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['**/__tests__/**', '**/*.test.js/**', '**/*.spec.js/**'],
+      rules: {
+        'import/no-extraneous-dependencies': ignore,
+      },
+    },
+    {
       files: ['**/react-native*/**', '**/REACT_NATIVE*/**', '**/crna*/**'],
       rules: {
         'jsx-a11y/accessible-emoji': ignore,
