@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import { RoutedLink } from '@storybook/components';
-import { openLink, hrefTo } from '../../preview';
+import { navigate, hrefTo } from '../../preview';
 
 export default class LinkTo extends PureComponent {
   state = {
@@ -23,7 +23,7 @@ export default class LinkTo extends PureComponent {
 
   handleClick = e => {
     e.preventDefault();
-    openLink(this.props);
+    navigate(this.props);
   };
 
   async updateHref() {

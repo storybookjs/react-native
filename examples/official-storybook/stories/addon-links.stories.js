@@ -1,8 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { linkTo, hrefTo } from '@storybook/addon-links';
-import LinkTo from '@storybook/addon-links/react';
 import { action } from '@storybook/addon-actions';
+
+import LinkTo from '@storybook/addon-links/react';
 
 storiesOf('Addons|Links.Link', module)
   .add('First', () => <LinkTo story="Second">Go to Second</LinkTo>)
@@ -33,11 +34,19 @@ storiesOf('Addons|Links.Select', module)
   .add('Second', () => <LinkTo story="Index">Go back</LinkTo>)
   .add('Third', () => <LinkTo story="Index">Go back</LinkTo>);
 
-storiesOf('Addons|Links.Href', module).add('log', () => {
-  hrefTo('Addons|Links.Href', 'log').then(href => action('URL of this story')({ href }));
+storiesOf('Addons|Links.Href', module).add(
+  'log',
+  () => {
+    hrefTo('Addons|Links.Href', 'log').then(href => action('URL of this story')(href));
 
-  return <span>See action logger</span>;
-});
+    return <span>See action logger</span>;
+  },
+  {
+    options: {
+      panel: 'storybook/actions/panel',
+    },
+  }
+);
 
 storiesOf('Addons|Links.Scroll position', module)
   .addDecorator(story => (
