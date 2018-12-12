@@ -12,10 +12,8 @@
     "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 9011 -c ./ -s built-storybooks"
   },
   "devDependencies": {
-    "@emotion/core": "^0.13.1",
-    "@emotion/provider": "^0.11.2",
-    "@emotion/snapshot-serializer": "^0.8.2",
-    "@emotion/styled": "^0.10.6",
+    "@emotion/core": "^10.0.2",
+    "@emotion/styled": "^10.0.2",
     "@storybook/addon-a11y": "4.1.0-alpha.11",
     "@storybook/addon-actions": "4.1.0-alpha.11",
     "@storybook/addon-backgrounds": "4.1.0-alpha.11",
@@ -40,6 +38,7 @@
     "@storybook/react": "4.1.0-alpha.11",
     "cors": "^2.8.4",
     "cross-env": "^5.2.0",
+    "emotion-theming": "^10.0.2",
     "enzyme-to-json": "^3.3.4",
     "eventemitter3": "^3.1.0",
     "express": "^4.16.3",
@@ -47,6 +46,7 @@
     "format-json": "^1.0.3",
     "global": "^4.3.2",
     "graphql": "^14.0.2",
+    "jest-emotion": "^10.0.2",
     "paths.macro": "^2.0.2",
     "prop-types": "^15.6.2",
     "react-chromatic": "^0.8.4",

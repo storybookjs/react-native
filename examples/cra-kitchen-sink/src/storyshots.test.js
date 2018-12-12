@@ -1,5 +1,5 @@
 import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
-import emotionSerializer from '@emotion/snapshot-serializer';
+import { createSerializer as emotionCreateSerializer } from 'jest-emotion';
 import path from 'path';
 import { render as renderer, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -14,5 +14,5 @@ initStoryshots({
   test: multiSnapshotWithOptions({
     renderer,
   }),
-  snapshotSerializers: [createSerializer(), emotionSerializer],
+  snapshotSerializers: [createSerializer(), emotionCreateSerializer()],
 });

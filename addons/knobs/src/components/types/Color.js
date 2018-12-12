@@ -79,7 +79,7 @@ class ColorType extends React.Component {
         <Swatch style={colorStyle} />
         {displayColorPicker ? (
           <Popover
-            innerRef={e => {
+            ref={e => {
               this.popover = e;
             }}
           >

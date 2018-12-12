@@ -18,7 +18,6 @@
     "react-lifecycles-compat": "^3.0.4"
   },
   "devDependencies": {
-    "@emotion/snapshot-serializer": "^0.8.2",
     "@storybook/addon-a11y": "4.1.0-alpha.11",
     "@storybook/addon-actions": "4.1.0-alpha.11",
     "@storybook/addon-backgrounds": "4.1.0-alpha.11",
@@ -38,6 +37,7 @@
     "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
     "jest": "^23.6.0",
+    "jest-emotion": "^10.0.2",
     "react-scripts": "^2.1.0"
   }
 }
