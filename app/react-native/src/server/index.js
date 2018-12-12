@@ -1,37 +1,21 @@
-import express from 'express';
 import querystring from 'querystring';
-import http from 'http';
 import ws from 'ws';
-import { devServer as storybook, managerPreset } from '@storybook/core/server';
+import storybook from '@storybook/core/standalone';
+import extendOptions from './options';
 
 export default class Server {
   constructor(options) {
-    this.options = {
-      ...options,
-      ignorePreview: true,
-      corePresets: [
-        {
-          name: managerPreset,
-          options: { managerEntry: require.resolve('../client/manager') },
-        },
-        {
-          name: require.resolve('./rn-options-preset.js'),
-          options: { storybookOptions: options },
-        },
-      ],
-    };
-
-    this.httpServer = http.createServer();
-    this.expressApp = express();
+    this.attachWS = this.attachWS.bind(this);
+    this.options = extendOptions(options, this.attachWS);
   }
 
   start() {
-    return storybook(this.options).then(storybookMiddleware => {
-      this.expressApp.use(storybookMiddleware);
-      this.httpServer.on('request', this.expressApp);
-      this.wsServer = new ws.Server({ server: this.httpServer });
-      this.wsServer.on('connection', (s, req) => this.handleWS(s, req));
-    });
+    return storybook(this.options);
+  }
+
+  attachWS(server) {
+    this.wsServer = new ws.Server({ server });
+    this.wsServer.on('connection', (s, req) => this.handleWS(s, req));
   }
 
   handleWS(socket, req) {
@@ -50,9 +34,5 @@ export default class Server {
         }
       });
     });
-  }
-
-  listen(...args) {
-    this.httpServer.listen(...args);
   }
 }
