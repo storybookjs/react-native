@@ -150,6 +150,10 @@
         "yarn lint:js --fix",
         "git add"
       ],
+      "*.ts": [
+        "yarn lint:ts --fix",
+        "git add"
+      ],
       "*.json": [
         "yarn lint:js --fix",
         "git add"
