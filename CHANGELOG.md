@@ -1,4 +1,6 @@
-## 4.2.0-alpha.0 (December 12, 2018)
+## 4.2.0-alpha.1 (December 12, 2018)
+
+Fixes 4.2.0-alpha.0
 
 ### Features
 
@@ -15,6 +17,10 @@
 ### Dependency Upgrades
 
 * Fix: Add missing peer dependencies to addon-knobs ([#4928](https://github.com/storybooks/storybook/pull/4928))
+
+## 4.2.0-alpha.0 (December 12, 2018)
+
+Bad release
 
 ## 4.1.1 (December 12, 2018)
 
