@@ -173,7 +173,7 @@ export default class Panel extends PureComponent {
         {groupIds.length > 0 ? (
           <TabsState>
             {Object.entries(groups).map(([k, v]) => (
-              <div id={k} title={v.title}>
+              <div id={k} key={k} title={v.title}>
                 {v.render}
               </div>
             ))}
