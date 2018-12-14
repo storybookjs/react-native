@@ -103,12 +103,10 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
   const rulesExcludingStyles = filterOutStylingRules(baseConfig);
 
   // cliStyleConfig.entry adds global style files to the webpack context
-  const entry = {
+  const entry = [
     ...baseConfig.entry,
-    iframe: []
-      .concat(baseConfig.entry.iframe)
-      .concat(Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), [])),
-  };
+    ...Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), []),
+  ];
 
   const module = {
     ...baseConfig.module,
@@ -126,6 +124,15 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
     plugins: [
       new TsconfigPathsPlugin({
         configFile: cliWebpackConfigOptions.buildOptions.tsConfig,
+        // After ng build my-lib the default value of 'main' in the package.json is 'umd'
+        // This causes that you cannot import components directly from dist
+        // https://github.com/angular/angular-cli/blob/9f114aee1e009c3580784dd3bb7299bdf4a5918c/packages/angular_devkit/build_angular/src/angular-cli-files/models/webpack-configs/browser.ts#L68
+        mainFields: [
+          ...(cliWebpackConfigOptions.supportES2015 ? ['es2015'] : []),
+          'browser',
+          'module',
+          'main',
+        ],
       }),
     ],
   };

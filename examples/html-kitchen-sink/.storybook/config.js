@@ -1,9 +1,11 @@
-import { configure } from '@storybook/html';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addDecorator } from '@storybook/html';
+import { withOptions } from '@storybook/addon-options';
 
-setOptions({
-  hierarchyRootSeparator: /\|/,
-});
+addDecorator(
+  withOptions({
+    hierarchyRootSeparator: /\|/,
+  })
+);
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../stories', true, /.stories.js$/);

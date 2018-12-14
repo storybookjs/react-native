@@ -1,27 +1,31 @@
 {
   "name": "ember-example",
-  "version": "4.0.0",
+  "version": "4.2.0-alpha.1",
   "private": true,
   "scripts": {
     "build": "ember build",
     "build-storybook": "yarn build && cp -r public/* dist && build-storybook -s dist",
     "dev": "ember serve",
-    "storybook": "yarn build && start-storybook -p 9009 -s dist, public"
+    "storybook": "yarn build && start-storybook -p 9009 -s dist",
+    "storybook:dev": "yarn dev & start-storybook -p 9009 -s dist"
+  },
+  "dependencies": {
+    "ember-template-compiler": "^1.9.0-alpha"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@storybook/addon-a11y": "4.0.0",
-    "@storybook/addon-actions": "4.0.0",
-    "@storybook/addon-backgrounds": "4.0.0",
-    "@storybook/addon-centered": "4.0.0",
-    "@storybook/addon-knobs": "4.0.0",
-    "@storybook/addon-links": "4.0.0",
-    "@storybook/addon-notes": "4.0.0",
-    "@storybook/addon-options": "4.0.0",
-    "@storybook/addon-storysource": "4.0.0",
-    "@storybook/addon-viewport": "4.0.0",
-    "@storybook/addons": "4.0.0",
-    "@storybook/ember": "4.0.0",
+    "@babel/core": "^7.2.0",
+    "@storybook/addon-a11y": "4.2.0-alpha.1",
+    "@storybook/addon-actions": "4.2.0-alpha.1",
+    "@storybook/addon-backgrounds": "4.2.0-alpha.1",
+    "@storybook/addon-centered": "4.2.0-alpha.1",
+    "@storybook/addon-knobs": "4.2.0-alpha.1",
+    "@storybook/addon-links": "4.2.0-alpha.1",
+    "@storybook/addon-notes": "4.2.0-alpha.1",
+    "@storybook/addon-options": "4.2.0-alpha.1",
+    "@storybook/addon-storysource": "4.2.0-alpha.1",
+    "@storybook/addon-viewport": "4.2.0-alpha.1",
+    "@storybook/addons": "4.2.0-alpha.1",
+    "@storybook/ember": "4.2.0-alpha.1",
     "babel-loader": "^8",
     "broccoli-asset-rev": "^3.0.0",
     "cross-env": "^5.2.0",
@@ -34,18 +38,16 @@
     "ember-cli-inject-live-reload": "^2.0.1",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
+    "ember-cli-storybook": "^0.0.1",
     "ember-cli-uglify": "^2.0.0",
-    "ember-load-initializers": "^1.1.0",
+    "ember-load-initializers": "^2.0.0",
     "ember-resolver": "^5.0.1",
-    "ember-source": "~3.5.0",
+    "ember-source": "~3.5.1",
     "loader.js": "^4.2.3",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
-  },
-  "dependencies": {
-    "ember-template-compiler": "^1.9.0-alpha"
   }
 }

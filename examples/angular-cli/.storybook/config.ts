@@ -1,12 +1,14 @@
-import { configure } from '@storybook/angular';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addDecorator } from '@storybook/angular';
+import { withOptions } from '@storybook/addon-options';
 import addCssWarning from '../src/cssWarning';
 
 addCssWarning();
 
-setOptions({
-  hierarchyRootSeparator: /\|/,
-});
+addDecorator(
+  withOptions({
+    hierarchyRootSeparator: /\|/,
+  })
+);
 
 function loadStories() {
   // put welcome screen at the top of the list so it's the first one displayed

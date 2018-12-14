@@ -4,19 +4,19 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
-This repo uses yarn workspaces, so you should install `yarn@1.3.2` or higher as package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
+This repo uses yarn workspaces, so you should install `yarn@1.3.2` or higher as a package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
 
 ## Issues
 
 No software is bug-free. So, if you got an issue, follow these steps:
 
--   Search the [issue list](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
-    -   If you find an existing issue, please UPVOTE the issue by adding a "thumbs-up reaction". We use this to help prioritize issues!
--   If none of that is helping, create an issue with the following information:
-    -   Clear title (shorter is better).
-    -   Describe the issue in clear language.
-    -   Share error logs, screenshots and etc.
-    -   To speed up the issue fixing process, send us a sample repo with the issue you faced:
+- Search the [issue list](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
+  - If you find an existing issue, please UPVOTE the issue by adding a "thumbs-up reaction". We use this to help prioritize issues!
+- If none of that is helping, create an issue with the following information:
+  - Clear title (shorter is better).
+  - Describe the issue in clear language.
+  - Share error logs, screenshots and etc.
+  - To speed up the issue fixing process, send us a sample repo with the issue you faced:
 
 ### Testing against `master`
 
@@ -47,25 +47,25 @@ This command will list all the suites and options for running tests.
 yarn test
 ```
 
-The options for running tests can be selected from the cli or be passed to `yarn test` with specific parameters.  Available modes include `--watch`, `--coverage`, and `--runInBand`, which will respectively run tests in watch mode, output code coverage, and run selected test suites serially in the current process.
+The options for running tests can be selected from the cli or be passed to `yarn test` with specific parameters. Available modes include `--watch`, `--coverage`, and `--runInBand`, which will respectively run tests in watch mode, output code coverage, and run selected test suites serially in the current process.
 
 You can use the `--update` flag to update snapshots or screenshots as needed.
 
-You can also pick suites from CLI.  Suites available are listed below.
+You can also pick suites from CLI. Suites available are listed below.
 
 ##### Core & Examples Tests
 
 `yarn test --core`
 
-This option executes test from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`.
-Before the tests are ran, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core`
+This option executes tests from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`.
+Before the tests are run, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core`
 
 ##### CRA-kitchen-sink - Image snapshots using Storyshots
 
 `yarn test --image`
 
 This option executes tests from `<rootdir>/examples/official-storybook`
-In order for the image snapshots to be correctly generated, you must have static build of the storybook up-to-date :
+In order for the image snapshots to be correctly generated, you must have a static build of the storybook up-to-date :
 
 ```javascript
 cd examples/official-storybook
@@ -78,7 +78,7 @@ Puppeteer is used to launch and grab screenshots of example pages, while jest is
 
 #### 2b. Run e2e tests for CLI
 
-If you made any changes to `lib/cli` package, the easiest way to verify that it doesn't break anything is to run e2e tests:
+If you made any changes to the `lib/cli` package, the easiest way to verify that it doesn't break anything is to run e2e tests:
 
     yarn test --cli
 
@@ -92,7 +92,7 @@ In that case, please check the git diff before committing to make sure it only c
 
 #### 2c. Link `storybook` and any other required dependencies:
 
-If you want to test your own existing project using the github version of storybook, you need to `link` the packages you use in your project.
+If you want to test your own existing project using the GitHub version of storybook, you need to `link` the packages you use in your project.
 
 ```sh
     cd app/react
@@ -131,9 +131,9 @@ A good way to do that is using the example `cra-kitchen-sink` app embedded in th
     git push -u <your-username> master
 ```
 
-If you follow that process, you can then link to the github repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
+If you follow that process, you can then link to the GitHub repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
 
-**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of the storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
+**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however, you can still modify storybook's to mirror your app's version of the storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
 
 ### Updating Tests
 
@@ -147,15 +147,14 @@ When creating new unit test files, the tests should adhere to a particular folde
 |   +-- [filename].test.js
 ```
 
-
 ## Pull Requests (PRs)
 
 We welcome your contributions. There are many ways you can help us. This is few of those ways:
 
--   Fix typos and add more [documentation](https://github.com/storybooks/storybook/labels/needs%20docs).
--   Try to fix some [bugs](https://github.com/storybooks/storybook/labels/bug).
--   Work on [API](https://github.com/storybooks/storybook/labels/enhancement%3A%20api), [Addons](https://github.com/storybooks/storybook/labels/enhancement%3A%20addons), [UI](https://github.com/storybooks/storybook/labels/enhancement%3A%20ui) or [Webpack](https://github.com/storybooks/storybook/labels/enhancement%3A%20webpack) use enhancements and new [features](https://github.com/storybooks/storybook/labels/feature%20request).
--   Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (specially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
+- Fix typos and add more [documentation](https://github.com/storybooks/storybook/labels/needs%20docs).
+- Try to fix some [bugs](https://github.com/storybooks/storybook/labels/bug).
+- Work on [API](https://github.com/storybooks/storybook/labels/enhancement%3A%20api), [Addons](https://github.com/storybooks/storybook/labels/enhancement%3A%20addons), [UI](https://github.com/storybooks/storybook/labels/enhancement%3A%20ui) or [Webpack](https://github.com/storybooks/storybook/labels/enhancement%3A%20webpack) use enhancements and new [features](https://github.com/storybooks/storybook/labels/feature%20request).
+- Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (especially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
 
 Before you submit a new PR, make sure you run `yarn test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
 
@@ -179,9 +178,9 @@ Once you've helped out on a few issues, if you'd like triage access you can help
 
 We use the following label scheme to categorize issues:
 
--   **type** - `bug`, `feature`, `question / support`, `discussion`, `dependencies`, `maintenance`.
--   **area** - `addon: x`, `addons-api`, `stories-api`, `ui`, etc.
--   **status** - `needs reproduction`, `needs PR`, `in progress`, etc.
+- **type** - `bug`, `feature`, `question / support`, `discussion`, `dependencies`, `maintenance`.
+- **area** - `addon: x`, `addons-api`, `stories-api`, `ui`, etc.
+- **status** - `needs reproduction`, `needs PR`, `in progress`, etc.
 
 All issues should have a `type` label. `bug`/`feature`/`question`/`discussion` are self-explanatory. `dependencies` is for keeping package dependencies up to date. `maintenance` is a catch-all for any kind of cleanup or refactoring.
 
@@ -193,15 +192,15 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 
 ### Closing issues
 
--   Duplicate issues should be closed with a link to the original.
--   Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline,
-    it is reasonable to wait 2 weeks before closing).
--   `bug`s should be labelled `merged` when merged, and be closed when the issue is fixed and released.
--   `feature`s, `maintenance`s, `greenkeeper`s should be labelled `merged` when merged,
-    and closed when released or if the feature is deemed not appropriate.
--   `question / support`s should be closed when the question has been answered.
-    If the questioner drops offline, a reasonable period to wait is two weeks.
--   `discussion`s should be closed at a maintainer's discretion.
+- Duplicate issues should be closed with a link to the original.
+- Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline,
+  it is reasonable to wait 2 weeks before closing).
+- `bug`s should be labelled `merged` when merged, and be closed when the issue is fixed and released.
+- `feature`s, `maintenance`s, `greenkeeper`s should be labelled `merged` when merged,
+  and closed when released or if the feature is deemed not appropriate.
+- `question / support`s should be closed when the question has been answered.
+  If the questioner drops offline, a reasonable period to wait is two weeks.
+- `discussion`s should be closed at a maintainer's discretion.
 
 ## Development Guide
 
@@ -211,8 +210,8 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 
 Please have the **_latest_** stable versions of the following on your machine
 
--   node
--   yarn
+- node
+- yarn
 
 ### Initial Setup
 
@@ -295,15 +294,15 @@ If you don't see the changes rerun `yarn storybook` again in your sandbox app
 
 This section is for Storybook maintainers who will be creating releases. It assumes:
 
--   yarn >= 1.3.2
--   you've yarn linked `pr-log` from <https://github.com/storybooks/pr-log/pull/2>
+- yarn >= 1.3.2
+- you've yarn linked `pr-log` from <https://github.com/storybooks/pr-log/pull/2>
 
 The current manual release sequence is as follows:
 
--   Generate a changelog and verify the release by hand
--   Push the changelog to master or the release branch
--   Clean, build and publish the release
--   Cut and paste the changelog to the github release page, and mark it as a (pre-) release
+- Generate a changelog and verify the release by hand
+- Push the changelog to master or the release branch
+- Clean, build and publish the release
+- Cut and paste the changelog to the github release page, and mark it as a (pre-) release
 
 **NOTE:** The very first time you publish a scoped package (`@storybook/x`) you need to make sure that it's package.json contains the following
 
@@ -320,22 +319,22 @@ This sequence applies to both releases and pre-releases, but differs slightly be
 #### Prerelease:
 
 ```sh
-# make sure you current with origin/master.
-git checkout release/X.Y
+# make sure you current with origin/next.
+git checkout next
 git status
 
 # generate changelog and edit as appropriate
 # generates a Next section
-yarn changelog Next
+yarn changelog:next x.y.z-alpha.a
 
 # Edit the changelog/PRs as needed, then commit
-git commit -m "Updated changelog for vX.Y"
+git commit -m "x.y.z-alpha.a changelog"
 
 # clean build
 yarn bootstrap --reset --core
 
 # publish and tag the release
-npm run publish:alpha
+yarn run publish:next
 
 # update the release page
 open https://github.com/storybooks/storybook/releases
@@ -350,16 +349,16 @@ git status
 
 # generate changelog and edit as appropriate
 # generates a vNext section
-yarn changelog X.Y
+yarn changelog x.y.z
 
 # Edit the changelog/PRs as needed, then commit
-git commit -m "Changelog for vX.Y"
+git commit -m "x.y.z changelog"
 
 # clean build
 yarn bootstrap --reset --core
 
 # publish and tag the release
-npm run publish
+yarn run publish
 
 # update the release page
 open https://github.com/storybooks/storybook/releases

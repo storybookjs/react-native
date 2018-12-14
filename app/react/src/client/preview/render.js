@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { stripIndents } from 'common-tags';
 import isReactRenderable from './element_check';
 
-const rootEl = document.getElementById('root');
+const rootEl = document ? document.getElementById('root') : null;
 
 function render(node, el) {
   ReactDOM.render(
@@ -46,7 +46,7 @@ export default function renderMain({
   }
 
   // We need to unmount the existing set of components in the DOM node.
-  // Otherwise, React may not recrease instances for every story run.
+  // Otherwise, React may not recreate instances for every story run.
   // This could leads to issues like below:
   //    https://github.com/storybooks/react-storybook/issues/81
   // But forceRender means that it's the same story, so we want too keep the state in that case.
