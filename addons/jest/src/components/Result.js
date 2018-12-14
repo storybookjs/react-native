@@ -140,24 +140,22 @@ const Message = ({ msg }) => {
     .join('')
     .split(/\[22m/)
     .reduce((acc, item) => acc.concat(item), [])
-    .map(
-      (item, li) =>
-        typeof item === 'string'
-          ? item
-              .split(/\[32m(.*?)\[39m/)
-              // eslint-disable-next-line react/no-array-index-key
-              .map((i, index) => (index % 2 ? <Positive key={`p_${li}_${i}`}>{i}</Positive> : i))
-          : item
+    .map((item, li) =>
+      typeof item === 'string'
+        ? item
+            .split(/\[32m(.*?)\[39m/)
+            // eslint-disable-next-line react/no-array-index-key
+            .map((i, index) => (index % 2 ? <Positive key={`p_${li}_${i}`}>{i}</Positive> : i))
+        : item
     )
     .reduce((acc, item) => acc.concat(item), [])
-    .map(
-      (item, li) =>
-        typeof item === 'string'
-          ? item
-              .split(/\[31m(.*?)\[39m/)
-              // eslint-disable-next-line react/no-array-index-key
-              .map((i, index) => (index % 2 ? <Negative key={`n_${li}_${i}`}>{i}</Negative> : i))
-          : item
+    .map((item, li) =>
+      typeof item === 'string'
+        ? item
+            .split(/\[31m(.*?)\[39m/)
+            // eslint-disable-next-line react/no-array-index-key
+            .map((i, index) => (index % 2 ? <Negative key={`n_${li}_${i}`}>{i}</Negative> : i))
+        : item
     )
     .reduce((acc, item) => acc.concat(item), [])
     .reduce(createSubgroup, {

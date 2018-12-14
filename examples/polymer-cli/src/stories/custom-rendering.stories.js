@@ -14,4 +14,10 @@ storiesOf('Custom|Methods for rendering', module)
     return el;
   })
   .add('Polymer instance', () => new StringTemplateButton())
-  .add('Lit html', () => html`<separated-button title="yes!"></separated-button>`);
+  .add(
+    'Lit html',
+    () =>
+      html`
+        <separated-button title="yes!"></separated-button>
+      `
+  );

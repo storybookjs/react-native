@@ -1,3 +1,124 @@
+## 4.2.0-alpha.1 (December 12, 2018)
+
+Fixes 4.2.0-alpha.0
+
+### Features
+
+* Addon-info: add forwardRef support ([#4961](https://github.com/storybooks/storybook/pull/4961))
+
+### Bug Fixes
+
+* Addon-knobs: Add missing key property in Panel ([#4507](https://github.com/storybooks/storybook/pull/4507))
+
+### Maintenance
+
+* Addon-notes: Migrated to TypeScript ([#4758](https://github.com/storybooks/storybook/pull/4758))
+
+### Dependency Upgrades
+
+* Fix: Add missing peer dependencies to addon-knobs ([#4928](https://github.com/storybooks/storybook/pull/4928))
+
+## 4.2.0-alpha.0 (December 12, 2018)
+
+Bad release
+
+## 4.1.1 (December 12, 2018)
+
+### Bug Fixes
+
+* FIX react native by adding an empty array named dlls to the templateParameters ([#4985](https://github.com/storybooks/storybook/pull/4985))
+
+## 4.1.0 (December 12, 2018)
+
+Storybook 4.1 with performance and compatibility improvements! Highlights include:
+
+* Core: Performance optimizations on separate manager preview split, improved cold start, restart & rebuild ([#4834](https://github.com/storybooks/storybook/pull/4834))
+* React: add support for all versions of react ([#4808](https://github.com/storybooks/storybook/pull/4808))
+* Addon-CSSResources: new adddon to dynamically add/remove css ([#4622](https://github.com/storybooks/storybook/pull/4622))
+* React: use babel presets/plugins based on CRA. ([#4836](https://github.com/storybooks/storybook/pull/4836))
+* React-native: Add ability to filter story list ([#4806](https://github.com/storybooks/storybook/pull/4806))
+* React: Add TypeScript support for react-scripts ([#4824](https://github.com/storybooks/storybook/pull/4824))
+
+There are dozens more fixes, features, and tweaks in the 4.1 release. See changelogs for `4.1.0-*` for details.
+
+## 4.1.0-alpha.13 (December 12, 2018)
+
+### Maintenance
+
+* React-native: add core-js to addons ([#4981](https://github.com/storybooks/storybook/pull/4981))
+
+## 4.1.0-alpha.12 (December 11, 2018)
+
+### Bug Fixes
+
+* Fix storyshots by compiling JS modules ([#4967](https://github.com/storybooks/storybook/pull/4967))
+* Angular: move 'core-js/modules/es6.promise' into storyshots ([#4929](https://github.com/storybooks/storybook/pull/4929))
+
+## 4.0.12 (December 5, 2018)
+
+### Bug Fixes
+
+* Addon-a11y: Fix runtime errors in older browsers ([#4904](https://github.com/storybooks/storybook/pull/4904))
+
+## 4.1.0-alpha.11 (December 5, 2018)
+
+### Features
+
+* Add CRA TypeScript support for .storybook folder ([#4902](https://github.com/storybooks/storybook/pull/4902))
+
+### Bug Fixes
+
+* React-native: Fix async storage ([#4907](https://github.com/storybooks/storybook/pull/4907))
+* Core: replace babel/runtime with core-js to fix some aliasing issues ([#4900](https://github.com/storybooks/storybook/pull/4900))
+
+### Maintenance
+
+* Core: More granular methods separation in "build-static" and "build-dev" ([#4919](https://github.com/storybooks/storybook/pull/4919))
+* Examples: replace deprecated setOptions with withOptions ([#4899](https://github.com/storybooks/storybook/pull/4899))
+
+## 4.0.11 (December 3, 2018)
+
+### Bug Fixes
+
+* Restore index.html in cra-kitchen-sink ([#4856](https://github.com/storybooks/storybook/pull/4856))
+* Add try, catch for IE11 as it breaks script execution ([#4870](https://github.com/storybooks/storybook/pull/4870))
+
+## 4.0.10 (December 2, 2018)
+
+Fixes 4.0.9
+
+### Bug Fixes
+
+* Core: Use correct cache directory path ([#4792](https://github.com/storybooks/storybook/pull/4792))
+* Addon-Info: fix docgen description display ([#4685](https://github.com/storybooks/storybook/pull/4685))
+* Addon-storyshots-puppeteer: fix peerDependencies ([#4828](https://github.com/storybooks/storybook/pull/4828))
+
+## 4.1.0-alpha.10 (December 1, 2018)
+
+### Maintenance
+
+* Performance optimizations on separate manager preview split, improved cold start, restart & rebuild ([#4834](https://github.com/storybooks/storybook/pull/4834))
+
+## 4.1.0-alpha.9 (November 29, 2018)
+
+### Features
+
+* UI: Accessible success/fail colors ([#4843](https://github.com/storybooks/storybook/pull/4843))
+* React-native: add option to set keyboarVerticalOffset ([#4862](https://github.com/storybooks/storybook/pull/4862))
+* Addon-CSSResources: new adddon to dynamically add/remove css ([#4622](https://github.com/storybooks/storybook/pull/4622))
+
+### Bug Fixes
+
+* Core: Add try, catch for history API for IE11 ([#4870](https://github.com/storybooks/storybook/pull/4870))
+* Core: Don't copy index.html on build-storybook ([#4856](https://github.com/storybooks/storybook/pull/4856))
+* React-native: properly set initial story out of Async Storage. ([#4872](https://github.com/storybooks/storybook/pull/4872))
+* React-native: show webpack-related build issues ([#4883](https://github.com/storybooks/storybook/pull/4883))
+* Addon-info: fix docgen description display ([#4685](https://github.com/storybooks/storybook/pull/4685))
+
+### Dependency Upgrades
+
+* Bump svelte to 2.15.3, addresses !4478 ([#4842](https://github.com/storybooks/storybook/pull/4842))
+
 ## 4.1.0-alpha.8 (November 25, 2018)
 
 ### Features
@@ -33,6 +154,10 @@ Publish failed
 ### Bug Fixes
 
 * Use correct cache directory path ([#4792](https://github.com/storybooks/storybook/pull/4792))
+
+## 4.0.9 (November 26, 2018)
+
+Broken release (see https://github.com/storybooks/storybook/issues/4897)
 
 ## 4.0.8 (November 21, 2018)
 

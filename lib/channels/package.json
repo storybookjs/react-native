@@ -1,14 +1,11 @@
 {
   "name": "@storybook/channels",
-  "version": "4.1.0-alpha.8",
+  "version": "4.2.0-alpha.1",
   "description": "",
   "keywords": [
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/channels",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -21,5 +18,8 @@
   "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

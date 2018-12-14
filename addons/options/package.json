@@ -1,15 +1,12 @@
 {
   "name": "@storybook/addon-options",
-  "version": "4.1.0-alpha.8",
+  "version": "4.2.0-alpha.1",
   "description": "Options addon for storybook",
   "keywords": [
     "addon",
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/options",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -23,10 +20,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.1.0-alpha.8",
+    "@storybook/addons": "4.2.0-alpha.1",
+    "core-js": "^2.5.7",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {
     "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
