@@ -26,14 +26,14 @@ Doing these will be backwards compatible.
 
 If you're smart about it you can already view the preview on multiple devices and windows. It's just an iframe after-all.
 But story selection and addon-settings are not synced.
-We want to make this much much simpler and really are core feature of storybook.
+We want to make this much much simpler and a core feature of storybook.
 
 ### Automatic story detection
 
 Some tools are doing automatic file detection, jest for example.
 We think such a feature is highly needed. A lot of users are already hacking this themselves using webpack specific features.
 
-### Theme ability and override core UI components
+### Themeability and override core UI components
 
 Storybook is often used inside product companies and agencies. We want to help them have a sense of quality and immersion.
 We're interested in full customizability of our UI, though addons and options.
@@ -41,14 +41,14 @@ We're interested in full customizability of our UI, though addons and options.
 ### Add a playground addon
 
 Many other styleguide-type projects have what's called a playground, where developers can change the code rendering the component inside the app.
-Storybook has of course a very tight connection with your editor, and it has a knobs addon.
+Storybook has, of course, a very tight connection with your editor, and it has a knobs addon.
 But we still see value in an addon that will allow the workflow of a playground.
 
 ### See multiple (or all) stories in 1 preview.
 
 Storybook's philosophy is about describing small bits in a variety of states.
-However some components are best understood when viewed in multiple varieties in 1 view.
-It's quite common to see users write a single story, with a wrapper components and multiple instances of the component the story is about.
+However, some components are best understood when viewed in multiple varieties in 1 view.
+It's quite common to see users write a single story, with wrapper components and multiple instances of the component the story is about.
 We plan to add a second mode to storybook that will allow you to see all stories in 1 preview.
 That way you can write your stories how they are best, and preview them how you like.
 
@@ -56,13 +56,13 @@ That way you can write your stories how they are best, and preview them how you 
 
 We believe in the power of react, and think it's the right choice for a lot of projects.
 But it's up to you and your team to decide your stack.
-Unfortunately if you choose anything not from the list of [supported frameworks](README.md#supported-frameworks) you can not use storybook.
+Unfortunately, if you choose anything not from the list of [supported frameworks](README.md#supported-frameworks) you can not use storybook.
 
 We want you to be able to use storybook with the framework / library of your choice.
 
 ### Polymer & Webcomponents
 
-Storybook for Polymer is currently in development, and will support custom elements and plain HTML.
+Storybook for Polymer is currently in development and will support custom elements and plain HTML.
 
 ### Aurelia
 
@@ -76,16 +76,16 @@ Our addon api is limited and will eventually have to be improved to accommodate 
 
 ### API for adding stories
 
-Currently it's getting hard to setup a story that has data / options for multiple addons.
-We want to support this, but will likely mean we will have to change the `add` method's API.
+Currently, it's getting hard to set up a story that has data/options for multiple addons.
+We want to support this but will likely mean we will have to change the `add` method's API.
 
 ## Documentation
 
 ### Better design
 
-We have a new logo, so next step is a overhaul of our documentation site.
+We have a new logo, so the next step is an overhaul of our documentation site.
 
-### Record videos and write blog post on how to use, tweak & develop storybook
+### Record videos and write blog posts on how to use, tweak & develop storybook
 
 -   writing addons,
 -   choosing the right addons.

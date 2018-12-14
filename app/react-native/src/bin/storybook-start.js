@@ -5,6 +5,7 @@ import program from 'commander';
 import Server from '../server';
 
 program
+  .allowUnknownOption()
   .option('-h, --host <host>', 'host to listen on', 'localhost')
   .option('-p, --port <port>', 'port to listen on', 7007)
   .option('-s, --secured', 'whether server is running on https')

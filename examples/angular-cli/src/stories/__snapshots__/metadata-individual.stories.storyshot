@@ -19,10 +19,10 @@ exports[`Storyshots Metadata|Individual Individual 1 1`] = `
       <ul>
         
         <li>
-           Joe 
+          Joe
         </li>
         <li>
-           Jane 
+          Jane
         </li>
       </ul>
     </storybook-simple-token-component>
@@ -47,10 +47,10 @@ exports[`Storyshots Metadata|Individual Individual 2 1`] = `
       <ul>
         
         <li>
-           Jim 
+          Jim
         </li>
         <li>
-           Jill 
+          Jill
         </li>
       </ul>
     </storybook-simple-token-component>

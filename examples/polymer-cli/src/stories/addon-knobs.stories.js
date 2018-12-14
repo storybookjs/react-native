@@ -26,7 +26,9 @@ storiesOf('Addon|Knobs', module)
   })
   .add('lit-html', () => {
     const title = text('Button title', 'Hello');
-    return html`<playground-button title="${title}"></playground-button>`;
+    return html`
+      <playground-button title="${title}"></playground-button>
+    `;
   })
   .add('complex', () => {
     const name = text('Name', 'Jane');

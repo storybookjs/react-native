@@ -15,11 +15,11 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^30.0.1",
+    "expo": "^31.0.4",
     "prop-types": "^15.6.2",
     "react": "^16.2.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
-    "whatwg-fetch": "^2.0.4"
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
@@ -41,7 +41,7 @@
     "@storybook/addon-ondevice-knobs": "file:../../packs/storybook-addon-ondevice-knobs.tgz",
     "@storybook/addon-ondevice-notes": "file:../../packs/storybook-addon-ondevice-notes.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
-    "jest-expo": "^30.0.0",
+    "jest-expo": "^31.0.0",
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.6.0"
   }

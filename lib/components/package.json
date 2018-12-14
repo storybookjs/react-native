@@ -1,14 +1,11 @@
 {
   "name": "@storybook/components",
-  "version": "4.0.12",
+  "version": "4.2.0-alpha.1",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/components",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -37,12 +34,15 @@
     "render-fragment": "^0.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.12",
-    "@storybook/addon-knobs": "4.0.12",
-    "@storybook/react": "4.0.12"
+    "@storybook/addon-actions": "4.2.0-alpha.1",
+    "@storybook/addon-knobs": "4.2.0-alpha.1",
+    "@storybook/react": "4.2.0-alpha.1"
   },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

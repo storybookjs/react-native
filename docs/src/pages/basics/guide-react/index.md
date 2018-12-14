@@ -15,11 +15,11 @@ In this guide, we will set up Storybook for your React project.
 
 ## Table of contents
 
-- [Add @storybook/react](#add-storybookreact)
-- [Add react, react-dom, babel-core, and babel-loader](#add-react-react-dom-babel-core-and-babel-loader)
-- [Create the config file](#create-the-config-file)
-- [Write your stories](#write-your-stories)
-- [Run your Storybook](#run-your-storybook)
+-   [Add @storybook/react](#add-storybookreact)
+-   [Add react, react-dom, @babel/core, and babel-loader](#add-react-react-dom-babel-core-and-babel-loader)
+-   [Create the config file](#create-the-config-file)
+-   [Write your stories](#write-your-stories)
+-   [Run your Storybook](#run-your-storybook)
 
 ## Add @storybook/react
 
@@ -29,13 +29,13 @@ First of all, you need to add `@storybook/react` to your project. To do that, ru
 npm i --save-dev @storybook/react
 ```
 
-## Add react, react-dom, babel-core, and babel-loader
+## Add react, react-dom, @babel/core, and babel-loader
 
-Make sure that you have `react`, `react-dom`, `babel-core`, and `babel-loader` in your dependencies as well because we list these as peer dependencies:
+Make sure that you have `react`, `react-dom`, `@babel/core`, and `babel-loader` in your dependencies as well because we list these as a peer dependencies:
 
 ```sh
 npm i --save react react-dom
-npm i --save-dev babel-core
+npm i --save-dev @babel/core
 npm i --save-dev babel-loader
 ```
 
@@ -51,7 +51,7 @@ Then add the following NPM script to your `package.json` in order to start the s
 
 ## Create the config file
 
-Storybook can be configured in several different ways.
+Storybook can be configured in several different ways. 
 That’s why we need a config directory. We've added a `-c` option to the above NPM script mentioning `.storybook` as the config directory.
 
 For a basic Storybook configuration, the only thing you need to do is tell Storybook where to find stories.
@@ -83,14 +83,12 @@ import { storiesOf } from '@storybook/react';
 import { Button } from '@storybook/react/demo';
 
 storiesOf('Button', module)
-  .add('with text', () => <Button>Hello Button</Button>)
+  .add('with text', () => (
+    <Button>Hello Button</Button>
+  ))
   .add('with some emoji', () => (
-    <Button>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+    <Button><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
+  ));   
 ```
 
 Each story is a single state of your component. In the above case, there are two stories for the demo button component:

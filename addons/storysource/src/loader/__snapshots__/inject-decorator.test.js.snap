@@ -216,11 +216,11 @@ Object {
   "Custom|ng-content@Default": Object {
     "endLoc": Object {
       "col": 2,
-      "line": 15,
+      "line": 17,
     },
     "startLoc": Object {
       "col": 43,
-      "line": 10,
+      "line": 12,
     },
   },
 }
