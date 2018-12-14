@@ -58,6 +58,7 @@
     "@storybook/channel-websocket": "4.2.0-alpha.1",
     "@storybook/channels": "4.2.0-alpha.1",
     "@storybook/ember": "4.2.0-alpha.1",
+    "@storybook/preact": "4.2.0-alpha.1",
     "@storybook/html": "4.2.0-alpha.1",
     "@storybook/marko": "4.2.0-alpha.1",
     "@storybook/mithril": "4.2.0-alpha.1",
