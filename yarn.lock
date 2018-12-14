@@ -1984,6 +1984,48 @@
     semver "5.5.1"
     semver-intersect "1.4.0"
 
+"@storybook/addon-notes@^4.1.0":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-notes/-/addon-notes-4.1.1.tgz#710f6f6a65a8832fee646e5530da7858e390d320"
+  integrity sha512-s6KMYLkpFEp63IwSI40m7rY/72Jsh49YCBRb+VU3R/jmPRlnVZG/ayhCfp9M3zcQOmLkohG99I5A55TqjiRqjw==
+  dependencies:
+    "@emotion/styled" "^0.10.6"
+    "@storybook/addons" "4.1.1"
+    core-js "^2.5.7"
+    marked "^0.5.2"
+    prop-types "^15.6.2"
+
+"@storybook/addons@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.1.1.tgz#79aa4b81cc54ae46590926acf2dd7e0fcb5cc25a"
+  integrity sha512-Q6d754uRHBEf2aUCyAgIfL4JF0RZ6Yf/FcZYXKG1MsKVLonbRVSGjsm+R4wsndjvnZF3Ts37WhpZ/1fGP78Zzg==
+  dependencies:
+    "@storybook/channels" "4.1.1"
+    "@storybook/components" "4.1.1"
+    global "^4.3.2"
+    util-deprecate "^1.0.2"
+
+"@storybook/channels@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-4.1.1.tgz#53268bfb77a854e39bfd3c89991ac2114092a018"
+  integrity sha512-ILOi+y9wtqOP7cYcVNBCx8vYTXsObz6O9jFKxQKL55lbnlUqyRVTEf4qlA1ilkZqPBM7PwtZs+zX31hgJfWYog==
+
+"@storybook/components@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-4.1.1.tgz#81633e13134dd53ee1e707268b1e89aa2642c5c7"
+  integrity sha512-dJE1vKg8NOiWt/FpQ60ym7xn+WcVkoiUeXG8vXPFxOqcI00yZizHtwJexWT6ltX8u7i2ODF6IU9dyUI3L2nOyQ==
+  dependencies:
+    "@emotion/core" "^0.13.1"
+    "@emotion/provider" "^0.11.2"
+    "@emotion/styled" "^0.10.6"
+    global "^4.3.2"
+    lodash "^4.17.11"
+    prop-types "^15.6.2"
+    react-inspector "^2.3.0"
+    react-split-pane "^0.1.84"
+    react-textarea-autosize "^7.0.4"
+    render-fragment "^0.1.1"
+
 "@storybook/mantra-core@^1.7.2":
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/@storybook/mantra-core/-/mantra-core-1.7.2.tgz#e10c7faca29769e97131e0e0308ef7cfb655b70c"
