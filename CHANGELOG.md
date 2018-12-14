@@ -1,3 +1,33 @@
+## 4.2.0-alpha.1 (December 12, 2018)
+
+Fixes 4.2.0-alpha.0
+
+### Features
+
+* Addon-info: add forwardRef support ([#4961](https://github.com/storybooks/storybook/pull/4961))
+
+### Bug Fixes
+
+* Addon-knobs: Add missing key property in Panel ([#4507](https://github.com/storybooks/storybook/pull/4507))
+
+### Maintenance
+
+* Addon-notes: Migrated to TypeScript ([#4758](https://github.com/storybooks/storybook/pull/4758))
+
+### Dependency Upgrades
+
+* Fix: Add missing peer dependencies to addon-knobs ([#4928](https://github.com/storybooks/storybook/pull/4928))
+
+## 4.2.0-alpha.0 (December 12, 2018)
+
+Bad release
+
+## 4.1.1 (December 12, 2018)
+
+### Bug Fixes
+
+* FIX react native by adding an empty array named dlls to the templateParameters ([#4985](https://github.com/storybooks/storybook/pull/4985))
+
 ## 4.1.0 (December 12, 2018)
 
 Storybook 4.1 with performance and compatibility improvements! Highlights include:
