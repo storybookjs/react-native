@@ -96,6 +96,7 @@ For additional help, join us [in our Discord](https://discord.gg/sMFvFsG) or [Sl
 | [Svelte](app/svelte)             | [v4.0.0](https://storybooks-svelte.netlify.com/)  | [![Svelte](https://img.shields.io/npm/dm/@storybook/svelte.svg)](app/svelte)                   |
 | [Riot](app/riot)                 | [v4.0.0](https://storybooks-riot.netlify.com/)    | [![Riot](https://img.shields.io/npm/dm/@storybook/riot.svg)](app/riot)                         |
 | [Ember](app/ember)               | [v4.0.0](https://storybooks-ember.netlify.com/)   | [![Ember](https://img.shields.io/npm/dm/@storybook/ember.svg)](app/ember)                      |
+| [Preact](app/preact)             | [v4.0.0](https://storybooks-preact.netlify.com/)  | [![Preact](https://img.shields.io/npm/dm/@storybook/preact.svg)](app/preact)                   |
 
 ### Sub Projects
 

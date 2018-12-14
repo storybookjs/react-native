@@ -24,6 +24,7 @@ const style = {
   'mithril-kitchen-sink',
   'html-kitchen-sink',
   'riot-kitchen-sink',
+  'preact-kitchen-sink',
 ].forEach(name => {
   chapter.add(name, () => <iframe style={style} title={name} src={`${name}/index.html`} />, {
     notes: `You must build the storybook for the ${name} example for this story to work.`,

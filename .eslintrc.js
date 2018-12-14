@@ -24,7 +24,15 @@ module.exports = {
     'prettier/prettier': [warn],
     'no-debugger': process.env.NODE_ENV === 'production' ? error : ignore,
     'class-methods-use-this': ignore,
-    'import/extensions': [error, 'always', { js: 'never', ts: 'never' }],
+    'import/extensions': [
+      error,
+      'always',
+      {
+        js: 'never',
+        ts: 'never',
+        mjs: 'never',
+      },
+    ],
     'import/no-extraneous-dependencies': [
       error,
       {
