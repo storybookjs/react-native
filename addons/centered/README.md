@@ -47,6 +47,20 @@ storiesOf('MyComponent', module)
   }));
 ```
 
+example for Preact:
+
+```js
+import { storiesOf } from '@storybook/preact';
+import centered from '@storybook/addon-centered/preact';
+
+import MyComponent from '../Component';
+
+storiesOf('MyComponent', module)
+  .addDecorator(centered)
+  .add('without props', () => (<MyComponent />))
+  .add('with some props', () => (<MyComponent text="The Comp"/>));
+```
+
 example for Svelte:
 
 ```js
