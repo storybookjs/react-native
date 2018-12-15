@@ -51,6 +51,29 @@ describe('inject-decorator', () => {
     });
   });
 
+  describe('positive - flow', () => {
+    const mockFilePath = './__mocks__/inject-decorator.flow-stories.txt';
+    const source = fs.readFileSync(mockFilePath, 'utf-8');
+    const result = injectDecorator(
+      source,
+      ADD_DECORATOR_STATEMENT,
+      path.resolve(__dirname, mockFilePath),
+      { parser: 'flow' }
+    );
+
+    it('returns "changed" flag', () => {
+      expect(result.changed).toBeTruthy();
+    });
+
+    it('injects stories decorator after the all "storiesOf" functions', () => {
+      expect(result.source).toMatchSnapshot();
+    });
+
+    it('calculates "adds" map', () => {
+      expect(result.addsMap).toMatchSnapshot();
+    });
+  });
+
   describe('positive - ts', () => {
     const mockFilePath = './__mocks__/inject-decorator.ts.txt';
     const source = fs.readFileSync(mockFilePath, 'utf-8');
@@ -147,6 +170,24 @@ describe('inject-decorator', () => {
       {
         injectDecorator: false,
         parser: 'typescript',
+      }
+    );
+
+    it('does not inject stories decorator after the all "storiesOf" functions', () => {
+      expect(result.source).toMatchSnapshot();
+    });
+  });
+
+  describe('injectDecorator option is false - flow', () => {
+    const mockFilePath = './__mocks__/inject-decorator.flow-stories.txt';
+    const source = fs.readFileSync(mockFilePath, 'utf-8');
+    const result = injectDecorator(
+      source,
+      ADD_DECORATOR_STATEMENT,
+      path.resolve(__dirname, mockFilePath),
+      {
+        injectDecorator: false,
+        parser: 'flow',
       }
     );
 

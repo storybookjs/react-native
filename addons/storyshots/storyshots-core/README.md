@@ -141,6 +141,14 @@ module.exports = {
 };
 ```
 
+### Configure Jest for Preact
+StoryShots addon for Preact is dependent on [preact-render-to-json](https://github.com/nathancahill/preact-render-to-json), but
+[doesn't](#deps-issue) install it, so you need to install it separately.
+
+ ```sh
+ npm install --save-dev preact-render-to-json
+ ```
+
 ### <a name="deps-issue"></a>Why don't we install dependencies of each framework ?
 Storyshots addon is currently supporting React, Angular and Vue. Each framework needs its own packages to be integrated with Jest. We don't want people that use only React will need to bring other dependencies that do not make sense for them.
 

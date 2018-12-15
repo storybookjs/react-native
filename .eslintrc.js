@@ -50,6 +50,7 @@ module.exports = {
       {
         js: 'never',
         ts: 'never',
+        mjs: 'never',
       },
     ],
     'import/no-extraneous-dependencies': [
