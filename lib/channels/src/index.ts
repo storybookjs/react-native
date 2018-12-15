@@ -4,7 +4,7 @@ export interface ChannelTransport {
 }
 
 export interface ChannelEvent<TEventArgs = any> {
-  type: string;
+  type: string; // todo deprecate in favor of prop name eventName? type totally confused me after I saw eventNames()
   from: string;
   args: TEventArgs[];
 }
@@ -14,7 +14,7 @@ export interface Listener<TEventArgs = any> {
   ignorePeer?: boolean;
 }
 
-interface ListenersKeyValue {
+interface EventsKeyValue {
   [key: string]: Listener[];
 }
 
@@ -31,31 +31,37 @@ const generateRandomId = () => {
 };
 
 export class Channel {
+  readonly isAsync: boolean;
+
   private _sender = generateRandomId();
-  private _listeners: ListenersKeyValue = {};
-  private readonly _async: boolean = false;
+  private _events: EventsKeyValue = {};
   private readonly _transport: ChannelTransport;
 
-  constructor({ transport, async }: ChannelArgs = {}) {
-    this._async = async;
+  constructor({ transport, async = false }: ChannelArgs = {}) {
+    this.isAsync = async;
     if (transport) {
       this._transport = transport;
       this._transport.setHandler(event => this._handleEvent(event));
     }
   }
 
-  addListener(type: string, listener: Listener) {
-    this.on(type, listener);
+  get hasTransport() {
+    return !!this._transport;
   }
 
-  addPeerListener(type: string, listener: Listener) {
+  addListener(eventName: string, listener: Listener) {
+    this._events[eventName] = this._events[eventName] || [];
+    this._events[eventName].push(listener);
+  }
+
+  addPeerListener(eventName: string, listener: Listener) {
     const peerListener = listener;
     peerListener.ignorePeer = true;
-    this.on(type, peerListener);
+    this.addListener(eventName, peerListener);
   }
 
-  emit<TEventArgs = any>(type: string, ...args: TEventArgs[]) {
-    const event = { type, args, from: this._sender };
+  emit<TEventArgs = any>(eventName: string, ...args: TEventArgs[]) {
+    const event = { type: eventName, args, from: this._sender };
 
     const handler = () => {
       if (this._transport) {
@@ -64,7 +70,7 @@ export class Channel {
       this._handleEvent(event, true);
     };
 
-    if (this._async) {
+    if (this.isAsync) {
       setImmediate(handler);
     } else {
       handler();
@@ -72,67 +78,66 @@ export class Channel {
   }
 
   eventNames() {
-    return Object.keys(this._listeners);
+    return Object.keys(this._events);
   }
 
-  listenerCount(type: string) {
-    const listeners = this._listeners[type];
+  listenerCount(eventName: string) {
+    const listeners = this.listeners(eventName);
     return listeners ? listeners.length : 0;
   }
 
-  listeners(type: string) {
-    return this._listeners[type];
+  listeners(eventName: string): Listener[] | undefined {
+    const listeners = this._events[eventName];
+    return listeners ? listeners : undefined;
   }
 
-  on(type: string, listener: Listener) {
-    this._listeners[type] = this._listeners[type] || [];
-    this._listeners[type].push(listener);
+  once(eventName: string, listener: Listener) {
+    const onceListener = this._onceListener(eventName, listener);
+    this.addListener(eventName, onceListener);
   }
 
-  once(type: string, listener: Listener) {
-    const onceListener = this._onceListener(type, listener);
-    this.on(type, onceListener);
+  prependListener(eventName: string, listener: Listener) {
+    this._events[eventName] = this._events[eventName] || [];
+    this._events[eventName].unshift(listener);
   }
 
-  prependListener(type: string, listener: Listener) {
-    this._listeners[type] = this._listeners[type] || [];
-    this._listeners[type].unshift(listener);
+  prependOnceListener(eventName: string, listener: Listener) {
+    const onceListener = this._onceListener(eventName, listener);
+    this.prependListener(eventName, onceListener);
   }
 
-  prependOnceListener(type: string, listener: Listener) {
-    const onceListener = this._onceListener(type, listener);
-    this.prependListener(type, onceListener);
-  }
-
-  removeAllListeners(type: string) {
-    if (!type) {
-      this._listeners = {};
-    } else if (this._listeners[type]) {
-      delete this._listeners[type];
+  removeAllListeners(eventName: string) {
+    if (!eventName) {
+      this._events = {};
+    } else if (this._events[eventName]) {
+      delete this._events[eventName];
     }
   }
 
-  removeListener(type: string, listener: Listener) {
-    const listeners = this._listeners[type];
+  removeListener(eventName: string, listener: Listener) {
+    const listeners = this._events[eventName];
     if (listeners) {
-      this._listeners[type] = listeners.filter(l => l !== listener);
+      this._events[eventName] = listeners.filter(l => l !== listener);
     }
   }
 
-  hasTransport() {
-    return !!this._transport;
+  /**
+   * @deprecated use addListener
+   */
+  on(eventName: string, listener: Listener) {
+    this.addListener(eventName, listener);
   }
 
   private _handleEvent(event: ChannelEvent, isPeer = false) {
-    const listeners = this._listeners[event.type];
+    const listeners = this._events[event.type];
     if (listeners && (isPeer || event.from !== this._sender)) {
       listeners.forEach(fn => !(isPeer && fn.ignorePeer) && fn(...event.args));
     }
   }
 
-  private _onceListener(type: string, listener: Listener) {
+  private _onceListener(eventName: string, listener: Listener) {
     const onceListener = (...args: any[]) => {
-      this.removeListener(type, onceListener);
+      this.removeListener(eventName, onceListener);
       return listener(...args);
     };
     return onceListener;
