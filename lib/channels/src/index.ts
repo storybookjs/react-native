@@ -4,9 +4,9 @@ export interface ChannelTransport {
 }
 
 export interface ChannelEvent<TEventArgs = any> {
-  type: string; // todo deprecate in favor of prop name eventName? type totally confused me after I saw eventNames()
+  type: string; // eventName
   from: string;
-  args: TEventArgs[];
+  args: TEventArgs;
 }
 
 export interface Listener<TEventArgs = any> {
@@ -49,12 +49,12 @@ export class Channel {
     return !!this._transport;
   }
 
-  addListener(eventName: string, listener: Listener) {
+  addListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
     this._events[eventName] = this._events[eventName] || [];
     this._events[eventName].push(listener);
   }
 
-  addPeerListener(eventName: string, listener: Listener) {
+  addPeerListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs[]>) {
     const peerListener = listener;
     peerListener.ignorePeer = true;
     this.addListener(eventName, peerListener);
@@ -71,6 +71,7 @@ export class Channel {
     };
 
     if (this.isAsync) {
+      // todo I'm not sure how to test this
       setImmediate(handler);
     } else {
       handler();
@@ -91,22 +92,23 @@ export class Channel {
     return listeners ? listeners : undefined;
   }
 
-  once(eventName: string, listener: Listener) {
-    const onceListener = this._onceListener(eventName, listener);
-    this.addListener(eventName, onceListener);
+  once<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
+    const onceListener: Listener = this._onceListener<TEventArgs>(eventName, listener);
+    this.addListener<TEventArgs>(eventName, onceListener);
   }
 
-  prependListener(eventName: string, listener: Listener) {
+  prependListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
     this._events[eventName] = this._events[eventName] || [];
     this._events[eventName].unshift(listener);
   }
 
-  prependOnceListener(eventName: string, listener: Listener) {
-    const onceListener = this._onceListener(eventName, listener);
+  // todo 'listener' is getting mutated by _onceListener, therefore: Input fn() !== Output fn(). This makes testing more difficult
+  prependOnceListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
+    const onceListener: Listener = this._onceListener<TEventArgs>(eventName, listener);
     this.prependListener(eventName, onceListener);
   }
 
-  removeAllListeners(eventName: string) {
+  removeAllListeners(eventName?: string) {
     if (!eventName) {
       this._events = {};
     } else if (this._events[eventName]) {
@@ -115,7 +117,7 @@ export class Channel {
   }
 
   removeListener(eventName: string, listener: Listener) {
-    const listeners = this._events[eventName];
+    const listeners = this.listeners(eventName);
     if (listeners) {
       this._events[eventName] = listeners.filter(l => l !== listener);
     }
@@ -124,19 +126,19 @@ export class Channel {
   /**
    * @deprecated use addListener
    */
-  on(eventName: string, listener: Listener) {
-    this.addListener(eventName, listener);
+  on<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
+    this.addListener<TEventArgs>(eventName, listener);
   }
 
-  private _handleEvent(event: ChannelEvent, isPeer = false) {
+  private _handleEvent<TEventArgs = any>(event: ChannelEvent<TEventArgs[]>, isPeer = false) {
     const listeners = this._events[event.type];
     if (listeners && (isPeer || event.from !== this._sender)) {
       listeners.forEach(fn => !(isPeer && fn.ignorePeer) && fn(...event.args));
     }
   }
 
-  private _onceListener(eventName: string, listener: Listener) {
-    const onceListener = (...args: any[]) => {
+  private _onceListener<TEventArgs>(eventName: string, listener: Listener<TEventArgs>) {
+    const onceListener: Listener<TEventArgs> = (...args: TEventArgs[]) => {
       this.removeListener(eventName, onceListener);
       return listener(...args);
     };

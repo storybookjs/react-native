@@ -40,120 +40,193 @@ describe('Channel', () => {
 
   describe('method:addListener', () => {
     it('should create one listener', () => {
-      const keyValue = 'stringAsKey';
+      const eventName = 'event1';
 
-      channel.addListener(keyValue, jest.fn());
-      expect(channel.listeners(keyValue).length).toBe(1);
-    });
-  });
-
-  describe('method:emit', () => {
-    // todo check if [] or string is returned
-    it('should emit the added listener', () => {
-      const keyValue = 'stringAsKey';
-      const mockListener: Listener = (data: string) => {
-        return data;
-      };
-      const mockReturnValue = ['string1', 'string2', 'string3'];
-
-      channel.addListener(keyValue, mockListener);
-      channel.emit<string>(keyValue, ...mockReturnValue);
-      expect(mockListener).toReturnWith(mockReturnValue);
-    });
-  });
-
-  describe('method:addPeerListener', () => {});
-
-  // todo before, addListener was called with numbers; is this still the correct test?
-  describe('method:addListener', () => {
-    it('should call channel.on with args', () => {
-      const testFn = jest.fn();
-      channel.on = jest.fn();
-      channel.addListener('A', testFn);
-      expect(channel.on).toHaveBeenCalled();
-      expect(channel.on).toHaveBeenCalledWith('A', testFn);
-    });
-  });
-
-  describe('method:emit', () => {
-    it('should call transport.send', () => {
-      transport.send = jest.fn();
-      const type = 'test-type';
-      const args = [1, 2, 3];
-      const expected = { type, args };
-
-      channel.emit(type, ...args);
-      expect(transport.send).toHaveBeenCalled();
-
-      const event: ChannelEvent = transport.send.mock.calls[0][0];
-      expect(typeof event.from).toEqual('string');
-
-      delete event.from;
-      expect(event).toEqual(expected);
-    });
-
-    it('should be type safe', () => {
-      transport.send = jest.fn();
-      const type = 'test-type';
-      const args = [1, 2, 3];
-      const expected = { type, args };
-
-      // todo check if generic argument typing works
-      expect(true).toBe(false);
-    });
-
-    it('should call handle async option', () => {
-      transport.send = jest.fn();
-      const type = 'test-type';
-      const args = [1, 2, 3];
-
-      channel = new Channel({ async: true, transport });
-
-      channel.emit(type, ...args);
-      expect(transport.send).not.toHaveBeenCalled();
-
-      jest.runAllImmediates();
-      expect(transport.send).toHaveBeenCalled();
-    });
-  });
-
-  describe('method:eventNames', () => {
-    it('should return an array of strings', () => {
-      channel.on('type-1', jest.fn());
-      channel.on('type-2', jest.fn());
-      channel.on('type-2', jest.fn());
-      const expected = ['type-1', 'type-2'];
-      expect(channel.eventNames()).toEqual(expected);
-    });
-  });
-
-  describe('method:listenerCount', () => {
-    it('should return the correct count', () => {
-      channel.on('type-1', jest.fn());
-      channel.on('type-2', jest.fn());
-      channel.on('type-2', jest.fn());
-      expect(channel.listenerCount('type-1')).toEqual(1);
-      expect(channel.listenerCount('type-2')).toEqual(2);
-    });
-  });
-
-  describe('method:listeners', () => {
-    const fn1 = jest.fn();
-    const fn2 = jest.fn();
-    const fn3 = jest.fn();
-
-    it('should return an array of listeners', () => {
-      channel.on('type-1', fn1);
-      channel.on('type-2', fn2);
-      channel.on('type-2', fn3);
-      expect(channel.listeners('type-1')).toEqual([fn1]);
-      expect(channel.listeners('type-2')).toEqual([fn2, fn3]);
+      channel.addListener(eventName, jest.fn());
+      expect(channel.listeners(eventName).length).toBe(1);
     });
   });
 
   describe('method:on', () => {
-    const fn1 = jest.fn();
-    const fn2 = jest.fn();
-    const fn3 = jest.fn();
+    it('should do the same as addListener', () => {
+      const eventName = 'event1';
+
+      channel.addListener(eventName, jest.fn());
+      expect(channel.listeners(eventName).length).toBe(1);
+    });
+  });
+
+  describe('method:emit', () => {
+    it('should execute the callback fn of a listener', () => {
+      const eventName = 'event1';
+      const listenerInputData = ['string1', 'string2', 'string3'];
+      let listenerOutputData: string[] = null;
+      const mockListener: Listener<string[]> = data => {
+        listenerOutputData = data;
+      };
+
+      channel.addListener(eventName, mockListener);
+      channel.emit<string[]>(eventName, listenerInputData);
+      expect(listenerOutputData).toBe(listenerInputData);
+    });
+
+    it('should be callable with a spread operator as event arguments', () => {
+      const eventName = 'event1';
+      const listenerInputData = ['string1', 'string2', 'string3'];
+      let listenerOutputData: string[] = null;
+
+      channel.addListener<string>(eventName, (...data) => {
+        listenerOutputData = data;
+      });
+      channel.emit<string>(eventName, ...listenerInputData);
+      expect(listenerOutputData).toEqual(listenerInputData);
+    });
+
+    it('should use setImmediate if async is true', () => {
+      channel = new Channel({ async: true, transport });
+      channel.addListener('event1', jest.fn());
+    });
+  });
+
+  describe('method:addPeerListener', () => {
+    it('should add a listener and set ignorePeer to true', () => {
+      const eventName = 'event1';
+
+      channel.addPeerListener(eventName, jest.fn());
+      expect(channel.listeners(eventName)[0].ignorePeer).toBe(true);
+    });
+  });
+
+  describe('method:eventNames', () => {
+    it('should return a list of all registered events', () => {
+      const eventNames = ['event1', 'event2', 'event3'];
+      eventNames.forEach(eventName => channel.addListener(eventName, jest.fn()));
+
+      expect(channel.eventNames()).toEqual(eventNames);
+    });
+  });
+
+  describe('method:listenerCount', () => {
+    it('should return a list of all registered events', () => {
+      const events = [
+        { eventName: 'event1', listeners: [jest.fn(), jest.fn(), jest.fn()], listenerCount: 0 },
+        { eventName: 'event2', listeners: [jest.fn()], listenerCount: 0 },
+      ];
+      events.forEach(event => {
+        event.listeners.forEach(listener => {
+          channel.addListener(event.eventName, listener);
+          event.listenerCount++;
+        });
+      });
+
+      events.forEach(event => {
+        expect(channel.listenerCount(event.eventName)).toBe(event.listenerCount);
+      });
+    });
+  });
+
+  describe('method:once', () => {
+    it('should execute a listener once and remove it afterwards', () => {
+      const eventName = 'event1';
+      channel.once(eventName, jest.fn());
+      channel.emit(eventName);
+
+      expect(channel.listenerCount(eventName)).toBe(0);
+    });
+
+    it('should pass all event arguments correctly to the listener', () => {
+      const eventName = 'event1';
+      const listenerInputData = ['string1', 'string2', 'string3'];
+      let listenerOutputData = null;
+      const mockListener: Listener<string[]> = (data: string[]) => {
+        listenerOutputData = data;
+      };
+
+      channel.once<string[]>(eventName, args => mockListener(args));
+      channel.emit<string[]>(eventName, listenerInputData);
+
+      expect(listenerOutputData).toEqual(listenerInputData);
+    });
+
+    it('should be removable', () => {
+      const eventName = 'event1';
+      const listenerToBeRemoved = jest.fn();
+
+      channel.once(eventName, listenerToBeRemoved);
+      channel.removeListener(eventName, listenerToBeRemoved);
+    });
+  });
+
+  describe('method:prependListener', () => {
+    it('should prepend listener', () => {
+      const eventName = 'event1';
+      const prependFn = jest.fn();
+      channel.addListener(eventName, jest.fn());
+      channel.prependListener(eventName, prependFn);
+
+      expect(channel.listeners(eventName)[0]).toBe(prependFn);
+    });
+  });
+
+  describe('method:prependOnceListener', () => {
+    it('should prepend listener and remove it after one execution', () => {
+      const eventName = 'event1';
+      const prependFn = jest.fn();
+      const otherFns = [jest.fn(), jest.fn(), jest.fn()];
+
+      otherFns.forEach(fn => channel.addListener(eventName, fn));
+      channel.prependOnceListener(eventName, prependFn);
+      channel.emit(eventName);
+
+      otherFns.forEach(listener => {
+        expect(listener).toBe(
+          channel.listeners(eventName).find(_listener => _listener === listener)
+        );
+      });
+    });
+  });
+
+  describe('method:removeAllListeners', () => {
+    it('should remove all listeners', () => {
+      const eventName1 = 'event1';
+      const eventName2 = 'event2';
+      const listeners1 = [jest.fn(), jest.fn(), jest.fn()];
+      const listeners2 = [jest.fn()];
+
+      listeners1.forEach(fn => channel.addListener(eventName1, fn));
+      listeners2.forEach(fn => channel.addListener(eventName2, fn));
+      channel.removeAllListeners();
+
+      expect(channel.listenerCount(eventName1)).toBe(0);
+      expect(channel.listenerCount(eventName2)).toBe(0);
+    });
+
+    it('should remove all listeners of a certain event', () => {
+      const eventName = 'event1';
+      const listeners = [jest.fn(), jest.fn(), jest.fn()];
+
+      listeners.forEach(fn => channel.addListener(eventName, fn));
+      expect(channel.listenerCount(eventName)).toBe(listeners.length);
+
+      channel.removeAllListeners(eventName);
+      expect(channel.listenerCount(eventName)).toBe(0);
+    });
+  });
+
+  describe('method:removeListener', () => {
+    it('should remove one listener', () => {
+      const eventName = 'event1';
+      const listenerToBeRemoved = jest.fn();
+      const listeners = [jest.fn(), jest.fn()];
+      const findListener = (listener: Listener) =>
+        channel.listeners(eventName).find(_listener => _listener === listener);
+
+      listeners.forEach(fn => channel.addListener(eventName, fn));
+      channel.addListener(eventName, listenerToBeRemoved);
+      expect(findListener(listenerToBeRemoved)).toBe(listenerToBeRemoved);
+
+      channel.removeListener(eventName, listenerToBeRemoved);
+      expect(findListener(listenerToBeRemoved)).toBeUndefined();
+    });
   });
 });
