@@ -1,6 +1,6 @@
-export interface ChannelTransport {
-  send: any; // todo Check actual type
-  setHandler<TEventArgs = any>(handler: (event: ChannelEvent<TEventArgs>) => void): void;
+export interface ChannelTransport<TEventArgs = any> {
+  send(event: ChannelEvent<TEventArgs>): void;
+  setHandler(handler: (event: ChannelEvent<TEventArgs>) => void): void;
 }
 
 export interface ChannelEvent<TEventArgs = any> {
@@ -61,7 +61,7 @@ export class Channel {
   }
 
   emit<TEventArgs = any>(eventName: string, ...args: TEventArgs[]) {
-    const event = { type: eventName, args, from: this._sender };
+    const event: ChannelEvent<TEventArgs[]> = { type: eventName, args, from: this._sender };
 
     const handler = () => {
       if (this._transport) {
