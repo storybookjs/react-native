@@ -54,10 +54,10 @@ export class Channel {
     this._events[eventName].push(listener);
   }
 
-  addPeerListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs[]>) {
+  addPeerListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
     const peerListener = listener;
     peerListener.ignorePeer = true;
-    this.addListener(eventName, peerListener);
+    this.addListener<TEventArgs>(eventName, peerListener);
   }
 
   emit<TEventArgs = any>(eventName: string, ...args: TEventArgs[]) {
@@ -131,7 +131,7 @@ export class Channel {
   }
 
   private _handleEvent<TEventArgs = any>(event: ChannelEvent<TEventArgs[]>, isPeer = false) {
-    const listeners = this._events[event.type];
+    const listeners = this.listeners(event.type);
     if (listeners && (isPeer || event.from !== this._sender)) {
       listeners.forEach(fn => !(isPeer && fn.ignorePeer) && fn(...event.args));
     }
