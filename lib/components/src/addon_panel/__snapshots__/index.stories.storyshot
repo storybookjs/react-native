@@ -32,9 +32,7 @@ exports[`Storyshots Components|AddonPanel default 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  overflow: 
-  
-  ;
+  overflow: hidden;
   vertical-align: top;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
