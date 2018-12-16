@@ -48,12 +48,14 @@ const createTask = ({ defaultValue, option, name, check = () => true, command, p
   check: check || (() => true),
   command: () => {
     // run all pre tasks
-    // eslint-disable-next-line no-use-before-define
-    pre.map(key => tasks[key]).forEach(task => {
-      if (!task.check()) {
-        task.command();
-      }
-    });
+    pre
+      // eslint-disable-next-line no-use-before-define
+      .map(key => tasks[key])
+      .forEach(task => {
+        if (!task.check()) {
+          task.command();
+        }
+      });
 
     log.info(prefix, name);
     command();
@@ -73,7 +75,7 @@ const tasks = {
     },
   }),
   core: createTask({
-    name: `Core & Examples ${chalk.gray('(core)')}`,
+    name: `Core, Dll & Examples ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
     command: () => {
@@ -81,6 +83,17 @@ const tasks = {
       spawn('yarn install');
       log.info(prefix, 'prepare');
       spawn('lerna run prepare -- --silent');
+      log.info(prefix, 'dll');
+      spawn('lerna run createDlls --scope "@storybook/ui"');
+    },
+  }),
+  dll: createTask({
+    name: `Generate DLL ${chalk.gray('(dll)')}`,
+    defaultValue: false,
+    option: '--dll',
+    command: () => {
+      log.info(prefix, 'dll');
+      spawn('lerna run createDlls --scope "@storybook/ui"');
     },
   }),
   docs: createTask({

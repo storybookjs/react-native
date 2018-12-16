@@ -15,6 +15,7 @@ module.exports = {
     '<rootDir>/examples/svelte-kitchen-sink',
     '<rootDir>/examples/vue-kitchen-sink',
     '<rootDir>/examples/angular-cli',
+    '<rootDir>/examples/preact-kitchen-sink',
   ],
   roots: [
     '<rootDir>/addons',
@@ -35,6 +36,7 @@ module.exports = {
     '!**/cli/test/**',
     '!**/dist/**',
     '!**/generators/**',
+    '!app/**/__mocks__ /',
   ],
   coverageDirectory: 'coverage',
   testEnvironment: 'jsdom',

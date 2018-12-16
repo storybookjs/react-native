@@ -1,14 +1,11 @@
 {
   "name": "@storybook/ui",
-  "version": "4.0.8",
+  "version": "4.2.0-alpha.2",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/ui",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -20,21 +17,20 @@
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js",
-    "publish-storybook": "bash ./.scripts/publish_storybook.sh",
-    "storybook": "start-storybook -p 9010"
+    "createDlls": "node -r esm ./scripts/createDlls.js",
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@emotion/core": "^0.13.1",
     "@emotion/provider": "^0.11.2",
     "@emotion/styled": "^0.10.6",
-    "@storybook/components": "4.0.8",
-    "@storybook/core-events": "4.0.8",
+    "@storybook/components": "4.2.0-alpha.2",
+    "@storybook/core-events": "4.2.0-alpha.2",
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/podda": "^1.2.3",
     "@storybook/react-komposer": "^2.0.5",
     "deep-equal": "^1.0.1",
-    "events": "^3.0.0",
+    "eventemitter3": "^3.1.0",
     "fuse.js": "^3.3.0",
     "global": "^4.3.2",
     "keycode": "^2.2.0",
@@ -47,11 +43,14 @@
     "react-treebeard": "^3.1.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.8",
-    "@storybook/react": "4.0.8"
+    "terser-webpack-plugin": "^1.1.0",
+    "webpack": "^4.23.1"
   },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
