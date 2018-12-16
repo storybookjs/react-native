@@ -1,3 +1,10 @@
+## 4.1.2 (December 15, 2018)
+
+### Bug Fixes
+
+* Addon-Knob: Add missing key property in Panel ([#4507](https://github.com/storybooks/storybook/pull/4507))
+* Fix package version dependencies ([#4960](https://github.com/storybooks/storybook/pull/4960))
+
 ## 4.2.0-alpha.1 (December 12, 2018)
 
 Fixes 4.2.0-alpha.0
