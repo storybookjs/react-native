@@ -15,7 +15,6 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
@@ -24,6 +23,10 @@
     "@storybook/components": "4.2.0-alpha.2",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/util-deprecate": "^1.0.0",
+    "@types/react": "^16.7.17y"
   },
   "publishConfig": {
     "access": "public"

@@ -2275,7 +2275,7 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.1.tgz#48fd98c1561fe718b61733daed46ff115b496e18"
   integrity sha512-eqz8c/0kwNi/OEHQfvIuJVLTst3in0e7uTKeuY+WL/zfKn0xVujOTp42bS/vUUokhK5P2BppLd9JXMOMHcgbjA==
 
-"@types/react@^16.7.3":
+"@types/react@^16.7.17y", "@types/react@^16.7.3":
   version "16.7.17"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.17.tgz#3242e796a1ffbba4f49eae5915a67f4c079504e9"
   integrity sha512-YcXcaoXaxo7A76mBCGlKlN2aZu3REQfF0DTrhiyXVJLA7PDdxVCr+wiQOrkVNn44D/zLlIyDSn3U918Ve0AaEA==
@@ -2297,6 +2297,11 @@
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.2.tgz#5dc0a7f76809b7518c0df58689cd16a19bd751c6"
   integrity sha512-iHI60IbyfQilNubmxsq4zqSjdynlmc2Q/QvH9kjzg9+CCYVVzq1O6tc7VBzSygIwnmOt07w80IG6HDQvjv3Liw==
+
+"@types/util-deprecate@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/util-deprecate/-/util-deprecate-1.0.0.tgz#341d0815fe5a661b94e3ea738d182b4c359e3958"
+  integrity sha512-I2vixiQ+mrmKxfdLNvaa766nulrMVDoUQiSQoNeTjFUNAt8klnMgDh3yy/bH/r275357q30ACOEUaxFOR8YVrA==
 
 "@types/vfile-message@*":
   version "1.0.1"
