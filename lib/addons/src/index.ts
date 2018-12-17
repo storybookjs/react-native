@@ -1,10 +1,6 @@
 import global from 'global';
-import mockChannel from './storybook-channel-mock';
 import Channel from '@storybook/channels';
 import { ReactElement } from 'react';
-
-export { mockChannel };
-export * from './make-decorator';
 
 export interface PanelOptions {
   active: boolean;
@@ -77,4 +73,8 @@ function getAddonsStore() {
   return global[KEY];
 }
 
-export default getAddonsStore();
+// Exporting this twice in order to to be able to import it like { addons } instead of 'addons'
+// prefer import { addons } from '@storybook/addons' over import addons from '@storybook/addons'
+const addonStore = getAddonsStore();
+export { addonStore as addons };
+export default addonStore;

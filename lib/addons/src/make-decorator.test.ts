@@ -1,10 +1,17 @@
 import deprecate from 'util-deprecate';
-import { makeDecorator } from './make-decorator';
-import { defaultDecorateStory } from '../../core/src/client/preview/client_api';
+import { makeDecorator, StoryContext } from './make-decorator';
+
+// Copy & paste from internal api: core/client/preview/client_api
+export const defaultDecorateStory = (getStory: Function, decorators: Function[]) =>
+  decorators.reduce(
+    (decorated, decorator) => (context: StoryContext) =>
+      decorator(() => decorated(context), context),
+    getStory
+  );
 
 jest.mock('util-deprecate');
-let deprecatedFns = [];
-deprecate.mockImplementation((fn, warning) => {
+let deprecatedFns: any[] = [];
+(deprecate as any).mockImplementation((fn: (...args: any) => any, warning: string) => {
   const deprecatedFn = jest.fn(fn);
   deprecatedFns.push({
     deprecatedFn,

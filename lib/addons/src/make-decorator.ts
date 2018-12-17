@@ -6,7 +6,7 @@ export interface StoryContext {
 }
 
 export interface WrapperSettings {
-  options: any;
+  options: object;
   parameters: any;
 }
 
@@ -35,7 +35,7 @@ export const makeDecorator: MakeDecoratorResult = ({
   skipIfNoParametersOrOptions = false,
   allowDeprecatedUsage = false,
 }: MakeDecoratorOptions) => {
-  const decorator: any = (options: any) => (getStory: any, context: any) => {
+  const decorator: any = (options: object) => (getStory: any, context: any) => {
     const parameters = context.parameters && context.parameters[parameterName];
 
     if (parameters && parameters.disable) {
