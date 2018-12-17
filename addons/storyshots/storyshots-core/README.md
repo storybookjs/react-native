@@ -52,9 +52,9 @@ other tools may lack this feature. Since Storyshot is running under Jest,
 we need to polyfill this functionality to work with Jest. The easiest
 way is to integrate it to babel.
 
-One of the possible babel plugins to
-polyfill this functionality might be
-[babel-plugin-require-context-hook](https://github.com/smrq/babel-plugin-require-context-hook).
+You can do this with a Babel [plugin](https://github.com/smrq/babel-plugin-require-context-hook) or [macro](https://github.com/storybooks/require-context.macro). If you're using `create-react-app` (v2 or above), you will use the macro.
+
+- *Plugin*
 
 First, install it:
 
@@ -87,6 +87,23 @@ Finally, add the plugin to `.babelrc`:
 }
 ```
 The plugin is only added to the test environment otherwise it could replace webpack's version of it.
+
+- *Macro*
+
+First, install it:
+
+```sh
+npm install --save-dev require-context.macro
+```
+
+Now, inside of your Storybook config file, simply import the macro and run it in place of `require.context`, like so:
+
+```javascript
+import requireContext from 'require-context.macro';
+
+// const req = require.context('../stories', true, /.stories.js$/); <-- replaced
+const req = requireContext('../stories', true, /.stories.js$/);
+```
 
 ### Configure Jest for React
 StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but
