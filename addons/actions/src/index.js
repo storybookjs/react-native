@@ -23,5 +23,5 @@ export {
 };
 
 if (module && module.hot && module.hot.decline) {
-  module.hot.decline(() => {});
+  module.hot.decline();
 }

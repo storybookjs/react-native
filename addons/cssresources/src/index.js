@@ -76,5 +76,5 @@ export const withCssResources = makeDecorator({
 });
 
 if (module && module.hot && module.hot.decline) {
-  module.hot.decline(() => {});
+  module.hot.decline();
 }

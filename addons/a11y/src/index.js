@@ -48,5 +48,5 @@ channel.on(STORY_RENDERED, () => run(options));
 channel.on(EVENTS.REQUEST, () => run(options));
 
 if (module && module.hot && module.hot.decline) {
-  module.hot.decline(() => {});
+  module.hot.decline();
 }

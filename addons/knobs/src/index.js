@@ -103,5 +103,5 @@ export const withKnobsOptions = deprecate(
 );
 
 if (module && module.hot && module.hot.decline) {
-  module.hot.decline(() => {});
+  module.hot.decline();
 }

@@ -20,7 +20,7 @@ interface Props {
 }
 
 interface NotesPanelState {
-  value: string;
+  value?: string;
 }
 
 const read = (params: Parameters): string =>

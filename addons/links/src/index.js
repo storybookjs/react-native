@@ -18,5 +18,5 @@ export function LinkTo() {
 export { linkTo, hrefTo, withLinks };
 
 if (module && module.hot && module.hot.decline) {
-  module.hot.decline(() => {});
+  module.hot.decline();
 }

@@ -60,5 +60,5 @@ export const withTests = userOptions => {
 };
 
 if (module && module.hot && module.hot.decline) {
-  module.hot.decline(() => {});
+  module.hot.decline();
 }

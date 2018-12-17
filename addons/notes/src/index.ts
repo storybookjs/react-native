@@ -1,5 +1,5 @@
 import { makeDecorator } from '@storybook/addons';
-import { deprecate } from 'util';
+import deprecate from 'util-deprecate';
 
 // todo resolve any after @storybook/addons and @storybook/channels are migrated to TypeScript
 export const withNotes = makeDecorator({
@@ -36,5 +36,5 @@ export const withMarkdownNotes = deprecate((text: string, options: any) => {},
 'withMarkdownNotes is deprecated');
 
 if (module && module.hot && module.hot.decline) {
-  module.hot.decline(() => {});
+  module.hot.decline();
 }

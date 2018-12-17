@@ -46,5 +46,5 @@ export default options => {
 };
 
 if (module && module.hot && module.hot.decline) {
-  module.hot.decline(() => {});
+  module.hot.decline();
 }

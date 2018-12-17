@@ -58,5 +58,5 @@ export default function(metadataFn) {
 }
 
 if (module && module.hot && module.hot.decline) {
-  module.hot.decline(() => {});
+  module.hot.decline();
 }
