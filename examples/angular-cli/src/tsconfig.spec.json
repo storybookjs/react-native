@@ -11,7 +11,7 @@
     ]
   },
   "files": [
-    "test.ts"
+    "karma.ts"
   ],
   "include": [
     "**/*.spec.ts",
