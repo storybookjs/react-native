@@ -9,7 +9,7 @@
     ]
   },
   "exclude": [
-    "test.ts",
+    "karma.ts",
     "**/*.spec.ts"
   ]
 }
