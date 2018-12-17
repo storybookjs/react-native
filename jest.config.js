@@ -29,7 +29,14 @@ module.exports = {
     '^.+\\.tsx?$': '<rootDir>/node_modules/ts-jest',
   },
   testMatch: ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)+(spec|test).(j|t)s?(x)'],
-  testPathIgnorePatterns: ['/node_modules/', '/dist/', 'addon-jest.test.js', '/cli/test/'],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/dist/',
+    'addon-jest.test.js',
+    '/cli/test/',
+    '/examples/*/src/test.*',
+    '/examples/*/src/*.test.*',
+  ],
   collectCoverage: false,
   collectCoverageFrom: [
     'app/**/*.{js,jsx,ts,tsx}',
