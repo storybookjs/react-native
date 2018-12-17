@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-cssresources",
-  "version": "4.2.0-alpha.1",
+  "version": "4.2.0-alpha.2",
   "description": "A storybook addon to switch between css resources at runtime for your story",
   "keywords": [
     "addon",
@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@emotion/styled": "0.10.6",
-    "@storybook/addons": "4.2.0-alpha.1",
-    "@storybook/components": "4.2.0-alpha.1",
-    "@storybook/core-events": "4.2.0-alpha.1",
+    "@storybook/addons": "4.2.0-alpha.2",
+    "@storybook/components": "4.2.0-alpha.2",
+    "@storybook/core-events": "4.2.0-alpha.2",
     "core-js": "^2.5.7",
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
