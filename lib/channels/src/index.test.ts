@@ -157,35 +157,6 @@ describe('Channel', () => {
     });
   });
 
-  describe('method:prependListener', () => {
-    it('should prepend listener', () => {
-      const eventName = 'event1';
-      const prependFn = jest.fn();
-      channel.addListener(eventName, jest.fn());
-      channel.prependListener(eventName, prependFn);
-
-      expect(channel.listeners(eventName)[0]).toBe(prependFn);
-    });
-  });
-
-  describe('method:prependOnceListener', () => {
-    it('should prepend listener and remove it after one execution', () => {
-      const eventName = 'event1';
-      const prependFn = jest.fn();
-      const otherFns = [jest.fn(), jest.fn(), jest.fn()];
-
-      otherFns.forEach(fn => channel.addListener(eventName, fn));
-      channel.prependOnceListener(eventName, prependFn);
-      channel.emit(eventName);
-
-      otherFns.forEach(listener => {
-        expect(listener).toBe(
-          channel.listeners(eventName).find(_listener => _listener === listener)
-        );
-      });
-    });
-  });
-
   describe('method:removeAllListeners', () => {
     it('should remove all listeners', () => {
       const eventName1 = 'event1';

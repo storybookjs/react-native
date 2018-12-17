@@ -100,17 +100,6 @@ export class Channel {
     this.addListener<TEventArgs>(eventName, onceListener);
   }
 
-  prependListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
-    this.events[eventName] = this.events[eventName] || [];
-    this.events[eventName].unshift(listener);
-  }
-
-  // todo 'listener' is getting mutated by _onceListener, therefore: Input fn() !== Output fn(). This makes testing more difficult
-  prependOnceListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
-    const onceListener: Listener = this.onceListener<TEventArgs>(eventName, listener);
-    this.prependListener(eventName, onceListener);
-  }
-
   removeAllListeners(eventName?: string) {
     if (!eventName) {
       this.events = {};
