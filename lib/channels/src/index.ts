@@ -36,25 +36,25 @@ const generateRandomId = () => {
 export class Channel {
   readonly isAsync: boolean;
 
-  private _sender = generateRandomId();
-  private _events: EventsKeyValue = {};
-  private readonly _transport: ChannelTransport;
+  private sender = generateRandomId();
+  private events: EventsKeyValue = {};
+  private readonly transport: ChannelTransport;
 
   constructor({ transport, async = false }: ChannelArgs = {}) {
     this.isAsync = async;
     if (transport) {
-      this._transport = transport;
-      this._transport.setHandler(event => this._handleEvent(event));
+      this.transport = transport;
+      this.transport.setHandler(event => this.handleEvent(event));
     }
   }
 
   get hasTransport() {
-    return !!this._transport;
+    return !!this.transport;
   }
 
   addListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
-    this._events[eventName] = this._events[eventName] || [];
-    this._events[eventName].push(listener);
+    this.events[eventName] = this.events[eventName] || [];
+    this.events[eventName].push(listener);
   }
 
   addPeerListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
@@ -64,13 +64,13 @@ export class Channel {
   }
 
   emit<TEventArgs = any>(eventName: string, ...args: TEventArgs[]) {
-    const event: ChannelEvent<TEventArgs[]> = { type: eventName, args, from: this._sender };
+    const event: ChannelEvent<TEventArgs[]> = { type: eventName, args, from: this.sender };
 
     const handler = () => {
-      if (this._transport) {
-        this._transport.send(event);
+      if (this.transport) {
+        this.transport.send(event);
       }
-      this._handleEvent(event, true);
+      this.handleEvent(event, true);
     };
 
     if (this.isAsync) {
@@ -82,7 +82,7 @@ export class Channel {
   }
 
   eventNames() {
-    return Object.keys(this._events);
+    return Object.keys(this.events);
   }
 
   listenerCount(eventName: string) {
@@ -91,56 +91,53 @@ export class Channel {
   }
 
   listeners(eventName: string): Listener[] | undefined {
-    const listeners = this._events[eventName];
+    const listeners = this.events[eventName];
     return listeners ? listeners : undefined;
   }
 
   once<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
-    const onceListener: Listener = this._onceListener<TEventArgs>(eventName, listener);
+    const onceListener: Listener = this.onceListener<TEventArgs>(eventName, listener);
     this.addListener<TEventArgs>(eventName, onceListener);
   }
 
   prependListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
-    this._events[eventName] = this._events[eventName] || [];
-    this._events[eventName].unshift(listener);
+    this.events[eventName] = this.events[eventName] || [];
+    this.events[eventName].unshift(listener);
   }
 
   // todo 'listener' is getting mutated by _onceListener, therefore: Input fn() !== Output fn(). This makes testing more difficult
   prependOnceListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
-    const onceListener: Listener = this._onceListener<TEventArgs>(eventName, listener);
+    const onceListener: Listener = this.onceListener<TEventArgs>(eventName, listener);
     this.prependListener(eventName, onceListener);
   }
 
   removeAllListeners(eventName?: string) {
     if (!eventName) {
-      this._events = {};
-    } else if (this._events[eventName]) {
-      delete this._events[eventName];
+      this.events = {};
+    } else if (this.events[eventName]) {
+      delete this.events[eventName];
     }
   }
 
   removeListener(eventName: string, listener: Listener) {
     const listeners = this.listeners(eventName);
     if (listeners) {
-      this._events[eventName] = listeners.filter(l => l !== listener);
+      this.events[eventName] = listeners.filter(l => l !== listener);
     }
   }
 
-  /**
-   * @deprecated use addListener
-   */
   on<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
     this.addListener<TEventArgs>(eventName, listener);
   }
 
-  private _handleEvent<TEventArgs = any>(event: ChannelEvent<TEventArgs[]>, isPeer = false) {
+  private handleEvent<TEventArgs = any>(event: ChannelEvent<TEventArgs[]>, isPeer = false) {
     const listeners = this.listeners(event.type);
-    if (listeners && (isPeer || event.from !== this._sender)) {
+    if (listeners && (isPeer || event.from !== this.sender)) {
       listeners.forEach(fn => !(isPeer && fn.ignorePeer) && fn(...event.args));
     }
   }
 
-  private _onceListener<TEventArgs>(eventName: string, listener: Listener<TEventArgs>) {
+  private onceListener<TEventArgs>(eventName: string, listener: Listener<TEventArgs>) {
     const onceListener: Listener<TEventArgs> = (...args: TEventArgs[]) => {
       this.removeListener(eventName, onceListener);
       return listener(...args);

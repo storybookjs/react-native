@@ -15,53 +15,56 @@ interface CreateChannelArgs {
 }
 
 export class WebsocketTransport {
-  private _socket: WebSocket;
-  private _handler: ChannelHandler;
-  private _buffer: string[] = [];
-  private _isReady = false;
+  private socket: WebSocket;
+  private handler: ChannelHandler;
+  private buffer: string[] = [];
+  private isReady = false;
 
   constructor({ url, onError }: WebsocketTransportArgs) {
-    this._connect(url, onError);
+    this.connect(
+      url,
+      onError
+    );
   }
 
   setHandler(handler: ChannelHandler) {
-    this._handler = handler;
+    this.handler = handler;
   }
 
   send(event: any) {
-    if (!this._isReady) {
-      this._sendLater(event);
+    if (!this.isReady) {
+      this.sendLater(event);
     } else {
-      this._sendNow(event);
+      this.sendNow(event);
     }
   }
 
-  private _sendLater(event: any) {
-    this._buffer.push(event);
+  private sendLater(event: any) {
+    this.buffer.push(event);
   }
 
-  private _sendNow(event: any) {
+  private sendNow(event: any) {
     const data = JSON.stringify(event);
-    this._socket.send(data);
+    this.socket.send(data);
   }
 
-  private _flush() {
-    const buffer = this._buffer;
-    this._buffer = [];
+  private flush() {
+    const buffer = this.buffer;
+    this.buffer = [];
     buffer.forEach(event => this.send(event));
   }
 
-  private _connect(url: string, onError: OnError) {
-    this._socket = new WebSocket(url);
-    this._socket.onopen = () => {
-      this._isReady = true;
-      this._flush();
+  private connect(url: string, onError: OnError) {
+    this.socket = new WebSocket(url);
+    this.socket.onopen = () => {
+      this.isReady = true;
+      this.flush();
     };
-    this._socket.onmessage = e => {
+    this.socket.onmessage = e => {
       const event = JSON.parse(e.data);
-      this._handler(event);
+      this.handler(event);
     };
-    this._socket.onerror = e => {
+    this.socket.onerror = e => {
       if (onError) {
         onError(e);
       }
