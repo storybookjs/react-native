@@ -259,7 +259,8 @@ class Story extends Component {
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
         if (STORYBOOK_REACT_CLASSES[key].name === context.kind) {
-          retDiv = <div>{STORYBOOK_REACT_CLASSES[key].docgenInfo.description}</div>;
+          const componentDescription = STORYBOOK_REACT_CLASSES[key].docgenInfo.description;
+          retDiv = <div>{this.marksy(componentDescription).tree}</div>;
         }
       });
     }

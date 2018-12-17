@@ -1,3 +1,25 @@
+## 4.2.0-alpha.2 (December 16, 2018)
+
+### Features
+
+* Addon-Info: add markdown support for jsdoc comments ([#4983](https://github.com/storybooks/storybook/pull/4983))
+* Addon-Storysource: support Flow ([#4971](https://github.com/storybooks/storybook/pull/4971))
+
+### Maintenance
+
+* Make applyPresets function signature more consistent ([#4988](https://github.com/storybooks/storybook/pull/4988))
+
+### Dependency Upgrades
+
+* RESET lockfile ([#4991](https://github.com/storybooks/storybook/pull/4991))
+
+## 4.1.2 (December 15, 2018)
+
+### Bug Fixes
+
+* Addon-Knob: Add missing key property in Panel ([#4507](https://github.com/storybooks/storybook/pull/4507))
+* Fix package version dependencies ([#4960](https://github.com/storybooks/storybook/pull/4960))
+
 ## 4.2.0-alpha.1 (December 12, 2018)
 
 Fixes 4.2.0-alpha.0
