@@ -1,14 +1,26 @@
-/* eslint-disable no-underscore-dangle */
-
 import { WebSocket } from 'global';
-import Channel from '@storybook/channels';
+import { Channel } from '@storybook/channels';
+
+type OnError = (message: Event) => void;
+
+interface WebsocketTransportArgs {
+  url: string;
+  onError: OnError;
+}
+
+interface CreateChannelArgs {
+  url: string;
+  async: boolean;
+  onError: OnError;
+}
 
 export class WebsocketTransport {
-  constructor({ url, onError }) {
-    this._socket = null;
-    this._buffer = [];
-    this._handler = null;
-    this._isReady = false;
+  private _socket: WebSocket;
+  private _handler: any;
+  private _buffer: string[] = [];
+  private _isReady = false;
+
+  constructor({ url, onError }: WebsocketTransportArgs) {
     this._connect(url, onError);
   }
 
@@ -24,22 +36,22 @@ export class WebsocketTransport {
     }
   }
 
-  _sendLater(event) {
+  private _sendLater(event) {
     this._buffer.push(event);
   }
 
-  _sendNow(event) {
+  private _sendNow(event) {
     const data = JSON.stringify(event);
     this._socket.send(data);
   }
 
-  _flush() {
+  private _flush() {
     const buffer = this._buffer;
     this._buffer = [];
     buffer.forEach(event => this.send(event));
   }
 
-  _connect(url, onError) {
+  private _connect(url: string, onError: OnError) {
     this._socket = new WebSocket(url);
     this._socket.onopen = () => {
       this._isReady = true;
@@ -57,7 +69,7 @@ export class WebsocketTransport {
   }
 }
 
-export default function createChannel({ url, async, onError }) {
+export default function createChannel({ url, async, onError }: CreateChannelArgs) {
   const transport = new WebsocketTransport({ url, onError });
   return new Channel({ transport, async });
 }
