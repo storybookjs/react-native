@@ -23,8 +23,17 @@ interface NotesPanelState {
   value?: string;
 }
 
-const read = (params: Parameters): string =>
-  typeof params === 'string' ? params : params.text || params.markdown;
+function read(param: Parameters): string | undefined {
+  if (typeof param === 'string') {
+    return param;
+  } else if ('disabled' in param) {
+    return undefined;
+  } else if ('text' in param) {
+    return param.text;
+  } else if ('markdown' in param) {
+    return param.markdown;
+  }
+}
 
 const SyntaxHighlighter = (props: any) => <SyntaxHighlighterBase bordered copyable {...props} />;
 
@@ -64,8 +73,8 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
     const { api } = this.props;
     const params = api.getParameters(id, PARAM_KEY);
 
-    if (params && !params.disable) {
-      const value = read(params);
+    const value = read(params);
+    if (value) {
       this.setState({ value });
     } else {
       this.setState({ value: undefined });
