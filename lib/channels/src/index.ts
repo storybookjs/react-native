@@ -1,6 +1,8 @@
+export type ChannelHandler<TEventArgs = any> = (event: ChannelEvent<TEventArgs>) => void;
+
 export interface ChannelTransport<TEventArgs = any> {
   send(event: ChannelEvent<TEventArgs>): void;
-  setHandler(handler: (event: ChannelEvent<TEventArgs>) => void): void;
+  setHandler(handler: ChannelHandler<TEventArgs>): void;
 }
 
 export interface ChannelEvent<TEventArgs = any> {
@@ -11,6 +13,7 @@ export interface ChannelEvent<TEventArgs = any> {
 
 export interface Listener<TEventArgs = any> {
   (...args: TEventArgs[]): void;
+
   ignorePeer?: boolean;
 }
 

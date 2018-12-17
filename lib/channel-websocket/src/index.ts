@@ -1,5 +1,5 @@
 import { WebSocket } from 'global';
-import { Channel } from '@storybook/channels';
+import { Channel, ChannelHandler } from '@storybook/channels';
 
 type OnError = (message: Event) => void;
 
@@ -16,7 +16,7 @@ interface CreateChannelArgs {
 
 export class WebsocketTransport {
   private _socket: WebSocket;
-  private _handler: any;
+  private _handler: ChannelHandler;
   private _buffer: string[] = [];
   private _isReady = false;
 
@@ -24,11 +24,11 @@ export class WebsocketTransport {
     this._connect(url, onError);
   }
 
-  setHandler(handler) {
+  setHandler(handler: ChannelHandler) {
     this._handler = handler;
   }
 
-  send(event) {
+  send(event: any) {
     if (!this._isReady) {
       this._sendLater(event);
     } else {
@@ -36,11 +36,11 @@ export class WebsocketTransport {
     }
   }
 
-  private _sendLater(event) {
+  private _sendLater(event: any) {
     this._buffer.push(event);
   }
 
-  private _sendNow(event) {
+  private _sendNow(event: any) {
     const data = JSON.stringify(event);
     this._socket.send(data);
   }
