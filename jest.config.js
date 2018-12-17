@@ -28,7 +28,7 @@ module.exports = {
     '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
     '^.+\\.tsx?$': '<rootDir>/node_modules/ts-jest',
   },
-  testMatch: ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)+test.(j|t)s?(x)'],
+  testMatch: ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)+(spek|test).(j|t)s?(x)'],
   testPathIgnorePatterns: ['/node_modules/', '/dist/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
   collectCoverageFrom: [
