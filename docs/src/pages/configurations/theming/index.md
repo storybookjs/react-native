@@ -23,7 +23,7 @@ addDecorator(
   withOptions({
     theme: {},
   })
-});
+);
 ```
 
 When setting a theme, set a full theme object, the theme is replaced, not combined.
