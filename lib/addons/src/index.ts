@@ -1,12 +1,10 @@
-// Resolves to window in browser and to global in node
 import global from 'global';
-// import { TabWrapper } from '@storybook/components';
 import mockChannel from './storybook-channel-mock';
 import Channel from '@storybook/channels';
 import { ReactElement } from 'react';
 
 export { mockChannel };
-export { makeDecorator } from './make-decorator';
+export * from './make-decorator';
 
 export interface PanelOptions {
   active: boolean;

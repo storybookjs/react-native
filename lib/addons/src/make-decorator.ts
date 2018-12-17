@@ -1,24 +1,34 @@
 import deprecate from 'util-deprecate';
 
-// Create a decorator that can be used both in the (deprecated) old "hoc" style:
-//   .add('story', decorator(options)(() => <Story />));
-//
-// And in the new, "parameterized" style:
-//   .addDecorator(decorator)
-//   .add('story', () => <Story />, { name: { parameters } });
-//
-// *And* in the older, but not deprecated, "pass options to decorator" style:
-//  .addDecorator(decorator(options))
-
-interface MakeDecoratorOptions {
-  name: any;
-  parameterName: any;
-  wrapper: any;
-  skipIfNoParametersOrOptions: boolean;
-  allowDeprecatedUsage: boolean;
+export interface StoryContext {
+  story: string;
+  kind: string;
 }
 
-export const makeDecorator: any = ({
+export interface WrapperSettings {
+  options: any;
+  parameters: any;
+}
+
+export type StoryGetter = (context: StoryContext) => any;
+
+export type StoryWrapper = (
+  getStory: StoryGetter,
+  context: StoryContext,
+  settings: WrapperSettings
+) => any;
+
+type MakeDecoratorResult = (...args: any) => any;
+
+interface MakeDecoratorOptions {
+  name: string;
+  parameterName: string;
+  allowDeprecatedUsage: boolean;
+  skipIfNoParametersOrOptions: boolean;
+  wrapper: StoryWrapper;
+}
+
+export const makeDecorator: MakeDecoratorResult = ({
   name,
   parameterName,
   wrapper,
@@ -35,6 +45,7 @@ export const makeDecorator: any = ({
     if (skipIfNoParametersOrOptions && !options && !parameters) {
       return getStory(context);
     }
+
     return wrapper(getStory, context, {
       options,
       parameters,
