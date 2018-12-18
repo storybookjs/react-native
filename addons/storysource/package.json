@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-storysource",
-  "version": "4.2.0-alpha.2",
+  "version": "4.2.0-alpha.3",
   "description": "Stories addon for storybook",
   "keywords": [
     "addon",
@@ -21,8 +21,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.2.0-alpha.2",
-    "@storybook/components": "4.2.0-alpha.2",
+    "@storybook/addons": "4.2.0-alpha.3",
+    "@storybook/components": "4.2.0-alpha.3",
     "core-js": "^2.5.7",
     "estraverse": "^4.2.0",
     "loader-utils": "^1.1.0",
