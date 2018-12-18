@@ -1,5 +1,6 @@
 import { document } from 'global';
 import axe from 'axe-core';
+import deprecate from 'util-deprecate';
 import addons, { makeDecorator } from '@storybook/addons';
 import { STORY_RENDERED } from '@storybook/core-events';
 import EVENTS, { PARAM_KEY } from './constants';
@@ -50,3 +51,9 @@ channel.on(EVENTS.REQUEST, () => run(options));
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();
 }
+
+// REMOVE at 6.0.0
+export const checkA11y = deprecate(
+  (...args) => withA11Y(...args),
+  'checkA11y has been replaced with withA11Y'
+);
