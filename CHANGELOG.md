@@ -1,3 +1,10 @@
+## 4.2.0-alpha.3 (December 18, 2018)
+
+### Bug Fixes
+
+* React:add alias to react & react-dom ([#5016](https://github.com/storybooks/storybook/pull/5016))
+* Addon-knobs: fix color picker display ([#5010](https://github.com/storybooks/storybook/pull/5010))
+
 ## 4.2.0-alpha.2 (December 16, 2018)
 
 ### Features
