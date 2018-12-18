@@ -1,6 +1,6 @@
 import addons from '@storybook/addons';
 import { linkTo, hrefTo } from './preview';
-import { EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from '.';
+import EVENTS from './constants';
 
 jest.mock('@storybook/addons');
 
@@ -8,12 +8,12 @@ export const mockChannel = () => {
   let cb;
   return {
     emit(id, payload) {
-      if (id === REQUEST_HREF_EVENT_ID) {
+      if (id === EVENTS.REQUEST) {
         cb(`?selectedKind=${payload.kind}&selectedStory=${payload.story}`);
       }
     },
     on(id, callback) {
-      if (id === RECEIVE_HREF_EVENT_ID) {
+      if (id === EVENTS.RECEIVE) {
         cb = callback;
       }
     },
@@ -29,7 +29,7 @@ describe('preview', () => {
       const handler = linkTo('kind', 'story');
       handler();
 
-      expect(channel.emit).toHaveBeenCalledWith(EVENT_ID, {
+      expect(channel.emit).toHaveBeenCalledWith(EVENTS.NAVIGATE, {
         kind: 'kind',
         story: 'story',
       });
@@ -42,7 +42,7 @@ describe('preview', () => {
       const handler = linkTo((a, b) => a + b, (a, b) => b + a);
       handler('foo', 'bar');
 
-      expect(channel.emit).toHaveBeenCalledWith(EVENT_ID, {
+      expect(channel.emit).toHaveBeenCalledWith(EVENTS.NAVIGATE, {
         kind: 'foobar',
         story: 'barfoo',
       });

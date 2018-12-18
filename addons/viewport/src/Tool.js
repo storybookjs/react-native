@@ -6,6 +6,7 @@ import memoize from 'memoizerific';
 
 import { Popout, Item, Icons, Icon, IconButton, Title, List } from '@storybook/components';
 import { STORY_CHANGED } from '@storybook/core-events';
+import { logger } from '@storybook/client-logger';
 
 import { PARAM_KEY } from './constants';
 
@@ -77,7 +78,7 @@ export default class ViewportTool extends Component {
         iframe.classList.remove(iframeClass);
       }
     } else {
-      console.error('Cannot find Storybook iframe');
+      logger.error('Cannot find Storybook iframe');
     }
   };
 

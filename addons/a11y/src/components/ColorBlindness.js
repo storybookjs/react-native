@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import memoize from 'memoizerific';
 import styled from '@emotion/styled';
 
+import { logger } from '@storybook/client-logger';
 import { Popout, Item, Icons, Icon, IconButton, Title, List } from '@storybook/components';
 
 const getIframe = memoize(1)(() => document.getElementById('storybook-preview-iframe'));
@@ -35,7 +36,7 @@ class ColorBlindness extends Component {
         filter,
       });
     } else {
-      console.error('Cannot find Storybook iframe');
+      logger.error('Cannot find Storybook iframe');
     }
   };
 

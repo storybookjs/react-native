@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import addons from '@storybook/addons';
 
-import { EVENT_ID } from '../../index';
+import EVENTS from '../../constants';
 import { mockChannel } from '../../preview.test';
 import LinkTo from './link';
 
@@ -31,7 +31,7 @@ describe('LinkTo', () => {
 
       const wrapper = shallow(<LinkTo kind="foo" story="bar" />);
       wrapper.simulate('click');
-      expect(channel.emit).toHaveBeenCalledWith(EVENT_ID, {
+      expect(channel.emit).toHaveBeenCalledWith(EVENTS.NAVIGATE, {
         kind: 'foo',
         story: 'bar',
       });

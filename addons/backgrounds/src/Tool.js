@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
 
+import { logger } from '@storybook/client-logger';
 import { STORY_CHANGED } from '@storybook/core-events';
 
 import { Popout, Item, Icons, Icon, IconButton, Title, Detail, List } from '@storybook/components';
@@ -68,13 +69,13 @@ export default class BackgroundTool extends Component {
         if (backgrounds[selected]) {
           iframe.style.background = value;
         } else {
-          console.error(selected, 'could not be set');
+          logger.error(selected, 'could not be set');
         }
       } else {
         iframe.style.background = 'transparent';
       }
     } else {
-      console.error('Cannot find Storybook iframe');
+      logger.error('Cannot find Storybook iframe');
     }
   };
 
