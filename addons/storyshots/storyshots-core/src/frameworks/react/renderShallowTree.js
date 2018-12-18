@@ -2,7 +2,7 @@
 import shallow from 'react-test-renderer/shallow';
 
 function getRenderedTree(story, context, { renderer, serializer }) {
-  const storyElement = story.render(context);
+  const storyElement = story.render();
   const shallowRenderer = renderer || shallow.createRenderer();
   const tree = shallowRenderer.render(storyElement);
   return serializer ? serializer(tree) : tree;

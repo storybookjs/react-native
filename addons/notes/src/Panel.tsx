@@ -23,8 +23,10 @@ interface NotesPanelState {
   value?: string;
 }
 
-function read(param: Parameters): string | undefined {
-  if (typeof param === 'string') {
+function read(param: Parameters | undefined): string | undefined {
+  if (!param) {
+    return undefined;
+  } else if (typeof param === 'string') {
     return param;
   } else if ('disabled' in param) {
     return undefined;

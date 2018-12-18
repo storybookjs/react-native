@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
+.emotion-14 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
 .emotion-12 {
   position: absolute;
   bottom: 0;
@@ -42,6 +49,7 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
   display: block;
   background: none;
   padding: 0 10px;
+  cursor: pointer;
   text-transform: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -76,40 +84,51 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
   border-left: 1px solid rgba(0,0,0,0.1);
 }
 
-<ul
-  class="emotion-12 emotion-13"
+<div
+  class="emotion-14 emotion-15"
 >
-  <li
-    class="emotion-2 emotion-3"
+  <ul
+    class="emotion-12 emotion-13"
   >
-    <button
-      class="emotion-0 emotion-1"
+    <li
+      class="emotion-2 emotion-3"
     >
-      Nr1
-    </button>
-  </li>
-  <li
-    class="emotion-6 emotion-3"
-  >
-    <button
-      class="emotion-0 emotion-1"
+      <button
+        class="emotion-0 emotion-1"
+      >
+        Nr1
+      </button>
+    </li>
+    <li
+      class="emotion-6 emotion-3"
     >
-      Nr2
-    </button>
-  </li>
-  <li
-    class="emotion-6 emotion-3"
-  >
-    <button
-      class="emotion-0 emotion-1"
+      <button
+        class="emotion-0 emotion-1"
+      >
+        Nr2
+      </button>
+    </li>
+    <li
+      class="emotion-6 emotion-3"
     >
-      Nr3
-    </button>
-  </li>
-</ul>
+      <button
+        class="emotion-0 emotion-1"
+      >
+        Nr3
+      </button>
+    </li>
+  </ul>
+</div>
 `;
 
 exports[`Storyshots Components|PanelActionBar single item 1`] = `
+.emotion-6 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
 .emotion-4 {
   position: absolute;
   bottom: 0;
@@ -151,6 +170,7 @@ exports[`Storyshots Components|PanelActionBar single item 1`] = `
   display: block;
   background: none;
   padding: 0 10px;
+  cursor: pointer;
   text-transform: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -167,17 +187,21 @@ exports[`Storyshots Components|PanelActionBar single item 1`] = `
   outline: 0 none;
 }
 
-<ul
-  class="emotion-4 emotion-5"
+<div
+  class="emotion-6 emotion-7"
 >
-  <li
-    class="emotion-2 emotion-3"
+  <ul
+    class="emotion-4 emotion-5"
   >
-    <button
-      class="emotion-0 emotion-1"
+    <li
+      class="emotion-2 emotion-3"
     >
-      CLEAR
-    </button>
-  </li>
-</ul>
+      <button
+        class="emotion-0 emotion-1"
+      >
+        CLEAR
+      </button>
+    </li>
+  </ul>
+</div>
 `;

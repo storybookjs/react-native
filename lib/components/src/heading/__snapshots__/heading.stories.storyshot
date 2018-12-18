@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Heading types 1`] = `
+.emotion-40 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-4 {
+  margin: 10px;
+  border: 1px dashed deepskyblue;
+}
+
+.emotion-0 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: #444;
+  line-height: 1em;
+}
+
+.emotion-0 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+.emotion-0 > sub {
+  color: rgba(0,0,0,0.4);
+}
+
+.emotion-24 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-letter-spacing: 4.3px;
+  -moz-letter-spacing: 4.3px;
+  -ms-letter-spacing: 4.3px;
+  letter-spacing: 4.3px;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.emotion-24 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+.emotion-30 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-letter-spacing: 4.3px;
+  -moz-letter-spacing: 4.3px;
+  -ms-letter-spacing: 4.3px;
+  letter-spacing: 4.3px;
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.emotion-30 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+.emotion-34 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-letter-spacing: 4.3px;
+  -moz-letter-spacing: 4.3px;
+  -ms-letter-spacing: 4.3px;
+  letter-spacing: 4.3px;
+  font-weight: 400;
+  font-size: 10px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-34 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+<div
+  class="emotion-40 emotion-41"
+>
+  <div>
+    <div
+      class="emotion-4 emotion-5"
+    >
+      <header
+        class="emotion-2 emotion-3"
+      >
+        <h1
+          class="emotion-0 emotion-1"
+        >
+          <span>
+            DEFAULT WITH ALL CAPS
+          </span>
+        </h1>
+      </header>
+    </div>
+    <div
+      class="emotion-4 emotion-5"
+    >
+      <header
+        class="emotion-2 emotion-3"
+      >
+        <h1
+          class="emotion-0 emotion-1"
+        >
+          <span>
+            THIS LONG DEFAULT WITH ALL CAPS & SUB
+          </span>
+          <sub>
+            With a great sub
+          </sub>
+        </h1>
+      </header>
+    </div>
+    <div
+      class="emotion-4 emotion-5"
+    >
+      <header
+        class="emotion-2 emotion-3"
+      >
+        <h1
+          class="emotion-0 emotion-1"
+        >
+          <span>
+            page type
+          </span>
+        </h1>
+      </header>
+    </div>
+    <div
+      class="emotion-4 emotion-5"
+    >
+      <header
+        class="emotion-2 emotion-3"
+      >
+        <h1
+          class="emotion-0 emotion-1"
+        >
+          <span>
+            page type
+          </span>
+          <sub>
+            With a sub
+          </sub>
+        </h1>
+      </header>
+    </div>
+    <div
+      class="emotion-4 emotion-5"
+    >
+      <header
+        class="emotion-2 emotion-3"
+      >
+        <h1
+          class="emotion-24 emotion-1"
+        >
+          <span>
+            section type
+          </span>
+        </h1>
+      </header>
+    </div>
+    <div
+      class="emotion-4 emotion-5"
+    >
+      <header
+        class="emotion-2 emotion-3"
+      >
+        <h1
+          class="emotion-30 emotion-1"
+        >
+          <span>
+            section type
+          </span>
+        </h1>
+      </header>
+      <header
+        class="emotion-2 emotion-3"
+      >
+        <h1
+          class="emotion-34 emotion-1"
+        >
+          <span>
+            section type
+          </span>
+        </h1>
+      </header>
+    </div>
+  </div>
+</div>
+`;

@@ -14,8 +14,8 @@ import { initModuleData } from './helpers';
 addSerializer(HTMLCommentSerializer);
 addSerializer(AngularSnapshotSerializer);
 
-function getRenderedTree(story, context) {
-  const currentStory = story.render(context);
+function getRenderedTree(story) {
+  const currentStory = story.render();
 
   const { moduleMeta, AppComponent } = initModuleData(currentStory);
 

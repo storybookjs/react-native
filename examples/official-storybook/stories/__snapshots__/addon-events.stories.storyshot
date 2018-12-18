@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Events Logger 1`] = `
+.emotion-4 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
 .emotion-2 {
   padding: 20px;
 }
@@ -10,18 +17,29 @@ exports[`Storyshots Addons|Events Logger 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="emotion-4 emotion-5"
 >
-  <h1
-    class="emotion-0 emotion-1"
+  <div
+    class="emotion-2 emotion-3"
   >
-    Logger
-  </h1>
-  <dl />
+    <h1
+      class="emotion-0 emotion-1"
+    >
+      Logger
+    </h1>
+    <dl />
+  </div>
 </div>
 `;
 
 exports[`Storyshots Addons|Events.deprecated Logger 1`] = `
+.emotion-4 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
 .emotion-2 {
   padding: 20px;
 }
@@ -31,13 +49,17 @@ exports[`Storyshots Addons|Events.deprecated Logger 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="emotion-4 emotion-5"
 >
-  <h1
-    class="emotion-0 emotion-1"
+  <div
+    class="emotion-2 emotion-3"
   >
-    Logger
-  </h1>
-  <dl />
+    <h1
+      class="emotion-0 emotion-1"
+    >
+      Logger
+    </h1>
+    <dl />
+  </div>
 </div>
 `;

@@ -1,65 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Backgrounds disabled via [] 1`] = `
-<button
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  This one should not use backgrounds
-</button>
+  <button
+    type="button"
+  >
+    This one should not use backgrounds
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Backgrounds overriden 1`] = `
-<button
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  This one should have different backgrounds
-</button>
+  <button
+    type="button"
+  >
+    This one should have different backgrounds
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Backgrounds skipped via disable:true 1`] = `
-<button
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  This one should not use backgrounds either
-</button>
+  <button
+    type="button"
+  >
+    This one should not use backgrounds either
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Backgrounds story 1 1`] = `
-<button
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  You should be able to switch backgrounds for this story
-</button>
+  <button
+    type="button"
+  >
+    You should be able to switch backgrounds for this story
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Backgrounds story 2 1`] = `
-<button
-  type="button"
->
-  This one too!
-</button>
-`;
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
 
-exports[`Storyshots Addons|Backgrounds.deprecated overriden 1`] = `
-<button
-  type="button"
+<div
+  class="emotion-0 emotion-1"
 >
-  This one should have different backgrounds
-</button>
-`;
-
-exports[`Storyshots Addons|Backgrounds.deprecated story 1 1`] = `
-<button
-  type="button"
->
-  You should be able to switch backgrounds for this story
-</button>
-`;
-
-exports[`Storyshots Addons|Backgrounds.deprecated story 2 1`] = `
-<button
-  type="button"
->
-  This one too!
-</button>
+  <button
+    type="button"
+  >
+    This one too!
+  </button>
+</div>
 `;

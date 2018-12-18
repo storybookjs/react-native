@@ -1,10 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Core|Events Force re-render 1`] = `
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: rgba(0,0,0,0.05);
+  background: transparent;
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -29,15 +36,376 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   border-bottom-color: #9fdaff;
 }
 
-<button
+<div
+  class="emotion-2 emotion-3"
+>
+  <button
+    class="emotion-0 emotion-1"
+  >
+    Clicked: 0
+  </button>
+</div>
+`;
+
+exports[`Storyshots Core|Parameters adds data to storyFn 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
   class="emotion-0 emotion-1"
 >
-  Clicked: 0
-</button>
+  <pre>
+    [
+  {
+    "kind": "Core|Parameters",
+    "name": "adds data to storyFn",
+    "parameters": {
+      "fileName": "/Users/dev/Projects/GitHub/storybook/core/examples/official-storybook/stories/core.stories.js",
+      "a11y": {},
+      "options": {
+        "name": "Storybook",
+        "hierarchySeparator": {},
+        "hierarchyRootSeparator": "|"
+      },
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone Xs Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "1480px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        },
+        "kindleFire2": {
+          "name": "Kindle Fire 2",
+          "styles": {
+            "width": "600px",
+            "height": "963px"
+          },
+          "type": "tablet"
+        },
+        "kindleFireHD": {
+          "name": "Kindle Fire HD",
+          "styles": {
+            "width": "533px",
+            "height": "801px"
+          },
+          "type": "tablet"
+        }
+      },
+      "globalParameter": "globalParameter",
+      "chapterParameter": "chapterParameter",
+      "storyParameter": "storyParameter"
+    },
+    "id": "Core-Parameters-addsDataToStoryFn",
+    "depth": 2,
+    "path": "Core-Parameters-addsDataToStoryFn",
+    "options": {},
+    "decoratorParameter": "decoratorParameter"
+  }
+]
+  </pre>
+</div>
 `;
 
 exports[`Storyshots Core|Parameters passed to story 1`] = `
-<div>
-  Parameters are {"globalParameter":"globalParameter","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <div>
+    <p>
+      Parameters are
+    </p>
+    <pre>
+      {
+  "a11y": {},
+  "options": {
+    "name": "Storybook",
+    "hierarchySeparator": {},
+    "hierarchyRootSeparator": "|"
+  },
+  "viewports": {
+    "iphone5": {
+      "name": "iPhone 5",
+      "styles": {
+        "height": "568px",
+        "width": "320px"
+      },
+      "type": "mobile"
+    },
+    "iphone6": {
+      "name": "iPhone 6",
+      "styles": {
+        "height": "667px",
+        "width": "375px"
+      },
+      "type": "mobile"
+    },
+    "iphone6p": {
+      "name": "iPhone 6 Plus",
+      "styles": {
+        "height": "736px",
+        "width": "414px"
+      },
+      "type": "mobile"
+    },
+    "iphone8p": {
+      "name": "iPhone 8 Plus",
+      "styles": {
+        "height": "736px",
+        "width": "414px"
+      },
+      "type": "mobile"
+    },
+    "iphonex": {
+      "name": "iPhone X",
+      "styles": {
+        "height": "812px",
+        "width": "375px"
+      },
+      "type": "mobile"
+    },
+    "iphonexr": {
+      "name": "iPhone XR",
+      "styles": {
+        "height": "896px",
+        "width": "414px"
+      },
+      "type": "mobile"
+    },
+    "iphonexsmax": {
+      "name": "iPhone Xs Max",
+      "styles": {
+        "height": "896px",
+        "width": "414px"
+      },
+      "type": "mobile"
+    },
+    "ipad": {
+      "name": "iPad",
+      "styles": {
+        "height": "1024px",
+        "width": "768px"
+      },
+      "type": "tablet"
+    },
+    "ipad10p": {
+      "name": "iPad Pro 10.5-in",
+      "styles": {
+        "height": "1112px",
+        "width": "834px"
+      },
+      "type": "tablet"
+    },
+    "ipad12p": {
+      "name": "iPad Pro 12.9-in",
+      "styles": {
+        "height": "1366px",
+        "width": "1024px"
+      },
+      "type": "tablet"
+    },
+    "galaxys5": {
+      "name": "Galaxy S5",
+      "styles": {
+        "height": "640px",
+        "width": "360px"
+      },
+      "type": "mobile"
+    },
+    "galaxys9": {
+      "name": "Galaxy S9",
+      "styles": {
+        "height": "1480px",
+        "width": "720px"
+      },
+      "type": "mobile"
+    },
+    "nexus5x": {
+      "name": "Nexus 5X",
+      "styles": {
+        "height": "660px",
+        "width": "412px"
+      },
+      "type": "mobile"
+    },
+    "nexus6p": {
+      "name": "Nexus 6P",
+      "styles": {
+        "height": "732px",
+        "width": "412px"
+      },
+      "type": "mobile"
+    },
+    "pixel": {
+      "name": "Pixel",
+      "styles": {
+        "height": "960px",
+        "width": "540px"
+      },
+      "type": "mobile"
+    },
+    "pixelxl": {
+      "name": "Pixel XL",
+      "styles": {
+        "height": "1280px",
+        "width": "720px"
+      },
+      "type": "mobile"
+    },
+    "kindleFire2": {
+      "name": "Kindle Fire 2",
+      "styles": {
+        "width": "600px",
+        "height": "963px"
+      },
+      "type": "tablet"
+    },
+    "kindleFireHD": {
+      "name": "Kindle Fire HD",
+      "styles": {
+        "width": "533px",
+        "height": "801px"
+      },
+      "type": "tablet"
+    }
+  },
+  "globalParameter": "globalParameter",
+  "chapterParameter": "chapterParameter",
+  "storyParameter": "storyParameter"
+}
+    </pre>
+  </div>
 </div>
 `;

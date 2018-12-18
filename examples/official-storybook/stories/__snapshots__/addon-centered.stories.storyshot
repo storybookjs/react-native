@@ -1,17 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Centered story 1 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
 <div
-  style="position:fixed;top:0;left:0;bottom:0;right:0;display:flex;align-items:center;overflow:auto"
+  class="emotion-0 emotion-1"
 >
   <div
-    style="margin:auto;max-height:100%"
+    style="position:fixed;top:0;left:0;bottom:0;right:0;display:flex;align-items:center;overflow:auto"
   >
-    <button
-      type="button"
+    <div
+      style="margin:auto;max-height:100%"
     >
-      This story should be centered
-    </button>
+      <button
+        type="button"
+      >
+        This story should be centered
+      </button>
+    </div>
   </div>
 </div>
 `;

@@ -1,148 +1,247 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Knobs.withKnobs XSS safety 1`] = `
-<div>
-  &lt;img src="x" onerror="alert('XSS Attack')" &gt;
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <div>
+    &lt;img src="x" onerror="alert('XSS Attack')" &gt;
+  </div>
 </div>
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs accepts story parameters 1`] = `
-<div>
-  &lt;h1&gt;Hello&lt;/h1&gt;
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <div>
+    &lt;h1&gt;Hello&lt;/h1&gt;
+  </div>
 </div>
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs complex select 1`] = `
-<pre>
-  the type of string = string
-</pre>
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <pre>
+    the type of string = string
+  </pre>
+</div>
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs dynamic knobs 1`] = `
-<div>
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
   <div>
-    I must be here
-  </div>
-  <div>
-    I can disappear
+    <div>
+      I must be here
+    </div>
+    <div>
+      I can disappear
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs triggers actions via button 1`] = `
-<div>
-  <p>
-    Hit the knob button and it will toggle the items list into multiple states.
-  </p>
-  <p>
-    No items loaded
-  </p>
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <div>
+    <p>
+      Hit the knob button and it will toggle the items list into multiple states.
+    </p>
+    <p>
+      No items loaded
+    </p>
+  </div>
 </div>
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
 <div
-  style="background-color:#dedede;border:2px dashed silver;border-radius:10px;padding:10px"
+  class="emotion-0 emotion-1"
 >
-  <p>
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy watermelon.
-  </p>
-  <p>
-    My birthday is: January 20, 2017
-  </p>
-  <p>
-    I live in NY for 9 years.
-  </p>
-  <p>
-    My wallet contains: $12.50
-  </p>
-  <p>
-    In my backpack, I have:
-  </p>
-  <ul>
-    <li>
-      Laptop
-    </li>
-    <li>
-      Book
-    </li>
-    <li>
-      Whiskey
-    </li>
-  </ul>
-  <p>
-    Nice to meet you!
-  </p>
-  <p>
-    When I am happy I look like this: 
-    <img
-      alt="happy"
-      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiARwMCyEWcOFPAAAAP0lEQVQoz8WQMQoAIAwDL/7/z3GwghSp4KDZyiUpBMCYUgd8rehtH16/l3XewgU2KAzapjXBbNFaPS6lDMlKB6OiDv3iAH1OAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTAxLTI4VDEyOjExOjMzLTA3OjAwlAHQBgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wMS0yOFQxMjoxMTozMy0wNzowMOVcaLoAAAAASUVORK5CYII="
-    />
-  </p>
+  <div
+    style="background-color:#dedede;border:2px dashed silver;border-radius:10px;padding:10px"
+  >
+    <p>
+      My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy watermelon.
+    </p>
+    <p>
+      My birthday is: January 20, 2017
+    </p>
+    <p>
+      I live in NY for 9 years.
+    </p>
+    <p>
+      My wallet contains: $12.50
+    </p>
+    <p>
+      In my backpack, I have:
+    </p>
+    <ul>
+      <li>
+        Laptop
+      </li>
+      <li>
+        Book
+      </li>
+      <li>
+        Whiskey
+      </li>
+    </ul>
+    <p>
+      Nice to meet you!
+    </p>
+    <p>
+      When I am happy I look like this: 
+      <img
+        alt="happy"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiARwMCyEWcOFPAAAAP0lEQVQoz8WQMQoAIAwDL/7/z3GwghSp4KDZyiUpBMCYUgd8rehtH16/l3XewgU2KAzapjXBbNFaPS6lDMlKB6OiDv3iAH1OAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTAxLTI4VDEyOjExOjMzLTA3OjAwlAHQBgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wMS0yOFQxMjoxMTozMy0wNzowMOVcaLoAAAAASUVORK5CYII="
+      />
+    </p>
+  </div>
 </div>
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in groups 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
 <div
-  style="background-color:rgba(126, 211, 33, 0.22);border:2px dashed silver;border-radius:10px;padding:10px"
+  class="emotion-0 emotion-1"
 >
-  <h1>
-    General Information
-  </h1>
-  <p>
-    Name: Storyteller
-  </p>
-  <p>
-    Age: 70
-  </p>
-  <p>
-    Birthday: January 20, 2017
-  </p>
-  <p>
-    Account Balance: 12.5
-  </p>
-  <p>
-    Years in NY: 9
-  </p>
-  <hr />
-  <h1>
-    Favorites
-  </h1>
-  <p>
-    Catchphrase: Nice to meet you!
-  </p>
-  <p>
-    Fruit: apple
-  </p>
-  <p>
-    Other Fruit: watermelon
-  </p>
-  <p>
-    Items:
-  </p>
-  <ul>
-    <li>
-      Laptop
-    </li>
-    <li>
-      Book
-    </li>
-    <li>
-      Whiskey
-    </li>
-  </ul>
+  <div
+    style="background-color:rgba(126, 211, 33, 0.22);border:2px dashed silver;border-radius:10px;padding:10px"
+  >
+    <h1>
+      General Information
+    </h1>
+    <p>
+      Name: Storyteller
+    </p>
+    <p>
+      Age: 70
+    </p>
+    <p>
+      Birthday: January 20, 2017
+    </p>
+    <p>
+      Account Balance: 12.5
+    </p>
+    <p>
+      Years in NY: 9
+    </p>
+    <hr />
+    <h1>
+      Favorites
+    </h1>
+    <p>
+      Catchphrase: Nice to meet you!
+    </p>
+    <p>
+      Fruit: apple
+    </p>
+    <p>
+      Other Fruit: watermelon
+    </p>
+    <p>
+      Items:
+    </p>
+    <ul>
+      <li>
+        Laptop
+      </li>
+      <li>
+        Book
+      </li>
+      <li>
+        Whiskey
+      </li>
+    </ul>
+  </div>
 </div>
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs using options accepts options 1`] = `
-<div>
-  &lt;h1&gt;Hello&lt;/h1&gt;
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <div>
+    &lt;h1&gt;Hello&lt;/h1&gt;
+  </div>
 </div>
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobsOptions displays HTML code 1`] = `
-<div>
-  &lt;h1&gt;Hello&lt;/h1&gt;
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <div>
+    &lt;h1&gt;Hello&lt;/h1&gt;
+  </div>
 </div>
 `;

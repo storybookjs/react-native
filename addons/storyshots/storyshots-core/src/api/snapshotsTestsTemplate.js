@@ -1,23 +1,15 @@
 import { describe, it } from 'global';
 import { addSerializer } from 'jest-specific-snapshot';
 
-function snapshotTest({
-  asyncJest,
-  story,
-  kind,
-  fileName,
-  framework,
-  testMethod,
-  testMethodParams,
-}) {
-  const { name } = story;
-  const context = { fileName, kind, story: name, framework };
+function snapshotTest({ item, asyncJest, framework, testMethod, testMethodParams }) {
+  const { name } = item;
+  const context = { ...item, framework };
 
   if (asyncJest === true) {
     it(name, done =>
       testMethod({
         done,
-        story,
+        story: item,
         context,
         ...testMethodParams,
       })
@@ -25,7 +17,7 @@ function snapshotTest({
   } else {
     it(name, () =>
       testMethod({
-        story,
+        story: item,
         context,
         ...testMethodParams,
       })
@@ -33,23 +25,18 @@ function snapshotTest({
   }
 }
 
-function snapshotTestSuite({ kind, stories, suite, storyNameRegex, ...restParams }) {
+function snapshotTestSuite({ item, suite, ...restParams }) {
+  const { kind, children } = item;
   describe(suite, () => {
     describe(kind, () => {
-      // eslint-disable-next-line
-      for (const story of stories) {
-        if (storyNameRegex && !story.name.match(storyNameRegex)) {
-          // eslint-disable-next-line
-          continue;
-        }
-
-        snapshotTest({ story, kind, ...restParams });
-      }
+      children.forEach(c => {
+        snapshotTest({ item: c, ...restParams });
+      });
     });
   });
 }
 
-function snapshotsTests({ groups, storyKindRegex, snapshotSerializers, ...restParams }) {
+function snapshotsTests({ data, snapshotSerializers, ...restParams }) {
   if (snapshotSerializers) {
     snapshotSerializers.forEach(serializer => {
       addSerializer(serializer);
@@ -57,17 +44,9 @@ function snapshotsTests({ groups, storyKindRegex, snapshotSerializers, ...restPa
     });
   }
 
-  // eslint-disable-next-line
-  for (const group of groups) {
-    const { fileName, kind, stories } = group;
-
-    if (storyKindRegex && !kind.match(storyKindRegex)) {
-      // eslint-disable-next-line
-      continue;
-    }
-
-    snapshotTestSuite({ stories, kind, fileName, ...restParams });
-  }
+  data.forEach(item => {
+    snapshotTestSuite({ item, ...restParams });
+  });
 }
 
 export default snapshotsTests;

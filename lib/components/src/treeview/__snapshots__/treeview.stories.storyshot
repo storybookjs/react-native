@@ -1,0 +1,292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Treeview with ensured (WIP) 1`] = `
+.emotion-71 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-7 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  height: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  color: #444;
+  padding: 10px;
+  padding-left: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.emotion-0:focus {
+  outline: 0;
+  border-bottom: 1px solid #9fdaff;
+}
+
+.emotion-23 {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.emotion-17 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.emotion-10 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+}
+
+.emotion-15 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #774dd7;
+}
+
+.emotion-2 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-letter-spacing: 4.3px;
+  -moz-letter-spacing: 4.3px;
+  -ms-letter-spacing: 4.3px;
+  letter-spacing: 4.3px;
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.emotion-2 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+.emotion-5 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.emotion-19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<div
+  class="emotion-71 emotion-72"
+>
+  <input
+    class="emotion-0 emotion-1"
+    id="storybook-explorer-searchfield"
+    placeholder="Press \\"/\\" to search..."
+  />
+  <header
+    class="emotion-4 emotion-5 emotion-6"
+  >
+    <h1
+      class="emotion-2 emotion-3"
+    >
+      <span>
+        Root 1
+      </span>
+    </h1>
+  </header>
+  <div
+    class="emotion-23 emotion-24"
+  >
+    <div
+      class="emotion-21 emotion-22"
+    >
+      <a
+        class="emotion-19 emotion-20"
+        href="#!1-12"
+        id="stateful_1-12"
+      >
+        <div
+          class="emotion-17 emotion-18"
+        >
+          <svg
+            class="emotion-9 emotion-10 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="emotion-14 emotion-15 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Child A2
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <header
+    class="emotion-4 emotion-5 emotion-6"
+  >
+    <h1
+      class="emotion-2 emotion-3"
+    >
+      <span>
+        Root 3
+      </span>
+    </h1>
+  </header>
+  <div
+    class="emotion-23 emotion-24"
+  >
+    <div
+      class="emotion-21 emotion-22"
+    >
+      <a
+        class="emotion-19 emotion-20"
+        href="#!12"
+        id="stateful_3-32"
+      >
+        <div
+          class="emotion-17 emotion-18"
+        >
+          <svg
+            class="emotion-9 emotion-10 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="emotion-14 emotion-15 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Child A2
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <header
+    class="emotion-4 emotion-5 emotion-6"
+  >
+    <h1
+      class="emotion-2 emotion-3"
+    >
+      <span>
+        Others
+      </span>
+    </h1>
+  </header>
+  <div
+    class="emotion-23 emotion-24"
+  >
+    <div
+      class="emotion-21 emotion-22"
+    >
+      <a
+        class="emotion-19 emotion-20"
+        href="#!2"
+        id="stateful_2"
+      >
+        <div
+          class="emotion-17 emotion-18"
+        >
+          <svg
+            class="emotion-9 emotion-10 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="emotion-14 emotion-15 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Group 1
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;

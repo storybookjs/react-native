@@ -12,7 +12,7 @@ import { document } from 'global';
  * i.e. ({ Component, data }).
  */
 function getRenderedTree(story, context) {
-  const { Component, data } = story.render(context);
+  const { Component, data } = story.render();
 
   // We need to create a target to mount onto.
   const target = document.createElement('section');

@@ -23,7 +23,7 @@ function makeSureThatResultIsRenderedSomehow({ context, result, rootElement }) {
 function getRenderedTree(story, context) {
   const rootElement = bootstrapADocumentAndReturnANode();
 
-  const result = story.render(context);
+  const result = story.render();
 
   makeSureThatResultIsRenderedSomehow({ context, result, rootElement });
 

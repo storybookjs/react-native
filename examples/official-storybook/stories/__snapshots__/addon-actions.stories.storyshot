@@ -1,283 +1,450 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Actions All types 1`] = `
-<div>
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <div>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Array
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Boolean
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Empty Object
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      File
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Function A
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Bound Function B
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Infinity
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      -Infinity
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      NaN
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      null
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Number
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Multiple
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Plain Object
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Object (depth: 2)
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      RegExp
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      String
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Symbol
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      SyntheticEvent
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      undefined
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Window
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Actions Basic example 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
   <button
     style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
     type="button"
   >
-    Array
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    Boolean
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    Empty Object
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    File
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    Function A
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    Bound Function A
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    Infinity
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    -Infinity
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    NaN
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    null
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    Number
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    Multiple
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    Plain Object
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    Object (depth: 2)
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    RegExp
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    String
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    Symbol
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    SyntheticEvent
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    undefined
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    Window
+    Hello World
   </button>
 </div>
 `;
 
 exports[`Storyshots Addons|Actions Circular Payload 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  Circular Payload
-</button>
+  <button
+    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+    type="button"
+  >
+    Circular Payload
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  Moving away from this story will persist the action logger
-</button>
+  <button
+    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+    type="button"
+  >
+    Moving away from this story will persist the action logger
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Actions Decorated action 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  Native Event
-</button>
+  <button
+    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+    type="button"
+  >
+    Native Event
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  Moving away from this story will persist the action logger
-</button>
+  <button
+    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+    type="button"
+  >
+    Moving away from this story will persist the action logger
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Actions Decorated actions 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
->
-  Native Event
-</button>
-`;
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
 
-exports[`Storyshots Addons|Actions Function Name 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+<div
+  class="emotion-0 emotion-1"
 >
-  Action.name: fnName
-</button>
-`;
-
-exports[`Storyshots Addons|Actions Hello World 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
->
-  Hello World
-</button>
+  <button
+    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+    type="button"
+  >
+    Native Event
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Actions Limit Action Output 1`] = `
-<div>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    False
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
-  >
-    True
-  </button>
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <div>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      False
+    </button>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      True
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
->
-  Moving away from this story will persist the action logger
-</button>
-`;
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
 
-exports[`Storyshots Addons|Actions Multiple actions 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+<div
+  class="emotion-0 emotion-1"
 >
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
->
-  Moving away from this story will persist the action logger
-</button>
-`;
-
-exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions Persisting the action logger 1`] = `
-<div>
-  <p>
-    Moving away from this story will persist the action logger
-  </p>
   <button
     style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
     type="button"
   >
-    Object (configured clearOnStoryChange: false)
+    Moving away from this story will persist the action logger
   </button>
 </div>
 `;
 
-exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+exports[`Storyshots Addons|Actions Multiple actions 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  Delete
-</button>
+  <button
+    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+    type="button"
+  >
+    Hello World
+  </button>
+</div>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <button
+    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+    type="button"
+  >
+    Hello World
+  </button>
+</div>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <button
+    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+    type="button"
+  >
+    Moving away from this story will persist the action logger
+  </button>
+</div>
+`;
+
+exports[`Storyshots Addons|Actions Persisting the action logger 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <div>
+    <p>
+      Moving away from this story will persist the action logger
+    </p>
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Object (configured clearOnStoryChange: false)
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <button
+    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+    type="button"
+  >
+    Delete
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  Object (configured depth: 2)
-</button>
+  <button
+    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+    type="button"
+  >
+    Object (configured depth: 2)
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  Native Event
-</button>
+  <button
+    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+    type="button"
+  >
+    Native Event
+  </button>
+</div>
 `;

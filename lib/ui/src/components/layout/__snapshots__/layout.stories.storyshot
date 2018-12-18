@@ -1,0 +1,1472 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI|Desktop layout bottom Panel 1`] = `
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    <div
+      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+    />
+    <div>
+      0 width or height
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout default 1`] = `
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    <div
+      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+    />
+    <div>
+      0 width or height
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout full 1`] = `
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    <div
+      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+    />
+    <div>
+      0 width or height
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout no Nav 1`] = `
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    <div
+      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+    />
+    <div>
+      0 width or height
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout no Panel 1`] = `
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    <div
+      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+    />
+    <div>
+      0 width or height
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout no Panel, no Nav 1`] = `
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    <div
+      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+    />
+    <div>
+      0 width or height
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout page 1`] = `
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    <div
+      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+    />
+    <div>
+      0 width or height
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Mobile layout initial 0 1`] = `
+.emotion-24 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-22 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.emotion-12 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100% - 40px);
+}
+
+.emotion-2 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 80vw;
+  -webkit-transform: translateX(-80vw);
+  -ms-transform: translateX(-80vw);
+  transform: translateX(-80vw);
+  left: 0;
+  -webkit-transform: translateX(-0px);
+  -ms-transform: translateX(-0px);
+  transform: translateX(-0px);
+}
+
+.emotion-0 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-6 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: translateX(0) scale(1);
+  -ms-transform: translateX(0) scale(1);
+  transform: translateX(0) scale(1);
+  left: 0;
+  -webkit-transform: translateX(40vw) translateY(-42.5vh) translateY(40px) scale(0.2);
+  -ms-transform: translateX(40vw) translateY(-42.5vh) translateY(40px) scale(0.2);
+  transform: translateX(40vw) translateY(-42.5vh) translateY(40px) scale(0.2);
+}
+
+.emotion-4 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-10 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 80vw;
+  -webkit-transform: translateX(80vw);
+  -ms-transform: translateX(80vw);
+  transform: translateX(80vw);
+  right: 0;
+}
+
+.emotion-8 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-20 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-20 > * {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-14 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-14:empty {
+  display: none;
+}
+
+.emotion-14:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+<div
+  class="emotion-24 emotion-25"
+>
+  <div
+    class="emotion-22 emotion-23"
+  >
+    <div
+      class="emotion-12 emotion-13"
+    >
+      <div
+        class="emotion-2 emotion-3"
+      >
+        <div
+          class="emotion-0 emotion-1"
+          color="hotpink"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {}
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-6 emotion-3"
+      >
+        <div>
+          <div>
+            <div
+              class="emotion-4 emotion-1"
+              color="deepskyblue"
+            >
+              <h2
+                style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+              >
+                1
+              </h2>
+              <pre>
+                {}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-10 emotion-3"
+      >
+        <div>
+          <div
+            class="emotion-8 emotion-1"
+            color="orangered"
+          >
+            <h2
+              style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+            >
+              1
+            </h2>
+            <pre>
+              {
+  "hidden": false
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav
+      class="emotion-20 emotion-21"
+    >
+      <button
+        class="emotion-14 emotion-15"
+      >
+        Nav
+      </button>
+      <button
+        class="emotion-14 emotion-15"
+      >
+        Preview
+      </button>
+      <button
+        class="emotion-14 emotion-15"
+      >
+        Panel
+      </button>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Mobile layout initial 1 1`] = `
+.emotion-24 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-22 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.emotion-12 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100% - 40px);
+}
+
+.emotion-0 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-10 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 80vw;
+  -webkit-transform: translateX(80vw);
+  -ms-transform: translateX(80vw);
+  transform: translateX(80vw);
+  right: 0;
+}
+
+.emotion-8 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-20 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-20 > * {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-14 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-14:empty {
+  display: none;
+}
+
+.emotion-14:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 80vw;
+  -webkit-transform: translateX(-80vw);
+  -ms-transform: translateX(-80vw);
+  transform: translateX(-80vw);
+  left: 0;
+}
+
+.emotion-6 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: translateX(0) scale(1);
+  -ms-transform: translateX(0) scale(1);
+  transform: translateX(0) scale(1);
+  left: 0;
+}
+
+<div
+  class="emotion-24 emotion-25"
+>
+  <div
+    class="emotion-22 emotion-23"
+  >
+    <div
+      class="emotion-12 emotion-13"
+    >
+      <div
+        class="emotion-2 emotion-3"
+      >
+        <div
+          class="emotion-0 emotion-1"
+          color="hotpink"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {}
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-6 emotion-3"
+      >
+        <div>
+          <div>
+            <div
+              class="emotion-4 emotion-1"
+              color="deepskyblue"
+            >
+              <h2
+                style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+              >
+                1
+              </h2>
+              <pre>
+                {}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-10 emotion-3"
+      >
+        <div>
+          <div
+            class="emotion-8 emotion-1"
+            color="orangered"
+          >
+            <h2
+              style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+            >
+              1
+            </h2>
+            <pre>
+              {
+  "hidden": false
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav
+      class="emotion-20 emotion-21"
+    >
+      <button
+        class="emotion-14 emotion-15"
+      >
+        Nav
+      </button>
+      <button
+        class="emotion-14 emotion-15"
+      >
+        Preview
+      </button>
+      <button
+        class="emotion-14 emotion-15"
+      >
+        Panel
+      </button>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Mobile layout initial 2 1`] = `
+.emotion-24 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-22 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.emotion-12 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100% - 40px);
+}
+
+.emotion-0 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-8 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-20 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-20 > * {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-14 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-14:empty {
+  display: none;
+}
+
+.emotion-14:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 80vw;
+  -webkit-transform: translateX(-80vw);
+  -ms-transform: translateX(-80vw);
+  transform: translateX(-80vw);
+  left: 0;
+}
+
+.emotion-6 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: translateX(0) scale(1);
+  -ms-transform: translateX(0) scale(1);
+  transform: translateX(0) scale(1);
+  left: 0;
+  -webkit-transform: translateX(-40vw) translateY(-42.5vh) translateY(40px) scale(0.2);
+  -ms-transform: translateX(-40vw) translateY(-42.5vh) translateY(40px) scale(0.2);
+  transform: translateX(-40vw) translateY(-42.5vh) translateY(40px) scale(0.2);
+}
+
+.emotion-10 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 80vw;
+  -webkit-transform: translateX(80vw);
+  -ms-transform: translateX(80vw);
+  transform: translateX(80vw);
+  right: 0;
+  -webkit-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+<div
+  class="emotion-24 emotion-25"
+>
+  <div
+    class="emotion-22 emotion-23"
+  >
+    <div
+      class="emotion-12 emotion-13"
+    >
+      <div
+        class="emotion-2 emotion-3"
+      >
+        <div
+          class="emotion-0 emotion-1"
+          color="hotpink"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {}
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-6 emotion-3"
+      >
+        <div>
+          <div>
+            <div
+              class="emotion-4 emotion-1"
+              color="deepskyblue"
+            >
+              <h2
+                style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+              >
+                1
+              </h2>
+              <pre>
+                {}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-10 emotion-3"
+      >
+        <div>
+          <div
+            class="emotion-8 emotion-1"
+            color="orangered"
+          >
+            <h2
+              style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+            >
+              1
+            </h2>
+            <pre>
+              {
+  "hidden": false
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav
+      class="emotion-20 emotion-21"
+    >
+      <button
+        class="emotion-14 emotion-15"
+      >
+        Nav
+      </button>
+      <button
+        class="emotion-14 emotion-15"
+      >
+        Preview
+      </button>
+      <button
+        class="emotion-14 emotion-15"
+      >
+        Panel
+      </button>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Mobile layout page 1`] = `
+.emotion-24 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-22 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.emotion-14 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100% - 40px);
+}
+
+.emotion-0 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-12 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 80vw;
+  -webkit-transform: translateX(80vw);
+  -ms-transform: translateX(80vw);
+  transform: translateX(80vw);
+  right: 0;
+}
+
+.emotion-10 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-20 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-20 > * {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-16 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-16:empty {
+  display: none;
+}
+
+.emotion-16:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 80vw;
+  -webkit-transform: translateX(-80vw);
+  -ms-transform: translateX(-80vw);
+  transform: translateX(-80vw);
+  left: 0;
+}
+
+.emotion-8 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: translateX(0) scale(1);
+  -ms-transform: translateX(0) scale(1);
+  transform: translateX(0) scale(1);
+  left: 0;
+}
+
+.emotion-6 {
+  background: cyan;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+<div
+  class="emotion-24 emotion-25"
+>
+  <div
+    class="emotion-22 emotion-23"
+  >
+    <div
+      class="emotion-14 emotion-15"
+    >
+      <div
+        class="emotion-2 emotion-3"
+      >
+        <div
+          class="emotion-0 emotion-1"
+          color="hotpink"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {}
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-3"
+      >
+        <div>
+          <div
+            hidden=""
+          >
+            <div
+              class="emotion-4 emotion-1"
+              color="deepskyblue"
+            >
+              <h2
+                style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+              >
+                1
+              </h2>
+              <pre>
+                {}
+              </pre>
+            </div>
+          </div>
+          <div
+            class="emotion-6 emotion-1"
+            color="cyan"
+          >
+            <h2
+              style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+            >
+              1
+            </h2>
+            <pre>
+              {}
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-12 emotion-3"
+      >
+        <div
+          hidden=""
+        >
+          <div
+            class="emotion-10 emotion-1"
+            color="orangered"
+          >
+            <h2
+              style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+            >
+              1
+            </h2>
+            <pre>
+              {
+  "hidden": true
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav
+      class="emotion-20 emotion-21"
+    >
+      <button
+        class="emotion-16 emotion-17"
+      >
+        Nav
+      </button>
+      <button
+        class="emotion-16 emotion-17"
+      >
+        settings
+      </button>
+    </nav>
+  </div>
+</div>
+`;

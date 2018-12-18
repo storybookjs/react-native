@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Menu initial closed 1`] = `
+.emotion-4 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  background: hotpink;
+}
+
+<div
+  class="emotion-4 emotion-5"
+>
+  <span
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-0 emotion-1"
+    >
+      Click me
+    </button>
+  </span>
+</div>
+`;
+
+exports[`Storyshots Components|Menu multiple open 1`] = `
+.emotion-8 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  background: hotpink;
+}
+
+<div
+  class="emotion-8 emotion-9"
+>
+  <span
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-0 emotion-1"
+    >
+      Click me
+    </button>
+  </span>
+  <span
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-0 emotion-1"
+    >
+      Click me
+    </button>
+  </span>
+</div>
+`;
+
+exports[`Storyshots Components|Menu with Items that close 1`] = `
+.emotion-4 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  background: hotpink;
+}
+
+<div
+  class="emotion-4 emotion-5"
+>
+  <span
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-0 emotion-1"
+    >
+      Click me
+    </button>
+  </span>
+</div>
+`;
+
+exports[`Storyshots Components|Menu with links 1`] = `
+.emotion-4 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  background: hotpink;
+}
+
+<div
+  class="emotion-4 emotion-5"
+>
+  <span
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-0 emotion-1"
+    >
+      Click me
+    </button>
+  </span>
+</div>
+`;

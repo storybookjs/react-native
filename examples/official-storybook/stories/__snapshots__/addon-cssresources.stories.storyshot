@@ -1,18 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Cssresources Camera Icon 1`] = `
-<i
-  class="fa fa-camera-retro"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-   Camera Icon
-</i>
+  <i
+    class="fa fa-camera-retro"
+  >
+     Camera Icon
+  </i>
+</div>
 `;
 
 exports[`Storyshots Addons|Cssresources Primary Large Button 1`] = `
-<button
-  class="btn btn-lg btn-primary"
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  Primary Large Button
-</button>
+  <button
+    class="btn btn-lg btn-primary"
+    type="button"
+  >
+    Primary Large Button
+  </button>
+</div>
 `;

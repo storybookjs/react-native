@@ -1,0 +1,393 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI|Nav/components components 1`] = `
+.emotion-62 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-58 {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 20px;
+  overflow: auto;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-54 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin-right: -10px;
+  margin-bottom: 15px;
+}
+
+.emotion-6 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-right: 30px;
+}
+
+.emotion-4 {
+  min-height: 30px;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  display: inline-block;
+}
+
+.emotion-2 {
+  padding-left: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 12px;
+}
+
+.emotion-12 {
+  height: 28px;
+  width: 28px;
+  border: 1px solid #eee;
+  position: relative;
+  border-radius: 14px;
+  box-sizing: border-box;
+  background: transparent;
+  cursor: pointer;
+}
+
+.popup-content + .emotion-12,
+.emotion-12:focus {
+  border: 1px solid #00aaff;
+  outline: 0 none;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-12:after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #66bf3c;
+}
+
+.emotion-12 > * {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+}
+
+.emotion-10 {
+  display: block;
+}
+
+.emotion-8 {
+  fill: currentColor;
+}
+
+.emotion-60 {
+  background: transparent;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-18 {
+  height: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  color: #444;
+  padding: 10px;
+  padding-left: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.emotion-18:focus {
+  outline: 0;
+  border-bottom: 1px solid #9fdaff;
+}
+
+.emotion-52 {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.emotion-32 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-30 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.emotion-23 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+}
+
+.emotion-28 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #774dd7;
+}
+
+<div
+  class="emotion-62 emotion-63"
+>
+  <nav
+    class="emotion-60 emotion-61"
+  >
+    <div
+      class="emotion-58 emotion-59"
+    >
+      <div
+        class="emotion-54 emotion-55"
+      >
+        <div
+          class="emotion-16 emotion-17"
+        >
+          <div
+            class="emotion-6 emotion-7"
+          >
+            <div
+              class="emotion-4 emotion-5"
+            >
+              <svg
+                class="emotion-0 emotion-1"
+                height="30px"
+                viewBox="0 0 420 538"
+              >
+                <path
+                  d="M 420,0 28,28 52,520 420,538 Z"
+                  fill="#f1618c"
+                />
+                <path
+                  d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
+                  fill="#fff"
+                />
+                <path
+                  d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
+                  fill="#fff"
+                />
+                <path
+                  d="M 42,520 18,28 H 0 l 18,492 z"
+                  fill="#b57ee5"
+                />
+              </svg>
+              <span
+                class="emotion-2 emotion-3"
+              >
+                <strong>
+                  Title
+                </strong>
+              </span>
+            </div>
+          </div>
+          <span
+            class="emotion-14 emotion-15"
+          >
+            <button
+              class="emotion-12 emotion-13"
+              id="storybook-explorer-menu"
+            >
+              <svg
+                class="emotion-10 emotion-11"
+                height="14px"
+                viewBox="0 0 1024 1024"
+                width="14px"
+              >
+                <path
+                  class="emotion-8 emotion-9"
+                  d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
+                />
+              </svg>
+            </button>
+          </span>
+        </div>
+        <input
+          class="emotion-18 emotion-19"
+          id="storybook-explorer-searchfield"
+          placeholder="Press \\"/\\" to search..."
+        />
+        <div
+          class="emotion-52 emotion-53"
+        >
+          <div
+            class="emotion-34 emotion-35"
+          >
+            <a
+              class="emotion-32 emotion-33"
+              href="/?path=/components/1"
+              id="explorer_1"
+            >
+              <div
+                class="emotion-30 emotion-31"
+              >
+                <svg
+                  class="emotion-22 emotion-23 emotion-11"
+                  height="14px"
+                  viewBox="0 0 1024 1024"
+                  width="14px"
+                >
+                  <path
+                    class="emotion-8 emotion-9"
+                    d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+                  />
+                </svg>
+                <svg
+                  class="emotion-27 emotion-28 emotion-11"
+                  height="14px"
+                  viewBox="0 0 1024 1024"
+                  width="14px"
+                >
+                  <path
+                    class="emotion-8 emotion-9"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  Parent A
+                </span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="emotion-34 emotion-35"
+          >
+            <a
+              class="emotion-32 emotion-33"
+              href="/?path=/components/2"
+              id="explorer_2"
+            >
+              <div
+                class="emotion-30 emotion-31"
+              >
+                <svg
+                  class="emotion-22 emotion-23 emotion-11"
+                  height="14px"
+                  viewBox="0 0 1024 1024"
+                  width="14px"
+                >
+                  <path
+                    class="emotion-8 emotion-9"
+                    d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+                  />
+                </svg>
+                <svg
+                  class="emotion-27 emotion-28 emotion-11"
+                  height="14px"
+                  viewBox="0 0 1024 1024"
+                  width="14px"
+                >
+                  <path
+                    class="emotion-8 emotion-9"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  Parent B
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-56 emotion-57"
+      />
+    </div>
+  </nav>
+</div>
+`;

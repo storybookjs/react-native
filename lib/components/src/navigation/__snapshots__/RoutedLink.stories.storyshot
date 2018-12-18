@@ -1,17 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Navigation/RoutedLink w/ href 1`] = `
-<a
-  href="http://google.com"
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  color: inherit;
+}
+
+<div
+  class="emotion-2 emotion-3"
 >
-  Link
-</a>
+  <a
+    class="emotion-0 emotion-1"
+    href="http://google.com"
+  >
+    Link
+  </a>
+</div>
 `;
 
 exports[`Storyshots Components|Navigation/RoutedLink w/ onClick 1`] = `
-<a
-  href="/"
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  color: inherit;
+}
+
+<div
+  class="emotion-2 emotion-3"
 >
-  Try clicking with different mouse buttons and modifier keys (shift/ctrl/alt/cmd)
-</a>
+  <a
+    class="emotion-0 emotion-1"
+    href="/"
+  >
+    Try clicking with different mouse buttons and modifier keys (shift/ctrl/alt/cmd)
+  </a>
+</div>
 `;

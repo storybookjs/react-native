@@ -28,7 +28,7 @@ module.exports = {
     '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
   },
   testPathIgnorePatterns: ['/node_modules/', '/dist/', 'addon-jest.test.js', '/cli/test/'],
-  collectCoverage: true,
+  collectCoverage: false,
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',
     'lib/**/*.{js,jsx}',

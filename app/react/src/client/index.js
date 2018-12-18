@@ -5,6 +5,7 @@ export {
   addParameters,
   configure,
   getStorybook,
+  raw,
   forceReRender,
 } from './preview';
 

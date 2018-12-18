@@ -1,112 +1,264 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Links.Button First 1`] = `
-<button
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  Go to "Second"
-</button>
+  <button
+    type="button"
+  >
+    Go to "Second"
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Links.Button Second 1`] = `
-<button
-  type="button"
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
 >
-  Go to "First"
-</button>
+  <button
+    type="button"
+  >
+    Go to "First"
+  </button>
+</div>
 `;
 
 exports[`Storyshots Addons|Links.Href log 1`] = `
-<span>
-  See action logger
-</span>
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <span>
+    See action logger
+  </span>
+</div>
 `;
 
 exports[`Storyshots Addons|Links.Link First 1`] = `
-<a
-  href="/"
->
-  Go to Second
-</a>
-`;
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
 
-exports[`Storyshots Addons|Links.Link Second 1`] = `
-<a
-  href="/"
->
-  Go to First
-</a>
-`;
+.emotion-0 {
+  color: inherit;
+}
 
-exports[`Storyshots Addons|Links.Scroll position First 1`] = `
-Array [
-  <div
-    style="margin-bottom:100vh"
-  >
-    Scroll down to see the link
-  </div>,
+<div
+  class="emotion-2 emotion-3"
+>
   <a
+    class="emotion-0 emotion-1"
     href="/"
   >
     Go to Second
-  </a>,
-]
+  </a>
+</div>
 `;
 
-exports[`Storyshots Addons|Links.Scroll position Second 1`] = `
-Array [
+exports[`Storyshots Addons|Links.Link Second 1`] = `
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  color: inherit;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <a
+    class="emotion-0 emotion-1"
+    href="/"
+  >
+    Go to First
+  </a>
+</div>
+`;
+
+exports[`Storyshots Addons|Links.Scroll position First 1`] = `
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  color: inherit;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
   <div
     style="margin-bottom:100vh"
   >
     Scroll down to see the link
-  </div>,
+  </div>
   <a
+    class="emotion-0 emotion-1"
+    href="/"
+  >
+    Go to Second
+  </a>
+</div>
+`;
+
+exports[`Storyshots Addons|Links.Scroll position Second 1`] = `
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  color: inherit;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    style="margin-bottom:100vh"
+  >
+    Scroll down to see the link
+  </div>
+  <a
+    class="emotion-0 emotion-1"
     href="/"
   >
     Go to First
-  </a>,
-]
+  </a>
+</div>
 `;
 
 exports[`Storyshots Addons|Links.Select First 1`] = `
-<a
-  href="/"
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  color: inherit;
+}
+
+<div
+  class="emotion-2 emotion-3"
 >
-  Go back
-</a>
+  <a
+    class="emotion-0 emotion-1"
+    href="/"
+  >
+    Go back
+  </a>
+</div>
 `;
 
 exports[`Storyshots Addons|Links.Select Index 1`] = `
-<select>
-  <option
-    selected=""
-  >
-    Index
-  </option>
-  <option>
-    First
-  </option>
-  <option>
-    Second
-  </option>
-  <option>
-    Third
-  </option>
-</select>
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <select>
+    <option
+      selected=""
+    >
+      Index
+    </option>
+    <option>
+      First
+    </option>
+    <option>
+      Second
+    </option>
+    <option>
+      Third
+    </option>
+  </select>
+</div>
 `;
 
 exports[`Storyshots Addons|Links.Select Second 1`] = `
-<a
-  href="/"
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  color: inherit;
+}
+
+<div
+  class="emotion-2 emotion-3"
 >
-  Go back
-</a>
+  <a
+    class="emotion-0 emotion-1"
+    href="/"
+  >
+    Go back
+  </a>
+</div>
 `;
 
 exports[`Storyshots Addons|Links.Select Third 1`] = `
-<a
-  href="/"
+.emotion-2 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  color: inherit;
+}
+
+<div
+  class="emotion-2 emotion-3"
 >
-  Go back
-</a>
+  <a
+    class="emotion-0 emotion-1"
+    href="/"
+  >
+    Go back
+  </a>
+</div>
 `;
