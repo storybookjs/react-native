@@ -1032,17 +1032,17 @@
   resolved "https://registry.yarnpkg.com/@snyk/gemfile/-/gemfile-1.1.0.tgz#8c254dfc7739b2e8513c44c976fc41872d5f6af0"
   integrity sha512-mLwF+ccuvRZMS0SxUAxA3dAp8mB3m2FxIsBIUWFTYvzxl+E4XTZb8uFrUqXHbcxhZH1Z8taHohNTbzXZn3M8ag==
 
-"@storybook/addon-actions@4.2.0-alpha.1":
-  version "4.2.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-4.2.0-alpha.1.tgz#3c181acd6cc30980f9bc55308c7f42c3919912be"
-  integrity sha512-mCR5CKaR0AIto7Ah83K1pAYFtuWdAtbPhSN/V74HejQr4+ZUL44PdfHtEzdfN+NIsEUR85s98L4KEVcFQHo38g==
+"@storybook/addon-actions@4.2.0-alpha.3":
+  version "4.2.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-4.2.0-alpha.3.tgz#ba5ef5d8379338e870583f80b5d3b8782ab7886b"
+  integrity sha512-7wqhaM/yDxKZeasQqjTsEjcDKWsJrkCKYx/1gzvQi3NqpctvdOzFyAKKDB0LDbEUPNdOdXUsPV5zm+jlXzw98g==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.2.0-alpha.1"
-    "@storybook/components" "4.2.0-alpha.1"
-    "@storybook/core-events" "4.2.0-alpha.1"
+    "@storybook/addons" "4.2.0-alpha.3"
+    "@storybook/components" "4.2.0-alpha.3"
+    "@storybook/core-events" "4.2.0-alpha.3"
     core-js "^2.5.7"
     deep-equal "^1.0.1"
     global "^4.3.2"
@@ -1144,6 +1144,11 @@
   version "4.2.0-alpha.1"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-4.2.0-alpha.1.tgz#c124d33a4d8f7800294704313c34887cfcad7c13"
   integrity sha512-K7Ju49gtDBGxXaglapkzttFm9Novx0hkppOSZRlNlQN5Y3Kt4hGQrYD3U1L5+qZGIapaywvXWBUs/9rnJlOsxg==
+
+"@storybook/core-events@4.2.0-alpha.3":
+  version "4.2.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-4.2.0-alpha.3.tgz#3a84bfda57810b4f649965b1deb85247e591601d"
+  integrity sha512-s09UMgBESy+xSG5ngLGW0o3WKfzCWZ+DPnYRJ78EQUnslMPewsTjPTo8MsVdD27ngVpndMvQq/qTmlcGzrEDnw==
 
 "@storybook/core@4.2.0-alpha.1":
   version "4.2.0-alpha.1"
