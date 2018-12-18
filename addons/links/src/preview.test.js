@@ -17,6 +17,11 @@ export const mockChannel = () => {
         cb = callback;
       }
     },
+    once(id, callback) {
+      if (id === EVENTS.RECEIVE) {
+        cb = callback;
+      }
+    },
   };
 };
 

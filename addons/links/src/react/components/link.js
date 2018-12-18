@@ -22,7 +22,9 @@ export default class LinkTo extends PureComponent {
   }
 
   handleClick = e => {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
     navigate(this.props);
   };
 
