@@ -544,7 +544,9 @@ exports[`Storyshots Button with new info 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      node
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -569,7 +571,9 @@ exports[`Storyshots Button with new info 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -598,7 +602,9 @@ exports[`Storyshots Button with new info 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -655,7 +661,9 @@ exports[`Storyshots Button with new info 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
