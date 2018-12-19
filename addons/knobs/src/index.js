@@ -5,8 +5,8 @@ import { SET_OPTIONS } from './shared';
 
 import { manager, registerKnobs } from './registerKnobs';
 
-export function knob(name, options) {
-  return manager.knob(name, options);
+export function knob(name, optionsParam) {
+  return manager.knob(name, optionsParam);
 }
 
 export function text(name, value, groupId) {
@@ -72,6 +72,10 @@ export function button(name, callback, groupId) {
 
 export function files(name, accept, value = []) {
   return manager.knob(name, { type: 'files', accept, value });
+}
+
+export function optionsKnob(name, valuesObj, value, optionsObj, groupId) {
+  return manager.knob(name, { type: 'options', options: valuesObj, value, optionsObj, groupId });
 }
 
 const defaultOptions = {

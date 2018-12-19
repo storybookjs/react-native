@@ -102,7 +102,7 @@ brandLink: {
 }
 ```
 
-filter: deep thene for `stories filter section`
+filter: deep theme for `stories filter section`
 
 ```
 filter: {
@@ -110,7 +110,7 @@ filter: {
 }
 ```
 
-treeHeader: deep thene for `tree header`
+treeHeader: deep theme for `tree header`
 
 ```
 treeHeader: {
@@ -118,7 +118,7 @@ treeHeader: {
 }
 ```
 
-treeMenuHeader: deep thene for `tree menu header` of each menu
+treeMenuHeader: deep theme for `tree menu header` of each menu
 
 ```
 treeMenuHeader: {
@@ -126,7 +126,7 @@ treeMenuHeader: {
 }
 ```
 
-menuLink: deep thene for `menu link` of each story
+menuLink: deep theme for `menu link` of each story
 
 ```
 menuLink: {
@@ -134,7 +134,7 @@ menuLink: {
 }
 ```
 
-activeMenuLink: deep thene for `active menu link` for the active story
+activeMenuLink: deep theme for `active menu link` for the active story
 
 ```
 activeMenuLink: {
