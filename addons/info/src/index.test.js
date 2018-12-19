@@ -28,7 +28,11 @@ const storybookReactClassMock = {
   name: 'TestComponent',
   path: reactClassPath,
   docgenInfo: {
-    description: 'Awesome test component description',
+    description: `
+# Awesome test component description
+## with markdown support
+**bold** *cursive* 
+    `,
     name: 'TestComponent',
   },
 };

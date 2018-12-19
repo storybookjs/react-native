@@ -1,3 +1,92 @@
+## 4.2.0-alpha.4 (December 18, 2018)
+
+### Bug Fixes
+
+* React: fix alias for react(-dom) to resolve to the user's version ([#5042](https://github.com/storybooks/storybook/pull/5042))
+
+### Dependency Upgrades
+
+* Bump husky from 1.2.0 to 1.3.0 ([#5038](https://github.com/storybooks/storybook/pull/5038))
+* Bump fork-ts-checker-webpack-plugin from 0.4.15 to 0.5.2 ([#5037](https://github.com/storybooks/storybook/pull/5037))
+
+## 4.2.0-alpha.3 (December 18, 2018)
+
+### Bug Fixes
+
+* React: add alias to react & react-dom ([#5016](https://github.com/storybooks/storybook/pull/5016))
+* Addon-knobs: fix color picker display ([#5010](https://github.com/storybooks/storybook/pull/5010))
+
+## 4.2.0-alpha.2 (December 16, 2018)
+
+### Features
+
+* Addon-Info: add markdown support for jsdoc comments ([#4983](https://github.com/storybooks/storybook/pull/4983))
+* Addon-Storysource: support Flow ([#4971](https://github.com/storybooks/storybook/pull/4971))
+
+### Maintenance
+
+* Make applyPresets function signature more consistent ([#4988](https://github.com/storybooks/storybook/pull/4988))
+
+### Dependency Upgrades
+
+* RESET lockfile ([#4991](https://github.com/storybooks/storybook/pull/4991))
+
+## 4.1.2 (December 15, 2018)
+
+### Bug Fixes
+
+* Addon-Knob: Add missing key property in Panel ([#4507](https://github.com/storybooks/storybook/pull/4507))
+* Fix package version dependencies ([#4960](https://github.com/storybooks/storybook/pull/4960))
+
+## 4.2.0-alpha.1 (December 12, 2018)
+
+Fixes 4.2.0-alpha.0
+
+### Features
+
+* Addon-info: add forwardRef support ([#4961](https://github.com/storybooks/storybook/pull/4961))
+
+### Bug Fixes
+
+* Addon-knobs: Add missing key property in Panel ([#4507](https://github.com/storybooks/storybook/pull/4507))
+
+### Maintenance
+
+* Addon-notes: Migrated to TypeScript ([#4758](https://github.com/storybooks/storybook/pull/4758))
+
+### Dependency Upgrades
+
+* Fix: Add missing peer dependencies to addon-knobs ([#4928](https://github.com/storybooks/storybook/pull/4928))
+
+## 4.2.0-alpha.0 (December 12, 2018)
+
+Bad release
+
+## 4.1.1 (December 12, 2018)
+
+### Bug Fixes
+
+* FIX react native by adding an empty array named dlls to the templateParameters ([#4985](https://github.com/storybooks/storybook/pull/4985))
+
+## 4.1.0 (December 12, 2018)
+
+Storybook 4.1 with performance and compatibility improvements! Highlights include:
+
+* Core: Performance optimizations on separate manager preview split, improved cold start, restart & rebuild ([#4834](https://github.com/storybooks/storybook/pull/4834))
+* React: add support for all versions of react ([#4808](https://github.com/storybooks/storybook/pull/4808))
+* Addon-CSSResources: new adddon to dynamically add/remove css ([#4622](https://github.com/storybooks/storybook/pull/4622))
+* React: use babel presets/plugins based on CRA. ([#4836](https://github.com/storybooks/storybook/pull/4836))
+* React-native: Add ability to filter story list ([#4806](https://github.com/storybooks/storybook/pull/4806))
+* React: Add TypeScript support for react-scripts ([#4824](https://github.com/storybooks/storybook/pull/4824))
+
+There are dozens more fixes, features, and tweaks in the 4.1 release. See changelogs for `4.1.0-*` for details.
+
+## 4.1.0-alpha.13 (December 12, 2018)
+
+### Maintenance
+
+* React-native: add core-js to addons ([#4981](https://github.com/storybooks/storybook/pull/4981))
+
 ## 4.1.0-alpha.12 (December 11, 2018)
 
 ### Bug Fixes

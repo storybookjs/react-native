@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "4.1.0-alpha.12",
+  "version": "4.2.0-alpha.4",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -16,41 +16,24 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "jsnext:main": "src/index.js",
-  "bin": {
-    "storybook": "dist/bin/storybook.js"
-  },
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
-  },
   "dependencies": {
-    "@storybook/addons": "4.1.0-alpha.12",
-    "@storybook/channel-websocket": "4.1.0-alpha.12",
-    "@storybook/channels": "4.1.0-alpha.12",
-    "@storybook/core": "4.1.0-alpha.12",
-    "@storybook/core-events": "4.1.0-alpha.12",
-    "@storybook/ui": "4.1.0-alpha.12",
-    "commander": "^2.19.0",
+    "@storybook/addons": "4.2.0-alpha.4",
+    "@storybook/channel-websocket": "4.2.0-alpha.4",
+    "@storybook/channels": "4.2.0-alpha.4",
+    "@storybook/client-api": "4.2.0-alpha.4",
+    "@storybook/core-events": "4.2.0-alpha.4",
     "core-js": "^2.5.7",
-    "express": "^4.16.3",
-    "global": "^4.3.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
-    "react-dev-utils": "^6.1.0",
-    "react-dom": "^16.6.0",
     "react-native-swipe-gestures": "^1.0.2",
-    "shelljs": "^0.8.2",
-    "url-parse": "^1.4.3",
-    "uuid": "^3.3.2",
-    "webpack": "^4.23.1",
-    "ws": "^6.1.0"
+    "url-parse": "^1.4.3"
   },
   "devDependencies": {
     "react-native": "^0.52.2"
   },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0",
     "react-native": ">=0.51.0"
   },
   "publishConfig": {

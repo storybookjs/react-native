@@ -33,6 +33,7 @@
     "@storybook/channel-postmessage": "file:../../packs/storybook-channel-postmessage.tgz",
     "@storybook/channel-websocket": "file:../../packs/storybook-channel-websocket.tgz",
     "@storybook/channels": "file:../../packs/storybook-channels.tgz",
+    "@storybook/client-api": "file:../../packs/storybook-client-api.tgz",
     "@storybook/client-logger": "file:../../packs/storybook-client-logger.tgz",
     "@storybook/components": "file:../../packs/storybook-components.tgz",
     "@storybook/core": "file:../../packs/storybook-core.tgz",

@@ -1,0 +1,37 @@
+{
+  "name": "@storybook/react-native-server",
+  "version": "4.1.0-alpha.12",
+  "description": "A better way to develop React Native Components for your app",
+  "keywords": [
+    "react",
+    "react-native",
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react-native-server",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "license": "MIT",
+  "bin": {
+    "storybook": "dist/bin/storybook.js"
+  },
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/core": "4.1.0-alpha.12",
+    "commander": "^2.19.0",
+    "webpack": "^4.23.1",
+    "ws": "^6.1.0"
+  },
+  "peerDependencies": {
+    "babel-loader": "^7.0.0 || ^8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

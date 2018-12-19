@@ -134,6 +134,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
       </div>
       <span
         class="Resizer vertical "
+        role="presentation"
       />
       <div
         class="Pane vertical Pane2  "
@@ -166,6 +167,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
           </div>
           <span
             class="Resizer vertical "
+            role="presentation"
           />
           <div
             class="Pane vertical Pane2  "
@@ -324,6 +326,7 @@ exports[`Storyshots Components|Layout default 1`] = `
       </div>
       <span
         class="Resizer vertical "
+        role="presentation"
       />
       <div
         class="Pane vertical Pane2  "
@@ -356,6 +359,7 @@ exports[`Storyshots Components|Layout default 1`] = `
           </div>
           <span
             class="Resizer horizontal "
+            role="presentation"
           />
           <div
             class="Pane horizontal Pane2  "
@@ -501,6 +505,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
       </div>
       <span
         class="Resizer vertical disabled"
+        role="presentation"
       />
       <div
         class="Pane vertical Pane2  "
@@ -533,6 +538,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
           </div>
           <span
             class="Resizer horizontal disabled"
+            role="presentation"
           />
           <div
             class="Pane horizontal Pane2  "
@@ -917,6 +923,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
       </div>
       <span
         class="Resizer vertical "
+        role="presentation"
       />
       <div
         class="Pane vertical Pane2  "
@@ -949,6 +956,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
           </div>
           <span
             class="Resizer horizontal disabled"
+            role="presentation"
           />
           <div
             class="Pane horizontal Pane2  "
@@ -1104,6 +1112,7 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
       </div>
       <span
         class="Resizer vertical disabled"
+        role="presentation"
       />
       <div
         class="Pane vertical Pane2  "
@@ -1136,6 +1145,7 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
           </div>
           <span
             class="Resizer horizontal "
+            role="presentation"
           />
           <div
             class="Pane horizontal Pane2  "

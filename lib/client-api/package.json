@@ -1,0 +1,26 @@
+{
+  "name": "@storybook/client-api",
+  "version": "4.1.0-alpha.12",
+  "description": "Api used for creating Storybook Client (client and store)",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/client-api",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "dependencies": {
+    "@storybook/addons": "4.1.0-alpha.12",
+    "@storybook/client-logger": "4.1.0-alpha.12",
+    "@storybook/core-events": "4.1.0-alpha.12"
+  },
+  "license": "MIT",
+  "main": "index.js"
+}

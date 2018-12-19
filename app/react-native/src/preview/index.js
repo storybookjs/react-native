@@ -8,9 +8,9 @@ import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
 import Channel from '@storybook/channels';
 import createChannel from '@storybook/channel-websocket';
-import { StoryStore, ClientApi } from '@storybook/core/client';
-import OnDeviceUI from './components/OnDeviceUI';
-import StoryView from './components/StoryView';
+import { StoryStore, ClientApi } from '@storybook/client-api';
+import OnDeviceUI from './components/OnDeviceUI/index';
+import StoryView from './components/StoryView/index';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
