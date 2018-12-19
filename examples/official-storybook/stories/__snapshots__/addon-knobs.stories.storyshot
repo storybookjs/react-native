@@ -29,6 +29,46 @@ exports[`Storyshots Addons|Knobs.withKnobs dynamic knobs 1`] = `
 </div>
 `;
 
+exports[`Storyshots Addons|Knobs.withKnobs optionsKnob 1`] = `
+<div
+  style="color:white"
+>
+  <p>
+    Weekday: Tuesday
+  </p>
+  <p>
+    Weekend: Saturday
+  </p>
+  <p>
+    Month: January
+  </p>
+  <p>
+    Fruit:
+  </p>
+  <ul>
+    <li>
+      apple
+    </li>
+  </ul>
+  <p>
+    Vegetables:
+  </p>
+  <ul>
+    <li>
+      carrot
+    </li>
+  </ul>
+  <p>
+    Dairy:
+  </p>
+  <ul>
+    <li>
+      milk
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Storyshots Addons|Knobs.withKnobs triggers actions via button 1`] = `
 <div>
   <p>
