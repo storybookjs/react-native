@@ -87,7 +87,9 @@
     "mock-fs": "^4.7.0"
   },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0"
+    "babel-loader": "^7.0.0 || ^8.0.0",
+    "react": ">=16.3.0",
+    "react-dom": ">=16.3.0"
   },
   "publishConfig": {
     "access": "public"
