@@ -15,6 +15,7 @@ title: 'Live Examples'
 - [Svelte](https://storybooks-svelte.netlify.com/)
 - [Riot](https://storybooks-riot.netlify.com/)
 - [Ember](https://storybooks-ember.netlify.com/)
+- [Preact](https://storybooks-preact.netlify.com/)
 
 ### 3.4
 

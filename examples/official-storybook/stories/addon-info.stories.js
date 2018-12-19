@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import DocgenButton from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
+import ForwardedRefButton from '../components/ForwardedRefButton';
 import { NamedExportButton } from '../components/NamedExportButton';
 import TableComponent from '../components/TableComponent';
 import externalMdDocs from './addon-info-resources/EXAMPLE.md';
@@ -431,6 +432,12 @@ storiesOf('Addons|Info.Parameters', module)
     () => <BaseButton onClick={action('clicked')} label="Button" />,
     { info: { disable: true } }
   );
+
+storiesOf('Addons|Info.ForwardRef', module)
+  .addDecorator(withInfo)
+  .add('Displays forwarded ref components correctly', () => (
+    <ForwardedRefButton label="Forwarded Ref Button" />
+  ));
 
 storiesOf('Addons|Info.deprecated', module).add(
   'Displays Markdown in description',

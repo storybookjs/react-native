@@ -1,3 +1,11 @@
+## Getting Started
+
+Add the following module into your app.
+
+ ```sh
+npm install --save-dev @storybook/addon-storyshots-puppeteer
+```
+
 ## Configure Storyshots for image snapshots
 
 /\*\ **React-native** is **not supported** by this test function.

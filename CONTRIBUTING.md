@@ -4,7 +4,7 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
-This repo uses yarn workspaces, so you should install `yarn@1.3.2` or higher as package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
+This repo uses yarn workspaces, so you should install `yarn@1.3.2` or higher as a package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
 
 ## Issues
 
@@ -57,15 +57,15 @@ You can also pick suites from CLI. Suites available are listed below.
 
 `yarn test --core`
 
-This option executes test from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`.
-Before the tests are ran, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core`
+This option executes tests from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`.
+Before the tests are run, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core`
 
 ##### CRA-kitchen-sink - Image snapshots using Storyshots
 
 `yarn test --image`
 
 This option executes tests from `<rootdir>/examples/official-storybook`
-In order for the image snapshots to be correctly generated, you must have static build of the storybook up-to-date :
+In order for the image snapshots to be correctly generated, you must have a static build of the storybook up-to-date :
 
 ```javascript
 cd examples/official-storybook
@@ -78,7 +78,7 @@ Puppeteer is used to launch and grab screenshots of example pages, while jest is
 
 #### 2b. Run e2e tests for CLI
 
-If you made any changes to `lib/cli` package, the easiest way to verify that it doesn't break anything is to run e2e tests:
+If you made any changes to the `lib/cli` package, the easiest way to verify that it doesn't break anything is to run e2e tests:
 
     yarn test --cli
 
@@ -92,7 +92,7 @@ In that case, please check the git diff before committing to make sure it only c
 
 #### 2c. Link `storybook` and any other required dependencies:
 
-If you want to test your own existing project using the github version of storybook, you need to `link` the packages you use in your project.
+If you want to test your own existing project using the GitHub version of storybook, you need to `link` the packages you use in your project.
 
 ```sh
     cd app/react
@@ -131,9 +131,9 @@ A good way to do that is using the example `cra-kitchen-sink` app embedded in th
     git push -u <your-username> master
 ```
 
-If you follow that process, you can then link to the github repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
+If you follow that process, you can then link to the GitHub repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
 
-**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of the storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
+**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however, you can still modify storybook's to mirror your app's version of the storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
 
 ### Updating Tests
 
@@ -154,7 +154,7 @@ We welcome your contributions. There are many ways you can help us. This is few 
 - Fix typos and add more [documentation](https://github.com/storybooks/storybook/labels/needs%20docs).
 - Try to fix some [bugs](https://github.com/storybooks/storybook/labels/bug).
 - Work on [API](https://github.com/storybooks/storybook/labels/enhancement%3A%20api), [Addons](https://github.com/storybooks/storybook/labels/enhancement%3A%20addons), [UI](https://github.com/storybooks/storybook/labels/enhancement%3A%20ui) or [Webpack](https://github.com/storybooks/storybook/labels/enhancement%3A%20webpack) use enhancements and new [features](https://github.com/storybooks/storybook/labels/feature%20request).
-- Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (specially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
+- Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (especially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
 
 Before you submit a new PR, make sure you run `yarn test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
 

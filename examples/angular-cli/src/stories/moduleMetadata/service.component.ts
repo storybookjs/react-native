@@ -6,9 +6,7 @@ import { DummyService } from './dummy.service';
   template: `
     <p>{{ name }}:</p>
     <ul>
-      <li *ngFor="let item of items">
-        {{ item }}
-      </li>
+      <li *ngFor="let item of items">{{ item }}</li>
     </ul>
   `,
 })

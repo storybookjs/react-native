@@ -16,7 +16,8 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
     MARKO("Marko", "marko-cli"),
     SVELTE("Svelte", "svelte-kitchen-sink"),
     RIOT("Riot", "riot-kitchen-sink"),
-    EMBER("Ember", "ember-cli");
+    EMBER("Ember", "ember-cli"),
+    PREACT("Preact", "preact-kitchen-sink", false);
 
     val lowerName = appName.toLowerCase()
 
@@ -82,7 +83,9 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
                 }
 
                 artifacts {
-                    artifactRules = "dist.zip!**"
+                    artifactRules = """
+                        dist.zip!**
+                    """.trimIndent()
                 }
             }
         }

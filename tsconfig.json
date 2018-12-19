@@ -1,11 +1,19 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "noImplicitAny": true,
+    "jsx": "react",
+    "module": "commonjs",
     "target": "es5",
+    "types": [
+      "node",
+      "jest"
+    ],
     "lib": [
       "es2016",
       "dom"

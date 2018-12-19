@@ -17,7 +17,7 @@ npm i -D @storybook/addon-info
 
 ## Basic usage
 
-Then, add `withInfo` as a decarator to your book of stories.
+Then, add `withInfo` as a decorator to your book of stories.
 It is possible to add `info` by default to all or a subsection of stories by using a global or story decorator.
 
 It is important to declare this decorator as **the first decorator**, otherwise it won't work well.

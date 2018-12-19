@@ -226,7 +226,7 @@ Array [
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #ff3f3f;
+  border-bottom-color: #d53535;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -294,7 +294,7 @@ Array [
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #0edf62;
+  border-bottom-color: #09833a;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -550,7 +550,7 @@ Array [
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #ff3f3f;
+  border-bottom-color: #d53535;
   height: 32px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -646,7 +646,7 @@ Array [
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #0edf62;
+  border-bottom-color: #09833a;
   height: 32px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -947,7 +947,7 @@ Array [
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #ff3f3f;
+  border-bottom-color: #d53535;
   min-height: 32px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -1013,7 +1013,7 @@ Array [
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #0edf62;
+  border-bottom-color: #09833a;
   min-height: 32px;
   padding-top: 5px;
   padding-bottom: 5px;

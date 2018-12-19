@@ -185,9 +185,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
         href="https://storybook.js.org/basics/writing-stories"
         target="_blank"
       >
-        
-			      Writing Stories
-			    
+        Writing Stories
       </a>
       
 			    section in our documentation.

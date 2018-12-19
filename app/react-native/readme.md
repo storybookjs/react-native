@@ -124,9 +124,11 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
     initialSelection: Object (null)
         -- initialize storybook with a specific story. In case a valid object is passed, it will take precedence over `shouldPersistSelection. ex: `{ kind: 'Knobs', story: 'with knobs' }`
     shouldPersistSelection: Boolean (true)
-        -- initialize storybook with the last selected story.`
+        -- initialize storybook with the last selected story.
     shouldDisableKeyboardAvoidingView: Boolean (false)
         -- Disable KeyboardAvoidingView wrapping Storybook's view
+    keyboardAvoidingViewVerticalOffset: Number (0)
+        -- With shouldDisableKeyboardAvoidingView=true, this will set the keyboardverticaloffset (https://facebook.github.io/react-native/docs/keyboardavoidingview#keyboardverticaloffset) value for KeyboardAvoidingView wrapping Storybook's view
 }
 ```
 

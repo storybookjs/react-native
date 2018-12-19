@@ -103,14 +103,16 @@ export default class Panel extends React.Component {
 
     let knobsArray = Object.keys(knobs);
 
-    knobsArray.filter(key => knobs[key].groupId).forEach(key => {
-      const knobKeyGroupId = knobs[key].groupId;
-      groupIds.push(knobKeyGroupId);
-      groups[knobKeyGroupId] = {
-        render: () => <Text id={knobKeyGroupId}>{knobKeyGroupId}</Text>,
-        title: knobKeyGroupId,
-      };
-    });
+    knobsArray
+      .filter(key => knobs[key].groupId)
+      .forEach(key => {
+        const knobKeyGroupId = knobs[key].groupId;
+        groupIds.push(knobKeyGroupId);
+        groups[knobKeyGroupId] = {
+          render: () => <Text id={knobKeyGroupId}>{knobKeyGroupId}</Text>,
+          title: knobKeyGroupId,
+        };
+      });
 
     if (groupIds.length > 0) {
       groups[DEFAULT_GROUP_ID] = {
