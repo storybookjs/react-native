@@ -9,6 +9,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -22,5 +25,5 @@
     "@storybook/core-events": "4.1.0-alpha.12"
   },
   "license": "MIT",
-  "main": "index.js"
+  "main": "dist/index.js"
 }
