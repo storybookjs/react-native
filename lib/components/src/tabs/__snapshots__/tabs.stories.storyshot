@@ -109,7 +109,6 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
 }
 
 .emotion-18 {
-  overflow: hidden;
   background: rgba(255,255,255,0.89);
   border-radius: 4px;
   border: 1px solid rgba(0,0,0,0.1);
@@ -353,7 +352,6 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
 }
 
 .emotion-18 {
-  overflow: hidden;
   background: rgba(255,255,255,0.89);
   border-radius: 4px;
   border: 1px solid rgba(0,0,0,0.1);
@@ -549,7 +547,6 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
 }
 
 .emotion-10 {
-  overflow: hidden;
   background: rgba(255,255,255,0.89);
   border-radius: 4px;
   border: 1px solid rgba(0,0,0,0.1);
@@ -608,7 +605,6 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
 
 exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
 .emotion-18 {
-  overflow: hidden;
   background: rgba(255,255,255,0.89);
   border-radius: 4px;
   border: 1px solid rgba(0,0,0,0.1);
@@ -974,7 +970,6 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
 }
 
 .emotion-18 {
-  overflow: hidden;
   background: rgba(255,255,255,0.89);
   border-radius: 4px;
   border: 1px solid rgba(0,0,0,0.1);

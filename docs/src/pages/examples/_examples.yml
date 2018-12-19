@@ -166,3 +166,16 @@ auth0:
   demo: https://auth0-cosmos.now.sh/sandbox/
   source: https://github.com/auth0/cosmos
   site: https://auth0-cosmos.now.sh/
+mockingbot:
+  thumbnail: mockingbot.png
+  title: MockingBot
+  description: MockingBot UI component library(ibot)
+  source: https://github.com/mockingbot/ibot
+  demo: https://ibot.guide
+vanilla:
+  thumbnail: vanilla.png
+  title: Vanilla React
+  description: A simple implementation of Vanilla Framework using React
+  demo: https://vanilla-framework.github.io/vanilla-framework-react/
+  source: https://github.com/vanilla-framework/vanilla-framework-react
+  site: https://vanillaframework.io/

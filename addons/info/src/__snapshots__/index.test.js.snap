@@ -2970,7 +2970,79 @@ exports[`addon Info should render component description 1`] = `
           }
         >
           <div>
-            Awesome test component description
+            <H1
+              context={Object {}}
+              id="awesome-test-component-description"
+              key="0"
+            >
+              <h1
+                id="awesome-test-component-description"
+                style={
+                  Object {
+                    "WebkitFontSmoothing": "antialiased",
+                    "borderBottom": "1px solid #eee",
+                    "color": "#444",
+                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontSize": "40px",
+                    "fontWeight": 600,
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              >
+                Awesome test component description
+              </h1>
+            </H1>
+            <H2
+              context={Object {}}
+              id="awesome-test-component-description-with-markdown-support"
+              key="1"
+            >
+              <h2
+                id="awesome-test-component-description-with-markdown-support"
+                style={
+                  Object {
+                    "WebkitFontSmoothing": "antialiased",
+                    "color": "#444",
+                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontSize": "30px",
+                    "fontWeight": 600,
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              >
+                with markdown support
+              </h2>
+            </H2>
+            <P
+              context={Object {}}
+              key="4"
+            >
+              <div
+                style={
+                  Object {
+                    "WebkitFontSmoothing": "antialiased",
+                    "color": "#444",
+                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontSize": "15px",
+                  }
+                }
+              >
+                <strong
+                  key="2"
+                >
+                  bold
+                </strong>
+                 
+                <em
+                  key="3"
+                >
+                  cursive
+                </em>
+                 
+              </div>
+            </P>
           </div>
           <div>
             <h1
