@@ -2009,9 +2009,9 @@
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.5.0.tgz#4b91c66ee8cf0abb6938e02fdec207279959962e"
 
-"@types/node@*", "@types/node@^10.12.5", "@types/node@~10.12.1":
-  version "10.12.14"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.14.tgz#c03b6380c5c301be0499ecd143b99b76ebe45678"
+"@types/node@*", "@types/node@^10.12.17", "@types/node@~10.12.17":
+  version "10.12.17"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.17.tgz#7040565b2c93d59325a68fa69073e754a7eda93a"
 
 "@types/node@^6.0.0", "@types/node@^6.0.46":
   version "6.14.2"
@@ -9629,7 +9629,7 @@ graphql-request@^1.5.0:
 
 graphql@^0.13.2, graphql@^14.0.2:
   version "0.13.2"
-  resolved "http://registry.npmjs.org/graphql/-/graphql-0.13.2.tgz#4c740ae3c222823e7004096f832e7b93b2108270"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.13.2.tgz#4c740ae3c222823e7004096f832e7b93b2108270"
   dependencies:
     iterall "^1.2.1"
 
