@@ -114,7 +114,7 @@ export default class Preview {
               stories={preview._stories}
               events={channel}
               url={webUrl}
-              isUIOpen={params.isUIOpen}
+              isUIHidden={params.isUIHidden}
               tabOpen={params.tabOpen}
               getInitialStory={
                 setInitialStory
