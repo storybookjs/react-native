@@ -10,7 +10,7 @@ function test(options) {
 }
 
 function configure(options, storybook) {
-  const { configPath = 'storybook', config } = options;
+  const { configPath = '.storybook', config } = options;
 
   if (config && typeof config === 'function') {
     config(storybook);
