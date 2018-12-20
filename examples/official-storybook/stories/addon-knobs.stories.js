@@ -199,13 +199,14 @@ storiesOf('Addons|Knobs.withKnobs', module)
         string: 'string',
         object: {},
         array: [],
+        function: () => {},
       },
       'string'
     );
     const value = m.toString();
     return (
       <pre>
-        the type of {value} = {typeof m}
+        the type of {JSON.stringify(value, null, 2)} = {typeof m}
       </pre>
     );
   })

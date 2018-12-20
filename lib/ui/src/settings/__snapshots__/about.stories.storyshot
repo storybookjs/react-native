@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI|AboutPage default 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+<div
+  class="emotion-0 emotion-1"
+/>
+`;
