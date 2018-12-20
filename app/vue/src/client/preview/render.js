@@ -1,24 +1,17 @@
 import { stripIndents } from 'common-tags';
 import Vue from 'vue';
+import { VALUES } from '.';
 
 let root = null;
 
-function getComponentProxy(component) {
-  return Object.entries(component.props || {})
-    .map(([name, def]) => ({ [name]: def.default }))
-    .reduce((wrap, prop) => ({ ...wrap, ...prop }), {});
-}
-
-function renderRoot(component, proxy) {
+function renderRoot(component) {
   root = new Vue({
     el: '#root',
-    beforeCreate() {
-      this.proxy = proxy;
+    data() {
+      return { [VALUES]: component.options[VALUES] };
     },
-
     render(h) {
-      const props = this.proxy;
-      return h('div', { attrs: { id: 'root' } }, [h(component, { props })]);
+      return h('div', { attrs: { id: 'root' } }, [h(component)]);
     },
   });
 }
@@ -49,15 +42,12 @@ export default function render({
 
   showMain();
 
-  const proxy = getComponentProxy(component);
-
   // at component creation || refresh by HMR
   if (!root || !forceRender) {
     if (root) root.$destroy();
 
-    renderRoot(component, proxy);
+    renderRoot(component);
   } else {
-    root.proxy = proxy;
-    root.$forceUpdate();
+    root[VALUES] = component.options[VALUES];
   }
 }
