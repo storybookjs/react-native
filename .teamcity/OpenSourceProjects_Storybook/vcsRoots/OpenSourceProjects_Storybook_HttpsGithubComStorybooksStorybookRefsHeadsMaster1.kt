@@ -8,6 +8,7 @@ object OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMa
     id = "OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster1"
     name = "https://github.com/storybooks/storybook#refs/heads/master (1)"
     url = "git@github.com:storybooks/storybook.git"
+    branch = "refs/heads/next"
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "Storybook bot"

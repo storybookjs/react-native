@@ -1,30 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|stories/StoriesPanel default 1`] = `
+.emotion-10 {
+  padding: 10px 0 10px 10px;
+}
+
+.emotion-4 {
+  margin: 0 0 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-weight: bolder;
+  color: currentColor;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bolder;
+  color: currentColor;
+  border: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inlineBlock;
+  padding: 0;
+  margin: 0 0 0 5px;
+  background-color: inherit;
+  outline: 0;
+  width: 30px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-8 {
+  position: relative;
+}
+
+.emotion-6 {
+  font-size: 12px;
+  color: #828282;
+  padding: 5px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  height: 26px;
+  background: rgba(255,255,255,0.89);
+  border: 0 none;
+  outline: none;
+  border-radius: 2px;
+}
+
 <div
-  class="css-3dwd22 e1b9pp5i0"
+  class="emotion-10 emotion-11"
 >
   <div
-    class="css-5xz1i6 ez1mtsr0"
+    class="emotion-4 emotion-5"
   >
     <a
-      class="css-ypfoxr ez1mtsr1"
+      class="emotion-0 emotion-1"
       href=""
       rel="noopener noreferrer"
       target="_blank"
     />
     <button
-      class="css-i6e0jg ez1mtsr2"
+      class="emotion-2 emotion-3"
     >
       ⌘
     </button>
   </div>
   <div
-    class="css-79elbk eg9vth70"
+    class="emotion-8 emotion-9"
   >
     <input
       autocomplete="off"
-      class="css-1yhj4t5 eg9vth71"
+      class="emotion-6 emotion-7"
       name="filter-text"
       placeholder="Filter"
       spellcheck="false"
@@ -36,30 +122,116 @@ exports[`Storyshots UI|stories/StoriesPanel default 1`] = `
 `;
 
 exports[`Storyshots UI|stories/StoriesPanel storiesHierarchies exists but is empty 1`] = `
+.emotion-10 {
+  padding: 10px 0 10px 10px;
+}
+
+.emotion-4 {
+  margin: 0 0 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-weight: bolder;
+  color: currentColor;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bolder;
+  color: currentColor;
+  border: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inlineBlock;
+  padding: 0;
+  margin: 0 0 0 5px;
+  background-color: inherit;
+  outline: 0;
+  width: 30px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-8 {
+  position: relative;
+}
+
+.emotion-6 {
+  font-size: 12px;
+  color: #828282;
+  padding: 5px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  height: 26px;
+  background: rgba(255,255,255,0.89);
+  border: 0 none;
+  outline: none;
+  border-radius: 2px;
+}
+
 <div
-  class="css-3dwd22 e1b9pp5i0"
+  class="emotion-10 emotion-11"
 >
   <div
-    class="css-5xz1i6 ez1mtsr0"
+    class="emotion-4 emotion-5"
   >
     <a
-      class="css-ypfoxr ez1mtsr1"
+      class="emotion-0 emotion-1"
       href=""
       rel="noopener noreferrer"
       target="_blank"
     />
     <button
-      class="css-i6e0jg ez1mtsr2"
+      class="emotion-2 emotion-3"
     >
       ⌘
     </button>
   </div>
   <div
-    class="css-79elbk eg9vth70"
+    class="emotion-8 emotion-9"
   >
     <input
       autocomplete="off"
-      class="css-1yhj4t5 eg9vth71"
+      class="emotion-6 emotion-7"
       name="filter-text"
       placeholder="Filter"
       spellcheck="false"
@@ -71,30 +243,116 @@ exports[`Storyshots UI|stories/StoriesPanel storiesHierarchies exists but is emp
 `;
 
 exports[`Storyshots UI|stories/StoriesPanel when open on mobile device 1`] = `
+.emotion-4 {
+  margin: 0 0 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-weight: bolder;
+  color: currentColor;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bolder;
+  color: currentColor;
+  border: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inlineBlock;
+  padding: 0;
+  margin: 0 0 0 5px;
+  background-color: inherit;
+  outline: 0;
+  width: 30px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-8 {
+  position: relative;
+}
+
+.emotion-6 {
+  font-size: 12px;
+  color: #828282;
+  padding: 5px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  height: 26px;
+  background: rgba(255,255,255,0.89);
+  border: 0 none;
+  outline: none;
+  border-radius: 2px;
+}
+
+.emotion-10 {
+  padding: 10px;
+}
+
 <div
-  class="css-nk32ej e1b9pp5i0"
+  class="emotion-10 emotion-11"
 >
   <div
-    class="css-5xz1i6 ez1mtsr0"
+    class="emotion-4 emotion-5"
   >
     <a
-      class="css-ypfoxr ez1mtsr1"
+      class="emotion-0 emotion-1"
       href=""
       rel="noopener noreferrer"
       target="_blank"
     />
     <button
-      class="css-i6e0jg ez1mtsr2"
+      class="emotion-2 emotion-3"
     >
       ⌘
     </button>
   </div>
   <div
-    class="css-79elbk eg9vth70"
+    class="emotion-8 emotion-9"
   >
     <input
       autocomplete="off"
-      class="css-1yhj4t5 eg9vth71"
+      class="emotion-6 emotion-7"
       name="filter-text"
       placeholder="Filter"
       spellcheck="false"
@@ -106,30 +364,164 @@ exports[`Storyshots UI|stories/StoriesPanel when open on mobile device 1`] = `
 `;
 
 exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
+.emotion-24 {
+  padding: 10px 0 10px 10px;
+}
+
+.emotion-4 {
+  margin: 0 0 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-weight: bolder;
+  color: currentColor;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bolder;
+  color: currentColor;
+  border: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inlineBlock;
+  padding: 0;
+  margin: 0 0 0 5px;
+  background-color: inherit;
+  outline: 0;
+  width: 30px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-8 {
+  position: relative;
+}
+
+.emotion-6 {
+  font-size: 12px;
+  color: #828282;
+  padding: 5px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  height: 26px;
+  background: rgba(255,255,255,0.89);
+  border: 0 none;
+  outline: none;
+  border-radius: 2px;
+}
+
+.emotion-22 {
+  padding-top: 20px;
+}
+
+.emotion-21 {
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 15px;
+  min-width: 200px;
+  margin-left: -19px;
+}
+
+.emotion-17 {
+  padding-left: 19px;
+  list-style: none;
+}
+
+.emotion-11 {
+  display: inline-block;
+  vertical-align: top;
+  max-width: calc(100% - 24px);
+}
+
+.emotion-10 {
+  line-height: 18px;
+  padding: 1px 0 5px;
+}
+
+.emotion-14 {
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 1px 5px 4px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 1;
+  color: inherit;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.07);
+  z-index: 0;
+}
+
 <div
-  class="css-3dwd22 e1b9pp5i0"
+  class="emotion-24 emotion-25"
 >
   <div
-    class="css-5xz1i6 ez1mtsr0"
+    class="emotion-4 emotion-5"
   >
     <a
-      class="css-ypfoxr ez1mtsr1"
+      class="emotion-0 emotion-1"
       href=""
       rel="noopener noreferrer"
       target="_blank"
     />
     <button
-      class="css-i6e0jg ez1mtsr2"
+      class="emotion-2 emotion-3"
     >
       ⌘
     </button>
   </div>
   <div
-    class="css-79elbk eg9vth70"
+    class="emotion-8 emotion-9"
   >
     <input
       autocomplete="off"
-      class="css-1yhj4t5 eg9vth71"
+      class="emotion-6 emotion-7"
       name="filter-text"
       placeholder="Filter"
       spellcheck="false"
@@ -138,20 +530,20 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
     />
   </div>
   <div
-    class="css-7w6khc emockhz0"
+    class="emotion-22 emotion-23"
   >
     <ul
-      class="css-h3ek8a"
+      class="emotion-21"
     >
       <li
-        class="css-79elbk"
+        class="emotion-8"
       >
         <div>
           <ul
-            class="css-vq3qyb"
+            class="emotion-17"
           >
             <li
-              class="css-79elbk"
+              class="emotion-8"
             >
               <div
                 data-name="kk"
@@ -170,7 +562,7 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
                         fill="currentColor"
                         height="10"
                         preserveAspectRatio="xMidYMid meet"
-                        style="vertical-align:top;fill:currentcolor"
+                        style="vertical-align:top;fill:currentColor"
                         viewBox="0 0 40 40"
                         width="10"
                       >
@@ -183,10 +575,10 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
                     </div>
                   </div>
                   <div
-                    class="css-1si3szf"
+                    class="emotion-11"
                   >
                     <div
-                      class="css-h8sbw5"
+                      class="emotion-10"
                     >
                       kk
                     </div>
@@ -195,21 +587,21 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
               </div>
               <div>
                 <ul
-                  class="css-vq3qyb"
+                  class="emotion-17"
                 >
                   <li
-                    class="css-79elbk"
+                    class="emotion-8"
                   >
                     <a
-                      class="css-oato19 e1s7lmdh0"
+                      class="emotion-14 emotion-15"
                       href="?selectedKind=kk&selectedStory=bb&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                     >
                       <div>
                         <div
-                          class="css-1si3szf"
+                          class="emotion-11"
                         >
                           <div
-                            class="css-0"
+                            class="emotion-12"
                           >
                             bb
                           </div>

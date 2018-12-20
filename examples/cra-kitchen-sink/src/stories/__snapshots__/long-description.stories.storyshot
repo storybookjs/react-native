@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Some really long story kind description with text 1`] = `
+<div
+  style="position:fixed;top:0;left:0;bottom:0;right:0;display:flex;align-items:center;overflow:auto"
+>
+  <div
+    style="margin:auto;max-height:100%"
+  >
+    <button
+      style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
+      type="button"
+    >
+      Hello Button
+    </button>
+  </div>
+</div>
+`;

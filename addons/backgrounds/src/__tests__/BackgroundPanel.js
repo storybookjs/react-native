@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import EventEmitter from 'events';
+import EventEmitter from 'eventemitter3';
 
 import BackgroundPanel from '../BackgroundPanel';
 import Events from '../constants';

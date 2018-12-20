@@ -25,6 +25,7 @@ configure(() => {
 
 const StorybookUI = getStorybookUI();
 export default StorybookUI;
+```
 
 **storybook/rn-addons.js**
 ```

@@ -52,9 +52,9 @@ other tools may lack this feature. Since Storyshot is running under Jest,
 we need to polyfill this functionality to work with Jest. The easiest
 way is to integrate it to babel.
 
-One of the possible babel plugins to
-polyfill this functionality might be
-[babel-plugin-require-context-hook](https://github.com/smrq/babel-plugin-require-context-hook).
+You can do this with a Babel [plugin](https://github.com/smrq/babel-plugin-require-context-hook) or [macro](https://github.com/storybooks/require-context.macro). If you're using `create-react-app` (v2 or above), you will use the macro.
+
+- *Plugin*
 
 First, install it:
 
@@ -87,6 +87,23 @@ Finally, add the plugin to `.babelrc`:
 }
 ```
 The plugin is only added to the test environment otherwise it could replace webpack's version of it.
+
+- *Macro*
+
+First, install it:
+
+```sh
+npm install --save-dev require-context.macro
+```
+
+Now, inside of your Storybook config file, simply import the macro and run it in place of `require.context`, like so:
+
+```javascript
+import requireContext from 'require-context.macro';
+
+// const req = require.context('../stories', true, /.stories.js$/); <-- replaced
+const req = requireContext('../stories', true, /.stories.js$/);
+```
 
 ### Configure Jest for React
 StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but
@@ -140,6 +157,14 @@ module.exports = {
   moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node'],
 };
 ```
+
+### Configure Jest for Preact
+StoryShots addon for Preact is dependent on [preact-render-to-json](https://github.com/nathancahill/preact-render-to-json), but
+[doesn't](#deps-issue) install it, so you need to install it separately.
+
+ ```sh
+ npm install --save-dev preact-render-to-json
+ ```
 
 ### <a name="deps-issue"></a>Why don't we install dependencies of each framework ?
 Storyshots addon is currently supporting React, Angular and Vue. Each framework needs its own packages to be integrated with Jest. We don't want people that use only React will need to bring other dependencies that do not make sense for them.
@@ -434,11 +459,27 @@ If you are running tests from outside of your app's directory, storyshots' detec
 
 ### `test`
 
-Run a custom test function for each story, rather than the default (a vanilla snapshot test). Setting `test` will take precedence over the `renderer` option. See the exports section below for more details.
+Run a custom test function for each story, rather than the default (a vanilla snapshot test).
+Setting `test` will take precedence over the `renderer` option.
+You can still overwrite what renderer is used for the test function:
+
+```js
+import initStoryshots, { renderWithOptions } from '@storybook/addon-storyshots';
+import { mount } from 'enzyme';
+
+initStoryshots({
+  test: renderWithOptions({
+    renderer: mount,
+  }),
+});
+```
 
 ### `renderer`
 
-Pass a custom renderer (such as enzymes `mount`) to record snapshots. Note that setting `test` overrides `renderer`.
+Pass a custom renderer (such as enzymes `mount`) to record snapshots.
+This may be necessary if you want to use React features that are not supported by the default test renderer,
+such as **ref** or **Portals**.
+Note that setting `test` overrides `renderer`.
 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
@@ -524,7 +565,8 @@ The default, render the story as normal and take a Jest snapshot.
 
 ### `renderOnly`
 
-Just render the story, don't check the output at all (useful if you just want to ensure it doesn't error)
+Just render the story, don't check the output at all. This is useful as a low-effort way of smoke testing your
+components to ensure they do not error.
 
 ### `snapshotWithOptions(options)`
 
@@ -532,13 +574,14 @@ Like the default, but allows you to specify a set of options for the test render
 
 ### `renderWithOptions(options)`
 
-Like the default, but allows you to specify a set of options for the renderer. See above.
+Like the default, but allows you to specify a set of options for the renderer, just like `snapshotWithOptions`.
 
 ### `multiSnapshotWithOptions(options)`
 
 Like `snapshotWithOptions`, but generate a separate snapshot file for each stories file rather than a single monolithic file (as is the convention in Jest). This makes it dramatically easier to review changes. If you'd like the benefit of separate snapshot files, but don't have custom options to pass, simply pass an empty object.
 
 #### integrityOptions
+
 This option is useful when running test with `multiSnapshotWithOptions(options)` in order to track snapshots are matching the stories. (disabled by default).
 The value is just a [settings](https://github.com/isaacs/node-glob#options) to a `glob` object, that searches for the snapshot files.
 

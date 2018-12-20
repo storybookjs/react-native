@@ -33,6 +33,7 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
                 +:pull/*
                 +:release/*
                 +:master
+                +:next
                 +:snyk-fix-*
             """.trimIndent()
         }

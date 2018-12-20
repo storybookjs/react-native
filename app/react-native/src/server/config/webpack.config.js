@@ -40,6 +40,7 @@ const getConfig = options => {
           files,
           options: o,
           version,
+          dlls: [],
           ...entriesMeta.manager,
         }),
         template: require.resolve(`@storybook/core/src/server/templates/index.ejs`),

@@ -100,6 +100,11 @@ jobs:
             cd examples/riot-kitchen-sink
             yarn build-storybook
       - run:
+          name: Build preact kitchen-sink
+          command: |
+            cd examples/preact-kitchen-sink
+            yarn build-storybook
+      - run:
           name: Build official-storybook
           command: |
             cd examples/official-storybook
@@ -120,52 +125,57 @@ jobs:
           name: Run react kitchen-sink (smoke test)
           command: |
             cd examples/cra-kitchen-sink
-            yarn storybook --smoke-test
+            yarn storybook --smoke-test --quiet
       - run:
           name: Run vue kitchen-sink (smoke test)
           command: |
             cd examples/vue-kitchen-sink
-            yarn storybook --smoke-test
+            yarn storybook --smoke-test --quiet
       - run:
           name: Run svelte kitchen-sink (smoke test)
           command: |
             cd examples/svelte-kitchen-sink
-            yarn storybook --smoke-test
+            yarn storybook --smoke-test --quiet
       - run:
           name: Run angular-cli (smoke test)
           command: |
             cd examples/angular-cli
-            yarn storybook --smoke-test
+            yarn storybook --smoke-test --quiet
       - run:
           name: Run ember-cli (smoke test)
           command: |
             cd examples/ember-cli
-            yarn storybook --smoke-test
+            yarn storybook --smoke-test --quiet
       - run:
           name: Run polymer-cli (smoke test)
           command: |
             cd examples/polymer-cli
-            yarn storybook --smoke-test
+            yarn storybook --smoke-test --quiet
       - run:
           name: Run marko-cli (smoke test)
           command: |
             cd examples/marko-cli
-            yarn storybook --smoke-test
+            yarn storybook --smoke-test --quiet
       - run:
           name: Run official-storybook (smoke test)
           command: |
             cd examples/official-storybook
-            yarn storybook --smoke-test
+            yarn storybook --smoke-test --quiet
       - run:
           name: Run mithril kitchen-sink (smoke test)
           command: |
             cd examples/mithril-kitchen-sink
-            yarn storybook --smoke-test
+            yarn storybook --smoke-test --quiet
       - run:
           name: Run riot kitchen-sink (smoke test)
           command: |
             cd examples/riot-kitchen-sink
-            yarn storybook --smoke-test
+            yarn storybook --smoke-test --quiet
+      - run:
+          name: Run preact kitchen-sink (smoke test)
+          command: |
+            cd examples/preact-kitchen-sink
+            yarn storybook --smoke-test --quiet
   native-smoke-tests:
     <<: *defaults
     steps:

@@ -26,9 +26,7 @@
       class="link"
       href="https://storybook.js.org/basics/writing-stories"
       target="_blank"
-    >
-      Writing Stories
-    </a>
+    >Writing Stories</a>
     section in our documentation.
   </p>
   <p class="note">

@@ -12,17 +12,31 @@ import {
   button,
 } from '@storybook/addon-knobs';
 
+const logger = console;
+
 storiesOf('Addon|Knobs', module)
   .addDecorator(withKnobs)
-  .add('Simple', () => {
-    const name = text('Name', 'John Doe');
-    const age = number('Age', 44);
-    const content = `I am ${name} and I'm ${age} years old.`;
+  .add('Simple', () => ({
+    props: {
+      name: {
+        type: String,
+        default: text('Name', 'John Doe'),
+      },
+    },
 
-    return {
-      template: `<div>${content}</div>`,
-    };
-  })
+    template: `<div @click="age++">I am {{ name }} and I'm {{ age }} years old.</div>`,
+
+    data() {
+      return { age: 40 };
+    },
+
+    created() {
+      logger.log('created');
+    },
+    destroyed() {
+      logger.log('destroyed');
+    },
+  }))
   .add('All knobs', () => {
     const name = text('Name', 'Jane');
     const stock = number('Stock', 20, {

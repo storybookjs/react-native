@@ -1,11 +1,6 @@
 {
-  "extends": [
-    "tslint-plugin-prettier",
-    "tslint-config-prettier"
-  ],
-  "rulesDirectory": [
-    "node_modules/codelyzer"
-  ],
+  "extends": ["tslint-plugin-prettier", "tslint-config-prettier"],
+  "rulesDirectory": ["node_modules/codelyzer"],
   "rules": {
     "prettier": {
       "severity": "warning",
@@ -20,61 +15,33 @@
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
-    "comment-format": [
-      true,
-      "check-space"
-    ],
+    "comment-format": [true, "check-space"],
     "curly": true,
     "eofline": true,
     "forin": true,
-    "import-blacklist": [
-      true,
-      "rxjs"
-    ],
+    "import-blacklist": [true, "rxjs"],
     "import-spacing": true,
-    "indent": [
-      true,
-      "spaces",
-      2
-    ],
+    "indent": [true, "spaces", 2],
     "interface-over-type-literal": true,
     "label-position": true,
-    "max-line-length": [
-      true,
-      140
-    ],
+    "max-line-length": [true, 140],
     "member-access": false,
     "member-ordering": [
       true,
       {
-        "order": [
-          "static-field",
-          "instance-field",
-          "static-method",
-          "instance-method"
-        ]
+        "order": ["static-field", "instance-field", "static-method", "instance-method"]
       }
     ],
     "no-arg": true,
     "no-bitwise": true,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
     "no-construct": true,
     "no-debugger": true,
     "no-duplicate-super": true,
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
+    "no-inferrable-types": [true, "ignore-params"],
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-shadowed-variable": true,
@@ -87,27 +54,12 @@
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
-    "one-line": [
-      true,
-      "check-open-brace",
-      "check-catch",
-      "check-else",
-      "check-whitespace"
-    ],
+    "one-line": [true, "check-open-brace", "check-catch", "check-else", "check-whitespace"],
     "prefer-const": true,
-    "quotemark": [
-      true,
-      "single"
-    ],
+    "quotemark": [true, "single", "jsx-double"],
     "radix": true,
-    "semicolon": [
-      true,
-      "always"
-    ],
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
+    "semicolon": [true, "always"],
+    "triple-equals": [true, "allow-null-check"],
     "typedef-whitespace": [
       true,
       {
@@ -120,18 +72,8 @@
     ],
     "unified-signatures": true,
     "variable-name": false,
-    "directive-selector": [
-      true,
-      "attribute",
-      "app",
-      "camelCase"
-    ],
-    "component-selector": [
-      true,
-      "element",
-      "storybook",
-      "kebab-case"
-    ],
+    "directive-selector": [true, "attribute", "app", "camelCase"],
+    "component-selector": [true, "element", "storybook", "kebab-case"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
@@ -143,11 +85,7 @@
     "directive-class-suffix": true
   },
   "linterOptions": {
-    "exclude": [
-      "lib/cli/test/**",
-      "**/node_modules/**",
-      "**/dist/**",
-      "**/storybook-static/**"
-    ]
+    "include": ["**/*.ts"],
+    "exclude": ["lib/cli/test/**", "**/node_modules/**", "**/dist/**", "**/storybook-static/**"]
   }
 }

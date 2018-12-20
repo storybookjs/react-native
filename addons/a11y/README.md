@@ -1,6 +1,6 @@
 # storybook-addon-a11y
 
-This storybook addon can be helpfull to make your UI components more accessibile.
+This storybook addon can be helpful to make your UI components more accessible.
 
 [Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 

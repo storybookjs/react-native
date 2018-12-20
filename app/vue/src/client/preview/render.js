@@ -1,12 +1,26 @@
 import { stripIndents } from 'common-tags';
 import Vue from 'vue';
 
-let app = null;
+let root = null;
 
-function renderRoot(options) {
-  if (app) app.$destroy();
+function getComponentProxy(component) {
+  return Object.entries(component.props || {})
+    .map(([name, def]) => ({ [name]: def.default }))
+    .reduce((wrap, prop) => ({ ...wrap, ...prop }), {});
+}
 
-  app = new Vue(options);
+function renderRoot(component, proxy) {
+  root = new Vue({
+    el: '#root',
+    beforeCreate() {
+      this.proxy = proxy;
+    },
+
+    render(h) {
+      const props = this.proxy;
+      return h('div', { attrs: { id: 'root' } }, [h(component, { props })]);
+    },
+  });
 }
 
 export default function render({
@@ -16,6 +30,7 @@ export default function render({
   showMain,
   showError,
   showException,
+  forceRender,
 }) {
   Vue.config.errorHandler = showException;
 
@@ -33,10 +48,16 @@ export default function render({
   }
 
   showMain();
-  renderRoot({
-    el: '#root',
-    render(h) {
-      return h('div', { attrs: { id: 'root' } }, [h(component)]);
-    },
-  });
+
+  const proxy = getComponentProxy(component);
+
+  // at component creation || refresh by HMR
+  if (!root || !forceRender) {
+    if (root) root.$destroy();
+
+    renderRoot(component, proxy);
+  } else {
+    root.proxy = proxy;
+    root.$forceUpdate();
+  }
 }

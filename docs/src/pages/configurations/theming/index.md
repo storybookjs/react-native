@@ -7,17 +7,28 @@ Storybook's manager UI is theme-able! You can change theme variables using [addo
 
 ## Set a theme
 
-You can do this in an decorator, addon or in `config.js`. Changing theme at runtime is supported!
+You can do this in an decorator, addon or in `.storybook/config.js`. Changing theme at runtime is supported!
 
+First, create or modify `.storybook/addons.js` to include registering addon-options:  
 ```js
-import { setOptions } from '@storybook/addon-options';
+import '@storybook/addon-options/register';
+```
 
-setOptions({
-  theme: {},
-});
+Then, modify `.storybook/config.js` to include your new options:  
+```js
+import { addDecorator, configure } from '@storybook/react';
+import { withOptions } from '@storybook/addon-options';
+
+addDecorator(
+  withOptions({
+    theme: {},
+  })
+);
 ```
 
 When setting a theme, set a full theme object, the theme is replaced, not combined.
+
+See more addon options at https://github.com/storybooks/storybook/tree/master/addons/options
 
 ## Get a theme
 
@@ -26,7 +37,17 @@ We have created 2 themes for you: "normal" (a light theme) and "dark" (a dark th
 You can get these themes like so:
 
 ```js
+import { addDecorator, configure } from '@storybook/react';
+import { withOptions } from '@storybook/addon-options';
 import { themes } from '@storybook/components';
+
+// Option defaults.
+addDecorator(
+  withOptions({
+    name: 'Foo',
+    theme: themes.dark,
+  })
+);
 ```
 
 ## Theme variables
@@ -57,11 +78,84 @@ overlayBackground: applied to overlay `background`, // 'linear-gradient(to botto
 All options above are single key options, in other words, they are variables, and their usage is fixed.
 
 We will extend the theming ability in the future and possibly add more deep theming ability.
-Right now we have identified the most likely thing you might want to change the appearance of more then just 1 variable so we allow you the deep-theme the header using: `brand`.
+Right now we allow to deep theme: `stories nav panel`. Below are the varaiables that are used to deep theme `stories nav panel`.
+
+storiesNav: deep theme for `stories nav`
+
+```
+storiesNav: {
+  backgroundColor: 'aqua',
+}
+```
+
+brand: deep theme for brand including `brand name` and `shortcuts`
 
 ```
 brand: {
   background: 'url("/path/to/logo.svg")',
+}
+```
+
+brandLink: deep theme for only `brand name`
+
+```
+brandLink: {
+  border: 'none'
+}
+```
+
+filter: deep theme for `stories filter section`
+
+```
+filter: {
+  backgroundColor: 'red',
+}
+```
+
+treeHeader: deep theme for `tree header`
+
+```
+treeHeader: {
+  color: 'blue',
+}
+```
+
+treeMenuHeader: deep theme for `tree menu header` of each menu
+
+```
+treeMenuHeader: {
+  color: 'aqua',
+}
+```
+
+menuLink: deep theme for `menu link` of each story
+
+```
+menuLink: {
+  color: 'black',
+}
+```
+
+activeMenuLink: deep theme for `active menu link` for the active story
+
+```
+activeMenuLink: {
+  fontWeight: 'light',
+}
+```
+
+treeArrow: deep theme for `tree arrow`. This accepts an object which receives `height`, `width`, `base` and `wrapper`
+
+```
+treeArrow: {
+  height: 5,
+  width: 5,
+  base: {
+    fontSize: '12px'
+  },
+  wrapper: {
+    backgroundColor: 'white'
+  }
 }
 ```
 
