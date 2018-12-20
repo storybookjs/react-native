@@ -131,7 +131,11 @@ module.exports = {
       },
     },
     {
-      files: ['**/react-native*/**', '**/REACT_NATIVE*/**', '**/crna*/**'],
+      files: [
+        '**/react-native*/**',
+        '**/REACT_NATIVE/**/.storybook/**',
+        '**/crna*/**/.storybook/**',
+      ],
       rules: {
         'jsx-a11y/accessible-emoji': ignore,
       },
