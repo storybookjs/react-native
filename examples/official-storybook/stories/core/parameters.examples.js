@@ -3,26 +3,26 @@ import React from 'react';
 // We would need to add this in config.js idomatically however that would make this file a bit confusing
 import { addParameters } from '@storybook/react';
 
-const globalParameter = 'globalParameter';
-const chapterParameter = 'chapterParameter';
-const decoratorParameter = 'decoratorParameter';
-const storyParameter = 'storyParameter';
-
-addParameters({ globalParameter });
+addParameters({ globalParameter: 'globalParameter' });
 
 export default {
   title: 'Core|Parameters',
-  decorators: [fn => fn({ decoratorParameter })],
+  decorators: [fn => fn({ parameters: { decoratorParameter: 'decoratorParameter' } })],
   parameters: {
-    chapterParameter,
+    chapterParameter: 'chapterParameter',
   },
 };
 
 // I'm not sure what we should recommend regarding propTypes? are they a good idea for examples?
 // Given we sort of control the props, should we export a prop type?
-// eslint-disable-next-line react/prop-types
-export const passed = ({ parameters: { fileName, ...parameters } }) => (
-  <div>Parameters are {JSON.stringify(parameters)}</div>
+export const passed = ({
+  // eslint-disable-next-line react/prop-types
+  parameters: { globalParameter, chapterParameter, decoratorParameter, storyParameter },
+}) => (
+  <div>
+    Parameters are{' '}
+    {JSON.stringify({ globalParameter, chapterParameter, decoratorParameter, storyParameter })}
+  </div>
 );
 passed.title = 'passed to story';
-passed.parameters = { storyParameter };
+passed.parameters = { storyParameter: 'storyParameter' };
