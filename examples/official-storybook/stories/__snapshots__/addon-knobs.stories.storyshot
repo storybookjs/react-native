@@ -74,42 +74,53 @@ exports[`Storyshots Addons|Knobs.withKnobs dynamic knobs 1`] = `
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs optionsKnob 1`] = `
+.emotion-0 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
 <div
-  style="color:white"
+  class="emotion-0 emotion-1"
 >
-  <p>
-    Weekday: Tuesday
-  </p>
-  <p>
-    Weekend: Saturday
-  </p>
-  <p>
-    Month: January
-  </p>
-  <p>
-    Fruit:
-  </p>
-  <ul>
-    <li>
-      apple
-    </li>
-  </ul>
-  <p>
-    Vegetables:
-  </p>
-  <ul>
-    <li>
-      carrot
-    </li>
-  </ul>
-  <p>
-    Dairy:
-  </p>
-  <ul>
-    <li>
-      milk
-    </li>
-  </ul>
+  <div
+    style="color:white"
+  >
+    <p>
+      Weekday: Tuesday
+    </p>
+    <p>
+      Weekend: Saturday
+    </p>
+    <p>
+      Month: January
+    </p>
+    <p>
+      Fruit:
+    </p>
+    <ul>
+      <li>
+        apple
+      </li>
+    </ul>
+    <p>
+      Vegetables:
+    </p>
+    <ul>
+      <li>
+        carrot
+      </li>
+    </ul>
+    <p>
+      Dairy:
+    </p>
+    <ul>
+      <li>
+        milk
+      </li>
+    </ul>
+  </div>
 </div>
 `;
 

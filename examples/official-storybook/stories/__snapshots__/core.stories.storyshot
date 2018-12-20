@@ -67,9 +67,13 @@ exports[`Storyshots Core|Parameters adds data to storyFn 1`] = `
       "fileName": "/Users/dev/Projects/GitHub/storybook/core/examples/official-storybook/stories/core.stories.js",
       "a11y": {},
       "options": {
-        "name": "Storybook",
+        "name": "Custom Storybook",
         "hierarchySeparator": {},
-        "hierarchyRootSeparator": "|"
+        "hierarchyRootSeparator": "|",
+        "selectedAddonPanel": "storybook/actions/panel",
+        "selectedPanel": "storybook/background/panel",
+        "panel": "storybook/actions/panel",
+        "showPanel": false
       },
       "viewports": {
         "iphone5": {
@@ -251,9 +255,13 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
       {
   "a11y": {},
   "options": {
-    "name": "Storybook",
+    "name": "Custom Storybook",
     "hierarchySeparator": {},
-    "hierarchyRootSeparator": "|"
+    "hierarchyRootSeparator": "|",
+    "selectedAddonPanel": "storybook/actions/panel",
+    "selectedPanel": "storybook/background/panel",
+    "panel": "storybook/actions/panel",
+    "showPanel": false
   },
   "viewports": {
     "iphone5": {

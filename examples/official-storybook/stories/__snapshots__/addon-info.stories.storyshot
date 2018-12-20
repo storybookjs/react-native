@@ -497,7 +497,9 @@ exports[`Storyshots Addons|Info.ForwardRef Displays forwarded ref components cor
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -526,7 +528,9 @@ exports[`Storyshots Addons|Info.ForwardRef Displays forwarded ref components cor
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -553,7 +557,9 @@ exports[`Storyshots Addons|Info.ForwardRef Displays forwarded ref components cor
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -582,7 +588,9 @@ exports[`Storyshots Addons|Info.ForwardRef Displays forwarded ref components cor
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -1213,7 +1221,9 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -1242,7 +1252,9 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -1269,7 +1281,9 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -1298,7 +1312,9 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -1838,7 +1854,9 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -1867,7 +1885,9 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -1894,7 +1914,9 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -1923,7 +1945,9 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -3033,7 +3057,9 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -3062,7 +3088,9 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -3089,7 +3117,9 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -3118,7 +3148,9 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -3749,7 +3781,9 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -3778,7 +3812,9 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -3805,7 +3841,9 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -3834,7 +3872,9 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -4434,7 +4474,9 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -4463,7 +4505,9 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -4490,7 +4534,9 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -4519,7 +4565,9 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -5131,7 +5179,9 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -5160,7 +5210,9 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -5187,7 +5239,9 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -5216,7 +5270,9 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -6214,7 +6270,9 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -6243,7 +6301,9 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -6272,7 +6332,9 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -6800,7 +6862,9 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -6829,7 +6893,9 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -6856,7 +6922,9 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -6885,7 +6953,9 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -7416,7 +7486,9 @@ exports[`Storyshots Addons|Info/Options.inline Inlines component inside story 1`
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -7445,7 +7517,9 @@ exports[`Storyshots Addons|Info/Options.inline Inlines component inside story 1`
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -7472,7 +7546,9 @@ exports[`Storyshots Addons|Info/Options.inline Inlines component inside story 1`
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -7501,7 +7577,9 @@ exports[`Storyshots Addons|Info/Options.inline Inlines component inside story 1`
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -8040,7 +8118,9 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -8069,7 +8149,9 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -8096,7 +8178,9 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -8125,7 +8209,9 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -8882,7 +8968,9 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -8911,7 +8999,9 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -8938,7 +9028,9 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -8967,7 +9059,9 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -9183,7 +9277,9 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
                     <td
                       class="emotion-14 emotion-15"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-16 emotion-17"
@@ -9212,7 +9308,9 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
                     <td
                       class="emotion-14 emotion-15"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-16 emotion-17"
@@ -9239,7 +9337,9 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
                     <td
                       class="emotion-14 emotion-15"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-16 emotion-17"
@@ -9268,7 +9368,9 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
                     <td
                       class="emotion-14 emotion-15"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-16 emotion-17"
@@ -9799,7 +9901,9 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -9828,7 +9932,9 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -9855,7 +9961,9 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -9884,7 +9992,9 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -10415,7 +10525,9 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -10444,7 +10556,9 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -10471,7 +10585,9 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -10500,7 +10616,9 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -11150,7 +11268,9 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -11179,7 +11299,9 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -11206,7 +11328,9 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -11235,7 +11359,9 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -11265,7 +11391,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
 `;
 
 exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with markdown inline 1`] = `
-.emotion-78 {
+.emotion-66 {
   font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
   color: #444;
   -webkit-font-smoothing: antialiased;
@@ -11512,7 +11638,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
   opacity: 1;
 }
 
-.emotion-76 {
+.emotion-64 {
   border-collapse: collapse;
   margin-top: 16px;
   width: auto;
@@ -11530,7 +11656,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
   padding: 8px 16px;
 }
 
-.emotion-74 {
+.emotion-62 {
   font-size: 14px;
 }
 
@@ -11579,7 +11705,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
 }
 
 <div
-  class="emotion-78 emotion-79"
+  class="emotion-66 emotion-67"
 >
   <div>
     <div>
@@ -11790,7 +11916,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
               "BaseButton" Component
             </h3>
             <table
-              class="emotion-76 emotion-77"
+              class="emotion-64 emotion-65"
             >
               <thead
                 class="emotion-24 emotion-25"
@@ -11824,7 +11950,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
                 </tr>
               </thead>
               <tbody
-                class="emotion-74 emotion-75"
+                class="emotion-62 emotion-63"
               >
                 <tr
                   class="emotion-36 emotion-37"
@@ -11837,7 +11963,9 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -11861,39 +11989,14 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
                   <td
                     class="emotion-26 emotion-27"
                   >
-                    label
-                  </td>
-                  <td
-                    class="emotion-28 emotion-29"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    class="emotion-30 emotion-31"
-                  >
-                    yes
-                  </td>
-                  <td
-                    class="emotion-30 emotion-31"
-                  >
-                    -
-                  </td>
-                  <td
-                    class="emotion-34 emotion-31"
-                  />
-                </tr>
-                <tr
-                  class="emotion-36 emotion-37"
-                >
-                  <td
-                    class="emotion-26 emotion-27"
-                  >
                     onClick
                   </td>
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -11922,7 +12025,9 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -12452,7 +12557,9 @@ exports[`Storyshots Addons|Info/Parameters Overwriting and extending the paramet
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -12481,7 +12588,9 @@ exports[`Storyshots Addons|Info/Parameters Overwriting and extending the paramet
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -12510,7 +12619,9 @@ exports[`Storyshots Addons|Info/Parameters Overwriting and extending the paramet
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -13040,7 +13151,9 @@ exports[`Storyshots Addons|Info/Parameters Using paramaters across all stories 1
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -13069,7 +13182,9 @@ exports[`Storyshots Addons|Info/Parameters Using paramaters across all stories 1
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -13096,7 +13211,9 @@ exports[`Storyshots Addons|Info/Parameters Using paramaters across all stories 1
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -13125,7 +13242,9 @@ exports[`Storyshots Addons|Info/Parameters Using paramaters across all stories 1
                   <td
                     class="emotion-28 emotion-29"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-30 emotion-31"
@@ -14357,7 +14476,9 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -14386,7 +14507,9 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -14413,7 +14536,9 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -14442,7 +14567,9 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -15044,7 +15171,9 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -15073,7 +15202,9 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -15100,7 +15231,9 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -15129,7 +15262,9 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -15826,7 +15961,9 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -15855,7 +15992,9 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -15882,7 +16021,9 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -15911,7 +16052,9 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -16510,7 +16653,9 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -16539,7 +16684,9 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -16566,7 +16713,9 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -16595,7 +16744,9 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -17270,7 +17421,9 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -17299,7 +17452,9 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -17326,7 +17481,9 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -17355,7 +17512,9 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -17886,7 +18045,9 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        bool
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -17915,7 +18076,9 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        string
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -17942,7 +18105,9 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        func
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
@@ -17971,7 +18136,9 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
                     <td
                       class="emotion-28 emotion-29"
                     >
-                      <span />
+                      <span>
+                        other
+                      </span>
                     </td>
                     <td
                       class="emotion-30 emotion-31"
