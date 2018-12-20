@@ -32,7 +32,7 @@
     "@storybook/core-events": "4.2.0-alpha.5",
     "@storybook/ui": "4.2.0-alpha.5",
     "babel-loader": "^8.0.4",
-    "babel-plugin-macros": "^2.4.2",
+    "babel-plugin-macros": "^2.4.3",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",

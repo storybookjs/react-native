@@ -321,13 +321,31 @@ exports[`Storyshots Addons|Info.ForwardRef Displays forwarded ref components cor
     <div
       style="position:relative;z-index:0"
     >
+<<<<<<< HEAD
       <button
         type="button"
       >
         Forwarded Ref Button
       </button>
     </div>
+=======
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+>>>>>>> next
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -940,13 +958,31 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
     <div
       style="position:relative;z-index:0"
     >
+<<<<<<< HEAD
       <button
         type="button"
       >
         Button
       </button>
     </div>
+=======
+      Forwarded Ref Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+>>>>>>> next
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -1369,7 +1405,201 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
   border-radius: 4px 0 0 0;
 }
 
+<<<<<<< HEAD
 .emotion-8 {
+=======
+.emotion-2:active {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+.emotion-0 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  height: 16px;
+  -webkit-transform: translateY(-100%) translateY(-6px);
+  -ms-transform: translateY(-100%) translateY(-6px);
+  transform: translateY(-100%) translateY(-6px);
+}
+
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <div>
+      <input
+        type="text"
+      />
+      <textarea />
+    </div>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Addons|Info.GitHub issues
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            #1814
+          </h2>
+        </div>
+        <div
+          style="margin-bottom:0"
+        >
+          <div
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+          >
+            Allow Duplicate DisplayNames for HOC #1814
+          </div>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <pre
+            class="emotion-4 emotion-5"
+          >
+            <div>
+              <div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
+                >
+                  <span
+                    style="color:#444"
+                  >
+                    &lt;div
+                  </span>
+                  <span />
+                  <span
+                    style="color:#444"
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
+                >
+                  <span
+                    style="color:#444"
+                  >
+                    &lt;Unknown
+                  </span>
+                  <span />
+                  <span
+                    style="color:#444"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
+                >
+                  <span
+                    style="color:#444"
+                  >
+                    &lt;Unknown
+                  </span>
+                  <span />
+                  <span
+                    style="color:#444"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
+                >
+                  <span
+                    style="color:#444"
+                  >
+                    &lt;/div&gt;
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="emotion-2 emotion-3"
+            >
+              <div
+                class="emotion-0 emotion-1"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "" Component
+            </h2>
+            <small>
+              No propTypes defined!
+            </small>
+          </div>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "" Component
+            </h2>
+            <small>
+              No propTypes defined!
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
+.emotion-4 {
+>>>>>>> next
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1664,13 +1894,31 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
     <div
       style="position:relative;z-index:0"
     >
+<<<<<<< HEAD
       <button
         type="button"
       >
         Button
       </button>
     </div>
+=======
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+>>>>>>> next
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -2067,10 +2315,355 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
   font-style: italic;
 }
 
+<<<<<<< HEAD
 .emotion-4 * .token.prolog {
   color: #008000;
   font-style: italic;
 }
+=======
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <button
+      type="button"
+    >
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Addons|Info.Markdown
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            Displays Markdown in description
+          </h2>
+        </div>
+        <div
+          style="margin-bottom:0"
+        >
+          <h4
+            id="you-can-use-markdown-in-your-withinfo-description."
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:600;margin:0;padding:0;font-size:20px"
+          >
+            You can use markdown in your withInfo description.
+          </h4>
+          <div
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+          >
+            Sometimes you might want to manually include some code examples:
+          </div>
+          <pre
+            class="language-js"
+            style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+          >
+            <code
+              class="language-js"
+              style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa"
+            >
+              const Button = () =&gt; &lt;button /&gt;;
+            </code>
+          </pre>
+          <div
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+          >
+            Maybe include a 
+            <a
+              href="http://storybook.js.org"
+              rel="noopener noreferrer"
+              style="color:#3498db"
+              target="_blank"
+            >
+              link
+            </a>
+             to your project as well.
+          </div>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <pre
+            class="emotion-4 emotion-5"
+          >
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
+              >
+                <span
+                  style="color:#444"
+                >
+                  &lt;BaseButton
+                </span>
+                <span>
+                  <span>
+                     
+                    <span>
+                      onClick
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        {
+                        <span
+                          style="color:#170"
+                        >
+                          clicked
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span>
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
+                      </span>
+                    </span>
+                     
+                  </span>
+                </span>
+                <span
+                  style="color:#444"
+                >
+                  /&gt;
+                </span>
+              </div>
+            </div>
+            <button
+              class="emotion-2 emotion-3"
+            >
+              <div
+                class="emotion-0 emotion-1"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "BaseButton" Component
+            </h2>
+            <table
+              class="emotion-56 emotion-57"
+            >
+              <thead>
+                <tr>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    property
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    propType
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    required
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    default
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      bool
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    <span
+                      style="color:#a11"
+                    >
+                      false
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    label
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      string
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    yes
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      func
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    <span
+                      style="color:#170"
+                    >
+                      onClick
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    style
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      other
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    <span
+                      style="color:#666"
+                    >
+                      {}
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+>>>>>>> next
 
 .emotion-4 * .token.doctype {
   color: #008000;
@@ -2244,8 +2837,27 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
     >
       Show Info
     </button>
+<<<<<<< HEAD
     <div
       style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+=======
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+>>>>>>> next
     >
       <button
         style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
@@ -2791,13 +3403,31 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
     <div
       style="position:relative;z-index:0"
     >
+<<<<<<< HEAD
       <button
         type="button"
       >
         Button
       </button>
     </div>
+=======
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+>>>>>>> next
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -3250,6 +3880,211 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
   overflow: hidden;
 }
 
+<<<<<<< HEAD
+=======
+.emotion-0 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  height: 16px;
+  -webkit-transform: translateY(-100%) translateY(-6px);
+  -ms-transform: translateY(-100%) translateY(-6px);
+  transform: translateY(-100%) translateY(-6px);
+}
+
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <button
+      type="button"
+    >
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Addons|Info.Options.TableComponent
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            Use a custom component for the table
+          </h2>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <pre
+            class="emotion-4 emotion-5"
+          >
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
+              >
+                <span
+                  style="color:#444"
+                >
+                  &lt;BaseButton
+                </span>
+                <span>
+                  <span>
+                     
+                    <span>
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
+                      </span>
+                    </span>
+                     
+                  </span>
+                </span>
+                <span
+                  style="color:#444"
+                >
+                  /&gt;
+                </span>
+              </div>
+            </div>
+            <button
+              class="emotion-2 emotion-3"
+            >
+              <div
+                class="emotion-0 emotion-1"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "BaseButton" Component
+            </h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    name
+                  </th>
+                  <th>
+                    type
+                  </th>
+                  <th>
+                    default
+                  </th>
+                  <th>
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    disabled
+                  </td>
+                  <td />
+                  <td>
+                    false
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    label
+                    <span
+                      style="color:red"
+                    >
+                      *
+                    </span>
+                  </td>
+                  <td />
+                  <td />
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    onClick
+                  </td>
+                  <td />
+                  <td />
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    style
+                  </td>
+                  <td />
+                  <td>
+                    {}
+                  </td>
+                  <td />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes that are in the excludedPropTypes array 1`] = `
+>>>>>>> next
 .emotion-4 {
   position: relative;
   overflow: auto;
@@ -3500,13 +4335,31 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
     <div
       style="position:relative;z-index:0"
     >
+<<<<<<< HEAD
       <button
         type="button"
       >
         Button
       </button>
     </div>
+=======
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+>>>>>>> next
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -4224,13 +5077,31 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
     <div
       style="position:relative;z-index:0"
     >
+<<<<<<< HEAD
       <button
         type="button"
       >
         Button
       </button>
     </div>
+=======
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+>>>>>>> next
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -5556,13 +6427,31 @@ exports[`Storyshots Addons|Info/Options.TableComponent Use a custom component fo
     <div
       style="position:relative;z-index:0"
     >
+<<<<<<< HEAD
       <button
         type="button"
       >
         Button
       </button>
     </div>
+=======
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+>>>>>>> next
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -6086,7 +6975,23 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
         Button
       </button>
     </div>
+<<<<<<< HEAD
+=======
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+>>>>>>> next
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -6407,6 +7312,7 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
   border-left: 0 none;
 }
 
+<<<<<<< HEAD
 .emotion-6 {
   border: 0 none;
   display: block;
@@ -6433,6 +7339,237 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
   position: relative;
   overflow: hidden;
 }
+=======
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <button
+      type="button"
+    >
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Addons|Info.Options.source
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            Shows or hides Info Addon source
+          </h2>
+        </div>
+        <div
+          style="margin-bottom:0"
+        >
+          <div
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+          >
+            The Info Addon source section should be hidden
+          </div>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "BaseButton" Component
+            </h2>
+            <table
+              class="emotion-50 emotion-51"
+            >
+              <thead>
+                <tr>
+                  <th
+                    class="emotion-0 emotion-1"
+                  >
+                    property
+                  </th>
+                  <th
+                    class="emotion-0 emotion-1"
+                  >
+                    propType
+                  </th>
+                  <th
+                    class="emotion-0 emotion-1"
+                  >
+                    required
+                  </th>
+                  <th
+                    class="emotion-0 emotion-1"
+                  >
+                    default
+                  </th>
+                  <th
+                    class="emotion-0 emotion-1"
+                  >
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="emotion-10 emotion-11"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    class="emotion-10 emotion-11"
+                  >
+                    <span>
+                      bool
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  >
+                    <span
+                      style="color:#a11"
+                    >
+                      false
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-10 emotion-11"
+                  >
+                    label
+                  </td>
+                  <td
+                    class="emotion-10 emotion-11"
+                  >
+                    <span>
+                      string
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  >
+                    yes
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-10 emotion-11"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    class="emotion-10 emotion-11"
+                  >
+                    <span>
+                      func
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  >
+                    <span
+                      style="color:#170"
+                    >
+                      onClick
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-10 emotion-11"
+                  >
+                    style
+                  </td>
+                  <td
+                    class="emotion-10 emotion-11"
+                  >
+                    <span>
+                      other
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  >
+                    <span
+                      style="color:#666"
+                    >
+                      {}
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-0 emotion-11"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+>>>>>>> next
 
 .emotion-4 {
   position: relative;
@@ -6684,6 +7821,7 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
     <div
       style="position:relative;z-index:0"
     >
+<<<<<<< HEAD
       <button
         type="button"
       >
@@ -6692,6 +7830,25 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
     </div>
     <button
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+=======
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:purple;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:purple;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+>>>>>>> next
       type="button"
     >
       Show Info
@@ -7267,6 +8424,7 @@ exports[`Storyshots Addons|Info/Options.inline Inlines component inside story 1`
   color: #774dd7;
 }
 
+<<<<<<< HEAD
 .emotion-28 {
   padding: 2px 6px;
   white-space: nowrap;
@@ -7302,6 +8460,36 @@ exports[`Storyshots Addons|Info/Options.inline Inlines component inside story 1`
   class="emotion-78 emotion-79"
 >
   <div>
+=======
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <button
+      type="button"
+    >
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+>>>>>>> next
     <div>
       <div
         style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
@@ -7698,6 +8886,7 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
   font-style: italic;
 }
 
+<<<<<<< HEAD
 .emotion-4 * .token.prolog {
   color: #008000;
   font-style: italic;
@@ -7934,7 +9123,31 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
         Button
       </button>
     </div>
+=======
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
     <button
+      type="button"
+    >
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+>>>>>>> next
+    <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -9720,6 +10933,7 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
     <div
       style="position:relative;z-index:0"
     >
+<<<<<<< HEAD
       <button
         type="button"
       >
@@ -9728,6 +10942,25 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
     </div>
     <button
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:purple;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+=======
+      Flow Typed Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+>>>>>>> next
       type="button"
     >
       Show Info
@@ -10114,6 +11347,7 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
   font-style: italic;
 }
 
+<<<<<<< HEAD
 .emotion-4 * .token.prolog {
   color: #008000;
   font-style: italic;
@@ -10371,6 +11605,71 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
         >
           <div
             style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+=======
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <button
+      type="button"
+    >
+      Docgen Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Addons|Info.React Docgen
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            Comments from PropType declarations
+          </h2>
+        </div>
+        <div
+          style="margin-bottom:0"
+        >
+          <div
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+          >
+            Comments above the PropType declarations should be extracted from the React component file itself and rendered in the Info Addon prop table
+          </div>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <pre
+            class="emotion-4 emotion-5"
+>>>>>>> next
           >
             <h1
               style="margin:0;padding:0;font-size:35px;color:red"
@@ -10757,10 +12056,324 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
   font-style: italic;
 }
 
+<<<<<<< HEAD
 .emotion-4 * .token.prolog {
   color: #008000;
   font-style: italic;
 }
+=======
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <button
+      type="button"
+    >
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Addons|Info.React Docgen
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            Comments from component declaration
+          </h2>
+        </div>
+        <div
+          style="margin-bottom:0"
+        >
+          <div
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+          >
+            Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading
+          </div>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <pre
+            class="emotion-4 emotion-5"
+          >
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
+              >
+                <span
+                  style="color:#444"
+                >
+                  &lt;BaseButton
+                </span>
+                <span>
+                  <span>
+                     
+                    <span>
+                      onClick
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        {
+                        <span
+                          style="color:#170"
+                        >
+                          clicked
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span>
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
+                      </span>
+                    </span>
+                     
+                  </span>
+                </span>
+                <span
+                  style="color:#444"
+                >
+                  /&gt;
+                </span>
+              </div>
+            </div>
+            <button
+              class="emotion-2 emotion-3"
+            >
+              <div
+                class="emotion-0 emotion-1"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "BaseButton" Component
+            </h2>
+            <table
+              class="emotion-56 emotion-57"
+            >
+              <thead>
+                <tr>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    property
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    propType
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    required
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    default
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      bool
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    <span
+                      style="color:#a11"
+                    >
+                      false
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    label
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      string
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    yes
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      func
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    <span
+                      style="color:#170"
+                    >
+                      onClick
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    style
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      other
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    <span
+                      style="color:#666"
+                    >
+                      {}
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+>>>>>>> next
 
 .emotion-4 * .token.doctype {
   color: #008000;
@@ -10796,6 +12409,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
   color: #36acaa;
 }
 
+<<<<<<< HEAD
 .emotion-4 * .token.boolean {
   color: #36acaa;
 }
@@ -10987,12 +12601,20 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
     <div
       style="position:relative;z-index:0"
     >
+=======
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <div>
+>>>>>>> next
       <button
         type="button"
       >
         Button
       </button>
     </div>
+<<<<<<< HEAD
     <button
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
@@ -11075,6 +12697,66 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
             >
               <div
                 class="emotion-4 emotion-5"
+=======
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Addons|Info.React Docgen
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            Comments from named export component declaration
+          </h2>
+        </div>
+        <div
+          style="margin-bottom:0"
+        >
+          <div
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+          >
+            Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading
+          </div>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <pre
+            class="emotion-4 emotion-5"
+          >
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
+>>>>>>> next
               >
                 <pre
                   class="hljs emotion-2 emotion-3"
@@ -17864,13 +19546,31 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
     <div
       style="position:relative;z-index:0"
     >
+<<<<<<< HEAD
       <button
         type="button"
       >
         Button
       </button>
     </div>
+=======
+      Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+>>>>>>> next
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
