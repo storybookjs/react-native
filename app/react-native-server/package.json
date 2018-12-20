@@ -23,8 +23,16 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@storybook/addons": "4.2.0-alpha.5",
+    "@storybook/channel-websocket": "4.2.0-alpha.5",
     "@storybook/core": "4.2.0-alpha.5",
+    "@storybook/core-events": "4.2.0-alpha.5",
+    "@storybook/ui": "4.2.0-alpha.5",
     "commander": "^2.19.0",
+    "global": "^4.3.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "uuid": "^3.3.2",
     "webpack": "^4.23.1",
     "ws": "^6.1.0"
   },
