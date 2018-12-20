@@ -17,6 +17,14 @@
 * Bump tslint from 5.11.0 to 5.12.0 ([#5090](https://github.com/storybooks/storybook/pull/5090))
 * Bump react-dom from 16.6.3 to 16.7.0 ([#5071](https://github.com/storybooks/storybook/pull/5071))
 
+## 4.1.3 (December 20, 2018)
+
+### Bug Fixes
+
+* React: remove unnecessary dependencies, fix aliasing ([#5047](https://github.com/storybooks/storybook/pull/5047))
+* React: alias to react & react-dom ([#5016](https://github.com/storybooks/storybook/pull/5016))
+* Addon-knobs: Fix color picker display ([#5010](https://github.com/storybooks/storybook/pull/5010))
+
 ## 4.2.0-alpha.6 (December 20, 2018)
 
 ### Features
