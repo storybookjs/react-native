@@ -2,10 +2,9 @@ import { start } from '@storybook/core/client';
 import Vue from 'vue';
 
 import './globals';
-import render from './render';
+import render, { VALUES } from './render';
 
 export const WRAPS = 'STORYBOOK_WRAPS';
-export const VALUES = 'STORYBOOK_VALUES';
 
 function extractProps(component) {
   return Object.entries(component.options.props || {})
@@ -37,7 +36,7 @@ function prepare(rawStory, innerStory) {
         story,
         {
           ...data,
-          props: { ...(data.props || {}), ...(parent.$root[VALUES] || {}) },
+          props: { ...(data.props || {}), ...parent.$root[VALUES] },
         },
         children
       );
