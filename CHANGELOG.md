@@ -1,3 +1,14 @@
+## 4.2.0-alpha.5 (December 19, 2018)
+
+### Bug Fixes
+
+* React: Remove unnecessary dependencies, fix aliasing ([#5047](https://github.com/storybooks/storybook/pull/5047))
+
+### Dependency Upgrades
+
+* Bump @types/node from 10.12.14 to 10.12.17 ([#5045](https://github.com/storybooks/storybook/pull/5045))
+* Bump ember-source from 3.5.1 to 3.6.1 ([#5044](https://github.com/storybooks/storybook/pull/5044))
+
 ## 4.2.0-alpha.4 (December 18, 2018)
 
 ### Bug Fixes
