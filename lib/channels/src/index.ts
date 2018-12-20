@@ -7,7 +7,7 @@ export interface ChannelTransport {
 
 export interface ChannelEvent {
   type: string; // eventName
-  from: string | 'preview' | 'manager';
+  from: string;
   args: any[];
 }
 
