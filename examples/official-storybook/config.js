@@ -62,21 +62,23 @@ addParameters({
   },
 });
 
-function importAll(req) {
-  req.keys().forEach(filename => req(filename));
-}
-
 // TODO -- somehow don't use window for this cross HMR storage
 const { previousExports = {} } = window; // eslint-disable-line no-undef
 window.previousExports = previousExports; // eslint-disable-line no-undef
 
 // The simplest version of examples would just export this function for users to use
-function importAllExamples(context) {
+function importAll(context) {
   const storyStore = window.__STORYBOOK_CLIENT_API__._storyStore; // eslint-disable-line no-undef, no-underscore-dangle
 
   context.keys().forEach(filename => {
     // console.log(`checking ${filename}`);
     const fileExports = context(filename);
+
+    // A old-style story file
+    if (!fileExports.default) {
+      return;
+    }
+
     const { default: component, ...examples } = fileExports;
     let componentOptions = component;
     if (component.prototype && component.prototype.isReactComponent) {
@@ -126,9 +128,6 @@ function loadStories() {
 
   req = require.context('./stories', true, /\.stories\.js$/);
   importAll(req);
-
-  req = require.context('./stories', true, /\.examples\.js$/);
-  importAllExamples(req);
 }
 
 configure(loadStories, module);
