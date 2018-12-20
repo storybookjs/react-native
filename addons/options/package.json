@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-options",
-  "version": "4.2.0-alpha.5",
+  "version": "4.2.0-alpha.6",
   "description": "Options addon for storybook",
   "keywords": [
     "addon",
@@ -20,7 +20,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.2.0-alpha.5",
+    "@storybook/addons": "4.2.0-alpha.6",
     "core-js": "^2.5.7",
     "util-deprecate": "^1.0.2"
   },
