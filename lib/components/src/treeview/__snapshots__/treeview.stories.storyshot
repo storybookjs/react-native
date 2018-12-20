@@ -12,23 +12,6 @@ exports[`Storyshots Components|Treeview with ensured (WIP) 1`] = `
   fill: currentColor;
 }
 
-.emotion-0 {
-  height: 24px;
-  box-sizing: border-box;
-  width: 100%;
-  background: transparent;
-  border: 0 none;
-  color: #444;
-  padding: 10px;
-  padding-left: 0;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.emotion-0:focus {
-  outline: 0;
-  border-bottom: 1px solid #9fdaff;
-}
-
 .emotion-23 {
   margin-left: -20px;
   margin-right: -20px;
@@ -51,6 +34,32 @@ exports[`Storyshots Components|Treeview with ensured (WIP) 1`] = `
   background: transparent;
 }
 
+.emotion-15 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #774dd7;
+}
+
+.emotion-0 {
+  height: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  color: #444;
+  padding: 10px;
+  padding-left: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.emotion-0:focus {
+  outline: 0;
+  border-bottom: 1px solid #9fdaff;
+}
+
 .emotion-10 {
   display: block;
   display: inline-block;
@@ -63,15 +72,6 @@ exports[`Storyshots Components|Treeview with ensured (WIP) 1`] = `
   -webkit-transition: transform .1s linear;
   transition: transform .1s linear;
   color: rgba(0,0,0,0.4);
-}
-
-.emotion-15 {
-  display: block;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin-right: 10px;
-  color: #774dd7;
 }
 
 .emotion-2 {
