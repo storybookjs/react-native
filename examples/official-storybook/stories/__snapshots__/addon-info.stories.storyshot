@@ -85,15 +85,18 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -450,15 +453,18 @@ exports[`Storyshots Addons|Info.ForwardRef Displays forwarded ref components cor
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -872,15 +878,18 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
     </div>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -1116,15 +1125,18 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -1515,15 +1527,18 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -1929,15 +1944,18 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -2312,15 +2330,18 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -2691,15 +2712,18 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -2953,15 +2977,18 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -3291,15 +3318,18 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -5923,15 +5953,18 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -6399,15 +6432,18 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
     </div>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -6768,15 +6804,18 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -7069,15 +7108,18 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:purple;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:purple;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -7425,15 +7467,18 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -7789,15 +7834,18 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -9270,15 +9318,18 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -9595,15 +9646,18 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -10632,15 +10686,18 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -11017,15 +11074,18 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
     </div>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -11400,15 +11460,18 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >

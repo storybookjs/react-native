@@ -166,6 +166,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
         </div>
       </div>
       <button
+        className="info__show-button"
         onClick={[Function]}
         style={
           Object {
@@ -188,6 +189,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
         Show Info
       </button>
       <div
+        className="info__overlay"
         style={
           Object {
             "background": "white",
@@ -204,6 +206,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
         }
       >
         <button
+          className="info__close-button"
           onClick={[Function]}
           style={
             Object {
@@ -1486,6 +1489,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
         </div>
       </div>
       <button
+        className="info__show-button"
         onClick={[Function]}
         style={
           Object {
@@ -1508,6 +1512,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
         Show Info
       </button>
       <div
+        className="info__overlay"
         style={
           Object {
             "background": "white",
@@ -1524,6 +1529,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
         }
       >
         <button
+          className="info__close-button"
           onClick={[Function]}
           style={
             Object {
