@@ -3,14 +3,9 @@ import Vue from 'vue';
 
 import './globals';
 import render, { VALUES } from './render';
+import { extractProps } from './util';
 
 export const WRAPS = 'STORYBOOK_WRAPS';
-
-function extractProps(component) {
-  return Object.entries(component.options.props || {})
-    .map(([name, def]) => ({ [name]: def.default }))
-    .reduce((wrap, prop) => ({ ...wrap, ...prop }), {});
-}
 
 function prepare(rawStory, innerStory) {
   let story = rawStory;
