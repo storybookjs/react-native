@@ -2,8 +2,8 @@ import { managerPreset } from '@storybook/core/server';
 import packageJson from '../../package.json';
 
 function extendOptions(options, extendServer) {
-  const { manualId } = options;
-  const storybookOptions = { manualId };
+  const { manualId, https: secured, host, port } = options;
+  const storybookOptions = { manualId, secured, host, port };
 
   return {
     ...options,
