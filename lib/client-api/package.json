@@ -22,7 +22,8 @@
   "dependencies": {
     "@storybook/addons": "4.2.0-alpha.5",
     "@storybook/client-logger": "4.2.0-alpha.5",
-    "@storybook/core-events": "4.2.0-alpha.5"
+    "@storybook/core-events": "4.2.0-alpha.5",
+    "eventemitter3": "^3.1.0"
   },
   "license": "MIT",
   "main": "dist/index.js"
