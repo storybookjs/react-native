@@ -198,14 +198,12 @@ export default class Preview {
 
   _checkStory(selection) {
     if (!selection || typeof selection !== 'object' || !selection.kind || !selection.story) {
-      console.warn('invalid storybook selection'); // eslint-disable-line no-console
       return null;
     }
 
     const story = this._getStory(selection);
 
     if (story.storyFn === null) {
-      console.warn('invalid storybook selection'); // eslint-disable-line no-console
       return null;
     }
 
