@@ -1,5 +1,605 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Button with new info 1`] = `
+.emotion-12 {
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  position: relative;
+  overflow: auto;
+}
+
+.emotion-4 code {
+  opacity: 0.7;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-10 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: undefinedpx 0 0 0;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  height: 26px;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-left: 0 none;
+}
+
+.emotion-6 {
+  border: 0 none;
+  display: block;
+  background: none;
+  padding: 0 10px;
+  cursor: pointer;
+  text-transform: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  color: inherit;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.emotion-6:focus {
+  border-bottom: 2px solid undefined;
+  outline: 0 none;
+}
+
+.emotion-76 {
+  border-collapse: collapse;
+  margin-top: 16px;
+  width: auto;
+  table-layout: auto;
+}
+
+.emotion-24 {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-14 {
+  padding: 2px 6px;
+  line-height: 18px;
+  vertical-align: middle;
+  padding: 8px 16px;
+}
+
+.emotion-74 {
+  font-size: 14px;
+}
+
+.emotion-36 {
+  border-bottom: 1px solid #eee;
+}
+
+.emotion-26 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+  color: #774dd7;
+}
+
+.emotion-28 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+  color: #1ea7fd;
+}
+
+.emotion-28 button {
+  color: #37d5d3;
+}
+
+.emotion-28 span {
+  white-space: pre;
+}
+
+.emotion-30 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+}
+
+.emotion-34 {
+  padding: 2px 6px;
+  text-align: left;
+  padding: 8px 16px;
+}
+
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <div
+      title="the best container ever"
+    >
+      <span>
+        click the 
+        <span
+          style="font-family:sans-serif;font-size:12px;text-decoration:none;background:rgb(34, 136, 204);color:rgb(255, 255, 255);padding:5px 15px;margin:10px;border-radius:0px 0px 0px 5px"
+        >
+           Show Info 
+        </span>
+         label in top right for info about "with new info"
+      </span>
+    </div>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Button
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            with new info
+          </h2>
+        </div>
+        <div
+          style="margin-bottom:0"
+        >
+          <div
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+          >
+            Use the 
+            <a
+              href="https://github.com/storybooks/storybook/tree/master/addons/info"
+              rel="noopener noreferrer"
+              style="color:#3498db"
+              target="_blank"
+            >
+              info addon
+            </a>
+             with its new painless API.
+          </div>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <div
+            class="emotion-12 emotion-13"
+          >
+            <div
+              class="emotion-4 emotion-5"
+            >
+              <pre
+                class="hljs emotion-2 emotion-3"
+              >
+                <code
+                  class="emotion-0 emotion-1"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;
+                      </span>
+                      Container
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      &gt;
+                    </span>
+                  </span>
+                  <span
+                    class="token plain-text"
+                  >
+                    
+  
+                  </span>
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;
+                      </span>
+                      span
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      &gt;
+                    </span>
+                  </span>
+                  <span
+                    class="token plain-text"
+                  >
+                    
+    click the 
+    
+                  </span>
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;
+                      </span>
+                      InfoButton
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      /&gt;
+                    </span>
+                  </span>
+                  <span
+                    class="token plain-text"
+                  >
+                    
+     label in top right for info about "with new info"
+  
+                  </span>
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;/
+                      </span>
+                      span
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      &gt;
+                    </span>
+                  </span>
+                  <span
+                    class="token plain-text"
+                  >
+                    
+
+                  </span>
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;/
+                      </span>
+                      Container
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      &gt;
+                    </span>
+                  </span>
+                  
+
+                </code>
+              </pre>
+            </div>
+            <ul
+              class="emotion-10 emotion-11"
+            >
+              <li
+                class="emotion-8 emotion-9"
+              >
+                <button
+                  class="emotion-6 emotion-7"
+                >
+                  copy
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h3
+              style="margin:20px 0 0 0"
+            >
+              "Container" Component
+            </h3>
+            <table
+              class="emotion-76 emotion-77"
+            >
+              <thead
+                class="emotion-24 emotion-25"
+              >
+                <tr>
+                  <th
+                    class="emotion-14 emotion-15"
+                  >
+                    Property
+                  </th>
+                  <th
+                    class="emotion-14 emotion-15"
+                  >
+                    Type
+                  </th>
+                  <th
+                    class="emotion-14 emotion-15"
+                  >
+                    Required
+                  </th>
+                  <th
+                    class="emotion-14 emotion-15"
+                  >
+                    Default
+                  </th>
+                  <th
+                    class="emotion-14 emotion-15"
+                  >
+                    Description
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                class="emotion-74 emotion-75"
+              >
+                <tr
+                  class="emotion-36 emotion-37"
+                >
+                  <td
+                    class="emotion-26 emotion-27"
+                  >
+                    children
+                  </td>
+                  <td
+                    class="emotion-28 emotion-29"
+                  >
+                    <span>
+                      node
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-30 emotion-31"
+                  >
+                    yes
+                  </td>
+                  <td
+                    class="emotion-30 emotion-31"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-34 emotion-31"
+                  />
+                </tr>
+                <tr
+                  class="emotion-36 emotion-37"
+                >
+                  <td
+                    class="emotion-26 emotion-27"
+                  >
+                    isAmazing
+                  </td>
+                  <td
+                    class="emotion-28 emotion-29"
+                  >
+                    <span>
+                      bool
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-30 emotion-31"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-30 emotion-31"
+                  >
+                    <span>
+                      false
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-34 emotion-31"
+                  />
+                </tr>
+                <tr
+                  class="emotion-36 emotion-37"
+                >
+                  <td
+                    class="emotion-26 emotion-27"
+                  >
+                    age
+                  </td>
+                  <td
+                    class="emotion-28 emotion-29"
+                  >
+                    <span>
+                      other
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-30 emotion-31"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-30 emotion-31"
+                  >
+                    <span>
+                      {
+                      <span>
+                        <span>
+                          isOld
+                        </span>
+                      </span>
+                      : 
+                      <span>
+                        false
+                      </span>
+                      ,
+                      <span>
+                        <span>
+                          value
+                        </span>
+                      </span>
+                      : 
+                      <span>
+                        0
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-34 emotion-31"
+                  />
+                </tr>
+                <tr
+                  class="emotion-36 emotion-37"
+                >
+                  <td
+                    class="emotion-26 emotion-27"
+                  >
+                    title
+                  </td>
+                  <td
+                    class="emotion-28 emotion-29"
+                  >
+                    <span>
+                      string
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-30 emotion-31"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-30 emotion-31"
+                  >
+                    <span>
+                      the best container ever
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-34 emotion-31"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h3
+              style="margin:20px 0 0 0"
+            >
+              "InfoButton" Component
+            </h3>
+            <small>
+              No propTypes defined!
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Button with notes 1`] = `
 <button
   style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"

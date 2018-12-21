@@ -51,22 +51,13 @@ storiesOf('Button', module)
       'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.'
     )(context => (
       <Container>
-        click the <InfoButton /> label in top right for info about "{context.story}"
+        <span>
+          click the <InfoButton /> label in top right for info about "{context.name}"
+        </span>
       </Container>
     )),
     {
-      options: { selectedAddonPanel: 'storybook/info/info-panel' },
-    }
-  )
-  .add(
-    'addons composition',
-    withInfo('see Notes panel for composition info')(context => (
-      <div>
-        click the <InfoButton /> label in top right for info about "{context.story}"
-      </div>
-    )),
-    {
       notes: 'Composition: Info(Notes())',
-      options: { selectedAddonPanel: 'storybook/notes/panel' },
+      options: { selectedAddonPanel: 'storybook/info/info-panel' },
     }
   );
