@@ -11,7 +11,7 @@ The Options addon can be used to (re-)configure the [Storybook](https://storyboo
 First, install the addon
 
 ```sh
-npm install -D @storybook/addon-options
+yarn add @storybook/addon-options --dev
 ```
 
 Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
