@@ -256,3 +256,5 @@ Support us with a monthly donation and help us continue our activities. \[[Becom
 ## License
 
 [MIT](https://github.com/storybooks/storybook/blob/master/LICENSE)
+
+-the end-
