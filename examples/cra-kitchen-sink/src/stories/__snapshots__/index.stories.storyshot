@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Button with new info 1`] = `
-.emotion-12 {
+.emotion-6 {
   position: relative;
   overflow: hidden;
 }
@@ -36,88 +36,33 @@ exports[`Storyshots Button with new info 1`] = `
   opacity: 1;
 }
 
-.emotion-10 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  max-width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-radius: undefinedpx 0 0 0;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  list-style: none;
-  padding: 0;
-  height: 26px;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-left: 0 none;
-}
-
-.emotion-6 {
-  border: 0 none;
-  display: block;
-  background: none;
-  padding: 0 10px;
-  cursor: pointer;
-  text-transform: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  font-size: inherit;
-  color: inherit;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-}
-
-.emotion-6:focus {
-  border-bottom: 2px solid undefined;
-  outline: 0 none;
-}
-
-.emotion-76 {
+.emotion-70 {
   border-collapse: collapse;
   margin-top: 16px;
   width: auto;
   table-layout: auto;
 }
 
-.emotion-24 {
+.emotion-18 {
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-.emotion-14 {
+.emotion-8 {
   padding: 2px 6px;
   line-height: 18px;
   vertical-align: middle;
   padding: 8px 16px;
 }
 
-.emotion-74 {
+.emotion-68 {
   font-size: 14px;
 }
 
-.emotion-36 {
+.emotion-30 {
   border-bottom: 1px solid #eee;
 }
 
-.emotion-26 {
+.emotion-20 {
   padding: 2px 6px;
   white-space: nowrap;
   font-family: Monaco,Consolas,"Courier New",monospace;
@@ -126,7 +71,7 @@ exports[`Storyshots Button with new info 1`] = `
   color: #774dd7;
 }
 
-.emotion-28 {
+.emotion-22 {
   padding: 2px 6px;
   white-space: nowrap;
   font-family: Monaco,Consolas,"Courier New",monospace;
@@ -135,15 +80,15 @@ exports[`Storyshots Button with new info 1`] = `
   color: #1ea7fd;
 }
 
-.emotion-28 button {
+.emotion-22 button {
   color: #37d5d3;
 }
 
-.emotion-28 span {
+.emotion-22 span {
   white-space: pre;
 }
 
-.emotion-30 {
+.emotion-24 {
   padding: 2px 6px;
   white-space: nowrap;
   font-family: Monaco,Consolas,"Courier New",monospace;
@@ -151,7 +96,7 @@ exports[`Storyshots Button with new info 1`] = `
   padding: 8px 16px;
 }
 
-.emotion-34 {
+.emotion-28 {
   padding: 2px 6px;
   text-align: left;
   padding: 8px 16px;
@@ -236,7 +181,7 @@ exports[`Storyshots Button with new info 1`] = `
             Story Source
           </h1>
           <div
-            class="emotion-12 emotion-13"
+            class="emotion-6 emotion-7"
           >
             <div
               class="emotion-4 emotion-5"
@@ -374,19 +319,6 @@ exports[`Storyshots Button with new info 1`] = `
                 </code>
               </pre>
             </div>
-            <ul
-              class="emotion-10 emotion-11"
-            >
-              <li
-                class="emotion-8 emotion-9"
-              >
-                <button
-                  class="emotion-6 emotion-7"
-                >
-                  copy
-                </button>
-              </li>
-            </ul>
           </div>
         </div>
         <div>
@@ -402,124 +334,124 @@ exports[`Storyshots Button with new info 1`] = `
               "Container" Component
             </h3>
             <table
-              class="emotion-76 emotion-77"
+              class="emotion-70 emotion-71"
             >
               <thead
-                class="emotion-24 emotion-25"
+                class="emotion-18 emotion-19"
               >
                 <tr>
                   <th
-                    class="emotion-14 emotion-15"
+                    class="emotion-8 emotion-9"
                   >
                     Property
                   </th>
                   <th
-                    class="emotion-14 emotion-15"
+                    class="emotion-8 emotion-9"
                   >
                     Type
                   </th>
                   <th
-                    class="emotion-14 emotion-15"
+                    class="emotion-8 emotion-9"
                   >
                     Required
                   </th>
                   <th
-                    class="emotion-14 emotion-15"
+                    class="emotion-8 emotion-9"
                   >
                     Default
                   </th>
                   <th
-                    class="emotion-14 emotion-15"
+                    class="emotion-8 emotion-9"
                   >
                     Description
                   </th>
                 </tr>
               </thead>
               <tbody
-                class="emotion-74 emotion-75"
+                class="emotion-68 emotion-69"
               >
                 <tr
-                  class="emotion-36 emotion-37"
+                  class="emotion-30 emotion-31"
                 >
                   <td
-                    class="emotion-26 emotion-27"
+                    class="emotion-20 emotion-21"
                   >
                     children
                   </td>
                   <td
-                    class="emotion-28 emotion-29"
+                    class="emotion-22 emotion-23"
                   >
                     <span>
                       node
                     </span>
                   </td>
                   <td
-                    class="emotion-30 emotion-31"
+                    class="emotion-24 emotion-25"
                   >
                     yes
                   </td>
                   <td
-                    class="emotion-30 emotion-31"
+                    class="emotion-24 emotion-25"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-34 emotion-31"
+                    class="emotion-28 emotion-25"
                   />
                 </tr>
                 <tr
-                  class="emotion-36 emotion-37"
+                  class="emotion-30 emotion-31"
                 >
                   <td
-                    class="emotion-26 emotion-27"
+                    class="emotion-20 emotion-21"
                   >
                     isAmazing
                   </td>
                   <td
-                    class="emotion-28 emotion-29"
+                    class="emotion-22 emotion-23"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="emotion-30 emotion-31"
+                    class="emotion-24 emotion-25"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-30 emotion-31"
+                    class="emotion-24 emotion-25"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="emotion-34 emotion-31"
+                    class="emotion-28 emotion-25"
                   />
                 </tr>
                 <tr
-                  class="emotion-36 emotion-37"
+                  class="emotion-30 emotion-31"
                 >
                   <td
-                    class="emotion-26 emotion-27"
+                    class="emotion-20 emotion-21"
                   >
                     age
                   </td>
                   <td
-                    class="emotion-28 emotion-29"
+                    class="emotion-22 emotion-23"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="emotion-30 emotion-31"
+                    class="emotion-24 emotion-25"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-30 emotion-31"
+                    class="emotion-24 emotion-25"
                   >
                     <span>
                       {
@@ -546,38 +478,38 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    class="emotion-34 emotion-31"
+                    class="emotion-28 emotion-25"
                   />
                 </tr>
                 <tr
-                  class="emotion-36 emotion-37"
+                  class="emotion-30 emotion-31"
                 >
                   <td
-                    class="emotion-26 emotion-27"
+                    class="emotion-20 emotion-21"
                   >
                     title
                   </td>
                   <td
-                    class="emotion-28 emotion-29"
+                    class="emotion-22 emotion-23"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="emotion-30 emotion-31"
+                    class="emotion-24 emotion-25"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-30 emotion-31"
+                    class="emotion-24 emotion-25"
                   >
                     <span>
                       the best container ever
                     </span>
                   </td>
                   <td
-                    class="emotion-34 emotion-31"
+                    class="emotion-28 emotion-25"
                   />
                 </tr>
               </tbody>
