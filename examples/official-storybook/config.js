@@ -62,16 +62,21 @@ addParameters({
   },
 });
 
-// TODO -- somehow don't use window for this cross HMR storage
-const { previousExports = {} } = window; // eslint-disable-line no-undef
-window.previousExports = previousExports; // eslint-disable-line no-undef
+let previousExports = {};
+if (module && module.hot && module.hot.dispose) {
+  ({ previousExports = {} } = module.hot.data || {});
+
+  module.hot.dispose(data => {
+    // eslint-disable-next-line no-param-reassign
+    data.previousExports = previousExports;
+  });
+}
 
 // The simplest version of examples would just export this function for users to use
 function importAll(context) {
   const storyStore = window.__STORYBOOK_CLIENT_API__._storyStore; // eslint-disable-line no-undef, no-underscore-dangle
 
   context.keys().forEach(filename => {
-    // console.log(`checking ${filename}`);
     const fileExports = context(filename);
 
     // A old-style story file
@@ -87,9 +92,7 @@ function importAll(context) {
     const kindName = componentOptions.title || componentOptions.component.displayName;
 
     if (previousExports[filename]) {
-      // console.log(`found previousExports ${filename}`);
       if (previousExports[filename] === fileExports) {
-        // console.log(`exports have not changed ${filename}`);
         return;
       }
 
