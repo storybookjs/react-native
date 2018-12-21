@@ -23,7 +23,7 @@ object OpenSourceProjects_Storybook_CliTest : BuildType({
                 set -e -x
 
                 yarn
-                yarn test --cli
+                yarn test --cli --teamcity
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }

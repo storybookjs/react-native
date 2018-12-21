@@ -3,13 +3,24 @@ import { stripIndents } from 'common-tags';
 
 const rootElement = document.getElementById('root');
 
-export default function renderMain({ story, selectedKind, selectedStory, showMain, showError }) {
+export default function renderMain({
+  story,
+  selectedKind,
+  selectedStory,
+  showMain,
+  showError,
+  forceRender,
+}) {
   const component = story();
 
   showMain();
   if (typeof component === 'string') {
     rootElement.innerHTML = component;
   } else if (component instanceof Node) {
+    if (forceRender === true) {
+      return;
+    }
+
     rootElement.innerHTML = '';
     rootElement.appendChild(component);
   } else {

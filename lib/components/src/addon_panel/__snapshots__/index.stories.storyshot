@@ -1,25 +1,155 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|AddonPanel default 1`] = `
+.emotion-8 {
+  background: rgba(255,255,255,0.89);
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  background: rgba(255,255,255,1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  overflow: auto;
+  padding: 0 8px;
+  white-space: nowrap;
+  height: 40px;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 8px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 8px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: #444;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-6 {
+  display: block;
+  position: relative;
+  position: relative;
+  overflow: auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+}
+
 <div
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-d7g4da e1lzzkxx0"
+    class="emotion-8 emotion-9"
   >
     <div
-      class="css-1whcqvw e1lzzkxx1"
+      class="emotion-4 emotion-5"
       role="tablist"
     >
       <button
-        class="css-xcko46 e1lzzkxx2"
+        class="emotion-0 emotion-1"
         role="tab"
         type="button"
       >
         Test 1
       </button>
       <button
-        class="css-1hf831j e1lzzkxx2"
+        class="emotion-2 emotion-1"
         role="tab"
         type="button"
       >
@@ -27,7 +157,7 @@ exports[`Storyshots Components|AddonPanel default 1`] = `
       </button>
     </div>
     <div
-      class="css-18lpvrh e1lzzkxx3"
+      class="emotion-6 emotion-7"
     >
       <div
         id="test2"
@@ -40,11 +170,20 @@ exports[`Storyshots Components|AddonPanel default 1`] = `
 `;
 
 exports[`Storyshots Components|AddonPanel no panels 1`] = `
+.emotion-0 {
+  font-size: 11px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px;
+}
+
 <div
   style="height:calc(100vh - 20px)"
 >
   <p
-    class="css-hftiue ejh6i270"
+    class="emotion-0 emotion-1"
   >
     no panels available
   </p>

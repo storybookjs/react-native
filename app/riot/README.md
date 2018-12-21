@@ -1,4 +1,4 @@
-# Storybook for Riot <sup>alpha</sup>
+# Storybook for Riot
 
 ---
 
@@ -14,7 +14,7 @@ So you can develop UI components in isolation without worrying about app specifi
 
 ```sh
 cd my-riot-app
-npx -p @storybook/cli@alpha sb init
+npx -p @storybook/cli sb init
 ```
 
 For more information visit: [storybook.js.org](https://storybook.js.org)

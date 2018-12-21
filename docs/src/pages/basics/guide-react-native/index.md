@@ -73,7 +73,7 @@ import '@storybook/addon-ondevice-notes/register';
  The easiest solution is to replace your app entry with:
  
 ```js
-import './storybook';
+export default from './storybook';
 ```
 
 If you cannot replace your entry point just make sure that the component exported from `./storybook` is displayed
@@ -86,6 +86,7 @@ RN application, e.g. on a tab or within an admin screen.
 Now you can write some stories inside the `storybook/stories/index.js` file, like this:
 
 ```js
+import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
@@ -102,7 +103,7 @@ const CenteredView = ({ children }) => (
   </View>
 );
 
-storiesOf('CenteredView')
+storiesOf('CenteredView', module)
   .add('default view', () => (
     <CenteredView>
       <Text>Hello Storybook</Text>
@@ -118,7 +119,7 @@ Refer to [Writing Stories](https://storybook.js.org/basics/writing-stories) for 
 
 ## Addons
 
-Storybook supports addons. You can read more about them [here](https://storybook.js.org/addons/intro-to-addons)
+Storybook supports addons. You can read more about them [here](https://storybook.js.org/addons/introduction)
 
 There is one big difference in React Native is that it has two types of addons: Addons that work in the browser
 and addons that work on the app itself (on device addons).

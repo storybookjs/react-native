@@ -55,6 +55,39 @@ stories.add('as dynamic variables', () => {
 });
 ```
 
+### With Vue.js
+```js
+import { storiesOf } from '@storybook/vue';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+
+import MyButton from './Button.vue';
+
+const stories = storiesOf('Storybook Knobs', module);
+
+// Add the `withKnobs` decorator to add knobs support to your stories.
+// You can also configure `withKnobs` as a global decorator.
+stories.addDecorator(withKnobs);
+
+// Knobs for Vue props
+// Knobs for Vue props
+stories.add('with a button', () => ({
+  components: { MyButton },
+  template:
+    `<button disabled="${boolean('Disabled', false)}" >
+      ${text('Label', 'Hello Storybook')}
+    </button>`
+}));
+
+// Knobs as dynamic variables.
+stories.add('as dynamic variables', () => {
+  const name = text('Name', 'Arunoda Susiripala');
+  const age = number('Age', 89);
+
+  const content = `I am ${name} and I'm ${age} years old.`;
+  return `<div>${content}</div>`;
+});
+```
+
 ### With Angular
 ```js
 import { storiesOf } from '@storybook/angular';
@@ -274,6 +307,34 @@ const defaultValue = 'kiwi';
 const value = radios(label, options, defaultValue);
 ```
 
+### options
+
+Configurable UI for selecting a value from a set of options. 
+
+```js
+import { optionsKnob as options } from '@storybook/addon-knobs';
+
+const label = 'Fruits';
+const valuesObj = {
+  Kiwi: 'kiwi',
+  Guava: 'guava',
+  Watermelon: 'watermelon',
+};
+const defaultValue = 'kiwi';
+const optionsObj = {
+  display: 'inline-radio'
+};
+
+const value = options(label, valuesObj, defaultValue, optionsObj);
+```
+> The display property for `optionsObj` accepts:
+> - `radio`
+> - `inline-radio`
+> - `check`
+> - `inline-check`
+> - `select`
+> - `multi-select`
+
 ### files
 
 Allows you to get a value from a file input from the user.
@@ -344,8 +405,8 @@ stories.addDecorator(withKnobs)
 stories.add('story name', () => ..., {
   knobs: {
     timestamps: true, // Doesn't emit events while user is typing.
-    escapeHTML: true // Escapes strings to be safe for inserting as innerHTML. This option is true by default in storybook for Vue, Angular, and Polymer, because those frameworks allow rendering plain HTML.
-                     // You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.  
+    escapeHTML: true // Escapes strings to be safe for inserting as innerHTML. This option is true by default. It's safe to set it to `false` with frameworks like React which do escaping on their side.
+                     // You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.
   }
 });
 ```

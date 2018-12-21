@@ -85,7 +85,7 @@ class NumberType extends React.Component {
 NumberType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.number,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     range: PropTypes.bool,
     min: PropTypes.number,
     max: PropTypes.number,

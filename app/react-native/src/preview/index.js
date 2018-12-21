@@ -1,7 +1,7 @@
-/* eslint-disable react/no-this-in-sfc, no-underscore-dangle */
+/* eslint-disable no-underscore-dangle */
 
 import React from 'react';
-import { NativeModules } from 'react-native';
+import { AsyncStorage, NativeModules } from 'react-native';
 import parse from 'url-parse';
 import addons from '@storybook/addons';
 
@@ -11,6 +11,8 @@ import createChannel from '@storybook/channel-websocket';
 import { StoryStore, ClientApi } from '@storybook/core/client';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
+
+const STORAGE_KEY = 'lastOpenedStory';
 
 export default class Preview {
   constructor() {
@@ -44,7 +46,7 @@ export default class Preview {
     let channel = null;
 
     const onDeviceUI = params.onDeviceUI !== false;
-
+    const { initialSelection, shouldPersistSelection } = params;
     // should the initial story be sent to storybookUI
     // set to true if using disableWebsockets or if connection to WebsocketServer fails.
     let setInitialStory = false;
@@ -75,7 +77,9 @@ export default class Preview {
           url,
           async: onDeviceUI,
           onError: () => {
-            this._setInitialStory();
+            // We are both emitting event and telling the component to get initial story. It may happen that component is created before the error or vise versa.
+            // This way we handle both cases
+            this._setInitialStory(initialSelection, shouldPersistSelection);
 
             setInitialStory = true;
           },
@@ -88,7 +92,7 @@ export default class Preview {
     }
 
     channel.on(Events.GET_STORIES, () => this._sendSetStories());
-    channel.on(Events.SET_CURRENT_STORY, d => this._selectStory(d));
+    channel.on(Events.SET_CURRENT_STORY, d => this._selectStoryEvent(d));
     this._sendSetStories();
 
     // If the app is started with server running, set the story as the one selected in the browser
@@ -110,9 +114,15 @@ export default class Preview {
               stories={preview._stories}
               events={channel}
               url={webUrl}
-              isUIOpen={params.isUIOpen}
+              isUIHidden={params.isUIHidden}
               tabOpen={params.tabOpen}
-              initialStory={setInitialStory ? preview._getInitialStory() : null}
+              getInitialStory={
+                setInitialStory
+                  ? preview._getInitialStory(initialSelection, shouldPersistSelection)
+                  : null
+              }
+              shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
+              keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
             />
           );
         }
@@ -133,15 +143,33 @@ export default class Preview {
     channel.emit(Events.GET_CURRENT_STORY);
   }
 
-  _setInitialStory = () => {
-    const story = this._getInitialStory();
+  _setInitialStory = async (initialSelection, shouldPersistSelection = true) => {
+    const story = await this._getInitialStory(initialSelection, shouldPersistSelection)();
+
     if (story) {
       this._selectStory(story);
     }
   };
 
-  _getInitialStory = () => {
+  _getInitialStory = (initialSelection, shouldPersistSelection = true) => async () => {
+    let story = null;
+    if (initialSelection && this._checkStory(initialSelection)) {
+      story = initialSelection;
+    } else if (shouldPersistSelection) {
+      const value = await AsyncStorage.getItem(STORAGE_KEY);
+      const previousStory = JSON.parse(value);
+
+      if (this._checkStory(previousStory)) {
+        story = previousStory;
+      }
+    }
+
+    if (story) {
+      return this._getStory(story);
+    }
+
     const dump = this._stories.dumpStoryBook();
+
     const nonEmptyKind = dump.find(kind => kind.stories.length > 0);
     if (nonEmptyKind) {
       return this._getStory({ kind: nonEmptyKind.kind, story: nonEmptyKind.stories[0] });
@@ -156,8 +184,29 @@ export default class Preview {
     return { ...selection, storyFn };
   }
 
-  _selectStory(selection) {
+  _selectStoryEvent(selection) {
+    AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(selection));
+
+    const story = this._getStory(selection);
+    this._selectStory(story);
+  }
+
+  _selectStory(story) {
     const channel = addons.getChannel();
-    channel.emit(Events.SELECT_STORY, this._getStory(selection));
+    channel.emit(Events.SELECT_STORY, story);
+  }
+
+  _checkStory(selection) {
+    if (!selection || typeof selection !== 'object' || !selection.kind || !selection.story) {
+      return null;
+    }
+
+    const story = this._getStory(selection);
+
+    if (story.storyFn === null) {
+      return null;
+    }
+
+    return story;
   }
 }

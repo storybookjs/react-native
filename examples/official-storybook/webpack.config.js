@@ -1,7 +1,7 @@
 const path = require('path');
 const { DefinePlugin, ContextReplacementPlugin } = require('webpack');
 
-module.exports = (baseConfig, env, defaultConfig) => ({
+module.exports = async (baseConfig, env, defaultConfig) => ({
   ...defaultConfig,
   module: {
     ...defaultConfig.module,

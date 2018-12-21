@@ -38,13 +38,13 @@ storybook({
 });
 ```    
 
-    prod - build static version of Storybook - similar to "build-storybook" in CLI
+    static - build static version of Storybook - similar to "build-storybook" in CLI
 
 ```js
 const storybook = require('@storybook/react/standalone');
 
 storybook({
-  mode: 'prod',
+  mode: 'static',
   // other options
 });
 ```    
@@ -67,7 +67,7 @@ Other options are similar to those in the CLI.
       ci                      CI mode (skip interactive prompts, don't open browser)
       quiet                   Suppress verbose build output
 
-## For "prod" mode:
+## For "static" mode:
 
     Options:
 
@@ -87,3 +87,4 @@ storybook({
   configDir: './.storybook',
 });
 ```
+

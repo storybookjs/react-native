@@ -23,6 +23,20 @@ const TestComponent = ({ func, obj, array, number, string, bool, empty }) => (
   </div>);
 /* eslint-enable */
 
+const reactClassPath = 'some/path/TestComponent.jsx';
+const storybookReactClassMock = {
+  name: 'TestComponent',
+  path: reactClassPath,
+  docgenInfo: {
+    description: `
+# Awesome test component description
+## with markdown support
+**bold** *cursive* 
+    `,
+    name: 'TestComponent',
+  },
+};
+
 const testOptions = { propTables: false };
 
 const testMarkdown = `# Test story
@@ -62,5 +76,35 @@ describe('addon Info', () => {
     setDefaults(testOptions);
     const Info = withInfo()(storyFn);
     mount(<Info />);
+  });
+
+  it('should render component description if story kind matches component', () => {
+    const previousReactClassesValue = global.STORYBOOK_REACT_CLASSES[reactClassPath];
+    Object.assign(global.STORYBOOK_REACT_CLASSES, { [reactClassPath]: storybookReactClassMock });
+
+    const Info = () =>
+      withInfo({ inline: true, propTables: false })(storyFn, {
+        kind: 'TestComponent',
+        story: 'Basic test',
+      });
+
+    expect(mount(<Info />)).toMatchSnapshot();
+
+    Object.assign(global.STORYBOOK_REACT_CLASSES, { [reactClassPath]: previousReactClassesValue });
+  });
+
+  it('should render component description if story name matches component', () => {
+    const previousReactClassesValue = global.STORYBOOK_REACT_CLASSES[reactClassPath];
+    Object.assign(global.STORYBOOK_REACT_CLASSES, { [reactClassPath]: storybookReactClassMock });
+
+    const Info = () =>
+      withInfo({ inline: true, propTables: false })(storyFn, {
+        kind: 'Test Components',
+        story: 'TestComponent',
+      });
+
+    expect(mount(<Info />)).toMatchSnapshot();
+
+    Object.assign(global.STORYBOOK_REACT_CLASSES, { [reactClassPath]: previousReactClassesValue });
   });
 });

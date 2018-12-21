@@ -1,9 +1,114 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Layout addon panel in right 1`] = `
+.emotion-12 {
+  background: #F7F7F7 linear-gradient(to bottom right,#EEEEEE,#FFFFFF);
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  font-size: 13px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding-right: 0;
+}
+
+.emotion-0 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.emotion-4 {
+  z-index: 0;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-6 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  background-color: rgba(255,255,255,0.89);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6 > * {
+  margin: auto;
+}
+
+.emotion-8 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0 10px 0;
+  padding-top: 10px;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px 10px 0;
+  box-sizing: border-box;
+}
+
 <div>
   <div
-    class="css-16z7x6f e7rfqu0"
+    class="emotion-12 emotion-13"
   >
     <div
       class="SplitPane  vertical "
@@ -14,10 +119,10 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
         style="flex:none;position:relative;outline:none;width:250px"
       >
         <div
-          class="css-7r9jvr e97yylu0"
+          class="emotion-2 emotion-3"
         >
           <div
-            class="css-9in0fq e97yylu1"
+            class="emotion-0 emotion-1"
           >
             <div
               style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
@@ -29,6 +134,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
       </div>
       <span
         class="Resizer vertical "
+        role="presentation"
       />
       <div
         class="Pane vertical Pane2  "
@@ -43,13 +149,13 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
             style="flex:1;position:relative;outline:none"
           >
             <div
-              class="css-1e1vreg e97yylu3"
+              class="emotion-8 emotion-9"
             >
               <div
-                class="css-1nsb3py e97yylu5"
+                class="emotion-4 emotion-5"
               />
               <div
-                class="css-1xkk3c8 e97yylu4"
+                class="emotion-6 emotion-7"
               >
                 <div
                   style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -61,13 +167,14 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
           </div>
           <span
             class="Resizer vertical "
+            role="presentation"
           />
           <div
             class="Pane vertical Pane2  "
             style="flex:none;position:relative;outline:none;width:400px"
           >
             <div
-              class="css-1929wko e97yylu2"
+              class="emotion-10 emotion-11"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
@@ -86,9 +193,114 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
 `;
 
 exports[`Storyshots Components|Layout default 1`] = `
+.emotion-12 {
+  background: #F7F7F7 linear-gradient(to bottom right,#EEEEEE,#FFFFFF);
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  font-size: 13px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding-right: 0;
+}
+
+.emotion-0 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.emotion-8 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px 0 0;
+  padding-top: 10px;
+}
+
+.emotion-4 {
+  z-index: 0;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-6 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  background-color: rgba(255,255,255,0.89);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6 > * {
+  margin: auto;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px 10px 0;
+  box-sizing: border-box;
+}
+
 <div>
   <div
-    class="css-16z7x6f e7rfqu0"
+    class="emotion-12 emotion-13"
   >
     <div
       class="SplitPane  vertical "
@@ -99,10 +311,10 @@ exports[`Storyshots Components|Layout default 1`] = `
         style="flex:none;position:relative;outline:none;width:250px"
       >
         <div
-          class="css-7r9jvr e97yylu0"
+          class="emotion-2 emotion-3"
         >
           <div
-            class="css-9in0fq e97yylu1"
+            class="emotion-0 emotion-1"
           >
             <div
               style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
@@ -114,6 +326,7 @@ exports[`Storyshots Components|Layout default 1`] = `
       </div>
       <span
         class="Resizer vertical "
+        role="presentation"
       />
       <div
         class="Pane vertical Pane2  "
@@ -128,13 +341,13 @@ exports[`Storyshots Components|Layout default 1`] = `
             style="flex:1;position:relative;outline:none"
           >
             <div
-              class="css-xlbk67 e97yylu3"
+              class="emotion-8 emotion-9"
             >
               <div
-                class="css-1nsb3py e97yylu5"
+                class="emotion-4 emotion-5"
               />
               <div
-                class="css-1xkk3c8 e97yylu4"
+                class="emotion-6 emotion-7"
               >
                 <div
                   style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -146,13 +359,14 @@ exports[`Storyshots Components|Layout default 1`] = `
           </div>
           <span
             class="Resizer horizontal "
+            role="presentation"
           />
           <div
             class="Pane horizontal Pane2  "
             style="flex:none;position:relative;outline:none;height:200px;display:flex"
           >
             <div
-              class="css-hys0kv e97yylu2"
+              class="emotion-10 emotion-11"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
@@ -171,9 +385,101 @@ exports[`Storyshots Components|Layout default 1`] = `
 `;
 
 exports[`Storyshots Components|Layout full screen 1`] = `
+.emotion-12 {
+  background: #F7F7F7 linear-gradient(to bottom right,#EEEEEE,#FFFFFF);
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  font-size: 13px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.emotion-0 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.emotion-8 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px 0 0;
+  padding-top: 10px;
+}
+
+.emotion-4 {
+  z-index: 0;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: none;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding-right: 0;
+}
+
+.emotion-6 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  background-color: rgba(255,255,255,0.89);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-10 {
+  display: none;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px 10px 0;
+  box-sizing: border-box;
+}
+
 <div>
   <div
-    class="css-16z7x6f e7rfqu0"
+    class="emotion-12 emotion-13"
   >
     <div
       class="SplitPane  vertical disabled"
@@ -184,10 +490,10 @@ exports[`Storyshots Components|Layout full screen 1`] = `
         style="flex:none;position:relative;outline:none;width:1px"
       >
         <div
-          class="css-1yb218t e97yylu0"
+          class="emotion-2 emotion-3"
         >
           <div
-            class="css-9in0fq e97yylu1"
+            class="emotion-0 emotion-1"
           >
             <div
               style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
@@ -199,6 +505,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
       </div>
       <span
         class="Resizer vertical disabled"
+        role="presentation"
       />
       <div
         class="Pane vertical Pane2  "
@@ -213,13 +520,13 @@ exports[`Storyshots Components|Layout full screen 1`] = `
             style="flex:1;position:relative;outline:none"
           >
             <div
-              class="css-xlbk67 e97yylu3"
+              class="emotion-8 emotion-9"
             >
               <div
-                class="css-1nsb3py e97yylu5"
+                class="emotion-4 emotion-5"
               />
               <div
-                class="css-15swx87 e97yylu4"
+                class="emotion-6 emotion-7"
               >
                 <div
                   style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -231,13 +538,14 @@ exports[`Storyshots Components|Layout full screen 1`] = `
           </div>
           <span
             class="Resizer horizontal disabled"
+            role="presentation"
           />
           <div
             class="Pane horizontal Pane2  "
             style="flex:none;position:relative;outline:none;height:1px;display:flex"
           >
             <div
-              class="css-1yfjvq7 e97yylu2"
+              class="emotion-10 emotion-11"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
@@ -256,33 +564,184 @@ exports[`Storyshots Components|Layout full screen 1`] = `
 `;
 
 exports[`Storyshots Components|Layout mobile 1`] = `
+.emotion-6 {
+  background: rgba(255,255,255,1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  overflow: auto;
+  padding: 0 8px;
+  white-space: nowrap;
+  height: 40px;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 8px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 8px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: #444;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-10 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.emotion-20 {
+  background: #F7F7F7 linear-gradient(to bottom right,#EEEEEE,#FFFFFF);
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  font-size: 13px;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}
+
+.emotion-8 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 9999;
+}
+
+.emotion-12 {
+  display: none;
+}
+
+.emotion-16 {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: calc(100vh - 40px);
+  width: 100vw;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 <div>
   <div
-    class="css-1nhql0h e7rfqu0"
+    class="emotion-20 emotion-21"
   >
     <div>
       <div
-        class="css-1kes5pl e16i77hj1"
+        class="emotion-8 emotion-9"
       >
         <div
-          class="css-1whcqvw e1lzzkxx1"
+          class="emotion-6 emotion-7"
         >
           <button
-            class="css-xcko46 e1lzzkxx2"
+            class="emotion-0 emotion-1"
             role="tab"
             type="button"
           >
             Navigator
           </button>
           <button
-            class="css-1hf831j e1lzzkxx2"
+            class="emotion-2 emotion-1"
             role="tab"
             type="button"
           >
             Preview
           </button>
           <button
-            class="css-xcko46 e1lzzkxx2"
+            class="emotion-0 emotion-1"
             role="tab"
             type="button"
           >
@@ -291,10 +750,10 @@ exports[`Storyshots Components|Layout mobile 1`] = `
         </div>
       </div>
       <div
-        class="css-1hyfx7x e16i77hj0"
+        class="emotion-12 emotion-13"
       >
         <div
-          class="css-9in0fq e7rfqu1"
+          class="emotion-10 emotion-11"
         >
           <div
             style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
@@ -304,11 +763,11 @@ exports[`Storyshots Components|Layout mobile 1`] = `
         </div>
       </div>
       <div
-        class="css-1p46ag7 e16i77hj0"
+        class="emotion-16 emotion-13"
         selected=""
       >
         <div
-          class="css-9in0fq e7rfqu1"
+          class="emotion-10 emotion-11"
         >
           <div
             style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -318,7 +777,7 @@ exports[`Storyshots Components|Layout mobile 1`] = `
         </div>
       </div>
       <div
-        class="css-1hyfx7x e16i77hj0"
+        class="emotion-12 emotion-13"
       >
         <div
           style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
@@ -334,9 +793,111 @@ exports[`Storyshots Components|Layout mobile 1`] = `
 `;
 
 exports[`Storyshots Components|Layout no addon panel 1`] = `
+.emotion-12 {
+  background: #F7F7F7 linear-gradient(to bottom right,#EEEEEE,#FFFFFF);
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  font-size: 13px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding-right: 0;
+}
+
+.emotion-0 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.emotion-8 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px 0 0;
+  padding-top: 10px;
+}
+
+.emotion-4 {
+  z-index: 0;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-6 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  background-color: rgba(255,255,255,0.89);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6 > * {
+  margin: auto;
+}
+
+.emotion-10 {
+  display: none;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px 10px 0;
+  box-sizing: border-box;
+}
+
 <div>
   <div
-    class="css-16z7x6f e7rfqu0"
+    class="emotion-12 emotion-13"
   >
     <div
       class="SplitPane  vertical "
@@ -347,10 +908,10 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
         style="flex:none;position:relative;outline:none;width:250px"
       >
         <div
-          class="css-7r9jvr e97yylu0"
+          class="emotion-2 emotion-3"
         >
           <div
-            class="css-9in0fq e97yylu1"
+            class="emotion-0 emotion-1"
           >
             <div
               style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
@@ -362,6 +923,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
       </div>
       <span
         class="Resizer vertical "
+        role="presentation"
       />
       <div
         class="Pane vertical Pane2  "
@@ -376,13 +938,13 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
             style="flex:1;position:relative;outline:none"
           >
             <div
-              class="css-xlbk67 e97yylu3"
+              class="emotion-8 emotion-9"
             >
               <div
-                class="css-1nsb3py e97yylu5"
+                class="emotion-4 emotion-5"
               />
               <div
-                class="css-1xkk3c8 e97yylu4"
+                class="emotion-6 emotion-7"
               >
                 <div
                   style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -394,13 +956,14 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
           </div>
           <span
             class="Resizer horizontal disabled"
+            role="presentation"
           />
           <div
             class="Pane horizontal Pane2  "
             style="flex:none;position:relative;outline:none;height:1px;display:flex"
           >
             <div
-              class="css-1yfjvq7 e97yylu2"
+              class="emotion-10 emotion-11"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
@@ -419,9 +982,111 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
 `;
 
 exports[`Storyshots Components|Layout no stories panel 1`] = `
+.emotion-12 {
+  background: #F7F7F7 linear-gradient(to bottom right,#EEEEEE,#FFFFFF);
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  font-size: 13px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.emotion-0 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.emotion-8 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px 0 0;
+  padding-top: 10px;
+}
+
+.emotion-4 {
+  z-index: 0;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-6 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  background-color: rgba(255,255,255,0.89);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6 > * {
+  margin: auto;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px 10px 0;
+  box-sizing: border-box;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: none;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding-right: 0;
+}
+
 <div>
   <div
-    class="css-16z7x6f e7rfqu0"
+    class="emotion-12 emotion-13"
   >
     <div
       class="SplitPane  vertical disabled"
@@ -432,10 +1097,10 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
         style="flex:none;position:relative;outline:none;width:1px"
       >
         <div
-          class="css-1yb218t e97yylu0"
+          class="emotion-2 emotion-3"
         >
           <div
-            class="css-9in0fq e97yylu1"
+            class="emotion-0 emotion-1"
           >
             <div
               style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
@@ -447,6 +1112,7 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
       </div>
       <span
         class="Resizer vertical disabled"
+        role="presentation"
       />
       <div
         class="Pane vertical Pane2  "
@@ -461,13 +1127,13 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
             style="flex:1;position:relative;outline:none"
           >
             <div
-              class="css-xlbk67 e97yylu3"
+              class="emotion-8 emotion-9"
             >
               <div
-                class="css-1nsb3py e97yylu5"
+                class="emotion-4 emotion-5"
               />
               <div
-                class="css-1xkk3c8 e97yylu4"
+                class="emotion-6 emotion-7"
               >
                 <div
                   style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -479,13 +1145,14 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
           </div>
           <span
             class="Resizer horizontal "
+            role="presentation"
           />
           <div
             class="Pane horizontal Pane2  "
             style="flex:none;position:relative;outline:none;height:200px;display:flex"
           >
             <div
-              class="css-hys0kv e97yylu2"
+              class="emotion-10 emotion-11"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"

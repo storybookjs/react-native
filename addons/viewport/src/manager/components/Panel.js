@@ -25,8 +25,9 @@ const Container = styled.div({
 });
 Container.displayName = 'Container';
 
-const getDefaultViewport = (viewports, candidateViewport) =>
-  candidateViewport in viewports ? candidateViewport : Object.keys(viewports)[0];
+function getDefaultViewport(viewports, candidateViewport) {
+  return candidateViewport in viewports ? candidateViewport : Object.keys(viewports)[0];
+}
 
 const getViewports = viewports =>
   Object.keys(viewports).length > 0 ? viewports : INITIAL_VIEWPORTS;
@@ -62,7 +63,6 @@ export class Panel extends Component {
 
   componentDidMount() {
     const { channel, api } = this.props;
-    const { defaultViewport } = this.state;
 
     this.iframe = document.getElementById(storybookIframe);
 
@@ -71,6 +71,7 @@ export class Panel extends Component {
     channel.on(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
 
     this.unsubscribeFromOnStory = api.onStory(() => {
+      const { defaultViewport } = this.state;
       this.setStoryDefaultViewport(defaultViewport);
     });
   }
@@ -98,7 +99,7 @@ export class Panel extends Component {
   };
 
   configure = (options = Panel.defaultOptions) => {
-    const viewports = getViewports(options.viewports);
+    const viewports = getViewports(options.viewports || {});
     const defaultViewport = getDefaultViewport(viewports, options.defaultViewport);
 
     this.setState(

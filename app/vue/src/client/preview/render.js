@@ -1,13 +1,21 @@
 import { stripIndents } from 'common-tags';
 import Vue from 'vue';
 
-let app = null;
+export const COMPONENT = 'STORYBOOK_COMPONENT';
+export const VALUES = 'STORYBOOK_VALUES';
 
-function renderRoot(options) {
-  if (app) app.$destroy();
-
-  app = new Vue(options);
-}
+const root = new Vue({
+  data() {
+    return {
+      [COMPONENT]: undefined,
+      [VALUES]: {},
+    };
+  },
+  render(h) {
+    const children = this[COMPONENT] ? [h(this[COMPONENT])] : undefined;
+    return h('div', { attrs: { id: 'root' } }, children);
+  },
+});
 
 export default function render({
   story,
@@ -16,6 +24,7 @@ export default function render({
   showMain,
   showError,
   showException,
+  forceRender,
 }) {
   Vue.config.errorHandler = showException;
 
@@ -33,10 +42,15 @@ export default function render({
   }
 
   showMain();
-  renderRoot({
-    el: '#root',
-    render(h) {
-      return h('div', { attrs: { id: 'root' } }, [h(component)]);
-    },
-  });
+
+  // at component creation || refresh by HMR
+  if (!root[COMPONENT] || !forceRender) {
+    root[COMPONENT] = component;
+  }
+
+  root[VALUES] = component.options[VALUES];
+
+  if (!root.$el) {
+    root.$mount('#root');
+  }
 }

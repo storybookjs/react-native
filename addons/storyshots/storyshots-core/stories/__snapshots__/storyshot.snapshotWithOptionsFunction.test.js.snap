@@ -1,19 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Another Button with some emoji 1`] = `
-.emotion-0 {
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 15px;
-  padding: 3px 10px;
-  margin: 10px;
-}
-
 <button
-  className="emotion-0 emotion-1"
   onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "1px solid #eee",
+      "borderRadius": 3,
+      "cursor": "pointer",
+      "fontSize": 15,
+      "margin": 10,
+      "padding": "3px 10px",
+    }
+  }
+  type="button"
 >
   <span
     aria-label="so cool"
@@ -25,19 +26,20 @@ exports[`Storyshots Another Button with some emoji 1`] = `
 `;
 
 exports[`Storyshots Another Button with text 1`] = `
-.emotion-0 {
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 15px;
-  padding: 3px 10px;
-  margin: 10px;
-}
-
 <button
-  className="emotion-0 emotion-1"
   onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "1px solid #eee",
+      "borderRadius": 3,
+      "cursor": "pointer",
+      "fontSize": 15,
+      "margin": 10,
+      "padding": "3px 10px",
+    }
+  }
+  type="button"
 >
   Hello Button
 </button>
@@ -50,19 +52,20 @@ exports[`Storyshots Async with 5ms timeout simulating async operation 1`] = `
 `;
 
 exports[`Storyshots Button with some emoji 1`] = `
-.emotion-0 {
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 15px;
-  padding: 3px 10px;
-  margin: 10px;
-}
-
 <button
-  className="emotion-0 emotion-1"
   onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "1px solid #eee",
+      "borderRadius": 3,
+      "cursor": "pointer",
+      "fontSize": 15,
+      "margin": 10,
+      "padding": "3px 10px",
+    }
+  }
+  type="button"
 >
   <span
     aria-label="so cool"
@@ -74,75 +77,37 @@ exports[`Storyshots Button with some emoji 1`] = `
 `;
 
 exports[`Storyshots Button with text 1`] = `
-.emotion-0 {
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 15px;
-  padding: 3px 10px;
-  margin: 10px;
-}
-
 <button
-  className="emotion-0 emotion-1"
   onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "1px solid #eee",
+      "borderRadius": 3,
+      "cursor": "pointer",
+      "fontSize": 15,
+      "margin": 10,
+      "padding": "3px 10px",
+    }
+  }
+  type="button"
 >
   Hello Button
 </button>
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
-.emotion-18 {
-  margin: 15px;
-  max-width: 600px;
-  line-height: 1.4;
-  font-family: "Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;
-}
-
-.emotion-2 {
-  font-size: 15px;
-  font-weight: 600;
-  padding: 2px 5px;
-  border: 1px solid #eae9e9;
-  border-radius: 4px;
-  background-color: #f3f2f2;
-  color: #3a3a3a;
-}
-
-.emotion-4 {
-  color: #1474f3;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-bottom: 1px solid #1474f3;
-  padding-bottom: 2px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  background-color: transparent;
-  padding: 0;
-  cursor: pointer;
-  font: inherit;
-}
-
-.emotion-12 {
-  color: #1474f3;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-bottom: 1px solid #1474f3;
-  padding-bottom: 2px;
-}
-
-.emotion-16 {
-  opacity: 0.5;
-}
-
 <article
-  className="emotion-18 emotion-19"
+  style={
+    Object {
+      "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
+      "lineHeight": 1.4,
+      "margin": 15,
+      "maxWidth": 600,
+    }
+  }
 >
-  <h1
-    className="emotion-0 emotion-1"
-  >
+  <h1>
     Welcome to storybook
   </h1>
   <p>
@@ -151,7 +116,17 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     We've added some basic stories inside the 
     <code
-      className="emotion-2 emotion-3"
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
     >
       src/stories
     </code>
@@ -164,15 +139,40 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     See these sample 
     <button
-      className="emotion-4 emotion-5"
       onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderBottom": "1px solid #1474f3",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "color": "#1474f3",
+          "cursor": "pointer",
+          "font": "inherit",
+          "padding": 0,
+          "paddingBottom": 2,
+          "textDecoration": "none",
+        }
+      }
+      type="button"
     >
       stories
     </button>
      for a component called
      
     <code
-      className="emotion-2 emotion-3"
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
     >
       Button
     </code>
@@ -185,14 +185,34 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     (Try editing the 
     <code
-      className="emotion-2 emotion-3"
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
     >
       Button
     </code>
      stories located at
      
     <code
-      className="emotion-2 emotion-3"
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
     >
       src/stories/index.js
     </code>
@@ -204,9 +224,16 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     Have a look at the
      
     <a
-      className="emotion-12 emotion-13"
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
+      style={
+        Object {
+          "borderBottom": "1px solid #1474f3",
+          "color": "#1474f3",
+          "paddingBottom": 2,
+          "textDecoration": "none",
+        }
+      }
       target="_blank"
     >
       Writing Stories
@@ -215,7 +242,11 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     section in our documentation.
   </p>
   <p
-    className="emotion-16 emotion-17"
+    style={
+      Object {
+        "opacity": 0.5,
+      }
+    }
   >
     <b>
       NOTE:
@@ -223,7 +254,17 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     Have a look at the 
     <code
-      className="emotion-2 emotion-3"
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
     >
       .storybook/webpack.config.js
     </code>

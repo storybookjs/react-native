@@ -11,4 +11,4 @@ cd cra-fixtures
 npx create-react-app react-scripts-latest-fixture
 
 cd ..
-./run_tests.sh -f cra-fixtures
+./run_tests.sh -f cra-fixtures $@

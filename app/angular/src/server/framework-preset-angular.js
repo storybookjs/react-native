@@ -31,20 +31,20 @@ export function webpack(config, { configDir }) {
           exclude: /\.async\.html$/,
         },
         {
-          test: /\.scss$/,
+          test: /\.s(c|a)ss$/,
           use: [require.resolve('raw-loader'), require.resolve('sass-loader')],
         },
       ],
     },
     resolve: {
       ...config.resolve,
-      extensions: [...config.resolve.extensions, '.ts', '.tsx'],
+      extensions: ['.ts', '.tsx', ...config.resolve.extensions],
     },
     plugins: [
       ...config.plugins,
       // See https://github.com/angular/angular/issues/11580#issuecomment-401127742
       new ContextReplacementPlugin(
-        /@angular(\\|\/)core(\\|\/)fesm5/,
+        /@angular(\\|\/)core(\\|\/)(fesm5|bundles)/,
         path.resolve(__dirname, '..')
       ),
       createForkTsCheckerInstance(tsLoaderOptions),

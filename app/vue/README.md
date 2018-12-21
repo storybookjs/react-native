@@ -12,7 +12,7 @@ So you can develop UI components in isolation without worrying about app specifi
 
 ```sh
 cd my-vue-app
-npx -p @storybook/cli@alpha sb init
+npx -p @storybook/cli sb init
 ```
 
 For more information visit: [storybook.js.org](https://storybook.js.org)
@@ -29,3 +29,20 @@ You can also build a [static version](https://storybook.js.org/basics/exporting-
 ## Vue Notes
 
 - When using global custom components or extension (e.g `Vue.use`). You will need to declare those in the `./storybook/config.js`.
+
+## Known Limitations
+
+In Storybook story and decorator components you can not access the Vue instance
+in factory functions for default prop values:
+
+```js
+{
+  props: {
+    foo: {
+      default() {
+        return this.bar; // does not work!
+      }
+    }
+  }
+}
+```
