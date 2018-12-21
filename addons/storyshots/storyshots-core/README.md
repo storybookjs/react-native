@@ -325,7 +325,7 @@ initStoryshots({
   }) => {
     const converter = new Stories2SnapsConverter();
     const snapshotFilename = converter.getSnapshotFileName(context);
-    const storyElement = story.render(context);
+    const storyElement = story.render();
 
     // mount the story
     const tree = mount(storyElement);
@@ -612,7 +612,7 @@ import toJson from 'enzyme-to-json';
 initStoryshots({
   test: ({ story, context }) => {
     const snapshotFileName = getSnapshotFileName(context);
-    const storyElement = story.render(context);
+    const storyElement = story.render();
     const shallowTree = shallow(storyElement);
 
     if (snapshotFileName) {
