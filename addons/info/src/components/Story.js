@@ -263,12 +263,16 @@ class Story extends Component {
   }
 
   _getComponentDescription() {
-    const { context } = this.props;
+    const {
+      context: { kind, story },
+    } = this.props;
     let retDiv = null;
+
+    const validMatches = [kind, story];
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
-        if (STORYBOOK_REACT_CLASSES[key].name === context.kind) {
+        if (validMatches.includes(STORYBOOK_REACT_CLASSES[key].name)) {
           const componentDescription = STORYBOOK_REACT_CLASSES[key].docgenInfo.description;
           retDiv = <div>{this.marksy(componentDescription).tree}</div>;
         }

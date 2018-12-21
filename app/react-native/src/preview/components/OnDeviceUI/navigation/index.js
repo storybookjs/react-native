@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View } from 'react-native';
+import { View, SafeAreaView, StyleSheet } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import PropTypes from 'prop-types';
 
@@ -10,6 +10,15 @@ const SWIPE_CONFIG = {
   velocityThreshold: 0.2,
   directionalOffsetThreshold: 80,
 };
+
+const style = StyleSheet.create({
+  wrapper: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+});
 
 export default class Navigation extends PureComponent {
   constructor(props) {
@@ -44,17 +53,21 @@ export default class Navigation extends PureComponent {
     const { isUIVisible } = this.state;
 
     return (
-      <View>
-        {isUIVisible && (
-          <GestureRecognizer
-            onSwipeLeft={this.handleSwipeLeft}
-            onSwipeRight={this.handleSwipeRight}
-            config={SWIPE_CONFIG}
-          >
-            <Bar index={tabOpen} onPress={onChangeTab} />
-          </GestureRecognizer>
-        )}
-        <VisibilityButton onPress={this.handleToggleUI} />
+      <View style={style.wrapper}>
+        <SafeAreaView>
+          {isUIVisible && (
+            <GestureRecognizer
+              onSwipeLeft={this.handleSwipeLeft}
+              onSwipeRight={this.handleSwipeRight}
+              config={SWIPE_CONFIG}
+            >
+              <Bar index={tabOpen} onPress={onChangeTab} />
+            </GestureRecognizer>
+          )}
+          <View>
+            <VisibilityButton onPress={this.handleToggleUI} />
+          </View>
+        </SafeAreaView>
       </View>
     );
   }
