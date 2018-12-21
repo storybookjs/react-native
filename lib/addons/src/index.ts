@@ -75,6 +75,4 @@ function getAddonsStore() {
 
 // Exporting this twice in order to to be able to import it like { addons } instead of 'addons'
 // prefer import { addons } from '@storybook/addons' over import addons from '@storybook/addons'
-const addonStore = getAddonsStore();
-export { addonStore as addons };
-export default addonStore;
+export const addons = getAddonsStore();
