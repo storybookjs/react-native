@@ -607,10 +607,12 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
   <div
     style="position:relative;z-index:0"
   >
-    <input
-      type="text"
-    />
-    <textarea />
+    <div>
+      <input
+        type="text"
+      />
+      <textarea />
+    </div>
   </div>
   <button
     class="info__show-button"
@@ -676,18 +678,30 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
                   class="css-1igagyr-Code epklh873"
                 >
                   <span
-                    class="token operator"
+                    class="token tag"
                   >
-                    &lt;
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;
+                      </span>
+                      div
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      &gt;
+                    </span>
                   </span>
-                   
                   <span
-                    class="token operator"
+                    class="token plain-text"
                   >
-                    &gt;
+                    
+  
                   </span>
-                  
-
                   <span
                     class="token tag"
                   >
@@ -720,43 +734,68 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
                       /&gt;
                     </span>
                   </span>
-                   
                   <span
-                    class="token operator"
+                    class="token plain-text"
                   >
-                    &lt;
-                  </span>
-                  
-No Display Name 
-                  <span
-                    class="token operator"
-                  >
-                    /
-                  </span>
-                   
-                  <span
-                    class="token operator"
-                  >
-                    &gt;
-                  </span>
-                  
+                    
   
-                  <span
-                    class="token operator"
-                  >
-                    &lt;
-                  </span>
-                  
-  
-                  <span
-                    class="token operator"
-                  >
-                    /
                   </span>
                   <span
-                    class="token operator"
+                    class="token tag"
                   >
-                    &gt;
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;
+                      </span>
+                      No
+                    </span>
+                     
+                    <span
+                      class="token attr-name"
+                    >
+                      Display
+                    </span>
+                     
+                    <span
+                      class="token attr-name"
+                    >
+                      Name
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      /&gt;
+                    </span>
+                  </span>
+                  <span
+                    class="token plain-text"
+                  >
+                    
+
+                  </span>
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;/
+                      </span>
+                      div
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      &gt;
+                    </span>
                   </span>
                   
 
@@ -771,16 +810,6 @@ No Display Name
           >
             Prop Types
           </h1>
-          <div>
-            <h3
-              style="margin:20px 0 0 0"
-            >
-              "" Component
-            </h3>
-            <small>
-              No propTypes defined!
-            </small>
-          </div>
           <div>
             <h3
               style="margin:20px 0 0 0"
@@ -858,25 +887,27 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
         <div
           style="margin-bottom:0"
         >
-          <h2>
-            This is a JSX info section
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare massa rutrum metus commodo, a mattis velit dignissim. Fusce vestibulum turpis sed massa egestas pharetra. Sed at libero nulla.
-          </p>
-          <p>
-            <a
-              href="https://github.com/storybooks/react-storybook-addon-info"
-            >
-              This is a link
-            </a>
-          </p>
-          <p>
-            <img
-              alt="350x150"
-              src="http://placehold.it/350x150"
-            />
-          </p>
+          <div>
+            <h2>
+              This is a JSX info section
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare massa rutrum metus commodo, a mattis velit dignissim. Fusce vestibulum turpis sed massa egestas pharetra. Sed at libero nulla.
+            </p>
+            <p>
+              <a
+                href="https://github.com/storybooks/react-storybook-addon-info"
+              >
+                This is a link
+              </a>
+            </p>
+            <p>
+              <img
+                alt="350x150"
+                src="http://placehold.it/350x150"
+              />
+            </p>
+          </div>
         </div>
         <div>
           <h1
@@ -3793,6 +3824,423 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
                   >
                     <span>
                       onClick
+                    </span>
+                  </td>
+                  <td
+                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from prop tables 1`] = `
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <div>
+      <button
+        type="button"
+      >
+        Button
+      </button>
+      <button
+        type="button"
+      >
+        Flow Typed Button
+      </button>
+    </div>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Addons|Info/Options.propTablesExclude
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            Exclude component from prop tables
+          </h2>
+        </div>
+        <div
+          style="margin-bottom:0"
+        >
+          <div
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+          >
+            This can exclude extraneous components from being displayed in prop tables.
+          </div>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <div
+            class="css-fri0s0-Wrapper epklh870"
+          >
+            <div
+              class="css-1y75e3d-Scroller epklh871"
+            >
+              <pre
+                class="hljs css-1x8ad3z-Pre epklh872"
+              >
+                <code
+                  class="css-1igagyr-Code epklh873"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;
+                      </span>
+                      div
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      &gt;
+                    </span>
+                  </span>
+                  <span
+                    class="token plain-text"
+                  >
+                    
+  
+                  </span>
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;
+                      </span>
+                      BaseButton
+                    </span>
+                     
+                    <span
+                      class="token attr-name"
+                    >
+                      label
+                    </span>
+                    <span
+                      class="token attr-value"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        =
+                      </span>
+                      <span
+                        class="token punctuation"
+                      >
+                        "
+                      </span>
+                      Button
+                      <span
+                        class="token punctuation"
+                      >
+                        "
+                      </span>
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      /&gt;
+                    </span>
+                  </span>
+                  <span
+                    class="token plain-text"
+                  >
+                    
+  
+                  </span>
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;
+                      </span>
+                      FlowTypeButton
+                    </span>
+                     
+                    <span
+                      class="token attr-name"
+                    >
+                      label
+                    </span>
+                    <span
+                      class="token attr-value"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        =
+                      </span>
+                      <span
+                        class="token punctuation"
+                      >
+                        "
+                      </span>
+                      Flow Typed Button
+                      <span
+                        class="token punctuation"
+                      >
+                        "
+                      </span>
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      /&gt;
+                    </span>
+                  </span>
+                  <span
+                    class="token plain-text"
+                  >
+                    
+
+                  </span>
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;/
+                      </span>
+                      div
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      &gt;
+                    </span>
+                  </span>
+                  
+
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h3
+              style="margin:20px 0 0 0"
+            >
+              "BaseButton" Component
+            </h3>
+            <table
+              class="css-919xfk-Table-Table e1fg2ikb0"
+            >
+              <thead
+                class="css-ig77mj-THead e1fg2ikb1"
+              >
+                <tr>
+                  <th
+                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                  >
+                    Property
+                  </th>
+                  <th
+                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                  >
+                    Type
+                  </th>
+                  <th
+                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                  >
+                    Required
+                  </th>
+                  <th
+                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                  >
+                    Default
+                  </th>
+                  <th
+                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                  >
+                    Description
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                class="css-4b5un0-TBody e1fg2ikb3"
+              >
+                <tr
+                  class="css-rss5jh-TBodyTR e1fg2ikb4"
+                >
+                  <td
+                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  >
+                    <span>
+                      bool
+                    </span>
+                  </td>
+                  <td
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                  >
+                    <span>
+                      false
+                    </span>
+                  </td>
+                  <td
+                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  />
+                </tr>
+                <tr
+                  class="css-rss5jh-TBodyTR e1fg2ikb4"
+                >
+                  <td
+                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  >
+                    label
+                  </td>
+                  <td
+                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  >
+                    <span>
+                      string
+                    </span>
+                  </td>
+                  <td
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                  >
+                    yes
+                  </td>
+                  <td
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  />
+                </tr>
+                <tr
+                  class="css-rss5jh-TBodyTR e1fg2ikb4"
+                >
+                  <td
+                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  >
+                    <span>
+                      func
+                    </span>
+                  </td>
+                  <td
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                  >
+                    <span>
+                      onClick
+                    </span>
+                  </td>
+                  <td
+                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  />
+                </tr>
+                <tr
+                  class="css-rss5jh-TBodyTR e1fg2ikb4"
+                >
+                  <td
+                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  >
+                    style
+                  </td>
+                  <td
+                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  >
+                    <span>
+                      other
+                    </span>
+                  </td>
+                  <td
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                  >
+                    <span>
+                      {}
                     </span>
                   </td>
                   <td
@@ -8780,14 +9228,16 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
   <div
     style="position:relative;z-index:0"
   >
-    <p>
-      Here is my nice button:
-    </p>
-    <button
-      type="button"
-    >
-      Button
-    </button>
+    <div>
+      <p>
+        Here is my nice button:
+      </p>
+      <button
+        type="button"
+      >
+        Button
+      </button>
+    </div>
   </div>
   <button
     class="info__show-button"
@@ -8844,18 +9294,30 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
                   class="css-1igagyr-Code epklh873"
                 >
                   <span
-                    class="token operator"
+                    class="token tag"
                   >
-                    &lt;
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;
+                      </span>
+                      div
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      &gt;
+                    </span>
                   </span>
-                   
                   <span
-                    class="token operator"
+                    class="token plain-text"
                   >
-                    &gt;
+                    
+  
                   </span>
-                  
-
                   <span
                     class="token tag"
                   >
@@ -8901,108 +9363,142 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
                       &gt;
                     </span>
                   </span>
-                   
                   <span
-                    class="token operator"
+                    class="token plain-text"
                   >
-                    &lt;
-                  </span>
-                  
-BaseButton
-label 
-                  <span
-                    class="token operator"
-                  >
-                    =
-                  </span>
-                   
-                  <span
-                    class="token string"
-                  >
-                    "Button"
-                  </span>
-                  
-onClick 
-                  <span
-                    class="token operator"
-                  >
-                    =
-                  </span>
-                   
-                  <span
-                    class="token punctuation"
-                  >
-                    {
-                  </span>
-                  
+                    
   
-                  <span
-                    class="token keyword"
-                  >
-                    function
-                  </span>
-                   
-                  <span
-                    class="token function"
-                  >
-                    noRefCheck
                   </span>
                   <span
-                    class="token punctuation"
+                    class="token tag"
                   >
-                    (
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;
+                      </span>
+                      BaseButton
+                    </span>
+                    
+    
+                    <span
+                      class="token attr-name"
+                    >
+                      label
+                    </span>
+                    <span
+                      class="token attr-value"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        =
+                      </span>
+                      <span
+                        class="token punctuation"
+                      >
+                        "
+                      </span>
+                      Button
+                      <span
+                        class="token punctuation"
+                      >
+                        "
+                      </span>
+                    </span>
+                    
+    
+                    <span
+                      class="token attr-name"
+                    >
+                      onClick
+                    </span>
+                    <span
+                      class="token script language-javascript"
+                    >
+                      <span
+                        class="token script-punctuation punctuation"
+                      >
+                        =
+                      </span>
+                      <span
+                        class="token punctuation"
+                      >
+                        {
+                      </span>
+                      <span
+                        class="token keyword"
+                      >
+                        function
+                      </span>
+                       
+                      <span
+                        class="token function"
+                      >
+                        noRefCheck
+                      </span>
+                      <span
+                        class="token punctuation"
+                      >
+                        (
+                      </span>
+                      <span
+                        class="token punctuation"
+                      >
+                        )
+                      </span>
+                       
+                      <span
+                        class="token punctuation"
+                      >
+                        {
+                      </span>
+                      <span
+                        class="token punctuation"
+                      >
+                        }
+                      </span>
+                      <span
+                        class="token punctuation"
+                      >
+                        }
+                      </span>
+                    </span>
+                    
+  
+                    <span
+                      class="token punctuation"
+                    >
+                      /&gt;
+                    </span>
                   </span>
                   <span
-                    class="token punctuation"
+                    class="token plain-text"
                   >
-                    )
-                  </span>
-                   
-                  <span
-                    class="token punctuation"
-                  >
-                    {
-                  </span>
-                  <span
-                    class="token punctuation"
-                  >
-                    }
-                  </span>
-                   
-                  <span
-                    class="token punctuation"
-                  >
-                    }
-                  </span>
-                  
+                    
 
-                  <span
-                    class="token operator"
-                  >
-                    /
                   </span>
                   <span
-                    class="token operator"
+                    class="token tag"
                   >
-                    &gt;
-                  </span>
-                   
-                  <span
-                    class="token operator"
-                  >
-                    &lt;
-                  </span>
-                  
-
-                  <span
-                    class="token operator"
-                  >
-                    /
-                  </span>
-                  <span
-                    class="token operator"
-                  >
-                    &gt;
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token punctuation"
+                      >
+                        &lt;/
+                      </span>
+                      div
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      &gt;
+                    </span>
                   </span>
                   
 
@@ -9184,16 +9680,6 @@ onClick
                 </tr>
               </tbody>
             </table>
-          </div>
-          <div>
-            <h3
-              style="margin:20px 0 0 0"
-            >
-              "" Component
-            </h3>
-            <small>
-              No propTypes defined!
-            </small>
           </div>
         </div>
       </div>
