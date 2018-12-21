@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf, addParameters } from '@storybook/react';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
@@ -16,10 +16,10 @@ storiesOf('Core|Parameters', module)
   .add(
     'passed to story',
     ({ parameters: { fileName, ...parameters } }) => (
-      <div>
+      <Fragment>
         <p>Parameters are</p>
         <pre>{JSON.stringify(parameters, null, 2)}</pre>
-      </div>
+      </Fragment>
     ),
     {
       storyParameter,

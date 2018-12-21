@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
-.emotion-20 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -133,106 +126,95 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
 }
 
 <div
-  class="emotion-20 emotion-21"
+  style="height:calc(100vh - 20px)"
 >
   <div
-    style="height:calc(100vh - 20px)"
+    class="emotion-18 emotion-19"
   >
     <div
-      class="emotion-18 emotion-19"
+      class="emotion-14 emotion-15"
     >
       <div
-        class="emotion-14 emotion-15"
+        class="emotion-12 emotion-13"
+        role="tablist"
       >
-        <div
-          class="emotion-12 emotion-13"
-          role="tablist"
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
         >
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-4 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
+          Tab title #1
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #2
+        </button>
+        <button
+          class="emotion-4 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab with scroll!
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #4
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #5
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #6
+        </button>
       </div>
+    </div>
+    <div
+      class="emotion-16 emotion-17"
+    >
       <div
-        class="emotion-16 emotion-17"
-      >
-        <div
-          id="test1"
-          title="Tab title #1"
-        />
-        <div
-          id="test2"
-          title="Tab title #2"
-        />
-        <div
-          id="test3"
-          title="Tab with scroll!"
-        />
-        <div
-          id="test4"
-          title="Tab title #4"
-        />
-        <div
-          id="test5"
-          title="Tab title #5"
-        />
-        <div
-          id="test6"
-          title="Tab title #6"
-        />
-      </div>
+        id="test1"
+        title="Tab title #1"
+      />
+      <div
+        id="test2"
+        title="Tab title #2"
+      />
+      <div
+        id="test3"
+        title="Tab with scroll!"
+      />
+      <div
+        id="test4"
+        title="Tab title #4"
+      />
+      <div
+        id="test5"
+        title="Tab title #5"
+      />
+      <div
+        id="test6"
+        title="Tab title #6"
+      />
     </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
-.emotion-20 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-2 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -358,106 +340,95 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
 }
 
 <div
-  class="emotion-20 emotion-21"
+  style="height:calc(100vh - 20px)"
 >
   <div
-    style="height:calc(100vh - 20px)"
+    class="emotion-18 emotion-19"
   >
     <div
-      class="emotion-18 emotion-19"
+      class="emotion-14 emotion-15"
     >
       <div
-        class="emotion-14 emotion-15"
+        class="emotion-12 emotion-13"
+        role="tablist"
       >
-        <div
-          class="emotion-12 emotion-13"
-          role="tablist"
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
         >
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-2 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-2 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-2 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-2 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-2 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
+          Tab title #1
+        </button>
+        <button
+          class="emotion-2 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #2
+        </button>
+        <button
+          class="emotion-2 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab with scroll!
+        </button>
+        <button
+          class="emotion-2 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #4
+        </button>
+        <button
+          class="emotion-2 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #5
+        </button>
+        <button
+          class="emotion-2 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #6
+        </button>
       </div>
+    </div>
+    <div
+      class="emotion-16 emotion-17"
+    >
       <div
-        class="emotion-16 emotion-17"
-      >
-        <div
-          id="test1"
-          title="Tab title #1"
-        />
-        <div
-          id="test2"
-          title="Tab title #2"
-        />
-        <div
-          id="test3"
-          title="Tab with scroll!"
-        />
-        <div
-          id="test4"
-          title="Tab title #4"
-        />
-        <div
-          id="test5"
-          title="Tab title #5"
-        />
-        <div
-          id="test6"
-          title="Tab title #6"
-        />
-      </div>
+        id="test1"
+        title="Tab title #1"
+      />
+      <div
+        id="test2"
+        title="Tab title #2"
+      />
+      <div
+        id="test3"
+        title="Tab with scroll!"
+      />
+      <div
+        id="test4"
+        title="Tab title #4"
+      />
+      <div
+        id="test5"
+        title="Tab title #5"
+      />
+      <div
+        id="test6"
+        title="Tab title #6"
+      />
     </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Tabs stateful - static 1`] = `
-.emotion-12 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -583,51 +554,47 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
 }
 
 <div
-  class="emotion-12 emotion-13"
+  style="height:calc(100vh - 20px)"
 >
   <div
-    style="height:calc(100vh - 20px)"
+    class="emotion-10 emotion-11"
   >
     <div
-      class="emotion-10 emotion-11"
+      class="emotion-6 emotion-7"
     >
       <div
-        class="emotion-6 emotion-7"
+        class="emotion-4 emotion-5"
+        role="tablist"
       >
-        <div
-          class="emotion-4 emotion-5"
-          role="tablist"
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
         >
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            With a function
-          </button>
-          <button
-            class="emotion-2 emotion-1"
-            role="tab"
-            type="button"
-          >
-            With markup
-          </button>
-        </div>
+          With a function
+        </button>
+        <button
+          class="emotion-2 emotion-1"
+          role="tab"
+          type="button"
+        >
+          With markup
+        </button>
       </div>
+    </div>
+    <div
+      class="emotion-8 emotion-9"
+    >
       <div
-        class="emotion-8 emotion-9"
+        id="test1"
+        title="With a function"
+      />
+      <div
+        id="test2"
+        title="With markup"
       >
-        <div
-          id="test1"
-          title="With a function"
-        />
-        <div
-          id="test2"
-          title="With markup"
-        >
-          <div>
-            test2 is always active (but visually hidden)
-          </div>
+        <div>
+          test2 is always active (but visually hidden)
         </div>
       </div>
     </div>
@@ -636,13 +603,6 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
 `;
 
 exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
-.emotion-20 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -787,106 +747,95 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
 }
 
 <div
-  class="emotion-20 emotion-21"
+  style="height:calc(100vh - 20px)"
 >
   <div
-    style="height:calc(100vh - 20px)"
+    class="emotion-18 emotion-19"
   >
     <div
-      class="emotion-18 emotion-19"
+      class="emotion-14 emotion-15"
     >
       <div
-        class="emotion-14 emotion-15"
+        class="emotion-12 emotion-13"
+        role="tablist"
       >
-        <div
-          class="emotion-12 emotion-13"
-          role="tablist"
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
         >
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-4 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
+          Tab title #1
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #2
+        </button>
+        <button
+          class="emotion-4 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab with scroll!
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #4
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #5
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #6
+        </button>
       </div>
+    </div>
+    <div
+      class="emotion-16 emotion-17"
+    >
       <div
-        class="emotion-16 emotion-17"
-      >
-        <div
-          id="test1"
-          title="Tab title #1"
-        />
-        <div
-          id="test2"
-          title="Tab title #2"
-        />
-        <div
-          id="test3"
-          title="Tab with scroll!"
-        />
-        <div
-          id="test4"
-          title="Tab title #4"
-        />
-        <div
-          id="test5"
-          title="Tab title #5"
-        />
-        <div
-          id="test6"
-          title="Tab title #6"
-        />
-      </div>
+        id="test1"
+        title="Tab title #1"
+      />
+      <div
+        id="test2"
+        title="Tab title #2"
+      />
+      <div
+        id="test3"
+        title="Tab with scroll!"
+      />
+      <div
+        id="test4"
+        title="Tab title #4"
+      />
+      <div
+        id="test5"
+        title="Tab title #5"
+      />
+      <div
+        id="test6"
+        title="Tab title #6"
+      />
     </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
-.emotion-20 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -1016,106 +965,95 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
 }
 
 <div
-  class="emotion-20 emotion-21"
+  style="height:calc(100vh - 20px)"
 >
   <div
-    style="height:calc(100vh - 20px)"
+    class="emotion-18 emotion-19"
   >
     <div
-      class="emotion-18 emotion-19"
+      class="emotion-14 emotion-15"
     >
       <div
-        class="emotion-14 emotion-15"
+        class="emotion-12 emotion-13"
+        role="tablist"
       >
-        <div
-          class="emotion-12 emotion-13"
-          role="tablist"
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
         >
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-4 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
+          Tab title #1
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #2
+        </button>
+        <button
+          class="emotion-4 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab with scroll!
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #4
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #5
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #6
+        </button>
       </div>
+    </div>
+    <div
+      class="emotion-16 emotion-17"
+    >
       <div
-        class="emotion-16 emotion-17"
-      >
-        <div
-          id="test1"
-          title="Tab title #1"
-        />
-        <div
-          id="test2"
-          title="Tab title #2"
-        />
-        <div
-          id="test3"
-          title="Tab with scroll!"
-        />
-        <div
-          id="test4"
-          title="Tab title #4"
-        />
-        <div
-          id="test5"
-          title="Tab title #5"
-        />
-        <div
-          id="test6"
-          title="Tab title #6"
-        />
-      </div>
+        id="test1"
+        title="Tab title #1"
+      />
+      <div
+        id="test2"
+        title="Tab title #2"
+      />
+      <div
+        id="test3"
+        title="Tab with scroll!"
+      />
+      <div
+        id="test4"
+        title="Tab title #4"
+      />
+      <div
+        id="test5"
+        title="Tab title #5"
+      />
+      <div
+        id="test6"
+        title="Tab title #6"
+      />
     </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Tabs stateless - empty 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   font-size: 11px;
   display: block;
@@ -1126,28 +1064,17 @@ exports[`Storyshots Components|Tabs stateless - empty 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  style="height:calc(100vh - 20px)"
 >
-  <div
-    style="height:calc(100vh - 20px)"
+  <p
+    class="emotion-0 emotion-1"
   >
-    <p
-      class="emotion-0 emotion-1"
-    >
-      no panels available
-    </p>
-  </div>
+    no panels available
+  </p>
 </div>
 `;
 
 exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
-.emotion-20 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -1277,106 +1204,95 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
 }
 
 <div
-  class="emotion-20 emotion-21"
+  style="height:calc(100vh - 20px)"
 >
   <div
-    style="height:calc(100vh - 20px)"
+    class="emotion-18 emotion-19"
   >
     <div
-      class="emotion-18 emotion-19"
+      class="emotion-14 emotion-15"
     >
       <div
-        class="emotion-14 emotion-15"
+        class="emotion-12 emotion-13"
+        role="tablist"
       >
-        <div
-          class="emotion-12 emotion-13"
-          role="tablist"
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
         >
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-4 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
+          Tab title #1
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #2
+        </button>
+        <button
+          class="emotion-4 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab with scroll!
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #4
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #5
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #6
+        </button>
       </div>
+    </div>
+    <div
+      class="emotion-16 emotion-17"
+    >
       <div
-        class="emotion-16 emotion-17"
-      >
-        <div
-          id="test1"
-          title="Tab title #1"
-        />
-        <div
-          id="test2"
-          title="Tab title #2"
-        />
-        <div
-          id="test3"
-          title="Tab with scroll!"
-        />
-        <div
-          id="test4"
-          title="Tab title #4"
-        />
-        <div
-          id="test5"
-          title="Tab title #5"
-        />
-        <div
-          id="test6"
-          title="Tab title #6"
-        />
-      </div>
+        id="test1"
+        title="Tab title #1"
+      />
+      <div
+        id="test2"
+        title="Tab title #2"
+      />
+      <div
+        id="test3"
+        title="Tab with scroll!"
+      />
+      <div
+        id="test4"
+        title="Tab title #4"
+      />
+      <div
+        id="test5"
+        title="Tab title #5"
+      />
+      <div
+        id="test6"
+        title="Tab title #6"
+      />
     </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
-.emotion-22 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -1524,107 +1440,103 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
 }
 
 <div
-  class="emotion-22 emotion-23"
+  style="height:calc(100vh - 20px)"
 >
   <div
-    style="height:calc(100vh - 20px)"
+    class="emotion-20 emotion-21"
   >
     <div
-      class="emotion-20 emotion-21"
+      class="emotion-16 emotion-17"
     >
       <div
-        class="emotion-16 emotion-17"
+        class="emotion-12 emotion-13"
+        role="tablist"
       >
-        <div
-          class="emotion-12 emotion-13"
-          role="tablist"
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
         >
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-4 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-0 emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
-        <div
-          class="emotion-14 emotion-15"
+          Tab title #1
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
         >
-          <button
-            type="button"
-          >
-            1
-          </button>
-          <button
-            type="button"
-          >
-            2
-          </button>
-        </div>
+          Tab title #2
+        </button>
+        <button
+          class="emotion-4 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab with scroll!
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #4
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #5
+        </button>
+        <button
+          class="emotion-0 emotion-1"
+          role="tab"
+          type="button"
+        >
+          Tab title #6
+        </button>
       </div>
       <div
-        class="emotion-18 emotion-19"
+        class="emotion-14 emotion-15"
       >
-        <div
-          id="test1"
-          title="Tab title #1"
-        />
-        <div
-          id="test2"
-          title="Tab title #2"
-        />
-        <div
-          id="test3"
-          title="Tab with scroll!"
-        />
-        <div
-          id="test4"
-          title="Tab title #4"
-        />
-        <div
-          id="test5"
-          title="Tab title #5"
-        />
-        <div
-          id="test6"
-          title="Tab title #6"
-        />
+        <button
+          type="button"
+        >
+          1
+        </button>
+        <button
+          type="button"
+        >
+          2
+        </button>
       </div>
+    </div>
+    <div
+      class="emotion-18 emotion-19"
+    >
+      <div
+        id="test1"
+        title="Tab title #1"
+      />
+      <div
+        id="test2"
+        title="Tab title #2"
+      />
+      <div
+        id="test3"
+        title="Tab with scroll!"
+      />
+      <div
+        id="test4"
+        title="Tab title #4"
+      />
+      <div
+        id="test5"
+        title="Tab title #5"
+      />
+      <div
+        id="test6"
+        title="Tab title #6"
+      />
     </div>
   </div>
 </div>

@@ -1,77 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Notes addon notes 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  type="button"
 >
-  <button
-    type="button"
-  >
-    Button with notes - check the notes panel for details
-  </button>
-</div>
+  Button with notes - check the notes panel for details
+</button>
 `;
 
 exports[`Storyshots Addons|Notes addon notes rendering imported markdown 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  type="button"
 >
-  <button
-    type="button"
-  >
-    Button with notes - check the notes panel for details
-  </button>
-</div>
+  Button with notes - check the notes panel for details
+</button>
 `;
 
 exports[`Storyshots Addons|Notes addon notes rendering inline, github-flavored markdown 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  type="button"
 >
-  <button
-    type="button"
-  >
-    Button with notes - check the notes panel for details
-  </button>
-</div>
+  Button with notes - check the notes panel for details
+</button>
 `;
 
 exports[`Storyshots Addons|Notes with a markdown table 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  type="button"
 >
-  <button
-    type="button"
-  >
-    Button with notes - check the notes panel for details
-  </button>
-</div>
+  Button with notes - check the notes panel for details
+</button>
 `;

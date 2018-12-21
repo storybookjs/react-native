@@ -1,14 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Preview default 1`] = `
-.emotion-58 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-.emotion-10 {
+Array [
+  .emotion-10 {
   display: block;
 }
 
@@ -146,22 +140,7 @@ exports[`Storyshots Components|Preview default 1`] = `
   margin-right: 15px;
 }
 
-.emotion-56 {
-  position: absolute;
-  overflow: auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  z-index: 3;
-  height: 100%;
-  background: transparent;
-}
-
 <div
-  class="emotion-58 emotion-59"
->
-  <div
     class="emotion-54 emotion-55"
   >
     <div
@@ -288,10 +267,22 @@ exports[`Storyshots Components|Preview default 1`] = `
         </svg>
       </button>
     </div>
-  </div>
-  <div
-    class="emotion-56 emotion-57"
+  </div>,
+  .emotion-0 {
+  position: absolute;
+  overflow: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 3;
+  height: 100%;
+  background: transparent;
+}
+
+<div
+    class="emotion-0 emotion-1"
     offset="0"
-  />
-</div>
+  />,
+]
 `;

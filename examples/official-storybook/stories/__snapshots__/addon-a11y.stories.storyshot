@@ -1,397 +1,162 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|A11y/Button Content 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
 >
-  <button
-    style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
-    type="button"
-  >
-    Testing the a11y addon
-  </button>
-</div>
+  Testing the a11y addon
+</button>
 `;
 
 exports[`Storyshots Addons|A11y/Button Default 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
 >
-  <button
-    style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
-    type="button"
-  >
-    null
-  </button>
-</div>
+  null
+</button>
 `;
 
 exports[`Storyshots Addons|A11y/Button Disabled 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  disabled=""
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
 >
-  <button
-    disabled=""
-    style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
-    type="button"
-  >
-    Testing the a11y addon
-  </button>
-</div>
+  Testing the a11y addon
+</button>
 `;
 
 exports[`Storyshots Addons|A11y/Button Invalid contrast 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;color:#ffffff;background-color:#4caf50"
+  type="button"
 >
-  <button
-    style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;color:#ffffff;background-color:#4caf50"
-    type="button"
-  >
-    Testing the a11y addon
-  </button>
-</div>
+  Testing the a11y addon
+</button>
 `;
 
 exports[`Storyshots Addons|A11y/Button Label 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
 >
-  <button
-    style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
-    type="button"
-  >
-    null
-  </button>
-</div>
+  null
+</button>
 `;
 
 exports[`Storyshots Addons|A11y/Form With label 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <div>
-    <label
-      for="1"
-      style="padding:0 6px"
-    >
-      Testing the a11y addon
-    </label>
-    <input
-      id="1"
-    />
-  </div>
+<div>
+  <label
+    for="1"
+    style="padding:0 6px"
+  >
+    Testing the a11y addon
+  </label>
+  <input
+    id="1"
+  />
 </div>
 `;
 
 exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <div>
-    <input
-      id="1"
-      placeholder="Testing the a11y addon"
-    />
-  </div>
+<div>
+  <input
+    id="1"
+    placeholder="Testing the a11y addon"
+  />
 </div>
 `;
 
 exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <div>
-    <input />
-  </div>
+<div>
+  <input />
 </div>
 `;
 
 exports[`Storyshots Addons|A11y/Image Presentation 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <img
-    role="presentation"
-    src="http://placehold.it/350x150"
-  />
-</div>
+<img
+  role="presentation"
+  src="http://placehold.it/350x150"
+/>
 `;
 
 exports[`Storyshots Addons|A11y/Image With alt 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <img
-    alt="Testing the a11y addon"
-    src="http://placehold.it/350x150"
-  />
-</div>
+<img
+  alt="Testing the a11y addon"
+  src="http://placehold.it/350x150"
+/>
 `;
 
 exports[`Storyshots Addons|A11y/Image Without alt 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <img
-    src="http://placehold.it/350x150"
-  />
-</div>
+<img
+  src="http://placehold.it/350x150"
+/>
 `;
 
 exports[`Storyshots Addons|A11y/Typography Correct 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
+Array [
   <h1>
     Testing the a11y addon
-  </h1>
+  </h1>,
   <p>
     Testing the a11y addon
-  </p>
+  </p>,
   <a
     href="javascript:void 0"
   >
     Testing the a11y addon...
-  </a>
-</div>
+  </a>,
+]
 `;
 
-exports[`Storyshots Addons|A11y/Typography Empty Heading 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <h2 />
-</div>
-`;
+exports[`Storyshots Addons|A11y/Typography Empty Heading 1`] = `<h2 />`;
 
 exports[`Storyshots Addons|A11y/Typography Empty Link 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <a
-    href="javascript:void 0"
-  />
-</div>
+<a
+  href="javascript:void 0"
+/>
 `;
 
-exports[`Storyshots Addons|A11y/Typography Empty Paragraph 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <p />
-</div>
-`;
+exports[`Storyshots Addons|A11y/Typography Empty Paragraph 1`] = `<p />`;
 
 exports[`Storyshots Addons|A11y/Typography Link without href 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <a>
-    Testing the a11y addon...
-  </a>
-</div>
+<a>
+  Testing the a11y addon...
+</a>
 `;
 
 exports[`Storyshots Addons|a11y Default 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <button
-    type="button"
-  />
-</div>
+<button
+  type="button"
+/>
 `;
 
 exports[`Storyshots Addons|a11y Disabled 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  disabled=""
+  type="button"
 >
-  <button
-    disabled=""
-    type="button"
-  >
-    Testing the a11y addon
-  </button>
-</div>
+  Testing the a11y addon
+</button>
 `;
 
 exports[`Storyshots Addons|a11y Invalid contrast 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  style="color:black;background-color:black"
+  type="button"
 >
-  <button
-    style="color:black;background-color:black"
-    type="button"
-  >
-    Testing the a11y addon
-  </button>
-</div>
+  Testing the a11y addon
+</button>
 `;
 
 exports[`Storyshots Addons|a11y Label 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<button
+  type="button"
 >
-  <button
-    type="button"
-  >
-    Testing the a11y addon
-  </button>
-</div>
+  Testing the a11y addon
+</button>
 `;
 
-exports[`Storyshots Addons|a11y delayed render 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <div />
-</div>
-`;
+exports[`Storyshots Addons|a11y delayed render 1`] = `<div />`;

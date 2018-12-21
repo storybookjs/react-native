@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|Desktop layout bottom Panel 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   position: fixed;
   left: 0;
@@ -18,29 +11,18 @@ exports[`Storyshots UI|Desktop layout bottom Panel 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="emotion-0 emotion-1"
 >
   <div
-    class="emotion-0 emotion-1"
-  >
-    <div
-      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-    />
-    <div>
-      0 width or height
-    </div>
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
   </div>
 </div>
 `;
 
 exports[`Storyshots UI|Desktop layout default 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   position: fixed;
   left: 0;
@@ -51,29 +33,18 @@ exports[`Storyshots UI|Desktop layout default 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="emotion-0 emotion-1"
 >
   <div
-    class="emotion-0 emotion-1"
-  >
-    <div
-      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-    />
-    <div>
-      0 width or height
-    </div>
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
   </div>
 </div>
 `;
 
 exports[`Storyshots UI|Desktop layout full 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   position: fixed;
   left: 0;
@@ -84,29 +55,18 @@ exports[`Storyshots UI|Desktop layout full 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="emotion-0 emotion-1"
 >
   <div
-    class="emotion-0 emotion-1"
-  >
-    <div
-      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-    />
-    <div>
-      0 width or height
-    </div>
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
   </div>
 </div>
 `;
 
 exports[`Storyshots UI|Desktop layout no Nav 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   position: fixed;
   left: 0;
@@ -117,29 +77,18 @@ exports[`Storyshots UI|Desktop layout no Nav 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="emotion-0 emotion-1"
 >
   <div
-    class="emotion-0 emotion-1"
-  >
-    <div
-      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-    />
-    <div>
-      0 width or height
-    </div>
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
   </div>
 </div>
 `;
 
 exports[`Storyshots UI|Desktop layout no Panel 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   position: fixed;
   left: 0;
@@ -150,29 +99,18 @@ exports[`Storyshots UI|Desktop layout no Panel 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="emotion-0 emotion-1"
 >
   <div
-    class="emotion-0 emotion-1"
-  >
-    <div
-      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-    />
-    <div>
-      0 width or height
-    </div>
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
   </div>
 </div>
 `;
 
 exports[`Storyshots UI|Desktop layout no Panel, no Nav 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   position: fixed;
   left: 0;
@@ -183,29 +121,18 @@ exports[`Storyshots UI|Desktop layout no Panel, no Nav 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="emotion-0 emotion-1"
 >
   <div
-    class="emotion-0 emotion-1"
-  >
-    <div
-      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-    />
-    <div>
-      0 width or height
-    </div>
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
   </div>
 </div>
 `;
 
 exports[`Storyshots UI|Desktop layout page 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   position: fixed;
   left: 0;
@@ -216,29 +143,18 @@ exports[`Storyshots UI|Desktop layout page 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="emotion-0 emotion-1"
 >
   <div
-    class="emotion-0 emotion-1"
-  >
-    <div
-      style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-    />
-    <div>
-      0 width or height
-    </div>
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
   </div>
 </div>
 `;
 
 exports[`Storyshots UI|Mobile layout initial 0 1`] = `
-.emotion-24 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-22 {
   position: fixed;
   left: 0;
@@ -444,59 +360,36 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
 }
 
 <div
-  class="emotion-24 emotion-25"
+  class="emotion-22 emotion-23"
 >
   <div
-    class="emotion-22 emotion-23"
+    class="emotion-12 emotion-13"
   >
     <div
-      class="emotion-12 emotion-13"
+      class="emotion-2 emotion-3"
     >
       <div
-        class="emotion-2 emotion-3"
+        class="emotion-0 emotion-1"
+        color="hotpink"
       >
-        <div
-          class="emotion-0 emotion-1"
-          color="hotpink"
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
         >
-          <h2
-            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-          >
-            1
-          </h2>
-          <pre>
-            {}
-          </pre>
-        </div>
+          1
+        </h2>
+        <pre>
+          {}
+        </pre>
       </div>
-      <div
-        class="emotion-6 emotion-3"
-      >
-        <div>
-          <div>
-            <div
-              class="emotion-4 emotion-1"
-              color="deepskyblue"
-            >
-              <h2
-                style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-              >
-                1
-              </h2>
-              <pre>
-                {}
-              </pre>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="emotion-10 emotion-3"
-      >
+    </div>
+    <div
+      class="emotion-6 emotion-3"
+    >
+      <div>
         <div>
           <div
-            class="emotion-8 emotion-1"
-            color="orangered"
+            class="emotion-4 emotion-1"
+            color="deepskyblue"
           >
             <h2
               style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
@@ -504,45 +397,57 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
               1
             </h2>
             <pre>
-              {
-  "hidden": false
-}
+              {}
             </pre>
           </div>
         </div>
       </div>
     </div>
-    <nav
-      class="emotion-20 emotion-21"
+    <div
+      class="emotion-10 emotion-3"
     >
-      <button
-        class="emotion-14 emotion-15"
-      >
-        Nav
-      </button>
-      <button
-        class="emotion-14 emotion-15"
-      >
-        Preview
-      </button>
-      <button
-        class="emotion-14 emotion-15"
-      >
-        Panel
-      </button>
-    </nav>
+      <div>
+        <div
+          class="emotion-8 emotion-1"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "hidden": false
+}
+          </pre>
+        </div>
+      </div>
+    </div>
   </div>
+  <nav
+    class="emotion-20 emotion-21"
+  >
+    <button
+      class="emotion-14 emotion-15"
+    >
+      Nav
+    </button>
+    <button
+      class="emotion-14 emotion-15"
+    >
+      Preview
+    </button>
+    <button
+      class="emotion-14 emotion-15"
+    >
+      Panel
+    </button>
+  </nav>
 </div>
 `;
 
 exports[`Storyshots UI|Mobile layout initial 1 1`] = `
-.emotion-24 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-22 {
   position: fixed;
   left: 0;
@@ -742,59 +647,36 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
 }
 
 <div
-  class="emotion-24 emotion-25"
+  class="emotion-22 emotion-23"
 >
   <div
-    class="emotion-22 emotion-23"
+    class="emotion-12 emotion-13"
   >
     <div
-      class="emotion-12 emotion-13"
+      class="emotion-2 emotion-3"
     >
       <div
-        class="emotion-2 emotion-3"
+        class="emotion-0 emotion-1"
+        color="hotpink"
       >
-        <div
-          class="emotion-0 emotion-1"
-          color="hotpink"
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
         >
-          <h2
-            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-          >
-            1
-          </h2>
-          <pre>
-            {}
-          </pre>
-        </div>
+          1
+        </h2>
+        <pre>
+          {}
+        </pre>
       </div>
-      <div
-        class="emotion-6 emotion-3"
-      >
-        <div>
-          <div>
-            <div
-              class="emotion-4 emotion-1"
-              color="deepskyblue"
-            >
-              <h2
-                style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-              >
-                1
-              </h2>
-              <pre>
-                {}
-              </pre>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="emotion-10 emotion-3"
-      >
+    </div>
+    <div
+      class="emotion-6 emotion-3"
+    >
+      <div>
         <div>
           <div
-            class="emotion-8 emotion-1"
-            color="orangered"
+            class="emotion-4 emotion-1"
+            color="deepskyblue"
           >
             <h2
               style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
@@ -802,45 +684,57 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
               1
             </h2>
             <pre>
-              {
-  "hidden": false
-}
+              {}
             </pre>
           </div>
         </div>
       </div>
     </div>
-    <nav
-      class="emotion-20 emotion-21"
+    <div
+      class="emotion-10 emotion-3"
     >
-      <button
-        class="emotion-14 emotion-15"
-      >
-        Nav
-      </button>
-      <button
-        class="emotion-14 emotion-15"
-      >
-        Preview
-      </button>
-      <button
-        class="emotion-14 emotion-15"
-      >
-        Panel
-      </button>
-    </nav>
+      <div>
+        <div
+          class="emotion-8 emotion-1"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "hidden": false
+}
+          </pre>
+        </div>
+      </div>
+    </div>
   </div>
+  <nav
+    class="emotion-20 emotion-21"
+  >
+    <button
+      class="emotion-14 emotion-15"
+    >
+      Nav
+    </button>
+    <button
+      class="emotion-14 emotion-15"
+    >
+      Preview
+    </button>
+    <button
+      class="emotion-14 emotion-15"
+    >
+      Panel
+    </button>
+  </nav>
 </div>
 `;
 
 exports[`Storyshots UI|Mobile layout initial 2 1`] = `
-.emotion-24 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-22 {
   position: fixed;
   left: 0;
@@ -1046,59 +940,36 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
 }
 
 <div
-  class="emotion-24 emotion-25"
+  class="emotion-22 emotion-23"
 >
   <div
-    class="emotion-22 emotion-23"
+    class="emotion-12 emotion-13"
   >
     <div
-      class="emotion-12 emotion-13"
+      class="emotion-2 emotion-3"
     >
       <div
-        class="emotion-2 emotion-3"
+        class="emotion-0 emotion-1"
+        color="hotpink"
       >
-        <div
-          class="emotion-0 emotion-1"
-          color="hotpink"
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
         >
-          <h2
-            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-          >
-            1
-          </h2>
-          <pre>
-            {}
-          </pre>
-        </div>
+          1
+        </h2>
+        <pre>
+          {}
+        </pre>
       </div>
-      <div
-        class="emotion-6 emotion-3"
-      >
-        <div>
-          <div>
-            <div
-              class="emotion-4 emotion-1"
-              color="deepskyblue"
-            >
-              <h2
-                style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-              >
-                1
-              </h2>
-              <pre>
-                {}
-              </pre>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="emotion-10 emotion-3"
-      >
+    </div>
+    <div
+      class="emotion-6 emotion-3"
+    >
+      <div>
         <div>
           <div
-            class="emotion-8 emotion-1"
-            color="orangered"
+            class="emotion-4 emotion-1"
+            color="deepskyblue"
           >
             <h2
               style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
@@ -1106,45 +977,57 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
               1
             </h2>
             <pre>
-              {
-  "hidden": false
-}
+              {}
             </pre>
           </div>
         </div>
       </div>
     </div>
-    <nav
-      class="emotion-20 emotion-21"
+    <div
+      class="emotion-10 emotion-3"
     >
-      <button
-        class="emotion-14 emotion-15"
-      >
-        Nav
-      </button>
-      <button
-        class="emotion-14 emotion-15"
-      >
-        Preview
-      </button>
-      <button
-        class="emotion-14 emotion-15"
-      >
-        Panel
-      </button>
-    </nav>
+      <div>
+        <div
+          class="emotion-8 emotion-1"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "hidden": false
+}
+          </pre>
+        </div>
+      </div>
+    </div>
   </div>
+  <nav
+    class="emotion-20 emotion-21"
+  >
+    <button
+      class="emotion-14 emotion-15"
+    >
+      Nav
+    </button>
+    <button
+      class="emotion-14 emotion-15"
+    >
+      Preview
+    </button>
+    <button
+      class="emotion-14 emotion-15"
+    >
+      Panel
+    </button>
+  </nav>
 </div>
 `;
 
 exports[`Storyshots UI|Mobile layout page 1`] = `
-.emotion-24 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-22 {
   position: fixed;
   left: 0;
@@ -1368,55 +1251,38 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
 }
 
 <div
-  class="emotion-24 emotion-25"
+  class="emotion-22 emotion-23"
 >
   <div
-    class="emotion-22 emotion-23"
+    class="emotion-14 emotion-15"
   >
     <div
-      class="emotion-14 emotion-15"
+      class="emotion-2 emotion-3"
     >
       <div
-        class="emotion-2 emotion-3"
+        class="emotion-0 emotion-1"
+        color="hotpink"
       >
-        <div
-          class="emotion-0 emotion-1"
-          color="hotpink"
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
         >
-          <h2
-            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-          >
-            1
-          </h2>
-          <pre>
-            {}
-          </pre>
-        </div>
+          1
+        </h2>
+        <pre>
+          {}
+        </pre>
       </div>
-      <div
-        class="emotion-8 emotion-3"
-      >
-        <div>
+    </div>
+    <div
+      class="emotion-8 emotion-3"
+    >
+      <div>
+        <div
+          hidden=""
+        >
           <div
-            hidden=""
-          >
-            <div
-              class="emotion-4 emotion-1"
-              color="deepskyblue"
-            >
-              <h2
-                style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-              >
-                1
-              </h2>
-              <pre>
-                {}
-              </pre>
-            </div>
-          </div>
-          <div
-            class="emotion-6 emotion-1"
-            color="cyan"
+            class="emotion-4 emotion-1"
+            color="deepskyblue"
           >
             <h2
               style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
@@ -1428,45 +1294,58 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
             </pre>
           </div>
         </div>
-      </div>
-      <div
-        class="emotion-12 emotion-3"
-      >
         <div
-          hidden=""
+          class="emotion-6 emotion-1"
+          color="cyan"
         >
-          <div
-            class="emotion-10 emotion-1"
-            color="orangered"
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
           >
-            <h2
-              style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-            >
-              1
-            </h2>
-            <pre>
-              {
-  "hidden": true
-}
-            </pre>
-          </div>
+            1
+          </h2>
+          <pre>
+            {}
+          </pre>
         </div>
       </div>
     </div>
-    <nav
-      class="emotion-20 emotion-21"
+    <div
+      class="emotion-12 emotion-3"
     >
-      <button
-        class="emotion-16 emotion-17"
+      <div
+        hidden=""
       >
-        Nav
-      </button>
-      <button
-        class="emotion-16 emotion-17"
-      >
-        settings
-      </button>
-    </nav>
+        <div
+          class="emotion-10 emotion-1"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "hidden": true
+}
+          </pre>
+        </div>
+      </div>
+    </div>
   </div>
+  <nav
+    class="emotion-20 emotion-21"
+  >
+    <button
+      class="emotion-16 emotion-17"
+    >
+      Nav
+    </button>
+    <button
+      class="emotion-16 emotion-17"
+    >
+      settings
+    </button>
+  </nav>
 </div>
 `;

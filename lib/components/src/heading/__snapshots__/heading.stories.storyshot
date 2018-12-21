@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Heading types 1`] = `
-.emotion-46 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-4 {
   margin: 10px;
   border: 1px dashed deepskyblue;
@@ -135,132 +128,128 @@ exports[`Storyshots Components|Heading types 1`] = `
   font-size: 14px;
 }
 
-<div
-  class="emotion-46 emotion-47"
->
-  <div>
-    <div
-      class="emotion-4 emotion-5"
+<div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <header
+      class="emotion-2 emotion-3"
     >
-      <header
-        class="emotion-2 emotion-3"
+      <h1
+        class="emotion-0 emotion-1"
       >
-        <h1
-          class="emotion-0 emotion-1"
-        >
-          <span>
-            DEFAULT WITH ALL CAPS
-          </span>
-        </h1>
-      </header>
-    </div>
-    <div
-      class="emotion-4 emotion-5"
+        <span>
+          DEFAULT WITH ALL CAPS
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <header
+      class="emotion-2 emotion-3"
     >
-      <header
-        class="emotion-2 emotion-3"
+      <h1
+        class="emotion-0 emotion-1"
       >
-        <h1
-          class="emotion-0 emotion-1"
-        >
-          <span>
-            THIS LONG DEFAULT WITH ALL CAPS & SUB
-          </span>
-          <sub>
-            With a great sub
-          </sub>
-        </h1>
-      </header>
-    </div>
-    <div
-      class="emotion-4 emotion-5"
+        <span>
+          THIS LONG DEFAULT WITH ALL CAPS & SUB
+        </span>
+        <sub>
+          With a great sub
+        </sub>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <header
+      class="emotion-2 emotion-3"
     >
-      <header
-        class="emotion-2 emotion-3"
+      <h1
+        class="emotion-0 emotion-1"
       >
-        <h1
-          class="emotion-0 emotion-1"
-        >
-          <span>
-            page type
-          </span>
-        </h1>
-      </header>
-    </div>
-    <div
-      class="emotion-4 emotion-5"
+        <span>
+          page type
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <header
+      class="emotion-2 emotion-3"
     >
-      <header
-        class="emotion-2 emotion-3"
+      <h1
+        class="emotion-18 emotion-1"
       >
-        <h1
-          class="emotion-18 emotion-1"
-        >
-          <span>
-            secondary type
-          </span>
-        </h1>
-      </header>
-    </div>
-    <div
-      class="emotion-4 emotion-5"
+        <span>
+          secondary type
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <header
+      class="emotion-2 emotion-3"
     >
-      <header
-        class="emotion-2 emotion-3"
+      <h1
+        class="emotion-0 emotion-1"
       >
-        <h1
-          class="emotion-0 emotion-1"
-        >
-          <span>
-            page type
-          </span>
-          <sub>
-            With a sub
-          </sub>
-        </h1>
-      </header>
-    </div>
-    <div
-      class="emotion-4 emotion-5"
+        <span>
+          page type
+        </span>
+        <sub>
+          With a sub
+        </sub>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <header
+      class="emotion-2 emotion-3"
     >
-      <header
-        class="emotion-2 emotion-3"
+      <h1
+        class="emotion-30 emotion-1"
       >
-        <h1
-          class="emotion-30 emotion-1"
-        >
-          <span>
-            section type
-          </span>
-        </h1>
-      </header>
-    </div>
-    <div
-      class="emotion-4 emotion-5"
+        <span>
+          section type
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <header
+      class="emotion-2 emotion-3"
     >
-      <header
-        class="emotion-2 emotion-3"
+      <h1
+        class="emotion-36 emotion-1"
       >
-        <h1
-          class="emotion-36 emotion-1"
-        >
-          <span>
-            section type
-          </span>
-        </h1>
-      </header>
-      <header
-        class="emotion-2 emotion-3"
+        <span>
+          section type
+        </span>
+      </h1>
+    </header>
+    <header
+      class="emotion-2 emotion-3"
+    >
+      <h1
+        class="emotion-40 emotion-1"
       >
-        <h1
-          class="emotion-40 emotion-1"
-        >
-          <span>
-            section type
-          </span>
-        </h1>
-      </header>
-    </div>
+        <span>
+          section type
+        </span>
+      </h1>
+    </header>
   </div>
 </div>
 `;

@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Core|Events Force re-render 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   padding: 0 10px;
   color: #444;
@@ -36,30 +29,16 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   border-bottom-color: #9fdaff;
 }
 
-<div
-  class="emotion-2 emotion-3"
+<button
+  class="emotion-0 emotion-1"
 >
-  <button
-    class="emotion-0 emotion-1"
-  >
-    Clicked: 0
-  </button>
-</div>
+  Clicked: 0
+</button>
 `;
 
 exports[`Storyshots Core|Parameters adds data to storyFn 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <pre>
-    [
+<pre>
+  [
   {
     "kind": "Core|Parameters",
     "name": "adds data to storyFn",
@@ -232,27 +211,16 @@ exports[`Storyshots Core|Parameters adds data to storyFn 1`] = `
     "decoratorParameter": "decoratorParameter"
   }
 ]
-  </pre>
-</div>
+</pre>
 `;
 
 exports[`Storyshots Core|Parameters passed to story 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <div>
-    <p>
-      Parameters are
-    </p>
-    <pre>
-      {
+Array [
+  <p>
+    Parameters are
+  </p>,
+  <pre>
+    {
   "a11y": {},
   "options": {
     "name": "Custom Storybook",
@@ -413,7 +381,6 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
   "chapterParameter": "chapterParameter",
   "storyParameter": "storyParameter"
 }
-    </pre>
-  </div>
-</div>
+  </pre>,
+]
 `;

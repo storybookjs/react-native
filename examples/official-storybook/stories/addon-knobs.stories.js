@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
@@ -185,10 +185,10 @@ storiesOf('Addons|Knobs.withKnobs', module)
   .add('dynamic knobs', () => {
     const showOptional = select('Show optional', ['yes', 'no'], 'yes');
     return (
-      <div>
+      <Fragment>
         <div>{text('compulsory', 'I must be here')}</div>
         {showOptional === 'yes' ? <div>{text('optional', 'I can disappear')}</div> : null}
-      </div>
+      </Fragment>
     );
   })
   .add('complex select', () => {
@@ -296,10 +296,10 @@ storiesOf('Addons|Knobs.withKnobs', module)
       }
     });
     return (
-      <div>
+      <Fragment>
         <p>Hit the knob button and it will toggle the items list into multiple states.</p>
         <ItemLoader isLoading={injectedIsLoading} items={injectedItems} />
-      </div>
+      </Fragment>
     );
   })
   .add('XSS safety', () => (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
@@ -100,7 +100,7 @@ storiesOf('Addons|Info/Markdown', module)
   );
 
 const JSXDescription = (
-  <div>
+  <Fragment>
     <h2>This is a JSX info section</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare massa rutrum metus
@@ -113,7 +113,7 @@ const JSXDescription = (
     <p>
       <img alt="350x150" src="http://placehold.it/350x150" />
     </p>
-  </div>
+  </Fragment>
 );
 
 storiesOf('Addons|Info/JSX', module)
@@ -180,10 +180,10 @@ storiesOf('Addons|Info/Options.propTablesExclude', module)
   .add(
     'Exclude component from prop tables',
     () => (
-      <div>
+      <Fragment>
         <BaseButton label="Button" />
         <FlowTypeButton label="Flow Typed Button" />
-      </div>
+      </Fragment>
     ),
     {
       info: {
@@ -249,10 +249,10 @@ storiesOf('Addons|Info/GitHub issues', module)
   .add(
     '#1814',
     () => (
-      <div>
+      <Fragment>
         <Input />
         <TextArea />
-      </div>
+      </Fragment>
     ),
     {
       info: 'Allow Duplicate DisplayNames for HOC #1814',
@@ -331,10 +331,10 @@ storiesOf('Addons|Info/Story Source', module)
   .add('One prop', () => <BaseButton label="Button" />)
   .add('Many props', () => <BaseButton label="Button" onClick={action('clicked')} disabled />)
   .add('Children', () => (
-    <div>
+    <Fragment>
       <p>Here is my nice button:</p>
       <BaseButton label="Button" onClick={action('clicked')} />
-    </div>
+    </Fragment>
   ))
   .add('Array prop', () => {
     const propDefs = [

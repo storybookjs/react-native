@@ -1,8 +1,9 @@
 import React from 'react';
-import { ThemeProvider } from 'emotion-theming';
-import styled from '@emotion/styled';
+import { ThemeProvider, withTheme } from 'emotion-theming';
+// import styled from '@emotion/styled';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/components';
+import { Global } from '@emotion/core';
 
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withCssResources } from '@storybook/addon-cssresources';
@@ -33,17 +34,26 @@ addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
 addDecorator(withCssResources);
 addDecorator(withA11Y);
 
-const Reset = styled.div(({ theme }) => ({
-  fontFamily: theme.mainTextFace,
-  color: theme.mainTextColor,
-  WebkitFontSmoothing: 'antialiased',
-  fontSize: theme.mainTextSize,
-}));
-
-addDecorator((story, { kind }) => (kind === 'Core|Errors' ? story() : <Reset>{story()}</Reset>));
+const Reset = withTheme(({ theme }) => (
+  <Global
+    styles={{
+      fontFamily: theme.mainTextFace,
+      color: theme.mainTextColor,
+      WebkitFontSmoothing: 'antialiased',
+      fontSize: theme.mainTextSize,
+    }}
+  />
+));
 
 addDecorator((story, { kind }) =>
-  kind === 'Core|Errors' ? story() : <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>
+  kind === 'Core|Errors' ? (
+    story()
+  ) : (
+    <ThemeProvider theme={themes.normal}>
+      <Reset />
+      {story()}
+    </ThemeProvider>
+  )
 );
 
 addParameters({

@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Form/Button alignment 1`] = `
-.emotion-14 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-12 > * {
   margin-top: 10px;
 }
@@ -108,50 +101,39 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 }
 
 <div
-  class="emotion-14 emotion-15"
+  class="emotion-12 emotion-13"
 >
   <div
-    class="emotion-12 emotion-13"
+    class="emotion-2 emotion-3"
   >
-    <div
-      class="emotion-2 emotion-3"
+    <button
+      class="emotion-0 emotion-1"
     >
-      <button
-        class="emotion-0 emotion-1"
-      >
-        click this button
-      </button>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-4 emotion-1"
     >
-      <button
-        class="emotion-4 emotion-1"
-      >
-        click this button
-      </button>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-8 emotion-1"
     >
-      <button
-        class="emotion-8 emotion-1"
-      >
-        click this button
-      </button>
-    </div>
+      click this button
+    </button>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Form/Button sizes 1`] = `
-.emotion-14 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-12 > * {
   margin-top: 10px;
 }
@@ -254,50 +236,39 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 }
 
 <div
-  class="emotion-14 emotion-15"
+  class="emotion-12 emotion-13"
 >
   <div
-    class="emotion-12 emotion-13"
+    class="emotion-2 emotion-3"
   >
-    <div
-      class="emotion-2 emotion-3"
+    <button
+      class="emotion-0 emotion-1"
     >
-      <button
-        class="emotion-0 emotion-1"
-      >
-        click this button
-      </button>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-4 emotion-1"
     >
-      <button
-        class="emotion-4 emotion-1"
-      >
-        click this button
-      </button>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-8 emotion-1"
     >
-      <button
-        class="emotion-8 emotion-1"
-      >
-        click this button
-      </button>
-    </div>
+      click this button
+    </button>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Form/Button validations 1`] = `
-.emotion-18 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-16 > * {
   margin-top: 10px;
 }
@@ -429,59 +400,48 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 }
 
 <div
-  class="emotion-18 emotion-19"
+  class="emotion-16 emotion-17"
 >
   <div
-    class="emotion-16 emotion-17"
+    class="emotion-2 emotion-3"
   >
-    <div
-      class="emotion-2 emotion-3"
+    <button
+      class="emotion-0 emotion-1"
     >
-      <button
-        class="emotion-0 emotion-1"
-      >
-        click this button
-      </button>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-4 emotion-1"
     >
-      <button
-        class="emotion-4 emotion-1"
-      >
-        click this button
-      </button>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-8 emotion-1"
     >
-      <button
-        class="emotion-8 emotion-1"
-      >
-        click this button
-      </button>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <button
+      class="emotion-12 emotion-1"
     >
-      <button
-        class="emotion-12 emotion-1"
-      >
-        click this button
-      </button>
-    </div>
+      click this button
+    </button>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Form/Button with knobs 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   padding: 0 10px;
   color: #444;
@@ -510,25 +470,14 @@ exports[`Storyshots Components|Form/Button with knobs 1`] = `
   border-bottom-color: #9fdaff;
 }
 
-<div
-  class="emotion-2 emotion-3"
+<button
+  class="emotion-0 emotion-1"
 >
-  <button
-    class="emotion-0 emotion-1"
-  >
-    💌  love letter to storybook team
-  </button>
-</div>
+  💌  love letter to storybook team
+</button>
 `;
 
 exports[`Storyshots Components|Form/Select sizes 1`] = `
-.emotion-14 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-12 > * {
   margin-top: 10px;
 }
@@ -628,95 +577,84 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 }
 
 <div
-  class="emotion-14 emotion-15"
+  class="emotion-12 emotion-13"
 >
   <div
-    class="emotion-12 emotion-13"
+    class="emotion-2 emotion-3"
   >
-    <div
-      class="emotion-2 emotion-3"
+    <select
+      class="emotion-0 emotion-1"
     >
-      <select
-        class="emotion-0 emotion-1"
+      <option
+        value="val1"
       >
-        <option
-          value="val1"
-        >
-          Value 1
-        </option>
-        <option
-          selected=""
-          value="val2"
-        >
-          Value 2
-        </option>
-        <option
-          value="val3"
-        >
-          Value 3
-        </option>
-      </select>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+        Value 1
+      </option>
+      <option
+        selected=""
+        value="val2"
+      >
+        Value 2
+      </option>
+      <option
+        value="val3"
+      >
+        Value 3
+      </option>
+    </select>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <select
+      class="emotion-4 emotion-1"
     >
-      <select
-        class="emotion-4 emotion-1"
+      <option
+        value="val1"
       >
-        <option
-          value="val1"
-        >
-          Value 1
-        </option>
-        <option
-          selected=""
-          value="val2"
-        >
-          Value 2
-        </option>
-        <option
-          value="val3"
-        >
-          Value 3
-        </option>
-      </select>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+        Value 1
+      </option>
+      <option
+        selected=""
+        value="val2"
+      >
+        Value 2
+      </option>
+      <option
+        value="val3"
+      >
+        Value 3
+      </option>
+    </select>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <select
+      class="emotion-8 emotion-1"
     >
-      <select
-        class="emotion-8 emotion-1"
+      <option
+        value="val1"
       >
-        <option
-          value="val1"
-        >
-          Value 1
-        </option>
-        <option
-          selected=""
-          value="val2"
-        >
-          Value 2
-        </option>
-        <option
-          value="val3"
-        >
-          Value 3
-        </option>
-      </select>
-    </div>
+        Value 1
+      </option>
+      <option
+        selected=""
+        value="val2"
+      >
+        Value 2
+      </option>
+      <option
+        value="val3"
+      >
+        Value 3
+      </option>
+    </select>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Form/Select validations 1`] = `
-.emotion-10 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-8 > * {
   margin-top: 10px;
 }
@@ -837,103 +775,92 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 }
 
 <div
-  class="emotion-10 emotion-11"
+  class="emotion-8 emotion-9"
 >
-  <div
-    class="emotion-8 emotion-9"
+  <select
+    class="emotion-0 emotion-1"
   >
-    <select
-      class="emotion-0 emotion-1"
+    <option
+      value="val1"
     >
-      <option
-        value="val1"
-      >
-        Value 1
-      </option>
-      <option
-        selected=""
-        value="val2"
-      >
-        Value 2
-      </option>
-      <option
-        value="val3"
-      >
-        Value 3
-      </option>
-    </select>
-    <select
-      class="emotion-2 emotion-1"
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
     >
-      <option
-        value="val1"
-      >
-        Value 1
-      </option>
-      <option
-        selected=""
-        value="val2"
-      >
-        Value 2
-      </option>
-      <option
-        value="val3"
-      >
-        Value 3
-      </option>
-    </select>
-    <select
-      class="emotion-4 emotion-1"
+      Value 2
+    </option>
+    <option
+      value="val3"
     >
-      <option
-        value="val1"
-      >
-        Value 1
-      </option>
-      <option
-        selected=""
-        value="val2"
-      >
-        Value 2
-      </option>
-      <option
-        value="val3"
-      >
-        Value 3
-      </option>
-    </select>
-    <select
-      class="emotion-6 emotion-1"
+      Value 3
+    </option>
+  </select>
+  <select
+    class="emotion-2 emotion-1"
+  >
+    <option
+      value="val1"
     >
-      <option
-        value="val1"
-      >
-        Value 1
-      </option>
-      <option
-        selected=""
-        value="val2"
-      >
-        Value 2
-      </option>
-      <option
-        value="val3"
-      >
-        Value 3
-      </option>
-    </select>
-  </div>
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>
+  <select
+    class="emotion-4 emotion-1"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>
+  <select
+    class="emotion-6 emotion-1"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>
 </div>
 `;
 
 exports[`Storyshots Components|Form/Textarea alignment 1`] = `
-.emotion-14 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-12 > * {
   margin-top: 10px;
 }
@@ -1025,56 +952,45 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 }
 
 <div
-  class="emotion-14 emotion-15"
+  class="emotion-12 emotion-13"
 >
   <div
-    class="emotion-12 emotion-13"
+    class="emotion-2 emotion-3"
   >
-    <div
-      class="emotion-2 emotion-3"
+    <textarea
+      align="end"
+      class="emotion-0 emotion-1"
+      style="height:0"
     >
-      <textarea
-        align="end"
-        class="emotion-0 emotion-1"
-        style="height:0"
-      >
-        text
-      </textarea>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      text
+    </textarea>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <textarea
+      align="center"
+      class="emotion-4 emotion-1"
+      style="height:0"
     >
-      <textarea
-        align="center"
-        class="emotion-4 emotion-1"
-        style="height:0"
-      >
-        text
-      </textarea>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      text
+    </textarea>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <textarea
+      align="start"
+      class="emotion-8 emotion-1"
+      style="height:0"
     >
-      <textarea
-        align="start"
-        class="emotion-8 emotion-1"
-        style="height:0"
-      >
-        text
-      </textarea>
-    </div>
+      text
+    </textarea>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Form/Textarea sizes 1`] = `
-.emotion-14 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-12 > * {
   margin-top: 10px;
 }
@@ -1168,53 +1084,42 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 }
 
 <div
-  class="emotion-14 emotion-15"
+  class="emotion-12 emotion-13"
 >
   <div
-    class="emotion-12 emotion-13"
+    class="emotion-2 emotion-3"
   >
-    <div
-      class="emotion-2 emotion-3"
+    <textarea
+      class="emotion-0 emotion-1"
+      style="height:0"
     >
-      <textarea
-        class="emotion-0 emotion-1"
-        style="height:0"
-      >
-        text
-      </textarea>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      text
+    </textarea>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <textarea
+      class="emotion-4 emotion-1"
+      style="height:0"
     >
-      <textarea
-        class="emotion-4 emotion-1"
-        style="height:0"
-      >
-        text
-      </textarea>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      text
+    </textarea>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <textarea
+      class="emotion-8 emotion-1"
+      style="height:0"
     >
-      <textarea
-        class="emotion-8 emotion-1"
-        style="height:0"
-      >
-        text
-      </textarea>
-    </div>
+      text
+    </textarea>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Form/Textarea validations 1`] = `
-.emotion-18 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-16 > * {
   margin-top: 10px;
 }
@@ -1334,66 +1239,55 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 }
 
 <div
-  class="emotion-18 emotion-19"
+  class="emotion-16 emotion-17"
 >
   <div
-    class="emotion-16 emotion-17"
+    class="emotion-2 emotion-3"
   >
-    <div
-      class="emotion-2 emotion-3"
+    <textarea
+      class="emotion-0 emotion-1"
+      style="height:0"
+      valid="error"
     >
-      <textarea
-        class="emotion-0 emotion-1"
-        style="height:0"
-        valid="error"
-      >
-        text
-      </textarea>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      text
+    </textarea>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <textarea
+      class="emotion-4 emotion-1"
+      style="height:0"
+      valid="warn"
     >
-      <textarea
-        class="emotion-4 emotion-1"
-        style="height:0"
-        valid="warn"
-      >
-        text
-      </textarea>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      text
+    </textarea>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <textarea
+      class="emotion-8 emotion-1"
+      style="height:0"
+      valid="valid"
     >
-      <textarea
-        class="emotion-8 emotion-1"
-        style="height:0"
-        valid="valid"
-      >
-        text
-      </textarea>
-    </div>
-    <div
-      class="emotion-2 emotion-3"
+      text
+    </textarea>
+  </div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <textarea
+      class="emotion-12 emotion-1"
+      style="height:0"
     >
-      <textarea
-        class="emotion-12 emotion-1"
-        style="height:0"
-      >
-        text
-      </textarea>
-    </div>
+      text
+    </textarea>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components|Form/Textarea with knobs (controlled) 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-0 {
   padding: 0 10px;
   color: #444;
@@ -1419,16 +1313,12 @@ exports[`Storyshots Components|Form/Textarea with knobs (controlled) 1`] = `
   border-bottom-color: #9fdaff;
 }
 
-<div
-  class="emotion-2 emotion-3"
+<textarea
+  class="emotion-0 emotion-1"
+  style="height:0"
 >
-  <textarea
-    class="emotion-0 emotion-1"
-    style="height:0"
-  >
-    OMG, multiple lines!
+  OMG, multiple lines!
 
 That is amazing
-  </textarea>
-</div>
+</textarea>
 `;

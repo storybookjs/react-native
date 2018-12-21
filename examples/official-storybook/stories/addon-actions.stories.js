@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import {
   action,
@@ -7,7 +7,7 @@ import {
   decorate,
   decorateAction,
 } from '@storybook/addon-actions';
-import { Button } from '@storybook/react/demo';
+import { Button } from '@storybook/components';
 import { window, File } from 'global';
 
 const pickNative = decorate([args => [args[0].nativeEvent]]);
@@ -78,7 +78,7 @@ storiesOf('Addons|Actions', module)
       const reg = /fooBar/g;
 
       return (
-        <div>
+        <Fragment>
           <Button onClick={() => action('Array')(['foo', 'bar', { foo: 'bar' }])}>Array</Button>
           <Button onClick={() => action('Boolean')(false)}>Boolean</Button>
           <Button onClick={() => action('Empty Object')({})}>Empty Object</Button>
@@ -123,7 +123,7 @@ storiesOf('Addons|Actions', module)
           <Button onClick={action('SyntheticMouseEvent')}>SyntheticEvent</Button>
           <Button onClick={() => action('undefined')(undefined)}>undefined</Button>
           <Button onClick={() => action('window')(window)}>Window</Button>
-        </div>
+        </Fragment>
       );
     },
     { options: { selectedAddonPanel: 'storybook/actions/panel' } }
@@ -143,12 +143,12 @@ storiesOf('Addons|Actions', module)
     );
   })
   .add('Persisting the action logger', () => (
-    <div>
+    <Fragment>
       <p>Moving away from this story will persist the action logger</p>
       <Button onClick={action('clear-action-logger', { clearOnStoryChange: false })}>
         Object (configured clearOnStoryChange: false)
       </Button>
-    </div>
+    </Fragment>
   ))
   .add('Limit Action Output', () => {
     configureActions({
@@ -156,10 +156,10 @@ storiesOf('Addons|Actions', module)
     });
 
     return (
-      <div>
+      <Fragment>
         <Button onClick={() => action('False')(false)}>False</Button>
         <Button onClick={() => action('True')(true)}>True</Button>
-      </div>
+      </Fragment>
     );
   });
 

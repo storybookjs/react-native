@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|Nav/components components 1`] = `
-.emotion-28 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-24 {
   position: absolute;
   z-index: 1;
@@ -156,101 +149,90 @@ exports[`Storyshots UI|Nav/components components 1`] = `
   box-sizing: border-box;
 }
 
-<div
-  class="emotion-28 emotion-29"
+<nav
+  class="emotion-26 emotion-27"
 >
-  <nav
-    class="emotion-26 emotion-27"
+  <div
+    class="emotion-24 emotion-25"
   >
     <div
-      class="emotion-24 emotion-25"
+      class="emotion-20 emotion-21"
     >
       <div
-        class="emotion-20 emotion-21"
+        class="emotion-16 emotion-17"
       >
         <div
-          class="emotion-16 emotion-17"
+          class="emotion-6 emotion-7"
         >
           <div
-            class="emotion-6 emotion-7"
+            class="emotion-4 emotion-5"
           >
-            <div
-              class="emotion-4 emotion-5"
+            <svg
+              class="emotion-0 emotion-1"
+              height="30px"
+              viewBox="0 0 420 538"
             >
-              <svg
-                class="emotion-0 emotion-1"
-                height="30px"
-                viewBox="0 0 420 538"
-              >
-                <path
-                  d="M 420,0 28,28 52,520 420,538 Z"
-                  fill="#f1618c"
-                />
-                <path
-                  d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
-                  fill="#fff"
-                />
-                <path
-                  d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
-                  fill="#fff"
-                />
-                <path
-                  d="M 42,520 18,28 H 0 l 18,492 z"
-                  fill="#b57ee5"
-                />
-              </svg>
-              <span
-                class="emotion-2 emotion-3"
-              >
-                <strong>
-                  Title
-                </strong>
-              </span>
-            </div>
+              <path
+                d="M 420,0 28,28 52,520 420,538 Z"
+                fill="#f1618c"
+              />
+              <path
+                d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
+                fill="#fff"
+              />
+              <path
+                d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
+                fill="#fff"
+              />
+              <path
+                d="M 42,520 18,28 H 0 l 18,492 z"
+                fill="#b57ee5"
+              />
+            </svg>
+            <span
+              class="emotion-2 emotion-3"
+            >
+              <strong>
+                Title
+              </strong>
+            </span>
           </div>
-          <span
-            class="emotion-14 emotion-15"
-          >
-            <button
-              class="emotion-12 emotion-13"
-              id="storybook-explorer-menu"
-            >
-              <svg
-                class="emotion-10 emotion-11"
-                height="14px"
-                viewBox="0 0 1024 1024"
-                width="14px"
-              >
-                <path
-                  class="emotion-8 emotion-9"
-                  d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
-                />
-              </svg>
-            </button>
-          </span>
         </div>
-        <p
-          class="emotion-18 emotion-19"
+        <span
+          class="emotion-14 emotion-15"
         >
-          There have no stories been loaded yet
-        </p>
+          <button
+            class="emotion-12 emotion-13"
+            id="storybook-explorer-menu"
+          >
+            <svg
+              class="emotion-10 emotion-11"
+              height="14px"
+              viewBox="0 0 1024 1024"
+              width="14px"
+            >
+              <path
+                class="emotion-8 emotion-9"
+                d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
+              />
+            </svg>
+          </button>
+        </span>
       </div>
-      <div
-        class="emotion-22 emotion-23"
-      />
+      <p
+        class="emotion-18 emotion-19"
+      >
+        There have no stories been loaded yet
+      </p>
     </div>
-  </nav>
-</div>
+    <div
+      class="emotion-22 emotion-23"
+    />
+  </div>
+</nav>
 `;
 
 exports[`Storyshots UI|Nav/settings with brand 1`] = `
-.emotion-28 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-26 {
   background: linear-gradient(to right,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%);
   position: absolute;
@@ -399,101 +381,90 @@ exports[`Storyshots UI|Nav/settings with brand 1`] = `
   padding: 20px;
 }
 
-<div
-  class="emotion-28 emotion-29"
+<nav
+  class="emotion-26 emotion-27"
 >
-  <nav
-    class="emotion-26 emotion-27"
+  <div
+    class="emotion-24 emotion-25"
   >
     <div
-      class="emotion-24 emotion-25"
+      class="emotion-20 emotion-21"
     >
       <div
-        class="emotion-20 emotion-21"
+        class="emotion-16 emotion-17"
       >
         <div
-          class="emotion-16 emotion-17"
+          class="emotion-6 emotion-7"
         >
           <div
-            class="emotion-6 emotion-7"
+            class="emotion-4 emotion-5"
           >
-            <div
-              class="emotion-4 emotion-5"
+            <svg
+              class="emotion-0 emotion-1"
+              height="30px"
+              viewBox="0 0 420 538"
             >
-              <svg
-                class="emotion-0 emotion-1"
-                height="30px"
-                viewBox="0 0 420 538"
-              >
-                <path
-                  d="M 420,0 28,28 52,520 420,538 Z"
-                  fill="#f1618c"
-                />
-                <path
-                  d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
-                  fill="#fff"
-                />
-                <path
-                  d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
-                  fill="#fff"
-                />
-                <path
-                  d="M 42,520 18,28 H 0 l 18,492 z"
-                  fill="#b57ee5"
-                />
-              </svg>
-              <span
-                class="emotion-2 emotion-3"
-              >
-                <strong>
-                  Title
-                </strong>
-              </span>
-            </div>
+              <path
+                d="M 420,0 28,28 52,520 420,538 Z"
+                fill="#f1618c"
+              />
+              <path
+                d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
+                fill="#fff"
+              />
+              <path
+                d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
+                fill="#fff"
+              />
+              <path
+                d="M 42,520 18,28 H 0 l 18,492 z"
+                fill="#b57ee5"
+              />
+            </svg>
+            <span
+              class="emotion-2 emotion-3"
+            >
+              <strong>
+                Title
+              </strong>
+            </span>
           </div>
-          <span
-            class="emotion-14 emotion-15"
-          >
-            <button
-              class="emotion-12 emotion-13"
-              id="storybook-explorer-menu"
-            >
-              <svg
-                class="emotion-10 emotion-11"
-                height="14px"
-                viewBox="0 0 1024 1024"
-                width="14px"
-              >
-                <path
-                  class="emotion-8 emotion-9"
-                  d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
-                />
-              </svg>
-            </button>
-          </span>
         </div>
-        <p
-          class="emotion-18 emotion-19"
+        <span
+          class="emotion-14 emotion-15"
         >
-          There have no stories been loaded yet
-        </p>
+          <button
+            class="emotion-12 emotion-13"
+            id="storybook-explorer-menu"
+          >
+            <svg
+              class="emotion-10 emotion-11"
+              height="14px"
+              viewBox="0 0 1024 1024"
+              width="14px"
+            >
+              <path
+                class="emotion-8 emotion-9"
+                d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
+              />
+            </svg>
+          </button>
+        </span>
       </div>
-      <div
-        class="emotion-22 emotion-23"
-      />
+      <p
+        class="emotion-18 emotion-19"
+      >
+        There have no stories been loaded yet
+      </p>
     </div>
-  </nav>
-</div>
+    <div
+      class="emotion-22 emotion-23"
+    />
+  </div>
+</nav>
 `;
 
 exports[`Storyshots UI|Nav/settings without brand 1`] = `
-.emotion-24 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
 .emotion-22 {
   background: linear-gradient(to right,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%);
   position: absolute;
@@ -622,63 +593,59 @@ exports[`Storyshots UI|Nav/settings without brand 1`] = `
   text-decoration: none;
 }
 
-<div
-  class="emotion-24 emotion-25"
+<nav
+  class="emotion-22 emotion-23"
 >
-  <nav
-    class="emotion-22 emotion-23"
+  <div
+    class="emotion-20 emotion-21"
   >
     <div
-      class="emotion-20 emotion-21"
+      class="emotion-16 emotion-17"
     >
       <div
-        class="emotion-16 emotion-17"
+        class="emotion-12 emotion-13"
       >
         <div
-          class="emotion-12 emotion-13"
+          class="emotion-2 emotion-3"
         >
-          <div
-            class="emotion-2 emotion-3"
+          <a
+            class="emotion-0 emotion-1"
+            href="https://example.com"
+            tabindex="-1"
           >
-            <a
-              class="emotion-0 emotion-1"
-              href="https://example.com"
-              tabindex="-1"
-            >
-              Title
-            </a>
-          </div>
-          <span
-            class="emotion-10 emotion-11"
-          >
-            <button
-              class="emotion-8 emotion-9"
-              id="storybook-explorer-menu"
-            >
-              <svg
-                class="emotion-6 emotion-7"
-                height="14px"
-                viewBox="0 0 1024 1024"
-                width="14px"
-              >
-                <path
-                  class="emotion-4 emotion-5"
-                  d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
-                />
-              </svg>
-            </button>
-          </span>
+            Title
+          </a>
         </div>
-        <p
-          class="emotion-14 emotion-15"
+        <span
+          class="emotion-10 emotion-11"
         >
-          There have no stories been loaded yet
-        </p>
+          <button
+            class="emotion-8 emotion-9"
+            id="storybook-explorer-menu"
+          >
+            <svg
+              class="emotion-6 emotion-7"
+              height="14px"
+              viewBox="0 0 1024 1024"
+              width="14px"
+            >
+              <path
+                class="emotion-4 emotion-5"
+                d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
+              />
+            </svg>
+          </button>
+        </span>
       </div>
-      <div
-        class="emotion-18 emotion-19"
-      />
+      <p
+        class="emotion-14 emotion-15"
+      >
+        There have no stories been loaded yet
+      </p>
     </div>
-  </nav>
-</div>
+    <div
+      class="emotion-18 emotion-19"
+    />
+  </div>
+</nav>
 `;
