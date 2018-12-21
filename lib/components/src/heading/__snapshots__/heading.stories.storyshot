@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Heading types 1`] = `
-.emotion-40 {
+.emotion-46 {
   font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
   color: #444;
   -webkit-font-smoothing: antialiased;
@@ -36,7 +36,7 @@ exports[`Storyshots Components|Heading types 1`] = `
   color: rgba(0,0,0,0.4);
 }
 
-.emotion-24 {
+.emotion-18 {
   color: currentColor;
   font-weight: normal;
   font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
@@ -45,19 +45,19 @@ exports[`Storyshots Components|Heading types 1`] = `
   line-height: 1.2em;
   display: block;
   color: rgba(0,0,0,0.4);
-  -webkit-letter-spacing: 4.3px;
-  -moz-letter-spacing: 4.3px;
-  -ms-letter-spacing: 4.3px;
-  letter-spacing: 4.3px;
-  font-weight: 400;
-  font-size: 10px;
+  line-height: 1em;
+  font-size: 22px;
 }
 
-.emotion-24 > sub {
+.emotion-18 > sub {
   display: block;
   padding-top: 5px;
   line-height: 1.2em;
   font-size: 14px;
+}
+
+.emotion-18 > sub {
+  color: rgba(0,0,0,0.4);
 }
 
 .emotion-30 {
@@ -75,7 +75,6 @@ exports[`Storyshots Components|Heading types 1`] = `
   letter-spacing: 4.3px;
   font-weight: 400;
   font-size: 10px;
-  text-transform: uppercase;
 }
 
 .emotion-30 > sub {
@@ -85,7 +84,32 @@ exports[`Storyshots Components|Heading types 1`] = `
   font-size: 14px;
 }
 
-.emotion-34 {
+.emotion-36 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-letter-spacing: 4.3px;
+  -moz-letter-spacing: 4.3px;
+  -ms-letter-spacing: 4.3px;
+  letter-spacing: 4.3px;
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.emotion-36 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+.emotion-40 {
   color: currentColor;
   font-weight: normal;
   font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
@@ -104,7 +128,7 @@ exports[`Storyshots Components|Heading types 1`] = `
   text-decoration: underline;
 }
 
-.emotion-34 > sub {
+.emotion-40 > sub {
   display: block;
   padding-top: 5px;
   line-height: 1.2em;
@@ -112,7 +136,7 @@ exports[`Storyshots Components|Heading types 1`] = `
 }
 
 <div
-  class="emotion-40 emotion-41"
+  class="emotion-46 emotion-47"
 >
   <div>
     <div
@@ -170,6 +194,21 @@ exports[`Storyshots Components|Heading types 1`] = `
         class="emotion-2 emotion-3"
       >
         <h1
+          class="emotion-18 emotion-1"
+        >
+          <span>
+            secondary type
+          </span>
+        </h1>
+      </header>
+    </div>
+    <div
+      class="emotion-4 emotion-5"
+    >
+      <header
+        class="emotion-2 emotion-3"
+      >
+        <h1
           class="emotion-0 emotion-1"
         >
           <span>
@@ -188,7 +227,7 @@ exports[`Storyshots Components|Heading types 1`] = `
         class="emotion-2 emotion-3"
       >
         <h1
-          class="emotion-24 emotion-1"
+          class="emotion-30 emotion-1"
         >
           <span>
             section type
@@ -203,7 +242,7 @@ exports[`Storyshots Components|Heading types 1`] = `
         class="emotion-2 emotion-3"
       >
         <h1
-          class="emotion-30 emotion-1"
+          class="emotion-36 emotion-1"
         >
           <span>
             section type
@@ -214,7 +253,7 @@ exports[`Storyshots Components|Heading types 1`] = `
         class="emotion-2 emotion-3"
       >
         <h1
-          class="emotion-34 emotion-1"
+          class="emotion-40 emotion-1"
         >
           <span>
             section type

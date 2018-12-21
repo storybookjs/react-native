@@ -12,7 +12,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
   margin-top: 10px;
 }
 
-.emotion-12 > *:first-of-type {
+.emotion-12 > *:nth-child(0) {
   margin-top: 0;
 }
 
@@ -156,7 +156,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
   margin-top: 10px;
 }
 
-.emotion-12 > *:first-of-type {
+.emotion-12 > *:nth-child(0) {
   margin-top: 0;
 }
 
@@ -302,7 +302,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
   margin-top: 10px;
 }
 
-.emotion-16 > *:first-of-type {
+.emotion-16 > *:nth-child(0) {
   margin-top: 0;
 }
 
@@ -533,7 +533,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
   margin-top: 10px;
 }
 
-.emotion-12 > *:first-of-type {
+.emotion-12 > *:nth-child(0) {
   margin-top: 0;
 }
 
@@ -721,7 +721,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
   margin-top: 10px;
 }
 
-.emotion-8 > *:first-of-type {
+.emotion-8 > *:nth-child(0) {
   margin-top: 0;
 }
 
@@ -938,7 +938,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
   margin-top: 10px;
 }
 
-.emotion-12 > *:first-of-type {
+.emotion-12 > *:nth-child(0) {
   margin-top: 0;
 }
 
@@ -1079,7 +1079,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
   margin-top: 10px;
 }
 
-.emotion-12 > *:first-of-type {
+.emotion-12 > *:nth-child(0) {
   margin-top: 0;
 }
 
@@ -1219,7 +1219,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
   margin-top: 10px;
 }
 
-.emotion-16 > *:first-of-type {
+.emotion-16 > *:nth-child(0) {
   margin-top: 0;
 }
 
