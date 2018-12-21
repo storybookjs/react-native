@@ -1,41 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`addon Info should render <Info /> and external markdown 1`] = `
-.emotion-6 {
-  position: relative;
-  overflow: hidden;
-}
-
-.emotion-4 {
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-4 code {
-  opacity: 0.7;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-}
-
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
 <deprecated>
   <Story
     PropTable={[Function]}
@@ -288,11 +253,11 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
               >
                 <Wrapper>
                   <div
-                    className="emotion-6 emotion-7"
+                    className="css-fri0s0-Wrapper epklh870"
                   >
                     <Scroller>
                       <div
-                        className="emotion-4 emotion-5"
+                        className="css-1et2y5f-Scroller epklh871"
                       >
                         <SyntaxHighlighter
                           CodeTag={
@@ -340,11 +305,11 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                             className="hljs"
                           >
                             <pre
-                              className="hljs emotion-2 emotion-3"
+                              className="hljs css-1x8ad3z-Pre epklh872"
                             >
                               <Code>
                                 <code
-                                  className="emotion-0 emotion-1"
+                                  className="css-1igagyr-Code epklh873"
                                 >
                                   <span
                                     className="token tag"
@@ -811,41 +776,6 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
 `;
 
 exports[`addon Info should render <Info /> and markdown 1`] = `
-.emotion-6 {
-  position: relative;
-  overflow: hidden;
-}
-
-.emotion-4 {
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-4 code {
-  opacity: 0.7;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-}
-
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
 <deprecated>
   <Story
     PropTable={[Function]}
@@ -1191,11 +1121,11 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
               >
                 <Wrapper>
                   <div
-                    className="emotion-6 emotion-7"
+                    className="css-fri0s0-Wrapper epklh870"
                   >
                     <Scroller>
                       <div
-                        className="emotion-4 emotion-5"
+                        className="css-1et2y5f-Scroller epklh871"
                       >
                         <SyntaxHighlighter
                           CodeTag={
@@ -1243,11 +1173,11 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                             className="hljs"
                           >
                             <pre
-                              className="hljs emotion-2 emotion-3"
+                              className="hljs css-1x8ad3z-Pre epklh872"
                             >
                               <Code>
                                 <code
-                                  className="emotion-0 emotion-1"
+                                  className="css-1igagyr-Code epklh873"
                                 >
                                   <span
                                     className="token tag"
@@ -1714,41 +1644,6 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
 `;
 
 exports[`addon Info should render component description if story kind matches component 1`] = `
-.emotion-6 {
-  position: relative;
-  overflow: hidden;
-}
-
-.emotion-4 {
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-4 code {
-  opacity: 0.7;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-}
-
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
 <Info>
   <Story
     PropTable={[Function]}
@@ -2022,11 +1917,11 @@ exports[`addon Info should render component description if story kind matches co
             >
               <Wrapper>
                 <div
-                  className="emotion-6 emotion-7"
+                  className="css-fri0s0-Wrapper epklh870"
                 >
                   <Scroller>
                     <div
-                      className="emotion-4 emotion-5"
+                      className="css-1et2y5f-Scroller epklh871"
                     >
                       <SyntaxHighlighter
                         CodeTag={
@@ -2074,11 +1969,11 @@ exports[`addon Info should render component description if story kind matches co
                           className="hljs"
                         >
                           <pre
-                            className="hljs emotion-2 emotion-3"
+                            className="hljs css-1x8ad3z-Pre epklh872"
                           >
                             <Code>
                               <code
-                                className="emotion-0 emotion-1"
+                                className="css-1igagyr-Code epklh873"
                               >
                                 <span
                                   className="token tag"
@@ -2495,41 +2390,6 @@ exports[`addon Info should render component description if story kind matches co
 `;
 
 exports[`addon Info should render component description if story name matches component 1`] = `
-.emotion-6 {
-  position: relative;
-  overflow: hidden;
-}
-
-.emotion-4 {
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-4 code {
-  opacity: 0.7;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-}
-
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
 <Info>
   <Story
     PropTable={[Function]}
@@ -2803,11 +2663,11 @@ exports[`addon Info should render component description if story name matches co
             >
               <Wrapper>
                 <div
-                  className="emotion-6 emotion-7"
+                  className="css-fri0s0-Wrapper epklh870"
                 >
                   <Scroller>
                     <div
-                      className="emotion-4 emotion-5"
+                      className="css-1et2y5f-Scroller epklh871"
                     >
                       <SyntaxHighlighter
                         CodeTag={
@@ -2855,11 +2715,11 @@ exports[`addon Info should render component description if story name matches co
                           className="hljs"
                         >
                           <pre
-                            className="hljs emotion-2 emotion-3"
+                            className="hljs css-1x8ad3z-Pre epklh872"
                           >
                             <Code>
                               <code
-                                className="emotion-0 emotion-1"
+                                className="css-1igagyr-Code epklh873"
                               >
                                 <span
                                   className="token tag"

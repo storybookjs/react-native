@@ -1,107 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Button with new info 1`] = `
-.emotion-6 {
-  position: relative;
-  overflow: hidden;
-}
-
-.emotion-4 {
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-4 code {
-  opacity: 0.7;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-}
-
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
-.emotion-70 {
-  border-collapse: collapse;
-  margin-top: 16px;
-  width: auto;
-  table-layout: auto;
-}
-
-.emotion-18 {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.emotion-8 {
-  padding: 2px 6px;
-  line-height: 18px;
-  vertical-align: middle;
-  padding: 8px 16px;
-}
-
-.emotion-68 {
-  font-size: 14px;
-}
-
-.emotion-30 {
-  border-bottom: 1px solid #eee;
-}
-
-.emotion-20 {
-  padding: 2px 6px;
-  white-space: nowrap;
-  font-family: Monaco,Consolas,"Courier New",monospace;
-  text-align: left;
-  padding: 8px 16px;
-  color: #774dd7;
-}
-
-.emotion-22 {
-  padding: 2px 6px;
-  white-space: nowrap;
-  font-family: Monaco,Consolas,"Courier New",monospace;
-  text-align: left;
-  padding: 8px 16px;
-  color: #1ea7fd;
-}
-
-.emotion-22 button {
-  color: #37d5d3;
-}
-
-.emotion-22 span {
-  white-space: pre;
-}
-
-.emotion-24 {
-  padding: 2px 6px;
-  white-space: nowrap;
-  font-family: Monaco,Consolas,"Courier New",monospace;
-  text-align: left;
-  padding: 8px 16px;
-}
-
-.emotion-28 {
-  padding: 2px 6px;
-  text-align: left;
-  padding: 8px 16px;
-}
-
 <div>
   <div
     style="position:relative;z-index:0"
@@ -181,16 +80,16 @@ exports[`Storyshots Button with new info 1`] = `
             Story Source
           </h1>
           <div
-            class="emotion-6 emotion-7"
+            class="css-fri0s0-Wrapper epklh870"
           >
             <div
-              class="emotion-4 emotion-5"
+              class="css-1et2y5f-Scroller epklh871"
             >
               <pre
-                class="hljs emotion-2 emotion-3"
+                class="hljs css-1x8ad3z-Pre epklh872"
               >
                 <code
-                  class="emotion-0 emotion-1"
+                  class="css-1igagyr-Code epklh873"
                 >
                   <span
                     class="token tag"
@@ -334,124 +233,124 @@ exports[`Storyshots Button with new info 1`] = `
               "Container" Component
             </h3>
             <table
-              class="emotion-70 emotion-71"
+              class="css-919xfk-Table-Table e1fg2ikb0"
             >
               <thead
-                class="emotion-18 emotion-19"
+                class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="emotion-8 emotion-9"
+                    class="css-6pdatc-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="emotion-8 emotion-9"
+                    class="css-6pdatc-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="emotion-8 emotion-9"
+                    class="css-6pdatc-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="emotion-8 emotion-9"
+                    class="css-6pdatc-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="emotion-8 emotion-9"
+                    class="css-6pdatc-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
                 </tr>
               </thead>
               <tbody
-                class="emotion-68 emotion-69"
+                class="css-4b5un0-TBody e1fg2ikb3"
               >
                 <tr
-                  class="emotion-30 emotion-31"
+                  class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="emotion-20 emotion-21"
+                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
                   >
                     children
                   </td>
                   <td
-                    class="emotion-22 emotion-23"
+                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       node
                     </span>
                   </td>
                   <td
-                    class="emotion-24 emotion-25"
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="emotion-24 emotion-25"
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-28 emotion-25"
+                    class="css-a1xhq0-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
-                  class="emotion-30 emotion-31"
+                  class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="emotion-20 emotion-21"
+                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
                   >
                     isAmazing
                   </td>
                   <td
-                    class="emotion-22 emotion-23"
+                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="emotion-24 emotion-25"
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-24 emotion-25"
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="emotion-28 emotion-25"
+                    class="css-a1xhq0-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
-                  class="emotion-30 emotion-31"
+                  class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="emotion-20 emotion-21"
+                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
                   >
                     age
                   </td>
                   <td
-                    class="emotion-22 emotion-23"
+                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="emotion-24 emotion-25"
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-24 emotion-25"
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {
@@ -478,38 +377,38 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    class="emotion-28 emotion-25"
+                    class="css-a1xhq0-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
-                  class="emotion-30 emotion-31"
+                  class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="emotion-20 emotion-21"
+                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
                   >
                     title
                   </td>
                   <td
-                    class="emotion-22 emotion-23"
+                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="emotion-24 emotion-25"
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-24 emotion-25"
+                    class="css-6qgefz-Td-TD e1fg2ikb5"
                   >
                     <span>
                       the best container ever
                     </span>
                   </td>
                   <td
-                    class="emotion-28 emotion-25"
+                    class="css-a1xhq0-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>

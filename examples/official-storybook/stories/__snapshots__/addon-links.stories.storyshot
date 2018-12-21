@@ -23,12 +23,8 @@ exports[`Storyshots Addons|Links.Href log 1`] = `
 `;
 
 exports[`Storyshots Addons|Links.Link First 1`] = `
-.emotion-0 {
-  color: inherit;
-}
-
 <a
-  class="emotion-0 emotion-1"
+  class="css-1a69rwi-A e10n0hn00"
   href="/"
 >
   Go to Second
@@ -36,12 +32,8 @@ exports[`Storyshots Addons|Links.Link First 1`] = `
 `;
 
 exports[`Storyshots Addons|Links.Link Second 1`] = `
-.emotion-0 {
-  color: inherit;
-}
-
 <a
-  class="emotion-0 emotion-1"
+  class="css-1a69rwi-A e10n0hn00"
   href="/"
 >
   Go to First
@@ -55,12 +47,8 @@ Array [
   >
     Scroll down to see the link
   </div>,
-  .emotion-0 {
-  color: inherit;
-}
-
-<a
-    class="emotion-0 emotion-1"
+  <a
+    class="css-1a69rwi-A e10n0hn00"
     href="/"
   >
     Go to Second
@@ -75,12 +63,8 @@ Array [
   >
     Scroll down to see the link
   </div>,
-  .emotion-0 {
-  color: inherit;
-}
-
-<a
-    class="emotion-0 emotion-1"
+  <a
+    class="css-1a69rwi-A e10n0hn00"
     href="/"
   >
     Go to First
@@ -89,12 +73,8 @@ Array [
 `;
 
 exports[`Storyshots Addons|Links.Select First 1`] = `
-.emotion-0 {
-  color: inherit;
-}
-
 <a
-  class="emotion-0 emotion-1"
+  class="css-1a69rwi-A e10n0hn00"
   href="/"
 >
   Go back
@@ -121,12 +101,8 @@ exports[`Storyshots Addons|Links.Select Index 1`] = `
 `;
 
 exports[`Storyshots Addons|Links.Select Second 1`] = `
-.emotion-0 {
-  color: inherit;
-}
-
 <a
-  class="emotion-0 emotion-1"
+  class="css-1a69rwi-A e10n0hn00"
   href="/"
 >
   Go back
@@ -134,12 +110,8 @@ exports[`Storyshots Addons|Links.Select Second 1`] = `
 `;
 
 exports[`Storyshots Addons|Links.Select Third 1`] = `
-.emotion-0 {
-  color: inherit;
-}
-
 <a
-  class="emotion-0 emotion-1"
+  class="css-1a69rwi-A e10n0hn00"
   href="/"
 >
   Go back

@@ -1,221 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|Panel default 1`] = `
-.emotion-0 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  padding: 0 15px;
-  text-transform: uppercase;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  box-sizing: border-box;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  color: rgba(0,0,0,0.4);
-  border-bottom-color: transparent;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-.emotion-10 {
-  display: block;
-}
-
-.emotion-8 {
-  fill: currentColor;
-}
-
-.emotion-26 {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-22 {
-  height: 40px;
-  background: rgba(255,255,255,1);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  color: rgba(0,0,0,0.4);
-}
-
-.emotion-4 {
-  overflow: auto;
-  white-space: nowrap;
-  height: 100%;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.emotion-2 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  padding: 0 15px;
-  text-transform: uppercase;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  box-sizing: border-box;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  color: #444;
-  border-bottom-color: rgba(0,0,0,0.1);
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-.emotion-20 {
-  height: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-20 > * {
-  margin-right: 15px;
-}
-
-.emotion-20 > *:last-child {
-  margin-right: 0;
-}
-
-.emotion-6 {
-  width: 1px;
-  height: 24px;
-  background: #eee;
-}
-
-.emotion-12 {
-  background: none;
-  border: 0 none;
-  padding: 0;
-  color: inherit;
-}
-
-.emotion-12:hover,
-.emotion-12:focus {
-  color: #300aaff;
-  outline: 0 none;
-  cursor: pointer;
-}
-
-.emotion-24 {
-  display: block;
-  position: relative;
-  position: relative;
-  overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
-}
-
 <div
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="emotion-26 emotion-27"
+    class="css-1rahlzc-Wrapper e1lzzkxx0"
     id="storybook-panel-root"
   >
     <div
-      class="emotion-22 emotion-23"
+      class="css-1x21rq3-TabBarWrapper e1lzzkxx2"
     >
       <div
-        class="emotion-4 emotion-5"
+        class="css-i6idqx-TabBar e1lzzkxx1"
         role="tablist"
       >
         <button
-          class="emotion-0 emotion-1"
+          class="css-1ghc1c-TabButton e1lzzkxx4"
           role="tab"
           type="button"
         >
           Test 1
         </button>
         <button
-          class="emotion-2 emotion-1"
+          class="css-1jt6nsk-TabButton e1lzzkxx4"
           role="tab"
           type="button"
         >
@@ -223,37 +31,37 @@ exports[`Storyshots UI|Panel default 1`] = `
         </button>
       </div>
       <div
-        class="emotion-20 emotion-21"
+        class="css-1syx3b1-TabBarTools e1lzzkxx3"
       >
         <span
-          class="emotion-6 emotion-7"
+          class="css-fk8yj3-Separator e9z07qj1"
         />
         <button
-          class="emotion-12 emotion-13"
+          class="css-506fq4-ToolButton e9z07qj0"
         >
           <svg
-            class="emotion-10 emotion-11"
+            class="css-1yaqr10-Svg e1vqr9v80"
             height="14px"
             viewBox="0 0 1024 1024"
             width="14px"
           >
             <path
-              class="emotion-8 emotion-9"
+              class="css-1xhbbdd-Path e1gl30fa0"
               d="M64 167.944v688c0 22.092 17.908 40 40 40h816c22.092 0 40-17.908 40-40v-688c0-22.092-17.908-40-40-40h-816c-22.092 0-40 17.908-40 40zM880 815.944h-240v-608h240v608zM144 207.944h416v608h-416v-608zM793.296 320.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32zM793.296 448.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32zM793.296 576.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32z"
             />
           </svg>
         </button>
         <button
-          class="emotion-12 emotion-13"
+          class="css-506fq4-ToolButton e9z07qj0"
         >
           <svg
-            class="emotion-10 emotion-11"
+            class="css-1yaqr10-Svg e1vqr9v80"
             height="14px"
             viewBox="0 0 1024 1024"
             width="14px"
           >
             <path
-              class="emotion-8 emotion-9"
+              class="css-1xhbbdd-Path e1gl30fa0"
               d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
             />
           </svg>
@@ -261,7 +69,7 @@ exports[`Storyshots UI|Panel default 1`] = `
       </div>
     </div>
     <div
-      class="emotion-24 emotion-25"
+      class="css-1od9ihz-Content e1lzzkxx5"
     >
       <div
         id="test1"
@@ -283,20 +91,11 @@ exports[`Storyshots UI|Panel default 1`] = `
 `;
 
 exports[`Storyshots UI|Panel no panels 1`] = `
-.emotion-0 {
-  font-size: 11px;
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 20px;
-}
-
 <div
   style="height:calc(100vh - 20px)"
 >
   <p
-    class="emotion-0 emotion-1"
+    class="css-hftiue ejh6i270"
   >
     no panels available
   </p>

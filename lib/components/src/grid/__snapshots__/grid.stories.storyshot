@@ -2,57 +2,25 @@
 
 exports[`Storyshots Components|Grid col 1`] = `
 Array [
-  .emotion-0 {
-  background: silver;
-  display: inline-block;
-  padding: 20px;
-}
-
-<span
-    class="emotion-0 emotion-1"
+  <span
+    class="css-1bdt3um-PlaceholderInline ea0irds1"
     color="silver"
   />,
-  .emotion-6 {
-  display: inline-block;
-  vertical-align: inherit;
-}
-
-.emotion-6 > * {
-  margin-left: 10px;
-  vertical-align: inherit;
-}
-
-.emotion-6 > *:nth-child(0) {
-  margin-left: 0;
-}
-
-.emotion-0 {
-  background: hotpink;
-  display: inline-block;
-  padding: 20px;
-}
-
-<div
-    class="emotion-6 emotion-7"
+  <div
+    class="css-14cpgt7-Container ecq4n7c0"
   >
     <span
-      class="emotion-0 emotion-1"
+      class="css-ol8bih-PlaceholderInline ea0irds1"
     />
     <span
-      class="emotion-0 emotion-1"
+      class="css-ol8bih-PlaceholderInline ea0irds1"
     />
     <span
-      class="emotion-0 emotion-1"
+      class="css-ol8bih-PlaceholderInline ea0irds1"
     />
   </div>,
-  .emotion-0 {
-  background: silver;
-  display: inline-block;
-  padding: 20px;
-}
-
-<span
-    class="emotion-0 emotion-1"
+  <span
+    class="css-1bdt3um-PlaceholderInline ea0irds1"
     color="silver"
   />,
 ]
@@ -60,59 +28,25 @@ Array [
 
 exports[`Storyshots Components|Grid col outer 1`] = `
 Array [
-  .emotion-0 {
-  background: silver;
-  display: inline-block;
-  padding: 20px;
-}
-
-<span
-    class="emotion-0 emotion-1"
+  <span
+    class="css-1bdt3um-PlaceholderInline ea0irds1"
     color="silver"
   />,
-  .emotion-0 {
-  background: hotpink;
-  display: inline-block;
-  padding: 20px;
-}
-
-.emotion-6 {
-  display: inline-block;
-  vertical-align: inherit;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.emotion-6 > * {
-  margin-left: 10px;
-  vertical-align: inherit;
-}
-
-.emotion-6 > *:nth-child(0) {
-  margin-left: 0;
-}
-
-<div
-    class="emotion-6 emotion-7"
+  <div
+    class="css-1ufl575-Container ecq4n7c0"
   >
     <span
-      class="emotion-0 emotion-1"
+      class="css-ol8bih-PlaceholderInline ea0irds1"
     />
     <span
-      class="emotion-0 emotion-1"
+      class="css-ol8bih-PlaceholderInline ea0irds1"
     />
     <span
-      class="emotion-0 emotion-1"
+      class="css-ol8bih-PlaceholderInline ea0irds1"
     />
   </div>,
-  .emotion-0 {
-  background: silver;
-  display: inline-block;
-  padding: 20px;
-}
-
-<span
-    class="emotion-0 emotion-1"
+  <span
+    class="css-1bdt3um-PlaceholderInline ea0irds1"
     color="silver"
   />,
 ]
@@ -120,48 +54,25 @@ Array [
 
 exports[`Storyshots Components|Grid row 1`] = `
 Array [
-  .emotion-0 {
-  background: silver;
-  padding: 20px;
-}
-
-<div
-    class="emotion-0 emotion-1"
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
     color="silver"
   />,
-  .emotion-6 > * {
-  margin-top: 10px;
-}
-
-.emotion-6 > *:nth-child(0) {
-  margin-top: 0;
-}
-
-.emotion-0 {
-  background: hotpink;
-  padding: 20px;
-}
-
-<div
-    class="emotion-6 emotion-7"
+  <div
+    class="css-1mvfu07-Container ecq4n7c0"
   >
     <div
-      class="emotion-0 emotion-1"
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
     />
     <div
-      class="emotion-0 emotion-1"
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
     />
     <div
-      class="emotion-0 emotion-1"
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
     />
   </div>,
-  .emotion-0 {
-  background: silver;
-  padding: 20px;
-}
-
-<div
-    class="emotion-0 emotion-1"
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
     color="silver"
   />,
 ]
@@ -169,53 +80,25 @@ Array [
 
 exports[`Storyshots Components|Grid row multiply 1`] = `
 Array [
-  .emotion-0 {
-  background: silver;
-  padding: 20px;
-}
-
-<div
-    class="emotion-0 emotion-1"
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
     color="silver"
   />,
-  .emotion-0 {
-  background: hotpink;
-  padding: 20px;
-}
-
-.emotion-6 {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.emotion-6 > * {
-  margin-top: 30px;
-}
-
-.emotion-6 > *:nth-child(0) {
-  margin-top: 0;
-}
-
-<div
-    class="emotion-6 emotion-7"
+  <div
+    class="css-tch0nx-Container ecq4n7c0"
   >
     <div
-      class="emotion-0 emotion-1"
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
     />
     <div
-      class="emotion-0 emotion-1"
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
     />
     <div
-      class="emotion-0 emotion-1"
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
     />
   </div>,
-  .emotion-0 {
-  background: silver;
-  padding: 20px;
-}
-
-<div
-    class="emotion-0 emotion-1"
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
     color="silver"
   />,
 ]
@@ -223,53 +106,25 @@ Array [
 
 exports[`Storyshots Components|Grid row outer 1`] = `
 Array [
-  .emotion-0 {
-  background: silver;
-  padding: 20px;
-}
-
-<div
-    class="emotion-0 emotion-1"
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
     color="silver"
   />,
-  .emotion-0 {
-  background: hotpink;
-  padding: 20px;
-}
-
-.emotion-6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.emotion-6 > * {
-  margin-top: 10px;
-}
-
-.emotion-6 > *:nth-child(0) {
-  margin-top: 0;
-}
-
-<div
-    class="emotion-6 emotion-7"
+  <div
+    class="css-1lrgwpd-Container ecq4n7c0"
   >
     <div
-      class="emotion-0 emotion-1"
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
     />
     <div
-      class="emotion-0 emotion-1"
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
     />
     <div
-      class="emotion-0 emotion-1"
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
     />
   </div>,
-  .emotion-0 {
-  background: silver;
-  padding: 20px;
-}
-
-<div
-    class="emotion-0 emotion-1"
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
     color="silver"
   />,
 ]

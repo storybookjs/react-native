@@ -1,142 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Heading types 1`] = `
-.emotion-4 {
-  margin: 10px;
-  border: 1px dashed deepskyblue;
-}
-
-.emotion-0 {
-  color: currentColor;
-  font-weight: normal;
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  display: block;
-  color: #444;
-  line-height: 1em;
-}
-
-.emotion-0 > sub {
-  display: block;
-  padding-top: 5px;
-  line-height: 1.2em;
-  font-size: 14px;
-}
-
-.emotion-0 > sub {
-  color: rgba(0,0,0,0.4);
-}
-
-.emotion-18 {
-  color: currentColor;
-  font-weight: normal;
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  display: block;
-  color: rgba(0,0,0,0.4);
-  line-height: 1em;
-  font-size: 22px;
-}
-
-.emotion-18 > sub {
-  display: block;
-  padding-top: 5px;
-  line-height: 1.2em;
-  font-size: 14px;
-}
-
-.emotion-18 > sub {
-  color: rgba(0,0,0,0.4);
-}
-
-.emotion-30 {
-  color: currentColor;
-  font-weight: normal;
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  display: block;
-  color: rgba(0,0,0,0.4);
-  -webkit-letter-spacing: 4.3px;
-  -moz-letter-spacing: 4.3px;
-  -ms-letter-spacing: 4.3px;
-  letter-spacing: 4.3px;
-  font-weight: 400;
-  font-size: 10px;
-}
-
-.emotion-30 > sub {
-  display: block;
-  padding-top: 5px;
-  line-height: 1.2em;
-  font-size: 14px;
-}
-
-.emotion-36 {
-  color: currentColor;
-  font-weight: normal;
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  display: block;
-  color: rgba(0,0,0,0.4);
-  -webkit-letter-spacing: 4.3px;
-  -moz-letter-spacing: 4.3px;
-  -ms-letter-spacing: 4.3px;
-  letter-spacing: 4.3px;
-  font-weight: 400;
-  font-size: 10px;
-  text-transform: uppercase;
-}
-
-.emotion-36 > sub {
-  display: block;
-  padding-top: 5px;
-  line-height: 1.2em;
-  font-size: 14px;
-}
-
-.emotion-40 {
-  color: currentColor;
-  font-weight: normal;
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  display: block;
-  color: rgba(0,0,0,0.4);
-  -webkit-letter-spacing: 4.3px;
-  -moz-letter-spacing: 4.3px;
-  -ms-letter-spacing: 4.3px;
-  letter-spacing: 4.3px;
-  font-weight: 400;
-  font-size: 10px;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-40 > sub {
-  display: block;
-  padding-top: 5px;
-  line-height: 1.2em;
-  font-size: 14px;
-}
-
 <div>
   <div
-    class="emotion-4 emotion-5"
+    class="css-ys6tvt-Holder e1662bpg0"
   >
     <header
-      class="emotion-2 emotion-3"
+      class="css-yfonvn-Container e1mflg051"
     >
       <h1
-        class="emotion-0 emotion-1"
+        class="css-4bak20-getElement e1mflg050"
       >
         <span>
           DEFAULT WITH ALL CAPS
@@ -145,13 +18,13 @@ exports[`Storyshots Components|Heading types 1`] = `
     </header>
   </div>
   <div
-    class="emotion-4 emotion-5"
+    class="css-ys6tvt-Holder e1662bpg0"
   >
     <header
-      class="emotion-2 emotion-3"
+      class="css-yfonvn-Container e1mflg051"
     >
       <h1
-        class="emotion-0 emotion-1"
+        class="css-4bak20-getElement e1mflg050"
       >
         <span>
           THIS LONG DEFAULT WITH ALL CAPS & SUB
@@ -163,13 +36,13 @@ exports[`Storyshots Components|Heading types 1`] = `
     </header>
   </div>
   <div
-    class="emotion-4 emotion-5"
+    class="css-ys6tvt-Holder e1662bpg0"
   >
     <header
-      class="emotion-2 emotion-3"
+      class="css-yfonvn-Container e1mflg051"
     >
       <h1
-        class="emotion-0 emotion-1"
+        class="css-4bak20-getElement e1mflg050"
       >
         <span>
           page type
@@ -178,13 +51,13 @@ exports[`Storyshots Components|Heading types 1`] = `
     </header>
   </div>
   <div
-    class="emotion-4 emotion-5"
+    class="css-ys6tvt-Holder e1662bpg0"
   >
     <header
-      class="emotion-2 emotion-3"
+      class="css-yfonvn-Container e1mflg051"
     >
       <h1
-        class="emotion-18 emotion-1"
+        class="css-16jm7o7-getElement e1mflg050"
       >
         <span>
           secondary type
@@ -193,13 +66,13 @@ exports[`Storyshots Components|Heading types 1`] = `
     </header>
   </div>
   <div
-    class="emotion-4 emotion-5"
+    class="css-ys6tvt-Holder e1662bpg0"
   >
     <header
-      class="emotion-2 emotion-3"
+      class="css-yfonvn-Container e1mflg051"
     >
       <h1
-        class="emotion-0 emotion-1"
+        class="css-4bak20-getElement e1mflg050"
       >
         <span>
           page type
@@ -211,13 +84,13 @@ exports[`Storyshots Components|Heading types 1`] = `
     </header>
   </div>
   <div
-    class="emotion-4 emotion-5"
+    class="css-ys6tvt-Holder e1662bpg0"
   >
     <header
-      class="emotion-2 emotion-3"
+      class="css-yfonvn-Container e1mflg051"
     >
       <h1
-        class="emotion-30 emotion-1"
+        class="css-14lrs4x-getElement e1mflg050"
       >
         <span>
           section type
@@ -226,13 +99,13 @@ exports[`Storyshots Components|Heading types 1`] = `
     </header>
   </div>
   <div
-    class="emotion-4 emotion-5"
+    class="css-ys6tvt-Holder e1662bpg0"
   >
     <header
-      class="emotion-2 emotion-3"
+      class="css-yfonvn-Container e1mflg051"
     >
       <h1
-        class="emotion-36 emotion-1"
+        class="css-vn0zam-getElement e1mflg050"
       >
         <span>
           section type
@@ -240,10 +113,10 @@ exports[`Storyshots Components|Heading types 1`] = `
       </h1>
     </header>
     <header
-      class="emotion-2 emotion-3"
+      class="css-yfonvn-Container e1mflg051"
     >
       <h1
-        class="emotion-40 emotion-1"
+        class="css-17iy8tu-getElement e1mflg050"
       >
         <span>
           section type
