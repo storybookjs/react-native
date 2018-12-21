@@ -230,7 +230,7 @@ class Story extends Component {
     return (
       <div style={stylesheet.header.body}>
         <h1 style={stylesheet.header.h1}>{context.kind}</h1>
-        <h2 style={stylesheet.header.h2}>{context.story}</h2>
+        <h2 style={stylesheet.header.h2}>{context.name}</h2>
       </div>
     );
   }
@@ -401,7 +401,7 @@ Story.displayName = 'Story';
 Story.propTypes = {
   context: PropTypes.shape({
     kind: PropTypes.string,
-    story: PropTypes.string,
+    name: PropTypes.string,
   }),
   info: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   propTables: PropTypes.arrayOf(PropTypes.func),

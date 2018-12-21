@@ -11,7 +11,7 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;

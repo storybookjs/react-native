@@ -1,5 +1,823 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components|Treeview stateful 1`] = `
+.emotion-63 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-2 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  height: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  color: #444;
+  padding: 10px;
+  padding-left: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.emotion-0:focus {
+  outline: 0;
+  border-bottom: 1px solid #9fdaff;
+}
+
+.emotion-61 {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-12 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.emotion-5 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.emotion-10 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #774dd7;
+}
+
+.emotion-21 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 30px;
+  background: transparent;
+}
+
+.emotion-19 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #37d5d3;
+}
+
+.emotion-28 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+}
+
+<div
+  class="emotion-63 emotion-64"
+>
+  <input
+    class="emotion-0 emotion-1"
+    id="storybook-explorer-searchfield"
+    placeholder="Press \\"/\\" to search..."
+  />
+  <div
+    class="emotion-61 emotion-62"
+  >
+    <div
+      class="emotion-39 emotion-40"
+    >
+      <a
+        class="emotion-14 emotion-15"
+        href="#!1"
+        id="stateful_1"
+      >
+        <div
+          class="emotion-12 emotion-13"
+        >
+          <svg
+            class="emotion-4 emotion-5 emotion-6"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-2 emotion-3"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="emotion-9 emotion-10 emotion-6"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-2 emotion-3"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Parent A
+          </span>
+        </div>
+      </a>
+      <div
+        class="emotion-41 emotion-42"
+      >
+        <a
+          class="emotion-14 emotion-15"
+          href="#!1-11"
+          id="stateful_1-11"
+        >
+          <div
+            class="emotion-21 emotion-13"
+            id="1-11"
+          >
+            <svg
+              class="emotion-9 emotion-19 emotion-6"
+              height="14px"
+              viewBox="0 0 1024 1024"
+              width="14px"
+            >
+              <path
+                class="emotion-2 emotion-3"
+                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+              />
+            </svg>
+            Child A1
+          </div>
+        </a>
+        <div
+          class="emotion-39 emotion-40"
+        >
+          <a
+            class="emotion-14 emotion-15"
+            href="#!12"
+            id="stateful_1-12"
+          >
+            <div
+              class="emotion-21 emotion-13"
+            >
+              <svg
+                class="emotion-4 emotion-28 emotion-6"
+                height="14px"
+                viewBox="0 0 1024 1024"
+                width="14px"
+              >
+                <path
+                  class="emotion-2 emotion-3"
+                  d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+                />
+              </svg>
+              <svg
+                class="emotion-9 emotion-10 emotion-6"
+                height="14px"
+                viewBox="0 0 1024 1024"
+                width="14px"
+              >
+                <path
+                  class="emotion-2 emotion-3"
+                  d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                />
+              </svg>
+              <span>
+                Child A2
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-39 emotion-40"
+    >
+      <a
+        class="emotion-14 emotion-15"
+        href="#!2"
+        id="stateful_2"
+      >
+        <div
+          class="emotion-12 emotion-13"
+        >
+          <svg
+            class="emotion-4 emotion-28 emotion-6"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-2 emotion-3"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="emotion-9 emotion-10 emotion-6"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-2 emotion-3"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Parent B
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Treeview stateless 1`] = `
+.emotion-43 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  fill: currentColor;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-10 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.emotion-3 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.emotion-8 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #774dd7;
+}
+
+.emotion-19 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 30px;
+  background: transparent;
+}
+
+.emotion-17 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #37d5d3;
+}
+
+.emotion-26 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+}
+
+<div
+  class="emotion-43 emotion-44"
+>
+  <div
+    class="emotion-37 emotion-38"
+  >
+    <a
+      class="emotion-12 emotion-13"
+      href="#!1"
+      id="stateless_1"
+    >
+      <div
+        class="emotion-10 emotion-11"
+      >
+        <svg
+          class="emotion-2 emotion-3 emotion-4"
+          height="14px"
+          viewBox="0 0 1024 1024"
+          width="14px"
+        >
+          <path
+            class="emotion-0 emotion-1"
+            d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+          />
+        </svg>
+        <svg
+          class="emotion-7 emotion-8 emotion-4"
+          height="14px"
+          viewBox="0 0 1024 1024"
+          width="14px"
+        >
+          <path
+            class="emotion-0 emotion-1"
+            d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+          />
+        </svg>
+        <span>
+          Parent A
+        </span>
+      </div>
+    </a>
+    <div
+      class="emotion-39 emotion-40"
+    >
+      <a
+        class="emotion-12 emotion-13"
+        href="#!1-11"
+        id="stateless_1-11"
+      >
+        <div
+          class="emotion-19 emotion-11"
+          id="1-11"
+        >
+          <svg
+            class="emotion-7 emotion-17 emotion-4"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-0 emotion-1"
+              d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+            />
+          </svg>
+          Child A1
+        </div>
+      </a>
+      <div
+        class="emotion-37 emotion-38"
+      >
+        <a
+          class="emotion-12 emotion-13"
+          href="#!12"
+          id="stateless_1-12"
+        >
+          <div
+            class="emotion-19 emotion-11"
+          >
+            <svg
+              class="emotion-2 emotion-26 emotion-4"
+              height="14px"
+              viewBox="0 0 1024 1024"
+              width="14px"
+            >
+              <path
+                class="emotion-0 emotion-1"
+                d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+              />
+            </svg>
+            <svg
+              class="emotion-7 emotion-8 emotion-4"
+              height="14px"
+              viewBox="0 0 1024 1024"
+              width="14px"
+            >
+              <path
+                class="emotion-0 emotion-1"
+                d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+              />
+            </svg>
+            <span>
+              Child A2
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Treeview with custom node 1`] = `
+.emotion-64 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-2 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  height: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  color: #444;
+  padding: 10px;
+  padding-left: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.emotion-0:focus {
+  outline: 0;
+  border-bottom: 1px solid #9fdaff;
+}
+
+.emotion-62 {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-12 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.emotion-5 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.emotion-10 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #774dd7;
+}
+
+.emotion-36 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 30px;
+  background: transparent;
+}
+
+.emotion-19 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #37d5d3;
+}
+
+.emotion-29 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+}
+
+.emotion-22 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 30px;
+  background: transparent;
+  background: deepskyblue;
+}
+
+<div
+  class="emotion-64 emotion-65"
+>
+  <input
+    class="emotion-0 emotion-1"
+    id="storybook-explorer-searchfield"
+    placeholder="Press \\"/\\" to search..."
+  />
+  <div
+    class="emotion-62 emotion-63"
+  >
+    <div
+      class="emotion-40 emotion-41"
+    >
+      <a
+        class="emotion-14 emotion-15"
+        href="#!1"
+        id="stateful_1"
+      >
+        <div
+          class="emotion-12 emotion-13"
+        >
+          <svg
+            class="emotion-4 emotion-5 emotion-6"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-2 emotion-3"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="emotion-9 emotion-10 emotion-6"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-2 emotion-3"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Parent A
+          </span>
+        </div>
+      </a>
+      <div
+        class="emotion-42 emotion-43"
+      >
+        <a
+          class="emotion-14 emotion-15"
+          href="#!1-11"
+          id="stateful_1-11"
+        >
+          <div
+            class="emotion-21 emotion-22 emotion-13"
+            id="1-11"
+          >
+            <svg
+              class="emotion-9 emotion-19 emotion-6"
+              height="14px"
+              viewBox="0 0 1024 1024"
+              width="14px"
+            >
+              <path
+                class="emotion-2 emotion-3"
+                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+              />
+            </svg>
+            Child A1
+          </div>
+        </a>
+        <div
+          class="emotion-40 emotion-41"
+        >
+          <a
+            class="emotion-14 emotion-15"
+            href="#!12"
+            id="stateful_1-12"
+          >
+            <div
+              class="emotion-36 emotion-13"
+            >
+              <svg
+                class="emotion-4 emotion-29 emotion-6"
+                height="14px"
+                viewBox="0 0 1024 1024"
+                width="14px"
+              >
+                <path
+                  class="emotion-2 emotion-3"
+                  d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+                />
+              </svg>
+              <svg
+                class="emotion-9 emotion-10 emotion-6"
+                height="14px"
+                viewBox="0 0 1024 1024"
+                width="14px"
+              >
+                <path
+                  class="emotion-2 emotion-3"
+                  d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                />
+              </svg>
+              <span>
+                Child A2
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-40 emotion-41"
+    >
+      <a
+        class="emotion-14 emotion-15"
+        href="#!2"
+        id="stateful_2"
+      >
+        <div
+          class="emotion-12 emotion-13"
+        >
+          <svg
+            class="emotion-4 emotion-29 emotion-6"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-2 emotion-3"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="emotion-9 emotion-10 emotion-6"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-2 emotion-3"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Parent B
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|Treeview with ensured (WIP) 1`] = `
 .emotion-71 {
   font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
@@ -12,9 +830,65 @@ exports[`Storyshots Components|Treeview with ensured (WIP) 1`] = `
   fill: currentColor;
 }
 
+.emotion-2 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-letter-spacing: 4.3px;
+  -moz-letter-spacing: 4.3px;
+  -ms-letter-spacing: 4.3px;
+  letter-spacing: 4.3px;
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.emotion-2 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+.emotion-0 {
+  height: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  color: #444;
+  padding: 10px;
+  padding-left: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.emotion-0:focus {
+  outline: 0;
+  border-bottom: 1px solid #9fdaff;
+}
+
 .emotion-23 {
   margin-left: -20px;
   margin-right: -20px;
+}
+
+.emotion-19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .emotion-17 {
@@ -43,23 +917,6 @@ exports[`Storyshots Components|Treeview with ensured (WIP) 1`] = `
   color: #774dd7;
 }
 
-.emotion-0 {
-  height: 24px;
-  box-sizing: border-box;
-  width: 100%;
-  background: transparent;
-  border: 0 none;
-  color: #444;
-  padding: 10px;
-  padding-left: 0;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.emotion-0:focus {
-  outline: 0;
-  border-bottom: 1px solid #9fdaff;
-}
-
 .emotion-10 {
   display: block;
   display: inline-block;
@@ -72,6 +929,196 @@ exports[`Storyshots Components|Treeview with ensured (WIP) 1`] = `
   -webkit-transition: transform .1s linear;
   transition: transform .1s linear;
   color: rgba(0,0,0,0.4);
+}
+
+.emotion-5 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+<div
+  class="emotion-71 emotion-72"
+>
+  <input
+    class="emotion-0 emotion-1"
+    id="storybook-explorer-searchfield"
+    placeholder="Press \\"/\\" to search..."
+  />
+  <header
+    class="emotion-4 emotion-5 emotion-6"
+  >
+    <h1
+      class="emotion-2 emotion-3"
+    >
+      <span>
+        Root 1
+      </span>
+    </h1>
+  </header>
+  <div
+    class="emotion-23 emotion-24"
+  >
+    <div
+      class="emotion-21 emotion-22"
+    >
+      <a
+        class="emotion-19 emotion-20"
+        href="#!1-12"
+        id="stateful_1-12"
+      >
+        <div
+          class="emotion-17 emotion-18"
+        >
+          <svg
+            class="emotion-9 emotion-10 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="emotion-14 emotion-15 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Child A2
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <header
+    class="emotion-4 emotion-5 emotion-6"
+  >
+    <h1
+      class="emotion-2 emotion-3"
+    >
+      <span>
+        Root 3
+      </span>
+    </h1>
+  </header>
+  <div
+    class="emotion-23 emotion-24"
+  >
+    <div
+      class="emotion-21 emotion-22"
+    >
+      <a
+        class="emotion-19 emotion-20"
+        href="#!12"
+        id="stateful_3-32"
+      >
+        <div
+          class="emotion-17 emotion-18"
+        >
+          <svg
+            class="emotion-9 emotion-10 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="emotion-14 emotion-15 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Child A2
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <header
+    class="emotion-4 emotion-5 emotion-6"
+  >
+    <h1
+      class="emotion-2 emotion-3"
+    >
+      <span>
+        Others
+      </span>
+    </h1>
+  </header>
+  <div
+    class="emotion-23 emotion-24"
+  >
+    <div
+      class="emotion-21 emotion-22"
+    >
+      <a
+        class="emotion-19 emotion-20"
+        href="#!2"
+        id="stateful_2"
+      >
+        <div
+          class="emotion-17 emotion-18"
+        >
+          <svg
+            class="emotion-9 emotion-10 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="emotion-14 emotion-15 emotion-11"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="emotion-7 emotion-8"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Group 1
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Treeview with roots node 1`] = `
+.emotion-71 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-7 {
+  fill: currentColor;
 }
 
 .emotion-2 {
@@ -99,9 +1146,26 @@ exports[`Storyshots Components|Treeview with ensured (WIP) 1`] = `
   font-size: 14px;
 }
 
-.emotion-5 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+.emotion-0 {
+  height: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  color: #444;
+  padding: 10px;
+  padding-left: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.emotion-0:focus {
+  outline: 0;
+  border-bottom: 1px solid #9fdaff;
+}
+
+.emotion-23 {
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
 .emotion-19 {
@@ -116,6 +1180,51 @@ exports[`Storyshots Components|Treeview with ensured (WIP) 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.emotion-17 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.emotion-15 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #774dd7;
+}
+
+.emotion-10 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+}
+
+.emotion-5 {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 <div

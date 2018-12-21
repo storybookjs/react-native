@@ -57,10 +57,6 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
   border-bottom-color: #9fdaff;
 }
 
-.emotion-18 {
-  display: block;
-}
-
 .emotion-14 {
   height: 40px;
   background: rgba(255,255,255,1);
@@ -70,12 +66,6 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
   display: -ms-flexbox;
   display: flex;
   color: rgba(0,0,0,0.4);
-}
-
-.emotion-12 {
-  overflow: auto;
-  white-space: nowrap;
-  height: 100%;
 }
 
 .emotion-4 {
@@ -125,6 +115,16 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
 .emotion-4:focus {
   outline: 0 none;
   border-bottom-color: #9fdaff;
+}
+
+.emotion-18 {
+  display: block;
+}
+
+.emotion-12 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
 }
 
 .emotion-16 {
@@ -282,10 +282,6 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
   border-bottom-color: #9fdaff;
 }
 
-.emotion-18 {
-  display: block;
-}
-
 .emotion-14 {
   height: 40px;
   background: rgba(255,255,255,1);
@@ -295,12 +291,6 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
   display: -ms-flexbox;
   display: flex;
   color: rgba(0,0,0,0.4);
-}
-
-.emotion-12 {
-  overflow: auto;
-  white-space: nowrap;
-  height: 100%;
 }
 
 .emotion-0 {
@@ -350,6 +340,16 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
 .emotion-0:focus {
   outline: 0 none;
   border-bottom-color: #9fdaff;
+}
+
+.emotion-18 {
+  display: block;
+}
+
+.emotion-12 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
 }
 
 .emotion-16 {
@@ -507,10 +507,6 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
   border-bottom-color: #9fdaff;
 }
 
-.emotion-10 {
-  display: block;
-}
-
 .emotion-6 {
   height: 40px;
   background: rgba(255,255,255,1);
@@ -520,12 +516,6 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
   display: -ms-flexbox;
   display: flex;
   color: rgba(0,0,0,0.4);
-}
-
-.emotion-4 {
-  overflow: auto;
-  white-space: nowrap;
-  height: 100%;
 }
 
 .emotion-2 {
@@ -575,6 +565,16 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
 .emotion-2:focus {
   outline: 0 none;
   border-bottom-color: #9fdaff;
+}
+
+.emotion-10 {
+  display: block;
+}
+
+.emotion-4 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
 }
 
 .emotion-8 {
@@ -703,12 +703,6 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
   color: rgba(0,0,0,0.4);
 }
 
-.emotion-12 {
-  overflow: auto;
-  white-space: nowrap;
-  height: 100%;
-}
-
 .emotion-4 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -758,6 +752,23 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
   border-bottom-color: #9fdaff;
 }
 
+.emotion-16 {
+  display: block;
+  position: relative;
+  position: relative;
+  overflow: auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+}
+
+.emotion-12 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
+}
+
 .emotion-18 {
   background: rgba(255,255,255,0.89);
   background-clip: padding-box;
@@ -773,17 +784,6 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.emotion-16 {
-  display: block;
-  position: relative;
-  position: relative;
-  overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
 }
 
 <div
@@ -947,12 +947,6 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
   color: rgba(0,0,0,0.4);
 }
 
-.emotion-12 {
-  overflow: auto;
-  white-space: nowrap;
-  height: 100%;
-}
-
 .emotion-4 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -1000,6 +994,12 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
 .emotion-4:focus {
   outline: 0 none;
   border-bottom-color: #9fdaff;
+}
+
+.emotion-12 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
 }
 
 .emotion-16 {
@@ -1257,6 +1257,12 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
   border-bottom-color: #9fdaff;
 }
 
+.emotion-12 {
+  overflow: visisble;
+  white-space: nowrap;
+  height: 100%;
+}
+
 .emotion-16 {
   display: block;
   position: relative;
@@ -1268,12 +1274,6 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
   border-radius: 4px;
   border: 1px solid rgba(0,0,0,0.1);
   display: block;
-}
-
-.emotion-12 {
-  overflow: visisble;
-  white-space: nowrap;
-  height: 100%;
 }
 
 <div
@@ -1426,10 +1426,6 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
   border-bottom-color: #9fdaff;
 }
 
-.emotion-20 {
-  display: block;
-}
-
 .emotion-16 {
   height: 40px;
   background: rgba(255,255,255,1);
@@ -1439,12 +1435,6 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
   display: -ms-flexbox;
   display: flex;
   color: rgba(0,0,0,0.4);
-}
-
-.emotion-12 {
-  overflow: auto;
-  white-space: nowrap;
-  height: 100%;
 }
 
 .emotion-4 {
@@ -1496,11 +1486,6 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
   border-bottom-color: #9fdaff;
 }
 
-.emotion-18 {
-  display: block;
-  position: relative;
-}
-
 .emotion-14 {
   height: 100%;
   padding-right: 15px;
@@ -1521,6 +1506,21 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
 
 .emotion-14 > *:last-child {
   margin-right: 0;
+}
+
+.emotion-20 {
+  display: block;
+}
+
+.emotion-12 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.emotion-18 {
+  display: block;
+  position: relative;
 }
 
 <div

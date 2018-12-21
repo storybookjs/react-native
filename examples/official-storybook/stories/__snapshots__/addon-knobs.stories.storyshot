@@ -46,7 +46,7 @@ exports[`Storyshots Addons|Knobs.withKnobs complex select 1`] = `
   class="emotion-0 emotion-1"
 >
   <pre>
-    the type of string = string
+    the type of "string" = string
   </pre>
 </div>
 `;

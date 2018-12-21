@@ -1,1354 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|Info.ForwardRef Displays forwarded ref components correctly 1`] = `
-.emotion-78 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-.emotion-10 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  max-width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  border-left: 1px solid rgba(0,0,0,0.1);
-  background: rgba(255,255,255,1);
-  border-radius: 4px 0 0 0;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  list-style: none;
-  padding: 0;
-  height: 26px;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-left: 0 none;
-}
-
-.emotion-6 {
-  border: 0 none;
-  display: block;
-  background: none;
-  padding: 0 10px;
-  cursor: pointer;
-  text-transform: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  font-size: inherit;
-  color: inherit;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-}
-
-.emotion-6:focus {
-  border-bottom: 2px solid #9fdaff;
-  outline: 0 none;
-}
-
-.emotion-12 {
-  position: relative;
-  overflow: hidden;
-}
-
-.emotion-4 {
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-4 code {
-  padding-right: 10px;
-  opacity: 0.7;
-}
-
-.emotion-4 * .token {
-  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
-  -webkit-font-smoothing: antialiased;
-}
-
-.emotion-4 * .token.comment {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-4 * .token.prolog {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-4 * .token.doctype {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-4 * .token.cdata {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-4 * .token.string {
-  color: #A31515;
-}
-
-.emotion-4 * .token.punctuation {
-  color: #393A34;
-}
-
-.emotion-4 * .token.operator {
-  color: #393A34;
-}
-
-.emotion-4 * .token.url {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.symbol {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.number {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.boolean {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.variable {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.constant {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.inserted {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.atrule {
-  color: #0000ff;
-}
-
-.emotion-4 * .token.keyword {
-  color: #0000ff;
-}
-
-.emotion-4 * .token.attr-value {
-  color: #0000ff;
-}
-
-.emotion-4 * .token.function {
-  color: #393A34;
-}
-
-.emotion-4 * .token.deleted {
-  color: #9a050f;
-}
-
-.emotion-4 * .token.important {
-  font-weight: bold;
-}
-
-.emotion-4 * .token.bold {
-  font-weight: bold;
-}
-
-.emotion-4 * .token.italic {
-  font-style: italic;
-}
-
-.emotion-4 * .token.class-name {
-  color: #2B91AF;
-}
-
-.emotion-4 * .token.tag {
-  color: #800000;
-}
-
-.emotion-4 * .token.selector {
-  color: #800000;
-}
-
-.emotion-4 * .token.attr-name {
-  color: #ff0000;
-}
-
-.emotion-4 * .token.property {
-  color: #ff0000;
-}
-
-.emotion-4 * .token.regex {
-  color: #ff0000;
-}
-
-.emotion-4 * .token.entity {
-  color: #ff0000;
-}
-
-.emotion-4 * .token.directive.tag .tag {
-  background: #ffff00;
-  color: #393A34;
-}
-
-.emotion-4 * .language-json .token.boolean {
-  color: #0000ff;
-}
-
-.emotion-4 * .language-json .token.number {
-  color: #0000ff;
-}
-
-.emotion-4 * .language-json .token.property {
-  color: #2B91AF;
-}
-
-.emotion-4 * .namespace {
-  opacity: 0.7;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-}
-
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
-.emotion-76 {
-  border-collapse: collapse;
-  margin-top: 16px;
-  width: auto;
-  table-layout: auto;
-}
-
-.emotion-24 {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.emotion-14 {
-  padding: 2px 6px;
-  line-height: 18px;
-  vertical-align: middle;
-  padding: 8px 16px;
-}
-
-.emotion-74 {
-  font-size: 14px;
-}
-
-.emotion-36 {
-  border-bottom: 1px solid #eee;
-}
-
-.emotion-26 {
-  padding: 2px 6px;
-  white-space: nowrap;
-  font-family: Monaco,Consolas,"Courier New",monospace;
-  text-align: left;
-  padding: 8px 16px;
-  color: #774dd7;
-}
-
-.emotion-28 {
-  padding: 2px 6px;
-  white-space: nowrap;
-  font-family: Monaco,Consolas,"Courier New",monospace;
-  text-align: left;
-  padding: 8px 16px;
-  color: #1ea7fd;
-}
-
-.emotion-28 button {
-  color: #37d5d3;
-}
-
-.emotion-28 span {
-  white-space: pre;
-}
-
-.emotion-30 {
-  padding: 2px 6px;
-  white-space: nowrap;
-  font-family: Monaco,Consolas,"Courier New",monospace;
-  text-align: left;
-  padding: 8px 16px;
-}
-
-.emotion-34 {
-  padding: 2px 6px;
-  text-align: left;
-  padding: 8px 16px;
-}
-
-<div
-  class="emotion-78 emotion-79"
->
-  <div>
-    <div
-      style="position:relative;z-index:0"
-    >
-      <button
-        type="button"
-      >
-        Forwarded Ref Button
-      </button>
-    </div>
-    <button
-      class="info__show-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
-      type="button"
-    >
-      Show Info
-    </button>
-    <div
-      class="info__overlay"
-      style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
-    >
-      <button
-        class="info__close-button"
-        style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
-        type="button"
-      >
-        ×
-      </button>
-      <div>
-        <div
-          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
-        >
-          <div
-            style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
-          >
-            <h1
-              style="margin:0;padding:0;font-size:35px"
-            >
-              Addons|Info.ForwardRef
-            </h1>
-            <h2
-              style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
-          </div>
-          <div>
-            <h1
-              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
-            >
-              Story Source
-            </h1>
-            <div
-              class="emotion-12 emotion-13"
-            >
-              <div
-                class="emotion-4 emotion-5"
-              >
-                <pre
-                  class="hljs emotion-2 emotion-3"
-                >
-                  <code
-                    class="emotion-0 emotion-1"
-                  >
-                    <span
-                      class="token operator"
-                    >
-                      &lt;
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      [
-                    </span>
-                    object Object
-                    <span
-                      class="token punctuation"
-                    >
-                      ]
-                    </span>
-                     label 
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token string"
-                    >
-                      "Forwarded Ref Button"
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      /
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      &gt;
-                    </span>
-                    
-
-                  </code>
-                </pre>
-              </div>
-              <ul
-                class="emotion-10 emotion-11"
-              >
-                <li
-                  class="emotion-8 emotion-9"
-                >
-                  <button
-                    class="emotion-6 emotion-7"
-                  >
-                    copy
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <h1
-              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
-            >
-              Prop Types
-            </h1>
-            <div>
-              <h3
-                style="margin:20px 0 0 0"
-              >
-                "BaseButton" Component
-              </h3>
-              <table
-                class="emotion-76 emotion-77"
-              >
-                <thead
-                  class="emotion-24 emotion-25"
-                >
-                  <tr>
-                    <th
-                      class="emotion-14 emotion-15"
-                    >
-                      Property
-                    </th>
-                    <th
-                      class="emotion-14 emotion-15"
-                    >
-                      Type
-                    </th>
-                    <th
-                      class="emotion-14 emotion-15"
-                    >
-                      Required
-                    </th>
-                    <th
-                      class="emotion-14 emotion-15"
-                    >
-                      Default
-                    </th>
-                    <th
-                      class="emotion-14 emotion-15"
-                    >
-                      Description
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  class="emotion-74 emotion-75"
-                >
-                  <tr
-                    class="emotion-36 emotion-37"
-                  >
-                    <td
-                      class="emotion-26 emotion-27"
-                    >
-                      disabled
-                    </td>
-                    <td
-                      class="emotion-28 emotion-29"
-                    >
-                      <span>
-                        bool
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      -
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      <span>
-                        false
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-34 emotion-31"
-                    />
-                  </tr>
-                  <tr
-                    class="emotion-36 emotion-37"
-                  >
-                    <td
-                      class="emotion-26 emotion-27"
-                    >
-                      label
-                    </td>
-                    <td
-                      class="emotion-28 emotion-29"
-                    >
-                      <span>
-                        string
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      yes
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      -
-                    </td>
-                    <td
-                      class="emotion-34 emotion-31"
-                    />
-                  </tr>
-                  <tr
-                    class="emotion-36 emotion-37"
-                  >
-                    <td
-                      class="emotion-26 emotion-27"
-                    >
-                      onClick
-                    </td>
-                    <td
-                      class="emotion-28 emotion-29"
-                    >
-                      <span>
-                        func
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      -
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      <span>
-                        onClick
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-34 emotion-31"
-                    />
-                  </tr>
-                  <tr
-                    class="emotion-36 emotion-37"
-                  >
-                    <td
-                      class="emotion-26 emotion-27"
-                    >
-                      style
-                    </td>
-                    <td
-                      class="emotion-28 emotion-29"
-                    >
-                      <span>
-                        other
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      -
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      <span>
-                        {}
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-34 emotion-31"
-                    />
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] = `
-.emotion-78 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-.emotion-10 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  max-width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  border-left: 1px solid rgba(0,0,0,0.1);
-  background: rgba(255,255,255,1);
-  border-radius: 4px 0 0 0;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  list-style: none;
-  padding: 0;
-  height: 26px;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-left: 0 none;
-}
-
-.emotion-6 {
-  border: 0 none;
-  display: block;
-  background: none;
-  padding: 0 10px;
-  cursor: pointer;
-  text-transform: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  font-size: inherit;
-  color: inherit;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-}
-
-.emotion-6:focus {
-  border-bottom: 2px solid #9fdaff;
-  outline: 0 none;
-}
-
-.emotion-12 {
-  position: relative;
-  overflow: hidden;
-}
-
-.emotion-4 {
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-4 code {
-  padding-right: 10px;
-  opacity: 0.7;
-}
-
-.emotion-4 * .token {
-  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
-  -webkit-font-smoothing: antialiased;
-}
-
-.emotion-4 * .token.comment {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-4 * .token.prolog {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-4 * .token.doctype {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-4 * .token.cdata {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-4 * .token.string {
-  color: #A31515;
-}
-
-.emotion-4 * .token.punctuation {
-  color: #393A34;
-}
-
-.emotion-4 * .token.operator {
-  color: #393A34;
-}
-
-.emotion-4 * .token.url {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.symbol {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.number {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.boolean {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.variable {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.constant {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.inserted {
-  color: #36acaa;
-}
-
-.emotion-4 * .token.atrule {
-  color: #0000ff;
-}
-
-.emotion-4 * .token.keyword {
-  color: #0000ff;
-}
-
-.emotion-4 * .token.attr-value {
-  color: #0000ff;
-}
-
-.emotion-4 * .token.function {
-  color: #393A34;
-}
-
-.emotion-4 * .token.deleted {
-  color: #9a050f;
-}
-
-.emotion-4 * .token.important {
-  font-weight: bold;
-}
-
-.emotion-4 * .token.bold {
-  font-weight: bold;
-}
-
-.emotion-4 * .token.italic {
-  font-style: italic;
-}
-
-.emotion-4 * .token.class-name {
-  color: #2B91AF;
-}
-
-.emotion-4 * .token.tag {
-  color: #800000;
-}
-
-.emotion-4 * .token.selector {
-  color: #800000;
-}
-
-.emotion-4 * .token.attr-name {
-  color: #ff0000;
-}
-
-.emotion-4 * .token.property {
-  color: #ff0000;
-}
-
-.emotion-4 * .token.regex {
-  color: #ff0000;
-}
-
-.emotion-4 * .token.entity {
-  color: #ff0000;
-}
-
-.emotion-4 * .token.directive.tag .tag {
-  background: #ffff00;
-  color: #393A34;
-}
-
-.emotion-4 * .language-json .token.boolean {
-  color: #0000ff;
-}
-
-.emotion-4 * .language-json .token.number {
-  color: #0000ff;
-}
-
-.emotion-4 * .language-json .token.property {
-  color: #2B91AF;
-}
-
-.emotion-4 * .namespace {
-  opacity: 0.7;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-}
-
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
-.emotion-76 {
-  border-collapse: collapse;
-  margin-top: 16px;
-  width: auto;
-  table-layout: auto;
-}
-
-.emotion-24 {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.emotion-14 {
-  padding: 2px 6px;
-  line-height: 18px;
-  vertical-align: middle;
-  padding: 8px 16px;
-}
-
-.emotion-74 {
-  font-size: 14px;
-}
-
-.emotion-36 {
-  border-bottom: 1px solid #eee;
-}
-
-.emotion-26 {
-  padding: 2px 6px;
-  white-space: nowrap;
-  font-family: Monaco,Consolas,"Courier New",monospace;
-  text-align: left;
-  padding: 8px 16px;
-  color: #774dd7;
-}
-
-.emotion-28 {
-  padding: 2px 6px;
-  white-space: nowrap;
-  font-family: Monaco,Consolas,"Courier New",monospace;
-  text-align: left;
-  padding: 8px 16px;
-  color: #1ea7fd;
-}
-
-.emotion-28 button {
-  color: #37d5d3;
-}
-
-.emotion-28 span {
-  white-space: pre;
-}
-
-.emotion-30 {
-  padding: 2px 6px;
-  white-space: nowrap;
-  font-family: Monaco,Consolas,"Courier New",monospace;
-  text-align: left;
-  padding: 8px 16px;
-}
-
-.emotion-34 {
-  padding: 2px 6px;
-  text-align: left;
-  padding: 8px 16px;
-}
-
-<div
-  class="emotion-78 emotion-79"
->
-  <div>
-    <div
-      style="position:relative;z-index:0"
-    >
-      <button
-        type="button"
-      >
-        Button
-      </button>
-    </div>
-    <button
-      class="info__show-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
-      type="button"
-    >
-      Show Info
-    </button>
-    <div
-      class="info__overlay"
-      style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
-    >
-      <button
-        class="info__close-button"
-        style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
-        type="button"
-      >
-        ×
-      </button>
-      <div>
-        <div
-          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
-        >
-          <div
-            style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
-          >
-            <h1
-              style="margin:0;padding:0;font-size:35px"
-            >
-              Addons|Info.deprecated
-            </h1>
-            <h2
-              style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
-          </div>
-          <div
-            style="margin-bottom:0"
-          >
-            <h4
-              id="you-can-use-markdown-in-your-withinfo-description."
-              style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:600;margin:0;padding:0;font-size:20px"
-            >
-              You can use markdown in your withInfo description.
-            </h4>
-            <div
-              style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
-            >
-              Sometimes you might want to manually include some code examples:
-            </div>
-            <pre
-              class="language-js"
-              style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
-            >
-              <code
-                class="language-js"
-                style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa"
-              >
-                const Button = () =&gt; &lt;button /&gt;;
-              </code>
-            </pre>
-            <div
-              style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
-            >
-              Maybe include a 
-              <a
-                href="http://storybook.js.org"
-                rel="noopener noreferrer"
-                style="color:#3498db"
-                target="_blank"
-              >
-                link
-              </a>
-               to your project as well.
-            </div>
-          </div>
-          <div>
-            <h1
-              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
-            >
-              Story Source
-            </h1>
-            <div
-              class="emotion-12 emotion-13"
-            >
-              <div
-                class="emotion-4 emotion-5"
-              >
-                <pre
-                  class="hljs emotion-2 emotion-3"
-                >
-                  <code
-                    class="emotion-0 emotion-1"
-                  >
-                    <span
-                      class="token tag"
-                    >
-                      <span
-                        class="token tag"
-                      >
-                        <span
-                          class="token punctuation"
-                        >
-                          &lt;
-                        </span>
-                        BaseButton
-                      </span>
-                      
-  
-                      <span
-                        class="token attr-name"
-                      >
-                        onClick
-                      </span>
-                      <span
-                        class="token script language-javascript"
-                      >
-                        <span
-                          class="token script-punctuation punctuation"
-                        >
-                          =
-                        </span>
-                        <span
-                          class="token punctuation"
-                        >
-                          {
-                        </span>
-                        <span
-                          class="token keyword"
-                        >
-                          function
-                        </span>
-                         
-                        <span
-                          class="token function"
-                        >
-                          noRefCheck
-                        </span>
-                        <span
-                          class="token punctuation"
-                        >
-                          (
-                        </span>
-                        <span
-                          class="token punctuation"
-                        >
-                          )
-                        </span>
-                         
-                        <span
-                          class="token punctuation"
-                        >
-                          {
-                        </span>
-                        <span
-                          class="token punctuation"
-                        >
-                          }
-                        </span>
-                        <span
-                          class="token punctuation"
-                        >
-                          }
-                        </span>
-                      </span>
-                      
-  
-                      <span
-                        class="token attr-name"
-                      >
-                        label
-                      </span>
-                      <span
-                        class="token attr-value"
-                      >
-                        <span
-                          class="token punctuation"
-                        >
-                          =
-                        </span>
-                        <span
-                          class="token punctuation"
-                        >
-                          "
-                        </span>
-                        Button
-                        <span
-                          class="token punctuation"
-                        >
-                          "
-                        </span>
-                      </span>
-                      
-
-                      <span
-                        class="token punctuation"
-                      >
-                        /&gt;
-                      </span>
-                    </span>
-                    
-
-                  </code>
-                </pre>
-              </div>
-              <ul
-                class="emotion-10 emotion-11"
-              >
-                <li
-                  class="emotion-8 emotion-9"
-                >
-                  <button
-                    class="emotion-6 emotion-7"
-                  >
-                    copy
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <h1
-              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
-            >
-              Prop Types
-            </h1>
-            <div>
-              <h3
-                style="margin:20px 0 0 0"
-              >
-                "BaseButton" Component
-              </h3>
-              <table
-                class="emotion-76 emotion-77"
-              >
-                <thead
-                  class="emotion-24 emotion-25"
-                >
-                  <tr>
-                    <th
-                      class="emotion-14 emotion-15"
-                    >
-                      Property
-                    </th>
-                    <th
-                      class="emotion-14 emotion-15"
-                    >
-                      Type
-                    </th>
-                    <th
-                      class="emotion-14 emotion-15"
-                    >
-                      Required
-                    </th>
-                    <th
-                      class="emotion-14 emotion-15"
-                    >
-                      Default
-                    </th>
-                    <th
-                      class="emotion-14 emotion-15"
-                    >
-                      Description
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  class="emotion-74 emotion-75"
-                >
-                  <tr
-                    class="emotion-36 emotion-37"
-                  >
-                    <td
-                      class="emotion-26 emotion-27"
-                    >
-                      disabled
-                    </td>
-                    <td
-                      class="emotion-28 emotion-29"
-                    >
-                      <span>
-                        bool
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      -
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      <span>
-                        false
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-34 emotion-31"
-                    />
-                  </tr>
-                  <tr
-                    class="emotion-36 emotion-37"
-                  >
-                    <td
-                      class="emotion-26 emotion-27"
-                    >
-                      label
-                    </td>
-                    <td
-                      class="emotion-28 emotion-29"
-                    >
-                      <span>
-                        string
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      yes
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      -
-                    </td>
-                    <td
-                      class="emotion-34 emotion-31"
-                    />
-                  </tr>
-                  <tr
-                    class="emotion-36 emotion-37"
-                  >
-                    <td
-                      class="emotion-26 emotion-27"
-                    >
-                      onClick
-                    </td>
-                    <td
-                      class="emotion-28 emotion-29"
-                    >
-                      <span>
-                        func
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      -
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      <span>
-                        onClick
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-34 emotion-31"
-                    />
-                  </tr>
-                  <tr
-                    class="emotion-36 emotion-37"
-                  >
-                    <td
-                      class="emotion-26 emotion-27"
-                    >
-                      style
-                    </td>
-                    <td
-                      class="emotion-28 emotion-29"
-                    >
-                      <span>
-                        other
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      -
-                    </td>
-                    <td
-                      class="emotion-30 emotion-31"
-                    >
-                      <span>
-                        {}
-                      </span>
-                    </td>
-                    <td
-                      class="emotion-34 emotion-31"
-                    />
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
 .emotion-78 {
   font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
@@ -1708,7 +359,9 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Use Info as story decorator
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -1782,6 +435,630 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
                       >
                         /&gt;
                       </span>
+                    </span>
+                    
+
+                  </code>
+                </pre>
+              </div>
+              <ul
+                class="emotion-10 emotion-11"
+              >
+                <li
+                  class="emotion-8 emotion-9"
+                >
+                  <button
+                    class="emotion-6 emotion-7"
+                  >
+                    copy
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h1
+              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+            >
+              Prop Types
+            </h1>
+            <div>
+              <h3
+                style="margin:20px 0 0 0"
+              >
+                "BaseButton" Component
+              </h3>
+              <table
+                class="emotion-76 emotion-77"
+              >
+                <thead
+                  class="emotion-24 emotion-25"
+                >
+                  <tr>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Property
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Type
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Required
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Default
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Description
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="emotion-74 emotion-75"
+                >
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      disabled
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        bool
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        false
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      label
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      yes
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      onClick
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        func
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        onClick
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      style
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        {}
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info/ForwardRef Displays forwarded ref components correctly 1`] = `
+.emotion-78 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-10 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  background: rgba(255,255,255,1);
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  height: 26px;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-left: 0 none;
+}
+
+.emotion-6 {
+  border: 0 none;
+  display: block;
+  background: none;
+  padding: 0 10px;
+  cursor: pointer;
+  text-transform: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  color: inherit;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.emotion-6:focus {
+  border-bottom: 2px solid #9fdaff;
+  outline: 0 none;
+}
+
+.emotion-12 {
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  position: relative;
+  overflow: auto;
+}
+
+.emotion-4 code {
+  padding-right: 10px;
+  opacity: 0.7;
+}
+
+.emotion-4 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-4 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.string {
+  color: #A31515;
+}
+
+.emotion-4 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-4 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-4 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.function {
+  color: #393A34;
+}
+
+.emotion-4 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-4 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-4 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-4 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-4 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-4 * .token.tag {
+  color: #800000;
+}
+
+.emotion-4 * .token.selector {
+  color: #800000;
+}
+
+.emotion-4 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-4 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-4 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-4 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-4 * .namespace {
+  opacity: 0.7;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-76 {
+  border-collapse: collapse;
+  margin-top: 16px;
+  width: auto;
+  table-layout: auto;
+}
+
+.emotion-24 {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-14 {
+  padding: 2px 6px;
+  line-height: 18px;
+  vertical-align: middle;
+  padding: 8px 16px;
+}
+
+.emotion-74 {
+  font-size: 14px;
+}
+
+.emotion-36 {
+  border-bottom: 1px solid #eee;
+}
+
+.emotion-26 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+  color: #774dd7;
+}
+
+.emotion-28 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+  color: #1ea7fd;
+}
+
+.emotion-28 button {
+  color: #37d5d3;
+}
+
+.emotion-28 span {
+  white-space: pre;
+}
+
+.emotion-30 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+}
+
+.emotion-34 {
+  padding: 2px 6px;
+  text-align: left;
+  padding: 8px 16px;
+}
+
+<div
+  class="emotion-78 emotion-79"
+>
+  <div>
+    <div
+      style="position:relative;z-index:0"
+    >
+      <button
+        type="button"
+      >
+        Forwarded Ref Button
+      </button>
+    </div>
+    <button
+      class="info__show-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      class="info__overlay"
+      style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    >
+      <button
+        class="info__close-button"
+        style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+        >
+          <div
+            style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+          >
+            <h1
+              style="margin:0;padding:0;font-size:35px"
+            >
+              Addons|Info/ForwardRef
+            </h1>
+            <h2
+              style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+            >
+              Displays forwarded ref components correctly
+            </h2>
+          </div>
+          <div>
+            <h1
+              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+            >
+              Story Source
+            </h1>
+            <div
+              class="emotion-12 emotion-13"
+            >
+              <div
+                class="emotion-4 emotion-5"
+              >
+                <pre
+                  class="hljs emotion-2 emotion-3"
+                >
+                  <code
+                    class="emotion-0 emotion-1"
+                  >
+                    <span
+                      class="token operator"
+                    >
+                      &lt;
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      [
+                    </span>
+                    object Object
+                    <span
+                      class="token punctuation"
+                    >
+                      ]
+                    </span>
+                     label 
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token string"
+                    >
+                      "Forwarded Ref Button"
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      /
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      &gt;
                     </span>
                     
 
@@ -2279,7 +1556,9 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              #1814
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -2841,7 +2120,9 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Displays JSX in description
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -3553,7 +2834,9 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Displays Markdown in description
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -3569,17 +2852,6 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
             >
               Sometimes you might want to manually include some code examples:
             </div>
-            <pre
-              class="language-js"
-              style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
-            >
-              <code
-                class="language-js"
-                style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa"
-              >
-                const Button = () =&gt; &lt;button /&gt;;
-              </code>
-            </pre>
             <div
               style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
             >
@@ -4280,7 +3552,9 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              From external Markdown file
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -4976,7 +4250,9 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              From internal Markdown file
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -5618,7 +4894,9 @@ exports[`Storyshots Addons|Info/Options.TableComponent Use a custom component fo
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Use a custom component for the table
+            </h2>
           </div>
           <div>
             <h1
@@ -6145,7 +5423,9 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Excludes propTypes that are in the excludedPropTypes array
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -7349,7 +6629,9 @@ exports[`Storyshots Addons|Info/Options.inline Inlines component inside story 1`
           </h1>
           <h2
             style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-          />
+          >
+            Inlines component inside story
+          </h2>
         </div>
       </div>
     </div>
@@ -7999,7 +7281,9 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Shows additional component prop tables
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -8750,7 +8034,9 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Exclude component from prop tables
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -9248,7 +8534,9 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Shows or hides Info Addon source
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -9800,7 +9088,9 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Extend info styles with an object
+            </h2>
           </div>
           <div>
             <h1
@@ -10427,7 +9717,9 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Full control over styles using a function
+            </h2>
           </div>
           <div>
             <h1
@@ -11073,7 +10365,9 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Overwrite the parameters with markdown variable
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -11089,17 +10383,6 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
             >
               Sometimes you might want to manually include some code examples:
             </div>
-            <pre
-              class="language-js"
-              style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
-            >
-              <code
-                class="language-js"
-                style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa"
-              >
-                const Button = () =&gt; &lt;button /&gt;;
-              </code>
-            </pre>
             <div
               style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
             >
@@ -11773,7 +11056,9 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
           </h1>
           <h2
             style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-          />
+          >
+            Overwrite the text parameter with markdown inline
+          </h2>
         </div>
       </div>
     </div>
@@ -11798,17 +11083,6 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
           >
             description or documentation about my component, supports markdown
           </div>
-          <pre
-            class="language-js"
-            style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
-          >
-            <code
-              class="language-js"
-              style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa"
-            >
-              &lt;Button&gt;Click Here&lt;/Button&gt;
-            </code>
-          </pre>
         </div>
         <div>
           <h1
@@ -12438,7 +11712,9 @@ exports[`Storyshots Addons|Info/Parameters Overwriting and extending the paramet
           </h1>
           <h2
             style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-          />
+          >
+            Overwriting and extending the parameters and options set stories-wise
+          </h2>
         </div>
       </div>
     </div>
@@ -13032,7 +12308,9 @@ exports[`Storyshots Addons|Info/Parameters Using paramaters across all stories 1
           </h1>
           <h2
             style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-          />
+          >
+            Using paramaters across all stories
+          </h2>
         </div>
       </div>
     </div>
@@ -13682,7 +12960,9 @@ exports[`Storyshots Addons|Info/React Docgen Comments from Flow declarations 1`]
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Comments from Flow declarations
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -13942,6 +13222,1357 @@ exports[`Storyshots Addons|Info/React Docgen Comments from Flow declarations 1`]
                     >
                       <span>
                         onClick
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations 1`] = `
+.emotion-186 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-10 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  background: rgba(255,255,255,1);
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  height: 26px;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-left: 0 none;
+}
+
+.emotion-6 {
+  border: 0 none;
+  display: block;
+  background: none;
+  padding: 0 10px;
+  cursor: pointer;
+  text-transform: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  color: inherit;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.emotion-6:focus {
+  border-bottom: 2px solid #9fdaff;
+  outline: 0 none;
+}
+
+.emotion-12 {
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  position: relative;
+  overflow: auto;
+}
+
+.emotion-4 code {
+  padding-right: 10px;
+  opacity: 0.7;
+}
+
+.emotion-4 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-4 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.string {
+  color: #A31515;
+}
+
+.emotion-4 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-4 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-4 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.function {
+  color: #393A34;
+}
+
+.emotion-4 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-4 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-4 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-4 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-4 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-4 * .token.tag {
+  color: #800000;
+}
+
+.emotion-4 * .token.selector {
+  color: #800000;
+}
+
+.emotion-4 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-4 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-4 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-4 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-4 * .namespace {
+  opacity: 0.7;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-184 {
+  border-collapse: collapse;
+  margin-top: 16px;
+  width: auto;
+  table-layout: auto;
+}
+
+.emotion-24 {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-14 {
+  padding: 2px 6px;
+  line-height: 18px;
+  vertical-align: middle;
+  padding: 8px 16px;
+}
+
+.emotion-182 {
+  font-size: 14px;
+}
+
+.emotion-36 {
+  border-bottom: 1px solid #eee;
+}
+
+.emotion-26 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+  color: #774dd7;
+}
+
+.emotion-28 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+  color: #1ea7fd;
+}
+
+.emotion-28 button {
+  color: #37d5d3;
+}
+
+.emotion-28 span {
+  white-space: pre;
+}
+
+.emotion-30 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+}
+
+.emotion-34 {
+  padding: 2px 6px;
+  text-align: left;
+  padding: 8px 16px;
+}
+
+<div
+  class="emotion-186 emotion-187"
+>
+  <div>
+    <div
+      style="position:relative;z-index:0"
+    >
+      <button
+        type="button"
+      >
+        Docgen Button
+      </button>
+    </div>
+    <button
+      class="info__show-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      class="info__overlay"
+      style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    >
+      <button
+        class="info__close-button"
+        style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+        >
+          <div
+            style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+          >
+            <h1
+              style="margin:0;padding:0;font-size:35px"
+            >
+              Addons|Info/React Docgen
+            </h1>
+            <h2
+              style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+            >
+              Comments from PropType declarations
+            </h2>
+          </div>
+          <div
+            style="margin-bottom:0"
+          >
+            <div
+              style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+            >
+              Comments above the PropType declarations should be extracted from the React component file itself and rendered in the Info Addon prop table
+            </div>
+          </div>
+          <div>
+            <h1
+              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+            >
+              Story Source
+            </h1>
+            <div
+              class="emotion-12 emotion-13"
+            >
+              <div
+                class="emotion-4 emotion-5"
+              >
+                <pre
+                  class="hljs emotion-2 emotion-3"
+                >
+                  <code
+                    class="emotion-0 emotion-1"
+                  >
+                    <span
+                      class="token operator"
+                    >
+                      &lt;
+                    </span>
+                    DocgenButton
+  onClick
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                    <span
+                      class="token keyword"
+                    >
+                      function
+                    </span>
+                     
+                    <span
+                      class="token function"
+                    >
+                      noRefCheck
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    
+  label
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                    <span
+                      class="token string"
+                    >
+                      "Docgen Button"
+                    </span>
+                    
+  one
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                    
+    key
+                    <span
+                      class="token punctuation"
+                    >
+                      :
+                    </span>
+                     
+                    <span
+                      class="token number"
+                    >
+                      1
+                    </span>
+                    
+  
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    
+  shape
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                    
+    arr
+                    <span
+                      class="token punctuation"
+                    >
+                      :
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      [
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ]
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ,
+                    </span>
+                    
+    func
+                    <span
+                      class="token punctuation"
+                    >
+                      :
+                    </span>
+                     
+                    <span
+                      class="token keyword"
+                    >
+                      function
+                    </span>
+                     
+                    <span
+                      class="token function"
+                    >
+                      noRefCheck
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ,
+                    </span>
+                    
+    id
+                    <span
+                      class="token punctuation"
+                    >
+                      :
+                    </span>
+                     
+                    <span
+                      class="token number"
+                    >
+                      3
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ,
+                    </span>
+                    
+    shape
+                    <span
+                      class="token punctuation"
+                    >
+                      :
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                    
+      shape
+                    <span
+                      class="token punctuation"
+                    >
+                      :
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                    
+        foo
+                    <span
+                      class="token punctuation"
+                    >
+                      :
+                    </span>
+                     
+                    <span
+                      class="token string"
+                    >
+                      'bar'
+                    </span>
+                    
+      
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    
+    
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    
+  
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    
+  arrayOf
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      [
+                    </span>
+                    
+    
+                    <span
+                      class="token number"
+                    >
+                      1
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ,
+                    </span>
+                    
+    
+                    <span
+                      class="token number"
+                    >
+                      2
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ,
+                    </span>
+                    
+    
+                    <span
+                      class="token number"
+                    >
+                      3
+                    </span>
+                    
+  
+                    <span
+                      class="token punctuation"
+                    >
+                      ]
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    
+
+                    <span
+                      class="token operator"
+                    >
+                      /
+                    </span>
+                    <span
+                      class="token operator"
+                    >
+                      &gt;
+                    </span>
+                    
+
+                  </code>
+                </pre>
+              </div>
+              <ul
+                class="emotion-10 emotion-11"
+              >
+                <li
+                  class="emotion-8 emotion-9"
+                >
+                  <button
+                    class="emotion-6 emotion-7"
+                  >
+                    copy
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h1
+              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+            >
+              Prop Types
+            </h1>
+            <div>
+              <h3
+                style="margin:20px 0 0 0"
+              >
+                "DocgenButton" Component
+              </h3>
+              <table
+                class="emotion-184 emotion-185"
+              >
+                <thead
+                  class="emotion-24 emotion-25"
+                >
+                  <tr>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Property
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Type
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Required
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Default
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Description
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="emotion-182 emotion-183"
+                >
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      disabled
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        bool
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        false
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      label
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      yes
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      onClick
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        func
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        onClick
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      one
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        {
+                        <span>
+                          <span>
+                            key
+                          </span>
+                        </span>
+                        : 
+                        <span>
+                          1
+                        </span>
+                        }
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      two
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        {
+                        <span>
+                          <span>
+                            thing
+                          </span>
+                        </span>
+                        : 
+                        <span>
+                          {
+                          <span>
+                            <span>
+                              id
+                            </span>
+                          </span>
+                          : 
+                          <span>
+                            2
+                          </span>
+                          ,
+                          <span>
+                            <span>
+                              func
+                            </span>
+                          </span>
+                          : 
+                          <span>
+                            func
+                          </span>
+                          ,
+                          <span>
+                            <span>
+                              arr
+                            </span>
+                          </span>
+                          : 
+                          <span>
+                            []
+                          </span>
+                          }
+                        </span>
+                        }
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      obj
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        object
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        {
+                        <span>
+                          <span>
+                            key
+                          </span>
+                        </span>
+                        : 
+                        <span>
+                          'value'
+                        </span>
+                        }
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      shape
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        {
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span>
+                            id
+                          </span>
+                        </span>
+                        : 
+                        <span>
+                          3
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span>
+                            func
+                          </span>
+                        </span>
+                        : 
+                        <span>
+                          func
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span>
+                            arr
+                          </span>
+                        </span>
+                        : 
+                        <span>
+                          []
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          …
+                        </span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        }
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      arrayOf
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        [
+                        <span>
+                          <span>
+                            1
+                          </span>
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            2
+                          </span>
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            3
+                          </span>
+                        </span>
+                        ]
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      msg
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        {}
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      enm
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        News
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      enmEval
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        Photos
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      union
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        hello
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      optionalString
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        Default String
                       </span>
                     </td>
                     <td
@@ -14318,7 +14949,9 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Comments from component declaration
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -15016,7 +15649,9 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Comments from named export component declaration
+            </h2>
           </div>
           <div
             style="margin-bottom:0"
@@ -15336,6 +15971,1119 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
                     >
                       <span>
                         {}
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info/Story Source Array prop 1`] = `
+.emotion-42 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-10 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  background: rgba(255,255,255,1);
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  height: 26px;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-left: 0 none;
+}
+
+.emotion-6 {
+  border: 0 none;
+  display: block;
+  background: none;
+  padding: 0 10px;
+  cursor: pointer;
+  text-transform: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  color: inherit;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.emotion-6:focus {
+  border-bottom: 2px solid #9fdaff;
+  outline: 0 none;
+}
+
+.emotion-12 {
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  position: relative;
+  overflow: auto;
+}
+
+.emotion-4 code {
+  padding-right: 10px;
+  opacity: 0.7;
+}
+
+.emotion-4 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-4 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.string {
+  color: #A31515;
+}
+
+.emotion-4 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-4 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-4 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.function {
+  color: #393A34;
+}
+
+.emotion-4 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-4 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-4 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-4 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-4 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-4 * .token.tag {
+  color: #800000;
+}
+
+.emotion-4 * .token.selector {
+  color: #800000;
+}
+
+.emotion-4 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-4 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-4 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-4 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-4 * .namespace {
+  opacity: 0.7;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-40 {
+  border-collapse: collapse;
+  margin-top: 16px;
+  width: auto;
+  table-layout: auto;
+}
+
+.emotion-24 {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-14 {
+  padding: 2px 6px;
+  line-height: 18px;
+  vertical-align: middle;
+  padding: 8px 16px;
+}
+
+.emotion-38 {
+  font-size: 14px;
+}
+
+.emotion-36 {
+  border-bottom: 1px solid #eee;
+}
+
+.emotion-26 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+  color: #774dd7;
+}
+
+.emotion-28 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+  color: #1ea7fd;
+}
+
+.emotion-28 button {
+  color: #37d5d3;
+}
+
+.emotion-28 span {
+  white-space: pre;
+}
+
+.emotion-30 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+}
+
+.emotion-34 {
+  padding: 2px 6px;
+  text-align: left;
+  padding: 8px 16px;
+}
+
+<div
+  class="emotion-42 emotion-43"
+>
+  <div>
+    <div
+      style="position:relative;z-index:0"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th>
+              name
+            </th>
+            <th>
+              type
+            </th>
+            <th>
+              default
+            </th>
+            <th>
+              description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              label
+              <span
+                style="color:red"
+              >
+                *
+              </span>
+            </td>
+            <td>
+              string
+            </td>
+            <td />
+            <td>
+              Text to display inside button
+            </td>
+          </tr>
+          <tr>
+            <td>
+              disabled
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              false
+            </td>
+            <td />
+          </tr>
+          <tr>
+            <td>
+              onClick
+              <span
+                style="color:red"
+              >
+                *
+              </span>
+            </td>
+            <td>
+              function
+            </td>
+            <td />
+            <td>
+              Callback for when button is clicked
+            </td>
+          </tr>
+          <tr>
+            <td>
+              style
+            </td>
+            <td>
+              object
+            </td>
+            <td>
+              {}
+            </td>
+            <td>
+              Styles to apply to button
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button
+      class="info__show-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      class="info__overlay"
+      style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    >
+      <button
+        class="info__close-button"
+        style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+        >
+          <div
+            style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+          >
+            <h1
+              style="margin:0;padding:0;font-size:35px"
+            >
+              Addons|Info/Story Source
+            </h1>
+            <h2
+              style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+            >
+              Array prop
+            </h2>
+          </div>
+          <div>
+            <h1
+              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+            >
+              Story Source
+            </h1>
+            <div
+              class="emotion-12 emotion-13"
+            >
+              <div
+                class="emotion-4 emotion-5"
+              >
+                <pre
+                  class="hljs emotion-2 emotion-3"
+                >
+                  <code
+                    class="emotion-0 emotion-1"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token tag"
+                      >
+                        <span
+                          class="token punctuation"
+                        >
+                          &lt;
+                        </span>
+                        TableComponent
+                      </span>
+                      
+  
+                      <span
+                        class="token attr-name"
+                      >
+                        propDefinitions
+                      </span>
+                      <span
+                        class="token script language-javascript"
+                      >
+                        <span
+                          class="token script-punctuation punctuation"
+                        >
+                          =
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          [
+                        </span>
+                        
+    
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        
+      description
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          'Text to display inside button'
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      propType
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        
+        name
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          'string'
+                        </span>
+                        
+      
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      property
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          'label'
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      required
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token boolean"
+                        >
+                          true
+                        </span>
+                        
+    
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+    
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        
+      defaultValue
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token boolean"
+                        >
+                          false
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      propType
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        
+        name
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          'boolean'
+                        </span>
+                        
+      
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      property
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          'disabled'
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      required
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token boolean"
+                        >
+                          false
+                        </span>
+                        
+    
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+    
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        
+      defaultValue
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token keyword"
+                        >
+                          function
+                        </span>
+                         
+                        <span
+                          class="token function"
+                        >
+                          noRefCheck
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      description
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          'Callback for when button is clicked'
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      propType
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        
+        name
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          'function'
+                        </span>
+                        
+      
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      property
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          'onClick'
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      required
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token boolean"
+                        >
+                          true
+                        </span>
+                        
+    
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+    
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        
+      defaultValue
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      description
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          'Styles to apply to button'
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      propType
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        
+        name
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          'object'
+                        </span>
+                        
+      
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      property
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          'style'
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                        
+      required
+                        <span
+                          class="token punctuation"
+                        >
+                          :
+                        </span>
+                         
+                        <span
+                          class="token boolean"
+                        >
+                          false
+                        </span>
+                        
+    
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        
+  
+                        <span
+                          class="token punctuation"
+                        >
+                          ]
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                      </span>
+                      
+
+                      <span
+                        class="token punctuation"
+                      >
+                        /&gt;
+                      </span>
+                    </span>
+                    
+
+                  </code>
+                </pre>
+              </div>
+              <ul
+                class="emotion-10 emotion-11"
+              >
+                <li
+                  class="emotion-8 emotion-9"
+                >
+                  <button
+                    class="emotion-6 emotion-7"
+                  >
+                    copy
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h1
+              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+            >
+              Prop Types
+            </h1>
+            <div>
+              <h3
+                style="margin:20px 0 0 0"
+              >
+                "TableComponent" Component
+              </h3>
+              <table
+                class="emotion-40 emotion-41"
+              >
+                <thead
+                  class="emotion-24 emotion-25"
+                >
+                  <tr>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Property
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Type
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Required
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Default
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Description
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="emotion-38 emotion-39"
+                >
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      propDefinitions
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        []
                       </span>
                     </td>
                     <td
@@ -15717,7 +17465,9 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Children
+            </h2>
           </div>
           <div>
             <h1
@@ -16506,7 +18256,9 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Many props
+            </h2>
           </div>
           <div>
             <h1
@@ -17201,7 +18953,9 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              Object prop
+            </h2>
           </div>
           <div>
             <h1
@@ -17971,7 +19725,9 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
             </h1>
             <h2
               style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-            />
+            >
+              One prop
+            </h2>
           </div>
           <div>
             <h1
@@ -18031,6 +19787,724 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
                         </span>
                       </span>
                        
+                      <span
+                        class="token punctuation"
+                      >
+                        /&gt;
+                      </span>
+                    </span>
+                    
+
+                  </code>
+                </pre>
+              </div>
+              <ul
+                class="emotion-10 emotion-11"
+              >
+                <li
+                  class="emotion-8 emotion-9"
+                >
+                  <button
+                    class="emotion-6 emotion-7"
+                  >
+                    copy
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h1
+              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+            >
+              Prop Types
+            </h1>
+            <div>
+              <h3
+                style="margin:20px 0 0 0"
+              >
+                "BaseButton" Component
+              </h3>
+              <table
+                class="emotion-76 emotion-77"
+              >
+                <thead
+                  class="emotion-24 emotion-25"
+                >
+                  <tr>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Property
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Type
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Required
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Default
+                    </th>
+                    <th
+                      class="emotion-14 emotion-15"
+                    >
+                      Description
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="emotion-74 emotion-75"
+                >
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      disabled
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        bool
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        false
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      label
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      yes
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      onClick
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        func
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        onClick
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                  <tr
+                    class="emotion-36 emotion-37"
+                  >
+                    <td
+                      class="emotion-26 emotion-27"
+                    >
+                      style
+                    </td>
+                    <td
+                      class="emotion-28 emotion-29"
+                    >
+                      <span>
+                        other
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      -
+                    </td>
+                    <td
+                      class="emotion-30 emotion-31"
+                    >
+                      <span>
+                        {}
+                      </span>
+                    </td>
+                    <td
+                      class="emotion-34 emotion-31"
+                    />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] = `
+.emotion-78 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-10 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  background: rgba(255,255,255,1);
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  height: 26px;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-left: 0 none;
+}
+
+.emotion-6 {
+  border: 0 none;
+  display: block;
+  background: none;
+  padding: 0 10px;
+  cursor: pointer;
+  text-transform: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  color: inherit;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.emotion-6:focus {
+  border-bottom: 2px solid #9fdaff;
+  outline: 0 none;
+}
+
+.emotion-12 {
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  position: relative;
+  overflow: auto;
+}
+
+.emotion-4 code {
+  padding-right: 10px;
+  opacity: 0.7;
+}
+
+.emotion-4 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-4 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-4 * .token.string {
+  color: #A31515;
+}
+
+.emotion-4 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-4 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-4 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-4 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-4 * .token.function {
+  color: #393A34;
+}
+
+.emotion-4 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-4 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-4 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-4 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-4 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-4 * .token.tag {
+  color: #800000;
+}
+
+.emotion-4 * .token.selector {
+  color: #800000;
+}
+
+.emotion-4 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-4 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-4 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-4 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-4 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-4 * .namespace {
+  opacity: 0.7;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-76 {
+  border-collapse: collapse;
+  margin-top: 16px;
+  width: auto;
+  table-layout: auto;
+}
+
+.emotion-24 {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-14 {
+  padding: 2px 6px;
+  line-height: 18px;
+  vertical-align: middle;
+  padding: 8px 16px;
+}
+
+.emotion-74 {
+  font-size: 14px;
+}
+
+.emotion-36 {
+  border-bottom: 1px solid #eee;
+}
+
+.emotion-26 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+  color: #774dd7;
+}
+
+.emotion-28 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+  color: #1ea7fd;
+}
+
+.emotion-28 button {
+  color: #37d5d3;
+}
+
+.emotion-28 span {
+  white-space: pre;
+}
+
+.emotion-30 {
+  padding: 2px 6px;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+  text-align: left;
+  padding: 8px 16px;
+}
+
+.emotion-34 {
+  padding: 2px 6px;
+  text-align: left;
+  padding: 8px 16px;
+}
+
+<div
+  class="emotion-78 emotion-79"
+>
+  <div>
+    <div
+      style="position:relative;z-index:0"
+    >
+      <button
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <button
+      class="info__show-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      class="info__overlay"
+      style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    >
+      <button
+        class="info__close-button"
+        style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+        >
+          <div
+            style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+          >
+            <h1
+              style="margin:0;padding:0;font-size:35px"
+            >
+              Addons|Info/deprecated
+            </h1>
+            <h2
+              style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+            >
+              Displays Markdown in description
+            </h2>
+          </div>
+          <div
+            style="margin-bottom:0"
+          >
+            <h4
+              id="you-can-use-markdown-in-your-withinfo-description."
+              style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:600;margin:0;padding:0;font-size:20px"
+            >
+              You can use markdown in your withInfo description.
+            </h4>
+            <div
+              style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+            >
+              Sometimes you might want to manually include some code examples:
+            </div>
+            <div
+              style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+            >
+              Maybe include a 
+              <a
+                href="http://storybook.js.org"
+                rel="noopener noreferrer"
+                style="color:#3498db"
+                target="_blank"
+              >
+                link
+              </a>
+               to your project as well.
+            </div>
+          </div>
+          <div>
+            <h1
+              style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+            >
+              Story Source
+            </h1>
+            <div
+              class="emotion-12 emotion-13"
+            >
+              <div
+                class="emotion-4 emotion-5"
+              >
+                <pre
+                  class="hljs emotion-2 emotion-3"
+                >
+                  <code
+                    class="emotion-0 emotion-1"
+                  >
+                    <span
+                      class="token tag"
+                    >
+                      <span
+                        class="token tag"
+                      >
+                        <span
+                          class="token punctuation"
+                        >
+                          &lt;
+                        </span>
+                        BaseButton
+                      </span>
+                      
+  
+                      <span
+                        class="token attr-name"
+                      >
+                        onClick
+                      </span>
+                      <span
+                        class="token script language-javascript"
+                      >
+                        <span
+                          class="token script-punctuation punctuation"
+                        >
+                          =
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        <span
+                          class="token keyword"
+                        >
+                          function
+                        </span>
+                         
+                        <span
+                          class="token function"
+                        >
+                          noRefCheck
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                      </span>
+                      
+  
+                      <span
+                        class="token attr-name"
+                      >
+                        label
+                      </span>
+                      <span
+                        class="token attr-value"
+                      >
+                        <span
+                          class="token punctuation"
+                        >
+                          =
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          "
+                        </span>
+                        Button
+                        <span
+                          class="token punctuation"
+                        >
+                          "
+                        </span>
+                      </span>
+                      
+
                       <span
                         class="token punctuation"
                       >

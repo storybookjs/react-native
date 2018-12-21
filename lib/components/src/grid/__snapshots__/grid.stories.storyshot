@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Grid col 1`] = `
+.emotion-12 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  background: silver;
+  display: inline-block;
+  padding: 20px;
+}
+
+.emotion-8 {
+  display: inline-block;
+  vertical-align: inherit;
+}
+
+.emotion-8 > * {
+  margin-left: 10px;
+  vertical-align: inherit;
+}
+
+.emotion-8 > *:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-2 {
+  background: hotpink;
+  display: inline-block;
+  padding: 20px;
+}
+
+<div
+  class="emotion-12 emotion-13"
+>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="silver"
+    />
+    <div
+      class="emotion-8 emotion-9"
+    >
+      <span
+        class="emotion-2 emotion-1"
+      />
+      <span
+        class="emotion-2 emotion-1"
+      />
+      <span
+        class="emotion-2 emotion-1"
+      />
+    </div>
+    <span
+      class="emotion-0 emotion-1"
+      color="silver"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Grid col outer 1`] = `
+.emotion-12 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  background: silver;
+  display: inline-block;
+  padding: 20px;
+}
+
+.emotion-2 {
+  background: hotpink;
+  display: inline-block;
+  padding: 20px;
+}
+
+.emotion-8 {
+  display: inline-block;
+  vertical-align: inherit;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.emotion-8 > * {
+  margin-left: 10px;
+  vertical-align: inherit;
+}
+
+.emotion-8 > *:first-of-type {
+  margin-left: 0;
+}
+
+<div
+  class="emotion-12 emotion-13"
+>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="silver"
+    />
+    <div
+      class="emotion-8 emotion-9"
+    >
+      <span
+        class="emotion-2 emotion-1"
+      />
+      <span
+        class="emotion-2 emotion-1"
+      />
+      <span
+        class="emotion-2 emotion-1"
+      />
+    </div>
+    <span
+      class="emotion-0 emotion-1"
+      color="silver"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Grid row 1`] = `
+.emotion-12 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-8 > * {
+  margin-top: 10px;
+}
+
+.emotion-8 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+.emotion-2 {
+  background: hotpink;
+  padding: 20px;
+}
+
+<div
+  class="emotion-12 emotion-13"
+>
+  <div>
+    <div
+      class="emotion-0 emotion-1"
+      color="silver"
+    />
+    <div
+      class="emotion-8 emotion-9"
+    >
+      <div
+        class="emotion-2 emotion-1"
+      />
+      <div
+        class="emotion-2 emotion-1"
+      />
+      <div
+        class="emotion-2 emotion-1"
+      />
+    </div>
+    <div
+      class="emotion-0 emotion-1"
+      color="silver"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Grid row multiply 1`] = `
+.emotion-12 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+.emotion-2 {
+  background: hotpink;
+  padding: 20px;
+}
+
+.emotion-8 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.emotion-8 > * {
+  margin-top: 30px;
+}
+
+.emotion-8 > *:first-of-type {
+  margin-top: 0;
+}
+
+<div
+  class="emotion-12 emotion-13"
+>
+  <div>
+    <div
+      class="emotion-0 emotion-1"
+      color="silver"
+    />
+    <div
+      class="emotion-8 emotion-9"
+    >
+      <div
+        class="emotion-2 emotion-1"
+      />
+      <div
+        class="emotion-2 emotion-1"
+      />
+      <div
+        class="emotion-2 emotion-1"
+      />
+    </div>
+    <div
+      class="emotion-0 emotion-1"
+      color="silver"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Grid row outer 1`] = `
+.emotion-12 {
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+.emotion-2 {
+  background: hotpink;
+  padding: 20px;
+}
+
+.emotion-8 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.emotion-8 > * {
+  margin-top: 10px;
+}
+
+.emotion-8 > *:first-of-type {
+  margin-top: 0;
+}
+
+<div
+  class="emotion-12 emotion-13"
+>
+  <div>
+    <div
+      class="emotion-0 emotion-1"
+      color="silver"
+    />
+    <div
+      class="emotion-8 emotion-9"
+    >
+      <div
+        class="emotion-2 emotion-1"
+      />
+      <div
+        class="emotion-2 emotion-1"
+      />
+      <div
+        class="emotion-2 emotion-1"
+      />
+    </div>
+    <div
+      class="emotion-0 emotion-1"
+      color="silver"
+    />
+  </div>
+</div>
+`;

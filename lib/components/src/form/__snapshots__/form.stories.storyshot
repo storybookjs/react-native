@@ -26,7 +26,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 .emotion-8 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -54,7 +54,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -82,7 +82,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 .emotion-4 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -170,7 +170,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -198,7 +198,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 .emotion-4 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -228,7 +228,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 .emotion-8 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -316,7 +316,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 .emotion-12 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -344,7 +344,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -373,7 +373,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 .emotion-4 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -402,7 +402,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 .emotion-8 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -485,7 +485,7 @@ exports[`Storyshots Components|Form/Button with knobs 1`] = `
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -547,7 +547,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -574,7 +574,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 .emotion-4 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -603,7 +603,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 .emotion-8 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -728,7 +728,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 .emotion-6 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -755,7 +755,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -783,7 +783,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 .emotion-2 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -811,7 +811,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 .emotion-4 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -952,7 +952,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 .emotion-8 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -977,7 +977,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -1002,7 +1002,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 .emotion-4 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -1093,7 +1093,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 .emotion-8 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -1118,7 +1118,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -1143,7 +1143,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 .emotion-4 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -1233,7 +1233,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 .emotion-12 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -1258,7 +1258,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -1284,7 +1284,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 .emotion-4 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -1310,7 +1310,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 .emotion-8 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
@@ -1397,7 +1397,7 @@ exports[`Storyshots Components|Form/Textarea with knobs (controlled) 1`] = `
 .emotion-0 {
   padding: 0 10px;
   color: #444;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
   transition: border-bottom-color .3s linear;
