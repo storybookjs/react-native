@@ -61,12 +61,12 @@ describe('Channel', () => {
       const eventName = 'event1';
       const listenerInputData = ['string1', 'string2', 'string3'];
       let listenerOutputData: string[] = null;
-      const mockListener: Listener<string[]> = data => {
+      const mockListener: Listener = data => {
         listenerOutputData = data;
       };
 
       channel.addListener(eventName, mockListener);
-      channel.emit<string[]>(eventName, listenerInputData);
+      channel.emit(eventName, listenerInputData);
       expect(listenerOutputData).toBe(listenerInputData);
     });
 
@@ -75,10 +75,10 @@ describe('Channel', () => {
       const listenerInputData = ['string1', 'string2', 'string3'];
       let listenerOutputData: string[] = null;
 
-      channel.addListener<string>(eventName, (...data) => {
+      channel.addListener(eventName, (...data) => {
         listenerOutputData = data;
       });
-      channel.emit<string>(eventName, ...listenerInputData);
+      channel.emit(eventName, ...listenerInputData);
       expect(listenerOutputData).toEqual(listenerInputData);
     });
 
@@ -138,12 +138,12 @@ describe('Channel', () => {
       const eventName = 'event1';
       const listenerInputData = ['string1', 'string2', 'string3'];
       let listenerOutputData = null;
-      const mockListener: Listener<string[]> = (data: string[]) => {
+      const mockListener: Listener = (data: string[]) => {
         listenerOutputData = data;
       };
 
-      channel.once<string[]>(eventName, args => mockListener(args));
-      channel.emit<string[]>(eventName, listenerInputData);
+      channel.once(eventName, args => mockListener(args));
+      channel.emit(eventName, listenerInputData);
 
       expect(listenerOutputData).toEqual(listenerInputData);
     });
@@ -154,35 +154,6 @@ describe('Channel', () => {
 
       channel.once(eventName, listenerToBeRemoved);
       channel.removeListener(eventName, listenerToBeRemoved);
-    });
-  });
-
-  describe('method:prependListener', () => {
-    it('should prepend listener', () => {
-      const eventName = 'event1';
-      const prependFn = jest.fn();
-      channel.addListener(eventName, jest.fn());
-      channel.prependListener(eventName, prependFn);
-
-      expect(channel.listeners(eventName)[0]).toBe(prependFn);
-    });
-  });
-
-  describe('method:prependOnceListener', () => {
-    it('should prepend listener and remove it after one execution', () => {
-      const eventName = 'event1';
-      const prependFn = jest.fn();
-      const otherFns = [jest.fn(), jest.fn(), jest.fn()];
-
-      otherFns.forEach(fn => channel.addListener(eventName, fn));
-      channel.prependOnceListener(eventName, prependFn);
-      channel.emit(eventName);
-
-      otherFns.forEach(listener => {
-        expect(listener).toBe(
-          channel.listeners(eventName).find(_listener => _listener === listener)
-        );
-      });
     });
   });
 

@@ -125,7 +125,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/__tests__/**', '**/*.test.js/**', '**/*.spec.js/**'],
+      files: ['**/__tests__/**', '**/*.test.js/**'],
       rules: {
         'import/no-extraneous-dependencies': ignore,
       },

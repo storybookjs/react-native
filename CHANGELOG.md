@@ -1,3 +1,58 @@
+## 4.2.0-alpha.6 (December 20, 2018)
+
+### Features
+
+* React-Native: Change on-device layout to absolute position ([#4962](https://github.com/storybooks/storybook/pull/4962))
+* Addon-Info: add css classes for style overrides ([#4589](https://github.com/storybooks/storybook/pull/4589))
+
+### Bug Fixes
+
+* Addon-Info: Display description when story name matches component ([#4863](https://github.com/storybooks/storybook/pull/4863))
+* React-Native: Disable warning if story is not set in async storage ([#5068](https://github.com/storybooks/storybook/pull/5068))
+* React-Native: Fixed isUIHidden param ([#5067](https://github.com/storybooks/storybook/pull/5067))
+* Vue: Fix reloading and story decoration ([#5057](https://github.com/storybooks/storybook/pull/5057))
+
+### Maintenance
+
+* TypeScript: migrate @storybook/channels to typescript ([#4977](https://github.com/storybooks/storybook/pull/4977))
+
+### Dependency Upgrades
+
+* Bump babel-plugin-macros from 2.4.2 to 2.4.3 ([#5060](https://github.com/storybooks/storybook/pull/5060))
+* Bump @babel/core from 7.2.0 to 7.2.2 ([#5059](https://github.com/storybooks/storybook/pull/5059))
+* Bump ember-cli-htmlbars-inline-precompile from 1.0.5 to 2.1.0 ([#5064](https://github.com/storybooks/storybook/pull/5064))
+* Bump react-test-renderer from 16.6.3 to 16.7.0 ([#5063](https://github.com/storybooks/storybook/pull/5063))
+* Bump autoprefixer from 9.4.2 to 9.4.3 ([#5061](https://github.com/storybooks/storybook/pull/5061))
+
+## 4.2.0-alpha.5 (December 19, 2018)
+
+### Bug Fixes
+
+* React: Remove unnecessary dependencies, fix aliasing ([#5047](https://github.com/storybooks/storybook/pull/5047))
+
+### Dependency Upgrades
+
+* Bump @types/node from 10.12.14 to 10.12.17 ([#5045](https://github.com/storybooks/storybook/pull/5045))
+* Bump ember-source from 3.5.1 to 3.6.1 ([#5044](https://github.com/storybooks/storybook/pull/5044))
+
+## 4.2.0-alpha.4 (December 18, 2018)
+
+### Bug Fixes
+
+* React: fix alias for react(-dom) to resolve to the user's version ([#5042](https://github.com/storybooks/storybook/pull/5042))
+
+### Dependency Upgrades
+
+* Bump husky from 1.2.0 to 1.3.0 ([#5038](https://github.com/storybooks/storybook/pull/5038))
+* Bump fork-ts-checker-webpack-plugin from 0.4.15 to 0.5.2 ([#5037](https://github.com/storybooks/storybook/pull/5037))
+
+## 4.2.0-alpha.3 (December 18, 2018)
+
+### Bug Fixes
+
+* React: add alias to react & react-dom ([#5016](https://github.com/storybooks/storybook/pull/5016))
+* Addon-knobs: fix color picker display ([#5010](https://github.com/storybooks/storybook/pull/5010))
+
 ## 4.2.0-alpha.2 (December 16, 2018)
 
 ### Features

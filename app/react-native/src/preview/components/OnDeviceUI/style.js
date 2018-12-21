@@ -23,6 +23,7 @@ export default {
     position: 'absolute',
     right: 8,
     bottom: 12,
+    zIndex: 100,
   },
   previewMinimized: {
     borderWidth: 1,

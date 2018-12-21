@@ -1,27 +1,21 @@
 import { stripIndents } from 'common-tags';
 import Vue from 'vue';
 
-let root = null;
+export const COMPONENT = 'STORYBOOK_COMPONENT';
+export const VALUES = 'STORYBOOK_VALUES';
 
-function getComponentProxy(component) {
-  return Object.entries(component.props || {})
-    .map(([name, def]) => ({ [name]: def.default }))
-    .reduce((wrap, prop) => ({ ...wrap, ...prop }), {});
-}
-
-function renderRoot(component, proxy) {
-  root = new Vue({
-    el: '#root',
-    beforeCreate() {
-      this.proxy = proxy;
-    },
-
-    render(h) {
-      const props = this.proxy;
-      return h('div', { attrs: { id: 'root' } }, [h(component, { props })]);
-    },
-  });
-}
+const root = new Vue({
+  data() {
+    return {
+      [COMPONENT]: undefined,
+      [VALUES]: {},
+    };
+  },
+  render(h) {
+    const children = this[COMPONENT] ? [h(this[COMPONENT])] : undefined;
+    return h('div', { attrs: { id: 'root' } }, children);
+  },
+});
 
 export default function render({
   story,
@@ -49,15 +43,14 @@ export default function render({
 
   showMain();
 
-  const proxy = getComponentProxy(component);
-
   // at component creation || refresh by HMR
-  if (!root || !forceRender) {
-    if (root) root.$destroy();
+  if (!root[COMPONENT] || !forceRender) {
+    root[COMPONENT] = component;
+  }
 
-    renderRoot(component, proxy);
-  } else {
-    root.proxy = proxy;
-    root.$forceUpdate();
+  root[VALUES] = component.options[VALUES];
+
+  if (!root.$el) {
+    root.$mount('#root');
   }
 }
