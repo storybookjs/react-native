@@ -18,7 +18,6 @@
   "license": "MIT",
   "main": "dist/public_api.js",
   "types": "dist/public_api.d.ts",
-  "jsnext:main": "src/public_api.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
