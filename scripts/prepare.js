@@ -38,7 +38,7 @@ function logError(type, packageJson) {
 const packageJson = getPackageJson();
 
 removeDist();
-if (packageJson.types.indexOf('d.ts') !== -1) {
+if (packageJson && packageJson.types && packageJson.types.indexOf('d.ts') !== -1) {
   tscfy({ errorCallback: () => logError('ts', packageJson) });
 } else {
   babelify({ errorCallback: () => logError('js', packageJson) });
