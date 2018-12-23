@@ -1,5 +1,5 @@
 import global from 'global';
-import Channel from '@storybook/channels';
+import { Channel } from '@storybook/channels';
 import { ReactElement } from 'react';
 
 export interface PanelOptions {
