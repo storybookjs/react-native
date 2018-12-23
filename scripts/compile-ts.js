@@ -26,7 +26,7 @@ function handleExit(code, errorCallback) {
 }
 
 function tscfy(options = {}) {
-  const { watch = false, silent = false, errorCallback } = options;
+  const { watch = false, silent = true, errorCallback } = options;
   const tsConfigFile = 'tsconfig.json';
 
   if (!fs.existsSync(tsConfigFile)) {
@@ -36,8 +36,6 @@ function tscfy(options = {}) {
 
   const content = fs.readFileSync(tsConfigFile);
   const tsConfig = JSON.parse(content);
-
-  console.log(JSON.stringify(tsConfig, null, 2));
 
   if (tsConfig && tsConfig.lerna && tsConfig.lerna.disabled === true) {
     if (!silent) console.log('Lerna disabled');
