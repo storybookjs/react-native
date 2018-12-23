@@ -26,8 +26,7 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/util-deprecate": "^1.0.0",
-    "@types/react": "^16.7.17y"
+    "@types/util-deprecate": "^1.0.0"
   },
   "publishConfig": {
     "access": "public"
