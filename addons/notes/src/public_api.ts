@@ -1,1 +1,2 @@
-export * from '.';
+export * from './index';
+export * from './register';
