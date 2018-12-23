@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "noImplicitAny": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "module": "commonjs",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

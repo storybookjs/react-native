@@ -1,5 +1,5 @@
 export * from './make-decorator';
-export * from './index';
+export * from '.';
 export * from './storybook-channel-mock';
 
 // There can only be 1 default export per entry point and it has to be directly from public_api
