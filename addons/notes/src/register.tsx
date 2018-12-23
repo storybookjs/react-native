@@ -1,10 +1,10 @@
 import * as React from 'react';
-import addons from '@storybook/addons';
-import Channel from '@storybook/channels';
 
 import * as PropTypes from 'prop-types';
 
 import styled from '@emotion/styled';
+import { Channel } from '@storybook/channels';
+import { addons } from '@storybook/addons';
 
 interface NotesApi {
   setQueryParams: any; // todo check correct definition
