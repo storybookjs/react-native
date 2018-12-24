@@ -6,12 +6,4 @@ import results from './addon-jest.testresults.json';
 
 storiesOf('Addons|Jest', module)
   .addDecorator(withTests({ results }))
-  .add(
-    'withTests',
-    () => (
-      <div>
-        <p>Hello</p>
-      </div>
-    ),
-    { jest: 'addon-jest' }
-  );
+  .add('withTests', () => <p>Hello</p>, { jest: 'addon-jest' });

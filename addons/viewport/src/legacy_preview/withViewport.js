@@ -1,15 +1,15 @@
 import { makeDecorator } from '@storybook/addons';
 import deprecate from 'util-deprecate';
 
-const withViewport = deprecate(
-  makeDecorator({
-    name: 'withViewport',
-    parameterName: 'viewports',
-    allowDeprecatedUsage: true,
-    wrapper: (getStory, context) => getStory(context),
-  }),
-  'usage is deprecated, use .addParameters({ viewport }) instead'
-);
+const withViewport = makeDecorator({
+  name: 'withViewport',
+  parameterName: 'viewports',
+  allowDeprecatedUsage: true,
+  wrapper: deprecate(
+    (getStory, context) => getStory(context),
+    'usage is deprecated, use .addParameters({ viewport }) instead'
+  ),
+});
 
 export default withViewport;
 

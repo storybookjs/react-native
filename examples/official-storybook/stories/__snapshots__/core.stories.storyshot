@@ -1,65 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Core|Events Force re-render 1`] = `
-.emotion-2 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-.emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: transparent;
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-<div
-  class="emotion-2 emotion-3"
+<button
+  class="css-1pzmux7-Button e1lk8yn73"
 >
-  <button
-    class="emotion-0 emotion-1"
-  >
-    Clicked: 0
-  </button>
-</div>
+  Clicked: 0
+</button>
 `;
 
 exports[`Storyshots Core|Parameters adds data to storyFn 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <pre>
-    [
+<pre>
+  [
   {
     "kind": "Core|Parameters",
     "name": "adds data to storyFn",
@@ -67,9 +18,13 @@ exports[`Storyshots Core|Parameters adds data to storyFn 1`] = `
       "fileName": "/Users/dev/Projects/GitHub/storybook/core/examples/official-storybook/stories/core.stories.js",
       "a11y": {},
       "options": {
-        "name": "Storybook",
+        "name": "Custom Storybook",
         "hierarchySeparator": {},
-        "hierarchyRootSeparator": "|"
+        "hierarchyRootSeparator": "|",
+        "selectedAddonPanel": "storybook/actions/panel",
+        "selectedPanel": "storybook/background/panel",
+        "panel": "storybook/actions/panel",
+        "showPanel": false
       },
       "viewports": {
         "iphone5": {
@@ -228,32 +183,25 @@ exports[`Storyshots Core|Parameters adds data to storyFn 1`] = `
     "decoratorParameter": "decoratorParameter"
   }
 ]
-  </pre>
-</div>
+</pre>
 `;
 
 exports[`Storyshots Core|Parameters passed to story 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
->
-  <div>
-    <p>
-      Parameters are
-    </p>
-    <pre>
-      {
+Array [
+  <p>
+    Parameters are
+  </p>,
+  <pre>
+    {
   "a11y": {},
   "options": {
-    "name": "Storybook",
+    "name": "Custom Storybook",
     "hierarchySeparator": {},
-    "hierarchyRootSeparator": "|"
+    "hierarchyRootSeparator": "|",
+    "selectedAddonPanel": "storybook/actions/panel",
+    "selectedPanel": "storybook/background/panel",
+    "panel": "storybook/actions/panel",
+    "showPanel": false
   },
   "viewports": {
     "iphone5": {
@@ -405,7 +353,6 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
   "chapterParameter": "chapterParameter",
   "storyParameter": "storyParameter"
 }
-    </pre>
-  </div>
-</div>
+  </pre>,
+]
 `;

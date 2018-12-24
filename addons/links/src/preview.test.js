@@ -1,4 +1,5 @@
 import addons from '@storybook/addons';
+import { SELECT_STORY } from '@storybook/core-events';
 import { linkTo, hrefTo } from './preview';
 import EVENTS from './constants';
 
@@ -9,7 +10,11 @@ export const mockChannel = () => {
   return {
     emit(id, payload) {
       if (id === EVENTS.REQUEST) {
-        cb(`?selectedKind=${payload.kind}&selectedStory=${payload.story}`);
+        cb(
+          Object.values(payload)
+            .map(item => item.toString().toLowerCase())
+            .join('-')
+        );
       }
     },
     on(id, callback) {
@@ -31,12 +36,12 @@ describe('preview', () => {
       const channel = { emit: jest.fn() };
       addons.getChannel.mockReturnValue(channel);
 
-      const handler = linkTo('kind', 'story');
+      const handler = linkTo('kind', 'name');
       handler();
 
-      expect(channel.emit).toHaveBeenCalledWith(EVENTS.NAVIGATE, {
+      expect(channel.emit).toHaveBeenCalledWith(SELECT_STORY, {
         kind: 'kind',
-        story: 'story',
+        story: 'name',
       });
     });
 
@@ -45,12 +50,15 @@ describe('preview', () => {
       addons.getChannel.mockReturnValue(channel);
 
       const handler = linkTo((a, b) => a + b, (a, b) => b + a);
-      handler('foo', 'bar');
+      handler('kind', 'name');
 
-      expect(channel.emit).toHaveBeenCalledWith(EVENTS.NAVIGATE, {
-        kind: 'foobar',
-        story: 'barfoo',
-      });
+      expect(channel.emit.mock.calls).toContainEqual([
+        SELECT_STORY,
+        {
+          kind: 'kindname',
+          story: 'namekind',
+        },
+      ]);
     });
   });
 
@@ -59,8 +67,8 @@ describe('preview', () => {
       const channel = mockChannel();
       addons.getChannel.mockReturnValue(channel);
 
-      const href = await hrefTo('kind', 'story');
-      expect(href).toBe('?selectedKind=kind&selectedStory=story');
+      const href = await hrefTo('kind', 'name');
+      expect(href).toContain('?id=kind-name');
     });
   });
 });
