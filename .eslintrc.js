@@ -85,7 +85,7 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': [
       error,
       {
-        components: ['RoutedLink', 'LinkTo', 'Link'],
+        components: ['A', 'LinkTo', 'Link'],
         specialLink: ['overrideParams', 'kind', 'story', 'to'],
       },
     ],

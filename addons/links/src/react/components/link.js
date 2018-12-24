@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { RoutedLink } from '@storybook/components';
+import { Typography } from '@storybook/components';
 import { navigate, hrefTo } from '../../preview';
 
 export default class LinkTo extends PureComponent {
@@ -38,7 +38,7 @@ export default class LinkTo extends PureComponent {
     const { kind, story, ...rest } = this.props;
     const { href } = this.state;
 
-    return <RoutedLink href={href} onClick={this.handleClick} {...rest} />;
+    return <Typography.Link cancel href={href} onClick={this.handleClick} {...rest} />;
   }
 }
 

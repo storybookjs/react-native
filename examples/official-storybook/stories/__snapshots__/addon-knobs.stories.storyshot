@@ -30,9 +30,7 @@ Array [
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs optionsKnob 1`] = `
-<div
-  style="color:white"
->
+<div>
   <p>
     Weekday: Tuesday
   </p>

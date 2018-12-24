@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Core|Errors story errors 1`] = `null`;
+
+exports[`Storyshots Core|Events Force re-render 1`] = `
+<button
+  class="css-1pzmux7-Button e1lk8yn73"
+>
+  Clicked: 0
+</button>
+`;
+
+exports[`Storyshots Core|Parameters passed to story 1`] = `
+<div>
+  Parameters are {"globalParameter":"globalParameter","chapterParameter":"chapterParameter","decoratorParameter":"decoratorParameter","storyParameter":"storyParameter"}
+</div>
+`;
