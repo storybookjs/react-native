@@ -1,1 +1,1 @@
-require('./dist/register.jsx');
+require('./dist/register.js');
