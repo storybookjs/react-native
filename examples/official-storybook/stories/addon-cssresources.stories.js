@@ -33,7 +33,7 @@ storiesOf('Addons|Cssresources', module)
       {
         id: `whitetheme`,
         code: `<style>.fa { color: #fff }</style>`,
-        picked: true,
+        picked: false,
       },
     ],
   })

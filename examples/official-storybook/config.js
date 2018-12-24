@@ -39,10 +39,12 @@ addDecorator(withNotes);
 const Reset = withTheme(({ theme }) => (
   <Global
     styles={{
-      fontFamily: theme.mainTextFace,
-      color: theme.mainTextColor,
-      WebkitFontSmoothing: 'antialiased',
-      fontSize: theme.mainTextSize,
+      body: {
+        fontFamily: theme.mainTextFace,
+        color: theme.mainTextColor,
+        WebkitFontSmoothing: 'antialiased',
+        fontSize: theme.mainTextSize,
+      },
     }}
   />
 ));
