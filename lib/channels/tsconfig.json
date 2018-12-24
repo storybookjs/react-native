@@ -4,10 +4,9 @@
     "rootDir": "./src"
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
+    "src/**/*"
   ],
   "exclude": [
-    "src/index.test.ts"
+    "src/**.test.ts"
   ]
 }
