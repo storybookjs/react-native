@@ -259,7 +259,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
     });
 
     return (
-      <div style={{ color: 'white' }}>
+      <div>
         <p>Weekday: {optionRadio}</p>
         <p>Weekend: {optionInlineRadio}</p>
         <p>Month: {optionSelect}</p>
