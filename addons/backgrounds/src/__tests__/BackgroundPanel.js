@@ -52,7 +52,7 @@ describe('Background Panel', () => {
     mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} active />);
     SpiedChannel.emit(Events.SET, backgrounds);
 
-    expect(mockedApi.getQueryParam).toBeCalledWith('background');
+    expect(mockedApi.getQueryParam).toHaveBeenCalledWith('background');
   });
 
   it('should not unset the query string', () => {

@@ -51,7 +51,7 @@ describe('Options', () => {
 
       firstInput.simulate('change');
 
-      expect(mockOn).toBeCalled();
+      expect(mockOn).toHaveBeenCalled();
       expect(wrapper.props().knob.defaultValue).toEqual(['#0ff', '#f00']);
     });
   });
@@ -92,7 +92,7 @@ describe('Options', () => {
 
     it('updates on change event', () => {
       firstInput.simulate('change');
-      expect(mockOn).toBeCalled();
+      expect(mockOn).toHaveBeenCalled();
     });
   });
 
@@ -124,7 +124,7 @@ describe('Options', () => {
       selectInput.simulate('keyDown', { key: 'Enter', keyCode: 13 });
 
       // selectInput.simulate('change');
-      expect(mockOn).toBeCalled();
+      expect(mockOn).toHaveBeenCalled();
     });
   });
 });
