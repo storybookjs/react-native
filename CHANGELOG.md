@@ -4,7 +4,6 @@
 
 * React: Fix error with new CRA Webpack config ([#5074](https://github.com/storybooks/storybook/pull/5074))
 * Core: Load Symbol polyfill before any other code ([#5082](https://github.com/storybooks/storybook/pull/5082))
-* Addon-info: Display description when story name matches component ([#4863](https://github.com/storybooks/storybook/pull/4863))
 
 ### Dependency Upgrades
 
