@@ -1032,17 +1032,17 @@
   resolved "https://registry.yarnpkg.com/@snyk/gemfile/-/gemfile-1.1.0.tgz#8c254dfc7739b2e8513c44c976fc41872d5f6af0"
   integrity sha512-mLwF+ccuvRZMS0SxUAxA3dAp8mB3m2FxIsBIUWFTYvzxl+E4XTZb8uFrUqXHbcxhZH1Z8taHohNTbzXZn3M8ag==
 
-"@storybook/addon-actions@4.2.0-alpha.3":
-  version "4.2.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-4.2.0-alpha.3.tgz#ba5ef5d8379338e870583f80b5d3b8782ab7886b"
-  integrity sha512-7wqhaM/yDxKZeasQqjTsEjcDKWsJrkCKYx/1gzvQi3NqpctvdOzFyAKKDB0LDbEUPNdOdXUsPV5zm+jlXzw98g==
+"@storybook/addon-actions@4.2.0-cra-debug.0":
+  version "4.2.0-cra-debug.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-4.2.0-cra-debug.0.tgz#7c8875cd3310f89fda048187dee5636def2aa2dc"
+  integrity sha512-QG3j1eiBJX06nWcKL52Yjsv5Fa1j+G+0QkCu2W5eqRqPPI0Hgux5moxzrbBQ/OvVlw62y26aE1Uj2HGt1muaZg==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.2.0-alpha.3"
-    "@storybook/components" "4.2.0-alpha.3"
-    "@storybook/core-events" "4.2.0-alpha.3"
+    "@storybook/addons" "4.2.0-cra-debug.0"
+    "@storybook/components" "4.2.0-cra-debug.0"
+    "@storybook/core-events" "4.2.0-cra-debug.0"
     core-js "^2.5.7"
     deep-equal "^1.0.1"
     global "^4.3.2"
@@ -1074,6 +1074,16 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
+"@storybook/addons@4.2.0-cra-debug.0":
+  version "4.2.0-cra-debug.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.2.0-cra-debug.0.tgz#b247654e7fdf5d34580ae3e4f13369f24bca909f"
+  integrity sha512-4qYARQHu6qrvYGs9oy3oWG6Z6ZLtsPap9gPAsR4RaAL4vlCCQpo3TdFDx8zpTzmjJ3gBgkkx6cRbGsVLEdLXLg==
+  dependencies:
+    "@storybook/channels" "4.2.0-cra-debug.0"
+    "@storybook/components" "4.2.0-cra-debug.0"
+    global "^4.3.2"
+    util-deprecate "^1.0.2"
+
 "@storybook/channel-postmessage@4.2.0-alpha.3":
   version "4.2.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-4.2.0-alpha.3.tgz#5cccc6a43aac260e449cedd4248d1b2723e5dfe3"
@@ -1087,6 +1097,11 @@
   version "4.2.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-4.2.0-alpha.3.tgz#79a0154121e3dafcccd6d121f152a6ec31fec62a"
   integrity sha512-QpotHBGO5kXpvHIFDotkInjXNiAPsGjCTVFXHg7Veu4DLnbebO5URhioe3i6Ig8Y7uxB/9EyFtuxZIH0GXImQw==
+
+"@storybook/channels@4.2.0-cra-debug.0":
+  version "4.2.0-cra-debug.0"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-4.2.0-cra-debug.0.tgz#74170b5f5ace31560601a07fefdad9c47cfb4e2f"
+  integrity sha512-1FDOM62j/W8jIC6wF6LnOCYVsS2U30mpgJTEU1FQ6efD84bClkGDvBtk+VQv9u5E0KSxmfn2BMJW+FtLOoiwaA==
 
 "@storybook/client-logger@4.2.0-alpha.3":
   version "4.2.0-alpha.3"
@@ -1109,10 +1124,31 @@
     react-textarea-autosize "^7.0.4"
     render-fragment "^0.1.1"
 
+"@storybook/components@4.2.0-cra-debug.0":
+  version "4.2.0-cra-debug.0"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-4.2.0-cra-debug.0.tgz#71b113c9a0fe588e3e4823a42871e8edc25c992e"
+  integrity sha512-TclQzNFIOH90NWmTIZcABKh0DD0HKlYXolAIZdAYHmdlxmOL92ZVDPu1ZvRsgWxz9vjsdP4Ris15+/RnKBsRGA==
+  dependencies:
+    "@emotion/core" "^0.13.1"
+    "@emotion/provider" "^0.11.2"
+    "@emotion/styled" "^0.10.6"
+    global "^4.3.2"
+    lodash "^4.17.11"
+    prop-types "^15.6.2"
+    react-inspector "^2.3.0"
+    react-split-pane "^0.1.84"
+    react-textarea-autosize "^7.0.4"
+    render-fragment "^0.1.1"
+
 "@storybook/core-events@4.2.0-alpha.3":
   version "4.2.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-4.2.0-alpha.3.tgz#3a84bfda57810b4f649965b1deb85247e591601d"
   integrity sha512-s09UMgBESy+xSG5ngLGW0o3WKfzCWZ+DPnYRJ78EQUnslMPewsTjPTo8MsVdD27ngVpndMvQq/qTmlcGzrEDnw==
+
+"@storybook/core-events@4.2.0-cra-debug.0":
+  version "4.2.0-cra-debug.0"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-4.2.0-cra-debug.0.tgz#72946408e45d94587b67fdee890e9ba2c028d73f"
+  integrity sha512-KWKlKOtpS7W7lgSpcMSc5cQnGyZBmaZywVhFN3nktSL+gASwvuVyOzqEoZuwGEBiEesoA5vXEr1WgfLwMd0P1w==
 
 "@storybook/core@4.2.0-alpha.3":
   version "4.2.0-alpha.3"
