@@ -1,5 +1,6 @@
 import fs from 'fs';
-import { getReactScriptsPath } from './cra-config';
+import { getReactScriptsPath, getTypeScriptRules } from './cra-config';
+import mockRules from './__mocks__/mockRules';
 
 jest.mock('fs', () => ({
   realpathSync: jest.fn(),
@@ -39,6 +40,21 @@ describe('cra-config', () => {
       expect(getReactScriptsPath({ noCache: true })).toEqual(
         '/test-project/node_modules/custom-react-scripts'
       );
+    });
+  });
+
+  describe('when used with TypeScript', () => {
+    const rules = getTypeScriptRules(mockRules, './.storybook');
+
+    it('should return the correct config', () => {
+      // Normalise the return, as we know our new rules object will be an array, whereas a string is expected.
+      const rulesObject = { ...rules[0], include: rules[0].include[0] };
+      expect(rulesObject).toMatchObject(mockRules[2].oneOf[1]);
+    });
+
+    // Allows using TypeScript in the `.storybook` (or config) folder.
+    it('should add the Storybook config directory to `include`', () => {
+      expect(rules[0].include.findIndex(string => string.includes('.storybook'))).toEqual(1);
     });
   });
 });

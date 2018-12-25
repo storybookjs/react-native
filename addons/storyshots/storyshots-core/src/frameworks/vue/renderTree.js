@@ -2,12 +2,15 @@
 import Vue from 'vue';
 
 function getRenderedTree(story, context) {
-  const storyElement = story.render(context);
+  const component = story.render(context);
 
-  const Constructor = Vue.extend(storyElement);
-  const vm = new Constructor().$mount();
+  const vm = new Vue({
+    render(h) {
+      return h(component);
+    },
+  });
 
-  return vm.$el;
+  return vm.$mount().$el;
 }
 
 export default getRenderedTree;

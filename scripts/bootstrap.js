@@ -48,12 +48,14 @@ const createTask = ({ defaultValue, option, name, check = () => true, command, p
   check: check || (() => true),
   command: () => {
     // run all pre tasks
-    // eslint-disable-next-line no-use-before-define
-    pre.map(key => tasks[key]).forEach(task => {
-      if (!task.check()) {
-        task.command();
-      }
-    });
+    pre
+      // eslint-disable-next-line no-use-before-define
+      .map(key => tasks[key])
+      .forEach(task => {
+        if (!task.check()) {
+          task.command();
+        }
+      });
 
     log.info(prefix, name);
     command();

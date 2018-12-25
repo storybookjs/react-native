@@ -85,15 +85,18 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -244,7 +247,9 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -273,7 +278,9 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -298,7 +305,9 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -327,7 +336,449 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    <span
+                      style="color:#666"
+                    >
+                      {}
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info.ForwardRef Displays forwarded ref components correctly 1`] = `
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: .88em;
+  font-family: Menlo,Monaco,"Courier New",monospace;
+  background-color: #fafafa;
+  padding: .5rem;
+  line-height: 1.5;
+  overflow-x: scroll;
+}
+
+.emotion-2 {
+  overflow: hidden;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 3px 10px;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-2:hover {
+  background-color: #f4f7fa;
+  border-color: #ddd;
+}
+
+.emotion-2:active {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+.emotion-0 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  height: 16px;
+  -webkit-transform: translateY(-100%) translateY(-6px);
+  -ms-transform: translateY(-100%) translateY(-6px);
+  transform: translateY(-100%) translateY(-6px);
+}
+
+.emotion-56 {
+  border-collapse: collapse;
+}
+
+.emotion-6 {
+  padding: 2px 6px;
+  border: 1px solid #ccc;
+}
+
+.emotion-16 {
+  padding: 2px 6px;
+  border: 1px solid #ccc;
+  white-space: nowrap;
+  font-family: Monaco,Consolas,"Courier New",monospace;
+}
+
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <button
+      type="button"
+    >
+      Forwarded Ref Button
+    </button>
+  </div>
+  <button
+    class="info__show-button"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    class="info__overlay"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      class="info__close-button"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Addons|Info.ForwardRef
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            Displays forwarded ref components correctly
+          </h2>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <pre
+            class="emotion-4 emotion-5"
+          >
+            <div>
+              <div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
+                >
+                  <span
+                    style="color:#444"
+                  >
+                    &lt;ForwardRef
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span>
+                        label
+                      </span>
+                      <span>
+                        =
+                        <span>
+                          "
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            Forwarded Ref Button
+                          </span>
+                          "
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span
+                    style="color:#444"
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
+                >
+                  <span
+                    style="color:#444"
+                  >
+                    &lt;BaseButton
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span>
+                        label
+                      </span>
+                      <span>
+                        =
+                        <span>
+                          "
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            Forwarded Ref Button
+                          </span>
+                          "
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span>
+                        onClick
+                      </span>
+                      <span>
+                        =
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            onClick
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span>
+                        style
+                      </span>
+                      <span>
+                        =
+                        <span>
+                          {
+                          <span
+                            style="color:#666"
+                          >
+                            {}
+                          </span>
+                          }
+                        </span>
+                      </span>
+                       
+                    </span>
+                  </span>
+                  <span
+                    style="color:#444"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
+                >
+                  <span
+                    style="color:#444"
+                  >
+                    &lt;/ForwardRef&gt;
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="emotion-2 emotion-3"
+            >
+              <div
+                class="emotion-0 emotion-1"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "BaseButton" Component
+            </h2>
+            <table
+              class="emotion-56 emotion-57"
+            >
+              <thead>
+                <tr>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    property
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    propType
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    required
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    default
+                  </th>
+                  <th
+                    class="emotion-6 emotion-7"
+                  >
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      bool
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    <span
+                      style="color:#a11"
+                    >
+                      false
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    label
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      string
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    yes
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      func
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  >
+                    <span
+                      style="color:#170"
+                    >
+                      onClick
+                    </span>
+                  </td>
+                  <td
+                    class="emotion-6 emotion-17"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    style
+                  </td>
+                  <td
+                    class="emotion-16 emotion-17"
+                  >
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -427,15 +878,18 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
     </div>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -671,15 +1125,18 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -864,7 +1321,9 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -893,7 +1352,9 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -918,7 +1379,9 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -947,7 +1410,9 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -1062,15 +1527,18 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -1270,7 +1738,9 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -1299,7 +1769,9 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -1324,7 +1796,9 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -1353,7 +1827,9 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -1468,15 +1944,18 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -1645,7 +2124,9 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -1674,7 +2155,9 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -1699,7 +2182,9 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -1728,7 +2213,9 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -1843,15 +2330,18 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -2032,7 +2522,9 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -2061,7 +2553,9 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -2086,7 +2580,9 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -2115,7 +2611,9 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -2214,15 +2712,18 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -2476,15 +2977,18 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -2635,7 +3139,9 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -2664,7 +3170,9 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -2693,7 +3201,9 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -2808,15 +3318,18 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -2953,7 +3466,9 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -2982,7 +3497,9 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -3007,7 +3524,9 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -3036,7 +3555,9 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -3301,7 +3822,9 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    bool
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -3330,7 +3853,9 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    string
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -3355,7 +3880,9 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    func
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -3384,7 +3911,9 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    other
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -4348,7 +4877,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    bool
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -4377,7 +4908,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    string
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -4402,7 +4935,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    func
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -4431,7 +4966,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    other
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -5211,7 +5748,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    bool
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -5240,7 +5779,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    string
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -5265,7 +5806,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    func
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -5294,7 +5837,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    other
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -5408,15 +5953,18 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -5567,7 +6115,9 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -5596,7 +6146,9 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -5621,7 +6173,9 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -5650,7 +6204,9 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -5876,15 +6432,18 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
     </div>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -6096,7 +6655,9 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -6125,7 +6686,9 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -6150,7 +6713,9 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -6179,7 +6744,9 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -6237,15 +6804,18 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -6332,7 +6902,9 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
                   <td
                     class="emotion-10 emotion-11"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-0 emotion-11"
@@ -6361,7 +6933,9 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
                   <td
                     class="emotion-10 emotion-11"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-0 emotion-11"
@@ -6386,7 +6960,9 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
                   <td
                     class="emotion-10 emotion-11"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-0 emotion-11"
@@ -6415,7 +6991,9 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
                   <td
                     class="emotion-10 emotion-11"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-0 emotion-11"
@@ -6530,15 +7108,18 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:purple;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:purple;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -6680,7 +7261,9 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -6709,7 +7292,9 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -6734,7 +7319,9 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -6763,7 +7350,9 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -6878,15 +7467,18 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -7028,7 +7620,9 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -7057,7 +7651,9 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -7082,7 +7678,9 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -7111,7 +7709,9 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -7234,15 +7834,18 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -7442,7 +8045,9 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -7471,7 +8076,9 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -7496,7 +8103,9 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -7525,7 +8134,9 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -7819,7 +8430,9 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    bool
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -7848,7 +8461,9 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    string
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -7873,7 +8488,9 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    func
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -7902,7 +8519,9 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    other
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -8166,7 +8785,9 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    bool
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -8195,7 +8816,9 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    func
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -8224,7 +8847,9 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    other
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -8488,7 +9113,9 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    bool
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -8517,7 +9144,9 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    string
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -8542,7 +9171,9 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    func
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -8571,7 +9202,9 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
                 <td
                   class="emotion-16 emotion-17"
                 >
-                  <span />
+                  <span>
+                    other
+                  </span>
                 </td>
                 <td
                   class="emotion-6 emotion-17"
@@ -8685,15 +9318,18 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -9010,15 +9646,18 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -9388,7 +10027,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9417,7 +10058,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9442,7 +10085,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9471,7 +10116,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9514,7 +10161,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9599,7 +10248,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      object
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9642,7 +10293,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9737,7 +10390,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9790,7 +10445,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9819,7 +10476,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9848,7 +10507,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9877,7 +10538,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -9906,7 +10569,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -10021,15 +10686,18 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -10198,7 +10866,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -10227,7 +10897,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -10252,7 +10924,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -10281,7 +10955,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -10398,15 +11074,18 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
     </div>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -10575,7 +11254,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -10604,7 +11285,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -10629,7 +11312,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -10658,7 +11343,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -10773,15 +11460,18 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
     </button>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -10981,7 +11671,9 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -11010,7 +11702,9 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -11035,7 +11729,9 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      func
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -11064,7 +11760,9 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"

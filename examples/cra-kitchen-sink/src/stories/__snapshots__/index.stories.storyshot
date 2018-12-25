@@ -73,15 +73,18 @@ exports[`Storyshots Button addons composition 1`] = `
     </div>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -334,15 +337,18 @@ exports[`Storyshots Button with new info 1`] = `
     </div>
   </div>
   <button
+    class="info__show-button"
     style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
+    class="info__overlay"
     style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
+      class="info__close-button"
       style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
@@ -544,7 +550,9 @@ exports[`Storyshots Button with new info 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      node
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -569,7 +577,9 @@ exports[`Storyshots Button with new info 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      bool
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -598,7 +608,9 @@ exports[`Storyshots Button with new info 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      other
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"
@@ -655,7 +667,9 @@ exports[`Storyshots Button with new info 1`] = `
                   <td
                     class="emotion-16 emotion-17"
                   >
-                    <span />
+                    <span>
+                      string
+                    </span>
                   </td>
                   <td
                     class="emotion-6 emotion-17"

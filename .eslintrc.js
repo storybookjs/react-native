@@ -50,6 +50,7 @@ module.exports = {
       {
         js: 'never',
         ts: 'never',
+        mjs: 'never',
       },
     ],
     'import/no-extraneous-dependencies': [
@@ -77,7 +78,7 @@ module.exports = {
     'react/jsx-filename-extension': [
       warn,
       {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.tsx'],
       },
     ],
     'react/jsx-no-bind': [
@@ -124,7 +125,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/__tests__/**', '**/*.test.js/**', '**/*.spec.js/**'],
+      files: ['**/__tests__/**', '**/*.test.js/**'],
       rules: {
         'import/no-extraneous-dependencies': ignore,
       },

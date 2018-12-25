@@ -1,3 +1,165 @@
+## 4.2.0-alpha.6 (December 20, 2018)
+
+### Features
+
+* React-Native: Change on-device layout to absolute position ([#4962](https://github.com/storybooks/storybook/pull/4962))
+* Addon-Info: add css classes for style overrides ([#4589](https://github.com/storybooks/storybook/pull/4589))
+
+### Bug Fixes
+
+* Addon-Info: Display description when story name matches component ([#4863](https://github.com/storybooks/storybook/pull/4863))
+* React-Native: Disable warning if story is not set in async storage ([#5068](https://github.com/storybooks/storybook/pull/5068))
+* React-Native: Fixed isUIHidden param ([#5067](https://github.com/storybooks/storybook/pull/5067))
+* Vue: Fix reloading and story decoration ([#5057](https://github.com/storybooks/storybook/pull/5057))
+
+### Maintenance
+
+* TypeScript: migrate @storybook/channels to typescript ([#4977](https://github.com/storybooks/storybook/pull/4977))
+
+### Dependency Upgrades
+
+* Bump babel-plugin-macros from 2.4.2 to 2.4.3 ([#5060](https://github.com/storybooks/storybook/pull/5060))
+* Bump @babel/core from 7.2.0 to 7.2.2 ([#5059](https://github.com/storybooks/storybook/pull/5059))
+* Bump ember-cli-htmlbars-inline-precompile from 1.0.5 to 2.1.0 ([#5064](https://github.com/storybooks/storybook/pull/5064))
+* Bump react-test-renderer from 16.6.3 to 16.7.0 ([#5063](https://github.com/storybooks/storybook/pull/5063))
+* Bump autoprefixer from 9.4.2 to 9.4.3 ([#5061](https://github.com/storybooks/storybook/pull/5061))
+
+## 4.2.0-alpha.5 (December 19, 2018)
+
+### Bug Fixes
+
+* React: Remove unnecessary dependencies, fix aliasing ([#5047](https://github.com/storybooks/storybook/pull/5047))
+
+### Dependency Upgrades
+
+* Bump @types/node from 10.12.14 to 10.12.17 ([#5045](https://github.com/storybooks/storybook/pull/5045))
+* Bump ember-source from 3.5.1 to 3.6.1 ([#5044](https://github.com/storybooks/storybook/pull/5044))
+
+## 4.2.0-alpha.4 (December 18, 2018)
+
+### Bug Fixes
+
+* React: fix alias for react(-dom) to resolve to the user's version ([#5042](https://github.com/storybooks/storybook/pull/5042))
+
+### Dependency Upgrades
+
+* Bump husky from 1.2.0 to 1.3.0 ([#5038](https://github.com/storybooks/storybook/pull/5038))
+* Bump fork-ts-checker-webpack-plugin from 0.4.15 to 0.5.2 ([#5037](https://github.com/storybooks/storybook/pull/5037))
+
+## 4.2.0-alpha.3 (December 18, 2018)
+
+### Bug Fixes
+
+* React: add alias to react & react-dom ([#5016](https://github.com/storybooks/storybook/pull/5016))
+* Addon-knobs: fix color picker display ([#5010](https://github.com/storybooks/storybook/pull/5010))
+
+## 4.2.0-alpha.2 (December 16, 2018)
+
+### Features
+
+* Addon-Info: add markdown support for jsdoc comments ([#4983](https://github.com/storybooks/storybook/pull/4983))
+* Addon-Storysource: support Flow ([#4971](https://github.com/storybooks/storybook/pull/4971))
+
+### Maintenance
+
+* Make applyPresets function signature more consistent ([#4988](https://github.com/storybooks/storybook/pull/4988))
+
+### Dependency Upgrades
+
+* RESET lockfile ([#4991](https://github.com/storybooks/storybook/pull/4991))
+
+## 4.1.2 (December 15, 2018)
+
+### Bug Fixes
+
+* Addon-Knob: Add missing key property in Panel ([#4507](https://github.com/storybooks/storybook/pull/4507))
+* Fix package version dependencies ([#4960](https://github.com/storybooks/storybook/pull/4960))
+
+## 4.2.0-alpha.1 (December 12, 2018)
+
+Fixes 4.2.0-alpha.0
+
+### Features
+
+* Addon-info: add forwardRef support ([#4961](https://github.com/storybooks/storybook/pull/4961))
+
+### Bug Fixes
+
+* Addon-knobs: Add missing key property in Panel ([#4507](https://github.com/storybooks/storybook/pull/4507))
+
+### Maintenance
+
+* Addon-notes: Migrated to TypeScript ([#4758](https://github.com/storybooks/storybook/pull/4758))
+
+### Dependency Upgrades
+
+* Fix: Add missing peer dependencies to addon-knobs ([#4928](https://github.com/storybooks/storybook/pull/4928))
+
+## 4.2.0-alpha.0 (December 12, 2018)
+
+Bad release
+
+## 4.1.1 (December 12, 2018)
+
+### Bug Fixes
+
+* FIX react native by adding an empty array named dlls to the templateParameters ([#4985](https://github.com/storybooks/storybook/pull/4985))
+
+## 4.1.0 (December 12, 2018)
+
+Storybook 4.1 with performance and compatibility improvements! Highlights include:
+
+* Core: Performance optimizations on separate manager preview split, improved cold start, restart & rebuild ([#4834](https://github.com/storybooks/storybook/pull/4834))
+* React: add support for all versions of react ([#4808](https://github.com/storybooks/storybook/pull/4808))
+* Addon-CSSResources: new adddon to dynamically add/remove css ([#4622](https://github.com/storybooks/storybook/pull/4622))
+* React: use babel presets/plugins based on CRA. ([#4836](https://github.com/storybooks/storybook/pull/4836))
+* React-native: Add ability to filter story list ([#4806](https://github.com/storybooks/storybook/pull/4806))
+* React: Add TypeScript support for react-scripts ([#4824](https://github.com/storybooks/storybook/pull/4824))
+
+There are dozens more fixes, features, and tweaks in the 4.1 release. See changelogs for `4.1.0-*` for details.
+
+## 4.1.0-alpha.13 (December 12, 2018)
+
+### Maintenance
+
+* React-native: add core-js to addons ([#4981](https://github.com/storybooks/storybook/pull/4981))
+
+## 4.1.0-alpha.12 (December 11, 2018)
+
+### Bug Fixes
+
+* Fix storyshots by compiling JS modules ([#4967](https://github.com/storybooks/storybook/pull/4967))
+* Angular: move 'core-js/modules/es6.promise' into storyshots ([#4929](https://github.com/storybooks/storybook/pull/4929))
+
+## 4.0.12 (December 5, 2018)
+
+### Bug Fixes
+
+* Addon-a11y: Fix runtime errors in older browsers ([#4904](https://github.com/storybooks/storybook/pull/4904))
+
+## 4.1.0-alpha.11 (December 5, 2018)
+
+### Features
+
+* Add CRA TypeScript support for .storybook folder ([#4902](https://github.com/storybooks/storybook/pull/4902))
+
+### Bug Fixes
+
+* React-native: Fix async storage ([#4907](https://github.com/storybooks/storybook/pull/4907))
+* Core: replace babel/runtime with core-js to fix some aliasing issues ([#4900](https://github.com/storybooks/storybook/pull/4900))
+
+### Maintenance
+
+* Core: More granular methods separation in "build-static" and "build-dev" ([#4919](https://github.com/storybooks/storybook/pull/4919))
+* Examples: replace deprecated setOptions with withOptions ([#4899](https://github.com/storybooks/storybook/pull/4899))
+
+## 4.0.11 (December 3, 2018)
+
+### Bug Fixes
+
+* Restore index.html in cra-kitchen-sink ([#4856](https://github.com/storybooks/storybook/pull/4856))
+* Add try, catch for IE11 as it breaks script execution ([#4870](https://github.com/storybooks/storybook/pull/4870))
+
 ## 4.0.10 (December 2, 2018)
 
 Fixes 4.0.9

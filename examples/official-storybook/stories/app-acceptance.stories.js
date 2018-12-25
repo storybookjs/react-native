@@ -25,6 +25,7 @@ const style = {
   'mithril-kitchen-sink',
   'html-kitchen-sink',
   'riot-kitchen-sink',
+  'preact-kitchen-sink',
 ].forEach(name => {
   chapter.add(
     name,
