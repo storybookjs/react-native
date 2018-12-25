@@ -24,7 +24,7 @@
     "@storybook/addons": "4.2.0-alpha.3",
     "@storybook/react": "4.2.0-alpha.3",
     "babel-loader": "^6.4.1",
-    "bootstrap": "^4.1.3",
+    "bootstrap": "^4.2.1",
     "common-tags": "^1.8.0",
     "gatsby": "^1.9.279",
     "gatsby-link": "^1.6.45",
