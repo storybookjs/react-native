@@ -28,6 +28,7 @@ function ensureOptionsDefaults(options) {
     storyKindRegex,
     renderer,
     serializer,
+    snapshotSerializers,
     stories2snapsConverter = defaultStories2SnapsConverter,
     test: testMethod = snapshotWithOptions({ renderer, serializer }),
   } = options;
@@ -41,6 +42,7 @@ function ensureOptionsDefaults(options) {
     storyKindRegex,
     stories2snapsConverter,
     testMethod,
+    snapshotSerializers,
     integrityOptions,
   };
 }

@@ -12,10 +12,10 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
     name = "Examples"
 
     artifactRules = """
-${StorybookApp.values().map { it.artifactPath }.joinToString("\n")}
-examples/official-storybook/storybook-static => official.zip
-examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapshots
-""".trimIndent()
+        ${StorybookApp.values().map { it.artifactPath }.joinToString("\n")}
+        examples/official-storybook/storybook-static => official.zip
+        examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapshots
+    """.trimIndent()
 
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
@@ -24,20 +24,13 @@ examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapsho
 
     steps {
         script {
-            name = "Bootstrap"
-            scriptContent = """
-                yarn
-                yarn bootstrap --core
-            """.trimIndent()
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
             name = "official-storybook"
             scriptContent = """
                 #!/bin/sh
                 
                 set -e -x
-                
+
+                yarn
                 cd examples/official-storybook
                 rm -rf storybook-static
                 yarn build-storybook
@@ -90,6 +83,15 @@ examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapsho
     }
 
     dependencies {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+            snapshot {
+                onDependencyFailure = FailureAction.FAIL_TO_START
+            }
+
+            artifacts {
+                artifactRules = "dist.zip!**"
+            }
+        }
         allApps {
             dependency(config) {
                 snapshot {}

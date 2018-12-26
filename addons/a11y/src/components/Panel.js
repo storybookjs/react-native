@@ -19,6 +19,12 @@ const Violations = styled.span(({ theme }) => ({
   color: theme.failColor,
 }));
 
+const PanelWrapper = styled.div({
+  height: '100%',
+  overflow: 'auto',
+  width: '100%',
+});
+
 class Panel extends Component {
   static propTypes = {
     active: PropTypes.bool.isRequired,
@@ -78,7 +84,7 @@ class Panel extends Component {
     const { active } = this.props;
 
     return active ? (
-      <div>
+      <PanelWrapper>
         <Tabs
           tabs={[
             {
@@ -94,7 +100,7 @@ class Panel extends Component {
         <ActionBar>
           <ActionButton onClick={this.requestCheck}>RERUN TEST</ActionButton>
         </ActionBar>
-      </div>
+      </PanelWrapper>
     ) : null;
   }
 }

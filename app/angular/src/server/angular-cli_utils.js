@@ -23,12 +23,44 @@ function getAssetsParts(resolvedAssetPath, assetPath) {
   };
 }
 
+function isStylingRule(rule) {
+  const { test } = rule;
+
+  if (!test) {
+    return false;
+  }
+
+  if (!(test instanceof RegExp)) {
+    return false;
+  }
+
+  return test.test('.css') || test.test('.scss') || test.test('.sass');
+}
+
+export function filterOutStylingRules(config) {
+  return config.module.rules.filter(rule => !isStylingRule(rule));
+}
+
 export function isBuildAngularInstalled() {
   try {
     require.resolve('@angular-devkit/build-angular');
     return true;
   } catch (e) {
     return false;
+  }
+}
+
+export function getAngularCliParts(cliWebpackConfigOptions) {
+  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+  const ngCliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
+
+  try {
+    return {
+      cliCommonConfig: ngCliConfigFactory.getCommonConfig(cliWebpackConfigOptions),
+      cliStyleConfig: ngCliConfigFactory.getStylesConfig(cliWebpackConfigOptions),
+    };
+  } catch (e) {
+    return null;
   }
 }
 

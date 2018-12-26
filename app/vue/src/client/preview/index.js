@@ -1,25 +1,66 @@
 import { start } from '@storybook/core/client';
+import Vue from 'vue';
 
 import './globals';
-import render from './render';
+import render, { VALUES } from './render';
+import { extractProps } from './util';
 
-const createWrapperComponent = Target => ({
-  functional: true,
-  render(h, c) {
-    return h(Target, c.data, c.children);
-  },
-});
-const decorateStory = (getStory, decorators) =>
-  decorators.reduce(
-    (decorated, decorator) => context => {
-      const story = () => decorated(context);
-      const decoratedStory = decorator(story, context);
-      decoratedStory.components = decoratedStory.components || {};
-      decoratedStory.components.story = createWrapperComponent(story());
-      return decoratedStory;
+export const WRAPS = 'STORYBOOK_WRAPS';
+
+function prepare(rawStory, innerStory) {
+  let story = rawStory;
+  // eslint-disable-next-line no-underscore-dangle
+  if (!story._isVue) {
+    if (typeof story === 'string') {
+      story = { template: story };
+    }
+    if (innerStory) {
+      story.components = { ...(story.components || {}), story: innerStory };
+    }
+    story = Vue.extend(story);
+  } else if (story.options[WRAPS]) {
+    return story;
+  }
+
+  return Vue.extend({
+    [WRAPS]: story,
+    [VALUES]: { ...(innerStory ? innerStory.options[VALUES] : {}), ...extractProps(story) },
+    functional: true,
+    render(h, { data, parent, children }) {
+      return h(
+        story,
+        {
+          ...data,
+          props: { ...(data.props || {}), ...parent.$root[VALUES] },
+        },
+        children
+      );
     },
-    getStory
+  });
+}
+
+function decorateStory(getStory, decorators) {
+  return decorators.reduce(
+    (decorated, decorator) => context => {
+      let story;
+      const decoratedStory = decorator(() => {
+        story = decorated(context);
+        return story;
+      }, context);
+
+      if (!story) {
+        story = decorated(context);
+      }
+
+      if (decoratedStory === story) {
+        return story;
+      }
+
+      return prepare(decoratedStory, story);
+    },
+    context => prepare(getStory(context))
   );
+}
 
 const { clientApi, configApi, forceReRender } = start(render, { decorateStory });
 

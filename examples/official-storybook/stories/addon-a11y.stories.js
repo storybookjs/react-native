@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
 
 import { checkA11y } from '@storybook/addon-a11y';
 import BaseButton from '../components/BaseButton';
@@ -14,10 +13,7 @@ const text = 'Testing the a11y addon';
 
 storiesOf('Addons|a11y', module)
   .addDecorator(checkA11y)
-  .addDecorator(fn => {
-    setOptions({ selectedAddonPanel: '@storybook/addon-a11y/panel' });
-    return fn();
-  })
+  .addParameters({ options: { selectedAddonPanel: '@storybook/addon-a11y/panel' } })
   .add('Default', () => <BaseButton label="" />)
   .add('Label', () => <BaseButton label={text} />)
   .add('Disabled', () => <BaseButton disabled label={text} />)

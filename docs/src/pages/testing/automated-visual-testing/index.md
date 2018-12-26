@@ -61,18 +61,18 @@ Here's a sample Storybook we'd like to visually test:
 
 The Storybook UI has a bunch of elements you wouldn't want to include in your visual test. Besides being extraneous, your tests could incorrectly fail when you add a new, unrelated story or state because it would show up in the side menu.
 
-Instead, we'll want to render a component's story by itself. Let's assume the above Storybook runs on port 9009 and we can access it via http://localhost:9009/.
+Instead, we'll want to render a component's story by itself. Let's assume the above Storybook runs on port 9009 and we can access it via [http://localhost:9009/](http://localhost:9009/).
 
 Now let's pick a single story: the "with text" story of the Button.
 
-The URL for that story contains a number of query parameters, but the first two are the most important: http://localhost:9009/?selectedKind=Button&selectedStory=with+text
+The URL for that story contains a number of query parameters, but the first two are the most important: [http://localhost:9009/?selectedKind=Button&selectedStory=with+text](http://localhost:9009/?selectedKind=Button&selectedStory=with+text)
 
 - selectedKind=Button
 - selectedStory=with+text
 
 Using these two parameters we can generate the URL to render the story by itself. Instead of the URL's path being the homepage/index we use `/iframe.html`:
 
-http://localhost:9009/iframe.html?selectedKind=Button&selectedStory=with+text
+[http://localhost:9009/iframe.html?selectedKind=Button&selectedStory=with+text](http://localhost:9009/iframe.html?selectedKind=Button&selectedStory=with+text)
 
 ![Storybook iframe Screenshot](../static/storybook-iframe-screenshot.png)
 

@@ -1,7 +1,8 @@
 import { document } from 'global';
 import { unregister, tag2, mount } from 'riot';
 import compiler from 'riot-compiler';
-import { render } from './render-riot';
+import { render } from './rendering';
+import { asCompiledCode } from './compileStageFunctions';
 
 const rootElement = document.createElement('div');
 rootElement.id = 'root';
@@ -46,6 +47,14 @@ describe('render a riot element', () => {
     // does only work in true mode, and not in jest mode
   });
 
+  it('will be possible to compile a template before rendering it', () => {
+    const compiledTemplate = asCompiledCode('<template><div>raw code</div></template>');
+
+    expect(compiledTemplate).toEqual(
+      "tag2('template', '<div>raw code</div>', '', '', function(opts) {\n});"
+    );
+  });
+
   it('works with a json consisting in a tagName and opts', () => {
     tag2('hello', '<p>Hello { opts.suffix }</p>', '', '', () => {});
 
@@ -87,6 +96,30 @@ describe('render a riot element', () => {
           ],
           template:
             '<SimpleTest test={ "with a parameter" } value={"value is mapped to riotValue"}></SimpleTest>',
+        },
+        context
+      )
+    ).toBe(true);
+
+    expect(rootElement.innerHTML).toMatchSnapshot();
+  });
+
+  it('can accept a constructor', () => {
+    expect(
+      render(
+        {
+          tags: [
+            {
+              content:
+                "<SimpleTest><div>HACKED : {opts.hacked} ; simple test ({opts.test || 'without parameter'}). Oh, by the way ({opts.riotValue || '... well, nothing'})</div></SimpleTest>",
+              boundAs: 'mustBeUniquePlease',
+            },
+          ],
+          template:
+            '<SimpleTest hacked={hacked} test={ "with a parameter" } value={"value is mapped to riotValue"}></SimpleTest>',
+          tagConstructor() {
+            this.hacked = true;
+          },
         },
         context
       )

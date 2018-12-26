@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots CRA Dynamic import 1`] = `
+<div>
+  Waiting for Dynamic Import
+</div>
+`;
+
+exports[`Storyshots CRA Svgr 1`] = `
+<svg>
+  logo.svg
+</svg>
+`;

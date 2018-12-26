@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { SectionList, View, Text, TouchableOpacity } from 'react-native';
+import { SectionList, Text, TextInput, TouchableOpacity, View, SafeAreaView } from 'react-native';
 import Events from '@storybook/core-events';
 import style from './style';
 
@@ -40,28 +40,20 @@ export default class StoryListView extends Component {
 
     this.state = {
       data: [],
+      originalData: [],
     };
 
     this.storyAddedHandler = this.handleStoryAdded.bind(this);
-    this.changeStoryHandler = this.changeStory.bind(this);
 
     props.stories.on(Events.STORY_ADDED, this.storyAddedHandler);
   }
 
   componentDidMount() {
-    const { stories } = this.props;
-
     this.handleStoryAdded();
-    const dump = stories.dumpStoryBook();
-    const nonEmptyKind = dump.find(kind => kind.stories.length > 0);
-    if (nonEmptyKind) {
-      this.changeStory(nonEmptyKind.kind, nonEmptyKind.stories[0]);
-    }
   }
 
   componentWillUnmount() {
     const { stories } = this.props;
-
     stories.removeListener(Events.STORY_ADDED, this.storyAddedHandler);
   }
 
@@ -80,10 +72,37 @@ export default class StoryListView extends Component {
         }),
         {}
       );
-      this.setState({
-        data,
-      });
+
+      this.setState({ data, originalData: data });
     }
+  };
+
+  handleChangeSearchText = text => {
+    const query = text.trim();
+    const { originalData: data } = this.state;
+
+    if (!query) {
+      this.setState({ data });
+      return;
+    }
+
+    const checkValue = value => value.toLowerCase().includes(query.toLowerCase());
+    const filteredData = data.reduce((acc, story) => {
+      const hasTitle = checkValue(story.title);
+      const hasKind = story.data.some(kind => checkValue(kind.name));
+
+      if (hasTitle || hasKind) {
+        acc.push({
+          ...story,
+          // in case the query matches component's title, all of its stories will be shown
+          data: !hasTitle ? story.data.filter(kind => checkValue(kind.name)) : story.data,
+        });
+      }
+
+      return acc;
+    }, []);
+
+    this.setState({ data: filteredData });
   };
 
   changeStory(kind, story) {
@@ -93,28 +112,38 @@ export default class StoryListView extends Component {
   }
 
   render() {
-    const { width, selectedKind, selectedStory } = this.props;
+    const { selectedKind, selectedStory } = this.props;
     const { data } = this.state;
 
     return (
-      <SectionList
-        testID="Storybook.ListView"
-        style={[style.list, { width }]}
-        renderItem={({ item }) => (
-          <ListItem
-            title={item.name}
-            kind={item.kind}
-            selected={item.kind === selectedKind && item.name === selectedStory}
-            onPress={() => this.changeStory(item.kind, item.name)}
-          />
-        )}
-        renderSectionHeader={({ section: { title } }) => (
-          <SectionHeader title={title} selected={title === selectedKind} />
-        )}
-        keyExtractor={(item, index) => item + index}
-        sections={data}
-        stickySectionHeadersEnabled={false}
-      />
+      <SafeAreaView style={style.flex}>
+        <TextInput
+          clearButtonMode="while-editing"
+          disableFullscreenUI
+          onChangeText={this.handleChangeSearchText}
+          placeholder="Filter"
+          returnKeyType="search"
+          style={style.searchBar}
+        />
+        <SectionList
+          testID="Storybook.ListView"
+          style={style.sectionList}
+          renderItem={({ item }) => (
+            <ListItem
+              title={item.name}
+              kind={item.kind}
+              selected={item.kind === selectedKind && item.name === selectedStory}
+              onPress={() => this.changeStory(item.kind, item.name)}
+            />
+          )}
+          renderSectionHeader={({ section: { title } }) => (
+            <SectionHeader title={title} selected={title === selectedKind} />
+          )}
+          keyExtractor={(item, index) => item + index}
+          sections={data}
+          stickySectionHeadersEnabled={false}
+        />
+      </SafeAreaView>
     );
   }
 }
@@ -133,7 +162,6 @@ StoryListView.propTypes = {
   }).isRequired,
   selectedKind: PropTypes.string,
   selectedStory: PropTypes.string,
-  width: PropTypes.number.isRequired,
 };
 
 StoryListView.defaultProps = {

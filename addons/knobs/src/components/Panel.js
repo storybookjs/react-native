@@ -15,6 +15,8 @@ const getTimestamp = () => +new Date();
 const DEFAULT_GROUP_ID = 'ALL';
 
 const PanelWrapper = styled.div({
+  height: '100%',
+  overflow: 'auto',
   width: '100%',
 });
 
@@ -136,22 +138,24 @@ export default class Panel extends PureComponent {
 
     let knobsArray = Object.keys(knobs).filter(key => knobs[key].used);
 
-    knobsArray.filter(key => knobs[key].groupId).forEach(key => {
-      const knobKeyGroupId = knobs[key].groupId;
-      groupIds.push(knobKeyGroupId);
-      groups[knobKeyGroupId] = {
-        render: ({ active: groupActive, selected }) => (
-          <TabWrapper active={groupActive || selected === DEFAULT_GROUP_ID}>
-            <PropForm
-              knobs={knobsArray.filter(knob => knob.groupId === knobKeyGroupId)}
-              onFieldChange={this.handleChange}
-              onFieldClick={this.handleClick}
-            />
-          </TabWrapper>
-        ),
-        title: knobKeyGroupId,
-      };
-    });
+    knobsArray
+      .filter(key => knobs[key].groupId)
+      .forEach(key => {
+        const knobKeyGroupId = knobs[key].groupId;
+        groupIds.push(knobKeyGroupId);
+        groups[knobKeyGroupId] = {
+          render: ({ active: groupActive, selected }) => (
+            <TabWrapper active={groupActive || selected === DEFAULT_GROUP_ID}>
+              <PropForm
+                knobs={knobsArray.filter(knob => knob.groupId === knobKeyGroupId)}
+                onFieldChange={this.handleChange}
+                onFieldClick={this.handleClick}
+              />
+            </TabWrapper>
+          ),
+          title: knobKeyGroupId,
+        };
+      });
 
     groups[DEFAULT_GROUP_ID] = {
       render: () => null,
@@ -169,7 +173,7 @@ export default class Panel extends PureComponent {
         {groupIds.length > 0 ? (
           <TabsState>
             {Object.entries(groups).map(([k, v]) => (
-              <div id={k} title={v.title}>
+              <div id={k} key={k} title={v.title}>
                 {v.render}
               </div>
             ))}

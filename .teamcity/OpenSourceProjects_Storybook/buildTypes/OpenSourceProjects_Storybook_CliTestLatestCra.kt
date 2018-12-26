@@ -19,17 +19,16 @@ object OpenSourceProjects_Storybook_CliTestLatestCra : BuildType({
 
     steps {
         script {
-            name = "Bootstrap"
-            scriptContent = """
-                yarn
-                yarn bootstrap --core
-            """.trimIndent()
-            dockerImage = "andthensome/docker-node-rsync"
-        }
-        script {
             name = "Test"
-            scriptContent = "yarn test-latest-cra"
-            dockerImage = "andthensome/docker-node-rsync"
+            scriptContent = """
+                #!/bin/sh
+
+                set -e -x
+
+                yarn
+                yarn test-latest-cra -t
+            """.trimIndent()
+            dockerImage = "node:%docker.node.version%"
         }
     }
 
@@ -37,6 +36,12 @@ object OpenSourceProjects_Storybook_CliTestLatestCra : BuildType({
         vcs {
             quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
             triggerRules = "-:comment=^TeamCity change:**"
+            branchFilter = """
+                +:pull/*
+                +:release/*
+                +:master
+                +:next
+            """.trimIndent()
         }
         retryBuild {}
     }
@@ -50,6 +55,18 @@ object OpenSourceProjects_Storybook_CliTestLatestCra : BuildType({
                 }
             }
             param("github_oauth_user", "Hypnosphi")
+        }
+    }
+
+    dependencies {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+            snapshot {
+                onDependencyFailure = FailureAction.FAIL_TO_START
+            }
+
+            artifacts {
+                artifactRules = "dist.zip!**"
+            }
         }
     }
 

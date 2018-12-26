@@ -47,14 +47,7 @@ const tasks = {
     name: `Core & Examples 🎨 ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
-    projectLocation: path.join(__dirname, '..'),
-    isJest: true,
-  }),
-  'react-native-vanilla': createProject({
-    name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
-    defaultValue: true,
-    option: '--reactnative',
-    projectLocation: path.join(__dirname, '..', 'examples/react-native-vanilla'),
+    projectLocation: '<all>',
     isJest: true,
   }),
   image: createProject({
@@ -70,7 +63,7 @@ const tasks = {
   //   )}`,
   //   defaultValue: false,
   //   option: '--reactnativeapp',
-  //   projectLocation: './examples/crna-kitchen-sink',
+  //   projectLocation: './examples-native/crna-kitchen-sink',
   //   isJest: true,
   // }),
   cli: createProject({
@@ -107,7 +100,7 @@ const tasks = {
     name: `Use TeamCity reporter`,
     defaultValue: false,
     option: '--teamcity',
-    extraParam: '--testResultsProcessor=jest-teamcity-reporter',
+    extraParam: '-t --testResultsProcessor=jest-teamcity-reporter',
   }),
 };
 
@@ -177,12 +170,19 @@ selection
       const jestProjects = projects.filter(key => key.isJest).map(key => key.projectLocation);
       const nonJestProjects = projects.filter(key => !key.isJest);
       const extraParams = getExtraParams(list).join(' ');
+
       if (jestProjects.length > 0) {
-        spawn(`jest --projects ${jestProjects.join(' ')} ${extraParams}`);
+        const projectsParam = jestProjects.some(project => project === '<all>')
+          ? ''
+          : `--projects ${jestProjects.join(' ')}`;
+
+        spawn(`jest ${projectsParam} ${extraParams}`);
       }
+
       nonJestProjects.forEach(key =>
         spawn(`npm --prefix ${key.projectLocation} test -- ${extraParams}`)
       );
+
       const scripts = getScripts(list);
       scripts.forEach(key => spawn(`${key.script} -- ${extraParams}`));
 

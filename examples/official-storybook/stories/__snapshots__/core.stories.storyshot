@@ -1,8 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Core|Events Force re-render 1`] = `
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  display: inline;
+  text-align: left;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <button
-  class="css-1riodoz e1lk8yn73"
+  class="emotion-0 emotion-1"
 >
   Clicked: 0
 </button>

@@ -7,20 +7,12 @@ exports[`Storyshots Addon|Centered rounded 1`] = `
   <div
     style="margin: auto; max-height: 100%;"
   >
-    <div
-      style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; align-items: center; overflow: auto;"
+    <button
+      class="button rounded"
+      style="color: rgb(66, 185, 131); border-color: #42b983;"
     >
-      <div
-        style="margin: auto; max-height: 100%;"
-      >
-        <button
-          class="button rounded"
-          style="color: rgb(66, 185, 131); border-color: #42b983;"
-        >
-          A Button with rounded edges!
-        </button>
-      </div>
-    </div>
+      A Button with rounded edges!
+    </button>
   </div>
 </div>
 `;

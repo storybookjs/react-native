@@ -5,7 +5,7 @@ import {
   applyAngularCliWebpackConfig,
 } from './angular-cli_config';
 
-export function webpack(config) {
+export function webpackFinal(config) {
   const cwd = process.cwd();
   const cliWebpackConfigOptions = getAngularCliWebpackConfigOptions(cwd);
 

@@ -14,11 +14,14 @@ export const configureA11y = (options = {}) => {
 
 const runA11yCheck = () => {
   const channel = addons.getChannel();
+  const infoWrapper = document.getElementById('story-root').children;
   const wrapper = document.getElementById('root');
 
   axe.reset();
   axe.configure(axeOptions);
-  axe.run(wrapper).then(results => channel.emit(CHECK_EVENT_ID, results), logger.error);
+  axe
+    .run(infoWrapper || wrapper)
+    .then(results => channel.emit(CHECK_EVENT_ID, results), logger.error);
 };
 
 const a11ySubscription = () => {

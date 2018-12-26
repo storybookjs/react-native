@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import EventEmitter from 'events';
+import EventEmitter from 'eventemitter3';
 
 import BackgroundPanel from '../BackgroundPanel';
 import Events from '../constants';
@@ -52,7 +52,7 @@ describe('Background Panel', () => {
     mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} active />);
     SpiedChannel.emit(Events.SET, backgrounds);
 
-    expect(mockedApi.getQueryParam).toBeCalledWith('background');
+    expect(mockedApi.getQueryParam).toHaveBeenCalledWith('background');
   });
 
   it('should not unset the query string', () => {

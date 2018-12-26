@@ -16,11 +16,8 @@ object OpenSourceProjects_Storybook_SmokeTests : BuildType({
 
     steps {
         script {
-            name = "Bootstrap"
-            scriptContent = """
-                yarn
-                yarn bootstrap --core
-            """.trimIndent()
+            name = "Install"
+            scriptContent = "yarn"
             dockerImage = "node:%docker.node.version%"
         }
         allApps {
@@ -33,7 +30,7 @@ object OpenSourceProjects_Storybook_SmokeTests : BuildType({
                         set -e -x
 
                         cd examples/$exampleDir
-                        yarn storybook --smoke-test
+                        yarn storybook --smoke-test --quiet
                     """.trimIndent()
                     dockerImage = "node:%docker.node.version%"
                 }
@@ -47,7 +44,7 @@ object OpenSourceProjects_Storybook_SmokeTests : BuildType({
                 set -e -x
 
                 cd examples/official-storybook
-                yarn storybook --smoke-test
+                yarn storybook --smoke-test --quiet
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
@@ -62,6 +59,18 @@ object OpenSourceProjects_Storybook_SmokeTests : BuildType({
                 }
             }
             param("github_oauth_user", "Hypnosphi")
+        }
+    }
+
+    dependencies {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+            snapshot {
+                onDependencyFailure = FailureAction.FAIL_TO_START
+            }
+
+            artifacts {
+                artifactRules = "dist.zip!**"
+            }
         }
     }
 

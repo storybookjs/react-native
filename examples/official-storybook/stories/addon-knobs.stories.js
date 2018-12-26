@@ -16,6 +16,7 @@ import {
   button,
   object,
   files,
+  optionsKnob as options,
 } from '@storybook/addon-knobs';
 
 const ItemLoader = ({ isLoading, items }) => {
@@ -185,8 +186,100 @@ storiesOf('Addons|Knobs.withKnobs', module)
     const showOptional = select('Show optional', ['yes', 'no'], 'yes');
     return (
       <div>
-        <div>{text('compulsary', 'I must be here')}</div>
-        {showOptional === 'yes' ? <div>{text('optional', 'I can disapear')}</div> : null}
+        <div>{text('compulsory', 'I must be here')}</div>
+        {showOptional === 'yes' ? <div>{text('optional', 'I can disappear')}</div> : null}
+      </div>
+    );
+  })
+  .add('complex select', () => {
+    const m = select(
+      'complex',
+      {
+        number: 1,
+        string: 'string',
+        object: {},
+        array: [],
+      },
+      'string'
+    );
+    const value = m.toString();
+    return (
+      <pre>
+        the type of {value} = {typeof m}
+      </pre>
+    );
+  })
+  .add('optionsKnob', () => {
+    const valuesRadio = {
+      Monday: 'Monday',
+      Tuesday: 'Tuesday',
+      Wednesday: 'Wednesday',
+    };
+    const optionRadio = options('Radio', valuesRadio, 'Tuesday', { display: 'radio' });
+
+    const valuesInlineRadio = {
+      Saturday: 'Saturday',
+      Sunday: 'Sunday',
+    };
+    const optionInlineRadio = options('Inline Radio', valuesInlineRadio, 'Saturday', {
+      display: 'inline-radio',
+    });
+
+    const valuesSelect = {
+      January: 'January',
+      February: 'February',
+      March: 'March',
+    };
+    const optionSelect = options('Select', valuesSelect, 'January', { display: 'select' });
+
+    const valuesMultiSelect = {
+      Apple: 'apple',
+      Banana: 'banana',
+      Cherry: 'cherry',
+    };
+    const optionsMultiSelect = options('Multi Select', valuesMultiSelect, ['apple'], {
+      display: 'multi-select',
+    });
+
+    const valuesCheck = {
+      Corn: 'corn',
+      Carrot: 'carrot',
+      Cucumber: 'cucumber',
+    };
+    const optionsCheck = options('Check', valuesCheck, ['carrot'], { display: 'check' });
+
+    const valuesInlineCheck = {
+      Milk: 'milk',
+      Cheese: 'cheese',
+      Butter: 'butter',
+    };
+    const optionsInlineCheck = options('Inline Check', valuesInlineCheck, ['milk'], {
+      display: 'inline-check',
+    });
+
+    return (
+      <div style={{ color: 'white' }}>
+        <p>Weekday: {optionRadio}</p>
+        <p>Weekend: {optionInlineRadio}</p>
+        <p>Month: {optionSelect}</p>
+        <p>Fruit:</p>
+        <ul>
+          {optionsMultiSelect.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <p>Vegetables:</p>
+        <ul>
+          {optionsCheck.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <p>Dairy:</p>
+        <ul>
+          {optionsInlineCheck.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </div>
     );
   })

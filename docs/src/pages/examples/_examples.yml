@@ -3,6 +3,12 @@ coursera:
   title: Coursera
   description: Coursera UI component library
   demo: https://building.coursera.org/coursera-ui/
+grommet:
+  thumbnail: grommet.png
+  title: Grommet
+  description: Styled components for Reactjs
+  demo: https://storybook.grommet.io/
+  site: https://v2.grommet.io/
 wix:
   thumbnail: wix.png
   title: Wix Style React
@@ -146,4 +152,30 @@ lucid-ui:
   demo: https://appnexus.github.io/lucid/
   source: https://github.com/appnexus/lucid
   site: https://appnexus.com/
-
+trunx:
+  thumbnail: trunks.png
+  title: Trunx
+  description: Super Saiyan react components, son of awesome Bulma
+  demo: https://g14n.info/trunx
+  source: https://github.com/fibo/trunx
+  site: https://github.com/fibo/trunx
+auth0:
+  thumbnail: cosmos.png
+  title: Cosmos
+  description: A Design System For Auth0 Products
+  demo: https://auth0-cosmos.now.sh/sandbox/
+  source: https://github.com/auth0/cosmos
+  site: https://auth0-cosmos.now.sh/
+mockingbot:
+  thumbnail: mockingbot.png
+  title: MockingBot
+  description: MockingBot UI component library(ibot)
+  source: https://github.com/mockingbot/ibot
+  demo: https://ibot.guide
+vanilla:
+  thumbnail: vanilla.png
+  title: Vanilla React
+  description: A simple implementation of Vanilla Framework using React
+  demo: https://vanilla-framework.github.io/vanilla-framework-react/
+  source: https://github.com/vanilla-framework/vanilla-framework-react
+  site: https://vanillaframework.io/

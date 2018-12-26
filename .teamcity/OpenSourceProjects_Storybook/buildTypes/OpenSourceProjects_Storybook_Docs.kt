@@ -3,7 +3,6 @@ package OpenSourceProjects_Storybook.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 
 object OpenSourceProjects_Storybook_Docs : BuildType({
     uuid = "1bda59b5-d08d-4fd8-b317-953e7d79d881"
@@ -13,7 +12,7 @@ object OpenSourceProjects_Storybook_Docs : BuildType({
     artifactRules = "docs/public => docs.zip"
 
     params {
-        param("Deploy branch", "release/3.4")
+        param("Deploy branch", "master")
     }
 
     vcs {
@@ -23,22 +22,17 @@ object OpenSourceProjects_Storybook_Docs : BuildType({
 
     steps {
         script {
-            name = "Install"
-            workingDir = "docs"
-            scriptContent = "yarn install --frozen-lockfile"
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
             name = "Build"
             workingDir = "docs"
-            scriptContent = "yarn build"
-            dockerImage = "node:%docker.node.version%"
-        }
-    }
+            scriptContent = """
+                #!/bin/sh
 
-    triggers {
-        vcs {
-            enabled = false
+                set -e -x
+
+                yarn --frozen-lockfile
+                yarn build
+            """.trimIndent()
+            dockerImage = "node:%docker.node.version%"
         }
     }
 

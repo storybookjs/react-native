@@ -43,16 +43,32 @@ export const INITIAL_VIEWPORTS = {
   iphone8p: {
     name: 'iPhone 8 Plus',
     styles: {
-      height: '960px',
-      width: '540px',
+      height: '736px',
+      width: '414px',
     },
     type: 'mobile',
   },
   iphonex: {
     name: 'iPhone X',
     styles: {
-      height: '1218px',
-      width: '563px',
+      height: '812px',
+      width: '375px',
+    },
+    type: 'mobile',
+  },
+  iphonexr: {
+    name: 'iPhone XR',
+    styles: {
+      height: '896px',
+      width: '414px',
+    },
+    type: 'mobile',
+  },
+  iphonexsmax: {
+    name: 'iPhone Xs Max',
+    styles: {
+      height: '896px',
+      width: '414px',
     },
     type: 'mobile',
   },

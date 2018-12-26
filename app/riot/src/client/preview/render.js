@@ -1,7 +1,7 @@
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
 import { unregister } from 'riot';
-import { render as renderRiot } from './render-riot';
+import { render as renderRiot } from './rendering';
 
 export default function renderMain({
   story,

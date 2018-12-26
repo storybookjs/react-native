@@ -48,12 +48,14 @@ const createTask = ({ defaultValue, option, name, check = () => true, command, p
   check: check || (() => true),
   command: () => {
     // run all pre tasks
-    // eslint-disable-next-line no-use-before-define
-    pre.map(key => tasks[key]).forEach(task => {
-      if (!task.check()) {
-        task.command();
-      }
-    });
+    pre
+      // eslint-disable-next-line no-use-before-define
+      .map(key => tasks[key])
+      .forEach(task => {
+        if (!task.check()) {
+          task.command();
+        }
+      });
 
     log.info(prefix, name);
     command();
@@ -73,7 +75,7 @@ const tasks = {
     },
   }),
   core: createTask({
-    name: `Core & Examples ${chalk.gray('(core)')}`,
+    name: `Core, Dll & Examples ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
     command: () => {
@@ -81,6 +83,17 @@ const tasks = {
       spawn('yarn install');
       log.info(prefix, 'prepare');
       spawn('lerna run prepare -- --silent');
+      log.info(prefix, 'dll');
+      spawn('lerna run createDlls --scope "@storybook/ui"');
+    },
+  }),
+  dll: createTask({
+    name: `Generate DLL ${chalk.gray('(dll)')}`,
+    defaultValue: false,
+    option: '--dll',
+    command: () => {
+      log.info(prefix, 'dll');
+      spawn('lerna run createDlls --scope "@storybook/ui"');
     },
   }),
   docs: createTask({
@@ -99,24 +112,6 @@ const tasks = {
       spawn('yarn build-packs');
     },
     check: () => getDirectories(join(__dirname, '..', 'packs')).length > 0,
-  }),
-  'react-native-vanilla': createTask({
-    name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
-    defaultValue: false,
-    option: '--reactnative',
-    pre: ['packs'],
-    command: () => {
-      spawn('yarn bootstrap:react-native-vanilla');
-    },
-  }),
-  'react-native-typesript': createTask({
-    name: `React-Native Typesript example ${chalk.gray('(react-native-typescript)')}`,
-    defaultValue: false,
-    option: '--reactnativetypescript',
-    pre: ['packs'],
-    command: () => {
-      spawn('yarn bootstrap:react-native-typescript');
-    },
   }),
   'crna-kitchen-sink': createTask({
     name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}`,

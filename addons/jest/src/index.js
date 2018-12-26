@@ -1,17 +1,24 @@
 import addons from '@storybook/addons';
 import deprecate from 'util-deprecate';
+import { normalize } from 'upath';
 
 const findTestResults = (testFiles, jestTestResults, jestTestFilesExt) =>
   Object.values(testFiles).map(name => {
+    const fileName = `${name}${jestTestFilesExt}`;
+
     if (jestTestResults && jestTestResults.testResults) {
+      const fileNamePattern = new RegExp(fileName);
+
       return {
+        fileName,
         name,
-        result: jestTestResults.testResults.find(t =>
-          new RegExp(`${name}${jestTestFilesExt}`).test(t.name)
+        result: jestTestResults.testResults.find(test =>
+          normalize(test.name).match(fileNamePattern)
         ),
       };
     }
-    return { name };
+
+    return { fileName, name };
   });
 
 const emitAddTests = ({ kind, story, testFiles, options }) => {
@@ -37,13 +44,12 @@ export const withTests = userOptions => {
       }, 'Passing component filenames to the `@storybook/addon-jest` via `withTests` is deprecated. Instead, use the `jest` story parameter');
     }
 
-    const [
-      story,
-      {
-        kind,
-        parameters: { jest: testFiles },
-      },
-    ] = args;
+    const [story, { kind, parameters = {} }] = args;
+    let { jest: testFiles } = parameters;
+
+    if (typeof testFiles === 'string') {
+      testFiles = [testFiles];
+    }
 
     if (testFiles && !testFiles.disable) {
       emitAddTests({ kind, story, testFiles, options });

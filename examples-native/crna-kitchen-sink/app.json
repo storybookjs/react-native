@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "sdkVersion": "30.0.0",
+    "platforms": ["ios", "android"],
+    "androidStatusBarColor": "#C2185B",
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#C2185B"
+    },
+    "assetBundlePatterns": ["**/*"]
+  }
+}

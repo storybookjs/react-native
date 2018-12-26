@@ -1,12 +1,15 @@
 import 'jest-specific-snapshot';
 
+const isFunction = obj => !!(obj && obj.constructor && obj.call && obj.apply);
+const optionsOrCallOptions = (opts, story) => (isFunction(opts) ? opts(story) : opts);
+
 export const snapshotWithOptions = (options = {}) => ({
   story,
   context,
   renderTree,
   snapshotFileName,
 }) => {
-  const result = renderTree(story, context, options);
+  const result = renderTree(story, context, optionsOrCallOptions(options, story));
 
   function match(tree) {
     if (snapshotFileName) {
