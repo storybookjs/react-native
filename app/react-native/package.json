@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "4.2.0-alpha.6",
+  "version": "4.2.0-alpha.7",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -25,12 +25,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.2.0-alpha.6",
-    "@storybook/channel-websocket": "4.2.0-alpha.6",
-    "@storybook/channels": "4.2.0-alpha.6",
-    "@storybook/core": "4.2.0-alpha.6",
-    "@storybook/core-events": "4.2.0-alpha.6",
-    "@storybook/ui": "4.2.0-alpha.6",
+    "@storybook/addons": "4.2.0-alpha.7",
+    "@storybook/channel-websocket": "4.2.0-alpha.7",
+    "@storybook/channels": "4.2.0-alpha.7",
+    "@storybook/core": "4.2.0-alpha.7",
+    "@storybook/core-events": "4.2.0-alpha.7",
+    "@storybook/ui": "4.2.0-alpha.7",
     "babel-loader": "^8.0.4",
     "babel-plugin-macros": "^2.4.3",
     "babel-plugin-syntax-async-functions": "^6.13.0",

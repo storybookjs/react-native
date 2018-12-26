@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "4.2.0-alpha.6",
+  "version": "4.2.0-alpha.7",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -34,9 +34,9 @@
     "render-fragment": "^0.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.2.0-alpha.6",
-    "@storybook/addon-knobs": "4.2.0-alpha.6",
-    "@storybook/react": "4.2.0-alpha.6"
+    "@storybook/addon-actions": "4.2.0-alpha.7",
+    "@storybook/addon-knobs": "4.2.0-alpha.7",
+    "@storybook/react": "4.2.0-alpha.7"
   },
   "peerDependencies": {
     "react": "*",
