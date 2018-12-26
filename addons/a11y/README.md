@@ -50,7 +50,10 @@ import { storiesOf } from '@storybook/react';
 
 import { checkA11y, configureA11y } from '@storybook/addon-a11y';
 
-const whateverOptionsYouWant = {};
+const whateverOptionsYouWant = {
+  axeOptions : {},
+  contextElementId: ''
+};
 configureA11y(whateverOptionsYouWant);
 
 storiesOf('button', module)

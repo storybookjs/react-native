@@ -6,22 +6,28 @@ import { logger } from '@storybook/client-logger';
 
 import { CHECK_EVENT_ID, REQUEST_CHECK_EVENT_ID } from './shared';
 
-let axeOptions = {};
+const config = {
+  axeOptions: {},
+  contextElementId: '',
+};
 
 export const configureA11y = (options = {}) => {
-  axeOptions = options;
+  Object.assign(config, options);
 };
 
 const runA11yCheck = () => {
   const channel = addons.getChannel();
-  const infoWrapper = document.getElementById('story-root').children;
-  const wrapper = document.getElementById('root');
+
+  let axeContext = config.contextElementId;
+  if (!axeContext) {
+    const infoWrapper = document.getElementById('story-root');
+    const wrapper = document.getElementById('root');
+    axeContext = (infoWrapper && infoWrapper.children) || wrapper;
+  }
 
   axe.reset();
-  axe.configure(axeOptions);
-  axe
-    .run(infoWrapper || wrapper)
-    .then(results => channel.emit(CHECK_EVENT_ID, results), logger.error);
+  axe.configure(config.axeOptions);
+  axe.run(axeContext).then(results => channel.emit(CHECK_EVENT_ID, results), logger.error);
 };
 
 const a11ySubscription = () => {
