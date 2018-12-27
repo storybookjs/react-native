@@ -1,5 +1,5 @@
 import reviver from './reviver';
-import { muteProperty } from './util';
+import muteProperty from './util/muteProperty';
 import { CYCLIC_KEY } from '../constants';
 
 // eslint-disable-next-line no-control-regex
