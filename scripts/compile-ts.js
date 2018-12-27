@@ -43,8 +43,10 @@ function tscfy(options = {}) {
   }
 
   const command = getCommand(watch);
-  const { code } = shell.exec(command, { silent });
-
+  const shellReturn = shell.exec(command, { silent });
+  const { code } = shellReturn;
+  console.error('---------- DEBUG_MESSAGE ----------');
+  console.error(shellReturn);
   handleExit(code, errorCallback);
 }
 
