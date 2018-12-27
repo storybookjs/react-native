@@ -1,18 +1,18 @@
-export type ChannelHandler<TEventArgs = any> = (event: ChannelEvent<TEventArgs>) => void;
+export type ChannelHandler = (event: ChannelEvent) => void;
 
-export interface ChannelTransport<TEventArgs = any> {
-  send(event: ChannelEvent<TEventArgs>): void;
-  setHandler(handler: ChannelHandler<TEventArgs>): void;
+export interface ChannelTransport {
+  send(event: ChannelEvent): void;
+  setHandler(handler: ChannelHandler): void;
 }
 
-export interface ChannelEvent<TEventArgs = any> {
+export interface ChannelEvent {
   type: string; // eventName
   from: string;
-  args: TEventArgs;
+  args: any[];
 }
 
-export interface Listener<TEventArgs = any> {
-  (...args: TEventArgs[]): void;
+export interface Listener {
+  (...args: any[]): void;
 
   ignorePeer?: boolean;
 }
@@ -52,19 +52,19 @@ export class Channel {
     return !!this.transport;
   }
 
-  addListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
+  addListener(eventName: string, listener: Listener) {
     this.events[eventName] = this.events[eventName] || [];
     this.events[eventName].push(listener);
   }
 
-  addPeerListener<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
+  addPeerListener(eventName: string, listener: Listener) {
     const peerListener = listener;
     peerListener.ignorePeer = true;
-    this.addListener<TEventArgs>(eventName, peerListener);
+    this.addListener(eventName, peerListener);
   }
 
-  emit<TEventArgs = any>(eventName: string, ...args: TEventArgs[]) {
-    const event: ChannelEvent<TEventArgs[]> = { type: eventName, args, from: this.sender };
+  emit(eventName: string, ...args: any[]) {
+    const event: ChannelEvent = { type: eventName, args, from: this.sender };
 
     const handler = () => {
       if (this.transport) {
@@ -95,9 +95,9 @@ export class Channel {
     return listeners ? listeners : undefined;
   }
 
-  once<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
-    const onceListener: Listener = this.onceListener<TEventArgs>(eventName, listener);
-    this.addListener<TEventArgs>(eventName, onceListener);
+  once(eventName: string, listener: Listener) {
+    const onceListener: Listener = this.onceListener(eventName, listener);
+    this.addListener(eventName, onceListener);
   }
 
   removeAllListeners(eventName?: string) {
@@ -115,19 +115,19 @@ export class Channel {
     }
   }
 
-  on<TEventArgs = any>(eventName: string, listener: Listener<TEventArgs>) {
-    this.addListener<TEventArgs>(eventName, listener);
+  on(eventName: string, listener: Listener) {
+    this.addListener(eventName, listener);
   }
 
-  private handleEvent<TEventArgs = any>(event: ChannelEvent<TEventArgs[]>, isPeer = false) {
+  private handleEvent(event: ChannelEvent, isPeer = false) {
     const listeners = this.listeners(event.type);
     if (listeners && (isPeer || event.from !== this.sender)) {
       listeners.forEach(fn => !(isPeer && fn.ignorePeer) && fn(...event.args));
     }
   }
 
-  private onceListener<TEventArgs>(eventName: string, listener: Listener<TEventArgs>) {
-    const onceListener: Listener<TEventArgs> = (...args: TEventArgs[]) => {
+  private onceListener(eventName: string, listener: Listener) {
+    const onceListener: Listener = (...args: any[]) => {
       this.removeListener(eventName, onceListener);
       return listener(...args);
     };

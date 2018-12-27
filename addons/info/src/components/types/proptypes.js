@@ -8,4 +8,5 @@ export const TypeInfo = oneOfType([
   PropTypes.string,
 ]);
 
-export const getPropTypes = propType => propType.value || propType.elements;
+export const getPropTypes = propType =>
+  typeof propType === 'string' ? propType : propType.value || propType.elements;

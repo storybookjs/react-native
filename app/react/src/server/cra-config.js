@@ -82,12 +82,12 @@ export function getCraWebpackConfig(mode) {
   const pathToReactScripts = getReactScriptsPath();
 
   const craWebpackConfig =
-    mode === 'production' ? 'config/webpack.config.prod' : 'config/webpack.config.dev';
+    mode === 'production' ? 'config/webpack.config.prod.js' : 'config/webpack.config.dev.js';
 
-  let pathToWebpackConfig = require.resolve(path.join(pathToReactScripts, craWebpackConfig));
+  let pathToWebpackConfig = path.join(pathToReactScripts, craWebpackConfig);
 
   if (!fs.existsSync(pathToWebpackConfig)) {
-    pathToWebpackConfig = path.join(pathToReactScripts, 'config/webpack.config');
+    pathToWebpackConfig = path.join(pathToReactScripts, 'config/webpack.config.js');
   }
 
   // eslint-disable-next-line import/no-dynamic-require,global-require

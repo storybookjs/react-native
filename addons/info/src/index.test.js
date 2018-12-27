@@ -78,7 +78,7 @@ describe('addon Info', () => {
     mount(<Info />);
   });
 
-  it('should render component description', () => {
+  it('should render component description if story kind matches component', () => {
     const previousReactClassesValue = global.STORYBOOK_REACT_CLASSES[reactClassPath];
     Object.assign(global.STORYBOOK_REACT_CLASSES, { [reactClassPath]: storybookReactClassMock });
 
@@ -86,6 +86,21 @@ describe('addon Info', () => {
       withInfo({ inline: true, propTables: false })(storyFn, {
         kind: 'TestComponent',
         story: 'Basic test',
+      });
+
+    expect(mount(<Info />)).toMatchSnapshot();
+
+    Object.assign(global.STORYBOOK_REACT_CLASSES, { [reactClassPath]: previousReactClassesValue });
+  });
+
+  it('should render component description if story name matches component', () => {
+    const previousReactClassesValue = global.STORYBOOK_REACT_CLASSES[reactClassPath];
+    Object.assign(global.STORYBOOK_REACT_CLASSES, { [reactClassPath]: storybookReactClassMock });
+
+    const Info = () =>
+      withInfo({ inline: true, propTables: false })(storyFn, {
+        kind: 'Test Components',
+        story: 'TestComponent',
       });
 
     expect(mount(<Info />)).toMatchSnapshot();

@@ -31,6 +31,6 @@ describe('Swatch', () => {
     const swatch = mount(<Swatch value="#e6e6e6" name="Gray" setBackground={spy} />);
     swatch.simulate('click');
 
-    expect(spy).toBeCalledWith('#e6e6e6');
+    expect(spy).toHaveBeenCalledWith('#e6e6e6');
   });
 });

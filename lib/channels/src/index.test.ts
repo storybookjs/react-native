@@ -61,12 +61,12 @@ describe('Channel', () => {
       const eventName = 'event1';
       const listenerInputData = ['string1', 'string2', 'string3'];
       let listenerOutputData: string[] = null;
-      const mockListener: Listener<string[]> = data => {
+      const mockListener: Listener = data => {
         listenerOutputData = data;
       };
 
       channel.addListener(eventName, mockListener);
-      channel.emit<string[]>(eventName, listenerInputData);
+      channel.emit(eventName, listenerInputData);
       expect(listenerOutputData).toBe(listenerInputData);
     });
 
@@ -75,10 +75,10 @@ describe('Channel', () => {
       const listenerInputData = ['string1', 'string2', 'string3'];
       let listenerOutputData: string[] = null;
 
-      channel.addListener<string>(eventName, (...data) => {
+      channel.addListener(eventName, (...data) => {
         listenerOutputData = data;
       });
-      channel.emit<string>(eventName, ...listenerInputData);
+      channel.emit(eventName, ...listenerInputData);
       expect(listenerOutputData).toEqual(listenerInputData);
     });
 
@@ -138,12 +138,12 @@ describe('Channel', () => {
       const eventName = 'event1';
       const listenerInputData = ['string1', 'string2', 'string3'];
       let listenerOutputData = null;
-      const mockListener: Listener<string[]> = (data: string[]) => {
+      const mockListener: Listener = (data: string[]) => {
         listenerOutputData = data;
       };
 
-      channel.once<string[]>(eventName, args => mockListener(args));
-      channel.emit<string[]>(eventName, listenerInputData);
+      channel.once(eventName, args => mockListener(args));
+      channel.emit(eventName, listenerInputData);
 
       expect(listenerOutputData).toEqual(listenerInputData);
     });

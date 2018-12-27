@@ -9,13 +9,15 @@
     "noImplicitAny": true,
     "jsx": "react",
     "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "target": "es5",
     "types": [
       "node",
       "jest"
     ],
     "lib": [
-      "es2016",
+      "es2017",
       "dom"
     ]
   }
