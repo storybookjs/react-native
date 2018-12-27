@@ -23,7 +23,7 @@
     "@angular/forms": "^7.0.1",
     "@angular/platform-browser": "^7.0.1",
     "@angular/platform-browser-dynamic": "^7.0.1",
-    "@ngrx/store": "^6.1.2",
+    "@ngrx/store": "^7.0.0",
     "core-js": "^2.5.7",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",
