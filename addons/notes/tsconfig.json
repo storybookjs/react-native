@@ -5,8 +5,7 @@
     "types": ["webpack-env"]
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
+    "src/**/*"
   ],
   "exclude": [
     "src/__tests__/**/*"

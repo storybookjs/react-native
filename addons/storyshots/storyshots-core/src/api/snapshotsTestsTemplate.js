@@ -1,3 +1,4 @@
+/* eslint-disable jest/valid-describe */
 import { describe, it } from 'global';
 import { addSerializer } from 'jest-specific-snapshot';
 
