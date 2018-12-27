@@ -19,7 +19,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@babel/preset-env": "^7.2.0",
     "@emotion/core": "^0.13.1",
     "@emotion/provider": "^0.11.2",
