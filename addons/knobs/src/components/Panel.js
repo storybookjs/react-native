@@ -20,10 +20,29 @@ const PanelWrapper = styled.div({
   width: '100%',
 });
 
+/** @typedef {{[knob: string]: { name: string; defaultValue: unknown; used: boolean; groupId?: string }}} Knobs */
+/**
+ * @typedef {Object} Props
+ * @prop {boolean} active
+ * @prop {object=} onReset
+ * @prop {Partial<Record<'emit'|'on'|'removeListener', Function>>} channel
+ * @prop {Partial<Record<'onStory'|'getQueryParam'|'setQueryParams', Function>>} api
+ */
+/**
+ * @typedef {Object} State
+ * @prop {Knobs} knobs
+ */
+
 export default class Panel extends PureComponent {
+  /**
+   * @param {Props} props
+   */
   constructor(props) {
     super(props);
-    this.state = { knobs: {} };
+    /** @type {State} */
+    this.state = {
+      knobs: {},
+    };
     this.options = {};
 
     this.lastEdit = getTimestamp();
@@ -52,6 +71,7 @@ export default class Panel extends PureComponent {
     this.options = options;
   };
 
+  /** @param {{ knobs: Knobs; timestamp?: number }} param0 */
   setKnobs = ({ knobs, timestamp }) => {
     const queryParams = {};
     const { api, channel } = this.props;
@@ -133,20 +153,24 @@ export default class Panel extends PureComponent {
       return null;
     }
 
+    /** @type {Record<string, { render(props: { active: boolean; selected: string }): JSX.Element|null; title: string }} */
     const groups = {};
+    /** @type {string[]} */
     const groupIds = [];
 
-    let knobsArray = Object.keys(knobs).filter(key => knobs[key].used);
+    const knobKeysArray = Object.keys(knobs).filter(key => knobs[key].used);
 
-    knobsArray
+    knobKeysArray
       .filter(key => knobs[key].groupId)
       .forEach(key => {
-        const knobKeyGroupId = knobs[key].groupId;
+        const knobKeyGroupId = /** @type {string} */ (knobs[key].groupId);
         groupIds.push(knobKeyGroupId);
         groups[knobKeyGroupId] = {
           render: ({ active: groupActive, selected }) => (
             <TabWrapper active={groupActive || selected === DEFAULT_GROUP_ID}>
               <PropForm
+                // false positive
+                // eslint-disable-next-line no-use-before-define
                 knobs={knobsArray.filter(knob => knob.groupId === knobKeyGroupId)}
                 onFieldChange={this.handleChange}
                 onFieldClick={this.handleClick}
@@ -158,11 +182,30 @@ export default class Panel extends PureComponent {
       });
 
     groups[DEFAULT_GROUP_ID] = {
-      render: () => null,
+      render: ({ active: groupActive }) => {
+        // false positive
+        // eslint-disable-next-line no-use-before-define
+        const defaultKnobs = knobsArray.filter(
+          knob => !knob.groupId || knob.groupId === DEFAULT_GROUP_ID
+        );
+
+        if (defaultKnobs.length === 0) {
+          return null;
+        }
+        return (
+          <TabWrapper active={groupActive}>
+            <PropForm
+              knobs={defaultKnobs}
+              onFieldChange={this.handleChange}
+              onFieldClick={this.handleClick}
+            />
+          </TabWrapper>
+        );
+      },
       title: DEFAULT_GROUP_ID,
     };
 
-    knobsArray = knobsArray.map(key => knobs[key]);
+    const knobsArray = knobKeysArray.map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
       return <Placeholder>NO KNOBS</Placeholder>;
