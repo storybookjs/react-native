@@ -38,8 +38,12 @@ function logError(type, packageJson) {
 const packageJson = getPackageJson();
 
 removeDist();
-babelify({ errorCallback: () => logError('js', packageJson) });
-removeTsFromDist();
-tscfy({ errorCallback: () => logError('ts', packageJson) });
+if (packageJson && packageJson.types && packageJson.types.indexOf('d.ts') !== -1) {
+  tscfy({ errorCallback: () => logError('ts', packageJson) });
+} else {
+  babelify({ errorCallback: () => logError('js', packageJson) });
+  removeTsFromDist();
+  tscfy({ errorCallback: () => logError('ts', packageJson) });
+}
 
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));

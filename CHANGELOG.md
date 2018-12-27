@@ -1,3 +1,38 @@
+
+## 4.1.4 (December 25, 2018)
+
+### Bug Fixes
+
+* Core: Load Symbol polyfill before any other code ([#5082](https://github.com/storybooks/storybook/pull/5082))
+* React: Fix error with new CRA Webpack config ([#5074](https://github.com/storybooks/storybook/pull/5074))
+
+## 4.2.0-alpha.7 (December 25, 2018)
+
+### Bug Fixes
+
+* React: Fix error with new CRA Webpack config ([#5074](https://github.com/storybooks/storybook/pull/5074))
+* Core: Load Symbol polyfill before any other code ([#5082](https://github.com/storybooks/storybook/pull/5082))
+
+### Dependency Upgrades
+
+* Bump eslint-plugin-jest from 21.27.2 to 22.1.2 ([#5089](https://github.com/storybooks/storybook/pull/5089))
+* Bump react-color from 2.14.1 to 2.17.0 ([#5083](https://github.com/storybooks/storybook/pull/5083))
+* Bump @angular-devkit/build-angular from 0.10.7 to 0.11.4 ([#5084](https://github.com/storybooks/storybook/pull/5084))
+* Bump ts-loader from 5.3.1 to 5.3.2 ([#5085](https://github.com/storybooks/storybook/pull/5085))
+* Bump loader-utils from 1.1.0 to 1.2.0 ([#5086](https://github.com/storybooks/storybook/pull/5086))
+* Bump protractor from 5.4.1 to 5.4.2 ([#5087](https://github.com/storybooks/storybook/pull/5087))
+* Bump ember-cli from 3.5.1 to 3.6.0 ([#5088](https://github.com/storybooks/storybook/pull/5088))
+* Bump tslint from 5.11.0 to 5.12.0 ([#5090](https://github.com/storybooks/storybook/pull/5090))
+* Bump react-dom from 16.6.3 to 16.7.0 ([#5071](https://github.com/storybooks/storybook/pull/5071))
+
+## 4.1.3 (December 20, 2018)
+
+### Bug Fixes
+
+* React: remove unnecessary dependencies, fix aliasing ([#5047](https://github.com/storybooks/storybook/pull/5047))
+* React: alias to react & react-dom ([#5016](https://github.com/storybooks/storybook/pull/5016))
+* Addon-knobs: Fix color picker display ([#5010](https://github.com/storybooks/storybook/pull/5010))
+
 ## 4.2.0-alpha.6 (December 20, 2018)
 
 ### Features

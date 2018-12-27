@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-actions",
-  "version": "4.2.0-alpha.6",
+  "version": "4.2.0-alpha.7",
   "description": "Action Logger addon for storybook",
   "keywords": [
     "storybook"
@@ -23,9 +23,9 @@
     "@emotion/core": "^0.13.1",
     "@emotion/provider": "^0.11.2",
     "@emotion/styled": "^0.10.6",
-    "@storybook/addons": "4.2.0-alpha.6",
-    "@storybook/components": "4.2.0-alpha.6",
-    "@storybook/core-events": "4.2.0-alpha.6",
+    "@storybook/addons": "4.2.0-alpha.7",
+    "@storybook/components": "4.2.0-alpha.7",
+    "@storybook/core-events": "4.2.0-alpha.7",
     "core-js": "^2.5.7",
     "deep-equal": "^1.0.1",
     "global": "^4.3.2",
