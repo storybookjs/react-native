@@ -31,9 +31,10 @@ function removeTsFromDist() {
 
 function logError(type, packageJson, shellExecReturn) {
   log.error(
-    `FAILED to compile ${type}: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`
+    `FAILED to compile ${type}: ${chalk.bold(
+      `${packageJson.name}@${packageJson.version}\n ${shellExecReturn}`
+    )}`
   );
-  log.error(`--- SHELL EXEC RETURN MESSAGE ---\n${shellExecReturn}`);
 }
 
 const packageJson = getPackageJson();
