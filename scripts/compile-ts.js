@@ -26,7 +26,7 @@ function handleExit(code, errorCallback) {
 }
 
 function tscfy(options = {}) {
-  const { watch = false, silent = false, errorCallback } = options;
+  const { watch = false, silent = true, errorCallback } = options;
   const tsConfigFile = 'tsconfig.json';
 
   if (!fs.existsSync(tsConfigFile)) {
@@ -43,11 +43,10 @@ function tscfy(options = {}) {
   }
 
   const command = getCommand(watch);
-  const shellReturn = shell.exec(command, { silent });
-  const { code } = shellReturn;
-  console.error('---------- DEBUG_MESSAGE ----------');
-  console.error(shellReturn);
-  handleExit(code, errorCallback);
+  const shellExecReturn = shell.exec(command, { silent });
+  const { code } = shellExecReturn;
+
+  handleExit(code, errorCallback(shellExecReturn));
 }
 
 module.exports = {

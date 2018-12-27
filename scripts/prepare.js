@@ -29,21 +29,22 @@ function removeTsFromDist() {
   }
 }
 
-function logError(type, packageJson) {
+function logError(type, packageJson, shellExecReturn) {
   log.error(
     `FAILED to compile ${type}: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`
   );
+  log.error(`--- SHELL EXEC RETURN MESSAGE ---\n${shellExecReturn}`);
 }
 
 const packageJson = getPackageJson();
 
 removeDist();
 if (packageJson && packageJson.types && packageJson.types.indexOf('d.ts') !== -1) {
-  tscfy({ errorCallback: () => logError('ts', packageJson) });
+  tscfy({ errorCallback: shellExecMessage => logError('ts', packageJson, shellExecMessage) });
 } else {
-  babelify({ errorCallback: () => logError('js', packageJson) });
+  babelify({ errorCallback: shellExecMessage => logError('js', packageJson, shellExecMessage) });
   removeTsFromDist();
-  tscfy({ errorCallback: () => logError('ts', packageJson) });
+  tscfy({ errorCallback: shellExecMessage => logError('ts', packageJson, shellExecMessage) });
 }
 
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));
