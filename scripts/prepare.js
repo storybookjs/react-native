@@ -29,11 +29,9 @@ function removeTsFromDist() {
   }
 }
 
-function logError(type, packageJson, shellExecReturn) {
+function logError(type, packageJson) {
   log.error(
-    `FAILED to compile ${type}: ${chalk.bold(
-      `${packageJson.name}@${packageJson.version}\n ${shellExecReturn}`
-    )}`
+    `FAILED to compile ${type}: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`
   );
 }
 
@@ -41,11 +39,11 @@ const packageJson = getPackageJson();
 
 removeDist();
 if (packageJson && packageJson.types && packageJson.types.indexOf('d.ts') !== -1) {
-  tscfy({ errorCallback: shellExecMessage => logError('ts', packageJson, shellExecMessage) });
+  tscfy({ errorCallback: () => logError('ts', packageJson) });
 } else {
-  babelify({ errorCallback: shellExecMessage => logError('js', packageJson, shellExecMessage) });
+  babelify({ errorCallback: () => logError('js', packageJson) });
   removeTsFromDist();
-  tscfy({ errorCallback: shellExecMessage => logError('ts', packageJson, shellExecMessage) });
+  tscfy({ errorCallback: () => logError('ts', packageJson) });
 }
 
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));

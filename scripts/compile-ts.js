@@ -43,10 +43,9 @@ function tscfy(options = {}) {
   }
 
   const command = getCommand(watch);
-  const shellExecReturn = shell.exec(command, { silent });
-  const { code } = shellExecReturn;
+  const { code } = shell.exec(command, { silent });
 
-  handleExit(code, errorCallback(shellExecReturn));
+  handleExit(code, errorCallback);
 }
 
 module.exports = {
