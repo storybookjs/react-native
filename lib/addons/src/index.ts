@@ -1,7 +1,9 @@
 import global from 'global';
 import { ReactElement } from 'react';
 import { Channel } from '@storybook/channels';
+import logger from '@storybook/client-logger';
 import { types, Types, isSupportedType } from './types';
+import deprecate from 'util-deprecate';
 
 export interface Options {
   active: boolean;
@@ -33,52 +35,45 @@ export class AddonStore {
   private elements: Elements = {};
   private channel: Channel | undefined;
 
-  getChannel() {
+  getChannel = () => {
     // this.channel should get overwritten by setChannel. If it wasn't called (e.g. in non-browser environment), throw.
     if (!this.channel) {
-      throw new Error(
-        'Accessing nonexistent addons channel, see https://storybook.js.org/basics/faq/#why-is-there-no-addons-channel'
-      );
+      throw new Error('Accessing non-existent addons channel, see https://storybook.js.org/basics/faq/#why-is-there-no-addons-channel');
     }
 
     return this.channel;
   }
-
-  hasChannel() {
-    return !!this.channel;
-  }
-
-  setChannel(channel: Channel) {
+  hasChannel = () => !!this.channel;
+  setChannel = (channel: Channel) => {
     this.channel = channel;
   }
 
-  getElements(type: Types): Collection {
-    return this.elements[type] || {};
+  getElements = (type: Types): Collection => {
+    if (!this.elements[type]) {
+      this.elements[type] = {};
+    }
+    return this.elements[type];
   }
-
-  addPanel(name: string, options: Addon) {
+  addPanel = (name: string, options: Addon) => {
     this.add(name, {
       type: types.PANEL,
       ...options,
     });
   }
-
-  add(name: string, options: Addon) {
+  add = (name: string, options: Addon) => {
     const { type } = options;
 
     const collection = this.getElements(type);
     collection[name] = { id: name, ...options };
   }
-
-  register(name: string, registerCallback: (api: any) => void) {
+  register = (name: string, registerCallback: (api: any) => void) => {
     if (this.loaders[name]) {
-      // eslint-disable-next-line no-console
-      console.warn(`${name} was loaded twice, this could have bad side-effects`);
+      logger.warn(`${name} was loaded twice, this could have bad side-effects`);
     }
     this.loaders[name] = registerCallback;
   }
 
-  loadAddons(api: any) {
+  loadAddons = (api: any) => {
     Object.values(this.loaders).forEach(value => value(api));
   }
 }
