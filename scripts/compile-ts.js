@@ -6,7 +6,7 @@ const shell = require('shelljs');
 function getCommand(watch) {
   const tsc = path.join(__dirname, '..', 'node_modules', '.bin', 'tsc');
 
-  const args = ['--outDir ./dist', '-d true', '--listEmittedFiles true'];
+  const args = ['--outDir ./dist', '--emitDeclarationOnly', '--listEmittedFiles true'];
 
   if (watch) {
     args.push('-w');
@@ -25,7 +25,7 @@ function handleExit(code, errorCallback) {
   }
 }
 
-function tscfy(options = {}) {
+function generateTSDefinitionFiles(options = {}) {
   const { watch = false, silent = true, errorCallback } = options;
   const tsConfigFile = 'tsconfig.json';
 
@@ -49,5 +49,5 @@ function tscfy(options = {}) {
 }
 
 module.exports = {
-  tscfy,
+  generateTSDefinitionFiles,
 };

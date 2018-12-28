@@ -6,11 +6,28 @@ const shell = require('shelljs');
 function getCommand(watch) {
   const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
 
+  const ignore = [
+    '**/__mocks__/',
+    '**/tests/',
+    '**/__tests__/',
+    '**/*.test.js',
+    '**/*.test.ts',
+    '**/stories/',
+    '**/*.story.js',
+    '**/*.story.ts',
+    '**/*.stories.js',
+    '**/*.stories.ts',
+    '**/__snapshots__',
+    '**/*.d.ts',
+  ];
+
   const args = [
-    '--ignore **/__mocks__/,**/tests/*,**/__tests__/,**/**.test.js,**/stories/,**/**.story.js,**/**.stories.js,**/__snapshots__',
-    './src --out-dir ./dist',
-    '--copy-files',
+    './src',
+    '--out-dir ./dist',
     `--config-file ${path.resolve(__dirname, '../.babelrc.js')}`,
+    `--extensions ".js,.jsx,.ts,.tsx"`,
+    `--copy-files`,
+    `--ignore "${ignore.join('","')}"`,
   ];
 
   if (watch) {

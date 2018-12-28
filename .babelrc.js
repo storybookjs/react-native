@@ -1,6 +1,7 @@
 module.exports = {
   presets: [
     ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage' }],
+    '@babel/preset-typescript',
     '@babel/preset-react',
     '@babel/preset-flow',
   ],
