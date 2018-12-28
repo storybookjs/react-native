@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "4.2.0-alpha.7",
+  "version": "4.2.0-alpha.8",
   "description": "Storybook framework-agnostic API",
   "keywords": [
     "storybook"
@@ -24,12 +24,12 @@
     "@emotion/core": "^0.13.1",
     "@emotion/provider": "^0.11.2",
     "@emotion/styled": "^0.10.6",
-    "@storybook/addons": "4.2.0-alpha.7",
-    "@storybook/channel-postmessage": "4.2.0-alpha.7",
-    "@storybook/client-logger": "4.2.0-alpha.7",
-    "@storybook/core-events": "4.2.0-alpha.7",
-    "@storybook/node-logger": "4.2.0-alpha.7",
-    "@storybook/ui": "4.2.0-alpha.7",
+    "@storybook/addons": "4.2.0-alpha.8",
+    "@storybook/channel-postmessage": "4.2.0-alpha.8",
+    "@storybook/client-logger": "4.2.0-alpha.8",
+    "@storybook/core-events": "4.2.0-alpha.8",
+    "@storybook/node-logger": "4.2.0-alpha.8",
+    "@storybook/ui": "4.2.0-alpha.8",
     "airbnb-js-shims": "^1 || ^2",
     "autoprefixer": "^9.4.3",
     "babel-plugin-macros": "^2.4.3",
