@@ -17,20 +17,20 @@ import extraViewports from './extra-viewports.json';
 
 if (process.env.NODE_ENV === 'development') {
   if (!process.env.DOTENV_DEVELOPMENT_DISPLAY_WARNING) {
-    addHeadWarning('Dotenv development file not loaded');
+    addHeadWarning('dotenv-env', 'Dotenv development file not loaded');
   }
 
   if (!process.env.STORYBOOK_DISPLAY_WARNING) {
-    addHeadWarning('Global storybook env var not loaded');
+    addHeadWarning('env-glob', 'Global storybook env var not loaded');
   }
 
   if (process.env.DISPLAY_WARNING) {
-    addHeadWarning('Global non-storybook env var loaded');
+    addHeadWarning('env-extra', 'Global non-storybook env var loaded');
   }
 }
 
-addHeadWarning('Preview head not loaded', 'preview-head-not-loaded');
-addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
+addHeadWarning('preview-head-not-loaded', 'Preview head not loaded');
+addHeadWarning('dotenv-file-not-loaded', 'Dotenv file not loaded');
 
 addDecorator(withCssResources);
 addDecorator(withA11Y);
@@ -49,16 +49,12 @@ const Reset = withTheme(({ theme }) => (
   />
 ));
 
-addDecorator((story, { kind }) =>
-  kind === 'Core|Errors' ? (
-    story()
-  ) : (
-    <ThemeProvider theme={themes.normal}>
-      <Reset />
-      {story()}
-    </ThemeProvider>
-  )
-);
+addDecorator(fn => (
+  <ThemeProvider theme={themes.normal}>
+    <Reset />
+    {fn()}
+  </ThemeProvider>
+));
 
 addParameters({
   a11y: {},
