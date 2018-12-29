@@ -166,6 +166,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
         </div>
       </div>
       <button
+        className="info__show-button"
         onClick={[Function]}
         style={
           Object {
@@ -188,6 +189,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
         Show Info
       </button>
       <div
+        className="info__overlay"
         style={
           Object {
             "background": "white",
@@ -204,6 +206,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
         }
       >
         <button
+          className="info__close-button"
           onClick={[Function]}
           style={
             Object {
@@ -1486,6 +1489,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
         </div>
       </div>
       <button
+        className="info__show-button"
         onClick={[Function]}
         style={
           Object {
@@ -1508,6 +1512,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
         Show Info
       </button>
       <div
+        className="info__overlay"
         style={
           Object {
             "background": "white",
@@ -1524,6 +1529,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
         }
       >
         <button
+          className="info__close-button"
           onClick={[Function]}
           style={
             Object {
@@ -2729,7 +2735,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
 </deprecated>
 `;
 
-exports[`addon Info should render component description 1`] = `
+exports[`addon Info should render component description if story kind matches component 1`] = `
 .emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3217,6 +3223,1304 @@ exports[`addon Info should render component description 1`] = `
                                 }
                               >
                                 Basic test
+                              </span>
+                            </div>
+                          </Node>
+                          <Node
+                            depth={1}
+                            key=".2"
+                            maxPropArrayLength={3}
+                            maxPropObjectKeys={3}
+                            maxPropStringLength={50}
+                            maxPropsIntoLine={3}
+                            node=" story:"
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 33,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#444",
+                                  }
+                                }
+                              >
+                                 story:
+                              </span>
+                            </div>
+                          </Node>
+                          <Node
+                            depth={1}
+                            key=".3"
+                            maxPropArrayLength={3}
+                            maxPropObjectKeys={3}
+                            maxPropStringLength={50}
+                            maxPropsIntoLine={3}
+                            node={
+                              <TestComponent
+                                array={
+                                  Array [
+                                    1,
+                                    2,
+                                    3,
+                                  ]
+                                }
+                                bool={true}
+                                func={[Function]}
+                                number={7}
+                                obj={
+                                  Object {
+                                    "a": "a",
+                                    "b": "b",
+                                  }
+                                }
+                                string="seven"
+                              />
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 33,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#444",
+                                  }
+                                }
+                              >
+                                &lt;
+                                TestComponent
+                              </span>
+                              <Props
+                                maxPropArrayLength={3}
+                                maxPropObjectKeys={3}
+                                maxPropStringLength={50}
+                                maxPropsIntoLine={3}
+                                node={
+                                  <TestComponent
+                                    array={
+                                      Array [
+                                        1,
+                                        2,
+                                        3,
+                                      ]
+                                    }
+                                    bool={true}
+                                    func={[Function]}
+                                    number={7}
+                                    obj={
+                                      Object {
+                                        "a": "a",
+                                        "b": "b",
+                                      }
+                                    }
+                                    string="seven"
+                                  />
+                                }
+                                singleLine={true}
+                              >
+                                <span>
+                                  <span
+                                    key="func"
+                                  >
+                                    <span>
+                                      <br />
+                                        
+                                    </span>
+                                    <span
+                                      style={Object {}}
+                                    >
+                                      func
+                                    </span>
+                                    <span>
+                                      =
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        {
+                                        <PropVal
+                                          level={1}
+                                          maxPropArrayLength={3}
+                                          maxPropObjectKeys={3}
+                                          maxPropStringLength={50}
+                                          maxPropsIntoLine={3}
+                                          theme={Object {}}
+                                          val={[Function]}
+                                          valueStyles={null}
+                                        >
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#170",
+                                              }
+                                            }
+                                          >
+                                            func
+                                          </span>
+                                        </PropVal>
+                                        }
+                                      </span>
+                                    </span>
+                                  </span>
+                                  <span
+                                    key="obj"
+                                  >
+                                    <span>
+                                      <br />
+                                        
+                                    </span>
+                                    <span
+                                      style={Object {}}
+                                    >
+                                      obj
+                                    </span>
+                                    <span>
+                                      =
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        {
+                                        <PropVal
+                                          level={1}
+                                          maxPropArrayLength={3}
+                                          maxPropObjectKeys={3}
+                                          maxPropStringLength={50}
+                                          maxPropsIntoLine={3}
+                                          theme={Object {}}
+                                          val={
+                                            Object {
+                                              "a": "a",
+                                              "b": "b",
+                                            }
+                                          }
+                                          valueStyles={null}
+                                        >
+                                          <PreviewObject
+                                            level={1}
+                                            maxPropObjectKeys={3}
+                                            maxPropStringLength={50}
+                                            maxPropsIntoLine={3}
+                                            val={
+                                              Object {
+                                                "a": "a",
+                                                "b": "b",
+                                              }
+                                            }
+                                            valueStyles={
+                                              Object {
+                                                "array": Object {
+                                                  "color": "#666",
+                                                },
+                                                "attr": Object {
+                                                  "color": "#666",
+                                                },
+                                                "bool": Object {
+                                                  "color": "#a11",
+                                                },
+                                                "empty": Object {
+                                                  "color": "#444",
+                                                },
+                                                "func": Object {
+                                                  "color": "#170",
+                                                },
+                                                "number": Object {
+                                                  "color": "#a11",
+                                                },
+                                                "object": Object {
+                                                  "color": "#666",
+                                                },
+                                                "string": Object {
+                                                  "color": "#22a",
+                                                  "wordBreak": "break-word",
+                                                },
+                                              }
+                                            }
+                                          >
+                                            <span
+                                              style={
+                                                Object {
+                                                  "color": "#666",
+                                                }
+                                              }
+                                            >
+                                              {
+                                              <span
+                                                key="k0/.0"
+                                              >
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#666",
+                                                    }
+                                                  }
+                                                >
+                                                  a
+                                                </span>
+                                              </span>
+                                              : 
+                                              <PropVal
+                                                key="v0/.0"
+                                                level={2}
+                                                maxPropArrayLength={3}
+                                                maxPropObjectKeys={3}
+                                                maxPropStringLength={50}
+                                                maxPropsIntoLine={3}
+                                                theme={Object {}}
+                                                val="a"
+                                                valueStyles={
+                                                  Object {
+                                                    "array": Object {
+                                                      "color": "#666",
+                                                    },
+                                                    "attr": Object {
+                                                      "color": "#666",
+                                                    },
+                                                    "bool": Object {
+                                                      "color": "#a11",
+                                                    },
+                                                    "empty": Object {
+                                                      "color": "#444",
+                                                    },
+                                                    "func": Object {
+                                                      "color": "#170",
+                                                    },
+                                                    "number": Object {
+                                                      "color": "#a11",
+                                                    },
+                                                    "object": Object {
+                                                      "color": "#666",
+                                                    },
+                                                    "string": Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    },
+                                                  }
+                                                }
+                                              >
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    }
+                                                  }
+                                                >
+                                                  'a'
+                                                </span>
+                                              </PropVal>
+                                              ,
+                                              <span
+                                                key="k1/.0"
+                                              >
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#666",
+                                                    }
+                                                  }
+                                                >
+                                                  b
+                                                </span>
+                                              </span>
+                                              : 
+                                              <PropVal
+                                                key="v1/.0"
+                                                level={2}
+                                                maxPropArrayLength={3}
+                                                maxPropObjectKeys={3}
+                                                maxPropStringLength={50}
+                                                maxPropsIntoLine={3}
+                                                theme={Object {}}
+                                                val="b"
+                                                valueStyles={
+                                                  Object {
+                                                    "array": Object {
+                                                      "color": "#666",
+                                                    },
+                                                    "attr": Object {
+                                                      "color": "#666",
+                                                    },
+                                                    "bool": Object {
+                                                      "color": "#a11",
+                                                    },
+                                                    "empty": Object {
+                                                      "color": "#444",
+                                                    },
+                                                    "func": Object {
+                                                      "color": "#170",
+                                                    },
+                                                    "number": Object {
+                                                      "color": "#a11",
+                                                    },
+                                                    "object": Object {
+                                                      "color": "#666",
+                                                    },
+                                                    "string": Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    },
+                                                  }
+                                                }
+                                              >
+                                                <span
+                                                  style={
+                                                    Object {
+                                                      "color": "#22a",
+                                                      "wordBreak": "break-word",
+                                                    }
+                                                  }
+                                                >
+                                                  'b'
+                                                </span>
+                                              </PropVal>
+                                              }
+                                            </span>
+                                          </PreviewObject>
+                                        </PropVal>
+                                        }
+                                      </span>
+                                    </span>
+                                  </span>
+                                  <span
+                                    key="array"
+                                  >
+                                    <span>
+                                      <br />
+                                        
+                                    </span>
+                                    <span
+                                      style={Object {}}
+                                    >
+                                      array
+                                    </span>
+                                    <span>
+                                      =
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        {
+                                        <PropVal
+                                          level={1}
+                                          maxPropArrayLength={3}
+                                          maxPropObjectKeys={3}
+                                          maxPropStringLength={50}
+                                          maxPropsIntoLine={3}
+                                          theme={Object {}}
+                                          val={
+                                            Array [
+                                              1,
+                                              2,
+                                              3,
+                                            ]
+                                          }
+                                          valueStyles={null}
+                                        >
+                                          <PreviewArray
+                                            level={1}
+                                            maxPropArrayLength={3}
+                                            maxPropStringLength={50}
+                                            maxPropsIntoLine={3}
+                                            val={
+                                              Array [
+                                                1,
+                                                2,
+                                                3,
+                                              ]
+                                            }
+                                            valueStyles={
+                                              Object {
+                                                "array": Object {
+                                                  "color": "#666",
+                                                },
+                                                "attr": Object {
+                                                  "color": "#666",
+                                                },
+                                                "bool": Object {
+                                                  "color": "#a11",
+                                                },
+                                                "empty": Object {
+                                                  "color": "#444",
+                                                },
+                                                "func": Object {
+                                                  "color": "#170",
+                                                },
+                                                "number": Object {
+                                                  "color": "#a11",
+                                                },
+                                                "object": Object {
+                                                  "color": "#666",
+                                                },
+                                                "string": Object {
+                                                  "color": "#22a",
+                                                  "wordBreak": "break-word",
+                                                },
+                                              }
+                                            }
+                                          >
+                                            <span
+                                              style={
+                                                Object {
+                                                  "color": "#666",
+                                                }
+                                              }
+                                            >
+                                              [
+                                              <span
+                                                key="n0/.0"
+                                              >
+                                                <PropVal
+                                                  level={2}
+                                                  maxPropArrayLength={3}
+                                                  maxPropObjectKeys={3}
+                                                  maxPropStringLength={50}
+                                                  maxPropsIntoLine={3}
+                                                  theme={Object {}}
+                                                  val={1}
+                                                  valueStyles={
+                                                    Object {
+                                                      "array": Object {
+                                                        "color": "#666",
+                                                      },
+                                                      "attr": Object {
+                                                        "color": "#666",
+                                                      },
+                                                      "bool": Object {
+                                                        "color": "#a11",
+                                                      },
+                                                      "empty": Object {
+                                                        "color": "#444",
+                                                      },
+                                                      "func": Object {
+                                                        "color": "#170",
+                                                      },
+                                                      "number": Object {
+                                                        "color": "#a11",
+                                                      },
+                                                      "object": Object {
+                                                        "color": "#666",
+                                                      },
+                                                      "string": Object {
+                                                        "color": "#22a",
+                                                        "wordBreak": "break-word",
+                                                      },
+                                                    }
+                                                  }
+                                                >
+                                                  <span
+                                                    style={
+                                                      Object {
+                                                        "color": "#a11",
+                                                      }
+                                                    }
+                                                  >
+                                                    1
+                                                  </span>
+                                                </PropVal>
+                                              </span>
+                                              ,
+                                              <span
+                                                key="n1/.0"
+                                              >
+                                                <PropVal
+                                                  level={2}
+                                                  maxPropArrayLength={3}
+                                                  maxPropObjectKeys={3}
+                                                  maxPropStringLength={50}
+                                                  maxPropsIntoLine={3}
+                                                  theme={Object {}}
+                                                  val={2}
+                                                  valueStyles={
+                                                    Object {
+                                                      "array": Object {
+                                                        "color": "#666",
+                                                      },
+                                                      "attr": Object {
+                                                        "color": "#666",
+                                                      },
+                                                      "bool": Object {
+                                                        "color": "#a11",
+                                                      },
+                                                      "empty": Object {
+                                                        "color": "#444",
+                                                      },
+                                                      "func": Object {
+                                                        "color": "#170",
+                                                      },
+                                                      "number": Object {
+                                                        "color": "#a11",
+                                                      },
+                                                      "object": Object {
+                                                        "color": "#666",
+                                                      },
+                                                      "string": Object {
+                                                        "color": "#22a",
+                                                        "wordBreak": "break-word",
+                                                      },
+                                                    }
+                                                  }
+                                                >
+                                                  <span
+                                                    style={
+                                                      Object {
+                                                        "color": "#a11",
+                                                      }
+                                                    }
+                                                  >
+                                                    2
+                                                  </span>
+                                                </PropVal>
+                                              </span>
+                                              ,
+                                              <span
+                                                key="n2/.0"
+                                              >
+                                                <PropVal
+                                                  level={2}
+                                                  maxPropArrayLength={3}
+                                                  maxPropObjectKeys={3}
+                                                  maxPropStringLength={50}
+                                                  maxPropsIntoLine={3}
+                                                  theme={Object {}}
+                                                  val={3}
+                                                  valueStyles={
+                                                    Object {
+                                                      "array": Object {
+                                                        "color": "#666",
+                                                      },
+                                                      "attr": Object {
+                                                        "color": "#666",
+                                                      },
+                                                      "bool": Object {
+                                                        "color": "#a11",
+                                                      },
+                                                      "empty": Object {
+                                                        "color": "#444",
+                                                      },
+                                                      "func": Object {
+                                                        "color": "#170",
+                                                      },
+                                                      "number": Object {
+                                                        "color": "#a11",
+                                                      },
+                                                      "object": Object {
+                                                        "color": "#666",
+                                                      },
+                                                      "string": Object {
+                                                        "color": "#22a",
+                                                        "wordBreak": "break-word",
+                                                      },
+                                                    }
+                                                  }
+                                                >
+                                                  <span
+                                                    style={
+                                                      Object {
+                                                        "color": "#a11",
+                                                      }
+                                                    }
+                                                  >
+                                                    3
+                                                  </span>
+                                                </PropVal>
+                                              </span>
+                                              ]
+                                            </span>
+                                          </PreviewArray>
+                                        </PropVal>
+                                        }
+                                      </span>
+                                    </span>
+                                  </span>
+                                  <span
+                                    key="number"
+                                  >
+                                    <span>
+                                      <br />
+                                        
+                                    </span>
+                                    <span
+                                      style={Object {}}
+                                    >
+                                      number
+                                    </span>
+                                    <span>
+                                      =
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        {
+                                        <PropVal
+                                          level={1}
+                                          maxPropArrayLength={3}
+                                          maxPropObjectKeys={3}
+                                          maxPropStringLength={50}
+                                          maxPropsIntoLine={3}
+                                          theme={Object {}}
+                                          val={7}
+                                          valueStyles={null}
+                                        >
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#a11",
+                                              }
+                                            }
+                                          >
+                                            7
+                                          </span>
+                                        </PropVal>
+                                        }
+                                      </span>
+                                    </span>
+                                  </span>
+                                  <span
+                                    key="string"
+                                  >
+                                    <span>
+                                      <br />
+                                        
+                                    </span>
+                                    <span
+                                      style={Object {}}
+                                    >
+                                      string
+                                    </span>
+                                    <span>
+                                      =
+                                      <span
+                                        style={Object {}}
+                                      >
+                                        "
+                                        <PropVal
+                                          level={1}
+                                          maxPropArrayLength={3}
+                                          maxPropObjectKeys={3}
+                                          maxPropStringLength={50}
+                                          maxPropsIntoLine={3}
+                                          theme={Object {}}
+                                          val="seven"
+                                          valueStyles={null}
+                                        >
+                                          <span
+                                            style={
+                                              Object {
+                                                "color": "#22a",
+                                                "wordBreak": "break-word",
+                                              }
+                                            }
+                                          >
+                                            seven
+                                          </span>
+                                        </PropVal>
+                                        "
+                                      </span>
+                                    </span>
+                                  </span>
+                                  <span
+                                    key="bool"
+                                  >
+                                    <span>
+                                      <br />
+                                        
+                                    </span>
+                                    <span
+                                      style={Object {}}
+                                    >
+                                      bool
+                                    </span>
+                                    <br />
+                                  </span>
+                                </span>
+                              </Props>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#444",
+                                  }
+                                }
+                              >
+                                /&gt;
+                              </span>
+                            </div>
+                          </Node>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 18,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#444",
+                                }
+                              }
+                            >
+                              &lt;/
+                              div
+                              &gt;
+                            </span>
+                          </div>
+                        </div>
+                      </Node>
+                    </div>
+                    <CopyButton
+                      onClick={[Function]}
+                      theme={Object {}}
+                      toggled={false}
+                    >
+                      <ForwardRef
+                        onClick={[Function]}
+                        styles={Object {}}
+                      >
+                        <Styled(button)
+                          onClick={[Function]}
+                          styles={Object {}}
+                        >
+                          <button
+                            className="emotion-2 emotion-3"
+                            onClick={[Function]}
+                          >
+                            <ForwardRef
+                              toggled={false}
+                            >
+                              <Styled(div)
+                                toggled={false}
+                              >
+                                <div
+                                  className="emotion-0 emotion-1"
+                                >
+                                  <div
+                                    style={
+                                      Object {
+                                        "marginBottom": 6,
+                                      }
+                                    }
+                                  >
+                                    Copied!
+                                  </div>
+                                  <div>
+                                    Copy
+                                  </div>
+                                </div>
+                              </Styled(div)>
+                            </ForwardRef>
+                          </button>
+                        </Styled(button)>
+                      </ForwardRef>
+                    </CopyButton>
+                  </pre>
+                </Styled(pre)>
+              </ForwardRef>
+            </Pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Story>
+</Info>
+`;
+
+exports[`addon Info should render component description if story name matches component 1`] = `
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: .88em;
+  font-family: Menlo,Monaco,"Courier New",monospace;
+  background-color: #fafafa;
+  padding: .5rem;
+  line-height: 1.5;
+  overflow-x: scroll;
+}
+
+.emotion-2 {
+  overflow: hidden;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 3px 10px;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-2:hover {
+  background-color: #f4f7fa;
+  border-color: #ddd;
+}
+
+.emotion-2:active {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+.emotion-0 {
+  -webkit-transition: -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  transition: transform .2s ease;
+  height: 16px;
+  -webkit-transform: translateY(-100%) translateY(-6px);
+  -ms-transform: translateY(-100%) translateY(-6px);
+  transform: translateY(-100%) translateY(-6px);
+}
+
+<Info>
+  <Story
+    PropTable={[Function]}
+    components={
+      Object {
+        "a": [Function],
+        "code": [Function],
+        "h1": [Function],
+        "h2": [Function],
+        "h3": [Function],
+        "h4": [Function],
+        "h5": [Function],
+        "h6": [Function],
+        "li": [Function],
+        "p": [Function],
+        "ul": [Function],
+      }
+    }
+    context={
+      Object {
+        "kind": "Test Components",
+        "story": "TestComponent",
+      }
+    }
+    excludedPropTypes={Array []}
+    info=""
+    maxPropArrayLength={3}
+    maxPropObjectKeys={3}
+    maxPropStringLength={50}
+    maxPropsIntoLine={3}
+    propTables={null}
+    propTablesExclude={Array []}
+    showHeader={true}
+    showInline={true}
+    showSource={true}
+    styles={[Function]}
+  >
+    <div>
+      <div>
+        <div
+          style={
+            Object {
+              "WebkitFontSmoothing": "antialiased",
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "#444",
+              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              Test Components
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              TestComponent
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div
+        id="story-root"
+        style={Object {}}
+      >
+        <div>
+          It's a 
+          TestComponent
+           story:
+          <TestComponent
+            array={
+              Array [
+                1,
+                2,
+                3,
+              ]
+            }
+            bool={true}
+            func={[Function]}
+            number={7}
+            obj={
+              Object {
+                "a": "a",
+                "b": "b",
+              }
+            }
+            string="seven"
+          >
+            <div>
+              <h1>
+                function func(x) {
+        return x + 1;
+      }
+              </h1>
+              <h2>
+                [object Object]
+              </h2>
+              <h3>
+                1,2,3
+              </h3>
+              <h4>
+                7
+              </h4>
+              <h5>
+                seven
+              </h5>
+              <h6>
+                true
+              </h6>
+              <p>
+                undefined
+              </p>
+              <a
+                href="#"
+              >
+                test
+              </a>
+              <code>
+                storiesOf
+              </code>
+              <ul>
+                <li>
+                  1
+                </li>
+                <li>
+                  2
+                </li>
+              </ul>
+            </div>
+          </TestComponent>
+        </div>
+      </div>
+      <div>
+        <div
+          style={
+            Object {
+              "WebkitFontSmoothing": "antialiased",
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "#444",
+              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div>
+            <H1
+              context={Object {}}
+              id="awesome-test-component-description"
+              key="0"
+            >
+              <h1
+                id="awesome-test-component-description"
+                style={
+                  Object {
+                    "WebkitFontSmoothing": "antialiased",
+                    "borderBottom": "1px solid #eee",
+                    "color": "#444",
+                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontSize": "40px",
+                    "fontWeight": 600,
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              >
+                Awesome test component description
+              </h1>
+            </H1>
+            <H2
+              context={Object {}}
+              id="awesome-test-component-description-with-markdown-support"
+              key="1"
+            >
+              <h2
+                id="awesome-test-component-description-with-markdown-support"
+                style={
+                  Object {
+                    "WebkitFontSmoothing": "antialiased",
+                    "color": "#444",
+                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontSize": "30px",
+                    "fontWeight": 600,
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              >
+                with markdown support
+              </h2>
+            </H2>
+            <P
+              context={Object {}}
+              key="4"
+            >
+              <div
+                style={
+                  Object {
+                    "WebkitFontSmoothing": "antialiased",
+                    "color": "#444",
+                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontSize": "15px",
+                  }
+                }
+              >
+                <strong
+                  key="2"
+                >
+                  bold
+                </strong>
+                 
+                <em
+                  key="3"
+                >
+                  cursive
+                </em>
+                 
+              </div>
+            </P>
+          </div>
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <Pre
+              theme={Object {}}
+            >
+              <ForwardRef>
+                <Styled(pre)>
+                  <pre
+                    className="emotion-4 emotion-5"
+                  >
+                    <div>
+                      <Node
+                        depth={0}
+                        key="0/.0"
+                        maxPropArrayLength={3}
+                        maxPropObjectKeys={3}
+                        maxPropStringLength={50}
+                        maxPropsIntoLine={3}
+                        node={
+                          <div>
+                            It's a 
+                            TestComponent
+                             story:
+                            <TestComponent
+                              array={
+                                Array [
+                                  1,
+                                  2,
+                                  3,
+                                ]
+                              }
+                              bool={true}
+                              func={[Function]}
+                              number={7}
+                              obj={
+                                Object {
+                                  "a": "a",
+                                  "b": "b",
+                                }
+                              }
+                              string="seven"
+                            />
+                          </div>
+                        }
+                      >
+                        <div>
+                          <div
+                            style={
+                              Object {
+                                "paddingLeft": 18,
+                                "paddingRight": 3,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "color": "#444",
+                                }
+                              }
+                            >
+                              &lt;
+                              div
+                            </span>
+                            <Props
+                              maxPropArrayLength={3}
+                              maxPropObjectKeys={3}
+                              maxPropStringLength={50}
+                              maxPropsIntoLine={3}
+                              node={
+                                <div>
+                                  It's a 
+                                  TestComponent
+                                   story:
+                                  <TestComponent
+                                    array={
+                                      Array [
+                                        1,
+                                        2,
+                                        3,
+                                      ]
+                                    }
+                                    bool={true}
+                                    func={[Function]}
+                                    number={7}
+                                    obj={
+                                      Object {
+                                        "a": "a",
+                                        "b": "b",
+                                      }
+                                    }
+                                    string="seven"
+                                  />
+                                </div>
+                              }
+                              singleLine={false}
+                            >
+                              <span />
+                            </Props>
+                            <span
+                              style={
+                                Object {
+                                  "color": "#444",
+                                }
+                              }
+                            >
+                              &gt;
+                            </span>
+                          </div>
+                          <Node
+                            depth={1}
+                            key=".0"
+                            maxPropArrayLength={3}
+                            maxPropObjectKeys={3}
+                            maxPropStringLength={50}
+                            maxPropsIntoLine={3}
+                            node="It's a "
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 33,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#444",
+                                  }
+                                }
+                              >
+                                It's a 
+                              </span>
+                            </div>
+                          </Node>
+                          <Node
+                            depth={1}
+                            key=".1"
+                            maxPropArrayLength={3}
+                            maxPropObjectKeys={3}
+                            maxPropStringLength={50}
+                            maxPropsIntoLine={3}
+                            node="TestComponent"
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "paddingLeft": 33,
+                                  "paddingRight": 3,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#444",
+                                  }
+                                }
+                              >
+                                TestComponent
                               </span>
                             </div>
                           </Node>

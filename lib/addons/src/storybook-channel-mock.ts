@@ -1,6 +1,6 @@
 import Channel from '@storybook/channels';
 
-export default function createChannel() {
+export function mockChannel() {
   const transport = {
     setHandler: () => {},
     send: () => {},

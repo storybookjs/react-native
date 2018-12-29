@@ -185,11 +185,21 @@ class Story extends Component {
     return (
       <div>
         <div style={stylesheet.children}>{children}</div>
-        <button type="button" style={buttonStyle} onClick={openOverlay}>
+        <button
+          type="button"
+          style={buttonStyle}
+          onClick={openOverlay}
+          className="info__show-button"
+        >
           Show Info
         </button>
-        <div style={infoStyle}>
-          <button type="button" style={buttonStyle} onClick={closeOverlay}>
+        <div style={infoStyle} className="info__overlay">
+          <button
+            type="button"
+            style={buttonStyle}
+            onClick={closeOverlay}
+            className="info__close-button"
+          >
             ×
           </button>
           <div style={stylesheet.infoPage}>
@@ -250,12 +260,16 @@ class Story extends Component {
   }
 
   _getComponentDescription() {
-    const { context } = this.props;
+    const {
+      context: { kind, story },
+    } = this.props;
     let retDiv = null;
+
+    const validMatches = [kind, story];
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
-        if (STORYBOOK_REACT_CLASSES[key].name === context.kind) {
+        if (validMatches.includes(STORYBOOK_REACT_CLASSES[key].name)) {
           const componentDescription = STORYBOOK_REACT_CLASSES[key].docgenInfo.description;
           retDiv = <div>{this.marksy(componentDescription).tree}</div>;
         }

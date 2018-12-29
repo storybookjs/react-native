@@ -2,7 +2,7 @@
 
 exports[`Storyshots Addon|Knobs All knobs 1`] = `
 <div
-  style="padding: 8px 22px; border-radius: 8px;"
+  style="border: 2px dotted; padding: 8px 22px; border-radius: 8px;"
 >
   <h1>
     My name is Jane,
@@ -46,8 +46,6 @@ exports[`Storyshots Addon|Knobs Simple 1`] = `
 
 exports[`Storyshots Addon|Knobs XSS safety 1`] = `
 <div>
-  
-        &lt;img src=x onerror="alert('XSS Attack')" &gt;
-      
+  &lt;img src=x onerror="alert('XSS Attack')" &gt;
 </div>
 `;

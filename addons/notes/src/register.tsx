@@ -1,15 +1,10 @@
 import * as React from 'react';
-import addons from '@storybook/addons';
+
 import * as PropTypes from 'prop-types';
 
 import styled from '@emotion/styled';
-
-// todo this is going to be refactored after the migration of @storybook/channel to TypeScript
-interface NotesChannel {
-  emit: any;
-  on(listener: string, callback: (text: string) => void): any;
-  removeListener(listener: string, callback: (text: string) => void): void;
-}
+import { Channel } from '@storybook/channels';
+import { addons } from '@storybook/addons';
 
 interface NotesApi {
   setQueryParams: any; // todo check correct definition
@@ -20,7 +15,7 @@ interface NotesApi {
 
 interface NotesProps {
   active: boolean;
-  channel: NotesChannel;
+  channel: Channel;
   api: NotesApi;
 }
 
@@ -35,7 +30,6 @@ const Panel = styled.div({
 });
 
 export class Notes extends React.Component<NotesProps, NotesState> {
-
   static propTypes = {
     active: PropTypes.bool.isRequired,
     channel: PropTypes.shape({
@@ -91,9 +85,9 @@ export class Notes extends React.Component<NotesProps, NotesState> {
     const { text } = this.state;
     const textAfterFormatted = text
       ? text
-        .trim()
-        .replace(/(<\S+.*>)\n/g, '$1')
-        .replace(/\n/g, '<br />')
+          .trim()
+          .replace(/(<\S+.*>)\n/g, '$1')
+          .replace(/\n/g, '<br />')
       : '';
 
     return active ? (
@@ -109,6 +103,8 @@ addons.register('storybook/notes', (api: any) => {
   const channel = addons.getChannel();
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
-    render: ({ active }: { active: boolean }) => <Notes channel={channel} api={api} active={active}/>,
+    render: ({ active }: { active: boolean }) => (
+      <Notes channel={channel} api={api} active={active} />
+    ),
   });
 });

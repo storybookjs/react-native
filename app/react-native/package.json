@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "4.2.0-alpha.5",
+  "version": "4.2.0-alpha.8",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -19,11 +19,11 @@
   "main": "src/index.js",
   "jsnext:main": "src/index.js",
   "dependencies": {
-    "@storybook/addons": "4.2.0-alpha.5",
-    "@storybook/channel-websocket": "4.2.0-alpha.5",
-    "@storybook/channels": "4.2.0-alpha.5",
-    "@storybook/client-api": "4.2.0-alpha.5",
-    "@storybook/core-events": "4.2.0-alpha.5",
+    "@storybook/addons": "4.2.0-alpha.8",
+    "@storybook/channel-websocket": "4.2.0-alpha.8",
+    "@storybook/channels": "4.2.0-alpha.8",
+    "@storybook/client-api": "4.2.0-alpha.8",
+    "@storybook/core-events": "4.2.0-alpha.8",
     "core-js": "^2.5.7",
     "prop-types": "^15.6.2",
     "react-native-swipe-gestures": "^1.0.2",

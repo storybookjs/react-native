@@ -1,3 +1,80 @@
+## 4.2.0-alpha.8 (December 28, 2018)
+
+### Maintenance
+
+* Typescript: Migrate @storybook/channel-websocket ([#5046](https://github.com/storybooks/storybook/pull/5046))
+* Typescript: Migrate @storybook/addons ([#5018](https://github.com/storybooks/storybook/pull/5018))
+
+### Dependency Upgrades
+
+* Bump @babel/plugin-proposal-class-properties from 7.2.1 to 7.2.3 ([#5070](https://github.com/storybooks/storybook/pull/5070))
+* Bump babel-plugin-named-asset-import from 0.2.3 to 0.3.0 ([#5100](https://github.com/storybooks/storybook/pull/5100))
+* Bump eslint from 5.10.0 to 5.11.0 ([#5097](https://github.com/storybooks/storybook/pull/5097))
+* Bump loader-utils from 1.2.0 to 1.2.1 ([#5099](https://github.com/storybooks/storybook/pull/5099))
+* Bump boxen from 2.0.0 to 2.1.0 ([#5104](https://github.com/storybooks/storybook/pull/5104))
+* Bump @ngrx/store from 6.1.2 to 7.0.0 ([#5105](https://github.com/storybooks/storybook/pull/5105))
+* Bump react-select from 2.1.1 to 2.1.2 ([#5102](https://github.com/storybooks/storybook/pull/5102))
+
+## 4.1.4 (December 25, 2018)
+
+### Bug Fixes
+
+* Core: Load Symbol polyfill before any other code ([#5082](https://github.com/storybooks/storybook/pull/5082))
+* React: Fix error with new CRA Webpack config ([#5074](https://github.com/storybooks/storybook/pull/5074))
+
+## 4.2.0-alpha.7 (December 25, 2018)
+
+### Bug Fixes
+
+* React: Fix error with new CRA Webpack config ([#5074](https://github.com/storybooks/storybook/pull/5074))
+* Core: Load Symbol polyfill before any other code ([#5082](https://github.com/storybooks/storybook/pull/5082))
+
+### Dependency Upgrades
+
+* Bump eslint-plugin-jest from 21.27.2 to 22.1.2 ([#5089](https://github.com/storybooks/storybook/pull/5089))
+* Bump react-color from 2.14.1 to 2.17.0 ([#5083](https://github.com/storybooks/storybook/pull/5083))
+* Bump @angular-devkit/build-angular from 0.10.7 to 0.11.4 ([#5084](https://github.com/storybooks/storybook/pull/5084))
+* Bump ts-loader from 5.3.1 to 5.3.2 ([#5085](https://github.com/storybooks/storybook/pull/5085))
+* Bump loader-utils from 1.1.0 to 1.2.0 ([#5086](https://github.com/storybooks/storybook/pull/5086))
+* Bump protractor from 5.4.1 to 5.4.2 ([#5087](https://github.com/storybooks/storybook/pull/5087))
+* Bump ember-cli from 3.5.1 to 3.6.0 ([#5088](https://github.com/storybooks/storybook/pull/5088))
+* Bump tslint from 5.11.0 to 5.12.0 ([#5090](https://github.com/storybooks/storybook/pull/5090))
+* Bump react-dom from 16.6.3 to 16.7.0 ([#5071](https://github.com/storybooks/storybook/pull/5071))
+
+## 4.1.3 (December 20, 2018)
+
+### Bug Fixes
+
+* React: remove unnecessary dependencies, fix aliasing ([#5047](https://github.com/storybooks/storybook/pull/5047))
+* React: alias to react & react-dom ([#5016](https://github.com/storybooks/storybook/pull/5016))
+* Addon-knobs: Fix color picker display ([#5010](https://github.com/storybooks/storybook/pull/5010))
+
+## 4.2.0-alpha.6 (December 20, 2018)
+
+### Features
+
+* React-Native: Change on-device layout to absolute position ([#4962](https://github.com/storybooks/storybook/pull/4962))
+* Addon-Info: add css classes for style overrides ([#4589](https://github.com/storybooks/storybook/pull/4589))
+
+### Bug Fixes
+
+* Addon-Info: Display description when story name matches component ([#4863](https://github.com/storybooks/storybook/pull/4863))
+* React-Native: Disable warning if story is not set in async storage ([#5068](https://github.com/storybooks/storybook/pull/5068))
+* React-Native: Fixed isUIHidden param ([#5067](https://github.com/storybooks/storybook/pull/5067))
+* Vue: Fix reloading and story decoration ([#5057](https://github.com/storybooks/storybook/pull/5057))
+
+### Maintenance
+
+* TypeScript: migrate @storybook/channels to typescript ([#4977](https://github.com/storybooks/storybook/pull/4977))
+
+### Dependency Upgrades
+
+* Bump babel-plugin-macros from 2.4.2 to 2.4.3 ([#5060](https://github.com/storybooks/storybook/pull/5060))
+* Bump @babel/core from 7.2.0 to 7.2.2 ([#5059](https://github.com/storybooks/storybook/pull/5059))
+* Bump ember-cli-htmlbars-inline-precompile from 1.0.5 to 2.1.0 ([#5064](https://github.com/storybooks/storybook/pull/5064))
+* Bump react-test-renderer from 16.6.3 to 16.7.0 ([#5063](https://github.com/storybooks/storybook/pull/5063))
+* Bump autoprefixer from 9.4.2 to 9.4.3 ([#5061](https://github.com/storybooks/storybook/pull/5061))
+
 ## 4.2.0-alpha.5 (December 19, 2018)
 
 ### Bug Fixes
