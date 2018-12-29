@@ -11,8 +11,9 @@ const config = {
   contextElementId: '',
 };
 
-export const configureA11y = (options = {}) => {
-  Object.assign(config, options);
+export const configureA11y = (axeOptions = {}, contextElementId = '') => {
+  config.axeOptions = axeOptions;
+  config.contextElementId = contextElementId;
 };
 
 const runA11yCheck = () => {
