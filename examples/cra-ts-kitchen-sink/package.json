@@ -3,7 +3,7 @@
   "version": "4.1.2",
   "private": true,
   "scripts": {
-    "build:storybook": "build-storybook -s public",
+    "build-storybook": "build-storybook -s public",
     "start": "start-storybook -p 9010 -s public",
     "test": "react-scripts test --env=jsdom",
     "lint": "tslint src/**/*.ts{,x}"
@@ -27,6 +27,7 @@
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "enzyme-to-json": "^3.3.5",
+    "fork-ts-checker-webpack-plugin": "^0.5.2",
     "react-docgen-typescript-loader": "^3.0.0",
     "react-scripts": "^2.1.0",
     "tslint": "^5.11.0",

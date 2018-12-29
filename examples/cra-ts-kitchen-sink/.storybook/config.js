@@ -4,7 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 
 addDecorator(
   withOptions({
-    name: 'CRA Kitchen Sink',
+    name: 'CRA TypeScript Kitchen Sink',
     url: 'https://github.com/storybooks/storybook/tree/master/examples/cra-ts-kitchen-sink',
   })
 );
