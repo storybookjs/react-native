@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react';
 
 import {
   withKnobs,
-  withKnobsOptions,
   text,
   number,
   boolean,
@@ -321,11 +320,3 @@ storiesOf('Addons|Knobs.withKnobs using options', module)
     })
   )
   .add('accepts options', () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>);
-
-storiesOf('Addons|Knobs.withKnobsOptions', module)
-  .addDecorator(
-    withKnobsOptions({
-      escapeHTML: false,
-    })
-  )
-  .add('displays HTML code', () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>);
