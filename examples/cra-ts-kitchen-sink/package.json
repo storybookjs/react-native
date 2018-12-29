@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook -s public",
-    "start": "start-storybook -p 9010 -s public",
+    "storybook": "start-storybook -p 9010 -s public",
     "test": "react-scripts test --env=jsdom",
     "lint": "tslint src/**/*.ts{,x}"
   },
