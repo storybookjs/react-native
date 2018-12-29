@@ -20,24 +20,3 @@ exports[`Storyshots Custom|Style Default 1`] = `
   </ng-component>
 </storybook-dynamic-app-root>
 `;
-
-exports[`Storyshots Custom|Style With Knobs 1`] = `
-<storybook-dynamic-app-root
-  cfr={[Function CodegenComponentFactoryResolver]}
-  data={[Function Object]}
-  target={[Function ViewContainerRef_]}
->
-  <ng-component>
-    <storybook-button-component
-      _nghost-c12=""
-      ng-reflect-text="Button with custom styles"
-    >
-      <button
-        _ngcontent-c12=""
-      >
-        Button with custom styles
-      </button>
-    </storybook-button-component>
-  </ng-component>
-</storybook-dynamic-app-root>
-`;

@@ -130,7 +130,16 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
               1
             </h2>
             <pre>
-              {}
+              {
+  "id": "iframe",
+  "path": "/components/UI-DesktopLayout-noNav",
+  "componentId": "UI-DesktopLayout-noNav",
+  "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
+  "viewMode": "components",
+  "debug": {
+    "initialActive": 0
+  }
+}
             </pre>
           </div>
         </div>
@@ -219,7 +228,16 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
               1
             </h2>
             <pre>
-              {}
+              {
+  "id": "iframe",
+  "path": "/components/UI-DesktopLayout-noNav",
+  "componentId": "UI-DesktopLayout-noNav",
+  "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
+  "viewMode": "components",
+  "debug": {
+    "initialActive": 1
+  }
+}
             </pre>
           </div>
         </div>
@@ -308,7 +326,16 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
               1
             </h2>
             <pre>
-              {}
+              {
+  "id": "iframe",
+  "path": "/components/UI-DesktopLayout-noNav",
+  "componentId": "UI-DesktopLayout-noNav",
+  "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
+  "viewMode": "components",
+  "debug": {
+    "initialActive": 2
+  }
+}
             </pre>
           </div>
         </div>
@@ -399,7 +426,15 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
               1
             </h2>
             <pre>
-              {}
+              {
+  "id": "iframe",
+  "path": "/components/UI-DesktopLayout-noNav",
+  "componentId": "UI-DesktopLayout-noNav",
+  "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
+  "debug": {
+    "initialActive": 1
+  }
+}
             </pre>
           </div>
         </div>

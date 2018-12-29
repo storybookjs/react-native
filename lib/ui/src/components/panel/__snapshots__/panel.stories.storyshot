@@ -9,10 +9,10 @@ exports[`Storyshots UI|Panel default 1`] = `
     id="storybook-panel-root"
   >
     <div
-      class="css-1x21rq3-TabBarWrapper e1lzzkxx2"
+      class="css-1am2yyz-TabBarWrapper e1lzzkxx2"
     >
       <div
-        class="css-i6idqx-TabBar e1lzzkxx1"
+        class="css-1gsy9it-TabBar e1lzzkxx1"
         role="tablist"
       >
         <button
@@ -72,18 +72,9 @@ exports[`Storyshots UI|Panel default 1`] = `
       class="css-1od9ihz-Content e1lzzkxx5"
     >
       <div
-        id="test1"
-        title="Test 1"
-      />
-      <div
         id="test2"
-        title="Test 2"
       >
-        <div
-          id="test2"
-        >
-          TEST 2
-        </div>
+        TEST 2
       </div>
     </div>
   </div>

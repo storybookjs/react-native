@@ -21,7 +21,7 @@ exports[`Storyshots Core|Parameters adds data to storyFn 1`] = `
         "name": "Custom Storybook",
         "hierarchySeparator": {},
         "hierarchyRootSeparator": "|",
-        "selectedAddonPanel": "storybook/actions/panel",
+        "selectedPanel": "storybook/actions/panel",
         "selectedPanel": "storybook/background/panel",
         "panel": "storybook/actions/panel",
         "showPanel": false
@@ -198,7 +198,7 @@ Array [
     "name": "Custom Storybook",
     "hierarchySeparator": {},
     "hierarchyRootSeparator": "|",
-    "selectedAddonPanel": "storybook/actions/panel",
+    "selectedPanel": "storybook/actions/panel",
     "selectedPanel": "storybook/background/panel",
     "panel": "storybook/actions/panel",
     "showPanel": false

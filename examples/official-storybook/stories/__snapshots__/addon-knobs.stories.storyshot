@@ -178,9 +178,3 @@ exports[`Storyshots Addons|Knobs.withKnobs using options accepts options 1`] = `
   &lt;h1&gt;Hello&lt;/h1&gt;
 </div>
 `;
-
-exports[`Storyshots Addons|Knobs.withKnobsOptions displays HTML code 1`] = `
-<div>
-  &lt;h1&gt;Hello&lt;/h1&gt;
-</div>
-`;

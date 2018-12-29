@@ -8,7 +8,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <button
-      class="css-h3sobf-Button e1lk8yn73"
+      class="css-h3sobf-Button e1iqivjq3"
     >
       click this button
     </button>
@@ -17,7 +17,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <button
-      class="css-f5ome0-Button e1lk8yn73"
+      class="css-f5ome0-Button e1iqivjq3"
     >
       click this button
     </button>
@@ -26,7 +26,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <button
-      class="css-4ds05y-Button e1lk8yn73"
+      class="css-4ds05y-Button e1iqivjq3"
     >
       click this button
     </button>
@@ -42,7 +42,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <button
-      class="css-1pzmux7-Button e1lk8yn73"
+      class="css-1pzmux7-Button e1iqivjq3"
     >
       click this button
     </button>
@@ -51,7 +51,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <button
-      class="css-1hyuh0l-Button e1lk8yn73"
+      class="css-1hyuh0l-Button e1iqivjq3"
     >
       click this button
     </button>
@@ -60,7 +60,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <button
-      class="css-4ds05y-Button e1lk8yn73"
+      class="css-4ds05y-Button e1iqivjq3"
     >
       click this button
     </button>
@@ -76,7 +76,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <button
-      class="css-wvpv7w-Button e1lk8yn73"
+      class="css-wvpv7w-Button e1iqivjq3"
     >
       click this button
     </button>
@@ -85,7 +85,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <button
-      class="css-1g2cn2b-Button e1lk8yn73"
+      class="css-1g2cn2b-Button e1iqivjq3"
     >
       click this button
     </button>
@@ -94,7 +94,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <button
-      class="css-c7m30k-Button e1lk8yn73"
+      class="css-c7m30k-Button e1iqivjq3"
     >
       click this button
     </button>
@@ -103,7 +103,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <button
-      class="css-4ds05y-Button e1lk8yn73"
+      class="css-4ds05y-Button e1iqivjq3"
     >
       click this button
     </button>
@@ -111,12 +111,207 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Button with knobs 1`] = `
-<button
-  class="css-1pzmux7-Button e1lk8yn73"
+exports[`Storyshots Components|Form/Field field 1`] = `
+<label
+  class="css-1n4tt73-Wrapper evz11jd0"
 >
-  💌  love letter to storybook team
-</button>
+  <span
+    class="css-1e2pl7n-Label evz11jd1"
+  >
+    <span>
+      label
+    </span>
+  </span>
+  <select
+    class="css-bsjfx3-Select e1iqivjq1"
+    size="1"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>
+</label>
+`;
+
+exports[`Storyshots Components|Form/Input alignment 1`] = `
+<div
+  class="css-1mvfu07-Container ecq4n7c0"
+>
+  <div
+    class="css-1nttea4-Flexed e1cifqpq0"
+  >
+    <input
+      class="css-szkw5p-Input e1iqivjq0"
+      value="text"
+    />
+  </div>
+  <div
+    class="css-1nttea4-Flexed e1cifqpq0"
+  >
+    <input
+      class="css-1y2wvrw-Input e1iqivjq0"
+      value="text"
+    />
+  </div>
+  <div
+    class="css-1nttea4-Flexed e1cifqpq0"
+  >
+    <input
+      class="css-16q8oyb-Input e1iqivjq0"
+      value="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Form/Input sizes 1`] = `
+<div
+  class="css-1mvfu07-Container ecq4n7c0"
+>
+  <div
+    class="css-1nttea4-Flexed e1cifqpq0"
+  >
+    <input
+      class="css-yli1rb-Input e1iqivjq0"
+      value="text"
+    />
+  </div>
+  <div
+    class="css-1nttea4-Flexed e1cifqpq0"
+  >
+    <input
+      class="css-1isdddd-Input e1iqivjq0"
+      value="text"
+    />
+  </div>
+  <div
+    class="css-1nttea4-Flexed e1cifqpq0"
+  >
+    <input
+      class="css-16q8oyb-Input e1iqivjq0"
+      value="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Form/Input validations 1`] = `
+<div
+  class="css-1mvfu07-Container ecq4n7c0"
+>
+  <div
+    class="css-1nttea4-Flexed e1cifqpq0"
+  >
+    <input
+      class="css-1ixcpjc-Input e1iqivjq0"
+      value="text"
+    />
+  </div>
+  <div
+    class="css-1nttea4-Flexed e1cifqpq0"
+  >
+    <input
+      class="css-7fui90-Input e1iqivjq0"
+      value="text"
+    />
+  </div>
+  <div
+    class="css-1nttea4-Flexed e1cifqpq0"
+  >
+    <input
+      class="css-13lwlbq-Input e1iqivjq0"
+      value="text"
+    />
+  </div>
+  <div
+    class="css-1nttea4-Flexed e1cifqpq0"
+  >
+    <input
+      class="css-16q8oyb-Input e1iqivjq0"
+      value="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Form/Select alignment 1`] = `
+<div
+  class="css-1mvfu07-Container ecq4n7c0"
+>
+  <select
+    class="css-1sgistt-Select e1iqivjq1"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>
+  <select
+    class="css-fxcaf9-Select e1iqivjq1"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>
+  <select
+    class="css-170lhp0-Select e1iqivjq1"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>
+</div>
 `;
 
 exports[`Storyshots Components|Form/Select sizes 1`] = `
@@ -127,7 +322,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <select
-      class="css-bsjfx3-Select e1lk8yn71"
+      class="css-bsjfx3-Select e1iqivjq1"
     >
       <option
         value="val1"
@@ -151,7 +346,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <select
-      class="css-1mq6ser-Select e1lk8yn71"
+      class="css-1mq6ser-Select e1iqivjq1"
     >
       <option
         value="val1"
@@ -175,7 +370,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <select
-      class="css-170lhp0-Select e1lk8yn71"
+      class="css-170lhp0-Select e1iqivjq1"
     >
       <option
         value="val1"
@@ -203,7 +398,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
   class="css-1mvfu07-Container ecq4n7c0"
 >
   <select
-    class="css-hxwf21-Select e1lk8yn71"
+    class="css-hxwf21-Select e1iqivjq1"
   >
     <option
       value="val1"
@@ -223,7 +418,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
     </option>
   </select>
   <select
-    class="css-1pbuugy-Select e1lk8yn71"
+    class="css-1pbuugy-Select e1iqivjq1"
   >
     <option
       value="val1"
@@ -243,7 +438,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
     </option>
   </select>
   <select
-    class="css-p4579u-Select e1lk8yn71"
+    class="css-p4579u-Select e1iqivjq1"
   >
     <option
       value="val1"
@@ -263,7 +458,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
     </option>
   </select>
   <select
-    class="css-170lhp0-Select e1lk8yn71"
+    class="css-170lhp0-Select e1iqivjq1"
   >
     <option
       value="val1"
@@ -294,7 +489,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
   >
     <textarea
       align="end"
-      class="css-ok7c03-Textarea e1lk8yn72"
+      class="css-ok7c03-Textarea e1iqivjq2"
       style="height:0"
     >
       text
@@ -305,7 +500,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
   >
     <textarea
       align="center"
-      class="css-djty3k-Textarea e1lk8yn72"
+      class="css-djty3k-Textarea e1iqivjq2"
       style="height:0"
     >
       text
@@ -316,7 +511,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
   >
     <textarea
       align="start"
-      class="css-pul98m-Textarea e1lk8yn72"
+      class="css-pul98m-Textarea e1iqivjq2"
       style="height:0"
     >
       text
@@ -333,7 +528,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <textarea
-      class="css-fpmx1h-Textarea e1lk8yn72"
+      class="css-fpmx1h-Textarea e1iqivjq2"
       style="height:0"
     >
       text
@@ -343,7 +538,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <textarea
-      class="css-5rqdpj-Textarea e1lk8yn72"
+      class="css-5rqdpj-Textarea e1iqivjq2"
       style="height:0"
     >
       text
@@ -353,7 +548,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <textarea
-      class="css-pul98m-Textarea e1lk8yn72"
+      class="css-pul98m-Textarea e1iqivjq2"
       style="height:0"
     >
       text
@@ -370,7 +565,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <textarea
-      class="css-vcj5vs-Textarea e1lk8yn72"
+      class="css-vcj5vs-Textarea e1iqivjq2"
       style="height:0"
       valid="error"
     >
@@ -381,7 +576,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <textarea
-      class="css-1orv7tn-Textarea e1lk8yn72"
+      class="css-1orv7tn-Textarea e1iqivjq2"
       style="height:0"
       valid="warn"
     >
@@ -392,7 +587,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <textarea
-      class="css-1gb1gub-Textarea e1lk8yn72"
+      class="css-1gb1gub-Textarea e1iqivjq2"
       style="height:0"
       valid="valid"
     >
@@ -403,22 +598,11 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
     class="css-1nttea4-Flexed e1cifqpq0"
   >
     <textarea
-      class="css-pul98m-Textarea e1lk8yn72"
+      class="css-pul98m-Textarea e1iqivjq2"
       style="height:0"
     >
       text
     </textarea>
   </div>
 </div>
-`;
-
-exports[`Storyshots Components|Form/Textarea with knobs (controlled) 1`] = `
-<textarea
-  class="css-pul98m-Textarea e1lk8yn72"
-  style="height:0"
->
-  OMG, multiple lines!
-
-That is amazing
-</textarea>
 `;

@@ -445,12 +445,7 @@ exports[`Storyshots Button with some emoji 1`] = `
   style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
   type="button"
 >
-  <span
-    aria-label="so cool"
-    role="img"
-  >
-    😀 😎 👍 💯
-  </span>
+  😀 😎 👍 💯
 </button>
 `;
 

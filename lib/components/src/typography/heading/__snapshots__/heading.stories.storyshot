@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Heading types 1`] = `
+exports[`Storyshots Components|Typography/Heading types 1`] = `
 <div>
   <div
     class="css-ys6tvt-Holder eu04e0w0"
