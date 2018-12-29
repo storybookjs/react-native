@@ -17,12 +17,7 @@ export default {
 // Given we sort of control the props, should we export a prop type?
 export const passed = ({
   // eslint-disable-next-line react/prop-types
-  parameters: { globalParameter, chapterParameter, decoratorParameter, storyParameter },
-}) => (
-  <div>
-    Parameters are{' '}
-    {JSON.stringify({ globalParameter, chapterParameter, decoratorParameter, storyParameter })}
-  </div>
-);
+  parameters,
+}) => <pre>Parameters are {JSON.stringify(parameters, null, 2)}</pre>;
 passed.title = 'passed to story';
 passed.parameters = { storyParameter: 'storyParameter' };

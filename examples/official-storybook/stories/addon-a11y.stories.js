@@ -42,9 +42,15 @@ storiesOf('Addons|A11y/Form', module)
     </Form.Field>
   ))
   .add('With label', () => (
-    <Form.Field label={<Form.Label content={text} id="1" />} input={<Form.Input id="1" />} />
+    <Form.Field label={text}>
+      <Form.Input id="1" />
+    </Form.Field>
   ))
-  .add('With placeholder', () => <Form.Field input={<Form.Input id="1" placeholder={text} />} />);
+  .add('With placeholder', () => (
+    <Form.Field label="">
+      <Form.Input id="1" placeholder={text} />
+    </Form.Field>
+  ));
 
 storiesOf('Addons|A11y/Image', module)
   .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })

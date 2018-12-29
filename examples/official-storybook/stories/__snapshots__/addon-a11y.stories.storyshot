@@ -80,6 +80,36 @@ exports[`Storyshots Addons|A11y/Button Label 1`] = `
 </button>
 `;
 
+exports[`Storyshots Addons|A11y/Form With label 1`] = `
+<label
+  class="css-1n4tt73-Wrapper evz11jd0"
+>
+  <span
+    class="css-1e2pl7n-Label evz11jd1"
+  >
+    <span>
+      Testing the a11y addon
+    </span>
+  </span>
+  <input
+    class="css-yli1rb-Input e1iqivjq0"
+    id="1"
+  />
+</label>
+`;
+
+exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
+<label
+  class="css-1n4tt73-Wrapper evz11jd0"
+>
+  <input
+    class="css-yli1rb-Input e1iqivjq0"
+    id="1"
+    placeholder="Testing the a11y addon"
+  />
+</label>
+`;
+
 exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
 <label
   class="css-1n4tt73-Wrapper evz11jd0"

@@ -5749,6 +5749,35 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
                 <td
                   class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
                 >
+                  label
+                </td>
+                <td
+                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                >
+                  <span>
+                    string
+                  </span>
+                </td>
+                <td
+                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                >
+                  yes
+                </td>
+                <td
+                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                >
+                  -
+                </td>
+                <td
+                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                />
+              </tr>
+              <tr
+                class="css-rss5jh-TBodyTR e1fg2ikb4"
+              >
+                <td
+                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                >
                   onClick
                 </td>
                 <td
