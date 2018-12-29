@@ -9,17 +9,17 @@
     "lint": "tslint src/**/*.ts{,x}"
   },
   "dependencies": {
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.1.2",
-    "@storybook/addon-info": "4.1.2",
-    "@storybook/addon-options": "4.1.2",
-    "@storybook/addons": "4.1.2",
-    "@storybook/react": "4.1.2",
+    "@storybook/addon-actions": "4.2.0-alpha.8",
+    "@storybook/addon-info": "4.2.0-alpha.8",
+    "@storybook/addon-options": "4.2.0-alpha.8",
+    "@storybook/addons": "4.2.0-alpha.8",
+    "@storybook/react": "4.2.0-alpha.8",
     "@types/enzyme": "^3.1.15",
-    "@types/react": "^16.7.17",
+    "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
     "@types/storybook__addon-actions": "^3.4.1",
     "@types/storybook__addon-info": "^3.4.2",
@@ -29,8 +29,8 @@
     "enzyme-to-json": "^3.3.5",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "react-docgen-typescript-loader": "^3.0.0",
-    "react-scripts": "^2.1.0",
-    "tslint": "^5.11.0",
+    "react-scripts": "^2.1.2",
+    "tslint": "^5.12.0",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.2.2"
   },
