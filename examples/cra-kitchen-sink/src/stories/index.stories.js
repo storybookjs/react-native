@@ -19,31 +19,20 @@ const InfoButton = () => (
       borderRadius: '0px 0px 0px 5px',
     }}
   >
-    {' '}
-    Show Info{' '}
+    {' Show Info '}
   </span>
 );
 
 storiesOf('Button', module)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>, {
-    options: { selectedAddonPanel: 'storybook/actions/panel' },
+    options: { selectedPanel: 'storybook/actions/panel' },
   })
-  .add(
-    'with some emoji',
-    () => (
-      <Button onClick={action('clicked')}>
-        <span role="img" aria-label="so cool">
-          😀 😎 👍 💯
-        </span>
-      </Button>
-    ),
-    {
-      options: { selectedAddonPanel: 'storybook/actions/panel' },
-    }
-  )
+  .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>, {
+    options: { selectedPanel: 'storybook/actions/panel' },
+  })
   .add('with notes', () => <Button>Check my notes in the notes panel</Button>, {
     notes: 'A very simple button',
-    options: { selectedAddonPanel: 'storybook/notes/panel' },
+    options: { selectedPanel: 'storybook/notes/panel' },
   })
   .add(
     'with new info',
@@ -58,6 +47,6 @@ storiesOf('Button', module)
     )),
     {
       notes: 'Composition: Info(Notes())',
-      options: { selectedAddonPanel: 'storybook/info/info-panel' },
+      options: { selectedPanel: 'storybook/info/panel' },
     }
   );

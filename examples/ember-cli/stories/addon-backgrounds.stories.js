@@ -7,9 +7,6 @@ storiesOf('Addon|Backgrounds', module)
       { name: 'light', value: '#eeeeee' },
       { name: 'dark', value: '#222222', default: true },
     ],
-    options: {
-      selectedAddonPanel: 'storybook/background/panel',
-    },
   })
   .add('story 1', () => ({
     template: hbs`<button>You should be able to switch backgrounds for this story</button>`,

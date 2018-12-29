@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { linkTo, hrefTo } from '@storybook/addon-links';
 import { action } from '@storybook/addon-actions';
@@ -50,10 +50,10 @@ storiesOf('Addons|Links.Href', module).add(
 
 storiesOf('Addons|Links.Scroll position', module)
   .addDecorator(story => (
-    <React.Fragment>
+    <Fragment>
       <div style={{ marginBottom: '100vh' }}>Scroll down to see the link</div>
       {story()}
-    </React.Fragment>
+    </Fragment>
   ))
   .add('First', () => <LinkTo story="Second">Go to Second</LinkTo>)
   .add('Second', () => <LinkTo story="First">Go to First</LinkTo>);

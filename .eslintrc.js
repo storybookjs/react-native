@@ -71,6 +71,7 @@ module.exports = {
         allowBind: true,
       },
     ],
+    'jsx-a11y/accessible-emoji': ignore,
     'jsx-a11y/label-has-associated-control': [
       warn,
       {
@@ -105,10 +106,6 @@ module.exports = {
       rules: {
         'import/no-extraneous-dependencies': ignore,
       },
-    },
-    {
-      files: ['**/react-native*/**', '**/REACT_NATIVE*/**', '**/crna*/**'],
-      rules: { 'jsx-a11y/accessible-emoji': ignore },
     },
     { files: '**/.storybook/config.js', rules: { 'global-require': ignore } },
   ],

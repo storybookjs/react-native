@@ -1,3 +1,4 @@
+import { window, File } from 'global';
 import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import {
@@ -8,7 +9,6 @@ import {
   decorateAction,
 } from '@storybook/addon-actions';
 import { Button } from '@storybook/components';
-import { window, File } from 'global';
 
 const pickNative = decorate([args => [args[0].nativeEvent]]);
 const pickNativeAction = decorateAction([args => [args[0].nativeEvent]]);
@@ -61,73 +61,69 @@ storiesOf('Addons|Actions', module)
     return <Button onClick={() => action('circular')(circular)}>Circular Payload</Button>;
   })
   .add('Reserved keyword as name', () => <Button onClick={action('delete')}>Delete</Button>)
-  .add(
-    'All types',
-    () => {
-      function A() {}
-      function B() {}
+  .add('All types', () => {
+    function A() {}
+    function B() {}
 
-      const bound = B.bind({});
+    const bound = B.bind({});
 
-      let file;
-      try {
-        file = new File([''], 'filename.txt', { type: 'text/plain', lastModified: new Date() });
-      } catch (error) {
-        file = error;
-      }
-      const reg = /fooBar/g;
+    let file;
+    try {
+      file = new File([''], 'filename.txt', { type: 'text/plain', lastModified: new Date() });
+    } catch (error) {
+      file = error;
+    }
+    const reg = /fooBar/g;
 
-      return (
-        <Fragment>
-          <Button onClick={() => action('Array')(['foo', 'bar', { foo: 'bar' }])}>Array</Button>
-          <Button onClick={() => action('Boolean')(false)}>Boolean</Button>
-          <Button onClick={() => action('Empty Object')({})}>Empty Object</Button>
-          <Button onClick={() => action('File')(file)}>File</Button>
-          <Button onClick={() => action('Function')(A)}>Function A</Button>
-          <Button onClick={() => action('Function (bound)')(bound)}>Bound Function B</Button>
-          <Button onClick={() => action('Infinity')(Infinity)}>Infinity</Button>
-          <Button onClick={() => action('-Infinity')(-Infinity)}>-Infinity</Button>
-          <Button onClick={() => action('NaN')(NaN)}>NaN</Button>
-          <Button onClick={() => action('null')(null)}>null</Button>
-          <Button onClick={() => action('Number')(10000)}>Number</Button>
-          <Button
-            onClick={() =>
-              action('Multiple')(
-                'foo',
-                1000,
-                true,
-                false,
-                [1, 2, 3],
-                null,
-                undefined,
-                { foo: 'bar' },
-                window
-              )
-            }
-          >
-            Multiple
-          </Button>
-          <Button onClick={() => action('Plain Object')({ foo: { bar: { baz: { bar: 'foo' } } } })}>
-            Plain Object
-          </Button>
-          <Button
-            onClick={() =>
-              action('ObjectDepth2', { depth: 2 })({ root: { one: { two: { three: 'foo' } } } })
-            }
-          >
-            Object (depth: 2)
-          </Button>
-          <Button onClick={() => action('RegExp')(reg)}>RegExp</Button>
-          <Button onClick={() => action('String')('foo')}>String</Button>
-          <Button onClick={() => action('Symbol')(Symbol('A_SYMBOL'))}>Symbol</Button>
-          <Button onClick={action('SyntheticMouseEvent')}>SyntheticEvent</Button>
-          <Button onClick={() => action('undefined')(undefined)}>undefined</Button>
-          <Button onClick={() => action('window')(window)}>Window</Button>
-        </Fragment>
-      );
-    },
-    { options: { selectedAddonPanel: 'storybook/actions/panel' } }
-  )
+    return (
+      <Fragment>
+        <Button onClick={() => action('Array')(['foo', 'bar', { foo: 'bar' }])}>Array</Button>
+        <Button onClick={() => action('Boolean')(false)}>Boolean</Button>
+        <Button onClick={() => action('Empty Object')({})}>Empty Object</Button>
+        <Button onClick={() => action('File')(file)}>File</Button>
+        <Button onClick={() => action('Function')(A)}>Function A</Button>
+        <Button onClick={() => action('Function (bound)')(bound)}>Bound Function B</Button>
+        <Button onClick={() => action('Infinity')(Infinity)}>Infinity</Button>
+        <Button onClick={() => action('-Infinity')(-Infinity)}>-Infinity</Button>
+        <Button onClick={() => action('NaN')(NaN)}>NaN</Button>
+        <Button onClick={() => action('null')(null)}>null</Button>
+        <Button onClick={() => action('Number')(10000)}>Number</Button>
+        <Button
+          onClick={() =>
+            action('Multiple')(
+              'foo',
+              1000,
+              true,
+              false,
+              [1, 2, 3],
+              null,
+              undefined,
+              { foo: 'bar' },
+              window
+            )
+          }
+        >
+          Multiple
+        </Button>
+        <Button onClick={() => action('Plain Object')({ foo: { bar: { baz: { bar: 'foo' } } } })}>
+          Plain Object
+        </Button>
+        <Button
+          onClick={() =>
+            action('ObjectDepth2', { depth: 2 })({ root: { one: { two: { three: 'foo' } } } })
+          }
+        >
+          Object (depth: 2)
+        </Button>
+        <Button onClick={() => action('RegExp')(reg)}>RegExp</Button>
+        <Button onClick={() => action('String')('foo')}>String</Button>
+        <Button onClick={() => action('Symbol')(Symbol('A_SYMBOL'))}>Symbol</Button>
+        <Button onClick={action('SyntheticMouseEvent')}>SyntheticEvent</Button>
+        <Button onClick={() => action('undefined')(undefined)}>undefined</Button>
+        <Button onClick={() => action('window')(window)}>Window</Button>
+      </Fragment>
+    );
+  })
 
   .add('configureActionsDepth', () => {
     configureActions({
