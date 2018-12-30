@@ -1,63 +1,164 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|A11y/Form With label 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
+exports[`Storyshots Addons|A11y/BaseButton Default 1`] = `
+<button
+  type="button"
+/>
+`;
 
-<div
-  class="emotion-0 emotion-1"
+exports[`Storyshots Addons|A11y/BaseButton Disabled 1`] = `
+<button
+  disabled=""
+  type="button"
 >
-  <div>
-    <label
-      for="1"
-      style="padding:0 6px"
-    >
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|A11y/BaseButton Invalid contrast 1`] = `
+<button
+  style="color:black;background-color:black"
+  type="button"
+>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|A11y/BaseButton Label 1`] = `
+<button
+  type="button"
+>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|A11y/BaseButton delayed render 1`] = `<div />`;
+
+exports[`Storyshots Addons|A11y/Button Content 1`] = `
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
+>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|A11y/Button Default 1`] = `
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
+>
+  null
+</button>
+`;
+
+exports[`Storyshots Addons|A11y/Button Disabled 1`] = `
+<button
+  disabled=""
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
+>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|A11y/Button Invalid contrast 1`] = `
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;color:#ffffff;background-color:#4caf50"
+  type="button"
+>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|A11y/Button Label 1`] = `
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
+>
+  null
+</button>
+`;
+
+exports[`Storyshots Addons|A11y/Form With label 1`] = `
+<label
+  class="css-1n4tt73-Wrapper evz11jd0"
+>
+  <span
+    class="css-1e2pl7n-Label evz11jd1"
+  >
+    <span>
       Testing the a11y addon
-    </label>
-    <input
-      id="1"
-    />
-  </div>
-</div>
+    </span>
+  </span>
+  <input
+    class="css-yli1rb-Input e1iqivjq0"
+    id="1"
+  />
+</label>
 `;
 
 exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<label
+  class="css-1n4tt73-Wrapper evz11jd0"
 >
-  <div>
-    <input
-      id="1"
-      placeholder="Testing the a11y addon"
-    />
-  </div>
-</div>
+  <input
+    class="css-yli1rb-Input e1iqivjq0"
+    id="1"
+    placeholder="Testing the a11y addon"
+  />
+</label>
 `;
 
 exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
-.emotion-0 {
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  font-size: 13px;
-}
-
-<div
-  class="emotion-0 emotion-1"
+<label
+  class="css-1n4tt73-Wrapper evz11jd0"
 >
-  <div>
-    <input />
-  </div>
-</div>
+  <input
+    class="css-yli1rb-Input e1iqivjq0"
+  />
+</label>
+`;
+
+exports[`Storyshots Addons|A11y/Image Presentation 1`] = `
+<img
+  class="css-1suhias-Img eipkw3i0"
+  role="presentation"
+  src="http://placehold.it/350x150"
+/>
+`;
+
+exports[`Storyshots Addons|A11y/Image With alt 1`] = `
+<img
+  alt="Testing the a11y addon"
+  class="css-1suhias-Img eipkw3i0"
+  src="http://placehold.it/350x150"
+/>
+`;
+
+exports[`Storyshots Addons|A11y/Typography Correct 1`] = `
+Array [
+  <header
+    class="css-yfonvn-Container e14vg0o61"
+  >
+    <h1
+      class="css-4bak20-getElement e14vg0o60"
+    >
+      <span>
+        Testing the a11y addon
+      </span>
+    </h1>
+  </header>,
+  <p
+    class="css-cn4ebp-Text e17gaumq0"
+  >
+    Testing the a11y addon
+  </p>,
+  <a
+    class="css-1a69rwi-A ehzniak0"
+    href="javascript:void 0"
+  >
+    Testing the a11y addon...
+  </a>,
+]
 `;

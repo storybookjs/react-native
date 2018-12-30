@@ -1,4 +1,4 @@
-import { makeDecorator } from '@storybook/addons';
+import { makeDecorator, StoryContext, StoryGetter, WrapperSettings } from '@storybook/addons';
 import deprecate from 'util-deprecate';
 
 // todo resolve any after @storybook/addons and @storybook/channels are migrated to TypeScript
@@ -9,7 +9,7 @@ export const withNotes = makeDecorator({
   allowDeprecatedUsage: true,
 
   wrapper: deprecate(
-    (getStory: (context: any) => any, context: any, { options, parameters }: any) => {
+    (getStory: StoryGetter, context: StoryContext, { options, parameters }: WrapperSettings) => {
       const storyOptions = parameters || options;
 
       const { text, markdown } =

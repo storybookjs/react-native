@@ -71,6 +71,7 @@ module.exports = {
         allowBind: true,
       },
     ],
+    'jsx-a11y/accessible-emoji': ignore,
     'jsx-a11y/label-has-associated-control': [
       warn,
       {
@@ -85,7 +86,7 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': [
       error,
       {
-        components: ['RoutedLink', 'LinkTo', 'Link'],
+        components: ['A', 'LinkTo', 'Link'],
         specialLink: ['overrideParams', 'kind', 'story', 'to'],
       },
     ],
@@ -96,14 +97,15 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/__tests__/**', '**/*.test.js/**', '**/*.stories.js'],
+      files: [
+        '**/__tests__/**',
+        '**/*.test.js/**',
+        '**/*.stories.js',
+        '**/storyshots/**/stories/**',
+      ],
       rules: {
         'import/no-extraneous-dependencies': ignore,
       },
-    },
-    {
-      files: ['**/react-native*/**', '**/REACT_NATIVE*/**', '**/crna*/**'],
-      rules: { 'jsx-a11y/accessible-emoji': ignore },
     },
     { files: '**/.storybook/config.js', rules: { 'global-require': ignore } },
   ],

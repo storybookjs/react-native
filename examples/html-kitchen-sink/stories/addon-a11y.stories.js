@@ -6,7 +6,7 @@ const text = 'Testing the a11y addon';
 
 storiesOf('Addons|a11y', module)
   .addDecorator(withA11Y)
-  .addParameters({ options: { selectedAddonPanel: 'storybook/a11y/panel' } })
+  .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
   .add('Default', () => `<button></button>`)
   .add('Label', () => `<button>${text}</button>`)
   .add('Disabled', () => `<button disabled>${text}</button>`)

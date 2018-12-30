@@ -26,8 +26,14 @@ configure({ adapter: new Adapter() });
  free of warnings going forward.
  */
 
+const ignoredWarnings = [
+  'The pseudo class ":nth-child" is potentially unsafe when doing server-side rendering. Try changing it to "nth-of-type"',
+];
+
 const throwError = message => {
-  throw new Error(message);
+  if (!ignoredWarnings.find(warning => message === warning)) {
+    throw new Error(message);
+  }
 };
 
 global.console.error = throwError;

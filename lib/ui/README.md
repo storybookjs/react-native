@@ -26,7 +26,7 @@ You can configure it by providing a provider API.
 First you need to install `@storybook/ui` into your app.
 
 ```sh
-npm install --save @storybook/ui
+yarn add @storybook/ui --dev
 ```
 
 Then you need to create a Provider class like this:

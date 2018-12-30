@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Textarea } from '@storybook/components';
+import { Form } from '@storybook/components';
 
 function formatArray(value, separator) {
   if (value === '') {
@@ -29,7 +29,7 @@ class ArrayType extends React.Component {
     const { knob } = this.props;
     const value = knob.value.join(knob.separator);
 
-    return <Textarea id={knob.name} value={value} onChange={this.handleChange} size="flex" />;
+    return <Form.Textarea id={knob.name} value={value} onChange={this.handleChange} size="flex" />;
   }
 }
 

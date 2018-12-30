@@ -15,6 +15,9 @@ storiesOf('Addons|Cssresources', module)
         picked: false,
       },
     ],
+    options: {
+      selectedPanel: 'storybook/cssresources/panel',
+    },
   })
   .add('Primary Large Button', () => (
     <button type="button" className="btn btn-lg btn-primary">
@@ -33,9 +36,12 @@ storiesOf('Addons|Cssresources', module)
       {
         id: `whitetheme`,
         code: `<style>.fa { color: #fff }</style>`,
-        picked: true,
+        picked: false,
       },
     ],
+    options: {
+      selectedPanel: 'storybook/cssresources/panel',
+    },
   })
 
   .add('Camera Icon', () => <i className="fa fa-camera-retro"> Camera Icon</i>);

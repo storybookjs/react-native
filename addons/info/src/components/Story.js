@@ -230,7 +230,7 @@ class Story extends Component {
     return (
       <div style={stylesheet.header.body}>
         <h1 style={stylesheet.header.h1}>{context.kind}</h1>
-        <h2 style={stylesheet.header.h2}>{context.story}</h2>
+        <h2 style={stylesheet.header.h2}>{context.name}</h2>
       </div>
     );
   }
@@ -263,12 +263,16 @@ class Story extends Component {
   }
 
   _getComponentDescription() {
-    const { context } = this.props;
+    const {
+      context: { kind, story },
+    } = this.props;
     let retDiv = null;
+
+    const validMatches = [kind, story];
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
-        if (STORYBOOK_REACT_CLASSES[key].name === context.kind) {
+        if (validMatches.includes(STORYBOOK_REACT_CLASSES[key].name)) {
           const componentDescription = STORYBOOK_REACT_CLASSES[key].docgenInfo.description;
           retDiv = <div>{this.marksy(componentDescription).tree}</div>;
         }
@@ -401,7 +405,7 @@ Story.displayName = 'Story';
 Story.propTypes = {
   context: PropTypes.shape({
     kind: PropTypes.string,
-    story: PropTypes.string,
+    name: PropTypes.string,
   }),
   info: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   propTables: PropTypes.arrayOf(PropTypes.func),

@@ -228,8 +228,8 @@ Also read on if you're using `addon-knobs`: we advise an update to your code for
 
 This affects you if you don't use babel in your project. You may need to add `babel-core` as dev dependency:
 
-```
-npm install --save-dev babel-core
+```sh
+yarn add babel-core --dev
 ```
 
 This was done to support different major versions of babel.
@@ -261,7 +261,7 @@ In the case of Angular: `import { ... } from '@storybook/addon-knobs/angular';`
 TypeScript users: we've moved the rest of our addons type definitions into [DefinitelyTyped](http://definitelytyped.org/). Starting in 3.2.0 make sure to use the right addons types:
 
 ```sh
-npm install @types/storybook__addon-notes @types/storybook__addon-options @types/storybook__addon-knobs @types/storybook__addon-links --save-dev
+yarn add @types/storybook__addon-notes @types/storybook__addon-options @types/storybook__addon-knobs @types/storybook__addon-links --dev
 ```
 
 See also [TypeScript definitions in 3.1.x](#moved-typescript-definitions).
@@ -294,7 +294,7 @@ It's not beautiful, but we'll be adding a more convenient/idiomatic way of using
 TypeScript users: we are in the process of moving our typescript definitions into [DefinitelyTyped](http://definitelytyped.org/). If you're using TypeScript, starting in 3.1.0 you need to make sure your type definitions are installed:
 
 ```sh
-npm install @types/node @types/react @types/storybook__react --save-dev
+yarn add @types/node @types/react @types/storybook__react --dev
 ```
 
 ### Deprecated head.html

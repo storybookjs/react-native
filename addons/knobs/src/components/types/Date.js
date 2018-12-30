@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { Input } from '@storybook/components';
+import { Form } from '@storybook/components';
 
 const FlexSpaced = styled.div({
   flex: 1,
@@ -9,11 +9,11 @@ const FlexSpaced = styled.div({
   '& > *': {
     marginLeft: 10,
   },
-  '& > *:first-of-type': {
+  '& > *:nth-child(0)': {
     marginLeft: 0,
   },
 });
-const FlexInput = styled(Input)({ flex: 1 });
+const FlexInput = styled(Form.Input)({ flex: 1 });
 
 const formatDate = date => {
   const year = `000${date.getFullYear()}`.slice(-4);

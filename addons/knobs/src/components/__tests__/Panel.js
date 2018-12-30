@@ -1,23 +1,33 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { STORY_CHANGED } from '@storybook/core-events';
 import Panel from '../Panel';
 import { CHANGE, SET } from '../../shared';
 
+const createTestChannel = () => ({
+  on: jest.fn(),
+  emit: jest.fn(),
+});
+const createTestApi = () => ({
+  on: jest.fn(),
+  emit: jest.fn(),
+});
+
 describe('Panel', () => {
   it('should subscribe to setKnobs event of channel', () => {
-    const testChannel = { on: jest.fn() };
-    const testApi = { onStory: jest.fn() };
+    const testChannel = createTestChannel();
+    const testApi = createTestApi();
     shallow(<Panel channel={testChannel} api={testApi} active />);
-    expect(testChannel.on).toHaveBeenCalledWith(SET, jasmine.any(Function));
+    expect(testChannel.on).toHaveBeenCalledWith(SET, expect.any(Function));
   });
 
-  it('should subscribe to onStory event', () => {
-    const testChannel = { on: jest.fn() };
-    const testApi = { onStory: jest.fn() };
+  it('should subscribe to STORY_CHANGE event', () => {
+    const testChannel = createTestChannel();
+    const testApi = createTestApi();
     shallow(<Panel channel={testChannel} api={testApi} active />);
 
-    expect(testApi.onStory).toHaveBeenCalled();
-    expect(testChannel.on).toHaveBeenCalledWith(SET, jasmine.any(Function));
+    expect(testApi.on.mock.calls).toContainEqual([STORY_CHANGED, expect.any(Function)]);
+    expect(testChannel.on).toHaveBeenCalledWith(SET, expect.any(Function));
   });
 
   describe('setKnobs handler', () => {
@@ -37,6 +47,9 @@ describe('Panel', () => {
       };
 
       const testApi = {
+        on: (e, handler) => {
+          handlers[e] = handler;
+        },
         getQueryParam: key => testQueryParams[key],
         setQueryParams: jest.fn(),
         onStory: jest.fn(),
@@ -84,9 +97,11 @@ describe('Panel', () => {
       };
 
       const testApi = {
+        on: (e, handler) => {
+          handlers[e] = handler;
+        },
         getQueryParam: key => testQueryParams[key],
         setQueryParams: jest.fn(),
-        onStory: jest.fn(),
       };
 
       const wrapper = shallow(<Panel channel={testChannel} api={testApi} active />);
@@ -128,7 +143,7 @@ describe('Panel', () => {
       const testApi = {
         getQueryParam: jest.fn(),
         setQueryParams: jest.fn(),
-        onStory: jest.fn(),
+        on: jest.fn(),
       };
 
       const wrapper = shallow(<Panel channel={testChannel} api={testApi} active />);

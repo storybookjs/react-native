@@ -315,20 +315,19 @@ storiesOf('Addons|Info/Parameters', module)
     { info: { disable: true } }
   );
 
-storiesOf('Addons|Info.ForwardRef', module)
+storiesOf('Addons|Info/ForwardRef', module)
   .addDecorator(withInfo)
   .add('Displays forwarded ref components correctly', () => (
     <ForwardedRefButton label="Forwarded Ref Button" />
   ));
 
-storiesOf('Addons|Info.deprecated', module).add(
+storiesOf('Addons|Info/deprecated', module).add(
   'Displays Markdown in description',
   withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label="Button" />)
 );
 
 storiesOf('Addons|Info/Story Source', module)
-  .addDecorator(withInfo())
-  .add('Simple', () => <BaseButton />)
+  .addDecorator(withInfo)
   .add('One prop', () => <BaseButton label="Button" />)
   .add('Many props', () => <BaseButton label="Button" onClick={action('clicked')} disabled />)
   .add('Children', () => (
@@ -348,18 +347,21 @@ storiesOf('Addons|Info/Story Source', module)
       {
         property: 'disabled',
         propType: { name: 'boolean' },
+        required: false,
         defaultValue: false,
       },
       {
         property: 'onClick',
         propType: { name: 'function' },
         description: 'Callback for when button is clicked',
+        required: true,
         defaultValue: () => {},
       },
       {
         property: 'style',
         propType: { name: 'object' },
         description: 'Styles to apply to button',
+        required: false,
         defaultValue: {},
       },
     ];

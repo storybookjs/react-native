@@ -1,4 +1,3 @@
-import deprecate from 'util-deprecate';
 import addons, { makeDecorator } from '@storybook/addons';
 
 import { SET_OPTIONS } from './shared';
@@ -100,11 +99,6 @@ export const withKnobs = makeDecorator({
     return getStory(context);
   },
 });
-
-export const withKnobsOptions = deprecate(
-  withKnobs,
-  'withKnobsOptions is deprecated. Instead, you can pass options into withKnobs(options) directly, or use the knobs parameter.'
-);
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();

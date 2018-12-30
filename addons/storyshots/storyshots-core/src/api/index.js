@@ -17,6 +17,8 @@ function callTestMethodGlobals(testMethod) {
   });
 }
 
+const isDisabled = parameter => parameter === false || (parameter && parameter.disabled === true);
+
 function testStorySnapshots(options = {}) {
   if (typeof describe !== 'function') {
     throw new Error('testStorySnapshots is intended only to be used inside jest');
@@ -46,11 +48,11 @@ function testStorySnapshots(options = {}) {
     .filter(({ name }) => (storyNameRegex ? name.match(storyNameRegex) : true))
     .filter(({ kind }) => (storyKindRegex ? kind.match(storyKindRegex) : true))
     .reduce((acc, item) => {
-      const { kind, story: render, parameters = {} } = item;
+      const { kind, story: render, parameters } = item;
       const existing = acc.find(i => i.kind === kind);
       const { fileName } = item.parameters;
 
-      if (parameters.storyshots !== false) {
+      if (!isDisabled(parameters.storyshots)) {
         if (existing) {
           existing.children.push({ ...item, render, fileName });
         } else {

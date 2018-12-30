@@ -12,9 +12,6 @@ storiesOf('Addons|Backgrounds', module)
       { name: 'dark', value: '#222222', default: true },
       { name: 'black', value: '#000000' },
     ],
-    options: {
-      selectedPanel: 'storybook/background/panel',
-    },
   })
   .add('story 1', () => (
     <BaseButton label="You should be able to switch backgrounds for this story" />

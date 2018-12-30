@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Typography/Link cancel w/ href 1`] = `
+<a
+  class="css-1a69rwi-A ehzniak0"
+  href="http://example.com"
+>
+  Link
+</a>
+`;
+
+exports[`Storyshots Components|Typography/Link cancel w/ onClick 1`] = `
+<a
+  class="css-1a69rwi-A ehzniak0"
+  href="/"
+>
+  Try clicking with different mouse buttons and modifier keys (shift/ctrl/alt/cmd)
+</a>
+`;
+
+exports[`Storyshots Components|Typography/Link no-cancel w/ href 1`] = `
+<a
+  class="css-1a69rwi-A ehzniak0"
+  href="http://example.com"
+>
+  Link
+</a>
+`;
+
+exports[`Storyshots Components|Typography/Link no-cancel w/ onClick 1`] = `
+<a
+  class="css-1a69rwi-A ehzniak0"
+  href="/"
+>
+  any click will go through
+</a>
+`;
