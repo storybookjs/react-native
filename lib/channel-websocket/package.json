@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channel-websocket",
-  "version": "4.2.0-alpha.6",
+  "version": "4.2.0-alpha.8",
   "description": "",
   "keywords": [
     "storybook"
@@ -15,12 +15,12 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "4.2.0-alpha.6",
+    "@storybook/channels": "4.2.0-alpha.8",
     "global": "^4.3.2"
   },
   "publishConfig": {
