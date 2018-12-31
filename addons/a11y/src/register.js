@@ -16,6 +16,6 @@ addons.register(ADDON_ID, api => {
     type: types.PANEL,
     title: 'Accessibility',
     // eslint-disable-next-line react/prop-types
-    render: ({ active }) => <Panel api={api} active={active} />,
+    render: ({ active, key }) => <Panel key={key} api={api} active={active} />,
   });
 });

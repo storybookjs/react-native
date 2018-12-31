@@ -60,6 +60,6 @@ addons.register('storybook/notes', api => {
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
     // eslint-disable-next-line react/prop-types
-    render: ({ active }) => <Notes channel={channel} api={api} active={active} />,
+    render: ({ active, key }) => <Notes key={key} channel={channel} api={api} active={active} />,
   });
 });
