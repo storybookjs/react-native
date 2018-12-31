@@ -14,6 +14,7 @@ const SCRIPT_PATH = '.bin/react-scripts';
 
 describe('cra-config', () => {
   beforeEach(() => {
+    fs.realpathSync.mockReset();
     fs.realpathSync.mockImplementationOnce(() => '/test-project');
   });
 
@@ -45,27 +46,7 @@ describe('cra-config', () => {
     });
   });
 
-  describe('when used without TypeScript', () => {
-    beforeEach(() => {
-      fs.realpathSync.mockImplementationOnce(() =>
-        path.join(__dirname, '__mocks__/react-scripts-2-0-0/sub1/sub2')
-      );
-      getReactScriptsPath({ noCache: true });
-    });
-
-    it('should apply styling webpack rules', () => {
-      expect(applyCRAWebpackConfig(mockConfig, '/test-project')).toMatchSnapshot();
-    });
-  });
-
   describe('when used with TypeScript', () => {
-    beforeEach(() => {
-      fs.realpathSync.mockImplementationOnce(() =>
-        path.join(__dirname, '__mocks__/react-scripts-2-1-0/sub1/sub2')
-      );
-      getReactScriptsPath({ noCache: true });
-    });
-
     it('should return the correct config', () => {
       // Normalise the return, as we know our new rules object will be an array, whereas a string is expected.
       const rules = getTypeScriptRules(mockRules, './.storybook');
@@ -78,8 +59,30 @@ describe('cra-config', () => {
       const rules = getTypeScriptRules(mockRules, './.storybook');
       expect(rules[0].include.findIndex(string => string.includes('.storybook'))).toEqual(1);
     });
+  });
 
-    it('should apply Babel and styling webpack rules', () => {
+  describe('when used with react-scripts < 2.1.0', () => {
+    beforeEach(() => {
+      fs.realpathSync.mockImplementationOnce(() =>
+        path.join(__dirname, '__mocks__/react-scripts-2-0-0/sub1/sub2')
+      );
+      getReactScriptsPath({ noCache: true });
+    });
+
+    it('should apply styling webpack rules', () => {
+      expect(applyCRAWebpackConfig(mockConfig, '/test-project')).toMatchSnapshot();
+    });
+  });
+
+  describe('when used with react-scripts >= 2.1.0', () => {
+    beforeEach(() => {
+      fs.realpathSync.mockImplementationOnce(() =>
+        path.join(__dirname, '__mocks__/react-scripts-2-1-0/sub1/sub2')
+      );
+      getReactScriptsPath({ noCache: true });
+    });
+
+    it('should apply Babel, styling rules and merge plugins', () => {
       expect(applyCRAWebpackConfig(mockConfig, '/test-project')).toMatchSnapshot();
     });
   });
