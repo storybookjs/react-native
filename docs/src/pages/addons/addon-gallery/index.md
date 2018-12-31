@@ -164,3 +164,7 @@ JSS theme selection.
 ### [React live edit](https://github.com/vertexbz/storybook-addon-react-live-edit)
 
 Provides live react story editing and preview.
+
+### [copy-code-block](https://www.npmjs.com/package/@pickra/copy-code-block)
+
+Display code and copy it to the clipboard. It also has options to customize colors and syntax highlighting for any language. There is similar functionality via [@storybook/addon-info](https://www.npmjs.com/package/@storybook/addon-info) but addon-info doesn't currently work when using [@storybook/html](https://www.npmjs.com/package/@storybook/html).
