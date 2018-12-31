@@ -143,7 +143,7 @@ export function applyCRAWebpackConfig(baseConfig, configDir) {
       ...baseConfig.module,
       rules: [...filteredBaseRules, ...craStyleRules, ...craTypeScriptRules],
     },
-    plugins: mergePlugins(baseConfig.plugins, hasTsSupport ? craWebpackConfig.plugins : []),
+    plugins: mergePlugins(plugins, hasTsSupport ? craWebpackConfig.plugins : []),
     resolve: {
       ...baseConfig.resolve,
       extensions: [...baseConfig.resolve.extensions, ...tsExtensions],
