@@ -19299,9 +19299,10 @@ svelte-jest@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/svelte-jest/-/svelte-jest-0.2.0.tgz#a05ed16d092e8916de7a4526d1d5673499094756"
 
-svelte-loader@^2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-2.11.0.tgz#f97b30763a67a12186838f6282553060f1726240"
+svelte-loader@^2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-2.12.0.tgz#4a5043fc6964ca438bd21cb2771e56fdb2baeda4"
+  integrity sha512-mxkjxHecbWl3KzhlwWm4C/Mid4Anhk611sEG31aa0BwdELIgLSaAxSJkxJrrFxxNgEKGKyTSeUI3blKNM+3s8Q==
   dependencies:
     loader-utils "^1.1.0"
     require-relative "^0.8.7"
