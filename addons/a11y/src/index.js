@@ -8,23 +8,25 @@ import { CHECK_EVENT_ID, REQUEST_CHECK_EVENT_ID } from './shared';
 
 const config = {
   axeOptions: {},
-  contextElementId: '',
+  axeContext: '',
 };
 
-export const configureA11y = (axeOptions = {}, contextElementId = '') => {
+export const configureA11y = (axeOptions = {}, axeContext = '') => {
   config.axeOptions = axeOptions;
-  config.contextElementId = contextElementId;
+  config.axeContext = axeContext;
+};
+
+const getDefaultAxeContext = () => {
+  const infoWrapper = document.getElementById('story-root');
+  const wrapper = document.getElementById('root');
+
+  return (infoWrapper && infoWrapper.children) || wrapper;
 };
 
 const runA11yCheck = () => {
   const channel = addons.getChannel();
 
-  let axeContext = config.contextElementId;
-  if (!axeContext) {
-    const infoWrapper = document.getElementById('story-root');
-    const wrapper = document.getElementById('root');
-    axeContext = (infoWrapper && infoWrapper.children) || wrapper;
-  }
+  const axeContext = config.axeContext || getDefaultAxeContext();
 
   axe.reset();
   axe.configure(config.axeOptions);
