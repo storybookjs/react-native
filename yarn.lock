@@ -13474,13 +13474,15 @@ marko-starter@^2.0.4:
     routes-table "^1.2.1"
     try-require "^1.2.1"
 
-marko@^4.1.1, marko@^4.10.0, marko@^4.13.8:
-  version "4.14.3"
-  resolved "https://registry.yarnpkg.com/marko/-/marko-4.14.3.tgz#9cbec95d029d840d117ea56ecebf24276568aebd"
+marko@^4.1.1, marko@^4.10.0, marko@^4.14.12:
+  version "4.14.12"
+  resolved "https://registry.yarnpkg.com/marko/-/marko-4.14.12.tgz#6b322ef623549a4850e66d76f4f0a1bed9d4b6bb"
+  integrity sha512-BLG+A8HkgpPYIR8/gG7smQyvnbw4EhpjTo/3TvB2U8v85eayMvw4lhAS+bfOYvqpDp36g9ASq5WrQLbg3+3rRQ==
   dependencies:
     app-module-path "^2.2.0"
     argly "^1.0.0"
     browser-refresh-client "^1.0.0"
+    camelcase "^5.0.0"
     char-props "~0.1.5"
     complain "^1.3.0"
     deresolve "^1.1.2"
@@ -13508,7 +13510,7 @@ marko@^4.1.1, marko@^4.10.0, marko@^4.13.8:
     simple-sha1 "^2.1.0"
     strip-json-comments "^2.0.1"
     try-require "^1.2.1"
-    warp10 "^1.0.0"
+    warp10 "^2.0.1"
 
 marksy@^6.1.0:
   version "6.1.0"
@@ -20686,9 +20688,10 @@ warning@^3.0.0:
   dependencies:
     loose-envify "^1.0.0"
 
-warp10@^1.0.0:
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/warp10/-/warp10-1.3.6.tgz#edffff4f06382d2e469ba88ccfcb95bb81d3bda6"
+warp10@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/warp10/-/warp10-2.0.1.tgz#a21936d53f152a6003ce49bae85c8758c54c3d2c"
+  integrity sha512-nS1KG2RCVTWepfSitZKzL+HYiqqMJag06KtOJF/LwklrJWeJYRWHjMYpd6GXMt09ot+HIEj+Y4dmQNnNNE0Bjg==
 
 watch-detector@^0.1.0:
   version "0.1.0"

@@ -18,7 +18,7 @@
     "prettier": "prettier src/**/*.{js,css,less} *.js --write"
   },
   "dependencies": {
-    "marko": "^4.13.8",
+    "marko": "^4.14.12",
     "marko-starter": "^2.0.4"
   },
   "devDependencies": {
