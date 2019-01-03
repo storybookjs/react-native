@@ -212,6 +212,52 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|Tabs stateful - static 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="css-z5a1p4-Wrapper e1lzzkxx0"
+  >
+    <div
+      class="css-1am2yyz-TabBarWrapper e1lzzkxx2"
+    >
+      <div
+        class="css-l8emx-TabBar e1lzzkxx1"
+        role="tablist"
+      >
+        <button
+          class="css-1ghc1c-TabButton e1lzzkxx4"
+          role="tab"
+          type="button"
+        >
+          With a function
+        </button>
+        <button
+          class="css-1jt6nsk-TabButton e1lzzkxx4"
+          role="tab"
+          type="button"
+        >
+          With markup
+        </button>
+      </div>
+    </div>
+    <div
+      class="css-1eu9ihj-Content e1lzzkxx5"
+    >
+      <div
+        class="css-1bvkt1k-VisuallyHidden e1lzzkxx6"
+        role="tabpanel"
+      >
+        <div>
+          test2 is always active (but visually hidden)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
 <div
   style="height:calc(100vh - 20px)"

@@ -1,3 +1,495 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|AboutPage default 1`] = `null`;
+
+exports[`Storyshots UI|AboutPage new version required 1`] = `
+<div
+  class="css-1x4pjuc-Container e102gaa50"
+>
+  <div
+    class="css-4owjbu-Wrapper e102gaa53"
+  >
+    <header
+      class="css-si0ejj-Title e102gaa51"
+    >
+      <svg
+        class="e102gaa56 css-104k5t3-Svg-TitleIcon e1vqr9v80"
+        viewBox="0 0 420 538"
+      >
+        <path
+          d="M 420,0 28,28 52,520 420,538 Z"
+          fill="#f1618c"
+        />
+        <path
+          d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
+          fill="#fff"
+        />
+        <path
+          d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
+          fill="#fff"
+        />
+        <path
+          d="M 42,520 18,28 H 0 l 18,492 z"
+          fill="#b57ee5"
+        />
+      </svg>
+      <span
+        class="css-bo02a9-TitleText e102gaa52"
+      >
+        Storybook 5.0.0
+      </span>
+      <span
+        class="css-13c4ut4-Balloon e102gaa58"
+      >
+        Update available
+      </span>
+    </header>
+  </div>
+  <div
+    class="css-4owjbu-Wrapper e102gaa53"
+  >
+    <aside
+      class="css-1hbji1w-Aside e102gaa54"
+    >
+      <div>
+        Latest version
+      </div>
+      <div>
+        <strong>
+          5.0.3
+        </strong>
+      </div>
+    </aside>
+    <main
+      class="css-vx98lc-Main e102gaa55"
+    >
+      <header
+        class="css-yfonvn-Container e14vg0o61"
+      >
+        <h1
+          class="css-4bak20-getElement e14vg0o60"
+        >
+          Changelog
+          <a
+            class="css-vb5ix5-FullChangeLogLink e102gaa59"
+            href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Read full changelog
+          </a>
+        </h1>
+      </header>
+      <strong>
+        Features
+      </strong>
+      <ul>
+        <li>
+          Feature nr 1 description (
+          <a
+            class="css-1a69rwi-A ehzniak0"
+            href="https://github.com/storybooks/storybook/pull/3746"
+          >
+            #1234
+          </a>
+          )
+        </li>
+        <li>
+          Feature nr 2 description (
+          <a
+            class="css-1a69rwi-A ehzniak0"
+            href="https://github.com/storybooks/storybook/pull/3746"
+          >
+            #1235
+          </a>
+          )
+        </li>
+        <li>
+          Feature nr 3 description (
+          <a
+            class="css-1a69rwi-A ehzniak0"
+            href="https://github.com/storybooks/storybook/pull/3746"
+          >
+            #1236
+          </a>
+          )
+        </li>
+      </ul>
+      <strong>
+        Bugfixes
+      </strong>
+      <ul>
+        <li>
+          Bugfix nr 1 description
+        </li>
+      </ul>
+    </main>
+  </div>
+  <div
+    class="css-4owjbu-Wrapper e102gaa53"
+  >
+    <div
+      class="css-1gcu3b8-Upgrade e102gaa514"
+    >
+      <header
+        class="css-yfonvn-Container e14vg0o61"
+      >
+        <h1
+          class="css-4bak20-getElement e14vg0o60"
+        >
+          <span>
+            Upgrade all storybook packages to latest:
+          </span>
+        </h1>
+      </header>
+      <div
+        class="css-1utuj4w-Wrapper epklh870"
+      >
+        <div
+          class="css-1y75e3d-Scroller epklh871"
+        >
+          <pre
+            class="hljs css-1ks10li-Pre epklh872"
+          >
+            <code
+              class="css-1igagyr-Code epklh873"
+            >
+              npx npm-check-updates 
+              <span
+                class="token string"
+              >
+                '/storybook/'
+              </span>
+               -u 
+              <span
+                class="token operator"
+              >
+                &&
+              </span>
+               yarn
+            </code>
+          </pre>
+        </div>
+        <ul
+          class="css-13c7bym-Container egs2kzf0"
+        >
+          <li
+            class="css-1tizi7s-ActionItem egs2kzf2"
+          >
+            <button
+              class="css-1r3i0dl-ActionButton egs2kzf1"
+            >
+              copy
+            </button>
+          </li>
+        </ul>
+      </div>
+      <p>
+        Alternatively if you're using a yarn you could run the following command, and check all storybook related packages:
+      </p>
+      <div
+        class="css-1utuj4w-Wrapper epklh870"
+      >
+        <div
+          class="css-1y75e3d-Scroller epklh871"
+        >
+          <pre
+            class="hljs css-1ks10li-Pre epklh872"
+          >
+            <code
+              class="css-1igagyr-Code epklh873"
+            >
+              yarn upgrade-interactive --latest
+            </code>
+          </pre>
+        </div>
+        <ul
+          class="css-13c7bym-Container egs2kzf0"
+        >
+          <li
+            class="css-1tizi7s-ActionItem egs2kzf2"
+          >
+            <button
+              class="css-1r3i0dl-ActionButton egs2kzf1"
+            >
+              copy
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    class="css-4owjbu-Wrapper e102gaa53"
+  >
+    <div
+      class="css-tskgc7-Footer e102gaa513"
+    >
+      <a
+        class="css-1a69rwi-A ehzniak0"
+        href="https://storybook.js.org"
+      >
+        Storybook docs
+      </a>
+      <a
+        class="css-1a69rwi-A ehzniak0"
+        href="https://github.com/storybooks/storybook"
+      >
+        GitHub
+      </a>
+      <a
+        class="css-1a69rwi-A ehzniak0"
+        href="https://storybook.js.org/support"
+      >
+        Support
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|AboutPage up to date 1`] = `
+<div
+  class="css-1x4pjuc-Container e102gaa50"
+>
+  <div
+    class="css-4owjbu-Wrapper e102gaa53"
+  >
+    <header
+      class="css-si0ejj-Title e102gaa51"
+    >
+      <svg
+        class="e102gaa56 css-104k5t3-Svg-TitleIcon e1vqr9v80"
+        viewBox="0 0 420 538"
+      >
+        <path
+          d="M 420,0 28,28 52,520 420,538 Z"
+          fill="#f1618c"
+        />
+        <path
+          d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
+          fill="#fff"
+        />
+        <path
+          d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
+          fill="#fff"
+        />
+        <path
+          d="M 42,520 18,28 H 0 l 18,492 z"
+          fill="#b57ee5"
+        />
+      </svg>
+      <span
+        class="css-bo02a9-TitleText e102gaa52"
+      >
+        Storybook 5.0.0
+      </span>
+      <span
+        class="css-su63og-Balloon e102gaa58"
+      >
+        You're' up to date
+      </span>
+    </header>
+  </div>
+  <div
+    class="css-4owjbu-Wrapper e102gaa53"
+  >
+    <aside
+      class="css-1hbji1w-Aside e102gaa54"
+    >
+      <div>
+        Latest version
+      </div>
+      <div>
+        <strong>
+          5.0.0
+        </strong>
+      </div>
+    </aside>
+    <main
+      class="css-vx98lc-Main e102gaa55"
+    >
+      <header
+        class="css-yfonvn-Container e14vg0o61"
+      >
+        <h1
+          class="css-4bak20-getElement e14vg0o60"
+        >
+          Changelog
+          <a
+            class="css-vb5ix5-FullChangeLogLink e102gaa59"
+            href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Read full changelog
+          </a>
+        </h1>
+      </header>
+      <strong>
+        Features
+      </strong>
+      <ul>
+        <li>
+          Feature nr 1 description (
+          <a
+            class="css-1a69rwi-A ehzniak0"
+            href="https://github.com/storybooks/storybook/pull/3746"
+          >
+            #1234
+          </a>
+          )
+        </li>
+        <li>
+          Feature nr 2 description (
+          <a
+            class="css-1a69rwi-A ehzniak0"
+            href="https://github.com/storybooks/storybook/pull/3746"
+          >
+            #1235
+          </a>
+          )
+        </li>
+        <li>
+          Feature nr 3 description (
+          <a
+            class="css-1a69rwi-A ehzniak0"
+            href="https://github.com/storybooks/storybook/pull/3746"
+          >
+            #1236
+          </a>
+          )
+        </li>
+      </ul>
+      <strong>
+        Bugfixes
+      </strong>
+      <ul>
+        <li>
+          Bugfix nr 1 description
+        </li>
+      </ul>
+    </main>
+  </div>
+  <div
+    class="css-4owjbu-Wrapper e102gaa53"
+  >
+    <div
+      class="css-1gcu3b8-Upgrade e102gaa514"
+    >
+      <header
+        class="css-yfonvn-Container e14vg0o61"
+      >
+        <h1
+          class="css-4bak20-getElement e14vg0o60"
+        >
+          <span>
+            Upgrade all storybook packages to latest:
+          </span>
+        </h1>
+      </header>
+      <div
+        class="css-1utuj4w-Wrapper epklh870"
+      >
+        <div
+          class="css-1y75e3d-Scroller epklh871"
+        >
+          <pre
+            class="hljs css-1ks10li-Pre epklh872"
+          >
+            <code
+              class="css-1igagyr-Code epklh873"
+            >
+              npx npm-check-updates 
+              <span
+                class="token string"
+              >
+                '/storybook/'
+              </span>
+               -u 
+              <span
+                class="token operator"
+              >
+                &&
+              </span>
+               yarn
+            </code>
+          </pre>
+        </div>
+        <ul
+          class="css-13c7bym-Container egs2kzf0"
+        >
+          <li
+            class="css-1tizi7s-ActionItem egs2kzf2"
+          >
+            <button
+              class="css-1r3i0dl-ActionButton egs2kzf1"
+            >
+              copy
+            </button>
+          </li>
+        </ul>
+      </div>
+      <p>
+        Alternatively if you're using a yarn you could run the following command, and check all storybook related packages:
+      </p>
+      <div
+        class="css-1utuj4w-Wrapper epklh870"
+      >
+        <div
+          class="css-1y75e3d-Scroller epklh871"
+        >
+          <pre
+            class="hljs css-1ks10li-Pre epklh872"
+          >
+            <code
+              class="css-1igagyr-Code epklh873"
+            >
+              yarn upgrade-interactive --latest
+            </code>
+          </pre>
+        </div>
+        <ul
+          class="css-13c7bym-Container egs2kzf0"
+        >
+          <li
+            class="css-1tizi7s-ActionItem egs2kzf2"
+          >
+            <button
+              class="css-1r3i0dl-ActionButton egs2kzf1"
+            >
+              copy
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    class="css-4owjbu-Wrapper e102gaa53"
+  >
+    <div
+      class="css-tskgc7-Footer e102gaa513"
+    >
+      <a
+        class="css-1a69rwi-A ehzniak0"
+        href="https://storybook.js.org"
+      >
+        Storybook docs
+      </a>
+      <a
+        class="css-1a69rwi-A ehzniak0"
+        href="https://github.com/storybooks/storybook"
+      >
+        GitHub
+      </a>
+      <a
+        class="css-1a69rwi-A ehzniak0"
+        href="https://storybook.js.org/support"
+      >
+        Support
+      </a>
+    </div>
+  </div>
+</div>
+`;

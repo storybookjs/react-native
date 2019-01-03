@@ -11,6 +11,8 @@ addons.register(ADDON_ID, api => {
     type: types.PANEL,
     title: 'CSS resources',
     // eslint-disable-next-line react/prop-types
-    render: ({ active }) => <CssResourcePanel channel={channel} api={api} active={active} />,
+    render: ({ active, key }) => (
+      <CssResourcePanel key={key} channel={channel} api={api} active={active} />
+    ),
   });
 });

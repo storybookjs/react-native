@@ -8,6 +8,6 @@ addons.register(ADDON_ID, api => {
   addons.addPanel(PANEL_ID, {
     title: 'Knobs',
     // eslint-disable-next-line react/prop-types
-    render: ({ active }) => <Panel channel={channel} api={api} key="knobs-panel" active={active} />,
+    render: ({ active, key }) => <Panel channel={channel} api={api} key={key} active={active} />,
   });
 });

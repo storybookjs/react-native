@@ -46,12 +46,11 @@ import { storiesOf } from '@storybook/react';
 
 import Button from './Button';
 
-storiesOf('Button', module)
-  .add('with text', () => <Button>Hello Button</Button>, {
-    myAddon: {
-      data: 'this data is passed to the addon'
-    },
-  });
+storiesOf('Button', module).add('with text', () => <Button>Hello Button</Button>, {
+  myAddon: {
+    data: 'this data is passed to the addon',
+  },
+});
 ```
 
 ### Add a panel
@@ -98,9 +97,9 @@ class MyPanel extends React.Component {
   render() {
     const { value } = this.state;
     const { active } = this.props;
-    return active ? (<div>{value}</div>) : null;
+    return active ? <div>{value}</div> : null;
   }
-};
+}
 
 addons.register(ADDON_ID, api => {
   const render = ({ active }) => <Panel api={api} active={active} />;
@@ -196,7 +195,7 @@ class MyPanel extends React.Component {
   render() {
     const { active } = this.props;
 
-    return active ? <div></div> : null;
+    return active ? <div /> : null;
   }
 }
 
@@ -205,7 +204,7 @@ addons.register('MYADDON', api => {
   // Also need to set a unique name to the panel.
   addons.addPanel('MYADDON/panel', {
     title: 'My Addon',
-    render: ({ active }) => <MyPanel api={api} active={active} />,
+    render: ({ active, key }) => <MyPanel key={key} api={api} active={active} />,
   });
 });
 ```
@@ -214,7 +213,7 @@ It will register our addon and add a panel. In this case, the panel represents a
 That component has access to the storybook API.
 
 Then it will listen for events. You can listen for core storybook events, event by other addons or custom events created by `index.js`.
- Have a look at the above annotated code.
+Have a look at the above annotated code.
 
 > In this example, we are only sending messages from the Preview Area to the Manager App (our panel). But we can do it the other way around as well.
 
