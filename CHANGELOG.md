@@ -1,3 +1,19 @@
+## 4.2.0-alpha.8 (December 28, 2018)
+
+### Maintenance
+
+* Typescript: Migrate @storybook/channel-websocket ([#5046](https://github.com/storybooks/storybook/pull/5046))
+* Typescript: Migrate @storybook/addons ([#5018](https://github.com/storybooks/storybook/pull/5018))
+
+### Dependency Upgrades
+
+* Bump @babel/plugin-proposal-class-properties from 7.2.1 to 7.2.3 ([#5070](https://github.com/storybooks/storybook/pull/5070))
+* Bump babel-plugin-named-asset-import from 0.2.3 to 0.3.0 ([#5100](https://github.com/storybooks/storybook/pull/5100))
+* Bump eslint from 5.10.0 to 5.11.0 ([#5097](https://github.com/storybooks/storybook/pull/5097))
+* Bump loader-utils from 1.2.0 to 1.2.1 ([#5099](https://github.com/storybooks/storybook/pull/5099))
+* Bump boxen from 2.0.0 to 2.1.0 ([#5104](https://github.com/storybooks/storybook/pull/5104))
+* Bump @ngrx/store from 6.1.2 to 7.0.0 ([#5105](https://github.com/storybooks/storybook/pull/5105))
+* Bump react-select from 2.1.1 to 2.1.2 ([#5102](https://github.com/storybooks/storybook/pull/5102))
 
 ## 4.1.4 (December 25, 2018)
 
