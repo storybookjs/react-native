@@ -31,13 +31,14 @@ const ignoreList = [
   error => error.message.includes('Failed prop type') && error.stack.includes('storyshots'),
 ];
 
-const throwError = message => {
-  const error = new Error(message);
+const throwMessage = (type, message) => {
+  const error = new Error(`${type}${message}`);
   if (!ignoreList.reduce((acc, item) => acc || item(error), false)) {
-    console.log({ m: error.message, s: error.stack });
     throw error;
   }
 };
+const throwWarning = message => throwMessage('warn: ', message);
+const throwError = message => throwMessage('error: ', message);
 
 global.console.error = throwError;
-global.console.warn = throwError;
+global.console.warn = throwWarning;
