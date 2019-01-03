@@ -14,7 +14,7 @@ addons.register(ADDON_ID, (api: API) => {
   addons.add(PANEL_ID, {
     type: types.TAB,
     title,
-    route: ({ componentId }: { componentId: any }) => `/info/${componentId}`, // todo add type
+    route: ({ storyId }: { storyId: String }) => `/info/${storyId}`, // todo add type
     match: ({ viewMode }: { viewMode: any }) => viewMode === 'info', // todo add type
     render,
   });
