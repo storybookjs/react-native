@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI|AboutPage default 1`] = `null`;
-
 exports[`Storyshots UI|AboutPage new version required 1`] = `
 <div
   class="css-1x4pjuc-Container e102gaa50"

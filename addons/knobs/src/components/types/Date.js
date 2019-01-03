@@ -9,7 +9,7 @@ const FlexSpaced = styled.div({
   '& > *': {
     marginLeft: 10,
   },
-  '& > *:nth-child(0)': {
+  '& > *:first-child': {
     marginLeft: 0,
   },
 });
