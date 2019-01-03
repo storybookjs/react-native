@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@storybook/addons": "4.2.0-alpha.8",
-    "core-js": "^2.5.7",
+    "core-js": "^2.6.1",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {

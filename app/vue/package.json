@@ -27,10 +27,10 @@
   "dependencies": {
     "@storybook/core": "4.2.0-alpha.8",
     "common-tags": "^1.8.0",
-    "core-js": "^2.5.7",
+    "core-js": "^2.6.1",
     "global": "^4.3.2",
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {

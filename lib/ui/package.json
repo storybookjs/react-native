@@ -21,14 +21,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.2",
-    "@emotion/styled": "^10.0.2",
-    "@reach/router": "^1.1.1",
+    "@emotion/core": "^10.0.5",
+    "@emotion/styled": "^10.0.5",
+    "@reach/router": "^1.2.1",
     "@storybook/addons": "4.2.0-alpha.8",
     "@storybook/client-logger": "4.2.0-alpha.8",
     "@storybook/components": "4.2.0-alpha.8",
     "@storybook/core-events": "4.2.0-alpha.8",
-    "emotion-theming": "^10.0.2",
+    "emotion-theming": "^10.0.5",
     "eventemitter3": "^3.1.0",
     "fast-deep-equal": "^2.0.1",
     "fuse.js": "^3.3.0",
@@ -44,15 +44,15 @@
     "memoizerific": "^1.11.3",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
-    "react-draggable": "^3.0.5",
+    "react-draggable": "^3.1.1",
     "react-lifecycles-compat": "^3.0.4",
-    "react-modal": "^3.6.1",
-    "react-resize-detector": "^3.1.1",
+    "react-modal": "^3.8.1",
+    "react-resize-detector": "^3.2.1",
     "to-camel-case": "^1.0.0"
   },
   "devDependencies": {
-    "terser-webpack-plugin": "^1.1.0",
-    "webpack": "^4.23.1"
+    "terser-webpack-plugin": "^1.2.1",
+    "webpack": "^4.28.3"
   },
   "peerDependencies": {
     "react": "*",

@@ -21,19 +21,19 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/styled": "^10.0.2",
+    "@emotion/styled": "^10.0.5",
     "@storybook/addons": "4.2.0-alpha.8",
     "@storybook/client-logger": "4.2.0-alpha.8",
     "@storybook/components": "4.2.0-alpha.8",
-    "core-js": "^2.5.7",
+    "core-js": "^2.6.1",
     "global": "^4.3.2",
     "marksy": "^6.1.0",
     "nested-object-assign": "^1.0.1",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0-alpha.2",
+    "react": "^16.7.0",
     "react-addons-create-fragment": "^15.5.3",
     "react-element-to-jsx-string": "^14.0.2",
-    "react-is": "^16.6.1",
+    "react-is": "^16.7.0",
     "react-lifecycles-compat": "^3.0.4",
     "util-deprecate": "^1.0.2"
   },

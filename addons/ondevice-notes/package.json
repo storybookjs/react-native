@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@storybook/addons": "4.2.0-alpha.8",
-    "core-js": "^2.5.7",
+    "core-js": "^2.6.1",
     "prop-types": "^15.6.2",
     "react-native-simple-markdown": "^1.1.0"
   },

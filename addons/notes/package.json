@@ -22,11 +22,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/styled": "^10.0.2",
+    "@emotion/styled": "^10.0.5",
     "@storybook/addons": "4.2.0-alpha.8",
     "@storybook/components": "4.2.0-alpha.8",
     "@storybook/core-events": "4.2.0-alpha.8",
-    "markdown-to-jsx": "^6.7.4",
+    "markdown-to-jsx": "^6.9.0",
     "prop-types": "^15.6.2",
     "util-deprecate": "^1.0.2"
   },

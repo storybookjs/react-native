@@ -21,13 +21,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.2",
-    "@emotion/styled": "^10.0.2",
+    "@emotion/core": "^10.0.5",
+    "@emotion/styled": "^10.0.5",
     "@storybook/addons": "4.2.0-alpha.8",
     "@storybook/components": "4.2.0-alpha.8",
     "@storybook/core-events": "4.2.0-alpha.8",
     "copy-to-clipboard": "^3.0.8",
-    "core-js": "^2.5.7",
+    "core-js": "^2.6.1",
     "escape-html": "^1.0.3",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
@@ -35,7 +35,7 @@
     "qs": "^6.5.2",
     "react-color": "^2.17.0",
     "react-lifecycles-compat": "^3.0.4",
-    "react-select": "^2.1.2",
+    "react-select": "^2.2.0",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {

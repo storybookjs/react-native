@@ -23,13 +23,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/styled": "^10.0.2",
+    "@emotion/styled": "^10.0.5",
     "@storybook/addons": "4.2.0-alpha.8",
     "@storybook/core-events": "4.2.0-alpha.8",
-    "core-js": "^2.5.7",
+    "core-js": "^2.6.1",
     "format-json": "^1.0.3",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0-alpha.2",
+    "react": "^16.7.0",
     "react-lifecycles-compat": "^3.0.4",
     "react-textarea-autosize": "^7.0.4",
     "util-deprecate": "^1.0.2"
