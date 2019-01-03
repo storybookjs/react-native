@@ -19,10 +19,10 @@
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "@storybook/addon-actions": "4.2.0-alpha.7",
-    "@storybook/addon-links": "4.2.0-alpha.7",
-    "@storybook/addons": "4.2.0-alpha.7",
-    "@storybook/react": "4.2.0-alpha.7",
+    "@storybook/addon-actions": "4.2.0-alpha.8",
+    "@storybook/addon-links": "4.2.0-alpha.8",
+    "@storybook/addons": "4.2.0-alpha.8",
+    "@storybook/react": "4.2.0-alpha.8",
     "babel-loader": "^6.4.1",
     "bootstrap": "^4.2.1",
     "common-tags": "^1.8.0",
@@ -47,7 +47,7 @@
     "react-router": "^4.3.1",
     "react-stack-grid": "^0.7.1",
     "sitemap": "^2.1.0",
-    "snyk": "^1.118.2"
+    "snyk": "^1.119.0"
   },
   "snyk": true
 }
