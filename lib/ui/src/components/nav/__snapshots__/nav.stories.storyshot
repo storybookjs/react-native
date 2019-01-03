@@ -54,7 +54,91 @@ exports[`Storyshots UI|Nav/components components 1`] = `
           class="css-1vfjj5t-Trigger e195q2qw0"
         >
           <button
-            class="css-16kkzcq-RoundButton eclugbz0"
+            class="css-1030lfg-RoundButton eclugbz0"
+            id="storybook-explorer-menu"
+          >
+            <svg
+              class="css-1yaqr10-Svg e1vqr9v80"
+              height="14px"
+              viewBox="0 0 1024 1024"
+              width="14px"
+            >
+              <path
+                class="css-1xhbbdd-Path e1gl30fa0"
+                d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
+              />
+            </svg>
+          </button>
+        </span>
+      </div>
+      <p
+        class="css-hftiue ejh6i270"
+      >
+        There have no stories been loaded yet
+      </p>
+    </div>
+    <div
+      class="css-1yt93tv-Foot ea9ueuv4"
+    />
+  </div>
+</nav>
+`;
+
+exports[`Storyshots UI|Nav/settings with brand 1`] = `
+<nav
+  class="css-12y23u7-Container ea9ueuv0"
+>
+  <div
+    class="css-1w49w0r-Inner ea9ueuv1"
+  >
+    <div
+      class="css-vx98lc-Main ea9ueuv3"
+    >
+      <div
+        class="css-1l8ehjd-Head ea9ueuv2"
+      >
+        <div
+          class="css-1utbklm-HeadMain ea9ueuv6"
+        >
+          <div
+            class="css-12abwdn-BrandWrapper ezlaqq41"
+          >
+            <svg
+              class="css-1hafpwu-Svg e1jx9faa0"
+              height="30px"
+              viewBox="0 0 420 538"
+            >
+              <path
+                d="M 420,0 28,28 52,520 420,538 Z"
+                fill="#f1618c"
+              />
+              <path
+                d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
+                fill="#fff"
+              />
+              <path
+                d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
+                fill="#fff"
+              />
+              <path
+                d="M 42,520 18,28 H 0 l 18,492 z"
+                fill="#b57ee5"
+              />
+            </svg>
+            <span
+              class="css-1y8nbux-BrandText ezlaqq42"
+            >
+              <strong>
+                Title
+              </strong>
+            </span>
+          </div>
+        </div>
+        <span
+          class="css-1vfjj5t-Trigger e195q2qw0"
+        >
+          <button
+            class="css-1030lfg-RoundButton eclugbz0"
             id="storybook-explorer-menu"
           >
             <svg
@@ -112,7 +196,7 @@ exports[`Storyshots UI|Nav/settings without brand 1`] = `
           class="css-1vfjj5t-Trigger e195q2qw0"
         >
           <button
-            class="css-16kkzcq-RoundButton eclugbz0"
+            class="css-1030lfg-RoundButton eclugbz0"
             id="storybook-explorer-menu"
           >
             <svg

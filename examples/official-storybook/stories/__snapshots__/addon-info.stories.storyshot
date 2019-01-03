@@ -140,34 +140,34 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -180,122 +180,122 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -434,34 +434,34 @@ exports[`Storyshots Addons|Info/ForwardRef Displays forwarded ref components cor
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -474,122 +474,122 @@ exports[`Storyshots Addons|Info/ForwardRef Displays forwarded ref components cor
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -1053,34 +1053,34 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -1093,122 +1093,122 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -1441,34 +1441,34 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -1481,122 +1481,122 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -1809,34 +1809,34 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -1849,122 +1849,122 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -2189,34 +2189,34 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -2229,122 +2229,122 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -2696,34 +2696,34 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -2736,93 +2736,93 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -2961,34 +2961,34 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -3001,122 +3001,122 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -3257,34 +3257,34 @@ exports[`Storyshots Addons|Info/Options.inline Inlines component inside story 1`
             "BaseButton" Component
           </h3>
           <table
-            class="css-919xfk-Table-Table e1fg2ikb0"
+            class="css-78s6dx-Table-Table e1fg2ikb0"
           >
             <thead
               class="css-ig77mj-THead e1fg2ikb1"
             >
               <tr>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Property
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Type
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Required
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Default
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Description
                 </th>
@@ -3297,122 +3297,122 @@ exports[`Storyshots Addons|Info/Options.inline Inlines component inside story 1`
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   disabled
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     bool
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     false
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
               <tr
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   label
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     string
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   yes
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
               <tr
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   onClick
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     func
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     onClick
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
               <tr
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   style
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     other
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     {}
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
             </tbody>
@@ -3564,34 +3564,34 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -3604,122 +3604,122 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -3732,34 +3732,34 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
               "FlowTypeButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -3772,62 +3772,62 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -4089,34 +4089,34 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -4129,122 +4129,122 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -4326,34 +4326,34 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -4366,122 +4366,122 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -4625,34 +4625,34 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -4665,122 +4665,122 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -4924,34 +4924,34 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -4964,122 +4964,122 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -5320,34 +5320,34 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -5360,122 +5360,122 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -5676,34 +5676,34 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
             "BaseButton" Component
           </h3>
           <table
-            class="css-919xfk-Table-Table e1fg2ikb0"
+            class="css-78s6dx-Table-Table e1fg2ikb0"
           >
             <thead
               class="css-ig77mj-THead e1fg2ikb1"
             >
               <tr>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Property
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Type
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Required
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Default
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Description
                 </th>
@@ -5716,122 +5716,122 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   disabled
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     bool
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     false
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
               <tr
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   label
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     string
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   yes
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
               <tr
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   onClick
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     func
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     onClick
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
               <tr
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   style
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     other
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     {}
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
             </tbody>
@@ -5971,34 +5971,34 @@ exports[`Storyshots Addons|Info/Parameters Overwriting and extending the paramet
             "BaseButton" Component
           </h3>
           <table
-            class="css-919xfk-Table-Table e1fg2ikb0"
+            class="css-78s6dx-Table-Table e1fg2ikb0"
           >
             <thead
               class="css-ig77mj-THead e1fg2ikb1"
             >
               <tr>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Property
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Type
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Required
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Default
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Description
                 </th>
@@ -6011,93 +6011,93 @@ exports[`Storyshots Addons|Info/Parameters Overwriting and extending the paramet
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   disabled
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     bool
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     false
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
               <tr
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   onClick
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     func
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     onClick
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
               <tr
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   style
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     other
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     {}
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
             </tbody>
@@ -6237,34 +6237,34 @@ exports[`Storyshots Addons|Info/Parameters Using paramaters across all stories 1
             "BaseButton" Component
           </h3>
           <table
-            class="css-919xfk-Table-Table e1fg2ikb0"
+            class="css-78s6dx-Table-Table e1fg2ikb0"
           >
             <thead
               class="css-ig77mj-THead e1fg2ikb1"
             >
               <tr>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Property
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Type
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Required
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Default
                 </th>
                 <th
-                  class="css-6pdatc-Th-TH e1fg2ikb2"
+                  class="css-tfinoa-Th-TH e1fg2ikb2"
                 >
                   Description
                 </th>
@@ -6277,122 +6277,122 @@ exports[`Storyshots Addons|Info/Parameters Using paramaters across all stories 1
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   disabled
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     bool
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     false
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
               <tr
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   label
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     string
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   yes
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
               <tr
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   onClick
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     func
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     onClick
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
               <tr
                 class="css-rss5jh-TBodyTR e1fg2ikb4"
               >
                 <td
-                  class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                  class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                 >
                   style
                 </td>
                 <td
-                  class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                  class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                 >
                   <span>
                     other
                   </span>
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   -
                 </td>
                 <td
-                  class="css-6qgefz-Td-TD e1fg2ikb5"
+                  class="css-icf93m-Td-TD e1fg2ikb5"
                 >
                   <span>
                     {}
                   </span>
                 </td>
                 <td
-                  class="css-a1xhq0-Td-TD e1fg2ikb5"
+                  class="css-qkhvtu-Td-TD e1fg2ikb5"
                 />
               </tr>
             </tbody>
@@ -6604,34 +6604,34 @@ exports[`Storyshots Addons|Info/React Docgen Comments from Flow declarations 1`]
               "FlowTypeButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -6644,62 +6644,62 @@ exports[`Storyshots Addons|Info/React Docgen Comments from Flow declarations 1`]
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -7154,34 +7154,34 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
               "DocgenButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -7194,115 +7194,115 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     one
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {
@@ -7319,31 +7319,31 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     two
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {
@@ -7390,31 +7390,31 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     obj
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       object
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {
@@ -7431,31 +7431,31 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     shape
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {
@@ -7516,31 +7516,31 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     arrayOf
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       [
@@ -7565,162 +7565,162 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     msg
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     enm
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       News
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     enmEval
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       Photos
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     union
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       hello
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     optionalString
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       Default String
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -7933,34 +7933,34 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -7973,122 +7973,122 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -8301,34 +8301,34 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
               "NamedExportButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -8341,122 +8341,122 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -9175,34 +9175,34 @@ exports[`Storyshots Addons|Info/Story Source Array prop 1`] = `
               "TableComponent" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -9215,31 +9215,31 @@ exports[`Storyshots Addons|Info/Story Source Array prop 1`] = `
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     propDefinitions
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       []
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -9549,34 +9549,34 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -9589,122 +9589,122 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -9916,34 +9916,34 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -9956,122 +9956,122 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -10359,34 +10359,34 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -10399,122 +10399,122 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -10658,34 +10658,34 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -10698,122 +10698,122 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>
@@ -11046,34 +11046,34 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
               "BaseButton" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -11086,122 +11086,122 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     label
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       func
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       onClick
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     style
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {}
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>

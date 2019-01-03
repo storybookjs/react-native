@@ -233,34 +233,34 @@ exports[`Storyshots Button with new info 1`] = `
               "Container" Component
             </h3>
             <table
-              class="css-919xfk-Table-Table e1fg2ikb0"
+              class="css-78s6dx-Table-Table e1fg2ikb0"
             >
               <thead
                 class="css-ig77mj-THead e1fg2ikb1"
               >
                 <tr>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Property
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Type
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Required
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Default
                   </th>
                   <th
-                    class="css-6pdatc-Th-TH e1fg2ikb2"
+                    class="css-tfinoa-Th-TH e1fg2ikb2"
                   >
                     Description
                   </th>
@@ -273,84 +273,84 @@ exports[`Storyshots Button with new info 1`] = `
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     children
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       node
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     yes
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     isAmazing
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     age
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       {
@@ -377,38 +377,38 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
                 <tr
                   class="css-rss5jh-TBodyTR e1fg2ikb4"
                 >
                   <td
-                    class="css-v0hv6k-Td-TD-TDName e1fg2ikb6"
+                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
                   >
                     title
                   </td>
                   <td
-                    class="css-yv1lmn-Td-TD-TDType e1fg2ikb7"
+                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     -
                   </td>
                   <td
-                    class="css-6qgefz-Td-TD e1fg2ikb5"
+                    class="css-icf93m-Td-TD e1fg2ikb5"
                   >
                     <span>
                       the best container ever
                     </span>
                   </td>
                   <td
-                    class="css-a1xhq0-Td-TD e1fg2ikb5"
+                    class="css-qkhvtu-Td-TD e1fg2ikb5"
                   />
                 </tr>
               </tbody>

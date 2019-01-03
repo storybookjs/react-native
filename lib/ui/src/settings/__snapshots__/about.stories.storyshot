@@ -221,7 +221,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
     class="css-4owjbu-Wrapper e102gaa53"
   >
     <div
-      class="css-tskgc7-Footer e102gaa513"
+      class="css-1asopz8-Footer e102gaa513"
     >
       <a
         class="css-1a69rwi-A ehzniak0"
@@ -467,7 +467,7 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
     class="css-4owjbu-Wrapper e102gaa53"
   >
     <div
-      class="css-tskgc7-Footer e102gaa513"
+      class="css-1asopz8-Footer e102gaa513"
     >
       <a
         class="css-1a69rwi-A ehzniak0"

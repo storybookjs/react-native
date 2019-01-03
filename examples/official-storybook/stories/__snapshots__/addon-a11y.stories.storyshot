@@ -136,6 +136,13 @@ exports[`Storyshots Addons|A11y/Image With alt 1`] = `
 />
 `;
 
+exports[`Storyshots Addons|A11y/Image Without alt 1`] = `
+<img
+  class="css-1suhias-Img eipkw3i0"
+  src="http://placehold.it/350x150"
+/>
+`;
+
 exports[`Storyshots Addons|A11y/Typography Correct 1`] = `
 Array [
   <header
@@ -161,4 +168,35 @@ Array [
     Testing the a11y addon...
   </a>,
 ]
+`;
+
+exports[`Storyshots Addons|A11y/Typography Empty Heading 1`] = `
+<header
+  class="css-yfonvn-Container e14vg0o61"
+>
+  <h1
+    class="css-4bak20-getElement e14vg0o60"
+  />
+</header>
+`;
+
+exports[`Storyshots Addons|A11y/Typography Empty Link 1`] = `
+<a
+  class="css-1a69rwi-A ehzniak0"
+  href="javascript:void 0"
+/>
+`;
+
+exports[`Storyshots Addons|A11y/Typography Empty Paragraph 1`] = `
+<p
+  class="css-cn4ebp-Text e17gaumq0"
+/>
+`;
+
+exports[`Storyshots Addons|A11y/Typography Link without href 1`] = `
+<a
+  class="css-1a69rwi-A ehzniak0"
+>
+  Testing the a11y addon...
+</a>
 `;

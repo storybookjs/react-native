@@ -133,7 +133,7 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
               {
   "id": "iframe",
   "path": "/components/UI-DesktopLayout-noNav",
-  "componentId": "UI-DesktopLayout-noNav",
+  "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
   "viewMode": "components",
   "debug": {
@@ -231,7 +231,7 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
               {
   "id": "iframe",
   "path": "/components/UI-DesktopLayout-noNav",
-  "componentId": "UI-DesktopLayout-noNav",
+  "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
   "viewMode": "components",
   "debug": {
@@ -329,7 +329,7 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
               {
   "id": "iframe",
   "path": "/components/UI-DesktopLayout-noNav",
-  "componentId": "UI-DesktopLayout-noNav",
+  "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
   "viewMode": "components",
   "debug": {
@@ -429,7 +429,7 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
               {
   "id": "iframe",
   "path": "/components/UI-DesktopLayout-noNav",
-  "componentId": "UI-DesktopLayout-noNav",
+  "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
   "debug": {
     "initialActive": 1
