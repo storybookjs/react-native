@@ -20,26 +20,9 @@ const PanelWrapper = styled.div({
   width: '100%',
 });
 
-/** @typedef {{[knob: string]: { name: string; defaultValue: unknown; used: boolean; groupId?: string }}} Knobs */
-/**
- * @typedef {Object} Props
- * @prop {boolean} active
- * @prop {object=} onReset
- * @prop {Partial<Record<'emit'|'on'|'removeListener', Function>>} channel
- * @prop {Partial<Record<'onStory'|'getQueryParam'|'setQueryParams', Function>>} api
- */
-/**
- * @typedef {Object} State
- * @prop {Knobs} knobs
- */
-
 export default class Panel extends PureComponent {
-  /**
-   * @param {Props} props
-   */
   constructor(props) {
     super(props);
-    /** @type {State} */
     this.state = {
       knobs: {},
     };
@@ -71,7 +54,6 @@ export default class Panel extends PureComponent {
     this.options = options;
   };
 
-  /** @param {{ knobs: Knobs; timestamp?: number }} param0 */
   setKnobs = ({ knobs, timestamp }) => {
     const queryParams = {};
     const { api, channel } = this.props;
@@ -153,9 +135,7 @@ export default class Panel extends PureComponent {
       return null;
     }
 
-    /** @type {Record<string, { render(props: { active: boolean; selected: string }): JSX.Element|null; title: string }} */
     const groups = {};
-    /** @type {string[]} */
     const groupIds = [];
 
     const knobKeysArray = Object.keys(knobs).filter(key => knobs[key].used);
@@ -163,7 +143,7 @@ export default class Panel extends PureComponent {
     knobKeysArray
       .filter(key => knobs[key].groupId)
       .forEach(key => {
-        const knobKeyGroupId = /** @type {string} */ (knobs[key].groupId);
+        const knobKeyGroupId = knobs[key].groupId;
         groupIds.push(knobKeyGroupId);
         groups[knobKeyGroupId] = {
           render: ({ active: groupActive, selected }) => (

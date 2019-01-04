@@ -148,13 +148,11 @@ describe('Panel', () => {
   });
 
   describe('groups', () => {
-    /** @type {Required<import('../Panel').Props['channel']>} */
     const testChannel = {
       on: jest.fn(),
       emit: jest.fn(),
       removeListener: jest.fn(),
     };
-    /** @type {Required<import('../Panel').Props['api']>} */
     const testApi = {
       getQueryParam: jest.fn(),
       setQueryParams: jest.fn(),
@@ -167,7 +165,6 @@ describe('Panel', () => {
       //
       // We have to do a full mount.
 
-      /** @type {import('enzyme').ShallowWrapper<import('../Panel').Props, import('../Panel').State, Panel>} */
       const wrapper = mount(<Panel channel={testChannel} api={testApi} active />);
       try {
         wrapper.setState({
@@ -192,7 +189,6 @@ describe('Panel', () => {
     });
 
     it('should have one tab per groupId and an empty ALL tab when all are defined', () => {
-      /** @type {import('enzyme').ShallowWrapper<import('../Panel').Props, import('../Panel').State, Panel>} */
       const wrapper = mount(<Panel channel={testChannel} api={testApi} active />);
       try {
         wrapper.setState({
@@ -230,7 +226,6 @@ describe('Panel', () => {
     });
 
     it('the ALL tab should have its own additional content when there are knobs both with and without a groupId', () => {
-      /** @type {import('enzyme').ShallowWrapper<import('../Panel').Props, import('../Panel').State, Panel>} */
       const wrapper = mount(<Panel channel={testChannel} api={testApi} active />);
       try {
         wrapper.setState({
