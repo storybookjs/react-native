@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-events",
-  "version": "4.2.0-alpha.8",
+  "version": "4.2.0-alpha.9",
   "description": "Add events to your Storybook stories.",
   "keywords": [
     "addon",
@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@emotion/styled": "^10.0.5",
-    "@storybook/addons": "4.2.0-alpha.8",
-    "@storybook/core-events": "4.2.0-alpha.8",
+    "@storybook/addons": "4.2.0-alpha.9",
+    "@storybook/core-events": "4.2.0-alpha.9",
     "core-js": "^2.6.1",
     "format-json": "^1.0.3",
     "prop-types": "^15.6.2",

@@ -54,7 +54,13 @@ import { storiesOf, addDecorator, addParameters } from '@storybook/react';
 import { withA11Y } from '@storybook/addon-a11y';
 
 addDecorator(withA11Y)
-addParameters({ a11y: {} });
+addParameters({
+  a11y: {
+    // ... axe options
+    element: '#root', // optional selector which element to inspect
+  },
+});
+
 
 storiesOf('button', module)
   .add('Accessible', () => (

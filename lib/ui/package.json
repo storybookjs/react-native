@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "4.2.0-alpha.8",
+  "version": "4.2.0-alpha.9",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -24,10 +24,10 @@
     "@emotion/core": "^10.0.5",
     "@emotion/styled": "^10.0.5",
     "@reach/router": "^1.2.1",
-    "@storybook/addons": "4.2.0-alpha.8",
-    "@storybook/client-logger": "4.2.0-alpha.8",
-    "@storybook/components": "4.2.0-alpha.8",
-    "@storybook/core-events": "4.2.0-alpha.8",
+    "@storybook/addons": "4.2.0-alpha.9",
+    "@storybook/client-logger": "4.2.0-alpha.9",
+    "@storybook/components": "4.2.0-alpha.9",
+    "@storybook/core-events": "4.2.0-alpha.9",
     "emotion-theming": "^10.0.5",
     "eventemitter3": "^3.1.0",
     "fast-deep-equal": "^2.0.1",
