@@ -14,7 +14,8 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public"
   }
