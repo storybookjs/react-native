@@ -1,6 +1,8 @@
 import { DecycleError } from './errors';
 
-import { getPropertiesList, typeReplacer, omitProperty } from './util';
+import getPropertiesList from './util/getPropertiesList';
+import typeReplacer from './util/typeReplacer';
+import omitProperty from './util/omitProperty';
 
 import { CYCLIC_KEY } from '../constants';
 
