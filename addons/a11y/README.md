@@ -50,8 +50,13 @@ import { storiesOf } from '@storybook/react';
 
 import { checkA11y, configureA11y } from '@storybook/addon-a11y';
 
+// axe options
 const whateverOptionsYouWant = {};
-configureA11y(whateverOptionsYouWant);
+
+// optional element id for axe context 
+const contextElementId = '';
+
+configureA11y(whateverOptionsYouWant, contextElementId);
 
 storiesOf('button', module)
   .addDecorator(checkA11y)
