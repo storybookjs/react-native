@@ -11,12 +11,12 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
 exports[`Storyshots Core|Parameters passed to story 1`] = `
 <pre>
   Parameters are {
-  "a11y": {},
   "options": {
-    "name": "Storybook",
+    "hierarchyRootSeparator": "|",
     "hierarchySeparator": {},
-    "hierarchyRootSeparator": "|"
+    "name": "Storybook"
   },
+  "a11y": {},
   "viewports": {
     "iphone5": {
       "name": "iPhone 5",

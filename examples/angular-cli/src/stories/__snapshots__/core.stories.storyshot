@@ -12,7 +12,7 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
     <button
       _ngcontent-c10=""
     >
-      Parameters are {"options":{"hierarchyRootSeparator":{}},"globalParameter":"globalParameter","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
+      Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"globalParameter":"globalParameter","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
     </button>
   </storybook-button-component>
 </storybook-dynamic-app-root>
