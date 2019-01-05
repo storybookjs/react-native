@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "main": "dist/client/index.js",
-  "jsnext:main": "src/client/index.js",
+  "types": "dist/client/index.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",

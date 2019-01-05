@@ -3,14 +3,25 @@ import fs from 'fs';
 import { logger } from '@storybook/node-logger';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import {
-  isBuildAngularInstalled,
-  normalizeAssetPatterns,
   filterOutStylingRules,
   getAngularCliParts,
+  isBuildAngularInstalled,
+  normalizeAssetPatterns,
 } from './angular-cli_utils';
+import { Configuration } from 'webpack';
+import { Path } from '@angular-devkit/core';
 
-function getTsConfigOptions(tsConfigPath) {
-  const basicOptions = {
+interface BasicOptions {
+  options: {
+    baseUrl?: string;
+  };
+  raw: object;
+  fileNames: string[];
+  errors: any[]; // todo string[] or object[]?
+}
+
+function getTsConfigOptions(tsConfigPath: string) {
+  const basicOptions: BasicOptions = {
     options: {},
     raw: {},
     fileNames: [],
@@ -22,7 +33,7 @@ function getTsConfigOptions(tsConfigPath) {
   }
 
   const tsConfig = JSON.parse(fs.readFileSync(tsConfigPath, 'utf8'));
-  const { baseUrl } = tsConfig.compilerOptions || {};
+  const { baseUrl }: { baseUrl?: string } = tsConfig.compilerOptions || {};
 
   if (baseUrl) {
     const tsConfigDirName = path.dirname(tsConfigPath);
@@ -32,7 +43,7 @@ function getTsConfigOptions(tsConfigPath) {
   return basicOptions;
 }
 
-export function getAngularCliWebpackConfigOptions(dirToSearch) {
+export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
   const fname = path.join(dirToSearch, 'angular.json');
 
   if (!fs.existsSync(fname)) {
@@ -77,7 +88,17 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
   };
 }
 
-export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions) {
+interface CliWebpackConfigOptions {
+  buildOptions: {
+    tsConfig: string;
+  };
+  supportES2015: boolean;
+}
+
+export function applyAngularCliWebpackConfig(
+  baseConfig: Configuration,
+  cliWebpackConfigOptions: CliWebpackConfigOptions
+) {
   if (!cliWebpackConfigOptions) {
     return baseConfig;
   }
@@ -104,8 +125,10 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
 
   // cliStyleConfig.entry adds global style files to the webpack context
   const entry = [
-    ...baseConfig.entry,
-    ...Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), []),
+    // todo webpack declared it like that: entry?: string | string[] | Entry | EntryFunc;
+    // todo should we check for the different possible types?
+    ...(baseConfig.entry as string[]),
+    ...Object.values(cliStyleConfig.entry).reduce((acc: any, item: any) => acc.concat(item), []), // todo correct typings for acc and item
   ];
 
   const module = {
@@ -126,6 +149,7 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
         configFile: cliWebpackConfigOptions.buildOptions.tsConfig,
         // After ng build my-lib the default value of 'main' in the package.json is 'umd'
         // This causes that you cannot import components directly from dist
+        // tslint:disable:max-line-length
         // https://github.com/angular/angular-cli/blob/9f114aee1e009c3580784dd3bb7299bdf4a5918c/packages/angular_devkit/build_angular/src/angular-cli-files/models/webpack-configs/browser.ts#L68
         mainFields: [
           ...(cliWebpackConfigOptions.supportES2015 ? ['es2015'] : []),

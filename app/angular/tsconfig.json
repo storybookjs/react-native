@@ -6,6 +6,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "resolveJsonModule": true
   }
 }

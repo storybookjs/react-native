@@ -8,7 +8,11 @@ jest.mock('path', () => ({
   resolve: () => 'tsconfig.json',
 }));
 
-const setupFiles = files => {
+interface MockFileKeyValue {
+  [key: string]: string;
+}
+
+const setupFiles = (files: MockFileKeyValue) => {
   // eslint-disable-next-line no-underscore-dangle, global-require
   require('fs').__setMockFiles(files);
 };
@@ -21,7 +25,7 @@ describe('create-fork-ts-checker-plugin.test', () => {
     const instance = createForkTsCheckerInstance(tsLoaderOptions);
 
     expect(instance).toBeInstanceOf(ForkTsCheckerWebpackPlugin);
-    expect(instance.tsconfig).toEqual(tsLoaderOptions.configFile);
+    expect(instance.options.tsconfig).toEqual(tsLoaderOptions.configFile);
   });
 
   it('should create a ForkTsCheckerWebpackPlugin instance without passing options', () => {

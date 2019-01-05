@@ -75,7 +75,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
     `,
   ],
 })
-export default class WelcomeComponent {
+export class WelcomeComponent {
   @Output()
   showApp = new EventEmitter<any>();
 }
