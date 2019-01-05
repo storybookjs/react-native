@@ -711,7 +711,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                       ano
                     </span>
                     <strong
-                      style="background-color:#FFFEAA;font-weight:inherit"
+                      style="background-color:#FFFEAA;font-weight:inherit;background:#9fdaff;color:black"
                     >
                       th
                     </strong>
