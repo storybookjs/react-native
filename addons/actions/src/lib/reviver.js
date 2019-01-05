@@ -1,4 +1,5 @@
-import { isObject, typeReviver } from './util';
+import isObject from './util/isObject';
+import typeReviver from './util/typeReviver';
 
 function reviver(key, value) {
   if (isObject(value)) {

@@ -1,3 +1,40 @@
+## 4.2.0-alpha.9 (January 4, 2019)
+
+### Bug Fixes
+
+* Transpile addons.js with Babel ([#5081](https://github.com/storybooks/storybook/pull/5081))
+
+### Dependency Upgrades
+
+* [Security] Bump webpack-dev-server from 3.1.10 to 3.1.14 ([#5108](https://github.com/storybooks/storybook/pull/5108))
+* Update @storybook/react to include peer dependency @emotion/core ([#5135](https://github.com/storybooks/storybook/pull/5135))
+* Bump webpack-cli from 3.1.2 to 3.2.0 ([#5137](https://github.com/storybooks/storybook/pull/5137))
+* Bump resolve from 1.8.1 to 1.9.0 ([#5139](https://github.com/storybooks/storybook/pull/5139))
+* Bump husky from 1.3.0 to 1.3.1 ([#5138](https://github.com/storybooks/storybook/pull/5138))
+* Bump @types/node from 10.12.17 to 10.12.18 ([#5098](https://github.com/storybooks/storybook/pull/5098))
+* Bump svelte-loader from 2.11.0 to 2.12.0 ([#5125](https://github.com/storybooks/storybook/pull/5125))
+* Bump react-modal from 3.7.1 to 3.8.1 ([#5124](https://github.com/storybooks/storybook/pull/5124))
+* Bump marko from 4.14.3 to 4.14.12 ([#5123](https://github.com/storybooks/storybook/pull/5123))
+* Bump css-loader from 1.0.1 to 2.1.0 ([#5115](https://github.com/storybooks/storybook/pull/5115))
+* Bump lit-html from 0.12.0 to 0.14.0 ([#5114](https://github.com/storybooks/storybook/pull/5114))
+* Bump @angular/platform-browser-dynamic from 7.1.3 to 7.1.4 ([#5113](https://github.com/storybooks/storybook/pull/5113))
+
+## 4.2.0-alpha.8 (December 28, 2018)
+
+### Maintenance
+
+* Typescript: Migrate @storybook/channel-websocket ([#5046](https://github.com/storybooks/storybook/pull/5046))
+* Typescript: Migrate @storybook/addons ([#5018](https://github.com/storybooks/storybook/pull/5018))
+
+### Dependency Upgrades
+
+* Bump @babel/plugin-proposal-class-properties from 7.2.1 to 7.2.3 ([#5070](https://github.com/storybooks/storybook/pull/5070))
+* Bump babel-plugin-named-asset-import from 0.2.3 to 0.3.0 ([#5100](https://github.com/storybooks/storybook/pull/5100))
+* Bump eslint from 5.10.0 to 5.11.0 ([#5097](https://github.com/storybooks/storybook/pull/5097))
+* Bump loader-utils from 1.2.0 to 1.2.1 ([#5099](https://github.com/storybooks/storybook/pull/5099))
+* Bump boxen from 2.0.0 to 2.1.0 ([#5104](https://github.com/storybooks/storybook/pull/5104))
+* Bump @ngrx/store from 6.1.2 to 7.0.0 ([#5105](https://github.com/storybooks/storybook/pull/5105))
+* Bump react-select from 2.1.1 to 2.1.2 ([#5102](https://github.com/storybooks/storybook/pull/5102))
 
 ## 4.1.4 (December 25, 2018)
 
