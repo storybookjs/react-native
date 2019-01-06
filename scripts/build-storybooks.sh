@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # This builds all the example storybooks for running chromatic on your dev machine
 
