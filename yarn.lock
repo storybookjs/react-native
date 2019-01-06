@@ -2369,12 +2369,22 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.14.2.tgz#40b3dbb1221c7d66802cbcc32fe3b85e54569c77"
   integrity sha512-JWB3xaVfsfnFY8Ofc9rTB/op0fqqTSqy4vBcVk1LuRJvta7KTX+D//fCkiTMeLGhdr2EbFZzQjC97gvmPilk9Q==
 
+"@types/npmlog@^4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@types/npmlog/-/npmlog-4.1.1.tgz#b51cf39a6324a4ede17ef72dfa58a64fbefb39c7"
+  integrity sha512-uCZpakN0HrNsX+rZeXwCPByanpTN+dB3iApOrV4uggG955GZOw1YVziEpH6YDE60/+H95Jztg48UQ0NGZ6TPag==
+
 "@types/parse5@^2.2.32":
   version "2.2.34"
   resolved "https://registry.yarnpkg.com/@types/parse5/-/parse5-2.2.34.tgz#e3870a10e82735a720f62d71dcd183ba78ef3a9d"
   integrity sha1-44cKEOgnNacg9i1x3NGDunjvOp0=
   dependencies:
     "@types/node" "*"
+
+"@types/pretty-hrtime@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/pretty-hrtime/-/pretty-hrtime-1.0.0.tgz#c5a2d644a135e988b2932f99737e67b3c62528d0"
+  integrity sha512-xl+5r2rcrxdLViAYkkiLMYsoUs3qEyrAnHFyEzYysgRxdVp3WbhysxIvJIxZp9FvZ2CYezh0TaHZorivH+voOQ==
 
 "@types/prop-types@*", "@types/prop-types@^15.5.7":
   version "15.5.8"
