@@ -15387,10 +15387,10 @@ marko-starter@^2.0.4:
     routes-table "^1.2.1"
     try-require "^1.2.1"
 
-marko@^4.1.1, marko@^4.10.0, marko@^4.14.12:
-  version "4.14.12"
-  resolved "https://registry.yarnpkg.com/marko/-/marko-4.14.12.tgz#6b322ef623549a4850e66d76f4f0a1bed9d4b6bb"
-  integrity sha512-BLG+A8HkgpPYIR8/gG7smQyvnbw4EhpjTo/3TvB2U8v85eayMvw4lhAS+bfOYvqpDp36g9ASq5WrQLbg3+3rRQ==
+marko@^4.1.1, marko@^4.10.0, marko@^4.14.15:
+  version "4.14.15"
+  resolved "https://registry.yarnpkg.com/marko/-/marko-4.14.15.tgz#0457282c0123e6df00528bd3a496fdd2467ec934"
+  integrity sha512-UTazMHrkwDoxod2xEZnOPVRKxVa5BTOCkS3uGXGIrOej4e9Ds71XcCcbl7NgFVGsdIHyE9jE1bOVKc4u432P6A==
   dependencies:
     app-module-path "^2.2.0"
     argly "^1.0.0"
