@@ -46,7 +46,7 @@
     "@storybook/addons": "4.2.0-alpha.10",
     "@storybook/angular": "4.2.0-alpha.10",
     "@types/core-js": "^2.5.0",
-    "@types/jest": "^23.3.11",
+    "@types/jest": "^23.3.12",
     "@types/node": "~10.12.18",
     "@types/webpack-env": "^1.13.6",
     "global": "^4.3.2",

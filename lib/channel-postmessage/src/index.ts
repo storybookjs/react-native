@@ -1,8 +1,20 @@
-/* eslint-disable no-underscore-dangle */
-
 import { window, document } from 'global';
-import Channel from '@storybook/channels';
+import Channel, { ChannelEvent, ChannelHandler } from '@storybook/channels';
 import { isJSON, parse, stringify } from 'telejson';
+
+interface RawEvent {
+  data: string;
+}
+
+interface Config {
+  page: 'manager' | 'preview';
+}
+
+interface BufferedEvent {
+  event: ChannelEvent;
+  resolve: (value?: any) => void;
+  reject: (reason?: any) => void;
+}
 
 export const KEY = 'storybook-channel';
 
@@ -11,35 +23,34 @@ export const KEY = 'storybook-channel';
 // https://stackoverflow.com/questions/6340160/how-to-get-the-references-of-all-already-opened-child-windows
 
 export class PostmsgTransport {
-  constructor(config) {
-    this._config = config;
-    this._buffer = [];
-    this._handler = null;
+  private buffer: BufferedEvent[];
+  private handler: ChannelHandler;
 
-    if (window && window.addEventListener) {
-      window.addEventListener('message', this._handleEvent.bind(this), false);
-    }
-    if (document && document.addEventListener) {
-      document.addEventListener('DOMContentLoaded', () => this._flush());
-    } else {
-      this._flush();
-    }
-
+  constructor(private readonly config: Config) {
+    this.buffer = [];
+    this.handler = null;
+    window.addEventListener('message', this.handleEvent.bind(this), false);
+    document.addEventListener('DOMContentLoaded', () => this.flush());
     // Check whether the config.page parameter has a valid value
     if (config.page !== 'manager' && config.page !== 'preview') {
       throw new Error(`postmsg-channel: "config.page" cannot be "${config.page}"`);
     }
   }
 
-  setHandler(handler) {
-    this._handler = handler;
+  setHandler(handler: ChannelHandler): void {
+    this.handler = handler;
   }
 
-  send(event) {
-    const iframeWindow = this._getWindow();
+  /**
+   * Sends `event` to the associated window. If the window does not yet exist
+   * the event will be stored in a buffer and sent when the window exists.
+   * @param event
+   */
+  send(event: ChannelEvent): Promise<any> {
+    const iframeWindow = this.getWindow();
     if (!iframeWindow) {
       return new Promise((resolve, reject) => {
-        this._buffer.push({ event, resolve, reject });
+        this.buffer.push({ event, resolve, reject });
       });
     }
 
@@ -51,9 +62,9 @@ export class PostmsgTransport {
     return Promise.resolve(null);
   }
 
-  _flush() {
-    const buffer = this._buffer;
-    this._buffer = [];
+  private flush(): void {
+    const buffer = this.buffer;
+    this.buffer = [];
     buffer.forEach(item => {
       this.send(item.event)
         .then(item.resolve)
@@ -61,8 +72,8 @@ export class PostmsgTransport {
     });
   }
 
-  _getWindow() {
-    if (this._config.page === 'manager') {
+  private getWindow(): Window {
+    if (this.config.page === 'manager') {
       // FIXME this is a really bad idea! use a better way to do this.
       // This finds the storybook preview iframe to send messages to.
       const iframe = document.getElementById('storybook-preview-iframe');
@@ -74,25 +85,28 @@ export class PostmsgTransport {
     return window.parent;
   }
 
-  _handleEvent(rawEvent) {
+  private handleEvent(rawEvent: RawEvent): void {
     try {
       const { data } = rawEvent;
       const { key, event } = typeof data === 'string' && isJSON(data) ? parse(data) : data;
       if (key === KEY) {
-        // eslint-disable-next-line no-console
-        console.debug(`message arrived at ${this._config.page}`, event.type, ...event.args);
-        this._handler(event);
+        // tslint:disable-next-line no-console
+        console.debug(`message arrived at ${this.config.page}`, event.type, ...event.args);
+        this.handler(event);
       }
     } catch (error) {
-      // eslint-disable-next-line no-console
+      // tslint:disable-next-line no-console
       console.error(error);
-      // eslint-disable-next-line no-debugger
+      // tslint:disable-next-line no-debugger
       debugger;
     }
   }
 }
 
-export default function createChannel({ page }) {
+/**
+ * Creates a channel which communicates with an iframe or child window.
+ */
+export default function createChannel({ page }: Config): Channel {
   const transport = new PostmsgTransport({ page });
   return new Channel({ transport });
 }
