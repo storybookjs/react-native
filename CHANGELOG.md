@@ -1,3 +1,27 @@
+## 4.2.0-alpha.10 (January 6, 2019)
+
+### Features
+
+* Addon-a11y: fix addon, add ability to configure context ([#5101](https://github.com/storybooks/storybook/pull/5101))
+
+### Bug Fixes
+
+* Addon-knobs: Render non-grouped knobs in the ALL tab ([#5106](https://github.com/storybooks/storybook/pull/5106))
+* Addon-actions: import utils directly to prevent import cycles ([#5107](https://github.com/storybooks/storybook/pull/5107))
+
+### Maintenance
+
+* TypeScript: Migrate @storybook/node-logger ([#5153](https://github.com/storybooks/storybook/pull/5153))
+* TypeScript: Migrate @storybook/core-events ([#5140](https://github.com/storybooks/storybook/pull/5140))
+
+### Dependency Upgrades
+
+* bump puppeteer from 1.9.0 to 1.11.0 ([#5119](https://github.com/storybooks/storybook/pull/5119))
+* Bump lerna from 3.6.0 to 3.8.4 ([#5142](https://github.com/storybooks/storybook/pull/5142))
+* Bump svelte from 2.15.3 to 2.16.0 ([#5145](https://github.com/storybooks/storybook/pull/5145))
+* Bump react-dev-utils from 6.1.1 to 7.0.0 ([#5146](https://github.com/storybooks/storybook/pull/5146))
+* Bump react-is from 16.6.3 to 16.7.0 ([#5144](https://github.com/storybooks/storybook/pull/5144))
+
 ## 4.2.0-alpha.9 (January 4, 2019)
 
 ### Bug Fixes

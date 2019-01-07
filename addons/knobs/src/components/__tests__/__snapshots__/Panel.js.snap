@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel groups should have no tabs when there are no groupIds 1`] = `
+Array [
+  Array [
+    Object {
+      "defaultValue": "test",
+      "name": "foo",
+      "used": true,
+    },
+  ],
+]
+`;
+
+exports[`Panel groups should have one tab per groupId and an empty ALL tab when all are defined 1`] = `
+Array [
+  Array [
+    Object {
+      "defaultValue": "test",
+      "groupId": "foo",
+      "name": "foo",
+      "used": true,
+    },
+  ],
+  Array [
+    Object {
+      "defaultValue": "test2",
+      "groupId": "bar",
+      "name": "bar",
+      "used": true,
+    },
+  ],
+]
+`;
+
+exports[`Panel groups the ALL tab should have its own additional content when there are knobs both with and without a groupId 1`] = `
+Array [
+  Array [
+    Object {
+      "defaultValue": "test",
+      "groupId": "foo",
+      "name": "foo",
+      "used": true,
+    },
+  ],
+  Array [
+    Object {
+      "defaultValue": "test2",
+      "name": "bar",
+      "used": true,
+    },
+  ],
+]
+`;
