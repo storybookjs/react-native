@@ -32,7 +32,7 @@
     "@storybook/ui": "4.2.0-alpha.10",
     "airbnb-js-shims": "^1 || ^2",
     "autoprefixer": "^9.4.3",
-    "babel-plugin-macros": "^2.4.3",
+    "babel-plugin-macros": "^2.4.4",
     "babel-preset-minify": "^0.5.0 || 0.6.0-alpha.5",
     "boxen": "^2.1.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
