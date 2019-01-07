@@ -8,19 +8,23 @@ interface RawEvent {
   data: string;
 }
 
-export interface Config {
+interface Config {
   page: 'manager' | 'preview';
+}
+
+interface BufferedEvent {
+  event: ChannelEvent;
+  resolve: (value?: any) => void;
+  reject: (reason?: any) => void;
 }
 
 export const KEY = 'storybook-channel';
 
 export class PostmsgTransport {
-  private config: Config;
-  private buffer: any[];
+  private buffer: BufferedEvent[];
   private handler: ChannelHandler;
 
-  constructor(config: Config) {
-    this.config = config;
+  constructor(private readonly config: Config) {
     this.buffer = [];
     this.handler = null;
     window.addEventListener('message', this.handleEvent.bind(this), false);
@@ -35,8 +39,13 @@ export class PostmsgTransport {
     this.handler = handler;
   }
 
+  /**
+   * Sends `event` to the associated window. If the window does not yet exist
+   * the event will be stored in a buffer and sent when the window exists.
+   * @param event
+   */
   send(event: ChannelEvent): Promise<any> {
-    const iframeWindow = this._getWindow();
+    const iframeWindow = this.getWindow();
     if (!iframeWindow) {
       return new Promise((resolve, reject) => {
         this.buffer.push({ event, resolve, reject });
@@ -57,7 +66,7 @@ export class PostmsgTransport {
     });
   }
 
-  getWindow(): Window {
+  private getWindow(): Window {
     if (this.config.page === 'manager') {
       // FIXME this is a really bad idea! use a better way to do this.
       // This finds the storybook preview iframe to send messages to.
@@ -81,7 +90,10 @@ export class PostmsgTransport {
   }
 }
 
-export default function createChannel({ page }): Channel {
+/**
+ * Creates a channel which communicates with an iframe or child window.
+ */
+export default function createChannel({ page }: Config): Channel {
   const transport = new PostmsgTransport({ page });
   return new Channel({ transport });
 }
