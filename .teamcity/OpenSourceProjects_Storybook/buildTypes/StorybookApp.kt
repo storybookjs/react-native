@@ -20,13 +20,14 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
     EMBER("Ember", "ember-cli"),
     PREACT("Preact", "preact-kitchen-sink", false);
 
-    val lowerName = appName.toLowerCase()
+    val underscoreName = appName.replace(' ', '_')
+    val lowerName = underscoreName.toLowerCase()
 
     val artifactPath = "examples/$exampleDir/storybook-static => $lowerName.zip"
 
     val config = object : BuildType(init@{
         uuid = "8cc5f747-4ca7-4f0d-940d-b0c422f501a6-$lowerName"
-        id = "OpenSourceProjects_Storybook_$appName"
+        id = "OpenSourceProjects_Storybook_$underscoreName"
         name = appName
 
         vcs {
