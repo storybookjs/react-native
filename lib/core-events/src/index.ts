@@ -7,9 +7,13 @@ enum events {
   SELECT_STORY = 'selectStory',
   APPLY_SHORTCUT = 'applyShortcut',
   STORY_ADDED = 'storyAdded',
+  STORY_CHANGED = 'storyChanged',
   FORCE_RE_RENDER = 'forceReRender',
   REGISTER_SUBSCRIPTION = 'registerSubscription',
+  STORY_INIT = 'storyInit',
+  STORY_RENDER = 'storyRender',
   STORY_RENDERED = 'storyRendered',
+  STORY_MISSING = 'storyMissing',
   STORY_ERRORED = 'storyErrored',
   STORY_THREW_EXCEPTION = 'storyThrewException',
 }
