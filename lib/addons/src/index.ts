@@ -27,7 +27,7 @@ export class AddonStore {
   private panels: PanelKeyValue = {};
   private channel: Channel | undefined;
 
-  getChannel() {
+  getChannel(): Channel {
     // this.channel should get overwritten by setChannel. If it wasn't called (e.g. in non-browser environment), throw.
     if (!this.channel) {
       throw new Error(
@@ -38,27 +38,27 @@ export class AddonStore {
     return this.channel;
   }
 
-  hasChannel() {
+  hasChannel(): boolean {
     return !!this.channel;
   }
 
-  setChannel(channel: Channel) {
+  setChannel(channel: Channel): void {
     this.channel = channel;
   }
 
-  getPanels() {
+  getPanels(): PanelKeyValue {
     return this.panels;
   }
 
-  addPanel(name: string, panel: Panel) {
+  addPanel(name: string, panel: Panel): void {
     this.panels[name] = panel;
   }
 
-  register(name: string, registerCallback: (api: any) => void) {
+  register(name: string, registerCallback: (api: any) => void): void {
     this.loaders[name] = registerCallback;
   }
 
-  loadAddons(api: any) {
+  loadAddons(api: any): void {
     Object.values(this.loaders).forEach(value => value(api));
   }
 }
@@ -66,7 +66,7 @@ export class AddonStore {
 // Enforce addons store to be a singleton
 const KEY = '__STORYBOOK_ADDONS';
 
-function getAddonsStore() {
+function getAddonsStore(): AddonStore {
   if (!global[KEY]) {
     global[KEY] = new AddonStore();
   }
