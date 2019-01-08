@@ -55,7 +55,7 @@
     "global": "^4.3.2",
     "html-webpack-plugin": "^4.0.0-beta.2",
     "inquirer": "^6.2.0",
-    "interpret": "^1.1.0",
+    "interpret": "^1.2.0",
     "ip": "^1.1.5",
     "json5": "^2.1.0",
     "lazy-universal-dotenv": "^2.0.0",
