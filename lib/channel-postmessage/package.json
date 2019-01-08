@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
@@ -23,6 +23,9 @@
     "@storybook/channels": "4.2.0-alpha.10",
     "global": "^4.3.2",
     "json-stringify-safe": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/json-stringify-safe": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"
