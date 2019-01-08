@@ -34,6 +34,20 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
             root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
         }
 
+        dependencies {
+            dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+                snapshot {
+                    onDependencyFailure = FailureAction.FAIL_TO_START
+                }
+
+                artifacts {
+                    artifactRules = """
+                        dist.zip!**
+                    """.trimIndent()
+                }
+            }
+        }
+
         if (!merged) return@init
 
         artifactRules = artifactPath
@@ -75,20 +89,6 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
                     }
                 }
                 param("github_oauth_user", "Hypnosphi")
-            }
-        }
-
-        dependencies {
-            dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
-                snapshot {
-                    onDependencyFailure = FailureAction.FAIL_TO_START
-                }
-
-                artifacts {
-                    artifactRules = """
-                        dist.zip!**
-                    """.trimIndent()
-                }
             }
         }
 
