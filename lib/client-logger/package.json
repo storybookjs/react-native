@@ -1,6 +1,6 @@
 {
   "name": "@storybook/client-logger",
-  "version": "4.2.0-alpha.8",
+  "version": "4.2.0-alpha.10",
   "description": "",
   "keywords": [
     "storybook"
@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
