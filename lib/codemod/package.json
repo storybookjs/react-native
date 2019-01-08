@@ -20,8 +20,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "core-js": "^2.5.7",
-    "jscodeshift": "^0.5.1",
+    "core-js": "^2.6.1",
+    "jscodeshift": "^0.6.2",
     "regenerator-runtime": "^0.12.1"
   },
   "publishConfig": {

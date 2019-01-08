@@ -2,7 +2,7 @@
 
 exports[`Storyshots Addons|Viewport default 1`] = `
 <div
-  class="emotion-0 emotion-1"
+  class="css-mpcyc0-Panel ehw333c0"
 >
   I don't have problems being rendered using the default viewport.
 </div>
@@ -10,7 +10,7 @@ exports[`Storyshots Addons|Viewport default 1`] = `
 
 exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Inherited 1`] = `
 <div
-  class="emotion-0 emotion-1"
+  class="css-mpcyc0-Panel ehw333c0"
 >
   I've inherited 
   <b>
@@ -22,57 +22,12 @@ exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Inherited 1`]
 
 exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden via "withViewport" parameterized decorator 1`] = `
 <div
-  class="emotion-0 emotion-1"
+  class="css-mpcyc0-Panel ehw333c0"
 >
   I respect my parents but I should be looking good on 
   <b>
     iPad
   </b>
   .
-</div>
-`;
-
-exports[`Storyshots Addons|Viewport.deprecated Overridden via "Viewport" component 1`] = `
-<div
-  class="emotion-0 emotion-1"
->
-  I respect my parents but I should be looking good on 
-  <b>
-    iPhone 6 Plus
-  </b>
-  .
-</div>
-`;
-
-exports[`Storyshots Addons|Viewport.deprecated Overridden via "withViewport" decorator 1`] = `
-<div
-  class="emotion-0 emotion-1"
->
-  I respect my parents but I should be looking good on 
-  <b>
-    iPhone 6
-  </b>
-  .
-</div>
-`;
-
-exports[`Storyshots Addons|Viewport.withViewport onViewportChange 1`] = `
-.emotion-2 {
-  padding: 20px;
-}
-
-.emotion-0 {
-  margin: 0;
-}
-
-<div
-  class="emotion-2 emotion-3"
->
-  <h1
-    class="emotion-0 emotion-1"
-  >
-    Select device/viewport
-  </h1>
-  <dl />
 </div>
 `;

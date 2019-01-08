@@ -1,48 +1,59 @@
 import { document } from 'global';
 import axe from 'axe-core';
-import addons from '@storybook/addons';
-import Events from '@storybook/core-events';
-import { logger } from '@storybook/client-logger';
+import deprecate from 'util-deprecate';
+import addons, { makeDecorator } from '@storybook/addons';
+import { STORY_RENDERED } from '@storybook/core-events';
+import EVENTS, { PARAM_KEY } from './constants';
 
-import { CHECK_EVENT_ID, REQUEST_CHECK_EVENT_ID } from './shared';
+const channel = addons.getChannel();
+let progress = Promise.resolve();
+let options;
 
-const config = {
-  axeOptions: {},
-  axeContext: '',
+const getElement = () => {
+  const storyRoot = document.getElementById('story-root');
+
+  if (storyRoot) {
+    return storyRoot.children;
+  }
+  return document.getElementById('root');
 };
 
-export const configureA11y = (axeOptions = {}, axeContext = '') => {
-  config.axeOptions = axeOptions;
-  config.axeContext = axeContext;
+const report = input => {
+  channel.emit(EVENTS.RESULT, input);
 };
 
-const getDefaultAxeContext = () => {
-  const infoWrapper = document.getElementById('story-root');
-  const wrapper = document.getElementById('root');
-
-  return (infoWrapper && infoWrapper.children) || wrapper;
+const run = ({ element, ...o }) => {
+  progress = progress.then(() => {
+    axe.reset();
+    if (o) {
+      axe.configure(o);
+    }
+    return axe.run(element || getElement()).then(report);
+  });
 };
 
-const runA11yCheck = () => {
-  const channel = addons.getChannel();
+export const withA11Y = makeDecorator({
+  name: 'withA11Y',
+  parameterName: PARAM_KEY,
+  skipIfNoParametersOrOptions: false,
+  allowDeprecatedUsage: false,
 
-  const axeContext = config.axeContext || getDefaultAxeContext();
+  wrapper: (getStory, context, opt) => {
+    options = opt.parameters || opt.options;
 
-  axe.reset();
-  axe.configure(config.axeOptions);
-  axe.run(axeContext).then(results => channel.emit(CHECK_EVENT_ID, results), logger.error);
-};
+    return getStory(context);
+  },
+});
 
-const a11ySubscription = () => {
-  const channel = addons.getChannel();
-  channel.on(REQUEST_CHECK_EVENT_ID, runA11yCheck);
+channel.on(STORY_RENDERED, () => run(options));
+channel.on(EVENTS.REQUEST, () => run(options));
 
-  return () => {
-    channel.removeListener(REQUEST_CHECK_EVENT_ID, runA11yCheck);
-  };
-};
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline();
+}
 
-export const checkA11y = story => {
-  addons.getChannel().emit(Events.REGISTER_SUBSCRIPTION, a11ySubscription);
-  return story();
-};
+// REMOVE at 6.0.0
+export const checkA11y = deprecate(
+  (...args) => withA11Y(...args),
+  'checkA11y has been replaced with withA11Y'
+);

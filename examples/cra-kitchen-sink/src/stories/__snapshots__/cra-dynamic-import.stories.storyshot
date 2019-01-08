@@ -5,9 +5,3 @@ exports[`Storyshots CRA Dynamic import 1`] = `
   Waiting for Dynamic Import
 </div>
 `;
-
-exports[`Storyshots CRA Svgr 1`] = `
-<svg>
-  logo.svg
-</svg>
-`;

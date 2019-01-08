@@ -13,12 +13,11 @@
   "dependencies": {
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
-    "react": "^16.6.0",
+    "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-lifecycles-compat": "^3.0.4"
   },
   "devDependencies": {
-    "@emotion/snapshot-serializer": "^0.8.2",
     "@storybook/addon-a11y": "4.2.0-alpha.10",
     "@storybook/addon-actions": "4.2.0-alpha.10",
     "@storybook/addon-backgrounds": "4.2.0-alpha.10",
@@ -38,6 +37,7 @@
     "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
     "jest": "^23.6.0",
-    "react-scripts": "^2.1.0"
+    "jest-emotion": "^10.0.5",
+    "react-scripts": "^2.1.2"
   }
 }

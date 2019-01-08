@@ -1,8 +1,7 @@
-import { configure, addDecorator } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { configure, addParameters } from '@storybook/react';
 
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     name: 'CRA Kitchen Sink',
     url: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
     goFullScreen: false,
@@ -13,8 +12,8 @@ addDecorator(
     hierarchySeparator: /\./,
     hierarchyRootSeparator: /\|/,
     enableShortcuts: true,
-  })
-);
+  },
+});
 
 function loadStories() {
   // put welcome screen at the top of the list so it's the first one displayed

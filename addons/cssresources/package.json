@@ -24,13 +24,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/styled": "0.10.6",
+    "@emotion/styled": "10.0.5",
     "@storybook/addons": "4.2.0-alpha.10",
     "@storybook/components": "4.2.0-alpha.10",
     "@storybook/core-events": "4.2.0-alpha.10",
-    "core-js": "^2.5.7",
+    "core-js": "^2.6.1",
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-syntax-highlighter": "^10.0.0",
     "util-deprecate": "^1.0.2"
   },

@@ -22,13 +22,13 @@
   },
   "dependencies": {
     "@storybook/node-logger": "4.2.0-alpha.10",
-    "core-js": "^2.5.7",
+    "core-js": "^2.6.1",
     "jest-image-snapshot": "^2.6.0",
     "puppeteer": "^1.11.0",
     "regenerator-runtime": "^0.12.1"
   },
   "peerDependencies": {
-    "@storybook/addon-storyshots": "^4.0.0"
+    "@storybook/addon-storyshots": "4.2.0-alpha.10"
   },
   "publishConfig": {
     "access": "public"

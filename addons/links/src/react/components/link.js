@@ -1,19 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { RoutedLink } from '@storybook/components';
-import { openLink, hrefTo } from '../../preview';
+import { Typography } from '@storybook/components';
+import { navigate, hrefTo } from '../../preview';
 
 export default class LinkTo extends PureComponent {
-  constructor(...args) {
-    super(...args);
-
-    this.state = {
-      href: '/',
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
+  state = {
+    href: '/',
+  };
 
   componentDidMount() {
     this.updateHref();
@@ -27,21 +21,24 @@ export default class LinkTo extends PureComponent {
     }
   }
 
+  handleClick = e => {
+    if (e) {
+      e.preventDefault();
+    }
+    navigate(this.props);
+  };
+
   async updateHref() {
     const { kind, story } = this.props;
     const href = await hrefTo(kind, story);
     this.setState({ href });
   }
 
-  handleClick() {
-    openLink(this.props);
-  }
-
   render() {
     const { kind, story, ...rest } = this.props;
     const { href } = this.state;
 
-    return <RoutedLink href={href} onClick={this.handleClick} {...rest} />;
+    return <Typography.Link cancel href={href} onClick={this.handleClick} {...rest} />;
   }
 }
 

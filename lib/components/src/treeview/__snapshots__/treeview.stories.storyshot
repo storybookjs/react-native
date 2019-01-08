@@ -1,0 +1,769 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Treeview stateful 1`] = `
+Array [
+  <input
+    class="css-1lshnka-FilterField ejte0e34"
+    id="storybook-explorer-searchfield"
+    placeholder="Press \\"/\\" to search..."
+  />,
+  <div
+    class="css-3gk90-Container ejte0e30"
+  >
+    <div
+      class="css-16snshc-TreeWrapper ejte0e31"
+    >
+      <a
+        class="css-1034sg6-A ejte0e33"
+        href="#!1"
+        id="stateful_1"
+      >
+        <div
+          class="css-1irdycu-LeafStyle ejte0e35"
+        >
+          <svg
+            class="ejte0e36 css-1oq6nrl-Svg-RotatingChevron e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Parent A
+          </span>
+        </div>
+      </a>
+      <div
+        class="css-k4gjxv-ListWrapper ejte0e32"
+      >
+        <a
+          class="css-1034sg6-A ejte0e33"
+          href="#!1-11"
+          id="stateful_1-11"
+        >
+          <div
+            class="css-1cguoty-LeafStyle ejte0e35"
+            id="1-11"
+          >
+            <svg
+              class="ejte0e37 css-1s13dbd-Svg-TypeIcon e1vqr9v80"
+              height="14px"
+              viewBox="0 0 1024 1024"
+              width="14px"
+            >
+              <path
+                class="css-1xhbbdd-Path e1gl30fa0"
+                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+              />
+            </svg>
+            Child A1
+          </div>
+        </a>
+        <div
+          class="css-16snshc-TreeWrapper ejte0e31"
+        >
+          <a
+            class="css-1034sg6-A ejte0e33"
+            href="#!12"
+            id="stateful_12"
+          >
+            <div
+              class="css-1cguoty-LeafStyle ejte0e35"
+            >
+              <svg
+                class="ejte0e36 css-ytagf7-Svg-RotatingChevron e1vqr9v80"
+                height="14px"
+                viewBox="0 0 1024 1024"
+                width="14px"
+              >
+                <path
+                  class="css-1xhbbdd-Path e1gl30fa0"
+                  d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+                />
+              </svg>
+              <svg
+                class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+                height="14px"
+                viewBox="0 0 1024 1024"
+                width="14px"
+              >
+                <path
+                  class="css-1xhbbdd-Path e1gl30fa0"
+                  d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                />
+              </svg>
+              <span>
+                Child A2
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-16snshc-TreeWrapper ejte0e31"
+    >
+      <a
+        class="css-1034sg6-A ejte0e33"
+        href="#!2"
+        id="stateful_2"
+      >
+        <div
+          class="css-1irdycu-LeafStyle ejte0e35"
+        >
+          <svg
+            class="ejte0e36 css-ytagf7-Svg-RotatingChevron e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Parent B
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components|Treeview stateless 1`] = `
+<div
+  class="css-16snshc-TreeWrapper ejte0e31"
+>
+  <a
+    class="css-1034sg6-A ejte0e33"
+    href="#!1"
+    id="stateless_1"
+  >
+    <div
+      class="css-1irdycu-LeafStyle ejte0e35"
+    >
+      <svg
+        class="ejte0e36 css-1oq6nrl-Svg-RotatingChevron e1vqr9v80"
+        height="14px"
+        viewBox="0 0 1024 1024"
+        width="14px"
+      >
+        <path
+          class="css-1xhbbdd-Path e1gl30fa0"
+          d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+        />
+      </svg>
+      <svg
+        class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+        height="14px"
+        viewBox="0 0 1024 1024"
+        width="14px"
+      >
+        <path
+          class="css-1xhbbdd-Path e1gl30fa0"
+          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+        />
+      </svg>
+      <span>
+        Parent A
+      </span>
+    </div>
+  </a>
+  <div
+    class="css-k4gjxv-ListWrapper ejte0e32"
+  >
+    <a
+      class="css-1034sg6-A ejte0e33"
+      href="#!1-11"
+      id="stateless_1-11"
+    >
+      <div
+        class="css-1cguoty-LeafStyle ejte0e35"
+        id="1-11"
+      >
+        <svg
+          class="ejte0e37 css-1s13dbd-Svg-TypeIcon e1vqr9v80"
+          height="14px"
+          viewBox="0 0 1024 1024"
+          width="14px"
+        >
+          <path
+            class="css-1xhbbdd-Path e1gl30fa0"
+            d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+          />
+        </svg>
+        Child A1
+      </div>
+    </a>
+    <div
+      class="css-16snshc-TreeWrapper ejte0e31"
+    >
+      <a
+        class="css-1034sg6-A ejte0e33"
+        href="#!12"
+        id="stateless_12"
+      >
+        <div
+          class="css-1cguoty-LeafStyle ejte0e35"
+        >
+          <svg
+            class="ejte0e36 css-ytagf7-Svg-RotatingChevron e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Child A2
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Treeview with custom node 1`] = `
+Array [
+  <input
+    class="css-1lshnka-FilterField ejte0e34"
+    id="storybook-explorer-searchfield"
+    placeholder="Press \\"/\\" to search..."
+  />,
+  <div
+    class="css-3gk90-Container ejte0e30"
+  >
+    <div
+      class="css-16snshc-TreeWrapper ejte0e31"
+    >
+      <a
+        class="css-1034sg6-A ejte0e33"
+        href="#!1"
+        id="stateful_1"
+      >
+        <div
+          class="css-1irdycu-LeafStyle ejte0e35"
+        >
+          <svg
+            class="ejte0e36 css-1oq6nrl-Svg-RotatingChevron e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Parent A
+          </span>
+        </div>
+      </a>
+      <div
+        class="css-k4gjxv-ListWrapper ejte0e32"
+      >
+        <a
+          class="css-1034sg6-A ejte0e33"
+          href="#!1-11"
+          id="stateful_1-11"
+        >
+          <div
+            class="ehoq3ru0 css-1w58l2s-LeafStyle-CustomLeaf ejte0e35"
+            id="1-11"
+          >
+            <svg
+              class="ejte0e37 css-1s13dbd-Svg-TypeIcon e1vqr9v80"
+              height="14px"
+              viewBox="0 0 1024 1024"
+              width="14px"
+            >
+              <path
+                class="css-1xhbbdd-Path e1gl30fa0"
+                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+              />
+            </svg>
+            Child A1
+          </div>
+        </a>
+        <div
+          class="css-16snshc-TreeWrapper ejte0e31"
+        >
+          <a
+            class="css-1034sg6-A ejte0e33"
+            href="#!12"
+            id="stateful_12"
+          >
+            <div
+              class="css-1cguoty-LeafStyle ejte0e35"
+            >
+              <svg
+                class="ejte0e36 css-ytagf7-Svg-RotatingChevron e1vqr9v80"
+                height="14px"
+                viewBox="0 0 1024 1024"
+                width="14px"
+              >
+                <path
+                  class="css-1xhbbdd-Path e1gl30fa0"
+                  d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+                />
+              </svg>
+              <svg
+                class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+                height="14px"
+                viewBox="0 0 1024 1024"
+                width="14px"
+              >
+                <path
+                  class="css-1xhbbdd-Path e1gl30fa0"
+                  d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                />
+              </svg>
+              <span>
+                Child A2
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-16snshc-TreeWrapper ejte0e31"
+    >
+      <a
+        class="css-1034sg6-A ejte0e33"
+        href="#!2"
+        id="stateful_2"
+      >
+        <div
+          class="css-1irdycu-LeafStyle ejte0e35"
+        >
+          <svg
+            class="ejte0e36 css-ytagf7-Svg-RotatingChevron e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Parent B
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components|Treeview with ensured (WIP) 1`] = `
+Array [
+  <input
+    class="css-1lshnka-FilterField ejte0e34"
+    id="storybook-explorer-searchfield"
+    placeholder="Press \\"/\\" to search..."
+  />,
+  <header
+    class="ejte0e38 css-1lwbtk-Container-DefaultRootTitle e14vg0o61"
+  >
+    <h1
+      class="css-vn0zam-getElement e14vg0o60"
+    >
+      <span>
+        Root 1
+      </span>
+    </h1>
+  </header>,
+  <div
+    class="css-3gk90-Container ejte0e30"
+  >
+    <div
+      class="css-16snshc-TreeWrapper ejte0e31"
+    >
+      <a
+        class="css-1034sg6-A ejte0e33"
+        href="#!1-12"
+        id="stateful_1-12"
+      >
+        <div
+          class="css-1irdycu-LeafStyle ejte0e35"
+        >
+          <svg
+            class="ejte0e36 css-ytagf7-Svg-RotatingChevron e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Child A2
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>,
+  <header
+    class="ejte0e38 css-1lwbtk-Container-DefaultRootTitle e14vg0o61"
+  >
+    <h1
+      class="css-vn0zam-getElement e14vg0o60"
+    >
+      <span>
+        Root 3
+      </span>
+    </h1>
+  </header>,
+  <div
+    class="css-3gk90-Container ejte0e30"
+  >
+    <div
+      class="css-16snshc-TreeWrapper ejte0e31"
+    >
+      <a
+        class="css-1034sg6-A ejte0e33"
+        href="#!12"
+        id="stateful_12"
+      >
+        <div
+          class="css-1irdycu-LeafStyle ejte0e35"
+        >
+          <svg
+            class="ejte0e36 css-ytagf7-Svg-RotatingChevron e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Child A2
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>,
+  <header
+    class="ejte0e38 css-1lwbtk-Container-DefaultRootTitle e14vg0o61"
+  >
+    <h1
+      class="css-vn0zam-getElement e14vg0o60"
+    >
+      <span>
+        Others
+      </span>
+    </h1>
+  </header>,
+  <div
+    class="css-3gk90-Container ejte0e30"
+  >
+    <div
+      class="css-16snshc-TreeWrapper ejte0e31"
+    >
+      <a
+        class="css-1034sg6-A ejte0e33"
+        href="#!2"
+        id="stateful_2"
+      >
+        <div
+          class="css-1irdycu-LeafStyle ejte0e35"
+        >
+          <svg
+            class="ejte0e36 css-ytagf7-Svg-RotatingChevron e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Group 1
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components|Treeview with roots node 1`] = `
+Array [
+  <input
+    class="css-1lshnka-FilterField ejte0e34"
+    id="storybook-explorer-searchfield"
+    placeholder="Press \\"/\\" to search..."
+  />,
+  <header
+    class="ejte0e38 css-1lwbtk-Container-DefaultRootTitle e14vg0o61"
+  >
+    <h1
+      class="css-vn0zam-getElement e14vg0o60"
+    >
+      <span>
+        Root 1
+      </span>
+    </h1>
+  </header>,
+  <div
+    class="css-3gk90-Container ejte0e30"
+  >
+    <div
+      class="css-16snshc-TreeWrapper ejte0e31"
+    >
+      <a
+        class="css-1034sg6-A ejte0e33"
+        href="#!1-12"
+        id="stateful_1-12"
+      >
+        <div
+          class="css-1irdycu-LeafStyle ejte0e35"
+        >
+          <svg
+            class="ejte0e36 css-ytagf7-Svg-RotatingChevron e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Child A2
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>,
+  <header
+    class="ejte0e38 css-1lwbtk-Container-DefaultRootTitle e14vg0o61"
+  >
+    <h1
+      class="css-vn0zam-getElement e14vg0o60"
+    >
+      <span>
+        Root 3
+      </span>
+    </h1>
+  </header>,
+  <div
+    class="css-3gk90-Container ejte0e30"
+  >
+    <div
+      class="css-16snshc-TreeWrapper ejte0e31"
+    >
+      <a
+        class="css-1034sg6-A ejte0e33"
+        href="#!12"
+        id="stateful_12"
+      >
+        <div
+          class="css-1irdycu-LeafStyle ejte0e35"
+        >
+          <svg
+            class="ejte0e36 css-ytagf7-Svg-RotatingChevron e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Child A2
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>,
+  <header
+    class="ejte0e38 css-1lwbtk-Container-DefaultRootTitle e14vg0o61"
+  >
+    <h1
+      class="css-vn0zam-getElement e14vg0o60"
+    >
+      <span>
+        Others
+      </span>
+    </h1>
+  </header>,
+  <div
+    class="css-3gk90-Container ejte0e30"
+  >
+    <div
+      class="css-16snshc-TreeWrapper ejte0e31"
+    >
+      <a
+        class="css-1034sg6-A ejte0e33"
+        href="#!2"
+        id="stateful_2"
+      >
+        <div
+          class="css-1irdycu-LeafStyle ejte0e35"
+        >
+          <svg
+            class="ejte0e36 css-ytagf7-Svg-RotatingChevron e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="ejte0e37 css-1qa2lrn-Svg-TypeIcon e1vqr9v80"
+            height="14px"
+            viewBox="0 0 1024 1024"
+            width="14px"
+          >
+            <path
+              class="css-1xhbbdd-Path e1gl30fa0"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Group 1
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>,
+]
+`;

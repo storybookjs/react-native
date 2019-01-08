@@ -64,12 +64,10 @@ HMR
 Redux
 storybook-ui
 react-komposer
-redux
 serializable
 params
- - addons/actions/node_modules/@storybook/addons/README.md
+README.md
 storybooks.js.org
- - addons/actions/node_modules/asap/README.md
 YuzuJS
 setImmediate
 Malte
@@ -78,15 +76,11 @@ Katić
 Domenic
 Kowal
 Zakas
- - addons/actions/node_modules/balanced-match/README.md
 Gruber
 julian
 juliangruber.com
- - addons/actions/node_modules/brace-expansion/README.md
 Schlueter
- - addons/links/README.md
 linkTo
- - lib/ui/README.md
 setOptions
 setStories
 onStory
