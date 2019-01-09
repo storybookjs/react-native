@@ -28,6 +28,7 @@
 
 /examples/angular-cli/ @igor-dv @alterx
 /examples/cra-kitchen-sink/ @ndelangen @UsulPro @hypnosphi
+/examples/cra-ts-kitchen-sink/ @mucsi96
 /examples/official-storybook/ @hypnosphi @danielduan @UsulPro
 /examples/polymer-cli/ @naipath @igor-dv
 /examples/vue-kitchen-sink/ @igor-dv @alexandrebodin

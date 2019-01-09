@@ -362,7 +362,7 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
       <span
         class="css-su63og-Balloon e102gaa58"
       >
-        You're' up to date
+        You're up to date
       </span>
     </header>
   </div>
@@ -445,100 +445,6 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
         </li>
       </ul>
     </main>
-  </div>
-  <div
-    class="css-4owjbu-Wrapper e102gaa53"
-  >
-    <div
-      class="css-1gcu3b8-Upgrade e102gaa514"
-    >
-      <header
-        class="css-yfonvn-Container e14vg0o61"
-      >
-        <h1
-          class="css-4bak20-getElement e14vg0o60"
-        >
-          <span>
-            Upgrade all storybook packages to latest:
-          </span>
-        </h1>
-      </header>
-      <div
-        class="css-1utuj4w-Wrapper epklh870"
-      >
-        <div
-          class="css-1y75e3d-Scroller epklh871"
-        >
-          <pre
-            class="hljs css-1ks10li-Pre epklh872"
-          >
-            <code
-              class="css-1igagyr-Code epklh873"
-            >
-              npx npm-check-updates 
-              <span
-                class="token string"
-              >
-                '/storybook/'
-              </span>
-               -u 
-              <span
-                class="token operator"
-              >
-                &&
-              </span>
-               yarn
-            </code>
-          </pre>
-        </div>
-        <ul
-          class="css-13c7bym-Container egs2kzf0"
-        >
-          <li
-            class="css-1tizi7s-ActionItem egs2kzf2"
-          >
-            <button
-              class="css-1r3i0dl-ActionButton egs2kzf1"
-            >
-              copy
-            </button>
-          </li>
-        </ul>
-      </div>
-      <p>
-        Alternatively if you're using a yarn you could run the following command, and check all storybook related packages:
-      </p>
-      <div
-        class="css-1utuj4w-Wrapper epklh870"
-      >
-        <div
-          class="css-1y75e3d-Scroller epklh871"
-        >
-          <pre
-            class="hljs css-1ks10li-Pre epklh872"
-          >
-            <code
-              class="css-1igagyr-Code epklh873"
-            >
-              yarn upgrade-interactive --latest
-            </code>
-          </pre>
-        </div>
-        <ul
-          class="css-13c7bym-Container egs2kzf0"
-        >
-          <li
-            class="css-1tizi7s-ActionItem egs2kzf2"
-          >
-            <button
-              class="css-1r3i0dl-ActionButton egs2kzf1"
-            >
-              copy
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
   </div>
   <div
     class="css-4owjbu-Wrapper e102gaa53"
