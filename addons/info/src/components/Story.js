@@ -5,7 +5,7 @@ import { isForwardRef } from 'react-is';
 import { polyfill } from 'react-lifecycles-compat';
 import PropTypes from 'prop-types';
 import global from 'global';
-import { baseFonts } from '@storybook/components';
+import { baseFonts } from '@storybook/components/dist/theme';
 
 import marksy from 'marksy';
 

@@ -37,6 +37,8 @@
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-fuzzy": "^0.5.2",
     "react-lifecycles-compat": "^3.0.4",
     "react-modal": "^3.8.1",
@@ -45,10 +47,6 @@
   "devDependencies": {
     "terser-webpack-plugin": "^1.1.0",
     "webpack": "^4.23.1"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
   },
   "publishConfig": {
     "access": "public"

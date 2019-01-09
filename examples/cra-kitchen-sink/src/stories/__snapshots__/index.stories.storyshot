@@ -1,63 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Button addons composition 1`] = `
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: .88em;
-  font-family: Menlo,Monaco,"Courier New",monospace;
-  background-color: #fafafa;
-  padding: .5rem;
-  line-height: 1.5;
-  overflow-x: scroll;
-}
-
-.emotion-2 {
-  overflow: hidden;
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 3px 10px;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.emotion-2:hover {
-  background-color: #f4f7fa;
-  border-color: #ddd;
-}
-
-.emotion-2:active {
-  background-color: #e9ecef;
-  border-color: #ccc;
-}
-
-.emotion-0 {
-  -webkit-transition: -webkit-transform .2s ease;
-  -webkit-transition: transform .2s ease;
-  transition: transform .2s ease;
-  height: 16px;
-  -webkit-transform: translateY(-100%) translateY(-6px);
-  -ms-transform: translateY(-100%) translateY(-6px);
-  transform: translateY(-100%) translateY(-6px);
-}
-
 <div>
   <div
     style="position:relative;z-index:0"
@@ -124,7 +67,7 @@ exports[`Storyshots Button addons composition 1`] = `
             Story Source
           </h1>
           <pre
-            class="emotion-4 emotion-5"
+            style="display:flex;justify-content:space-between;align-items:center;font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
           >
             <div>
               <div>
@@ -206,20 +149,10 @@ exports[`Storyshots Button addons composition 1`] = `
               </div>
             </div>
             <button
-              class="emotion-2 emotion-3"
+              style="background-color:rgb(255, 255, 255);cursor:pointer;font-size:13px;align-self:flex-start;flex-shrink:0;overflow:hidden;border-width:1px;border-style:solid;border-color:rgb(238, 238, 238);border-image:initial;border-radius:3px;padding:3px 10px"
+              type="button"
             >
-              <div
-                class="emotion-0 emotion-1"
-              >
-                <div
-                  style="margin-bottom:6px"
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
+              Copy
             </button>
           </pre>
         </div>
@@ -247,79 +180,6 @@ exports[`Storyshots Button addons composition 1`] = `
 `;
 
 exports[`Storyshots Button with new info 1`] = `
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: .88em;
-  font-family: Menlo,Monaco,"Courier New",monospace;
-  background-color: #fafafa;
-  padding: .5rem;
-  line-height: 1.5;
-  overflow-x: scroll;
-}
-
-.emotion-2 {
-  overflow: hidden;
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 3px 10px;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.emotion-2:hover {
-  background-color: #f4f7fa;
-  border-color: #ddd;
-}
-
-.emotion-2:active {
-  background-color: #e9ecef;
-  border-color: #ccc;
-}
-
-.emotion-0 {
-  -webkit-transition: -webkit-transform .2s ease;
-  -webkit-transition: transform .2s ease;
-  transition: transform .2s ease;
-  height: 16px;
-  -webkit-transform: translateY(-100%) translateY(-6px);
-  -ms-transform: translateY(-100%) translateY(-6px);
-  transform: translateY(-100%) translateY(-6px);
-}
-
-.emotion-56 {
-  border-collapse: collapse;
-}
-
-.emotion-6 {
-  padding: 2px 6px;
-  border: 1px solid #ccc;
-}
-
-.emotion-16 {
-  padding: 2px 6px;
-  border: 1px solid #ccc;
-  white-space: nowrap;
-  font-family: Monaco,Consolas,"Courier New",monospace;
-}
-
 <div>
   <div
     style="position:relative;z-index:0"
@@ -397,7 +257,7 @@ exports[`Storyshots Button with new info 1`] = `
             Story Source
           </h1>
           <pre
-            class="emotion-4 emotion-5"
+            style="display:flex;justify-content:space-between;align-items:center;font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
           >
             <div>
               <div>
@@ -479,20 +339,10 @@ exports[`Storyshots Button with new info 1`] = `
               </div>
             </div>
             <button
-              class="emotion-2 emotion-3"
+              style="background-color:rgb(255, 255, 255);cursor:pointer;font-size:13px;align-self:flex-start;flex-shrink:0;overflow:hidden;border-width:1px;border-style:solid;border-color:rgb(238, 238, 238);border-image:initial;border-radius:3px;padding:3px 10px"
+              type="button"
             >
-              <div
-                class="emotion-0 emotion-1"
-              >
-                <div
-                  style="margin-bottom:6px"
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
+              Copy
             </button>
           </pre>
         </div>
@@ -508,33 +358,31 @@ exports[`Storyshots Button with new info 1`] = `
             >
               "Container" Component
             </h2>
-            <table
-              class="emotion-56 emotion-57"
-            >
+            <table>
               <thead>
                 <tr>
                   <th
-                    class="emotion-6 emotion-7"
+                    style="text-align:left;vertical-align:top"
                   >
                     property
                   </th>
                   <th
-                    class="emotion-6 emotion-7"
+                    style="text-align:left;vertical-align:top"
                   >
                     propType
                   </th>
                   <th
-                    class="emotion-6 emotion-7"
+                    style="text-align:left;vertical-align:top"
                   >
                     required
                   </th>
                   <th
-                    class="emotion-6 emotion-7"
+                    style="text-align:left;vertical-align:top"
                   >
                     default
                   </th>
                   <th
-                    class="emotion-6 emotion-7"
+                    style="text-align:left;vertical-align:top"
                   >
                     description
                   </th>
@@ -543,51 +391,51 @@ exports[`Storyshots Button with new info 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="emotion-16 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     children
                   </td>
                   <td
-                    class="emotion-16 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       node
                     </span>
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     yes
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="emotion-16 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     isAmazing
                   </td>
                   <td
-                    class="emotion-16 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span
                       style="color:#a11"
@@ -596,29 +444,29 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="emotion-16 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     age
                   </td>
                   <td
-                    class="emotion-16 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span
                       style="color:#666"
@@ -655,29 +503,29 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="emotion-16 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     title
                   </td>
                   <td
-                    class="emotion-16 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     -
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span
                       style="color:#22a;word-break:break-word"
@@ -686,7 +534,7 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    class="emotion-6 emotion-17"
+                    style="padding-right:10px;vertical-align:top"
                   />
                 </tr>
               </tbody>

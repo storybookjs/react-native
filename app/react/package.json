@@ -49,8 +49,8 @@
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react": "*",
+    "react-dom": "*"
   },
   "publishConfig": {
     "access": "public"
