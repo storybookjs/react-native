@@ -1,3 +1,19 @@
+## 4.1.5 (January 9, 2019)
+
+### Bug Fixes
+
+* React: Fix react version backwards compatibility ([#5148](https://github.com/storybooks/storybook/pull/5148))
+* UI: fix highlightColor ([#5150](https://github.com/storybooks/storybook/pull/5150))
+* Core: Transpile addons.js with Babel for IE11 ([#5081](https://github.com/storybooks/storybook/pull/5081))
+
+### Maintenance
+
+* Add CORS headers to versions.json ([#5155](https://github.com/storybooks/storybook/pull/5155))
+
+### Dependency Upgrades
+
+* Bump puppeteer from 1.9.0 to 1.11.0 ([#5119](https://github.com/storybooks/storybook/pull/5119))
+
 ## 4.2.0-alpha.10 (January 6, 2019)
 
 ### Features
