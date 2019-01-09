@@ -1,4 +1,4 @@
-## 4.1.5 (January 9, 2019)
+## 4.1.6 (January 9, 2019)
 
 ### Bug Fixes
 
@@ -13,6 +13,10 @@
 ### Dependency Upgrades
 
 * Bump puppeteer from 1.9.0 to 1.11.0 ([#5119](https://github.com/storybooks/storybook/pull/5119))
+
+## 4.1.5 (January 9, 2019)
+
+NPM failure, republishing as 4.1.6
 
 ## 4.2.0-alpha.10 (January 6, 2019)
 
