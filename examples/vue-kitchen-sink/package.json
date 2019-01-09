@@ -29,7 +29,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.4",
     "cross-env": "^5.2.0",
-    "file-loader": "^2.0.0",
+    "file-loader": "^3.0.1",
     "svg-url-loader": "^2.3.2",
     "vue-loader": "^15.4.2",
     "webpack": "^4.23.1",

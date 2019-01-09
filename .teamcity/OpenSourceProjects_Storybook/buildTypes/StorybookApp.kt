@@ -8,7 +8,7 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetr
 
 enum class StorybookApp(val appName: String, val exampleDir: String, val merged: Boolean = true) {
     CRA("CRA", "cra-kitchen-sink"),
-    CRA_TS("CRA TS", "cra-ts-kitchen-sink", false),
+    CRA_TS("CRA TS", "cra-ts-kitchen-sink"),
     VUE("Vue", "vue-kitchen-sink"),
     ANGULAR("Angular", "angular-cli"),
     POLYMER("Polymer", "polymer-cli"),
@@ -32,6 +32,20 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
 
         vcs {
             root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
+        }
+
+        dependencies {
+            dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
+                snapshot {
+                    onDependencyFailure = FailureAction.FAIL_TO_START
+                }
+
+                artifacts {
+                    artifactRules = """
+                        dist.zip!**
+                    """.trimIndent()
+                }
+            }
         }
 
         if (!merged) return@init
@@ -75,20 +89,6 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
                     }
                 }
                 param("github_oauth_user", "Hypnosphi")
-            }
-        }
-
-        dependencies {
-            dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Bootstrap) {
-                snapshot {
-                    onDependencyFailure = FailureAction.FAIL_TO_START
-                }
-
-                artifacts {
-                    artifactRules = """
-                        dist.zip!**
-                    """.trimIndent()
-                }
             }
         }
 

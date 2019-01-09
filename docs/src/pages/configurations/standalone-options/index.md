@@ -13,7 +13,7 @@ storybook({
 });
 ``` 
 
-Where the APP is one fo the supported apps. For example:
+Where the APP is one of the supported apps. For example:
 
 ```js
 const storybook = require('@storybook/react/standalone');
