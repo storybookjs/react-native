@@ -1,7 +1,7 @@
 import { isMacLike } from '@storybook/components/src/treeview/utils';
 import { _STORE_REDUCERS } from '@ngrx/store';
-import { OperatingSystem } from './platform';
 import { Binary } from '@angular/compiler';
+import { OperatingSystem } from './platform';
 
 export const enum KeyCode {
   Unknown = 0,
@@ -193,6 +193,7 @@ export const enum KeyCode {
 
 class KeyCodeStrMap {
   private _keyCodetoStr: string[];
+
   private _strToKeyCode: { [str: string]: KeyCode };
 
   constructor() {
@@ -415,11 +416,11 @@ export function createKeyBinding(keybinding: number, OS: OperatingSystem): Keybi
 }
 
 export function createSimpleKeybinding(keybinding: number, OS: OperatingSystem): SimpleKeybinding {
-  const ctrlCmd = keybinding & BinaryKeybindingsMask.CtrlCmd ? true : false;
-  const winCtrl = keybinding & BinaryKeybindingsMask.WinCtrl ? true : false;
+  const ctrlCmd = !!(keybinding & BinaryKeybindingsMask.CtrlCmd);
+  const winCtrl = !!(keybinding & BinaryKeybindingsMask.WinCtrl);
   const ctrlKey = OS === OperatingSystem.Macintosh ? winCtrl : ctrlCmd;
-  const shiftKey = keybinding & BinaryKeybindingsMask.Shift ? true : false;
-  const altKey = keybinding & BinaryKeybindingsMask.Alt ? true : false;
+  const shiftKey = !!(keybinding & BinaryKeybindingsMask.Shift);
+  const altKey = !!(keybinding & BinaryKeybindingsMask.Alt);
   const metaKey = OS === OperatingSystem.Macintosh ? ctrlCmd : winCtrl;
   const keyCode = keybinding & BinaryKeybindingsMask.KeyCode;
 
@@ -435,9 +436,13 @@ export class SimpleKeybinding {
   public readonly type = KeybindingType.Simple;
 
   public readonly ctrlKey: boolean;
+
   public readonly shiftKey: boolean;
+
   public readonly altKey: boolean;
+
   public readonly metaKey: boolean;
+
   public readonly keyCode: KeyCode;
 
   constructor(
@@ -499,6 +504,7 @@ export class ChordKeybinding {
   public readonly type = KeybindingType.Chord;
 
   public readonly firstPart: SimpleKeybinding;
+
   public readonly chordPart: SimpleKeybinding;
 
   constructor(firstPart: SimpleKeybinding, chordPart: SimpleKeybinding) {
@@ -515,11 +521,15 @@ export type Keybinding = SimpleKeybinding | ChordKeybinding;
 
 export class ResolveKeybindingPart {
   readonly ctrlKey: boolean;
+
   readonly shiftKey: boolean;
+
   readonly altKey: boolean;
+
   readonly metaKey: boolean;
 
   readonly keyLabel: string | null;
+
   readonly keyAriaLabel: string | null;
 
   constructor(
