@@ -36,7 +36,7 @@
     "babel-preset-minify": "^0.5.0 || 0.6.0-alpha.5",
     "boxen": "^2.1.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "child-process-promise": "^2.2.1",
     "cli-table3": "0.5.1",
     "commander": "^2.19.0",
