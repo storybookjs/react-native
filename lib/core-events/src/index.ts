@@ -14,8 +14,12 @@ enum events {
   STORY_THREW_EXCEPTION = 'storyThrewException',
 }
 
+// Enables `import Events from ...`
 export default events;
 
+// Enables:
+// import * as Events from ...
+// import { CHANNEL_CREATED } as Events from ...
 export const CHANNEL_CREATED = events.CHANNEL_CREATED;
 export const GET_CURRENT_STORY = events.GET_CURRENT_STORY;
 export const SET_CURRENT_STORY = events.SET_CURRENT_STORY;
