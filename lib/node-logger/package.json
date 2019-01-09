@@ -20,7 +20,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "core-js": "^2.5.7",
     "npmlog": "^4.1.2",
     "pretty-hrtime": "^1.0.3",
