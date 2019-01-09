@@ -1,6 +1,6 @@
 {
   "name": "cra-ts-kitchen-sink",
-  "version": "4.1.2",
+  "version": "4.2.0-alpha.11",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook -s public",
