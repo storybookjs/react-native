@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "4.2.0-alpha.9",
+  "version": "4.2.0-alpha.10",
   "private": true,
   "repository": {
     "type": "git",
@@ -73,7 +73,7 @@
     "babel-loader": "^8.0.4",
     "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-plugin-emotion": "^10.0.5",
-    "babel-plugin-macros": "^2.4.3",
+    "babel-plugin-macros": "^2.4.4",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-preset-vue": "^2.0.2",
     "chalk": "^2.4.1",

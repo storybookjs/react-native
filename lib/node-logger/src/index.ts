@@ -13,8 +13,9 @@ export const colors = {
 };
 
 export const logger = {
-  info: message => npmLog.info('', message),
-  warn: message => npmLog.warn('', message),
-  error: message => npmLog.error('', message),
-  trace: ({ message, time }) => npmLog.info(`${message} (${colors.purple(prettyTime(time))})`),
+  info: (message: string): void => npmLog.info('', message),
+  warn: (message: string): void => npmLog.warn('', message),
+  error: (message: string): void => npmLog.error('', message),
+  trace: ({ message, time }: { message: string; time: [number, number] }): void =>
+    npmLog.info('', `${message} (${colors.purple(prettyTime(time))})`),
 };
