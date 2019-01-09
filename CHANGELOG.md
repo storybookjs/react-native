@@ -1,4 +1,4 @@
-## 4.2.0-alpha.11 (January 9, 2019)
+## 4.2.0-alpha.12 (January 9, 2019)
 
 ### Maintenance
 
@@ -21,6 +21,9 @@
 * Bump dotenv-webpack from 1.5.7 to 1.6.0 ([#5160](https://github.com/storybooks/storybook/pull/5160))
 * Bump babel-plugin-macros from 2.4.3 to 2.4.4 ([#5161](https://github.com/storybooks/storybook/pull/5161))
 
+## 4.2.0-alpha.11 (January 9, 2019)
+
+NPM publish failed, republishing as `4.2.0-alpha.12`
 
 ## 4.1.6 (January 9, 2019)
 
