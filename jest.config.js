@@ -10,6 +10,7 @@ module.exports = {
   projects: [
     '<rootDir>',
     '<rootDir>/examples/cra-kitchen-sink',
+    '<rootDir>/examples/cra-ts-kitchen-sink',
     '<rootDir>/examples/html-kitchen-sink',
     '<rootDir>/examples/riot-kitchen-sink',
     '<rootDir>/examples/svelte-kitchen-sink',
