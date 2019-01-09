@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { RoutedLink } from '@storybook/components';
+import RoutedLink from './RoutedLink';
 import { openLink, hrefTo } from '../../preview';
 
 export default class LinkTo extends PureComponent {
