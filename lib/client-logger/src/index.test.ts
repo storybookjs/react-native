@@ -15,11 +15,6 @@ describe('client-logger', () => {
     logger.info(message);
     expect(global.console.info).toHaveBeenCalledWith(message);
   });
-  it('should have an log method that displays the message', () => {
-    const message = 'information';
-    logger.log(message);
-    expect(global.console.log).toHaveBeenCalledWith(message);
-  });
   it('should have a warning method that displays the message in yellow, with a trace', () => {
     const message = 'warning message';
     logger.warn(message);
