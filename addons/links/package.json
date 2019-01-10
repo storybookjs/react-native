@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "@storybook/addons": "5.0.0-debug.1",
-    "@storybook/components": "5.0.0-debug.1",
     "@storybook/core-events": "5.0.0-debug.1",
     "common-tags": "^1.8.0",
     "core-js": "^2.6.1",
