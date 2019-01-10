@@ -21,6 +21,7 @@
     "prepare": "node ../../../scripts/prepare.js"
   },
   "dependencies": {
+    "@storybook/core": "5.0.0-debug.1",
     "@storybook/node-logger": "5.0.0-debug.1",
     "core-js": "^2.6.1",
     "jest-image-snapshot": "^2.6.0",
