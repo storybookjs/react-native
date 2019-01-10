@@ -3,11 +3,11 @@ import React from 'react';
 import { objectOf, string } from 'prop-types';
 import { controlOrMetaKey, optionOrAltSymbol } from '@storybook/components/src/treeview/utils';
 import { get, setAll } from './persist';
+import { KeyBoardEvent } from '../keyboard/keyModel';
 
-export const isShortcutTaken = (arr1: string[], arr2: string[]): boolean =>
-  JSON.stringify(arr1) === JSON.stringify(arr2);
+export const isShortcutTaken = (arr1: string[], arr2: string[]): boolean => JSON.stringify(arr1) === JSON.stringify(arr2);
 
-export const parseKey = (e: KeyboardEvent): string[] => {
+export const parseKey = (e: KeyBoardEvent): string[] => {
   const keys = [];
   if (e.altKey) {
     keys.push('alt');
@@ -201,10 +201,7 @@ export const shortcutKeyShape = {
 };
 
 export const serializedLocalStorage = (obj: object): object[] =>
-  Object.entries(obj).reduce(
-    (acc, i) => ({ ...acc, [i[0]]: { value: [...i[1]], error: false } }),
-    []
-  );
+  Object.entries(obj).reduce((acc, i) => ({ ...acc, [i[0]]: { value: [...i[1]], error: false } }), []);
 
 export const initShortcutKeys = (): object => {
   const shortcutKeys = get('shortcutKeys');
