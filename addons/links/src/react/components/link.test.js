@@ -30,7 +30,7 @@ describe('LinkTo', () => {
       addons.getChannel.mockReturnValue(channel);
 
       const wrapper = shallow(<LinkTo kind="foo" story="bar" />);
-      wrapper.simulate('click');
+      wrapper.simulate('click', { button: 0, preventDefault: () => {} });
       expect(channel.emit.mock.calls).toContainEqual([
         SELECT_STORY,
         {

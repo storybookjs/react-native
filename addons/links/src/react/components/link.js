@@ -64,7 +64,7 @@ export default class LinkTo extends PureComponent {
 LinkTo.defaultProps = {
   kind: null,
   story: null,
-  children: null,
+  children: undefined,
 };
 
 LinkTo.propTypes = {
