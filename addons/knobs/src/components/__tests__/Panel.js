@@ -1,8 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { STORY_CHANGED } from '@storybook/core-events';
+import { TabsState } from '@storybook/components';
+
 import Panel from '../Panel';
 import { CHANGE, SET } from '../../shared';
+import PropForm from '../PropForm';
 
 const createTestChannel = () => ({
   on: jest.fn(),
