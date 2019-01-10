@@ -1,4 +1,3 @@
-import { Key } from 'protractor';
 import { KeyCode } from './keyCodes';
 
 /**
@@ -214,35 +213,28 @@ export const ScanCodeUtils = {
 };
 
 /**
- * -1 if a ScanCode => KeyCode mapping depends on keyboard layout
+ * -1 if a ScanCode => KeyCode mapping depends on kb layout.
  */
 export const IMMUTABLE_CODE_TO_KEYCODE: KeyCode[] = [];
 
 /**
- * -1 if a KeyCode => ScanCode mapping depends on the keyboard layout
+ * -1 if a KeyCode => ScanCode mapping depends on kb layout.
  */
 export const IMMUTABLE_KEYCODE_TO_CODE: ScanCode[] = [];
 
 export class ScanCodeBinding {
   public readonly ctrlKey: boolean;
-
   public readonly shiftKey: boolean;
-
   public readonly altKey: boolean;
-
   public readonly metaKey: boolean;
-
   public readonly scanCode: ScanCode;
 
-  public readonly key: string;
-
-  constructor(ctrlKey: boolean, shiftKey: boolean, altKey: boolean, metaKey: boolean, scanCode: ScanCode, key: string) {
+  constructor(ctrlKey: boolean, shiftKey: boolean, altKey: boolean, metaKey: boolean, scanCode: ScanCode) {
     this.ctrlKey = ctrlKey;
     this.shiftKey = shiftKey;
     this.altKey = altKey;
     this.metaKey = metaKey;
     this.scanCode = scanCode;
-    this.key = key;
   }
 
   public equals(other: ScanCodeBinding): boolean {
@@ -251,13 +243,12 @@ export class ScanCodeBinding {
       this.shiftKey === other.shiftKey &&
       this.altKey === other.altKey &&
       this.metaKey === other.metaKey &&
-      this.scanCode === other.scanCode &&
-      this.key === other.key
+      this.scanCode === other.scanCode
     );
   }
 
   /**
-   * Is the keybinding a keycode for a modifier key and does it also have the modifier flag?
+   * Does this keybinding refer to the key code of a modifier and it also has the modifier flag?
    */
   public isDuplicateModifierCase(): boolean {
     return (
@@ -275,7 +266,6 @@ export class ScanCodeBinding {
     scanCodeStrToInt[strScanCode] = intScanCode;
     scanCodeLowerCaseStrToInt[strScanCode.toLowerCase()] = intScanCode;
   }
-
   d(ScanCode.None, 'None');
   d(ScanCode.Hyper, 'Hyper');
   d(ScanCode.Super, 'Super');
@@ -480,7 +470,7 @@ export class ScanCodeBinding {
     IMMUTABLE_KEYCODE_TO_CODE[i] = -1;
   }
 
-  function define(code: ScanCode, keyCode: keyCode): void {
+  function define(code: ScanCode, keyCode: KeyCode): void {
     IMMUTABLE_CODE_TO_KEYCODE[code] = keyCode;
 
     if (

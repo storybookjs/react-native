@@ -1,6 +1,4 @@
-import { isMacLike } from '@storybook/components/src/treeview/utils';
 import { _STORE_REDUCERS } from '@ngrx/store';
-import { Binary } from '@angular/compiler';
 import { OperatingSystem } from './platform';
 
 export const enum KeyCode {
@@ -331,8 +329,8 @@ const userSettingsGeneralMap = new KeyCodeStrMap();
   define(KeyCode.US_OPEN_SQUARE_BRACKET, '[', '[', 'OEM_4');
   define(KeyCode.US_BACKSLASH, '\\', '\\', 'OEM_5');
   define(KeyCode.US_CLOSE_SQUARE_BRACKET, ']', ']', 'OEM_6');
-  // prettier-ignore
-  define(KeyCode.US_QUOTE, '\'', '\'', 'OEM_7');
+  // tslint:disable-next-line:quotemark
+  define(KeyCode.US_QUOTE, "'", "'", 'OEM_7');
   define(KeyCode.OEM_8, 'OEM_8');
   define(KeyCode.OEM_102, 'OEM_102');
 
@@ -400,40 +398,10 @@ export function KeyChord(firstPart: number, secondPart: number): number {
   return (firstPart | chordPart) >>> 0;
 }
 
-export function createKeyBinding(keybinding: number, OS: OperatingSystem): Keybinding | null {
-  if (keybinding === 0) {
-    return null;
-  }
-
-  const firstPart = (keybinding & 0x0000ffff) >>> 0;
-  const chordPart = (keybinding & 0xffff0000) >>> 16;
-
-  if (chordPart !== 0) {
-    // tslint:disable-next-line no-use-before-declare
-    return new ChordKeybinding(createSimpleKeybinding(firstPart, OS), createSimpleKeybinding(chordPart, OS));
-  }
-
-  return createSimpleKeybinding(firstPart, OS);
-}
-
-export function createSimpleKeybinding(keybinding: number, OS: OperatingSystem): SimpleKeybinding {
-  const ctrlCmd = !!(keybinding & BinaryKeybindingsMask.CtrlCmd);
-  const winCtrl = !!(keybinding & BinaryKeybindingsMask.WinCtrl);
-  const ctrlKey = OS === OperatingSystem.Macintosh ? winCtrl : ctrlCmd;
-  const shiftKey = !!(keybinding & BinaryKeybindingsMask.Shift);
-  const altKey = !!(keybinding & BinaryKeybindingsMask.Alt);
-  const metaKey = OS === OperatingSystem.Macintosh ? ctrlCmd : winCtrl;
-  const keyCode = keybinding & BinaryKeybindingsMask.KeyCode;
-
-  // tslint:disable-next-line no-use-before-declare
-  return new SimpleKeybinding(ctrlKey, shiftKey, altKey, metaKey, keyCode);
-}
-
 export const enum KeybindingType {
   Simple = 1,
   Chord = 2,
 }
-
 export class SimpleKeybinding {
   public readonly type = KeybindingType.Simple;
 
@@ -497,7 +465,6 @@ export class SimpleKeybinding {
     );
   }
 }
-
 export class ChordKeybinding {
   public readonly type = KeybindingType.Chord;
 
@@ -513,6 +480,33 @@ export class ChordKeybinding {
   public getHashCode(): string {
     return `${this.firstPart.getHashCode()};${this.chordPart.getHashCode()}`;
   }
+}
+
+export function createKeyBinding(keybinding: number, OS: OperatingSystem): Keybinding | null {
+  if (keybinding === 0) {
+    return null;
+  }
+
+  const firstPart = (keybinding & 0x0000ffff) >>> 0;
+  const chordPart = (keybinding & 0xffff0000) >>> 16;
+
+  if (chordPart !== 0) {
+    return new ChordKeybinding(createSimpleKeybinding(firstPart, OS), createSimpleKeybinding(chordPart, OS));
+  }
+
+  return createSimpleKeybinding(firstPart, OS);
+}
+
+export function createSimpleKeybinding(keybinding: number, OS: OperatingSystem): SimpleKeybinding {
+  const ctrlCmd = !!(keybinding & BinaryKeybindingsMask.CtrlCmd);
+  const winCtrl = !!(keybinding & BinaryKeybindingsMask.WinCtrl);
+  const ctrlKey = OS === OperatingSystem.Macintosh ? winCtrl : ctrlCmd;
+  const shiftKey = !!(keybinding & BinaryKeybindingsMask.Shift);
+  const altKey = !!(keybinding & BinaryKeybindingsMask.Alt);
+  const metaKey = OS === OperatingSystem.Macintosh ? ctrlCmd : winCtrl;
+  const keyCode = keybinding & BinaryKeybindingsMask.KeyCode;
+
+  return new SimpleKeybinding(ctrlKey, shiftKey, altKey, metaKey, keyCode);
 }
 
 export type Keybinding = SimpleKeybinding | ChordKeybinding;

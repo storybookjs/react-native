@@ -1,7 +1,7 @@
 import { localStorage } from 'global';
 import { logger } from '@storybook/client-logger';
 
-export const get = item => {
+export const get = (item: string): any | boolean => {
   try {
     const val = localStorage.getItem(item);
     return val ? JSON.parse(val) : false;
@@ -11,7 +11,7 @@ export const get = item => {
   }
 };
 
-export const setAll = (itemToSet, changes) => {
+export const setAll = (itemToSet: string | number, changes: any): void => {
   try {
     const serializedChanges = JSON.stringify(changes);
     localStorage.setItem(itemToSet, serializedChanges);
@@ -20,7 +20,7 @@ export const setAll = (itemToSet, changes) => {
   }
 };
 
-export const setItem = (itemToSet, key, val) => {
+export const setItem = (itemToSet: string, key: string | number, val: any): void => {
   const changes = get(itemToSet);
   changes[key] = val;
   try {

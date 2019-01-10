@@ -81,7 +81,7 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
     } else {
       this.setState({ value: undefined });
     }
-  };
+  }
 
   render() {
     const { active } = this.props;
