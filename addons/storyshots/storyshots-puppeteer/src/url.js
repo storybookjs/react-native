@@ -6,7 +6,8 @@ export const constructUrl = (storybookUrl, kind, story) => {
   const id = toId(kind, story);
 
   const storyUrl = `/iframe.html?id=${id}`;
-  const { protocol, host, pathname } = new URL(storybookUrl);
+  const { protocol, host, pathname, search } = new URL(storybookUrl);
   const pname = pathname.replace(/\/$/, ''); // removes trailing /
-  return `${protocol}//${host}${pname}${storyUrl}`;
+  const query = search.replace('?', '&'); // convert leading ? to &
+  return `${protocol}//${host}${pname}${storyUrl}${query}`;
 };
