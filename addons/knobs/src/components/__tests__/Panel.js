@@ -55,7 +55,6 @@ describe('Panel', () => {
         },
         getQueryParam: key => testQueryParams[key],
         setQueryParams: jest.fn(),
-        onStory: jest.fn(),
       };
 
       shallow(<Panel channel={testChannel} api={testApi} active />);
@@ -173,7 +172,7 @@ describe('Panel', () => {
     const testApi = {
       getQueryParam: jest.fn(),
       setQueryParams: jest.fn(),
-      onStory: jest.fn(() => () => {}),
+      on: jest.fn(() => () => {}),
     };
 
     it('should have no tabs when there are no groupIds', () => {

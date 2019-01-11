@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { STORY_CHANGED } from '@storybook/core-events';
 import { ADD_TESTS } from '../shared';
 
 const provideTests = Component =>
@@ -10,7 +11,7 @@ const provideTests = Component =>
         removeListener: PropTypes.func,
       }).isRequired,
       api: PropTypes.shape({
-        onStory: PropTypes.func,
+        on: PropTypes.func,
       }).isRequired,
       active: PropTypes.bool,
     };
@@ -25,7 +26,7 @@ const provideTests = Component =>
       this.mounted = true;
       const { channel, api } = this.props;
 
-      this.stopListeningOnStory = api.onStory(() => {
+      this.stopListeningOnStory = api.on(STORY_CHANGED, () => {
         const { kind, storyName, tests } = this.state;
         if (this.mounted && (kind || storyName || tests)) {
           this.onAddTests({});

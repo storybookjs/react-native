@@ -160,7 +160,7 @@ ViewportTool.propTypes = {
     removeListener: PropTypes.func,
   }).isRequired,
   api: PropTypes.shape({
-    onStory: PropTypes.func,
+    on: PropTypes.func,
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,
   }).isRequired,
