@@ -1,5 +1,4 @@
 /** @jsx m */
-/* eslint-disable jsx-a11y/accessible-emoji */
 
 import m from 'mithril';
 import { storiesOf } from '@storybook/mithril';
