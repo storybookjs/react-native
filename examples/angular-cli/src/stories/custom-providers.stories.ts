@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/angular';
-import { withKnobs, text } from '@storybook/addon-knobs/angular';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 import { DummyService } from './moduleMetadata/dummy.service';
 import { ServiceComponent } from './moduleMetadata/service.component';

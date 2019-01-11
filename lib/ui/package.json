@@ -49,7 +49,8 @@
     "react-lifecycles-compat": "^3.0.4",
     "react-modal": "^3.8.1",
     "react-resize-detector": "^3.2.1",
-    "to-camel-case": "^1.0.0"
+    "to-camel-case": "^1.0.0",
+    "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
     "terser-webpack-plugin": "^1.2.1",
