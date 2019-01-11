@@ -91,7 +91,7 @@ export default function makeTableComponent(Component) {
   };
 
   TableComponent.propTypes = {
-    type: PropTypes.shape({ __docgenInfo: PropTypes.shape({}).isRequired }).isRequired,
+    type: PropTypes.func.isRequired,
   };
 
   return TableComponent;
