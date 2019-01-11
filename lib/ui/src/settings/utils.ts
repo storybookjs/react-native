@@ -163,7 +163,7 @@ export const defaultShortcutSets = Object.freeze({
   },
 });
 
-export const serializableKeyboardShortcuts = {
+export const serializableKeyboardShortcuts = Object.freeze({
   fullScreen: ['F'],
   togglePanel: ['S'], // Panel visibiliy
   panelPosition: ['D'],
@@ -179,7 +179,7 @@ export const serializableKeyboardShortcuts = {
   nextStory: ['alt', 'ArrowRight'],
   shortcutsPage: ['shift', ',', controlOrMetaKey()],
   aboutPage: [','],
-};
+});
 
 export const shortcutKeyShape = {
   fullScreen: objectOf(string).isRequired,
