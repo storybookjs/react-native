@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "5.0.0-debug.2",
+  "version": "5.0.0-debug.3",
   "description": "A Storybook addon to show additional information for your stories.",
   "keywords": [
     "addon",
@@ -22,9 +22,9 @@
   },
   "dependencies": {
     "@emotion/styled": "^10.0.5",
-    "@storybook/addons": "5.0.0-debug.2",
-    "@storybook/client-logger": "5.0.0-debug.2",
-    "@storybook/components": "5.0.0-debug.2",
+    "@storybook/addons": "5.0.0-debug.3",
+    "@storybook/client-logger": "5.0.0-debug.3",
+    "@storybook/components": "5.0.0-debug.3",
     "core-js": "^2.6.1",
     "global": "^4.3.2",
     "marksy": "^6.1.0",

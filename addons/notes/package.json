@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "5.0.0-debug.2",
+  "version": "5.0.0-debug.3",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
@@ -23,9 +23,9 @@
   },
   "dependencies": {
     "@emotion/styled": "^10.0.5",
-    "@storybook/addons": "5.0.0-debug.2",
-    "@storybook/components": "5.0.0-debug.2",
-    "@storybook/core-events": "5.0.0-debug.2",
+    "@storybook/addons": "5.0.0-debug.3",
+    "@storybook/components": "5.0.0-debug.3",
+    "@storybook/core-events": "5.0.0-debug.3",
     "markdown-to-jsx": "^6.9.0",
     "prop-types": "^15.6.2",
     "util-deprecate": "^1.0.2"
