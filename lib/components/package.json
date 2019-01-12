@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "5.0.0-debug.1",
+  "version": "5.0.0-debug.2",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -25,9 +25,9 @@
     "@emotion/core": "^10.0.5",
     "@emotion/styled": "^10.0.5",
     "@reach/router": "^1.2.1",
-    "@storybook/addons": "5.0.0-debug.1",
-    "@storybook/client-logger": "5.0.0-debug.1",
-    "@storybook/core-events": "5.0.0-debug.1",
+    "@storybook/addons": "5.0.0-debug.2",
+    "@storybook/client-logger": "5.0.0-debug.2",
+    "@storybook/core-events": "5.0.0-debug.2",
     "emotion-theming": "^10.0.5",
     "global": "^4.3.2",
     "immer": "^1.9.3",
