@@ -19,10 +19,10 @@
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "@storybook/addon-actions": "5.0.0-debug.1",
-    "@storybook/addon-links": "5.0.0-debug.1",
-    "@storybook/addons": "5.0.0-debug.1",
-    "@storybook/react": "5.0.0-debug.1",
+    "@storybook/addon-actions": "5.0.0-debug.2",
+    "@storybook/addon-links": "5.0.0-debug.2",
+    "@storybook/addons": "5.0.0-debug.2",
+    "@storybook/react": "5.0.0-debug.2",
     "babel-loader": "^6.4.1",
     "bootstrap": "^4.2.1",
     "common-tags": "^1.8.0",
