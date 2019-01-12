@@ -27,37 +27,33 @@ Array [
 
 exports[`PropTable multiLineText should include all propTypes by default 1`] = `
 <Table>
-  <THead>
-    <tr>
-      <TH>
-        Property
-      </TH>
-      <TH>
-        Type
-      </TH>
-      <TH>
-        Required
-      </TH>
-      <TH>
-        Default
-      </TH>
-      <TH>
-        Description
-      </TH>
-    </tr>
-  </THead>
-  <TBody>
-    <TBodyTR
+  <Thead>
+    <Tr>
+      <Th>
+        property
+      </Th>
+      <Th>
+        propType
+      </Th>
+      <Th>
+        required
+      </Th>
+      <Th>
+        default
+      </Th>
+      <Th>
+        description
+      </Th>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr
       key="foo"
     >
-      <TDName
-        code={true}
-      >
+      <Td>
         foo
-      </TDName>
-      <TDType
-        code={true}
-      >
+      </Td>
+      <Td>
         <PrettyPropType
           depth={1}
           propType={
@@ -66,19 +62,15 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             }
           }
         />
-      </TDType>
-      <TD
-        code={true}
-      >
+      </Td>
+      <Td>
         -
-      </TD>
-      <TD
-        code={true}
-      >
+      </Td>
+      <Td>
         -
-      </TD>
-      <TD />
-    </TBodyTR>
-  </TBody>
+      </Td>
+      <Td />
+    </Tr>
+  </Tbody>
 </Table>
 `;

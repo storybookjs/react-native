@@ -79,146 +79,121 @@ exports[`Storyshots Button with new info 1`] = `
           >
             Story Source
           </h1>
-          <div
-            class="css-fri0s0-Wrapper epklh870"
+          <pre
+            style="display:flex;justify-content:space-between;align-items:center;font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
           >
-            <div
-              class="css-1et2y5f-Scroller epklh871"
-            >
-              <pre
-                class="hljs css-1x8ad3z-Pre epklh872"
-              >
-                <code
-                  class="css-1igagyr-Code epklh873"
+            <div>
+              <div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
                   <span
-                    class="token tag"
+                    style="color:#444"
+                  >
+                    &lt;Container
+                  </span>
+                  <span />
+                  <span
+                    style="color:#444"
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div>
+                  <div
+                    style="padding-left:33px;padding-right:3px"
                   >
                     <span
-                      class="token tag"
+                      style="color:#444"
                     >
-                      <span
-                        class="token punctuation"
-                      >
-                        &lt;
-                      </span>
-                      Container
+                      &lt;span
                     </span>
+                    <span />
                     <span
-                      class="token punctuation"
+                      style="color:#444"
                     >
                       &gt;
                     </span>
-                  </span>
-                  <span
-                    class="token plain-text"
-                  >
-                    
-  
-                  </span>
-                  <span
-                    class="token tag"
+                  </div>
+                  <div
+                    style="padding-left:48px;padding-right:3px"
                   >
                     <span
-                      class="token tag"
+                      style="color:#444"
                     >
-                      <span
-                        class="token punctuation"
-                      >
-                        &lt;
-                      </span>
-                      span
+                      click the 
                     </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      &gt;
-                    </span>
-                  </span>
-                  <span
-                    class="token plain-text"
-                  >
-                    
-    click the 
-    
-                  </span>
-                  <span
-                    class="token tag"
+                  </div>
+                  <div
+                    style="padding-left:48px;padding-right:3px"
                   >
                     <span
-                      class="token tag"
+                      style="color:#444"
                     >
-                      <span
-                        class="token punctuation"
-                      >
-                        &lt;
-                      </span>
-                      InfoButton
+                      &lt;InfoButton
                     </span>
-                     
+                    <span />
                     <span
-                      class="token punctuation"
+                      style="color:#444"
                     >
                       /&gt;
                     </span>
-                  </span>
-                  <span
-                    class="token plain-text"
-                  >
-                    
-     label in top right for info about "with new info"
-  
-                  </span>
-                  <span
-                    class="token tag"
+                  </div>
+                  <div
+                    style="padding-left:48px;padding-right:3px"
                   >
                     <span
-                      class="token tag"
+                      style="color:#444"
                     >
-                      <span
-                        class="token punctuation"
-                      >
-                        &lt;/
-                      </span>
-                      span
+                       label in top right for info about "
                     </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      &gt;
-                    </span>
-                  </span>
-                  <span
-                    class="token plain-text"
-                  >
-                    
-
-                  </span>
-                  <span
-                    class="token tag"
+                  </div>
+                  <div
+                    style="padding-left:48px;padding-right:3px"
                   >
                     <span
-                      class="token tag"
+                      style="color:#444"
                     >
-                      <span
-                        class="token punctuation"
-                      >
-                        &lt;/
-                      </span>
-                      Container
+                      with new info
                     </span>
+                  </div>
+                  <div
+                    style="padding-left:48px;padding-right:3px"
+                  >
                     <span
-                      class="token punctuation"
+                      style="color:#444"
                     >
-                      &gt;
+                      "
                     </span>
+                  </div>
+                  <div
+                    style="padding-left:33px;padding-right:3px"
+                  >
+                    <span
+                      style="color:#444"
+                    >
+                      &lt;/span&gt;
+                    </span>
+                  </div>
+                </div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
+                >
+                  <span
+                    style="color:#444"
+                  >
+                    &lt;/Container&gt;
                   </span>
-                  
-
-                </code>
-              </pre>
+                </div>
+              </div>
             </div>
-          </div>
+            <button
+              style="background-color:rgb(255, 255, 255);cursor:pointer;font-size:13px;align-self:flex-start;flex-shrink:0;overflow:hidden;border-width:1px;border-style:solid;border-color:rgb(238, 238, 238);border-image:initial;border-radius:3px;padding:3px 10px"
+              type="button"
+            >
+              Copy
+            </button>
+          </pre>
         </div>
         <div>
           <h1
@@ -232,125 +207,113 @@ exports[`Storyshots Button with new info 1`] = `
             >
               "Container" Component
             </h3>
-            <table
-              class="css-78s6dx-Table-Table e1fg2ikb0"
-            >
-              <thead
-                class="css-ig77mj-THead e1fg2ikb1"
-              >
+            <table>
+              <thead>
                 <tr>
                   <th
-                    class="css-tfinoa-Th-TH e1fg2ikb2"
+                    style="text-align:left;vertical-align:top"
                   >
-                    Property
+                    property
                   </th>
                   <th
-                    class="css-tfinoa-Th-TH e1fg2ikb2"
+                    style="text-align:left;vertical-align:top"
                   >
-                    Type
+                    propType
                   </th>
                   <th
-                    class="css-tfinoa-Th-TH e1fg2ikb2"
+                    style="text-align:left;vertical-align:top"
                   >
-                    Required
+                    required
                   </th>
                   <th
-                    class="css-tfinoa-Th-TH e1fg2ikb2"
+                    style="text-align:left;vertical-align:top"
                   >
-                    Default
+                    default
                   </th>
                   <th
-                    class="css-tfinoa-Th-TH e1fg2ikb2"
+                    style="text-align:left;vertical-align:top"
                   >
-                    Description
+                    description
                   </th>
                 </tr>
               </thead>
-              <tbody
-                class="css-4b5un0-TBody e1fg2ikb3"
-              >
-                <tr
-                  class="css-rss5jh-TBodyTR e1fg2ikb4"
-                >
+              <tbody>
+                <tr>
                   <td
-                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     children
                   </td>
                   <td
-                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       node
                     </span>
                   </td>
                   <td
-                    class="css-icf93m-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     yes
                   </td>
                   <td
-                    class="css-icf93m-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     -
                   </td>
                   <td
-                    class="css-qkhvtu-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   />
                 </tr>
-                <tr
-                  class="css-rss5jh-TBodyTR e1fg2ikb4"
-                >
+                <tr>
                   <td
-                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     isAmazing
                   </td>
                   <td
-                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
                   <td
-                    class="css-icf93m-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     -
                   </td>
                   <td
-                    class="css-icf93m-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       false
                     </span>
                   </td>
                   <td
-                    class="css-qkhvtu-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   />
                 </tr>
-                <tr
-                  class="css-rss5jh-TBodyTR e1fg2ikb4"
-                >
+                <tr>
                   <td
-                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     age
                   </td>
                   <td
-                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
                   <td
-                    class="css-icf93m-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     -
                   </td>
                   <td
-                    class="css-icf93m-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       {
@@ -377,38 +340,36 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-qkhvtu-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   />
                 </tr>
-                <tr
-                  class="css-rss5jh-TBodyTR e1fg2ikb4"
-                >
+                <tr>
                   <td
-                    class="css-xo96b9-Td-TD-TDName e1fg2ikb6"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     title
                   </td>
                   <td
-                    class="css-1vrb3fi-Td-TD-TDType e1fg2ikb7"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
                   <td
-                    class="css-icf93m-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     -
                   </td>
                   <td
-                    class="css-icf93m-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       the best container ever
                     </span>
                   </td>
                   <td
-                    class="css-qkhvtu-Td-TD e1fg2ikb5"
+                    style="padding-right:10px;vertical-align:top"
                   />
                 </tr>
               </tbody>

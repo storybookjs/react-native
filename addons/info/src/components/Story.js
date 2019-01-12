@@ -5,9 +5,11 @@ import { isForwardRef } from 'react-is';
 import { polyfill } from 'react-lifecycles-compat';
 import PropTypes from 'prop-types';
 import global from 'global';
-import { baseFonts, SyntaxHighlighter } from '@storybook/components';
+import { baseFonts } from '@storybook/components/dist/theme';
+
 import marksy from 'marksy';
-import reactElToString from 'react-element-to-jsx-string';
+import Node from './Node';
+import { Pre } from './markdown';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
 const { STORYBOOK_REACT_CLASSES } = global;
@@ -283,22 +285,36 @@ class Story extends Component {
   }
 
   _getSourceCode() {
-    const { showSource, children } = this.props;
+    const {
+      showSource,
+      maxPropsIntoLine,
+      maxPropObjectKeys,
+      maxPropArrayLength,
+      maxPropStringLength,
+      children,
+    } = this.props;
     const { stylesheet } = this.state;
 
     if (!showSource) {
       return null;
     }
 
-    const stringified = reactElToString(children, {
-      sortProps: false,
-      showDefaultProps: false,
-      maxInlineAttributesLineLength: 60,
-    });
     return (
       <div>
         <h1 style={stylesheet.source.h1}>Story Source</h1>
-        <SyntaxHighlighter language="jsx">{stringified}</SyntaxHighlighter>
+        <Pre>
+          {React.Children.map(children, (root, idx) => (
+            <Node
+              key={idx} // eslint-disable-line react/no-array-index-key
+              node={root}
+              depth={0}
+              maxPropsIntoLine={maxPropsIntoLine}
+              maxPropObjectKeys={maxPropObjectKeys}
+              maxPropArrayLength={maxPropArrayLength}
+              maxPropStringLength={maxPropStringLength}
+            />
+          ))}
+        </Pre>
       </div>
     );
   }
@@ -417,6 +433,7 @@ Story.propTypes = {
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   components: PropTypes.shape({}),
+  maxPropsIntoLine: PropTypes.number.isRequired,
   maxPropObjectKeys: PropTypes.number.isRequired,
   maxPropArrayLength: PropTypes.number.isRequired,
   maxPropStringLength: PropTypes.number.isRequired,

@@ -45,6 +45,8 @@
     "memoizerific": "^1.11.3",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-draggable": "^3.1.1",
     "react-lifecycles-compat": "^3.0.4",
     "react-modal": "^3.8.1",
@@ -55,10 +57,6 @@
   "devDependencies": {
     "terser-webpack-plugin": "^1.2.1",
     "webpack": "^4.28.3"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
   },
   "publishConfig": {
     "access": "public"

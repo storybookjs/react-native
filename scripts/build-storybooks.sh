@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # This builds all the example storybooks for running chromatic on your dev machine
 
-examples=(angular-cli ember-cli cra-kitchen-sink html-kitchen-sink marko-cli mithril-kitchen-sink polymer-cli preact-kitchen-sink vue-kitchen-sink svelte-kitchen-sink official-storybook riot-kitchen-sink)
+examples=(angular-cli ember-cli cra-kitchen-sink cra-ts-kitchen-sink html-kitchen-sink marko-cli mithril-kitchen-sink polymer-cli preact-kitchen-sink vue-kitchen-sink svelte-kitchen-sink official-storybook riot-kitchen-sink)
 
 for example in "${examples[@]}"
 do

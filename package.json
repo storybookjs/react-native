@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "4.2.0-alpha.10",
+  "version": "5.0.0-debug.1",
   "private": true,
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "publish": "lerna publish --exact --concurrency 1 --force-publish",
     "publish:next": "npm run publish -- --npm-tag=next",
+    "publish:debug": "npm run publish -- --npm-tag=debug --no-push",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "yarn --cwd examples/official-storybook storybook",
     "test": "node ./scripts/test.js",
@@ -73,7 +74,7 @@
     "babel-loader": "^8.0.4",
     "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-plugin-emotion": "^10.0.5",
-    "babel-plugin-macros": "^2.4.4",
+    "babel-plugin-macros": "^2.4.5",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-preset-vue": "^2.0.2",
     "chalk": "^2.4.1",
@@ -120,6 +121,8 @@
     "npmlog": "^4.1.2",
     "prettier": "^1.14.3",
     "raf": "^3.4.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-test-renderer": "^16.7.0",
     "regenerator-runtime": "^0.12.1",
     "remark-cli": "^6.0.0",

@@ -1,3 +1,46 @@
+## 4.2.0-alpha.11 (January 9, 2019)
+
+### Maintenance
+
+* Typescript: Add TypeScript CRA example ([#5120](https://github.com/storybooks/storybook/pull/5120))
+* Typescript: Migrate @storybook/channel-postmessage ([#5154](https://github.com/storybooks/storybook/pull/5154))
+* Typescript: Migrate @storybook/client-logger ([#5151](https://github.com/storybooks/storybook/pull/5151))
+
+### Dependency Upgrades
+
+* Bump @babel/cli from 7.2.0 to 7.2.3 ([#5178](https://github.com/storybooks/storybook/pull/5178))
+* Bump babel-plugin-macros from 2.4.4 to 2.4.5 ([#5177](https://github.com/storybooks/storybook/pull/5177))
+* Bump babel-preset-react-app from 6.1.0 to 7.0.0 ([#5176](https://github.com/storybooks/storybook/pull/5176))
+* Bump interpret from 1.1.0 to 1.2.0 ([#5175](https://github.com/storybooks/storybook/pull/5175))
+* Bump file-loader from 2.0.0 to 3.0.1 ([#5174](https://github.com/storybooks/storybook/pull/5174))
+* Bump mini-css-extract-plugin from 0.4.5 to 0.5.0 ([#5173](https://github.com/storybooks/storybook/pull/5173))
+* Bump webpack-cli from 3.2.0 to 3.2.1 ([#5172](https://github.com/storybooks/storybook/pull/5172))
+* Bump marko from 4.14.12 to 4.14.15 ([#5157](https://github.com/storybooks/storybook/pull/5157))
+* Bump @types/jest from 23.3.10 to 23.3.12 ([#5158](https://github.com/storybooks/storybook/pull/5158))
+* Bump @angular/compiler from 7.1.3 to 7.1.4 ([#5159](https://github.com/storybooks/storybook/pull/5159))
+* Bump dotenv-webpack from 1.5.7 to 1.6.0 ([#5160](https://github.com/storybooks/storybook/pull/5160))
+* Bump babel-plugin-macros from 2.4.3 to 2.4.4 ([#5161](https://github.com/storybooks/storybook/pull/5161))
+
+## 4.1.6 (January 9, 2019)
+
+### Bug Fixes
+
+* React: Fix react version backwards compatibility ([#5148](https://github.com/storybooks/storybook/pull/5148))
+* UI: fix highlightColor ([#5150](https://github.com/storybooks/storybook/pull/5150))
+* Core: Transpile addons.js with Babel for IE11 ([#5081](https://github.com/storybooks/storybook/pull/5081))
+
+### Maintenance
+
+* Add CORS headers to versions.json ([#5155](https://github.com/storybooks/storybook/pull/5155))
+
+### Dependency Upgrades
+
+* Bump puppeteer from 1.9.0 to 1.11.0 ([#5119](https://github.com/storybooks/storybook/pull/5119))
+
+## 4.1.5 (January 9, 2019)
+
+NPM failure, republishing as 4.1.6
+
 ## 4.2.0-alpha.10 (January 6, 2019)
 
 ### Features
