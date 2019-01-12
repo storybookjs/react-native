@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "4.2.0-alpha.10",
+  "version": "5.0.0-debug.1",
   "private": true,
   "repository": {
     "type": "git",
