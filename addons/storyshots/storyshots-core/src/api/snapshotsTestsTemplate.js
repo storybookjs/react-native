@@ -27,7 +27,9 @@ function snapshotTest({ item, asyncJest, framework, testMethod, testMethodParams
 
 function snapshotTestSuite({ item, suite, ...restParams }) {
   const { kind, children } = item;
+  // eslint-disable-next-line jest/valid-describe
   describe(suite, () => {
+    // eslint-disable-next-line jest/valid-describe
     describe(kind, () => {
       children.forEach(c => {
         snapshotTest({ item: c, ...restParams });

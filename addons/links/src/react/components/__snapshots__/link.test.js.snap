@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LinkTo render should render a link 1`] = `
-<RoutedLink
+<a
   href="http://localhost/?id=foo-bar"
   onClick={[Function]}
 />

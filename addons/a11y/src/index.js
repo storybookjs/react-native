@@ -22,13 +22,13 @@ const report = input => {
   channel.emit(EVENTS.RESULT, input);
 };
 
-const run = ({ element, ...o }) => {
+const run = o => {
   progress = progress.then(() => {
     axe.reset();
     if (o) {
       axe.configure(o);
     }
-    return axe.run(element || getElement()).then(report);
+    return axe.run(getElement()).then(report);
   });
 };
 

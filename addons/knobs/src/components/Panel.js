@@ -135,9 +135,8 @@ export default class KnobPanel extends PureComponent {
 
   render() {
     const { knobs } = this.state;
-    const { active } = this.props;
-
-    if (!active) {
+    const { active: panelActive } = this.props;
+    if (!panelActive) {
       return null;
     }
 
@@ -146,50 +145,26 @@ export default class KnobPanel extends PureComponent {
 
     const knobKeysArray = Object.keys(knobs).filter(key => knobs[key].used);
 
-    knobKeysArray
-      .filter(key => knobs[key].groupId)
-      .forEach(key => {
-        const knobKeyGroupId = knobs[key].groupId;
-        groupIds.push(knobKeyGroupId);
-        groups[knobKeyGroupId] = {
-          render: ({ active: groupActive, selected }) => (
-            <TabWrapper active={groupActive || selected === DEFAULT_GROUP_ID}>
-              <PropForm
-                // false positive
-                // eslint-disable-next-line no-use-before-define
-                knobs={knobsArray.filter(knob => knob.groupId === knobKeyGroupId)}
-                onFieldChange={this.handleChange}
-                onFieldClick={this.handleClick}
-              />
-            </TabWrapper>
-          ),
-          title: knobKeyGroupId,
-        };
-      });
-
-    groups[DEFAULT_GROUP_ID] = {
-      render: ({ active: groupActive }) => {
-        // false positive
-        // eslint-disable-next-line no-use-before-define
-        const defaultKnobs = knobsArray.filter(
-          knob => !knob.groupId || knob.groupId === DEFAULT_GROUP_ID
-        );
-
-        if (defaultKnobs.length === 0) {
-          return null;
-        }
-        return (
-          <TabWrapper active={groupActive}>
+    knobKeysArray.forEach(key => {
+      const knobKeyGroupId = knobs[key].groupId || DEFAULT_GROUP_ID;
+      groupIds.push(knobKeyGroupId);
+      groups[knobKeyGroupId] = {
+        render: ({ active }) => (
+          <TabWrapper key={knobKeyGroupId} active={active}>
             <PropForm
-              knobs={defaultKnobs}
+              // false positive
+              // eslint-disable-next-line no-use-before-define
+              knobs={knobsArray.filter(
+                knob => (knob.groupId || DEFAULT_GROUP_ID) === knobKeyGroupId
+              )}
               onFieldChange={this.handleChange}
               onFieldClick={this.handleClick}
             />
           </TabWrapper>
-        );
-      },
-      title: DEFAULT_GROUP_ID,
-    };
+        ),
+        title: knobKeyGroupId,
+      };
+    });
 
     const knobsArray = knobKeysArray.map(key => knobs[key]);
 
@@ -197,11 +172,12 @@ export default class KnobPanel extends PureComponent {
       return <Placeholder>NO KNOBS</Placeholder>;
     }
 
+    const entries = Object.entries(groups);
     return (
       <PanelWrapper>
-        {groupIds.length > 0 ? (
+        {entries.length > 1 ? (
           <TabsState>
-            {Object.entries(groups).map(([k, v]) => (
+            {entries.map(([k, v]) => (
               <div id={k} key={k} title={v.title}>
                 {v.render}
               </div>
@@ -232,7 +208,7 @@ KnobPanel.propTypes = {
     removeListener: PropTypes.func,
   }).isRequired,
   api: PropTypes.shape({
-    onStory: PropTypes.func,
+    on: PropTypes.func,
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,
   }).isRequired,

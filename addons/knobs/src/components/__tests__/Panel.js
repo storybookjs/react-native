@@ -1,8 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { STORY_CHANGED } from '@storybook/core-events';
+import { TabsState } from '@storybook/components';
+
 import Panel from '../Panel';
 import { CHANGE, SET } from '../../shared';
+import PropForm from '../PropForm';
 
 const createTestChannel = () => ({
   on: jest.fn(),
@@ -11,6 +14,14 @@ const createTestChannel = () => ({
 const createTestApi = () => ({
   on: jest.fn(),
   emit: jest.fn(),
+});
+
+// React.memo in Tabs is causing problems with enzyme, probably
+// due to https://github.com/airbnb/enzyme/issues/1875, so this
+// is a workaround
+jest.mock('react', () => {
+  const r = jest.requireActual('react');
+  return { ...r, memo: x => x };
 });
 
 describe('Panel', () => {
@@ -52,7 +63,6 @@ describe('Panel', () => {
         },
         getQueryParam: key => testQueryParams[key],
         setQueryParams: jest.fn(),
-        onStory: jest.fn(),
       };
 
       shallow(<Panel channel={testChannel} api={testApi} active />);
@@ -170,7 +180,7 @@ describe('Panel', () => {
     const testApi = {
       getQueryParam: jest.fn(),
       setQueryParams: jest.fn(),
-      onStory: jest.fn(() => () => {}),
+      on: jest.fn(() => () => {}),
     };
 
     it('should have no tabs when there are no groupIds', () => {
@@ -227,12 +237,11 @@ describe('Panel', () => {
           // TabsState will replace the <div/> that Panel actually makes with a <Tab/>
           .find('Tab')
           .map(child => child.prop('name'));
-        // the "ALL" tab is always defined
-        expect(titles).toEqual(['foo', 'bar', 'ALL']);
+        expect(titles).toEqual(['foo', 'bar']);
 
         const knobs = wrapper.find(PropForm).map(propForm => propForm.prop('knobs'));
         // but it should not have its own PropForm in this case
-        expect(knobs).toHaveLength(titles.length - 1);
+        expect(knobs).toHaveLength(titles.length);
         expect(knobs).toMatchSnapshot();
       } finally {
         wrapper.unmount();

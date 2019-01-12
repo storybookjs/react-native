@@ -3,8 +3,8 @@ import { navigator } from 'global';
 let _isWindows = false;
 let _isMacintosh = false;
 let _isLinux = false;
-let _locale: string | undefined = undefined;
-let _language: string | undefined = undefined;
+let _locale: string | undefined;
+let _language: string | undefined;
 
 export const enum Platform {
   Mac,
@@ -31,8 +31,4 @@ export const enum OperatingSystem {
   Linux = 3,
 }
 
-export const OS = _isMacintosh
-  ? OperatingSystem.Macintosh
-  : _isWindows
-  ? OperatingSystem.Windows
-  : OperatingSystem.Linux;
+export const OS = _isMacintosh ? OperatingSystem.Macintosh : _isWindows ? OperatingSystem.Windows : OperatingSystem.Linux;

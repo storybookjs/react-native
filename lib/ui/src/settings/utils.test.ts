@@ -1,40 +1,40 @@
 import * as utils from './utils';
-
+const ev = (attr: object) => new KeyboardEvent('keydown', { ...attr });
 describe('parseKey', () => {
   test('it handles alt key inputs', () => {
-    const output = utils.parseKey({ altKey: true });
+    const output = utils.parseKey(ev({ altKey: true }));
     expect(output).toEqual(['alt']);
   });
   test('it handles ctrl key inputs', () => {
-    const output = utils.parseKey({ ctrlKey: true });
+    const output = utils.parseKey(ev({ ctrlKey: true }));
     expect(output).toEqual(['control']);
   });
   test('it handles meta key inputs', () => {
-    const output = utils.parseKey({ metaKey: true });
+    const output = utils.parseKey(ev({ metaKey: true }));
     expect(output).toEqual(['meta']);
   });
   test('it handles enter key inputs', () => {
-    const output = utils.parseKey({ key: 'Enter' });
+    const output = utils.parseKey(ev({ key: 'Enter' }));
     expect(output).toEqual([]);
   });
   test('it handles space bar inputs', () => {
-    const output = utils.parseKey({ key: ' ' });
+    const output = utils.parseKey(ev({ key: ' ' }));
     expect(output).toEqual(['space']);
   });
   test('it handles escape inputs', () => {
-    const output = utils.parseKey({ key: 'Escape' });
+    const output = utils.parseKey(ev({ key: 'Escape' }));
     expect(output).toEqual(['escape']);
   });
   test('it handles shift key inputs', () => {
-    const output = utils.parseKey({ shiftKey: true });
+    const output = utils.parseKey(ev({ shiftKey: true }));
     expect(output).toEqual(['shift']);
   });
   test('it capitalizes a letter key through', () => {
-    const output = utils.parseKey({ key: 'a' });
+    const output = utils.parseKey(ev({ key: 'a' }));
     expect(output).toEqual(['A']);
   });
   test('it passes regular key through', () => {
-    const output = utils.parseKey({ key: '1' });
+    const output = utils.parseKey(ev({ key: '1' }));
     expect(output).toEqual(['1']);
   });
 });
@@ -57,6 +57,8 @@ describe('keyToSymbol', () => {
     const result = utils.keyToSymbol('Enter');
     expect(result).toBe('');
   });
+
+  // tslint:disable-next-line:quotemark
   test("' ' returns SPACE", () => {
     const result = utils.keyToSymbol(' ');
     expect(result).toEqual('SPACE');
