@@ -1,3 +1,30 @@
+## 5.0.0-alpha.0 (January 13, 2019)
+
+### Breaking Changes
+
+* Core: Simplify custom webpack config  ([#4927](https://github.com/storybooks/storybook/pull/4927))
+* UI: Storybook 5.0 UI and addons overhaul ([#5222](https://github.com/storybooks/storybook/pull/5222))
+
+### Features
+
+* Core: Use new story format in official storybook ([#5058](https://github.com/storybooks/storybook/pull/5058))
+* UI: keyboard shortcuts ([#4257](https://github.com/storybooks/storybook/pull/4257))
+
+### Bug Fixes
+
+* React: Merge CRA2 webpack plugins ([#5126](https://github.com/storybooks/storybook/pull/5126))
+
+### Dependency Upgrades
+
+* Bump eslint-plugin-jest from 22.1.2 to 22.1.3 ([#5215](https://github.com/storybooks/storybook/pull/5215))
+* Bump eslint from 5.11.0 to 5.12.0 ([#5216](https://github.com/storybooks/storybook/pull/5216))
+* Bump jscodeshift from 0.5.1 to 0.6.2 ([#5213](https://github.com/storybooks/storybook/pull/5213))
+* Bump ember-cli from 3.6.1 to 3.7.0 ([#5203](https://github.com/storybooks/storybook/pull/5203))
+* Bump react-dev-utils from 7.0.0 to 7.0.1 ([#5202](https://github.com/storybooks/storybook/pull/5202))
+* Bump ember-cli from 3.6.0 to 3.6.1 ([#5188](https://github.com/storybooks/storybook/pull/5188))
+* Bump terser-webpack-plugin from 1.1.0 to 1.2.1 ([#5190](https://github.com/storybooks/storybook/pull/5190))
+* Bump chalk from 2.4.1 to 2.4.2 ([#5191](https://github.com/storybooks/storybook/pull/5191))
+
 ## 4.2.0-alpha.11 (January 9, 2019)
 
 ### Maintenance
