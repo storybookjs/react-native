@@ -38,6 +38,6 @@
     "enzyme-to-json": "^3.3.4",
     "jest": "^23.6.0",
     "jest-emotion": "^10.0.5",
-    "react-scripts": "^2.1.2"
+    "react-scripts": "^2.1.3"
   }
 }
