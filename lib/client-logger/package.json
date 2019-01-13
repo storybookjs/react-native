@@ -1,6 +1,6 @@
 {
   "name": "@storybook/client-logger",
-  "version": "5.0.0-debug.3",
+  "version": "5.0.0-alpha.0",
   "description": "",
   "keywords": [
     "storybook"
