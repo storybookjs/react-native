@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styled from '@emotion/styled';
+
+import { Icons } from '@storybook/components';
 
 const impactColors = {
   minor: '#f1c40f',
@@ -36,16 +37,15 @@ const Status = styled.div(({ passes, impact }) => ({
   display: 'inline-flex',
   justifyContent: 'center',
   alignItems: 'center',
-  color: '#fff',
   textAlign: 'center',
   flex: '0 0 16px',
-  backgroundColor: passes ? impactColors.success : impactColors[impact],
+  color: passes ? impactColors.success : impactColors[impact],
 }));
 
 const Rule = ({ rule, passes }) => (
   <Item>
     <Status passes={passes || undefined} impact={rule.impact}>
-      {passes ? '✔' : '✘'}
+      {passes ? <Icons icon="check" /> : <Icons icon="cross" />}
     </Status>
     <Message>{rule.message}</Message>
   </Item>

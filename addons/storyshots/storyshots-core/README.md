@@ -13,7 +13,7 @@ To use StoryShots, you must use your existing Storybook stories as the input for
 Add the following module into your app.
 
 ```sh
-npm install --save-dev @storybook/addon-storyshots
+yarn add @storybook/addon-storyshots --dev
 ```
 
 ## Configure your app for Jest
@@ -59,7 +59,7 @@ You can do this with a Babel [plugin](https://github.com/smrq/babel-plugin-requi
 First, install it:
 
 ```sh
-npm install --save-dev babel-plugin-require-context-hook
+yarn add babel-plugin-require-context-hook --dev
 ```
 
 Next, it needs to be registered and loaded before each test. To register it, create a file with the following register function `.jest/register-context.js`:
@@ -93,7 +93,7 @@ The plugin is only added to the test environment otherwise it could replace webp
 First, install it:
 
 ```sh
-npm install --save-dev require-context.macro
+yarn add require-context.macro --dev
 ```
 
 Now, inside of your Storybook config file, simply import the macro and run it in place of `require.context`, like so:
@@ -110,7 +110,7 @@ StoryShots addon for React is dependent on [react-test-renderer](https://github.
 [doesn't](#deps-issue) install it, so you need to install it separately.
 
 ```sh
-npm install --save-dev react-test-renderer
+yarn add react-test-renderer --dev
 ```
 
 ### Configure Jest for Angular
@@ -118,7 +118,7 @@ StoryShots addon for Angular is dependent on [jest-preset-angular](https://githu
 [doesn't](#deps-issue) install it, so you need to install it separately.
 
 ```sh
-npm install --save-dev jest-preset-angular
+yarn add jest-preset-angular
 ```
 
 If you already use Jest for testing your angular app - probably you already have the needed jest configuration.
@@ -139,9 +139,9 @@ module.exports = {
 StoryShots addon for Vue is dependent on [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor), but
 [doesn't](#deps-issue) install it, so you need to install it separately.
 
- ```sh
- npm install --save-dev jest-vue-preprocessor
- ```
+```sh
+yarn add jest-vue-preprocessor
+```
 
 If you already use Jest for testing your vue app - probably you already have the needed jest configuration.
 Anyway you can add these lines to your jest config:
@@ -162,9 +162,9 @@ module.exports = {
 StoryShots addon for Preact is dependent on [preact-render-to-json](https://github.com/nathancahill/preact-render-to-json), but
 [doesn't](#deps-issue) install it, so you need to install it separately.
 
- ```sh
- npm install --save-dev preact-render-to-json
- ```
+```sh
+yarn add preact-render-to-json --dev
+```
 
 ### <a name="deps-issue"></a>Why don't we install dependencies of each framework ?
 Storyshots addon is currently supporting React, Angular and Vue. Each framework needs its own packages to be integrated with Jest. We don't want people that use only React will need to bring other dependencies that do not make sense for them.
@@ -325,7 +325,7 @@ initStoryshots({
   }) => {
     const converter = new Stories2SnapsConverter();
     const snapshotFilename = converter.getSnapshotFileName(context);
-    const storyElement = story.render(context);
+    const storyElement = story.render();
 
     // mount the story
     const tree = mount(storyElement);
@@ -612,7 +612,7 @@ import toJson from 'enzyme-to-json';
 initStoryshots({
   test: ({ story, context }) => {
     const snapshotFileName = getSnapshotFileName(context);
-    const storyElement = story.render(context);
+    const storyElement = story.render();
     const shallowTree = shallow(storyElement);
 
     if (snapshotFileName) {

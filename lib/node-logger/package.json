@@ -1,6 +1,6 @@
 {
   "name": "@storybook/node-logger",
-  "version": "4.2.0-alpha.11",
+  "version": "5.0.0-debug.3",
   "description": "",
   "keywords": [
     "storybook"
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "core-js": "^2.5.7",
+    "core-js": "^2.6.1",
     "npmlog": "^4.1.2",
     "pretty-hrtime": "^1.0.3",
     "regenerator-runtime": "^0.12.1"

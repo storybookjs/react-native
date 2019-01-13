@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Typography/Heading types 1`] = `
+<div>
+  <div
+    class="css-ys6tvt-Holder eu04e0w0"
+  >
+    <header
+      class="css-yfonvn-Container e14vg0o61"
+    >
+      <h1
+        class="css-4bak20-getElement e14vg0o60"
+      >
+        <span>
+          DEFAULT WITH ALL CAPS
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-ys6tvt-Holder eu04e0w0"
+  >
+    <header
+      class="css-yfonvn-Container e14vg0o61"
+    >
+      <h1
+        class="css-4bak20-getElement e14vg0o60"
+      >
+        <span>
+          THIS LONG DEFAULT WITH ALL CAPS & SUB
+        </span>
+        <sub>
+          With a great sub
+        </sub>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-ys6tvt-Holder eu04e0w0"
+  >
+    <header
+      class="css-yfonvn-Container e14vg0o61"
+    >
+      <h1
+        class="css-4bak20-getElement e14vg0o60"
+      >
+        <span>
+          page type
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-ys6tvt-Holder eu04e0w0"
+  >
+    <header
+      class="css-yfonvn-Container e14vg0o61"
+    >
+      <h1
+        class="css-16jm7o7-getElement e14vg0o60"
+      >
+        <span>
+          secondary type
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-ys6tvt-Holder eu04e0w0"
+  >
+    <header
+      class="css-yfonvn-Container e14vg0o61"
+    >
+      <h1
+        class="css-4bak20-getElement e14vg0o60"
+      >
+        <span>
+          page type
+        </span>
+        <sub>
+          With a sub
+        </sub>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-ys6tvt-Holder eu04e0w0"
+  >
+    <header
+      class="css-yfonvn-Container e14vg0o61"
+    >
+      <h1
+        class="css-14lrs4x-getElement e14vg0o60"
+      >
+        <span>
+          section type
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-ys6tvt-Holder eu04e0w0"
+  >
+    <header
+      class="css-yfonvn-Container e14vg0o61"
+    >
+      <h1
+        class="css-vn0zam-getElement e14vg0o60"
+      >
+        <span>
+          section type
+        </span>
+      </h1>
+    </header>
+    <header
+      class="css-yfonvn-Container e14vg0o61"
+    >
+      <h1
+        class="css-17iy8tu-getElement e14vg0o60"
+      >
+        <span>
+          section type
+        </span>
+      </h1>
+    </header>
+  </div>
+</div>
+`;

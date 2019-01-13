@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-a11y",
-  "version": "4.2.0-alpha.11",
+  "version": "5.0.0-debug.3",
   "description": "a11y addon for storybook",
   "keywords": [
     "a11y",
@@ -25,19 +25,19 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/styled": "^0.10.6",
-    "@storybook/addons": "4.2.0-alpha.11",
-    "@storybook/client-logger": "4.2.0-alpha.11",
-    "@storybook/components": "4.2.0-alpha.11",
-    "@storybook/core-events": "4.2.0-alpha.11",
+    "@emotion/styled": "^10.0.5",
+    "@storybook/addons": "5.0.0-debug.3",
+    "@storybook/client-logger": "5.0.0-debug.3",
+    "@storybook/components": "5.0.0-debug.3",
+    "@storybook/core-events": "5.0.0-debug.3",
     "axe-core": "^3.1.2",
-    "core-js": "^2.5.7",
+    "core-js": "^2.6.1",
     "global": "^4.3.2",
-    "prop-types": "^15.6.2"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "memoizerific": "^1.11.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "util-deprecate": "^1.0.2"
   },
   "publishConfig": {
     "access": "public"

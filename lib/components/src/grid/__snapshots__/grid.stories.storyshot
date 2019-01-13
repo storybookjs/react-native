@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Grid col 1`] = `
+Array [
+  <span
+    class="css-1bdt3um-PlaceholderInline ea0irds1"
+    color="silver"
+  />,
+  <div
+    class="css-p5yo87-Container ecq4n7c0"
+  >
+    <span
+      class="css-ol8bih-PlaceholderInline ea0irds1"
+    />
+    <span
+      class="css-ol8bih-PlaceholderInline ea0irds1"
+    />
+    <span
+      class="css-ol8bih-PlaceholderInline ea0irds1"
+    />
+  </div>,
+  <span
+    class="css-1bdt3um-PlaceholderInline ea0irds1"
+    color="silver"
+  />,
+]
+`;
+
+exports[`Storyshots Components|Grid col outer 1`] = `
+Array [
+  <span
+    class="css-1bdt3um-PlaceholderInline ea0irds1"
+    color="silver"
+  />,
+  <div
+    class="css-1xrh8rg-Container ecq4n7c0"
+  >
+    <span
+      class="css-ol8bih-PlaceholderInline ea0irds1"
+    />
+    <span
+      class="css-ol8bih-PlaceholderInline ea0irds1"
+    />
+    <span
+      class="css-ol8bih-PlaceholderInline ea0irds1"
+    />
+  </div>,
+  <span
+    class="css-1bdt3um-PlaceholderInline ea0irds1"
+    color="silver"
+  />,
+]
+`;
+
+exports[`Storyshots Components|Grid row 1`] = `
+Array [
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    color="silver"
+  />,
+  <div
+    class="css-1wesixd-Container ecq4n7c0"
+  >
+    <div
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
+    />
+    <div
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
+    />
+    <div
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
+    />
+  </div>,
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    color="silver"
+  />,
+]
+`;
+
+exports[`Storyshots Components|Grid row multiply 1`] = `
+Array [
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    color="silver"
+  />,
+  <div
+    class="css-6g2fmt-Container ecq4n7c0"
+  >
+    <div
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
+    />
+    <div
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
+    />
+    <div
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
+    />
+  </div>,
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    color="silver"
+  />,
+]
+`;
+
+exports[`Storyshots Components|Grid row outer 1`] = `
+Array [
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    color="silver"
+  />,
+  <div
+    class="css-cfwqaz-Container ecq4n7c0"
+  >
+    <div
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
+    />
+    <div
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
+    />
+    <div
+      class="css-19zkc89-PlaceholderBlock ea0irds0"
+    />
+  </div>,
+  <div
+    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    color="silver"
+  />,
+]
+`;

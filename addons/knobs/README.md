@@ -16,7 +16,7 @@ This is how Knobs look like:
 First of all, you need to install knobs into your project as a dev dependency.
 
 ```sh
-npm install @storybook/addon-knobs --save-dev
+yarn add @storybook/addon-knobs --dev
 ```
 
 Then, configure it as an addon by adding it to your `addons.js` file (located in the Storybook config directory).
@@ -418,4 +418,10 @@ If you are using typescript, make sure you have the type definitions installed f
 -   node
 -   react
 
-You can install them using `npm install -save @types/node @types/react`, assuming you are using Typescript >2.0.
+You can install them using:
+*assuming you are using Typescript >2.0.*
+
+```sh
+yarn add @types/node @types/react --dev
+```
+

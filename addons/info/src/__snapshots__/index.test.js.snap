@@ -1213,7 +1213,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
               <div
                 key="TestComponent_0"
               >
-                <h2
+                <h3
                   style={
                     Object {
                       "margin": "20px 0 0 0",
@@ -1223,8 +1223,8 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                   "
                   TestComponent
                   " Component
-                </h2>
-                <Component
+                </h3>
+                <TableComponent
                   excludedPropTypes={Array []}
                   maxPropArrayLength={3}
                   maxPropObjectKeys={3}
@@ -1243,7 +1243,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                       No propTypes defined!
                     </small>
                   </PropTable>
-                </Component>
+                </TableComponent>
               </div>
             </div>
           </div>
@@ -2560,7 +2560,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
               <div
                 key="TestComponent_0"
               >
-                <h2
+                <h3
                   style={
                     Object {
                       "margin": "20px 0 0 0",
@@ -2570,8 +2570,8 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                   "
                   TestComponent
                   " Component
-                </h2>
-                <Component
+                </h3>
+                <TableComponent
                   excludedPropTypes={Array []}
                   maxPropArrayLength={3}
                   maxPropObjectKeys={3}
@@ -2590,7 +2590,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                       No propTypes defined!
                     </small>
                   </PropTable>
-                </Component>
+                </TableComponent>
               </div>
             </div>
           </div>
@@ -2688,9 +2688,7 @@ exports[`addon Info should render component description if story kind matches co
                   "padding": 0,
                 }
               }
-            >
-              Basic test
-            </h2>
+            />
           </div>
         </div>
       </div>
@@ -3919,9 +3917,7 @@ exports[`addon Info should render component description if story name matches co
                   "padding": 0,
                 }
               }
-            >
-              TestComponent
-            </h2>
+            />
           </div>
         </div>
       </div>

@@ -9,18 +9,14 @@
   </template>
   <script>
     class PolymerPlaygroundApp extends Polymer.Element {
-      static get is() { return 'polymer-playground-app'; }
+      static get is() {
+        return 'polymer-playground-app';
+      }
+
       static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: 'polymer-playground-app'
-          },
-          title: String,
-        };
+        return { prop1: { type: String, value: 'polymer-playground-app' }, title: String };
       }
     }
-
     customElements.define(PolymerPlaygroundApp.is, PolymerPlaygroundApp);
   </script>
 </dom-module>

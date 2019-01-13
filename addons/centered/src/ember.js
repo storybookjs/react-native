@@ -23,3 +23,7 @@ export default function(storyFn) {
     element: innerElement,
   };
 }
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline();
+}

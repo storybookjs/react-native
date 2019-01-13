@@ -3,7 +3,7 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import { Input } from '@storybook/components';
+import { Form } from '@storybook/components';
 
 const base = {
   boxSizing: 'border-box',
@@ -69,7 +69,7 @@ class NumberType extends React.Component {
         <RangeLabel>{`${knob.value} / ${knob.max}`}</RangeLabel>
       </RangeWrapper>
     ) : (
-      <Input
+      <Form.Input
         value={knob.value}
         type="number"
         min={knob.min}

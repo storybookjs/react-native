@@ -87,7 +87,7 @@ export default function PropTable(props) {
               {row.defaultValue === undefined ? (
                 '-'
               ) : (
-                <PropVal val={row.defaultValue} {...propValProps} />
+                <PropVal val={row.defaultValue} {...propValProps} valueStyles={{}} />
               )}
             </Td>
             <Td>{multiLineText(row.description)}</Td>

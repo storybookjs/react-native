@@ -42,7 +42,7 @@ export const imageSnapshot = (customConfig = {}) => {
   }
 
   const testFn = async ({ context }) => {
-    const { kind, framework, story } = context;
+    const { kind, framework, name } = context;
     if (framework === 'rn') {
       // Skip tests since we de not support RN image snapshots.
       logger.error(
@@ -51,11 +51,11 @@ export const imageSnapshot = (customConfig = {}) => {
 
       return;
     }
-    const url = constructUrl(storybookUrl, kind, story);
+    const url = constructUrl(storybookUrl, kind, name);
 
     if (!browser || !page) {
       logger.error(
-        `Error when generating image snapshot for test ${kind} - ${story} : It seems the headless browser is not running.`
+        `Error when generating image snapshot for test ${kind} - ${name} : It seems the headless browser is not running.`
       );
 
       throw new Error('no-headless-browser-running');

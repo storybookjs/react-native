@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channel-postmessage",
-  "version": "4.2.0-alpha.11",
+  "version": "5.0.0-debug.3",
   "description": "",
   "keywords": [
     "storybook"
@@ -20,9 +20,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "4.2.0-alpha.11",
+    "@storybook/channels": "5.0.0-debug.3",
     "global": "^4.3.2",
-    "json-stringify-safe": "^5.0.1"
+    "telejson": "^1.0.0"
   },
   "devDependencies": {
     "@types/json-stringify-safe": "^5.0.0"

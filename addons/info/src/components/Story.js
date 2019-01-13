@@ -8,7 +8,6 @@ import global from 'global';
 import { baseFonts } from '@storybook/components/dist/theme';
 
 import marksy from 'marksy';
-
 import Node from './Node';
 import { Pre } from './markdown';
 
@@ -82,6 +81,12 @@ const stylesheetBase = {
       padding: 0,
       fontWeight: 400,
       fontSize: '22px',
+    },
+    h3: {
+      margin: '0 0 10px 0',
+      padding: 0,
+      fontWeight: 400,
+      fontSize: '18px',
     },
     body: {
       borderBottom: '1px solid #eee',
@@ -227,7 +232,7 @@ class Story extends Component {
     return (
       <div style={stylesheet.header.body}>
         <h1 style={stylesheet.header.h1}>{context.kind}</h1>
-        <h2 style={stylesheet.header.h2}>{context.story}</h2>
+        <h2 style={stylesheet.header.h2}>{context.name}</h2>
       </div>
     );
   }
@@ -300,7 +305,7 @@ class Story extends Component {
         <Pre>
           {React.Children.map(children, (root, idx) => (
             <Node
-              key={idx}
+              key={idx} // eslint-disable-line react/no-array-index-key
               node={root}
               depth={0}
               maxPropsIntoLine={maxPropsIntoLine}
@@ -379,7 +384,7 @@ class Story extends Component {
     propTables = array.map((type, i) => (
       // eslint-disable-next-line react/no-array-index-key
       <div key={`${getName(type)}_${i}`}>
-        <h2 style={stylesheet.propTableHead}>"{getName(type)}" Component</h2>
+        <h3 style={stylesheet.propTableHead}>"{getName(type)}" Component</h3>
         <this.props.PropTable
           type={type}
           maxPropObjectKeys={maxPropObjectKeys}
@@ -416,7 +421,7 @@ Story.displayName = 'Story';
 Story.propTypes = {
   context: PropTypes.shape({
     kind: PropTypes.string,
-    story: PropTypes.string,
+    name: PropTypes.string,
   }),
   info: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   propTables: PropTypes.arrayOf(PropTypes.func),

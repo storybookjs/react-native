@@ -14,6 +14,7 @@ const Main = props => (
   />
 );
 
+// eslint-disable-next-line react/prop-types
 const Title = ({ children, ...props }) => <h1 {...props}>{children}</h1>;
 
 const Note = props => (
@@ -40,6 +41,7 @@ const InlineCode = props => (
   />
 );
 
+// eslint-disable-next-line react/prop-types
 const Link = ({ children, href, ...props }) => (
   <a
     href={href}
@@ -55,6 +57,7 @@ const Link = ({ children, href, ...props }) => (
   </a>
 );
 
+// eslint-disable-next-line react/prop-types
 const NavButton = ({ children, ...props }) => (
   <button
     {...props}

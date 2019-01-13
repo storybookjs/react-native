@@ -1,72 +1,63 @@
-/* eslint-disable no-underscore-dangle */
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import deepEqual from 'deep-equal';
-import { CYCLIC_KEY, retrocycle } from '../../lib';
-import { isObject } from '../../lib/util';
+import deepEqual from 'fast-deep-equal';
+
+import { STORY_RENDERED } from '@storybook/core-events';
 
 import ActionLoggerComponent from '../../components/ActionLogger';
 import { EVENT_ID } from '../..';
 
 export default class ActionLogger extends React.Component {
-  constructor(props, ...args) {
-    super(props, ...args);
-    this.state = { actions: [] };
-    this._actionListener = action => this.addAction(action);
-    this._storyChangeListener = () => this.handleStoryChange();
-  }
+  state = { actions: [] };
 
   componentDidMount() {
-    const { channel, api } = this.props;
+    this.mounted = true;
+    const { api } = this.props;
 
-    channel.on(EVENT_ID, this._actionListener);
-    this.stopListeningOnStory = api.onStory(this._storyChangeListener);
+    api.on(EVENT_ID, this.addAction);
+    api.on(STORY_RENDERED, this.handleStoryChange);
   }
 
   componentWillUnmount() {
-    const { channel } = this.props;
+    this.mounted = false;
+    const { api } = this.props;
 
-    channel.removeListener(EVENT_ID, this._actionListener);
-    if (this.stopListeningOnStory) {
-      this.stopListeningOnStory();
-    }
+    api.off(STORY_RENDERED, this.handleStoryChange);
+    api.off(EVENT_ID, this.addAction);
   }
 
-  handleStoryChange() {
+  handleStoryChange = () => {
     const { actions } = this.state;
     if (actions.length > 0 && actions[0].options.clearOnStoryChange) {
       this.clearActions();
     }
-  }
+  };
 
-  addAction(action) {
+  addAction = action => {
     let { actions = [] } = this.state;
     actions = [...actions];
 
-    action.data.args = action.data.args.map(arg => retrocycle(arg)); // eslint-disable-line
-    const isCyclic = !!action.data.args.find(arg => isObject(arg) && arg[CYCLIC_KEY]);
     const previous = actions.length && actions[0];
 
-    if (previous && !isCyclic && deepEqual(previous.data, action.data, { strict: true })) {
+    if (previous && deepEqual(previous.data, action.data, { strict: true })) {
       previous.count++; // eslint-disable-line
     } else {
       action.count = 1; // eslint-disable-line
       actions.unshift(action);
     }
     this.setState({ actions: actions.slice(0, action.options.limit) });
-  }
+  };
 
-  clearActions() {
+  clearActions = () => {
     this.setState({ actions: [] });
-  }
+  };
 
   render() {
     const { actions = [] } = this.state;
     const { active } = this.props;
     const props = {
       actions,
-      onClear: () => this.clearActions(),
+      onClear: this.clearActions,
     };
     return active ? <ActionLoggerComponent {...props} /> : null;
   }
@@ -80,7 +71,7 @@ ActionLogger.propTypes = {
     removeListener: PropTypes.func,
   }).isRequired,
   api: PropTypes.shape({
-    onStory: PropTypes.func,
+    on: PropTypes.func,
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,
   }).isRequired,
