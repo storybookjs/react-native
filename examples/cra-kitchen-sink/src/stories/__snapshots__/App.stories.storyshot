@@ -10,7 +10,7 @@ exports[`Storyshots App full app 1`] = `
     <img
       alt="logo"
       class="App-logo"
-      src="logo.svg"
+      src="file-stub"
     />
     <h2>
       Welcome to React
