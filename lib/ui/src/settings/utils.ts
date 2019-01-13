@@ -1,8 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import { navigator } from 'global';
 import { objectOf, string } from 'prop-types';
-import { controlOrMetaKey, optionOrAltSymbol } from '@storybook/components/src/treeview/utils';
 import { get, setAll } from './persist';
+
+export const isMacLike = () => (navigator && navigator.platform ? !!navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) : false);
+export const controlOrMetaSymbol = () => (isMacLike() ? '⌘' : 'ctrl');
+export const controlOrMetaKey = () => (isMacLike() ? 'meta' : 'control');
+export const optionOrAltSymbol = () => (isMacLike() ? '⌥' : 'alt');
 
 export const isShortcutTaken = (arr1: string[], arr2: string[]): boolean => JSON.stringify(arr1) === JSON.stringify(arr2);
 
