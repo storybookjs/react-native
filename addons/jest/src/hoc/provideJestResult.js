@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { STORY_CHANGED } from '@storybook/core-events';
+import { ADD_TESTS } from '../shared';
 
 const provideTests = Component =>
   class TestProvider extends React.Component {
@@ -9,34 +11,37 @@ const provideTests = Component =>
         removeListener: PropTypes.func,
       }).isRequired,
       api: PropTypes.shape({
-        onStory: PropTypes.func,
+        on: PropTypes.func,
       }).isRequired,
       active: PropTypes.bool,
     };
 
     static defaultProps = {
-      active: true,
+      active: false,
     };
 
     state = {};
 
     componentDidMount() {
+      this.mounted = true;
       const { channel, api } = this.props;
 
-      this.stopListeningOnStory = api.onStory(() => {
-        this.onAddTests({});
+      this.stopListeningOnStory = api.on(STORY_CHANGED, () => {
+        const { kind, storyName, tests } = this.state;
+        if (this.mounted && (kind || storyName || tests)) {
+          this.onAddTests({});
+        }
       });
 
-      channel.on('storybook/tests/add_tests', this.onAddTests);
+      channel.on(ADD_TESTS, this.onAddTests);
     }
 
     componentWillUnmount() {
+      this.mounted = false;
       const { channel } = this.props;
 
-      if (this.stopListeningOnStory) {
-        this.stopListeningOnStory();
-      }
-      channel.removeListener('storybook/tests/add_tests', this.onAddTests);
+      this.stopListeningOnStory();
+      channel.removeListener(ADD_TESTS, this.onAddTests);
     }
 
     onAddTests = ({ kind, storyName, tests }) => {
@@ -45,7 +50,9 @@ const provideTests = Component =>
 
     render() {
       const { active } = this.props;
-      return active ? <Component {...this.state} /> : null;
+      const { tests } = this.state;
+
+      return active && tests ? <Component {...this.state} /> : null;
     }
   };
 

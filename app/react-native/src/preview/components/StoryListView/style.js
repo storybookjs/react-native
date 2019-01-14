@@ -10,6 +10,10 @@ export default {
   flex: {
     flex: 1,
   },
+  sectionList: {
+    flex: 1,
+    marginBottom: 40,
+  },
   header: {
     paddingVertical: 5,
   },

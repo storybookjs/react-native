@@ -13,7 +13,7 @@ To use StoryShots, you must use your existing Storybook stories as the input for
 Add the following module into your app.
 
 ```sh
-npm install --save-dev @storybook/addon-storyshots
+yarn add @storybook/addon-storyshots --dev
 ```
 
 ## Configure your app for Jest
@@ -52,14 +52,14 @@ other tools may lack this feature. Since Storyshot is running under Jest,
 we need to polyfill this functionality to work with Jest. The easiest
 way is to integrate it to babel.
 
-One of the possible babel plugins to
-polyfill this functionality might be
-[babel-plugin-require-context-hook](https://github.com/smrq/babel-plugin-require-context-hook).
+You can do this with a Babel [plugin](https://github.com/smrq/babel-plugin-require-context-hook) or [macro](https://github.com/storybooks/require-context.macro). If you're using `create-react-app` (v2 or above), you will use the macro.
+
+- *Plugin*
 
 First, install it:
 
 ```sh
-npm install --save-dev babel-plugin-require-context-hook
+yarn add babel-plugin-require-context-hook --dev
 ```
 
 Next, it needs to be registered and loaded before each test. To register it, create a file with the following register function `.jest/register-context.js`:
@@ -88,12 +88,29 @@ Finally, add the plugin to `.babelrc`:
 ```
 The plugin is only added to the test environment otherwise it could replace webpack's version of it.
 
+- *Macro*
+
+First, install it:
+
+```sh
+yarn add require-context.macro --dev
+```
+
+Now, inside of your Storybook config file, simply import the macro and run it in place of `require.context`, like so:
+
+```javascript
+import requireContext from 'require-context.macro';
+
+// const req = require.context('../stories', true, /.stories.js$/); <-- replaced
+const req = requireContext('../stories', true, /.stories.js$/);
+```
+
 ### Configure Jest for React
 StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but
 [doesn't](#deps-issue) install it, so you need to install it separately.
 
 ```sh
-npm install --save-dev react-test-renderer
+yarn add react-test-renderer --dev
 ```
 
 ### Configure Jest for Angular
@@ -101,7 +118,7 @@ StoryShots addon for Angular is dependent on [jest-preset-angular](https://githu
 [doesn't](#deps-issue) install it, so you need to install it separately.
 
 ```sh
-npm install --save-dev jest-preset-angular
+yarn add jest-preset-angular
 ```
 
 If you already use Jest for testing your angular app - probably you already have the needed jest configuration.
@@ -122,9 +139,9 @@ module.exports = {
 StoryShots addon for Vue is dependent on [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor), but
 [doesn't](#deps-issue) install it, so you need to install it separately.
 
- ```sh
- npm install --save-dev jest-vue-preprocessor
- ```
+```sh
+yarn add jest-vue-preprocessor
+```
 
 If you already use Jest for testing your vue app - probably you already have the needed jest configuration.
 Anyway you can add these lines to your jest config:
@@ -139,6 +156,14 @@ module.exports = {
   ],
   moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node'],
 };
+```
+
+### Configure Jest for Preact
+StoryShots addon for Preact is dependent on [preact-render-to-json](https://github.com/nathancahill/preact-render-to-json), but
+[doesn't](#deps-issue) install it, so you need to install it separately.
+
+```sh
+yarn add preact-render-to-json --dev
 ```
 
 ### <a name="deps-issue"></a>Why don't we install dependencies of each framework ?
@@ -300,7 +325,7 @@ initStoryshots({
   }) => {
     const converter = new Stories2SnapsConverter();
     const snapshotFilename = converter.getSnapshotFileName(context);
-    const storyElement = story.render(context);
+    const storyElement = story.render();
 
     // mount the story
     const tree = mount(storyElement);
@@ -587,7 +612,7 @@ import toJson from 'enzyme-to-json';
 initStoryshots({
   test: ({ story, context }) => {
     const snapshotFileName = getSnapshotFileName(context);
-    const storyElement = story.render(context);
+    const storyElement = story.render();
     const shallowTree = shallow(storyElement);
 
     if (snapshotFileName) {

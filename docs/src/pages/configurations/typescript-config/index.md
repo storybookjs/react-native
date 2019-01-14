@@ -25,13 +25,15 @@ We first have to use the [custom Webpack config in full control mode, extending 
 
 ```js
 const path = require('path');
-const TSDocgenPlugin = require('react-docgen-typescript-webpack-plugin');
 module.exports = (baseConfig, env, config) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    loader: require.resolve('awesome-typescript-loader'),
+    use: [{
+      loader: require.resolve('awesome-typescript-loader')
+    }, {
+      loader: require.resolve('react-docgen-typescript-loader')
+    }]
   });
-  config.plugins.push(new TSDocgenPlugin()); // optional
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
 };
@@ -145,34 +147,39 @@ Please refer to the [react-docgen-typescript-loader](https://github.com/strothj/
 
 Additional annotation can be achieved by setting a default set of info parameters:
 
-```js
+```ts
+import {addDecorator} from "@storybook/react";
+import {withInfo} from "@storybook/addon-info";
+
 // Globally in your .storybook/config.js, or alternatively, per-chapter
-addDecorator({
-  styles: {
-    header: {
-      h1: {
-        marginRight: '20px',
-        fontSize: '25px',
-        display: 'inline',
+addDecorator(
+  withInfo({
+    styles: {
+      header: {
+        h1: {
+          marginRight: '20px',
+          fontSize: '25px',
+          display: 'inline',
+        },
+        body: {
+          paddingTop: 0,
+          paddingBottom: 0,
+        },
+        h2: {
+          display: 'inline',
+          color: '#999',
+        },
       },
-      body: {
-        paddingTop: 0,
-        paddingBottom: 0,
-      },
-      h2: {
-        display: 'inline',
-        color: '#999',
+      infoBody: {
+        backgroundColor: '#eee',
+        padding: '0px 5px',
+        lineHeight: '2',
       },
     },
-    infoBody: {
-      backgroundColor: '#eee',
-      padding: '0px 5px',
-      lineHeight: '2',
-    },
-  },
-  inline: true,
-  source: false,
-});
+    inline: true,
+    source: false,
+  })
+);
 ```
 
 This can be used like so:

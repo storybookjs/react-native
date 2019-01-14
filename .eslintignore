@@ -9,6 +9,8 @@ built-storybooks
 lib/cli/test
 *.bundle.js
 *.js.map
+*.ts
+*.tsx
 
 !.remarkrc.js
 !.babelrc.js

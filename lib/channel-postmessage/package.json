@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channel-postmessage",
-  "version": "4.1.0-alpha.12",
+  "version": "5.0.0-alpha.1",
   "description": "",
   "keywords": [
     "storybook"
@@ -15,14 +15,17 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "4.1.0-alpha.12",
+    "@storybook/channels": "5.0.0-alpha.1",
     "global": "^4.3.2",
-    "json-stringify-safe": "^5.0.1"
+    "telejson": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/json-stringify-safe": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"

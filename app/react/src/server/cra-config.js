@@ -78,16 +78,27 @@ export const getTypeScriptRules = (webpackConfigRules, configDir) => {
   ];
 };
 
+function mergePlugins(basePlugins, additionalPlugins) {
+  return [...basePlugins, ...additionalPlugins].reduce((plugins, plugin) => {
+    if (
+      plugins.some(includedPlugin => includedPlugin.constructor.name === plugin.constructor.name)
+    ) {
+      return plugins;
+    }
+    return [...plugins, plugin];
+  }, []);
+}
+
 export function getCraWebpackConfig(mode) {
   const pathToReactScripts = getReactScriptsPath();
 
   const craWebpackConfig =
-    mode === 'production' ? 'config/webpack.config.prod' : 'config/webpack.config.dev';
+    mode === 'production' ? 'config/webpack.config.prod.js' : 'config/webpack.config.dev.js';
 
-  let pathToWebpackConfig = require.resolve(path.join(pathToReactScripts, craWebpackConfig));
+  let pathToWebpackConfig = path.join(pathToReactScripts, craWebpackConfig);
 
   if (!fs.existsSync(pathToWebpackConfig)) {
-    pathToWebpackConfig = path.join(pathToReactScripts, 'config/webpack.config');
+    pathToWebpackConfig = path.join(pathToReactScripts, 'config/webpack.config.js');
   }
 
   // eslint-disable-next-line import/no-dynamic-require,global-require
@@ -132,7 +143,7 @@ export function applyCRAWebpackConfig(baseConfig, configDir) {
       ...baseConfig.module,
       rules: [...filteredBaseRules, ...craStyleRules, ...craTypeScriptRules],
     },
-    plugins,
+    plugins: mergePlugins(plugins, hasTsSupport ? craWebpackConfig.plugins : []),
     resolve: {
       ...baseConfig.resolve,
       extensions: [...baseConfig.resolve.extensions, ...tsExtensions],

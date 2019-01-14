@@ -10,11 +10,13 @@ module.exports = {
   projects: [
     '<rootDir>',
     '<rootDir>/examples/cra-kitchen-sink',
+    '<rootDir>/examples/cra-ts-kitchen-sink',
     '<rootDir>/examples/html-kitchen-sink',
     '<rootDir>/examples/riot-kitchen-sink',
     '<rootDir>/examples/svelte-kitchen-sink',
     '<rootDir>/examples/vue-kitchen-sink',
     '<rootDir>/examples/angular-cli',
+    '<rootDir>/examples/preact-kitchen-sink',
   ],
   roots: [
     '<rootDir>/addons',
@@ -22,16 +24,17 @@ module.exports = {
     '<rootDir>/lib',
     '<rootDir>/examples/official-storybook',
   ],
-  snapshotSerializers: ['@emotion/snapshot-serializer'],
   transform: {
     '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
+    '^.+\\.tsx?$': '<rootDir>/node_modules/ts-jest',
   },
+  testMatch: ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)+(spek|test).(j|t)s?(x)'],
   testPathIgnorePatterns: ['/node_modules/', '/dist/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
   collectCoverageFrom: [
-    'app/**/*.{js,jsx}',
-    'lib/**/*.{js,jsx}',
-    'addons/**/*.{js,jsx}',
+    'app/**/*.{js,jsx,ts,tsx}',
+    'lib/**/*.{js,jsx,ts,tsx}',
+    'addons/**/*.{js,jsx,ts,tsx}',
     '!**/cli/test/**',
     '!**/dist/**',
     '!**/generators/**',
@@ -43,5 +46,5 @@ module.exports = {
   setupFiles: ['raf/polyfill'],
   testURL: 'http://localhost',
   modulePathIgnorePatterns: ['/dist/.*/__mocks__/'],
-  moduleFileExtensions: ['js', 'jsx', 'json', 'node'],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
 };

@@ -119,7 +119,7 @@ Refer to [Writing Stories](https://storybook.js.org/basics/writing-stories) for 
 
 ## Addons
 
-Storybook supports addons. You can read more about them [here](https://storybook.js.org/addons/intro-to-addons)
+Storybook supports addons. You can read more about them [here](https://storybook.js.org/addons/introduction)
 
 There is one big difference in React Native is that it has two types of addons: Addons that work in the browser
 and addons that work on the app itself (on device addons).

@@ -13,3 +13,7 @@ export default function(storyFn) {
     ),
   };
 }
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline();
+}

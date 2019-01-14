@@ -1,11 +1,11 @@
-import deprecate from 'util-deprecate';
-
 import addons, { makeDecorator } from '@storybook/addons';
+
+import { SET_OPTIONS } from './shared';
 
 import { manager, registerKnobs } from './registerKnobs';
 
-export function knob(name, options) {
-  return manager.knob(name, options);
+export function knob(name, optionsParam) {
+  return manager.knob(name, optionsParam);
 }
 
 export function text(name, value, groupId) {
@@ -73,6 +73,10 @@ export function files(name, accept, value = []) {
   return manager.knob(name, { type: 'files', accept, value });
 }
 
+export function optionsKnob(name, valuesObj, value, optionsObj, groupId) {
+  return manager.knob(name, { type: 'options', options: valuesObj, value, optionsObj, groupId });
+}
+
 const defaultOptions = {
   escapeHTML: true,
 };
@@ -86,17 +90,16 @@ export const withKnobs = makeDecorator({
     const storyOptions = parameters || options;
     const allOptions = { ...defaultOptions, ...storyOptions };
 
-    manager.setOptions(allOptions);
     const channel = addons.getChannel();
     manager.setChannel(channel);
-    channel.emit('addon:knobs:setOptions', allOptions);
+    manager.setOptions(allOptions);
+    channel.emit(SET_OPTIONS, allOptions);
 
     registerKnobs();
     return getStory(context);
   },
 });
 
-export const withKnobsOptions = deprecate(
-  withKnobs,
-  'withKnobsOptions is deprecated. Instead, you can pass options into withKnobs(options) directly, or use the knobs parameter.'
-);
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline();
+}

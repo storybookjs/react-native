@@ -2,8 +2,8 @@
 
 Add the following module into your app.
 
- ```sh
-npm install --save-dev @storybook/addon-storyshots-puppeteer
+```sh
+yarn add @storybook/addon-storyshots-puppeteer --dev
 ```
 
 ## Configure Storyshots for image snapshots

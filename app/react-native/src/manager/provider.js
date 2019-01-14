@@ -38,10 +38,6 @@ export default class ReactProvider extends Provider {
     }
   }
 
-  getPanels() {
-    return addons.getPanels();
-  }
-
   renderPreview(kind, story) {
     this.selection = { kind, story };
     this.channel.emit(Events.SET_CURRENT_STORY, { kind, story });

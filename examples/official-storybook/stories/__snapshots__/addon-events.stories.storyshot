@@ -1,19 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Events Logger 1`] = `
-.emotion-2 {
-  padding: 20px;
-}
-
-.emotion-0 {
-  margin: 0;
-}
-
 <div
-  class="emotion-2 emotion-3"
+  class="css-124l3n3-Wrapper e1igy6c50"
 >
   <h1
-    class="emotion-0 emotion-1"
+    class="css-hfjtt6-Title e1igy6c51"
   >
     Logger
   </h1>
@@ -22,19 +14,11 @@ exports[`Storyshots Addons|Events Logger 1`] = `
 `;
 
 exports[`Storyshots Addons|Events.deprecated Logger 1`] = `
-.emotion-2 {
-  padding: 20px;
-}
-
-.emotion-0 {
-  margin: 0;
-}
-
 <div
-  class="emotion-2 emotion-3"
+  class="css-124l3n3-Wrapper e1igy6c50"
 >
   <h1
-    class="emotion-0 emotion-1"
+    class="css-hfjtt6-Title e1igy6c51"
   >
     Logger
   </h1>

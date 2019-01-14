@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-options",
-  "version": "4.1.0-alpha.12",
+  "version": "5.0.0-alpha.1",
   "description": "Options addon for storybook",
   "keywords": [
     "addon",
@@ -15,12 +15,13 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
-  "main": "preview.js",
+  "main": "dist/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.1.0-alpha.12",
+    "@storybook/addons": "5.0.0-alpha.1",
+    "core-js": "^2.6.1",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {

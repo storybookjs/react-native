@@ -1,0 +1,495 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI|Desktop layout bottom Panel 1`] = `
+<div
+  class="css-i0efha-Root e1wsvst20"
+>
+  <div
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout default 1`] = `
+<div
+  class="css-i0efha-Root e1wsvst20"
+>
+  <div
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout full 1`] = `
+<div
+  class="css-i0efha-Root e1wsvst20"
+>
+  <div
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout no Nav 1`] = `
+<div
+  class="css-i0efha-Root e1wsvst20"
+>
+  <div
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout no Panel 1`] = `
+<div
+  class="css-i0efha-Root e1wsvst20"
+>
+  <div
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout no Panel, no Nav 1`] = `
+<div
+  class="css-i0efha-Root e1wsvst20"
+>
+  <div
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Desktop layout page 1`] = `
+<div
+  class="css-i0efha-Root e1wsvst20"
+>
+  <div
+    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+  />
+  <div>
+    0 width or height
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Mobile layout initial 0 1`] = `
+<div
+  class="css-i0efha-Root e1wsvst20"
+>
+  <div
+    class="css-todx5r e1miv4j01"
+  >
+    <div
+      class="css-1izxglx-Pane e1miv4j00"
+    >
+      <div
+        class="css-69f31u-PlaceholderBlock e1fh6ul50"
+        color="hotpink"
+      >
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+        >
+          1
+        </h2>
+        <pre>
+          {}
+        </pre>
+      </div>
+    </div>
+    <div
+      class="css-1xie5dm-Pane e1miv4j00"
+    >
+      <div>
+        <div>
+          <div
+            class="css-csmggg-PlaceholderBlock e1fh6ul50"
+            color="deepskyblue"
+          >
+            <h2
+              style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+            >
+              1
+            </h2>
+            <pre>
+              {
+  "id": "iframe",
+  "path": "/components/UI-DesktopLayout-noNav",
+  "storyId": "UI-DesktopLayout-noNav",
+  "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
+  "viewMode": "components",
+  "debug": {
+    "initialActive": 0
+  }
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-1v7ry7-Pane e1miv4j00"
+    >
+      <div>
+        <div
+          class="css-usnvbh-PlaceholderBlock e1fh6ul50"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "hidden": false
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav
+    class="css-171svmn-Bar e1miv4j02"
+  >
+    <button
+      class="css-1ghc1c-TabButton e1lzzkxx4"
+    >
+      Nav
+    </button>
+    <button
+      class="css-1ghc1c-TabButton e1lzzkxx4"
+    >
+      Preview
+    </button>
+    <button
+      class="css-1ghc1c-TabButton e1lzzkxx4"
+    >
+      Panel
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots UI|Mobile layout initial 1 1`] = `
+<div
+  class="css-i0efha-Root e1wsvst20"
+>
+  <div
+    class="css-todx5r e1miv4j01"
+  >
+    <div
+      class="css-ib9ddz-Pane e1miv4j00"
+    >
+      <div
+        class="css-69f31u-PlaceholderBlock e1fh6ul50"
+        color="hotpink"
+      >
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+        >
+          1
+        </h2>
+        <pre>
+          {}
+        </pre>
+      </div>
+    </div>
+    <div
+      class="css-4fcvwf-Pane e1miv4j00"
+    >
+      <div>
+        <div>
+          <div
+            class="css-csmggg-PlaceholderBlock e1fh6ul50"
+            color="deepskyblue"
+          >
+            <h2
+              style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+            >
+              1
+            </h2>
+            <pre>
+              {
+  "id": "iframe",
+  "path": "/components/UI-DesktopLayout-noNav",
+  "storyId": "UI-DesktopLayout-noNav",
+  "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
+  "viewMode": "components",
+  "debug": {
+    "initialActive": 1
+  }
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-1v7ry7-Pane e1miv4j00"
+    >
+      <div>
+        <div
+          class="css-usnvbh-PlaceholderBlock e1fh6ul50"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "hidden": false
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav
+    class="css-171svmn-Bar e1miv4j02"
+  >
+    <button
+      class="css-1ghc1c-TabButton e1lzzkxx4"
+    >
+      Nav
+    </button>
+    <button
+      class="css-1ghc1c-TabButton e1lzzkxx4"
+    >
+      Preview
+    </button>
+    <button
+      class="css-1ghc1c-TabButton e1lzzkxx4"
+    >
+      Panel
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots UI|Mobile layout initial 2 1`] = `
+<div
+  class="css-i0efha-Root e1wsvst20"
+>
+  <div
+    class="css-todx5r e1miv4j01"
+  >
+    <div
+      class="css-ib9ddz-Pane e1miv4j00"
+    >
+      <div
+        class="css-69f31u-PlaceholderBlock e1fh6ul50"
+        color="hotpink"
+      >
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+        >
+          1
+        </h2>
+        <pre>
+          {}
+        </pre>
+      </div>
+    </div>
+    <div
+      class="css-1de9iio-Pane e1miv4j00"
+    >
+      <div>
+        <div>
+          <div
+            class="css-csmggg-PlaceholderBlock e1fh6ul50"
+            color="deepskyblue"
+          >
+            <h2
+              style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+            >
+              1
+            </h2>
+            <pre>
+              {
+  "id": "iframe",
+  "path": "/components/UI-DesktopLayout-noNav",
+  "storyId": "UI-DesktopLayout-noNav",
+  "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
+  "viewMode": "components",
+  "debug": {
+    "initialActive": 2
+  }
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-yu47hj-Pane e1miv4j00"
+    >
+      <div>
+        <div
+          class="css-usnvbh-PlaceholderBlock e1fh6ul50"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "hidden": false
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav
+    class="css-171svmn-Bar e1miv4j02"
+  >
+    <button
+      class="css-1ghc1c-TabButton e1lzzkxx4"
+    >
+      Nav
+    </button>
+    <button
+      class="css-1ghc1c-TabButton e1lzzkxx4"
+    >
+      Preview
+    </button>
+    <button
+      class="css-1ghc1c-TabButton e1lzzkxx4"
+    >
+      Panel
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots UI|Mobile layout page 1`] = `
+<div
+  class="css-i0efha-Root e1wsvst20"
+>
+  <div
+    class="css-todx5r e1miv4j01"
+  >
+    <div
+      class="css-ib9ddz-Pane e1miv4j00"
+    >
+      <div
+        class="css-69f31u-PlaceholderBlock e1fh6ul50"
+        color="hotpink"
+      >
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+        >
+          1
+        </h2>
+        <pre>
+          {}
+        </pre>
+      </div>
+    </div>
+    <div
+      class="css-4fcvwf-Pane e1miv4j00"
+    >
+      <div>
+        <div
+          hidden=""
+        >
+          <div
+            class="css-csmggg-PlaceholderBlock e1fh6ul50"
+            color="deepskyblue"
+          >
+            <h2
+              style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+            >
+              1
+            </h2>
+            <pre>
+              {
+  "id": "iframe",
+  "path": "/components/UI-DesktopLayout-noNav",
+  "storyId": "UI-DesktopLayout-noNav",
+  "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
+  "debug": {
+    "initialActive": 1
+  }
+}
+            </pre>
+          </div>
+        </div>
+        <div
+          class="css-sbb2zp-PlaceholderBlock e1fh6ul50"
+          color="cyan"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {}
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-1v7ry7-Pane e1miv4j00"
+    >
+      <div
+        hidden=""
+      >
+        <div
+          class="css-usnvbh-PlaceholderBlock e1fh6ul50"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "hidden": true
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav
+    class="css-171svmn-Bar e1miv4j02"
+  >
+    <button
+      class="css-1ghc1c-TabButton e1lzzkxx4"
+    >
+      Nav
+    </button>
+    <button
+      class="css-1ghc1c-TabButton e1lzzkxx4"
+    >
+      settings
+    </button>
+  </nav>
+</div>
+`;
