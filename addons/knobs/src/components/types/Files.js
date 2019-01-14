@@ -1,7 +1,7 @@
 import { FileReader } from 'global';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 import { Form } from '@storybook/components';
 

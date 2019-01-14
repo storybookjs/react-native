@@ -1,7 +1,7 @@
 import { document } from 'global';
 import React, { Component, Fragment } from 'react';
 import memoize from 'memoizerific';
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 import { logger } from '@storybook/client-logger';
 import { Popout, Item, Icons, Icon, IconButton, Title, List } from '@storybook/components';

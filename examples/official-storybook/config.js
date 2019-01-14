@@ -1,9 +1,6 @@
 import React from 'react';
-import { ThemeProvider, withTheme } from 'emotion-theming';
 import { storiesOf, configure, addDecorator, addParameters } from '@storybook/react';
-
-import { themes } from '@storybook/components';
-import { Global } from '@emotion/core';
+import { Global, ThemeProvider, withTheme, themes } from '@storybook/theming';
 
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withCssResources } from '@storybook/addon-cssresources';

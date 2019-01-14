@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 import { STORY_RENDERED } from '@storybook/core-events';
 import { ActionBar, ActionButton, Icons } from '@storybook/components';

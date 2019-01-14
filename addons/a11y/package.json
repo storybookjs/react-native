@@ -25,7 +25,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/styled": "^10.0.5",
+    "@storybook/theming": "5.0.0-alpha.0",
     "@storybook/addons": "5.0.0-alpha.0",
     "@storybook/client-logger": "5.0.0-alpha.0",
     "@storybook/components": "5.0.0-alpha.0",
