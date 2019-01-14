@@ -1,3 +1,15 @@
+## 5.0.0-alpha.1 (January 14, 2019)
+
+### Bug Fixes
+
+* Core: `no-dll` option to CLI to disable DllReferencePlugin, fix polyfills ([#5238](https://github.com/storybooks/storybook/pull/5238))
+* Core: Continue `{name, kind}` support on the `SET_CURRENT_STORY` event ([#5228](https://github.com/storybooks/storybook/pull/5228))
+* UI: FIX issue with accidentally thinking things are roots ([#5236](https://github.com/storybooks/storybook/pull/5236))
+
+### Dependency Upgrades
+
+* Bump react-scripts from 2.1.1 to 2.1.3 ([#5214](https://github.com/storybooks/storybook/pull/5214))
+
 ## 5.0.0-alpha.0 (January 13, 2019)
 
 ### Breaking Changes
