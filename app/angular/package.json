@@ -40,7 +40,7 @@
     "webpack": "^4.28.3"
   },
   "devDependencies": {
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.27"
   },
   "peerDependencies": {
     "@angular-devkit/core": "^0.6.1 || >=7.0.0",
@@ -51,7 +51,7 @@
     "@angular/platform-browser": ">=6.0.0",
     "@angular/platform-browser-dynamic": ">=6.0.0",
     "babel-loader": "^7.0.0 || ^8.0.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.27"
   },
   "publishConfig": {
     "access": "public"
