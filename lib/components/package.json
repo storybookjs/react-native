@@ -20,8 +20,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@reach/router": "^1.2.1",
     "@storybook/addons": "5.0.0-alpha.1",
+    "@storybook/router": "5.0.0-alpha.1",
     "@storybook/client-logger": "5.0.0-alpha.1",
     "@storybook/core-events": "5.0.0-alpha.1",
     "@storybook/theming": "5.0.0-alpha.1",
@@ -32,7 +32,6 @@
     "lodash.throttle": "^4.1.1",
     "memoizerific": "^1.11.3",
     "prop-types": "^15.6.2",
-    "qs": "^6.5.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-focus-lock": "^1.17.6",
