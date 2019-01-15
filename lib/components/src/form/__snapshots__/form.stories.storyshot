@@ -2,31 +2,31 @@
 
 exports[`Storyshots Components|Form/Button alignment 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <button
-      class="css-h3sobf-Button e1iqivjq3"
+      class="css-nug58z"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <button
-      class="css-f5ome0-Button e1iqivjq3"
+      class="css-1k476tp"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <button
-      class="css-4ds05y-Button e1iqivjq3"
+      class="css-cr3ubn"
     >
       click this button
     </button>
@@ -36,31 +36,31 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 
 exports[`Storyshots Components|Form/Button sizes 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <button
-      class="css-1pzmux7-Button e1iqivjq3"
+      class="css-4xnzo1"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <button
-      class="css-1hyuh0l-Button e1iqivjq3"
+      class="css-11kcupu"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <button
-      class="css-4ds05y-Button e1iqivjq3"
+      class="css-cr3ubn"
     >
       click this button
     </button>
@@ -70,40 +70,40 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 
 exports[`Storyshots Components|Form/Button validations 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <button
-      class="css-wvpv7w-Button e1iqivjq3"
+      class="css-h7vngw"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <button
-      class="css-1g2cn2b-Button e1iqivjq3"
+      class="css-pr2gxm"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <button
-      class="css-c7m30k-Button e1iqivjq3"
+      class="css-1xy9y2o"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <button
-      class="css-4ds05y-Button e1iqivjq3"
+      class="css-cr3ubn"
     >
       click this button
     </button>
@@ -113,17 +113,17 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 
 exports[`Storyshots Components|Form/Field field 1`] = `
 <label
-  class="css-1n4tt73-Wrapper evz11jd0"
+  class="css-ft59n8"
 >
   <span
-    class="css-1e2pl7n-Label evz11jd1"
+    class="css-iyjqx3"
   >
     <span>
       label
     </span>
   </span>
   <select
-    class="css-bsjfx3-Select e1iqivjq1"
+    class="css-1x64pgq"
     size="1"
   >
     <option
@@ -148,29 +148,29 @@ exports[`Storyshots Components|Form/Field field 1`] = `
 
 exports[`Storyshots Components|Form/Input alignment 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <input
-      class="css-szkw5p-Input e1iqivjq0"
+      class="css-f41t2d"
       value="text"
     />
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <input
-      class="css-1y2wvrw-Input e1iqivjq0"
+      class="css-1ad2rr8"
       value="text"
     />
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <input
-      class="css-16q8oyb-Input e1iqivjq0"
+      class="css-1o6bujc"
       value="text"
     />
   </div>
@@ -179,29 +179,29 @@ exports[`Storyshots Components|Form/Input alignment 1`] = `
 
 exports[`Storyshots Components|Form/Input sizes 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <input
-      class="css-yli1rb-Input e1iqivjq0"
+      class="css-qz02ff"
       value="text"
     />
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <input
-      class="css-1isdddd-Input e1iqivjq0"
+      class="css-vl6kgo"
       value="text"
     />
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <input
-      class="css-16q8oyb-Input e1iqivjq0"
+      class="css-1o6bujc"
       value="text"
     />
   </div>
@@ -210,37 +210,37 @@ exports[`Storyshots Components|Form/Input sizes 1`] = `
 
 exports[`Storyshots Components|Form/Input validations 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <input
-      class="css-1ixcpjc-Input e1iqivjq0"
+      class="css-13v1obz"
       value="text"
     />
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <input
-      class="css-7fui90-Input e1iqivjq0"
+      class="css-4c07ht"
       value="text"
     />
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <input
-      class="css-13lwlbq-Input e1iqivjq0"
+      class="css-d6fo4a"
       value="text"
     />
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <input
-      class="css-16q8oyb-Input e1iqivjq0"
+      class="css-1o6bujc"
       value="text"
     />
   </div>
@@ -249,10 +249,10 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
 
 exports[`Storyshots Components|Form/Select alignment 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <select
-    class="css-1sgistt-Select e1iqivjq1"
+    class="css-lktxtf"
   >
     <option
       value="val1"
@@ -272,7 +272,7 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
     </option>
   </select>
   <select
-    class="css-fxcaf9-Select e1iqivjq1"
+    class="css-llmj5t"
   >
     <option
       value="val1"
@@ -292,7 +292,7 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
     </option>
   </select>
   <select
-    class="css-170lhp0-Select e1iqivjq1"
+    class="css-6k67ao"
   >
     <option
       value="val1"
@@ -316,13 +316,13 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
 
 exports[`Storyshots Components|Form/Select sizes 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <select
-      class="css-bsjfx3-Select e1iqivjq1"
+      class="css-1x64pgq"
     >
       <option
         value="val1"
@@ -343,10 +343,10 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
     </select>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <select
-      class="css-1mq6ser-Select e1iqivjq1"
+      class="css-11c6rd0"
     >
       <option
         value="val1"
@@ -367,10 +367,10 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
     </select>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <select
-      class="css-170lhp0-Select e1iqivjq1"
+      class="css-6k67ao"
     >
       <option
         value="val1"
@@ -395,10 +395,10 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 
 exports[`Storyshots Components|Form/Select validations 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <select
-    class="css-hxwf21-Select e1iqivjq1"
+    class="css-qa4pip"
   >
     <option
       value="val1"
@@ -418,7 +418,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
     </option>
   </select>
   <select
-    class="css-1pbuugy-Select e1iqivjq1"
+    class="css-130ns75"
   >
     <option
       value="val1"
@@ -438,7 +438,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
     </option>
   </select>
   <select
-    class="css-p4579u-Select e1iqivjq1"
+    class="css-59o0fe"
   >
     <option
       value="val1"
@@ -458,7 +458,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
     </option>
   </select>
   <select
-    class="css-170lhp0-Select e1iqivjq1"
+    class="css-6k67ao"
   >
     <option
       value="val1"
@@ -482,36 +482,36 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 
 exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <textarea
       align="end"
-      class="css-ok7c03-Textarea e1iqivjq2"
+      class="css-mxs2kj"
       style="height:0"
     >
       text
     </textarea>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <textarea
       align="center"
-      class="css-djty3k-Textarea e1iqivjq2"
+      class="css-b7c25f"
       style="height:0"
     >
       text
     </textarea>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <textarea
       align="start"
-      class="css-pul98m-Textarea e1iqivjq2"
+      class="css-1ky3gy2"
       style="height:0"
     >
       text
@@ -522,33 +522,33 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 
 exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <textarea
-      class="css-fpmx1h-Textarea e1iqivjq2"
+      class="css-1nt74oa"
       style="height:0"
     >
       text
     </textarea>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <textarea
-      class="css-5rqdpj-Textarea e1iqivjq2"
+      class="css-1cfv75g"
       style="height:0"
     >
       text
     </textarea>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <textarea
-      class="css-pul98m-Textarea e1iqivjq2"
+      class="css-1ky3gy2"
       style="height:0"
     >
       text
@@ -559,13 +559,13 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 
 exports[`Storyshots Components|Form/Textarea validations 1`] = `
 <div
-  class="css-1wesixd-Container ecq4n7c0"
+  class="css-lol2ju"
 >
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <textarea
-      class="css-vcj5vs-Textarea e1iqivjq2"
+      class="css-1j8dr9r"
       style="height:0"
       valid="error"
     >
@@ -573,10 +573,10 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
     </textarea>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <textarea
-      class="css-1orv7tn-Textarea e1iqivjq2"
+      class="css-xb06fr"
       style="height:0"
       valid="warn"
     >
@@ -584,10 +584,10 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
     </textarea>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <textarea
-      class="css-1gb1gub-Textarea e1iqivjq2"
+      class="css-f34nqu"
       style="height:0"
       valid="valid"
     >
@@ -595,10 +595,10 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
     </textarea>
   </div>
   <div
-    class="css-1nttea4-Flexed e1cifqpq0"
+    class="css-k008qs"
   >
     <textarea
-      class="css-pul98m-Textarea e1iqivjq2"
+      class="css-1ky3gy2"
       style="height:0"
     >
       text

@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI|Desktop layout bottom Panel 1`] = `
 <div
-  class="css-i0efha-Root e1wsvst20"
+  class="css-1d2iskc"
 >
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
@@ -15,7 +15,7 @@ exports[`Storyshots UI|Desktop layout bottom Panel 1`] = `
 
 exports[`Storyshots UI|Desktop layout default 1`] = `
 <div
-  class="css-i0efha-Root e1wsvst20"
+  class="css-1d2iskc"
 >
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
@@ -28,7 +28,7 @@ exports[`Storyshots UI|Desktop layout default 1`] = `
 
 exports[`Storyshots UI|Desktop layout full 1`] = `
 <div
-  class="css-i0efha-Root e1wsvst20"
+  class="css-1d2iskc"
 >
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
@@ -41,7 +41,7 @@ exports[`Storyshots UI|Desktop layout full 1`] = `
 
 exports[`Storyshots UI|Desktop layout no Nav 1`] = `
 <div
-  class="css-i0efha-Root e1wsvst20"
+  class="css-1d2iskc"
 >
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
@@ -54,7 +54,7 @@ exports[`Storyshots UI|Desktop layout no Nav 1`] = `
 
 exports[`Storyshots UI|Desktop layout no Panel 1`] = `
 <div
-  class="css-i0efha-Root e1wsvst20"
+  class="css-1d2iskc"
 >
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
@@ -67,7 +67,7 @@ exports[`Storyshots UI|Desktop layout no Panel 1`] = `
 
 exports[`Storyshots UI|Desktop layout no Panel, no Nav 1`] = `
 <div
-  class="css-i0efha-Root e1wsvst20"
+  class="css-1d2iskc"
 >
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
@@ -80,7 +80,7 @@ exports[`Storyshots UI|Desktop layout no Panel, no Nav 1`] = `
 
 exports[`Storyshots UI|Desktop layout page 1`] = `
 <div
-  class="css-i0efha-Root e1wsvst20"
+  class="css-1d2iskc"
 >
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
@@ -93,16 +93,16 @@ exports[`Storyshots UI|Desktop layout page 1`] = `
 
 exports[`Storyshots UI|Mobile layout initial 0 1`] = `
 <div
-  class="css-i0efha-Root e1wsvst20"
+  class="css-1d2iskc"
 >
   <div
-    class="css-todx5r e1miv4j01"
+    class="css-todx5r"
   >
     <div
-      class="css-1izxglx-Pane e1miv4j00"
+      class="css-1jgx7oq"
     >
       <div
-        class="css-69f31u-PlaceholderBlock e1fh6ul50"
+        class="css-mp73i8"
         color="hotpink"
       >
         <h2
@@ -116,12 +116,12 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
       </div>
     </div>
     <div
-      class="css-1xie5dm-Pane e1miv4j00"
+      class="css-2qvc95"
     >
       <div>
         <div>
           <div
-            class="css-csmggg-PlaceholderBlock e1fh6ul50"
+            class="css-gdymhm"
             color="deepskyblue"
           >
             <h2
@@ -146,11 +146,11 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
       </div>
     </div>
     <div
-      class="css-1v7ry7-Pane e1miv4j00"
+      class="css-xrgm2i"
     >
       <div>
         <div
-          class="css-usnvbh-PlaceholderBlock e1fh6ul50"
+          class="css-1golnfk"
           color="orangered"
         >
           <h2
@@ -168,20 +168,20 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
     </div>
   </div>
   <nav
-    class="css-171svmn-Bar e1miv4j02"
+    class="css-134fi6m"
   >
     <button
-      class="css-1ghc1c-TabButton e1lzzkxx4"
+      class="css-1ohsdcw"
     >
       Nav
     </button>
     <button
-      class="css-1ghc1c-TabButton e1lzzkxx4"
+      class="css-1ohsdcw"
     >
       Preview
     </button>
     <button
-      class="css-1ghc1c-TabButton e1lzzkxx4"
+      class="css-1ohsdcw"
     >
       Panel
     </button>
@@ -191,16 +191,16 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
 
 exports[`Storyshots UI|Mobile layout initial 1 1`] = `
 <div
-  class="css-i0efha-Root e1wsvst20"
+  class="css-1d2iskc"
 >
   <div
-    class="css-todx5r e1miv4j01"
+    class="css-todx5r"
   >
     <div
-      class="css-ib9ddz-Pane e1miv4j00"
+      class="css-1i1oalp"
     >
       <div
-        class="css-69f31u-PlaceholderBlock e1fh6ul50"
+        class="css-mp73i8"
         color="hotpink"
       >
         <h2
@@ -214,12 +214,12 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
       </div>
     </div>
     <div
-      class="css-4fcvwf-Pane e1miv4j00"
+      class="css-uszo85"
     >
       <div>
         <div>
           <div
-            class="css-csmggg-PlaceholderBlock e1fh6ul50"
+            class="css-gdymhm"
             color="deepskyblue"
           >
             <h2
@@ -244,11 +244,11 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
       </div>
     </div>
     <div
-      class="css-1v7ry7-Pane e1miv4j00"
+      class="css-xrgm2i"
     >
       <div>
         <div
-          class="css-usnvbh-PlaceholderBlock e1fh6ul50"
+          class="css-1golnfk"
           color="orangered"
         >
           <h2
@@ -266,20 +266,20 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
     </div>
   </div>
   <nav
-    class="css-171svmn-Bar e1miv4j02"
+    class="css-134fi6m"
   >
     <button
-      class="css-1ghc1c-TabButton e1lzzkxx4"
+      class="css-1ohsdcw"
     >
       Nav
     </button>
     <button
-      class="css-1ghc1c-TabButton e1lzzkxx4"
+      class="css-1ohsdcw"
     >
       Preview
     </button>
     <button
-      class="css-1ghc1c-TabButton e1lzzkxx4"
+      class="css-1ohsdcw"
     >
       Panel
     </button>
@@ -289,16 +289,16 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
 
 exports[`Storyshots UI|Mobile layout initial 2 1`] = `
 <div
-  class="css-i0efha-Root e1wsvst20"
+  class="css-1d2iskc"
 >
   <div
-    class="css-todx5r e1miv4j01"
+    class="css-todx5r"
   >
     <div
-      class="css-ib9ddz-Pane e1miv4j00"
+      class="css-1i1oalp"
     >
       <div
-        class="css-69f31u-PlaceholderBlock e1fh6ul50"
+        class="css-mp73i8"
         color="hotpink"
       >
         <h2
@@ -312,12 +312,12 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
       </div>
     </div>
     <div
-      class="css-1de9iio-Pane e1miv4j00"
+      class="css-lcywom"
     >
       <div>
         <div>
           <div
-            class="css-csmggg-PlaceholderBlock e1fh6ul50"
+            class="css-gdymhm"
             color="deepskyblue"
           >
             <h2
@@ -342,11 +342,11 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
       </div>
     </div>
     <div
-      class="css-yu47hj-Pane e1miv4j00"
+      class="css-aevxar"
     >
       <div>
         <div
-          class="css-usnvbh-PlaceholderBlock e1fh6ul50"
+          class="css-1golnfk"
           color="orangered"
         >
           <h2
@@ -364,20 +364,20 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
     </div>
   </div>
   <nav
-    class="css-171svmn-Bar e1miv4j02"
+    class="css-134fi6m"
   >
     <button
-      class="css-1ghc1c-TabButton e1lzzkxx4"
+      class="css-1ohsdcw"
     >
       Nav
     </button>
     <button
-      class="css-1ghc1c-TabButton e1lzzkxx4"
+      class="css-1ohsdcw"
     >
       Preview
     </button>
     <button
-      class="css-1ghc1c-TabButton e1lzzkxx4"
+      class="css-1ohsdcw"
     >
       Panel
     </button>
@@ -387,16 +387,16 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
 
 exports[`Storyshots UI|Mobile layout page 1`] = `
 <div
-  class="css-i0efha-Root e1wsvst20"
+  class="css-1d2iskc"
 >
   <div
-    class="css-todx5r e1miv4j01"
+    class="css-todx5r"
   >
     <div
-      class="css-ib9ddz-Pane e1miv4j00"
+      class="css-1i1oalp"
     >
       <div
-        class="css-69f31u-PlaceholderBlock e1fh6ul50"
+        class="css-mp73i8"
         color="hotpink"
       >
         <h2
@@ -410,14 +410,14 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
       </div>
     </div>
     <div
-      class="css-4fcvwf-Pane e1miv4j00"
+      class="css-uszo85"
     >
       <div>
         <div
           hidden=""
         >
           <div
-            class="css-csmggg-PlaceholderBlock e1fh6ul50"
+            class="css-gdymhm"
             color="deepskyblue"
           >
             <h2
@@ -439,7 +439,7 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
           </div>
         </div>
         <div
-          class="css-sbb2zp-PlaceholderBlock e1fh6ul50"
+          class="css-51dwwk"
           color="cyan"
         >
           <h2
@@ -454,13 +454,13 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
       </div>
     </div>
     <div
-      class="css-1v7ry7-Pane e1miv4j00"
+      class="css-xrgm2i"
     >
       <div
         hidden=""
       >
         <div
-          class="css-usnvbh-PlaceholderBlock e1fh6ul50"
+          class="css-1golnfk"
           color="orangered"
         >
           <h2
@@ -478,15 +478,15 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
     </div>
   </div>
   <nav
-    class="css-171svmn-Bar e1miv4j02"
+    class="css-134fi6m"
   >
     <button
-      class="css-1ghc1c-TabButton e1lzzkxx4"
+      class="css-1ohsdcw"
     >
       Nav
     </button>
     <button
-      class="css-1ghc1c-TabButton e1lzzkxx4"
+      class="css-1ohsdcw"
     >
       settings
     </button>

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Addons|Viewport default 1`] = `
 <div
-  class="css-mpcyc0-Panel ehw333c0"
+  class="css-0"
 >
   I don't have problems being rendered using the default viewport.
 </div>
@@ -10,7 +10,7 @@ exports[`Storyshots Addons|Viewport default 1`] = `
 
 exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Inherited 1`] = `
 <div
-  class="css-mpcyc0-Panel ehw333c0"
+  class="css-0"
 >
   I've inherited 
   <b>
@@ -22,7 +22,7 @@ exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Inherited 1`]
 
 exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden via "withViewport" parameterized decorator 1`] = `
 <div
-  class="css-mpcyc0-Panel ehw333c0"
+  class="css-0"
 >
   I respect my parents but I should be looking good on 
   <b>

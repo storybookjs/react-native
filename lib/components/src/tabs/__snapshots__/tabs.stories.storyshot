@@ -5,52 +5,52 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-z5a1p4-Wrapper e1lzzkxx0"
+    class="css-13o7eu2"
   >
     <div
-      class="css-1am2yyz-TabBarWrapper e1lzzkxx2"
+      class="css-nlqiqg"
     >
       <div
-        class="css-l8emx-TabBar e1lzzkxx1"
+        class="css-m2flv6"
         role="tablist"
       >
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-1jt6nsk-TabButton e1lzzkxx4"
+          class="css-alh4do"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
@@ -59,7 +59,7 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
       </div>
     </div>
     <div
-      class="css-1eu9ihj-Content e1lzzkxx5"
+      class="css-1bx5ylf"
     >
       <div
         id="test2"
@@ -117,7 +117,7 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
         />
       </div>
       <div
-        class="css-ovi531-VisuallyHidden e1lzzkxx6"
+        class="css-1hyfx7x"
       >
         <div>
           CONTENT 6
@@ -133,52 +133,52 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-z5a1p4-Wrapper e1lzzkxx0"
+    class="css-13o7eu2"
   >
     <div
-      class="css-1am2yyz-TabBarWrapper e1lzzkxx2"
+      class="css-nlqiqg"
     >
       <div
-        class="css-l8emx-TabBar e1lzzkxx1"
+        class="css-m2flv6"
         role="tablist"
       >
         <button
-          class="css-1jt6nsk-TabButton e1lzzkxx4"
+          class="css-alh4do"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
@@ -187,7 +187,7 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
       </div>
     </div>
     <div
-      class="css-1eu9ihj-Content e1lzzkxx5"
+      class="css-1bx5ylf"
     >
       <div
         id="test1"
@@ -201,7 +201,7 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
         CONTENT 2
       </div>
       <div
-        class="css-ovi531-VisuallyHidden e1lzzkxx6"
+        class="css-1hyfx7x"
       >
         <div>
           CONTENT 6
@@ -217,24 +217,24 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-z5a1p4-Wrapper e1lzzkxx0"
+    class="css-13o7eu2"
   >
     <div
-      class="css-1am2yyz-TabBarWrapper e1lzzkxx2"
+      class="css-nlqiqg"
     >
       <div
-        class="css-l8emx-TabBar e1lzzkxx1"
+        class="css-m2flv6"
         role="tablist"
       >
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           With a function
         </button>
         <button
-          class="css-1jt6nsk-TabButton e1lzzkxx4"
+          class="css-alh4do"
           role="tab"
           type="button"
         >
@@ -243,10 +243,10 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
       </div>
     </div>
     <div
-      class="css-1eu9ihj-Content e1lzzkxx5"
+      class="css-1bx5ylf"
     >
       <div
-        class="css-1bvkt1k-VisuallyHidden e1lzzkxx6"
+        class="css-13o7eu2"
         role="tabpanel"
       >
         <div>
@@ -263,52 +263,52 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-rpkhur-Wrapper e1lzzkxx0"
+    class="css-12rx5m3"
   >
     <div
-      class="css-1am2yyz-TabBarWrapper e1lzzkxx2"
+      class="css-nlqiqg"
     >
       <div
-        class="css-l8emx-TabBar e1lzzkxx1"
+        class="css-m2flv6"
         role="tablist"
       >
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-1jt6nsk-TabButton e1lzzkxx4"
+          class="css-alh4do"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
@@ -317,7 +317,7 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
       </div>
     </div>
     <div
-      class="css-1od9ihz-Content e1lzzkxx5"
+      class="css-18lpvrh"
     >
       <div
         id="test2"
@@ -375,7 +375,7 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
         />
       </div>
       <div
-        class="css-ovi531-VisuallyHidden e1lzzkxx6"
+        class="css-1hyfx7x"
       >
         <div>
           CONTENT 6
@@ -391,52 +391,52 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-1nivq3t-Wrapper e1lzzkxx0"
+    class="css-iz32xf"
   >
     <div
-      class="css-1am2yyz-TabBarWrapper e1lzzkxx2"
+      class="css-nlqiqg"
     >
       <div
-        class="css-l8emx-TabBar e1lzzkxx1"
+        class="css-m2flv6"
         role="tablist"
       >
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-1jt6nsk-TabButton e1lzzkxx4"
+          class="css-alh4do"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
@@ -445,7 +445,7 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
       </div>
     </div>
     <div
-      class="css-1eu9ihj-Content e1lzzkxx5"
+      class="css-1bx5ylf"
     >
       <div
         id="test2"
@@ -503,7 +503,7 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
         />
       </div>
       <div
-        class="css-ovi531-VisuallyHidden e1lzzkxx6"
+        class="css-1hyfx7x"
       >
         <div>
           CONTENT 6
@@ -519,7 +519,7 @@ exports[`Storyshots Components|Tabs stateless - empty 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <p
-    class="css-hftiue ejh6i270"
+    class="css-hftiue"
   >
     no panels available
   </p>
@@ -531,52 +531,52 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-1nivq3t-Wrapper e1lzzkxx0"
+    class="css-iz32xf"
   >
     <div
-      class="css-1am2yyz-TabBarWrapper e1lzzkxx2"
+      class="css-nlqiqg"
     >
       <div
-        class="css-1p9vzbx-TabBar e1lzzkxx1"
+        class="css-14fmqun"
         role="tablist"
       >
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-1jt6nsk-TabButton e1lzzkxx4"
+          class="css-alh4do"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
@@ -585,7 +585,7 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
       </div>
     </div>
     <div
-      class="css-1eu9ihj-Content e1lzzkxx5"
+      class="css-1bx5ylf"
     >
       <div
         id="test2"
@@ -643,7 +643,7 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
         />
       </div>
       <div
-        class="css-ovi531-VisuallyHidden e1lzzkxx6"
+        class="css-1hyfx7x"
       >
         <div>
           CONTENT 6
@@ -659,52 +659,52 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-z5a1p4-Wrapper e1lzzkxx0"
+    class="css-13o7eu2"
   >
     <div
-      class="css-1am2yyz-TabBarWrapper e1lzzkxx2"
+      class="css-nlqiqg"
     >
       <div
-        class="css-l8emx-TabBar e1lzzkxx1"
+        class="css-m2flv6"
         role="tablist"
       >
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-1jt6nsk-TabButton e1lzzkxx4"
+          class="css-alh4do"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ghc1c-TabButton e1lzzkxx4"
+          class="css-1ohsdcw"
           role="tab"
           type="button"
         >
@@ -712,7 +712,7 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
         </button>
       </div>
       <div
-        class="css-1syx3b1-TabBarTools e1lzzkxx3"
+        class="css-clk81d"
       >
         <button
           type="button"
@@ -727,7 +727,7 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
       </div>
     </div>
     <div
-      class="css-1eu9ihj-Content e1lzzkxx5"
+      class="css-1bx5ylf"
     >
       <div
         id="test2"
@@ -785,7 +785,7 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
         />
       </div>
       <div
-        class="css-ovi531-VisuallyHidden e1lzzkxx6"
+        class="css-1hyfx7x"
       >
         <div>
           CONTENT 6

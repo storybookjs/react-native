@@ -2,25 +2,25 @@
 
 exports[`Storyshots UI|Nav/components components 1`] = `
 <nav
-  class="css-1y3wcdx-Container ea9ueuv0"
+  class="css-15ithr"
 >
   <div
-    class="css-1w49w0r-Inner ea9ueuv1"
+    class="css-tqu8kw"
   >
     <div
-      class="css-vx98lc-Main ea9ueuv3"
+      class="css-1rr4qq7"
     >
       <div
-        class="css-1l8ehjd-Head ea9ueuv2"
+        class="css-1waqkq5"
       >
         <div
-          class="css-1utbklm-HeadMain ea9ueuv6"
+          class="css-1krtgou"
         >
           <div
-            class="css-12abwdn-BrandWrapper ezlaqq41"
+            class="css-1igelti"
           >
             <svg
-              class="css-1hafpwu-Svg e1jx9faa0"
+              class="css-1baulvz"
               height="30px"
               viewBox="0 0 420 538"
             >
@@ -42,7 +42,7 @@ exports[`Storyshots UI|Nav/components components 1`] = `
               />
             </svg>
             <span
-              class="css-1y8nbux-BrandText ezlaqq42"
+              class="css-15p5m9l"
             >
               <strong>
                 Title
@@ -51,20 +51,20 @@ exports[`Storyshots UI|Nav/components components 1`] = `
           </div>
         </div>
         <span
-          class="css-1vfjj5t-Trigger e195q2qw0"
+          class="css-0"
         >
           <button
-            class="css-1030lfg-RoundButton eclugbz0"
+            class="css-1ie53bw"
             id="storybook-explorer-menu"
           >
             <svg
-              class="css-1yaqr10-Svg e1vqr9v80"
+              class="css-13o7eu2"
               height="14px"
               viewBox="0 0 1024 1024"
               width="14px"
             >
               <path
-                class="css-1xhbbdd-Path e1gl30fa0"
+                class="css-kqzqgg"
                 d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
               />
             </svg>
@@ -72,13 +72,13 @@ exports[`Storyshots UI|Nav/components components 1`] = `
         </span>
       </div>
       <p
-        class="css-hftiue ejh6i270"
+        class="css-hftiue"
       >
         There have no stories been loaded yet
       </p>
     </div>
     <div
-      class="css-1yt93tv-Foot ea9ueuv4"
+      class="css-0"
     />
   </div>
 </nav>
@@ -86,25 +86,25 @@ exports[`Storyshots UI|Nav/components components 1`] = `
 
 exports[`Storyshots UI|Nav/settings with brand 1`] = `
 <nav
-  class="css-12y23u7-Container ea9ueuv0"
+  class="css-115o2w8"
 >
   <div
-    class="css-1w49w0r-Inner ea9ueuv1"
+    class="css-tqu8kw"
   >
     <div
-      class="css-vx98lc-Main ea9ueuv3"
+      class="css-1rr4qq7"
     >
       <div
-        class="css-1l8ehjd-Head ea9ueuv2"
+        class="css-1waqkq5"
       >
         <div
-          class="css-1utbklm-HeadMain ea9ueuv6"
+          class="css-1krtgou"
         >
           <div
-            class="css-12abwdn-BrandWrapper ezlaqq41"
+            class="css-1igelti"
           >
             <svg
-              class="css-1hafpwu-Svg e1jx9faa0"
+              class="css-1baulvz"
               height="30px"
               viewBox="0 0 420 538"
             >
@@ -126,7 +126,7 @@ exports[`Storyshots UI|Nav/settings with brand 1`] = `
               />
             </svg>
             <span
-              class="css-1y8nbux-BrandText ezlaqq42"
+              class="css-15p5m9l"
             >
               <strong>
                 Title
@@ -135,20 +135,20 @@ exports[`Storyshots UI|Nav/settings with brand 1`] = `
           </div>
         </div>
         <span
-          class="css-1vfjj5t-Trigger e195q2qw0"
+          class="css-0"
         >
           <button
-            class="css-1030lfg-RoundButton eclugbz0"
+            class="css-1ie53bw"
             id="storybook-explorer-menu"
           >
             <svg
-              class="css-1yaqr10-Svg e1vqr9v80"
+              class="css-13o7eu2"
               height="14px"
               viewBox="0 0 1024 1024"
               width="14px"
             >
               <path
-                class="css-1xhbbdd-Path e1gl30fa0"
+                class="css-kqzqgg"
                 d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
               />
             </svg>
@@ -156,13 +156,13 @@ exports[`Storyshots UI|Nav/settings with brand 1`] = `
         </span>
       </div>
       <p
-        class="css-hftiue ejh6i270"
+        class="css-hftiue"
       >
         There have no stories been loaded yet
       </p>
     </div>
     <div
-      class="css-1yt93tv-Foot ea9ueuv4"
+      class="css-0"
     />
   </div>
 </nav>
@@ -170,22 +170,22 @@ exports[`Storyshots UI|Nav/settings with brand 1`] = `
 
 exports[`Storyshots UI|Nav/settings without brand 1`] = `
 <nav
-  class="css-12y23u7-Container ea9ueuv0"
+  class="css-115o2w8"
 >
   <div
-    class="css-1w49w0r-Inner ea9ueuv1"
+    class="css-tqu8kw"
   >
     <div
-      class="css-vx98lc-Main ea9ueuv3"
+      class="css-1rr4qq7"
     >
       <div
-        class="css-1l8ehjd-Head ea9ueuv2"
+        class="css-1waqkq5"
       >
         <div
-          class="css-1utbklm-HeadMain ea9ueuv6"
+          class="css-1krtgou"
         >
           <a
-            class="css-t6n78u-A ea9ueuv5"
+            class="css-1unrqcp"
             href="https://example.com"
             tabindex="-1"
           >
@@ -193,20 +193,20 @@ exports[`Storyshots UI|Nav/settings without brand 1`] = `
           </a>
         </div>
         <span
-          class="css-1vfjj5t-Trigger e195q2qw0"
+          class="css-0"
         >
           <button
-            class="css-1030lfg-RoundButton eclugbz0"
+            class="css-1ie53bw"
             id="storybook-explorer-menu"
           >
             <svg
-              class="css-1yaqr10-Svg e1vqr9v80"
+              class="css-13o7eu2"
               height="14px"
               viewBox="0 0 1024 1024"
               width="14px"
             >
               <path
-                class="css-1xhbbdd-Path e1gl30fa0"
+                class="css-kqzqgg"
                 d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
               />
             </svg>
@@ -214,13 +214,13 @@ exports[`Storyshots UI|Nav/settings without brand 1`] = `
         </span>
       </div>
       <p
-        class="css-hftiue ejh6i270"
+        class="css-hftiue"
       >
         There have no stories been loaded yet
       </p>
     </div>
     <div
-      class="css-1yt93tv-Foot ea9ueuv4"
+      class="css-0"
     />
   </div>
 </nav>

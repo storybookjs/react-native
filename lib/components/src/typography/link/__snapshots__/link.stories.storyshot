@@ -2,7 +2,7 @@
 
 exports[`Storyshots Components|Typography/Link cancel w/ href 1`] = `
 <a
-  class="css-1a69rwi-A ehzniak0"
+  class="css-q2y3yl"
   href="http://example.com"
 >
   Link
@@ -11,7 +11,7 @@ exports[`Storyshots Components|Typography/Link cancel w/ href 1`] = `
 
 exports[`Storyshots Components|Typography/Link cancel w/ onClick 1`] = `
 <a
-  class="css-1a69rwi-A ehzniak0"
+  class="css-q2y3yl"
   href="/"
 >
   Try clicking with different mouse buttons and modifier keys (shift/ctrl/alt/cmd)
@@ -20,7 +20,7 @@ exports[`Storyshots Components|Typography/Link cancel w/ onClick 1`] = `
 
 exports[`Storyshots Components|Typography/Link no-cancel w/ href 1`] = `
 <a
-  class="css-1a69rwi-A ehzniak0"
+  class="css-q2y3yl"
   href="http://example.com"
 >
   Link
@@ -29,7 +29,7 @@ exports[`Storyshots Components|Typography/Link no-cancel w/ href 1`] = `
 
 exports[`Storyshots Components|Typography/Link no-cancel w/ onClick 1`] = `
 <a
-  class="css-1a69rwi-A ehzniak0"
+  class="css-q2y3yl"
   href="/"
 >
   any click will go through

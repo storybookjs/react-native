@@ -14,7 +14,7 @@ export const baseFonts = {
     '"Lucida Grande"',
     '"Arial"',
     'sans-serif',
-  ].join(','),
+  ].join(', '),
   color: '#444',
   WebkitFontSmoothing: 'antialiased',
 };
@@ -27,8 +27,10 @@ export const monoFonts = {
     '"FiraCode-Retina"',
     '"Andale Mono"',
     '"Lucida Console"',
-    'Consolas, Monaco, monospace',
-  ].join(','),
+    'Consolas',
+    'Monaco',
+    'monospace',
+  ].join(', '),
   color: '#444',
   WebkitFontSmoothing: 'antialiased',
 };
