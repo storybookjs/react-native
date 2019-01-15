@@ -191,4 +191,4 @@ The options to `makeDecorator` are:
 - `allowDeprecatedUsage`: support the deprecated "wrapper" usage (`.add('story', () => withFoo(options)(() => <Story/>))`).
 - `wrapper`: your decorator function. Takes the `storyFn`, `context`, and both the `options` and `parameters` (as defined in `skipIfNoParametersOrOptions` above).
 
-Note if the parameters to a story include `{ foo: { disable: true } }` (where `foo` is the `parameterName` of your addon), your decorator will note be called.
+Note if the parameters to a story include `{ foo: { disable: true } }` (where `foo` is the `parameterName` of your addon), your decorator will not be called.
