@@ -2,16 +2,16 @@
 
 exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
 <div
-  class="css-1x4pjuc-Container e102gaa50"
+  class="css-vno98q"
 >
   <div
-    class="css-4owjbu-Wrapper e102gaa53"
+    class="css-nx0jxu"
   >
     <header
-      class="css-si0ejj-Title e102gaa51"
+      class="css-1axd3uw"
     >
       <svg
-        class="e102gaa56 css-104k5t3-Svg-TitleIcon e1vqr9v80"
+        class="css-d90pge"
         viewBox="0 0 420 538"
       >
         <path
@@ -32,14 +32,14 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
         />
       </svg>
       <span
-        class="css-bo02a9-TitleText e102gaa52"
+        class="css-1rd1s08"
       >
         Storybook 5.0.0
       </span>
     </header>
   </div>
   <div
-    class="css-4owjbu-Wrapper e102gaa53"
+    class="css-nx0jxu"
   >
     Cannot currently fetch the latest version from Storybook. Try 
     <a
@@ -49,25 +49,25 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
     </a>
   </div>
   <div
-    class="css-4owjbu-Wrapper e102gaa53"
+    class="css-nx0jxu"
   >
     <div
-      class="css-1asopz8-Footer e102gaa513"
+      class="css-ptjnfv"
     >
       <a
-        class="css-1a69rwi-A ehzniak0"
+        class="css-q2y3yl"
         href="https://storybook.js.org"
       >
         Storybook docs
       </a>
       <a
-        class="css-1a69rwi-A ehzniak0"
+        class="css-q2y3yl"
         href="https://github.com/storybooks/storybook"
       >
         GitHub
       </a>
       <a
-        class="css-1a69rwi-A ehzniak0"
+        class="css-q2y3yl"
         href="https://storybook.js.org/support"
       >
         Support
@@ -79,16 +79,16 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
 
 exports[`Storyshots UI|AboutPage new version required 1`] = `
 <div
-  class="css-1x4pjuc-Container e102gaa50"
+  class="css-vno98q"
 >
   <div
-    class="css-4owjbu-Wrapper e102gaa53"
+    class="css-nx0jxu"
   >
     <header
-      class="css-si0ejj-Title e102gaa51"
+      class="css-1axd3uw"
     >
       <svg
-        class="e102gaa56 css-104k5t3-Svg-TitleIcon e1vqr9v80"
+        class="css-d90pge"
         viewBox="0 0 420 538"
       >
         <path
@@ -109,22 +109,22 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
         />
       </svg>
       <span
-        class="css-bo02a9-TitleText e102gaa52"
+        class="css-1rd1s08"
       >
         Storybook 5.0.0
       </span>
       <span
-        class="css-13c4ut4-Balloon e102gaa58"
+        class="css-1y3snwz"
       >
         Update available
       </span>
     </header>
   </div>
   <div
-    class="css-4owjbu-Wrapper e102gaa53"
+    class="css-nx0jxu"
   >
     <aside
-      class="css-1hbji1w-Aside e102gaa54"
+      class="css-u4ybgy"
     >
       <div>
         Latest version
@@ -153,7 +153,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
       </li>
     </ul>
     <a
-      class="css-vb5ix5-FullChangeLogLink e102gaa59"
+      class="css-18n2xye"
       href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
       rel="noopener noreferrer"
       target="_blank"
@@ -162,16 +162,16 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
     </a>
   </div>
   <div
-    class="css-4owjbu-Wrapper e102gaa53"
+    class="css-nx0jxu"
   >
     <div
-      class="css-1gcu3b8-Upgrade e102gaa514"
+      class="css-a64er"
     >
       <header
-        class="css-yfonvn-Container e14vg0o61"
+        class="css-0"
       >
         <h1
-          class="css-4bak20-getElement e14vg0o60"
+          class="css-8vc5j1"
         >
           <span>
             Upgrade all storybook packages to latest:
@@ -179,16 +179,16 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
         </h1>
       </header>
       <div
-        class="css-1utuj4w-Wrapper epklh870"
+        class="css-wemi1o"
       >
         <div
-          class="css-1y75e3d-Scroller epklh871"
+          class="css-1gq2da1"
         >
           <pre
-            class="hljs css-1ks10li-Pre epklh872"
+            class="hljs css-4zr3vl"
           >
             <code
-              class="css-1igagyr-Code epklh873"
+              class="css-1maezg8"
             >
               npx npm-check-updates 
               <span
@@ -207,13 +207,13 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
           </pre>
         </div>
         <ul
-          class="css-13c7bym-Container egs2kzf0"
+          class="css-1bx3lfx"
         >
           <li
-            class="css-1tizi7s-ActionItem egs2kzf2"
+            class="css-wo86af"
           >
             <button
-              class="css-1r3i0dl-ActionButton egs2kzf1"
+              class="css-kimefk"
             >
               copy
             </button>
@@ -224,29 +224,29 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
         Alternatively if you're using a yarn you could run the following command, and check all storybook related packages:
       </p>
       <div
-        class="css-1utuj4w-Wrapper epklh870"
+        class="css-wemi1o"
       >
         <div
-          class="css-1y75e3d-Scroller epklh871"
+          class="css-1gq2da1"
         >
           <pre
-            class="hljs css-1ks10li-Pre epklh872"
+            class="hljs css-4zr3vl"
           >
             <code
-              class="css-1igagyr-Code epklh873"
+              class="css-1maezg8"
             >
               yarn upgrade-interactive --latest
             </code>
           </pre>
         </div>
         <ul
-          class="css-13c7bym-Container egs2kzf0"
+          class="css-1bx3lfx"
         >
           <li
-            class="css-1tizi7s-ActionItem egs2kzf2"
+            class="css-wo86af"
           >
             <button
-              class="css-1r3i0dl-ActionButton egs2kzf1"
+              class="css-kimefk"
             >
               copy
             </button>
@@ -256,25 +256,25 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
     </div>
   </div>
   <div
-    class="css-4owjbu-Wrapper e102gaa53"
+    class="css-nx0jxu"
   >
     <div
-      class="css-1asopz8-Footer e102gaa513"
+      class="css-ptjnfv"
     >
       <a
-        class="css-1a69rwi-A ehzniak0"
+        class="css-q2y3yl"
         href="https://storybook.js.org"
       >
         Storybook docs
       </a>
       <a
-        class="css-1a69rwi-A ehzniak0"
+        class="css-q2y3yl"
         href="https://github.com/storybooks/storybook"
       >
         GitHub
       </a>
       <a
-        class="css-1a69rwi-A ehzniak0"
+        class="css-q2y3yl"
         href="https://storybook.js.org/support"
       >
         Support
@@ -286,16 +286,16 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
 
 exports[`Storyshots UI|AboutPage up to date 1`] = `
 <div
-  class="css-1x4pjuc-Container e102gaa50"
+  class="css-vno98q"
 >
   <div
-    class="css-4owjbu-Wrapper e102gaa53"
+    class="css-nx0jxu"
   >
     <header
-      class="css-si0ejj-Title e102gaa51"
+      class="css-1axd3uw"
     >
       <svg
-        class="e102gaa56 css-104k5t3-Svg-TitleIcon e1vqr9v80"
+        class="css-d90pge"
         viewBox="0 0 420 538"
       >
         <path
@@ -316,22 +316,22 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
         />
       </svg>
       <span
-        class="css-bo02a9-TitleText e102gaa52"
+        class="css-1rd1s08"
       >
         Storybook 5.0.0
       </span>
       <span
-        class="css-su63og-Balloon e102gaa58"
+        class="css-3txot4"
       >
         You're up to date
       </span>
     </header>
   </div>
   <div
-    class="css-4owjbu-Wrapper e102gaa53"
+    class="css-nx0jxu"
   >
     <aside
-      class="css-1hbji1w-Aside e102gaa54"
+      class="css-u4ybgy"
     >
       <div>
         Latest version
@@ -360,7 +360,7 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
       </li>
     </ul>
     <a
-      class="css-vb5ix5-FullChangeLogLink e102gaa59"
+      class="css-18n2xye"
       href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
       rel="noopener noreferrer"
       target="_blank"
@@ -369,25 +369,25 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
     </a>
   </div>
   <div
-    class="css-4owjbu-Wrapper e102gaa53"
+    class="css-nx0jxu"
   >
     <div
-      class="css-1asopz8-Footer e102gaa513"
+      class="css-ptjnfv"
     >
       <a
-        class="css-1a69rwi-A ehzniak0"
+        class="css-q2y3yl"
         href="https://storybook.js.org"
       >
         Storybook docs
       </a>
       <a
-        class="css-1a69rwi-A ehzniak0"
+        class="css-q2y3yl"
         href="https://github.com/storybooks/storybook"
       >
         GitHub
       </a>
       <a
-        class="css-1a69rwi-A ehzniak0"
+        class="css-q2y3yl"
         href="https://storybook.js.org/support"
       >
         Support

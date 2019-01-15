@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
-import { monoFonts } from '@storybook/components';
+import { styled, monoFonts } from '@storybook/theming';
 
 import Indicator from './Indicator';
 import colors from '../colors';

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 import { Icons } from '@storybook/components';
 
 import Info from './Info';

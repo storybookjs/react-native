@@ -3,24 +3,24 @@
 exports[`Storyshots Components|Grid col 1`] = `
 Array [
   <span
-    class="css-1bdt3um-PlaceholderInline ea0irds1"
+    class="css-q2nvx8"
     color="silver"
   />,
   <div
-    class="css-p5yo87-Container ecq4n7c0"
+    class="css-1a1x13f"
   >
     <span
-      class="css-ol8bih-PlaceholderInline ea0irds1"
+      class="css-pii7xx"
     />
     <span
-      class="css-ol8bih-PlaceholderInline ea0irds1"
+      class="css-pii7xx"
     />
     <span
-      class="css-ol8bih-PlaceholderInline ea0irds1"
+      class="css-pii7xx"
     />
   </div>,
   <span
-    class="css-1bdt3um-PlaceholderInline ea0irds1"
+    class="css-q2nvx8"
     color="silver"
   />,
 ]
@@ -29,24 +29,24 @@ Array [
 exports[`Storyshots Components|Grid col outer 1`] = `
 Array [
   <span
-    class="css-1bdt3um-PlaceholderInline ea0irds1"
+    class="css-q2nvx8"
     color="silver"
   />,
   <div
-    class="css-1xrh8rg-Container ecq4n7c0"
+    class="css-ddnisy"
   >
     <span
-      class="css-ol8bih-PlaceholderInline ea0irds1"
+      class="css-pii7xx"
     />
     <span
-      class="css-ol8bih-PlaceholderInline ea0irds1"
+      class="css-pii7xx"
     />
     <span
-      class="css-ol8bih-PlaceholderInline ea0irds1"
+      class="css-pii7xx"
     />
   </div>,
   <span
-    class="css-1bdt3um-PlaceholderInline ea0irds1"
+    class="css-q2nvx8"
     color="silver"
   />,
 ]
@@ -55,24 +55,24 @@ Array [
 exports[`Storyshots Components|Grid row 1`] = `
 Array [
   <div
-    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    class="css-1dtfu94"
     color="silver"
   />,
   <div
-    class="css-1wesixd-Container ecq4n7c0"
+    class="css-lol2ju"
   >
     <div
-      class="css-19zkc89-PlaceholderBlock ea0irds0"
+      class="css-h0slm8"
     />
     <div
-      class="css-19zkc89-PlaceholderBlock ea0irds0"
+      class="css-h0slm8"
     />
     <div
-      class="css-19zkc89-PlaceholderBlock ea0irds0"
+      class="css-h0slm8"
     />
   </div>,
   <div
-    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    class="css-1dtfu94"
     color="silver"
   />,
 ]
@@ -81,24 +81,24 @@ Array [
 exports[`Storyshots Components|Grid row multiply 1`] = `
 Array [
   <div
-    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    class="css-1dtfu94"
     color="silver"
   />,
   <div
-    class="css-6g2fmt-Container ecq4n7c0"
+    class="css-1ii2tig"
   >
     <div
-      class="css-19zkc89-PlaceholderBlock ea0irds0"
+      class="css-h0slm8"
     />
     <div
-      class="css-19zkc89-PlaceholderBlock ea0irds0"
+      class="css-h0slm8"
     />
     <div
-      class="css-19zkc89-PlaceholderBlock ea0irds0"
+      class="css-h0slm8"
     />
   </div>,
   <div
-    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    class="css-1dtfu94"
     color="silver"
   />,
 ]
@@ -107,24 +107,24 @@ Array [
 exports[`Storyshots Components|Grid row outer 1`] = `
 Array [
   <div
-    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    class="css-1dtfu94"
     color="silver"
   />,
   <div
-    class="css-cfwqaz-Container ecq4n7c0"
+    class="css-6mu724"
   >
     <div
-      class="css-19zkc89-PlaceholderBlock ea0irds0"
+      class="css-h0slm8"
     />
     <div
-      class="css-19zkc89-PlaceholderBlock ea0irds0"
+      class="css-h0slm8"
     />
     <div
-      class="css-19zkc89-PlaceholderBlock ea0irds0"
+      class="css-h0slm8"
     />
   </div>,
   <div
-    class="css-sekvhc-PlaceholderBlock ea0irds0"
+    class="css-1dtfu94"
     color="silver"
   />,
 ]

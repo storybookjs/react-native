@@ -2,16 +2,16 @@
 
 exports[`Storyshots Components|SyntaxHighlighter bash 1`] = `
 <div
-  class="css-fri0s0-Wrapper epklh870"
+  class="css-ohwg9z"
 >
   <div
-    class="css-1y75e3d-Scroller epklh871"
+    class="css-1gq2da1"
   >
     <pre
-      class="hljs css-1x8ad3z-Pre epklh872"
+      class="hljs css-1bqjl7u"
     >
       <code
-        class="css-1igagyr-Code epklh873"
+        class="css-1maezg8"
       >
         npx npm-check-updates 
         <span
@@ -34,16 +34,16 @@ exports[`Storyshots Components|SyntaxHighlighter bash 1`] = `
 
 exports[`Storyshots Components|SyntaxHighlighter bordered & copy-able 1`] = `
 <div
-  class="css-1utuj4w-Wrapper epklh870"
+  class="css-wemi1o"
 >
   <div
-    class="css-1y75e3d-Scroller epklh871"
+    class="css-1gq2da1"
   >
     <pre
-      class="hljs css-1ks10li-Pre epklh872"
+      class="hljs css-4zr3vl"
     >
       <code
-        class="css-1igagyr-Code epklh873"
+        class="css-1maezg8"
       >
         <span
           class="token keyword"
@@ -229,13 +229,13 @@ exports[`Storyshots Components|SyntaxHighlighter bordered & copy-able 1`] = `
     </pre>
   </div>
   <ul
-    class="css-13c7bym-Container egs2kzf0"
+    class="css-1bx3lfx"
   >
     <li
-      class="css-1tizi7s-ActionItem egs2kzf2"
+      class="css-wo86af"
     >
       <button
-        class="css-1r3i0dl-ActionButton egs2kzf1"
+        class="css-kimefk"
       >
         copy
       </button>
@@ -246,16 +246,16 @@ exports[`Storyshots Components|SyntaxHighlighter bordered & copy-able 1`] = `
 
 exports[`Storyshots Components|SyntaxHighlighter jsx 1`] = `
 <div
-  class="css-fri0s0-Wrapper epklh870"
+  class="css-ohwg9z"
 >
   <div
-    class="css-1y75e3d-Scroller epklh871"
+    class="css-1gq2da1"
   >
     <pre
-      class="hljs css-1x8ad3z-Pre epklh872"
+      class="hljs css-1bqjl7u"
     >
       <code
-        class="css-1igagyr-Code epklh873"
+        class="css-1maezg8"
       >
         <span
           class="token keyword"
@@ -475,13 +475,13 @@ exports[`Storyshots Components|SyntaxHighlighter jsx 1`] = `
 
 exports[`Storyshots Components|SyntaxHighlighter showLineNumbers 1`] = `
 <div
-  class="css-fri0s0-Wrapper epklh870"
+  class="css-ohwg9z"
 >
   <div
-    class="css-1y75e3d-Scroller epklh871"
+    class="css-1gq2da1"
   >
     <pre
-      class="hljs css-1x8ad3z-Pre epklh872"
+      class="hljs css-1bqjl7u"
     >
       <code>
         <span
@@ -516,7 +516,7 @@ exports[`Storyshots Components|SyntaxHighlighter showLineNumbers 1`] = `
         </span>
       </code>
       <code
-        class="css-1igagyr-Code epklh873"
+        class="css-1maezg8"
       >
         <span
           class="token keyword"
@@ -706,16 +706,16 @@ exports[`Storyshots Components|SyntaxHighlighter showLineNumbers 1`] = `
 
 exports[`Storyshots Components|SyntaxHighlighter story 1`] = `
 <div
-  class="css-fri0s0-Wrapper epklh870"
+  class="css-ohwg9z"
 >
   <div
-    class="css-1y75e3d-Scroller epklh871"
+    class="css-1gq2da1"
   >
     <pre
-      class="hljs css-1x8ad3z-Pre epklh872"
+      class="hljs css-1bqjl7u"
     >
       <code
-        class="css-1igagyr-Code epklh873"
+        class="css-1maezg8"
       >
         <span
           class="token keyword"
@@ -782,7 +782,19 @@ exports[`Storyshots Components|SyntaxHighlighter story 1`] = `
         >
           import
         </span>
+         
+        <span
+          class="token punctuation"
+        >
+          {
+        </span>
          styled 
+        <span
+          class="token punctuation"
+        >
+          }
+        </span>
+         
         <span
           class="token keyword"
         >
@@ -792,7 +804,7 @@ exports[`Storyshots Components|SyntaxHighlighter story 1`] = `
         <span
           class="token string"
         >
-          '@emotion/styled'
+          '@storybook/theming'
         </span>
         <span
           class="token punctuation"

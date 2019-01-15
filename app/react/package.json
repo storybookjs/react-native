@@ -28,7 +28,7 @@
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@emotion/styled": "^10.0.5",
+    "@storybook/theming": "5.0.0-alpha.1",
     "@storybook/core": "5.0.0-alpha.1",
     "@storybook/node-logger": "5.0.0-alpha.1",
     "@svgr/webpack": "^4.0.3",

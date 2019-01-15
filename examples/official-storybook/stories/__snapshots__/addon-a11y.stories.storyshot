@@ -82,17 +82,17 @@ exports[`Storyshots Addons|A11y/Button Label 1`] = `
 
 exports[`Storyshots Addons|A11y/Form With label 1`] = `
 <label
-  class="css-1n4tt73-Wrapper evz11jd0"
+  class="css-ft59n8"
 >
   <span
-    class="css-1e2pl7n-Label evz11jd1"
+    class="css-iyjqx3"
   >
     <span>
       Testing the a11y addon
     </span>
   </span>
   <input
-    class="css-yli1rb-Input e1iqivjq0"
+    class="css-qz02ff"
     id="1"
   />
 </label>
@@ -100,10 +100,10 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
 
 exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
 <label
-  class="css-1n4tt73-Wrapper evz11jd0"
+  class="css-ft59n8"
 >
   <input
-    class="css-yli1rb-Input e1iqivjq0"
+    class="css-qz02ff"
     id="1"
     placeholder="Testing the a11y addon"
   />
@@ -112,17 +112,17 @@ exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
 
 exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
 <label
-  class="css-1n4tt73-Wrapper evz11jd0"
+  class="css-ft59n8"
 >
   <input
-    class="css-yli1rb-Input e1iqivjq0"
+    class="css-qz02ff"
   />
 </label>
 `;
 
 exports[`Storyshots Addons|A11y/Image Presentation 1`] = `
 <img
-  class="css-1suhias-Img eipkw3i0"
+  class="css-13o7eu2"
   role="presentation"
   src="http://placehold.it/350x150"
 />
@@ -131,14 +131,14 @@ exports[`Storyshots Addons|A11y/Image Presentation 1`] = `
 exports[`Storyshots Addons|A11y/Image With alt 1`] = `
 <img
   alt="Testing the a11y addon"
-  class="css-1suhias-Img eipkw3i0"
+  class="css-13o7eu2"
   src="http://placehold.it/350x150"
 />
 `;
 
 exports[`Storyshots Addons|A11y/Image Without alt 1`] = `
 <img
-  class="css-1suhias-Img eipkw3i0"
+  class="css-13o7eu2"
   src="http://placehold.it/350x150"
 />
 `;
@@ -146,10 +146,10 @@ exports[`Storyshots Addons|A11y/Image Without alt 1`] = `
 exports[`Storyshots Addons|A11y/Typography Correct 1`] = `
 Array [
   <header
-    class="css-yfonvn-Container e14vg0o61"
+    class="css-0"
   >
     <h1
-      class="css-4bak20-getElement e14vg0o60"
+      class="css-8vc5j1"
     >
       <span>
         Testing the a11y addon
@@ -157,12 +157,12 @@ Array [
     </h1>
   </header>,
   <p
-    class="css-cn4ebp-Text e17gaumq0"
+    class="css-q2y3yl"
   >
     Testing the a11y addon
   </p>,
   <a
-    class="css-1a69rwi-A ehzniak0"
+    class="css-q2y3yl"
     href="javascript:void 0"
   >
     Testing the a11y addon...
@@ -172,30 +172,30 @@ Array [
 
 exports[`Storyshots Addons|A11y/Typography Empty Heading 1`] = `
 <header
-  class="css-yfonvn-Container e14vg0o61"
+  class="css-0"
 >
   <h1
-    class="css-4bak20-getElement e14vg0o60"
+    class="css-8vc5j1"
   />
 </header>
 `;
 
 exports[`Storyshots Addons|A11y/Typography Empty Link 1`] = `
 <a
-  class="css-1a69rwi-A ehzniak0"
+  class="css-q2y3yl"
   href="javascript:void 0"
 />
 `;
 
 exports[`Storyshots Addons|A11y/Typography Empty Paragraph 1`] = `
 <p
-  class="css-cn4ebp-Text e17gaumq0"
+  class="css-q2y3yl"
 />
 `;
 
 exports[`Storyshots Addons|A11y/Typography Link without href 1`] = `
 <a
-  class="css-1a69rwi-A ehzniak0"
+  class="css-q2y3yl"
 >
   Testing the a11y addon...
 </a>

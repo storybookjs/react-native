@@ -23,7 +23,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/styled": "^10.0.5",
+    "@storybook/theming": "5.0.0-alpha.1",
     "@storybook/addons": "5.0.0-alpha.1",
     "@storybook/core-events": "5.0.0-alpha.1",
     "core-js": "^2.6.1",

@@ -2,10 +2,10 @@
 
 exports[`Storyshots Components|Menu initial closed 1`] = `
 <span
-  class="css-1vfjj5t-Trigger e195q2qw0"
+  class="css-0"
 >
   <button
-    class="css-1oxeog4-Button e1xfucyx0"
+    class="css-d1m7sn"
   >
     Click me
   </button>
@@ -15,19 +15,19 @@ exports[`Storyshots Components|Menu initial closed 1`] = `
 exports[`Storyshots Components|Menu multiple open 1`] = `
 Array [
   <span
-    class="css-1vfjj5t-Trigger e195q2qw0"
+    class="css-0"
   >
     <button
-      class="css-1oxeog4-Button e1xfucyx0"
+      class="css-d1m7sn"
     >
       Click me
     </button>
   </span>,
   <span
-    class="css-1vfjj5t-Trigger e195q2qw0"
+    class="css-0"
   >
     <button
-      class="css-1oxeog4-Button e1xfucyx0"
+      class="css-d1m7sn"
     >
       Click me
     </button>
@@ -37,10 +37,10 @@ Array [
 
 exports[`Storyshots Components|Menu with Items 1`] = `
 <span
-  class="css-1vfjj5t-Trigger e195q2qw0"
+  class="css-0"
 >
   <button
-    class="css-1oxeog4-Button e1xfucyx0"
+    class="css-d1m7sn"
   >
     Click me
   </button>
@@ -49,10 +49,10 @@ exports[`Storyshots Components|Menu with Items 1`] = `
 
 exports[`Storyshots Components|Menu with Items that close 1`] = `
 <span
-  class="css-1vfjj5t-Trigger e195q2qw0"
+  class="css-0"
 >
   <button
-    class="css-1oxeog4-Button e1xfucyx0"
+    class="css-d1m7sn"
   >
     Click me
   </button>
@@ -61,10 +61,10 @@ exports[`Storyshots Components|Menu with Items that close 1`] = `
 
 exports[`Storyshots Components|Menu with links 1`] = `
 <span
-  class="css-1vfjj5t-Trigger e195q2qw0"
+  class="css-0"
 >
   <button
-    class="css-1oxeog4-Button e1xfucyx0"
+    class="css-d1m7sn"
   >
     Click me
   </button>

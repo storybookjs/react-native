@@ -2,7 +2,7 @@
 
 exports[`Storyshots Components|Logo colored 1`] = `
 <svg
-  class="css-1k2xz3n-Svg ezlaqq40"
+  class="css-92repi"
   version="1.1"
   viewBox="0 0 2023.2 538"
   width="500"
@@ -52,7 +52,7 @@ exports[`Storyshots Components|Logo colored 1`] = `
 
 exports[`Storyshots Components|Logo gray 1`] = `
 <svg
-  class="css-1k2xz3n-Svg ezlaqq40"
+  class="css-92repi"
   version="1.1"
   viewBox="0 0 2023.2 538"
   width="500"

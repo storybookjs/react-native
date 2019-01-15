@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 // import { Viewport, withViewport } from '@storybook/addon-viewport';
 // import EventEmitter from 'eventemitter3';

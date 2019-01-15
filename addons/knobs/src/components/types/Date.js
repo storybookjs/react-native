@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 import { Form } from '@storybook/components';
 
 const FlexSpaced = styled.div({
