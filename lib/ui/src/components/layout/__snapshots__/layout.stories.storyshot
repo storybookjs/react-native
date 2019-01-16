@@ -132,10 +132,10 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
             <pre>
               {
   "id": "iframe",
-  "path": "/components/UI-DesktopLayout-noNav",
+  "path": "/story/UI-DesktopLayout-noNav",
   "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
-  "viewMode": "components",
+  "viewMode": "story",
   "debug": {
     "initialActive": 0
   }
@@ -230,10 +230,10 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
             <pre>
               {
   "id": "iframe",
-  "path": "/components/UI-DesktopLayout-noNav",
+  "path": "/story/UI-DesktopLayout-noNav",
   "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
-  "viewMode": "components",
+  "viewMode": "story",
   "debug": {
     "initialActive": 1
   }
@@ -328,10 +328,10 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
             <pre>
               {
   "id": "iframe",
-  "path": "/components/UI-DesktopLayout-noNav",
+  "path": "/story/UI-DesktopLayout-noNav",
   "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
-  "viewMode": "components",
+  "viewMode": "story",
   "debug": {
     "initialActive": 2
   }
@@ -428,7 +428,7 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
             <pre>
               {
   "id": "iframe",
-  "path": "/components/UI-DesktopLayout-noNav",
+  "path": "/story/UI-DesktopLayout-noNav",
   "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
   "debug": {
