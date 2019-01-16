@@ -1,3 +1,7 @@
+## 5.0.0-alpha.3 (January 16, 2019)
+
+Test publishing improvements
+
 ## 5.0.0-alpha.2 (January 16, 2019)
 
 ### Bug Fixes
