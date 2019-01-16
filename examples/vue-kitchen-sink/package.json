@@ -9,7 +9,7 @@
     "storybook": "start-storybook -p 9009 -s public"
   },
   "dependencies": {
-    "vue": "^2.5.17",
+    "vue": "^2.5.22",
     "vuex": "^3.0.0"
   },
   "devDependencies": {
