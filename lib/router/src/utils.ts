@@ -6,7 +6,7 @@ interface StoryData {
   storyId?: string;
 }
 
-const knownViewModesRegex = /(components|info)/;
+const knownViewModesRegex = /(story|info)/;
 const splitPath = /\/([^/]+)\/([^/]+)?/;
 
 export const storyDataFromString: (path: string) => StoryData = memoize(1000)((path: string | undefined | null) => {
