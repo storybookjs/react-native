@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "5.0.0-alpha.1",
+  "version": "5.0.0-alpha.3",
   "description": "Storybook framework-agnostic API",
   "keywords": [
     "storybook"
@@ -23,13 +23,13 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
-    "@storybook/theming": "5.0.0-alpha.1",
-    "@storybook/addons": "5.0.0-alpha.1",
-    "@storybook/channel-postmessage": "5.0.0-alpha.1",
-    "@storybook/client-logger": "5.0.0-alpha.1",
-    "@storybook/core-events": "5.0.0-alpha.1",
-    "@storybook/node-logger": "5.0.0-alpha.1",
-    "@storybook/ui": "5.0.0-alpha.1",
+    "@storybook/addons": "5.0.0-alpha.3",
+    "@storybook/channel-postmessage": "5.0.0-alpha.3",
+    "@storybook/client-logger": "5.0.0-alpha.3",
+    "@storybook/core-events": "5.0.0-alpha.3",
+    "@storybook/node-logger": "5.0.0-alpha.3",
+    "@storybook/theming": "5.0.0-alpha.3",
+    "@storybook/ui": "5.0.0-alpha.3",
     "airbnb-js-shims": "^1 || ^2",
     "autoprefixer": "^9.4.4",
     "babel-plugin-emotion": "^10.0.5",

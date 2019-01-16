@@ -1,6 +1,6 @@
 {
   "name": "@storybook/theming",
-  "version": "5.0.0-alpha.1",
+  "version": "5.0.0-alpha.3",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -22,9 +22,9 @@
     "@emotion/core": "^10.0.5",
     "@emotion/styled": "^10.0.5",
     "emotion-theming": "^10.0.5",
+    "global": "^4.3.2",
     "prop-types": "^15.6.2",
-    "react-inspector": "^2.3.1",
-    "global": "^4.3.2"
+    "react-inspector": "^2.3.1"
   },
   "peerDependencies": {
     "react": "*",

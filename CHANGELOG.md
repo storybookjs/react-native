@@ -1,3 +1,22 @@
+## 5.0.0-alpha.3 (January 16, 2019)
+
+Test publishing improvements
+
+## 5.0.0-alpha.2 (January 16, 2019)
+
+### Bug Fixes
+
+* Storyshots: Fix async issue with obtaining custom Puppeteer instance … ([#5130](https://github.com/storybooks/storybook/pull/5130))
+
+### Maintenance
+
+* MIGRATE to wrap emotion into a @storybook/theming package ([#5241](https://github.com/storybooks/storybook/pull/5241))
+
+### Dependency Upgrades
+
+* Bump zone.js from 0.8.26 to 0.8.27 ([#5230](https://github.com/storybooks/storybook/pull/5230))
+* Bump lerna from 3.8.5 to 3.10.5 ([#5229](https://github.com/storybooks/storybook/pull/5229))
+
 ## 5.0.0-alpha.1 (January 14, 2019)
 
 ### Bug Fixes
