@@ -10,14 +10,15 @@ const defaultBackground = {
 };
 
 const instructionsHtml = `
-import { storiesOf } from '@storybook/react';
-import { withBackgrounds } from '@storybook/addon-backgrounds';
+import { storiesOf } from '@storybook/react-native';
 
 storiesOf('First Component', module)
-  .addDecorator(withBackgrounds([
-    { name: 'twitter', value: '#00aced' },
-    { name: 'facebook', value: '#3b5998" },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'warm', value: 'hotpink', default: true },
+      { name: 'cool', value: 'deepskyblue' },
+    ],
+  })
   .add("First Button", () => <button>Click me</button>);
 `.trim();
 

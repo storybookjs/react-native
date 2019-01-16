@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/angular';
-import { withKnobs, text } from '@storybook/addon-knobs/angular';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 import { NameComponent } from './moduleMetadata/name.component';
 import { CustomPipePipe } from './moduleMetadata/custom.pipe';

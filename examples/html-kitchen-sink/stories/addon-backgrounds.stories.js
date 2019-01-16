@@ -1,14 +1,12 @@
 import { storiesOf } from '@storybook/html';
 
-import { withBackgrounds } from '@storybook/addon-backgrounds';
-
 storiesOf('Addons|Backgrounds', module)
-  .addDecorator(
-    withBackgrounds([
-      { name: 'twitter', value: '#00aced' },
-      { name: 'facebook', value: '#3b5998', default: true },
-    ])
-  )
+  .addParameters({
+    backgrounds: [
+      { name: 'light', value: '#eeeeee' },
+      { name: 'dark', value: '#222222', default: true },
+    ],
+  })
   .add(
     'story 1',
     () =>

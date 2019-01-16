@@ -16,6 +16,14 @@ exports[`Storyshots App|acceptance cra-kitchen-sink 1`] = `
 />
 `;
 
+exports[`Storyshots App|acceptance cra-ts-kitchen-sink 1`] = `
+<iframe
+  src="cra-ts-kitchen-sink/index.html"
+  style="border:0;position:absolute;top:0;left:0;width:100vw;height:100vh"
+  title="cra-ts-kitchen-sink"
+/>
+`;
+
 exports[`Storyshots App|acceptance html-kitchen-sink 1`] = `
 <iframe
   src="html-kitchen-sink/index.html"

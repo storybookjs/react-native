@@ -41,10 +41,18 @@ function prepare(rawStory, innerStory) {
 
 function decorateStory(getStory, decorators) {
   return decorators.reduce(
-    (decorated, decorator) => context => {
+    (decorated, decorator) => (context = {}) => {
       let story;
-      const decoratedStory = decorator(() => {
-        story = decorated(context);
+
+      const decoratedStory = decorator((p = {}) => {
+        story = decorated(
+          Object.assign(
+            context,
+            p,
+            { parameters: Object.assign(context.parameters || {}, p.parameters) },
+            { options: Object.assign(context.options || {}, p.options) }
+          )
+        );
         return story;
       }, context);
 
@@ -71,6 +79,7 @@ export const {
   addParameters,
   clearDecorators,
   getStorybook,
+  raw,
 } = clientApi;
 
 export const { configure } = configApi;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { SketchPicker } from 'react-color';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 import { Button } from '@storybook/components';
 
@@ -79,7 +79,7 @@ class ColorType extends React.Component {
         <Swatch style={colorStyle} />
         {displayColorPicker ? (
           <Popover
-            innerRef={e => {
+            ref={e => {
               this.popover = e;
             }}
           >

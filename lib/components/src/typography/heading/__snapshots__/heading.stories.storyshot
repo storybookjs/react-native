@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Typography/Heading types 1`] = `
+<div>
+  <div
+    class="css-647fpf"
+  >
+    <header
+      class="css-0"
+    >
+      <h1
+        class="css-8vc5j1"
+      >
+        <span>
+          DEFAULT WITH ALL CAPS
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-647fpf"
+  >
+    <header
+      class="css-0"
+    >
+      <h1
+        class="css-8vc5j1"
+      >
+        <span>
+          THIS LONG DEFAULT WITH ALL CAPS & SUB
+        </span>
+        <sub>
+          With a great sub
+        </sub>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-647fpf"
+  >
+    <header
+      class="css-0"
+    >
+      <h1
+        class="css-8vc5j1"
+      >
+        <span>
+          page type
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-647fpf"
+  >
+    <header
+      class="css-0"
+    >
+      <h1
+        class="css-1hxxr1i"
+      >
+        <span>
+          secondary type
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-647fpf"
+  >
+    <header
+      class="css-0"
+    >
+      <h1
+        class="css-8vc5j1"
+      >
+        <span>
+          page type
+        </span>
+        <sub>
+          With a sub
+        </sub>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-647fpf"
+  >
+    <header
+      class="css-0"
+    >
+      <h1
+        class="css-1vre1ht"
+      >
+        <span>
+          section type
+        </span>
+      </h1>
+    </header>
+  </div>
+  <div
+    class="css-647fpf"
+  >
+    <header
+      class="css-0"
+    >
+      <h1
+        class="css-1bs0pwp"
+      >
+        <span>
+          section type
+        </span>
+      </h1>
+    </header>
+    <header
+      class="css-0"
+    >
+      <h1
+        class="css-1yff19s"
+      >
+        <span>
+          section type
+        </span>
+      </h1>
+    </header>
+  </div>
+</div>
+`;

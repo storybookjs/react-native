@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|Options withOptions hiding addon panel 1`] = `
+exports[`Storyshots Addons|Options hiding addon panel 1`] = `
 <div>
   This story should have changed hidden the addons panel
 </div>
 `;
 
-exports[`Storyshots Addons|Options withOptions setting name 1`] = `
+exports[`Storyshots Addons|Options setting name 1`] = `
 <div>
   This story should have changed the name of the storybook
 </div>

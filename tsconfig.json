@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "declaration": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": true,    
     "skipLibCheck": true,
     "noImplicitAny": true,
     "jsx": "react",

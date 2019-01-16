@@ -2,8 +2,8 @@
 
 Add the following module into your app.
 
- ```sh
-npm install --save-dev @storybook/addon-storyshots-puppeteer
+```sh
+yarn add @storybook/addon-storyshots-puppeteer --dev
 ```
 
 ## Configure Storyshots for image snapshots
@@ -148,7 +148,7 @@ initStoryshots({
 
 ### Specifying a custom puppeteer `browser` instance
 
-You might use `customBrowser` to specify a custom instance of a puppeteer `browser` object. This will prevent `storyshots-puppeteer` from creating its own `browser`. It will create and close pages within the `browser`, and it is your responsibility to manage the lifecycle of the `browser` itself.
+You might use the async `getCustomBrowser` function to obtain a custom instance of a puppeteer `browser` object. This will prevent `storyshots-puppeteer` from creating its own `browser`. It will create and close pages within the `browser`, and it is your responsibility to manage the lifecycle of the `browser` itself.
 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
@@ -156,11 +156,12 @@ import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 import puppeteer from 'puppeteer';
 
 (async function() {
-    const customBrowser = await puppeteer.connect('ws://yourUrl');
-
     initStoryshots({
       suite: 'Image storyshots',
-      test: imageSnapshot({ storybookUrl: 'http://localhost:6006', customBrowser }),
+      test: imageSnapshot({ 
+        storybookUrl: 'http://localhost:6006', 
+        getCustomBrowser: async () => puppeteer.connect('ws://yourUrl')
+      }),
     });
 })();
 ```

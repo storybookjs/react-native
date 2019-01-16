@@ -82,7 +82,7 @@ const tasks = {
       log.info(prefix, 'yarn workspace');
       spawn('yarn install');
       log.info(prefix, 'prepare');
-      spawn('lerna run prepare -- --silent');
+      spawn('lerna run prepare');
       log.info(prefix, 'dll');
       spawn('lerna run createDlls --scope "@storybook/ui"');
     },

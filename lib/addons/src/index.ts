@@ -1,64 +1,79 @@
 import global from 'global';
-import { Channel } from '@storybook/channels';
 import { ReactElement } from 'react';
+import { Channel } from '@storybook/channels';
+import logger from '@storybook/client-logger';
+import { types, Types, isSupportedType } from './types';
+import deprecate from 'util-deprecate';
 
-export interface PanelOptions {
+export interface Options {
   active: boolean;
 }
 
-export interface Panel {
+export interface Addon {
   title: string;
-
-  render(options: PanelOptions): ReactElement<any>;
+  type?: Types;
+  id?: string;
+  render(options: Options): ReactElement<any>;
 }
 
 export type Loader = (callback: (api: any) => void) => void;
 
-interface LoaderKeyValue {
+export { types, isSupportedType };
+
+interface Loaders {
   [key: string]: Loader;
 }
-
-interface PanelKeyValue {
-  [key: string]: Panel;
+interface Collection {
+  [key: string]: Addon;
+}
+interface Elements {
+  [key: string]: Collection;
 }
 
 export class AddonStore {
-  private loaders: LoaderKeyValue = {};
-  private panels: PanelKeyValue = {};
+  private loaders: Loaders = {};
+  private elements: Elements = {};
   private channel: Channel | undefined;
 
-  getChannel() {
+  getChannel = () => {
     // this.channel should get overwritten by setChannel. If it wasn't called (e.g. in non-browser environment), throw.
     if (!this.channel) {
-      throw new Error(
-        'Accessing nonexistent addons channel, see https://storybook.js.org/basics/faq/#why-is-there-no-addons-channel'
-      );
+      throw new Error('Accessing non-existent addons channel, see https://storybook.js.org/basics/faq/#why-is-there-no-addons-channel');
     }
 
     return this.channel;
   }
-
-  hasChannel() {
-    return !!this.channel;
-  }
-
-  setChannel(channel: Channel) {
+  hasChannel = () => !!this.channel;
+  setChannel = (channel: Channel) => {
     this.channel = channel;
   }
 
-  getPanels() {
-    return this.panels;
+  getElements = (type: Types): Collection => {
+    if (!this.elements[type]) {
+      this.elements[type] = {};
+    }
+    return this.elements[type];
   }
-
-  addPanel(name: string, panel: Panel) {
-    this.panels[name] = panel;
+  addPanel = (name: string, options: Addon) => {
+    this.add(name, {
+      type: types.PANEL,
+      ...options,
+    });
   }
+  add = (name: string, options: Addon) => {
+    const { type } = options;
 
-  register(name: string, registerCallback: (api: any) => void) {
+    const collection = this.getElements(type);
+    collection[name] = { id: name, ...options };
+  }
+  register = (name: string, registerCallback: (api: any) => void) => {
+    if (this.loaders[name]) {
+      logger.warn(`${name} was loaded twice, this could have bad side-effects`);
+    }
     this.loaders[name] = registerCallback;
   }
 
-  loadAddons(api: any) {
+  loadAddons = (api: any) => {
     Object.values(this.loaders).forEach(value => value(api));
   }
 }

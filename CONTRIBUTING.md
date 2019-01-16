@@ -282,9 +282,9 @@ First we are going to install storybook, then we are going to link `@storybook/r
 
 #### Verify your local version is working
 
-You should now have a working storybook dev environment up and running. To verify this you can make changes to the following file:
+You should now have a working storybook dev environment up and running.
 
-`open app/react/src/client/manager/preview.js`
+> TODO: update this section (is already incorrect)
 
 Save and go to `http://localhost:9009` (or wherever storybook is running)
 
@@ -358,7 +358,7 @@ git commit -m "x.y.z changelog"
 yarn bootstrap --reset --core
 
 # publish and tag the release
-yarn run publish
+yarn run publish:latest
 
 # update the release page
 open https://github.com/storybooks/storybook/releases
