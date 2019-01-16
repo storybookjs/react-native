@@ -133,6 +133,27 @@ Array [
   <div
     class="css-10o22ze"
     offset="0"
-  />,
+  >
+    <div
+      class="css-1hyfx7x"
+      hidden=""
+    >
+      <div
+        class="css-kt3nyt"
+        style="width:100%;height:100%;transform:scale(1)"
+      >
+        <div
+          class="css-75j8lg"
+          id="storybook-preview-background"
+        />
+        <iframe
+          allowfullscreen=""
+          id="storybook-preview-iframe"
+          src="iframe.html?id=string"
+          title="string"
+        />
+      </div>
+    </div>
+  </div>,
 ]
 `;
