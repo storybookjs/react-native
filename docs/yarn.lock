@@ -1194,6 +1194,15 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
+"@storybook/addons@5.0.0-debug.3":
+  version "5.0.0-debug.3"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.0.0-debug.3.tgz#d68aff9dfeac6c061e1e44871c866c3669a0c809"
+  integrity sha512-Xi4AYog7wUpBLBSaGa6TG+1IRZCQPjCl0cjcxL4kBK3woymwjj1f5jLVfBgoL3xmz9k7YPOfs68JJmBk09eU+w==
+  dependencies:
+    "@storybook/channels" "5.0.0-debug.3"
+    global "^4.3.2"
+    util-deprecate "^1.0.2"
+
 "@storybook/channel-postmessage@5.0.0-alpha.1":
   version "5.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-5.0.0-alpha.1.tgz#b00c1b79656fd92d9b3647bdac256f6f2aa8a42b"
@@ -1207,6 +1216,11 @@
   version "5.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.0.0-alpha.1.tgz#63dc6dc40e41f1cb1dcfe2df0550b5b4fa887898"
   integrity sha512-uivewpUyznYR3xoZeMe2mHy3sWkXhkUb21QvbDJa1cUpI7RJDBfLa+SMsD/VerCnqvA8mvw5733ICWKbkGKLEg==
+
+"@storybook/channels@5.0.0-debug.3":
+  version "5.0.0-debug.3"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.0.0-debug.3.tgz#eba14ee717a6e5237d956714ccacec1aeac597d2"
+  integrity sha512-vDuBy5t9nXD5wzmC+sBSJKpXAPf7XwiK+KuElhAxC6OIoQ0kLT62WgVUU+jauH+Pc0jeETOow/miNRL8VtfFcg==
 
 "@storybook/client-logger@5.0.0-alpha.1":
   version "5.0.0-alpha.1"
