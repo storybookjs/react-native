@@ -32,16 +32,12 @@ export const queryFromLocation = (location: { search: string }) => queryFromStri
 export const stringifyQuery = (query: object) => qs.stringify(query, { addQueryPrefix: true, encode: false });
 
 export const getMatch = memoize(1000)((current: string, target: string, startsWith: boolean = true) => {
-  if (!current) {
-    return null;
+  const startsWithTarget = startsWith && current.startsWith(target);
+  const currentIsTarget = typeof target === 'string' && current === target;
+  const matchTarget = target && current.match(target);
+
+  if (startsWithTarget || currentIsTarget || matchTarget) {
+    return { path: current };
   }
-  if (startsWith) {
-    return current.startsWith(target) ? { path: current } : null;
-  }
-  if (typeof target === 'string') {
-    return current === target ? { path: current } : null;
-  }
-  if (target) {
-    return current.match(target) ? { path: current } : null;
-  }
+  return null;
 });

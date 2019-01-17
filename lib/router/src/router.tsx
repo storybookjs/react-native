@@ -36,7 +36,7 @@ interface MatchingData {
 }
 
 interface QueryLocationProps {
-  children: (a: RenderData) => React.ReactNode;
+  children: (renderData: RenderData) => React.ReactNode;
 }
 interface QueryMatchProps {
   path: string;
@@ -47,7 +47,7 @@ interface RouteProps {
   path: string;
   startsWith: boolean;
   hideOnly: boolean;
-  children: (a: RenderData) => React.ReactNode;
+  children: (renderData: RenderData) => React.ReactNode;
 }
 
 interface QueryLinkProps {
@@ -59,6 +59,7 @@ const queryNavigate = (to: string) => {
   navigate(`?path=${to}`);
 };
 
+// A component that will navigate to a new location/path when clicked
 const QueryLink = ({ to, children, ...rest }: QueryLinkProps) => (
   <Link to={`?path=${to}`} {...rest}>
     {children}
@@ -66,6 +67,8 @@ const QueryLink = ({ to, children, ...rest }: QueryLinkProps) => (
 );
 QueryLink.displayName = 'QueryLink';
 
+// A render-prop component where children is called with a location
+// and will be called whenever it changes when it changes
 const QueryLocation = ({ children }: QueryLocationProps) => (
   <Location>
     {({ location }: { location: Location }) => {
@@ -77,6 +80,9 @@ const QueryLocation = ({ children }: QueryLocationProps) => (
 );
 QueryLocation.displayName = 'QueryLocation';
 
+// A render-prop component for rendering when a certain path is hit.
+// It's immensly similar to `Location` but it receives an addition data property: `match`.
+// match has a truethy value when the path is hit.
 const QueryMatch = ({ children, path: targetPath, startsWith = false }: QueryMatchProps) => (
   <QueryLocation>
     {({ path: urlPath, ...rest }) =>
@@ -89,6 +95,7 @@ const QueryMatch = ({ children, path: targetPath, startsWith = false }: QueryMat
 );
 QueryMatch.displayName = 'QueryMatch';
 
+// A component to conditionally render children based on matching a target path
 const Route = ({ path, children, startsWith = false, hideOnly = false }: RouteProps) => (
   <QueryMatch path={path} startsWith={startsWith}>
     {({ match }) => {
