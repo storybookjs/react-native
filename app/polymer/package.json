@@ -27,12 +27,12 @@
     "@storybook/core": "5.0.0-alpha.5",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.1",
+    "core-js": "^2.6.2",
     "global": "^4.3.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "regenerator-runtime": "^0.12.1",
-    "webpack": "^4.28.3"
+    "webpack": "^4.28.4"
   },
   "devDependencies": {
     "lit-html": "^0.14.0",
