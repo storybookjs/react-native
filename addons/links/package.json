@@ -24,7 +24,7 @@
     "@storybook/addons": "5.0.0-alpha.4",
     "@storybook/core-events": "5.0.0-alpha.4",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.1",
+    "core-js": "^2.6.2",
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2"

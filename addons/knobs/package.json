@@ -26,7 +26,7 @@
     "@storybook/core-events": "5.0.0-alpha.4",
     "@storybook/theming": "5.0.0-alpha.4",
     "copy-to-clipboard": "^3.0.8",
-    "core-js": "^2.6.1",
+    "core-js": "^2.6.2",
     "escape-html": "^1.0.3",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",

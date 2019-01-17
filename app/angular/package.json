@@ -28,7 +28,7 @@
     "@storybook/core": "5.0.0-alpha.4",
     "@storybook/node-logger": "5.0.0-alpha.4",
     "angular2-template-loader": "^0.6.2",
-    "core-js": "^2.6.1",
+    "core-js": "^2.6.2",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "global": "^4.3.2",
     "react": "^16.7.0",
@@ -40,7 +40,7 @@
     "webpack": "^4.28.4"
   },
   "devDependencies": {
-    "zone.js": "^0.8.27"
+    "zone.js": "^0.8.28"
   },
   "peerDependencies": {
     "@angular-devkit/core": "^0.6.1 || >=7.0.0",

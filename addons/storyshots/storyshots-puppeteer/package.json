@@ -23,7 +23,7 @@
   "dependencies": {
     "@storybook/core": "5.0.0-alpha.4",
     "@storybook/node-logger": "5.0.0-alpha.4",
-    "core-js": "^2.6.1",
+    "core-js": "^2.6.2",
     "jest-image-snapshot": "^2.6.0",
     "puppeteer": "^1.11.0",
     "regenerator-runtime": "^0.12.1"
