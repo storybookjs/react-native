@@ -7,9 +7,7 @@ exports[`Storyshots UI|Desktop layout bottom Panel 1`] = `
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
   />
-  <div>
-    0 width or height
-  </div>
+  <div />
 </div>
 `;
 
@@ -20,9 +18,7 @@ exports[`Storyshots UI|Desktop layout default 1`] = `
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
   />
-  <div>
-    0 width or height
-  </div>
+  <div />
 </div>
 `;
 
@@ -33,9 +29,7 @@ exports[`Storyshots UI|Desktop layout full 1`] = `
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
   />
-  <div>
-    0 width or height
-  </div>
+  <div />
 </div>
 `;
 
@@ -46,9 +40,7 @@ exports[`Storyshots UI|Desktop layout no Nav 1`] = `
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
   />
-  <div>
-    0 width or height
-  </div>
+  <div />
 </div>
 `;
 
@@ -59,9 +51,7 @@ exports[`Storyshots UI|Desktop layout no Panel 1`] = `
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
   />
-  <div>
-    0 width or height
-  </div>
+  <div />
 </div>
 `;
 
@@ -72,9 +62,7 @@ exports[`Storyshots UI|Desktop layout no Panel, no Nav 1`] = `
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
   />
-  <div>
-    0 width or height
-  </div>
+  <div />
 </div>
 `;
 
@@ -85,9 +73,7 @@ exports[`Storyshots UI|Desktop layout page 1`] = `
   <div
     style="position:absolute;width:0;height:0;visibility:hidden;display:none"
   />
-  <div>
-    0 width or height
-  </div>
+  <div />
 </div>
 `;
 
@@ -131,7 +117,7 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
             </h2>
             <pre>
               {
-  "id": "iframe",
+  "id": "main",
   "path": "/story/UI-DesktopLayout-noNav",
   "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
@@ -229,7 +215,7 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
             </h2>
             <pre>
               {
-  "id": "iframe",
+  "id": "main",
   "path": "/story/UI-DesktopLayout-noNav",
   "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
@@ -327,7 +313,7 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
             </h2>
             <pre>
               {
-  "id": "iframe",
+  "id": "main",
   "path": "/story/UI-DesktopLayout-noNav",
   "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
@@ -427,7 +413,7 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
             </h2>
             <pre>
               {
-  "id": "iframe",
+  "id": "main",
   "path": "/story/UI-DesktopLayout-noNav",
   "storyId": "UI-DesktopLayout-noNav",
   "location": "http://localhost:9011/?path=/components/UI-DesktopLayout-noNav",
