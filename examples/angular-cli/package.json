@@ -17,22 +17,22 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@angular/common": "^7.1.4",
-    "@angular/compiler": "^7.1.4",
-    "@angular/core": "^7.1.4",
-    "@angular/forms": "^7.1.4",
-    "@angular/platform-browser": "^7.1.4",
-    "@angular/platform-browser-dynamic": "^7.2.0",
+    "@angular/common": "^7.2.1",
+    "@angular/compiler": "^7.2.1",
+    "@angular/core": "^7.2.1",
+    "@angular/forms": "^7.2.1",
+    "@angular/platform-browser": "^7.2.1",
+    "@angular/platform-browser-dynamic": "^7.2.1",
     "@ngrx/store": "^7.0.0",
-    "core-js": "^2.6.1",
+    "core-js": "^2.6.2",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",
-    "zone.js": "^0.8.27"
+    "zone.js": "^0.8.28"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.11.4",
-    "@angular/cli": "^7.1.4",
-    "@angular/compiler-cli": "^7.1.4",
+    "@angular/cli": "^7.2.2",
+    "@angular/compiler-cli": "^7.2.1",
     "@storybook/addon-actions": "5.0.0-alpha.5",
     "@storybook/addon-backgrounds": "5.0.0-alpha.5",
     "@storybook/addon-centered": "5.0.0-alpha.5",

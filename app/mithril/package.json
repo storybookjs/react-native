@@ -28,7 +28,7 @@
     "@babel/plugin-transform-react-jsx": "^7.2.0",
     "@storybook/core": "5.0.0-alpha.5",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.1",
+    "core-js": "^2.6.2",
     "global": "^4.3.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "terser-webpack-plugin": "^1.2.1",
-    "webpack": "^4.28.3"
+    "webpack": "^4.28.4"
   },
   "publishConfig": {
     "access": "public"
