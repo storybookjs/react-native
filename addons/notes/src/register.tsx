@@ -7,15 +7,11 @@ import { ADDON_ID, PANEL_ID, API } from './shared';
 import Panel from './Panel';
 
 addons.register(ADDON_ID, (api: API) => {
-  const channel = addons.getChannel();
-  const render = ({ active }: { active: boolean }) => <Panel api={api} active={active} />;
-  const title = 'Notes';
-
   addons.add(PANEL_ID, {
     type: types.TAB,
-    title,
-    route: ({ storyId }: { storyId: String }) => `/info/${storyId}`, // todo add type
-    match: ({ viewMode }: { viewMode: any }) => viewMode === 'info', // todo add type
-    render,
+    title: 'Notes',
+    route: ({ storyId }) => `/info/${storyId}`, // todo add type
+    match: ({ viewMode }) => viewMode === 'info', // todo add type
+    render: ({ active }) => <Panel api={api} active={active} />,
   });
 });
