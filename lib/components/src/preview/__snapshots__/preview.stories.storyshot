@@ -8,22 +8,8 @@ Array [
     <div
       class="css-1yp253n"
     >
-      <div
-        class="css-14fmqun"
-      >
-        <a
-          class="css-1xonygc"
-          href="/?path=/story/string"
-        >
-          <button
-            class="css-alh4do"
-          >
-            Canvas
-          </button>
-        </a>
-      </div>
       <span
-        class="css-41kloj"
+        class="css-2aj2qi"
       />
       <button
         class="css-1iy95j7"
@@ -133,6 +119,27 @@ Array [
   <div
     class="css-10o22ze"
     offset="0"
-  />,
+  >
+    <div
+      class="css-1hyfx7x"
+      hidden=""
+    >
+      <div
+        class="css-kt3nyt"
+        style="width:100%;height:100%;transform:scale(1)"
+      >
+        <div
+          class="css-75j8lg"
+          id="storybook-preview-background"
+        />
+        <iframe
+          allowfullscreen=""
+          id="storybook-preview-iframe"
+          src="iframe.html?id=string"
+          title="string"
+        />
+      </div>
+    </div>
+  </div>,
 ]
 `;
