@@ -1,3 +1,22 @@
+## 5.0.0-alpha.4 (January 17, 2019)
+
+### Bug Fixes
+
+* Core: Fix iframe url params ([#5265](https://github.com/storybooks/storybook/pull/5265))
+
+### Maintenance
+
+* Core: Rename viewMode/url from `components` to `story` ([#5266](https://github.com/storybooks/storybook/pull/5266))
+* Core: Export events constants as named exports ([#5186](https://github.com/storybooks/storybook/pull/5186))
+
+### Dependency Upgrades
+
+* Bump vue and vue-template-compiler ([#5231](https://github.com/storybooks/storybook/pull/5231))
+* Bump ember-cli from 3.7.0 to 3.7.1 ([#5243](https://github.com/storybooks/storybook/pull/5243))
+* Bump ember-source from 3.6.1 to 3.7.0 ([#5258](https://github.com/storybooks/storybook/pull/5258))
+* Bump @angular/platform-browser-dynamic from 7.1.4 to 7.2.0 ([#5259](https://github.com/storybooks/storybook/pull/5259))
+* Bump vue-loader from 15.4.2 to 15.5.1 ([#5261](https://github.com/storybooks/storybook/pull/5261))
+
 ## 5.0.0-alpha.3 (January 16, 2019)
 
 Test publishing improvements
