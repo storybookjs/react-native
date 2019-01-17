@@ -17,7 +17,7 @@ function callTestMethodGlobals(testMethod) {
   });
 }
 
-const isDisabled = parameter => parameter === false || (parameter && parameter.disabled === true);
+const isDisabled = parameter => parameter === false || (parameter && parameter.disable === true);
 
 function testStorySnapshots(options = {}) {
   if (typeof describe !== 'function') {
