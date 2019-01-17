@@ -78,6 +78,17 @@ export const getTypeScriptRules = (webpackConfigRules, configDir) => {
   ];
 };
 
+function mergePlugins(basePlugins, additionalPlugins) {
+  return [...basePlugins, ...additionalPlugins].reduce((plugins, plugin) => {
+    if (
+      plugins.some(includedPlugin => includedPlugin.constructor.name === plugin.constructor.name)
+    ) {
+      return plugins;
+    }
+    return [...plugins, plugin];
+  }, []);
+}
+
 export function getCraWebpackConfig(mode) {
   const pathToReactScripts = getReactScriptsPath();
 
@@ -132,7 +143,7 @@ export function applyCRAWebpackConfig(baseConfig, configDir) {
       ...baseConfig.module,
       rules: [...filteredBaseRules, ...craStyleRules, ...craTypeScriptRules],
     },
-    plugins,
+    plugins: mergePlugins(plugins, hasTsSupport ? craWebpackConfig.plugins : []),
     resolve: {
       ...baseConfig.resolve,
       extensions: [...baseConfig.resolve.extensions, ...tsExtensions],

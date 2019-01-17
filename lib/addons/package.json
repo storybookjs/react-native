@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addons",
-  "version": "4.2.0-alpha.11",
+  "version": "5.0.0-alpha.5",
   "description": "Storybook addons store",
   "keywords": [
     "storybook"
@@ -20,8 +20,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "4.2.0-alpha.11",
-    "@storybook/components": "4.2.0-alpha.11",
+    "@storybook/channels": "5.0.0-alpha.5",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"
   },

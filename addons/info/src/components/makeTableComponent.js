@@ -78,16 +78,21 @@ const propsFromPropTypes = type => {
 };
 
 export default function makeTableComponent(Component) {
-  return props => {
-    if (!props.type) { // eslint-disable-line
+  const TableComponent = props => {
+    const { type } = props;
+    if (!type) {
       return null;
     }
-
-    const { type } = props;
 
     const propDefinitionsMap = hasDocgen(type) ? propsFromDocgen(type) : propsFromPropTypes(type);
     const propDefinitions = Object.values(propDefinitionsMap);
 
     return <Component propDefinitions={propDefinitions} {...props} />;
   };
+
+  TableComponent.propTypes = {
+    type: PropTypes.func.isRequired,
+  };
+
+  return TableComponent;
 }

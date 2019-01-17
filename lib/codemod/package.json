@@ -1,6 +1,6 @@
 {
   "name": "@storybook/codemod",
-  "version": "4.2.0-alpha.11",
+  "version": "5.0.0-alpha.5",
   "description": "A collection of codemod scripts written with JSCodeshift",
   "keywords": [
     "storybook"
@@ -20,8 +20,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "core-js": "^2.5.7",
-    "jscodeshift": "^0.5.1",
+    "core-js": "^2.6.2",
+    "jscodeshift": "^0.6.2",
     "regenerator-runtime": "^0.12.1"
   },
   "publishConfig": {

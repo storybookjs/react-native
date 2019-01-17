@@ -3,6 +3,7 @@ import deepEqual from 'fast-deep-equal';
 import escape from 'escape-html';
 
 import KnobStore from './KnobStore';
+import { SET } from './shared';
 
 // This is used by _mayCallChannel to determine how long to wait to before triggering a panel update
 const PANEL_UPDATE_INTERVAL = 400;
@@ -85,7 +86,7 @@ export default class KnobManager {
     setTimeout(() => {
       this.calling = false;
       // emit to the channel and trigger a panel re-render
-      this.channel.emit('addon:knobs:setKnobs', { knobs: this.knobStore.getAll(), timestamp });
+      this.channel.emit(SET, { knobs: this.knobStore.getAll(), timestamp });
     }, PANEL_UPDATE_INTERVAL);
   }
 }

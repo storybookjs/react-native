@@ -1,57 +1,15 @@
-import { Prism } from 'global';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { SyntaxHighlighter } from '@storybook/components';
 
-export class Code extends React.Component {
-  componentDidMount() {
-    this.highlight();
-  }
-
-  componentDidUpdate() {
-    this.highlight();
-  }
-
-  highlight() {
-    if (typeof Prism !== 'undefined') {
-      Prism.highlightAll();
-    }
-  }
-
-  render() {
-    const { language, code } = this.props;
-    const codeStyle = {
-      fontFamily: 'Menlo, Monaco, "Courier New", monospace',
-      backgroundColor: '#fafafa',
-    };
-
-    const preStyle = {
-      fontFamily: 'Menlo, Monaco, "Courier New", monospace',
-      backgroundColor: '#fafafa',
-      padding: '.5rem',
-      lineHeight: 1.5,
-      overflowX: 'scroll',
-    };
-
-    const className = language ? `language-${language}` : '';
-
-    return (
-      <pre style={preStyle} className={className}>
-        <code style={codeStyle} className={className}>
-          {code}
-        </code>
-      </pre>
-    );
-  }
-}
+// XXX: is this a bug? should it be (props) => ?
+const Code = ({ props }) => <SyntaxHighlighter bordered copyable {...props} />;
 
 Code.propTypes = {
-  language: PropTypes.string,
-  code: PropTypes.node,
+  props: PropTypes.shape({}).isRequired,
 };
-Code.defaultProps = {
-  language: null,
-  code: null,
-};
+
+export { Code };
 
 export function Blockquote({ children }) {
   const style = {

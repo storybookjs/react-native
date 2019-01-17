@@ -1,18 +1,21 @@
 import React from 'react';
-import addons from '@storybook/addons';
+import addons, { types } from '@storybook/addons';
 
 import Panel from './components/Panel';
-import { ADDON_ID, PANEL_ID } from './shared';
+import ColorBlindness from './components/ColorBlindness';
 
-function init() {
-  addons.register(ADDON_ID, api => {
-    const channel = addons.getChannel();
-    addons.addPanel(PANEL_ID, {
-      title: 'Accessibility',
-      // eslint-disable-next-line react/prop-types
-      render: ({ active }) => <Panel channel={channel} api={api} active={active} />,
-    });
+import { ADDON_ID, PANEL_ID } from './constants';
+
+addons.register(ADDON_ID, api => {
+  addons.add(PANEL_ID, {
+    type: types.TOOL,
+    render: () => <ColorBlindness />,
   });
-}
 
-export { init };
+  addons.add(PANEL_ID, {
+    type: types.PANEL,
+    title: 'Accessibility',
+    // eslint-disable-next-line react/prop-types
+    render: ({ active, key }) => <Panel key={key} api={api} active={active} />,
+  });
+});

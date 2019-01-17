@@ -11,7 +11,7 @@ This addon is used to show stories source in the addon panel.
 First, install the addon
 
 ```sh
-npm install -D @storybook/addon-storysource
+yarn add @storybook/addon-storysource --dev
 ```
 
 Add this line to your `addons.js` file
@@ -41,7 +41,7 @@ The loader can be customized with the following options:
 ### parser
 The parser that will be parsing your code to AST (based on [prettier](https://github.com/prettier/prettier/tree/master/src/language-js))
 
-Alowed values:
+Allowed values:
 * `javascript` - default
 * `typescript`
 * `flow`

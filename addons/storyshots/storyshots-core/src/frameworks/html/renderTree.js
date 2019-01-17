@@ -1,7 +1,7 @@
 import { document, Node } from 'global';
 
-function getRenderedTree(story, context) {
-  const component = story.render(context);
+function getRenderedTree(story) {
+  const component = story.render();
 
   if (component instanceof Node) {
     return component;

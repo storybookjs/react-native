@@ -18,7 +18,7 @@ Refer to its documentation to understand how to use knobs**
 First of all, you need to install knobs into your project.
 
 ```sh
-npm install @storybook/addon-ondevice-knobs 
+yarn add @storybook/addon-ondevice-knobs --dev
 ```
 
 Then create a file called `rn-addons.js` in your storybook config.

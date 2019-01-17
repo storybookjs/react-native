@@ -10,7 +10,7 @@ export function register() {
     addons.addPanel(PANEL_ID, {
       title: 'Events',
       // eslint-disable-next-line react/prop-types
-      render: ({ active }) => <Panel channel={channel} active={active} />,
+      render: ({ active, key }) => <Panel key={key} channel={channel} active={active} />,
     });
   });
 }

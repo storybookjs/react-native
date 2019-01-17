@@ -1,8 +1,6 @@
-/* eslint-disable no-underscore-dangle */
-
 import { window, document } from 'global';
 import Channel, { ChannelEvent, ChannelHandler } from '@storybook/channels';
-import stringify from 'json-stringify-safe';
+import { isJSON, parse, stringify } from 'telejson';
 
 interface RawEvent {
   data: string;
@@ -19,6 +17,10 @@ interface BufferedEvent {
 }
 
 export const KEY = 'storybook-channel';
+
+// TODO: we should export a method for opening child windows here and keep track of em.
+// that way we can send postMessage to child windows as well, not just iframe
+// https://stackoverflow.com/questions/6340160/how-to-get-the-references-of-all-already-opened-child-windows
 
 export class PostmsgTransport {
   private buffer: BufferedEvent[];
@@ -51,7 +53,11 @@ export class PostmsgTransport {
         this.buffer.push({ event, resolve, reject });
       });
     }
-    const data = stringify({ key: KEY, event });
+
+    const data = stringify({ key: KEY, event }, { maxDepth: 10 });
+
+    // TODO: investigate http://blog.teamtreehouse.com/cross-domain-messaging-with-postmessage
+    // might replace '*' with document.location ?
     iframeWindow.postMessage(data, '*');
     return Promise.resolve(null);
   }
@@ -82,11 +88,18 @@ export class PostmsgTransport {
   private handleEvent(rawEvent: RawEvent): void {
     try {
       const { data } = rawEvent;
-      const { key, event } = JSON.parse(data);
+      const { key, event } = typeof data === 'string' && isJSON(data) ? parse(data) : data;
       if (key === KEY) {
+        // tslint:disable-next-line no-console
+        console.debug(`message arrived at ${this.config.page}`, event.type, ...event.args);
         this.handler(event);
       }
-    } catch (error) {} // eslint-disable-line
+    } catch (error) {
+      // tslint:disable-next-line no-console
+      console.error(error);
+      // tslint:disable-next-line no-debugger
+      debugger;
+    }
   }
 }
 
