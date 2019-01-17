@@ -15,6 +15,9 @@ cd my-rn-app
 npx -p @storybook/cli sb init
 ```
 
+During installation it will ask if you want to install storybook server.
+It allows you to control the storybook from your web browser. 
+
 The next thing you need to do is make Storybook UI visible in your app.
 
 ### CRNA, React Native vanilla
@@ -42,24 +45,13 @@ module.exports = __DEV__ ? StorybookUI : App;
 
 ## Start Storybook server (optional)
 
-If you want to control storybook from browser/VS Code/websockets you need to start the server.
-After initial setup start the storybook server with the storybook npm script.
+If you want to control storybook from browser/VS Code/websockets you need install and start the server.
 
 ```shell
 npm run storybook
 ```
 
 Now, you can open <http://localhost:7007> to view your storybook menus in the browser.
-
-## Old standalone behaviour
-
-Since storybook version v4.0 packager is removed from storybook.
-The suggested storybook usage is to include it inside your app.
-If you want to keep the old behaviour, you have to start the packager yourself with a different project root.
-
-```
-npm run storybook start -p 7007 | react-native start --projectRoot storybook
-```
 
 ## Start App
 
