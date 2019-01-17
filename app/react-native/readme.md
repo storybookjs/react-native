@@ -79,7 +79,7 @@ The following parameters can be passed to the start command:
     host to listen on
 -p, --port <port>
     port to listen on
--s, --secured
+--https
     whether server is running on https
 -c, --config-dir [dir-name]
     storybook config directory
