@@ -6,8 +6,7 @@ It will help you migrate breaking changes & deprecations.
 ## Installation
 
 ```sh
-npm install jscodeshift
-npm install @storybook/codemod
+yarn add jscodeshift @storybook/codemod --dev
 ```
 
 -   `@storybook/codemod` is our collection of codemod scripts.

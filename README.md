@@ -96,6 +96,7 @@ For additional help, join us [in our Discord](https://discord.gg/sMFvFsG) or [Sl
 | [Svelte](app/svelte)             | [v4.0.0](https://storybooks-svelte.netlify.com/)  | [![Svelte](https://img.shields.io/npm/dm/@storybook/svelte.svg)](app/svelte)                   |
 | [Riot](app/riot)                 | [v4.0.0](https://storybooks-riot.netlify.com/)    | [![Riot](https://img.shields.io/npm/dm/@storybook/riot.svg)](app/riot)                         |
 | [Ember](app/ember)               | [v4.0.0](https://storybooks-ember.netlify.com/)   | [![Ember](https://img.shields.io/npm/dm/@storybook/ember.svg)](app/ember)                      |
+| [Preact](app/preact)             | [v4.0.0](https://storybooks-preact.netlify.com/)  | [![Preact](https://img.shields.io/npm/dm/@storybook/preact.svg)](app/preact)                   |
 
 ### Sub Projects
 
@@ -128,7 +129,7 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 
 ## Badges & Presentation materials
 
-We have a badge ! Link it to your live Storybook example.
+We have a badge! Link it to your live Storybook example.
 
 ![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)
 
@@ -148,12 +149,16 @@ If you're looking for material to use in your presentation about storybook, like
 
 ## Contributing
 
-[![Good First Issue](https://img.shields.io/github/issues/storybooks/storybook/good%20first%20issue.svg)](https://github.com/storybooks/storybook/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
-
 We welcome contributions to Storybook!
 
-- ⇄ Pull requests and ★ Stars are always welcome.
+- 📥 Pull requests and 🌟 Stars are always welcome.
 - Read our [contributing guide](CONTRIBUTING.md) to get started.
+  or find us on [Discord](https://discord.gg/sMFvFsG), we're will take the time to guide you 
+
+Looking for a first issue to tackle? 
+
+- We tag issues with [![Good First Issue](https://img.shields.io/github/issues/storybooks/storybook/good%20first%20issue.svg)](https://github.com/storybooks/storybook/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) when we think they are well suited for people who are new to the codebase or OSS in general.
+- [Talk to us](https://discord.gg/sMFvFsG), we'll find something to suits your skills and learning interest.
 
 ### Development scripts
 
@@ -255,3 +260,5 @@ Support us with a monthly donation and help us continue our activities. \[[Becom
 ## License
 
 [MIT](https://github.com/storybooks/storybook/blob/master/LICENSE)
+
+-the end-

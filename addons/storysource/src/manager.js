@@ -9,7 +9,9 @@ export function register() {
     addons.addPanel(PANEL_ID, {
       title: 'Story',
       // eslint-disable-next-line react/prop-types
-      render: ({ active }) => <StoryPanel channel={channel} api={api} active={active} />,
+      render: ({ active, key }) => (
+        <StoryPanel key={key} channel={channel} api={api} active={active} />
+      ),
     });
   });
 }

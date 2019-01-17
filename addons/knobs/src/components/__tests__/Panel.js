@@ -1,22 +1,44 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import { STORY_CHANGED } from '@storybook/core-events';
+import { TabsState } from '@storybook/components';
+
 import Panel from '../Panel';
+import { CHANGE, SET } from '../../shared';
+import PropForm from '../PropForm';
+
+const createTestChannel = () => ({
+  on: jest.fn(),
+  emit: jest.fn(),
+});
+const createTestApi = () => ({
+  on: jest.fn(),
+  emit: jest.fn(),
+});
+
+// React.memo in Tabs is causing problems with enzyme, probably
+// due to https://github.com/airbnb/enzyme/issues/1875, so this
+// is a workaround
+jest.mock('react', () => {
+  const r = jest.requireActual('react');
+  return { ...r, memo: x => x };
+});
 
 describe('Panel', () => {
   it('should subscribe to setKnobs event of channel', () => {
-    const testChannel = { on: jest.fn() };
-    const testApi = { onStory: jest.fn() };
+    const testChannel = createTestChannel();
+    const testApi = createTestApi();
     shallow(<Panel channel={testChannel} api={testApi} active />);
-    expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs', jasmine.any(Function));
+    expect(testChannel.on).toHaveBeenCalledWith(SET, expect.any(Function));
   });
 
-  it('should subscribe to onStory event', () => {
-    const testChannel = { on: jest.fn() };
-    const testApi = { onStory: jest.fn() };
+  it('should subscribe to STORY_CHANGE event', () => {
+    const testChannel = createTestChannel();
+    const testApi = createTestApi();
     shallow(<Panel channel={testChannel} api={testApi} active />);
 
-    expect(testApi.onStory).toHaveBeenCalled();
-    expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs', jasmine.any(Function));
+    expect(testApi.on.mock.calls).toContainEqual([STORY_CHANGED, expect.any(Function)]);
+    expect(testChannel.on).toHaveBeenCalledWith(SET, expect.any(Function));
   });
 
   describe('setKnobs handler', () => {
@@ -36,13 +58,15 @@ describe('Panel', () => {
       };
 
       const testApi = {
+        on: (e, handler) => {
+          handlers[e] = handler;
+        },
         getQueryParam: key => testQueryParams[key],
         setQueryParams: jest.fn(),
-        onStory: jest.fn(),
       };
 
       shallow(<Panel channel={testChannel} api={testApi} active />);
-      const setKnobsHandler = handlers['addon:knobs:setKnobs'];
+      const setKnobsHandler = handlers[SET];
 
       const knobs = {
         foo: {
@@ -63,7 +87,7 @@ describe('Panel', () => {
         value: testQueryParams['knob-foo'],
         type: 'text',
       };
-      const e = 'addon:knobs:knobChange';
+      const e = CHANGE;
       expect(testChannel.emit).toHaveBeenCalledWith(e, knobFromUrl);
     });
 
@@ -83,13 +107,15 @@ describe('Panel', () => {
       };
 
       const testApi = {
+        on: (e, handler) => {
+          handlers[e] = handler;
+        },
         getQueryParam: key => testQueryParams[key],
         setQueryParams: jest.fn(),
-        onStory: jest.fn(),
       };
 
       const wrapper = shallow(<Panel channel={testChannel} api={testApi} active />);
-      const setKnobsHandler = handlers['addon:knobs:setKnobs'];
+      const setKnobsHandler = handlers[SET];
 
       const knobs = {
         foo: {
@@ -127,7 +153,7 @@ describe('Panel', () => {
       const testApi = {
         getQueryParam: jest.fn(),
         setQueryParams: jest.fn(),
-        onStory: jest.fn(),
+        on: jest.fn(),
       };
 
       const wrapper = shallow(<Panel channel={testChannel} api={testApi} active />);
@@ -138,10 +164,124 @@ describe('Panel', () => {
         type: 'text',
       };
       wrapper.instance().handleChange(testChangedKnob);
-      expect(testChannel.emit).toHaveBeenCalledWith('addon:knobs:knobChange', testChangedKnob);
+      expect(testChannel.emit).toHaveBeenCalledWith(CHANGE, testChangedKnob);
 
       // const paramsChange = { 'knob-foo': 'changed text' };
       // expect(testApi.setQueryParams).toHaveBeenCalledWith(paramsChange);
+    });
+  });
+
+  describe('groups', () => {
+    const testChannel = {
+      on: jest.fn(),
+      emit: jest.fn(),
+      removeListener: jest.fn(),
+    };
+    const testApi = {
+      getQueryParam: jest.fn(),
+      setQueryParams: jest.fn(),
+      on: jest.fn(() => () => {}),
+    };
+
+    it('should have no tabs when there are no groupIds', () => {
+      // Unfortunately, a shallow render will not invoke the render() function of the groups --
+      // it thinks they are unnamed function components (what they effectively are anyway).
+      //
+      // We have to do a full mount.
+
+      const wrapper = mount(<Panel channel={testChannel} api={testApi} active />);
+      try {
+        wrapper.setState({
+          knobs: {
+            foo: {
+              name: 'foo',
+              defaultValue: 'test',
+              used: true,
+              // no groupId
+            },
+          },
+        });
+
+        expect(wrapper.find(TabsState).exists()).toBeFalsy();
+
+        const formWrapper = wrapper.find(PropForm);
+        const knobs = formWrapper.map(formInstanceWrapper => formInstanceWrapper.prop('knobs'));
+        expect(knobs).toMatchSnapshot();
+      } finally {
+        wrapper.unmount();
+      }
+    });
+
+    it('should have one tab per groupId and an empty ALL tab when all are defined', () => {
+      const wrapper = mount(<Panel channel={testChannel} api={testApi} active />);
+      try {
+        wrapper.setState({
+          knobs: {
+            foo: {
+              name: 'foo',
+              defaultValue: 'test',
+              used: true,
+              groupId: 'foo',
+            },
+            bar: {
+              name: 'bar',
+              defaultValue: 'test2',
+              used: true,
+              groupId: 'bar',
+            },
+          },
+        });
+
+        const titles = wrapper
+          .find(TabsState)
+          // TabsState will replace the <div/> that Panel actually makes with a <Tab/>
+          .find('Tab')
+          .map(child => child.prop('name'));
+        expect(titles).toEqual(['foo', 'bar']);
+
+        const knobs = wrapper.find(PropForm).map(propForm => propForm.prop('knobs'));
+        // but it should not have its own PropForm in this case
+        expect(knobs).toHaveLength(titles.length);
+        expect(knobs).toMatchSnapshot();
+      } finally {
+        wrapper.unmount();
+      }
+    });
+
+    it('the ALL tab should have its own additional content when there are knobs both with and without a groupId', () => {
+      const wrapper = mount(<Panel channel={testChannel} api={testApi} active />);
+      try {
+        wrapper.setState({
+          knobs: {
+            foo: {
+              name: 'foo',
+              defaultValue: 'test',
+              used: true,
+              groupId: 'foo',
+            },
+            bar: {
+              name: 'bar',
+              defaultValue: 'test2',
+              used: true,
+              // no groupId
+            },
+          },
+        });
+
+        const titles = wrapper
+          .find(TabsState)
+          // TabsState will replace the <div/> that Panel actually makes with a <Tab/>
+          .find('Tab')
+          .map(child => child.prop('name'));
+        expect(titles).toEqual(['foo', 'ALL']);
+
+        const knobs = wrapper.find(PropForm).map(propForm => propForm.prop('knobs'));
+        // there are props with no groupId so ALL should also have its own PropForm
+        expect(knobs).toHaveLength(titles.length);
+        expect(knobs).toMatchSnapshot();
+      } finally {
+        wrapper.unmount();
+      }
     });
   });
 });

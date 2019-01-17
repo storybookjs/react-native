@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "4.1.0-alpha.9",
+  "version": "5.0.0-alpha.5",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -8,9 +8,6 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react-native",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -28,14 +25,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.1.0-alpha.9",
-    "@storybook/channel-websocket": "4.1.0-alpha.9",
-    "@storybook/channels": "4.1.0-alpha.9",
-    "@storybook/core": "4.1.0-alpha.9",
-    "@storybook/core-events": "4.1.0-alpha.9",
-    "@storybook/ui": "4.1.0-alpha.9",
+    "@storybook/addons": "5.0.0-alpha.5",
+    "@storybook/channel-websocket": "5.0.0-alpha.5",
+    "@storybook/channels": "5.0.0-alpha.5",
+    "@storybook/core": "5.0.0-alpha.5",
+    "@storybook/core-events": "5.0.0-alpha.5",
+    "@storybook/ui": "5.0.0-alpha.5",
     "babel-loader": "^8.0.4",
-    "babel-plugin-macros": "^2.4.2",
+    "babel-plugin-macros": "^2.4.5",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -48,7 +45,7 @@
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "commander": "^2.19.0",
-    "dotenv-webpack": "^1.5.7",
+    "dotenv-webpack": "^1.6.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "find-cache-dir": "^2.0.0",
@@ -57,13 +54,13 @@
     "json5": "^2.1.0",
     "lazy-universal-dotenv": "^2.0.0",
     "prop-types": "^15.6.2",
-    "raw-loader": "^0.5.1",
-    "react-dev-utils": "^6.1.0",
+    "raw-loader": "^1.0.0",
+    "react-dev-utils": "^7.0.1",
     "react-native-swipe-gestures": "^1.0.2",
     "shelljs": "^0.8.2",
     "url-parse": "^1.4.3",
     "uuid": "^3.3.2",
-    "webpack": "^4.23.1",
+    "webpack": "^4.28.3",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-hot-middleware": "^2.24.3",
     "ws": "^6.1.0"
@@ -76,5 +73,8 @@
     "babel-runtime": ">=6.0.0",
     "react": "*",
     "react-native": ">=0.51.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

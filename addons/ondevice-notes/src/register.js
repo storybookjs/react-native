@@ -49,7 +49,7 @@ Notes.propTypes = {
     removeListener: PropTypes.func,
   }).isRequired,
   api: PropTypes.shape({
-    onStory: PropTypes.func,
+    on: PropTypes.func,
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,
   }).isRequired,
@@ -60,6 +60,6 @@ addons.register('storybook/notes', api => {
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
     // eslint-disable-next-line react/prop-types
-    render: ({ active }) => <Notes channel={channel} api={api} active={active} />,
+    render: ({ active, key }) => <Notes key={key} channel={channel} api={api} active={active} />,
   });
 });

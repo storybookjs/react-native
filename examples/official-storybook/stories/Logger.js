@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import json from 'format-json';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 import EventEmitter from 'eventemitter3';
 import uuid from 'uuid/v4';
 

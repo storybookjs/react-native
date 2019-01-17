@@ -1,15 +1,40 @@
 import { storiesOf } from '@storybook/react';
 import { setupGraphiQL } from '@storybook/addon-graphql';
 
-// setup the graphiql helper which can be used with the add method later
-const graphiql = setupGraphiQL({ url: 'http://localhost:3000/graphql' });
+const graphiql = setupGraphiQL({
+  url: 'https://graphql-pokemon.now.sh/?',
+});
 
-// run yarn graphql in examples/official-storybook to start graphql server
 storiesOf('Addons|GraphQL', module).add(
-  'get user info',
+  'get Pickachu',
   graphiql(`{
-    user(id: "1") {
+    pokemon(name: "Pikachu") {
+      id
+      number
       name
+      attacks {
+        special {
+          name
+          type
+          damage
+        }
+      }
+      evolutions {
+        id
+        number
+        name
+        weight {
+          minimum
+          maximum
+        }
+        attacks {
+          fast {
+            name
+            type
+            damage
+          }
+        }
+      }
     }
   }`)
 );

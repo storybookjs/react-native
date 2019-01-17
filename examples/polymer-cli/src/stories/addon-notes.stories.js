@@ -1,8 +1,6 @@
 import { storiesOf } from '@storybook/polymer';
-import { withNotes } from '@storybook/addon-notes';
 
 storiesOf('Addon|Notes', module)
-  .addDecorator(withNotes)
   .add(
     'Simple note',
     () =>

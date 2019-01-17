@@ -1,8 +1,9 @@
-import { configure } from '@storybook/mithril';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addParameters } from '@storybook/mithril';
 
-setOptions({
-  hierarchyRootSeparator: /\|/,
+addParameters({
+  options: {
+    hierarchyRootSeparator: /\|/,
+  },
 });
 
 function loadStories() {

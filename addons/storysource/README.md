@@ -11,7 +11,7 @@ This addon is used to show stories source in the addon panel.
 First, install the addon
 
 ```sh
-npm install -D @storybook/addon-storysource
+yarn add @storybook/addon-storysource --dev
 ```
 
 Add this line to your `addons.js` file
@@ -23,16 +23,14 @@ import '@storybook/addon-storysource/register';
 Use this hook to a custom webpack.config. This will generate a decorator call in every story:
 
 ```js
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.stories\.jsx?$/,
-        loaders: [require.resolve('@storybook/addon-storysource/loader')],
-        enforce: 'pre',
-      },
-    ],
-  },
+module.exports = function (baseConfig, env, defaultConfig) {
+  defaultConfig.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
+  });
+
+  return defaultConfig;
 };
 ```
 
@@ -43,28 +41,27 @@ The loader can be customized with the following options:
 ### parser
 The parser that will be parsing your code to AST (based on [prettier](https://github.com/prettier/prettier/tree/master/src/language-js))
 
-Alowed values:
+Allowed values:
 * `javascript` - default
 * `typescript`
+* `flow`
 
 Usage:
 
 ```js
-module.exports = {
-  module: {
-    rules: [
+module.exports = function (baseConfig, env, defaultConfig) {
+  defaultConfig.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [
       {
-        test: /\.stories\.jsx?$/,
-        loaders: [
-          {
-            loader: require.resolve('@storybook/addon-storysource/loader'),
-            options: { parser: 'typescript' }
-          }
-        ],
-        enforce: 'pre',
-      },
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: { parser: 'typescript' }
+      }
     ],
-  },
+    enforce: 'pre',
+  });
+
+  return defaultConfig;
 };
 ```
 
@@ -86,26 +83,24 @@ Defaults:
 Usage: 
 
 ```js
-module.exports = {
-  module: {
-    rules: [
+module.exports = function (baseConfig, env, defaultConfig) {
+  defaultConfig.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [
       {
-        test: /\.stories\.jsx?$/,
-        loaders: [
-          {
-            loader: require.resolve('@storybook/addon-storysource/loader'),
-            options: {
-              prettierConfig: {
-                printWidth: 80,
-                singleQuote: false,
-              }
-            }
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: {
+          prettierConfig: {
+            printWidth: 80,
+            singleQuote: false,
           }
-        ],
-        enforce: 'pre',
-      },
+        }
+      }
     ],
-  },
+    enforce: 'pre',
+  });
+
+  return defaultConfig;
 };
 ```
 
@@ -121,26 +116,24 @@ Defaults:
 Usage:
 
 ```js
-module.exports = {
-  module: {
-    rules: [
+module.exports = function (baseConfig, env, defaultConfig) {
+  defaultConfig.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [
       {
-        test: /\.stories\.jsx?$/,
-        loaders: [
-          {
-            loader: require.resolve('@storybook/addon-storysource/loader'),
-            options: {
-              uglyCommentsRegex: [
-                /^eslint-.*/, 
-                /^global.*/,
-              ]
-            }
-          }
-        ],
-        enforce: 'pre',
-      },
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: {
+          uglyCommentsRegex: [
+            /^eslint-.*/, 
+            /^global.*/,
+          ]
+        }
+      }
     ],
-  },
+    enforce: 'pre',
+  });
+
+  return defaultConfig;
 };
 ```
 
@@ -152,20 +145,18 @@ Defaults: true
 Usage:
 
 ```js
-module.exports = {
-  module: {
-    rules: [
+module.exports = function (baseConfig, env, defaultConfig) {
+  defaultConfig.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [
       {
-        test: /\.stories\.jsx?$/,
-        loaders: [
-          {
-            loader: require.resolve('@storybook/addon-storysource/loader'),
-            options: { injectDecorator: false }
-          }
-        ],
-        enforce: 'pre',
-      },
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: { injectDecorator: false }
+      }
     ],
-  },
+    enforce: 'pre',
+  });
+
+  return defaultConfig;
 };
 ```

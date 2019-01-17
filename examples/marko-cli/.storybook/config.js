@@ -1,8 +1,9 @@
-import { configure } from '@storybook/marko';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addParameters } from '@storybook/marko';
 
-setOptions({
-  hierarchyRootSeparator: /\|/,
+addParameters({
+  options: {
+    hierarchyRootSeparator: /\|/,
+  },
 });
 
 function loadStories() {

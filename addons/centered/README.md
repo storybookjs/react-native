@@ -7,7 +7,7 @@ Storybook Centered Decorator can be used to center components inside the preview
 ### Usage
 
 ```sh
-npm install @storybook/addon-centered --save-dev
+yarn add @storybook/addon-centered --dev
 ```
 
 #### As a decorator
@@ -45,6 +45,20 @@ storiesOf('MyComponent', module)
     components: { MyComponent },
     template: '<my-component text="The Comp"/>'
   }));
+```
+
+example for Preact:
+
+```js
+import { storiesOf } from '@storybook/preact';
+import centered from '@storybook/addon-centered/preact';
+
+import MyComponent from '../Component';
+
+storiesOf('MyComponent', module)
+  .addDecorator(centered)
+  .add('without props', () => (<MyComponent />))
+  .add('with some props', () => (<MyComponent text="The Comp"/>));
 ```
 
 example for Svelte:

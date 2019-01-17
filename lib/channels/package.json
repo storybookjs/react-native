@@ -1,14 +1,11 @@
 {
   "name": "@storybook/channels",
-  "version": "4.1.0-alpha.9",
+  "version": "5.0.0-alpha.5",
   "description": "",
   "keywords": [
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/channels",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -18,8 +15,11 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -5,17 +5,13 @@ exports[`Storyshots Custom|Decorator for Vue render 1`] = `
   style="border: medium solid blue;"
 >
   <div
-    style="border: medium solid blue;"
+    style="border: medium solid red;"
   >
-    <div
-      style="border: medium solid red;"
+    <button
+      class="button"
     >
-      <button
-        class="button"
-      >
-        renders component: MyButton!
-      </button>
-    </div>
+      renders component: MyButton!
+    </button>
   </div>
 </div>
 `;
@@ -25,18 +21,14 @@ exports[`Storyshots Custom|Decorator for Vue template 1`] = `
   style="border: medium solid blue;"
 >
   <div
-    style="border: medium solid blue;"
+    style="border: medium solid red;"
   >
-    <div
-      style="border: medium solid red;"
+    <button
+      class="button"
+      style="color: rgb(66, 185, 131); border-color: #42b983;"
     >
-      <button
-        class="button"
-        style="color: rgb(66, 185, 131); border-color: #42b983;"
-      >
-        MyButton with template!
-      </button>
-    </div>
+      MyButton with template!
+    </button>
   </div>
 </div>
 `;

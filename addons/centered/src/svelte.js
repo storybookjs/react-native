@@ -23,3 +23,7 @@ export default function(storyFn) {
 
   return { Component: OriginalComponent, data, on, Wrapper: Centered, WrapperData: centeredStyles };
 }
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline();
+}

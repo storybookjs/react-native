@@ -11,8 +11,8 @@ import { document } from 'global';
  * If we don't render to HTML, we will get a snapshot of the raw story
  * i.e. ({ Component, data }).
  */
-function getRenderedTree(story, context) {
-  const { Component, data } = story.render(context);
+function getRenderedTree(story) {
+  const { Component, data } = story.render();
 
   // We need to create a target to mount onto.
   const target = document.createElement('section');

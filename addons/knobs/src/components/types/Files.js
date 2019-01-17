@@ -1,11 +1,11 @@
 import { FileReader } from 'global';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
-import { Input } from '@storybook/components';
+import { Form } from '@storybook/components';
 
-const FileInput = styled(Input)({
+const FileInput = styled(Form.Input)({
   paddingTop: 4,
 });
 

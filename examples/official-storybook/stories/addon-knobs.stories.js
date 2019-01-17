@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
 import {
   withKnobs,
-  withKnobsOptions,
   text,
   number,
   boolean,
@@ -16,6 +15,7 @@ import {
   button,
   object,
   files,
+  optionsKnob as options,
 } from '@storybook/addon-knobs';
 
 const ItemLoader = ({ isLoading, items }) => {
@@ -184,10 +184,10 @@ storiesOf('Addons|Knobs.withKnobs', module)
   .add('dynamic knobs', () => {
     const showOptional = select('Show optional', ['yes', 'no'], 'yes');
     return (
-      <div>
+      <Fragment>
         <div>{text('compulsory', 'I must be here')}</div>
         {showOptional === 'yes' ? <div>{text('optional', 'I can disappear')}</div> : null}
-      </div>
+      </Fragment>
     );
   })
   .add('complex select', () => {
@@ -198,14 +198,89 @@ storiesOf('Addons|Knobs.withKnobs', module)
         string: 'string',
         object: {},
         array: [],
+        function: () => {},
       },
       'string'
     );
     const value = m.toString();
     return (
       <pre>
-        the type of {value} = {typeof m}
+        the type of {JSON.stringify(value, null, 2)} = {typeof m}
       </pre>
+    );
+  })
+  .add('optionsKnob', () => {
+    const valuesRadio = {
+      Monday: 'Monday',
+      Tuesday: 'Tuesday',
+      Wednesday: 'Wednesday',
+    };
+    const optionRadio = options('Radio', valuesRadio, 'Tuesday', { display: 'radio' });
+
+    const valuesInlineRadio = {
+      Saturday: 'Saturday',
+      Sunday: 'Sunday',
+    };
+    const optionInlineRadio = options('Inline Radio', valuesInlineRadio, 'Saturday', {
+      display: 'inline-radio',
+    });
+
+    const valuesSelect = {
+      January: 'January',
+      February: 'February',
+      March: 'March',
+    };
+    const optionSelect = options('Select', valuesSelect, 'January', { display: 'select' });
+
+    const valuesMultiSelect = {
+      Apple: 'apple',
+      Banana: 'banana',
+      Cherry: 'cherry',
+    };
+    const optionsMultiSelect = options('Multi Select', valuesMultiSelect, ['apple'], {
+      display: 'multi-select',
+    });
+
+    const valuesCheck = {
+      Corn: 'corn',
+      Carrot: 'carrot',
+      Cucumber: 'cucumber',
+    };
+    const optionsCheck = options('Check', valuesCheck, ['carrot'], { display: 'check' });
+
+    const valuesInlineCheck = {
+      Milk: 'milk',
+      Cheese: 'cheese',
+      Butter: 'butter',
+    };
+    const optionsInlineCheck = options('Inline Check', valuesInlineCheck, ['milk'], {
+      display: 'inline-check',
+    });
+
+    return (
+      <div>
+        <p>Weekday: {optionRadio}</p>
+        <p>Weekend: {optionInlineRadio}</p>
+        <p>Month: {optionSelect}</p>
+        <p>Fruit:</p>
+        <ul>
+          {optionsMultiSelect.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <p>Vegetables:</p>
+        <ul>
+          {optionsCheck.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <p>Dairy:</p>
+        <ul>
+          {optionsInlineCheck.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
     );
   })
   .add('triggers actions via button', () => {
@@ -220,10 +295,10 @@ storiesOf('Addons|Knobs.withKnobs', module)
       }
     });
     return (
-      <div>
+      <Fragment>
         <p>Hit the knob button and it will toggle the items list into multiple states.</p>
         <ItemLoader isLoading={injectedIsLoading} items={injectedItems} />
-      </div>
+      </Fragment>
     );
   })
   .add('XSS safety', () => (
@@ -245,11 +320,3 @@ storiesOf('Addons|Knobs.withKnobs using options', module)
     })
   )
   .add('accepts options', () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>);
-
-storiesOf('Addons|Knobs.withKnobsOptions', module)
-  .addDecorator(
-    withKnobsOptions({
-      escapeHTML: false,
-    })
-  )
-  .add('displays HTML code', () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>);

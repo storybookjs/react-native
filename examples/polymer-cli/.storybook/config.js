@@ -1,8 +1,9 @@
-import { configure } from '@storybook/polymer';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addParameters } from '@storybook/polymer';
 
-setOptions({
-  hierarchyRootSeparator: /\|/,
+addParameters({
+  options: {
+    hierarchyRootSeparator: /\|/,
+  },
 });
 
 function loadStories() {

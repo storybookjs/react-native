@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import deepEqual from 'fast-deep-equal';
 import { polyfill } from 'react-lifecycles-compat';
-import { Textarea } from '@storybook/components';
+import { Form } from '@storybook/components';
 
 class ObjectType extends Component {
   static getDerivedStateFromProps(props, state) {
@@ -47,7 +47,7 @@ class ObjectType extends Component {
     const { value, failed } = this.state;
 
     return (
-      <Textarea
+      <Form.Textarea
         valid={failed ? 'error' : null}
         value={value}
         onChange={this.handleChange}

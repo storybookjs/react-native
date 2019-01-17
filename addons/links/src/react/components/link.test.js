@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import addons from '@storybook/addons';
 
-import { EVENT_ID } from '../../index';
+import { SELECT_STORY } from '@storybook/core-events';
 import { mockChannel } from '../../preview.test';
 import LinkTo from './link';
 
@@ -30,11 +30,14 @@ describe('LinkTo', () => {
       addons.getChannel.mockReturnValue(channel);
 
       const wrapper = shallow(<LinkTo kind="foo" story="bar" />);
-      wrapper.simulate('click');
-      expect(channel.emit).toHaveBeenCalledWith(EVENT_ID, {
-        kind: 'foo',
-        story: 'bar',
-      });
+      wrapper.simulate('click', { button: 0, preventDefault: () => {} });
+      expect(channel.emit.mock.calls).toContainEqual([
+        SELECT_STORY,
+        {
+          kind: 'foo',
+          story: 'bar',
+        },
+      ]);
     });
   });
 });
