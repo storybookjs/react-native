@@ -1,3 +1,13 @@
+## 5.0.0-alpha.5 (January 17, 2019)
+
+### Features
+
+* Core: preserve user-specified iframe url params ([#5272](https://github.com/storybooks/storybook/pull/5272))
+
+### Bug Fixes
+
+* Storyshots: FIX using the wrong parameter for disabling ([#5257](https://github.com/storybooks/storybook/pull/5257))
+
 ## 5.0.0-alpha.4 (January 17, 2019)
 
 ### Bug Fixes
