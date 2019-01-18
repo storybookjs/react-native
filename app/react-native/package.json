@@ -45,7 +45,7 @@
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "commander": "^2.19.0",
-    "dotenv-webpack": "^1.6.0",
+    "dotenv-webpack": "^1.7.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "find-cache-dir": "^2.0.0",
