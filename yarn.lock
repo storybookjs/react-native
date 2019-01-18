@@ -11663,7 +11663,7 @@ htmlescape@^1.1.0:
   resolved "https://registry.yarnpkg.com/htmlescape/-/htmlescape-1.1.1.tgz#3a03edc2214bca3b66424a3e7959349509cb0351"
   integrity sha1-OgPtwiFLyjtmQko+eVk0lQnLA1E=
 
-htmljs-parser@^2.5.0:
+htmljs-parser@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/htmljs-parser/-/htmljs-parser-2.6.0.tgz#3d3e6f490baf8e181744fca82f488f44de01ab9c"
   integrity sha512-T+kp/Ja6nQEMBBmy45DHJ30D1vSJwebwgsSQcQnEQSIybk7tEjJgMzr6/G3ZZXezFGJo8ogNgacLB03hA4Jtog==
@@ -15616,10 +15616,10 @@ marko-starter@^2.0.4:
     routes-table "^1.2.1"
     try-require "^1.2.1"
 
-marko@^4.1.1, marko@^4.10.0, marko@^4.14.15:
-  version "4.14.19"
-  resolved "https://registry.yarnpkg.com/marko/-/marko-4.14.19.tgz#f203d3f7e9f50076025b88c33fc5825c369f4f43"
-  integrity sha512-gJUwgrLhNGX2HKObh990J/kotty8ehw7iMrZgSk1Tw8kTkjM/aALnS9hLmwkFy5cIc01DMFGf/eozCdSQq21cA==
+marko@^4.1.1, marko@^4.10.0, marko@^4.14.20:
+  version "4.14.20"
+  resolved "https://registry.yarnpkg.com/marko/-/marko-4.14.20.tgz#045b54e957924e1b5fda29c4fc77178d2008293d"
+  integrity sha512-YZo+pLR2n9KJtgXTEgRFfPmGpWKzb0InL5OS9IWkPYVP2b/uw+qKuN3RURit56w8dfhR2jjk1XX7C4luXjwMRg==
   dependencies:
     app-module-path "^2.2.0"
     argly "^1.0.0"
@@ -15634,7 +15634,7 @@ marko@^4.1.1, marko@^4.10.0, marko@^4.14.15:
     events "^1.0.2"
     events-light "^1.0.0"
     he "^1.1.0"
-    htmljs-parser "^2.5.0"
+    htmljs-parser "^2.6.0"
     lasso-caching-fs "^1.0.1"
     lasso-modules-client "^2.0.4"
     lasso-package-root "^1.0.1"
