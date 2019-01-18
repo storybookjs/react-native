@@ -4,6 +4,8 @@ import deprecate from 'util-deprecate';
 import ReactCentered from './react';
 import VueCentered from './vue';
 
+// TODO: REMOVE this entire file in V6.0.0
+
 const Centered = deprecate(
   () => (window.STORYBOOK_ENV === 'vue' ? VueCentered : ReactCentered),
   `
