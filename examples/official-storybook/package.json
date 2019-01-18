@@ -48,8 +48,8 @@
     "paths.macro": "^2.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
-    "react-chromatic": "^0.8.4",
     "react-dom": "^16.7.0",
+    "storybook-chromatic": "^1.2.4",
     "uuid": "^3.3.2",
     "webpack": "^4.28.4"
   }
