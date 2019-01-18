@@ -132,7 +132,7 @@ Finally, we'll create some npm scripts for us to kick everything off with [start
   "scripts": {
     "jest:integration": "jest -c integration/jest.config.js",
     "test:integration": "start-server-and-test storybook http-get://localhost:9009 jest:integration",
-    "storybook": "start-storybook -p 9009 -s public",
+    "storybook": "start-storybook -p 9009 -s public"
   }
 }
 ```
