@@ -10,6 +10,7 @@ module.exports = {
   projects: [
     '<rootDir>',
     '<rootDir>/examples/cra-kitchen-sink',
+    '<rootDir>/examples/cra-ts-kitchen-sink',
     '<rootDir>/examples/html-kitchen-sink',
     '<rootDir>/examples/riot-kitchen-sink',
     '<rootDir>/examples/svelte-kitchen-sink',
@@ -23,7 +24,6 @@ module.exports = {
     '<rootDir>/lib',
     '<rootDir>/examples/official-storybook',
   ],
-  snapshotSerializers: ['@emotion/snapshot-serializer'],
   transform: {
     '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
     '^.+\\.tsx?$': '<rootDir>/node_modules/ts-jest',

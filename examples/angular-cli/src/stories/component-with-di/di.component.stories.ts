@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/angular';
-import { withKnobs, text } from '@storybook/addon-knobs/angular';
+import { withKnobs, text } from '@storybook/addon-knobs';
 import { DiComponent } from './di.component';
 
 storiesOf('Custom|Dependencies', module)

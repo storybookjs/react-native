@@ -11,7 +11,7 @@ Storybook GraphQL Addon can be used to display the GraphiQL IDE with example que
 First, install the addon
 
 ```sh
-npm install -D @storybook/addon-graphql
+yarn add @storybook/addon-graphql --dev
 ```
 
 Import the `setupGraphiQL` function and use it to create the graphiql helper with a base url.

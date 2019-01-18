@@ -95,8 +95,8 @@ For this example, we're going to use a number of packages:
 
 Let's go ahead and add all of these:
 
-```
-npm install --save-dev jest puppeteer jest-puppeteer jest-image-snapshot start-server-and-test
+```sh
+yarn add jest puppeteer jest-puppeteer jest-image-snapshot start-server-and-test --dev
 ```
 
 There's a bit of setup code that needs to run before your tests, so we'll need to configure a Jest setup file to run first, if you haven't already. This is done with the [`setupTestFrameworkScriptFile` config property](https://jestjs.io/docs/en/configuration.html#setuptestframeworkscriptfile-string), either in your package.json or in your `jest.config.js`. We'll also set `"preset": "jest-puppeteer"` so that we get the nice integration from jest-puppeteer.
@@ -132,7 +132,7 @@ Finally, we'll create some npm scripts for us to kick everything off with [start
   "scripts": {
     "jest:integration": "jest -c integration/jest.config.js",
     "test:integration": "start-server-and-test storybook http-get://localhost:9009 jest:integration",
-    "storybook": "start-storybook -p 9009 -s public",
+    "storybook": "start-storybook -p 9009 -s public"
   }
 }
 ```

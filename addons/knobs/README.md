@@ -16,7 +16,7 @@ This is how Knobs look like:
 First of all, you need to install knobs into your project as a dev dependency.
 
 ```sh
-npm install @storybook/addon-knobs --save-dev
+yarn add @storybook/addon-knobs --dev
 ```
 
 Then, configure it as an addon by adding it to your `addons.js` file (located in the Storybook config directory).
@@ -56,11 +56,12 @@ stories.add('as dynamic variables', () => {
 ```
 
 ### With Vue.js
+MyButton.story.js:
 ```js
 import { storiesOf } from '@storybook/vue';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
-import MyButton from './Button.vue';
+import MyButton from './MyButton.vue';
 
 const stories = storiesOf('Storybook Knobs', module);
 
@@ -68,24 +69,43 @@ const stories = storiesOf('Storybook Knobs', module);
 // You can also configure `withKnobs` as a global decorator.
 stories.addDecorator(withKnobs);
 
-// Knobs for Vue props
-// Knobs for Vue props
+// Assign `props` to the story's component, calling
+// knob methods within the `default` property of each prop,
+// then pass the story's prop data to the component’s prop in
+// the template with `v-bind:` or by placing the prop within
+// the component’s slot.
 stories.add('with a button', () => ({
   components: { MyButton },
-  template:
-    `<button disabled="${boolean('Disabled', false)}" >
-      ${text('Label', 'Hello Storybook')}
-    </button>`
+  props: {
+    isDisabled: {
+      default: boolean('Disabled', false)
+    },
+    text: {
+      default: text('Text', 'Hello Storybook')
+    }
+  },
+  template: `<MyButton :isDisabled="isDisabled">{{ text }}</MyButton>`
 }));
+```
 
-// Knobs as dynamic variables.
-stories.add('as dynamic variables', () => {
-  const name = text('Name', 'Arunoda Susiripala');
-  const age = number('Age', 89);
+MyButton.vue:
+```vue
+<template>
+  <button :disabled="isDisabled">
+    <slot></slot>
+  </button>
+</template>
 
-  const content = `I am ${name} and I'm ${age} years old.`;
-  return `<div>${content}</div>`;
-});
+<script>
+export default {
+  props: {
+    isDisabled: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
+</script>
 ```
 
 ### With Angular
@@ -418,4 +438,10 @@ If you are using typescript, make sure you have the type definitions installed f
 -   node
 -   react
 
-You can install them using `npm install -save @types/node @types/react`, assuming you are using Typescript >2.0.
+You can install them using:
+*assuming you are using Typescript >2.0.*
+
+```sh
+yarn add @types/node @types/react --dev
+```
+

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 const Indicator = styled.div(
   ({ color, size }) => ({
@@ -15,8 +15,8 @@ const Indicator = styled.div(
     borderRadius: size / 2,
     backgroundColor: color,
   }),
-  ({ styles }) => ({
-    ...styles,
+  ({ overrides }) => ({
+    ...overrides,
   })
 );
 

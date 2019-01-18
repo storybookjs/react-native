@@ -39,27 +39,3 @@ exports[`Storyshots Addons|Backgrounds story 2 1`] = `
   This one too!
 </button>
 `;
-
-exports[`Storyshots Addons|Backgrounds.deprecated overriden 1`] = `
-<button
-  type="button"
->
-  This one should have different backgrounds
-</button>
-`;
-
-exports[`Storyshots Addons|Backgrounds.deprecated story 1 1`] = `
-<button
-  type="button"
->
-  You should be able to switch backgrounds for this story
-</button>
-`;
-
-exports[`Storyshots Addons|Backgrounds.deprecated story 2 1`] = `
-<button
-  type="button"
->
-  This one too!
-</button>
-`;

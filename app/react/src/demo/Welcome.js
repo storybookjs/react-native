@@ -14,6 +14,12 @@ const Main = props => (
 );
 
 const Title = ({ children, ...props }) => <h1 {...props}>{children}</h1>;
+Title.propTypes = {
+  children: PropTypes.node,
+};
+Title.defaultProps = {
+  children: undefined,
+};
 
 const Note = props => (
   <p
@@ -53,6 +59,14 @@ const Link = ({ children, href, ...props }) => (
     {children}
   </a>
 );
+Link.propTypes = {
+  href: PropTypes.string,
+  children: PropTypes.node,
+};
+Link.defaultProps = {
+  href: undefined,
+  children: undefined,
+};
 
 const NavButton = ({ children, ...props }) => (
   <button
@@ -75,6 +89,13 @@ const NavButton = ({ children, ...props }) => (
     {children}
   </button>
 );
+
+NavButton.propTypes = {
+  children: PropTypes.node,
+};
+NavButton.defaultProps = {
+  children: undefined,
+};
 
 const Welcome = ({ showApp }) => (
   <Main>

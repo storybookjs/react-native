@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 storiesOf('Addon|Knobs', module)
   .addDecorator(withKnobs)
-  .addParameters({ options: { selectedAddonPanel: 'storybooks/storybook-addon-knobs' } })
+  .addParameters({ options: { selectedPanel: 'storybooks/knobs/panel' } })
   .add('with text', () => ({
     template: hbs`
       {{welcome-banner

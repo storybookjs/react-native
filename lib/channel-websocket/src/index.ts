@@ -1,4 +1,5 @@
 import { WebSocket } from 'global';
+import JSON from 'json-fn';
 import { Channel, ChannelHandler } from '@storybook/channels';
 
 type OnError = (message: Event) => void;

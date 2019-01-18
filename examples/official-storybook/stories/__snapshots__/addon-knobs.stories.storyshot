@@ -14,25 +14,23 @@ exports[`Storyshots Addons|Knobs.withKnobs accepts story parameters 1`] = `
 
 exports[`Storyshots Addons|Knobs.withKnobs complex select 1`] = `
 <pre>
-  the type of string = string
+  the type of "string" = string
 </pre>
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs dynamic knobs 1`] = `
-<div>
+Array [
   <div>
     I must be here
-  </div>
+  </div>,
   <div>
     I can disappear
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs optionsKnob 1`] = `
-<div
-  style="color:white"
->
+<div>
   <p>
     Weekday: Tuesday
   </p>
@@ -70,14 +68,14 @@ exports[`Storyshots Addons|Knobs.withKnobs optionsKnob 1`] = `
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs triggers actions via button 1`] = `
-<div>
+Array [
   <p>
     Hit the knob button and it will toggle the items list into multiple states.
-  </p>
+  </p>,
   <p>
     No items loaded
-  </p>
-</div>
+  </p>,
+]
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
@@ -176,12 +174,6 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in gro
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs using options accepts options 1`] = `
-<div>
-  &lt;h1&gt;Hello&lt;/h1&gt;
-</div>
-`;
-
-exports[`Storyshots Addons|Knobs.withKnobsOptions displays HTML code 1`] = `
 <div>
   &lt;h1&gt;Hello&lt;/h1&gt;
 </div>

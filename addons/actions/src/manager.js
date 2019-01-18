@@ -9,7 +9,9 @@ export function register() {
     addons.addPanel(PANEL_ID, {
       title: 'Action Logger',
       // eslint-disable-next-line react/prop-types
-      render: ({ active }) => <ActionLogger channel={channel} api={api} active={active} />,
+      render: ({ active, key }) => (
+        <ActionLogger key={key} channel={channel} api={api} active={active} />
+      ),
     });
   });
 }

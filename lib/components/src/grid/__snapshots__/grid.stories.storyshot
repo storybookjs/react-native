@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Grid col 1`] = `
+Array [
+  <span
+    class="css-q2nvx8"
+    color="silver"
+  />,
+  <div
+    class="css-1a1x13f"
+  >
+    <span
+      class="css-pii7xx"
+    />
+    <span
+      class="css-pii7xx"
+    />
+    <span
+      class="css-pii7xx"
+    />
+  </div>,
+  <span
+    class="css-q2nvx8"
+    color="silver"
+  />,
+]
+`;
+
+exports[`Storyshots Components|Grid col outer 1`] = `
+Array [
+  <span
+    class="css-q2nvx8"
+    color="silver"
+  />,
+  <div
+    class="css-ddnisy"
+  >
+    <span
+      class="css-pii7xx"
+    />
+    <span
+      class="css-pii7xx"
+    />
+    <span
+      class="css-pii7xx"
+    />
+  </div>,
+  <span
+    class="css-q2nvx8"
+    color="silver"
+  />,
+]
+`;
+
+exports[`Storyshots Components|Grid row 1`] = `
+Array [
+  <div
+    class="css-1dtfu94"
+    color="silver"
+  />,
+  <div
+    class="css-lol2ju"
+  >
+    <div
+      class="css-h0slm8"
+    />
+    <div
+      class="css-h0slm8"
+    />
+    <div
+      class="css-h0slm8"
+    />
+  </div>,
+  <div
+    class="css-1dtfu94"
+    color="silver"
+  />,
+]
+`;
+
+exports[`Storyshots Components|Grid row multiply 1`] = `
+Array [
+  <div
+    class="css-1dtfu94"
+    color="silver"
+  />,
+  <div
+    class="css-1ii2tig"
+  >
+    <div
+      class="css-h0slm8"
+    />
+    <div
+      class="css-h0slm8"
+    />
+    <div
+      class="css-h0slm8"
+    />
+  </div>,
+  <div
+    class="css-1dtfu94"
+    color="silver"
+  />,
+]
+`;
+
+exports[`Storyshots Components|Grid row outer 1`] = `
+Array [
+  <div
+    class="css-1dtfu94"
+    color="silver"
+  />,
+  <div
+    class="css-6mu724"
+  >
+    <div
+      class="css-h0slm8"
+    />
+    <div
+      class="css-h0slm8"
+    />
+    <div
+      class="css-h0slm8"
+    />
+  </div>,
+  <div
+    class="css-1dtfu94"
+    color="silver"
+  />,
+]
+`;

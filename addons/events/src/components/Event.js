@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { polyfill } from 'react-lifecycles-compat';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 import json from 'format-json';
 
 import Textarea from 'react-textarea-autosize';
