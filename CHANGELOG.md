@@ -1,3 +1,11 @@
+## 4.1.7 (January 17, 2019)
+
+### Bug Fixes
+
+* Core: make absolute DLL path relative ([#5238](https://github.com/storybooks/storybook/pull/5238))
+* Addon-actions: import utils directly to prevent import cycles ([#5107](https://github.com/storybooks/storybook/pull/5107))
+* Add-knobs: render non-grouped knobs in the ALL tab ([#5106](https://github.com/storybooks/storybook/pull/5106))
+
 ## 5.0.0-alpha.5 (January 17, 2019)
 
 ### Features

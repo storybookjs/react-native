@@ -32,6 +32,7 @@
     "@storybook/channels": "file:../../packs/storybook-channels.tgz",
     "@storybook/client-logger": "file:../../packs/storybook-client-logger.tgz",
     "@storybook/components": "file:../../packs/storybook-components.tgz",
+    "@storybook/router": "file:../../packs/storybook-router.tgz",
     "@storybook/core": "file:../../packs/storybook-core.tgz",
     "@storybook/core-events": "file:../../packs/storybook-core-events.tgz",
     "@storybook/node-logger": "file:../../packs/storybook-node-logger.tgz",

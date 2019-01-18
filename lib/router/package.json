@@ -1,11 +1,11 @@
 {
-  "name": "@storybook/codemod",
+  "name": "@storybook/router",
   "version": "5.0.0-alpha.5",
-  "description": "A collection of codemod scripts written with JSCodeshift",
+  "description": "Core Storybook Router",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/codemod",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/router",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -15,14 +15,19 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "core-js": "^2.6.2",
-    "jscodeshift": "^0.6.2",
-    "regenerator-runtime": "^0.12.1"
+    "@storybook/theming": "5.0.0-alpha.5",
+    "@reach/router": "^1.2.1",
+    "memoizerific": "^1.11.3",
+    "global": "^4.3.2",
+    "qs": "^6.5.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   },
   "publishConfig": {
     "access": "public"

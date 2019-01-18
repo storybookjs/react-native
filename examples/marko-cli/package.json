@@ -18,7 +18,7 @@
     "prettier": "prettier src/**/*.{js,css,less} *.js --write"
   },
   "dependencies": {
-    "marko": "^4.14.15",
+    "marko": "^4.14.20",
     "marko-starter": "^2.0.4"
   },
   "devDependencies": {
@@ -29,6 +29,6 @@
     "@storybook/addons": "5.0.0-alpha.5",
     "@storybook/marko": "5.0.0-alpha.5",
     "prettier": "^1.14.3",
-    "webpack": "^4.28.3"
+    "webpack": "^4.28.4"
   }
 }
