@@ -1,3 +1,20 @@
+## 5.0.0-alpha.6 (January 18, 2019)
+
+### Maintenance
+
+* Restore official-storybook error test ([#5281](https://github.com/storybooks/storybook/pull/5281))
+* Add explicit return types to @storybook/addons ([#5212](https://github.com/storybooks/storybook/pull/5212))
+* REFACTOR router into @storybook/router ([#5252](https://github.com/storybooks/storybook/pull/5252))
+
+### Dependency Upgrades
+
+* Bump react-select from 2.2.0 to 2.3.0 ([#5288](https://github.com/storybooks/storybook/pull/5288))
+* Bump webpack-dev-middleware from 3.5.0 to 3.5.1 ([#5285](https://github.com/storybooks/storybook/pull/5285))
+* Bump dotenv-webpack from 1.6.0 to 1.7.0 ([#5283](https://github.com/storybooks/storybook/pull/5283))
+* Bump graphql from 0.13.2 to 14.1.1 ([#5282](https://github.com/storybooks/storybook/pull/5282))
+* Bump marko from 4.14.19 to 4.14.20 ([#5284](https://github.com/storybooks/storybook/pull/5284))
+* Bumps webpack from 4.28.3 to 4.28.4 ([#5260](https://github.com/storybooks/storybook/pull/5260))
+
 ## 4.1.7 (January 17, 2019)
 
 ### Bug Fixes
