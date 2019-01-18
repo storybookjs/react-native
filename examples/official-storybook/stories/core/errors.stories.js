@@ -2,14 +2,14 @@ export default {
   title: 'Core|Errors',
 };
 
-// Comment this story out until Chromatic supports skipping stories via parameters (soon I promise!)
-// export const exception = () => {
-//   throw new Error('error');
-// };
-// exception.title = 'story throws exception';
-// exception.parameters = {
-//   storyshots: { disable: true },
-// };
+export const exception = () => {
+  throw new Error('error');
+};
+exception.title = 'story throws exception';
+exception.parameters = {
+  storyshots: { disable: true },
+  chromatic: { disable: true },
+};
 
 export const errors = () => null;
 errors.title = 'story errors';

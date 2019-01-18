@@ -7,7 +7,7 @@ import { withCssResources } from '@storybook/addon-cssresources';
 import { withA11Y } from '@storybook/addon-a11y';
 import { withNotes } from '@storybook/addon-notes';
 
-import 'react-chromatic/storybook-addon';
+import 'storybook-chromatic';
 
 import addHeadWarning from './head-warning';
 import extraViewports from './extra-viewports.json';
