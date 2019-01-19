@@ -40,6 +40,7 @@ module.exports = {
     '!**/generators/**',
     '!app/**/__mocks__ /',
   ],
+  snapshotSerializers: ['jest-emotion', 'enzyme-to-json/serializer'],
   coverageDirectory: 'coverage',
   testEnvironment: 'jsdom',
   setupTestFrameworkScriptFile: './scripts/jest.init.js',
