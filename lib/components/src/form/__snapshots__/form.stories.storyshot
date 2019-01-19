@@ -1,32 +1,131 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Form/Button alignment 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-4 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.emotion-4:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-6"
 >
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <button
-      class="css-nug58z"
+      class="emotion-0"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <button
-      class="css-1k476tp"
+      class="emotion-2"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <button
-      class="css-cr3ubn"
+      class="emotion-4"
     >
       click this button
     </button>
@@ -35,32 +134,133 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Button sizes 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  display: inline;
+  text-align: left;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-4 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.emotion-4:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-6"
 >
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <button
-      class="css-4xnzo1"
+      class="emotion-0"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <button
-      class="css-11kcupu"
+      class="emotion-2"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <button
-      class="css-cr3ubn"
+      class="emotion-4"
     >
       click this button
     </button>
@@ -69,41 +269,171 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Button validations 1`] = `
+.emotion-8 > * {
+  margin-top: 10px;
+}
+
+.emotion-8 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-6 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.emotion-6:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: #d53535;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: orange;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-4 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: #09833a;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.emotion-4:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-8"
 >
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <button
-      class="css-h7vngw"
+      class="emotion-0"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <button
-      class="css-pr2gxm"
+      class="emotion-2"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <button
-      class="css-1xy9y2o"
+      class="emotion-4"
     >
       click this button
     </button>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <button
-      class="css-cr3ubn"
+      class="emotion-6"
     >
       click this button
     </button>
@@ -112,18 +442,81 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Field field 1`] = `
+.emotion-2 {
+  width: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 0 8px 8px 8px;
+}
+
+.emotion-2:last-child {
+  border-bottom: 0 none;
+  padding-bottom: 0;
+}
+
+.emotion-0 {
+  min-width: 100px;
+  min-height: 32px;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 16px;
+}
+
+.emotion-1 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  display: inline;
+  text-align: left;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+}
+
+.emotion-1:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <label
-  class="css-ft59n8"
+  class="emotion-2"
 >
   <span
-    class="css-iyjqx3"
+    class="emotion-0"
   >
     <span>
       label
     </span>
   </span>
   <select
-    class="css-1x64pgq"
+    class="emotion-1"
     size="1"
   >
     <option
@@ -147,30 +540,111 @@ exports[`Storyshots Components|Form/Field field 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Input alignment 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-4 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  min-height: 32px;
+}
+
+.emotion-4:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  min-height: 32px;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  min-height: 32px;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-6"
 >
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <input
-      class="css-f41t2d"
+      class="emotion-0"
       value="text"
     />
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <input
-      class="css-1ad2rr8"
+      class="emotion-2"
       value="text"
     />
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <input
-      class="css-1o6bujc"
+      class="emotion-4"
       value="text"
     />
   </div>
@@ -178,30 +652,113 @@ exports[`Storyshots Components|Form/Input alignment 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Input sizes 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  display: inline;
+  text-align: left;
+  min-height: 32px;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  min-height: 32px;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-4 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  min-height: 32px;
+}
+
+.emotion-4:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-6"
 >
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <input
-      class="css-qz02ff"
+      class="emotion-0"
       value="text"
     />
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <input
-      class="css-vl6kgo"
+      class="emotion-2"
       value="text"
     />
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <input
-      class="css-1o6bujc"
+      class="emotion-4"
       value="text"
     />
   </div>
@@ -209,38 +766,144 @@ exports[`Storyshots Components|Form/Input sizes 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Input validations 1`] = `
+.emotion-8 > * {
+  margin-top: 10px;
+}
+
+.emotion-8 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-6 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  min-height: 32px;
+}
+
+.emotion-6:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: #d53535;
+  min-height: 32px;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: orange;
+  min-height: 32px;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-4 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: #09833a;
+  min-height: 32px;
+}
+
+.emotion-4:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-8"
 >
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <input
-      class="css-13v1obz"
+      class="emotion-0"
       value="text"
     />
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <input
-      class="css-4c07ht"
+      class="emotion-2"
       value="text"
     />
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <input
-      class="css-d6fo4a"
+      class="emotion-4"
       value="text"
     />
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <input
-      class="css-1o6bujc"
+      class="emotion-6"
       value="text"
     />
   </div>
@@ -248,11 +911,100 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Select alignment 1`] = `
+.emotion-3 > * {
+  margin-top: 10px;
+}
+
+.emotion-3 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-1 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+}
+
+.emotion-1:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-3"
 >
   <select
-    class="css-lktxtf"
+    class="emotion-0"
   >
     <option
       value="val1"
@@ -272,7 +1024,7 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
     </option>
   </select>
   <select
-    class="css-llmj5t"
+    class="emotion-1"
   >
     <option
       value="val1"
@@ -292,7 +1044,7 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
     </option>
   </select>
   <select
-    class="css-6k67ao"
+    class="emotion-2"
   >
     <option
       value="val1"
@@ -315,14 +1067,112 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Select sizes 1`] = `
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  display: inline;
+  text-align: left;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-4 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+}
+
+.emotion-4:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-6"
 >
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <select
-      class="css-1x64pgq"
+      class="emotion-0"
     >
       <option
         value="val1"
@@ -343,10 +1193,10 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
     </select>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <select
-      class="css-11c6rd0"
+      class="emotion-2"
     >
       <option
         value="val1"
@@ -367,10 +1217,10 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
     </select>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <select
-      class="css-6k67ao"
+      class="emotion-4"
     >
       <option
         value="val1"
@@ -394,11 +1244,130 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Select validations 1`] = `
+.emotion-4 > * {
+  margin-top: 10px;
+}
+
+.emotion-4 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-3 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+}
+
+.emotion-3:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: #d53535;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-1 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: orange;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+}
+
+.emotion-1:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: #09833a;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-4"
 >
   <select
-    class="css-qa4pip"
+    class="emotion-0"
   >
     <option
       value="val1"
@@ -418,7 +1387,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
     </option>
   </select>
   <select
-    class="css-130ns75"
+    class="emotion-1"
   >
     <option
       value="val1"
@@ -438,7 +1407,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
     </option>
   </select>
   <select
-    class="css-59o0fe"
+    class="emotion-2"
   >
     <option
       value="val1"
@@ -458,7 +1427,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
     </option>
   </select>
   <select
-    class="css-6k67ao"
+    class="emotion-3"
   >
     <option
       value="val1"
@@ -481,37 +1450,127 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Textarea alignment 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-4 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  min-height: 32px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: visible;
+}
+
+.emotion-4:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  min-height: 32px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: visible;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  min-height: 32px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: visible;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-6"
 >
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <textarea
       align="end"
-      class="css-mxs2kj"
+      class="emotion-0"
       style="height:0"
     >
       text
     </textarea>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <textarea
       align="center"
-      class="css-b7c25f"
+      class="emotion-2"
       style="height:0"
     >
       text
     </textarea>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <textarea
       align="start"
-      class="css-1ky3gy2"
+      class="emotion-4"
       style="height:0"
     >
       text
@@ -521,34 +1580,126 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Textarea sizes 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  display: inline;
+  text-align: left;
+  min-height: 32px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: visible;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  min-height: 32px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: visible;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-4 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  min-height: 32px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: visible;
+}
+
+.emotion-4:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-6"
 >
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <textarea
-      class="css-1nt74oa"
+      class="emotion-0"
       style="height:0"
     >
       text
     </textarea>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <textarea
-      class="css-1cfv75g"
+      class="emotion-2"
       style="height:0"
     >
       text
     </textarea>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <textarea
-      class="css-1ky3gy2"
+      class="emotion-4"
       style="height:0"
     >
       text
@@ -558,14 +1709,132 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Textarea validations 1`] = `
+.emotion-8 > * {
+  margin-top: 10px;
+}
+
+.emotion-8 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-6 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  min-height: 32px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: visible;
+}
+
+.emotion-6:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-0 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: #d53535;
+  min-height: 32px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: visible;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: orange;
+  min-height: 32px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: visible;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-4 {
+  padding: 0 10px;
+  color: #444;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  -webkit-transition: border-bottom-color .3s linear;
+  transition: border-bottom-color .3s linear;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  border-bottom-color: #09833a;
+  min-height: 32px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: visible;
+}
+
+.emotion-4:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
 <div
-  class="css-lol2ju"
+  class="emotion-8"
 >
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <textarea
-      class="css-1j8dr9r"
+      class="emotion-0"
       style="height:0"
       valid="error"
     >
@@ -573,10 +1842,10 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
     </textarea>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <textarea
-      class="css-xb06fr"
+      class="emotion-2"
       style="height:0"
       valid="warn"
     >
@@ -584,10 +1853,10 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
     </textarea>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <textarea
-      class="css-f34nqu"
+      class="emotion-4"
       style="height:0"
       valid="valid"
     >
@@ -595,10 +1864,10 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
     </textarea>
   </div>
   <div
-    class="css-k008qs"
+    class="emotion-1"
   >
     <textarea
-      class="css-1ky3gy2"
+      class="emotion-6"
       style="height:0"
     >
       text

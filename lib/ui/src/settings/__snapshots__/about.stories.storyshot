@@ -1,17 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
+.emotion-10 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:500px) {
+  .emotion-3 {
+    display: block;
+  }
+}
+
+.emotion-2 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-0 {
+  display: block;
+  height: 40px;
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.emotion-1 {
+  font-size: 30px;
+  display: inline-block;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-8 > * {
+  margin-left: 20px;
+}
+
+.emotion-8 > *:first-child {
+  margin-left: 0;
+}
+
+.emotion-5 {
+  color: inherit;
+}
+
 <div
-  class="css-vno98q"
+  class="emotion-10"
 >
   <div
-    class="css-nx0jxu"
+    class="emotion-3"
   >
     <header
-      class="css-1axd3uw"
+      class="emotion-2"
     >
       <svg
-        class="css-d90pge"
+        class="emotion-0"
         viewBox="0 0 420 538"
       >
         <path
@@ -32,14 +112,14 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
         />
       </svg>
       <span
-        class="css-1rd1s08"
+        class="emotion-1"
       >
         Storybook 5.0.0
       </span>
     </header>
   </div>
   <div
-    class="css-nx0jxu"
+    class="emotion-3"
   >
     Cannot currently fetch the latest version from Storybook. Try 
     <a
@@ -49,25 +129,25 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
     </a>
   </div>
   <div
-    class="css-nx0jxu"
+    class="emotion-3"
   >
     <div
-      class="css-ptjnfv"
+      class="emotion-8"
     >
       <a
-        class="css-q2y3yl"
+        class="emotion-5"
         href="https://storybook.js.org"
       >
         Storybook docs
       </a>
       <a
-        class="css-q2y3yl"
+        class="emotion-5"
         href="https://github.com/storybooks/storybook"
       >
         GitHub
       </a>
       <a
-        class="css-q2y3yl"
+        class="emotion-5"
         href="https://storybook.js.org/support"
       >
         Support
@@ -78,17 +158,402 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
 `;
 
 exports[`Storyshots UI|AboutPage new version required 1`] = `
+.emotion-31 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:500px) {
+  .emotion-4 {
+    display: block;
+  }
+}
+
+.emotion-3 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-0 {
+  display: block;
+  height: 40px;
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.emotion-1 {
+  font-size: 30px;
+  display: inline-block;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.emotion-5 {
+  width: 160px;
+}
+
+.emotion-6 {
+  float: right;
+  font-weight: normal;
+  font-size: 11px;
+  color: rgba(0,0,0,0.4);
+}
+
+.emotion-29 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-29 > * {
+  margin-left: 20px;
+}
+
+.emotion-29 > *:first-child {
+  margin-left: 0;
+}
+
+.emotion-26 {
+  color: inherit;
+}
+
+.emotion-2 {
+  background: #9fdaff;
+  color: black;
+  float: right;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 10px 25px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width:500px) {
+  .emotion-2 {
+    float: none;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+  }
+}
+
+.emotion-24 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-8 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: #444;
+  line-height: 1em;
+}
+
+.emotion-8 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+.emotion-8 > sub {
+  color: rgba(0,0,0,0.4);
+}
+
+.emotion-16 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  background: rgba(255,255,255,1);
+}
+
+.emotion-12 {
+  position: relative;
+  overflow: auto;
+}
+
+.emotion-12 code {
+  padding-right: 10px;
+  opacity: 0.7;
+}
+
+.emotion-12 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-12 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-12 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-12 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-12 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-12 * .token.string {
+  color: #A31515;
+}
+
+.emotion-12 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-12 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-12 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-12 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-12 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-12 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-12 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-12 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-12 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-12 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-12 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-12 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-12 * .token.function {
+  color: #393A34;
+}
+
+.emotion-12 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-12 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-12 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-12 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-12 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-12 * .token.tag {
+  color: #800000;
+}
+
+.emotion-12 * .token.selector {
+  color: #800000;
+}
+
+.emotion-12 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-12 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-12 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-12 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-12 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-12 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-12 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-12 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-12 * .namespace {
+  opacity: 0.7;
+}
+
+.emotion-11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 10px;
+}
+
+.emotion-10 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-15 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  background: rgba(255,255,255,1);
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  height: 26px;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-left: 0 none;
+}
+
+.emotion-13 {
+  border: 0 none;
+  display: block;
+  background: none;
+  padding: 0 10px;
+  cursor: pointer;
+  text-transform: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  color: inherit;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.emotion-13:focus {
+  border-bottom: 2px solid #9fdaff;
+  outline: 0 none;
+}
+
 <div
-  class="css-vno98q"
+  class="emotion-31"
 >
   <div
-    class="css-nx0jxu"
+    class="emotion-4"
   >
     <header
-      class="css-1axd3uw"
+      class="emotion-3"
     >
       <svg
-        class="css-d90pge"
+        class="emotion-0"
         viewBox="0 0 420 538"
       >
         <path
@@ -109,22 +574,22 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
         />
       </svg>
       <span
-        class="css-1rd1s08"
+        class="emotion-1"
       >
         Storybook 5.0.0
       </span>
       <span
-        class="css-1y3snwz"
+        class="emotion-2"
       >
         Update available
       </span>
     </header>
   </div>
   <div
-    class="css-nx0jxu"
+    class="emotion-4"
   >
     <aside
-      class="css-u4ybgy"
+      class="emotion-5"
     >
       <div>
         Latest version
@@ -153,7 +618,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
       </li>
     </ul>
     <a
-      class="css-18n2xye"
+      class="emotion-6"
       href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
       rel="noopener noreferrer"
       target="_blank"
@@ -162,16 +627,16 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
     </a>
   </div>
   <div
-    class="css-nx0jxu"
+    class="emotion-4"
   >
     <div
-      class="css-a64er"
+      class="emotion-24"
     >
       <header
-        class="css-0"
+        class="emotion-9"
       >
         <h1
-          class="css-8vc5j1"
+          class="emotion-8"
         >
           <span>
             Upgrade all storybook packages to latest:
@@ -179,16 +644,16 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
         </h1>
       </header>
       <div
-        class="css-wemi1o"
+        class="emotion-16"
       >
         <div
-          class="css-1gq2da1"
+          class="emotion-12"
         >
           <pre
-            class="hljs css-4zr3vl"
+            class="hljs emotion-11"
           >
             <code
-              class="css-1maezg8"
+              class="emotion-10"
             >
               npx npm-check-updates 
               <span
@@ -207,13 +672,13 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
           </pre>
         </div>
         <ul
-          class="css-1bx3lfx"
+          class="emotion-15"
         >
           <li
-            class="css-wo86af"
+            class="emotion-14"
           >
             <button
-              class="css-kimefk"
+              class="emotion-13"
             >
               copy
             </button>
@@ -224,29 +689,29 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
         Alternatively if you're using a yarn you could run the following command, and check all storybook related packages:
       </p>
       <div
-        class="css-wemi1o"
+        class="emotion-16"
       >
         <div
-          class="css-1gq2da1"
+          class="emotion-12"
         >
           <pre
-            class="hljs css-4zr3vl"
+            class="hljs emotion-11"
           >
             <code
-              class="css-1maezg8"
+              class="emotion-10"
             >
               yarn upgrade-interactive --latest
             </code>
           </pre>
         </div>
         <ul
-          class="css-1bx3lfx"
+          class="emotion-15"
         >
           <li
-            class="css-wo86af"
+            class="emotion-14"
           >
             <button
-              class="css-kimefk"
+              class="emotion-13"
             >
               copy
             </button>
@@ -256,25 +721,25 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
     </div>
   </div>
   <div
-    class="css-nx0jxu"
+    class="emotion-4"
   >
     <div
-      class="css-ptjnfv"
+      class="emotion-29"
     >
       <a
-        class="css-q2y3yl"
+        class="emotion-26"
         href="https://storybook.js.org"
       >
         Storybook docs
       </a>
       <a
-        class="css-q2y3yl"
+        class="emotion-26"
         href="https://github.com/storybooks/storybook"
       >
         GitHub
       </a>
       <a
-        class="css-q2y3yl"
+        class="emotion-26"
         href="https://storybook.js.org/support"
       >
         Support
@@ -285,17 +750,127 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
 `;
 
 exports[`Storyshots UI|AboutPage up to date 1`] = `
+.emotion-13 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:500px) {
+  .emotion-4 {
+    display: block;
+  }
+}
+
+.emotion-3 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-0 {
+  display: block;
+  height: 40px;
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.emotion-1 {
+  font-size: 30px;
+  display: inline-block;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.emotion-2 {
+  background: #DAFFD1;
+  color: #4DC533;
+  float: right;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 10px 25px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width:500px) {
+  .emotion-2 {
+    float: none;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+  }
+}
+
+.emotion-5 {
+  width: 160px;
+}
+
+.emotion-6 {
+  float: right;
+  font-weight: normal;
+  font-size: 11px;
+  color: rgba(0,0,0,0.4);
+}
+
+.emotion-11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-11 > * {
+  margin-left: 20px;
+}
+
+.emotion-11 > *:first-child {
+  margin-left: 0;
+}
+
+.emotion-8 {
+  color: inherit;
+}
+
 <div
-  class="css-vno98q"
+  class="emotion-13"
 >
   <div
-    class="css-nx0jxu"
+    class="emotion-4"
   >
     <header
-      class="css-1axd3uw"
+      class="emotion-3"
     >
       <svg
-        class="css-d90pge"
+        class="emotion-0"
         viewBox="0 0 420 538"
       >
         <path
@@ -316,22 +891,22 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
         />
       </svg>
       <span
-        class="css-1rd1s08"
+        class="emotion-1"
       >
         Storybook 5.0.0
       </span>
       <span
-        class="css-3txot4"
+        class="emotion-2"
       >
         You're up to date
       </span>
     </header>
   </div>
   <div
-    class="css-nx0jxu"
+    class="emotion-4"
   >
     <aside
-      class="css-u4ybgy"
+      class="emotion-5"
     >
       <div>
         Latest version
@@ -360,7 +935,7 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
       </li>
     </ul>
     <a
-      class="css-18n2xye"
+      class="emotion-6"
       href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
       rel="noopener noreferrer"
       target="_blank"
@@ -369,25 +944,25 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
     </a>
   </div>
   <div
-    class="css-nx0jxu"
+    class="emotion-4"
   >
     <div
-      class="css-ptjnfv"
+      class="emotion-11"
     >
       <a
-        class="css-q2y3yl"
+        class="emotion-8"
         href="https://storybook.js.org"
       >
         Storybook docs
       </a>
       <a
-        class="css-q2y3yl"
+        class="emotion-8"
         href="https://github.com/storybooks/storybook"
       >
         GitHub
       </a>
       <a
-        class="css-q2y3yl"
+        class="emotion-8"
         href="https://storybook.js.org/support"
       >
         Support

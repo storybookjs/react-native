@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Typography/Link cancel w/ href 1`] = `
+.emotion-0 {
+  color: inherit;
+}
+
 <a
-  class="css-q2y3yl"
+  class="emotion-0"
   href="http://example.com"
 >
   Link
@@ -10,8 +14,12 @@ exports[`Storyshots Components|Typography/Link cancel w/ href 1`] = `
 `;
 
 exports[`Storyshots Components|Typography/Link cancel w/ onClick 1`] = `
+.emotion-0 {
+  color: inherit;
+}
+
 <a
-  class="css-q2y3yl"
+  class="emotion-0"
   href="/"
 >
   Try clicking with different mouse buttons and modifier keys (shift/ctrl/alt/cmd)
@@ -19,8 +27,12 @@ exports[`Storyshots Components|Typography/Link cancel w/ onClick 1`] = `
 `;
 
 exports[`Storyshots Components|Typography/Link no-cancel w/ href 1`] = `
+.emotion-0 {
+  color: inherit;
+}
+
 <a
-  class="css-q2y3yl"
+  class="emotion-0"
   href="http://example.com"
 >
   Link
@@ -28,8 +40,12 @@ exports[`Storyshots Components|Typography/Link no-cancel w/ href 1`] = `
 `;
 
 exports[`Storyshots Components|Typography/Link no-cancel w/ onClick 1`] = `
+.emotion-0 {
+  color: inherit;
+}
+
 <a
-  class="css-q2y3yl"
+  class="emotion-0"
   href="/"
 >
   any click will go through
