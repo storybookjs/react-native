@@ -1,3 +1,21 @@
+## 5.0.0-alpha.7 (January 20, 2019)
+
+### Breaking Changes
+
+* Addon-centered: Add special entry-points for Vue and React ([#5296](https://github.com/storybooks/storybook/pull/5296))
+
+### Features
+
+* CLI: new `add` command ([#4236](https://github.com/storybooks/storybook/pull/4236))
+* UI: set the document title when navigating stories ([#5277](https://github.com/storybooks/storybook/pull/5277))
+
+### Bug Fixes
+
+* Addon-a11y: RE-ADD deprecated 'configureA11Y' for backwards compatibility ([#5302](https://github.com/storybooks/storybook/pull/5302))
+* UI: FIX navgition issue for `file://` URLs ([#5295](https://github.com/storybooks/storybook/pull/5295))
+* UI: FIX merge mutation ([#5300](https://github.com/storybooks/storybook/pull/5300))
+* Core: FIX issue where webpack process would hang when manager build failed ([#5290](https://github.com/storybooks/storybook/pull/5290))
+
 ## 5.0.0-alpha.6 (January 18, 2019)
 
 ### Maintenance
