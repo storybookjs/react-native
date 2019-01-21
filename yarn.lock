@@ -13871,10 +13871,10 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
 
-jscodeshift@^0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/jscodeshift/-/jscodeshift-0.6.2.tgz#bb648e6bce717a597d165781158b0d73b7fa99c3"
-  integrity sha512-AXboSyuFiCS+vLym7fyBexc3JlmZjrwl+fupBA/bxMGONmyXE51BrF5nxePZwv2YUze/1PfOTBTVvKiZhKnHLg==
+jscodeshift@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/jscodeshift/-/jscodeshift-0.6.3.tgz#f107d9aa5a61096e434c4b44016faeda676450c5"
+  integrity sha512-5Nso9ISNWFnPcoikm57tPNxIu2HXfQYkgcEpgIFY/CgAyGLeAhaDHAcVooQGF1gN8vG83X9uGIgOkJVLffgS+w==
   dependencies:
     "@babel/core" "^7.1.6"
     "@babel/parser" "^7.1.6"
