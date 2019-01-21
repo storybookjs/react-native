@@ -137,4 +137,4 @@ Make sure you also have the type definitions installed for the following libs:
 - Node
 - React
  
-You can install them using `yarn add @types/node @types/react --dev`, assuming you are using Typescript >2.0.
+You can install them using `yarn add @types/node @types/react --dev`, assuming you are using TypeScript >2.0.
