@@ -1,8 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Placeholder default 1`] = `
+.emotion-0 {
+  font-size: 11px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px;
+}
+
 <p
-  class="css-hftiue"
+  class="emotion-0"
 >
   This is a placeholder
 </p>

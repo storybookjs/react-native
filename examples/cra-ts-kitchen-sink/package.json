@@ -35,8 +35,6 @@
     "typescript": "^3.2.2"
   },
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "snapshotSerializers": ["jest-emotion", "enzyme-to-json/serializer"]
   }
 }
