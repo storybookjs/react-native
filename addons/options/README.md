@@ -20,7 +20,7 @@ Add this line to your `addons.js` file (create this file inside your storybook c
 import '@storybook/addon-options/register';
 ```
 
-###Set options globally
+### Set options globally
 
 Import and use the `addParameters` + `options`-key in your `config.js` file.
 
@@ -128,13 +128,13 @@ storiesOf('Addons|Custom options', module)
   );
 ```
 
-## Typescript
+## TypeScript
 
 To install type definitions: `yarn add @types/storybook__addon-options --dev`
 
 Make sure you also have the type definitions installed for the following libs:
 
-- node
-- react
+- Node
+- React
  
 You can install them using `yarn add @types/node @types/react --dev`, assuming you are using Typescript >2.0.
