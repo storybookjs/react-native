@@ -87,7 +87,7 @@
     "danger": "^7.0.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
-    "eslint": "^5.12.0",
+    "eslint": "^5.12.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^3.5.0",
     "eslint-plugin-import": "^2.13.0",
