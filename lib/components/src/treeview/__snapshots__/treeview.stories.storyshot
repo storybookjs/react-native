@@ -19,11 +19,15 @@ Array [
   border-bottom: 1px solid #9fdaff;
 }
 
-<input
-    class="emotion-0"
-    id="storybook-explorer-searchfield"
-    placeholder="Press \\"/\\" to search..."
-  />,
+<form
+    autocomplete="off"
+  >
+    <input
+      class="emotion-0"
+      id="storybook-explorer-searchfield"
+      placeholder="Press \\"/\\" to search..."
+    />
+  </form>,
   .emotion-0 {
   fill: currentColor;
 }
@@ -662,11 +666,15 @@ Array [
   border-bottom: 1px solid #9fdaff;
 }
 
-<input
-    class="emotion-0"
-    id="storybook-explorer-searchfield"
-    placeholder="Press \\"/\\" to search..."
-  />,
+<form
+    autocomplete="off"
+  >
+    <input
+      class="emotion-0"
+      id="storybook-explorer-searchfield"
+      placeholder="Press \\"/\\" to search..."
+    />
+  </form>,
   .emotion-0 {
   fill: currentColor;
 }
@@ -834,11 +842,15 @@ Array [
   border-bottom: 1px solid #9fdaff;
 }
 
-<input
-    class="emotion-0"
-    id="storybook-explorer-searchfield"
-    placeholder="Press \\"/\\" to search..."
-  />,
+<form
+    autocomplete="off"
+  >
+    <input
+      class="emotion-0"
+      id="storybook-explorer-searchfield"
+      placeholder="Press \\"/\\" to search..."
+    />
+  </form>,
   .emotion-1 {
   margin-top: 20px;
   margin-bottom: 10px;
