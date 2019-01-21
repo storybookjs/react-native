@@ -19332,10 +19332,10 @@ react-devtools-core@3.0.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-docgen-typescript-loader@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-docgen-typescript-loader/-/react-docgen-typescript-loader-3.0.0.tgz#4042e2854d29380e4d01e479d438c03ec00de8e8"
-  integrity sha512-xtE4bZrU9+7grFFzs8v6gWc+Wl2FCCL59hldHoX2DuQAXOmJIilUm2uPmDmRNA8RpxU1Ax+9Gl0JfUcWgx2QPA==
+react-docgen-typescript-loader@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-docgen-typescript-loader/-/react-docgen-typescript-loader-3.0.1.tgz#889aa472450c8db82ea0355656a307806ec74e77"
+  integrity sha512-SAVMFdW5p76pVMS6c7Jl1mGM5EZLVBWJ+rfoTvEaC2SeDgSFflnkM8eJGZVhty+7FSefvOJcBBz2rMkciphERA==
   dependencies:
     "@webpack-contrib/schema-utils" "^1.0.0-beta.0"
     loader-utils "^1.1.0"
