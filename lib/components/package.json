@@ -25,6 +25,7 @@
     "@storybook/core-events": "5.0.0-alpha.7",
     "@storybook/router": "5.0.0-alpha.7",
     "@storybook/theming": "5.0.0-alpha.7",
+    "fuzzy-search": "^3.0.1",
     "global": "^4.3.2",
     "immer": "^1.9.3",
     "js-beautify": "^1.8.9",
