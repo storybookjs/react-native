@@ -47,6 +47,7 @@ module.exports = {
         '/addons/writing-addons/',
         '/addons/api/',
       ],
+      presets: ['/presets/introduction/', '/presets/preset-gallery/', '/presets/writing-presets/'],
     },
   },
   plugins: [
