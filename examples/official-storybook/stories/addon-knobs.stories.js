@@ -197,15 +197,16 @@ storiesOf('Addons|Knobs.withKnobs', module)
         number: 1,
         string: 'string',
         object: {},
-        array: [],
+        array: [1, 2, 3],
         function: () => {},
       },
       'string'
     );
     const value = m.toString();
+    const type = Array.isArray(m) ? 'array' : typeof m;
     return (
       <pre>
-        the type of {JSON.stringify(value, null, 2)} = {typeof m}
+        the type of {JSON.stringify(value, null, 2)} = {type}
       </pre>
     );
   })
