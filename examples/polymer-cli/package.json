@@ -22,7 +22,7 @@
     "global": "^4.3.2",
     "lit-html": "^0.14.0",
     "polymer-webpack-loader": "^2.0.3",
-    "webpack": "^4.28.4"
+    "webpack": "^4.29.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",
