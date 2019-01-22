@@ -38,8 +38,8 @@ export function babelDefault(config) {
 }
 ```
 
-- `babelDefault` is applied to the preview config before any
-- `babel` is applied to the preview config, after it has been
+- `babel` is applied to the preview config, after it has been initialized by storybook
+- `babelDefault` is applied to the preview config before any user presets have been applied
 - `managerBabel` is applied to the manager.
 
 ### Webpack
@@ -62,8 +62,8 @@ export function webpackFinal(config, { configDir }) {
 }
 ```
 
-- `webpack` is applied to the preview config after
-- `webpackFinal` is applied to the preview config after
+- `webpack` is applied to the preview config after it has been initialized by storybook
+- `webpackFinal` is applied to the preview config after all user presets have been applied
 - `webpackManager` is applied to the manager config
 
 ### Addons
