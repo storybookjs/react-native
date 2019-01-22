@@ -1,3 +1,24 @@
+## 5.0.0-alpha.8 (January 22, 2019)
+
+### Features
+
+* UI: Memoize treeview utils && ADD fuzzy search ([#5321](https://github.com/storybooks/storybook/pull/5321))
+
+### Maintenance
+
+* Migrate addon google analytics to TS ([#5307](https://github.com/storybooks/storybook/pull/5307))
+* Storyshots: restore emotion snapshots ([#5305](https://github.com/storybooks/storybook/pull/5305))
+
+### Dependency Upgrades
+
+* Bump eslint-config-prettier from 3.5.0 to 3.6.0 ([#5311](https://github.com/storybooks/storybook/pull/5311))
+* Bump eslint-plugin-react from 7.12.3 to 7.12.4 ([#5310](https://github.com/storybooks/storybook/pull/5310))
+* Bump vuex from 3.0.1 to 3.1.0 ([#5316](https://github.com/storybooks/storybook/pull/5316))
+* Bump lerna from 3.10.5 to 3.10.6 ([#5313](https://github.com/storybooks/storybook/pull/5313))
+* Bump react-docgen-typescript-loader from 3.0.0 to 3.0.1 ([#5315](https://github.com/storybooks/storybook/pull/5315))
+* Bump eslint from 5.12.0 to 5.12.1 ([#5314](https://github.com/storybooks/storybook/pull/5314))
+* Bump jscodeshift from 0.6.2 to 0.6.3 ([#5317](https://github.com/storybooks/storybook/pull/5317))
+
 ## 5.0.0-alpha.7 (January 20, 2019)
 
 ### Breaking Changes
