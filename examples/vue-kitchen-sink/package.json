@@ -32,7 +32,7 @@
     "file-loader": "^3.0.1",
     "svg-url-loader": "^2.3.2",
     "vue-loader": "^15.5.1",
-    "webpack": "^4.28.4",
+    "webpack": "^4.29.0",
     "webpack-dev-server": "^3.1.14"
   }
 }

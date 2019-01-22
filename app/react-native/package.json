@@ -60,7 +60,7 @@
     "shelljs": "^0.8.2",
     "url-parse": "^1.4.3",
     "uuid": "^3.3.2",
-    "webpack": "^4.28.4",
+    "webpack": "^4.29.0",
     "webpack-dev-middleware": "^3.5.1",
     "webpack-hot-middleware": "^2.24.3",
     "ws": "^6.1.0"
