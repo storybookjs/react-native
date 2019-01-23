@@ -40,7 +40,7 @@ npm init
 Make sure that you have `@babel/core`, and `babel-loader` in your dependencies as well because we list these as a peerDependency:
 
 ```sh
-npm i --save-dev @babel-core
+npm i --save-dev @babel/core
 npm i --save-dev babel-loader
 ```
 
