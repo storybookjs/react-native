@@ -92,6 +92,7 @@
     "webpack-hot-middleware": "^2.24.3"
   },
   "devDependencies": {
+    "flush-promises": "^1.0.2",
     "mock-fs": "^4.7.0"
   },
   "peerDependencies": {
