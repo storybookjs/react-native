@@ -1,3 +1,22 @@
+## 5.0.0-alpha.9 (January 23, 2019)
+
+### Features
+
+* Core: Add a STORY_UNCHANGED event ([#5340](https://github.com/storybooks/storybook/pull/5340))
+* Core: Add a persistence API to context/state -- use for keyboard shortcuts ([#5289](https://github.com/storybooks/storybook/pull/5289))
+
+### Maintenance
+
+* Addon-knobs: Fix story so array type is array ([#5318](https://github.com/storybooks/storybook/pull/5318))
+
+### Dependency Upgrades
+
+* Bump @types/jest from 23.3.12 to 23.3.13 ([#5327](https://github.com/storybooks/storybook/pull/5327))
+* Bump @babel/plugin-proposal-class-properties from 7.2.3 to 7.3.0 ([#5326](https://github.com/storybooks/storybook/pull/5326))
+* Bump esm from 3.1.0 to 3.1.1 ([#5328](https://github.com/storybooks/storybook/pull/5328))
+* Bump resolve from 1.9.0 to 1.10.0 ([#5329](https://github.com/storybooks/storybook/pull/5329))
+* Bump webpack from 4.28.4 to 4.29.0 ([#5331](https://github.com/storybooks/storybook/pull/5331))
+
 ## 4.1.9 (January 23, 2019)
 
 Note that `4.1.7` contained a bad merge that missed an important change. This release fixes that:
