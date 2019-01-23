@@ -1,26 +1,163 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|Nav/settings with brand 1`] = `
+.emotion-13 {
+  background: linear-gradient(to right,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%);
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-12 {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 20px;
+  overflow: auto;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-10 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin-right: -10px;
+  margin-bottom: 15px;
+}
+
+.emotion-3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-right: 30px;
+}
+
+.emotion-2 {
+  min-height: 30px;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  display: inline-block;
+}
+
+.emotion-1 {
+  padding-left: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 12px;
+}
+
+.emotion-6 {
+  height: 28px;
+  width: 28px;
+  border: 1px solid #eee;
+  position: relative;
+  border-radius: 14px;
+  box-sizing: border-box;
+  background: transparent;
+  cursor: pointer;
+}
+
+.popup-content + .emotion-6,
+.emotion-6:focus {
+  border: 1px solid #00aaff;
+  outline: 0 none;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-6 > * {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+}
+
+.emotion-5 {
+  display: block;
+}
+
+.emotion-4 {
+  fill: currentColor;
+}
+
+.emotion-9 {
+  font-size: 11px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px;
+}
+
 <nav
-  class="css-115o2w8"
+  class="emotion-13"
 >
   <div
-    class="css-tqu8kw"
+    class="emotion-12"
   >
     <div
-      class="css-1rr4qq7"
+      class="emotion-10"
     >
       <div
-        class="css-1waqkq5"
+        class="emotion-8"
       >
         <div
-          class="css-1krtgou"
+          class="emotion-3"
         >
           <div
-            class="css-1igelti"
+            class="emotion-2"
           >
             <svg
-              class="css-1baulvz"
+              class="emotion-0"
               height="30px"
               viewBox="0 0 420 538"
             >
@@ -42,7 +179,7 @@ exports[`Storyshots UI|Nav/settings with brand 1`] = `
               />
             </svg>
             <span
-              class="css-15p5m9l"
+              class="emotion-1"
             >
               <strong>
                 Title
@@ -51,20 +188,20 @@ exports[`Storyshots UI|Nav/settings with brand 1`] = `
           </div>
         </div>
         <span
-          class="css-0"
+          class="emotion-7"
         >
           <button
-            class="css-1ie53bw"
+            class="emotion-6"
             id="storybook-explorer-menu"
           >
             <svg
-              class="css-13o7eu2"
+              class="emotion-5"
               height="14px"
               viewBox="0 0 1024 1024"
               width="14px"
             >
               <path
-                class="css-kqzqgg"
+                class="emotion-4"
                 d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
               />
             </svg>
@@ -72,36 +209,153 @@ exports[`Storyshots UI|Nav/settings with brand 1`] = `
         </span>
       </div>
       <p
-        class="css-hftiue"
+        class="emotion-9"
       >
         There have no stories been loaded yet
       </p>
     </div>
     <div
-      class="css-0"
+      class="emotion-7"
     />
   </div>
 </nav>
 `;
 
 exports[`Storyshots UI|Nav/settings without brand 1`] = `
+.emotion-11 {
+  background: linear-gradient(to right,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%);
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-10 {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 20px;
+  overflow: auto;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin-right: -10px;
+  margin-bottom: 15px;
+}
+
+.emotion-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-right: 30px;
+}
+
+.emotion-4 {
+  height: 28px;
+  width: 28px;
+  border: 1px solid #eee;
+  position: relative;
+  border-radius: 14px;
+  box-sizing: border-box;
+  background: transparent;
+  cursor: pointer;
+}
+
+.popup-content + .emotion-4,
+.emotion-4:focus {
+  border: 1px solid #00aaff;
+  outline: 0 none;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-4 > * {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+}
+
+.emotion-3 {
+  display: block;
+}
+
+.emotion-2 {
+  fill: currentColor;
+}
+
+.emotion-7 {
+  font-size: 11px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px;
+}
+
+.emotion-0 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 <nav
-  class="css-115o2w8"
+  class="emotion-11"
 >
   <div
-    class="css-tqu8kw"
+    class="emotion-10"
   >
     <div
-      class="css-1rr4qq7"
+      class="emotion-8"
     >
       <div
-        class="css-1waqkq5"
+        class="emotion-6"
       >
         <div
-          class="css-1krtgou"
+          class="emotion-1"
         >
           <a
-            class="css-1unrqcp"
+            class="emotion-0"
             href="https://example.com"
             tabindex="-1"
           >
@@ -109,20 +363,20 @@ exports[`Storyshots UI|Nav/settings without brand 1`] = `
           </a>
         </div>
         <span
-          class="css-0"
+          class="emotion-5"
         >
           <button
-            class="css-1ie53bw"
+            class="emotion-4"
             id="storybook-explorer-menu"
           >
             <svg
-              class="css-13o7eu2"
+              class="emotion-3"
               height="14px"
               viewBox="0 0 1024 1024"
               width="14px"
             >
               <path
-                class="css-kqzqgg"
+                class="emotion-2"
                 d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
               />
             </svg>
@@ -130,39 +384,176 @@ exports[`Storyshots UI|Nav/settings without brand 1`] = `
         </span>
       </div>
       <p
-        class="css-hftiue"
+        class="emotion-7"
       >
         There have no stories been loaded yet
       </p>
     </div>
     <div
-      class="css-0"
+      class="emotion-5"
     />
   </div>
 </nav>
 `;
 
 exports[`Storyshots UI|Nav/story story 1`] = `
+.emotion-12 {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 20px;
+  overflow: auto;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-10 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin-right: -10px;
+  margin-bottom: 15px;
+}
+
+.emotion-3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-right: 30px;
+}
+
+.emotion-2 {
+  min-height: 30px;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  display: inline-block;
+}
+
+.emotion-1 {
+  padding-left: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 12px;
+}
+
+.emotion-6 {
+  height: 28px;
+  width: 28px;
+  border: 1px solid #eee;
+  position: relative;
+  border-radius: 14px;
+  box-sizing: border-box;
+  background: transparent;
+  cursor: pointer;
+}
+
+.popup-content + .emotion-6,
+.emotion-6:focus {
+  border: 1px solid #00aaff;
+  outline: 0 none;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-6 > * {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+}
+
+.emotion-5 {
+  display: block;
+}
+
+.emotion-4 {
+  fill: currentColor;
+}
+
+.emotion-9 {
+  font-size: 11px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px;
+}
+
+.emotion-13 {
+  background: transparent;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 <nav
-  class="css-15ithr"
+  class="emotion-13"
 >
   <div
-    class="css-tqu8kw"
+    class="emotion-12"
   >
     <div
-      class="css-1rr4qq7"
+      class="emotion-10"
     >
       <div
-        class="css-1waqkq5"
+        class="emotion-8"
       >
         <div
-          class="css-1krtgou"
+          class="emotion-3"
         >
           <div
-            class="css-1igelti"
+            class="emotion-2"
           >
             <svg
-              class="css-1baulvz"
+              class="emotion-0"
               height="30px"
               viewBox="0 0 420 538"
             >
@@ -184,7 +575,7 @@ exports[`Storyshots UI|Nav/story story 1`] = `
               />
             </svg>
             <span
-              class="css-15p5m9l"
+              class="emotion-1"
             >
               <strong>
                 Title
@@ -193,20 +584,20 @@ exports[`Storyshots UI|Nav/story story 1`] = `
           </div>
         </div>
         <span
-          class="css-0"
+          class="emotion-7"
         >
           <button
-            class="css-1ie53bw"
+            class="emotion-6"
             id="storybook-explorer-menu"
           >
             <svg
-              class="css-13o7eu2"
+              class="emotion-5"
               height="14px"
               viewBox="0 0 1024 1024"
               width="14px"
             >
               <path
-                class="css-kqzqgg"
+                class="emotion-4"
                 d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
               />
             </svg>
@@ -214,13 +605,13 @@ exports[`Storyshots UI|Nav/story story 1`] = `
         </span>
       </div>
       <p
-        class="css-hftiue"
+        class="emotion-9"
       >
         There have no stories been loaded yet
       </p>
     </div>
     <div
-      class="css-0"
+      class="emotion-7"
     />
   </div>
 </nav>

@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue';
-import Centered from '@storybook/addon-centered';
+import Centered from '@storybook/addon-centered/vue';
 
 import MyButton from './Button.vue';
 

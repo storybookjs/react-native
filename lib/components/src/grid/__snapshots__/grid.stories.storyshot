@@ -2,25 +2,57 @@
 
 exports[`Storyshots Components|Grid col 1`] = `
 Array [
-  <span
-    class="css-q2nvx8"
+  .emotion-0 {
+  background: silver;
+  display: inline-block;
+  padding: 20px;
+}
+
+<span
+    class="emotion-0"
     color="silver"
   />,
-  <div
-    class="css-1a1x13f"
+  .emotion-3 {
+  display: inline-block;
+  vertical-align: inherit;
+}
+
+.emotion-3 > * {
+  margin-left: 10px;
+  vertical-align: inherit;
+}
+
+.emotion-3 > *:first-child {
+  margin-left: 0;
+}
+
+.emotion-0 {
+  background: hotpink;
+  display: inline-block;
+  padding: 20px;
+}
+
+<div
+    class="emotion-3"
   >
     <span
-      class="css-pii7xx"
+      class="emotion-0"
     />
     <span
-      class="css-pii7xx"
+      class="emotion-0"
     />
     <span
-      class="css-pii7xx"
+      class="emotion-0"
     />
   </div>,
-  <span
-    class="css-q2nvx8"
+  .emotion-0 {
+  background: silver;
+  display: inline-block;
+  padding: 20px;
+}
+
+<span
+    class="emotion-0"
     color="silver"
   />,
 ]
@@ -28,25 +60,59 @@ Array [
 
 exports[`Storyshots Components|Grid col outer 1`] = `
 Array [
-  <span
-    class="css-q2nvx8"
+  .emotion-0 {
+  background: silver;
+  display: inline-block;
+  padding: 20px;
+}
+
+<span
+    class="emotion-0"
     color="silver"
   />,
-  <div
-    class="css-ddnisy"
+  .emotion-0 {
+  background: hotpink;
+  display: inline-block;
+  padding: 20px;
+}
+
+.emotion-3 {
+  display: inline-block;
+  vertical-align: inherit;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.emotion-3 > * {
+  margin-left: 10px;
+  vertical-align: inherit;
+}
+
+.emotion-3 > *:first-child {
+  margin-left: 0;
+}
+
+<div
+    class="emotion-3"
   >
     <span
-      class="css-pii7xx"
+      class="emotion-0"
     />
     <span
-      class="css-pii7xx"
+      class="emotion-0"
     />
     <span
-      class="css-pii7xx"
+      class="emotion-0"
     />
   </div>,
-  <span
-    class="css-q2nvx8"
+  .emotion-0 {
+  background: silver;
+  display: inline-block;
+  padding: 20px;
+}
+
+<span
+    class="emotion-0"
     color="silver"
   />,
 ]
@@ -54,25 +120,48 @@ Array [
 
 exports[`Storyshots Components|Grid row 1`] = `
 Array [
-  <div
-    class="css-1dtfu94"
+  .emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+<div
+    class="emotion-0"
     color="silver"
   />,
-  <div
-    class="css-lol2ju"
+  .emotion-3 > * {
+  margin-top: 10px;
+}
+
+.emotion-3 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-0 {
+  background: hotpink;
+  padding: 20px;
+}
+
+<div
+    class="emotion-3"
   >
     <div
-      class="css-h0slm8"
+      class="emotion-0"
     />
     <div
-      class="css-h0slm8"
+      class="emotion-0"
     />
     <div
-      class="css-h0slm8"
+      class="emotion-0"
     />
   </div>,
-  <div
-    class="css-1dtfu94"
+  .emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+<div
+    class="emotion-0"
     color="silver"
   />,
 ]
@@ -80,25 +169,53 @@ Array [
 
 exports[`Storyshots Components|Grid row multiply 1`] = `
 Array [
-  <div
-    class="css-1dtfu94"
+  .emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+<div
+    class="emotion-0"
     color="silver"
   />,
-  <div
-    class="css-1ii2tig"
+  .emotion-0 {
+  background: hotpink;
+  padding: 20px;
+}
+
+.emotion-3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.emotion-3 > * {
+  margin-top: 30px;
+}
+
+.emotion-3 > *:first-child {
+  margin-top: 0;
+}
+
+<div
+    class="emotion-3"
   >
     <div
-      class="css-h0slm8"
+      class="emotion-0"
     />
     <div
-      class="css-h0slm8"
+      class="emotion-0"
     />
     <div
-      class="css-h0slm8"
+      class="emotion-0"
     />
   </div>,
-  <div
-    class="css-1dtfu94"
+  .emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+<div
+    class="emotion-0"
     color="silver"
   />,
 ]
@@ -106,25 +223,53 @@ Array [
 
 exports[`Storyshots Components|Grid row outer 1`] = `
 Array [
-  <div
-    class="css-1dtfu94"
+  .emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+<div
+    class="emotion-0"
     color="silver"
   />,
-  <div
-    class="css-6mu724"
+  .emotion-0 {
+  background: hotpink;
+  padding: 20px;
+}
+
+.emotion-3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.emotion-3 > * {
+  margin-top: 10px;
+}
+
+.emotion-3 > *:first-child {
+  margin-top: 0;
+}
+
+<div
+    class="emotion-3"
   >
     <div
-      class="css-h0slm8"
+      class="emotion-0"
     />
     <div
-      class="css-h0slm8"
+      class="emotion-0"
     />
     <div
-      class="css-h0slm8"
+      class="emotion-0"
     />
   </div>,
-  <div
-    class="css-1dtfu94"
+  .emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+<div
+    class="emotion-0"
     color="silver"
   />,
 ]

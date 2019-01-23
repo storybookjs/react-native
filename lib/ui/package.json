@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.0.0-alpha.5",
+  "version": "5.0.0-alpha.8",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -21,12 +21,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/router": "5.0.0-alpha.5",
-    "@storybook/addons": "5.0.0-alpha.5",
-    "@storybook/client-logger": "5.0.0-alpha.5",
-    "@storybook/components": "5.0.0-alpha.5",
-    "@storybook/theming": "5.0.0-alpha.5",
-    "@storybook/core-events": "5.0.0-alpha.5",
+    "@storybook/addons": "5.0.0-alpha.8",
+    "@storybook/client-logger": "5.0.0-alpha.8",
+    "@storybook/components": "5.0.0-alpha.8",
+    "@storybook/core-events": "5.0.0-alpha.8",
+    "@storybook/router": "5.0.0-alpha.8",
+    "@storybook/theming": "5.0.0-alpha.8",
     "eventemitter3": "^3.1.0",
     "fast-deep-equal": "^2.0.1",
     "fuse.js": "^3.3.0",
@@ -46,6 +46,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-draggable": "^3.1.1",
+    "react-helmet-async": "^0.2.0",
     "react-lifecycles-compat": "^3.0.4",
     "react-modal": "^3.8.1",
     "react-resize-detector": "^3.2.1",
@@ -54,7 +55,7 @@
   },
   "devDependencies": {
     "terser-webpack-plugin": "^1.2.1",
-    "webpack": "^4.28.4"
+    "webpack": "^4.29.0"
   },
   "publishConfig": {
     "access": "public"

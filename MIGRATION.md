@@ -1,5 +1,7 @@
 # Migration
 
+- [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
+  - [Webpack config simplification](#webpack-config-simplification)
 - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
@@ -36,6 +38,26 @@
   - [Webpack upgrade](#webpack-upgrade)
   - [Packages renaming](#packages-renaming)
   - [Deprecated embedded addons](#deprecated-embedded-addons)
+
+## From version 4.1.x to 5.0.x
+
+Storybook 5.0 includes sweeping UI changes as well as changes to the addon API and custom webpack configuration. We've tried to keep backwards compatibility in most cases, but there are some notable exceptions documented below.
+
+## Webpack config simplifcation
+
+The API for custom webpack configuration has been simplifed in 5.0, but it's a breaking change.
+
+Storybook's "full control mode" for webpack allows you to override the webpack config with a function that returns a configuration object.
+
+In Storybook 5 there is a single signature for full-control mode that takes a parameters object with the fields `config` and `mode`:
+
+```js
+module.exports = ({ config, mode }) => { config.modules.rules.push(...); return config; }
+```
+
+In contrast, the 4.x configuration function accepted either two or three arguments (`(baseConfig, mode)`, or `(baseConfig, mode, defaultConfig)`). The `config` object in the 5.x signature is equivalent to 4.x's `defaultConfig`.
+
+Please see the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
 
 ## From version 4.0.x to 4.1.x
 

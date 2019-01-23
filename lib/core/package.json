@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "5.0.0-alpha.5",
+  "version": "5.0.0-alpha.8",
   "description": "Storybook framework-agnostic API",
   "keywords": [
     "storybook"
@@ -19,17 +19,17 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
-    "@storybook/addons": "5.0.0-alpha.5",
-    "@storybook/channel-postmessage": "5.0.0-alpha.5",
-    "@storybook/client-logger": "5.0.0-alpha.5",
-    "@storybook/core-events": "5.0.0-alpha.5",
-    "@storybook/node-logger": "5.0.0-alpha.5",
-    "@storybook/theming": "5.0.0-alpha.5",
-    "@storybook/ui": "5.0.0-alpha.5",
+    "@storybook/addons": "5.0.0-alpha.8",
+    "@storybook/channel-postmessage": "5.0.0-alpha.8",
+    "@storybook/client-logger": "5.0.0-alpha.8",
+    "@storybook/core-events": "5.0.0-alpha.8",
+    "@storybook/node-logger": "5.0.0-alpha.8",
+    "@storybook/theming": "5.0.0-alpha.8",
+    "@storybook/ui": "5.0.0-alpha.8",
     "airbnb-js-shims": "^1 || ^2",
     "autoprefixer": "^9.4.5",
     "babel-plugin-emotion": "^10.0.5",
@@ -45,7 +45,7 @@
     "core-js": "^2.6.2",
     "css-loader": "^2.1.0",
     "detect-port": "^1.2.3",
-    "dotenv-webpack": "^1.6.0",
+    "dotenv-webpack": "^1.7.0",
     "ejs": "^2.6.1",
     "eventemitter3": "^3.1.0",
     "express": "^4.16.3",
@@ -76,7 +76,7 @@
     "raw-loader": "^1.0.0",
     "react-dev-utils": "^7.0.0",
     "regenerator-runtime": "^0.12.1",
-    "resolve": "^1.9.0",
+    "resolve": "^1.10.0",
     "resolve-from": "^4.0.0",
     "semver": "^5.6.0",
     "serve-favicon": "^2.5.0",
@@ -87,8 +87,8 @@
     "terser-webpack-plugin": "^1.2.1",
     "url-loader": "^1.1.2",
     "util-deprecate": "^1.0.2",
-    "webpack": "^4.28.4",
-    "webpack-dev-middleware": "^3.4.0",
+    "webpack": "^4.29.0",
+    "webpack-dev-middleware": "^3.5.1",
     "webpack-hot-middleware": "^2.24.3"
   },
   "devDependencies": {

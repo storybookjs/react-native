@@ -1,6 +1,8 @@
 import { document } from 'global';
 import axe from 'axe-core';
 import deprecate from 'util-deprecate';
+import { stripIndents } from 'common-tags';
+
 import addons, { makeDecorator } from '@storybook/addons';
 import { STORY_RENDERED } from '@storybook/core-events';
 import EVENTS, { PARAM_KEY } from './constants';
@@ -52,8 +54,25 @@ if (module && module.hot && module.hot.decline) {
   module.hot.decline();
 }
 
-// REMOVE at 6.0.0
+// TODO: REMOVE at v6.0.0
 export const checkA11y = deprecate(
   (...args) => withA11Y(...args),
   'checkA11y has been replaced with withA11Y'
+);
+
+// TODO: REMOVE at v6.0.0
+export const configureA11y = deprecate(
+  config => {
+    options = config;
+  },
+  stripIndents`
+    configureA11y is deprecated, please configure addon-a11y using the addParameter api:
+    
+    addParameters({
+      a11y: {
+        // ... axe options
+        element: '#root', // optional selector which element to inspect
+      },
+    });
+  `
 );

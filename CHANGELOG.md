@@ -1,3 +1,59 @@
+## 5.0.0-alpha.8 (January 22, 2019)
+
+### Features
+
+* UI: Memoize treeview utils && ADD fuzzy search ([#5321](https://github.com/storybooks/storybook/pull/5321))
+
+### Maintenance
+
+* Migrate addon google analytics to TS ([#5307](https://github.com/storybooks/storybook/pull/5307))
+* Storyshots: restore emotion snapshots ([#5305](https://github.com/storybooks/storybook/pull/5305))
+
+### Dependency Upgrades
+
+* Bump eslint-config-prettier from 3.5.0 to 3.6.0 ([#5311](https://github.com/storybooks/storybook/pull/5311))
+* Bump eslint-plugin-react from 7.12.3 to 7.12.4 ([#5310](https://github.com/storybooks/storybook/pull/5310))
+* Bump vuex from 3.0.1 to 3.1.0 ([#5316](https://github.com/storybooks/storybook/pull/5316))
+* Bump lerna from 3.10.5 to 3.10.6 ([#5313](https://github.com/storybooks/storybook/pull/5313))
+* Bump react-docgen-typescript-loader from 3.0.0 to 3.0.1 ([#5315](https://github.com/storybooks/storybook/pull/5315))
+* Bump eslint from 5.12.0 to 5.12.1 ([#5314](https://github.com/storybooks/storybook/pull/5314))
+* Bump jscodeshift from 0.6.2 to 0.6.3 ([#5317](https://github.com/storybooks/storybook/pull/5317))
+
+## 5.0.0-alpha.7 (January 20, 2019)
+
+### Breaking Changes
+
+* Addon-centered: Add special entry-points for Vue and React ([#5296](https://github.com/storybooks/storybook/pull/5296))
+
+### Features
+
+* CLI: new `add` command ([#4236](https://github.com/storybooks/storybook/pull/4236))
+* UI: set the document title when navigating stories ([#5277](https://github.com/storybooks/storybook/pull/5277))
+
+### Bug Fixes
+
+* Addon-a11y: RE-ADD deprecated 'configureA11Y' for backwards compatibility ([#5302](https://github.com/storybooks/storybook/pull/5302))
+* UI: FIX navgition issue for `file://` URLs ([#5295](https://github.com/storybooks/storybook/pull/5295))
+* UI: FIX merge mutation ([#5300](https://github.com/storybooks/storybook/pull/5300))
+* Core: FIX issue where webpack process would hang when manager build failed ([#5290](https://github.com/storybooks/storybook/pull/5290))
+
+## 5.0.0-alpha.6 (January 18, 2019)
+
+### Maintenance
+
+* Restore official-storybook error test ([#5281](https://github.com/storybooks/storybook/pull/5281))
+* Add explicit return types to @storybook/addons ([#5212](https://github.com/storybooks/storybook/pull/5212))
+* REFACTOR router into @storybook/router ([#5252](https://github.com/storybooks/storybook/pull/5252))
+
+### Dependency Upgrades
+
+* Bump react-select from 2.2.0 to 2.3.0 ([#5288](https://github.com/storybooks/storybook/pull/5288))
+* Bump webpack-dev-middleware from 3.5.0 to 3.5.1 ([#5285](https://github.com/storybooks/storybook/pull/5285))
+* Bump dotenv-webpack from 1.6.0 to 1.7.0 ([#5283](https://github.com/storybooks/storybook/pull/5283))
+* Bump graphql from 0.13.2 to 14.1.1 ([#5282](https://github.com/storybooks/storybook/pull/5282))
+* Bump marko from 4.14.19 to 4.14.20 ([#5284](https://github.com/storybooks/storybook/pull/5284))
+* Bumps webpack from 4.28.3 to 4.28.4 ([#5260](https://github.com/storybooks/storybook/pull/5260))
+
 ## 4.1.7 (January 17, 2019)
 
 ### Bug Fixes

@@ -1,56 +1,186 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-10 {
+  display: block;
+}
+
+.emotion-7 {
+  height: 40px;
+  background: rgba(255,255,255,1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: #444;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-8 {
+  display: none;
+}
+
+.emotion-6 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+.emotion-9 {
+  display: block;
+  position: relative;
+}
+
 <div
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-13o7eu2"
+    class="emotion-10"
   >
     <div
-      class="css-nlqiqg"
+      class="emotion-7"
     >
       <div
-        class="css-m2flv6"
+        class="emotion-6"
         role="tablist"
       >
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-alh4do"
+          class="emotion-2"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
@@ -59,7 +189,7 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
       </div>
     </div>
     <div
-      class="css-1bx5ylf"
+      class="emotion-9"
     >
       <div
         id="test2"
@@ -117,7 +247,7 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
         />
       </div>
       <div
-        class="css-1hyfx7x"
+        class="emotion-8"
       >
         <div>
           CONTENT 6
@@ -129,56 +259,186 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
 `;
 
 exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
+.emotion-1 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-1:empty {
+  display: none;
+}
+
+.emotion-1:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-10 {
+  display: block;
+}
+
+.emotion-7 {
+  height: 40px;
+  background: rgba(255,255,255,1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: #444;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-8 {
+  display: none;
+}
+
+.emotion-6 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+.emotion-9 {
+  display: block;
+  position: relative;
+}
+
 <div
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-13o7eu2"
+    class="emotion-10"
   >
     <div
-      class="css-nlqiqg"
+      class="emotion-7"
     >
       <div
-        class="css-m2flv6"
+        class="emotion-6"
         role="tablist"
       >
         <button
-          class="css-alh4do"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-1"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-1"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-1"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-1"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-1"
           role="tab"
           type="button"
         >
@@ -187,7 +447,7 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
       </div>
     </div>
     <div
-      class="css-1bx5ylf"
+      class="emotion-9"
     >
       <div
         id="test1"
@@ -201,7 +461,7 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
         CONTENT 2
       </div>
       <div
-        class="css-1hyfx7x"
+        class="emotion-8"
       >
         <div>
           CONTENT 6
@@ -213,28 +473,154 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
 `;
 
 exports[`Storyshots Components|Tabs stateful - static 1`] = `
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-4 {
+  display: block;
+}
+
+.emotion-3 {
+  height: 40px;
+  background: rgba(255,255,255,1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.emotion-1 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: #444;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+
+.emotion-1:empty {
+  display: none;
+}
+
+.emotion-1:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-2 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+.emotion-5 {
+  display: block;
+  position: relative;
+}
+
 <div
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-13o7eu2"
+    class="emotion-4"
   >
     <div
-      class="css-nlqiqg"
+      class="emotion-3"
     >
       <div
-        class="css-m2flv6"
+        class="emotion-2"
         role="tablist"
       >
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           With a function
         </button>
         <button
-          class="css-alh4do"
+          class="emotion-1"
           role="tab"
           type="button"
         >
@@ -243,10 +629,10 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
       </div>
     </div>
     <div
-      class="css-1bx5ylf"
+      class="emotion-5"
     >
       <div
-        class="css-13o7eu2"
+        class="emotion-4"
         role="tabpanel"
       >
         <div>
@@ -259,56 +645,205 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
 `;
 
 exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-7 {
+  height: 40px;
+  background: rgba(255,255,255,1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: #444;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-9 {
+  display: block;
+  position: relative;
+  position: relative;
+  overflow: auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+}
+
+.emotion-8 {
+  display: none;
+}
+
+.emotion-6 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+.emotion-10 {
+  background: rgba(255,255,255,0.89);
+  background-clip: padding-box;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 <div
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-12rx5m3"
+    class="emotion-10"
   >
     <div
-      class="css-nlqiqg"
+      class="emotion-7"
     >
       <div
-        class="css-m2flv6"
+        class="emotion-6"
         role="tablist"
       >
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-alh4do"
+          class="emotion-2"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
@@ -317,7 +852,7 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
       </div>
     </div>
     <div
-      class="css-18lpvrh"
+      class="emotion-9"
     >
       <div
         id="test2"
@@ -375,7 +910,7 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
         />
       </div>
       <div
-        class="css-1hyfx7x"
+        class="emotion-8"
       >
         <div>
           CONTENT 6
@@ -387,56 +922,190 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
 `;
 
 exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-7 {
+  height: 40px;
+  background: rgba(255,255,255,1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: #444;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-8 {
+  display: none;
+}
+
+.emotion-6 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+.emotion-9 {
+  display: block;
+  position: relative;
+}
+
+.emotion-10 {
+  background: rgba(255,255,255,0.89);
+  background-clip: padding-box;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  display: block;
+}
+
 <div
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-iz32xf"
+    class="emotion-10"
   >
     <div
-      class="css-nlqiqg"
+      class="emotion-7"
     >
       <div
-        class="css-m2flv6"
+        class="emotion-6"
         role="tablist"
       >
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-alh4do"
+          class="emotion-2"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
@@ -445,7 +1114,7 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
       </div>
     </div>
     <div
-      class="css-1bx5ylf"
+      class="emotion-9"
     >
       <div
         id="test2"
@@ -503,7 +1172,7 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
         />
       </div>
       <div
-        class="css-1hyfx7x"
+        class="emotion-8"
       >
         <div>
           CONTENT 6
@@ -515,11 +1184,20 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
 `;
 
 exports[`Storyshots Components|Tabs stateless - empty 1`] = `
+.emotion-0 {
+  font-size: 11px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px;
+}
+
 <div
   style="height:calc(100vh - 20px)"
 >
   <p
-    class="css-hftiue"
+    class="emotion-0"
   >
     no panels available
   </p>
@@ -527,56 +1205,190 @@ exports[`Storyshots Components|Tabs stateless - empty 1`] = `
 `;
 
 exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-7 {
+  height: 40px;
+  background: rgba(255,255,255,1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: #444;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-8 {
+  display: none;
+}
+
+.emotion-9 {
+  display: block;
+  position: relative;
+}
+
+.emotion-10 {
+  background: rgba(255,255,255,0.89);
+  background-clip: padding-box;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  display: block;
+}
+
+.emotion-6 {
+  overflow: visisble;
+  white-space: nowrap;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
 <div
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-iz32xf"
+    class="emotion-10"
   >
     <div
-      class="css-nlqiqg"
+      class="emotion-7"
     >
       <div
-        class="css-14fmqun"
+        class="emotion-6"
         role="tablist"
       >
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-alh4do"
+          class="emotion-2"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
@@ -585,7 +1397,7 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
       </div>
     </div>
     <div
-      class="css-1bx5ylf"
+      class="emotion-9"
     >
       <div
         id="test2"
@@ -643,7 +1455,7 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
         />
       </div>
       <div
-        class="css-1hyfx7x"
+        class="emotion-8"
       >
         <div>
           CONTENT 6
@@ -655,56 +1467,208 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
 `;
 
 exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-11 {
+  display: block;
+}
+
+.emotion-8 {
+  height: 40px;
+  background: rgba(255,255,255,1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 11px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: #444;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #9fdaff;
+}
+
+.emotion-7 {
+  height: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-7 > * {
+  margin-right: 15px;
+}
+
+.emotion-7 > *:last-child {
+  margin-right: 0;
+}
+
+.emotion-9 {
+  display: none;
+}
+
+.emotion-6 {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+.emotion-10 {
+  display: block;
+  position: relative;
+}
+
 <div
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-13o7eu2"
+    class="emotion-11"
   >
     <div
-      class="css-nlqiqg"
+      class="emotion-8"
     >
       <div
-        class="css-m2flv6"
+        class="emotion-6"
         role="tablist"
       >
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #1
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #2
         </button>
         <button
-          class="css-alh4do"
+          class="emotion-2"
           role="tab"
           type="button"
         >
           Tab with scroll!
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #4
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
           Tab title #5
         </button>
         <button
-          class="css-1ohsdcw"
+          class="emotion-0"
           role="tab"
           type="button"
         >
@@ -712,7 +1676,7 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
         </button>
       </div>
       <div
-        class="css-clk81d"
+        class="emotion-7"
       >
         <button
           type="button"
@@ -727,7 +1691,7 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
       </div>
     </div>
     <div
-      class="css-1bx5ylf"
+      class="emotion-10"
     >
       <div
         id="test2"
@@ -785,7 +1749,7 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
         />
       </div>
       <div
-        class="css-1hyfx7x"
+        class="emotion-9"
       >
         <div>
           CONTENT 6

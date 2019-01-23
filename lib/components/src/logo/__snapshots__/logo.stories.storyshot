@@ -1,8 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Logo colored 1`] = `
+.emotion-0 {
+  display: block;
+  max-width: 100%;
+}
+
 <svg
-  class="css-92repi"
+  class="emotion-0"
   version="1.1"
   viewBox="0 0 2023.2 538"
   width="500"
@@ -51,8 +56,13 @@ exports[`Storyshots Components|Logo colored 1`] = `
 `;
 
 exports[`Storyshots Components|Logo gray 1`] = `
+.emotion-0 {
+  display: block;
+  max-width: 100%;
+}
+
 <svg
-  class="css-92repi"
+  class="emotion-0"
   version="1.1"
   viewBox="0 0 2023.2 538"
   width="500"
