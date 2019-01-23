@@ -4,19 +4,21 @@ import { create as createSyntax } from './light-syntax';
 import { Brand } from '../brand';
 import { baseFonts, monoFonts } from '../base';
 
-import { mkColor } from '../utils';
-
 const colors = {
-  green1: mkColor('#008000'),
-  red1: mkColor('#A31515'),
-  red2: mkColor('#9a050f'),
-  red3: mkColor('#800000'),
-  red4: mkColor('#ff0000'),
-  gray1: mkColor('#393A34'),
-  cyan1: mkColor('#36acaa'),
-  cyan2: mkColor('#2B91AF'),
-  blue1: mkColor('#0000ff'),
-  blue2: mkColor('#00009f'),
+  green1: '#008000',
+  red1: '#A31515',
+  red2: '#9a050f',
+  red3: '#800000',
+  red4: '#ff0000',
+  gray1: '#393A34',
+  cyan1: '#36acaa',
+  cyan2: '#2B91AF',
+  blue1: '#0000ff',
+  blue2: '#00009f',
+  highlight: '#199EFF',
+  warn: 'orange',
+  fail: '#d53535',
+  success: '#09833a',
 };
 
 const main = {
@@ -42,7 +44,7 @@ const layout = {
 const aside = {
   asideFill: 'transparent',
   asideSelected: {
-    color: '#9fdaff',
+    background: '#9fdaff',
   },
 };
 
@@ -56,13 +58,10 @@ const light = {
   ...layout,
   ...mono,
   ...aside,
+  colors,
   inputFill: 'rgba(0,0,0,0.1)',
   dimmedTextColor: 'rgba(0,0,0,0.4)',
-  highlightColor: '#9fdaff',
-  menuHighlightColor: '#1ea7fd',
-  successColor: '#09833a',
-  failColor: '#d53535',
-  warnColor: 'orange',
+  menuHighlightColor: '#199EFF',
   monoTextFace: monoFonts.fontFamily,
   overlayBackground: 'linear-gradient(to bottom right, rgba(233, 233, 233, 0.6), rgba(255, 255, 255, 0.8))',
 
