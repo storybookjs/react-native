@@ -8,6 +8,7 @@ enum events {
   APPLY_SHORTCUT = 'applyShortcut',
   STORY_ADDED = 'storyAdded',
   STORY_CHANGED = 'storyChanged',
+  STORY_UNCHANGED = 'storyUnchanged',
   FORCE_RE_RENDER = 'forceReRender',
   REGISTER_SUBSCRIPTION = 'registerSubscription',
   STORY_INIT = 'storyInit',
