@@ -97,12 +97,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: [
-        '**/__tests__/**',
-        '**/*.test.js/**',
-        '**/*.stories.js',
-        '**/storyshots/**/stories/**',
-      ],
+      files: ['**/__tests__/**', '**/*.test.js', '**/*.stories.js', '**/storyshots/**/stories/**'],
       rules: {
         'import/no-extraneous-dependencies': ignore,
       },
