@@ -35,7 +35,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-focus-lock": "^1.17.6",
+    "react-focus-lock": "^1.17.7",
     "react-helmet-async": "^0.2.0",
     "react-inspector": "^2.3.0",
     "react-popper-tooltip": "^2.8.0",
