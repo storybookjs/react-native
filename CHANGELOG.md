@@ -11,6 +11,8 @@
 
 ### Dependency Upgrades
 
+* Bump ts-node from 7.0.1 to 8.0.1 ([#5346](https://github.com/storybooks/storybook/pull/5346))
+* Bump marko from 4.14.20 to 4.14.21 ([#5343](https://github.com/storybooks/storybook/pull/5343))
 * Bump @types/jest from 23.3.12 to 23.3.13 ([#5327](https://github.com/storybooks/storybook/pull/5327))
 * Bump @babel/plugin-proposal-class-properties from 7.2.3 to 7.3.0 ([#5326](https://github.com/storybooks/storybook/pull/5326))
 * Bump esm from 3.1.0 to 3.1.1 ([#5328](https://github.com/storybooks/storybook/pull/5328))
