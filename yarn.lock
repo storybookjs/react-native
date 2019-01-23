@@ -2926,6 +2926,10 @@ are-we-there-yet@~1.1.2:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
 
+arg@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/arg/-/arg-4.1.0.tgz#583c518199419e0037abb74062c37f8519e575f0"
+
 argly@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/argly/-/argly-1.2.0.tgz#2b274e4551a29ff5e7199d2ed9788eb66ed36e60"
@@ -5304,7 +5308,7 @@ buffer-fill@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/buffer-fill/-/buffer-fill-1.0.0.tgz#f8f78b76789888ef39f205cd637f68e702122b2c"
 
-buffer-from@1.x, buffer-from@^1.0.0, buffer-from@^1.1.0:
+buffer-from@1.x, buffer-from@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
 
@@ -10316,9 +10320,9 @@ htmlescape@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/htmlescape/-/htmlescape-1.1.1.tgz#3a03edc2214bca3b66424a3e7959349509cb0351"
 
-htmljs-parser@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/htmljs-parser/-/htmljs-parser-2.6.0.tgz#3d3e6f490baf8e181744fca82f488f44de01ab9c"
+htmljs-parser@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/htmljs-parser/-/htmljs-parser-2.6.1.tgz#88a7c6242205cfc05648fddaa740ad97a9fd4ebe"
   dependencies:
     char-props "^0.1.5"
     complain "^1.0.0"
@@ -13751,9 +13755,9 @@ marko-starter@^2.0.4:
     routes-table "^1.2.1"
     try-require "^1.2.1"
 
-marko@^4.1.1, marko@^4.10.0, marko@^4.14.20:
-  version "4.14.20"
-  resolved "https://registry.yarnpkg.com/marko/-/marko-4.14.20.tgz#045b54e957924e1b5fda29c4fc77178d2008293d"
+marko@^4.1.1, marko@^4.10.0, marko@^4.14.21:
+  version "4.14.21"
+  resolved "https://registry.yarnpkg.com/marko/-/marko-4.14.21.tgz#2f9c561503b5d56d28d22ac4aa7c9cb7b032f74d"
   dependencies:
     app-module-path "^2.2.0"
     argly "^1.0.0"
@@ -13768,7 +13772,7 @@ marko@^4.1.1, marko@^4.10.0, marko@^4.14.20:
     events "^1.0.2"
     events-light "^1.0.0"
     he "^1.1.0"
-    htmljs-parser "^2.6.0"
+    htmljs-parser "^2.6.1"
     lasso-caching-fs "^1.0.1"
     lasso-modules-client "^2.0.4"
     lasso-package-root "^1.0.1"
@@ -20211,16 +20215,14 @@ ts-loader@^5.3.2:
     micromatch "^3.1.4"
     semver "^5.0.1"
 
-ts-node@~7.0.0:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-7.0.1.tgz#9562dc2d1e6d248d24bc55f773e3f614337d9baf"
+ts-node@~8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.0.1.tgz#cad98e8d50f0474f0d763ca8dc4c1bf8b7554ae2"
   dependencies:
+    arg "^4.1.0"
     arrify "^1.0.0"
-    buffer-from "^1.1.0"
     diff "^3.1.0"
     make-error "^1.1.1"
-    minimist "^1.2.0"
-    mkdirp "^0.5.1"
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
