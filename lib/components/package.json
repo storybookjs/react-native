@@ -27,7 +27,7 @@
     "@storybook/theming": "5.0.0-alpha.9",
     "fuzzy-search": "^3.0.1",
     "global": "^4.3.2",
-    "immer": "^1.9.3",
+    "immer": "^1.12.0",
     "js-beautify": "^1.8.9",
     "lodash.pick": "^4.4.0",
     "lodash.throttle": "^4.1.1",
