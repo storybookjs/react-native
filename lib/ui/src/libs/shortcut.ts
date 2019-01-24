@@ -1,5 +1,4 @@
 import { navigator } from 'global';
-import memoize from 'memoizerific';
 
 // The shortcut is our JSON-ifiable representation of a shortcut combination
 type Shortcut = string[];
@@ -13,52 +12,50 @@ export const isShortcutTaken = (arr1: string[], arr2: string[]): boolean => JSON
 
 // Map a keyboard event to a keyboard shortcut
 // NOTE: if we change the fields on the event that we need, we'll need to update the serialization in core/preview/start.js
-export const eventToShortcut = memoize(1)(
-  (e: KeyboardEvent): Shortcut | null => {
-    // Meta key only doesn't map to a shortcut
-    if (['Meta', 'Alt', 'Control', 'Shift'].includes(e.key)) {
-      return null;
-    }
-
-    const keys = [];
-    if (e.altKey) {
-      keys.push('alt');
-    }
-    if (e.ctrlKey) {
-      keys.push('control');
-    }
-    if (e.metaKey) {
-      keys.push('meta');
-    }
-    if (e.shiftKey) {
-      keys.push('shift');
-    }
-
-    if (e.key && e.key.length === 1 && e.key !== ' ') {
-      keys.push(e.key.toUpperCase());
-    }
-    if (e.key === ' ') {
-      keys.push('space');
-    }
-    if (e.key === 'Escape') {
-      keys.push('escape');
-    }
-    if (e.key === 'ArrowRight') {
-      keys.push('ArrowRight');
-    }
-    if (e.key === 'ArrowDown') {
-      keys.push('ArrowDown');
-    }
-    if (e.key === 'ArrowUp') {
-      keys.push('ArrowUp');
-    }
-    if (e.key === 'ArrowLeft') {
-      keys.push('ArrowLeft');
-    }
-
-    return keys;
+export const eventToShortcut = (e: KeyboardEvent): Shortcut | null => {
+  // Meta key only doesn't map to a shortcut
+  if (['Meta', 'Alt', 'Control', 'Shift'].includes(e.key)) {
+    return null;
   }
-);
+
+  const keys = [];
+  if (e.altKey) {
+    keys.push('alt');
+  }
+  if (e.ctrlKey) {
+    keys.push('control');
+  }
+  if (e.metaKey) {
+    keys.push('meta');
+  }
+  if (e.shiftKey) {
+    keys.push('shift');
+  }
+
+  if (e.key && e.key.length === 1 && e.key !== ' ') {
+    keys.push(e.key.toUpperCase());
+  }
+  if (e.key === ' ') {
+    keys.push('space');
+  }
+  if (e.key === 'Escape') {
+    keys.push('escape');
+  }
+  if (e.key === 'ArrowRight') {
+    keys.push('ArrowRight');
+  }
+  if (e.key === 'ArrowDown') {
+    keys.push('ArrowDown');
+  }
+  if (e.key === 'ArrowUp') {
+    keys.push('ArrowUp');
+  }
+  if (e.key === 'ArrowLeft') {
+    keys.push('ArrowLeft');
+  }
+
+  return keys;
+};
 
 export const shortcutMatchesShortcut = (inputShortcut: Shortcut, shortcut: Shortcut): boolean => {
   return inputShortcut && inputShortcut.length === shortcut.length && !inputShortcut.find((key, i) => key !== shortcut[i]);
