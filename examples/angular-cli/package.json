@@ -22,7 +22,7 @@
     "@angular/core": "^7.2.1",
     "@angular/forms": "^7.2.1",
     "@angular/platform-browser": "^7.2.1",
-    "@angular/platform-browser-dynamic": "^7.2.1",
+    "@angular/platform-browser-dynamic": "^7.2.2",
     "@ngrx/store": "^7.1.0",
     "core-js": "^2.6.2",
     "rxjs": "^6.3.3",
