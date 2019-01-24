@@ -1,4 +1,5 @@
 import { navigator } from 'global';
+import memoize from 'memoizerific';
 
 // The shortcut is our JSON-ifiable representation of a shortcut combination
 type Shortcut = string[];
@@ -11,53 +12,55 @@ export const optionOrAltSymbol = () => (isMacLike() ? '⌥' : 'alt');
 export const isShortcutTaken = (arr1: string[], arr2: string[]): boolean => JSON.stringify(arr1) === JSON.stringify(arr2);
 
 // Map a keyboard event to a keyboard shortcut
-export const eventToShortcut = (e: KeyboardEvent): Shortcut | null => {
-  // Meta key only doesn't map to a shortcut
-  if (['Meta', 'Alt', 'Control', 'Shift'].includes(e.key)) {
-    return null;
-  }
+export const eventToShortcut = memoize(1)(
+  (e: KeyboardEvent): Shortcut | null => {
+    // Meta key only doesn't map to a shortcut
+    if (['Meta', 'Alt', 'Control', 'Shift'].includes(e.key)) {
+      return null;
+    }
 
-  const keys = [];
-  if (e.altKey) {
-    keys.push('alt');
-  }
-  if (e.ctrlKey) {
-    keys.push('control');
-  }
-  if (e.metaKey) {
-    keys.push('meta');
-  }
-  if (e.shiftKey) {
-    keys.push('shift');
-  }
+    const keys = [];
+    if (e.altKey) {
+      keys.push('alt');
+    }
+    if (e.ctrlKey) {
+      keys.push('control');
+    }
+    if (e.metaKey) {
+      keys.push('meta');
+    }
+    if (e.shiftKey) {
+      keys.push('shift');
+    }
 
-  if (e.key && e.key.length === 1 && e.key !== ' ') {
-    keys.push(e.key.toUpperCase());
-  }
-  if (e.key === ' ') {
-    keys.push('space');
-  }
-  if (e.key === 'Escape') {
-    keys.push('escape');
-  }
-  if (e.key === 'ArrowRight') {
-    keys.push('ArrowRight');
-  }
-  if (e.key === 'ArrowDown') {
-    keys.push('ArrowDown');
-  }
-  if (e.key === 'ArrowUp') {
-    keys.push('ArrowUp');
-  }
-  if (e.key === 'ArrowLeft') {
-    keys.push('ArrowLeft');
-  }
+    if (e.key && e.key.length === 1 && e.key !== ' ') {
+      keys.push(e.key.toUpperCase());
+    }
+    if (e.key === ' ') {
+      keys.push('space');
+    }
+    if (e.key === 'Escape') {
+      keys.push('escape');
+    }
+    if (e.key === 'ArrowRight') {
+      keys.push('ArrowRight');
+    }
+    if (e.key === 'ArrowDown') {
+      keys.push('ArrowDown');
+    }
+    if (e.key === 'ArrowUp') {
+      keys.push('ArrowUp');
+    }
+    if (e.key === 'ArrowLeft') {
+      keys.push('ArrowLeft');
+    }
 
-  return keys;
-};
+    return keys;
+  }
+);
 
 export const shortcutMatchesShortcut = (inputShortcut: Shortcut, shortcut: Shortcut): boolean => {
-  return inputShortcut.length === shortcut.length && !inputShortcut.find((key, i) => key !== shortcut[i]);
+  return inputShortcut && inputShortcut.length === shortcut.length && !inputShortcut.find((key, i) => key !== shortcut[i]);
 };
 
 // Should this keyboard event trigger this keyboard shortcut?
