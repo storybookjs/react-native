@@ -7,7 +7,7 @@ module.exports = {
   overrides: [
     {
       files: '*.html',
-      options: { parser: 'babylon' },
+      options: { parser: 'babel' },
     },
   ],
 };

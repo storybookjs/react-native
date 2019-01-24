@@ -1,9 +1,8 @@
-import { storiesOf } from '@storybook/angular';
+import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 import { DummyService } from './moduleMetadata/dummy.service';
 import { ServiceComponent } from './moduleMetadata/service.component';
-import { moduleMetadata } from '@storybook/angular';
 
 storiesOf('Custom|Providers', module)
   .addDecorator(

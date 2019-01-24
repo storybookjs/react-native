@@ -1,9 +1,9 @@
 export interface NgModuleMetadata {
-  declarations?: Array<any>;
-  entryComponents?: Array<any>;
-  imports?: Array<any>;
-  schemas?: Array<any>;
-  providers?: Array<any>;
+  declarations?: any[];
+  entryComponents?: any[];
+  imports?: any[];
+  schemas?: any[];
+  providers?: any[];
 }
 
 export interface ICollection {

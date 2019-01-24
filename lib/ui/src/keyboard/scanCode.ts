@@ -260,7 +260,7 @@ export class ScanCodeBinding {
   }
 }
 
-(function() {
+(() => {
   function d(intScanCode: ScanCode, strScanCode: string): void {
     scanCodeIntToStr[intScanCode] = strScanCode;
     scanCodeStrToInt[strScanCode] = intScanCode;
@@ -461,7 +461,7 @@ export class ScanCodeBinding {
   d(ScanCode.MailSend, 'MailSend');
 })();
 
-(function() {
+(() => {
   for (let i = 0; i <= ScanCode.MAX_VALUE; i++) {
     IMMUTABLE_CODE_TO_KEYCODE[i] = -1;
   }

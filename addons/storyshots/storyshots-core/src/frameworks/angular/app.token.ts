@@ -1,3 +1,4 @@
+// tslint:disable-next-line:no-implicit-dependencies
 import { InjectionToken } from '@angular/core';
 import { NgStory } from './types';
 

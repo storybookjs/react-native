@@ -1,3 +1,4 @@
+// tslint:disable-next-line:no-implicit-dependencies
 import { _STORE_REDUCERS } from '@ngrx/store';
 import { OperatingSystem } from './platform';
 
@@ -217,7 +218,7 @@ const uiMap = new KeyCodeStrMap();
 const userSettingsUSMap = new KeyCodeStrMap();
 const userSettingsGeneralMap = new KeyCodeStrMap();
 
-(function() {
+(() => {
   function define(
     keyCode: KeyCode,
     uiLabel: string,
@@ -353,6 +354,7 @@ const userSettingsGeneralMap = new KeyCodeStrMap();
   define(KeyCode.NUMPAD_DIVIDE, 'NumPad_Divide');
 })();
 
+// tslint:disable-next-line:no-namespace
 export namespace KeyCodeUtils {
   export function toString(keyCode: KeyCode): string {
     return uiMap.keyCodeToStr(keyCode);
@@ -534,6 +536,7 @@ export class ResolveKeybindingPart {
   }
 }
 
+// tslint:disable-next-line:max-classes-per-file
 export abstract class ResolvedKeybinding {
   /**
    * This prints the binding in a format suitable for displaying in the UI.

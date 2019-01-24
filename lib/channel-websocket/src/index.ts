@@ -22,10 +22,7 @@ export class WebsocketTransport {
   private isReady = false;
 
   constructor({ url, onError }: WebsocketTransportArgs) {
-    this.connect(
-      url,
-      onError
-    );
+    this.connect(url, onError);
   }
 
   setHandler(handler: ChannelHandler) {
