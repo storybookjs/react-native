@@ -1,4 +1,5 @@
 import global from 'global';
+// tslint:disable-next-line:no-implicit-dependencies
 import { ReactElement } from 'react';
 import { Channel } from '@storybook/channels';
 import logger from '@storybook/client-logger';
@@ -50,40 +51,40 @@ export class AddonStore {
     }
 
     return this.channel;
-  }
+  };
   hasChannel = (): boolean => !!this.channel;
   setChannel = (channel: Channel): void => {
     this.channel = channel;
-  }
+  };
 
   getElements = (type: Types): Collection => {
     if (!this.elements[type]) {
       this.elements[type] = {};
     }
     return this.elements[type];
-  }
+  };
   addPanel = (name: string, options: Addon): void => {
     this.add(name, {
       type: types.PANEL,
       ...options,
     });
-  }
+  };
   add = (name: string, addon: Addon) => {
     const { type } = addon;
     const collection = this.getElements(type);
     collection[name] = { id: name, ...addon };
-  }
+  };
 
   register = (name: string, registerCallback: (api: any) => void): void => {
     if (this.loaders[name]) {
       logger.warn(`${name} was loaded twice, this could have bad side-effects`);
     }
     this.loaders[name] = registerCallback;
-  }
+  };
 
   loadAddons = (api: any) => {
     Object.values(this.loaders).forEach(value => value(api));
-  }
+  };
 }
 
 // Enforce addons store to be a singleton

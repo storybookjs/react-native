@@ -1,8 +1,7 @@
-import { storiesOf } from '@storybook/angular';
+import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { Welcome, Button } from '@storybook/angular/demo';
-import { moduleMetadata } from '@storybook/angular';
 import { linkTo } from '@storybook/addon-links';
-import { environment } from 'environments/environment';
+import { environment } from '../environments/environment';
 
 if (environment) {
   // This ensures that the basePath typeScript feature works with storybook
