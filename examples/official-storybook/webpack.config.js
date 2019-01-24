@@ -25,6 +25,14 @@ module.exports = async ({ config }) => ({
           path.resolve(__dirname, '../../lib/components/src'),
         ],
       },
+      {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: require.resolve('ts-loader'),
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -36,4 +44,8 @@ module.exports = async ({ config }) => ({
     // See https://github.com/graphql/graphql-language-service/issues/111#issuecomment-306723400
     new ContextReplacementPlugin(/graphql-language-service-interface[/\\]dist/, /\.js$/),
   ],
+  resolve: {
+    ...config.resolve,
+    extensions: [...(config.resolve.extensions || []), '.ts', '.tsx'],
+  },
 });

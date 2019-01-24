@@ -50,6 +50,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "storybook-chromatic": "^1.2.4",
+    "ts-loader": "^5.3.3",
     "uuid": "^3.3.2",
     "webpack": "^4.29.0"
   }
