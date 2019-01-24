@@ -9,8 +9,12 @@ export interface StoryContext {
 }
 
 export interface WrapperSettings {
-  options: object;
-  parameters: object;
+  options: {
+    [key: string]: any;
+  };
+  parameters: {
+    [key: string]: any;
+  };
 }
 
 export type StoryGetter = (context: StoryContext) => any;
