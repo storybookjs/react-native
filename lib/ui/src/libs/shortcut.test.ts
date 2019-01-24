@@ -4,10 +4,11 @@ const ev = (attr: object) => new KeyboardEvent('keydown', { ...attr });
 describe('eventToShortcut', () => {
   test('it handles alt key inputs', () => {
     const output = eventToShortcut(ev({ altKey: true, key: 'Alt' }));
+
     expect(output).toEqual(null);
   });
   test('it handles ctrl key inputs', () => {
-    const output = eventToShortcut(ev({ ctrlKey: true, key: 'Ctrl' }));
+    const output = eventToShortcut(ev({ ctrlKey: true, key: 'Control' }));
     expect(output).toEqual(null);
   });
   test('it handles meta key inputs', () => {
