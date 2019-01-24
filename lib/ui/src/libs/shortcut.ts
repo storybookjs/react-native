@@ -12,6 +12,7 @@ export const optionOrAltSymbol = () => (isMacLike() ? '⌥' : 'alt');
 export const isShortcutTaken = (arr1: string[], arr2: string[]): boolean => JSON.stringify(arr1) === JSON.stringify(arr2);
 
 // Map a keyboard event to a keyboard shortcut
+// NOTE: if we change the fields on the event that we need, we'll need to update the serialization in core/preview/start.js
 export const eventToShortcut = memoize(1)(
   (e: KeyboardEvent): Shortcut | null => {
     // Meta key only doesn't map to a shortcut
