@@ -12,7 +12,8 @@ export const isShortcutTaken = (arr1: string[], arr2: string[]): boolean => JSON
 
 // Map a keyboard event to a keyboard shortcut
 export const eventToShortcut = (e: KeyboardEvent): Shortcut | null => {
-  if (!e.key) {
+  // Meta key only doesn't map to a shortcut
+  if (['Meta', 'Alt', 'Control', 'Shift'].includes(e.key)) {
     return null;
   }
 

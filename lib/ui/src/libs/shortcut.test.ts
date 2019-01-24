@@ -3,19 +3,19 @@ const ev = (attr: object) => new KeyboardEvent('keydown', { ...attr });
 
 describe('eventToShortcut', () => {
   test('it handles alt key inputs', () => {
-    const output = eventToShortcut(ev({ altKey: true }));
+    const output = eventToShortcut(ev({ altKey: true, key: 'Alt' }));
     expect(output).toEqual(null);
   });
   test('it handles ctrl key inputs', () => {
-    const output = eventToShortcut(ev({ ctrlKey: true }));
+    const output = eventToShortcut(ev({ ctrlKey: true, key: 'Ctrl' }));
     expect(output).toEqual(null);
   });
   test('it handles meta key inputs', () => {
-    const output = eventToShortcut(ev({ metaKey: true }));
+    const output = eventToShortcut(ev({ metaKey: true, key: 'Meta' }));
     expect(output).toEqual(null);
   });
   test('it handles shift key inputs', () => {
-    const output = eventToShortcut(ev({ shiftKey: true }));
+    const output = eventToShortcut(ev({ shiftKey: true, key: 'Shift' }));
     expect(output).toEqual(null);
   });
   test('it handles enter key inputs', () => {
