@@ -25,7 +25,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.2.0",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@storybook/core": "5.0.0-alpha.9",
     "common-tags": "^1.8.0",
     "core-js": "^2.6.2",
