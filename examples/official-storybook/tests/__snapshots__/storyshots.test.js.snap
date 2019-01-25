@@ -26,7 +26,7 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-0 {
@@ -54,7 +54,7 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <button
@@ -228,12 +228,6 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
 `;
 
 exports[`Storyshots UI|ShortcutPage default shortcuts 1`] = `
-.emotion-130 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
 .emotion-14 {
   display: block;
 }
@@ -325,6 +319,12 @@ exports[`Storyshots UI|ShortcutPage default shortcuts 1`] = `
   margin: 0 auto;
 }
 
+.emotion-130 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 .emotion-5 {
   font-size: 16px;
 }
@@ -344,8 +344,8 @@ exports[`Storyshots UI|ShortcutPage default shortcuts 1`] = `
 }
 
 .emotion-3 {
-  color: #1ea7fd;
-  background-color: #9fdaff;
+  color: #199EFF;
+  background-color: #1EA7FD;
   font-size: 11px;
   white-space: nowrap;
   border-style: none;
@@ -360,8 +360,8 @@ exports[`Storyshots UI|ShortcutPage default shortcuts 1`] = `
 
 .emotion-3:hover,
 .emotion-3:focus {
-  background-color: #1ea7fd;
-  color: #9fdaff;
+  background-color: #199EFF;
+  color: #1EA7FD;
   outline: 0 none;
   cursor: pointer;
 }
@@ -491,12 +491,6 @@ exports[`Storyshots UI|ShortcutPage default shortcuts 1`] = `
   justify-self: center;
 }
 
-.emotion-130 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
 .emotion-14 {
   display: block;
 }
@@ -588,6 +582,12 @@ exports[`Storyshots UI|ShortcutPage default shortcuts 1`] = `
   margin: 0 auto;
 }
 
+.emotion-130 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 .emotion-5 {
   font-size: 16px;
 }
@@ -607,8 +607,8 @@ exports[`Storyshots UI|ShortcutPage default shortcuts 1`] = `
 }
 
 .emotion-3 {
-  color: #1ea7fd;
-  background-color: #9fdaff;
+  color: #199EFF;
+  background-color: #1EA7FD;
   font-size: 11px;
   white-space: nowrap;
   border-style: none;
@@ -623,8 +623,8 @@ exports[`Storyshots UI|ShortcutPage default shortcuts 1`] = `
 
 .emotion-3:hover,
 .emotion-3:focus {
-  background-color: #1ea7fd;
-  color: #9fdaff;
+  background-color: #199EFF;
+  color: #1EA7FD;
   outline: 0 none;
   cursor: pointer;
 }

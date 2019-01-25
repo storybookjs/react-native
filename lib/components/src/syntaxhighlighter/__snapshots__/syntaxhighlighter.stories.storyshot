@@ -454,7 +454,7 @@ exports[`Storyshots Components|SyntaxHighlighter bordered & copy-able 1`] = `
 }
 
 .emotion-3:focus {
-  border-bottom: 2px solid #9fdaff;
+  border-bottom: 2px solid #1EA7FD;
   outline: 0 none;
 }
 

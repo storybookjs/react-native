@@ -20,13 +20,8 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -37,6 +32,7 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+  font-weight: bold;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -47,7 +43,7 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-10 {
@@ -85,13 +81,8 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -102,8 +93,9 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
-  color: #444;
-  border-bottom-color: rgba(0,0,0,0.1);
+  font-weight: bold;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2:empty {
@@ -112,7 +104,7 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-8 {
@@ -278,13 +270,8 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -295,6 +282,7 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+  font-weight: bold;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -305,7 +293,7 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
 
 .emotion-1:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-10 {
@@ -343,13 +331,8 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -360,8 +343,9 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
-  color: #444;
-  border-bottom-color: rgba(0,0,0,0.1);
+  font-weight: bold;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-0:empty {
@@ -370,7 +354,7 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-8 {
@@ -492,13 +476,8 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -509,6 +488,7 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+  font-weight: bold;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -519,7 +499,7 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-4 {
@@ -557,13 +537,8 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -574,8 +549,9 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
-  color: #444;
-  border-bottom-color: rgba(0,0,0,0.1);
+  font-weight: bold;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-1:empty {
@@ -584,7 +560,7 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
 
 .emotion-1:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2 {
@@ -664,13 +640,8 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -681,6 +652,7 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+  font-weight: bold;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -691,7 +663,7 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-7 {
@@ -725,13 +697,8 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -742,8 +709,9 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
-  color: #444;
-  border-bottom-color: rgba(0,0,0,0.1);
+  font-weight: bold;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2:empty {
@@ -752,7 +720,7 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-9 {
@@ -941,13 +909,8 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -958,6 +921,7 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+  font-weight: bold;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -968,7 +932,7 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-7 {
@@ -1002,13 +966,8 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -1019,8 +978,9 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
-  color: #444;
-  border-bottom-color: rgba(0,0,0,0.1);
+  font-weight: bold;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2:empty {
@@ -1029,7 +989,7 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-8 {
@@ -1224,13 +1184,8 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -1241,6 +1196,7 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+  font-weight: bold;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -1251,7 +1207,7 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-7 {
@@ -1285,13 +1241,8 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -1302,8 +1253,9 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
-  color: #444;
-  border-bottom-color: rgba(0,0,0,0.1);
+  font-weight: bold;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2:empty {
@@ -1312,7 +1264,7 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-8 {
@@ -1486,13 +1438,8 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -1503,6 +1450,7 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+  font-weight: bold;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -1513,7 +1461,7 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-11 {
@@ -1551,13 +1499,8 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -1568,8 +1511,9 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
-  color: #444;
-  border-bottom-color: rgba(0,0,0,0.1);
+  font-weight: bold;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2:empty {
@@ -1578,7 +1522,7 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-7 {

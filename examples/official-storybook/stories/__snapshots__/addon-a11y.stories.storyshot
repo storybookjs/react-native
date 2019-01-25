@@ -136,7 +136,7 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
 
 .emotion-1:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <label
@@ -193,7 +193,7 @@ exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <label
@@ -244,7 +244,7 @@ exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <label

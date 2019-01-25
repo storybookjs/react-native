@@ -315,13 +315,8 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -332,6 +327,7 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+  font-weight: bold;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -342,7 +338,7 @@ exports[`Storyshots UI|Mobile layout initial 0 1`] = `
 
 .emotion-7:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -583,13 +579,8 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -600,6 +591,7 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+  font-weight: bold;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -610,7 +602,7 @@ exports[`Storyshots UI|Mobile layout initial 1 1`] = `
 
 .emotion-7:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-1 {
@@ -865,13 +857,8 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -882,6 +869,7 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+  font-weight: bold;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -892,7 +880,7 @@ exports[`Storyshots UI|Mobile layout initial 2 1`] = `
 
 .emotion-7:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-1 {
@@ -1181,13 +1169,8 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
@@ -1198,6 +1181,7 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+  font-weight: bold;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -1208,7 +1192,7 @@ exports[`Storyshots UI|Mobile layout page 1`] = `
 
 .emotion-8:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-1 {
