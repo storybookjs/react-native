@@ -42,7 +42,7 @@ const mono = {
 };
 
 const aside = {
-  asideFill: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%)',
+  // asideFill: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%)',
   asideSelected: {
     color: '#9fdaff',
   },
