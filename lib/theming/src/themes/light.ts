@@ -15,10 +15,11 @@ const colors = {
   cyan2: '#2B91AF',
   blue1: '#0000ff',
   blue2: '#00009f',
-  highlight: '#199EFF',
-  warn: 'orange',
-  fail: '#d53535',
-  success: '#09833a',
+  highlight: '#1EA7FD',
+  warn: '#E69D00',
+  fail: '#FF4400',
+  success: '#66BF3C',
+  white: 'white',
 };
 
 const main = {
@@ -34,7 +35,7 @@ const main = {
 
 const bar = {
   barFill: 'rgba(255,255,255,1)',
-  barSelectedColor: 'rgba(0,0,0,0.1)',
+  barSelectedColor: colors.highlight,
 };
 
 const layout = {
@@ -44,7 +45,8 @@ const layout = {
 const aside = {
   asideFill: 'transparent',
   asideSelected: {
-    background: '#9fdaff',
+    background: colors.highlight,
+    color: colors.white,
   },
 };
 
