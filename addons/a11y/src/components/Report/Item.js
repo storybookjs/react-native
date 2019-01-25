@@ -23,7 +23,7 @@ const HeaderBar = styled.button(({ theme }) => ({
 
   '&:focus': {
     outline: '0 none',
-    borderLeft: `3px solid ${theme.highlightColor}`,
+    borderLeft: `3px solid ${theme.colors.highlight}`,
   },
 }));
 

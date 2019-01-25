@@ -51,6 +51,9 @@ addParameters({
 ## Theme variables
 
 ```
+
+// TODO: update this with .colors. changes
+
 mainBackground: applied to root `background`, // 'linear-gradient(to bottom right, black, gray'
 mainBorder: applied to panels `border`, // '1px solid rgba(0,0,0,0.1)'
 mainBorderColor: applied for most borders, // 'rgba(0,0,0,0.1)'
