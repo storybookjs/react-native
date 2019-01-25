@@ -48,6 +48,9 @@ const aside = {
     background: colors.highlight,
     color: colors.white,
   },
+  asideHover: {
+    background: '#EAF3FC',
+  },
 };
 
 const mono = {

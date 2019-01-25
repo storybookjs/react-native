@@ -24,10 +24,12 @@ const Storybook = (props: { inline: boolean; height: string }) => (
     <path d="M 42,520 18,28 H 0 l 18,492 z" fill="#b57ee5" />
   </Svg>
 );
-const BrandWrapper = styled.div({
+const BrandWrapper = styled.a({
   minHeight: 30,
   verticalAlign: 'top',
   display: 'flex',
+  color: 'inherit',
+  textDecoration: 'none',
 });
 const BrandText = styled.span({
   paddingLeft: 10,
@@ -37,7 +39,7 @@ const BrandText = styled.span({
 });
 
 export const Brand = ({ title }: { title: string }) => (
-  <BrandWrapper>
+  <BrandWrapper href="./">
     <Storybook height="30px" inline />
     <BrandText>
       <strong>{title}</strong>
