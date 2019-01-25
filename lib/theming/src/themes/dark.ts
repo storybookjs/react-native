@@ -1,71 +1,75 @@
 import { chromeDark } from 'react-inspector';
-import { mkColor } from '../utils';
-import { create as createSyntax } from './dark-syntax';
+import { create as createSyntax } from './light-syntax';
 
+import { Brand } from '../brand';
 import { baseFonts, monoFonts } from '../base';
 
 const colors = {
-  green1: mkColor('#008000'),
-  red1: mkColor('#A31515'),
-  red2: mkColor('#9a050f'),
-  red3: mkColor('#800000'),
-  red4: mkColor('#ff0000'),
-  gray1: mkColor('#393A34'),
-  cyan1: mkColor('#36acaa'),
-  cyan2: mkColor('#2B91AF'),
-  blue1: mkColor('#0000ff'),
-  blue2: mkColor('#00009f'),
+  green1: '#008000',
+  red1: '#A31515',
+  red2: '#9a050f',
+  red3: '#800000',
+  red4: '#ff0000',
+  gray1: '#393A34',
+  cyan1: '#36acaa',
+  cyan2: '#2B91AF',
+  blue1: '#0000ff',
+  blue2: '#00009f',
+  highlight: '#1EA7FD',
+  warn: '#E69D00',
+  fail: '#FF4400',
+  success: '#66BF3C',
+  white: 'white',
 };
 
 const main = {
-  mainBackground: '#112 linear-gradient(to right, #112, #333)',
-  mainBorder: '1px solid rgba(255,255,255,0.1)',
-  mainBorderColor: 'rgba(255,255,255,0.1)',
+  mainBackground: '#1F1F1F',
+  mainBorder: '1px solid rgba(255, 255, 255, 0.1)',
+  mainBorderColor: 'rgba(255, 255, 255, 0.1)',
   mainBorderRadius: 4,
-  mainFill: 'rgba(255,255,255,0.1)',
+  mainFill: 'rgba(255,255,255,0.01)',
   mainTextFace: baseFonts.fontFamily,
   mainTextColor: '#efefef',
   mainTextSize: 13,
 };
 
 const bar = {
-  barFill: 'rgba(0,0,0,1)',
-  barSelectedColor: 'rgba(255,255,255,0.4)',
+  barFill: 'rgba(255,255,255,1)',
+  barSelectedColor: colors.highlight,
 };
 
 const layout = {
   layoutMargin: 10,
 };
 
+const aside = {
+  asideFill: 'transparent',
+  asideSelected: {
+    background: colors.highlight,
+    color: colors.white,
+  },
+};
+
 const mono = {
   monoTextFace: monoFonts.fontFamily,
 };
 
-const aside = {
-  // asideFill: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%)',
-  asideSelected: {
-    color: '#9fdaff',
-  },
-};
-
-const dark = {
+const light = {
   ...main,
   ...bar,
   ...layout,
   ...mono,
   ...aside,
-  inputFill: 'rgba(0,0,0,1)',
-  dimmedTextColor: 'rgba(255,255,255,0.4)',
-  menuHighlightColor: '#199EFF',
-  successColor: '#0edf62',
-  failColor: '#ff3f3f',
-  warnColor: 'orange',
-  overlayBackground: 'linear-gradient(to bottom right, rgba(17, 17, 34, 0.6), rgba(51, 51, 51, 0.8))',
-
   colors,
+  inputFill: 'rgba(0,0,0,0.1)',
+  dimmedTextColor: 'rgba(0,0,0,0.4)',
+  menuHighlightColor: '#199EFF',
+  monoTextFace: monoFonts.fontFamily,
+  overlayBackground: 'linear-gradient(to bottom right, rgba(233, 233, 233, 0.6), rgba(255, 255, 255, 0.8))',
+
+  brand: Brand,
 
   code: createSyntax({ colors, mono }),
-
   addonActionsTheme: {
     ...chromeDark,
     BASE_FONT_FAMILY: monoFonts.fontFamily,
@@ -73,4 +77,4 @@ const dark = {
   },
 };
 
-export default dark;
+export default light;
