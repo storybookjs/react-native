@@ -56,6 +56,6 @@
     "jest-preset-angular": "^6.0.1",
     "protractor": "~5.4.2",
     "ts-node": "~8.0.1",
-    "typescript": "^3.1.6"
+    "typescript": "^3.2.4"
   }
 }
