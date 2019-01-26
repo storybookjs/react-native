@@ -54,7 +54,7 @@ export const eventToShortcut = (e: KeyboardEvent): Shortcut | null => {
     keys.push('ArrowLeft');
   }
 
-  return keys;
+  return keys.length > 0 ? keys : null;
 };
 
 export const shortcutMatchesShortcut = (inputShortcut: Shortcut, shortcut: Shortcut): boolean => {
