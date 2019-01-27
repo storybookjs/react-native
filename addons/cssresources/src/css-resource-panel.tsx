@@ -1,12 +1,30 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { SyntaxHighlighter } from '@storybook/components';
+import events, { STORY_CHANGED } from '@storybook/core-events';
+import { EVENTS, PARAM_KEY } from './constants';
+import { Channel } from '@storybook/channels';
+import { CssResource } from './CssResource';
+import { bool, func, shape } from 'prop-types';
 
-import { STORY_CHANGED } from '@storybook/core-events';
-import EVENTS, { PARAM_KEY } from './constants';
+interface CssResourcePanelProps {
+  active: boolean;
+  channel: Channel;
+  api: {
+    emit: (event: any, data: any) => void;
+    on: (event: events, callback: (data: any) => void) => void;
+    off: (event: events, callback: (data: any) => void) => void;
+    getQueryParam: () => void;
+    getParameters: (id: string, paramKey: string) => any;
+    setQueryParams: () => void;
+  };
+}
 
-export default class CssResourcePanel extends Component {
-  constructor(props) {
+interface CssResourcePanelState {
+  list: CssResource[];
+}
+
+export class CssResourcePanel extends Component<CssResourcePanelProps, CssResourcePanelState> {
+  constructor(props: CssResourcePanelProps) {
     super(props);
 
     this.state = {
@@ -24,9 +42,9 @@ export default class CssResourcePanel extends Component {
     api.off(STORY_CHANGED, this.onStoryChange);
   }
 
-  onStoryChange = id => {
+  onStoryChange = (id: string) => {
     const { api } = this.props;
-    const list = api.getParameters(id, PARAM_KEY);
+    const list = api.getParameters(id, PARAM_KEY) as CssResource[];
 
     if (list) {
       const picked = list.filter(res => res.picked);
@@ -34,16 +52,16 @@ export default class CssResourcePanel extends Component {
     }
   };
 
-  onChange = event => {
+  onChange = (event: any) => {
     const { list: oldList } = this.state;
     const list = oldList.map(i => ({
       ...i,
       picked: i.id === event.target.id ? event.target.checked : i.picked,
     }));
-    this.setState({ list }, () => this.emit(list.filter(res => res.picked)));
+    this.setState({ list }, () => this.emit(list.filter((res: any) => res.picked)));
   };
 
-  emit(list) {
+  emit(list: CssResource[]) {
     const { api } = this.props;
     api.emit(EVENTS.SET, list);
   }
@@ -73,16 +91,16 @@ export default class CssResourcePanel extends Component {
   }
 }
 
-CssResourcePanel.propTypes = {
-  active: PropTypes.bool.isRequired,
-  channel: PropTypes.shape({
-    on: PropTypes.func,
-    emit: PropTypes.func,
-    removeListener: PropTypes.func,
+(CssResourcePanel as any).propTypes = {
+  active: bool.isRequired,
+  channel: shape({
+    on: func,
+    emit: func,
+    removeListener: func,
   }).isRequired,
-  api: PropTypes.shape({
-    on: PropTypes.func,
-    getQueryParam: PropTypes.func,
-    setQueryParams: PropTypes.func,
+  api: shape({
+    on: func,
+    getQueryParam: func,
+    setQueryParams: func,
   }).isRequired,
 };
