@@ -1,6 +1,6 @@
 import { document } from 'global';
-import addons, { makeDecorator } from '@storybook/addons';
-import EVENTS, { PARAM_KEY } from './constants';
+import { addons, makeDecorator } from '@storybook/addons';
+import { EVENTS, PARAM_KEY } from './constants';
 
 const changeMediaAttribute = (element: HTMLElement, enabled: boolean) => {
   const current = element.getAttribute('media');

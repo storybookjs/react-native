@@ -1,9 +1,8 @@
 import React from 'react';
-import addons, { types } from '@storybook/addons';
+import { addons, types } from '@storybook/addons';
 
 import { ADDON_ID, PANEL_ID } from './constants';
-
-import CssResourcePanel from './css-resource-panel';
+import { CssResourcePanel } from './css-resource-panel';
 
 addons.register(ADDON_ID, api => {
   const channel = addons.getChannel();

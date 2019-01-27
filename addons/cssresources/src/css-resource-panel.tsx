@@ -1,11 +1,10 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { SyntaxHighlighter } from '@storybook/components';
-
 import events, { STORY_CHANGED } from '@storybook/core-events';
-import EVENTS, { PARAM_KEY } from './constants';
-import Channel from '@storybook/channels';
+import { EVENTS, PARAM_KEY } from './constants';
+import { Channel } from '@storybook/channels';
 import { CssResource } from './CssResource';
+import { bool, func, shape } from 'prop-types';
 
 interface CssResourcePanelProps {
   active: boolean;
@@ -24,7 +23,7 @@ interface CssResourcePanelState {
   list: CssResource[];
 }
 
-export default class CssResourcePanel extends Component<CssResourcePanelProps, CssResourcePanelState> {
+export class CssResourcePanel extends Component<CssResourcePanelProps, CssResourcePanelState> {
   constructor(props: CssResourcePanelProps) {
     super(props);
 
@@ -93,15 +92,15 @@ export default class CssResourcePanel extends Component<CssResourcePanelProps, C
 }
 
 (CssResourcePanel as any).propTypes = {
-  active: PropTypes.bool.isRequired,
-  channel: PropTypes.shape({
-    on: PropTypes.func,
-    emit: PropTypes.func,
-    removeListener: PropTypes.func,
+  active: bool.isRequired,
+  channel: shape({
+    on: func,
+    emit: func,
+    removeListener: func,
   }).isRequired,
-  api: PropTypes.shape({
-    on: PropTypes.func,
-    getQueryParam: PropTypes.func,
-    setQueryParams: PropTypes.func,
+  api: shape({
+    on: func,
+    getQueryParam: func,
+    setQueryParams: func,
   }).isRequired,
 };
