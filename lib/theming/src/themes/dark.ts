@@ -1,7 +1,7 @@
 import { chromeDark } from 'react-inspector';
 import { create as createSyntax } from './light-syntax';
 
-import { baseFonts, monoFonts } from '../base';
+import { baseFonts, monoFonts, Theme } from '../base';
 
 const colors = {
   green1: '#008000',
@@ -53,7 +53,7 @@ const mono = {
   monoTextFace: monoFonts.fontFamily,
 };
 
-const light = {
+const dark: Theme = {
   ...main,
   ...bar,
   ...layout,
@@ -64,7 +64,6 @@ const light = {
   dimmedTextColor: 'rgba(0,0,0,0.4)',
   menuHighlightColor: '#199EFF',
   monoTextFace: monoFonts.fontFamily,
-  overlayBackground: 'linear-gradient(to bottom right, rgba(233, 233, 233, 0.6), rgba(255, 255, 255, 0.8))',
 
   brand: null,
 
@@ -76,4 +75,4 @@ const light = {
   },
 };
 
-export default light;
+export default dark;
