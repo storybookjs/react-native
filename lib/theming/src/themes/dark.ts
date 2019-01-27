@@ -1,7 +1,6 @@
 import { chromeDark } from 'react-inspector';
 import { create as createSyntax } from './light-syntax';
 
-import { Brand } from '../brand';
 import { baseFonts, monoFonts } from '../base';
 
 const colors = {
@@ -67,7 +66,7 @@ const light = {
   monoTextFace: monoFonts.fontFamily,
   overlayBackground: 'linear-gradient(to bottom right, rgba(233, 233, 233, 0.6), rgba(255, 255, 255, 0.8))',
 
-  brand: Brand,
+  brand: null,
 
   code: createSyntax({ colors, mono }),
   addonActionsTheme: {
