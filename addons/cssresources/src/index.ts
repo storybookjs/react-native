@@ -2,7 +2,7 @@ import { document } from 'global';
 import addons, { makeDecorator } from '@storybook/addons';
 import EVENTS, { PARAM_KEY } from './constants';
 
-const changeMediaAttribute = (element, enabled) => {
+const changeMediaAttribute = (element: HTMLElement, enabled: boolean) => {
   const current = element.getAttribute('media');
   if ((enabled && !current) || (!enabled && current === 'max-width: 1px')) {
     // don't do anything
@@ -19,29 +19,33 @@ const changeMediaAttribute = (element, enabled) => {
     element.setAttribute('media', value);
   }
 };
-const createElement = (id, code) => {
-  const element = document.createElement('div');
+
+const createElement = (id: string, code: string): HTMLDivElement => {
+  const element: HTMLDivElement = document.createElement('div');
   element.setAttribute('id', `storybook-addon-resource_${id}`);
   element.innerHTML = code;
   return element;
 };
-const getElement = (id, code) => {
-  const found = document.querySelector(`[id="storybook-addon-resource_${id}"]`);
+
+const getElement = (id: string, code: string) => {
+  const found: Element = document.querySelector(`[id="storybook-addon-resource_${id}"]`);
   return { element: found || createElement(id, code), created: !found };
 };
-const updateElement = (id, code, value) => {
-  const { element, created } = getElement(id, code);
-  const tags = [...element.querySelectorAll('link'), ...element.querySelectorAll('style')];
 
-  tags.forEach(child => changeMediaAttribute(child, value));
+const updateElement = (id: string, code: string, value: boolean) => {
+  const { element, created } = getElement(id, code);
+
+  element.querySelectorAll('link').forEach(child => changeMediaAttribute(child, value));
+  element.querySelectorAll('style').forEach(child => changeMediaAttribute(child, value));
 
   if (created) {
     document.body.appendChild(element);
   }
 };
 
-const list = [];
-const setResources = resources => {
+const list: any[] = [];
+
+const setResources = (resources: Array<{ code: string; id: string }>) => {
   const added = resources.filter(i => !list.find(r => r.code === i.code));
   const removed = list.filter(i => !resources.find(r => r.code === i.code));
 
@@ -63,7 +67,7 @@ export const withCssResources = makeDecorator({
   skipIfNoParametersOrOptions: true,
   allowDeprecatedUsage: false,
 
-  wrapper: (getStory, context, { options, parameters }) => {
+  wrapper: (getStory: any, context: any, { options, parameters }: any) => {
     const storyOptions = parameters || options;
     addons.getChannel().on(EVENTS.SET, setResources);
 
