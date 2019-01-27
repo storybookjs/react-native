@@ -73,6 +73,7 @@ const main = {
 
 const bar = {
   barFill: 'rgba(255,255,255,1)',
+  barTextColor: '#999',
   barSelectedColor: colors.highlight,
 };
 
