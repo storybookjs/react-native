@@ -7986,24 +7986,25 @@ envinfo@^3.0.0:
     os-name "^2.0.1"
     which "^1.2.14"
 
-enzyme-adapter-react-16@^1.6.0, enzyme-adapter-react-16@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.7.1.tgz#c37c4cb0fd75e88a063154a7a88096474914496a"
+enzyme-adapter-react-16@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.8.0.tgz#7055d8e908d8d27b807cf4292244db3c815ca11d"
   dependencies:
-    enzyme-adapter-utils "^1.9.0"
+    enzyme-adapter-utils "^1.10.0"
     function.prototype.name "^1.1.0"
     object.assign "^4.1.0"
-    object.values "^1.0.4"
+    object.values "^1.1.0"
     prop-types "^15.6.2"
-    react-is "^16.6.1"
+    react-is "^16.7.0"
     react-test-renderer "^16.0.0-0"
 
-enzyme-adapter-utils@^1.9.0:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/enzyme-adapter-utils/-/enzyme-adapter-utils-1.9.1.tgz#68196fdaf2a9f51f31603cbae874618661233d72"
+enzyme-adapter-utils@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/enzyme-adapter-utils/-/enzyme-adapter-utils-1.10.0.tgz#5836169f68b9e8733cb5b69cad5da2a49e34f550"
   dependencies:
     function.prototype.name "^1.1.0"
     object.assign "^4.1.0"
+    object.fromentries "^2.0.0"
     prop-types "^15.6.2"
     semver "^5.6.0"
 
@@ -14975,7 +14976,7 @@ object.pick@^1.3.0:
   dependencies:
     isobject "^3.0.1"
 
-object.values@^1.0.4:
+object.values@^1.0.4, object.values@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/object.values/-/object.values-1.1.0.tgz#bf6810ef5da3e5325790eaaa2be213ea84624da9"
   dependencies:
@@ -17058,7 +17059,7 @@ react-inspector@^2.3.0, react-inspector@^2.3.1:
     is-dom "^1.0.9"
     prop-types "^15.6.1"
 
-react-is@^16.6.1, react-is@^16.7.0:
+react-is@^16.7.0:
   version "16.7.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0.tgz#c1bd21c64f1f1364c6f70695ec02d69392f41bfa"
 
