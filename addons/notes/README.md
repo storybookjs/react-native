@@ -47,3 +47,14 @@ import notes from './someMarkdownText.md';
 storiesOf('Component', module)
   .add('With Markdown', () => <Component />, { notes });
 ```
+
+### Giphy
+
+When using markdown, you can also embed gifs from Giphy into your markdown. Currently, the value `gif` of the gif prop is used to search and return the first result returned by Giphy.
+
+```md
+# Title
+
+<Giphy gif='cheese' />
+```
+

@@ -41,6 +41,12 @@ const markdownTable = `
 | Row4.1  | Row4.2  | Row4.3  |
 `;
 
+const giphyMarkdown = `
+# Giphy
+
+<Giphy gif='cheese' />
+`;
+
 storiesOf('Addons|Notes', module)
   .add('addon notes', baseStory, {
     notes:
@@ -54,4 +60,7 @@ storiesOf('Addons|Notes', module)
   })
   .add('with a markdown table', baseStory, {
     notes: { markdown: markdownTable },
+  })
+  .add('with a markdown giphy', baseStory, {
+    notes: { markdown: giphyMarkdown },
   });

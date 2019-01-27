@@ -4,6 +4,7 @@ import { styled } from '@storybook/theming';
 import { STORY_CHANGED } from '@storybook/core-events';
 
 import { SyntaxHighlighter as SyntaxHighlighterBase, Placeholder } from '@storybook/components';
+import Giphy from './giphy';
 import Markdown from 'markdown-to-jsx';
 
 import { PARAM_KEY, API, Parameters } from './shared';
@@ -59,7 +60,14 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
 
   // use our SyntaxHighlighter component in place of a <code> element when
   // converting markdown to react elements
-  options = { overrides: { code: SyntaxHighlighter } };
+  options = {
+    overrides: {
+      code: SyntaxHighlighter,
+      Giphy: {
+        component: Giphy
+      }
+    }
+  };
 
   componentDidMount() {
     const { api } = this.props;
@@ -77,7 +85,7 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
 
     const value = read(params);
     if (value) {
-      this.setState({ value });
+        this.setState({ value });
     } else {
       this.setState({ value: undefined });
     }
