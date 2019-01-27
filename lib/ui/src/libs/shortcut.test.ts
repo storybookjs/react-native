@@ -21,7 +21,11 @@ describe('eventToShortcut', () => {
   });
   test('it handles enter key inputs', () => {
     const output = eventToShortcut(ev({ key: 'Enter' }));
-    expect(output).toEqual([]);
+    expect(output).toEqual(null);
+  });
+  test('it handles tab key inputs', () => {
+    const output = eventToShortcut(ev({ key: 'Tab' }));
+    expect(output).toEqual(null);
   });
   test('it handles space bar inputs', () => {
     const output = eventToShortcut(ev({ key: ' ' }));
