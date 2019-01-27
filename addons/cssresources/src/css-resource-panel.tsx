@@ -5,6 +5,7 @@ import { SyntaxHighlighter } from '@storybook/components';
 import events, { STORY_CHANGED } from '@storybook/core-events';
 import EVENTS, { PARAM_KEY } from './constants';
 import Channel from '@storybook/channels';
+import { CssResource } from './CssResource';
 
 interface CssResourcePanelProps {
   active: boolean;
@@ -19,7 +20,11 @@ interface CssResourcePanelProps {
   };
 }
 
-export default class CssResourcePanel extends Component<CssResourcePanelProps, any> {
+interface CssResourcePanelState {
+  list: CssResource[];
+}
+
+export default class CssResourcePanel extends Component<CssResourcePanelProps, CssResourcePanelState> {
   constructor(props: CssResourcePanelProps) {
     super(props);
 
@@ -40,7 +45,7 @@ export default class CssResourcePanel extends Component<CssResourcePanelProps, a
 
   onStoryChange = (id: string) => {
     const { api } = this.props;
-    const list = api.getParameters(id, PARAM_KEY) as any[];
+    const list = api.getParameters(id, PARAM_KEY) as CssResource[];
 
     if (list) {
       const picked = list.filter(res => res.picked);
@@ -50,14 +55,14 @@ export default class CssResourcePanel extends Component<CssResourcePanelProps, a
 
   onChange = (event: any) => {
     const { list: oldList } = this.state;
-    const list = oldList.map((i: any) => ({
+    const list = oldList.map(i => ({
       ...i,
       picked: i.id === event.target.id ? event.target.checked : i.picked,
     }));
     this.setState({ list }, () => this.emit(list.filter((res: any) => res.picked)));
   };
 
-  emit(list: any[]) {
+  emit(list: CssResource[]) {
     const { api } = this.props;
     api.emit(EVENTS.SET, list);
   }
@@ -73,7 +78,7 @@ export default class CssResourcePanel extends Component<CssResourcePanelProps, a
     return (
       <Fragment>
         {list &&
-          list.map(({ id, code, picked }: any) => (
+          list.map(({ id, code, picked }) => (
             <div key={id} style={{ padding: 10 }}>
               <label>
                 <input type="checkbox" checked={picked} onChange={this.onChange} id={id} />

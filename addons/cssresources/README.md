@@ -35,7 +35,7 @@ import { withCssResources } from '@storybook/addon-cssresources';
 addDecorator(
   withCssResources({
     cssresources: [{
-        name: `bluetheme`,
+        id: `bluetheme`,
         code: `<style>body { background-color: lightblue; }</style>`,
         picked: false,
       },
@@ -48,11 +48,11 @@ storiesOf('Addons|Cssresources', module)
   .addDecorator(
     withCssResources({
       cssresources: [{
-          name: `fontawesome`,
+          id: `fontawesome`,
           code: `<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>`,
           picked: true,
         }, {
-          name: `whitetheme`,
+          id: `whitetheme`,
           code: `<style>.fa { color: #fff }</style>`,
           picked: true,
         },
