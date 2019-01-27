@@ -3,14 +3,6 @@ import { create as createSyntax } from './light-syntax';
 
 import { baseFonts, monoFonts, Theme } from '../base';
 
-const background = {
-  app: '#F6F9FC',
-  appInverse: '#7A8997',
-  positive: '#E1FFD4',
-  negative: '#FEDED2',
-  warning: '#FFF5CF',
-};
-
 const colors = {
   /// Old
   green1: '#008000',
@@ -60,6 +52,14 @@ const colors = {
   negative: '#FF4400',
 };
 
+const background = {
+  app: '#F6F9FC',
+  appInverse: '#7A8997',
+  positive: '#E1FFD4',
+  negative: '#FEDED2',
+  warning: '#FFF5CF',
+};
+
 const main = {
   mainBackground: '#f6f9fc linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.1))',
   mainBorder: '1px solid rgba(0,0,0,0.1)',
@@ -73,7 +73,7 @@ const main = {
 
 const bar = {
   barFill: 'rgba(255,255,255,1)',
-  barTextColor: '#999',
+  barTextColor: colors.mediumdark,
   barSelectedColor: colors.highlight,
 };
 
@@ -102,8 +102,10 @@ const light: Theme = {
   ...layout,
   ...mono,
   ...aside,
-  background,
+
   colors,
+  background,
+
   inputFill: 'rgba(0,0,0,0.1)',
   dimmedTextColor: 'rgba(0,0,0,0.4)',
   menuHighlightColor: '#199EFF',
