@@ -2,6 +2,7 @@ export enum types {
   TAB = 'tab',
   PANEL = 'panel',
   TOOL = 'tool',
+  PREVIEW = 'preview',
 }
 
 export type Types = types | string;
