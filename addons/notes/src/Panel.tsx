@@ -101,8 +101,9 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
       return null;
     }
 
-    // TODO: maybe memoize
-    const options = { ...defaultOptions, overrides: { ...defaultOptions.overrides, ...api.getElements(types.NOTES_ELEMENT) } };
+    // TODO: memoize
+    const extraElements = Object.entries(api.getElements(types.NOTES_ELEMENT)).reduce((acc, [k, v]) => ({ ...acc, [k]: v.render }), {});
+    const options = { ...defaultOptions, overrides: { ...defaultOptions.overrides, ...extraElements } };
 
     return value ? (
       <Panel className="addon-notes-container">

@@ -6,11 +6,11 @@ import { logger } from '@storybook/client-logger';
 interface Props {
   query: string;
 }
-interface GiphyState {
-  src?: string;
+interface State {
+  src: string | null;
 }
-export default class Giphy extends Component<Props, GiphyState> {
-  state = {
+export default class Giphy extends Component<Props, State> {
+  state: State = {
     src: null,
   };
   componentDidMount() {
