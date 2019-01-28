@@ -1,64 +1,81 @@
-export const create = ({ colors, mono }: { colors: { [key: string]: { color: string } }; mono: { monoTextFace: string } }) => ({
-  token: {
-    fontFamily: mono.monoTextFace,
-    WebkitFontSmoothing: 'antialiased',
+import { mkColor } from '../utils';
 
-    '&.comment': { ...colors.green1, fontStyle: 'italic' },
-    '&.prolog': { ...colors.green1, fontStyle: 'italic' },
-    '&.doctype': { ...colors.green1, fontStyle: 'italic' },
-    '&.cdata': { ...colors.green1, fontStyle: 'italic' },
+interface ColorsHash {
+  [key: string]: string;
+}
+interface ColorsObjectsHash {
+  [key: string]: {
+    color: string;
+  };
+}
 
-    '&.string': colors.red1,
+const convertColors = (colors: ColorsHash): ColorsObjectsHash =>
+  Object.entries(colors).reduce((acc, [k, v]) => ({ ...acc, [k]: mkColor(v) }), {});
 
-    '&.punctuation': colors.gray1,
-    '&.operator': colors.gray1,
+export const create = ({ colors, mono }: { colors: ColorsHash; mono: { monoTextFace: string } }) => {
+  const colorsObjs = convertColors(colors);
+  return {
+    token: {
+      fontFamily: mono.monoTextFace,
+      WebkitFontSmoothing: 'antialiased',
 
-    '&.url': colors.cyan1,
-    '&.symbol': colors.cyan1,
-    '&.number': colors.cyan1,
-    '&.boolean': colors.cyan1,
-    '&.variable': colors.cyan1,
-    '&.constant': colors.cyan1,
-    '&.inserted': colors.cyan1,
+      '&.comment': { ...colorsObjs.green1, fontStyle: 'italic' },
+      '&.prolog': { ...colorsObjs.green1, fontStyle: 'italic' },
+      '&.doctype': { ...colorsObjs.green1, fontStyle: 'italic' },
+      '&.cdata': { ...colorsObjs.green1, fontStyle: 'italic' },
 
-    '&.atrule': colors.blue1,
-    '&.keyword': colors.blue1,
-    '&.attr-value': colors.blue1,
+      '&.string': colorsObjs.red1,
 
-    '&.function': colors.gray1,
-    '&.deleted': colors.red2,
+      '&.punctuation': colorsObjs.gray1,
+      '&.operator': colorsObjs.gray1,
 
-    '&.important': {
-      fontWeight: 'bold',
+      '&.url': colorsObjs.cyan1,
+      '&.symbol': colorsObjs.cyan1,
+      '&.number': colorsObjs.cyan1,
+      '&.boolean': colorsObjs.cyan1,
+      '&.variable': colorsObjs.cyan1,
+      '&.constant': colorsObjs.cyan1,
+      '&.inserted': colorsObjs.cyan1,
+
+      '&.atrule': colorsObjs.blue1,
+      '&.keyword': colorsObjs.blue1,
+      '&.attr-value': colorsObjs.blue1,
+
+      '&.function': colorsObjs.gray1,
+      '&.deleted': colorsObjs.red2,
+
+      '&.important': {
+        fontWeight: 'bold',
+      },
+      '&.bold': {
+        fontWeight: 'bold',
+      },
+
+      '&.italic': {
+        fontStyle: 'italic',
+      },
+
+      '&.class-name': colorsObjs.cyan2,
+
+      '&.tag': colorsObjs.red3,
+      '&.selector': colorsObjs.red3,
+
+      '&.attr-name': colorsObjs.red4,
+      '&.property': colorsObjs.red4,
+      '&.regex': colorsObjs.red4,
+      '&.entity': colorsObjs.red4,
+
+      '&.directive.tag .tag': {
+        background: '#ffff00',
+        ...colorsObjs.gray1,
+      },
     },
-    '&.bold': {
-      fontWeight: 'bold',
+    'language-json .token.boolean': colorsObjs.blue1,
+    'language-json .token.number': colorsObjs.blue1,
+    'language-json .token.property': colorsObjs.cyan2,
+
+    namespace: {
+      opacity: 0.7,
     },
-
-    '&.italic': {
-      fontStyle: 'italic',
-    },
-
-    '&.class-name': colors.cyan2,
-
-    '&.tag': colors.red3,
-    '&.selector': colors.red3,
-
-    '&.attr-name': colors.red4,
-    '&.property': colors.red4,
-    '&.regex': colors.red4,
-    '&.entity': colors.red4,
-
-    '&.directive.tag .tag': {
-      background: '#ffff00',
-      ...colors.gray1,
-    },
-  },
-  'language-json .token.boolean': colors.blue1,
-  'language-json .token.number': colors.blue1,
-  'language-json .token.property': colors.cyan2,
-
-  namespace: {
-    opacity: 0.7,
-  },
-});
+  };
+};

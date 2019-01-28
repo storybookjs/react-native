@@ -1,5 +1,4 @@
 import { mkColor } from '../utils';
-import { Color } from 'csstype';
 
 interface ColorsHash {
   [key: string]: string;
@@ -11,7 +10,7 @@ interface ColorsObjectsHash {
 }
 
 const convertColors = (colors: ColorsHash): ColorsObjectsHash =>
-  Object.entries(colors).reduce((acc, [k, v]) => Object.assign(acc, { [k]: mkColor(v) }), {});
+  Object.entries(colors).reduce((acc, [k, v]) => ({ ...acc, [k]: mkColor(v) }), {});
 
 export const create = ({ colors, mono }: { colors: ColorsHash; mono: { monoTextFace: string } }) => {
   const colorsObjs = convertColors(colors);
