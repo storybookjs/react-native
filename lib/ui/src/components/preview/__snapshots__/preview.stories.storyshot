@@ -68,7 +68,7 @@ Array [
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: rgba(255,255,255,1);
-  color: #999;
+  color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;
@@ -454,7 +454,7 @@ Array [
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: rgba(255,255,255,1);
-  color: #999;
+  color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;

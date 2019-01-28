@@ -11,7 +11,7 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: rgba(255,255,255,1);
-  color: #999;
+  color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
@@ -291,7 +291,7 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: rgba(255,255,255,1);
-  color: #999;
+  color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
@@ -527,7 +527,7 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: rgba(255,255,255,1);
-  color: #999;
+  color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
@@ -721,7 +721,7 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: rgba(255,255,255,1);
-  color: #999;
+  color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
@@ -1020,7 +1020,7 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: rgba(255,255,255,1);
-  color: #999;
+  color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
@@ -1458,7 +1458,7 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: rgba(255,255,255,1);
-  color: #999;
+  color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;
@@ -1609,7 +1609,7 @@ exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: rgba(255,255,255,1);
-  color: #999;
+  color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
