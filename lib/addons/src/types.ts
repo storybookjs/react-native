@@ -3,6 +3,7 @@ export enum types {
   PANEL = 'panel',
   TOOL = 'tool',
   PREVIEW = 'preview',
+  NOTES_ELEMENT = 'notes-element',
 }
 
 export type Types = types | string;
