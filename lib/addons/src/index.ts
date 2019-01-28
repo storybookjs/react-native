@@ -20,8 +20,8 @@ export interface Addon {
   title: string;
   type?: Types;
   id?: string;
-  route: (routeOptions: RouteOptions) => string;
-  match: (matchOptions: MatchOptions) => boolean;
+  route?: (routeOptions: RouteOptions) => string;
+  match?: (matchOptions: MatchOptions) => boolean;
   render: (renderOptions: RenderOptions) => ReactElement<any>;
 }
 

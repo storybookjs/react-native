@@ -1,14 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { SyntaxHighlighter } from '@storybook/components';
 import Eventtypes, { STORY_CHANGED } from '@storybook/core-events';
-import { Channel } from '@storybook/channels';
 
 import { EVENTS, PARAM_KEY } from './constants';
 import { CssResource } from './CssResource';
 
 interface CssResourcePanelProps {
   active: boolean;
-  channel: Channel;
   api: {
     emit(event: any, data: any): void;
     on(event: Eventtypes, callback: (data: any) => void): void;
