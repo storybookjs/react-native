@@ -1,3 +1,41 @@
+## 5.0.0-alpha.10 (January 28, 2019)
+
+### Features
+
+* Core: Version update use persistence ([#5370](https://github.com/storybooks/storybook/pull/5370))
+* Addon-Notes: Add giphy support ([#5381](https://github.com/storybooks/storybook/pull/5381))
+
+### Bug Fixes
+
+* UI: Fix issue where "Tab" keyboard input => []. ([#5374](https://github.com/storybooks/storybook/pull/5374))
+* UI: FIX keybindings were pointing to null events ([#5375](https://github.com/storybooks/storybook/pull/5375))
+* Addon-GA: Add missing `register.js` file in base directory ([#5379](https://github.com/storybooks/storybook/pull/5379))
+
+### Maintenance
+
+* Typescript: Migrate addon-cssresources ([#5380](https://github.com/storybooks/storybook/pull/5380))
+* UI: Keyboard shortcuts refactor ([#5359](https://github.com/storybooks/storybook/pull/5359))
+
+### Dependency Upgrades
+
+* Bump enzyme-adapter-react-16 from 1.7.1 to 1.8.0 ([#5366](https://github.com/storybooks/storybook/pull/5366))
+* Bump typescript from 3.2.2 to 3.2.4 ([#5368](https://github.com/storybooks/storybook/pull/5368))
+* Bump @babel/plugin-transform-react-jsx from 7.2.0 to 7.3.0 ([#5367](https://github.com/storybooks/storybook/pull/5367))
+* Bump @babel/preset-env from 7.2.3 to 7.3.1 ([#5369](https://github.com/storybooks/storybook/pull/5369))
+* Bump vue-loader from 15.5.1 to 15.6.0 ([#5365](https://github.com/storybooks/storybook/pull/5365))
+* Bump prettier from 1.15.3 to 1.16.1 ([#5354](https://github.com/storybooks/storybook/pull/5354))
+* Bump ember-source from 3.7.0 to 3.7.2 ([#5358](https://github.com/storybooks/storybook/pull/5358))
+* Bump @angular/platform-browser-dynamic from 7.2.1 to 7.2.2 ([#5353](https://github.com/storybooks/storybook/pull/5353))
+* Bump ember-cli-babel from 7.2.0 to 7.4.0 ([#5357](https://github.com/storybooks/storybook/pull/5357))
+* Bump zone.js from 0.8.28 to 0.8.29 ([#5355](https://github.com/storybooks/storybook/pull/5355))
+* Bump lerna from 3.10.6 to 3.10.7 ([#5356](https://github.com/storybooks/storybook/pull/5356))
+* Bump eslint-plugin-import from 2.14.0 to 2.15.0 ([#5352](https://github.com/storybooks/storybook/pull/5352))
+* Bump immer from 1.10.5 to 1.12.0 ([#5345](https://github.com/storybooks/storybook/pull/5345))
+* Bump @babel/plugin-proposal-object-rest-spread from 7.2.0 to 7.3.1 ([#5342](https://github.com/storybooks/storybook/pull/5342))
+* Bump autoprefixer from 9.4.5 to 9.4.6 ([#5347](https://github.com/storybooks/storybook/pull/5347))
+* Bump react-focus-lock from 1.17.6 to 1.17.7 ([#5344](https://github.com/storybooks/storybook/pull/5344))
+* Bump @ngrx/store from 7.0.0 to 7.1.0 ([#5341](https://github.com/storybooks/storybook/pull/5341))
+
 ## 4.1.11 (January 24, 2019)
 
 ### Bug Fixes

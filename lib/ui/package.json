@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.0.0-alpha.9",
+  "version": "5.0.0-alpha.10",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -21,12 +21,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-alpha.9",
-    "@storybook/client-logger": "5.0.0-alpha.9",
-    "@storybook/components": "5.0.0-alpha.9",
-    "@storybook/core-events": "5.0.0-alpha.9",
-    "@storybook/router": "5.0.0-alpha.9",
-    "@storybook/theming": "5.0.0-alpha.9",
+    "@storybook/addons": "5.0.0-alpha.10",
+    "@storybook/client-logger": "5.0.0-alpha.10",
+    "@storybook/components": "5.0.0-alpha.10",
+    "@storybook/core-events": "5.0.0-alpha.10",
+    "@storybook/router": "5.0.0-alpha.10",
+    "@storybook/theming": "5.0.0-alpha.10",
     "eventemitter3": "^3.1.0",
     "fast-deep-equal": "^2.0.1",
     "fuse.js": "^3.3.0",
