@@ -280,7 +280,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
 .emotion-8 {
   color: currentColor;
   font-weight: normal;
-  font-family: -apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Lucida Grande","Arial",sans-serif;
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.2em;

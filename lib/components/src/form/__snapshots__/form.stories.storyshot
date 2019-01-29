@@ -355,7 +355,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #E69D00;
+  border-bottom-color: #FC521F;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -840,7 +840,7 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #E69D00;
+  border-bottom-color: #FC521F;
   min-height: 32px;
 }
 
@@ -1321,7 +1321,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #E69D00;
+  border-bottom-color: #FC521F;
   height: 32px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1789,7 +1789,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #E69D00;
+  border-bottom-color: #FC521F;
   min-height: 32px;
   padding-top: 5px;
   padding-bottom: 5px;
