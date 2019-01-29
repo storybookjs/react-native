@@ -41,6 +41,7 @@
     "@storybook/addon-ondevice-backgrounds": "file:../../packs/storybook-addon-ondevice-backgrounds.tgz",
     "@storybook/addon-ondevice-knobs": "file:../../packs/storybook-addon-ondevice-knobs.tgz",
     "@storybook/addon-ondevice-notes": "file:../../packs/storybook-addon-ondevice-notes.tgz",
+    "@storybook/api": "file:../../packs/storybook-api.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
     "@storybook/theming": "file:../../packs/storybook-theming.tgz",
     "jest-expo": "^31.0.0",

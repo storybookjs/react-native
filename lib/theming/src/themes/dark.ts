@@ -61,7 +61,8 @@ const dark = {
   successColor: '#0edf62',
   failColor: '#ff3f3f',
   warnColor: 'orange',
-  overlayBackground: 'linear-gradient(to bottom right, rgba(17, 17, 34, 0.6), rgba(51, 51, 51, 0.8))',
+  overlayBackground:
+    'linear-gradient(to bottom right, rgba(17, 17, 34, 0.6), rgba(51, 51, 51, 0.8))',
 
   colors,
 

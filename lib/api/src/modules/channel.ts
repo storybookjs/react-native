@@ -22,7 +22,10 @@ export default ({ provider }: Module) => {
     emit: (type: string, event: any) => {
       provider.channel.emit(type, event);
     },
-    onStory: deprecate((cb: CallBack) => api.on(STORY_CHANGED, cb), 'onStory(...) has been replaced with on(STORY_CHANGED, ...)'),
+    onStory: deprecate(
+      (cb: CallBack) => api.on(STORY_CHANGED, cb),
+      'onStory(...) has been replaced with on(STORY_CHANGED, ...)'
+    ),
   };
   return { api };
 };

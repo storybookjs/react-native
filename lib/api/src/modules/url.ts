@@ -123,5 +123,8 @@ export default function({ store, navigate, location, path: initialPath, ...rest 
     },
   };
 
-  return { api, state: initialUrlSupport({ store, navigate, location, path: initialPath, ...rest }) };
+  return {
+    api,
+    state: initialUrlSupport({ store, navigate, location, path: initialPath, ...rest }),
+  };
 }

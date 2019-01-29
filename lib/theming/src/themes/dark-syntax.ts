@@ -1,4 +1,10 @@
-export const create = ({ colors, mono }: { colors: { [key: string]: { color: string } }; mono: { monoTextFace: string } }) => ({
+export const create = ({
+  colors,
+  mono,
+}: {
+  colors: { [key: string]: { color: string } };
+  mono: { monoTextFace: string };
+}) => ({
   token: {
     fontFamily: mono.monoTextFace,
     WebkitFontSmoothing: 'antialiased',

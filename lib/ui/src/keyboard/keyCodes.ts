@@ -417,7 +417,13 @@ export class SimpleKeybinding {
 
   public readonly keyCode: KeyCode;
 
-  constructor(ctrlKey: boolean, shiftKey: boolean, altKey: boolean, metaKey: boolean, keyCode: KeyCode) {
+  constructor(
+    ctrlKey: boolean,
+    shiftKey: boolean,
+    altKey: boolean,
+    metaKey: boolean,
+    keyCode: KeyCode
+  ) {
     this.ctrlKey = ctrlKey;
     this.shiftKey = shiftKey;
     this.altKey = altKey;
@@ -493,7 +499,10 @@ export function createKeyBinding(keybinding: number, OS: OperatingSystem): Keybi
   const chordPart = (keybinding & 0xffff0000) >>> 16;
 
   if (chordPart !== 0) {
-    return new ChordKeybinding(createSimpleKeybinding(firstPart, OS), createSimpleKeybinding(chordPart, OS));
+    return new ChordKeybinding(
+      createSimpleKeybinding(firstPart, OS),
+      createSimpleKeybinding(chordPart, OS)
+    );
   }
 
   return createSimpleKeybinding(firstPart, OS);
@@ -526,7 +535,14 @@ export class ResolveKeybindingPart {
 
   readonly keyAriaLabel: string | null;
 
-  constructor(ctrlKey: boolean, shiftKey: boolean, altKey: boolean, metaKey: boolean, kbLabel: string | null, kbAriaLabel: string | null) {
+  constructor(
+    ctrlKey: boolean,
+    shiftKey: boolean,
+    altKey: boolean,
+    metaKey: boolean,
+    kbLabel: string | null,
+    kbAriaLabel: string | null
+  ) {
     this.ctrlKey = ctrlKey;
     this.shiftKey = shiftKey;
     this.altKey = altKey;

@@ -19,7 +19,11 @@ export interface WrapperSettings {
 
 export type StoryGetter = (context: StoryContext) => any;
 
-export type StoryWrapper = (getStory: StoryGetter, context: StoryContext, settings: WrapperSettings) => any;
+export type StoryWrapper = (
+  getStory: StoryGetter,
+  context: StoryContext,
+  settings: WrapperSettings
+) => any;
 
 type MakeDecoratorResult = (...args: any) => any;
 

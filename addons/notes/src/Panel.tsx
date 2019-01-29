@@ -64,9 +64,9 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
     overrides: {
       code: SyntaxHighlighter,
       Giphy: {
-        component: Giphy
-      }
-    }
+        component: Giphy,
+      },
+    },
   };
 
   componentDidMount() {
@@ -85,7 +85,7 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
 
     const value = read(params);
     if (value) {
-        this.setState({ value });
+      this.setState({ value });
     } else {
       this.setState({ value: undefined });
     }

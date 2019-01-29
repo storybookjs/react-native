@@ -14,10 +14,16 @@ async function fetchLatestVersion(v: string) {
 }
 
 export default function({ store }: Module) {
-  const { versions: persistedVersions, lastVersionCheck, dismissedVersionNotification } = store.getState();
+  const {
+    versions: persistedVersions,
+    lastVersionCheck,
+    dismissedVersionNotification,
+  } = store.getState();
 
   // Check to see if we have info about the current version persisted
-  const persistedCurrentVersion = Object.values(persistedVersions).find(v => v.version === currentVersion);
+  const persistedCurrentVersion = Object.values(persistedVersions).find(
+    v => v.version === currentVersion
+  );
   const state = {
     versions: {
       ...persistedVersions,
@@ -58,7 +64,10 @@ export default function({ store }: Module) {
       try {
         const { latest } = await fetchLatestVersion(currentVersion);
 
-        await store.setState({ versions: { ...versions, latest }, lastVersionCheck: now }, { persistence: 'permanent' });
+        await store.setState(
+          { versions: { ...versions, latest }, lastVersionCheck: now },
+          { persistence: 'permanent' }
+        );
       } catch (error) {
         logger.warn(`Failed to fetch latest version from server: ${error}`);
       }
@@ -75,7 +84,10 @@ export default function({ store }: Module) {
           icon: '🎉',
           content: `There's a new version available: ${latestVersion}`,
           onClear() {
-            store.setState({ dismissedVersionNotification: latestVersion }, { persistence: 'permanent' });
+            store.setState(
+              { dismissedVersionNotification: latestVersion },
+              { persistence: 'permanent' }
+            );
           },
         });
       }

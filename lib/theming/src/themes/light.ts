@@ -64,7 +64,8 @@ const light = {
   failColor: '#d53535',
   warnColor: 'orange',
   monoTextFace: monoFonts.fontFamily,
-  overlayBackground: 'linear-gradient(to bottom right, rgba(233, 233, 233, 0.6), rgba(255, 255, 255, 0.8))',
+  overlayBackground:
+    'linear-gradient(to bottom right, rgba(233, 233, 233, 0.6), rgba(255, 255, 255, 0.8))',
 
   brand: Brand,
 

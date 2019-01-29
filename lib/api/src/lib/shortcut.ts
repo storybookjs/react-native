@@ -3,12 +3,14 @@ import { navigator } from 'global';
 // The shortcut is our JSON-ifiable representation of a shortcut combination
 import { KeyCollection, Event } from '../modules/shortcuts';
 
-export const isMacLike = () => (navigator && navigator.platform ? !!navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) : false);
+export const isMacLike = () =>
+  navigator && navigator.platform ? !!navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) : false;
 export const controlOrMetaSymbol = () => (isMacLike() ? '⌘' : 'ctrl');
 export const controlOrMetaKey = () => (isMacLike() ? 'meta' : 'control');
 export const optionOrAltSymbol = () => (isMacLike() ? '⌥' : 'alt');
 
-export const isShortcutTaken = (arr1: string[], arr2: string[]): boolean => JSON.stringify(arr1) === JSON.stringify(arr2);
+export const isShortcutTaken = (arr1: string[], arr2: string[]): boolean =>
+  JSON.stringify(arr1) === JSON.stringify(arr2);
 
 // Map a keyboard event to a keyboard shortcut
 // NOTE: if we change the fields on the event that we need, we'll need to update the serialization in core/preview/start.js
@@ -57,8 +59,15 @@ export const eventToShortcut = (e: Event): KeyCollection | null => {
   return keys.length > 0 ? keys : null;
 };
 
-export const shortcutMatchesShortcut = (inputShortcut: KeyCollection, shortcut: KeyCollection): boolean => {
-  return inputShortcut && inputShortcut.length === shortcut.length && !inputShortcut.find((key, i) => key !== shortcut[i]);
+export const shortcutMatchesShortcut = (
+  inputShortcut: KeyCollection,
+  shortcut: KeyCollection
+): boolean => {
+  return (
+    inputShortcut &&
+    inputShortcut.length === shortcut.length &&
+    !inputShortcut.find((key, i) => key !== shortcut[i])
+  );
 };
 
 // Should this keyboard event trigger this keyboard shortcut?

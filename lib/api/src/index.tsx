@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import memoize from 'memoizerific';
 
 import Events from '@storybook/core-events';
 import { Collection, Types } from '@storybook/addons';
 import initProviderApi from './init-provider-api';
 
+import { createContext } from './context';
 import Store from './store';
 import getInitialState from './initial-state';
 
@@ -72,7 +74,7 @@ export interface State extends RouterData {
 export interface API {
   [key: string]: any;
 }
-interface Combo {
+export interface Combo {
   api: API;
   state: State;
 }
@@ -102,7 +104,7 @@ interface Navigate {
 
 type Props = Children & RouterData & ProviderData & Navigate;
 
-export class ManagerProvider extends Component<Props, State> {
+class ManagerProvider extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     const { provider, location, path, viewMode, storyId, navigate } = props;
@@ -127,9 +129,16 @@ export class ManagerProvider extends Component<Props, State> {
       storyId,
     };
 
-    this.modules = [initChannel, initAddons, initLayout, initNotifications, initShortcuts, initStories, initURL, initVersions].map(
-      initModule => initModule(apiData)
-    );
+    this.modules = [
+      initChannel,
+      initAddons,
+      initLayout,
+      initNotifications,
+      initShortcuts,
+      initStories,
+      initURL,
+      initVersions,
+    ].map(initModule => initModule(apiData));
 
     // Create our initial state by combining the initial state of all modules, then overlaying any saved state
     const state = getInitialState(...this.modules.map(m => m.state));
@@ -202,10 +211,42 @@ export class ManagerProvider extends Component<Props, State> {
       api: this.api,
     };
 
-    return <ManagerContext.Provider value={value}>{typeof children === 'function' ? children(value) : children}</ManagerContext.Provider>;
+    return (
+      <ManagerContext.Provider value={value}>
+        {typeof children === 'function' ? children(value) : children}
+      </ManagerContext.Provider>
+    );
   }
 }
 
-const ManagerConsumer = ManagerContext.Consumer;
+interface ConsumerProps<A> {
+  filter: (c: Combo) => A;
+  children: (d: A) => React.ReactElement<any>;
+}
+class ManagerConsumer extends Component<ConsumerProps<any>> {
+  renderMemory: (...args: any[]) => any;
+  dataMemory: (...args: any[]) => any;
+
+  constructor(props: ConsumerProps<any>) {
+    super(props);
+    this.renderMemory = memoize(10);
+    this.dataMemory = memoize(10);
+  }
+
+  render() {
+    const { children, filter } = this.props;
+
+    return (
+      <ManagerContext.Consumer>
+        {({ api, state }) => {
+          const data = this.renderMemory(filter)({ api, state });
+          const render = this.renderMemory(children)(data);
+
+          return render;
+        }}
+      </ManagerContext.Consumer>
+    );
+  }
+}
 
 export { ManagerConsumer as Consumer, ManagerProvider as Provider };

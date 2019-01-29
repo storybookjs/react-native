@@ -71,7 +71,12 @@ interface StoriesRaw {
   [id: string]: StoryInput;
 }
 
-const initStoriesApi = ({ store, navigate, storyId: initialStoryId, viewMode: initialViewMode }: Module) => {
+const initStoriesApi = ({
+  store,
+  navigate,
+  storyId: initialStoryId,
+  viewMode: initialViewMode,
+}: Module) => {
   const isStory = (obj: Group | Story): boolean => {
     const story = obj as Story;
     return !!(story && story.parameters);
@@ -84,7 +89,9 @@ const initStoriesApi = ({ store, navigate, storyId: initialStoryId, viewMode: in
       return;
     }
 
-    const lookupList = Object.keys(storiesHash).filter(k => !(storiesHash[k].children || Array.isArray(storiesHash[k])));
+    const lookupList = Object.keys(storiesHash).filter(
+      k => !(storiesHash[k].children || Array.isArray(storiesHash[k]))
+    );
     const index = lookupList.indexOf(storyId);
 
     // cannot navigate beyond fist or last
@@ -162,7 +169,8 @@ const initStoriesApi = ({ store, navigate, storyId: initialStoryId, viewMode: in
     };
   };
 
-  const toKey = (input: string) => input.replace(/[^a-z0-9]+([a-z0-9])/gi, (...params) => params[1].toUpperCase());
+  const toKey = (input: string) =>
+    input.replace(/[^a-z0-9]+([a-z0-9])/gi, (...params) => params[1].toUpperCase());
 
   const toGroup = (name: string) => ({
     name,
@@ -173,7 +181,10 @@ const initStoriesApi = ({ store, navigate, storyId: initialStoryId, viewMode: in
     const hash: StoriesHash = {};
     const storiesHash = Object.values(input).reduce((acc, item) => {
       const { kind, parameters } = item;
-      const { hierarchyRootSeparator: rootSeparator, hierarchySeparator: groupSeparator } = parameters.options;
+      const {
+        hierarchyRootSeparator: rootSeparator,
+        hierarchySeparator: groupSeparator,
+      } = parameters.options;
 
       const { root, groups } = splitPath(kind, { rootSeparator, groupSeparator });
 

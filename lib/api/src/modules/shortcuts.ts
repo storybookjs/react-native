@@ -5,7 +5,8 @@ import { Module, API } from '../index';
 
 import { shortcutMatchesShortcut, eventToShortcut } from '../lib/shortcut';
 
-export const isMacLike = () => (navigator && navigator.platform ? !!navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) : false);
+export const isMacLike = () =>
+  navigator && navigator.platform ? !!navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) : false;
 export const controlOrMetaKey = () => (isMacLike() ? 'meta' : 'control');
 
 export function keys<O>(o: O) {
@@ -105,7 +106,9 @@ export default function initShortcuts({ store }: Module) {
       const shortcut = eventToShortcut(event);
       const shortcuts = api.getShortcutKeys();
       const actions = keys(shortcuts);
-      const matchedFeature = actions.find((feature: Action) => shortcutMatchesShortcut(shortcut, shortcuts[feature]));
+      const matchedFeature = actions.find((feature: Action) =>
+        shortcutMatchesShortcut(shortcut, shortcuts[feature])
+      );
       if (matchedFeature) {
         api.handleShortcutFeature(fullApi, matchedFeature);
       }
@@ -273,7 +276,10 @@ export default function initShortcuts({ store }: Module) {
 
   const init = ({ api: fullApi }: API) => {
     function focusInInput(event: Event) {
-      return /input|textarea/i.test(event.target.tagName) || event.target.getAttribute('contenteditable') !== null;
+      return (
+        /input|textarea/i.test(event.target.tagName) ||
+        event.target.getAttribute('contenteditable') !== null
+      );
     }
 
     // Listen for keydown events in the manager

@@ -15,7 +15,6 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ./scripts/generateVersion.js && node ../../scripts/prepare.js"
   },
@@ -29,6 +28,7 @@
     "@types/lodash.mergewith": "^4.6.4",
     "@types/lodash.pick": "^4.4.4",
     "global": "^4.3.2",
+    "memoizerific": "^1.11.3",
     "lodash.isequal": "^4.5.0",
     "lodash.mergewith": "^4.6.1",
     "lodash.pick": "^4.4.0",
