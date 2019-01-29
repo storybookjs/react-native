@@ -117,7 +117,7 @@ class ManagerProvider extends Component<Props, State> {
     // Initialize the state to be the initial (persisted) state of the store.
     // This gives the modules the chance to read the persisted state, apply their defaults
     // and override if necessary
-    this.state = store.getInitialState();
+    this.state = store.getInitialState(getInitialState({}));
 
     const apiData = {
       navigate,
@@ -223,13 +223,29 @@ interface ConsumerProps<A> {
   filter: (c: Combo) => A;
   children: (d: A) => React.ReactElement<any>;
 }
+
+const ObjectToArray = memoize(100)((obj: object) =>
+  Object.entries(obj).reduce((acc, [k, v]) => acc.concat([k, v]), [])
+);
+
+const ArrayToObject = memoize(100)((array: any[]) =>
+  array.reduce((acc, item, index, list) => {
+    // is odd = value
+    if (index % 2 !== 0) {
+      const key = list[list.indexOf(item) - 1];
+      acc[key] = item;
+    }
+    return acc;
+  }, {})
+);
+
 class ManagerConsumer extends Component<ConsumerProps<any>> {
   renderMemory: (...args: any[]) => any;
   dataMemory: (...args: any[]) => any;
 
   constructor(props: ConsumerProps<any>) {
     super(props);
-    this.renderMemory = memoize(10);
+    this.renderMemory = memoize(10)((...args: any[]) => props.children(ArrayToObject(args)));
     this.dataMemory = memoize(10);
   }
 
@@ -238,11 +254,10 @@ class ManagerConsumer extends Component<ConsumerProps<any>> {
 
     return (
       <ManagerContext.Consumer>
-        {({ api, state }) => {
-          const data = this.renderMemory(filter)({ api, state });
-          const render = this.renderMemory(children)(data);
+        {d => {
+          const data = filter ? this.dataMemory(filter)(d) : d;
 
-          return render;
+          return filter ? this.renderMemory(...ObjectToArray(data)) : children(d);
         }}
       </ManagerContext.Consumer>
     );
