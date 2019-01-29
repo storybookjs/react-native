@@ -1,13 +1,16 @@
+import { easing, animation } from './animation';
+
 export const baseFonts = {
   fontFamily: [
-    'Nunito Sans',
+    '"Nunito Sans"',
     '-apple-system',
     '".SFNSText-Regular"',
     '"San Francisco"',
-    'BlinkMacSystemFont, "Segoe UI"',
+    'BlinkMacSystemFont',
+    '"Segoe UI"',
     '"Helvetica Neue"',
     'Helvetica',
-    '"Arial"',
+    'Arial',
     'sans-serif',
   ].join(', '),
   color: '#444',
@@ -58,6 +61,7 @@ export const color = {
 
   // Status
   positive: '#66BF3C',
+  danger: '#FC521F',
   negative: '#FF4400',
 };
 
@@ -92,13 +96,11 @@ export const typography = {
 };
 
 export interface Theme {
-  colors: {
-    [name: string]: string;
-  };
-  background: {
-    [name: string]: string;
-  };
+  color: typeof color;
+  background: typeof background;
   typography: typeof typography;
+  easing: typeof easing;
+  animation: typeof animation;
 
   mainBackground: string;
   mainBorder: string;

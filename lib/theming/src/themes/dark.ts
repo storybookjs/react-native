@@ -1,56 +1,8 @@
 import { chromeDark } from 'react-inspector';
 import { create as createSyntax } from './light-syntax';
 
-import { baseFonts, monoFonts, Theme, typography } from '../base';
-
-const colors = {
-  /// Old
-  green1: '#008000',
-  red1: '#A31515',
-  red2: '#9a050f',
-  red3: '#800000',
-  red4: '#ff0000',
-  gray1: '#393A34',
-  cyan1: '#36acaa',
-  cyan2: '#2B91AF',
-  blue1: '#0000ff',
-  blue2: '#00009f',
-  highlight: '#1EA7FD',
-  warn: '#E69D00',
-  fail: '#FF4400',
-  success: '#66BF3C',
-  white: 'white',
-  /// End old
-
-  // Palette
-  primary: '#FF4785', // coral
-  secondary: '#1EA7FD', // ocean
-  tertiary: '#DDDDDD',
-
-  orange: '#FC521F',
-  gold: '#FFAE00',
-  green: '#66BF3C',
-  seafoam: '#37D5D3',
-  purple: '#6F2CAC',
-  ultraviolet: '#2A0481',
-
-  // Monochrome
-  lightest: '#FFFFFF',
-  lighter: '#F8F8F8',
-  light: '#F3F3F3',
-  mediumlight: '#EEEEEE',
-  medium: '#DDDDDD',
-  mediumdark: '#999999',
-  dark: '#666666',
-  darker: '#444444',
-  darkest: '#333333',
-
-  border: 'rgba(0,0,0,.05)',
-
-  // Status
-  positive: '#66BF3C',
-  negative: '#FF4400',
-};
+import { baseFonts, monoFonts, color, Theme, typography } from '../base';
+import { easing, animation } from '../animation';
 
 const background = {
   app: '#F6F9FC',
@@ -73,8 +25,8 @@ const main = {
 
 const bar = {
   barFill: 'rgba(255,255,255,1)',
-  barTextColor: colors.mediumdark,
-  barSelectedColor: colors.highlight,
+  barTextColor: color.mediumdark,
+  barSelectedColor: color.secondary,
 };
 
 const layout = {
@@ -84,8 +36,8 @@ const layout = {
 const aside = {
   asideFill: 'transparent',
   asideSelected: {
-    background: colors.highlight,
-    color: colors.white,
+    background: color.secondary,
+    color: color.lightest,
   },
   asideHover: {
     background: '#EAF3FC',
@@ -103,9 +55,11 @@ const dark: Theme = {
   ...mono,
   ...aside,
 
-  colors,
+  color,
   background,
   typography,
+  easing,
+  animation,
 
   inputFill: 'rgba(0,0,0,0.1)',
   dimmedTextColor: 'rgba(0,0,0,0.4)',
@@ -114,7 +68,21 @@ const dark: Theme = {
 
   brand: null,
 
-  code: createSyntax({ colors, mono }),
+  code: createSyntax({
+    colors: {
+      green1: '#008000',
+      red1: '#A31515',
+      red2: '#9a050f',
+      red3: '#800000',
+      red4: '#ff0000',
+      gray1: '#393A34',
+      cyan1: '#36acaa',
+      cyan2: '#2B91AF',
+      blue1: '#0000ff',
+      blue2: '#00009f',
+    },
+    mono,
+  }),
   addonActionsTheme: {
     ...chromeDark,
     BASE_FONT_FAMILY: monoFonts.fontFamily,

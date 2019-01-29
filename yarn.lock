@@ -15574,6 +15574,13 @@ pnp-webpack-plugin@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pnp-webpack-plugin/-/pnp-webpack-plugin-1.1.0.tgz#947a96d1db94bb5a1fc014d83b581e428699ac8c"
 
+polished@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-2.3.3.tgz#bdbaba962ba8271b0e11aa287f2befd4c87be99a"
+  integrity sha512-59V4fDbdxtH4I1m9TWxFsoGJbC8nnOpUYo5uFmvMfKp9Qh+6suo4VMUle1TGIIUZIGxfkW+Rs485zPk0wcwR2Q==
+  dependencies:
+    "@babel/runtime" "^7.2.0"
+
 polymer-webpack-loader@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/polymer-webpack-loader/-/polymer-webpack-loader-2.0.3.tgz#2a2d1c2ef05bff372b573d3b761628a3b4ad3e7f"
