@@ -78,10 +78,11 @@ if (module && module.hot && module.hot.dispose) {
 }
 
 // The simplest version of examples would just export this function for users to use
-function importAll(context) {
+function importAll(context, p) {
   const storyStore = window.__STORYBOOK_CLIENT_API__._storyStore; // eslint-disable-line no-undef, no-underscore-dangle
 
   context.keys().forEach(filename => {
+    const id = [__dirname, p, filename.replace('./', '')].join('/');
     const fileExports = context(filename);
 
     // A old-style story file
@@ -107,7 +108,7 @@ function importAll(context) {
     }
 
     // We pass true here to avoid the warning about HMR. It's cool clientApi, we got this
-    const kind = storiesOf(kindName, true);
+    const kind = storiesOf(kindName, { id });
 
     (componentOptions.decorators || []).forEach(decorator => {
       kind.addDecorator(decorator);
@@ -129,13 +130,13 @@ function importAll(context) {
 function loadStories() {
   let req;
   req = require.context('../../lib/ui/src', true, /\.stories\.js$/);
-  importAll(req);
+  importAll(req, '../../lib/ui/src');
 
   req = require.context('../../lib/components/src', true, /\.stories\.js$/);
-  importAll(req);
+  importAll(req, '../../lib/components/src');
 
   req = require.context('./stories', true, /\.stories\.js$/);
-  importAll(req);
+  importAll(req, './stories');
 }
 
 configure(loadStories, module);
