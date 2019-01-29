@@ -149,9 +149,9 @@
     tslib "^1.9.0"
     yargs "9.0.1"
 
-"@angular/compiler@^7.2.1":
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-7.2.1.tgz#625fc70136dd2d8bc6a2a9f0b608cc201a6002ea"
+"@angular/compiler@^7.2.2":
+  version "7.2.2"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-7.2.2.tgz#7e0251f1283a58c0c991f7975eb38e2cab02a6b5"
   dependencies:
     tslib "^1.9.0"
 
