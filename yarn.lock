@@ -3255,7 +3255,7 @@ axios@0.17.1:
     follow-redirects "^1.2.5"
     is-buffer "^1.1.5"
 
-axobject-query@^2.0.1:
+axobject-query@^2.0.1, axobject-query@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.0.2.tgz#ea187abe5b9002b377f925d8bf7d1c561adf38f9"
   dependencies:
@@ -7881,7 +7881,7 @@ emoji-regex@^6.5.1:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-6.5.1.tgz#9baea929b155565c11ea41c6626eaa65cef992c2"
 
-emoji-regex@^7.0.1:
+emoji-regex@^7.0.1, emoji-regex@^7.0.2:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
 
@@ -8298,7 +8298,7 @@ eslint-plugin-json@^1.2.1:
   dependencies:
     vscode-json-languageservice "^3.2.1"
 
-eslint-plugin-jsx-a11y@6.1.2, eslint-plugin-jsx-a11y@^6.1.2:
+eslint-plugin-jsx-a11y@6.1.2:
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.1.2.tgz#69bca4890b36dcf0fe16dd2129d2d88b98f33f88"
   dependencies:
@@ -8308,6 +8308,19 @@ eslint-plugin-jsx-a11y@6.1.2, eslint-plugin-jsx-a11y@^6.1.2:
     axobject-query "^2.0.1"
     damerau-levenshtein "^1.0.4"
     emoji-regex "^6.5.1"
+    has "^1.0.3"
+    jsx-ast-utils "^2.0.1"
+
+eslint-plugin-jsx-a11y@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.2.0.tgz#0db5a0efad21b815849c7783abe8379eb8fa1ca6"
+  dependencies:
+    aria-query "^3.0.0"
+    array-includes "^3.0.3"
+    ast-types-flow "^0.0.7"
+    axobject-query "^2.0.2"
+    damerau-levenshtein "^1.0.4"
+    emoji-regex "^7.0.2"
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
 
