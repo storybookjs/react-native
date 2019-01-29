@@ -1,7 +1,7 @@
 import { fetch } from 'global';
 import { logger } from '@storybook/client-logger';
 
-import currentVersion from '../version';
+import { version as currentVersion } from '../version';
 
 import { Module, API } from '../index';
 

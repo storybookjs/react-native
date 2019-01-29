@@ -188,16 +188,16 @@ const initStoriesApi = ({ store, navigate, storyId: initialStoryId, viewMode: in
             const parent = index > 0 && soFar[index - 1].id;
             const id = sanitize(parent ? `${parent}-${name}` : name);
 
-            const story: Group = {
-              id,
+            const result: Group = {
               ...group,
+              id,
               parent,
               depth: index,
               children: [],
               isComponent: index === original.length - 1,
               isRoot: !!root && index === 0,
             };
-            return soFar.concat([story]);
+            return soFar.concat([result]);
           },
           [] as GroupsList
         );
