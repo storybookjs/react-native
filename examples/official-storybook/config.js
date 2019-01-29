@@ -78,26 +78,26 @@ if (module && module.hot && module.hot.dispose) {
 }
 
 // The simplest version of examples would just export this function for users to use
-function importAll(context, p) {
+function importAll(context) {
   const storyStore = window.__STORYBOOK_CLIENT_API__._storyStore; // eslint-disable-line no-undef, no-underscore-dangle
 
   context.keys().forEach(filename => {
-    const id = [__dirname, p, filename.replace('./', '')].join('/');
-    const fileExports = context(filename);
+    const out = context(filename);
 
     // A old-style story file
-    if (!fileExports.default) {
+    if (!out.default) {
       return;
     }
 
+    const fileExports = out;
     const { default: component, ...examples } = fileExports;
-    let componentOptions = component;
-    if (component.prototype && component.prototype.isReactComponent) {
-      componentOptions = { component };
-    }
-    const kindName = componentOptions.title || componentOptions.component.displayName;
 
-    if (previousExports[filename]) {
+    const componentOptions =
+      component.prototype && component.prototype.isReactComponent ? { component } : component;
+    const kindName = componentOptions.title || componentOptions.component.displayName;
+    const m = componentOptions.module;
+
+    if (!m && previousExports[filename]) {
       if (previousExports[filename] === fileExports) {
         return;
       }
@@ -108,7 +108,7 @@ function importAll(context, p) {
     }
 
     // We pass true here to avoid the warning about HMR. It's cool clientApi, we got this
-    const kind = storiesOf(kindName, { id });
+    const kind = storiesOf(kindName, m || true);
 
     (componentOptions.decorators || []).forEach(decorator => {
       kind.addDecorator(decorator);
@@ -123,20 +123,22 @@ function importAll(context, p) {
       kind.add(title, example, parameters);
     });
 
-    previousExports[filename] = fileExports;
+    if (!m) {
+      previousExports[filename] = fileExports;
+    }
   });
 }
 
 function loadStories() {
   let req;
   req = require.context('../../lib/ui/src', true, /\.stories\.js$/);
-  importAll(req, '../../lib/ui/src');
+  importAll(req);
 
   req = require.context('../../lib/components/src', true, /\.stories\.js$/);
-  importAll(req, '../../lib/components/src');
+  importAll(req);
 
   req = require.context('./stories', true, /\.stories\.js$/);
-  importAll(req, './stories');
+  importAll(req);
 }
 
 configure(loadStories, module);

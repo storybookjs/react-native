@@ -3,7 +3,6 @@
 exports[`Storyshots Core|Parameters passed to story 1`] = `
 <pre>
   Parameters are {
-  "fileName": "/Users/dev/Projects/GitHub/storybook/core/examples/official-storybook/./stories/core/parameters.stories.js",
   "options": {
     "hierarchyRootSeparator": "|",
     "hierarchySeparator": {},

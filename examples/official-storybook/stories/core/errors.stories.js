@@ -1,5 +1,6 @@
 export default {
   title: 'Core|Errors',
+  module,
 };
 
 export const exception = () => {
