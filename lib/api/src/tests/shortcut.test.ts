@@ -1,4 +1,4 @@
-import { eventToShortcut, keyToSymbol } from './shortcut';
+import { eventToShortcut, keyToSymbol } from '../lib/shortcut';
 const ev = (attr: object) => new KeyboardEvent('keydown', { ...attr });
 
 describe('eventToShortcut', () => {

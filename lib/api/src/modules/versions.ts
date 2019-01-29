@@ -1,27 +1,23 @@
-import { logger } from '@storybook/client-logger';
 import { fetch } from 'global';
+import { logger } from '@storybook/client-logger';
 
-import { version as currentVersion } from '../../package.json';
+import currentVersion from '../version';
+
+import { Module, API } from '../index';
 
 const checkInterval = 24 * 60 * 60 * 1000;
-
 const versionsUrl = 'https://storybook.js.org/versions.json';
-async function fetchLatestVersion() {
-  const fromFetch = await fetch(`${versionsUrl}?current=${currentVersion}`);
+
+async function fetchLatestVersion(v: string) {
+  const fromFetch = await fetch(`${versionsUrl}?current=${v}`);
   return fromFetch.json();
 }
 
-export default function({ store }) {
-  const {
-    versions: persistedVersions = {},
-    lastVersionCheck,
-    dismissedVersionNotification,
-  } = store.getState();
+export default function({ store }: Module) {
+  const { versions: persistedVersions, lastVersionCheck, dismissedVersionNotification } = store.getState();
 
   // Check to see if we have info about the current version persisted
-  const persistedCurrentVersion = Object.values(persistedVersions).find(
-    v => v.version === currentVersion
-  );
+  const persistedCurrentVersion = Object.values(persistedVersions).find(v => v.version === currentVersion);
   const state = {
     versions: {
       ...persistedVersions,
@@ -54,7 +50,7 @@ export default function({ store }) {
   };
 
   // Grab versions from the server/local storage right away
-  async function init({ api: { versionUpdateAvailable, getLatestVersion, addNotification } }) {
+  async function init({ api: fullApi }: API) {
     const { versions = {} } = store.getState();
 
     const now = Date.now();
@@ -62,30 +58,24 @@ export default function({ store }) {
       try {
         const { latest } = await fetchLatestVersion(currentVersion);
 
-        await store.setState(
-          { versions: { ...versions, latest }, lastVersionCheck: now },
-          { persistence: 'permanent' }
-        );
+        await store.setState({ versions: { ...versions, latest }, lastVersionCheck: now }, { persistence: 'permanent' });
       } catch (error) {
         logger.warn(`Failed to fetch latest version from server: ${error}`);
       }
     }
 
-    if (versionUpdateAvailable()) {
-      const latestVersion = getLatestVersion().version;
+    if (fullApi.versionUpdateAvailable()) {
+      const latestVersion = fullApi.getLatestVersion().version;
 
       if (latestVersion !== dismissedVersionNotification) {
-        addNotification({
+        fullApi.addNotification({
           id: 'update',
           level: 2,
           link: '/settings/about',
           icon: '🎉',
           content: `There's a new version available: ${latestVersion}`,
           onClear() {
-            store.setState(
-              { dismissedVersionNotification: latestVersion },
-              { persistence: 'permanent' }
-            );
+            store.setState({ dismissedVersionNotification: latestVersion }, { persistence: 'permanent' });
           },
         });
       }

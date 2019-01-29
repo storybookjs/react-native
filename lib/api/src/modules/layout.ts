@@ -1,6 +1,8 @@
-export default function({ store }) {
+import { Module } from '../index';
+
+export default function({ store }: Module) {
   const api = {
-    toggleFullscreen(toggled) {
+    toggleFullscreen(toggled?: boolean) {
       return store.setState(state => {
         const value = typeof toggled !== 'undefined' ? toggled : !state.layout.isFullscreen;
 
@@ -13,7 +15,7 @@ export default function({ store }) {
       });
     },
 
-    togglePanel(toggled) {
+    togglePanel(toggled?: boolean) {
       return store.setState(state => {
         const value = typeof toggled !== 'undefined' ? toggled : !state.layout.showPanel;
 
@@ -26,7 +28,7 @@ export default function({ store }) {
       });
     },
 
-    togglePanelPosition(position) {
+    togglePanelPosition(position?: 'bottom' | 'right') {
       if (typeof position !== 'undefined') {
         return store.setState(state => ({
           layout: {
@@ -44,7 +46,7 @@ export default function({ store }) {
       }));
     },
 
-    toggleNav(toggled) {
+    toggleNav(toggled?: boolean) {
       return store.setState(state => {
         const value = typeof toggled !== 'undefined' ? toggled : !state.layout.showNav;
 
@@ -57,7 +59,7 @@ export default function({ store }) {
       });
     },
 
-    toggleToolbar(toggled) {
+    toggleToolbar(toggled?: boolean) {
       return store.setState(state => {
         const value = typeof toggled !== 'undefined' ? toggled : !state.layout.isToolshown;
 

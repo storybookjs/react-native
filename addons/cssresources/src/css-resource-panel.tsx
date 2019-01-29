@@ -2,13 +2,11 @@ import React, { Component, Fragment } from 'react';
 import { SyntaxHighlighter } from '@storybook/components';
 import events, { STORY_CHANGED } from '@storybook/core-events';
 import { EVENTS, PARAM_KEY } from './constants';
-import { Channel } from '@storybook/channels';
 import { CssResource } from './CssResource';
 import { bool, func, shape } from 'prop-types';
 
-interface CssResourcePanelProps {
+interface Props {
   active: boolean;
-  channel: Channel;
   api: {
     emit: (event: any, data: any) => void;
     on: (event: events, callback: (data: any) => void) => void;
@@ -19,12 +17,12 @@ interface CssResourcePanelProps {
   };
 }
 
-interface CssResourcePanelState {
+interface State {
   list: CssResource[];
 }
 
-export class CssResourcePanel extends Component<CssResourcePanelProps, CssResourcePanelState> {
-  constructor(props: CssResourcePanelProps) {
+export class CssResourcePanel extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -90,17 +88,3 @@ export class CssResourcePanel extends Component<CssResourcePanelProps, CssResour
     );
   }
 }
-
-(CssResourcePanel as any).propTypes = {
-  active: bool.isRequired,
-  channel: shape({
-    on: func,
-    emit: func,
-    removeListener: func,
-  }).isRequired,
-  api: shape({
-    on: func,
-    getQueryParam: func,
-    setQueryParams: func,
-  }).isRequired,
-};

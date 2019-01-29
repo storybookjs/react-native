@@ -1,9 +1,11 @@
 import mergeWith from 'lodash.mergewith';
 import isEqual from 'lodash.isequal';
-import toId, { sanitize } from '../libs/id';
+import toId, { sanitize } from '../lib/id';
 
-const merge = (a, b) =>
-  mergeWith({}, a, b, (objValue, srcValue) => {
+import { Module } from '../index';
+
+const merge = (a: any, b: any) =>
+  mergeWith({}, a, b, (objValue: any, srcValue: any) => {
     if (Array.isArray(srcValue) && Array.isArray(objValue)) {
       srcValue.forEach(s => {
         const existing = objValue.find(o => o === s || isEqual(o, s));
@@ -22,13 +24,59 @@ const merge = (a, b) =>
     return undefined;
   });
 
-const initStoriesApi = ({
-  store,
-  navigate,
-  storyId: initialStoryId,
-  viewMode: initialViewMode,
-}) => {
-  const jumpToStory = direction => {
+type Direction = -1 | 1;
+type StoryId = string;
+type ParameterName = string;
+
+interface SeparatorOptions {
+  rootSeparator: RegExp;
+  groupSeparator: RegExp;
+}
+
+interface Group {
+  id: StoryId;
+  name: string;
+  children: StoryId[];
+  parent: StoryId;
+  depth: number;
+  isComponent: boolean;
+  isRoot: boolean;
+}
+
+interface StoryInput {
+  id: StoryId;
+  name: string;
+  kind: string;
+  children: string[];
+  parameters: {
+    filename: string;
+    options: {
+      hierarchyRootSeparator: RegExp;
+      hierarchySeparator: RegExp;
+      [key: string]: any;
+    };
+    [parameterName: string]: any;
+  };
+}
+
+type Story = StoryInput & Group;
+
+export interface StoriesHash {
+  [id: string]: Group | Story;
+}
+export type StoriesList = Array<Group | Story>;
+export type GroupsList = Group[];
+
+interface StoriesRaw {
+  [id: string]: StoryInput;
+}
+
+const initStoriesApi = ({ store, navigate, storyId: initialStoryId, viewMode: initialViewMode }: Module) => {
+  const isStory = (obj: Group | Story): boolean => {
+    const story = obj as Story;
+    return !!(story && story.parameters);
+  };
+  const jumpToStory = (direction: Direction) => {
     const { storiesHash, viewMode, storyId } = store.getState();
 
     // cannot navigate when there's no current selection
@@ -36,9 +84,7 @@ const initStoriesApi = ({
       return;
     }
 
-    const lookupList = Object.keys(storiesHash).filter(
-      k => !(storiesHash[k].children || Array.isArray(storiesHash[k]))
-    );
+    const lookupList = Object.keys(storiesHash).filter(k => !(storiesHash[k].children || Array.isArray(storiesHash[k])));
     const index = lookupList.indexOf(storyId);
 
     // cannot navigate beyond fist or last
@@ -46,9 +92,6 @@ const initStoriesApi = ({
       return;
     }
     if (index === 0 && direction < 0) {
-      return;
-    }
-    if (direction === 0) {
       return;
     }
 
@@ -59,22 +102,24 @@ const initStoriesApi = ({
     }
   };
 
-  const getData = storyId => {
+  const getData = (storyId: StoryId) => {
     const { storiesHash } = store.getState();
 
     return storiesHash[storyId];
   };
 
-  const getParameters = (storyId, addon) => {
+  const getParameters = (storyId: StoryId, parameterName?: ParameterName) => {
     const data = getData(storyId);
-    if (!data) {
-      return null;
+
+    if (isStory(data)) {
+      const { parameters } = data as Story;
+      return parameterName ? parameters[parameterName] : parameters;
     }
-    const { parameters } = data;
-    return addon ? parameters[addon] : parameters;
+
+    return null;
   };
 
-  const jumpToComponent = direction => {
+  const jumpToComponent = (direction: Direction) => {
     const state = store.getState();
     const { storiesHash, viewMode, storyId } = state;
 
@@ -100,16 +145,13 @@ const initStoriesApi = ({
     if (index === 0 && direction < 0) {
       return;
     }
-    if (direction === 0) {
-      return;
-    }
 
     const result = lookupList[index + direction][0];
 
     navigate(`/${viewMode || 'story'}/${result}`);
   };
 
-  const splitPath = (kind, { rootSeparator, groupSeparator }) => {
+  const splitPath = (kind: string, { rootSeparator, groupSeparator }: SeparatorOptions) => {
     const [root, remainder] = kind.split(rootSeparator, 2);
     const groups = (remainder || kind).split(groupSeparator).filter(i => !!i);
 
@@ -120,22 +162,18 @@ const initStoriesApi = ({
     };
   };
 
-  const toKey = input =>
-    input.replace(/[^a-z0-9]+([a-z0-9])/gi, (...params) => params[1].toUpperCase());
+  const toKey = (input: string) => input.replace(/[^a-z0-9]+([a-z0-9])/gi, (...params) => params[1].toUpperCase());
 
-  const toGroup = name => ({
+  const toGroup = (name: string) => ({
     name,
-    children: [],
     id: toKey(name),
   });
 
-  const setStories = input => {
+  const setStories = (input: StoriesRaw) => {
+    const hash: StoriesHash = {};
     const storiesHash = Object.values(input).reduce((acc, item) => {
       const { kind, parameters } = item;
-      const {
-        hierarchyRootSeparator: rootSeparator,
-        hierarchySeparator: groupSeparator,
-      } = parameters.options;
+      const { hierarchyRootSeparator: rootSeparator, hierarchySeparator: groupSeparator } = parameters.options;
 
       const { root, groups } = splitPath(kind, { rootSeparator, groupSeparator });
 
@@ -144,21 +182,25 @@ const initStoriesApi = ({
         .concat(groups)
         .map(toGroup)
         // Map a bunch of extra fields onto the groups, collecting the path as we go (thus the reduce)
-        .reduce((soFar, group, index, original) => {
-          const { name } = group;
-          const parent = index > 0 && soFar[index - 1].id;
-          const id = sanitize(parent ? `${parent}-${name}` : name);
-          return soFar.concat([
-            {
-              ...group,
+        .reduce(
+          (soFar, group, index, original) => {
+            const { name } = group;
+            const parent = index > 0 && soFar[index - 1].id;
+            const id = sanitize(parent ? `${parent}-${name}` : name);
+
+            const story: Group = {
               id,
+              ...group,
               parent,
               depth: index,
+              children: [],
               isComponent: index === original.length - 1,
               isRoot: !!root && index === 0,
-            },
-          ]);
-        }, []);
+            };
+            return soFar.concat([story]);
+          },
+          [] as GroupsList
+        );
 
       const paths = [...rootAndGroups.map(g => g.id), item.id];
 
@@ -172,10 +214,11 @@ const initStoriesApi = ({
         });
       });
 
-      acc[item.id] = { ...item, parent: rootAndGroups[rootAndGroups.length - 1].id };
+      const story = { ...item, parent: rootAndGroups[rootAndGroups.length - 1].id };
+      acc[item.id] = story as Story;
 
       return acc;
-    }, {});
+    }, hash);
 
     const { storyId, viewMode } = store.getState();
 
@@ -192,7 +235,7 @@ const initStoriesApi = ({
     store.setState({ storiesHash });
   };
 
-  const selectStory = (kindOrId, story) => {
+  const selectStory = (kindOrId: string, story?: string) => {
     const { viewMode = 'story', storyId } = store.getState();
     if (!story) {
       navigate(`/${viewMode}/${kindOrId}`);

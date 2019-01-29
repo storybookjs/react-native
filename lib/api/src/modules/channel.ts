@@ -1,10 +1,13 @@
 import deprecate from 'util-deprecate';
 import { STORY_CHANGED } from '@storybook/core-events';
+import { Module } from '../index';
 
-export default ({ provider }) => {
+type CallBack = (...args: any[]) => any;
+
+export default ({ provider }: Module) => {
   const api = {
     getChannel: () => provider.channel,
-    on: (type, cb, peer = true) => {
+    on: (type: string, cb: CallBack, peer = true) => {
       if (peer) {
         provider.channel.addPeerListener(type, cb);
       } else {
@@ -13,16 +16,13 @@ export default ({ provider }) => {
 
       return () => provider.channel.removeListener(type, cb);
     },
-    off: (type, cb) => {
+    off: (type: string, cb: CallBack) => {
       provider.channel.removeListener(type, cb);
     },
-    emit: (type, event) => {
+    emit: (type: string, event: any) => {
       provider.channel.emit(type, event);
     },
-    onStory: deprecate(
-      cb => api.on(STORY_CHANGED, cb),
-      'onStory(...) has been replaced with on(STORY_CHANGED, ...)'
-    ),
+    onStory: deprecate((cb: CallBack) => api.on(STORY_CHANGED, cb), 'onStory(...) has been replaced with on(STORY_CHANGED, ...)'),
   };
   return { api };
 };

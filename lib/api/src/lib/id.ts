@@ -7,7 +7,7 @@
 //   2. replace all runs of '-' with a single '-',
 //        except if they are at the end, in which case, replace them with ''
 
-export function sanitize(string) {
+export function sanitize(string: string) {
   return string
     .toLowerCase()
     .replace(/[^a-z0-9-]/g, '-')
@@ -16,7 +16,7 @@ export function sanitize(string) {
     .replace(/-+$/, '');
 }
 
-function sanitizeSafe(string, part) {
+function sanitizeSafe(string: string, part: any) {
   const sanitized = sanitize(string);
   if (sanitized === '') {
     throw new Error(`Invalid ${part} '${string}', must include alphanumeric characters`);
@@ -24,6 +24,6 @@ function sanitizeSafe(string, part) {
   return sanitized;
 }
 
-export default function toId(kind, story) {
+export default function toId(kind: string, story: string) {
   return `${sanitizeSafe(kind, 'kind')}--${sanitizeSafe(story, 'story')}`;
 }

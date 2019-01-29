@@ -27,9 +27,13 @@ export const storyDataFromString: (path: string) => StoryData = memoize(1000)((p
   return result;
 });
 
-export const queryFromString = memoize(1000)(s => qs.parse(s, { ignoreQueryPrefix: true }));
+interface Query {
+  [key: string]: any;
+}
+
+export const queryFromString = memoize(1000)((s: string): Query => qs.parse(s, { ignoreQueryPrefix: true }));
 export const queryFromLocation = (location: { search: string }) => queryFromString(location.search);
-export const stringifyQuery = (query: object) => qs.stringify(query, { addQueryPrefix: true, encode: false });
+export const stringifyQuery = (query: Query) => qs.stringify(query, { addQueryPrefix: true, encode: false });
 
 export const getMatch = memoize(1000)((current: string, target: string, startsWith: boolean = true) => {
   const startsWithTarget = current && startsWith && current.startsWith(target);

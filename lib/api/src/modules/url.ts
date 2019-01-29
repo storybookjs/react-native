@@ -1,5 +1,15 @@
 import { queryFromLocation } from '@storybook/router';
-import toId from '../libs/id';
+import toId from '../lib/id';
+
+import { Module } from '../index';
+
+interface Additions {
+  isFullscreen?: boolean;
+  showPanel?: boolean;
+  panelPosition?: 'bottom' | 'right';
+  showNav?: boolean;
+  selectedPanel?: string;
+}
 
 // Initialize the state based on the URL.
 // NOTE:
@@ -10,8 +20,8 @@ import toId from '../libs/id';
 //     - nav: 0/1 -- show or hide the story list
 //
 //   We also support legacy URLs from storybook <5
-const initialUrlSupport = ({ location, path }, navigate) => {
-  const addition = {};
+const initialUrlSupport = ({ navigate, location, path }: Module) => {
+  const addition: Additions = {};
   const query = queryFromLocation(location);
   let selectedPanel;
 
@@ -71,9 +81,13 @@ const initialUrlSupport = ({ location, path }, navigate) => {
   return { layout: addition, selectedPanel, location, path, customQueryParams };
 };
 
-export default function({ store, navigate, location, path: initialPath }) {
+export interface QueryParams {
+  [key: string]: string;
+}
+
+export default function({ store, navigate, location, path: initialPath, ...rest }: Module) {
   const api = {
-    getQueryParam: key => {
+    getQueryParam: (key: string): string => {
       const { customQueryParams } = store.getState();
       if (customQueryParams) {
         return customQueryParams[key];
@@ -81,8 +95,8 @@ export default function({ store, navigate, location, path: initialPath }) {
       return undefined;
     },
     getUrlState: () => {
-      const { path, viewMode, storyId, url } = store.getState();
-      const queryParams = api.getQueryParam();
+      const { path, viewMode, storyId, url, customQueryParams } = store.getState();
+      const queryParams = customQueryParams;
 
       return {
         queryParams,
@@ -92,21 +106,22 @@ export default function({ store, navigate, location, path: initialPath }) {
         url,
       };
     },
-    setQueryParams(input) {
+    setQueryParams(input: QueryParams) {
       const { customQueryParams } = store.getState();
+      const queryParams: QueryParams = {};
       store.setState({
         customQueryParams: {
           ...customQueryParams,
-          ...Object.keys(input).reduce((acc, key) => {
-            if (input[key] !== null) {
-              acc[key] = input[key];
+          ...Object.entries(input).reduce((acc, [key, value]) => {
+            if (value !== null) {
+              acc[key] = value;
             }
             return acc;
-          }, {}),
+          }, queryParams),
         },
       });
     },
   };
 
-  return { api, state: initialUrlSupport({ location, path: initialPath }, navigate) };
+  return { api, state: initialUrlSupport({ store, navigate, location, path: initialPath, ...rest }) };
 }

@@ -1,32 +1,12 @@
 import React from 'react';
 
-import { Link, Location, navigate, LocationProvider } from '@reach/router';
+import { Link, Location, navigate, LocationProvider, WindowLocation } from '@reach/router';
 import { ToggleVisibility } from './visibility';
 import { queryFromString, storyDataFromString, getMatch } from './utils';
 
-interface Location {
-  search: string;
-  href: string;
-  origin: string;
-  protocol: 'http:' | 'https:';
-  host: string;
-  hostname: string;
-  port: string;
-  pathname: string;
-  hash: string;
-  state: {
-    key: string;
-  };
-  key: string;
-  reload: () => void;
-  replace: (url: string) => void;
-  assign: (url: string) => void;
-  toString: () => string;
-}
-
 interface RenderData {
   path: string;
-  location: Location;
+  location: WindowLocation;
   navigate: (to: string) => void;
   viewMode?: string;
   storyId?: string;
@@ -73,7 +53,7 @@ QueryLink.displayName = 'QueryLink';
 // and will be called whenever it changes when it changes
 const QueryLocation = ({ children }: QueryLocationProps) => (
   <Location>
-    {({ location }: { location: Location }) => {
+    {({ location }: { location: WindowLocation }) => {
       const { path } = queryFromString(location.search);
       const { viewMode, storyId } = storyDataFromString(path);
       return children({ path, location, navigate: queryNavigate, viewMode, storyId });

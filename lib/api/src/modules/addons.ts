@@ -1,6 +1,11 @@
-import { types } from '@storybook/addons';
+import { types, Addon } from '@storybook/addons';
+import { Module } from '../index';
 
-export function ensurePanel(panels, selectedPanel, currentPanel) {
+interface Panels {
+  [id: string]: Addon;
+}
+
+export function ensurePanel(panels: Panels, selectedPanel?: string, currentPanel?: string) {
   const keys = Object.keys(panels);
 
   if (keys.indexOf(selectedPanel) >= 0) {
@@ -13,15 +18,15 @@ export function ensurePanel(panels, selectedPanel, currentPanel) {
   return currentPanel;
 }
 
-export default ({ provider, store }) => {
+export default ({ provider, store }: Module) => {
   const api = {
-    getElements: type => provider.getElements(type),
+    getElements: (type: types) => provider.getElements(type),
     getPanels: () => api.getElements(types.PANEL),
     getSelectedPanel: () => {
       const { selectedPanel } = store.getState();
       return ensurePanel(api.getPanels(), selectedPanel, selectedPanel);
     },
-    setSelectedPanel: panelName => {
+    setSelectedPanel: (panelName: string) => {
       store.setState({ selectedPanel: panelName });
     },
   };

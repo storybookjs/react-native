@@ -4,7 +4,6 @@ import { ReactElement } from 'react';
 import { Channel } from '@storybook/channels';
 import logger from '@storybook/client-logger';
 import { types, Types, isSupportedType } from './types';
-import deprecate from 'util-deprecate';
 
 export interface RenderOptions {
   active: boolean;
@@ -20,19 +19,19 @@ export interface Addon {
   title: string;
   type?: Types;
   id?: string;
-  route: (routeOptions: RouteOptions) => string;
-  match: (matchOptions: MatchOptions) => boolean;
+  route?: (routeOptions: RouteOptions) => string;
+  match?: (matchOptions: MatchOptions) => boolean;
   render: (renderOptions: RenderOptions) => ReactElement<any>;
 }
 
 export type Loader = (callback: (api: any) => void) => void;
 
-export { types, isSupportedType };
+export { types, Types, isSupportedType };
 
 interface Loaders {
   [key: string]: Loader;
 }
-interface Collection {
+export interface Collection {
   [key: string]: Addon;
 }
 interface Elements {

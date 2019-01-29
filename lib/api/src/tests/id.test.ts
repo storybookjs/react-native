@@ -1,4 +1,4 @@
-import toId from './id';
+import toId from '../lib/id';
 
 describe('toId', () => {
   [
@@ -15,9 +15,7 @@ describe('toId', () => {
   });
 
   it('does not allow kind with *no* url chars', () => {
-    expect(() => toId('?', 'asdf')).toThrow(
-      `Invalid kind '?', must include alphanumeric characters`
-    );
+    expect(() => toId('?', 'asdf')).toThrow(`Invalid kind '?', must include alphanumeric characters`);
   });
 
   it('does not allow empty kind', () => {
@@ -25,14 +23,10 @@ describe('toId', () => {
   });
 
   it('does not allow story with *no* url chars', () => {
-    expect(() => toId('kind', '?')).toThrow(
-      `Invalid story '?', must include alphanumeric characters`
-    );
+    expect(() => toId('kind', '?')).toThrow(`Invalid story '?', must include alphanumeric characters`);
   });
 
   it('does not allow empty story', () => {
-    expect(() => toId('kind', '')).toThrow(
-      `Invalid story '', must include alphanumeric characters`
-    );
+    expect(() => toId('kind', '')).toThrow(`Invalid story '', must include alphanumeric characters`);
   });
 });

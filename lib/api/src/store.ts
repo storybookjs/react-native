@@ -1,28 +1,63 @@
-// TODO -- make this TS?
-
 import { localStorage, sessionStorage } from 'global';
+import { State } from './index';
 
 export const STORAGE_KEY = '@storybook/ui/store';
 
-function get(storage) {
+function get(storage: Storage) {
   const serialized = storage.getItem(STORAGE_KEY);
   return serialized ? JSON.parse(serialized) : {};
 }
 
-function set(storage, value) {
+function set(storage: Storage, value: Patch) {
   storage.setItem(STORAGE_KEY, JSON.stringify(value));
 }
 
-function update(storage, patch) {
+function update(storage: Storage, patch: Patch) {
   const previous = get(storage);
   // Apply the same behaviour as react here
   set(storage, { ...previous, ...patch });
 }
 
+type GetState = () => State;
+type SetState = (a: any, b: any) => any;
+
+interface Storage {
+  getItem(key: string): string | undefined;
+  setItem(
+    key: string,
+    value: string
+  ):
+    | {
+        [key: string]: any;
+      }
+    | undefined;
+}
+
+interface Upstream {
+  getState: GetState;
+  setState: SetState;
+}
+
+interface Patch {
+  [k: string]: any;
+}
+
+type InputFnPatch = (s: State) => Patch;
+type InputPatch = Patch | InputFnPatch;
+
+interface Options {
+  persistence: 'none' | 'session' | string;
+}
+type CallBack = (s: State) => void;
+type CallbackOrOptions = CallBack | Options;
+
 // Our store piggybacks off the internal React state of the Context Provider
 // It has been augmented to persist state to local/sessionStorage
 export default class Store {
-  constructor({ setState, getState }) {
+  upstreamGetState: GetState;
+  upstreamSetState: SetState;
+
+  constructor({ setState, getState }: Upstream) {
     this.upstreamSetState = setState;
     this.upstreamGetState = getState;
   }
@@ -40,7 +75,7 @@ export default class Store {
     return this.upstreamGetState();
   }
 
-  async setState(inputPatch, cbOrOptions, inputOptions) {
+  async setState(inputPatch: InputPatch, cbOrOptions?: CallbackOrOptions, inputOptions?: Options) {
     let callback;
     let options;
     if (typeof cbOrOptions === 'function') {
@@ -51,13 +86,14 @@ export default class Store {
     }
     const { persistence = 'none' } = options || {};
 
-    let patch;
+    let patch: Patch = {};
     // What did the patch actually return
-    let delta;
+    let delta: Patch = {};
     if (typeof inputPatch === 'function') {
       // Pass the same function, but just set delta on the way
-      patch = state => {
-        delta = inputPatch(state);
+      patch = (state: State) => {
+        const getDelta = inputPatch as InputFnPatch;
+        delta = getDelta(state);
         return delta;
       };
     } else {
@@ -65,7 +101,7 @@ export default class Store {
       delta = patch;
     }
 
-    const newState = await new Promise(resolve => {
+    const newState: State = await new Promise(resolve => {
       this.upstreamSetState(patch, resolve);
     });
 
