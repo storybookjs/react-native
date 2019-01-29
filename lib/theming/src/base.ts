@@ -57,6 +57,7 @@ export interface Theme {
   background: {
     [name: string]: string;
   };
+  typography: typeof typography;
 
   mainBackground: string;
   mainBorder: string;

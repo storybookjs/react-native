@@ -1,7 +1,7 @@
 import { chromeDark } from 'react-inspector';
 import { create as createSyntax } from './light-syntax';
 
-import { baseFonts, monoFonts, Theme } from '../base';
+import { baseFonts, monoFonts, Theme, typography } from '../base';
 
 const colors = {
   /// Old
@@ -105,6 +105,7 @@ const dark: Theme = {
 
   colors,
   background,
+  typography,
 
   inputFill: 'rgba(0,0,0,0.1)',
   dimmedTextColor: 'rgba(0,0,0,0.4)',
