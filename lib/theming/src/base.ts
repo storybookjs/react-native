@@ -1,17 +1,12 @@
 export const baseFonts = {
   fontFamily: [
+    'Nunito Sans',
     '-apple-system',
     '".SFNSText-Regular"',
     '"San Francisco"',
     'BlinkMacSystemFont, "Segoe UI"',
-    '"Roboto"',
-    '"Oxygen"',
-    '"Ubuntu"',
-    '"Cantarell"',
-    '"Fira Sans"',
-    '"Droid Sans"',
     '"Helvetica Neue"',
-    '"Lucida Grande"',
+    'Helvetica',
     '"Arial"',
     'sans-serif',
   ].join(', '),
@@ -33,6 +28,26 @@ export const monoFonts = {
   ].join(', '),
   color: '#444',
   WebkitFontSmoothing: 'antialiased',
+};
+
+export const typography = {
+  weight: {
+    regular: '400',
+    bold: '700',
+    black: '900',
+  },
+  size: {
+    s1: '12',
+    s2: '14',
+    s3: '16',
+    m1: '20',
+    m2: '24',
+    m3: '28',
+    l1: '32',
+    l2: '40',
+    l3: '48',
+    code: '90',
+  },
 };
 
 export interface Theme {
