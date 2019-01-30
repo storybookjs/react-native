@@ -18,7 +18,7 @@ exports[`Storyshots UI|Nav default 1`] = `
   padding: 20px;
 }
 
-.emotion-12 {
+.emotion-13 {
   background: transparent;
   position: absolute;
   z-index: 1;
@@ -124,8 +124,18 @@ exports[`Storyshots UI|Nav default 1`] = `
   height: calc(100% - 10px);
 }
 
+.emotion-12 {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 2;
+}
+
 <nav
-  class="emotion-12"
+  class="emotion-13"
 >
   <div
     class="emotion-11"
@@ -218,6 +228,9 @@ exports[`Storyshots UI|Nav default 1`] = `
       class="emotion-6"
     />
   </div>
+  <div
+    class="emotion-12"
+  />
 </nav>
 `;
 
@@ -239,7 +252,7 @@ exports[`Storyshots UI|Nav with custom brand 1`] = `
   padding: 20px;
 }
 
-.emotion-10 {
+.emotion-11 {
   background: transparent;
   position: absolute;
   z-index: 1;
@@ -333,8 +346,18 @@ exports[`Storyshots UI|Nav with custom brand 1`] = `
   height: calc(100% - 10px);
 }
 
+.emotion-10 {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 2;
+}
+
 <nav
-  class="emotion-10"
+  class="emotion-11"
 >
   <div
     class="emotion-9"
@@ -381,6 +404,9 @@ exports[`Storyshots UI|Nav with custom brand 1`] = `
       class="emotion-4"
     />
   </div>
+  <div
+    class="emotion-10"
+  />
 </nav>
 `;
 
@@ -393,7 +419,7 @@ exports[`Storyshots UI|Nav with treeview root 1`] = `
   fill: currentColor;
 }
 
-.emotion-40 {
+.emotion-41 {
   background: transparent;
   position: absolute;
   z-index: 1;
@@ -499,6 +525,16 @@ exports[`Storyshots UI|Nav with treeview root 1`] = `
   height: calc(100% - 10px);
 }
 
+.emotion-40 {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 2;
+}
+
 .emotion-9 {
   border-bottom: 1px solid transparent;
   border-bottom-color: rgba(0,0,0,0.1);
@@ -600,7 +636,7 @@ exports[`Storyshots UI|Nav with treeview root 1`] = `
 }
 
 <nav
-  class="emotion-40"
+  class="emotion-41"
 >
   <div
     class="emotion-39"
@@ -845,6 +881,9 @@ exports[`Storyshots UI|Nav with treeview root 1`] = `
       class="emotion-6"
     />
   </div>
+  <div
+    class="emotion-40"
+  />
 </nav>
 `;
 
@@ -857,7 +896,7 @@ exports[`Storyshots UI|Nav without treeview root 1`] = `
   fill: currentColor;
 }
 
-.emotion-26 {
+.emotion-27 {
   background: transparent;
   position: absolute;
   z-index: 1;
@@ -963,6 +1002,16 @@ exports[`Storyshots UI|Nav without treeview root 1`] = `
   height: calc(100% - 10px);
 }
 
+.emotion-26 {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 2;
+}
+
 .emotion-9 {
   border-bottom: 1px solid transparent;
   border-bottom-color: rgba(0,0,0,0.1);
@@ -1035,7 +1084,7 @@ exports[`Storyshots UI|Nav without treeview root 1`] = `
 }
 
 <nav
-  class="emotion-26"
+  class="emotion-27"
 >
   <div
     class="emotion-25"
@@ -1205,5 +1254,8 @@ exports[`Storyshots UI|Nav without treeview root 1`] = `
       class="emotion-6"
     />
   </div>
+  <div
+    class="emotion-26"
+  />
 </nav>
 `;
