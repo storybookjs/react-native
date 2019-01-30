@@ -26,7 +26,7 @@
     "@ngrx/store": "^7.1.0",
     "core-js": "^2.6.2",
     "rxjs": "^6.3.3",
-    "rxjs-compat": "^6.3.3",
+    "rxjs-compat": "^6.4.0",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
