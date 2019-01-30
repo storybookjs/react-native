@@ -18237,9 +18237,9 @@ rx@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
-rxjs-compat@^6.3.3:
-  version "6.3.3"
-  resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.3.3.tgz#2ab3b9ac0dac0c073749d55fef9c03ea1df2045c"
+rxjs-compat@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.4.0.tgz#800923c15697948e1f30f18c531b12b49451c75c"
 
 rxjs@6.3.3, rxjs@^6.1.0, rxjs@^6.3.3:
   version "6.3.3"
