@@ -1067,6 +1067,14 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
 `;
 
 exports[`Storyshots Components|Form/Select sizes 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-child {
+  margin-top: 0;
+}
+
 .emotion-0 {
   padding: 0 10px;
   color: #444;
@@ -1092,14 +1100,6 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 .emotion-0:focus {
   outline: 0 none;
   border-bottom-color: #1EA7FD;
-}
-
-.emotion-6 > * {
-  margin-top: 10px;
-}
-
-.emotion-6 > *:first-child {
-  margin-top: 0;
 }
 
 .emotion-1 {
