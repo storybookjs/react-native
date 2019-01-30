@@ -12,11 +12,11 @@ import Tabs from './Tabs';
 import Report from './Report';
 
 const Passes = styled.span(({ theme }) => ({
-  color: theme.successColor,
+  color: theme.color.positive,
 }));
 
 const Violations = styled.span(({ theme }) => ({
-  color: theme.failColor,
+  color: theme.color.negative,
 }));
 
 class A11YPanel extends Component {

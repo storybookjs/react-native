@@ -41,7 +41,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 
 .emotion-4:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-0 {
@@ -69,7 +69,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2 {
@@ -97,7 +97,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -174,7 +174,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2 {
@@ -204,7 +204,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-4 {
@@ -232,7 +232,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 
 .emotion-4:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -309,7 +309,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 
 .emotion-6:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-0 {
@@ -326,7 +326,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #d53535;
+  border-bottom-color: #FF4400;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -338,7 +338,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2 {
@@ -355,7 +355,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: orange;
+  border-bottom-color: #FC521F;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -367,7 +367,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-4 {
@@ -384,7 +384,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #09833a;
+  border-bottom-color: #66BF3C;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -396,7 +396,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 
 .emotion-4:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -502,7 +502,7 @@ exports[`Storyshots Components|Form/Field field 1`] = `
 
 .emotion-1:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <label
@@ -574,7 +574,7 @@ exports[`Storyshots Components|Form/Input alignment 1`] = `
 
 .emotion-4:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-0 {
@@ -596,7 +596,7 @@ exports[`Storyshots Components|Form/Input alignment 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2 {
@@ -618,7 +618,7 @@ exports[`Storyshots Components|Form/Input alignment 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -686,7 +686,7 @@ exports[`Storyshots Components|Form/Input sizes 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2 {
@@ -710,7 +710,7 @@ exports[`Storyshots Components|Form/Input sizes 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-4 {
@@ -732,7 +732,7 @@ exports[`Storyshots Components|Form/Input sizes 1`] = `
 
 .emotion-4:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -800,7 +800,7 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
 
 .emotion-6:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-0 {
@@ -817,13 +817,13 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #d53535;
+  border-bottom-color: #FF4400;
   min-height: 32px;
 }
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2 {
@@ -840,13 +840,13 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: orange;
+  border-bottom-color: #FC521F;
   min-height: 32px;
 }
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-4 {
@@ -863,13 +863,13 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #09833a;
+  border-bottom-color: #66BF3C;
   min-height: 32px;
 }
 
 .emotion-4:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -943,7 +943,7 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-0 {
@@ -970,7 +970,7 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-1 {
@@ -997,7 +997,7 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
 
 .emotion-1:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -1091,7 +1091,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-6 > * {
@@ -1135,7 +1135,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-4 {
@@ -1162,7 +1162,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 
 .emotion-4:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -1276,7 +1276,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 
 .emotion-3:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-0 {
@@ -1293,7 +1293,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #d53535;
+  border-bottom-color: #FF4400;
   height: 32px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1304,7 +1304,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-1 {
@@ -1321,7 +1321,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: orange;
+  border-bottom-color: #FC521F;
   height: 32px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1332,7 +1332,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 
 .emotion-1:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2 {
@@ -1349,7 +1349,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #09833a;
+  border-bottom-color: #66BF3C;
   height: 32px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1360,7 +1360,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -1487,7 +1487,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 
 .emotion-4:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-0 {
@@ -1512,7 +1512,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2 {
@@ -1537,7 +1537,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -1617,7 +1617,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2 {
@@ -1644,7 +1644,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-4 {
@@ -1669,7 +1669,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 
 .emotion-4:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div
@@ -1746,7 +1746,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 
 .emotion-6:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-0 {
@@ -1763,7 +1763,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #d53535;
+  border-bottom-color: #FF4400;
   min-height: 32px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -1772,7 +1772,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 
 .emotion-0:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-2 {
@@ -1789,7 +1789,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: orange;
+  border-bottom-color: #FC521F;
   min-height: 32px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -1798,7 +1798,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 
 .emotion-2:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-4 {
@@ -1815,7 +1815,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
   position: relative;
   width: 100%;
   text-align: left;
-  border-bottom-color: #09833a;
+  border-bottom-color: #66BF3C;
   min-height: 32px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -1824,7 +1824,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 
 .emotion-4:focus {
   outline: 0 none;
-  border-bottom-color: #9fdaff;
+  border-bottom-color: #1EA7FD;
 }
 
 <div

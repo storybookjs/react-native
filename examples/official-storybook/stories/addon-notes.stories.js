@@ -44,7 +44,7 @@ const markdownTable = `
 const giphyMarkdown = `
 # Giphy
 
-<Giphy gif='cheese' />
+<Giphy query="cheese" />
 `;
 
 storiesOf('Addons|Notes', module)

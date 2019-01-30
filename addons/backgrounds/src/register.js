@@ -7,6 +7,7 @@ import Tool from './Tool';
 addons.register(ADDON_ID, api => {
   addons.add(ADDON_ID, {
     type: types.TOOL,
+    match: ({ viewMode }) => viewMode === 'story',
     render: () => <Tool api={api} />,
   });
 });

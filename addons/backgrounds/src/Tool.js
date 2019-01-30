@@ -92,46 +92,44 @@ export default class BackgroundTool extends Component {
     }
 
     return (
-      <Fragment>
-        <Popout key="backgrounds">
-          <IconButton key="background" title="Backgrounds">
-            <Icons icon="photo" />
-          </IconButton>
-          {({ hide }) => (
-            <List>
-              {selected !== undefined ? (
-                <Fragment>
-                  <Item
-                    key="reset"
-                    onClick={() => {
-                      hide();
-                      this.change(undefined);
-                    }}
-                  >
-                    <Icon type="undo" />
-                    <Title>Reset</Title>
-                    <Detail>transparent</Detail>
-                  </Item>
-                </Fragment>
-              ) : null}
-
-              {list.map(([key, value]) => (
+      <Popout key="backgrounds">
+        <IconButton key="background" title="Backgrounds">
+          <Icons icon="photo" />
+        </IconButton>
+        {({ hide }) => (
+          <List>
+            {selected !== undefined ? (
+              <Fragment>
                 <Item
-                  key={key}
+                  key="reset"
                   onClick={() => {
                     hide();
-                    this.change(key);
+                    this.change(undefined);
                   }}
                 >
-                  <Icon type={<S.ColorIcon background={value} />} />
-                  <Title>{key}</Title>
-                  <Detail>{value}</Detail>
+                  <Icon type="undo" />
+                  <Title>Reset</Title>
+                  <Detail>transparent</Detail>
                 </Item>
-              ))}
-            </List>
-          )}
-        </Popout>
-      </Fragment>
+              </Fragment>
+            ) : null}
+
+            {list.map(([key, value]) => (
+              <Item
+                key={key}
+                onClick={() => {
+                  hide();
+                  this.change(key);
+                }}
+              >
+                <Icon type={<S.ColorIcon background={value} />} />
+                <Title>{key}</Title>
+                <Detail>{value}</Detail>
+              </Item>
+            ))}
+          </List>
+        )}
+      </Popout>
     );
   }
 }

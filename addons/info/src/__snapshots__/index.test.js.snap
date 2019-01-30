@@ -180,7 +180,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                 "border": "1px solid #eee",
                 "borderRadius": "2px",
                 "color": "#444",
-                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                 "fontSize": "15px",
                 "fontWeight": 300,
                 "lineHeight": 1.45,
@@ -1436,7 +1436,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                 "border": "1px solid #eee",
                 "borderRadius": "2px",
                 "color": "#444",
-                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                 "fontSize": "15px",
                 "fontWeight": 300,
                 "lineHeight": 1.45,
@@ -1494,7 +1494,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                       "WebkitFontSmoothing": "antialiased",
                       "borderBottom": "1px solid #eee",
                       "color": "#444",
-                      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                      "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                       "fontSize": "40px",
                       "fontWeight": 600,
                       "margin": 0,
@@ -1516,7 +1516,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                     Object {
                       "WebkitFontSmoothing": "antialiased",
                       "color": "#444",
-                      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                      "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                       "fontSize": "30px",
                       "fontWeight": 600,
                       "margin": 0,
@@ -1536,7 +1536,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                     Object {
                       "WebkitFontSmoothing": "antialiased",
                       "color": "#444",
-                      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                      "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                       "fontSize": "15px",
                     }
                   }
@@ -2649,7 +2649,7 @@ exports[`addon Info should render component description if story kind matches co
               "border": "1px solid #eee",
               "borderRadius": "2px",
               "color": "#444",
-              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -2772,7 +2772,7 @@ exports[`addon Info should render component description if story kind matches co
               "border": "1px solid #eee",
               "borderRadius": "2px",
               "color": "#444",
-              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -2795,7 +2795,7 @@ exports[`addon Info should render component description if story kind matches co
                     "WebkitFontSmoothing": "antialiased",
                     "borderBottom": "1px solid #eee",
                     "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "40px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -2817,7 +2817,7 @@ exports[`addon Info should render component description if story kind matches co
                   Object {
                     "WebkitFontSmoothing": "antialiased",
                     "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "30px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -2837,7 +2837,7 @@ exports[`addon Info should render component description if story kind matches co
                   Object {
                     "WebkitFontSmoothing": "antialiased",
                     "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "15px",
                   }
                 }
@@ -3878,7 +3878,7 @@ exports[`addon Info should render component description if story name matches co
               "border": "1px solid #eee",
               "borderRadius": "2px",
               "color": "#444",
-              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -4001,7 +4001,7 @@ exports[`addon Info should render component description if story name matches co
               "border": "1px solid #eee",
               "borderRadius": "2px",
               "color": "#444",
-              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -4024,7 +4024,7 @@ exports[`addon Info should render component description if story name matches co
                     "WebkitFontSmoothing": "antialiased",
                     "borderBottom": "1px solid #eee",
                     "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "40px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -4046,7 +4046,7 @@ exports[`addon Info should render component description if story name matches co
                   Object {
                     "WebkitFontSmoothing": "antialiased",
                     "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "30px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -4066,7 +4066,7 @@ exports[`addon Info should render component description if story name matches co
                   Object {
                     "WebkitFontSmoothing": "antialiased",
                     "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "15px",
                   }
                 }

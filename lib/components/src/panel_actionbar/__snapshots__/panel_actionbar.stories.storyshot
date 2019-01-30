@@ -55,7 +55,7 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
 }
 
 .emotion-0:focus {
-  border-bottom: 2px solid #9fdaff;
+  border-bottom: 2px solid #1EA7FD;
   outline: 0 none;
 }
 
@@ -165,7 +165,7 @@ exports[`Storyshots Components|PanelActionBar single item 1`] = `
 }
 
 .emotion-0:focus {
-  border-bottom: 2px solid #9fdaff;
+  border-bottom: 2px solid #1EA7FD;
   outline: 0 none;
 }
 

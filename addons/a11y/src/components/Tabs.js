@@ -39,7 +39,7 @@ const Item = styled.button(
 
     '&:focus': {
       outline: '0 none',
-      borderBottom: `3px solid ${theme.highlightColor}`,
+      borderBottom: `3px solid ${theme.color.secondary}`,
     },
   })
 );
