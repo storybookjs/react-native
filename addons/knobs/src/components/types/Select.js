@@ -14,6 +14,7 @@ const SelectType = ({ knob, onChange }) => {
   return (
     <Form.Select
       value={selectedKey}
+      name={knob.name}
       onChange={e => {
         onChange(entries[e.target.value]);
       }}

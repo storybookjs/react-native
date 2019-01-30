@@ -74,7 +74,7 @@ class ColorType extends React.Component {
     };
 
     return (
-      <Button type="button" onClick={this.handleClick} size="flex">
+      <Button type="button" name={knob.name} onClick={this.handleClick} size="flex">
         {knob.value}
         <Swatch style={colorStyle} />
         {displayColorPicker ? (
