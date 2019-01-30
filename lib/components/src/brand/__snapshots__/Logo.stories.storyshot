@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Brand/Logo default 1`] = `
+exports[`Storyshots Components|Brand/Storybook Logo default 1`] = `
 <svg
   height="40px"
   title="Storybook"

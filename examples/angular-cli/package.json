@@ -26,7 +26,7 @@
     "@ngrx/store": "^7.1.0",
     "core-js": "^2.6.2",
     "rxjs": "^6.3.3",
-    "rxjs-compat": "^6.3.3",
+    "rxjs-compat": "^6.4.0",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
@@ -47,7 +47,7 @@
     "@storybook/angular": "5.0.0-alpha.10",
     "@types/core-js": "^2.5.0",
     "@types/jest": "^23.3.13",
-    "@types/node": "~10.12.18",
+    "@types/node": "~10.12.19",
     "@types/webpack-env": "^1.13.6",
     "global": "^4.3.2",
     "jasmine-core": "~3.3.0",
