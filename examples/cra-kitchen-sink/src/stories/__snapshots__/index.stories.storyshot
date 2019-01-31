@@ -39,7 +39,7 @@ exports[`Storyshots Button with new info 1`] = `
     </button>
     <div>
       <div
-        style="font-family:\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif;color:#333;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -59,7 +59,7 @@ exports[`Storyshots Button with new info 1`] = `
           style="margin-bottom:0"
         >
           <div
-            style="font-family:\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+            style="font-family:\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif;color:#333;-webkit-font-smoothing:antialiased;font-size:15px"
           >
             Use the 
             <a

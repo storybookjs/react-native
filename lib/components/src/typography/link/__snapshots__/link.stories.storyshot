@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Typography/Link cancel w/ href 1`] = `
+exports[`Storyshots Basics|Typography/Link cancel w/ href 1`] = `
 .emotion-0 {
   color: inherit;
 }
@@ -13,7 +13,7 @@ exports[`Storyshots Components|Typography/Link cancel w/ href 1`] = `
 </a>
 `;
 
-exports[`Storyshots Components|Typography/Link cancel w/ onClick 1`] = `
+exports[`Storyshots Basics|Typography/Link cancel w/ onClick 1`] = `
 .emotion-0 {
   color: inherit;
 }
@@ -26,7 +26,7 @@ exports[`Storyshots Components|Typography/Link cancel w/ onClick 1`] = `
 </a>
 `;
 
-exports[`Storyshots Components|Typography/Link no-cancel w/ href 1`] = `
+exports[`Storyshots Basics|Typography/Link no-cancel w/ href 1`] = `
 .emotion-0 {
   color: inherit;
 }
@@ -39,7 +39,7 @@ exports[`Storyshots Components|Typography/Link no-cancel w/ href 1`] = `
 </a>
 `;
 
-exports[`Storyshots Components|Typography/Link no-cancel w/ onClick 1`] = `
+exports[`Storyshots Basics|Typography/Link no-cancel w/ onClick 1`] = `
 .emotion-0 {
   color: inherit;
 }

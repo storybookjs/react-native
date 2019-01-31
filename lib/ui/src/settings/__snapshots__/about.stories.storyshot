@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
-.emotion-22 {
+exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
+.emotion-21 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -146,7 +146,7 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
   fill: currentColor;
 }
 
-.emotion-21 {
+.emotion-20 {
   display: block;
   position: relative;
   position: relative;
@@ -157,11 +157,11 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
   width: 100%;
 }
 
-.emotion-19 {
+.emotion-18 {
   padding: 20px;
 }
 
-.emotion-12 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -171,12 +171,12 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
 }
 
 @media screen and (max-width:500px) {
-  .emotion-12 {
+  .emotion-11 {
     display: block;
   }
 }
 
-.emotion-11 {
+.emotion-10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -187,22 +187,13 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
 }
 
 .emotion-8 {
-  display: block;
-  height: 40px;
-  width: auto;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 10px;
-}
-
-.emotion-9 {
   font-size: 30px;
   display: inline-block;
   line-height: 40px;
   font-weight: 700;
 }
 
-.emotion-10 {
+.emotion-9 {
   background: #DAFFD1;
   color: #4DC533;
   float: right;
@@ -213,7 +204,7 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
 }
 
 @media screen and (max-width:500px) {
-  .emotion-10 {
+  .emotion-9 {
     float: none;
     margin-top: 10px;
     display: block;
@@ -221,7 +212,7 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
   }
 }
 
-.emotion-17 {
+.emotion-16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -234,20 +225,20 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
   border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-.emotion-17 > * {
+.emotion-16 > * {
   margin-left: 20px;
 }
 
-.emotion-17 > *:first-child {
+.emotion-16 > *:first-child {
   margin-left: 0;
 }
 
-.emotion-14 {
+.emotion-13 {
   color: inherit;
 }
 
 <div
-  class="emotion-22"
+  class="emotion-21"
 >
   <div
     class="emotion-7"
@@ -282,63 +273,80 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
         >
           <path
             class="emotion-3"
-            d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+            d="M586.7 512L936 861.4a52.8 52.8 0 0 1-74.6 74.7L512 586.7 162.6 936A52.8 52.8 0 0 1 88 861.4L437.3 512 88 162.6A52.8 52.8 0 1 1 162.6 88L512 437.3 861.4 88a52.8 52.8 0 1 1 74.7 74.7L586.7 512z"
           />
         </svg>
       </button>
     </div>
   </div>
   <div
-    class="emotion-21"
+    class="emotion-20"
   >
     <div
       class="emotion-4"
       role="tabpanel"
     >
       <div
-        class="emotion-19"
+        class="emotion-18"
       >
         <div
-          class="emotion-12"
+          class="emotion-11"
         >
           <header
-            class="emotion-11"
+            class="emotion-10"
           >
             <svg
-              class="emotion-8"
-              viewBox="0 0 420 538"
+              height="64px"
+              title="Storybook icon"
+              viewBox="0 0 64 64"
+              width="64px"
             >
-              <path
-                d="M 420,0 28,28 52,520 420,538 Z"
-                fill="#f1618c"
-              />
-              <path
-                d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
-                fill="#fff"
-              />
-              <path
-                d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
-                fill="#fff"
-              />
-              <path
-                d="M 42,520 18,28 H 0 l 18,492 z"
-                fill="#b57ee5"
-              />
+              <defs>
+                <path
+                  d="M2 58.6L0 6c0-1.7 1.3-3.2 3-3.3L47.6 0A3.2 3.2 0 0 1 51 3.2v57.2a3.2 3.2 0 0 1-3.3 3.2L5 61.6c-1.6 0-3-1.4-3-3z"
+                  id="a"
+                />
+              </defs>
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                transform="translate(6.6 .2)"
+              >
+                <mask
+                  fill="#fff"
+                  id="b"
+                >
+                  <use
+                    href="#a"
+                  />
+                </mask>
+                <use
+                  fill="#FF4785"
+                  fill-rule="nonzero"
+                  href="#a"
+                />
+                <path
+                  d="M37.7 7.8L38 .5 44 0l.3 7.6a.5.5 0 0 1-.8.4l-2.4-2-2.8 2.2a.5.5 0 0 1-.7-.4zM29.8 24c0 1.2 8.4.6 9.5-.3 0-8.4-4.5-12.9-12.8-12.9s-13 4.5-13 11.3c0 11.8 16 12 16 18.5 0 1.8-1 2.9-3 2.9-2.4 0-3.5-1.3-3.3-5.7 0-1-9.7-1.3-10 0-.8 10.6 5.9 13.7 13.5 13.7 7.4 0 13.2-4 13.2-11 0-12.7-16.2-12.3-16.2-18.6 0-2.6 1.9-2.9 3-2.9 1.2 0 3.3.2 3.1 5z"
+                  fill="#FFF"
+                  fill-rule="nonzero"
+                  mask="url(#b)"
+                />
+              </g>
             </svg>
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Storybook 5.0.0
             </span>
             <span
-              class="emotion-10"
+              class="emotion-9"
             >
               You're up to date
             </span>
           </header>
         </div>
         <div
-          class="emotion-12"
+          class="emotion-11"
         >
           Cannot currently fetch the latest version from Storybook. Try 
           <a
@@ -348,25 +356,25 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
           </a>
         </div>
         <div
-          class="emotion-12"
+          class="emotion-11"
         >
           <div
-            class="emotion-17"
+            class="emotion-16"
           >
             <a
-              class="emotion-14"
+              class="emotion-13"
               href="https://storybook.js.org"
             >
               Storybook docs
             </a>
             <a
-              class="emotion-14"
+              class="emotion-13"
               href="https://github.com/storybooks/storybook"
             >
               GitHub
             </a>
             <a
-              class="emotion-14"
+              class="emotion-13"
               href="https://storybook.js.org/support"
             >
               Support
@@ -379,8 +387,8 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|AboutPage new version required 1`] = `
-.emotion-42 {
+exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
+.emotion-41 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -525,7 +533,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   fill: currentColor;
 }
 
-.emotion-41 {
+.emotion-40 {
   display: block;
   position: relative;
   position: relative;
@@ -536,11 +544,11 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   width: 100%;
 }
 
-.emotion-39 {
+.emotion-38 {
   padding: 20px;
 }
 
-.emotion-12 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -550,12 +558,12 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
 }
 
 @media screen and (max-width:500px) {
-  .emotion-12 {
+  .emotion-11 {
     display: block;
   }
 }
 
-.emotion-11 {
+.emotion-10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -566,33 +574,24 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
 }
 
 .emotion-8 {
-  display: block;
-  height: 40px;
-  width: auto;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 10px;
-}
-
-.emotion-9 {
   font-size: 30px;
   display: inline-block;
   line-height: 40px;
   font-weight: 700;
 }
 
-.emotion-13 {
+.emotion-12 {
   width: 160px;
 }
 
-.emotion-14 {
+.emotion-13 {
   float: right;
   font-weight: normal;
   font-size: 11px;
   color: rgba(0,0,0,0.4);
 }
 
-.emotion-37 {
+.emotion-36 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -605,19 +604,19 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-.emotion-37 > * {
+.emotion-36 > * {
   margin-left: 20px;
 }
 
-.emotion-37 > *:first-child {
+.emotion-36 > *:first-child {
   margin-left: 0;
 }
 
-.emotion-34 {
+.emotion-33 {
   color: inherit;
 }
 
-.emotion-10 {
+.emotion-9 {
   background: #1EA7FD;
   color: black;
   float: right;
@@ -628,7 +627,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
 }
 
 @media screen and (max-width:500px) {
-  .emotion-10 {
+  .emotion-9 {
     float: none;
     margin-top: 10px;
     display: block;
@@ -636,7 +635,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   }
 }
 
-.emotion-32 {
+.emotion-31 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -645,7 +644,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-.emotion-16 {
+.emotion-15 {
   color: currentColor;
   font-weight: normal;
   font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -653,22 +652,22 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   padding: 0;
   line-height: 1.2em;
   display: block;
-  color: #444;
+  color: #333;
   line-height: 1em;
 }
 
-.emotion-16 > sub {
+.emotion-15 > sub {
   display: block;
   padding-top: 5px;
   line-height: 1.2em;
   font-size: 14px;
 }
 
-.emotion-16 > sub {
+.emotion-15 > sub {
   color: rgba(0,0,0,0.4);
 }
 
-.emotion-24 {
+.emotion-23 {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.1);
@@ -676,163 +675,163 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   background: rgba(255,255,255,1);
 }
 
-.emotion-20 {
+.emotion-19 {
   position: relative;
   overflow: auto;
 }
 
-.emotion-20 code {
+.emotion-19 code {
   padding-right: 10px;
   opacity: 0.7;
 }
 
-.emotion-20 * .token {
+.emotion-19 * .token {
   font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
   -webkit-font-smoothing: antialiased;
 }
 
-.emotion-20 * .token.comment {
+.emotion-19 * .token.comment {
   color: #008000;
   font-style: italic;
 }
 
-.emotion-20 * .token.prolog {
+.emotion-19 * .token.prolog {
   color: #008000;
   font-style: italic;
 }
 
-.emotion-20 * .token.doctype {
+.emotion-19 * .token.doctype {
   color: #008000;
   font-style: italic;
 }
 
-.emotion-20 * .token.cdata {
+.emotion-19 * .token.cdata {
   color: #008000;
   font-style: italic;
 }
 
-.emotion-20 * .token.string {
+.emotion-19 * .token.string {
   color: #A31515;
 }
 
-.emotion-20 * .token.punctuation {
+.emotion-19 * .token.punctuation {
   color: #393A34;
 }
 
-.emotion-20 * .token.operator {
+.emotion-19 * .token.operator {
   color: #393A34;
 }
 
-.emotion-20 * .token.url {
+.emotion-19 * .token.url {
   color: #36acaa;
 }
 
-.emotion-20 * .token.symbol {
+.emotion-19 * .token.symbol {
   color: #36acaa;
 }
 
-.emotion-20 * .token.number {
+.emotion-19 * .token.number {
   color: #36acaa;
 }
 
-.emotion-20 * .token.boolean {
+.emotion-19 * .token.boolean {
   color: #36acaa;
 }
 
-.emotion-20 * .token.variable {
+.emotion-19 * .token.variable {
   color: #36acaa;
 }
 
-.emotion-20 * .token.constant {
+.emotion-19 * .token.constant {
   color: #36acaa;
 }
 
-.emotion-20 * .token.inserted {
+.emotion-19 * .token.inserted {
   color: #36acaa;
 }
 
-.emotion-20 * .token.atrule {
+.emotion-19 * .token.atrule {
   color: #0000ff;
 }
 
-.emotion-20 * .token.keyword {
+.emotion-19 * .token.keyword {
   color: #0000ff;
 }
 
-.emotion-20 * .token.attr-value {
+.emotion-19 * .token.attr-value {
   color: #0000ff;
 }
 
-.emotion-20 * .token.function {
+.emotion-19 * .token.function {
   color: #393A34;
 }
 
-.emotion-20 * .token.deleted {
+.emotion-19 * .token.deleted {
   color: #9a050f;
 }
 
-.emotion-20 * .token.important {
+.emotion-19 * .token.important {
   font-weight: bold;
 }
 
-.emotion-20 * .token.bold {
+.emotion-19 * .token.bold {
   font-weight: bold;
 }
 
-.emotion-20 * .token.italic {
+.emotion-19 * .token.italic {
   font-style: italic;
 }
 
-.emotion-20 * .token.class-name {
+.emotion-19 * .token.class-name {
   color: #2B91AF;
 }
 
-.emotion-20 * .token.tag {
+.emotion-19 * .token.tag {
   color: #800000;
 }
 
-.emotion-20 * .token.selector {
+.emotion-19 * .token.selector {
   color: #800000;
 }
 
-.emotion-20 * .token.attr-name {
+.emotion-19 * .token.attr-name {
   color: #ff0000;
 }
 
-.emotion-20 * .token.property {
+.emotion-19 * .token.property {
   color: #ff0000;
 }
 
-.emotion-20 * .token.regex {
+.emotion-19 * .token.regex {
   color: #ff0000;
 }
 
-.emotion-20 * .token.entity {
+.emotion-19 * .token.entity {
   color: #ff0000;
 }
 
-.emotion-20 * .token.directive.tag .tag {
+.emotion-19 * .token.directive.tag .tag {
   background: #ffff00;
   color: #393A34;
 }
 
-.emotion-20 * .language-json .token.boolean {
+.emotion-19 * .language-json .token.boolean {
   color: #0000ff;
 }
 
-.emotion-20 * .language-json .token.number {
+.emotion-19 * .language-json .token.number {
   color: #0000ff;
 }
 
-.emotion-20 * .language-json .token.property {
+.emotion-19 * .language-json .token.property {
   color: #2B91AF;
 }
 
-.emotion-20 * .namespace {
+.emotion-19 * .namespace {
   opacity: 0.7;
 }
 
-.emotion-19 {
+.emotion-18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -845,7 +844,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   padding: 10px;
 }
 
-.emotion-18 {
+.emotion-17 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -853,7 +852,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   opacity: 1;
 }
 
-.emotion-23 {
+.emotion-22 {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -871,7 +870,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   border-radius: 4px 0 0 0;
 }
 
-.emotion-22 {
+.emotion-21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -889,7 +888,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   border-left: 0 none;
 }
 
-.emotion-21 {
+.emotion-20 {
   border: 0 none;
   display: block;
   background: none;
@@ -906,13 +905,13 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   border-bottom: 2px solid transparent;
 }
 
-.emotion-21:focus {
+.emotion-20:focus {
   border-bottom: 2px solid #1EA7FD;
   outline: 0 none;
 }
 
 <div
-  class="emotion-42"
+  class="emotion-41"
 >
   <div
     class="emotion-7"
@@ -947,66 +946,83 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
         >
           <path
             class="emotion-3"
-            d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+            d="M586.7 512L936 861.4a52.8 52.8 0 0 1-74.6 74.7L512 586.7 162.6 936A52.8 52.8 0 0 1 88 861.4L437.3 512 88 162.6A52.8 52.8 0 1 1 162.6 88L512 437.3 861.4 88a52.8 52.8 0 1 1 74.7 74.7L586.7 512z"
           />
         </svg>
       </button>
     </div>
   </div>
   <div
-    class="emotion-41"
+    class="emotion-40"
   >
     <div
       class="emotion-4"
       role="tabpanel"
     >
       <div
-        class="emotion-39"
+        class="emotion-38"
       >
         <div
-          class="emotion-12"
+          class="emotion-11"
         >
           <header
-            class="emotion-11"
+            class="emotion-10"
           >
             <svg
-              class="emotion-8"
-              viewBox="0 0 420 538"
+              height="64px"
+              title="Storybook icon"
+              viewBox="0 0 64 64"
+              width="64px"
             >
-              <path
-                d="M 420,0 28,28 52,520 420,538 Z"
-                fill="#f1618c"
-              />
-              <path
-                d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
-                fill="#fff"
-              />
-              <path
-                d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
-                fill="#fff"
-              />
-              <path
-                d="M 42,520 18,28 H 0 l 18,492 z"
-                fill="#b57ee5"
-              />
+              <defs>
+                <path
+                  d="M2 58.6L0 6c0-1.7 1.3-3.2 3-3.3L47.6 0A3.2 3.2 0 0 1 51 3.2v57.2a3.2 3.2 0 0 1-3.3 3.2L5 61.6c-1.6 0-3-1.4-3-3z"
+                  id="a"
+                />
+              </defs>
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                transform="translate(6.6 .2)"
+              >
+                <mask
+                  fill="#fff"
+                  id="b"
+                >
+                  <use
+                    href="#a"
+                  />
+                </mask>
+                <use
+                  fill="#FF4785"
+                  fill-rule="nonzero"
+                  href="#a"
+                />
+                <path
+                  d="M37.7 7.8L38 .5 44 0l.3 7.6a.5.5 0 0 1-.8.4l-2.4-2-2.8 2.2a.5.5 0 0 1-.7-.4zM29.8 24c0 1.2 8.4.6 9.5-.3 0-8.4-4.5-12.9-12.8-12.9s-13 4.5-13 11.3c0 11.8 16 12 16 18.5 0 1.8-1 2.9-3 2.9-2.4 0-3.5-1.3-3.3-5.7 0-1-9.7-1.3-10 0-.8 10.6 5.9 13.7 13.5 13.7 7.4 0 13.2-4 13.2-11 0-12.7-16.2-12.3-16.2-18.6 0-2.6 1.9-2.9 3-2.9 1.2 0 3.3.2 3.1 5z"
+                  fill="#FFF"
+                  fill-rule="nonzero"
+                  mask="url(#b)"
+                />
+              </g>
             </svg>
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Storybook 5.0.0
             </span>
             <span
-              class="emotion-10"
+              class="emotion-9"
             >
               Update available
             </span>
           </header>
         </div>
         <div
-          class="emotion-12"
+          class="emotion-11"
         >
           <aside
-            class="emotion-13"
+            class="emotion-12"
           >
             <div>
               Latest version
@@ -1035,7 +1051,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
             </li>
           </ul>
           <a
-            class="emotion-14"
+            class="emotion-13"
             href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
             rel="noopener noreferrer"
             target="_blank"
@@ -1044,16 +1060,16 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
           </a>
         </div>
         <div
-          class="emotion-12"
+          class="emotion-11"
         >
           <div
-            class="emotion-32"
+            class="emotion-31"
           >
             <header
-              class="emotion-17"
+              class="emotion-16"
             >
               <h1
-                class="emotion-16"
+                class="emotion-15"
               >
                 <span>
                   Upgrade all storybook packages to latest:
@@ -1061,16 +1077,16 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
               </h1>
             </header>
             <div
-              class="emotion-24"
+              class="emotion-23"
             >
               <div
-                class="emotion-20"
+                class="emotion-19"
               >
                 <pre
-                  class="hljs emotion-19"
+                  class="hljs emotion-18"
                 >
                   <code
-                    class="emotion-18"
+                    class="emotion-17"
                   >
                     npx npm-check-updates 
                     <span
@@ -1089,13 +1105,13 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
                 </pre>
               </div>
               <ul
-                class="emotion-23"
+                class="emotion-22"
               >
                 <li
-                  class="emotion-22"
+                  class="emotion-21"
                 >
                   <button
-                    class="emotion-21"
+                    class="emotion-20"
                   >
                     copy
                   </button>
@@ -1106,29 +1122,29 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
               Alternatively if you're using a yarn you could run the following command, and check all storybook related packages:
             </p>
             <div
-              class="emotion-24"
+              class="emotion-23"
             >
               <div
-                class="emotion-20"
+                class="emotion-19"
               >
                 <pre
-                  class="hljs emotion-19"
+                  class="hljs emotion-18"
                 >
                   <code
-                    class="emotion-18"
+                    class="emotion-17"
                   >
                     yarn upgrade-interactive --latest
                   </code>
                 </pre>
               </div>
               <ul
-                class="emotion-23"
+                class="emotion-22"
               >
                 <li
-                  class="emotion-22"
+                  class="emotion-21"
                 >
                   <button
-                    class="emotion-21"
+                    class="emotion-20"
                   >
                     copy
                   </button>
@@ -1138,25 +1154,25 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
           </div>
         </div>
         <div
-          class="emotion-12"
+          class="emotion-11"
         >
           <div
-            class="emotion-37"
+            class="emotion-36"
           >
             <a
-              class="emotion-34"
+              class="emotion-33"
               href="https://storybook.js.org"
             >
               Storybook docs
             </a>
             <a
-              class="emotion-34"
+              class="emotion-33"
               href="https://github.com/storybooks/storybook"
             >
               GitHub
             </a>
             <a
-              class="emotion-34"
+              class="emotion-33"
               href="https://storybook.js.org/support"
             >
               Support
@@ -1169,8 +1185,8 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|AboutPage up to date 1`] = `
-.emotion-24 {
+exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
+.emotion-23 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -1315,7 +1331,7 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
   fill: currentColor;
 }
 
-.emotion-23 {
+.emotion-22 {
   display: block;
   position: relative;
   position: relative;
@@ -1326,11 +1342,11 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
   width: 100%;
 }
 
-.emotion-21 {
+.emotion-20 {
   padding: 20px;
 }
 
-.emotion-12 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1340,12 +1356,12 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
 }
 
 @media screen and (max-width:500px) {
-  .emotion-12 {
+  .emotion-11 {
     display: block;
   }
 }
 
-.emotion-11 {
+.emotion-10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1356,22 +1372,13 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
 }
 
 .emotion-8 {
-  display: block;
-  height: 40px;
-  width: auto;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 10px;
-}
-
-.emotion-9 {
   font-size: 30px;
   display: inline-block;
   line-height: 40px;
   font-weight: 700;
 }
 
-.emotion-10 {
+.emotion-9 {
   background: #DAFFD1;
   color: #4DC533;
   float: right;
@@ -1382,7 +1389,7 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
 }
 
 @media screen and (max-width:500px) {
-  .emotion-10 {
+  .emotion-9 {
     float: none;
     margin-top: 10px;
     display: block;
@@ -1390,18 +1397,18 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
   }
 }
 
-.emotion-13 {
+.emotion-12 {
   width: 160px;
 }
 
-.emotion-14 {
+.emotion-13 {
   float: right;
   font-weight: normal;
   font-size: 11px;
   color: rgba(0,0,0,0.4);
 }
 
-.emotion-19 {
+.emotion-18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1414,20 +1421,20 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
   border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-.emotion-19 > * {
+.emotion-18 > * {
   margin-left: 20px;
 }
 
-.emotion-19 > *:first-child {
+.emotion-18 > *:first-child {
   margin-left: 0;
 }
 
-.emotion-16 {
+.emotion-15 {
   color: inherit;
 }
 
 <div
-  class="emotion-24"
+  class="emotion-23"
 >
   <div
     class="emotion-7"
@@ -1462,66 +1469,83 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
         >
           <path
             class="emotion-3"
-            d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+            d="M586.7 512L936 861.4a52.8 52.8 0 0 1-74.6 74.7L512 586.7 162.6 936A52.8 52.8 0 0 1 88 861.4L437.3 512 88 162.6A52.8 52.8 0 1 1 162.6 88L512 437.3 861.4 88a52.8 52.8 0 1 1 74.7 74.7L586.7 512z"
           />
         </svg>
       </button>
     </div>
   </div>
   <div
-    class="emotion-23"
+    class="emotion-22"
   >
     <div
       class="emotion-4"
       role="tabpanel"
     >
       <div
-        class="emotion-21"
+        class="emotion-20"
       >
         <div
-          class="emotion-12"
+          class="emotion-11"
         >
           <header
-            class="emotion-11"
+            class="emotion-10"
           >
             <svg
-              class="emotion-8"
-              viewBox="0 0 420 538"
+              height="64px"
+              title="Storybook icon"
+              viewBox="0 0 64 64"
+              width="64px"
             >
-              <path
-                d="M 420,0 28,28 52,520 420,538 Z"
-                fill="#f1618c"
-              />
-              <path
-                d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
-                fill="#fff"
-              />
-              <path
-                d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
-                fill="#fff"
-              />
-              <path
-                d="M 42,520 18,28 H 0 l 18,492 z"
-                fill="#b57ee5"
-              />
+              <defs>
+                <path
+                  d="M2 58.6L0 6c0-1.7 1.3-3.2 3-3.3L47.6 0A3.2 3.2 0 0 1 51 3.2v57.2a3.2 3.2 0 0 1-3.3 3.2L5 61.6c-1.6 0-3-1.4-3-3z"
+                  id="a"
+                />
+              </defs>
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                transform="translate(6.6 .2)"
+              >
+                <mask
+                  fill="#fff"
+                  id="b"
+                >
+                  <use
+                    href="#a"
+                  />
+                </mask>
+                <use
+                  fill="#FF4785"
+                  fill-rule="nonzero"
+                  href="#a"
+                />
+                <path
+                  d="M37.7 7.8L38 .5 44 0l.3 7.6a.5.5 0 0 1-.8.4l-2.4-2-2.8 2.2a.5.5 0 0 1-.7-.4zM29.8 24c0 1.2 8.4.6 9.5-.3 0-8.4-4.5-12.9-12.8-12.9s-13 4.5-13 11.3c0 11.8 16 12 16 18.5 0 1.8-1 2.9-3 2.9-2.4 0-3.5-1.3-3.3-5.7 0-1-9.7-1.3-10 0-.8 10.6 5.9 13.7 13.5 13.7 7.4 0 13.2-4 13.2-11 0-12.7-16.2-12.3-16.2-18.6 0-2.6 1.9-2.9 3-2.9 1.2 0 3.3.2 3.1 5z"
+                  fill="#FFF"
+                  fill-rule="nonzero"
+                  mask="url(#b)"
+                />
+              </g>
             </svg>
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Storybook 5.0.0
             </span>
             <span
-              class="emotion-10"
+              class="emotion-9"
             >
               You're up to date
             </span>
           </header>
         </div>
         <div
-          class="emotion-12"
+          class="emotion-11"
         >
           <aside
-            class="emotion-13"
+            class="emotion-12"
           >
             <div>
               Latest version
@@ -1550,7 +1574,7 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
             </li>
           </ul>
           <a
-            class="emotion-14"
+            class="emotion-13"
             href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
             rel="noopener noreferrer"
             target="_blank"
@@ -1559,25 +1583,25 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
           </a>
         </div>
         <div
-          class="emotion-12"
+          class="emotion-11"
         >
           <div
-            class="emotion-19"
+            class="emotion-18"
           >
             <a
-              class="emotion-16"
+              class="emotion-15"
               href="https://storybook.js.org"
             >
               Storybook docs
             </a>
             <a
-              class="emotion-16"
+              class="emotion-15"
               href="https://github.com/storybooks/storybook"
             >
               GitHub
             </a>
             <a
-              class="emotion-16"
+              class="emotion-15"
               href="https://storybook.js.org/support"
             >
               Support

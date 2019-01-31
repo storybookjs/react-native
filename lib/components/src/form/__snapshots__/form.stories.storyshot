@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Form/Button alignment 1`] = `
+exports[`Storyshots Basics|Form/Button alignment 1`] = `
 .emotion-6 > * {
   margin-top: 10px;
 }
@@ -18,7 +18,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 
 .emotion-4 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -46,7 +46,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -74,7 +74,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -133,7 +133,7 @@ exports[`Storyshots Components|Form/Button alignment 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Button sizes 1`] = `
+exports[`Storyshots Basics|Form/Button sizes 1`] = `
 .emotion-6 > * {
   margin-top: 10px;
 }
@@ -151,7 +151,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -179,7 +179,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -209,7 +209,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 
 .emotion-4 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -268,7 +268,7 @@ exports[`Storyshots Components|Form/Button sizes 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Button validations 1`] = `
+exports[`Storyshots Basics|Form/Button validations 1`] = `
 .emotion-8 > * {
   margin-top: 10px;
 }
@@ -286,7 +286,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 
 .emotion-6 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -314,7 +314,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -343,7 +343,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -372,7 +372,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 
 .emotion-4 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -441,7 +441,7 @@ exports[`Storyshots Components|Form/Button validations 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Field field 1`] = `
+exports[`Storyshots Basics|Form/Field field 1`] = `
 .emotion-2 {
   width: 100%;
   box-sizing: border-box;
@@ -480,7 +480,7 @@ exports[`Storyshots Components|Form/Field field 1`] = `
 
 .emotion-1 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -539,7 +539,7 @@ exports[`Storyshots Components|Form/Field field 1`] = `
 </label>
 `;
 
-exports[`Storyshots Components|Form/Input alignment 1`] = `
+exports[`Storyshots Basics|Form/Input alignment 1`] = `
 .emotion-6 > * {
   margin-top: 10px;
 }
@@ -557,7 +557,7 @@ exports[`Storyshots Components|Form/Input alignment 1`] = `
 
 .emotion-4 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -579,7 +579,7 @@ exports[`Storyshots Components|Form/Input alignment 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -601,7 +601,7 @@ exports[`Storyshots Components|Form/Input alignment 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -651,7 +651,7 @@ exports[`Storyshots Components|Form/Input alignment 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Input sizes 1`] = `
+exports[`Storyshots Basics|Form/Input sizes 1`] = `
 .emotion-6 > * {
   margin-top: 10px;
 }
@@ -669,7 +669,7 @@ exports[`Storyshots Components|Form/Input sizes 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -691,7 +691,7 @@ exports[`Storyshots Components|Form/Input sizes 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -715,7 +715,7 @@ exports[`Storyshots Components|Form/Input sizes 1`] = `
 
 .emotion-4 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -765,7 +765,7 @@ exports[`Storyshots Components|Form/Input sizes 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Input validations 1`] = `
+exports[`Storyshots Basics|Form/Input validations 1`] = `
 .emotion-8 > * {
   margin-top: 10px;
 }
@@ -783,7 +783,7 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
 
 .emotion-6 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -805,7 +805,7 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -828,7 +828,7 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -851,7 +851,7 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
 
 .emotion-4 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -910,7 +910,7 @@ exports[`Storyshots Components|Form/Input validations 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Select alignment 1`] = `
+exports[`Storyshots Basics|Form/Select alignment 1`] = `
 .emotion-3 > * {
   margin-top: 10px;
 }
@@ -921,7 +921,7 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -948,7 +948,7 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -975,7 +975,7 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
 
 .emotion-1 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1066,7 +1066,7 @@ exports[`Storyshots Components|Form/Select alignment 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Select sizes 1`] = `
+exports[`Storyshots Basics|Form/Select sizes 1`] = `
 .emotion-6 > * {
   margin-top: 10px;
 }
@@ -1077,7 +1077,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1111,7 +1111,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1140,7 +1140,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 
 .emotion-4 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1243,7 +1243,7 @@ exports[`Storyshots Components|Form/Select sizes 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Select validations 1`] = `
+exports[`Storyshots Basics|Form/Select validations 1`] = `
 .emotion-4 > * {
   margin-top: 10px;
 }
@@ -1254,7 +1254,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 
 .emotion-3 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1281,7 +1281,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1309,7 +1309,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 
 .emotion-1 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1337,7 +1337,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1449,7 +1449,7 @@ exports[`Storyshots Components|Form/Select validations 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Textarea alignment 1`] = `
+exports[`Storyshots Basics|Form/Textarea alignment 1`] = `
 .emotion-6 > * {
   margin-top: 10px;
 }
@@ -1467,7 +1467,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 
 .emotion-4 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1492,7 +1492,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1517,7 +1517,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1579,7 +1579,7 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Textarea sizes 1`] = `
+exports[`Storyshots Basics|Form/Textarea sizes 1`] = `
 .emotion-6 > * {
   margin-top: 10px;
 }
@@ -1597,7 +1597,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1622,7 +1622,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1649,7 +1649,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 
 .emotion-4 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1708,7 +1708,7 @@ exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Form/Textarea validations 1`] = `
+exports[`Storyshots Basics|Form/Textarea validations 1`] = `
 .emotion-8 > * {
   margin-top: 10px;
 }
@@ -1726,7 +1726,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 
 .emotion-6 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1751,7 +1751,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1777,7 +1777,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 
 .emotion-2 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1803,7 +1803,7 @@ exports[`Storyshots Components|Form/Textarea validations 1`] = `
 
 .emotion-4 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;

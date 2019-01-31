@@ -5,7 +5,7 @@ import memoize from 'memoizerific';
 
 import { Global, css } from '@storybook/theming';
 
-import { Popout, Item, Icons, Icon, IconButton, Title, List } from '@storybook/components';
+import { Popout, Item, Icons, MenuIcon, IconButton, Title, List } from '@storybook/components';
 import { STORY_CHANGED } from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
 
@@ -118,7 +118,7 @@ export default class ViewportTool extends Component {
                       this.change(undefined);
                     }}
                   >
-                    <Icon type="undo" />
+                    <MenuIcon type="undo" />
                     <Title>Reset (responsive)</Title>
                   </Item>
                   <Item
@@ -128,7 +128,7 @@ export default class ViewportTool extends Component {
                       this.rotate();
                     }}
                   >
-                    <Icon type="sync" />
+                    <MenuIcon type="sync" />
                     <Title>Rotate</Title>
                   </Item>
                 </Fragment>
@@ -142,7 +142,7 @@ export default class ViewportTool extends Component {
                     this.change(key);
                   }}
                 >
-                  <Icon type={type} />
+                  <MenuIcon type={type} />
                   <Title>{name}</Title>
                 </Item>
               ))}

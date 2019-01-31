@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|SyntaxHighlighter bash 1`] = `
+exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
 .emotion-2 {
   position: relative;
   overflow: auto;
@@ -214,7 +214,7 @@ exports[`Storyshots Components|SyntaxHighlighter bash 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|SyntaxHighlighter bordered & copy-able 1`] = `
+exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
 .emotion-6 {
   position: relative;
   overflow: hidden;
@@ -669,7 +669,7 @@ exports[`Storyshots Components|SyntaxHighlighter bordered & copy-able 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|SyntaxHighlighter jsx 1`] = `
+exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
 .emotion-2 {
   position: relative;
   overflow: auto;
@@ -1080,7 +1080,7 @@ exports[`Storyshots Components|SyntaxHighlighter jsx 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|SyntaxHighlighter showLineNumbers 1`] = `
+exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
 .emotion-2 {
   position: relative;
   overflow: auto;
@@ -1493,7 +1493,7 @@ exports[`Storyshots Components|SyntaxHighlighter showLineNumbers 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|SyntaxHighlighter story 1`] = `
+exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
 .emotion-2 {
   position: relative;
   overflow: auto;
@@ -1918,7 +1918,7 @@ exports[`Storyshots Components|SyntaxHighlighter story 1`] = `
         <span
           class="token string"
         >
-          'Components|Heading'
+          'Basics|Heading'
         </span>
         <span
           class="token punctuation"

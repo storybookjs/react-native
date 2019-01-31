@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
+exports[`Storyshots Basics|PanelActionBar 3 items 1`] = `
 .emotion-6 {
   position: absolute;
   bottom: 0;
@@ -110,7 +110,7 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
 </ul>
 `;
 
-exports[`Storyshots Components|PanelActionBar single item 1`] = `
+exports[`Storyshots Basics|PanelActionBar single item 1`] = `
 .emotion-2 {
   position: absolute;
   bottom: 0;

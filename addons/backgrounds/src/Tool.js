@@ -6,7 +6,16 @@ import memoize from 'memoizerific';
 import { logger } from '@storybook/client-logger';
 import { STORY_CHANGED } from '@storybook/core-events';
 
-import { Popout, Item, Icons, Icon, IconButton, Title, Detail, List } from '@storybook/components';
+import {
+  Popout,
+  Item,
+  Icons,
+  MenuIcon,
+  IconButton,
+  Title,
+  Detail,
+  List,
+} from '@storybook/components';
 import * as S from './components';
 
 import { PARAM_KEY } from './constants';
@@ -107,7 +116,7 @@ export default class BackgroundTool extends Component {
                     this.change(undefined);
                   }}
                 >
-                  <Icon type="undo" />
+                  <MenuIcon type="undo" />
                   <Title>Reset</Title>
                   <Detail>transparent</Detail>
                 </Item>
@@ -122,7 +131,7 @@ export default class BackgroundTool extends Component {
                   this.change(key);
                 }}
               >
-                <Icon type={<S.ColorIcon background={value} />} />
+                <MenuIcon type={<S.ColorIcon background={value} />} />
                 <Title>{key}</Title>
                 <Detail>{value}</Detail>
               </Item>

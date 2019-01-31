@@ -4,7 +4,7 @@ import memoize from 'memoizerific';
 import { styled } from '@storybook/theming';
 
 import { logger } from '@storybook/client-logger';
-import { Popout, Item, Icons, Icon, IconButton, Title, List } from '@storybook/components';
+import { Popout, Item, Icons, MenuIcon, IconButton, Title, List } from '@storybook/components';
 
 const getIframe = memoize(1)(() => document.getElementById('storybook-preview-iframe'));
 
@@ -63,7 +63,7 @@ class ColorBlindness extends Component {
                   hide();
                 }}
               >
-                <Icon type={<ColorIcon filter={i} />} />
+                <MenuIcon type={<ColorIcon filter={i} />} />
                 <Title>{i}</Title>
               </Item>
             ))}
@@ -73,7 +73,7 @@ class ColorBlindness extends Component {
                 hide();
               }}
             >
-              <Icon type={<ColorIcon filter="mono" />} />
+              <MenuIcon type={<ColorIcon filter="mono" />} />
               <Title>mono</Title>
             </Item>
             <Item
@@ -82,7 +82,7 @@ class ColorBlindness extends Component {
                 hide();
               }}
             >
-              <Icon type={<ColorIcon />} />
+              <MenuIcon type={<ColorIcon />} />
               <Title>Off</Title>
             </Item>
           </List>

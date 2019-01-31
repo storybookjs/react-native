@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
+exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
 .emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -280,7 +280,7 @@ exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
+exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
 .emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -516,7 +516,7 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Tabs stateful - static 1`] = `
+exports[`Storyshots Basics|Tabs stateful - static 1`] = `
 .emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -710,7 +710,7 @@ exports[`Storyshots Components|Tabs stateful - static 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
+exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 .emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1009,7 +1009,7 @@ exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
+exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
 .emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1293,7 +1293,7 @@ exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Tabs stateless - empty 1`] = `
+exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
 .emotion-0 {
   font-size: 11px;
   display: block;
@@ -1314,7 +1314,7 @@ exports[`Storyshots Components|Tabs stateless - empty 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
+exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
 .emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1598,7 +1598,7 @@ exports[`Storyshots Components|Tabs stateless - no scrolling 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Tabs stateless - with tools 1`] = `
+exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
 .emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;

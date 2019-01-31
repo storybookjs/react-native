@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Menu initial closed 1`] = `
+exports[`Storyshots Basics|Menu initial closed 1`] = `
 .emotion-0 {
   background: hotpink;
 }
@@ -16,7 +16,7 @@ exports[`Storyshots Components|Menu initial closed 1`] = `
 </span>
 `;
 
-exports[`Storyshots Components|Menu multiple open 1`] = `
+exports[`Storyshots Basics|Menu multiple open 1`] = `
 Array [
   .emotion-0 {
   background: hotpink;
@@ -47,7 +47,7 @@ Array [
 ]
 `;
 
-exports[`Storyshots Components|Menu with Items 1`] = `
+exports[`Storyshots Basics|Menu with Items 1`] = `
 .emotion-0 {
   background: hotpink;
 }
@@ -63,7 +63,7 @@ exports[`Storyshots Components|Menu with Items 1`] = `
 </span>
 `;
 
-exports[`Storyshots Components|Menu with Items that close 1`] = `
+exports[`Storyshots Basics|Menu with Items that close 1`] = `
 .emotion-0 {
   background: hotpink;
 }
@@ -79,7 +79,7 @@ exports[`Storyshots Components|Menu with Items that close 1`] = `
 </span>
 `;
 
-exports[`Storyshots Components|Menu with links 1`] = `
+exports[`Storyshots Basics|Menu with links 1`] = `
 .emotion-0 {
   background: hotpink;
 }

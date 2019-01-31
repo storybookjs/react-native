@@ -4,7 +4,7 @@ exports[`Storyshots Addons|Actions All types 1`] = `
 Array [
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -37,7 +37,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -70,7 +70,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -103,7 +103,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -136,7 +136,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -169,7 +169,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -202,7 +202,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -235,7 +235,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -268,7 +268,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -301,7 +301,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -334,7 +334,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -367,7 +367,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -400,7 +400,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -433,7 +433,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -466,7 +466,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -499,7 +499,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -532,7 +532,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -565,7 +565,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -598,7 +598,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -631,7 +631,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -668,7 +668,7 @@ Array [
 exports[`Storyshots Addons|Actions Basic example 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -704,7 +704,7 @@ exports[`Storyshots Addons|Actions Basic example 1`] = `
 exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -740,7 +740,7 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -776,7 +776,7 @@ exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
 exports[`Storyshots Addons|Actions Decorated action 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -812,7 +812,7 @@ exports[`Storyshots Addons|Actions Decorated action 1`] = `
 exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -848,7 +848,7 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -885,7 +885,7 @@ exports[`Storyshots Addons|Actions Limit Action Output 1`] = `
 Array [
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -918,7 +918,7 @@ Array [
   </button>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -955,7 +955,7 @@ Array [
 exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -991,7 +991,7 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1027,7 +1027,7 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1063,7 +1063,7 @@ exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
 exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1103,7 +1103,7 @@ Array [
   </p>,
   .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1140,7 +1140,7 @@ Array [
 exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1176,7 +1176,7 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;
@@ -1212,7 +1212,7 @@ exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
 exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
 .emotion-0 {
   padding: 0 10px;
-  color: #444;
+  color: #333;
   background: rgba(0,0,0,0.1);
   border-radius: 4px;
   -webkit-transition: border-bottom-color .3s linear;

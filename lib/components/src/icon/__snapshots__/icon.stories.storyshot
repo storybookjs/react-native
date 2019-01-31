@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Icon labels 1`] = `
+exports[`Storyshots Basics|Icon labels 1`] = `
 .emotion-1 {
   display: block;
 }
@@ -9,7 +9,7 @@ exports[`Storyshots Components|Icon labels 1`] = `
   fill: currentColor;
 }
 
-.emotion-600 {
+.emotion-604 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -50,7 +50,7 @@ exports[`Storyshots Components|Icon labels 1`] = `
 }
 
 <div
-  class="emotion-600"
+  class="emotion-604"
 >
   <div
     class="emotion-3"
@@ -764,6 +764,27 @@ exports[`Storyshots Components|Icon labels 1`] = `
       class="emotion-2"
     >
       close
+    </div>
+  </div>
+  <div
+    class="emotion-3"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M586.7 512L936 861.4a52.8 52.8 0 0 1-74.6 74.7L512 586.7 162.6 936A52.8 52.8 0 0 1 88 861.4L437.3 512 88 162.6A52.8 52.8 0 1 1 162.6 88L512 437.3 861.4 88a52.8 52.8 0 1 1 74.7 74.7L586.7 512z"
+      />
+    </svg>
+     
+    <div
+      class="emotion-2"
+    >
+      closeAlt
     </div>
   </div>
   <div
@@ -3205,7 +3226,7 @@ exports[`Storyshots Components|Icon labels 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Icon no labels 1`] = `
+exports[`Storyshots Basics|Icon no labels 1`] = `
 .emotion-1 {
   display: block;
 }
@@ -3214,7 +3235,7 @@ exports[`Storyshots Components|Icon no labels 1`] = `
   fill: currentColor;
 }
 
-.emotion-450 {
+.emotion-453 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3264,7 +3285,7 @@ exports[`Storyshots Components|Icon no labels 1`] = `
 }
 
 <div
-  class="emotion-450"
+  class="emotion-453"
 >
   <div
     class="emotion-2"
@@ -3773,6 +3794,21 @@ exports[`Storyshots Components|Icon no labels 1`] = `
       <path
         class="emotion-0"
         d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+      />
+    </svg>
+  </div>
+  <div
+    class="emotion-2"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M586.7 512L936 861.4a52.8 52.8 0 0 1-74.6 74.7L512 586.7 162.6 936A52.8 52.8 0 0 1 88 861.4L437.3 512 88 162.6A52.8 52.8 0 1 1 162.6 88L512 437.3 861.4 88a52.8 52.8 0 1 1 74.7 74.7L586.7 512z"
       />
     </svg>
   </div>
