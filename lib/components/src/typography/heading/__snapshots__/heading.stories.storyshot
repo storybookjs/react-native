@@ -1,6 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Typography/Heading types 1`] = `
+.emotion-0 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: #444;
+  line-height: 1em;
+}
+
+.emotion-0 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+.emotion-0 > sub {
+  color: rgba(0,0,0,0.4);
+}
+
 .emotion-18 {
   color: currentColor;
   font-weight: normal;
@@ -24,29 +47,6 @@ exports[`Storyshots Components|Typography/Heading types 1`] = `
   padding-top: 5px;
   line-height: 1.2em;
   font-size: 14px;
-}
-
-.emotion-0 {
-  color: currentColor;
-  font-weight: normal;
-  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  display: block;
-  color: #444;
-  line-height: 1em;
-}
-
-.emotion-0 > sub {
-  display: block;
-  padding-top: 5px;
-  line-height: 1.2em;
-  font-size: 14px;
-}
-
-.emotion-0 > sub {
-  color: rgba(0,0,0,0.4);
 }
 
 .emotion-2 {

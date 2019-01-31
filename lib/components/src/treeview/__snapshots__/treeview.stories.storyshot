@@ -315,7 +315,29 @@ Array [
     class="emotion-0"
     placeholder="search..."
   />,
-  .emotion-0 {
+  .emotion-2 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 0;
+  background: transparent;
+}
+
+.emotion-1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.emotion-0 {
   color: currentColor;
   font-weight: normal;
   font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -338,28 +360,6 @@ Array [
   padding-top: 5px;
   line-height: 1.2em;
   font-size: 14px;
-}
-
-.emotion-2 {
-  min-height: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-left: 0;
-  background: transparent;
-}
-
-.emotion-1 {
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 <div
@@ -392,7 +392,29 @@ Array [
       </div>
     </a>
   </div>,
-  .emotion-0 {
+  .emotion-2 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 0;
+  background: transparent;
+}
+
+.emotion-1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.emotion-0 {
   color: currentColor;
   font-weight: normal;
   font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -415,28 +437,6 @@ Array [
   padding-top: 5px;
   line-height: 1.2em;
   font-size: 14px;
-}
-
-.emotion-2 {
-  min-height: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-left: 0;
-  background: transparent;
-}
-
-.emotion-1 {
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 <div
@@ -469,7 +469,29 @@ Array [
       </div>
     </a>
   </div>,
-  .emotion-0 {
+  .emotion-2 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 0;
+  background: transparent;
+}
+
+.emotion-1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.emotion-0 {
   color: currentColor;
   font-weight: normal;
   font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -492,28 +514,6 @@ Array [
   padding-top: 5px;
   line-height: 1.2em;
   font-size: 14px;
-}
-
-.emotion-2 {
-  min-height: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-left: 0;
-  background: transparent;
-}
-
-.emotion-1 {
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 <div
