@@ -104,11 +104,13 @@ class DateType extends Component {
             this.dateInput = el;
           }}
           id={`${name}date`}
+          name={`${name}date`}
           onChange={this.onDateChange}
         />
         <FlexInput
           type="time"
           id={`${name}time`}
+          name={`${name}time`}
           ref={el => {
             this.timeInput = el;
           }}
