@@ -106,7 +106,7 @@
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "jest-config": "^24.0.0",
-    "jest-diff": "^23.6.0",
+    "jest-diff": "^24.0.0",
     "jest-emotion": "^10.0.5",
     "jest-environment-jsdom": "^24.0.0",
     "jest-enzyme": "^7.0.0",
