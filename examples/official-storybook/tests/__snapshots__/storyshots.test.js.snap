@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components|Preview/Iframe errorStory 1`] = `
+<iframe
+  allowfullscreen=""
+  id="iframe"
+  src="/iframe.html?id=core-errors--story-throws-exception"
+  style="width:100%;height:500px"
+  title="Missing"
+/>
+`;
+
+exports[`Storyshots Components|Preview/Iframe missingStory 1`] = `
+<iframe
+  allowfullscreen=""
+  id="iframe"
+  src="/iframe.html?id=missing"
+  style="width:100%;height:500px"
+  title="Missing"
+/>
+`;
+
+exports[`Storyshots Components|Preview/Iframe workingStory 1`] = `
+<iframe
+  allowfullscreen=""
+  id="iframe"
+  src="/iframe.html?id=ui-panel--default"
+  style="width:100%;height:500px"
+  title="Missing"
+/>
+`;
+
 exports[`Storyshots Core|Events Force re-render 1`] = `
 .emotion-0 {
   padding: 0 10px;
