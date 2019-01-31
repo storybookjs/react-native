@@ -1095,9 +1095,10 @@
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
 
-"@ember/test-helpers@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@ember/test-helpers/-/test-helpers-1.3.0.tgz#7eb6878339291c2b8bcdc5204a88d2814387b509"
+"@ember/test-helpers@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@ember/test-helpers/-/test-helpers-1.3.1.tgz#575b30f4b74c888ea8510c6adffb855876c93a3d"
+  integrity sha512-j/o5ouq/i64PHkpkcq5Ji26cqxezHhMFRIiehdBmJQo/dVI3gAEsJJh0+qeDD8MrT8WhFT9oqLcicfjEWDEvaA==
   dependencies:
     broccoli-debug "^0.6.5"
     broccoli-funnel "^2.0.1"
