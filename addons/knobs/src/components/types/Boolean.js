@@ -17,6 +17,7 @@ const Input = styled.input({
 const BooleanType = ({ knob, onChange }) => (
   <Input
     id={knob.name}
+    name={knob.name}
     type="checkbox"
     onChange={e => onChange(e.target.checked)}
     checked={knob.value}
