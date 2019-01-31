@@ -12,7 +12,7 @@ const main = {
   mainFill: 'rgba(255,255,255,0.89)',
   mainTextFace: baseFonts.fontFamily,
   mainTextColor: baseFonts.color,
-  mainTextSize: 13,
+  mainTextSize: 14,
 };
 
 const bar = {

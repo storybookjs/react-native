@@ -1,4 +1,5 @@
 import { easing, animation } from './animation';
+import { bodyStyles } from './global';
 
 export const baseFonts = {
   fontFamily: [
@@ -13,7 +14,7 @@ export const baseFonts = {
     'Arial',
     'sans-serif',
   ].join(', '),
-  color: '#444',
+  color: '#333',
   WebkitFontSmoothing: 'antialiased',
 };
 
@@ -29,7 +30,7 @@ export const monoFonts = {
     'Monaco',
     'monospace',
   ].join(', '),
-  color: '#444',
+  color: '#333',
   WebkitFontSmoothing: 'antialiased',
 };
 
@@ -101,6 +102,7 @@ export interface Theme {
   typography: typeof typography;
   easing: typeof easing;
   animation: typeof animation;
+  bodyStyles: typeof bodyStyles;
 
   mainBackground: string;
   mainBorder: string;
