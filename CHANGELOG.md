@@ -1,3 +1,45 @@
+## 5.0.0-alpha.11 (February 1, 2019)
+
+### Features
+
+* Addon-knobs: Added property name into form fields ([#5414](https://github.com/storybooks/storybook/pull/5414))
+
+### Bug Fixes
+
+* UI: Fix the layout issue where panels still sort-of appear on non story viewmodes ([#5413](https://github.com/storybooks/storybook/pull/5413))
+
+### Maintenance
+
+* UI: Refactoring components and adding more stories ([#5404](https://github.com/storybooks/storybook/pull/5404))
+* UI: Add extra stories for StoryExplorer component & subcomponents ([#5424](https://github.com/storybooks/storybook/pull/5424))
+* UI: theming treeview & preview ([#5372](https://github.com/storybooks/storybook/pull/5372))
+
+### Dependency Upgrades
+
+* Bump @ngrx/store from 7.1.0 to 7.2.0 ([#5433](https://github.com/storybooks/storybook/pull/5433))
+* Bump @angular/cli from 7.2.2 to 7.3.0 ([#5432](https://github.com/storybooks/storybook/pull/5432))
+* Bump ember-cli-babel from 7.4.0 to 7.4.1 ([#5431](https://github.com/storybooks/storybook/pull/5431))
+* Bump @ember/test-helpers from 1.3.0 to 1.3.1 ([#5430](https://github.com/storybooks/storybook/pull/5430))
+* Bump jest-diff from 23.6.0 to 24.0.0 ([#5429](https://github.com/storybooks/storybook/pull/5429))
+* Bump @types/react from 16.7.21 to 16.7.22 ([#5405](https://github.com/storybooks/storybook/pull/5405))
+* Bump @types/node from 10.12.18 to 10.12.19 ([#5406](https://github.com/storybooks/storybook/pull/5406))
+* Bump autoprefixer from 9.4.6 to 9.4.7 ([#5407](https://github.com/storybooks/storybook/pull/5407))
+* Bump storybook-chromatic from 1.2.4 to 1.2.5 ([#5408](https://github.com/storybooks/storybook/pull/5408))
+* Bump rxjs-compat from 6.3.3 to 6.4.0 ([#5409](https://github.com/storybooks/storybook/pull/5409))
+* Bump jest-config from 23.6.0 to 24.0.0 ([#5410](https://github.com/storybooks/storybook/pull/5410))
+* Bump jest-environment-jsdom from 23.4.0 to 24.0.0 ([#5398](https://github.com/storybooks/storybook/pull/5398))
+* Bump lint-staged from 8.1.0 to 8.1.1 ([#5395](https://github.com/storybooks/storybook/pull/5395))
+* Bump ts-node from 8.0.1 to 8.0.2 ([#5396](https://github.com/storybooks/storybook/pull/5396))
+* Bump @angular/compiler from 7.2.1 to 7.2.2 ([#5394](https://github.com/storybooks/storybook/pull/5394))
+* Bump eslint-plugin-jsx-a11y from 6.1.2 to 6.2.0 ([#5397](https://github.com/storybooks/storybook/pull/5397))
+* Bump telejson from 1.0.0 to 1.0.1 ([#5399](https://github.com/storybooks/storybook/pull/5399))
+* Bump @ember/test-helpers from 1.1.0 to 1.3.0 ([#5383](https://github.com/storybooks/storybook/pull/5383))
+* Bump esm from 3.1.1 to 3.1.4 ([#5384](https://github.com/storybooks/storybook/pull/5384))
+* Bump ws from 6.1.2 to 6.1.3 ([#5385](https://github.com/storybooks/storybook/pull/5385))
+* Bump jest-jasmine2 from 23.6.0 to 24.0.0 ([#5386](https://github.com/storybooks/storybook/pull/5386))
+* Bump vue-loader from 15.6.0 to 15.6.2 ([#5387](https://github.com/storybooks/storybook/pull/5387))
+* Bump @types/react from 16.7.20 to 16.7.21 ([#5388](https://github.com/storybooks/storybook/pull/5388))
+
 ## 5.0.0-alpha.10 (January 28, 2019)
 
 ### Features
