@@ -10,6 +10,7 @@ addons.register(ADDON_ID, api => {
   addons.add(ADDON_ID, {
     type: types.TOOL,
     title: 'viewport / media-queries',
+    match: ({ viewMode }) => viewMode === 'story',
     render: () => <Tool channel={channel} api={api} />,
   });
 });

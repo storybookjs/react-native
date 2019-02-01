@@ -104,9 +104,9 @@ storiesOf('Addons|Knobs.withKnobs', module)
   })
   .add('tweaks static values organized in groups', () => {
     const GROUP_IDS = {
-      DISPLAY: 'DISPLAY',
-      GENERAL: 'GENERAL',
-      FAVORITES: 'FAVORITES',
+      DISPLAY: 'Display',
+      GENERAL: 'General',
+      FAVORITES: 'Favorites',
     };
 
     const fruits = {

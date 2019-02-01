@@ -1,23 +1,8 @@
 import { chromeLight } from 'react-inspector';
 import { create as createSyntax } from './light-syntax';
 
-import { Brand } from '../brand';
-import { baseFonts, monoFonts } from '../base';
-
-import { mkColor } from '../utils';
-
-const colors = {
-  green1: mkColor('#008000'),
-  red1: mkColor('#A31515'),
-  red2: mkColor('#9a050f'),
-  red3: mkColor('#800000'),
-  red4: mkColor('#ff0000'),
-  gray1: mkColor('#393A34'),
-  cyan1: mkColor('#36acaa'),
-  cyan2: mkColor('#2B91AF'),
-  blue1: mkColor('#0000ff'),
-  blue2: mkColor('#00009f'),
-};
+import { baseFonts, monoFonts, color, background, typography, Theme } from '../base';
+import { easing, animation } from '../animation';
 
 const main = {
   mainBackground: '#f6f9fc linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.1))',
@@ -32,7 +17,8 @@ const main = {
 
 const bar = {
   barFill: 'rgba(255,255,255,1)',
-  barSelectedColor: 'rgba(0,0,0,0.1)',
+  barTextColor: color.mediumdark,
+  barSelectedColor: color.secondary,
 };
 
 const layout = {
@@ -42,7 +28,11 @@ const layout = {
 const aside = {
   asideFill: 'transparent',
   asideSelected: {
-    color: '#9fdaff',
+    background: color.secondary,
+    color: color.lightest,
+  },
+  asideHover: {
+    background: '#EAF3FC',
   },
 };
 
@@ -50,25 +40,42 @@ const mono = {
   monoTextFace: monoFonts.fontFamily,
 };
 
-const light = {
+const light: Theme = {
   ...main,
   ...bar,
   ...layout,
   ...mono,
   ...aside,
+
+  // DOM: official global style vars
+  color,
+  background,
+  typography,
+  easing,
+  animation,
+
   inputFill: 'rgba(0,0,0,0.1)',
   dimmedTextColor: 'rgba(0,0,0,0.4)',
-  highlightColor: '#9fdaff',
-  menuHighlightColor: '#1ea7fd',
-  successColor: '#09833a',
-  failColor: '#d53535',
-  warnColor: 'orange',
+  menuHighlightColor: '#199EFF',
   monoTextFace: monoFonts.fontFamily,
-  overlayBackground: 'linear-gradient(to bottom right, rgba(233, 233, 233, 0.6), rgba(255, 255, 255, 0.8))',
 
-  brand: Brand,
+  brand: null,
 
-  code: createSyntax({ colors, mono }),
+  code: createSyntax({
+    colors: {
+      green1: '#008000',
+      red1: '#A31515',
+      red2: '#9a050f',
+      red3: '#800000',
+      red4: '#ff0000',
+      gray1: '#393A34',
+      cyan1: '#36acaa',
+      cyan2: '#2B91AF',
+      blue1: '#0000ff',
+      blue2: '#00009f',
+    },
+    mono,
+  }),
   addonActionsTheme: {
     ...chromeLight,
     BASE_FONT_FAMILY: monoFonts.fontFamily,

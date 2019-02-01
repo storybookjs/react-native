@@ -1,21 +1,19 @@
 import React, { Component, Fragment } from 'react';
 import { SyntaxHighlighter } from '@storybook/components';
-import events, { STORY_CHANGED } from '@storybook/core-events';
+import Eventtypes, { STORY_CHANGED } from '@storybook/core-events';
+
 import { EVENTS, PARAM_KEY } from './constants';
-import { Channel } from '@storybook/channels';
 import { CssResource } from './CssResource';
-import { bool, func, shape } from 'prop-types';
 
 interface CssResourcePanelProps {
   active: boolean;
-  channel: Channel;
   api: {
-    emit: (event: any, data: any) => void;
-    on: (event: events, callback: (data: any) => void) => void;
-    off: (event: events, callback: (data: any) => void) => void;
-    getQueryParam: () => void;
-    getParameters: (id: string, paramKey: string) => any;
-    setQueryParams: () => void;
+    emit(event: any, data: any): void;
+    on(event: Eventtypes, callback: (data: any) => void): void;
+    off(event: Eventtypes, callback: (data: any) => void): void;
+    getQueryParam(): void;
+    getParameters(id: string, paramKey: string): any;
+    setQueryParams(): void;
   };
 }
 
@@ -90,17 +88,3 @@ export class CssResourcePanel extends Component<CssResourcePanelProps, CssResour
     );
   }
 }
-
-(CssResourcePanel as any).propTypes = {
-  active: bool.isRequired,
-  channel: shape({
-    on: func,
-    emit: func,
-    removeListener: func,
-  }).isRequired,
-  api: shape({
-    on: func,
-    getQueryParam: func,
-    setQueryParams: func,
-  }).isRequired,
-};
