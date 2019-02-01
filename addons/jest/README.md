@@ -12,7 +12,7 @@ Brings Jest results in storybook.
 
 ### Install
 
-`npm install --save-dev @storybook/addon-jest`
+`yarn add --save-dev @storybook/addon-jest --dev`
 
 or
 

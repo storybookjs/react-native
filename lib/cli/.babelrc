@@ -3,10 +3,8 @@
     ["@babel/preset-env", {
       "targets": {
         "node": 4
-      }
+      },
+      "useBuiltIns": "usage"
     }]
-  ],
-  "plugins": [
-    ["@babel/plugin-transform-runtime"]
   ]
 }

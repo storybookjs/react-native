@@ -2,6 +2,6 @@
 
 exports[`Storyshots Core|Parameters passed to story 1`] = `
 <div>
-  Parameters are {"globalParameter":"globalParameter","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
+  Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"globalParameter":"globalParameter","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
 </div>
 `;

@@ -134,9 +134,9 @@ Add ability to customize styles in the story preview area
 
 Embed [Figma](https://figma.com) designs in a storybook panel.
 
-### [State](https://github.com/Sambego/storybook-state)
+### [State](https://github.com/Sambego/storybook-state)	
 
-Manage state inside a story. Update components when this state changes.
+Manage state inside a story using a store. Update components when this state changes.	
 
 ### [State](https://github.com/dump247/storybook-state/)
 
@@ -164,3 +164,7 @@ JSS theme selection.
 ### [React live edit](https://github.com/vertexbz/storybook-addon-react-live-edit)
 
 Provides live react story editing and preview.
+
+### [copy-code-block](https://www.npmjs.com/package/@pickra/copy-code-block)
+
+Display code and copy it to the clipboard. It also has options to customize colors and syntax highlighting for any language. There is similar functionality via [@storybook/addon-info](https://www.npmjs.com/package/@storybook/addon-info) but addon-info doesn't currently work when using [@storybook/html](https://www.npmjs.com/package/@storybook/html).

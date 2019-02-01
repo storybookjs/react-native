@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 import provideJestResult from '../hoc/provideJestResult';
 import Indicator from './Indicator';

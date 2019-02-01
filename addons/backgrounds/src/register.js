@@ -1,14 +1,13 @@
 import React from 'react';
-import addons from '@storybook/addons';
+import addons, { types } from '@storybook/addons';
 
-import { ADDON_ID, PANEL_ID } from './constants';
-import BackgroundPanel from './BackgroundPanel';
+import { ADDON_ID } from './constants';
+import Tool from './Tool';
 
 addons.register(ADDON_ID, api => {
-  const channel = addons.getChannel();
-  addons.addPanel(PANEL_ID, {
-    title: 'Backgrounds',
-    // eslint-disable-next-line react/prop-types
-    render: ({ active }) => <BackgroundPanel channel={channel} api={api} active={active} />,
+  addons.add(ADDON_ID, {
+    type: types.TOOL,
+    match: ({ viewMode }) => viewMode === 'story',
+    render: () => <Tool api={api} />,
   });
 });

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 const Container = styled.div({
   width: '100%',
@@ -39,7 +39,7 @@ const Item = styled.button(
 
     '&:focus': {
       outline: '0 none',
-      borderBottom: `3px solid ${theme.highlightColor}`,
+      borderBottom: `3px solid ${theme.color.secondary}`,
     },
   })
 );
@@ -73,7 +73,7 @@ class Tabs extends Component {
             </Item>
           ))}
         </List>
-        <div>{tabs[active].panel}</div>
+        {tabs[active].panel}
       </Container>
     );
   }

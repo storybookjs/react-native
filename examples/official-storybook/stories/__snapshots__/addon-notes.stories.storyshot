@@ -1,46 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Addons|Notes addon notes 1`] = `
+<button
+  type="button"
+>
+  Button with notes - check the notes panel for details
+</button>
+`;
+
+exports[`Storyshots Addons|Notes addon notes rendering imported markdown 1`] = `
+<button
+  type="button"
+>
+  Button with notes - check the notes panel for details
+</button>
+`;
+
+exports[`Storyshots Addons|Notes addon notes rendering inline, github-flavored markdown 1`] = `
+<button
+  type="button"
+>
+  Button with notes - check the notes panel for details
+</button>
+`;
+
+exports[`Storyshots Addons|Notes with a markdown giphy 1`] = `
+<button
+  type="button"
+>
+  Button with notes - check the notes panel for details
+</button>
+`;
+
 exports[`Storyshots Addons|Notes with a markdown table 1`] = `
-<button
-  type="button"
->
-  Button with notes - check the notes panel for details
-</button>
-`;
-
-exports[`Storyshots Addons|Notes withNotes 1`] = `
-<button
-  type="button"
->
-  Button with notes - check the notes panel for details
-</button>
-`;
-
-exports[`Storyshots Addons|Notes withNotes rendering imported markdown 1`] = `
-<button
-  type="button"
->
-  Button with notes - check the notes panel for details
-</button>
-`;
-
-exports[`Storyshots Addons|Notes withNotes rendering inline, github-flavored markdown 1`] = `
-<button
-  type="button"
->
-  Button with notes - check the notes panel for details
-</button>
-`;
-
-exports[`Storyshots Addons|Notes.deprecated using decorator arguments, withMarkdownNotes 1`] = `
-<button
-  type="button"
->
-  Button with notes - check the notes panel for details
-</button>
-`;
-
-exports[`Storyshots Addons|Notes.deprecated using decorator arguments, withNotes 1`] = `
 <button
   type="button"
 >

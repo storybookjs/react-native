@@ -7,7 +7,12 @@ import { STORY } from './app.token';
 import { NgModuleMetadata, IGetStory, NgStory } from './types';
 
 let platform: any = null;
-let promises: Promise<NgModuleRef<any>>[] = [];
+let promises: Array<Promise<NgModuleRef<any>>> = [];
+
+const moduleClass = class DynamicModule {};
+const componentClass = class DynamicComponent {};
+
+type DynamicComponentType = typeof componentClass;
 
 const getModule = (
   declarations: Array<Type<any> | any[]>,
@@ -19,53 +24,34 @@ const getModule = (
   const moduleMeta = {
     declarations: [...declarations, ...(moduleMetadata.declarations || [])],
     imports: [BrowserModule, FormsModule, ...(moduleMetadata.imports || [])],
-    providers: [
-      { provide: STORY, useValue: Object.assign({}, data) },
-      ...(moduleMetadata.providers || []),
-    ],
+    providers: [{ provide: STORY, useValue: { ...data } }, ...(moduleMetadata.providers || [])],
     entryComponents: [...entryComponents, ...(moduleMetadata.entryComponents || [])],
     schemas: [...(moduleMetadata.schemas || [])],
     bootstrap: [...bootstrap],
   };
 
-  const moduleClass = class DynamicModule {};
-
   return NgModule(moduleMeta)(moduleClass);
 };
 
-const createComponentFromTemplate = (template: string, styles: string[]): Function => {
-  const componentClass = class DynamicComponent {};
-
+const createComponentFromTemplate = (template: string, styles: string[]) => {
   return Component({
     template,
     styles,
   })(componentClass);
 };
 
-const initModule = (currentStory: IGetStory): Function => {
+const initModule = (currentStory: IGetStory) => {
   const storyObj = currentStory();
   const { component, template, props, styles, moduleMetadata = {} } = storyObj;
 
-  let AnnotatedComponent;
-
-  if (template) {
-    AnnotatedComponent = createComponentFromTemplate(template, styles);
-  } else {
-    AnnotatedComponent = component;
-  }
+  let AnnotatedComponent = template ? createComponentFromTemplate(template, styles) : component;
 
   const story = {
     component: AnnotatedComponent,
     props,
   };
 
-  return getModule(
-    [AppComponent, AnnotatedComponent],
-    [AnnotatedComponent],
-    [AppComponent],
-    story,
-    moduleMetadata
-  );
+  return getModule([AppComponent, AnnotatedComponent], [AnnotatedComponent], [AppComponent], story, moduleMetadata);
 };
 
 const staticRoot = document.getElementById('root');
@@ -74,7 +60,7 @@ const insertDynamicRoot = () => {
   staticRoot.appendChild(app);
 };
 
-const draw = (newModule: Function): void => {
+const draw = (newModule: DynamicComponentType): void => {
   if (!platform) {
     insertDynamicRoot();
     try {

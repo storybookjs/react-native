@@ -9,6 +9,11 @@ function getParser(type) {
     return require('./parser-ts').default;
   }
 
+  if (type === 'flow') {
+    // eslint-disable-next-line global-require
+    return require('./parser-flow').default;
+  }
+
   throw new Error(`Parser of type "${type}" is not supported`);
 }
 

@@ -1,0 +1,2040 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI|Nav default 1`] = `
+.emotion-4 {
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-8 {
+  font-size: 11px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px;
+}
+
+.emotion-13 {
+  background: transparent;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-11 {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 20px;
+  overflow: auto;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-9 > * {
+  margin-top: 20px;
+}
+
+.emotion-9 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-right: 30px;
+}
+
+.emotion-1 {
+  display: inline-block;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 {
+  width: 101px;
+  height: 20px;
+}
+
+.emotion-5 {
+  height: 28px;
+  width: 28px;
+  border: 1px solid #eee;
+  position: relative;
+  border-radius: 14px;
+  box-sizing: border-box;
+  background: transparent;
+  cursor: pointer;
+}
+
+.popup-content + .emotion-5,
+.emotion-5:focus {
+  border: 1px solid #00aaff;
+  outline: 0 none;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-5 > * {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+}
+
+.emotion-12 {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+<nav
+  class="emotion-13"
+>
+  <div
+    class="emotion-11"
+  >
+    <div
+      class="emotion-9"
+    >
+      <div
+        class="emotion-7"
+      >
+        <div
+          class="emotion-2"
+        >
+          <a
+            class="emotion-1"
+            href="./"
+          >
+            <svg
+              class="emotion-0"
+              height="40px"
+              title="Storybook"
+              viewBox="0 0 200 40"
+              width="200px"
+            >
+              <defs>
+                <path
+                  d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
+                  id="a"
+                />
+              </defs>
+              <g
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <path
+                  d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
+                  fill="#333"
+                />
+                <mask
+                  fill="#fff"
+                  id="b"
+                >
+                  <use
+                    href="#a"
+                  />
+                </mask>
+                <use
+                  fill="#FF4785"
+                  fill-rule="nonzero"
+                  href="#a"
+                />
+                <path
+                  d="M23.7 5L24 .2l3.9-.3.1 4.8a.3.3 0 0 1-.5.2L26 3.8l-1.7 1.4a.3.3 0 0 1-.5-.3zm-5 10c0 .9 5.3.5 6 0 0-5.4-2.8-8.2-8-8.2-5.3 0-8.2 2.8-8.2 7.1 0 7.4 10 7.6 10 11.6 0 1.2-.5 1.9-1.8 1.9-1.6 0-2.2-.9-2.1-3.6 0-.6-6.1-.8-6.3 0-.5 6.7 3.7 8.6 8.5 8.6 4.6 0 8.3-2.5 8.3-7 0-7.9-10.2-7.7-10.2-11.6 0-1.6 1.2-1.8 2-1.8.6 0 2 0 1.9 3z"
+                  fill="#FFF"
+                  fill-rule="nonzero"
+                  mask="url(#b)"
+                />
+              </g>
+            </svg>
+          </a>
+        </div>
+        <span
+          class="emotion-6"
+        >
+          <button
+            class="emotion-5"
+            id="storybook-explorer-menu"
+          >
+            <svg
+              class="emotion-4"
+              height="20px"
+              viewBox="0 0 1024 1024"
+              width="20px"
+            >
+              <path
+                class="emotion-3"
+                d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
+              />
+            </svg>
+          </button>
+        </span>
+      </div>
+      <p
+        class="emotion-8"
+      >
+        There have no stories been loaded yet
+      </p>
+    </div>
+    <div
+      class="emotion-6"
+    />
+  </div>
+  <div
+    class="emotion-12"
+  />
+</nav>
+`;
+
+exports[`Storyshots UI|Nav with custom brand 1`] = `
+.emotion-2 {
+  display: block;
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-6 {
+  font-size: 11px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px;
+}
+
+.emotion-11 {
+  background: transparent;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-9 {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 20px;
+  overflow: auto;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.emotion-7 > * {
+  margin-top: 20px;
+}
+
+.emotion-7 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-right: 30px;
+}
+
+.emotion-3 {
+  height: 28px;
+  width: 28px;
+  border: 1px solid #eee;
+  position: relative;
+  border-radius: 14px;
+  box-sizing: border-box;
+  background: transparent;
+  cursor: pointer;
+}
+
+.popup-content + .emotion-3,
+.emotion-3:focus {
+  border: 1px solid #00aaff;
+  outline: 0 none;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-3 > * {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+}
+
+.emotion-10 {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+<nav
+  class="emotion-11"
+>
+  <div
+    class="emotion-9"
+  >
+    <div
+      class="emotion-7"
+    >
+      <div
+        class="emotion-5"
+      >
+        <div
+          class="emotion-0"
+        >
+          custom brand
+        </div>
+        <span
+          class="emotion-4"
+        >
+          <button
+            class="emotion-3"
+            id="storybook-explorer-menu"
+          >
+            <svg
+              class="emotion-2"
+              height="20px"
+              viewBox="0 0 1024 1024"
+              width="20px"
+            >
+              <path
+                class="emotion-1"
+                d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
+              />
+            </svg>
+          </button>
+        </span>
+      </div>
+      <p
+        class="emotion-6"
+      >
+        There have no stories been loaded yet
+      </p>
+    </div>
+    <div
+      class="emotion-4"
+    />
+  </div>
+  <div
+    class="emotion-10"
+  />
+</nav>
+`;
+
+exports[`Storyshots UI|StoriesExplorer empty 1`] = `
+.emotion-0 {
+  font-size: 11px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px;
+}
+
+.emotion-1 > * {
+  margin-top: 10px;
+}
+
+.emotion-1 > *:first-child {
+  margin-top: 0;
+}
+
+<div
+  class="emotion-1"
+>
+  <p
+    class="emotion-0"
+  >
+    There have no stories been loaded yet
+  </p>
+</div>
+`;
+
+exports[`Storyshots UI|StoriesExplorer with treeview root 1`] = `
+.emotion-4 {
+  fill: currentColor;
+}
+
+.emotion-38 > * {
+  margin-top: 10px;
+}
+
+.emotion-38 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  border-bottom: 1px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.1);
+  outline: 0;
+}
+
+.emotion-0 {
+  height: 30px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  color: #444;
+  padding: 10px;
+  padding-left: 0;
+  outline: 0;
+}
+
+.emotion-3 {
+  margin-bottom: 10px;
+}
+
+.emotion-2 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-letter-spacing: 4.3px;
+  -moz-letter-spacing: 4.3px;
+  -ms-letter-spacing: 4.3px;
+  letter-spacing: 4.3px;
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.emotion-2 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+.emotion-9 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+}
+
+.emotion-8 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.emotion-8:hover {
+  background: #EAF3FC;
+}
+
+.emotion-5 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.emotion-7 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #774dd7;
+}
+
+.emotion-12 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding-left: 30px;
+  background: #1EA7FD;
+  color: #FFFFFF;
+}
+
+.emotion-11 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #37d5d3;
+  color: inherit;
+}
+
+.emotion-16 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding-left: 30px;
+  background: transparent;
+}
+
+.emotion-16:hover {
+  background: #EAF3FC;
+}
+
+.emotion-15 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #37d5d3;
+}
+
+.emotion-23 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+}
+
+<div
+  class="emotion-38"
+>
+  <form
+    autocomplete="off"
+    class="emotion-1"
+  >
+    <input
+      class="emotion-0"
+      id="storybook-explorer-searchfield"
+      placeholder="Press \\"/\\" to search..."
+    />
+  </form>
+  <section
+    class="emotion-18"
+  >
+    <header
+      class="emotion-3"
+    >
+      <h1
+        class="emotion-2"
+      >
+        <span>
+          Root 1
+        </span>
+      </h1>
+    </header>
+    <a
+      class="emotion-9"
+      href="/?path=/story/1-12"
+    >
+      <div
+        class="emotion-8"
+      >
+        <svg
+          class="emotion-5"
+          height="20px"
+          viewBox="0 0 1024 1024"
+          width="20px"
+        >
+          <path
+            class="emotion-4"
+            d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+          />
+        </svg>
+        <svg
+          class="emotion-7"
+          height="20px"
+          viewBox="0 0 1024 1024"
+          width="20px"
+        >
+          <path
+            class="emotion-4"
+            d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+          />
+        </svg>
+        <span>
+          Child A2
+        </span>
+      </div>
+    </a>
+    <div
+      class="emotion-18"
+    >
+      <a
+        class="emotion-9"
+        href="/?path=/story/1-12-121"
+      >
+        <div
+          class="emotion-12"
+          id="1-12-121"
+        >
+          <svg
+            class="emotion-11"
+            height="20px"
+            viewBox="0 0 1024 1024"
+            width="20px"
+          >
+            <path
+              class="emotion-4"
+              d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+            />
+          </svg>
+          GrandChild A1.1
+        </div>
+      </a>
+      <a
+        class="emotion-9"
+        href="/?path=/story/1-12-122"
+      >
+        <div
+          class="emotion-16"
+          id="1-12-122"
+        >
+          <svg
+            class="emotion-15"
+            height="20px"
+            viewBox="0 0 1024 1024"
+            width="20px"
+          >
+            <path
+              class="emotion-4"
+              d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+            />
+          </svg>
+          GrandChild A1.2
+        </div>
+      </a>
+    </div>
+  </section>
+  <section
+    class="emotion-18"
+  >
+    <header
+      class="emotion-3"
+    >
+      <h1
+        class="emotion-2"
+      >
+        <span>
+          Root 3
+        </span>
+      </h1>
+    </header>
+    <a
+      class="emotion-9"
+      href="/?path=/story/3-32"
+    >
+      <div
+        class="emotion-8"
+      >
+        <svg
+          class="emotion-23"
+          height="20px"
+          viewBox="0 0 1024 1024"
+          width="20px"
+        >
+          <path
+            class="emotion-4"
+            d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+          />
+        </svg>
+        <svg
+          class="emotion-7"
+          height="20px"
+          viewBox="0 0 1024 1024"
+          width="20px"
+        >
+          <path
+            class="emotion-4"
+            d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+          />
+        </svg>
+        <span>
+          Child A2
+        </span>
+      </div>
+    </a>
+  </section>
+  <section
+    class="emotion-18"
+  >
+    <header
+      class="emotion-3"
+    >
+      <h1
+        class="emotion-2"
+      >
+        <span>
+          Others
+        </span>
+      </h1>
+    </header>
+    <a
+      class="emotion-9"
+      href="/?path=/story/2"
+    >
+      <div
+        class="emotion-8"
+      >
+        <svg
+          class="emotion-23"
+          height="20px"
+          viewBox="0 0 1024 1024"
+          width="20px"
+        >
+          <path
+            class="emotion-4"
+            d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+          />
+        </svg>
+        <svg
+          class="emotion-7"
+          height="20px"
+          viewBox="0 0 1024 1024"
+          width="20px"
+        >
+          <path
+            class="emotion-4"
+            d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+          />
+        </svg>
+        <span>
+          Group 1
+        </span>
+      </div>
+    </a>
+  </section>
+</div>
+`;
+
+exports[`Storyshots UI|StoriesExplorer without treeview root 1`] = `
+.emotion-2 {
+  fill: currentColor;
+}
+
+.emotion-35 > * {
+  margin-top: 10px;
+}
+
+.emotion-35 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  border-bottom: 1px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.1);
+  outline: 0;
+}
+
+.emotion-0 {
+  height: 30px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  color: #444;
+  padding: 10px;
+  padding-left: 0;
+  outline: 0;
+}
+
+.emotion-7 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+}
+
+.emotion-6 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.emotion-6:hover {
+  background: #EAF3FC;
+}
+
+.emotion-3 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.emotion-5 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #774dd7;
+}
+
+.emotion-19 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #37d5d3;
+  color: inherit;
+}
+
+.emotion-10 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding-left: 30px;
+  background: transparent;
+}
+
+.emotion-10:hover {
+  background: #EAF3FC;
+}
+
+.emotion-9 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #37d5d3;
+}
+
+.emotion-29 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+}
+
+.emotion-16 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 30px;
+  background: transparent;
+}
+
+.emotion-16:hover {
+  background: #EAF3FC;
+}
+
+.emotion-20 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding-left: 50px;
+  background: #1EA7FD;
+  color: #FFFFFF;
+}
+
+.emotion-24 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding-left: 50px;
+  background: transparent;
+}
+
+.emotion-24:hover {
+  background: #EAF3FC;
+}
+
+<div
+  class="emotion-35"
+>
+  <form
+    autocomplete="off"
+    class="emotion-1"
+  >
+    <input
+      class="emotion-0"
+      id="storybook-explorer-searchfield"
+      placeholder="Press \\"/\\" to search..."
+    />
+  </form>
+  <section
+    class="emotion-26"
+  >
+    <a
+      class="emotion-7"
+      href="/?path=/story/1"
+    >
+      <div
+        class="emotion-6"
+      >
+        <svg
+          class="emotion-3"
+          height="20px"
+          viewBox="0 0 1024 1024"
+          width="20px"
+        >
+          <path
+            class="emotion-2"
+            d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+          />
+        </svg>
+        <svg
+          class="emotion-5"
+          height="20px"
+          viewBox="0 0 1024 1024"
+          width="20px"
+        >
+          <path
+            class="emotion-2"
+            d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+          />
+        </svg>
+        <span>
+          Parent A
+        </span>
+      </div>
+    </a>
+    <div
+      class="emotion-26"
+    >
+      <a
+        class="emotion-7"
+        href="/?path=/story/1-11"
+      >
+        <div
+          class="emotion-10"
+          id="1-11"
+        >
+          <svg
+            class="emotion-9"
+            height="20px"
+            viewBox="0 0 1024 1024"
+            width="20px"
+          >
+            <path
+              class="emotion-2"
+              d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+            />
+          </svg>
+          Child A1
+        </div>
+      </a>
+      <a
+        class="emotion-7"
+        href="/?path=/story/1-12"
+      >
+        <div
+          class="emotion-16"
+        >
+          <svg
+            class="emotion-3"
+            height="20px"
+            viewBox="0 0 1024 1024"
+            width="20px"
+          >
+            <path
+              class="emotion-2"
+              d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+            />
+          </svg>
+          <svg
+            class="emotion-5"
+            height="20px"
+            viewBox="0 0 1024 1024"
+            width="20px"
+          >
+            <path
+              class="emotion-2"
+              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+            />
+          </svg>
+          <span>
+            Child A2
+          </span>
+        </div>
+      </a>
+      <div
+        class="emotion-26"
+      >
+        <a
+          class="emotion-7"
+          href="/?path=/story/1-12-121"
+        >
+          <div
+            class="emotion-20"
+            id="1-12-121"
+          >
+            <svg
+              class="emotion-19"
+              height="20px"
+              viewBox="0 0 1024 1024"
+              width="20px"
+            >
+              <path
+                class="emotion-2"
+                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+              />
+            </svg>
+            GrandChild A1.1
+          </div>
+        </a>
+        <a
+          class="emotion-7"
+          href="/?path=/story/1-12-122"
+        >
+          <div
+            class="emotion-24"
+            id="1-12-122"
+          >
+            <svg
+              class="emotion-9"
+              height="20px"
+              viewBox="0 0 1024 1024"
+              width="20px"
+            >
+              <path
+                class="emotion-2"
+                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+              />
+            </svg>
+            GrandChild A1.2
+          </div>
+        </a>
+      </div>
+    </div>
+    <a
+      class="emotion-7"
+      href="/?path=/story/2"
+    >
+      <div
+        class="emotion-6"
+      >
+        <svg
+          class="emotion-29"
+          height="20px"
+          viewBox="0 0 1024 1024"
+          width="20px"
+        >
+          <path
+            class="emotion-2"
+            d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+          />
+        </svg>
+        <svg
+          class="emotion-5"
+          height="20px"
+          viewBox="0 0 1024 1024"
+          width="20px"
+        >
+          <path
+            class="emotion-2"
+            d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+          />
+        </svg>
+        <span>
+          Parent B
+        </span>
+      </div>
+    </a>
+  </section>
+</div>
+`;
+
+exports[`Storyshots UI|StoriesExplorer/subcomponents Filter 1`] = `
+.emotion-4 > * {
+  margin-top: 10px;
+}
+
+.emotion-4 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  border-bottom: 1px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.1);
+  outline: 0;
+}
+
+.emotion-0 {
+  height: 30px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  color: #444;
+  padding: 10px;
+  padding-left: 0;
+  outline: 0;
+}
+
+<div
+  class="emotion-4"
+>
+  <form
+    autocomplete="off"
+    class="emotion-1"
+  >
+    <input
+      class="emotion-0"
+      id="storybook-explorer-searchfield"
+      placeholder="Press \\"/\\" to search..."
+    />
+  </form>
+  <hr />
+  <form
+    autocomplete="off"
+    class="emotion-1"
+  >
+    <input
+      class="emotion-0"
+      id="storybook-explorer-searchfield"
+      placeholder="Press \\"/\\" to search..."
+      value="with a value"
+    />
+  </form>
+</div>
+`;
+
+exports[`Storyshots UI|StoriesExplorer/subcomponents Head 1`] = `
+.emotion-0 {
+  fill: currentColor;
+}
+
+.emotion-40 > * {
+  margin-top: 10px;
+}
+
+.emotion-40 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-4 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.emotion-4:hover {
+  background: #EAF3FC;
+}
+
+.emotion-11 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.emotion-3 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #774dd7;
+}
+
+.emotion-1 {
+  display: block;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  margin-right: 4px;
+  margin-left: -2px;
+  -webkit-transition: -webkit-transform .1s linear;
+  -webkit-transition: transform .1s linear;
+  transition: transform .1s linear;
+  color: rgba(0,0,0,0.4);
+}
+
+.emotion-29 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 30px;
+  background: transparent;
+}
+
+.emotion-29:hover {
+  background: #EAF3FC;
+}
+
+.emotion-9 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: #1EA7FD;
+  color: #FFFFFF;
+}
+
+.emotion-18 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #1ea7fd;
+}
+
+.emotion-34 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 50px;
+  background: transparent;
+}
+
+.emotion-34:hover {
+  background: #EAF3FC;
+}
+
+.emotion-39 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 70px;
+  background: transparent;
+}
+
+.emotion-39:hover {
+  background: #EAF3FC;
+}
+
+<div
+  class="emotion-40"
+>
+  <div
+    class="emotion-4"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+      />
+    </svg>
+    <svg
+      class="emotion-3"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+      />
+    </svg>
+    <span>
+      normal
+    </span>
+  </div>
+  <div
+    class="emotion-9"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+      />
+    </svg>
+    <svg
+      class="emotion-3"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+      />
+    </svg>
+    <span>
+      isSelected
+    </span>
+  </div>
+  <div
+    class="emotion-4"
+  >
+    <svg
+      class="emotion-11"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+      />
+    </svg>
+    <svg
+      class="emotion-3"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+      />
+    </svg>
+    <span>
+      isExpanded
+    </span>
+  </div>
+  <div
+    class="emotion-4"
+  >
+    <svg
+      class="emotion-11"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+      />
+    </svg>
+    <svg
+      class="emotion-18"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M171 469h298V171H246c-42 0-75 33-75 75v223zm0 86v223c0 42 33 75 75 75h223V555H171zm682-86V246c0-42-33-75-75-75H555v298h298zm0 86H555v298h223c42 0 75-33 75-75V555zM256 85h512c94 0 171 77 171 171v512c0 94-77 171-171 171H256c-94 0-171-77-171-171V256c0-94 77-171 171-171z"
+      />
+    </svg>
+    <span>
+      isComponent
+    </span>
+  </div>
+  <hr />
+  <div
+    class="emotion-4"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+      />
+    </svg>
+    <svg
+      class="emotion-3"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+      />
+    </svg>
+    <span>
+      depth = 0
+    </span>
+  </div>
+  <div
+    class="emotion-29"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+      />
+    </svg>
+    <svg
+      class="emotion-3"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+      />
+    </svg>
+    <span>
+      depth = 1
+    </span>
+  </div>
+  <div
+    class="emotion-34"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+      />
+    </svg>
+    <svg
+      class="emotion-3"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+      />
+    </svg>
+    <span>
+      depth = 2
+    </span>
+  </div>
+  <div
+    class="emotion-39"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M878.78 477.856l-591.884-341.722c-9.464-5.464-18.426-8.050-26.386-8.048-19.516 0.002-33.002 15.546-33.002 42.338v683.446c0 26.792 13.482 42.338 33.002 42.338 7.96 0 16.924-2.586 26.386-8.048l591.884-341.722c32.664-18.864 32.664-49.724 0-68.582z"
+      />
+    </svg>
+    <svg
+      class="emotion-3"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+      />
+    </svg>
+    <span>
+      depth = 3
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|StoriesExplorer/subcomponents Leaf 1`] = `
+.emotion-0 {
+  fill: currentColor;
+}
+
+.emotion-18 > * {
+  margin-top: 10px;
+}
+
+.emotion-18 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-4 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #37d5d3;
+  color: inherit;
+}
+
+.emotion-11 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding-left: 30px;
+  background: transparent;
+}
+
+.emotion-11:hover {
+  background: #EAF3FC;
+}
+
+.emotion-1 {
+  display: block;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  color: #37d5d3;
+}
+
+.emotion-14 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding-left: 50px;
+  background: transparent;
+}
+
+.emotion-14:hover {
+  background: #EAF3FC;
+}
+
+.emotion-2 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.emotion-2:hover {
+  background: #EAF3FC;
+}
+
+.emotion-5 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding-left: 10px;
+  background: #1EA7FD;
+  color: #FFFFFF;
+}
+
+.emotion-17 {
+  margin-left: -20px;
+  margin-right: -20px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding-left: 70px;
+  background: transparent;
+}
+
+.emotion-17:hover {
+  background: #EAF3FC;
+}
+
+<div
+  class="emotion-18"
+>
+  <div
+    class="emotion-2"
+    id="1"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+      />
+    </svg>
+    not selected
+  </div>
+  <div
+    class="emotion-5"
+    id="1"
+  >
+    <svg
+      class="emotion-4"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+      />
+    </svg>
+    selected
+  </div>
+  <hr />
+  <div
+    class="emotion-2"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+      />
+    </svg>
+    depth = 0
+  </div>
+  <div
+    class="emotion-11"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+      />
+    </svg>
+    depth = 1
+  </div>
+  <div
+    class="emotion-14"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+      />
+    </svg>
+    depth = 2
+  </div>
+  <div
+    class="emotion-17"
+  >
+    <svg
+      class="emotion-1"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
+    >
+      <path
+        class="emotion-0"
+        d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+      />
+    </svg>
+    depth = 3
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|StoriesExplorer/subcomponents Title 1`] = `
+.emotion-2 > * {
+  margin-top: 10px;
+}
+
+.emotion-2 > *:first-child {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  margin-bottom: 10px;
+}
+
+.emotion-0 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-letter-spacing: 4.3px;
+  -moz-letter-spacing: 4.3px;
+  -ms-letter-spacing: 4.3px;
+  letter-spacing: 4.3px;
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.emotion-0 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+<div
+  class="emotion-2"
+>
+  <header
+    class="emotion-1"
+  >
+    <h1
+      class="emotion-0"
+    >
+      <span>
+        This is a Root title
+      </span>
+    </h1>
+  </header>
+</div>
+`;

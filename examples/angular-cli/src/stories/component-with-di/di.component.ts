@@ -11,11 +11,7 @@ export class DiComponent {
   @Input()
   title: string;
 
-  constructor(
-    protected injector: Injector,
-    protected elRef: ElementRef,
-    @Inject(TEST_TOKEN) protected testToken: number
-  ) {}
+  constructor(protected injector: Injector, protected elRef: ElementRef, @Inject(TEST_TOKEN) protected testToken: number) {}
 
   isAllDeps(): boolean {
     return Boolean(this.testToken && this.elRef && this.injector && this.title);

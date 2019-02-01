@@ -2,6 +2,9 @@ import hasDependency from '../hasDependency';
 import configure from '../configure';
 
 function setupAngularJestPreset() {
+  // Needed to prevent "Zone.js has detected that ZoneAwarePromise `(window|global).Promise` has been overwritten."
+  require.requireActual('core-js/modules/es6.promise');
+
   // Angular + Jest + Storyshots = Crazy Shit:
   // We need to require 'jest-preset-angular/setupJest' before any storybook code
   // is running inside jest -  one of the things that `jest-preset-angular/setupJest` does is

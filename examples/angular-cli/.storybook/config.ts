@@ -1,11 +1,12 @@
-import { configure } from '@storybook/angular';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addParameters } from '@storybook/angular';
 import addCssWarning from '../src/cssWarning';
 
 addCssWarning();
 
-setOptions({
-  hierarchyRootSeparator: /\|/,
+addParameters({
+  options: {
+    hierarchyRootSeparator: /\|/,
+  },
 });
 
 function loadStories() {

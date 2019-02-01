@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
-.emotion-12 {
+.emotion-6 {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -19,7 +19,7 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
   border-radius: 4px 0 0 0;
 }
 
-.emotion-2 {
+.emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -42,6 +42,7 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
   display: block;
   background: none;
   padding: 0 10px;
+  cursor: pointer;
   text-transform: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -54,11 +55,11 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
 }
 
 .emotion-0:focus {
-  border-bottom: 2px solid #9fdaff;
+  border-bottom: 2px solid #1EA7FD;
   outline: 0 none;
 }
 
-.emotion-6 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -77,31 +78,31 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
 }
 
 <ul
-  class="emotion-12 emotion-13"
+  class="emotion-6"
 >
   <li
-    class="emotion-2 emotion-3"
+    class="emotion-1"
   >
     <button
-      class="emotion-0 emotion-1"
+      class="emotion-0"
     >
       Nr1
     </button>
   </li>
   <li
-    class="emotion-6 emotion-3"
+    class="emotion-3"
   >
     <button
-      class="emotion-0 emotion-1"
+      class="emotion-0"
     >
       Nr2
     </button>
   </li>
   <li
-    class="emotion-6 emotion-3"
+    class="emotion-3"
   >
     <button
-      class="emotion-0 emotion-1"
+      class="emotion-0"
     >
       Nr3
     </button>
@@ -110,7 +111,7 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
 `;
 
 exports[`Storyshots Components|PanelActionBar single item 1`] = `
-.emotion-4 {
+.emotion-2 {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -128,7 +129,7 @@ exports[`Storyshots Components|PanelActionBar single item 1`] = `
   border-radius: 4px 0 0 0;
 }
 
-.emotion-2 {
+.emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -151,6 +152,7 @@ exports[`Storyshots Components|PanelActionBar single item 1`] = `
   display: block;
   background: none;
   padding: 0 10px;
+  cursor: pointer;
   text-transform: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -163,18 +165,18 @@ exports[`Storyshots Components|PanelActionBar single item 1`] = `
 }
 
 .emotion-0:focus {
-  border-bottom: 2px solid #9fdaff;
+  border-bottom: 2px solid #1EA7FD;
   outline: 0 none;
 }
 
 <ul
-  class="emotion-4 emotion-5"
+  class="emotion-2"
 >
   <li
-    class="emotion-2 emotion-3"
+    class="emotion-1"
   >
     <button
-      class="emotion-0 emotion-1"
+      class="emotion-0"
     >
       CLEAR
     </button>

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 const Input = styled.input({
   display: 'table-cell',
@@ -17,6 +17,7 @@ const Input = styled.input({
 const BooleanType = ({ knob, onChange }) => (
   <Input
     id={knob.name}
+    name={knob.name}
     type="checkbox"
     onChange={e => onChange(e.target.checked)}
     checked={knob.value}

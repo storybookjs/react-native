@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 export const Actions = styled.pre({
   flex: 1,

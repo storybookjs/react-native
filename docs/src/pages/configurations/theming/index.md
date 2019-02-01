@@ -16,13 +16,12 @@ import '@storybook/addon-options/register';
 
 Then, modify `.storybook/config.js` to include your new options:  
 ```js
-import { addDecorator, configure } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { addParameters, configure } from '@storybook/react';
 
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     theme: {},
-  })
+  },
 });
 ```
 
@@ -37,22 +36,24 @@ We have created 2 themes for you: "normal" (a light theme) and "dark" (a dark th
 You can get these themes like so:
 
 ```js
-import { addDecorator, configure } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { addParameters, configure } from '@storybook/react';
 import { themes } from '@storybook/components';
 
 // Option defaults.
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     name: 'Foo',
     theme: themes.dark,
-  })
-);
+  },
+});
 ```
 
 ## Theme variables
 
 ```
+
+// TODO: update this with .colors. changes
+
 mainBackground: applied to root `background`, // 'linear-gradient(to bottom right, black, gray'
 mainBorder: applied to panels `border`, // '1px solid rgba(0,0,0,0.1)'
 mainBorderColor: applied for most borders, // 'rgba(0,0,0,0.1)'
@@ -104,7 +105,7 @@ brandLink: {
 }
 ```
 
-filter: deep thene for `stories filter section`
+filter: deep theme for `stories filter section`
 
 ```
 filter: {
@@ -112,7 +113,7 @@ filter: {
 }
 ```
 
-treeHeader: deep thene for `tree header`
+treeHeader: deep theme for `tree header`
 
 ```
 treeHeader: {
@@ -120,7 +121,7 @@ treeHeader: {
 }
 ```
 
-treeMenuHeader: deep thene for `tree menu header` of each menu
+treeMenuHeader: deep theme for `tree menu header` of each menu
 
 ```
 treeMenuHeader: {
@@ -128,7 +129,7 @@ treeMenuHeader: {
 }
 ```
 
-menuLink: deep thene for `menu link` of each story
+menuLink: deep theme for `menu link` of each story
 
 ```
 menuLink: {
@@ -136,7 +137,7 @@ menuLink: {
 }
 ```
 
-activeMenuLink: deep thene for `active menu link` for the active story
+activeMenuLink: deep theme for `active menu link` for the active story
 
 ```
 activeMenuLink: {
