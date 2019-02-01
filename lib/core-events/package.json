@@ -13,12 +13,12 @@
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
-  },
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
   "publishConfig": {
     "access": "public"
   }

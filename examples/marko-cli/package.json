@@ -11,11 +11,11 @@
   "scripts": {
     "build": "NODE_ENV=production marko-starter build",
     "build-storybook": "build-storybook",
+    "prettier": "prettier src/**/*.{js,css,less} *.js --write",
     "serve-static": "NODE_ENV=production marko-starter serve-static",
     "start": "marko-starter server",
     "storybook": "start-storybook -p 9005",
-    "test": "npm run lint",
-    "prettier": "prettier src/**/*.{js,css,less} *.js --write"
+    "test": "npm run lint"
   },
   "dependencies": {
     "marko": "^4.14.21",
