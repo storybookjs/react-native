@@ -16589,9 +16589,10 @@ punycode@^1.2.4, punycode@^1.3.2, punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-puppeteer@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-1.11.0.tgz#63cdbe12b07275cd6e0b94bce41f3fcb20305770"
+puppeteer@^1.12.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-1.12.0.tgz#325b97f42aa6cd66ae4d3d27839278e1f0b8e0e5"
+  integrity sha512-+riSxJFPQpwGZvNHFeB7vEefwfdHNSstQmjdzUKZxPp/Qt1Dw9iKRAewl8X0ntdXZz4UR4jODLiM03Iw9HDnyw==
   dependencies:
     debug "^4.1.0"
     extract-zip "^1.6.6"
