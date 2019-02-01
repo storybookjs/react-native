@@ -1,4 +1,4 @@
-## 5.0.0-beta.0 (February 1, 2019)
+## 5.0.0-beta.1 (February 1, 2019)
 
 ### Bug Fixes
 
@@ -9,6 +9,10 @@
 * UI:Added iframe stories ([#5428](https://github.com/storybooks/storybook/pull/5428))
 * UI: Broke up Sidebar (ex-nav) and made stories for subcomponents ([#5426](https://github.com/storybooks/storybook/pull/5426))
 * UI: Improve about/shortcuts stories by passing in `onClose` as a prop. ([#5425](https://github.com/storybooks/storybook/pull/5425))
+
+## 5.0.0-beta.0 (February 1, 2019)
+
+Failed release
 
 ## 5.0.0-alpha.11 (February 1, 2019)
 
