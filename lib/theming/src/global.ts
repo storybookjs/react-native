@@ -1,4 +1,4 @@
-import { css, keyframes } from '@emotion/core';
+import { css } from '@emotion/core';
 import { baseFonts, monoFonts } from './base';
 import memoize from 'memoizerific';
 

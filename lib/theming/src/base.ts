@@ -1,5 +1,4 @@
 import { easing, animation } from './animation';
-import { bodyStyles } from './global';
 
 export const baseFonts = {
   fontFamily: [
@@ -102,7 +101,6 @@ export interface Theme {
   typography: typeof typography;
   easing: typeof easing;
   animation: typeof animation;
-  bodyStyles: typeof bodyStyles;
 
   mainBackground: string;
   mainBorder: string;
