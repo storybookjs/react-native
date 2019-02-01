@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
 
 import { logger } from '@storybook/client-logger';
-import { STORY_CHANGED } from '@storybook/core-events';
+import { SET_STORIES } from '@storybook/core-events';
 
 import {
   Popout,
@@ -20,126 +20,113 @@ import * as S from './components';
 
 import { PARAM_KEY } from './constants';
 
-const toList = memoize(50)(viewports => Object.entries(viewports));
-const getIframe = memoize(1)(() => document.getElementById('storybook-preview-background'));
+const getIframe = () => document.getElementById('storybook-preview-background');
+
+const getState = (props, state) => {
+  const data = props.api.getCurrentStoryData();
+  const list = data && data.parameters && data.parameters[PARAM_KEY];
+
+  return list && list.length
+    ? list.reduce(
+        (acc, { name, value, default: isSelected }) => {
+          acc.backgrounds.push({ name, value });
+
+          if (isSelected && state.selected !== 'transparent') {
+            if (!list.find(i => i.value === state.selected)) {
+              acc.selected = value;
+            }
+          }
+          return acc;
+        },
+        {
+          backgrounds: [],
+          selected: state.selected,
+        }
+      )
+    : {
+        backgrounds: [],
+        selected: 'transparent',
+      };
+};
+
+const apply = memoize(1)((value, iframe) => {
+  if (iframe) {
+    // eslint-disable-next-line no-param-reassign
+    iframe.style.background = value;
+  } else {
+    logger.error('Cannot find Storybook iframe');
+  }
+});
 
 export default class BackgroundTool extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      backgrounds: {},
-      selected: undefined,
+      backgrounds: [],
+      selected: 'transparent',
     };
   }
 
   componentDidMount() {
     const { api } = this.props;
 
-    api.on(STORY_CHANGED, this.onStoryChange);
+    api.on(SET_STORIES, () => {
+      const { state, props } = this;
+      this.setState(getState(props, state));
+    });
   }
 
-  componentWillUnmount() {
-    const { api } = this.props;
-    api.off(STORY_CHANGED, this.onStoryChange);
-  }
-
-  onStoryChange = id => {
-    const { api } = this.props;
-    const params = api.getParameters(id, PARAM_KEY);
-
-    if (params && !params.disable) {
-      const { backgrounds, selected } = params.reduce(
-        (acc, { name, value, default: isSelected }) => {
-          Object.assign(acc.backgrounds, { [name]: value });
-          if (isSelected) {
-            acc.selected = name;
-          }
-          return acc;
-        },
-        {
-          backgrounds: {},
-          selected: undefined,
-        }
-      );
-      this.setState({ backgrounds, selected }, this.apply);
-    } else {
-      this.setState({ backgrounds: {}, selected: undefined }, this.apply);
-    }
-  };
-
-  apply = () => {
-    const iframe = getIframe();
-    if (iframe) {
-      const { selected, backgrounds } = this.state;
-
-      if (selected) {
-        const value = backgrounds[selected];
-        if (backgrounds[selected]) {
-          iframe.style.background = value;
-        } else {
-          logger.error(selected, 'could not be set');
-        }
-      } else {
-        iframe.style.background = 'transparent';
-      }
-    } else {
-      logger.error('Cannot find Storybook iframe');
-    }
-  };
-
-  change = key => {
-    this.setState({ selected: key }, this.apply);
+  change = selected => {
+    this.setState({ selected }, this.apply);
   };
 
   render() {
-    const { backgrounds, selected } = this.state;
-    const list = toList(backgrounds);
+    const { backgrounds, selected } = getState(this.props, this.state);
+    const iframe = getIframe();
 
-    if (!list.length) {
-      return null;
-    }
+    apply(selected, iframe);
 
-    return (
+    return backgrounds.length ? (
       <Popout key="backgrounds">
         <IconButton key="background" title="Backgrounds">
           <Icons icon="photo" />
         </IconButton>
         {({ hide }) => (
           <List>
-            {selected !== undefined ? (
+            {selected !== 'transparent' ? (
               <Fragment>
                 <Item
-                  key="reset"
+                  key="clear"
                   onClick={() => {
                     hide();
-                    this.change(undefined);
+                    this.change('transparent');
                   }}
                 >
                   <MenuIcon type="undo" />
-                  <Title>Reset</Title>
+                  <Title>Clear</Title>
                   <Detail>transparent</Detail>
                 </Item>
               </Fragment>
             ) : null}
 
-            {list.map(([key, value]) => (
+            {backgrounds.map(({ name, value }) => (
               <Item
-                key={key}
+                key={name}
                 onClick={() => {
                   hide();
-                  this.change(key);
+                  this.change(value);
                 }}
               >
                 <MenuIcon type={<S.ColorIcon background={value} />} />
-                <Title>{key}</Title>
+                <Title>{name}</Title>
                 <Detail>{value}</Detail>
               </Item>
             ))}
           </List>
         )}
       </Popout>
-    );
+    ) : null;
   }
 }
 BackgroundTool.propTypes = {
