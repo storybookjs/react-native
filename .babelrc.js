@@ -9,6 +9,7 @@ module.exports = {
     '@babel/plugin-proposal-export-default-from',
     '@babel/plugin-syntax-dynamic-import',
     ['@babel/plugin-proposal-class-properties', { loose: true }],
+    '@babel/plugin-transform-react-constant-elements',
     'babel-plugin-add-react-displayname',
     'babel-plugin-macros',
     ['emotion', { sourceMap: true, autoLabel: true }],
