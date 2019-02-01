@@ -42,6 +42,7 @@
     "lodash.throttle": "^4.1.1",
     "markdown-to-jsx": "^6.9.0",
     "memoizerific": "^1.11.3",
+    "polished": "^2.3.3",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
     "react": "^16.7.0",
