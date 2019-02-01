@@ -6,7 +6,7 @@
     "addon",
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/storyshorts/storyshots-core",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
