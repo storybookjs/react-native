@@ -29,8 +29,6 @@
     "core-js": "^2.6.2",
     "global": "^4.3.2",
     "raw-loader": "^1.0.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
     "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {

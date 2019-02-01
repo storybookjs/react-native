@@ -30,7 +30,6 @@
     "@babel/preset-react": "^7.0.0",
     "@storybook/core": "5.0.0-beta.1",
     "@storybook/node-logger": "5.0.0-beta.1",
-    "@storybook/theming": "5.0.0-beta.1",
     "@svgr/webpack": "^4.0.3",
     "babel-plugin-named-asset-import": "^0.3.0",
     "babel-plugin-react-docgen": "^2.0.0",

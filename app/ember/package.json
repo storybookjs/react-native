@@ -27,8 +27,6 @@
     "common-tags": "^1.8.0",
     "core-js": "^2.6.2",
     "global": "^4.3.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
     "regenerator-runtime": "^0.12.1"
   },
   "peerDependencies": {

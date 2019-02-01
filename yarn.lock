@@ -1201,7 +1201,7 @@
     "@emotion/utils" "0.11.1"
     object-assign "^4.1.1"
 
-"@emotion/styled@10.0.6", "@emotion/styled@^10.0.5":
+"@emotion/styled@^10.0.5":
   version "10.0.6"
   resolved "https://registry.yarnpkg.com/@emotion/styled/-/styled-10.0.6.tgz#e6591cf7b0fd56e82a0ae7e421568229e7c6d5f9"
   dependencies:
@@ -2094,10 +2094,6 @@
 "@types/jest@^23.0.2", "@types/jest@^23.3.1", "@types/jest@^23.3.13":
   version "23.3.13"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.13.tgz#c81484b6f4ca007bb09887ed15ecb3286d58f928"
-
-"@types/json-stringify-safe@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@types/json-stringify-safe/-/json-stringify-safe-5.0.0.tgz#df34d054419d39323a3730966bacba02ac5e474e"
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -5711,14 +5707,6 @@ cheerio@^1.0.0-rc.2:
     lodash "^4.15.0"
     parse5 "^3.0.1"
 
-child-process-promise@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/child-process-promise/-/child-process-promise-2.2.1.tgz#4730a11ef610fad450b8f223c79d31d7bdad8074"
-  dependencies:
-    cross-spawn "^4.0.2"
-    node-version "^1.0.0"
-    promise-polyfill "^6.0.1"
-
 chokidar@2.0.4, chokidar@^2.0.0, chokidar@^2.0.2, chokidar@^2.0.3, chokidar@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.0.4.tgz#356ff4e2b0e8e43e322d18a372460bbcf3accd26"
@@ -6654,13 +6642,6 @@ cross-spawn@6.0.5, cross-spawn@^6.0.0, cross-spawn@^6.0.5:
 cross-spawn@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-3.0.1.tgz#1256037ecb9f0c5f79e3d6ef135e30770184b982"
-  dependencies:
-    lru-cache "^4.0.1"
-    which "^1.2.9"
-
-cross-spawn@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-4.0.2.tgz#7b9247621c23adfdd3856004a823cbe397424d41"
   dependencies:
     lru-cache "^4.0.1"
     which "^1.2.9"
@@ -8724,10 +8705,6 @@ execon@^1.2.0:
   version "1.2.9"
   resolved "https://registry.yarnpkg.com/execon/-/execon-1.2.9.tgz#6db11333dcc824f1f13e7317fed0d94a2f26491f"
 
-exenv@^1.2.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
-
 exists-sync@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/exists-sync/-/exists-sync-0.0.4.tgz#9744c2c428cc03b01060db454d4b12f0ef3c8879"
@@ -9589,10 +9566,6 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
-fuse.js@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.3.0.tgz#1e4fe172a60687230fb54a5cb247eb96e2e7e885"
-
 fuzzy-search@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/fuzzy-search/-/fuzzy-search-3.0.1.tgz#14a4964508a9607d6e9a88818e7ff634108260b6"
@@ -9662,10 +9635,6 @@ get-caller-file@^1.0.1:
 get-caller-file@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-2.0.1.tgz#25835260d3a2b9665fcdbb08cb039a7bbf7011c0"
-
-get-own-enumerable-property-symbols@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-2.0.1.tgz#5c4ad87f2834c4b9b4e84549dc1e0650fb38c24b"
 
 get-own-enumerable-property-symbols@^3.0.0:
   version "3.0.0"
@@ -10286,16 +10255,6 @@ highlight.js@~9.12.0:
   version "9.12.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
 
-history@^4.7.2:
-  version "4.7.2"
-  resolved "https://registry.yarnpkg.com/history/-/history-4.7.2.tgz#22b5c7f31633c5b8021c7f4a8a954ac139ee8d5b"
-  dependencies:
-    invariant "^2.2.1"
-    loose-envify "^1.2.0"
-    resolve-pathname "^2.2.0"
-    value-equal "^0.4.0"
-    warning "^3.0.0"
-
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -10654,10 +10613,6 @@ immer@1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/immer/-/immer-1.7.2.tgz#a51e9723c50b27e132f6566facbec1c85fc69547"
 
-immer@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/immer/-/immer-1.12.0.tgz#36063119eb65fa3f0e81ce000eb22f4eede9762e"
-
 import-cwd@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/import-cwd/-/import-cwd-2.1.0.tgz#aa6cf36e722761285cb371ec6519f53e2435b0a9"
@@ -10898,7 +10853,7 @@ interpret@^1.0.0, interpret@^1.1.0, interpret@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.2.0.tgz#d5061a6224be58e8083985f5014d844359576296"
 
-invariant@^2.2.1, invariant@^2.2.2, invariant@^2.2.3, invariant@^2.2.4:
+invariant@^2.2.2, invariant@^2.2.3, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   dependencies:
@@ -11103,7 +11058,7 @@ is-extendable@^0.1.0, is-extendable@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/is-extendable/-/is-extendable-0.1.1.tgz#62b110e289a471418e3ec36a617d472e301dfc89"
 
-is-extendable@^1.0.0, is-extendable@^1.0.1:
+is-extendable@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-extendable/-/is-extendable-1.0.1.tgz#a7470f9e426733d81bd81e1155264e3a3507cab4"
   dependencies:
@@ -11240,7 +11195,7 @@ is-plain-obj@^1.0.0, is-plain-obj@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
 
-is-plain-object@2.0.4, is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
+is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-2.0.4.tgz#2c163b3fafb1b606d9d17928f05c2a1c38e07677"
   dependencies:
@@ -11712,7 +11667,7 @@ jest-each@^24.0.0:
     jest-util "^24.0.0"
     pretty-format "^24.0.0"
 
-jest-emotion@^10.0.5:
+jest-emotion@^10.0.5, jest-emotion@^10.0.6:
   version "10.0.6"
   resolved "https://registry.yarnpkg.com/jest-emotion/-/jest-emotion-10.0.6.tgz#6a49b82984b098c284347497f56eca3be22a4c34"
   dependencies:
@@ -12470,10 +12425,6 @@ karma-source-map-support@1.3.0:
   resolved "https://registry.yarnpkg.com/karma-source-map-support/-/karma-source-map-support-1.3.0.tgz#36dd4d8ca154b62ace95696236fae37caf0a7dde"
   dependencies:
     source-map-support "^0.5.5"
-
-keycode@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.2.0.tgz#3d0af56dc7b8b8e5cba8d0a97f107204eec22b04"
 
 killable@^1.0.0:
   version "1.0.1"
@@ -13571,7 +13522,7 @@ longest-streak@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/longest-streak/-/longest-streak-2.0.2.tgz#2421b6ba939a443bb9ffebf596585a50b4c38e2e"
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   dependencies:
@@ -13632,7 +13583,7 @@ make-dir@^1.0.0:
   dependencies:
     pify "^3.0.0"
 
-make-error@1.x, make-error@^1.1.1, make-error@^1.3.5:
+make-error@1.x, make-error@^1.1.1:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/make-error/-/make-error-1.3.5.tgz#efe4e81f6db28cadd605c70f29c831b58ef776c8"
 
@@ -14686,10 +14637,6 @@ node-sass@4.10.0:
     stdout-stream "^1.4.0"
     "true-case-path" "^1.0.2"
 
-node-version@^1.0.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/node-version/-/node-version-1.2.0.tgz#34fde3ffa8e1149bd323983479dda620e1b5060d"
-
 "nopt@2 || 3", nopt@3.x, nopt@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
@@ -14950,12 +14897,6 @@ object.omit@^2.0.0:
   dependencies:
     for-own "^0.1.4"
     is-extendable "^0.1.1"
-
-object.omit@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/object.omit/-/object.omit-3.0.0.tgz#0e3edc2fce2ba54df5577ff529f6d97bd8a522af"
-  dependencies:
-    is-extendable "^1.0.0"
 
 object.pick@^1.3.0:
   version "1.3.0"
@@ -16435,10 +16376,6 @@ promise-map-series@^0.2.1, promise-map-series@^0.2.3:
   dependencies:
     rsvp "^3.0.14"
 
-promise-polyfill@^6.0.1:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-6.1.0.tgz#dfa96943ea9c121fca4de9b5868cb39d3472e057"
-
 promise-retry@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/promise-retry/-/promise-retry-1.1.1.tgz#6739e968e3051da20ce6497fb2b50f6911df3d6d"
@@ -16974,13 +16911,6 @@ react-draggable@^3.1.1:
     classnames "^2.2.5"
     prop-types "^15.6.0"
 
-react-element-to-jsx-string@^14.0.2:
-  version "14.0.2"
-  resolved "https://registry.yarnpkg.com/react-element-to-jsx-string/-/react-element-to-jsx-string-14.0.2.tgz#586d248bb2416855aa6ac3881e18726832c146d2"
-  dependencies:
-    is-plain-object "2.0.4"
-    stringify-object "3.2.2"
-
 react-error-overlay@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.2.tgz#888957b884d4b25b083a82ad550f7aad96585394"
@@ -17036,18 +16966,9 @@ react-is@^16.7.0:
   version "16.7.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0.tgz#c1bd21c64f1f1364c6f70695ec02d69392f41bfa"
 
-react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
+react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
-
-react-modal@^3.8.1:
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.8.1.tgz#7300f94a6f92a2e17994de0be6ccb61734464c9e"
-  dependencies:
-    exenv "^1.2.0"
-    prop-types "^15.5.10"
-    react-lifecycles-compat "^3.0.0"
-    warning "^3.0.0"
 
 react-native-animatable@^1.2.4:
   version "1.3.1"
@@ -17325,10 +17246,6 @@ reactcss@^1.2.0:
   resolved "https://registry.yarnpkg.com/reactcss/-/reactcss-1.2.3.tgz#c00013875e557b1cf0dfd9a368a1c3dab3b548dd"
   dependencies:
     lodash "^4.0.1"
-
-reactjs-popup@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/reactjs-popup/-/reactjs-popup-1.3.2.tgz#7f7861443fc5edfb0184da1d01838dbd5db690cd"
 
 read-cache@^1.0.0:
   version "1.0.0"
@@ -17968,10 +17885,6 @@ remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
 
-render-fragment@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/render-fragment/-/render-fragment-0.1.1.tgz#b231f259b7eee333d34256aee0ef3169be7bef30"
-
 renderkid@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/renderkid/-/renderkid-2.0.2.tgz#12d310f255360c07ad8fde253f6c9e9de372d2aa"
@@ -18115,10 +18028,6 @@ resolve-path@^1.4.0:
   dependencies:
     http-errors "~1.6.2"
     path-is-absolute "1.0.1"
-
-resolve-pathname@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/resolve-pathname/-/resolve-pathname-2.2.0.tgz#7e9ae21ed815fd63ab189adeee64dc831eefa879"
 
 resolve-url@^0.2.1:
   version "0.2.1"
@@ -19128,12 +19037,6 @@ spawn-command@^0.0.2-1:
   version "0.0.2-1"
   resolved "https://registry.yarnpkg.com/spawn-command/-/spawn-command-0.0.2-1.tgz#62f5e9466981c1b796dc5929937e11c9c6921bd0"
 
-spawn-promise@^0.1.8:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/spawn-promise/-/spawn-promise-0.1.8.tgz#a5bea98814c48f52cbe02720e7fe2d6fc3b5119a"
-  dependencies:
-    co "^4.6.0"
-
 spawn-sync@^1.0.11, spawn-sync@^1.0.15:
   version "1.0.15"
   resolved "https://registry.yarnpkg.com/spawn-sync/-/spawn-sync-1.0.15.tgz#b00799557eb7fb0c8376c29d44e8a1ea67e57476"
@@ -19511,14 +19414,6 @@ stringify-entities@^1.0.1:
     character-entities-legacy "^1.0.0"
     is-alphanumerical "^1.0.0"
     is-hexadecimal "^1.0.0"
-
-stringify-object@3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/stringify-object/-/stringify-object-3.2.2.tgz#9853052e5a88fb605a44cd27445aa257ad7ffbcd"
-  dependencies:
-    get-own-enumerable-property-symbols "^2.0.1"
-    is-obj "^1.0.1"
-    is-regexp "^1.0.0"
 
 stringify-object@^3.2.2:
   version "3.3.0"
@@ -20067,12 +19962,6 @@ to-arraybuffer@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43"
 
-to-camel-case@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/to-camel-case/-/to-camel-case-1.0.0.tgz#1a56054b2f9d696298ce66a60897322b6f423e46"
-  dependencies:
-    to-space-case "^1.0.0"
-
 to-fast-properties@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-1.0.3.tgz#b83571fa4d8c25b82e231b06e3a3055de4ca1a47"
@@ -20080,10 +19969,6 @@ to-fast-properties@^1.0.3:
 to-fast-properties@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz#dc5e698cbd079265bc73e0377681a4e4e83f616e"
-
-to-no-case@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/to-no-case/-/to-no-case-1.0.2.tgz#c722907164ef6b178132c8e69930212d1b4aa16a"
 
 to-object-path@^0.3.0:
   version "0.3.0"
@@ -20106,12 +19991,6 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
-
-to-space-case@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/to-space-case/-/to-space-case-1.0.0.tgz#b052daafb1b2b29dc770cea0163e5ec0ebc9fc17"
-  dependencies:
-    to-no-case "^1.0.0"
 
 to-vfile@^4.0.0:
   version "4.0.0"
@@ -20914,10 +20793,6 @@ validate-npm-package-name@^3.0.0:
   resolved "https://registry.yarnpkg.com/validate-npm-package-name/-/validate-npm-package-name-3.0.0.tgz#5fa912d81eb7d0c74afc140de7317f0ca7df437e"
   dependencies:
     builtins "^1.0.3"
-
-value-equal@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/value-equal/-/value-equal-0.4.0.tgz#c5bdd2f54ee093c04839d71ce2e4758a6890abc7"
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"

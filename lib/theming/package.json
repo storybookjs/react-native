@@ -22,7 +22,6 @@
     "@emotion/core": "^10.0.5",
     "@emotion/styled": "^10.0.5",
     "emotion-theming": "^10.0.5",
-    "global": "^4.3.2",
     "prop-types": "^15.6.2",
     "react-inspector": "^2.3.1"
   },

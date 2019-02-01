@@ -32,7 +32,6 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-addons-create-fragment": "^15.5.3",
-    "react-element-to-jsx-string": "^14.0.2",
     "react-is": "^16.7.0",
     "react-lifecycles-compat": "^3.0.4",
     "util-deprecate": "^1.0.2"
