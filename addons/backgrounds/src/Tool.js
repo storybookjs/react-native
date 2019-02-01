@@ -4,15 +4,41 @@ import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
 
 import { logger } from '@storybook/client-logger';
-import { STORY_CHANGED } from '@storybook/core-events';
+import { SET_STORIES } from '@storybook/core-events';
 
 import { Popout, Item, Icons, Icon, IconButton, Title, Detail, List } from '@storybook/components';
 import * as S from './components';
 
 import { PARAM_KEY } from './constants';
 
-const toList = memoize(50)(viewports => Object.entries(viewports));
+const toList = memoize(50)((items = {}) => Object.entries(items));
 const getIframe = memoize(1)(() => document.getElementById('storybook-preview-background'));
+
+const getState = (props, state) => {
+  const data = props.api.getCurrentStoryData();
+  const backgrounds = data && data.parameters && data.parameters[PARAM_KEY];
+  const list = backgrounds ? toList(backgrounds) : [];
+
+  return list && list.length
+    ? list.reduce(
+        (acc, { name, value, default: isSelected }) => {
+          acc.backgrounds.push(value);
+
+          if (isSelected) {
+            acc.selected = name;
+          }
+          return acc;
+        },
+        {
+          backgrounds: [],
+          selected: state.selected,
+        }
+      )
+    : {
+        backgrounds: [],
+        selected: undefined,
+      };
+};
 
 export default class BackgroundTool extends Component {
   constructor(props) {
@@ -27,37 +53,15 @@ export default class BackgroundTool extends Component {
   componentDidMount() {
     const { api } = this.props;
 
-    api.on(STORY_CHANGED, this.onStoryChange);
+    api.on(SET_STORIES, () => {
+      const { state, props } = this;
+      this.setState(getState(props, state));
+    });
   }
 
-  componentWillUnmount() {
-    const { api } = this.props;
-    api.off(STORY_CHANGED, this.onStoryChange);
+  static getDerivedStateFromProps(props, state) {
+    return getState(props, state);
   }
-
-  onStoryChange = id => {
-    const { api } = this.props;
-    const params = api.getParameters(id, PARAM_KEY);
-
-    if (params && !params.disable) {
-      const { backgrounds, selected } = params.reduce(
-        (acc, { name, value, default: isSelected }) => {
-          Object.assign(acc.backgrounds, { [name]: value });
-          if (isSelected) {
-            acc.selected = name;
-          }
-          return acc;
-        },
-        {
-          backgrounds: {},
-          selected: undefined,
-        }
-      );
-      this.setState({ backgrounds, selected }, this.apply);
-    } else {
-      this.setState({ backgrounds: {}, selected: undefined }, this.apply);
-    }
-  };
 
   apply = () => {
     const iframe = getIframe();
@@ -85,13 +89,8 @@ export default class BackgroundTool extends Component {
 
   render() {
     const { backgrounds, selected } = this.state;
-    const list = toList(backgrounds);
 
-    if (!list.length) {
-      return null;
-    }
-
-    return (
+    return backgrounds.length ? (
       <Popout key="backgrounds">
         <IconButton key="background" title="Backgrounds">
           <Icons icon="photo" />
@@ -114,7 +113,7 @@ export default class BackgroundTool extends Component {
               </Fragment>
             ) : null}
 
-            {list.map(([key, value]) => (
+            {backgrounds.map(([key, value]) => (
               <Item
                 key={key}
                 onClick={() => {
@@ -130,7 +129,7 @@ export default class BackgroundTool extends Component {
           </List>
         )}
       </Popout>
-    );
+    ) : null;
   }
 }
 BackgroundTool.propTypes = {
