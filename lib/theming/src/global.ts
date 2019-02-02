@@ -41,6 +41,7 @@ export const createGlobal = memoize(1)(
       select {
         outline: none;
         font-family: inherit;
+        font-size: inherit;
       }
 
       sub,
