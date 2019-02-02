@@ -1,24 +1,23 @@
 import { document } from 'global';
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
 
+import { styled } from '@storybook/theming';
 import { logger } from '@storybook/client-logger';
 import { SET_STORIES } from '@storybook/core-events';
 
-import {
-  Popout,
-  Item,
-  Icons,
-  MenuIcon,
-  IconButton,
-  Title,
-  Detail,
-  List,
-} from '@storybook/components';
-import * as S from './components';
+import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
 
 import { PARAM_KEY } from './constants';
+
+export const ColorIcon = styled.span(({ background }) => ({
+  borderRadius: '1rem',
+  display: 'block',
+  height: '1rem',
+  width: '1rem',
+  background,
+}));
 
 const getIframe = () => document.getElementById('storybook-preview-background');
 
@@ -87,45 +86,37 @@ export default class BackgroundTool extends Component {
 
     apply(selected, iframe);
 
+    let backgroundsTooltip = backgrounds.map(([{ name, value }]) => ({
+      title: name,
+      onClick: () => {
+        this.change(value);
+      },
+      right: <ColorIcon background={value} />,
+    }));
+
+    if (selected !== 'transparent') {
+      backgroundsTooltip = [
+        {
+          title: 'Reset background',
+          onClick: () => {
+            this.change('transparent');
+          },
+        },
+        ...backgroundsTooltip,
+      ];
+    }
+
     return backgrounds.length ? (
-      <Popout key="backgrounds">
+      <WithTooltip
+        placement="top"
+        trigger="click"
+        tooltip={<TooltipLinkList links={backgroundsTooltip} />}
+        closeOnClick
+      >
         <IconButton key="background" title="Backgrounds">
           <Icons icon="photo" />
         </IconButton>
-        {({ hide }) => (
-          <List>
-            {selected !== 'transparent' ? (
-              <Fragment>
-                <Item
-                  key="clear"
-                  onClick={() => {
-                    hide();
-                    this.change('transparent');
-                  }}
-                >
-                  <MenuIcon type="undo" />
-                  <Title>Clear</Title>
-                  <Detail>transparent</Detail>
-                </Item>
-              </Fragment>
-            ) : null}
-
-            {backgrounds.map(({ name, value }) => (
-              <Item
-                key={name}
-                onClick={() => {
-                  hide();
-                  this.change(value);
-                }}
-              >
-                <MenuIcon type={<S.ColorIcon background={value} />} />
-                <Title>{name}</Title>
-                <Detail>{value}</Detail>
-              </Item>
-            ))}
-          </List>
-        )}
-      </Popout>
+      </WithTooltip>
     ) : null;
   }
 }

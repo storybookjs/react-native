@@ -5,7 +5,7 @@ import memoize from 'memoizerific';
 
 import { Global, css } from '@storybook/theming';
 
-import { Popout, Item, Icons, MenuIcon, IconButton, Title, List } from '@storybook/components';
+import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
 import { STORY_CHANGED } from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
 
@@ -88,6 +88,32 @@ export default class ViewportTool extends Component {
 
     const list = toList(viewports);
 
+    let viewportsTooltip = list.map(([key, { name, styles }]) => ({
+      title: name,
+      onClick: () => {
+        this.change(key);
+      },
+      right: `${styles.width}-${styles.height}`,
+    }));
+
+    if (selected !== undefined) {
+      viewportsTooltip = [
+        {
+          title: 'Reset viewport',
+          onClick: () => {
+            this.change(undefined);
+          },
+        },
+        {
+          title: 'Rotate viewport',
+          onClick: () => {
+            this.rotate();
+          },
+        },
+        ...viewportsTooltip,
+      ];
+    }
+
     if (!list.length) {
       return null;
     }
@@ -103,52 +129,16 @@ export default class ViewportTool extends Component {
             },
           })}
         />
-        <Popout key="viewports">
+        <WithTooltip
+          placement="top"
+          trigger="click"
+          tooltip={<TooltipLinkList links={viewportsTooltip} />}
+          closeOnClick
+        >
           <IconButton key="viewport" title="Change Viewport">
             <Icons icon="grow" />
           </IconButton>
-          {({ hide }) => (
-            <List>
-              {selected !== undefined ? (
-                <Fragment>
-                  <Item
-                    key="reset"
-                    onClick={() => {
-                      hide();
-                      this.change(undefined);
-                    }}
-                  >
-                    <MenuIcon type="undo" />
-                    <Title>Reset (responsive)</Title>
-                  </Item>
-                  <Item
-                    key="rotate"
-                    onClick={() => {
-                      hide();
-                      this.rotate();
-                    }}
-                  >
-                    <MenuIcon type="sync" />
-                    <Title>Rotate</Title>
-                  </Item>
-                </Fragment>
-              ) : null}
-
-              {list.map(([key, { name, type }]) => (
-                <Item
-                  key={key}
-                  onClick={() => {
-                    hide();
-                    this.change(key);
-                  }}
-                >
-                  <MenuIcon type={type} />
-                  <Title>{name}</Title>
-                </Item>
-              ))}
-            </List>
-          )}
-        </Popout>
+        </WithTooltip>
       </Fragment>
     );
   }

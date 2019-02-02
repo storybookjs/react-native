@@ -4,13 +4,17 @@ import memoize from 'memoizerific';
 import { styled } from '@storybook/theming';
 
 import { logger } from '@storybook/client-logger';
-import { Popout, Item, Icons, MenuIcon, IconButton, Title, List } from '@storybook/components';
+import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
 
 const getIframe = memoize(1)(() => document.getElementById('storybook-preview-iframe'));
 
 const ColorIcon = styled.span(
   {
     background: 'linear-gradient(to right, #F44336, #FF9800, #FFEB3B, #8BC34A, #2196F3, #9C27B0)',
+    borderRadius: '1rem',
+    display: 'block',
+    height: '1rem',
+    width: '1rem',
   },
   ({ filter }) => ({
     filter: filter === 'mono' ? 'grayscale(100%)' : `url('#${filter}')`,
@@ -39,55 +43,47 @@ class ColorBlindness extends Component {
   render() {
     const { filter } = this.state;
 
+    let colorList = [
+      'protanopia',
+      'protanomaly',
+      'deuteranopia',
+      'deuteranomaly',
+      'tritanopia',
+      'tritanomaly',
+      'achromatopsia',
+      'achromatomaly',
+      'mono',
+    ].map(i => ({
+      title: i,
+      onClick: () => {
+        this.setFilter(filter === i ? null : i);
+      },
+      right: <ColorIcon filter={i} />,
+    }));
+
+    if (filter !== null) {
+      colorList = [
+        {
+          title: 'Reset color filter',
+          onClick: () => {
+            this.setFilter(null);
+          },
+        },
+        ...colorList,
+      ];
+    }
+
     return (
-      <Popout key="filters">
+      <WithTooltip
+        placement="top"
+        trigger="click"
+        tooltip={<TooltipLinkList links={colorList} />}
+        closeOnClick
+      >
         <IconButton key="filter" active={!!filter} title="Color Blindness Emulation">
           <Icons icon="mirror" />
         </IconButton>
-        {({ hide }) => (
-          <List>
-            {[
-              'protanopia',
-              'protanomaly',
-              'deuteranopia',
-              'deuteranomaly',
-              'tritanopia',
-              'tritanomaly',
-              'achromatopsia',
-              'achromatomaly',
-            ].map(i => (
-              <Item
-                key={i}
-                onClick={() => {
-                  this.setFilter(filter === i ? null : i);
-                  hide();
-                }}
-              >
-                <MenuIcon type={<ColorIcon filter={i} />} />
-                <Title>{i}</Title>
-              </Item>
-            ))}
-            <Item
-              onClick={() => {
-                this.setFilter(filter === 'mono' ? null : 'mono');
-                hide();
-              }}
-            >
-              <MenuIcon type={<ColorIcon filter="mono" />} />
-              <Title>mono</Title>
-            </Item>
-            <Item
-              onClick={() => {
-                this.setFilter(null);
-                hide();
-              }}
-            >
-              <MenuIcon type={<ColorIcon />} />
-              <Title>Off</Title>
-            </Item>
-          </List>
-        )}
-      </Popout>
+      </WithTooltip>
     );
   }
 }
