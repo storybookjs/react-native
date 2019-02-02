@@ -7,10 +7,10 @@ import { ActionBar } from '@storybook/components';
 
 import { Actions, Action, Wrapper, InspectorContainer, Counter } from './style';
 
-const ActionLogger = withTheme(({ actions, onClear, theme }) => (
+export const ActionLogger = withTheme(({ actions, onClear, theme }: any) => (
   <Wrapper>
     <Actions>
-      {actions.map(action => (
+      {actions.map((action: any) => (
         <Action key={action.id}>
           {action.count > 1 && <Counter>{action.count}</Counter>}
           <InspectorContainer>

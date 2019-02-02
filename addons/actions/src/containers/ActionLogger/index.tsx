@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import deepEqual from 'fast-deep-equal';
 
@@ -7,8 +7,26 @@ import { STORY_RENDERED } from '@storybook/core-events';
 import ActionLoggerComponent from '../../components/ActionLogger';
 import { EVENT_ID } from '../..';
 
-export default class ActionLogger extends React.Component {
-  state = { actions: [] };
+interface ActionLoggerProps {
+  active: boolean;
+  api: {
+    on(event: string, callback: (data: any) => void): void;
+    off(event: string, callback: (data: any) => void): void;
+  };
+}
+
+interface ActionLoggerState {
+  actions: any[];
+}
+
+export default class ActionLogger extends Component<ActionLoggerProps, ActionLoggerState> {
+  private mounted: boolean;
+
+  constructor(props: ActionLoggerProps) {
+    super(props);
+
+    this.state = { actions: [] };
+  }
 
   componentDidMount() {
     this.mounted = true;
@@ -33,13 +51,13 @@ export default class ActionLogger extends React.Component {
     }
   };
 
-  addAction = action => {
+  addAction = (action: { data: any; count: number; options: { limit: number; }; }) => {
     let { actions = [] } = this.state;
     actions = [...actions];
 
     const previous = actions.length && actions[0];
 
-    if (previous && deepEqual(previous.data, action.data, { strict: true })) {
+    if (previous && deepEqual(previous.data, action.data)) {
       previous.count++; // eslint-disable-line
     } else {
       action.count = 1; // eslint-disable-line
@@ -63,7 +81,7 @@ export default class ActionLogger extends React.Component {
   }
 }
 
-ActionLogger.propTypes = {
+(ActionLogger as any).propTypes = {
   active: PropTypes.bool.isRequired,
   channel: PropTypes.shape({
     emit: PropTypes.func,

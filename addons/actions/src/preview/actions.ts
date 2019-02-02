@@ -1,6 +1,6 @@
 import action from './action';
 
-export default function actions(...args) {
+export default function actions(...args: any[]) {
   let options = {};
   const names = args;
   // last argument can be options
@@ -16,7 +16,7 @@ export default function actions(...args) {
     });
   }
 
-  const actionsObject = {};
+  const actionsObject = {} as any;
   Object.keys(namesObject).forEach(name => {
     actionsObject[name] = action(namesObject[name], options);
   });

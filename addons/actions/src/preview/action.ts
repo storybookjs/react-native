@@ -2,13 +2,13 @@ import uuid from 'uuid/v1';
 import addons from '@storybook/addons';
 import { EVENT_ID } from '../constants';
 
-export default function action(name, options = {}) {
+export default function action(name: any, options = {}) {
   const actionOptions = {
     ...options,
   };
 
-  // eslint-disable-next-line no-shadow
-  const handler = function action(...args) {
+  // tslint:disable-next-line:no-shadowed-variable
+  const handler = function action(...args: any[]) {
     const channel = addons.getChannel();
     const id = uuid();
     channel.emit(EVENT_ID, {
