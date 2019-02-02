@@ -1,10 +1,10 @@
 // Based on http://backbonejs.org/docs/backbone.html#section-164
 import { document, Element } from 'global';
-import isEqual from 'lodash/isEqual';
-import addons from '@storybook/addons';
+import { isEqual } from 'lodash';
+import { addons } from '@storybook/addons';
 import Events from '@storybook/core-events';
 
-import actions from './actions';
+import { actions } from './actions';
 
 let lastSubscription: () => () => void;
 let lastArgs: any[];

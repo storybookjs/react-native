@@ -1,6 +1,6 @@
-import action from './action';
+import { action } from './action';
 
-export default function actions(...args: any[]) {
+export function actions(...args: any[]) {
   let options = {};
   const names = args;
   // last argument can be options

@@ -42,5 +42,3 @@ ActionLogger.propTypes = {
     })
   ).isRequired,
 };
-
-export default ActionLogger;

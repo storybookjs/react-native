@@ -1,9 +1,5 @@
-import { action, actions, decorate, configureActions, decorateAction, withActions } from './preview';
-
-// addons, panels and events get unique names using a prefix
-import { ADDON_ID, PANEL_ID, EVENT_ID } from './constants';
-
-export { action, actions, decorate, configureActions, decorateAction, withActions, ADDON_ID, PANEL_ID, EVENT_ID };
+export * from './constants';
+export * from './preview';
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();

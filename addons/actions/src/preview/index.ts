@@ -1,5 +1,5 @@
-export { default as action } from './action';
-export { default as actions } from './actions';
-export { configureActions } from './configureActions';
-export { decorateAction, decorate } from './decorateAction';
-export { withActions } from './withActions';
+export * from './action';
+export * from './actions';
+export * from './configureActions';
+export * from './decorateAction';
+export * from './withActions';

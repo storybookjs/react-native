@@ -4,6 +4,6 @@ export const config = {
   limit: 50,
 };
 
-export function configureActions(options = {}) {
+export const configureActions = (options = {}) => {
   Object.assign(config, options);
-}
+};

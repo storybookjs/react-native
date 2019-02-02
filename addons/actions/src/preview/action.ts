@@ -1,8 +1,8 @@
 import uuid from 'uuid/v1';
-import addons from '@storybook/addons';
+import { addons } from '@storybook/addons';
 import { EVENT_ID } from '../constants';
 
-export default function action(name: any, options = {}) {
+export function action(name: any, options = {}) {
   const actionOptions = {
     ...options,
   };

@@ -4,7 +4,7 @@ import deepEqual from 'fast-deep-equal';
 
 import { STORY_RENDERED } from '@storybook/core-events';
 
-import ActionLoggerComponent from '../../components/ActionLogger';
+import { ActionLogger as ActionLoggerComponent } from '../../components/ActionLogger';
 import { EVENT_ID } from '../..';
 
 interface ActionLoggerProps {
@@ -51,7 +51,7 @@ export default class ActionLogger extends Component<ActionLoggerProps, ActionLog
     }
   };
 
-  addAction = (action: { data: any; count: number; options: { limit: number; }; }) => {
+  addAction = (action: { data: any; count: number; options: { limit: number } }) => {
     let { actions = [] } = this.state;
     actions = [...actions];
 
