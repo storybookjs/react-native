@@ -7,7 +7,6 @@ export function register() {
   addons.register(ADDON_ID, api => {
     addons.addPanel(PANEL_ID, {
       title: 'Actions',
-      // eslint-disable-next-line react/prop-types
       render: ({ active }) => <ActionLogger api={api} active={active} />,
     });
   });

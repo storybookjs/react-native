@@ -6,6 +6,7 @@ import { STORY_RENDERED } from '@storybook/core-events';
 
 import { ActionLogger as ActionLoggerComponent } from '../../components/ActionLogger';
 import { EVENT_ID } from '../..';
+import { ActionDisplay } from '../../models';
 
 interface ActionLoggerProps {
   active: boolean;
@@ -16,7 +17,7 @@ interface ActionLoggerProps {
 }
 
 interface ActionLoggerState {
-  actions: any[];
+  actions: ActionDisplay[];
 }
 
 export default class ActionLogger extends Component<ActionLoggerProps, ActionLoggerState> {
@@ -51,7 +52,7 @@ export default class ActionLogger extends Component<ActionLoggerProps, ActionLog
     }
   };
 
-  addAction = (action: { data: any; count: number; options: { limit: number } }) => {
+  addAction = (action: ActionDisplay) => {
     let { actions = [] } = this.state;
     actions = [...actions];
 
@@ -83,11 +84,6 @@ export default class ActionLogger extends Component<ActionLoggerProps, ActionLog
 
 (ActionLogger as any).propTypes = {
   active: PropTypes.bool.isRequired,
-  channel: PropTypes.shape({
-    emit: PropTypes.func,
-    on: PropTypes.func,
-    removeListener: PropTypes.func,
-  }).isRequired,
   api: PropTypes.shape({
     on: PropTypes.func,
     getQueryParam: PropTypes.func,
