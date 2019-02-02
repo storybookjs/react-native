@@ -4,9 +4,15 @@
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook -s public",
+    "lint": "tslint src/**/*.ts{,x}",
     "storybook": "start-storybook -p 9010 -s public",
-    "test": "react-scripts test --env=jsdom",
-    "lint": "tslint src/**/*.ts{,x}"
+    "test": "react-scripts test --env=jsdom"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "jest-emotion",
+      "enzyme-to-json/serializer"
+    ]
   },
   "dependencies": {
     "react": "^16.7.0",
@@ -33,11 +39,5 @@
     "tslint": "^5.12.1",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.2.4"
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "jest-emotion",
-      "enzyme-to-json/serializer"
-    ]
   }
 }
