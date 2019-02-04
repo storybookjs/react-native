@@ -114,9 +114,9 @@ jobs:
           command: |
             cd examples/official-storybook
             yarn build-storybook
-      - run:
-          name: Run image snapshots
-          command: yarn test --image
+      # - run:
+      #     name: Run image snapshots
+      #     command: yarn test --image
       - store_artifacts:
           path: examples/official-storybook/image-snapshots/__image_snapshots__
           destination: official_storybook_image_snapshots
