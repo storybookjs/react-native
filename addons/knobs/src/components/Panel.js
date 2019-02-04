@@ -169,7 +169,19 @@ export default class KnobPanel extends PureComponent {
     const knobsArray = knobKeysArray.map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
-      return <Placeholder>NO KNOBS</Placeholder>;
+      return (
+        <Placeholder title="No knobs found">
+          Learn how to{' '}
+          <a
+            href="https://github.com/storybooks/storybook/tree/master/addons/knobs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            dynamically interact with components
+          </a>{' '}
+          using knobs.
+        </Placeholder>
+      );
     }
 
     const entries = Object.entries(groups);
