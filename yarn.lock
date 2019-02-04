@@ -1865,9 +1865,10 @@
     universal-user-agent "^2.0.1"
     url-template "^2.0.8"
 
-"@octokit/request@2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-2.2.1.tgz#1b445e3052842b1f3ab94d68e2606840c85b4265"
+"@octokit/request@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-2.3.0.tgz#da2672308bcf0b9376ef66f51bddbe5eb87cc00a"
+  integrity sha512-5YRqYNZOAaL7+nt7w3Scp6Sz4P2g7wKFP9npx1xdExMomk8/M/ICXVLYVam2wzxeY0cIc6wcKpjC5KI4jiNbGw==
   dependencies:
     "@octokit/endpoint" "^3.1.1"
     is-plain-object "^2.0.4"
@@ -1885,15 +1886,15 @@
     lodash "^4.17.4"
     url-template "^2.0.8"
 
-"@octokit/rest@^16.3.0":
-  version "16.9.0"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.9.0.tgz#8fda1952b28c7671872620ad4f6884bd7d22802f"
+"@octokit/rest@^16.14.1":
+  version "16.15.0"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.15.0.tgz#648a88d5de055bcf38976709c5b2bdf1227b926f"
+  integrity sha512-Un+e7rgh38RtPOTe453pT/KPM/p2KZICimBmuZCd2wEo8PacDa4h6RqTPZs+f2DPazTTqdM7QU4LKlUjgiBwWw==
   dependencies:
-    "@octokit/request" "2.2.1"
+    "@octokit/request" "2.3.0"
     before-after-hook "^1.2.0"
     btoa-lite "^1.0.0"
     lodash.get "^4.4.2"
-    lodash.pick "^4.4.0"
     lodash.set "^4.3.2"
     lodash.uniq "^4.5.0"
     octokit-pagination-methods "^1.1.0"
@@ -6946,13 +6947,13 @@ damerau-levenshtein@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.4.tgz#03191c432cb6eea168bb77f3a55ffdccb8978514"
 
-danger@^7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-7.0.4.tgz#e7d3aa5fee30babeddb8f32f13a3d61a5b4e38d2"
-  integrity sha512-3sbPZ+yxgvzIUsgKlPSd+EmQ1m4TH8RrKAB+/2reLh8+2LyWBpMgi3AfrM7vs3SeB3JvW6QMjcAtAehOZWswnA==
+danger@^7.0.7:
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-7.0.7.tgz#03f08fc78fd1125cc87b855383fc8c5069bfe1ab"
+  integrity sha512-x91m7V9bWc7cCaYxtnsG6nZTtKanvepK6VUvzym9vE7M4lY+C4fvRfg0D9ODFN7H6RuHK2NmTxDPTBsZpUU0og==
   dependencies:
     "@babel/polyfill" "^7.2.5"
-    "@octokit/rest" "^16.3.0"
+    "@octokit/rest" "^16.14.1"
     chalk "^2.3.0"
     commander "^2.18.0"
     debug "^4.1.1"
