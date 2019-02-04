@@ -9,7 +9,6 @@ module.exports = {
     '@babel/plugin-proposal-export-default-from',
     '@babel/plugin-syntax-dynamic-import',
     ['@babel/plugin-proposal-class-properties', { loose: true }],
-    'babel-plugin-add-react-displayname',
     'babel-plugin-macros',
     ['emotion', { sourceMap: true, autoLabel: true }],
   ],
@@ -23,6 +22,23 @@ module.exports = {
     {
       test: './examples/vue-kitchen-sink',
       presets: ['babel-preset-vue'],
+    },
+    {
+      test: './lib',
+      presets: [
+        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage' }],
+        '@babel/preset-react',
+      ],
+      plugins: [
+        ['@babel/plugin-proposal-object-rest-spread', { loose: true, useBuiltIns: true }],
+        '@babel/plugin-proposal-export-default-from',
+        '@babel/plugin-syntax-dynamic-import',
+        ['@babel/plugin-proposal-class-properties', { loose: true }],
+        'babel-plugin-macros',
+        ['emotion', { sourceMap: true, autoLabel: true }],
+        '@babel/plugin-transform-react-constant-elements',
+        'babel-plugin-add-react-displayname',
+      ],
     },
     {
       test: [
