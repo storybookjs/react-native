@@ -14,29 +14,21 @@ const iframeId = 'storybook-preview-background';
 
 const getState = memoize(10)((props, state) => {
   const data = props.api.getCurrentStoryData();
-  const list = data && data.parameters && data.parameters[PARAM_KEY];
+  const list = (data && data.parameters && data.parameters[PARAM_KEY]) || [];
 
-  return list && list.length
-    ? list.reduce(
-        (acc, { name, value, default: isSelected }) => {
-          acc.items.push({ name, value });
+  const items = list.length
+    ? list.map(({ name, styles: value, id }) => ({ name, value, id }))
+    : list;
 
-          if (isSelected && state.selected !== 'transparent') {
-            if (!list.find(i => i.value === state.selected)) {
-              acc.selected = value;
-            }
-          }
-          return acc;
-        },
-        {
-          items: [],
-          selected: state.selected,
-        }
-      )
-    : {
-        items: [],
-        selected: 'transparent',
-      };
+  const selected =
+    state.selected === 'responsive' || list.find(i => i.id === state.selected)
+      ? state.selected
+      : list.find(i => i.default) || 'responsive';
+
+  return {
+    items,
+    selected,
+  };
 });
 
 export default class BackgroundTool extends Component {

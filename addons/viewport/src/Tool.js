@@ -18,29 +18,20 @@ const getState = memoize(10)((props, state) => {
   const data = props.api.getCurrentStoryData();
   const list = toList(data && data.parameters && data.parameters[PARAM_KEY]);
 
-  return list && list.length
-    ? list.reduce(
-        (acc, { name, styles: value, id }) => {
-          acc.items.push({ name, value, id });
+  const items = list.length
+    ? list.map(({ name, styles: value, id }) => ({ name, value, id }))
+    : list;
 
-          if (state.selected !== 'responsive') {
-            if (!list.find(i => i.id === state.selected)) {
-              acc.selected = id;
-            }
-          }
-          return acc;
-        },
-        {
-          isRotated: state.isRotated,
-          items: [],
-          selected: state.selected,
-        }
-      )
-    : {
-        isRotated: false,
-        items: [],
-        selected: 'responsive',
-      };
+  const selected =
+    state.selected === 'responsive' || list.find(i => i.id === state.selected)
+      ? state.selected
+      : list.find(i => i.default) || 'responsive';
+
+  return {
+    isRotated: state.isRotated,
+    items,
+    selected,
+  };
 });
 
 const flip = ({ width, height }) => ({ height: width, widht: height });
@@ -56,7 +47,9 @@ export default class ViewportTool extends Component {
     };
 
     this.listener = () => {
-      this.setState({});
+      this.setState({
+        selected: null,
+      });
     };
   }
 
