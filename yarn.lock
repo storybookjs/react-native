@@ -157,9 +157,10 @@
     tslib "^1.9.0"
     yargs "9.0.1"
 
-"@angular/compiler@^7.2.2":
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-7.2.2.tgz#7e0251f1283a58c0c991f7975eb38e2cab02a6b5"
+"@angular/compiler@^7.2.3":
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-7.2.3.tgz#ffa89911750342c5e4f0359d6e9402479dd6e7bd"
+  integrity sha512-UM6n4MyZkR5+VVjlwhLH8IfqdWBkdFcF5at4ckJXOJ/gkIUq97irbis9pGj1b0TO7MAl8uhF4b68xe5lk8b49g==
   dependencies:
     tslib "^1.9.0"
 
