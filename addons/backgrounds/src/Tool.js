@@ -1,52 +1,34 @@
-import { document } from 'global';
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
 
-import { logger } from '@storybook/client-logger';
 import { SET_STORIES } from '@storybook/core-events';
+import { Global } from '@storybook/theming';
 
 import { Popout, Item, Icons, Icon, IconButton, Title, Detail, List } from '@storybook/components';
 import * as S from './components';
 
 import { PARAM_KEY } from './constants';
 
-const getIframe = () => document.getElementById('storybook-preview-background');
+const iframeId = 'storybook-preview-background';
 
-const getState = (props, state) => {
+const getState = memoize(10)((props, state) => {
   const data = props.api.getCurrentStoryData();
-  const list = data && data.parameters && data.parameters[PARAM_KEY];
+  const list = (data && data.parameters && data.parameters[PARAM_KEY]) || [];
 
-  return list && list.length
-    ? list.reduce(
-        (acc, { name, value, default: isSelected }) => {
-          acc.backgrounds.push({ name, value });
+  const items = list.length
+    ? list.map(({ name, styles: value, id }) => ({ name, value, id }))
+    : list;
 
-          if (isSelected && state.selected !== 'transparent') {
-            if (!list.find(i => i.value === state.selected)) {
-              acc.selected = value;
-            }
-          }
-          return acc;
-        },
-        {
-          backgrounds: [],
-          selected: state.selected,
-        }
-      )
-    : {
-        backgrounds: [],
-        selected: 'transparent',
-      };
-};
+  const selected =
+    state.selected === 'responsive' || list.find(i => i.id === state.selected)
+      ? state.selected
+      : list.find(i => i.default) || 'responsive';
 
-const apply = memoize(1)((value, iframe) => {
-  if (iframe) {
-    // eslint-disable-next-line no-param-reassign
-    iframe.style.background = value;
-  } else {
-    logger.error('Cannot find Storybook iframe');
-  }
+  return {
+    items,
+    selected,
+  };
 });
 
 export default class BackgroundTool extends Component {
@@ -54,69 +36,81 @@ export default class BackgroundTool extends Component {
     super(props);
 
     this.state = {
-      backgrounds: [],
+      items: [],
       selected: 'transparent',
+    };
+
+    this.listener = () => {
+      this.setState({ selected: null });
     };
   }
 
   componentDidMount() {
     const { api } = this.props;
+    api.on(SET_STORIES, this.listener);
+  }
 
-    api.on(SET_STORIES, () => {
-      const { state, props } = this;
-      this.setState(getState(props, state));
-    });
+  componentWillUnmount() {
+    const { api } = this.props;
+    api.off(SET_STORIES, this.listener);
   }
 
   change = selected => {
-    this.setState({ selected }, this.apply);
+    this.setState({ selected });
   };
 
   render() {
-    const { backgrounds, selected } = getState(this.props, this.state);
-    const iframe = getIframe();
+    const { items, selected } = getState(this.props, this.state);
 
-    apply(selected, iframe);
+    return items.length ? (
+      <Fragment>
+        <Global
+          styles={{
+            [`#${iframeId}`]: {
+              background: selected,
+            },
+          }}
+        />
 
-    return backgrounds.length ? (
-      <Popout key="backgrounds">
-        <IconButton key="background" title="Backgrounds">
-          <Icons icon="photo" />
-        </IconButton>
-        {({ hide }) => (
-          <List>
-            {selected !== 'transparent' ? (
-              <Fragment>
+        <Popout key="backgrounds">
+          <IconButton key="background" title="Backgrounds">
+            <Icons icon="photo" />
+          </IconButton>
+          {({ hide }) => (
+            <List>
+              {selected !== 'transparent' ? (
+                <Fragment>
+                  <Item
+                    key="clear"
+                    onClick={() => {
+                      hide();
+                      this.change('transparent');
+                    }}
+                  >
+                    <Icon type="undo" />
+                    <Title>Clear</Title>
+                    <Detail>transparent</Detail>
+                  </Item>
+                </Fragment>
+              ) : null}
+
+              {items.map(({ name, value }) => (
                 <Item
-                  key="clear"
+                  key={name}
                   onClick={() => {
                     hide();
-                    this.change('transparent');
+                    this.change(value);
                   }}
                 >
-                  <Icon type="undo" />
-                  <Title>Clear</Title>
-                  <Detail>transparent</Detail>
+                  <Icon type={<S.ColorIcon background={value} />} />
+                  <Title>{name}</Title>
+                  <Detail>{value}</Detail>
                 </Item>
-              </Fragment>
-            ) : null}
-
-            {backgrounds.map(({ name, value }) => (
-              <Item
-                key={name}
-                onClick={() => {
-                  hide();
-                  this.change(value);
-                }}
-              >
-                <Icon type={<S.ColorIcon background={value} />} />
-                <Title>{name}</Title>
-                <Detail>{value}</Detail>
-              </Item>
-            ))}
-          </List>
-        )}
-      </Popout>
+              ))}
+            </List>
+          )}
+        </Popout>
+      </Fragment>
     ) : null;
   }
 }
