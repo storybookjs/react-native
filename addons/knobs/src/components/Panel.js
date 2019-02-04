@@ -6,7 +6,7 @@ import { styled } from '@storybook/theming';
 import copy from 'copy-to-clipboard';
 
 import { STORY_CHANGED } from '@storybook/core-events';
-import { Placeholder, TabWrapper, TabsState, ActionBar, ActionButton } from '@storybook/components';
+import { Placeholder, TabWrapper, TabsState, ActionBar } from '@storybook/components';
 import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
 import Types from './types';
@@ -190,10 +190,12 @@ export default class KnobPanel extends PureComponent {
             onFieldClick={this.handleClick}
           />
         )}
-        <ActionBar>
-          <ActionButton onClick={this.copy}>COPY</ActionButton>
-          <ActionButton onClick={this.reset}>RESET</ActionButton>
-        </ActionBar>
+        <ActionBar
+          actionItems={[
+            { title: 'Copy', onClick: this.copy },
+            { title: 'Reset', onClick: this.reset },
+          ]}
+        />
       </PanelWrapper>
     );
   }
