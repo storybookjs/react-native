@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<td
+  className={null}
+>
+  <div>
+    foo bar
+  </div>
+</td>
+`;
+
+exports[` 2`] = `
+<td
+  className="info-table-monospace"
+>
+  <div>
+    foo bar
+  </div>
+</td>
+`;
+
+exports[` 3`] = `
+<td
+  className={null}
+>
+  <div>
+    foo bar
+  </div>
+  <div>
+    baz
+  </div>
+</td>
+`;
+
+exports[` 4`] = `
+<td
+  className="info-table-monospace"
+>
+  <div>
+    foo bar
+  </div>
+  <div>
+    baz
+  </div>
+</td>
+`;
+
+exports[` 5`] = `
+<td
+  className={null}
+>
+  foo bar
+</td>
+`;
+
+exports[` 6`] = `
+<td
+  className="info-table-monospace"
+>
+  foo bar
+</td>
+`;
+
+exports[` 7`] = `
+<td
+  className={null}
+>
+  foo
+  bar
+</td>
+`;
+
+exports[` 8`] = `
+<td
+  className="info-table-monospace"
+>
+  foo
+  bar
+</td>
+`;

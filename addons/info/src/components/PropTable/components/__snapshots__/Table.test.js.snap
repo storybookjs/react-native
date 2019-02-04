@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<table>
+  <div>
+    foo bar
+  </div>
+</table>
+`;
+
+exports[` 2`] = `
+<table>
+  <div>
+    foo bar
+  </div>
+  <div>
+    baz
+  </div>
+</table>
+`;
