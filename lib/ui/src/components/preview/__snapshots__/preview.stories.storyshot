@@ -274,8 +274,8 @@ Array [
           <iframe
             allowfullscreen=""
             id="storybook-preview-iframe"
-            src="http://example.com?id=undefined"
-            title="preview"
+            src="http://example.com?id=string"
+            title="string"
           />
         </div>
       </div>
@@ -694,8 +694,8 @@ Array [
           <iframe
             allowfullscreen=""
             id="storybook-preview-iframe"
-            src="http://example.com?id=undefined"
-            title="preview"
+            src="http://example.com?id=string"
+            title="string"
           />
         </div>
       </div>
