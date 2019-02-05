@@ -1,10 +1,9 @@
-import { document } from 'global';
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
 
-import { styled } from '@storybook/theming';
-import { logger } from '@storybook/client-logger';
+import { Global, styled } from '@storybook/theming';
+
 import { SET_STORIES } from '@storybook/core-events';
 
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
@@ -19,42 +18,45 @@ export const ColorIcon = styled.span(({ background }) => ({
   background,
 }));
 
-const getIframe = () => document.getElementById('storybook-preview-background');
+const iframeId = 'storybook-preview-background';
 
-const getState = (props, state) => {
-  const data = props.api.getCurrentStoryData();
-  const list = data && data.parameters && data.parameters[PARAM_KEY];
-
-  return list && list.length
-    ? list.reduce(
-        (acc, { name, value, default: isSelected }) => {
-          acc.backgrounds.push({ name, value });
-
-          if (isSelected && state.selected !== 'transparent') {
-            if (!list.find(i => i.value === state.selected)) {
-              acc.selected = value;
-            }
-          }
-          return acc;
+const createItem = memoize(1000)((name, value, hasSwatch) =>
+  hasSwatch
+    ? {
+        title: name,
+        onClick: () => {
+          this.change(value);
         },
-        {
-          backgrounds: [],
-          selected: state.selected,
-        }
-      )
+        right: <ColorIcon background={value} />,
+      }
     : {
-        backgrounds: [],
-        selected: 'transparent',
-      };
-};
+        title: name,
+        onClick: () => {
+          this.change(value);
+        },
+      }
+);
 
-const apply = memoize(1)((value, iframe) => {
-  if (iframe) {
-    // eslint-disable-next-line no-param-reassign
-    iframe.style.background = value;
-  } else {
-    logger.error('Cannot find Storybook iframe');
-  }
+const transparent = [createItem('Reset background', 'transparent', false)];
+const getState = memoize(10)((props, state) => {
+  const data = props.api.getCurrentStoryData();
+  const list = (data && data.parameters && data.parameters[PARAM_KEY]) || [];
+
+  const initial = state.selected === 'transparent' ? transparent : [];
+
+  const items = list.length
+    ? initial.concat(list.map(({ name, styles: value }) => createItem(name, value, true)))
+    : list;
+
+  const selected =
+    state.selected === 'transparent' || list.find(i => i.id === state.selected)
+      ? state.selected
+      : list.find(i => i.default) || 'transparent';
+
+  return {
+    items,
+    selected,
+  };
 });
 
 export default class BackgroundTool extends Component {
@@ -62,61 +64,52 @@ export default class BackgroundTool extends Component {
     super(props);
 
     this.state = {
-      backgrounds: [],
+      items: [],
       selected: 'transparent',
+    };
+
+    this.listener = () => {
+      this.setState({ selected: null });
     };
   }
 
   componentDidMount() {
     const { api } = this.props;
+    api.on(SET_STORIES, this.listener);
+  }
 
-    api.on(SET_STORIES, () => {
-      const { state, props } = this;
-      this.setState(getState(props, state));
-    });
+  componentWillUnmount() {
+    const { api } = this.props;
+    api.off(SET_STORIES, this.listener);
   }
 
   change = selected => {
-    this.setState({ selected }, this.apply);
+    this.setState({ selected });
   };
 
   render() {
-    const { backgrounds, selected } = getState(this.props, this.state);
-    const iframe = getIframe();
+    const { items, selected } = getState(this.props, this.state);
 
-    apply(selected, iframe);
-
-    let backgroundsTooltip = backgrounds.map(([{ name, value }]) => ({
-      title: name,
-      onClick: () => {
-        this.change(value);
-      },
-      right: <ColorIcon background={value} />,
-    }));
-
-    if (selected !== 'transparent') {
-      backgroundsTooltip = [
-        {
-          title: 'Reset background',
-          onClick: () => {
-            this.change('transparent');
-          },
-        },
-        ...backgroundsTooltip,
-      ];
-    }
-
-    return backgrounds.length ? (
-      <WithTooltip
-        placement="top"
-        trigger="click"
-        tooltip={<TooltipLinkList links={backgroundsTooltip} />}
-        closeOnClick
-      >
-        <IconButton key="background" title="Backgrounds">
-          <Icons icon="photo" />
-        </IconButton>
-      </WithTooltip>
+    return items.length ? (
+      <Fragment>
+        <Global
+          styles={{
+            [`#${iframeId}`]: {
+              background: selected,
+            },
+          }}
+        />
+        <WithTooltip
+          placement="top"
+          trigger="click"
+          tooltip={<TooltipLinkList links={items} />}
+          closeOnClick
+        >
+          <IconButton key="background" title="Backgrounds">
+            <Icons icon="photo" />
+          </IconButton>
+        </WithTooltip>
+      </Fragment>
     ) : null;
   }
 }
