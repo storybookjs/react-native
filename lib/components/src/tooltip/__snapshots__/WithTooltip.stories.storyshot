@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots basics/tooltip/WithTooltip no chrome 1`] = `
+exports[`Storyshots basics/Tooltip/WithTooltip no chrome 1`] = `
 .emotion-2 {
   display: inline-block;
   cursor: pointer;
@@ -51,7 +51,7 @@ exports[`Storyshots basics/tooltip/WithTooltip no chrome 1`] = `
 </div>
 `;
 
-exports[`Storyshots basics/tooltip/WithTooltip simple click 1`] = `
+exports[`Storyshots basics/Tooltip/WithTooltip simple click 1`] = `
 .emotion-2 {
   display: inline-block;
   cursor: pointer;
@@ -102,7 +102,7 @@ exports[`Storyshots basics/tooltip/WithTooltip simple click 1`] = `
 </div>
 `;
 
-exports[`Storyshots basics/tooltip/WithTooltip simple click closeOnClick 1`] = `
+exports[`Storyshots basics/Tooltip/WithTooltip simple click closeOnClick 1`] = `
 .emotion-2 {
   display: inline-block;
   cursor: pointer;
@@ -153,7 +153,7 @@ exports[`Storyshots basics/tooltip/WithTooltip simple click closeOnClick 1`] = `
 </div>
 `;
 
-exports[`Storyshots basics/tooltip/WithTooltip simple hover 1`] = `
+exports[`Storyshots basics/Tooltip/WithTooltip simple hover 1`] = `
 .emotion-2 {
   display: inline-block;
   cursor: pointer;
@@ -204,7 +204,7 @@ exports[`Storyshots basics/tooltip/WithTooltip simple hover 1`] = `
 </div>
 `;
 
-exports[`Storyshots basics/tooltip/WithTooltip simple hover, functional 1`] = `
+exports[`Storyshots basics/Tooltip/WithTooltip simple hover, functional 1`] = `
 .emotion-2 {
   display: inline-block;
   cursor: pointer;
