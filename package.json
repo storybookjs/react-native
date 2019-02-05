@@ -138,7 +138,7 @@
     "tslint": "~5.12.1",
     "tslint-config-prettier": "^1.15.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.2.4"
+    "typescript": "^3.3.1"
   },
   "husky": {
     "hooks": {
