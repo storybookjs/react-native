@@ -72,7 +72,6 @@ export const createGlobal = memoize(1)(
       code,
       pre {
         font-family: ${monoFonts.fontFamily};
-        font-size: 90%;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
@@ -90,6 +89,7 @@ export const createGlobal = memoize(1)(
         line-height: 18px;
         padding: 11px 1rem;
         white-space: pre-wrap;
+        font-size: 90%;
 
         color: ${color.darkest};
         border-radius: 3px;
