@@ -20,32 +20,34 @@ export const ColorIcon = styled.span(({ background }) => ({
 
 const iframeId = 'storybook-preview-background';
 
-const createItem = memoize(1000)((name, value, hasSwatch) =>
+const createItem = memoize(1000)((name, value, hasSwatch, change) =>
   hasSwatch
     ? {
         title: name,
         onClick: () => {
-          this.change(value);
+          change({ selected: value });
         },
         right: <ColorIcon background={value} />,
       }
     : {
         title: name,
         onClick: () => {
-          this.change(value);
+          change({ selected: value });
         },
       }
 );
 
-const transparent = [createItem('Reset background', 'transparent', false)];
-const getState = memoize(10)((props, state) => {
+const getState = memoize(10)((props, state, change) => {
   const data = props.api.getCurrentStoryData();
   const list = (data && data.parameters && data.parameters[PARAM_KEY]) || [];
 
-  const initial = state.selected === 'transparent' ? transparent : [];
+  const initial =
+    state.selected === 'transparent'
+      ? [createItem('Reset background', 'transparent', false, change)]
+      : [];
 
   const items = list.length
-    ? initial.concat(list.map(({ name, styles: value }) => createItem(name, value, true)))
+    ? initial.concat(list.map(({ name, styles: value }) => createItem(name, value, true, change)))
     : list;
 
   const selected =
@@ -83,12 +85,10 @@ export default class BackgroundTool extends Component {
     api.off(SET_STORIES, this.listener);
   }
 
-  change = selected => {
-    this.setState({ selected });
-  };
+  change = (...args) => this.setState(...args);
 
   render() {
-    const { items, selected } = getState(this.props, this.state);
+    const { items, selected } = getState(this.props, this.state, this.change);
 
     return items.length ? (
       <Fragment>

@@ -14,32 +14,17 @@ const toList = memoize(50)(items =>
 );
 const iframeId = 'storybook-preview-background';
 
-const responsive = [
-  {
-    title: 'Reset viewport',
-    onClick: () => {
-      this.change(undefined);
-    },
-  },
-  {
-    title: 'Rotate viewport',
-    onClick: () => {
-      this.rotate();
-    },
-  },
-];
-
-const createItem = memoize(1000)((name, value) => ({
+const createItem = memoize(1000)((name, value, change) => ({
   title: name,
   onClick: () => {
-    this.change(value);
+    change({ selected: value });
   },
   right: `${value.width}-${value.height}`,
 }));
 
 const flip = ({ width, height }) => ({ height: width, widht: height });
 
-const getState = memoize(10)((props, state) => {
+const getState = memoize(10)((props, state, change) => {
   const data = props.api.getCurrentStoryData();
   const list = toList(data && data.parameters && data.parameters[PARAM_KEY]);
 
@@ -48,9 +33,25 @@ const getState = memoize(10)((props, state) => {
       ? state.selected
       : list.find(i => i.default) || 'responsive';
 
-  const initial = selected === 'responsive' ? responsive : [];
+  const resets =
+    selected === 'responsive'
+      ? [
+          {
+            title: 'Reset viewport',
+            onClick: () => {
+              change({ selected: undefined });
+            },
+          },
+          {
+            title: 'Rotate viewport',
+            onClick: () => {
+              change({ isRotated: !state.isRotate });
+            },
+          },
+        ]
+      : [];
   const items = list.length
-    ? initial.concat(list.map(({ name, styles: value }) => createItem({ name, value })))
+    ? resets.concat(list.map(({ name, styles: value }) => createItem(name, value, change)))
     : list;
 
   return {
@@ -87,17 +88,10 @@ export default class ViewportTool extends Component {
     api.off(SET_STORIES, this.listener);
   }
 
-  change = selected => {
-    this.setState({ selected });
-  };
-
-  rotate = () => {
-    const { isRotated } = this.state;
-    this.setState({ isRotated: !isRotated });
-  };
+  change = (...args) => this.setState(...args);
 
   render() {
-    const { items, selected, isRotated } = getState(this.props, this.state);
+    const { items, selected, isRotated } = getState(this.props, this.state, this.change);
     const item = items.find(i => i.id === selected);
 
     return items.length ? (
