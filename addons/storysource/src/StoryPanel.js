@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Typography, SyntaxHighlighter } from '@storybook/components';
+import { Link, SyntaxHighlighter } from '@storybook/components';
 
 import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './events';
@@ -107,14 +107,14 @@ export default class StoryPanel extends Component {
     const url = `/?selectedKind=${selectedKind}&selectedStory=${selectedStory}`;
 
     return (
-      <Typography.Link
+      <Link
         href={url}
         key={storyKey}
         onClick={() => this.clickOnStory(selectedKind, selectedStory)}
         style={styles.story}
       >
         {story}
-      </Typography.Link>
+      </Link>
     );
   };
 
