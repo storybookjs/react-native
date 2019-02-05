@@ -337,13 +337,13 @@ Array [
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -382,13 +382,13 @@ Array [
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }

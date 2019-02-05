@@ -9,6 +9,11 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   fill: currentColor;
 }
 
+.emotion-0 {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .emotion-1 {
   border: 0;
   border-radius: 3em;
@@ -106,11 +111,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 
 .emotion-1:focus:hover {
   box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
-}
-
-.emotion-0 {
-  display: inline-block;
-  vertical-align: top;
 }
 
 .emotion-3 {

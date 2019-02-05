@@ -71,13 +71,13 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -116,13 +116,13 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }
@@ -351,13 +351,13 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -396,13 +396,13 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }
@@ -587,13 +587,13 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -632,13 +632,13 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }
@@ -781,13 +781,13 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -826,13 +826,13 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }
@@ -1080,13 +1080,13 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -1125,13 +1125,13 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }
@@ -1294,23 +1294,41 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
-.emotion-0 {
-  font-size: 11px;
-  display: block;
+.emotion-2 {
+  padding: 30px;
   text-align: center;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 20px;
+  color: #666666;
+  font-size: 14px;
+}
+
+.emotion-0 {
+  font-weight: 700;
 }
 
 <div
   style="height:calc(100vh - 20px)"
 >
-  <p
-    class="emotion-0"
+  <div
+    class="emotion-2"
   >
-    no panels available
-  </p>
+    <div
+      class="emotion-0"
+    >
+      No addons found
+    </div>
+    <div
+      class="emotion-1"
+    >
+      Learn how to
+      <a
+        href="https://storybook.js.org/addons"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        extend Storybook with addons
+      </a>
+    </div>
+  </div>
 </div>
 `;
 
@@ -1366,13 +1384,13 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -1411,13 +1429,13 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }
@@ -1669,13 +1687,13 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: rgba(0,0,0,0.4);
   border-bottom-color: transparent;
 }
@@ -1714,13 +1732,13 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }

@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots basics/tooltip/WithTooltip no chrome 1`] = `
+.emotion-2 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  height: 300px;
+}
+
+.emotion-3 {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
+  background: #eee;
+  position: relative;
+}
+
+.emotion-0 {
+  height: 100px;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+<div
+  class="emotion-4"
+>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        Click me!
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/tooltip/WithTooltip simple click 1`] = `
+.emotion-2 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  height: 300px;
+}
+
+.emotion-3 {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
+  background: #eee;
+  position: relative;
+}
+
+.emotion-0 {
+  height: 100px;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+<div
+  class="emotion-4"
+>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        Click me!
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/tooltip/WithTooltip simple click closeOnClick 1`] = `
+.emotion-2 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  height: 300px;
+}
+
+.emotion-3 {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
+  background: #eee;
+  position: relative;
+}
+
+.emotion-0 {
+  height: 100px;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+<div
+  class="emotion-4"
+>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        Click me!
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/tooltip/WithTooltip simple hover 1`] = `
+.emotion-2 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  height: 300px;
+}
+
+.emotion-3 {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
+  background: #eee;
+  position: relative;
+}
+
+.emotion-0 {
+  height: 100px;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+<div
+  class="emotion-4"
+>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        Hover me!
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/tooltip/WithTooltip simple hover, functional 1`] = `
+.emotion-2 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  height: 300px;
+}
+
+.emotion-3 {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
+  background: #eee;
+  position: relative;
+}
+
+.emotion-0 {
+  height: 100px;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+<div
+  class="emotion-4"
+>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        Hover me!
+      </div>
+    </div>
+  </div>
+</div>
+`;
