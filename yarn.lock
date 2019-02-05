@@ -19355,9 +19355,10 @@ stealthy-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
 
-storybook-chromatic@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/storybook-chromatic/-/storybook-chromatic-1.2.5.tgz#71fc2f3a56b0e7e110afa5adc06875cf38b0bc79"
+storybook-chromatic@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/storybook-chromatic/-/storybook-chromatic-1.2.6.tgz#bada3ea3b15469378cd85b5048309af954e43ad0"
+  integrity sha512-rJ0Qr95PwXp1//l8SDDCYkv9++YOsqTeJSIOIUTncDkNar2Tggj5IRDnJZkYvccGJQ5PeOlxHjie4Cnol2bz3Q==
   dependencies:
     "@chromaui/localtunnel" "1.9.1-chromatic.3"
     apollo-fetch "^0.6.0"
