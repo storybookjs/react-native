@@ -31,7 +31,7 @@
     "@types/storybook__addon-info": "^3.4.2",
     "@types/storybook__react": "^4.0.0",
     "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.8.0",
+    "enzyme-adapter-react-16": "^1.9.0",
     "enzyme-to-json": "^3.3.5",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "react-docgen-typescript-loader": "^3.0.1",
