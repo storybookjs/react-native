@@ -388,7 +388,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 `;
 
 exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
-.emotion-41 {
+.emotion-39 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -533,7 +533,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   fill: currentColor;
 }
 
-.emotion-40 {
+.emotion-38 {
   display: block;
   position: relative;
   position: relative;
@@ -544,7 +544,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   width: 100%;
 }
 
-.emotion-38 {
+.emotion-36 {
   padding: 20px;
 }
 
@@ -591,7 +591,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   color: rgba(0,0,0,0.4);
 }
 
-.emotion-36 {
+.emotion-34 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -604,15 +604,15 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-.emotion-36 > * {
+.emotion-34 > * {
   margin-left: 20px;
 }
 
-.emotion-36 > *:first-child {
+.emotion-34 > *:first-child {
   margin-left: 0;
 }
 
-.emotion-33 {
+.emotion-31 {
   color: inherit;
 }
 
@@ -635,7 +635,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   }
 }
 
-.emotion-31 {
+.emotion-29 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -667,7 +667,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   color: rgba(0,0,0,0.4);
 }
 
-.emotion-23 {
+.emotion-22 {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.1);
@@ -852,7 +852,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   opacity: 1;
 }
 
-.emotion-22 {
+.emotion-21 {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -861,57 +861,48 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  border-left: 1px solid rgba(0,0,0,0.1);
   background: rgba(255,255,255,1);
-  border-radius: 4px 0 0 0;
-}
-
-.emotion-21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  list-style: none;
-  padding: 0;
-  height: 26px;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-left: 0 none;
 }
 
 .emotion-20 {
   border: 0 none;
-  display: block;
-  background: none;
-  padding: 0 10px;
+  padding: 4px 10px;
   cursor: pointer;
-  text-transform: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  font-size: inherit;
-  color: inherit;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #666666;
+  background: rgba(255,255,255,1);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-20:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-20 + * {
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0;
 }
 
 .emotion-20:focus {
-  border-bottom: 2px solid #1EA7FD;
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
   outline: 0 none;
 }
 
 <div
-  class="emotion-41"
+  class="emotion-39"
 >
   <div
     class="emotion-7"
@@ -953,14 +944,14 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
     </div>
   </div>
   <div
-    class="emotion-40"
+    class="emotion-38"
   >
     <div
       class="emotion-4"
       role="tabpanel"
     >
       <div
-        class="emotion-38"
+        class="emotion-36"
       >
         <div
           class="emotion-11"
@@ -1063,7 +1054,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
           class="emotion-11"
         >
           <div
-            class="emotion-31"
+            class="emotion-29"
           >
             <header
               class="emotion-16"
@@ -1077,7 +1068,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
               </h1>
             </header>
             <div
-              class="emotion-23"
+              class="emotion-22"
             >
               <div
                 class="emotion-19"
@@ -1104,25 +1095,21 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
                   </code>
                 </pre>
               </div>
-              <ul
-                class="emotion-22"
+              <div
+                class="emotion-21"
               >
-                <li
-                  class="emotion-21"
+                <button
+                  class="emotion-20"
                 >
-                  <button
-                    class="emotion-20"
-                  >
-                    copy
-                  </button>
-                </li>
-              </ul>
+                  Copy
+                </button>
+              </div>
             </div>
             <p>
               Alternatively if you're using a yarn you could run the following command, and check all storybook related packages:
             </p>
             <div
-              class="emotion-23"
+              class="emotion-22"
             >
               <div
                 class="emotion-19"
@@ -1137,19 +1124,15 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
                   </code>
                 </pre>
               </div>
-              <ul
-                class="emotion-22"
+              <div
+                class="emotion-21"
               >
-                <li
-                  class="emotion-21"
+                <button
+                  class="emotion-20"
                 >
-                  <button
-                    class="emotion-20"
-                  >
-                    copy
-                  </button>
-                </li>
-              </ul>
+                  Copy
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1157,22 +1140,22 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
           class="emotion-11"
         >
           <div
-            class="emotion-36"
+            class="emotion-34"
           >
             <a
-              class="emotion-33"
+              class="emotion-31"
               href="https://storybook.js.org"
             >
               Storybook docs
             </a>
             <a
-              class="emotion-33"
+              class="emotion-31"
               href="https://github.com/storybooks/storybook"
             >
               GitHub
             </a>
             <a
-              class="emotion-33"
+              class="emotion-31"
               href="https://storybook.js.org/support"
             >
               Support

@@ -1,5 +1,245 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Basics|ActionBar manyItems 1`] = `
+.emotion-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: rgba(255,255,255,1);
+}
+
+.emotion-0 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #666666;
+  background: rgba(255,255,255,1);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-0:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-0 + * {
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0;
+}
+
+.emotion-0:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+  outline: 0 none;
+}
+
+.emotion-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: rgba(255,255,255,1);
+}
+
+.emotion-0 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #666666;
+  background: rgba(255,255,255,1);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-0:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-0 + * {
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0;
+}
+
+.emotion-0:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+  outline: 0 none;
+}
+
+<div
+  style="position:relative;width:240px;height:64px;margin:1rem;background:papayawhip;border:1px solid rgba(0,0,0,.05)"
+>
+  <div
+    class="emotion-3"
+  >
+    <button
+      class="emotion-0"
+    >
+      Action string
+    </button>
+    <button
+      class="emotion-0"
+    >
+      <div>
+        Action node
+      </div>
+    </button>
+    <button
+      class="emotion-0"
+    >
+      Long action string
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|ActionBar singleItem 1`] = `
+.emotion-1 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: rgba(255,255,255,1);
+}
+
+.emotion-0 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #666666;
+  background: rgba(255,255,255,1);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-0:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-0 + * {
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0;
+}
+
+.emotion-0:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+  outline: 0 none;
+}
+
+.emotion-1 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: rgba(255,255,255,1);
+}
+
+.emotion-0 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #666666;
+  background: rgba(255,255,255,1);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-0:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-0 + * {
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0;
+}
+
+.emotion-0:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+  outline: 0 none;
+}
+
+<div
+  style="position:relative;width:240px;height:64px;margin:1rem;background:papayawhip;border:1px solid rgba(0,0,0,.05)"
+>
+  <div
+    class="emotion-1"
+  >
+    <button
+      class="emotion-0"
+    >
+      Clear
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Basics|Placeholder descOnly 1`] = `
 .emotion-1 {
   padding: 30px;
@@ -173,13 +413,17 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -188,12 +432,16 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -255,13 +503,17 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -270,12 +522,16 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2708,6 +2964,23 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-1:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -2749,6 +3022,11 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   padding: 7px;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #666666;
@@ -2761,7 +3039,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-6:active {
@@ -2770,12 +3047,16 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-6:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-6:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6 > span {
@@ -2824,11 +3105,11 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 .emotion-6:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5 {
@@ -3129,6 +3410,23 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-1:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -3170,6 +3468,11 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   padding: 7px;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #666666;
@@ -3182,7 +3485,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-6:active {
@@ -3191,12 +3493,16 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-6:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-6:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6 > span {
@@ -3245,11 +3551,11 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 .emotion-6:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5 {
@@ -3984,6 +4290,23 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-1:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -4025,6 +4348,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   padding: 7px;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #666666;
@@ -4037,7 +4365,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-6:active {
@@ -4046,12 +4373,16 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-6:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-6:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6 > span {
@@ -4100,11 +4431,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-6:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5 {
@@ -4499,6 +4830,23 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-1:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -4540,6 +4888,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   padding: 7px;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #666666;
@@ -4552,7 +4905,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-6:active {
@@ -4561,12 +4913,16 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-6:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-6:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6 > span {
@@ -4615,11 +4971,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-6:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5 {
@@ -5316,6 +5672,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   padding: 7px;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #666666;
@@ -5328,7 +5689,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-4:active {
@@ -5337,12 +5697,16 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-4:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-4:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-4:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-4 > span {
@@ -5391,11 +5755,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
 }
 
 .emotion-4:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-4:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-3 {
@@ -5464,6 +5828,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   padding: 7px;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #666666;
@@ -5476,7 +5845,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-4:active {
@@ -5485,12 +5853,16 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-4:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-4:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-4:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-4 > span {
@@ -5539,11 +5911,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
 }
 
 .emotion-4:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-4:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-3 {
@@ -5619,6 +5991,23 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-1:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -5680,6 +6069,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   padding: 7px;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #666666;
@@ -5692,7 +6086,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-6:active {
@@ -5701,12 +6094,16 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-6:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-6:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6 > span {
@@ -5755,11 +6152,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 }
 
 .emotion-6:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6:after {
@@ -5791,6 +6188,23 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-1:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -5852,6 +6266,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   padding: 7px;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #666666;
@@ -5864,7 +6283,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-6:active {
@@ -5873,12 +6291,16 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-6:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-6:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6 > span {
@@ -5927,11 +6349,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 }
 
 .emotion-6:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6:after {
@@ -6044,6 +6466,23 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-1:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -6085,6 +6524,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   padding: 7px;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #666666;
@@ -6097,7 +6541,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-6:active {
@@ -6106,12 +6549,16 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-6:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-6:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6 > span {
@@ -6160,11 +6607,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
 }
 
 .emotion-6:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5 {
@@ -6205,6 +6652,23 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-1:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -6246,6 +6710,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   padding: 7px;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #666666;
@@ -6258,7 +6727,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-6:active {
@@ -6267,12 +6735,16 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-6:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-6:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6 > span {
@@ -6321,11 +6793,11 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
 }
 
 .emotion-6:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-6:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5 {

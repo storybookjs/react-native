@@ -35,13 +35,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -50,12 +54,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -126,13 +134,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -141,12 +153,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -217,13 +233,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -232,12 +252,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -308,13 +332,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -323,12 +351,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -399,13 +431,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -414,12 +450,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -490,13 +530,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -505,12 +549,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -581,13 +629,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -596,12 +648,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -672,13 +728,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -687,12 +747,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -763,13 +827,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -778,12 +846,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -854,13 +926,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -869,12 +945,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -945,13 +1025,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -960,12 +1044,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -1036,13 +1124,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -1051,12 +1143,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -1127,13 +1223,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -1142,12 +1242,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -1218,13 +1322,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -1233,12 +1341,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -1309,13 +1421,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -1324,12 +1440,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -1400,13 +1520,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -1415,12 +1539,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -1491,13 +1619,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -1506,12 +1638,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -1582,13 +1718,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -1597,12 +1737,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -1673,13 +1817,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -1688,12 +1836,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -1764,13 +1916,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -1779,12 +1935,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -1859,13 +2019,17 @@ exports[`Storyshots Addons|Actions Basic example 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -1874,12 +2038,16 @@ exports[`Storyshots Addons|Actions Basic example 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -1953,13 +2121,17 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -1968,12 +2140,16 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2047,13 +2223,17 @@ exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -2062,12 +2242,16 @@ exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2141,13 +2325,17 @@ exports[`Storyshots Addons|Actions Decorated action 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -2156,12 +2344,16 @@ exports[`Storyshots Addons|Actions Decorated action 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2235,13 +2427,17 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -2250,12 +2446,16 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2329,13 +2529,17 @@ exports[`Storyshots Addons|Actions Decorated actions 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -2344,12 +2548,16 @@ exports[`Storyshots Addons|Actions Decorated actions 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2424,13 +2632,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -2439,12 +2651,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2515,13 +2731,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -2530,12 +2750,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2610,13 +2834,17 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -2625,12 +2853,16 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2704,13 +2936,17 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -2719,12 +2955,16 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2798,13 +3038,17 @@ exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -2813,12 +3057,16 @@ exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2892,13 +3140,17 @@ exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -2907,12 +3159,16 @@ exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -2990,13 +3246,17 @@ Array [
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -3005,12 +3265,16 @@ Array [
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -3085,13 +3349,17 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -3100,12 +3368,16 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -3179,13 +3451,17 @@ exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -3194,12 +3470,16 @@ exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -3273,13 +3553,17 @@ exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-1:hover {
   -webkit-transform: translate3d(0,-2px,0);
   -ms-transform: translate3d(0,-2px,0);
   transform: translate3d(0,-2px,0);
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
 .emotion-1:active {
@@ -3288,12 +3572,16 @@ exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
   transform: translate3d(0,0,0);
 }
 
+.emotion-1:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
 .emotion-1:focus {
-  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
 }
 
 .emotion-1:focus:hover {
-  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {

@@ -215,7 +215,7 @@ exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
 `;
 
 exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
-.emotion-6 {
+.emotion-5 {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.1);
@@ -400,7 +400,7 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
   opacity: 1;
 }
 
-.emotion-5 {
+.emotion-4 {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -409,57 +409,48 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  border-left: 1px solid rgba(0,0,0,0.1);
   background: rgba(255,255,255,1);
-  border-radius: 4px 0 0 0;
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  list-style: none;
-  padding: 0;
-  height: 26px;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-left: 0 none;
 }
 
 .emotion-3 {
   border: 0 none;
-  display: block;
-  background: none;
-  padding: 0 10px;
+  padding: 4px 10px;
   cursor: pointer;
-  text-transform: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  font-size: inherit;
-  color: inherit;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #666666;
+  background: rgba(255,255,255,1);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-3:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.emotion-3 + * {
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0;
 }
 
 .emotion-3:focus {
-  border-bottom: 2px solid #1EA7FD;
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
   outline: 0 none;
 }
 
 <div
-  class="emotion-6"
+  class="emotion-5"
 >
   <div
     class="emotion-2"
@@ -653,19 +644,15 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
       </code>
     </pre>
   </div>
-  <ul
-    class="emotion-5"
+  <div
+    class="emotion-4"
   >
-    <li
-      class="emotion-4"
+    <button
+      class="emotion-3"
     >
-      <button
-        class="emotion-3"
-      >
-        copy
-      </button>
-    </li>
-  </ul>
+      Copy
+    </button>
+  </div>
 </div>
 `;
 
