@@ -461,6 +461,7 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -551,6 +552,7 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -3076,6 +3078,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 .emotion-6 svg {
+  display: inline-block;
   height: 14px;
   width: 14px;
   vertical-align: top;
@@ -3522,6 +3525,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 .emotion-6 svg {
+  display: inline-block;
   height: 14px;
   width: 14px;
   vertical-align: top;
@@ -4402,6 +4406,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-6 svg {
+  display: inline-block;
   height: 14px;
   width: 14px;
   vertical-align: top;
@@ -4942,6 +4947,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-6 svg {
+  display: inline-block;
   height: 14px;
   width: 14px;
   vertical-align: top;
@@ -5726,6 +5732,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
 }
 
 .emotion-4 svg {
+  display: inline-block;
   height: 14px;
   width: 14px;
   vertical-align: top;
@@ -5882,6 +5889,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
 }
 
 .emotion-4 svg {
+  display: inline-block;
   height: 14px;
   width: 14px;
   vertical-align: top;
@@ -6123,6 +6131,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 }
 
 .emotion-6 svg {
+  display: inline-block;
   height: 14px;
   width: 14px;
   vertical-align: top;
@@ -6320,6 +6329,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 }
 
 .emotion-6 svg {
+  display: inline-block;
   height: 14px;
   width: 14px;
   vertical-align: top;
@@ -6578,6 +6588,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
 }
 
 .emotion-6 svg {
+  display: inline-block;
   height: 14px;
   width: 14px;
   vertical-align: top;
@@ -6764,6 +6775,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
 }
 
 .emotion-6 svg {
+  display: inline-block;
   height: 14px;
   width: 14px;
   vertical-align: top;

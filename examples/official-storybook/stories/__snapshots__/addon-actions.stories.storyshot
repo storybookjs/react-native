@@ -83,6 +83,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -182,6 +183,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -281,6 +283,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -380,6 +383,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -479,6 +483,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -578,6 +583,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -677,6 +683,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -776,6 +783,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -875,6 +883,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -974,6 +983,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -1073,6 +1083,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -1172,6 +1183,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -1271,6 +1283,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -1370,6 +1383,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -1469,6 +1483,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -1568,6 +1583,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -1667,6 +1683,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -1766,6 +1783,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -1865,6 +1883,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -1964,6 +1983,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -2067,6 +2087,7 @@ exports[`Storyshots Addons|Actions Basic example 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -2169,6 +2190,7 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -2271,6 +2293,7 @@ exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -2373,6 +2396,7 @@ exports[`Storyshots Addons|Actions Decorated action 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -2475,6 +2499,7 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -2577,6 +2602,7 @@ exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -2680,6 +2706,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -2779,6 +2806,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -2882,6 +2910,7 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -2984,6 +3013,7 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -3086,6 +3116,7 @@ exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -3188,6 +3219,7 @@ exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -3294,6 +3326,7 @@ Array [
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -3397,6 +3430,7 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -3499,6 +3533,7 @@ exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
@@ -3601,6 +3636,7 @@ exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
 }
 
 .emotion-1 svg {
+  display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: top;
