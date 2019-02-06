@@ -11724,9 +11724,10 @@ jest-each@^24.0.0:
     jest-util "^24.0.0"
     pretty-format "^24.0.0"
 
-jest-emotion@^10.0.5:
-  version "10.0.6"
-  resolved "https://registry.yarnpkg.com/jest-emotion/-/jest-emotion-10.0.6.tgz#6a49b82984b098c284347497f56eca3be22a4c34"
+jest-emotion@^10.0.7:
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/jest-emotion/-/jest-emotion-10.0.7.tgz#c882f6e201cf62c025245f863b8e5ff473d2cef0"
+  integrity sha512-uR6KIw/jnlqVOFBHpeRMirpnWggnUluqzKYSmlp/TpoNaRxSYTGj9+RVrS7kngtyFyn0F0rOJ73CaPRuxL5ebg==
   dependencies:
     "@types/jest" "^23.0.2"
     chalk "^2.4.1"
