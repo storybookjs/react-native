@@ -100,7 +100,7 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
 }
 
 <div
-  style="position:relative;width:240px;height:64px;margin:1rem;background:papayawhip;border:1px solid rgba(0,0,0,.05)"
+  style="position:relative;width:300px;height:64px;margin:1rem;background:papayawhip;border:1px solid rgba(0,0,0,.05)"
 >
   <div
     class="emotion-3"
@@ -226,7 +226,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
 }
 
 <div
-  style="position:relative;width:240px;height:64px;margin:1rem;background:papayawhip;border:1px solid rgba(0,0,0,.05)"
+  style="position:relative;width:300px;height:64px;margin:1rem;background:papayawhip;border:1px solid rgba(0,0,0,.05)"
 >
   <div
     class="emotion-1"
@@ -240,7 +240,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
 </div>
 `;
 
-exports[`Storyshots Basics|Placeholder descOnly 1`] = `
+exports[`Storyshots Basics|Placeholder singleChild 1`] = `
 .emotion-1 {
   padding: 30px;
   text-align: center;
@@ -248,11 +248,19 @@ exports[`Storyshots Basics|Placeholder descOnly 1`] = `
   font-size: 14px;
 }
 
+.emotion-0 {
+  font-weight: 700;
+}
+
 .emotion-1 {
   padding: 30px;
   text-align: center;
   color: #666666;
   font-size: 14px;
+}
+
+.emotion-0 {
+  font-weight: 700;
 }
 
 <div
@@ -261,17 +269,12 @@ exports[`Storyshots Basics|Placeholder descOnly 1`] = `
   <div
     class="emotion-0"
   >
-    This is a desc only 
-    <a
-      href="https://storybook.js.org"
-    >
-      link
-    </a>
+    This is a placeholder with single child, it's bolded
   </div>
 </div>
 `;
 
-exports[`Storyshots Basics|Placeholder titleAndDesc 1`] = `
+exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 .emotion-2 {
   padding: 30px;
   text-align: center;
@@ -300,51 +303,17 @@ exports[`Storyshots Basics|Placeholder titleAndDesc 1`] = `
   <div
     class="emotion-0"
   >
-    This is a title
+    This has two children, the first bold
   </div>
   <div
     class="emotion-1"
   >
-    This is a desc 
+    The second normal weight. Here's a 
     <a
       href="https://storybook.js.org"
     >
       link
     </a>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Basics|Placeholder titleOnly 1`] = `
-.emotion-1 {
-  padding: 30px;
-  text-align: center;
-  color: #666666;
-  font-size: 14px;
-}
-
-.emotion-0 {
-  font-weight: 700;
-}
-
-.emotion-1 {
-  padding: 30px;
-  text-align: center;
-  color: #666666;
-  font-size: 14px;
-}
-
-.emotion-0 {
-  font-weight: 700;
-}
-
-<div
-  class="emotion-1"
->
-  <div
-    class="emotion-0"
-  >
-    This is a placeholder with title
   </div>
 </div>
 `;
@@ -1042,8 +1011,217 @@ exports[`Storyshots UI|Notifications/NotificationList single 1`] = `
 </div>
 `;
 
+exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.emotion-6 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-1 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-1 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-1:hover svg path,
+.emotion-1:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-1:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-1 svg path {
+  fill: #999999;
+}
+
+.emotion-1:hover {
+  color: #666666;
+}
+
+.emotion-1:hover svg path {
+  fill: #666666;
+}
+
+.emotion-1:active {
+  color: #444444;
+}
+
+.emotion-1:active svg path {
+  fill: #444444;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.emotion-6 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-1 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-1 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-1:hover svg path,
+.emotion-1:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-1:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-1 svg path {
+  fill: #999999;
+}
+
+.emotion-1:hover {
+  color: #666666;
+}
+
+.emotion-1:hover svg path {
+  fill: #666666;
+}
+
+.emotion-1:active {
+  color: #444444;
+}
+
+.emotion-1:active svg path {
+  fill: #444444;
+}
+
+<div
+  style="width:600px;margin:2rem auto"
+>
+  <div
+    class="emotion-6"
+  >
+    <a
+      class="emotion-1"
+      href="https://storybook.js.org"
+    >
+      <span
+        class="emotion-0"
+      >
+        Docs
+      </span>
+    </a>
+    <a
+      class="emotion-1"
+      href="https://github.com/storybooks/storybook"
+    >
+      <span
+        class="emotion-0"
+      >
+        GitHub
+      </span>
+    </a>
+    <a
+      class="emotion-1"
+      href="https://storybook.js.org/support"
+    >
+      <span
+        class="emotion-0"
+      >
+        Support
+      </span>
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
-.emotion-148 {
+.emotion-150 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -1188,7 +1366,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   fill: currentColor;
 }
 
-.emotion-147 {
+.emotion-149 {
   display: block;
   position: relative;
   position: relative;
@@ -1199,8 +1377,94 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 100%;
 }
 
-.emotion-145 {
-  padding: 20px;
+.emotion-146 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.emotion-146 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-141 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-141 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-141:hover,
+.emotion-141:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-141:hover svg path,
+.emotion-141:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-141:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-141:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-141 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-141 svg path {
+  fill: #999999;
+}
+
+.emotion-141:hover {
+  color: #666666;
+}
+
+.emotion-141:hover svg path {
+  fill: #666666;
+}
+
+.emotion-141:active {
+  color: #444444;
+}
+
+.emotion-141:active svg path {
+  fill: #444444;
+}
+
+.emotion-147 {
+  padding: 3rem 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .emotion-10 {
@@ -1233,31 +1497,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: inline-block;
   line-height: 40px;
   font-weight: 700;
-}
-
-.emotion-143 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
-}
-
-.emotion-143 > * {
-  margin-left: 20px;
-}
-
-.emotion-143 > *:first-child {
-  margin-left: 0;
-}
-
-.emotion-140 {
-  color: inherit;
 }
 
 .emotion-139 {
@@ -1444,7 +1683,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   justify-self: center;
 }
 
-.emotion-148 {
+.emotion-150 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -1589,7 +1828,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   fill: currentColor;
 }
 
-.emotion-147 {
+.emotion-149 {
   display: block;
   position: relative;
   position: relative;
@@ -1600,8 +1839,94 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 100%;
 }
 
-.emotion-145 {
-  padding: 20px;
+.emotion-146 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.emotion-146 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-141 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-141 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-141:hover,
+.emotion-141:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-141:hover svg path,
+.emotion-141:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-141:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-141:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-141 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-141 svg path {
+  fill: #999999;
+}
+
+.emotion-141:hover {
+  color: #666666;
+}
+
+.emotion-141:hover svg path {
+  fill: #666666;
+}
+
+.emotion-141:active {
+  color: #444444;
+}
+
+.emotion-141:active svg path {
+  fill: #444444;
+}
+
+.emotion-147 {
+  padding: 3rem 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .emotion-10 {
@@ -1634,31 +1959,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: inline-block;
   line-height: 40px;
   font-weight: 700;
-}
-
-.emotion-143 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
-}
-
-.emotion-143 > * {
-  margin-left: 20px;
-}
-
-.emotion-143 > *:first-child {
-  margin-left: 0;
-}
-
-.emotion-140 {
-  color: inherit;
 }
 
 .emotion-139 {
@@ -1846,7 +2146,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 <div
-  class="emotion-148"
+  class="emotion-150"
 >
   <div
     class="emotion-7"
@@ -1888,14 +2188,14 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
     </div>
   </div>
   <div
-    class="emotion-147"
+    class="emotion-149"
   >
     <div
       class="emotion-4"
       role="tabpanel"
     >
       <div
-        class="emotion-145"
+        class="emotion-147"
       >
         <div
           class="emotion-10"
@@ -2521,36 +2821,38 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
           </main>
         </div>
         <div
-          class="emotion-10"
+          class="emotion-146"
         >
-          <div
-            class="emotion-143"
+          <a
+            class="emotion-141"
+            href="https://storybook.js.org"
           >
-            <a
+            <span
               class="emotion-140"
-              href="https://storybook.js.org"
-              rel="noopener noreferrer"
-              target="_blank"
             >
-              Storybook docs
-            </a>
-            <a
+              Docs
+            </span>
+          </a>
+          <a
+            class="emotion-141"
+            href="https://github.com/storybooks/storybook"
+          >
+            <span
               class="emotion-140"
-              href="https://github.com/storybooks/storybook"
-              rel="noopener noreferrer"
-              target="_blank"
             >
               GitHub
-            </a>
-            <a
+            </span>
+          </a>
+          <a
+            class="emotion-141"
+            href="https://storybook.js.org/support"
+          >
+            <span
               class="emotion-140"
-              href="https://storybook.js.org/support"
-              rel="noopener noreferrer"
-              target="_blank"
             >
               Support
-            </a>
-          </div>
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -3100,7 +3402,8 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-84 {
   position: fixed;
   display: block;
-  bottom: 0;
+  bottom: 20px;
+  left: 20px;
   margin: 0;
   padding: 0;
   width: 20%;
@@ -3547,7 +3850,8 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-84 {
   position: fixed;
   display: block;
-  bottom: 0;
+  bottom: 20px;
+  left: 20px;
   margin: 0;
   padding: 0;
   width: 20%;
@@ -4706,7 +5010,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-55 {
   position: fixed;
   display: block;
-  bottom: 0;
+  bottom: 20px;
+  left: 20px;
   margin: 0;
   padding: 0;
   width: 20%;
@@ -5247,7 +5552,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-55 {
   position: fixed;
   display: block;
-  bottom: 0;
+  bottom: 20px;
+  left: 20px;
   margin: 0;
   padding: 0;
   width: 20%;

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
@@ -170,16 +170,19 @@ export default class KnobPanel extends PureComponent {
 
     if (knobsArray.length === 0) {
       return (
-        <Placeholder title="No knobs found">
-          Learn how to{' '}
-          <a
-            href="https://github.com/storybooks/storybook/tree/master/addons/knobs"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            dynamically interact with components
-          </a>{' '}
-          using knobs.
+        <Placeholder>
+          <Fragment>No knobs found</Fragment>
+          <Fragment>
+            Learn how to{' '}
+            <a
+              href="https://github.com/storybooks/storybook/tree/master/addons/knobs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              dynamically interact with components
+            </a>{' '}
+            using knobs.
+          </Fragment>
         </Placeholder>
       );
     }

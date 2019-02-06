@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
+.emotion-3 {
+  position: relative;
+  overflow: hidden;
+}
+
 .emotion-2 {
   position: relative;
   overflow: auto;
@@ -8,7 +13,6 @@ exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
 
 .emotion-2 code {
   padding-right: 10px;
-  opacity: 0.7;
 }
 
 .emotion-2 * .token {
@@ -157,19 +161,6 @@ exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
   opacity: 0.7;
 }
 
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
-.emotion-3 {
-  position: relative;
-  overflow: hidden;
-}
-
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -181,6 +172,14 @@ exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
   justify-content: flex-start;
   margin: 0;
   padding: 0;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
 }
 
 <div
@@ -215,191 +214,6 @@ exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
 `;
 
 exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
-.emotion-5 {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 4px;
-  background: rgba(255,255,255,1);
-}
-
-.emotion-2 {
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-2 code {
-  padding-right: 10px;
-  opacity: 0.7;
-}
-
-.emotion-2 * .token {
-  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
-  -webkit-font-smoothing: antialiased;
-}
-
-.emotion-2 * .token.comment {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-2 * .token.prolog {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-2 * .token.doctype {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-2 * .token.cdata {
-  color: #008000;
-  font-style: italic;
-}
-
-.emotion-2 * .token.string {
-  color: #A31515;
-}
-
-.emotion-2 * .token.punctuation {
-  color: #393A34;
-}
-
-.emotion-2 * .token.operator {
-  color: #393A34;
-}
-
-.emotion-2 * .token.url {
-  color: #36acaa;
-}
-
-.emotion-2 * .token.symbol {
-  color: #36acaa;
-}
-
-.emotion-2 * .token.number {
-  color: #36acaa;
-}
-
-.emotion-2 * .token.boolean {
-  color: #36acaa;
-}
-
-.emotion-2 * .token.variable {
-  color: #36acaa;
-}
-
-.emotion-2 * .token.constant {
-  color: #36acaa;
-}
-
-.emotion-2 * .token.inserted {
-  color: #36acaa;
-}
-
-.emotion-2 * .token.atrule {
-  color: #0000ff;
-}
-
-.emotion-2 * .token.keyword {
-  color: #0000ff;
-}
-
-.emotion-2 * .token.attr-value {
-  color: #0000ff;
-}
-
-.emotion-2 * .token.function {
-  color: #393A34;
-}
-
-.emotion-2 * .token.deleted {
-  color: #9a050f;
-}
-
-.emotion-2 * .token.important {
-  font-weight: bold;
-}
-
-.emotion-2 * .token.bold {
-  font-weight: bold;
-}
-
-.emotion-2 * .token.italic {
-  font-style: italic;
-}
-
-.emotion-2 * .token.class-name {
-  color: #2B91AF;
-}
-
-.emotion-2 * .token.tag {
-  color: #800000;
-}
-
-.emotion-2 * .token.selector {
-  color: #800000;
-}
-
-.emotion-2 * .token.attr-name {
-  color: #ff0000;
-}
-
-.emotion-2 * .token.property {
-  color: #ff0000;
-}
-
-.emotion-2 * .token.regex {
-  color: #ff0000;
-}
-
-.emotion-2 * .token.entity {
-  color: #ff0000;
-}
-
-.emotion-2 * .token.directive.tag .tag {
-  background: #ffff00;
-  color: #393A34;
-}
-
-.emotion-2 * .language-json .token.boolean {
-  color: #0000ff;
-}
-
-.emotion-2 * .language-json .token.number {
-  color: #0000ff;
-}
-
-.emotion-2 * .language-json .token.property {
-  color: #2B91AF;
-}
-
-.emotion-2 * .namespace {
-  opacity: 0.7;
-}
-
-.emotion-1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 10px;
-}
-
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
 .emotion-4 {
   position: absolute;
   bottom: 0;
@@ -447,6 +261,190 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
 .emotion-3:focus {
   box-shadow: #1EA7FD 0 -3px 0 0 inset;
   outline: 0 none;
+}
+
+.emotion-2 {
+  position: relative;
+  overflow: auto;
+}
+
+.emotion-2 code {
+  padding-right: 10px;
+}
+
+.emotion-2 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-2 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.string {
+  color: #A31515;
+}
+
+.emotion-2 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-2 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-2 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.function {
+  color: #393A34;
+}
+
+.emotion-2 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-2 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-2 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-2 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-2 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-2 * .token.tag {
+  color: #800000;
+}
+
+.emotion-2 * .token.selector {
+  color: #800000;
+}
+
+.emotion-2 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-2 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-2 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-2 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-2 * .namespace {
+  opacity: 0.7;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-5 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  background: rgba(255,255,255,1);
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 10px;
 }
 
 <div
@@ -657,6 +655,11 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
 `;
 
 exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
+.emotion-3 {
+  position: relative;
+  overflow: hidden;
+}
+
 .emotion-2 {
   position: relative;
   overflow: auto;
@@ -664,7 +667,6 @@ exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
 
 .emotion-2 code {
   padding-right: 10px;
-  opacity: 0.7;
 }
 
 .emotion-2 * .token {
@@ -813,19 +815,6 @@ exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
   opacity: 0.7;
 }
 
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
-.emotion-3 {
-  position: relative;
-  overflow: hidden;
-}
-
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -837,6 +826,14 @@ exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
   justify-content: flex-start;
   margin: 0;
   padding: 0;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
 }
 
 <div
@@ -1068,6 +1065,11 @@ exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
 `;
 
 exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
+.emotion-3 {
+  position: relative;
+  overflow: hidden;
+}
+
 .emotion-2 {
   position: relative;
   overflow: auto;
@@ -1075,7 +1077,6 @@ exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
 
 .emotion-2 code {
   padding-right: 10px;
-  opacity: 0.7;
 }
 
 .emotion-2 * .token {
@@ -1224,19 +1225,6 @@ exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
   opacity: 0.7;
 }
 
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
-.emotion-3 {
-  position: relative;
-  overflow: hidden;
-}
-
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1248,6 +1236,14 @@ exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
   justify-content: flex-start;
   margin: 0;
   padding: 0;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
 }
 
 <div
@@ -1481,6 +1477,11 @@ exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
 `;
 
 exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
+.emotion-3 {
+  position: relative;
+  overflow: hidden;
+}
+
 .emotion-2 {
   position: relative;
   overflow: auto;
@@ -1488,7 +1489,6 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
 
 .emotion-2 code {
   padding-right: 10px;
-  opacity: 0.7;
 }
 
 .emotion-2 * .token {
@@ -1637,19 +1637,6 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
   opacity: 0.7;
 }
 
-.emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-right: 0;
-  opacity: 1;
-}
-
-.emotion-3 {
-  position: relative;
-  overflow: hidden;
-}
-
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1661,6 +1648,14 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
   justify-content: flex-start;
   margin: 0;
   padding: 0;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
 }
 
 <div

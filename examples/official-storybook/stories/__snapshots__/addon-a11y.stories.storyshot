@@ -257,91 +257,34 @@ exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
 `;
 
 exports[`Storyshots Addons|A11y/Image Presentation 1`] = `
-.emotion-0 {
-  display: block;
-}
-
 <img
-  class="emotion-0"
   role="presentation"
   src="http://placehold.it/350x150"
 />
 `;
 
 exports[`Storyshots Addons|A11y/Image With alt 1`] = `
-.emotion-0 {
-  display: block;
-}
-
 <img
   alt="Testing the a11y addon"
-  class="emotion-0"
   src="http://placehold.it/350x150"
 />
 `;
 
 exports[`Storyshots Addons|A11y/Image Without alt 1`] = `
-.emotion-0 {
-  display: block;
-}
-
 <img
-  class="emotion-0"
   src="http://placehold.it/350x150"
 />
 `;
 
 exports[`Storyshots Addons|A11y/Typography Correct 1`] = `
 Array [
-  .emotion-0 {
-  color: currentColor;
-  font-weight: normal;
-  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  display: block;
-  color: #333;
-  line-height: 1em;
-}
-
-.emotion-0 > sub {
-  display: block;
-  padding-top: 5px;
-  line-height: 1.2em;
-  font-size: 14px;
-}
-
-.emotion-0 > sub {
-  color: rgba(0,0,0,0.4);
-}
-
-<header
-    class="emotion-1"
-  >
-    <h1
-      class="emotion-0"
-    >
-      <span>
-        Testing the a11y addon
-      </span>
-    </h1>
-  </header>,
-  .emotion-0 {
-  color: inherit;
-}
-
-<p
-    class="emotion-0"
-  >
+  <h1>
+    Testing the a11y addon
+  </h1>,
+  <p>
     Testing the a11y addon
   </p>,
-  .emotion-0 {
-  color: inherit;
-}
-
-<a
-    class="emotion-0"
+  <a
     href="javascript:void 0"
   >
     Testing the a11y addon...
@@ -349,68 +292,18 @@ Array [
 ]
 `;
 
-exports[`Storyshots Addons|A11y/Typography Empty Heading 1`] = `
-.emotion-0 {
-  color: currentColor;
-  font-weight: normal;
-  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  display: block;
-  color: #333;
-  line-height: 1em;
-}
-
-.emotion-0 > sub {
-  display: block;
-  padding-top: 5px;
-  line-height: 1.2em;
-  font-size: 14px;
-}
-
-.emotion-0 > sub {
-  color: rgba(0,0,0,0.4);
-}
-
-<header
-  class="emotion-1"
->
-  <h1
-    class="emotion-0"
-  />
-</header>
-`;
+exports[`Storyshots Addons|A11y/Typography Empty Heading 1`] = `<h1 />`;
 
 exports[`Storyshots Addons|A11y/Typography Empty Link 1`] = `
-.emotion-0 {
-  color: inherit;
-}
-
 <a
-  class="emotion-0"
   href="javascript:void 0"
 />
 `;
 
-exports[`Storyshots Addons|A11y/Typography Empty Paragraph 1`] = `
-.emotion-0 {
-  color: inherit;
-}
-
-<p
-  class="emotion-0"
-/>
-`;
+exports[`Storyshots Addons|A11y/Typography Empty Paragraph 1`] = `<p />`;
 
 exports[`Storyshots Addons|A11y/Typography Link without href 1`] = `
-.emotion-0 {
-  color: inherit;
-}
-
-<a
-  class="emotion-0"
->
+<a>
   Testing the a11y addon...
 </a>
 `;

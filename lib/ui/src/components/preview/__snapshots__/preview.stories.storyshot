@@ -89,7 +89,7 @@ Array [
 .emotion-9 {
   width: 1px;
   height: 24px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,.05);
   margin-top: 8px;
 }
 
@@ -475,7 +475,7 @@ Array [
 .emotion-5 {
   width: 1px;
   height: 24px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,.05);
   margin-top: 8px;
 }
 
