@@ -1,15 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
-.emotion-2 {
+.emotion-3 {
   display: block;
 }
 
-.emotion-1 {
+.emotion-2 {
   fill: currentColor;
 }
 
-.emotion-4 {
+.emotion-5 {
+  font-size: 12px;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  color: #999999;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   line-height: 18px;
   padding: 7px 15px;
   display: -webkit-box;
@@ -22,54 +33,43 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
   align-items: center;
 }
 
-.emotion-4 .Left,
-.emotion-4 .Title,
-.emotion-4 .Center,
-.emotion-4 .Right {
+.emotion-5 + .emotion-5 {
+  border-top: 1px solid #EEEEEE;
+}
+
+.emotion-5 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-5:hover {
+  background: #e3f3ff;
+}
+
+.emotion-5:hover svg {
+  opacity: 1;
+}
+
+.emotion-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.emotion-4 .Title,
-.emotion-4 .Center {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+.emotion-1 > * + * {
+  padding-left: 10px;
 }
 
-.emotion-4 .Left,
-.emotion-4 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.emotion-4 .Right {
-  text-align: right;
-  margin-left: 20px;
-}
-
-.emotion-5 {
-  font-size: 12px;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  color: #999999;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  display: block;
-}
-
-.emotion-5:not(:first-child) {
-  border-top: 1px solid #EEEEEE;
-}
-
-.emotion-5 .Title {
+.emotion-0 {
   color: #444444;
+  color: #FF4785;
 }
 
-.emotion-5 .Right svg {
+.emotion-4 svg {
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
   opacity: 0;
@@ -79,31 +79,15 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
   vertical-align: top;
 }
 
-.emotion-5 .Right svg path {
+.emotion-4 path {
   fill: inherit;
 }
 
-.emotion-5:hover {
-  background: #e3f3ff;
-  cursor: pointer;
-}
-
-.emotion-5:hover .Right svg {
+.emotion-4 svg {
   opacity: 1;
 }
 
-.emotion-5 .Title,
-.emotion-5 .Center {
-  color: #FF4785;
-}
-
-.emotion-5 .Right svg,
-.emotion-5 .Left svg {
-  opacity: 1;
-}
-
-.emotion-5 .Right svg path,
-.emotion-5 .Left svg path {
+.emotion-4 path {
   fill: #FF4785;
 }
 
@@ -111,29 +95,28 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
   class="emotion-5"
 >
   <span
-    class="emotion-4"
-    role="presentation"
+    class="emotion-1"
   >
     <span
-      class="Title emotion-0"
+      class="emotion-0"
     >
       active icon
     </span>
-    <span
-      class="Right emotion-3"
+  </span>
+  <span
+    class="emotion-4"
+  >
+    <svg
+      class="emotion-3"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
     >
-      <svg
+      <path
         class="emotion-2"
-        height="20px"
-        viewBox="0 0 1024 1024"
-        width="20px"
-      >
-        <path
-          class="emotion-1"
-          d="M1008.714 490.522c-9.002-12.594-223.276-308.808-496.684-308.808-273.444 0-487.682 296.214-496.684 308.808l-15.316 21.49 15.316 21.466c9.002 12.618 223.24 308.808 496.684 308.808 273.408 0 487.682-296.19 496.684-308.808l15.316-21.466-15.316-21.49zM807.68 631.688c-46 39.142-92.558 70.064-138.382 91.904-53.874 25.676-106.786 38.694-157.266 38.694-50.49 0-103.406-13.018-157.282-38.696-45.826-21.838-92.382-52.758-138.378-91.902-53.708-45.706-94.302-92.122-116.61-119.672 22.36-27.602 63.028-74.094 116.612-119.696 45.996-39.146 92.554-70.068 138.378-91.908 53.876-25.678 106.792-38.698 157.28-38.698 50.48 0 103.39 13.020 157.264 38.696 45.824 21.842 92.382 52.764 138.382 91.91 53.602 45.614 94.264 92.098 116.624 119.696-22.306 27.544-62.898 73.954-116.622 119.672zM692.032 512.036c0 99.41-80.588 180-180 180s-180-80.59-180-180c0-99.406 80.588-179.998 180-179.998s180 80.59 180 179.998z"
-        />
-      </svg>
-    </span>
+        d="M1008.714 490.522c-9.002-12.594-223.276-308.808-496.684-308.808-273.444 0-487.682 296.214-496.684 308.808l-15.316 21.49 15.316 21.466c9.002 12.618 223.24 308.808 496.684 308.808 273.408 0 487.682-296.19 496.684-308.808l15.316-21.466-15.316-21.49zM807.68 631.688c-46 39.142-92.558 70.064-138.382 91.904-53.874 25.676-106.786 38.694-157.266 38.694-50.49 0-103.406-13.018-157.282-38.696-45.826-21.838-92.382-52.758-138.378-91.902-53.708-45.706-94.302-92.122-116.61-119.672 22.36-27.602 63.028-74.094 116.612-119.696 45.996-39.146 92.554-70.068 138.378-91.908 53.876-25.678 106.792-38.698 157.28-38.698 50.48 0 103.39 13.020 157.264 38.696 45.824 21.842 92.382 52.764 138.382 91.91 53.602 45.614 94.264 92.098 116.624 119.696-22.306 27.544-62.898 73.954-116.622 119.672zM692.032 512.036c0 99.41-80.588 180-180 180s-180-80.59-180-180c0-99.406 80.588-179.998 180-179.998s180 80.59 180 179.998z"
+      />
+    </svg>
   </span>
 </a>
 `;
@@ -189,56 +172,26 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   }
 }
 
-.emotion-8 {
+.emotion-9 {
   display: block;
 }
 
-.emotion-7 {
+.emotion-8 {
   fill: currentColor;
 }
 
-.emotion-5 {
+.emotion-2 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
   color: #999999;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
-}
-
-.emotion-5:not(:first-child) {
-  border-top: 1px solid #EEEEEE;
-}
-
-.emotion-5 .Title {
-  color: #444444;
-}
-
-.emotion-5 .Right svg {
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  opacity: 0;
-  height: 12px;
-  width: 12px;
-  margin: 3px 0;
-  vertical-align: top;
-}
-
-.emotion-5 .Right svg path {
-  fill: inherit;
-}
-
-.emotion-5:hover {
-  background: #e3f3ff;
   cursor: pointer;
-}
-
-.emotion-5:hover .Right svg {
-  opacity: 1;
-}
-
-.emotion-1 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   line-height: 18px;
   padding: 7px 15px;
   display: -webkit-box;
@@ -251,107 +204,51 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   align-items: center;
 }
 
-.emotion-1 .Left,
-.emotion-1 .Title,
-.emotion-1 .Center,
-.emotion-1 .Right {
+.emotion-2 + .emotion-2 {
+  border-top: 1px solid #EEEEEE;
+}
+
+.emotion-2 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-2:hover {
+  background: #e3f3ff;
+}
+
+.emotion-2:hover svg {
+  opacity: 1;
+}
+
+.emotion-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.emotion-1 .Title,
-.emotion-1 .Center {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+.emotion-1 > * + * {
+  padding-left: 10px;
 }
 
-.emotion-1 .Left,
-.emotion-1 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.emotion-1 .Right {
-  text-align: right;
-  margin-left: 20px;
-}
-
-.emotion-2 {
-  font-size: 12px;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  color: #999999;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  display: block;
-}
-
-.emotion-2:not(:first-child) {
-  border-top: 1px solid #EEEEEE;
-}
-
-.emotion-2 .Title {
+.emotion-3 {
   color: #444444;
 }
 
-.emotion-2 .Right svg {
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  opacity: 0;
-  height: 12px;
-  width: 12px;
-  margin: 3px 0;
-  vertical-align: top;
-}
-
-.emotion-2 .Right svg path {
-  fill: inherit;
-}
-
-.emotion-2:hover {
-  background: #e3f3ff;
-  cursor: pointer;
-}
-
-.emotion-2:hover .Right svg {
-  opacity: 1;
-}
-
-.emotion-2 .Title {
+.emotion-0 {
+  color: #444444;
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
   background: rgba(0,0,0,.05);
   color: transparent;
   cursor: progress;
-  -webkit-flex: none !important;
-  -ms-flex: none !important;
-  flex: none !important;
-  display: inline-block;
 }
 
-.emotion-23 {
-  font-size: 12px;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  color: #999999;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  display: block;
-}
-
-.emotion-23:not(:first-child) {
-  border-top: 1px solid #EEEEEE;
-}
-
-.emotion-23 .Title {
-  color: #444444;
-}
-
-.emotion-23 .Right svg {
+.emotion-10 svg {
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
   opacity: 0;
@@ -361,31 +258,57 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   vertical-align: top;
 }
 
-.emotion-23 .Right svg path {
+.emotion-10 path {
   fill: inherit;
 }
 
-.emotion-23:hover {
-  background: #e3f3ff;
-  cursor: pointer;
+.emotion-14 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
 }
 
-.emotion-23:hover .Right svg {
+.emotion-18 svg {
   opacity: 1;
 }
 
-.emotion-23 .Title,
-.emotion-23 .Center {
+.emotion-18 path {
+  fill: #FF4785;
+}
+
+.emotion-19 {
+  color: #444444;
   color: #FF4785;
 }
 
-.emotion-23 .Right svg,
-.emotion-23 .Left svg {
+.emotion-20 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  color: #FF4785;
+}
+
+.emotion-22 svg {
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  opacity: 0;
+  height: 12px;
+  width: 12px;
+  margin: 3px 0;
+  vertical-align: top;
+}
+
+.emotion-22 path {
+  fill: inherit;
+}
+
+.emotion-22 svg {
   opacity: 1;
 }
 
-.emotion-23 .Right svg path,
-.emotion-23 .Left svg path {
+.emotion-22 path {
   fill: #FF4785;
 }
 
@@ -396,43 +319,50 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   color: #999999;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
-  cursor: not-allowed !important;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 18px;
+  padding: 7px 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: not-allowed;
 }
 
-.emotion-37:not(:first-child) {
+.emotion-37 + .emotion-37 {
   border-top: 1px solid #EEEEEE;
 }
 
-.emotion-37 .Title {
-  color: #444444;
-}
-
-.emotion-37 .Right svg {
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  opacity: 0;
-  height: 12px;
-  width: 12px;
-  margin: 3px 0;
-  vertical-align: top;
-}
-
-.emotion-37 .Right svg path {
-  fill: inherit;
+.emotion-37 > * + * {
+  padding-left: 10px;
 }
 
 .emotion-37:hover {
   background: #e3f3ff;
-  cursor: pointer;
 }
 
-.emotion-37:hover .Right svg {
+.emotion-37:hover svg {
   opacity: 1;
 }
 
-.emotion-37 .Title,
-.emotion-37 .Center {
+.emotion-33 {
+  color: #444444;
+  color: #999999;
+}
+
+.emotion-34 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
   color: #999999;
 }
 
@@ -442,10 +372,9 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   >
     <span
       class="emotion-1"
-      role="presentation"
     >
       <span
-        class="Title emotion-0"
+        class="emotion-0"
       >
         <span>
           Loading state
@@ -454,143 +383,138 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
     </span>
   </a>
   <a
-    class="emotion-5"
+    class="emotion-2"
   >
     <span
       class="emotion-1"
-      role="presentation"
     >
       <span
-        class="Title emotion-0"
+        class="emotion-3"
       >
         Default
       </span>
     </span>
   </a>
   <a
-    class="emotion-5"
+    class="emotion-2"
   >
     <span
       class="emotion-1"
-      role="presentation"
     >
       <span
-        class="Title emotion-0"
+        class="emotion-3"
       >
         Default icon
       </span>
-      <span
-        class="Right emotion-9"
+    </span>
+    <span
+      class="emotion-10"
+    >
+      <svg
+        class="emotion-9"
+        height="20px"
+        viewBox="0 0 1024 1024"
+        width="20px"
       >
-        <svg
+        <path
           class="emotion-8"
-          height="20px"
-          viewBox="0 0 1024 1024"
-          width="20px"
-        >
-          <path
-            class="emotion-7"
-            d="M1008.714 490.522c-9.002-12.594-223.276-308.808-496.684-308.808-273.444 0-487.682 296.214-496.684 308.808l-15.316 21.49 15.316 21.466c9.002 12.618 223.24 308.808 496.684 308.808 273.408 0 487.682-296.19 496.684-308.808l15.316-21.466-15.316-21.49zM807.68 631.688c-46 39.142-92.558 70.064-138.382 91.904-53.874 25.676-106.786 38.694-157.266 38.694-50.49 0-103.406-13.018-157.282-38.696-45.826-21.838-92.382-52.758-138.378-91.902-53.708-45.706-94.302-92.122-116.61-119.672 22.36-27.602 63.028-74.094 116.612-119.696 45.996-39.146 92.554-70.068 138.378-91.908 53.876-25.678 106.792-38.698 157.28-38.698 50.48 0 103.39 13.020 157.264 38.696 45.824 21.842 92.382 52.764 138.382 91.91 53.602 45.614 94.264 92.098 116.624 119.696-22.306 27.544-62.898 73.954-116.622 119.672zM692.032 512.036c0 99.41-80.588 180-180 180s-180-80.59-180-180c0-99.406 80.588-179.998 180-179.998s180 80.59 180 179.998z"
-          />
-        </svg>
-      </span>
+          d="M1008.714 490.522c-9.002-12.594-223.276-308.808-496.684-308.808-273.444 0-487.682 296.214-496.684 308.808l-15.316 21.49 15.316 21.466c9.002 12.618 223.24 308.808 496.684 308.808 273.408 0 487.682-296.19 496.684-308.808l15.316-21.466-15.316-21.49zM807.68 631.688c-46 39.142-92.558 70.064-138.382 91.904-53.874 25.676-106.786 38.694-157.266 38.694-50.49 0-103.406-13.018-157.282-38.696-45.826-21.838-92.382-52.758-138.378-91.902-53.708-45.706-94.302-92.122-116.61-119.672 22.36-27.602 63.028-74.094 116.612-119.696 45.996-39.146 92.554-70.068 138.378-91.908 53.876-25.678 106.792-38.698 157.28-38.698 50.48 0 103.39 13.020 157.264 38.696 45.824 21.842 92.382 52.764 138.382 91.91 53.602 45.614 94.264 92.098 116.624 119.696-22.306 27.544-62.898 73.954-116.622 119.672zM692.032 512.036c0 99.41-80.588 180-180 180s-180-80.59-180-180c0-99.406 80.588-179.998 180-179.998s180 80.59 180 179.998z"
+        />
+      </svg>
     </span>
   </a>
   <a
-    class="emotion-5"
+    class="emotion-2"
   >
     <span
+      class="emotion-12"
+    >
+      left
+    </span>
+    <span
       class="emotion-1"
-      role="presentation"
     >
       <span
-        class="Left emotion-9"
-      >
-        left
-      </span>
-      <span
-        class="Title emotion-0"
+        class="emotion-3"
       >
         title
       </span>
       <span
-        class="Center emotion-9"
+        class="emotion-14"
       >
         center
       </span>
-      <span
-        class="Right emotion-9"
-      >
-        right
-      </span>
+    </span>
+    <span
+      class="emotion-10"
+    >
+      right
     </span>
   </a>
   <a
-    class="emotion-23"
+    class="emotion-2"
   >
     <span
+      class="emotion-18"
+    >
+      left
+    </span>
+    <span
       class="emotion-1"
-      role="presentation"
     >
       <span
-        class="Left emotion-9"
-      >
-        left
-      </span>
-      <span
-        class="Title emotion-0"
+        class="emotion-19"
       >
         active
       </span>
       <span
-        class="Center emotion-9"
+        class="emotion-20"
       >
         center
       </span>
-      <span
-        class="Right emotion-9"
-      >
-        right
-      </span>
+    </span>
+    <span
+      class="emotion-22"
+    >
+      right
     </span>
   </a>
   <a
-    class="emotion-23"
+    class="emotion-2"
   >
     <span
+      class="emotion-18"
+    >
+      left
+    </span>
+    <span
       class="emotion-1"
-      role="presentation"
     >
       <span
-        class="Left emotion-9"
-      >
-        left
-      </span>
-      <span
-        class="Title emotion-0"
+        class="emotion-19"
       >
         active icon
       </span>
       <span
-        class="Center emotion-9"
+        class="emotion-20"
       >
         center
       </span>
-      <span
-        class="Right emotion-9"
+    </span>
+    <span
+      class="emotion-22"
+    >
+      <svg
+        class="emotion-9"
+        height="20px"
+        viewBox="0 0 1024 1024"
+        width="20px"
       >
-        <svg
+        <path
           class="emotion-8"
-          height="20px"
-          viewBox="0 0 1024 1024"
-          width="20px"
-        >
-          <path
-            class="emotion-7"
-            d="M1008.714 490.522c-9.002-12.594-223.276-308.808-496.684-308.808-273.444 0-487.682 296.214-496.684 308.808l-15.316 21.49 15.316 21.466c9.002 12.618 223.24 308.808 496.684 308.808 273.408 0 487.682-296.19 496.684-308.808l15.316-21.466-15.316-21.49zM807.68 631.688c-46 39.142-92.558 70.064-138.382 91.904-53.874 25.676-106.786 38.694-157.266 38.694-50.49 0-103.406-13.018-157.282-38.696-45.826-21.838-92.382-52.758-138.378-91.902-53.708-45.706-94.302-92.122-116.61-119.672 22.36-27.602 63.028-74.094 116.612-119.696 45.996-39.146 92.554-70.068 138.378-91.908 53.876-25.678 106.792-38.698 157.28-38.698 50.48 0 103.39 13.020 157.264 38.696 45.824 21.842 92.382 52.764 138.382 91.91 53.602 45.614 94.264 92.098 116.624 119.696-22.306 27.544-62.898 73.954-116.622 119.672zM692.032 512.036c0 99.41-80.588 180-180 180s-180-80.59-180-180c0-99.406 80.588-179.998 180-179.998s180 80.59 180 179.998z"
-          />
-        </svg>
-      </span>
+          d="M1008.714 490.522c-9.002-12.594-223.276-308.808-496.684-308.808-273.444 0-487.682 296.214-496.684 308.808l-15.316 21.49 15.316 21.466c9.002 12.618 223.24 308.808 496.684 308.808 273.408 0 487.682-296.19 496.684-308.808l15.316-21.466-15.316-21.49zM807.68 631.688c-46 39.142-92.558 70.064-138.382 91.904-53.874 25.676-106.786 38.694-157.266 38.694-50.49 0-103.406-13.018-157.282-38.696-45.826-21.838-92.382-52.758-138.378-91.902-53.708-45.706-94.302-92.122-116.61-119.672 22.36-27.602 63.028-74.094 116.612-119.696 45.996-39.146 92.554-70.068 138.378-91.908 53.876-25.678 106.792-38.698 157.28-38.698 50.48 0 103.39 13.020 157.264 38.696 45.824 21.842 92.382 52.764 138.382 91.91 53.602 45.614 94.264 92.098 116.624 119.696-22.306 27.544-62.898 73.954-116.622 119.672zM692.032 512.036c0 99.41-80.588 180-180 180s-180-80.59-180-180c0-99.406 80.588-179.998 180-179.998s180 80.59 180 179.998z"
+        />
+      </svg>
     </span>
   </a>
   <a
@@ -598,29 +522,32 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
     disabled=""
   >
     <span
+      class="emotion-12"
+      disabled=""
+    >
+      left
+    </span>
+    <span
       class="emotion-1"
-      role="presentation"
     >
       <span
-        class="Left emotion-9"
-      >
-        left
-      </span>
-      <span
-        class="Title emotion-0"
+        class="emotion-33"
+        disabled=""
       >
         disabled
       </span>
       <span
-        class="Center emotion-9"
+        class="emotion-34"
+        disabled=""
       >
         center
       </span>
-      <span
-        class="Right emotion-9"
-      >
-        right
-      </span>
+    </span>
+    <span
+      class="emotion-10"
+      disabled=""
+    >
+      right
     </span>
   </a>
 </div>
@@ -634,41 +561,11 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
   color: #999999;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
-}
-
-.emotion-2:not(:first-child) {
-  border-top: 1px solid #EEEEEE;
-}
-
-.emotion-2 .Title {
-  color: #444444;
-}
-
-.emotion-2 .Right svg {
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  opacity: 0;
-  height: 12px;
-  width: 12px;
-  margin: 3px 0;
-  vertical-align: top;
-}
-
-.emotion-2 .Right svg path {
-  fill: inherit;
-}
-
-.emotion-2:hover {
-  background: #e3f3ff;
   cursor: pointer;
-}
-
-.emotion-2:hover .Right svg {
-  opacity: 1;
-}
-
-.emotion-1 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   line-height: 18px;
   padding: 7px 15px;
   display: -webkit-box;
@@ -681,33 +578,39 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
   align-items: center;
 }
 
-.emotion-1 .Left,
-.emotion-1 .Title,
-.emotion-1 .Center,
-.emotion-1 .Right {
+.emotion-2 + .emotion-2 {
+  border-top: 1px solid #EEEEEE;
+}
+
+.emotion-2 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-2:hover {
+  background: #e3f3ff;
+}
+
+.emotion-2:hover svg {
+  opacity: 1;
+}
+
+.emotion-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.emotion-1 .Title,
-.emotion-1 .Center {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+.emotion-1 > * + * {
+  padding-left: 10px;
 }
 
-.emotion-1 .Left,
-.emotion-1 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.emotion-1 .Right {
-  text-align: right;
-  margin-left: 20px;
+.emotion-0 {
+  color: #444444;
 }
 
 <a
@@ -715,10 +618,9 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
 >
   <span
     class="emotion-1"
-    role="presentation"
   >
     <span
-      class="Title emotion-0"
+      class="emotion-0"
     >
       Default
     </span>
@@ -727,11 +629,11 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
 `;
 
 exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
-.emotion-2 {
+.emotion-3 {
   display: block;
 }
 
-.emotion-1 {
+.emotion-2 {
   fill: currentColor;
 }
 
@@ -742,18 +644,59 @@ exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
   color: #999999;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 18px;
+  padding: 7px 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.emotion-5:not(:first-child) {
+.emotion-5 + .emotion-5 {
   border-top: 1px solid #EEEEEE;
 }
 
-.emotion-5 .Title {
+.emotion-5 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-5:hover {
+  background: #e3f3ff;
+}
+
+.emotion-5:hover svg {
+  opacity: 1;
+}
+
+.emotion-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-0 {
   color: #444444;
 }
 
-.emotion-5 .Right svg {
+.emotion-4 svg {
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
   opacity: 0;
@@ -763,133 +706,68 @@ exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
   vertical-align: top;
 }
 
-.emotion-5 .Right svg path {
+.emotion-4 path {
   fill: inherit;
-}
-
-.emotion-5:hover {
-  background: #e3f3ff;
-  cursor: pointer;
-}
-
-.emotion-5:hover .Right svg {
-  opacity: 1;
-}
-
-.emotion-4 {
-  line-height: 18px;
-  padding: 7px 15px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-4 .Left,
-.emotion-4 .Title,
-.emotion-4 .Center,
-.emotion-4 .Right {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-4 .Title,
-.emotion-4 .Center {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.emotion-4 .Left,
-.emotion-4 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.emotion-4 .Right {
-  text-align: right;
-  margin-left: 20px;
 }
 
 <a
   class="emotion-5"
 >
   <span
-    class="emotion-4"
-    role="presentation"
+    class="emotion-1"
   >
     <span
-      class="Title emotion-0"
+      class="emotion-0"
     >
       Default icon
     </span>
-    <span
-      class="Right emotion-3"
+  </span>
+  <span
+    class="emotion-4"
+  >
+    <svg
+      class="emotion-3"
+      height="20px"
+      viewBox="0 0 1024 1024"
+      width="20px"
     >
-      <svg
+      <path
         class="emotion-2"
-        height="20px"
-        viewBox="0 0 1024 1024"
-        width="20px"
-      >
-        <path
-          class="emotion-1"
-          d="M1008.714 490.522c-9.002-12.594-223.276-308.808-496.684-308.808-273.444 0-487.682 296.214-496.684 308.808l-15.316 21.49 15.316 21.466c9.002 12.618 223.24 308.808 496.684 308.808 273.408 0 487.682-296.19 496.684-308.808l15.316-21.466-15.316-21.49zM807.68 631.688c-46 39.142-92.558 70.064-138.382 91.904-53.874 25.676-106.786 38.694-157.266 38.694-50.49 0-103.406-13.018-157.282-38.696-45.826-21.838-92.382-52.758-138.378-91.902-53.708-45.706-94.302-92.122-116.61-119.672 22.36-27.602 63.028-74.094 116.612-119.696 45.996-39.146 92.554-70.068 138.378-91.908 53.876-25.678 106.792-38.698 157.28-38.698 50.48 0 103.39 13.020 157.264 38.696 45.824 21.842 92.382 52.764 138.382 91.91 53.602 45.614 94.264 92.098 116.624 119.696-22.306 27.544-62.898 73.954-116.622 119.672zM692.032 512.036c0 99.41-80.588 180-180 180s-180-80.59-180-180c0-99.406 80.588-179.998 180-179.998s180 80.59 180 179.998z"
-        />
-      </svg>
-    </span>
+        d="M1008.714 490.522c-9.002-12.594-223.276-308.808-496.684-308.808-273.444 0-487.682 296.214-496.684 308.808l-15.316 21.49 15.316 21.466c9.002 12.618 223.24 308.808 496.684 308.808 273.408 0 487.682-296.19 496.684-308.808l15.316-21.466-15.316-21.49zM807.68 631.688c-46 39.142-92.558 70.064-138.382 91.904-53.874 25.676-106.786 38.694-157.266 38.694-50.49 0-103.406-13.018-157.282-38.696-45.826-21.838-92.382-52.758-138.378-91.902-53.708-45.706-94.302-92.122-116.61-119.672 22.36-27.602 63.028-74.094 116.612-119.696 45.996-39.146 92.554-70.068 138.378-91.908 53.876-25.678 106.792-38.698 157.28-38.698 50.48 0 103.39 13.020 157.264 38.696 45.824 21.842 92.382 52.764 138.382 91.91 53.602 45.614 94.264 92.098 116.624 119.696-22.306 27.544-62.898 73.954-116.622 119.672zM692.032 512.036c0 99.41-80.588 180-180 180s-180-80.59-180-180c0-99.406 80.588-179.998 180-179.998s180 80.59 180 179.998z"
+      />
+    </svg>
   </span>
 </a>
 `;
 
 exports[`Storyshots basics|Tooltip/ListItem disabled 1`] = `
-.emotion-4 {
-  line-height: 18px;
-  padding: 7px 15px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-4 .Left,
-.emotion-4 .Title,
-.emotion-4 .Center,
-.emotion-4 .Right {
+.emotion-3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.emotion-4 .Title,
-.emotion-4 .Center {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+.emotion-3 > * + * {
+  padding-left: 10px;
 }
 
-.emotion-4 .Left,
-.emotion-4 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
+.emotion-4 svg {
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  opacity: 0;
+  height: 12px;
+  width: 12px;
+  margin: 3px 0;
+  vertical-align: top;
 }
 
-.emotion-4 .Right {
-  text-align: right;
-  margin-left: 20px;
+.emotion-4 path {
+  fill: inherit;
 }
 
 .emotion-5 {
@@ -899,43 +777,50 @@ exports[`Storyshots basics|Tooltip/ListItem disabled 1`] = `
   color: #999999;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
-  cursor: not-allowed !important;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 18px;
+  padding: 7px 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: not-allowed;
 }
 
-.emotion-5:not(:first-child) {
+.emotion-5 + .emotion-5 {
   border-top: 1px solid #EEEEEE;
 }
 
-.emotion-5 .Title {
-  color: #444444;
-}
-
-.emotion-5 .Right svg {
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  opacity: 0;
-  height: 12px;
-  width: 12px;
-  margin: 3px 0;
-  vertical-align: top;
-}
-
-.emotion-5 .Right svg path {
-  fill: inherit;
+.emotion-5 > * + * {
+  padding-left: 10px;
 }
 
 .emotion-5:hover {
   background: #e3f3ff;
-  cursor: pointer;
 }
 
-.emotion-5:hover .Right svg {
+.emotion-5:hover svg {
   opacity: 1;
 }
 
-.emotion-5 .Title,
-.emotion-5 .Center {
+.emotion-1 {
+  color: #444444;
+  color: #999999;
+}
+
+.emotion-2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
   color: #999999;
 }
 
@@ -944,29 +829,32 @@ exports[`Storyshots basics|Tooltip/ListItem disabled 1`] = `
   disabled=""
 >
   <span
-    class="emotion-4"
-    role="presentation"
+    class="emotion-0"
+    disabled=""
+  >
+    left
+  </span>
+  <span
+    class="emotion-3"
   >
     <span
-      class="Left emotion-0"
-    >
-      left
-    </span>
-    <span
-      class="Title emotion-1"
+      class="emotion-1"
+      disabled=""
     >
       disabled
     </span>
     <span
-      class="Center emotion-0"
+      class="emotion-2"
+      disabled=""
     >
       center
     </span>
-    <span
-      class="Right emotion-0"
-    >
-      right
-    </span>
+  </span>
+  <span
+    class="emotion-4"
+    disabled=""
+  >
+    right
   </span>
 </a>
 `;
@@ -1022,7 +910,18 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
   }
 }
 
-.emotion-1 {
+.emotion-2 {
+  font-size: 12px;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  color: #999999;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   line-height: 18px;
   padding: 7px 15px;
   display: -webkit-box;
@@ -1035,86 +934,44 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
   align-items: center;
 }
 
-.emotion-1 .Left,
-.emotion-1 .Title,
-.emotion-1 .Center,
-.emotion-1 .Right {
+.emotion-2 + .emotion-2 {
+  border-top: 1px solid #EEEEEE;
+}
+
+.emotion-2 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-2:hover {
+  background: #e3f3ff;
+}
+
+.emotion-2:hover svg {
+  opacity: 1;
+}
+
+.emotion-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.emotion-1 .Title,
-.emotion-1 .Center {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+.emotion-1 > * + * {
+  padding-left: 10px;
 }
 
-.emotion-1 .Left,
-.emotion-1 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.emotion-1 .Right {
-  text-align: right;
-  margin-left: 20px;
-}
-
-.emotion-2 {
-  font-size: 12px;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  color: #999999;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  display: block;
-}
-
-.emotion-2:not(:first-child) {
-  border-top: 1px solid #EEEEEE;
-}
-
-.emotion-2 .Title {
+.emotion-0 {
   color: #444444;
-}
-
-.emotion-2 .Right svg {
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  opacity: 0;
-  height: 12px;
-  width: 12px;
-  margin: 3px 0;
-  vertical-align: top;
-}
-
-.emotion-2 .Right svg path {
-  fill: inherit;
-}
-
-.emotion-2:hover {
-  background: #e3f3ff;
-  cursor: pointer;
-}
-
-.emotion-2:hover .Right svg {
-  opacity: 1;
-}
-
-.emotion-2 .Title {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
   background: rgba(0,0,0,.05);
   color: transparent;
   cursor: progress;
-  -webkit-flex: none !important;
-  -ms-flex: none !important;
-  flex: none !important;
-  display: inline-block;
 }
 
 <a
@@ -1122,10 +979,9 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
 >
   <span
     class="emotion-1"
-    role="presentation"
   >
     <span
-      class="Title emotion-0"
+      class="emotion-0"
     >
       <span>
         Loading state
@@ -1143,18 +999,59 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions 1`] = `
   color: #999999;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 18px;
+  padding: 7px 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.emotion-5:not(:first-child) {
+.emotion-5 + .emotion-5 {
   border-top: 1px solid #EEEEEE;
 }
 
-.emotion-5 .Title {
+.emotion-5 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-5:hover {
+  background: #e3f3ff;
+}
+
+.emotion-5:hover svg {
+  opacity: 1;
+}
+
+.emotion-3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-3 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-1 {
   color: #444444;
 }
 
-.emotion-5 .Right svg {
+.emotion-4 svg {
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
   opacity: 0;
@@ -1164,135 +1061,48 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions 1`] = `
   vertical-align: top;
 }
 
-.emotion-5 .Right svg path {
+.emotion-4 path {
   fill: inherit;
 }
 
-.emotion-5:hover {
-  background: #e3f3ff;
-  cursor: pointer;
-}
-
-.emotion-5:hover .Right svg {
-  opacity: 1;
-}
-
-.emotion-4 {
-  line-height: 18px;
-  padding: 7px 15px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-4 .Left,
-.emotion-4 .Title,
-.emotion-4 .Center,
-.emotion-4 .Right {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-4 .Title,
-.emotion-4 .Center {
+.emotion-2 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-}
-
-.emotion-4 .Left,
-.emotion-4 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.emotion-4 .Right {
-  text-align: right;
-  margin-left: 20px;
+  text-align: center;
 }
 
 <a
   class="emotion-5"
 >
   <span
-    class="emotion-4"
-    role="presentation"
+    class="emotion-0"
+  >
+    left
+  </span>
+  <span
+    class="emotion-3"
   >
     <span
-      class="Left emotion-0"
-    >
-      left
-    </span>
-    <span
-      class="Title emotion-1"
+      class="emotion-1"
     >
       title
     </span>
     <span
-      class="Center emotion-0"
+      class="emotion-2"
     >
       center
     </span>
-    <span
-      class="Right emotion-0"
-    >
-      right
-    </span>
+  </span>
+  <span
+    class="emotion-4"
+  >
+    right
   </span>
 </a>
 `;
 
 exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
-.emotion-4 {
-  line-height: 18px;
-  padding: 7px 15px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-4 .Left,
-.emotion-4 .Title,
-.emotion-4 .Center,
-.emotion-4 .Right {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-4 .Title,
-.emotion-4 .Center {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.emotion-4 .Left,
-.emotion-4 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.emotion-4 .Right {
-  text-align: right;
-  margin-left: 20px;
-}
-
 .emotion-5 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
@@ -1300,18 +1110,76 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
   color: #999999;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 18px;
+  padding: 7px 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.emotion-5:not(:first-child) {
+.emotion-5 + .emotion-5 {
   border-top: 1px solid #EEEEEE;
 }
 
-.emotion-5 .Title {
-  color: #444444;
+.emotion-5 > * + * {
+  padding-left: 10px;
 }
 
-.emotion-5 .Right svg {
+.emotion-5:hover {
+  background: #e3f3ff;
+}
+
+.emotion-5:hover svg {
+  opacity: 1;
+}
+
+.emotion-3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-3 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-0 svg {
+  opacity: 1;
+}
+
+.emotion-0 path {
+  fill: #FF4785;
+}
+
+.emotion-1 {
+  color: #444444;
+  color: #FF4785;
+}
+
+.emotion-2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  color: #FF4785;
+}
+
+.emotion-4 svg {
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
   opacity: 0;
@@ -1321,31 +1189,15 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
   vertical-align: top;
 }
 
-.emotion-5 .Right svg path {
+.emotion-4 path {
   fill: inherit;
 }
 
-.emotion-5:hover {
-  background: #e3f3ff;
-  cursor: pointer;
-}
-
-.emotion-5:hover .Right svg {
+.emotion-4 svg {
   opacity: 1;
 }
 
-.emotion-5 .Title,
-.emotion-5 .Center {
-  color: #FF4785;
-}
-
-.emotion-5 .Right svg,
-.emotion-5 .Left svg {
-  opacity: 1;
-}
-
-.emotion-5 .Right svg path,
-.emotion-5 .Left svg path {
+.emotion-4 path {
   fill: #FF4785;
 }
 
@@ -1353,29 +1205,28 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
   class="emotion-5"
 >
   <span
-    class="emotion-4"
-    role="presentation"
+    class="emotion-0"
+  >
+    left
+  </span>
+  <span
+    class="emotion-3"
   >
     <span
-      class="Left emotion-0"
-    >
-      left
-    </span>
-    <span
-      class="Title emotion-1"
+      class="emotion-1"
     >
       active
     </span>
     <span
-      class="Center emotion-0"
+      class="emotion-2"
     >
       center
     </span>
-    <span
-      class="Right emotion-0"
-    >
-      right
-    </span>
+  </span>
+  <span
+    class="emotion-4"
+  >
+    right
   </span>
 </a>
 `;

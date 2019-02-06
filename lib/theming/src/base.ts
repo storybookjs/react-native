@@ -68,6 +68,7 @@ export const color = {
 export const background = {
   app: '#F6F9FC',
   appInverse: '#7A8997',
+  select: '#e3f3ff',
 
   // Notification, error, and warning backgrounds
   positive: '#E1FFD4',

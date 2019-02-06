@@ -2574,41 +2574,11 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   color: #999999;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
-}
-
-.emotion-5:not(:first-child) {
-  border-top: 1px solid #EEEEEE;
-}
-
-.emotion-5 .Title {
-  color: #444444;
-}
-
-.emotion-5 .Right svg {
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  opacity: 0;
-  height: 12px;
-  width: 12px;
-  margin: 3px 0;
-  vertical-align: top;
-}
-
-.emotion-5 .Right svg path {
-  fill: inherit;
-}
-
-.emotion-5:hover {
-  background: #e3f3ff;
   cursor: pointer;
-}
-
-.emotion-5:hover .Right svg {
-  opacity: 1;
-}
-
-.emotion-4 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   line-height: 18px;
   padding: 7px 15px;
   display: -webkit-box;
@@ -2621,33 +2591,20 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   align-items: center;
 }
 
-.emotion-4 .Left,
-.emotion-4 .Title,
-.emotion-4 .Center,
-.emotion-4 .Right {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-5 + .emotion-5 {
+  border-top: 1px solid #EEEEEE;
 }
 
-.emotion-4 .Title,
-.emotion-4 .Center {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+.emotion-5 > * + * {
+  padding-left: 10px;
 }
 
-.emotion-4 .Left,
-.emotion-4 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
+.emotion-5:hover {
+  background: #e3f3ff;
 }
 
-.emotion-4 .Right {
-  text-align: right;
-  margin-left: 20px;
+.emotion-5:hover svg {
+  opacity: 1;
 }
 
 .emotion-1 {
@@ -2658,6 +2615,25 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   margin-right: 5px;
   display: block;
   color: #1EA7FD;
+}
+
+.emotion-4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-3 {
+  color: #444444;
 }
 
 .emotion-6 {
@@ -2683,41 +2659,11 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   color: #999999;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
-}
-
-.emotion-5:not(:first-child) {
-  border-top: 1px solid #EEEEEE;
-}
-
-.emotion-5 .Title {
-  color: #444444;
-}
-
-.emotion-5 .Right svg {
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  opacity: 0;
-  height: 12px;
-  width: 12px;
-  margin: 3px 0;
-  vertical-align: top;
-}
-
-.emotion-5 .Right svg path {
-  fill: inherit;
-}
-
-.emotion-5:hover {
-  background: #e3f3ff;
   cursor: pointer;
-}
-
-.emotion-5:hover .Right svg {
-  opacity: 1;
-}
-
-.emotion-4 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   line-height: 18px;
   padding: 7px 15px;
   display: -webkit-box;
@@ -2730,33 +2676,20 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   align-items: center;
 }
 
-.emotion-4 .Left,
-.emotion-4 .Title,
-.emotion-4 .Center,
-.emotion-4 .Right {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-5 + .emotion-5 {
+  border-top: 1px solid #EEEEEE;
 }
 
-.emotion-4 .Title,
-.emotion-4 .Center {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+.emotion-5 > * + * {
+  padding-left: 10px;
 }
 
-.emotion-4 .Left,
-.emotion-4 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
+.emotion-5:hover {
+  background: #e3f3ff;
 }
 
-.emotion-4 .Right {
-  text-align: right;
-  margin-left: 20px;
+.emotion-5:hover svg {
+  opacity: 1;
 }
 
 .emotion-1 {
@@ -2767,6 +2700,25 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   margin-right: 5px;
   display: block;
   color: #1EA7FD;
+}
+
+.emotion-4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-3 {
+  color: #444444;
 }
 
 .emotion-6 {
@@ -2784,26 +2736,25 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
     class="emotion-5"
   >
     <span
+      class="emotion-2"
+    >
+      <svg
+        class="emotion-1"
+        height="20px"
+        viewBox="0 0 1024 1024"
+        width="20px"
+      >
+        <path
+          class="emotion-0"
+          d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+        />
+      </svg>
+    </span>
+    <span
       class="emotion-4"
-      role="presentation"
     >
       <span
-        class="Left emotion-2"
-      >
-        <svg
-          class="emotion-1"
-          height="20px"
-          viewBox="0 0 1024 1024"
-          width="20px"
-        >
-          <path
-            class="emotion-0"
-            d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
-          />
-        </svg>
-      </span>
-      <span
-        class="Title emotion-3"
+        class="emotion-3"
       >
         has icon
       </span>
@@ -2813,20 +2764,19 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
     class="emotion-5"
   >
     <span
+      class="emotion-2"
+    >
+      <img
+        alt="image"
+        class="emotion-6"
+        src="https://via.placeholder.com/20"
+      />
+    </span>
+    <span
       class="emotion-4"
-      role="presentation"
     >
       <span
-        class="Left emotion-2"
-      >
-        <img
-          alt="image"
-          class="emotion-6"
-          src="https://via.placeholder.com/20"
-        />
-      </span>
-      <span
-        class="Title emotion-3"
+        class="emotion-3"
       >
         has imgSrc
       </span>
@@ -2836,18 +2786,17 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
     class="emotion-5"
   >
     <span
+      class="emotion-2"
+    >
+      <div
+        class="emotion-6"
+      />
+    </span>
+    <span
       class="emotion-4"
-      role="presentation"
     >
       <span
-        class="Left emotion-2"
-      >
-        <div
-          class="emotion-6"
-        />
-      </span>
-      <span
-        class="Title emotion-3"
+        class="emotion-3"
       >
         has neither
       </span>
