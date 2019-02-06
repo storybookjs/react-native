@@ -159,11 +159,11 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
   cursor: pointer;
 }
 
-.emotion-18 {
+.emotion-12 {
   height: 300px;
 }
 
-.emotion-17 {
+.emotion-11 {
   width: 500px;
   height: 500px;
   overflow-y: scroll;
@@ -182,7 +182,7 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
   color: white;
 }
 
-.emotion-16 {
+.emotion-10 {
   display: inline-block;
   z-index: 2147483647;
   margin-bottom: 10px;
@@ -243,10 +243,10 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
 }
 
 <div
-  class="emotion-18"
+  class="emotion-12"
 >
   <div
-    class="emotion-17"
+    class="emotion-11"
   >
     <div
       class="emotion-0"
@@ -261,39 +261,12 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
       </div>
     </div>
     <div
-      class="emotion-16"
+      class="emotion-10"
       style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
     >
       <div
         class="emotion-3"
       />
-      <div
-        class="emotion-9"
-      >
-        <div
-          class="emotion-6"
-        >
-          <div
-            class="emotion-4"
-          >
-            Lorem ipsum dolor sit
-          </div>
-          <span
-            class="emotion-5"
-          >
-            Amet consectatur vestibulum concet durum politu coret weirom
-          </span>
-        </div>
-        <div
-          class="emotion-8"
-        >
-          <a
-            class="emotion-5"
-          >
-            Continue
-          </a>
-        </div>
-      </div>
       <div
         class="emotion-9"
       >
