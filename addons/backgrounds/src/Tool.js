@@ -20,9 +20,10 @@ export const ColorIcon = styled.span(({ background }) => ({
 
 const iframeId = 'storybook-preview-background';
 
-const createItem = memoize(1000)((name, value, hasSwatch, change) =>
+const createItem = memoize(1000)((id, name, value, hasSwatch, change) =>
   hasSwatch
     ? {
+        id: id || name,
         title: name,
         onClick: () => {
           change({ selected: value });
@@ -30,6 +31,7 @@ const createItem = memoize(1000)((name, value, hasSwatch, change) =>
         right: <ColorIcon background={value} />,
       }
     : {
+        id: id || name,
         title: name,
         onClick: () => {
           change({ selected: value });
@@ -43,11 +45,13 @@ const getState = memoize(10)((props, state, change) => {
 
   const initial =
     state.selected === 'transparent'
-      ? [createItem('Reset background', 'transparent', false, change)]
+      ? [createItem('reset', 'Reset background', 'transparent', false, change)]
       : [];
 
   const items = list.length
-    ? initial.concat(list.map(({ name, styles: value }) => createItem(name, value, true, change)))
+    ? initial.concat(
+        list.map(({ id, name, styles: value }) => createItem(id, name, value, true, change))
+      )
     : list;
 
   const selected =

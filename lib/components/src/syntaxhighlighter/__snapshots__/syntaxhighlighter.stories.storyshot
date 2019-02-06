@@ -8,7 +8,6 @@ exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
 
 .emotion-2 code {
   padding-right: 10px;
-  opacity: 0.7;
 }
 
 .emotion-2 * .token {
@@ -230,7 +229,6 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
 
 .emotion-2 code {
   padding-right: 10px;
-  opacity: 0.7;
 }
 
 .emotion-2 * .token {
@@ -664,7 +662,6 @@ exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
 
 .emotion-2 code {
   padding-right: 10px;
-  opacity: 0.7;
 }
 
 .emotion-2 * .token {
@@ -1075,7 +1072,6 @@ exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
 
 .emotion-2 code {
   padding-right: 10px;
-  opacity: 0.7;
 }
 
 .emotion-2 * .token {
@@ -1488,7 +1484,6 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
 
 .emotion-2 code {
   padding-right: 10px;
-  opacity: 0.7;
 }
 
 .emotion-2 * .token {

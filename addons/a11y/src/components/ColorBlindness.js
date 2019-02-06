@@ -23,6 +23,7 @@ const ColorIcon = styled.span(
 
 class ColorBlindness extends Component {
   state = {
+    expanded: false,
     filter: false,
   };
 
@@ -31,8 +32,8 @@ class ColorBlindness extends Component {
 
     if (iframe) {
       iframe.style.filter = filter === 'mono' ? 'grayscale(100%)' : `url('#${filter}')`;
-
       this.setState({
+        expanded: false,
         filter,
       });
     } else {
@@ -41,7 +42,7 @@ class ColorBlindness extends Component {
   };
 
   render() {
-    const { filter } = this.state;
+    const { filter, expanded } = this.state;
 
     let colorList = [
       'protanopia',
@@ -54,9 +55,10 @@ class ColorBlindness extends Component {
       'achromatomaly',
       'mono',
     ].map(i => ({
+      id: i,
       title: i,
       onClick: () => {
-        this.setFilter(filter === i ? null : i);
+        this.setFilter(i);
       },
       right: <ColorIcon filter={i} />,
     }));
@@ -77,6 +79,8 @@ class ColorBlindness extends Component {
       <WithTooltip
         placement="top"
         trigger="click"
+        tooltipShown={expanded}
+        onVisibilityChange={s => this.setState({ expanded: s })}
         tooltip={<TooltipLinkList links={colorList} />}
         closeOnClick
       >

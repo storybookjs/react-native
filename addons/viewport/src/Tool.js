@@ -12,14 +12,16 @@ import { PARAM_KEY } from './constants';
 const toList = memoize(50)(items =>
   items ? Object.entries(items).map(([id, value]) => ({ ...value, id })) : []
 );
-const iframeId = 'storybook-preview-background';
+const iframeId = 'storybook-preview-iframe';
 
-const createItem = memoize(1000)((name, value, change) => ({
+const createItem = memoize(1000)((id, name, value, change) => ({
+  id: id || name,
   title: name,
   onClick: () => {
-    change({ selected: value });
+    change({ selected: id, expanded: false });
   },
   right: `${value.width}-${value.height}`,
+  value,
 }));
 
 const flip = ({ width, height }) => ({ height: width, widht: height });
@@ -34,24 +36,26 @@ const getState = memoize(10)((props, state, change) => {
       : list.find(i => i.default) || 'responsive';
 
   const resets =
-    selected === 'responsive'
+    selected !== 'responsive'
       ? [
           {
+            id: 'reset',
             title: 'Reset viewport',
             onClick: () => {
-              change({ selected: undefined });
+              change({ selected: undefined, expanded: false });
             },
           },
           {
+            id: 'rotate',
             title: 'Rotate viewport',
             onClick: () => {
-              change({ isRotated: !state.isRotate });
+              change({ isRotated: !state.isRotate, expanded: false });
             },
           },
         ]
       : [];
   const items = list.length
-    ? resets.concat(list.map(({ name, styles: value }) => createItem(name, value, change)))
+    ? resets.concat(list.map(({ id, name, styles: value }) => createItem(id, name, value, change)))
     : list;
 
   return {
@@ -69,6 +73,7 @@ export default class ViewportTool extends Component {
       isRotated: false,
       items: [],
       selected: 'responsive',
+      expanded: false,
     };
 
     this.listener = () => {
@@ -91,6 +96,7 @@ export default class ViewportTool extends Component {
   change = (...args) => this.setState(...args);
 
   render() {
+    const { expanded } = this.state;
     const { items, selected, isRotated } = getState(this.props, this.state, this.change);
     const item = items.find(i => i.id === selected);
 
@@ -112,6 +118,8 @@ export default class ViewportTool extends Component {
         <WithTooltip
           placement="top"
           trigger="click"
+          tooltipShown={expanded}
+          onVisibilityChange={s => this.setState({ expanded: s })}
           tooltip={<TooltipLinkList links={items} />}
           closeOnClick
         >

@@ -100,7 +100,7 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
 }
 
 <div
-  style="position:relative;width:240px;height:64px;margin:1rem;background:papayawhip;border:1px solid rgba(0,0,0,.05)"
+  style="position:relative;width:300px;height:64px;margin:1rem;background:papayawhip;border:1px solid rgba(0,0,0,.05)"
 >
   <div
     class="emotion-3"
@@ -226,7 +226,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
 }
 
 <div
-  style="position:relative;width:240px;height:64px;margin:1rem;background:papayawhip;border:1px solid rgba(0,0,0,.05)"
+  style="position:relative;width:300px;height:64px;margin:1rem;background:papayawhip;border:1px solid rgba(0,0,0,.05)"
 >
   <div
     class="emotion-1"
@@ -240,7 +240,1025 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
 </div>
 `;
 
-exports[`Storyshots Basics|Placeholder descOnly 1`] = `
+exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
+.emotion-0 {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.emotion-0 h1,
+.emotion-0 h2,
+.emotion-0 h3,
+.emotion-0 h4 {
+  line-height: 1em;
+}
+
+.emotion-0 h1 + *,
+.emotion-0 h2 + *,
+.emotion-0 h3 + *,
+.emotion-0 h4 + * {
+  margin-top: 0 !important;
+}
+
+.emotion-0 h2:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.emotion-0 hr {
+  margin: 3rem 0;
+}
+
+.emotion-0 hr + * {
+  margin-top: 0 !important;
+}
+
+.emotion-0 h1 {
+  font-size: 32px;
+  margin-bottom: 0.5rem;
+}
+
+.emotion-0 h2 {
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 0.5rem;
+}
+
+.emotion-0 h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #333333;
+  margin: 1.5rem 0 0rem;
+}
+
+.emotion-0 h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #666666;
+  margin: 1.5rem 0 0rem;
+}
+
+.emotion-0 p {
+  margin: 1rem 0;
+  position: relative;
+}
+
+.emotion-0 p:first-of-type:not(:only-of-type) {
+  margin-top: 0;
+}
+
+.emotion-0 p:only-of-type {
+  margin: 0;
+}
+
+.emotion-0 ol,
+.emotion-0 ul {
+  list-style-position: outside;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-left: 30px;
+}
+
+.emotion-0 ol li,
+.emotion-0 ul li {
+  margin-bottom: 0.5rem;
+}
+
+.emotion-0 ol {
+  list-style-type: decimal;
+}
+
+.emotion-0 ul {
+  list-style-type: disc;
+}
+
+.emotion-0 p a,
+.emotion-0 li a,
+.emotion-0 h1 a,
+.emotion-0 h2 a,
+.emotion-0 h3 a,
+.emotion-0 h4 a,
+.emotion-0 h5 a,
+.emotion-0 h6 a {
+  color: #FF4785;
+  -webkit-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0 p a:hover,
+.emotion-0 li a:hover,
+.emotion-0 h1 a:hover,
+.emotion-0 h2 a:hover,
+.emotion-0 h3 a:hover,
+.emotion-0 h4 a:hover,
+.emotion-0 h5 a:hover,
+.emotion-0 h6 a:hover {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+}
+
+.emotion-0 p a:active,
+.emotion-0 li a:active,
+.emotion-0 h1 a:active,
+.emotion-0 h2 a:active,
+.emotion-0 h3 a:active,
+.emotion-0 h4 a:active,
+.emotion-0 h5 a:active,
+.emotion-0 h6 a:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0 p a:visited,
+.emotion-0 li a:visited,
+.emotion-0 h1 a:visited,
+.emotion-0 h2 a:visited,
+.emotion-0 h3 a:visited,
+.emotion-0 h4 a:visited,
+.emotion-0 h5 a:visited,
+.emotion-0 h6 a:visited {
+  color: #FF4785;
+}
+
+.emotion-0 figure {
+  clear: both;
+  margin: 1rem 0;
+}
+
+.emotion-0 figure figcaption {
+  font-size: 12px;
+}
+
+.emotion-0 img {
+  display: block;
+  padding: 0 20px;
+  max-width: 100%;
+  position: relative;
+  vertical-align: top;
+  margin: 0 auto;
+}
+
+.emotion-0 img.alignright {
+  float: right;
+  margin-right: 0;
+}
+
+.emotion-0 img.alignleft {
+  float: left;
+  margin-left: 0;
+}
+
+.emotion-0 img.aligncenter {
+  display: block;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.emotion-0 pre:not(.hljs) {
+  line-height: 18px;
+  padding: 11px 1rem;
+  white-space: pre-wrap;
+  color: #333333;
+  background: rgba(0,0,0,.05);
+  border-radius: 3px;
+  margin: 1rem 0;
+}
+
+.emotion-0 .aside {
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  padding: 1em;
+}
+
+.emotion-0 table {
+  font-size: 14px;
+  padding: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.emotion-0 table tr {
+  border-top: 1px solid #EEEEEE;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 table tr:nth-child(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-0 table tr th {
+  font-weight: bold;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+}
+
+.emotion-0 table tr td {
+  border: 1px solid #ddd;
+  text-align: left;
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-0 table tr th :first-child,
+.emotion-0 table tr td:first-child {
+  margin-top: 0;
+}
+
+.emotion-0 table tr th :last-child,
+.emotion-0 table tr td:last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.emotion-0 h1,
+.emotion-0 h2,
+.emotion-0 h3,
+.emotion-0 h4 {
+  line-height: 1em;
+}
+
+.emotion-0 h1 + *,
+.emotion-0 h2 + *,
+.emotion-0 h3 + *,
+.emotion-0 h4 + * {
+  margin-top: 0 !important;
+}
+
+.emotion-0 h2:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.emotion-0 hr {
+  margin: 3rem 0;
+}
+
+.emotion-0 hr + * {
+  margin-top: 0 !important;
+}
+
+.emotion-0 h1 {
+  font-size: 32px;
+  margin-bottom: 0.5rem;
+}
+
+.emotion-0 h2 {
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 0.5rem;
+}
+
+.emotion-0 h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #333333;
+  margin: 1.5rem 0 0rem;
+}
+
+.emotion-0 h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #666666;
+  margin: 1.5rem 0 0rem;
+}
+
+.emotion-0 p {
+  margin: 1rem 0;
+  position: relative;
+}
+
+.emotion-0 p:first-of-type:not(:only-of-type) {
+  margin-top: 0;
+}
+
+.emotion-0 p:only-of-type {
+  margin: 0;
+}
+
+.emotion-0 ol,
+.emotion-0 ul {
+  list-style-position: outside;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-left: 30px;
+}
+
+.emotion-0 ol li,
+.emotion-0 ul li {
+  margin-bottom: 0.5rem;
+}
+
+.emotion-0 ol {
+  list-style-type: decimal;
+}
+
+.emotion-0 ul {
+  list-style-type: disc;
+}
+
+.emotion-0 p a,
+.emotion-0 li a,
+.emotion-0 h1 a,
+.emotion-0 h2 a,
+.emotion-0 h3 a,
+.emotion-0 h4 a,
+.emotion-0 h5 a,
+.emotion-0 h6 a {
+  color: #FF4785;
+  -webkit-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0 p a:hover,
+.emotion-0 li a:hover,
+.emotion-0 h1 a:hover,
+.emotion-0 h2 a:hover,
+.emotion-0 h3 a:hover,
+.emotion-0 h4 a:hover,
+.emotion-0 h5 a:hover,
+.emotion-0 h6 a:hover {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+}
+
+.emotion-0 p a:active,
+.emotion-0 li a:active,
+.emotion-0 h1 a:active,
+.emotion-0 h2 a:active,
+.emotion-0 h3 a:active,
+.emotion-0 h4 a:active,
+.emotion-0 h5 a:active,
+.emotion-0 h6 a:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0 p a:visited,
+.emotion-0 li a:visited,
+.emotion-0 h1 a:visited,
+.emotion-0 h2 a:visited,
+.emotion-0 h3 a:visited,
+.emotion-0 h4 a:visited,
+.emotion-0 h5 a:visited,
+.emotion-0 h6 a:visited {
+  color: #FF4785;
+}
+
+.emotion-0 figure {
+  clear: both;
+  margin: 1rem 0;
+}
+
+.emotion-0 figure figcaption {
+  font-size: 12px;
+}
+
+.emotion-0 img {
+  display: block;
+  padding: 0 20px;
+  max-width: 100%;
+  position: relative;
+  vertical-align: top;
+  margin: 0 auto;
+}
+
+.emotion-0 img.alignright {
+  float: right;
+  margin-right: 0;
+}
+
+.emotion-0 img.alignleft {
+  float: left;
+  margin-left: 0;
+}
+
+.emotion-0 img.aligncenter {
+  display: block;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.emotion-0 pre:not(.hljs) {
+  line-height: 18px;
+  padding: 11px 1rem;
+  white-space: pre-wrap;
+  color: #333333;
+  background: rgba(0,0,0,.05);
+  border-radius: 3px;
+  margin: 1rem 0;
+}
+
+.emotion-0 .aside {
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  padding: 1em;
+}
+
+.emotion-0 table {
+  font-size: 14px;
+  padding: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.emotion-0 table tr {
+  border-top: 1px solid #EEEEEE;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 table tr:nth-child(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-0 table tr th {
+  font-weight: bold;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+}
+
+.emotion-0 table tr td {
+  border: 1px solid #ddd;
+  text-align: left;
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-0 table tr th :first-child,
+.emotion-0 table tr td:first-child {
+  margin-top: 0;
+}
+
+.emotion-0 table tr th :last-child,
+.emotion-0 table tr td:last-child {
+  margin-bottom: 0;
+}
+
+<div
+  style="width:600px;margin:3rem auto;padding:40px 20px;background:white"
+>
+  <div
+    class="emotion-0"
+  >
+    <h1>
+      h1 Heading 😎
+    </h1>
+    <h2>
+      h2 Heading
+    </h2>
+    <h3>
+      h3 Heading
+    </h3>
+    <h4>
+      h4 Heading
+    </h4>
+    <h5>
+      h5 Heading
+    </h5>
+    <h6>
+      h6 Heading
+    </h6>
+    <h2>
+      Typographic replacements
+    </h2>
+    <p>
+      Enable typographer option to see result.
+    </p>
+    <p>
+      © © ® ® ™ ™ § § ±
+    </p>
+    <p>
+      test… test… test… test?.. test!..
+    </p>
+    <p>
+      !!! ??? , – —
+    </p>
+    <p>
+      “Smartypants, double quotes” and ‘single quotes’
+    </p>
+    <h2>
+      Emphasis
+    </h2>
+    <p>
+      <strong>
+        This is bold text
+      </strong>
+    </p>
+    <p>
+      <strong>
+        This is bold text
+      </strong>
+    </p>
+    <p>
+      <em>
+        This is italic text
+      </em>
+    </p>
+    <p>
+      <em>
+        This is italic text
+      </em>
+    </p>
+    <p>
+      <s>
+        Strikethrough
+      </s>
+    </p>
+    <h2>
+      Blockquotes
+    </h2>
+    <blockquote>
+      <p>
+        Blockquotes can also be nested…
+      </p>
+      <blockquote>
+        <p>
+          …by using additional greater-than signs right next to each other…
+        </p>
+        <blockquote>
+          <p>
+            …or with spaces between arrows.
+          </p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+    <h2>
+      Lists
+    </h2>
+    <p>
+      Unordered
+    </p>
+    <ul>
+      <li>
+        Create a list by starting a line with 
+        <code>
+          +
+        </code>
+        , 
+        <code>
+          -
+        </code>
+        , or 
+        <code>
+          *
+        </code>
+      </li>
+      <li>
+        Sub-lists are made by indenting 2 spaces:
+        <ul>
+          <li>
+            Marker character change forces new list start:
+            <ul>
+              <li>
+                Ac tristique libero volutpat at
+              </li>
+            </ul>
+            <ul>
+              <li>
+                Facilisis in pretium nisl aliquet
+              </li>
+            </ul>
+            <ul>
+              <li>
+                Nulla volutpat aliquam velit
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Very easy!
+      </li>
+    </ul>
+    <p>
+      Ordered
+    </p>
+    <ol>
+      <li>
+        <p>
+          Lorem ipsum dolor sit amet
+        </p>
+      </li>
+      <li>
+        <p>
+          Consectetur adipiscing elit
+        </p>
+      </li>
+      <li>
+        <p>
+          Integer molestie lorem at massa
+        </p>
+      </li>
+      <li>
+        <p>
+          You can use sequential numbers…
+        </p>
+      </li>
+      <li>
+        <p>
+          …or keep all the numbers as 
+          <code>
+            1.
+          </code>
+        </p>
+      </li>
+    </ol>
+    <p>
+      Start numbering with offset:
+    </p>
+    <ol
+      start="57"
+    >
+      <li>
+        foo
+      </li>
+      <li>
+        bar
+      </li>
+    </ol>
+    <h2>
+      Tables
+    </h2>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Option
+          </th>
+          <th>
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            data
+          </td>
+          <td>
+            path to data files to supply the data that will be passed into templates.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            engine
+          </td>
+          <td>
+            engine to be used for processing templates. Handlebars is the default.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            ext
+          </td>
+          <td>
+            extension to be used for dest files.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Right aligned columns
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th
+            style="text-align:right"
+          >
+            Option
+          </th>
+          <th
+            style="text-align:right"
+          >
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            style="text-align:right"
+          >
+            data
+          </td>
+          <td
+            style="text-align:right"
+          >
+            path to data files to supply the data that will be passed into templates.
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="text-align:right"
+          >
+            engine
+          </td>
+          <td
+            style="text-align:right"
+          >
+            engine to be used for processing templates. Handlebars is the default.
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="text-align:right"
+          >
+            ext
+          </td>
+          <td
+            style="text-align:right"
+          >
+            extension to be used for dest files.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>
+      Links
+    </h2>
+    <p>
+      <a
+        href="http://dev.nodeca.com"
+      >
+        link text
+      </a>
+    </p>
+    <p>
+      <a
+        href="http://nodeca.github.io/pica/demo/"
+        title="title text!"
+      >
+        link with title
+      </a>
+    </p>
+    <p>
+      Autoconverted link 
+      <a
+        href="https://github.com/nodeca/pica"
+      >
+        https://github.com/nodeca/pica
+      </a>
+       (enable linkify to see)
+    </p>
+    <h2>
+      Images
+    </h2>
+    <p>
+      <img
+        alt="Minion"
+        src="https://octodex.github.com/images/minion.png"
+      />
+      <img
+        alt="Stormtroopocat"
+        src="https://octodex.github.com/images/stormtroopocat.jpg"
+        title="The Stormtroopocat"
+      />
+    </p>
+    <p>
+      Like links, Images also have a footnote style syntax
+    </p>
+    <p>
+      <img
+        alt="Alt text"
+        src="https://octodex.github.com/images/dojocat.jpg"
+        title="The Dojocat"
+      />
+    </p>
+    <p>
+      With a reference later in the document defining the URL location:
+    </p>
+    <h2>
+      Plugins
+    </h2>
+    <p>
+      The killer feature of 
+      <code>
+        markdown-it
+      </code>
+       is very effective support of
+      <a
+        href="https://www.npmjs.org/browse/keyword/markdown-it-plugin"
+      >
+        syntax plugins
+      </a>
+      .
+    </p>
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-emoji"
+      >
+        Emojies
+      </a>
+    </h3>
+    <blockquote>
+      <p>
+        Classic markup: 😉 :crush: 😢 :tear: 😆 😋
+      </p>
+      <p>
+        Shortcuts (emoticons): 😃 😦 😎 😉
+      </p>
+    </blockquote>
+    <p>
+      see 
+      <a
+        href="https://github.com/markdown-it/markdown-it-emoji#change-output"
+      >
+        how to change output
+      </a>
+       with twemoji.
+    </p>
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-sub"
+      >
+        Subscript
+      </a>
+       / 
+      <a
+        href="https://github.com/markdown-it/markdown-it-sup"
+      >
+        Superscript
+      </a>
+    </h3>
+    <ul>
+      <li>
+        19
+        <sup>
+          th
+        </sup>
+      </li>
+      <li>
+        H
+        <sub>
+          2
+        </sub>
+        O
+      </li>
+    </ul>
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-deflist"
+      >
+        Definition lists
+      </a>
+    </h3>
+    <dl>
+      <dt>
+        Term 1
+      </dt>
+      <dd>
+        <p>
+          Definition 1 with lazy continuation.
+        </p>
+      </dd>
+      <dt>
+        Term 2 with 
+        <em>
+          inline markup
+        </em>
+      </dt>
+      <dd>
+        <p>
+          Definition 2
+        </p>
+        <pre>
+          <code>
+             some code, part of Definition 2
+          </code>
+        </pre>
+        <p>
+          Third paragraph of definition 2.
+        </p>
+      </dd>
+    </dl>
+    <p>
+      <em>
+        Compact style:
+      </em>
+    </p>
+    <dl>
+      <dt>
+        Term 1
+      </dt>
+      <dd>
+        Definition 1
+      </dd>
+      <dt>
+        Term 2
+      </dt>
+      <dd>
+        Definition 2a
+      </dd>
+      <dd>
+        Definition 2b
+      </dd>
+    </dl>
+    <p>
+      <em>
+        Compact style:
+      </em>
+    </p>
+    <dl>
+      <dt>
+        Term 1
+      </dt>
+      <dd>
+        Definition 1
+      </dd>
+      <dt>
+        Term 2
+      </dt>
+      <dd>
+        Definition 2a
+      </dd>
+      <dd>
+        Definition 2b
+      </dd>
+    </dl>
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-abbr"
+      >
+        Abbreviations
+      </a>
+    </h3>
+    <p>
+      This is 
+      <abbr
+        title="Hyper Text Markup Language"
+      >
+        HTML
+      </abbr>
+       abbreviation example.
+    </p>
+    <p>
+      It converts “
+      <abbr
+        title="Hyper Text Markup Language"
+      >
+        HTML
+      </abbr>
+      ”, but keep intact partial entries like “xxxHTMLyyy” and so on.
+    </p>
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-container"
+      >
+        Custom containers
+      </a>
+    </h3>
+    <div
+      class="warning"
+    >
+      <p>
+        <em>
+          here be dragons
+        </em>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|Placeholder singleChild 1`] = `
 .emotion-1 {
   padding: 30px;
   text-align: center;
@@ -248,11 +1266,19 @@ exports[`Storyshots Basics|Placeholder descOnly 1`] = `
   font-size: 14px;
 }
 
+.emotion-0 {
+  font-weight: 700;
+}
+
 .emotion-1 {
   padding: 30px;
   text-align: center;
   color: #666666;
   font-size: 14px;
+}
+
+.emotion-0 {
+  font-weight: 700;
 }
 
 <div
@@ -261,17 +1287,12 @@ exports[`Storyshots Basics|Placeholder descOnly 1`] = `
   <div
     class="emotion-0"
   >
-    This is a desc only 
-    <a
-      href="https://storybook.js.org"
-    >
-      link
-    </a>
+    This is a placeholder with single child, it's bolded
   </div>
 </div>
 `;
 
-exports[`Storyshots Basics|Placeholder titleAndDesc 1`] = `
+exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 .emotion-2 {
   padding: 30px;
   text-align: center;
@@ -300,51 +1321,17 @@ exports[`Storyshots Basics|Placeholder titleAndDesc 1`] = `
   <div
     class="emotion-0"
   >
-    This is a title
+    This has two children, the first bold
   </div>
   <div
     class="emotion-1"
   >
-    This is a desc 
+    The second normal weight. Here's a 
     <a
       href="https://storybook.js.org"
     >
       link
     </a>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Basics|Placeholder titleOnly 1`] = `
-.emotion-1 {
-  padding: 30px;
-  text-align: center;
-  color: #666666;
-  font-size: 14px;
-}
-
-.emotion-0 {
-  font-weight: 700;
-}
-
-.emotion-1 {
-  padding: 30px;
-  text-align: center;
-  color: #666666;
-  font-size: 14px;
-}
-
-.emotion-0 {
-  font-weight: 700;
-}
-
-<div
-  class="emotion-1"
->
-  <div
-    class="emotion-0"
-  >
-    This is a placeholder with title
   </div>
 </div>
 `;
@@ -1042,8 +2029,217 @@ exports[`Storyshots UI|Notifications/NotificationList single 1`] = `
 </div>
 `;
 
+exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.emotion-6 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-1 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-1 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-1:hover svg path,
+.emotion-1:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-1:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-1 svg path {
+  fill: #999999;
+}
+
+.emotion-1:hover {
+  color: #666666;
+}
+
+.emotion-1:hover svg path {
+  fill: #666666;
+}
+
+.emotion-1:active {
+  color: #444444;
+}
+
+.emotion-1:active svg path {
+  fill: #444444;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.emotion-6 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-1 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-1 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-1:hover svg path,
+.emotion-1:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-1:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-1 svg path {
+  fill: #999999;
+}
+
+.emotion-1:hover {
+  color: #666666;
+}
+
+.emotion-1:hover svg path {
+  fill: #666666;
+}
+
+.emotion-1:active {
+  color: #444444;
+}
+
+.emotion-1:active svg path {
+  fill: #444444;
+}
+
+<div
+  style="width:600px;margin:2rem auto"
+>
+  <div
+    class="emotion-6"
+  >
+    <a
+      class="emotion-1"
+      href="https://storybook.js.org"
+    >
+      <span
+        class="emotion-0"
+      >
+        Docs
+      </span>
+    </a>
+    <a
+      class="emotion-1"
+      href="https://github.com/storybooks/storybook"
+    >
+      <span
+        class="emotion-0"
+      >
+        GitHub
+      </span>
+    </a>
+    <a
+      class="emotion-1"
+      href="https://storybook.js.org/support"
+    >
+      <span
+        class="emotion-0"
+      >
+        Support
+      </span>
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
-.emotion-148 {
+.emotion-150 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -1188,7 +2384,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   fill: currentColor;
 }
 
-.emotion-147 {
+.emotion-149 {
   display: block;
   position: relative;
   position: relative;
@@ -1199,8 +2395,94 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 100%;
 }
 
-.emotion-145 {
-  padding: 20px;
+.emotion-146 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.emotion-146 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-141 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-141 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-141:hover,
+.emotion-141:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-141:hover svg path,
+.emotion-141:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-141:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-141:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-141 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-141 svg path {
+  fill: #999999;
+}
+
+.emotion-141:hover {
+  color: #666666;
+}
+
+.emotion-141:hover svg path {
+  fill: #666666;
+}
+
+.emotion-141:active {
+  color: #444444;
+}
+
+.emotion-141:active svg path {
+  fill: #444444;
+}
+
+.emotion-147 {
+  padding: 3rem 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .emotion-10 {
@@ -1233,31 +2515,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: inline-block;
   line-height: 40px;
   font-weight: 700;
-}
-
-.emotion-143 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
-}
-
-.emotion-143 > * {
-  margin-left: 20px;
-}
-
-.emotion-143 > *:first-child {
-  margin-left: 0;
-}
-
-.emotion-140 {
-  color: inherit;
 }
 
 .emotion-139 {
@@ -1444,7 +2701,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   justify-self: center;
 }
 
-.emotion-148 {
+.emotion-150 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -1589,7 +2846,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   fill: currentColor;
 }
 
-.emotion-147 {
+.emotion-149 {
   display: block;
   position: relative;
   position: relative;
@@ -1600,8 +2857,94 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 100%;
 }
 
-.emotion-145 {
-  padding: 20px;
+.emotion-146 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.emotion-146 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-141 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-141 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-141:hover,
+.emotion-141:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-141:hover svg path,
+.emotion-141:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-141:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-141:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-141 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-141 svg path {
+  fill: #999999;
+}
+
+.emotion-141:hover {
+  color: #666666;
+}
+
+.emotion-141:hover svg path {
+  fill: #666666;
+}
+
+.emotion-141:active {
+  color: #444444;
+}
+
+.emotion-141:active svg path {
+  fill: #444444;
+}
+
+.emotion-147 {
+  padding: 3rem 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .emotion-10 {
@@ -1634,31 +2977,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: inline-block;
   line-height: 40px;
   font-weight: 700;
-}
-
-.emotion-143 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
-}
-
-.emotion-143 > * {
-  margin-left: 20px;
-}
-
-.emotion-143 > *:first-child {
-  margin-left: 0;
-}
-
-.emotion-140 {
-  color: inherit;
 }
 
 .emotion-139 {
@@ -1846,7 +3164,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 <div
-  class="emotion-148"
+  class="emotion-150"
 >
   <div
     class="emotion-7"
@@ -1888,14 +3206,14 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
     </div>
   </div>
   <div
-    class="emotion-147"
+    class="emotion-149"
   >
     <div
       class="emotion-4"
       role="tabpanel"
     >
       <div
-        class="emotion-145"
+        class="emotion-147"
       >
         <div
           class="emotion-10"
@@ -2521,36 +3839,38 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
           </main>
         </div>
         <div
-          class="emotion-10"
+          class="emotion-146"
         >
-          <div
-            class="emotion-143"
+          <a
+            class="emotion-141"
+            href="https://storybook.js.org"
           >
-            <a
+            <span
               class="emotion-140"
-              href="https://storybook.js.org"
-              rel="noopener noreferrer"
-              target="_blank"
             >
-              Storybook docs
-            </a>
-            <a
+              Docs
+            </span>
+          </a>
+          <a
+            class="emotion-141"
+            href="https://github.com/storybooks/storybook"
+          >
+            <span
               class="emotion-140"
-              href="https://github.com/storybooks/storybook"
-              rel="noopener noreferrer"
-              target="_blank"
             >
               GitHub
-            </a>
-            <a
+            </span>
+          </a>
+          <a
+            class="emotion-141"
+            href="https://storybook.js.org/support"
+          >
+            <span
               class="emotion-140"
-              href="https://storybook.js.org/support"
-              rel="noopener noreferrer"
-              target="_blank"
             >
               Support
-            </a>
-          </div>
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -2574,41 +3894,11 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   color: #999999;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
-}
-
-.emotion-5:not(:first-child) {
-  border-top: 1px solid #EEEEEE;
-}
-
-.emotion-5 .Title {
-  color: #444444;
-}
-
-.emotion-5 .Right svg {
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  opacity: 0;
-  height: 12px;
-  width: 12px;
-  margin: 3px 0;
-  vertical-align: top;
-}
-
-.emotion-5 .Right svg path {
-  fill: inherit;
-}
-
-.emotion-5:hover {
-  background: #e3f3ff;
   cursor: pointer;
-}
-
-.emotion-5:hover .Right svg {
-  opacity: 1;
-}
-
-.emotion-4 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   line-height: 18px;
   padding: 7px 15px;
   display: -webkit-box;
@@ -2621,33 +3911,20 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   align-items: center;
 }
 
-.emotion-4 .Left,
-.emotion-4 .Title,
-.emotion-4 .Center,
-.emotion-4 .Right {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-5 + .emotion-5 {
+  border-top: 1px solid #EEEEEE;
 }
 
-.emotion-4 .Title,
-.emotion-4 .Center {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+.emotion-5 > * + * {
+  padding-left: 10px;
 }
 
-.emotion-4 .Left,
-.emotion-4 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
+.emotion-5:hover {
+  background: #e3f3ff;
 }
 
-.emotion-4 .Right {
-  text-align: right;
-  margin-left: 20px;
+.emotion-5:hover svg {
+  opacity: 1;
 }
 
 .emotion-1 {
@@ -2658,6 +3935,25 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   margin-right: 5px;
   display: block;
   color: #1EA7FD;
+}
+
+.emotion-4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-3 {
+  color: #444444;
 }
 
 .emotion-6 {
@@ -2683,41 +3979,11 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   color: #999999;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
-}
-
-.emotion-5:not(:first-child) {
-  border-top: 1px solid #EEEEEE;
-}
-
-.emotion-5 .Title {
-  color: #444444;
-}
-
-.emotion-5 .Right svg {
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  opacity: 0;
-  height: 12px;
-  width: 12px;
-  margin: 3px 0;
-  vertical-align: top;
-}
-
-.emotion-5 .Right svg path {
-  fill: inherit;
-}
-
-.emotion-5:hover {
-  background: #e3f3ff;
   cursor: pointer;
-}
-
-.emotion-5:hover .Right svg {
-  opacity: 1;
-}
-
-.emotion-4 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   line-height: 18px;
   padding: 7px 15px;
   display: -webkit-box;
@@ -2730,33 +3996,20 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   align-items: center;
 }
 
-.emotion-4 .Left,
-.emotion-4 .Title,
-.emotion-4 .Center,
-.emotion-4 .Right {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-5 + .emotion-5 {
+  border-top: 1px solid #EEEEEE;
 }
 
-.emotion-4 .Title,
-.emotion-4 .Center {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+.emotion-5 > * + * {
+  padding-left: 10px;
 }
 
-.emotion-4 .Left,
-.emotion-4 .Right {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
+.emotion-5:hover {
+  background: #e3f3ff;
 }
 
-.emotion-4 .Right {
-  text-align: right;
-  margin-left: 20px;
+.emotion-5:hover svg {
+  opacity: 1;
 }
 
 .emotion-1 {
@@ -2767,6 +4020,25 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
   margin-right: 5px;
   display: block;
   color: #1EA7FD;
+}
+
+.emotion-4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-3 {
+  color: #444444;
 }
 
 .emotion-6 {
@@ -2784,26 +4056,25 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
     class="emotion-5"
   >
     <span
+      class="emotion-2"
+    >
+      <svg
+        class="emotion-1"
+        height="20px"
+        viewBox="0 0 1024 1024"
+        width="20px"
+      >
+        <path
+          class="emotion-0"
+          d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+        />
+      </svg>
+    </span>
+    <span
       class="emotion-4"
-      role="presentation"
     >
       <span
-        class="Left emotion-2"
-      >
-        <svg
-          class="emotion-1"
-          height="20px"
-          viewBox="0 0 1024 1024"
-          width="20px"
-        >
-          <path
-            class="emotion-0"
-            d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
-          />
-        </svg>
-      </span>
-      <span
-        class="Title emotion-3"
+        class="emotion-3"
       >
         has icon
       </span>
@@ -2813,20 +4084,19 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
     class="emotion-5"
   >
     <span
+      class="emotion-2"
+    >
+      <img
+        alt="image"
+        class="emotion-6"
+        src="https://via.placeholder.com/20"
+      />
+    </span>
+    <span
       class="emotion-4"
-      role="presentation"
     >
       <span
-        class="Left emotion-2"
-      >
-        <img
-          alt="image"
-          class="emotion-6"
-          src="https://via.placeholder.com/20"
-        />
-      </span>
-      <span
-        class="Title emotion-3"
+        class="emotion-3"
       >
         has imgSrc
       </span>
@@ -2836,18 +4106,17 @@ exports[`Storyshots UI|Shared/ListItemIcon all 1`] = `
     class="emotion-5"
   >
     <span
+      class="emotion-2"
+    >
+      <div
+        class="emotion-6"
+      />
+    </span>
+    <span
       class="emotion-4"
-      role="presentation"
     >
       <span
-        class="Left emotion-2"
-      >
-        <div
-          class="emotion-6"
-        />
-      </span>
-      <span
-        class="Title emotion-3"
+        class="emotion-3"
       >
         has neither
       </span>
@@ -3151,7 +4420,8 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-84 {
   position: fixed;
   display: block;
-  bottom: 0;
+  bottom: 20px;
+  left: 20px;
   margin: 0;
   padding: 0;
   width: 20%;
@@ -3598,7 +4868,8 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-84 {
   position: fixed;
   display: block;
-  bottom: 0;
+  bottom: 20px;
+  left: 20px;
   margin: 0;
   padding: 0;
   width: 20%;
@@ -4757,7 +6028,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-55 {
   position: fixed;
   display: block;
-  bottom: 0;
+  bottom: 20px;
+  left: 20px;
   margin: 0;
   padding: 0;
   width: 20%;
@@ -5298,7 +6570,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-55 {
   position: fixed;
   display: block;
-  bottom: 0;
+  bottom: 20px;
+  left: 20px;
   margin: 0;
   padding: 0;
   width: 20%;

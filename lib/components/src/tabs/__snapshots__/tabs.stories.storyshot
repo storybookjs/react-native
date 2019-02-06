@@ -1319,7 +1319,7 @@ exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
     <div
       class="emotion-1"
     >
-      Learn how to
+      Learn how to 
       <a
         href="https://storybook.js.org/addons"
         rel="noopener noreferrer"
