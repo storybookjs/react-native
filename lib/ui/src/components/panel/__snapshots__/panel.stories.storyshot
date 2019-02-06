@@ -194,6 +194,7 @@ exports[`Storyshots UI|Panel default 1`] = `
 .emotion-12 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;

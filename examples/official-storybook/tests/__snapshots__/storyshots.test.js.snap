@@ -757,6 +757,13 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   <div
     class="emotion-0"
   >
+    <p>
+      Wrap your components in 
+      <code>
+        DocumentFormatting
+      </code>
+       to get text styles for body content
+    </p>
     <h1>
       h1 Heading 😎
     </h1>
@@ -2409,6 +2416,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 .emotion-114 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -2891,6 +2899,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 .emotion-114 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -10574,7 +10583,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
-.emotion-2 {
+.emotion-3 {
   padding: 30px;
   text-align: center;
   color: #666666;
@@ -10585,15 +10594,22 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
   font-weight: 700;
 }
 
-.emotion-4 > * {
+.emotion-1 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+}
+
+.emotion-5 > * {
   margin-top: 10px;
 }
 
-.emotion-4 > *:first-child {
+.emotion-5 > *:first-child {
   margin-top: 0;
 }
 
-.emotion-2 {
+.emotion-3 {
   padding: 30px;
   text-align: center;
   color: #666666;
@@ -10604,22 +10620,29 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
   font-weight: 700;
 }
 
-.emotion-4 > * {
+.emotion-1 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+}
+
+.emotion-5 > * {
   margin-top: 10px;
 }
 
-.emotion-4 > *:first-child {
+.emotion-5 > *:first-child {
   margin-top: 0;
 }
 
 <div
-  class="emotion-4"
+  class="emotion-5"
 >
   <div
-    class="emotion-1"
+    class="emotion-2"
   >
     <div
-      class="emotion-2"
+      class="emotion-3"
     >
       <div
         class="emotion-0"
@@ -10627,12 +10650,12 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
         No stories found
       </div>
       <div
-        class="emotion-1"
+        class="emotion-2"
       >
         Learn how to 
         <a
-          href="https://storybook.js.org/basics/writing-stories/"
-          rel="noopener noreferrer"
+          class="emotion-1"
+          href="/?path=/story/undefined"
           target="_blank"
         >
           write stories

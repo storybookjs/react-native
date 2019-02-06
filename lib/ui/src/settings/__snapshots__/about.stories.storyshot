@@ -149,6 +149,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 .emotion-24 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -659,6 +660,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 .emotion-40 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -1809,6 +1811,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 .emotion-26 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
