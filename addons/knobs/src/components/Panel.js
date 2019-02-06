@@ -6,7 +6,7 @@ import { styled } from '@storybook/theming';
 import copy from 'copy-to-clipboard';
 
 import { STORY_CHANGED } from '@storybook/core-events';
-import { Placeholder, TabWrapper, TabsState, ActionBar } from '@storybook/components';
+import { Placeholder, TabWrapper, TabsState, ActionBar, Link } from '@storybook/components';
 import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
 import Types from './types';
@@ -174,13 +174,12 @@ export default class KnobPanel extends PureComponent {
           <Fragment>No knobs found</Fragment>
           <Fragment>
             Learn how to{' '}
-            <a
+            <Link
               href="https://github.com/storybooks/storybook/tree/master/addons/knobs"
               target="_blank"
-              rel="noopener noreferrer"
             >
               dynamically interact with components
-            </a>{' '}
+            </Link>{' '}
             using knobs.
           </Fragment>
         </Placeholder>
