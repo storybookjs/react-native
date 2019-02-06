@@ -14,6 +14,114 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   vertical-align: top;
 }
 
+.emotion-34 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 8px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #DDDDDD;
+  color: #333333;
+}
+
+.emotion-34:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-34:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-34:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-34:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
+}
+
+.emotion-34:focus:hover {
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
+}
+
+.emotion-34 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-34 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-34 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-34 svg path {
+  fill: #333333;
+}
+
+.emotion-34:hover {
+  background: #e5e5e5;
+}
+
+.emotion-34:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+}
+
+.emotion-34:focus {
+  box-shadow: rgba(221,221,221,0.4) 0 1px 9px 2px;
+}
+
+.emotion-34:focus:hover {
+  box-shadow: rgba(221,221,221,0.2) 0 8px 18px 0px;
+}
+
 .emotion-1 {
   border: 0;
   border-radius: 3em;
@@ -323,7 +431,7 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-5:hover {
-  background: #059dfd;
+  background: #e5e5e5;
 }
 
 .emotion-5:active {
@@ -331,11 +439,11 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-5:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
+  box-shadow: rgba(221,221,221,0.4) 0 1px 9px 2px;
 }
 
 .emotion-5:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
+  box-shadow: rgba(221,221,221,0.2) 0 8px 18px 0px;
 }
 
 .emotion-7 {
@@ -1463,114 +1571,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-32:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
-.emotion-34 {
-  border: 0;
-  border-radius: 3em;
-  cursor: pointer;
-  display: inline-block;
-  overflow: hidden;
-  padding: 8px 16px;
-  position: relative;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  vertical-align: top;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  opacity: 1;
-  margin: 0;
-  background: transparent;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #DDDDDD;
-  color: #333333;
-}
-
-.emotion-34:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-34:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-34:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-34:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-34:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
-.emotion-34 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-34 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
-.emotion-34 svg {
-  display: inline-block;
-  height: 14px;
-  width: 14px;
-  vertical-align: top;
-  margin-right: 4px;
-  margin-top: -1px;
-  margin-bottom: -1px;
-  pointer-events: none;
-}
-
-.emotion-34 svg path {
-  fill: #333333;
-}
-
-.emotion-34:hover {
-  background: #059dfd;
-}
-
-.emotion-34:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
-}
-
-.emotion-34:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-34:focus:hover {
   box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
