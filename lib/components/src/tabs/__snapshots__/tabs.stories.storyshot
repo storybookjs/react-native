@@ -143,6 +143,7 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
 .emotion-10 {
   display: block;
   position: relative;
+  font-size: 14px;
 }
 
 .emotion-9 {
@@ -423,6 +424,7 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
 .emotion-10 {
   display: block;
   position: relative;
+  font-size: 14px;
 }
 
 .emotion-9 {
@@ -659,6 +661,7 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
 .emotion-6 {
   display: block;
   position: relative;
+  font-size: 14px;
 }
 
 <div
@@ -849,6 +852,7 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 .emotion-10 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -1148,6 +1152,7 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
 .emotion-10 {
   display: block;
   position: relative;
+  font-size: 14px;
 }
 
 .emotion-9 {
@@ -1452,6 +1457,7 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
 .emotion-10 {
   display: block;
   position: relative;
+  font-size: 14px;
 }
 
 .emotion-9 {
@@ -1770,6 +1776,7 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
 .emotion-11 {
   display: block;
   position: relative;
+  font-size: 14px;
 }
 
 .emotion-10 {
