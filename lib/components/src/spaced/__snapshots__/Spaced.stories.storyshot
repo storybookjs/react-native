@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Basics|Grid col 1`] = `
+exports[`Storyshots Basics|Spaced col 1`] = `
 Array [
   .emotion-0 {
   background: silver;
@@ -58,7 +58,7 @@ Array [
 ]
 `;
 
-exports[`Storyshots Basics|Grid col outer 1`] = `
+exports[`Storyshots Basics|Spaced col outer 1`] = `
 Array [
   .emotion-0 {
   background: silver;
@@ -118,7 +118,7 @@ Array [
 ]
 `;
 
-exports[`Storyshots Basics|Grid row 1`] = `
+exports[`Storyshots Basics|Spaced row 1`] = `
 Array [
   .emotion-0 {
   background: silver;
@@ -167,7 +167,7 @@ Array [
 ]
 `;
 
-exports[`Storyshots Basics|Grid row multiply 1`] = `
+exports[`Storyshots Basics|Spaced row multiply 1`] = `
 Array [
   .emotion-0 {
   background: silver;
@@ -221,7 +221,7 @@ Array [
 ]
 `;
 
-exports[`Storyshots Basics|Grid row outer 1`] = `
+exports[`Storyshots Basics|Spaced row outer 1`] = `
 Array [
   .emotion-0 {
   background: silver;
