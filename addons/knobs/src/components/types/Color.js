@@ -5,7 +5,9 @@ import { SketchPicker } from 'react-color';
 
 import { styled } from '@storybook/theming';
 
-import { Button } from '@storybook/components';
+import { Form } from '@storybook/components';
+
+const { Button } = Form;
 
 const Swatch = styled.div({
   position: 'absolute',
