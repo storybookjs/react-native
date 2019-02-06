@@ -8533,10 +8533,10 @@ eslint@^5.12.1:
     table "^5.0.2"
     text-table "^0.2.0"
 
-esm@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.0.tgz#089011156cf817ccdae38c877cbe03301df04136"
-  integrity sha512-yK4IiHmmInOk9q4xbJXdUfPV0ju7GbRCbhtpe5/gH7nRiD6RAb12Ix7zfsqQkDL5WERwzFlq/eT6zTXDWwIk+w==
+esm@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.1.tgz#bd7c7dadad902ef167db93b266796e9cece587c7"
+  integrity sha512-+gxDed1gELD6mCn0P4TRPpknVJe7JvLtg3lJ9sRlLSpfw6J47QMGa5pi+10DN20VQ5z6OtbxjFoD9Z6PM+zb6Q==
 
 espree@^3.4.3:
   version "3.5.4"
