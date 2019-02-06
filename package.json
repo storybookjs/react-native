@@ -69,7 +69,7 @@
     "@types/jest": "^23.3.13",
     "@types/node": "^10.12.19",
     "@types/react": "^16.7.22",
-    "@types/webpack-env": "^1.13.6",
+    "@types/webpack-env": "^1.13.7",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -89,11 +89,11 @@
     "cross-env": "^5.2.0",
     "danger": "^7.0.7",
     "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.8.0",
+    "enzyme-adapter-react-16": "^1.9.0",
     "eslint": "^5.12.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^3.6.0",
-    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jest": "^22.2.1",
     "eslint-plugin-json": "^1.2.1",
     "eslint-plugin-jsx-a11y": "^6.2.0",
@@ -122,7 +122,7 @@
     "lint-staged": "^8.1.1",
     "lodash": "^4.17.11",
     "npmlog": "^4.1.2",
-    "prettier": "^1.16.1",
+    "prettier": "^1.16.4",
     "raf": "^3.4.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -138,7 +138,7 @@
     "tslint": "~5.12.1",
     "tslint-config-prettier": "^1.15.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.2.4"
+    "typescript": "^3.3.1"
   },
   "husky": {
     "hooks": {
