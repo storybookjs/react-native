@@ -37,6 +37,7 @@ export const createReset = memoize(1)(
       outline: 'none',
       fontFamily: 'inherit',
       fontSize: 'inherit',
+      boxSizing: 'border-box',
     },
 
     sub: {

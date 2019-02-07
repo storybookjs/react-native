@@ -37,7 +37,7 @@ export const color = {
   // Official color palette
   primary: '#FF4785', // coral
   secondary: '#1EA7FD', // ocean
-  tertiary: '#DDDDDD',
+  tertiary: '#FAFBFC',
   ancillary: '#22a699', // for code
 
   orange: '#FC521F',
@@ -58,7 +58,7 @@ export const color = {
   darker: '#444444',
   darkest: '#333333',
 
-  border: 'rgba(0,0,0,.05)',
+  border: 'rgba(0,0,0,.1)',
 
   // Status
   positive: '#66BF3C',
