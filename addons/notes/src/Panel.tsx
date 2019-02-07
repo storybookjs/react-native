@@ -4,7 +4,7 @@ import { types } from '@storybook/addons';
 import { styled } from '@storybook/theming';
 import { STORY_CHANGED } from '@storybook/core-events';
 
-import { SyntaxHighlighter as SyntaxHighlighterBase, Placeholder, DocumentFormatting } from '@storybook/components';
+import { SyntaxHighlighter as SyntaxHighlighterBase, Placeholder, DocumentFormatting, Link } from '@storybook/components';
 import Giphy from './giphy';
 import Markdown from 'markdown-to-jsx';
 
@@ -114,7 +114,14 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
         </DocumentFormatting>
       </Panel>
     ) : (
-      <Placeholder>There is no info/note</Placeholder>
+      <Placeholder>
+        <React.Fragment>
+          No notes yet
+        </React.Fragment>
+        <React.Fragment>
+          Learn how to <Link href="https://github.com/storybooks/storybook/tree/master/addons/notes" target="_blank" withArrow>document components in Markdown</Link>
+        </React.Fragment>
+      </Placeholder>
     );
   }
 }
