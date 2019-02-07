@@ -89,7 +89,6 @@ export const createGlobal = memoize(1)(
         line-height: 18px;
         padding: 11px 1rem;
         white-space: pre-wrap;
-        font-size: 90%;
 
         color: inherit;
         border-radius: 3px;
