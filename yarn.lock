@@ -1171,9 +1171,10 @@
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.6.6.tgz#004b98298d04c7ca3b4f50ca2035d4f60d2eed1b"
 
-"@emotion/serialize@^0.11.3":
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-0.11.3.tgz#c4af2d96e3ddb9a749b7b567daa7556bcae45af2"
+"@emotion/serialize@^0.11.3", "@emotion/serialize@^0.11.4":
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-0.11.4.tgz#691e615184a23cd3b9ae9b1eaa79eb8798e52379"
+  integrity sha512-JKmn+Qnc8f6OZKSHmNq1RpO27raIi6Kj0uqBaSOUVMW6NI0M3wLpV4pK5hZO4I+1WuCC39hOBPgQ/GcgoHbDeg==
   dependencies:
     "@emotion/hash" "0.7.1"
     "@emotion/memoize" "0.7.1"
@@ -3592,14 +3593,15 @@ babel-plugin-ember-modules-api-polyfill@^2.6.0:
   dependencies:
     ember-rfc176-data "^0.3.6"
 
-babel-plugin-emotion@^10.0.5, babel-plugin-emotion@^10.0.6:
-  version "10.0.6"
-  resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.6.tgz#fd9bb4a5dc6cf2289b656215dbbc80469fd251b3"
+babel-plugin-emotion@^10.0.6, babel-plugin-emotion@^10.0.7:
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.7.tgz#3634ada6dee762140f27db07387feaec8d2cb619"
+  integrity sha512-5PdLJYme3tFN97M3tBbEUS/rJVkS9EMbo7rs7/7BAUEUVMWehm1kb5DEbp16Rs+UsI3rTXRan1iqpL022T8XxA==
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@emotion/hash" "0.7.1"
     "@emotion/memoize" "0.7.1"
-    "@emotion/serialize" "^0.11.3"
+    "@emotion/serialize" "^0.11.4"
     babel-plugin-macros "^2.0.0"
     babel-plugin-syntax-jsx "^6.18.0"
     convert-source-map "^1.5.0"
@@ -7909,9 +7911,10 @@ ember-router-generator@^1.2.3:
   dependencies:
     recast "^0.11.3"
 
-ember-source@~3.7.2:
-  version "3.7.2"
-  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.7.2.tgz#2167b667db1dc4b78cea881a5c739ce851109073"
+ember-source@~3.7.3:
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.7.3.tgz#ae66f5c37d928908d2cc6891dab46d24a8168678"
+  integrity sha512-K+jUCR0Q4ef71bBJnq380e0TgsE1KSDP430n3c/vA07HMnvg3BCakpy21TUJuGxpH07Jeuf7HNehI0ZHyIiW/w==
   dependencies:
     broccoli-funnel "^2.0.1"
     broccoli-merge-trees "^3.0.2"
@@ -8045,10 +8048,10 @@ envinfo@^3.0.0:
     os-name "^2.0.1"
     which "^1.2.14"
 
-enzyme-adapter-react-16@^1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.9.0.tgz#b3bc951cb90d619ead85b49760300be1bbaced80"
-  integrity sha512-tUqmeLi0Y3PxuiPSykjn8ZMqzCnaRIVywNx0i50+nhd4y/b3JtXRbsvIc8HKxn3heE4t969EI2461Kc9FYxjdw==
+enzyme-adapter-react-16@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.9.1.tgz#6d49a3a31c3a0fccf527610f31b837e0f307128a"
+  integrity sha512-Egzogv1y77DUxdnq/CyHxLHaNxmSSKDDSDNNB/EiAXCZVFXdFibaNy2uUuRQ1n24T2m6KH/1Rw16XDRq+1yVEg==
   dependencies:
     enzyme-adapter-utils "^1.10.0"
     function.prototype.name "^1.1.0"
@@ -8308,9 +8311,10 @@ eslint-plugin-flowtype@2.50.1:
   dependencies:
     lodash "^4.17.10"
 
-eslint-plugin-html@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-html/-/eslint-plugin-html-5.0.0.tgz#396e30a60dedee0122fe08f11d13c5ab22f20d32"
+eslint-plugin-html@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-html/-/eslint-plugin-html-5.0.3.tgz#3db133995e49a73596f6a473c16a1b83634deffd"
+  integrity sha512-46ruAnp3jVQP/5Bi5eEIOooscjUTPFU3vxCxHe/OG6ORdM7Xv5c25/Nz9fAbHklzCpiXuIiH4/mV/XBkm7MINw==
   dependencies:
     htmlparser2 "^3.10.0"
 
@@ -8345,10 +8349,10 @@ eslint-plugin-import@^2.16.0:
     read-pkg-up "^2.0.0"
     resolve "^1.9.0"
 
-eslint-plugin-jest@^22.2.1:
-  version "22.2.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.2.1.tgz#371c6ae54855e59d74e44295777c0eec09ebc915"
-  integrity sha512-cpxjB7xvPAEZYed5atKGD94TOYgV73qaX4XQ+E6DH0Y/xADcgqAYZKyZsFZ+qs/ll9wnNVZJdxZxav2vWYXOqw==
+eslint-plugin-jest@^22.2.2:
+  version "22.2.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.2.2.tgz#2a80d70a20c27dfb1503a6f32cdcb647fe5476df"
+  integrity sha512-hnWgh9o39VJfz6lJEyQJdTW7dN2yynlGkmPOlU/oMHh+d7WVMsJP1GeDTB520VCDljEdKExCwD5IBpQIUl4mJg==
 
 eslint-plugin-json@^1.2.1:
   version "1.3.2"
@@ -12884,9 +12888,10 @@ linkify-it@^2.0.0:
   dependencies:
     uc.micro "^1.0.1"
 
-lint-staged@^8.1.1:
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-8.1.1.tgz#4a9837c75ea23d1ea81f2c5b5f334153cc7f7932"
+lint-staged@^8.1.3:
+  version "8.1.3"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-8.1.3.tgz#bb069db5466c0fe16710216e633a84f2b362fa60"
+  integrity sha512-6TGkikL1B+6mIOuSNq2TV6oP21IhPMnV8q0cf9oYZ296ArTVNcbFh1l1pfVOHHbBIYLlziWNsQ2q45/ffmJ4AA==
   dependencies:
     "@iamstarkov/listr-update-renderer" "0.4.1"
     chalk "^2.3.1"
@@ -17045,9 +17050,10 @@ react-inspector@^2.3.0, react-inspector@^2.3.1:
     is-dom "^1.0.9"
     prop-types "^15.6.1"
 
-react-is@^16.7.0:
-  version "16.7.0"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0.tgz#c1bd21c64f1f1364c6f70695ec02d69392f41bfa"
+react-is@^16.7.0, react-is@^16.8.1:
+  version "16.8.1"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.1.tgz#a80141e246eb894824fb4f2901c0c50ef31d4cdb"
+  integrity sha512-ioMCzVDWvCvKD8eeT+iukyWrBGrA3DiFYkXfBsVYIRdaREZuBjENG+KjrikavCLasozqRWTwFUagU/O4vPpRMA==
 
 react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
