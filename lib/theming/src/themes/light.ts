@@ -7,12 +7,18 @@ import { easing, animation } from '../animation';
 const main = {
   // Typography
   mainTextFace: baseFonts.fontFamily,
-  mainTextColor: baseFonts.color,
-  mainTextSize: typography.size.s2 - 1, // 13
+  monoTextFace: monoFonts.fontFamily,
+  mainTextSize: typography.size.s2 - 1, // 13px
+
+  // Color
+  mainTextColor: color.darkest,
+  mainBgColor: color.lightest,
+  inverseTextColor: color.lightest,
+  inverseBgColor: color.mediumdark,
 
   // Layout
   mainBorderColor: color.border,
-  monoTextFace: monoFonts.fontFamily,
+  mainBorderRadius: 4,
 };
 
 const bar = {

@@ -14,19 +14,21 @@ export const Action = styled.div({
   borderLeft: '5px solid transparent',
   borderBottom: '1px solid transparent',
   transition: 'all 0.1s',
-  alignItems: 'start',
+  alignItems: 'center',
 });
 
-export const Counter = styled.div({
-  margin: '0 5px 0 5px',
-  backgroundColor: '#777777',
-  color: '#ffffff',
+export const Counter = styled.div(({ theme }) => ({
+  backgroundColor: theme.inverseBgColor,
+  color: theme.inverseTextColor,
+  fontSize: theme.typography.size.s1,
+  fontWeight: theme.typography.weight.bold,
+  lineHeight: 1,
   padding: '1px 5px',
   borderRadius: '20px',
-});
+}));
 
 export const Countwrap = styled.div({
-  paddingBottom: 2,
+  margin: '0 5px',
 });
 
 export const InspectorContainer = styled.div({
