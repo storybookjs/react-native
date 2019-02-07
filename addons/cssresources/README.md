@@ -42,6 +42,8 @@ addParameters({
   ],
 });
 
+You can use the `cssresources` parameter to override resources on each story individually:
+
 // per story
 storiesOf('Addons|Cssresources', module)
   .add('Camera Icon', () => <i className="fa fa-camera-retro"> Camera Icon</i>, {
