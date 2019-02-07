@@ -13,7 +13,6 @@ export const baseFonts = {
     'Arial',
     'sans-serif',
   ].join(', '),
-  color: '#333',
   WebkitFontSmoothing: 'antialiased',
 };
 
@@ -29,7 +28,6 @@ export const monoFonts = {
     'Monaco',
     'monospace',
   ].join(', '),
-  color: '#333',
   WebkitFontSmoothing: 'antialiased',
 };
 
@@ -80,21 +78,21 @@ export const background = {
 
 export const typography = {
   weight: {
-    regular: '400',
-    bold: '700',
-    black: '900',
+    regular: 400,
+    bold: 700,
+    black: 900,
   },
   size: {
-    s1: '12',
-    s2: '14',
-    s3: '16',
-    m1: '20',
-    m2: '24',
-    m3: '28',
-    l1: '32',
-    l2: '40',
-    l3: '48',
-    code: '90',
+    s1: 12,
+    s2: 14,
+    s3: 16,
+    m1: 20,
+    m2: 24,
+    m3: 28,
+    l1: 32,
+    l2: 40,
+    l3: 48,
+    code: 90,
   },
 };
 

@@ -12,7 +12,7 @@ export const createReset = memoize(1)(
   ({ typography }: { typography: Typography }): Return => ({
     body: {
       fontFamily: baseFonts.fontFamily,
-      fontSize: `${typography.size.s3}px`,
+      fontSize: typography.size.s3,
       margin: 0,
       overflowY: 'auto',
       overflowX: 'hidden',

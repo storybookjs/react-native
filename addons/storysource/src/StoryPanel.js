@@ -21,7 +21,7 @@ const SelectedStoryHighlight = styled.div(({ theme }) => ({
 }));
 
 const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }) => ({
-  fontSize: `${theme.typography.size.s2 - 1}px`,
+  fontSize: theme.typography.size.s2 - 1,
 }));
 const areLocationsEqual = (a, b) =>
   a.startLoc.line === b.startLoc.line &&
