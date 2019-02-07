@@ -285,7 +285,7 @@ exports[`Storyshots UI|Panel default 1`] = `
 `;
 
 exports[`Storyshots UI|Panel no panels 1`] = `
-.emotion-2 {
+.emotion-1 {
   padding: 30px;
   text-align: center;
   color: #666666;
@@ -300,24 +300,12 @@ exports[`Storyshots UI|Panel no panels 1`] = `
   style="position:relative;width:800px;height:300px;margin:1rem auto;background:white"
 >
   <div
-    class="emotion-2"
+    class="emotion-1"
   >
     <div
       class="emotion-0"
     >
-      No addons found
-    </div>
-    <div
-      class="emotion-1"
-    >
-      Learn how to 
-      <a
-        href="https://storybook.js.org/addons"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        extend Storybook with addons
-      </a>
+      Nothing found
     </div>
   </div>
 </div>
