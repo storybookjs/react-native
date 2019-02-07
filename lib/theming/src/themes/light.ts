@@ -8,7 +8,7 @@ const main = {
   // Typography
   mainTextFace: baseFonts.fontFamily,
   mainTextColor: baseFonts.color,
-  mainTextSize: 14,
+  mainTextSize: typography.size.s2 - 1, // 13
 
   // Layout
   mainBorderColor: color.border,
