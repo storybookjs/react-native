@@ -6161,9 +6161,13 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 
 .emotion-21 {
   color: inherit;
+  display: block;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .emotion-20 {
@@ -6258,7 +6262,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
-  border-left-color: transparent;
 }
 
 .emotion-24 {
@@ -6269,7 +6272,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   width: 10px;
   height: 10px;
   margin-right: 6px;
-  color: #37d5d3;
+  color: #774dd7;
   color: inherit;
 }
 
@@ -6299,30 +6302,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 
 .emotion-30:hover {
   background: rgba(0,0,0,.05);
-}
-
-.emotion-29 {
-  display: block;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 10px;
-  height: 10px;
-  margin-right: 6px;
-  color: #37d5d3;
-}
-
-.emotion-35 {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-right: 6px;
-  border-top: 3.5px solid transparent;
-  border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
-  -webkit-transition: -webkit-transform .1s ease-out;
-  -webkit-transition: transform .1s ease-out;
-  transition: transform .1s ease-out;
 }
 
 .emotion-49 {
@@ -6703,9 +6682,13 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 
 .emotion-21 {
   color: inherit;
+  display: block;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .emotion-20 {
@@ -6800,7 +6783,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
-  border-left-color: transparent;
 }
 
 .emotion-24 {
@@ -6811,7 +6793,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   width: 10px;
   height: 10px;
   margin-right: 6px;
-  color: #37d5d3;
+  color: #774dd7;
   color: inherit;
 }
 
@@ -6841,30 +6823,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 
 .emotion-30:hover {
   background: rgba(0,0,0,.05);
-}
-
-.emotion-29 {
-  display: block;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 10px;
-  height: 10px;
-  margin-right: 6px;
-  color: #37d5d3;
-}
-
-.emotion-35 {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-right: 6px;
-  border-top: 3.5px solid transparent;
-  border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
-  -webkit-transition: -webkit-transform .1s ease-out;
-  -webkit-transition: transform .1s ease-out;
-  transition: transform .1s ease-out;
 }
 
 .emotion-49 {
@@ -7018,7 +6976,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
       </div>
       <a
         class="emotion-21"
-        href="/?path=/story/1-12"
+        id="explorer1-12"
+        title="Child A2"
       >
         <div
           class="emotion-20"
@@ -7048,7 +7007,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
       >
         <a
           class="emotion-21"
-          href="/?path=/story/1-12-121"
+          id="explorer1-12-121"
+          title="GrandChild A1.1"
         >
           <div
             class="emotion-25"
@@ -7065,7 +7025,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
             >
               <path
                 class="emotion-3"
-                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+                d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
               />
             </svg>
             <span>
@@ -7075,7 +7035,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
         </a>
         <a
           class="emotion-21"
-          href="/?path=/story/1-12-122"
+          id="explorer1-12-122"
+          title="GrandChild A1.2"
         >
           <div
             class="emotion-30"
@@ -7085,14 +7046,14 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
               class="emotion-22"
             />
             <svg
-              class="emotion-29"
+              class="emotion-19"
               height="20px"
               viewBox="0 0 1024 1024"
               width="20px"
             >
               <path
                 class="emotion-3"
-                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+                d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
               />
             </svg>
             <span>
@@ -7113,14 +7074,15 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
       </div>
       <a
         class="emotion-21"
-        href="/?path=/story/3-32"
+        id="explorer3-32"
+        title="Child A2"
       >
         <div
           class="emotion-20"
           id="3-32"
         >
           <span
-            class="emotion-35"
+            class="emotion-22"
           />
           <svg
             class="emotion-19"
@@ -7150,14 +7112,15 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
       </div>
       <a
         class="emotion-21"
-        href="/?path=/story/2"
+        id="explorer2"
+        title="Group 1"
       >
         <div
           class="emotion-20"
           id="2"
         >
           <span
-            class="emotion-35"
+            class="emotion-22"
           />
           <svg
             class="emotion-19"
@@ -9209,7 +9172,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   color: #774dd7;
 }
 
-.emotion-16 {
+.emotion-0 {
   display: block;
   width: 0;
   height: 0;
@@ -9220,7 +9183,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
-  border-left-color: transparent;
 }
 
 .emotion-11 {
@@ -9251,7 +9213,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   background: rgba(0,0,0,.05);
 }
 
-.emotion-18 {
+.emotion-14 {
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9259,10 +9221,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   width: 10px;
   height: 10px;
   margin-right: 6px;
-  color: #37d5d3;
+  color: #1ea7fd;
 }
 
-.emotion-0 {
+.emotion-16 {
   display: block;
   width: 0;
   height: 0;
@@ -9273,9 +9235,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
+  border-left-color: transparent;
 }
 
-.emotion-14 {
+.emotion-18 {
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9283,7 +9246,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   width: 10px;
   height: 10px;
   margin-right: 6px;
-  color: #1ea7fd;
+  color: #37d5d3;
 }
 
 .emotion-15 {
@@ -9401,7 +9364,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   color: #774dd7;
 }
 
-.emotion-16 {
+.emotion-0 {
   display: block;
   width: 0;
   height: 0;
@@ -9412,7 +9375,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
-  border-left-color: transparent;
 }
 
 .emotion-11 {
@@ -9443,7 +9405,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   background: rgba(0,0,0,.05);
 }
 
-.emotion-18 {
+.emotion-14 {
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9451,10 +9413,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   width: 10px;
   height: 10px;
   margin-right: 6px;
-  color: #37d5d3;
+  color: #1ea7fd;
 }
 
-.emotion-0 {
+.emotion-16 {
   display: block;
   width: 0;
   height: 0;
@@ -9465,9 +9427,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
+  border-left-color: transparent;
 }
 
-.emotion-14 {
+.emotion-18 {
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9475,7 +9438,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   width: 10px;
   height: 10px;
   margin-right: 6px;
-  color: #1ea7fd;
+  color: #37d5d3;
 }
 
 .emotion-15 {
@@ -9808,18 +9771,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   border-left-color: transparent;
 }
 
-.emotion-2 {
-  display: block;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 10px;
-  height: 10px;
-  margin-right: 6px;
-  color: #37d5d3;
-  color: inherit;
-}
-
 .emotion-3 {
   font-size: 13px;
   line-height: 16px;
@@ -9844,6 +9795,18 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+}
+
+.emotion-2 {
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #37d5d3;
+  color: inherit;
 }
 
 .emotion-1 {
@@ -9864,18 +9827,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   border-left-color: transparent;
 }
 
-.emotion-2 {
-  display: block;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 10px;
-  height: 10px;
-  margin-right: 6px;
-  color: #37d5d3;
-  color: inherit;
-}
-
 .emotion-3 {
   font-size: 13px;
   line-height: 16px;
@@ -9900,6 +9851,18 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+}
+
+.emotion-2 {
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #37d5d3;
+  color: inherit;
 }
 
 <div
@@ -12044,9 +12007,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 
 .emotion-11 {
   color: inherit;
+  display: block;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .emotion-10 {
@@ -12115,7 +12082,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
-  border-left-color: transparent;
 }
 
 .emotion-24 {
@@ -12126,7 +12092,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   width: 10px;
   height: 10px;
   margin-right: 6px;
-  color: #37d5d3;
+  color: #774dd7;
   color: inherit;
 }
 
@@ -12156,30 +12122,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 
 .emotion-15:hover {
   background: rgba(0,0,0,.05);
-}
-
-.emotion-14 {
-  display: block;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 10px;
-  height: 10px;
-  margin-right: 6px;
-  color: #37d5d3;
-}
-
-.emotion-34 {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-right: 6px;
-  border-top: 3.5px solid transparent;
-  border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
-  -webkit-transition: -webkit-transform .1s ease-out;
-  -webkit-transition: transform .1s ease-out;
-  transition: transform .1s ease-out;
 }
 
 .emotion-30 {
@@ -12377,9 +12319,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 
 .emotion-11 {
   color: inherit;
+  display: block;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .emotion-10 {
@@ -12448,7 +12394,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
-  border-left-color: transparent;
 }
 
 .emotion-24 {
@@ -12459,7 +12404,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   width: 10px;
   height: 10px;
   margin-right: 6px;
-  color: #37d5d3;
+  color: #774dd7;
   color: inherit;
 }
 
@@ -12489,30 +12434,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 
 .emotion-15:hover {
   background: rgba(0,0,0,.05);
-}
-
-.emotion-14 {
-  display: block;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 10px;
-  height: 10px;
-  margin-right: 6px;
-  color: #37d5d3;
-}
-
-.emotion-34 {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-right: 6px;
-  border-top: 3.5px solid transparent;
-  border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
-  -webkit-transition: -webkit-transform .1s ease-out;
-  -webkit-transition: transform .1s ease-out;
-  transition: transform .1s ease-out;
 }
 
 .emotion-30 {
@@ -12627,7 +12548,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
     >
       <a
         class="emotion-11"
-        href="/?path=/story/1"
+        id="explorer1"
+        title="Parent A"
       >
         <div
           class="emotion-10"
@@ -12657,7 +12579,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
       >
         <a
           class="emotion-11"
-          href="/?path=/story/1-11"
+          id="explorer1-11"
+          title="Child A1"
         >
           <div
             class="emotion-15"
@@ -12667,14 +12590,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
               class="emotion-12"
             />
             <svg
-              class="emotion-14"
+              class="emotion-9"
               height="20px"
               viewBox="0 0 1024 1024"
               width="20px"
             >
               <path
                 class="emotion-1"
-                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+                d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
               />
             </svg>
             <span>
@@ -12684,7 +12607,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
         </a>
         <a
           class="emotion-11"
-          href="/?path=/story/1-12"
+          id="explorer1-12"
+          title="Child A2"
         >
           <div
             class="emotion-15"
@@ -12714,7 +12638,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
         >
           <a
             class="emotion-11"
-            href="/?path=/story/1-12-121"
+            id="explorer1-12-121"
+            title="GrandChild A1.1"
           >
             <div
               class="emotion-25"
@@ -12731,7 +12656,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
               >
                 <path
                   class="emotion-1"
-                  d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+                  d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
                 />
               </svg>
               <span>
@@ -12741,7 +12666,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
           </a>
           <a
             class="emotion-11"
-            href="/?path=/story/1-12-122"
+            id="explorer1-12-122"
+            title="GrandChild A1.2"
           >
             <div
               class="emotion-30"
@@ -12751,14 +12677,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
                 class="emotion-12"
               />
               <svg
-                class="emotion-14"
+                class="emotion-9"
                 height="20px"
                 viewBox="0 0 1024 1024"
                 width="20px"
               >
                 <path
                   class="emotion-1"
-                  d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+                  d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
                 />
               </svg>
               <span>
@@ -12770,14 +12696,15 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
       </div>
       <a
         class="emotion-11"
-        href="/?path=/story/2"
+        id="explorer2"
+        title="Parent B"
       >
         <div
           class="emotion-10"
           id="2"
         >
           <span
-            class="emotion-34"
+            class="emotion-12"
           />
           <svg
             class="emotion-9"
@@ -12947,9 +12874,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 
 .emotion-12 {
   color: inherit;
+  display: block;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .emotion-11 {
@@ -13044,7 +12975,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
-  border-left-color: transparent;
 }
 
 .emotion-15 {
@@ -13055,7 +12985,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   width: 10px;
   height: 10px;
   margin-right: 6px;
-  color: #37d5d3;
+  color: #774dd7;
   color: inherit;
 }
 
@@ -13085,30 +13015,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 
 .emotion-21:hover {
   background: rgba(0,0,0,.05);
-}
-
-.emotion-20 {
-  display: block;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 10px;
-  height: 10px;
-  margin-right: 6px;
-  color: #37d5d3;
-}
-
-.emotion-26 {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-right: 6px;
-  border-top: 3.5px solid transparent;
-  border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
-  -webkit-transition: -webkit-transform .1s ease-out;
-  -webkit-transition: transform .1s ease-out;
-  transition: transform .1s ease-out;
 }
 
 .emotion-40 > * {
@@ -13265,9 +13171,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 
 .emotion-12 {
   color: inherit;
+  display: block;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .emotion-11 {
@@ -13362,7 +13272,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
-  border-left-color: transparent;
 }
 
 .emotion-15 {
@@ -13373,7 +13282,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   width: 10px;
   height: 10px;
   margin-right: 6px;
-  color: #37d5d3;
+  color: #774dd7;
   color: inherit;
 }
 
@@ -13403,30 +13312,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 
 .emotion-21:hover {
   background: rgba(0,0,0,.05);
-}
-
-.emotion-20 {
-  display: block;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 10px;
-  height: 10px;
-  margin-right: 6px;
-  color: #37d5d3;
-}
-
-.emotion-26 {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-right: 6px;
-  border-top: 3.5px solid transparent;
-  border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
-  -webkit-transition: -webkit-transform .1s ease-out;
-  -webkit-transition: transform .1s ease-out;
-  transition: transform .1s ease-out;
 }
 
 .emotion-40 > * {
@@ -13493,7 +13378,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       </div>
       <a
         class="emotion-12"
-        href="/?path=/story/1-12"
+        id="explorer1-12"
+        title="Child A2"
       >
         <div
           class="emotion-11"
@@ -13523,7 +13409,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       >
         <a
           class="emotion-12"
-          href="/?path=/story/1-12-121"
+          id="explorer1-12-121"
+          title="GrandChild A1.1"
         >
           <div
             class="emotion-16"
@@ -13540,7 +13427,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
             >
               <path
                 class="emotion-1"
-                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+                d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
               />
             </svg>
             <span>
@@ -13550,7 +13437,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
         </a>
         <a
           class="emotion-12"
-          href="/?path=/story/1-12-122"
+          id="explorer1-12-122"
+          title="GrandChild A1.2"
         >
           <div
             class="emotion-21"
@@ -13560,14 +13448,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
               class="emotion-13"
             />
             <svg
-              class="emotion-20"
+              class="emotion-10"
               height="20px"
               viewBox="0 0 1024 1024"
               width="20px"
             >
               <path
                 class="emotion-1"
-                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+                d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
               />
             </svg>
             <span>
@@ -13588,14 +13476,15 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       </div>
       <a
         class="emotion-12"
-        href="/?path=/story/3-32"
+        id="explorer3-32"
+        title="Child A2"
       >
         <div
           class="emotion-11"
           id="3-32"
         >
           <span
-            class="emotion-26"
+            class="emotion-13"
           />
           <svg
             class="emotion-10"
@@ -13625,14 +13514,15 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       </div>
       <a
         class="emotion-12"
-        href="/?path=/story/2"
+        id="explorer2"
+        title="Group 1"
       >
         <div
           class="emotion-11"
           id="2"
         >
           <span
-            class="emotion-26"
+            class="emotion-13"
           />
           <svg
             class="emotion-10"
