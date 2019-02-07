@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { styled } from '@storybook/theming';
 import { Link, SyntaxHighlighter } from '@storybook/components';
 
 import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './events';
 
-const styles = {
-  story: {
-    display: 'block',
-    textDecoration: 'none',
+const StyledStoryLink = styled(Link)(({ theme }) => ({
+  display: 'block',
+  textDecoration: 'none',
+  borderRadius: 4,
+  '&:hover': {
+    background: theme.background.select,
   },
-  selectedStory: {
-    backgroundColor: 'rgba(255, 242, 60, 0.2)',
-  },
-  panel: {
-    width: '100%',
-  },
-};
+}));
 
+const SelectedStoryHighlight = styled.div(({ theme }) => ({
+  background: theme.background.select,
+  borderRadius: 4,
+}));
+
+const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }) => ({
+  fontSize: `${theme.typography.size.s2 - 1}px`,
+}));
 const areLocationsEqual = (a, b) =>
   a.startLoc.line === b.startLoc.line &&
   a.startLoc.col === b.startLoc.col &&
@@ -97,9 +102,9 @@ export default class StoryPanel extends Component {
 
     if (areLocationsEqual(location, currentLocation)) {
       return (
-        <div key={storyKey} ref={this.setSelectedStoryRef} style={styles.selectedStory}>
+        <SelectedStoryHighlight key={storyKey} ref={this.setSelectedStoryRef}>
           {story}
-        </div>
+        </SelectedStoryHighlight>
       );
     }
 
@@ -107,14 +112,13 @@ export default class StoryPanel extends Component {
     const url = `/?selectedKind=${selectedKind}&selectedStory=${selectedStory}`;
 
     return (
-      <Link
+      <StyledStoryLink
         href={url}
         key={storyKey}
         onClick={() => this.clickOnStory(selectedKind, selectedStory)}
-        style={styles.story}
       >
         {story}
-      </Link>
+      </StyledStoryLink>
     );
   };
 
@@ -171,7 +175,7 @@ export default class StoryPanel extends Component {
     const { source } = this.state;
 
     return active ? (
-      <SyntaxHighlighter
+      <StyledSyntaxHighlighter
         language="jsx"
         showLineNumbers="true"
         renderer={this.lineRenderer}
@@ -179,7 +183,7 @@ export default class StoryPanel extends Component {
         padded
       >
         {source}
-      </SyntaxHighlighter>
+      </StyledSyntaxHighlighter>
     ) : null;
   }
 }
