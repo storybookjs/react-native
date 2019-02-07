@@ -18,4 +18,4 @@ export { themes };
 export * from '@emotion/core';
 export * from 'emotion-theming';
 
-export { createGlobal } from './global';
+export { createGlobal, createReset } from './global';

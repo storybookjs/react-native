@@ -69,6 +69,7 @@ export const color = {
 export const background = {
   app: '#F6F9FC',
   appInverse: '#7A8997',
+  preview: color.lightest,
   select: '#e3f3ff',
 
   // Notification, error, and warning backgrounds
@@ -96,6 +97,10 @@ export const typography = {
     code: '90',
   },
 };
+
+export type Color = typeof color;
+export type Background = typeof background;
+export type Typography = typeof typography;
 
 export interface Theme {
   color: typeof color;

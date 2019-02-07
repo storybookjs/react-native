@@ -1,102 +1,107 @@
-import { css } from '@emotion/core';
-import { baseFonts, monoFonts } from './base';
+import { baseFonts, monoFonts, Color, Background, Typography } from './base';
 import memoize from 'memoizerific';
 
+type Value = string | number;
+interface Return {
+  [key: string]: {
+    [key: string]: Value;
+  };
+}
+
+export const createReset = memoize(1)(
+  ({ typography }: { typography: Typography }): Return => ({
+    body: {
+      fontFamily: baseFonts.fontFamily,
+      fontSize: `${typography.size.s3}px`,
+      margin: 0,
+      overflowY: 'auto',
+      overflowX: 'hidden',
+
+      WebkitFontSmoothing: 'antialiased',
+      MozOsxFontSmoothing: 'grayscale',
+      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+      WebkitOverflowScrolling: 'touch',
+    },
+
+    '*': {
+      boxSizing: 'border-box',
+    },
+
+    'h1, h2, h3, h4, h5, h6': {
+      fontWeight: typography.weight.regular,
+      margin: 0,
+      padding: 0,
+    },
+
+    'button, input, textarea, select': {
+      outline: 'none',
+      fontFamily: 'inherit',
+      fontSize: 'inherit',
+    },
+
+    sub: {
+      fontSize: '0.8em',
+      bottom: '-0.2em',
+    },
+
+    sup: {
+      fontSize: '0.8em',
+      top: '-0.2em',
+    },
+
+    'b, em': {
+      fontWeight: typography.weight.bold,
+    },
+
+    hr: {
+      border: 'none',
+      borderTop: '1px solid silver',
+      clear: 'both',
+      marginBottom: '1.25rem',
+    },
+
+    code: {
+      fontFamily: monoFonts.fontFamily,
+      WebkitFontSmoothing: 'antialiased',
+      MozOsxFontSmoothing: 'grayscale',
+      display: 'inline-block',
+      paddingLeft: 2,
+      paddingRight: 2,
+      verticalAlign: 'baseline',
+
+      color: 'inherit',
+    },
+
+    pre: {
+      fontFamily: monoFonts.fontFamily,
+      WebkitFontSmoothing: 'antialiased',
+      MozOsxFontSmoothing: 'grayscale',
+      lineHeight: '18px',
+      padding: '11px 1rem',
+      whiteSpace: 'pre-wrap',
+
+      color: 'inherit',
+      borderRadius: 3,
+      margin: '1rem 0',
+    },
+  })
+);
+
 export const createGlobal = memoize(1)(
-  ({ color, background, typography }) => css`
-    body {
-      font-family: ${baseFonts.fontFamily};
-      font-size: ${typography.size.s3}px;
-      margin: 0;
-      overflow-y: auto;
-      overflow-x: hidden;
+  ({ color, background, typography }: { color: Color; background: Background; typography: Typography }): Return => {
+    const resetStyles = createReset({ typography });
+    return {
+      ...resetStyles,
+      body: {
+        ...resetStyles.body,
+        color: color.darkest,
+        background: background.app,
+      },
 
-      color: ${color.darkest};
-      background: ${background.app};
-
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      -webkit-tap-highlight-color: transparent;
-      -webkit-overflow-scrolling: touch;
-
-      * {
-        box-sizing: border-box;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-weight: ${typography.weight.regular};
-        margin: 0;
-        padding: 0;
-      }
-
-      button,
-      input,
-      textarea,
-      select {
-        outline: none;
-        font-family: inherit;
-        font-size: inherit;
-      }
-
-      sub,
-      sup {
-        font-size: 0.8em;
-      }
-
-      sub {
-        bottom: -0.2em;
-      }
-
-      sup {
-        top: -0.2em;
-      }
-
-      b,
-      em {
-        font-weight: ${typography.weight.bold};
-      }
-
-      hr {
-        border: none;
-        border-top: 1px solid ${color.border};
-        clear: both;
-        margin-bottom: 1.25rem;
-      }
-
-      code,
-      pre {
-        font-family: ${monoFonts.fontFamily};
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      code {
-        display: inline-block;
-        padding-left: 2px;
-        padding-right: 2px;
-        vertical-align: baseline;
-
-        color: inherit;
-      }
-
-      pre {
-        line-height: 18px;
-        padding: 11px 1rem;
-        white-space: pre-wrap;
-
-        color: inherit;
-        border-radius: 3px;
-        margin: 1rem 0;
-      }
-      margin: 0;
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-  `
+      hr: {
+        ...resetStyles.hr,
+        borderTop: `1px solid ${color.border}`,
+      },
+    };
+  }
 );

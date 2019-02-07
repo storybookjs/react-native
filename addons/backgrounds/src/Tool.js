@@ -26,38 +26,55 @@ const createItem = memoize(1000)((id, name, value, hasSwatch, change) =>
         id: id || name,
         title: name,
         onClick: () => {
-          change({ selected: value });
+          change({ selected: value, expanded: false });
         },
+        value,
         right: <ColorIcon background={value} />,
       }
     : {
         id: id || name,
         title: name,
         onClick: () => {
-          change({ selected: value });
+          change({ selected: value, expanded: false });
         },
+        value,
       }
 );
+
+const getSelected = (list, state) => {
+  if (!list.length) {
+    return 'transparent';
+  }
+
+  if (state === 'transparent') {
+    return state;
+  }
+
+  if (list.find(i => i.value === state)) {
+    return state;
+  }
+
+  if (list.find(i => i.default)) {
+    return list.find(i => i.default).value;
+  }
+
+  return 'transparent';
+};
 
 const getState = memoize(10)((props, state, change) => {
   const data = props.api.getCurrentStoryData();
   const list = (data && data.parameters && data.parameters[PARAM_KEY]) || [];
 
+  const selected = getSelected(list, state.selected);
+
   const initial =
-    state.selected === 'transparent'
-      ? [createItem('reset', 'Reset background', 'transparent', false, change)]
+    selected !== 'transparent'
+      ? [createItem('reset', 'Clear background', 'transparent', false, change)]
       : [];
 
   const items = list.length
-    ? initial.concat(
-        list.map(({ id, name, styles: value }) => createItem(id, name, value, true, change))
-      )
+    ? initial.concat(list.map(({ id, name, value }) => createItem(id, name, value, true, change)))
     : list;
-
-  const selected =
-    state.selected === 'transparent' || list.find(i => i.id === state.selected)
-      ? state.selected
-      : list.find(i => i.default) || 'transparent';
 
   return {
     items,
@@ -66,12 +83,20 @@ const getState = memoize(10)((props, state, change) => {
 });
 
 export default class BackgroundTool extends Component {
+  static propTypes = {
+    api: PropTypes.shape({
+      getQueryParam: PropTypes.func,
+      setQueryParams: PropTypes.func,
+    }).isRequired,
+  };
+
   constructor(props) {
     super(props);
 
     this.state = {
       items: [],
-      selected: 'transparent',
+      selected: undefined,
+      expanded: false,
     };
 
     this.listener = () => {
@@ -92,20 +117,25 @@ export default class BackgroundTool extends Component {
   change = (...args) => this.setState(...args);
 
   render() {
+    const { expanded } = this.state;
     const { items, selected } = getState(this.props, this.state, this.change);
 
     return items.length ? (
       <Fragment>
-        <Global
-          styles={{
-            [`#${iframeId}`]: {
-              background: selected,
-            },
-          }}
-        />
+        {selected ? (
+          <Global
+            styles={{
+              [`#${iframeId}`]: {
+                background: selected,
+              },
+            }}
+          />
+        ) : null}
         <WithTooltip
           placement="top"
           trigger="click"
+          tooltipShown={expanded}
+          onVisibilityChange={s => this.setState({ expanded: s })}
           tooltip={<TooltipLinkList links={items} />}
           closeOnClick
         >
@@ -117,17 +147,3 @@ export default class BackgroundTool extends Component {
     ) : null;
   }
 }
-BackgroundTool.propTypes = {
-  api: PropTypes.shape({
-    getQueryParam: PropTypes.func,
-    setQueryParams: PropTypes.func,
-  }).isRequired,
-  channel: PropTypes.shape({
-    emit: PropTypes.func,
-    on: PropTypes.func,
-    removeListener: PropTypes.func,
-  }),
-};
-BackgroundTool.defaultProps = {
-  channel: undefined,
-};

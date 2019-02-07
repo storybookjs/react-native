@@ -7,6 +7,7 @@ import { easing, animation } from '../animation';
 const background = {
   app: '#F6F9FC',
   appInverse: '#7A8997',
+  preview: '#000',
   select: '#e3f3ff',
   positive: '#E1FFD4',
   negative: '#FEDED2',
