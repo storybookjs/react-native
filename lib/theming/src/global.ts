@@ -82,7 +82,7 @@ export const createGlobal = memoize(1)(
         padding-right: 2px;
         vertical-align: baseline;
 
-        color: ${color.secondary};
+        color: inherit;
       }
 
       pre {
@@ -91,7 +91,7 @@ export const createGlobal = memoize(1)(
         white-space: pre-wrap;
         font-size: 90%;
 
-        color: ${color.darkest};
+        color: inherit;
         border-radius: 3px;
         margin: 1rem 0;
       }
