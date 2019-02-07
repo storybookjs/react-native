@@ -84,6 +84,18 @@ exports[`Storyshots Basics|typography all 1`] = `
     </div>
     <div>
       <b>
+        UI text size:
+      </b>
+       13px
+    </div>
+    <div>
+      <b>
+        Document/Markdown text size:
+      </b>
+       14px
+    </div>
+    <div>
+      <b>
         Code font:
       </b>
        

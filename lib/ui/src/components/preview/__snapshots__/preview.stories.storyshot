@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI|Preview no tabs 1`] = `
+exports[`Storyshots UI|Preview/Preview no tabs 1`] = `
 Array [
   .emotion-13 {
   display: -webkit-box;
@@ -67,14 +67,14 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: rgba(255,255,255,1);
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  background: rgba(255,255,255,1) linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,0.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
   position: absolute;
   left: 0;
   right: 0;
@@ -89,7 +89,7 @@ Array [
 .emotion-9 {
   width: 1px;
   height: 24px;
-  background: rgba(0,0,0,.05);
+  background: rgba(0,0,0,.1);
   margin-top: 8px;
 }
 
@@ -285,7 +285,7 @@ Array [
 ]
 `;
 
-exports[`Storyshots UI|Preview with tabs 1`] = `
+exports[`Storyshots UI|Preview/Preview with tabs 1`] = `
 Array [
   .emotion-19 {
   display: -webkit-box;
@@ -345,7 +345,7 @@ Array [
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  color: rgba(0,0,0,0.4);
+  opacity: 0.4;
   border-bottom-color: transparent;
 }
 
@@ -454,14 +454,14 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: rgba(255,255,255,1);
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  background: rgba(255,255,255,1) linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,0.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
   position: absolute;
   left: 0;
   right: 0;
@@ -476,7 +476,7 @@ Array [
 .emotion-5 {
   width: 1px;
   height: 24px;
-  background: rgba(0,0,0,.05);
+  background: rgba(0,0,0,.1);
   margin-top: 8px;
 }
 
