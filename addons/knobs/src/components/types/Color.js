@@ -9,13 +9,17 @@ import { Form } from '@storybook/components';
 
 const { Button } = Form;
 
-const Swatch = styled.div({
+const Swatch = styled.div(({ theme }) => ({
   position: 'absolute',
-  top: 0,
-  bottom: 0,
-  right: 3,
-  width: 28,
-});
+  top: '50%',
+  transform: 'translateY(-50%)',
+  left: 6,
+  width: 20,
+  height: 20,
+  boxShadow: `${theme.mainBorderColor} 0 0 0 1px inset`,
+  borderRadius: '1rem',
+}));
+
 const Popover = styled.div({
   position: 'absolute',
   zIndex: '2',
