@@ -2774,6 +2774,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 .emotion-114 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -3256,6 +3257,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 .emotion-114 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;

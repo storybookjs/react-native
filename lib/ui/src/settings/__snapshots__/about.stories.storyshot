@@ -149,6 +149,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 .emotion-24 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -659,6 +660,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 .emotion-40 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -882,257 +884,436 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 
 .emotion-16 {
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+.emotion-16 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-16 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.emotion-16 h3 {
+  font-size: 20px;
+}
+
+.emotion-16 h4 {
+  font-size: 16px;
+}
+
+.emotion-16 h5 {
+  font-size: 14px;
+}
+
+.emotion-16 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-16 pre {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-16 pre pre {
+  padding: 15px;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-16 pre pre code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-16 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-16 pre code,
+.emotion-16 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-16 body > *:first-child {
+  margin-top: 0 !important;
+}
+
+.emotion-16 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-16 a {
+  color: #4183c4;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-16 a.absent {
+  color: #cc0000;
+}
+
+.emotion-16 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 
 .emotion-16 h1,
 .emotion-16 h2,
 .emotion-16 h3,
-.emotion-16 h4 {
-  line-height: 1em;
-}
-
-.emotion-16 h1 + *,
-.emotion-16 h2 + *,
-.emotion-16 h3 + *,
-.emotion-16 h4 + * {
-  margin-top: 0 !important;
-}
-
-.emotion-16 h2:not(:first-child) {
-  margin-top: 2rem;
-}
-
-.emotion-16 hr {
-  margin: 3rem 0;
-}
-
-.emotion-16 hr + * {
-  margin-top: 0 !important;
-}
-
-.emotion-16 h1 {
-  font-size: 32px;
-  margin-bottom: 0.5rem;
-}
-
-.emotion-16 h2 {
-  font-size: 20px;
-  line-height: 28px;
-  margin-bottom: 0.5rem;
-}
-
-.emotion-16 h3 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 28px;
-  color: #333333;
-  margin: 1.5rem 0 0rem;
-}
-
-.emotion-16 h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: #666666;
-  margin: 1.5rem 0 0rem;
-}
-
-.emotion-16 p {
-  margin: 1rem 0;
+.emotion-16 h4,
+.emotion-16 h5,
+.emotion-16 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
   position: relative;
 }
 
-.emotion-16 p:first-of-type:not(:only-of-type) {
+.emotion-16 h2:first-child,
+.emotion-16 h1:first-child,
+.emotion-16 h1:first-child + h2,
+.emotion-16 h3:first-child,
+.emotion-16 h4:first-child,
+.emotion-16 h5:first-child,
+.emotion-16 h6:first-child {
   margin-top: 0;
+  padding-top: 0;
 }
 
-.emotion-16 p:only-of-type {
-  margin: 0;
-}
-
-.emotion-16 ol,
-.emotion-16 ul {
-  list-style-position: outside;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  padding-left: 30px;
-}
-
-.emotion-16 ol li,
-.emotion-16 ul li {
-  margin-bottom: 0.5rem;
-}
-
-.emotion-16 ol {
-  list-style-type: decimal;
-}
-
-.emotion-16 ul {
-  list-style-type: disc;
-}
-
-.emotion-16 p a,
-.emotion-16 li a,
-.emotion-16 h1 a,
-.emotion-16 h2 a,
-.emotion-16 h3 a,
-.emotion-16 h4 a,
-.emotion-16 h5 a,
-.emotion-16 h6 a {
-  color: #1EA7FD;
-  -webkit-transition: all 250ms ease-out;
-  transition: all 250ms ease-out;
-  display: inline-block;
+.emotion-16 h1:hover a.anchor,
+.emotion-16 h2:hover a.anchor,
+.emotion-16 h3:hover a.anchor,
+.emotion-16 h4:hover a.anchor,
+.emotion-16 h5:hover a.anchor,
+.emotion-16 h6:hover a.anchor {
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
-.emotion-16 p a:hover,
-.emotion-16 li a:hover,
-.emotion-16 h1 a:hover,
-.emotion-16 h2 a:hover,
-.emotion-16 h3 a:hover,
-.emotion-16 h4 a:hover,
-.emotion-16 h5 a:hover,
-.emotion-16 h6 a:hover {
-  cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
-}
-
-.emotion-16 p a:active,
-.emotion-16 li a:active,
-.emotion-16 h1 a:active,
-.emotion-16 h2 a:active,
-.emotion-16 h3 a:active,
-.emotion-16 h4 a:active,
-.emotion-16 h5 a:active,
-.emotion-16 h6 a:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-16 p a:visited,
-.emotion-16 li a:visited,
-.emotion-16 h1 a:visited,
-.emotion-16 h2 a:visited,
-.emotion-16 h3 a:visited,
-.emotion-16 h4 a:visited,
-.emotion-16 h5 a:visited,
-.emotion-16 h6 a:visited {
-  color: #1EA7FD;
-}
-
-.emotion-16 figure {
-  clear: both;
-  margin: 1rem 0;
-}
-
-.emotion-16 figure figcaption {
-  font-size: 12px;
-}
-
-.emotion-16 img {
-  display: block;
-  padding: 0 20px;
-  max-width: 100%;
-  position: relative;
-  vertical-align: top;
-  margin: 0 auto;
-}
-
-.emotion-16 img.alignright {
-  float: right;
-  margin-right: 0;
-}
-
-.emotion-16 img.alignleft {
-  float: left;
-  margin-left: 0;
-}
-
-.emotion-16 img.aligncenter {
-  display: block;
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1rem;
-}
-
-.emotion-16 pre:not(.hljs) {
-  line-height: 18px;
-  padding: 11px 1rem;
-  white-space: pre-wrap;
-  color: #333333;
-  background: rgba(0,0,0,.05);
-  border-radius: 3px;
-  margin: 1rem 0;
-}
-
-.emotion-16 pre:not(.hljs) code {
-  color: inherit;
+.emotion-16 h1 tt,
+.emotion-16 h1 code {
   font-size: inherit;
 }
 
-.emotion-16 code {
-  color: #22a699;
-  font-size: 90%;
+.emotion-16 h2 tt,
+.emotion-16 h2 code {
+  font-size: inherit;
 }
 
-.emotion-16 .aside {
-  border: 1px solid #DDDDDD;
-  border-radius: 4px;
-  padding: 1em;
+.emotion-16 h3 tt,
+.emotion-16 h3 code {
+  font-size: inherit;
+}
+
+.emotion-16 h4 tt,
+.emotion-16 h4 code {
+  font-size: inherit;
+}
+
+.emotion-16 h5 tt,
+.emotion-16 h5 code {
+  font-size: inherit;
+}
+
+.emotion-16 h6 tt,
+.emotion-16 h6 code {
+  font-size: inherit;
+}
+
+.emotion-16 p,
+.emotion-16 blockquote,
+.emotion-16 ul,
+.emotion-16 ol,
+.emotion-16 dl,
+.emotion-16 li,
+.emotion-16 table,
+.emotion-16 pre {
+  margin: 15px 0;
+}
+
+.emotion-16 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.05);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-16 body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h1:first-child + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h3:first-child,
+.emotion-16 body > h4:first-child,
+.emotion-16 body > h5:first-child,
+.emotion-16 body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 a:first-child h1,
+.emotion-16 a:first-child h2,
+.emotion-16 a:first-child h3,
+.emotion-16 a:first-child h4,
+.emotion-16 a:first-child h5,
+.emotion-16 a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 h1 p,
+.emotion-16 h2 p,
+.emotion-16 h3 p,
+.emotion-16 h4 p,
+.emotion-16 h5 p,
+.emotion-16 h6 p {
+  margin-top: 0;
+}
+
+.emotion-16 li p.first {
+  display: inline-block;
+}
+
+.emotion-16 ul,
+.emotion-16 ol {
+  padding-left: 30px;
+}
+
+.emotion-16 ul :first-child,
+.emotion-16 ol :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 ul :last-child,
+.emotion-16 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 dl {
+  padding: 0;
+}
+
+.emotion-16 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-16 dl dt:first-child {
+  padding: 0;
+}
+
+.emotion-16 dl dt > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-16 dl dd > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777;
+}
+
+.emotion-16 blockquote > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 blockquote > :last-child {
+  margin-bottom: 0;
 }
 
 .emotion-16 table {
-  font-size: 14px;
   padding: 0;
   border-collapse: collapse;
-  width: 100%;
-  margin: 2rem 0;
 }
 
 .emotion-16 table tr {
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid rgba(0,0,0,.05);
   background-color: white;
   margin: 0;
   padding: 0;
 }
 
 .emotion-16 table tr:nth-child(2n) {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
 }
 
 .emotion-16 table tr th {
   font-weight: bold;
-  border: 1px solid #DDDDDD;
-  border-radius: 3px 3px 0 0;
+  border: 1px solid rgba(0,0,0,.05);
   text-align: left;
   margin: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 6px 13px;
 }
 
 .emotion-16 table tr td {
-  border: 1px solid #ddd;
+  border: 1px solid rgba(0,0,0,.05);
   text-align: left;
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: 6px 13px;
 }
 
 .emotion-16 table tr th :first-child,
-.emotion-16 table tr td:first-child {
+.emotion-16 table tr td :first-child {
   margin-top: 0;
 }
 
 .emotion-16 table tr th :last-child,
-.emotion-16 table tr td:last-child {
+.emotion-16 table tr td :last-child {
   margin-bottom: 0;
+}
+
+.emotion-16 img {
+  max-width: 100%;
+}
+
+.emotion-16 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-16 span.frame > span {
+  border: 1px solid #dddddd;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-16 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-16 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-16 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-16 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-16 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-16 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-16 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-16 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-16 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-16 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-16 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-16 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-16 code,
+.emotion-16 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
 }
 
 .emotion-9 {
@@ -1809,6 +1990,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 .emotion-26 {
   display: block;
   position: relative;
+  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -2045,257 +2227,436 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 
 .emotion-16 {
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+.emotion-16 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-16 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.emotion-16 h3 {
+  font-size: 20px;
+}
+
+.emotion-16 h4 {
+  font-size: 16px;
+}
+
+.emotion-16 h5 {
+  font-size: 14px;
+}
+
+.emotion-16 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-16 pre {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-16 pre pre {
+  padding: 15px;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-16 pre pre code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-16 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-16 pre code,
+.emotion-16 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-16 body > *:first-child {
+  margin-top: 0 !important;
+}
+
+.emotion-16 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-16 a {
+  color: #4183c4;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-16 a.absent {
+  color: #cc0000;
+}
+
+.emotion-16 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 
 .emotion-16 h1,
 .emotion-16 h2,
 .emotion-16 h3,
-.emotion-16 h4 {
-  line-height: 1em;
-}
-
-.emotion-16 h1 + *,
-.emotion-16 h2 + *,
-.emotion-16 h3 + *,
-.emotion-16 h4 + * {
-  margin-top: 0 !important;
-}
-
-.emotion-16 h2:not(:first-child) {
-  margin-top: 2rem;
-}
-
-.emotion-16 hr {
-  margin: 3rem 0;
-}
-
-.emotion-16 hr + * {
-  margin-top: 0 !important;
-}
-
-.emotion-16 h1 {
-  font-size: 32px;
-  margin-bottom: 0.5rem;
-}
-
-.emotion-16 h2 {
-  font-size: 20px;
-  line-height: 28px;
-  margin-bottom: 0.5rem;
-}
-
-.emotion-16 h3 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 28px;
-  color: #333333;
-  margin: 1.5rem 0 0rem;
-}
-
-.emotion-16 h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: #666666;
-  margin: 1.5rem 0 0rem;
-}
-
-.emotion-16 p {
-  margin: 1rem 0;
+.emotion-16 h4,
+.emotion-16 h5,
+.emotion-16 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
   position: relative;
 }
 
-.emotion-16 p:first-of-type:not(:only-of-type) {
+.emotion-16 h2:first-child,
+.emotion-16 h1:first-child,
+.emotion-16 h1:first-child + h2,
+.emotion-16 h3:first-child,
+.emotion-16 h4:first-child,
+.emotion-16 h5:first-child,
+.emotion-16 h6:first-child {
   margin-top: 0;
+  padding-top: 0;
 }
 
-.emotion-16 p:only-of-type {
-  margin: 0;
-}
-
-.emotion-16 ol,
-.emotion-16 ul {
-  list-style-position: outside;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  padding-left: 30px;
-}
-
-.emotion-16 ol li,
-.emotion-16 ul li {
-  margin-bottom: 0.5rem;
-}
-
-.emotion-16 ol {
-  list-style-type: decimal;
-}
-
-.emotion-16 ul {
-  list-style-type: disc;
-}
-
-.emotion-16 p a,
-.emotion-16 li a,
-.emotion-16 h1 a,
-.emotion-16 h2 a,
-.emotion-16 h3 a,
-.emotion-16 h4 a,
-.emotion-16 h5 a,
-.emotion-16 h6 a {
-  color: #1EA7FD;
-  -webkit-transition: all 250ms ease-out;
-  transition: all 250ms ease-out;
-  display: inline-block;
+.emotion-16 h1:hover a.anchor,
+.emotion-16 h2:hover a.anchor,
+.emotion-16 h3:hover a.anchor,
+.emotion-16 h4:hover a.anchor,
+.emotion-16 h5:hover a.anchor,
+.emotion-16 h6:hover a.anchor {
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
-.emotion-16 p a:hover,
-.emotion-16 li a:hover,
-.emotion-16 h1 a:hover,
-.emotion-16 h2 a:hover,
-.emotion-16 h3 a:hover,
-.emotion-16 h4 a:hover,
-.emotion-16 h5 a:hover,
-.emotion-16 h6 a:hover {
-  cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
-}
-
-.emotion-16 p a:active,
-.emotion-16 li a:active,
-.emotion-16 h1 a:active,
-.emotion-16 h2 a:active,
-.emotion-16 h3 a:active,
-.emotion-16 h4 a:active,
-.emotion-16 h5 a:active,
-.emotion-16 h6 a:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-16 p a:visited,
-.emotion-16 li a:visited,
-.emotion-16 h1 a:visited,
-.emotion-16 h2 a:visited,
-.emotion-16 h3 a:visited,
-.emotion-16 h4 a:visited,
-.emotion-16 h5 a:visited,
-.emotion-16 h6 a:visited {
-  color: #1EA7FD;
-}
-
-.emotion-16 figure {
-  clear: both;
-  margin: 1rem 0;
-}
-
-.emotion-16 figure figcaption {
-  font-size: 12px;
-}
-
-.emotion-16 img {
-  display: block;
-  padding: 0 20px;
-  max-width: 100%;
-  position: relative;
-  vertical-align: top;
-  margin: 0 auto;
-}
-
-.emotion-16 img.alignright {
-  float: right;
-  margin-right: 0;
-}
-
-.emotion-16 img.alignleft {
-  float: left;
-  margin-left: 0;
-}
-
-.emotion-16 img.aligncenter {
-  display: block;
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1rem;
-}
-
-.emotion-16 pre:not(.hljs) {
-  line-height: 18px;
-  padding: 11px 1rem;
-  white-space: pre-wrap;
-  color: #333333;
-  background: rgba(0,0,0,.05);
-  border-radius: 3px;
-  margin: 1rem 0;
-}
-
-.emotion-16 pre:not(.hljs) code {
-  color: inherit;
+.emotion-16 h1 tt,
+.emotion-16 h1 code {
   font-size: inherit;
 }
 
-.emotion-16 code {
-  color: #22a699;
-  font-size: 90%;
+.emotion-16 h2 tt,
+.emotion-16 h2 code {
+  font-size: inherit;
 }
 
-.emotion-16 .aside {
-  border: 1px solid #DDDDDD;
-  border-radius: 4px;
-  padding: 1em;
+.emotion-16 h3 tt,
+.emotion-16 h3 code {
+  font-size: inherit;
+}
+
+.emotion-16 h4 tt,
+.emotion-16 h4 code {
+  font-size: inherit;
+}
+
+.emotion-16 h5 tt,
+.emotion-16 h5 code {
+  font-size: inherit;
+}
+
+.emotion-16 h6 tt,
+.emotion-16 h6 code {
+  font-size: inherit;
+}
+
+.emotion-16 p,
+.emotion-16 blockquote,
+.emotion-16 ul,
+.emotion-16 ol,
+.emotion-16 dl,
+.emotion-16 li,
+.emotion-16 table,
+.emotion-16 pre {
+  margin: 15px 0;
+}
+
+.emotion-16 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.05);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-16 body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h1:first-child + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h3:first-child,
+.emotion-16 body > h4:first-child,
+.emotion-16 body > h5:first-child,
+.emotion-16 body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 a:first-child h1,
+.emotion-16 a:first-child h2,
+.emotion-16 a:first-child h3,
+.emotion-16 a:first-child h4,
+.emotion-16 a:first-child h5,
+.emotion-16 a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 h1 p,
+.emotion-16 h2 p,
+.emotion-16 h3 p,
+.emotion-16 h4 p,
+.emotion-16 h5 p,
+.emotion-16 h6 p {
+  margin-top: 0;
+}
+
+.emotion-16 li p.first {
+  display: inline-block;
+}
+
+.emotion-16 ul,
+.emotion-16 ol {
+  padding-left: 30px;
+}
+
+.emotion-16 ul :first-child,
+.emotion-16 ol :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 ul :last-child,
+.emotion-16 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 dl {
+  padding: 0;
+}
+
+.emotion-16 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-16 dl dt:first-child {
+  padding: 0;
+}
+
+.emotion-16 dl dt > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-16 dl dd > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777;
+}
+
+.emotion-16 blockquote > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 blockquote > :last-child {
+  margin-bottom: 0;
 }
 
 .emotion-16 table {
-  font-size: 14px;
   padding: 0;
   border-collapse: collapse;
-  width: 100%;
-  margin: 2rem 0;
 }
 
 .emotion-16 table tr {
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid rgba(0,0,0,.05);
   background-color: white;
   margin: 0;
   padding: 0;
 }
 
 .emotion-16 table tr:nth-child(2n) {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
 }
 
 .emotion-16 table tr th {
   font-weight: bold;
-  border: 1px solid #DDDDDD;
-  border-radius: 3px 3px 0 0;
+  border: 1px solid rgba(0,0,0,.05);
   text-align: left;
   margin: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 6px 13px;
 }
 
 .emotion-16 table tr td {
-  border: 1px solid #ddd;
+  border: 1px solid rgba(0,0,0,.05);
   text-align: left;
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: 6px 13px;
 }
 
 .emotion-16 table tr th :first-child,
-.emotion-16 table tr td:first-child {
+.emotion-16 table tr td :first-child {
   margin-top: 0;
 }
 
 .emotion-16 table tr th :last-child,
-.emotion-16 table tr td:last-child {
+.emotion-16 table tr td :last-child {
   margin-bottom: 0;
+}
+
+.emotion-16 img {
+  max-width: 100%;
+}
+
+.emotion-16 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-16 span.frame > span {
+  border: 1px solid #dddddd;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-16 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-16 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-16 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-16 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-16 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-16 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-16 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-16 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-16 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-16 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-16 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-16 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-16 code,
+.emotion-16 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
 }
 
 <div
