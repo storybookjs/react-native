@@ -14,8 +14,8 @@ const Swatch = styled.div(({ theme }) => ({
   top: '50%',
   transform: 'translateY(-50%)',
   left: 6,
-  width: 20,
-  height: 20,
+  width: 16,
+  height: 16,
   boxShadow: `${theme.mainBorderColor} 0 0 0 1px inset`,
   borderRadius: '1rem',
 }));

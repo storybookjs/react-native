@@ -13,7 +13,7 @@ const Item = styled.div(({ theme }) => ({
   margin: '0 6px',
   padding: '5px',
   border: `1px solid ${theme.mainBorderColor}`,
-  borderRadius: 4,
+  borderRadius: theme.mainBorderRadius,
 }));
 
 function Tags({ tags }) {
