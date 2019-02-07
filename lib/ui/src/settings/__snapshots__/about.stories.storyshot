@@ -149,13 +149,60 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 .emotion-24 {
   display: block;
   position: relative;
-  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   width: 100%;
+}
+
+.emotion-13 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-13 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-13:hover,
+.emotion-13:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-13:hover svg path,
+.emotion-13:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-13:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-13:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-13 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
 }
 
 .emotion-21 {
@@ -295,54 +342,6 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   font-weight: 700;
   font-size: 14px;
   text-align: center;
-}
-
-.emotion-13 {
-  display: inline-block;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #1EA7FD;
-}
-
-.emotion-13 svg path {
-  fill: #1EA7FD;
-}
-
-.emotion-13:hover,
-.emotion-13:focus {
-  cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
-  color: #0297f5;
-}
-
-.emotion-13:hover svg path,
-.emotion-13:focus svg path {
-  fill: #0297f5;
-}
-
-.emotion-13:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  color: #028ee6;
-}
-
-.emotion-13:active svg path {
-  fill: #028ee6;
-}
-
-.emotion-13 svg {
-  display: inline-block;
-  height: 1em;
-  width: 1em;
-  vertical-align: text-top;
-  position: relative;
-  bottom: -0.125em;
-  margin-right: 0.4em;
 }
 
 <div
@@ -660,7 +659,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 .emotion-40 {
   display: block;
   position: relative;
-  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -1811,7 +1809,6 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 .emotion-26 {
   display: block;
   position: relative;
-  font-size: 14px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;

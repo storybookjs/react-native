@@ -253,6 +253,54 @@ exports[`Storyshots Basics|Link styled links 1`] = `
   fill: currentColor;
 }
 
+.emotion-1 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-1 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-1:hover svg path,
+.emotion-1:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-1:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-1:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
 .emotion-3 {
   display: inline-block;
   -webkit-transition: all 150ms ease-out;
@@ -320,54 +368,6 @@ exports[`Storyshots Basics|Link styled links 1`] = `
 
 .emotion-3:active svg path {
   fill: #444444;
-}
-
-.emotion-1 {
-  display: inline-block;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #1EA7FD;
-}
-
-.emotion-1 svg path {
-  fill: #1EA7FD;
-}
-
-.emotion-1:hover,
-.emotion-1:focus {
-  cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
-  color: #0297f5;
-}
-
-.emotion-1:hover svg path,
-.emotion-1:focus svg path {
-  fill: #0297f5;
-}
-
-.emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  color: #028ee6;
-}
-
-.emotion-1:active svg path {
-  fill: #028ee6;
-}
-
-.emotion-1 svg {
-  display: inline-block;
-  height: 1em;
-  width: 1em;
-  vertical-align: text-top;
-  position: relative;
-  bottom: -0.125em;
-  margin-right: 0.4em;
 }
 
 .emotion-5 {
