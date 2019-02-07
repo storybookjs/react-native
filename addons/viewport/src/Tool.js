@@ -24,7 +24,7 @@ const createItem = memoize(1000)((id, name, value, change) => ({
   value,
 }));
 
-const flip = ({ width, height }) => ({ height: width, widht: height });
+const flip = ({ width, height }) => ({ height: width, width: height });
 
 const getState = memoize(10)((props, state, change) => {
   const data = props.api.getCurrentStoryData();
