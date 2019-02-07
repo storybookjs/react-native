@@ -1,7 +1,11 @@
 import { fail, danger } from 'danger';
-import { flatten, intersection, isEmpty } from 'lodash';
+import { execSync } from 'child_process';
 
-const pkg = require('./package.json'); // eslint-disable-line import/newline-after-import
+execSync('npm install lodash');
+
+const { flatten, intersection, isEmpty } = require('lodash');
+
+const pkg = require('../../package.json'); // eslint-disable-line import/newline-after-import
 const prLogConfig = pkg['pr-log'];
 
 const Versions = {
@@ -20,18 +24,11 @@ const checkRequiredLabels = labels => {
     branchVersion === Versions.PATCH ? 'feature request' : [],
   ]);
 
-  const requiredLabels = flatten([
-    prLogConfig.skipLabels || [],
-    (prLogConfig.validLabels || []).map(keyVal => keyVal[0]),
-  ]);
+  const requiredLabels = flatten([prLogConfig.skipLabels || [], (prLogConfig.validLabels || []).map(keyVal => keyVal[0])]);
 
   const blockingLabels = intersection(forbiddenLabels, labels);
   if (!isEmpty(blockingLabels)) {
-    fail(
-      `PR is marked with ${blockingLabels.map(label => `"${label}"`).join(', ')} label${
-        blockingLabels.length > 1 ? 's' : ''
-      }.`
-    );
+    fail(`PR is marked with ${blockingLabels.map(label => `"${label}"`).join(', ')} label${blockingLabels.length > 1 ? 's' : ''}.`);
   }
 
   const foundLabels = intersection(requiredLabels, labels);
