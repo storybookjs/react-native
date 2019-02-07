@@ -62,8 +62,8 @@ export const color = {
 
   // Status
   positive: '#66BF3C',
-  danger: '#FC521F',
   negative: '#FF4400',
+  warning: '#E69D00',
 };
 
 export const background = {

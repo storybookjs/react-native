@@ -10,7 +10,7 @@ const Container = styled.div({
 });
 
 const List = styled.div(({ theme }) => ({
-  boxShadow: `${theme.color.border} 0 -1px 0 0 inset`,
+  boxShadow: `${theme.mainBorderColor} 0 -1px 0 0 inset`,
   background: '#f8f8fc',
   flexWrap: 'wrap',
   display: 'flex',
