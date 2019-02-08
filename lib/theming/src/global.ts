@@ -95,7 +95,7 @@ export const createGlobal = memoize(1)(
       ...resetStyles,
       body: {
         ...resetStyles.body,
-        color: color.darkest,
+        color: color.defaultText,
         background: background.app,
       },
 

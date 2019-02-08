@@ -46,6 +46,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   display: inline;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -68,14 +69,6 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 
 .emotion-0:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-0 > span {
@@ -177,6 +170,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -199,14 +193,6 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 
 .emotion-2:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-2:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-2:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-2 > span {
@@ -299,6 +285,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   width: 100%;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -321,14 +308,6 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 
 .emotion-4:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-4:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-4:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-4 > span {
@@ -470,6 +449,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   width: 100%;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -492,14 +472,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 
 .emotion-6:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-6:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-6:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6 > span {
@@ -593,6 +565,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   width: 100%;
   box-shadow: #FF4400 0 0 0 1px inset !important;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -615,14 +588,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 
 .emotion-0:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-0 > span {
@@ -716,6 +681,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   width: 100%;
   box-shadow: #E69D00 0 0 0 1px inset;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -738,14 +704,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 
 .emotion-2:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-2:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-2:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-2 > span {
@@ -839,6 +797,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   width: 100%;
   box-shadow: #66BF3C 0 0 0 1px inset !important;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -861,14 +820,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 
 .emotion-4:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-4:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-4:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-4 > span {

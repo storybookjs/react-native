@@ -1769,14 +1769,6 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-0:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-0 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -1853,14 +1845,6 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
 
 .emotion-0:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-0 > span {
@@ -3035,6 +3019,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   display: inline;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3057,14 +3042,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 
 .emotion-88:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-88:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-88:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-88 > span {
@@ -3549,6 +3526,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   display: inline;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3571,14 +3549,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 
 .emotion-88:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-88:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-88:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-88 > span {
@@ -4582,14 +4552,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-5:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-5 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -4634,14 +4596,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-5:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-8 {
@@ -5033,14 +4987,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-5:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-5 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -5085,14 +5031,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-5:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-8 {
@@ -5878,14 +5816,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-5:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-5 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -5930,14 +5860,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-5:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-14 {
@@ -6450,14 +6372,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-5:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-5 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -6502,14 +6416,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-5:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-14 {
@@ -7253,14 +7159,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-3:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-3:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-3 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -7305,14 +7203,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-3:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-3:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5 {
@@ -7409,14 +7299,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-3:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-3:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-3 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -7461,14 +7343,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-3:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-3:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5 {
@@ -7639,14 +7513,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-5:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-5 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -7691,14 +7557,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-5:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5:after {
@@ -7836,14 +7694,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-5:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-5 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -7888,14 +7738,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-5:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5:after {
@@ -8093,14 +7935,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-5:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-5 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -8145,14 +7979,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-5:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-7 {
@@ -8279,14 +8105,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-5:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-5 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -8331,14 +8149,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-5:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-7 {

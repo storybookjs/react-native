@@ -6,8 +6,6 @@ export default create({
   // Storybook-specific color palette
   colorPrimary: '#FF4785', // coral
   colorSecondary: '#1EA7FD', // ocean
-  colorTertiary: '#FAFBFC', // neutral buttons
-  colorAncillary: '#22a699', // for code
 
   // UI
   appBg: background.app,
