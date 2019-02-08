@@ -50,6 +50,7 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   display: inline;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -72,14 +73,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 
 .emotion-3:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-3:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-3:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-3 > span {
@@ -188,14 +181,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-0:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-0 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -294,14 +279,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 
 .emotion-1:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-1:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-1:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-1 > span {
@@ -405,14 +382,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-2:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-2:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-2 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -514,14 +483,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-4:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-4:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-4 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -561,14 +522,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-4:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-4:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5 {
@@ -627,14 +580,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 
 .emotion-5:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5 > span {
@@ -696,14 +641,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-5:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-5:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-5 svg path {
@@ -791,14 +728,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-6:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-6:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-6 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -858,14 +787,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-6:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-6:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-6 svg path {
@@ -948,14 +869,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 
 .emotion-7:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-7:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-7:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-7 > span {
@@ -1431,14 +1344,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-23:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-23:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-23 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -1537,14 +1442,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 
 .emotion-24:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-24:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-24:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-24 > span {
@@ -1648,14 +1545,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-25:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-25:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-25 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -1757,14 +1646,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-26:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-26:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-26 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -1804,14 +1685,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-26:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-26:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-27 {
@@ -1867,14 +1740,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 
 .emotion-27:hover {
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-27:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-27:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 .emotion-27 > span {
@@ -1985,14 +1850,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
 }
 
-.emotion-30:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-30:focus:hover {
-  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
-}
-
 .emotion-30 > span {
   -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
   -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
@@ -2037,14 +1894,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   background: #DDDDDD;
   box-shadow: #DDDDDD 0 0 0 1px inset;
   color: #333333;
-}
-
-.emotion-30:focus {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.4) 0 1px 9px 2px;
-}
-
-.emotion-30:focus:hover {
-  box-shadow: #DDDDDD 0 0 0 1px inset,rgba(30,167,253,0.2) 0 8px 18px 0px;
 }
 
 <div>
