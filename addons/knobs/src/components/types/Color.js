@@ -81,7 +81,7 @@ class ColorType extends React.Component {
 
     return (
       <Button type="button" name={knob.name} onClick={this.handleClick} size="flex">
-        {knob.value}
+        {knob.value.toUpperCase()}
         <Swatch style={colorStyle} />
         {displayColorPicker ? (
           <Popover

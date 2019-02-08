@@ -5,20 +5,25 @@ import { baseFonts, monoFonts, color, background, typography, Theme } from '../b
 import { easing, animation } from '../animation';
 
 const main = {
+  // App color
+  appBgColor: background.app, // TODO implement this
+
+  // Layout
+  mainBorderColor: color.border,
+  mainBorderRadius: 4,
+
   // Typography
   mainTextFace: baseFonts.fontFamily,
   monoTextFace: monoFonts.fontFamily,
   mainTextSize: typography.size.s2 - 1, // 13px
 
-  // Color
+  // Text colors (dark on light)
   mainTextColor: color.darkest,
-  mainBgColor: color.lightest,
-  inverseTextColor: color.lightest,
-  inverseBgColor: color.mediumdark,
+  mainTextBgColor: color.lightest,
 
-  // Layout
-  mainBorderColor: color.border,
-  mainBorderRadius: 4,
+  // Text colors (light on dark)
+  inverseTextColor: color.lightest,
+  inverseTextBgColor: color.mediumdark,
 };
 
 const bar = {

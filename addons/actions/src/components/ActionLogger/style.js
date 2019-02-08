@@ -18,7 +18,7 @@ export const Action = styled.div({
 });
 
 export const Counter = styled.div(({ theme }) => ({
-  backgroundColor: theme.inverseBgColor,
+  backgroundColor: theme.inverseTextBgColor,
   color: theme.inverseTextColor,
   fontSize: theme.typography.size.s1,
   fontWeight: theme.typography.weight.bold,
