@@ -46,7 +46,6 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   display: inline;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -178,7 +177,6 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -301,7 +299,6 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   width: 100%;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -473,7 +470,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   width: 100%;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -597,7 +593,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   width: 100%;
   box-shadow: #FF4400 0 0 0 1px inset !important;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -721,7 +716,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   width: 100%;
   box-shadow: #E69D00 0 0 0 1px inset;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -845,7 +839,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   width: 100%;
   box-shadow: #66BF3C 0 0 0 1px inset !important;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1021,7 +1014,7 @@ exports[`Storyshots Basics|Form/Field field 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1130,7 +1123,7 @@ exports[`Storyshots Basics|Form/Input alignment 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1182,7 +1175,7 @@ exports[`Storyshots Basics|Form/Input alignment 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1234,7 +1227,7 @@ exports[`Storyshots Basics|Form/Input alignment 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1332,7 +1325,7 @@ exports[`Storyshots Basics|Form/Input sizes 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1384,7 +1377,7 @@ exports[`Storyshots Basics|Form/Input sizes 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1438,7 +1431,7 @@ exports[`Storyshots Basics|Form/Input sizes 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1536,7 +1529,7 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1588,7 +1581,7 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1641,7 +1634,7 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1694,7 +1687,7 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1794,7 +1787,7 @@ exports[`Storyshots Basics|Form/Select sizes 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1860,7 +1853,7 @@ exports[`Storyshots Basics|Form/Select sizes 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -1921,7 +1914,7 @@ exports[`Storyshots Basics|Form/Select sizes 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2067,7 +2060,7 @@ exports[`Storyshots Basics|Form/Select validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2126,7 +2119,7 @@ exports[`Storyshots Basics|Form/Select validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2186,7 +2179,7 @@ exports[`Storyshots Basics|Form/Select validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2246,7 +2239,7 @@ exports[`Storyshots Basics|Form/Select validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2431,7 +2424,7 @@ exports[`Storyshots Basics|Form/Textarea alignment 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2483,7 +2476,7 @@ exports[`Storyshots Basics|Form/Textarea alignment 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2535,7 +2528,7 @@ exports[`Storyshots Basics|Form/Textarea alignment 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2642,7 +2635,7 @@ exports[`Storyshots Basics|Form/Textarea sizes 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2694,7 +2687,7 @@ exports[`Storyshots Basics|Form/Textarea sizes 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2748,7 +2741,7 @@ exports[`Storyshots Basics|Form/Textarea sizes 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2852,7 +2845,7 @@ exports[`Storyshots Basics|Form/Textarea validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2904,7 +2897,7 @@ exports[`Storyshots Basics|Form/Textarea validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2957,7 +2950,7 @@ exports[`Storyshots Basics|Form/Textarea validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -3010,7 +3003,7 @@ exports[`Storyshots Basics|Form/Textarea validations 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;

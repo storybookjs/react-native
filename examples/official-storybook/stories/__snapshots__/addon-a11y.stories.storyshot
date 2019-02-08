@@ -128,7 +128,7 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -212,7 +212,7 @@ exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -290,7 +290,7 @@ exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;

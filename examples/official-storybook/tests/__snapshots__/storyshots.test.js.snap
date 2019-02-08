@@ -10,7 +10,6 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -26,7 +25,6 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #666666;
-  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -59,7 +57,6 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -75,7 +72,6 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #666666;
-  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -136,7 +132,6 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -152,7 +147,6 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #666666;
-  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -185,7 +179,6 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -201,7 +194,6 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #666666;
-  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -2937,7 +2929,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -3043,7 +3035,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   display: inline;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3452,7 +3443,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: inherit;
+  color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -3558,7 +3549,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   display: inline;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -4180,7 +4170,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 }
 
 .emotion-5:hover {
-  background: #e3f3ff;
+  background: rgba(0,0,0,.05);
 }
 
 .emotion-5:hover svg {
@@ -4269,7 +4259,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 }
 
 .emotion-5:hover {
-  background: #e3f3ff;
+  background: rgba(0,0,0,.05);
 }
 
 .emotion-5:hover svg {

@@ -46,7 +46,7 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
 }
 
 .emotion-5:hover {
-  background: #e3f3ff;
+  background: rgba(0,0,0,.05);
 }
 
 .emotion-5:hover svg {
@@ -219,7 +219,7 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 }
 
 .emotion-2:hover {
-  background: #e3f3ff;
+  background: rgba(0,0,0,.05);
 }
 
 .emotion-2:hover svg {
@@ -352,7 +352,7 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 }
 
 .emotion-37:hover {
-  background: #e3f3ff;
+  background: rgba(0,0,0,.05);
 }
 
 .emotion-37:hover svg {
@@ -589,7 +589,7 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
 }
 
 .emotion-2:hover {
-  background: #e3f3ff;
+  background: rgba(0,0,0,.05);
 }
 
 .emotion-2:hover svg {
@@ -676,7 +676,7 @@ exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
 }
 
 .emotion-5:hover {
-  background: #e3f3ff;
+  background: rgba(0,0,0,.05);
 }
 
 .emotion-5:hover svg {
@@ -808,7 +808,7 @@ exports[`Storyshots basics|Tooltip/ListItem disabled 1`] = `
 }
 
 .emotion-5:hover {
-  background: #e3f3ff;
+  background: rgba(0,0,0,.05);
 }
 
 .emotion-5:hover svg {
@@ -947,7 +947,7 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
 }
 
 .emotion-2:hover {
-  background: #e3f3ff;
+  background: rgba(0,0,0,.05);
 }
 
 .emotion-2:hover svg {
@@ -1029,7 +1029,7 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions 1`] = `
 }
 
 .emotion-5:hover {
-  background: #e3f3ff;
+  background: rgba(0,0,0,.05);
 }
 
 .emotion-5:hover svg {
@@ -1140,7 +1140,7 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
 }
 
 .emotion-5:hover {
-  background: #e3f3ff;
+  background: rgba(0,0,0,.05);
 }
 
 .emotion-5:hover svg {

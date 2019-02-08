@@ -340,7 +340,6 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   height: 40px;
   padding: 10px 20px;
   margin-bottom: 24px;
-  border-radius: 4px;
   border: 1px solid rgba(0,0,0,.1);
   text-align: center;
 }
@@ -1325,7 +1324,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   height: 40px;
   padding: 10px 20px;
   margin-bottom: 24px;
-  border-radius: 4px;
   border: 1px solid rgba(0,0,0,.1);
   text-align: center;
 }
@@ -1340,8 +1338,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,.1);
-  border-radius: 4px;
-  background: #FFFFFF;
 }
 
 .emotion-19 {
@@ -1351,6 +1347,152 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 
 .emotion-19 code {
   padding-right: 10px;
+}
+
+.emotion-19 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-19 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-19 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-19 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-19 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-19 * .token.string {
+  color: #A31515;
+}
+
+.emotion-19 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-19 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-19 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-19 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-19 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-19 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-19 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-19 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-19 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-19 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-19 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-19 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-19 * .token.function {
+  color: #393A34;
+}
+
+.emotion-19 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-19 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-19 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-19 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-19 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-19 * .token.tag {
+  color: #800000;
+}
+
+.emotion-19 * .token.selector {
+  color: #800000;
+}
+
+.emotion-19 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-19 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-19 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-19 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-19 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-19 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-19 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-19 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-19 * .namespace {
+  opacity: 0.7;
 }
 
 .emotion-18 {
@@ -1383,7 +1525,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #FFFFFF;
 }
 
 .emotion-20 {
@@ -1399,7 +1540,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #666666;
-  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -1966,7 +2106,6 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   height: 40px;
   padding: 10px 20px;
   margin-bottom: 24px;
-  border-radius: 4px;
   border: 1px solid rgba(0,0,0,.1);
   text-align: center;
 }
