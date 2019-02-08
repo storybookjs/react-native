@@ -66,7 +66,6 @@ export const color = {
 
 export const background = {
   app: '#F6F9FC',
-  appInverse: '#7A8997',
   preview: color.lightest,
   select: '#e3f3ff',
 
@@ -99,41 +98,33 @@ export const typography = {
 export type Color = typeof color;
 export type Background = typeof background;
 export type Typography = typeof typography;
+export type Easing = typeof easing;
+export type Animation = typeof animation;
 
 export interface Theme {
-  color: typeof color;
-  background: typeof background;
-  typography: typeof typography;
-  easing: typeof easing;
-  animation: typeof animation;
+  color: Color;
+  background: Background;
+  typography: Typography;
+  easing: Easing;
+  animation: Animation;
 
-  mainBackground: string;
-  mainBorder: string;
+  // main
   mainBorderColor: string;
   mainBorderRadius: number;
-  mainFill: string;
   mainTextFace: string;
-  mainTextColor: string;
-  mainTextSize: number;
-
   monoTextFace: string;
+  mainTextSize: number;
+  mainTextColor: string;
+  mainTextBgColor: string;
+  inverseTextColor: string;
+  inverseTextBgColor: string;
 
-  dimmedTextColor: string;
   inputFill: string;
 
-  barFill: string;
   barTextColor: string;
   barSelectedColor: string;
 
   layoutMargin: number;
-
-  asideFill: string;
-  asideSelected: {
-    [key: string]: string | number;
-  };
-  asideHover: {
-    [key: string]: string | number;
-  };
 
   brand: (() => object) | null;
 
@@ -141,10 +132,5 @@ export interface Theme {
     [key: string]: string | object;
   };
 
-  addonActionsTheme: {
-    [key: string]: string | object;
-  };
-
-  // unknown if still used
-  menuHighlightColor: string;
+  [key: string]: any;
 }

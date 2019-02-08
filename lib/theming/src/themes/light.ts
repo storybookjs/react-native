@@ -1,14 +1,13 @@
-import { chromeLight } from 'react-inspector';
-import { create as createSyntax } from './light-syntax';
+import { create } from '../create';
 
-import { baseFonts, monoFonts, color, background, typography, Theme } from '../base';
-import { easing, animation } from '../animation';
+import { color, baseFonts, monoFonts, typography, background } from '../base';
 
-const main = {
-  // App color
-  appBgColor: background.app, // TODO implement this
+export default create({
+  primary: '#FF4785', // coral
+  secondary: '#1EA7FD', // ocean
+  tertiary: '#FAFBFC',
+  ancillary: '#22a699', // for code
 
-  // Layout
   mainBorderColor: color.border,
   mainBorderRadius: 4,
 
@@ -18,57 +17,17 @@ const main = {
   mainTextSize: typography.size.s2 - 1, // 13px
 
   // Text colors (dark on light)
+  mainAppBackground: background.app,
   mainTextColor: color.darkest,
   mainTextBgColor: color.lightest,
 
   // Text colors (light on dark)
   inverseTextColor: color.lightest,
   inverseTextBgColor: color.mediumdark,
-};
 
-const bar = {
-  // Toolbars, ActionBars, and other bars
-  barFill: color.lightest,
   barTextColor: color.mediumdark,
   barSelectedColor: color.secondary,
-};
 
-const layout = {
-  layoutMargin: 10,
-};
-
-const form = {
-  // Style Inputs/Textareas
   inputFill: color.lightest,
   inputBorder: color.border,
-};
-
-const sidebar = {
-  // Sidebar states
-};
-
-const light: Theme = {
-  ...main,
-  ...bar,
-  ...layout,
-  ...form,
-  ...sidebar,
-
-  // Official global style vars
-  // Used in themed components
-  color,
-  background,
-  typography,
-  easing,
-  animation,
-
-  brand: null,
-
-  addonActionsTheme: {
-    ...chromeLight,
-    BASE_FONT_FAMILY: monoFonts.fontFamily,
-    BASE_BACKGROUND_COLOR: 'transparent',
-  },
-};
-
-export default light;
+});
