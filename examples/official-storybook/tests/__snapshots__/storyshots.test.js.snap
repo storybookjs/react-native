@@ -2752,6 +2752,10 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -2855,6 +2859,10 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   fill: #444444;
 }
 
+.emotion-97 {
+  display: block;
+}
+
 .emotion-96 {
   font-size: 14px;
   padding: 3rem 20px;
@@ -2929,7 +2937,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #333333;
+  color: inherit;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -2980,6 +2988,10 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-15 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   opacity: 0;
   -webkit-align-self: center;
@@ -3255,6 +3267,10 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -3358,6 +3374,10 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   fill: #444444;
 }
 
+.emotion-97 {
+  display: block;
+}
+
 .emotion-96 {
   font-size: 14px;
   padding: 3rem 20px;
@@ -3432,7 +3452,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #333333;
+  color: inherit;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
@@ -3483,6 +3503,10 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-15 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   opacity: 0;
   -webkit-align-self: center;
@@ -3650,9 +3674,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
       >
         <svg
           class="emotion-4"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-3"
@@ -3666,7 +3688,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
     class="emotion-98"
   >
     <div
-      class="emotion-4"
+      class="emotion-97"
       role="tabpanel"
     >
       <div
@@ -3711,9 +3733,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -3738,9 +3758,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -3765,9 +3783,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -3792,9 +3808,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -3819,9 +3833,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -3846,9 +3858,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -3873,9 +3883,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -3900,9 +3908,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -3927,9 +3933,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -3954,9 +3958,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -3981,9 +3983,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -4008,9 +4008,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -4035,9 +4033,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -4062,9 +4058,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -4089,9 +4083,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -4196,6 +4188,10 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 }
 
 .emotion-1 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   height: 10px;
   width: 10px;
@@ -4281,6 +4277,10 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 }
 
 .emotion-1 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   height: 10px;
   width: 10px;
@@ -4328,9 +4328,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
     >
       <svg
         class="emotion-1"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-0"
@@ -4435,6 +4433,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -4666,6 +4668,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 .emotion-10 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -4878,6 +4884,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -5109,6 +5119,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 .emotion-10 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -5345,9 +5359,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       >
         <svg
           class="emotion-4"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-3"
@@ -5368,9 +5380,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5389,9 +5399,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5410,9 +5418,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5431,9 +5437,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5452,9 +5456,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5473,9 +5475,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5494,9 +5494,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5515,9 +5513,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5536,9 +5532,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5557,9 +5551,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5578,9 +5570,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5599,9 +5589,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5620,9 +5608,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5641,9 +5627,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5662,9 +5646,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5683,9 +5665,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5704,9 +5684,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       />
       <svg
         class="emotion-10"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -5751,6 +5729,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 
 exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -5980,7 +5962,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 
 .emotion-14 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -6160,6 +6142,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-18 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -6211,6 +6197,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-23 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -6251,6 +6241,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-28 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -6275,6 +6269,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-43 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -6303,6 +6301,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -6532,7 +6534,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 
 .emotion-14 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -6712,6 +6714,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-18 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -6763,6 +6769,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-23 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -6803,6 +6813,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-28 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -6827,6 +6841,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 .emotion-43 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -6919,9 +6937,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
       >
         <svg
           class="emotion-4"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-3"
@@ -6946,9 +6962,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
       />
       <svg
         class="emotion-4"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -6962,9 +6976,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
       >
         <svg
           class="emotion-4"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-3"
@@ -6996,9 +7008,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
           />
           <svg
             class="emotion-18"
-            height="20px"
             viewBox="0 0 1024 1024"
-            width="20px"
           >
             <path
               class="emotion-3"
@@ -7028,9 +7038,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
             />
             <svg
               class="emotion-23"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -7057,9 +7065,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
             />
             <svg
               class="emotion-28"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-3"
@@ -7096,9 +7102,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
           />
           <svg
             class="emotion-18"
-            height="20px"
             viewBox="0 0 1024 1024"
-            width="20px"
           >
             <path
               class="emotion-3"
@@ -7134,9 +7138,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
           />
           <svg
             class="emotion-43"
-            height="20px"
             viewBox="0 0 1024 1024"
-            width="20px"
           >
             <path
               class="emotion-3"
@@ -7183,6 +7185,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 
 exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -7335,6 +7341,10 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -7502,9 +7512,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
     >
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -7518,6 +7526,10 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
 
 exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -7711,6 +7723,10 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -7965,9 +7981,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
     >
       <svg
         class="emotion-4"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -7981,6 +7995,10 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 
 exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -8163,6 +8181,10 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -8406,9 +8428,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
     >
       <svg
         class="emotion-4"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-3"
@@ -8454,6 +8474,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -8510,6 +8534,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -8544,9 +8572,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
     />
     <svg
       class="emotion-2"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-1"
@@ -8610,6 +8636,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -8669,6 +8699,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -8690,9 +8724,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
     />
     <svg
       class="emotion-2"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-1"
@@ -8753,6 +8785,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -8809,6 +8845,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -8830,9 +8870,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
     />
     <svg
       class="emotion-2"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-1"
@@ -8905,6 +8943,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9008,6 +9050,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9064,9 +9110,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
     />
     <svg
       class="emotion-2"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-1"
@@ -9130,6 +9174,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
 }
 
 .emotion-14 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9183,6 +9231,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
 }
 
 .emotion-18 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9207,6 +9259,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9322,6 +9378,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
 }
 
 .emotion-14 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9375,6 +9435,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
 }
 
 .emotion-18 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9399,6 +9463,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9477,9 +9545,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -9498,9 +9564,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -9519,9 +9583,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -9540,9 +9602,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
       />
       <svg
         class="emotion-14"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -9561,9 +9621,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
       />
       <svg
         class="emotion-18"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -9626,6 +9684,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9683,6 +9745,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9704,9 +9770,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
     />
     <svg
       class="emotion-2"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-1"
@@ -9740,6 +9804,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9796,6 +9864,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9844,9 +9916,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
     />
     <svg
       class="emotion-2"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-1"
@@ -9894,6 +9964,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9950,6 +10024,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -9984,9 +10062,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
     />
     <svg
       class="emotion-2"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-1"
@@ -10002,6 +10078,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
 
 exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -10096,7 +10176,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
 
 .emotion-6 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -10124,6 +10204,10 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -10218,7 +10302,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
 
 .emotion-6 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -10261,9 +10345,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
     />
     <svg
       class="emotion-2"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-1"
@@ -10277,9 +10359,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
     >
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -10293,6 +10373,10 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
 
 exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -10387,7 +10471,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
 
 .emotion-6 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -10415,6 +10499,10 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -10509,7 +10597,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
 
 .emotion-6 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -10551,9 +10639,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
     />
     <svg
       class="emotion-2"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-1"
@@ -10567,9 +10653,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
     >
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -10583,6 +10667,10 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
 
 exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -10677,7 +10765,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
 
 .emotion-6 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -10705,6 +10793,10 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -10799,7 +10891,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
 
 .emotion-6 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -10841,9 +10933,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
     />
     <svg
       class="emotion-2"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-1"
@@ -10857,9 +10947,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
     >
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11100,6 +11188,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -11316,6 +11408,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -11488,9 +11584,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11509,9 +11603,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11530,9 +11622,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11551,9 +11641,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11572,9 +11660,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11593,9 +11679,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11614,9 +11698,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11635,9 +11717,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11656,9 +11736,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11677,9 +11755,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11698,9 +11774,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11719,9 +11793,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11740,9 +11812,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11761,9 +11831,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11782,9 +11850,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11803,9 +11869,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11824,9 +11888,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -11843,6 +11905,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
 
 exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -11862,7 +11928,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 
 .emotion-6 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -12029,6 +12095,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 }
 
 .emotion-19 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -12054,6 +12124,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 }
 
 .emotion-24 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -12094,6 +12168,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 }
 
 .emotion-14 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -12118,6 +12196,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 }
 
 .emotion-9 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -12191,6 +12273,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -12210,7 +12296,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 
 .emotion-6 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -12377,6 +12463,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 }
 
 .emotion-19 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -12402,6 +12492,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 }
 
 .emotion-24 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -12442,6 +12536,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 }
 
 .emotion-14 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -12466,6 +12564,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 }
 
 .emotion-9 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -12556,9 +12658,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -12572,9 +12672,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
       >
         <svg
           class="emotion-2"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-1"
@@ -12600,9 +12698,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
           />
           <svg
             class="emotion-9"
-            height="20px"
             viewBox="0 0 1024 1024"
-            width="20px"
           >
             <path
               class="emotion-1"
@@ -12632,9 +12728,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
             />
             <svg
               class="emotion-14"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-1"
@@ -12660,9 +12754,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
             />
             <svg
               class="emotion-19"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-1"
@@ -12692,9 +12784,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
               />
               <svg
                 class="emotion-24"
-                height="20px"
                 viewBox="0 0 1024 1024"
-                width="20px"
               >
                 <path
                   class="emotion-1"
@@ -12721,9 +12811,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
               />
               <svg
                 class="emotion-14"
-                height="20px"
                 viewBox="0 0 1024 1024"
-                width="20px"
               >
                 <path
                   class="emotion-1"
@@ -12751,9 +12839,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
           />
           <svg
             class="emotion-19"
-            height="20px"
             viewBox="0 0 1024 1024"
-            width="20px"
           >
             <path
               class="emotion-1"
@@ -12772,6 +12858,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 
 exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -12791,7 +12881,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 
 .emotion-6 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -12971,6 +13061,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 }
 
 .emotion-10 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -13022,6 +13116,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 }
 
 .emotion-15 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -13062,6 +13160,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 }
 
 .emotion-20 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -13086,6 +13188,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 }
 
 .emotion-35 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -13105,6 +13211,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 }
 
 .emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -13124,7 +13234,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 
 .emotion-6 input {
   color: #333333;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -13304,6 +13414,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 }
 
 .emotion-10 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -13355,6 +13469,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 }
 
 .emotion-15 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -13395,6 +13513,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 }
 
 .emotion-20 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -13419,6 +13541,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 }
 
 .emotion-35 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
   -webkit-flex: none;
   -ms-flex: none;
@@ -13455,9 +13581,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       />
       <svg
         class="emotion-2"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-1"
@@ -13471,9 +13595,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       >
         <svg
           class="emotion-2"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-1"
@@ -13505,9 +13627,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
           />
           <svg
             class="emotion-10"
-            height="20px"
             viewBox="0 0 1024 1024"
-            width="20px"
           >
             <path
               class="emotion-1"
@@ -13537,9 +13657,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
             />
             <svg
               class="emotion-15"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-1"
@@ -13566,9 +13684,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
             />
             <svg
               class="emotion-20"
-              height="20px"
               viewBox="0 0 1024 1024"
-              width="20px"
             >
               <path
                 class="emotion-1"
@@ -13605,9 +13721,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
           />
           <svg
             class="emotion-10"
-            height="20px"
             viewBox="0 0 1024 1024"
-            width="20px"
           >
             <path
               class="emotion-1"
@@ -13643,9 +13757,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
           />
           <svg
             class="emotion-35"
-            height="20px"
             viewBox="0 0 1024 1024"
-            width="20px"
           >
             <path
               class="emotion-1"

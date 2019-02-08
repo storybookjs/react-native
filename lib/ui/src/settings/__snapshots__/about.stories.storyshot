@@ -139,6 +139,10 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -290,6 +294,10 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   fill: #444444;
 }
 
+.emotion-23 {
+  display: block;
+}
+
 .emotion-22 {
   padding: 3rem 20px;
   max-width: 600px;
@@ -372,9 +380,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
       >
         <svg
           class="emotion-4"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-3"
@@ -388,7 +394,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
     class="emotion-24"
   >
     <div
-      class="emotion-4"
+      class="emotion-23"
       role="tabpanel"
     >
       <div
@@ -448,9 +454,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
               Check Storybook's release history
               <svg
                 class="emotion-4"
-                height="20px"
                 viewBox="0 0 1024 1024"
-                width="20px"
               >
                 <path
                   class="emotion-3"
@@ -639,6 +643,10 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -740,6 +748,10 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 
 .emotion-32:active svg path {
   fill: #444444;
+}
+
+.emotion-39 {
+  display: block;
 }
 
 .emotion-38 {
@@ -1441,9 +1453,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
       >
         <svg
           class="emotion-4"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-3"
@@ -1457,7 +1467,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
     class="emotion-40"
   >
     <div
-      class="emotion-4"
+      class="emotion-39"
       role="tabpanel"
     >
       <div
@@ -1522,9 +1532,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
               Read full changelog
               <svg
                 class="emotion-4"
-                height="20px"
                 viewBox="0 0 1024 1024"
-                width="20px"
               >
                 <path
                   class="emotion-3"
@@ -1814,6 +1822,10 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -1915,6 +1927,10 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 
 .emotion-18:active svg path {
   fill: #444444;
+}
+
+.emotion-25 {
+  display: block;
 }
 
 .emotion-24 {
@@ -2523,9 +2539,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
       >
         <svg
           class="emotion-4"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-3"
@@ -2539,7 +2553,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
     class="emotion-26"
   >
     <div
-      class="emotion-4"
+      class="emotion-25"
       role="tabpanel"
     >
       <div
@@ -2604,9 +2618,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
               Read full changelog
               <svg
                 class="emotion-4"
-                height="20px"
                 viewBox="0 0 1024 1024"
-                width="20px"
               >
                 <path
                   class="emotion-3"

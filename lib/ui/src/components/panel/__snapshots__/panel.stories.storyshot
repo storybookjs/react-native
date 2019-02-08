@@ -184,6 +184,10 @@ exports[`Storyshots UI|Panel default 1`] = `
 }
 
 .emotion-5 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -241,12 +245,11 @@ exports[`Storyshots UI|Panel default 1`] = `
       >
         <button
           class="emotion-6"
+          title="Change orientation"
         >
           <svg
             class="emotion-5"
-            height="20px"
             viewBox="0 0 1024 1024"
-            width="20px"
           >
             <path
               class="emotion-4"
@@ -256,12 +259,11 @@ exports[`Storyshots UI|Panel default 1`] = `
         </button>
         <button
           class="emotion-6"
+          title="Hide addons"
         >
           <svg
             class="emotion-5"
-            height="20px"
             viewBox="0 0 1024 1024"
-            width="20px"
           >
             <path
               class="emotion-4"

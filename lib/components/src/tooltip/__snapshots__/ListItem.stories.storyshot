@@ -2,6 +2,10 @@
 
 exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
 .emotion-3 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -108,9 +112,7 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
   >
     <svg
       class="emotion-3"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-2"
@@ -173,6 +175,10 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 }
 
 .emotion-9 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -412,9 +418,7 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
     >
       <svg
         class="emotion-9"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-8"
@@ -506,9 +510,7 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
     >
       <svg
         class="emotion-9"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-8"
@@ -630,6 +632,10 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
 
 exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
 .emotion-3 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -727,9 +733,7 @@ exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
   >
     <svg
       class="emotion-3"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-2"

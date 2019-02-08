@@ -246,6 +246,10 @@ exports[`Storyshots Basics|Link no-cancel w/ onClick 1`] = `
 
 exports[`Storyshots Basics|Link styled links 1`] = `
 .emotion-9 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -645,9 +649,7 @@ exports[`Storyshots Basics|Link styled links 1`] = `
     >
       <svg
         class="emotion-9"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-8"
@@ -667,9 +669,7 @@ exports[`Storyshots Basics|Link styled links 1`] = `
     >
       <svg
         class="emotion-9"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-8"
@@ -689,9 +689,7 @@ exports[`Storyshots Basics|Link styled links 1`] = `
       With arrow behind
       <svg
         class="emotion-9"
-        height="20px"
         viewBox="0 0 1024 1024"
-        width="20px"
       >
         <path
           class="emotion-8"

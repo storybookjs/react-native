@@ -51,6 +51,10 @@ Array [
 }
 
 .emotion-1 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -113,12 +117,11 @@ Array [
     >
       <button
         class="emotion-2"
+        title="Zoom in"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -128,12 +131,11 @@ Array [
       </button>
       <button
         class="emotion-2"
+        title="Zoom out"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -143,12 +145,11 @@ Array [
       </button>
       <button
         class="emotion-2"
+        title="Reset zoom"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -161,12 +162,11 @@ Array [
       />
       <button
         class="emotion-2"
+        title="Toggle background grid"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -180,12 +180,11 @@ Array [
     >
       <button
         class="emotion-2"
+        title="Go full screen"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -198,12 +197,11 @@ Array [
       />
       <button
         class="emotion-2"
+        title="Open component in new tab"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -438,6 +436,10 @@ Array [
 }
 
 .emotion-7 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -534,12 +536,11 @@ Array [
       />
       <button
         class="emotion-8"
+        title="Zoom in"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"
@@ -549,12 +550,11 @@ Array [
       </button>
       <button
         class="emotion-8"
+        title="Zoom out"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"
@@ -564,12 +564,11 @@ Array [
       </button>
       <button
         class="emotion-8"
+        title="Reset zoom"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"
@@ -582,12 +581,11 @@ Array [
       />
       <button
         class="emotion-8"
+        title="Toggle background grid"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"
@@ -601,12 +599,11 @@ Array [
     >
       <button
         class="emotion-8"
+        title="Go full screen"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"
@@ -619,12 +616,11 @@ Array [
       />
       <button
         class="emotion-8"
+        title="Open component in new tab"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"

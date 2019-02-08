@@ -2,6 +2,10 @@
 
 exports[`Storyshots Basics|Icon labels 1`] = `
 .emotion-1 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -57,9 +61,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -78,9 +80,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -99,9 +99,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -120,9 +118,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -141,9 +137,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -162,9 +156,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -183,9 +175,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -204,9 +194,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -225,9 +213,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -246,9 +232,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -267,9 +251,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -288,9 +270,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -309,9 +289,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -330,9 +308,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -351,9 +327,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -372,9 +346,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -393,9 +365,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -414,9 +384,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -435,9 +403,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -456,9 +422,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -477,9 +441,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -498,9 +460,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -519,9 +479,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -540,9 +498,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -561,9 +517,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -582,9 +536,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -603,9 +555,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -624,9 +574,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -645,9 +593,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -666,9 +612,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -687,9 +631,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -708,9 +650,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -729,9 +669,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -750,9 +688,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -771,9 +707,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -792,9 +726,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -813,9 +745,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -834,9 +764,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -855,9 +783,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -876,9 +802,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -897,9 +821,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -918,9 +840,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -939,9 +859,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -960,9 +878,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -981,9 +897,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1002,9 +916,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1023,9 +935,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1044,9 +954,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1065,9 +973,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1086,9 +992,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1107,9 +1011,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1128,9 +1030,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1149,9 +1049,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1170,9 +1068,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1191,9 +1087,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1212,9 +1106,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1233,9 +1125,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1254,9 +1144,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1275,9 +1163,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1296,9 +1182,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1317,9 +1201,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1338,9 +1220,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1359,9 +1239,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1380,9 +1258,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1401,9 +1277,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1422,9 +1296,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1443,9 +1315,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1464,9 +1334,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1485,9 +1353,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1506,9 +1372,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1527,9 +1391,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1548,9 +1410,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1569,9 +1429,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1590,9 +1448,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1611,9 +1467,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1632,9 +1486,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1653,9 +1505,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1674,9 +1524,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1695,9 +1543,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1716,9 +1562,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1737,9 +1581,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1758,9 +1600,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1779,9 +1619,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1800,9 +1638,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1821,9 +1657,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1842,9 +1676,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1863,9 +1695,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1884,9 +1714,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1905,9 +1733,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1926,9 +1752,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1947,9 +1771,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1968,9 +1790,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -1989,9 +1809,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2010,9 +1828,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2031,9 +1847,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2052,9 +1866,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2073,9 +1885,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2094,9 +1904,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2115,9 +1923,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2136,9 +1942,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2157,9 +1961,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2178,9 +1980,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2199,9 +1999,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2220,9 +2018,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2241,9 +2037,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2262,9 +2056,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2283,9 +2075,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2304,9 +2094,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2325,9 +2113,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2346,9 +2132,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2367,9 +2151,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2388,9 +2170,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2409,9 +2189,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2430,9 +2208,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2451,9 +2227,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2472,9 +2246,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2493,9 +2265,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2514,9 +2284,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2535,9 +2303,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2556,9 +2322,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2577,9 +2341,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2598,9 +2360,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2619,9 +2379,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2640,9 +2398,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2661,9 +2417,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2682,9 +2436,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2703,9 +2455,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2724,9 +2474,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2745,9 +2493,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2766,9 +2512,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2787,9 +2531,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2808,9 +2550,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2829,9 +2569,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2850,9 +2588,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2871,9 +2607,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2892,9 +2626,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2913,9 +2645,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2934,9 +2664,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2955,9 +2683,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2976,9 +2702,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -2997,9 +2721,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3018,9 +2740,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3039,9 +2759,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3060,9 +2778,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3081,9 +2797,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3102,9 +2816,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3123,9 +2835,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3144,9 +2854,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3165,9 +2873,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3186,9 +2892,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3207,9 +2911,7 @@ exports[`Storyshots Basics|Icon labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3228,6 +2930,10 @@ exports[`Storyshots Basics|Icon labels 1`] = `
 
 exports[`Storyshots Basics|Icon no labels 1`] = `
 .emotion-1 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -3292,9 +2998,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3307,9 +3011,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3322,9 +3024,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3337,9 +3037,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3352,9 +3050,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3367,9 +3063,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3382,9 +3076,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3397,9 +3089,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3412,9 +3102,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3427,9 +3115,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3442,9 +3128,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3457,9 +3141,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3472,9 +3154,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3487,9 +3167,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3502,9 +3180,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3517,9 +3193,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3532,9 +3206,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3547,9 +3219,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3562,9 +3232,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3577,9 +3245,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3592,9 +3258,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3607,9 +3271,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3622,9 +3284,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3637,9 +3297,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3652,9 +3310,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3667,9 +3323,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3682,9 +3336,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3697,9 +3349,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3712,9 +3362,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3727,9 +3375,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3742,9 +3388,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3757,9 +3401,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3772,9 +3414,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3787,9 +3427,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3802,9 +3440,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3817,9 +3453,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3832,9 +3466,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3847,9 +3479,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3862,9 +3492,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3877,9 +3505,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3892,9 +3518,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3907,9 +3531,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3922,9 +3544,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3937,9 +3557,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3952,9 +3570,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3967,9 +3583,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3982,9 +3596,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -3997,9 +3609,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4012,9 +3622,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4027,9 +3635,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4042,9 +3648,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4057,9 +3661,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4072,9 +3674,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4087,9 +3687,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4102,9 +3700,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4117,9 +3713,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4132,9 +3726,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4147,9 +3739,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4162,9 +3752,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4177,9 +3765,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4192,9 +3778,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4207,9 +3791,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4222,9 +3804,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4237,9 +3817,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4252,9 +3830,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4267,9 +3843,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4282,9 +3856,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4297,9 +3869,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4312,9 +3882,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4327,9 +3895,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4342,9 +3908,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4357,9 +3921,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4372,9 +3934,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4387,9 +3947,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4402,9 +3960,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4417,9 +3973,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4432,9 +3986,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4447,9 +3999,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4462,9 +4012,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4477,9 +4025,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4492,9 +4038,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4507,9 +4051,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4522,9 +4064,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4537,9 +4077,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4552,9 +4090,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4567,9 +4103,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4582,9 +4116,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4597,9 +4129,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4612,9 +4142,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4627,9 +4155,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4642,9 +4168,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4657,9 +4181,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4672,9 +4194,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4687,9 +4207,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4702,9 +4220,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4717,9 +4233,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4732,9 +4246,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4747,9 +4259,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4762,9 +4272,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4777,9 +4285,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4792,9 +4298,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4807,9 +4311,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4822,9 +4324,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4837,9 +4337,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4852,9 +4350,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4867,9 +4363,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4882,9 +4376,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4897,9 +4389,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4912,9 +4402,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4927,9 +4415,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4942,9 +4428,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4957,9 +4441,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4972,9 +4454,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -4987,9 +4467,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5002,9 +4480,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5017,9 +4493,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5032,9 +4506,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5047,9 +4519,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5062,9 +4532,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5077,9 +4545,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5092,9 +4558,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5107,9 +4571,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5122,9 +4584,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5137,9 +4597,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5152,9 +4610,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5167,9 +4623,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5182,9 +4636,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5197,9 +4649,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5212,9 +4662,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5227,9 +4675,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5242,9 +4688,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5257,9 +4701,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5272,9 +4714,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5287,9 +4727,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5302,9 +4740,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5317,9 +4753,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5332,9 +4766,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5347,9 +4779,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5362,9 +4792,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5377,9 +4805,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5392,9 +4818,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5407,9 +4831,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5422,9 +4844,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5437,9 +4857,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5452,9 +4870,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5467,9 +4883,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5482,9 +4896,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5497,9 +4909,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5512,9 +4922,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5527,9 +4935,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
@@ -5542,9 +4948,7 @@ exports[`Storyshots Basics|Icon no labels 1`] = `
   >
     <svg
       class="emotion-1"
-      height="20px"
       viewBox="0 0 1024 1024"
-      width="20px"
     >
       <path
         class="emotion-0"
