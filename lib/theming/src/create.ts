@@ -3,6 +3,7 @@
 import { Theme, Brand, color, Color, background, typography } from './base';
 import { easing, animation } from './animation';
 import { create as createSyntax } from './modules/syntax';
+import { chromeLight } from 'react-inspector';
 
 interface Rest {
   [key: string]: any;
@@ -11,8 +12,6 @@ interface Rest {
 interface ThemeVar {
   colorPrimary?: string;
   colorSecondary?: string;
-  colorTertiary?: string;
-  colorAncillary?: string;
 
   // UI
   appBg?: string;
@@ -45,8 +44,8 @@ const createColors = (vars: ThemeVar): Color => ({
   // Changeable colors
   primary: vars.colorPrimary,
   secondary: vars.colorSecondary,
-  tertiary: vars.colorTertiary,
-  ancillary: vars.colorAncillary,
+  tertiary: color.tertiary,
+  ancillary: color.ancillary,
 
   // Complimentary
   orange: color.orange,
@@ -137,16 +136,21 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
     mono: vars.fontCode || typography.fonts.mono,
   }),
 
+  // Addon actions theme
+  // API example https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js
   addonActionsTheme: {
-    BASE_FONT_FAMILY: typography.fonts.mono,
-    BASE_FONT_SIZE: '11px',
-    BASE_LINE_HEIGHT: '14px',
-    BASE_BACKGROUND_COLOR: 'white',
-    BASE_COLOR: 'black',
-    ARROW_COLOR: '#6e6e6e',
-    TREENODE_FONT_FAMILY: typography.fonts.mono,
-    TREENODE_FONT_SIZE: '11px',
-    TREENODE_LINE_HEIGHT: '14px',
+    ...chromeLight,
+    BASE_FONT_FAMILY: vars.fontCode || typography.fonts.mono,
+    BASE_FONT_SIZE: typography.size.s2 - 1,
+    BASE_LINE_HEIGHT: '18px',
+    BASE_BACKGROUND_COLOR: color.lightest,
+    BASE_COLOR: vars.textColor || color.darkest,
+    ARROW_COLOR: 'rgba(0,0,0,.2)',
+    ARROW_MARGIN_RIGHT: 4,
+    ARROW_FONT_SIZE: 8,
+    TREENODE_FONT_FAMILY: vars.fontCode || typography.fonts.mono,
+    TREENODE_FONT_SIZE: typography.size.s2 - 1,
+    TREENODE_LINE_HEIGHT: '18px',
     TREENODE_PADDING_LEFT: 12,
   },
 

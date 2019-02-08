@@ -5,14 +5,14 @@ import Inspector from 'react-inspector';
 import { withTheme } from '@storybook/theming';
 import { ActionBar } from '@storybook/components';
 
-import { Actions, Action, Wrapper, InspectorContainer, Countwrap, Counter } from './style';
+import { Actions, Action, Wrapper, InspectorContainer, Counter } from './style';
 
 const ActionLogger = withTheme(({ actions, onClear, theme }) => (
   <Wrapper>
     <Actions>
       {actions.map(action => (
         <Action key={action.id}>
-          <Countwrap>{action.count > 1 && <Counter>{action.count}</Counter>}</Countwrap>
+          {action.count > 1 && <Counter>{action.count}</Counter>}
           <InspectorContainer>
             <Inspector
               theme={theme.addonActionsTheme || 'chromeLight'}
