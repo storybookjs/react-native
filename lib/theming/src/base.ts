@@ -1,36 +1,5 @@
 import { easing, animation } from './animation';
 
-export const baseFonts = {
-  fontFamily: [
-    '"Nunito Sans"',
-    '-apple-system',
-    '".SFNSText-Regular"',
-    '"San Francisco"',
-    'BlinkMacSystemFont',
-    '"Segoe UI"',
-    '"Helvetica Neue"',
-    'Helvetica',
-    'Arial',
-    'sans-serif',
-  ].join(', '),
-  WebkitFontSmoothing: 'antialiased',
-};
-
-export const monoFonts = {
-  fontFamily: [
-    '"Operator Mono"',
-    '"Fira Code Retina"',
-    '"Fira Code"',
-    '"FiraCode-Retina"',
-    '"Andale Mono"',
-    '"Lucida Console"',
-    'Consolas',
-    'Monaco',
-    'monospace',
-  ].join(', '),
-  WebkitFontSmoothing: 'antialiased',
-};
-
 export const color = {
   // Official color palette
   primary: '#FF4785', // coral
@@ -38,6 +7,7 @@ export const color = {
   tertiary: '#FAFBFC',
   ancillary: '#22a699', // for code
 
+  // Complimentary
   orange: '#FC521F',
   gold: '#FFAE00',
   green: '#66BF3C',
@@ -56,18 +26,22 @@ export const color = {
   darker: '#444444',
   darkest: '#333333',
 
+  // For borders
   border: 'rgba(0,0,0,.1)',
 
   // Status
   positive: '#66BF3C',
   negative: '#FF4400',
   warning: '#E69D00',
+
+  defaultText: '#333333',
+  inverseText: '#FFFFFF',
 };
 
 export const background = {
   app: '#F6F9FC',
   preview: color.lightest,
-  select: '#e3f3ff',
+  hoverable: 'rgba(0,0,0,.05)', // hover state for items in a list
 
   // Notification, error, and warning backgrounds
   positive: '#E1FFD4',
@@ -76,6 +50,31 @@ export const background = {
 };
 
 export const typography = {
+  fonts: {
+    base: [
+      '"Nunito Sans"',
+      '-apple-system',
+      '".SFNSText-Regular"',
+      '"San Francisco"',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      '"Helvetica Neue"',
+      'Helvetica',
+      'Arial',
+      'sans-serif',
+    ].join(', '),
+    mono: [
+      '"Operator Mono"',
+      '"Fira Code Retina"',
+      '"Fira Code"',
+      '"FiraCode-Retina"',
+      '"Andale Mono"',
+      '"Lucida Console"',
+      'Consolas',
+      'Monaco',
+      'monospace',
+    ].join(', '),
+  },
   weight: {
     regular: 400,
     bold: 700,
@@ -98,35 +97,38 @@ export const typography = {
 export type Color = typeof color;
 export type Background = typeof background;
 export type Typography = typeof typography;
-export type Easing = typeof easing;
 export type Animation = typeof animation;
+export type Easing = typeof easing;
+
+export type TextSize = number | string;
+export type Brand = string;
 
 export interface Theme {
   color: Color;
   background: Background;
   typography: Typography;
-  easing: Easing;
   animation: Animation;
+  easing: Easing;
 
-  // main
-  mainBorderColor: string;
-  mainBorderRadius: number;
-  mainTextFace: string;
-  monoTextFace: string;
-  mainTextSize: number;
-  mainTextColor: string;
-  mainTextBgColor: string;
-  inverseTextColor: string;
-  inverseTextBgColor: string;
+  input: {
+    border: string;
+    background: string;
+    color: string;
+    borderRadius: number;
+  };
 
-  inputFill: string;
+  // UI
+  layoutMargin: number;
+  appBorderColor: string;
+  appBorderRadius: number;
 
+  // Toolbar default/active colors
   barTextColor: string;
   barSelectedColor: string;
+  barBgColor: string;
 
-  layoutMargin: number;
-
-  brand: (() => object) | null;
+  // Brand logo/text
+  brand: Brand;
 
   code: {
     [key: string]: string | object;

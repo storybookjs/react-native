@@ -1,4 +1,6 @@
-import { Theme, monoFonts, baseFonts, color, typography } from './base';
+// This generates theme variables in the correct shape for the UI
+
+import { Theme, Brand, color, Color, background, typography } from './base';
 import { easing, animation } from './animation';
 import { create as createSyntax } from './modules/syntax';
 
@@ -6,135 +8,118 @@ interface Rest {
   [key: string]: any;
 }
 
-type TextSize = number | string;
-
-const mono = {
-  monoTextFace: monoFonts.fontFamily,
-};
-
 interface ThemeVar {
-  primary: string;
-  secondary: string;
-  tertiary: string;
-  ancillary: string;
+  colorPrimary?: string;
+  colorSecondary?: string;
+  colorTertiary?: string;
+  colorAncillary?: string;
 
-  mainBorderColor: string;
-  mainBorderRadius: number;
+  // UI
+  appBg?: string;
+  appBorderColor?: string;
+  appBorderRadius?: number;
 
   // Typography
-  mainTextFace: string;
-  monoTextFace: string;
-  mainTextSize: TextSize;
+  fontBase?: string;
+  fontCode?: string;
 
-  // Text colors (dark on light)
-  mainAppBackground: string;
-  mainTextColor: string;
-  mainTextBgColor: string;
+  // Text colors
+  textColor?: string;
+  textInverseColor?: string;
 
-  // Text colors (light on dark)
-  inverseTextColor: string;
-  inverseTextBgColor: string;
+  // Toolbar default and active colors
+  barTextColor?: string;
+  barSelectedColor?: string;
+  barBgColor?: string;
 
-  barTextColor: string;
-  barSelectedColor: string;
+  // Form colors
+  inputBg?: string;
+  inputBorder?: string;
+  inputTextColor?: string;
+  inputBorderRadius?: number;
 
-  inputFill: string;
-  inputBorder: string;
+  brand?: Brand;
 }
 
-const createColors = (vars: ThemeVar) => ({
-  // Official color palette
-  primary: vars.primary,
-  secondary: vars.secondary,
-  tertiary: vars.tertiary,
-  ancillary: vars.ancillary,
+const createColors = (vars: ThemeVar): Color => ({
+  // Changeable colors
+  primary: vars.colorPrimary,
+  secondary: vars.colorSecondary,
+  tertiary: vars.colorTertiary,
+  ancillary: vars.colorAncillary,
 
-  orange: '#FC521F',
-  gold: '#FFAE00',
-  green: '#66BF3C',
-  seafoam: '#37D5D3',
-  purple: '#6F2CAC',
-  ultraviolet: '#2A0481',
+  // Complimentary
+  orange: color.orange,
+  gold: color.gold,
+  green: color.green,
+  seafoam: color.seafoam,
+  purple: color.purple,
+  ultraviolet: color.ultraviolet,
 
   // Monochrome
-  lightest: '#FFFFFF',
-  lighter: '#F8F8F8',
-  light: '#F3F3F3',
-  mediumlight: '#EEEEEE',
-  medium: '#DDDDDD',
-  mediumdark: '#999999',
-  dark: '#666666',
-  darker: '#444444',
-  darkest: '#333333',
+  lightest: color.lightest,
+  lighter: color.lighter,
+  light: color.light,
+  mediumlight: color.mediumlight,
+  medium: color.medium,
+  mediumdark: color.mediumdark,
+  dark: color.dark,
+  darker: color.darker,
+  darkest: color.darkest,
 
-  border: 'rgba(0,0,0,.1)',
+  // For borders
+  border: color.border,
 
   // Status
-  positive: '#66BF3C',
-  negative: '#FF4400',
-  warning: '#E69D00',
+  positive: color.positive,
+  negative: color.negative,
+  warning: color.warning,
+
+  defaultText: vars.textColor || color.darkest,
+  inverseText: vars.textInverseColor || color.lightest,
 });
 
 export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
   color: createColors(vars),
   background: {
-    app: vars.mainAppBackground,
+    app: vars.appBg || background.app,
     preview: color.lightest,
-    select: '#e3f3ff',
+    hoverable: background.hoverable, // TODO: change so it responds to whether appColor is light or dark
 
-    // Notification, error, and warning backgrounds
-    positive: '#E1FFD4',
-    negative: '#FEDED2',
-    warning: '#FFF5CF',
+    positive: background.positive,
+    negative: background.negative,
+    warning: background.warning,
   },
   typography: {
-    weight: {
-      regular: 400,
-      bold: 700,
-      black: 900,
+    fonts: {
+      base: vars.fontBase || typography.fonts.base,
+      mono: vars.fontCode || typography.fonts.mono,
     },
-    size: {
-      s1: 12,
-      s2: 14,
-      s3: 16,
-      m1: 20,
-      m2: 24,
-      m3: 28,
-      l1: 32,
-      l2: 40,
-      l3: 48,
-      code: 90,
-    },
+    weight: typography.weight,
+    size: typography.size,
   },
   animation,
   easing,
 
-  // Layout
-  mainBorderColor: color.border,
-  mainBorderRadius: 4,
+  input: {
+    border: vars.inputBorder || color.border,
+    background: vars.inputBg || color.lightest,
+    color: vars.inputTextColor || color.defaultText,
+    borderRadius: vars.inputBorderRadius || vars.appBorderRadius || 4,
+  },
 
-  // Typography
-  mainTextFace: baseFonts.fontFamily,
-  monoTextFace: monoFonts.fontFamily,
-  mainTextSize: typography.size.s2 - 1, // 13px
-
-  // Text colors (dark on light)
-  mainTextColor: color.darkest,
-  mainTextBgColor: color.lightest,
-
-  // Text colors (light on dark)
-  inverseTextColor: color.lightest,
-  inverseTextBgColor: color.mediumdark,
-
-  barTextColor: color.mediumdark,
-  barSelectedColor: color.secondary,
-
+  // UI
   layoutMargin: 10,
+  appBorderColor: vars.appBorderColor || color.border,
+  appBorderRadius: vars.appBorderRadius || 4,
 
-  inputFill: color.lightest,
-  inputBorder: color.border,
+  // Toolbar default/active colors
+  barTextColor: vars.barTextColor || color.mediumdark,
+  barSelectedColor: vars.barSelectedColor || color.secondary,
+  barBgColor: vars.barBgColor || color.lightest,
 
-  brand: null,
+  // Brand logo/text
+  brand: vars.brand || null,
 
   code: createSyntax({
     colors: {
@@ -149,17 +134,17 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
       blue1: '#0000ff',
       blue2: '#00009f',
     },
-    mono,
+    mono: vars.fontCode || typography.fonts.mono,
   }),
 
   addonActionsTheme: {
-    BASE_FONT_FAMILY: monoFonts.fontFamily,
+    BASE_FONT_FAMILY: typography.fonts.mono,
     BASE_FONT_SIZE: '11px',
     BASE_LINE_HEIGHT: '14px',
     BASE_BACKGROUND_COLOR: 'white',
     BASE_COLOR: 'black',
     ARROW_COLOR: '#6e6e6e',
-    TREENODE_FONT_FAMILY: monoFonts.fontFamily,
+    TREENODE_FONT_FAMILY: typography.fonts.mono,
     TREENODE_FONT_SIZE: '11px',
     TREENODE_LINE_HEIGHT: '14px',
     TREENODE_PADDING_LEFT: 12,

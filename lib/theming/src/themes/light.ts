@@ -1,33 +1,38 @@
 import { create } from '../create';
 
-import { color, baseFonts, monoFonts, typography, background } from '../base';
+import { color, typography, background } from '../base';
 
 export default create({
-  primary: '#FF4785', // coral
-  secondary: '#1EA7FD', // ocean
-  tertiary: '#FAFBFC',
-  ancillary: '#22a699', // for code
+  // Storybook-specific color palette
+  colorPrimary: '#FF4785', // coral
+  colorSecondary: '#1EA7FD', // ocean
+  colorTertiary: '#FAFBFC', // neutral buttons
+  colorAncillary: '#22a699', // for code
 
-  mainBorderColor: color.border,
-  mainBorderRadius: 4,
+  // UI
+  appBg: background.app,
+  appBorderColor: color.border,
+  appBorderRadius: 4,
 
-  // Typography
-  mainTextFace: baseFonts.fontFamily,
-  monoTextFace: monoFonts.fontFamily,
-  mainTextSize: typography.size.s2 - 1, // 13px
+  // Fonts
+  fontBase: typography.fonts.base,
+  fontCode: typography.fonts.mono,
 
-  // Text colors (dark on light)
-  mainAppBackground: background.app,
-  mainTextColor: color.darkest,
-  mainTextBgColor: color.lightest,
+  // Text colors
+  textColor: color.darkest,
+  textInverseColor: color.lightest,
 
-  // Text colors (light on dark)
-  inverseTextColor: color.lightest,
-  inverseTextBgColor: color.mediumdark,
-
+  // Toolbar default and active colors
   barTextColor: color.mediumdark,
   barSelectedColor: color.secondary,
+  barBgColor: color.lightest,
 
-  inputFill: color.lightest,
+  // Form colors
+  inputBg: color.lightest,
   inputBorder: color.border,
+  inputTextColor: color.darkest,
+  inputBorderRadius: 4,
+
+  // Brand logo/text
+  brand: null,
 });

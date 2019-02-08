@@ -1,4 +1,4 @@
-import { baseFonts, monoFonts, Color, Background, Typography } from './base';
+import { Color, Background, Typography } from './base';
 import memoize from 'memoizerific';
 
 type Value = string | number;
@@ -11,7 +11,7 @@ interface Return {
 export const createReset = memoize(1)(
   ({ typography }: { typography: Typography }): Return => ({
     body: {
-      fontFamily: baseFonts.fontFamily,
+      fontFamily: typography.fonts.base,
       fontSize: typography.size.s3,
       margin: 0,
       overflowY: 'auto',
@@ -62,7 +62,7 @@ export const createReset = memoize(1)(
     },
 
     code: {
-      fontFamily: monoFonts.fontFamily,
+      fontFamily: typography.fonts.mono,
       WebkitFontSmoothing: 'antialiased',
       MozOsxFontSmoothing: 'grayscale',
       display: 'inline-block',
@@ -74,7 +74,7 @@ export const createReset = memoize(1)(
     },
 
     pre: {
-      fontFamily: monoFonts.fontFamily,
+      fontFamily: typography.fonts.mono,
       WebkitFontSmoothing: 'antialiased',
       MozOsxFontSmoothing: 'grayscale',
       lineHeight: '18px',

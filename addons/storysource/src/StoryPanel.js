@@ -9,15 +9,15 @@ import { EVENT_ID } from './events';
 const StyledStoryLink = styled(Link)(({ theme }) => ({
   display: 'block',
   textDecoration: 'none',
-  borderRadius: theme.mainBorderRadius,
+  borderRadius: theme.appBorderRadius,
   '&:hover': {
-    background: theme.background.select,
+    background: theme.background.hoverable,
   },
 }));
 
 const SelectedStoryHighlight = styled.div(({ theme }) => ({
-  background: theme.background.select,
-  borderRadius: theme.mainBorderRadius,
+  background: theme.background.hoverable,
+  borderRadius: theme.appBorderRadius,
 }));
 
 const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }) => ({

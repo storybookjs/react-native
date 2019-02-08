@@ -12,11 +12,11 @@ interface ColorsObjectsHash {
 const convertColors = (colors: ColorsHash): ColorsObjectsHash =>
   Object.entries(colors).reduce((acc, [k, v]) => ({ ...acc, [k]: mkColor(v) }), {});
 
-export const create = ({ colors, mono }: { colors: ColorsHash; mono: { monoTextFace: string } }) => {
+export const create = ({ colors, mono }: { colors: ColorsHash; mono: string }) => {
   const colorsObjs = convertColors(colors);
   return {
     token: {
-      fontFamily: mono.monoTextFace,
+      fontFamily: mono,
       WebkitFontSmoothing: 'antialiased',
 
       '&.comment': { ...colorsObjs.green1, fontStyle: 'italic' },
