@@ -9,6 +9,7 @@ export default create({
 
   // UI
   appBg: background.app,
+  appContentBg: color.lightest,
   appBorderColor: color.border,
   appBorderRadius: 4,
 
@@ -23,7 +24,7 @@ export default create({
   // Toolbar default and active colors
   barTextColor: color.mediumdark,
   barSelectedColor: color.secondary,
-  barBgColor: color.lightest,
+  barBg: color.lightest,
 
   // Form colors
   inputBg: color.lightest,

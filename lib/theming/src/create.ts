@@ -15,6 +15,7 @@ interface ThemeVar {
 
   // UI
   appBg?: string;
+  appContentBg?: string;
   appBorderColor?: string;
   appBorderRadius?: number;
 
@@ -29,7 +30,7 @@ interface ThemeVar {
   // Toolbar default and active colors
   barTextColor?: string;
   barSelectedColor?: string;
-  barBgColor?: string;
+  barBg?: string;
 
   // Form colors
   inputBg?: string;
@@ -82,7 +83,7 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
   color: createColors(vars),
   background: {
     app: vars.appBg || background.app,
-    preview: color.lightest,
+    content: vars.appContentBg || color.lightest,
     hoverable: background.hoverable, // TODO: change so it responds to whether appColor is light or dark
 
     positive: background.positive,
@@ -115,7 +116,7 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
   // Toolbar default/active colors
   barTextColor: vars.barTextColor || color.mediumdark,
   barSelectedColor: vars.barSelectedColor || color.secondary,
-  barBgColor: vars.barBgColor || color.lightest,
+  barBg: vars.barBg || color.lightest,
 
   // Brand logo/text
   brand: vars.brand || null,

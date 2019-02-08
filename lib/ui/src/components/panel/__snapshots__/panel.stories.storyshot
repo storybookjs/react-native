@@ -208,7 +208,7 @@ exports[`Storyshots UI|Panel default 1`] = `
 }
 
 <div
-  style="position:relative;width:800px;height:300px;margin:1rem auto;background:white"
+  style="position:relative;width:800px;height:300px;margin:1rem auto;padding:20px;background:papayawhip"
 >
   <div
     class="emotion-13"
@@ -299,7 +299,7 @@ exports[`Storyshots UI|Panel no panels 1`] = `
 }
 
 <div
-  style="position:relative;width:800px;height:300px;margin:1rem auto;background:white"
+  style="position:relative;width:800px;height:300px;margin:1rem auto;padding:20px;background:papayawhip"
 >
   <div
     class="emotion-1"
