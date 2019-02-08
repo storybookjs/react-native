@@ -3,9 +3,9 @@ import initStoryshots, { multiSnapshotWithOptions, Stories2SnapsConverter } from
 
 class AnotherStories2SnapsConverter extends Stories2SnapsConverter {
   getSnapshotFileName(context) {
-    const { fileName, kind, story } = context;
-    const { dir, name } = path.parse(fileName);
-    const uniqueName = `${name}@${kind.replace(/ /g, '-_-')}@${story.replace(/ /g, '-_-')}`;
+    const { fileName, kind, name } = context;
+    const { dir, name: filename } = path.parse(fileName);
+    const uniqueName = `${filename}@${kind.replace(/ /g, '-_-')}@${name.replace(/ /g, '-_-')}`;
     const { snapshotsDirName, snapshotExtension } = this.options;
 
     return path.format({

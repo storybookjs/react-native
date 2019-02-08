@@ -21,6 +21,12 @@ elif [ "$BUILD_CONTEXT" = "CRA" ]; then
   yarn build-storybook --quiet
   mv storybook-static ../../netlify-build
   popd
+elif [ "$BUILD_CONTEXT" = "CRA_TS" ]; then
+  pushd examples/cra-ts-kitchen-sink
+  yarn add tapable # quirk with netlify build instance
+  yarn build-storybook --quiet
+  mv storybook-static ../../netlify-build
+  popd
 elif [ "$BUILD_CONTEXT" = "VUE" ]; then
   echo "netlify-build Vue examples"
   pushd examples/vue-kitchen-sink

@@ -3,7 +3,7 @@
 First, install the `@storybook/react-native` module
 
 ```sh
-npm install @storybook/react-native
+yarn add @storybook/react-native --dev
 ```
 
 Create a new directory called `storybook` in your project root and create an entry file (index.js) as given below.

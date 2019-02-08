@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel groups should have no tabs when there are no groupIds 1`] = `
+Array [
+  Array [
+    Object {
+      "defaultValue": "test",
+      "name": "foo",
+      "used": true,
+    },
+    Object {
+      "defaultValue": "test2",
+      "name": "bar",
+      "used": true,
+    },
+  ],
+]
+`;
+
+exports[`Panel groups should have one tab per groupId and an empty ALL tab when all are defined 1`] = `
+Array [
+  .emotion-2 {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.emotion-1 {
+  width: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 0 8px 8px 8px;
+}
+
+.emotion-1:last-child {
+  border-bottom: 0 none;
+  padding-bottom: 0;
+}
+
+.emotion-0 {
+  min-width: 100px;
+  min-height: 32px;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 16px;
+}
+
+<PropForm
+    knobs={
+      Array [
+        Object {
+          "defaultValue": "test",
+          "groupId": "foo",
+          "name": "foo",
+          "used": true,
+        },
+      ]
+    }
+    onFieldChange={[Function]}
+    onFieldClick={[Function]}
+  >
+    <Styled(form)>
+      <form
+        className="emotion-2"
+      >
+        <Field
+          key="foo"
+          label="foo"
+        >
+          <Styled(label)>
+            <label
+              className="emotion-1"
+            >
+              <Styled(span)>
+                <span
+                  className="emotion-0"
+                >
+                  <span>
+                    foo
+                  </span>
+                </span>
+              </Styled(span)>
+              <InvalidType
+                knob={
+                  Object {
+                    "defaultValue": "test",
+                    "groupId": "foo",
+                    "name": "foo",
+                    "used": true,
+                  }
+                }
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span>
+                  Invalid Type
+                </span>
+              </InvalidType>
+            </label>
+          </Styled(label)>
+        </Field>
+      </form>
+    </Styled(form)>
+  </PropForm>,
+  .emotion-2 {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.emotion-1 {
+  width: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 0 8px 8px 8px;
+}
+
+.emotion-1:last-child {
+  border-bottom: 0 none;
+  padding-bottom: 0;
+}
+
+.emotion-0 {
+  min-width: 100px;
+  min-height: 32px;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 16px;
+}
+
+<PropForm
+    knobs={
+      Array [
+        Object {
+          "defaultValue": "test2",
+          "groupId": "bar",
+          "name": "bar",
+          "used": true,
+        },
+      ]
+    }
+    onFieldChange={[Function]}
+    onFieldClick={[Function]}
+  >
+    <Styled(form)>
+      <form
+        className="emotion-2"
+      >
+        <Field
+          key="bar"
+          label="bar"
+        >
+          <Styled(label)>
+            <label
+              className="emotion-1"
+            >
+              <Styled(span)>
+                <span
+                  className="emotion-0"
+                >
+                  <span>
+                    bar
+                  </span>
+                </span>
+              </Styled(span)>
+              <InvalidType
+                knob={
+                  Object {
+                    "defaultValue": "test2",
+                    "groupId": "bar",
+                    "name": "bar",
+                    "used": true,
+                  }
+                }
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span>
+                  Invalid Type
+                </span>
+              </InvalidType>
+            </label>
+          </Styled(label)>
+        </Field>
+      </form>
+    </Styled(form)>
+  </PropForm>,
+]
+`;
+
+exports[`Panel groups the ALL tab should have its own additional content when there are knobs both with and without a groupId 1`] = `
+Array [
+  Array [
+    Object {
+      "defaultValue": "test",
+      "groupId": "foo",
+      "name": "foo",
+      "used": true,
+    },
+  ],
+  Array [
+    Object {
+      "defaultValue": "test2",
+      "name": "bar",
+      "used": true,
+    },
+  ],
+]
+`;

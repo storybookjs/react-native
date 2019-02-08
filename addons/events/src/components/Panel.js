@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 import { EVENTS } from '../constants';
 import Event from './Event';
@@ -13,7 +13,7 @@ const Wrapper = styled.div({
   minHeight: '100%',
 });
 
-export default class Events extends Component {
+export default class EventsPanel extends Component {
   static propTypes = {
     active: PropTypes.bool.isRequired,
     channel: PropTypes.shape({

@@ -112,6 +112,7 @@ The default `tsconfig.json` that comes with CRA works great. If your stories are
 Change `config.ts` inside the Storybook config directory (by default, it’s `.storybook`) to import stories made with TypeScript:
 
 ```js
+import { configure } from '@storybook/react';
 // automatically import all files ending in *.stories.tsx
 const req = require.context('../stories', true, /.stories.tsx$/);
 

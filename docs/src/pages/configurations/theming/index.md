@@ -16,14 +16,13 @@ import '@storybook/addon-options/register';
 
 Then, modify `.storybook/config.js` to include your new options:  
 ```js
-import { addDecorator, configure } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { addParameters, configure } from '@storybook/react';
 
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     theme: {},
-  })
-);
+  },
+});
 ```
 
 When setting a theme, set a full theme object, the theme is replaced, not combined.
@@ -37,22 +36,24 @@ We have created 2 themes for you: "normal" (a light theme) and "dark" (a dark th
 You can get these themes like so:
 
 ```js
-import { addDecorator, configure } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { addParameters, configure } from '@storybook/react';
 import { themes } from '@storybook/components';
 
 // Option defaults.
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     name: 'Foo',
     theme: themes.dark,
-  })
-);
+  },
+});
 ```
 
 ## Theme variables
 
 ```
+
+// TODO: update this with .colors. changes
+
 mainBackground: applied to root `background`, // 'linear-gradient(to bottom right, black, gray'
 mainBorder: applied to panels `border`, // '1px solid rgba(0,0,0,0.1)'
 mainBorderColor: applied for most borders, // 'rgba(0,0,0,0.1)'

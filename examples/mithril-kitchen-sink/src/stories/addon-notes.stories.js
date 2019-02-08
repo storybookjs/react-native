@@ -1,13 +1,9 @@
 /** @jsx m */
-/* eslint-disable jsx-a11y/accessible-emoji */
 
 import m from 'mithril';
-
 import { storiesOf } from '@storybook/mithril';
-import { withNotes } from '@storybook/addon-notes';
 
 storiesOf('Addons|Notes', module)
-  .addDecorator(withNotes)
   .add(
     'Simple note',
     () => ({
@@ -41,11 +37,11 @@ storiesOf('Addons|Notes', module)
     }),
     {
       notes: `
-      <h2>My notes on emojies</h2>
+        <h2>My notes on emojies</h2>
 
-      <em>It's not all that important to be honest, but..</em>
+        <em>It's not all that important to be honest, but..</em>
 
-      Emojis are great, I love emojis, in fact I like using them in my Component notes too! 😇
-    `,
+        Emojis are great, I love emojis, in fact I like using them in my Component notes too! 😇
+      `,
     }
   );

@@ -1,4 +1,5 @@
 import { WebSocket } from 'global';
+import JSON from 'json-fn';
 import { Channel, ChannelHandler } from '@storybook/channels';
 
 type OnError = (message: Event) => void;
@@ -21,10 +22,7 @@ export class WebsocketTransport {
   private isReady = false;
 
   constructor({ url, onError }: WebsocketTransportArgs) {
-    this.connect(
-      url,
-      onError
-    );
+    this.connect(url, onError);
   }
 
   setHandler(handler: ChannelHandler) {

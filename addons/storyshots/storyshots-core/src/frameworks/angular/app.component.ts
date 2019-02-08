@@ -2,6 +2,7 @@
 // to provide @Inputs and subscribe to @Outputs, see
 // https://github.com/angular/angular/issues/15360
 // For the time being, the ViewContainerRef approach works pretty well.
+
 import {
   Component,
   Inject,
@@ -13,6 +14,7 @@ import {
   EventEmitter,
   SimpleChanges,
   SimpleChange,
+  // tslint:disable-next-line:no-implicit-dependencies
 } from '@angular/core';
 import { STORY } from './app.token';
 import { NgStory, ICollection } from './types';

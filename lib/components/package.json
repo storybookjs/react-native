@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "4.2.0-alpha.8",
+  "version": "5.0.0-beta.1",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -17,26 +17,33 @@
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "build-storybook": "build-storybook",
-    "prepare": "node ../../scripts/prepare.js",
-    "storybook": "start-storybook -p 6006"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^0.13.1",
-    "@emotion/provider": "^0.11.2",
-    "@emotion/styled": "^0.10.6",
+    "@storybook/addons": "5.0.0-beta.1",
+    "@storybook/client-logger": "5.0.0-beta.1",
+    "@storybook/core-events": "5.0.0-beta.1",
+    "@storybook/router": "5.0.0-beta.1",
+    "@storybook/theming": "5.0.0-beta.1",
+    "fuzzy-search": "^3.0.1",
     "global": "^4.3.2",
-    "lodash": "^4.17.11",
+    "immer": "^1.12.0",
+    "js-beautify": "^1.8.9",
+    "lodash.pick": "^4.4.0",
+    "lodash.throttle": "^4.1.1",
+    "memoizerific": "^1.11.3",
+    "polished": "^2.3.3",
     "prop-types": "^15.6.2",
+    "react": "^16.8.1",
+    "react-dom": "^16.7.0",
+    "react-focus-lock": "^1.17.7",
+    "react-helmet-async": "^0.2.0",
     "react-inspector": "^2.3.0",
-    "react-split-pane": "^0.1.84",
+    "react-popper-tooltip": "^2.8.0",
+    "react-syntax-highlighter": "^8.0.1",
     "react-textarea-autosize": "^7.0.4",
+    "reactjs-popup": "^1.3.2",
     "render-fragment": "^0.1.1"
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "4.2.0-alpha.8",
-    "@storybook/addon-knobs": "4.2.0-alpha.8",
-    "@storybook/react": "4.2.0-alpha.8"
   },
   "peerDependencies": {
     "react": "*",

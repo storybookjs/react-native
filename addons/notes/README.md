@@ -22,16 +22,6 @@ Add following content to it:
 import '@storybook/addon-notes/register';
 ```
 
-Then add the `withNotes` decorator to all stories in your `config.js`:
-
-```js
-// Import from @storybook/X where X is your framework
-import { configure, addDecorator } from '@storybook/react';
-import { withNotes } from '@storybook/addon-notes';
-
-addDecorator(withNotes);
-```
-
 You can use the `notes` parameter to add a note to each story:
 
 ```js
@@ -39,21 +29,32 @@ import { storiesOf } from '@storybook/react';
 
 import Component from './Component';
 
-storiesOf('Component', module).add('with some emoji', () => <Component />, {
-  notes: 'A very simple component',
-});
+storiesOf('Component', module)
+  .add('with some emoji', () => <Component />, {
+    notes: 'A very simple example of addon notes',
+  });
 ```
 
 #### Using Markdown
 
-To use markdown in your notes, either through import or inline, simply put it in the `markdown` property of your note.
+To use markdown in your notes is supported, storybook will load markdown as raw by default.
 
 ```js
 import { storiesOf } from '@storybook/react';
 import Component from './Component';
-import someMarkdownText from './someMarkdownText.md';
+import notes from './someMarkdownText.md';
 
-storiesOf('Component', module).add('With Markdown', () => <Component />, {
-  notes: { markdown: someMarkdownText },
-});
+storiesOf('Component', module)
+  .add('With Markdown', () => <Component />, { notes });
 ```
+
+### Giphy
+
+When using markdown, you can also embed gifs from Giphy into your markdown. Currently, the value `gif` of the gif prop is used to search and return the first result returned by Giphy.
+
+```md
+# Title
+
+<Giphy gif='cheese' />
+```
+

@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Table, Td, Th } from '@storybook/components';
 import PropVal from './PropVal';
 import PrettyPropType from './types/PrettyPropType';
+
+const Table = props => <table {...props} />;
+const Td = props => <td style={{ paddingRight: 10, verticalAlign: 'top' }} {...props} />;
+const Tr = props => <tr {...props} />;
+const Th = props => <th style={{ textAlign: 'left', verticalAlign: 'top' }} {...props} />;
+const Tbody = props => <tbody {...props} />;
+const Thead = props => <thead {...props} />;
 
 export const multiLineText = input => {
   if (!input) {
@@ -60,36 +66,34 @@ export default function PropTable(props) {
 
   return (
     <Table>
-      <thead>
-        <tr>
-          <Th bordered>property</Th>
-          <Th bordered>propType</Th>
-          <Th bordered>required</Th>
-          <Th bordered>default</Th>
-          <Th bordered>description</Th>
-        </tr>
-      </thead>
-      <tbody>
+      <Thead>
+        <Tr>
+          <Th>property</Th>
+          <Th>propType</Th>
+          <Th>required</Th>
+          <Th>default</Th>
+          <Th>description</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
         {includedPropDefinitions.map(row => (
-          <tr key={row.property}>
-            <Td bordered code>
-              {row.property}
-            </Td>
-            <Td bordered code>
+          <Tr key={row.property}>
+            <Td>{row.property}</Td>
+            <Td>
               <PrettyPropType propType={row.propType} />
             </Td>
-            <Td bordered>{row.required ? 'yes' : '-'}</Td>
-            <Td bordered>
+            <Td>{row.required ? 'yes' : '-'}</Td>
+            <Td>
               {row.defaultValue === undefined ? (
                 '-'
               ) : (
-                <PropVal val={row.defaultValue} {...propValProps} />
+                <PropVal val={row.defaultValue} {...propValProps} valueStyles={{}} />
               )}
             </Td>
-            <Td bordered>{multiLineText(row.description)}</Td>
-          </tr>
+            <Td>{multiLineText(row.description)}</Td>
+          </Tr>
         ))}
-      </tbody>
+      </Tbody>
     </Table>
   );
 }

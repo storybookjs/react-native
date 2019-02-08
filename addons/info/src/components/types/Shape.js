@@ -1,13 +1,26 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { HighlightButton } from '@storybook/components';
 import PrettyPropType from './PrettyPropType';
 import PropertyLabel from './PropertyLabel';
 
 import { TypeInfo, getPropTypes } from './proptypes';
 
 const MARGIN_SIZE = 15;
+
+const HighlightButton = props => (
+  <button
+    type="button"
+    {...props}
+    style={{
+      display: 'inline-block',
+      background: 'none',
+      border: '0 none',
+      color: 'gray',
+      cursor: 'pointer',
+    }}
+  />
+);
 
 class Shape extends React.Component {
   constructor(props) {
@@ -24,29 +37,14 @@ class Shape extends React.Component {
     });
   };
 
-  handleMouseEnter = () => {
-    this.setState({ hover: true });
-  };
-
-  handleMouseLeave = () => {
-    this.setState({ hover: false });
-  };
-
   render() {
     const { propType, depth } = this.props;
-    const { hover, minimized } = this.state;
+    const { minimized } = this.state;
 
     const propTypes = getPropTypes(propType);
     return (
       <span>
-        <HighlightButton
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
-          highlight={hover}
-          onClick={this.handleToggle}
-        >
-          {'{'}
-        </HighlightButton>
+        <HighlightButton onClick={this.handleToggle}>{'{'}</HighlightButton>
         <HighlightButton onClick={this.handleToggle}>...</HighlightButton>
         {!minimized &&
           Object.keys(propTypes).map(childProperty => (
@@ -59,14 +57,7 @@ class Shape extends React.Component {
             </div>
           ))}
 
-        <HighlightButton
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
-          highlight={hover}
-          onClick={this.handleToggle}
-        >
-          {'}'}
-        </HighlightButton>
+        <HighlightButton onClick={this.handleToggle}>{'}'}</HighlightButton>
       </span>
     );
   }

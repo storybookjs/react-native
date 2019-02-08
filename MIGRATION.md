@@ -1,5 +1,10 @@
 # Migration
 
+- [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
+  - [Webpack config simplification](#webpack-config-simplification)
+- [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
+  - [Private addon config](#private-addon-config)
+  - [React 15.x](#react-15x)
 - [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
   - [React 16.3+](#react-163)
   - [Generic addons](#generic-addons)
@@ -34,9 +39,41 @@
   - [Packages renaming](#packages-renaming)
   - [Deprecated embedded addons](#deprecated-embedded-addons)
 
+## From version 4.1.x to 5.0.x
+
+Storybook 5.0 includes sweeping UI changes as well as changes to the addon API and custom webpack configuration. We've tried to keep backwards compatibility in most cases, but there are some notable exceptions documented below.
+
+## Webpack config simplifcation
+
+The API for custom webpack configuration has been simplifed in 5.0, but it's a breaking change.
+
+Storybook's "full control mode" for webpack allows you to override the webpack config with a function that returns a configuration object.
+
+In Storybook 5 there is a single signature for full-control mode that takes a parameters object with the fields `config` and `mode`:
+
+```js
+module.exports = ({ config, mode }) => { config.modules.rules.push(...); return config; }
+```
+
+In contrast, the 4.x configuration function accepted either two or three arguments (`(baseConfig, mode)`, or `(baseConfig, mode, defaultConfig)`). The `config` object in the 5.x signature is equivalent to 4.x's `defaultConfig`.
+
+Please see the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
+
+## From version 4.0.x to 4.1.x
+
+There are are a few migrations you should be aware of in 4.1, including one unintentionally breaking change for advanced addon usage.
+
+## Private addon config
+
+If your Storybook contains custom addons defined that are defined in your app (as opposed to installed from packages) and those addons rely on reconfiguring webpack/babel, Storybook 4.1 may break for you. There's a workaround [described in the issue](https://github.com/storybooks/storybook/issues/4995), and we're working on official support in the next release.
+
+## React 15.x
+
+Storybook 4.1 supports React 15.x (which had been [lost in the 4.0 release](#react-163)). So if you've been blocked on upgrading, we've got you covered. You should be able to upgrade according to the 4.0 migration notes below, or following the [4.0 upgrade guide](https://medium.com/storybookjs/migrating-to-storybook-4-c65b19a03d2c).
+
 ## From version 3.4.x to 4.0.x
 
-With 4.0 as our first major release in over a year, we've collected a lot of cleanup tasks. Most of the deprecations have been marked for months, so we hope that there will be no significant impact on your project.
+With 4.0 as our first major release in over a year, we've collected a lot of cleanup tasks. Most of the deprecations have been marked for months, so we hope that there will be no significant impact on your project. We've also created a [step-by-step guide to help you upgrade](https://medium.com/storybookjs/migrating-to-storybook-4-c65b19a03d2c).
 
 ### React 16.3+
 
@@ -69,13 +106,13 @@ core.browser.esm.js:15 Uncaught TypeError: Object(...) is not a function
 4.x introduces generic addon decorators that are not tied to specific view layers [#3555](https://github.com/storybooks/storybook/pull/3555). So for example:
 
 ```js
-import { number } from "@storybook/addon-knobs/react";
+import { number } from '@storybook/addon-knobs/react';
 ```
 
 Becomes:
 
 ```js
-import { number } from "@storybook/addon-knobs";
+import { number } from '@storybook/addon-knobs';
 ```
 
 ### Knobs select ordering
@@ -228,8 +265,8 @@ Also read on if you're using `addon-knobs`: we advise an update to your code for
 
 This affects you if you don't use babel in your project. You may need to add `babel-core` as dev dependency:
 
-```
-npm install --save-dev babel-core
+```sh
+yarn add babel-core --dev
 ```
 
 This was done to support different major versions of babel.
@@ -245,7 +282,7 @@ Knobs users: there was a bug in 3.2.x where using the knobs addon imported all f
 In the case of React or React-Native, import knobs like this:
 
 ```js
-import { withKnobs, text, boolean, number } from "@storybook/addon-knobs/react";
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
 ```
 
 In the case of Vue: `import { ... } from '@storybook/addon-knobs/vue';`
@@ -261,7 +298,7 @@ In the case of Angular: `import { ... } from '@storybook/addon-knobs/angular';`
 TypeScript users: we've moved the rest of our addons type definitions into [DefinitelyTyped](http://definitelytyped.org/). Starting in 3.2.0 make sure to use the right addons types:
 
 ```sh
-npm install @types/storybook__addon-notes @types/storybook__addon-options @types/storybook__addon-knobs @types/storybook__addon-links --save-dev
+yarn add @types/storybook__addon-notes @types/storybook__addon-options @types/storybook__addon-knobs @types/storybook__addon-links --dev
 ```
 
 See also [TypeScript definitions in 3.1.x](#moved-typescript-definitions).
@@ -273,10 +310,10 @@ We're in the process of upgrading our addons APIs. As a first step, we've upgrad
 Here's an example of using Notes and Info in 3.2 with the new API.
 
 ```js
-storiesOf("composition", module).add(
-  "new addons api",
-  withInfo("see Notes panel for composition info")(
-    withNotes({ text: "Composition: Info(Notes())" })(context => (
+storiesOf('composition', module).add(
+  'new addons api',
+  withInfo('see Notes panel for composition info')(
+    withNotes({ text: 'Composition: Info(Notes())' })(context => (
       <MyComponent name={context.story} />
     ))
   )
@@ -294,7 +331,7 @@ It's not beautiful, but we'll be adding a more convenient/idiomatic way of using
 TypeScript users: we are in the process of moving our typescript definitions into [DefinitelyTyped](http://definitelytyped.org/). If you're using TypeScript, starting in 3.1.0 you need to make sure your type definitions are installed:
 
 ```sh
-npm install @types/node @types/react @types/storybook__react --save-dev
+yarn add @types/node @types/react @types/storybook__react --dev
 ```
 
 ### Deprecated head.html
@@ -387,13 +424,13 @@ If you **are** using these addons, migrating is simple:
 - update your code:
   change `addons.js` like so:
   ```js
-  import "@storybook/addon-actions/register";
-  import "@storybook/addon-links/register";
+  import '@storybook/addon-actions/register';
+  import '@storybook/addon-links/register';
   ```
   change `x.story.js` like so:
   ```js
-  import React from "react";
-  import { storiesOf } from "@storybook/react";
-  import { action } from "@storybook/addon-actions";
-  import { linkTo } from "@storybook/addon-links";
+  import React from 'react';
+  import { storiesOf } from '@storybook/react';
+  import { action } from '@storybook/addon-actions';
+  import { linkTo } from '@storybook/addon-links';
   ```

@@ -14,6 +14,7 @@ export const {
   addParameters,
   clearDecorators,
   getStorybook,
+  raw,
 } = clientApi;
 
 export const { configure } = configApi;

@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
 import {
   withKnobs,
-  withKnobsOptions,
   text,
   number,
   boolean,
@@ -105,9 +104,9 @@ storiesOf('Addons|Knobs.withKnobs', module)
   })
   .add('tweaks static values organized in groups', () => {
     const GROUP_IDS = {
-      DISPLAY: 'DISPLAY',
-      GENERAL: 'GENERAL',
-      FAVORITES: 'FAVORITES',
+      DISPLAY: 'Display',
+      GENERAL: 'General',
+      FAVORITES: 'Favorites',
     };
 
     const fruits = {
@@ -185,10 +184,10 @@ storiesOf('Addons|Knobs.withKnobs', module)
   .add('dynamic knobs', () => {
     const showOptional = select('Show optional', ['yes', 'no'], 'yes');
     return (
-      <div>
+      <Fragment>
         <div>{text('compulsory', 'I must be here')}</div>
         {showOptional === 'yes' ? <div>{text('optional', 'I can disappear')}</div> : null}
-      </div>
+      </Fragment>
     );
   })
   .add('complex select', () => {
@@ -198,14 +197,16 @@ storiesOf('Addons|Knobs.withKnobs', module)
         number: 1,
         string: 'string',
         object: {},
-        array: [],
+        array: [1, 2, 3],
+        function: () => {},
       },
       'string'
     );
     const value = m.toString();
+    const type = Array.isArray(m) ? 'array' : typeof m;
     return (
       <pre>
-        the type of {value} = {typeof m}
+        the type of {JSON.stringify(value, null, 2)} = {type}
       </pre>
     );
   })
@@ -258,7 +259,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
     });
 
     return (
-      <div style={{ color: 'white' }}>
+      <div>
         <p>Weekday: {optionRadio}</p>
         <p>Weekend: {optionInlineRadio}</p>
         <p>Month: {optionSelect}</p>
@@ -295,10 +296,10 @@ storiesOf('Addons|Knobs.withKnobs', module)
       }
     });
     return (
-      <div>
+      <Fragment>
         <p>Hit the knob button and it will toggle the items list into multiple states.</p>
         <ItemLoader isLoading={injectedIsLoading} items={injectedItems} />
-      </div>
+      </Fragment>
     );
   })
   .add('XSS safety', () => (
@@ -320,11 +321,3 @@ storiesOf('Addons|Knobs.withKnobs using options', module)
     })
   )
   .add('accepts options', () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>);
-
-storiesOf('Addons|Knobs.withKnobsOptions', module)
-  .addDecorator(
-    withKnobsOptions({
-      escapeHTML: false,
-    })
-  )
-  .add('displays HTML code', () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>);

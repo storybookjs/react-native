@@ -47,11 +47,11 @@ module.exports = __DEV__ ? StorybookUI : App;
 
 If you want to control storybook from browser/VS Code/websockets you need install and start the server.
 
-```shell
+```sh
 npm run storybook
 ```
 
-Now, you can open <http://localhost:7007> to view your storybook menus in the browser.
+Now, you can open `<http://localhost:7007>` to view your storybook menus in the browser.
 
 ## Start App
 
@@ -59,11 +59,14 @@ To see your Storybook stories on the device, you should start your mobile app fo
 
 For CRNA apps:
 
-    npm run <platform>
+```sh
+npm run <platform>
+```
 
 For RN apps:
-
-    react-native run-<platform>
+```sh
+react-native run-<platform>
+```
 
 Once your app is started, changing the selected story in web browser will update the story displayed within your mobile app.
 

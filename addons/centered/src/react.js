@@ -9,3 +9,7 @@ export default function(storyFn) {
     </div>
   );
 }
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline();
+}

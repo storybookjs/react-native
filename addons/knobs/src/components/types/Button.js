@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Button } from '@storybook/components';
+import { Form } from '@storybook/components';
 
 const ButtonType = ({ knob, onClick }) => (
-  <Button type="button" onClick={() => onClick(knob)}>
+  <Form.Button type="button" name={knob.name} onClick={() => onClick(knob)}>
     {knob.name}
-  </Button>
+  </Form.Button>
 );
 
 ButtonType.propTypes = {

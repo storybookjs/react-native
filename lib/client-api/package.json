@@ -1,17 +1,11 @@
 {
   "name": "@storybook/client-api",
-  "version": "4.2.0-alpha.8",
-  "description": "Api used for creating Storybook Client (client and store)",
+  "version": "5.0.0-beta.1",
+  "description": "Storybook Client API",
   "keywords": [
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/client-api",
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -19,12 +13,26 @@
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
-  "dependencies": {
-    "@storybook/addons": "4.2.0-alpha.8",
-    "@storybook/client-logger": "4.2.0-alpha.8",
-    "@storybook/core-events": "4.2.0-alpha.8",
-    "eventemitter3": "^3.1.0"
-  },
   "license": "MIT",
-  "main": "dist/index.js"
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+"dependencies": {
+    "common-tags": "^1.8.0",
+    "@storybook/addons": "5.0.0-beta.1",
+    "@storybook/client-logger": "5.0.0-beta.1",
+    "@storybook/core-events": "5.0.0-beta.1",
+    "eventemitter3": "^3.1.0",
+    "global": "^4.3.2",
+    "is-plain-object": "^2.0.4",
+    "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.5.0",
+    "lodash.mergewith": "^4.6.1",
+    "memoizerific": "^1.11.3",
+    "qs": "^6.5.2"
+},
+  "publishConfig": {
+    "access": "public"
+  }
 }
