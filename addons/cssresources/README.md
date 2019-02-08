@@ -28,26 +28,27 @@ You need add the all the css resources at compile time using the `withCssResourc
 
 ```js
 // Import from @storybook/X where X is your framework
-import { configure, addDecorator, storiesOf } from '@storybook/react';
+import { configure, addDecorator, addParameters, storiesOf } from '@storybook/react';
 import { withCssResources } from '@storybook/addon-cssresources';
 
 // global
-addDecorator(
-  withCssResources({
-    cssresources: [{
-        id: `bluetheme`,
-        code: `<style>body { background-color: lightblue; }</style>`,
-        picked: false,
-      },
-    ],
-  })
-);
+addDecorator(withCssResources)
+addParameters({
+  cssresources: [{
+      id: `bluetheme`,
+      code: `<style>body { background-color: lightblue; }</style>`,
+      picked: false,
+    },
+  ],
+});
+
+You can use the `cssresources` parameter to override resources on each story individually:
 
 // per story
 storiesOf('Addons|Cssresources', module)
-  .addDecorator(
-    withCssResources({
-      cssresources: [{
+  .add('Camera Icon', () => <i className="fa fa-camera-retro"> Camera Icon</i>, {
+      cssresources: [
+        {
           id: `fontawesome`,
           code: `<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>`,
           picked: true,
@@ -57,7 +58,5 @@ storiesOf('Addons|Cssresources', module)
           picked: true,
         },
       ],
-    })
-  )
-  .add('Camera Icon', () => <i className="fa fa-camera-retro"> Camera Icon</i>);
+  });
 ```

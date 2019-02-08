@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { types } from '@storybook/addons';
 import { styled } from '@storybook/theming';
-import { STORY_CHANGED } from '@storybook/core-events';
+import { STORY_RENDERED } from '@storybook/core-events';
 
 import { SyntaxHighlighter as SyntaxHighlighterBase, Placeholder, DocumentFormatting, Link } from '@storybook/components';
 import Giphy from './giphy';
@@ -75,12 +75,12 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
 
   componentDidMount() {
     const { api } = this.props;
-    api.on(STORY_CHANGED, this.onStoryChange);
+    api.on(STORY_RENDERED, this.onStoryChange);
   }
 
   componentWillUnmount() {
     const { api } = this.props;
-    api.off(STORY_CHANGED, this.onStoryChange);
+    api.off(STORY_RENDERED, this.onStoryChange);
   }
 
   onStoryChange = (id: string) => {
