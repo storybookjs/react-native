@@ -4,16 +4,18 @@ import { types } from '@storybook/addons';
 import { styled } from '@storybook/theming';
 import { STORY_RENDERED } from '@storybook/core-events';
 
-import { SyntaxHighlighter as SyntaxHighlighterBase, Placeholder } from '@storybook/components';
+import { SyntaxHighlighter as SyntaxHighlighterBase, Placeholder, DocumentFormatting, Link } from '@storybook/components';
 import Giphy from './giphy';
 import Markdown from 'markdown-to-jsx';
 
 import { PARAM_KEY, API, Parameters } from './shared';
 
 const Panel = styled.div({
-  padding: 10,
+  padding: '3rem 40px',
   boxSizing: 'border-box',
   width: '100%',
+  maxWidth: 980,
+  margin: '0 auto',
 });
 
 interface Props {
@@ -107,10 +109,19 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
 
     return value ? (
       <Panel className="addon-notes-container">
+      <DocumentFormatting>
         <Markdown options={options}>{value}</Markdown>
+        </DocumentFormatting>
       </Panel>
     ) : (
-      <Placeholder>There is no info/note</Placeholder>
+      <Placeholder>
+        <React.Fragment>
+          No notes yet
+        </React.Fragment>
+        <React.Fragment>
+          Learn how to <Link href="https://github.com/storybooks/storybook/tree/master/addons/notes" target="_blank" withArrow>document components in Markdown</Link>
+        </React.Fragment>
+      </Placeholder>
     );
   }
 }

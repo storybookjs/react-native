@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Basics|typography all 1`] = `
+.emotion-16 {
+  padding: 3rem;
+}
+
+.emotion-0 {
+  margin-bottom: 3rem;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.emotion-15 > * {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 40px;
+}
+
+.emotion-10 {
+  font-weight: 900;
+}
+
+.emotion-10 > * {
+  margin-bottom: 1rem;
+}
+
+.emotion-1 {
+  font-size: 48px;
+}
+
+.emotion-2 {
+  font-size: 40px;
+}
+
+.emotion-3 {
+  font-size: 32px;
+}
+
+.emotion-4 {
+  font-size: 28px;
+}
+
+.emotion-6 {
+  font-size: 20px;
+}
+
+.emotion-7 {
+  font-size: 16px;
+}
+
+.emotion-8 {
+  font-size: 14px;
+}
+
+.emotion-9 {
+  font-size: 12px;
+}
+
+.emotion-14 > * {
+  margin-bottom: 1rem;
+}
+
+<div
+  class="emotion-16"
+>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      <b>
+        Font-family:
+      </b>
+       "Nunito sans", Apple system font ... sans-serif
+    </div>
+    <div>
+      <b>
+        UI text size:
+      </b>
+       13px
+    </div>
+    <div>
+      <b>
+        Document/Markdown text size:
+      </b>
+       14px
+    </div>
+    <div>
+      <b>
+        Code font:
+      </b>
+       
+      <code>
+        Operator Mono, Fira Code, Consolas ... monospace
+      </code>
+    </div>
+    <div>
+      <b>
+        Weights:
+      </b>
+       400(normal), 600(bold), 900(black)
+    </div>
+  </div>
+  <div
+    class="emotion-15"
+  >
+    <div
+      class="emotion-10"
+    >
+      <div
+        class="emotion-1"
+      >
+        48 heading
+      </div>
+      <div
+        class="emotion-2"
+      >
+        40 heading
+      </div>
+      <div
+        class="emotion-3"
+      >
+        32 heading
+      </div>
+      <div
+        class="emotion-4"
+      >
+        28 heading
+      </div>
+      <div
+        class="emotion-4"
+      >
+        24 heading
+      </div>
+      <div
+        class="emotion-6"
+      >
+        20 heading
+      </div>
+      <div
+        class="emotion-7"
+      >
+        16 heading
+      </div>
+      <div
+        class="emotion-8"
+      >
+        14 heading
+      </div>
+      <div
+        class="emotion-9"
+      >
+        12 heading
+      </div>
+    </div>
+    <div
+      class="emotion-14"
+    >
+      <div
+        class="emotion-7"
+      >
+        16 The quick brown fox jumps over the lazy dog
+      </div>
+      <div
+        class="emotion-8"
+      >
+        14 The quick brown fox jumps over the lazy dog
+      </div>
+      <div
+        class="emotion-9"
+      >
+        12 The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+</div>
+`;

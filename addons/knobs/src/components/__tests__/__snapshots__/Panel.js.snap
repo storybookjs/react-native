@@ -25,20 +25,17 @@ Array [
 }
 
 .emotion-1 {
-  width: 100%;
-  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 8px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 0 8px 8px 8px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin: 0 15px;
+  padding: 8px 0;
 }
 
 .emotion-1:last-child {
-  border-bottom: 0 none;
-  padding-bottom: 0;
+  margin-bottom: 3rem;
 }
 
 .emotion-0 {
@@ -123,20 +120,17 @@ Array [
 }
 
 .emotion-1 {
-  width: 100%;
-  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 8px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 0 8px 8px 8px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin: 0 15px;
+  padding: 8px 0;
 }
 
 .emotion-1:last-child {
-  border-bottom: 0 none;
-  padding-bottom: 0;
+  margin-bottom: 3rem;
 }
 
 .emotion-0 {

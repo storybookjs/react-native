@@ -175,12 +175,9 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
           <div
             style={
               Object {
-                "WebkitFontSmoothing": "antialiased",
                 "backgroundColor": "#fff",
                 "border": "1px solid #eee",
                 "borderRadius": "2px",
-                "color": "#444",
-                "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                 "fontSize": "15px",
                 "fontWeight": 300,
                 "lineHeight": 1.45,
@@ -1431,12 +1428,9 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
           <div
             style={
               Object {
-                "WebkitFontSmoothing": "antialiased",
                 "backgroundColor": "#fff",
                 "border": "1px solid #eee",
                 "borderRadius": "2px",
-                "color": "#444",
-                "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                 "fontSize": "15px",
                 "fontWeight": 300,
                 "lineHeight": 1.45,
@@ -1491,10 +1485,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                   id="test-story"
                   style={
                     Object {
-                      "WebkitFontSmoothing": "antialiased",
                       "borderBottom": "1px solid #eee",
-                      "color": "#444",
-                      "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                       "fontSize": "40px",
                       "fontWeight": 600,
                       "margin": 0,
@@ -1514,9 +1505,6 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                   id="test-story-with-markdown-info"
                   style={
                     Object {
-                      "WebkitFontSmoothing": "antialiased",
-                      "color": "#444",
-                      "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                       "fontSize": "30px",
                       "fontWeight": 600,
                       "margin": 0,
@@ -1534,9 +1522,6 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                 <div
                   style={
                     Object {
-                      "WebkitFontSmoothing": "antialiased",
-                      "color": "#444",
-                      "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                       "fontSize": "15px",
                     }
                   }
@@ -2644,12 +2629,9 @@ exports[`addon Info should render component description if story kind matches co
         <div
           style={
             Object {
-              "WebkitFontSmoothing": "antialiased",
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
-              "color": "#444",
-              "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -2767,12 +2749,9 @@ exports[`addon Info should render component description if story kind matches co
         <div
           style={
             Object {
-              "WebkitFontSmoothing": "antialiased",
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
-              "color": "#444",
-              "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -2792,10 +2771,7 @@ exports[`addon Info should render component description if story kind matches co
                 id="awesome-test-component-description"
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
                     "borderBottom": "1px solid #eee",
-                    "color": "#444",
-                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "40px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -2815,9 +2791,6 @@ exports[`addon Info should render component description if story kind matches co
                 id="awesome-test-component-description-with-markdown-support"
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
-                    "color": "#444",
-                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "30px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -2835,9 +2808,6 @@ exports[`addon Info should render component description if story kind matches co
               <div
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
-                    "color": "#444",
-                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "15px",
                   }
                 }
@@ -3873,12 +3843,9 @@ exports[`addon Info should render component description if story name matches co
         <div
           style={
             Object {
-              "WebkitFontSmoothing": "antialiased",
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
-              "color": "#444",
-              "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -3996,12 +3963,9 @@ exports[`addon Info should render component description if story name matches co
         <div
           style={
             Object {
-              "WebkitFontSmoothing": "antialiased",
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
-              "color": "#444",
-              "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -4021,10 +3985,7 @@ exports[`addon Info should render component description if story name matches co
                 id="awesome-test-component-description"
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
                     "borderBottom": "1px solid #eee",
-                    "color": "#444",
-                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "40px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -4044,9 +4005,6 @@ exports[`addon Info should render component description if story name matches co
                 id="awesome-test-component-description-with-markdown-support"
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
-                    "color": "#444",
-                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "30px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -4064,9 +4022,6 @@ exports[`addon Info should render component description if story name matches co
               <div
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
-                    "color": "#444",
-                    "fontFamily": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
                     "fontSize": "15px",
                   }
                 }
