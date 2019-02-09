@@ -1,44 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|Storyshots table 1`] = `
-<table>
-  <thead>
-    <tr>
-      <th>
-        name
-      </th>
-      <th>
-        type
-      </th>
-      <th>
-        default
-      </th>
-      <th>
-        description
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        MyName
-      </td>
-      <td>
-        MyType
-      </td>
-      <td>
-        MyDefault
-      </td>
-      <td>
-        MyDesc
-      </td>
-    </tr>
-  </tbody>
-</table>
-`;
+exports[`Storyshots Addons|Storyshots block 1`] = `
+.emotion-0 {
+  display: inline-block;
+  height: 400px;
+  width: 400px;
+  background: hotpink;
+}
 
-exports[`Storyshots Addons|Storyshots text 1`] = `
-<div>
-  This is a test
-</div>
+<div
+  class="emotion-0"
+/>
 `;
