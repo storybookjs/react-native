@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import deepEqual from 'fast-deep-equal';
 
 import { STORY_RENDERED } from '@storybook/core-events';
@@ -81,12 +80,3 @@ export default class ActionLogger extends Component<ActionLoggerProps, ActionLog
     return active ? <ActionLoggerComponent {...props} /> : null;
   }
 }
-
-(ActionLogger as any).propTypes = {
-  active: PropTypes.bool.isRequired,
-  api: PropTypes.shape({
-    on: PropTypes.func,
-    getQueryParam: PropTypes.func,
-    setQueryParams: PropTypes.func,
-  }).isRequired,
-};
