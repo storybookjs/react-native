@@ -10,14 +10,14 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
+  background: #333333;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
 }
 
 .emotion-7 {
@@ -78,7 +78,7 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -291,14 +291,14 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
+  background: #333333;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
 }
 
 .emotion-7 {
@@ -359,7 +359,7 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -528,14 +528,14 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
+  background: #333333;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
 }
 
 .emotion-3 {
@@ -596,7 +596,7 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -723,14 +723,14 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
+  background: #333333;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
 }
 
 .emotion-7 {
@@ -791,7 +791,7 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -867,7 +867,7 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 
 .emotion-11 {
   background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.1);
+  border: 1px solid rgba(255,255,255,.1);
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -1021,14 +1021,14 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
+  background: #333333;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
 }
 
 .emotion-7 {
@@ -1089,7 +1089,7 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -1159,7 +1159,7 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
 
 .emotion-11 {
   background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.1);
+  border: 1px solid rgba(255,255,255,.1);
   display: block;
 }
 
@@ -1298,7 +1298,7 @@ exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
 .emotion-1 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #FFFFFF;
   font-size: 13px;
 }
 
@@ -1380,7 +1380,7 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -1450,7 +1450,7 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
 
 .emotion-11 {
   background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.1);
+  border: 1px solid rgba(255,255,255,.1);
   display: block;
 }
 
@@ -1463,14 +1463,14 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
+  background: #333333;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
 }
 
 <div
@@ -1614,14 +1614,14 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
+  background: #333333;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
 }
 
 .emotion-7 {
@@ -1682,7 +1682,7 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 

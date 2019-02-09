@@ -29,7 +29,7 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
   margin: 0 15px;
   padding: 8px 0;
 }
@@ -124,7 +124,7 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
   margin: 0 15px;
   padding: 8px 0;
 }

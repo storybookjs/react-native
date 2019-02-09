@@ -38,7 +38,7 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
 }
 
 .emotion-5 + .emotion-5 {
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .emotion-5 > * + * {
@@ -211,7 +211,7 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 }
 
 .emotion-2 + .emotion-2 {
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .emotion-2 > * + * {
@@ -344,7 +344,7 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 }
 
 .emotion-37 + .emotion-37 {
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .emotion-37 > * + * {
@@ -581,7 +581,7 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
 }
 
 .emotion-2 + .emotion-2 {
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .emotion-2 > * + * {
@@ -668,7 +668,7 @@ exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
 }
 
 .emotion-5 + .emotion-5 {
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .emotion-5 > * + * {
@@ -800,7 +800,7 @@ exports[`Storyshots basics|Tooltip/ListItem disabled 1`] = `
 }
 
 .emotion-5 + .emotion-5 {
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .emotion-5 > * + * {
@@ -939,7 +939,7 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
 }
 
 .emotion-2 + .emotion-2 {
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .emotion-2 > * + * {
@@ -1021,7 +1021,7 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions 1`] = `
 }
 
 .emotion-5 + .emotion-5 {
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .emotion-5 > * + * {
@@ -1132,7 +1132,7 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
 }
 
 .emotion-5 + .emotion-5 {
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .emotion-5 > * + * {

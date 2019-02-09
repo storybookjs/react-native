@@ -313,7 +313,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -611,7 +611,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -903,7 +903,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -1201,7 +1201,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 

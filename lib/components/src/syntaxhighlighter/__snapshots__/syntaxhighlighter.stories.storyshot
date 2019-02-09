@@ -217,7 +217,7 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
 .emotion-5 {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,.1);
+  border: 1px solid rgba(255,255,255,.1);
 }
 
 .emotion-2 {
@@ -405,6 +405,7 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background: #333333;
 }
 
 .emotion-3 {
@@ -419,22 +420,23 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #666666;
+  color: #FFFFFF;
+  background: #333333;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
-  border-top: 1px solid rgba(0,0,0,.1);
-  border-left: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-left: 1px solid rgba(255,255,255,.1);
   margin-left: -1px;
   border-radius: 4px 0 0 0;
 }
 
 .emotion-3:not(:last-child) {
-  border-right: 1px solid rgba(0,0,0,.1);
+  border-right: 1px solid rgba(255,255,255,.1);
 }
 
 .emotion-3 + * {
-  border-left: 1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(255,255,255,.1);
   border-radius: 0;
 }
 
