@@ -1,5 +1,5 @@
 // tslint:disable-next-line:no-implicit-dependencies
-import { _STORE_REDUCERS } from '@ngrx/store';
+// import { _STORE_REDUCERS } from '@ngrx/store';
 import { OperatingSystem } from './platform';
 
 export const enum KeyCode {

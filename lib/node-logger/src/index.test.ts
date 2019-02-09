@@ -12,9 +12,9 @@ describe('node-logger', () => {
     // This feels odd but TypeScript doesn't understand that the imported
     // npmlog module is being wrapped by Jest so we are type casting here
     // in order to be allowed to call Jest's mockReset() method.
-    ((info as any) as jest.MockInstance<any>).mockReset();
-    ((warn as any) as jest.MockInstance<any>).mockReset();
-    ((error as any) as jest.MockInstance<any>).mockReset();
+    ((info as any) as jest.MockInstance<any, any>).mockReset();
+    ((warn as any) as jest.MockInstance<any, any>).mockReset();
+    ((error as any) as jest.MockInstance<any, any>).mockReset();
   });
   it('should have an info method', () => {
     const message = 'information';
