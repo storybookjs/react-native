@@ -23,6 +23,7 @@
   "dependencies": {
     "@storybook/addons": "5.0.0-beta.1",
     "@storybook/components": "5.0.0-beta.1",
+    "@storybook/theming": "5.0.0-beta.1",
     "core-js": "^2.6.2",
     "estraverse": "^4.2.0",
     "loader-utils": "^1.2.1",

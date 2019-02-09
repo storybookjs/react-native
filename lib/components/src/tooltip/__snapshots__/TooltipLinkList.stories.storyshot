@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots basics/Tooltip/TooltipLinkList links 1`] = `
+.emotion-0 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+<div
+  style="height:300px"
+>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      Tooltip
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/TooltipLinkList links and callback 1`] = `
+.emotion-0 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+<div
+  style="height:300px"
+>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      Tooltip
+    </div>
+  </div>
+</div>
+`;

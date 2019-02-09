@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import dark from './themes/dark';
 import light from './themes/light';
 
@@ -16,3 +17,5 @@ export { themes };
 
 export * from '@emotion/core';
 export * from 'emotion-theming';
+
+export { createGlobal, createReset } from './global';

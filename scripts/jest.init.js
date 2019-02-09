@@ -27,6 +27,7 @@ configure({ adapter: new Adapter() });
  */
 
 const ignoreList = [
+  error => error.message.includes('":nth-child" is potentially unsafe'),
   error => error.message.includes('":first-child" is potentially unsafe'),
   error => error.message.includes('Failed prop type') && error.stack.includes('storyshots'),
 ];
