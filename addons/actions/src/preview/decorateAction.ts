@@ -1,26 +1,27 @@
-import action from './action';
-import actions from './actions';
+import { action } from './action';
+import { actions } from './actions';
 import { createDecorator } from './withActions';
+import { ActionOptions, DecoratorFunction, HandlerFunction } from '../models';
 
-function applyDecorators(decorators, actionCallback) {
-  return (..._args) => {
+const applyDecorators = (decorators: DecoratorFunction[], actionCallback: HandlerFunction) => {
+  return (..._args: any[]) => {
     const decorated = decorators.reduce((args, fn) => fn(args), _args);
     actionCallback(...decorated);
   };
-}
+};
 
-export function decorateAction(decorators) {
-  return (name, options) => {
+export const decorateAction = (decorators: DecoratorFunction[]): ((name: string, options?: ActionOptions) => HandlerFunction) => {
+  return (name: string, options?: ActionOptions) => {
     const callAction = action(name, options);
     return applyDecorators(decorators, callAction);
   };
-}
+};
 
-export function decorate(decorators) {
+export const decorate = (decorators: DecoratorFunction[]) => {
   const decorated = decorateAction(decorators);
-  const decoratedActions = (...args) => {
+  const decoratedActions = (...args: any[]) => {
     const rawActions = actions(...args);
-    const actionsObject = {};
+    const actionsObject = {} as any;
     Object.keys(rawActions).forEach(name => {
       actionsObject[name] = applyDecorators(decorators, rawActions[name]);
     });
@@ -31,4 +32,4 @@ export function decorate(decorators) {
     actions: decoratedActions,
     withActions: createDecorator(decoratedActions),
   };
-}
+};

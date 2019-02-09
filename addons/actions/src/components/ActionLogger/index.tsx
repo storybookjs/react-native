@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import Inspector from 'react-inspector';
 
@@ -6,11 +5,18 @@ import { withTheme } from '@storybook/theming';
 import { ActionBar } from '@storybook/components';
 
 import { Actions, Action, Wrapper, InspectorContainer, Counter } from './style';
+import { ActionDisplay } from '../../models';
 
-const ActionLogger = withTheme(({ actions, onClear, theme }) => (
+interface ActionLoggerProps {
+  actions: ActionDisplay[];
+  onClear: () => void;
+  theme: any;
+}
+
+export const ActionLogger = withTheme(({ actions, onClear, theme }: ActionLoggerProps) => (
   <Wrapper>
     <Actions>
-      {actions.map(action => (
+      {actions.map((action: ActionDisplay) => (
         <Action key={action.id}>
           {action.count > 1 && <Counter>{action.count}</Counter>}
           <InspectorContainer>
@@ -29,18 +35,3 @@ const ActionLogger = withTheme(({ actions, onClear, theme }) => (
     <ActionBar actionItems={[{ title: 'Clear', onClick: onClear }]} />
   </Wrapper>
 ));
-
-ActionLogger.propTypes = {
-  onClear: PropTypes.func.isRequired,
-  actions: PropTypes.arrayOf(
-    PropTypes.shape({
-      count: PropTypes.node,
-      data: PropTypes.shape({
-        name: PropTypes.node.isRequired,
-        args: PropTypes.any,
-      }),
-    })
-  ).isRequired,
-};
-
-export default ActionLogger;

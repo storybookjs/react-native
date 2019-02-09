@@ -1,7 +1,8 @@
-import action from './action';
+import { action } from './action';
+import { ActionOptions, ActionsMap } from '../models';
 
-export default function actions(...args) {
-  let options = {};
+export function actions(...args: any[]): ActionsMap {
+  let options: ActionOptions = {};
   const names = args;
   // last argument can be options
   if (names.length !== 1 && typeof args[args.length - 1] !== 'string') {
@@ -16,7 +17,7 @@ export default function actions(...args) {
     });
   }
 
-  const actionsObject = {};
+  const actionsObject: ActionsMap = {};
   Object.keys(namesObject).forEach(name => {
     actionsObject[name] = action(namesObject[name], options);
   });
