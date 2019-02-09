@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, configure, addDecorator, addParameters } from '@storybook/react';
-import { Global, ThemeProvider, themes, createReset } from '@storybook/theming';
+import { Global, ThemeProvider, themes, createGlobal } from '@storybook/theming';
 
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withCssResources } from '@storybook/addon-cssresources';
@@ -35,7 +35,7 @@ addDecorator(withNotes);
 
 addDecorator(fn => (
   <ThemeProvider theme={themes.normal}>
-    <Global styles={createReset} />
+    <Global styles={createGlobal} />
     {fn()}
   </ThemeProvider>
 ));
