@@ -1,6 +1,6 @@
 {
   "name": "@storybook/client-api",
-  "version": "5.0.0-beta.1",
+  "version": "5.0.0-beta.2",
   "description": "Storybook Client API",
   "keywords": [
     "storybook"
@@ -18,11 +18,11 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
-"dependencies": {
+  "dependencies": {
+    "@storybook/addons": "5.0.0-beta.2",
+    "@storybook/client-logger": "5.0.0-beta.2",
+    "@storybook/core-events": "5.0.0-beta.2",
     "common-tags": "^1.8.0",
-    "@storybook/addons": "5.0.0-beta.1",
-    "@storybook/client-logger": "5.0.0-beta.1",
-    "@storybook/core-events": "5.0.0-beta.1",
     "eventemitter3": "^3.1.0",
     "global": "^4.3.2",
     "is-plain-object": "^2.0.4",
@@ -31,7 +31,7 @@
     "lodash.mergewith": "^4.6.1",
     "memoizerific": "^1.11.3",
     "qs": "^6.5.2"
-},
+  },
   "publishConfig": {
     "access": "public"
   }
