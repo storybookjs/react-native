@@ -1,14 +1,14 @@
 import React from 'react';
-import addons, { types } from '@storybook/addons';
+import { addons, types } from '@storybook/addons';
 
 import { ADDON_ID } from './constants';
-import Tool from './Tool';
+import { BackgroundSelector } from './containers';
 
 addons.register(ADDON_ID, api => {
   addons.add(ADDON_ID, {
     title: 'Backgrounds',
     type: types.TOOL,
     match: ({ viewMode }) => viewMode === 'story',
-    render: () => <Tool api={api} />,
+    render: () => <BackgroundSelector api={api} />,
   });
 });
