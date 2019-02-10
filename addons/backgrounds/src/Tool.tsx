@@ -10,7 +10,7 @@ import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/comp
 
 import { PARAM_KEY } from './constants';
 
-export const ColorIcon = styled.span(({ background }) => ({
+export const ColorIcon = styled.span(({ background }: any) => ({
   borderRadius: '1rem',
   display: 'block',
   height: '1rem',
@@ -41,7 +41,7 @@ const createItem = memoize(1000)((id, name, value, hasSwatch, change) =>
       }
 );
 
-const getSelected = (list, state) => {
+const getSelected = (list: any[], state: any) => {
   if (!list.length) {
     return 'transparent';
   }
@@ -73,7 +73,9 @@ const getState = memoize(10)((props, state, change) => {
       : [];
 
   const items = list.length
-    ? initial.concat(list.map(({ id, name, value }) => createItem(id, name, value, true, change)))
+    ? initial.concat(
+        list.map(({ id, name, value }: any) => createItem(id, name, value, true, change))
+      )
     : list;
 
   return {
@@ -82,7 +84,7 @@ const getState = memoize(10)((props, state, change) => {
   };
 });
 
-export default class BackgroundTool extends Component {
+export default class BackgroundTool extends Component<any, any> {
   static propTypes = {
     api: PropTypes.shape({
       getQueryParam: PropTypes.func,
@@ -90,7 +92,9 @@ export default class BackgroundTool extends Component {
     }).isRequired,
   };
 
-  constructor(props) {
+  listener: () => void;
+
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -114,7 +118,8 @@ export default class BackgroundTool extends Component {
     api.off(SET_STORIES, this.listener);
   }
 
-  change = (...args) => this.setState(...args);
+  // @ts-ignore
+  change = (...args: any[]) => this.setState(...args);
 
   render() {
     const { expanded } = this.state;
@@ -135,7 +140,7 @@ export default class BackgroundTool extends Component {
           placement="top"
           trigger="click"
           tooltipShown={expanded}
-          onVisibilityChange={s => this.setState({ expanded: s })}
+          onVisibilityChange={(s: boolean) => this.setState({ expanded: s })}
           tooltip={<TooltipLinkList links={items} />}
           closeOnClick
         >

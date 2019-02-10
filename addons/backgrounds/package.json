@@ -19,7 +19,7 @@
   "license": "MIT",
   "author": "jbaxleyiii",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
@@ -36,6 +36,9 @@
     "prop-types": "^15.6.2",
     "react": "^16.8.1",
     "util-deprecate": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/util-deprecate": "^1.0.0"
   },
   "publishConfig": {
     "access": "public"

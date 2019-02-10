@@ -6,6 +6,7 @@ import Tool from './Tool';
 
 addons.register(ADDON_ID, api => {
   addons.add(ADDON_ID, {
+    title: 'Backgrounds',
     type: types.TOOL,
     match: ({ viewMode }) => viewMode === 'story',
     render: () => <Tool api={api} />,

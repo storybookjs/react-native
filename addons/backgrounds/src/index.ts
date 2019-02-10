@@ -4,7 +4,7 @@ import deprecate from 'util-deprecate';
 
 import Events from './constants';
 
-let prevBackgrounds;
+let prevBackgrounds: any[];
 
 const subscription = () => () => {
   prevBackgrounds = null;
@@ -16,7 +16,7 @@ export const withBackgrounds = makeDecorator({
   parameterName: 'backgrounds',
   skipIfNoParametersOrOptions: true,
   allowDeprecatedUsage: true,
-  wrapper: (getStory, context, { options, parameters }) => {
+  wrapper: (getStory: any, context: any, { options, parameters }: any) => {
     const data = parameters || options || [];
     const backgrounds = Array.isArray(data) ? data : Object.values(data);
 
