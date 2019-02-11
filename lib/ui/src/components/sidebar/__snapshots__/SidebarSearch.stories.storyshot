@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI|Sidebar/SidebarSearch default 1`] = `
+<span
+  class="emotion-0"
+>
+  TODO SidebarSearch
+</span>
+`;

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "5.0.0-beta.1",
+  "version": "5.0.0-beta.2",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
@@ -22,11 +22,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-beta.1",
-    "@storybook/client-logger": "5.0.0-beta.1",
-    "@storybook/components": "5.0.0-beta.1",
-    "@storybook/core-events": "5.0.0-beta.1",
-    "@storybook/theming": "5.0.0-beta.1",
+    "@storybook/addons": "5.0.0-beta.2",
+    "@storybook/client-logger": "5.0.0-beta.2",
+    "@storybook/components": "5.0.0-beta.2",
+    "@storybook/core-events": "5.0.0-beta.2",
+    "@storybook/theming": "5.0.0-beta.2",
     "markdown-to-jsx": "^6.9.1",
     "prop-types": "^15.6.2",
     "util-deprecate": "^1.0.2"
@@ -34,7 +34,7 @@
   "devDependencies": {
     "@types/prop-types": "^15.5.7",
     "@types/util-deprecate": "^1.0.0",
-    "@types/webpack-env": "^1.13.6"
+    "@types/webpack-env": "^1.13.7"
   },
   "peerDependencies": {
     "react": "*"

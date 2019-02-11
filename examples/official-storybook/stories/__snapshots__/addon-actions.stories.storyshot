@@ -3,31 +3,118 @@
 exports[`Storyshots Addons|Actions All types 1`] = `
 Array [
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -36,31 +123,118 @@ Array [
     Array
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -69,31 +243,118 @@ Array [
     Boolean
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -102,31 +363,118 @@ Array [
     Empty Object
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -135,31 +483,118 @@ Array [
     File
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -168,31 +603,118 @@ Array [
     Function A
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -201,31 +723,118 @@ Array [
     Bound Function B
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -234,31 +843,118 @@ Array [
     Infinity
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -267,31 +963,118 @@ Array [
     -Infinity
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -300,31 +1083,118 @@ Array [
     NaN
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -333,31 +1203,118 @@ Array [
     null
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -366,31 +1323,118 @@ Array [
     Number
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -399,31 +1443,118 @@ Array [
     Multiple
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -432,31 +1563,118 @@ Array [
     Plain Object
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -465,31 +1683,118 @@ Array [
     Object (depth: 2)
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -498,31 +1803,118 @@ Array [
     RegExp
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -531,31 +1923,118 @@ Array [
     String
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -564,31 +2043,118 @@ Array [
     Symbol
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -597,31 +2163,118 @@ Array [
     SyntheticEvent
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -630,31 +2283,118 @@ Array [
     undefined
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -667,31 +2407,118 @@ Array [
 
 exports[`Storyshots Addons|Actions Basic example 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -703,31 +2530,118 @@ exports[`Storyshots Addons|Actions Basic example 1`] = `
 
 exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -739,31 +2653,118 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -775,31 +2776,118 @@ exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated action 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -811,31 +2899,118 @@ exports[`Storyshots Addons|Actions Decorated action 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -847,31 +3022,118 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -884,31 +3146,118 @@ exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 exports[`Storyshots Addons|Actions Limit Action Output 1`] = `
 Array [
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -917,31 +3266,118 @@ Array [
     False
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -954,31 +3390,118 @@ Array [
 
 exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -990,31 +3513,118 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 
 exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1026,31 +3636,118 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 
 exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1062,31 +3759,118 @@ exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
 
 exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1102,31 +3886,118 @@ Array [
     Moving away from this story will persist the action logger
   </p>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1139,31 +4010,118 @@ Array [
 
 exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1175,31 +4133,118 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 
 exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1211,31 +4256,118 @@ exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
 
 exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #FAFBFC;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  display: inline;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0:hover {
+  -webkit-transform: translate3d(0,-2px,0);
+  -ms-transform: translate3d(0,-2px,0);
+  transform: translate3d(0,-2px,0);
+}
+
+.emotion-0:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
+}
+
+.emotion-0 > span {
+  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
+  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
+  transform: scale3d(1,1,1) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
+  opacity: 1;
+}
+
+.emotion-0 [role="progressbar"] {
+  -webkit-transform: translate3d(0,100%,0);
+  -ms-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: #333333;
+}
+
+.emotion-0:hover {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+}
+
+.emotion-0:active {
+  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
