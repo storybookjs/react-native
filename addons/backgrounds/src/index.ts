@@ -1,14 +1,15 @@
-import addons, { makeDecorator } from '@storybook/addons';
-import CoreEvents from '@storybook/core-events';
+import { addons, makeDecorator } from '@storybook/addons';
 import deprecate from 'util-deprecate';
 
-import Events from './constants';
+import { REGISTER_SUBSCRIPTION } from '@storybook/core-events';
+import { EVENTS } from './constants';
+import { BackgroundConfig } from './models';
 
-let prevBackgrounds;
+let prevBackgrounds: BackgroundConfig[];
 
 const subscription = () => () => {
   prevBackgrounds = null;
-  addons.getChannel().emit(Events.UNSET);
+  addons.getChannel().emit(EVENTS.UNSET);
 };
 
 export const withBackgrounds = makeDecorator({
@@ -25,10 +26,10 @@ export const withBackgrounds = makeDecorator({
     }
 
     if (prevBackgrounds !== backgrounds) {
-      addons.getChannel().emit(Events.SET, backgrounds);
+      addons.getChannel().emit(EVENTS.SET, backgrounds);
       prevBackgrounds = backgrounds;
     }
-    addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
+    addons.getChannel().emit(REGISTER_SUBSCRIPTION, subscription);
 
     return getStory(context);
   },
