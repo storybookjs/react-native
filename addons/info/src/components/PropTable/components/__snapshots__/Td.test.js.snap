@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
-<td
-  className={null}
->
-  <div>
-    foo bar
-  </div>
-</td>
-`;
-
-exports[` 2`] = `
+exports[`PropTable/Td renders a monospace td html node child element 1`] = `
 <td
   className="info-table-monospace"
 >
@@ -20,20 +10,7 @@ exports[` 2`] = `
 </td>
 `;
 
-exports[` 3`] = `
-<td
-  className={null}
->
-  <div>
-    foo bar
-  </div>
-  <div>
-    baz
-  </div>
-</td>
-`;
-
-exports[` 4`] = `
+exports[`PropTable/Td renders a monospace td html node with multiple children elements 1`] = `
 <td
   className="info-table-monospace"
 >
@@ -46,15 +23,7 @@ exports[` 4`] = `
 </td>
 `;
 
-exports[` 5`] = `
-<td
-  className={null}
->
-  foo bar
-</td>
-`;
-
-exports[` 6`] = `
+exports[`PropTable/Td renders a monospace td html node with one child node 1`] = `
 <td
   className="info-table-monospace"
 >
@@ -62,20 +31,33 @@ exports[` 6`] = `
 </td>
 `;
 
-exports[` 7`] = `
+exports[`PropTable/Td renders a td html node child element 1`] = `
 <td
   className={null}
 >
-  foo
-  bar
+  <div>
+    foo bar
+  </div>
 </td>
 `;
 
-exports[` 8`] = `
+exports[`PropTable/Td renders a td html node with multiple children elements 1`] = `
 <td
-  className="info-table-monospace"
+  className={null}
 >
-  foo
-  bar
+  <div>
+    foo bar
+  </div>
+  <div>
+    baz
+  </div>
+</td>
+`;
+
+exports[`PropTable/Td renders a td html node with one child node 1`] = `
+<td
+  className={null}
+>
+  foo bar
 </td>
 `;

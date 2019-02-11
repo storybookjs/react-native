@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import Td from './Td';
 
 describe('PropTable/Td', () => {
-  describe('renders a td html node child element', () => {
+  it('renders a td html node child element', () => {
     const wrapper = shallow(
       <Td>
         <div>foo bar</div>
@@ -13,7 +13,7 @@ describe('PropTable/Td', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  describe('renders a monospace td html node child element', () => {
+  it('renders a monospace td html node child element', () => {
     const wrapper = shallow(
       <Td isMonospace>
         <div>foo bar</div>
@@ -22,7 +22,7 @@ describe('PropTable/Td', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  describe('renders a td html node with multiple children elements', () => {
+  it('renders a td html node with multiple children elements', () => {
     const wrapper = shallow(
       <Td>
         <div>foo bar</div>
@@ -32,7 +32,7 @@ describe('PropTable/Td', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  describe('renders a monospace td html node with multiple children elements', () => {
+  it('renders a monospace td html node with multiple children elements', () => {
     const wrapper = shallow(
       <Td isMonospace>
         <div>foo bar</div>
@@ -42,12 +42,12 @@ describe('PropTable/Td', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  describe('renders a td html node with one child node', () => {
+  it('renders a td html node with one child node', () => {
     const wrapper = shallow(<Td>foo bar</Td>);
     expect(wrapper).toMatchSnapshot();
   });
 
-  describe('renders a monospace td html node with one child node', () => {
+  it('renders a monospace td html node with one child node', () => {
     const wrapper = shallow(<Td isMonospace>foo bar</Td>);
     expect(wrapper).toMatchSnapshot();
   });

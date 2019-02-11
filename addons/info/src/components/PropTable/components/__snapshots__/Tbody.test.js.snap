@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
+exports[`PropTable/Tbody renders a tbody html node with children 1`] = `
 <tbody>
   <div>
     foo bar
@@ -8,7 +8,7 @@ exports[` 1`] = `
 </tbody>
 `;
 
-exports[` 2`] = `
+exports[`PropTable/Tbody renders a tbody html node with multiple children elements 1`] = `
 <tbody>
   <div>
     foo bar

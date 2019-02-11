@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import Table from './Table';
 
 describe('PropTable/Table', () => {
-  describe('renders a table html node with one child element', () => {
+  it('renders a table html node with one child element', () => {
     const wrapper = shallow(
       <Table>
         <div>foo bar</div>
@@ -13,7 +13,7 @@ describe('PropTable/Table', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  describe('renders a table html node with multiple children elements', () => {
+  it('renders a table html node with multiple children elements', () => {
     const wrapper = shallow(
       <Table>
         <div>foo bar</div>
