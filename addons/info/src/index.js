@@ -4,7 +4,7 @@ import deprecate from 'util-deprecate';
 import { makeDecorator } from '@storybook/addons';
 import { logger } from '@storybook/client-logger';
 import Story from './components/Story';
-import PropTable from './components/PropTable';
+import PropTable from './components/PropTable/index';
 import makeTableComponent from './components/makeTableComponent';
 import { H1, H2, H3, H4, H5, H6, Code, P, UL, A, LI } from './components/markdown';
 

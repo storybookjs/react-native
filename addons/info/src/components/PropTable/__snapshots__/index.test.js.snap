@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropTable multiLineText should exclude excluded propTypes 1`] = `
+<small>
+  No propTypes defined!
+</small>
+`;
+
+exports[`PropTable multiLineText should have 2 br tags for 3 lines of text 1`] = `
+Array [
+  <span>
+     
+    foo 
+  </span>,
+  <span>
+    <br />
+     
+     bar 
+  </span>,
+  <span>
+    <br />
+     
+     baz
+  </span>,
+]
+`;
+
+exports[`PropTable multiLineText should include all propTypes by default 1`] = `
+<Table>
+  <Thead>
+    <Tr>
+      <Th>
+        property
+      </Th>
+      <Th>
+        propType
+      </Th>
+      <Th>
+        required
+      </Th>
+      <Th>
+        default
+      </Th>
+      <Th>
+        description
+      </Th>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr
+      key="foo"
+    >
+      <Td
+        isMonospace={true}
+      >
+        foo
+      </Td>
+      <Td
+        isMonospace={true}
+      >
+        <PrettyPropType
+          depth={1}
+          propType={
+            Object {
+              "name": "string",
+            }
+          }
+        />
+      </Td>
+      <Td
+        isMonospace={false}
+      >
+        -
+      </Td>
+      <Td
+        isMonospace={false}
+      >
+        -
+      </Td>
+      <Td
+        isMonospace={false}
+      />
+    </Tr>
+  </Tbody>
+</Table>
+`;
