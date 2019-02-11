@@ -176,10 +176,10 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/platform-browser-dynamic@^7.2.3":
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-7.2.3.tgz#490c297058322727a02a4a4fc1d51ef24fd6ff9e"
-  integrity sha512-M8Kiz5FUhnFybJuk/mgOhBjVbRgKDC4bGWKWH9Z9SXBR2dS/FL3QOJsLIthQcWlHOzSoJdEoPBRhn0R4pyLBSw==
+"@angular/platform-browser-dynamic@^7.2.4":
+  version "7.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-7.2.4.tgz#24dce1bb0d9dab541b3b1b3eda3084a732f11b64"
+  integrity sha512-J/xWlmaYOPUoCHZ5TiIRiyYa4uRMtCz3aGdBfY8k/NWtNo8SCYaS3aut7Sk4RS5rK8aAVi+aYFlY5YOrlW+Hbg==
   dependencies:
     tslib "^1.9.0"
 
@@ -7959,9 +7959,10 @@ emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
 
-emotion-theming@^10.0.5:
-  version "10.0.6"
-  resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-10.0.6.tgz#869f8d40e4f2549dbc165bd9c43bdf5fbedfeab8"
+emotion-theming@^10.0.7:
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-10.0.7.tgz#0629740840f2ff6b929a7c3d52811187768e91c9"
+  integrity sha512-/dqXTvPA8pRQJRrW6/wpGqu0s0tmtwC27Pk0IOrxDV2F/knbKcd7J/G3T2385NjE+aJO4XJJ7JCNWQkwcjuX0Q==
   dependencies:
     "@emotion/weak-memoize" "0.2.2"
     hoist-non-react-statics "^2.3.1"
@@ -8277,9 +8278,10 @@ eslint-config-airbnb@^17.0.0:
     object.assign "^4.1.0"
     object.entries "^1.0.4"
 
-eslint-config-prettier@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-3.6.0.tgz#8ca3ffac4bd6eeef623a0651f9d754900e3ec217"
+eslint-config-prettier@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-4.0.0.tgz#16cedeea0a56e74de60dcbbe3be0ab2c645405b9"
+  integrity sha512-kWuiJxzV5NwOwZcpyozTzDT5KJhBw292bbYro9Is7BWnbNMg15Gmpluc1CTetiCatF8DRkNvgPAOaSyg+bYr3g==
   dependencies:
     get-stdin "^6.0.0"
 
@@ -9618,10 +9620,10 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
-fuse.js@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.3.1.tgz#6e4762b1e1219f41bac8b7b723204d2b1d4cb8cf"
-  integrity sha512-Ranlb3nqh4Scw1ev5HvMoBUNHnhLceTGImSVf7ug87exLI75CfjhpCV5lFr1vHrAEn7fS80KZFaHCOznlGAG4A==
+fuse.js@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.4.2.tgz#d7a638c436ecd7b9c4c0051478c09594eb956212"
+  integrity sha512-WVbrm+cAxPtyMqdtL7cYhR7aZJPhtOfjNClPya8GKMVukKDYs7pEnPINeRVX1C9WmWgU8MdYGYbUPAP2AJXdoQ==
 
 fuzzy-search@^3.0.1:
   version "3.0.1"
