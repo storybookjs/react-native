@@ -97,8 +97,8 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
 
 .emotion-0 {
   min-width: 100px;
-  min-height: 32px;
-  margin-right: 16px;
+  font-weight: 700;
+  margin-right: 15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -122,14 +122,14 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #303030;
+  background: #3f3f3f;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
   color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   display: inline;
@@ -206,14 +206,14 @@ exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #303030;
+  background: #3f3f3f;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
   color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   display: inline;
@@ -284,14 +284,14 @@ exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #303030;
+  background: #3f3f3f;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
   color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   display: inline;

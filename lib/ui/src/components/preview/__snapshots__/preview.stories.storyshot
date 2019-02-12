@@ -231,7 +231,7 @@ Array [
   height: 100%;
   -webkit-transition: background .1s linear;
   transition: background .1s linear;
-  background: #333333;
+  background: #333;
 }
 
 .emotion-0 {
@@ -650,7 +650,7 @@ Array [
   height: 100%;
   -webkit-transition: background .1s linear;
   transition: background .1s linear;
-  background: #333333;
+  background: #333;
 }
 
 .emotion-0 {

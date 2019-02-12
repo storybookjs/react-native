@@ -35,11 +35,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -60,26 +60,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -92,23 +72,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -155,11 +131,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -180,26 +156,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -212,23 +168,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -275,11 +227,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -300,26 +252,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -332,23 +264,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -395,11 +323,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -420,26 +348,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -452,23 +360,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -515,11 +419,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -540,26 +444,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -572,23 +456,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -635,11 +515,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -660,26 +540,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -692,23 +552,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -755,11 +611,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -780,26 +636,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -812,23 +648,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -875,11 +707,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -900,26 +732,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -932,23 +744,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -995,11 +803,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1020,26 +828,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -1052,23 +840,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -1115,11 +899,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1140,26 +924,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -1172,23 +936,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -1235,11 +995,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1260,26 +1020,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -1292,23 +1032,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -1355,11 +1091,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1380,26 +1116,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -1412,23 +1128,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -1475,11 +1187,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1500,26 +1212,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -1532,23 +1224,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -1595,11 +1283,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1620,26 +1308,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -1652,23 +1320,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -1715,11 +1379,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1740,26 +1404,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -1772,23 +1416,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -1835,11 +1475,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1860,26 +1500,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -1892,23 +1512,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -1955,11 +1571,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1980,26 +1596,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -2012,23 +1608,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -2075,11 +1667,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2100,26 +1692,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -2132,23 +1704,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -2195,11 +1763,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2220,26 +1788,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -2252,23 +1800,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -2315,11 +1859,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2340,26 +1884,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -2372,23 +1896,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -2439,11 +1959,11 @@ exports[`Storyshots Addons|Actions Basic example 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2464,26 +1984,6 @@ exports[`Storyshots Addons|Actions Basic example 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -2496,23 +1996,19 @@ exports[`Storyshots Addons|Actions Basic example 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -2562,11 +2058,11 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2587,26 +2083,6 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -2619,23 +2095,19 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -2685,11 +2157,11 @@ exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2710,26 +2182,6 @@ exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -2742,23 +2194,19 @@ exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -2808,11 +2256,11 @@ exports[`Storyshots Addons|Actions Decorated action 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2833,26 +2281,6 @@ exports[`Storyshots Addons|Actions Decorated action 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -2865,23 +2293,19 @@ exports[`Storyshots Addons|Actions Decorated action 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -2931,11 +2355,11 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2956,26 +2380,6 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -2988,23 +2392,19 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -3054,11 +2454,11 @@ exports[`Storyshots Addons|Actions Decorated actions 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3079,26 +2479,6 @@ exports[`Storyshots Addons|Actions Decorated actions 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -3111,23 +2491,19 @@ exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -3178,11 +2554,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3203,26 +2579,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -3235,23 +2591,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -3298,11 +2650,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3323,26 +2675,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -3355,23 +2687,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -3422,11 +2750,11 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3447,26 +2775,6 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -3479,23 +2787,19 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -3545,11 +2849,11 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3570,26 +2874,6 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -3602,23 +2886,19 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -3668,11 +2948,11 @@ exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3693,26 +2973,6 @@ exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -3725,23 +2985,19 @@ exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -3791,11 +3047,11 @@ exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3816,26 +3072,6 @@ exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -3848,23 +3084,19 @@ exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -3918,11 +3150,11 @@ Array [
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3943,26 +3175,6 @@ Array [
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -3975,23 +3187,19 @@ Array [
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -4042,11 +3250,11 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -4067,26 +3275,6 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -4099,23 +3287,19 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -4165,11 +3349,11 @@ exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -4190,26 +3374,6 @@ exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -4222,23 +3386,19 @@ exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -4288,11 +3448,11 @@ exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #FAFBFC;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
+  background: #444;
+  color: #FFFFFF;
+  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -4313,26 +3473,6 @@ exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
 .emotion-0 svg {
   display: inline-block;
   height: 14px;
@@ -4345,23 +3485,19 @@ exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #4c4c4c;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #3f3f3f;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
