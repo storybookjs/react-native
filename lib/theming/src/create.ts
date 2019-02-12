@@ -3,15 +3,19 @@
 import { Theme, Brand, color, Color, background, typography } from './base';
 import { easing, animation } from './animation';
 import { create as createSyntax } from './modules/syntax';
-import { chromeLight } from 'react-inspector';
+import { chromeLight, chromeDark } from 'react-inspector';
+import { opacify } from 'polished';
 
 interface Rest {
   [key: string]: any;
 }
 
 interface ThemeVar {
+  base?: 'light' | 'dark';
+
   colorPrimary?: string;
   colorSecondary?: string;
+  colorTertiary?: string;
 
   // UI
   appBg?: string;
@@ -45,7 +49,7 @@ const createColors = (vars: ThemeVar): Color => ({
   // Changeable colors
   primary: vars.colorPrimary,
   secondary: vars.colorSecondary,
-  tertiary: color.tertiary,
+  tertiary: vars.colorTertiary,
   ancillary: color.ancillary,
 
   // Complimentary
@@ -79,7 +83,34 @@ const createColors = (vars: ThemeVar): Color => ({
   inverseText: vars.textInverseColor || color.lightest,
 });
 
+const lightSyntaxColors = {
+  green1: '#008000',
+  red1: '#A31515',
+  red2: '#9a050f',
+  red3: '#800000',
+  red4: '#ff0000',
+  gray1: '#393A34',
+  cyan1: '#36acaa',
+  cyan2: '#2B91AF',
+  blue1: '#0000ff',
+  blue2: '#00009f',
+};
+
+const darkSyntaxColors = {
+  green1: '#7C7C7C',
+  red1: '#92C379',
+  red2: '#9a050f',
+  red3: '#A8FF60',
+  red4: '#96CBFE',
+  gray1: '#EDEDED',
+  cyan1: '#C6C5FE',
+  cyan2: '#FFFFB6',
+  blue1: '#B474DD',
+  blue2: '#00009f',
+};
+
 export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
+  base: vars.base,
   color: createColors(vars),
   background: {
     app: vars.appBg || background.app,
@@ -122,18 +153,7 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
   brand: vars.brand || null,
 
   code: createSyntax({
-    colors: {
-      green1: '#008000',
-      red1: '#A31515',
-      red2: '#9a050f',
-      red3: '#800000',
-      red4: '#ff0000',
-      gray1: '#393A34',
-      cyan1: '#36acaa',
-      cyan2: '#2B91AF',
-      blue1: '#0000ff',
-      blue2: '#00009f',
-    },
+    colors: vars.base === 'light' ? lightSyntaxColors : darkSyntaxColors,
     mono: vars.fontCode || typography.fonts.mono,
   }),
 

@@ -3,6 +3,7 @@ import { create } from '../create';
 import { color, typography, background } from '../base';
 
 // export default create({
+//   base: 'light',
 //   // Storybook-specific color palette
 //   colorPrimary: '#FF4785', // coral
 //   colorSecondary: '#1EA7FD', // ocean
@@ -37,13 +38,16 @@ import { color, typography, background } from '../base';
 // });
 
 export default create({
+  base: 'dark',
+
   // Storybook-specific color palette
   colorPrimary: '#FF4785', // coral
   colorSecondary: '#1EA7FD', // ocean
+  colorTertiary: '#373737',
 
   // UI
-  appBg: '#222222',
-  appContentBg: color.darkest,
+  appBg: '#2f2f2f',
+  appContentBg: '#333',
   appBorderColor: 'rgba(255,255,255,.1)',
   appBorderRadius: 4,
 
@@ -61,8 +65,8 @@ export default create({
   barBg: color.darkest,
 
   // Form colors
-  inputBg: '#303030',
-  inputBorder: 'rgba(0,0,0,.1)',
+  inputBg: '#3f3f3f',
+  inputBorder: 'rgba(0,0,0,.3)',
   inputTextColor: color.lightest,
   inputBorderRadius: 4,
 

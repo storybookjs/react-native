@@ -24,6 +24,7 @@
     "emotion-theming": "^10.0.5",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
+    "polished": "^2.3.3",
     "prop-types": "^15.6.2",
     "react-inspector": "^2.3.1"
   },
