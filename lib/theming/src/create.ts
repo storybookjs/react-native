@@ -140,13 +140,14 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
   // Addon actions theme
   // API example https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js
   addonActionsTheme: {
-    ...chromeLight,
+    ...(vars.base === 'light' ? chromeLight : chromeDark),
+
     BASE_FONT_FAMILY: vars.fontCode || typography.fonts.mono,
     BASE_FONT_SIZE: typography.size.s2 - 1,
     BASE_LINE_HEIGHT: '18px',
-    BASE_BACKGROUND_COLOR: color.lightest,
+    BASE_BACKGROUND_COLOR: 'transparent',
     BASE_COLOR: vars.textColor || color.darkest,
-    ARROW_COLOR: 'rgba(0,0,0,.2)',
+    ARROW_COLOR: opacify(0.2, vars.appBorderColor),
     ARROW_MARGIN_RIGHT: 4,
     ARROW_FONT_SIZE: 8,
     TREENODE_FONT_FAMILY: vars.fontCode || typography.fonts.mono,
