@@ -71,14 +71,14 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #333333;
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
   position: absolute;
   left: 0;
   right: 0;
@@ -93,7 +93,7 @@ Array [
 .emotion-9 {
   width: 1px;
   height: 24px;
-  background: rgba(255,255,255,.1);
+  background: rgba(0,0,0,.1);
   margin-top: 8px;
 }
 
@@ -231,7 +231,7 @@ Array [
   height: 100%;
   -webkit-transition: background .1s linear;
   transition: background .1s linear;
-  background: #333;
+  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -456,14 +456,14 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #333333;
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
   position: absolute;
   left: 0;
   right: 0;
@@ -478,7 +478,7 @@ Array [
 .emotion-5 {
   width: 1px;
   height: 24px;
-  background: rgba(255,255,255,.1);
+  background: rgba(0,0,0,.1);
   margin-top: 8px;
 }
 
@@ -650,7 +650,7 @@ Array [
   height: 100%;
   -webkit-transition: background .1s linear;
   transition: background .1s linear;
-  background: #333;
+  background: #FFFFFF;
 }
 
 .emotion-0 {

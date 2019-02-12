@@ -86,7 +86,7 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
   margin: 0 15px;
   padding: 8px 0;
 }
@@ -122,14 +122,14 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   display: inline;
@@ -189,7 +189,7 @@ exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
   margin: 0 15px;
   padding: 8px 0;
 }
@@ -206,14 +206,14 @@ exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   display: inline;
@@ -267,7 +267,7 @@ exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
   margin: 0 15px;
   padding: 8px 0;
 }
@@ -284,14 +284,14 @@ exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   display: inline;

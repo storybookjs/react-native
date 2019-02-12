@@ -41,14 +41,9 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #444;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   display: inline;
   -webkit-user-select: none;
@@ -57,18 +52,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-3:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-3:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-3 svg {
@@ -87,11 +70,11 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-3:hover {
-  background: #4c4c4c;
+  background: #f2f2f2;
 }
 
 .emotion-3:active {
-  background: #3f3f3f;
+  background: #FFFFFF;
 }
 
 .emotion-3:focus {
@@ -132,25 +115,8 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   background: #FF4785;
   color: #FFFFFF;
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-0 svg {
@@ -212,25 +178,8 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   background: #1EA7FD;
   color: #FFFFFF;
-}
-
-.emotion-1:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-1 svg {
@@ -292,27 +241,10 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #444;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
-}
-
-.emotion-2:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-2 svg {
@@ -331,12 +263,12 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-2:hover {
-  background: #4c4c4c;
+  background: #f2f2f2;
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0,rgba(0,0,0,.1) 0 0 0 1px inset;
 }
 
 .emotion-2:active {
-  background: #3f3f3f;
+  background: #FFFFFF;
 }
 
 .emotion-2:focus {
@@ -371,26 +303,9 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  box-shadow: rgba(255,255,255,0.2) 0 0 0 1px inset;
-  color: rgba(255,255,255,0.7);
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
-}
-
-.emotion-4:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-4:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-4 svg {
@@ -409,12 +324,12 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-4:hover {
-  box-shadow: rgba(255,255,255,0.5) 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-4:active {
-  box-shadow: rgba(255,255,255,0.5) 0 0 0 2px inset;
-  color: #fff;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-5 {
@@ -445,30 +360,13 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   background: #FF4785;
   color: #FFFFFF;
-  box-shadow: rgba(255,255,255,0.2) 0 0 0 1px inset;
-  color: rgba(255,255,255,0.7);
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   box-shadow: #FF4785 0 0 0 1px inset;
   color: #FF4785;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-5 svg {
@@ -503,12 +401,12 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-5:hover {
-  box-shadow: rgba(255,255,255,0.5) 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  box-shadow: rgba(255,255,255,0.5) 0 0 0 2px inset;
-  color: #fff;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-5 svg path {
@@ -562,30 +460,13 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   background: #1EA7FD;
   color: #FFFFFF;
-  box-shadow: rgba(255,255,255,0.2) 0 0 0 1px inset;
-  color: rgba(255,255,255,0.7);
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   box-shadow: #1EA7FD 0 0 0 1px inset;
   color: #1EA7FD;
-}
-
-.emotion-6:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-6:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-6 svg {
@@ -620,12 +501,12 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-6:hover {
-  box-shadow: rgba(255,255,255,0.5) 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-6:active {
-  box-shadow: rgba(255,255,255,0.5) 0 0 0 2px inset;
-  color: #fff;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-6:hover {
@@ -675,27 +556,10 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   cursor: not-allowed !important;
   opacity: 0.5;
   background: #FF4785;
   color: #FFFFFF;
-}
-
-.emotion-7:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-7:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-7 svg {
@@ -763,25 +627,8 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   background: #FF4785;
   color: #FFFFFF;
-}
-
-.emotion-8:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-8:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-8 svg {
@@ -843,25 +690,8 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   background: #1EA7FD;
   color: #FFFFFF;
-}
-
-.emotion-9:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-9:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-9 svg {
@@ -923,27 +753,10 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #444;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
-}
-
-.emotion-10:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-10:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-10 svg {
@@ -962,12 +775,12 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-10:hover {
-  background: #4c4c4c;
+  background: #f2f2f2;
   box-shadow: rgba(0,0,0,.2) 0 2px 6px 0,rgba(0,0,0,.1) 0 0 0 1px inset;
 }
 
 .emotion-10:active {
-  background: #3f3f3f;
+  background: #FFFFFF;
 }
 
 .emotion-10:focus {
@@ -1002,26 +815,9 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  box-shadow: rgba(255,255,255,0.2) 0 0 0 1px inset;
-  color: rgba(255,255,255,0.7);
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
-}
-
-.emotion-11:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-11:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-11 svg {
@@ -1040,12 +836,12 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-11:hover {
-  box-shadow: rgba(255,255,255,0.5) 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-11:active {
-  box-shadow: rgba(255,255,255,0.5) 0 0 0 2px inset;
-  color: #fff;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-12 {
@@ -1076,27 +872,10 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   cursor: not-allowed !important;
   opacity: 0.5;
   background: #FF4785;
   color: #FFFFFF;
-}
-
-.emotion-12:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-12:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-12 svg {
@@ -1164,27 +943,10 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   padding: 7px;
-  box-shadow: rgba(255,255,255,0.2) 0 0 0 1px inset;
-  color: rgba(255,255,255,0.7);
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
-}
-
-.emotion-15:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-15:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-15 svg {
@@ -1208,12 +970,12 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-15:hover {
-  box-shadow: rgba(255,255,255,0.5) 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-15:active {
-  box-shadow: rgba(255,255,255,0.5) 0 0 0 2px inset;
-  color: #fff;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 <div>

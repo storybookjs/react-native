@@ -37,14 +37,9 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #444;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   display: inline;
   -webkit-user-select: none;
@@ -53,18 +48,6 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-0 svg {
@@ -83,11 +66,11 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-0:hover {
-  background: #4c4c4c;
+  background: #f2f2f2;
 }
 
 .emotion-0:active {
-  background: #3f3f3f;
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
@@ -135,14 +118,9 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #444;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -153,18 +131,6 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-2:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-2 svg {
@@ -183,11 +149,11 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-2:hover {
-  background: #4c4c4c;
+  background: #f2f2f2;
 }
 
 .emotion-2:active {
-  background: #3f3f3f;
+  background: #FFFFFF;
 }
 
 .emotion-2:focus {
@@ -228,14 +194,9 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #444;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   width: 100%;
   -webkit-user-select: none;
@@ -244,18 +205,6 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-4:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-4:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-4 svg {
@@ -274,11 +223,11 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-4:hover {
-  background: #4c4c4c;
+  background: #f2f2f2;
 }
 
 .emotion-4:active {
-  background: #3f3f3f;
+  background: #FFFFFF;
 }
 
 .emotion-4:focus {
@@ -368,14 +317,9 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #444;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   width: 100%;
   -webkit-user-select: none;
@@ -384,18 +328,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-6:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-6:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-6 svg {
@@ -414,11 +346,11 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-6:hover {
-  background: #4c4c4c;
+  background: #f2f2f2;
 }
 
 .emotion-6:active {
-  background: #3f3f3f;
+  background: #FFFFFF;
 }
 
 .emotion-6:focus {
@@ -459,14 +391,9 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #444;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   width: 100%;
   box-shadow: #FF4400 0 0 0 1px inset !important;
@@ -476,18 +403,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-0 svg {
@@ -506,11 +421,11 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-0:hover {
-  background: #4c4c4c;
+  background: #f2f2f2;
 }
 
 .emotion-0:active {
-  background: #3f3f3f;
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
@@ -551,14 +466,9 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #444;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   width: 100%;
   box-shadow: #E69D00 0 0 0 1px inset;
@@ -568,18 +478,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-2:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-2 svg {
@@ -598,11 +496,11 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-2:hover {
-  background: #4c4c4c;
+  background: #f2f2f2;
 }
 
 .emotion-2:active {
-  background: #3f3f3f;
+  background: #FFFFFF;
 }
 
 .emotion-2:focus {
@@ -643,14 +541,9 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #444;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   width: 100%;
   box-shadow: #66BF3C 0 0 0 1px inset !important;
@@ -660,18 +553,6 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-4:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-4:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-4 svg {
@@ -690,11 +571,11 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-4:hover {
-  background: #4c4c4c;
+  background: #f2f2f2;
 }
 
 .emotion-4:active {
-  background: #3f3f3f;
+  background: #FFFFFF;
 }
 
 .emotion-4:focus {
@@ -755,7 +636,7 @@ exports[`Storyshots Basics|Form/Field field 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
   margin: 0 15px;
   padding: 8px 0;
 }
@@ -791,14 +672,14 @@ exports[`Storyshots Basics|Form/Field field 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   display: inline;
@@ -900,14 +781,14 @@ exports[`Storyshots Basics|Form/Input alignment 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -952,14 +833,14 @@ exports[`Storyshots Basics|Form/Input alignment 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -1004,14 +885,14 @@ exports[`Storyshots Basics|Form/Input alignment 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -1102,14 +983,14 @@ exports[`Storyshots Basics|Form/Input sizes 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   display: inline;
@@ -1154,14 +1035,14 @@ exports[`Storyshots Basics|Form/Input sizes 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   -webkit-flex: 1;
@@ -1208,14 +1089,14 @@ exports[`Storyshots Basics|Form/Input sizes 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -1306,14 +1187,14 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -1358,14 +1239,14 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -1411,14 +1292,14 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -1464,14 +1345,14 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -1564,14 +1445,14 @@ exports[`Storyshots Basics|Form/Select sizes 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   display: inline;
@@ -1630,14 +1511,14 @@ exports[`Storyshots Basics|Form/Select sizes 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   -webkit-flex: 1;
@@ -1691,14 +1572,14 @@ exports[`Storyshots Basics|Form/Select sizes 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -1837,14 +1718,14 @@ exports[`Storyshots Basics|Form/Select validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -1896,14 +1777,14 @@ exports[`Storyshots Basics|Form/Select validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -1956,14 +1837,14 @@ exports[`Storyshots Basics|Form/Select validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -2016,14 +1897,14 @@ exports[`Storyshots Basics|Form/Select validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -2201,14 +2082,14 @@ exports[`Storyshots Basics|Form/Textarea alignment 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -2253,14 +2134,14 @@ exports[`Storyshots Basics|Form/Textarea alignment 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -2305,14 +2186,14 @@ exports[`Storyshots Basics|Form/Textarea alignment 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -2412,14 +2293,14 @@ exports[`Storyshots Basics|Form/Textarea sizes 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   display: inline;
@@ -2464,14 +2345,14 @@ exports[`Storyshots Basics|Form/Textarea sizes 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   -webkit-flex: 1;
@@ -2518,14 +2399,14 @@ exports[`Storyshots Basics|Form/Textarea sizes 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -2622,14 +2503,14 @@ exports[`Storyshots Basics|Form/Textarea validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -2674,14 +2555,14 @@ exports[`Storyshots Basics|Form/Textarea validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -2727,14 +2608,14 @@ exports[`Storyshots Basics|Form/Textarea validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;
@@ -2780,14 +2661,14 @@ exports[`Storyshots Basics|Form/Textarea validations 1`] = `
   box-sizing: inherit;
   display: block;
   margin: 0;
-  background: #3f3f3f;
+  background: #FFFFFF;
   padding: .42em 1em;
   font-size: 13px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
-  color: #FFFFFF;
-  box-shadow: rgba(0,0,0,.3) 0 0 0 1px inset;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
   line-height: 20px;
   width: 100%;

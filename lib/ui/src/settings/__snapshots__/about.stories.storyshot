@@ -23,14 +23,14 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #333333;
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-2 {
@@ -217,7 +217,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   display: flex;
   padding-top: 20px;
   margin-top: 20px;
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid rgba(0,0,0,.1);
   font-weight: 700;
 }
 
@@ -340,7 +340,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   height: 40px;
   padding: 10px 20px;
   margin-bottom: 24px;
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid rgba(0,0,0,.1);
   text-align: center;
 }
 
@@ -526,14 +526,14 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #333333;
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-2 {
@@ -672,7 +672,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: flex;
   padding-top: 20px;
   margin-top: 20px;
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid rgba(0,0,0,.1);
   font-weight: 700;
 }
 
@@ -893,7 +893,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 
 .emotion-16 h2 {
   font-size: 24px;
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-16 h3 {
@@ -1057,7 +1057,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 
 .emotion-16 hr {
   border: 0 none;
-  color: rgba(255,255,255,.1);
+  color: rgba(0,0,0,.1);
   height: 4px;
   padding: 0;
 }
@@ -1180,7 +1180,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 }
 
 .emotion-16 table tr {
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid rgba(0,0,0,.1);
   background-color: white;
   margin: 0;
   padding: 0;
@@ -1192,14 +1192,14 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 
 .emotion-16 table tr th {
   font-weight: bold;
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid rgba(0,0,0,.1);
   text-align: left;
   margin: 0;
   padding: 6px 13px;
 }
 
 .emotion-16 table tr td {
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid rgba(0,0,0,.1);
   text-align: left;
   margin: 0;
   padding: 6px 13px;
@@ -1324,20 +1324,20 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   height: 40px;
   padding: 10px 20px;
   margin-bottom: 24px;
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid rgba(0,0,0,.1);
   text-align: center;
 }
 
 .emotion-30 {
   margin-top: 20px;
   padding-bottom: 20px;
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-22 {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-19 {
@@ -1355,79 +1355,79 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 }
 
 .emotion-19 * .token.comment {
-  color: #7C7C7C;
+  color: #008000;
   font-style: italic;
 }
 
 .emotion-19 * .token.prolog {
-  color: #7C7C7C;
+  color: #008000;
   font-style: italic;
 }
 
 .emotion-19 * .token.doctype {
-  color: #7C7C7C;
+  color: #008000;
   font-style: italic;
 }
 
 .emotion-19 * .token.cdata {
-  color: #7C7C7C;
+  color: #008000;
   font-style: italic;
 }
 
 .emotion-19 * .token.string {
-  color: #92C379;
+  color: #A31515;
 }
 
 .emotion-19 * .token.punctuation {
-  color: #EDEDED;
+  color: #393A34;
 }
 
 .emotion-19 * .token.operator {
-  color: #EDEDED;
+  color: #393A34;
 }
 
 .emotion-19 * .token.url {
-  color: #C6C5FE;
+  color: #36acaa;
 }
 
 .emotion-19 * .token.symbol {
-  color: #C6C5FE;
+  color: #36acaa;
 }
 
 .emotion-19 * .token.number {
-  color: #C6C5FE;
+  color: #36acaa;
 }
 
 .emotion-19 * .token.boolean {
-  color: #C6C5FE;
+  color: #36acaa;
 }
 
 .emotion-19 * .token.variable {
-  color: #C6C5FE;
+  color: #36acaa;
 }
 
 .emotion-19 * .token.constant {
-  color: #C6C5FE;
+  color: #36acaa;
 }
 
 .emotion-19 * .token.inserted {
-  color: #C6C5FE;
+  color: #36acaa;
 }
 
 .emotion-19 * .token.atrule {
-  color: #B474DD;
+  color: #0000ff;
 }
 
 .emotion-19 * .token.keyword {
-  color: #B474DD;
+  color: #0000ff;
 }
 
 .emotion-19 * .token.attr-value {
-  color: #B474DD;
+  color: #0000ff;
 }
 
 .emotion-19 * .token.function {
-  color: #EDEDED;
+  color: #393A34;
 }
 
 .emotion-19 * .token.deleted {
@@ -1447,48 +1447,48 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 }
 
 .emotion-19 * .token.class-name {
-  color: #FFFFB6;
+  color: #2B91AF;
 }
 
 .emotion-19 * .token.tag {
-  color: #A8FF60;
+  color: #800000;
 }
 
 .emotion-19 * .token.selector {
-  color: #A8FF60;
+  color: #800000;
 }
 
 .emotion-19 * .token.attr-name {
-  color: #96CBFE;
+  color: #ff0000;
 }
 
 .emotion-19 * .token.property {
-  color: #96CBFE;
+  color: #ff0000;
 }
 
 .emotion-19 * .token.regex {
-  color: #96CBFE;
+  color: #ff0000;
 }
 
 .emotion-19 * .token.entity {
-  color: #96CBFE;
+  color: #ff0000;
 }
 
 .emotion-19 * .token.directive.tag .tag {
   background: #ffff00;
-  color: #EDEDED;
+  color: #393A34;
 }
 
 .emotion-19 * .language-json .token.boolean {
-  color: #B474DD;
+  color: #0000ff;
 }
 
 .emotion-19 * .language-json .token.number {
-  color: #B474DD;
+  color: #0000ff;
 }
 
 .emotion-19 * .language-json .token.property {
-  color: #FFFFB6;
+  color: #2B91AF;
 }
 
 .emotion-19 * .namespace {
@@ -1525,7 +1525,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #333;
+  background: #FFFFFF;
 }
 
 .emotion-20 {
@@ -1540,23 +1540,23 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #FFFFFF;
-  background: #333;
+  color: #333333;
+  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
-  border-top: 1px solid rgba(255,255,255,.1);
-  border-left: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(0,0,0,.1);
   margin-left: -1px;
   border-radius: 4px 0 0 0;
 }
 
 .emotion-20:not(:last-child) {
-  border-right: 1px solid rgba(255,255,255,.1);
+  border-right: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-20 + * {
-  border-left: 1px solid rgba(255,255,255,.1);
+  border-left: 1px solid rgba(0,0,0,.1);
   border-radius: 0;
 }
 
@@ -1848,14 +1848,14 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #333333;
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #333333 linear-gradient(to bottom,transparent calc(100% - 1px),rgba(255,255,255,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-2 {
@@ -1994,7 +1994,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   display: flex;
   padding-top: 20px;
   margin-top: 20px;
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid rgba(0,0,0,.1);
   font-weight: 700;
 }
 
@@ -2108,7 +2108,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   height: 40px;
   padding: 10px 20px;
   margin-bottom: 24px;
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid rgba(0,0,0,.1);
   text-align: center;
 }
 
@@ -2226,7 +2226,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 
 .emotion-16 h2 {
   font-size: 24px;
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-16 h3 {
@@ -2390,7 +2390,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 
 .emotion-16 hr {
   border: 0 none;
-  color: rgba(255,255,255,.1);
+  color: rgba(0,0,0,.1);
   height: 4px;
   padding: 0;
 }
@@ -2513,7 +2513,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 }
 
 .emotion-16 table tr {
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid rgba(0,0,0,.1);
   background-color: white;
   margin: 0;
   padding: 0;
@@ -2525,14 +2525,14 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 
 .emotion-16 table tr th {
   font-weight: bold;
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid rgba(0,0,0,.1);
   text-align: left;
   margin: 0;
   padding: 6px 13px;
 }
 
 .emotion-16 table tr td {
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid rgba(0,0,0,.1);
   text-align: left;
   margin: 0;
   padding: 6px 13px;
