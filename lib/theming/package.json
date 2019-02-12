@@ -19,7 +19,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.5",
+    "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.5",
     "emotion-theming": "^10.0.7",
     "global": "^4.3.2",
