@@ -39,7 +39,7 @@
     "highlight.js": "^9.14.2",
     "lodash": "^4.17.11",
     "marked": "^0.5.2",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.1",
     "react": "^15.6.2",
     "react-document-title": "^2.0.3",
     "react-dom": "^15.6.2",
