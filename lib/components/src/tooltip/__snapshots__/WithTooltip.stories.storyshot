@@ -189,10 +189,10 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background: linear-gradient( -1deg, rgba(248,248,248,0.97) 0%, rgba(255,255,255,0.97) 100% );
+  background: rgba(0,0,0,0.95);
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 12px;
 }
 
@@ -211,7 +211,7 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
   border-top-width: 8px;
   border-right-width: 8px;
   border-left-width: 8px;
-  border-top-color: #FFFFFF;
+  border-top-color: rgba(0,0,0,0.95);
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-right-color: transparent;

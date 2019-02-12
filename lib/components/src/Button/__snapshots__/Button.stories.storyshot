@@ -413,9 +413,8 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-4:active {
-  background: #FFFFFF;
-  box-shadow: none;
-  color: #333333;
+  box-shadow: rgba(255,255,255,0.5) 0 0 0 2px inset;
+  color: #fff;
 }
 
 .emotion-5 {
@@ -508,9 +507,8 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-5:active {
-  background: #FFFFFF;
-  box-shadow: none;
-  color: #333333;
+  box-shadow: rgba(255,255,255,0.5) 0 0 0 2px inset;
+  color: #fff;
 }
 
 .emotion-5 svg path {
@@ -626,9 +624,8 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-6:active {
-  background: #FFFFFF;
-  box-shadow: none;
-  color: #333333;
+  box-shadow: rgba(255,255,255,0.5) 0 0 0 2px inset;
+  color: #fff;
 }
 
 .emotion-6:hover {
@@ -1047,9 +1044,8 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-11:active {
-  background: #FFFFFF;
-  box-shadow: none;
-  color: #333333;
+  box-shadow: rgba(255,255,255,0.5) 0 0 0 2px inset;
+  color: #fff;
 }
 
 .emotion-12 {
@@ -1216,9 +1212,8 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-15:active {
-  background: #FFFFFF;
-  box-shadow: none;
-  color: #333333;
+  box-shadow: rgba(255,255,255,0.5) 0 0 0 2px inset;
+  color: #fff;
 }
 
 <div>

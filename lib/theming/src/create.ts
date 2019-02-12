@@ -115,7 +115,7 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
   background: {
     app: vars.appBg || background.app,
     content: vars.appContentBg || color.lightest,
-    hoverable: background.hoverable, // TODO: change so it responds to whether appColor is light or dark
+    hoverable: vars.base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
 
     positive: background.positive,
     negative: background.negative,

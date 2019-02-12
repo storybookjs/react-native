@@ -10,7 +10,7 @@ exports[`Storyshots UI|Sidebar/SidebarSubheading default 1`] = `
   font-weight: 900;
   font-size: 11px;
   line-height: 24px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.5);
 }
 
 <div
