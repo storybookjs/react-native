@@ -15,7 +15,6 @@ interface ThemeVar {
 
   colorPrimary?: string;
   colorSecondary?: string;
-  colorTertiary?: string;
 
   // UI
   appBg?: string;
@@ -49,7 +48,7 @@ const createColors = (vars: ThemeVar): Color => ({
   // Changeable colors
   primary: vars.colorPrimary,
   secondary: vars.colorSecondary,
-  tertiary: vars.colorTertiary,
+  tertiary: color.tertiary,
   ancillary: color.ancillary,
 
   // Complimentary
