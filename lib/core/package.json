@@ -84,7 +84,7 @@
     "url-loader": "^1.1.2",
     "util-deprecate": "^1.0.2",
     "webpack": "^4.29.0",
-    "webpack-dev-middleware": "^3.5.1",
+    "webpack-dev-middleware": "^3.5.2",
     "webpack-hot-middleware": "^2.24.3"
   },
   "devDependencies": {
