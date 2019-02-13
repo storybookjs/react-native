@@ -1,3 +1,9 @@
+## 5.0.0-beta.3 (February 13, 2019)
+
+### Bug Fixes
+
+* UI: V5 styling refinements ([#5562](https://github.com/storybooks/storybook/pull/5562))
+
 ## 5.0.0-beta.2 (February 9, 2019)
 
 ### Features
