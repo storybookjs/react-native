@@ -1,4 +1,5 @@
 import { styled } from '@storybook/theming';
+import { opacify } from 'polished';
 
 export const Actions = styled.pre({
   flex: 1,
@@ -18,7 +19,7 @@ export const Action = styled.div({
 });
 
 export const Counter = styled.div(({ theme }) => ({
-  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  backgroundColor: opacify(0.5, theme.appBorderColor),
   color: theme.color.inverseText,
   fontSize: theme.typography.size.s1,
   fontWeight: theme.typography.weight.bold,

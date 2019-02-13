@@ -10,6 +10,7 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -24,7 +25,8 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #666666;
+  color: #333333;
+  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -57,6 +59,7 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -71,7 +74,8 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #666666;
+  color: #333333;
+  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -132,6 +136,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -146,7 +151,8 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #666666;
+  color: #333333;
+  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -179,6 +185,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -193,7 +200,8 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #666666;
+  color: #333333;
+  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -230,6 +238,50 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
     </button>
   </div>
 </div>
+`;
+
+exports[`Storyshots Basics|Brand/StorybookLogo normal 1`] = `
+<svg
+  height="40px"
+  title="Storybook"
+  viewBox="0 0 200 40"
+  width="200px"
+>
+  <defs>
+    <path
+      d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
+      id="a"
+    />
+  </defs>
+  <g
+    fill="none"
+    fill-rule="evenodd"
+  >
+    <path
+      d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
+      fill="currentColor"
+    />
+    <mask
+      fill="#fff"
+      id="b"
+    >
+      <use
+        href="#a"
+      />
+    </mask>
+    <use
+      fill="#FF4785"
+      fill-rule="nonzero"
+      href="#a"
+    />
+    <path
+      d="M23.7 5L24 .2l3.9-.3.1 4.8a.3.3 0 0 1-.5.2L26 3.8l-1.7 1.4a.3.3 0 0 1-.5-.3zm-5 10c0 .9 5.3.5 6 0 0-5.4-2.8-8.2-8-8.2-5.3 0-8.2 2.8-8.2 7.1 0 7.4 10 7.6 10 11.6 0 1.2-.5 1.9-1.8 1.9-1.6 0-2.2-.9-2.1-3.6 0-.6-6.1-.8-6.3 0-.5 6.7 3.7 8.6 8.5 8.6 4.6 0 8.3-2.5 8.3-7 0-7.9-10.2-7.7-10.2-11.6 0-1.6 1.2-1.8 2-1.8.6 0 2 0 1.9 3z"
+      fill="#FFF"
+      fill-rule="nonzero"
+      mask="url(#b)"
+    />
+  </g>
+</svg>
 `;
 
 exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
@@ -1643,7 +1695,7 @@ exports[`Storyshots Basics|Placeholder singleChild 1`] = `
 .emotion-1 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -1654,7 +1706,7 @@ exports[`Storyshots Basics|Placeholder singleChild 1`] = `
 .emotion-1 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -1674,10 +1726,10 @@ exports[`Storyshots Basics|Placeholder singleChild 1`] = `
 `;
 
 exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
-.emotion-2 {
+.emotion-4 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -1686,18 +1738,114 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 }
 
 .emotion-2 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-2 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-2:hover,
+.emotion-2:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-2:hover svg path,
+.emotion-2:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-2:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-2:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-2 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-4 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
 .emotion-0 {
   font-weight: 700;
+}
+
+.emotion-2 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-2 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-2:hover,
+.emotion-2:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-2:hover svg path,
+.emotion-2:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-2:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-2:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-2 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
 }
 
 <div
-  class="emotion-2"
+  class="emotion-4"
 >
   <div
     class="emotion-0"
@@ -1705,13 +1853,18 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
     This has two children, the first bold
   </div>
   <div
-    class="emotion-1"
+    class="emotion-3"
   >
     The second normal weight. Here's a 
     <a
+      class="emotion-2"
       href="https://storybook.js.org"
     >
-      link
+      <span
+        class="emotion-1"
+      >
+        link
+      </span>
     </a>
   </div>
 </div>
@@ -1746,43 +1899,6 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-0 svg {
@@ -1794,6 +1910,10 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   margin-top: -2px;
   margin-bottom: -2px;
   pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
 }
 
 .emotion-0 {
@@ -1824,43 +1944,6 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-0 svg {
@@ -1872,6 +1955,10 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   margin-top: -2px;
   margin-bottom: -2px;
   pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
 }
 
 <button
@@ -2067,9 +2154,9 @@ exports[`Storyshots UI|Notifications/NotificationItem longText 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2081,9 +2168,9 @@ exports[`Storyshots UI|Notifications/NotificationItem longText 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2111,9 +2198,9 @@ exports[`Storyshots UI|Notifications/NotificationItem simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2125,9 +2212,9 @@ exports[`Storyshots UI|Notifications/NotificationItem simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2155,9 +2242,9 @@ exports[`Storyshots UI|Notifications/NotificationItem withLink 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2169,9 +2256,9 @@ exports[`Storyshots UI|Notifications/NotificationItem withLink 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2200,9 +2287,9 @@ exports[`Storyshots UI|Notifications/NotificationList all 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2222,9 +2309,9 @@ exports[`Storyshots UI|Notifications/NotificationList all 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2309,9 +2396,9 @@ exports[`Storyshots UI|Notifications/NotificationList single 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2331,9 +2418,9 @@ exports[`Storyshots UI|Notifications/NotificationList single 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -3025,54 +3112,17 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #FAFBFC;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-88:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-88:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-88:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-88 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-88 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-88 svg {
@@ -3087,23 +3137,19 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-88 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-88:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #f2f2f2;
 }
 
 .emotion-88:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #FFFFFF;
 }
 
 .emotion-88:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-88:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-88:hover {
@@ -3532,54 +3578,17 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #FAFBFC;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-88:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-88:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-88:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-88 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-88 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-88 svg {
@@ -3594,23 +3603,19 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-88 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-88:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #f2f2f2;
 }
 
 .emotion-88:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #FFFFFF;
 }
 
 .emotion-88:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-88:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-88:hover {
@@ -4120,13 +4125,15 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 
 .emotion-16 {
   min-width: 180px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .emotion-5 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -4144,10 +4151,6 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-5 + .emotion-5 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-5 > * + * {
@@ -4192,7 +4195,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 }
 
 .emotion-3 {
-  color: #444444;
+  color: #333333;
 }
 
 .emotion-6 {
@@ -4209,13 +4212,15 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 
 .emotion-16 {
   min-width: 180px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .emotion-5 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -4233,10 +4238,6 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-5 + .emotion-5 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-5 > * + * {
@@ -4281,7 +4282,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 }
 
 .emotion-3 {
-  color: #444444;
+  color: #333333;
 }
 
 .emotion-6 {
@@ -4426,9 +4427,9 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -4473,6 +4474,14 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+}
+
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
 }
 
 .emotion-1 {
@@ -4538,49 +4547,12 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-5 svg {
@@ -4594,23 +4566,22 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-8 {
@@ -4620,7 +4591,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -4861,9 +4832,9 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -4908,6 +4879,14 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+}
+
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
 }
 
 .emotion-1 {
@@ -4973,49 +4952,12 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-5 svg {
@@ -5029,23 +4971,22 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-8 {
@@ -5055,7 +4996,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -5269,7 +5210,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
           >
             <path
               d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
-              fill="#333"
+              fill="currentColor"
             />
             <mask
               fill="#fff"
@@ -5690,9 +5631,9 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5737,6 +5678,14 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+}
+
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
 }
 
 .emotion-1 {
@@ -5802,49 +5751,12 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-5 svg {
@@ -5858,23 +5770,22 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-14 {
@@ -5913,7 +5824,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-14 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-8 {
@@ -5979,17 +5891,13 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-13:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-13:hover > svg {
-  color: #444444;
 }
 
 .emotion-32 + section {
@@ -6006,10 +5914,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -ms-letter-spacing: 0.35em;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 11px;
   line-height: 24px;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   margin: 0 20px;
 }
 
@@ -6046,9 +5954,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-19:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -6059,7 +5969,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6107,6 +6017,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-21 {
@@ -6116,7 +6027,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6161,9 +6072,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-29:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -6189,7 +6102,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6246,9 +6159,9 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -6293,6 +6206,14 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+}
+
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
 }
 
 .emotion-1 {
@@ -6358,49 +6279,12 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-5 svg {
@@ -6414,23 +6298,22 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-14 {
@@ -6469,7 +6352,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-14 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-8 {
@@ -6535,17 +6419,13 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-13:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-13:hover > svg {
-  color: #444444;
 }
 
 .emotion-32 + section {
@@ -6562,10 +6442,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -ms-letter-spacing: 0.35em;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 11px;
   line-height: 24px;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   margin: 0 20px;
 }
 
@@ -6602,9 +6482,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-19:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -6615,7 +6497,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6663,6 +6545,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-21 {
@@ -6672,7 +6555,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6717,9 +6600,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-29:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -6745,7 +6630,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6815,7 +6700,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
           >
             <path
               d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
-              fill="#333"
+              fill="currentColor"
             />
             <mask
               fill="#fff"
@@ -7112,6 +6997,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-weight: 700;
 }
 
+.emotion-0 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-4 {
   display: inline-block;
   cursor: pointer;
@@ -7145,49 +7038,12 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-3:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-3:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-3:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-3 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-3 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-3 svg {
@@ -7201,23 +7057,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   pointer-events: none;
 }
 
+.emotion-3 svg path {
+  fill: currentColor;
+}
+
 .emotion-3 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-3 svg path {
-  fill: #666666;
-}
-
 .emotion-3:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-3:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-5 {
@@ -7252,6 +7107,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-weight: 700;
 }
 
+.emotion-0 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-4 {
   display: inline-block;
   cursor: pointer;
@@ -7285,49 +7148,12 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-3:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-3:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-3:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-3 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-3 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-3 svg {
@@ -7341,23 +7167,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   pointer-events: none;
 }
 
+.emotion-3 svg path {
+  fill: currentColor;
+}
+
 .emotion-3 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-3 svg path {
-  fill: #666666;
-}
-
 .emotion-3:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-3:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-5 {
@@ -7381,7 +7206,64 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   <div
     class="emotion-0"
   >
-    custom brand
+    
+
+    <svg
+      height="64px"
+      version="1.1"
+      viewBox="0 0 64 64"
+      width="64px"
+      xlink="http://www.w3.org/1999/xlink"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+  
+      <a
+        href="https://storybook.js.org"
+      >
+        
+    
+        <g
+          fill="none"
+          fill-rule="evenodd"
+          id="Artboard"
+          stroke="none"
+          stroke-width="1"
+        >
+          
+      
+          <path
+            d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
+            fill="#FF4785"
+            fill-rule="nonzero"
+            id="path-1"
+          />
+          
+      
+          <path
+            d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
+            fill="#FFFFFF"
+            fill-rule="nonzero"
+            id="path9_fill-path"
+          />
+          
+      
+          <path
+            d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
+            fill="#FFFFFF"
+            id="Path"
+          />
+          
+    
+        </g>
+        
+  
+      </a>
+      
+
+    </svg>
+    
+
   </div>
   <div
     class="emotion-4"
@@ -7421,6 +7303,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-weight: 700;
 }
 
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-1 {
   display: block;
   color: inherit;
@@ -7499,49 +7389,12 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-5 svg {
@@ -7555,23 +7408,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-5:after {
@@ -7602,6 +7454,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-weight: 700;
 }
 
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-1 {
   display: block;
   color: inherit;
@@ -7680,49 +7540,12 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-5 svg {
@@ -7736,23 +7559,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-5:after {
@@ -7795,7 +7617,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
         >
           <path
             d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
-            fill="#333"
+            fill="currentColor"
           />
           <mask
             fill="#fff"
@@ -7858,6 +7680,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-weight: 700;
 }
 
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-1 {
   display: block;
   color: inherit;
@@ -7921,49 +7751,12 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-5 svg {
@@ -7977,23 +7770,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-7 {
@@ -8028,6 +7820,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-weight: 700;
 }
 
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-1 {
   display: block;
   color: inherit;
@@ -8091,49 +7891,12 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-5 svg {
@@ -8147,23 +7910,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-7 {
@@ -8210,7 +7972,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
         >
           <path
             d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
-            fill="#333"
+            fill="currentColor"
           />
           <mask
             fill="#fff"
@@ -8282,9 +8044,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8310,7 +8074,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8342,9 +8106,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8370,7 +8136,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8428,9 +8194,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8441,7 +8209,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8491,9 +8259,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8504,7 +8274,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8580,9 +8350,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8593,7 +8365,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8640,9 +8412,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8653,7 +8427,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8751,7 +8525,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8858,7 +8632,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8966,9 +8740,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8979,7 +8755,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9010,7 +8786,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9039,9 +8815,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-11:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9067,7 +8845,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9110,9 +8888,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-15:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9138,9 +8918,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 54px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-19:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9170,9 +8952,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9183,7 +8967,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9214,7 +8998,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9243,9 +9027,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-11:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9271,7 +9057,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9314,9 +9100,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-15:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9342,9 +9130,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 54px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-19:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9478,9 +9268,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9491,7 +9283,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9539,9 +9331,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9552,7 +9346,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9611,7 +9405,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9658,6 +9452,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-1 {
@@ -9671,7 +9466,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9718,6 +9513,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 <div
@@ -9772,9 +9568,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9800,7 +9598,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9832,9 +9630,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9860,7 +9660,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9967,7 +9767,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
@@ -9976,15 +9776,11 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
   background: rgba(0,0,0,0.2);
 }
 
-.emotion-5:hover > svg {
-  color: #444444;
-}
-
 .emotion-6 {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
   border-bottom: 1px solid transparent;
-  border-bottom-color: #666666;
+  border-bottom-color: rgba(0,0,0,0.4);
   outline: 0;
   position: relative;
 }
@@ -10015,7 +9811,8 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #666666;
+  fill: currentColor;
+  opacity: 1;
 }
 
 .emotion-2 {
@@ -10093,7 +9890,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
@@ -10102,15 +9899,11 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
   background: rgba(0,0,0,0.2);
 }
 
-.emotion-5:hover > svg {
-  color: #444444;
-}
-
 .emotion-6 {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
   border-bottom: 1px solid transparent;
-  border-bottom-color: #666666;
+  border-bottom-color: rgba(0,0,0,0.4);
   outline: 0;
   position: relative;
 }
@@ -10141,11 +9934,12 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #666666;
+  fill: currentColor;
+  opacity: 1;
 }
 
 <div
-  style="width:240px;margin:1rem;padding:1rem;background:white"
+  style="width:240px;margin:1rem;padding:1rem;background:#999"
 >
   <form
     autocomplete="off"
@@ -10262,7 +10056,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
@@ -10271,15 +10065,11 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
   background: rgba(0,0,0,0.2);
 }
 
-.emotion-5:hover > svg {
-  color: #444444;
-}
-
 .emotion-6 {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
   border-bottom: 1px solid transparent;
-  border-bottom-color: #666666;
+  border-bottom-color: rgba(0,0,0,0.4);
   outline: 0;
   position: relative;
 }
@@ -10310,7 +10100,8 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #666666;
+  fill: currentColor;
+  opacity: 1;
 }
 
 .emotion-2 {
@@ -10388,7 +10179,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
@@ -10397,15 +10188,11 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
   background: rgba(0,0,0,0.2);
 }
 
-.emotion-5:hover > svg {
-  color: #444444;
-}
-
 .emotion-6 {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
   border-bottom: 1px solid transparent;
-  border-bottom-color: #666666;
+  border-bottom-color: rgba(0,0,0,0.4);
   outline: 0;
   position: relative;
 }
@@ -10436,11 +10223,12 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #666666;
+  fill: currentColor;
+  opacity: 1;
 }
 
 <div
-  style="width:240px;margin:1rem;padding:1rem;background:white"
+  style="width:240px;margin:1rem;padding:1rem;background:#999"
 >
   <form
     autocomplete="off"
@@ -10556,17 +10344,13 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-6 {
@@ -10604,7 +10388,8 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-2 {
@@ -10682,17 +10467,13 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-6 {
@@ -10730,11 +10511,12 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 <div
-  style="width:240px;margin:1rem;padding:1rem;background:white"
+  style="width:240px;margin:1rem;padding:1rem;background:#999"
 >
   <form
     autocomplete="off"
@@ -10778,7 +10560,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 .emotion-4 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -10845,7 +10627,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 .emotion-4 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -10996,7 +10778,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -11216,7 +10998,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -11767,7 +11549,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-0 {
@@ -11833,17 +11616,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-39 + section {
@@ -11887,9 +11666,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-10:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -11900,7 +11681,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -11931,7 +11712,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -11976,9 +11757,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-15:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12004,7 +11787,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12047,9 +11830,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-30:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12085,6 +11870,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-2 {
@@ -12135,7 +11921,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-0 {
@@ -12201,17 +11988,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-39 + section {
@@ -12255,9 +12038,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-10:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12268,7 +12053,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12299,7 +12084,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12344,9 +12129,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-15:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12372,7 +12159,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12415,9 +12202,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-30:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12453,6 +12242,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 <div
@@ -12720,7 +12510,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-0 {
@@ -12786,17 +12577,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-24 + section {
@@ -12813,10 +12600,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -ms-letter-spacing: 0.35em;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 11px;
   line-height: 24px;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   margin: 0 20px;
 }
 
@@ -12853,9 +12640,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-11:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12866,7 +12655,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12914,6 +12703,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-13 {
@@ -12923,7 +12713,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12968,9 +12758,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-21:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12996,7 +12788,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -13073,7 +12865,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-0 {
@@ -13139,17 +12932,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-24 + section {
@@ -13166,10 +12955,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -ms-letter-spacing: 0.35em;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 11px;
   line-height: 24px;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   margin: 0 20px;
 }
 
@@ -13206,9 +12995,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-11:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -13219,7 +13010,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -13267,6 +13058,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-13 {
@@ -13276,7 +13068,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -13321,9 +13113,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-21:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -13349,7 +13143,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;

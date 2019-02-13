@@ -17,7 +17,7 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -35,10 +35,6 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-5 + .emotion-5 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-5 > * + * {
@@ -69,8 +65,9 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
 }
 
 .emotion-0 {
-  color: #444444;
+  color: #333333;
   color: #FF4785;
+  font-weight: 700;
 }
 
 .emotion-4 svg {
@@ -190,7 +187,7 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -208,10 +205,6 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-2 + .emotion-2 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-2 > * + * {
@@ -242,11 +235,11 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 }
 
 .emotion-3 {
-  color: #444444;
+  color: #333333;
 }
 
 .emotion-0 {
-  color: #444444;
+  color: #333333;
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
   background: rgba(0,0,0,.1);
@@ -284,8 +277,9 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 }
 
 .emotion-19 {
-  color: #444444;
+  color: #333333;
   color: #FF4785;
+  font-weight: 700;
 }
 
 .emotion-20 {
@@ -322,7 +316,7 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -343,10 +337,6 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   cursor: not-allowed;
 }
 
-.emotion-37 + .emotion-37 {
-  border-top: 1px solid #EEEEEE;
-}
-
 .emotion-37 > * + * {
   padding-left: 10px;
 }
@@ -360,8 +350,8 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 }
 
 .emotion-33 {
-  color: #444444;
-  color: #999999;
+  color: #333333;
+  color: rgba(51,51,51,0.3);
 }
 
 .emotion-34 {
@@ -560,7 +550,7 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -578,10 +568,6 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-2 + .emotion-2 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-2 > * + * {
@@ -612,7 +598,7 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
 }
 
 .emotion-0 {
-  color: #444444;
+  color: #333333;
 }
 
 <a
@@ -647,7 +633,7 @@ exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -665,10 +651,6 @@ exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-5 + .emotion-5 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-5 > * + * {
@@ -699,7 +681,7 @@ exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
 }
 
 .emotion-0 {
-  color: #444444;
+  color: #333333;
 }
 
 .emotion-4 svg {
@@ -778,7 +760,7 @@ exports[`Storyshots basics|Tooltip/ListItem disabled 1`] = `
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -799,10 +781,6 @@ exports[`Storyshots basics|Tooltip/ListItem disabled 1`] = `
   cursor: not-allowed;
 }
 
-.emotion-5 + .emotion-5 {
-  border-top: 1px solid #EEEEEE;
-}
-
 .emotion-5 > * + * {
   padding-left: 10px;
 }
@@ -816,8 +794,8 @@ exports[`Storyshots basics|Tooltip/ListItem disabled 1`] = `
 }
 
 .emotion-1 {
-  color: #444444;
-  color: #999999;
+  color: #333333;
+  color: rgba(51,51,51,0.3);
 }
 
 .emotion-2 {
@@ -918,7 +896,7 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -936,10 +914,6 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-2 + .emotion-2 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-2 > * + * {
@@ -970,7 +944,7 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
 }
 
 .emotion-0 {
-  color: #444444;
+  color: #333333;
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
   background: rgba(0,0,0,.1);
@@ -1000,7 +974,7 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions 1`] = `
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -1018,10 +992,6 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-5 + .emotion-5 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-5 > * + * {
@@ -1052,7 +1022,7 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions 1`] = `
 }
 
 .emotion-1 {
-  color: #444444;
+  color: #333333;
 }
 
 .emotion-4 svg {
@@ -1111,7 +1081,7 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -1129,10 +1099,6 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-5 + .emotion-5 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-5 > * + * {
@@ -1171,8 +1137,9 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
 }
 
 .emotion-1 {
-  color: #444444;
+  color: #333333;
   color: #FF4785;
+  font-weight: 700;
 }
 
 .emotion-2 {
