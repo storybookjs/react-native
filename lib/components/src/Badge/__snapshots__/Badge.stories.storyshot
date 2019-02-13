@@ -8,6 +8,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
   line-height: 12px;
   padding: 4px 12px;
   border-radius: 3em;
+  font-weight: 700;
   color: #66BF3C;
   background: #E1FFD4;
 }
@@ -20,7 +21,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #66BF3C;
+  fill: currentColor;
 }
 
 .emotion-1 {
@@ -30,6 +31,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
   line-height: 12px;
   padding: 4px 12px;
   border-radius: 3em;
+  font-weight: 700;
   color: #FF4400;
   background: #FEDED2;
 }
@@ -42,7 +44,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
 }
 
 .emotion-1 svg path {
-  fill: #FF4400;
+  fill: currentColor;
 }
 
 .emotion-2 {
@@ -52,6 +54,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
   line-height: 12px;
   padding: 4px 12px;
   border-radius: 3em;
+  font-weight: 700;
   color: #666666;
   background: #EEEEEE;
 }
@@ -64,7 +67,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
 }
 
 .emotion-2 svg path {
-  fill: #666666;
+  fill: currentColor;
 }
 
 <div>

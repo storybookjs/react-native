@@ -6,6 +6,8 @@ import { styled } from '@storybook/theming';
 import RadiosType from './Radio';
 import CheckboxesType from './Checkboxes';
 
+// TODO: Apply the Storybook theme to react-select
+
 const OptionsSelect = styled(ReactSelect)({
   width: '100%',
   maxWidth: '300px',

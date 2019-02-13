@@ -40,7 +40,7 @@ export const color = {
 
 export const background = {
   app: '#F6F9FC',
-  preview: color.lightest,
+  content: color.lightest,
   hoverable: 'rgba(0,0,0,.05)', // hover state for items in a list
 
   // Notification, error, and warning backgrounds
@@ -125,7 +125,7 @@ export interface Theme {
   // Toolbar default/active colors
   barTextColor: string;
   barSelectedColor: string;
-  barBgColor: string;
+  barBg: string;
 
   // Brand logo/text
   brand: Brand;

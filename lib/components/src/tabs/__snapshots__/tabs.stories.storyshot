@@ -78,7 +78,7 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -359,7 +359,7 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -596,7 +596,7 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -791,7 +791,7 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -1089,7 +1089,7 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -1298,7 +1298,7 @@ exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
 .emotion-1 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -1380,7 +1380,7 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -1682,7 +1682,7 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 

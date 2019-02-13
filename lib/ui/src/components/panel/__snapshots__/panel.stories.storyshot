@@ -91,7 +91,7 @@ exports[`Storyshots UI|Panel default 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -208,7 +208,7 @@ exports[`Storyshots UI|Panel default 1`] = `
 }
 
 <div
-  style="position:relative;width:800px;height:300px;margin:1rem auto;background:white"
+  style="position:relative;width:800px;height:300px;margin:1rem auto;padding:20px;background:papayawhip"
 >
   <div
     class="emotion-13"
@@ -290,7 +290,7 @@ exports[`Storyshots UI|Panel no panels 1`] = `
 .emotion-1 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -299,7 +299,7 @@ exports[`Storyshots UI|Panel no panels 1`] = `
 }
 
 <div
-  style="position:relative;width:800px;height:300px;margin:1rem auto;background:white"
+  style="position:relative;width:800px;height:300px;margin:1rem auto;padding:20px;background:papayawhip"
 >
   <div
     class="emotion-1"

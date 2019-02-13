@@ -7,10 +7,10 @@ exports[`Storyshots UI|Sidebar/SidebarSubheading default 1`] = `
   -ms-letter-spacing: 0.35em;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 11px;
   line-height: 24px;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
 }
 
 <div
