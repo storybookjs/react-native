@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropTable/Tbody renders a tbody html node with children 1`] = `
+<tbody>
+  <div>
+    foo bar
+  </div>
+</tbody>
+`;
+
+exports[`PropTable/Tbody renders a tbody html node with multiple children elements 1`] = `
+<tbody>
+  <div>
+    foo bar
+  </div>
+  <div>
+    baz
+  </div>
+</tbody>
+`;

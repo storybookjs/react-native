@@ -82,26 +82,23 @@ exports[`Storyshots Addons|A11y/Button Label 1`] = `
 
 exports[`Storyshots Addons|A11y/Form With label 1`] = `
 .emotion-2 {
-  width: 100%;
-  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 8px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 0 8px 8px 8px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin: 0 15px;
+  padding: 8px 0;
 }
 
 .emotion-2:last-child {
-  border-bottom: 0 none;
-  padding-bottom: 0;
+  margin-bottom: 3rem;
 }
 
 .emotion-0 {
   min-width: 100px;
-  min-height: 32px;
-  margin-right: 16px;
+  font-weight: 700;
+  margin-right: 15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -118,25 +115,55 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
 }
 
 .emotion-1 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   display: inline;
   text-align: left;
   min-height: 32px;
 }
 
 .emotion-1:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-1[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-1:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-1::placeholder {
+  color: #999999;
 }
 
 <label
@@ -158,42 +185,69 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
 
 exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
 .emotion-1 {
-  width: 100%;
-  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 8px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 0 8px 8px 8px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin: 0 15px;
+  padding: 8px 0;
 }
 
 .emotion-1:last-child {
-  border-bottom: 0 none;
-  padding-bottom: 0;
+  margin-bottom: 3rem;
 }
 
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   display: inline;
   text-align: left;
   min-height: 32px;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
 }
 
 <label
@@ -209,42 +263,69 @@ exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
 
 exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
 .emotion-1 {
-  width: 100%;
-  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 8px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 0 8px 8px 8px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin: 0 15px;
+  padding: 8px 0;
 }
 
 .emotion-1:last-child {
-  border-bottom: 0 none;
-  padding-bottom: 0;
+  margin-bottom: 3rem;
 }
 
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   display: inline;
   text-align: left;
   min-height: 32px;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
 }
 
 <label
@@ -257,91 +338,34 @@ exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
 `;
 
 exports[`Storyshots Addons|A11y/Image Presentation 1`] = `
-.emotion-0 {
-  display: block;
-}
-
 <img
-  class="emotion-0"
   role="presentation"
   src="http://placehold.it/350x150"
 />
 `;
 
 exports[`Storyshots Addons|A11y/Image With alt 1`] = `
-.emotion-0 {
-  display: block;
-}
-
 <img
   alt="Testing the a11y addon"
-  class="emotion-0"
   src="http://placehold.it/350x150"
 />
 `;
 
 exports[`Storyshots Addons|A11y/Image Without alt 1`] = `
-.emotion-0 {
-  display: block;
-}
-
 <img
-  class="emotion-0"
   src="http://placehold.it/350x150"
 />
 `;
 
 exports[`Storyshots Addons|A11y/Typography Correct 1`] = `
 Array [
-  .emotion-0 {
-  color: currentColor;
-  font-weight: normal;
-  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  display: block;
-  color: #444;
-  line-height: 1em;
-}
-
-.emotion-0 > sub {
-  display: block;
-  padding-top: 5px;
-  line-height: 1.2em;
-  font-size: 14px;
-}
-
-.emotion-0 > sub {
-  color: rgba(0,0,0,0.4);
-}
-
-<header
-    class="emotion-1"
-  >
-    <h1
-      class="emotion-0"
-    >
-      <span>
-        Testing the a11y addon
-      </span>
-    </h1>
-  </header>,
-  .emotion-0 {
-  color: inherit;
-}
-
-<p
-    class="emotion-0"
-  >
+  <h1>
+    Testing the a11y addon
+  </h1>,
+  <p>
     Testing the a11y addon
   </p>,
-  .emotion-0 {
-  color: inherit;
-}
-
-<a
-    class="emotion-0"
+  <a
     href="javascript:void 0"
   >
     Testing the a11y addon...
@@ -349,68 +373,18 @@ Array [
 ]
 `;
 
-exports[`Storyshots Addons|A11y/Typography Empty Heading 1`] = `
-.emotion-0 {
-  color: currentColor;
-  font-weight: normal;
-  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  display: block;
-  color: #444;
-  line-height: 1em;
-}
-
-.emotion-0 > sub {
-  display: block;
-  padding-top: 5px;
-  line-height: 1.2em;
-  font-size: 14px;
-}
-
-.emotion-0 > sub {
-  color: rgba(0,0,0,0.4);
-}
-
-<header
-  class="emotion-1"
->
-  <h1
-    class="emotion-0"
-  />
-</header>
-`;
+exports[`Storyshots Addons|A11y/Typography Empty Heading 1`] = `<h1 />`;
 
 exports[`Storyshots Addons|A11y/Typography Empty Link 1`] = `
-.emotion-0 {
-  color: inherit;
-}
-
 <a
-  class="emotion-0"
   href="javascript:void 0"
 />
 `;
 
-exports[`Storyshots Addons|A11y/Typography Empty Paragraph 1`] = `
-.emotion-0 {
-  color: inherit;
-}
-
-<p
-  class="emotion-0"
-/>
-`;
+exports[`Storyshots Addons|A11y/Typography Empty Paragraph 1`] = `<p />`;
 
 exports[`Storyshots Addons|A11y/Typography Link without href 1`] = `
-.emotion-0 {
-  color: inherit;
-}
-
-<a
-  class="emotion-0"
->
+<a>
   Testing the a11y addon...
 </a>
 `;

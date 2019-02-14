@@ -10,32 +10,32 @@ const Container = styled.div({
 });
 
 const List = styled.div(({ theme }) => ({
-  borderBottom: theme.mainBorder,
+  boxShadow: `${theme.appBorderColor} 0 -1px 0 0 inset`,
+  background: 'rgba(0,0,0,.05)',
   flexWrap: 'wrap',
   display: 'flex',
 }));
 
 const Item = styled.button(
-  ({ active }) =>
+  ({ active, theme }) =>
     active
       ? {
           opacity: 1,
-          fontWeight: 600,
+          borderBottom: `3px solid ${theme.color.secondary}`,
         }
       : {},
   ({ theme }) => ({
     textDecoration: 'none',
-    textTransform: 'uppercase',
     padding: '10px 15px',
-    letterSpacing: '1px',
     cursor: 'pointer',
-    fontWeight: 500,
-    opacity: 0.7,
+    fontWeight: theme.typography.weight.bold,
+    fontSize: theme.typography.size.s2 - 1,
+    lineHeight: 1,
+    height: 40,
     border: 'none',
     borderTop: '3px solid transparent',
     borderBottom: '3px solid transparent',
-    background: 'none',
-    flex: 1,
+    background: 'transparent',
 
     '&:focus': {
       outline: '0 none',

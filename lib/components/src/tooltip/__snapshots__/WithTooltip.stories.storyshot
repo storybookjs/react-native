@@ -1,0 +1,402 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots basics/Tooltip/WithTooltip no chrome 1`] = `
+.emotion-2 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  height: 300px;
+}
+
+.emotion-3 {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
+  background: #eee;
+  position: relative;
+}
+
+.emotion-0 {
+  height: 100px;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+<div
+  class="emotion-4"
+>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        Click me!
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/WithTooltip simple click 1`] = `
+.emotion-2 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  height: 300px;
+}
+
+.emotion-3 {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
+  background: #eee;
+  position: relative;
+}
+
+.emotion-0 {
+  height: 100px;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+<div
+  class="emotion-4"
+>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        Click me!
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/WithTooltip simple click closeOnClick 1`] = `
+.emotion-2 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  height: 300px;
+}
+
+.emotion-3 {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
+  background: #eee;
+  position: relative;
+}
+
+.emotion-0 {
+  height: 100px;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+<div
+  class="emotion-4"
+>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        Click me!
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
+.emotion-2 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-10 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: rgba(255,255,255,0.95);
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.emotion-3 {
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 0px;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
+  bottom: -8px;
+  top: autopx;
+  right: autopx;
+  left: autopx;
+  border-bottom-width: 0px;
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+  border-top-color: rgba(255,255,255,0.95);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.emotion-12 {
+  height: 300px;
+}
+
+.emotion-11 {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
+  background: #eee;
+  position: relative;
+}
+
+.emotion-0 {
+  height: 100px;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+.emotion-9 {
+  padding: 15px;
+  width: 280px;
+  box-sizing: border-box;
+}
+
+.emotion-6 {
+  color: #444444;
+  line-height: 18px;
+}
+
+.emotion-4 {
+  font-weight: 900;
+}
+
+.emotion-8 {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.emotion-8 > * {
+  margin: 0 8px;
+  font-weight: 900;
+}
+
+<div
+  class="emotion-12"
+>
+  <div
+    class="emotion-11"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        Click me!
+      </div>
+    </div>
+    <div
+      class="emotion-10"
+      style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+    >
+      <div
+        class="emotion-3"
+      />
+      <div
+        class="emotion-9"
+      >
+        <div
+          class="emotion-6"
+        >
+          <div
+            class="emotion-4"
+          >
+            Lorem ipsum dolor sit
+          </div>
+          <span
+            class="emotion-5"
+          >
+            Amet consectatur vestibulum concet durum politu coret weirom
+          </span>
+        </div>
+        <div
+          class="emotion-8"
+        >
+          <a
+            class="emotion-5"
+          >
+            Continue
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/WithTooltip simple hover 1`] = `
+.emotion-2 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  height: 300px;
+}
+
+.emotion-3 {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
+  background: #eee;
+  position: relative;
+}
+
+.emotion-0 {
+  height: 100px;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+<div
+  class="emotion-4"
+>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        Hover me!
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/WithTooltip simple hover, functional 1`] = `
+.emotion-2 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  height: 300px;
+}
+
+.emotion-3 {
+  width: 500px;
+  height: 500px;
+  overflow-y: scroll;
+  background: #eee;
+  position: relative;
+}
+
+.emotion-0 {
+  height: 100px;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+<div
+  class="emotion-4"
+>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-0"
+    />
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        Hover me!
+      </div>
+    </div>
+  </div>
+</div>
+`;

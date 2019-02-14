@@ -73,13 +73,13 @@ class MyPanel extends React.Component {
   componentDidMount() {
     const { api } = this.props;
 
-    api.on(STORY_CHANGED, this.onStoryChange);
+    api.on(STORY_RENDERED, this.onStoryChange);
   }
 
   componentWillUnmount() {
     const { api } = this.props;
 
-    api.off(STORY_CHANGED, this.onStoryChange);
+    api.off(STORY_RENDERED, this.onStoryChange);
   }
 
   onStoryChange = id => {
@@ -141,7 +141,7 @@ The `@storybook/addons` package contains a `makeDecorator` function which we can
 import React from 'react';
 import addons, { makeDecorator } from '@storybook/addons';
 
-export withFoo = makeDecorator({
+export default makeDecorator({
   name: 'withFoo',
   parameterName: 'foo',
   // This means don't run this decorator if the notes decorator is not set
@@ -184,12 +184,12 @@ class MyPanel extends React.Component {
   componentDidMount() {
     const { api } = this.props;
     api.on('foo/doSomeAction', this.onSomeAction);
-    api.on(STORY_CHANGED, this.onStoryChange);
+    api.on(STORY_RENDERED this.onStoryChange);
   }
   componentWillUnmount() {
     const { api } = this.props;
     api.off('foo/doSomeAction', this.onSomeAction);
-    api.off(STORY_CHANGED, this.onStoryChange);
+    api.off(STORY_RENDERED, this.onStoryChange);
   }
 
   render() {

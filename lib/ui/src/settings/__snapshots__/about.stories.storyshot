@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
-.emotion-22 {
+exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
+.emotion-25 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -23,14 +23,14 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: rgba(255,255,255,1);
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: rgba(255,255,255,1) linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,0.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-2 {
@@ -84,13 +84,13 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }
@@ -139,6 +139,10 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -146,9 +150,10 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
   fill: currentColor;
 }
 
-.emotion-21 {
+.emotion-24 {
   display: block;
   position: relative;
+  font-size: 13px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -157,97 +162,195 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
   width: 100%;
 }
 
-.emotion-19 {
-  padding: 20px;
+.emotion-13 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
 }
 
-.emotion-12 {
+.emotion-13 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-13:hover,
+.emotion-13:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-13:hover svg path,
+.emotion-13:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-13:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-13:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-13 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+  font-weight: 700;
+}
+
+.emotion-21 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-16 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-16 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-16:hover,
+.emotion-16:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-16:hover svg path,
+.emotion-16:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-16:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-16:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-16 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-16 svg path {
+  fill: #999999;
+}
+
+.emotion-16:hover {
+  color: #666666;
+}
+
+.emotion-16:hover svg path {
+  fill: #666666;
+}
+
+.emotion-16:active {
+  color: #444444;
+}
+
+.emotion-16:active svg path {
+  fill: #444444;
+}
+
+.emotion-23 {
+  display: block;
+}
+
+.emotion-22 {
+  padding: 3rem 20px;
   max-width: 600px;
   margin: 0 auto;
 }
 
-@media screen and (max-width:500px) {
-  .emotion-12 {
-    display: block;
-  }
-}
-
-.emotion-11 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
 .emotion-8 {
-  display: block;
-  height: 40px;
-  width: auto;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 10px;
-}
-
-.emotion-9 {
-  font-size: 30px;
-  display: inline-block;
-  line-height: 40px;
-  font-weight: 700;
-}
-
-.emotion-10 {
-  background: #DAFFD1;
-  color: #4DC533;
-  float: right;
-  height: 40px;
-  box-sizing: border-box;
-  padding: 10px 25px;
-  border-radius: 20px;
-}
-
-@media screen and (max-width:500px) {
-  .emotion-10 {
-    float: none;
-    margin-top: 10px;
-    display: block;
-    text-align: center;
-  }
-}
-
-.emotion-17 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 900;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-.emotion-17 > * {
-  margin-left: 20px;
+.emotion-8 > svg {
+  height: 32px;
+  width: auto;
+  margin-right: 8px;
 }
 
-.emotion-17 > *:first-child {
-  margin-left: 0;
+.emotion-12 > svg:last-of-type {
+  height: 0.7em;
+  width: 0.7em;
+  margin-right: 0;
+  margin-left: 0.25em;
+  bottom: auto;
+  vertical-align: inherit;
+}
+
+.emotion-9 {
+  background: #FEDED2;
+  color: #FF4400;
+  font-weight: 700;
+  height: 40px;
+  padding: 10px 20px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: center;
 }
 
 .emotion-14 {
-  color: inherit;
+  font-weight: 700;
+  text-align: center;
 }
 
 <div
-  class="emotion-22"
+  class="emotion-25"
 >
   <div
     class="emotion-7"
@@ -276,9 +379,7 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
       >
         <svg
           class="emotion-4"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-3"
@@ -289,89 +390,112 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
     </div>
   </div>
   <div
-    class="emotion-21"
+    class="emotion-24"
   >
     <div
-      class="emotion-4"
+      class="emotion-23"
       role="tabpanel"
     >
       <div
-        class="emotion-19"
+        class="emotion-22"
       >
-        <div
-          class="emotion-12"
+        <header
+          class="emotion-8"
         >
-          <header
-            class="emotion-11"
+          <svg
+            title="Storybook icon"
+            viewBox="0 0 64 64"
           >
-            <svg
-              class="emotion-8"
-              viewBox="0 0 420 538"
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              id="Artboard"
+              stroke="none"
+              stroke-width="1"
             >
               <path
-                d="M 420,0 28,28 52,520 420,538 Z"
-                fill="#f1618c"
+                d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
+                fill="#FF4785"
+                fill-rule="nonzero"
+                id="path-1"
               />
               <path
-                d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
-                fill="#fff"
+                d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
+                fill="#FFFFFF"
+                fill-rule="nonzero"
+                id="path9_fill-path"
               />
               <path
-                d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
-                fill="#fff"
+                d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
+                fill="#FFFFFF"
+                id="Path"
               />
-              <path
-                d="M 42,520 18,28 H 0 l 18,492 z"
-                fill="#b57ee5"
-              />
-            </svg>
-            <span
-              class="emotion-9"
-            >
-              Storybook 5.0.0
-            </span>
-            <span
-              class="emotion-10"
-            >
-              You're up to date
-            </span>
-          </header>
+            </g>
+          </svg>
+          Storybook 5.0.0
+        </header>
+        <div
+          class="emotion-9"
+        >
+          Oops! The latest version of Storybook couldn't be fetched.
         </div>
         <div
-          class="emotion-12"
+          class="emotion-14"
         >
-          Cannot currently fetch the latest version from Storybook. Try 
           <a
-            href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
+            class="emotion-13"
+            href="https://github.com/storybooks/storybook/releases"
+            target="_blank"
           >
-            reading the full changelog
+            <span
+              class="emotion-12"
+            >
+              Check Storybook's release history
+              <svg
+                class="emotion-4"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+                />
+              </svg>
+            </span>
           </a>
         </div>
         <div
-          class="emotion-12"
+          class="emotion-21"
         >
-          <div
-            class="emotion-17"
+          <a
+            class="emotion-16"
+            href="https://storybook.js.org"
           >
-            <a
-              class="emotion-14"
-              href="https://storybook.js.org"
+            <span
+              class="emotion-15"
             >
-              Storybook docs
-            </a>
-            <a
-              class="emotion-14"
-              href="https://github.com/storybooks/storybook"
+              Docs
+            </span>
+          </a>
+          <a
+            class="emotion-16"
+            href="https://github.com/storybooks/storybook"
+          >
+            <span
+              class="emotion-15"
             >
               GitHub
-            </a>
-            <a
-              class="emotion-14"
-              href="https://storybook.js.org/support"
+            </span>
+          </a>
+          <a
+            class="emotion-16"
+            href="https://storybook.js.org/support"
+          >
+            <span
+              class="emotion-15"
             >
               Support
-            </a>
-          </div>
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -379,8 +503,8 @@ exports[`Storyshots UI|AboutPage failed to fetch new version 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|AboutPage new version required 1`] = `
-.emotion-42 {
+exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
+.emotion-41 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -402,14 +526,14 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: rgba(255,255,255,1);
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: rgba(255,255,255,1) linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,0.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-2 {
@@ -463,13 +587,13 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }
@@ -518,6 +642,10 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -525,9 +653,10 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   fill: currentColor;
 }
 
-.emotion-41 {
+.emotion-40 {
   display: block;
   position: relative;
+  font-size: 13px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -536,303 +665,837 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   width: 100%;
 }
 
-.emotion-39 {
-  padding: 20px;
-}
-
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-@media screen and (max-width:500px) {
-  .emotion-12 {
-    display: block;
-  }
-}
-
-.emotion-11 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.emotion-8 {
-  display: block;
-  height: 40px;
-  width: auto;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 10px;
-}
-
-.emotion-9 {
-  font-size: 30px;
-  display: inline-block;
-  line-height: 40px;
-  font-weight: 700;
-}
-
-.emotion-13 {
-  width: 160px;
-}
-
-.emotion-14 {
-  float: right;
-  font-weight: normal;
-  font-size: 11px;
-  color: rgba(0,0,0,0.4);
-}
-
 .emotion-37 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
   padding-top: 20px;
   margin-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0,0,0,.1);
+  font-weight: 700;
 }
 
-.emotion-37 > * {
+.emotion-37 > * + * {
   margin-left: 20px;
 }
 
-.emotion-37 > *:first-child {
-  margin-left: 0;
+.emotion-32 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
 }
 
-.emotion-34 {
-  color: inherit;
+.emotion-32 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-32:hover,
+.emotion-32:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-32:hover svg path,
+.emotion-32:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-32:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-32:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-32 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-32 svg path {
+  fill: #999999;
+}
+
+.emotion-32:hover {
+  color: #666666;
+}
+
+.emotion-32:hover svg path {
+  fill: #666666;
+}
+
+.emotion-32:active {
+  color: #444444;
+}
+
+.emotion-32:active svg path {
+  fill: #444444;
+}
+
+.emotion-39 {
+  display: block;
+}
+
+.emotion-38 {
+  padding: 3rem 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emotion-8 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 900;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-8 > svg {
+  height: 32px;
+  width: auto;
+  margin-right: 8px;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .emotion-10 {
-  background: #1EA7FD;
-  color: black;
-  float: right;
-  height: 40px;
-  box-sizing: border-box;
-  padding: 10px 25px;
-  border-radius: 20px;
+  -webkit-letter-spacing: 0.35em;
+  -moz-letter-spacing: 0.35em;
+  -ms-letter-spacing: 0.35em;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 24px;
+  color: #999999;
 }
 
-@media screen and (max-width:500px) {
-  .emotion-10 {
-    float: none;
-    margin-top: 10px;
-    display: block;
-    text-align: center;
-  }
+.emotion-14 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+  font-size: 12px;
 }
 
-.emotion-32 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+.emotion-14 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-14:hover,
+.emotion-14:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-14:hover svg path,
+.emotion-14:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-14:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-14:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-14 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-14 svg path {
+  fill: #999999;
+}
+
+.emotion-14:hover {
+  color: #666666;
+}
+
+.emotion-14:hover svg path {
+  fill: #666666;
+}
+
+.emotion-14:active {
+  color: #444444;
+}
+
+.emotion-14:active svg path {
+  fill: #444444;
+}
+
+.emotion-13 > svg:last-of-type {
+  height: 0.7em;
+  width: 0.7em;
+  margin-right: 0;
+  margin-left: 0.25em;
+  bottom: auto;
+  vertical-align: inherit;
 }
 
 .emotion-16 {
-  color: currentColor;
-  font-weight: normal;
-  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  display: block;
-  color: #444;
-  line-height: 1em;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-.emotion-16 > sub {
-  display: block;
-  padding-top: 5px;
-  line-height: 1.2em;
+.emotion-16 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-16 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-16 h3 {
+  font-size: 20px;
+}
+
+.emotion-16 h4 {
+  font-size: 16px;
+}
+
+.emotion-16 h5 {
   font-size: 14px;
 }
 
-.emotion-16 > sub {
-  color: rgba(0,0,0,0.4);
+.emotion-16 h6 {
+  font-size: 14px;
+  color: #666666;
 }
 
-.emotion-24 {
+.emotion-16 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-16 pre pre,
+.emotion-16 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-16 pre pre code,
+.emotion-16 pre.hljs code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-16 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-16 pre code,
+.emotion-16 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-16 body > *:first-child {
+  margin-top: 0 !important;
+}
+
+.emotion-16 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-16 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-16 a.absent {
+  color: #cc0000;
+}
+
+.emotion-16 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-16 h1,
+.emotion-16 h2,
+.emotion-16 h3,
+.emotion-16 h4,
+.emotion-16 h5,
+.emotion-16 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-16 h2:first-child,
+.emotion-16 h1:first-child,
+.emotion-16 h1:first-child + h2,
+.emotion-16 h3:first-child,
+.emotion-16 h4:first-child,
+.emotion-16 h5:first-child,
+.emotion-16 h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 h1:hover a.anchor,
+.emotion-16 h2:hover a.anchor,
+.emotion-16 h3:hover a.anchor,
+.emotion-16 h4:hover a.anchor,
+.emotion-16 h5:hover a.anchor,
+.emotion-16 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-16 h1 tt,
+.emotion-16 h1 code {
+  font-size: inherit;
+}
+
+.emotion-16 h2 tt,
+.emotion-16 h2 code {
+  font-size: inherit;
+}
+
+.emotion-16 h3 tt,
+.emotion-16 h3 code {
+  font-size: inherit;
+}
+
+.emotion-16 h4 tt,
+.emotion-16 h4 code {
+  font-size: inherit;
+}
+
+.emotion-16 h5 tt,
+.emotion-16 h5 code {
+  font-size: inherit;
+}
+
+.emotion-16 h6 tt,
+.emotion-16 h6 code {
+  font-size: inherit;
+}
+
+.emotion-16 p,
+.emotion-16 blockquote,
+.emotion-16 ul,
+.emotion-16 ol,
+.emotion-16 dl,
+.emotion-16 li,
+.emotion-16 table,
+.emotion-16 pre {
+  margin: 15px 0;
+}
+
+.emotion-16 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-16 body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h1:first-child + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h3:first-child,
+.emotion-16 body > h4:first-child,
+.emotion-16 body > h5:first-child,
+.emotion-16 body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 a:first-child h1,
+.emotion-16 a:first-child h2,
+.emotion-16 a:first-child h3,
+.emotion-16 a:first-child h4,
+.emotion-16 a:first-child h5,
+.emotion-16 a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 h1 p,
+.emotion-16 h2 p,
+.emotion-16 h3 p,
+.emotion-16 h4 p,
+.emotion-16 h5 p,
+.emotion-16 h6 p {
+  margin-top: 0;
+}
+
+.emotion-16 li p.first {
+  display: inline-block;
+}
+
+.emotion-16 ul,
+.emotion-16 ol {
+  padding-left: 30px;
+}
+
+.emotion-16 ul :first-child,
+.emotion-16 ol :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 ul :last-child,
+.emotion-16 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 dl {
+  padding: 0;
+}
+
+.emotion-16 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-16 dl dt:first-child {
+  padding: 0;
+}
+
+.emotion-16 dl dt > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-16 dl dd > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-16 blockquote > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-16 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-16 table tr:nth-child(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-16 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-16 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-16 table tr th :first-child,
+.emotion-16 table tr td :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 table tr th :last-child,
+.emotion-16 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 img {
+  max-width: 100%;
+}
+
+.emotion-16 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-16 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-16 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-16 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-16 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-16 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-16 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-16 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-16 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-16 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-16 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-16 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-16 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-16 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-16 code,
+.emotion-16 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+}
+
+.emotion-9 {
+  background: #E1FFD4;
+  color: #66BF3C;
+  font-weight: 700;
+  height: 40px;
+  padding: 10px 20px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.emotion-30 {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-22 {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 4px;
-  background: rgba(255,255,255,1);
+  border: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-20 {
+.emotion-19 {
   position: relative;
   overflow: auto;
 }
 
-.emotion-20 code {
+.emotion-19 code {
   padding-right: 10px;
-  opacity: 0.7;
 }
 
-.emotion-20 * .token {
+.emotion-19 * .token {
   font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
   -webkit-font-smoothing: antialiased;
 }
 
-.emotion-20 * .token.comment {
+.emotion-19 * .token.comment {
   color: #008000;
   font-style: italic;
 }
 
-.emotion-20 * .token.prolog {
+.emotion-19 * .token.prolog {
   color: #008000;
   font-style: italic;
 }
 
-.emotion-20 * .token.doctype {
+.emotion-19 * .token.doctype {
   color: #008000;
   font-style: italic;
 }
 
-.emotion-20 * .token.cdata {
+.emotion-19 * .token.cdata {
   color: #008000;
   font-style: italic;
 }
 
-.emotion-20 * .token.string {
+.emotion-19 * .token.string {
   color: #A31515;
 }
 
-.emotion-20 * .token.punctuation {
+.emotion-19 * .token.punctuation {
   color: #393A34;
 }
 
-.emotion-20 * .token.operator {
+.emotion-19 * .token.operator {
   color: #393A34;
 }
 
-.emotion-20 * .token.url {
+.emotion-19 * .token.url {
   color: #36acaa;
 }
 
-.emotion-20 * .token.symbol {
+.emotion-19 * .token.symbol {
   color: #36acaa;
 }
 
-.emotion-20 * .token.number {
+.emotion-19 * .token.number {
   color: #36acaa;
 }
 
-.emotion-20 * .token.boolean {
+.emotion-19 * .token.boolean {
   color: #36acaa;
 }
 
-.emotion-20 * .token.variable {
+.emotion-19 * .token.variable {
   color: #36acaa;
 }
 
-.emotion-20 * .token.constant {
+.emotion-19 * .token.constant {
   color: #36acaa;
 }
 
-.emotion-20 * .token.inserted {
+.emotion-19 * .token.inserted {
   color: #36acaa;
 }
 
-.emotion-20 * .token.atrule {
+.emotion-19 * .token.atrule {
   color: #0000ff;
 }
 
-.emotion-20 * .token.keyword {
+.emotion-19 * .token.keyword {
   color: #0000ff;
 }
 
-.emotion-20 * .token.attr-value {
+.emotion-19 * .token.attr-value {
   color: #0000ff;
 }
 
-.emotion-20 * .token.function {
+.emotion-19 * .token.function {
   color: #393A34;
 }
 
-.emotion-20 * .token.deleted {
+.emotion-19 * .token.deleted {
   color: #9a050f;
 }
 
-.emotion-20 * .token.important {
+.emotion-19 * .token.important {
   font-weight: bold;
 }
 
-.emotion-20 * .token.bold {
+.emotion-19 * .token.bold {
   font-weight: bold;
 }
 
-.emotion-20 * .token.italic {
+.emotion-19 * .token.italic {
   font-style: italic;
 }
 
-.emotion-20 * .token.class-name {
+.emotion-19 * .token.class-name {
   color: #2B91AF;
 }
 
-.emotion-20 * .token.tag {
+.emotion-19 * .token.tag {
   color: #800000;
 }
 
-.emotion-20 * .token.selector {
+.emotion-19 * .token.selector {
   color: #800000;
 }
 
-.emotion-20 * .token.attr-name {
+.emotion-19 * .token.attr-name {
   color: #ff0000;
 }
 
-.emotion-20 * .token.property {
+.emotion-19 * .token.property {
   color: #ff0000;
 }
 
-.emotion-20 * .token.regex {
+.emotion-19 * .token.regex {
   color: #ff0000;
 }
 
-.emotion-20 * .token.entity {
+.emotion-19 * .token.entity {
   color: #ff0000;
 }
 
-.emotion-20 * .token.directive.tag .tag {
+.emotion-19 * .token.directive.tag .tag {
   background: #ffff00;
   color: #393A34;
 }
 
-.emotion-20 * .language-json .token.boolean {
+.emotion-19 * .language-json .token.boolean {
   color: #0000ff;
 }
 
-.emotion-20 * .language-json .token.number {
+.emotion-19 * .language-json .token.number {
   color: #0000ff;
 }
 
-.emotion-20 * .language-json .token.property {
+.emotion-19 * .language-json .token.property {
   color: #2B91AF;
 }
 
-.emotion-20 * .namespace {
+.emotion-19 * .namespace {
   opacity: 0.7;
 }
 
-.emotion-19 {
+.emotion-18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -845,7 +1508,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   padding: 10px;
 }
 
-.emotion-18 {
+.emotion-17 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -853,7 +1516,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   opacity: 1;
 }
 
-.emotion-23 {
+.emotion-21 {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -862,57 +1525,48 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  border-left: 1px solid rgba(0,0,0,0.1);
-  background: rgba(255,255,255,1);
-  border-radius: 4px 0 0 0;
+  background: #FFFFFF;
 }
 
-.emotion-22 {
+.emotion-20 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  list-style: none;
-  padding: 0;
-  height: 26px;
-  font-size: 11px;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-left: 0 none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #333333;
+  background: #FFFFFF;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(0,0,0,.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
 }
 
-.emotion-21 {
-  border: 0 none;
-  display: block;
-  background: none;
-  padding: 0 10px;
-  cursor: pointer;
-  text-transform: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  font-size: inherit;
-  color: inherit;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
+.emotion-20:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-21:focus {
-  border-bottom: 2px solid #1EA7FD;
+.emotion-20 + * {
+  border-left: 1px solid rgba(0,0,0,.1);
+  border-radius: 0;
+}
+
+.emotion-20:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
   outline: 0 none;
 }
 
 <div
-  class="emotion-42"
+  class="emotion-41"
 >
   <div
     class="emotion-7"
@@ -941,9 +1595,7 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
       >
         <svg
           class="emotion-4"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-3"
@@ -954,69 +1606,87 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
     </div>
   </div>
   <div
-    class="emotion-41"
+    class="emotion-40"
   >
     <div
-      class="emotion-4"
+      class="emotion-39"
       role="tabpanel"
     >
       <div
-        class="emotion-39"
+        class="emotion-38"
       >
-        <div
-          class="emotion-12"
+        <header
+          class="emotion-8"
         >
-          <header
-            class="emotion-11"
+          <svg
+            title="Storybook icon"
+            viewBox="0 0 64 64"
           >
-            <svg
-              class="emotion-8"
-              viewBox="0 0 420 538"
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              id="Artboard"
+              stroke="none"
+              stroke-width="1"
             >
               <path
-                d="M 420,0 28,28 52,520 420,538 Z"
-                fill="#f1618c"
+                d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
+                fill="#FF4785"
+                fill-rule="nonzero"
+                id="path-1"
               />
               <path
-                d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
-                fill="#fff"
+                d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
+                fill="#FFFFFF"
+                fill-rule="nonzero"
+                id="path9_fill-path"
               />
               <path
-                d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
-                fill="#fff"
+                d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
+                fill="#FFFFFF"
+                id="Path"
               />
-              <path
-                d="M 42,520 18,28 H 0 l 18,492 z"
-                fill="#b57ee5"
-              />
-            </svg>
-            <span
-              class="emotion-9"
-            >
-              Storybook 5.0.0
-            </span>
-            <span
-              class="emotion-10"
-            >
-              Update available
-            </span>
-          </header>
+            </g>
+          </svg>
+          Storybook 5.0.0
+        </header>
+        <div
+          class="emotion-9"
+        >
+          Storybook 5.0.3 is available. Upgrade from 5.0.0 now.
         </div>
         <div
-          class="emotion-12"
+          class="emotion-15"
         >
-          <aside
-            class="emotion-13"
+          <span
+            class="emotion-10"
           >
-            <div>
-              Latest version
-            </div>
-            <div>
-              <strong>
-                5.0.3
-              </strong>
-            </div>
-          </aside>
+            5.0.3 Changelog
+          </span>
+          <a
+            class="emotion-14"
+            href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
+            target="_blank"
+          >
+            <span
+              class="emotion-13"
+            >
+              Read full changelog
+              <svg
+                class="emotion-4"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div
+          class="emotion-16"
+        >
           <ul>
             <li>
               upgrade webpack & babel to latest
@@ -1034,43 +1704,29 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
               improved performance of addon-knobs
             </li>
           </ul>
-          <a
-            class="emotion-14"
-            href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Read full changelog
-          </a>
         </div>
         <div
-          class="emotion-12"
+          class="emotion-30"
         >
           <div
-            class="emotion-32"
+            class="emotion-16"
           >
-            <header
-              class="emotion-17"
-            >
-              <h1
-                class="emotion-16"
-              >
-                <span>
-                  Upgrade all storybook packages to latest:
-                </span>
-              </h1>
-            </header>
+            <p>
+              <b>
+                Upgrade all Storybook packages to latest:
+              </b>
+            </p>
             <div
-              class="emotion-24"
+              class="emotion-22"
             >
               <div
-                class="emotion-20"
+                class="emotion-19"
               >
                 <pre
-                  class="hljs emotion-19"
+                  class="hljs emotion-18"
                 >
                   <code
-                    class="emotion-18"
+                    class="emotion-17"
                   >
                     npx npm-check-updates 
                     <span
@@ -1088,80 +1744,80 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
                   </code>
                 </pre>
               </div>
-              <ul
-                class="emotion-23"
+              <div
+                class="emotion-21"
               >
-                <li
-                  class="emotion-22"
+                <button
+                  class="emotion-20"
                 >
-                  <button
-                    class="emotion-21"
-                  >
-                    copy
-                  </button>
-                </li>
-              </ul>
+                  Copy
+                </button>
+              </div>
             </div>
             <p>
-              Alternatively if you're using a yarn you could run the following command, and check all storybook related packages:
+              Alternatively, if you're using yarn run the following command, and check all Storybook related packages:
             </p>
             <div
-              class="emotion-24"
+              class="emotion-22"
             >
               <div
-                class="emotion-20"
+                class="emotion-19"
               >
                 <pre
-                  class="hljs emotion-19"
+                  class="hljs emotion-18"
                 >
                   <code
-                    class="emotion-18"
+                    class="emotion-17"
                   >
                     yarn upgrade-interactive --latest
                   </code>
                 </pre>
               </div>
-              <ul
-                class="emotion-23"
+              <div
+                class="emotion-21"
               >
-                <li
-                  class="emotion-22"
+                <button
+                  class="emotion-20"
                 >
-                  <button
-                    class="emotion-21"
-                  >
-                    copy
-                  </button>
-                </li>
-              </ul>
+                  Copy
+                </button>
+              </div>
             </div>
           </div>
         </div>
         <div
-          class="emotion-12"
+          class="emotion-37"
         >
-          <div
-            class="emotion-37"
+          <a
+            class="emotion-32"
+            href="https://storybook.js.org"
           >
-            <a
-              class="emotion-34"
-              href="https://storybook.js.org"
+            <span
+              class="emotion-31"
             >
-              Storybook docs
-            </a>
-            <a
-              class="emotion-34"
-              href="https://github.com/storybooks/storybook"
+              Docs
+            </span>
+          </a>
+          <a
+            class="emotion-32"
+            href="https://github.com/storybooks/storybook"
+          >
+            <span
+              class="emotion-31"
             >
               GitHub
-            </a>
-            <a
-              class="emotion-34"
-              href="https://storybook.js.org/support"
+            </span>
+          </a>
+          <a
+            class="emotion-32"
+            href="https://storybook.js.org/support"
+          >
+            <span
+              class="emotion-31"
             >
               Support
-            </a>
-          </div>
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -1169,8 +1825,8 @@ exports[`Storyshots UI|AboutPage new version required 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|AboutPage up to date 1`] = `
-.emotion-24 {
+exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
+.emotion-27 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -1192,14 +1848,14 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: rgba(255,255,255,1);
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: rgba(255,255,255,1) linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,0.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-2 {
@@ -1253,13 +1909,13 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }
@@ -1308,6 +1964,10 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
 }
 
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -1315,9 +1975,10 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
   fill: currentColor;
 }
 
-.emotion-23 {
+.emotion-26 {
   display: block;
   position: relative;
+  font-size: 13px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -1326,108 +1987,671 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
   width: 100%;
 }
 
-.emotion-21 {
-  padding: 20px;
-}
-
-.emotion-12 {
+.emotion-23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+  font-weight: 700;
+}
+
+.emotion-23 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-18 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-18 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-18:hover,
+.emotion-18:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-18:hover svg path,
+.emotion-18:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-18:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-18:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-18 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-18 svg path {
+  fill: #999999;
+}
+
+.emotion-18:hover {
+  color: #666666;
+}
+
+.emotion-18:hover svg path {
+  fill: #666666;
+}
+
+.emotion-18:active {
+  color: #444444;
+}
+
+.emotion-18:active svg path {
+  fill: #444444;
+}
+
+.emotion-25 {
+  display: block;
+}
+
+.emotion-24 {
+  padding: 3rem 20px;
   max-width: 600px;
   margin: 0 auto;
 }
 
-@media screen and (max-width:500px) {
-  .emotion-12 {
-    display: block;
-  }
-}
-
-.emotion-11 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
 .emotion-8 {
-  display: block;
-  height: 40px;
-  width: auto;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 10px;
-}
-
-.emotion-9 {
-  font-size: 30px;
-  display: inline-block;
-  line-height: 40px;
-  font-weight: 700;
-}
-
-.emotion-10 {
-  background: #DAFFD1;
-  color: #4DC533;
-  float: right;
-  height: 40px;
-  box-sizing: border-box;
-  padding: 10px 25px;
-  border-radius: 20px;
-}
-
-@media screen and (max-width:500px) {
-  .emotion-10 {
-    float: none;
-    margin-top: 10px;
-    display: block;
-    text-align: center;
-  }
-}
-
-.emotion-13 {
-  width: 160px;
-}
-
-.emotion-14 {
-  float: right;
-  font-weight: normal;
-  font-size: 11px;
-  color: rgba(0,0,0,0.4);
-}
-
-.emotion-19 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 900;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-.emotion-19 > * {
-  margin-left: 20px;
+.emotion-8 > svg {
+  height: 32px;
+  width: auto;
+  margin-right: 8px;
 }
 
-.emotion-19 > *:first-child {
-  margin-left: 0;
+.emotion-9 {
+  background: #EAF3FC;
+  color: #333333;
+  font-weight: 700;
+  height: 40px;
+  padding: 10px 20px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-10 {
+  -webkit-letter-spacing: 0.35em;
+  -moz-letter-spacing: 0.35em;
+  -ms-letter-spacing: 0.35em;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 24px;
+  color: #999999;
+}
+
+.emotion-14 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+  font-size: 12px;
+}
+
+.emotion-14 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-14:hover,
+.emotion-14:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-14:hover svg path,
+.emotion-14:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-14:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-14:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-14 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-14 svg path {
+  fill: #999999;
+}
+
+.emotion-14:hover {
+  color: #666666;
+}
+
+.emotion-14:hover svg path {
+  fill: #666666;
+}
+
+.emotion-14:active {
+  color: #444444;
+}
+
+.emotion-14:active svg path {
+  fill: #444444;
+}
+
+.emotion-13 > svg:last-of-type {
+  height: 0.7em;
+  width: 0.7em;
+  margin-right: 0;
+  margin-left: 0.25em;
+  bottom: auto;
+  vertical-align: inherit;
 }
 
 .emotion-16 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emotion-16 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-16 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-16 h3 {
+  font-size: 20px;
+}
+
+.emotion-16 h4 {
+  font-size: 16px;
+}
+
+.emotion-16 h5 {
+  font-size: 14px;
+}
+
+.emotion-16 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-16 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-16 pre pre,
+.emotion-16 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-16 pre pre code,
+.emotion-16 pre.hljs code {
   color: inherit;
+  font-size: inherit;
+}
+
+.emotion-16 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-16 pre code,
+.emotion-16 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-16 body > *:first-child {
+  margin-top: 0 !important;
+}
+
+.emotion-16 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-16 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-16 a.absent {
+  color: #cc0000;
+}
+
+.emotion-16 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-16 h1,
+.emotion-16 h2,
+.emotion-16 h3,
+.emotion-16 h4,
+.emotion-16 h5,
+.emotion-16 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-16 h2:first-child,
+.emotion-16 h1:first-child,
+.emotion-16 h1:first-child + h2,
+.emotion-16 h3:first-child,
+.emotion-16 h4:first-child,
+.emotion-16 h5:first-child,
+.emotion-16 h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 h1:hover a.anchor,
+.emotion-16 h2:hover a.anchor,
+.emotion-16 h3:hover a.anchor,
+.emotion-16 h4:hover a.anchor,
+.emotion-16 h5:hover a.anchor,
+.emotion-16 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-16 h1 tt,
+.emotion-16 h1 code {
+  font-size: inherit;
+}
+
+.emotion-16 h2 tt,
+.emotion-16 h2 code {
+  font-size: inherit;
+}
+
+.emotion-16 h3 tt,
+.emotion-16 h3 code {
+  font-size: inherit;
+}
+
+.emotion-16 h4 tt,
+.emotion-16 h4 code {
+  font-size: inherit;
+}
+
+.emotion-16 h5 tt,
+.emotion-16 h5 code {
+  font-size: inherit;
+}
+
+.emotion-16 h6 tt,
+.emotion-16 h6 code {
+  font-size: inherit;
+}
+
+.emotion-16 p,
+.emotion-16 blockquote,
+.emotion-16 ul,
+.emotion-16 ol,
+.emotion-16 dl,
+.emotion-16 li,
+.emotion-16 table,
+.emotion-16 pre {
+  margin: 15px 0;
+}
+
+.emotion-16 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-16 body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h1:first-child + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 body > h3:first-child,
+.emotion-16 body > h4:first-child,
+.emotion-16 body > h5:first-child,
+.emotion-16 body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 a:first-child h1,
+.emotion-16 a:first-child h2,
+.emotion-16 a:first-child h3,
+.emotion-16 a:first-child h4,
+.emotion-16 a:first-child h5,
+.emotion-16 a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-16 h1 p,
+.emotion-16 h2 p,
+.emotion-16 h3 p,
+.emotion-16 h4 p,
+.emotion-16 h5 p,
+.emotion-16 h6 p {
+  margin-top: 0;
+}
+
+.emotion-16 li p.first {
+  display: inline-block;
+}
+
+.emotion-16 ul,
+.emotion-16 ol {
+  padding-left: 30px;
+}
+
+.emotion-16 ul :first-child,
+.emotion-16 ol :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 ul :last-child,
+.emotion-16 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 dl {
+  padding: 0;
+}
+
+.emotion-16 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-16 dl dt:first-child {
+  padding: 0;
+}
+
+.emotion-16 dl dt > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-16 dl dd > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-16 blockquote > :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-16 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-16 table tr:nth-child(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-16 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-16 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-16 table tr th :first-child,
+.emotion-16 table tr td :first-child {
+  margin-top: 0;
+}
+
+.emotion-16 table tr th :last-child,
+.emotion-16 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-16 img {
+  max-width: 100%;
+}
+
+.emotion-16 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-16 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-16 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-16 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-16 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-16 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-16 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-16 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-16 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-16 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-16 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-16 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-16 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-16 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-16 code,
+.emotion-16 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
 }
 
 <div
-  class="emotion-24"
+  class="emotion-27"
 >
   <div
     class="emotion-7"
@@ -1456,9 +2680,7 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
       >
         <svg
           class="emotion-4"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-3"
@@ -1469,69 +2691,87 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
     </div>
   </div>
   <div
-    class="emotion-23"
+    class="emotion-26"
   >
     <div
-      class="emotion-4"
+      class="emotion-25"
       role="tabpanel"
     >
       <div
-        class="emotion-21"
+        class="emotion-24"
       >
-        <div
-          class="emotion-12"
+        <header
+          class="emotion-8"
         >
-          <header
-            class="emotion-11"
+          <svg
+            title="Storybook icon"
+            viewBox="0 0 64 64"
           >
-            <svg
-              class="emotion-8"
-              viewBox="0 0 420 538"
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              id="Artboard"
+              stroke="none"
+              stroke-width="1"
             >
               <path
-                d="M 420,0 28,28 52,520 420,538 Z"
-                fill="#f1618c"
+                d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
+                fill="#FF4785"
+                fill-rule="nonzero"
+                id="path-1"
               />
               <path
-                d="M 324.8652,6.79492 320,72 348.4004,50.5996 372,72 V 3.42774 Z"
-                fill="#fff"
+                d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
+                fill="#FFFFFF"
+                fill-rule="nonzero"
+                id="path9_fill-path"
               />
               <path
-                d="m 230,96.80078 c 67.6,0 106.5996,37.19884 104.5996,111.79882 l -77.4004,2 v -0.1992 c 1.6,-40 -15.7984,-44 -25.3984,-44 -9,0 -24.4004,2.8004 -24.4004,24.4004 0,53.4 131.4004,50.4 131.4004,158 0,60.4 -46.8008,88.39844 -106.8008,88.39844 -62,0 -116.4,-21.19884 -110,-113.79884 h 81 c -1,37.4 7.2008,50.79884 27.8008,50.79884 16,0 23.1992,-8.99844 23.1992,-24.39844 0,-54.8 -129.5996,-56.6 -129.5996,-157 0,-57.6 37.5996,-96 105.5996,-96 z"
-                fill="#fff"
+                d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
+                fill="#FFFFFF"
+                id="Path"
               />
-              <path
-                d="M 42,520 18,28 H 0 l 18,492 z"
-                fill="#b57ee5"
-              />
-            </svg>
-            <span
-              class="emotion-9"
-            >
-              Storybook 5.0.0
-            </span>
-            <span
-              class="emotion-10"
-            >
-              You're up to date
-            </span>
-          </header>
+            </g>
+          </svg>
+          Storybook 5.0.0
+        </header>
+        <div
+          class="emotion-9"
+        >
+          Looking good! You're up to date.
         </div>
         <div
-          class="emotion-12"
+          class="emotion-15"
         >
-          <aside
-            class="emotion-13"
+          <span
+            class="emotion-10"
           >
-            <div>
-              Latest version
-            </div>
-            <div>
-              <strong>
-                5.0.0
-              </strong>
-            </div>
-          </aside>
+            5.0.0 Changelog
+          </span>
+          <a
+            class="emotion-14"
+            href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
+            target="_blank"
+          >
+            <span
+              class="emotion-13"
+            >
+              Read full changelog
+              <svg
+                class="emotion-4"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div
+          class="emotion-16"
+        >
           <ul>
             <li>
               upgrade webpack & babel to latest
@@ -1549,40 +2789,40 @@ exports[`Storyshots UI|AboutPage up to date 1`] = `
               improved performance of addon-knobs
             </li>
           </ul>
-          <a
-            class="emotion-14"
-            href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Read full changelog
-          </a>
         </div>
         <div
-          class="emotion-12"
+          class="emotion-23"
         >
-          <div
-            class="emotion-19"
+          <a
+            class="emotion-18"
+            href="https://storybook.js.org"
           >
-            <a
-              class="emotion-16"
-              href="https://storybook.js.org"
+            <span
+              class="emotion-17"
             >
-              Storybook docs
-            </a>
-            <a
-              class="emotion-16"
-              href="https://github.com/storybooks/storybook"
+              Docs
+            </span>
+          </a>
+          <a
+            class="emotion-18"
+            href="https://github.com/storybooks/storybook"
+          >
+            <span
+              class="emotion-17"
             >
               GitHub
-            </a>
-            <a
-              class="emotion-16"
-              href="https://storybook.js.org/support"
+            </span>
+          </a>
+          <a
+            class="emotion-18"
+            href="https://storybook.js.org/support"
+          >
+            <span
+              class="emotion-17"
             >
               Support
-            </a>
-          </div>
+            </span>
+          </a>
         </div>
       </div>
     </div>

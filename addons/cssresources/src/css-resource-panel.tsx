@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { SyntaxHighlighter } from '@storybook/components';
-import Eventtypes, { STORY_CHANGED } from '@storybook/core-events';
+import Eventtypes, { STORY_RENDERED } from '@storybook/core-events';
 
 import { EVENTS, PARAM_KEY } from './constants';
 import { CssResource } from './CssResource';
@@ -32,12 +32,12 @@ export class CssResourcePanel extends Component<CssResourcePanelProps, CssResour
 
   componentDidMount() {
     const { api } = this.props;
-    api.on(STORY_CHANGED, this.onStoryChange);
+    api.on(STORY_RENDERED, this.onStoryChange);
   }
 
   componentWillUnmount() {
     const { api } = this.props;
-    api.off(STORY_CHANGED, this.onStoryChange);
+    api.off(STORY_RENDERED, this.onStoryChange);
   }
 
   onStoryChange = (id: string) => {
