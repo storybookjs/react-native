@@ -14,8 +14,6 @@ export const createReset = memoize(1)(
       fontFamily: typography.fonts.base,
       fontSize: typography.size.s3,
       margin: 0,
-      overflowY: 'auto',
-      overflowX: 'hidden',
 
       WebkitFontSmoothing: 'antialiased',
       MozOsxFontSmoothing: 'grayscale',
@@ -97,6 +95,8 @@ export const createGlobal = memoize(1)(
         ...resetStyles.body,
         color: color.defaultText,
         background: background.app,
+        overflowY: 'auto',
+        overflowX: 'hidden',
       },
 
       hr: {
