@@ -52,6 +52,11 @@ addParameters({
     ...INITIAL_VIEWPORTS,
     ...extraViewports,
   },
+  backgrounds: [
+    { name: 'storybook app', value: themes.normal.background.app, default: true },
+    { name: 'light', value: '#eeeeee' },
+    { name: 'dark', value: '#222222' },
+  ],
 });
 
 let previousExports = {};

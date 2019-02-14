@@ -2036,6 +2036,21 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
       "type": "tablet"
     }
   },
+  "backgrounds": [
+    {
+      "name": "storybook app",
+      "value": "#F6F9FC",
+      "default": true
+    },
+    {
+      "name": "light",
+      "value": "#eeeeee"
+    },
+    {
+      "name": "dark",
+      "value": "#222222"
+    }
+  ],
   "globalParameter": "globalParameter",
   "chapterParameter": "chapterParameter",
   "storyParameter": "storyParameter",
