@@ -6979,10 +6979,10 @@ damerau-levenshtein@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.4.tgz#03191c432cb6eea168bb77f3a55ffdccb8978514"
 
-danger@^7.0.7:
-  version "7.0.7"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-7.0.7.tgz#03f08fc78fd1125cc87b855383fc8c5069bfe1ab"
-  integrity sha512-x91m7V9bWc7cCaYxtnsG6nZTtKanvepK6VUvzym9vE7M4lY+C4fvRfg0D9ODFN7H6RuHK2NmTxDPTBsZpUU0og==
+danger@^7.0.11:
+  version "7.0.11"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-7.0.11.tgz#6bf0a4a2d9eb53f389412171c03b075d2ac1fce4"
+  integrity sha512-KwPD0qFEr5NqUH0RFynO6c2KMNa9n6ZgwsVw8WUuJct9THT5cMsSBzX3Gm/bLwSCVugc8H/9xhI06o6DycS8Ww==
   dependencies:
     "@babel/polyfill" "^7.2.5"
     "@octokit/rest" "^16.14.1"
@@ -7015,7 +7015,6 @@ danger@^7.0.7:
     require-from-string "^2.0.2"
     rfc6902 "^3.0.1"
     supports-hyperlinks "^1.0.1"
-    vm2 "^3.6.3"
 
 dargs@^4.0.1:
   version "4.1.0"
@@ -21065,10 +21064,6 @@ vm-browserify@0.0.4:
 vm-browserify@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.0.tgz#bd76d6a23323e2ca8ffa12028dc04559c75f9019"
-
-vm2@^3.6.3:
-  version "3.6.6"
-  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.6.6.tgz#169048f0139cf0d0e7c26597ba6ae78af72b28a8"
 
 vscode-json-languageservice@^3.2.1:
   version "3.2.1"
