@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|Panel default 1`] = `
-.emotion-14 {
+.emotion-13 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -14,7 +14,7 @@ exports[`Storyshots UI|Panel default 1`] = `
   flex-direction: column;
 }
 
-.emotion-12 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -23,14 +23,14 @@ exports[`Storyshots UI|Panel default 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: rgba(255,255,255,1);
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: rgba(255,255,255,1) linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,0.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-3 {
@@ -84,14 +84,14 @@ exports[`Storyshots UI|Panel default 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
-  color: rgba(0,0,0,0.4);
+  font-size: 13px;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -129,13 +129,13 @@ exports[`Storyshots UI|Panel default 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }
@@ -149,25 +149,18 @@ exports[`Storyshots UI|Panel default 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
-.emotion-11 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-11 > * {
+.emotion-10 > * {
   margin-right: 15px;
 }
 
-.emotion-4 {
-  width: 1px;
-  height: 24px;
-  background: rgba(0,0,0,0.1);
-  margin-top: 8px;
-}
-
-.emotion-7 {
+.emotion-6 {
   height: 40px;
   background: none;
   color: inherit;
@@ -180,27 +173,32 @@ exports[`Storyshots UI|Panel default 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
 }
 
-.emotion-7:hover,
-.emotion-7:focus {
+.emotion-6:hover,
+.emotion-6:focus {
   outline: 0 none;
   color: #1EA7FD;
 }
 
-.emotion-7 > svg {
+.emotion-6 > svg {
   width: 15px;
 }
 
-.emotion-6 {
+.emotion-5 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
-.emotion-5 {
+.emotion-4 {
   fill: currentColor;
 }
 
-.emotion-13 {
+.emotion-12 {
   display: block;
   position: relative;
+  font-size: 13px;
   position: relative;
   overflow: auto;
   -webkit-flex: 1;
@@ -210,106 +208,99 @@ exports[`Storyshots UI|Panel default 1`] = `
 }
 
 <div
-  style="height:calc(100vh - 20px)"
+  class="emotion-13"
+  id="storybook-panel-root"
 >
   <div
-    class="emotion-14"
-    id="storybook-panel-root"
+    class="emotion-11"
   >
     <div
-      class="emotion-12"
+      class="emotion-3"
     >
       <div
-        class="emotion-3"
+        class="emotion-2"
+        role="tablist"
       >
-        <div
-          class="emotion-2"
-          role="tablist"
-        >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Test 1
-          </button>
-          <button
-            class="emotion-1"
-            role="tab"
-            type="button"
-          >
-            Test 2
-          </button>
-        </div>
-      </div>
-      <div
-        class="emotion-11"
-      >
-        <span
-          class="emotion-4"
-        />
         <button
-          class="emotion-7"
+          class="emotion-0"
+          role="tab"
+          type="button"
         >
-          <svg
-            class="emotion-6"
-            height="20px"
-            viewBox="0 0 1024 1024"
-            width="20px"
-          >
-            <path
-              class="emotion-5"
-              d="M64 167.944v688c0 22.092 17.908 40 40 40h816c22.092 0 40-17.908 40-40v-688c0-22.092-17.908-40-40-40h-816c-22.092 0-40 17.908-40 40zM880 815.944h-240v-608h240v608zM144 207.944h416v608h-416v-608zM793.296 320.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32zM793.296 448.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32zM793.296 576.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32z"
-            />
-          </svg>
+          Test 1
         </button>
         <button
-          class="emotion-7"
+          class="emotion-1"
+          role="tab"
+          type="button"
         >
-          <svg
-            class="emotion-6"
-            height="20px"
-            viewBox="0 0 1024 1024"
-            width="20px"
-          >
-            <path
-              class="emotion-5"
-              d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
-            />
-          </svg>
+          Test 2
         </button>
       </div>
     </div>
     <div
-      class="emotion-13"
+      class="emotion-10"
     >
-      <div
-        id="test2"
+      <button
+        class="emotion-6"
+        title="Change orientation"
       >
-        TEST 2
-      </div>
+        <svg
+          class="emotion-5"
+          viewBox="0 0 1024 1024"
+        >
+          <path
+            class="emotion-4"
+            d="M64 167.944v688c0 22.092 17.908 40 40 40h816c22.092 0 40-17.908 40-40v-688c0-22.092-17.908-40-40-40h-816c-22.092 0-40 17.908-40 40zM880 815.944h-240v-608h240v608zM144 207.944h416v608h-416v-608zM793.296 320.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32zM793.296 448.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32zM793.296 576.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32z"
+          />
+        </svg>
+      </button>
+      <button
+        class="emotion-6"
+        title="Hide addons"
+      >
+        <svg
+          class="emotion-5"
+          viewBox="0 0 1024 1024"
+        >
+          <path
+            class="emotion-4"
+            d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="emotion-12"
+  >
+    <div
+      id="test2"
+    >
+      TEST 2
     </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots UI|Panel no panels 1`] = `
-.emotion-0 {
-  font-size: 11px;
-  display: block;
+.emotion-1 {
+  padding: 30px;
   text-align: center;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 20px;
+  color: #333333;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  font-weight: 700;
 }
 
 <div
-  style="height:calc(100vh - 20px)"
+  class="emotion-1"
 >
-  <p
+  <div
     class="emotion-0"
   >
-    no panels available
-  </p>
+    Nothing found
+  </div>
 </div>
 `;

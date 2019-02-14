@@ -90,7 +90,7 @@ export const imageSnapshot = (customConfig = {}) => {
     } else {
       // add some options "no-sandbox" to make it work properly on some Linux systems as proposed here: https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322851507
       browser = await puppeteer.launch({
-        args: ['--no-sandbox ', '--disable-setuid-sandbox'],
+        args: ['--no-sandbox ', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
         executablePath: chromeExecutablePath,
       });
     }

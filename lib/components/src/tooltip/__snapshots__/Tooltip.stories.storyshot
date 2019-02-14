@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots basics/Tooltip/Tooltip basic, default 1`] = `
+.emotion-2 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: rgba(255,255,255,0.95);
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.emotion-0 {
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 0px;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
+  bottom: -8px;
+  top: autopx;
+  right: autopx;
+  left: autopx;
+  border-bottom-width: 0px;
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+  border-top-color: rgba(255,255,255,0.95);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.emotion-1 {
+  width: 100px;
+  height: 100px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 100px;
+}
+
+<div
+  class="emotion-2"
+  color="medium"
+  style="position:relative;top:20px;left:20px"
+>
+  <div
+    class="emotion-0"
+    color="medium"
+  />
+  <div
+    class="emotion-1"
+  >
+    Text
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/Tooltip basic, default, bottom 1`] = `
+.emotion-1 {
+  width: 100px;
+  height: 100px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.emotion-2 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: rgba(255,255,255,0.95);
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.emotion-0 {
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 8px;
+  margin-top: 0px;
+  margin-right: 8px;
+  margin-left: 8px;
+  bottom: autopx;
+  top: -8px;
+  right: autopx;
+  left: autopx;
+  border-bottom-width: 8px;
+  border-top-width: 0px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+  border-top-color: transparent;
+  border-bottom-color: rgba(255,255,255,0.95);
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+<div
+  class="emotion-2"
+  style="position:relative;top:20px;left:20px"
+>
+  <div
+    class="emotion-0"
+  />
+  <div
+    class="emotion-1"
+  >
+    Text
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/Tooltip basic, default, left 1`] = `
+.emotion-1 {
+  width: 100px;
+  height: 100px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.emotion-2 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 10px;
+  background: rgba(255,255,255,0.95);
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.emotion-0 {
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-right: 0px;
+  margin-left: 8px;
+  bottom: autopx;
+  top: autopx;
+  right: -8px;
+  left: autopx;
+  border-bottom-width: 8px;
+  border-top-width: 8px;
+  border-right-width: 0px;
+  border-left-width: 8px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: rgba(255,255,255,0.95);
+  border-right-color: transparent;
+}
+
+<div
+  class="emotion-2"
+  style="position:relative;top:20px;left:20px"
+>
+  <div
+    class="emotion-0"
+  />
+  <div
+    class="emotion-1"
+  >
+    Text
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/Tooltip basic, default, right 1`] = `
+.emotion-1 {
+  width: 100px;
+  height: 100px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.emotion-2 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 10px;
+  margin-right: 0px;
+  background: rgba(255,255,255,0.95);
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.emotion-0 {
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-left: 0px;
+  bottom: autopx;
+  top: autopx;
+  right: autopx;
+  left: -8px;
+  border-bottom-width: 8px;
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 0px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: rgba(255,255,255,0.95);
+}
+
+<div
+  class="emotion-2"
+  style="position:relative;top:20px;left:20px"
+>
+  <div
+    class="emotion-0"
+  />
+  <div
+    class="emotion-1"
+  >
+    Text
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/Tooltip no chrome 1`] = `
+.emotion-0 {
+  width: 100px;
+  height: 100px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.emotion-1 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 8px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+<div
+  class="emotion-1"
+  style="position:relative;top:20px;left:20px"
+>
+  <div
+    class="emotion-0"
+  >
+    Text
+  </div>
+</div>
+`;

@@ -24,7 +24,7 @@
     "@storybook/addons": "5.0.0-alpha.5",
     "@storybook/react": "5.0.0-alpha.5",
     "babel-loader": "^6.4.1",
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.0",
     "common-tags": "^1.8.0",
     "gatsby": "^1.9.279",
     "gatsby-link": "^1.6.45",
@@ -36,10 +36,10 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
     "global": "^4.3.2",
-    "highlight.js": "^9.13.1",
+    "highlight.js": "^9.14.2",
     "lodash": "^4.17.11",
     "marked": "^0.5.2",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.1",
     "react": "^15.6.2",
     "react-document-title": "^2.0.3",
     "react-dom": "^15.6.2",
@@ -47,7 +47,7 @@
     "react-router": "^4.3.1",
     "react-stack-grid": "^0.7.1",
     "sitemap": "^2.1.0",
-    "snyk": "^1.123.0"
+    "snyk": "^1.126.0"
   },
   "snyk": true
 }

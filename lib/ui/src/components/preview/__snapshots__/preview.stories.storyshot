@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI|Preview no tabs 1`] = `
+exports[`Storyshots UI|Preview/Preview no tabs 1`] = `
 Array [
   .emotion-13 {
   display: -webkit-box;
@@ -51,6 +51,10 @@ Array [
 }
 
 .emotion-1 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -67,14 +71,14 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: rgba(255,255,255,1);
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  background: rgba(255,255,255,1) linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,0.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
   position: absolute;
   left: 0;
   right: 0;
@@ -89,7 +93,7 @@ Array [
 .emotion-9 {
   width: 1px;
   height: 24px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,.1);
   margin-top: 8px;
 }
 
@@ -113,12 +117,11 @@ Array [
     >
       <button
         class="emotion-2"
+        title="Zoom in"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -128,12 +131,11 @@ Array [
       </button>
       <button
         class="emotion-2"
+        title="Zoom out"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -143,12 +145,11 @@ Array [
       </button>
       <button
         class="emotion-2"
+        title="Reset zoom"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -161,12 +162,11 @@ Array [
       />
       <button
         class="emotion-2"
+        title="Toggle background grid"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -180,12 +180,11 @@ Array [
     >
       <button
         class="emotion-2"
+        title="Go full screen"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -198,12 +197,11 @@ Array [
       />
       <button
         class="emotion-2"
+        title="Open component in new tab"
       >
         <svg
           class="emotion-1"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-0"
@@ -233,6 +231,7 @@ Array [
   height: 100%;
   -webkit-transition: background .1s linear;
   transition: background .1s linear;
+  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -274,8 +273,8 @@ Array [
           <iframe
             allowfullscreen=""
             id="storybook-preview-iframe"
-            src="http://example.com?id=undefined"
-            title="preview"
+            src="http://example.com?id=string"
+            title="string"
           />
         </div>
       </div>
@@ -284,7 +283,7 @@ Array [
 ]
 `;
 
-exports[`Storyshots UI|Preview with tabs 1`] = `
+exports[`Storyshots UI|Preview/Preview with tabs 1`] = `
 Array [
   .emotion-19 {
   display: -webkit-box;
@@ -337,14 +336,14 @@ Array [
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
-  color: rgba(0,0,0,0.4);
+  font-size: 13px;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -382,13 +381,13 @@ Array [
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
+  font-size: 13px;
   color: #1EA7FD;
   border-bottom-color: #1EA7FD;
 }
@@ -437,6 +436,10 @@ Array [
 }
 
 .emotion-7 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   display: block;
 }
 
@@ -453,14 +456,14 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: rgba(255,255,255,1);
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  background: rgba(255,255,255,1) linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,0.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
   position: absolute;
   left: 0;
   right: 0;
@@ -475,7 +478,7 @@ Array [
 .emotion-5 {
   width: 1px;
   height: 24px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,.1);
   margin-top: 8px;
 }
 
@@ -533,12 +536,11 @@ Array [
       />
       <button
         class="emotion-8"
+        title="Zoom in"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"
@@ -548,12 +550,11 @@ Array [
       </button>
       <button
         class="emotion-8"
+        title="Zoom out"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"
@@ -563,12 +564,11 @@ Array [
       </button>
       <button
         class="emotion-8"
+        title="Reset zoom"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"
@@ -581,12 +581,11 @@ Array [
       />
       <button
         class="emotion-8"
+        title="Toggle background grid"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"
@@ -600,12 +599,11 @@ Array [
     >
       <button
         class="emotion-8"
+        title="Go full screen"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"
@@ -618,12 +616,11 @@ Array [
       />
       <button
         class="emotion-8"
+        title="Open component in new tab"
       >
         <svg
           class="emotion-7"
-          height="20px"
           viewBox="0 0 1024 1024"
-          width="20px"
         >
           <path
             class="emotion-6"
@@ -653,6 +650,7 @@ Array [
   height: 100%;
   -webkit-transition: background .1s linear;
   transition: background .1s linear;
+  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -694,8 +692,8 @@ Array [
           <iframe
             allowfullscreen=""
             id="storybook-preview-iframe"
-            src="http://example.com?id=undefined"
-            title="preview"
+            src="http://example.com?id=string"
+            title="string"
           />
         </div>
       </div>

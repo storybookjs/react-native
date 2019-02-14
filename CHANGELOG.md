@@ -1,3 +1,62 @@
+## 5.0.0-beta.3 (February 13, 2019)
+
+### Bug Fixes
+
+* UI: V5 styling refinements ([#5562](https://github.com/storybooks/storybook/pull/5562))
+
+## 5.0.0-beta.2 (February 9, 2019)
+
+### Features
+
+* Storyshots: puppeteer launch config for CI ([#5487](https://github.com/storybooks/storybook/pull/5487))
+
+### Bug Fixes
+
+* Addon-notes: fix loading behavior ([#5514](https://github.com/storybooks/storybook/pull/5514))
+* CLI: Workaround -h shorthand conflict ([#5464](https://github.com/storybooks/storybook/pull/5464))
+* Addons: remove tool addon styling ([#5452](https://github.com/storybooks/storybook/pull/5452))
+
+### Maintenance
+
+* UI: V5 style refinements ([#5444](https://github.com/storybooks/storybook/pull/5444))
+* Core: Allow ignoring preview bundle building in core ([#5523](https://github.com/storybooks/storybook/pull/5523))
+* Core: Extract client-api pkg from core ([#5521](https://github.com/storybooks/storybook/pull/5521))
+* UI: Add react element hoisting && ADD display names via babel-plugin ([#5454](https://github.com/storybooks/storybook/pull/5454))
+* Build: TEMP disable the image snapshots ([#5469](https://github.com/storybooks/storybook/pull/5469))
+
+### Dependency Upgrades
+
+* Bump vue and vue-template-compiler ([#5516](https://github.com/storybooks/storybook/pull/5516))
+* Bump react from 16.7.0 to 16.8.1 ([#5517](https://github.com/storybooks/storybook/pull/5517))
+* Bump react-is from 16.7.0 to 16.8.1 ([#5504](https://github.com/storybooks/storybook/pull/5504))
+* Bump eslint-plugin-jest from 22.2.1 to 22.2.2 ([#5505](https://github.com/storybooks/storybook/pull/5505))
+* Bump babel-plugin-emotion from 10.0.6 to 10.0.7 ([#5502](https://github.com/storybooks/storybook/pull/5502))
+* Bump ember-source from 3.7.2 to 3.7.3 ([#5501](https://github.com/storybooks/storybook/pull/5501))
+* Bump lint-staged from 8.1.1 to 8.1.3 ([#5503](https://github.com/storybooks/storybook/pull/5503))
+* Bump enzyme-adapter-react-16 from 1.9.0 to 1.9.1 ([#5507](https://github.com/storybooks/storybook/pull/5507))
+* dependencies: update lit-html to 1.0.0 ([#5490](https://github.com/storybooks/storybook/pull/5490))
+* Bump esm from 3.2.0 to 3.2.1 ([#5492](https://github.com/storybooks/storybook/pull/5492))
+* Bump webpack-cli from 3.2.1 to 3.2.3 ([#5494](https://github.com/storybooks/storybook/pull/5494))
+* Bump @babel/plugin-proposal-object-rest-spread from 7.3.1 to 7.3.2 ([#5496](https://github.com/storybooks/storybook/pull/5496))
+* Bump fuse.js from 3.3.0 to 3.3.1 ([#5497](https://github.com/storybooks/storybook/pull/5497))
+* Bump jest-emotion from 10.0.6 to 10.0.7 ([#5495](https://github.com/storybooks/storybook/pull/5495))
+* Bump prettier from 1.16.1 to 1.16.4 ([#5482](https://github.com/storybooks/storybook/pull/5482))
+* Bump @types/webpack-env from 1.13.6 to 1.13.7 ([#5477](https://github.com/storybooks/storybook/pull/5477))
+* Bump typescript from 3.2.4 to 3.3.1 ([#5479](https://github.com/storybooks/storybook/pull/5479))
+* Bump eslint-plugin-import from 2.15.0 to 2.16.0 ([#5480](https://github.com/storybooks/storybook/pull/5480))
+* Bump storybook-chromatic from 1.2.5 to 1.2.6 ([#5481](https://github.com/storybooks/storybook/pull/5481))
+* Bump enzyme-adapter-react-16 from 1.8.0 to 1.9.0 ([#5478](https://github.com/storybooks/storybook/pull/5478))
+* Bump markdown-to-jsx from 6.9.0 to 6.9.1 ([#5465](https://github.com/storybooks/storybook/pull/5465))
+* Bump @angular/compiler from 7.2.2 to 7.2.3 ([#5466](https://github.com/storybooks/storybook/pull/5466))
+* Bump babel-plugin-react-docgen from 2.0.0 to 2.0.2 ([#5468](https://github.com/storybooks/storybook/pull/5468))
+* Bump danger from 7.0.4 to 7.0.7 ([#5467](https://github.com/storybooks/storybook/pull/5467))
+* Bump puppeteer from 1.11.0 to 1.12.0 ([#5450](https://github.com/storybooks/storybook/pull/5450))
+* Bump @angular/platform-browser-dynamic from 7.2.2 to 7.2.3 ([#5434](https://github.com/storybooks/storybook/pull/5434))
+* Bump esm from 3.1.4 to 3.2.0 ([#5447](https://github.com/storybooks/storybook/pull/5447))
+* Bump eslint-plugin-jest from 22.1.3 to 22.2.1 ([#5448](https://github.com/storybooks/storybook/pull/5448))
+* Bump danger from 7.0.2 to 7.0.4 ([#5449](https://github.com/storybooks/storybook/pull/5449))
+* Bump case-sensitive-paths-webpack-plugin from 2.1.2 to 2.2.0 ([#5451](https://github.com/storybooks/storybook/pull/5451))
+
 ## 5.0.0-beta.1 (February 1, 2019)
 
 ### Bug Fixes

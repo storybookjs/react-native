@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "5.0.0-beta.1",
+  "version": "5.0.0-beta.3",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -25,12 +25,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-beta.1",
-    "@storybook/channel-websocket": "5.0.0-beta.1",
-    "@storybook/channels": "5.0.0-beta.1",
-    "@storybook/core": "5.0.0-beta.1",
-    "@storybook/core-events": "5.0.0-beta.1",
-    "@storybook/ui": "5.0.0-beta.1",
+    "@storybook/addons": "5.0.0-beta.3",
+    "@storybook/channel-websocket": "5.0.0-beta.3",
+    "@storybook/channels": "5.0.0-beta.3",
+    "@storybook/core": "5.0.0-beta.3",
+    "@storybook/core-events": "5.0.0-beta.3",
+    "@storybook/ui": "5.0.0-beta.3",
     "babel-loader": "^8.0.4",
     "babel-plugin-macros": "^2.4.5",
     "babel-plugin-syntax-async-functions": "^6.13.0",
@@ -60,8 +60,8 @@
     "shelljs": "^0.8.2",
     "url-parse": "^1.4.3",
     "uuid": "^3.3.2",
-    "webpack": "^4.29.0",
-    "webpack-dev-middleware": "^3.5.1",
+    "webpack": "^4.29.3",
+    "webpack-dev-middleware": "^3.5.2",
     "webpack-hot-middleware": "^2.24.3",
     "ws": "^6.1.3"
   },

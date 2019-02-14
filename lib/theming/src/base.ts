@@ -1,44 +1,13 @@
 import { easing, animation } from './animation';
 
-export const baseFonts = {
-  fontFamily: [
-    '"Nunito Sans"',
-    '-apple-system',
-    '".SFNSText-Regular"',
-    '"San Francisco"',
-    'BlinkMacSystemFont',
-    '"Segoe UI"',
-    '"Helvetica Neue"',
-    'Helvetica',
-    'Arial',
-    'sans-serif',
-  ].join(', '),
-  color: '#444',
-  WebkitFontSmoothing: 'antialiased',
-};
-
-export const monoFonts = {
-  fontFamily: [
-    '"Operator Mono"',
-    '"Fira Code Retina"',
-    '"Fira Code"',
-    '"FiraCode-Retina"',
-    '"Andale Mono"',
-    '"Lucida Console"',
-    'Consolas',
-    'Monaco',
-    'monospace',
-  ].join(', '),
-  color: '#444',
-  WebkitFontSmoothing: 'antialiased',
-};
-
 export const color = {
   // Official color palette
   primary: '#FF4785', // coral
   secondary: '#1EA7FD', // ocean
-  tertiary: '#DDDDDD',
+  tertiary: '#FAFBFC',
+  ancillary: '#22a699', // for code
 
+  // Complimentary
   orange: '#FC521F',
   gold: '#FFAE00',
   green: '#66BF3C',
@@ -57,17 +26,22 @@ export const color = {
   darker: '#444444',
   darkest: '#333333',
 
-  border: 'rgba(0,0,0,.05)',
+  // For borders
+  border: 'rgba(0,0,0,.1)',
 
   // Status
   positive: '#66BF3C',
-  danger: '#FC521F',
   negative: '#FF4400',
+  warning: '#E69D00',
+
+  defaultText: '#333333',
+  inverseText: '#FFFFFF',
 };
 
 export const background = {
   app: '#F6F9FC',
-  appInverse: '#7A8997',
+  content: color.lightest,
+  hoverable: 'rgba(0,0,0,.05)', // hover state for items in a list
 
   // Notification, error, and warning backgrounds
   positive: '#E1FFD4',
@@ -76,70 +50,89 @@ export const background = {
 };
 
 export const typography = {
+  fonts: {
+    base: [
+      '"Nunito Sans"',
+      '-apple-system',
+      '".SFNSText-Regular"',
+      '"San Francisco"',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      '"Helvetica Neue"',
+      'Helvetica',
+      'Arial',
+      'sans-serif',
+    ].join(', '),
+    mono: [
+      '"Operator Mono"',
+      '"Fira Code Retina"',
+      '"Fira Code"',
+      '"FiraCode-Retina"',
+      '"Andale Mono"',
+      '"Lucida Console"',
+      'Consolas',
+      'Monaco',
+      'monospace',
+    ].join(', '),
+  },
   weight: {
-    regular: '400',
-    bold: '700',
-    black: '900',
+    regular: 400,
+    bold: 700,
+    black: 900,
   },
   size: {
-    s1: '12',
-    s2: '14',
-    s3: '16',
-    m1: '20',
-    m2: '24',
-    m3: '28',
-    l1: '32',
-    l2: '40',
-    l3: '48',
-    code: '90',
+    s1: 12,
+    s2: 14,
+    s3: 16,
+    m1: 20,
+    m2: 24,
+    m3: 28,
+    l1: 32,
+    l2: 40,
+    l3: 48,
+    code: 90,
   },
 };
 
+export type Color = typeof color;
+export type Background = typeof background;
+export type Typography = typeof typography;
+export type Animation = typeof animation;
+export type Easing = typeof easing;
+
+export type TextSize = number | string;
+export type Brand = string;
+
 export interface Theme {
-  color: typeof color;
-  background: typeof background;
-  typography: typeof typography;
-  easing: typeof easing;
-  animation: typeof animation;
+  color: Color;
+  background: Background;
+  typography: Typography;
+  animation: Animation;
+  easing: Easing;
 
-  mainBackground: string;
-  mainBorder: string;
-  mainBorderColor: string;
-  mainBorderRadius: number;
-  mainFill: string;
-  mainTextFace: string;
-  mainTextColor: string;
-  mainTextSize: number;
+  input: {
+    border: string;
+    background: string;
+    color: string;
+    borderRadius: number;
+  };
 
-  monoTextFace: string;
+  // UI
+  layoutMargin: number;
+  appBorderColor: string;
+  appBorderRadius: number;
 
-  dimmedTextColor: string;
-  inputFill: string;
-
-  barFill: string;
+  // Toolbar default/active colors
   barTextColor: string;
   barSelectedColor: string;
+  barBg: string;
 
-  layoutMargin: number;
-
-  asideFill: string;
-  asideSelected: {
-    [key: string]: string | number;
-  };
-  asideHover: {
-    [key: string]: string | number;
-  };
-
-  brand: (() => object) | null;
+  // Brand logo/text
+  brand: Brand;
 
   code: {
     [key: string]: string | object;
   };
 
-  addonActionsTheme: {
-    [key: string]: string | object;
-  };
-
-  // unknown if still used
-  menuHighlightColor: string;
+  [key: string]: any;
 }

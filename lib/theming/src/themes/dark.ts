@@ -1,93 +1,39 @@
-import { chromeDark } from 'react-inspector';
-import { create as createSyntax } from './light-syntax';
+import { create } from '../create';
+import { color, typography } from '../base';
 
-import { baseFonts, monoFonts, color, Theme, typography } from '../base';
-import { easing, animation } from '../animation';
+export default create({
+  // Is this a light theme or a dark theme?
+  base: 'dark',
 
-const background = {
-  app: '#F6F9FC',
-  appInverse: '#7A8997',
-  positive: '#E1FFD4',
-  negative: '#FEDED2',
-  warning: '#FFF5CF',
-};
+  // Storybook-specific color palette
+  colorPrimary: '#FF4785', // coral
+  colorSecondary: '#1EA7FD', // ocean
 
-const main = {
-  mainBackground: '#1F1F1F',
-  mainBorder: '1px solid rgba(255, 255, 255, 0.1)',
-  mainBorderColor: 'rgba(255, 255, 255, 0.1)',
-  mainBorderRadius: 4,
-  mainFill: 'rgba(255,255,255,0.01)',
-  mainTextFace: baseFonts.fontFamily,
-  mainTextColor: '#efefef',
-  mainTextSize: 13,
-};
+  // UI
+  appBg: '#2f2f2f',
+  appContentBg: '#333',
+  appBorderColor: 'rgba(255,255,255,.1)',
+  appBorderRadius: 4,
 
-const bar = {
-  barFill: 'rgba(255,255,255,1)',
-  barTextColor: color.mediumdark,
+  // Fonts
+  fontBase: typography.fonts.base,
+  fontCode: typography.fonts.mono,
+
+  // Text colors
+  textColor: color.lightest,
+  textInverseColor: color.darkest,
+
+  // Toolbar default and active colors
+  barTextColor: '#999999',
   barSelectedColor: color.secondary,
-};
+  barBg: color.darkest,
 
-const layout = {
-  layoutMargin: 10,
-};
+  // Form colors
+  inputBg: '#3f3f3f',
+  inputBorder: 'rgba(0,0,0,.3)',
+  inputTextColor: color.lightest,
+  inputBorderRadius: 4,
 
-const aside = {
-  asideFill: 'transparent',
-  asideSelected: {
-    background: color.secondary,
-    color: color.lightest,
-  },
-  asideHover: {
-    background: '#EAF3FC',
-  },
-};
-
-const mono = {
-  monoTextFace: monoFonts.fontFamily,
-};
-
-const dark: Theme = {
-  ...main,
-  ...bar,
-  ...layout,
-  ...mono,
-  ...aside,
-
-  color,
-  background,
-  typography,
-  easing,
-  animation,
-
-  inputFill: 'rgba(0,0,0,0.1)',
-  dimmedTextColor: 'rgba(0,0,0,0.4)',
-  menuHighlightColor: '#199EFF',
-  monoTextFace: monoFonts.fontFamily,
-
+  // Brand logo/text
   brand: null,
-
-  code: createSyntax({
-    colors: {
-      green1: '#008000',
-      red1: '#A31515',
-      red2: '#9a050f',
-      red3: '#800000',
-      red4: '#ff0000',
-      gray1: '#393A34',
-      cyan1: '#36acaa',
-      cyan2: '#2B91AF',
-      blue1: '#0000ff',
-      blue2: '#00009f',
-    },
-    mono,
-  }),
-  addonActionsTheme: {
-    ...chromeDark,
-    BASE_FONT_FAMILY: monoFonts.fontFamily,
-    BASE_BACKGROUND_COLOR: 'transparent',
-  },
-};
-
-export default dark;
+});

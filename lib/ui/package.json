@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.0.0-beta.1",
+  "version": "5.0.0-beta.3",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -21,15 +21,16 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-beta.1",
-    "@storybook/client-logger": "5.0.0-beta.1",
-    "@storybook/components": "5.0.0-beta.1",
-    "@storybook/core-events": "5.0.0-beta.1",
-    "@storybook/router": "5.0.0-beta.1",
-    "@storybook/theming": "5.0.0-beta.1",
+    "@storybook/addons": "5.0.0-beta.3",
+    "@storybook/client-logger": "5.0.0-beta.3",
+    "@storybook/components": "5.0.0-beta.3",
+    "@storybook/core-events": "5.0.0-beta.3",
+    "@storybook/router": "5.0.0-beta.3",
+    "@storybook/theming": "5.0.0-beta.3",
     "eventemitter3": "^3.1.0",
     "fast-deep-equal": "^2.0.1",
-    "fuse.js": "^3.3.0",
+    "fuse.js": "^3.4.2",
+    "fuzzy-search": "^3.0.1",
     "global": "^4.3.2",
     "history": "^4.7.2",
     "keycode": "^2.2.0",
@@ -39,12 +40,13 @@
     "lodash.pick": "^4.4.0",
     "lodash.sortby": "^4.7.0",
     "lodash.throttle": "^4.1.1",
-    "markdown-to-jsx": "^6.9.0",
+    "markdown-to-jsx": "^6.9.1",
     "memoizerific": "^1.11.3",
+    "polished": "^2.3.3",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
     "react-draggable": "^3.1.1",
     "react-helmet-async": "^0.2.0",
     "react-hotkeys": "2.0.0-pre4",
@@ -56,8 +58,8 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "terser-webpack-plugin": "^1.2.1",
-    "webpack": "^4.29.0"
+    "terser-webpack-plugin": "^1.2.2",
+    "webpack": "^4.29.3"
   },
   "publishConfig": {
     "access": "public"

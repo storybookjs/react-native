@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "5.0.0-beta.1",
+  "version": "5.0.0-beta.3",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -20,12 +20,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-beta.1",
-    "@storybook/client-logger": "5.0.0-beta.1",
-    "@storybook/core-events": "5.0.0-beta.1",
-    "@storybook/router": "5.0.0-beta.1",
-    "@storybook/theming": "5.0.0-beta.1",
-    "fuzzy-search": "^3.0.1",
+    "@storybook/addons": "5.0.0-beta.3",
+    "@storybook/client-logger": "5.0.0-beta.3",
+    "@storybook/core-events": "5.0.0-beta.3",
+    "@storybook/router": "5.0.0-beta.3",
+    "@storybook/theming": "5.0.0-beta.3",
     "global": "^4.3.2",
     "immer": "^1.12.0",
     "js-beautify": "^1.8.9",
@@ -34,8 +33,8 @@
     "memoizerific": "^1.11.3",
     "polished": "^2.3.3",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
     "react-focus-lock": "^1.17.7",
     "react-helmet-async": "^0.2.0",
     "react-inspector": "^2.3.0",
@@ -43,6 +42,7 @@
     "react-syntax-highlighter": "^8.0.1",
     "react-textarea-autosize": "^7.0.4",
     "reactjs-popup": "^1.3.2",
+    "recompose": "^0.30.0",
     "render-fragment": "^0.1.1"
   },
   "peerDependencies": {

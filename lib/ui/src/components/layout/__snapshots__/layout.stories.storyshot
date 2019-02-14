@@ -306,14 +306,14 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
-  color: rgba(0,0,0,0.4);
+  font-size: 13px;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -604,14 +604,14 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
-  color: rgba(0,0,0,0.4);
+  font-size: 13px;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -896,14 +896,14 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
-  color: rgba(0,0,0,0.4);
+  font-size: 13px;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -1194,14 +1194,14 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
   height: 40px;
   line-height: 12px;
-  box-sizing: border-box;
   cursor: pointer;
   background: transparent;
   border: 0 solid transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   font-weight: bold;
-  color: rgba(0,0,0,0.4);
+  font-size: 13px;
+  color: inherit;
   border-bottom-color: transparent;
 }
 

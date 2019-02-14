@@ -36,3 +36,5 @@ import './rn-addons';
 Now, write your stories with knobs.
 
 **Refer to [@storybook/addon-knobs](https://github.com/storybooks/storybook/blob/master/addons/knobs) to learn how to write stories.**
+
+**Note:** you'll still have to install `@storybook/addon-knobs` as well and import `withKnobs` and all knob types _(e.g. `select`, `text` etc)_ from that module.

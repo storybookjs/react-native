@@ -39,10 +39,25 @@ const inlineGlow = css`
   cursor: progress;
 `;
 
+// hover & active state for links and buttons
+const hoverable = css`
+  transition: all 150ms ease-out;
+  transform: translate3d(0, 0, 0);
+
+  &:hover {
+    transform: translate3d(0, -2px, 0);
+  }
+
+  &:active {
+    transform: translate3d(0, 0, 0);
+  }
+`;
+
 export const animation = {
   rotate360,
   glow,
   float,
   jiggle,
   inlineGlow,
+  hoverable,
 };
