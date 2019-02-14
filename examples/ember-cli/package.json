@@ -44,7 +44,7 @@
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.7.3",
     "loader.js": "^4.2.3",
-    "webpack": "^4.29.0",
+    "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
   },
   "engines": {
