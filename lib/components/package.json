@@ -34,6 +34,7 @@
     "polished": "^2.3.3",
     "prop-types": "^15.6.2",
     "react": "^16.8.1",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.8.1",
     "react-focus-lock": "^1.17.7",
     "react-helmet-async": "^0.2.0",
