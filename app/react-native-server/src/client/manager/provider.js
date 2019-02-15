@@ -11,11 +11,6 @@ export default class ReactProvider extends Provider {
     super();
     this.options = options;
     this.selection = null;
-    try {
-      this.channel = addons.getChannel();
-    } catch (err) {
-      this.channel = undefined;
-    }
 
     const { secured, host, port } = options;
     const websocketType = secured ? 'wss' : 'ws';
@@ -42,13 +37,18 @@ export default class ReactProvider extends Provider {
     return addons.getElements(type);
   }
 
-  renderPreview(kind, story) {
-    this.selection = { kind, story };
-    this.channel.emit(Events.SET_CURRENT_STORY, { kind, story });
-    const renderPreview = addons.getPreview();
+  renderPreview(state, api) {
+    if (state.storiesHash[state.storyId]) {
+      const { kind, story } = state.storiesHash[state.storyId];
 
-    const innerPreview = renderPreview ? renderPreview(kind, story) : null;
-    return innerPreview || <PreviewHelp />;
+      this.selection = { kind, story };
+      api.emit(Events.SET_CURRENT_STORY, { kind, story });
+      const renderPreview = addons.getPreview();
+      if (renderPreview) {
+        return renderPreview(kind, story);
+      }
+    }
+    return <PreviewHelp />;
   }
 
   handleAPI(api) {
@@ -56,11 +56,11 @@ export default class ReactProvider extends Provider {
 
     api.onStory((kind, story) => {
       this.selection = { kind, story };
-      this.channel.emit(Events.SET_CURRENT_STORY, this.selection);
+      api.emit(Events.SET_CURRENT_STORY, this.selection);
     });
-    this.channel.on(Events.GET_CURRENT_STORY, () => {
-      this.channel.emit(Events.SET_CURRENT_STORY, this.selection);
+    api.on(Events.GET_CURRENT_STORY, () => {
+      api.emit(Events.SET_CURRENT_STORY, this.selection);
     });
-    this.channel.emit(Events.GET_STORIES);
+    api.emit(Events.GET_STORIES);
   }
 }
