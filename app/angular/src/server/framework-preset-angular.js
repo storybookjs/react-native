@@ -38,7 +38,7 @@ export function webpack(config, { configDir }) {
             {
               loader: require.resolve('postcss-loader'),
               options: {
-                plugins: [autoprefixer],
+                plugins: [autoprefixer()],
               },
             },
             require.resolve('sass-loader'),
