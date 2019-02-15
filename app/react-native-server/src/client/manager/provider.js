@@ -62,6 +62,5 @@ export default class ReactProvider extends Provider {
       this.channel.emit(Events.SET_CURRENT_STORY, this.selection);
     });
     this.channel.emit(Events.GET_STORIES);
-
   }
 }
