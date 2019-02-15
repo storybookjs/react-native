@@ -1,3 +1,17 @@
+## 5.0.0-beta.4 (February 15, 2019)
+
+### Bug Fixes
+
+* UI: Fix mobile view ([#5603](https://github.com/storybooks/storybook/pull/5603))
+* UI: Misc warning fixes ([#5601](https://github.com/storybooks/storybook/pull/5601))
+* UI: Fix ie 11 ([#5599](https://github.com/storybooks/storybook/pull/5599))
+* CLI: Fix for when outputDir is an absolute path ([#5573](https://github.com/storybooks/storybook/pull/5573))
+* CLI: Avoid false-negative checks for port ([#5565](https://github.com/storybooks/storybook/pull/5565))
+* Core: Prioritise programatic configuration ([#5564](https://github.com/storybooks/storybook/pull/5564))
+* UI: FIX clear search ([#5550](https://github.com/storybooks/storybook/pull/5550))
+* Core: Transpile safe-eval package ([#5498](https://github.com/storybooks/storybook/pull/5498))
+* UI: Add default backgrounds to official example ([#5585](https://github.com/storybooks/storybook/pull/5585))
+
 ## 5.0.0-beta.3 (February 13, 2019)
 
 ### Bug Fixes
