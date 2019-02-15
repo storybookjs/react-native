@@ -1,1611 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  background: #FFFFFF;
-  color: #999999;
-  height: 40px;
-  position: relative;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.emotion-7 > * {
-  margin-left: 15px;
-}
-
-.emotion-6 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
-}
-
-.emotion-6:first-child {
-  margin-left: 0;
-}
-
-.emotion-0 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: inherit;
-  border-bottom-color: transparent;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-11 {
-  display: block;
-}
-
-.emotion-10 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-}
-
 .emotion-9 {
-  display: none;
-}
-
-<div
-  style="height:calc(100vh - 20px)"
->
-  <div
-    class="emotion-11"
-  >
-    <div
-      class="emotion-8"
-    >
-      <div
-        class="emotion-7"
-      >
-        <div
-          class="emotion-6"
-          role="tablist"
-        >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-2"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
-      </div>
-    </div>
-    <div
-      class="emotion-10"
-    >
-      <div
-        id="test2"
-        style="background:hotpink;min-height:100%;display:none"
-      >
-        CONTENT 2
-      </div>
-      <div
-        id="test3"
-      >
-        <div
-          style="background:#000000;height:30.8px"
-        />
-        <div
-          style="background:#111111;height:31.3px"
-        />
-        <div
-          style="background:#222222;height:32.1px"
-        />
-        <div
-          style="background:#333333;height:33.4px"
-        />
-        <div
-          style="background:#444444;height:35.5px"
-        />
-        <div
-          style="background:#555555;height:38.9px"
-        />
-        <div
-          style="background:#666666;height:44.4px"
-        />
-        <div
-          style="background:#777777;height:53.3px"
-        />
-        <div
-          style="background:#888888;height:67.7px"
-        />
-        <div
-          style="background:#999999;height:91px"
-        />
-        <div
-          style="background:#aaaaaa;height:128.7px"
-        />
-        <div
-          style="background:#bbbbbb;height:189.7px"
-        />
-        <div
-          style="background:#cccccc;height:288.4px"
-        />
-        <div
-          style="background:#dddddd;height:448.1px"
-        />
-        <div
-          style="background:#eeeeee;height:706.5px"
-        />
-      </div>
-      <div
-        class="emotion-9"
-      >
-        <div>
-          CONTENT 6
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  background: #FFFFFF;
   color: #999999;
   height: 40px;
-  position: relative;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.emotion-7 > * {
-  margin-left: 15px;
-}
-
-.emotion-6 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
-}
-
-.emotion-6:first-child {
-  margin-left: 0;
-}
-
-.emotion-1 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: inherit;
-  border-bottom-color: transparent;
-}
-
-.emotion-1:empty {
-  display: none;
-}
-
-.emotion-1:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-0 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-11 {
-  display: block;
-}
-
-.emotion-10 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-}
-
-.emotion-9 {
-  display: none;
-}
-
-<div
-  style="height:calc(100vh - 20px)"
->
-  <div
-    class="emotion-11"
-  >
-    <div
-      class="emotion-8"
-    >
-      <div
-        class="emotion-7"
-      >
-        <div
-          class="emotion-6"
-          role="tablist"
-        >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-1"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
-      </div>
-    </div>
-    <div
-      class="emotion-10"
-    >
-      <div
-        id="test1"
-      >
-        CONTENT 1
-      </div>
-      <div
-        id="test2"
-        style="background:hotpink;min-height:100%;display:none"
-      >
-        CONTENT 2
-      </div>
-      <div
-        class="emotion-9"
-      >
-        <div>
-          CONTENT 6
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Basics|Tabs stateful - static 1`] = `
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  background: #FFFFFF;
-  color: #999999;
-  height: 40px;
-  position: relative;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.emotion-3 > * {
-  margin-left: 15px;
-}
-
-.emotion-2 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
-}
-
-.emotion-2:first-child {
-  margin-left: 0;
-}
-
-.emotion-0 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: inherit;
-  border-bottom-color: transparent;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-1 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-1:empty {
-  display: none;
-}
-
-.emotion-1:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-5 {
-  display: block;
-}
-
-.emotion-6 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-}
-
-<div
-  style="height:calc(100vh - 20px)"
->
-  <div
-    class="emotion-5"
-  >
-    <div
-      class="emotion-4"
-    >
-      <div
-        class="emotion-3"
-      >
-        <div
-          class="emotion-2"
-          role="tablist"
-        >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            With a function
-          </button>
-          <button
-            class="emotion-1"
-            role="tab"
-            type="button"
-          >
-            With markup
-          </button>
-        </div>
-      </div>
-    </div>
-    <div
-      class="emotion-6"
-    >
-      <div
-        class="emotion-5"
-        role="tabpanel"
-      >
-        <div>
-          test2 is always active (but visually hidden)
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  background: #FFFFFF;
-  color: #999999;
-  height: 40px;
-  position: relative;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.emotion-7 > * {
-  margin-left: 15px;
-}
-
-.emotion-6 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
-}
-
-.emotion-6:first-child {
-  margin-left: 0;
-}
-
-.emotion-0 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: inherit;
-  border-bottom-color: transparent;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-10 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-  position: relative;
-  overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
-}
-
-.emotion-9 {
-  display: none;
-}
-
-.emotion-11 {
-  background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.1);
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-<div
-  style="height:calc(100vh - 20px)"
->
-  <div
-    class="emotion-11"
-  >
-    <div
-      class="emotion-8"
-    >
-      <div
-        class="emotion-7"
-      >
-        <div
-          class="emotion-6"
-          role="tablist"
-        >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-2"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
-      </div>
-    </div>
-    <div
-      class="emotion-10"
-    >
-      <div
-        id="test2"
-        style="background:hotpink;min-height:100%;display:none"
-      >
-        CONTENT 2
-      </div>
-      <div
-        id="test3"
-      >
-        <div
-          style="background:#000000;height:30.8px"
-        />
-        <div
-          style="background:#111111;height:31.3px"
-        />
-        <div
-          style="background:#222222;height:32.1px"
-        />
-        <div
-          style="background:#333333;height:33.4px"
-        />
-        <div
-          style="background:#444444;height:35.5px"
-        />
-        <div
-          style="background:#555555;height:38.9px"
-        />
-        <div
-          style="background:#666666;height:44.4px"
-        />
-        <div
-          style="background:#777777;height:53.3px"
-        />
-        <div
-          style="background:#888888;height:67.7px"
-        />
-        <div
-          style="background:#999999;height:91px"
-        />
-        <div
-          style="background:#aaaaaa;height:128.7px"
-        />
-        <div
-          style="background:#bbbbbb;height:189.7px"
-        />
-        <div
-          style="background:#cccccc;height:288.4px"
-        />
-        <div
-          style="background:#dddddd;height:448.1px"
-        />
-        <div
-          style="background:#eeeeee;height:706.5px"
-        />
-      </div>
-      <div
-        class="emotion-9"
-      >
-        <div>
-          CONTENT 6
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  background: #FFFFFF;
-  color: #999999;
-  height: 40px;
-  position: relative;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.emotion-7 > * {
-  margin-left: 15px;
-}
-
-.emotion-6 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
-}
-
-.emotion-6:first-child {
-  margin-left: 0;
-}
-
-.emotion-0 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: inherit;
-  border-bottom-color: transparent;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-10 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-}
-
-.emotion-9 {
-  display: none;
-}
-
-.emotion-11 {
-  background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.1);
-  display: block;
-}
-
-<div
-  style="height:calc(100vh - 20px)"
->
-  <div
-    class="emotion-11"
-  >
-    <div
-      class="emotion-8"
-    >
-      <div
-        class="emotion-7"
-      >
-        <div
-          class="emotion-6"
-          role="tablist"
-        >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-2"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
-      </div>
-    </div>
-    <div
-      class="emotion-10"
-    >
-      <div
-        id="test2"
-        style="background:hotpink;min-height:100%;display:none"
-      >
-        CONTENT 2
-      </div>
-      <div
-        id="test3"
-      >
-        <div
-          style="background:#000000;height:30.8px"
-        />
-        <div
-          style="background:#111111;height:31.3px"
-        />
-        <div
-          style="background:#222222;height:32.1px"
-        />
-        <div
-          style="background:#333333;height:33.4px"
-        />
-        <div
-          style="background:#444444;height:35.5px"
-        />
-        <div
-          style="background:#555555;height:38.9px"
-        />
-        <div
-          style="background:#666666;height:44.4px"
-        />
-        <div
-          style="background:#777777;height:53.3px"
-        />
-        <div
-          style="background:#888888;height:67.7px"
-        />
-        <div
-          style="background:#999999;height:91px"
-        />
-        <div
-          style="background:#aaaaaa;height:128.7px"
-        />
-        <div
-          style="background:#bbbbbb;height:189.7px"
-        />
-        <div
-          style="background:#cccccc;height:288.4px"
-        />
-        <div
-          style="background:#dddddd;height:448.1px"
-        />
-        <div
-          style="background:#eeeeee;height:706.5px"
-        />
-      </div>
-      <div
-        class="emotion-9"
-      >
-        <div>
-          CONTENT 6
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
-.emotion-1 {
-  padding: 30px;
-  text-align: center;
-  color: #333333;
-  font-size: 13px;
-}
-
-.emotion-0 {
-  font-weight: 700;
-}
-
-<div
-  style="height:calc(100vh - 20px)"
->
-  <div
-    class="emotion-1"
-  >
-    <div
-      class="emotion-0"
-    >
-      Nothing found
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.emotion-7 > * {
-  margin-left: 15px;
-}
-
-.emotion-6 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
-}
-
-.emotion-6:first-child {
-  margin-left: 0;
-}
-
-.emotion-0 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: inherit;
-  border-bottom-color: transparent;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-10 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-}
-
-.emotion-9 {
-  display: none;
-}
-
-.emotion-11 {
-  background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.1);
-  display: block;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  background: #FFFFFF;
-  color: #999999;
-  height: 40px;
-  position: relative;
   overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
   background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
-<div
-  style="height:calc(100vh - 20px)"
->
-  <div
-    class="emotion-11"
-  >
-    <div
-      class="emotion-8"
-    >
-      <div
-        class="emotion-7"
-      >
-        <div
-          class="emotion-6"
-          role="tablist"
-        >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-2"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
-      </div>
-    </div>
-    <div
-      class="emotion-10"
-    >
-      <div
-        id="test2"
-        style="background:hotpink;min-height:100%;display:none"
-      >
-        CONTENT 2
-      </div>
-      <div
-        id="test3"
-      >
-        <div
-          style="background:#000000;height:30.8px"
-        />
-        <div
-          style="background:#111111;height:31.3px"
-        />
-        <div
-          style="background:#222222;height:32.1px"
-        />
-        <div
-          style="background:#333333;height:33.4px"
-        />
-        <div
-          style="background:#444444;height:35.5px"
-        />
-        <div
-          style="background:#555555;height:38.9px"
-        />
-        <div
-          style="background:#666666;height:44.4px"
-        />
-        <div
-          style="background:#777777;height:53.3px"
-        />
-        <div
-          style="background:#888888;height:67.7px"
-        />
-        <div
-          style="background:#999999;height:91px"
-        />
-        <div
-          style="background:#aaaaaa;height:128.7px"
-        />
-        <div
-          style="background:#bbbbbb;height:189.7px"
-        />
-        <div
-          style="background:#cccccc;height:288.4px"
-        />
-        <div
-          style="background:#dddddd;height:448.1px"
-        />
-        <div
-          style="background:#eeeeee;height:706.5px"
-        />
-      </div>
-      <div
-        class="emotion-9"
-      >
-        <div>
-          CONTENT 6
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
+.emotion-9::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+}
 
-exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
-.emotion-9 {
+.emotion-9::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-9::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-9::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1614,14 +61,9 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
-  color: #999999;
-  height: 40px;
   position: relative;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  white-space: nowrap;
+  height: 40px;
 }
 
 .emotion-7 {
@@ -1629,9 +71,12 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .emotion-7 > * {
@@ -1639,14 +84,10 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
 }
 
 .emotion-6 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
+  overflow: hidden;
 }
 
-.emotion-6:first-child {
+.emotion-6:first-of-type {
   margin-left: 0;
 }
 
@@ -1738,17 +179,6 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
 .emotion-2:focus {
   outline: 0 none;
   border-bottom-color: #1EA7FD;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.emotion-8 > * {
-  margin-right: 15px;
 }
 
 .emotion-12 {
@@ -1770,74 +200,67 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
 >
   <div
     class="emotion-12"
+    title="wrapper"
   >
     <div
       class="emotion-9"
+      title="bar"
     >
-      <div
-        class="emotion-7"
-      >
-        <div
-          class="emotion-6"
-          role="tablist"
-        >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #1
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #2
-          </button>
-          <button
-            class="emotion-2"
-            role="tab"
-            type="button"
-          >
-            Tab with scroll!
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #4
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #5
-          </button>
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Tab title #6
-          </button>
-        </div>
-      </div>
       <div
         class="emotion-8"
       >
-        <button
-          type="button"
+        <div
+          class="emotion-7"
+          title="side left"
         >
-          1
-        </button>
-        <button
-          type="button"
-        >
-          2
-        </button>
+          <div
+            class="emotion-6"
+            role="tablist"
+          >
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #1
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #2
+            </button>
+            <button
+              class="emotion-2"
+              role="tab"
+              type="button"
+            >
+              Tab with scroll!
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #4
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #5
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #6
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -1900,6 +323,1955 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
       </div>
       <div
         class="emotion-10"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
+.emotion-9 {
+  color: #999999;
+  height: 40px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+}
+
+.emotion-9::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.emotion-9::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-9::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-9::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  white-space: nowrap;
+  height: 40px;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-7 > * {
+  margin-left: 15px;
+}
+
+.emotion-6 {
+  overflow: hidden;
+}
+
+.emotion-6:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-1 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: inherit;
+  border-bottom-color: transparent;
+}
+
+.emotion-1:empty {
+  display: none;
+}
+
+.emotion-1:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-12 {
+  display: block;
+}
+
+.emotion-11 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+}
+
+.emotion-10 {
+  display: none;
+}
+
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="emotion-12"
+    title="wrapper"
+  >
+    <div
+      class="emotion-9"
+      title="bar"
+    >
+      <div
+        class="emotion-8"
+      >
+        <div
+          class="emotion-7"
+          title="side left"
+        >
+          <div
+            class="emotion-6"
+            role="tablist"
+          >
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #1
+            </button>
+            <button
+              class="emotion-1"
+              role="tab"
+              type="button"
+            >
+              Tab title #2
+            </button>
+            <button
+              class="emotion-1"
+              role="tab"
+              type="button"
+            >
+              Tab with scroll!
+            </button>
+            <button
+              class="emotion-1"
+              role="tab"
+              type="button"
+            >
+              Tab title #4
+            </button>
+            <button
+              class="emotion-1"
+              role="tab"
+              type="button"
+            >
+              Tab title #5
+            </button>
+            <button
+              class="emotion-1"
+              role="tab"
+              type="button"
+            >
+              Tab title #6
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-11"
+    >
+      <div
+        id="test1"
+      >
+        CONTENT 1
+      </div>
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        class="emotion-10"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|Tabs stateful - static 1`] = `
+.emotion-5 {
+  color: #999999;
+  height: 40px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+}
+
+.emotion-5::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.emotion-5::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-5::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-5::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  white-space: nowrap;
+  height: 40px;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-3 > * {
+  margin-left: 15px;
+}
+
+.emotion-2 {
+  overflow: hidden;
+}
+
+.emotion-2:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: inherit;
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-1 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-1:empty {
+  display: none;
+}
+
+.emotion-1:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-6 {
+  display: block;
+}
+
+.emotion-7 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+}
+
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="emotion-6"
+    title="wrapper"
+  >
+    <div
+      class="emotion-5"
+      title="bar"
+    >
+      <div
+        class="emotion-4"
+      >
+        <div
+          class="emotion-3"
+          title="side left"
+        >
+          <div
+            class="emotion-2"
+            role="tablist"
+          >
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              With a function
+            </button>
+            <button
+              class="emotion-1"
+              role="tab"
+              type="button"
+            >
+              With markup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-7"
+    >
+      <div
+        class="emotion-6"
+        role="tabpanel"
+      >
+        <div>
+          test2 is always active (but visually hidden)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
+.emotion-9 {
+  color: #999999;
+  height: 40px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+}
+
+.emotion-9::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.emotion-9::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-9::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-9::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  white-space: nowrap;
+  height: 40px;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-7 > * {
+  margin-left: 15px;
+}
+
+.emotion-6 {
+  overflow: hidden;
+}
+
+.emotion-6:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: inherit;
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-11 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  position: relative;
+  overflow: auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+}
+
+.emotion-10 {
+  display: none;
+}
+
+.emotion-12 {
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.1);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="emotion-12"
+    title="wrapper"
+  >
+    <div
+      class="emotion-9"
+      title="bar"
+    >
+      <div
+        class="emotion-8"
+      >
+        <div
+          class="emotion-7"
+          title="side left"
+        >
+          <div
+            class="emotion-6"
+            role="tablist"
+          >
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #1
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #2
+            </button>
+            <button
+              class="emotion-2"
+              role="tab"
+              type="button"
+            >
+              Tab with scroll!
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #4
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #5
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #6
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-11"
+    >
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        id="test3"
+      >
+        <div
+          style="background:#000000;height:30.8px"
+        />
+        <div
+          style="background:#111111;height:31.3px"
+        />
+        <div
+          style="background:#222222;height:32.1px"
+        />
+        <div
+          style="background:#333333;height:33.4px"
+        />
+        <div
+          style="background:#444444;height:35.5px"
+        />
+        <div
+          style="background:#555555;height:38.9px"
+        />
+        <div
+          style="background:#666666;height:44.4px"
+        />
+        <div
+          style="background:#777777;height:53.3px"
+        />
+        <div
+          style="background:#888888;height:67.7px"
+        />
+        <div
+          style="background:#999999;height:91px"
+        />
+        <div
+          style="background:#aaaaaa;height:128.7px"
+        />
+        <div
+          style="background:#bbbbbb;height:189.7px"
+        />
+        <div
+          style="background:#cccccc;height:288.4px"
+        />
+        <div
+          style="background:#dddddd;height:448.1px"
+        />
+        <div
+          style="background:#eeeeee;height:706.5px"
+        />
+      </div>
+      <div
+        class="emotion-10"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
+.emotion-9 {
+  color: #999999;
+  height: 40px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+}
+
+.emotion-9::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.emotion-9::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-9::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-9::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  white-space: nowrap;
+  height: 40px;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-7 > * {
+  margin-left: 15px;
+}
+
+.emotion-6 {
+  overflow: hidden;
+}
+
+.emotion-6:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: inherit;
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-11 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+}
+
+.emotion-10 {
+  display: none;
+}
+
+.emotion-12 {
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.1);
+  display: block;
+}
+
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="emotion-12"
+    title="wrapper"
+  >
+    <div
+      class="emotion-9"
+      title="bar"
+    >
+      <div
+        class="emotion-8"
+      >
+        <div
+          class="emotion-7"
+          title="side left"
+        >
+          <div
+            class="emotion-6"
+            role="tablist"
+          >
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #1
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #2
+            </button>
+            <button
+              class="emotion-2"
+              role="tab"
+              type="button"
+            >
+              Tab with scroll!
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #4
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #5
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #6
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-11"
+    >
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        id="test3"
+      >
+        <div
+          style="background:#000000;height:30.8px"
+        />
+        <div
+          style="background:#111111;height:31.3px"
+        />
+        <div
+          style="background:#222222;height:32.1px"
+        />
+        <div
+          style="background:#333333;height:33.4px"
+        />
+        <div
+          style="background:#444444;height:35.5px"
+        />
+        <div
+          style="background:#555555;height:38.9px"
+        />
+        <div
+          style="background:#666666;height:44.4px"
+        />
+        <div
+          style="background:#777777;height:53.3px"
+        />
+        <div
+          style="background:#888888;height:67.7px"
+        />
+        <div
+          style="background:#999999;height:91px"
+        />
+        <div
+          style="background:#aaaaaa;height:128.7px"
+        />
+        <div
+          style="background:#bbbbbb;height:189.7px"
+        />
+        <div
+          style="background:#cccccc;height:288.4px"
+        />
+        <div
+          style="background:#dddddd;height:448.1px"
+        />
+        <div
+          style="background:#eeeeee;height:706.5px"
+        />
+      </div>
+      <div
+        class="emotion-10"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
+.emotion-1 {
+  padding: 30px;
+  text-align: center;
+  color: #333333;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  font-weight: 700;
+}
+
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="emotion-1"
+  >
+    <div
+      class="emotion-0"
+    >
+      Nothing found
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
+.emotion-9 {
+  color: #999999;
+  height: 40px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+}
+
+.emotion-9::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.emotion-9::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-9::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-9::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  white-space: nowrap;
+  height: 40px;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-7 > * {
+  margin-left: 15px;
+}
+
+.emotion-6 {
+  overflow: hidden;
+}
+
+.emotion-6:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: inherit;
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-11 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+}
+
+.emotion-10 {
+  display: none;
+}
+
+.emotion-12 {
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.1);
+  display: block;
+}
+
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="emotion-12"
+    title="wrapper"
+  >
+    <div
+      class="emotion-9"
+      title="bar"
+    >
+      <div
+        class="emotion-8"
+      >
+        <div
+          class="emotion-7"
+          title="side left"
+        >
+          <div
+            class="emotion-6"
+            role="tablist"
+          >
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #1
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #2
+            </button>
+            <button
+              class="emotion-2"
+              role="tab"
+              type="button"
+            >
+              Tab with scroll!
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #4
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #5
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #6
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-11"
+    >
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        id="test3"
+      >
+        <div
+          style="background:#000000;height:30.8px"
+        />
+        <div
+          style="background:#111111;height:31.3px"
+        />
+        <div
+          style="background:#222222;height:32.1px"
+        />
+        <div
+          style="background:#333333;height:33.4px"
+        />
+        <div
+          style="background:#444444;height:35.5px"
+        />
+        <div
+          style="background:#555555;height:38.9px"
+        />
+        <div
+          style="background:#666666;height:44.4px"
+        />
+        <div
+          style="background:#777777;height:53.3px"
+        />
+        <div
+          style="background:#888888;height:67.7px"
+        />
+        <div
+          style="background:#999999;height:91px"
+        />
+        <div
+          style="background:#aaaaaa;height:128.7px"
+        />
+        <div
+          style="background:#bbbbbb;height:189.7px"
+        />
+        <div
+          style="background:#cccccc;height:288.4px"
+        />
+        <div
+          style="background:#dddddd;height:448.1px"
+        />
+        <div
+          style="background:#eeeeee;height:706.5px"
+        />
+      </div>
+      <div
+        class="emotion-10"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
+.emotion-10 {
+  color: #999999;
+  height: 40px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+}
+
+.emotion-10::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.emotion-10::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-10::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-10::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emotion-9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  white-space: nowrap;
+  height: 40px;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-7 > * {
+  margin-left: 15px;
+}
+
+.emotion-6 {
+  overflow: hidden;
+}
+
+.emotion-6:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: inherit;
+  border-bottom-color: transparent;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 30px;
+}
+
+.emotion-8 > * {
+  margin-right: 15px;
+}
+
+.emotion-13 {
+  display: block;
+}
+
+.emotion-12 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+}
+
+.emotion-11 {
+  display: none;
+}
+
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="emotion-13"
+    title="wrapper"
+  >
+    <div
+      class="emotion-10"
+      title="bar"
+    >
+      <div
+        class="emotion-9"
+      >
+        <div
+          class="emotion-7"
+          title="side left"
+        >
+          <div
+            class="emotion-6"
+            role="tablist"
+          >
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #1
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #2
+            </button>
+            <button
+              class="emotion-2"
+              role="tab"
+              type="button"
+            >
+              Tab with scroll!
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #4
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #5
+            </button>
+            <button
+              class="emotion-0"
+              role="tab"
+              type="button"
+            >
+              Tab title #6
+            </button>
+          </div>
+        </div>
+        <div
+          class="emotion-8"
+          title="side right"
+        >
+          <button
+            type="button"
+          >
+            1
+          </button>
+          <button
+            type="button"
+          >
+            2
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-12"
+    >
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        id="test3"
+      >
+        <div
+          style="background:#000000;height:30.8px"
+        />
+        <div
+          style="background:#111111;height:31.3px"
+        />
+        <div
+          style="background:#222222;height:32.1px"
+        />
+        <div
+          style="background:#333333;height:33.4px"
+        />
+        <div
+          style="background:#444444;height:35.5px"
+        />
+        <div
+          style="background:#555555;height:38.9px"
+        />
+        <div
+          style="background:#666666;height:44.4px"
+        />
+        <div
+          style="background:#777777;height:53.3px"
+        />
+        <div
+          style="background:#888888;height:67.7px"
+        />
+        <div
+          style="background:#999999;height:91px"
+        />
+        <div
+          style="background:#aaaaaa;height:128.7px"
+        />
+        <div
+          style="background:#bbbbbb;height:189.7px"
+        />
+        <div
+          style="background:#cccccc;height:288.4px"
+        />
+        <div
+          style="background:#dddddd;height:448.1px"
+        />
+        <div
+          style="background:#eeeeee;height:706.5px"
+        />
+      </div>
+      <div
+        class="emotion-11"
       >
         <div>
           CONTENT 6

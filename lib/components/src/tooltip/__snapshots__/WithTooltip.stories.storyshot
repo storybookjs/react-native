@@ -159,7 +159,55 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
   cursor: pointer;
 }
 
-.emotion-10 {
+.emotion-8 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-8 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-8:hover,
+.emotion-8:focus {
+  cursor: pointer;
+  -webkit-transform: translate3d(0,-1px,0);
+  -ms-transform: translate3d(0,-1px,0);
+  transform: translate3d(0,-1px,0);
+  color: #0297f5;
+}
+
+.emotion-8:hover svg path,
+.emotion-8:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-8:active {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  color: #028ee6;
+}
+
+.emotion-8:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-8 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-11 {
   display: inline-block;
   z-index: 2147483647;
   margin-bottom: 10px;
@@ -194,11 +242,36 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
   border-right-color: transparent;
 }
 
-.emotion-12 {
+.emotion-10 {
+  padding: 15px;
+  width: 280px;
+  box-sizing: border-box;
+}
+
+.emotion-6 {
+  color: #444444;
+  line-height: 18px;
+}
+
+.emotion-4 {
+  font-weight: 900;
+}
+
+.emotion-9 {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.emotion-9 > * {
+  margin: 0 8px;
+  font-weight: 900;
+}
+
+.emotion-13 {
   height: 300px;
 }
 
-.emotion-11 {
+.emotion-12 {
   width: 500px;
   height: 500px;
   overflow-y: scroll;
@@ -217,36 +290,11 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
   color: white;
 }
 
-.emotion-9 {
-  padding: 15px;
-  width: 280px;
-  box-sizing: border-box;
-}
-
-.emotion-6 {
-  color: #444444;
-  line-height: 18px;
-}
-
-.emotion-4 {
-  font-weight: 900;
-}
-
-.emotion-8 {
-  margin-top: 8px;
-  text-align: center;
-}
-
-.emotion-8 > * {
-  margin: 0 8px;
-  font-weight: 900;
-}
-
 <div
-  class="emotion-12"
+  class="emotion-13"
 >
   <div
-    class="emotion-11"
+    class="emotion-12"
   >
     <div
       class="emotion-0"
@@ -261,14 +309,14 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
       </div>
     </div>
     <div
-      class="emotion-10"
+      class="emotion-11"
       style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
     >
       <div
         class="emotion-3"
       />
       <div
-        class="emotion-9"
+        class="emotion-10"
       >
         <div
           class="emotion-6"
@@ -285,12 +333,16 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
           </span>
         </div>
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <a
-            class="emotion-5"
+            class="emotion-8"
           >
-            Continue
+            <span
+              class="emotion-7"
+            >
+              Continue
+            </span>
           </a>
         </div>
       </div>
