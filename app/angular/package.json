@@ -51,7 +51,8 @@
     "@angular/platform-browser": ">=6.0.0",
     "@angular/platform-browser-dynamic": ">=6.0.0",
     "babel-loader": "^7.0.0 || ^8.0.0",
-    "zone.js": "^0.8.27"
+    "zone.js": "^0.8.27",
+    "autoprefixer": ">=8.1.0"
   },
   "publishConfig": {
     "access": "public"
