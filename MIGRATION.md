@@ -2,7 +2,7 @@
 
 - [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
   - [Webpack config simplification](#webpack-config-simplification)
-  - [Story hierarchy defaults](#story-hierarchy-options)
+  - [Story hierarchy defaults](#story-hierarchy-defaults)
 - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
@@ -60,7 +60,7 @@ In contrast, the 4.x configuration function accepted either two or three argumen
 
 Please see the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
 
-## Story hierarchy options
+## Story hierarchy defaults
 
 Storybook's UI contains a hierarchical tree of stories that can be configured by `hierarchySeparator` and `hierarchyRootSeparator` [options](./addons/options/README.md).
 
