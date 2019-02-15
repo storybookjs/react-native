@@ -81,8 +81,10 @@ If you wish to opt-out of this new behavior and restore the flat UI, simply set 
 
 ```js
 addParameters({
-  hierarchyRootSeparator: null,
-  hierarchySeparator: null,
+  options: {
+    hierarchyRootSeparator: null,
+    hierarchySeparator: null,
+  },
 });
 ```
 
