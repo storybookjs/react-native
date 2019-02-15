@@ -17,7 +17,7 @@
   },
   "license": "MIT",
   "bin": {
-    "storybook": "dist/bin/storybook.js"
+    "storybook": "dist/bin/storybook.js --no-dll"
   },
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"

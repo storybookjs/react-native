@@ -38,6 +38,10 @@ export default class ReactProvider extends Provider {
     }
   }
 
+  getElements(type) {
+    return addons.getElements(type);
+  }
+
   renderPreview(kind, story) {
     this.selection = { kind, story };
     this.channel.emit(Events.SET_CURRENT_STORY, { kind, story });
@@ -48,20 +52,16 @@ export default class ReactProvider extends Provider {
   }
 
   handleAPI(api) {
+    addons.loadAddons(api);
+
     api.onStory((kind, story) => {
       this.selection = { kind, story };
       this.channel.emit(Events.SET_CURRENT_STORY, this.selection);
-    });
-    this.channel.on(Events.SELECT_STORY, ({ kind, story }) => {
-      api.selectStory(kind, story);
-    });
-    this.channel.on(Events.SET_STORIES, data => {
-      api.setStories(data.stories);
     });
     this.channel.on(Events.GET_CURRENT_STORY, () => {
       this.channel.emit(Events.SET_CURRENT_STORY, this.selection);
     });
     this.channel.emit(Events.GET_STORIES);
-    addons.loadAddons(api);
+
   }
 }

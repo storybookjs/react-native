@@ -5,5 +5,6 @@ This project was bootstrapped wit [Expo](https://github.com/expo/expo-cli) and s
 ## Getting started
 
 1. Install dependencies: `yarn install`
-2. Run storybook: `yarn storybook`
-3. Run the app: `yarn start`
+2. Delete node_modules/@storybook
+3. Run storybook: `node ../../app/react-native-server/dist/bin/storybook-start`
+4. Run the app: `yarn start`
