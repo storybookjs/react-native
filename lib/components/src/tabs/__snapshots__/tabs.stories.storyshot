@@ -3,72 +3,12 @@
 exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
 .emotion-9 {
   color: #999999;
+  width: 100%;
   height: 40px;
-  overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-9:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-9::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-9:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-9::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-9::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-9::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-8 {
@@ -81,7 +21,9 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   height: 40px;
 }
 
@@ -90,6 +32,7 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -226,59 +169,103 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
       title="bar"
     >
       <div
-        class="emotion-8"
+        data-simplebar="true"
       >
         <div
-          class="emotion-7"
-          title="side left"
+          class="simplebar-wrapper"
         >
           <div
-            class="emotion-6"
-            role="tablist"
+            class="simplebar-height-auto-observer-wrapper"
           >
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #1
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #2
-            </button>
-            <button
-              class="emotion-2"
-              role="tab"
-              type="button"
-            >
-              Tab with scroll!
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #4
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #5
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #6
-            </button>
+            <div
+              class="simplebar-height-auto-observer"
+            />
           </div>
+          <div
+            class="simplebar-mask"
+          >
+            <div
+              class="simplebar-offset"
+            >
+              <div
+                class="simplebar-content"
+              >
+                <div
+                  class="emotion-8"
+                >
+                  <div
+                    class="emotion-7"
+                    title="side left"
+                  >
+                    <div
+                      class="emotion-6"
+                      role="tablist"
+                    >
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #1
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #2
+                      </button>
+                      <button
+                        class="emotion-2"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab with scroll!
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #4
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #5
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #6
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="simplebar-placeholder"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-horizontal"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-vertical"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
         </div>
       </div>
     </div>
@@ -355,72 +342,12 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
 exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
 .emotion-9 {
   color: #999999;
+  width: 100%;
   height: 40px;
-  overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-9:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-9::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-9:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-9::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-9::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-9::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-8 {
@@ -433,7 +360,9 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   height: 40px;
 }
 
@@ -442,6 +371,7 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -578,59 +508,103 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
       title="bar"
     >
       <div
-        class="emotion-8"
+        data-simplebar="true"
       >
         <div
-          class="emotion-7"
-          title="side left"
+          class="simplebar-wrapper"
         >
           <div
-            class="emotion-6"
-            role="tablist"
+            class="simplebar-height-auto-observer-wrapper"
           >
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #1
-            </button>
-            <button
-              class="emotion-1"
-              role="tab"
-              type="button"
-            >
-              Tab title #2
-            </button>
-            <button
-              class="emotion-1"
-              role="tab"
-              type="button"
-            >
-              Tab with scroll!
-            </button>
-            <button
-              class="emotion-1"
-              role="tab"
-              type="button"
-            >
-              Tab title #4
-            </button>
-            <button
-              class="emotion-1"
-              role="tab"
-              type="button"
-            >
-              Tab title #5
-            </button>
-            <button
-              class="emotion-1"
-              role="tab"
-              type="button"
-            >
-              Tab title #6
-            </button>
+            <div
+              class="simplebar-height-auto-observer"
+            />
           </div>
+          <div
+            class="simplebar-mask"
+          >
+            <div
+              class="simplebar-offset"
+            >
+              <div
+                class="simplebar-content"
+              >
+                <div
+                  class="emotion-8"
+                >
+                  <div
+                    class="emotion-7"
+                    title="side left"
+                  >
+                    <div
+                      class="emotion-6"
+                      role="tablist"
+                    >
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #1
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #2
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab with scroll!
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #4
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #5
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #6
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="simplebar-placeholder"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-horizontal"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-vertical"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
         </div>
       </div>
     </div>
@@ -663,72 +637,12 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
 exports[`Storyshots Basics|Tabs stateful - static 1`] = `
 .emotion-5 {
   color: #999999;
+  width: 100%;
   height: 40px;
-  overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-5:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-5::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-5:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-5::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-5::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-5::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-4 {
@@ -741,7 +655,9 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   height: 40px;
 }
 
@@ -750,6 +666,7 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -882,31 +799,75 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
       title="bar"
     >
       <div
-        class="emotion-4"
+        data-simplebar="true"
       >
         <div
-          class="emotion-3"
-          title="side left"
+          class="simplebar-wrapper"
         >
           <div
-            class="emotion-2"
-            role="tablist"
+            class="simplebar-height-auto-observer-wrapper"
           >
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              With a function
-            </button>
-            <button
-              class="emotion-1"
-              role="tab"
-              type="button"
-            >
-              With markup
-            </button>
+            <div
+              class="simplebar-height-auto-observer"
+            />
           </div>
+          <div
+            class="simplebar-mask"
+          >
+            <div
+              class="simplebar-offset"
+            >
+              <div
+                class="simplebar-content"
+              >
+                <div
+                  class="emotion-4"
+                >
+                  <div
+                    class="emotion-3"
+                    title="side left"
+                  >
+                    <div
+                      class="emotion-2"
+                      role="tablist"
+                    >
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        With a function
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        With markup
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="simplebar-placeholder"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-horizontal"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-vertical"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
         </div>
       </div>
     </div>
@@ -929,72 +890,12 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
 exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 .emotion-9 {
   color: #999999;
+  width: 100%;
   height: 40px;
-  overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-9:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-9::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-9:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-9::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-9::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-9::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-8 {
@@ -1007,7 +908,9 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   height: 40px;
 }
 
@@ -1016,6 +919,7 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -1169,59 +1073,103 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
       title="bar"
     >
       <div
-        class="emotion-8"
+        data-simplebar="true"
       >
         <div
-          class="emotion-7"
-          title="side left"
+          class="simplebar-wrapper"
         >
           <div
-            class="emotion-6"
-            role="tablist"
+            class="simplebar-height-auto-observer-wrapper"
           >
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #1
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #2
-            </button>
-            <button
-              class="emotion-2"
-              role="tab"
-              type="button"
-            >
-              Tab with scroll!
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #4
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #5
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #6
-            </button>
+            <div
+              class="simplebar-height-auto-observer"
+            />
           </div>
+          <div
+            class="simplebar-mask"
+          >
+            <div
+              class="simplebar-offset"
+            >
+              <div
+                class="simplebar-content"
+              >
+                <div
+                  class="emotion-8"
+                >
+                  <div
+                    class="emotion-7"
+                    title="side left"
+                  >
+                    <div
+                      class="emotion-6"
+                      role="tablist"
+                    >
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #1
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #2
+                      </button>
+                      <button
+                        class="emotion-2"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab with scroll!
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #4
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #5
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #6
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="simplebar-placeholder"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-horizontal"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-vertical"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
         </div>
       </div>
     </div>
@@ -1298,72 +1246,12 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
 .emotion-9 {
   color: #999999;
+  width: 100%;
   height: 40px;
-  overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-9:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-9::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-9:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-9::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-9::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-9::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-8 {
@@ -1376,7 +1264,9 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   height: 40px;
 }
 
@@ -1385,6 +1275,7 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -1523,59 +1414,103 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
       title="bar"
     >
       <div
-        class="emotion-8"
+        data-simplebar="true"
       >
         <div
-          class="emotion-7"
-          title="side left"
+          class="simplebar-wrapper"
         >
           <div
-            class="emotion-6"
-            role="tablist"
+            class="simplebar-height-auto-observer-wrapper"
           >
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #1
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #2
-            </button>
-            <button
-              class="emotion-2"
-              role="tab"
-              type="button"
-            >
-              Tab with scroll!
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #4
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #5
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #6
-            </button>
+            <div
+              class="simplebar-height-auto-observer"
+            />
           </div>
+          <div
+            class="simplebar-mask"
+          >
+            <div
+              class="simplebar-offset"
+            >
+              <div
+                class="simplebar-content"
+              >
+                <div
+                  class="emotion-8"
+                >
+                  <div
+                    class="emotion-7"
+                    title="side left"
+                  >
+                    <div
+                      class="emotion-6"
+                      role="tablist"
+                    >
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #1
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #2
+                      </button>
+                      <button
+                        class="emotion-2"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab with scroll!
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #4
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #5
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #6
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="simplebar-placeholder"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-horizontal"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-vertical"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
         </div>
       </div>
     </div>
@@ -1679,72 +1614,12 @@ exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
 exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
 .emotion-9 {
   color: #999999;
+  width: 100%;
   height: 40px;
-  overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-9:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-9::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-9:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-9::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-9::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-9::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-8 {
@@ -1757,7 +1632,9 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   height: 40px;
 }
 
@@ -1766,6 +1643,7 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -1904,59 +1782,103 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
       title="bar"
     >
       <div
-        class="emotion-8"
+        data-simplebar="true"
       >
         <div
-          class="emotion-7"
-          title="side left"
+          class="simplebar-wrapper"
         >
           <div
-            class="emotion-6"
-            role="tablist"
+            class="simplebar-height-auto-observer-wrapper"
           >
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #1
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #2
-            </button>
-            <button
-              class="emotion-2"
-              role="tab"
-              type="button"
-            >
-              Tab with scroll!
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #4
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #5
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #6
-            </button>
+            <div
+              class="simplebar-height-auto-observer"
+            />
           </div>
+          <div
+            class="simplebar-mask"
+          >
+            <div
+              class="simplebar-offset"
+            >
+              <div
+                class="simplebar-content"
+              >
+                <div
+                  class="emotion-8"
+                >
+                  <div
+                    class="emotion-7"
+                    title="side left"
+                  >
+                    <div
+                      class="emotion-6"
+                      role="tablist"
+                    >
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #1
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #2
+                      </button>
+                      <button
+                        class="emotion-2"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab with scroll!
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #4
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #5
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #6
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="simplebar-placeholder"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-horizontal"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-vertical"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
         </div>
       </div>
     </div>
@@ -2033,72 +1955,12 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
 exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
 .emotion-10 {
   color: #999999;
+  width: 100%;
   height: 40px;
-  overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-10:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-10::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-10:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-10::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-10::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-10::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-9 {
@@ -2111,7 +1973,9 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   height: 40px;
 }
 
@@ -2120,6 +1984,7 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -2235,6 +2100,7 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -2274,74 +2140,118 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
       title="bar"
     >
       <div
-        class="emotion-9"
+        data-simplebar="true"
       >
         <div
-          class="emotion-7"
-          title="side left"
+          class="simplebar-wrapper"
         >
           <div
-            class="emotion-6"
-            role="tablist"
+            class="simplebar-height-auto-observer-wrapper"
           >
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #1
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #2
-            </button>
-            <button
-              class="emotion-2"
-              role="tab"
-              type="button"
-            >
-              Tab with scroll!
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #4
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #5
-            </button>
-            <button
-              class="emotion-0"
-              role="tab"
-              type="button"
-            >
-              Tab title #6
-            </button>
+            <div
+              class="simplebar-height-auto-observer"
+            />
           </div>
+          <div
+            class="simplebar-mask"
+          >
+            <div
+              class="simplebar-offset"
+            >
+              <div
+                class="simplebar-content"
+              >
+                <div
+                  class="emotion-9"
+                >
+                  <div
+                    class="emotion-7"
+                    title="side left"
+                  >
+                    <div
+                      class="emotion-6"
+                      role="tablist"
+                    >
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #1
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #2
+                      </button>
+                      <button
+                        class="emotion-2"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab with scroll!
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #4
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #5
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #6
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="emotion-8"
+                    title="side right"
+                  >
+                    <button
+                      type="button"
+                    >
+                      1
+                    </button>
+                    <button
+                      type="button"
+                    >
+                      2
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="simplebar-placeholder"
+          />
         </div>
         <div
-          class="emotion-8"
-          title="side right"
+          class="simplebar-track simplebar-horizontal"
         >
-          <button
-            type="button"
-          >
-            1
-          </button>
-          <button
-            type="button"
-          >
-            2
-          </button>
+          <div
+            class="simplebar-scrollbar"
+          />
+        </div>
+        <div
+          class="simplebar-track simplebar-vertical"
+        >
+          <div
+            class="simplebar-scrollbar"
+          />
         </div>
       </div>
     </div>
