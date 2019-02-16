@@ -3359,52 +3359,24 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 .emotion-8 {
   color: #999999;
   height: 40px;
-  overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
   background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-8::-webkit-scrollbar {
   height: 3px;
   width: 3px;
-  background: transparent;
-  box-shadow: none;
+  background-color: none;
 }
 
 .emotion-8::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
+  background-color: none;
 }
 
 .emotion-8::-webkit-scrollbar-thumb {
-  border-radius: 0;
+  border-radius: 20px;
   background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-8::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
 }
 
 .emotion-7 {
@@ -3877,52 +3849,24 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 .emotion-8 {
   color: #999999;
   height: 40px;
-  overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
   background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-8::-webkit-scrollbar {
   height: 3px;
   width: 3px;
-  background: transparent;
-  box-shadow: none;
+  background-color: none;
 }
 
 .emotion-8::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
+  background-color: none;
 }
 
 .emotion-8::-webkit-scrollbar-thumb {
-  border-radius: 0;
+  border-radius: 20px;
   background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-8::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
 }
 
 .emotion-7 {
@@ -5316,6 +5260,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -5721,6 +5666,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -6520,6 +6466,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -7048,6 +6995,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -7807,6 +7755,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-3 svg {
@@ -7917,6 +7866,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-3 svg {
@@ -8158,6 +8108,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -8309,6 +8260,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -8520,6 +8472,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -8660,6 +8613,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
