@@ -8,6 +8,12 @@
 
 * Update modal manager for rn 0.58 support ([#5581](https://github.com/storybooks/storybook/pull/5581))
 
+## 5.0.0-rc.1 (February 16, 2019)
+
+### Bug Fixes
+
+* Core: Add missing babel-preset-env dependency ([#5617](https://github.com/storybooks/storybook/pull/5617))
+
 ## 5.0.0-rc.0 (February 16, 2019)
 
 Welcome to Storybook 5 (SB5) with a beautiful new user interface including:
