@@ -9,7 +9,7 @@
   "workspaces": [
     "addons/*",
     "addons/storyshots/*",
-    "app/*",
+    "app/!(react-native)*",
     "lib/*",
     "examples/*",
     "lib/cli/test/run/*"
