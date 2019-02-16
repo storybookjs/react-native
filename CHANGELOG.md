@@ -8,6 +8,20 @@
 
 * Update modal manager for rn 0.58 support ([#5581](https://github.com/storybooks/storybook/pull/5581))
 
+## 5.0.0-rc.0 (February 16, 2019)
+
+Welcome to Storybook 5 (SB5) with a beautiful new user interface including:
+
+* Navigation sidebar redesign
+* New canvas toolbar 
+* Customizable keyboard shortcuts
+* Improved search
+* Version update notifications
+
+SB5 also includes a new URL structure, expanded addon API, and many more features and architectural improvements.
+
+See [the RC announcement](https://gist.github.com/shilman/0332090b63f1798a58ed8d85db44f4b4) for more details!
+
 ## 5.0.0-beta.4 (February 15, 2019)
 
 ### Bug Fixes
