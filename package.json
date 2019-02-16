@@ -7,7 +7,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "workspaces": [
-    "addons/*",
+    "addons/!(ondevice)*",
     "addons/storyshots/*",
     "app/!(react-native)*",
     "lib/*",
