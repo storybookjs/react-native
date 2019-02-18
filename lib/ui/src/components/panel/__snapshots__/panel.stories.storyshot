@@ -23,14 +23,13 @@ exports[`Storyshots UI|Panel default 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-3 {
@@ -91,7 +90,7 @@ exports[`Storyshots UI|Panel default 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  color: inherit;
+  opacity: 0.4;
   border-bottom-color: transparent;
 }
 
@@ -286,7 +285,7 @@ exports[`Storyshots UI|Panel no panels 1`] = `
 .emotion-1 {
   padding: 30px;
   text-align: center;
-  color: #333333;
+  color: #666666;
   font-size: 13px;
 }
 

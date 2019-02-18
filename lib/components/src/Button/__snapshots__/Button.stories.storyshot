@@ -13,80 +13,6 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   fill: currentColor;
 }
 
-.emotion-3 {
-  border: 0;
-  border-radius: 3em;
-  cursor: pointer;
-  display: inline-block;
-  overflow: hidden;
-  padding: 10px 16px;
-  position: relative;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  vertical-align: top;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  opacity: 1;
-  margin: 0;
-  background: transparent;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1;
-  background: #fafafa;
-  color: #333333;
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  border-radius: 4px;
-  display: inline;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  overflow: visible;
-  z-index: 2;
-}
-
-.emotion-3 svg {
-  display: inline-block;
-  height: 14px;
-  width: 14px;
-  vertical-align: top;
-  margin-right: 4px;
-  margin-top: -1px;
-  margin-bottom: -1px;
-  pointer-events: none;
-}
-
-.emotion-3 svg path {
-  fill: currentColor;
-}
-
-.emotion-3:hover {
-  background: #f2f2f2;
-}
-
-.emotion-3:active {
-  background: #FFFFFF;
-}
-
-.emotion-3:focus {
-  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
-}
-
-.emotion-3:hover {
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-}
-
 .emotion-0 {
   border: 0;
   border-radius: 3em;
@@ -273,6 +199,80 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 
 .emotion-2:focus {
   box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-3 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-3 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-3 svg path {
+  fill: currentColor;
+}
+
+.emotion-3:hover {
+  background: #f2f2f2;
+}
+
+.emotion-3:active {
+  background: #FFFFFF;
+}
+
+.emotion-3:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-3:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 .emotion-4 {

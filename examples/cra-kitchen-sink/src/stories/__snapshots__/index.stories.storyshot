@@ -207,24 +207,32 @@ exports[`Storyshots Button with new info 1`] = `
             >
               "Container" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -232,65 +240,81 @@ exports[`Storyshots Button with new info 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     children
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       node
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     isAmazing
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     age
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {
                       <span>
@@ -315,30 +339,38 @@ exports[`Storyshots Button with new info 1`] = `
                       }
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     title
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       the best container ever
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>

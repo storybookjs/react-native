@@ -13,6 +13,21 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
   fill: currentColor;
 }
 
+.emotion-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1 > * + * {
+  padding-left: 10px;
+}
+
 .emotion-5 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
@@ -47,21 +62,6 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
 
 .emotion-5:hover svg {
   opacity: 1;
-}
-
-.emotion-1 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  text-align: left;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-1 > * + * {
-  padding-left: 10px;
 }
 
 .emotion-0 {
@@ -183,6 +183,21 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   fill: currentColor;
 }
 
+.emotion-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1 > * + * {
+  padding-left: 10px;
+}
+
 .emotion-2 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
@@ -219,25 +234,6 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   opacity: 1;
 }
 
-.emotion-1 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  text-align: left;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-1 > * + * {
-  padding-left: 10px;
-}
-
-.emotion-3 {
-  color: #333333;
-}
-
 .emotion-0 {
   color: #333333;
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
@@ -245,6 +241,10 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
+}
+
+.emotion-3 {
+  color: #333333;
 }
 
 .emotion-10 svg {
@@ -546,6 +546,21 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 `;
 
 exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
+.emotion-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1 > * + * {
+  padding-left: 10px;
+}
+
 .emotion-2 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
@@ -582,21 +597,6 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
   opacity: 1;
 }
 
-.emotion-1 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  text-align: left;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-1 > * + * {
-  padding-left: 10px;
-}
-
 .emotion-0 {
   color: #333333;
 }
@@ -627,6 +627,21 @@ exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
 
 .emotion-2 {
   fill: currentColor;
+}
+
+.emotion-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1 > * + * {
+  padding-left: 10px;
 }
 
 .emotion-5 {
@@ -663,21 +678,6 @@ exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
 
 .emotion-5:hover svg {
   opacity: 1;
-}
-
-.emotion-1 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  text-align: left;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-1 > * + * {
-  padding-left: 10px;
 }
 
 .emotion-0 {
@@ -892,6 +892,21 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
   }
 }
 
+.emotion-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1 > * + * {
+  padding-left: 10px;
+}
+
 .emotion-2 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
@@ -928,21 +943,6 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
   opacity: 1;
 }
 
-.emotion-1 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  text-align: left;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-1 > * + * {
-  padding-left: 10px;
-}
-
 .emotion-0 {
   color: #333333;
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
@@ -970,6 +970,21 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
 `;
 
 exports[`Storyshots basics|Tooltip/ListItem w/positions 1`] = `
+.emotion-3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-3 > * + * {
+  padding-left: 10px;
+}
+
 .emotion-5 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
@@ -1004,21 +1019,6 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions 1`] = `
 
 .emotion-5:hover svg {
   opacity: 1;
-}
-
-.emotion-3 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  text-align: left;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-3 > * + * {
-  padding-left: 10px;
 }
 
 .emotion-1 {
@@ -1077,6 +1077,21 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions 1`] = `
 `;
 
 exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
+.emotion-3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-3 > * + * {
+  padding-left: 10px;
+}
+
 .emotion-5 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
@@ -1111,21 +1126,6 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
 
 .emotion-5:hover svg {
   opacity: 1;
-}
-
-.emotion-3 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  text-align: left;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-3 > * + * {
-  padding-left: 10px;
 }
 
 .emotion-0 svg {

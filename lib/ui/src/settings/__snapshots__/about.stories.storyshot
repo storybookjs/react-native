@@ -23,14 +23,13 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-2 {
@@ -526,14 +525,13 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-2 {
@@ -1525,7 +1523,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #FFFFFF;
 }
 
 .emotion-20 {
@@ -1540,8 +1537,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #333333;
-  background: #FFFFFF;
+  color: #666666;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -1848,14 +1844,13 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-2 {

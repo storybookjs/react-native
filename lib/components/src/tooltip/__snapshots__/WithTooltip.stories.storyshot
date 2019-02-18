@@ -194,29 +194,6 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
   border-right-color: transparent;
 }
 
-.emotion-12 {
-  height: 300px;
-}
-
-.emotion-11 {
-  width: 500px;
-  height: 500px;
-  overflow-y: scroll;
-  background: #eee;
-  position: relative;
-}
-
-.emotion-0 {
-  height: 100px;
-}
-
-.emotion-1 {
-  width: 200px;
-  height: 100px;
-  background-color: red;
-  color: white;
-}
-
 .emotion-9 {
   padding: 15px;
   width: 280px;
