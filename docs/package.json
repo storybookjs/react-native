@@ -10,7 +10,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build && cp static/**/* ./public",
+    "build": "gatsby build --prefix-paths && cp static/**/* ./public",
     "build-storybook": "build-storybook",
     "dev": "gatsby develop",
     "serve": "gatsby serve",
