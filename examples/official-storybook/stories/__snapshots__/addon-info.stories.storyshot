@@ -122,24 +122,32 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -147,93 +155,117 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -439,24 +471,32 @@ exports[`Storyshots Addons|Info/ForwardRef Displays forwarded ref components cor
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -464,93 +504,117 @@ exports[`Storyshots Addons|Info/ForwardRef Displays forwarded ref components cor
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -883,24 +947,32 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -908,93 +980,117 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -1166,24 +1262,32 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -1191,93 +1295,117 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -1429,24 +1557,32 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -1454,93 +1590,117 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -1704,24 +1864,32 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -1729,93 +1897,117 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -2131,24 +2323,32 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -2156,72 +2356,90 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -2341,24 +2559,32 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -2366,93 +2592,117 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -2574,24 +2824,32 @@ exports[`Storyshots Addons|Info/Options.inline Inlines component inside story 1`
           >
             "BaseButton" Component
           </h3>
-          <table
-            class="info-table"
-          >
+          <table>
             <thead>
               <tr>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   property
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   propType
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   required
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   default
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   description
                 </th>
               </tr>
@@ -2599,93 +2857,117 @@ exports[`Storyshots Addons|Info/Options.inline Inlines component inside story 1`
             <tbody>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   disabled
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     bool
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     false
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   label
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     string
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   yes
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   onClick
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     func
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     onClick
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   style
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     other
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     {}
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
             </tbody>
           </table>
@@ -2818,24 +3100,32 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -2843,93 +3133,117 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -2940,24 +3254,32 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
             >
               "FlowTypeButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -2965,49 +3287,61 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -3209,24 +3543,32 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -3234,93 +3576,117 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -3400,24 +3766,32 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -3425,93 +3799,117 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -3636,24 +4034,32 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -3661,93 +4067,117 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -3872,24 +4302,32 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -3897,93 +4335,117 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -4163,24 +4625,32 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -4188,93 +4658,117 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -4414,24 +4908,32 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
           >
             "BaseButton" Component
           </h3>
-          <table
-            class="info-table"
-          >
+          <table>
             <thead>
               <tr>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   property
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   propType
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   required
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   default
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   description
                 </th>
               </tr>
@@ -4439,93 +4941,117 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
             <tbody>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   disabled
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     bool
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     false
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   label
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     string
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   yes
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   onClick
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     func
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     onClick
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   style
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     other
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     {}
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
             </tbody>
           </table>
@@ -4646,24 +5172,32 @@ exports[`Storyshots Addons|Info/Parameters Overwriting and extending the paramet
           >
             "BaseButton" Component
           </h3>
-          <table
-            class="info-table"
-          >
+          <table>
             <thead>
               <tr>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   property
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   propType
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   required
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   default
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   description
                 </th>
               </tr>
@@ -4671,72 +5205,90 @@ exports[`Storyshots Addons|Info/Parameters Overwriting and extending the paramet
             <tbody>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   disabled
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     bool
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     false
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   onClick
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     func
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     onClick
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   style
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     other
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     {}
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
             </tbody>
           </table>
@@ -4857,24 +5409,32 @@ exports[`Storyshots Addons|Info/Parameters Using paramaters across all stories 1
           >
             "BaseButton" Component
           </h3>
-          <table
-            class="info-table"
-          >
+          <table>
             <thead>
               <tr>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   property
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   propType
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   required
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   default
                 </th>
-                <th>
+                <th
+                  style="text-align:left;vertical-align:top"
+                >
                   description
                 </th>
               </tr>
@@ -4882,93 +5442,117 @@ exports[`Storyshots Addons|Info/Parameters Using paramaters across all stories 1
             <tbody>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   disabled
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     bool
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     false
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   label
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     string
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   yes
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   onClick
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     func
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     onClick
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
               <tr>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   style
                 </td>
                 <td
-                  class="info-table-monospace"
+                  style="padding-right:10px;vertical-align:top"
                 >
                   <span>
                     other
                   </span>
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   -
                 </td>
-                <td>
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                >
                   <span>
                     {}
                   </span>
                 </td>
-                <td />
+                <td
+                  style="padding-right:10px;vertical-align:top"
+                />
               </tr>
             </tbody>
           </table>
@@ -5119,24 +5703,32 @@ exports[`Storyshots Addons|Info/React Docgen Comments from Flow declarations 1`]
             >
               "FlowTypeButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -5144,49 +5736,61 @@ exports[`Storyshots Addons|Info/React Docgen Comments from Flow declarations 1`]
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -5539,24 +6143,32 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
             >
               "DocgenButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -5564,88 +6176,110 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     one
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {
                       <span>
@@ -5660,25 +6294,31 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                       }
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     two
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {
                       <span>
@@ -5723,25 +6363,31 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                       }
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     obj
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       object
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {
                       <span>
@@ -5756,25 +6402,31 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                       }
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     shape
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {
                       <span>
@@ -5833,25 +6485,31 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                       }
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     arrayOf
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       [
                       <span>
@@ -5874,122 +6532,154 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                       ]
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     msg
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     enm
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       News
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     enmEval
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       Photos
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     union
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       hello
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     optionalString
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       Default String
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -6141,24 +6831,32 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -6166,93 +6864,117 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -6404,24 +7126,32 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
             >
               "NamedExportButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -6429,93 +7159,117 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -7003,24 +7757,32 @@ exports[`Storyshots Addons|Info/Story Source Array prop 1`] = `
             >
               "TableComponent" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -7028,26 +7790,32 @@ exports[`Storyshots Addons|Info/Story Source Array prop 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     propDefinitions
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       []
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -7256,24 +8024,32 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -7281,93 +8057,117 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -7517,24 +8317,32 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -7542,93 +8350,117 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -7838,24 +8670,32 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -7863,93 +8703,117 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -8074,24 +8938,32 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -8099,93 +8971,117 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -8357,24 +9253,32 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
             >
               "BaseButton" Component
             </h3>
-            <table
-              class="info-table"
-            >
+            <table>
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    style="text-align:left;vertical-align:top"
+                  >
                     description
                   </th>
                 </tr>
@@ -8382,93 +9286,117 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
               <tbody>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     disabled
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       false
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     label
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     onClick
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       func
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       onClick
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
                 <tr>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     style
                   </td>
                   <td
-                    class="info-table-monospace"
+                    style="padding-right:10px;vertical-align:top"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     -
                   </td>
-                  <td>
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  >
                     <span>
                       {}
                     </span>
                   </td>
-                  <td />
+                  <td
+                    style="padding-right:10px;vertical-align:top"
+                  />
                 </tr>
               </tbody>
             </table>
