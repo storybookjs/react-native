@@ -37,6 +37,7 @@
     "babel-plugin-add-react-displayname": "^0.0.5",
     "babel-plugin-emotion": "^10.0.7",
     "babel-plugin-macros": "^2.4.5",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-minify": "^0.5.0 || 0.6.0-alpha.5",
     "boxen": "^2.1.0",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
@@ -83,7 +84,7 @@
     "terser-webpack-plugin": "^1.2.2",
     "url-loader": "^1.1.2",
     "util-deprecate": "^1.0.2",
-    "webpack": "^4.29.0",
+    "webpack": "^4.29.3",
     "webpack-dev-middleware": "^3.5.2",
     "webpack-hot-middleware": "^2.24.3"
   },
