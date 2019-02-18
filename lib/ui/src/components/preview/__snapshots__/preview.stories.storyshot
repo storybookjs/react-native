@@ -71,13 +71,14 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
   position: absolute;
   left: 0;
   right: 0;
@@ -342,7 +343,7 @@ Array [
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -455,13 +456,14 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  background: #FFFFFF;
   color: #999999;
   height: 40px;
   position: relative;
   overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
-  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
   position: absolute;
   left: 0;
   right: 0;
