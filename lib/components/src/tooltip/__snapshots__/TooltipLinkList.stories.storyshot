@@ -3,13 +3,15 @@
 exports[`Storyshots basics/Tooltip/TooltipLinkList links 1`] = `
 .emotion-8 {
   min-width: 180px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .emotion-4 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -27,10 +29,6 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-4 + .emotion-4 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-4 > * + * {
@@ -61,7 +59,7 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links 1`] = `
 }
 
 .emotion-2 {
-  color: #444444;
+  color: #333333;
 }
 
 .emotion-0 {
@@ -76,9 +74,10 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links 1`] = `
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background: linear-gradient( -1deg, rgba(248,248,248,0.97) 0%, rgba(255,255,255,0.97) 100% );
+  background: rgba(255,255,255,0.95);
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
   font-size: 12px;
 }
 
@@ -97,7 +96,7 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links 1`] = `
   border-top-width: 8px;
   border-right-width: 8px;
   border-left-width: 8px;
-  border-top-color: #FFFFFF;
+  border-top-color: rgba(255,255,255,0.95);
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -159,13 +158,15 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links 1`] = `
 exports[`Storyshots basics/Tooltip/TooltipLinkList links and callback 1`] = `
 .emotion-11 {
   min-width: 180px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .emotion-4 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -183,10 +184,6 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links and callback 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-4 + .emotion-4 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-4 > * + * {
@@ -217,7 +214,7 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links and callback 1`] = `
 }
 
 .emotion-2 {
-  color: #444444;
+  color: #333333;
 }
 
 .emotion-0 {
@@ -232,9 +229,10 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links and callback 1`] = `
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background: linear-gradient( -1deg, rgba(248,248,248,0.97) 0%, rgba(255,255,255,0.97) 100% );
+  background: rgba(255,255,255,0.95);
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
   font-size: 12px;
 }
 
@@ -253,7 +251,7 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links and callback 1`] = `
   border-top-width: 8px;
   border-right-width: 8px;
   border-left-width: 8px;
-  border-top-color: #FFFFFF;
+  border-top-color: rgba(255,255,255,0.95);
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-right-color: transparent;
