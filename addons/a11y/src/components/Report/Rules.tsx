@@ -17,7 +17,7 @@ const List = styled.div({
   flexDirection: 'column',
   padding: '4px',
   fontWeight: '400',
-});
+} as any);
 
 const Item = styled.div({
   display: 'flex',
@@ -29,7 +29,7 @@ const Message = styled.div({
   paddingLeft: '6px',
 });
 
-const Status = styled.div(({ passes, impact }) => ({
+const Status = styled.div(({ passes, impact }: any) => ({
   height: '16px',
   width: '16px',
   borderRadius: '8px',
@@ -39,10 +39,10 @@ const Status = styled.div(({ passes, impact }) => ({
   alignItems: 'center',
   textAlign: 'center',
   flex: '0 0 16px',
-  color: passes ? impactColors.success : impactColors[impact],
+  color: passes ? impactColors.success : (impactColors as any)[impact],
 }));
 
-const Rule = ({ rule, passes }) => (
+const Rule = ({ rule, passes }: any) => (
   <Item>
     <Status passes={passes || undefined} impact={rule.impact}>
       {passes ? <Icons icon="check" /> : <Icons icon="cross" />}
@@ -59,10 +59,10 @@ Rule.propTypes = {
 };
 
 /* eslint-disable react/no-array-index-key */
-function Rules({ rules, passes }) {
+function Rules({ rules, passes }: any) {
   return (
     <List>
-      {rules.map((rule, index) => (
+      {rules.map((rule: any, index: any) => (
         <Rule passes={passes} rule={rule} key={index} />
       ))}
     </List>

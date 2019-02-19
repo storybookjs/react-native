@@ -16,7 +16,7 @@ const ItemTitle = styled.span({
   marginBottom: '4px',
 });
 
-function Element({ element, passes }) {
+function Element({ element, passes }: any) {
   const { any, all, none } = element;
 
   const rules = [...any, ...all, ...none];
@@ -38,9 +38,9 @@ Element.propTypes = {
 };
 
 /* eslint-disable react/no-array-index-key */
-const Elements = ({ elements, passes }) => (
+const Elements = ({ elements, passes }: any) => (
   <ol>
-    {elements.map((element, index) => (
+    {elements.map((element: any, index: any) => (
       <Element passes={passes} element={element} key={index} />
     ))}
   </ol>

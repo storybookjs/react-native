@@ -18,7 +18,7 @@ const Link = styled.a({
   display: 'block',
 });
 
-function Info({ item }) {
+function Info({ item }: any) {
   return (
     <Wrapper>
       <Help>{item.help}</Help>

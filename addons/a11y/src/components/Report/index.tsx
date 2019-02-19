@@ -4,10 +4,10 @@ import { Placeholder } from '@storybook/components';
 
 import Item from './Item';
 
-const Report = ({ items, empty, passes }) => (
+const Report = ({ items, empty, passes }: any) => (
   <Fragment>
     {items.length ? (
-      items.map(item => <Item passes={passes} item={item} key={item.id} />)
+      items.map((item: any) => <Item passes={passes} item={item} key={item.id} />)
     ) : (
       <Placeholder key="placeholder">{empty}</Placeholder>
     )}

@@ -11,7 +11,7 @@ const Hidden = styled.div(() => ({
   display: 'none',
 }));
 
-const PreviewWrapper = p => (
+const PreviewWrapper = (p: any) => (
   <Fragment>
     {p.children}
     <Hidden>
@@ -82,9 +82,9 @@ const PreviewWrapper = p => (
 addons.register(ADDON_ID, api => {
   addons.add(PANEL_ID, {
     type: types.TOOL,
-    match: ({ viewMode }) => viewMode === 'story',
+    match: ({ viewMode }: any) => viewMode === 'story',
     render: () => <ColorBlindness />,
-  });
+  } as any);
 
   addons.add(PANEL_ID, {
     type: types.PANEL,
@@ -96,5 +96,5 @@ addons.register(ADDON_ID, api => {
   addons.add(PANEL_ID, {
     type: types.PREVIEW,
     render: PreviewWrapper,
-  });
+  } as any);
 });

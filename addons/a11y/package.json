@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
@@ -39,6 +39,9 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "util-deprecate": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/common-tags": "^1.8.0"
   },
   "publishConfig": {
     "access": "public"

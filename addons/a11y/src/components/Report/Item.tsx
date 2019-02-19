@@ -10,7 +10,7 @@ import Elements from './Elements';
 
 const Wrapper = styled.div();
 
-const Icon = styled(Icons)(({ theme }) => ({
+const Icon = styled<any, any>(Icons)(({ theme }) => ({
   height: 10,
   width: 10,
   color: theme.color.mediumdark,
@@ -37,7 +37,7 @@ const HeaderBar = styled.button(({ theme }) => ({
   },
 }));
 
-class Item extends Component {
+class Item extends Component<any, any> {
   static propTypes = {
     item: PropTypes.shape({
       description: PropTypes.string,
@@ -52,7 +52,7 @@ class Item extends Component {
   };
 
   onToggle = () =>
-    this.setState(prevState => ({
+    this.setState((prevState: any) => ({
       open: !prevState.open,
     }));
 

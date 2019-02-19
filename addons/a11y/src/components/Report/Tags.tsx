@@ -16,10 +16,10 @@ const Item = styled.div(({ theme }) => ({
   borderRadius: theme.appBorderRadius,
 }));
 
-function Tags({ tags }) {
+function Tags({ tags }: any) {
   return (
     <Wrapper>
-      {tags.map(tag => (
+      {tags.map((tag: any) => (
         <Item key={tag}>{tag}</Item>
       ))}
     </Wrapper>
