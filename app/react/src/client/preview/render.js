@@ -14,14 +14,14 @@ function render(node, el) {
 }
 
 export default function renderMain({
-  story,
+  storyFn,
   selectedKind,
   selectedStory,
   showMain,
   showError,
   forceRender,
 }) {
-  const element = story();
+  const element = storyFn();
 
   if (!element) {
     showError({
