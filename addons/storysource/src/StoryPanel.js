@@ -11,6 +11,7 @@ const StyledStoryLink = styled(Link)(({ theme }) => ({
   display: 'block',
   textDecoration: 'none',
   borderRadius: theme.appBorderRadius,
+
   '&:hover': {
     background: theme.background.hoverable,
   },
@@ -24,6 +25,7 @@ const SelectedStoryHighlight = styled.div(({ theme }) => ({
 const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }) => ({
   fontSize: theme.typography.size.s2 - 1,
 }));
+
 const areLocationsEqual = (a, b) =>
   a.startLoc.line === b.startLoc.line &&
   a.startLoc.col === b.startLoc.col &&
@@ -165,6 +167,7 @@ export default class StoryPanel extends Component {
         language="jsx"
         showLineNumbers="true"
         renderer={this.lineRenderer}
+        format={false}
         copyable={false}
         padded
       >

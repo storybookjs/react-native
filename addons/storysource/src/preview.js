@@ -4,10 +4,9 @@ import { EVENT_ID } from './events';
 const getLocation = (context, locationsMap) => locationsMap[context.id];
 
 function setStorySource(context, source, locationsMap) {
-  const channel = addons.getChannel();
   const currentLocation = getLocation(context, locationsMap);
 
-  channel.emit(EVENT_ID, {
+  addons.getChannel().emit(EVENT_ID, {
     source,
     currentLocation,
     locationsMap,
