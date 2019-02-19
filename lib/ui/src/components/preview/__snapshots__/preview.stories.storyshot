@@ -231,7 +231,6 @@ Array [
   height: 100%;
   -webkit-transition: background .1s linear;
   transition: background .1s linear;
-  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -343,7 +342,7 @@ Array [
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  color: inherit;
+  opacity: 0.4;
   border-bottom-color: transparent;
 }
 
@@ -650,7 +649,6 @@ Array [
   height: 100%;
   -webkit-transition: background .1s linear;
   transition: background .1s linear;
-  background: #FFFFFF;
 }
 
 .emotion-0 {

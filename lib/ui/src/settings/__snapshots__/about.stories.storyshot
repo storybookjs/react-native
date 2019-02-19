@@ -1525,7 +1525,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #FFFFFF;
 }
 
 .emotion-20 {
@@ -1540,8 +1539,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #333333;
-  background: #FFFFFF;
+  color: #666666;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;

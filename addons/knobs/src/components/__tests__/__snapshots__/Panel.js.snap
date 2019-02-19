@@ -40,8 +40,8 @@ Array [
 
 .emotion-0 {
   min-width: 100px;
-  font-weight: 700;
-  margin-right: 15px;
+  min-height: 32px;
+  margin-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -135,8 +135,8 @@ Array [
 
 .emotion-0 {
   min-width: 100px;
-  font-weight: 700;
-  margin-right: 15px;
+  min-height: 32px;
+  margin-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

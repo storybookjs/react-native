@@ -37,7 +37,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fafafa;
+  background: #fff;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -66,7 +66,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-0:hover {
-  background: #f2f2f2;
+  background: #fff;
 }
 
 .emotion-0:active {
@@ -118,7 +118,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fafafa;
+  background: #fff;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -149,7 +149,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-2:hover {
-  background: #f2f2f2;
+  background: #fff;
 }
 
 .emotion-2:active {
@@ -194,7 +194,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fafafa;
+  background: #fff;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -223,7 +223,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-4:hover {
-  background: #f2f2f2;
+  background: #fff;
 }
 
 .emotion-4:active {
@@ -317,7 +317,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fafafa;
+  background: #fff;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -346,7 +346,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-6:hover {
-  background: #f2f2f2;
+  background: #fff;
 }
 
 .emotion-6:active {
@@ -391,7 +391,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fafafa;
+  background: #fff;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -421,7 +421,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-0:hover {
-  background: #f2f2f2;
+  background: #fff;
 }
 
 .emotion-0:active {
@@ -466,7 +466,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fafafa;
+  background: #fff;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -496,7 +496,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-2:hover {
-  background: #f2f2f2;
+  background: #fff;
 }
 
 .emotion-2:active {
@@ -541,7 +541,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fafafa;
+  background: #fff;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -571,7 +571,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-4:hover {
-  background: #f2f2f2;
+  background: #fff;
 }
 
 .emotion-4:active {

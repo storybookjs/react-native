@@ -95,25 +95,6 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
   margin-bottom: 3rem;
 }
 
-.emotion-0 {
-  min-width: 100px;
-  font-weight: 700;
-  margin-right: 15px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  line-height: 16px;
-}
-
 .emotion-1 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -164,6 +145,25 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
 
 .emotion-1::placeholder {
   color: #999999;
+}
+
+.emotion-0 {
+  min-width: 100px;
+  min-height: 32px;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 16px;
 }
 
 <label

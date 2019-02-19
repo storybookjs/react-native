@@ -405,7 +405,6 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #FFFFFF;
 }
 
 .emotion-3 {
@@ -421,7 +420,6 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #333333;
-  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
