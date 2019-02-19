@@ -1,3 +1,21 @@
+## 5.0.0-rc.2 (February 19, 2019)
+
+### Features
+
+* UI: Allow collapsing active story and use separate expansion for filtered ([#5625](https://github.com/storybooks/storybook/pull/5625))
+* UI: Handle prerelease versions in version check ([#5641](https://github.com/storybooks/storybook/pull/5641))
+
+### Bug Fixes
+
+* Addon-a11y: Fix tab highlighting  ([#5646](https://github.com/storybooks/storybook/pull/5646))
+* Addon-jest: Fix event subscription ([#5644](https://github.com/storybooks/storybook/pull/5644))
+* UI: Handle old versions in version check ([#5638](https://github.com/storybooks/storybook/pull/5638))
+
+### Maintenance
+
+* UI: Fix some prop warnings ([#5635](https://github.com/storybooks/storybook/pull/5635))
+* UI: Use the correct props to start the tooltip open ([#5610](https://github.com/storybooks/storybook/pull/5610))
+
 ## 4.1.12 (February 18, 2019)
 
 ### Bug Fixes
