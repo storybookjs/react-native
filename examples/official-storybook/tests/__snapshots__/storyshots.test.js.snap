@@ -276,7 +276,7 @@ exports[`Storyshots Basics|Brand/StorybookLogo normal 1`] = `
 </svg>
 `;
 
-exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
+exports[`Storyshots Basics|DocumentFormatting withDOM 1`] = `
 .emotion-0 {
   font-size: 14px;
   line-height: 1.6;
@@ -348,7 +348,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   border: none;
 }
 
-.emotion-0 body > *:first-child {
+.emotion-0 body > *:first-of-type {
   margin-top: 0 !important;
 }
 
@@ -389,13 +389,13 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   position: relative;
 }
 
-.emotion-0 h2:first-child,
-.emotion-0 h1:first-child,
-.emotion-0 h1:first-child + h2,
-.emotion-0 h3:first-child,
-.emotion-0 h4:first-child,
-.emotion-0 h5:first-child,
-.emotion-0 h6:first-child {
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
@@ -458,35 +458,35 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 body > h2:first-child {
+.emotion-0 body > h2:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child {
+.emotion-0 body > h1:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child + h2 {
+.emotion-0 body > h1:first-of-type + h2 {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h3:first-child,
-.emotion-0 body > h4:first-child,
-.emotion-0 body > h5:first-child,
-.emotion-0 body > h6:first-child {
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 a:first-child h1,
-.emotion-0 a:first-child h2,
-.emotion-0 a:first-child h3,
-.emotion-0 a:first-child h4,
-.emotion-0 a:first-child h5,
-.emotion-0 a:first-child h6 {
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
   margin-top: 0;
   padding-top: 0;
 }
@@ -509,8 +509,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding-left: 30px;
 }
 
-.emotion-0 ul :first-child,
-.emotion-0 ol :first-child {
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
   margin-top: 0;
 }
 
@@ -531,11 +531,11 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   margin: 15px 0 5px;
 }
 
-.emotion-0 dl dt:first-child {
+.emotion-0 dl dt:first-of-type {
   padding: 0;
 }
 
-.emotion-0 dl dt > :first-child {
+.emotion-0 dl dt > :first-of-type {
   margin-top: 0;
 }
 
@@ -548,7 +548,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0 15px;
 }
 
-.emotion-0 dl dd > :first-child {
+.emotion-0 dl dd > :first-of-type {
   margin-top: 0;
 }
 
@@ -562,7 +562,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   color: #666666;
 }
 
-.emotion-0 blockquote > :first-child {
+.emotion-0 blockquote > :first-of-type {
   margin-top: 0;
 }
 
@@ -582,7 +582,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 table tr:nth-child(2n) {
+.emotion-0 table tr:nth-of-type(2n) {
   background-color: #F8F8F8;
 }
 
@@ -601,8 +601,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 6px 13px;
 }
 
-.emotion-0 table tr th :first-child,
-.emotion-0 table tr td :first-child {
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
   margin-top: 0;
 }
 
@@ -784,7 +784,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   border: none;
 }
 
-.emotion-0 body > *:first-child {
+.emotion-0 body > *:first-of-type {
   margin-top: 0 !important;
 }
 
@@ -825,13 +825,13 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   position: relative;
 }
 
-.emotion-0 h2:first-child,
-.emotion-0 h1:first-child,
-.emotion-0 h1:first-child + h2,
-.emotion-0 h3:first-child,
-.emotion-0 h4:first-child,
-.emotion-0 h5:first-child,
-.emotion-0 h6:first-child {
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
@@ -894,35 +894,35 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 body > h2:first-child {
+.emotion-0 body > h2:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child {
+.emotion-0 body > h1:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child + h2 {
+.emotion-0 body > h1:first-of-type + h2 {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h3:first-child,
-.emotion-0 body > h4:first-child,
-.emotion-0 body > h5:first-child,
-.emotion-0 body > h6:first-child {
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 a:first-child h1,
-.emotion-0 a:first-child h2,
-.emotion-0 a:first-child h3,
-.emotion-0 a:first-child h4,
-.emotion-0 a:first-child h5,
-.emotion-0 a:first-child h6 {
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
   margin-top: 0;
   padding-top: 0;
 }
@@ -945,8 +945,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding-left: 30px;
 }
 
-.emotion-0 ul :first-child,
-.emotion-0 ol :first-child {
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
   margin-top: 0;
 }
 
@@ -967,11 +967,11 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   margin: 15px 0 5px;
 }
 
-.emotion-0 dl dt:first-child {
+.emotion-0 dl dt:first-of-type {
   padding: 0;
 }
 
-.emotion-0 dl dt > :first-child {
+.emotion-0 dl dt > :first-of-type {
   margin-top: 0;
 }
 
@@ -984,7 +984,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0 15px;
 }
 
-.emotion-0 dl dd > :first-child {
+.emotion-0 dl dd > :first-of-type {
   margin-top: 0;
 }
 
@@ -998,7 +998,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   color: #666666;
 }
 
-.emotion-0 blockquote > :first-child {
+.emotion-0 blockquote > :first-of-type {
   margin-top: 0;
 }
 
@@ -1018,7 +1018,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 table tr:nth-child(2n) {
+.emotion-0 table tr:nth-of-type(2n) {
   background-color: #F8F8F8;
 }
 
@@ -1037,8 +1037,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 6px 13px;
 }
 
-.emotion-0 table tr th :first-child,
-.emotion-0 table tr td :first-child {
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
   margin-top: 0;
 }
 
@@ -1155,15 +1155,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   <div
     class="emotion-0"
   >
-    <p>
-      Wrap your components in 
-      <code>
-        DocumentFormatting
-      </code>
-       to get text styles for body content
-    </p>
     <h1>
-      h1 Heading 😎
+      h1 Heading
     </h1>
     <h2>
       h2 Heading
@@ -1477,208 +1470,892 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
         title="The Stormtroopocat"
       />
     </p>
-    <p>
-      Like links, Images also have a footnote style syntax
-    </p>
-    <p>
-      <img
-        alt="Alt text"
-        src="https://octodex.github.com/images/dojocat.jpg"
-        title="The Dojocat"
-      />
-    </p>
-    <p>
-      With a reference later in the document defining the URL location:
-    </p>
-    <h2>
-      Plugins
-    </h2>
-    <p>
-      The killer feature of 
-      <code>
-        markdown-it
-      </code>
-       is very effective support of
-      <a
-        href="https://www.npmjs.org/browse/keyword/markdown-it-plugin"
-      >
-        syntax plugins
-      </a>
-      .
-    </p>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-emoji"
-      >
-        Emojies
-      </a>
-    </h3>
-    <blockquote>
-      <p>
-        Classic markup: 😉 :crush: 😢 :tear: 😆 😋
-      </p>
-      <p>
-        Shortcuts (emoticons): 😃 😦 😎 😉
-      </p>
-    </blockquote>
-    <p>
-      see 
-      <a
-        href="https://github.com/markdown-it/markdown-it-emoji#change-output"
-      >
-        how to change output
-      </a>
-       with twemoji.
-    </p>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-sub"
-      >
-        Subscript
-      </a>
-       / 
-      <a
-        href="https://github.com/markdown-it/markdown-it-sup"
-      >
-        Superscript
-      </a>
-    </h3>
-    <ul>
-      <li>
-        19
-        <sup>
-          th
-        </sup>
-      </li>
-      <li>
-        H
-        <sub>
-          2
-        </sub>
-        O
-      </li>
-    </ul>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-deflist"
-      >
-        Definition lists
-      </a>
-    </h3>
-    <dl>
-      <dt>
-        Term 1
-      </dt>
-      <dd>
-        <p>
-          Definition 1 with lazy continuation.
-        </p>
-      </dd>
-      <dt>
-        Term 2 with 
-        <em>
-          inline markup
-        </em>
-      </dt>
-      <dd>
-        <p>
-          Definition 2
-        </p>
-        <pre>
-          <code>
-             some code, part of Definition 2
-          </code>
-        </pre>
-        <p>
-          Third paragraph of definition 2.
-        </p>
-      </dd>
-    </dl>
-    <p>
-      <em>
-        Compact style:
-      </em>
-    </p>
-    <dl>
-      <dt>
-        Term 1
-      </dt>
-      <dd>
-        Definition 1
-      </dd>
-      <dt>
-        Term 2
-      </dt>
-      <dd>
-        Definition 2a
-      </dd>
-      <dd>
-        Definition 2b
-      </dd>
-    </dl>
-    <p>
-      <em>
-        Compact style:
-      </em>
-    </p>
-    <dl>
-      <dt>
-        Term 1
-      </dt>
-      <dd>
-        Definition 1
-      </dd>
-      <dt>
-        Term 2
-      </dt>
-      <dd>
-        Definition 2a
-      </dd>
-      <dd>
-        Definition 2b
-      </dd>
-    </dl>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-abbr"
-      >
-        Abbreviations
-      </a>
-    </h3>
-    <p>
-      This is 
-      <abbr
-        title="Hyper Text Markup Language"
-      >
-        HTML
-      </abbr>
-       abbreviation example.
-    </p>
-    <p>
-      It converts “
-      <abbr
-        title="Hyper Text Markup Language"
-      >
-        HTML
-      </abbr>
-      ”, but keep intact partial entries like “xxxHTMLyyy” and so on.
-    </p>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-container"
-      >
-        Custom containers
-      </a>
-    </h3>
-    <div
-      class="warning"
-    >
-      <p>
-        <em>
-          here be dragons
-        </em>
-      </p>
-    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|DocumentFormatting withMarkdown 1`] = `
+.emotion-0 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emotion-0 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-0 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-0 h3 {
+  font-size: 20px;
+}
+
+.emotion-0 h4 {
+  font-size: 16px;
+}
+
+.emotion-0 h5 {
+  font-size: 14px;
+}
+
+.emotion-0 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-0 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-0 pre pre,
+.emotion-0 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-0 pre pre code,
+.emotion-0 pre.hljs code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-0 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-0 pre code,
+.emotion-0 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-0 body > *:first-of-type {
+  margin-top: 0 !important;
+}
+
+.emotion-0 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-0 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 a.absent {
+  color: #cc0000;
+}
+
+.emotion-0 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-0 h1,
+.emotion-0 h2,
+.emotion-0 h3,
+.emotion-0 h4,
+.emotion-0 h5,
+.emotion-0 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1:hover a.anchor,
+.emotion-0 h2:hover a.anchor,
+.emotion-0 h3:hover a.anchor,
+.emotion-0 h4:hover a.anchor,
+.emotion-0 h5:hover a.anchor,
+.emotion-0 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 h1 tt,
+.emotion-0 h1 code {
+  font-size: inherit;
+}
+
+.emotion-0 h2 tt,
+.emotion-0 h2 code {
+  font-size: inherit;
+}
+
+.emotion-0 h3 tt,
+.emotion-0 h3 code {
+  font-size: inherit;
+}
+
+.emotion-0 h4 tt,
+.emotion-0 h4 code {
+  font-size: inherit;
+}
+
+.emotion-0 h5 tt,
+.emotion-0 h5 code {
+  font-size: inherit;
+}
+
+.emotion-0 h6 tt,
+.emotion-0 h6 code {
+  font-size: inherit;
+}
+
+.emotion-0 p,
+.emotion-0 blockquote,
+.emotion-0 ul,
+.emotion-0 ol,
+.emotion-0 dl,
+.emotion-0 li,
+.emotion-0 table,
+.emotion-0 pre {
+  margin: 15px 0;
+}
+
+.emotion-0 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-0 body > h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1 p,
+.emotion-0 h2 p,
+.emotion-0 h3 p,
+.emotion-0 h4 p,
+.emotion-0 h5 p,
+.emotion-0 h6 p {
+  margin-top: 0;
+}
+
+.emotion-0 li p.first {
+  display: inline-block;
+}
+
+.emotion-0 ul,
+.emotion-0 ol {
+  padding-left: 30px;
+}
+
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 ul :last-child,
+.emotion-0 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl {
+  padding: 0;
+}
+
+.emotion-0 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-0 dl dt:first-of-type {
+  padding: 0;
+}
+
+.emotion-0 dl dt > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-0 dl dd > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-0 blockquote > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-0 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 table tr:nth-of-type(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-0 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 table tr th :last-child,
+.emotion-0 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 img {
+  max-width: 100%;
+}
+
+.emotion-0 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-0 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-0 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-0 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-0 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-0 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-0 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-0 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-0 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-0 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-0 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-0 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-0 code,
+.emotion-0 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+}
+
+.emotion-0 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emotion-0 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-0 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-0 h3 {
+  font-size: 20px;
+}
+
+.emotion-0 h4 {
+  font-size: 16px;
+}
+
+.emotion-0 h5 {
+  font-size: 14px;
+}
+
+.emotion-0 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-0 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-0 pre pre,
+.emotion-0 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-0 pre pre code,
+.emotion-0 pre.hljs code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-0 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-0 pre code,
+.emotion-0 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-0 body > *:first-of-type {
+  margin-top: 0 !important;
+}
+
+.emotion-0 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-0 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 a.absent {
+  color: #cc0000;
+}
+
+.emotion-0 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-0 h1,
+.emotion-0 h2,
+.emotion-0 h3,
+.emotion-0 h4,
+.emotion-0 h5,
+.emotion-0 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1:hover a.anchor,
+.emotion-0 h2:hover a.anchor,
+.emotion-0 h3:hover a.anchor,
+.emotion-0 h4:hover a.anchor,
+.emotion-0 h5:hover a.anchor,
+.emotion-0 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 h1 tt,
+.emotion-0 h1 code {
+  font-size: inherit;
+}
+
+.emotion-0 h2 tt,
+.emotion-0 h2 code {
+  font-size: inherit;
+}
+
+.emotion-0 h3 tt,
+.emotion-0 h3 code {
+  font-size: inherit;
+}
+
+.emotion-0 h4 tt,
+.emotion-0 h4 code {
+  font-size: inherit;
+}
+
+.emotion-0 h5 tt,
+.emotion-0 h5 code {
+  font-size: inherit;
+}
+
+.emotion-0 h6 tt,
+.emotion-0 h6 code {
+  font-size: inherit;
+}
+
+.emotion-0 p,
+.emotion-0 blockquote,
+.emotion-0 ul,
+.emotion-0 ol,
+.emotion-0 dl,
+.emotion-0 li,
+.emotion-0 table,
+.emotion-0 pre {
+  margin: 15px 0;
+}
+
+.emotion-0 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-0 body > h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1 p,
+.emotion-0 h2 p,
+.emotion-0 h3 p,
+.emotion-0 h4 p,
+.emotion-0 h5 p,
+.emotion-0 h6 p {
+  margin-top: 0;
+}
+
+.emotion-0 li p.first {
+  display: inline-block;
+}
+
+.emotion-0 ul,
+.emotion-0 ol {
+  padding-left: 30px;
+}
+
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 ul :last-child,
+.emotion-0 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl {
+  padding: 0;
+}
+
+.emotion-0 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-0 dl dt:first-of-type {
+  padding: 0;
+}
+
+.emotion-0 dl dt > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-0 dl dd > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-0 blockquote > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-0 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 table tr:nth-of-type(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-0 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 table tr th :last-child,
+.emotion-0 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 img {
+  max-width: 100%;
+}
+
+.emotion-0 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-0 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-0 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-0 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-0 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-0 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-0 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-0 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-0 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-0 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-0 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-0 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-0 code,
+.emotion-0 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+}
+
+<div
+  style="width:600px;margin:3rem auto;padding:40px 20px;background:white"
+>
+  <div
+    class="emotion-0"
+  >
+    <h1>
+      HTML Mock
+    </h1>
   </div>
 </div>
 `;
@@ -2417,32 +3094,6 @@ exports[`Storyshots UI|Notifications/NotificationList all 1`] = `
       </div>
     </a>
   </div>
-</div>
-`;
-
-exports[`Storyshots UI|Notifications/NotificationList empty 1`] = `
-.emotion-0 > * + * {
-  margin-top: 10px;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0 > * + * {
-  margin-top: 10px;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-<div
-  style="width:240px;margin:1rem"
->
-  <div
-    class="emotion-0"
-  />
 </div>
 `;
 
@@ -4702,6 +5353,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5:hover {
@@ -5145,6 +5797,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5:hover {
@@ -5982,6 +6635,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5:hover {
@@ -6548,6 +7202,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5:hover {
@@ -7345,6 +8000,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-3:hover {
@@ -7493,6 +8149,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-3:hover {
@@ -7772,6 +8429,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5:hover {
@@ -7961,6 +8619,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5:hover {
@@ -8210,6 +8869,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5:hover {
@@ -8388,6 +9048,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5:hover {

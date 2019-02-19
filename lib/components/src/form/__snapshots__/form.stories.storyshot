@@ -5,7 +5,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -278,7 +278,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   margin-top: 10px;
 }
 
-.emotion-8 > *:first-child {
+.emotion-8 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -762,7 +762,7 @@ exports[`Storyshots Basics|Form/Input alignment 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -964,7 +964,7 @@ exports[`Storyshots Basics|Form/Input sizes 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -1168,7 +1168,7 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
   margin-top: 10px;
 }
 
-.emotion-8 > *:first-child {
+.emotion-8 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -1433,7 +1433,7 @@ exports[`Storyshots Basics|Form/Select sizes 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -1706,7 +1706,7 @@ exports[`Storyshots Basics|Form/Select validations 1`] = `
   margin-top: 10px;
 }
 
-.emotion-4 > *:first-child {
+.emotion-4 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -2063,7 +2063,7 @@ exports[`Storyshots Basics|Form/Textarea alignment 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -2274,7 +2274,7 @@ exports[`Storyshots Basics|Form/Textarea sizes 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -2484,7 +2484,7 @@ exports[`Storyshots Basics|Form/Textarea validations 1`] = `
   margin-top: 10px;
 }
 
-.emotion-8 > *:first-child {
+.emotion-8 > *:first-of-type {
   margin-top: 0;
 }
 
