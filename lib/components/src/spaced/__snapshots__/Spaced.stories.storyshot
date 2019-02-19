@@ -17,7 +17,7 @@ exports[`Storyshots Basics|Spaced col 1`] = `
   vertical-align: inherit;
 }
 
-.emotion-4 > *:first-child {
+.emotion-4 > *:first-of-type {
   margin-left: 0;
 }
 
@@ -77,7 +77,7 @@ exports[`Storyshots Basics|Spaced col outer 1`] = `
   vertical-align: inherit;
 }
 
-.emotion-4 > *:first-child {
+.emotion-4 > *:first-of-type {
   margin-left: 0;
 }
 
@@ -111,7 +111,7 @@ exports[`Storyshots Basics|Spaced row 1`] = `
   margin-top: 10px;
 }
 
-.emotion-4 > *:first-child {
+.emotion-4 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -170,7 +170,7 @@ exports[`Storyshots Basics|Spaced row multiply 1`] = `
   margin-top: 30px;
 }
 
-.emotion-4 > *:first-child {
+.emotion-4 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -219,7 +219,7 @@ exports[`Storyshots Basics|Spaced row outer 1`] = `
   margin-top: 10px;
 }
 
-.emotion-4 > *:first-child {
+.emotion-4 > *:first-of-type {
   margin-top: 0;
 }
 
