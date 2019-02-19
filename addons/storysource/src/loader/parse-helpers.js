@@ -1,3 +1,5 @@
+const { toId } = require('@storybook/router/utils');
+
 const STORIES_OF = 'storiesOf';
 
 function pushParts(source, parts, from, to) {
@@ -79,20 +81,22 @@ export function handleADD(node, parent, adds) {
   }
 
   const kind = findRelatedKind(node.object) || '';
-  const key = `${kind}@${storyName.value}`;
+  if (kind && storyName.value) {
+    const key = toId(kind, storyName.value);
 
-  // eslint-disable-next-line no-param-reassign
-  adds[key] = {
-    // Debug: code: source.slice(storyName.start, lastArg.end),
-    startLoc: {
-      col: storyName.loc.start.column,
-      line: storyName.loc.start.line,
-    },
-    endLoc: {
-      col: lastArg.loc.end.column,
-      line: lastArg.loc.end.line,
-    },
-  };
+    // eslint-disable-next-line no-param-reassign
+    adds[key] = {
+      // Debug: code: source.slice(storyName.start, lastArg.end),
+      startLoc: {
+        col: storyName.loc.start.column,
+        line: storyName.loc.start.line,
+      },
+      endLoc: {
+        col: lastArg.loc.end.column,
+        line: lastArg.loc.end.line,
+      },
+    };
+  }
 }
 
 export function handleSTORYOF(node, parts, source, lastIndex) {

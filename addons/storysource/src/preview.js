@@ -1,9 +1,7 @@
 import addons from '@storybook/addons';
 import { EVENT_ID } from './events';
 
-function getLocation(context, locationsMap) {
-  return locationsMap[`${context.kind}@${context.name}`] || locationsMap[`@${context.name}`];
-}
+const getLocation = (context, locationsMap) => locationsMap[context.id];
 
 function setStorySource(context, source, locationsMap) {
   const channel = addons.getChannel();

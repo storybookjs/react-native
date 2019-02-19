@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
-import { Link, SyntaxHighlighter } from '@storybook/components';
+import { Link } from '@storybook/router';
+import { SyntaxHighlighter } from '@storybook/components';
 
 import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './events';
@@ -73,14 +74,6 @@ export default class StoryPanel extends Component {
     });
   };
 
-  clickOnStory = (kind, story) => {
-    const { api } = this.props;
-
-    if (kind && story) {
-      api.selectStory(kind, story);
-    }
-  };
-
   createPart = (rows, stylesheet, useInlineStyles) =>
     rows.map((node, i) =>
       createElement({
@@ -91,7 +84,7 @@ export default class StoryPanel extends Component {
       })
     );
 
-  createStoryPart = (rows, stylesheet, useInlineStyles, location, kindStory) => {
+  createStoryPart = (rows, stylesheet, useInlineStyles, location, id) => {
     const { currentLocation } = this.state;
     const first = location.startLoc.line - 1;
     const last = location.endLoc.line;
@@ -108,15 +101,8 @@ export default class StoryPanel extends Component {
       );
     }
 
-    const [selectedKind, selectedStory] = kindStory.split('@');
-    const url = `/?selectedKind=${selectedKind}&selectedStory=${selectedStory}`;
-
     return (
-      <StyledStoryLink
-        href={url}
-        key={storyKey}
-        onClick={() => this.clickOnStory(selectedKind, selectedStory)}
-      >
+      <StyledStoryLink to={`/story/${id}`} key={storyKey}>
         {story}
       </StyledStoryLink>
     );
