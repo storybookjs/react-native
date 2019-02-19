@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Basics|Form/Button sizes 1`] = `
-.emotion-6 > * {
-  margin-top: 10px;
-}
-
-.emotion-6 > *:first-of-type {
-  margin-top: 0;
-}
-
 .emotion-0 {
   border: 0;
   border-radius: 3em;
@@ -81,6 +73,14 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
+}
+
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-of-type {
+  margin-top: 0;
 }
 
 .emotion-1 {
@@ -1429,14 +1429,6 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
 `;
 
 exports[`Storyshots Basics|Form/Select sizes 1`] = `
-.emotion-6 > * {
-  margin-top: 10px;
-}
-
-.emotion-6 > *:first-of-type {
-  margin-top: 0;
-}
-
 .emotion-0 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1494,6 +1486,14 @@ exports[`Storyshots Basics|Form/Select sizes 1`] = `
 
 .emotion-0::placeholder {
   color: #999999;
+}
+
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-of-type {
+  margin-top: 0;
 }
 
 .emotion-1 {
