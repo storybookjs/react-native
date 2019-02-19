@@ -8,6 +8,7 @@ import deprecate from 'util-deprecate';
 
 export interface RenderOptions {
   active: boolean;
+  key: string;
 }
 export interface RouteOptions {
   storyId: string;
