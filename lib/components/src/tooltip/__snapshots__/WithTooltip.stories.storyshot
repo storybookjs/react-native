@@ -175,9 +175,6 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
 .emotion-8:hover,
 .emotion-8:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -187,9 +184,6 @@ exports[`Storyshots basics/Tooltip/WithTooltip simple click start open 1`] = `
 }
 
 .emotion-8:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
