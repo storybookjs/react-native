@@ -1,3 +1,10 @@
+## 5.0.0-rc.3 (February 19, 2019)
+
+### Bug Fixes
+
+* UI: Styling bug fixes, story updates, and more QA ([#5650](https://github.com/storybooks/storybook/pull/5650))
+* UI: V5 style refinements ([#5562](https://github.com/storybooks/storybook/pull/5562))
+
 ## 5.0.0-rc.2 (February 19, 2019)
 
 ### Features
