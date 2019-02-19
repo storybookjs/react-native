@@ -49,10 +49,10 @@ storiesOf('Addons|Links.Href', module).add(
 );
 
 storiesOf('Addons|Links.Scroll position', module)
-  .addDecorator(story => (
+  .addDecorator(fn => (
     <Fragment>
       <div style={{ marginBottom: '100vh' }}>Scroll down to see the link</div>
-      {story()}
+      {fn()}
     </Fragment>
   ))
   .add('First', () => <LinkTo story="Second">Go to Second</LinkTo>)

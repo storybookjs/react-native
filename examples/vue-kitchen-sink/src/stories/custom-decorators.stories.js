@@ -3,9 +3,9 @@ import { storiesOf } from '@storybook/vue';
 import MyButton from './Button.vue';
 
 storiesOf('Custom|Decorator for Vue', module)
-  .addDecorator(story => {
-    // Decorated with story function
-    const WrapButton = story();
+  .addDecorator(fn => {
+    // Decorated with story-function
+    const WrapButton = fn();
     return {
       components: { WrapButton },
       template: '<div :style="{ border: borderStyle }"><wrap-button/></div>',

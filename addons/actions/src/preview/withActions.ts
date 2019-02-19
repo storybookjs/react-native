@@ -56,11 +56,11 @@ const actionsSubscription = (...args: any[]) => {
   return lastSubscription;
 };
 
-export const createDecorator = (actionsFn: any) => (...args: any[]) => (story: () => any) => {
+export const createDecorator = (actionsFn: any) => (...args: any[]) => (fn: () => any) => {
   if (root != null) {
     addons.getChannel().emit(Events.REGISTER_SUBSCRIPTION, actionsSubscription(actionsFn, ...args));
   }
-  return story();
+  return fn();
 };
 
 export const withActions = createDecorator(actions);

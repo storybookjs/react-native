@@ -83,9 +83,9 @@ storiesOf('Addons|Events.deprecated', module)
       selectedPanel: 'storybook/events/panel',
     },
   })
-  .addDecorator(story => (
+  .addDecorator(fn => (
     <WithEvents emit={emit} events={events}>
-      {story()}
+      {fn()}
     </WithEvents>
   ))
   .add('Logger', () => <Logger emitter={emitter} />);

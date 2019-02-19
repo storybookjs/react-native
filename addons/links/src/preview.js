@@ -55,8 +55,8 @@ const off = () => {
   }
 };
 
-export const withLinks = story => {
+export const withLinks = fn => {
   on();
   addons.getChannel().once(STORY_CHANGED, off);
-  return story();
+  return fn();
 };

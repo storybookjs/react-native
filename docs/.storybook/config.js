@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../src/css/main.css';
 
-addDecorator(story => <MemoryRouter>{story()}</MemoryRouter>);
+addDecorator(fn => <MemoryRouter>{fn()}</MemoryRouter>);
 
 function loadStories() {
   require('../src/stories');
