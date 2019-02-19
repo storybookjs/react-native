@@ -2608,7 +2608,7 @@ exports[`addon Info should render component description if story kind matches co
     context={
       Object {
         "kind": "TestComponent",
-        "story": "Basic test",
+        "name": "Basic test",
       }
     }
     excludedPropTypes={Array []}
@@ -2670,7 +2670,9 @@ exports[`addon Info should render component description if story kind matches co
                   "padding": 0,
                 }
               }
-            />
+            >
+              Basic test
+            </h2>
           </div>
         </div>
       </div>
@@ -2823,7 +2825,6 @@ exports[`addon Info should render component description if story kind matches co
                 >
                   cursive
                 </em>
-                 
               </div>
             </P>
           </div>
@@ -3822,7 +3823,7 @@ exports[`addon Info should render component description if story name matches co
     context={
       Object {
         "kind": "Test Components",
-        "story": "TestComponent",
+        "name": "TestComponent",
       }
     }
     excludedPropTypes={Array []}
@@ -3884,7 +3885,9 @@ exports[`addon Info should render component description if story name matches co
                   "padding": 0,
                 }
               }
-            />
+            >
+              TestComponent
+            </h2>
           </div>
         </div>
       </div>
@@ -4037,7 +4040,6 @@ exports[`addon Info should render component description if story name matches co
                 >
                   cursive
                 </em>
-                 
               </div>
             </P>
           </div>

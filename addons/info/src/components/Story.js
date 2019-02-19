@@ -264,11 +264,11 @@ class Story extends Component {
 
   _getComponentDescription() {
     const {
-      context: { kind, story },
+      context: { kind, name },
     } = this.props;
     let retDiv = null;
 
-    const validMatches = [kind, story];
+    const validMatches = [kind, name];
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
