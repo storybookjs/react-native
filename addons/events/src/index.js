@@ -39,9 +39,9 @@ export default options => {
   if (options.children) {
     return WithEvents(options);
   }
-  return fn => {
+  return storyFn => {
     addEvents(options);
-    return fn();
+    return storyFn();
   };
 };
 

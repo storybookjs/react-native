@@ -17,8 +17,8 @@ function setStorySource(context, source, locationsMap) {
 }
 
 export function withStorySource(source, locationsMap = {}) {
-  return (fn, context) => {
+  return (storyFn, context) => {
     setStorySource(context, source, locationsMap);
-    return fn();
+    return storyFn();
   };
 }

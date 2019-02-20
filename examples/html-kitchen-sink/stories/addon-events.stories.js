@@ -85,9 +85,9 @@ storiesOf('Addons|Events', module)
       ],
     })
   )
-  .addDecorator(fn => {
+  .addDecorator(storyFn => {
     addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
-    return fn();
+    return storyFn();
   })
   .add(
     'Logger',

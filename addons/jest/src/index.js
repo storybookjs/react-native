@@ -38,14 +38,14 @@ export const withTests = userOptions => {
 
   return (...args) => {
     if (typeof args[0] === 'string') {
-      return deprecate((fn, { kind }) => {
-        emitAddTests({ kind, story: fn, testFiles: args, options });
+      return deprecate((storyFn, { kind }) => {
+        emitAddTests({ kind, story: storyFn, testFiles: args, options });
 
-        return fn();
+        return storyFn();
       }, 'Passing component filenames to the `@storybook/addon-jest` via `withTests` is deprecated. Instead, use the `jest` story parameter');
     }
 
-    const [fn, { kind, parameters = {} }] = args;
+    const [storyFn, { kind, parameters = {} }] = args;
     let { jest: testFiles } = parameters;
 
     if (typeof testFiles === 'string') {
@@ -53,10 +53,10 @@ export const withTests = userOptions => {
     }
 
     if (testFiles && !testFiles.disable) {
-      emitAddTests({ kind, story: fn, testFiles, options });
+      emitAddTests({ kind, story: storyFn, testFiles, options });
     }
 
-    return fn();
+    return storyFn();
   };
 };
 
