@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "enzyme-to-json": "^3.3.4",
-    "react": "^16.8.1"
+    "react": "^16.8.2"
   },
   "publishConfig": {
     "access": "public"
