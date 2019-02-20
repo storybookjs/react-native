@@ -203,9 +203,6 @@ exports[`Storyshots basics/Tooltip/TooltipMessage with link 1`] = `
 .emotion-6:hover,
 .emotion-6:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -215,9 +212,6 @@ exports[`Storyshots basics/Tooltip/TooltipMessage with link 1`] = `
 }
 
 .emotion-6:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -370,9 +364,6 @@ exports[`Storyshots basics/Tooltip/TooltipMessage with links 1`] = `
 .emotion-6:hover,
 .emotion-6:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -382,9 +373,6 @@ exports[`Storyshots basics/Tooltip/TooltipMessage with links 1`] = `
 }
 
 .emotion-6:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 

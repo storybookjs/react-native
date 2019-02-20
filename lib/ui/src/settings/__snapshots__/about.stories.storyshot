@@ -230,9 +230,6 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 .emotion-14:hover,
 .emotion-14:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -242,9 +239,6 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 }
 
 .emotion-14:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -294,9 +288,6 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 .emotion-17:hover,
 .emotion-17:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -306,9 +297,6 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 }
 
 .emotion-17:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -808,9 +796,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 .emotion-33:hover,
 .emotion-33:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -820,9 +805,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 }
 
 .emotion-33:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -931,9 +913,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 .emotion-15:hover,
 .emotion-15:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -943,9 +922,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 }
 
 .emotion-15:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -2189,9 +2165,6 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 .emotion-19:hover,
 .emotion-19:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -2201,9 +2174,6 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 }
 
 .emotion-19:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -2322,9 +2292,6 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 .emotion-15:hover,
 .emotion-15:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -2334,9 +2301,6 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 }
 
 .emotion-15:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
