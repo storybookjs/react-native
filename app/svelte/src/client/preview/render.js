@@ -42,7 +42,7 @@ function mountView({ Component, target, data, on, Wrapper, WrapperData }) {
 }
 
 export default function render({
-  story,
+  storyFn,
   selectedKind,
   selectedStory,
   showMain,
@@ -58,7 +58,7 @@ export default function render({
     on,
     Wrapper,
     WrapperData,
-  } = story();
+  } = storyFn();
 
   cleanUpPreviousStory();
 

@@ -5,7 +5,7 @@ import { ActionOptions, DecoratorFunction, HandlerFunction } from '../models';
 
 const applyDecorators = (decorators: DecoratorFunction[], actionCallback: HandlerFunction) => {
   return (..._args: any[]) => {
-    const decorated = decorators.reduce((args, fn) => fn(args), _args);
+    const decorated = decorators.reduce((args, storyFn) => storyFn(args), _args);
     actionCallback(...decorated);
   };
 };

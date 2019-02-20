@@ -16,7 +16,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git"
+    "url": "git+https://github.com/storybooks/storybook.git",
+    "directory": "addons/a11y"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -36,7 +37,7 @@
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
     "prop-types": "^15.6.2",
-    "react": "^16.8.1",
+    "react": "^16.8.2",
     "react-dom": "^16.8.1",
     "util-deprecate": "^1.0.2"
   },

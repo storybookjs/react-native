@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/components"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -33,7 +34,7 @@
     "memoizerific": "^1.11.3",
     "polished": "^2.3.3",
     "prop-types": "^15.6.2",
-    "react": "^16.8.1",
+    "react": "^16.8.2",
     "react-dom": "^16.8.1",
     "react-focus-lock": "^1.17.7",
     "react-helmet-async": "^0.2.0",

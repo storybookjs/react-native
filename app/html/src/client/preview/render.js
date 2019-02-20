@@ -4,25 +4,25 @@ import { stripIndents } from 'common-tags';
 const rootElement = document.getElementById('root');
 
 export default function renderMain({
-  story,
+  storyFn,
   selectedKind,
   selectedStory,
   showMain,
   showError,
   forceRender,
 }) {
-  const component = story();
+  const element = storyFn();
 
   showMain();
-  if (typeof component === 'string') {
-    rootElement.innerHTML = component;
-  } else if (component instanceof Node) {
+  if (typeof element === 'string') {
+    rootElement.innerHTML = element;
+  } else if (element instanceof Node) {
     if (forceRender === true) {
       return;
     }
 
     rootElement.innerHTML = '';
-    rootElement.appendChild(component);
+    rootElement.appendChild(element);
   } else {
     showError({
       title: `Expecting an HTML snippet or DOM node from the story: "${selectedStory}" of "${selectedKind}".`,

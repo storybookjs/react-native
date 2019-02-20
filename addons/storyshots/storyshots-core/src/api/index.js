@@ -48,7 +48,7 @@ function testStorySnapshots(options = {}) {
     .filter(({ name }) => (storyNameRegex ? name.match(storyNameRegex) : true))
     .filter(({ kind }) => (storyKindRegex ? kind.match(storyKindRegex) : true))
     .reduce((acc, item) => {
-      const { kind, story: render, parameters } = item;
+      const { kind, storyFn: render, parameters } = item;
       const existing = acc.find(i => i.kind === kind);
       const { fileName } = item.parameters;
 

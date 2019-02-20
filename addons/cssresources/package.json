@@ -14,7 +14,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/cssresources"
   },
   "license": "MIT",
   "author": "nm123github",
@@ -32,7 +33,7 @@
     "core-js": "^2.6.2",
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
-    "react": "^16.8.1",
+    "react": "^16.8.2",
     "react-dom": "^16.8.1",
     "react-syntax-highlighter": "^8.0.1",
     "util-deprecate": "^1.0.2"

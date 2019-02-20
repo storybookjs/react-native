@@ -14,7 +14,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/backgrounds"
   },
   "license": "MIT",
   "author": "jbaxleyiii",
@@ -32,7 +33,7 @@
     "core-js": "^2.6.2",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
-    "react": "^16.8.1",
+    "react": "^16.8.2",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
