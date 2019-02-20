@@ -2430,9 +2430,6 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 .emotion-2:hover,
 .emotion-2:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -2442,9 +2439,6 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 }
 
 .emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -2489,9 +2483,6 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 .emotion-2:hover,
 .emotion-2:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -2501,9 +2492,6 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 }
 
 .emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -3166,9 +3154,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 .emotion-1:hover,
 .emotion-1:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -3178,9 +3163,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -3250,9 +3232,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 .emotion-1:hover,
 .emotion-1:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -3262,9 +3241,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -3588,9 +3564,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 .emotion-91:hover,
 .emotion-91:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -3600,9 +3573,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-91:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -4106,9 +4076,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 .emotion-91:hover,
 .emotion-91:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -4118,9 +4085,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-91:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -11365,9 +11329,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 .emotion-2:hover,
 .emotion-2:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -11377,9 +11338,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 }
 
 .emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -11432,9 +11390,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 .emotion-2:hover,
 .emotion-2:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -11444,9 +11399,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 }
 
 .emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
