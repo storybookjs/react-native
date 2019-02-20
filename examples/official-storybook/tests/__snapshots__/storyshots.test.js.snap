@@ -4497,7 +4497,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
-              value="S"
+              value="A"
             />
             <svg
               class="emotion-16"
@@ -4547,7 +4547,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
-              value="A"
+              value="S"
             />
             <svg
               class="emotion-16"
