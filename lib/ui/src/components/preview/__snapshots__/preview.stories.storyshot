@@ -116,11 +116,30 @@ Array [
   tranform: translateY(0px);
 }
 
+.emotion-23:hover {
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: 0;
+  -moz-scrollbar-width: 0;
+  -ms-scrollbar-width: 0;
+  scrollbar-width: 0;
+}
+
 .emotion-23::-webkit-scrollbar {
   height: 3px;
   width: 3px;
   background: transparent;
   box-shadow: none;
+  display: none;
+}
+
+.emotion-23:hover::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  display: block;
 }
 
 .emotion-23::-webkit-scrollbar-track {
@@ -560,11 +579,30 @@ Array [
   tranform: translateY(0px);
 }
 
+.emotion-29:hover {
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: 0;
+  -moz-scrollbar-width: 0;
+  -ms-scrollbar-width: 0;
+  scrollbar-width: 0;
+}
+
 .emotion-29::-webkit-scrollbar {
   height: 3px;
   width: 3px;
   background: transparent;
   box-shadow: none;
+  display: none;
+}
+
+.emotion-29:hover::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  display: block;
 }
 
 .emotion-29::-webkit-scrollbar-track {
