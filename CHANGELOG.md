@@ -10,7 +10,6 @@
 ### Features
 
 * UI: Allow collapsing active story and use separate expansion for filtered ([#5625](https://github.com/storybooks/storybook/pull/5625))
-* UI: Handle prerelease versions in version check ([#5641](https://github.com/storybooks/storybook/pull/5641))
 
 ### Bug Fixes
 
