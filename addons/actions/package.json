@@ -39,7 +39,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.120",
+    "@types/lodash": "^4.14.121",
     "@types/uuid": "^3.4.4"
   }
 }
