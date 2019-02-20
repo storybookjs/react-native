@@ -31,7 +31,7 @@
     "core-js": "^2.6.2",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "global": "^4.3.2",
-    "react": "^16.8.1",
+    "react": "^16.8.2",
     "react-dom": "^16.8.1",
     "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.1.0",
