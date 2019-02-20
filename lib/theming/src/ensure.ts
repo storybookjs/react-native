@@ -1,35 +1,49 @@
+import { logger } from '@storybook/client-logger';
+
+import { deletedDiff } from 'deep-object-diff';
+import { stripIndent } from 'common-tags';
+
+import mergeWith from 'lodash.mergewith';
+import isEqual from 'lodash.isequal';
+
 import light from './themes/light';
 import { Theme } from './base';
 
-export const ensure = (input: any): Theme =>
-  !input
-    ? light
-    : {
-        base: input.base,
-        color: input.color || light.color,
-        background: input.background || light.background,
-        typography: input.typography || light.typography,
-        animation: input.animation || light.animation,
-        easing: input.easing || light.easing,
+// merge with concatenating arrays, but no duplicates
+const merge = (a: any, b: any) =>
+  mergeWith({}, a, b, (objValue: any, srcValue: any) => {
+    if (Array.isArray(srcValue) && Array.isArray(objValue)) {
+      srcValue.forEach(s => {
+        const existing = objValue.find(o => o === s || isEqual(o, s));
+        if (!existing) {
+          objValue.push(s);
+        }
+      });
 
-        input: input.input || light.input,
+      return objValue;
+    }
+    if (Array.isArray(objValue)) {
+      return objValue;
+    }
+    return undefined;
+  });
 
-        // UI
-        layoutMargin: input.layoutMargin || light.layoutMargin,
-        appBorderColor: input.appBorderColor || light.appBorderColor,
-        appBorderRadius: input.appBorderRadius || light.appBorderRadius,
+export const ensure = (input: any): Theme => {
+  if (!input) {
+    return light;
+  } else {
+    const missing = deletedDiff(light, input);
+    if (Object.keys(missing).length) {
+      logger.warn(
+        stripIndent`
+          Your theme is missing properties, you should update your theme!
 
-        // Toolbar default/active colors
-        barTextColor: input.barTextColor || light.barTextColor,
-        barSelectedColor: input.barSelectedColor || light.barSelectedColor,
-        barBg: input.barBg || light.barBg,
+          theme-data missing:
+        `,
+        missing
+      );
+    }
 
-        // Brand logo/text
-        brand: input.brand || light.brand,
-
-        code: input.code || light.code,
-
-        // Addon actions theme
-        // API example https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js
-        addonActionsTheme: input.addonActionsTheme || light.addonActionsTheme,
-      };
+    return merge(light, input);
+  }
+};
