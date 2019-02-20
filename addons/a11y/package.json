@@ -16,7 +16,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git"
+    "url": "git+https://github.com/storybooks/storybook.git",
+    "directory": "addons/a11y"
   },
   "license": "MIT",
   "main": "dist/index.js",

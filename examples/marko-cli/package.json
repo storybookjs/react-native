@@ -5,7 +5,8 @@
   "description": "Demo of how to build an app using marko-starter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marko-js-samples/marko-starter-demo"
+    "url": "https://github.com/marko-js-samples/marko-starter-demo",
+    "directory": "examples/marko-cli"
   },
   "license": "MIT",
   "scripts": {
