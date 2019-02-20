@@ -4,7 +4,7 @@ import { createDecorator } from './withActions';
 
 function applyDecorators(decorators, actionCallback) {
   return (..._args) => {
-    const decorated = decorators.reduce((args, fn) => fn(args), _args);
+    const decorated = decorators.reduce((args, storyFn) => storyFn(args), _args);
     actionCallback(...decorated);
   };
 }

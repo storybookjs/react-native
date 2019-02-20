@@ -19,4 +19,4 @@ export interface NgStory {
   styles?: string[];
 }
 
-export type IGetStory = () => NgStory;
+export type IStoryFn = () => NgStory;
