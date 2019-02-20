@@ -5,16 +5,16 @@ import { html, render, TemplateResult } from 'lit-html';
 const rootElement = document.getElementById('root');
 
 export default function renderMain({
-  story,
+  storyFn,
   selectedKind,
   selectedStory,
   showMain,
   showError,
   forceRender,
 }) {
-  const component = story();
+  const element = storyFn();
 
-  if (!component) {
+  if (!element) {
     showError({
       title: `Expecting a Polymer component from the story: "${selectedStory}" of "${selectedKind}".`,
       description: stripIndents`
@@ -26,18 +26,18 @@ export default function renderMain({
   }
 
   showMain();
-  if (typeof component === 'string') {
-    rootElement.innerHTML = component;
-  } else if (component instanceof TemplateResult) {
+  if (typeof element === 'string') {
+    rootElement.innerHTML = element;
+  } else if (element instanceof TemplateResult) {
     // `render` stores the TemplateInstance in the Node and tries to update based on that.
     // Since we reuse `rootElement` for all stories, remove the stored instance first.
     // But forceRender means that it's the same story, so we want too keep the state in that case.
     if (!forceRender) {
       render(html``, rootElement);
     }
-    render(component, rootElement);
+    render(element, rootElement);
   } else {
     rootElement.innerHTML = '';
-    rootElement.appendChild(component);
+    rootElement.appendChild(element);
   }
 }

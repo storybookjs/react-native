@@ -33,10 +33,10 @@ addDecorator(withCssResources);
 addDecorator(withA11Y);
 addDecorator(withNotes);
 
-addDecorator(fn => (
+addDecorator(storyFn => (
   <ThemeProvider theme={themes.normal}>
     <Global styles={createReset} />
-    {fn()}
+    {storyFn()}
   </ThemeProvider>
 ));
 
