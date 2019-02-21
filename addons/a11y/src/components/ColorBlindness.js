@@ -24,7 +24,7 @@ const ColorIcon = styled.span(
 class ColorBlindness extends Component {
   state = {
     expanded: false,
-    filter: false,
+    filter: null,
   };
 
   setFilter = filter => {
