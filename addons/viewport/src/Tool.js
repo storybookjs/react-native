@@ -49,7 +49,7 @@ const getState = memoize(10)((props, state, change) => {
             id: 'rotate',
             title: 'Rotate viewport',
             onClick: () => {
-              change({ isRotated: !state.isRotate, expanded: false });
+              change({ isRotated: !state.isRotated, expanded: false });
             },
           },
         ]
