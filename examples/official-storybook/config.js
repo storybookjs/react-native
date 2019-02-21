@@ -41,7 +41,13 @@ addDecorator(storyFn => (
 ));
 
 addParameters({
-  a11y: {},
+  a11y: {
+    configure: {},
+    options: {
+      checks: { 'color-contrast': { options: { noScroll: true } } },
+      restoreScroll: true,
+    },
+  },
   options: {
     name: 'Storybook',
     hierarchySeparator: /\/|\./,

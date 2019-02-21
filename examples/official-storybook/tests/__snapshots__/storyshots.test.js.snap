@@ -2641,7 +2641,19 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
     "hierarchySeparator": {},
     "name": "Storybook"
   },
-  "a11y": {},
+  "a11y": {
+    "configure": {},
+    "options": {
+      "checks": {
+        "color-contrast": {
+          "options": {
+            "noScroll": true
+          }
+        }
+      },
+      "restoreScroll": true
+    }
+  },
   "viewports": {
     "iphone5": {
       "name": "iPhone 5",
@@ -2809,6 +2821,34 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
   "decoratorParameter": "decoratorParameter"
 }
 </pre>
+`;
+
+exports[`Storyshots Core|Scroll story with 100vh padding 1 1`] = `
+<div>
+  <pre>
+    START, when switching stories, you should be able to read this at the top of the page
+  </pre>
+  <div
+    style="height:100vh"
+  />
+  <pre>
+    END, this text should be below the scroll "fold" and therefore only be readable after scrolling
+  </pre>
+</div>
+`;
+
+exports[`Storyshots Core|Scroll story with 100vh padding 2 1`] = `
+<div>
+  <pre>
+    START, when switching stories, you should be able to read this at the top of the page
+  </pre>
+  <div
+    style="height:100vh"
+  />
+  <pre>
+    END, this text should be below the scroll "fold" and therefore only be readable after scrolling
+  </pre>
+</div>
 `;
 
 exports[`Storyshots UI|Notifications/NotificationItem longText 1`] = `
