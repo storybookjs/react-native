@@ -1,3 +1,14 @@
+## 4.1.13 (February 21, 2019)
+
+### Documentation
+
+* Fix unkind addon-ondevice-knobs readme. ([#5629](https://github.com/storybooks/storybook/pull/5629))
+
+### Maintenance
+
+* Cleanup CLI version notice ([#5699](https://github.com/storybooks/storybook/pull/5699))
+* Use static versions.json file instead of hacking one in ([#5675](https://github.com/storybooks/storybook/pull/5675))
+
 ## 5.0.0-rc.3 (February 19, 2019)
 
 ### Bug Fixes
