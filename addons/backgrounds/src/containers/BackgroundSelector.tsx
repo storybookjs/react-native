@@ -31,10 +31,7 @@ const createBackgroundSelectorItem = memoize(1000)(
   })
 );
 
-const getSelectedBackgroundColor = (
-  list: BackgroundConfig[],
-  currentSelectedValue: string
-): string => {
+const getSelectedBackgroundColor = (list: BackgroundConfig[], currentSelectedValue: string): string => {
   if (!list.length) {
     return 'transparent';
   }
@@ -54,36 +51,30 @@ const getSelectedBackgroundColor = (
   return 'transparent';
 };
 
-const getDisplayableState = memoize(10)(
-  (props: BackgroundToolProps, state: BackgroundToolState, change) => {
-    const data = props.api.getCurrentStoryData();
-    const list: BackgroundConfig[] = (data && data.parameters && data.parameters[PARAM_KEY]) || [];
+const getDisplayableState = memoize(10)((props: BackgroundToolProps, state: BackgroundToolState, change) => {
+  const data = props.api.getCurrentStoryData();
+  const list: BackgroundConfig[] = (data && data.parameters && data.parameters[PARAM_KEY]) || [];
 
-    const selectedBackgroundColor = getSelectedBackgroundColor(list, state.selected);
+  const selectedBackgroundColor = getSelectedBackgroundColor(list, state.selected);
 
-    let availableBackgroundSelectorItems: BackgroundSelectorItem[] = [];
+  let availableBackgroundSelectorItems: BackgroundSelectorItem[] = [];
 
-    if (selectedBackgroundColor !== 'transparent') {
-      availableBackgroundSelectorItems.push(
-        createBackgroundSelectorItem('reset', 'Clear background', 'transparent', false, change)
-      );
-    }
-
-    if (list.length) {
-      availableBackgroundSelectorItems = [
-        ...availableBackgroundSelectorItems,
-        ...list.map(({ name, value }) =>
-          createBackgroundSelectorItem(null, name, value, true, change)
-        ),
-      ];
-    }
-
-    return {
-      items: availableBackgroundSelectorItems,
-      selectedBackgroundColor,
-    };
+  if (selectedBackgroundColor !== 'transparent') {
+    availableBackgroundSelectorItems.push(createBackgroundSelectorItem('reset', 'Clear background', 'transparent', null, change));
   }
-);
+
+  if (list.length) {
+    availableBackgroundSelectorItems = [
+      ...availableBackgroundSelectorItems,
+      ...list.map(({ name, value }) => createBackgroundSelectorItem(null, name, value, true, change)),
+    ];
+  }
+
+  return {
+    items: availableBackgroundSelectorItems,
+    selectedBackgroundColor,
+  };
+});
 
 interface BackgroundToolProps {
   api: {
@@ -128,11 +119,7 @@ export class BackgroundSelector extends Component<BackgroundToolProps, Backgroun
 
   render() {
     const { expanded } = this.state;
-    const { items, selectedBackgroundColor } = getDisplayableState(
-      this.props,
-      this.state,
-      this.change
-    );
+    const { items, selectedBackgroundColor } = getDisplayableState(this.props, this.state, this.change);
 
     return items.length ? (
       <Fragment>
@@ -149,9 +136,7 @@ export class BackgroundSelector extends Component<BackgroundToolProps, Backgroun
           placement="top"
           trigger="click"
           tooltipShown={expanded}
-          onVisibilityChange={(newVisibility: boolean) =>
-            this.setState({ expanded: newVisibility })
-          }
+          onVisibilityChange={(newVisibility: boolean) => this.setState({ expanded: newVisibility })}
           tooltip={<TooltipLinkList links={items} />}
           closeOnClick
         >
