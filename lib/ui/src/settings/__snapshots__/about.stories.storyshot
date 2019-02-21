@@ -1797,7 +1797,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
           </span>
           <a
             class="emotion-15"
-            href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
+            href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
             target="_blank"
           >
             <span
@@ -2948,7 +2948,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
           </span>
           <a
             class="emotion-15"
-            href="https://github.com/storybooks/storybook/blob/master/CHANGELOG.md"
+            href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
             target="_blank"
           >
             <span
