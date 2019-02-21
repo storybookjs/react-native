@@ -1,55 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
-.emotion-2 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-12 {
-  display: block;
-}
-
 .emotion-9 {
   color: #999999;
   height: 40px;
@@ -68,7 +19,7 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   -moz-scrollbar-color: transparent transparent;
   -ms-scrollbar-color: transparent transparent;
   scrollbar-color: transparent transparent;
-  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-9::-webkit-scrollbar {
@@ -183,6 +134,55 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
 .emotion-0:focus {
   outline: 0 none;
   border-bottom-color: #1EA7FD;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-12 {
+  display: block;
 }
 
 .emotion-11 {
@@ -334,55 +334,6 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
-.emotion-0 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-12 {
-  display: block;
-}
-
 .emotion-9 {
   color: #999999;
   height: 40px;
@@ -401,7 +352,7 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   -moz-scrollbar-color: transparent transparent;
   -ms-scrollbar-color: transparent transparent;
   scrollbar-color: transparent transparent;
-  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-9::-webkit-scrollbar {
@@ -518,6 +469,55 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-12 {
+  display: block;
+}
+
 .emotion-11 {
   display: block;
   position: relative;
@@ -623,55 +623,6 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateful - static 1`] = `
-.emotion-1 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-1:empty {
-  display: none;
-}
-
-.emotion-1:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-6 {
-  display: block;
-}
-
 .emotion-5 {
   color: #999999;
   height: 40px;
@@ -690,7 +641,7 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   -moz-scrollbar-color: transparent transparent;
   -ms-scrollbar-color: transparent transparent;
   scrollbar-color: transparent transparent;
-  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-5::-webkit-scrollbar {
@@ -807,6 +758,55 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
+.emotion-1 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-1:empty {
+  display: none;
+}
+
+.emotion-1:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-6 {
+  display: block;
+}
+
 .emotion-7 {
   display: block;
   position: relative;
@@ -870,63 +870,6 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
-.emotion-2 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-11 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-  position: relative;
-  overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
-}
-
 .emotion-9 {
   color: #999999;
   height: 40px;
@@ -945,7 +888,7 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   -moz-scrollbar-color: transparent transparent;
   -ms-scrollbar-color: transparent transparent;
   scrollbar-color: transparent transparent;
-  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-9::-webkit-scrollbar {
@@ -1060,6 +1003,63 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 .emotion-0:focus {
   outline: 0 none;
   border-bottom-color: #1EA7FD;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-11 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  position: relative;
+  overflow: auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
 }
 
 .emotion-10 {
@@ -1220,51 +1220,6 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
-.emotion-2 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
 .emotion-9 {
   color: #999999;
   height: 40px;
@@ -1283,7 +1238,7 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   -moz-scrollbar-color: transparent transparent;
   -ms-scrollbar-color: transparent transparent;
   scrollbar-color: transparent transparent;
-  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-9::-webkit-scrollbar {
@@ -1396,6 +1351,51 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
 }
 
 .emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
   outline: 0 none;
   border-bottom-color: #1EA7FD;
 }
@@ -1555,15 +1555,15 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
-.emotion-0 {
-  font-weight: 700;
-}
-
 .emotion-1 {
   padding: 30px;
   text-align: center;
   color: #333333;
   font-size: 13px;
+}
+
+.emotion-0 {
+  font-weight: 700;
 }
 
 <div
@@ -1582,51 +1582,6 @@ exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
-.emotion-2 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
 .emotion-9 {
   color: #999999;
   height: 40px;
@@ -1645,7 +1600,7 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
   -moz-scrollbar-color: transparent transparent;
   -ms-scrollbar-color: transparent transparent;
   scrollbar-color: transparent transparent;
-  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-9::-webkit-scrollbar {
@@ -1758,6 +1713,51 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
 }
 
 .emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-2:focus {
   outline: 0 none;
   border-bottom-color: #1EA7FD;
 }
@@ -1917,55 +1917,6 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
-.emotion-2 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-13 {
-  display: block;
-}
-
 .emotion-10 {
   color: #999999;
   height: 40px;
@@ -1984,7 +1935,7 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   -moz-scrollbar-color: transparent transparent;
   -ms-scrollbar-color: transparent transparent;
   scrollbar-color: transparent transparent;
-  background: undefined linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
 .emotion-10::-webkit-scrollbar {
@@ -2101,14 +2052,49 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
-.emotion-12 {
-  display: block;
-  position: relative;
+.emotion-2 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
   font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
 }
 
-.emotion-11 {
+.emotion-2:empty {
   display: none;
+}
+
+.emotion-2:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
 }
 
 .emotion-8 {
@@ -2127,6 +2113,20 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
 
 .emotion-8 > * {
   margin-right: 15px;
+}
+
+.emotion-13 {
+  display: block;
+}
+
+.emotion-12 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+}
+
+.emotion-11 {
+  display: none;
 }
 
 <div

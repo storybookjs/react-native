@@ -41,7 +41,7 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fff;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -70,7 +70,7 @@ exports[`Storyshots Basics|Button all buttons 1`] = `
 }
 
 .emotion-0:hover {
-  background: #fff;
+  background: #f2f2f2;
 }
 
 .emotion-0:active {

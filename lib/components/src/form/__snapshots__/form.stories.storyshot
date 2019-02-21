@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Basics|Form/Button sizes 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-of-type {
+  margin-top: 0;
+}
+
 .emotion-0 {
   border: 0;
   border-radius: 3em;
@@ -29,7 +37,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fff;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -58,7 +66,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-0:hover {
-  background: #fff;
+  background: #f2f2f2;
 }
 
 .emotion-0:active {
@@ -73,14 +81,6 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
-}
-
-.emotion-6 > * {
-  margin-top: 10px;
-}
-
-.emotion-6 > *:first-of-type {
-  margin-top: 0;
 }
 
 .emotion-1 {
@@ -118,7 +118,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fff;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -149,7 +149,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-2:hover {
-  background: #fff;
+  background: #f2f2f2;
 }
 
 .emotion-2:active {
@@ -194,7 +194,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fff;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -223,7 +223,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-4:hover {
-  background: #fff;
+  background: #f2f2f2;
 }
 
 .emotion-4:active {
@@ -317,7 +317,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fff;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -346,7 +346,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-6:hover {
-  background: #fff;
+  background: #f2f2f2;
 }
 
 .emotion-6:active {
@@ -391,7 +391,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fff;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -421,7 +421,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-0:hover {
-  background: #fff;
+  background: #f2f2f2;
 }
 
 .emotion-0:active {
@@ -466,7 +466,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fff;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -496,7 +496,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-2:hover {
-  background: #fff;
+  background: #f2f2f2;
 }
 
 .emotion-2:active {
@@ -541,7 +541,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  background: #fff;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
   border-radius: 4px;
@@ -571,7 +571,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-4:hover {
-  background: #fff;
+  background: #f2f2f2;
 }
 
 .emotion-4:active {
@@ -1429,6 +1429,14 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
 `;
 
 exports[`Storyshots Basics|Form/Select sizes 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-of-type {
+  margin-top: 0;
+}
+
 .emotion-0 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1486,14 +1494,6 @@ exports[`Storyshots Basics|Form/Select sizes 1`] = `
 
 .emotion-0::placeholder {
   color: #999999;
-}
-
-.emotion-6 > * {
-  margin-top: 10px;
-}
-
-.emotion-6 > *:first-of-type {
-  margin-top: 0;
 }
 
 .emotion-1 {
