@@ -326,6 +326,51 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
+.emotion-8 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-8:empty {
+  display: none;
+}
+
+.emotion-8:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
 .emotion-11 {
   position: fixed;
   left: 0;
@@ -350,11 +395,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(-80vw);
   -ms-transform: translateX(-80vw);
   transform: translateX(-80vw);
   left: 0;
+}
+
+.emotion-1:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-1:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-0 {
@@ -388,11 +442,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 100%;
   -webkit-transform: translateX(0) scale(1);
   -ms-transform: translateX(0) scale(1);
   transform: translateX(0) scale(1);
   left: 0;
+}
+
+.emotion-3:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-3:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-2 {
@@ -426,11 +489,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(80vw);
   -ms-transform: translateX(80vw);
   transform: translateX(80vw);
   right: 0;
+}
+
+.emotion-5:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-5:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-4 {
@@ -467,6 +539,8 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+  background: #FFFFFF;
 }
 
 .emotion-10 > * {
@@ -528,22 +602,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
     <div
       class="emotion-5"
     >
-      <div>
-        <div
-          class="emotion-4"
-          color="orangered"
+      <div
+        class="emotion-4"
+        color="orangered"
+      >
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
         >
-          <h2
-            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-          >
-            1
-          </h2>
-          <pre>
-            {
+          1
+        </h2>
+        <pre>
+          {
   "hidden": false
 }
-          </pre>
-        </div>
+        </pre>
       </div>
     </div>
   </div>
@@ -553,17 +625,17 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
     <button
       class="emotion-7"
     >
-      Nav
+      Sidebar
+    </button>
+    <button
+      class="emotion-8"
+    >
+      Canvas
     </button>
     <button
       class="emotion-7"
     >
-      Preview
-    </button>
-    <button
-      class="emotion-7"
-    >
-      Panel
+      Addons
     </button>
   </nav>
 </div>
@@ -639,11 +711,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(-80vw);
   -ms-transform: translateX(-80vw);
   transform: translateX(-80vw);
   left: 0;
+}
+
+.emotion-1:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-1:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-0 {
@@ -677,11 +758,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 100%;
   -webkit-transform: translateX(0) scale(1);
   -ms-transform: translateX(0) scale(1);
   transform: translateX(0) scale(1);
   left: 0;
+}
+
+.emotion-3:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-3:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-2 {
@@ -715,11 +805,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(80vw);
   -ms-transform: translateX(80vw);
   transform: translateX(80vw);
   right: 0;
+}
+
+.emotion-5:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-5:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-4 {
@@ -756,6 +855,8 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+  background: #FFFFFF;
 }
 
 .emotion-10 > * {
@@ -817,22 +918,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
     <div
       class="emotion-5"
     >
-      <div>
-        <div
-          class="emotion-4"
-          color="orangered"
+      <div
+        class="emotion-4"
+        color="orangered"
+      >
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
         >
-          <h2
-            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-          >
-            1
-          </h2>
-          <pre>
-            {
+          1
+        </h2>
+        <pre>
+          {
   "hidden": false
 }
-          </pre>
-        </div>
+        </pre>
       </div>
     </div>
   </div>
@@ -842,17 +941,17 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
     <button
       class="emotion-7"
     >
-      Nav
+      Sidebar
     </button>
     <button
       class="emotion-7"
     >
-      Preview
+      Canvas
     </button>
     <button
       class="emotion-7"
     >
-      Panel
+      Addons
     </button>
   </nav>
 </div>
@@ -928,11 +1027,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(-80vw);
   -ms-transform: translateX(-80vw);
   transform: translateX(-80vw);
   left: 0;
+}
+
+.emotion-1:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-1:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-0 {
@@ -966,11 +1074,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 100%;
   -webkit-transform: translateX(0) scale(1);
   -ms-transform: translateX(0) scale(1);
   transform: translateX(0) scale(1);
   left: 0;
+}
+
+.emotion-3:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-3:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-2 {
@@ -1004,11 +1121,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(80vw);
   -ms-transform: translateX(80vw);
   transform: translateX(80vw);
   right: 0;
+}
+
+.emotion-5:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-5:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-4 {
@@ -1045,6 +1171,8 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+  background: #FFFFFF;
 }
 
 .emotion-10 > * {
@@ -1106,22 +1234,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
     <div
       class="emotion-5"
     >
-      <div>
-        <div
-          class="emotion-4"
-          color="orangered"
+      <div
+        class="emotion-4"
+        color="orangered"
+      >
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
         >
-          <h2
-            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-          >
-            1
-          </h2>
-          <pre>
-            {
+          1
+        </h2>
+        <pre>
+          {
   "hidden": false
 }
-          </pre>
-        </div>
+        </pre>
       </div>
     </div>
   </div>
@@ -1131,17 +1257,17 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
     <button
       class="emotion-7"
     >
-      Nav
+      Sidebar
     </button>
     <button
       class="emotion-7"
     >
-      Preview
+      Canvas
     </button>
     <button
       class="emotion-7"
     >
-      Panel
+      Addons
     </button>
   </nav>
 </div>
@@ -1217,11 +1343,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(-80vw);
   -ms-transform: translateX(-80vw);
   transform: translateX(-80vw);
   left: 0;
+}
+
+.emotion-1:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-1:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-0 {
@@ -1255,11 +1390,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 100%;
   -webkit-transform: translateX(0) scale(1);
   -ms-transform: translateX(0) scale(1);
   transform: translateX(0) scale(1);
   left: 0;
+}
+
+.emotion-4:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-4:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-2 {
@@ -1293,11 +1437,20 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(80vw);
   -ms-transform: translateX(80vw);
   transform: translateX(80vw);
   right: 0;
+}
+
+.emotion-6:nth-of-type(1) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-6:nth-of-type(3) {
+  border-left: 1px solid rgba(0,0,0,.1);
 }
 
 .emotion-5 {
@@ -1334,6 +1487,8 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+  background: #FFFFFF;
 }
 
 .emotion-10 > * {
@@ -1434,23 +1589,19 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
       class="emotion-6"
     >
       <div
-        hidden=""
+        class="emotion-5"
+        color="orangered"
       >
-        <div
-          class="emotion-5"
-          color="orangered"
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
         >
-          <h2
-            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-          >
-            1
-          </h2>
-          <pre>
-            {
+          1
+        </h2>
+        <pre>
+          {
   "hidden": true
 }
-          </pre>
-        </div>
+        </pre>
       </div>
     </div>
   </div>
@@ -1460,7 +1611,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
     <button
       class="emotion-8"
     >
-      Nav
+      Sidebar
     </button>
     <button
       class="emotion-8"

@@ -51,7 +51,7 @@ Array [
   margin-right: 15px;
 }
 
-.emotion-2 {
+.emotion-16 {
   height: 40px;
   background: none;
   color: inherit;
@@ -64,14 +64,20 @@ Array [
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
 }
 
-.emotion-2:hover,
-.emotion-2:focus {
+.emotion-16:hover,
+.emotion-16:focus {
   outline: 0 none;
   color: #1EA7FD;
 }
 
-.emotion-2 > svg {
+.emotion-16 > svg {
   width: 15px;
+}
+
+@media (max-width:599px) {
+  .emotion-16 {
+    display: none;
+  }
 }
 
 .emotion-1 {
@@ -163,6 +169,29 @@ Array [
   border: 0 none;
   opacity: 0;
   visibility: hidden;
+}
+
+.emotion-2 {
+  height: 40px;
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+}
+
+.emotion-2:hover,
+.emotion-2:focus {
+  outline: 0 none;
+  color: #1EA7FD;
+}
+
+.emotion-2 > svg {
+  width: 15px;
 }
 
 .emotion-9 {
@@ -260,7 +289,7 @@ Array [
         title="side right"
       >
         <button
-          class="emotion-2"
+          class="emotion-16"
           title="Go full screen"
         >
           <svg
@@ -514,7 +543,7 @@ Array [
   margin-right: 15px;
 }
 
-.emotion-8 {
+.emotion-22 {
   height: 40px;
   background: none;
   color: inherit;
@@ -527,14 +556,20 @@ Array [
   transition: color 0.2s linear,border-bottom-color 0.2s linear;
 }
 
-.emotion-8:hover,
-.emotion-8:focus {
+.emotion-22:hover,
+.emotion-22:focus {
   outline: 0 none;
   color: #1EA7FD;
 }
 
-.emotion-8 > svg {
+.emotion-22 > svg {
   width: 15px;
+}
+
+@media (max-width:599px) {
+  .emotion-22 {
+    display: none;
+  }
 }
 
 .emotion-7 {
@@ -626,6 +661,29 @@ Array [
   border: 0 none;
   opacity: 0;
   visibility: hidden;
+}
+
+.emotion-8 {
+  height: 40px;
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+}
+
+.emotion-8:hover,
+.emotion-8:focus {
+  outline: 0 none;
+  color: #1EA7FD;
+}
+
+.emotion-8 > svg {
+  width: 15px;
 }
 
 .emotion-5 {
@@ -757,7 +815,7 @@ Array [
         title="side right"
       >
         <button
-          class="emotion-8"
+          class="emotion-22"
           title="Go full screen"
         >
           <svg
