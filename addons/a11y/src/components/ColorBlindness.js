@@ -18,6 +18,9 @@ const ColorIcon = styled.span(
   },
   ({ filter }) => ({
     filter: filter === 'mono' ? 'grayscale(100%)' : `url('#${filter}')`,
+  }),
+  ({ theme }) => ({
+    boxShadow: `${theme.appBorderColor} 0 0 0 1px inset`,
   })
 );
 

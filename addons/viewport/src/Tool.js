@@ -20,7 +20,7 @@ const createItem = memoize(1000)((id, name, value, change) => ({
   onClick: () => {
     change({ selected: id, expanded: false });
   },
-  right: `${value.width}-${value.height}`,
+  right: `${value.width.replace('px', '')}x${value.height.replace('px', '')}`,
   value,
 }));
 
