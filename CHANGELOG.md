@@ -2,7 +2,7 @@
 
 ### Features
 
-* Handle prerelease versions in version check ([#5641](https://github.com/storybooks/storybook/pull/5641))
+* UI: Handle prerelease versions in version check ([#5641](https://github.com/storybooks/storybook/pull/5641))
 
 ### Bug Fixes
 
@@ -11,7 +11,7 @@
 * Core: Fix singleton module issue for manager & theme ([#5679](https://github.com/storybooks/storybook/pull/5679))
 * Addon-storysource: Fix source not updating ([#5672](https://github.com/storybooks/storybook/pull/5672))
 * Core: Fix broken error reporting ([#5678](https://github.com/storybooks/storybook/pull/5678))
-* Compare component name to story name, not story fn ([#5649](https://github.com/storybooks/storybook/pull/5649))
+* Addon-info: Compare component name to story name, not story fn ([#5649](https://github.com/storybooks/storybook/pull/5649))
 
 ### Maintenance
 
