@@ -254,6 +254,12 @@ exports[`Storyshots UI|Panel default 1`] = `
   width: 15px;
 }
 
+@media (max-width:599px) {
+  .emotion-6 {
+    display: none;
+  }
+}
+
 .emotion-5 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
