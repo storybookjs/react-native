@@ -3485,29 +3485,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   margin-right: 15px;
 }
 
-.emotion-5 {
-  height: 40px;
-  background: none;
-  color: inherit;
-  padding: 0;
-  cursor: pointer;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-}
-
-.emotion-5:hover,
-.emotion-5:focus {
-  outline: 0 none;
-  color: #1EA7FD;
-}
-
-.emotion-5 > svg {
-  width: 15px;
-}
-
 .emotion-4 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
@@ -3530,6 +3507,29 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   -ms-flex: 1;
   flex: 1;
   width: 100%;
+}
+
+.emotion-5 {
+  height: 40px;
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+}
+
+.emotion-5:hover,
+.emotion-5:focus {
+  outline: 0 none;
+  color: #1EA7FD;
+}
+
+.emotion-5 > svg {
+  width: 15px;
 }
 
 .emotion-96 {
@@ -3997,29 +3997,6 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   margin-right: 15px;
 }
 
-.emotion-5 {
-  height: 40px;
-  background: none;
-  color: inherit;
-  padding: 0;
-  cursor: pointer;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-}
-
-.emotion-5:hover,
-.emotion-5:focus {
-  outline: 0 none;
-  color: #1EA7FD;
-}
-
-.emotion-5 > svg {
-  width: 15px;
-}
-
 .emotion-4 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
@@ -4042,6 +4019,29 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   -ms-flex: 1;
   flex: 1;
   width: 100%;
+}
+
+.emotion-5 {
+  height: 40px;
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+}
+
+.emotion-5:hover,
+.emotion-5:focus {
+  outline: 0 none;
+  color: #1EA7FD;
+}
+
+.emotion-5 > svg {
+  width: 15px;
 }
 
 .emotion-96 {
