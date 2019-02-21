@@ -223,14 +223,13 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   >
     <div
       class="emotion-9"
-      title="bar"
+      title="flexbar"
     >
       <div
         class="emotion-8"
       >
         <div
           class="emotion-7"
-          title="side left"
         >
           <div
             class="emotion-6"
@@ -575,14 +574,13 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   >
     <div
       class="emotion-9"
-      title="bar"
+      title="flexbar"
     >
       <div
         class="emotion-8"
       >
         <div
           class="emotion-7"
-          title="side left"
         >
           <div
             class="emotion-6"
@@ -879,14 +877,13 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   >
     <div
       class="emotion-5"
-      title="bar"
+      title="flexbar"
     >
       <div
         class="emotion-4"
       >
         <div
           class="emotion-3"
-          title="side left"
         >
           <div
             class="emotion-2"
@@ -1166,14 +1163,13 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   >
     <div
       class="emotion-9"
-      title="bar"
+      title="flexbar"
     >
       <div
         class="emotion-8"
       >
         <div
           class="emotion-7"
-          title="side left"
         >
           <div
             class="emotion-6"
@@ -1520,14 +1516,13 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   >
     <div
       class="emotion-9"
-      title="bar"
+      title="flexbar"
     >
       <div
         class="emotion-8"
       >
         <div
           class="emotion-7"
-          title="side left"
         >
           <div
             class="emotion-6"
@@ -1901,14 +1896,13 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
   >
     <div
       class="emotion-9"
-      title="bar"
+      title="flexbar"
     >
       <div
         class="emotion-8"
       >
         <div
           class="emotion-7"
-          title="side left"
         >
           <div
             class="emotion-6"
@@ -2271,14 +2265,13 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   >
     <div
       class="emotion-10"
-      title="bar"
+      title="flexbar"
     >
       <div
         class="emotion-9"
       >
         <div
           class="emotion-7"
-          title="side left"
         >
           <div
             class="emotion-6"
@@ -2330,7 +2323,6 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
         </div>
         <div
           class="emotion-8"
-          title="side right"
         >
           <button
             type="button"
