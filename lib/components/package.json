@@ -27,7 +27,7 @@
     "@storybook/router": "5.0.0-beta.3",
     "@storybook/theming": "5.0.0-beta.3",
     "global": "^4.3.2",
-    "immer": "^1.12.0",
+    "immer": "^2.0.0",
     "js-beautify": "^1.8.9",
     "lodash.pick": "^4.4.0",
     "lodash.throttle": "^4.1.1",
