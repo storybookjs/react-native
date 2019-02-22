@@ -25,7 +25,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/styled": "10.0.6",
     "@storybook/addons": "5.0.0-beta.3",
     "@storybook/channels": "5.0.0-beta.3",
     "@storybook/components": "5.0.0-beta.3",
