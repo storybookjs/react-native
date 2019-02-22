@@ -9,7 +9,7 @@ import EVENTS, { PARAM_KEY } from './constants';
 
 const channel = addons.getChannel();
 let progress = Promise.resolve();
-let setup;
+let setup = {};
 
 const getElement = () => {
   const storyRoot = document.getElementById('story-root');
@@ -48,7 +48,7 @@ export const withA11Y = makeDecorator({
   allowDeprecatedUsage: false,
 
   wrapper: (getStory, context, opt) => {
-    setup = opt.parameters || opt.options;
+    setup = opt.parameters || opt.options || {};
 
     return getStory(context);
   },
