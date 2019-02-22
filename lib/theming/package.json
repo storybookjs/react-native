@@ -19,8 +19,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.5",
-    "@emotion/styled": "^10.0.5",
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
     "@storybook/client-logger": "5.0.0-rc.4",
     "common-tags": "^1.8.0",
     "deep-object-diff": "^1.1.0",
