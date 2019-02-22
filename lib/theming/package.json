@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.7",
-    "@emotion/styled": "^10.0.5",
+    "@emotion/styled": "^10.0.7",
     "@storybook/client-logger": "5.0.0-beta.3",
     "common-tags": "^1.8.0",
     "deep-object-diff": "^1.1.0",
