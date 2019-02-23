@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "monorepo",
+  "builds": [
+    { "src": "examples/official-storybook/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/examples/$1" }
+  ]
+}
