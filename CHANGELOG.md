@@ -15,6 +15,7 @@
 ### Maintenance
 
 * Typescript: migrate addon-backgrounds ([#5535](https://github.com/storybooks/storybook/pull/5535))
+* Typescript: fix typings for addon-backgrounds ([#5730](https://github.com/storybooks/storybook/pull/5730))
 
 ## 5.0.0-rc.4 (February 21, 2019)
 
