@@ -29,6 +29,6 @@
     "react-native": "*"
   },
   "publishConfig": {
-    "private": true
+    "access": "public"
   }
 }
