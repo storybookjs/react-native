@@ -3393,11 +3393,30 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
+.emotion-8:hover {
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: 0;
+  -moz-scrollbar-width: 0;
+  -ms-scrollbar-width: 0;
+  scrollbar-width: 0;
+}
+
 .emotion-8::-webkit-scrollbar {
   height: 3px;
   width: 3px;
   background: transparent;
   box-shadow: none;
+  display: none;
+}
+
+.emotion-8:hover::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  display: block;
 }
 
 .emotion-8::-webkit-scrollbar-track {
@@ -3905,11 +3924,30 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
 }
 
+.emotion-8:hover {
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: 0;
+  -moz-scrollbar-width: 0;
+  -ms-scrollbar-width: 0;
+  scrollbar-width: 0;
+}
+
 .emotion-8::-webkit-scrollbar {
   height: 3px;
   width: 3px;
   background: transparent;
   box-shadow: none;
+  display: none;
+}
+
+.emotion-8:hover::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  display: block;
 }
 
 .emotion-8::-webkit-scrollbar-track {
