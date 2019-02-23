@@ -291,14 +291,13 @@ exports[`Storyshots UI|Panel default 1`] = `
 >
   <div
     class="emotion-12"
-    title="bar"
+    title="flexbar"
   >
     <div
       class="emotion-11"
     >
       <div
         class="emotion-3"
-        title="side left"
       >
         <div
           class="emotion-2"
@@ -322,7 +321,6 @@ exports[`Storyshots UI|Panel default 1`] = `
       </div>
       <div
         class="emotion-10"
-        title="side right"
       >
         <button
           class="emotion-6"

@@ -413,14 +413,13 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 >
   <div
     class="emotion-8"
-    title="bar"
+    title="flexbar"
   >
     <div
       class="emotion-7"
     >
       <div
         class="emotion-2"
-        title="side left"
       >
         <div
           class="emotion-1"
@@ -437,7 +436,6 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
       </div>
       <div
         class="emotion-6"
-        title="side right"
       >
         <button
           class="emotion-5"
@@ -1695,14 +1693,13 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 >
   <div
     class="emotion-8"
-    title="bar"
+    title="flexbar"
   >
     <div
       class="emotion-7"
     >
       <div
         class="emotion-2"
-        title="side left"
       >
         <div
           class="emotion-1"
@@ -1719,7 +1716,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
       </div>
       <div
         class="emotion-6"
-        title="side right"
       >
         <button
           class="emotion-5"
@@ -2846,14 +2842,13 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 >
   <div
     class="emotion-8"
-    title="bar"
+    title="flexbar"
   >
     <div
       class="emotion-7"
     >
       <div
         class="emotion-2"
-        title="side left"
       >
         <div
           class="emotion-1"
@@ -2870,7 +2865,6 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
       </div>
       <div
         class="emotion-6"
-        title="side right"
       >
         <button
           class="emotion-5"
