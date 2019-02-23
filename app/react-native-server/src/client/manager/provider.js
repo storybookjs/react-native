@@ -38,15 +38,17 @@ export default class ReactProvider extends Provider {
   }
 
   renderPreview(state, api) {
-    // FIXME: getPreview not implemented?
-    if (state.storiesHash[state.storyId] && addons.getPreview) {
+    if (state.storiesHash[state.storyId]) {
       const { kind, story } = state.storiesHash[state.storyId];
 
       this.selection = { kind, story };
       api.emit(Events.SET_CURRENT_STORY, { kind, story });
-      const renderPreview = addons.getPreview();
-      if (renderPreview) {
-        return renderPreview(kind, story);
+      // FIXME: getPreview not implemented yet.
+      if (addons.getPreview) {
+        const renderPreview = addons.getPreview();
+        if (renderPreview) {
+          return renderPreview(kind, story);
+        }
       }
     }
     return <PreviewHelp />;
