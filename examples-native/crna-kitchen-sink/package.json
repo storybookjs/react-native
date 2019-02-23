@@ -8,7 +8,7 @@
     "eject": "expo eject",
     "ios": "expo start --ios",
     "start": "expo start",
-    "storybook": "start-storybook",
+    "storybook": "BABEL_ENV=storybook node ../../app/react-native-server/bin/index",
     "test": "node node_modules/jest/bin/jest.js --watch"
   },
   "jest": {
