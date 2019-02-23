@@ -1145,7 +1145,7 @@
 
 "@storybook/client-api@5.0.0-beta.3", "@storybook/client-api@file:../../packs/storybook-client-api.tgz":
   version "5.0.0-beta.3"
-  resolved "file:../../packs/storybook-client-api.tgz#a2548428d7c69d75c36abe05698138f2c842b95f"
+  resolved "file:../../packs/storybook-client-api.tgz#a83f27969971a9aaa35f8b9067642e07f4af5cd2"
   dependencies:
     "@storybook/addons" "5.0.0-beta.3"
     "@storybook/client-logger" "5.0.0-beta.3"
@@ -1349,7 +1349,7 @@
 
 "@storybook/react-native@file:../../packs/storybook-react-native.tgz":
   version "5.0.0-beta.3"
-  resolved "file:../../packs/storybook-react-native.tgz#20c6d94a5f8d5c50b61a89ea1732744188e7b688"
+  resolved "file:../../packs/storybook-react-native.tgz#8347c4c54ceea626f6c9f7e94352281c6134371f"
   dependencies:
     "@storybook/addons" "5.0.0-beta.3"
     "@storybook/channel-websocket" "5.0.0-beta.3"
@@ -1456,7 +1456,7 @@
 
 "@storybook/ui@file:../../packs/storybook-ui.tgz":
   version "5.0.0-beta.3"
-  resolved "file:../../packs/storybook-ui.tgz#7184795359367edcdf8ed3a529169ea019a69c62"
+  resolved "file:../../packs/storybook-ui.tgz#413dfcf0a0ab6fa0238c30e7c8c422948165e2b9"
   dependencies:
     "@storybook/addons" "5.0.0-beta.3"
     "@storybook/client-logger" "5.0.0-beta.3"
@@ -3142,7 +3142,7 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist@4.4.1, browserslist@^4.3.4, browserslist@^4.4.1:
+browserslist@4.4.1:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.4.1.tgz#42e828954b6b29a7a53e352277be429478a69062"
   integrity sha512-pEBxEXg7JwaakBXjATYw/D1YZh4QUSCX/Mnd/wnqSRPPSi1U39iDhDoKGoBUcraKdxDlrYqJxSI5nNvD+dWP2A==
@@ -3150,6 +3150,15 @@ browserslist@4.4.1, browserslist@^4.3.4, browserslist@^4.4.1:
     caniuse-lite "^1.0.30000929"
     electron-to-chromium "^1.3.103"
     node-releases "^1.1.3"
+
+browserslist@^4.3.4, browserslist@^4.4.1:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.4.2.tgz#6ea8a74d6464bb0bd549105f659b41197d8f0ba2"
+  integrity sha512-ISS/AIAiHERJ3d45Fz0AVYKkgcy+F/eJHzKEvv1j0wwKGKD9T3BrwKr/5g45L+Y4XIK5PlTqefHciRFcfE1Jxg==
+  dependencies:
+    caniuse-lite "^1.0.30000939"
+    electron-to-chromium "^1.3.113"
+    node-releases "^1.1.8"
 
 bser@^2.0.0:
   version "2.0.0"
@@ -3282,7 +3291,7 @@ camelcase@^5.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.0.0.tgz#03295527d58bd3cd4aa75363f35b2e8d97be2f42"
   integrity sha512-faqwZqnWxbxn+F1d399ygeamQNy3lPp/H9H6rNrqYh4FSVCtcY+3cub1MxA8o9mDd55mM8Aghuu/kuyYA6VTsA==
 
-caniuse-lite@^1.0.30000929, caniuse-lite@^1.0.30000938:
+caniuse-lite@^1.0.30000929, caniuse-lite@^1.0.30000938, caniuse-lite@^1.0.30000939:
   version "1.0.30000939"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000939.tgz#b9ab7ac9e861bf78840b80c5dfbc471a5cd7e679"
   integrity sha512-oXB23ImDJOgQpGjRv1tCtzAvJr4/OvrHi5SO2vUgB0g0xpdZZoA/BxfImiWfdwoYdUTtQrPsXsvYU/dmCSM8gg==
@@ -4268,7 +4277,7 @@ ejs@^2.6.1:
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.6.1.tgz#498ec0d495655abc6f23cd61868d926464071aa0"
   integrity sha512-0xy4A/twfrRCnkhfk8ErDi5DqdAsAqeGxht4xkCUrsvhhbQNs7E+4jV0CN7+NKIY0aHE72+XvqtBIXzD31ZbXQ==
 
-electron-to-chromium@^1.3.103:
+electron-to-chromium@^1.3.103, electron-to-chromium@^1.3.113:
   version "1.3.113"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.113.tgz#b1ccf619df7295aea17bc6951dc689632629e4a9"
   integrity sha512-De+lPAxEcpxvqPTyZAXELNpRZXABRxf+uL/rSykstQhzj/B0l1150G/ExIIxKc16lI89Hgz81J0BHAcbTqK49g==
@@ -7938,7 +7947,7 @@ node-pre-gyp@^0.10.0:
     semver "^5.3.0"
     tar "^4"
 
-node-releases@^1.1.3:
+node-releases@^1.1.3, node-releases@^1.1.8:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.8.tgz#32a63fff63c5e51b7e0f540ac95947d220fc6862"
   integrity sha512-gQm+K9mGCiT/NXHy+V/ZZS1N/LOaGGqRAAJJs3X9Ah1g+CIbRcBgNyoNYQ+SEtcyAtB9KqDruu+fF7nWjsqRaA==
