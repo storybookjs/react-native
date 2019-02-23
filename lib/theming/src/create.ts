@@ -41,7 +41,9 @@ interface ThemeVar {
   inputTextColor?: string;
   inputBorderRadius?: number;
 
-  brand?: Brand;
+  brandTitle?: string;
+  brandUrl?: string;
+  brandComponent?: Brand;
 }
 
 const createColors = (vars: ThemeVar): Color => ({
@@ -149,7 +151,11 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
   barBg: vars.barBg || color.lightest,
 
   // Brand logo/text
-  brand: vars.brand || null,
+  brand: {
+    title: vars.brandTitle || null,
+    url: vars.brandUrl || null,
+    component: vars.brandComponent || null,
+  },
 
   code: createSyntax({
     colors: vars.base === 'light' ? lightSyntaxColors : darkSyntaxColors,

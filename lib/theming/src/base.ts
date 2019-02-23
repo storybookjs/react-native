@@ -101,7 +101,7 @@ export type Animation = typeof animation;
 export type Easing = typeof easing;
 
 export type TextSize = number | string;
-export type Brand = string;
+export type Brand = object | string;
 
 export interface Theme {
   color: Color;

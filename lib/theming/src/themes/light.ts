@@ -35,5 +35,7 @@ export default create({
   inputBorderRadius: 4,
 
   // Brand logo/text
-  brand: null,
+  brandTitle: null,
+  brandUrl: null,
+  brandComponent: null,
 });
