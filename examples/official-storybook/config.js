@@ -33,15 +33,21 @@ addDecorator(withCssResources);
 addDecorator(withA11Y);
 addDecorator(withNotes);
 
-addDecorator(fn => (
+addDecorator(storyFn => (
   <ThemeProvider theme={themes.normal}>
     <Global styles={createReset} />
-    {fn()}
+    {storyFn()}
   </ThemeProvider>
 ));
 
 addParameters({
-  a11y: {},
+  a11y: {
+    configure: {},
+    options: {
+      checks: { 'color-contrast': { options: { noScroll: true } } },
+      restoreScroll: true,
+    },
+  },
   options: {
     name: 'Storybook',
     hierarchySeparator: /\/|\./,
@@ -52,6 +58,11 @@ addParameters({
     ...INITIAL_VIEWPORTS,
     ...extraViewports,
   },
+  backgrounds: [
+    { name: 'storybook app', value: themes.normal.background.app, default: true },
+    { name: 'light', value: '#eeeeee' },
+    { name: 'dark', value: '#222222' },
+  ],
 });
 
 let previousExports = {};

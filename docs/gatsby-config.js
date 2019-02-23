@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/docs',
   siteMetadata: {
     siteTitle: 'Storybook',
     baseColor: '#e64074',

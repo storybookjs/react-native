@@ -20,7 +20,7 @@ const createItem = memoize(1000)((id, name, value, change) => ({
   onClick: () => {
     change({ selected: id, expanded: false });
   },
-  right: `${value.width}-${value.height}`,
+  right: `${value.width.replace('px', '')}x${value.height.replace('px', '')}`,
   value,
 }));
 
@@ -49,7 +49,7 @@ const getState = memoize(10)((props, state, change) => {
             id: 'rotate',
             title: 'Rotate viewport',
             onClick: () => {
-              change({ isRotated: !state.isRotate, expanded: false });
+              change({ isRotated: !state.isRotated, expanded: false });
             },
           },
         ]

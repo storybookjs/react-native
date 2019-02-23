@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|Panel default 1`] = `
-.emotion-13 {
+.emotion-14 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -14,6 +14,76 @@ exports[`Storyshots UI|Panel default 1`] = `
   flex-direction: column;
 }
 
+.emotion-12 {
+  color: #999999;
+  height: 40px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+}
+
+.emotion-12:hover {
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: 0;
+  -moz-scrollbar-width: 0;
+  -ms-scrollbar-width: 0;
+  scrollbar-width: 0;
+}
+
+.emotion-12::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+  display: none;
+}
+
+.emotion-12:hover::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  display: block;
+}
+
+.emotion-12::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-12::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-12::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
 .emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -23,14 +93,9 @@ exports[`Storyshots UI|Panel default 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
-  color: #999999;
-  height: 40px;
   position: relative;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  white-space: nowrap;
+  height: 40px;
 }
 
 .emotion-3 {
@@ -38,9 +103,12 @@ exports[`Storyshots UI|Panel default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .emotion-3 > * {
@@ -48,14 +116,10 @@ exports[`Storyshots UI|Panel default 1`] = `
 }
 
 .emotion-2 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
+  overflow: hidden;
 }
 
-.emotion-2:first-child {
+.emotion-2:first-of-type {
   margin-left: 0;
 }
 
@@ -91,7 +155,7 @@ exports[`Storyshots UI|Panel default 1`] = `
   border-bottom: 3px solid transparent;
   font-weight: bold;
   font-size: 13px;
-  opacity: 0.4;
+  color: inherit;
   border-bottom-color: transparent;
 }
 
@@ -154,6 +218,13 @@ exports[`Storyshots UI|Panel default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 30px;
 }
 
 .emotion-10 > * {
@@ -183,6 +254,12 @@ exports[`Storyshots UI|Panel default 1`] = `
   width: 15px;
 }
 
+@media (max-width:599px) {
+  .emotion-6 {
+    display: none;
+  }
+}
+
 .emotion-5 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
@@ -195,7 +272,7 @@ exports[`Storyshots UI|Panel default 1`] = `
   fill: currentColor;
 }
 
-.emotion-12 {
+.emotion-13 {
   display: block;
   position: relative;
   font-size: 13px;
@@ -208,11 +285,13 @@ exports[`Storyshots UI|Panel default 1`] = `
 }
 
 <div
-  style="position:relative;width:800px;height:300px;margin:1rem auto;background:white"
+  class="emotion-14"
+  id="storybook-panel-root"
+  title="wrapper"
 >
   <div
-    class="emotion-13"
-    id="storybook-panel-root"
+    class="emotion-12"
+    title="flexbar"
   >
     <div
       class="emotion-11"
@@ -273,14 +352,14 @@ exports[`Storyshots UI|Panel default 1`] = `
         </button>
       </div>
     </div>
+  </div>
+  <div
+    class="emotion-13"
+  >
     <div
-      class="emotion-12"
+      id="test2"
     >
-      <div
-        id="test2"
-      >
-        TEST 2
-      </div>
+      TEST 2
     </div>
   </div>
 </div>
@@ -290,7 +369,7 @@ exports[`Storyshots UI|Panel no panels 1`] = `
 .emotion-1 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -299,16 +378,12 @@ exports[`Storyshots UI|Panel no panels 1`] = `
 }
 
 <div
-  style="position:relative;width:800px;height:300px;margin:1rem auto;background:white"
+  class="emotion-1"
 >
   <div
-    class="emotion-1"
+    class="emotion-0"
   >
-    <div
-      class="emotion-0"
-    >
-      Nothing found
-    </div>
+    Nothing found
   </div>
 </div>
 `;

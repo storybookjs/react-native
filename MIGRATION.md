@@ -2,6 +2,7 @@
 
 - [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
   - [Webpack config simplification](#webpack-config-simplification)
+  - [Story hierarchy defaults](#story-hierarchy-defaults)
 - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
@@ -58,6 +59,34 @@ module.exports = ({ config, mode }) => { config.modules.rules.push(...); return 
 In contrast, the 4.x configuration function accepted either two or three arguments (`(baseConfig, mode)`, or `(baseConfig, mode, defaultConfig)`). The `config` object in the 5.x signature is equivalent to 4.x's `defaultConfig`.
 
 Please see the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
+
+## Story hierarchy defaults
+
+Storybook's UI contains a hierarchical tree of stories that can be configured by `hierarchySeparator` and `hierarchyRootSeparator` [options](./addons/options/README.md).
+
+In Storybook 4.x the values defaulted to `null` for both of these options, so that there would be no hierarchy by default.
+
+In 5.0, we now provide recommended defaults:
+
+```js
+{
+  hierarchyRootSeparator: '|',
+  hierarchySeparator: /\/|\./,
+}
+```
+
+This means if you use the characters { `|`, `/`, `.` } in your story kinds it will triggger the story hierarchy to appear. For example `storiesOf('UI|Widgets/Basics/Button')` will create a story root called `UI` containing a `Widgets/Basics` group, containing a `Button` component.
+
+If you wish to opt-out of this new behavior and restore the flat UI, simply set them back to `null` in your storybook config, or remove { `|`, `/`, `.` } from your story kinds:
+
+```js
+addParameters({
+  options: {
+    hierarchyRootSeparator: null,
+    hierarchySeparator: null,
+  },
+});
+```
 
 ## From version 4.0.x to 4.1.x
 

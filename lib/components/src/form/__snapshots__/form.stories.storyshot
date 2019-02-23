@@ -5,7 +5,7 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -37,54 +37,17 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #FAFBFC;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-0 svg {
@@ -99,23 +62,19 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #f2f2f2;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -159,56 +118,19 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #FAFBFC;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-2:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-2:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-2 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-2 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-2 svg {
@@ -223,23 +145,19 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-2 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-2:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #f2f2f2;
 }
 
 .emotion-2:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #FFFFFF;
 }
 
 .emotion-2:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-2:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-2:hover {
@@ -276,54 +194,17 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #FAFBFC;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  width: 100%;
   border-radius: 4px;
+  width: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-4:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-4:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-4:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-4 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-4 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-4 svg {
@@ -338,23 +219,19 @@ exports[`Storyshots Basics|Form/Button sizes 1`] = `
 }
 
 .emotion-4 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-4:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #f2f2f2;
 }
 
 .emotion-4:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #FFFFFF;
 }
 
 .emotion-4:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-4:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-4:hover {
@@ -401,7 +278,7 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   margin-top: 10px;
 }
 
-.emotion-8 > *:first-child {
+.emotion-8 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -440,54 +317,17 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #FAFBFC;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  width: 100%;
   border-radius: 4px;
+  width: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-6:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-6:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-6:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-6 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-6 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-6 svg {
@@ -502,23 +342,19 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-6 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-6:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #f2f2f2;
 }
 
 .emotion-6:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #FFFFFF;
 }
 
 .emotion-6:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-6:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-6:hover {
@@ -555,55 +391,18 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #FAFBFC;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
   width: 100%;
   box-shadow: #FF4400 0 0 0 1px inset !important;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-0 svg {
@@ -618,23 +417,19 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-0:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #f2f2f2;
 }
 
 .emotion-0:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-0:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-0:hover {
@@ -671,55 +466,18 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #FAFBFC;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
   width: 100%;
   box-shadow: #E69D00 0 0 0 1px inset;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-2:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-2:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-2 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-2 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-2 svg {
@@ -734,23 +492,19 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-2 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-2:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #f2f2f2;
 }
 
 .emotion-2:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #FFFFFF;
 }
 
 .emotion-2:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-2:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-2:hover {
@@ -787,55 +541,18 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #FAFBFC;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
   width: 100%;
   box-shadow: #66BF3C 0 0 0 1px inset !important;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   overflow: visible;
   z-index: 2;
-}
-
-.emotion-4:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-4:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-4:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-4 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-4 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-4 svg {
@@ -850,23 +567,19 @@ exports[`Storyshots Basics|Form/Button validations 1`] = `
 }
 
 .emotion-4 svg path {
-  fill: #333333;
+  fill: currentColor;
 }
 
 .emotion-4:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  background: #f2f2f2;
 }
 
 .emotion-4:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+  background: #FFFFFF;
 }
 
 .emotion-4:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-4:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
 .emotion-4:hover {
@@ -934,8 +647,8 @@ exports[`Storyshots Basics|Form/Field field 1`] = `
 
 .emotion-0 {
   min-width: 100px;
-  min-height: 32px;
-  margin-right: 16px;
+  font-weight: 700;
+  margin-right: 15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1049,7 +762,7 @@ exports[`Storyshots Basics|Form/Input alignment 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -1251,7 +964,7 @@ exports[`Storyshots Basics|Form/Input sizes 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -1455,7 +1168,7 @@ exports[`Storyshots Basics|Form/Input validations 1`] = `
   margin-top: 10px;
 }
 
-.emotion-8 > *:first-child {
+.emotion-8 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -1720,7 +1433,7 @@ exports[`Storyshots Basics|Form/Select sizes 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -1993,7 +1706,7 @@ exports[`Storyshots Basics|Form/Select validations 1`] = `
   margin-top: 10px;
 }
 
-.emotion-4 > *:first-child {
+.emotion-4 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -2350,7 +2063,7 @@ exports[`Storyshots Basics|Form/Textarea alignment 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -2561,7 +2274,7 @@ exports[`Storyshots Basics|Form/Textarea sizes 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -2771,7 +2484,7 @@ exports[`Storyshots Basics|Form/Textarea validations 1`] = `
   margin-top: 10px;
 }
 
-.emotion-8 > *:first-child {
+.emotion-8 > *:first-of-type {
   margin-top: 0;
 }
 

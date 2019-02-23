@@ -17,9 +17,6 @@ exports[`Storyshots Basics|Link cancel w/ href 1`] = `
 .emotion-1:hover,
 .emotion-1:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -29,9 +26,6 @@ exports[`Storyshots Basics|Link cancel w/ href 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -78,9 +72,6 @@ exports[`Storyshots Basics|Link cancel w/ onClick 1`] = `
 .emotion-1:hover,
 .emotion-1:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -90,9 +81,6 @@ exports[`Storyshots Basics|Link cancel w/ onClick 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -139,9 +127,6 @@ exports[`Storyshots Basics|Link no-cancel w/ href 1`] = `
 .emotion-1:hover,
 .emotion-1:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -151,9 +136,6 @@ exports[`Storyshots Basics|Link no-cancel w/ href 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -200,9 +182,6 @@ exports[`Storyshots Basics|Link no-cancel w/ onClick 1`] = `
 .emotion-1:hover,
 .emotion-1:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -212,9 +191,6 @@ exports[`Storyshots Basics|Link no-cancel w/ onClick 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -273,9 +249,6 @@ exports[`Storyshots Basics|Link styled links 1`] = `
 .emotion-1:hover,
 .emotion-1:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -285,9 +258,6 @@ exports[`Storyshots Basics|Link styled links 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -322,9 +292,6 @@ exports[`Storyshots Basics|Link styled links 1`] = `
 .emotion-3:hover,
 .emotion-3:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -334,9 +301,6 @@ exports[`Storyshots Basics|Link styled links 1`] = `
 }
 
 .emotion-3:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -391,9 +355,6 @@ exports[`Storyshots Basics|Link styled links 1`] = `
 .emotion-5:hover,
 .emotion-5:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -403,9 +364,6 @@ exports[`Storyshots Basics|Link styled links 1`] = `
 }
 
 .emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -460,9 +418,6 @@ exports[`Storyshots Basics|Link styled links 1`] = `
 .emotion-7:hover,
 .emotion-7:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -472,9 +427,6 @@ exports[`Storyshots Basics|Link styled links 1`] = `
 }
 
 .emotion-7:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -543,9 +495,6 @@ exports[`Storyshots Basics|Link styled links 1`] = `
 .emotion-21:hover,
 .emotion-21:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -555,9 +504,6 @@ exports[`Storyshots Basics|Link styled links 1`] = `
 }
 
 .emotion-21:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 

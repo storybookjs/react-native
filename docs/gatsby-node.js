@@ -3,7 +3,6 @@
 const fs = require('fs');
 const path = require('path');
 const sm = require('sitemap');
-const stripIndent = require('common-tags/lib/stripIndent');
 
 function pagesToSitemap(pages) {
   return pages
@@ -24,26 +23,6 @@ function generateSitemap(pages) {
   fs.writeFileSync(`${__dirname}/public/sitemap.xml`, sitemap.toString());
 }
 
-const generateVersionsFile = () => {
-  // TODO: hard-coded for now
-  // must be generated from pr-log / CHANGELOG.md
-  const data = {
-    latest: {
-      version: '4.0.0',
-      info: {
-        plain: stripIndent`
-          - upgrade webpack & babel to latest
-          - new addParameters and third argument to .add to pass data to addons
-          - added the ability to theme storybook
-          - improved ui for mobile devices
-          - improved performance of addon-knobs
-        `,
-      },
-    },
-  };
-  fs.writeFileSync(`${__dirname}/public/versions.json`, JSON.stringify(data));
-};
-
 module.exports = {
   async onPostBuild({ graphql }) {
     const result = await graphql(`
@@ -57,7 +36,6 @@ module.exports = {
         }
       }
     `);
-    generateVersionsFile();
     generateSitemap(result.data.allSitePage.edges.map(({ node }) => node));
   },
   onCreateNode({ node, boundActionCreators, getNode }) {

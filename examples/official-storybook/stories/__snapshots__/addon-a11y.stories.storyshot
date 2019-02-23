@@ -97,8 +97,8 @@ exports[`Storyshots Addons|A11y/Form With label 1`] = `
 
 .emotion-0 {
   min-width: 100px;
-  min-height: 32px;
-  margin-right: 16px;
+  font-weight: 700;
+  margin-right: 15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

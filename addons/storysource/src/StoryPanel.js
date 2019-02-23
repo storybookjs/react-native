@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
-import { Link, SyntaxHighlighter } from '@storybook/components';
+import { Link } from '@storybook/router';
+import { SyntaxHighlighter } from '@storybook/components';
 
 import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './events';
@@ -10,6 +11,7 @@ const StyledStoryLink = styled(Link)(({ theme }) => ({
   display: 'block',
   textDecoration: 'none',
   borderRadius: theme.appBorderRadius,
+
   '&:hover': {
     background: theme.background.hoverable,
   },
@@ -23,6 +25,7 @@ const SelectedStoryHighlight = styled.div(({ theme }) => ({
 const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }) => ({
   fontSize: theme.typography.size.s2 - 1,
 }));
+
 const areLocationsEqual = (a, b) =>
   a.startLoc.line === b.startLoc.line &&
   a.startLoc.col === b.startLoc.col &&
@@ -73,14 +76,6 @@ export default class StoryPanel extends Component {
     });
   };
 
-  clickOnStory = (kind, story) => {
-    const { api } = this.props;
-
-    if (kind && story) {
-      api.selectStory(kind, story);
-    }
-  };
-
   createPart = (rows, stylesheet, useInlineStyles) =>
     rows.map((node, i) =>
       createElement({
@@ -91,7 +86,7 @@ export default class StoryPanel extends Component {
       })
     );
 
-  createStoryPart = (rows, stylesheet, useInlineStyles, location, kindStory) => {
+  createStoryPart = (rows, stylesheet, useInlineStyles, location, id) => {
     const { currentLocation } = this.state;
     const first = location.startLoc.line - 1;
     const last = location.endLoc.line;
@@ -100,7 +95,7 @@ export default class StoryPanel extends Component {
     const story = this.createPart(storyRows, stylesheet, useInlineStyles);
     const storyKey = `${first}-${last}`;
 
-    if (areLocationsEqual(location, currentLocation)) {
+    if (location && currentLocation && areLocationsEqual(location, currentLocation)) {
       return (
         <SelectedStoryHighlight key={storyKey} ref={this.setSelectedStoryRef}>
           {story}
@@ -108,15 +103,8 @@ export default class StoryPanel extends Component {
       );
     }
 
-    const [selectedKind, selectedStory] = kindStory.split('@');
-    const url = `/?selectedKind=${selectedKind}&selectedStory=${selectedStory}`;
-
     return (
-      <StyledStoryLink
-        href={url}
-        key={storyKey}
-        onClick={() => this.clickOnStory(selectedKind, selectedStory)}
-      >
+      <StyledStoryLink to={`/story/${id}`} key={storyKey}>
         {story}
       </StyledStoryLink>
     );
@@ -179,6 +167,7 @@ export default class StoryPanel extends Component {
         language="jsx"
         showLineNumbers="true"
         renderer={this.lineRenderer}
+        format={false}
         copyable={false}
         padded
       >

@@ -11,19 +11,12 @@ const Container = styled.div({
 
 const List = styled.div(({ theme }) => ({
   boxShadow: `${theme.appBorderColor} 0 -1px 0 0 inset`,
-  background: '#f8f8fc',
+  background: 'rgba(0,0,0,.05)',
   flexWrap: 'wrap',
   display: 'flex',
 }));
 
 const Item = styled.button(
-  ({ active, theme }) =>
-    active
-      ? {
-          opacity: 1,
-          borderBottom: `3px solid ${theme.color.secondary}`,
-        }
-      : {},
   ({ theme }) => ({
     textDecoration: 'none',
     padding: '10px 15px',
@@ -41,7 +34,14 @@ const Item = styled.button(
       outline: '0 none',
       borderBottom: `3px solid ${theme.color.secondary}`,
     },
-  })
+  }),
+  ({ active, theme }) =>
+    active
+      ? {
+          opacity: 1,
+          borderBottom: `3px solid ${theme.color.secondary}`,
+        }
+      : {}
 );
 
 class Tabs extends Component {

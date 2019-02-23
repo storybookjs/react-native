@@ -1,37 +1,39 @@
 import { create } from '../create';
-
-import { color, typography, background } from '../base';
+import { color, typography } from '../base';
 
 export default create({
+  // Is this a light theme or a dark theme?
+  base: 'dark',
+
   // Storybook-specific color palette
   colorPrimary: '#FF4785', // coral
   colorSecondary: '#1EA7FD', // ocean
-  // colorTertiary: '#FAFBFC', // neutral buttons
-  // colorAncillary: '#22a699', // for code
 
-  // UI colors
-  appBg: background.app,
-  // bgHoverItem: background.hoverable,
-  appBorderColor: color.border,
+  // UI
+  appBg: '#2f2f2f',
+  appContentBg: '#333',
+  appBorderColor: 'rgba(255,255,255,.1)',
   appBorderRadius: 4,
 
-  // Typography
+  // Fonts
   fontBase: typography.fonts.base,
   fontCode: typography.fonts.mono,
-  // mainTextSize: typography.size.s2 - 1, // 13px
 
-  // Text colors (dark on light)
+  // Text colors
+  textColor: color.lightest,
+  textInverseColor: color.darkest,
 
-  textColor: color.darkest,
-  textInverseColor: color.lightest,
-
-  // Text colors (light on dark)
-  // inverseTextColor: color.lightest,
-  // inverseTextBgColor: color.mediumdark,
-
-  barTextColor: color.mediumdark,
+  // Toolbar default and active colors
+  barTextColor: '#999999',
   barSelectedColor: color.secondary,
+  barBg: color.darkest,
 
-  inputBg: color.lightest,
-  inputBorder: color.border,
+  // Form colors
+  inputBg: '#3f3f3f',
+  inputBorder: 'rgba(0,0,0,.3)',
+  inputTextColor: color.lightest,
+  inputBorderRadius: 4,
+
+  // Brand logo/text
+  brand: null,
 });

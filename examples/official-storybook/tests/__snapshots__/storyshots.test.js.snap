@@ -10,6 +10,7 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -24,7 +25,8 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #666666;
+  color: #333333;
+  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -57,6 +59,7 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -71,7 +74,8 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #666666;
+  color: #333333;
+  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -132,6 +136,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -146,7 +151,8 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #666666;
+  color: #333333;
+  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -179,6 +185,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background: #FFFFFF;
 }
 
 .emotion-0 {
@@ -193,7 +200,8 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #666666;
+  color: #333333;
+  background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -232,7 +240,51 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
 </div>
 `;
 
-exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
+exports[`Storyshots Basics|Brand/StorybookLogo normal 1`] = `
+<svg
+  height="40px"
+  title="Storybook"
+  viewBox="0 0 200 40"
+  width="200px"
+>
+  <defs>
+    <path
+      d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
+      id="a"
+    />
+  </defs>
+  <g
+    fill="none"
+    fill-rule="evenodd"
+  >
+    <path
+      d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
+      fill="currentColor"
+    />
+    <mask
+      fill="#fff"
+      id="b"
+    >
+      <use
+        href="#a"
+      />
+    </mask>
+    <use
+      fill="#FF4785"
+      fill-rule="nonzero"
+      href="#a"
+    />
+    <path
+      d="M23.7 5L24 .2l3.9-.3.1 4.8a.3.3 0 0 1-.5.2L26 3.8l-1.7 1.4a.3.3 0 0 1-.5-.3zm-5 10c0 .9 5.3.5 6 0 0-5.4-2.8-8.2-8-8.2-5.3 0-8.2 2.8-8.2 7.1 0 7.4 10 7.6 10 11.6 0 1.2-.5 1.9-1.8 1.9-1.6 0-2.2-.9-2.1-3.6 0-.6-6.1-.8-6.3 0-.5 6.7 3.7 8.6 8.5 8.6 4.6 0 8.3-2.5 8.3-7 0-7.9-10.2-7.7-10.2-11.6 0-1.6 1.2-1.8 2-1.8.6 0 2 0 1.9 3z"
+      fill="#FFF"
+      fill-rule="nonzero"
+      mask="url(#b)"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Storyshots Basics|DocumentFormatting withDOM 1`] = `
 .emotion-0 {
   font-size: 14px;
   line-height: 1.6;
@@ -304,7 +356,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   border: none;
 }
 
-.emotion-0 body > *:first-child {
+.emotion-0 body > *:first-of-type {
   margin-top: 0 !important;
 }
 
@@ -345,13 +397,13 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   position: relative;
 }
 
-.emotion-0 h2:first-child,
-.emotion-0 h1:first-child,
-.emotion-0 h1:first-child + h2,
-.emotion-0 h3:first-child,
-.emotion-0 h4:first-child,
-.emotion-0 h5:first-child,
-.emotion-0 h6:first-child {
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
@@ -414,35 +466,35 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 body > h2:first-child {
+.emotion-0 body > h2:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child {
+.emotion-0 body > h1:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child + h2 {
+.emotion-0 body > h1:first-of-type + h2 {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h3:first-child,
-.emotion-0 body > h4:first-child,
-.emotion-0 body > h5:first-child,
-.emotion-0 body > h6:first-child {
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 a:first-child h1,
-.emotion-0 a:first-child h2,
-.emotion-0 a:first-child h3,
-.emotion-0 a:first-child h4,
-.emotion-0 a:first-child h5,
-.emotion-0 a:first-child h6 {
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
   margin-top: 0;
   padding-top: 0;
 }
@@ -465,8 +517,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding-left: 30px;
 }
 
-.emotion-0 ul :first-child,
-.emotion-0 ol :first-child {
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
   margin-top: 0;
 }
 
@@ -487,11 +539,11 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   margin: 15px 0 5px;
 }
 
-.emotion-0 dl dt:first-child {
+.emotion-0 dl dt:first-of-type {
   padding: 0;
 }
 
-.emotion-0 dl dt > :first-child {
+.emotion-0 dl dt > :first-of-type {
   margin-top: 0;
 }
 
@@ -504,7 +556,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0 15px;
 }
 
-.emotion-0 dl dd > :first-child {
+.emotion-0 dl dd > :first-of-type {
   margin-top: 0;
 }
 
@@ -518,7 +570,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   color: #666666;
 }
 
-.emotion-0 blockquote > :first-child {
+.emotion-0 blockquote > :first-of-type {
   margin-top: 0;
 }
 
@@ -538,7 +590,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 table tr:nth-child(2n) {
+.emotion-0 table tr:nth-of-type(2n) {
   background-color: #F8F8F8;
 }
 
@@ -557,8 +609,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 6px 13px;
 }
 
-.emotion-0 table tr th :first-child,
-.emotion-0 table tr td :first-child {
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
   margin-top: 0;
 }
 
@@ -740,7 +792,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   border: none;
 }
 
-.emotion-0 body > *:first-child {
+.emotion-0 body > *:first-of-type {
   margin-top: 0 !important;
 }
 
@@ -781,13 +833,13 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   position: relative;
 }
 
-.emotion-0 h2:first-child,
-.emotion-0 h1:first-child,
-.emotion-0 h1:first-child + h2,
-.emotion-0 h3:first-child,
-.emotion-0 h4:first-child,
-.emotion-0 h5:first-child,
-.emotion-0 h6:first-child {
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
@@ -850,35 +902,35 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 body > h2:first-child {
+.emotion-0 body > h2:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child {
+.emotion-0 body > h1:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child + h2 {
+.emotion-0 body > h1:first-of-type + h2 {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h3:first-child,
-.emotion-0 body > h4:first-child,
-.emotion-0 body > h5:first-child,
-.emotion-0 body > h6:first-child {
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 a:first-child h1,
-.emotion-0 a:first-child h2,
-.emotion-0 a:first-child h3,
-.emotion-0 a:first-child h4,
-.emotion-0 a:first-child h5,
-.emotion-0 a:first-child h6 {
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
   margin-top: 0;
   padding-top: 0;
 }
@@ -901,8 +953,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding-left: 30px;
 }
 
-.emotion-0 ul :first-child,
-.emotion-0 ol :first-child {
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
   margin-top: 0;
 }
 
@@ -923,11 +975,11 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   margin: 15px 0 5px;
 }
 
-.emotion-0 dl dt:first-child {
+.emotion-0 dl dt:first-of-type {
   padding: 0;
 }
 
-.emotion-0 dl dt > :first-child {
+.emotion-0 dl dt > :first-of-type {
   margin-top: 0;
 }
 
@@ -940,7 +992,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0 15px;
 }
 
-.emotion-0 dl dd > :first-child {
+.emotion-0 dl dd > :first-of-type {
   margin-top: 0;
 }
 
@@ -954,7 +1006,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   color: #666666;
 }
 
-.emotion-0 blockquote > :first-child {
+.emotion-0 blockquote > :first-of-type {
   margin-top: 0;
 }
 
@@ -974,7 +1026,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 table tr:nth-child(2n) {
+.emotion-0 table tr:nth-of-type(2n) {
   background-color: #F8F8F8;
 }
 
@@ -993,8 +1045,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 6px 13px;
 }
 
-.emotion-0 table tr th :first-child,
-.emotion-0 table tr td :first-child {
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
   margin-top: 0;
 }
 
@@ -1111,15 +1163,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   <div
     class="emotion-0"
   >
-    <p>
-      Wrap your components in 
-      <code>
-        DocumentFormatting
-      </code>
-       to get text styles for body content
-    </p>
     <h1>
-      h1 Heading 😎
+      h1 Heading
     </h1>
     <h2>
       h2 Heading
@@ -1433,208 +1478,892 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
         title="The Stormtroopocat"
       />
     </p>
-    <p>
-      Like links, Images also have a footnote style syntax
-    </p>
-    <p>
-      <img
-        alt="Alt text"
-        src="https://octodex.github.com/images/dojocat.jpg"
-        title="The Dojocat"
-      />
-    </p>
-    <p>
-      With a reference later in the document defining the URL location:
-    </p>
-    <h2>
-      Plugins
-    </h2>
-    <p>
-      The killer feature of 
-      <code>
-        markdown-it
-      </code>
-       is very effective support of
-      <a
-        href="https://www.npmjs.org/browse/keyword/markdown-it-plugin"
-      >
-        syntax plugins
-      </a>
-      .
-    </p>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-emoji"
-      >
-        Emojies
-      </a>
-    </h3>
-    <blockquote>
-      <p>
-        Classic markup: 😉 :crush: 😢 :tear: 😆 😋
-      </p>
-      <p>
-        Shortcuts (emoticons): 😃 😦 😎 😉
-      </p>
-    </blockquote>
-    <p>
-      see 
-      <a
-        href="https://github.com/markdown-it/markdown-it-emoji#change-output"
-      >
-        how to change output
-      </a>
-       with twemoji.
-    </p>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-sub"
-      >
-        Subscript
-      </a>
-       / 
-      <a
-        href="https://github.com/markdown-it/markdown-it-sup"
-      >
-        Superscript
-      </a>
-    </h3>
-    <ul>
-      <li>
-        19
-        <sup>
-          th
-        </sup>
-      </li>
-      <li>
-        H
-        <sub>
-          2
-        </sub>
-        O
-      </li>
-    </ul>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-deflist"
-      >
-        Definition lists
-      </a>
-    </h3>
-    <dl>
-      <dt>
-        Term 1
-      </dt>
-      <dd>
-        <p>
-          Definition 1 with lazy continuation.
-        </p>
-      </dd>
-      <dt>
-        Term 2 with 
-        <em>
-          inline markup
-        </em>
-      </dt>
-      <dd>
-        <p>
-          Definition 2
-        </p>
-        <pre>
-          <code>
-             some code, part of Definition 2
-          </code>
-        </pre>
-        <p>
-          Third paragraph of definition 2.
-        </p>
-      </dd>
-    </dl>
-    <p>
-      <em>
-        Compact style:
-      </em>
-    </p>
-    <dl>
-      <dt>
-        Term 1
-      </dt>
-      <dd>
-        Definition 1
-      </dd>
-      <dt>
-        Term 2
-      </dt>
-      <dd>
-        Definition 2a
-      </dd>
-      <dd>
-        Definition 2b
-      </dd>
-    </dl>
-    <p>
-      <em>
-        Compact style:
-      </em>
-    </p>
-    <dl>
-      <dt>
-        Term 1
-      </dt>
-      <dd>
-        Definition 1
-      </dd>
-      <dt>
-        Term 2
-      </dt>
-      <dd>
-        Definition 2a
-      </dd>
-      <dd>
-        Definition 2b
-      </dd>
-    </dl>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-abbr"
-      >
-        Abbreviations
-      </a>
-    </h3>
-    <p>
-      This is 
-      <abbr
-        title="Hyper Text Markup Language"
-      >
-        HTML
-      </abbr>
-       abbreviation example.
-    </p>
-    <p>
-      It converts “
-      <abbr
-        title="Hyper Text Markup Language"
-      >
-        HTML
-      </abbr>
-      ”, but keep intact partial entries like “xxxHTMLyyy” and so on.
-    </p>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-container"
-      >
-        Custom containers
-      </a>
-    </h3>
-    <div
-      class="warning"
-    >
-      <p>
-        <em>
-          here be dragons
-        </em>
-      </p>
-    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|DocumentFormatting withMarkdown 1`] = `
+.emotion-0 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emotion-0 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-0 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-0 h3 {
+  font-size: 20px;
+}
+
+.emotion-0 h4 {
+  font-size: 16px;
+}
+
+.emotion-0 h5 {
+  font-size: 14px;
+}
+
+.emotion-0 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-0 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-0 pre pre,
+.emotion-0 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-0 pre pre code,
+.emotion-0 pre.hljs code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-0 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-0 pre code,
+.emotion-0 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-0 body > *:first-of-type {
+  margin-top: 0 !important;
+}
+
+.emotion-0 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-0 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 a.absent {
+  color: #cc0000;
+}
+
+.emotion-0 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-0 h1,
+.emotion-0 h2,
+.emotion-0 h3,
+.emotion-0 h4,
+.emotion-0 h5,
+.emotion-0 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1:hover a.anchor,
+.emotion-0 h2:hover a.anchor,
+.emotion-0 h3:hover a.anchor,
+.emotion-0 h4:hover a.anchor,
+.emotion-0 h5:hover a.anchor,
+.emotion-0 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 h1 tt,
+.emotion-0 h1 code {
+  font-size: inherit;
+}
+
+.emotion-0 h2 tt,
+.emotion-0 h2 code {
+  font-size: inherit;
+}
+
+.emotion-0 h3 tt,
+.emotion-0 h3 code {
+  font-size: inherit;
+}
+
+.emotion-0 h4 tt,
+.emotion-0 h4 code {
+  font-size: inherit;
+}
+
+.emotion-0 h5 tt,
+.emotion-0 h5 code {
+  font-size: inherit;
+}
+
+.emotion-0 h6 tt,
+.emotion-0 h6 code {
+  font-size: inherit;
+}
+
+.emotion-0 p,
+.emotion-0 blockquote,
+.emotion-0 ul,
+.emotion-0 ol,
+.emotion-0 dl,
+.emotion-0 li,
+.emotion-0 table,
+.emotion-0 pre {
+  margin: 15px 0;
+}
+
+.emotion-0 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-0 body > h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1 p,
+.emotion-0 h2 p,
+.emotion-0 h3 p,
+.emotion-0 h4 p,
+.emotion-0 h5 p,
+.emotion-0 h6 p {
+  margin-top: 0;
+}
+
+.emotion-0 li p.first {
+  display: inline-block;
+}
+
+.emotion-0 ul,
+.emotion-0 ol {
+  padding-left: 30px;
+}
+
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 ul :last-child,
+.emotion-0 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl {
+  padding: 0;
+}
+
+.emotion-0 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-0 dl dt:first-of-type {
+  padding: 0;
+}
+
+.emotion-0 dl dt > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-0 dl dd > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-0 blockquote > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-0 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 table tr:nth-of-type(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-0 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 table tr th :last-child,
+.emotion-0 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 img {
+  max-width: 100%;
+}
+
+.emotion-0 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-0 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-0 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-0 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-0 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-0 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-0 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-0 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-0 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-0 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-0 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-0 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-0 code,
+.emotion-0 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+}
+
+.emotion-0 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emotion-0 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-0 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-0 h3 {
+  font-size: 20px;
+}
+
+.emotion-0 h4 {
+  font-size: 16px;
+}
+
+.emotion-0 h5 {
+  font-size: 14px;
+}
+
+.emotion-0 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-0 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-0 pre pre,
+.emotion-0 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-0 pre pre code,
+.emotion-0 pre.hljs code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-0 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-0 pre code,
+.emotion-0 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-0 body > *:first-of-type {
+  margin-top: 0 !important;
+}
+
+.emotion-0 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-0 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 a.absent {
+  color: #cc0000;
+}
+
+.emotion-0 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-0 h1,
+.emotion-0 h2,
+.emotion-0 h3,
+.emotion-0 h4,
+.emotion-0 h5,
+.emotion-0 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1:hover a.anchor,
+.emotion-0 h2:hover a.anchor,
+.emotion-0 h3:hover a.anchor,
+.emotion-0 h4:hover a.anchor,
+.emotion-0 h5:hover a.anchor,
+.emotion-0 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 h1 tt,
+.emotion-0 h1 code {
+  font-size: inherit;
+}
+
+.emotion-0 h2 tt,
+.emotion-0 h2 code {
+  font-size: inherit;
+}
+
+.emotion-0 h3 tt,
+.emotion-0 h3 code {
+  font-size: inherit;
+}
+
+.emotion-0 h4 tt,
+.emotion-0 h4 code {
+  font-size: inherit;
+}
+
+.emotion-0 h5 tt,
+.emotion-0 h5 code {
+  font-size: inherit;
+}
+
+.emotion-0 h6 tt,
+.emotion-0 h6 code {
+  font-size: inherit;
+}
+
+.emotion-0 p,
+.emotion-0 blockquote,
+.emotion-0 ul,
+.emotion-0 ol,
+.emotion-0 dl,
+.emotion-0 li,
+.emotion-0 table,
+.emotion-0 pre {
+  margin: 15px 0;
+}
+
+.emotion-0 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-0 body > h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1 p,
+.emotion-0 h2 p,
+.emotion-0 h3 p,
+.emotion-0 h4 p,
+.emotion-0 h5 p,
+.emotion-0 h6 p {
+  margin-top: 0;
+}
+
+.emotion-0 li p.first {
+  display: inline-block;
+}
+
+.emotion-0 ul,
+.emotion-0 ol {
+  padding-left: 30px;
+}
+
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 ul :last-child,
+.emotion-0 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl {
+  padding: 0;
+}
+
+.emotion-0 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-0 dl dt:first-of-type {
+  padding: 0;
+}
+
+.emotion-0 dl dt > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-0 dl dd > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-0 blockquote > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-0 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 table tr:nth-of-type(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-0 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 table tr th :last-child,
+.emotion-0 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 img {
+  max-width: 100%;
+}
+
+.emotion-0 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-0 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-0 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-0 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-0 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-0 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-0 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-0 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-0 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-0 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-0 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-0 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-0 code,
+.emotion-0 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+}
+
+<div
+  style="width:600px;margin:3rem auto;padding:40px 20px;background:white"
+>
+  <div
+    class="emotion-0"
+  >
+    <h1>
+      HTML Mock
+    </h1>
   </div>
 </div>
 `;
@@ -1643,7 +2372,7 @@ exports[`Storyshots Basics|Placeholder singleChild 1`] = `
 .emotion-1 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -1654,7 +2383,7 @@ exports[`Storyshots Basics|Placeholder singleChild 1`] = `
 .emotion-1 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -1674,10 +2403,10 @@ exports[`Storyshots Basics|Placeholder singleChild 1`] = `
 `;
 
 exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
-.emotion-2 {
+.emotion-4 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -1686,18 +2415,102 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 }
 
 .emotion-2 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-2 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-2:hover,
+.emotion-2:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-2:hover svg path,
+.emotion-2:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-2:active {
+  color: #028ee6;
+}
+
+.emotion-2:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-2 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-4 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
 .emotion-0 {
   font-weight: 700;
+}
+
+.emotion-2 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-2 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-2:hover,
+.emotion-2:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-2:hover svg path,
+.emotion-2:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-2:active {
+  color: #028ee6;
+}
+
+.emotion-2:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-2 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
 }
 
 <div
-  class="emotion-2"
+  class="emotion-4"
 >
   <div
     class="emotion-0"
@@ -1705,13 +2518,18 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
     This has two children, the first bold
   </div>
   <div
-    class="emotion-1"
+    class="emotion-3"
   >
     The second normal weight. Here's a 
     <a
+      class="emotion-2"
       href="https://storybook.js.org"
     >
-      link
+      <span
+        class="emotion-1"
+      >
+        link
+      </span>
     </a>
   </div>
 </div>
@@ -1746,43 +2564,6 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-0 svg {
@@ -1794,6 +2575,10 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   margin-top: -2px;
   margin-bottom: -2px;
   pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
 }
 
 .emotion-0 {
@@ -1824,43 +2609,6 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-0 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-0 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
 }
 
 .emotion-0 svg {
@@ -1872,6 +2620,10 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   margin-top: -2px;
   margin-bottom: -2px;
   pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
 }
 
 <button
@@ -1889,7 +2641,19 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
     "hierarchySeparator": {},
     "name": "Storybook"
   },
-  "a11y": {},
+  "a11y": {
+    "configure": {},
+    "options": {
+      "checks": {
+        "color-contrast": {
+          "options": {
+            "noScroll": true
+          }
+        }
+      },
+      "restoreScroll": true
+    }
+  },
   "viewports": {
     "iphone5": {
       "name": "iPhone 5",
@@ -2036,12 +2800,55 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
       "type": "tablet"
     }
   },
+  "backgrounds": [
+    {
+      "name": "storybook app",
+      "value": "#F6F9FC",
+      "default": true
+    },
+    {
+      "name": "light",
+      "value": "#eeeeee"
+    },
+    {
+      "name": "dark",
+      "value": "#222222"
+    }
+  ],
   "globalParameter": "globalParameter",
   "chapterParameter": "chapterParameter",
   "storyParameter": "storyParameter",
   "decoratorParameter": "decoratorParameter"
 }
 </pre>
+`;
+
+exports[`Storyshots Core|Scroll story with 100vh padding 1 1`] = `
+<div>
+  <pre>
+    START, when switching stories, you should be able to read this at the top of the page
+  </pre>
+  <div
+    style="height:100vh"
+  />
+  <pre>
+    END, this text should be below the scroll "fold" and therefore only be readable after scrolling
+  </pre>
+</div>
+`;
+
+exports[`Storyshots Core|Scroll story with 100vh padding 2 1`] = `
+<div>
+  <pre>
+    START, when switching stories, you should be able to read this at the top of the page
+  </pre>
+  <div
+    style="height:100vh"
+  />
+  <pre>
+    END, this text should be below the scroll "fold" and therefore only be readable after scrolling
+  </pre>
+</div>
 `;
 
 exports[`Storyshots UI|Notifications/NotificationItem longText 1`] = `
@@ -2052,9 +2859,9 @@ exports[`Storyshots UI|Notifications/NotificationItem longText 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2066,9 +2873,9 @@ exports[`Storyshots UI|Notifications/NotificationItem longText 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2096,9 +2903,9 @@ exports[`Storyshots UI|Notifications/NotificationItem simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2110,9 +2917,9 @@ exports[`Storyshots UI|Notifications/NotificationItem simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2140,9 +2947,9 @@ exports[`Storyshots UI|Notifications/NotificationItem withLink 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2154,9 +2961,9 @@ exports[`Storyshots UI|Notifications/NotificationItem withLink 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2185,9 +2992,9 @@ exports[`Storyshots UI|Notifications/NotificationList all 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2207,9 +3014,9 @@ exports[`Storyshots UI|Notifications/NotificationList all 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2260,32 +3067,6 @@ exports[`Storyshots UI|Notifications/NotificationList all 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|Notifications/NotificationList empty 1`] = `
-.emotion-0 > * + * {
-  margin-top: 10px;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0 > * + * {
-  margin-top: 10px;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-<div
-  style="width:240px;margin:1rem"
->
-  <div
-    class="emotion-0"
-  />
-</div>
-`;
-
 exports[`Storyshots UI|Notifications/NotificationList single 1`] = `
 .emotion-1 {
   display: block;
@@ -2294,9 +3075,9 @@ exports[`Storyshots UI|Notifications/NotificationList single 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2316,9 +3097,9 @@ exports[`Storyshots UI|Notifications/NotificationList single 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2413,9 +3194,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 .emotion-1:hover,
 .emotion-1:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -2425,9 +3203,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -2497,9 +3272,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 .emotion-1:hover,
 .emotion-1:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -2509,9 +3281,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -2590,7 +3359,7 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 `;
 
 exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
-.emotion-99 {
+.emotion-100 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -2603,6 +3372,76 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   flex-direction: column;
 }
 
+.emotion-8 {
+  color: #999999;
+  height: 40px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+}
+
+.emotion-8:hover {
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: 0;
+  -moz-scrollbar-width: 0;
+  -ms-scrollbar-width: 0;
+  scrollbar-width: 0;
+}
+
+.emotion-8::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+  display: none;
+}
+
+.emotion-8:hover::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  display: block;
+}
+
+.emotion-8::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-8::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-8::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
 .emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2612,14 +3451,9 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
-  color: #999999;
-  height: 40px;
   position: relative;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  white-space: nowrap;
+  height: 40px;
 }
 
 .emotion-2 {
@@ -2627,9 +3461,12 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .emotion-2 > * {
@@ -2637,14 +3474,10 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-1 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
+  overflow: hidden;
 }
 
-.emotion-1:first-child {
+.emotion-1:first-of-type {
   margin-left: 0;
 }
 
@@ -2698,10 +3531,41 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 30px;
 }
 
 .emotion-6 > * {
   margin-right: 15px;
+}
+
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-99 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  position: relative;
+  overflow: auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
 }
 
 .emotion-5 {
@@ -2727,31 +3591,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 15px;
 }
 
-.emotion-4 {
-  shape-rendering: inherit;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  display: block;
-}
-
-.emotion-3 {
-  fill: currentColor;
-}
-
-.emotion-98 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-  position: relative;
-  overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
-}
-
-.emotion-95 {
+.emotion-96 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2762,11 +3602,11 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   font-weight: 700;
 }
 
-.emotion-95 > * + * {
+.emotion-96 > * + * {
   margin-left: 20px;
 }
 
-.emotion-90 {
+.emotion-91 {
   display: inline-block;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
@@ -2776,36 +3616,30 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   color: #999999;
 }
 
-.emotion-90 svg path {
+.emotion-91 svg path {
   fill: #1EA7FD;
 }
 
-.emotion-90:hover,
-.emotion-90:focus {
+.emotion-91:hover,
+.emotion-91:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
-.emotion-90:hover svg path,
-.emotion-90:focus svg path {
+.emotion-91:hover svg path,
+.emotion-91:focus svg path {
   fill: #0297f5;
 }
 
-.emotion-90:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+.emotion-91:active {
   color: #028ee6;
 }
 
-.emotion-90:active svg path {
+.emotion-91:active svg path {
   fill: #028ee6;
 }
 
-.emotion-90 svg {
+.emotion-91 svg {
   display: inline-block;
   height: 1em;
   width: 1em;
@@ -2815,38 +3649,38 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   margin-right: 0.4em;
 }
 
-.emotion-90 svg path {
+.emotion-91 svg path {
   fill: #999999;
 }
 
-.emotion-90:hover {
+.emotion-91:hover {
   color: #666666;
 }
 
-.emotion-90:hover svg path {
+.emotion-91:hover svg path {
   fill: #666666;
 }
 
-.emotion-90:active {
+.emotion-91:active {
   color: #444444;
 }
 
-.emotion-90:active svg path {
+.emotion-91:active svg path {
   fill: #444444;
 }
 
-.emotion-97 {
+.emotion-98 {
   display: block;
 }
 
-.emotion-96 {
+.emotion-97 {
   font-size: 14px;
   padding: 3rem 20px;
   max-width: 600px;
   margin: 0 auto;
 }
 
-.emotion-8 {
+.emotion-9 {
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: 900;
@@ -2860,14 +3694,14 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: flex;
 }
 
-.emotion-87 {
+.emotion-88 {
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: minmax(auto,auto);
   margin-bottom: 20px;
 }
 
-.emotion-11 {
+.emotion-12 {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
@@ -2876,30 +3710,30 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   grid-template-columns: 1fr 1fr 12px;
 }
 
-.emotion-11 > *:last-of-type {
+.emotion-12 > *:last-of-type {
   grid-column: 2 / 2;
   justify-self: flex-end;
   grid-row: 1;
 }
 
-.emotion-9 {
+.emotion-10 {
   font-weight: 700;
 }
 
-.emotion-16 {
+.emotion-17 {
   padding: 6px 0;
   border-top: 1px solid rgba(0,0,0,.1);
   display: grid;
   grid-template-columns: 1fr 1fr 0px;
 }
 
-.emotion-12 {
+.emotion-13 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
 }
 
-.emotion-13 {
+.emotion-14 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -2934,36 +3768,36 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   text-align: center;
 }
 
-.emotion-13:focus {
+.emotion-14:focus {
   box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-.emotion-13[disabled] {
+.emotion-14[disabled] {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.emotion-13:-webkit-autofill {
+.emotion-14:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
 }
 
-.emotion-13::-webkit-input-placeholder {
+.emotion-14::-webkit-input-placeholder {
   color: #999999;
 }
 
-.emotion-13::-moz-placeholder {
+.emotion-14::-moz-placeholder {
   color: #999999;
 }
 
-.emotion-13:-ms-input-placeholder {
+.emotion-14:-ms-input-placeholder {
   color: #999999;
 }
 
-.emotion-13::placeholder {
+.emotion-14::placeholder {
   color: #999999;
 }
 
-.emotion-15 {
+.emotion-16 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
@@ -2982,7 +3816,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 14px;
 }
 
-.emotion-88 {
+.emotion-89 {
   border: 0;
   border-radius: 3em;
   cursor: pointer;
@@ -3010,16 +3844,11 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #FAFBFC;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3028,39 +3857,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   z-index: 2;
 }
 
-.emotion-88:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-88:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-88:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-88 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-88 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
-.emotion-88 svg {
+.emotion-89 svg {
   display: inline-block;
   height: 14px;
   width: 14px;
@@ -3071,33 +3868,29 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   pointer-events: none;
 }
 
-.emotion-88 svg path {
-  fill: #333333;
+.emotion-89 svg path {
+  fill: currentColor;
 }
 
-.emotion-88:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+.emotion-89:hover {
+  background: #f2f2f2;
 }
 
-.emotion-88:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+.emotion-89:active {
+  background: #FFFFFF;
 }
 
-.emotion-88:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+.emotion-89:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
-.emotion-88:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-88:hover {
+.emotion-89:hover {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
 }
 
-.emotion-99 {
+.emotion-100 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -3110,6 +3903,76 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   flex-direction: column;
 }
 
+.emotion-8 {
+  color: #999999;
+  height: 40px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+}
+
+.emotion-8:hover {
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: 0;
+  -moz-scrollbar-width: 0;
+  -ms-scrollbar-width: 0;
+  scrollbar-width: 0;
+}
+
+.emotion-8::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+  display: none;
+}
+
+.emotion-8:hover::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  display: block;
+}
+
+.emotion-8::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-8::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-8::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
 .emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3119,14 +3982,9 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
-  color: #999999;
-  height: 40px;
   position: relative;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  white-space: nowrap;
+  height: 40px;
 }
 
 .emotion-2 {
@@ -3134,9 +3992,12 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .emotion-2 > * {
@@ -3144,14 +4005,10 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-1 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
+  overflow: hidden;
 }
 
-.emotion-1:first-child {
+.emotion-1:first-of-type {
   margin-left: 0;
 }
 
@@ -3205,10 +4062,41 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 30px;
 }
 
 .emotion-6 > * {
   margin-right: 15px;
+}
+
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-99 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  position: relative;
+  overflow: auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
 }
 
 .emotion-5 {
@@ -3234,31 +4122,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 15px;
 }
 
-.emotion-4 {
-  shape-rendering: inherit;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  display: block;
-}
-
-.emotion-3 {
-  fill: currentColor;
-}
-
-.emotion-98 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-  position: relative;
-  overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
-}
-
-.emotion-95 {
+.emotion-96 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3269,11 +4133,11 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   font-weight: 700;
 }
 
-.emotion-95 > * + * {
+.emotion-96 > * + * {
   margin-left: 20px;
 }
 
-.emotion-90 {
+.emotion-91 {
   display: inline-block;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
@@ -3283,36 +4147,30 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   color: #999999;
 }
 
-.emotion-90 svg path {
+.emotion-91 svg path {
   fill: #1EA7FD;
 }
 
-.emotion-90:hover,
-.emotion-90:focus {
+.emotion-91:hover,
+.emotion-91:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
-.emotion-90:hover svg path,
-.emotion-90:focus svg path {
+.emotion-91:hover svg path,
+.emotion-91:focus svg path {
   fill: #0297f5;
 }
 
-.emotion-90:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+.emotion-91:active {
   color: #028ee6;
 }
 
-.emotion-90:active svg path {
+.emotion-91:active svg path {
   fill: #028ee6;
 }
 
-.emotion-90 svg {
+.emotion-91 svg {
   display: inline-block;
   height: 1em;
   width: 1em;
@@ -3322,38 +4180,38 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   margin-right: 0.4em;
 }
 
-.emotion-90 svg path {
+.emotion-91 svg path {
   fill: #999999;
 }
 
-.emotion-90:hover {
+.emotion-91:hover {
   color: #666666;
 }
 
-.emotion-90:hover svg path {
+.emotion-91:hover svg path {
   fill: #666666;
 }
 
-.emotion-90:active {
+.emotion-91:active {
   color: #444444;
 }
 
-.emotion-90:active svg path {
+.emotion-91:active svg path {
   fill: #444444;
 }
 
-.emotion-97 {
+.emotion-98 {
   display: block;
 }
 
-.emotion-96 {
+.emotion-97 {
   font-size: 14px;
   padding: 3rem 20px;
   max-width: 600px;
   margin: 0 auto;
 }
 
-.emotion-8 {
+.emotion-9 {
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: 900;
@@ -3367,14 +4225,14 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: flex;
 }
 
-.emotion-87 {
+.emotion-88 {
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: minmax(auto,auto);
   margin-bottom: 20px;
 }
 
-.emotion-11 {
+.emotion-12 {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
@@ -3383,30 +4241,30 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   grid-template-columns: 1fr 1fr 12px;
 }
 
-.emotion-11 > *:last-of-type {
+.emotion-12 > *:last-of-type {
   grid-column: 2 / 2;
   justify-self: flex-end;
   grid-row: 1;
 }
 
-.emotion-9 {
+.emotion-10 {
   font-weight: 700;
 }
 
-.emotion-16 {
+.emotion-17 {
   padding: 6px 0;
   border-top: 1px solid rgba(0,0,0,.1);
   display: grid;
   grid-template-columns: 1fr 1fr 0px;
 }
 
-.emotion-12 {
+.emotion-13 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
 }
 
-.emotion-13 {
+.emotion-14 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -3441,36 +4299,36 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   text-align: center;
 }
 
-.emotion-13:focus {
+.emotion-14:focus {
   box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-.emotion-13[disabled] {
+.emotion-14[disabled] {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.emotion-13:-webkit-autofill {
+.emotion-14:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
 }
 
-.emotion-13::-webkit-input-placeholder {
+.emotion-14::-webkit-input-placeholder {
   color: #999999;
 }
 
-.emotion-13::-moz-placeholder {
+.emotion-14::-moz-placeholder {
   color: #999999;
 }
 
-.emotion-13:-ms-input-placeholder {
+.emotion-14:-ms-input-placeholder {
   color: #999999;
 }
 
-.emotion-13::placeholder {
+.emotion-14::placeholder {
   color: #999999;
 }
 
-.emotion-15 {
+.emotion-16 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
@@ -3489,7 +4347,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 14px;
 }
 
-.emotion-88 {
+.emotion-89 {
   border: 0;
   border-radius: 3em;
   cursor: pointer;
@@ -3517,16 +4375,11 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background: #FAFBFC;
+  background: #fafafa;
   color: #333333;
   box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
-  display: inline;
   border-radius: 4px;
+  display: inline;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3535,39 +4388,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   z-index: 2;
 }
 
-.emotion-88:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-88:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-88:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-88 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-88 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
-}
-
-.emotion-88 svg {
+.emotion-89 svg {
   display: inline-block;
   height: 14px;
   width: 14px;
@@ -3578,121 +4399,123 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   pointer-events: none;
 }
 
-.emotion-88 svg path {
-  fill: #333333;
+.emotion-89 svg path {
+  fill: currentColor;
 }
 
-.emotion-88:hover {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+.emotion-89:hover {
+  background: #f2f2f2;
 }
 
-.emotion-88:active {
-  box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset;
+.emotion-89:active {
+  background: #FFFFFF;
 }
 
-.emotion-88:focus {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
+.emotion-89:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
-.emotion-88:focus:hover {
-  box-shadow: #1EA7FD 0 0 0 1px inset;
-}
-
-.emotion-88:hover {
+.emotion-89:hover {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
 }
 
 <div
-  class="emotion-99"
+  class="emotion-100"
+  title="wrapper"
 >
   <div
-    class="emotion-7"
+    class="emotion-8"
+    title="flexbar"
   >
     <div
-      class="emotion-2"
+      class="emotion-7"
     >
       <div
-        class="emotion-1"
-        role="tablist"
+        class="emotion-2"
+      >
+        <div
+          class="emotion-1"
+          role="tablist"
+        >
+          <button
+            class="emotion-0"
+            role="tab"
+            type="button"
+          >
+            Keyboard Shortcuts
+          </button>
+        </div>
+      </div>
+      <div
+        class="emotion-6"
       >
         <button
-          class="emotion-0"
-          role="tab"
-          type="button"
+          class="emotion-5"
         >
-          Keyboard Shortcuts
+          <svg
+            class="emotion-4"
+            viewBox="0 0 1024 1024"
+          >
+            <path
+              class="emotion-3"
+              d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+            />
+          </svg>
         </button>
       </div>
     </div>
-    <div
-      class="emotion-6"
-    >
-      <button
-        class="emotion-5"
-      >
-        <svg
-          class="emotion-4"
-          viewBox="0 0 1024 1024"
-        >
-          <path
-            class="emotion-3"
-            d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
-          />
-        </svg>
-      </button>
-    </div>
   </div>
   <div
-    class="emotion-98"
+    class="emotion-99"
   >
     <div
-      class="emotion-97"
+      class="emotion-98"
       role="tabpanel"
     >
       <div
-        class="emotion-96"
+        class="emotion-97"
       >
         <header
-          class="emotion-8"
+          class="emotion-9"
         >
           Keyboard shortcuts
         </header>
         <div
-          class="emotion-87"
+          class="emotion-88"
         >
           <div
-            class="emotion-11"
+            class="emotion-12"
           >
             <div
-              class="emotion-9"
+              class="emotion-10"
             >
               Commands
             </div>
             <div
-              class="emotion-9"
+              class="emotion-10"
             >
               Shortcut
             </div>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Go full screen
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="F"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3702,72 +4525,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Toggle addons
             </div>
             <input
-              class="modalInput emotion-13"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="S"
-            />
-            <svg
-              class="emotion-15"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
-              />
-            </svg>
-          </div>
-          <div
-            class="emotion-16"
-          >
-            <div
-              class="emotion-12"
-            >
-              Toggle addons orientation
-            </div>
-            <input
-              class="modalInput emotion-13"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="D"
-            />
-            <svg
-              class="emotion-15"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
-              />
-            </svg>
-          </div>
-          <div
-            class="emotion-16"
-          >
-            <div
-              class="emotion-12"
-            >
-              Toggle sidebar
-            </div>
-            <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="A"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3777,22 +4550,72 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
+            >
+              Toggle addons orientation
+            </div>
+            <input
+              class="modalInput emotion-14"
+              placeholder="Type keys"
+              readonly=""
+              spellcheck="false"
+              value="D"
+            />
+            <svg
+              class="emotion-16"
+              viewBox="0 0 1024 1024"
+            >
+              <path
+                class="emotion-3"
+                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              />
+            </svg>
+          </div>
+          <div
+            class="emotion-17"
+          >
+            <div
+              class="emotion-13"
+            >
+              Toggle sidebar
+            </div>
+            <input
+              class="modalInput emotion-14"
+              placeholder="Type keys"
+              readonly=""
+              spellcheck="false"
+              value="S"
+            />
+            <svg
+              class="emotion-16"
+              viewBox="0 0 1024 1024"
+            >
+              <path
+                class="emotion-3"
+                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              />
+            </svg>
+          </div>
+          <div
+            class="emotion-17"
+          >
+            <div
+              class="emotion-13"
             >
               Toggle canvas toolbar
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="T"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3802,22 +4625,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Focus search
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="/"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3827,22 +4650,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Focus sidebar
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="1"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3852,22 +4675,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Focus canvas
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="2"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3877,22 +4700,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Focus addons
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="3"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3902,22 +4725,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Previous component
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="alt ↑"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3927,22 +4750,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Next component
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="alt ↓"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3952,22 +4775,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Previous story
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="alt ←"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3977,22 +4800,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Next story
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="alt →"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -4002,22 +4825,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Go to shortcuts page
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="⌃ ⇧​ ,"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -4027,22 +4850,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Go to about page
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value=","
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -4053,40 +4876,40 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
           </div>
         </div>
         <button
-          class="emotion-88"
+          class="emotion-89"
           id="restoreDefaultsHotkeys"
         >
           Restore defaults
         </button>
         <div
-          class="emotion-95"
+          class="emotion-96"
         >
           <a
-            class="emotion-90"
+            class="emotion-91"
             href="https://storybook.js.org"
           >
             <span
-              class="emotion-89"
+              class="emotion-90"
             >
               Docs
             </span>
           </a>
           <a
-            class="emotion-90"
+            class="emotion-91"
             href="https://github.com/storybooks/storybook"
           >
             <span
-              class="emotion-89"
+              class="emotion-90"
             >
               GitHub
             </span>
           </a>
           <a
-            class="emotion-90"
+            class="emotion-91"
             href="https://storybook.js.org/support"
           >
             <span
-              class="emotion-89"
+              class="emotion-90"
             >
               Support
             </span>
@@ -4105,13 +4928,15 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 
 .emotion-16 {
   min-width: 180px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .emotion-5 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -4129,10 +4954,6 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-5 + .emotion-5 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-5 > * + * {
@@ -4177,7 +4998,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 }
 
 .emotion-3 {
-  color: #444444;
+  color: #333333;
 }
 
 .emotion-6 {
@@ -4194,13 +5015,15 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 
 .emotion-16 {
   min-width: 180px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .emotion-5 {
   font-size: 12px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -4218,10 +5041,6 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-5 + .emotion-5 {
-  border-top: 1px solid #EEEEEE;
 }
 
 .emotion-5 > * + * {
@@ -4266,7 +5085,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 }
 
 .emotion-3 {
-  color: #444444;
+  color: #333333;
 }
 
 .emotion-6 {
@@ -4411,9 +5230,9 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -4458,6 +5277,14 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+}
+
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
 }
 
 .emotion-1 {
@@ -4523,49 +5350,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -4579,23 +5370,22 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-8 {
@@ -4605,7 +5395,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -4846,9 +5636,9 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -4893,6 +5683,14 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+}
+
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
 }
 
 .emotion-1 {
@@ -4958,49 +5756,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -5014,23 +5776,22 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-8 {
@@ -5040,7 +5801,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -5254,7 +6015,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
           >
             <path
               d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
-              fill="#333"
+              fill="currentColor"
             />
             <mask
               fill="#fff"
@@ -5675,9 +6436,9 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5722,6 +6483,14 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+}
+
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
 }
 
 .emotion-1 {
@@ -5787,49 +6556,13 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -5843,23 +6576,22 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-14 {
@@ -5898,7 +6630,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-14 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-8 {
@@ -5964,17 +6697,13 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-13:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-13:hover > svg {
-  color: #444444;
 }
 
 .emotion-32 + section {
@@ -5991,10 +6720,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -ms-letter-spacing: 0.35em;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 11px;
   line-height: 24px;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   margin: 0 20px;
 }
 
@@ -6031,9 +6760,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-19:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -6044,7 +6775,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6092,6 +6823,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-21 {
@@ -6101,7 +6833,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6146,9 +6878,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-29:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -6174,7 +6908,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6231,9 +6965,9 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
-  background-color: rgba(50,53,71,0.97);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -6278,6 +7012,14 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+}
+
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
 }
 
 .emotion-1 {
@@ -6343,49 +7085,13 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -6399,23 +7105,22 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-14 {
@@ -6454,7 +7159,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-14 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-8 {
@@ -6520,17 +7226,13 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-13:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-13:hover > svg {
-  color: #444444;
 }
 
 .emotion-32 + section {
@@ -6547,10 +7249,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -ms-letter-spacing: 0.35em;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 11px;
   line-height: 24px;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   margin: 0 20px;
 }
 
@@ -6587,9 +7289,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-19:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -6600,7 +7304,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6648,6 +7352,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-21 {
@@ -6657,7 +7362,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6702,9 +7407,11 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-29:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -6730,7 +7437,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -6800,7 +7507,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
           >
             <path
               d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
-              fill="#333"
+              fill="currentColor"
             />
             <mask
               fill="#fff"
@@ -7097,6 +7804,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-weight: 700;
 }
 
+.emotion-0 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-4 {
   display: inline-block;
   cursor: pointer;
@@ -7130,49 +7845,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-3:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-3:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-3:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-3 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-3 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
+  padding: 7px;
 }
 
 .emotion-3 svg {
@@ -7186,23 +7865,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   pointer-events: none;
 }
 
+.emotion-3 svg path {
+  fill: currentColor;
+}
+
 .emotion-3 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-3 svg path {
-  fill: #666666;
-}
-
 .emotion-3:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-3:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-5 {
@@ -7237,6 +7915,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-weight: 700;
 }
 
+.emotion-0 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-4 {
   display: inline-block;
   cursor: pointer;
@@ -7270,49 +7956,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-3:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-3:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-3:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-3 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-3 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
+  padding: 7px;
 }
 
 .emotion-3 svg {
@@ -7326,23 +7976,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   pointer-events: none;
 }
 
+.emotion-3 svg path {
+  fill: currentColor;
+}
+
 .emotion-3 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-3 svg path {
-  fill: #666666;
-}
-
 .emotion-3:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-3:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-5 {
@@ -7366,7 +8015,64 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   <div
     class="emotion-0"
   >
-    custom brand
+    
+
+    <svg
+      height="64px"
+      version="1.1"
+      viewBox="0 0 64 64"
+      width="64px"
+      xlink="http://www.w3.org/1999/xlink"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+  
+      <a
+        href="https://storybook.js.org"
+      >
+        
+    
+        <g
+          fill="none"
+          fill-rule="evenodd"
+          id="Artboard"
+          stroke="none"
+          stroke-width="1"
+        >
+          
+      
+          <path
+            d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
+            fill="#FF4785"
+            fill-rule="nonzero"
+            id="path-1"
+          />
+          
+      
+          <path
+            d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
+            fill="#FFFFFF"
+            fill-rule="nonzero"
+            id="path9_fill-path"
+          />
+          
+      
+          <path
+            d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
+            fill="#FFFFFF"
+            id="Path"
+          />
+          
+    
+        </g>
+        
+  
+      </a>
+      
+
+    </svg>
+    
+
   </div>
   <div
     class="emotion-4"
@@ -7406,6 +8112,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-weight: 700;
 }
 
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-1 {
   display: block;
   color: inherit;
@@ -7484,49 +8198,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -7540,23 +8218,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-5:after {
@@ -7587,6 +8264,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-weight: 700;
 }
 
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-1 {
   display: block;
   color: inherit;
@@ -7665,49 +8350,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -7721,23 +8370,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-5:after {
@@ -7780,7 +8428,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
         >
           <path
             d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
-            fill="#333"
+            fill="currentColor"
           />
           <mask
             fill="#fff"
@@ -7843,6 +8491,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-weight: 700;
 }
 
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-1 {
   display: block;
   color: inherit;
@@ -7906,49 +8562,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -7962,23 +8582,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-7 {
@@ -8013,6 +8632,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-weight: 700;
 }
 
+.emotion-2 > * {
+  max-height: 32px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 .emotion-1 {
   display: block;
   color: inherit;
@@ -8076,49 +8703,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  padding: 7px;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #666666;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
-}
-
-.emotion-5:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-5:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5:hover {
-  box-shadow: rgba(0,0,0,.2) 0 2px 6px 0;
-}
-
-.emotion-5 > span {
-  -webkit-transform: scale3d(1,1,1) translate3d(0,0,0);
-  -ms-transform: scale3d(1,1,1) translate3d(0,0,0);
-  transform: scale3d(1,1,1) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  -webkit-transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  transition: transform 700ms cubic-bezier(0.175,0.885,0.335,1.05);
-  opacity: 1;
-}
-
-.emotion-5 [role="progressbar"] {
-  -webkit-transform: translate3d(0,100%,0);
-  -ms-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -8132,23 +8723,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   pointer-events: none;
 }
 
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
 .emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-5 svg path {
-  fill: #666666;
-}
-
 .emotion-5:hover {
-  box-shadow: #999999 0 0 0 1px inset;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
 .emotion-5:active {
-  background: #DDDDDD;
-  box-shadow: #DDDDDD 0 0 0 1px inset;
-  color: #333333;
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
 }
 
 .emotion-7 {
@@ -8195,7 +8785,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
         >
           <path
             d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
-            fill="#333"
+            fill="currentColor"
           />
           <mask
             fill="#fff"
@@ -8267,9 +8857,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8295,7 +8887,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8327,9 +8919,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8355,7 +8949,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8413,9 +9007,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8426,7 +9022,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8476,9 +9072,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8489,7 +9087,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8565,9 +9163,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8578,7 +9178,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8625,9 +9225,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8638,7 +9240,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8736,7 +9338,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8843,7 +9445,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8951,9 +9553,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -8964,7 +9568,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -8995,7 +9599,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9024,9 +9628,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-11:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9052,7 +9658,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9095,9 +9701,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-15:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9123,9 +9731,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 54px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-19:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9155,9 +9765,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9168,7 +9780,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9199,7 +9811,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9228,9 +9840,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-11:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9256,7 +9870,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9299,9 +9913,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-15:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9327,9 +9943,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   transition: background 75ms ease-out;
   padding-left: 54px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-19:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9463,9 +10081,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9476,7 +10096,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9524,9 +10144,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9537,7 +10159,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9596,7 +10218,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9643,6 +10265,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-1 {
@@ -9656,7 +10279,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9703,6 +10326,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 <div
@@ -9757,9 +10381,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9785,7 +10411,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9817,9 +10443,11 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-3:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -9845,7 +10473,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -9952,7 +10580,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
@@ -9961,15 +10589,11 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
   background: rgba(0,0,0,0.2);
 }
 
-.emotion-5:hover > svg {
-  color: #444444;
-}
-
 .emotion-6 {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
   border-bottom: 1px solid transparent;
-  border-bottom-color: #666666;
+  border-bottom-color: rgba(0,0,0,0.4);
   outline: 0;
   position: relative;
 }
@@ -10000,7 +10624,8 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #666666;
+  fill: currentColor;
+  opacity: 1;
 }
 
 .emotion-2 {
@@ -10078,7 +10703,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
@@ -10087,15 +10712,11 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
   background: rgba(0,0,0,0.2);
 }
 
-.emotion-5:hover > svg {
-  color: #444444;
-}
-
 .emotion-6 {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
   border-bottom: 1px solid transparent;
-  border-bottom-color: #666666;
+  border-bottom-color: rgba(0,0,0,0.4);
   outline: 0;
   position: relative;
 }
@@ -10126,11 +10747,12 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #666666;
+  fill: currentColor;
+  opacity: 1;
 }
 
 <div
-  style="width:240px;margin:1rem;padding:1rem;background:white"
+  style="width:240px;margin:1rem;padding:1rem;background:#999"
 >
   <form
     autocomplete="off"
@@ -10247,7 +10869,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
@@ -10256,15 +10878,11 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
   background: rgba(0,0,0,0.2);
 }
 
-.emotion-5:hover > svg {
-  color: #444444;
-}
-
 .emotion-6 {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
   border-bottom: 1px solid transparent;
-  border-bottom-color: #666666;
+  border-bottom-color: rgba(0,0,0,0.4);
   outline: 0;
   position: relative;
 }
@@ -10295,7 +10913,8 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #666666;
+  fill: currentColor;
+  opacity: 1;
 }
 
 .emotion-2 {
@@ -10373,7 +10992,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
@@ -10382,15 +11001,11 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
   background: rgba(0,0,0,0.2);
 }
 
-.emotion-5:hover > svg {
-  color: #444444;
-}
-
 .emotion-6 {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
   border-bottom: 1px solid transparent;
-  border-bottom-color: #666666;
+  border-bottom-color: rgba(0,0,0,0.4);
   outline: 0;
   position: relative;
 }
@@ -10421,11 +11036,12 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #666666;
+  fill: currentColor;
+  opacity: 1;
 }
 
 <div
-  style="width:240px;margin:1rem;padding:1rem;background:white"
+  style="width:240px;margin:1rem;padding:1rem;background:#999"
 >
   <form
     autocomplete="off"
@@ -10541,17 +11157,13 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-6 {
@@ -10589,7 +11201,8 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-2 {
@@ -10667,17 +11280,13 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-6 {
@@ -10715,11 +11324,12 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 <div
-  style="width:240px;margin:1rem;padding:1rem;background:white"
+  style="width:240px;margin:1rem;padding:1rem;background:#999"
 >
   <form
     autocomplete="off"
@@ -10763,7 +11373,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 .emotion-4 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -10775,7 +11385,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -10795,9 +11405,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 .emotion-2:hover,
 .emotion-2:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -10807,9 +11414,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 }
 
 .emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -10830,7 +11434,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 .emotion-4 {
   padding: 30px;
   text-align: center;
-  color: #666666;
+  color: #333333;
   font-size: 13px;
 }
 
@@ -10842,7 +11446,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -10862,9 +11466,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 .emotion-2:hover,
 .emotion-2:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -10874,9 +11475,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 }
 
 .emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -10981,7 +11579,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -11146,7 +11744,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   margin-top: 10px;
 }
 
-.emotion-69 > *:first-child {
+.emotion-69 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -11201,7 +11799,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -11366,7 +11964,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   margin-top: 10px;
 }
 
-.emotion-69 > *:first-child {
+.emotion-69 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -11752,7 +12350,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-0 {
@@ -11818,17 +12417,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-39 + section {
@@ -11872,9 +12467,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-10:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -11885,7 +12482,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -11916,7 +12513,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -11961,9 +12558,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-15:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -11989,7 +12588,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12032,9 +12631,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-30:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12042,7 +12643,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-top: 10px;
 }
 
-.emotion-41 > *:first-child {
+.emotion-41 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -12070,6 +12671,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-2 {
@@ -12120,7 +12722,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-0 {
@@ -12186,17 +12789,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-39 + section {
@@ -12240,9 +12839,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-10:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12253,7 +12854,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12284,7 +12885,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12329,9 +12930,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-15:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12357,7 +12960,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12400,9 +13003,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-30:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12410,7 +13015,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-top: 10px;
 }
 
-.emotion-41 > *:first-child {
+.emotion-41 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -12438,6 +13043,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 <div
@@ -12705,7 +13311,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-0 {
@@ -12771,17 +13378,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-24 + section {
@@ -12798,10 +13401,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -ms-letter-spacing: 0.35em;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 11px;
   line-height: 24px;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   margin: 0 20px;
 }
 
@@ -12838,9 +13441,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-11:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12851,7 +13456,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12899,6 +13504,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-13 {
@@ -12908,7 +13514,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -12953,9 +13559,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-21:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -12981,7 +13589,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -13006,7 +13614,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-top: 10px;
 }
 
-.emotion-40 > *:first-child {
+.emotion-40 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -13058,7 +13666,8 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
 .emotion-6 > svg path {
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  fill: #999999;
+  fill: currentColor;
+  opacity: 0.3;
 }
 
 .emotion-0 {
@@ -13124,17 +13733,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   display: block;
   height: 8px;
   width: 8px;
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
 
 .emotion-5:hover {
   background: rgba(0,0,0,0.2);
-}
-
-.emotion-5:hover > svg {
-  color: #444444;
 }
 
 .emotion-24 + section {
@@ -13151,10 +13756,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -ms-letter-spacing: 0.35em;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 11px;
   line-height: 24px;
-  color: #999999;
+  color: rgba(51,51,51,0.5);
   margin: 0 20px;
 }
 
@@ -13191,9 +13796,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-11:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -13204,7 +13811,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -13252,6 +13859,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   cursor: default;
   background: #1EA7FD;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .emotion-13 {
@@ -13261,7 +13869,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -13306,9 +13914,11 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
+  color: #333333;
 }
 
 .emotion-21:hover {
+  color: #333333;
   background: rgba(0,0,0,.05);
 }
 
@@ -13334,7 +13944,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-right: 6px;
   border-top: 3.5px solid transparent;
   border-bottom: 3.5px solid transparent;
-  border-left: 3.5px solid rgba(0,0,0,.2);
+  border-left: 3.5px solid rgba(0,0,0,0.3);
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
@@ -13359,7 +13969,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-top: 10px;
 }
 
-.emotion-40 > *:first-child {
+.emotion-40 > *:first-of-type {
   margin-top: 0;
 }
 
