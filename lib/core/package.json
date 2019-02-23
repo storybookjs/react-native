@@ -70,7 +70,7 @@
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "pretty-hrtime": "^1.0.3",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "raw-loader": "^1.0.0",
     "react-dev-utils": "^7.0.0",
     "regenerator-runtime": "^0.12.1",

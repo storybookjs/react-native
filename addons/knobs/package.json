@@ -31,7 +31,7 @@
     "escape-html": "^1.0.3",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "qs": "^6.5.2",
     "react-color": "^2.17.0",
     "react-lifecycles-compat": "^3.0.4",

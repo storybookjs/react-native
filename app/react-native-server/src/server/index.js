@@ -1,7 +1,11 @@
+#!/usr/bin/env node
+
 import querystring from 'querystring';
 import ws from 'ws';
 import storybook from '@storybook/core/standalone';
+
 import extendOptions from './options';
+import getCli from './cli';
 
 export default class Server {
   constructor(options) {
@@ -36,3 +40,6 @@ export default class Server {
     });
   }
 }
+
+const server = new Server(getCli());
+server.start();

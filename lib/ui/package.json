@@ -44,7 +44,7 @@
     "markdown-to-jsx": "^6.9.1",
     "memoizerific": "^1.11.3",
     "polished": "^2.3.3",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "qs": "^6.5.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.1",

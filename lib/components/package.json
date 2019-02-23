@@ -33,7 +33,7 @@
     "lodash.throttle": "^4.1.1",
     "memoizerific": "^1.11.3",
     "polished": "^2.3.3",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.1",
     "react-focus-lock": "^1.17.7",
