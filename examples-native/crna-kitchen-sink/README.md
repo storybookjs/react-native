@@ -6,5 +6,9 @@ This project was bootstrapped wit [Expo](https://github.com/expo/expo-cli) and s
 
 1. Install dependencies: `yarn install`
 2. Delete node_modules/@storybook
-3. Run storybook: `node ../../app/react-native-server/dist/bin/storybook-start`
+3. Run the storybook server: `yarn storybook`
 4. Run the app: `yarn start`
+
+## Iterate on app/react-native
+
+Changes to the yarn workspace do not currently reflect live in this app. To iterate on the react native pieces of storybook, use `scripts/update-crna-kitchen-sink`.
