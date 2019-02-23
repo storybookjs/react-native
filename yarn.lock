@@ -19784,9 +19784,10 @@ tar@^4, tar@^4.4.8:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
-telejson@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/telejson/-/telejson-1.0.1.tgz#1457985fce02f1f054b626b7fcdc53fa54191b94"
+telejson@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/telejson/-/telejson-2.0.0.tgz#3bde0d8efc73b9410e51519e8f1e3952d51bafa3"
+  integrity sha512-NfJ8FLvYk7RiwBWw3QfsPz4kUK7lOFhL1KrtumlSnc9XAeD87T10ZrsfP3tbJdsPEPdwWA78x5VCEHtcs9foYQ==
   dependencies:
     global "^4.3.2"
     is-function "^1.0.1"
