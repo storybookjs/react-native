@@ -10,6 +10,11 @@
 * Addon-a11y: Fix story scrolling ([#5713](https://github.com/storybooks/storybook/pull/5713))
 * UI: Fix mobile styling ([#5709](https://github.com/storybooks/storybook/pull/5709))
 * UI: Fix tooltip bugs ([#5692](https://github.com/storybooks/storybook/pull/5692))
+* UI: Fix toolbar separators ([#5711](https://github.com/storybooks/storybook/pull/5711))
+
+### Maintenance
+
+* Typescript: migrate addon-backgrounds ([#5535](https://github.com/storybooks/storybook/pull/5535))
 
 ## 5.0.0-rc.4 (February 21, 2019)
 
