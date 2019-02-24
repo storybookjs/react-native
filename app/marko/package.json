@@ -36,7 +36,7 @@
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
-    "marko": "^4.10.0",
+    "marko": "^4.15.2",
     "marko-widgets": "^7.0.1"
   },
   "publishConfig": {
