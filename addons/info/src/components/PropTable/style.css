@@ -1,3 +1,7 @@
+.info-table {
+  width: 100%;
+}
+
 .info-table, .info-table td, .info-table th {
   border-collapse: collapse;
   border: 1px solid #cccccc;
