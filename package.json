@@ -15,6 +15,7 @@
     "lib/cli/test/run/*"
   ],
   "scripts": {
+    "postinstall": "yarn bootstrap --core",
     "bootstrap": "node ./scripts/bootstrap.js",
     "bootstrap:crna-kitchen-sink": "npm --prefix examples-native/crna-kitchen-sink install",
     "bootstrap:docs": "yarn install --cwd docs",
