@@ -1,3 +1,22 @@
+## 5.0.0-rc.5 (February 23, 2019)
+
+### Bug Fixes
+
+* UI: Fix `/` search hotkey so it doesn't type into the input ([#5702](https://github.com/storybooks/storybook/pull/5702))
+* Addon-a11y: Fix a11y setup being undefined ([#5724](https://github.com/storybooks/storybook/pull/5724))
+* UI: Fix duplicate theming packages ([#5722](https://github.com/storybooks/storybook/pull/5722))
+* Core: Clean up debug logging ([#5705](https://github.com/storybooks/storybook/pull/5705))
+* UI: Minor addon ux tweaks ([#5712](https://github.com/storybooks/storybook/pull/5712))
+* Addon-a11y: Fix story scrolling ([#5713](https://github.com/storybooks/storybook/pull/5713))
+* UI: Fix mobile styling ([#5709](https://github.com/storybooks/storybook/pull/5709))
+* UI: Fix tooltip bugs ([#5692](https://github.com/storybooks/storybook/pull/5692))
+* UI: Fix toolbar separators ([#5711](https://github.com/storybooks/storybook/pull/5711))
+
+### Maintenance
+
+* Typescript: migrate addon-backgrounds ([#5535](https://github.com/storybooks/storybook/pull/5535))
+* Typescript: fix typings for addon-backgrounds ([#5730](https://github.com/storybooks/storybook/pull/5730))
+
 ## 5.0.0-rc.4 (February 21, 2019)
 
 ### Features

@@ -1,4 +1,4 @@
-import { addons, makeDecorator } from '@storybook/addons';
+import { addons, makeDecorator, StoryContext, StoryGetter, WrapperSettings } from '@storybook/addons';
 import deprecate from 'util-deprecate';
 
 import { REGISTER_SUBSCRIPTION } from '@storybook/core-events';
@@ -17,7 +17,7 @@ export const withBackgrounds = makeDecorator({
   parameterName: 'backgrounds',
   skipIfNoParametersOrOptions: true,
   allowDeprecatedUsage: true,
-  wrapper: (getStory, context, { options, parameters }) => {
+  wrapper: (getStory: StoryGetter, context: StoryContext, { options, parameters }: WrapperSettings) => {
     const data = parameters || options || [];
     const backgrounds = Array.isArray(data) ? data : Object.values(data);
 
