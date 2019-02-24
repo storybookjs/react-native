@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 
 import { Icons } from '@storybook/components';
+import { CheckResult } from 'axe-core';
 
 const impactColors = {
   minor: '#f1c40f',
@@ -29,7 +29,7 @@ const Message = styled.div({
   paddingLeft: '6px',
 });
 
-const Status = styled.div(({ passes, impact }: any) => ({
+const Status = styled.div(({ passes, impact }: { passes: boolean; impact: string }) => ({
   height: '16px',
   width: '16px',
   borderRadius: '8px',
@@ -42,7 +42,12 @@ const Status = styled.div(({ passes, impact }: any) => ({
   color: passes ? impactColors.success : (impactColors as any)[impact],
 }));
 
-const Rule = ({ rule, passes }: any) => (
+interface RuleProps {
+  rule: CheckResult;
+  passes: boolean;
+}
+
+const Rule: FunctionComponent<RuleProps> = ({ rule, passes }) => (
   <Item>
     <Status passes={passes || undefined} impact={rule.impact}>
       {passes ? <Icons icon="check" /> : <Icons icon="cross" />}
@@ -51,30 +56,19 @@ const Rule = ({ rule, passes }: any) => (
   </Item>
 );
 
-Rule.propTypes = {
-  rule: PropTypes.shape({
-    message: PropTypes.node,
-  }).isRequired,
-  passes: PropTypes.bool.isRequired,
-};
+interface RulesProps {
+  rules: CheckResult[];
+  passes: boolean;
+}
 
-/* eslint-disable react/no-array-index-key */
-function Rules({ rules, passes }: any) {
+const Rules: FunctionComponent<RulesProps> = ({ rules, passes }) => {
   return (
     <List>
-      {rules.map((rule: any, index: any) => (
+      {rules.map((rule, index) => (
         <Rule passes={passes} rule={rule} key={index} />
       ))}
     </List>
   );
-}
-Rules.propTypes = {
-  rules: PropTypes.arrayOf(
-    PropTypes.shape({
-      message: PropTypes.node,
-    })
-  ).isRequired,
-  passes: PropTypes.bool.isRequired,
 };
 
 export default Rules;

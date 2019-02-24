@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, FunctionComponent } from 'react';
 import addons, { types } from '@storybook/addons';
 import { styled } from '@storybook/theming';
 
@@ -11,7 +11,7 @@ const Hidden = styled.div(() => ({
   display: 'none',
 }));
 
-const PreviewWrapper = (p: any) => (
+const PreviewWrapper: FunctionComponent<{}> = p => (
   <Fragment>
     {p.children}
     <Hidden>
@@ -81,20 +81,21 @@ const PreviewWrapper = (p: any) => (
 
 addons.register(ADDON_ID, api => {
   addons.add(PANEL_ID, {
+    title: '',
     type: types.TOOL,
-    match: ({ viewMode }: any) => viewMode === 'story',
+    match: ({ viewMode }) => viewMode === 'story',
     render: () => <ColorBlindness />,
-  } as any);
+  });
 
   addons.add(PANEL_ID, {
-    type: types.PANEL,
     title: 'Accessibility',
-    // eslint-disable-next-line react/prop-types
+    type: types.PANEL,
     render: ({ active, key }) => <Panel key={key} api={api} active={active} />,
   });
 
   addons.add(PANEL_ID, {
+    title: '',
     type: types.PREVIEW,
-    render: PreviewWrapper,
-  } as any);
+    render: PreviewWrapper as any,
+  });
 });

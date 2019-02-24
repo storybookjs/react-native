@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
 // TODO: reuse the Tabs component from @storybook/theming instead
@@ -46,25 +45,36 @@ const Item = styled.button(
       : {}
 );
 
-class Tabs extends Component<any, any> {
-  state = {
+interface TabsProps {
+  tabs: Array<{
+    label: JSX.Element;
+    panel: JSX.Element;
+  }>;
+}
+
+interface TabsState {
+  active: number;
+}
+
+class Tabs extends Component<TabsProps, TabsState> {
+  state: TabsState = {
     active: 0,
   };
 
-  onToggle = (index: any) => {
+  onToggle = (index: number) => {
     this.setState({
       active: index,
     });
   };
 
   render() {
-    const { tabs } = this.props as any;
+    const { tabs } = this.props;
     const { active } = this.state;
 
     return (
       <Container>
         <List>
-          {tabs.map((tab: any, index: any) => (
+          {tabs.map((tab, index) => (
             <Item
               // eslint-disable-next-line react/no-array-index-key
               key={index}
@@ -80,14 +90,5 @@ class Tabs extends Component<any, any> {
     );
   }
 }
-
-(Tabs as any).propTypes = {
-  tabs: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.node,
-      panel: PropTypes.node,
-    })
-  ).isRequired,
-};
 
 export default Tabs;

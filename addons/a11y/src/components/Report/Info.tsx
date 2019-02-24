@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 
 import { styled } from '@storybook/theming';
+import { Result } from 'axe-core';
 
 const Wrapper = styled.div(({ theme }) => ({
   backgroundColor: theme.background.bar,
@@ -18,7 +18,11 @@ const Link = styled.a({
   display: 'block',
 });
 
-function Info({ item }: any) {
+interface InfoProps {
+  item: Result;
+}
+
+const Info: FunctionComponent<InfoProps> = ({ item }) => {
   return (
     <Wrapper>
       <Help>{item.help}</Help>
@@ -27,13 +31,6 @@ function Info({ item }: any) {
       </Link>
     </Wrapper>
   );
-}
-
-Info.propTypes = {
-  item: PropTypes.shape({
-    help: PropTypes.node,
-    helpUrl: PropTypes.string,
-  }).isRequired,
 };
 
 export default Info;

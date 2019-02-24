@@ -1,15 +1,15 @@
 import { document } from 'global';
-import axe, { RunOptions, Spec } from 'axe-core';
+import axe, { AxeResults, RunOptions, Spec } from 'axe-core';
 import deprecate from 'util-deprecate';
 import { stripIndents } from 'common-tags';
 
-import addons, { StoryGetter, StoryWrapper } from '@storybook/addons';
+import addons, { StoryWrapper } from '@storybook/addons';
 import { STORY_RENDERED } from '@storybook/core-events';
 import EVENTS, { PARAM_KEY } from './constants';
 
 const channel = addons.getChannel();
 let progress = Promise.resolve();
-let setup: any = {};
+let setup: { config: Spec; options: RunOptions } = { config: {}, options: {} };
 
 const getElement = () => {
   const storyRoot = document.getElementById('story-root');
@@ -20,7 +20,7 @@ const getElement = () => {
   return document.getElementById('root');
 };
 
-const report = (input: any) => {
+const report = (input: AxeResults) => {
   channel.emit(EVENTS.RESULT, input);
 };
 

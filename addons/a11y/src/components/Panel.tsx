@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
 
@@ -11,6 +10,7 @@ import EVENTS from '../constants';
 
 import Tabs from './Tabs';
 import Report from './Report';
+import { AxeResults, Result } from 'axe-core';
 
 const Icon = styled(Icons)(
   {
@@ -34,20 +34,26 @@ const Violations = styled.span(({ theme }) => ({
   color: theme.color.negative,
 }));
 
-class A11YPanel extends Component<any, any> {
-  static propTypes = {
-    active: PropTypes.bool.isRequired,
-    api: PropTypes.shape({
-      on: PropTypes.func,
-      emit: PropTypes.func,
-      off: PropTypes.func,
-    }).isRequired,
-  };
+interface A11YPanelState {
+  status: string;
+  passes: Result[];
+  violations: Result[];
+}
 
-  state = {
+interface A11YPanelProps {
+  active: boolean;
+  api: {
+    on(event: string, callback: (data: any) => void): void;
+    off(event: string, callback: (data: any) => void): void;
+    emit(event: string): void;
+  };
+}
+
+class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
+  state: A11YPanelState = {
     status: 'ready',
-    passes: [] as any[],
-    violations: [] as any[],
+    passes: [],
+    violations: [],
   };
 
   componentDidMount() {
@@ -57,7 +63,7 @@ class A11YPanel extends Component<any, any> {
     api.on(EVENTS.RESULT, this.onUpdate);
   }
 
-  componentDidUpdate(prevProps: any) {
+  componentDidUpdate(prevProps: A11YPanelProps) {
     // TODO: might be able to remove this
     const { active } = this.props;
 
@@ -73,7 +79,7 @@ class A11YPanel extends Component<any, any> {
     api.off(EVENTS.RESULT, this.onUpdate);
   }
 
-  onUpdate = ({ passes, violations }: any) => {
+  onUpdate = ({ passes, violations }: AxeResults) => {
     this.setState(
       {
         status: 'ran',

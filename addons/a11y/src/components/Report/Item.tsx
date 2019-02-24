@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
 import { Icons } from '@storybook/components';
@@ -7,6 +6,7 @@ import { Icons } from '@storybook/components';
 import Info from './Info';
 import Tags from './Tags';
 import Elements from './Elements';
+import { Result } from 'axe-core';
 
 const Wrapper = styled.div();
 
@@ -37,22 +37,22 @@ const HeaderBar = styled.button(({ theme }) => ({
   },
 }));
 
-class Item extends Component<any, any> {
-  static propTypes = {
-    item: PropTypes.shape({
-      description: PropTypes.string,
-      nodes: PropTypes.array,
-      tags: PropTypes.array,
-    }).isRequired,
-    passes: PropTypes.bool.isRequired,
-  };
+interface ItemProps {
+  item: Result;
+  passes: boolean;
+}
 
+interface ItemState {
+  open: boolean;
+}
+
+class Item extends Component<ItemProps, ItemState> {
   state = {
     open: false,
   };
 
   onToggle = () =>
-    this.setState((prevState: any) => ({
+    this.setState(prevState => ({
       open: !prevState.open,
     }));
 

@@ -16,7 +16,7 @@ const ColorIcon = styled.span(
     height: '1rem',
     width: '1rem',
   },
-  ({ filter }: any) => ({
+  ({ filter }: { filter: string | null }) => ({
     filter: filter === 'mono' ? 'grayscale(100%)' : `url('#${filter}')`,
   }),
   ({ theme }) => ({
@@ -24,13 +24,21 @@ const ColorIcon = styled.span(
   })
 );
 
-class ColorBlindness extends Component {
-  state = {
+// tslint:disable-next-line:no-empty-interface
+interface ColorBlindnessProps {}
+
+interface ColorBlindnessState {
+  expanded: boolean;
+  filter: string | null;
+}
+
+class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnessState> {
+  state: ColorBlindnessState = {
     expanded: false,
     filter: null,
   };
 
-  setFilter = (filter: any) => {
+  setFilter = (filter: string | null) => {
     const iframe = getIframe();
 
     if (iframe) {
@@ -69,11 +77,13 @@ class ColorBlindness extends Component {
     if (filter !== null) {
       colorList = [
         {
+          id: 'reset',
           title: 'Reset color filter',
           onClick: () => {
             this.setFilter(null);
           },
-        } as any,
+          right: undefined,
+        },
         ...colorList,
       ];
     }
@@ -83,7 +93,7 @@ class ColorBlindness extends Component {
         placement="top"
         trigger="click"
         tooltipShown={expanded}
-        onVisibilityChange={(s: any) => this.setState({ expanded: s })}
+        onVisibilityChange={(s: boolean) => this.setState({ expanded: s })}
         tooltip={<TooltipLinkList links={colorList} />}
         closeOnClick
       >

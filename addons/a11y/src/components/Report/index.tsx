@@ -1,29 +1,23 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment, FunctionComponent } from 'react';
 import { Placeholder } from '@storybook/components';
 
 import Item from './Item';
+import { Result } from 'axe-core';
 
-const Report = ({ items, empty, passes }: any) => (
+export interface ReportProps {
+  items: Result[];
+  empty: string;
+  passes: boolean;
+}
+
+const Report: FunctionComponent<ReportProps> = ({ items, empty, passes }) => (
   <Fragment>
     {items.length ? (
-      items.map((item: any) => <Item passes={passes} item={item} key={item.id} />)
+      items.map((item) => <Item passes={passes} item={item} key={item.id} />)
     ) : (
       <Placeholder key="placeholder">{empty}</Placeholder>
     )}
   </Fragment>
 );
-
-Report.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      description: PropTypes.string,
-      nodes: PropTypes.array,
-      tags: PropTypes.array,
-    })
-  ).isRequired,
-  empty: PropTypes.string.isRequired,
-  passes: PropTypes.bool.isRequired,
-};
 
 export default Report;

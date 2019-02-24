@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 
 import { styled } from '@storybook/theming';
 
 import Rules from './Rules';
+import { NodeResult } from 'axe-core';
 
 const Item = styled.li({
   fontWeight: 600,
@@ -16,7 +16,12 @@ const ItemTitle = styled.span({
   marginBottom: '4px',
 });
 
-function Element({ element, passes }: any) {
+interface ElementProps {
+  element: NodeResult;
+  passes: boolean;
+}
+
+const Element: FunctionComponent<ElementProps> = ({ element, passes }) => {
   const { any, all, none } = element;
 
   const rules = [...any, ...all, ...none];
@@ -27,34 +32,19 @@ function Element({ element, passes }: any) {
       <Rules rules={rules} passes={passes} />
     </Item>
   );
-}
-Element.propTypes = {
-  element: PropTypes.shape({
-    any: PropTypes.array.isRequired,
-    all: PropTypes.array.isRequired,
-    none: PropTypes.array.isRequired,
-  }).isRequired,
-  passes: PropTypes.bool.isRequired,
 };
 
-/* eslint-disable react/no-array-index-key */
-const Elements = ({ elements, passes }: any) => (
+interface ElementsProps {
+  elements: NodeResult[];
+  passes: boolean;
+}
+
+const Elements: FunctionComponent<ElementsProps> = ({ elements, passes }) => (
   <ol>
-    {elements.map((element: any, index: any) => (
+    {elements.map((element, index) => (
       <Element passes={passes} element={element} key={index} />
     ))}
   </ol>
 );
-
-Elements.propTypes = {
-  elements: PropTypes.arrayOf(
-    PropTypes.shape({
-      any: PropTypes.array.isRequired,
-      all: PropTypes.array.isRequired,
-      none: PropTypes.array.isRequired,
-    })
-  ).isRequired,
-  passes: PropTypes.bool.isRequired,
-};
 
 export default Elements;
