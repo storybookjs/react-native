@@ -1,5 +1,7 @@
 import { window, document } from 'global';
 import Channel, { ChannelEvent, ChannelHandler } from '@storybook/channels';
+import { logger } from '@storybook/client-logger';
+
 import { isJSON, parse, stringify } from 'telejson';
 
 interface RawEvent {
@@ -90,15 +92,12 @@ export class PostmsgTransport {
       const { data } = rawEvent;
       const { key, event } = typeof data === 'string' && isJSON(data) ? parse(data) : data;
       if (key === KEY) {
-        // tslint:disable-next-line no-console
-        console.debug(`message arrived at ${this.config.page}`, event.type, ...event.args);
+        logger.debug(`message arrived at ${this.config.page}`, event.type, ...event.args);
         this.handler(event);
       }
     } catch (error) {
-      // tslint:disable-next-line no-console
-      console.error(error);
-      // tslint:disable-next-line no-debugger
-      debugger;
+      logger.error(error);
+      // debugger;
     }
   }
 }
