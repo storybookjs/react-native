@@ -27,13 +27,13 @@
     "test-latest-cra": "cd test && ./test_latest_cra.sh"
   },
   "dependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
     "@babel/register": "^7.0.0",
     "@storybook/codemod": "5.0.0-beta.3",
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
-    "core-js": "^2.6.2",
+    "core-js": "^2.6.5",
     "cross-spawn": "^6.0.5",
     "inquirer": "^6.2.0",
     "jscodeshift": "^0.6.3",

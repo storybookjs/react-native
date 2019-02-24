@@ -19,7 +19,7 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "marko": "^4.14.21",
+    "marko": "^4.15.2",
     "marko-starter": "^2.0.4"
   },
   "devDependencies": {
@@ -30,6 +30,6 @@
     "@storybook/addons": "5.0.0-beta.3",
     "@storybook/marko": "5.0.0-beta.3",
     "prettier": "^1.16.4",
-    "webpack": "^4.29.3"
+    "webpack": "^4.29.5"
   }
 }

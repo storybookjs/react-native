@@ -28,10 +28,10 @@
     "@storybook/core": "5.0.0-beta.3",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.2",
+    "core-js": "^2.6.5",
     "global": "^4.3.2",
     "regenerator-runtime": "^0.12.1",
-    "webpack": "^4.29.3"
+    "webpack": "^4.29.5"
   },
   "devDependencies": {
     "lit-html": "^1.0.0",

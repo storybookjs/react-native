@@ -36,11 +36,11 @@
     "lodash.pick": "^4.4.0",
     "markdown-to-jsx": "^6.9.1",
     "memoizerific": "^1.11.3",
-    "polished": "^2.3.3",
+    "polished": "^3.0.0",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-draggable": "^3.1.1",
     "react-helmet-async": "^0.2.0",
     "react-hotkeys": "2.0.0-pre4",
@@ -52,7 +52,7 @@
   "devDependencies": {
     "flush-promises": "^1.0.2",
     "terser-webpack-plugin": "^1.2.2",
-    "webpack": "^4.29.3"
+    "webpack": "^4.29.5"
   },
   "publishConfig": {
     "access": "public"
