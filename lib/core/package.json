@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/core"
   },
   "license": "MIT",
   "main": "dist/client/index.js",
@@ -30,6 +31,7 @@
     "@storybook/client-logger": "5.0.0-beta.3",
     "@storybook/core-events": "5.0.0-beta.3",
     "@storybook/node-logger": "5.0.0-beta.3",
+    "@storybook/router": "5.0.0-beta.3",
     "@storybook/ui": "5.0.0-beta.3",
     "airbnb-js-shims": "^1 || ^2",
     "autoprefixer": "^9.4.7",

@@ -58,9 +58,10 @@ addParameters({
   a11y: {
     // ... axe options
     element: '#root', // optional selector which element to inspect
+    config: {} // axe-core configurationOptions (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#parameters-1)
+    options: {} // axe-core optionsParameter (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#options-parameter)
   },
 });
-
 
 storiesOf('button', module)
   .add('Accessible', () => (

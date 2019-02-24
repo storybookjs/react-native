@@ -9,7 +9,7 @@ import EVENTS, { PARAM_KEY } from './constants';
 
 const channel = addons.getChannel();
 let progress = Promise.resolve();
-let options;
+let setup = {};
 
 const getElement = () => {
   const storyRoot = document.getElementById('story-root');
@@ -24,13 +24,20 @@ const report = input => {
   channel.emit(EVENTS.RESULT, input);
 };
 
-const run = o => {
+const run = (c, o) => {
   progress = progress.then(() => {
     axe.reset();
-    if (o) {
-      axe.configure(o);
+    if (c) {
+      axe.configure(c);
     }
-    return axe.run(getElement()).then(report);
+    return axe
+      .run(
+        getElement(),
+        o || {
+          restoreScroll: true,
+        }
+      )
+      .then(report);
   });
 };
 
@@ -41,14 +48,14 @@ export const withA11Y = makeDecorator({
   allowDeprecatedUsage: false,
 
   wrapper: (getStory, context, opt) => {
-    options = opt.parameters || opt.options;
+    setup = opt.parameters || opt.options || {};
 
     return getStory(context);
   },
 });
 
-channel.on(STORY_RENDERED, () => run(options));
-channel.on(EVENTS.REQUEST, () => run(options));
+channel.on(STORY_RENDERED, () => run(setup.config, setup.options));
+channel.on(EVENTS.REQUEST, () => run(setup.config, setup.options));
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();
@@ -63,7 +70,7 @@ export const checkA11y = deprecate(
 // TODO: REMOVE at v6.0.0
 export const configureA11y = deprecate(
   config => {
-    options = config;
+    setup = config;
   },
   stripIndents`
     configureA11y is deprecated, please configure addon-a11y using the addParameter api:

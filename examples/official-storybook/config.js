@@ -33,15 +33,21 @@ addDecorator(withCssResources);
 addDecorator(withA11Y);
 addDecorator(withNotes);
 
-addDecorator(fn => (
+addDecorator(storyFn => (
   <ThemeProvider theme={themes.normal}>
     <Global styles={createReset} />
-    {fn()}
+    {storyFn()}
   </ThemeProvider>
 ));
 
 addParameters({
-  a11y: {},
+  a11y: {
+    configure: {},
+    options: {
+      checks: { 'color-contrast': { options: { noScroll: true } } },
+      restoreScroll: true,
+    },
+  },
   options: {
     name: 'Storybook',
     hierarchySeparator: /\/|\./,

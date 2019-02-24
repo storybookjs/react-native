@@ -284,7 +284,7 @@ exports[`Storyshots Basics|Brand/StorybookLogo normal 1`] = `
 </svg>
 `;
 
-exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
+exports[`Storyshots Basics|DocumentFormatting withDOM 1`] = `
 .emotion-0 {
   font-size: 14px;
   line-height: 1.6;
@@ -356,7 +356,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   border: none;
 }
 
-.emotion-0 body > *:first-child {
+.emotion-0 body > *:first-of-type {
   margin-top: 0 !important;
 }
 
@@ -397,13 +397,13 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   position: relative;
 }
 
-.emotion-0 h2:first-child,
-.emotion-0 h1:first-child,
-.emotion-0 h1:first-child + h2,
-.emotion-0 h3:first-child,
-.emotion-0 h4:first-child,
-.emotion-0 h5:first-child,
-.emotion-0 h6:first-child {
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
@@ -466,35 +466,35 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 body > h2:first-child {
+.emotion-0 body > h2:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child {
+.emotion-0 body > h1:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child + h2 {
+.emotion-0 body > h1:first-of-type + h2 {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h3:first-child,
-.emotion-0 body > h4:first-child,
-.emotion-0 body > h5:first-child,
-.emotion-0 body > h6:first-child {
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 a:first-child h1,
-.emotion-0 a:first-child h2,
-.emotion-0 a:first-child h3,
-.emotion-0 a:first-child h4,
-.emotion-0 a:first-child h5,
-.emotion-0 a:first-child h6 {
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
   margin-top: 0;
   padding-top: 0;
 }
@@ -517,8 +517,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding-left: 30px;
 }
 
-.emotion-0 ul :first-child,
-.emotion-0 ol :first-child {
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
   margin-top: 0;
 }
 
@@ -539,11 +539,11 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   margin: 15px 0 5px;
 }
 
-.emotion-0 dl dt:first-child {
+.emotion-0 dl dt:first-of-type {
   padding: 0;
 }
 
-.emotion-0 dl dt > :first-child {
+.emotion-0 dl dt > :first-of-type {
   margin-top: 0;
 }
 
@@ -556,7 +556,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0 15px;
 }
 
-.emotion-0 dl dd > :first-child {
+.emotion-0 dl dd > :first-of-type {
   margin-top: 0;
 }
 
@@ -570,7 +570,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   color: #666666;
 }
 
-.emotion-0 blockquote > :first-child {
+.emotion-0 blockquote > :first-of-type {
   margin-top: 0;
 }
 
@@ -590,7 +590,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 table tr:nth-child(2n) {
+.emotion-0 table tr:nth-of-type(2n) {
   background-color: #F8F8F8;
 }
 
@@ -609,8 +609,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 6px 13px;
 }
 
-.emotion-0 table tr th :first-child,
-.emotion-0 table tr td :first-child {
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
   margin-top: 0;
 }
 
@@ -792,7 +792,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   border: none;
 }
 
-.emotion-0 body > *:first-child {
+.emotion-0 body > *:first-of-type {
   margin-top: 0 !important;
 }
 
@@ -833,13 +833,13 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   position: relative;
 }
 
-.emotion-0 h2:first-child,
-.emotion-0 h1:first-child,
-.emotion-0 h1:first-child + h2,
-.emotion-0 h3:first-child,
-.emotion-0 h4:first-child,
-.emotion-0 h5:first-child,
-.emotion-0 h6:first-child {
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
@@ -902,35 +902,35 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 body > h2:first-child {
+.emotion-0 body > h2:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child {
+.emotion-0 body > h1:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h1:first-child + h2 {
+.emotion-0 body > h1:first-of-type + h2 {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 body > h3:first-child,
-.emotion-0 body > h4:first-child,
-.emotion-0 body > h5:first-child,
-.emotion-0 body > h6:first-child {
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
   margin-top: 0;
   padding-top: 0;
 }
 
-.emotion-0 a:first-child h1,
-.emotion-0 a:first-child h2,
-.emotion-0 a:first-child h3,
-.emotion-0 a:first-child h4,
-.emotion-0 a:first-child h5,
-.emotion-0 a:first-child h6 {
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
   margin-top: 0;
   padding-top: 0;
 }
@@ -953,8 +953,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding-left: 30px;
 }
 
-.emotion-0 ul :first-child,
-.emotion-0 ol :first-child {
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
   margin-top: 0;
 }
 
@@ -975,11 +975,11 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   margin: 15px 0 5px;
 }
 
-.emotion-0 dl dt:first-child {
+.emotion-0 dl dt:first-of-type {
   padding: 0;
 }
 
-.emotion-0 dl dt > :first-child {
+.emotion-0 dl dt > :first-of-type {
   margin-top: 0;
 }
 
@@ -992,7 +992,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0 15px;
 }
 
-.emotion-0 dl dd > :first-child {
+.emotion-0 dl dd > :first-of-type {
   margin-top: 0;
 }
 
@@ -1006,7 +1006,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   color: #666666;
 }
 
-.emotion-0 blockquote > :first-child {
+.emotion-0 blockquote > :first-of-type {
   margin-top: 0;
 }
 
@@ -1026,7 +1026,7 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 0;
 }
 
-.emotion-0 table tr:nth-child(2n) {
+.emotion-0 table tr:nth-of-type(2n) {
   background-color: #F8F8F8;
 }
 
@@ -1045,8 +1045,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   padding: 6px 13px;
 }
 
-.emotion-0 table tr th :first-child,
-.emotion-0 table tr td :first-child {
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
   margin-top: 0;
 }
 
@@ -1163,15 +1163,8 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
   <div
     class="emotion-0"
   >
-    <p>
-      Wrap your components in 
-      <code>
-        DocumentFormatting
-      </code>
-       to get text styles for body content
-    </p>
     <h1>
-      h1 Heading 😎
+      h1 Heading
     </h1>
     <h2>
       h2 Heading
@@ -1485,208 +1478,892 @@ exports[`Storyshots Basics|DocumentFormatting sampleDocument 1`] = `
         title="The Stormtroopocat"
       />
     </p>
-    <p>
-      Like links, Images also have a footnote style syntax
-    </p>
-    <p>
-      <img
-        alt="Alt text"
-        src="https://octodex.github.com/images/dojocat.jpg"
-        title="The Dojocat"
-      />
-    </p>
-    <p>
-      With a reference later in the document defining the URL location:
-    </p>
-    <h2>
-      Plugins
-    </h2>
-    <p>
-      The killer feature of 
-      <code>
-        markdown-it
-      </code>
-       is very effective support of
-      <a
-        href="https://www.npmjs.org/browse/keyword/markdown-it-plugin"
-      >
-        syntax plugins
-      </a>
-      .
-    </p>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-emoji"
-      >
-        Emojies
-      </a>
-    </h3>
-    <blockquote>
-      <p>
-        Classic markup: 😉 :crush: 😢 :tear: 😆 😋
-      </p>
-      <p>
-        Shortcuts (emoticons): 😃 😦 😎 😉
-      </p>
-    </blockquote>
-    <p>
-      see 
-      <a
-        href="https://github.com/markdown-it/markdown-it-emoji#change-output"
-      >
-        how to change output
-      </a>
-       with twemoji.
-    </p>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-sub"
-      >
-        Subscript
-      </a>
-       / 
-      <a
-        href="https://github.com/markdown-it/markdown-it-sup"
-      >
-        Superscript
-      </a>
-    </h3>
-    <ul>
-      <li>
-        19
-        <sup>
-          th
-        </sup>
-      </li>
-      <li>
-        H
-        <sub>
-          2
-        </sub>
-        O
-      </li>
-    </ul>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-deflist"
-      >
-        Definition lists
-      </a>
-    </h3>
-    <dl>
-      <dt>
-        Term 1
-      </dt>
-      <dd>
-        <p>
-          Definition 1 with lazy continuation.
-        </p>
-      </dd>
-      <dt>
-        Term 2 with 
-        <em>
-          inline markup
-        </em>
-      </dt>
-      <dd>
-        <p>
-          Definition 2
-        </p>
-        <pre>
-          <code>
-             some code, part of Definition 2
-          </code>
-        </pre>
-        <p>
-          Third paragraph of definition 2.
-        </p>
-      </dd>
-    </dl>
-    <p>
-      <em>
-        Compact style:
-      </em>
-    </p>
-    <dl>
-      <dt>
-        Term 1
-      </dt>
-      <dd>
-        Definition 1
-      </dd>
-      <dt>
-        Term 2
-      </dt>
-      <dd>
-        Definition 2a
-      </dd>
-      <dd>
-        Definition 2b
-      </dd>
-    </dl>
-    <p>
-      <em>
-        Compact style:
-      </em>
-    </p>
-    <dl>
-      <dt>
-        Term 1
-      </dt>
-      <dd>
-        Definition 1
-      </dd>
-      <dt>
-        Term 2
-      </dt>
-      <dd>
-        Definition 2a
-      </dd>
-      <dd>
-        Definition 2b
-      </dd>
-    </dl>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-abbr"
-      >
-        Abbreviations
-      </a>
-    </h3>
-    <p>
-      This is 
-      <abbr
-        title="Hyper Text Markup Language"
-      >
-        HTML
-      </abbr>
-       abbreviation example.
-    </p>
-    <p>
-      It converts “
-      <abbr
-        title="Hyper Text Markup Language"
-      >
-        HTML
-      </abbr>
-      ”, but keep intact partial entries like “xxxHTMLyyy” and so on.
-    </p>
-    <h3>
-      <a
-        href="https://github.com/markdown-it/markdown-it-container"
-      >
-        Custom containers
-      </a>
-    </h3>
-    <div
-      class="warning"
-    >
-      <p>
-        <em>
-          here be dragons
-        </em>
-      </p>
-    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|DocumentFormatting withMarkdown 1`] = `
+.emotion-0 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emotion-0 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-0 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-0 h3 {
+  font-size: 20px;
+}
+
+.emotion-0 h4 {
+  font-size: 16px;
+}
+
+.emotion-0 h5 {
+  font-size: 14px;
+}
+
+.emotion-0 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-0 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-0 pre pre,
+.emotion-0 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-0 pre pre code,
+.emotion-0 pre.hljs code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-0 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-0 pre code,
+.emotion-0 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-0 body > *:first-of-type {
+  margin-top: 0 !important;
+}
+
+.emotion-0 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-0 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 a.absent {
+  color: #cc0000;
+}
+
+.emotion-0 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-0 h1,
+.emotion-0 h2,
+.emotion-0 h3,
+.emotion-0 h4,
+.emotion-0 h5,
+.emotion-0 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1:hover a.anchor,
+.emotion-0 h2:hover a.anchor,
+.emotion-0 h3:hover a.anchor,
+.emotion-0 h4:hover a.anchor,
+.emotion-0 h5:hover a.anchor,
+.emotion-0 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 h1 tt,
+.emotion-0 h1 code {
+  font-size: inherit;
+}
+
+.emotion-0 h2 tt,
+.emotion-0 h2 code {
+  font-size: inherit;
+}
+
+.emotion-0 h3 tt,
+.emotion-0 h3 code {
+  font-size: inherit;
+}
+
+.emotion-0 h4 tt,
+.emotion-0 h4 code {
+  font-size: inherit;
+}
+
+.emotion-0 h5 tt,
+.emotion-0 h5 code {
+  font-size: inherit;
+}
+
+.emotion-0 h6 tt,
+.emotion-0 h6 code {
+  font-size: inherit;
+}
+
+.emotion-0 p,
+.emotion-0 blockquote,
+.emotion-0 ul,
+.emotion-0 ol,
+.emotion-0 dl,
+.emotion-0 li,
+.emotion-0 table,
+.emotion-0 pre {
+  margin: 15px 0;
+}
+
+.emotion-0 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-0 body > h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1 p,
+.emotion-0 h2 p,
+.emotion-0 h3 p,
+.emotion-0 h4 p,
+.emotion-0 h5 p,
+.emotion-0 h6 p {
+  margin-top: 0;
+}
+
+.emotion-0 li p.first {
+  display: inline-block;
+}
+
+.emotion-0 ul,
+.emotion-0 ol {
+  padding-left: 30px;
+}
+
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 ul :last-child,
+.emotion-0 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl {
+  padding: 0;
+}
+
+.emotion-0 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-0 dl dt:first-of-type {
+  padding: 0;
+}
+
+.emotion-0 dl dt > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-0 dl dd > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-0 blockquote > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-0 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 table tr:nth-of-type(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-0 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 table tr th :last-child,
+.emotion-0 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 img {
+  max-width: 100%;
+}
+
+.emotion-0 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-0 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-0 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-0 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-0 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-0 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-0 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-0 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-0 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-0 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-0 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-0 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-0 code,
+.emotion-0 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+}
+
+.emotion-0 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emotion-0 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-0 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-0 h3 {
+  font-size: 20px;
+}
+
+.emotion-0 h4 {
+  font-size: 16px;
+}
+
+.emotion-0 h5 {
+  font-size: 14px;
+}
+
+.emotion-0 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-0 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-0 pre pre,
+.emotion-0 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-0 pre pre code,
+.emotion-0 pre.hljs code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-0 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-0 pre code,
+.emotion-0 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-0 body > *:first-of-type {
+  margin-top: 0 !important;
+}
+
+.emotion-0 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-0 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 a.absent {
+  color: #cc0000;
+}
+
+.emotion-0 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-0 h1,
+.emotion-0 h2,
+.emotion-0 h3,
+.emotion-0 h4,
+.emotion-0 h5,
+.emotion-0 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1:hover a.anchor,
+.emotion-0 h2:hover a.anchor,
+.emotion-0 h3:hover a.anchor,
+.emotion-0 h4:hover a.anchor,
+.emotion-0 h5:hover a.anchor,
+.emotion-0 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 h1 tt,
+.emotion-0 h1 code {
+  font-size: inherit;
+}
+
+.emotion-0 h2 tt,
+.emotion-0 h2 code {
+  font-size: inherit;
+}
+
+.emotion-0 h3 tt,
+.emotion-0 h3 code {
+  font-size: inherit;
+}
+
+.emotion-0 h4 tt,
+.emotion-0 h4 code {
+  font-size: inherit;
+}
+
+.emotion-0 h5 tt,
+.emotion-0 h5 code {
+  font-size: inherit;
+}
+
+.emotion-0 h6 tt,
+.emotion-0 h6 code {
+  font-size: inherit;
+}
+
+.emotion-0 p,
+.emotion-0 blockquote,
+.emotion-0 ul,
+.emotion-0 ol,
+.emotion-0 dl,
+.emotion-0 li,
+.emotion-0 table,
+.emotion-0 pre {
+  margin: 15px 0;
+}
+
+.emotion-0 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-0 body > h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1 p,
+.emotion-0 h2 p,
+.emotion-0 h3 p,
+.emotion-0 h4 p,
+.emotion-0 h5 p,
+.emotion-0 h6 p {
+  margin-top: 0;
+}
+
+.emotion-0 li p.first {
+  display: inline-block;
+}
+
+.emotion-0 ul,
+.emotion-0 ol {
+  padding-left: 30px;
+}
+
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 ul :last-child,
+.emotion-0 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl {
+  padding: 0;
+}
+
+.emotion-0 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-0 dl dt:first-of-type {
+  padding: 0;
+}
+
+.emotion-0 dl dt > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-0 dl dd > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-0 blockquote > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-0 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 table tr:nth-of-type(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-0 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 table tr th :last-child,
+.emotion-0 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 img {
+  max-width: 100%;
+}
+
+.emotion-0 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-0 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-0 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-0 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-0 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-0 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-0 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-0 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-0 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-0 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-0 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-0 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-0 code,
+.emotion-0 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+}
+
+<div
+  style="width:600px;margin:3rem auto;padding:40px 20px;background:white"
+>
+  <div
+    class="emotion-0"
+  >
+    <h1>
+      HTML Mock
+    </h1>
   </div>
 </div>
 `;
@@ -1753,9 +2430,6 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 .emotion-2:hover,
 .emotion-2:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -1765,9 +2439,6 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 }
 
 .emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -1812,9 +2483,6 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 .emotion-2:hover,
 .emotion-2:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -1824,9 +2492,6 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 }
 
 .emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -1976,7 +2641,19 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
     "hierarchySeparator": {},
     "name": "Storybook"
   },
-  "a11y": {},
+  "a11y": {
+    "configure": {},
+    "options": {
+      "checks": {
+        "color-contrast": {
+          "options": {
+            "noScroll": true
+          }
+        }
+      },
+      "restoreScroll": true
+    }
+  },
   "viewports": {
     "iphone5": {
       "name": "iPhone 5",
@@ -2144,6 +2821,34 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
   "decoratorParameter": "decoratorParameter"
 }
 </pre>
+`;
+
+exports[`Storyshots Core|Scroll story with 100vh padding 1 1`] = `
+<div>
+  <pre>
+    START, when switching stories, you should be able to read this at the top of the page
+  </pre>
+  <div
+    style="height:100vh"
+  />
+  <pre>
+    END, this text should be below the scroll "fold" and therefore only be readable after scrolling
+  </pre>
+</div>
+`;
+
+exports[`Storyshots Core|Scroll story with 100vh padding 2 1`] = `
+<div>
+  <pre>
+    START, when switching stories, you should be able to read this at the top of the page
+  </pre>
+  <div
+    style="height:100vh"
+  />
+  <pre>
+    END, this text should be below the scroll "fold" and therefore only be readable after scrolling
+  </pre>
+</div>
 `;
 
 exports[`Storyshots UI|Notifications/NotificationItem longText 1`] = `
@@ -2362,32 +3067,6 @@ exports[`Storyshots UI|Notifications/NotificationList all 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|Notifications/NotificationList empty 1`] = `
-.emotion-0 > * + * {
-  margin-top: 10px;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0 > * + * {
-  margin-top: 10px;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-<div
-  style="width:240px;margin:1rem"
->
-  <div
-    class="emotion-0"
-  />
-</div>
-`;
-
 exports[`Storyshots UI|Notifications/NotificationList single 1`] = `
 .emotion-1 {
   display: block;
@@ -2515,9 +3194,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 .emotion-1:hover,
 .emotion-1:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -2527,9 +3203,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -2599,9 +3272,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 .emotion-1:hover,
 .emotion-1:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -2611,9 +3281,6 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -2692,7 +3359,7 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 `;
 
 exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
-.emotion-99 {
+.emotion-100 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -2705,6 +3372,76 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   flex-direction: column;
 }
 
+.emotion-8 {
+  color: #999999;
+  height: 40px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+}
+
+.emotion-8:hover {
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: 0;
+  -moz-scrollbar-width: 0;
+  -ms-scrollbar-width: 0;
+  scrollbar-width: 0;
+}
+
+.emotion-8::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+  display: none;
+}
+
+.emotion-8:hover::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  display: block;
+}
+
+.emotion-8::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-8::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-8::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
 .emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2714,14 +3451,9 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
-  color: #999999;
-  height: 40px;
   position: relative;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  white-space: nowrap;
+  height: 40px;
 }
 
 .emotion-2 {
@@ -2729,9 +3461,12 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .emotion-2 > * {
@@ -2739,14 +3474,10 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-1 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
+  overflow: hidden;
 }
 
-.emotion-1:first-child {
+.emotion-1:first-of-type {
   margin-left: 0;
 }
 
@@ -2800,10 +3531,41 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 30px;
 }
 
 .emotion-6 > * {
   margin-right: 15px;
+}
+
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-99 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  position: relative;
+  overflow: auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
 }
 
 .emotion-5 {
@@ -2829,31 +3591,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 15px;
 }
 
-.emotion-4 {
-  shape-rendering: inherit;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  display: block;
-}
-
-.emotion-3 {
-  fill: currentColor;
-}
-
-.emotion-98 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-  position: relative;
-  overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
-}
-
-.emotion-95 {
+.emotion-96 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2864,11 +3602,11 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   font-weight: 700;
 }
 
-.emotion-95 > * + * {
+.emotion-96 > * + * {
   margin-left: 20px;
 }
 
-.emotion-90 {
+.emotion-91 {
   display: inline-block;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
@@ -2878,36 +3616,30 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   color: #999999;
 }
 
-.emotion-90 svg path {
+.emotion-91 svg path {
   fill: #1EA7FD;
 }
 
-.emotion-90:hover,
-.emotion-90:focus {
+.emotion-91:hover,
+.emotion-91:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
-.emotion-90:hover svg path,
-.emotion-90:focus svg path {
+.emotion-91:hover svg path,
+.emotion-91:focus svg path {
   fill: #0297f5;
 }
 
-.emotion-90:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+.emotion-91:active {
   color: #028ee6;
 }
 
-.emotion-90:active svg path {
+.emotion-91:active svg path {
   fill: #028ee6;
 }
 
-.emotion-90 svg {
+.emotion-91 svg {
   display: inline-block;
   height: 1em;
   width: 1em;
@@ -2917,38 +3649,38 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   margin-right: 0.4em;
 }
 
-.emotion-90 svg path {
+.emotion-91 svg path {
   fill: #999999;
 }
 
-.emotion-90:hover {
+.emotion-91:hover {
   color: #666666;
 }
 
-.emotion-90:hover svg path {
+.emotion-91:hover svg path {
   fill: #666666;
 }
 
-.emotion-90:active {
+.emotion-91:active {
   color: #444444;
 }
 
-.emotion-90:active svg path {
+.emotion-91:active svg path {
   fill: #444444;
 }
 
-.emotion-97 {
+.emotion-98 {
   display: block;
 }
 
-.emotion-96 {
+.emotion-97 {
   font-size: 14px;
   padding: 3rem 20px;
   max-width: 600px;
   margin: 0 auto;
 }
 
-.emotion-8 {
+.emotion-9 {
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: 900;
@@ -2962,14 +3694,14 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: flex;
 }
 
-.emotion-87 {
+.emotion-88 {
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: minmax(auto,auto);
   margin-bottom: 20px;
 }
 
-.emotion-11 {
+.emotion-12 {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
@@ -2978,30 +3710,30 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   grid-template-columns: 1fr 1fr 12px;
 }
 
-.emotion-11 > *:last-of-type {
+.emotion-12 > *:last-of-type {
   grid-column: 2 / 2;
   justify-self: flex-end;
   grid-row: 1;
 }
 
-.emotion-9 {
+.emotion-10 {
   font-weight: 700;
 }
 
-.emotion-16 {
+.emotion-17 {
   padding: 6px 0;
   border-top: 1px solid rgba(0,0,0,.1);
   display: grid;
   grid-template-columns: 1fr 1fr 0px;
 }
 
-.emotion-12 {
+.emotion-13 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
 }
 
-.emotion-13 {
+.emotion-14 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -3036,36 +3768,36 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   text-align: center;
 }
 
-.emotion-13:focus {
+.emotion-14:focus {
   box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-.emotion-13[disabled] {
+.emotion-14[disabled] {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.emotion-13:-webkit-autofill {
+.emotion-14:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
 }
 
-.emotion-13::-webkit-input-placeholder {
+.emotion-14::-webkit-input-placeholder {
   color: #999999;
 }
 
-.emotion-13::-moz-placeholder {
+.emotion-14::-moz-placeholder {
   color: #999999;
 }
 
-.emotion-13:-ms-input-placeholder {
+.emotion-14:-ms-input-placeholder {
   color: #999999;
 }
 
-.emotion-13::placeholder {
+.emotion-14::placeholder {
   color: #999999;
 }
 
-.emotion-15 {
+.emotion-16 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
@@ -3084,7 +3816,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 14px;
 }
 
-.emotion-88 {
+.emotion-89 {
   border: 0;
   border-radius: 3em;
   cursor: pointer;
@@ -3125,7 +3857,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   z-index: 2;
 }
 
-.emotion-88 svg {
+.emotion-89 svg {
   display: inline-block;
   height: 14px;
   width: 14px;
@@ -3136,29 +3868,29 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   pointer-events: none;
 }
 
-.emotion-88 svg path {
+.emotion-89 svg path {
   fill: currentColor;
 }
 
-.emotion-88:hover {
+.emotion-89:hover {
   background: #f2f2f2;
 }
 
-.emotion-88:active {
+.emotion-89:active {
   background: #FFFFFF;
 }
 
-.emotion-88:focus {
+.emotion-89:focus {
   box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
-.emotion-88:hover {
+.emotion-89:hover {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
 }
 
-.emotion-99 {
+.emotion-100 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -3171,6 +3903,76 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   flex-direction: column;
 }
 
+.emotion-8 {
+  color: #999999;
+  height: 40px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-scrollbar-width: slim;
+  -moz-scrollbar-width: slim;
+  -ms-scrollbar-width: slim;
+  scrollbar-width: slim;
+  -webkit-scrollbar-width: 3px;
+  -moz-scrollbar-width: 3px;
+  -ms-scrollbar-width: 3px;
+  scrollbar-width: 3px;
+  -webkit-scrollbar-color: transparent transparent;
+  -moz-scrollbar-color: transparent transparent;
+  -ms-scrollbar-color: transparent transparent;
+  scrollbar-color: transparent transparent;
+  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+}
+
+.emotion-8:hover {
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: 0;
+  -moz-scrollbar-width: 0;
+  -ms-scrollbar-width: 0;
+  scrollbar-width: 0;
+}
+
+.emotion-8::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: none;
+  display: none;
+}
+
+.emotion-8:hover::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  display: block;
+}
+
+.emotion-8::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: transparent;
+  opacity: 0;
+  border: 0 none;
+  box-shadow: none;
+  height: 0;
+  width: 0;
+}
+
+.emotion-8::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(0,0,0,.1);
+  box-shadow: none;
+}
+
+.emotion-8::-webkit-scrollbar-track-piece {
+  display: none;
+  border: 0 none;
+  opacity: 0;
+  visibility: hidden;
+}
+
 .emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3180,14 +3982,9 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #FFFFFF;
-  color: #999999;
-  height: 40px;
   position: relative;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
+  white-space: nowrap;
+  height: 40px;
 }
 
 .emotion-2 {
@@ -3195,9 +3992,12 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .emotion-2 > * {
@@ -3205,14 +4005,10 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-1 {
-  white-space: nowrap;
-  height: 100%;
-  padding-bottom: 50px;
-  overflow-x: visisble;
-  overflow-y: visisble;
+  overflow: hidden;
 }
 
-.emotion-1:first-child {
+.emotion-1:first-of-type {
   margin-left: 0;
 }
 
@@ -3266,10 +4062,41 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 30px;
 }
 
 .emotion-6 > * {
   margin-right: 15px;
+}
+
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-99 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  position: relative;
+  overflow: auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
 }
 
 .emotion-5 {
@@ -3295,31 +4122,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 15px;
 }
 
-.emotion-4 {
-  shape-rendering: inherit;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  display: block;
-}
-
-.emotion-3 {
-  fill: currentColor;
-}
-
-.emotion-98 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-  position: relative;
-  overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
-}
-
-.emotion-95 {
+.emotion-96 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3330,11 +4133,11 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   font-weight: 700;
 }
 
-.emotion-95 > * + * {
+.emotion-96 > * + * {
   margin-left: 20px;
 }
 
-.emotion-90 {
+.emotion-91 {
   display: inline-block;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
@@ -3344,36 +4147,30 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   color: #999999;
 }
 
-.emotion-90 svg path {
+.emotion-91 svg path {
   fill: #1EA7FD;
 }
 
-.emotion-90:hover,
-.emotion-90:focus {
+.emotion-91:hover,
+.emotion-91:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
-.emotion-90:hover svg path,
-.emotion-90:focus svg path {
+.emotion-91:hover svg path,
+.emotion-91:focus svg path {
   fill: #0297f5;
 }
 
-.emotion-90:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+.emotion-91:active {
   color: #028ee6;
 }
 
-.emotion-90:active svg path {
+.emotion-91:active svg path {
   fill: #028ee6;
 }
 
-.emotion-90 svg {
+.emotion-91 svg {
   display: inline-block;
   height: 1em;
   width: 1em;
@@ -3383,38 +4180,38 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   margin-right: 0.4em;
 }
 
-.emotion-90 svg path {
+.emotion-91 svg path {
   fill: #999999;
 }
 
-.emotion-90:hover {
+.emotion-91:hover {
   color: #666666;
 }
 
-.emotion-90:hover svg path {
+.emotion-91:hover svg path {
   fill: #666666;
 }
 
-.emotion-90:active {
+.emotion-91:active {
   color: #444444;
 }
 
-.emotion-90:active svg path {
+.emotion-91:active svg path {
   fill: #444444;
 }
 
-.emotion-97 {
+.emotion-98 {
   display: block;
 }
 
-.emotion-96 {
+.emotion-97 {
   font-size: 14px;
   padding: 3rem 20px;
   max-width: 600px;
   margin: 0 auto;
 }
 
-.emotion-8 {
+.emotion-9 {
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: 900;
@@ -3428,14 +4225,14 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: flex;
 }
 
-.emotion-87 {
+.emotion-88 {
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: minmax(auto,auto);
   margin-bottom: 20px;
 }
 
-.emotion-11 {
+.emotion-12 {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
@@ -3444,30 +4241,30 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   grid-template-columns: 1fr 1fr 12px;
 }
 
-.emotion-11 > *:last-of-type {
+.emotion-12 > *:last-of-type {
   grid-column: 2 / 2;
   justify-self: flex-end;
   grid-row: 1;
 }
 
-.emotion-9 {
+.emotion-10 {
   font-weight: 700;
 }
 
-.emotion-16 {
+.emotion-17 {
   padding: 6px 0;
   border-top: 1px solid rgba(0,0,0,.1);
   display: grid;
   grid-template-columns: 1fr 1fr 0px;
 }
 
-.emotion-12 {
+.emotion-13 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
 }
 
-.emotion-13 {
+.emotion-14 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -3502,36 +4299,36 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   text-align: center;
 }
 
-.emotion-13:focus {
+.emotion-14:focus {
   box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-.emotion-13[disabled] {
+.emotion-14[disabled] {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.emotion-13:-webkit-autofill {
+.emotion-14:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
 }
 
-.emotion-13::-webkit-input-placeholder {
+.emotion-14::-webkit-input-placeholder {
   color: #999999;
 }
 
-.emotion-13::-moz-placeholder {
+.emotion-14::-moz-placeholder {
   color: #999999;
 }
 
-.emotion-13:-ms-input-placeholder {
+.emotion-14:-ms-input-placeholder {
   color: #999999;
 }
 
-.emotion-13::placeholder {
+.emotion-14::placeholder {
   color: #999999;
 }
 
-.emotion-15 {
+.emotion-16 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
@@ -3550,7 +4347,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   width: 14px;
 }
 
-.emotion-88 {
+.emotion-89 {
   border: 0;
   border-radius: 3em;
   cursor: pointer;
@@ -3591,7 +4388,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   z-index: 2;
 }
 
-.emotion-88 svg {
+.emotion-89 svg {
   display: inline-block;
   height: 14px;
   width: 14px;
@@ -3602,117 +4399,123 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   pointer-events: none;
 }
 
-.emotion-88 svg path {
+.emotion-89 svg path {
   fill: currentColor;
 }
 
-.emotion-88:hover {
+.emotion-89:hover {
   background: #f2f2f2;
 }
 
-.emotion-88:active {
+.emotion-89:active {
   background: #FFFFFF;
 }
 
-.emotion-88:focus {
+.emotion-89:focus {
   box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
 }
 
-.emotion-88:hover {
+.emotion-89:hover {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
 }
 
 <div
-  class="emotion-99"
+  class="emotion-100"
+  title="wrapper"
 >
   <div
-    class="emotion-7"
+    class="emotion-8"
+    title="flexbar"
   >
     <div
-      class="emotion-2"
+      class="emotion-7"
     >
       <div
-        class="emotion-1"
-        role="tablist"
+        class="emotion-2"
+      >
+        <div
+          class="emotion-1"
+          role="tablist"
+        >
+          <button
+            class="emotion-0"
+            role="tab"
+            type="button"
+          >
+            Keyboard Shortcuts
+          </button>
+        </div>
+      </div>
+      <div
+        class="emotion-6"
       >
         <button
-          class="emotion-0"
-          role="tab"
-          type="button"
+          class="emotion-5"
         >
-          Keyboard Shortcuts
+          <svg
+            class="emotion-4"
+            viewBox="0 0 1024 1024"
+          >
+            <path
+              class="emotion-3"
+              d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+            />
+          </svg>
         </button>
       </div>
     </div>
-    <div
-      class="emotion-6"
-    >
-      <button
-        class="emotion-5"
-      >
-        <svg
-          class="emotion-4"
-          viewBox="0 0 1024 1024"
-        >
-          <path
-            class="emotion-3"
-            d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
-          />
-        </svg>
-      </button>
-    </div>
   </div>
   <div
-    class="emotion-98"
+    class="emotion-99"
   >
     <div
-      class="emotion-97"
+      class="emotion-98"
       role="tabpanel"
     >
       <div
-        class="emotion-96"
+        class="emotion-97"
       >
         <header
-          class="emotion-8"
+          class="emotion-9"
         >
           Keyboard shortcuts
         </header>
         <div
-          class="emotion-87"
+          class="emotion-88"
         >
           <div
-            class="emotion-11"
+            class="emotion-12"
           >
             <div
-              class="emotion-9"
+              class="emotion-10"
             >
               Commands
             </div>
             <div
-              class="emotion-9"
+              class="emotion-10"
             >
               Shortcut
             </div>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Go full screen
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="F"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3722,72 +4525,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Toggle addons
             </div>
             <input
-              class="modalInput emotion-13"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="S"
-            />
-            <svg
-              class="emotion-15"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
-              />
-            </svg>
-          </div>
-          <div
-            class="emotion-16"
-          >
-            <div
-              class="emotion-12"
-            >
-              Toggle addons orientation
-            </div>
-            <input
-              class="modalInput emotion-13"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="D"
-            />
-            <svg
-              class="emotion-15"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
-              />
-            </svg>
-          </div>
-          <div
-            class="emotion-16"
-          >
-            <div
-              class="emotion-12"
-            >
-              Toggle sidebar
-            </div>
-            <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="A"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3797,22 +4550,72 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
+            >
+              Toggle addons orientation
+            </div>
+            <input
+              class="modalInput emotion-14"
+              placeholder="Type keys"
+              readonly=""
+              spellcheck="false"
+              value="D"
+            />
+            <svg
+              class="emotion-16"
+              viewBox="0 0 1024 1024"
+            >
+              <path
+                class="emotion-3"
+                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              />
+            </svg>
+          </div>
+          <div
+            class="emotion-17"
+          >
+            <div
+              class="emotion-13"
+            >
+              Toggle sidebar
+            </div>
+            <input
+              class="modalInput emotion-14"
+              placeholder="Type keys"
+              readonly=""
+              spellcheck="false"
+              value="S"
+            />
+            <svg
+              class="emotion-16"
+              viewBox="0 0 1024 1024"
+            >
+              <path
+                class="emotion-3"
+                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              />
+            </svg>
+          </div>
+          <div
+            class="emotion-17"
+          >
+            <div
+              class="emotion-13"
             >
               Toggle canvas toolbar
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="T"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3822,22 +4625,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Focus search
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="/"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3847,22 +4650,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Focus sidebar
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="1"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3872,22 +4675,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Focus canvas
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="2"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3897,22 +4700,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Focus addons
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="3"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3922,22 +4725,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Previous component
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="alt ↑"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3947,22 +4750,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Next component
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="alt ↓"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3972,22 +4775,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Previous story
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="alt ←"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -3997,22 +4800,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Next story
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="alt →"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -4022,22 +4825,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Go to shortcuts page
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value="⌃ ⇧​ ,"
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -4047,22 +4850,22 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </svg>
           </div>
           <div
-            class="emotion-16"
+            class="emotion-17"
           >
             <div
-              class="emotion-12"
+              class="emotion-13"
             >
               Go to about page
             </div>
             <input
-              class="modalInput emotion-13"
+              class="modalInput emotion-14"
               placeholder="Type keys"
               readonly=""
               spellcheck="false"
               value=","
             />
             <svg
-              class="emotion-15"
+              class="emotion-16"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -4073,40 +4876,40 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
           </div>
         </div>
         <button
-          class="emotion-88"
+          class="emotion-89"
           id="restoreDefaultsHotkeys"
         >
           Restore defaults
         </button>
         <div
-          class="emotion-95"
+          class="emotion-96"
         >
           <a
-            class="emotion-90"
+            class="emotion-91"
             href="https://storybook.js.org"
           >
             <span
-              class="emotion-89"
+              class="emotion-90"
             >
               Docs
             </span>
           </a>
           <a
-            class="emotion-90"
+            class="emotion-91"
             href="https://github.com/storybooks/storybook"
           >
             <span
-              class="emotion-89"
+              class="emotion-90"
             >
               GitHub
             </span>
           </a>
           <a
-            class="emotion-90"
+            class="emotion-91"
             href="https://storybook.js.org/support"
           >
             <span
-              class="emotion-89"
+              class="emotion-90"
             >
               Support
             </span>
@@ -4547,12 +5350,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  padding: 7px;
+  padding: 9px;
   box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
   color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -4952,12 +5756,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  padding: 7px;
+  padding: 9px;
   box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
   color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -5751,12 +6556,13 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  padding: 7px;
+  padding: 9px;
   box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
   color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -6279,12 +7085,13 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  padding: 7px;
+  padding: 9px;
   box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
   color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -7038,12 +7845,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  padding: 7px;
+  padding: 9px;
   box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
   color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-3 svg {
@@ -7148,12 +7956,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrand 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  padding: 7px;
+  padding: 9px;
   box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
   color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-3 svg {
@@ -7389,12 +8198,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  padding: 7px;
+  padding: 9px;
   box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
   color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -7540,12 +8350,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  padding: 7px;
+  padding: 9px;
   box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
   color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -7751,12 +8562,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  padding: 7px;
+  padding: 9px;
   box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
   color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -7891,12 +8703,13 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  padding: 7px;
+  padding: 9px;
   box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
   color: rgba(51,51,51,0.7);
   background: transparent;
   position: relative;
   overflow: visible;
+  padding: 7px;
 }
 
 .emotion-5 svg {
@@ -10572,7 +11385,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -10592,9 +11405,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 .emotion-2:hover,
 .emotion-2:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -10604,9 +11414,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 }
 
 .emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -10639,7 +11446,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
   margin-top: 10px;
 }
 
-.emotion-6 > *:first-child {
+.emotion-6 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -10659,9 +11466,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 .emotion-2:hover,
 .emotion-2:focus {
   cursor: pointer;
-  -webkit-transform: translate3d(0,-1px,0);
-  -ms-transform: translate3d(0,-1px,0);
-  transform: translate3d(0,-1px,0);
   color: #0297f5;
 }
 
@@ -10671,9 +11475,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 }
 
 .emotion-2:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
   color: #028ee6;
 }
 
@@ -10943,7 +11744,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   margin-top: 10px;
 }
 
-.emotion-69 > *:first-child {
+.emotion-69 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -11163,7 +11964,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   margin-top: 10px;
 }
 
-.emotion-69 > *:first-child {
+.emotion-69 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -11842,7 +12643,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-top: 10px;
 }
 
-.emotion-41 > *:first-child {
+.emotion-41 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -12214,7 +13015,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   margin-top: 10px;
 }
 
-.emotion-41 > *:first-child {
+.emotion-41 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -12813,7 +13614,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-top: 10px;
 }
 
-.emotion-40 > *:first-child {
+.emotion-40 > *:first-of-type {
   margin-top: 0;
 }
 
@@ -13168,7 +13969,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   margin-top: 10px;
 }
 
-.emotion-40 > *:first-child {
+.emotion-40 > *:first-of-type {
   margin-top: 0;
 }
 

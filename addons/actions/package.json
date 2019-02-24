@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/actions"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -29,7 +30,7 @@
     "global": "^4.3.2",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
-    "react": "^16.8.1",
+    "react": "^16.8.2",
     "react-inspector": "^2.3.0",
     "uuid": "^3.3.2"
   },
@@ -37,7 +38,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.120",
+    "@types/lodash": "^4.14.121",
     "@types/uuid": "^3.4.4"
   }
 }

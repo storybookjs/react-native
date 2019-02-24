@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/channel-postmessage"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -21,8 +22,9 @@
   },
   "dependencies": {
     "@storybook/channels": "5.0.0-beta.3",
+    "@storybook/client-logger": "5.0.0-beta.3",
     "global": "^4.3.2",
-    "telejson": "^1.0.1"
+    "telejson": "^2.0.0"
   },
   "publishConfig": {
     "access": "public"

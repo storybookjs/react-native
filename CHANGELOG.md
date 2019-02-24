@@ -1,3 +1,117 @@
+## 5.0.0-rc.5 (February 23, 2019)
+
+### Bug Fixes
+
+* UI: Fix `/` search hotkey so it doesn't type into the input ([#5702](https://github.com/storybooks/storybook/pull/5702))
+* Addon-a11y: Fix a11y setup being undefined ([#5724](https://github.com/storybooks/storybook/pull/5724))
+* UI: Fix duplicate theming packages ([#5722](https://github.com/storybooks/storybook/pull/5722))
+* Core: Clean up debug logging ([#5705](https://github.com/storybooks/storybook/pull/5705))
+* UI: Minor addon ux tweaks ([#5712](https://github.com/storybooks/storybook/pull/5712))
+* Addon-a11y: Fix story scrolling ([#5713](https://github.com/storybooks/storybook/pull/5713))
+* UI: Fix mobile styling ([#5709](https://github.com/storybooks/storybook/pull/5709))
+* UI: Fix tooltip bugs ([#5692](https://github.com/storybooks/storybook/pull/5692))
+* UI: Fix toolbar separators ([#5711](https://github.com/storybooks/storybook/pull/5711))
+
+### Maintenance
+
+* Typescript: migrate addon-backgrounds ([#5535](https://github.com/storybooks/storybook/pull/5535))
+* Typescript: fix typings for addon-backgrounds ([#5730](https://github.com/storybooks/storybook/pull/5730))
+
+## 5.0.0-rc.4 (February 21, 2019)
+
+### Features
+
+* UI: Handle prerelease versions in version check ([#5641](https://github.com/storybooks/storybook/pull/5641))
+
+### Bug Fixes
+
+* UI: Fix scrollbar persistence ([#5689](https://github.com/storybooks/storybook/pull/5689))
+* UI: Fix keyboard shortcuts of toggleNav & togglePanel ([#5677](https://github.com/storybooks/storybook/pull/5677))
+* Core: Fix singleton module issue for manager & theme ([#5679](https://github.com/storybooks/storybook/pull/5679))
+* Addon-storysource: Fix source not updating ([#5672](https://github.com/storybooks/storybook/pull/5672))
+* Core: Fix broken error reporting ([#5678](https://github.com/storybooks/storybook/pull/5678))
+* Addon-info: Compare component name to story name, not story fn ([#5649](https://github.com/storybooks/storybook/pull/5649))
+
+### Maintenance
+
+* CLI: Cleanup version notice ([#5699](https://github.com/storybooks/storybook/pull/5699))
+* Core: Fix story fn consistency ([#5669](https://github.com/storybooks/storybook/pull/5669))
+
+## 4.1.13 (February 21, 2019)
+
+### Maintenance
+
+* CLI: Cleanup version notice ([#5699](https://github.com/storybooks/storybook/pull/5699))
+* Docs: Use static versions.json file instead of hacking one in ([#5675](https://github.com/storybooks/storybook/pull/5675))
+
+## 5.0.0-rc.3 (February 19, 2019)
+
+### Bug Fixes
+
+* UI: Styling bug fixes, story updates, and more QA ([#5650](https://github.com/storybooks/storybook/pull/5650))
+* UI: V5 style refinements ([#5562](https://github.com/storybooks/storybook/pull/5562))
+
+## 5.0.0-rc.2 (February 19, 2019)
+
+### Features
+
+* UI: Allow collapsing active story and use separate expansion for filtered ([#5625](https://github.com/storybooks/storybook/pull/5625))
+
+### Bug Fixes
+
+* Addon-a11y: Fix tab highlighting  ([#5646](https://github.com/storybooks/storybook/pull/5646))
+* Addon-jest: Fix event subscription ([#5644](https://github.com/storybooks/storybook/pull/5644))
+* UI: Handle old versions in version check ([#5638](https://github.com/storybooks/storybook/pull/5638))
+
+### Maintenance
+
+* UI: Fix some prop warnings ([#5635](https://github.com/storybooks/storybook/pull/5635))
+* UI: Use the correct props to start the tooltip open ([#5610](https://github.com/storybooks/storybook/pull/5610))
+
+## 4.1.12 (February 18, 2019)
+
+### Bug Fixes
+
+* Addon-google-analytics: Add missing `register.js` file ([#5379](https://github.com/storybooks/storybook/pull/5379))
+
+### Dependency Upgrades
+
+* Update modal manager for rn 0.58 support ([#5581](https://github.com/storybooks/storybook/pull/5581))
+
+## 5.0.0-rc.1 (February 16, 2019)
+
+### Bug Fixes
+
+* Core: Add missing babel-preset-env dependency ([#5617](https://github.com/storybooks/storybook/pull/5617))
+
+## 5.0.0-rc.0 (February 16, 2019)
+
+Welcome to Storybook 5 (SB5) with a beautiful new user interface including:
+
+* Navigation sidebar redesign
+* New canvas toolbar 
+* Customizable keyboard shortcuts
+* Improved search
+* Version update notifications
+
+SB5 also includes a new URL structure, expanded addon API, and many more features and architectural improvements.
+
+See [the RC announcement](https://gist.github.com/shilman/0332090b63f1798a58ed8d85db44f4b4) for more details!
+
+## 5.0.0-beta.4 (February 15, 2019)
+
+### Bug Fixes
+
+* UI: Fix mobile view ([#5603](https://github.com/storybooks/storybook/pull/5603))
+* UI: Misc warning fixes ([#5601](https://github.com/storybooks/storybook/pull/5601))
+* UI: Fix ie 11 ([#5599](https://github.com/storybooks/storybook/pull/5599))
+* CLI: Fix for when outputDir is an absolute path ([#5573](https://github.com/storybooks/storybook/pull/5573))
+* CLI: Avoid false-negative checks for port ([#5565](https://github.com/storybooks/storybook/pull/5565))
+* Core: Prioritise programatic configuration ([#5564](https://github.com/storybooks/storybook/pull/5564))
+* UI: FIX clear search ([#5550](https://github.com/storybooks/storybook/pull/5550))
+* Core: Transpile safe-eval package ([#5498](https://github.com/storybooks/storybook/pull/5498))
+* UI: Add default backgrounds to official example ([#5585](https://github.com/storybooks/storybook/pull/5585))
+
 ## 5.0.0-beta.3 (February 13, 2019)
 
 ### Bug Fixes
