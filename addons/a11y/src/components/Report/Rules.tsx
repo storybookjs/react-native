@@ -61,7 +61,7 @@ interface RulesProps {
   passes: boolean;
 }
 
-const Rules: FunctionComponent<RulesProps> = ({ rules, passes }) => {
+export const Rules: FunctionComponent<RulesProps> = ({ rules, passes }) => {
   return (
     <List>
       {rules.map((rule, index) => (
@@ -70,5 +70,3 @@ const Rules: FunctionComponent<RulesProps> = ({ rules, passes }) => {
     </List>
   );
 };
-
-export default Rules;

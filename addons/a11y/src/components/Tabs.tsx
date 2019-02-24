@@ -56,7 +56,7 @@ interface TabsState {
   active: number;
 }
 
-class Tabs extends Component<TabsProps, TabsState> {
+export class Tabs extends Component<TabsProps, TabsState> {
   state: TabsState = {
     active: 0,
   };
@@ -90,5 +90,3 @@ class Tabs extends Component<TabsProps, TabsState> {
     );
   }
 }
-
-export default Tabs;

@@ -2,8 +2,8 @@ import React, { FunctionComponent } from 'react';
 
 import { styled } from '@storybook/theming';
 
-import Rules from './Rules';
 import { NodeResult } from 'axe-core';
+import { Rules } from './Rules';
 
 const Item = styled.li({
   fontWeight: 600,
@@ -39,12 +39,10 @@ interface ElementsProps {
   passes: boolean;
 }
 
-const Elements: FunctionComponent<ElementsProps> = ({ elements, passes }) => (
+export const Elements: FunctionComponent<ElementsProps> = ({ elements, passes }) => (
   <ol>
     {elements.map((element, index) => (
       <Element passes={passes} element={element} key={index} />
     ))}
   </ol>
 );
-
-export default Elements;

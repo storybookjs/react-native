@@ -22,7 +22,7 @@ interface InfoProps {
   item: Result;
 }
 
-const Info: FunctionComponent<InfoProps> = ({ item }) => {
+export const Info: FunctionComponent<InfoProps> = ({ item }) => {
   return (
     <Wrapper>
       <Help>{item.help}</Help>
@@ -32,5 +32,3 @@ const Info: FunctionComponent<InfoProps> = ({ item }) => {
     </Wrapper>
   );
 };
-
-export default Info;

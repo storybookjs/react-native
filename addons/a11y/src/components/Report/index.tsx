@@ -1,8 +1,8 @@
 import React, { Fragment, FunctionComponent } from 'react';
 import { Placeholder } from '@storybook/components';
 
-import Item from './Item';
 import { Result } from 'axe-core';
+import { Item } from './Item';
 
 export interface ReportProps {
   items: Result[];
@@ -10,14 +10,12 @@ export interface ReportProps {
   passes: boolean;
 }
 
-const Report: FunctionComponent<ReportProps> = ({ items, empty, passes }) => (
+export const Report: FunctionComponent<ReportProps> = ({ items, empty, passes }) => (
   <Fragment>
     {items.length ? (
-      items.map((item) => <Item passes={passes} item={item} key={item.id} />)
+      items.map(item => <Item passes={passes} item={item} key={item.id} />)
     ) : (
       <Placeholder key="placeholder">{empty}</Placeholder>
     )}
   </Fragment>
 );
-
-export default Report;

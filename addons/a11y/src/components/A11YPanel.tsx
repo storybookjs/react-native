@@ -3,14 +3,12 @@ import React, { Component, Fragment } from 'react';
 import { styled } from '@storybook/theming';
 
 import { STORY_RENDERED } from '@storybook/core-events';
-import { ActionBar, Icons } from '@storybook/components';
+import { ActionBar, Icons, ScrollArea } from '@storybook/components';
 
-import { ScrollArea } from '@storybook/components/dist/ScrollArea/ScrollArea';
-import EVENTS from '../constants';
-
-import Tabs from './Tabs';
-import Report from './Report';
 import { AxeResults, Result } from 'axe-core';
+import { Report } from './Report';
+import { Tabs } from './Tabs';
+import { EVENTS } from '../constants';
 
 const Icon = styled(Icons)(
   {
@@ -49,7 +47,7 @@ interface A11YPanelProps {
   };
 }
 
-class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
+export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
   state: A11YPanelState = {
     status: 'ready',
     passes: [],
@@ -159,5 +157,3 @@ class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
     ) : null;
   }
 }
-
-export default A11YPanel;

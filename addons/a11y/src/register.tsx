@@ -1,11 +1,10 @@
 import React, { Fragment, FunctionComponent } from 'react';
-import addons, { types } from '@storybook/addons';
 import { styled } from '@storybook/theming';
 
-import Panel from './components/Panel';
-import ColorBlindness from './components/ColorBlindness';
-
 import { ADDON_ID, PANEL_ID } from './constants';
+import { ColorBlindness } from './components/ColorBlindness';
+import { A11YPanel } from './components/A11YPanel';
+import { addons, types } from '@storybook/addons';
 
 const Hidden = styled.div(() => ({
   display: 'none',
@@ -90,7 +89,7 @@ addons.register(ADDON_ID, api => {
   addons.add(PANEL_ID, {
     title: 'Accessibility',
     type: types.PANEL,
-    render: ({ active, key }) => <Panel key={key} api={api} active={active} />,
+    render: ({ active, key }) => <A11YPanel key={key} api={api} active={active} />,
   });
 
   addons.add(PANEL_ID, {

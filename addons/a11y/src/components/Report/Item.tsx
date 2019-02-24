@@ -3,10 +3,10 @@ import React, { Component, Fragment } from 'react';
 import { styled } from '@storybook/theming';
 import { Icons } from '@storybook/components';
 
-import Info from './Info';
-import Tags from './Tags';
-import Elements from './Elements';
 import { Result } from 'axe-core';
+import { Info } from './Info';
+import { Elements } from './Elements';
+import { Tags } from './Tags';
 
 const Wrapper = styled.div();
 
@@ -46,7 +46,7 @@ interface ItemState {
   open: boolean;
 }
 
-class Item extends Component<ItemProps, ItemState> {
+export class Item extends Component<ItemProps, ItemState> {
   state = {
     open: false,
   };
@@ -84,5 +84,3 @@ class Item extends Component<ItemProps, ItemState> {
     );
   }
 }
-
-export default Item;

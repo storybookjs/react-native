@@ -32,7 +32,7 @@ interface ColorBlindnessState {
   filter: string | null;
 }
 
-class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnessState> {
+export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnessState> {
   state: ColorBlindnessState = {
     expanded: false,
     filter: null,
@@ -104,5 +104,3 @@ class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnessState>
     );
   }
 }
-
-export default ColorBlindness;

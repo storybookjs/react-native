@@ -5,7 +5,7 @@ import { stripIndents } from 'common-tags';
 
 import addons, { StoryWrapper } from '@storybook/addons';
 import { STORY_RENDERED } from '@storybook/core-events';
-import EVENTS, { PARAM_KEY } from './constants';
+import { EVENTS, PARAM_KEY } from './constants';
 
 const channel = addons.getChannel();
 let progress = Promise.resolve();

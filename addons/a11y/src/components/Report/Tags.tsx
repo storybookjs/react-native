@@ -20,7 +20,7 @@ interface TagsProps {
   tags: TagValue[];
 }
 
-const Tags: FunctionComponent<TagsProps> = ({ tags }) => {
+export const Tags: FunctionComponent<TagsProps> = ({ tags }) => {
   return (
     <Wrapper>
       {tags.map(tag => (
@@ -29,5 +29,3 @@ const Tags: FunctionComponent<TagsProps> = ({ tags }) => {
     </Wrapper>
   );
 };
-
-export default Tags;
