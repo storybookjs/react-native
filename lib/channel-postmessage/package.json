@@ -26,9 +26,6 @@
     "global": "^4.3.2",
     "telejson": "^2.0.0"
   },
-  "devDependencies": {
-    "@types/json-stringify-safe": "^5.0.0"
-  },
   "publishConfig": {
     "access": "public"
   }

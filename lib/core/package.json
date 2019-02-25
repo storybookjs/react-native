@@ -31,7 +31,6 @@
     "@storybook/client-logger": "5.0.0-beta.3",
     "@storybook/core-events": "5.0.0-beta.3",
     "@storybook/node-logger": "5.0.0-beta.3",
-    "@storybook/theming": "5.0.0-beta.3",
     "@storybook/router": "5.0.0-beta.3",
     "@storybook/ui": "5.0.0-beta.3",
     "airbnb-js-shims": "^1 || ^2",
@@ -43,7 +42,6 @@
     "boxen": "^2.1.0",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "chalk": "^2.4.2",
-    "child-process-promise": "^2.2.1",
     "cli-table3": "0.5.1",
     "commander": "^2.19.0",
     "common-tags": "^1.8.0",
@@ -65,12 +63,11 @@
     "json5": "^2.1.0",
     "lazy-universal-dotenv": "^2.0.0",
     "node-fetch": "^2.2.0",
-    "object.omit": "^3.0.0",
     "opn": "^5.4.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "pretty-hrtime": "^1.0.3",
-    "prop-types": "^15.6.2",
+    "qs": "^6.5.2",
     "raw-loader": "^1.0.0",
     "react-dev-utils": "^7.0.0",
     "regenerator-runtime": "^0.12.1",
@@ -79,9 +76,7 @@
     "semver": "^5.6.0",
     "serve-favicon": "^2.5.0",
     "shelljs": "^0.8.2",
-    "spawn-promise": "^0.1.8",
     "style-loader": "^0.23.1",
-    "svg-url-loader": "^2.3.2",
     "terser-webpack-plugin": "^1.2.2",
     "url-loader": "^1.1.2",
     "util-deprecate": "^1.0.2",
@@ -90,7 +85,6 @@
     "webpack-hot-middleware": "^2.24.3"
   },
   "devDependencies": {
-    "flush-promises": "^1.0.2",
     "mock-fs": "^4.7.0"
   },
   "peerDependencies": {
