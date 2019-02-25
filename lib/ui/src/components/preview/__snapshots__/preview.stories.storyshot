@@ -296,6 +296,8 @@ Array [
   bottom: 0;
   top: 40px;
   z-index: 3;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
   height: calc(100% - 40px);
   background: transparent;
 }
@@ -788,6 +790,8 @@ Array [
   bottom: 0;
   top: 40px;
   z-index: 3;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
   height: calc(100% - 40px);
   background: transparent;
 }
