@@ -1,8 +1,8 @@
 {
   "next": {
-    "version": "5.0.0-rc.5",
+    "version": "5.0.0-rc.6",
     "info": {
-      "plain": "### Bug Fixes\n\n* UI: Fix `/` search hotkey so it doesn't type into the input ([#5702](https://github.com/storybooks/storybook/pull/5702))\n* Addon-a11y: Fix a11y setup being undefined ([#5724](https://github.com/storybooks/storybook/pull/5724))\n* UI: Fix duplicate theming packages ([#5722](https://github.com/storybooks/storybook/pull/5722))\n* Core: Clean up debug logging ([#5705](https://github.com/storybooks/storybook/pull/5705))\n* UI: Minor addon ux tweaks ([#5712](https://github.com/storybooks/storybook/pull/5712))\n* Addon-a11y: Fix story scrolling ([#5713](https://github.com/storybooks/storybook/pull/5713))\n* UI: Fix mobile styling ([#5709](https://github.com/storybooks/storybook/pull/5709))\n* UI: Fix tooltip bugs ([#5692](https://github.com/storybooks/storybook/pull/5692))\n* UI: Fix toolbar separators ([#5711](https://github.com/storybooks/storybook/pull/5711))\n\n### Maintenance\n\n* Typescript: migrate addon-backgrounds ([#5535](https://github.com/storybooks/storybook/pull/5535))\n* Typescript: fix typings for addon-backgrounds ([#5730](https://github.com/storybooks/storybook/pull/5730))"
+      "plain": "### Bug Fixes\n\n* Addon-actions: FIX performance by upgrading to telejson 2.1 ([#5751](https://github.com/storybooks/storybook/pull/5751))\n* UI: FIX bad treeview mockdata ([#5741](https://github.com/storybooks/storybook/pull/5741))\n* UI: About page styling fixes ([#5732](https://github.com/storybooks/storybook/pull/5732))\n* UI: Restore the toolbar eject button ([#5737](https://github.com/storybooks/storybook/pull/5737))"
     }
   },
   "latest": {

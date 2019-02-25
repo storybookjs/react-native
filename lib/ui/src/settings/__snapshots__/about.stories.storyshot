@@ -396,8 +396,10 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   background: #FEDED2;
   color: #FF4400;
   font-weight: 700;
+  font-size: 14px;
   padding: 10px 20px;
   margin-bottom: 24px;
+  border-radius: 4px;
   border: 1px solid rgba(0,0,0,.1);
   text-align: center;
 }
@@ -917,6 +919,11 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: .75rem;
 }
 
 .emotion-11 {
@@ -1444,15 +1451,16 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   background: #E1FFD4;
   color: #66BF3C;
   font-weight: 700;
+  font-size: 14px;
   padding: 10px 20px;
   margin-bottom: 24px;
+  border-radius: 4px;
   border: 1px solid rgba(0,0,0,.1);
   text-align: center;
 }
 
 .emotion-31 {
   margin-top: 20px;
-  padding-bottom: 20px;
   border-top: 1px solid rgba(0,0,0,.1);
 }
 
@@ -2298,8 +2306,10 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   background: #EAF3FC;
   color: #333333;
   font-weight: 700;
+  font-size: 14px;
   padding: 10px 20px;
   margin-bottom: 24px;
+  border-radius: 4px;
   border: 1px solid rgba(0,0,0,.1);
   text-align: center;
 }
@@ -2313,6 +2323,11 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: .75rem;
 }
 
 .emotion-11 {
