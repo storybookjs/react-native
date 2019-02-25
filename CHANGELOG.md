@@ -1,3 +1,12 @@
+## 5.0.0-rc.6 (February 25, 2019)
+
+### Bug Fixes
+
+* Addon-actions: FIX performance by upgrading to telejson 2.1 ([#5751](https://github.com/storybooks/storybook/pull/5751))
+* UI: FIX bad treeview mockdata ([#5741](https://github.com/storybooks/storybook/pull/5741))
+* UI: About page styling fixes ([#5732](https://github.com/storybooks/storybook/pull/5732))
+* UI: Restore the toolbar eject button ([#5737](https://github.com/storybooks/storybook/pull/5737))
+
 ## 5.0.0-rc.5 (February 23, 2019)
 
 ### Bug Fixes
