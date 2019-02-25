@@ -1,8 +1,8 @@
 {
   "next": {
-    "version": "5.0.0-rc.4",
+    "version": "5.0.0-rc.6",
     "info": {
-      "plain": "### Features\n\n* Handle prerelease versions in version check ([#5641](https://github.com/storybooks/storybook/pull/5641))\n\n### Bug Fixes\n\n* UI: Fix scrollbar persistence ([#5689](https://github.com/storybooks/storybook/pull/5689))\n* UI: Fix keyboard shortcuts of toggleNav & togglePanel ([#5677](https://github.com/storybooks/storybook/pull/5677))\n* Core: Fix singleton module issue for manager & theme ([#5679](https://github.com/storybooks/storybook/pull/5679))\n* Addon-storysource: Fix source not updating ([#5672](https://github.com/storybooks/storybook/pull/5672))\n* Core: Fix broken error reporting ([#5678](https://github.com/storybooks/storybook/pull/5678))\n* Compare component name to story name, not story fn ([#5649](https://github.com/storybooks/storybook/pull/5649))\n\n### Maintenance\n\n* CLI: Cleanup version notice ([#5699](https://github.com/storybooks/storybook/pull/5699))\n* Core: Fix story fn consistency ([#5669](https://github.com/storybooks/storybook/pull/5669))"
+      "plain": "### Bug Fixes\n\n* Addon-actions: FIX performance by upgrading to telejson 2.1 ([#5751](https://github.com/storybooks/storybook/pull/5751))\n* UI: FIX bad treeview mockdata ([#5741](https://github.com/storybooks/storybook/pull/5741))\n* UI: About page styling fixes ([#5732](https://github.com/storybooks/storybook/pull/5732))\n* UI: Restore the toolbar eject button ([#5737](https://github.com/storybooks/storybook/pull/5737))"
     }
   },
   "latest": {
