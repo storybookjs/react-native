@@ -22031,10 +22031,10 @@ teeny-request@^3.7.0:
     node-fetch "^2.2.0"
     uuid "^3.3.2"
 
-telejson@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/telejson/-/telejson-2.0.0.tgz#3bde0d8efc73b9410e51519e8f1e3952d51bafa3"
-  integrity sha512-NfJ8FLvYk7RiwBWw3QfsPz4kUK7lOFhL1KrtumlSnc9XAeD87T10ZrsfP3tbJdsPEPdwWA78x5VCEHtcs9foYQ==
+telejson@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/telejson/-/telejson-2.1.0.tgz#cd362a695929ac6fccc0491827fe05f60d63fcc2"
+  integrity sha512-wLaH1Yu50xlfwLscqIvnAfBjMbILF6OWpMsHlK91dWyZJX3adxgt6YgRTRQiKHJr5INEx0oKSYOaOHfRqpdtzg==
   dependencies:
     global "^4.3.2"
     is-function "^1.0.1"
@@ -22042,6 +22042,7 @@ telejson@^2.0.0:
     is-symbol "^1.0.2"
     isobject "^3.0.1"
     lodash.get "^4.4.2"
+    memoizerific "^1.11.3"
     safe-eval "^0.4.1"
 
 temp-dir@^1.0.0:
