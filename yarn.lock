@@ -22031,10 +22031,10 @@ teeny-request@^3.7.0:
     node-fetch "^2.2.0"
     uuid "^3.3.2"
 
-telejson@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/telejson/-/telejson-2.1.0.tgz#cd362a695929ac6fccc0491827fe05f60d63fcc2"
-  integrity sha512-wLaH1Yu50xlfwLscqIvnAfBjMbILF6OWpMsHlK91dWyZJX3adxgt6YgRTRQiKHJr5INEx0oKSYOaOHfRqpdtzg==
+telejson@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/telejson/-/telejson-2.1.1.tgz#cd8835ce90198c9341078dbe80849e39d1a2b73c"
+  integrity sha512-tc9Jdrhro4zzYgN6y5DNzCXIyIsWT7znGEfK7G4KMPF0X0tC2cVw2SPKnJObao/cxP7/FSnG8bJe0JD390My5g==
   dependencies:
     global "^4.3.2"
     is-function "^1.0.1"
