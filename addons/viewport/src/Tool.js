@@ -123,7 +123,7 @@ export default class ViewportTool extends Component {
           tooltip={<TooltipLinkList links={items} />}
           closeOnClick
         >
-          <IconButton key="viewport" title="Change Viewport">
+          <IconButton key="viewport" title="Change the size of the preview" active={!!item}>
             <Icons icon="grow" />
           </IconButton>
         </WithTooltip>
