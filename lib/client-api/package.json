@@ -32,7 +32,7 @@
     "lodash.isequal": "^4.5.0",
     "lodash.mergewith": "^4.6.1",
     "memoizerific": "^1.11.3",
-    "qs": "^6.5.2"
+    "qs": "^6.6.0"
   },
   "publishConfig": {
     "access": "public"

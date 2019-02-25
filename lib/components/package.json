@@ -30,14 +30,14 @@
     "js-beautify": "^1.8.9",
     "memoizerific": "^1.11.3",
     "polished": "^3.0.0",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-focus-lock": "^1.17.7",
     "react-helmet-async": "^0.2.0",
     "react-popper-tooltip": "^2.8.0",
     "react-syntax-highlighter": "^8.0.1",
-    "react-textarea-autosize": "^7.0.4",
+    "react-textarea-autosize": "^7.1.0",
     "recompose": "^0.30.0"
   },
   "peerDependencies": {

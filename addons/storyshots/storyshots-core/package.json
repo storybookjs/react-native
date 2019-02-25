@@ -34,8 +34,8 @@
     "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
-    "enzyme-to-json": "^3.3.4",
-    "jest-emotion": "^10.0.6",
+    "enzyme-to-json": "^3.3.5",
+    "jest-emotion": "^10.0.7",
     "react": "^16.8.3"
   },
   "publishConfig": {

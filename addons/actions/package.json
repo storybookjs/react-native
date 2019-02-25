@@ -29,7 +29,7 @@
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
     "lodash": "^4.17.11",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "polished": "^3.0.0",
     "react": "^16.8.3",
     "react-inspector": "^2.3.1",
