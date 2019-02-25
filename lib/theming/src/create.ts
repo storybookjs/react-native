@@ -43,7 +43,7 @@ interface ThemeVar {
 
   brandTitle?: string;
   brandUrl?: string;
-  brandComponent?: Brand;
+  brandImage?: string;
 }
 
 const createColors = (vars: ThemeVar): Color => ({
@@ -152,9 +152,9 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
 
   // Brand logo/text
   brand: {
-    title: vars.brandTitle || null,
-    url: vars.brandUrl || null,
-    component: vars.brandComponent || null,
+    title: vars.brandTitle,
+    url: vars.brandUrl,
+    image: vars.brandImage,
   },
 
   code: createSyntax({
