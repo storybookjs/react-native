@@ -2535,6 +2535,198 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 </div>
 `;
 
+exports[`Storyshots Basics|ScrollArea horizontal 1`] = `
+<div
+  style="width:240px;height:240px;overflow:auto;background:papayawhip;margin:1rem"
+>
+  <div
+    data-simplebar="true"
+    data-simplebar-auto-hide="false"
+    data-simplebar-force-visible="true"
+  >
+    <div
+      class="simplebar-wrapper"
+    >
+      <div
+        class="simplebar-height-auto-observer-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
+        >
+          <div
+            class="simplebar-content"
+          >
+            <b>
+              HORIZONTAL
+            </b>
+            <span
+              style="white-space:nowrap"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue, nulla sed consectetur ornare, nibh dui accumsan risus, vel ullamcorper elit ipsum eget libero. Aenean dictum nisi a rutrum convallis. Nullam id viverra diam. Vivamus ut augue eget urna commodo vulputate. Donec ullamcorper lectus a nulla malesuada, eget suscipit dui molestie. Suspendisse ac nulla in mi dignissim ornare id quis est. Morbi ut condimentum lorem, eu porta mi. Proin lacinia ac neque ultricies dictum. Mauris placerat ornare bibendum. Fusce porttitor quis ante ac consectetur. Sed finibus eu magna eu sollicitudin. Vivamus tellus tortor, tincidunt sed arcu tempus, suscipit feugiat est. Ut sit amet libero eget odio euismod tempor et nec velit.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|ScrollArea vertical 1`] = `
+<div
+  style="width:240px;height:240px;overflow:auto;background:papayawhip;margin:1rem"
+>
+  <div
+    data-simplebar="true"
+    data-simplebar-auto-hide="false"
+    data-simplebar-force-visible="true"
+  >
+    <div
+      class="simplebar-wrapper"
+    >
+      <div
+        class="simplebar-height-auto-observer-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
+        >
+          <div
+            class="simplebar-content"
+          >
+            <b>
+              VERTICAL
+            </b>
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue, nulla sed consectetur ornare, nibh dui accumsan risus, vel ullamcorper elit ipsum eget libero. Aenean dictum nisi a rutrum convallis. Nullam id viverra diam. Vivamus ut augue eget urna commodo vulputate. Donec ullamcorper lectus a nulla malesuada, eget suscipit dui molestie. Suspendisse ac nulla in mi dignissim ornare id quis est. Morbi ut condimentum lorem, eu porta mi. Proin lacinia ac neque ultricies dictum. Mauris placerat ornare bibendum. Fusce porttitor quis ante ac consectetur. Sed finibus eu magna eu sollicitudin. Vivamus tellus tortor, tincidunt sed arcu tempus, suscipit feugiat est. Ut sit amet libero eget odio euismod tempor et nec velit.
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|ScrollArea verticalCustomStyling 1`] = `
+.emotion-0 .simplebar-scrollbar:before {
+  background: purple;
+}
+
+.emotion-0 .simplebar-track.simplebar-vertical {
+  right: 20px;
+}
+
+.emotion-0 .simplebar-scrollbar:before {
+  background: purple;
+}
+
+.emotion-0 .simplebar-track.simplebar-vertical {
+  right: 20px;
+}
+
+<div
+  style="width:240px;height:240px;overflow:auto;background:papayawhip;margin:1rem"
+>
+  <div
+    class="emotion-0"
+    data-simplebar="true"
+    data-simplebar-auto-hide="false"
+    data-simplebar-force-visible="true"
+  >
+    <div
+      class="simplebar-wrapper"
+    >
+      <div
+        class="simplebar-height-auto-observer-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
+        >
+          <div
+            class="simplebar-content"
+          >
+            <b>
+              VERTICAL CUSTOM STYLING
+            </b>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue, nulla sed consectetur ornare, nibh dui accumsan risus, vel ullamcorper elit ipsum eget libero. Aenean dictum nisi a rutrum convallis. Nullam id viverra diam. Vivamus ut augue eget urna commodo vulputate. Donec ullamcorper lectus a nulla malesuada, eget suscipit dui molestie. Suspendisse ac nulla in mi dignissim ornare id quis est. Morbi ut condimentum lorem, eu porta mi. Proin lacinia ac neque ultricies dictum. Mauris placerat ornare bibendum. Fusce porttitor quis ante ac consectetur. Sed finibus eu magna eu sollicitudin. Vivamus tellus tortor, tincidunt sed arcu tempus, suscipit feugiat est. Ut sit amet libero eget odio euismod tempor et nec velit.
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Core|Events Force re-render 1`] = `
 .emotion-0 {
   border: 0;
@@ -5117,7 +5309,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   fill: currentColor;
 }
 
-.emotion-81 {
+.emotion-82 {
   display: block;
   padding: 16px 20px;
   border-radius: 10px;
@@ -5139,7 +5331,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   display: none;
 }
 
-.emotion-84 {
+.emotion-85 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -5150,6 +5342,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.emotion-80 .simplebar-track.simplebar-vertical {
+  right: 4px;
 }
 
 .emotion-7 {
@@ -5314,7 +5510,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   height: 48px;
 }
 
-.emotion-83 {
+.emotion-84 {
   position: fixed;
   display: block;
   bottom: 20px;
@@ -5523,7 +5719,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   fill: currentColor;
 }
 
-.emotion-81 {
+.emotion-82 {
   display: block;
   padding: 16px 20px;
   border-radius: 10px;
@@ -5545,7 +5741,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   display: none;
 }
 
-.emotion-84 {
+.emotion-85 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -5556,6 +5752,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.emotion-80 .simplebar-track.simplebar-vertical {
+  right: 4px;
 }
 
 .emotion-7 {
@@ -5720,7 +5920,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   height: 48px;
 }
 
-.emotion-83 {
+.emotion-84 {
   position: fixed;
   display: block;
   bottom: 20px;
@@ -5878,9 +6078,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 <nav
-  class="container emotion-84"
+  class="container emotion-85"
 >
   <div
+    class="emotion-80"
     data-simplebar="true"
   >
     <div
@@ -6335,13 +6536,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
     </div>
   </div>
   <div
-    class="emotion-83"
+    class="emotion-84"
   >
     <div
       class="emotion-78"
     >
       <div
-        class="emotion-81"
+        class="emotion-82"
       >
         <div
           class="emotion-79"
@@ -6367,7 +6568,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   fill: currentColor;
 }
 
-.emotion-52 {
+.emotion-53 {
   display: block;
   padding: 16px 20px;
   border-radius: 10px;
@@ -6389,7 +6590,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: none;
 }
 
-.emotion-55 {
+.emotion-56 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -6400,6 +6601,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.emotion-51 .simplebar-track.simplebar-vertical {
+  right: 4px;
 }
 
 .emotion-7 {
@@ -6871,7 +7076,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   height: 48px;
 }
 
-.emotion-54 {
+.emotion-55 {
   position: fixed;
   display: block;
   bottom: 20px;
@@ -6896,7 +7101,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   fill: currentColor;
 }
 
-.emotion-52 {
+.emotion-53 {
   display: block;
   padding: 16px 20px;
   border-radius: 10px;
@@ -6918,7 +7123,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: none;
 }
 
-.emotion-55 {
+.emotion-56 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -6929,6 +7134,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.emotion-51 .simplebar-track.simplebar-vertical {
+  right: 4px;
 }
 
 .emotion-7 {
@@ -7400,7 +7609,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   height: 48px;
 }
 
-.emotion-54 {
+.emotion-55 {
   position: fixed;
   display: block;
   bottom: 20px;
@@ -7414,9 +7623,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 <nav
-  class="container emotion-55"
+  class="container emotion-56"
 >
   <div
+    class="emotion-51"
     data-simplebar="true"
   >
     <div
@@ -7749,13 +7959,13 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
     </div>
   </div>
   <div
-    class="emotion-54"
+    class="emotion-55"
   >
     <div
       class="emotion-49"
     >
       <div
-        class="emotion-52"
+        class="emotion-53"
       >
         <div
           class="emotion-31"
