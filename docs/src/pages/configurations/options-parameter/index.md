@@ -90,7 +90,7 @@ import MyComponent from './my-component';
 
 storiesOf('Addons|Custom options', module)
   // If you want to set the option for all stories in of this kind
-  .addParameters({ options: { addonPanelInRight: true } })
+  .addParameters({ options: { panelPosition: 'bottom' } })
   .add(
     'Story for MyComponent',
     () => <MyComponent />,
