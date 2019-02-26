@@ -33,6 +33,12 @@ const Violations = styled.span(({ theme }) => ({
   color: theme.color.negative,
 }));
 
+const StyledActionBar = styled(ActionBar)({
+  position: 'fixed',
+  bottom: 10,
+  right: 10,
+});
+
 class A11YPanel extends Component {
   static propTypes = {
     active: PropTypes.bool.isRequired,
@@ -143,7 +149,10 @@ class A11YPanel extends Component {
             },
           ]}
         />
-        <ActionBar key="actionbar" actionItems={[{ title: actionTitle, onClick: this.request }]} />
+        <StyledActionBar
+          key="actionbar"
+          actionItems={[{ title: actionTitle, onClick: this.request }]}
+        />
       </Fragment>
     ) : null;
   }
