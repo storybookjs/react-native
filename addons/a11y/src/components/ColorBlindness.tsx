@@ -52,6 +52,8 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
     }
   };
 
+  onVisibilityChange = (s: boolean) => this.setState({ expanded: s });
+
   render() {
     const { filter, expanded } = this.state;
 
@@ -93,7 +95,7 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
         placement="top"
         trigger="click"
         tooltipShown={expanded}
-        onVisibilityChange={(s: boolean) => this.setState({ expanded: s })}
+        onVisibilityChange={this.onVisibilityChange}
         tooltip={<TooltipLinkList links={colorList} />}
         closeOnClick
       >
