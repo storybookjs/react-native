@@ -79,7 +79,7 @@ import { storiesOf } from '@storybook/react';
 import MyComponent from '../my_component';
 
 storiesOf('MyComponent', module)
-  .addDecorator(story => <div style={{ textAlign: 'center' }}>{story()}</div>)
+  .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('without props', () => <MyComponent />)
   .add('with some props', () => <MyComponent text="The Comp" />);
 ```
@@ -92,7 +92,7 @@ It is possible to apply a decorator **globally** to all the stories. Here is an 
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 
-addDecorator(story => <div style={{ textAlign: 'center' }}>{story()}</div>);
+addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
 
 configure(function() {
   // ...

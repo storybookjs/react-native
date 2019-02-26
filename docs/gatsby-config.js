@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/docs',
   siteMetadata: {
     siteTitle: 'Storybook',
     baseColor: '#e64074',
@@ -22,6 +23,7 @@ module.exports = {
         '/basics/live-examples/',
       ],
       configurations: [
+        '/configurations/options-parameter/',
         '/configurations/default-config/',
         '/configurations/custom-webpack-config/',
         '/configurations/custom-babel-config/',

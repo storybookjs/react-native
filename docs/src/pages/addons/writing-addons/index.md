@@ -141,7 +141,7 @@ The `@storybook/addons` package contains a `makeDecorator` function which we can
 import React from 'react';
 import addons, { makeDecorator } from '@storybook/addons';
 
-export withFoo = makeDecorator({
+export default makeDecorator({
   name: 'withFoo',
   parameterName: 'foo',
   // This means don't run this decorator if the notes decorator is not set

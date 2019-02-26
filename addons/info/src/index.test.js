@@ -20,7 +20,8 @@ const TestComponent = ({ func, obj, array, number, string, bool, empty }) => (
       <li>1</li>
       <li>2</li>
     </ul>
-  </div>);
+  </div>
+);
 /* eslint-enable */
 
 const reactClassPath = 'some/path/TestComponent.jsx';
@@ -31,7 +32,7 @@ const storybookReactClassMock = {
     description: `
 # Awesome test component description
 ## with markdown support
-**bold** *cursive* 
+**bold** *cursive*
     `,
     name: 'TestComponent',
   },
@@ -45,9 +46,9 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)`;
 
 describe('addon Info', () => {
   // eslint-disable-next-line react/prop-types
-  const storyFn = ({ story }) => (
+  const storyFn = ({ name }) => (
     <div>
-      It's a {story} story:
+      It's a {name} story:
       <TestComponent
         func={x => x + 1}
         obj={{ a: 'a', b: 'b' }}
@@ -85,7 +86,7 @@ describe('addon Info', () => {
     const Info = () =>
       withInfo({ inline: true, propTables: false })(storyFn, {
         kind: 'TestComponent',
-        story: 'Basic test',
+        name: 'Basic test',
       });
 
     expect(mount(<Info />)).toMatchSnapshot();
@@ -100,7 +101,7 @@ describe('addon Info', () => {
     const Info = () =>
       withInfo({ inline: true, propTables: false })(storyFn, {
         kind: 'Test Components',
-        story: 'TestComponent',
+        name: 'TestComponent',
       });
 
     expect(mount(<Info />)).toMatchSnapshot();

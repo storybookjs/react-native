@@ -6,10 +6,10 @@ import { Form } from '@storybook/components';
 const FlexSpaced = styled.div({
   flex: 1,
   display: 'flex',
-  '& > *': {
+  '&& > *': {
     marginLeft: 10,
   },
-  '& > *:first-child': {
+  '&& > *:first-of-type': {
     marginLeft: 0,
   },
 });

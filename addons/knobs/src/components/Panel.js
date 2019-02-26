@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
@@ -6,7 +6,7 @@ import { styled } from '@storybook/theming';
 import copy from 'copy-to-clipboard';
 
 import { STORY_CHANGED } from '@storybook/core-events';
-import { Placeholder, TabWrapper, TabsState, ActionBar, ActionButton } from '@storybook/components';
+import { Placeholder, TabWrapper, TabsState, ActionBar, Link } from '@storybook/components';
 import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
 import Types from './types';
@@ -169,7 +169,21 @@ export default class KnobPanel extends PureComponent {
     const knobsArray = knobKeysArray.map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
-      return <Placeholder>NO KNOBS</Placeholder>;
+      return (
+        <Placeholder>
+          <Fragment>No knobs found</Fragment>
+          <Fragment>
+            Learn how to{' '}
+            <Link
+              href="https://github.com/storybooks/storybook/tree/master/addons/knobs"
+              target="_blank"
+              withArrow
+            >
+              dynamically interact with components
+            </Link>
+          </Fragment>
+        </Placeholder>
+      );
     }
 
     const entries = Object.entries(groups);
@@ -190,10 +204,12 @@ export default class KnobPanel extends PureComponent {
             onFieldClick={this.handleClick}
           />
         )}
-        <ActionBar>
-          <ActionButton onClick={this.copy}>COPY</ActionButton>
-          <ActionButton onClick={this.reset}>RESET</ActionButton>
-        </ActionBar>
+        <ActionBar
+          actionItems={[
+            { title: 'Copy', onClick: this.copy },
+            { title: 'Reset', onClick: this.reset },
+          ]}
+        />
       </PanelWrapper>
     );
   }

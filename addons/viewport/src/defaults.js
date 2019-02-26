@@ -48,7 +48,7 @@ export const INITIAL_VIEWPORTS = {
     type: 'mobile',
   },
   iphonexsmax: {
-    name: 'iPhone Xs Max',
+    name: 'iPhone XS Max',
     styles: {
       height: '896px',
       width: '414px',

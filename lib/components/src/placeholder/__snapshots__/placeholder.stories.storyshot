@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Placeholder default 1`] = `
+exports[`Storyshots Basics|Placeholder default 1`] = `
 .emotion-0 {
   font-size: 11px;
   display: block;

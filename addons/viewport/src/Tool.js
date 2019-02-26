@@ -4,7 +4,7 @@ import memoize from 'memoizerific';
 
 import { Global } from '@storybook/theming';
 
-import { Popout, Item, Icons, Icon, IconButton, Title, List } from '@storybook/components';
+import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
 import { SET_STORIES } from '@storybook/core-events';
 
 import { PARAM_KEY } from './constants';
@@ -12,20 +12,51 @@ import { PARAM_KEY } from './constants';
 const toList = memoize(50)(items =>
   items ? Object.entries(items).map(([id, value]) => ({ ...value, id })) : []
 );
-const iframeId = 'storybook-preview-background';
+const iframeId = 'storybook-preview-iframe';
 
-const getState = memoize(10)((props, state) => {
+const createItem = memoize(1000)((id, name, value, change) => ({
+  id: id || name,
+  title: name,
+  onClick: () => {
+    change({ selected: id, expanded: false });
+  },
+  right: `${value.width.replace('px', '')}x${value.height.replace('px', '')}`,
+  value,
+}));
+
+const flip = ({ width, height }) => ({ height: width, width: height });
+
+const getState = memoize(10)((props, state, change) => {
   const data = props.api.getCurrentStoryData();
   const list = toList(data && data.parameters && data.parameters[PARAM_KEY]);
-
-  const items = list.length
-    ? list.map(({ name, styles: value, id }) => ({ name, value, id }))
-    : list;
 
   const selected =
     state.selected === 'responsive' || list.find(i => i.id === state.selected)
       ? state.selected
       : list.find(i => i.default) || 'responsive';
+
+  const resets =
+    selected !== 'responsive'
+      ? [
+          {
+            id: 'reset',
+            title: 'Reset viewport',
+            onClick: () => {
+              change({ selected: undefined, expanded: false });
+            },
+          },
+          {
+            id: 'rotate',
+            title: 'Rotate viewport',
+            onClick: () => {
+              change({ isRotated: !state.isRotated, expanded: false });
+            },
+          },
+        ]
+      : [];
+  const items = list.length
+    ? resets.concat(list.map(({ id, name, styles: value }) => createItem(id, name, value, change)))
+    : list;
 
   return {
     isRotated: state.isRotated,
@@ -33,8 +64,6 @@ const getState = memoize(10)((props, state) => {
     selected,
   };
 });
-
-const flip = ({ width, height }) => ({ height: width, widht: height });
 
 export default class ViewportTool extends Component {
   constructor(props) {
@@ -44,6 +73,7 @@ export default class ViewportTool extends Component {
       isRotated: false,
       items: [],
       selected: 'responsive',
+      expanded: false,
     };
 
     this.listener = () => {
@@ -63,26 +93,16 @@ export default class ViewportTool extends Component {
     api.off(SET_STORIES, this.listener);
   }
 
-  change = selected => {
-    this.setState({ selected });
-  };
-
-  rotate = () => {
-    const { isRotated } = this.state;
-    this.setState({ isRotated: !isRotated });
-  };
+  change = (...args) => this.setState(...args);
 
   render() {
-    const { items, selected, isRotated } = getState(this.props, this.state);
+    const { expanded } = this.state;
+    const { items, selected, isRotated } = getState(this.props, this.state, this.change);
     const item = items.find(i => i.id === selected);
 
-    if (!items.length) {
-      return null;
-    }
-
-    return (
+    return items.length ? (
       <Fragment>
-        {item && item.value ? (
+        {item ? (
           <Global
             styles={{
               [`#${iframeId}`]: {
@@ -95,54 +115,20 @@ export default class ViewportTool extends Component {
             }}
           />
         ) : null}
-        <Popout key="viewports">
-          <IconButton key="viewport" title="Change Viewport">
+        <WithTooltip
+          placement="top"
+          trigger="click"
+          tooltipShown={expanded}
+          onVisibilityChange={s => this.setState({ expanded: s })}
+          tooltip={<TooltipLinkList links={items} />}
+          closeOnClick
+        >
+          <IconButton key="viewport" title="Change the size of the preview" active={!!item}>
             <Icons icon="grow" />
           </IconButton>
-          {({ hide }) => (
-            <List>
-              {selected !== 'responsive' ? (
-                <Fragment>
-                  <Item
-                    key="reset"
-                    onClick={() => {
-                      hide();
-                      this.change('responsive');
-                    }}
-                  >
-                    <Icon type="undo" />
-                    <Title>Reset (responsive)</Title>
-                  </Item>
-                  <Item
-                    key="rotate"
-                    onClick={() => {
-                      hide();
-                      this.rotate();
-                    }}
-                  >
-                    <Icon type="sync" />
-                    <Title>Rotate</Title>
-                  </Item>
-                </Fragment>
-              ) : null}
-
-              {items.map(({ id, name, type }) => (
-                <Item
-                  key={id}
-                  onClick={() => {
-                    hide();
-                    this.change(id);
-                  }}
-                >
-                  <Icon type={type} />
-                  <Title>{name}</Title>
-                </Item>
-              ))}
-            </List>
-          )}
-        </Popout>
+        </WithTooltip>
       </Fragment>
-    );
+    ) : null;
   }
 }
 

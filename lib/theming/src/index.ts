@@ -16,3 +16,7 @@ export { themes };
 
 export * from '@emotion/core';
 export * from 'emotion-theming';
+
+export { createGlobal, createReset } from './global';
+export * from './create';
+export * from './ensure';

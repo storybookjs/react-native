@@ -26,7 +26,7 @@ In this guide, we will set up Storybook for your Ember project.
 First of all, you need to add `@storybook/ember` to your project. To do that, simply run:
 
 ```sh
-npm i --save-dev @storybook/ember
+ember install @storybook/ember-cli-storybook
 ```
 
 If you don't have `package.json` in your project, you'll need to init it first:

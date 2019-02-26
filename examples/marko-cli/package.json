@@ -1,14 +1,16 @@
 {
   "name": "marko-cli",
-  "version": "5.0.0-beta.1",
+  "version": "5.0.0-beta.3",
   "private": true,
   "description": "Demo of how to build an app using marko-starter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marko-js-samples/marko-starter-demo"
+    "url": "https://github.com/marko-js-samples/marko-starter-demo",
+    "directory": "examples/marko-cli"
   },
   "license": "MIT",
   "scripts": {
+    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "build": "NODE_ENV=production marko-starter build",
     "build-storybook": "build-storybook",
     "prettier": "prettier src/**/*.{js,css,less} *.js --write",
@@ -22,13 +24,13 @@
     "marko-starter": "^2.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.0.0-beta.1",
-    "@storybook/addon-knobs": "5.0.0-beta.1",
-    "@storybook/addon-options": "5.0.0-beta.1",
-    "@storybook/addon-storysource": "5.0.0-beta.1",
-    "@storybook/addons": "5.0.0-beta.1",
-    "@storybook/marko": "5.0.0-beta.1",
+    "@storybook/addon-actions": "5.0.0-beta.3",
+    "@storybook/addon-knobs": "5.0.0-beta.3",
+    "@storybook/addon-options": "5.0.0-beta.3",
+    "@storybook/addon-storysource": "5.0.0-beta.3",
+    "@storybook/addons": "5.0.0-beta.3",
+    "@storybook/marko": "5.0.0-beta.3",
     "prettier": "^1.16.4",
-    "webpack": "^4.29.0"
+    "webpack": "^4.29.3"
   }
 }

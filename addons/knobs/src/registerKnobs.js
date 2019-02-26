@@ -37,6 +37,12 @@ function knobClicked(clicked) {
 function resetKnobs() {
   knobStore.reset();
 
+  setPaneKnobs(false);
+}
+
+function resetKnobsAndForceReRender() {
+  knobStore.reset();
+
   forceReRender();
 
   setPaneKnobs(false);
@@ -47,7 +53,7 @@ function disconnectCallbacks() {
   channel.removeListener(CHANGE, knobChanged);
   channel.removeListener(CLICK, knobClicked);
   channel.removeListener(STORY_CHANGED, resetKnobs);
-  channel.removeListener(RESET, resetKnobs);
+  channel.removeListener(RESET, resetKnobsAndForceReRender);
   knobStore.unsubscribe(setPaneKnobs);
 }
 
@@ -56,7 +62,7 @@ function connectCallbacks() {
   channel.on(CHANGE, knobChanged);
   channel.on(CLICK, knobClicked);
   channel.on(STORY_CHANGED, resetKnobs);
-  channel.on(RESET, resetKnobs);
+  channel.on(RESET, resetKnobsAndForceReRender);
   knobStore.subscribe(setPaneKnobs);
 
   return disconnectCallbacks;

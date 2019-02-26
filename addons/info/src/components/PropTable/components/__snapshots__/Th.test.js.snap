@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropTable/Th renders a th html node with html node children 1`] = `
+<th>
+  foo bar baz
+</th>
+`;
+
+exports[`PropTable/Th renders a th html node with one child node 1`] = `
+<th>
+  foo bar
+</th>
+`;
+
+exports[`PropTable/Th renders a th html node with react element children 1`] = `
+<th>
+  <div>
+    foo bar
+  </div>
+  <div>
+    baz
+  </div>
+</th>
+`;
