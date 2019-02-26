@@ -23,7 +23,7 @@ import '@storybook/addon-links/register';
 import '@storybook/addon-notes/register';
 ```
 
-Once created, youl'll have to restart storybook to make the underlying webpack aware of the addons file.
+Once created, you'll have to restart storybook to make the underlying webpack aware of the addons file.
 
 This will register all the addons and you'll be able to see the actions and notes panels (in that order) when you are viewing the story. (Links do not register a tab--check individual addon docs to see which Storybook features they use!)
 

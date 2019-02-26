@@ -91,7 +91,7 @@ addParameters({
 
 ## Options addon deprecated
 
-In 4.x we added story parameters. In 5.x we've deprecated the options addon in favor of global parameters, and we've also renamed some of the options in the process (though we're maintaining backwards compatibility until 6.0).
+In 4.x we added story parameters. In 5.x we've deprecated the options addon in favor of [global parameters](./docs/src/pages/configurations/options-parameter/index.md), and we've also renamed some of the options in the process (though we're maintaining backwards compatibility until 6.0).
 
 Here's an old configuration:
 

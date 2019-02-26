@@ -1,6 +1,6 @@
 #NOTE: Options Addon is deprecated as of Storybook 5.0
 
-Options are now configured using the [`options` parameter](../../docs/pages/configuration/options-parameter) which is built into Storybook.
+Options are now configured using the [`options` parameter](../../docs/src/pages/configurations/options-parameter/index.md) which is built into Storybook.
 
 - Global options: `addParameters({ options: { ... }})` and no addon is needed.
 - Story options: `storiesOf(...).add('name', storyFn, { options: { ... }})`
