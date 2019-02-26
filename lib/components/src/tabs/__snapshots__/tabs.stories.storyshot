@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
-.emotion-9 {
+.emotion-10 {
   color: #999999;
   width: 100%;
   height: 40px;
@@ -9,6 +9,11 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   overflow-y: hidden;
   box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
   background: #FFFFFF;
+}
+
+.emotion-9 {
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .emotion-8 {
@@ -145,15 +150,15 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
 
 .emotion-12 {
   display: block;
-}
-
-.emotion-11 {
-  display: block;
   position: relative;
   font-size: 13px;
 }
 
-.emotion-10 {
+.emotion-13 {
+  display: block;
+}
+
+.emotion-11 {
   display: none;
 }
 
@@ -161,14 +166,15 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="emotion-12"
+    class="emotion-13"
     title="wrapper"
   >
     <div
-      class="emotion-9"
+      class="emotion-10"
       title="flexbar"
     >
       <div
+        class="emotion-9"
         data-simplebar="true"
       >
         <div
@@ -269,7 +275,7 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
       </div>
     </div>
     <div
-      class="emotion-11"
+      class="emotion-12"
     >
       <div
         id="test2"
@@ -327,7 +333,7 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
         />
       </div>
       <div
-        class="emotion-10"
+        class="emotion-11"
       >
         <div>
           CONTENT 6
@@ -339,7 +345,7 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
-.emotion-9 {
+.emotion-10 {
   color: #999999;
   width: 100%;
   height: 40px;
@@ -347,6 +353,11 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   overflow-y: hidden;
   box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
   background: #FFFFFF;
+}
+
+.emotion-9 {
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .emotion-8 {
@@ -483,15 +494,15 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
 
 .emotion-12 {
   display: block;
-}
-
-.emotion-11 {
-  display: block;
   position: relative;
   font-size: 13px;
 }
 
-.emotion-10 {
+.emotion-13 {
+  display: block;
+}
+
+.emotion-11 {
   display: none;
 }
 
@@ -499,14 +510,15 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="emotion-12"
+    class="emotion-13"
     title="wrapper"
   >
     <div
-      class="emotion-9"
+      class="emotion-10"
       title="flexbar"
     >
       <div
+        class="emotion-9"
         data-simplebar="true"
       >
         <div
@@ -607,7 +619,7 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
       </div>
     </div>
     <div
-      class="emotion-11"
+      class="emotion-12"
     >
       <div
         id="test1"
@@ -621,7 +633,7 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
         CONTENT 2
       </div>
       <div
-        class="emotion-10"
+        class="emotion-11"
       >
         <div>
           CONTENT 6
@@ -633,7 +645,7 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateful - static 1`] = `
-.emotion-5 {
+.emotion-6 {
   color: #999999;
   width: 100%;
   height: 40px;
@@ -641,6 +653,11 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   overflow-y: hidden;
   box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
   background: #FFFFFF;
+}
+
+.emotion-5 {
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .emotion-4 {
@@ -775,28 +792,29 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
-.emotion-6 {
+.emotion-8 {
   display: block;
+  position: relative;
+  font-size: 13px;
 }
 
 .emotion-7 {
   display: block;
-  position: relative;
-  font-size: 13px;
 }
 
 <div
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="emotion-6"
+    class="emotion-7"
     title="wrapper"
   >
     <div
-      class="emotion-5"
+      class="emotion-6"
       title="flexbar"
     >
       <div
+        class="emotion-5"
         data-simplebar="true"
       >
         <div
@@ -869,10 +887,10 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
       </div>
     </div>
     <div
-      class="emotion-7"
+      class="emotion-8"
     >
       <div
-        class="emotion-6"
+        class="emotion-7"
         role="tabpanel"
       >
         <div>
@@ -885,7 +903,7 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
-.emotion-9 {
+.emotion-10 {
   color: #999999;
   width: 100%;
   height: 40px;
@@ -893,6 +911,11 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   overflow-y: hidden;
   box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
   background: #FFFFFF;
+}
+
+.emotion-9 {
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .emotion-8 {
@@ -1027,23 +1050,22 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
-.emotion-11 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-  position: relative;
-  overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
-}
-
-.emotion-10 {
-  display: none;
+.emotion-13 {
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 .emotion-12 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+}
+
+.emotion-11 {
+  display: none;
+}
+
+.emotion-14 {
   background-clip: padding-box;
   border: 1px solid rgba(0,0,0,.1);
   width: 100%;
@@ -1062,14 +1084,15 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="emotion-12"
+    class="emotion-14"
     title="wrapper"
   >
     <div
-      class="emotion-9"
+      class="emotion-10"
       title="flexbar"
     >
       <div
+        class="emotion-9"
         data-simplebar="true"
       >
         <div
@@ -1170,69 +1193,114 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
       </div>
     </div>
     <div
-      class="emotion-11"
+      class="emotion-13"
+      data-simplebar="true"
     >
       <div
-        id="test2"
-        style="background:hotpink;min-height:100%;display:none"
-      >
-        CONTENT 2
-      </div>
-      <div
-        id="test3"
+        class="simplebar-wrapper"
       >
         <div
-          style="background:#000000;height:30.8px"
-        />
-        <div
-          style="background:#111111;height:31.3px"
-        />
-        <div
-          style="background:#222222;height:32.1px"
-        />
-        <div
-          style="background:#333333;height:33.4px"
-        />
-        <div
-          style="background:#444444;height:35.5px"
-        />
-        <div
-          style="background:#555555;height:38.9px"
-        />
-        <div
-          style="background:#666666;height:44.4px"
-        />
-        <div
-          style="background:#777777;height:53.3px"
-        />
-        <div
-          style="background:#888888;height:67.7px"
-        />
-        <div
-          style="background:#999999;height:91px"
-        />
-        <div
-          style="background:#aaaaaa;height:128.7px"
-        />
-        <div
-          style="background:#bbbbbb;height:189.7px"
-        />
-        <div
-          style="background:#cccccc;height:288.4px"
-        />
-        <div
-          style="background:#dddddd;height:448.1px"
-        />
-        <div
-          style="background:#eeeeee;height:706.5px"
-        />
-      </div>
-      <div
-        class="emotion-10"
-      >
-        <div>
-          CONTENT 6
+          class="simplebar-height-auto-observer-wrapper"
+        >
+          <div
+            class="simplebar-height-auto-observer"
+          />
         </div>
+        <div
+          class="simplebar-mask"
+        >
+          <div
+            class="simplebar-offset"
+          >
+            <div
+              class="simplebar-content"
+            >
+              <div
+                class="emotion-12"
+              >
+                <div
+                  id="test2"
+                  style="background:hotpink;min-height:100%;display:none"
+                >
+                  CONTENT 2
+                </div>
+                <div
+                  id="test3"
+                >
+                  <div
+                    style="background:#000000;height:30.8px"
+                  />
+                  <div
+                    style="background:#111111;height:31.3px"
+                  />
+                  <div
+                    style="background:#222222;height:32.1px"
+                  />
+                  <div
+                    style="background:#333333;height:33.4px"
+                  />
+                  <div
+                    style="background:#444444;height:35.5px"
+                  />
+                  <div
+                    style="background:#555555;height:38.9px"
+                  />
+                  <div
+                    style="background:#666666;height:44.4px"
+                  />
+                  <div
+                    style="background:#777777;height:53.3px"
+                  />
+                  <div
+                    style="background:#888888;height:67.7px"
+                  />
+                  <div
+                    style="background:#999999;height:91px"
+                  />
+                  <div
+                    style="background:#aaaaaa;height:128.7px"
+                  />
+                  <div
+                    style="background:#bbbbbb;height:189.7px"
+                  />
+                  <div
+                    style="background:#cccccc;height:288.4px"
+                  />
+                  <div
+                    style="background:#dddddd;height:448.1px"
+                  />
+                  <div
+                    style="background:#eeeeee;height:706.5px"
+                  />
+                </div>
+                <div
+                  class="emotion-11"
+                >
+                  <div>
+                    CONTENT 6
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="simplebar-placeholder"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-horizontal"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-vertical"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
       </div>
     </div>
   </div>
@@ -1240,7 +1308,7 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 `;
 
 exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
-.emotion-9 {
+.emotion-10 {
   color: #999999;
   width: 100%;
   height: 40px;
@@ -1248,6 +1316,11 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   overflow-y: hidden;
   box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
   background: #FFFFFF;
+}
+
+.emotion-9 {
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .emotion-8 {
@@ -1382,17 +1455,17 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
-.emotion-11 {
+.emotion-12 {
   display: block;
   position: relative;
   font-size: 13px;
 }
 
-.emotion-10 {
+.emotion-11 {
   display: none;
 }
 
-.emotion-12 {
+.emotion-13 {
   background-clip: padding-box;
   border: 1px solid rgba(0,0,0,.1);
   display: block;
@@ -1402,14 +1475,15 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="emotion-12"
+    class="emotion-13"
     title="wrapper"
   >
     <div
-      class="emotion-9"
+      class="emotion-10"
       title="flexbar"
     >
       <div
+        class="emotion-9"
         data-simplebar="true"
       >
         <div
@@ -1510,7 +1584,7 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
       </div>
     </div>
     <div
-      class="emotion-11"
+      class="emotion-12"
     >
       <div
         id="test2"
@@ -1568,7 +1642,7 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
         />
       </div>
       <div
-        class="emotion-10"
+        class="emotion-11"
       >
         <div>
           CONTENT 6
@@ -1606,348 +1680,8 @@ exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
 </div>
 `;
 
-exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
-.emotion-9 {
-  color: #999999;
-  width: 100%;
-  height: 40px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
-  background: #FFFFFF;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  position: relative;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  height: 40px;
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  white-space: nowrap;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.emotion-7 > * {
-  margin-left: 15px;
-}
-
-.emotion-6 {
-  overflow: hidden;
-}
-
-.emotion-6:first-of-type {
-  margin-left: 0;
-}
-
-.emotion-0 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: inherit;
-  border-bottom-color: transparent;
-}
-
-.emotion-0:empty {
-  display: none;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-11 {
-  display: block;
-  position: relative;
-  font-size: 13px;
-}
-
-.emotion-10 {
-  display: none;
-}
-
-.emotion-12 {
-  background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.1);
-  display: block;
-}
-
-<div
-  style="height:calc(100vh - 20px)"
->
-  <div
-    class="emotion-12"
-    title="wrapper"
-  >
-    <div
-      class="emotion-9"
-      title="flexbar"
-    >
-      <div
-        data-simplebar="true"
-      >
-        <div
-          class="simplebar-wrapper"
-        >
-          <div
-            class="simplebar-height-auto-observer-wrapper"
-          >
-            <div
-              class="simplebar-height-auto-observer"
-            />
-          </div>
-          <div
-            class="simplebar-mask"
-          >
-            <div
-              class="simplebar-offset"
-            >
-              <div
-                class="simplebar-content"
-              >
-                <div
-                  class="emotion-8"
-                >
-                  <div
-                    class="emotion-7"
-                  >
-                    <div
-                      class="emotion-6"
-                      role="tablist"
-                    >
-                      <button
-                        class="emotion-0"
-                        role="tab"
-                        type="button"
-                      >
-                        Tab title #1
-                      </button>
-                      <button
-                        class="emotion-0"
-                        role="tab"
-                        type="button"
-                      >
-                        Tab title #2
-                      </button>
-                      <button
-                        class="emotion-2"
-                        role="tab"
-                        type="button"
-                      >
-                        Tab with scroll!
-                      </button>
-                      <button
-                        class="emotion-0"
-                        role="tab"
-                        type="button"
-                      >
-                        Tab title #4
-                      </button>
-                      <button
-                        class="emotion-0"
-                        role="tab"
-                        type="button"
-                      >
-                        Tab title #5
-                      </button>
-                      <button
-                        class="emotion-0"
-                        role="tab"
-                        type="button"
-                      >
-                        Tab title #6
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="simplebar-placeholder"
-          />
-        </div>
-        <div
-          class="simplebar-track simplebar-horizontal"
-        >
-          <div
-            class="simplebar-scrollbar"
-          />
-        </div>
-        <div
-          class="simplebar-track simplebar-vertical"
-        >
-          <div
-            class="simplebar-scrollbar"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="emotion-11"
-    >
-      <div
-        id="test2"
-        style="background:hotpink;min-height:100%;display:none"
-      >
-        CONTENT 2
-      </div>
-      <div
-        id="test3"
-      >
-        <div
-          style="background:#000000;height:30.8px"
-        />
-        <div
-          style="background:#111111;height:31.3px"
-        />
-        <div
-          style="background:#222222;height:32.1px"
-        />
-        <div
-          style="background:#333333;height:33.4px"
-        />
-        <div
-          style="background:#444444;height:35.5px"
-        />
-        <div
-          style="background:#555555;height:38.9px"
-        />
-        <div
-          style="background:#666666;height:44.4px"
-        />
-        <div
-          style="background:#777777;height:53.3px"
-        />
-        <div
-          style="background:#888888;height:67.7px"
-        />
-        <div
-          style="background:#999999;height:91px"
-        />
-        <div
-          style="background:#aaaaaa;height:128.7px"
-        />
-        <div
-          style="background:#bbbbbb;height:189.7px"
-        />
-        <div
-          style="background:#cccccc;height:288.4px"
-        />
-        <div
-          style="background:#dddddd;height:448.1px"
-        />
-        <div
-          style="background:#eeeeee;height:706.5px"
-        />
-      </div>
-      <div
-        class="emotion-10"
-      >
-        <div>
-          CONTENT 6
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
-.emotion-10 {
+.emotion-11 {
   color: #999999;
   width: 100%;
   height: 40px;
@@ -1955,6 +1689,11 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   overflow-y: hidden;
   box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
   background: #FFFFFF;
+}
+
+.emotion-10 {
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .emotion-9 {
@@ -2110,15 +1849,15 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
 
 .emotion-13 {
   display: block;
-}
-
-.emotion-12 {
-  display: block;
   position: relative;
   font-size: 13px;
 }
 
-.emotion-11 {
+.emotion-14 {
+  display: block;
+}
+
+.emotion-12 {
   display: none;
 }
 
@@ -2126,14 +1865,15 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="emotion-13"
+    class="emotion-14"
     title="wrapper"
   >
     <div
-      class="emotion-10"
+      class="emotion-11"
       title="flexbar"
     >
       <div
+        class="emotion-10"
         data-simplebar="true"
       >
         <div
@@ -2248,7 +1988,7 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
       </div>
     </div>
     <div
-      class="emotion-12"
+      class="emotion-13"
     >
       <div
         id="test2"
@@ -2306,7 +2046,7 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
         />
       </div>
       <div
-        class="emotion-11"
+        class="emotion-12"
       >
         <div>
           CONTENT 6

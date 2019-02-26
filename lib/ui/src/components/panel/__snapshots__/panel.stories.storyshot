@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|Panel default 1`] = `
-.emotion-14 {
+.emotion-16 {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -14,7 +14,7 @@ exports[`Storyshots UI|Panel default 1`] = `
   flex-direction: column;
 }
 
-.emotion-12 {
+.emotion-13 {
   color: #999999;
   width: 100%;
   height: 40px;
@@ -22,6 +22,11 @@ exports[`Storyshots UI|Panel default 1`] = `
   overflow-y: hidden;
   box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
   background: #FFFFFF;
+}
+
+.emotion-12 {
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .emotion-11 {
@@ -216,28 +221,28 @@ exports[`Storyshots UI|Panel default 1`] = `
   fill: currentColor;
 }
 
-.emotion-13 {
+.emotion-15 {
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.emotion-14 {
   display: block;
   position: relative;
   font-size: 13px;
-  position: relative;
-  overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
 }
 
 <div
-  class="emotion-14"
+  class="emotion-16"
   id="storybook-panel-root"
   title="wrapper"
 >
   <div
-    class="emotion-12"
+    class="emotion-13"
     title="flexbar"
   >
     <div
+      class="emotion-12"
       data-simplebar="true"
     >
       <div
@@ -342,12 +347,57 @@ exports[`Storyshots UI|Panel default 1`] = `
     </div>
   </div>
   <div
-    class="emotion-13"
+    class="emotion-15"
+    data-simplebar="true"
   >
     <div
-      id="test2"
+      class="simplebar-wrapper"
     >
-      TEST 2
+      <div
+        class="simplebar-height-auto-observer-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
+        >
+          <div
+            class="simplebar-content"
+          >
+            <div
+              class="emotion-14"
+            >
+              <div
+                id="test2"
+              >
+                TEST 2
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
     </div>
   </div>
 </div>

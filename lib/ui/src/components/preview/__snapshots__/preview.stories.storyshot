@@ -2,7 +2,12 @@
 
 exports[`Storyshots UI|Preview/Preview no tabs 1`] = `
 Array [
-  .emotion-22 {
+  .emotion-23 {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.emotion-22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -67,7 +72,7 @@ Array [
   fill: currentColor;
 }
 
-.emotion-23 {
+.emotion-24 {
   color: #999999;
   width: 100%;
   height: 40px;
@@ -127,9 +132,10 @@ Array [
 }
 
 <div
-    class="emotion-23"
+    class="emotion-24"
   >
     <div
+      class="emotion-23"
       data-simplebar="true"
     >
       <div
@@ -352,7 +358,12 @@ Array [
 
 exports[`Storyshots UI|Preview/Preview with tabs 1`] = `
 Array [
-  .emotion-28 {
+  .emotion-29 {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.emotion-28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -515,7 +526,7 @@ Array [
   fill: currentColor;
 }
 
-.emotion-29 {
+.emotion-30 {
   color: #999999;
   width: 100%;
   height: 40px;
@@ -582,9 +593,10 @@ Array [
 }
 
 <div
-    class="emotion-29"
+    class="emotion-30"
   >
     <div
+      class="emotion-29"
       data-simplebar="true"
     >
       <div
