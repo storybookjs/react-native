@@ -135,8 +135,6 @@ Here is the mapping from old options to new:
 | showAddonPanel    | showPanel        |
 | showSearchBox     |                  |
 | addonPanelInRight | panelPosition    |
-| selectedPanel     |                  |
-
 
 ## From version 4.0.x to 4.1.x
 
