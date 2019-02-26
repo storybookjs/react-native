@@ -35,6 +35,7 @@ const stylesheetBase = {
     },
   },
   info: {
+    fontFamily: 'Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif',
     position: 'fixed',
     background: 'white',
     top: 0,
