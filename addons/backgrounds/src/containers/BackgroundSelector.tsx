@@ -140,7 +140,7 @@ export class BackgroundSelector extends Component<BackgroundToolProps, Backgroun
           tooltip={<TooltipLinkList links={items} />}
           closeOnClick
         >
-          <IconButton key="background" title="Backgrounds">
+          <IconButton key="background" active={selectedBackgroundColor !== 'transparent'} title="Change the background of the preview">
             <Icons icon="photo" />
           </IconButton>
         </WithTooltip>

@@ -33,7 +33,4 @@ export default create({
   inputBorder: color.border,
   inputTextColor: color.darkest,
   inputBorderRadius: 4,
-
-  // Brand logo/text
-  brand: null,
 });
