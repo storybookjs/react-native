@@ -243,7 +243,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
 exports[`Storyshots Basics|Brand/StorybookLogo normal 1`] = `
 <svg
   height="40px"
-  title="Storybook"
+  role="img"
   viewBox="0 0 200 40"
   width="200px"
 >
@@ -5262,10 +5262,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -5276,11 +5276,22 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
 .emotion-2 > * {
-  max-height: 32px;
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
@@ -5291,23 +5302,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-1:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -5668,10 +5662,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -5682,11 +5676,22 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
 .emotion-2 > * {
-  max-height: 32px;
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
@@ -5697,23 +5702,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-1:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -5998,10 +5986,14 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
         <svg
           class="emotion-0"
           height="40px"
+          role="img"
           title="Storybook"
           viewBox="0 0 200 40"
           width="200px"
         >
+          <title>
+            Storybook
+          </title>
           <defs>
             <path
               d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
@@ -6468,10 +6460,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -6482,11 +6474,22 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
 .emotion-2 > * {
-  max-height: 32px;
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
@@ -6497,23 +6500,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-1:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -6997,10 +6983,10 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -7011,11 +6997,22 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
 .emotion-2 > * {
-  max-height: 32px;
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
@@ -7026,23 +7023,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-1:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -7490,10 +7470,14 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
         <svg
           class="emotion-0"
           height="40px"
+          role="img"
           title="Storybook"
           viewBox="0 0 200 40"
           width="200px"
         >
+          <title>
+            Storybook
+          </title>
           <defs>
             <path
               d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
@@ -7785,8 +7769,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 </nav>
 `;
 
-exports[`Storyshots UI|Sidebar/SidebarHeading customBrandComponent 1`] = `
-.emotion-1 {
+exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
+.emotion-4 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
@@ -7794,16 +7778,47 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandComponent 1`] = `
   display: block;
 }
 
-.emotion-0 {
+.emotion-3 {
   fill: currentColor;
 }
 
-.emotion-3 {
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-2 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-1 {
+  display: block;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-6 {
   display: inline-block;
   cursor: pointer;
 }
 
-.emotion-2 {
+.emotion-5 {
   border: 0;
   border-radius: 3em;
   cursor: pointer;
@@ -7840,7 +7855,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandComponent 1`] = `
   padding: 7px;
 }
 
-.emotion-2 svg {
+.emotion-5 svg {
   display: inline-block;
   height: 14px;
   width: 14px;
@@ -7851,25 +7866,61 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandComponent 1`] = `
   pointer-events: none;
 }
 
-.emotion-2 svg path {
+.emotion-5 svg path {
   fill: currentColor;
 }
 
-.emotion-2 svg {
+.emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-2:hover {
+.emotion-5:hover {
   box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
-.emotion-2:active {
+.emotion-5:active {
   box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
   color: #333;
 }
 
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-0 {
+  width: auto;
+  display: block;
+  max-width: 100%;
+}
+
 .emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7878,30 +7929,31 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandComponent 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
-.emotion-1 {
-  shape-rendering: inherit;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+.emotion-2 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
   display: block;
 }
 
-.emotion-0 {
-  fill: currentColor;
+.emotion-1 {
+  display: block;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
-.emotion-3 {
+.emotion-6 {
   display: inline-block;
   cursor: pointer;
 }
 
-.emotion-2 {
+.emotion-5 {
   border: 0;
   border-radius: 3em;
   cursor: pointer;
@@ -7938,7 +7990,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandComponent 1`] = `
   padding: 7px;
 }
 
-.emotion-2 svg {
+.emotion-5 svg {
   display: inline-block;
   height: 14px;
   width: 14px;
@@ -7949,62 +8001,77 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandComponent 1`] = `
   pointer-events: none;
 }
 
-.emotion-2 svg path {
+.emotion-5 svg path {
   fill: currentColor;
 }
 
-.emotion-2 svg {
+.emotion-5 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-2:hover {
+.emotion-5:hover {
   box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
-.emotion-2:active {
+.emotion-5:active {
   box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
   color: #333;
 }
 
-.emotion-4 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.emotion-0 {
+  width: auto;
+  display: block;
+  max-width: 100%;
 }
 
 <div
   style="width:240px;margin:1rem"
 >
   <div
-    class="emotion-4"
+    class="emotion-7"
   >
-    <a
-      href="/yoursite"
-    >
-      Custom component
-    </a>
     <div
-      class="emotion-3"
+      class="emotion-2"
+    >
+      <a
+        class="emotion-1"
+        href="https://example.com"
+      >
+        <img
+          alt="My Title"
+          class="emotion-0"
+          src="https://via.placeholder.com/150x22"
+        />
+      </a>
+    </div>
+    <div
+      class="emotion-6"
     >
       <button
-        class="emotion-2"
+        class="emotion-5"
       >
         <svg
-          class="emotion-1"
+          class="emotion-4"
           viewBox="0 0 1024 1024"
         >
           <path
-            class="emotion-0"
+            class="emotion-3"
             d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
           />
         </svg>
@@ -8014,7 +8081,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandComponent 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|Sidebar/SidebarHeading customTitle 1`] = `
+exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
 .emotion-3 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
@@ -8030,11 +8097,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitle 1`] = `
 .emotion-1 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
 .emotion-1 > * {
-  max-height: 32px;
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
@@ -8045,23 +8123,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitle 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-5 {
@@ -8140,10 +8201,10 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitle 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -8165,11 +8226,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitle 1`] = `
 .emotion-1 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
 .emotion-1 > * {
-  max-height: 32px;
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
@@ -8180,23 +8252,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitle 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-5 {
@@ -8275,10 +8330,10 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitle 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -8296,9 +8351,9 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitle 1`] = `
     >
       <a
         class="emotion-0"
-        href="./"
+        href="https://example.com"
       >
-        Custom title
+        My title
       </a>
     </div>
     <div
@@ -8322,8 +8377,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitle 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|Sidebar/SidebarHeading customTitleAndUrl 1`] = `
-.emotion-3 {
+exports[`Storyshots UI|Sidebar/SidebarHeading longText 1`] = `
+.emotion-2 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
@@ -8331,53 +8386,40 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitleAndUrl 1`] = `
   display: block;
 }
 
-.emotion-2 {
+.emotion-1 {
   fill: currentColor;
 }
 
-.emotion-1 {
+.emotion-0 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
-.emotion-1 > * {
-  max-height: 32px;
-  max-width: 200px;
+.emotion-0 > * {
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
 }
 
-.emotion-0 {
-  display: block;
-  color: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5 {
+.emotion-4 {
   display: inline-block;
   cursor: pointer;
 }
 
-.emotion-4 {
+.emotion-3 {
   border: 0;
   border-radius: 3em;
   cursor: pointer;
@@ -8414,7 +8456,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitleAndUrl 1`] = `
   padding: 7px;
 }
 
-.emotion-4 svg {
+.emotion-3 svg {
   display: inline-block;
   height: 14px;
   width: 14px;
@@ -8425,40 +8467,40 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitleAndUrl 1`] = `
   pointer-events: none;
 }
 
-.emotion-4 svg path {
+.emotion-3 svg path {
   fill: currentColor;
 }
 
-.emotion-4 svg {
+.emotion-3 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-4:hover {
+.emotion-3:hover {
   box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
-.emotion-4:active {
+.emotion-3:active {
   box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
   color: #333;
 }
 
-.emotion-6 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
-.emotion-3 {
+.emotion-2 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
@@ -8466,53 +8508,40 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitleAndUrl 1`] = `
   display: block;
 }
 
-.emotion-2 {
+.emotion-1 {
   fill: currentColor;
 }
 
-.emotion-1 {
+.emotion-0 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
-.emotion-1 > * {
-  max-height: 32px;
-  max-width: 200px;
+.emotion-0 > * {
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
 }
 
-.emotion-0 {
-  display: block;
-  color: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-0:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-0:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-5 {
+.emotion-4 {
   display: inline-block;
   cursor: pointer;
 }
 
-.emotion-4 {
+.emotion-3 {
   border: 0;
   border-radius: 3em;
   cursor: pointer;
@@ -8549,7 +8578,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitleAndUrl 1`] = `
   padding: 7px;
 }
 
-.emotion-4 svg {
+.emotion-3 svg {
   display: inline-block;
   height: 14px;
   width: 14px;
@@ -8560,33 +8589,33 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitleAndUrl 1`] = `
   pointer-events: none;
 }
 
-.emotion-4 svg path {
+.emotion-3 svg path {
   fill: currentColor;
 }
 
-.emotion-4 svg {
+.emotion-3 svg {
   display: block;
   margin: 0;
 }
 
-.emotion-4:hover {
+.emotion-3:hover {
   box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
 }
 
-.emotion-4:active {
+.emotion-3:active {
   box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
   color: #333;
 }
 
-.emotion-6 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -8597,30 +8626,25 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customTitleAndUrl 1`] = `
   style="width:240px;margin:1rem"
 >
   <div
-    class="emotion-6"
+    class="emotion-5"
   >
     <div
-      class="emotion-1"
+      class="emotion-0"
     >
-      <a
-        class="emotion-0"
-        href="https://storybook.js.org"
-      >
-        Custom title & link
-      </a>
+      My title is way to long to actually fit
     </div>
     <div
-      class="emotion-5"
+      class="emotion-4"
     >
       <button
-        class="emotion-4"
+        class="emotion-3"
       >
         <svg
-          class="emotion-3"
+          class="emotion-2"
           viewBox="0 0 1024 1024"
         >
           <path
-            class="emotion-2"
+            class="emotion-1"
             d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
           />
         </svg>
@@ -8646,11 +8670,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
 .emotion-2 > * {
-  max-height: 32px;
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
@@ -8661,23 +8696,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-1:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -8696,10 +8714,10 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -8798,11 +8816,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
 .emotion-2 > * {
-  max-height: 32px;
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
@@ -8813,23 +8842,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-1:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -8848,10 +8860,10 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -8951,10 +8963,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
         <svg
           class="emotion-0"
           height="40px"
+          role="img"
           title="Storybook"
           viewBox="0 0 200 40"
           width="200px"
         >
+          <title>
+            Storybook
+          </title>
           <defs>
             <path
               d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
@@ -9013,7 +9029,284 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
+exports[`Storyshots UI|Sidebar/SidebarHeading onlyText 1`] = `
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-0 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-4 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-3 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-3 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-3 svg path {
+  fill: currentColor;
+}
+
+.emotion-3 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-3:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-3:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-0 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-4 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-3 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-3 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-3 svg path {
+  fill: currentColor;
+}
+
+.emotion-3 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-3:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-3:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+<div
+  style="width:240px;margin:1rem"
+>
+  <div
+    class="emotion-5"
+  >
+    <div
+      class="emotion-0"
+    >
+      My title
+    </div>
+    <div
+      class="emotion-4"
+    >
+      <button
+        class="emotion-3"
+      >
+        <svg
+          class="emotion-2"
+          viewBox="0 0 1024 1024"
+        >
+          <path
+            class="emotion-1"
+            d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
 .emotion-4 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
@@ -9029,11 +9322,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
 .emotion-2 > * {
-  max-height: 32px;
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
@@ -9044,23 +9348,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-1:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -9145,10 +9432,10 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -9170,11 +9457,22 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
 .emotion-2 {
   font-size: 14px;
   font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
 }
 
 .emotion-2 > * {
-  max-height: 32px;
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
   width: auto;
   display: block;
@@ -9185,23 +9483,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.emotion-1:hover {
-  -webkit-transform: translate3d(0,-2px,0);
-  -ms-transform: translate3d(0,-2px,0);
-  transform: translate3d(0,-2px,0);
-}
-
-.emotion-1:active {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .emotion-0 {
@@ -9286,10 +9567,10 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -9312,10 +9593,14 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
         <svg
           class="emotion-0"
           height="40px"
+          role="img"
           title="Storybook"
           viewBox="0 0 200 40"
           width="200px"
         >
+          <title>
+            Storybook
+          </title>
           <defs>
             <path
               d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
@@ -9365,6 +9650,340 @@ exports[`Storyshots UI|Sidebar/SidebarHeading simple 1`] = `
         >
           <path
             class="emotion-3"
+            d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Sidebar/SidebarHeading standardNoLink 1`] = `
+.emotion-3 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-2 {
+  fill: currentColor;
+}
+
+.emotion-1 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-1 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-0 {
+  width: auto;
+  height: 22px;
+  display: block;
+}
+
+.emotion-5 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-4 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-4 svg path {
+  fill: currentColor;
+}
+
+.emotion-4 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-4:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-4:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-3 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-2 {
+  fill: currentColor;
+}
+
+.emotion-1 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-1 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-0 {
+  width: auto;
+  height: 22px;
+  display: block;
+}
+
+.emotion-5 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-4 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-4 svg path {
+  fill: currentColor;
+}
+
+.emotion-4 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-4:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-4:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+<div
+  style="width:240px;margin:1rem"
+>
+  <div
+    class="emotion-6"
+  >
+    <div
+      class="emotion-1"
+    >
+      <svg
+        class="emotion-0"
+        height="40px"
+        role="img"
+        title="Storybook"
+        viewBox="0 0 200 40"
+        width="200px"
+      >
+        <title>
+          Storybook
+        </title>
+        <defs>
+          <path
+            d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
+            id="a"
+          />
+        </defs>
+        <g
+          fill="none"
+          fill-rule="evenodd"
+        >
+          <path
+            d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
+            fill="currentColor"
+          />
+          <mask
+            fill="#fff"
+            id="b"
+          >
+            <use
+              href="#a"
+            />
+          </mask>
+          <use
+            fill="#FF4785"
+            fill-rule="nonzero"
+            href="#a"
+          />
+          <path
+            d="M23.7 5L24 .2l3.9-.3.1 4.8a.3.3 0 0 1-.5.2L26 3.8l-1.7 1.4a.3.3 0 0 1-.5-.3zm-5 10c0 .9 5.3.5 6 0 0-5.4-2.8-8.2-8-8.2-5.3 0-8.2 2.8-8.2 7.1 0 7.4 10 7.6 10 11.6 0 1.2-.5 1.9-1.8 1.9-1.6 0-2.2-.9-2.1-3.6 0-.6-6.1-.8-6.3 0-.5 6.7 3.7 8.6 8.5 8.6 4.6 0 8.3-2.5 8.3-7 0-7.9-10.2-7.7-10.2-11.6 0-1.6 1.2-1.8 2-1.8.6 0 2 0 1.9 3z"
+            fill="#FFF"
+            fill-rule="nonzero"
+            mask="url(#b)"
+          />
+        </g>
+      </svg>
+    </div>
+    <div
+      class="emotion-5"
+    >
+      <button
+        class="emotion-4"
+      >
+        <svg
+          class="emotion-3"
+          viewBox="0 0 1024 1024"
+        >
+          <path
+            class="emotion-2"
             d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
           />
         </svg>

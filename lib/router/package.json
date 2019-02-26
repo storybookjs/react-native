@@ -22,7 +22,6 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "@storybook/theming": "5.0.0-beta.3",
-    "global": "^4.3.2",
     "memoizerific": "^1.11.3",
     "qs": "^6.5.2"
   },

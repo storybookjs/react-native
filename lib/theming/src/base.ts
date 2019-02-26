@@ -102,9 +102,9 @@ export type Easing = typeof easing;
 
 export type TextSize = number | string;
 export interface Brand {
-  title?: string;
-  url?: string;
-  component?: any;
+  title: string | undefined;
+  url: string | null | undefined;
+  image: string | null | undefined;
 }
 
 export interface Theme {
@@ -131,7 +131,6 @@ export interface Theme {
   barSelectedColor: string;
   barBg: string;
 
-  // Brand logo/text
   brand: Brand;
 
   code: {

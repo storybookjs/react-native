@@ -4,6 +4,7 @@ enum events {
   SET_CURRENT_STORY = 'setCurrentStory',
   GET_STORIES = 'getStories',
   SET_STORIES = 'setStories',
+  STORIES_CONFIGURED = 'storiesConfigured',
   SELECT_STORY = 'selectStory',
   PREVIEW_KEYDOWN = 'previewKeydown',
   STORY_ADDED = 'storyAdded',
@@ -29,6 +30,7 @@ export const GET_CURRENT_STORY = events.GET_CURRENT_STORY;
 export const SET_CURRENT_STORY = events.SET_CURRENT_STORY;
 export const GET_STORIES = events.GET_STORIES;
 export const SET_STORIES = events.SET_STORIES;
+export const STORIES_CONFIGURED = events.STORIES_CONFIGURED;
 export const SELECT_STORY = events.SELECT_STORY;
 export const PREVIEW_KEYDOWN = events.PREVIEW_KEYDOWN;
 export const FORCE_RE_RENDER = events.FORCE_RE_RENDER;
