@@ -2,6 +2,8 @@
 
 - [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
   - [Webpack config simplification](#webpack-config-simplification)
+  - [Story hierarchy defaults](#story-hierarchy-defaults)
+  - [Options addon deprecated](#options-addon-deprecated)
 - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
@@ -59,6 +61,84 @@ In contrast, the 4.x configuration function accepted either two or three argumen
 
 Please see the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
 
+## Story hierarchy defaults
+
+Storybook's UI contains a hierarchical tree of stories that can be configured by `hierarchySeparator` and `hierarchyRootSeparator` [options](./addons/options/README.md).
+
+In Storybook 4.x the values defaulted to `null` for both of these options, so that there would be no hierarchy by default.
+
+In 5.0, we now provide recommended defaults:
+
+```js
+{
+  hierarchyRootSeparator: '|',
+  hierarchySeparator: /\/|\./,
+}
+```
+
+This means if you use the characters { `|`, `/`, `.` } in your story kinds it will triggger the story hierarchy to appear. For example `storiesOf('UI|Widgets/Basics/Button')` will create a story root called `UI` containing a `Widgets/Basics` group, containing a `Button` component.
+
+If you wish to opt-out of this new behavior and restore the flat UI, simply set them back to `null` in your storybook config, or remove { `|`, `/`, `.` } from your story kinds:
+
+```js
+addParameters({
+  options: {
+    hierarchyRootSeparator: null,
+    hierarchySeparator: null,
+  },
+});
+```
+
+## Options addon deprecated
+
+In 4.x we added story parameters. In 5.x we've deprecated the options addon in favor of [global parameters](./docs/src/pages/configurations/options-parameter/index.md), and we've also renamed some of the options in the process (though we're maintaining backwards compatibility until 6.0).
+
+Here's an old configuration:
+
+```js
+addDecorator(
+  withOptions({
+    name: 'Storybook',
+    url: 'https://storybook.js.org',
+    goFullScreen: false,
+    addonPanelInRight: true,
+  })
+);
+```
+
+And here's its new counterpart:
+
+```js
+import { create } from '@storybook/theming';
+addParameters({
+  options: {
+    theme: create({
+      base: 'light',
+      brandTitle: 'Storybook',
+      brandUrl: 'https://storybook.js.org',
+      // To control appearance:
+      // brandImage: 'http://url.of/some.svg',
+    }),
+    isFullscreen: false,
+    panelPosition: 'right',
+  },
+});
+```
+
+Here is the mapping from old options to new:
+
+| Old               | New              |
+| ----------------- | ---------------- |
+| name              | theme.brandTitle |
+| url               | theme.brandUrl   |
+| goFullScreen      | isFullscreen     |
+| showStoriesPanel  | showNav          |
+| showAddonPanel    | showPanel        |
+| addonPanelInRight | panelPosition    |
+| showSearchBox     |                  |
+
+Storybook v5 removes the search dialog box in favor of a quick search in the navigation view, so `showSearchBox` has been removed.
+
 ## From version 4.0.x to 4.1.x
 
 There are are a few migrations you should be aware of in 4.1, including one unintentionally breaking change for advanced addon usage.
@@ -89,16 +169,16 @@ Also, here's the error you'll get if you're running an older version of React:
 
 ```
 core.browser.esm.js:15 Uncaught TypeError: Object(...) is not a function
-    at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
-    at __webpack_require__ (bootstrap:724)
-    at fn (bootstrap:101)
-    at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
-    at __webpack_require__ (bootstrap:724)
-    at fn (bootstrap:101)
-    at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
-    at __webpack_require__ (bootstrap:724)
-    at fn (bootstrap:101)
-    at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
+  at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
+  at **webpack_require** (bootstrap:724)
+  at fn (bootstrap:101)
+  at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
+  at **webpack_require** (bootstrap:724)
+  at fn (bootstrap:101)
+  at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
+  at **webpack_require** (bootstrap:724)
+  at fn (bootstrap:101)
+  at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
 ```
 
 ### Generic addons
