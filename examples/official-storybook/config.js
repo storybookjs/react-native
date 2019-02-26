@@ -49,7 +49,6 @@ addParameters({
     },
   },
   options: {
-    name: 'Storybook',
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: '|',
     // theme: themes.dark,
