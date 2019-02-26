@@ -121,20 +121,19 @@ addParameters({
   }
 })
 
-Here is the mapping from old options to new options:
+Here is the mapping from old options to new:
 
-+-------------------+------------------+
 | Old               | New              |
-+-------------------+------------------+
+| ----------------- | ---------------- |
 | name              | theme.brandTitle |
 | url               | theme.brandUrl   |
 | goFullScreen      | isFullscreen     |
 | showStoriesPanel  | showNav          |
 | showAddonPanel    | showPanel        |
-| showSearchBox     | -                |
+| showSearchBox     |                  |
 | addonPanelInRight | panelPosition    |
-| selectedPanel     | -                |
-+-------------------+------------------+
+| selectedPanel     |                  |
+
 
 ## From version 4.0.x to 4.1.x
 
