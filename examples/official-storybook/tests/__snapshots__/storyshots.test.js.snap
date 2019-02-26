@@ -2998,6 +2998,14 @@ exports[`Storyshots UI|Notifications/NotificationList all 1`] = `
   text-decoration: none;
 }
 
+.emotion-6 {
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+
 .emotion-6 > * + * {
   margin-top: 10px;
 }
@@ -3018,6 +3026,14 @@ exports[`Storyshots UI|Notifications/NotificationList all 1`] = `
   background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.emotion-6 {
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
 }
 
 .emotion-6 > * + * {
@@ -3081,6 +3097,14 @@ exports[`Storyshots UI|Notifications/NotificationList single 1`] = `
   text-decoration: none;
 }
 
+.emotion-2 {
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+
 .emotion-2 > * + * {
   margin-top: 10px;
 }
@@ -3101,6 +3125,14 @@ exports[`Storyshots UI|Notifications/NotificationList single 1`] = `
   background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.emotion-2 {
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
 }
 
 .emotion-2 > * + * {
@@ -4422,11 +4454,9 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 
 <div
   class="emotion-100"
-  title="wrapper"
 >
   <div
     class="emotion-8"
-    title="flexbar"
   >
     <div
       class="emotion-7"
@@ -5222,29 +5252,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   fill: currentColor;
 }
 
-.emotion-81 {
-  display: block;
-  padding: 16px 20px;
-  border-radius: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 16px;
-  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
-  color: #FFFFFF;
-  background-color: rgba(0,0,0,0.95);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.emotion-78 > * + * {
-  margin-top: 10px;
-}
-
-.emotion-78:empty {
-  display: none;
-}
-
-.emotion-84 {
+.emotion-77 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -5407,23 +5415,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   height: 10px;
   margin-right: 6px;
   color: #774dd7;
-}
-
-.emotion-77 {
-  height: 48px;
-}
-
-.emotion-83 {
-  position: fixed;
-  display: block;
-  bottom: 20px;
-  left: 20px;
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  min-width: 200px;
-  max-width: 280px;
-  z-index: 2;
 }
 
 .emotion-76 {
@@ -5622,29 +5613,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   fill: currentColor;
 }
 
-.emotion-81 {
-  display: block;
-  padding: 16px 20px;
-  border-radius: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 16px;
-  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
-  color: #FFFFFF;
-  background-color: rgba(0,0,0,0.95);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.emotion-78 > * + * {
-  margin-top: 10px;
-}
-
-.emotion-78:empty {
-  display: none;
-}
-
-.emotion-84 {
+.emotion-77 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -5809,23 +5778,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   color: #774dd7;
 }
 
-.emotion-77 {
-  height: 48px;
-}
-
-.emotion-83 {
-  position: fixed;
-  display: block;
-  bottom: 20px;
-  left: 20px;
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  min-width: 200px;
-  max-width: 280px;
-  z-index: 2;
-}
-
 .emotion-76 {
   margin-top: 8px;
 }
@@ -5971,7 +5923,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 <nav
-  class="container emotion-84"
+  class="container emotion-77"
 >
   <div
     class="emotion-7"
@@ -6376,34 +6328,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="emotion-79"
-  >
-    <div
-      class="emotion-78"
-    >
-      <div
-        class="emotion-77"
-      />
-    </div>
-  </div>
-  <div
-    class="emotion-83"
-  >
-    <div
-      class="emotion-78"
-    >
-      <div
-        class="emotion-81"
-      >
-        <div
-          class="emotion-79"
-        >
-          🎉 Storybook is cool!
-        </div>
-      </div>
-    </div>
-  </div>
 </nav>
 `;
 
@@ -6420,29 +6344,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   fill: currentColor;
 }
 
-.emotion-52 {
-  display: block;
-  padding: 16px 20px;
-  border-radius: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 16px;
-  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
-  color: #FFFFFF;
-  background-color: rgba(0,0,0,0.95);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.emotion-49 > * + * {
-  margin-top: 10px;
-}
-
-.emotion-49:empty {
-  display: none;
-}
-
-.emotion-55 {
+.emotion-48 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -6912,23 +6814,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   height: 10px;
   margin-right: 6px;
   color: #774dd7;
-}
-
-.emotion-48 {
-  height: 48px;
-}
-
-.emotion-54 {
-  position: fixed;
-  display: block;
-  bottom: 20px;
-  left: 20px;
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  min-width: 200px;
-  max-width: 280px;
-  z-index: 2;
 }
 
 .emotion-4 {
@@ -6943,29 +6828,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   fill: currentColor;
 }
 
-.emotion-52 {
-  display: block;
-  padding: 16px 20px;
-  border-radius: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 16px;
-  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
-  color: #FFFFFF;
-  background-color: rgba(0,0,0,0.95);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.emotion-49 > * + * {
-  margin-top: 10px;
-}
-
-.emotion-49:empty {
-  display: none;
-}
-
-.emotion-55 {
+.emotion-48 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -7437,25 +7300,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   color: #774dd7;
 }
 
-.emotion-48 {
-  height: 48px;
-}
-
-.emotion-54 {
-  position: fixed;
-  display: block;
-  bottom: 20px;
-  left: 20px;
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  min-width: 200px;
-  max-width: 280px;
-  z-index: 2;
-}
-
 <nav
-  class="container emotion-55"
+  class="container emotion-48"
 >
   <div
     class="emotion-7"
@@ -7737,34 +7583,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
         </div>
       </a>
     </section>
-  </div>
-  <div
-    class="emotion-31"
-  >
-    <div
-      class="emotion-49"
-    >
-      <div
-        class="emotion-48"
-      />
-    </div>
-  </div>
-  <div
-    class="emotion-54"
-  >
-    <div
-      class="emotion-49"
-    >
-      <div
-        class="emotion-52"
-      >
-        <div
-          class="emotion-31"
-        >
-          🎉 Storybook is cool!
-        </div>
-      </div>
-    </div>
   </div>
 </nav>
 `;
