@@ -113,9 +113,12 @@ import { create } from '@storybook/theming';
 addParameters({
   options: {
     theme: create({
+      base: 'light',
       brandTitle: 'Storybook',
-      brandUrl: 'https://storybook.js.org'
-    }, 'light'),
+      brandUrl: 'https://storybook.js.org',
+      // To control appearance:
+      // brandImage: 'http://url.of/some.svg',
+    }),
     isFullscreen: false,
     panelPosition: 'right',
   }
