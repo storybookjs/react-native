@@ -101,7 +101,7 @@ addDecorator(
     name: 'Storybook',
     url: 'https://storybook.js.org',
     goFullScreen: false,
-    downPanelInRight: true,
+    addonPanelInRight: true,
   })
 );
 ```
