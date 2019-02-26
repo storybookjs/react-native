@@ -3,19 +3,13 @@ id: 'theming'
 title: 'Theming Storybook'
 ---
 
-Storybook is theme-able! You can change theme variables using [addon-options](https://github.com/storybooks/storybook/tree/master/addons/options).
+Storybook is theme-able! You can change theme variables using the [options parameter](../options-parameter).
 
 ## Set a theme
 
 You can do this in an decorator, addon or in `.storybook/config.js`. Changing theme at runtime is supported!
 
-First, create or modify `.storybook/addons.js` to include registering addon-options:
-
-```js
-import '@storybook/addon-options/register';
-```
-
-Then, modify `.storybook/config.js` to include your new options:
+Just modify `.storybook/config.js` to include your new options:
 
 ```js
 import { addParameters, configure } from '@storybook/react';

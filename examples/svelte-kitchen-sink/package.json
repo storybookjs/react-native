@@ -3,6 +3,7 @@
   "version": "5.0.0-beta.3",
   "private": true,
   "scripts": {
+    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "build-storybook": "build-storybook -s public",
     "storybook": "start-storybook -p 9009 -s public"
   },

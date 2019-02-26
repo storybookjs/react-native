@@ -3,6 +3,7 @@
   "version": "5.0.0-beta.3",
   "private": true,
   "scripts": {
+    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "build": "ember build",
     "build-storybook": "yarn build && cp -r public/* dist && build-storybook -s dist",
     "dev": "ember serve",
