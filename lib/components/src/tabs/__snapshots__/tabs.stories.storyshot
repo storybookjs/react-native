@@ -219,11 +219,9 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
 >
   <div
     class="emotion-12"
-    title="wrapper"
   >
     <div
       class="emotion-9"
-      title="flexbar"
     >
       <div
         class="emotion-8"
@@ -570,11 +568,9 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
 >
   <div
     class="emotion-12"
-    title="wrapper"
   >
     <div
       class="emotion-9"
-      title="flexbar"
     >
       <div
         class="emotion-8"
@@ -873,11 +869,9 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
 >
   <div
     class="emotion-6"
-    title="wrapper"
   >
     <div
       class="emotion-5"
-      title="flexbar"
     >
       <div
         class="emotion-4"
@@ -1159,11 +1153,9 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 >
   <div
     class="emotion-12"
-    title="wrapper"
   >
     <div
       class="emotion-9"
-      title="flexbar"
     >
       <div
         class="emotion-8"
@@ -1512,11 +1504,9 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
 >
   <div
     class="emotion-12"
-    title="wrapper"
   >
     <div
       class="emotion-9"
-      title="flexbar"
     >
       <div
         class="emotion-8"
@@ -1892,11 +1882,9 @@ exports[`Storyshots Basics|Tabs stateless - no scrolling 1`] = `
 >
   <div
     class="emotion-12"
-    title="wrapper"
   >
     <div
       class="emotion-9"
-      title="flexbar"
     >
       <div
         class="emotion-8"
@@ -2261,11 +2249,9 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
 >
   <div
     class="emotion-13"
-    title="wrapper"
   >
     <div
       class="emotion-10"
-      title="flexbar"
     >
       <div
         class="emotion-9"

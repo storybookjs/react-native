@@ -411,11 +411,9 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 
 <div
   class="emotion-26"
-  title="wrapper"
 >
   <div
     class="emotion-8"
-    title="flexbar"
   >
     <div
       class="emotion-7"
@@ -1697,11 +1695,9 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 
 <div
   class="emotion-42"
-  title="wrapper"
 >
   <div
     class="emotion-8"
-    title="flexbar"
   >
     <div
       class="emotion-7"
@@ -2853,11 +2849,9 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 
 <div
   class="emotion-28"
-  title="wrapper"
 >
   <div
     class="emotion-8"
-    title="flexbar"
   >
     <div
       class="emotion-7"
