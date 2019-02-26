@@ -1,10 +1,9 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Inspector from 'react-inspector';
 
 import { withTheme } from '@storybook/theming';
-import { ActionBar } from '@storybook/components';
 
-import { Actions, Action, Wrapper, InspectorContainer, Counter } from './style';
+import { Actions, Action, InspectorContainer, Counter, StyledActionBar } from './style';
 import { ActionDisplay } from '../../models';
 
 interface ActionLoggerProps {
@@ -14,7 +13,7 @@ interface ActionLoggerProps {
 }
 
 export const ActionLogger = withTheme(({ actions, onClear, theme }: ActionLoggerProps) => (
-  <Wrapper>
+  <Fragment>
     <Actions>
       {actions.map((action: ActionDisplay) => (
         <Action key={action.id}>
@@ -32,6 +31,6 @@ export const ActionLogger = withTheme(({ actions, onClear, theme }: ActionLogger
       ))}
     </Actions>
 
-    <ActionBar actionItems={[{ title: 'Clear', onClick: onClear }]} />
-  </Wrapper>
+    <StyledActionBar actionItems={[{ title: 'Clear', onClick: onClear }]} />
+  </Fragment>
 ));
