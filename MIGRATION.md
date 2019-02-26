@@ -121,8 +121,9 @@ addParameters({
     }),
     isFullscreen: false,
     panelPosition: 'right',
-  }
-})
+  },
+});
+```
 
 Here is the mapping from old options to new:
 
@@ -133,8 +134,10 @@ Here is the mapping from old options to new:
 | goFullScreen      | isFullscreen     |
 | showStoriesPanel  | showNav          |
 | showAddonPanel    | showPanel        |
-| showSearchBox     |                  |
 | addonPanelInRight | panelPosition    |
+| showSearchBox     |                  |
+
+Storybook v5 removes the search dialog box in favor of a quick search in the navigation view, so `showSearchBox` has been removed.
 
 ## From version 4.0.x to 4.1.x
 
