@@ -15,73 +15,16 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 }
 
 .emotion-8 {
-  color: #999999;
-  height: 40px;
-  overflow: auto;
-  overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-8:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-8::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-8:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-8::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-8::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-8::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  overflow-x: auto;
+  color: #999999;
+  width: 100%;
+  height: 40px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-7 {
@@ -94,7 +37,12 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: 40px;
 }
 
@@ -103,6 +51,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -173,6 +122,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -202,12 +152,23 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   display: block;
   position: relative;
   font-size: 13px;
-  position: relative;
+  height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
   overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
+}
+
+.emotion-25 > *:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  overflow: auto;
 }
 
 .emotion-5 {
@@ -410,158 +371,201 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 }
 
 <div
-  class="emotion-26"
-  title="wrapper"
+  style="position:relative;height:calc(100vh);width:calc(100vw)"
 >
   <div
-    class="emotion-8"
-    title="flexbar"
+    class="emotion-26"
   >
     <div
-      class="emotion-7"
+      class="emotion-8"
+      data-simplebar="true"
     >
       <div
-        class="emotion-2"
+        class="simplebar-wrapper"
       >
         <div
-          class="emotion-1"
-          role="tablist"
+          class="simplebar-height-auto-observer-wrapper"
         >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            About
-          </button>
+          <div
+            class="simplebar-height-auto-observer"
+          />
         </div>
+        <div
+          class="simplebar-mask"
+        >
+          <div
+            class="simplebar-offset"
+          >
+            <div
+              class="simplebar-content"
+            >
+              <div
+                class="emotion-7"
+              >
+                <div
+                  class="emotion-2"
+                >
+                  <div
+                    class="emotion-1"
+                    role="tablist"
+                  >
+                    <button
+                      class="emotion-0"
+                      role="tab"
+                      type="button"
+                    >
+                      About
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="emotion-6"
+                >
+                  <button
+                    class="emotion-5"
+                  >
+                    <svg
+                      class="emotion-4"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        class="emotion-3"
+                        d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="simplebar-placeholder"
+        />
       </div>
       <div
-        class="emotion-6"
+        class="simplebar-track simplebar-horizontal"
       >
-        <button
-          class="emotion-5"
-        >
-          <svg
-            class="emotion-4"
-            viewBox="0 0 1024 1024"
-          >
-            <path
-              class="emotion-3"
-              d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
-            />
-          </svg>
-        </button>
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-vertical"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
       </div>
     </div>
-  </div>
-  <div
-    class="emotion-25"
-  >
     <div
-      class="emotion-24"
-      role="tabpanel"
+      class="emotion-25"
     >
       <div
-        class="emotion-23"
+        class="emotion-24"
+        role="tabpanel"
       >
-        <header
-          class="emotion-9"
-        >
-          <svg
-            title="Storybook icon"
-            viewBox="0 0 64 64"
-          >
-            <g
-              fill="none"
-              fill-rule="evenodd"
-              id="Artboard"
-              stroke="none"
-              stroke-width="1"
-            >
-              <path
-                d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
-                fill="#FF4785"
-                fill-rule="nonzero"
-                id="path-1"
-              />
-              <path
-                d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
-                fill="#FFFFFF"
-                fill-rule="nonzero"
-                id="path9_fill-path"
-              />
-              <path
-                d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
-                fill="#FFFFFF"
-                id="Path"
-              />
-            </g>
-          </svg>
-          Storybook 5.0.0
-        </header>
         <div
-          class="emotion-10"
+          class="emotion-23"
         >
-          Oops! The latest version of Storybook couldn't be fetched.
-        </div>
-        <div
-          class="emotion-15"
-        >
-          <a
-            class="emotion-14"
-            href="https://github.com/storybooks/storybook/releases"
-            target="_blank"
+          <header
+            class="emotion-9"
           >
-            <span
-              class="emotion-13"
+            <svg
+              title="Storybook icon"
+              viewBox="0 0 64 64"
             >
-              Check Storybook's release history
-              <svg
-                class="emotion-4"
-                viewBox="0 0 1024 1024"
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                id="Artboard"
+                stroke="none"
+                stroke-width="1"
               >
                 <path
-                  class="emotion-3"
-                  d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+                  d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
+                  fill="#FF4785"
+                  fill-rule="nonzero"
+                  id="path-1"
                 />
-              </svg>
-            </span>
-          </a>
-        </div>
-        <div
-          class="emotion-22"
-        >
-          <a
-            class="emotion-17"
-            href="https://storybook.js.org"
+                <path
+                  d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
+                  fill="#FFFFFF"
+                  fill-rule="nonzero"
+                  id="path9_fill-path"
+                />
+                <path
+                  d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
+                  fill="#FFFFFF"
+                  id="Path"
+                />
+              </g>
+            </svg>
+            Storybook 5.0.0
+          </header>
+          <div
+            class="emotion-10"
           >
-            <span
-              class="emotion-16"
-            >
-              Docs
-            </span>
-          </a>
-          <a
-            class="emotion-17"
-            href="https://github.com/storybooks/storybook"
+            Oops! The latest version of Storybook couldn't be fetched.
+          </div>
+          <div
+            class="emotion-15"
           >
-            <span
-              class="emotion-16"
+            <a
+              class="emotion-14"
+              href="https://github.com/storybooks/storybook/releases"
+              target="_blank"
             >
-              GitHub
-            </span>
-          </a>
-          <a
-            class="emotion-17"
-            href="https://storybook.js.org/support"
+              <span
+                class="emotion-13"
+              >
+                Check Storybook's release history
+                <svg
+                  class="emotion-4"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div
+            class="emotion-22"
           >
-            <span
-              class="emotion-16"
+            <a
+              class="emotion-17"
+              href="https://storybook.js.org"
             >
-              Support
-            </span>
-          </a>
+              <span
+                class="emotion-16"
+              >
+                Docs
+              </span>
+            </a>
+            <a
+              class="emotion-17"
+              href="https://github.com/storybooks/storybook"
+            >
+              <span
+                class="emotion-16"
+              >
+                GitHub
+              </span>
+            </a>
+            <a
+              class="emotion-17"
+              href="https://storybook.js.org/support"
+            >
+              <span
+                class="emotion-16"
+              >
+                Support
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -584,73 +588,16 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 }
 
 .emotion-8 {
-  color: #999999;
-  height: 40px;
-  overflow: auto;
-  overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-8:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-8::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-8:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-8::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-8::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-8::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  overflow-x: auto;
+  color: #999999;
+  width: 100%;
+  height: 40px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-7 {
@@ -663,7 +610,12 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: 40px;
 }
 
@@ -672,6 +624,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -742,6 +695,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -771,12 +725,23 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: block;
   position: relative;
   font-size: 13px;
-  position: relative;
+  height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
   overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
+}
+
+.emotion-41 > *:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  overflow: auto;
 }
 
 .emotion-5 {
@@ -1055,7 +1020,6 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 .emotion-17 pre.hljs {
   padding: 15px;
   margin: 0;
-  overflow: auto;
   white-space: pre-wrap;
   color: #333333;
   font-size: 13px;
@@ -1471,8 +1435,9 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 }
 
 .emotion-20 {
+  overflow-y: auto;
+  overflow-x: auto;
   position: relative;
-  overflow: auto;
 }
 
 .emotion-20 code {
@@ -1696,264 +1661,389 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 }
 
 <div
-  class="emotion-42"
-  title="wrapper"
+  style="position:relative;height:calc(100vh);width:calc(100vw)"
 >
   <div
-    class="emotion-8"
-    title="flexbar"
+    class="emotion-42"
   >
     <div
-      class="emotion-7"
+      class="emotion-8"
+      data-simplebar="true"
     >
       <div
-        class="emotion-2"
+        class="simplebar-wrapper"
       >
         <div
-          class="emotion-1"
-          role="tablist"
-        >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            About
-          </button>
-        </div>
-      </div>
-      <div
-        class="emotion-6"
-      >
-        <button
-          class="emotion-5"
-        >
-          <svg
-            class="emotion-4"
-            viewBox="0 0 1024 1024"
-          >
-            <path
-              class="emotion-3"
-              d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="emotion-41"
-  >
-    <div
-      class="emotion-40"
-      role="tabpanel"
-    >
-      <div
-        class="emotion-39"
-      >
-        <header
-          class="emotion-9"
-        >
-          <svg
-            title="Storybook icon"
-            viewBox="0 0 64 64"
-          >
-            <g
-              fill="none"
-              fill-rule="evenodd"
-              id="Artboard"
-              stroke="none"
-              stroke-width="1"
-            >
-              <path
-                d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
-                fill="#FF4785"
-                fill-rule="nonzero"
-                id="path-1"
-              />
-              <path
-                d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
-                fill="#FFFFFF"
-                fill-rule="nonzero"
-                id="path9_fill-path"
-              />
-              <path
-                d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
-                fill="#FFFFFF"
-                id="Path"
-              />
-            </g>
-          </svg>
-          Storybook 5.0.0
-        </header>
-        <div
-          class="emotion-10"
-        >
-          Storybook 5.0.3 is available. Upgrade from 5.0.0 now.
-        </div>
-        <div
-          class="emotion-16"
-        >
-          <span
-            class="emotion-11"
-          >
-            5.0.3 Changelog
-          </span>
-          <a
-            class="emotion-15"
-            href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
-            target="_blank"
-          >
-            <span
-              class="emotion-14"
-            >
-              Read full changelog
-              <svg
-                class="emotion-4"
-                viewBox="0 0 1024 1024"
-              >
-                <path
-                  class="emotion-3"
-                  d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
-                />
-              </svg>
-            </span>
-          </a>
-        </div>
-        <div
-          class="emotion-17"
-        >
-          <ul>
-            <li>
-              upgrade webpack & babel to latest
-            </li>
-            <li>
-              new addParameters and third argument to .add to pass data to addons
-            </li>
-            <li>
-              added the ability to theme storybook
-            </li>
-            <li>
-              improved ui for mobile devices
-            </li>
-            <li>
-              improved performance of addon-knobs
-            </li>
-          </ul>
-        </div>
-        <div
-          class="emotion-31"
+          class="simplebar-height-auto-observer-wrapper"
         >
           <div
-            class="emotion-17"
+            class="simplebar-height-auto-observer"
+          />
+        </div>
+        <div
+          class="simplebar-mask"
+        >
+          <div
+            class="simplebar-offset"
           >
-            <p>
-              <b>
-                Upgrade all Storybook packages to latest:
-              </b>
-            </p>
             <div
-              class="emotion-23"
+              class="simplebar-content"
             >
               <div
-                class="emotion-20"
+                class="emotion-7"
               >
-                <pre
-                  class="hljs emotion-19"
+                <div
+                  class="emotion-2"
                 >
-                  <code
-                    class="emotion-18"
+                  <div
+                    class="emotion-1"
+                    role="tablist"
                   >
-                    npx npm-check-updates 
-                    <span
-                      class="token string"
+                    <button
+                      class="emotion-0"
+                      role="tab"
+                      type="button"
                     >
-                      '/storybook/'
-                    </span>
-                     -u 
-                    <span
-                      class="token operator"
-                    >
-                      &&
-                    </span>
-                     yarn
-                  </code>
-                </pre>
-              </div>
-              <div
-                class="emotion-22"
-              >
-                <button
-                  class="emotion-21"
+                      About
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="emotion-6"
                 >
-                  Copy
-                </button>
-              </div>
-            </div>
-            <p>
-              Alternatively, if you're using yarn run the following command, and check all Storybook related packages:
-            </p>
-            <div
-              class="emotion-23"
-            >
-              <div
-                class="emotion-20"
-              >
-                <pre
-                  class="hljs emotion-19"
-                >
-                  <code
-                    class="emotion-18"
+                  <button
+                    class="emotion-5"
                   >
-                    yarn upgrade-interactive --latest
-                  </code>
-                </pre>
-              </div>
-              <div
-                class="emotion-22"
-              >
-                <button
-                  class="emotion-21"
-                >
-                  Copy
-                </button>
+                    <svg
+                      class="emotion-4"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        class="emotion-3"
+                        d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="emotion-38"
+          class="simplebar-placeholder"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-horizontal"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-vertical"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+    </div>
+    <div
+      class="emotion-41"
+    >
+      <div
+        class="emotion-40"
+        role="tabpanel"
+      >
+        <div
+          class="emotion-39"
         >
-          <a
-            class="emotion-33"
-            href="https://storybook.js.org"
+          <header
+            class="emotion-9"
+          >
+            <svg
+              title="Storybook icon"
+              viewBox="0 0 64 64"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                id="Artboard"
+                stroke="none"
+                stroke-width="1"
+              >
+                <path
+                  d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
+                  fill="#FF4785"
+                  fill-rule="nonzero"
+                  id="path-1"
+                />
+                <path
+                  d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
+                  fill="#FFFFFF"
+                  fill-rule="nonzero"
+                  id="path9_fill-path"
+                />
+                <path
+                  d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
+                  fill="#FFFFFF"
+                  id="Path"
+                />
+              </g>
+            </svg>
+            Storybook 5.0.0
+          </header>
+          <div
+            class="emotion-10"
+          >
+            Storybook 5.0.3 is available. Upgrade from 5.0.0 now.
+          </div>
+          <div
+            class="emotion-16"
           >
             <span
-              class="emotion-32"
+              class="emotion-11"
             >
-              Docs
+              5.0.3 Changelog
             </span>
-          </a>
-          <a
-            class="emotion-33"
-            href="https://github.com/storybooks/storybook"
+            <a
+              class="emotion-15"
+              href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
+              target="_blank"
+            >
+              <span
+                class="emotion-14"
+              >
+                Read full changelog
+                <svg
+                  class="emotion-4"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div
+            class="emotion-17"
           >
-            <span
-              class="emotion-32"
-            >
-              GitHub
-            </span>
-          </a>
-          <a
-            class="emotion-33"
-            href="https://storybook.js.org/support"
+            <ul>
+              <li>
+                upgrade webpack & babel to latest
+              </li>
+              <li>
+                new addParameters and third argument to .add to pass data to addons
+              </li>
+              <li>
+                added the ability to theme storybook
+              </li>
+              <li>
+                improved ui for mobile devices
+              </li>
+              <li>
+                improved performance of addon-knobs
+              </li>
+            </ul>
+          </div>
+          <div
+            class="emotion-31"
           >
-            <span
-              class="emotion-32"
+            <div
+              class="emotion-17"
             >
-              Support
-            </span>
-          </a>
+              <p>
+                <b>
+                  Upgrade all Storybook packages to latest:
+                </b>
+              </p>
+              <div
+                class="emotion-23"
+              >
+                <div
+                  class="emotion-20"
+                  data-simplebar="true"
+                >
+                  <div
+                    class="simplebar-wrapper"
+                  >
+                    <div
+                      class="simplebar-height-auto-observer-wrapper"
+                    >
+                      <div
+                        class="simplebar-height-auto-observer"
+                      />
+                    </div>
+                    <div
+                      class="simplebar-mask"
+                    >
+                      <div
+                        class="simplebar-offset"
+                      >
+                        <div
+                          class="simplebar-content"
+                        >
+                          <pre
+                            class="hljs emotion-19"
+                          >
+                            <code
+                              class="emotion-18"
+                            >
+                              npx npm-check-updates 
+                              <span
+                                class="token string"
+                              >
+                                '/storybook/'
+                              </span>
+                               -u 
+                              <span
+                                class="token operator"
+                              >
+                                &&
+                              </span>
+                               yarn
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="simplebar-placeholder"
+                    />
+                  </div>
+                  <div
+                    class="simplebar-track simplebar-horizontal"
+                  >
+                    <div
+                      class="simplebar-scrollbar"
+                    />
+                  </div>
+                  <div
+                    class="simplebar-track simplebar-vertical"
+                  >
+                    <div
+                      class="simplebar-scrollbar"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="emotion-22"
+                >
+                  <button
+                    class="emotion-21"
+                  >
+                    Copy
+                  </button>
+                </div>
+              </div>
+              <p>
+                Alternatively, if you're using yarn run the following command, and check all Storybook related packages:
+              </p>
+              <div
+                class="emotion-23"
+              >
+                <div
+                  class="emotion-20"
+                  data-simplebar="true"
+                >
+                  <div
+                    class="simplebar-wrapper"
+                  >
+                    <div
+                      class="simplebar-height-auto-observer-wrapper"
+                    >
+                      <div
+                        class="simplebar-height-auto-observer"
+                      />
+                    </div>
+                    <div
+                      class="simplebar-mask"
+                    >
+                      <div
+                        class="simplebar-offset"
+                      >
+                        <div
+                          class="simplebar-content"
+                        >
+                          <pre
+                            class="hljs emotion-19"
+                          >
+                            <code
+                              class="emotion-18"
+                            >
+                              yarn upgrade-interactive --latest
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="simplebar-placeholder"
+                    />
+                  </div>
+                  <div
+                    class="simplebar-track simplebar-horizontal"
+                  >
+                    <div
+                      class="simplebar-scrollbar"
+                    />
+                  </div>
+                  <div
+                    class="simplebar-track simplebar-vertical"
+                  >
+                    <div
+                      class="simplebar-scrollbar"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="emotion-22"
+                >
+                  <button
+                    class="emotion-21"
+                  >
+                    Copy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="emotion-38"
+          >
+            <a
+              class="emotion-33"
+              href="https://storybook.js.org"
+            >
+              <span
+                class="emotion-32"
+              >
+                Docs
+              </span>
+            </a>
+            <a
+              class="emotion-33"
+              href="https://github.com/storybooks/storybook"
+            >
+              <span
+                class="emotion-32"
+              >
+                GitHub
+              </span>
+            </a>
+            <a
+              class="emotion-33"
+              href="https://storybook.js.org/support"
+            >
+              <span
+                class="emotion-32"
+              >
+                Support
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1976,73 +2066,16 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 }
 
 .emotion-8 {
-  color: #999999;
-  height: 40px;
-  overflow: auto;
-  overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-8:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-8::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-8:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-8::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-8::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-8::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  overflow-x: auto;
+  color: #999999;
+  width: 100%;
+  height: 40px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-7 {
@@ -2055,7 +2088,12 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: 40px;
 }
 
@@ -2064,6 +2102,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -2134,6 +2173,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -2163,12 +2203,23 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   display: block;
   position: relative;
   font-size: 13px;
-  position: relative;
+  height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
   overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
+}
+
+.emotion-27 > *:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  overflow: auto;
 }
 
 .emotion-5 {
@@ -2459,7 +2510,6 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 .emotion-17 pre.hljs {
   padding: 15px;
   margin: 0;
-  overflow: auto;
   white-space: pre-wrap;
   color: #333333;
   font-size: 13px;
@@ -2852,184 +2902,227 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 }
 
 <div
-  class="emotion-28"
-  title="wrapper"
+  style="position:relative;height:calc(100vh);width:calc(100vw)"
 >
   <div
-    class="emotion-8"
-    title="flexbar"
+    class="emotion-28"
   >
     <div
-      class="emotion-7"
+      class="emotion-8"
+      data-simplebar="true"
     >
       <div
-        class="emotion-2"
+        class="simplebar-wrapper"
       >
         <div
-          class="emotion-1"
-          role="tablist"
+          class="simplebar-height-auto-observer-wrapper"
         >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            About
-          </button>
+          <div
+            class="simplebar-height-auto-observer"
+          />
         </div>
+        <div
+          class="simplebar-mask"
+        >
+          <div
+            class="simplebar-offset"
+          >
+            <div
+              class="simplebar-content"
+            >
+              <div
+                class="emotion-7"
+              >
+                <div
+                  class="emotion-2"
+                >
+                  <div
+                    class="emotion-1"
+                    role="tablist"
+                  >
+                    <button
+                      class="emotion-0"
+                      role="tab"
+                      type="button"
+                    >
+                      About
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="emotion-6"
+                >
+                  <button
+                    class="emotion-5"
+                  >
+                    <svg
+                      class="emotion-4"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        class="emotion-3"
+                        d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="simplebar-placeholder"
+        />
       </div>
       <div
-        class="emotion-6"
+        class="simplebar-track simplebar-horizontal"
       >
-        <button
-          class="emotion-5"
-        >
-          <svg
-            class="emotion-4"
-            viewBox="0 0 1024 1024"
-          >
-            <path
-              class="emotion-3"
-              d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
-            />
-          </svg>
-        </button>
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-vertical"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
       </div>
     </div>
-  </div>
-  <div
-    class="emotion-27"
-  >
     <div
-      class="emotion-26"
-      role="tabpanel"
+      class="emotion-27"
     >
       <div
-        class="emotion-25"
+        class="emotion-26"
+        role="tabpanel"
       >
-        <header
-          class="emotion-9"
-        >
-          <svg
-            title="Storybook icon"
-            viewBox="0 0 64 64"
-          >
-            <g
-              fill="none"
-              fill-rule="evenodd"
-              id="Artboard"
-              stroke="none"
-              stroke-width="1"
-            >
-              <path
-                d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
-                fill="#FF4785"
-                fill-rule="nonzero"
-                id="path-1"
-              />
-              <path
-                d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
-                fill="#FFFFFF"
-                fill-rule="nonzero"
-                id="path9_fill-path"
-              />
-              <path
-                d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
-                fill="#FFFFFF"
-                id="Path"
-              />
-            </g>
-          </svg>
-          Storybook 5.0.0
-        </header>
         <div
-          class="emotion-10"
+          class="emotion-25"
         >
-          Looking good! You're up to date.
-        </div>
-        <div
-          class="emotion-16"
-        >
-          <span
-            class="emotion-11"
+          <header
+            class="emotion-9"
           >
-            5.0.0 Changelog
-          </span>
-          <a
-            class="emotion-15"
-            href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
-            target="_blank"
-          >
-            <span
-              class="emotion-14"
+            <svg
+              title="Storybook icon"
+              viewBox="0 0 64 64"
             >
-              Read full changelog
-              <svg
-                class="emotion-4"
-                viewBox="0 0 1024 1024"
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                id="Artboard"
+                stroke="none"
+                stroke-width="1"
               >
                 <path
-                  class="emotion-3"
-                  d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+                  d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
+                  fill="#FF4785"
+                  fill-rule="nonzero"
+                  id="path-1"
                 />
-              </svg>
-            </span>
-          </a>
-        </div>
-        <div
-          class="emotion-17"
-        >
-          <ul>
-            <li>
-              upgrade webpack & babel to latest
-            </li>
-            <li>
-              new addParameters and third argument to .add to pass data to addons
-            </li>
-            <li>
-              added the ability to theme storybook
-            </li>
-            <li>
-              improved ui for mobile devices
-            </li>
-            <li>
-              improved performance of addon-knobs
-            </li>
-          </ul>
-        </div>
-        <div
-          class="emotion-24"
-        >
-          <a
-            class="emotion-19"
-            href="https://storybook.js.org"
+                <path
+                  d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
+                  fill="#FFFFFF"
+                  fill-rule="nonzero"
+                  id="path9_fill-path"
+                />
+                <path
+                  d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
+                  fill="#FFFFFF"
+                  id="Path"
+                />
+              </g>
+            </svg>
+            Storybook 5.0.0
+          </header>
+          <div
+            class="emotion-10"
+          >
+            Looking good! You're up to date.
+          </div>
+          <div
+            class="emotion-16"
           >
             <span
-              class="emotion-18"
+              class="emotion-11"
             >
-              Docs
+              5.0.0 Changelog
             </span>
-          </a>
-          <a
-            class="emotion-19"
-            href="https://github.com/storybooks/storybook"
+            <a
+              class="emotion-15"
+              href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
+              target="_blank"
+            >
+              <span
+                class="emotion-14"
+              >
+                Read full changelog
+                <svg
+                  class="emotion-4"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div
+            class="emotion-17"
           >
-            <span
-              class="emotion-18"
-            >
-              GitHub
-            </span>
-          </a>
-          <a
-            class="emotion-19"
-            href="https://storybook.js.org/support"
+            <ul>
+              <li>
+                upgrade webpack & babel to latest
+              </li>
+              <li>
+                new addParameters and third argument to .add to pass data to addons
+              </li>
+              <li>
+                added the ability to theme storybook
+              </li>
+              <li>
+                improved ui for mobile devices
+              </li>
+              <li>
+                improved performance of addon-knobs
+              </li>
+            </ul>
+          </div>
+          <div
+            class="emotion-24"
           >
-            <span
-              class="emotion-18"
+            <a
+              class="emotion-19"
+              href="https://storybook.js.org"
             >
-              Support
-            </span>
-          </a>
+              <span
+                class="emotion-18"
+              >
+                Docs
+              </span>
+            </a>
+            <a
+              class="emotion-19"
+              href="https://github.com/storybooks/storybook"
+            >
+              <span
+                class="emotion-18"
+              >
+                GitHub
+              </span>
+            </a>
+            <a
+              class="emotion-19"
+              href="https://storybook.js.org/support"
+            >
+              <span
+                class="emotion-18"
+              >
+                Support
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

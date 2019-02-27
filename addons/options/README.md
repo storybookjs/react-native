@@ -1,3 +1,12 @@
+#NOTE: Options Addon is deprecated as of Storybook 5.0
+
+Options are now configured using the [`options` parameter](../../docs/src/pages/configurations/options-parameter/index.md) which is built into Storybook.
+
+- Global options: `addParameters({ options: { ... }})` and no addon is needed.
+- Story options: `storiesOf(...).add('name', storyFn, { options: { ... }})`
+
+See the [migration docs](../../MIGRATION.md#options-addon-deprecated) for what's changed.
+
 # Storybook Options Addon
 
 The Options addon can be used to (re-)configure the [Storybook](https://storybook.js.org) UI at runtime.
@@ -136,5 +145,5 @@ Make sure you also have the type definitions installed for the following libs:
 
 - Node
 - React
- 
+
 You can install them using `yarn add @types/node @types/react --dev`, assuming you are using TypeScript >2.0.

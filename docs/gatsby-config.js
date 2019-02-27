@@ -23,6 +23,7 @@ module.exports = {
         '/basics/live-examples/',
       ],
       configurations: [
+        '/configurations/options-parameter/',
         '/configurations/default-config/',
         '/configurations/custom-webpack-config/',
         '/configurations/custom-babel-config/',

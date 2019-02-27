@@ -3,6 +3,7 @@
   "version": "5.0.0-beta.3",
   "private": true,
   "scripts": {
+    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "build-storybook": "build-storybook -c ./ -s built-storybooks",
     "chromatic": "chromatic test --storybook-addon --exit-zero-on-changes --app-code ab7m45tp9p",
     "do-image-snapshots": "../../node_modules/.bin/jest --projects=./image-snapshots",

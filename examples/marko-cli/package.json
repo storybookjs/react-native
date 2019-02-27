@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "build": "NODE_ENV=production marko-starter build",
     "build-storybook": "build-storybook",
     "prettier": "prettier src/**/*.{js,css,less} *.js --write",

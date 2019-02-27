@@ -41,7 +41,9 @@ interface ThemeVar {
   inputTextColor?: string;
   inputBorderRadius?: number;
 
-  brand?: Brand;
+  brandTitle?: string;
+  brandUrl?: string;
+  brandImage?: string;
 }
 
 const createColors = (vars: ThemeVar): Color => ({
@@ -149,7 +151,11 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
   barBg: vars.barBg || color.lightest,
 
   // Brand logo/text
-  brand: vars.brand || null,
+  brand: {
+    title: vars.brandTitle,
+    url: vars.brandUrl,
+    image: vars.brandImage,
+  },
 
   code: createSyntax({
     colors: vars.base === 'light' ? lightSyntaxColors : darkSyntaxColors,
@@ -166,7 +172,7 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
     BASE_LINE_HEIGHT: '18px',
     BASE_BACKGROUND_COLOR: 'transparent',
     BASE_COLOR: vars.textColor || color.darkest,
-    ARROW_COLOR: opacify(0.2, vars.appBorderColor),
+    ARROW_COLOR: opacify(0.2, vars.appBorderColor || color.border),
     ARROW_MARGIN_RIGHT: 4,
     ARROW_FONT_SIZE: 8,
     TREENODE_FONT_FAMILY: vars.fontCode || typography.fonts.mono,
