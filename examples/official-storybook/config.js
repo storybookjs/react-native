@@ -51,7 +51,7 @@ addParameters({
   options: {
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: '|',
-    // theme: themes.dark,
+    theme: themes.dark,
   },
   viewports: {
     ...INITIAL_VIEWPORTS,
