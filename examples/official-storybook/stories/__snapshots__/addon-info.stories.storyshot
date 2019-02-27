@@ -20,7 +20,7 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -297,7 +297,7 @@ exports[`Storyshots Addons|Info/ForwardRef Displays forwarded ref components cor
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -647,7 +647,7 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -811,7 +811,7 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -1122,7 +1122,7 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -1437,7 +1437,7 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -1732,7 +1732,7 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -2039,7 +2039,7 @@ exports[`Storyshots Addons|Info/Options.TableComponent Use a custom component fo
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -2221,7 +2221,7 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -2471,7 +2471,7 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -2998,7 +2998,7 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -3380,7 +3380,7 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -3718,7 +3718,7 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -3941,7 +3941,7 @@ exports[`Storyshots Addons|Info/Options.styles Extend info styles with an object
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -4209,7 +4209,7 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -4485,7 +4485,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -5583,7 +5583,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from Flow declarations 1`]
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -5822,7 +5822,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -6711,7 +6711,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -7006,7 +7006,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -7376,7 +7376,7 @@ exports[`Storyshots Addons|Info/Story Source Array prop 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -7852,7 +7852,7 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -8200,7 +8200,7 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -8493,7 +8493,7 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -8845,7 +8845,7 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -9113,7 +9113,7 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
