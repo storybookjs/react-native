@@ -227,6 +227,12 @@ exports[`Storyshots UI|Panel default 1`] = `
   position: relative;
   font-size: 13px;
   height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  overflow: auto;
 }
 
 .emotion-13 > *:first-child {

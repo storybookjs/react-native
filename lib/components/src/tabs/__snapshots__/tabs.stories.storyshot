@@ -157,17 +157,6 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
   display: block;
   position: relative;
   font-size: 13px;
-  height: auto;
-}
-
-.emotion-11 > *:first-child {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  height: 100%;
-  overflow: auto;
 }
 
 .emotion-10 {
@@ -175,7 +164,7 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
 }
 
 <div
-  style="height:calc(100vh - 20px)"
+  style="position:relative;height:calc(100vh - 20px);width:calc(100vw - 20px);margin:10px"
 >
   <div
     class="emotion-12"
@@ -507,17 +496,6 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
   display: block;
   position: relative;
   font-size: 13px;
-  height: auto;
-}
-
-.emotion-11 > *:first-child {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  height: 100%;
-  overflow: auto;
 }
 
 .emotion-10 {
@@ -525,7 +503,7 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
 }
 
 <div
-  style="height:calc(100vh - 20px)"
+  style="position:relative;height:calc(100vh - 20px);width:calc(100vw - 20px);margin:10px"
 >
   <div
     class="emotion-12"
@@ -813,21 +791,10 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
   display: block;
   position: relative;
   font-size: 13px;
-  height: auto;
-}
-
-.emotion-7 > *:first-child {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  height: 100%;
-  overflow: auto;
 }
 
 <div
-  style="height:calc(100vh - 20px)"
+  style="position:relative;height:calc(100vh - 20px);width:calc(100vw - 20px);margin:10px"
 >
   <div
     class="emotion-6"
@@ -1074,6 +1041,12 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
   position: relative;
   font-size: 13px;
   height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  overflow: auto;
 }
 
 .emotion-11 > *:first-child {
@@ -1093,6 +1066,8 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 .emotion-12 {
   background-clip: padding-box;
   border: 1px solid rgba(0,0,0,.1);
+  border-radius: 4px;
+  overflow: hidden;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -1106,7 +1081,7 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 }
 
 <div
-  style="height:calc(100vh - 20px)"
+  style="position:relative;height:calc(100vh - 20px);width:calc(100vw - 20px);margin:10px"
 >
   <div
     class="emotion-12"
@@ -1434,17 +1409,6 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
   display: block;
   position: relative;
   font-size: 13px;
-  height: auto;
-}
-
-.emotion-11 > *:first-child {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  height: 100%;
-  overflow: auto;
 }
 
 .emotion-10 {
@@ -1454,11 +1418,13 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
 .emotion-12 {
   background-clip: padding-box;
   border: 1px solid rgba(0,0,0,.1);
+  border-radius: 4px;
+  overflow: hidden;
   display: block;
 }
 
 <div
-  style="height:calc(100vh - 20px)"
+  style="position:relative;height:calc(100vh - 20px);width:calc(100vw - 20px);margin:10px"
 >
   <div
     class="emotion-12"
@@ -1646,7 +1612,7 @@ exports[`Storyshots Basics|Tabs stateless - empty 1`] = `
 }
 
 <div
-  style="height:calc(100vh - 20px)"
+  style="position:relative;height:calc(100vh - 20px);width:calc(100vw - 20px);margin:10px"
 >
   <div
     class="emotion-1"
@@ -1836,17 +1802,6 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
   display: block;
   position: relative;
   font-size: 13px;
-  height: auto;
-}
-
-.emotion-12 > *:first-child {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  height: 100%;
-  overflow: auto;
 }
 
 .emotion-11 {
@@ -1854,7 +1809,7 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
 }
 
 <div
-  style="height:calc(100vh - 20px)"
+  style="position:relative;height:calc(100vh - 20px);width:calc(100vw - 20px);margin:10px"
 >
   <div
     class="emotion-13"
