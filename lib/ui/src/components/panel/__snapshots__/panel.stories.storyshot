@@ -287,11 +287,9 @@ exports[`Storyshots UI|Panel default 1`] = `
 <div
   class="emotion-14"
   id="storybook-panel-root"
-  title="wrapper"
 >
   <div
     class="emotion-12"
-    title="flexbar"
   >
     <div
       class="emotion-11"
