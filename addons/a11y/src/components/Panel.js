@@ -6,6 +6,7 @@ import { styled } from '@storybook/theming';
 import { STORY_RENDERED } from '@storybook/core-events';
 import { ActionBar, Icons } from '@storybook/components';
 
+import { ScrollArea } from '@storybook/components/dist/ScrollArea/ScrollArea';
 import EVENTS from '../constants';
 
 import Tabs from './Tabs';
@@ -32,12 +33,6 @@ const Passes = styled.span(({ theme }) => ({
 const Violations = styled.span(({ theme }) => ({
   color: theme.color.negative,
 }));
-
-const StyledActionBar = styled(ActionBar)({
-  position: 'fixed',
-  bottom: 10,
-  right: 10,
-});
 
 class A11YPanel extends Component {
   static propTypes = {
@@ -136,23 +131,24 @@ class A11YPanel extends Component {
 
     return active ? (
       <Fragment>
-        <Tabs
-          key="tabs"
-          tabs={[
-            {
-              label: <Violations>{violations.length} Violations</Violations>,
-              panel: <Report passes={false} items={violations} empty="No a11y violations found." />,
-            },
-            {
-              label: <Passes>{passes.length} Passes</Passes>,
-              panel: <Report passes items={passes} empty="No a11y check passed" />,
-            },
-          ]}
-        />
-        <StyledActionBar
-          key="actionbar"
-          actionItems={[{ title: actionTitle, onClick: this.request }]}
-        />
+        <ScrollArea vertical horizontal>
+          <Tabs
+            key="tabs"
+            tabs={[
+              {
+                label: <Violations>{violations.length} Violations</Violations>,
+                panel: (
+                  <Report passes={false} items={violations} empty="No a11y violations found." />
+                ),
+              },
+              {
+                label: <Passes>{passes.length} Passes</Passes>,
+                panel: <Report passes items={passes} empty="No a11y check passed" />,
+              },
+            ]}
+          />
+        </ScrollArea>
+        <ActionBar key="actionbar" actionItems={[{ title: actionTitle, onClick: this.request }]} />
       </Fragment>
     ) : null;
   }

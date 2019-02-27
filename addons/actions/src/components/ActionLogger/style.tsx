@@ -1,12 +1,6 @@
 import { styled } from '@storybook/theming';
 import { opacify } from 'polished';
-
 import { ActionBar } from '@storybook/components';
-
-export const Actions = styled.pre({
-  margin: 0,
-  padding: '10px 5px 20px',
-});
 
 export const Action = styled.div({
   display: 'flex',
@@ -31,10 +25,4 @@ export const Counter = styled.div(({ theme }) => ({
 export const InspectorContainer = styled.div({
   flex: 1,
   padding: '0 0 0 5px',
-});
-
-export const StyledActionBar = styled(ActionBar)({
-  position: 'fixed',
-  bottom: 10,
-  right: 10,
 });

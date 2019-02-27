@@ -31,6 +31,7 @@
     "@storybook/addons": "5.0.0-beta.3",
     "@storybook/core-events": "5.0.0-beta.3",
     "@storybook/theming": "5.0.0-beta.3",
+    "@storybook/components": "5.0.0-beta.3",
     "core-js": "^2.6.2",
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
