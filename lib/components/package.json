@@ -38,7 +38,8 @@
     "react-popper-tooltip": "^2.8.0",
     "react-syntax-highlighter": "^8.0.1",
     "react-textarea-autosize": "^7.0.4",
-    "recompose": "^0.30.0"
+    "recompose": "^0.30.0",
+    "simplebar-react": "^0.1.4"
   },
   "peerDependencies": {
     "react": "*",
