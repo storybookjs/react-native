@@ -40,7 +40,7 @@
     "publish:next": "npm run publish:latest -- --npm-tag=next",
     "publish:debug": "npm run publish:latest -- --npm-tag=debug --no-push",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
-    "start": "yarn --cwd examples/official-storybook storybook",
+    "start": "yarn --cwd examples/rax-kitchen-sink storybook",
     "test": "node ./scripts/test.js",
     "test-latest-cra": "yarn --prefix --cwd lib/cli run test-latest-cra",
     "test:cli": "npm --prefix lib/cli run test"
