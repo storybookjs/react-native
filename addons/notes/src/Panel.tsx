@@ -41,7 +41,7 @@ function read(param: Parameters | undefined): string | undefined {
   }
 }
 
-const SyntaxHighlighter = (props: any) => {
+export const SyntaxHighlighter = (props: any) => {
   // markdown-to-jsx does not add className to inline code
   if (props.className === undefined) {
     return <code>{props.children}</code>;
