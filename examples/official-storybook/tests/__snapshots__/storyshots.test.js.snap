@@ -329,7 +329,6 @@ exports[`Storyshots Basics|DocumentFormatting withDOM 1`] = `
 .emotion-0 pre.hljs {
   padding: 15px;
   margin: 0;
-  overflow: auto;
   white-space: pre-wrap;
   color: #333333;
   font-size: 13px;
@@ -765,7 +764,6 @@ exports[`Storyshots Basics|DocumentFormatting withDOM 1`] = `
 .emotion-0 pre.hljs {
   padding: 15px;
   margin: 0;
-  overflow: auto;
   white-space: pre-wrap;
   color: #333333;
   font-size: 13px;
@@ -1527,7 +1525,6 @@ exports[`Storyshots Basics|DocumentFormatting withMarkdown 1`] = `
 .emotion-0 pre.hljs {
   padding: 15px;
   margin: 0;
-  overflow: auto;
   white-space: pre-wrap;
   color: #333333;
   font-size: 13px;
@@ -1963,7 +1960,6 @@ exports[`Storyshots Basics|DocumentFormatting withMarkdown 1`] = `
 .emotion-0 pre.hljs {
   padding: 15px;
   margin: 0;
-  overflow: auto;
   white-space: pre-wrap;
   color: #333333;
   font-size: 13px;
@@ -2531,6 +2527,2552 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
         link
       </span>
     </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|ScrollArea both 1`] = `
+.emotion-401 {
+  white-space: nowrap;
+  line-height: 0px;
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.emotion-0 {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background: silver;
+  line-height: 40px;
+  text-align: center;
+  font-size: 9px;
+}
+
+.emotion-400 {
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.emotion-401 {
+  white-space: nowrap;
+  line-height: 0px;
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.emotion-0 {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background: silver;
+  line-height: 40px;
+  text-align: center;
+  font-size: 9px;
+}
+
+.emotion-400 {
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+<div
+  class="emotion-401"
+>
+  <div
+    class="emotion-400"
+    data-simplebar="true"
+  >
+    <div
+      class="simplebar-wrapper"
+    >
+      <div
+        class="simplebar-height-auto-observer-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
+        >
+          <div
+            class="simplebar-content"
+          >
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              1
+            </span>
+            <span
+              class="emotion-0"
+            >
+              2
+            </span>
+            <span
+              class="emotion-0"
+            >
+              3
+            </span>
+            <span
+              class="emotion-0"
+            >
+              4
+            </span>
+            <span
+              class="emotion-0"
+            >
+              5
+            </span>
+            <span
+              class="emotion-0"
+            >
+              6
+            </span>
+            <span
+              class="emotion-0"
+            >
+              7
+            </span>
+            <span
+              class="emotion-0"
+            >
+              8
+            </span>
+            <span
+              class="emotion-0"
+            >
+              9
+            </span>
+            <span
+              class="emotion-0"
+            >
+              10
+            </span>
+            <span
+              class="emotion-0"
+            >
+              11
+            </span>
+            <span
+              class="emotion-0"
+            >
+              12
+            </span>
+            <span
+              class="emotion-0"
+            >
+              13
+            </span>
+            <span
+              class="emotion-0"
+            >
+              14
+            </span>
+            <span
+              class="emotion-0"
+            >
+              15
+            </span>
+            <span
+              class="emotion-0"
+            >
+              16
+            </span>
+            <span
+              class="emotion-0"
+            >
+              17
+            </span>
+            <span
+              class="emotion-0"
+            >
+              18
+            </span>
+            <span
+              class="emotion-0"
+            >
+              19
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              2
+            </span>
+            <span
+              class="emotion-0"
+            >
+              4
+            </span>
+            <span
+              class="emotion-0"
+            >
+              6
+            </span>
+            <span
+              class="emotion-0"
+            >
+              8
+            </span>
+            <span
+              class="emotion-0"
+            >
+              10
+            </span>
+            <span
+              class="emotion-0"
+            >
+              12
+            </span>
+            <span
+              class="emotion-0"
+            >
+              14
+            </span>
+            <span
+              class="emotion-0"
+            >
+              16
+            </span>
+            <span
+              class="emotion-0"
+            >
+              18
+            </span>
+            <span
+              class="emotion-0"
+            >
+              20
+            </span>
+            <span
+              class="emotion-0"
+            >
+              22
+            </span>
+            <span
+              class="emotion-0"
+            >
+              24
+            </span>
+            <span
+              class="emotion-0"
+            >
+              26
+            </span>
+            <span
+              class="emotion-0"
+            >
+              28
+            </span>
+            <span
+              class="emotion-0"
+            >
+              30
+            </span>
+            <span
+              class="emotion-0"
+            >
+              32
+            </span>
+            <span
+              class="emotion-0"
+            >
+              34
+            </span>
+            <span
+              class="emotion-0"
+            >
+              36
+            </span>
+            <span
+              class="emotion-0"
+            >
+              38
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              3
+            </span>
+            <span
+              class="emotion-0"
+            >
+              6
+            </span>
+            <span
+              class="emotion-0"
+            >
+              9
+            </span>
+            <span
+              class="emotion-0"
+            >
+              12
+            </span>
+            <span
+              class="emotion-0"
+            >
+              15
+            </span>
+            <span
+              class="emotion-0"
+            >
+              18
+            </span>
+            <span
+              class="emotion-0"
+            >
+              21
+            </span>
+            <span
+              class="emotion-0"
+            >
+              24
+            </span>
+            <span
+              class="emotion-0"
+            >
+              27
+            </span>
+            <span
+              class="emotion-0"
+            >
+              30
+            </span>
+            <span
+              class="emotion-0"
+            >
+              33
+            </span>
+            <span
+              class="emotion-0"
+            >
+              36
+            </span>
+            <span
+              class="emotion-0"
+            >
+              39
+            </span>
+            <span
+              class="emotion-0"
+            >
+              42
+            </span>
+            <span
+              class="emotion-0"
+            >
+              45
+            </span>
+            <span
+              class="emotion-0"
+            >
+              48
+            </span>
+            <span
+              class="emotion-0"
+            >
+              51
+            </span>
+            <span
+              class="emotion-0"
+            >
+              54
+            </span>
+            <span
+              class="emotion-0"
+            >
+              57
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              4
+            </span>
+            <span
+              class="emotion-0"
+            >
+              8
+            </span>
+            <span
+              class="emotion-0"
+            >
+              12
+            </span>
+            <span
+              class="emotion-0"
+            >
+              16
+            </span>
+            <span
+              class="emotion-0"
+            >
+              20
+            </span>
+            <span
+              class="emotion-0"
+            >
+              24
+            </span>
+            <span
+              class="emotion-0"
+            >
+              28
+            </span>
+            <span
+              class="emotion-0"
+            >
+              32
+            </span>
+            <span
+              class="emotion-0"
+            >
+              36
+            </span>
+            <span
+              class="emotion-0"
+            >
+              40
+            </span>
+            <span
+              class="emotion-0"
+            >
+              44
+            </span>
+            <span
+              class="emotion-0"
+            >
+              48
+            </span>
+            <span
+              class="emotion-0"
+            >
+              52
+            </span>
+            <span
+              class="emotion-0"
+            >
+              56
+            </span>
+            <span
+              class="emotion-0"
+            >
+              60
+            </span>
+            <span
+              class="emotion-0"
+            >
+              64
+            </span>
+            <span
+              class="emotion-0"
+            >
+              68
+            </span>
+            <span
+              class="emotion-0"
+            >
+              72
+            </span>
+            <span
+              class="emotion-0"
+            >
+              76
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              5
+            </span>
+            <span
+              class="emotion-0"
+            >
+              10
+            </span>
+            <span
+              class="emotion-0"
+            >
+              15
+            </span>
+            <span
+              class="emotion-0"
+            >
+              20
+            </span>
+            <span
+              class="emotion-0"
+            >
+              25
+            </span>
+            <span
+              class="emotion-0"
+            >
+              30
+            </span>
+            <span
+              class="emotion-0"
+            >
+              35
+            </span>
+            <span
+              class="emotion-0"
+            >
+              40
+            </span>
+            <span
+              class="emotion-0"
+            >
+              45
+            </span>
+            <span
+              class="emotion-0"
+            >
+              50
+            </span>
+            <span
+              class="emotion-0"
+            >
+              55
+            </span>
+            <span
+              class="emotion-0"
+            >
+              60
+            </span>
+            <span
+              class="emotion-0"
+            >
+              65
+            </span>
+            <span
+              class="emotion-0"
+            >
+              70
+            </span>
+            <span
+              class="emotion-0"
+            >
+              75
+            </span>
+            <span
+              class="emotion-0"
+            >
+              80
+            </span>
+            <span
+              class="emotion-0"
+            >
+              85
+            </span>
+            <span
+              class="emotion-0"
+            >
+              90
+            </span>
+            <span
+              class="emotion-0"
+            >
+              95
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              6
+            </span>
+            <span
+              class="emotion-0"
+            >
+              12
+            </span>
+            <span
+              class="emotion-0"
+            >
+              18
+            </span>
+            <span
+              class="emotion-0"
+            >
+              24
+            </span>
+            <span
+              class="emotion-0"
+            >
+              30
+            </span>
+            <span
+              class="emotion-0"
+            >
+              36
+            </span>
+            <span
+              class="emotion-0"
+            >
+              42
+            </span>
+            <span
+              class="emotion-0"
+            >
+              48
+            </span>
+            <span
+              class="emotion-0"
+            >
+              54
+            </span>
+            <span
+              class="emotion-0"
+            >
+              60
+            </span>
+            <span
+              class="emotion-0"
+            >
+              66
+            </span>
+            <span
+              class="emotion-0"
+            >
+              72
+            </span>
+            <span
+              class="emotion-0"
+            >
+              78
+            </span>
+            <span
+              class="emotion-0"
+            >
+              84
+            </span>
+            <span
+              class="emotion-0"
+            >
+              90
+            </span>
+            <span
+              class="emotion-0"
+            >
+              96
+            </span>
+            <span
+              class="emotion-0"
+            >
+              102
+            </span>
+            <span
+              class="emotion-0"
+            >
+              108
+            </span>
+            <span
+              class="emotion-0"
+            >
+              114
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              7
+            </span>
+            <span
+              class="emotion-0"
+            >
+              14
+            </span>
+            <span
+              class="emotion-0"
+            >
+              21
+            </span>
+            <span
+              class="emotion-0"
+            >
+              28
+            </span>
+            <span
+              class="emotion-0"
+            >
+              35
+            </span>
+            <span
+              class="emotion-0"
+            >
+              42
+            </span>
+            <span
+              class="emotion-0"
+            >
+              49
+            </span>
+            <span
+              class="emotion-0"
+            >
+              56
+            </span>
+            <span
+              class="emotion-0"
+            >
+              63
+            </span>
+            <span
+              class="emotion-0"
+            >
+              70
+            </span>
+            <span
+              class="emotion-0"
+            >
+              77
+            </span>
+            <span
+              class="emotion-0"
+            >
+              84
+            </span>
+            <span
+              class="emotion-0"
+            >
+              91
+            </span>
+            <span
+              class="emotion-0"
+            >
+              98
+            </span>
+            <span
+              class="emotion-0"
+            >
+              105
+            </span>
+            <span
+              class="emotion-0"
+            >
+              112
+            </span>
+            <span
+              class="emotion-0"
+            >
+              119
+            </span>
+            <span
+              class="emotion-0"
+            >
+              126
+            </span>
+            <span
+              class="emotion-0"
+            >
+              133
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              8
+            </span>
+            <span
+              class="emotion-0"
+            >
+              16
+            </span>
+            <span
+              class="emotion-0"
+            >
+              24
+            </span>
+            <span
+              class="emotion-0"
+            >
+              32
+            </span>
+            <span
+              class="emotion-0"
+            >
+              40
+            </span>
+            <span
+              class="emotion-0"
+            >
+              48
+            </span>
+            <span
+              class="emotion-0"
+            >
+              56
+            </span>
+            <span
+              class="emotion-0"
+            >
+              64
+            </span>
+            <span
+              class="emotion-0"
+            >
+              72
+            </span>
+            <span
+              class="emotion-0"
+            >
+              80
+            </span>
+            <span
+              class="emotion-0"
+            >
+              88
+            </span>
+            <span
+              class="emotion-0"
+            >
+              96
+            </span>
+            <span
+              class="emotion-0"
+            >
+              104
+            </span>
+            <span
+              class="emotion-0"
+            >
+              112
+            </span>
+            <span
+              class="emotion-0"
+            >
+              120
+            </span>
+            <span
+              class="emotion-0"
+            >
+              128
+            </span>
+            <span
+              class="emotion-0"
+            >
+              136
+            </span>
+            <span
+              class="emotion-0"
+            >
+              144
+            </span>
+            <span
+              class="emotion-0"
+            >
+              152
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              9
+            </span>
+            <span
+              class="emotion-0"
+            >
+              18
+            </span>
+            <span
+              class="emotion-0"
+            >
+              27
+            </span>
+            <span
+              class="emotion-0"
+            >
+              36
+            </span>
+            <span
+              class="emotion-0"
+            >
+              45
+            </span>
+            <span
+              class="emotion-0"
+            >
+              54
+            </span>
+            <span
+              class="emotion-0"
+            >
+              63
+            </span>
+            <span
+              class="emotion-0"
+            >
+              72
+            </span>
+            <span
+              class="emotion-0"
+            >
+              81
+            </span>
+            <span
+              class="emotion-0"
+            >
+              90
+            </span>
+            <span
+              class="emotion-0"
+            >
+              99
+            </span>
+            <span
+              class="emotion-0"
+            >
+              108
+            </span>
+            <span
+              class="emotion-0"
+            >
+              117
+            </span>
+            <span
+              class="emotion-0"
+            >
+              126
+            </span>
+            <span
+              class="emotion-0"
+            >
+              135
+            </span>
+            <span
+              class="emotion-0"
+            >
+              144
+            </span>
+            <span
+              class="emotion-0"
+            >
+              153
+            </span>
+            <span
+              class="emotion-0"
+            >
+              162
+            </span>
+            <span
+              class="emotion-0"
+            >
+              171
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              10
+            </span>
+            <span
+              class="emotion-0"
+            >
+              20
+            </span>
+            <span
+              class="emotion-0"
+            >
+              30
+            </span>
+            <span
+              class="emotion-0"
+            >
+              40
+            </span>
+            <span
+              class="emotion-0"
+            >
+              50
+            </span>
+            <span
+              class="emotion-0"
+            >
+              60
+            </span>
+            <span
+              class="emotion-0"
+            >
+              70
+            </span>
+            <span
+              class="emotion-0"
+            >
+              80
+            </span>
+            <span
+              class="emotion-0"
+            >
+              90
+            </span>
+            <span
+              class="emotion-0"
+            >
+              100
+            </span>
+            <span
+              class="emotion-0"
+            >
+              110
+            </span>
+            <span
+              class="emotion-0"
+            >
+              120
+            </span>
+            <span
+              class="emotion-0"
+            >
+              130
+            </span>
+            <span
+              class="emotion-0"
+            >
+              140
+            </span>
+            <span
+              class="emotion-0"
+            >
+              150
+            </span>
+            <span
+              class="emotion-0"
+            >
+              160
+            </span>
+            <span
+              class="emotion-0"
+            >
+              170
+            </span>
+            <span
+              class="emotion-0"
+            >
+              180
+            </span>
+            <span
+              class="emotion-0"
+            >
+              190
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              11
+            </span>
+            <span
+              class="emotion-0"
+            >
+              22
+            </span>
+            <span
+              class="emotion-0"
+            >
+              33
+            </span>
+            <span
+              class="emotion-0"
+            >
+              44
+            </span>
+            <span
+              class="emotion-0"
+            >
+              55
+            </span>
+            <span
+              class="emotion-0"
+            >
+              66
+            </span>
+            <span
+              class="emotion-0"
+            >
+              77
+            </span>
+            <span
+              class="emotion-0"
+            >
+              88
+            </span>
+            <span
+              class="emotion-0"
+            >
+              99
+            </span>
+            <span
+              class="emotion-0"
+            >
+              110
+            </span>
+            <span
+              class="emotion-0"
+            >
+              121
+            </span>
+            <span
+              class="emotion-0"
+            >
+              132
+            </span>
+            <span
+              class="emotion-0"
+            >
+              143
+            </span>
+            <span
+              class="emotion-0"
+            >
+              154
+            </span>
+            <span
+              class="emotion-0"
+            >
+              165
+            </span>
+            <span
+              class="emotion-0"
+            >
+              176
+            </span>
+            <span
+              class="emotion-0"
+            >
+              187
+            </span>
+            <span
+              class="emotion-0"
+            >
+              198
+            </span>
+            <span
+              class="emotion-0"
+            >
+              209
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              12
+            </span>
+            <span
+              class="emotion-0"
+            >
+              24
+            </span>
+            <span
+              class="emotion-0"
+            >
+              36
+            </span>
+            <span
+              class="emotion-0"
+            >
+              48
+            </span>
+            <span
+              class="emotion-0"
+            >
+              60
+            </span>
+            <span
+              class="emotion-0"
+            >
+              72
+            </span>
+            <span
+              class="emotion-0"
+            >
+              84
+            </span>
+            <span
+              class="emotion-0"
+            >
+              96
+            </span>
+            <span
+              class="emotion-0"
+            >
+              108
+            </span>
+            <span
+              class="emotion-0"
+            >
+              120
+            </span>
+            <span
+              class="emotion-0"
+            >
+              132
+            </span>
+            <span
+              class="emotion-0"
+            >
+              144
+            </span>
+            <span
+              class="emotion-0"
+            >
+              156
+            </span>
+            <span
+              class="emotion-0"
+            >
+              168
+            </span>
+            <span
+              class="emotion-0"
+            >
+              180
+            </span>
+            <span
+              class="emotion-0"
+            >
+              192
+            </span>
+            <span
+              class="emotion-0"
+            >
+              204
+            </span>
+            <span
+              class="emotion-0"
+            >
+              216
+            </span>
+            <span
+              class="emotion-0"
+            >
+              228
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              13
+            </span>
+            <span
+              class="emotion-0"
+            >
+              26
+            </span>
+            <span
+              class="emotion-0"
+            >
+              39
+            </span>
+            <span
+              class="emotion-0"
+            >
+              52
+            </span>
+            <span
+              class="emotion-0"
+            >
+              65
+            </span>
+            <span
+              class="emotion-0"
+            >
+              78
+            </span>
+            <span
+              class="emotion-0"
+            >
+              91
+            </span>
+            <span
+              class="emotion-0"
+            >
+              104
+            </span>
+            <span
+              class="emotion-0"
+            >
+              117
+            </span>
+            <span
+              class="emotion-0"
+            >
+              130
+            </span>
+            <span
+              class="emotion-0"
+            >
+              143
+            </span>
+            <span
+              class="emotion-0"
+            >
+              156
+            </span>
+            <span
+              class="emotion-0"
+            >
+              169
+            </span>
+            <span
+              class="emotion-0"
+            >
+              182
+            </span>
+            <span
+              class="emotion-0"
+            >
+              195
+            </span>
+            <span
+              class="emotion-0"
+            >
+              208
+            </span>
+            <span
+              class="emotion-0"
+            >
+              221
+            </span>
+            <span
+              class="emotion-0"
+            >
+              234
+            </span>
+            <span
+              class="emotion-0"
+            >
+              247
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              14
+            </span>
+            <span
+              class="emotion-0"
+            >
+              28
+            </span>
+            <span
+              class="emotion-0"
+            >
+              42
+            </span>
+            <span
+              class="emotion-0"
+            >
+              56
+            </span>
+            <span
+              class="emotion-0"
+            >
+              70
+            </span>
+            <span
+              class="emotion-0"
+            >
+              84
+            </span>
+            <span
+              class="emotion-0"
+            >
+              98
+            </span>
+            <span
+              class="emotion-0"
+            >
+              112
+            </span>
+            <span
+              class="emotion-0"
+            >
+              126
+            </span>
+            <span
+              class="emotion-0"
+            >
+              140
+            </span>
+            <span
+              class="emotion-0"
+            >
+              154
+            </span>
+            <span
+              class="emotion-0"
+            >
+              168
+            </span>
+            <span
+              class="emotion-0"
+            >
+              182
+            </span>
+            <span
+              class="emotion-0"
+            >
+              196
+            </span>
+            <span
+              class="emotion-0"
+            >
+              210
+            </span>
+            <span
+              class="emotion-0"
+            >
+              224
+            </span>
+            <span
+              class="emotion-0"
+            >
+              238
+            </span>
+            <span
+              class="emotion-0"
+            >
+              252
+            </span>
+            <span
+              class="emotion-0"
+            >
+              266
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              15
+            </span>
+            <span
+              class="emotion-0"
+            >
+              30
+            </span>
+            <span
+              class="emotion-0"
+            >
+              45
+            </span>
+            <span
+              class="emotion-0"
+            >
+              60
+            </span>
+            <span
+              class="emotion-0"
+            >
+              75
+            </span>
+            <span
+              class="emotion-0"
+            >
+              90
+            </span>
+            <span
+              class="emotion-0"
+            >
+              105
+            </span>
+            <span
+              class="emotion-0"
+            >
+              120
+            </span>
+            <span
+              class="emotion-0"
+            >
+              135
+            </span>
+            <span
+              class="emotion-0"
+            >
+              150
+            </span>
+            <span
+              class="emotion-0"
+            >
+              165
+            </span>
+            <span
+              class="emotion-0"
+            >
+              180
+            </span>
+            <span
+              class="emotion-0"
+            >
+              195
+            </span>
+            <span
+              class="emotion-0"
+            >
+              210
+            </span>
+            <span
+              class="emotion-0"
+            >
+              225
+            </span>
+            <span
+              class="emotion-0"
+            >
+              240
+            </span>
+            <span
+              class="emotion-0"
+            >
+              255
+            </span>
+            <span
+              class="emotion-0"
+            >
+              270
+            </span>
+            <span
+              class="emotion-0"
+            >
+              285
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              16
+            </span>
+            <span
+              class="emotion-0"
+            >
+              32
+            </span>
+            <span
+              class="emotion-0"
+            >
+              48
+            </span>
+            <span
+              class="emotion-0"
+            >
+              64
+            </span>
+            <span
+              class="emotion-0"
+            >
+              80
+            </span>
+            <span
+              class="emotion-0"
+            >
+              96
+            </span>
+            <span
+              class="emotion-0"
+            >
+              112
+            </span>
+            <span
+              class="emotion-0"
+            >
+              128
+            </span>
+            <span
+              class="emotion-0"
+            >
+              144
+            </span>
+            <span
+              class="emotion-0"
+            >
+              160
+            </span>
+            <span
+              class="emotion-0"
+            >
+              176
+            </span>
+            <span
+              class="emotion-0"
+            >
+              192
+            </span>
+            <span
+              class="emotion-0"
+            >
+              208
+            </span>
+            <span
+              class="emotion-0"
+            >
+              224
+            </span>
+            <span
+              class="emotion-0"
+            >
+              240
+            </span>
+            <span
+              class="emotion-0"
+            >
+              256
+            </span>
+            <span
+              class="emotion-0"
+            >
+              272
+            </span>
+            <span
+              class="emotion-0"
+            >
+              288
+            </span>
+            <span
+              class="emotion-0"
+            >
+              304
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              17
+            </span>
+            <span
+              class="emotion-0"
+            >
+              34
+            </span>
+            <span
+              class="emotion-0"
+            >
+              51
+            </span>
+            <span
+              class="emotion-0"
+            >
+              68
+            </span>
+            <span
+              class="emotion-0"
+            >
+              85
+            </span>
+            <span
+              class="emotion-0"
+            >
+              102
+            </span>
+            <span
+              class="emotion-0"
+            >
+              119
+            </span>
+            <span
+              class="emotion-0"
+            >
+              136
+            </span>
+            <span
+              class="emotion-0"
+            >
+              153
+            </span>
+            <span
+              class="emotion-0"
+            >
+              170
+            </span>
+            <span
+              class="emotion-0"
+            >
+              187
+            </span>
+            <span
+              class="emotion-0"
+            >
+              204
+            </span>
+            <span
+              class="emotion-0"
+            >
+              221
+            </span>
+            <span
+              class="emotion-0"
+            >
+              238
+            </span>
+            <span
+              class="emotion-0"
+            >
+              255
+            </span>
+            <span
+              class="emotion-0"
+            >
+              272
+            </span>
+            <span
+              class="emotion-0"
+            >
+              289
+            </span>
+            <span
+              class="emotion-0"
+            >
+              306
+            </span>
+            <span
+              class="emotion-0"
+            >
+              323
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              18
+            </span>
+            <span
+              class="emotion-0"
+            >
+              36
+            </span>
+            <span
+              class="emotion-0"
+            >
+              54
+            </span>
+            <span
+              class="emotion-0"
+            >
+              72
+            </span>
+            <span
+              class="emotion-0"
+            >
+              90
+            </span>
+            <span
+              class="emotion-0"
+            >
+              108
+            </span>
+            <span
+              class="emotion-0"
+            >
+              126
+            </span>
+            <span
+              class="emotion-0"
+            >
+              144
+            </span>
+            <span
+              class="emotion-0"
+            >
+              162
+            </span>
+            <span
+              class="emotion-0"
+            >
+              180
+            </span>
+            <span
+              class="emotion-0"
+            >
+              198
+            </span>
+            <span
+              class="emotion-0"
+            >
+              216
+            </span>
+            <span
+              class="emotion-0"
+            >
+              234
+            </span>
+            <span
+              class="emotion-0"
+            >
+              252
+            </span>
+            <span
+              class="emotion-0"
+            >
+              270
+            </span>
+            <span
+              class="emotion-0"
+            >
+              288
+            </span>
+            <span
+              class="emotion-0"
+            >
+              306
+            </span>
+            <span
+              class="emotion-0"
+            >
+              324
+            </span>
+            <span
+              class="emotion-0"
+            >
+              342
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              19
+            </span>
+            <span
+              class="emotion-0"
+            >
+              38
+            </span>
+            <span
+              class="emotion-0"
+            >
+              57
+            </span>
+            <span
+              class="emotion-0"
+            >
+              76
+            </span>
+            <span
+              class="emotion-0"
+            >
+              95
+            </span>
+            <span
+              class="emotion-0"
+            >
+              114
+            </span>
+            <span
+              class="emotion-0"
+            >
+              133
+            </span>
+            <span
+              class="emotion-0"
+            >
+              152
+            </span>
+            <span
+              class="emotion-0"
+            >
+              171
+            </span>
+            <span
+              class="emotion-0"
+            >
+              190
+            </span>
+            <span
+              class="emotion-0"
+            >
+              209
+            </span>
+            <span
+              class="emotion-0"
+            >
+              228
+            </span>
+            <span
+              class="emotion-0"
+            >
+              247
+            </span>
+            <span
+              class="emotion-0"
+            >
+              266
+            </span>
+            <span
+              class="emotion-0"
+            >
+              285
+            </span>
+            <span
+              class="emotion-0"
+            >
+              304
+            </span>
+            <span
+              class="emotion-0"
+            >
+              323
+            </span>
+            <span
+              class="emotion-0"
+            >
+              342
+            </span>
+            <span
+              class="emotion-0"
+            >
+              361
+            </span>
+            <br />
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|ScrollArea horizontal 1`] = `
+.emotion-21 {
+  white-space: nowrap;
+  line-height: 0px;
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.emotion-0 {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background: silver;
+  line-height: 40px;
+  text-align: center;
+  font-size: 9px;
+}
+
+.emotion-20 {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.emotion-21 {
+  white-space: nowrap;
+  line-height: 0px;
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.emotion-0 {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background: silver;
+  line-height: 40px;
+  text-align: center;
+  font-size: 9px;
+}
+
+.emotion-20 {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+<div
+  class="emotion-21"
+>
+  <div
+    class="emotion-20"
+    data-simplebar="true"
+  >
+    <div
+      class="simplebar-wrapper"
+    >
+      <div
+        class="simplebar-height-auto-observer-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
+        >
+          <div
+            class="simplebar-content"
+          >
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <span
+              class="emotion-0"
+            >
+              1
+            </span>
+            <span
+              class="emotion-0"
+            >
+              2
+            </span>
+            <span
+              class="emotion-0"
+            >
+              3
+            </span>
+            <span
+              class="emotion-0"
+            >
+              4
+            </span>
+            <span
+              class="emotion-0"
+            >
+              5
+            </span>
+            <span
+              class="emotion-0"
+            >
+              6
+            </span>
+            <span
+              class="emotion-0"
+            >
+              7
+            </span>
+            <span
+              class="emotion-0"
+            >
+              8
+            </span>
+            <span
+              class="emotion-0"
+            >
+              9
+            </span>
+            <span
+              class="emotion-0"
+            >
+              10
+            </span>
+            <span
+              class="emotion-0"
+            >
+              11
+            </span>
+            <span
+              class="emotion-0"
+            >
+              12
+            </span>
+            <span
+              class="emotion-0"
+            >
+              13
+            </span>
+            <span
+              class="emotion-0"
+            >
+              14
+            </span>
+            <span
+              class="emotion-0"
+            >
+              15
+            </span>
+            <span
+              class="emotion-0"
+            >
+              16
+            </span>
+            <span
+              class="emotion-0"
+            >
+              17
+            </span>
+            <span
+              class="emotion-0"
+            >
+              18
+            </span>
+            <span
+              class="emotion-0"
+            >
+              19
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|ScrollArea vertical 1`] = `
+.emotion-21 {
+  white-space: nowrap;
+  line-height: 0px;
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.emotion-20 {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.emotion-0 {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background: silver;
+  line-height: 40px;
+  text-align: center;
+  font-size: 9px;
+}
+
+.emotion-21 {
+  white-space: nowrap;
+  line-height: 0px;
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.emotion-20 {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.emotion-0 {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background: silver;
+  line-height: 40px;
+  text-align: center;
+  font-size: 9px;
+}
+
+<div
+  class="emotion-21"
+>
+  <div
+    class="emotion-20"
+    data-simplebar="true"
+  >
+    <div
+      class="simplebar-wrapper"
+    >
+      <div
+        class="simplebar-height-auto-observer-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
+        >
+          <div
+            class="simplebar-content"
+          >
+            <span
+              class="emotion-0"
+            >
+              0
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              1
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              2
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              3
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              4
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              5
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              6
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              7
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              8
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              9
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              10
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              11
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              12
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              13
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              14
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              15
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              16
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              17
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              18
+            </span>
+            <br />
+            <span
+              class="emotion-0"
+            >
+              19
+            </span>
+            <br />
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -3721,73 +6263,16 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-8 {
-  color: #999999;
-  height: 40px;
-  overflow: auto;
-  overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-8:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-8::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-8:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-8::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-8::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-8::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  overflow-x: auto;
+  color: #999999;
+  width: 100%;
+  height: 40px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-7 {
@@ -3800,7 +6285,12 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: 40px;
 }
 
@@ -3809,6 +6299,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -3879,6 +6370,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -3908,12 +6400,23 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: block;
   position: relative;
   font-size: 13px;
-  position: relative;
+  height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
   overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
+}
+
+.emotion-99 > *:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  overflow: auto;
 }
 
 .emotion-5 {
@@ -4252,73 +6755,16 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 .emotion-8 {
-  color: #999999;
-  height: 40px;
-  overflow: auto;
-  overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-8:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-8::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-8:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-8::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-8::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-8::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  overflow-x: auto;
+  color: #999999;
+  width: 100%;
+  height: 40px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-7 {
@@ -4331,7 +6777,12 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: 40px;
 }
 
@@ -4340,6 +6791,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -4410,6 +6862,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -4439,12 +6892,23 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
   display: block;
   position: relative;
   font-size: 13px;
-  position: relative;
+  height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
   overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
+}
+
+.emotion-99 > *:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  overflow: auto;
 }
 
 .emotion-5 {
@@ -4770,496 +7234,541 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
 }
 
 <div
-  class="emotion-100"
+  style="position:relative;height:calc(100vh);width:calc(100vw)"
 >
   <div
-    class="emotion-8"
+    class="emotion-100"
   >
     <div
-      class="emotion-7"
+      class="emotion-8"
+      data-simplebar="true"
     >
       <div
-        class="emotion-2"
+        class="simplebar-wrapper"
       >
         <div
-          class="emotion-1"
-          role="tablist"
+          class="simplebar-height-auto-observer-wrapper"
         >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
-          >
-            Keyboard Shortcuts
-          </button>
+          <div
+            class="simplebar-height-auto-observer"
+          />
         </div>
+        <div
+          class="simplebar-mask"
+        >
+          <div
+            class="simplebar-offset"
+          >
+            <div
+              class="simplebar-content"
+            >
+              <div
+                class="emotion-7"
+              >
+                <div
+                  class="emotion-2"
+                >
+                  <div
+                    class="emotion-1"
+                    role="tablist"
+                  >
+                    <button
+                      class="emotion-0"
+                      role="tab"
+                      type="button"
+                    >
+                      Keyboard Shortcuts
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="emotion-6"
+                >
+                  <button
+                    class="emotion-5"
+                  >
+                    <svg
+                      class="emotion-4"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        class="emotion-3"
+                        d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="simplebar-placeholder"
+        />
       </div>
       <div
-        class="emotion-6"
+        class="simplebar-track simplebar-horizontal"
       >
-        <button
-          class="emotion-5"
-        >
-          <svg
-            class="emotion-4"
-            viewBox="0 0 1024 1024"
-          >
-            <path
-              class="emotion-3"
-              d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
-            />
-          </svg>
-        </button>
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-vertical"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
       </div>
     </div>
-  </div>
-  <div
-    class="emotion-99"
-  >
     <div
-      class="emotion-98"
-      role="tabpanel"
+      class="emotion-99"
     >
       <div
-        class="emotion-97"
+        class="emotion-98"
+        role="tabpanel"
       >
-        <header
-          class="emotion-9"
-        >
-          Keyboard shortcuts
-        </header>
         <div
-          class="emotion-88"
+          class="emotion-97"
         >
+          <header
+            class="emotion-9"
+          >
+            Keyboard shortcuts
+          </header>
           <div
-            class="emotion-12"
+            class="emotion-88"
           >
             <div
-              class="emotion-10"
+              class="emotion-12"
             >
-              Commands
+              <div
+                class="emotion-10"
+              >
+                Commands
+              </div>
+              <div
+                class="emotion-10"
+              >
+                Shortcut
+              </div>
             </div>
             <div
-              class="emotion-10"
+              class="emotion-17"
             >
-              Shortcut
-            </div>
-          </div>
-          <div
-            class="emotion-17"
-          >
-            <div
-              class="emotion-13"
-            >
-              Go full screen
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="F"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Go full screen
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="F"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
-            <div
-              class="emotion-13"
-            >
-              Toggle addons
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
             </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="A"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
-              />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Toggle addons orientation
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="D"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Toggle addons
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="A"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Toggle sidebar
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="S"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Toggle addons orientation
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="D"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Toggle canvas toolbar
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="T"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Toggle sidebar
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="S"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Focus search
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="/"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Toggle canvas toolbar
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="T"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Focus sidebar
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="1"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Focus search
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="/"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Focus canvas
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="2"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Focus sidebar
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="1"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Focus addons
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="3"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Focus canvas
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="2"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Previous component
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="alt ↑"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Focus addons
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="3"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Next component
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="alt ↓"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Previous component
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="alt ↑"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Previous story
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="alt ←"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Next component
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="alt ↓"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Next story
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="alt →"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Previous story
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="alt ←"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Go to shortcuts page
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value="⌃ ⇧​ ,"
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Next story
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="alt →"
               />
-            </svg>
-          </div>
-          <div
-            class="emotion-17"
-          >
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
             <div
-              class="emotion-13"
+              class="emotion-17"
             >
-              Go to about page
-            </div>
-            <input
-              class="modalInput emotion-14"
-              placeholder="Type keys"
-              readonly=""
-              spellcheck="false"
-              value=","
-            />
-            <svg
-              class="emotion-16"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                class="emotion-3"
-                d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+              <div
+                class="emotion-13"
+              >
+                Go to shortcuts page
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value="⌃ ⇧​ ,"
               />
-            </svg>
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
+            <div
+              class="emotion-17"
+            >
+              <div
+                class="emotion-13"
+              >
+                Go to about page
+              </div>
+              <input
+                class="modalInput emotion-14"
+                placeholder="Type keys"
+                readonly=""
+                spellcheck="false"
+                value=","
+              />
+              <svg
+                class="emotion-16"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  class="emotion-3"
+                  d="M948.598 199.75c-15.622-15.618-40.95-15.618-56.57 0l-535.644 535.644-224.060-224.062c-15.624-15.624-40.954-15.62-56.57 0-15.624 15.62-15.624 40.948 0 56.568l251.574 251.574c0.252 0.266 0.472 0.55 0.734 0.812 7.82 7.82 18.072 11.724 28.322 11.714 10.25 0.010 20.502-3.894 28.322-11.714 0.248-0.248 0.456-0.518 0.698-0.77l563.196-563.202c15.618-15.618 15.618-40.94-0.002-56.564z"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
-        <button
-          class="emotion-89"
-          id="restoreDefaultsHotkeys"
-        >
-          Restore defaults
-        </button>
-        <div
-          class="emotion-96"
-        >
-          <a
-            class="emotion-91"
-            href="https://storybook.js.org"
+          <button
+            class="emotion-89"
+            id="restoreDefaultsHotkeys"
           >
-            <span
-              class="emotion-90"
-            >
-              Docs
-            </span>
-          </a>
-          <a
-            class="emotion-91"
-            href="https://github.com/storybooks/storybook"
+            Restore defaults
+          </button>
+          <div
+            class="emotion-96"
           >
-            <span
-              class="emotion-90"
+            <a
+              class="emotion-91"
+              href="https://storybook.js.org"
             >
-              GitHub
-            </span>
-          </a>
-          <a
-            class="emotion-91"
-            href="https://storybook.js.org/support"
-          >
-            <span
-              class="emotion-90"
+              <span
+                class="emotion-90"
+              >
+                Docs
+              </span>
+            </a>
+            <a
+              class="emotion-91"
+              href="https://github.com/storybooks/storybook"
             >
-              Support
-            </span>
-          </a>
+              <span
+                class="emotion-90"
+              >
+                GitHub
+              </span>
+            </a>
+            <a
+              class="emotion-91"
+              href="https://storybook.js.org/support"
+            >
+              <span
+                class="emotion-90"
+              >
+                Support
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -5569,7 +8078,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   fill: currentColor;
 }
 
-.emotion-77 {
+.emotion-78 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -5578,8 +8087,15 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   right: 0;
   width: 100%;
   height: 100%;
+}
+
+.emotion-77 {
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.emotion-77 .simplebar-track.simplebar-vertical {
+  right: 4px;
 }
 
 .emotion-7 {
@@ -5930,7 +8446,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   fill: currentColor;
 }
 
-.emotion-77 {
+.emotion-78 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -5939,8 +8455,15 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   right: 0;
   width: 100%;
   height: 100%;
+}
+
+.emotion-77 {
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.emotion-77 .simplebar-track.simplebar-vertical {
+  right: 4px;
 }
 
 .emotion-7 {
@@ -6240,409 +8763,454 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 <nav
-  class="container emotion-77"
+  class="container emotion-78"
 >
   <div
-    class="emotion-7"
+    class="emotion-77"
+    data-simplebar="true"
   >
     <div
-      class="emotion-2"
+      class="simplebar-wrapper"
     >
-      <a
-        class="emotion-1"
-        href="./"
+      <div
+        class="simplebar-height-auto-observer-wrapper"
       >
-        <svg
-          class="emotion-0"
-          height="40px"
-          role="img"
-          title="Storybook"
-          viewBox="0 0 200 40"
-          width="200px"
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
         >
-          <title>
-            Storybook
-          </title>
-          <defs>
-            <path
-              d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
-              id="a"
-            />
-          </defs>
-          <g
-            fill="none"
-            fill-rule="evenodd"
+          <div
+            class="simplebar-content"
           >
-            <path
-              d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
-              fill="currentColor"
-            />
-            <mask
-              fill="#fff"
-              id="b"
+            <div
+              class="emotion-7"
             >
-              <use
-                href="#a"
-              />
-            </mask>
-            <use
-              fill="#FF4785"
-              fill-rule="nonzero"
-              href="#a"
-            />
-            <path
-              d="M23.7 5L24 .2l3.9-.3.1 4.8a.3.3 0 0 1-.5.2L26 3.8l-1.7 1.4a.3.3 0 0 1-.5-.3zm-5 10c0 .9 5.3.5 6 0 0-5.4-2.8-8.2-8-8.2-5.3 0-8.2 2.8-8.2 7.1 0 7.4 10 7.6 10 11.6 0 1.2-.5 1.9-1.8 1.9-1.6 0-2.2-.9-2.1-3.6 0-.6-6.1-.8-6.3 0-.5 6.7 3.7 8.6 8.5 8.6 4.6 0 8.3-2.5 8.3-7 0-7.9-10.2-7.7-10.2-11.6 0-1.6 1.2-1.8 2-1.8.6 0 2 0 1.9 3z"
-              fill="#FFF"
-              fill-rule="nonzero"
-              mask="url(#b)"
-            />
-          </g>
-        </svg>
-      </a>
-    </div>
-    <div
-      class="emotion-6"
-    >
-      <button
-        class="emotion-5"
-      >
-        <svg
-          class="emotion-4"
-          viewBox="0 0 1024 1024"
-        >
-          <path
-            class="emotion-3"
-            d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
-          />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <div
-    class="emotion-76"
-  >
-    <div
-      class="emotion-11"
-    >
-      <span
-        class="emotion-8"
+              <div
+                class="emotion-2"
+              >
+                <a
+                  class="emotion-1"
+                  href="./"
+                >
+                  <svg
+                    class="emotion-0"
+                    height="40px"
+                    role="img"
+                    title="Storybook"
+                    viewBox="0 0 200 40"
+                    width="200px"
+                  >
+                    <title>
+                      Storybook
+                    </title>
+                    <defs>
+                      <path
+                        d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
+                        id="a"
+                      />
+                    </defs>
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <path
+                        d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
+                        fill="currentColor"
+                      />
+                      <mask
+                        fill="#fff"
+                        id="b"
+                      >
+                        <use
+                          href="#a"
+                        />
+                      </mask>
+                      <use
+                        fill="#FF4785"
+                        fill-rule="nonzero"
+                        href="#a"
+                      />
+                      <path
+                        d="M23.7 5L24 .2l3.9-.3.1 4.8a.3.3 0 0 1-.5.2L26 3.8l-1.7 1.4a.3.3 0 0 1-.5-.3zm-5 10c0 .9 5.3.5 6 0 0-5.4-2.8-8.2-8-8.2-5.3 0-8.2 2.8-8.2 7.1 0 7.4 10 7.6 10 11.6 0 1.2-.5 1.9-1.8 1.9-1.6 0-2.2-.9-2.1-3.6 0-.6-6.1-.8-6.3 0-.5 6.7 3.7 8.6 8.5 8.6 4.6 0 8.3-2.5 8.3-7 0-7.9-10.2-7.7-10.2-11.6 0-1.6 1.2-1.8 2-1.8.6 0 2 0 1.9 3z"
+                        fill="#FFF"
+                        fill-rule="nonzero"
+                        mask="url(#b)"
+                      />
+                    </g>
+                  </svg>
+                </a>
+              </div>
+              <div
+                class="emotion-6"
+              >
+                <button
+                  class="emotion-5"
+                >
+                  <svg
+                    class="emotion-4"
+                    viewBox="0 0 1024 1024"
+                  >
+                    <path
+                      class="emotion-3"
+                      d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div
+              class="emotion-76"
+            >
+              <div
+                class="emotion-11"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-11"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-27"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-31"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-31"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-31"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-27"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-27"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-27"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-31"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-11"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+              <div
+                class="emotion-11"
+              >
+                <span
+                  class="emotion-8"
+                />
+                <svg
+                  class="emotion-10"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                  />
+                </svg>
+                <span>
+                  loading story
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
       />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
     </div>
     <div
-      class="emotion-11"
+      class="simplebar-track simplebar-horizontal"
     >
-      <span
-        class="emotion-8"
+      <div
+        class="simplebar-scrollbar"
       />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
     </div>
     <div
-      class="emotion-19"
+      class="simplebar-track simplebar-vertical"
     >
-      <span
-        class="emotion-8"
+      <div
+        class="simplebar-scrollbar"
       />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-19"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-27"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-31"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-31"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-31"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-19"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-19"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-19"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-27"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-27"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-27"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-31"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-11"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
-    </div>
-    <div
-      class="emotion-11"
-    >
-      <span
-        class="emotion-8"
-      />
-      <svg
-        class="emotion-10"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-        />
-      </svg>
-      <span>
-        loading story
-      </span>
     </div>
   </div>
 </nav>
@@ -6661,7 +9229,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   fill: currentColor;
 }
 
-.emotion-48 {
+.emotion-49 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -6670,8 +9238,15 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   right: 0;
   width: 100%;
   height: 100%;
+}
+
+.emotion-48 {
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.emotion-48 .simplebar-track.simplebar-vertical {
+  right: 4px;
 }
 
 .emotion-7 {
@@ -7145,7 +9720,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   fill: currentColor;
 }
 
-.emotion-48 {
+.emotion-49 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -7154,8 +9729,15 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   right: 0;
   width: 100%;
   height: 100%;
+}
+
+.emotion-48 {
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.emotion-48 .simplebar-track.simplebar-vertical {
+  right: 4px;
 }
 
 .emotion-7 {
@@ -7618,288 +10200,333 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 <nav
-  class="container emotion-48"
+  class="container emotion-49"
 >
   <div
-    class="emotion-7"
+    class="emotion-48"
+    data-simplebar="true"
   >
     <div
-      class="emotion-2"
+      class="simplebar-wrapper"
     >
-      <a
-        class="emotion-1"
-        href="./"
+      <div
+        class="simplebar-height-auto-observer-wrapper"
       >
-        <svg
-          class="emotion-0"
-          height="40px"
-          role="img"
-          title="Storybook"
-          viewBox="0 0 200 40"
-          width="200px"
-        >
-          <title>
-            Storybook
-          </title>
-          <defs>
-            <path
-              d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
-              id="a"
-            />
-          </defs>
-          <g
-            fill="none"
-            fill-rule="evenodd"
-          >
-            <path
-              d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
-              fill="currentColor"
-            />
-            <mask
-              fill="#fff"
-              id="b"
-            >
-              <use
-                href="#a"
-              />
-            </mask>
-            <use
-              fill="#FF4785"
-              fill-rule="nonzero"
-              href="#a"
-            />
-            <path
-              d="M23.7 5L24 .2l3.9-.3.1 4.8a.3.3 0 0 1-.5.2L26 3.8l-1.7 1.4a.3.3 0 0 1-.5-.3zm-5 10c0 .9 5.3.5 6 0 0-5.4-2.8-8.2-8-8.2-5.3 0-8.2 2.8-8.2 7.1 0 7.4 10 7.6 10 11.6 0 1.2-.5 1.9-1.8 1.9-1.6 0-2.2-.9-2.1-3.6 0-.6-6.1-.8-6.3 0-.5 6.7 3.7 8.6 8.5 8.6 4.6 0 8.3-2.5 8.3-7 0-7.9-10.2-7.7-10.2-11.6 0-1.6 1.2-1.8 2-1.8.6 0 2 0 1.9 3z"
-              fill="#FFF"
-              fill-rule="nonzero"
-              mask="url(#b)"
-            />
-          </g>
-        </svg>
-      </a>
-    </div>
-    <div
-      class="emotion-6"
-    >
-      <button
-        class="emotion-5"
-      >
-        <svg
-          class="emotion-4"
-          viewBox="0 0 1024 1024"
-        >
-          <path
-            class="emotion-3"
-            d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
-          />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <div
-    class="emotion-31"
-  >
-    <form
-      autocomplete="off"
-      class="emotion-14"
-    >
-      <input
-        class="emotion-8"
-        id="storybook-explorer-searchfield"
-        placeholder="Press \\"/\\" to search..."
-        type="text"
-      />
-      <svg
-        class="emotion-4"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          class="emotion-3"
-          d="M218 670a318 318 0 0 1 0-451 316 316 0 0 1 451 0 318 318 0 0 1 0 451 316 316 0 0 1-451 0m750 240L756 698a402 402 0 1 0-59 60l212 212c16 16 42 16 59 0 16-17 16-43 0-60"
+        <div
+          class="simplebar-height-auto-observer"
         />
-      </svg>
-      <button
-        class="emotion-13"
-        type="reset"
-        value="reset"
-      >
-        <svg
-          class="emotion-4"
-          viewBox="0 0 1024 1024"
-        >
-          <path
-            class="emotion-3"
-            d="M586.7 512L936 861.4a52.8 52.8 0 0 1-74.6 74.7L512 586.7 162.6 936A52.8 52.8 0 0 1 88 861.4L437.3 512 88 162.6A52.8 52.8 0 1 1 162.6 88L512 437.3 861.4 88a52.8 52.8 0 1 1 74.7 74.7L586.7 512z"
-          />
-        </svg>
-      </button>
-    </form>
-    <section
-      class="emotion-32"
-    >
-      <div
-        class="emotion-15"
-        type="section"
-      >
-        Root 1
       </div>
-      <a
-        class="emotion-20"
-        id="explorer1-12"
-        title="Child A2"
+      <div
+        class="simplebar-mask"
       >
         <div
-          class="emotion-19"
-          id="1-12"
-        >
-          <span
-            class="emotion-16"
-          />
-          <svg
-            class="emotion-18"
-            viewBox="0 0 1024 1024"
-          >
-            <path
-              class="emotion-3"
-              d="M171 469h298V171H246c-42 0-75 33-75 75v223zm0 86v223c0 42 33 75 75 75h223V555H171zm682-86V246c0-42-33-75-75-75H555v298h298zm0 86H555v298h223c42 0 75-33 75-75V555zM256 85h512c94 0 171 77 171 171v512c0 94-77 171-171 171H256c-94 0-171-77-171-171V256c0-94 77-171 171-171z"
-            />
-          </svg>
-          <span>
-            Child A2
-          </span>
-        </div>
-      </a>
-      <div
-        class="emotion-31"
-      >
-        <a
-          class="emotion-20"
-          href="/?path=/story/1-12-121"
-          id="explorer1-12-121"
-          title="GrandChild A1.1"
+          class="simplebar-offset"
         >
           <div
-            class="emotion-24"
-            id="1-12-121"
+            class="simplebar-content"
           >
-            <span
-              class="emotion-21"
-            />
-            <svg
-              class="emotion-23"
-              viewBox="0 0 1024 1024"
+            <div
+              class="emotion-7"
             >
-              <path
-                class="emotion-3"
-                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
-              />
-            </svg>
-            <span>
-              GrandChild A1.1
-            </span>
-          </div>
-        </a>
-        <a
-          class="emotion-20"
-          href="/?path=/story/1-12-122"
-          id="explorer1-12-122"
-          title="GrandChild A1.2"
-        >
-          <div
-            class="emotion-29"
-            id="1-12-122"
-          >
-            <span
-              class="emotion-21"
-            />
-            <svg
-              class="emotion-28"
-              viewBox="0 0 1024 1024"
+              <div
+                class="emotion-2"
+              >
+                <a
+                  class="emotion-1"
+                  href="./"
+                >
+                  <svg
+                    class="emotion-0"
+                    height="40px"
+                    role="img"
+                    title="Storybook"
+                    viewBox="0 0 200 40"
+                    width="200px"
+                  >
+                    <title>
+                      Storybook
+                    </title>
+                    <defs>
+                      <path
+                        d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
+                        id="a"
+                      />
+                    </defs>
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <path
+                        d="M53.3 31.7c-1.7 0-3.4-.3-5-.7-1.5-.5-2.8-1.1-3.9-2l1.6-3.5c2.2 1.5 4.6 2.3 7.3 2.3 1.5 0 2.5-.2 3.3-.7.7-.5 1.1-1 1.1-1.9 0-.7-.3-1.3-1-1.7s-2-.8-3.7-1.2c-2-.4-3.6-.9-4.8-1.5-1.1-.5-2-1.2-2.6-2-.5-1-.8-2-.8-3.2 0-1.4.4-2.6 1.2-3.6.7-1.1 1.8-2 3.2-2.6 1.3-.6 2.9-.9 4.7-.9 1.6 0 3.1.3 4.6.7 1.5.5 2.7 1.1 3.5 2l-1.6 3.5c-2-1.5-4.2-2.3-6.5-2.3-1.3 0-2.3.2-3 .8-.8.5-1.2 1.1-1.2 2 0 .5.2 1 .5 1.3.2.3.7.6 1.4.9l2.9.8c2.9.6 5 1.4 6.2 2.4a5 5 0 0 1 2 4.2 6 6 0 0 1-2.5 5c-1.7 1.2-4 1.9-7 1.9zm21-3.6l1.4-.1-.2 3.5-1.9.1c-2.4 0-4.1-.5-5.2-1.5-1.1-1-1.6-2.7-1.6-4.8v-6h-3v-3.6h3V11h4.8v4.6h4v3.6h-4v6c0 1.8.9 2.8 2.6 2.8zm11.1 3.5c-1.6 0-3-.3-4.3-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.3-1 1.7 0 3.2.3 4.4 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.4 1zm0-3.6c2.4 0 3.6-1.6 3.6-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.6-1c-2.3 0-3.5 1.4-3.5 4.4 0 3 1.2 4.6 3.5 4.6zm21.7-8.8l-2.7.3c-1.3.2-2.3.5-2.8 1.2-.6.6-.9 1.4-.9 2.5v8.2H96V15.7h4.6v2.6c.8-1.8 2.5-2.8 5-3h1.3l.3 4zm14-3.5h4.8L116.4 37h-4.9l3-6.6-6.4-14.8h5l4 10 4-10zm16-.4c1.4 0 2.6.3 3.6 1 1 .6 1.9 1.6 2.5 2.8.6 1.2.9 2.7.9 4.3 0 1.6-.3 3-1 4.3a6.9 6.9 0 0 1-2.4 2.9c-1 .7-2.2 1-3.6 1-1 0-2-.2-3-.7-.8-.4-1.5-1-2-1.9v2.4h-4.7V8.8h4.8v9c.5-.8 1.2-1.4 2-1.9.9-.4 1.8-.6 3-.6zM135.7 28c1.1 0 2-.4 2.6-1.2.6-.8 1-2 1-3.4 0-1.5-.4-2.5-1-3.3s-1.5-1.1-2.6-1.1-2 .3-2.6 1.1c-.6.8-1 2-1 3.3 0 1.5.4 2.6 1 3.4.6.8 1.5 1.2 2.6 1.2zm18.9 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.3 1a7 7 0 0 1 3 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm18 3.6c-1.7 0-3.2-.3-4.4-1a7 7 0 0 1-3-2.8c-.6-1.3-1-2.7-1-4.4 0-1.6.4-3 1-4.3a7 7 0 0 1 3-2.8c1.2-.7 2.7-1 4.4-1 1.6 0 3 .3 4.4 1a7 7 0 0 1 2.9 2.8c.6 1.2 1 2.7 1 4.3 0 1.7-.4 3.1-1 4.4a7 7 0 0 1-3 2.8c-1.2.7-2.7 1-4.3 1zm0-3.6c2.3 0 3.5-1.6 3.5-4.6 0-1.5-.3-2.6-1-3.4a3.2 3.2 0 0 0-2.5-1c-2.4 0-3.6 1.4-3.6 4.4 0 3 1.2 4.6 3.6 4.6zm27.4 3.4h-6l-6-7v7h-4.8V8.8h4.9v13.6l5.8-6.7h5.7l-6.6 7.5 7 8.2z"
+                        fill="currentColor"
+                      />
+                      <mask
+                        fill="#fff"
+                        id="b"
+                      >
+                        <use
+                          href="#a"
+                        />
+                      </mask>
+                      <use
+                        fill="#FF4785"
+                        fill-rule="nonzero"
+                        href="#a"
+                      />
+                      <path
+                        d="M23.7 5L24 .2l3.9-.3.1 4.8a.3.3 0 0 1-.5.2L26 3.8l-1.7 1.4a.3.3 0 0 1-.5-.3zm-5 10c0 .9 5.3.5 6 0 0-5.4-2.8-8.2-8-8.2-5.3 0-8.2 2.8-8.2 7.1 0 7.4 10 7.6 10 11.6 0 1.2-.5 1.9-1.8 1.9-1.6 0-2.2-.9-2.1-3.6 0-.6-6.1-.8-6.3 0-.5 6.7 3.7 8.6 8.5 8.6 4.6 0 8.3-2.5 8.3-7 0-7.9-10.2-7.7-10.2-11.6 0-1.6 1.2-1.8 2-1.8.6 0 2 0 1.9 3z"
+                        fill="#FFF"
+                        fill-rule="nonzero"
+                        mask="url(#b)"
+                      />
+                    </g>
+                  </svg>
+                </a>
+              </div>
+              <div
+                class="emotion-6"
+              >
+                <button
+                  class="emotion-5"
+                >
+                  <svg
+                    class="emotion-4"
+                    viewBox="0 0 1024 1024"
+                  >
+                    <path
+                      class="emotion-3"
+                      d="M184 393c66.274 0 120 53.73 120 120s-53.726 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM512 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120zM840 393c66.272 0 120 53.73 120 120s-53.728 120-120 120c-66.286 0-120-53.73-120-120s53.714-120 120-120z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div
+              class="emotion-31"
             >
-              <path
-                class="emotion-3"
-                d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
-              />
-            </svg>
-            <span>
-              GrandChild A1.2
-            </span>
+              <form
+                autocomplete="off"
+                class="emotion-14"
+              >
+                <input
+                  class="emotion-8"
+                  id="storybook-explorer-searchfield"
+                  placeholder="Press \\"/\\" to search..."
+                  type="text"
+                />
+                <svg
+                  class="emotion-4"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M218 670a318 318 0 0 1 0-451 316 316 0 0 1 451 0 318 318 0 0 1 0 451 316 316 0 0 1-451 0m750 240L756 698a402 402 0 1 0-59 60l212 212c16 16 42 16 59 0 16-17 16-43 0-60"
+                  />
+                </svg>
+                <button
+                  class="emotion-13"
+                  type="reset"
+                  value="reset"
+                >
+                  <svg
+                    class="emotion-4"
+                    viewBox="0 0 1024 1024"
+                  >
+                    <path
+                      class="emotion-3"
+                      d="M586.7 512L936 861.4a52.8 52.8 0 0 1-74.6 74.7L512 586.7 162.6 936A52.8 52.8 0 0 1 88 861.4L437.3 512 88 162.6A52.8 52.8 0 1 1 162.6 88L512 437.3 861.4 88a52.8 52.8 0 1 1 74.7 74.7L586.7 512z"
+                    />
+                  </svg>
+                </button>
+              </form>
+              <section
+                class="emotion-32"
+              >
+                <div
+                  class="emotion-15"
+                  type="section"
+                >
+                  Root 1
+                </div>
+                <a
+                  class="emotion-20"
+                  id="explorer1-12"
+                  title="Child A2"
+                >
+                  <div
+                    class="emotion-19"
+                    id="1-12"
+                  >
+                    <span
+                      class="emotion-16"
+                    />
+                    <svg
+                      class="emotion-18"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        class="emotion-3"
+                        d="M171 469h298V171H246c-42 0-75 33-75 75v223zm0 86v223c0 42 33 75 75 75h223V555H171zm682-86V246c0-42-33-75-75-75H555v298h298zm0 86H555v298h223c42 0 75-33 75-75V555zM256 85h512c94 0 171 77 171 171v512c0 94-77 171-171 171H256c-94 0-171-77-171-171V256c0-94 77-171 171-171z"
+                      />
+                    </svg>
+                    <span>
+                      Child A2
+                    </span>
+                  </div>
+                </a>
+                <div
+                  class="emotion-31"
+                >
+                  <a
+                    class="emotion-20"
+                    href="/?path=/story/1-12-121"
+                    id="explorer1-12-121"
+                    title="GrandChild A1.1"
+                  >
+                    <div
+                      class="emotion-24"
+                      id="1-12-121"
+                    >
+                      <span
+                        class="emotion-21"
+                      />
+                      <svg
+                        class="emotion-23"
+                        viewBox="0 0 1024 1024"
+                      >
+                        <path
+                          class="emotion-3"
+                          d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+                        />
+                      </svg>
+                      <span>
+                        GrandChild A1.1
+                      </span>
+                    </div>
+                  </a>
+                  <a
+                    class="emotion-20"
+                    href="/?path=/story/1-12-122"
+                    id="explorer1-12-122"
+                    title="GrandChild A1.2"
+                  >
+                    <div
+                      class="emotion-29"
+                      id="1-12-122"
+                    >
+                      <span
+                        class="emotion-21"
+                      />
+                      <svg
+                        class="emotion-28"
+                        viewBox="0 0 1024 1024"
+                      >
+                        <path
+                          class="emotion-3"
+                          d="M772 1012L511 761l-260 251a49 49 0 0 1-52 10c-18-7-29-24-29-43V132c0-25 21-46 47-46h588c26 0 47 21 47 46v847c0 19-11 36-29 43a49 49 0 0 1-51-10zM545 664l213 205V181H265v688l213-205c9-9 21-14 33-14s24 5 34 14z"
+                        />
+                      </svg>
+                      <span>
+                        GrandChild A1.2
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </section>
+              <section
+                class="emotion-32"
+              >
+                <div
+                  class="emotion-15"
+                  type="section"
+                >
+                  Root 3
+                </div>
+                <a
+                  class="emotion-20"
+                  id="explorer3-32"
+                  title="Child A2"
+                >
+                  <div
+                    class="emotion-19"
+                    id="3-32"
+                  >
+                    <span
+                      class="emotion-34"
+                    />
+                    <svg
+                      class="emotion-18"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        class="emotion-3"
+                        d="M171 469h298V171H246c-42 0-75 33-75 75v223zm0 86v223c0 42 33 75 75 75h223V555H171zm682-86V246c0-42-33-75-75-75H555v298h298zm0 86H555v298h223c42 0 75-33 75-75V555zM256 85h512c94 0 171 77 171 171v512c0 94-77 171-171 171H256c-94 0-171-77-171-171V256c0-94 77-171 171-171z"
+                      />
+                    </svg>
+                    <span>
+                      Child A2
+                    </span>
+                  </div>
+                </a>
+              </section>
+              <section
+                class="emotion-32"
+              >
+                <div
+                  class="emotion-15"
+                  type="section"
+                >
+                  Others
+                </div>
+                <a
+                  class="emotion-20"
+                  id="explorer2"
+                  title="Group 1"
+                >
+                  <div
+                    class="emotion-19"
+                    id="2"
+                  >
+                    <span
+                      class="emotion-34"
+                    />
+                    <svg
+                      class="emotion-43"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        class="emotion-3"
+                        d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
+                      />
+                    </svg>
+                    <span>
+                      Group 1
+                    </span>
+                  </div>
+                </a>
+              </section>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
-    </section>
-    <section
-      class="emotion-32"
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
     >
       <div
-        class="emotion-15"
-        type="section"
-      >
-        Root 3
-      </div>
-      <a
-        class="emotion-20"
-        id="explorer3-32"
-        title="Child A2"
-      >
-        <div
-          class="emotion-19"
-          id="3-32"
-        >
-          <span
-            class="emotion-34"
-          />
-          <svg
-            class="emotion-18"
-            viewBox="0 0 1024 1024"
-          >
-            <path
-              class="emotion-3"
-              d="M171 469h298V171H246c-42 0-75 33-75 75v223zm0 86v223c0 42 33 75 75 75h223V555H171zm682-86V246c0-42-33-75-75-75H555v298h298zm0 86H555v298h223c42 0 75-33 75-75V555zM256 85h512c94 0 171 77 171 171v512c0 94-77 171-171 171H256c-94 0-171-77-171-171V256c0-94 77-171 171-171z"
-            />
-          </svg>
-          <span>
-            Child A2
-          </span>
-        </div>
-      </a>
-    </section>
-    <section
-      class="emotion-32"
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
     >
       <div
-        class="emotion-15"
-        type="section"
-      >
-        Others
-      </div>
-      <a
-        class="emotion-20"
-        id="explorer2"
-        title="Group 1"
-      >
-        <div
-          class="emotion-19"
-          id="2"
-        >
-          <span
-            class="emotion-34"
-          />
-          <svg
-            class="emotion-43"
-            viewBox="0 0 1024 1024"
-          >
-            <path
-              class="emotion-3"
-              d="M571 274h327c23 0 41 18 41 41v488c0 22-18 40-41 40H126c-23 0-41-18-41-40V242c0-34 27-61 61-61h317c18 0 35 7 47 21l61 72zm-119-8H170v492h684V359H531l-79-93z"
-            />
-          </svg>
-          <span>
-            Group 1
-          </span>
-        </div>
-      </a>
-    </section>
+        class="simplebar-scrollbar"
+      />
+    </div>
   </div>
 </nav>
 `;

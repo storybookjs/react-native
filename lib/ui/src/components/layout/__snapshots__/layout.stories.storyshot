@@ -395,6 +395,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(-80vw);
@@ -442,6 +443,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 100%;
   -webkit-transform: translateX(0) scale(1);
@@ -489,6 +491,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(80vw);
@@ -711,6 +714,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(-80vw);
@@ -758,6 +762,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 100%;
   -webkit-transform: translateX(0) scale(1);
@@ -805,6 +810,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(80vw);
@@ -1027,6 +1033,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(-80vw);
@@ -1074,6 +1081,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 100%;
   -webkit-transform: translateX(0) scale(1);
@@ -1121,6 +1129,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(80vw);
@@ -1343,6 +1352,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(-80vw);
@@ -1390,6 +1400,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 100%;
   -webkit-transform: translateX(0) scale(1);
@@ -1437,6 +1448,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   position: absolute;
   top: 0;
   height: 100%;
+  overflow: auto;
   background: #FFFFFF;
   width: 80vw;
   -webkit-transform: translateX(80vw);

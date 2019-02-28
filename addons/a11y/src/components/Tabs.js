@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
+// TODO: reuse the Tabs component from @storybook/theming instead
+// of re-building identical functionality
 
 const Container = styled.div({
   width: '100%',

@@ -1,13 +1,6 @@
 import { styled } from '@storybook/theming';
 import { opacify } from 'polished';
-
-export const Actions = styled.pre({
-  flex: 1,
-  margin: 0,
-  padding: '10px 5px 20px',
-  overflowY: 'auto',
-  color: '#666',
-});
+import { ActionBar } from '@storybook/components';
 
 export const Action = styled.div({
   display: 'flex',
@@ -32,11 +25,4 @@ export const Counter = styled.div(({ theme }) => ({
 export const InspectorContainer = styled.div({
   flex: 1,
   padding: '0 0 0 5px',
-});
-
-export const Wrapper = styled.div({
-  flex: 1,
-  display: 'flex',
-  position: 'relative',
-  height: '100%',
 });
