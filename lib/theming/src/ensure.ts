@@ -9,6 +9,8 @@ import isEqual from 'lodash.isequal';
 import light from './themes/light';
 import { Theme } from './base';
 
+const base = { ...light, animation: undefined, brand: undefined };
+
 // merge with concatenating arrays, but no duplicates
 const merge = (a: any, b: any) =>
   mergeWith({}, a, b, (objValue: any, srcValue: any) => {
@@ -32,7 +34,7 @@ export const ensure = (input: any): Theme => {
   if (!input) {
     return light;
   } else {
-    const missing = deletedDiff(light, input);
+    const missing = deletedDiff(base, input);
     if (Object.keys(missing).length) {
       logger.warn(
         stripIndent`
