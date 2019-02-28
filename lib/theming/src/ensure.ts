@@ -9,7 +9,11 @@ import isEqual from 'lodash.isequal';
 import light from './themes/light';
 import { Theme } from './base';
 
-const base = { ...light, animation: undefined, brand: undefined };
+const base = {
+  ...light,
+  animation: {},
+  brand: {},
+};
 
 // merge with concatenating arrays, but no duplicates
 const merge = (a: any, b: any) =>
