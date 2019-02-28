@@ -1,8 +1,8 @@
 {
   "next": {
-    "version": "5.0.0-rc.6",
+    "version": "5.0.0-rc.7",
     "info": {
-      "plain": "### Bug Fixes\n\n* Addon-actions: FIX performance by upgrading to telejson 2.1 ([#5751](https://github.com/storybooks/storybook/pull/5751))\n* UI: FIX bad treeview mockdata ([#5741](https://github.com/storybooks/storybook/pull/5741))\n* UI: About page styling fixes ([#5732](https://github.com/storybooks/storybook/pull/5732))\n* UI: Restore the toolbar eject button ([#5737](https://github.com/storybooks/storybook/pull/5737))"
+      "plain": "### Features\n\n* UI: Page load animation and `STORIES_CONFIGURED` event ([#5756](https://github.com/storybooks/storybook/pull/5756))\n* Theming: Improve `brand` API  ([#5733](https://github.com/storybooks/storybook/pull/5733))\n* UI: Fuzzy search improvement ([#5748](https://github.com/storybooks/storybook/pull/5748))\n* UI: Add toolbar animation ([#5742](https://github.com/storybooks/storybook/pull/5742))\n\n### Bug Fixes\n\n* UI: Fix update notifications placement ([#5716](https://github.com/storybooks/storybook/pull/5716))\n* Angular: Fix global style imports ([#5776](https://github.com/storybooks/storybook/pull/5776))\n* Addon-options: Add backwards compatibility ([#5758](https://github.com/storybooks/storybook/pull/5758))\n* Addon-options: Fix deprecated url/name options ([#5773](https://github.com/storybooks/storybook/pull/5773))\n* Addon-knobs: Remove call to `forceReRender()` on `STORY_CHANGED` ([#5753](https://github.com/storybooks/storybook/pull/5753))\n* UI: Fix active state in addon-background, addon-viewport tools ([#5749](https://github.com/storybooks/storybook/pull/5749))"
     }
   },
   "latest": {
