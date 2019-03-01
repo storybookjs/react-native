@@ -4,6 +4,7 @@
   - [Webpack config simplification](#webpack-config-simplification)
   - [Story hierarchy defaults](#story-hierarchy-defaults)
   - [Options addon deprecated](#options-addon-deprecated)
+  - [Individual story decorators](#individual-story-decorators)
 - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
@@ -138,6 +139,29 @@ Here is the mapping from old options to new:
 | showSearchBox     |                  |
 
 Storybook v5 removes the search dialog box in favor of a quick search in the navigation view, so `showSearchBox` has been removed.
+
+## Individual story decorators
+
+The behavior of adding decorators to a kind has changed in SB5 ([#5781](https://github.com/storybooks/storybook/issues/5781)).
+
+In SB4 it was possible to add decorators to only a subset of the stories of a kind.
+
+```js
+storiesOf('Stories', module)
+  .add('noncentered', () => 'Hello')
+  .addDecorator(centered)
+  .add('centered', () => 'Hello');
+```
+
+The semantics has changed in SB5 so that calling `addDecorator` on a kind adds a decorator to all its stories, no mater the order. So in the previous example, both stories would be centered.
+
+To allow for a subset of the stories in a kind to be decorated, we've added the ability to add decorators to individual stories using parameters:
+
+```js
+storiesOf('Stories', module)
+  .add('noncentered', () => 'Hello')
+  .add('centered', () => 'Hello', { decorators: [centered] });
+```
 
 ## From version 4.0.x to 4.1.x
 
