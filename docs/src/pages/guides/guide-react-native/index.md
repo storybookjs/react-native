@@ -5,13 +5,14 @@ title: 'Storybook for React Native'
 
 This guide will help you to manually setup React Native Storybook and explain about addons and Storybook server. 
 
+## Automatic setup
 
-## Table of contents
+You may have tried to use our quick start guide to setup your project for Storybook.
+If it failed because it couldn't detect you're using react-native, you could try forcing it to use react-native:
 
--   [Manual setup](#manual-setup)
--   [Writing stories](#writing-stories)
--   [Addons](#addons)
--   [Storybook Server](#storybook-server)
+```sh
+npx -p @storybook/cli sb init --type react-native
+```
 
 ## Manual setup
 
