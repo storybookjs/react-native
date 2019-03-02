@@ -56,7 +56,7 @@ export class PostmsgTransport {
       });
     }
 
-    const data = stringify({ key: KEY, event }, { maxDepth: 10 });
+    const data = stringify({ key: KEY, event }, { maxDepth: 15 });
 
     // TODO: investigate http://blog.teamtreehouse.com/cross-domain-messaging-with-postmessage
     // might replace '*' with document.location ?
