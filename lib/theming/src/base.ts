@@ -101,7 +101,11 @@ export type Animation = typeof animation;
 export type Easing = typeof easing;
 
 export type TextSize = number | string;
-export type Brand = string;
+export interface Brand {
+  title: string | undefined;
+  url: string | null | undefined;
+  image: string | null | undefined;
+}
 
 export interface Theme {
   color: Color;
@@ -127,7 +131,6 @@ export interface Theme {
   barSelectedColor: string;
   barBg: string;
 
-  // Brand logo/text
   brand: Brand;
 
   code: {

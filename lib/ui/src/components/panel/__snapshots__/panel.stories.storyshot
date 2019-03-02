@@ -15,73 +15,16 @@ exports[`Storyshots UI|Panel default 1`] = `
 }
 
 .emotion-12 {
-  color: #999999;
-  height: 40px;
-  overflow: auto;
-  overflow-x: auto;
   overflow-y: hidden;
-  -webkit-scrollbar-width: slim;
-  -moz-scrollbar-width: slim;
-  -ms-scrollbar-width: slim;
-  scrollbar-width: slim;
-  -webkit-scrollbar-width: 3px;
-  -moz-scrollbar-width: 3px;
-  -ms-scrollbar-width: 3px;
-  scrollbar-width: 3px;
-  -webkit-scrollbar-color: transparent transparent;
-  -moz-scrollbar-color: transparent transparent;
-  -ms-scrollbar-color: transparent transparent;
-  scrollbar-color: transparent transparent;
-  background: #FFFFFF linear-gradient(to bottom,transparent calc(100% - 1px),rgba(0,0,0,.1) calc(100% - 1px));
-}
-
-.emotion-12:hover {
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: 0;
-  -moz-scrollbar-width: 0;
-  -ms-scrollbar-width: 0;
-  scrollbar-width: 0;
-}
-
-.emotion-12::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  box-shadow: none;
-  display: none;
-}
-
-.emotion-12:hover::-webkit-scrollbar {
-  height: 3px;
-  width: 3px;
-  background: transparent;
-  display: block;
-}
-
-.emotion-12::-webkit-scrollbar-track {
-  border-radius: 0;
-  background: transparent;
-  opacity: 0;
-  border: 0 none;
-  box-shadow: none;
-  height: 0;
-  width: 0;
-}
-
-.emotion-12::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: rgba(0,0,0,.1);
-  box-shadow: none;
-}
-
-.emotion-12::-webkit-scrollbar-track-piece {
-  display: none;
-  border: 0 none;
-  opacity: 0;
-  visibility: hidden;
+  overflow-x: auto;
+  color: #999999;
+  width: 100%;
+  height: 40px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
 }
 
 .emotion-11 {
@@ -94,7 +37,12 @@ exports[`Storyshots UI|Panel default 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: 40px;
 }
 
@@ -103,6 +51,7 @@ exports[`Storyshots UI|Panel default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -218,6 +167,7 @@ exports[`Storyshots UI|Panel default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
@@ -276,81 +226,131 @@ exports[`Storyshots UI|Panel default 1`] = `
   display: block;
   position: relative;
   font-size: 13px;
-  position: relative;
+  height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
   overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
+}
+
+.emotion-13 > *:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  overflow: auto;
 }
 
 <div
   class="emotion-14"
   id="storybook-panel-root"
-  title="wrapper"
 >
   <div
     class="emotion-12"
-    title="flexbar"
+    data-simplebar="true"
   >
     <div
-      class="emotion-11"
+      class="simplebar-wrapper"
     >
       <div
-        class="emotion-3"
+        class="simplebar-height-auto-observer-wrapper"
       >
         <div
-          class="emotion-2"
-          role="tablist"
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
         >
-          <button
-            class="emotion-0"
-            role="tab"
-            type="button"
+          <div
+            class="simplebar-content"
           >
-            Test 1
-          </button>
-          <button
-            class="emotion-1"
-            role="tab"
-            type="button"
-          >
-            Test 2
-          </button>
+            <div
+              class="emotion-11"
+            >
+              <div
+                class="emotion-3"
+              >
+                <div
+                  class="emotion-2"
+                  role="tablist"
+                >
+                  <button
+                    class="emotion-0"
+                    role="tab"
+                    type="button"
+                  >
+                    Test 1
+                  </button>
+                  <button
+                    class="emotion-1"
+                    role="tab"
+                    type="button"
+                  >
+                    Test 2
+                  </button>
+                </div>
+              </div>
+              <div
+                class="emotion-10"
+              >
+                <button
+                  class="emotion-6"
+                  title="Change orientation"
+                >
+                  <svg
+                    class="emotion-5"
+                    viewBox="0 0 1024 1024"
+                  >
+                    <path
+                      class="emotion-4"
+                      d="M64 167.944v688c0 22.092 17.908 40 40 40h816c22.092 0 40-17.908 40-40v-688c0-22.092-17.908-40-40-40h-816c-22.092 0-40 17.908-40 40zM880 815.944h-240v-608h240v608zM144 207.944h416v608h-416v-608zM793.296 320.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32zM793.296 448.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32zM793.296 576.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="emotion-6"
+                  title="Hide addons"
+                >
+                  <svg
+                    class="emotion-5"
+                    viewBox="0 0 1024 1024"
+                  >
+                    <path
+                      class="emotion-4"
+                      d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div
-        class="emotion-10"
-      >
-        <button
-          class="emotion-6"
-          title="Change orientation"
-        >
-          <svg
-            class="emotion-5"
-            viewBox="0 0 1024 1024"
-          >
-            <path
-              class="emotion-4"
-              d="M64 167.944v688c0 22.092 17.908 40 40 40h816c22.092 0 40-17.908 40-40v-688c0-22.092-17.908-40-40-40h-816c-22.092 0-40 17.908-40 40zM880 815.944h-240v-608h240v608zM144 207.944h416v608h-416v-608zM793.296 320.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32zM793.296 448.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32zM793.296 576.118h-66.398c-17.676 0-32-14.324-32-32 0-17.674 14.328-32 32-32h66.396c17.674 0 32.002 14.326 32.002 32 0 17.672-14.324 32-32 32z"
-            />
-          </svg>
-        </button>
-        <button
-          class="emotion-6"
-          title="Hide addons"
-        >
-          <svg
-            class="emotion-5"
-            viewBox="0 0 1024 1024"
-          >
-            <path
-              class="emotion-4"
-              d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
-            />
-          </svg>
-        </button>
-      </div>
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
     </div>
   </div>
   <div

@@ -1,37 +1,41 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { styled, withTheme } from '@storybook/theming';
+
 import Inspector from 'react-inspector';
+import { ActionBar, ScrollArea } from '@storybook/components';
 
-import { withTheme } from '@storybook/theming';
-import { ActionBar } from '@storybook/components';
-
-import { Actions, Action, Wrapper, InspectorContainer, Counter } from './style';
+import { Action, InspectorContainer, Counter } from './style';
 import { ActionDisplay } from '../../models';
+
+export const Wrapper = styled(({ children, className }) => (
+  <ScrollArea horizontal vertical className={className}>
+    {children}
+  </ScrollArea>
+))({
+  margin: 0,
+  padding: '10px 5px 20px',
+});
+
+const ThemedInspector = withTheme(({ theme, ...props }) => <Inspector theme={theme.addonActionsTheme || 'chromeLight'} {...props} />);
 
 interface ActionLoggerProps {
   actions: ActionDisplay[];
   onClear: () => void;
-  theme: any;
 }
 
-export const ActionLogger = withTheme(({ actions, onClear, theme }: ActionLoggerProps) => (
-  <Wrapper>
-    <Actions>
+export const ActionLogger = ({ actions, onClear }: ActionLoggerProps) => (
+  <Fragment>
+    <Wrapper title="actionslogger">
       {actions.map((action: ActionDisplay) => (
         <Action key={action.id}>
           {action.count > 1 && <Counter>{action.count}</Counter>}
           <InspectorContainer>
-            <Inspector
-              theme={theme.addonActionsTheme || 'chromeLight'}
-              sortObjectKeys
-              showNonenumerable={false}
-              name={action.data.name}
-              data={action.data.args || action.data}
-            />
+            <ThemedInspector sortObjectKeys showNonenumerable={false} name={action.data.name} data={action.data.args || action.data} />
           </InspectorContainer>
         </Action>
       ))}
-    </Actions>
+    </Wrapper>
 
     <ActionBar actionItems={[{ title: 'Clear', onClick: onClear }]} />
-  </Wrapper>
-));
+  </Fragment>
+);

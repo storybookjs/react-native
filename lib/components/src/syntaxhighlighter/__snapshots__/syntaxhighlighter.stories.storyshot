@@ -2,8 +2,9 @@
 
 exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
 .emotion-2 {
+  overflow-y: auto;
+  overflow-x: auto;
   position: relative;
-  overflow: auto;
 }
 
 .emotion-2 code {
@@ -187,28 +188,69 @@ exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
 >
   <div
     class="emotion-2"
+    data-simplebar="true"
   >
-    <pre
-      class="hljs emotion-1"
+    <div
+      class="simplebar-wrapper"
     >
-      <code
-        class="emotion-0"
+      <div
+        class="simplebar-height-auto-observer-wrapper"
       >
-        npx npm-check-updates 
-        <span
-          class="token string"
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
         >
-          '/storybook/'
-        </span>
-         -u 
-        <span
-          class="token operator"
-        >
-          &&
-        </span>
-         yarn
-      </code>
-    </pre>
+          <div
+            class="simplebar-content"
+          >
+            <pre
+              class="hljs emotion-1"
+            >
+              <code
+                class="emotion-0"
+              >
+                npx npm-check-updates 
+                <span
+                  class="token string"
+                >
+                  '/storybook/'
+                </span>
+                 -u 
+                <span
+                  class="token operator"
+                >
+                  &&
+                </span>
+                 yarn
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -221,8 +263,9 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
 }
 
 .emotion-2 {
+  overflow-y: auto;
+  overflow-x: auto;
   position: relative;
-  overflow: auto;
 }
 
 .emotion-2 code {
@@ -450,195 +493,236 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
 >
   <div
     class="emotion-2"
+    data-simplebar="true"
   >
-    <pre
-      class="hljs emotion-1"
+    <div
+      class="simplebar-wrapper"
     >
-      <code
-        class="emotion-0"
+      <div
+        class="simplebar-height-auto-observer-wrapper"
       >
-        <span
-          class="token keyword"
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
         >
-          import
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          {
-        </span>
-         Good
-        <span
-          class="token punctuation"
-        >
-          ,
-        </span>
-         Things 
-        <span
-          class="token punctuation"
-        >
-          }
-        </span>
-         
-        <span
-          class="token keyword"
-        >
-          from
-        </span>
-         
-        <span
-          class="token string"
-        >
-          'life'
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
-
-
-        <span
-          class="token keyword"
-        >
-          const
-        </span>
-         
-        <span
-          class="token function-variable function"
-        >
-          result
-        </span>
-         
-        <span
-          class="token operator"
-        >
-          =
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          (
-        </span>
-        <span
-          class="token punctuation"
-        >
-          )
-        </span>
-         
-        <span
-          class="token operator"
-        >
-          =&gt;
-        </span>
-         
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
+          <div
+            class="simplebar-content"
           >
-            <span
-              class="token punctuation"
+            <pre
+              class="hljs emotion-1"
             >
-              &lt;
-            </span>
-            Good
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Things
-          </span>
-           
-          <span
-            class="token punctuation"
-          >
-            /&gt;
-          </span>
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Good
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+              <code
+                class="emotion-0"
+              >
+                <span
+                  class="token keyword"
+                >
+                  import
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  {
+                </span>
+                 Good
+                <span
+                  class="token punctuation"
+                >
+                  ,
+                </span>
+                 Things 
+                <span
+                  class="token punctuation"
+                >
+                  }
+                </span>
+                 
+                <span
+                  class="token keyword"
+                >
+                  from
+                </span>
+                 
+                <span
+                  class="token string"
+                >
+                  'life'
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
 
-        <span
-          class="token keyword"
-        >
-          export
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          {
-        </span>
-         result 
-        <span
-          class="token keyword"
-        >
-          as
-        </span>
-         
-        <span
-          class="token keyword"
-        >
-          default
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          }
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+                <span
+                  class="token keyword"
+                >
+                  const
+                </span>
+                 
+                <span
+                  class="token function-variable function"
+                >
+                  result
+                </span>
+                 
+                <span
+                  class="token operator"
+                >
+                  =
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  (
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  )
+                </span>
+                 
+                <span
+                  class="token operator"
+                >
+                  =&gt;
+                </span>
+                 
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Good
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Things
+                  </span>
+                   
+                  <span
+                    class="token punctuation"
+                  >
+                    /&gt;
+                  </span>
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Good
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
-      </code>
-    </pre>
+
+                <span
+                  class="token keyword"
+                >
+                  export
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  {
+                </span>
+                 result 
+                <span
+                  class="token keyword"
+                >
+                  as
+                </span>
+                 
+                <span
+                  class="token keyword"
+                >
+                  default
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  }
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
+
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
   </div>
   <div
     class="emotion-4"
@@ -654,8 +738,9 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
 
 exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
 .emotion-2 {
+  overflow-y: auto;
+  overflow-x: auto;
   position: relative;
-  overflow: auto;
 }
 
 .emotion-2 code {
@@ -839,233 +924,275 @@ exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
 >
   <div
     class="emotion-2"
+    data-simplebar="true"
   >
-    <pre
-      class="hljs emotion-1"
+    <div
+      class="simplebar-wrapper"
     >
-      <code
-        class="emotion-0"
+      <div
+        class="simplebar-height-auto-observer-wrapper"
       >
-        <span
-          class="token keyword"
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
         >
-          import
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          {
-        </span>
-         Good
-        <span
-          class="token punctuation"
-        >
-          ,
-        </span>
-         Things 
-        <span
-          class="token punctuation"
-        >
-          }
-        </span>
-         
-        <span
-          class="token keyword"
-        >
-          from
-        </span>
-         
-        <span
-          class="token string"
-        >
-          'life'
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+          <div
+            class="simplebar-content"
+          >
+            <pre
+              class="hljs emotion-1"
+            >
+              <code
+                class="emotion-0"
+              >
+                <span
+                  class="token keyword"
+                >
+                  import
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  {
+                </span>
+                 Good
+                <span
+                  class="token punctuation"
+                >
+                  ,
+                </span>
+                 Things 
+                <span
+                  class="token punctuation"
+                >
+                  }
+                </span>
+                 
+                <span
+                  class="token keyword"
+                >
+                  from
+                </span>
+                 
+                <span
+                  class="token string"
+                >
+                  'life'
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
 
-        <span
-          class="token keyword"
-        >
-          const
-        </span>
-         
-        <span
-          class="token function-variable function"
-        >
-          result
-        </span>
-         
-        <span
-          class="token operator"
-        >
-          =
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          (
-        </span>
-        <span
-          class="token punctuation"
-        >
-          )
-        </span>
-         
-        <span
-          class="token operator"
-        >
-          =&gt;
-        </span>
-         
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Good
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Things
-          </span>
-           
-          <span
-            class="token attr-name"
-          >
-            all
-          </span>
-          <span
-            class="token script language-javascript"
-          >
-            <span
-              class="token script-punctuation punctuation"
-            >
-              =
-            </span>
-            <span
-              class="token punctuation"
-            >
-              {
-            </span>
-            <span
-              class="token boolean"
-            >
-              true
-            </span>
-            <span
-              class="token punctuation"
-            >
-              }
-            </span>
-          </span>
-           
-          <span
-            class="token punctuation"
-          >
-            /&gt;
-          </span>
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Good
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+                <span
+                  class="token keyword"
+                >
+                  const
+                </span>
+                 
+                <span
+                  class="token function-variable function"
+                >
+                  result
+                </span>
+                 
+                <span
+                  class="token operator"
+                >
+                  =
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  (
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  )
+                </span>
+                 
+                <span
+                  class="token operator"
+                >
+                  =&gt;
+                </span>
+                 
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Good
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Things
+                  </span>
+                   
+                  <span
+                    class="token attr-name"
+                  >
+                    all
+                  </span>
+                  <span
+                    class="token script language-javascript"
+                  >
+                    <span
+                      class="token script-punctuation punctuation"
+                    >
+                      =
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                    <span
+                      class="token boolean"
+                    >
+                      true
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                  </span>
+                   
+                  <span
+                    class="token punctuation"
+                  >
+                    /&gt;
+                  </span>
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Good
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
 
-        <span
-          class="token keyword"
-        >
-          export
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          {
-        </span>
-         result 
-        <span
-          class="token keyword"
-        >
-          as
-        </span>
-         
-        <span
-          class="token keyword"
-        >
-          default
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          }
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+                <span
+                  class="token keyword"
+                >
+                  export
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  {
+                </span>
+                 result 
+                <span
+                  class="token keyword"
+                >
+                  as
+                </span>
+                 
+                <span
+                  class="token keyword"
+                >
+                  default
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  }
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
-      </code>
-    </pre>
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Basics|SyntaxHighlighter padded 1`] = `
 .emotion-2 {
+  overflow-y: auto;
+  overflow-x: auto;
   position: relative;
-  overflow: auto;
 }
 
 .emotion-2 code {
@@ -1249,203 +1376,245 @@ exports[`Storyshots Basics|SyntaxHighlighter padded 1`] = `
 >
   <div
     class="emotion-2"
+    data-simplebar="true"
   >
-    <pre
-      class="hljs emotion-1"
+    <div
+      class="simplebar-wrapper"
     >
-      <code
-        class="emotion-0"
+      <div
+        class="simplebar-height-auto-observer-wrapper"
       >
-        <span
-          class="token keyword"
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
         >
-          import
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          {
-        </span>
-         Good
-        <span
-          class="token punctuation"
-        >
-          ,
-        </span>
-         Things 
-        <span
-          class="token punctuation"
-        >
-          }
-        </span>
-         
-        <span
-          class="token keyword"
-        >
-          from
-        </span>
-         
-        <span
-          class="token string"
-        >
-          'life'
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
-
-
-        <span
-          class="token keyword"
-        >
-          const
-        </span>
-         
-        <span
-          class="token function-variable function"
-        >
-          result
-        </span>
-         
-        <span
-          class="token operator"
-        >
-          =
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          (
-        </span>
-        <span
-          class="token punctuation"
-        >
-          )
-        </span>
-         
-        <span
-          class="token operator"
-        >
-          =&gt;
-        </span>
-         
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
+          <div
+            class="simplebar-content"
           >
-            <span
-              class="token punctuation"
+            <pre
+              class="hljs emotion-1"
             >
-              &lt;
-            </span>
-            Good
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Things
-          </span>
-           
-          <span
-            class="token punctuation"
-          >
-            /&gt;
-          </span>
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Good
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+              <code
+                class="emotion-0"
+              >
+                <span
+                  class="token keyword"
+                >
+                  import
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  {
+                </span>
+                 Good
+                <span
+                  class="token punctuation"
+                >
+                  ,
+                </span>
+                 Things 
+                <span
+                  class="token punctuation"
+                >
+                  }
+                </span>
+                 
+                <span
+                  class="token keyword"
+                >
+                  from
+                </span>
+                 
+                <span
+                  class="token string"
+                >
+                  'life'
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
 
-        <span
-          class="token keyword"
-        >
-          export
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          {
-        </span>
-         result 
-        <span
-          class="token keyword"
-        >
-          as
-        </span>
-         
-        <span
-          class="token keyword"
-        >
-          default
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          }
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+                <span
+                  class="token keyword"
+                >
+                  const
+                </span>
+                 
+                <span
+                  class="token function-variable function"
+                >
+                  result
+                </span>
+                 
+                <span
+                  class="token operator"
+                >
+                  =
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  (
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  )
+                </span>
+                 
+                <span
+                  class="token operator"
+                >
+                  =&gt;
+                </span>
+                 
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Good
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Things
+                  </span>
+                   
+                  <span
+                    class="token punctuation"
+                  >
+                    /&gt;
+                  </span>
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Good
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
-      </code>
-    </pre>
+
+                <span
+                  class="token keyword"
+                >
+                  export
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  {
+                </span>
+                 result 
+                <span
+                  class="token keyword"
+                >
+                  as
+                </span>
+                 
+                <span
+                  class="token keyword"
+                >
+                  default
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  }
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
+
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
 .emotion-2 {
+  overflow-y: auto;
+  overflow-x: auto;
   position: relative;
-  overflow: auto;
 }
 
 .emotion-2 code {
@@ -1629,235 +1798,277 @@ exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
 >
   <div
     class="emotion-2"
+    data-simplebar="true"
   >
-    <pre
-      class="hljs emotion-1"
+    <div
+      class="simplebar-wrapper"
     >
-      <code>
-        <span
-          class="react-syntax-highlighter-line-number"
-        >
-          1
-
-        </span>
-        <span
-          class="react-syntax-highlighter-line-number"
-        >
-          2
-
-        </span>
-        <span
-          class="react-syntax-highlighter-line-number"
-        >
-          3
-
-        </span>
-        <span
-          class="react-syntax-highlighter-line-number"
-        >
-          4
-
-        </span>
-        <span
-          class="react-syntax-highlighter-line-number"
-        >
-          5
-
-        </span>
-      </code>
-      <code
-        class="emotion-0"
+      <div
+        class="simplebar-height-auto-observer-wrapper"
       >
-        <span
-          class="token keyword"
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
         >
-          import
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          {
-        </span>
-         Good
-        <span
-          class="token punctuation"
-        >
-          ,
-        </span>
-         Things 
-        <span
-          class="token punctuation"
-        >
-          }
-        </span>
-         
-        <span
-          class="token keyword"
-        >
-          from
-        </span>
-         
-        <span
-          class="token string"
-        >
-          'life'
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
-
-
-        <span
-          class="token keyword"
-        >
-          const
-        </span>
-         
-        <span
-          class="token function-variable function"
-        >
-          result
-        </span>
-         
-        <span
-          class="token operator"
-        >
-          =
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          (
-        </span>
-        <span
-          class="token punctuation"
-        >
-          )
-        </span>
-         
-        <span
-          class="token operator"
-        >
-          =&gt;
-        </span>
-         
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
+          <div
+            class="simplebar-content"
           >
-            <span
-              class="token punctuation"
+            <pre
+              class="hljs emotion-1"
             >
-              &lt;
-            </span>
-            Good
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Things
-          </span>
-           
-          <span
-            class="token punctuation"
-          >
-            /&gt;
-          </span>
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Good
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+              <code>
+                <span
+                  class="react-syntax-highlighter-line-number"
+                >
+                  1
+
+                </span>
+                <span
+                  class="react-syntax-highlighter-line-number"
+                >
+                  2
+
+                </span>
+                <span
+                  class="react-syntax-highlighter-line-number"
+                >
+                  3
+
+                </span>
+                <span
+                  class="react-syntax-highlighter-line-number"
+                >
+                  4
+
+                </span>
+                <span
+                  class="react-syntax-highlighter-line-number"
+                >
+                  5
+
+                </span>
+              </code>
+              <code
+                class="emotion-0"
+              >
+                <span
+                  class="token keyword"
+                >
+                  import
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  {
+                </span>
+                 Good
+                <span
+                  class="token punctuation"
+                >
+                  ,
+                </span>
+                 Things 
+                <span
+                  class="token punctuation"
+                >
+                  }
+                </span>
+                 
+                <span
+                  class="token keyword"
+                >
+                  from
+                </span>
+                 
+                <span
+                  class="token string"
+                >
+                  'life'
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
 
-        <span
-          class="token keyword"
-        >
-          export
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          {
-        </span>
-         result 
-        <span
-          class="token keyword"
-        >
-          as
-        </span>
-         
-        <span
-          class="token keyword"
-        >
-          default
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          }
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+                <span
+                  class="token keyword"
+                >
+                  const
+                </span>
+                 
+                <span
+                  class="token function-variable function"
+                >
+                  result
+                </span>
+                 
+                <span
+                  class="token operator"
+                >
+                  =
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  (
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  )
+                </span>
+                 
+                <span
+                  class="token operator"
+                >
+                  =&gt;
+                </span>
+                 
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Good
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Things
+                  </span>
+                   
+                  <span
+                    class="token punctuation"
+                  >
+                    /&gt;
+                  </span>
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Good
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
-      </code>
-    </pre>
+
+                <span
+                  class="token keyword"
+                >
+                  export
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  {
+                </span>
+                 result 
+                <span
+                  class="token keyword"
+                >
+                  as
+                </span>
+                 
+                <span
+                  class="token keyword"
+                >
+                  default
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  }
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
+
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
 .emotion-2 {
+  overflow-y: auto;
+  overflow-x: auto;
   position: relative;
-  overflow: auto;
 }
 
 .emotion-2 code {
@@ -2041,873 +2252,914 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
 >
   <div
     class="emotion-2"
+    data-simplebar="true"
   >
-    <pre
-      class="hljs emotion-1"
+    <div
+      class="simplebar-wrapper"
     >
-      <code
-        class="emotion-0"
+      <div
+        class="simplebar-height-auto-observer-wrapper"
       >
-        <span
-          class="token keyword"
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
         >
-          import
-        </span>
-         React 
-        <span
-          class="token keyword"
-        >
-          from
-        </span>
-         
-        <span
-          class="token string"
-        >
-          'react'
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+          <div
+            class="simplebar-content"
+          >
+            <pre
+              class="hljs emotion-1"
+            >
+              <code
+                class="emotion-0"
+              >
+                <span
+                  class="token keyword"
+                >
+                  import
+                </span>
+                 React 
+                <span
+                  class="token keyword"
+                >
+                  from
+                </span>
+                 
+                <span
+                  class="token string"
+                >
+                  'react'
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
-        <span
-          class="token keyword"
-        >
-          import
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          {
-        </span>
-         storiesOf 
-        <span
-          class="token punctuation"
-        >
-          }
-        </span>
-         
-        <span
-          class="token keyword"
-        >
-          from
-        </span>
-         
-        <span
-          class="token string"
-        >
-          '@storybook/react'
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+                <span
+                  class="token keyword"
+                >
+                  import
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  {
+                </span>
+                 storiesOf 
+                <span
+                  class="token punctuation"
+                >
+                  }
+                </span>
+                 
+                <span
+                  class="token keyword"
+                >
+                  from
+                </span>
+                 
+                <span
+                  class="token string"
+                >
+                  '@storybook/react'
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
-        <span
-          class="token keyword"
-        >
-          import
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          {
-        </span>
-         styled 
-        <span
-          class="token punctuation"
-        >
-          }
-        </span>
-         
-        <span
-          class="token keyword"
-        >
-          from
-        </span>
-         
-        <span
-          class="token string"
-        >
-          '@storybook/theming'
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
-
-
-        <span
-          class="token keyword"
-        >
-          import
-        </span>
-         Heading 
-        <span
-          class="token keyword"
-        >
-          from
-        </span>
-         
-        <span
-          class="token string"
-        >
-          './heading'
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+                <span
+                  class="token keyword"
+                >
+                  import
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  {
+                </span>
+                 styled 
+                <span
+                  class="token punctuation"
+                >
+                  }
+                </span>
+                 
+                <span
+                  class="token keyword"
+                >
+                  from
+                </span>
+                 
+                <span
+                  class="token string"
+                >
+                  '@storybook/theming'
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
 
-        <span
-          class="token keyword"
-        >
-          const
-        </span>
-         Holder 
-        <span
-          class="token operator"
-        >
-          =
-        </span>
-         styled
-        <span
-          class="token punctuation"
-        >
-          .
-        </span>
-        <span
-          class="token function"
-        >
-          div
-        </span>
-        <span
-          class="token punctuation"
-        >
-          (
-        </span>
-        <span
-          class="token punctuation"
-        >
-          {
-        </span>
-        
+                <span
+                  class="token keyword"
+                >
+                  import
+                </span>
+                 Heading 
+                <span
+                  class="token keyword"
+                >
+                  from
+                </span>
+                 
+                <span
+                  class="token string"
+                >
+                  './heading'
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
+
+
+                <span
+                  class="token keyword"
+                >
+                  const
+                </span>
+                 Holder 
+                <span
+                  class="token operator"
+                >
+                  =
+                </span>
+                 styled
+                <span
+                  class="token punctuation"
+                >
+                  .
+                </span>
+                <span
+                  class="token function"
+                >
+                  div
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  (
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  {
+                </span>
+                
   margin
-        <span
-          class="token punctuation"
-        >
-          :
-        </span>
-         
-        <span
-          class="token number"
-        >
-          10
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ,
-        </span>
-        
+                <span
+                  class="token punctuation"
+                >
+                  :
+                </span>
+                 
+                <span
+                  class="token number"
+                >
+                  10
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ,
+                </span>
+                
   border
-        <span
-          class="token punctuation"
-        >
-          :
-        </span>
-         
-        <span
-          class="token string"
-        >
-          '1px dashed deepskyblue'
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ,
-        </span>
-        
+                <span
+                  class="token punctuation"
+                >
+                  :
+                </span>
+                 
+                <span
+                  class="token string"
+                >
+                  '1px dashed deepskyblue'
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ,
+                </span>
+                
   
-        <span
-          class="token comment"
-        >
-          // overflow: 'hidden',
-        </span>
-        
+                <span
+                  class="token comment"
+                >
+                  // overflow: 'hidden',
+                </span>
+                
 
-        <span
-          class="token punctuation"
-        >
-          }
-        </span>
-        <span
-          class="token punctuation"
-        >
-          )
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+                <span
+                  class="token punctuation"
+                >
+                  }
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  )
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
 
-        <span
-          class="token function"
-        >
-          storiesOf
-        </span>
-        <span
-          class="token punctuation"
-        >
-          (
-        </span>
-        <span
-          class="token string"
-        >
-          'Basics|Heading'
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ,
-        </span>
-         module
-        <span
-          class="token punctuation"
-        >
-          )
-        </span>
-        <span
-          class="token punctuation"
-        >
-          .
-        </span>
-        <span
-          class="token function"
-        >
-          add
-        </span>
-        <span
-          class="token punctuation"
-        >
-          (
-        </span>
-        <span
-          class="token string"
-        >
-          'types'
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ,
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          (
-        </span>
-        <span
-          class="token punctuation"
-        >
-          )
-        </span>
-         
-        <span
-          class="token operator"
-        >
-          =&gt;
-        </span>
-         
-        <span
-          class="token punctuation"
-        >
-          (
-        </span>
-        
+                <span
+                  class="token function"
+                >
+                  storiesOf
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  (
+                </span>
+                <span
+                  class="token string"
+                >
+                  'Basics|Heading'
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ,
+                </span>
+                 module
+                <span
+                  class="token punctuation"
+                >
+                  )
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  .
+                </span>
+                <span
+                  class="token function"
+                >
+                  add
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  (
+                </span>
+                <span
+                  class="token string"
+                >
+                  'types'
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ,
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  (
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  )
+                </span>
+                 
+                <span
+                  class="token operator"
+                >
+                  =&gt;
+                </span>
+                 
+                <span
+                  class="token punctuation"
+                >
+                  (
+                </span>
+                
   
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            div
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    div
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
             
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Holder
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Holder
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
               
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Heading
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          DEFAULT WITH ALL CAPS
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Heading
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Heading
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  DEFAULT WITH ALL CAPS
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Heading
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
             
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Holder
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Holder
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
             
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Holder
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Holder
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
               
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Heading
-          </span>
-           
-          <span
-            class="token attr-name"
-          >
-            sub
-          </span>
-          <span
-            class="token attr-value"
-          >
-            <span
-              class="token punctuation"
-            >
-              =
-            </span>
-            <span
-              class="token punctuation"
-            >
-              "
-            </span>
-            With a great sub
-            <span
-              class="token punctuation"
-            >
-              "
-            </span>
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          THIS LONG DEFAULT WITH ALL CAPS & SUB
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Heading
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Heading
+                  </span>
+                   
+                  <span
+                    class="token attr-name"
+                  >
+                    sub
+                  </span>
+                  <span
+                    class="token attr-value"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      =
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      "
+                    </span>
+                    With a great sub
+                    <span
+                      class="token punctuation"
+                    >
+                      "
+                    </span>
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  THIS LONG DEFAULT WITH ALL CAPS & SUB
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Heading
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
             
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Holder
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Holder
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
             
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Holder
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Holder
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
               
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Heading
-          </span>
-           
-          <span
-            class="token attr-name"
-          >
-            type
-          </span>
-          <span
-            class="token attr-value"
-          >
-            <span
-              class="token punctuation"
-            >
-              =
-            </span>
-            <span
-              class="token punctuation"
-            >
-              "
-            </span>
-            page
-            <span
-              class="token punctuation"
-            >
-              "
-            </span>
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          page type
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Heading
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Heading
+                  </span>
+                   
+                  <span
+                    class="token attr-name"
+                  >
+                    type
+                  </span>
+                  <span
+                    class="token attr-value"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      =
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      "
+                    </span>
+                    page
+                    <span
+                      class="token punctuation"
+                    >
+                      "
+                    </span>
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  page type
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Heading
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
             
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Holder
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Holder
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
             
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Holder
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Holder
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
               
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;
-            </span>
-            Heading
-          </span>
-           
-          <span
-            class="token attr-name"
-          >
-            type
-          </span>
-          <span
-            class="token attr-value"
-          >
-            <span
-              class="token punctuation"
-            >
-              =
-            </span>
-            <span
-              class="token punctuation"
-            >
-              "
-            </span>
-            page
-            <span
-              class="token punctuation"
-            >
-              "
-            </span>
-          </span>
-           
-          <span
-            class="token attr-name"
-          >
-            sub
-          </span>
-          <span
-            class="token attr-value"
-          >
-            <span
-              class="token punctuation"
-            >
-              =
-            </span>
-            <span
-              class="token punctuation"
-            >
-              "
-            </span>
-            With a sub
-            <span
-              class="token punctuation"
-            >
-              "
-            </span>
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;
+                    </span>
+                    Heading
+                  </span>
+                   
+                  <span
+                    class="token attr-name"
+                  >
+                    type
+                  </span>
+                  <span
+                    class="token attr-value"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      =
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      "
+                    </span>
+                    page
+                    <span
+                      class="token punctuation"
+                    >
+                      "
+                    </span>
+                  </span>
+                   
+                  <span
+                    class="token attr-name"
+                  >
+                    sub
+                  </span>
+                  <span
+                    class="token attr-value"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      =
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      "
+                    </span>
+                    With a sub
+                    <span
+                      class="token punctuation"
+                    >
+                      "
+                    </span>
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
                 page type
               
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Heading
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
-          
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Heading
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
             
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            Holder
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        <span
-          class="token plain-text"
-        >
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    Holder
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                <span
+                  class="token plain-text"
+                >
+                  
           
-          
-        </span>
-        <span
-          class="token tag"
-        >
-          <span
-            class="token tag"
-          >
-            <span
-              class="token punctuation"
-            >
-              &lt;/
-            </span>
-            div
-          </span>
-          <span
-            class="token punctuation"
-          >
-            &gt;
-          </span>
-        </span>
-        
+                </span>
+                <span
+                  class="token tag"
+                >
+                  <span
+                    class="token tag"
+                  >
+                    <span
+                      class="token punctuation"
+                    >
+                      &lt;/
+                    </span>
+                    div
+                  </span>
+                  <span
+                    class="token punctuation"
+                  >
+                    &gt;
+                  </span>
+                </span>
+                
 
-        <span
-          class="token punctuation"
-        >
-          )
-        </span>
-        <span
-          class="token punctuation"
-        >
-          )
-        </span>
-        <span
-          class="token punctuation"
-        >
-          ;
-        </span>
-        
+                <span
+                  class="token punctuation"
+                >
+                  )
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  )
+                </span>
+                <span
+                  class="token punctuation"
+                >
+                  ;
+                </span>
+                
 
-      </code>
-    </pre>
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+    >
+      <div
+        class="simplebar-scrollbar"
+      />
+    </div>
   </div>
 </div>
 `;
