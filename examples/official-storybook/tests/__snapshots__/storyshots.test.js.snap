@@ -5077,6 +5077,23 @@ exports[`Storyshots Basics|ScrollArea vertical 1`] = `
 </div>
 `;
 
+exports[`Storyshots Core|Decorators all 1`] = `
+Array [
+  <p>
+    Global Decorator
+  </p>,
+  <p>
+    Kind Decorator
+  </p>,
+  <p>
+    Local Decorator
+  </p>,
+  <p>
+    Story
+  </p>,
+]
+`;
+
 exports[`Storyshots Core|Events Force re-render 1`] = `
 .emotion-0 {
   border: 0;
@@ -5178,10 +5195,6 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
 exports[`Storyshots Core|Parameters passed to story 1`] = `
 <pre>
   Parameters are {
-  "options": {
-    "hierarchyRootSeparator": "|",
-    "hierarchySeparator": {}
-  },
   "a11y": {
     "configure": {},
     "options": {
