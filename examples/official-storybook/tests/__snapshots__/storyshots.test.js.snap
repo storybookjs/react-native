@@ -2653,10 +2653,6 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
 exports[`Storyshots Core|Parameters passed to story 1`] = `
 <pre>
   Parameters are {
-  "options": {
-    "hierarchyRootSeparator": "|",
-    "hierarchySeparator": {}
-  },
   "a11y": {
     "configure": {},
     "options": {
