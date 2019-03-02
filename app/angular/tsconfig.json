@@ -6,7 +6,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": "./src",
-    "types": ["webpack-env"],
+    "types": ["webpack-env", "jest"],
     "outDir": "./dist",
     "resolveJsonModule": true
   }

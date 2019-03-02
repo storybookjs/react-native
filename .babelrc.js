@@ -12,7 +12,7 @@ module.exports = {
     '@babel/plugin-syntax-dynamic-import',
     ['@babel/plugin-proposal-object-rest-spread', { loose: true, useBuiltIns: true }],
     'babel-plugin-macros',
-    ['babel-plugin-emotion', { sourceMap: true, autoLabel: true }],
+    ['emotion', { sourceMap: true, autoLabel: true }],
   ],
   env: {
     test: {
@@ -65,7 +65,7 @@ module.exports = {
         ],
       ],
       plugins: [
-        'babel-plugin-emotion',
+        'emotion',
         'babel-plugin-macros',
         ['@babel/plugin-proposal-decorators', { legacy: true }],
         ['@babel/plugin-proposal-class-properties', { loose: true }],
