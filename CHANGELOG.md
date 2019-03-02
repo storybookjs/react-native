@@ -1,3 +1,15 @@
+## 5.0.0-rc.8 (March 1, 2019)
+
+### Features
+
+* Core: Allow local decorators via params ([#5806](https://github.com/storybooks/storybook/pull/5806))
+
+### Bug Fixes
+
+* UI: Sort storiesHash so grouped keys appear together ([#5805](https://github.com/storybooks/storybook/pull/5805))
+* UI: Close tooltips on iframe clicks on keypresses ([#5807](https://github.com/storybooks/storybook/pull/5807))
+* Addon-Info: Add font family to info panel ([#5759](https://github.com/storybooks/storybook/pull/5759))
+
 ## 5.0.0-rc.7 (February 28, 2019)
 
 ### Features
