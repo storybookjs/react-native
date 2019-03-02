@@ -1,3 +1,33 @@
+## 5.0.0-rc.8 (March 1, 2019)
+
+### Features
+
+* Core: Allow local decorators via params ([#5806](https://github.com/storybooks/storybook/pull/5806))
+
+### Bug Fixes
+
+* UI: Sort storiesHash so grouped keys appear together ([#5805](https://github.com/storybooks/storybook/pull/5805))
+* UI: Close tooltips on iframe clicks on keypresses ([#5807](https://github.com/storybooks/storybook/pull/5807))
+* Addon-Info: Add font family to info panel ([#5759](https://github.com/storybooks/storybook/pull/5759))
+
+## 5.0.0-rc.7 (February 28, 2019)
+
+### Features
+
+* UI: Page load animation and `STORIES_CONFIGURED` event ([#5756](https://github.com/storybooks/storybook/pull/5756))
+* Theming: Improve `brand` API  ([#5733](https://github.com/storybooks/storybook/pull/5733))
+* UI: Fuzzy search improvement ([#5748](https://github.com/storybooks/storybook/pull/5748))
+* UI: Add toolbar animation ([#5742](https://github.com/storybooks/storybook/pull/5742))
+
+### Bug Fixes
+
+* UI: Fix update notifications placement ([#5716](https://github.com/storybooks/storybook/pull/5716))
+* Angular: Fix global style imports ([#5776](https://github.com/storybooks/storybook/pull/5776))
+* Addon-options: Add backwards compatibility ([#5758](https://github.com/storybooks/storybook/pull/5758))
+* Addon-options: Fix deprecated url/name options ([#5773](https://github.com/storybooks/storybook/pull/5773))
+* Addon-knobs: Remove call to `forceReRender()` on `STORY_CHANGED` ([#5753](https://github.com/storybooks/storybook/pull/5753))
+* UI: Fix active state in addon-background, addon-viewport tools ([#5749](https://github.com/storybooks/storybook/pull/5749))
+
 ## 5.0.0-rc.6 (February 25, 2019)
 
 ### Bug Fixes
