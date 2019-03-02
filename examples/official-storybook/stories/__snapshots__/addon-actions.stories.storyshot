@@ -1,282 +1,2901 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Actions All types 1`] = `
-<div>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+Array [
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Array
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Boolean
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Empty Object
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     File
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Function A
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
-    Bound Function A
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+    Bound Function B
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Infinity
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     -Infinity
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     NaN
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     null
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Number
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Multiple
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Plain Object
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Object (depth: 2)
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     RegExp
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     String
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Symbol
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     SyntheticEvent
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     undefined
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Window
-  </button>
-</div>
+  </button>,
+]
+`;
+
+exports[`Storyshots Addons|Actions Basic example 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+  class="emotion-0"
+>
+  Hello World
+</button>
 `;
 
 exports[`Storyshots Addons|Actions Circular Payload 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 <button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+  class="emotion-0"
 >
   Circular Payload
 </button>
 `;
 
 exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 <button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+  class="emotion-0"
 >
   Moving away from this story will persist the action logger
 </button>
 `;
 
 exports[`Storyshots Addons|Actions Decorated action 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 <button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+  class="emotion-0"
 >
   Native Event
 </button>
 `;
 
 exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 <button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+  class="emotion-0"
 >
   Moving away from this story will persist the action logger
 </button>
 `;
 
 exports[`Storyshots Addons|Actions Decorated actions 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 <button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+  class="emotion-0"
 >
   Native Event
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Function Name 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
->
-  Action.name: fnName
-</button>
-`;
-
-exports[`Storyshots Addons|Actions Hello World 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
->
-  Hello World
-</button>
-`;
-
 exports[`Storyshots Addons|Actions Limit Action Output 1`] = `
-<div>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+Array [
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     False
-  </button>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </button>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     True
-  </button>
-</div>
+  </button>,
+]
 `;
 
 exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 <button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+  class="emotion-0"
 >
   Moving away from this story will persist the action logger
 </button>
 `;
 
 exports[`Storyshots Addons|Actions Multiple actions 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 <button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+  class="emotion-0"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+  class="emotion-0"
 >
   Hello World
 </button>
 `;
 
 exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 <button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+  class="emotion-0"
 >
   Moving away from this story will persist the action logger
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
-<button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
->
-  Hello World
-</button>
-`;
-
 exports[`Storyshots Addons|Actions Persisting the action logger 1`] = `
-<div>
+Array [
   <p>
     Moving away from this story will persist the action logger
-  </p>
-  <button
-    style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-    type="button"
+  </p>,
+  .emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<button
+    class="emotion-0"
   >
     Object (configured clearOnStoryChange: false)
-  </button>
-</div>
+  </button>,
+]
 `;
 
 exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 <button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+  class="emotion-0"
 >
   Delete
 </button>
 `;
 
 exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 <button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+  class="emotion-0"
 >
   Object (configured depth: 2)
 </button>
 `;
 
 exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 <button
-  style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
-  type="button"
+  class="emotion-0"
 >
   Native Event
 </button>

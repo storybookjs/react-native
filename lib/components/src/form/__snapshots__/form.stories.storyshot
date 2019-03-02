@@ -1,1103 +1,2756 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Form/Button alignment 1`] = `
-Array [
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+exports[`Storyshots Basics|Form/Button sizes 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
   position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-2 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-2 svg path {
+  fill: currentColor;
+}
+
+.emotion-2:hover {
+  background: #f2f2f2;
+}
+
+.emotion-2:active {
+  background: #FFFFFF;
+}
+
+.emotion-2:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-2:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-4 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-4 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-4 svg path {
+  fill: currentColor;
+}
+
+.emotion-4:hover {
+  background: #f2f2f2;
+}
+
+.emotion-4:active {
+  background: #FFFFFF;
+}
+
+.emotion-4:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-4:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<div
+  class="emotion-6"
+>
+  <div
+    class="emotion-1"
+  >
+    <button
+      class="emotion-0"
+    >
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <button
+      class="emotion-2"
+    >
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <button
+      class="emotion-4"
+    >
+      click this button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|Form/Button validations 1`] = `
+.emotion-8 > * {
+  margin-top: 10px;
+}
+
+.emotion-8 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-6 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-6 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-6 svg path {
+  fill: currentColor;
+}
+
+.emotion-6:hover {
+  background: #f2f2f2;
+}
+
+.emotion-6:active {
+  background: #FFFFFF;
+}
+
+.emotion-6:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-6:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  width: 100%;
+  box-shadow: #FF4400 0 0 0 1px inset !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-2 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  width: 100%;
+  box-shadow: #E69D00 0 0 0 1px inset;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-2 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-2 svg path {
+  fill: currentColor;
+}
+
+.emotion-2:hover {
+  background: #f2f2f2;
+}
+
+.emotion-2:active {
+  background: #FFFFFF;
+}
+
+.emotion-2:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-2:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-4 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  width: 100%;
+  box-shadow: #66BF3C 0 0 0 1px inset !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-4 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-4 svg path {
+  fill: currentColor;
+}
+
+.emotion-4:hover {
+  background: #f2f2f2;
+}
+
+.emotion-4:active {
+  background: #FFFFFF;
+}
+
+.emotion-4:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-4:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<div
+  class="emotion-8"
+>
+  <div
+    class="emotion-1"
+  >
+    <button
+      class="emotion-0"
+    >
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <button
+      class="emotion-2"
+    >
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <button
+      class="emotion-4"
+    >
+      click this button
+    </button>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <button
+      class="emotion-6"
+    >
+      click this button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|Form/Field field 1`] = `
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin: 0 15px;
+  padding: 8px 0;
+}
+
+.emotion-2:last-child {
+  margin-bottom: 3rem;
+}
+
+.emotion-0 {
+  min-width: 100px;
+  font-weight: 700;
+  margin-right: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 16px;
+}
+
+.emotion-1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  display: inline;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+.emotion-1:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-1[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-1:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-1::placeholder {
+  color: #999999;
+}
+
+<label
+  class="emotion-2"
+>
+  <span
+    class="emotion-0"
+  >
+    <span>
+      label
+    </span>
+  </span>
+  <select
+    class="emotion-1"
+    size="1"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>
+</label>
+`;
+
+exports[`Storyshots Basics|Form/Input alignment 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  text-align: left;
+  min-height: 32px;
+}
+
+.emotion-4:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-4[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-4:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::placeholder {
+  color: #999999;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   width: 100%;
   text-align: right;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   min-height: 32px;
-  box-sizing: border-box;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<button
-    class="emotion-0 emotion-1"
-  >
-    click this button
-  </button>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   width: 100%;
   text-align: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   min-height: 32px;
-  box-sizing: border-box;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-2:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<button
-    class="emotion-0 emotion-1"
-  >
-    click this button
-  </button>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+.emotion-2[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-2:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
 }
 
-<button
-    class="emotion-0 emotion-1"
-  >
-    click this button
-  </button>,
-]
-`;
-
-exports[`Storyshots Components|Form/Button sizes 1`] = `
-Array [
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+.emotion-2::-webkit-input-placeholder {
+  color: #999999;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-2::-moz-placeholder {
+  color: #999999;
 }
 
-<button
-    class="emotion-0 emotion-1"
-  >
-    click this button
-  </button>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  text-align: left;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+.emotion-2:-ms-input-placeholder {
+  color: #999999;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-2::placeholder {
+  color: #999999;
 }
 
-<button
-    class="emotion-0 emotion-1"
-  >
-    click this button
-  </button>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-<button
-    class="emotion-0 emotion-1"
-  >
-    click this button
-  </button>,
-]
-`;
-
-exports[`Storyshots Components|Form/Button validations 1`] = `
-Array [
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  border-bottom-color: #d53535;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-<button
-    class="emotion-0 emotion-1"
-  >
-    click this button
-  </button>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  border-bottom-color: orange;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-<button
-    class="emotion-0 emotion-1"
-  >
-    click this button
-  </button>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  border-bottom-color: #09833a;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-<button
-    class="emotion-0 emotion-1"
-  >
-    click this button
-  </button>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-<button
-    class="emotion-0 emotion-1"
-  >
-    click this button
-  </button>,
-]
-`;
-
-exports[`Storyshots Components|Form/Button with knobs 1`] = `
-.emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-<button
-  class="emotion-0 emotion-1"
+<div
+  class="emotion-6"
 >
-  💌  love letter to storybook team
-</button>
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-0"
+      value="text"
+    />
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-2"
+      value="text"
+    />
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-4"
+      value="text"
+    />
+  </div>
+</div>
 `;
 
-exports[`Storyshots Components|Form/Select sizes 1`] = `
-Array [
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+exports[`Storyshots Basics|Form/Input sizes 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   display: inline;
   text-align: left;
-  height: 32px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding-right: 20px;
+  min-height: 32px;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<select
-    class="emotion-0 emotion-1"
-  >
-    <option
-      value="val1"
-    >
-      Value 1
-    </option>
-    <option
-      selected=""
-      value="val2"
-    >
-      Value 2
-    </option>
-    <option
-      value="val3"
-    >
-      Value 3
-    </option>
-  </select>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   text-align: left;
-  height: 32px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding-right: 20px;
+  min-height: 32px;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-2:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<select
-    class="emotion-0 emotion-1"
-  >
-    <option
-      value="val1"
-    >
-      Value 1
-    </option>
-    <option
-      selected=""
-      value="val2"
-    >
-      Value 2
-    </option>
-    <option
-      value="val3"
-    >
-      Value 3
-    </option>
-  </select>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+.emotion-2[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-2:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::placeholder {
+  color: #999999;
+}
+
+.emotion-4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   width: 100%;
   text-align: left;
-  height: 32px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding-right: 20px;
+  min-height: 32px;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-4:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<select
-    class="emotion-0 emotion-1"
+.emotion-4[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-4:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::placeholder {
+  color: #999999;
+}
+
+<div
+  class="emotion-6"
+>
+  <div
+    class="emotion-1"
   >
-    <option
-      value="val1"
-    >
-      Value 1
-    </option>
-    <option
-      selected=""
-      value="val2"
-    >
-      Value 2
-    </option>
-    <option
-      value="val3"
-    >
-      Value 3
-    </option>
-  </select>,
-]
+    <input
+      class="emotion-0"
+      value="text"
+    />
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-2"
+      value="text"
+    />
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-4"
+      value="text"
+    />
+  </div>
+</div>
 `;
 
-exports[`Storyshots Components|Form/Select validations 1`] = `
-Array [
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+exports[`Storyshots Basics|Form/Input validations 1`] = `
+.emotion-8 > * {
+  margin-top: 10px;
+}
+
+.emotion-8 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-6 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   width: 100%;
   text-align: left;
-  border-bottom-color: #d53535;
-  height: 32px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding-right: 20px;
+  min-height: 32px;
+}
+
+.emotion-6:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-6[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-6:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-6::placeholder {
+  color: #999999;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  text-align: left;
+  box-shadow: #FF4400 0 0 0 1px inset !important;
+  min-height: 32px;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<select
-    class="emotion-0 emotion-1"
-  >
-    <option
-      value="val1"
-    >
-      Value 1
-    </option>
-    <option
-      selected=""
-      value="val2"
-    >
-      Value 2
-    </option>
-    <option
-      value="val3"
-    >
-      Value 3
-    </option>
-  </select>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   width: 100%;
   text-align: left;
-  border-bottom-color: orange;
-  height: 32px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding-right: 20px;
+  box-shadow: #E69D00 0 0 0 1px inset;
+  min-height: 32px;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-2:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<select
-    class="emotion-0 emotion-1"
-  >
-    <option
-      value="val1"
-    >
-      Value 1
-    </option>
-    <option
-      selected=""
-      value="val2"
-    >
-      Value 2
-    </option>
-    <option
-      value="val3"
-    >
-      Value 3
-    </option>
-  </select>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+.emotion-2[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-2:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::placeholder {
+  color: #999999;
+}
+
+.emotion-4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   width: 100%;
   text-align: left;
-  border-bottom-color: #09833a;
-  height: 32px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding-right: 20px;
+  box-shadow: #66BF3C 0 0 0 1px inset !important;
+  min-height: 32px;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-4:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<select
-    class="emotion-0 emotion-1"
+.emotion-4[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-4:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::placeholder {
+  color: #999999;
+}
+
+<div
+  class="emotion-8"
+>
+  <div
+    class="emotion-1"
   >
-    <option
-      value="val1"
-    >
-      Value 1
-    </option>
-    <option
-      selected=""
-      value="val2"
-    >
-      Value 2
-    </option>
-    <option
-      value="val3"
-    >
-      Value 3
-    </option>
-  </select>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  height: 32px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding-right: 20px;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-<select
-    class="emotion-0 emotion-1"
+    <input
+      class="emotion-0"
+      value="text"
+    />
+  </div>
+  <div
+    class="emotion-1"
   >
-    <option
-      value="val1"
-    >
-      Value 1
-    </option>
-    <option
-      selected=""
-      value="val2"
-    >
-      Value 2
-    </option>
-    <option
-      value="val3"
-    >
-      Value 3
-    </option>
-  </select>,
-]
+    <input
+      class="emotion-2"
+      value="text"
+    />
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-4"
+      value="text"
+    />
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-6"
+      value="text"
+    />
+  </div>
+</div>
 `;
 
-exports[`Storyshots Components|Form/Textarea alignment 1`] = `
-Array [
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+exports[`Storyshots Basics|Form/Select sizes 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  display: inline;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+.emotion-0:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+.emotion-2:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-2[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-2:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::placeholder {
+  color: #999999;
+}
+
+.emotion-4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+.emotion-4:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-4[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-4:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::placeholder {
+  color: #999999;
+}
+
+<div
+  class="emotion-6"
+>
+  <div
+    class="emotion-1"
+  >
+    <select
+      class="emotion-0"
+    >
+      <option
+        value="val1"
+      >
+        Value 1
+      </option>
+      <option
+        selected=""
+        value="val2"
+      >
+        Value 2
+      </option>
+      <option
+        value="val3"
+      >
+        Value 3
+      </option>
+    </select>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <select
+      class="emotion-2"
+    >
+      <option
+        value="val1"
+      >
+        Value 1
+      </option>
+      <option
+        selected=""
+        value="val2"
+      >
+        Value 2
+      </option>
+      <option
+        value="val3"
+      >
+        Value 3
+      </option>
+    </select>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <select
+      class="emotion-4"
+    >
+      <option
+        value="val1"
+      >
+        Value 1
+      </option>
+      <option
+        selected=""
+        value="val2"
+      >
+        Value 2
+      </option>
+      <option
+        value="val3"
+      >
+        Value 3
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Basics|Form/Select validations 1`] = `
+.emotion-4 > * {
+  margin-top: 10px;
+}
+
+.emotion-4 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+.emotion-3:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-3[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-3:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-3::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-3::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-3:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-3::placeholder {
+  color: #999999;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  box-shadow: #FF4400 0 0 0 1px inset !important;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+.emotion-0:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  box-shadow: #E69D00 0 0 0 1px inset;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+.emotion-1:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-1[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-1:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-1::placeholder {
+  color: #999999;
+}
+
+.emotion-2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  box-shadow: #66BF3C 0 0 0 1px inset !important;
+  height: 32px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 20px;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+.emotion-2:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-2[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-2:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::placeholder {
+  color: #999999;
+}
+
+<div>
+  <div
+    class="emotion-4"
+  >
+    <select
+      class="emotion-0"
+    >
+      <option
+        value="val1"
+      >
+        Value 1
+      </option>
+      <option
+        selected=""
+        value="val2"
+      >
+        Value 2
+      </option>
+      <option
+        value="val3"
+      >
+        Value 3
+      </option>
+    </select>
+    <select
+      class="emotion-1"
+    >
+      <option
+        value="val1"
+      >
+        Value 1
+      </option>
+      <option
+        selected=""
+        value="val2"
+      >
+        Value 2
+      </option>
+      <option
+        value="val3"
+      >
+        Value 3
+      </option>
+    </select>
+    <select
+      class="emotion-2"
+    >
+      <option
+        value="val1"
+      >
+        Value 1
+      </option>
+      <option
+        selected=""
+        value="val2"
+      >
+        Value 2
+      </option>
+      <option
+        value="val3"
+      >
+        Value 3
+      </option>
+    </select>
+    <select
+      class="emotion-3"
+    >
+      <option
+        value="val1"
+      >
+        Value 1
+      </option>
+      <option
+        selected=""
+        value="val2"
+      >
+        Value 2
+      </option>
+      <option
+        value="val3"
+      >
+        Value 3
+      </option>
+    </select>
+  </div>
+  <select
+    class="emotion-3"
+    disabled=""
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Storyshots Basics|Form/Textarea alignment 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  text-align: left;
+  overflow: visible;
+}
+
+.emotion-4:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-4[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-4:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::placeholder {
+  color: #999999;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   width: 100%;
   text-align: right;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
   overflow: visible;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<textarea
-    align="end"
-    class="emotion-0 emotion-1"
-    style="height:0"
-  >
-    text
-  </textarea>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   width: 100%;
   text-align: center;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
   overflow: visible;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-2:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<textarea
-    align="center"
-    class="emotion-0 emotion-1"
-    style="height:0"
+.emotion-2[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-2:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::placeholder {
+  color: #999999;
+}
+
+<div
+  class="emotion-6"
+>
+  <div
+    class="emotion-1"
   >
-    text
-  </textarea>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow: visible;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-<textarea
-    align="start"
-    class="emotion-0 emotion-1"
-    style="height:0"
+    <textarea
+      align="end"
+      class="emotion-0"
+      style="height:0"
+    >
+      textarea
+    </textarea>
+  </div>
+  <div
+    class="emotion-1"
   >
-    text
-  </textarea>,
-]
+    <textarea
+      align="center"
+      class="emotion-2"
+      style="height:0"
+    >
+      textarea
+    </textarea>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <textarea
+      align="start"
+      class="emotion-4"
+      style="height:0"
+    >
+      textarea
+    </textarea>
+  </div>
+</div>
 `;
 
-exports[`Storyshots Components|Form/Textarea sizes 1`] = `
-Array [
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+exports[`Storyshots Basics|Form/Textarea sizes 1`] = `
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   display: inline;
   text-align: left;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
   overflow: visible;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<textarea
-    class="emotion-0 emotion-1"
-    style="height:0"
-  >
-    text
-  </textarea>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   text-align: left;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
   overflow: visible;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-2:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<textarea
-    class="emotion-0 emotion-1"
-    style="height:0"
-  >
-    text
-  </textarea>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
+.emotion-2[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-2:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::placeholder {
+  color: #999999;
+}
+
+.emotion-4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
   position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
   width: 100%;
   text-align: left;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
   overflow: visible;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-4:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
 }
 
-<textarea
-    class="emotion-0 emotion-1"
-    style="height:0"
-  >
-    text
-  </textarea>,
-]
-`;
-
-exports[`Storyshots Components|Form/Textarea validations 1`] = `
-Array [
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  border-bottom-color: #d53535;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow: visible;
+.emotion-4[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-4:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
 }
 
-<textarea
-    class="emotion-0 emotion-1"
-    style="height:0"
-    valid="error"
-  >
-    text
-  </textarea>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  border-bottom-color: orange;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow: visible;
+.emotion-4::-webkit-input-placeholder {
+  color: #999999;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-4::-moz-placeholder {
+  color: #999999;
 }
 
-<textarea
-    class="emotion-0 emotion-1"
-    style="height:0"
-    valid="warn"
-  >
-    text
-  </textarea>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  border-bottom-color: #09833a;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow: visible;
+.emotion-4:-ms-input-placeholder {
+  color: #999999;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-4::placeholder {
+  color: #999999;
 }
 
-<textarea
-    class="emotion-0 emotion-1"
-    style="height:0"
-    valid="valid"
-  >
-    text
-  </textarea>,
-  .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow: visible;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-<textarea
-    class="emotion-0 emotion-1"
-    style="height:0"
-  >
-    text
-  </textarea>,
-]
-`;
-
-exports[`Storyshots Components|Form/Textarea with knobs (controlled) 1`] = `
-.emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  text-align: left;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow: visible;
-}
-
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
-}
-
-<textarea
-  class="emotion-0 emotion-1"
-  style="height:0"
+<div
+  class="emotion-6"
 >
-  OMG, multiple lines!
+  <div
+    class="emotion-1"
+  >
+    <textarea
+      class="emotion-0"
+      style="height:0"
+    >
+      textarea
+    </textarea>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <textarea
+      class="emotion-2"
+      style="height:0"
+    >
+      textarea
+    </textarea>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <textarea
+      class="emotion-4"
+      style="height:0"
+    >
+      textarea
+    </textarea>
+  </div>
+</div>
+`;
 
-That is amazing
-</textarea>
+exports[`Storyshots Basics|Form/Textarea validations 1`] = `
+.emotion-8 > * {
+  margin-top: 10px;
+}
+
+.emotion-8 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-6 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  text-align: left;
+  overflow: visible;
+}
+
+.emotion-6:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-6[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-6:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-6::placeholder {
+  color: #999999;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  text-align: left;
+  box-shadow: #FF4400 0 0 0 1px inset !important;
+  overflow: visible;
+}
+
+.emotion-0:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  text-align: left;
+  box-shadow: #E69D00 0 0 0 1px inset;
+  overflow: visible;
+}
+
+.emotion-2:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-2[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-2:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-2::placeholder {
+  color: #999999;
+}
+
+.emotion-4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  width: 100%;
+  text-align: left;
+  box-shadow: #66BF3C 0 0 0 1px inset !important;
+  overflow: visible;
+}
+
+.emotion-4:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-4[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-4:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-4::placeholder {
+  color: #999999;
+}
+
+<div
+  class="emotion-8"
+>
+  <div
+    class="emotion-1"
+  >
+    <textarea
+      class="emotion-0"
+      style="height:0"
+      valid="error"
+    >
+      textarea
+    </textarea>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <textarea
+      class="emotion-2"
+      style="height:0"
+      valid="warn"
+    >
+      textarea
+    </textarea>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <textarea
+      class="emotion-4"
+      style="height:0"
+      valid="valid"
+    >
+      textarea
+    </textarea>
+  </div>
+  <div
+    class="emotion-1"
+  >
+    <textarea
+      class="emotion-6"
+      style="height:0"
+    >
+      textarea
+    </textarea>
+  </div>
+</div>
 `;

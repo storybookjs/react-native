@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-google-analytics",
-  "version": "4.2.0-alpha.9",
+  "version": "5.0.0-beta.3",
   "description": "Storybook addon for google analytics",
   "keywords": [
     "addon",
@@ -12,17 +12,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/google-analytics"
   },
   "license": "MIT",
-  "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.2.0-alpha.9",
-    "core-js": "^2.5.7",
+    "@storybook/addons": "5.0.0-beta.3",
+    "@storybook/core-events": "5.0.0-beta.3",
+    "core-js": "^2.6.2",
     "global": "^4.3.2",
     "react-ga": "^2.5.3"
   },

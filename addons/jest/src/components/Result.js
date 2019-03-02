@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
-import { monoFonts } from '@storybook/components';
+import { styled } from '@storybook/theming';
 
 import Indicator from './Indicator';
 import colors from '../colors';
 
 const Pre = styled.pre({
   margin: 0,
-  ...monoFonts,
 });
 
 const FlexContainer = styled.div({
@@ -43,6 +41,7 @@ const StackTrace = styled(({ trace, className }) => (
 ))({
   background: 'silver',
   padding: 10,
+  overflow: 'auto',
 });
 const Main = styled(({ msg, className }) => <section className={className}>{msg}</section>)({
   padding: 10,
@@ -204,14 +203,14 @@ export const FailedResult = styled(({ fullName, title, status, failureMessages, 
         <Indicator
           color={colors.error}
           size={10}
-          styles={{ borderRadius: '5px 0', position: 'relative', top: -1, left: -1 }}
+          overrides={{ borderRadius: '5px 0', position: 'absolute', top: -1, left: -1 }}
         />
         <Title>{fullName || title}</Title>
       </FlexContainer>
       <Indicator
         color={colors.error}
         size={16}
-        styles={{ borderRadius: '0 5px', position: 'relative', top: -1, right: -1 }}
+        overrides={{ borderRadius: '0 5px', position: 'absolute', top: -1, right: -1 }}
       >
         {status}
       </Indicator>
@@ -240,7 +239,7 @@ const Result = ({ fullName, title, status }) => (
     }}
   >
     <FlexContainer>
-      <Indicator color={colors.success} size={10} />
+      <Indicator color={colors.success} size={10} overrides={{ marginRight: 10 }} />
       <div>{fullName || title}</div>
     </FlexContainer>
     <FlexContainer>

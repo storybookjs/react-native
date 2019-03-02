@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
-import { Input } from '@storybook/components';
+import { Form } from '@storybook/components';
 
 const base = {
   boxSizing: 'border-box',
@@ -61,6 +61,7 @@ class NumberType extends React.Component {
         <RangeInput
           value={knob.value}
           type="range"
+          name={knob.name}
           min={knob.min}
           max={knob.max}
           step={knob.step}
@@ -69,9 +70,10 @@ class NumberType extends React.Component {
         <RangeLabel>{`${knob.value} / ${knob.max}`}</RangeLabel>
       </RangeWrapper>
     ) : (
-      <Input
+      <Form.Input
         value={knob.value}
         type="number"
+        name={knob.name}
         min={knob.min}
         max={knob.max}
         step={knob.step}

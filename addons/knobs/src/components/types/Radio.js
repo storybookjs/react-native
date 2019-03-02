@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
-const flex = ({ isInline }) => {
-  if (isInline) {
-    return {
-      display: 'flex',
-      flexWrap: 'wrap',
-      alignItems: 'center',
-    };
-  }
-  return null;
-};
-
-const RadiosWrapper = styled.div(flex);
+const RadiosWrapper = styled.div(({ isInline }) =>
+  isInline
+    ? {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        '> * + *': {
+          marginLeft: 10,
+        },
+      }
+    : {}
+);
 
 const RadioLabel = styled.label({
-  fontSize: 11,
-  padding: '5px',
+  padding: '3px 0 3px 5px',
+  lineHeight: '18px',
+  display: 'inline-block',
 });
 
 class RadiosType extends Component {

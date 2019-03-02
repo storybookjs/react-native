@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Select } from '@storybook/components';
+import { Form } from '@storybook/components';
 
 const SelectType = ({ knob, onChange }) => {
   const { options } = knob;
@@ -12,8 +12,9 @@ const SelectType = ({ knob, onChange }) => {
   const selectedKey = Object.keys(entries).find(k => entries[k] === knob.value);
 
   return (
-    <Select
+    <Form.Select
       value={selectedKey}
+      name={knob.name}
       onChange={e => {
         onChange(entries[e.target.value]);
       }}
@@ -24,7 +25,7 @@ const SelectType = ({ knob, onChange }) => {
           {key}
         </option>
       ))}
-    </Select>
+    </Form.Select>
   );
 };
 

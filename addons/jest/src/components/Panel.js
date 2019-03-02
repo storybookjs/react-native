@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
+import { ScrollArea } from '@storybook/components';
 
 import Indicator from './Indicator';
 import Result, { FailedResult } from './Result';
@@ -141,8 +142,11 @@ const Content = styled(({ tests, className }) => (
   flex: '1 1 0%',
 });
 
-const Panel = ({ tests }) =>
-  tests ? <Content tests={tests} /> : <NoTests>This story has no tests configured</NoTests>;
+const Panel = ({ tests }) => (
+  <ScrollArea vertical>
+    {tests ? <Content tests={tests} /> : <NoTests>This story has no tests configured</NoTests>}
+  </ScrollArea>
+);
 
 Panel.defaultProps = {
   tests: null,

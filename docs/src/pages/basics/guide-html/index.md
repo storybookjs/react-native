@@ -35,13 +35,12 @@ If you don't have `package.json` in your project, you'll need to init it first:
 npm init
 ```
 
-## Add babel-runtime, babel-core, and babel-loader
+## Add @babel/core, and babel-loader
 
-Make sure that you have `babel-runtime`, `babel-core`, and `babel-loader` in your dependencies as well because we list these as a peerDependency:
+Make sure that you have `@babel/core`, and `babel-loader` in your dependencies as well because we list these as a peerDependency:
 
 ```sh
-npm i --save-dev babel-runtime
-npm i --save-dev babel-core
+npm i --save-dev @babel/core
 npm i --save-dev babel-loader
 ```
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 const Wrapper = styled.div({
   display: 'flex',
@@ -12,8 +12,8 @@ const Wrapper = styled.div({
 const Item = styled.div(({ theme }) => ({
   margin: '0 6px',
   padding: '5px',
-  border: theme.mainBorder,
-  borderRadius: theme.mainBorderRadius,
+  border: `1px solid ${theme.appBorderColor}`,
+  borderRadius: theme.appBorderRadius,
 }));
 
 function Tags({ tags }) {

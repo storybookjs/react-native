@@ -13,4 +13,4 @@ import '@storybook/addon-viewport/register';
 
 import addHeadWarning from './head-warning';
 
-addHeadWarning('Manager head not loaded', 'manager-head-not-loaded');
+addHeadWarning('manager-head-not-loaded', 'Manager head not loaded');

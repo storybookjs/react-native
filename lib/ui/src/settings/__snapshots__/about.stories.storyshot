@@ -1,0 +1,3131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
+.emotion-26 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-8 {
+  overflow-y: hidden;
+  overflow-x: auto;
+  color: #999999;
+  width: 100%;
+  height: 40px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 40px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-2 > * {
+  margin-left: 15px;
+}
+
+.emotion-1 {
+  overflow: hidden;
+}
+
+.emotion-1:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 30px;
+}
+
+.emotion-6 > * {
+  margin-right: 15px;
+}
+
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-25 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  overflow: auto;
+}
+
+.emotion-25 > *:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+.emotion-5 {
+  height: 40px;
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+}
+
+.emotion-5:hover,
+.emotion-5:focus {
+  outline: 0 none;
+  color: #1EA7FD;
+}
+
+.emotion-5 > svg {
+  width: 15px;
+}
+
+.emotion-14 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-14 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-14:hover,
+.emotion-14:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-14:hover svg path,
+.emotion-14:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-14:active {
+  color: #028ee6;
+}
+
+.emotion-14:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-14 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+  font-weight: 700;
+}
+
+.emotion-22 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-17 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-17 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-17:hover,
+.emotion-17:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-17:hover svg path,
+.emotion-17:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-17:active {
+  color: #028ee6;
+}
+
+.emotion-17:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-17 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-17 svg path {
+  fill: #999999;
+}
+
+.emotion-17:hover {
+  color: #666666;
+}
+
+.emotion-17:hover svg path {
+  fill: #666666;
+}
+
+.emotion-17:active {
+  color: #444444;
+}
+
+.emotion-17:active svg path {
+  fill: #444444;
+}
+
+.emotion-24 {
+  display: block;
+}
+
+.emotion-23 {
+  padding: 3rem 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emotion-9 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 900;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-9 > svg {
+  height: 32px;
+  width: auto;
+  margin-right: 8px;
+}
+
+.emotion-13 > svg:last-of-type {
+  height: 0.7em;
+  width: 0.7em;
+  margin-right: 0;
+  margin-left: 0.25em;
+  bottom: auto;
+  vertical-align: inherit;
+}
+
+.emotion-10 {
+  background: #FEDED2;
+  color: #FF4400;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.emotion-15 {
+  font-weight: 700;
+  text-align: center;
+}
+
+<div
+  style="position:relative;height:calc(100vh);width:calc(100vw)"
+>
+  <div
+    class="emotion-26"
+  >
+    <div
+      class="emotion-8"
+      data-simplebar="true"
+    >
+      <div
+        class="simplebar-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer-wrapper"
+        >
+          <div
+            class="simplebar-height-auto-observer"
+          />
+        </div>
+        <div
+          class="simplebar-mask"
+        >
+          <div
+            class="simplebar-offset"
+          >
+            <div
+              class="simplebar-content"
+            >
+              <div
+                class="emotion-7"
+              >
+                <div
+                  class="emotion-2"
+                >
+                  <div
+                    class="emotion-1"
+                    role="tablist"
+                  >
+                    <button
+                      class="emotion-0"
+                      role="tab"
+                      type="button"
+                    >
+                      About
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="emotion-6"
+                >
+                  <button
+                    class="emotion-5"
+                  >
+                    <svg
+                      class="emotion-4"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        class="emotion-3"
+                        d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="simplebar-placeholder"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-horizontal"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-vertical"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+    </div>
+    <div
+      class="emotion-25"
+    >
+      <div
+        class="emotion-24"
+        role="tabpanel"
+      >
+        <div
+          class="emotion-23"
+        >
+          <header
+            class="emotion-9"
+          >
+            <svg
+              title="Storybook icon"
+              viewBox="0 0 64 64"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                id="Artboard"
+                stroke="none"
+                stroke-width="1"
+              >
+                <path
+                  d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
+                  fill="#FF4785"
+                  fill-rule="nonzero"
+                  id="path-1"
+                />
+                <path
+                  d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
+                  fill="#FFFFFF"
+                  fill-rule="nonzero"
+                  id="path9_fill-path"
+                />
+                <path
+                  d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
+                  fill="#FFFFFF"
+                  id="Path"
+                />
+              </g>
+            </svg>
+            Storybook 5.0.0
+          </header>
+          <div
+            class="emotion-10"
+          >
+            Oops! The latest version of Storybook couldn't be fetched.
+          </div>
+          <div
+            class="emotion-15"
+          >
+            <a
+              class="emotion-14"
+              href="https://github.com/storybooks/storybook/releases"
+              target="_blank"
+            >
+              <span
+                class="emotion-13"
+              >
+                Check Storybook's release history
+                <svg
+                  class="emotion-4"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div
+            class="emotion-22"
+          >
+            <a
+              class="emotion-17"
+              href="https://storybook.js.org"
+            >
+              <span
+                class="emotion-16"
+              >
+                Docs
+              </span>
+            </a>
+            <a
+              class="emotion-17"
+              href="https://github.com/storybooks/storybook"
+            >
+              <span
+                class="emotion-16"
+              >
+                GitHub
+              </span>
+            </a>
+            <a
+              class="emotion-17"
+              href="https://storybook.js.org/support"
+            >
+              <span
+                class="emotion-16"
+              >
+                Support
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
+.emotion-42 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-8 {
+  overflow-y: hidden;
+  overflow-x: auto;
+  color: #999999;
+  width: 100%;
+  height: 40px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 40px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-2 > * {
+  margin-left: 15px;
+}
+
+.emotion-1 {
+  overflow: hidden;
+}
+
+.emotion-1:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 30px;
+}
+
+.emotion-6 > * {
+  margin-right: 15px;
+}
+
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-41 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  overflow: auto;
+}
+
+.emotion-41 > *:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+.emotion-5 {
+  height: 40px;
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+}
+
+.emotion-5:hover,
+.emotion-5:focus {
+  outline: 0 none;
+  color: #1EA7FD;
+}
+
+.emotion-5 > svg {
+  width: 15px;
+}
+
+.emotion-38 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+  font-weight: 700;
+}
+
+.emotion-38 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-33 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-33 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-33:hover,
+.emotion-33:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-33:hover svg path,
+.emotion-33:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-33:active {
+  color: #028ee6;
+}
+
+.emotion-33:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-33 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-33 svg path {
+  fill: #999999;
+}
+
+.emotion-33:hover {
+  color: #666666;
+}
+
+.emotion-33:hover svg path {
+  fill: #666666;
+}
+
+.emotion-33:active {
+  color: #444444;
+}
+
+.emotion-33:active svg path {
+  fill: #444444;
+}
+
+.emotion-40 {
+  display: block;
+}
+
+.emotion-39 {
+  padding: 3rem 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emotion-9 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 900;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-9 > svg {
+  height: 32px;
+  width: auto;
+  margin-right: 8px;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: .75rem;
+}
+
+.emotion-11 {
+  -webkit-letter-spacing: 0.35em;
+  -moz-letter-spacing: 0.35em;
+  -ms-letter-spacing: 0.35em;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 24px;
+  color: #999999;
+}
+
+.emotion-15 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+  font-size: 12px;
+}
+
+.emotion-15 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-15:hover,
+.emotion-15:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-15:hover svg path,
+.emotion-15:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-15:active {
+  color: #028ee6;
+}
+
+.emotion-15:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-15 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-15 svg path {
+  fill: #999999;
+}
+
+.emotion-15:hover {
+  color: #666666;
+}
+
+.emotion-15:hover svg path {
+  fill: #666666;
+}
+
+.emotion-15:active {
+  color: #444444;
+}
+
+.emotion-15:active svg path {
+  fill: #444444;
+}
+
+.emotion-14 > svg:last-of-type {
+  height: 0.7em;
+  width: 0.7em;
+  margin-right: 0;
+  margin-left: 0.25em;
+  bottom: auto;
+  vertical-align: inherit;
+}
+
+.emotion-17 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emotion-17 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-17 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-17 h3 {
+  font-size: 20px;
+}
+
+.emotion-17 h4 {
+  font-size: 16px;
+}
+
+.emotion-17 h5 {
+  font-size: 14px;
+}
+
+.emotion-17 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-17 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-17 pre pre,
+.emotion-17 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-17 pre pre code,
+.emotion-17 pre.hljs code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-17 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-17 pre code,
+.emotion-17 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-17 body > *:first-of-type {
+  margin-top: 0 !important;
+}
+
+.emotion-17 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-17 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-17 a.absent {
+  color: #cc0000;
+}
+
+.emotion-17 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-17 h1,
+.emotion-17 h2,
+.emotion-17 h3,
+.emotion-17 h4,
+.emotion-17 h5,
+.emotion-17 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-17 h2:first-of-type,
+.emotion-17 h1:first-of-type,
+.emotion-17 h1:first-of-type + h2,
+.emotion-17 h3:first-of-type,
+.emotion-17 h4:first-of-type,
+.emotion-17 h5:first-of-type,
+.emotion-17 h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 h1:hover a.anchor,
+.emotion-17 h2:hover a.anchor,
+.emotion-17 h3:hover a.anchor,
+.emotion-17 h4:hover a.anchor,
+.emotion-17 h5:hover a.anchor,
+.emotion-17 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-17 h1 tt,
+.emotion-17 h1 code {
+  font-size: inherit;
+}
+
+.emotion-17 h2 tt,
+.emotion-17 h2 code {
+  font-size: inherit;
+}
+
+.emotion-17 h3 tt,
+.emotion-17 h3 code {
+  font-size: inherit;
+}
+
+.emotion-17 h4 tt,
+.emotion-17 h4 code {
+  font-size: inherit;
+}
+
+.emotion-17 h5 tt,
+.emotion-17 h5 code {
+  font-size: inherit;
+}
+
+.emotion-17 h6 tt,
+.emotion-17 h6 code {
+  font-size: inherit;
+}
+
+.emotion-17 p,
+.emotion-17 blockquote,
+.emotion-17 ul,
+.emotion-17 ol,
+.emotion-17 dl,
+.emotion-17 li,
+.emotion-17 table,
+.emotion-17 pre {
+  margin: 15px 0;
+}
+
+.emotion-17 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-17 body > h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 body > h1:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 body > h1:first-of-type + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 body > h3:first-of-type,
+.emotion-17 body > h4:first-of-type,
+.emotion-17 body > h5:first-of-type,
+.emotion-17 body > h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 a:first-of-type h1,
+.emotion-17 a:first-of-type h2,
+.emotion-17 a:first-of-type h3,
+.emotion-17 a:first-of-type h4,
+.emotion-17 a:first-of-type h5,
+.emotion-17 a:first-of-type h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 h1 p,
+.emotion-17 h2 p,
+.emotion-17 h3 p,
+.emotion-17 h4 p,
+.emotion-17 h5 p,
+.emotion-17 h6 p {
+  margin-top: 0;
+}
+
+.emotion-17 li p.first {
+  display: inline-block;
+}
+
+.emotion-17 ul,
+.emotion-17 ol {
+  padding-left: 30px;
+}
+
+.emotion-17 ul :first-of-type,
+.emotion-17 ol :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-17 ul :last-child,
+.emotion-17 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-17 dl {
+  padding: 0;
+}
+
+.emotion-17 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-17 dl dt:first-of-type {
+  padding: 0;
+}
+
+.emotion-17 dl dt > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-17 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-17 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-17 dl dd > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-17 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-17 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-17 blockquote > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-17 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-17 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-17 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-17 table tr:nth-of-type(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-17 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-17 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-17 table tr th :first-of-type,
+.emotion-17 table tr td :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-17 table tr th :last-child,
+.emotion-17 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-17 img {
+  max-width: 100%;
+}
+
+.emotion-17 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-17 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-17 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-17 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-17 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-17 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-17 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-17 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-17 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-17 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-17 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-17 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-17 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-17 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-17 code,
+.emotion-17 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+}
+
+.emotion-10 {
+  background: #E1FFD4;
+  color: #66BF3C;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.emotion-31 {
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-23 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-20 {
+  overflow-y: auto;
+  overflow-x: auto;
+  position: relative;
+}
+
+.emotion-20 code {
+  padding-right: 10px;
+}
+
+.emotion-20 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-20 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-20 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-20 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-20 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-20 * .token.string {
+  color: #A31515;
+}
+
+.emotion-20 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-20 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-20 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-20 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-20 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-20 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-20 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-20 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-20 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-20 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-20 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-20 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-20 * .token.function {
+  color: #393A34;
+}
+
+.emotion-20 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-20 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-20 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-20 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-20 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-20 * .token.tag {
+  color: #800000;
+}
+
+.emotion-20 * .token.selector {
+  color: #800000;
+}
+
+.emotion-20 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-20 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-20 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-20 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-20 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-20 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-20 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-20 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-20 * .namespace {
+  opacity: 0.7;
+}
+
+.emotion-19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 10px;
+}
+
+.emotion-18 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-22 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #FFFFFF;
+}
+
+.emotion-21 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #333333;
+  background: #FFFFFF;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(0,0,0,.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-21:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-21 + * {
+  border-left: 1px solid rgba(0,0,0,.1);
+  border-radius: 0;
+}
+
+.emotion-21:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+  outline: 0 none;
+}
+
+<div
+  style="position:relative;height:calc(100vh);width:calc(100vw)"
+>
+  <div
+    class="emotion-42"
+  >
+    <div
+      class="emotion-8"
+      data-simplebar="true"
+    >
+      <div
+        class="simplebar-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer-wrapper"
+        >
+          <div
+            class="simplebar-height-auto-observer"
+          />
+        </div>
+        <div
+          class="simplebar-mask"
+        >
+          <div
+            class="simplebar-offset"
+          >
+            <div
+              class="simplebar-content"
+            >
+              <div
+                class="emotion-7"
+              >
+                <div
+                  class="emotion-2"
+                >
+                  <div
+                    class="emotion-1"
+                    role="tablist"
+                  >
+                    <button
+                      class="emotion-0"
+                      role="tab"
+                      type="button"
+                    >
+                      About
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="emotion-6"
+                >
+                  <button
+                    class="emotion-5"
+                  >
+                    <svg
+                      class="emotion-4"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        class="emotion-3"
+                        d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="simplebar-placeholder"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-horizontal"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-vertical"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+    </div>
+    <div
+      class="emotion-41"
+    >
+      <div
+        class="emotion-40"
+        role="tabpanel"
+      >
+        <div
+          class="emotion-39"
+        >
+          <header
+            class="emotion-9"
+          >
+            <svg
+              title="Storybook icon"
+              viewBox="0 0 64 64"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                id="Artboard"
+                stroke="none"
+                stroke-width="1"
+              >
+                <path
+                  d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
+                  fill="#FF4785"
+                  fill-rule="nonzero"
+                  id="path-1"
+                />
+                <path
+                  d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
+                  fill="#FFFFFF"
+                  fill-rule="nonzero"
+                  id="path9_fill-path"
+                />
+                <path
+                  d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
+                  fill="#FFFFFF"
+                  id="Path"
+                />
+              </g>
+            </svg>
+            Storybook 5.0.0
+          </header>
+          <div
+            class="emotion-10"
+          >
+            Storybook 5.0.3 is available. Upgrade from 5.0.0 now.
+          </div>
+          <div
+            class="emotion-16"
+          >
+            <span
+              class="emotion-11"
+            >
+              5.0.3 Changelog
+            </span>
+            <a
+              class="emotion-15"
+              href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
+              target="_blank"
+            >
+              <span
+                class="emotion-14"
+              >
+                Read full changelog
+                <svg
+                  class="emotion-4"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div
+            class="emotion-17"
+          >
+            <ul>
+              <li>
+                upgrade webpack & babel to latest
+              </li>
+              <li>
+                new addParameters and third argument to .add to pass data to addons
+              </li>
+              <li>
+                added the ability to theme storybook
+              </li>
+              <li>
+                improved ui for mobile devices
+              </li>
+              <li>
+                improved performance of addon-knobs
+              </li>
+            </ul>
+          </div>
+          <div
+            class="emotion-31"
+          >
+            <div
+              class="emotion-17"
+            >
+              <p>
+                <b>
+                  Upgrade all Storybook packages to latest:
+                </b>
+              </p>
+              <div
+                class="emotion-23"
+              >
+                <div
+                  class="emotion-20"
+                  data-simplebar="true"
+                >
+                  <div
+                    class="simplebar-wrapper"
+                  >
+                    <div
+                      class="simplebar-height-auto-observer-wrapper"
+                    >
+                      <div
+                        class="simplebar-height-auto-observer"
+                      />
+                    </div>
+                    <div
+                      class="simplebar-mask"
+                    >
+                      <div
+                        class="simplebar-offset"
+                      >
+                        <div
+                          class="simplebar-content"
+                        >
+                          <pre
+                            class="hljs emotion-19"
+                          >
+                            <code
+                              class="emotion-18"
+                            >
+                              npx npm-check-updates 
+                              <span
+                                class="token string"
+                              >
+                                '/storybook/'
+                              </span>
+                               -u 
+                              <span
+                                class="token operator"
+                              >
+                                &&
+                              </span>
+                               yarn
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="simplebar-placeholder"
+                    />
+                  </div>
+                  <div
+                    class="simplebar-track simplebar-horizontal"
+                  >
+                    <div
+                      class="simplebar-scrollbar"
+                    />
+                  </div>
+                  <div
+                    class="simplebar-track simplebar-vertical"
+                  >
+                    <div
+                      class="simplebar-scrollbar"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="emotion-22"
+                >
+                  <button
+                    class="emotion-21"
+                  >
+                    Copy
+                  </button>
+                </div>
+              </div>
+              <p>
+                Alternatively, if you're using yarn run the following command, and check all Storybook related packages:
+              </p>
+              <div
+                class="emotion-23"
+              >
+                <div
+                  class="emotion-20"
+                  data-simplebar="true"
+                >
+                  <div
+                    class="simplebar-wrapper"
+                  >
+                    <div
+                      class="simplebar-height-auto-observer-wrapper"
+                    >
+                      <div
+                        class="simplebar-height-auto-observer"
+                      />
+                    </div>
+                    <div
+                      class="simplebar-mask"
+                    >
+                      <div
+                        class="simplebar-offset"
+                      >
+                        <div
+                          class="simplebar-content"
+                        >
+                          <pre
+                            class="hljs emotion-19"
+                          >
+                            <code
+                              class="emotion-18"
+                            >
+                              yarn upgrade-interactive --latest
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="simplebar-placeholder"
+                    />
+                  </div>
+                  <div
+                    class="simplebar-track simplebar-horizontal"
+                  >
+                    <div
+                      class="simplebar-scrollbar"
+                    />
+                  </div>
+                  <div
+                    class="simplebar-track simplebar-vertical"
+                  >
+                    <div
+                      class="simplebar-scrollbar"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="emotion-22"
+                >
+                  <button
+                    class="emotion-21"
+                  >
+                    Copy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="emotion-38"
+          >
+            <a
+              class="emotion-33"
+              href="https://storybook.js.org"
+            >
+              <span
+                class="emotion-32"
+              >
+                Docs
+              </span>
+            </a>
+            <a
+              class="emotion-33"
+              href="https://github.com/storybooks/storybook"
+            >
+              <span
+                class="emotion-32"
+              >
+                GitHub
+              </span>
+            </a>
+            <a
+              class="emotion-33"
+              href="https://storybook.js.org/support"
+            >
+              <span
+                class="emotion-32"
+              >
+                Support
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
+.emotion-28 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-8 {
+  overflow-y: hidden;
+  overflow-x: auto;
+  color: #999999;
+  width: 100%;
+  height: 40px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 40px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-2 > * {
+  margin-left: 15px;
+}
+
+.emotion-1 {
+  overflow: hidden;
+}
+
+.emotion-1:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 30px;
+}
+
+.emotion-6 > * {
+  margin-right: 15px;
+}
+
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-27 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  overflow: auto;
+}
+
+.emotion-27 > *:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+.emotion-5 {
+  height: 40px;
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+}
+
+.emotion-5:hover,
+.emotion-5:focus {
+  outline: 0 none;
+  color: #1EA7FD;
+}
+
+.emotion-5 > svg {
+  width: 15px;
+}
+
+.emotion-24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+  font-weight: 700;
+}
+
+.emotion-24 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-19 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-19 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-19:hover,
+.emotion-19:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-19:hover svg path,
+.emotion-19:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-19:active {
+  color: #028ee6;
+}
+
+.emotion-19:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-19 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-19 svg path {
+  fill: #999999;
+}
+
+.emotion-19:hover {
+  color: #666666;
+}
+
+.emotion-19:hover svg path {
+  fill: #666666;
+}
+
+.emotion-19:active {
+  color: #444444;
+}
+
+.emotion-19:active svg path {
+  fill: #444444;
+}
+
+.emotion-26 {
+  display: block;
+}
+
+.emotion-25 {
+  padding: 3rem 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emotion-9 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 900;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-9 > svg {
+  height: 32px;
+  width: auto;
+  margin-right: 8px;
+}
+
+.emotion-10 {
+  background: #EAF3FC;
+  color: #333333;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: .75rem;
+}
+
+.emotion-11 {
+  -webkit-letter-spacing: 0.35em;
+  -moz-letter-spacing: 0.35em;
+  -ms-letter-spacing: 0.35em;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 24px;
+  color: #999999;
+}
+
+.emotion-15 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+  font-size: 12px;
+}
+
+.emotion-15 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-15:hover,
+.emotion-15:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-15:hover svg path,
+.emotion-15:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-15:active {
+  color: #028ee6;
+}
+
+.emotion-15:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-15 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-15 svg path {
+  fill: #999999;
+}
+
+.emotion-15:hover {
+  color: #666666;
+}
+
+.emotion-15:hover svg path {
+  fill: #666666;
+}
+
+.emotion-15:active {
+  color: #444444;
+}
+
+.emotion-15:active svg path {
+  fill: #444444;
+}
+
+.emotion-14 > svg:last-of-type {
+  height: 0.7em;
+  width: 0.7em;
+  margin-right: 0;
+  margin-left: 0.25em;
+  bottom: auto;
+  vertical-align: inherit;
+}
+
+.emotion-17 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emotion-17 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-17 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-17 h3 {
+  font-size: 20px;
+}
+
+.emotion-17 h4 {
+  font-size: 16px;
+}
+
+.emotion-17 h5 {
+  font-size: 14px;
+}
+
+.emotion-17 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-17 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-17 pre pre,
+.emotion-17 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-17 pre pre code,
+.emotion-17 pre.hljs code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-17 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-17 pre code,
+.emotion-17 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-17 body > *:first-of-type {
+  margin-top: 0 !important;
+}
+
+.emotion-17 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-17 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-17 a.absent {
+  color: #cc0000;
+}
+
+.emotion-17 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-17 h1,
+.emotion-17 h2,
+.emotion-17 h3,
+.emotion-17 h4,
+.emotion-17 h5,
+.emotion-17 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-17 h2:first-of-type,
+.emotion-17 h1:first-of-type,
+.emotion-17 h1:first-of-type + h2,
+.emotion-17 h3:first-of-type,
+.emotion-17 h4:first-of-type,
+.emotion-17 h5:first-of-type,
+.emotion-17 h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 h1:hover a.anchor,
+.emotion-17 h2:hover a.anchor,
+.emotion-17 h3:hover a.anchor,
+.emotion-17 h4:hover a.anchor,
+.emotion-17 h5:hover a.anchor,
+.emotion-17 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-17 h1 tt,
+.emotion-17 h1 code {
+  font-size: inherit;
+}
+
+.emotion-17 h2 tt,
+.emotion-17 h2 code {
+  font-size: inherit;
+}
+
+.emotion-17 h3 tt,
+.emotion-17 h3 code {
+  font-size: inherit;
+}
+
+.emotion-17 h4 tt,
+.emotion-17 h4 code {
+  font-size: inherit;
+}
+
+.emotion-17 h5 tt,
+.emotion-17 h5 code {
+  font-size: inherit;
+}
+
+.emotion-17 h6 tt,
+.emotion-17 h6 code {
+  font-size: inherit;
+}
+
+.emotion-17 p,
+.emotion-17 blockquote,
+.emotion-17 ul,
+.emotion-17 ol,
+.emotion-17 dl,
+.emotion-17 li,
+.emotion-17 table,
+.emotion-17 pre {
+  margin: 15px 0;
+}
+
+.emotion-17 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-17 body > h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 body > h1:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 body > h1:first-of-type + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 body > h3:first-of-type,
+.emotion-17 body > h4:first-of-type,
+.emotion-17 body > h5:first-of-type,
+.emotion-17 body > h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 a:first-of-type h1,
+.emotion-17 a:first-of-type h2,
+.emotion-17 a:first-of-type h3,
+.emotion-17 a:first-of-type h4,
+.emotion-17 a:first-of-type h5,
+.emotion-17 a:first-of-type h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-17 h1 p,
+.emotion-17 h2 p,
+.emotion-17 h3 p,
+.emotion-17 h4 p,
+.emotion-17 h5 p,
+.emotion-17 h6 p {
+  margin-top: 0;
+}
+
+.emotion-17 li p.first {
+  display: inline-block;
+}
+
+.emotion-17 ul,
+.emotion-17 ol {
+  padding-left: 30px;
+}
+
+.emotion-17 ul :first-of-type,
+.emotion-17 ol :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-17 ul :last-child,
+.emotion-17 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-17 dl {
+  padding: 0;
+}
+
+.emotion-17 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-17 dl dt:first-of-type {
+  padding: 0;
+}
+
+.emotion-17 dl dt > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-17 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-17 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-17 dl dd > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-17 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-17 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-17 blockquote > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-17 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-17 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-17 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-17 table tr:nth-of-type(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-17 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-17 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-17 table tr th :first-of-type,
+.emotion-17 table tr td :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-17 table tr th :last-child,
+.emotion-17 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-17 img {
+  max-width: 100%;
+}
+
+.emotion-17 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-17 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-17 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-17 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-17 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-17 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-17 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-17 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-17 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-17 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-17 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-17 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-17 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-17 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-17 code,
+.emotion-17 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+}
+
+<div
+  style="position:relative;height:calc(100vh);width:calc(100vw)"
+>
+  <div
+    class="emotion-28"
+  >
+    <div
+      class="emotion-8"
+      data-simplebar="true"
+    >
+      <div
+        class="simplebar-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer-wrapper"
+        >
+          <div
+            class="simplebar-height-auto-observer"
+          />
+        </div>
+        <div
+          class="simplebar-mask"
+        >
+          <div
+            class="simplebar-offset"
+          >
+            <div
+              class="simplebar-content"
+            >
+              <div
+                class="emotion-7"
+              >
+                <div
+                  class="emotion-2"
+                >
+                  <div
+                    class="emotion-1"
+                    role="tablist"
+                  >
+                    <button
+                      class="emotion-0"
+                      role="tab"
+                      type="button"
+                    >
+                      About
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="emotion-6"
+                >
+                  <button
+                    class="emotion-5"
+                  >
+                    <svg
+                      class="emotion-4"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        class="emotion-3"
+                        d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="simplebar-placeholder"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-horizontal"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+      <div
+        class="simplebar-track simplebar-vertical"
+      >
+        <div
+          class="simplebar-scrollbar"
+        />
+      </div>
+    </div>
+    <div
+      class="emotion-27"
+    >
+      <div
+        class="emotion-26"
+        role="tabpanel"
+      >
+        <div
+          class="emotion-25"
+        >
+          <header
+            class="emotion-9"
+          >
+            <svg
+              title="Storybook icon"
+              viewBox="0 0 64 64"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                id="Artboard"
+                stroke="none"
+                stroke-width="1"
+              >
+                <path
+                  d="M8.04798541,58.7875918 L6.07908839,6.32540407 C6.01406344,4.5927838 7.34257463,3.12440831 9.07303814,3.01625434 L53.6958037,0.227331489 C55.457209,0.117243658 56.974354,1.45590096 57.0844418,3.21730626 C57.0885895,3.28366922 57.0906648,3.35014546 57.0906648,3.41663791 L57.0906648,60.5834697 C57.0906648,62.3483119 55.6599776,63.7789992 53.8951354,63.7789992 C53.847325,63.7789992 53.7995207,63.7779262 53.7517585,63.775781 L11.0978899,61.8600599 C9.43669044,61.7854501 8.11034889,60.4492961 8.04798541,58.7875918 Z"
+                  fill="#FF4785"
+                  fill-rule="nonzero"
+                  id="path-1"
+                />
+                <path
+                  d="M35.9095005,24.1768792 C35.9095005,25.420127 44.2838488,24.8242707 45.4080313,23.9509748 C45.4080313,15.4847538 40.8652557,11.0358878 32.5466666,11.0358878 C24.2280775,11.0358878 19.5673077,15.553972 19.5673077,22.3311017 C19.5673077,34.1346028 35.4965208,34.3605071 35.4965208,40.7987804 C35.4965208,42.606015 34.6115646,43.6790606 32.6646607,43.6790606 C30.127786,43.6790606 29.1248356,42.3834613 29.2428298,37.9783269 C29.2428298,37.0226907 19.5673077,36.7247626 19.2723223,37.9783269 C18.5211693,48.6535354 25.1720308,51.7326752 32.7826549,51.7326752 C40.1572906,51.7326752 45.939005,47.8018145 45.939005,40.6858282 C45.939005,28.035186 29.7738035,28.3740425 29.7738035,22.1051974 C29.7738035,19.5637737 31.6617103,19.2249173 32.7826549,19.2249173 C33.9625966,19.2249173 36.0864917,19.4328883 35.9095005,24.1768792 Z"
+                  fill="#FFFFFF"
+                  fill-rule="nonzero"
+                  id="path9_fill-path"
+                />
+                <path
+                  d="M44.0461638,0.830433986 L50.1874092,0.446606143 L50.443532,7.7810017 C50.4527198,8.04410717 50.2468789,8.26484453 49.9837734,8.27403237 C49.871115,8.27796649 49.7607078,8.24184808 49.6721567,8.17209069 L47.3089847,6.3104681 L44.5110468,8.43287463 C44.3012992,8.591981 44.0022839,8.55092814 43.8431776,8.34118051 C43.7762017,8.25288717 43.742082,8.14401677 43.7466857,8.03329059 L44.0461638,0.830433986 Z"
+                  fill="#FFFFFF"
+                  id="Path"
+                />
+              </g>
+            </svg>
+            Storybook 5.0.0
+          </header>
+          <div
+            class="emotion-10"
+          >
+            Looking good! You're up to date.
+          </div>
+          <div
+            class="emotion-16"
+          >
+            <span
+              class="emotion-11"
+            >
+              5.0.0 Changelog
+            </span>
+            <a
+              class="emotion-15"
+              href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
+              target="_blank"
+            >
+              <span
+                class="emotion-14"
+              >
+                Read full changelog
+                <svg
+                  class="emotion-4"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    class="emotion-3"
+                    d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div
+            class="emotion-17"
+          >
+            <ul>
+              <li>
+                upgrade webpack & babel to latest
+              </li>
+              <li>
+                new addParameters and third argument to .add to pass data to addons
+              </li>
+              <li>
+                added the ability to theme storybook
+              </li>
+              <li>
+                improved ui for mobile devices
+              </li>
+              <li>
+                improved performance of addon-knobs
+              </li>
+            </ul>
+          </div>
+          <div
+            class="emotion-24"
+          >
+            <a
+              class="emotion-19"
+              href="https://storybook.js.org"
+            >
+              <span
+                class="emotion-18"
+              >
+                Docs
+              </span>
+            </a>
+            <a
+              class="emotion-19"
+              href="https://github.com/storybooks/storybook"
+            >
+              <span
+                class="emotion-18"
+              >
+                GitHub
+              </span>
+            </a>
+            <a
+              class="emotion-19"
+              href="https://storybook.js.org/support"
+            >
+              <span
+                class="emotion-18"
+              >
+                Support
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

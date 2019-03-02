@@ -55,6 +55,11 @@ jobs:
             cd examples/cra-kitchen-sink
             yarn build-storybook
       - run:
+          name: Build react typescript kitchen-sink
+          command: |
+            cd examples/cra-ts-kitchen-sink
+            yarn build-storybook
+      - run:
           name: Build vue kitchen-sink
           command: |
             cd examples/vue-kitchen-sink
@@ -109,9 +114,9 @@ jobs:
           command: |
             cd examples/official-storybook
             yarn build-storybook
-      - run:
-          name: Run image snapshots
-          command: yarn test --image
+      # - run:
+      #     name: Run image snapshots
+      #     command: yarn test --image
       - store_artifacts:
           path: examples/official-storybook/image-snapshots/__image_snapshots__
           destination: official_storybook_image_snapshots
@@ -125,6 +130,11 @@ jobs:
           name: Run react kitchen-sink (smoke test)
           command: |
             cd examples/cra-kitchen-sink
+            yarn storybook --smoke-test --quiet
+      - run:
+          name: Run react typescript kitchen-sink (smoke test)
+          command: |
+            cd examples/cra-ts-kitchen-sink
             yarn storybook --smoke-test --quiet
       - run:
           name: Run vue kitchen-sink (smoke test)

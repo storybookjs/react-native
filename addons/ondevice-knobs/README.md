@@ -18,7 +18,7 @@ Refer to its documentation to understand how to use knobs**
 First of all, you need to install knobs into your project.
 
 ```sh
-npm install @storybook/addon-ondevice-knobs 
+yarn add @storybook/addon-ondevice-knobs @storybook/addon-knobs --dev
 ```
 
 Then create a file called `rn-addons.js` in your storybook config.
@@ -26,6 +26,7 @@ Then create a file called `rn-addons.js` in your storybook config.
 ```js
 import '@storybook/addon-ondevice-knobs/register';
 ```
+> `@storybook/addon-ondevice-knobs` use register only.
 
 
 Then import `rn-addons.js` next to your `getStorybookUI` call.
@@ -36,3 +37,12 @@ import './rn-addons';
 Now, write your stories with knobs.
 
 **Refer to [@storybook/addon-knobs](https://github.com/storybooks/storybook/blob/master/addons/knobs) to learn how to write stories.**
+
+**Note:** you'll still have to install `@storybook/addon-knobs` as well and import `withKnobs` and all knob types _(e.g. `select`, `text` etc)_ from that module.
+
+```js
+// Example
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+
+// Write your story...
+```

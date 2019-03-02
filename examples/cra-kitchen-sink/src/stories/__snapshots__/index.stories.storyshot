@@ -1,325 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button addons composition 1`] = `
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: .88em;
-  font-family: Menlo,Monaco,"Courier New",monospace;
-  background-color: #fafafa;
-  padding: .5rem;
-  line-height: 1.5;
-  overflow-x: scroll;
-}
-
-.emotion-2 {
-  overflow: hidden;
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 3px 10px;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.emotion-2:hover {
-  background-color: #f4f7fa;
-  border-color: #ddd;
-}
-
-.emotion-2:active {
-  background-color: #e9ecef;
-  border-color: #ccc;
-}
-
-.emotion-0 {
-  -webkit-transition: -webkit-transform .2s ease;
-  -webkit-transition: transform .2s ease;
-  transition: transform .2s ease;
-  height: 16px;
-  -webkit-transform: translateY(-100%) translateY(-6px);
-  -ms-transform: translateY(-100%) translateY(-6px);
-  transform: translateY(-100%) translateY(-6px);
-}
-
-<div>
-  <div
-    style="position:relative;z-index:0"
-  >
-    <div>
-      click the 
-      <span
-        style="font-family:sans-serif;font-size:12px;text-decoration:none;background:rgb(34, 136, 204);color:rgb(255, 255, 255);padding:5px 15px;margin:10px;border-radius:0px 0px 0px 5px"
-      >
-         Show Info 
-      </span>
-       label in top right for info about "addons composition"
-    </div>
-  </div>
-  <button
-    class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
-    type="button"
-  >
-    Show Info
-  </button>
-  <div
-    class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
-  >
-    <button
-      class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
-      type="button"
-    >
-      ×
-    </button>
-    <div>
-      <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
-      >
-        <div
-          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
-        >
-          <h1
-            style="margin:0;padding:0;font-size:35px"
-          >
-            Button
-          </h1>
-          <h2
-            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
-          >
-            addons composition
-          </h2>
-        </div>
-        <div
-          style="margin-bottom:0"
-        >
-          <div
-            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
-          >
-            see Notes panel for composition info
-          </div>
-        </div>
-        <div>
-          <h1
-            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
-          >
-            Story Source
-          </h1>
-          <pre
-            class="emotion-4 emotion-5"
-          >
-            <div>
-              <div>
-                <div
-                  style="padding-left:18px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
-                  >
-                    &lt;div
-                  </span>
-                  <span />
-                  <span
-                    style="color:#444"
-                  >
-                    &gt;
-                  </span>
-                </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
-                  >
-                    click the 
-                  </span>
-                </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
-                  >
-                    &lt;InfoButton
-                  </span>
-                  <span />
-                  <span
-                    style="color:#444"
-                  >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
-                  >
-                     label in top right for info about "
-                  </span>
-                </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
-                  >
-                    addons composition
-                  </span>
-                </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
-                  >
-                    "
-                  </span>
-                </div>
-                <div
-                  style="padding-left:18px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
-                  >
-                    &lt;/div&gt;
-                  </span>
-                </div>
-              </div>
-            </div>
-            <button
-              class="emotion-2 emotion-3"
-            >
-              <div
-                class="emotion-0 emotion-1"
-              >
-                <div
-                  style="margin-bottom:6px"
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style="margin:20px 0 0 0"
-            >
-              "InfoButton" Component
-            </h2>
-            <small>
-              No propTypes defined!
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Button with new info 1`] = `
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: .88em;
-  font-family: Menlo,Monaco,"Courier New",monospace;
-  background-color: #fafafa;
-  padding: .5rem;
-  line-height: 1.5;
-  overflow-x: scroll;
-}
-
-.emotion-2 {
-  overflow: hidden;
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 3px 10px;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.emotion-2:hover {
-  background-color: #f4f7fa;
-  border-color: #ddd;
-}
-
-.emotion-2:active {
-  background-color: #e9ecef;
-  border-color: #ccc;
-}
-
-.emotion-0 {
-  -webkit-transition: -webkit-transform .2s ease;
-  -webkit-transition: transform .2s ease;
-  transition: transform .2s ease;
-  height: 16px;
-  -webkit-transform: translateY(-100%) translateY(-6px);
-  -ms-transform: translateY(-100%) translateY(-6px);
-  transform: translateY(-100%) translateY(-6px);
-}
-
-.emotion-56 {
-  border-collapse: collapse;
-}
-
-.emotion-6 {
-  padding: 2px 6px;
-  border: 1px solid #ccc;
-}
-
-.emotion-16 {
-  padding: 2px 6px;
-  border: 1px solid #ccc;
-  white-space: nowrap;
-  font-family: Monaco,Consolas,"Courier New",monospace;
-}
-
 <div>
   <div
     style="position:relative;z-index:0"
@@ -327,13 +8,15 @@ exports[`Storyshots Button with new info 1`] = `
     <div
       title="the best container ever"
     >
-      click the 
-      <span
-        style="font-family:sans-serif;font-size:12px;text-decoration:none;background:rgb(34, 136, 204);color:rgb(255, 255, 255);padding:5px 15px;margin:10px;border-radius:0px 0px 0px 5px"
-      >
-         Show Info 
+      <span>
+        click the 
+        <span
+          style="font-family:sans-serif;font-size:12px;text-decoration:none;background:rgb(34, 136, 204);color:rgb(255, 255, 255);padding:5px 15px;margin:10px;border-radius:0px 0px 0px 5px"
+        >
+           Show Info 
+        </span>
+         label in top right for info about "with new info"
       </span>
-       label in top right for info about "with new info"
     </div>
   </div>
   <button
@@ -345,7 +28,7 @@ exports[`Storyshots Button with new info 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -356,7 +39,7 @@ exports[`Storyshots Button with new info 1`] = `
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -376,7 +59,7 @@ exports[`Storyshots Button with new info 1`] = `
           style="margin-bottom:0"
         >
           <div
-            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+            style="font-size:15px"
           >
             Use the 
             <a
@@ -397,7 +80,7 @@ exports[`Storyshots Button with new info 1`] = `
             Story Source
           </h1>
           <pre
-            class="emotion-4 emotion-5"
+            style="display:flex;justify-content:space-between;align-items:center;font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
           >
             <div>
               <div>
@@ -416,56 +99,82 @@ exports[`Storyshots Button with new info 1`] = `
                     &gt;
                   </span>
                 </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
+                <div>
+                  <div
+                    style="padding-left:33px;padding-right:3px"
                   >
-                    click the 
-                  </span>
-                </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
+                    <span
+                      style="color:#444"
+                    >
+                      &lt;span
+                    </span>
+                    <span />
+                    <span
+                      style="color:#444"
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <div
+                    style="padding-left:48px;padding-right:3px"
                   >
-                    &lt;InfoButton
-                  </span>
-                  <span />
-                  <span
-                    style="color:#444"
+                    <span
+                      style="color:#444"
+                    >
+                      click the 
+                    </span>
+                  </div>
+                  <div
+                    style="padding-left:48px;padding-right:3px"
                   >
-                    /&gt;
-                  </span>
-                </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
+                    <span
+                      style="color:#444"
+                    >
+                      &lt;InfoButton
+                    </span>
+                    <span />
+                    <span
+                      style="color:#444"
+                    >
+                      /&gt;
+                    </span>
+                  </div>
+                  <div
+                    style="padding-left:48px;padding-right:3px"
                   >
-                     label in top right for info about "
-                  </span>
-                </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
+                    <span
+                      style="color:#444"
+                    >
+                       label in top right for info about "
+                    </span>
+                  </div>
+                  <div
+                    style="padding-left:48px;padding-right:3px"
                   >
-                    with new info
-                  </span>
-                </div>
-                <div
-                  style="padding-left:33px;padding-right:3px"
-                >
-                  <span
-                    style="color:#444"
+                    <span
+                      style="color:#444"
+                    >
+                      with new info
+                    </span>
+                  </div>
+                  <div
+                    style="padding-left:48px;padding-right:3px"
                   >
-                    "
-                  </span>
+                    <span
+                      style="color:#444"
+                    >
+                      "
+                    </span>
+                  </div>
+                  <div
+                    style="padding-left:33px;padding-right:3px"
+                  >
+                    <span
+                      style="color:#444"
+                    >
+                      &lt;/span&gt;
+                    </span>
+                  </div>
                 </div>
                 <div
                   style="padding-left:18px;padding-right:3px"
@@ -479,20 +188,10 @@ exports[`Storyshots Button with new info 1`] = `
               </div>
             </div>
             <button
-              class="emotion-2 emotion-3"
+              style="background-color:rgb(255, 255, 255);cursor:pointer;font-size:13px;align-self:flex-start;flex-shrink:0;overflow:hidden;border-width:1px;border-style:solid;border-color:rgb(238, 238, 238);border-image:initial;border-radius:3px;padding:3px 10px"
+              type="button"
             >
-              <div
-                class="emotion-0 emotion-1"
-              >
-                <div
-                  style="margin-bottom:6px"
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
+              Copy
             </button>
           </pre>
         </div>
@@ -503,39 +202,29 @@ exports[`Storyshots Button with new info 1`] = `
             Prop Types
           </h1>
           <div>
-            <h2
+            <h3
               style="margin:20px 0 0 0"
             >
               "Container" Component
-            </h2>
+            </h3>
             <table
-              class="emotion-56 emotion-57"
+              class="info-table"
             >
               <thead>
                 <tr>
-                  <th
-                    class="emotion-6 emotion-7"
-                  >
+                  <th>
                     property
                   </th>
-                  <th
-                    class="emotion-6 emotion-7"
-                  >
+                  <th>
                     propType
                   </th>
-                  <th
-                    class="emotion-6 emotion-7"
-                  >
+                  <th>
                     required
                   </th>
-                  <th
-                    class="emotion-6 emotion-7"
-                  >
+                  <th>
                     default
                   </th>
-                  <th
-                    class="emotion-6 emotion-7"
-                  >
+                  <th>
                     description
                   </th>
                 </tr>
@@ -543,161 +232,123 @@ exports[`Storyshots Button with new info 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="emotion-16 emotion-17"
+                    class="info-table-monospace"
                   >
                     children
                   </td>
                   <td
-                    class="emotion-16 emotion-17"
+                    class="info-table-monospace"
                   >
                     <span>
                       node
                     </span>
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  >
+                  <td>
                     yes
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  >
+                  <td>
                     -
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  />
+                  <td />
                 </tr>
                 <tr>
                   <td
-                    class="emotion-16 emotion-17"
+                    class="info-table-monospace"
                   >
                     isAmazing
                   </td>
                   <td
-                    class="emotion-16 emotion-17"
+                    class="info-table-monospace"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  >
+                  <td>
                     -
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  >
-                    <span
-                      style="color:#a11"
-                    >
+                  <td>
+                    <span>
                       false
                     </span>
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  />
+                  <td />
                 </tr>
                 <tr>
                   <td
-                    class="emotion-16 emotion-17"
+                    class="info-table-monospace"
                   >
                     age
                   </td>
                   <td
-                    class="emotion-16 emotion-17"
+                    class="info-table-monospace"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  >
+                  <td>
                     -
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  >
-                    <span
-                      style="color:#666"
-                    >
+                  <td>
+                    <span>
                       {
                       <span>
-                        <span
-                          style="color:#666"
-                        >
+                        <span>
                           isOld
                         </span>
                       </span>
                       : 
-                      <span
-                        style="color:#a11"
-                      >
+                      <span>
                         false
                       </span>
                       ,
                       <span>
-                        <span
-                          style="color:#666"
-                        >
+                        <span>
                           value
                         </span>
                       </span>
                       : 
-                      <span
-                        style="color:#a11"
-                      >
+                      <span>
                         0
                       </span>
                       }
                     </span>
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  />
+                  <td />
                 </tr>
                 <tr>
                   <td
-                    class="emotion-16 emotion-17"
+                    class="info-table-monospace"
                   >
                     title
                   </td>
                   <td
-                    class="emotion-16 emotion-17"
+                    class="info-table-monospace"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  >
+                  <td>
                     -
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  >
-                    <span
-                      style="color:#22a;word-break:break-word"
-                    >
+                  <td>
+                    <span>
                       the best container ever
                     </span>
                   </td>
-                  <td
-                    class="emotion-6 emotion-17"
-                  />
+                  <td />
                 </tr>
               </tbody>
             </table>
           </div>
           <div>
-            <h2
+            <h3
               style="margin:20px 0 0 0"
             >
               "InfoButton" Component
-            </h2>
+            </h3>
             <small>
               No propTypes defined!
             </small>
@@ -723,12 +374,7 @@ exports[`Storyshots Button with some emoji 1`] = `
   style="border:1px solid #eee;border-radius:3px;background-color:#FFFFFF;cursor:pointer;font-size:15px;padding:3px 10px;margin:10px"
   type="button"
 >
-  <span
-    aria-label="so cool"
-    role="img"
-  >
-    😀 😎 👍 💯
-  </span>
+  😀 😎 👍 💯
 </button>
 `;
 

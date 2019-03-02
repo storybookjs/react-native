@@ -1,0 +1,35 @@
+{
+  "name": "@storybook/router",
+  "version": "5.0.0-beta.3",
+  "description": "Core Storybook Router",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/router",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/router"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "@storybook/theming": "5.0.0-beta.3",
+    "memoizerific": "^1.11.3",
+    "qs": "^6.5.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

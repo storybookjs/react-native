@@ -1,15 +1,12 @@
 import addons from '@storybook/addons';
 import { EVENT_ID } from './events';
 
-function getLocation(context, locationsMap) {
-  return locationsMap[`${context.kind}@${context.story}`] || locationsMap[`@${context.story}`];
-}
+const getLocation = (context, locationsMap) => locationsMap[context.id];
 
 function setStorySource(context, source, locationsMap) {
-  const channel = addons.getChannel();
   const currentLocation = getLocation(context, locationsMap);
 
-  channel.emit(EVENT_ID, {
+  addons.getChannel().emit(EVENT_ID, {
     source,
     currentLocation,
     locationsMap,
@@ -17,8 +14,8 @@ function setStorySource(context, source, locationsMap) {
 }
 
 export function withStorySource(source, locationsMap = {}) {
-  return (story, context) => {
+  return (storyFn, context) => {
     setStorySource(context, source, locationsMap);
-    return story();
+    return storyFn();
   };
 }

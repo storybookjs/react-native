@@ -13,9 +13,9 @@ function bootstrapADocumentAndReturnANode() {
 function makeSureThatResultIsRenderedSomehow({ context, result, rootElement }) {
   if (!rootElement.firstChild) {
     riotForStorybook.render({
-      story: () => result,
+      storyFn: () => result,
       selectedKind: context.kind,
-      selectedStory: context.story,
+      selectedStory: context.name,
     });
   }
 }
@@ -23,7 +23,7 @@ function makeSureThatResultIsRenderedSomehow({ context, result, rootElement }) {
 function getRenderedTree(story, context) {
   const rootElement = bootstrapADocumentAndReturnANode();
 
-  const result = story.render(context);
+  const result = story.render();
 
   makeSureThatResultIsRenderedSomehow({ context, result, rootElement });
 

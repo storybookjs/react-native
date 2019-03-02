@@ -30,8 +30,10 @@
     "@storybook/channel-postmessage": "file:../../packs/storybook-channel-postmessage.tgz",
     "@storybook/channel-websocket": "file:../../packs/storybook-channel-websocket.tgz",
     "@storybook/channels": "file:../../packs/storybook-channels.tgz",
+    "@storybook/client-api": "file:../../packs/storybook-client-api.tgz",
     "@storybook/client-logger": "file:../../packs/storybook-client-logger.tgz",
     "@storybook/components": "file:../../packs/storybook-components.tgz",
+    "@storybook/router": "file:../../packs/storybook-router.tgz",
     "@storybook/core": "file:../../packs/storybook-core.tgz",
     "@storybook/core-events": "file:../../packs/storybook-core-events.tgz",
     "@storybook/node-logger": "file:../../packs/storybook-node-logger.tgz",
@@ -41,6 +43,7 @@
     "@storybook/addon-ondevice-knobs": "file:../../packs/storybook-addon-ondevice-knobs.tgz",
     "@storybook/addon-ondevice-notes": "file:../../packs/storybook-addon-ondevice-notes.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
+    "@storybook/theming": "file:../../packs/storybook-theming.tgz",
     "jest-expo": "^31.0.0",
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.6.0"

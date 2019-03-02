@@ -31,16 +31,20 @@ export default function(storyFn) {
   const wrapper = getWrapperDiv();
   wrapper.appendChild(inner);
 
-  const component = storyFn();
+  const element = storyFn();
 
-  if (typeof component === 'string') {
-    inner.innerHTML = component;
-  } else if (component instanceof Node) {
+  if (typeof element === 'string') {
+    inner.innerHTML = element;
+  } else if (element instanceof Node) {
     inner.innerHTML = '';
-    inner.appendChild(component);
+    inner.appendChild(element);
   } else {
-    return component;
+    return element;
   }
 
   return wrapper;
+}
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline();
 }

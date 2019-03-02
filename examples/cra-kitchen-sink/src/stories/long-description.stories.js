@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import centered from '@storybook/addon-centered';
+import centered from '@storybook/addon-centered/react';
 import { Button } from '@storybook/react/demo';
 
 storiesOf('Some really long story kind description', module)

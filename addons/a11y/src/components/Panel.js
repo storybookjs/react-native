@@ -1,108 +1,157 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 import { STORY_RENDERED } from '@storybook/core-events';
-import { ActionBar, ActionButton } from '@storybook/components';
+import { ActionBar, Icons } from '@storybook/components';
 
-import { CHECK_EVENT_ID, RERUN_EVENT_ID, REQUEST_CHECK_EVENT_ID } from '../shared';
+import { ScrollArea } from '@storybook/components/dist/ScrollArea/ScrollArea';
+import EVENTS from '../constants';
 
 import Tabs from './Tabs';
 import Report from './Report';
 
+const Icon = styled(Icons)(
+  {
+    height: '12px',
+    width: '12px',
+    marginRight: '4px',
+  },
+  ({ status, theme }) =>
+    status === 'running'
+      ? {
+          animation: `${theme.animation.rotate360} 1s linear infinite;`,
+        }
+      : {}
+);
+
 const Passes = styled.span(({ theme }) => ({
-  color: theme.successColor,
+  color: theme.color.positive,
 }));
 
 const Violations = styled.span(({ theme }) => ({
-  color: theme.failColor,
+  color: theme.color.negative,
 }));
 
-const PanelWrapper = styled.div({
-  height: '100%',
-  overflow: 'auto',
-  width: '100%',
-});
-
-class Panel extends Component {
+class A11YPanel extends Component {
   static propTypes = {
     active: PropTypes.bool.isRequired,
-    channel: PropTypes.shape({
+    api: PropTypes.shape({
       on: PropTypes.func,
       emit: PropTypes.func,
-      removeListener: PropTypes.func,
+      off: PropTypes.func,
     }).isRequired,
   };
 
   state = {
+    status: 'ready',
     passes: [],
     violations: [],
   };
 
   componentDidMount() {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.on(CHECK_EVENT_ID, this.onUpdate);
-    channel.on(STORY_RENDERED, this.requestCheck);
-    channel.on(RERUN_EVENT_ID, this.requestCheck);
+    api.on(STORY_RENDERED, this.request);
+    api.on(EVENTS.RESULT, this.onUpdate);
   }
 
   componentDidUpdate(prevProps) {
+    // TODO: might be able to remove this
     const { active } = this.props;
 
     if (!prevProps.active && active) {
-      this.requestCheck();
+      this.request();
     }
   }
 
   componentWillUnmount() {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.removeListener(CHECK_EVENT_ID, this.onUpdate);
-    channel.removeListener(STORY_RENDERED, this.requestCheck);
-    channel.removeListener(RERUN_EVENT_ID, this.requestCheck);
+    api.off(STORY_RENDERED, this.request);
+    api.off(EVENTS.RESULT, this.onUpdate);
   }
 
   onUpdate = ({ passes, violations }) => {
-    this.setState({
-      passes,
-      violations,
-    });
+    this.setState(
+      {
+        status: 'ran',
+        passes,
+        violations,
+      },
+      () => {
+        setTimeout(() => {
+          const { status } = this.state;
+          if (status === 'ran') {
+            this.setState({
+              status: 'ready',
+            });
+          }
+        }, 900);
+      }
+    );
   };
 
-  requestCheck = () => {
-    const { channel, active } = this.props;
+  request = () => {
+    const { api, active } = this.props;
 
     if (active) {
-      channel.emit(REQUEST_CHECK_EVENT_ID);
+      this.setState(
+        {
+          status: 'running',
+        },
+        () => {
+          api.emit(EVENTS.REQUEST);
+        }
+      );
     }
   };
 
   render() {
-    const { passes, violations } = this.state;
+    const { passes, violations, status } = this.state;
     const { active } = this.props;
 
+    let actionTitle;
+    if (status === 'ready') {
+      actionTitle = 'Rerun tests';
+    } else if (status === 'running') {
+      actionTitle = (
+        <Fragment>
+          <Icon inline icon="sync" status={status} /> Running test
+        </Fragment>
+      );
+    } else if (status === 'ran') {
+      actionTitle = (
+        <Fragment>
+          <Icon inline icon="check" /> Tests completed
+        </Fragment>
+      );
+    }
+
     return active ? (
-      <PanelWrapper>
-        <Tabs
-          tabs={[
-            {
-              label: <Violations>{violations.length} Violations</Violations>,
-              panel: <Report passes={false} items={violations} empty="No a11y violations found." />,
-            },
-            {
-              label: <Passes>{passes.length} Passes</Passes>,
-              panel: <Report passes items={passes} empty="No a11y check passed" />,
-            },
-          ]}
-        />
-        <ActionBar>
-          <ActionButton onClick={this.requestCheck}>RERUN TEST</ActionButton>
-        </ActionBar>
-      </PanelWrapper>
+      <Fragment>
+        <ScrollArea vertical horizontal>
+          <Tabs
+            key="tabs"
+            tabs={[
+              {
+                label: <Violations>{violations.length} Violations</Violations>,
+                panel: (
+                  <Report passes={false} items={violations} empty="No a11y violations found." />
+                ),
+              },
+              {
+                label: <Passes>{passes.length} Passes</Passes>,
+                panel: <Report passes items={passes} empty="No a11y check passed" />,
+              },
+            ]}
+          />
+        </ScrollArea>
+        <ActionBar key="actionbar" actionItems={[{ title: actionTitle, onClick: this.request }]} />
+      </Fragment>
     ) : null;
   }
 }
 
-export default Panel;
+export default A11YPanel;

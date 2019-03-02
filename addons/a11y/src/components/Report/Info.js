@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 const Wrapper = styled.div(({ theme }) => ({
-  backgroundColor: theme.barFill,
+  backgroundColor: theme.background.bar,
   padding: '12px',
   marginBottom: '10px',
 }));

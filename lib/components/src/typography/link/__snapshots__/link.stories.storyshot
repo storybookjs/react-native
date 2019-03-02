@@ -1,0 +1,664 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Basics|Link cancel w/ href 1`] = `
+.emotion-1 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-1 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-1:hover svg path,
+.emotion-1:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-1:active {
+  color: #028ee6;
+}
+
+.emotion-1:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+<a
+  class="emotion-1"
+  href="http://example.com"
+>
+  <span
+    class="emotion-0"
+  >
+    Link
+  </span>
+</a>
+`;
+
+exports[`Storyshots Basics|Link cancel w/ onClick 1`] = `
+.emotion-1 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-1 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-1:hover svg path,
+.emotion-1:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-1:active {
+  color: #028ee6;
+}
+
+.emotion-1:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+<a
+  class="emotion-1"
+  href="/"
+>
+  <span
+    class="emotion-0"
+  >
+    Try clicking with different mouse buttons and modifier keys (shift/ctrl/alt/cmd)
+  </span>
+</a>
+`;
+
+exports[`Storyshots Basics|Link no-cancel w/ href 1`] = `
+.emotion-1 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-1 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-1:hover svg path,
+.emotion-1:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-1:active {
+  color: #028ee6;
+}
+
+.emotion-1:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+<a
+  class="emotion-1"
+  href="http://example.com"
+>
+  <span
+    class="emotion-0"
+  >
+    Link
+  </span>
+</a>
+`;
+
+exports[`Storyshots Basics|Link no-cancel w/ onClick 1`] = `
+.emotion-1 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-1 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-1:hover svg path,
+.emotion-1:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-1:active {
+  color: #028ee6;
+}
+
+.emotion-1:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+<a
+  class="emotion-1"
+  href="/"
+>
+  <span
+    class="emotion-0"
+  >
+    any click will go through
+  </span>
+</a>
+`;
+
+exports[`Storyshots Basics|Link styled links 1`] = `
+.emotion-9 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-8 {
+  fill: currentColor;
+}
+
+.emotion-1 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-1 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-1:hover svg path,
+.emotion-1:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-1:active {
+  color: #028ee6;
+}
+
+.emotion-1:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-3 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-3 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-3:hover,
+.emotion-3:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-3:hover svg path,
+.emotion-3:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-3:active {
+  color: #028ee6;
+}
+
+.emotion-3:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-3 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-3 svg path {
+  fill: #999999;
+}
+
+.emotion-3:hover {
+  color: #666666;
+}
+
+.emotion-3:hover svg path {
+  fill: #666666;
+}
+
+.emotion-3:active {
+  color: #444444;
+}
+
+.emotion-3:active svg path {
+  fill: #444444;
+}
+
+.emotion-5 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #666666;
+}
+
+.emotion-5 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-5:hover,
+.emotion-5:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-5:hover svg path,
+.emotion-5:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-5:active {
+  color: #028ee6;
+}
+
+.emotion-5:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-5 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-5 svg path {
+  fill: #666666;
+}
+
+.emotion-5:hover {
+  color: #333333;
+}
+
+.emotion-5:hover svg path {
+  fill: #333333;
+}
+
+.emotion-5:active {
+  color: #999999;
+}
+
+.emotion-5:active svg path {
+  fill: #999999;
+}
+
+.emotion-7 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: inherit;
+}
+
+.emotion-7 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-7:hover,
+.emotion-7:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-7:hover svg path,
+.emotion-7:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-7:active {
+  color: #028ee6;
+}
+
+.emotion-7:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-7 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-7:hover,
+.emotion-7:active {
+  color: inherit;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-14 svg {
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+  position: relative;
+  bottom: 0;
+  margin-right: 0;
+}
+
+.emotion-18 > svg:last-of-type {
+  height: 0.7em;
+  width: 0.7em;
+  margin-right: 0;
+  margin-left: 0.25em;
+  bottom: auto;
+  vertical-align: inherit;
+}
+
+.emotion-18 svg {
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+  position: relative;
+  bottom: 0;
+  margin-right: 0;
+}
+
+.emotion-21 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #FFFFFF;
+}
+
+.emotion-21 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-21:hover,
+.emotion-21:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-21:hover svg path,
+.emotion-21:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-21:active {
+  color: #028ee6;
+}
+
+.emotion-21:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-21 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-21 svg path {
+  fill: #FFFFFF;
+}
+
+.emotion-21:hover {
+  color: #F8F8F8;
+}
+
+.emotion-21:hover svg path {
+  fill: #F8F8F8;
+}
+
+.emotion-21:active {
+  color: #F3F3F3;
+}
+
+.emotion-21:active svg path {
+  fill: #F3F3F3;
+}
+
+<div>
+  <a
+    class="emotion-1"
+    href="http://google.com"
+  >
+    <span
+      class="emotion-0"
+    >
+      Default
+    </span>
+  </a>
+  <br />
+  <a
+    class="emotion-3"
+    href="http://google.com"
+  >
+    <span
+      class="emotion-0"
+    >
+      Secondary
+    </span>
+  </a>
+  <br />
+  <a
+    class="emotion-5"
+    href="http://google.com"
+  >
+    <span
+      class="emotion-0"
+    >
+      tertiary
+    </span>
+  </a>
+  <br />
+  <a
+    class="emotion-7"
+    href="http://google.com"
+  >
+    <span
+      class="emotion-0"
+    >
+      nochrome
+    </span>
+  </a>
+  <br />
+  <a
+    class="emotion-1"
+    href="http://google.com"
+  >
+    <span
+      class="emotion-0"
+    >
+      <svg
+        class="emotion-9"
+        viewBox="0 0 1024 1024"
+      >
+        <path
+          class="emotion-8"
+          d="M371 147c-14 0-126 3-245 91 0 0-126 227-126 507 0 0 74 126 268 132l58-71c-111-34-153-103-153-103l24 15 4 2 8 4a668 668 0 0 0 420 68 629 629 0 0 0 228-89s-44 71-159 103l58 71c194-7 268-133 268-132 0-280-126-507-126-507-126-94-246-91-246-91l-12 14a576 576 0 0 1 218 110 729 729 0 0 0-441-81l-15 1c-31 4-105 14-199 56-33 14-52 24-52 24s72-69 230-114l-9-10h-1zm-23 323c50 0 91 43 90 97 0 53-40 96-90 96-49 0-89-43-89-96 0-54 39-97 89-97zm321 0c49 0 89 43 89 97 0 53-39 96-89 96s-90-43-90-96c0-54 40-97 90-97z"
+        />
+      </svg>
+      With icon in front
+    </span>
+  </a>
+  <br />
+  <a
+    class="emotion-1"
+    href="http://google.com"
+  >
+    <span
+      class="emotion-14"
+    >
+      <svg
+        class="emotion-9"
+        viewBox="0 0 1024 1024"
+      >
+        <path
+          class="emotion-8"
+          d="M920.032 127.858h-816c-22.092 0-40 17.908-40 40v688c0 22.092 17.908 40 40 40h316.578c1.13 0.096 2.266 0.172 3.422 0.172s2.292-0.078 3.424-0.172h492.576c22.092 0 40-17.908 40-40v-688c0-22.092-17.908-40-40-40zM144.032 207.858h240v608h-240v-608zM880.032 815.858h-416v-608h416v608zM198.734 288.030c0-17.674 14.328-32 32.002-32h66.396c17.672 0 32 14.326 32 32 0 17.676-14.324 32-32 32h-66.398c-17.674 0-32-14.326-32-32zM198.734 416.030c0-17.674 14.328-32 32.002-32h66.396c17.672 0 32 14.326 32 32 0 17.676-14.324 32-32 32h-66.398c-17.674 0-32-14.326-32-32zM198.734 544.030c0-17.674 14.328-32 32.002-32h66.396c17.672 0 32 14.326 32 32 0 17.676-14.324 32-32 32h-66.398c-17.674 0-32-14.326-32-32z"
+        />
+      </svg>
+    </span>
+  </a>
+  <br />
+  <a
+    class="emotion-1"
+    href="http://google.com"
+  >
+    <span
+      class="emotion-18"
+    >
+      With arrow behind
+      <svg
+        class="emotion-9"
+        viewBox="0 0 1024 1024"
+      >
+        <path
+          class="emotion-8"
+          d="M768.072 514.022c0 10.236-3.904 20.47-11.712 28.282l-344.098 344.156c-15.62 15.624-40.946 15.624-56.568 0.006-15.622-15.622-15.624-40.948-0.006-56.568l315.82-315.876-315.868-315.922c-15.618-15.624-15.618-40.952 0.004-56.568 15.624-15.62 40.95-15.618 56.57 0.006l344.144 344.204c7.81 7.81 11.714 18.044 11.714 28.28z"
+        />
+      </svg>
+    </span>
+  </a>
+  <br />
+  <span
+    style="background:#333"
+  >
+    <a
+      class="emotion-21"
+      href="http://google.com"
+    >
+      <span
+        class="emotion-0"
+      >
+        Inverted colors
+      </span>
+    </a>
+  </span>
+  <br />
+</div>
+`;

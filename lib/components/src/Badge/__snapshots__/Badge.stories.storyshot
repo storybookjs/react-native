@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Basics|Badge all badges 1`] = `
+.emotion-0 {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 11px;
+  line-height: 12px;
+  padding: 4px 12px;
+  border-radius: 3em;
+  font-weight: 700;
+  color: #66BF3C;
+  background: #E1FFD4;
+}
+
+.emotion-0 svg {
+  height: 12px;
+  width: 12px;
+  margin-right: 4px;
+  margin-top: -2px;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-1 {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 11px;
+  line-height: 12px;
+  padding: 4px 12px;
+  border-radius: 3em;
+  font-weight: 700;
+  color: #FF4400;
+  background: #FEDED2;
+}
+
+.emotion-1 svg {
+  height: 12px;
+  width: 12px;
+  margin-right: 4px;
+  margin-top: -2px;
+}
+
+.emotion-1 svg path {
+  fill: currentColor;
+}
+
+.emotion-2 {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 11px;
+  line-height: 12px;
+  padding: 4px 12px;
+  border-radius: 3em;
+  font-weight: 700;
+  color: #666666;
+  background: #EEEEEE;
+}
+
+.emotion-2 svg {
+  height: 12px;
+  width: 12px;
+  margin-right: 4px;
+  margin-top: -2px;
+}
+
+.emotion-2 svg path {
+  fill: currentColor;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    Positive
+  </div>
+  <div
+    class="emotion-1"
+  >
+    Negative
+  </div>
+  <div
+    class="emotion-2"
+  >
+    Neutral
+  </div>
+</div>
+`;

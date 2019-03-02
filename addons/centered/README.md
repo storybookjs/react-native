@@ -7,10 +7,8 @@ Storybook Centered Decorator can be used to center components inside the preview
 ### Usage
 
 ```sh
-npm install @storybook/addon-centered --save-dev
+yarn add @storybook/addon-centered --dev
 ```
-
-#### As a decorator
 
 You can set the decorator locally.
 
@@ -18,7 +16,7 @@ example for React:
 
 ```js
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered';
+import centered from '@storybook/addon-centered/react';
 
 import MyComponent from '../Component';
 
@@ -32,7 +30,7 @@ example for Vue:
 
 ```js
 import { storiesOf } from '@storybook/vue';
-import centered from '@storybook/addon-centered';
+import centered from '@storybook/addon-centered/vue';
 
 import MyComponent from '../Component.vue';
 storiesOf('MyComponent', module)
@@ -101,8 +99,9 @@ storiesOf('MyComponent', module)
 example for Angular with component:
 
 ```ts
-import { centered } from '@storybook/addon-centered/angular';
 import { storiesOf } from '@storybook/angular';
+import { centered } from '@storybook/addon-centered/angular';
+
 import { AppComponent } from '../app/app.component';
 
 storiesOf('Addon|Centered', module)
@@ -117,8 +116,9 @@ storiesOf('Addon|Centered', module)
 example for Angular with template:
 
 ```ts
-import { centered } from '@storybook/addon-centered/angular';
 import { moduleMetadata, storiesOf } from '@storybook/angular';
+import { centered } from '@storybook/addon-centered/angular';
+
 import { AppComponent } from '../app/app.component';
 
 storiesOf('Addon|Centered', module)
@@ -148,7 +148,7 @@ example for React:
 
 ```js
 import { configure, addDecorator } from '@storybook/react';
-import centered from '@storybook/addon-centered';
+import centered from '@storybook/addon-centered/react';
 
 addDecorator(centered);
 
@@ -161,7 +161,7 @@ example for Vue:
 
 ```js
 import { configure, addDecorator } from '@storybook/vue';
-import centered from '@storybook/addon-centered';
+import centered from '@storybook/addon-centered/vue';
 
 addDecorator(centered);
 
@@ -194,36 +194,4 @@ addDecorator(centered);
 configure(function () {
   //...
 }, module);
-```
-
-#### As an extension
-
-##### 1 - Configure the extension
-
-```js
-import { configure, setAddon } from '@storybook/react';
-import centered from '@storybook/addon-centered';
-
-setAddon({
-  addCentered(storyName, storyFn) {
-    this.add(storyName, (context) => (
-      centered.call(context, storyFn)
-    ));
-  },
-});
-
-configure(function () {
-  //...
-}, module);
-```
-
-##### 2 - Use it in your story
-
-```js
-import { storiesOf } from '@storybook/react';
-
-import Component from '../Component';
-
-storiesOf('Component', module)
-  .addCentered('without props', () => (<Component />))
 ```

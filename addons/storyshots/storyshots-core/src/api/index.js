@@ -17,6 +17,8 @@ function callTestMethodGlobals(testMethod) {
   });
 }
 
+const isDisabled = parameter => parameter === false || (parameter && parameter.disable === true);
+
 function testStorySnapshots(options = {}) {
   if (typeof describe !== 'function') {
     throw new Error('testStorySnapshots is intended only to be used inside jest');
@@ -25,12 +27,6 @@ function testStorySnapshots(options = {}) {
   addons.setChannel(mockChannel());
 
   const { storybook, framework, renderTree, renderShallowTree } = loadFramework(options);
-  const storiesGroups = storybook.getStorybook();
-
-  if (storiesGroups.length === 0) {
-    throw new Error('storyshots found 0 stories');
-  }
-
   const {
     asyncJest,
     suite,
@@ -41,28 +37,51 @@ function testStorySnapshots(options = {}) {
     integrityOptions,
     snapshotSerializers,
   } = ensureOptionsDefaults(options);
-
   const testMethodParams = {
     renderTree,
     renderShallowTree,
     stories2snapsConverter,
   };
 
-  callTestMethodGlobals(testMethod);
+  const data = storybook
+    .raw()
+    .filter(({ name }) => (storyNameRegex ? name.match(storyNameRegex) : true))
+    .filter(({ kind }) => (storyKindRegex ? kind.match(storyKindRegex) : true))
+    .reduce((acc, item) => {
+      const { kind, storyFn: render, parameters } = item;
+      const existing = acc.find(i => i.kind === kind);
+      const { fileName } = item.parameters;
 
-  snapshotsTests({
-    groups: storiesGroups,
-    asyncJest,
-    suite,
-    framework,
-    storyKindRegex,
-    storyNameRegex,
-    testMethod,
-    testMethodParams,
-    snapshotSerializers,
-  });
+      if (!isDisabled(parameters.storyshots)) {
+        if (existing) {
+          existing.children.push({ ...item, render, fileName });
+        } else {
+          acc.push({
+            kind,
+            children: [{ ...item, render, fileName }],
+          });
+        }
+      }
+      return acc;
+    }, []);
 
-  integrityTest(integrityOptions, stories2snapsConverter);
+  if (data.length) {
+    callTestMethodGlobals(testMethod);
+
+    snapshotsTests({
+      data,
+      asyncJest,
+      suite,
+      framework,
+      testMethod,
+      testMethodParams,
+      snapshotSerializers,
+    });
+
+    integrityTest(integrityOptions, stories2snapsConverter);
+  } else {
+    throw new Error('storyshots found 0 stories');
+  }
 }
 
 export default testStorySnapshots;

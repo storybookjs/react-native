@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-backgrounds",
-  "version": "4.2.0-alpha.9",
+  "version": "5.0.0-beta.3",
   "description": "A storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",
@@ -14,7 +14,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/ondevice-backgrounds"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -23,8 +24,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.2.0-alpha.9",
-    "core-js": "^2.5.7",
+    "@storybook/addons": "5.0.0-beta.3",
+    "core-js": "^2.6.2",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {

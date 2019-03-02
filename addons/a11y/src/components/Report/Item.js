@@ -1,33 +1,39 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 import { Icons } from '@storybook/components';
 
 import Info from './Info';
 import Tags from './Tags';
 import Elements from './Elements';
 
-const Wrapper = styled.div(({ theme }) => ({
-  padding: '0 14px',
-  cursor: 'pointer',
-  borderBottom: theme.mainBorder,
+const Wrapper = styled.div();
+
+const Icon = styled(Icons)(({ theme }) => ({
+  height: 10,
+  width: 10,
+  color: theme.color.mediumdark,
+  marginRight: '10px',
+  transition: 'transform 0.1s ease-in-out',
+  alignSelf: 'center',
+  display: 'inline-flex',
 }));
 
 const HeaderBar = styled.button(({ theme }) => ({
-  padding: '12px 0px',
-  display: 'block',
+  padding: theme.layoutMargin,
+  paddingLeft: theme.layoutMargin - 3,
+  display: 'flex',
   width: '100%',
   border: 0,
   background: 'none',
   color: 'inherit',
 
-  borderTop: '3px solid transparent',
-  borderBottom: '3px solid transparent',
+  borderLeft: '3px solid transparent',
 
   '&:focus': {
     outline: '0 none',
-    borderBottom: `3px solid ${theme.highlightColor}`,
+    borderLeft: `3px solid ${theme.color.secondary}`,
   },
 }));
 
@@ -57,21 +63,23 @@ class Item extends Component {
     return (
       <Wrapper>
         <HeaderBar onClick={this.onToggle}>
-          <Icons.ChevronRight
+          <Icon
+            icon="chevrondown"
             size={10}
             color="#9DA5AB"
             style={{
-              marginRight: '5px',
-              marginBottom: '2px',
-              transform: `rotate(${open ? 90 : 0}deg)`,
-              transition: 'transform 0.3s ease-in-out',
+              transform: `rotate(${open ? 0 : -90}deg)`,
             }}
           />
           {item.description}
         </HeaderBar>
-        {open && <Info item={item} />}
-        {open && <Elements elements={item.nodes} passes={passes} />}
-        {open && <Tags tags={item.tags} />}
+        {open ? (
+          <Fragment>
+            <Info item={item} key="info" />
+            <Elements elements={item.nodes} passes={passes} key="elements" />
+            <Tags tags={item.tags} key="tags" />
+          </Fragment>
+        ) : null}
       </Wrapper>
     );
   }

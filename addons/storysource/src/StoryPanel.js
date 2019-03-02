@@ -1,49 +1,30 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { RoutedLink, monoFonts } from '@storybook/components';
-import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
-import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism-light';
-import createElement from 'react-syntax-highlighter/dist/esm/create-element';
+import { styled } from '@storybook/theming';
+import { Link } from '@storybook/router';
+import { SyntaxHighlighter } from '@storybook/components';
+
+import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './events';
 
-// TODO: take from theme
-const highlighterTheme = {
-  ...darcula,
-  'pre[class*="language-"]': {
-    ...darcula['pre[class*="language-"]'],
-    margin: 'auto',
-    width: 'auto',
-    height: 'auto',
-    minHeight: '100%',
-    overflow: 'hidden',
-    boxSizing: 'border-box',
-    display: 'flex',
-    fontFamily: monoFonts.fontFamily,
-    fontSize: 'inherit',
-  },
-  'code[class*="language-"]': {
-    ...darcula['code[class*="language-"]'],
-    margin: 0,
-    fontFamily: 'inherit',
-  },
-};
+const StyledStoryLink = styled(Link)(({ theme }) => ({
+  display: 'block',
+  textDecoration: 'none',
+  borderRadius: theme.appBorderRadius,
 
-SyntaxHighlighter.registerLanguage('jsx', jsx);
+  '&:hover': {
+    background: theme.background.hoverable,
+  },
+}));
 
-const styles = {
-  story: {
-    display: 'block',
-    textDecoration: 'none',
-    color: darcula['code[class*="language-"]'].color,
-  },
-  selectedStory: {
-    backgroundColor: 'rgba(255, 242, 60, 0.2)',
-  },
-  panel: {
-    width: '100%',
-  },
-};
+const SelectedStoryHighlight = styled.div(({ theme }) => ({
+  background: theme.background.hoverable,
+  borderRadius: theme.appBorderRadius,
+}));
+
+const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }) => ({
+  fontSize: theme.typography.size.s2 - 1,
+}));
 
 const areLocationsEqual = (a, b) =>
   a.startLoc.line === b.startLoc.line &&
@@ -59,21 +40,13 @@ const getLocationKeys = locationsMap =>
     : [];
 
 export default class StoryPanel extends Component {
-  state = { source: '// Here will be dragons 🐉' };
+  state = { source: 'loading source...' };
 
   componentDidMount() {
+    this.mounted = true;
     const { channel } = this.props;
 
-    channel.on(EVENT_ID, ({ source, currentLocation, locationsMap }) => {
-      const locationsKeys = getLocationKeys(locationsMap);
-
-      this.setState({
-        source,
-        currentLocation,
-        locationsMap,
-        locationsKeys,
-      });
-    });
+    channel.on(EVENT_ID, this.listener);
   }
 
   componentDidUpdate() {
@@ -82,16 +55,25 @@ export default class StoryPanel extends Component {
     }
   }
 
+  componentWillUnmount() {
+    const { channel } = this.props;
+
+    channel.removeListener(EVENT_ID, this.listener);
+  }
+
   setSelectedStoryRef = ref => {
     this.selectedStoryRef = ref;
   };
 
-  clickOnStory = (kind, story) => {
-    const { api } = this.props;
+  listener = ({ source, currentLocation, locationsMap }) => {
+    const locationsKeys = getLocationKeys(locationsMap);
 
-    if (kind && story) {
-      api.selectStory(kind, story);
-    }
+    this.setState({
+      source,
+      currentLocation,
+      locationsMap,
+      locationsKeys,
+    });
   };
 
   createPart = (rows, stylesheet, useInlineStyles) =>
@@ -104,7 +86,7 @@ export default class StoryPanel extends Component {
       })
     );
 
-  createStoryPart = (rows, stylesheet, useInlineStyles, location, kindStory) => {
+  createStoryPart = (rows, stylesheet, useInlineStyles, location, id) => {
     const { currentLocation } = this.state;
     const first = location.startLoc.line - 1;
     const last = location.endLoc.line;
@@ -113,26 +95,18 @@ export default class StoryPanel extends Component {
     const story = this.createPart(storyRows, stylesheet, useInlineStyles);
     const storyKey = `${first}-${last}`;
 
-    if (areLocationsEqual(location, currentLocation)) {
+    if (location && currentLocation && areLocationsEqual(location, currentLocation)) {
       return (
-        <div key={storyKey} ref={this.setSelectedStoryRef} style={styles.selectedStory}>
+        <SelectedStoryHighlight key={storyKey} ref={this.setSelectedStoryRef}>
           {story}
-        </div>
+        </SelectedStoryHighlight>
       );
     }
 
-    const [selectedKind, selectedStory] = kindStory.split('@');
-    const url = `/?selectedKind=${selectedKind}&selectedStory=${selectedStory}`;
-
     return (
-      <RoutedLink
-        href={url}
-        key={storyKey}
-        onClick={() => this.clickOnStory(selectedKind, selectedStory)}
-        style={styles.story}
-      >
+      <StyledStoryLink to={`/story/${id}`} key={storyKey}>
         {story}
-      </RoutedLink>
+      </StyledStoryLink>
     );
   };
 
@@ -166,11 +140,20 @@ export default class StoryPanel extends Component {
   lineRenderer = ({ rows, stylesheet, useInlineStyles }) => {
     const { locationsMap, locationsKeys } = this.state;
 
+    // because of the usage of lineRenderer, all lines will be wrapped in a span
+    // these spans will recieve all classes on them for some reason
+    // which makes colours casecade incorrectly
+    // this removed that list of classnames
+    const myrows = rows.map(({ properties, ...rest }) => ({
+      ...rest,
+      properties: { className: [] },
+    }));
+
     if (!locationsMap || !locationsKeys.length) {
-      return this.createPart(rows, stylesheet, useInlineStyles);
+      return this.createPart(myrows, stylesheet, useInlineStyles);
     }
 
-    const parts = this.createParts(rows, stylesheet, useInlineStyles);
+    const parts = this.createParts(myrows, stylesheet, useInlineStyles);
 
     return <span>{parts}</span>;
   };
@@ -180,15 +163,16 @@ export default class StoryPanel extends Component {
     const { source } = this.state;
 
     return active ? (
-      <SyntaxHighlighter
+      <StyledSyntaxHighlighter
         language="jsx"
         showLineNumbers="true"
-        style={highlighterTheme}
         renderer={this.lineRenderer}
-        customStyle={styles.panel}
+        format={false}
+        copyable={false}
+        padded
       >
         {source}
-      </SyntaxHighlighter>
+      </StyledSyntaxHighlighter>
     ) : null;
   }
 }

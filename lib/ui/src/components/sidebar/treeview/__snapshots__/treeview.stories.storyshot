@@ -1,0 +1,550 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Treeview stateful 1`] = `
+Array [
+  .emotion-0 {
+  width: 100%;
+  background: transparent;
+  border: 1px solid black;
+}
+
+<input
+    class="emotion-0"
+    placeholder="search..."
+  />,
+  .emotion-0 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 0;
+  background: transparent;
+}
+
+<div
+    class="emotion-1"
+  >
+    <a
+      class="emotion-1"
+      href="#!stateful1"
+    >
+      <div
+        class="emotion-0"
+      >
+        <span>
+          +
+        </span>
+        <span>
+          Parent A
+        </span>
+      </div>
+    </a>
+    <a
+      class="emotion-1"
+      href="#!stateful2"
+    >
+      <div
+        class="emotion-0"
+      >
+        <span>
+          +
+        </span>
+        <span>
+          Parent B
+        </span>
+      </div>
+    </a>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components|Treeview stateless 1`] = `
+Array [
+  .emotion-0 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 0;
+  background: transparent;
+}
+
+<div
+    class="emotion-0"
+  >
+    <span>
+      -
+    </span>
+    <span>
+      Parent A
+    </span>
+  </div>,
+  .emotion-0 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: transparent;
+}
+
+<div
+    class="emotion-2"
+  >
+    <div
+      class="emotion-0"
+      id="1-11"
+    >
+      Child A1
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        +
+      </span>
+      <span>
+        Child A2
+      </span>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components|Treeview stateless changed expanded 1`] = `
+Array [
+  .emotion-0 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 0;
+  background: transparent;
+}
+
+<div
+    class="emotion-0"
+  >
+    <span>
+      -
+    </span>
+    <span>
+      Parent A
+    </span>
+  </div>,
+  .emotion-0 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.emotion-2 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 20px;
+  background: transparent;
+}
+
+<div
+    class="emotion-4"
+  >
+    <div
+      class="emotion-0"
+      id="1-11"
+    >
+      Child A1
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        -
+      </span>
+      <span>
+        Child A2
+      </span>
+    </div>
+    <div
+      class="emotion-4"
+    >
+      <div
+        class="emotion-2"
+        id="1-12-121"
+      >
+        GrandChild A1.1
+      </div>
+      <div
+        class="emotion-2"
+        id="1-12-122"
+      >
+        GrandChild A1.2
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components|Treeview with custom node 1`] = `
+Array [
+  .emotion-0 {
+  width: 100%;
+  background: transparent;
+  border: 1px solid black;
+}
+
+<input
+    class="emotion-0"
+    placeholder="search..."
+  />,
+  .emotion-0 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 0;
+  background: transparent;
+}
+
+<div
+    class="emotion-1"
+  >
+    <a
+      class="emotion-1"
+      href="#!stateful1"
+    >
+      <div
+        class="emotion-0"
+      >
+        <span>
+          +
+        </span>
+        <span>
+          Parent A
+        </span>
+      </div>
+    </a>
+    <a
+      class="emotion-1"
+      href="#!stateful2"
+    >
+      <div
+        class="emotion-0"
+      >
+        <span>
+          +
+        </span>
+        <span>
+          Parent B
+        </span>
+      </div>
+    </a>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components|Treeview with roots node 1`] = `
+Array [
+  .emotion-0 {
+  width: 100%;
+  background: transparent;
+  border: 1px solid black;
+}
+
+<input
+    class="emotion-0"
+    placeholder="search..."
+  />,
+  .emotion-2 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 0;
+  background: transparent;
+}
+
+.emotion-1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.emotion-0 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-letter-spacing: 4.3px;
+  -moz-letter-spacing: 4.3px;
+  -ms-letter-spacing: 4.3px;
+  letter-spacing: 4.3px;
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.emotion-0 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+<div
+    class="emotion-3"
+  >
+    <header
+      class="emotion-1"
+    >
+      <h1
+        class="emotion-0"
+      >
+        <span>
+          Root 1
+        </span>
+      </h1>
+    </header>
+    <a
+      class="emotion-3"
+      href="#!stateful1-12"
+    >
+      <div
+        class="emotion-2"
+      >
+        <span>
+          +
+        </span>
+        <span>
+          Child A2
+        </span>
+      </div>
+    </a>
+  </div>,
+  .emotion-2 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 0;
+  background: transparent;
+}
+
+.emotion-1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.emotion-0 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-letter-spacing: 4.3px;
+  -moz-letter-spacing: 4.3px;
+  -ms-letter-spacing: 4.3px;
+  letter-spacing: 4.3px;
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.emotion-0 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+<div
+    class="emotion-3"
+  >
+    <header
+      class="emotion-1"
+    >
+      <h1
+        class="emotion-0"
+      >
+        <span>
+          Root 3
+        </span>
+      </h1>
+    </header>
+    <a
+      class="emotion-3"
+      href="#!stateful3-32"
+    >
+      <div
+        class="emotion-2"
+      >
+        <span>
+          +
+        </span>
+        <span>
+          Child A2
+        </span>
+      </div>
+    </a>
+  </div>,
+  .emotion-2 {
+  min-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 0;
+  background: transparent;
+}
+
+.emotion-1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.emotion-0 {
+  color: currentColor;
+  font-weight: normal;
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  display: block;
+  color: rgba(0,0,0,0.4);
+  -webkit-letter-spacing: 4.3px;
+  -moz-letter-spacing: 4.3px;
+  -ms-letter-spacing: 4.3px;
+  letter-spacing: 4.3px;
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.emotion-0 > sub {
+  display: block;
+  padding-top: 5px;
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+<div
+    class="emotion-3"
+  >
+    <header
+      class="emotion-1"
+    >
+      <h1
+        class="emotion-0"
+      >
+        <span>
+          Others
+        </span>
+      </h1>
+    </header>
+    <a
+      class="emotion-3"
+      href="#!stateful2"
+    >
+      <div
+        class="emotion-2"
+      >
+        <span>
+          +
+        </span>
+        <span>
+          Group 1
+        </span>
+      </div>
+    </a>
+  </div>,
+]
+`;

@@ -39,8 +39,12 @@ export default options => {
   if (options.children) {
     return WithEvents(options);
   }
-  return story => {
+  return storyFn => {
     addEvents(options);
-    return story();
+    return storyFn();
   };
 };
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline();
+}

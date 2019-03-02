@@ -98,6 +98,9 @@ class MainLinks extends React.Component {
               </Link>
               <ul>
                 <li>
+                  <Link to="/configurations/options-parameter/">Storybook options</Link>
+                </li>
+                <li>
                   <Link to="/configurations/custom-babel-config/">Babel configurations</Link>
                 </li>
                 <li>

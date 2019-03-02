@@ -1,42 +1,62 @@
 import { document } from 'global';
+import qs from 'qs';
 import addons from '@storybook/addons';
-import Events from '@storybook/core-events';
+import { SELECT_STORY, STORY_CHANGED } from '@storybook/core-events';
 
-import { EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from './events';
+import EVENTS from './constants';
 
-export const openLink = params => addons.getChannel().emit(EVENT_ID, params);
+export const navigate = params => addons.getChannel().emit(SELECT_STORY, params);
+const generateUrl = id => {
+  const { location } = document;
+  const query = qs.parse(location.search, { ignoreQueryPrefix: true });
+  return `${location.origin + location.pathname}?${qs.stringify(
+    { ...query, id },
+    { encode: false }
+  )}`;
+};
 
 const valueOrCall = args => value => (typeof value === 'function' ? value(...args) : value);
 
 export const linkTo = (kind, story) => (...args) => {
   const resolver = valueOrCall(args);
-  openLink({
+  navigate({
     kind: resolver(kind),
     story: resolver(story),
   });
 };
 
-export const hrefTo = (kind, story) =>
+export const hrefTo = (kind, name) =>
   new Promise(resolve => {
     const channel = addons.getChannel();
-    channel.on(RECEIVE_HREF_EVENT_ID, resolve);
-    channel.emit(REQUEST_HREF_EVENT_ID, { kind, story });
+    channel.once(EVENTS.RECEIVE, id => resolve(generateUrl(id)));
+    channel.emit(EVENTS.REQUEST, { kind, name });
   });
 
 const linksListener = e => {
-  const { sbKind, sbStory } = e.target.dataset;
-  if (sbKind || sbStory) {
+  const { sbKind: kind, sbStory: story } = e.target.dataset;
+  if (kind || story) {
     e.preventDefault();
-    linkTo(sbKind, sbStory)();
+    navigate({ kind, story });
   }
 };
 
-const linkSubscribtion = () => {
-  document.addEventListener('click', linksListener);
-  return () => document.removeEventListener('click', linksListener);
+let hasListener = false;
+
+const on = () => {
+  if (!hasListener) {
+    hasListener = true;
+    document.addEventListener('click', linksListener);
+  }
+};
+const off = () => {
+  if (hasListener) {
+    hasListener = false;
+    document.removeEventListener('click', linksListener);
+  }
 };
 
-export const withLinks = story => {
-  addons.getChannel().emit(Events.REGISTER_SUBSCRIPTION, linkSubscribtion);
-  return story();
+export const withLinks = storyFn => {
+  on();
+  addons.getChannel().once(STORY_CHANGED, off);
+  return storyFn();
 };

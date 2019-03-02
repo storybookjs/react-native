@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Textarea } from '@storybook/components';
+import { Form } from '@storybook/components';
 
 class TextType extends React.Component {
   shouldComponentUpdate(nextProps) {
@@ -20,7 +20,15 @@ class TextType extends React.Component {
   render() {
     const { knob } = this.props;
 
-    return <Textarea id={knob.name} value={knob.value} onChange={this.handleChange} size="flex" />;
+    return (
+      <Form.Textarea
+        id={knob.name}
+        name={knob.name}
+        value={knob.value}
+        onChange={this.handleChange}
+        size="flex"
+      />
+    );
   }
 }
 

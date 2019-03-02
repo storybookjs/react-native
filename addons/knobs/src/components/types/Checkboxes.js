@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
+
+const CheckboxesWrapper = styled.div(({ isInline }) =>
+  isInline
+    ? {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        '> * + *': {
+          marginLeft: 10,
+        },
+      }
+    : {}
+);
 
 const CheckboxFieldset = styled.fieldset({
   border: 0,
@@ -9,23 +22,10 @@ const CheckboxFieldset = styled.fieldset({
 });
 
 const CheckboxLabel = styled.label({
-  fontSize: 11,
-  padding: '5px',
+  padding: '3px 0 3px 5px',
+  lineHeight: '18px',
+  display: 'inline-block',
 });
-
-const flex = ({ isInline }) => {
-  if (isInline) {
-    return {
-      display: 'flex',
-      flexWrap: 'wrap',
-      alignItems: 'center',
-      height: '100%',
-    };
-  }
-  return null;
-};
-
-const FlexWrapper = styled.div(flex);
 
 class CheckboxesType extends Component {
   constructor(props) {
@@ -82,7 +82,7 @@ class CheckboxesType extends Component {
 
     return (
       <CheckboxFieldset>
-        <FlexWrapper isInline={isInline}>{this.renderCheckboxList(knob)}</FlexWrapper>
+        <CheckboxesWrapper isInline={isInline}>{this.renderCheckboxList(knob)}</CheckboxesWrapper>
       </CheckboxFieldset>
     );
   }
