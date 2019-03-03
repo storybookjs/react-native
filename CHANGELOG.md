@@ -1,3 +1,16 @@
+## 5.0.0-rc.9 (March 3, 2019)
+
+### Features
+
+* Core: Allow local decorators via params ([#5806](https://github.com/storybooks/storybook/pull/5806))
+
+### Bug Fixes
+
+* Core: Add warning for decorators added "mid-kind" ([#5819](https://github.com/storybooks/storybook/pull/5819))
+* Addon-notes: Support inline code markdown ([#5802](https://github.com/storybooks/storybook/pull/5802))
+* Theming: Fix theme loading bugs ([#5787](https://github.com/storybooks/storybook/pull/5787))
+* CLI: Fix build-storybook with simplebar esm files ([#5816](https://github.com/storybooks/storybook/pull/5816))
+
 ## 5.0.0-rc.8 (March 1, 2019)
 
 ### Features
