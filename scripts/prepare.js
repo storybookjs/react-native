@@ -4,8 +4,8 @@ const shell = require('shelljs');
 const chalk = require('chalk');
 const fs = require('fs');
 const log = require('npmlog');
-const { babelify } = require('./compile-js');
-const { tscfy } = require('./compile-ts');
+const { babelify } = require('./compile-babel');
+const { tscfy } = require('./compile-tsc');
 
 function getPackageJson() {
   const modulePath = path.resolve('./');
