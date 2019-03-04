@@ -261,7 +261,7 @@ The new URL structure looks like:
 https://url-of-storybook?path=/story/<storyId>
 ```
 
-The structure of `storyId` is `<selectedKind>--<selectedStory>`. We plan to build more features into Storybook in upcoming versions based on this new structure.
+The structure of `storyId` is a slugified `<selectedKind>--<selectedStory>` (slugified = lowercase, hyphen-separated). Each `storyId` must be unique. We plan to build more features into Storybook in upcoming versions based on this new structure.
 
 ## From version 4.0.x to 4.1.x
 
