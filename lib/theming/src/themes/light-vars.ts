@@ -1,6 +1,8 @@
-import { color, typography, background } from '../base';
+import { color, typography, background, ThemeVars } from '../base';
 
-export const themeVars = {
+export const themeVars: ThemeVars = {
+  base: 'light',
+
   // Storybook-specific color palette
   colorPrimary: '#FF4785', // coral
   colorSecondary: '#1EA7FD', // ocean
@@ -30,4 +32,3 @@ export const themeVars = {
   inputTextColor: color.darkest,
   inputBorderRadius: 4,
 };
-

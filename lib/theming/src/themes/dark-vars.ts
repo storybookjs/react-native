@@ -1,6 +1,8 @@
-import { color, typography } from '../base';
+import { color, typography, ThemeVars } from '../base';
 
-export const themeVars = {
+export const themeVars: ThemeVars = {
+  base: 'dark',
+
   // Storybook-specific color palette
   colorPrimary: '#FF4785', // coral
   colorSecondary: '#1EA7FD', // ocean

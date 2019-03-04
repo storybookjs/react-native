@@ -2,53 +2,17 @@
 import { chromeLight, chromeDark } from 'react-inspector';
 import { opacify } from 'polished';
 
-import { themeVars as lightThemeVarss } from './themes/light-vars';
-import { themeVars as darkThemeVarss } from './themes/dark-vars';
+import { themeVars as lightThemeVars } from './themes/light-vars';
+import { themeVars as darkThemeVars } from './themes/dark-vars';
 
-import { Theme, color, Color, background, typography } from './base';
+import { Theme, color, Color, background, typography, ThemeVars } from './base';
 import { easing, animation } from './animation';
 import { create as createSyntax } from './modules/syntax';
 
-const base: { light: ThemeVars; dark: ThemeVars } = { light: lightThemeVarss, dark: darkThemeVarss };
+const base: { light: ThemeVars; dark: ThemeVars } = { light: lightThemeVars, dark: darkThemeVars };
 
 interface Rest {
   [key: string]: any;
-}
-
-interface ThemeVars {
-  base?: 'light' | 'dark';
-
-  colorPrimary?: string;
-  colorSecondary?: string;
-
-  // UI
-  appBg?: string;
-  appContentBg?: string;
-  appBorderColor?: string;
-  appBorderRadius?: number;
-
-  // Typography
-  fontBase?: string;
-  fontCode?: string;
-
-  // Text colors
-  textColor?: string;
-  textInverseColor?: string;
-
-  // Toolbar default and active colors
-  barTextColor?: string;
-  barSelectedColor?: string;
-  barBg?: string;
-
-  // Form colors
-  inputBg?: string;
-  inputBorder?: string;
-  inputTextColor?: string;
-  inputBorderRadius?: number;
-
-  brandTitle?: string;
-  brandUrl?: string;
-  brandImage?: string;
 }
 
 const createColors = (vars: ThemeVars): Color => ({
@@ -115,17 +79,17 @@ const darkSyntaxColors = {
   blue2: '#00009f',
 };
 
-export const create = (vars: ThemeVars, rest?: Rest): Theme => {
+export const create = (vars: ThemeVars = { base: 'light' }, rest?: Rest): Theme => {
   const inherit: ThemeVars = {
-    ...vars,
-    ...(base[vars.base] || base.light),
     ...base.light,
-    ...{
-      base: 'light',
-    },
+    ...(base[vars.base] || base.light),
+    ...vars,
+    ...{ base: base[vars.base] ? vars.base : 'light' },
   };
 
   return {
+    ...(rest || {}),
+
     base: inherit.base,
     color: createColors(inherit),
     background: {
@@ -195,7 +159,5 @@ export const create = (vars: ThemeVars, rest?: Rest): Theme => {
       TREENODE_LINE_HEIGHT: '18px',
       TREENODE_PADDING_LEFT: 12,
     },
-
-    ...(rest || {}),
   };
 };
