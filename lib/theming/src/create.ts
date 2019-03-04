@@ -2,20 +2,20 @@
 import { chromeLight, chromeDark } from 'react-inspector';
 import { opacify } from 'polished';
 
-import { themeVars as lightThemeVars } from './themes/light-vars';
-import { themeVars as darkThemeVars } from './themes/dark-vars';
+import { themeVars as lightThemeVarss } from './themes/light-vars';
+import { themeVars as darkThemeVarss } from './themes/dark-vars';
 
 import { Theme, color, Color, background, typography } from './base';
 import { easing, animation } from './animation';
 import { create as createSyntax } from './modules/syntax';
 
-const base: { light: ThemeVar; dark: ThemeVar } = { light: lightThemeVars, dark: darkThemeVars };
+const base: { light: ThemeVars; dark: ThemeVars } = { light: lightThemeVarss, dark: darkThemeVarss };
 
 interface Rest {
   [key: string]: any;
 }
 
-interface ThemeVar {
+interface ThemeVars {
   base?: 'light' | 'dark';
 
   colorPrimary?: string;
@@ -51,7 +51,7 @@ interface ThemeVar {
   brandImage?: string;
 }
 
-const createColors = (vars: ThemeVar): Color => ({
+const createColors = (vars: ThemeVars): Color => ({
   // Changeable colors
   primary: vars.colorPrimary,
   secondary: vars.colorSecondary,
@@ -115,20 +115,15 @@ const darkSyntaxColors = {
   blue2: '#00009f',
 };
 
-function pick<B, K extends keyof B>(b: B, key: K): B[K] {
-  return b[key];
-}
-
-export const create = (vars: ThemeVar, rest?: Rest): Theme => {
-  const inherit: ThemeVar = { ...vars, ...(base[vars.base] || base.light), ...base.light };
-  const p = pick.bind(null, inherit);
+export const create = (vars: ThemeVars, rest?: Rest): Theme => {
+  const inherit: ThemeVars = { ...vars, ...(base[vars.base] || base.light), ...base.light };
 
   return {
     base: vars.base,
     color: createColors(inherit),
     background: {
-      app: p('appBg'),
-      content: p('appContentBg'),
+      app: inherit.appBg,
+      content: inherit.appContentBg,
       hoverable: vars.base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
 
       positive: background.positive,
@@ -137,8 +132,8 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => {
     },
     typography: {
       fonts: {
-        base: p('fontBase'),
-        mono: p('fontCode'),
+        base: inherit.fontBase,
+        mono: inherit.fontCode,
       },
       weight: typography.weight,
       size: typography.size,
@@ -147,32 +142,32 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => {
     easing,
 
     input: {
-      border: p('inputBorder'),
-      background: p('inputBg'),
-      color: p('inputTextColor'),
-      borderRadius: p('inputBorderRadius'),
+      border: inherit.inputBorder,
+      background: inherit.inputBg,
+      color: inherit.inputTextColor,
+      borderRadius: inherit.inputBorderRadius,
     },
 
     // UI
     layoutMargin: 10,
-    appBorderColor: p('appBorderColor'),
-    appBorderRadius: p('appBorderRadius'),
+    appBorderColor: inherit.appBorderColor,
+    appBorderRadius: inherit.appBorderRadius,
 
     // Toolbar default/active colors
-    barTextColor: p('barTextColor'),
-    barSelectedColor: p('barSelectedColor'),
-    barBg: p('barBg'),
+    barTextColor: inherit.barTextColor,
+    barSelectedColor: inherit.barSelectedColor,
+    barBg: inherit.barBg,
 
     // Brand logo/text
     brand: {
-      title: p('brandTitle'),
-      url: p('brandUrl'),
-      image: p('brandImage'),
+      title: inherit.brandTitle,
+      url: inherit.brandUrl,
+      image: inherit.brandImage,
     },
 
     code: createSyntax({
       colors: vars.base === 'light' ? lightSyntaxColors : darkSyntaxColors,
-      mono: p('fontCode'),
+      mono: inherit.fontCode,
     }),
 
     // Addon actions theme
@@ -180,15 +175,15 @@ export const create = (vars: ThemeVar, rest?: Rest): Theme => {
     addonActionsTheme: {
       ...(vars.base === 'light' ? chromeLight : chromeDark),
 
-      BASE_FONT_FAMILY: p('fontCode'),
+      BASE_FONT_FAMILY: inherit.fontCode,
       BASE_FONT_SIZE: typography.size.s2 - 1,
       BASE_LINE_HEIGHT: '18px',
       BASE_BACKGROUND_COLOR: 'transparent',
-      BASE_COLOR: p('textColor'),
-      ARROW_COLOR: opacify(0.2, p('appBorderColor')),
+      BASE_COLOR: inherit.textColor,
+      ARROW_COLOR: opacify(0.2, inherit.appBorderColor),
       ARROW_MARGIN_RIGHT: 4,
       ARROW_FONT_SIZE: 8,
-      TREENODE_FONT_FAMILY: p('fontCode'),
+      TREENODE_FONT_FAMILY: inherit.fontCode,
       TREENODE_FONT_SIZE: typography.size.s2 - 1,
       TREENODE_LINE_HEIGHT: '18px',
       TREENODE_PADDING_LEFT: 12,
