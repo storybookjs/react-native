@@ -163,6 +163,28 @@ storiesOf('Stories', module)
   .add('centered', () => 'Hello', { decorators: [centered] });
 ```
 
+## Addon viewport uses parameters
+
+Similarly, `@storybook/addon-viewport` uses parameters to pass viewport options. If you previously had:
+
+```js
+import { configureViewport } from `@storybook/addon-viewport`;
+
+configureViewport(options);
+```
+
+You can replace it with:
+
+```js
+import { addParameters } from '@storybook/react'; // or others
+
+addParameters({ viewport: options });
+```
+
+The `withViewport` decorator is also no longer supported and should be replaced with a parameter based API as above. Also the `onViewportChange` callback is no longer supported.
+
+See the README for the viewport addon for more information: https://github.com/storybooks/storybook/blob/master/addons/viewport/README.md
+
 ## From version 4.0.x to 4.1.x
 
 There are are a few migrations you should be aware of in 4.1, including one unintentionally breaking change for advanced addon usage.
