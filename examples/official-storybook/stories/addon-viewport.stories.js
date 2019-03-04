@@ -38,5 +38,5 @@ storiesOf('Addons|Viewport.Custom Default (Kindle Fire 2)', module)
         I respect my parents but I should be looking good on <b>iPad</b>.
       </Panel>
     ),
-    { viewport: { defaultViewport: 'ipad' } }
+    { viewport: { defaultViewport: 'ipad', onViewportChange: () => 0 } }
   );

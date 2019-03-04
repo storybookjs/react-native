@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
+import deprecate from 'util-deprecate';
 
 import { Global } from '@storybook/theming';
 
@@ -27,18 +28,28 @@ const createItem = memoize(1000)((id, name, value, change) => ({
 
 const flip = ({ width, height }) => ({ height: width, width: height });
 
+const deprecatedViewportString = deprecate(
+  () => 0,
+  'The viewport parameter must be an object with keys `viewports` and `defaultViewport`'
+);
+const deprecateOnViewportChange = deprecate(
+  () => 0,
+  'The viewport parameter `onViewportChange` is no longer supported'
+);
+
 const getState = memoize(10)((props, state, change) => {
   const data = props.api.getCurrentStoryData();
   const parameters = data && data.parameters && data.parameters[PARAM_KEY];
 
-  if (typeof parameters !== 'object') {
-    // eslint-disable-next-line no-console
-    console.warn(
-      'The viewport parameter must be an object with keys `viewports` and `defaultViewport`'
-    );
+  if (parameters && typeof parameters !== 'object') {
+    deprecatedViewportString();
   }
 
-  const { viewports, defaultViewport } = parameters || {};
+  const { viewports, defaultViewport, onViewportChange } = parameters || {};
+
+  if (onViewportChange) {
+    deprecateOnViewportChange();
+  }
 
   const list = toList(viewports || INITIAL_VIEWPORTS);
 
