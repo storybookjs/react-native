@@ -1,8 +1,8 @@
 {
   "next": {
-    "version": "5.0.0-rc.9",
+    "version": "5.0.0-rc.10",
     "info": {
-      "plain": "### Features\n\n* Core: Allow local decorators via params ([#5806](https://github.com/storybooks/storybook/pull/5806))\n\n### Bug Fixes\n\n* Core: Add warning for decorators added \"mid-kind\" ([#5819](https://github.com/storybooks/storybook/pull/5819))\n* Addon-notes: Support inline code markdown ([#5802](https://github.com/storybooks/storybook/pull/5802))\n* Theming: Fix theme loading bugs ([#5787](https://github.com/storybooks/storybook/pull/5787))\n* CLI: Fix build-storybook with simplebar esm files ([#5816](https://github.com/storybooks/storybook/pull/5816))"
+      "plain": "### Bug Fixes\n\n* Addon-viewports: Restore v4 behaviour ([#5829](https://github.com/storybooks/storybook/pull/5829))\n* Addon-backgrounds: Remove previously deprecated default export ([#5828](https://github.com/storybooks/storybook/pull/5828))\n\n### Maintenance\n\n* Addon-a11y: Cleanup and document migration ([#5833](https://github.com/storybooks/storybook/pull/5833))"
     }
   },
   "latest": {
