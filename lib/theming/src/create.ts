@@ -82,11 +82,15 @@ const darkSyntaxColors = {
 export const create = (vars: ThemeVars = { base: 'light' }, rest?: Rest): ThemeVars => {
   const inherit: ThemeVars = {
     ...themes.light,
-    ...(themes[vars.base] || themes.light),
+    ...(themes[vars.base] || {}),
     ...vars,
     ...{ base: themes[vars.base] ? vars.base : 'light' },
   };
-  return { ...rest, ...inherit };
+  return {
+    ...rest,
+    ...inherit,
+    ...{ barSelectedColor: vars.barSelectedColor || inherit.colorSecondary },
+  };
 };
 
 export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
