@@ -2,14 +2,14 @@
 import { chromeLight, chromeDark } from 'react-inspector';
 import { opacify } from 'polished';
 
-import { themeVars as lightThemeVars } from './themes/light-vars';
-import { themeVars as darkThemeVars } from './themes/dark-vars';
+import lightThemeVars from './themes/light';
+import darkThemeVars from './themes/dark';
 
 import { Theme, color, Color, background, typography, ThemeVars } from './base';
 import { easing, animation } from './animation';
 import { create as createSyntax } from './modules/syntax';
 
-const base: { light: ThemeVars; dark: ThemeVars } = { light: lightThemeVars, dark: darkThemeVars };
+const themes: { light: ThemeVars; dark: ThemeVars } = { light: lightThemeVars, dark: darkThemeVars };
 
 interface Rest {
   [key: string]: any;
@@ -79,23 +79,51 @@ const darkSyntaxColors = {
   blue2: '#00009f',
 };
 
-export const create = (vars: ThemeVars = { base: 'light' }, rest?: Rest): Theme => {
+export const create = (vars: ThemeVars = { base: 'light' }, rest?: Rest): ThemeVars => {
   const inherit: ThemeVars = {
-    ...base.light,
-    ...(base[vars.base] || base.light),
+    ...themes.light,
+    ...(themes[vars.base] || themes.light),
     ...vars,
-    ...{ base: base[vars.base] ? vars.base : 'light' },
+    ...{ base: themes[vars.base] ? vars.base : 'light' },
   };
+  return { ...rest, ...inherit };
+};
+
+export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
+  const {
+    base,
+    colorPrimary,
+    colorSecondary,
+    appBg,
+    appContentBg,
+    appBorderColor,
+    appBorderRadius,
+    fontBase,
+    fontCode,
+    textColor,
+    textInverseColor,
+    barTextColor,
+    barSelectedColor,
+    barBg,
+    inputBg,
+    inputBorder,
+    inputTextColor,
+    inputBorderRadius,
+    brandTitle,
+    brandUrl,
+    brandImage,
+    ...rest
+  } = inherit;
 
   return {
     ...(rest || {}),
 
-    base: inherit.base,
+    base,
     color: createColors(inherit),
     background: {
-      app: inherit.appBg,
-      content: inherit.appContentBg,
-      hoverable: inherit.base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
+      app: appBg,
+      content: appContentBg,
+      hoverable: base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
 
       positive: background.positive,
       negative: background.negative,
@@ -103,8 +131,8 @@ export const create = (vars: ThemeVars = { base: 'light' }, rest?: Rest): Theme 
     },
     typography: {
       fonts: {
-        base: inherit.fontBase,
-        mono: inherit.fontCode,
+        base: fontBase,
+        mono: fontCode,
       },
       weight: typography.weight,
       size: typography.size,
@@ -113,48 +141,48 @@ export const create = (vars: ThemeVars = { base: 'light' }, rest?: Rest): Theme 
     easing,
 
     input: {
-      border: inherit.inputBorder,
-      background: inherit.inputBg,
-      color: inherit.inputTextColor,
-      borderRadius: inherit.inputBorderRadius,
+      border: inputBorder,
+      background: inputBg,
+      color: inputTextColor,
+      borderRadius: inputBorderRadius,
     },
 
     // UI
     layoutMargin: 10,
-    appBorderColor: inherit.appBorderColor,
-    appBorderRadius: inherit.appBorderRadius,
+    appBorderColor,
+    appBorderRadius,
 
     // Toolbar default/active colors
-    barTextColor: inherit.barTextColor,
-    barSelectedColor: vars.barSelectedColor || inherit.colorSecondary,
-    barBg: inherit.barBg,
+    barTextColor,
+    barSelectedColor: barSelectedColor || colorSecondary,
+    barBg,
 
     // Brand logo/text
     brand: {
-      title: inherit.brandTitle,
-      url: inherit.brandUrl,
-      image: inherit.brandImage,
+      title: brandTitle,
+      url: brandUrl,
+      image: brandImage,
     },
 
     code: createSyntax({
-      colors: inherit.base === 'light' ? lightSyntaxColors : darkSyntaxColors,
-      mono: inherit.fontCode,
+      colors: base === 'light' ? lightSyntaxColors : darkSyntaxColors,
+      mono: fontCode,
     }),
 
     // Addon actions theme
     // API example https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js
     addonActionsTheme: {
-      ...(inherit.base === 'light' ? chromeLight : chromeDark),
+      ...(base === 'light' ? chromeLight : chromeDark),
 
-      BASE_FONT_FAMILY: inherit.fontCode,
+      BASE_FONT_FAMILY: fontCode,
       BASE_FONT_SIZE: typography.size.s2 - 1,
       BASE_LINE_HEIGHT: '18px',
       BASE_BACKGROUND_COLOR: 'transparent',
-      BASE_COLOR: inherit.textColor,
-      ARROW_COLOR: opacify(0.2, inherit.appBorderColor),
+      BASE_COLOR: textColor,
+      ARROW_COLOR: opacify(0.2, appBorderColor),
       ARROW_MARGIN_RIGHT: 4,
       ARROW_FONT_SIZE: 8,
-      TREENODE_FONT_FAMILY: inherit.fontCode,
+      TREENODE_FONT_FAMILY: fontCode,
       TREENODE_FONT_SIZE: typography.size.s2 - 1,
       TREENODE_LINE_HEIGHT: '18px',
       TREENODE_PADDING_LEFT: 12,
