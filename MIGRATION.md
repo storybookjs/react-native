@@ -237,16 +237,16 @@ Also, here's the error you'll get if you're running an older version of React:
 ```
 
 core.browser.esm.js:15 Uncaught TypeError: Object(...) is not a function
-at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
-at **webpack_require** (bootstrap:724)
-at fn (bootstrap:101)
-at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
-at **webpack_require** (bootstrap:724)
-at fn (bootstrap:101)
-at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
-at **webpack_require** (bootstrap:724)
-at fn (bootstrap:101)
-at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
+  at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
+  at __webpack_require__ (bootstrap:724)
+  at fn (bootstrap:101)
+  at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
+  at __webpack_require__ (bootstrap:724)
+  at fn (bootstrap:101)
+  at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
+  at __webpack_require__ (bootstrap:724)
+  at fn (bootstrap:101)
+  at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
 
 ```
 
