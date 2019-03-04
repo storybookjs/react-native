@@ -6,6 +6,7 @@
   - [Options addon deprecated](#options-addon-deprecated)
   - [Individual story decorators](#individual-story-decorators)
   - [Addon backgrounds uses parameters](#addon-backgrounds-uses-parameters)
+  - [Addon cssresources name attribute renamed](#addon-cssresources-name-attribute-renamed)
   - [Addon viewport uses parameters](#addon-viewport-uses-parameters)
   - [Addon a11y uses parameters](#addon-a11y-uses-parameters-decorator-renamed)
   - [New keyboard shortcuts defaults](#new-keyboard-shortcuts-defaults)
@@ -186,6 +187,46 @@ storiesOf('Stories', module).addParameters({ backgrounds: options });
 ```
 
 You can pass `backgrounds` parameters at the global level (via `addParameters` imported from `@storybook/react` et al.), and the story level (via the third argument to `.add()`).
+
+## Addon cssresources name attribute renamed
+
+In the options object for `@storybook/addon-cssresources`, the `name` attribute for each resource has been renamed to `id`. If you previously had:
+
+```js
+import { withCssResources } from '@storybook/addon-cssresources';
+import { addDecorator } from '@storybook/react';
+
+addDecorator(
+  withCssResources({
+    cssresources: [
+      {
+        name: `bluetheme`, // Previous
+        code: `<style>body { background-color: lightblue; }</style>`,
+        picked: false
+      }
+    ]
+  })
+);
+```
+
+You should replace it with:
+
+```js
+import { withCssResources } from '@storybook/addon-cssresources';
+import { addDecorator } from '@storybook/react';
+
+addDecorator(
+  withCssResources({
+    cssresources: [
+      {
+        id: `bluetheme`, // Renamed
+        code: `<style>body { background-color: lightblue; }</style>`,
+        picked: false
+      }
+    ]
+  })
+);
+```
 
 ## Addon viewport uses parameters
 
