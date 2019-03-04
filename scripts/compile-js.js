@@ -10,6 +10,7 @@ function getCommand(watch) {
     '--ignore **/__mocks__/,**/tests/*,**/__tests__/,**/**.test.js,**/stories/,**/**.story.js,**/**.stories.js,**/__snapshots__',
     './src --out-dir ./dist',
     '--copy-files',
+    '--ignore *.ts',
     `--config-file ${path.resolve(__dirname, '../.babelrc.js')}`,
   ];
 
