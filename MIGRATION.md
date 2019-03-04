@@ -183,7 +183,7 @@ addParameters({ viewport: options });
 
 The `withViewport` decorator is also no longer supported and should be replaced with a parameter based API as above. Also the `onViewportChange` callback is no longer supported.
 
-See the README for the viewport addon for more information: https://github.com/storybooks/storybook/blob/master/addons/viewport/README.md
+See the [README](https://github.com/storybooks/storybook/blob/master/addons/viewport/README.md) for the viewport addon for more information.
 
 ## From version 4.0.x to 4.1.x
 
