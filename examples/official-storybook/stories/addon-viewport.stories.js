@@ -38,5 +38,8 @@ storiesOf('Addons|Viewport.Custom Default (Kindle Fire 2)', module)
         I respect my parents but I should be looking good on <b>iPad</b>.
       </Panel>
     ),
-    { viewport: { defaultViewport: 'ipad', onViewportChange: () => 0 } }
-  );
+    { viewport: { defaultViewport: 'ipad' } }
+  )
+  .add('Disabled', () => <Panel>There should be no viewport selector in the toolbar</Panel>, {
+    viewport: { disable: true },
+  });

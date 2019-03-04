@@ -45,13 +45,13 @@ const getState = memoize(10)((props, state, change) => {
     deprecatedViewportString();
   }
 
-  const { viewports, defaultViewport, onViewportChange } = parameters || {};
+  const { disable, viewports, defaultViewport, onViewportChange } = parameters || {};
 
   if (onViewportChange) {
     deprecateOnViewportChange();
   }
 
-  const list = toList(viewports || INITIAL_VIEWPORTS);
+  const list = disable ? [] : toList(viewports || INITIAL_VIEWPORTS);
 
   const selected =
     state.selected === 'responsive' || list.find(i => i.id === state.selected)
