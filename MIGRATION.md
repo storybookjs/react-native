@@ -5,6 +5,8 @@
   - [Story hierarchy defaults](#story-hierarchy-defaults)
   - [Options addon deprecated](#options-addon-deprecated)
   - [Individual story decorators](#individual-story-decorators)
+  - [Addon backgrounds uses parameters](#addon-backgrounds-uses-parameters)
+  - [Addon viewport uses parameters](#addon-backgrounds-uses-parameters)
 - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
