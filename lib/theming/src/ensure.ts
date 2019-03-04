@@ -38,6 +38,7 @@ export const ensure = (input: any): Theme => {
   if (!input) {
     return light;
   } else {
+    // debugger;
     const missing = deletedDiff(base, input);
     if (Object.keys(missing).length) {
       logger.warn(
@@ -50,6 +51,6 @@ export const ensure = (input: any): Theme => {
       );
     }
 
-    return merge(light, input);
+    return merge(light, { ...input, animation: light.animation });
   }
 };

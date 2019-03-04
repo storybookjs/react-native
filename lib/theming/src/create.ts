@@ -126,7 +126,7 @@ export const create = (vars: ThemeVars = { base: 'light' }, rest?: Rest): Theme 
 
     // Toolbar default/active colors
     barTextColor: inherit.barTextColor,
-    barSelectedColor: inherit.barSelectedColor,
+    barSelectedColor: vars.barSelectedColor || inherit.colorSecondary,
     barBg: inherit.barBg,
 
     // Brand logo/text
