@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
+import deprecate from 'util-deprecate';
 
 import { Global } from '@storybook/theming';
 
@@ -8,6 +9,7 @@ import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/comp
 import { SET_STORIES } from '@storybook/core-events';
 
 import { PARAM_KEY } from './constants';
+import { INITIAL_VIEWPORTS, DEFAULT_VIEWPORT } from './defaults';
 
 const toList = memoize(50)(items =>
   items ? Object.entries(items).map(([id, value]) => ({ ...value, id })) : []
@@ -26,14 +28,35 @@ const createItem = memoize(1000)((id, name, value, change) => ({
 
 const flip = ({ width, height }) => ({ height: width, width: height });
 
+const deprecatedViewportString = deprecate(
+  () => 0,
+  'The viewport parameter must be an object with keys `viewports` and `defaultViewport`'
+);
+const deprecateOnViewportChange = deprecate(
+  () => 0,
+  'The viewport parameter `onViewportChange` is no longer supported'
+);
+
 const getState = memoize(10)((props, state, change) => {
   const data = props.api.getCurrentStoryData();
-  const list = toList(data && data.parameters && data.parameters[PARAM_KEY]);
+  const parameters = data && data.parameters && data.parameters[PARAM_KEY];
+
+  if (parameters && typeof parameters !== 'object') {
+    deprecatedViewportString();
+  }
+
+  const { disable, viewports, defaultViewport, onViewportChange } = parameters || {};
+
+  if (onViewportChange) {
+    deprecateOnViewportChange();
+  }
+
+  const list = disable ? [] : toList(viewports || INITIAL_VIEWPORTS);
 
   const selected =
     state.selected === 'responsive' || list.find(i => i.id === state.selected)
       ? state.selected
-      : list.find(i => i.default) || 'responsive';
+      : list.find(i => i.default) || defaultViewport || DEFAULT_VIEWPORT;
 
   const resets =
     selected !== 'responsive'
