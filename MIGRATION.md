@@ -225,7 +225,7 @@ import { addParameters } from '@storybook/react'; // or others
 addParameters({ a11y: options });
 ```
 
-You can pass `a11y` parameters at the global level (via `addParameters` imported from `@storybook/react` et al.), and the story level (via the third argument to `.add()`).
+You can also pass `a11y` parameters at the component level (via `storiesOf(...).addParameters`), and the story level (via the third argument to `.add()`).
 
 Furthermore, the decorator `checkA11y` has been deprecated and renamed to `withA11y` to make it consistent with other Storybook decorators.
 
