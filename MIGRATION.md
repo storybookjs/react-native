@@ -6,7 +6,8 @@
   - [Options addon deprecated](#options-addon-deprecated)
   - [Individual story decorators](#individual-story-decorators)
   - [Addon backgrounds uses parameters](#addon-backgrounds-uses-parameters)
-  - [Addon viewport uses parameters](#addon-backgrounds-uses-parameters)
+  - [Addon viewport uses parameters](#addon-viewport-uses-parameters)
+  - [Addon a11y uses parameters](#addon-a11y-uses-parameters-decorator-renamed)
 - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
@@ -204,7 +205,31 @@ addParameters({ viewport: options });
 
 The `withViewport` decorator is also no longer supported and should be replaced with a parameter based API as above. Also the `onViewportChange` callback is no longer supported.
 
-See the [README](https://github.com/storybooks/storybook/blob/master/addons/viewport/README.md) for the viewport addon for more information.
+See the [viewport addon README](https://github.com/storybooks/storybook/blob/master/addons/viewport/README.md) for more information.
+
+## Addon a11y uses parameters, decorator renamed
+
+Similarly, `@storybook/addon-a11y` uses parameters to pass a11y options. If you previously had:
+
+```js
+import { configureA11y } from `@storybook/addon-a11y`;
+
+configureA11y(options);
+```
+
+You should replace it with:
+
+```js
+import { addParameters } from '@storybook/react'; // or others
+
+addParameters({ a11y: options });
+```
+
+You can also pass `a11y` parameters at the component level (via `storiesOf(...).addParameters`), and the story level (via the third argument to `.add()`).
+
+Furthermore, the decorator `checkA11y` has been deprecated and renamed to `withA11y` to make it consistent with other Storybook decorators.
+
+See the [a11y addon README](https://github.com/storybooks/storybook/blob/master/addons/a11y/README.md) for more information.
 
 ## From version 4.0.x to 4.1.x
 
@@ -237,16 +262,16 @@ Also, here's the error you'll get if you're running an older version of React:
 ```
 
 core.browser.esm.js:15 Uncaught TypeError: Object(...) is not a function
-  at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
-  at __webpack_require__ (bootstrap:724)
-  at fn (bootstrap:101)
-  at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
-  at __webpack_require__ (bootstrap:724)
-  at fn (bootstrap:101)
-  at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
-  at __webpack_require__ (bootstrap:724)
-  at fn (bootstrap:101)
-  at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
+at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
+at **webpack_require** (bootstrap:724)
+at fn (bootstrap:101)
+at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
+at **webpack_require** (bootstrap:724)
+at fn (bootstrap:101)
+at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
+at **webpack_require** (bootstrap:724)
+at fn (bootstrap:101)
+at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
 
 ```
 
