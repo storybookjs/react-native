@@ -5,6 +5,8 @@
   - [Story hierarchy defaults](#story-hierarchy-defaults)
   - [Options addon deprecated](#options-addon-deprecated)
   - [Individual story decorators](#individual-story-decorators)
+  - [Addon backgrounds uses parameters](#addon-backgrounds-uses-parameters)
+  - [Addon viewport uses parameters](#addon-backgrounds-uses-parameters)
 - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
@@ -163,6 +165,25 @@ storiesOf('Stories', module)
   .add('centered', () => 'Hello', { decorators: [centered] });
 ```
 
+## Addon backgrounds uses parameters
+
+Similarly, `@storybook/addon-backgrounds` uses parameters to pass background options. If you previously had:
+
+```js
+import { withBackgrounds } from `@storybook/addon-backgrounds`;
+
+storiesOf('Stories', module)
+  .addDecorator(withBackgrounds(options));
+```
+
+You should replace it with:
+
+```js
+storiesOf('Stories', module).addParameters({ backgrounds: options });
+```
+
+You can pass `backgrounds` parameters at the global level (via `addParameters` imported from `@storybook/react` et al.), and the story level (via the third argument to `.add()`).
+
 ## Addon viewport uses parameters
 
 Similarly, `@storybook/addon-viewport` uses parameters to pass viewport options. If you previously had:
@@ -173,7 +194,7 @@ import { configureViewport } from `@storybook/addon-viewport`;
 configureViewport(options);
 ```
 
-You can replace it with:
+You should replace it with:
 
 ```js
 import { addParameters } from '@storybook/react'; // or others
@@ -214,17 +235,19 @@ However, if you're developing React components, this means you need to upgrade t
 Also, here's the error you'll get if you're running an older version of React:
 
 ```
+
 core.browser.esm.js:15 Uncaught TypeError: Object(...) is not a function
   at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
-  at **webpack_require** (bootstrap:724)
+  at __webpack_require__ (bootstrap:724)
   at fn (bootstrap:101)
   at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
-  at **webpack_require** (bootstrap:724)
+  at __webpack_require__ (bootstrap:724)
   at fn (bootstrap:101)
   at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
-  at **webpack_require** (bootstrap:724)
+  at __webpack_require__ (bootstrap:724)
   at fn (bootstrap:101)
   at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
+
 ```
 
 ### Generic addons
