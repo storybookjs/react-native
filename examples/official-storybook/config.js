@@ -3,7 +3,7 @@ import { storiesOf, configure, addDecorator, addParameters } from '@storybook/re
 import { Global, ThemeProvider, themes, createReset } from '@storybook/theming';
 
 import { withCssResources } from '@storybook/addon-cssresources';
-import { withA11Y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
 import { withNotes } from '@storybook/addon-notes';
 
 import 'storybook-chromatic';
@@ -28,7 +28,7 @@ addHeadWarning('preview-head-not-loaded', 'Preview head not loaded');
 addHeadWarning('dotenv-file-not-loaded', 'Dotenv file not loaded');
 
 addDecorator(withCssResources);
-addDecorator(withA11Y);
+addDecorator(withA11y);
 addDecorator(withNotes);
 
 addDecorator(storyFn => (
