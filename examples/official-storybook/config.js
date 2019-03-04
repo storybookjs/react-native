@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf, configure, addDecorator, addParameters } from '@storybook/react';
 import { Global, ThemeProvider, themes, createReset } from '@storybook/theming';
 
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withCssResources } from '@storybook/addon-cssresources';
 import { withA11Y } from '@storybook/addon-a11y';
 import { withNotes } from '@storybook/addon-notes';
@@ -10,7 +9,6 @@ import { withNotes } from '@storybook/addon-notes';
 import 'storybook-chromatic';
 
 import addHeadWarning from './head-warning';
-import extraViewports from './extra-viewports.json';
 
 if (process.env.NODE_ENV === 'development') {
   if (!process.env.DOTENV_DEVELOPMENT_DISPLAY_WARNING) {
@@ -51,10 +49,6 @@ addParameters({
   options: {
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: '|',
-  },
-  viewports: {
-    ...INITIAL_VIEWPORTS,
-    ...extraViewports,
   },
   backgrounds: [
     { name: 'storybook app', value: themes.normal.background.app, default: true },

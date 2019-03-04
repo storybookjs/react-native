@@ -8,6 +8,7 @@ import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/comp
 import { SET_STORIES } from '@storybook/core-events';
 
 import { PARAM_KEY } from './constants';
+import { INITIAL_VIEWPORTS, DEFAULT_VIEWPORT } from './defaults';
 
 const toList = memoize(50)(items =>
   items ? Object.entries(items).map(([id, value]) => ({ ...value, id })) : []
@@ -28,12 +29,22 @@ const flip = ({ width, height }) => ({ height: width, width: height });
 
 const getState = memoize(10)((props, state, change) => {
   const data = props.api.getCurrentStoryData();
-  const list = toList(data && data.parameters && data.parameters[PARAM_KEY]);
+  const parameters = data && data.parameters && data.parameters[PARAM_KEY];
+
+  if (typeof parameters !== 'object') {
+    console.warn(
+      'The viewport parameter must be an object with keys `viewports` and `defaultViewport`'
+    );
+  }
+
+  const { viewports, defaultViewport } = parameters || {};
+
+  const list = toList(viewports || INITIAL_VIEWPORTS);
 
   const selected =
     state.selected === 'responsive' || list.find(i => i.id === state.selected)
       ? state.selected
-      : list.find(i => i.default) || 'responsive';
+      : list.find(i => i.default) || defaultViewport || DEFAULT_VIEWPORT;
 
   const resets =
     selected !== 'responsive'
