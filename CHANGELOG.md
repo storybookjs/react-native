@@ -1,3 +1,10 @@
+## 5.0.0-rc.10 (March 4, 2019)
+
+### Bug Fixes
+
+* Addon-viewports: Restore v4 behaviour ([#5829](https://github.com/storybooks/storybook/pull/5829))
+* Addon-backgrounds: REMOVE previously deprecated default export ([#5828](https://github.com/storybooks/storybook/pull/5828))
+
 ## 5.0.0-rc.9 (March 3, 2019)
 
 ### Features
