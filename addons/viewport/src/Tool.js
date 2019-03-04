@@ -32,6 +32,7 @@ const getState = memoize(10)((props, state, change) => {
   const parameters = data && data.parameters && data.parameters[PARAM_KEY];
 
   if (typeof parameters !== 'object') {
+    // eslint-disable-next-line no-console
     console.warn(
       'The viewport parameter must be an object with keys `viewports` and `defaultViewport`'
     );
