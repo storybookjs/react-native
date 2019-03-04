@@ -35,11 +35,6 @@ export const withBackgrounds = makeDecorator({
   },
 });
 
-export default deprecate(
-  withBackgrounds,
-  'The default export of @storybook/addon-backgrounds is deprecated, please `import { withBackgrounds }` instead'
-);
-
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();
 }
