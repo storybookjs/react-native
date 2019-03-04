@@ -6,6 +6,11 @@ import { create as createSyntax } from './modules/syntax';
 import { chromeLight, chromeDark } from 'react-inspector';
 import { opacify } from 'polished';
 
+import { themeVars as lightThemeVars } from './themes/light';
+import { themeVars as darkThemeVars } from './themes/dark';
+
+const base: { light: ThemeVar; dark: ThemeVar } = { light: lightThemeVars, dark: darkThemeVars };
+
 interface Rest {
   [key: string]: any;
 }
@@ -110,76 +115,85 @@ const darkSyntaxColors = {
   blue2: '#00009f',
 };
 
-export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
-  base: vars.base,
-  color: createColors(vars),
-  background: {
-    app: vars.appBg || background.app,
-    content: vars.appContentBg || color.lightest,
-    hoverable: vars.base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
+function pick<B, K extends keyof B>(b: B, key: K): B[K] {
+  return b[key];
+}
 
-    positive: background.positive,
-    negative: background.negative,
-    warning: background.warning,
-  },
-  typography: {
-    fonts: {
-      base: vars.fontBase || typography.fonts.base,
-      mono: vars.fontCode || typography.fonts.mono,
+export const create = (vars: ThemeVar, rest?: Rest): Theme => {
+  const inherit = { ...vars, ...(base[vars.base] || base.light), ...base.light };
+  const p = pick.bind(null, inherit);
+
+  return {
+    base: vars.base,
+    color: createColors(vars),
+    background: {
+      app: p('appBg'),
+      content: p('appContentBg'),
+      hoverable: vars.base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
+
+      positive: background.positive,
+      negative: background.negative,
+      warning: background.warning,
     },
-    weight: typography.weight,
-    size: typography.size,
-  },
-  animation,
-  easing,
+    typography: {
+      fonts: {
+        base: p('fontBase'),
+        mono: p('fontCode'),
+      },
+      weight: typography.weight,
+      size: typography.size,
+    },
+    animation,
+    easing,
 
-  input: {
-    border: vars.inputBorder || color.border,
-    background: vars.inputBg || color.lightest,
-    color: vars.inputTextColor || color.defaultText,
-    borderRadius: vars.inputBorderRadius || vars.appBorderRadius || 4,
-  },
+    input: {
+      border: p('inputBorder'),
+      background: p('inputBg'),
+      color: p('inputTextColor'),
+      borderRadius: p('inputBorderRadius'),
+    },
 
-  // UI
-  layoutMargin: 10,
-  appBorderColor: vars.appBorderColor || color.border,
-  appBorderRadius: vars.appBorderRadius || 4,
+    // UI
+    layoutMargin: 10,
+    appBorderColor: p('appBorderColor'),
+    appBorderRadius: p('appBorderRadius'),
 
-  // Toolbar default/active colors
-  barTextColor: vars.barTextColor || color.mediumdark,
-  barSelectedColor: vars.barSelectedColor || color.secondary,
-  barBg: vars.barBg || color.lightest,
+    // Toolbar default/active colors
+    barTextColor: p('barTextColor'),
+    barSelectedColor: p('barSelectedColor'),
+    barBg: p('barBg'),
 
-  // Brand logo/text
-  brand: {
-    title: vars.brandTitle,
-    url: vars.brandUrl,
-    image: vars.brandImage,
-  },
+    // Brand logo/text
+    brand: {
+      title: p('brandTitle'),
+      url: p('brandUrl'),
+      image: p('brandImage'),
+    },
 
-  code: createSyntax({
-    colors: vars.base === 'light' ? lightSyntaxColors : darkSyntaxColors,
-    mono: vars.fontCode || typography.fonts.mono,
-  }),
+    code: createSyntax({
+      colors: vars.base === 'light' ? lightSyntaxColors : darkSyntaxColors,
+      mono: p('fontCode'),
+    }),
 
-  // Addon actions theme
-  // API example https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js
-  addonActionsTheme: {
-    ...(vars.base === 'light' ? chromeLight : chromeDark),
+    // Addon actions theme
+    // API example https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js
+    addonActionsTheme: {
+      ...(vars.base === 'light' ? chromeLight : chromeDark),
 
-    BASE_FONT_FAMILY: vars.fontCode || typography.fonts.mono,
-    BASE_FONT_SIZE: typography.size.s2 - 1,
-    BASE_LINE_HEIGHT: '18px',
-    BASE_BACKGROUND_COLOR: 'transparent',
-    BASE_COLOR: vars.textColor || color.darkest,
-    ARROW_COLOR: opacify(0.2, vars.appBorderColor || color.border),
-    ARROW_MARGIN_RIGHT: 4,
-    ARROW_FONT_SIZE: 8,
-    TREENODE_FONT_FAMILY: vars.fontCode || typography.fonts.mono,
-    TREENODE_FONT_SIZE: typography.size.s2 - 1,
-    TREENODE_LINE_HEIGHT: '18px',
-    TREENODE_PADDING_LEFT: 12,
-  },
+      BASE_FONT_FAMILY: p('fontCode'),
+      BASE_FONT_SIZE: typography.size.s2 - 1,
+      BASE_LINE_HEIGHT: '18px',
+      BASE_BACKGROUND_COLOR: 'transparent',
+      BASE_COLOR: p('textColor'),
+      ARROW_COLOR: opacify(0.2, p('appBorderColor')),
+      ARROW_MARGIN_RIGHT: 4,
+      ARROW_FONT_SIZE: 8,
+      TREENODE_FONT_FAMILY: p('fontCode'),
+      TREENODE_FONT_SIZE: typography.size.s2 - 1,
+      TREENODE_LINE_HEIGHT: '18px',
+      TREENODE_PADDING_LEFT: 12,
+    },
 
-  ...(rest || {}),
-});
+    ...(rest || {}),
+  };
+};

@@ -1,10 +1,7 @@
 import { create } from '../create';
 import { color, typography } from '../base';
 
-export default create({
-  // Is this a light theme or a dark theme?
-  base: 'dark',
-
+export const themeVars = {
   // Storybook-specific color palette
   colorPrimary: '#FF4785', // coral
   colorSecondary: '#1EA7FD', // ocean
@@ -33,4 +30,11 @@ export default create({
   inputBorder: 'rgba(0,0,0,.3)',
   inputTextColor: color.lightest,
   inputBorderRadius: 4,
+};
+
+export default create({
+  // Is this a light theme or a dark theme?
+  base: 'dark',
+
+  ...themeVars,
 });
