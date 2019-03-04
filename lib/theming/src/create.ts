@@ -1,13 +1,13 @@
 // This generates theme variables in the correct shape for the UI
-
-import { Theme, Brand, color, Color, background, typography } from './base';
-import { easing, animation } from './animation';
-import { create as createSyntax } from './modules/syntax';
 import { chromeLight, chromeDark } from 'react-inspector';
 import { opacify } from 'polished';
 
-import { themeVars as lightThemeVars } from './themes/light';
-import { themeVars as darkThemeVars } from './themes/dark';
+import { themeVars as lightThemeVars } from './themes/light-vars';
+import { themeVars as darkThemeVars } from './themes/dark-vars';
+
+import { Theme, color, Color, background, typography } from './base';
+import { easing, animation } from './animation';
+import { create as createSyntax } from './modules/syntax';
 
 const base: { light: ThemeVar; dark: ThemeVar } = { light: lightThemeVars, dark: darkThemeVars };
 
@@ -120,12 +120,12 @@ function pick<B, K extends keyof B>(b: B, key: K): B[K] {
 }
 
 export const create = (vars: ThemeVar, rest?: Rest): Theme => {
-  const inherit = { ...vars, ...(base[vars.base] || base.light), ...base.light };
+  const inherit: ThemeVar = { ...vars, ...(base[vars.base] || base.light), ...base.light };
   const p = pick.bind(null, inherit);
 
   return {
     base: vars.base,
-    color: createColors(vars),
+    color: createColors(inherit),
     background: {
       app: p('appBg'),
       content: p('appContentBg'),
