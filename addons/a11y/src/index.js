@@ -58,6 +58,12 @@ if (module && module.hot && module.hot.decline) {
 }
 
 // TODO: REMOVE at v6.0.0
+export const withA11Y = deprecate(
+  (...args) => withA11y(...args),
+  'withA11Y has been renamed withA11y'
+);
+
+// TODO: REMOVE at v6.0.0
 export const checkA11y = deprecate(
   (...args) => withA11y(...args),
   'checkA11y has been renamed withA11y'
