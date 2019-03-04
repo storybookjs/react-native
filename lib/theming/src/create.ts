@@ -11,7 +11,7 @@ interface Rest {
 }
 
 interface ThemeVar {
-  base?: 'light' | 'dark';
+  base: 'light' | 'dark';
 
   colorPrimary?: string;
   colorSecondary?: string;
