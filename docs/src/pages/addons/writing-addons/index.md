@@ -184,7 +184,7 @@ class MyPanel extends React.Component {
   componentDidMount() {
     const { api } = this.props;
     api.on('foo/doSomeAction', this.onSomeAction);
-    api.on(STORY_RENDERED this.onStoryChange);
+    api.on(STORY_RENDERED, this.onStoryChange);
   }
   componentWillUnmount() {
     const { api } = this.props;
