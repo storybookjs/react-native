@@ -163,6 +163,25 @@ storiesOf('Stories', module)
   .add('centered', () => 'Hello', { decorators: [centered] });
 ```
 
+## Addon backgrounds uses parameters
+
+Similarly, `@storybook/addon-backgrounds` uses parameters to pass background options. If you previously had:
+
+```js
+import { withBackgrounds } from `@storybook/addon-backgrounds`;
+
+storiesOf('Stories', module)
+  .addDecorator(withBackgrounds(options));
+```
+
+You can replace it with:
+
+```js
+storiesOf('Stories', module).addParameters({ backgrounds: options });
+```
+
+You can pass `backgrounds` parameters at the global level (via `addParameters` imported from `@storybook/react` et al.), and the story level (via the third argument to `.add()`).
+
 ## From version 4.0.x to 4.1.x
 
 There are are a few migrations you should be aware of in 4.1, including one unintentionally breaking change for advanced addon usage.
