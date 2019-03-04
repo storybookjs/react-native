@@ -8,6 +8,8 @@
   - [Addon backgrounds uses parameters](#addon-backgrounds-uses-parameters)
   - [Addon viewport uses parameters](#addon-viewport-uses-parameters)
   - [Addon a11y uses parameters](#addon-a11y-uses-parameters-decorator-renamed)
+  - [New keyboard shortcuts defaults](#new-keyboard-shortcuts-defaults)
+  - [New URL structure](#new-url-structure)
 - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
@@ -230,6 +232,36 @@ You can also pass `a11y` parameters at the component level (via `storiesOf(...).
 Furthermore, the decorator `checkA11y` has been deprecated and renamed to `withA11y` to make it consistent with other Storybook decorators.
 
 See the [a11y addon README](https://github.com/storybooks/storybook/blob/master/addons/a11y/README.md) for more information.
+
+## New keyboard shortcuts defaults
+
+Storybook's keyboard shortcuts are updated in 5.0, but they are configurable via the menu so if you want to set them back you can:
+
+| Shorctut               | Old         | New   |
+| ---------------------- | ----------- | ----- |
+| Toggle sidebar         | cmd-shift-X | S     |
+| Toggle addons panel    | cmd-shift-Z | A     |
+| Toggle addons position | cmd-shift-G | D     |
+| Toggle fullscreen      | cmd-shift-F | F     |
+| Next story             | cmd-shift-→ | alt-→ |
+| Prev story             | cmd-shift-← | alt-← |
+| Next component         |             | alt-↓ |
+| Prev component         |             | alt-↑ |
+| Search                 |             | /     |
+
+## New URL structure
+
+We've update Storybook's URL structure in 5.0. The old structure used URL parameters to save the UI state, resulting in long ugly URLs. v5 respects the old URL parameters, but largely does away with them.
+
+The old structure encoded `selectedKind` and `selectedStory` among other parameters. Storybook v5 respects these parameters but will issue a deprecation message in the browser console warning of potential future removal.
+
+The new URL structure looks like:
+
+```
+https://url-of-storybook?path=/story/<storyId>
+```
+
+The structure of `storyId` is a slugified `<selectedKind>--<selectedStory>` (slugified = lowercase, hyphen-separated). Each `storyId` must be unique. We plan to build more features into Storybook in upcoming versions based on this new structure.
 
 ## From version 4.0.x to 4.1.x
 
