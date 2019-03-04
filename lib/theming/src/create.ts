@@ -116,15 +116,22 @@ const darkSyntaxColors = {
 };
 
 export const create = (vars: ThemeVars, rest?: Rest): Theme => {
-  const inherit: ThemeVars = { ...vars, ...(base[vars.base] || base.light), ...base.light };
+  const inherit: ThemeVars = {
+    ...vars,
+    ...(base[vars.base] || base.light),
+    ...base.light,
+    ...{
+      base: 'light',
+    },
+  };
 
   return {
-    base: vars.base,
+    base: inherit.base,
     color: createColors(inherit),
     background: {
       app: inherit.appBg,
       content: inherit.appContentBg,
-      hoverable: vars.base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
+      hoverable: inherit.base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
 
       positive: background.positive,
       negative: background.negative,
@@ -166,14 +173,14 @@ export const create = (vars: ThemeVars, rest?: Rest): Theme => {
     },
 
     code: createSyntax({
-      colors: vars.base === 'light' ? lightSyntaxColors : darkSyntaxColors,
+      colors: inherit.base === 'light' ? lightSyntaxColors : darkSyntaxColors,
       mono: inherit.fontCode,
     }),
 
     // Addon actions theme
     // API example https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js
     addonActionsTheme: {
-      ...(vars.base === 'light' ? chromeLight : chromeDark),
+      ...(inherit.base === 'light' ? chromeLight : chromeDark),
 
       BASE_FONT_FAMILY: inherit.fontCode,
       BASE_FONT_SIZE: typography.size.s2 - 1,
