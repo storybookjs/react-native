@@ -78,6 +78,7 @@ staticDir <dir-names>   Directory where to load static files from, array of stri
 outputDir [dir-name]    Directory where to store built files
 configDir [dir-name]    Directory where to load Storybook configurations from
 watch                   Enable watch mode
+quiet                   Suppress verbose build output
 ```
 
 Example: 
