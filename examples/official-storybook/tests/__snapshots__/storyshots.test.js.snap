@@ -5326,8 +5326,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
 }
 
@@ -5361,8 +5359,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
 }
 
@@ -5396,8 +5392,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 39px;
 }
 
@@ -5431,8 +5425,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 54px;
 }
 
@@ -5687,8 +5679,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
 }
 
@@ -5722,8 +5712,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
 }
 
@@ -5757,8 +5745,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 39px;
 }
 
@@ -5792,8 +5778,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 54px;
 }
 
@@ -6530,8 +6514,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -6591,8 +6573,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: default;
   background: #1EA7FD;
@@ -6648,8 +6628,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
   color: #333333;
@@ -7014,8 +6992,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -7075,8 +7051,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: default;
   background: #1EA7FD;
@@ -7132,8 +7106,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
   color: #333333;
@@ -9721,8 +9693,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -9783,8 +9753,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -9871,8 +9839,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -9936,8 +9902,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -10027,8 +9991,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -10089,8 +10051,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -10245,8 +10205,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
 }
 
@@ -10352,8 +10310,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
 }
 
@@ -10417,8 +10373,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -10492,8 +10446,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
   color: #333333;
@@ -10565,8 +10517,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
   color: #333333;
@@ -10595,8 +10545,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 54px;
   cursor: pointer;
   color: #333333;
@@ -10629,8 +10577,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -10704,8 +10650,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
   color: #333333;
@@ -10777,8 +10721,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
   color: #333333;
@@ -10807,8 +10749,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 54px;
   cursor: pointer;
   color: #333333;
@@ -10945,8 +10885,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -11008,8 +10946,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -11127,8 +11063,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: default;
   background: #1EA7FD;
@@ -11188,8 +11122,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: default;
   background: #1EA7FD;
@@ -11245,8 +11177,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -11307,8 +11237,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -12486,8 +12414,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
 }
 
@@ -12521,8 +12447,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
 }
 
@@ -12556,8 +12480,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 39px;
 }
 
@@ -12591,8 +12513,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 54px;
 }
 
@@ -12706,8 +12626,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
 }
 
@@ -12741,8 +12659,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
 }
 
@@ -12776,8 +12692,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 39px;
 }
 
@@ -12811,8 +12725,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 54px;
 }
 
@@ -13331,8 +13243,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -13422,8 +13332,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
   color: #333333;
@@ -13495,8 +13403,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
   color: #333333;
@@ -13533,8 +13439,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: default;
   background: #1EA7FD;
@@ -13703,8 +13607,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -13794,8 +13696,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
   color: #333333;
@@ -13867,8 +13767,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: pointer;
   color: #333333;
@@ -13905,8 +13803,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 39px;
   cursor: default;
   background: #1EA7FD;
@@ -14305,8 +14201,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -14366,8 +14260,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: default;
   background: #1EA7FD;
@@ -14423,8 +14315,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
   color: #333333;
@@ -14660,8 +14550,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 9px;
   cursor: pointer;
   color: #333333;
@@ -14721,8 +14609,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: default;
   background: #1EA7FD;
@@ -14778,8 +14664,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  -webkit-transition: background 75ms ease-out;
-  transition: background 75ms ease-out;
   padding-left: 24px;
   cursor: pointer;
   color: #333333;
