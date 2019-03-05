@@ -36,9 +36,9 @@ class Header extends React.Component {
       <div id="header" className="row">
         <div className="col-xs-12 col-md-12">
           <div id="header-title" className={titleClassname}>
-            <Link to="/">
+            <a href="https://storybook.js.org/">
               <img className="sb-title" src={storybookLogo} alt="Storybook Logo" />
-            </Link>
+            </a>
           </div>
           <div id="header-links" className="float-right">
             {this.renderSections()}
