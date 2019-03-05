@@ -5180,8 +5180,8 @@ babel-preset-jest@^24.1.0:
 
 babel-preset-rax@^1.0.0-beta.0:
   version "1.0.0-beta.0"
-  resolved "http://registry.npm.alibaba-inc.com/babel-preset-rax/download/babel-preset-rax-1.0.0-beta.0.tgz#1633efb1061e5908fc1889b0178044f1700b69b0"
-  integrity sha1-FjPvsQYeWQj8GImwF4BE8XALabA=
+  resolved "https://registry.yarnpkg.com/babel-preset-rax/-/babel-preset-rax-1.0.0-beta.0.tgz#1633efb1061e5908fc1889b0178044f1700b69b0"
+  integrity sha512-0JwoP+QoxgL3tzhIjr/HjOBo2D0pt3o3S6Xx7hVo8boJdYgFsggNrXDBLqzbdmqF9lfaUvUMxAT05dly+8Vt5Q==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-react-display-name" "^7.0.0"
@@ -10244,6 +10244,14 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+
+event-emitter@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/event-emitter/-/event-emitter-0.3.5.tgz#df8c69eef1647923c7157b9ce83840610b02cc39"
+  integrity sha1-34xp7vFkeSPHFXuc6DhAYQsCzDk=
+  dependencies:
+    d "1"
+    es5-ext "~0.10.14"
 
 event-target-shim@^1.0.5:
   version "1.1.1"
@@ -19810,6 +19818,16 @@ rax-link@^0.6.5:
     rax-text "^0.6.5"
     universal-env "^0.6.5"
 
+rax-picker@^0.6.5:
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/rax-picker/-/rax-picker-0.6.5.tgz#ab945f864312654cb6a1fa858bbe2504ead8ce5c"
+  integrity sha512-fu1s+YkVab/ZHvgLX47ku2eu5IBBoDV2EzL5KGYELKLBBfpivC3jAQ7hgO4Gdg9SF+6OKMx0elDigByJFJ9LXw==
+  dependencies:
+    rax "^0.6.5"
+    rax-text "^0.6.5"
+    rax-touchable "^0.6.5"
+    universal-env "^0.6.5"
+
 rax-scripts@^1.0.0-beta.10:
   version "1.0.0-beta.10"
   resolved "http://registry.npm.alibaba-inc.com/rax-scripts/download/rax-scripts-1.0.0-beta.10.tgz#9619dbafef978d93d91414773684661d0db26d8c"
@@ -19877,6 +19895,11 @@ rax-scripts@^1.0.0-beta.10:
     webpack-dev-server "^3.1.11"
     webpack-manifest-plugin "^2.0.4"
     webpack-merge "^4.1.5"
+
+rax-test-renderer@^0.6.5:
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/rax-test-renderer/-/rax-test-renderer-0.6.5.tgz#f8716709a6da0a48d8de47ff433e996df3fef1fc"
+  integrity sha512-3/bTE0eWiQgEtxoB5c0XjhTq9LHGdIhL16LoodSB2SRW3QG3uzKbeKP9GS8VHvQn8gHRSh6fBNnydUQeyJrnTQ==
 
 rax-text@^0.6.5:
   version "0.6.5"
@@ -23143,8 +23166,8 @@ stylehacks@^4.0.0:
 
 stylesheet-loader@^0.6.5:
   version "0.6.5"
-  resolved "http://registry.npm.alibaba-inc.com/stylesheet-loader/download/stylesheet-loader-0.6.5.tgz#ecdc84cc4d8cecc68f65e5f28d14b757d74e6e19"
-  integrity sha1-7NyEzE2M7MaPZeXyjRS3V9dObhk=
+  resolved "https://registry.yarnpkg.com/stylesheet-loader/-/stylesheet-loader-0.6.5.tgz#ecdc84cc4d8cecc68f65e5f28d14b757d74e6e19"
+  integrity sha512-o88XkASmIGNfhYqjaTHfNgXBagOa8qSmawENlLxOFFRjQPoBEGEwfBCgBHu1EXc4lv58fWjL/wSKWNQ4vIhKyw==
   dependencies:
     camelcase "^3.0.0"
     chalk "^1.1.3"

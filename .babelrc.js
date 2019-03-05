@@ -24,6 +24,13 @@ module.exports = {
       presets: ['babel-preset-vue'],
     },
     {
+      test: './examples/rax-kitchen-sink',
+      presets: [
+        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage' }],
+        ['babel-preset-rax', { development: process.env.BABEL_ENV === 'development' }],
+      ],
+    },
+    {
       test: './lib',
       presets: [
         ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage' }],
