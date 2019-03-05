@@ -19,7 +19,6 @@ module.exports = {
         '/basics/writing-stories/',
         '/basics/exporting-storybook/',
         '/basics/faq/',
-        '/basics/community/',
         '/basics/live-examples/',
       ],
       configurations: [
