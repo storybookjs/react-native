@@ -6,9 +6,9 @@
     }
   },
   "latest": {
-    "version": "4.1.13",
+    "version": "5.0.0",
     "info": {
-      "plain": "### Maintenance\n\n* Cleanup CLI version notice ([#5699](https://github.com/storybooks/storybook/pull/5699))\n* Use static versions.json file instead of hacking one in ([#5675](https://github.com/storybooks/storybook/pull/5675))"
+      "plain": "Storybook 5.0 is a completely new UI with the following improvements:\n\n- 🌓 New design with light and dark themes\n- 🛠 Canvas toolbar for easy access to addons\n- 🗺 Overhauled navigation sidebar with an intuitive menu\n- 🗜 Redesigned addons panel with handy buttons to toggle visibility and orientation\n- ⌨️ Improved keyboard shortcuts that are user configurable\n- 🌍 New URL structure that eliminates long strings of query parameters\n\n5.0 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.0.0-alpha.*`, `5.0.0-beta.*`, and `5.0.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybooks/storybook/blob/next/MIGRATION.md) to ugprade from `4.x`."
     }
   }
 }
