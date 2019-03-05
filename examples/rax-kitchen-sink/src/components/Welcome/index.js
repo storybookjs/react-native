@@ -1,80 +1,37 @@
+/* eslint-disable react/prop-types, jsx-a11y/anchor-is-valid */
 import { createElement } from 'rax';
 import View from 'rax-view';
 import Text from 'rax-text';
 import Button from 'rax-button';
 import Image from 'rax-image';
 
-const Main = props => (
+const Main = ({ children, ...props }) => (
   <View
     {...props}
     style={{
       margin: 15,
-      maxWidth: 600,
-      lineHeight: 1.4,
       fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
     }}
-  />
-);
-
-// eslint-disable-next-line react/prop-types
-const P = ({ children, ...props }) => (
-  <View {...props}>
-    <Text
-      style={{
-        fontSize: 10,
-        lineHeight: 15,
-      }}
-    >
-      {children}
-    </Text>
+  >
+    {children}
   </View>
 );
 
-// eslint-disable-next-line react/prop-types
+const P = ({ children, ...props }) => (
+  <View {...props} style={{ marginBottom: 10 }}>
+    <Text style={{ fontSize: 12 }}>{children}</Text>
+  </View>
+);
+
 const Title = ({ children, ...props }) => (
   <Text {...props} style={{ fontSize: 40, lineHeight: 50, fontWeight: 'bold' }}>
     {children}
   </Text>
 );
 
-const Note = props => (
-  <Text
-    {...props}
-    style={{
-      opacity: 0.5,
-      fontSize: 13,
-    }}
-  />
-);
-
-// eslint-disable-next-line react/prop-types
-const NavButton = ({ children, ...props }) => (
-  <Button
-    {...props}
-    style={{
-      color: '#1474f3',
-      textDecoration: 'none',
-      borderBottom: '1px solid #1474f3',
-      paddingBottom: 2,
-      borderTop: 'none',
-      borderRight: 'none',
-      borderLeft: 'none',
-      backgroundColor: 'transparent',
-      padding: 10,
-      fontSize: 13,
-      lineHeight: 15,
-      cursor: 'pointer',
-      font: 'inherit',
-    }}
-  >
-    {children}
-  </Button>
-);
-
-/* eslint-disable-next-line react/prop-types */
 const Welcome = ({ showApp }) => (
   <Main>
-    <Title>Welcome to storybook for Preact</Title>
+    <Title>Welcome to storybook for Rax</Title>
     <Image
       source={{
         uri: './rax-logo.png',
@@ -84,8 +41,8 @@ const Welcome = ({ showApp }) => (
           'https://user-images.githubusercontent.com/677114/49848760-999e7d00-fe11-11e8-978f-264ea31f6739.png',
       }}
       style={{
-        width: 150,
-        height: 150,
+        width: 100,
+        height: 100,
         margin: '0 auto',
       }}
       resizeMode="cover"
@@ -98,9 +55,9 @@ const Welcome = ({ showApp }) => (
       like a visual test case.)
     </P>
     <P>See these sample</P>
-    <NavButton onPress={showApp}>
+    <Button onPress={showApp}>
       <P>Button</P>
-    </NavButton>
+    </Button>
     <P>for a component called 'Button'.</P>
     <P>
       Just like that, you can add your own components as stories. You can also edit those components

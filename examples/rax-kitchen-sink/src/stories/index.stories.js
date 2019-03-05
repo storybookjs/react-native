@@ -5,5 +5,9 @@ import Text from 'rax-text';
 import App from '../components/App';
 
 storiesOf('Basic', module)
-  .add('Button', () => <Button><Text>BUTTON</Text></Button>)
+  .add('Button', () => (
+    <Button>
+      <Text>BUTTON</Text>
+    </Button>
+  ))
   .add('App', () => <App />);
