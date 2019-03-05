@@ -45,7 +45,6 @@ export default class KnobPanel extends PureComponent {
   }
 
   componentDidMount() {
-    console.log('mounted');
     this.mounted = true;
     const { channel, api } = this.props;
     channel.on(SET, this.setKnobs);
