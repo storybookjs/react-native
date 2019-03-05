@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // Our wrapper around react-popper that does common stuff.
 
 import React from 'react';

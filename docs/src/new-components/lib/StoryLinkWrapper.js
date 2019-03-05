@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 // This is allows us to test whether the link works via the actions addon
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
