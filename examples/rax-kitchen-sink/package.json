@@ -3,18 +3,24 @@
   "version": "5.0.0-beta.3",
   "private": true,
   "scripts": {
+    "test:generate-output": "jest --json --outputFile=jest-test-results.json --config=./jest-addon.config.js",
     "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
+    "test": "jest",
     "start": "rax-scripts start",
     "build": "rax-scripts build",
     "lint": "eslint --ext .js --ext .jsx ./src",
     "storybook": "start-storybook -p 9009 -s public",
+    "prestorybook": "npm run test:generate-output",
+    "prebuild:storybook": "npm run test:generate-output",
     "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
+    "event-emitter": "^0.3.5",
     "rax": "^0.6.5",
     "rax-button": "^0.6.5",
     "rax-image": "^0.6.8",
     "rax-link": "^0.6.5",
+    "rax-picker": "^0.6.5",
     "rax-text": "^0.6.5",
     "rax-view": "^0.6.5"
   },
@@ -31,12 +37,16 @@
     "@storybook/addon-notes": "5.0.0-beta.3",
     "@storybook/addon-options": "5.0.0-beta.3",
     "@storybook/addon-storyshots": "5.0.0-beta.3",
+    "@storybook/addon-storysource": "5.0.0-beta.3",
     "@storybook/addon-viewport": "5.0.0-beta.3",
     "@storybook/addons": "5.0.0-beta.3",
     "@storybook/rax": "5.0.0-beta.3",
-    "rax-scripts": "^1.0.0-beta.10",
     "babel-eslint": "^8.2.2",
+    "babel-preset-rax": "^1.0.0-beta.0",
     "eslint": "^4.18.1",
-    "eslint-plugin-react": "^7.7.0"
+    "eslint-plugin-react": "^7.7.0",
+    "rax-scripts": "^1.0.0-beta.10",
+    "rax-test-renderer": "^0.6.5",
+    "stylesheet-loader": "^0.6.5"
   }
 }
