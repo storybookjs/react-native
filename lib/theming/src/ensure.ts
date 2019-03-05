@@ -3,42 +3,15 @@ import { logger } from '@storybook/client-logger';
 import { deletedDiff } from 'deep-object-diff';
 import { stripIndent } from 'common-tags';
 
-import mergeWith from 'lodash.mergewith';
-import isEqual from 'lodash.isequal';
-
 import light from './themes/light';
-import { Theme } from './base';
+import { Theme, ThemeVars } from './base';
+import { convert } from './create';
 
-const base = {
-  ...light,
-  animation: {},
-  brand: {},
-};
-
-// merge with concatenating arrays, but no duplicates
-const merge = (a: any, b: any) =>
-  mergeWith({}, a, b, (objValue: any, srcValue: any) => {
-    if (Array.isArray(srcValue) && Array.isArray(objValue)) {
-      srcValue.forEach(s => {
-        const existing = objValue.find(o => o === s || isEqual(o, s));
-        if (!existing) {
-          objValue.push(s);
-        }
-      });
-
-      return objValue;
-    }
-    if (Array.isArray(objValue)) {
-      return objValue;
-    }
-    return undefined;
-  });
-
-export const ensure = (input: any): Theme => {
+export const ensure = (input: ThemeVars): Theme => {
   if (!input) {
-    return light;
+    return convert(light);
   } else {
-    const missing = deletedDiff(base, input);
+    const missing = deletedDiff(light, input);
     if (Object.keys(missing).length) {
       logger.warn(
         stripIndent`
@@ -50,6 +23,6 @@ export const ensure = (input: any): Theme => {
       );
     }
 
-    return merge(light, input);
+    return convert(input);
   }
 };

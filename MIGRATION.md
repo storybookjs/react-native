@@ -2,8 +2,16 @@
 
 - [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
   - [Webpack config simplification](#webpack-config-simplification)
+  - [Theming overhaul](#theming-overhaul)
   - [Story hierarchy defaults](#story-hierarchy-defaults)
   - [Options addon deprecated](#options-addon-deprecated)
+  - [Individual story decorators](#individual-story-decorators)
+  - [Addon backgrounds uses parameters](#addon-backgrounds-uses-parameters)
+  - [Addon cssresources name attribute renamed](#addon-cssresources-name-attribute-renamed)
+  - [Addon viewport uses parameters](#addon-viewport-uses-parameters)
+  - [Addon a11y uses parameters](#addon-a11y-uses-parameters-decorator-renamed)
+  - [New keyboard shortcuts defaults](#new-keyboard-shortcuts-defaults)
+  - [New URL structure](#new-url-structure)
 - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
@@ -60,6 +68,10 @@ module.exports = ({ config, mode }) => { config.modules.rules.push(...); return 
 In contrast, the 4.x configuration function accepted either two or three arguments (`(baseConfig, mode)`, or `(baseConfig, mode, defaultConfig)`). The `config` object in the 5.x signature is equivalent to 4.x's `defaultConfig`.
 
 Please see the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
+
+## Theming overhaul
+
+Theming has been rewritten in v5. If you used theming in v4, please consult the [theming docs](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/theming/index.md) to learn about the new API.
 
 ## Story hierarchy defaults
 
@@ -139,6 +151,164 @@ Here is the mapping from old options to new:
 
 Storybook v5 removes the search dialog box in favor of a quick search in the navigation view, so `showSearchBox` has been removed.
 
+## Individual story decorators
+
+The behavior of adding decorators to a kind has changed in SB5 ([#5781](https://github.com/storybooks/storybook/issues/5781)).
+
+In SB4 it was possible to add decorators to only a subset of the stories of a kind.
+
+```js
+storiesOf('Stories', module)
+  .add('noncentered', () => 'Hello')
+  .addDecorator(centered)
+  .add('centered', () => 'Hello');
+```
+
+The semantics has changed in SB5 so that calling `addDecorator` on a kind adds a decorator to all its stories, no mater the order. So in the previous example, both stories would be centered.
+
+To allow for a subset of the stories in a kind to be decorated, we've added the ability to add decorators to individual stories using parameters:
+
+```js
+storiesOf('Stories', module)
+  .add('noncentered', () => 'Hello')
+  .add('centered', () => 'Hello', { decorators: [centered] });
+```
+
+## Addon backgrounds uses parameters
+
+Similarly, `@storybook/addon-backgrounds` uses parameters to pass background options. If you previously had:
+
+```js
+import { withBackgrounds } from `@storybook/addon-backgrounds`;
+
+storiesOf('Stories', module)
+  .addDecorator(withBackgrounds(options));
+```
+
+You should replace it with:
+
+```js
+storiesOf('Stories', module).addParameters({ backgrounds: options });
+```
+
+You can pass `backgrounds` parameters at the global level (via `addParameters` imported from `@storybook/react` et al.), and the story level (via the third argument to `.add()`).
+
+## Addon cssresources name attribute renamed
+
+In the options object for `@storybook/addon-cssresources`, the `name` attribute for each resource has been renamed to `id`. If you previously had:
+
+```js
+import { withCssResources } from '@storybook/addon-cssresources';
+import { addDecorator } from '@storybook/react';
+
+addDecorator(
+  withCssResources({
+    cssresources: [
+      {
+        name: `bluetheme`, // Previous
+        code: `<style>body { background-color: lightblue; }</style>`,
+        picked: false,
+      },
+    ],
+  })
+);
+```
+
+You should replace it with:
+
+```js
+import { withCssResources } from '@storybook/addon-cssresources';
+import { addDecorator } from '@storybook/react';
+
+addDecorator(
+  withCssResources({
+    cssresources: [
+      {
+        id: `bluetheme`, // Renamed
+        code: `<style>body { background-color: lightblue; }</style>`,
+        picked: false,
+      },
+    ],
+  })
+);
+```
+
+## Addon viewport uses parameters
+
+Similarly, `@storybook/addon-viewport` uses parameters to pass viewport options. If you previously had:
+
+```js
+import { configureViewport } from `@storybook/addon-viewport`;
+
+configureViewport(options);
+```
+
+You should replace it with:
+
+```js
+import { addParameters } from '@storybook/react'; // or others
+
+addParameters({ viewport: options });
+```
+
+The `withViewport` decorator is also no longer supported and should be replaced with a parameter based API as above. Also the `onViewportChange` callback is no longer supported.
+
+See the [viewport addon README](https://github.com/storybooks/storybook/blob/master/addons/viewport/README.md) for more information.
+
+## Addon a11y uses parameters, decorator renamed
+
+Similarly, `@storybook/addon-a11y` uses parameters to pass a11y options. If you previously had:
+
+```js
+import { configureA11y } from `@storybook/addon-a11y`;
+
+configureA11y(options);
+```
+
+You should replace it with:
+
+```js
+import { addParameters } from '@storybook/react'; // or others
+
+addParameters({ a11y: options });
+```
+
+You can also pass `a11y` parameters at the component level (via `storiesOf(...).addParameters`), and the story level (via the third argument to `.add()`).
+
+Furthermore, the decorator `checkA11y` has been deprecated and renamed to `withA11y` to make it consistent with other Storybook decorators.
+
+See the [a11y addon README](https://github.com/storybooks/storybook/blob/master/addons/a11y/README.md) for more information.
+
+## New keyboard shortcuts defaults
+
+Storybook's keyboard shortcuts are updated in 5.0, but they are configurable via the menu so if you want to set them back you can:
+
+| Shorctut               | Old         | New   |
+| ---------------------- | ----------- | ----- |
+| Toggle sidebar         | cmd-shift-X | S     |
+| Toggle addons panel    | cmd-shift-Z | A     |
+| Toggle addons position | cmd-shift-G | D     |
+| Toggle fullscreen      | cmd-shift-F | F     |
+| Next story             | cmd-shift-→ | alt-→ |
+| Prev story             | cmd-shift-← | alt-← |
+| Next component         |             | alt-↓ |
+| Prev component         |             | alt-↑ |
+| Search                 |             | /     |
+
+## New URL structure
+
+We've update Storybook's URL structure in 5.0. The old structure used URL parameters to save the UI state, resulting in long ugly URLs. v5 respects the old URL parameters, but largely does away with them.
+
+The old structure encoded `selectedKind` and `selectedStory` among other parameters. Storybook v5 respects these parameters but will issue a deprecation message in the browser console warning of potential future removal.
+
+The new URL structure looks like:
+
+```
+https://url-of-storybook?path=/story/<storyId>
+```
+
+The structure of `storyId` is a slugified `<selectedKind>--<selectedStory>` (slugified = lowercase, hyphen-separated). Each `storyId` must be unique. We plan to build more features into Storybook in upcoming versions based on this new structure.
+
 ## From version 4.0.x to 4.1.x
 
 There are are a few migrations you should be aware of in 4.1, including one unintentionally breaking change for advanced addon usage.
@@ -168,17 +338,19 @@ However, if you're developing React components, this means you need to upgrade t
 Also, here's the error you'll get if you're running an older version of React:
 
 ```
+
 core.browser.esm.js:15 Uncaught TypeError: Object(...) is not a function
-  at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
-  at **webpack_require** (bootstrap:724)
-  at fn (bootstrap:101)
-  at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
-  at **webpack_require** (bootstrap:724)
-  at fn (bootstrap:101)
-  at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
-  at **webpack_require** (bootstrap:724)
-  at fn (bootstrap:101)
-  at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
+at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
+at **webpack_require** (bootstrap:724)
+at fn (bootstrap:101)
+at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
+at **webpack_require** (bootstrap:724)
+at fn (bootstrap:101)
+at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
+at **webpack_require** (bootstrap:724)
+at fn (bootstrap:101)
+at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
+
 ```
 
 ### Generic addons

@@ -1,8 +1,8 @@
 {
   "next": {
-    "version": "5.0.0-rc.8",
+    "version": "5.0.0-rc.11",
     "info": {
-      "plain": "### Features\n\n* Core: Allow local decorators via params ([#5806](https://github.com/storybooks/storybook/pull/5806))\n\n### Bug Fixes\n\n* UI: Sort storiesHash so grouped keys appear together ([#5805](https://github.com/storybooks/storybook/pull/5805))\n* UI: Close tooltips on iframe clicks on keypresses ([#5807](https://github.com/storybooks/storybook/pull/5807))\n* Addon-Info: Add font family to info panel ([#5759](https://github.com/storybooks/storybook/pull/5759))"
+      "plain": "### Bug Fixes\n\n* UI: Fix base theme initialization and theme bootup ([#5843](https://github.com/storybooks/storybook/pull/5843))\n* UI: Fix SidebarItem feels \"laggy\" when clicked ([#5850](https://github.com/storybooks/storybook/pull/5850))"
     }
   },
   "latest": {
