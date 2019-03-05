@@ -23,14 +23,14 @@ import '@storybook/addon-storysource/register';
 Use this hook to a custom webpack.config. This will generate a decorator call in every story:
 
 ```js
-module.exports = function (baseConfig, env, defaultConfig) {
-  defaultConfig.module.rules.push({
+module.exports = function ({ config }) {
+  config.module.rules.push({
     test: /\.stories\.jsx?$/,
     loaders: [require.resolve('@storybook/addon-storysource/loader')],
     enforce: 'pre',
   });
 
-  return defaultConfig;
+  return config;
 };
 ```
 

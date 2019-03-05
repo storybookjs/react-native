@@ -56,6 +56,15 @@ storiesOf('Addons|A11y/Image', module)
   .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
   /* eslint-disable jsx-a11y/alt-text */
   .add('Without alt', () => <img src={image} />)
+  .add('Without alt but unchecked', () => <img src={image} />, {
+    a11y: {
+      config: {
+        disableOtherRules: true,
+        rules: [],
+      },
+      options: {},
+    },
+  })
   .add('With alt', () => <img src={image} alt={text} />)
   .add('Presentation', () => <img role="presentation" src={image} />);
 

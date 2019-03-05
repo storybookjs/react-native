@@ -18,7 +18,6 @@
     "expo": "^31.0.4",
     "prop-types": "^15.6.2",
     "react": "16.5.1",
-    "react-dom": "16.5.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "whatwg-fetch": "^3.0.0"
   },

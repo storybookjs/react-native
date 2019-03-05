@@ -1,3 +1,47 @@
+## 5.0.0 (March 5, 2019)
+
+Storybook 5.0 is a completely new UI with the following improvements:
+
+- 🌓 New design with light and dark themes
+- 🛠 Canvas toolbar for easy access to addons
+- 🗺 Overhauled navigation sidebar with an intuitive menu
+- 🗜 Redesigned addons panel with handy buttons to toggle visibility and orientation
+- ⌨️ Improved keyboard shortcuts that are user configurable
+- 🌍 New URL structure that eliminates long strings of query parameters
+
+5.0 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.0.0-alpha.*`, `5.0.0-beta.*`, and `5.0.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybooks/storybook/blob/next/MIGRATION.md) to ugprade from `4.x`.
+
+## 5.0.0-rc.11 (March 5, 2019)
+
+### Bug Fixes
+
+* UI: Fix base theme initialization and theme bootup ([#5843](https://github.com/storybooks/storybook/pull/5843))
+* UI: Fix SidebarItem feels "laggy" when clicked ([#5850](https://github.com/storybooks/storybook/pull/5850))
+
+## 5.0.0-rc.10 (March 4, 2019)
+
+### Bug Fixes
+
+* Addon-viewports: Restore v4 behaviour ([#5829](https://github.com/storybooks/storybook/pull/5829))
+* Addon-backgrounds: Remove previously deprecated default export ([#5828](https://github.com/storybooks/storybook/pull/5828))
+
+### Maintenance
+
+* Addon-a11y: Cleanup and document migration ([#5833](https://github.com/storybooks/storybook/pull/5833))
+
+## 5.0.0-rc.9 (March 3, 2019)
+
+### Features
+
+* Core: Allow local decorators via params ([#5806](https://github.com/storybooks/storybook/pull/5806))
+
+### Bug Fixes
+
+* Core: Add warning for decorators added "mid-kind" ([#5819](https://github.com/storybooks/storybook/pull/5819))
+* Addon-notes: Support inline code markdown ([#5802](https://github.com/storybooks/storybook/pull/5802))
+* Theming: Fix theme loading bugs ([#5787](https://github.com/storybooks/storybook/pull/5787))
+* CLI: Fix build-storybook with simplebar esm files ([#5816](https://github.com/storybooks/storybook/pull/5816))
+
 ## 5.0.0-rc.8 (March 1, 2019)
 
 ### Features
@@ -95,6 +139,7 @@
 ### Features
 
 * UI: Allow collapsing active story and use separate expansion for filtered ([#5625](https://github.com/storybooks/storybook/pull/5625))
+* UI: Handle prerelease versions in version check ([#5641](https://github.com/storybooks/storybook/pull/5641))
 
 ### Bug Fixes
 
