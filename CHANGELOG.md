@@ -4,11 +4,6 @@
 
 * UI: Fix base theme initialization and theme bootup ([#5843](https://github.com/storybooks/storybook/pull/5843))
 * UI: Fix SidebarItem feels "laggy" when clicked ([#5850](https://github.com/storybooks/storybook/pull/5850))
-* Addon-viewport: Restore v4 behaviour ([#5829](https://github.com/storybooks/storybook/pull/5829))
-
-### Maintenance
-
-* Addon-a11y: Cleanup & document migration ([#5833](https://github.com/storybooks/storybook/pull/5833))
 
 ## 5.0.0-rc.10 (March 4, 2019)
 

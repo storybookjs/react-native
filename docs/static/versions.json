@@ -1,1 +1,8 @@
-{"next":{"version":"5.0.0-rc.10","info":{"plain":"### Bug Fixes\n\n* Addon-viewports: Restore v4 behaviour ([#5829](https://github.com/storybooks/storybook/pull/5829))\n* Addon-backgrounds: Remove previously deprecated default export ([#5828](https://github.com/storybooks/storybook/pull/5828))\n\n### Maintenance\n\n* Addon-a11y: Cleanup and document migration ([#5833](https://github.com/storybooks/storybook/pull/5833))"}}}
+{
+  "next": {
+    "version": "5.0.0-rc.11",
+    "info": {
+      "plain": "### Bug Fixes\n\n* UI: Fix base theme initialization and theme bootup ([#5843](https://github.com/storybooks/storybook/pull/5843))\n* UI: Fix SidebarItem feels \"laggy\" when clicked ([#5850](https://github.com/storybooks/storybook/pull/5850))"
+    }
+  }
+}
