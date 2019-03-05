@@ -210,10 +210,10 @@ jobs:
             - core-dependencies-v3-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
-          run: yarn install
+          command: yarn install
       - run:
           name: Trigger build
-          run: ./scripts/build-frontpage.js
+          command: ./scripts/build-frontpage.js
       - save_cache:
           name: Cache core dependencies
           key: core-dependencies-v3-{{ checksum "yarn.lock" }}
