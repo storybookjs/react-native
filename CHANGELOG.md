@@ -1,3 +1,10 @@
+## 5.0.0-rc.11 (March 5, 2019)
+
+### Bug Fixes
+
+* UI: Fix base theme initialization and theme bootup ([#5843](https://github.com/storybooks/storybook/pull/5843))
+* UI: Fix SidebarItem feels "laggy" when clicked ([#5850](https://github.com/storybooks/storybook/pull/5850))
+
 ## 5.0.0-rc.10 (March 4, 2019)
 
 ### Bug Fixes
