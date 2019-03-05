@@ -205,20 +205,20 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        name: Restore core dependencies cache
-        keys:
-          - core-dependencies-v3-{{ checksum "yarn.lock" }}
+          name: Restore core dependencies cache
+          keys:
+            - core-dependencies-v3-{{ checksum "yarn.lock" }}
       - run:
-        name: Install dependencies
-        run: yarn install
+          name: Install dependencies
+          run: yarn install
       - run:
-        name: Trigger build
-        run: ./scripts/build-frontpage.js
+          name: Trigger build
+          run: ./scripts/build-frontpage.js
       - save_cache:
-        name: Cache core dependencies
-        key: core-dependencies-v3-{{ checksum "yarn.lock" }}
-        paths:
-          - ~/.cache/yarn
+          name: Cache core dependencies
+          key: core-dependencies-v3-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
   docs:
     <<: *defaults
     steps:
