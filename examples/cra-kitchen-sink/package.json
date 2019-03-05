@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "global": "^4.3.2",
-    "prop-types": "^15.6.2",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-lifecycles-compat": "^3.0.4"
   },
   "devDependencies": {
@@ -34,9 +34,9 @@
     "@storybook/addons": "5.0.0",
     "@storybook/client-logger": "5.0.0",
     "@storybook/react": "5.0.0",
-    "enzyme": "^3.7.0",
+    "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
-    "enzyme-to-json": "^3.3.4",
+    "enzyme-to-json": "^3.3.5",
     "jest": "^23.6.0",
     "jest-emotion": "^10.0.7",
     "react-scripts": "^2.1.3"

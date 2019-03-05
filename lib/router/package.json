@@ -24,7 +24,7 @@
     "@storybook/theming": "5.0.0",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
-    "qs": "^6.5.2"
+    "qs": "^6.6.0"
   },
   "peerDependencies": {
     "react": "*",

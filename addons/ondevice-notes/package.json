@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "@storybook/addons": "5.0.0",
-    "core-js": "^2.6.2",
-    "prop-types": "^15.6.2",
+    "core-js": "^2.6.5",
+    "prop-types": "^15.7.2",
     "react-native-simple-markdown": "^1.1.0"
   },
   "peerDependencies": {

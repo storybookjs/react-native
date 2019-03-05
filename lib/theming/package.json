@@ -31,8 +31,8 @@
     "lodash.isequal": "^4.5.0",
     "lodash.mergewith": "^4.6.1",
     "memoizerific": "^1.11.3",
-    "polished": "^2.3.3",
-    "prop-types": "^15.6.2",
+    "polished": "^3.0.0",
+    "prop-types": "^15.7.2",
     "react-inspector": "^2.3.1"
   },
   "peerDependencies": {

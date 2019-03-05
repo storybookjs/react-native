@@ -9,6 +9,7 @@ exports[`Storyshots Custom|Decorator for Vue render 1`] = `
   >
     <button
       class="button"
+      style="color: pink; border-color: pink;"
     >
       renders component: MyButton!
     </button>

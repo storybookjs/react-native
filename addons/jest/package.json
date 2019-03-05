@@ -32,10 +32,10 @@
     "@storybook/components": "5.0.0",
     "@storybook/core-events": "5.0.0",
     "@storybook/theming": "5.0.0",
-    "core-js": "^2.6.2",
+    "core-js": "^2.6.5",
     "global": "^4.3.2",
-    "prop-types": "^15.6.2",
-    "react": "^16.8.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
     "upath": "^1.1.0",
     "util-deprecate": "^1.0.2"
   },
