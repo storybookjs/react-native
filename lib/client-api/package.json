@@ -1,6 +1,6 @@
 {
   "name": "@storybook/client-api",
-  "version": "5.0.0-rc.11",
+  "version": "5.0.0",
   "description": "Storybook Client API",
   "keywords": [
     "storybook"
@@ -19,10 +19,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-rc.11",
-    "@storybook/client-logger": "5.0.0-rc.11",
-    "@storybook/core-events": "5.0.0-rc.11",
-    "@storybook/router": "5.0.0-rc.11",
+    "@storybook/addons": "5.0.0",
+    "@storybook/client-logger": "5.0.0",
+    "@storybook/core-events": "5.0.0",
+    "@storybook/router": "5.0.0",
     "common-tags": "^1.8.0",
     "eventemitter3": "^3.1.0",
     "global": "^4.3.2",
