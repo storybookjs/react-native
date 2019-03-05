@@ -62,7 +62,7 @@ Storybook's "full control mode" for webpack allows you to override the webpack c
 In Storybook 5 there is a single signature for full-control mode that takes a parameters object with the fields `config` and `mode`:
 
 ```js
-module.exports = ({ config, mode }) => { config.modules.rules.push(...); return config; }
+module.exports = ({ config, mode }) => { config.module.rules.push(...); return config; }
 ```
 
 In contrast, the 4.x configuration function accepted either two or three arguments (`(baseConfig, mode)`, or `(baseConfig, mode, defaultConfig)`). The `config` object in the 5.x signature is equivalent to 4.x's `defaultConfig`.
