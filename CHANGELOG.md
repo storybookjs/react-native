@@ -9,7 +9,7 @@ Storybook 5.0 is a completely new UI with the following improvements:
 - ⌨️ Improved keyboard shortcuts that are user configurable
 - 🌍 New URL structure that eliminates long strings of query parameters
 
-5.0 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.0.0-alpha.*`, `5.0.0-beta.*`, and `5.0.0-rc.*` for the full list of changes. See [MIGRATION.md](./MIGRATION.md) to ugprade from `4.x`.
+5.0 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.0.0-alpha.*`, `5.0.0-beta.*`, and `5.0.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybooks/storybook/blob/next/MIGRATION.md) to ugprade from `4.x`.
 
 ## 5.0.0-rc.11 (March 5, 2019)
 
