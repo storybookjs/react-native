@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-links",
-  "version": "5.0.0-beta.3",
+  "version": "5.0.0",
   "description": "Story Links addon for storybook",
   "keywords": [
     "addon",
@@ -22,13 +22,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-beta.3",
-    "@storybook/core-events": "5.0.0-beta.3",
+    "@storybook/addons": "5.0.0",
+    "@storybook/core-events": "5.0.0",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.2",
+    "core-js": "^2.6.5",
     "global": "^4.3.2",
-    "prop-types": "^15.6.2",
-    "qs": "^6.5.2"
+    "prop-types": "^15.7.2",
+    "qs": "^6.6.0"
   },
   "peerDependencies": {
     "react": "*"

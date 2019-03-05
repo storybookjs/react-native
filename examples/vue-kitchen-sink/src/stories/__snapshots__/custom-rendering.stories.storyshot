@@ -28,6 +28,7 @@ exports[`Storyshots Custom|Method for rendering Vue pre-registered component 1`]
 exports[`Storyshots Custom|Method for rendering Vue render + component 1`] = `
 <button
   class="button"
+  style="color: pink; border-color: pink;"
 >
   renders component: MyButton!
 </button>

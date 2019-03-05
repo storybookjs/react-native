@@ -7,15 +7,15 @@
     "build": "webpack"
   },
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   },
   "devDependencies": {
-    "@babel/plugin-external-helpers": "7.0.0",
-    "@babel/core": "7.1.0",
+    "@babel/plugin-external-helpers": "7.2.0",
+    "@babel/core": "^7.3.4",
     "@babel/preset-react": "7.0.0",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-loader": "8.0.2",
-    "webpack": "^3.5.5"
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.6"
   }
 }
