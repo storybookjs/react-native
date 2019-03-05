@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, configure, addDecorator, addParameters } from '@storybook/react';
-import { Global, ThemeProvider, themes, createReset } from '@storybook/theming';
+import { Global, ThemeProvider, themes, createReset, create, convert } from '@storybook/theming';
 
 import { withCssResources } from '@storybook/addon-cssresources';
 import { withA11y } from '@storybook/addon-a11y';
@@ -32,7 +32,7 @@ addDecorator(withA11y);
 addDecorator(withNotes);
 
 addDecorator(storyFn => (
-  <ThemeProvider theme={themes.normal}>
+  <ThemeProvider theme={convert(themes.light)}>
     <Global styles={createReset} />
     {storyFn()}
   </ThemeProvider>
@@ -49,9 +49,10 @@ addParameters({
   options: {
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: '|',
+    theme: create({ colorPrimary: 'hotpink', colorSecondary: 'orangered' }),
   },
   backgrounds: [
-    { name: 'storybook app', value: themes.normal.background.app, default: true },
+    { name: 'storybook app', value: themes.light.appBg, default: true },
     { name: 'light', value: '#eeeeee' },
     { name: 'dark', value: '#222222' },
   ],

@@ -1,52 +1,21 @@
 // This generates theme variables in the correct shape for the UI
-
-import { Theme, Brand, color, Color, background, typography } from './base';
-import { easing, animation } from './animation';
-import { create as createSyntax } from './modules/syntax';
 import { chromeLight, chromeDark } from 'react-inspector';
 import { opacify } from 'polished';
+
+import lightThemeVars from './themes/light';
+import darkThemeVars from './themes/dark';
+
+import { Theme, color, Color, background, typography, ThemeVars } from './base';
+import { easing, animation } from './animation';
+import { create as createSyntax } from './modules/syntax';
+
+const themes: { light: ThemeVars; dark: ThemeVars } = { light: lightThemeVars, dark: darkThemeVars };
 
 interface Rest {
   [key: string]: any;
 }
 
-interface ThemeVar {
-  base?: 'light' | 'dark';
-
-  colorPrimary?: string;
-  colorSecondary?: string;
-
-  // UI
-  appBg?: string;
-  appContentBg?: string;
-  appBorderColor?: string;
-  appBorderRadius?: number;
-
-  // Typography
-  fontBase?: string;
-  fontCode?: string;
-
-  // Text colors
-  textColor?: string;
-  textInverseColor?: string;
-
-  // Toolbar default and active colors
-  barTextColor?: string;
-  barSelectedColor?: string;
-  barBg?: string;
-
-  // Form colors
-  inputBg?: string;
-  inputBorder?: string;
-  inputTextColor?: string;
-  inputBorderRadius?: number;
-
-  brandTitle?: string;
-  brandUrl?: string;
-  brandImage?: string;
-}
-
-const createColors = (vars: ThemeVar): Color => ({
+const createColors = (vars: ThemeVars): Color => ({
   // Changeable colors
   primary: vars.colorPrimary,
   secondary: vars.colorSecondary,
@@ -110,76 +79,117 @@ const darkSyntaxColors = {
   blue2: '#00009f',
 };
 
-export const create = (vars: ThemeVar, rest?: Rest): Theme => ({
-  base: vars.base,
-  color: createColors(vars),
-  background: {
-    app: vars.appBg || background.app,
-    content: vars.appContentBg || color.lightest,
-    hoverable: vars.base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
+export const create = (vars: ThemeVars = { base: 'light' }, rest?: Rest): ThemeVars => {
+  const inherit: ThemeVars = {
+    ...themes.light,
+    ...(themes[vars.base] || {}),
+    ...vars,
+    ...{ base: themes[vars.base] ? vars.base : 'light' },
+  };
+  return {
+    ...rest,
+    ...inherit,
+    ...{ barSelectedColor: vars.barSelectedColor || inherit.colorSecondary },
+  };
+};
 
-    positive: background.positive,
-    negative: background.negative,
-    warning: background.warning,
-  },
-  typography: {
-    fonts: {
-      base: vars.fontBase || typography.fonts.base,
-      mono: vars.fontCode || typography.fonts.mono,
+export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
+  const {
+    base,
+    colorPrimary,
+    colorSecondary,
+    appBg,
+    appContentBg,
+    appBorderColor,
+    appBorderRadius,
+    fontBase,
+    fontCode,
+    textColor,
+    textInverseColor,
+    barTextColor,
+    barSelectedColor,
+    barBg,
+    inputBg,
+    inputBorder,
+    inputTextColor,
+    inputBorderRadius,
+    brandTitle,
+    brandUrl,
+    brandImage,
+    ...rest
+  } = inherit;
+
+  return {
+    ...(rest || {}),
+
+    base,
+    color: createColors(inherit),
+    background: {
+      app: appBg,
+      content: appContentBg,
+      hoverable: base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
+
+      positive: background.positive,
+      negative: background.negative,
+      warning: background.warning,
     },
-    weight: typography.weight,
-    size: typography.size,
-  },
-  animation,
-  easing,
+    typography: {
+      fonts: {
+        base: fontBase,
+        mono: fontCode,
+      },
+      weight: typography.weight,
+      size: typography.size,
+    },
+    animation,
+    easing,
 
-  input: {
-    border: vars.inputBorder || color.border,
-    background: vars.inputBg || color.lightest,
-    color: vars.inputTextColor || color.defaultText,
-    borderRadius: vars.inputBorderRadius || vars.appBorderRadius || 4,
-  },
+    input: {
+      border: inputBorder,
+      background: inputBg,
+      color: inputTextColor,
+      borderRadius: inputBorderRadius,
+    },
 
-  // UI
-  layoutMargin: 10,
-  appBorderColor: vars.appBorderColor || color.border,
-  appBorderRadius: vars.appBorderRadius || 4,
+    // UI
+    layoutMargin: 10,
+    appBorderColor,
+    appBorderRadius,
 
-  // Toolbar default/active colors
-  barTextColor: vars.barTextColor || color.mediumdark,
-  barSelectedColor: vars.barSelectedColor || color.secondary,
-  barBg: vars.barBg || color.lightest,
+    // Toolbar default/active colors
+    barTextColor,
+    barSelectedColor: barSelectedColor || colorSecondary,
+    barBg,
 
-  // Brand logo/text
-  brand: {
-    title: vars.brandTitle,
-    url: vars.brandUrl,
-    image: vars.brandImage,
-  },
+    // Brand logo/text
+    brand: {
+      title: brandTitle,
+      url: brandUrl,
+      image: brandImage,
+    },
 
-  code: createSyntax({
-    colors: vars.base === 'light' ? lightSyntaxColors : darkSyntaxColors,
-    mono: vars.fontCode || typography.fonts.mono,
-  }),
+    code: createSyntax({
+      colors: base === 'light' ? lightSyntaxColors : darkSyntaxColors,
+      mono: fontCode,
+    }),
 
-  // Addon actions theme
-  // API example https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js
-  addonActionsTheme: {
-    ...(vars.base === 'light' ? chromeLight : chromeDark),
+    // Addon actions theme
+    // API example https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js
+    addonActionsTheme: {
+      ...(base === 'light' ? chromeLight : chromeDark),
 
-    BASE_FONT_FAMILY: vars.fontCode || typography.fonts.mono,
-    BASE_FONT_SIZE: typography.size.s2 - 1,
-    BASE_LINE_HEIGHT: '18px',
-    BASE_BACKGROUND_COLOR: 'transparent',
-    BASE_COLOR: vars.textColor || color.darkest,
-    ARROW_COLOR: opacify(0.2, vars.appBorderColor || color.border),
-    ARROW_MARGIN_RIGHT: 4,
-    ARROW_FONT_SIZE: 8,
-    TREENODE_FONT_FAMILY: vars.fontCode || typography.fonts.mono,
-    TREENODE_FONT_SIZE: typography.size.s2 - 1,
-    TREENODE_LINE_HEIGHT: '18px',
-    TREENODE_PADDING_LEFT: 12,
-  },
-
-  ...(rest || {}),
-});
+      BASE_FONT_FAMILY: fontCode,
+      BASE_FONT_SIZE: typography.size.s2 - 1,
+      BASE_LINE_HEIGHT: '18px',
+      BASE_BACKGROUND_COLOR: 'transparent',
+      BASE_COLOR: textColor,
+      ARROW_COLOR: opacify(0.2, appBorderColor),
+      ARROW_MARGIN_RIGHT: 4,
+      ARROW_FONT_SIZE: 8,
+      TREENODE_FONT_FAMILY: fontCode,
+      TREENODE_FONT_SIZE: typography.size.s2 - 1,
+      TREENODE_LINE_HEIGHT: '18px',
+      TREENODE_PADDING_LEFT: 12,
+    },
+  };
+};
