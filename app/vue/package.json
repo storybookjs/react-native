@@ -34,15 +34,15 @@
   },
   "devDependencies": {
     "babel-preset-vue": "^2.0.2",
-    "vue": "^2.6.7",
-    "vue-loader": "15.6.4",
+    "vue": "^2.6.8",
+    "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.7"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
-    "vue": ">=2.5.16",
-    "vue-loader": ">=15.x.x",
-    "vue-template-compiler": ">=2.5.16"
+    "vue": "^2.6.8",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.7"
   },
   "publishConfig": {
     "access": "public"

@@ -11,8 +11,8 @@
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-scripts": "0.9.x"
   },
   "devDependencies": {
