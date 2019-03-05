@@ -10,7 +10,6 @@ const home = 'https://storybook.js.org/';
 const sections = [
   { id: 'home', caption: 'Home', href: home },
   { id: 'docs', caption: 'Docs', href: '/basics/introduction/' },
-  { id: 'examples', caption: 'Examples', href: '/examples/' },
 ];
 
 const Link = ({ children, to, ...other }) => {

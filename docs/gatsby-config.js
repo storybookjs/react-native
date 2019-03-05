@@ -45,7 +45,6 @@ module.exports = {
       addons: [
         '/addons/introduction/',
         '/addons/using-addons/',
-        '/addons/addon-gallery/',
         '/addons/writing-addons/',
         '/addons/api/',
       ],

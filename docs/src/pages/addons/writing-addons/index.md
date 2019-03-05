@@ -30,7 +30,7 @@ With an addon, you can add more functionality to Storybook. Here are a few thing
 - Navigating.
 - Register keyboard shortcuts (coming soon).
 
-With this, you can write some pretty cool addons. Look at our [Addon gallery](/addons/addon-gallery) to have a look at some sample addons.
+With this, you can write some pretty cool addons. Look at our [Addon gallery](https://storybook.js.org/addons/) to have a look at some sample addons.
 
 ## Getting Started
 
