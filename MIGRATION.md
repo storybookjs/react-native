@@ -2,6 +2,7 @@
 
 - [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
   - [Webpack config simplification](#webpack-config-simplification)
+  - [Theming overhaul](#theming-overhaul)
   - [Story hierarchy defaults](#story-hierarchy-defaults)
   - [Options addon deprecated](#options-addon-deprecated)
   - [Individual story decorators](#individual-story-decorators)
@@ -67,6 +68,10 @@ module.exports = ({ config, mode }) => { config.modules.rules.push(...); return 
 In contrast, the 4.x configuration function accepted either two or three arguments (`(baseConfig, mode)`, or `(baseConfig, mode, defaultConfig)`). The `config` object in the 5.x signature is equivalent to 4.x's `defaultConfig`.
 
 Please see the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
+
+## Theming overhaul
+
+Theming has been rewritten in v5. If you used theming in v4, please consult the [theming docs](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/theming/index.md) to learn about the new API.
 
 ## Story hierarchy defaults
 
@@ -202,9 +207,9 @@ addDecorator(
       {
         name: `bluetheme`, // Previous
         code: `<style>body { background-color: lightblue; }</style>`,
-        picked: false
-      }
-    ]
+        picked: false,
+      },
+    ],
   })
 );
 ```
@@ -221,9 +226,9 @@ addDecorator(
       {
         id: `bluetheme`, // Renamed
         code: `<style>body { background-color: lightblue; }</style>`,
-        picked: false
-      }
-    ]
+        picked: false,
+      },
+    ],
   })
 );
 ```
