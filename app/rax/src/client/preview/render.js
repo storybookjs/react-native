@@ -1,9 +1,9 @@
 /* eslint-disable-next-line no-unused-vars */
 import { createElement, render } from 'rax';
-// import { document } from 'global';
+import { document } from 'global';
 import { stripIndents } from 'common-tags';
 
-// const rootElement = document ? document.getElementById('root') : null;
+const rootElement = document ? document.getElementById('root') : null;
 
 export default function renderMain({
   storyFn,
@@ -27,6 +27,6 @@ export default function renderMain({
   }
 
   showMain();
-  // Rax don't need a root element to mount
-  render(element);
+
+  render(element, rootElement);
 }
