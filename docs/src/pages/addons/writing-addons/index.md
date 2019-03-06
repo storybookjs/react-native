@@ -102,7 +102,7 @@ class MyPanel extends React.Component {
 }
 
 addons.register(ADDON_ID, api => {
-  const render = ({ active }) => <Panel api={api} active={active} />;
+  const render = ({ active }) => <MyPanel api={api} active={active} />;
   const title = 'My Addon';
 
   addons.add(PANEL_ID, {
