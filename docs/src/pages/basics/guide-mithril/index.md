@@ -31,11 +31,11 @@ npm i --save-dev @storybook/mithril
 
 ## Add mithril and babel-core
 
-Make sure that you have `mithril` and `babel-core` in your dependencies as well because we list these as a peerDependency:
+Make sure that you have `mithril`, `@babel/core`, and `babel-loader` in your dependencies as well because we list these as a peerDependency:
 
 ```sh
 npm i --save mithril
-npm i --save-dev babel-core
+npm i --save-dev @babel/core babel-loader
 ```
 
 Then add the following NPM script to your package json in order to start the storybook later in this guide:
