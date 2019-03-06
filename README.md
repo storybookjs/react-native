@@ -131,10 +131,10 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 
 We have a badge! Link it to your live Storybook example.
 
-![Storybook](https://github.com/storybooks/brand/blob/master/badge/badge-storybook.svg)
+![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)
 
 ```md
-[![Storybook](https://github.com/storybooks/brand/blob/master/badge/badge-storybook.svg)](link to site)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](link to site)
 ```
 
 If you're looking for material to use in your presentation about storybook, like logo's video material and the colors we use etc, you can find all of that at our [press repo](https://github.com/storybooks/press).
