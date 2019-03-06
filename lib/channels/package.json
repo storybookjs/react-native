@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channels",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "",
   "keywords": [
     "storybook"
@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/channels"
   },
   "license": "MIT",
   "main": "dist/index.js",

@@ -27,14 +27,14 @@ export default ({ provider, store }: Module) => {
       return ensurePanel(api.getPanels(), selectedPanel, selectedPanel);
     },
     setSelectedPanel: (panelName: string) => {
-      store.setState({ selectedPanel: panelName });
+      store.setState({ selectedPanel: panelName }, { persistence: 'session' });
     },
   };
 
   return {
     api,
     state: {
-      selectedPanel: ensurePanel(api.getPanels()),
+      selectedPanel: ensurePanel(api.getPanels(), store.getState().selectedPanel),
     },
   };
 };

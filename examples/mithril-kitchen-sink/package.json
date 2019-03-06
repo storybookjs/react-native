@@ -1,8 +1,9 @@
 {
   "name": "mithril-example",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "private": true,
   "scripts": {
+    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 9007"
   },
@@ -10,18 +11,18 @@
     "mithril": "^1.1.6"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.0.0-alpha.10",
-    "@storybook/addon-backgrounds": "5.0.0-alpha.10",
-    "@storybook/addon-centered": "5.0.0-alpha.10",
-    "@storybook/addon-knobs": "5.0.0-alpha.10",
-    "@storybook/addon-links": "5.0.0-alpha.10",
-    "@storybook/addon-notes": "5.0.0-alpha.10",
-    "@storybook/addon-options": "5.0.0-alpha.10",
-    "@storybook/addon-storyshots": "5.0.0-alpha.10",
-    "@storybook/addon-storysource": "5.0.0-alpha.10",
-    "@storybook/addon-viewport": "5.0.0-alpha.10",
-    "@storybook/addons": "5.0.0-alpha.10",
-    "@storybook/mithril": "5.0.0-alpha.10",
-    "webpack": "^4.29.0"
+    "@storybook/addon-actions": "5.0.0",
+    "@storybook/addon-backgrounds": "5.0.0",
+    "@storybook/addon-centered": "5.0.0",
+    "@storybook/addon-knobs": "5.0.0",
+    "@storybook/addon-links": "5.0.0",
+    "@storybook/addon-notes": "5.0.0",
+    "@storybook/addon-options": "5.0.0",
+    "@storybook/addon-storyshots": "5.0.0",
+    "@storybook/addon-storysource": "5.0.0",
+    "@storybook/addon-viewport": "5.0.0",
+    "@storybook/addons": "5.0.0",
+    "@storybook/mithril": "5.0.0",
+    "webpack": "^4.29.6"
   }
 }

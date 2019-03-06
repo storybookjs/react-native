@@ -1,32 +1,20 @@
-import mergeWith from 'lodash.mergewith';
-import isEqual from 'lodash.isequal';
-import toId, { sanitize } from '../lib/id';
+import { toId, sanitize } from '@storybook/router/dist/utils';
 
 import { Module } from '../index';
-
-const merge = (a: any, b: any) =>
-  mergeWith({}, a, b, (objValue: any, srcValue: any) => {
-    if (Array.isArray(srcValue) && Array.isArray(objValue)) {
-      srcValue.forEach(s => {
-        const existing = objValue.find(o => o === s || isEqual(o, s));
-        if (!existing) {
-          objValue.push(s);
-        }
-      });
-
-      return objValue;
-    }
-    if (Array.isArray(objValue)) {
-      // eslint-disable-next-line no-console
-      console.log('the types mismatch, picking', objValue);
-      return objValue;
-    }
-    return undefined;
-  });
+import merge from '../lib/merge';
 
 type Direction = -1 | 1;
 type StoryId = string;
 type ParameterName = string;
+
+type ViewMode = 'story' | 'info' | undefined;
+
+export interface SubState {
+  storiesHash: StoriesHash;
+  storyId: StoryId;
+  viewMode: ViewMode;
+  storiesConfigured: boolean;
+}
 
 interface SeparatorOptions {
   rootSeparator: RegExp;
@@ -41,6 +29,7 @@ interface Group {
   depth: number;
   isComponent: boolean;
   isRoot: boolean;
+  isLeaf: boolean;
 }
 
 interface StoryInput {
@@ -57,6 +46,7 @@ interface StoryInput {
     };
     [parameterName: string]: any;
   };
+  isLeaf: boolean;
 }
 
 type Story = StoryInput & Group;
@@ -81,6 +71,28 @@ const initStoriesApi = ({
     const story = obj as Story;
     return !!(story && story.parameters);
   };
+
+  const getData = (storyId: StoryId) => {
+    const { storiesHash } = store.getState();
+
+    return storiesHash[storyId];
+  };
+  const getCurrentStoryData = () => {
+    const { storyId } = store.getState();
+
+    return getData(storyId);
+  };
+  const getParameters = (storyId: StoryId, parameterName?: ParameterName) => {
+    const data = getData(storyId);
+
+    if (isStory(data)) {
+      const { parameters } = data as Story;
+      return parameterName ? parameters[parameterName] : parameters;
+    }
+
+    return null;
+  };
+
   const jumpToStory = (direction: Direction) => {
     const { storiesHash, viewMode, storyId } = store.getState();
 
@@ -107,23 +119,6 @@ const initStoriesApi = ({
     if (viewMode && result) {
       navigate(`/${viewMode}/${result}`);
     }
-  };
-
-  const getData = (storyId: StoryId) => {
-    const { storiesHash } = store.getState();
-
-    return storiesHash[storyId];
-  };
-
-  const getParameters = (storyId: StoryId, parameterName?: ParameterName) => {
-    const data = getData(storyId);
-
-    if (isStory(data)) {
-      const { parameters } = data as Story;
-      return parameterName ? parameters[parameterName] : parameters;
-    }
-
-    return null;
   };
 
   const jumpToComponent = (direction: Direction) => {
@@ -179,7 +174,7 @@ const initStoriesApi = ({
 
   const setStories = (input: StoriesRaw) => {
     const hash: StoriesHash = {};
-    const storiesHash = Object.values(input).reduce((acc, item) => {
+    const storiesHashOutOfOrder = Object.values(input).reduce((acc, item) => {
       const { kind, parameters } = item;
       const {
         hierarchyRootSeparator: rootSeparator,
@@ -206,6 +201,7 @@ const initStoriesApi = ({
               depth: index,
               children: [],
               isComponent: index === original.length - 1,
+              isLeaf: false,
               isRoot: !!root && index === 0,
             };
             return soFar.concat([result]);
@@ -225,18 +221,34 @@ const initStoriesApi = ({
         });
       });
 
-      const story = { ...item, parent: rootAndGroups[rootAndGroups.length - 1].id };
+      const story = { ...item, parent: rootAndGroups[rootAndGroups.length - 1].id, isLeaf: true };
       acc[item.id] = story as Story;
 
       return acc;
     }, hash);
+
+    // When adding a group, also add all of its children, depth first
+    function addItem(acc: StoriesHash, item: Story | Group) {
+      if (!acc[item.id]) {
+        // If we were already inserted as part of a group, that's great.
+        acc[item.id] = item;
+        const { children } = item;
+        if (children) {
+          children.forEach(id => addItem(acc, storiesHashOutOfOrder[id]));
+        }
+      }
+      return acc;
+    }
+
+    // Now create storiesHash by reordering the above by group
+    const storiesHash: StoriesHash = Object.values(storiesHashOutOfOrder).reduce(addItem, {});
 
     const { storyId, viewMode } = store.getState();
 
     if (!storyId || !storiesHash[storyId]) {
       // when there's no storyId or the storyId item doesn't exist
       // we pick the first leaf and navigate
-      const firstLeaf = Object.values(storiesHash).find(s => !s.children);
+      const firstLeaf = Object.values(storiesHash).find((s: Story | Group) => !s.children);
 
       if (viewMode && firstLeaf) {
         navigate(`/${viewMode}/${firstLeaf.id}`);
@@ -263,6 +275,7 @@ const initStoriesApi = ({
     api: {
       storyId: toId,
       selectStory,
+      getCurrentStoryData,
       setStories,
       jumpToComponent,
       jumpToStory,
@@ -273,6 +286,7 @@ const initStoriesApi = ({
       storiesHash: {},
       storyId: initialStoryId,
       viewMode: initialViewMode,
+      storiesConfigured: false,
     },
   };
 };

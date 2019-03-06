@@ -114,9 +114,9 @@ jobs:
           command: |
             cd examples/official-storybook
             yarn build-storybook
-      - run:
-          name: Run image snapshots
-          command: yarn test --image
+      # - run:
+      #     name: Run image snapshots
+      #     command: yarn test --image
       - store_artifacts:
           path: examples/official-storybook/image-snapshots/__image_snapshots__
           destination: official_storybook_image_snapshots
@@ -200,6 +200,25 @@ jobs:
           command: |
             cd examples-native/crna-kitchen-sink
             yarn storybook --smoke-test
+  frontpage:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore core dependencies cache
+          keys:
+            - core-dependencies-v3-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - run:
+          name: Trigger build
+          command: ./scripts/build-frontpage.js
+      - save_cache:
+          name: Cache core dependencies
+          key: core-dependencies-v3-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
   docs:
     <<: *defaults
     steps:
@@ -288,6 +307,7 @@ workflows:
     jobs:
       - build
       - docs
+      - frontpage
       - lint:
           requires:
             - docs

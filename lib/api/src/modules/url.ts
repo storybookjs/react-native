@@ -1,5 +1,5 @@
 import { queryFromLocation } from '@storybook/router';
-import toId from '../lib/id';
+import { toId } from '@storybook/router/dist/utils';
 
 import { Module } from '../index';
 

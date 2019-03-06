@@ -3,18 +3,14 @@ id: 'theming'
 title: 'Theming Storybook'
 ---
 
-Storybook's manager UI is theme-able! You can change theme variables using [addon-options](https://github.com/storybooks/storybook/tree/master/addons/options).
+Storybook is theme-able! You can change theme variables using the [options parameter](../options-parameter).
 
 ## Set a theme
 
 You can do this in an decorator, addon or in `.storybook/config.js`. Changing theme at runtime is supported!
 
-First, create or modify `.storybook/addons.js` to include registering addon-options:  
-```js
-import '@storybook/addon-options/register';
-```
+Just modify `.storybook/config.js` to include your new options:
 
-Then, modify `.storybook/config.js` to include your new options:  
 ```js
 import { addParameters, configure } from '@storybook/react';
 
@@ -37,7 +33,7 @@ You can get these themes like so:
 
 ```js
 import { addParameters, configure } from '@storybook/react';
-import { themes } from '@storybook/components';
+import { themes } from '@storybook/theming';
 
 // Option defaults.
 addParameters({
@@ -48,128 +44,196 @@ addParameters({
 });
 ```
 
-## Theme variables
+## Create a theme quickstart
+
+The easiest way to customize Storybook to generate a new theme using `create()`. This function includes shorthands for the most common theme variables. Here's how to use it.
+
+First create a new file in `.storybook` called `yourTheme.js`.
+
+Next paste the code below and tweak the variables.
 
 ```
-mainBackground: applied to root `background`, // 'linear-gradient(to bottom right, black, gray'
-mainBorder: applied to panels `border`, // '1px solid rgba(0,0,0,0.1)'
-mainBorderColor: applied for most borders, // 'rgba(0,0,0,0.1)'
-mainBorderRadius: applied to panels, buttons, inputs // 4
-mainFill: applied to panels `background`, // 'rgba(255,255,255,0.89)'
-barFill: applied to TabsBar `background`, // 'rgba(255,255,255,1)'
-inputFill: applied to Input `background`, // 'rgba(0,0,0,0.05)'
-mainTextFace: applied to root `font-family`,
-mainTextColor: applied to root & buttons & input `color`, // black
-mainTextSize: applied to root, // 13
-dimmedTextColor: applied in less important text, // 'rgba(0,0,0,0.4)'
-highlightColor: applied to indicate selection, // '#9fdaff'
-successColor: applied to indicate positive, // '#0edf62'
-failColor: applied to indicate negative, // '#ff3f3f'
-warnColor: applied to indicate ow-ow, // 'orange'
-monoTextFace: applied to pre,
-layoutMargin: applied to space panels, // 10
-overlayBackground: applied to overlay `background`, // 'linear-gradient(to bottom right, rgba(233, 233, 233, 0.6), rgba(255, 255, 255, 0.8))'
+import { create } from '@storybook/theming';
+
+export default create({
+  // Is this a 'light' or 'dark' theme?
+  base: 'light',
+
+  // Color palette
+  colorPrimary: 'red', // primary color
+  colorSecondary: 'pink', // secondary color
+
+  // UI
+  appBg: 'papayawhip',
+  appContentBg: 'white',
+  appBorderColor: 'rgba(0,0,0,.1)',
+  appBorderRadius: 4,
+
+  // Fonts
+  fontBase: '"Helvetica", Arial, sans-serif',
+  fontCode: 'Monaco, monospace',
+
+  // Text colors
+  textColor: '#FFFFFF',
+  textInverseColor: '#333333',
+
+  // Toolbar default and active colors
+  barTextColor: '#999999',
+  barSelectedColor: 'blue',
+  barBg: 'white',
+
+  // Form colors
+  inputBg: 'white',
+  inputBorder: 'rgba(0,0,0,.1)',
+  inputTextColor: '#333333',
+  inputBorderRadius: 4,
+
+  // Brand logo/text
+  brand: `<svg .../>`,
+});
 ```
 
-### Deep theming components
-
-All options above are single key options, in other words, they are variables, and their usage is fixed.
-
-We will extend the theming ability in the future and possibly add more deep theming ability.
-Right now we allow to deep theme: `stories nav panel`. Below are the varaiables that are used to deep theme `stories nav panel`.
-
-storiesNav: deep theme for `stories nav`
+Finally, import your theme into `.storybook/config` and add it to your Storybook parameters.
 
 ```
-storiesNav: {
-  backgroundColor: 'aqua',
-}
-```
+import {yourTheme} from './yourTheme';
 
-brand: deep theme for brand including `brand name` and `shortcuts`
-
-```
-brand: {
-  background: 'url("/path/to/logo.svg")',
-}
-```
-
-brandLink: deep theme for only `brand name`
-
-```
-brandLink: {
-  border: 'none'
-}
-```
-
-filter: deep theme for `stories filter section`
-
-```
-filter: {
-  backgroundColor: 'red',
-}
-```
-
-treeHeader: deep theme for `tree header`
-
-```
-treeHeader: {
-  color: 'blue',
-}
-```
-
-treeMenuHeader: deep theme for `tree menu header` of each menu
-
-```
-treeMenuHeader: {
-  color: 'aqua',
-}
-```
-
-menuLink: deep theme for `menu link` of each story
-
-```
-menuLink: {
-  color: 'black',
-}
-```
-
-activeMenuLink: deep theme for `active menu link` for the active story
-
-```
-activeMenuLink: {
-  fontWeight: 'light',
-}
-```
-
-treeArrow: deep theme for `tree arrow`. This accepts an object which receives `height`, `width`, `base` and `wrapper`
-
-```
-treeArrow: {
-  height: 5,
-  width: 5,
-  base: {
-    fontSize: '12px'
+addParameters({
+  options: {
+    theme: yourTheme,
   },
-  wrapper: {
-    backgroundColor: 'white'
-  }
-}
+});
 ```
 
-The styles provided here support everything [emotion](https://emotion.sh/) does. So that included things like nested selectors!
+## Addons and theme creation
 
-## Adding more theme variables for addons
+Some addons require specific theme variables that a Storybook user must add. If you share your theme with the community make sure to support the official and other popular addons so your users have a consistent experience.
 
-If addons have a need for specific theme variables, the user has to add them. 
-We advise addons to reuse the variables listed above as much as possible.
-
-Addon actions uses [react-inspector](https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js) which has themes of it's own. If you want to theme it (our themes do) you can add needs the following additional theme variables:
+For example, the popular Actions addon uses [react-inspector](https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js) which has themes of it's own. Supply additional theme variables to style it like so:
 
 ```
 addonActionsTheme: {
   ...chromeLight,
-  BASE_FONT_FAMILY: monoFonts.fontFamily,
+  BASE_FONT_FAMILY: typography.fonts.mono,
   BASE_BACKGROUND_COLOR: 'transparent',
 }
+```
+
+### Using the theme for addon authors
+
+For a native Storybook experience, we encourage addon authors to reuse the theme variables above. The theming engine relies on [emotion](https://emotion.sh/), a CSS-in-JS library.
+
+```
+import { styled } from '@storybook/theming';
+```
+
+Use the theme variables in object notation:
+
+```
+const Component = styled.div(
+  ({ theme }) => ({
+    background: theme.background.app,
+    width: 0,
+  }),
+);
+```
+
+Or with styled-components template literals:
+
+```
+const Component = styled.div`
+  background: `${props => props.theme.background.app}`
+  width: 0;
+`;
+```
+
+### Advanced theming
+
+For further customization adjust theme variables manually.
+
+This is the master list:
+
+```
+base: 'light' | 'dark',
+color: {
+  primary
+  secondary
+  tertiary
+  ancillary
+
+  orange
+  gold
+  green
+  seafoam
+  purple
+  ultraviolet
+
+  lightest
+  lighter
+  light
+  mediumlight
+  medium
+  mediumdark
+  dark
+  darker
+  darkest
+
+  border
+
+  positive
+  negative
+  warning
+
+  defaultText
+  inverseText
+}
+background: {
+  app
+  content
+  hoverable
+
+  positive
+  negative
+  warning
+}
+typography: {
+  fonts: {
+    base
+    mono
+  }
+  weight: {
+    regular
+    bold
+    black
+  }
+  size: {
+    s1
+    s2
+    s3
+    m1
+    m2
+    m3
+    l1
+    l2
+    l3
+    code
+  }
+  input: {
+    border
+    background
+    color
+    borderRadius
+  };
+
+  layoutMargin
+  appBorderColor
+  appBorderRadius
+
+  barTextColor
+  barSelectedColor
+  barBg
+
+  brand
+}
+TODO finish this, what's the best way to document?
 ```

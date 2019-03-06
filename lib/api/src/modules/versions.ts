@@ -1,9 +1,35 @@
 import { fetch } from 'global';
+import semver from 'semver';
 import { logger } from '@storybook/client-logger';
 
 import { version as currentVersion } from '../version';
 
 import { Module, API } from '../index';
+
+export interface SubState {
+  versions: {
+    [key: string]: {
+      [key: string]: any;
+    };
+    latest?: {
+      version: string;
+      info: string;
+      [key: string]: any;
+    };
+    next?: {
+      version: string;
+      info: string;
+      [key: string]: any;
+    };
+    current?: {
+      version: string;
+      info: string;
+      [key: string]: any;
+    };
+  };
+  lastVersionCheck: number;
+  dismissedVersionNotification: boolean;
+}
 
 const checkInterval = 24 * 60 * 60 * 1000;
 const versionsUrl = 'https://storybook.js.org/versions.json';
@@ -45,13 +71,18 @@ export default function({ store }: Module) {
     },
     getLatestVersion: () => {
       const {
-        versions: { latest },
+        versions: { latest, next, current },
       } = store.getState();
+      if (current && semver.prerelease(current.version) && next) {
+        return latest && semver.gt(latest.version, next.version) ? latest : next;
+      }
       return latest;
     },
     versionUpdateAvailable: () => {
-      const latestVersion = api.getLatestVersion();
-      return latestVersion && latestVersion.version !== store.getState().currentVersion;
+      const latest = api.getLatestVersion();
+      const current = api.getCurrentVersion();
+
+      return latest && semver.gt(latest.version, current.version);
     },
   };
 
@@ -62,10 +93,10 @@ export default function({ store }: Module) {
     const now = Date.now();
     if (!lastVersionCheck || now - lastVersionCheck > checkInterval) {
       try {
-        const { latest } = await fetchLatestVersion(currentVersion);
+        const { latest, next } = await fetchLatestVersion(currentVersion);
 
         await store.setState(
-          { versions: { ...versions, latest }, lastVersionCheck: now },
+          { versions: { ...versions, latest, next }, lastVersionCheck: now },
           { persistence: 'permanent' }
         );
       } catch (error) {
@@ -79,10 +110,8 @@ export default function({ store }: Module) {
       if (latestVersion !== dismissedVersionNotification) {
         fullApi.addNotification({
           id: 'update',
-          level: 2,
           link: '/settings/about',
-          icon: '🎉',
-          content: `There's a new version available: ${latestVersion}`,
+          content: `🎉 Storybook ${latestVersion} is available!`,
           onClear() {
             store.setState(
               { dismissedVersionNotification: latestVersion },

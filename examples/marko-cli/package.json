@@ -1,34 +1,36 @@
 {
   "name": "marko-cli",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "private": true,
   "description": "Demo of how to build an app using marko-starter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marko-js-samples/marko-starter-demo"
+    "url": "https://github.com/marko-js-samples/marko-starter-demo",
+    "directory": "examples/marko-cli"
   },
   "license": "MIT",
   "scripts": {
+    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "build": "NODE_ENV=production marko-starter build",
     "build-storybook": "build-storybook",
+    "prettier": "prettier src/**/*.{js,css,less} *.js --write",
     "serve-static": "NODE_ENV=production marko-starter serve-static",
     "start": "marko-starter server",
     "storybook": "start-storybook -p 9005",
-    "test": "npm run lint",
-    "prettier": "prettier src/**/*.{js,css,less} *.js --write"
+    "test": "npm run lint"
   },
   "dependencies": {
-    "marko": "^4.14.21",
+    "marko": "^4.15.2",
     "marko-starter": "^2.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.0.0-alpha.10",
-    "@storybook/addon-knobs": "5.0.0-alpha.10",
-    "@storybook/addon-options": "5.0.0-alpha.10",
-    "@storybook/addon-storysource": "5.0.0-alpha.10",
-    "@storybook/addons": "5.0.0-alpha.10",
-    "@storybook/marko": "5.0.0-alpha.10",
-    "prettier": "^1.16.1",
-    "webpack": "^4.29.0"
+    "@storybook/addon-actions": "5.0.0",
+    "@storybook/addon-knobs": "5.0.0",
+    "@storybook/addon-options": "5.0.0",
+    "@storybook/addon-storysource": "5.0.0",
+    "@storybook/addons": "5.0.0",
+    "@storybook/marko": "5.0.0",
+    "prettier": "^1.16.4",
+    "webpack": "^4.29.6"
   }
 }

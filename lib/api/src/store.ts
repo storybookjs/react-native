@@ -1,15 +1,17 @@
 import { localStorage, sessionStorage } from 'global';
-import { State } from './index';
+import { parse, stringify } from 'telejson';
 
 export const STORAGE_KEY = '@storybook/ui/store';
 
+import { State } from './index';
+
 function get(storage: Storage) {
   const serialized = storage.getItem(STORAGE_KEY);
-  return serialized ? JSON.parse(serialized) : {};
+  return serialized ? parse(serialized) : {};
 }
 
 function set(storage: Storage, value: Patch) {
-  storage.setItem(STORAGE_KEY, JSON.stringify(value));
+  storage.setItem(STORAGE_KEY, stringify(value, { maxDepth: 50 }));
 }
 
 function update(storage: Storage, patch: Patch) {

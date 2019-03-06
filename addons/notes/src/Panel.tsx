@@ -1,18 +1,26 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import { types } from '@storybook/addons';
 import { styled } from '@storybook/theming';
-import { STORY_CHANGED } from '@storybook/core-events';
+import { STORY_RENDERED } from '@storybook/core-events';
 
-import { SyntaxHighlighter as SyntaxHighlighterBase, Placeholder } from '@storybook/components';
+import {
+  SyntaxHighlighter as SyntaxHighlighterBase,
+  Placeholder,
+  DocumentFormatting,
+  Link,
+} from '@storybook/components';
 import Giphy from './giphy';
 import Markdown from 'markdown-to-jsx';
 
 import { PARAM_KEY, API, Parameters } from './shared';
 
 const Panel = styled.div({
-  padding: 10,
+  padding: '3rem 40px',
   boxSizing: 'border-box',
   width: '100%',
+  maxWidth: 980,
+  margin: '0 auto',
 });
 
 interface Props {
@@ -38,7 +46,26 @@ function read(param: Parameters | undefined): string | undefined {
   }
 }
 
-const SyntaxHighlighter = (props: any) => <SyntaxHighlighterBase bordered copyable {...props} />;
+export const SyntaxHighlighter = (props: any) => {
+  // markdown-to-jsx does not add className to inline code
+  if (props.className === undefined) {
+    return <code>{props.children}</code>;
+  }
+  // className: "lang-jsx"
+  const language = props.className.split('-');
+  return <SyntaxHighlighterBase language={language[1]} bordered copyable {...props} />;
+};
+
+// use our SyntaxHighlighter component in place of a <code> element when
+// converting markdown to react elements
+const defaultOptions = {
+  overrides: {
+    code: SyntaxHighlighter,
+    Giphy: {
+      component: Giphy,
+    },
+  },
+};
 
 export default class NotesPanel extends React.Component<Props, NotesPanelState> {
   static propTypes = {
@@ -58,25 +85,14 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
 
   mounted: boolean;
 
-  // use our SyntaxHighlighter component in place of a <code> element when
-  // converting markdown to react elements
-  options = {
-    overrides: {
-      code: SyntaxHighlighter,
-      Giphy: {
-        component: Giphy,
-      },
-    },
-  };
-
   componentDidMount() {
     const { api } = this.props;
-    api.on(STORY_CHANGED, this.onStoryChange);
+    api.on(STORY_RENDERED, this.onStoryChange);
   }
 
   componentWillUnmount() {
     const { api } = this.props;
-    api.off(STORY_CHANGED, this.onStoryChange);
+    api.off(STORY_RENDERED, this.onStoryChange);
   }
 
   onStoryChange = (id: string) => {
@@ -92,19 +108,43 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
   };
 
   render() {
-    const { active } = this.props;
+    const { active, api } = this.props;
     const { value } = this.state;
 
     if (!active) {
       return null;
     }
 
+    // TODO: memoize
+    const extraElements = Object.entries(api.getElements(types.NOTES_ELEMENT)).reduce(
+      (acc, [k, v]) => ({ ...acc, [k]: v.render }),
+      {}
+    );
+    const options = {
+      ...defaultOptions,
+      overrides: { ...defaultOptions.overrides, ...extraElements },
+    };
+
     return value ? (
       <Panel className="addon-notes-container">
-        <Markdown options={this.options}>{value}</Markdown>
+        <DocumentFormatting>
+          <Markdown options={options}>{value}</Markdown>
+        </DocumentFormatting>
       </Panel>
     ) : (
-      <Placeholder>There is no info/note</Placeholder>
+      <Placeholder>
+        <React.Fragment>No notes yet</React.Fragment>
+        <React.Fragment>
+          Learn how to{' '}
+          <Link
+            href="https://github.com/storybooks/storybook/tree/master/addons/notes"
+            target="_blank"
+            withArrow
+          >
+            document components in Markdown
+          </Link>
+        </React.Fragment>
+      </Placeholder>
     );
   }
 }

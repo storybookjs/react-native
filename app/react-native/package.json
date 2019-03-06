@@ -1,6 +1,7 @@
 {
   "name": "@storybook/react-native",
-  "version": "5.0.0-alpha.10",
+  "private": true,
+  "version": "5.0.0",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -13,7 +14,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "app/react-native"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -25,12 +27,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-alpha.10",
-    "@storybook/channel-websocket": "5.0.0-alpha.10",
-    "@storybook/channels": "5.0.0-alpha.10",
-    "@storybook/core": "5.0.0-alpha.10",
-    "@storybook/core-events": "5.0.0-alpha.10",
-    "@storybook/ui": "5.0.0-alpha.10",
+    "@storybook/addons": "5.0.0",
+    "@storybook/channel-websocket": "5.0.0",
+    "@storybook/channels": "5.0.0",
+    "@storybook/core": "5.0.0",
+    "@storybook/core-events": "5.0.0",
+    "@storybook/ui": "5.0.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-macros": "^2.4.5",
     "babel-plugin-syntax-async-functions": "^6.13.0",
@@ -43,27 +45,27 @@
     "babel-preset-minify": "^0.5.0 || 0.6.0-alpha.5",
     "babel-preset-react": "^6.24.1",
     "babel-runtime": "^6.26.0",
-    "case-sensitive-paths-webpack-plugin": "^2.1.2",
+    "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "commander": "^2.19.0",
     "dotenv-webpack": "^1.7.0",
     "ejs": "^2.6.1",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "find-cache-dir": "^2.0.0",
     "global": "^4.3.2",
     "html-webpack-plugin": "^4.0.0-beta.2",
     "json5": "^2.1.0",
     "lazy-universal-dotenv": "^2.0.0",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "raw-loader": "^1.0.0",
-    "react-dev-utils": "^7.0.1",
+    "react-dev-utils": "^7.0.3",
     "react-native-swipe-gestures": "^1.0.2",
-    "shelljs": "^0.8.2",
-    "url-parse": "^1.4.3",
+    "shelljs": "^0.8.3",
+    "url-parse": "^1.4.4",
     "uuid": "^3.3.2",
-    "webpack": "^4.29.0",
-    "webpack-dev-middleware": "^3.5.1",
+    "webpack": "^4.29.6",
+    "webpack-dev-middleware": "^3.6.0",
     "webpack-hot-middleware": "^2.24.3",
-    "ws": "^6.1.3"
+    "ws": "^6.1.4"
   },
   "devDependencies": {
     "react-native": "^0.52.2"

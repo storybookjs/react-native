@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-centered",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "Storybook decorator to center components",
   "keywords": [
     "addon",
@@ -12,7 +12,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/centered"
   },
   "license": "MIT",
   "author": "Muhammed Thanish <mnmtanish@gmail.com>",
@@ -22,7 +23,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "core-js": "^2.6.2",
+    "core-js": "^2.6.5",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"
   },

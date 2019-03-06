@@ -43,7 +43,9 @@ object OpenSourceProjects_Storybook_CliTestLatestCra : BuildType({
                 +:next
             """.trimIndent()
         }
-        retryBuild {}
+        retryBuild {
+            enabled = false
+        }
     }
 
     features {

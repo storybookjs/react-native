@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { STORY_CHANGED } from '@storybook/core-events';
 import { TabsState } from '@storybook/components';
 
+import { ThemeProvider, themes, convert } from '@storybook/theming';
 import Panel from '../Panel';
 import { CHANGE, SET } from '../../shared';
 import PropForm from '../PropForm';
@@ -189,99 +190,117 @@ describe('Panel', () => {
       //
       // We have to do a full mount.
 
-      const wrapper = mount(<Panel channel={testChannel} api={testApi} active />);
-      try {
-        wrapper.setState({
-          knobs: {
-            foo: {
-              name: 'foo',
-              defaultValue: 'test',
-              used: true,
-              // no groupId
-            },
+      const root = mount(
+        <ThemeProvider theme={convert(themes.light)}>
+          <Panel channel={testChannel} api={testApi} active />
+        </ThemeProvider>
+      );
+
+      testChannel.on.mock.calls[0][1]({
+        knobs: {
+          foo: {
+            name: 'foo',
+            defaultValue: 'test',
+            used: true,
+            // no groupId
           },
-        });
+          bar: {
+            name: 'bar',
+            defaultValue: 'test2',
+            used: true,
+            // no groupId
+          },
+        },
+      });
 
-        expect(wrapper.find(TabsState).exists()).toBeFalsy();
+      const wrapper = root.update().find(Panel);
 
-        const formWrapper = wrapper.find(PropForm);
-        const knobs = formWrapper.map(formInstanceWrapper => formInstanceWrapper.prop('knobs'));
-        expect(knobs).toMatchSnapshot();
-      } finally {
-        wrapper.unmount();
-      }
+      const formWrapper = wrapper.find(PropForm);
+      const knobs = formWrapper.map(formInstanceWrapper => formInstanceWrapper.prop('knobs'));
+
+      expect(knobs).toMatchSnapshot();
+
+      root.unmount();
     });
 
     it('should have one tab per groupId and an empty ALL tab when all are defined', () => {
-      const wrapper = mount(<Panel channel={testChannel} api={testApi} active />);
-      try {
-        wrapper.setState({
-          knobs: {
-            foo: {
-              name: 'foo',
-              defaultValue: 'test',
-              used: true,
-              groupId: 'foo',
-            },
-            bar: {
-              name: 'bar',
-              defaultValue: 'test2',
-              used: true,
-              groupId: 'bar',
-            },
+      const root = mount(
+        <ThemeProvider theme={convert(themes.light)}>
+          <Panel channel={testChannel} api={testApi} active />
+        </ThemeProvider>
+      );
+
+      testChannel.on.mock.calls[0][1]({
+        knobs: {
+          foo: {
+            name: 'foo',
+            defaultValue: 'test',
+            used: true,
+            groupId: 'foo',
           },
-        });
+          bar: {
+            name: 'bar',
+            defaultValue: 'test2',
+            used: true,
+            groupId: 'bar',
+          },
+        },
+      });
 
-        const titles = wrapper
-          .find(TabsState)
-          // TabsState will replace the <div/> that Panel actually makes with a <Tab/>
-          .find('Tab')
-          .map(child => child.prop('name'));
-        expect(titles).toEqual(['foo', 'bar']);
+      const wrapper = root.update().find(Panel);
 
-        const knobs = wrapper.find(PropForm).map(propForm => propForm.prop('knobs'));
-        // but it should not have its own PropForm in this case
-        expect(knobs).toHaveLength(titles.length);
-        expect(knobs).toMatchSnapshot();
-      } finally {
-        wrapper.unmount();
-      }
+      const titles = wrapper
+        .find(TabsState)
+        .find('button')
+        .map(child => child.prop('children'));
+      expect(titles).toEqual(['foo', 'bar']);
+
+      const knobs = wrapper.find(PropForm);
+      // but it should not have its own PropForm in this case
+      expect(knobs.length).toEqual(titles.length);
+      expect(knobs).toMatchSnapshot();
+
+      root.unmount();
     });
 
     it('the ALL tab should have its own additional content when there are knobs both with and without a groupId', () => {
-      const wrapper = mount(<Panel channel={testChannel} api={testApi} active />);
-      try {
-        wrapper.setState({
-          knobs: {
-            foo: {
-              name: 'foo',
-              defaultValue: 'test',
-              used: true,
-              groupId: 'foo',
-            },
-            bar: {
-              name: 'bar',
-              defaultValue: 'test2',
-              used: true,
-              // no groupId
-            },
+      const root = mount(
+        <ThemeProvider theme={convert(themes.light)}>
+          <Panel channel={testChannel} api={testApi} active />
+        </ThemeProvider>
+      );
+
+      testChannel.on.mock.calls[0][1]({
+        knobs: {
+          foo: {
+            name: 'foo',
+            defaultValue: 'test',
+            used: true,
+            groupId: 'foo',
           },
-        });
+          bar: {
+            name: 'bar',
+            defaultValue: 'test2',
+            used: true,
+            // no groupId
+          },
+        },
+      });
 
-        const titles = wrapper
-          .find(TabsState)
-          // TabsState will replace the <div/> that Panel actually makes with a <Tab/>
-          .find('Tab')
-          .map(child => child.prop('name'));
-        expect(titles).toEqual(['foo', 'ALL']);
+      const wrapper = root.update().find(Panel);
 
-        const knobs = wrapper.find(PropForm).map(propForm => propForm.prop('knobs'));
-        // there are props with no groupId so ALL should also have its own PropForm
-        expect(knobs).toHaveLength(titles.length);
-        expect(knobs).toMatchSnapshot();
-      } finally {
-        wrapper.unmount();
-      }
+      const titles = wrapper
+        .find(TabsState)
+        .find('button')
+        .map(child => child.prop('children'));
+      expect(titles).toEqual(['foo', 'ALL']);
+
+      const knobs = wrapper.find(PropForm).map(propForm => propForm.prop('knobs'));
+      // there are props with no groupId so ALL should also have its own PropForm
+      expect(knobs.length).toEqual(titles.length);
+      expect(knobs).toMatchSnapshot();
+
+      root.unmount();
     });
   });
 });

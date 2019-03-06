@@ -1,16 +1,14 @@
 import React from 'react';
 import { storiesOf, configure, addDecorator, addParameters } from '@storybook/react';
-import { Global, ThemeProvider, withTheme, themes } from '@storybook/theming';
+import { Global, ThemeProvider, themes, createReset, create, convert } from '@storybook/theming';
 
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withCssResources } from '@storybook/addon-cssresources';
-import { withA11Y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
 import { withNotes } from '@storybook/addon-notes';
 
 import 'storybook-chromatic';
 
 import addHeadWarning from './head-warning';
-import extraViewports from './extra-viewports.json';
 
 if (process.env.NODE_ENV === 'development') {
   if (!process.env.DOTENV_DEVELOPMENT_DISPLAY_WARNING) {
@@ -30,41 +28,34 @@ addHeadWarning('preview-head-not-loaded', 'Preview head not loaded');
 addHeadWarning('dotenv-file-not-loaded', 'Dotenv file not loaded');
 
 addDecorator(withCssResources);
-addDecorator(withA11Y);
+addDecorator(withA11y);
 addDecorator(withNotes);
 
-const Reset = withTheme(({ theme }) => (
-  <Global
-    styles={{
-      body: {
-        fontFamily: theme.mainTextFace,
-        color: theme.mainTextColor,
-        WebkitFontSmoothing: 'antialiased',
-        fontSize: theme.mainTextSize,
-      },
-    }}
-  />
-));
-
-addDecorator(fn => (
-  <ThemeProvider theme={themes.normal}>
-    <Reset />
-    {fn()}
+addDecorator(storyFn => (
+  <ThemeProvider theme={convert(themes.light)}>
+    <Global styles={createReset} />
+    {storyFn()}
   </ThemeProvider>
 ));
 
 addParameters({
-  a11y: {},
+  a11y: {
+    configure: {},
+    options: {
+      checks: { 'color-contrast': { options: { noScroll: true } } },
+      restoreScroll: true,
+    },
+  },
   options: {
-    name: 'Storybook',
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: '|',
-    // theme: themes.dark,
+    theme: create({ colorPrimary: 'hotpink', colorSecondary: 'orangered' }),
   },
-  viewports: {
-    ...INITIAL_VIEWPORTS,
-    ...extraViewports,
-  },
+  backgrounds: [
+    { name: 'storybook app', value: themes.light.appBg, default: true },
+    { name: 'light', value: '#eeeeee' },
+    { name: 'dark', value: '#222222' },
+  ],
 });
 
 let previousExports = {};

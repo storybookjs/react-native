@@ -1,32 +1,34 @@
-import React from 'react';
-import * as PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
+import { logger } from '@storybook/client-logger';
 
 interface Props {
-  gif: String;
+  query: string;
 }
-interface GiphyState {
-  src?: string;
+interface State {
+  src: string | null;
 }
-export default class Giphy extends React.Component<Props, GiphyState> {
-  static propTypes = {
-    gif: PropTypes.string.isRequired,
+export default class Giphy extends Component<Props, State> {
+  state: State = {
+    src: null,
   };
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      src: null,
-    };
-    fetch(`http://api.giphy.com/v1/gifs/search?limit=1&api_key=dc6zaTOxFJmzC&q=${props.gif}`)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-      })
+  componentDidMount() {
+    const { query } = this.props;
+    // TODO: replace this api_key, and make it configurable
+    // note: I have requested a production api_key:
+    // it's pending: bluXZc8ZAre19mvTtVi900CdsJhbVTEK
+    fetch(`http://api.giphy.com/v1/gifs/search?limit=1&api_key=dc6zaTOxFJmzC&q=${query}`)
+      .then(response => response.ok && response.json())
       .then(data => {
-        this.setState({ src: data.data[0].images.original.url });
-      });
+        this.setState({
+          src: data.data[0].images.original.url,
+        });
+      })
+      .catch(e => logger.error(e));
   }
   render() {
-    return <img src={this.state.src} />;
+    const { src } = this.state;
+    // TODO: we should have a nice looking <Img /> component
+    return src ? <img src={src} /> : null;
   }
 }

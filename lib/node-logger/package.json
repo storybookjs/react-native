@@ -1,6 +1,6 @@
 {
   "name": "@storybook/node-logger",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "",
   "keywords": [
     "storybook"
@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/node-logger"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -21,7 +22,7 @@
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "core-js": "^2.6.2",
+    "core-js": "^2.6.5",
     "npmlog": "^4.1.2",
     "pretty-hrtime": "^1.0.3",
     "regenerator-runtime": "^0.12.1"

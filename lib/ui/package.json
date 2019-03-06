@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/ui"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -21,42 +22,40 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-alpha.10",
-    "@storybook/api": "5.0.0-alpha.10",
-    "@storybook/client-logger": "5.0.0-alpha.10",
-    "@storybook/components": "5.0.0-alpha.10",
-    "@storybook/core-events": "5.0.0-alpha.10",
-    "@storybook/router": "5.0.0-alpha.10",
-    "@storybook/theming": "5.0.0-alpha.10",
-    "eventemitter3": "^3.1.0",
+    "@storybook/addons": "5.0.0",
+    "@storybook/api": "5.0.0",
+    "@storybook/client-logger": "5.0.0",
+    "@storybook/components": "5.0.0",
+    "@storybook/core-events": "5.0.0",
+    "@storybook/router": "5.0.0",
+    "@storybook/theming": "5.0.0",
     "fast-deep-equal": "^2.0.1",
-    "fuse.js": "^3.3.0",
+    "fuzzy-search": "^3.0.1",
     "global": "^4.3.2",
-    "history": "^4.7.2",
-    "keycode": "^2.2.0",
     "lodash.debounce": "^4.0.8",
     "lodash.isequal": "^4.5.0",
     "lodash.mergewith": "^4.6.1",
     "lodash.pick": "^4.4.0",
-    "lodash.sortby": "^4.7.0",
-    "lodash.throttle": "^4.1.1",
-    "markdown-to-jsx": "^6.9.0",
+    "markdown-to-jsx": "^6.9.1",
     "memoizerific": "^1.11.3",
-    "prop-types": "^15.6.2",
-    "qs": "^6.5.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "polished": "^3.0.0",
+    "prop-types": "^15.7.2",
+    "qs": "^6.6.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-draggable": "^3.1.1",
     "react-helmet-async": "^0.2.0",
-    "react-lifecycles-compat": "^3.0.4",
-    "react-modal": "^3.8.1",
-    "react-resize-detector": "^3.2.1",
-    "to-camel-case": "^1.0.0",
+    "react-hotkeys": "2.0.0-pre4",
+    "react-resize-detector": "^3.4.0",
+    "recompose": "^0.30.0",
+    "semver": "^5.6.0",
+    "telejson": "^2.1.1",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "terser-webpack-plugin": "^1.2.1",
-    "webpack": "^4.29.0"
+    "flush-promises": "^1.0.2",
+    "terser-webpack-plugin": "^1.2.2",
+    "webpack": "^4.29.6"
   },
   "publishConfig": {
     "access": "public"

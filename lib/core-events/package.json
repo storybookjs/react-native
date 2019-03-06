@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core-events",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "Event names used in storybook core",
   "keywords": [
     "storybook"
@@ -11,14 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
-  },
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/core-events"
   },
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
   "publishConfig": {
     "access": "public"
   }

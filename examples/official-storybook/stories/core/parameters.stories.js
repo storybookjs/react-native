@@ -7,22 +7,17 @@ addParameters({ globalParameter: 'globalParameter' });
 
 export default {
   title: 'Core|Parameters',
-  module,
   decorators: [fn => fn({ parameters: { decoratorParameter: 'decoratorParameter' } })],
   parameters: {
     chapterParameter: 'chapterParameter',
   },
 };
 
-const removeFileName = ({ fileName, ...rest }) => ({
-  ...rest,
-});
-
 // I'm not sure what we should recommend regarding propTypes? are they a good idea for examples?
 // Given we sort of control the props, should we export a prop type?
 export const passed = ({
   // eslint-disable-next-line react/prop-types
-  parameters,
-}) => <pre>Parameters are {JSON.stringify(removeFileName(parameters), null, 2)}</pre>;
+  parameters: { options, ...parameters },
+}) => <pre>Parameters are {JSON.stringify(parameters, null, 2)}</pre>;
 passed.title = 'passed to story';
 passed.parameters = { storyParameter: 'storyParameter' };

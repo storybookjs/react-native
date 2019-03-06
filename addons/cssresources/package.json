@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-cssresources",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "A storybook addon to switch between css resources at runtime for your story",
   "keywords": [
     "addon",
@@ -14,7 +14,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/cssresources"
   },
   "license": "MIT",
   "author": "nm123github",
@@ -24,18 +25,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/styled": "10.0.6",
-    "@storybook/addons": "5.0.0-alpha.10",
-    "@storybook/channels": "5.0.0-alpha.10",
-    "@storybook/components": "5.0.0-alpha.10",
-    "@storybook/core-events": "5.0.0-alpha.10",
-    "core-js": "^2.6.2",
+    "@storybook/addons": "5.0.0",
+    "@storybook/components": "5.0.0",
+    "@storybook/core-events": "5.0.0",
+    "core-js": "^2.6.5",
     "global": "^4.3.2",
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-syntax-highlighter": "^8.0.1",
-    "util-deprecate": "^1.0.2"
+    "react": "^16.8.3"
   },
   "peerDependencies": {
     "react": "*"

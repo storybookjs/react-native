@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-jest",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "React storybook addon that show component jest report",
   "keywords": [
     "addon",
@@ -17,7 +17,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/jest"
   },
   "license": "MIT",
   "author": "Renaud Tertrais <renaud.tertrais@gmail.com> (https://github.com/renaudtertrais)",
@@ -27,14 +28,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-alpha.10",
-    "@storybook/components": "5.0.0-alpha.10",
-    "@storybook/core-events": "5.0.0-alpha.10",
-    "@storybook/theming": "5.0.0-alpha.10",
-    "core-js": "^2.6.2",
+    "@storybook/addons": "5.0.0",
+    "@storybook/components": "5.0.0",
+    "@storybook/core-events": "5.0.0",
+    "@storybook/theming": "5.0.0",
+    "core-js": "^2.6.5",
     "global": "^4.3.2",
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
     "upath": "^1.1.0",
     "util-deprecate": "^1.0.2"
   },

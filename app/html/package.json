@@ -1,6 +1,6 @@
 {
   "name": "@storybook/html",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "Storybook for HTML: View HTML snippets in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "app/html"
   },
   "license": "MIT",
   "main": "dist/client/index.js",
@@ -24,13 +25,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "5.0.0-alpha.10",
+    "@storybook/core": "5.0.0",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.2",
+    "core-js": "^2.6.5",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
     "regenerator-runtime": "^0.12.1"
   },
   "peerDependencies": {

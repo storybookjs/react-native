@@ -7,6 +7,7 @@ import { types, Types, isSupportedType } from './types';
 
 export interface RenderOptions {
   active: boolean;
+  key: string;
 }
 export interface RouteOptions {
   storyId: string;

@@ -6,10 +6,10 @@ import { Form } from '@storybook/components';
 const FlexSpaced = styled.div({
   flex: 1,
   display: 'flex',
-  '& > *': {
+  '&& > *': {
     marginLeft: 10,
   },
-  '& > *:first-child': {
+  '&& > *:first-of-type': {
     marginLeft: 0,
   },
 });
@@ -104,11 +104,13 @@ class DateType extends Component {
             this.dateInput = el;
           }}
           id={`${name}date`}
+          name={`${name}date`}
           onChange={this.onDateChange}
         />
         <FlexInput
           type="time"
           id={`${name}time`}
+          name={`${name}time`}
           ref={el => {
             this.timeInput = el;
           }}

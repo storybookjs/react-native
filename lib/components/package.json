@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/components"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -20,29 +21,25 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-alpha.10",
-    "@storybook/client-logger": "5.0.0-alpha.10",
-    "@storybook/core-events": "5.0.0-alpha.10",
-    "@storybook/router": "5.0.0-alpha.10",
-    "@storybook/theming": "5.0.0-alpha.10",
-    "fuzzy-search": "^3.0.1",
+    "@storybook/addons": "5.0.0",
+    "@storybook/client-logger": "5.0.0",
+    "@storybook/core-events": "5.0.0",
+    "@storybook/router": "5.0.0",
+    "@storybook/theming": "5.0.0",
     "global": "^4.3.2",
-    "immer": "^1.12.0",
     "js-beautify": "^1.8.9",
-    "lodash.pick": "^4.4.0",
-    "lodash.throttle": "^4.1.1",
     "memoizerific": "^1.11.3",
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "polished": "^3.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-focus-lock": "^1.17.7",
     "react-helmet-async": "^0.2.0",
-    "react-inspector": "^2.3.0",
     "react-popper-tooltip": "^2.8.0",
     "react-syntax-highlighter": "^8.0.1",
-    "react-textarea-autosize": "^7.0.4",
-    "reactjs-popup": "^1.3.2",
-    "render-fragment": "^0.1.1"
+    "react-textarea-autosize": "^7.1.0",
+    "recompose": "^0.30.0",
+    "simplebar-react": "^0.1.4"
   },
   "peerDependencies": {
     "react": "*",

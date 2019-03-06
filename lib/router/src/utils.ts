@@ -9,6 +9,26 @@ interface StoryData {
 const knownViewModesRegex = /(story|info)/;
 const splitPath = /\/([^/]+)\/([^/]+)?/;
 
+export const sanitize = (string: string) => {
+  return string
+    .toLowerCase()
+    .replace(/[^a-z0-9-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
+};
+
+const sanitizeSafe = (string: string, part: string) => {
+  const sanitized = sanitize(string);
+  if (sanitized === '') {
+    throw new Error(`Invalid ${part} '${string}', must include alphanumeric characters`);
+  }
+  return sanitized;
+};
+
+export const toId = (kind: string, name: string) =>
+  `${sanitizeSafe(kind, 'kind')}--${sanitizeSafe(name, 'name')}`;
+
 export const storyDataFromString: (path: string) => StoryData = memoize(1000)(
   (path: string | undefined | null) => {
     const result: StoryData = {
@@ -24,8 +44,8 @@ export const storyDataFromString: (path: string) => StoryData = memoize(1000)(
           storyId,
         });
       }
+      return result;
     }
-    return result;
   }
 );
 

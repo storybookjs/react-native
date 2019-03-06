@@ -4,7 +4,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './components/app.component';
 import { STORY } from './app.token';
-import { NgModuleMetadata, IGetStory, NgStory } from './types';
+import { NgModuleMetadata, IStoryFn, NgStory } from './types';
 
 let platform: any = null;
 let promises: Array<Promise<NgModuleRef<any>>> = [];
@@ -40,8 +40,8 @@ const createComponentFromTemplate = (template: string, styles: string[]) => {
   })(componentClass);
 };
 
-const initModule = (currentStory: IGetStory) => {
-  const storyObj = currentStory();
+const initModule = (storyFn: IStoryFn) => {
+  const storyObj = storyFn();
   const { component, template, props, styles, moduleMetadata = {} } = storyObj;
 
   let AnnotatedComponent = template ? createComponentFromTemplate(template, styles) : component;
@@ -86,6 +86,6 @@ const draw = (newModule: DynamicComponentType): void => {
   }
 };
 
-export const renderNgApp = (story: IGetStory) => {
-  draw(initModule(story));
+export const renderNgApp = (storyFn: IStoryFn) => {
+  draw(initModule(storyFn));
 };

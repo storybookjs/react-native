@@ -1,16 +1,17 @@
+import { document } from 'global';
 import React from 'react';
 
-import { Link, Location, navigate, LocationProvider, WindowLocation } from '@reach/router';
+import { Link, Location, navigate, LocationProvider, RouteComponentProps } from '@reach/router';
 import { ToggleVisibility } from './visibility';
 import { queryFromString, storyDataFromString, getMatch } from './utils';
 
-interface RenderData {
-  path: string;
-  location: WindowLocation;
-  navigate: (to: string) => void;
+interface Other {
   viewMode?: string;
   storyId?: string;
 }
+
+export type RenderData = RouteComponentProps & Other;
+
 interface MatchingData {
   match: null | { path: string };
 }
@@ -35,15 +36,15 @@ interface QueryLinkProps {
   children: React.ReactNode;
 }
 
-const base = document.location.pathname + '?';
+const getBase = () => document.location.pathname + '?';
 
 const queryNavigate = (to: string) => {
-  navigate(`${base}path=${to}`);
+  navigate(`${getBase()}path=${to}`);
 };
 
 // A component that will navigate to a new location/path when clicked
 const QueryLink = ({ to, children, ...rest }: QueryLinkProps) => (
-  <Link to={`${base}path=${to}`} {...rest}>
+  <Link to={`${getBase()}path=${to}`} {...rest}>
     {children}
   </Link>
 );
@@ -53,7 +54,7 @@ QueryLink.displayName = 'QueryLink';
 // and will be called whenever it changes when it changes
 const QueryLocation = ({ children }: QueryLocationProps) => (
   <Location>
-    {({ location }: { location: WindowLocation }) => {
+    {({ location }: RouteComponentProps): React.ReactNode => {
       const { path } = queryFromString(location.search);
       const { viewMode, storyId } = storyDataFromString(path);
       return children({ path, location, navigate: queryNavigate, viewMode, storyId });

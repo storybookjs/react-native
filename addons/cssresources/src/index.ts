@@ -67,7 +67,7 @@ export const withCssResources = makeDecorator({
   skipIfNoParametersOrOptions: true,
   allowDeprecatedUsage: false,
 
-  wrapper: (getStory: any, context: any, { options, parameters }: any) => {
+  wrapper: (getStory, context, { options, parameters }) => {
     const storyOptions = parameters || options;
     addons.getChannel().on(EVENTS.SET, setResources);
 

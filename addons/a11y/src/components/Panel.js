@@ -4,19 +4,34 @@ import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 
 import { STORY_RENDERED } from '@storybook/core-events';
-import { ActionBar, ActionButton, Icons } from '@storybook/components';
+import { ActionBar, Icons } from '@storybook/components';
 
+import { ScrollArea } from '@storybook/components/dist/ScrollArea/ScrollArea';
 import EVENTS from '../constants';
 
 import Tabs from './Tabs';
 import Report from './Report';
 
+const Icon = styled(Icons)(
+  {
+    height: '12px',
+    width: '12px',
+    marginRight: '4px',
+  },
+  ({ status, theme }) =>
+    status === 'running'
+      ? {
+          animation: `${theme.animation.rotate360} 1s linear infinite;`,
+        }
+      : {}
+);
+
 const Passes = styled.span(({ theme }) => ({
-  color: theme.successColor,
+  color: theme.color.positive,
 }));
 
 const Violations = styled.span(({ theme }) => ({
-  color: theme.failColor,
+  color: theme.color.negative,
 }));
 
 class A11YPanel extends Component {
@@ -97,36 +112,43 @@ class A11YPanel extends Component {
     const { passes, violations, status } = this.state;
     const { active } = this.props;
 
+    let actionTitle;
+    if (status === 'ready') {
+      actionTitle = 'Rerun tests';
+    } else if (status === 'running') {
+      actionTitle = (
+        <Fragment>
+          <Icon inline icon="sync" status={status} /> Running test
+        </Fragment>
+      );
+    } else if (status === 'ran') {
+      actionTitle = (
+        <Fragment>
+          <Icon inline icon="check" /> Tests completed
+        </Fragment>
+      );
+    }
+
     return active ? (
       <Fragment>
-        <Tabs
-          key="tabs"
-          tabs={[
-            {
-              label: <Violations>{violations.length} Violations</Violations>,
-              panel: <Report passes={false} items={violations} empty="No a11y violations found." />,
-            },
-            {
-              label: <Passes>{passes.length} Passes</Passes>,
-              panel: <Report passes items={passes} empty="No a11y check passed" />,
-            },
-          ]}
-        />
-        <ActionBar key="actionbar">
-          <ActionButton onClick={this.request}>
-            {status === 'ready' ? <span>RERUN TEST</span> : null}
-            {status === 'running' ? (
-              <Fragment>
-                <Icons inline icon="timer" /> <span>Running test</span>
-              </Fragment>
-            ) : null}
-            {status === 'ran' ? (
-              <Fragment>
-                <Icons inline icon="check" /> <span>Tests completed</span>
-              </Fragment>
-            ) : null}
-          </ActionButton>
-        </ActionBar>
+        <ScrollArea vertical horizontal>
+          <Tabs
+            key="tabs"
+            tabs={[
+              {
+                label: <Violations>{violations.length} Violations</Violations>,
+                panel: (
+                  <Report passes={false} items={violations} empty="No a11y violations found." />
+                ),
+              },
+              {
+                label: <Passes>{passes.length} Passes</Passes>,
+                panel: <Report passes items={passes} empty="No a11y check passed" />,
+              },
+            ]}
+          />
+        </ScrollArea>
+        <ActionBar key="actionbar" actionItems={[{ title: actionTitle, onClick: this.request }]} />
       </Fragment>
     ) : null;
   }

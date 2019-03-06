@@ -1,6 +1,6 @@
 {
   "name": "@storybook/theming",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -11,19 +11,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/theming"
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.5",
-    "@emotion/styled": "^10.0.5",
-    "emotion-theming": "^10.0.5",
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
+    "@storybook/client-logger": "5.0.0",
+    "common-tags": "^1.8.0",
+    "deep-object-diff": "^1.1.0",
+    "emotion-theming": "^10.0.7",
     "global": "^4.3.2",
-    "prop-types": "^15.6.2",
+    "lodash.isequal": "^4.5.0",
+    "lodash.mergewith": "^4.6.1",
+    "memoizerific": "^1.11.3",
+    "polished": "^3.0.0",
+    "prop-types": "^15.7.2",
     "react-inspector": "^2.3.1"
   },
   "peerDependencies": {

@@ -28,7 +28,7 @@ exports[`Storyshots Button with new info 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -39,7 +39,7 @@ exports[`Storyshots Button with new info 1`] = `
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -59,7 +59,7 @@ exports[`Storyshots Button with new info 1`] = `
           style="margin-bottom:0"
         >
           <div
-            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+            style="font-size:15px"
           >
             Use the 
             <a
@@ -207,32 +207,24 @@ exports[`Storyshots Button with new info 1`] = `
             >
               "Container" Component
             </h3>
-            <table>
+            <table
+              class="info-table"
+            >
               <thead>
                 <tr>
-                  <th
-                    style="text-align:left;vertical-align:top"
-                  >
+                  <th>
                     property
                   </th>
-                  <th
-                    style="text-align:left;vertical-align:top"
-                  >
+                  <th>
                     propType
                   </th>
-                  <th
-                    style="text-align:left;vertical-align:top"
-                  >
+                  <th>
                     required
                   </th>
-                  <th
-                    style="text-align:left;vertical-align:top"
-                  >
+                  <th>
                     default
                   </th>
-                  <th
-                    style="text-align:left;vertical-align:top"
-                  >
+                  <th>
                     description
                   </th>
                 </tr>
@@ -240,81 +232,65 @@ exports[`Storyshots Button with new info 1`] = `
               <tbody>
                 <tr>
                   <td
-                    style="padding-right:10px;vertical-align:top"
+                    class="info-table-monospace"
                   >
                     children
                   </td>
                   <td
-                    style="padding-right:10px;vertical-align:top"
+                    class="info-table-monospace"
                   >
                     <span>
                       node
                     </span>
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  >
+                  <td>
                     yes
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  >
+                  <td>
                     -
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  />
+                  <td />
                 </tr>
                 <tr>
                   <td
-                    style="padding-right:10px;vertical-align:top"
+                    class="info-table-monospace"
                   >
                     isAmazing
                   </td>
                   <td
-                    style="padding-right:10px;vertical-align:top"
+                    class="info-table-monospace"
                   >
                     <span>
                       bool
                     </span>
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  >
+                  <td>
                     -
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  >
+                  <td>
                     <span>
                       false
                     </span>
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  />
+                  <td />
                 </tr>
                 <tr>
                   <td
-                    style="padding-right:10px;vertical-align:top"
+                    class="info-table-monospace"
                   >
                     age
                   </td>
                   <td
-                    style="padding-right:10px;vertical-align:top"
+                    class="info-table-monospace"
                   >
                     <span>
                       other
                     </span>
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  >
+                  <td>
                     -
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  >
+                  <td>
                     <span>
                       {
                       <span>
@@ -339,38 +315,30 @@ exports[`Storyshots Button with new info 1`] = `
                       }
                     </span>
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  />
+                  <td />
                 </tr>
                 <tr>
                   <td
-                    style="padding-right:10px;vertical-align:top"
+                    class="info-table-monospace"
                   >
                     title
                   </td>
                   <td
-                    style="padding-right:10px;vertical-align:top"
+                    class="info-table-monospace"
                   >
                     <span>
                       string
                     </span>
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  >
+                  <td>
                     -
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  >
+                  <td>
                     <span>
                       the best container ever
                     </span>
                   </td>
-                  <td
-                    style="padding-right:10px;vertical-align:top"
-                  />
+                  <td />
                 </tr>
               </tbody>
             </table>

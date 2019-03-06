@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import memoize from 'memoizerific';
 
 import Events from '@storybook/core-events';
+import { RenderData as RouterData } from '@storybook/router';
 import { Collection, Types } from '@storybook/addons';
 import initProviderApi from './init-provider-api';
 
@@ -12,49 +13,21 @@ import getInitialState from './initial-state';
 import initAddons from './modules/addons';
 import initChannel from './modules/channel';
 import initNotifications, { Notification } from './modules/notifications';
-import initStories, { StoriesHash } from './modules/stories';
-import initLayout from './modules/layout';
+import initStories, { SubState as StoriesSubState } from './modules/stories';
+import initLayout, { SubState as LayoutSubState } from './modules/layout';
 import initShortcuts, { Shortcuts } from './modules/shortcuts';
 import initURL, { QueryParams } from './modules/url';
-import initVersions from './modules/versions';
+import initVersions, { SubState as VersionsSubState } from './modules/versions';
 
-const ManagerContext = React.createContext({ api: undefined, state: getInitialState({}) });
+const ManagerContext = createContext({ api: undefined, state: getInitialState({}) });
 
 const { STORY_CHANGED, SET_STORIES, SELECT_STORY } = Events;
 
-interface RouterData {
-  location: Location;
-  path: string;
-  viewMode: 'story' | 'info' | string | undefined;
-  storyId: string;
-}
+export type Module = StoreData & RouterData & ProviderData;
 
-export type Module = StoreData & RouterData & ProviderData & Navigate;
+export type State = Other & LayoutSubState & StoriesSubState & VersionsSubState & RouterData;
 
-interface Theme {
-  [key: string]: any;
-}
-
-export interface State extends RouterData {
-  layout: {
-    isFullscreen: boolean;
-    showPanel: boolean;
-    panelPosition: 'bottom' | 'right';
-    showNav: boolean;
-    isToolshown: boolean;
-  };
-
-  ui: {
-    name: string;
-    url: string;
-    enableShortcuts: boolean;
-    sortStoriesByKind: boolean;
-    sidebarAnimations: boolean;
-    theme: Theme;
-  };
-
-  storiesHash: StoriesHash;
-
+interface Other {
   shortcuts: Shortcuts;
 
   customQueryParams: QueryParams;
@@ -95,14 +68,10 @@ interface StoreData {
 }
 
 interface Children {
-  children: React.Component | (({ api, state }: Combo) => React.Component);
+  children: React.Component | ((props: Combo) => React.Component);
 }
 
-interface Navigate {
-  navigate(to: string, options?: { replace: boolean }): void;
-}
-
-type Props = Children & RouterData & ProviderData & Navigate;
+type Props = Children & RouterData & ProviderData;
 
 class ManagerProvider extends Component<Props, State> {
   constructor(props: Props) {
@@ -193,7 +162,8 @@ class ManagerProvider extends Component<Props, State> {
   }
 
   shouldComponentUpdate(nextProps: Props, nextState: State) {
-    const { state: prevState, props: prevProps } = this;
+    const prevState = this.state;
+    const prevProps = this.props;
 
     if (prevState !== nextState) {
       return true;

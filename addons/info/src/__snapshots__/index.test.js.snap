@@ -138,6 +138,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
             "background": "white",
             "bottom": 0,
             "display": "none",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
             "left": 0,
             "overflow": "auto",
             "padding": "0 40px",
@@ -175,12 +176,9 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
           <div
             style={
               Object {
-                "WebkitFontSmoothing": "antialiased",
                 "backgroundColor": "#fff",
                 "border": "1px solid #eee",
                 "borderRadius": "2px",
-                "color": "#444",
-                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                 "fontSize": "15px",
                 "fontWeight": 300,
                 "lineHeight": 1.45,
@@ -1394,6 +1392,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
             "background": "white",
             "bottom": 0,
             "display": "none",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
             "left": 0,
             "overflow": "auto",
             "padding": "0 40px",
@@ -1431,12 +1430,9 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
           <div
             style={
               Object {
-                "WebkitFontSmoothing": "antialiased",
                 "backgroundColor": "#fff",
                 "border": "1px solid #eee",
                 "borderRadius": "2px",
-                "color": "#444",
-                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                 "fontSize": "15px",
                 "fontWeight": 300,
                 "lineHeight": 1.45,
@@ -1491,10 +1487,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                   id="test-story"
                   style={
                     Object {
-                      "WebkitFontSmoothing": "antialiased",
                       "borderBottom": "1px solid #eee",
-                      "color": "#444",
-                      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                       "fontSize": "40px",
                       "fontWeight": 600,
                       "margin": 0,
@@ -1514,9 +1507,6 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                   id="test-story-with-markdown-info"
                   style={
                     Object {
-                      "WebkitFontSmoothing": "antialiased",
-                      "color": "#444",
-                      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                       "fontSize": "30px",
                       "fontWeight": 600,
                       "margin": 0,
@@ -1534,9 +1524,6 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                 <div
                   style={
                     Object {
-                      "WebkitFontSmoothing": "antialiased",
-                      "color": "#444",
-                      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                       "fontSize": "15px",
                     }
                   }
@@ -2623,7 +2610,7 @@ exports[`addon Info should render component description if story kind matches co
     context={
       Object {
         "kind": "TestComponent",
-        "story": "Basic test",
+        "name": "Basic test",
       }
     }
     excludedPropTypes={Array []}
@@ -2644,12 +2631,9 @@ exports[`addon Info should render component description if story kind matches co
         <div
           style={
             Object {
-              "WebkitFontSmoothing": "antialiased",
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
-              "color": "#444",
-              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -2688,7 +2672,9 @@ exports[`addon Info should render component description if story kind matches co
                   "padding": 0,
                 }
               }
-            />
+            >
+              Basic test
+            </h2>
           </div>
         </div>
       </div>
@@ -2767,12 +2753,9 @@ exports[`addon Info should render component description if story kind matches co
         <div
           style={
             Object {
-              "WebkitFontSmoothing": "antialiased",
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
-              "color": "#444",
-              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -2792,10 +2775,7 @@ exports[`addon Info should render component description if story kind matches co
                 id="awesome-test-component-description"
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
                     "borderBottom": "1px solid #eee",
-                    "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                     "fontSize": "40px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -2815,9 +2795,6 @@ exports[`addon Info should render component description if story kind matches co
                 id="awesome-test-component-description-with-markdown-support"
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
-                    "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                     "fontSize": "30px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -2835,9 +2812,6 @@ exports[`addon Info should render component description if story kind matches co
               <div
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
-                    "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                     "fontSize": "15px",
                   }
                 }
@@ -2853,7 +2827,6 @@ exports[`addon Info should render component description if story kind matches co
                 >
                   cursive
                 </em>
-                 
               </div>
             </P>
           </div>
@@ -3852,7 +3825,7 @@ exports[`addon Info should render component description if story name matches co
     context={
       Object {
         "kind": "Test Components",
-        "story": "TestComponent",
+        "name": "TestComponent",
       }
     }
     excludedPropTypes={Array []}
@@ -3873,12 +3846,9 @@ exports[`addon Info should render component description if story name matches co
         <div
           style={
             Object {
-              "WebkitFontSmoothing": "antialiased",
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
-              "color": "#444",
-              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -3917,7 +3887,9 @@ exports[`addon Info should render component description if story name matches co
                   "padding": 0,
                 }
               }
-            />
+            >
+              TestComponent
+            </h2>
           </div>
         </div>
       </div>
@@ -3996,12 +3968,9 @@ exports[`addon Info should render component description if story name matches co
         <div
           style={
             Object {
-              "WebkitFontSmoothing": "antialiased",
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
-              "color": "#444",
-              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -4021,10 +3990,7 @@ exports[`addon Info should render component description if story name matches co
                 id="awesome-test-component-description"
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
                     "borderBottom": "1px solid #eee",
-                    "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                     "fontSize": "40px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -4044,9 +4010,6 @@ exports[`addon Info should render component description if story name matches co
                 id="awesome-test-component-description-with-markdown-support"
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
-                    "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                     "fontSize": "30px",
                     "fontWeight": 600,
                     "margin": 0,
@@ -4064,9 +4027,6 @@ exports[`addon Info should render component description if story name matches co
               <div
                 style={
                   Object {
-                    "WebkitFontSmoothing": "antialiased",
-                    "color": "#444",
-                    "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                     "fontSize": "15px",
                   }
                 }
@@ -4082,7 +4042,6 @@ exports[`addon Info should render component description if story name matches co
                 >
                   cursive
                 </em>
-                 
               </div>
             </P>
           </div>

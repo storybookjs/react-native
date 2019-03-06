@@ -5,15 +5,21 @@ import { SketchPicker } from 'react-color';
 
 import { styled } from '@storybook/theming';
 
-import { Button } from '@storybook/components';
+import { Form } from '@storybook/components';
 
-const Swatch = styled.div({
+const { Button } = Form;
+
+const Swatch = styled.div(({ theme }) => ({
   position: 'absolute',
-  top: 0,
-  bottom: 0,
-  right: 3,
-  width: 28,
-});
+  top: '50%',
+  transform: 'translateY(-50%)',
+  left: 6,
+  width: 16,
+  height: 16,
+  boxShadow: `${theme.appBorderColor} 0 0 0 1px inset`,
+  borderRadius: '1rem',
+}));
+
 const Popover = styled.div({
   position: 'absolute',
   zIndex: '2',
@@ -74,8 +80,8 @@ class ColorType extends React.Component {
     };
 
     return (
-      <Button type="button" onClick={this.handleClick} size="flex">
-        {knob.value}
+      <Button type="button" name={knob.name} onClick={this.handleClick} size="flex">
+        {knob.value.toUpperCase()}
         <Swatch style={colorStyle} />
         {displayColorPicker ? (
           <Popover

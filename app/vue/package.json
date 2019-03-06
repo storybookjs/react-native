@@ -1,6 +1,6 @@
 {
   "name": "@storybook/vue",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "Storybook for Vue: Develop Vue Component in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "app/vue"
   },
   "license": "MIT",
   "main": "dist/client/index.js",
@@ -25,25 +26,23 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "5.0.0-alpha.10",
+    "@storybook/core": "5.0.0",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.2",
+    "core-js": "^2.6.5",
     "global": "^4.3.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
     "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
     "babel-preset-vue": "^2.0.2",
-    "vue": "^2.5.22",
-    "vue-loader": "15.6.2",
-    "vue-template-compiler": "^2.5.22"
+    "vue": "^2.6.8",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.8"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
-    "vue": ">=2.5.16",
-    "vue-loader": ">=15.x.x",
-    "vue-template-compiler": ">=2.5.16"
+    "vue": "^2.6.8",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.8"
   },
   "publishConfig": {
     "access": "public"

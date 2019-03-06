@@ -51,9 +51,9 @@ export type Action = keyof Shortcuts;
 
 export const defaultShortcuts: Shortcuts = Object.freeze({
   fullScreen: ['F'],
-  togglePanel: ['S'], // Panel visibiliy
+  togglePanel: ['A'],
   panelPosition: ['D'],
-  toggleNav: ['A'],
+  toggleNav: ['S'],
   toolbar: ['T'],
   search: ['/'],
   focusNav: ['1'],
@@ -152,11 +152,14 @@ export default function initShortcuts({ store }: Module) {
           if (!showNav) {
             fullApi.toggleNav();
           }
-          const element = document.getElementById('storybook-explorer-searchfield');
 
-          if (element) {
-            element.focus();
-          }
+          setTimeout(() => {
+            const element = document.getElementById('storybook-explorer-searchfield');
+
+            if (element) {
+              element.focus();
+            }
+          }, 0);
           break;
         }
 

@@ -1,19 +1,19 @@
 import React, { Component, Fragment } from 'react';
 import { SyntaxHighlighter } from '@storybook/components';
-import events, { STORY_CHANGED } from '@storybook/core-events';
+import Eventtypes, { STORY_RENDERED } from '@storybook/core-events';
+
 import { EVENTS, PARAM_KEY } from './constants';
 import { CssResource } from './CssResource';
-import { bool, func, shape } from 'prop-types';
 
 interface Props {
   active: boolean;
   api: {
-    emit: (event: any, data: any) => void;
-    on: (event: events, callback: (data: any) => void) => void;
-    off: (event: events, callback: (data: any) => void) => void;
-    getQueryParam: () => void;
-    getParameters: (id: string, paramKey: string) => any;
-    setQueryParams: () => void;
+    emit(event: any, data: any): void;
+    on(event: Eventtypes, callback: (data: any) => void): void;
+    off(event: Eventtypes, callback: (data: any) => void): void;
+    getQueryParam(): void;
+    getParameters(id: string, paramKey: string): any;
+    setQueryParams(): void;
   };
 }
 
@@ -32,12 +32,12 @@ export class CssResourcePanel extends Component<Props, State> {
 
   componentDidMount() {
     const { api } = this.props;
-    api.on(STORY_CHANGED, this.onStoryChange);
+    api.on(STORY_RENDERED, this.onStoryChange);
   }
 
   componentWillUnmount() {
     const { api } = this.props;
-    api.off(STORY_CHANGED, this.onStoryChange);
+    api.off(STORY_RENDERED, this.onStoryChange);
   }
 
   onStoryChange = (id: string) => {

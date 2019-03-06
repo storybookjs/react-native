@@ -1,6 +1,6 @@
 {
   "name": "@storybook/angular",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0",
   "description": "Storybook for Angular: Develop Angular Components in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "app/angular"
   },
   "license": "MIT",
   "main": "dist/client/index.js",
@@ -25,19 +26,17 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "5.0.0-alpha.10",
-    "@storybook/node-logger": "5.0.0-alpha.10",
+    "@storybook/core": "5.0.0",
+    "@storybook/node-logger": "5.0.0",
     "angular2-template-loader": "^0.6.2",
-    "core-js": "^2.6.2",
+    "core-js": "^2.6.5",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "global": "^4.3.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
     "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.1.0",
-    "ts-loader": "^5.3.2",
+    "ts-loader": "^5.3.3",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
-    "webpack": "^4.29.0"
+    "webpack": "^4.29.6"
   },
   "devDependencies": {
     "zone.js": "^0.8.29"
@@ -51,7 +50,7 @@
     "@angular/platform-browser": ">=6.0.0",
     "@angular/platform-browser-dynamic": ">=6.0.0",
     "babel-loader": "^7.0.0 || ^8.0.0",
-    "zone.js": "^0.8.27"
+    "zone.js": "^0.8.29"
   },
   "publishConfig": {
     "access": "public"

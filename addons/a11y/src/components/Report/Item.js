@@ -10,6 +10,16 @@ import Elements from './Elements';
 
 const Wrapper = styled.div();
 
+const Icon = styled(Icons)(({ theme }) => ({
+  height: 10,
+  width: 10,
+  color: theme.color.mediumdark,
+  marginRight: '10px',
+  transition: 'transform 0.1s ease-in-out',
+  alignSelf: 'center',
+  display: 'inline-flex',
+}));
+
 const HeaderBar = styled.button(({ theme }) => ({
   padding: theme.layoutMargin,
   paddingLeft: theme.layoutMargin - 3,
@@ -23,7 +33,7 @@ const HeaderBar = styled.button(({ theme }) => ({
 
   '&:focus': {
     outline: '0 none',
-    borderLeft: `3px solid ${theme.highlightColor}`,
+    borderLeft: `3px solid ${theme.color.secondary}`,
   },
 }));
 
@@ -53,14 +63,12 @@ class Item extends Component {
     return (
       <Wrapper>
         <HeaderBar onClick={this.onToggle}>
-          <Icons
+          <Icon
             icon="chevrondown"
             size={10}
             color="#9DA5AB"
             style={{
-              marginRight: '10px',
               transform: `rotate(${open ? 0 : -90}deg)`,
-              transition: 'transform 0.1s ease-in-out',
             }}
           />
           {item.description}
