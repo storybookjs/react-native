@@ -33,7 +33,7 @@ You can get these themes like so:
 
 ```js
 import { addParameters, configure } from '@storybook/react';
-import { themes } from '@storybook/components';
+import { themes } from '@storybook/theming';
 
 // Option defaults.
 addParameters({
