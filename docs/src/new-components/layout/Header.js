@@ -126,6 +126,7 @@ const Nav = styled.div`
   position: relative;
   text-align: center;
   z-index: 3;
+  display: flex;
 `;
 
 const NavWrapper = styled.nav`
