@@ -130,9 +130,6 @@ class MainLinks extends React.Component {
                   <Link to="/addons/using-addons/">Using Addons</Link>
                 </li>
                 <li>
-                  <Link to="/addons/addon-gallery/">Addon Gallery</Link>
-                </li>
-                <li>
                   <Link to="/addons/writing-addons/">Writing Addons</Link>
                 </li>
                 <li>
