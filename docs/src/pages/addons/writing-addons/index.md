@@ -30,7 +30,7 @@ With an addon, you can add more functionality to Storybook. Here are a few thing
 - Navigating.
 - Register keyboard shortcuts (coming soon).
 
-With this, you can write some pretty cool addons. Look at our [Addon gallery](/addons/addon-gallery) to have a look at some sample addons.
+With this, you can write some pretty cool addons. Look at our [Addon gallery](https://storybook.js.org/addons/) to have a look at some sample addons.
 
 ## Getting Started
 
@@ -102,7 +102,7 @@ class MyPanel extends React.Component {
 }
 
 addons.register(ADDON_ID, api => {
-  const render = ({ active }) => <Panel api={api} active={active} />;
+  const render = ({ active }) => <MyPanel api={api} active={active} />;
   const title = 'My Addon';
 
   addons.add(PANEL_ID, {

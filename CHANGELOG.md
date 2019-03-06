@@ -1,3 +1,53 @@
+## 5.1.0-alpha.0 (March 6, 2019)
+
+### Features
+
+* UI: Custom scrollbars ([#5714](https://github.com/storybooks/storybook/pull/5714))
+
+### Bug Fixes
+
+* Fix: Move `react-select` dependency to 2.2 ([#5867](https://github.com/storybooks/storybook/pull/5867))
+
+### Maintenance
+
+* Cleanup unused dependencies ([#5453](https://github.com/storybooks/storybook/pull/5453))
+* Add directory attribute to repositories in package.json files ([#5643](https://github.com/storybooks/storybook/pull/5643))
+
+### Dependency Upgrades
+
+* Project-wide dependency upgrades ([#5740](https://github.com/storybooks/storybook/pull/5740))
+* Bump react-is from 16.8.1 to 16.8.3 ([#5743](https://github.com/storybooks/storybook/pull/5743))
+* Bump danger from 7.0.13 to 7.0.14 ([#5744](https://github.com/storybooks/storybook/pull/5744))
+* Bump babel-plugin-named-asset-import from 0.3.0 to 0.3.1 ([#5745](https://github.com/storybooks/storybook/pull/5745))
+* Bump eslint-plugin-json from 1.3.2 to 1.4.0 ([#5719](https://github.com/storybooks/storybook/pull/5719))
+* Bump react-native-modal-datetime-picker from 5.1.0 to 6.0.0 ([#4425](https://github.com/storybooks/storybook/pull/4425))
+* Bump immer from 1.12.0 to 2.0.0 ([#5694](https://github.com/storybooks/storybook/pull/5694))
+* Bump danger from 7.0.11 to 7.0.13 ([#5696](https://github.com/storybooks/storybook/pull/5696))
+* Bump eslint-plugin-jsx-a11y from 6.2.0 to 6.2.1 ([#5698](https://github.com/storybooks/storybook/pull/5698))
+* Bump @angular/platform-browser-dynamic from 7.2.4 to 7.2.6 ([#5697](https://github.com/storybooks/storybook/pull/5697))
+* Bump eslint from 5.12.1 to 5.14.1 ([#5653](https://github.com/storybooks/storybook/pull/5653))
+* Bump babel-preset-react-app from 7.0.0 to 7.0.1 ([#5674](https://github.com/storybooks/storybook/pull/5674))
+* Bump react from 16.8.1 to 16.8.2 ([#5673](https://github.com/storybooks/storybook/pull/5673))
+* Bump @angular/cli from 7.3.0 to 7.3.2 ([#5654](https://github.com/storybooks/storybook/pull/5654))
+* Bump @types/jest from 24.0.0 to 24.0.6 ([#5655](https://github.com/storybooks/storybook/pull/5655))
+* Bump lint-staged from 8.1.3 to 8.1.4 ([#5606](https://github.com/storybooks/storybook/pull/5606))
+* Bump @types/lodash from 4.14.120 to 4.14.121 ([#5609](https://github.com/storybooks/storybook/pull/5609))
+* Bump webpack from 4.29.0 to 4.29.3 ([#5570](https://github.com/storybooks/storybook/pull/5570))
+* update modal manager for rn 0.58 support ([#5581](https://github.com/storybooks/storybook/pull/5581))
+* Bump danger from 7.0.7 to 7.0.11 ([#5568](https://github.com/storybooks/storybook/pull/5568))
+* Bump jest-jasmine2 from 24.0.0 to 24.1.0 ([#5569](https://github.com/storybooks/storybook/pull/5569))
+* Bump jest-jasmine2 from 24.0.0 to 24.1.0 ([#5567](https://github.com/storybooks/storybook/pull/5567))
+* Bump handlebars from 4.0.12 to 4.1.0 ([#5576](https://github.com/storybooks/storybook/pull/5576))
+* Bump esm from 3.2.1 to 3.2.4 ([#5556](https://github.com/storybooks/storybook/pull/5556))
+* Bump @types/jest from 23.3.13 to 24.0.0 ([#5554](https://github.com/storybooks/storybook/pull/5554))
+* Bump webpack-dev-middleware from 3.5.1 to 3.5.2 ([#5552](https://github.com/storybooks/storybook/pull/5552))
+* Bump @emotion/core from 10.0.6 to 10.0.7 ([#5555](https://github.com/storybooks/storybook/pull/5555))
+* Bump terser-webpack-plugin from 1.2.1 to 1.2.2 ([#5553](https://github.com/storybooks/storybook/pull/5553))
+* Bump fuse.js from 3.3.1 to 3.4.2 ([#5538](https://github.com/storybooks/storybook/pull/5538))
+* Bump @angular/platform-browser-dynamic from 7.2.3 to 7.2.4 ([#5540](https://github.com/storybooks/storybook/pull/5540))
+* Bump emotion-theming from 10.0.6 to 10.0.7 ([#5541](https://github.com/storybooks/storybook/pull/5541))
+* Bump eslint-config-prettier from 3.6.0 to 4.0.0 ([#5539](https://github.com/storybooks/storybook/pull/5539))
+
 ## 5.0.0 (March 5, 2019)
 
 Storybook 5.0 is a completely new UI with the following improvements:

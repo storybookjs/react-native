@@ -19,7 +19,6 @@ module.exports = {
         '/basics/writing-stories/',
         '/basics/exporting-storybook/',
         '/basics/faq/',
-        '/basics/community/',
         '/basics/live-examples/',
       ],
       configurations: [
@@ -45,7 +44,6 @@ module.exports = {
       addons: [
         '/addons/introduction/',
         '/addons/using-addons/',
-        '/addons/addon-gallery/',
         '/addons/writing-addons/',
         '/addons/api/',
       ],

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/api",
-  "version": "5.0.0",
+  "version": "5.1.0-alpha.0",
   "description": "Core Storybook API & Context",
   "keywords": [
     "storybook"
@@ -19,11 +19,11 @@
     "prepare": "node ./scripts/generateVersion.js && node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0",
-    "@storybook/client-logger": "5.0.0",
-    "@storybook/core-events": "5.0.0",
-    "@storybook/router": "5.0.0",
-    "@storybook/theming": "5.0.0",
+    "@storybook/addons": "5.1.0-alpha.0",
+    "@storybook/client-logger": "5.1.0-alpha.0",
+    "@storybook/core-events": "5.1.0-alpha.0",
+    "@storybook/router": "5.1.0-alpha.0",
+    "@storybook/theming": "5.1.0-alpha.0",
     "@types/lodash.isequal": "^4.5.3",
     "@types/lodash.mergewith": "^4.6.4",
     "@types/lodash.pick": "^4.4.4",

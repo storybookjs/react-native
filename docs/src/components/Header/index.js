@@ -8,9 +8,12 @@ import storybookLogo from '../../design/homepage/storybook-logo.svg';
 const home = 'https://storybook.js.org/';
 
 const sections = [
-  { id: 'home', caption: 'Home', href: home },
   { id: 'docs', caption: 'Docs', href: '/basics/introduction/' },
-  { id: 'examples', caption: 'Examples', href: '/examples/' },
+  { id: 'addons', caption: 'Addons', href: `${home}addons/` },
+  { id: 'community', caption: 'Community', href: `${home}community/` },
+  { id: 'use-cases', caption: 'Use cases', href: `${home}use-cases/` },
+  { id: 'support', caption: 'Support', href: `${home}support/` },
+  { id: 'team', caption: 'Team', href: `${home}team/` },
 ];
 
 const Link = ({ children, to, ...other }) => {
@@ -42,11 +45,8 @@ Link.propTypes = {
 class Header extends React.Component {
   renderSections() {
     return sections.map(section => {
-      const { currentSection } = this.props;
-      const className = currentSection === section.id ? 'selected' : '';
-
       return (
-        <Link className={className} key={section.id} to={section.href}>
+        <Link className="selected" key={section.id} to={section.href}>
           {section.caption}
         </Link>
       );
