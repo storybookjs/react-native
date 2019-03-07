@@ -30,20 +30,20 @@ module.exports = ({ config, mode }) => {
     test: /\.(ts|tsx)$/,
     use: [
       {
-        loader: require.resolve('awesome-typescript-loader')
+        loader: require.resolve('awesome-typescript-loader'),
       },
       // Optional
       {
-        loader: require.resolve('react-docgen-typescript-loader')
-      }
-    ]
+        loader: require.resolve('react-docgen-typescript-loader'),
+      },
+    ],
   });
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
 };
 ```
 
-The above example shows a working Webpack config with the [TSDocgen plugin](https://github.com/strothj/react-docgen-typescript-loader) integrated.  This plugin is not necessary to use Storybook and the section marked `// optional` can be safely removed if the features of TSDocgen are not required.
+The above example shows a working Webpack config with the [TSDocgen plugin](https://github.com/strothj/react-docgen-typescript-loader) integrated. This plugin is not necessary to use Storybook and the section marked `// optional` can be safely removed if the features of TSDocgen are not required.
 
 ### `tsconfig.json`
 
@@ -100,8 +100,8 @@ module.exports = ({ config, mode }) => {
     test: /\.(ts|tsx)$/,
     loader: require.resolve('babel-loader'),
     options: {
-      presets: [['react-app', { flow: false, typescript: true }]]
-    }
+      presets: [['react-app', { flow: false, typescript: true }]],
+    },
   });
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
@@ -154,8 +154,8 @@ Please refer to the [react-docgen-typescript-loader](https://github.com/strothj/
 Additional annotation can be achieved by setting a default set of info parameters:
 
 ```ts
-import {addDecorator} from "@storybook/react";
-import {withInfo} from "@storybook/addon-info";
+import { addDecorator } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 // Globally in your .storybook/config.js, or alternatively, per-chapter
 addDecorator(
