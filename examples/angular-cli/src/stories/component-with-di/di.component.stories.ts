@@ -9,10 +9,15 @@ storiesOf('Custom|Dependencies', module)
       title: 'Component dependencies',
     },
   }))
-  .addDecorator(withKnobs)
-  .add('inputs and inject dependencies with knobs', () => ({
-    component: DiComponent,
-    props: {
-      title: text('title', 'Component dependencies'),
-    },
-  }));
+  .add(
+    'inputs and inject dependencies with knobs',
+    () => ({
+      component: DiComponent,
+      props: {
+        title: text('title', 'Component dependencies'),
+      },
+    }),
+    {
+      decorators: [withKnobs],
+    }
+  );

@@ -14,6 +14,24 @@ function pagesToSitemap(pages) {
     }));
 }
 
+function getVersionData(distTag) {
+  const versionFile = `${__dirname}/src/versions/${distTag}.json`;
+  if (!fs.existsSync(versionFile)) {
+    return null;
+  }
+  const data = {
+    [distTag]: JSON.parse(fs.readFileSync(versionFile)),
+  };
+  return data;
+}
+
+function generateVersionsFile() {
+  const latest = getVersionData('latest');
+  const next = getVersionData('next');
+  const data = { ...latest, ...next };
+  fs.writeFileSync(`${__dirname}/public/versions.json`, JSON.stringify(data));
+}
+
 function generateSitemap(pages) {
   const sitemap = sm.createSitemap({
     hostname: 'https://storybook.js.org',
@@ -36,6 +54,7 @@ module.exports = {
         }
       }
     `);
+    generateVersionsFile();
     generateSitemap(result.data.allSitePage.edges.map(({ node }) => node));
   },
   onCreateNode({ node, boundActionCreators, getNode }) {

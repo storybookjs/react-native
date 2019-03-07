@@ -19,14 +19,19 @@ storiesOf('Custom|Providers', module)
       name: 'Static name',
     },
   }))
-  .addDecorator(withKnobs)
-  .add('With knobs', () => {
-    const name = text('name', 'Dynamic knob');
+  .add(
+    'With knobs',
+    () => {
+      const name = text('name', 'Dynamic knob');
 
-    return {
-      component: ServiceComponent,
-      props: {
-        name,
-      },
-    };
-  });
+      return {
+        component: ServiceComponent,
+        props: {
+          name,
+        },
+      };
+    },
+    {
+      decorators: [withKnobs],
+    }
+  );

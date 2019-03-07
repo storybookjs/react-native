@@ -3,7 +3,7 @@ import axe from 'axe-core';
 import deprecate from 'util-deprecate';
 import { stripIndents } from 'common-tags';
 
-import addons, { makeDecorator } from '@storybook/addons';
+import addons from '@storybook/addons';
 import { STORY_RENDERED } from '@storybook/core-events';
 import EVENTS, { PARAM_KEY } from './constants';
 
@@ -24,16 +24,16 @@ const report = input => {
   channel.emit(EVENTS.RESULT, input);
 };
 
-const run = (c, o) => {
+const run = (config, options) => {
   progress = progress.then(() => {
     axe.reset();
-    if (c) {
-      axe.configure(c);
+    if (config) {
+      axe.configure(config);
     }
     return axe
       .run(
         getElement(),
-        o || {
+        options || {
           restoreScroll: true,
         }
       )
@@ -41,18 +41,14 @@ const run = (c, o) => {
   });
 };
 
-export const withA11Y = makeDecorator({
-  name: 'withA11Y',
-  parameterName: PARAM_KEY,
-  skipIfNoParametersOrOptions: false,
-  allowDeprecatedUsage: false,
-
-  wrapper: (getStory, context, opt) => {
-    setup = opt.parameters || opt.options || {};
-
-    return getStory(context);
-  },
-});
+// NOTE: we should add paramaters to the STORY_RENDERED event and deprecate this
+export const withA11y = (getStory, context) => {
+  const params = context.parameters[PARAM_KEY];
+  if (params) {
+    setup = params;
+  }
+  return getStory(context);
+};
 
 channel.on(STORY_RENDERED, () => run(setup.config, setup.options));
 channel.on(EVENTS.REQUEST, () => run(setup.config, setup.options));
@@ -62,9 +58,15 @@ if (module && module.hot && module.hot.decline) {
 }
 
 // TODO: REMOVE at v6.0.0
+export const withA11Y = deprecate(
+  (...args) => withA11y(...args),
+  'withA11Y has been renamed withA11y'
+);
+
+// TODO: REMOVE at v6.0.0
 export const checkA11y = deprecate(
-  (...args) => withA11Y(...args),
-  'checkA11y has been replaced with withA11Y'
+  (...args) => withA11y(...args),
+  'checkA11y has been renamed withA11y'
 );
 
 // TODO: REMOVE at v6.0.0

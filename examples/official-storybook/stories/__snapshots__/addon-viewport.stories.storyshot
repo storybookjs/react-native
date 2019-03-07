@@ -8,6 +8,14 @@ exports[`Storyshots Addons|Viewport default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Disabled 1`] = `
+<div
+  class="emotion-0"
+>
+  There should be no viewport selector in the toolbar
+</div>
+`;
+
 exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Inherited 1`] = `
 <div
   class="emotion-0"
