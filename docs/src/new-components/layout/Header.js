@@ -8,7 +8,7 @@ import { navLinks } from './PageLayout';
 const { color, typography, spacing, breakpoint } = styles;
 const { metadata, url } = site;
 
-const LogotypeWrapper = styled(Link)`
+const LogotypeWrapper = styled.a`
   display: inline-block;
   img {
     height: 22px;
@@ -20,15 +20,6 @@ const LogotypeWrapper = styled(Link)`
     }
 
     display: block;
-
-    transition: all 150ms ease-out;
-    transform: translate3d(0, 0, 0);
-    &:hover {
-      transform: translate3d(0, -1px, 0);
-    }
-    &:active {
-      transform: translate3d(0, 0, 0);
-    }
   }
 `;
 
@@ -150,7 +141,7 @@ export default function Header({ ...props }) {
       <Nav>
         <NavGroup>
           <NavItem>
-            <LogotypeWrapper isGatsby to="/">
+            <LogotypeWrapper href="/">
               <img src="https://storybook.js.org/images/logos/logo-storybook.svg" alt="Storybook" />
             </LogotypeWrapper>
             <Version href={url.gitHub.releases}>{metadata.latestVersion}</Version>
