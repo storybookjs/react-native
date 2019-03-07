@@ -2,12 +2,12 @@ import { configure, addParameters } from '@storybook/react';
 
 addParameters({
   options: {
-    name: 'CRA Kitchen Sink',
-    url: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
-    goFullScreen: false,
+    brandTitle: 'CRA Kitchen Sink',
+    brandUrl: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
+    isFullscreen: false,
     showAddonsPanel: true,
     showSearchBox: false,
-    addonPanelInRight: true,
+    panelPosition: 'right',
     sortStoriesByKind: false,
     hierarchySeparator: /\./,
     hierarchyRootSeparator: /\|/,
