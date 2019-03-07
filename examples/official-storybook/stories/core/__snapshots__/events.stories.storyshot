@@ -2,31 +2,48 @@
 
 exports[`Storyshots Core|Events Force re-render 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #9fdaff;
+.emotion-0 svg {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: top;
+  margin-right: 6px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
 }
 
 <button
