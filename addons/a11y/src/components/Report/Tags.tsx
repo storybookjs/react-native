@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 
 import { styled } from '@storybook/theming';
+import { TagValue } from 'axe-core';
 
 const Wrapper = styled.div({
   display: 'flex',
@@ -16,7 +16,11 @@ const Item = styled.div(({ theme }) => ({
   borderRadius: theme.appBorderRadius,
 }));
 
-function Tags({ tags }) {
+interface TagsProps {
+  tags: TagValue[];
+}
+
+export const Tags: FunctionComponent<TagsProps> = ({ tags }) => {
   return (
     <Wrapper>
       {tags.map(tag => (
@@ -24,9 +28,4 @@ function Tags({ tags }) {
       ))}
     </Wrapper>
   );
-}
-Tags.propTypes = {
-  tags: PropTypes.arrayOf(PropTypes.node).isRequired,
 };
-
-export default Tags;
