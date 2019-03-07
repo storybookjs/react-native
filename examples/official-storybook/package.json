@@ -10,7 +10,7 @@
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "graphql": "node ./graphql-server/index.js",
     "image-snapshots": "yarn run build-storybook && yarn run do-image-snapshots",
-    "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -c ./ -s built-storybooks --no-dll"
+    "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 9011 -c ./ -s built-storybooks --no-dll"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "5.1.0-alpha.0",
