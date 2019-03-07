@@ -255,7 +255,10 @@ const initStoriesApi = ({
       }
     }
 
-    store.setState({ storiesHash });
+    store.setState({
+      storiesHash,
+      storiesConfigured: true,
+    });
   };
 
   const selectStory = (kindOrId: string, story?: string) => {
