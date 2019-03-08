@@ -1,3 +1,14 @@
+## 5.1.0-alpha.2 (March 8, 2019)
+
+### Bug Fixes
+
+* Core: support unicode chars in story IDs ([#5964](https://github.com/storybooks/storybook/pull/5964))
+* Core: Add core-js dependencies where it was missing ([#5961](https://github.com/storybooks/storybook/pull/5961))
+
+### Maintenance
+
+* Addon-a11y: Migrate to typescript ([#5738](https://github.com/storybooks/storybook/pull/5738))
+
 ## 5.1.0-alpha.1 (March 7, 2019)
 
 ### Bug Fixes
