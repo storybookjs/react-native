@@ -1,3 +1,14 @@
+## 5.0.1 (March 9, 2019)
+
+### Bug Fixes
+
+* Core: Remove custom presets warning ([#5911](https://github.com/storybooks/storybook/pull/5911))
+* Core: support unicode chars in story IDs ([#5964](https://github.com/storybooks/storybook/pull/5964))
+* Core: Add core-js dependencies where it was missing ([#5961](https://github.com/storybooks/storybook/pull/5961))
+* CLI: Fix missing iframe.html in absolute path output directory([#5947](https://github.com/storybooks/storybook/pull/5947))
+* Addon-knobs: Added debouncing between keystrokes to speed up component rendering ([#5811](https://github.com/storybooks/storybook/pull/5811))
+* UI: Fix search in production mode ([#5909](https://github.com/storybooks/storybook/pull/5909))
+
 ## 4.1.14 (March 8, 2019)
 
 ### Dependency Upgrades
