@@ -9,10 +9,11 @@ interface StoryData {
 const knownViewModesRegex = /(story|info)/;
 const splitPath = /\/([^/]+)\/([^/]+)?/;
 
+// Remove punctuation https://gist.github.com/davidjrice/9d2af51100e41c6c4b4a
 export const sanitize = (string: string) => {
   return string
     .toLowerCase()
-    .replace(/[^a-z0-9-]/g, '-')
+    .replace(/[ ’–—―′¿'`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-')
     .replace(/-+/g, '-')
     .replace(/^-+/, '')
     .replace(/-+$/, '');
