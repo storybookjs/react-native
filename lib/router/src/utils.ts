@@ -12,7 +12,7 @@ const splitPath = /\/([^/]+)\/([^/]+)?/;
 export const sanitize = (string: string) => {
   return string
     .toLowerCase()
-    .replace(/[^a-z0-9-]/g, '-')
+    .replace(/[ '`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-')
     .replace(/-+/g, '-')
     .replace(/^-+/, '')
     .replace(/-+$/, '');
