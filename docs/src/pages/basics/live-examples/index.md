@@ -3,7 +3,7 @@ id: 'live-examples'
 title: 'Live Examples'
 ---
 
-### 4.0
+### 5.0
 
 - [React Official](https://storybooks-official.netlify.com)
 - [Vue](https://storybooks-vue.netlify.com/)

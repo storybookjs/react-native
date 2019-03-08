@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 
 import { Icons } from '@storybook/components';
+import { CheckResult } from 'axe-core';
 
 const impactColors = {
   minor: '#f1c40f',
@@ -17,7 +17,7 @@ const List = styled.div({
   flexDirection: 'column',
   padding: '4px',
   fontWeight: '400',
-});
+} as any);
 
 const Item = styled.div({
   display: 'flex',
@@ -29,7 +29,7 @@ const Message = styled.div({
   paddingLeft: '6px',
 });
 
-const Status = styled.div(({ passes, impact }) => ({
+const Status = styled.div(({ passes, impact }: { passes: boolean; impact: string }) => ({
   height: '16px',
   width: '16px',
   borderRadius: '8px',
@@ -39,10 +39,15 @@ const Status = styled.div(({ passes, impact }) => ({
   alignItems: 'center',
   textAlign: 'center',
   flex: '0 0 16px',
-  color: passes ? impactColors.success : impactColors[impact],
+  color: passes ? impactColors.success : (impactColors as any)[impact],
 }));
 
-const Rule = ({ rule, passes }) => (
+interface RuleProps {
+  rule: CheckResult;
+  passes: boolean;
+}
+
+const Rule: FunctionComponent<RuleProps> = ({ rule, passes }) => (
   <Item>
     <Status passes={passes || undefined} impact={rule.impact}>
       {passes ? <Icons icon="check" /> : <Icons icon="cross" />}
@@ -51,15 +56,12 @@ const Rule = ({ rule, passes }) => (
   </Item>
 );
 
-Rule.propTypes = {
-  rule: PropTypes.shape({
-    message: PropTypes.node,
-  }).isRequired,
-  passes: PropTypes.bool.isRequired,
-};
+interface RulesProps {
+  rules: CheckResult[];
+  passes: boolean;
+}
 
-/* eslint-disable react/no-array-index-key */
-function Rules({ rules, passes }) {
+export const Rules: FunctionComponent<RulesProps> = ({ rules, passes }) => {
   return (
     <List>
       {rules.map((rule, index) => (
@@ -67,14 +69,4 @@ function Rules({ rules, passes }) {
       ))}
     </List>
   );
-}
-Rules.propTypes = {
-  rules: PropTypes.arrayOf(
-    PropTypes.shape({
-      message: PropTypes.node,
-    })
-  ).isRequired,
-  passes: PropTypes.bool.isRequired,
 };
-
-export default Rules;

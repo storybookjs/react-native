@@ -5,4 +5,4 @@ export const PARAM_KEY = `a11y`;
 const RESULT = `${ADDON_ID}/result`;
 const REQUEST = `${ADDON_ID}/request`;
 
-export default { RESULT, REQUEST };
+export const EVENTS = { RESULT, REQUEST };
