@@ -16,7 +16,7 @@ const ColorIcon = styled.span(
     height: '1rem',
     width: '1rem',
   },
-  ({ filter }) => ({
+  ({ filter }: { filter: string | null }) => ({
     filter: filter === 'mono' ? 'grayscale(100%)' : `url('#${filter}')`,
   }),
   ({ theme }) => ({
@@ -24,13 +24,21 @@ const ColorIcon = styled.span(
   })
 );
 
-class ColorBlindness extends Component {
-  state = {
+// tslint:disable-next-line:no-empty-interface
+interface ColorBlindnessProps {}
+
+interface ColorBlindnessState {
+  expanded: boolean;
+  filter: string | null;
+}
+
+export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnessState> {
+  state: ColorBlindnessState = {
     expanded: false,
     filter: null,
   };
 
-  setFilter = filter => {
+  setFilter = (filter: string | null) => {
     const iframe = getIframe();
 
     if (iframe) {
@@ -43,6 +51,8 @@ class ColorBlindness extends Component {
       logger.error('Cannot find Storybook iframe');
     }
   };
+
+  onVisibilityChange = (s: boolean) => this.setState({ expanded: s });
 
   render() {
     const { filter, expanded } = this.state;
@@ -69,10 +79,12 @@ class ColorBlindness extends Component {
     if (filter !== null) {
       colorList = [
         {
+          id: 'reset',
           title: 'Reset color filter',
           onClick: () => {
             this.setFilter(null);
           },
+          right: undefined,
         },
         ...colorList,
       ];
@@ -83,7 +95,7 @@ class ColorBlindness extends Component {
         placement="top"
         trigger="click"
         tooltipShown={expanded}
-        onVisibilityChange={s => this.setState({ expanded: s })}
+        onVisibilityChange={this.onVisibilityChange}
         tooltip={<TooltipLinkList links={colorList} />}
         closeOnClick
       >
@@ -94,5 +106,3 @@ class ColorBlindness extends Component {
     );
   }
 }
-
-export default ColorBlindness;

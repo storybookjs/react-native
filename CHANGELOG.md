@@ -1,3 +1,16 @@
+## 5.1.0-alpha.1 (March 7, 2019)
+
+### Bug Fixes
+
+* CLI: Fix missing iframe.html in absolute path output directory ([#5947](https://github.com/storybooks/storybook/pull/5947))
+* Addon-knobs: Added debouncing between keystrokes to speed up component rendering ([#5811](https://github.com/storybooks/storybook/pull/5811))
+* UI: Fix search in production mode ([#5909](https://github.com/storybooks/storybook/pull/5909))
+
+### Maintenance
+
+* ADD delay to rendering the acceptance stories ([#5943](https://github.com/storybooks/storybook/pull/5943))
+* Split versions.json into two files ([#5896](https://github.com/storybooks/storybook/pull/5896))
+
 ## 5.1.0-alpha.0 (March 6, 2019)
 
 ### Features

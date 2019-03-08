@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
 // TODO: reuse the Tabs component from @storybook/theming instead
@@ -37,7 +36,7 @@ const Item = styled.button(
       borderBottom: `3px solid ${theme.color.secondary}`,
     },
   }),
-  ({ active, theme }) =>
+  ({ active, theme }: any) =>
     active
       ? {
           opacity: 1,
@@ -46,12 +45,23 @@ const Item = styled.button(
       : {}
 );
 
-class Tabs extends Component {
-  state = {
+interface TabsProps {
+  tabs: Array<{
+    label: JSX.Element;
+    panel: JSX.Element;
+  }>;
+}
+
+interface TabsState {
+  active: number;
+}
+
+export class Tabs extends Component<TabsProps, TabsState> {
+  state: TabsState = {
     active: 0,
   };
 
-  onToggle = index => {
+  onToggle = (index: number) => {
     this.setState({
       active: index,
     });
@@ -80,14 +90,3 @@ class Tabs extends Component {
     );
   }
 }
-
-Tabs.propTypes = {
-  tabs: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.node,
-      panel: PropTypes.node,
-    })
-  ).isRequired,
-};
-
-export default Tabs;

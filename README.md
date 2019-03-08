@@ -153,9 +153,9 @@ We welcome contributions to Storybook!
 
 - 📥 Pull requests and 🌟 Stars are always welcome.
 - Read our [contributing guide](CONTRIBUTING.md) to get started.
-  or find us on [Discord](https://discord.gg/sMFvFsG), we're will take the time to guide you 
+  or find us on [Discord](https://discord.gg/sMFvFsG), we're will take the time to guide you
 
-Looking for a first issue to tackle? 
+Looking for a first issue to tackle?
 
 - We tag issues with [![Good First Issue](https://img.shields.io/github/issues/storybooks/storybook/good%20first%20issue.svg)](https://github.com/storybooks/storybook/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) when we think they are well suited for people who are new to the codebase or OSS in general.
 - [Talk to us](https://discord.gg/sMFvFsG), we'll find something to suits your skills and learning interest.
