@@ -1,16 +1,16 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
 import { Icons } from '@storybook/components';
 
-import Info from './Info';
-import Tags from './Tags';
-import Elements from './Elements';
+import { Result } from 'axe-core';
+import { Info } from './Info';
+import { Elements } from './Elements';
+import { Tags } from './Tags';
 
 const Wrapper = styled.div();
 
-const Icon = styled(Icons)(({ theme }) => ({
+const Icon = styled<any, any>(Icons)(({ theme }) => ({
   height: 10,
   width: 10,
   color: theme.color.mediumdark,
@@ -37,16 +37,16 @@ const HeaderBar = styled.button(({ theme }) => ({
   },
 }));
 
-class Item extends Component {
-  static propTypes = {
-    item: PropTypes.shape({
-      description: PropTypes.string,
-      nodes: PropTypes.array,
-      tags: PropTypes.array,
-    }).isRequired,
-    passes: PropTypes.bool.isRequired,
-  };
+interface ItemProps {
+  item: Result;
+  passes: boolean;
+}
 
+interface ItemState {
+  open: boolean;
+}
+
+export class Item extends Component<ItemProps, ItemState> {
   state = {
     open: false,
   };
@@ -84,5 +84,3 @@ class Item extends Component {
     );
   }
 }
-
-export default Item;

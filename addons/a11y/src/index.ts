@@ -1,15 +1,15 @@
 import { document } from 'global';
-import axe from 'axe-core';
+import axe, { AxeResults, RunOptions, Spec } from 'axe-core';
 import deprecate from 'util-deprecate';
 import { stripIndents } from 'common-tags';
 
-import addons from '@storybook/addons';
+import addons, { StoryWrapper } from '@storybook/addons';
 import { STORY_RENDERED } from '@storybook/core-events';
-import EVENTS, { PARAM_KEY } from './constants';
+import { EVENTS, PARAM_KEY } from './constants';
 
 const channel = addons.getChannel();
 let progress = Promise.resolve();
-let setup = {};
+let setup: { config: Spec; options: RunOptions } = { config: {}, options: {} };
 
 const getElement = () => {
   const storyRoot = document.getElementById('story-root');
@@ -20,11 +20,11 @@ const getElement = () => {
   return document.getElementById('root');
 };
 
-const report = input => {
+const report = (input: AxeResults) => {
   channel.emit(EVENTS.RESULT, input);
 };
 
-const run = (config, options) => {
+const run = (config: Spec, options: RunOptions) => {
   progress = progress.then(() => {
     axe.reset();
     if (config) {
@@ -33,16 +33,18 @@ const run = (config, options) => {
     return axe
       .run(
         getElement(),
-        options || {
-          restoreScroll: true,
-        }
+        options ||
+          // tslint:disable-next-line:no-object-literal-type-assertion
+          ({
+            restoreScroll: true,
+          } as RunOptions) // cast to RunOptions is necessary because axe types are not up to date
       )
       .then(report);
   });
 };
 
 // NOTE: we should add paramaters to the STORY_RENDERED event and deprecate this
-export const withA11y = (getStory, context) => {
+export const withA11y: StoryWrapper = (getStory, context) => {
   const params = context.parameters[PARAM_KEY];
   if (params) {
     setup = params;
@@ -59,19 +61,21 @@ if (module && module.hot && module.hot.decline) {
 
 // TODO: REMOVE at v6.0.0
 export const withA11Y = deprecate(
-  (...args) => withA11y(...args),
+  // @ts-ignore
+  (...args: any[]) => withA11y(...args),
   'withA11Y has been renamed withA11y'
 );
 
 // TODO: REMOVE at v6.0.0
 export const checkA11y = deprecate(
-  (...args) => withA11y(...args),
+  // @ts-ignore
+  (...args: any[]) => withA11y(...args),
   'checkA11y has been renamed withA11y'
 );
 
 // TODO: REMOVE at v6.0.0
 export const configureA11y = deprecate(
-  config => {
+  (config: any) => {
     setup = config;
   },
   stripIndents`

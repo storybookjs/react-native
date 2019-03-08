@@ -1,16 +1,14 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
 
 import { STORY_RENDERED } from '@storybook/core-events';
-import { ActionBar, Icons } from '@storybook/components';
+import { ActionBar, Icons, ScrollArea } from '@storybook/components';
 
-import { ScrollArea } from '@storybook/components/dist/ScrollArea/ScrollArea';
-import EVENTS from '../constants';
-
-import Tabs from './Tabs';
-import Report from './Report';
+import { AxeResults, Result } from 'axe-core';
+import { Report } from './Report';
+import { Tabs } from './Tabs';
+import { EVENTS } from '../constants';
 
 const Icon = styled(Icons)(
   {
@@ -18,7 +16,7 @@ const Icon = styled(Icons)(
     width: '12px',
     marginRight: '4px',
   },
-  ({ status, theme }) =>
+  ({ status, theme }: any) =>
     status === 'running'
       ? {
           animation: `${theme.animation.rotate360} 1s linear infinite;`,
@@ -34,17 +32,23 @@ const Violations = styled.span(({ theme }) => ({
   color: theme.color.negative,
 }));
 
-class A11YPanel extends Component {
-  static propTypes = {
-    active: PropTypes.bool.isRequired,
-    api: PropTypes.shape({
-      on: PropTypes.func,
-      emit: PropTypes.func,
-      off: PropTypes.func,
-    }).isRequired,
-  };
+interface A11YPanelState {
+  status: string;
+  passes: Result[];
+  violations: Result[];
+}
 
-  state = {
+interface A11YPanelProps {
+  active: boolean;
+  api: {
+    on(event: string, callback: (data: any) => void): void;
+    off(event: string, callback: (data: any) => void): void;
+    emit(event: string): void;
+  };
+}
+
+export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
+  state: A11YPanelState = {
     status: 'ready',
     passes: [],
     violations: [],
@@ -57,7 +61,7 @@ class A11YPanel extends Component {
     api.on(EVENTS.RESULT, this.onUpdate);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: A11YPanelProps) {
     // TODO: might be able to remove this
     const { active } = this.props;
 
@@ -73,7 +77,7 @@ class A11YPanel extends Component {
     api.off(EVENTS.RESULT, this.onUpdate);
   }
 
-  onUpdate = ({ passes, violations }) => {
+  onUpdate = ({ passes, violations }: AxeResults) => {
     this.setState(
       {
         status: 'ran',
@@ -153,5 +157,3 @@ class A11YPanel extends Component {
     ) : null;
   }
 }
-
-export default A11YPanel;
