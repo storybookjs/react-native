@@ -2,3 +2,4 @@
 declare module 'react-inspector';
 declare module 'lodash.mergewith';
 declare module 'lodash.isequal';
+declare module 'react-inspector';

@@ -82,6 +82,9 @@ export default function({ store }: Module) {
       const latest = api.getLatestVersion();
       const current = api.getCurrentVersion();
 
+      if (!latest || !latest.version) {
+        return true;
+      }
       return latest && semver.gt(latest.version, current.version);
     },
   };
@@ -94,9 +97,11 @@ export default function({ store }: Module) {
     if (!lastVersionCheck || now - lastVersionCheck > checkInterval) {
       try {
         const { latest, next } = await fetchLatestVersion(currentVersion);
-
         await store.setState(
-          { versions: { ...versions, latest, next }, lastVersionCheck: now },
+          {
+            versions: { ...versions, latest, next },
+            lastVersionCheck: now,
+          },
           { persistence: 'permanent' }
         );
       } catch (error) {
@@ -104,8 +109,8 @@ export default function({ store }: Module) {
       }
     }
 
-    if (fullApi.versionUpdateAvailable()) {
-      const latestVersion = fullApi.getLatestVersion().version;
+    if (api.versionUpdateAvailable()) {
+      const latestVersion = api.getLatestVersion().version;
 
       if (latestVersion !== dismissedVersionNotification) {
         fullApi.addNotification({
