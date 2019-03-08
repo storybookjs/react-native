@@ -1,3 +1,9 @@
+## 4.1.14 (March 8, 2019)
+
+### Dependency Upgrades
+
+* React-native: Fix RN 0.58.5 / support 0.59 via react-native-modal-datetime-picker 6.0.0 ([#4425](https://github.com/storybooks/storybook/pull/4425))
+
 ## 5.1.0-alpha.2 (March 8, 2019)
 
 ### Bug Fixes
