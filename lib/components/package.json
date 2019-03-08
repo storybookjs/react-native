@@ -26,6 +26,7 @@
     "@storybook/core-events": "5.1.0-alpha.1",
     "@storybook/router": "5.1.0-alpha.1",
     "@storybook/theming": "5.1.0-alpha.1",
+    "core-js": "^2.6.5",
     "global": "^4.3.2",
     "js-beautify": "^1.8.9",
     "memoizerific": "^1.11.3",

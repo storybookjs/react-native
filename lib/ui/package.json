@@ -28,6 +28,7 @@
     "@storybook/core-events": "5.1.0-alpha.1",
     "@storybook/router": "5.1.0-alpha.1",
     "@storybook/theming": "5.1.0-alpha.1",
+    "core-js": "^2.6.5",
     "fast-deep-equal": "^2.0.1",
     "fuzzy-search": "^3.0.1",
     "global": "^4.3.2",
