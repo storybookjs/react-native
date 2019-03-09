@@ -1,3 +1,36 @@
+## 5.1.0-alpha.3 (March 9, 2019)
+
+### Features
+
+* Addon-a11y: add 'incomplete' tab ([#5984](https://github.com/storybooks/storybook/pull/5984))
+
+### Bug Fixes
+
+* Core: fix `selectStory` with one parameter ([#5983](https://github.com/storybooks/storybook/pull/5983))
+* Core: remove custom presets warning ([#5911](https://github.com/storybooks/storybook/pull/5911))
+
+### Maintenance
+
+* Addon-viewport: Change styling to more closely match v4 ([#5979](https://github.com/storybooks/storybook/pull/5979))
+
+### Dependency Upgrades
+
+* Bump babel-preset-react-app from 7.0.1 to 7.0.2 ([#5937](https://github.com/storybooks/storybook/pull/5937))
+* Bump ts-node from 8.0.2 to 8.0.3 ([#5938](https://github.com/storybooks/storybook/pull/5938))
+* Bump react from 16.8.3 to 16.8.4 ([#5902](https://github.com/storybooks/storybook/pull/5902))
+* Bump marko from 4.15.3 to 4.15.4 ([#5939](https://github.com/storybooks/storybook/pull/5939))
+
+## 5.0.1 (March 9, 2019)
+
+### Bug Fixes
+
+* Core: Remove custom presets warning ([#5911](https://github.com/storybooks/storybook/pull/5911))
+* Core: support unicode chars in story IDs ([#5964](https://github.com/storybooks/storybook/pull/5964))
+* Core: Add core-js dependencies where it was missing ([#5961](https://github.com/storybooks/storybook/pull/5961))
+* CLI: Fix missing iframe.html in absolute path output directory([#5947](https://github.com/storybooks/storybook/pull/5947))
+* Addon-knobs: Added debouncing between keystrokes to speed up component rendering ([#5811](https://github.com/storybooks/storybook/pull/5811))
+* UI: Fix search in production mode ([#5909](https://github.com/storybooks/storybook/pull/5909))
+
 ## 4.1.14 (March 8, 2019)
 
 ### Dependency Upgrades

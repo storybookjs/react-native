@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-backgrounds",
-  "version": "5.1.0-alpha.2",
+  "version": "5.1.0-alpha.3",
   "description": "A storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",
@@ -25,15 +25,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.2",
-    "@storybook/client-logger": "5.1.0-alpha.2",
-    "@storybook/components": "5.1.0-alpha.2",
-    "@storybook/core-events": "5.1.0-alpha.2",
-    "@storybook/theming": "5.1.0-alpha.2",
+    "@storybook/addons": "5.1.0-alpha.3",
+    "@storybook/client-logger": "5.1.0-alpha.3",
+    "@storybook/components": "5.1.0-alpha.3",
+    "@storybook/core-events": "5.1.0-alpha.3",
+    "@storybook/theming": "5.1.0-alpha.3",
     "core-js": "^2.6.5",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
-    "react": "^16.8.3",
+    "react": "^16.8.4",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {

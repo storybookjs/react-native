@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "5.1.0-alpha.2",
+  "version": "5.1.0-alpha.3",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -29,12 +29,12 @@
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/core": "5.1.0-alpha.2",
-    "@storybook/node-logger": "5.1.0-alpha.2",
+    "@storybook/core": "5.1.0-alpha.3",
+    "@storybook/node-logger": "5.1.0-alpha.3",
     "@svgr/webpack": "^4.0.3",
     "babel-plugin-named-asset-import": "^0.3.1",
     "babel-plugin-react-docgen": "^2.0.2",
-    "babel-preset-react-app": "^7.0.1",
+    "babel-preset-react-app": "^7.0.2",
     "common-tags": "^1.8.0",
     "core-js": "^2.6.5",
     "global": "^4.3.2",

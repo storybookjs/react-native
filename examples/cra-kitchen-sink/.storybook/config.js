@@ -1,5 +1,8 @@
-import { configure, addParameters } from '@storybook/react';
+import { configure, addParameters, addDecorator } from '@storybook/react';
 
+import { withA11y } from '@storybook/addon-a11y';
+
+addDecorator(withA11y);
 addParameters({
   options: {
     name: 'CRA Kitchen Sink',

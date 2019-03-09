@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "5.1.0-alpha.2",
+  "version": "5.1.0-alpha.3",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -21,18 +21,18 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.2",
-    "@storybook/client-logger": "5.1.0-alpha.2",
-    "@storybook/core-events": "5.1.0-alpha.2",
-    "@storybook/router": "5.1.0-alpha.2",
-    "@storybook/theming": "5.1.0-alpha.2",
+    "@storybook/addons": "5.1.0-alpha.3",
+    "@storybook/client-logger": "5.1.0-alpha.3",
+    "@storybook/core-events": "5.1.0-alpha.3",
+    "@storybook/router": "5.1.0-alpha.3",
+    "@storybook/theming": "5.1.0-alpha.3",
     "core-js": "^2.6.5",
     "global": "^4.3.2",
     "js-beautify": "^1.8.9",
     "memoizerific": "^1.11.3",
     "polished": "^3.0.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.3",
+    "react": "^16.8.4",
     "react-dom": "^16.8.3",
     "react-focus-lock": "^1.17.7",
     "react-helmet-async": "^0.2.0",
