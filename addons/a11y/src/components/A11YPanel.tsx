@@ -32,10 +32,15 @@ const Violations = styled.span(({ theme }) => ({
   color: theme.color.negative,
 }));
 
+const Incomplete = styled.span(({ theme }) => ({
+  color: theme.color.warning,
+}));
+
 interface A11YPanelState {
   status: string;
   passes: Result[];
   violations: Result[];
+  incomplete: Result[];
 }
 
 interface A11YPanelProps {
@@ -52,6 +57,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
     status: 'ready',
     passes: [],
     violations: [],
+    incomplete: [],
   };
 
   componentDidMount() {
@@ -77,12 +83,13 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
     api.off(EVENTS.RESULT, this.onUpdate);
   }
 
-  onUpdate = ({ passes, violations }: AxeResults) => {
+  onUpdate = ({ passes, violations, incomplete }: AxeResults) => {
     this.setState(
       {
         status: 'ran',
         passes,
         violations,
+        incomplete,
       },
       () => {
         setTimeout(() => {
@@ -113,7 +120,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
   };
 
   render() {
-    const { passes, violations, status } = this.state;
+    const { passes, violations, incomplete, status } = this.state;
     const { active } = this.props;
 
     let actionTitle;
@@ -147,7 +154,13 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
               },
               {
                 label: <Passes>{passes.length} Passes</Passes>,
-                panel: <Report passes items={passes} empty="No a11y check passed" />,
+                panel: <Report passes items={passes} empty="No a11y check passed." />,
+              },
+              {
+                label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
+                panel: (
+                  <Report passes={false} items={incomplete} empty="No a11y incomplete found." />
+                ),
               },
             ]}
           />
