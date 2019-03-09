@@ -10,7 +10,9 @@ const applyDecorators = (decorators: DecoratorFunction[], actionCallback: Handle
   };
 };
 
-export const decorateAction = (decorators: DecoratorFunction[]): ((name: string, options?: ActionOptions) => HandlerFunction) => {
+export const decorateAction = (
+  decorators: DecoratorFunction[]
+): ((name: string, options?: ActionOptions) => HandlerFunction) => {
   return (name: string, options?: ActionOptions) => {
     const callAction = action(name, options);
     return applyDecorators(decorators, callAction);

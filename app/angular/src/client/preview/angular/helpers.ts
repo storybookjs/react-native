@@ -51,7 +51,13 @@ const initModule = (storyFn: IStoryFn) => {
     props,
   };
 
-  return getModule([AppComponent, AnnotatedComponent], [AnnotatedComponent], [AppComponent], story, moduleMetadata);
+  return getModule(
+    [AppComponent, AnnotatedComponent],
+    [AnnotatedComponent],
+    [AppComponent],
+    story,
+    moduleMetadata
+  );
 };
 
 const staticRoot = document.getElementById('root');
