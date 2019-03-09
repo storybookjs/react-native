@@ -103,8 +103,7 @@ export const createGlobal = memoize(1)(
         ...resetStyles.body,
         color: color.defaultText,
         background: background.app,
-        overflowY: 'auto',
-        overflowX: 'hidden',
+        overflow: 'hidden',
       },
 
       hr: {
