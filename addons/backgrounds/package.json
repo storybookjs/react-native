@@ -33,7 +33,7 @@
     "core-js": "^2.6.5",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
-    "react": "^16.8.3",
+    "react": "^16.8.4",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
