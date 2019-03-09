@@ -14,7 +14,7 @@ npx -p @storybook/cli sb init --type vue
 
 ## Manual setup
 
-If you want to set up Storybook manually for your React project, this is the guide for you.
+If you want to set up Storybook manually for your Vue project, this is the guide for you.
 
 ## Step 1: Add dependencies
 
