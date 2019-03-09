@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Core|Unicode Кнопки 1`] = `
+<p>
+  нормальный
+</p>
+`;
+
+exports[`Storyshots Core|Unicode 바보 1`] = `
+<p>
+  🤷🏻‍♂️
+</p>
+`;
+
+exports[`Storyshots Core|Unicode 😀 1`] = `
+<p>
+  ❤️
+</p>
+`;

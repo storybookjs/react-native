@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channels",
-  "version": "5.1.0-alpha.0",
+  "version": "5.1.0-alpha.2",
   "description": "",
   "keywords": [
     "storybook"
@@ -22,5 +22,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5"
   }
 }

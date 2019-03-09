@@ -25,21 +25,25 @@ We first have to use the [custom Webpack config in full control mode, extending 
 
 ```js
 const path = require('path');
-module.exports = (baseConfig, env, config) => {
+module.exports = ({ config, mode }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    use: [{
-      loader: require.resolve('awesome-typescript-loader')
-    }, {
-      loader: require.resolve('react-docgen-typescript-loader')
-    }]
+    use: [
+      {
+        loader: require.resolve('awesome-typescript-loader'),
+      },
+      // Optional
+      {
+        loader: require.resolve('react-docgen-typescript-loader'),
+      },
+    ],
   });
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
 };
 ```
 
-The above example shows a working Webpack config with the TSDocgen plugin also integrated; remove the optional sections if you don't plan on using them.
+The above example shows a working Webpack config with the [TSDocgen plugin](https://github.com/strothj/react-docgen-typescript-loader) integrated. This plugin is not necessary to use Storybook and the section marked `// optional` can be safely removed if the features of TSDocgen are not required.
 
 ### `tsconfig.json`
 
@@ -91,7 +95,7 @@ yarn add -D @types/storybook__react # typings
 We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default) by creating a `webpack.config.js` file in our Storybook configuration directory (by default, it’s `.storybook`):
 
 ```js
-module.exports = (baseConfig, env, config) => {
+module.exports = ({ config, mode }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     loader: require.resolve('babel-loader'),
@@ -150,8 +154,8 @@ Please refer to the [react-docgen-typescript-loader](https://github.com/strothj/
 Additional annotation can be achieved by setting a default set of info parameters:
 
 ```ts
-import {addDecorator} from "@storybook/react";
-import {withInfo} from "@storybook/addon-info";
+import { addDecorator } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 // Globally in your .storybook/config.js, or alternatively, per-chapter
 addDecorator(

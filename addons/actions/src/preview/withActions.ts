@@ -50,7 +50,8 @@ const actionsSubscription = (...args: any[]) => {
     const handlers = createHandlers(...args);
     lastSubscription = () => {
       handlers.forEach(({ eventName, handler }) => root.addEventListener(eventName, handler));
-      return () => handlers.forEach(({ eventName, handler }) => root.removeEventListener(eventName, handler));
+      return () =>
+        handlers.forEach(({ eventName, handler }) => root.removeEventListener(eventName, handler));
     };
   }
   return lastSubscription;

@@ -1,7 +1,7 @@
 {
   "name": "@storybook/react-native",
   "private": true,
-  "version": "5.1.0-alpha.0",
+  "version": "5.1.0-alpha.2",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -27,12 +27,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.0",
-    "@storybook/channel-websocket": "5.1.0-alpha.0",
-    "@storybook/channels": "5.1.0-alpha.0",
-    "@storybook/core": "5.1.0-alpha.0",
-    "@storybook/core-events": "5.1.0-alpha.0",
-    "@storybook/ui": "5.1.0-alpha.0",
+    "@storybook/addons": "5.1.0-alpha.2",
+    "@storybook/channel-websocket": "5.1.0-alpha.2",
+    "@storybook/channels": "5.1.0-alpha.2",
+    "@storybook/core": "5.1.0-alpha.2",
+    "@storybook/core-events": "5.1.0-alpha.2",
+    "@storybook/ui": "5.1.0-alpha.2",
     "babel-loader": "^8.0.4",
     "babel-plugin-macros": "^2.4.5",
     "babel-plugin-syntax-async-functions": "^6.13.0",
@@ -47,6 +47,7 @@
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "commander": "^2.19.0",
+    "core-js": "^2.6.5",
     "dotenv-webpack": "^1.7.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",

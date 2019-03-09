@@ -5196,7 +5196,7 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
 <pre>
   Parameters are {
   "a11y": {
-    "configure": {},
+    "config": {},
     "options": {
       "checks": {
         "color-contrast": {

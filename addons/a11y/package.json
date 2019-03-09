@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-a11y",
-  "version": "5.1.0-alpha.0",
+  "version": "5.1.0-alpha.2",
   "description": "a11y addon for storybook",
   "keywords": [
     "a11y",
@@ -21,24 +21,26 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.0",
-    "@storybook/client-logger": "5.1.0-alpha.0",
-    "@storybook/components": "5.1.0-alpha.0",
-    "@storybook/core-events": "5.1.0-alpha.0",
-    "@storybook/theming": "5.1.0-alpha.0",
+    "@storybook/addons": "5.1.0-alpha.2",
+    "@storybook/client-logger": "5.1.0-alpha.2",
+    "@storybook/components": "5.1.0-alpha.2",
+    "@storybook/core-events": "5.1.0-alpha.2",
+    "@storybook/theming": "5.1.0-alpha.2",
     "axe-core": "^3.1.2",
     "common-tags": "^1.8.0",
     "core-js": "^2.6.5",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
-    "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "util-deprecate": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/common-tags": "^1.8.0"
   },
   "publishConfig": {
     "access": "public"
