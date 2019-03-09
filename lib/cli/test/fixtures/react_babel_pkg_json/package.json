@@ -8,13 +8,13 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "7.0.0",
-    "@babel/core": "7.1.0",
-    "babel-loader": "8.0.2"
+    "@babel/core": "^7.3.4",
+    "babel-loader": "^8.0.5"
   },
   "babel": {
     "plugins": ["@babel/plugin-proposal-optional-chaining"]

@@ -1,5 +1,6 @@
+import { window } from 'global';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
 import Nav from '../Nav';
 import NavDropdown from '../Nav/dropdown';
 import Content from '../Content';
@@ -12,9 +13,33 @@ const getEditUrl = (selectedSectionId, selectedItemId) => {
   return `${gitHubRepoUrl}/blob/master/docs/src/pages/${docPath}/index.md`;
 };
 
+class Search extends Component {
+  componentDidMount() {
+    window.docsearch({
+      apiKey: 'a4f7f972f1d8f99a66e237e7fd2e489f',
+      indexName: 'storybook-js',
+      inputSelector: '#search',
+      debug: false,
+    });
+  }
+
+  render() {
+    return (
+      <div className="search">
+        <input
+          className="form-control form-control-sm"
+          type="search"
+          id="search"
+          placeholder="type to search"
+        />
+      </div>
+    );
+  }
+}
+
 const Container = ({ sections, selectedItem, selectedSectionId, selectedItemId }) => (
   <div id="docs-container" className="row">
-    <div className="nav col-sm-3 col-md-3 hidden-xs">
+    <div className="nav col-lg-3 col-md-3 d-none d-md-block">
       <Nav
         sections={sections}
         selectedSection={selectedItem.section}
@@ -23,7 +48,7 @@ const Container = ({ sections, selectedItem, selectedSectionId, selectedItemId }
         selectedItemId={selectedItemId}
       />
     </div>
-    <div className="content col-xs-12 col-sm-9 col-md-9 col-lg-9">
+    <div className="content col-xs-12 col-sm-12 col-md-9 col-lg-9">
       <div className="nav-dropdown">
         <NavDropdown
           sections={sections}
@@ -31,6 +56,8 @@ const Container = ({ sections, selectedItem, selectedSectionId, selectedItemId }
           selectedItem={selectedItem.id}
         />
       </div>
+
+      <Search />
 
       <Content
         title={selectedItem.title}

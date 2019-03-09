@@ -129,9 +129,12 @@ export default class ViewportTool extends Component {
           <Global
             styles={{
               [`#${iframeId}`]: {
-                border: '10px solid black',
+                position: 'relative',
+                display: 'block',
+                margin: '10px auto',
+                border: '1px solid #888',
                 borderRadius: 4,
-                margin: 10,
+                boxShadow: '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);',
 
                 ...(isRotated ? flip(item.value || {}) : item.value || {}),
               },

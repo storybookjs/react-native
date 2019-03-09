@@ -12,26 +12,26 @@
     "dev": "cross-env NODE_ENV=development rollup -cw"
   },
   "dependencies": {
-    "vue": "^2.3.3"
+    "vue": "^2.6.8"
   },
   "devDependencies": {
-    "@babel/core": "7.1.0",
-    "autoprefixer": "^7.1.2",
+    "@babel/core": "^7.3.4",
+    "autoprefixer": "^9.4.9",
     "babel-core": "^7.0.0-bridge.0",
     "cross-env": "^5.2.0",
-    "cssnano-cli": "^1.0.4",
-    "npm-run-all": "^4.0.1",
-    "postcss-cli": "^4.0.0",
-    "rollup": "^0.43.0",
-    "rollup-plugin-alias": "^1.3.1",
-    "rollup-plugin-buble": "^0.15.0",
+    "cssnano-cli": "^1.0.5",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2",
+    "rollup": "^1.4.1",
+    "rollup-plugin-alias": "^1.5.1",
+    "rollup-plugin-buble": "^0.19.6",
     "rollup-plugin-butternut": "^0.1.0",
-    "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-livereload": "^0.4.0",
-    "rollup-plugin-node-globals": "^1.1.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-serve": "^0.4.0",
-    "rollup-plugin-vue": "^2.4.0",
-    "rollup-watch": "^4.0.0"
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-vue": "^4.7.2",
+    "rollup-watch": "^4.3.1"
   }
 }
