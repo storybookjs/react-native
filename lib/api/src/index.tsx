@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import memoize from 'memoizerific';
 
 import Events from '@storybook/core-events';
@@ -238,11 +238,18 @@ class ManagerConsumer extends Component<ConsumerProps<any>> {
         {d => {
           const data = filter ? this.dataMemory(filter)(d) : d;
 
-          return filter ? this.renderMemory(...ObjectToArray(data)) : children(d);
+          return filter ? this.renderMemory(...ObjectToArray(data)) : children(data);
         }}
       </ManagerContext.Consumer>
     );
   }
 }
+
+export function useStorybookState(): State {
+  const { state } = useContext(ManagerContext);
+  return state;
+}
+
+// example: useStorybookState();
 
 export { ManagerConsumer as Consumer, ManagerProvider as Provider };
