@@ -46,62 +46,77 @@ addParameters({
 
 ## Create a theme quickstart
 
+The `storybook/theming` is build using TypeScript, so this should help create a valid theme for typescript users. The types are part of the package itself.
+
 The easiest way to customize Storybook to generate a new theme using `create()`. This function includes shorthands for the most common theme variables. Here's how to use it.
 
 First create a new file in `.storybook` called `yourTheme.js`.
 
 Next paste the code below and tweak the variables.
 
-```
+```ts
 import { create } from '@storybook/theming';
 
 export default create({
-  // Is this a 'light' or 'dark' theme?
   base: 'light',
 
-  // Color palette
-  colorPrimary: 'red', // primary color
-  colorSecondary: 'pink', // secondary color
+  colorPrimary: 'hotpink',
+  colorSecondary: 'deepskyblue',
 
   // UI
-  appBg: 'papayawhip',
-  appContentBg: 'white',
-  appBorderColor: 'rgba(0,0,0,.1)',
+  appBg: 'white',
+  appContentBg: 'silver',
+  appBorderColor: 'grey',
   appBorderRadius: 4,
 
-  // Fonts
-  fontBase: '"Helvetica", Arial, sans-serif',
-  fontCode: 'Monaco, monospace',
+  // Typography
+  fontBase: '"Open Sans", sans-serif',
+  fontCode: 'monospace',
 
   // Text colors
-  textColor: '#FFFFFF',
-  textInverseColor: '#333333',
+  textColor: 'black',
+  textInverseColor: 'rgba(255,255,255,0.9)',
 
   // Toolbar default and active colors
-  barTextColor: '#999999',
-  barSelectedColor: 'blue',
-  barBg: 'white',
+  barTextColor: 'silver',
+  barSelectedColor: 'black',
+  barBg: 'hotpink',
 
   // Form colors
   inputBg: 'white',
-  inputBorder: 'rgba(0,0,0,.1)',
-  inputTextColor: '#333333',
+  inputBorder: 'silver',
+  inputTextColor: 'black',
   inputBorderRadius: 4,
 
-  // Brand logo/text
-  brand: `<svg .../>`,
+  brandTitle: 'My custom storybook',
+  brandUrl: 'https://example.com',
+  brandImage: 'https://placehold.it/350x150',
 });
 ```
 
 Finally, import your theme into `.storybook/config` and add it to your Storybook parameters.
 
-```
-import yourTheme from './yourTheme';
+```js
+import { yourTheme } from './yourTheme';
 
 addParameters({
   options: {
     theme: yourTheme,
   },
+});
+```
+
+Many them variables are optional, the `base` property is NOT. This is a perfectly valid theme:
+
+```ts
+import { create } from '@storybook/theming';
+
+export default create({
+  base: 'light',
+
+  brandTitle: 'My custom storybook',
+  brandUrl: 'https://example.com',
+  brandImage: 'https://placehold.it/350x150',
 });
 ```
 
@@ -111,7 +126,7 @@ Some addons require specific theme variables that a Storybook user must add. If 
 
 For example, the popular Actions addon uses [react-inspector](https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js) which has themes of it's own. Supply additional theme variables to style it like so:
 
-```
+```js
 addonActionsTheme: {
   ...chromeLight,
   BASE_FONT_FAMILY: typography.fonts.mono,
@@ -123,13 +138,13 @@ addonActionsTheme: {
 
 For a native Storybook experience, we encourage addon authors to reuse the theme variables above. The theming engine relies on [emotion](https://emotion.sh/), a CSS-in-JS library.
 
-```
+```js
 import { styled } from '@storybook/theming';
 ```
 
 Use the theme variables in object notation:
 
-```
+```js
 const Component = styled.div(
   ({ theme }) => ({
     background: theme.background.app,
@@ -138,102 +153,11 @@ const Component = styled.div(
 );
 ```
 
-Or with styled-components template literals:
+Or with template literals:
 
-```
+```js
 const Component = styled.div`
   background: `${props => props.theme.background.app}`
   width: 0;
 `;
-```
-
-### Advanced theming
-
-For further customization adjust theme variables manually.
-
-This is the master list:
-
-```
-base: 'light' | 'dark',
-color: {
-  primary
-  secondary
-  tertiary
-  ancillary
-
-  orange
-  gold
-  green
-  seafoam
-  purple
-  ultraviolet
-
-  lightest
-  lighter
-  light
-  mediumlight
-  medium
-  mediumdark
-  dark
-  darker
-  darkest
-
-  border
-
-  positive
-  negative
-  warning
-
-  defaultText
-  inverseText
-}
-background: {
-  app
-  content
-  hoverable
-
-  positive
-  negative
-  warning
-}
-typography: {
-  fonts: {
-    base
-    mono
-  }
-  weight: {
-    regular
-    bold
-    black
-  }
-  size: {
-    s1
-    s2
-    s3
-    m1
-    m2
-    m3
-    l1
-    l2
-    l3
-    code
-  }
-  input: {
-    border
-    background
-    color
-    borderRadius
-  };
-
-  layoutMargin
-  appBorderColor
-  appBorderRadius
-
-  barTextColor
-  barSelectedColor
-  barBg
-
-  brand
-}
-TODO finish this, what's the best way to document?
 ```

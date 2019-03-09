@@ -43,10 +43,6 @@
 }
 
 @media only screen and (max-width: 998px) {
-  #docs-container .nav {
-    display: none;
-  }
-
   #docs-container .content {
     border-left: none;
     margin: 15px 0;
@@ -55,5 +51,14 @@
 
   #docs-container .nav-dropdown {
     display: block;
+  }
+}
+
+.search {
+  @media only screen and (min-width: 998px) {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 400px;
   }
 }
