@@ -13,6 +13,7 @@ const Wrapper = styled.div();
 const Icon = styled<any, any>(Icons)(({ theme }) => ({
   height: 10,
   width: 10,
+  minWidth: 10,
   color: theme.color.mediumdark,
   marginRight: '10px',
   transition: 'transform 0.1s ease-in-out',
@@ -28,6 +29,7 @@ const HeaderBar = styled.button(({ theme }) => ({
   border: 0,
   background: 'none',
   color: 'inherit',
+  textAlign: 'left',
 
   borderLeft: '3px solid transparent',
 
