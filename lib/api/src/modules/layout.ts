@@ -8,10 +8,12 @@ import merge from '../lib/merge';
 import { State } from '../index';
 import Store from '../store';
 
+export type PanelPositions = 'bottom' | 'right';
+
 export interface Layout {
   isFullscreen: boolean;
   showPanel: boolean;
-  panelPosition: 'bottom' | 'right';
+  panelPosition: PanelPositions;
   showNav: boolean;
   isToolshown: boolean;
 }
@@ -29,6 +31,15 @@ export interface SubState {
   ui: UI;
   selectedPanel: string | undefined;
   theme: ThemeVars;
+}
+
+export interface SubAPI {
+  toggleFullscreen: (toggled?: boolean) => void;
+  togglePanel: (toggled?: boolean) => void;
+  togglePanelPosition: (position?: PanelPositions) => void;
+  toggleNav: (toggled?: boolean) => void;
+  toggleToolbar: (toggled?: boolean) => void;
+  setOptions: (options: any) => void;
 }
 
 type PartialSubState = Partial<SubState>;

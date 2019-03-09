@@ -4,8 +4,16 @@ import { Module } from '../index';
 
 type CallBack = (...args: any[]) => any;
 
+export interface SubAPI {
+  getChannel: () => any;
+  on: (type: string, cb: CallBack, peer?: boolean) => () => void;
+  off: (type: string, cb: CallBack) => void;
+  emit: (type: string, event: any) => void;
+  onStory: (cb: CallBack) => void;
+}
+
 export default ({ provider }: Module) => {
-  const api = {
+  const api: SubAPI = {
     getChannel: () => provider.channel,
     on: (type: string, cb: CallBack, peer = true) => {
       if (peer) {

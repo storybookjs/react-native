@@ -23,12 +23,12 @@ export interface SubState {
     };
     current?: {
       version: string;
-      info: string;
+      info?: string;
       [key: string]: any;
     };
   };
   lastVersionCheck: number;
-  dismissedVersionNotification: boolean;
+  dismissedVersionNotification: undefined | string;
 }
 
 const checkInterval = 24 * 60 * 60 * 1000;

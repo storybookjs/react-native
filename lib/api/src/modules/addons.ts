@@ -1,8 +1,15 @@
-import { types, Addon } from '@storybook/addons';
+import { types, Addon, Types, Collection } from '@storybook/addons';
 import { Module } from '../index';
 
 interface Panels {
   [id: string]: Addon;
+}
+
+export interface SubAPI {
+  getElements: (type: Types) => Collection;
+  getPanels: () => Collection;
+  getSelectedPanel: () => string;
+  setSelectedPanel: (panelName: string) => void;
 }
 
 export function ensurePanel(panels: Panels, selectedPanel?: string, currentPanel?: string) {
@@ -19,8 +26,8 @@ export function ensurePanel(panels: Panels, selectedPanel?: string, currentPanel
 }
 
 export default ({ provider, store }: Module) => {
-  const api = {
-    getElements: (type: types) => provider.getElements(type),
+  const api: SubAPI = {
+    getElements: (type: Types) => provider.getElements(type),
     getPanels: () => api.getElements(types.PANEL),
     getSelectedPanel: () => {
       const { selectedPanel } = store.getState();

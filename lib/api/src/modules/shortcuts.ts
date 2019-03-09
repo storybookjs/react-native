@@ -13,11 +13,11 @@ export function keys<O>(o: O) {
   return Object.keys(o) as Array<keyof O>;
 }
 
-interface SubState {
+export interface SubState {
   shortcuts: Shortcuts;
 }
 
-interface SubAPI {
+export interface SubAPI {
   getShortcutKeys(): Shortcuts;
   setShortcuts(shortcuts: Shortcuts): Promise<Shortcuts>;
   setShortcut(action: Action, value: KeyCollection): Promise<KeyCollection>;

@@ -16,6 +16,17 @@ export interface SubState {
   storiesConfigured: boolean;
 }
 
+export interface SubAPI {
+  storyId: typeof toId;
+  selectStory: (kindOrId: string, story?: string, obj?: any) => void;
+  getCurrentStoryData: () => Story | Group;
+  setStories: (stories: StoriesRaw) => void;
+  jumpToComponent: (direction: Direction) => void;
+  jumpToStory: (direction: Direction) => void;
+  getData: (storyId: StoryId) => Story | Group;
+  getParameters: (storyId: StoryId, parameterName?: ParameterName) => Story['parameters'] | any;
+}
+
 interface SeparatorOptions {
   rootSeparator: RegExp;
   groupSeparator: RegExp;

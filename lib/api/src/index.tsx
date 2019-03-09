@@ -10,12 +10,18 @@ import { createContext } from './context';
 import Store from './store';
 import getInitialState from './initial-state';
 
-import initAddons from './modules/addons';
-import initChannel from './modules/channel';
-import initNotifications, { Notification } from './modules/notifications';
-import initStories, { SubState as StoriesSubState } from './modules/stories';
-import initLayout, { SubState as LayoutSubState } from './modules/layout';
-import initShortcuts, { Shortcuts } from './modules/shortcuts';
+import initAddons, { SubAPI as AddonsAPI } from './modules/addons';
+import initChannel, { SubAPI as ChannelAPI } from './modules/channel';
+import initNotifications, {
+  SubState as NotificationState,
+  SubAPI as NotificationAPI,
+} from './modules/notifications';
+import initStories, { SubState as StoriesSubState, SubAPI as StoriesAPI } from './modules/stories';
+import initLayout, { SubState as LayoutSubState, SubAPI as LayoutAPI } from './modules/layout';
+import initShortcuts, {
+  SubState as ShortcutsSubState,
+  SubAPI as ShortcutsAPI,
+} from './modules/shortcuts';
 import initURL, { QueryParams } from './modules/url';
 import initVersions, { SubState as VersionsSubState } from './modules/versions';
 
@@ -25,28 +31,33 @@ const { STORY_CHANGED, SET_STORIES, SELECT_STORY } = Events;
 
 export type Module = StoreData & RouterData & ProviderData;
 
-export type State = Other & LayoutSubState & StoriesSubState & VersionsSubState & RouterData;
+export type State = Other &
+  LayoutSubState &
+  StoriesSubState &
+  NotificationState &
+  VersionsSubState &
+  RouterData &
+  ShortcutsSubState;
 
+export type API = AddonsAPI &
+  ChannelAPI &
+  StoriesAPI &
+  LayoutAPI &
+  NotificationAPI &
+  ShortcutsAPI &
+  OtherAPI;
+
+interface OtherAPI {
+  [key: string]: any;
+}
 interface Other {
-  shortcuts: Shortcuts;
-
   customQueryParams: QueryParams;
 
   notifications: Notification[];
 
-  versions: {
-    latest: any;
-    current: any;
-  };
-  lastVersionCheck: any;
-  dismissedVersionNotification: any;
-
   [key: string]: any;
 }
 
-export interface API {
-  [key: string]: any;
-}
 export interface Combo {
   api: API;
   state: State;
