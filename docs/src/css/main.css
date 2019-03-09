@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800';
+/* @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800';
 
 body, div, p, ul, li, a {
   font-family: 'Open Sans', sans-serif;
@@ -16,6 +16,6 @@ a:focus {
 
 a:hover {
   opacity: 0.7;
-}
+} */
 
 .github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}

@@ -9,7 +9,10 @@ import { Theme, color, Color, background, typography, ThemeVars } from './base';
 import { easing, animation } from './animation';
 import { create as createSyntax } from './modules/syntax';
 
-const themes: { light: ThemeVars; dark: ThemeVars } = { light: lightThemeVars, dark: darkThemeVars };
+const themes: { light: ThemeVars; dark: ThemeVars } = {
+  light: lightThemeVars,
+  dark: darkThemeVars,
+};
 
 interface Rest {
   [key: string]: any;
@@ -127,7 +130,8 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
     background: {
       app: appBg,
       content: appContentBg,
-      hoverable: base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
+      hoverable:
+        base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
 
       positive: background.positive,
       negative: background.negative,

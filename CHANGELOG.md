@@ -1,3 +1,33 @@
+## 4.1.14 (March 8, 2019)
+
+### Dependency Upgrades
+
+* React-native: Fix RN 0.58.5 / support 0.59 via react-native-modal-datetime-picker 6.0.0 ([#4425](https://github.com/storybooks/storybook/pull/4425))
+
+## 5.1.0-alpha.2 (March 8, 2019)
+
+### Bug Fixes
+
+* Core: support unicode chars in story IDs ([#5964](https://github.com/storybooks/storybook/pull/5964))
+* Core: Add core-js dependencies where it was missing ([#5961](https://github.com/storybooks/storybook/pull/5961))
+
+### Maintenance
+
+* Addon-a11y: Migrate to typescript ([#5738](https://github.com/storybooks/storybook/pull/5738))
+
+## 5.1.0-alpha.1 (March 7, 2019)
+
+### Bug Fixes
+
+* CLI: Fix missing iframe.html in absolute path output directory ([#5947](https://github.com/storybooks/storybook/pull/5947))
+* Addon-knobs: Added debouncing between keystrokes to speed up component rendering ([#5811](https://github.com/storybooks/storybook/pull/5811))
+* UI: Fix search in production mode ([#5909](https://github.com/storybooks/storybook/pull/5909))
+
+### Maintenance
+
+* ADD delay to rendering the acceptance stories ([#5943](https://github.com/storybooks/storybook/pull/5943))
+* Split versions.json into two files ([#5896](https://github.com/storybooks/storybook/pull/5896))
+
 ## 5.1.0-alpha.0 (March 6, 2019)
 
 ### Features

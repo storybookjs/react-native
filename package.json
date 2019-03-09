@@ -126,7 +126,7 @@
     "npmlog": "^4.1.2",
     "prettier": "^1.16.4",
     "raf": "^3.4.0",
-    "react": "^16.8.3",
+    "react": "^16.8.4",
     "react-dom": "^16.8.3",
     "react-test-renderer": "^16.8.3",
     "regenerator-runtime": "^0.12.1",
