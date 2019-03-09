@@ -41,8 +41,8 @@ async function fetchLatestVersion(v: string) {
 
 export default function({ store }: Module) {
   const {
-    versions: persistedVersions,
-    lastVersionCheck,
+    versions: persistedVersions = {},
+    lastVersionCheck = 0,
     dismissedVersionNotification,
   } = store.getState();
 
