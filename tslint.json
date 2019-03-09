@@ -5,7 +5,7 @@
     "prettier": {
       "severity": "warning",
       "options": {
-        "printWidth": 140,
+        "printWidth": 100,
         "tabWidth": 2,
         "bracketSpacing": true,
         "trailingComma": "es5",

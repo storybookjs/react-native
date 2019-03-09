@@ -189,7 +189,8 @@ describe('Channel', () => {
       const eventName = 'event1';
       const listenerToBeRemoved = jest.fn();
       const listeners = [jest.fn(), jest.fn()];
-      const findListener = (listener: Listener) => channel.listeners(eventName).find(_listener => _listener === listener);
+      const findListener = (listener: Listener) =>
+        channel.listeners(eventName).find(_listener => _listener === listener);
 
       listeners.forEach(fn => channel.addListener(eventName, fn));
       channel.addListener(eventName, listenerToBeRemoved);
