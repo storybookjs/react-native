@@ -106,7 +106,7 @@ addParameters({
 });
 ```
 
-Many them variables are optional, the `base` property is NOT. This is a perfectly valid theme:
+Many theme variables are optional, the `base` property is NOT. This is a perfectly valid theme:
 
 ```ts
 import { create } from '@storybook/theming';
