@@ -30,16 +30,14 @@ const Message = styled.div({
 });
 
 const Status = styled.div(({ passes, impact }: { passes: boolean; impact: string }) => ({
-  height: '16px',
-  width: '16px',
-  borderRadius: '8px',
-  fontSize: '10px',
   display: 'inline-flex',
   justifyContent: 'center',
   alignItems: 'center',
-  textAlign: 'center',
-  flex: '0 0 16px',
   color: passes ? impactColors.success : (impactColors as any)[impact],
+  '& > svg': {
+    height: '16px',
+    width: '16px',
+  },
 }));
 
 interface RuleProps {
