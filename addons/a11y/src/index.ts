@@ -1,5 +1,5 @@
 import { document } from 'global';
-import axe, { AxeResults, RunOptions, Spec } from 'axe-core';
+import axe, { AxeResults, ElementContext, RunOptions, Spec } from 'axe-core';
 import deprecate from 'util-deprecate';
 import { stripIndents } from 'common-tags';
 
@@ -9,7 +9,11 @@ import { EVENTS, PARAM_KEY } from './constants';
 
 const channel = addons.getChannel();
 let progress = Promise.resolve();
-let setup: { config: Spec; options: RunOptions } = { config: {}, options: {} };
+let setup: {
+  element?: ElementContext;
+  config: Spec;
+  options: RunOptions;
+} = { element: null, config: {}, options: {} };
 
 const getElement = () => {
   const storyRoot = document.getElementById('story-root');
@@ -24,7 +28,7 @@ const report = (input: AxeResults) => {
   channel.emit(EVENTS.RESULT, input);
 };
 
-const run = (config: Spec, options: RunOptions) => {
+const run = (element: ElementContext, config: Spec, options: RunOptions) => {
   progress = progress.then(() => {
     axe.reset();
     if (config) {
@@ -32,7 +36,7 @@ const run = (config: Spec, options: RunOptions) => {
     }
     return axe
       .run(
-        getElement(),
+        element || getElement(),
         options ||
           // tslint:disable-next-line:no-object-literal-type-assertion
           ({
@@ -52,8 +56,8 @@ export const withA11y: StoryWrapper = (getStory, context) => {
   return getStory(context);
 };
 
-channel.on(STORY_RENDERED, () => run(setup.config, setup.options));
-channel.on(EVENTS.REQUEST, () => run(setup.config, setup.options));
+channel.on(STORY_RENDERED, () => run(setup.element, setup.config, setup.options));
+channel.on(EVENTS.REQUEST, () => run(setup.element, setup.config, setup.options));
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();
