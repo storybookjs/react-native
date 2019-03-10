@@ -4,7 +4,7 @@ import { unregister } from 'riot';
 import { render as renderRiot } from './rendering';
 
 export default function renderMain({
-  story,
+  storyFn,
   selectedKind,
   selectedStory,
   showMain = () => {},
@@ -15,9 +15,9 @@ export default function renderMain({
   const rootElement = document.getElementById('root');
   rootElement.innerHTML = '';
   rootElement.dataset.is = 'root';
-  const component = story();
-  const rendered = renderRiot(component);
-  if (!rendered)
+  const element = storyFn();
+  const rendered = renderRiot(element);
+  if (!rendered) {
     showError({
       title: `Expecting a riot snippet or a riot component from the story: "${selectedStory}" of "${selectedKind}".`,
       description: stripIndents`
@@ -25,5 +25,6 @@ export default function renderMain({
         Use "() => <your snippet or node>" or when defining the story.
       `,
     });
+  }
   return rendered;
 }

@@ -18,7 +18,7 @@ const root = new Vue({
 });
 
 export default function render({
-  story,
+  storyFn,
   selectedKind,
   selectedStory,
   showMain,
@@ -28,9 +28,9 @@ export default function render({
 }) {
   Vue.config.errorHandler = showException;
 
-  const component = story();
+  const element = storyFn();
 
-  if (!component) {
+  if (!element) {
     showError({
       title: `Expecting a Vue component from the story: "${selectedStory}" of "${selectedKind}".`,
       description: stripIndents`
@@ -45,10 +45,10 @@ export default function render({
 
   // at component creation || refresh by HMR
   if (!root[COMPONENT] || !forceRender) {
-    root[COMPONENT] = component;
+    root[COMPONENT] = element;
   }
 
-  root[VALUES] = component.options[VALUES];
+  root[VALUES] = element.options[VALUES];
 
   if (!root.$el) {
     root.$mount('#root');

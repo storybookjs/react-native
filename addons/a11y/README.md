@@ -20,16 +20,16 @@ Add this line to your `addons.js` file (create this file inside your storybook c
 import '@storybook/addon-a11y/register';
 ```
 
-import the `withA11Y` decorator to check your stories for violations within your components.
+import the `withA11y` decorator to check your stories for violations within your components.
 
 ```js
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withA11Y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
 
 // should only be added once
 // best place is in config.js
-addDecorator(withA11Y)
+addDecorator(withA11y)
 
 storiesOf('button', module)
   .add('Accessible', () => (
@@ -51,16 +51,17 @@ You can override these options at story level too.
 import React from 'react';
 import { storiesOf, addDecorator, addParameters } from '@storybook/react';
 
-import { withA11Y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
 
-addDecorator(withA11Y)
+addDecorator(withA11y)
 addParameters({
   a11y: {
     // ... axe options
     element: '#root', // optional selector which element to inspect
+    config: {} // axe-core configurationOptions (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#parameters-1)
+    options: {} // axe-core optionsParameter (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#options-parameter)
   },
 });
-
 
 storiesOf('button', module)
   .add('Accessible', () => (

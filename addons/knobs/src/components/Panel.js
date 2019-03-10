@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
@@ -6,7 +6,14 @@ import { styled } from '@storybook/theming';
 import copy from 'copy-to-clipboard';
 
 import { STORY_CHANGED } from '@storybook/core-events';
-import { Placeholder, TabWrapper, TabsState, ActionBar, ActionButton } from '@storybook/components';
+import {
+  Placeholder,
+  TabWrapper,
+  TabsState,
+  ActionBar,
+  Link,
+  ScrollArea,
+} from '@storybook/components';
 import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
 import Types from './types';
@@ -16,9 +23,12 @@ const getTimestamp = () => +new Date();
 
 const DEFAULT_GROUP_ID = 'ALL';
 
-const PanelWrapper = styled.div({
+const PanelWrapper = styled(({ children, className }) => (
+  <ScrollArea horizontal vertical className={className}>
+    {children}
+  </ScrollArea>
+))({
   height: '100%',
-  overflow: 'auto',
   width: '100%',
 });
 
@@ -169,32 +179,50 @@ export default class KnobPanel extends PureComponent {
     const knobsArray = knobKeysArray.map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
-      return <Placeholder>NO KNOBS</Placeholder>;
+      return (
+        <Placeholder>
+          <Fragment>No knobs found</Fragment>
+          <Fragment>
+            Learn how to{' '}
+            <Link
+              href="https://github.com/storybooks/storybook/tree/master/addons/knobs"
+              target="_blank"
+              withArrow
+            >
+              dynamically interact with components
+            </Link>
+          </Fragment>
+        </Placeholder>
+      );
     }
 
     const entries = Object.entries(groups);
     return (
-      <PanelWrapper>
-        {entries.length > 1 ? (
-          <TabsState>
-            {entries.map(([k, v]) => (
-              <div id={k} key={k} title={v.title}>
-                {v.render}
-              </div>
-            ))}
-          </TabsState>
-        ) : (
-          <PropForm
-            knobs={knobsArray}
-            onFieldChange={this.handleChange}
-            onFieldClick={this.handleClick}
-          />
-        )}
-        <ActionBar>
-          <ActionButton onClick={this.copy}>COPY</ActionButton>
-          <ActionButton onClick={this.reset}>RESET</ActionButton>
-        </ActionBar>
-      </PanelWrapper>
+      <Fragment>
+        <PanelWrapper>
+          {entries.length > 1 ? (
+            <TabsState>
+              {entries.map(([k, v]) => (
+                <div id={k} key={k} title={v.title}>
+                  {v.render}
+                </div>
+              ))}
+            </TabsState>
+          ) : (
+            <PropForm
+              knobs={knobsArray}
+              onFieldChange={this.handleChange}
+              onFieldClick={this.handleClick}
+            />
+          )}
+        </PanelWrapper>
+        <ActionBar
+          actionItems={[
+            { title: 'Copy', onClick: this.copy },
+            { title: 'Reset', onClick: this.reset },
+          ]}
+        />
+      </Fragment>
     );
   }
 }

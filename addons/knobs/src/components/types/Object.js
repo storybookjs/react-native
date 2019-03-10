@@ -45,9 +45,11 @@ class ObjectType extends Component {
 
   render() {
     const { value, failed } = this.state;
+    const { knob } = this.props;
 
     return (
       <Form.Textarea
+        name={knob.name}
         valid={failed ? 'error' : null}
         value={value}
         onChange={this.handleChange}

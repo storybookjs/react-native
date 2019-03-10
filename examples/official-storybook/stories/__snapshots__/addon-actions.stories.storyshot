@@ -3,31 +3,77 @@
 exports[`Storyshots Addons|Actions All types 1`] = `
 Array [
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -36,31 +82,77 @@ Array [
     Array
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -69,31 +161,77 @@ Array [
     Boolean
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -102,31 +240,77 @@ Array [
     Empty Object
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -135,31 +319,77 @@ Array [
     File
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -168,31 +398,77 @@ Array [
     Function A
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -201,31 +477,77 @@ Array [
     Bound Function B
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -234,31 +556,77 @@ Array [
     Infinity
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -267,31 +635,77 @@ Array [
     -Infinity
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -300,31 +714,77 @@ Array [
     NaN
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -333,31 +793,77 @@ Array [
     null
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -366,31 +872,77 @@ Array [
     Number
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -399,31 +951,77 @@ Array [
     Multiple
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -432,31 +1030,77 @@ Array [
     Plain Object
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -465,31 +1109,77 @@ Array [
     Object (depth: 2)
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -498,31 +1188,77 @@ Array [
     RegExp
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -531,31 +1267,77 @@ Array [
     String
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -564,31 +1346,77 @@ Array [
     Symbol
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -597,31 +1425,77 @@ Array [
     SyntheticEvent
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -630,31 +1504,77 @@ Array [
     undefined
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -667,31 +1587,77 @@ Array [
 
 exports[`Storyshots Addons|Actions Basic example 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -703,31 +1669,77 @@ exports[`Storyshots Addons|Actions Basic example 1`] = `
 
 exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -739,31 +1751,77 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -775,31 +1833,77 @@ exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated action 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -811,31 +1915,77 @@ exports[`Storyshots Addons|Actions Decorated action 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -847,31 +1997,77 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -884,31 +2080,77 @@ exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 exports[`Storyshots Addons|Actions Limit Action Output 1`] = `
 Array [
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -917,31 +2159,77 @@ Array [
     False
   </button>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -954,31 +2242,77 @@ Array [
 
 exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -990,31 +2324,77 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 
 exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1026,31 +2406,77 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 
 exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1062,31 +2488,77 @@ exports[`Storyshots Addons|Actions Multiple actions as object 1`] = `
 
 exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1102,31 +2574,77 @@ Array [
     Moving away from this story will persist the action logger
   </p>,
   .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1139,31 +2657,77 @@ Array [
 
 exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1175,31 +2739,77 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 
 exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button
@@ -1211,31 +2821,77 @@ exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
 
 exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
 .emotion-0 {
-  padding: 0 10px;
-  color: #444;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  -webkit-transition: border-bottom-color .3s linear;
-  transition: border-bottom-color .3s linear;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: border-box;
-  position: relative;
-  display: inline;
-  text-align: left;
+  border: 0;
+  border-radius: 3em;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  min-height: 32px;
-  box-sizing: border-box;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
 }
 
 .emotion-0:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 <button

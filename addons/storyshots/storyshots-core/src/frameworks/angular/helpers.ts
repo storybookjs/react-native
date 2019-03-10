@@ -43,7 +43,13 @@ export const initModuleData = (storyObj: NgStory): any => {
     props,
   };
 
-  const moduleMeta = getModuleMeta([AppComponent, AnnotatedComponent], [AnnotatedComponent], [AppComponent], story, moduleMetadata);
+  const moduleMeta = getModuleMeta(
+    [AppComponent, AnnotatedComponent],
+    [AnnotatedComponent],
+    [AppComponent],
+    story,
+    moduleMetadata
+  );
 
   return {
     AppComponent,

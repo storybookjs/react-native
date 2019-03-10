@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Typography, SyntaxHighlighter } from '@storybook/components';
+import { styled } from '@storybook/theming';
+import { Link } from '@storybook/router';
+import { SyntaxHighlighter } from '@storybook/components';
 
 import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './events';
 
-const styles = {
-  story: {
-    display: 'block',
-    textDecoration: 'none',
+const StyledStoryLink = styled(Link)(({ theme }) => ({
+  display: 'block',
+  textDecoration: 'none',
+  borderRadius: theme.appBorderRadius,
+
+  '&:hover': {
+    background: theme.background.hoverable,
   },
-  selectedStory: {
-    backgroundColor: 'rgba(255, 242, 60, 0.2)',
-  },
-  panel: {
-    width: '100%',
-  },
-};
+}));
+
+const SelectedStoryHighlight = styled.div(({ theme }) => ({
+  background: theme.background.hoverable,
+  borderRadius: theme.appBorderRadius,
+}));
+
+const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }) => ({
+  fontSize: theme.typography.size.s2 - 1,
+}));
 
 const areLocationsEqual = (a, b) =>
   a.startLoc.line === b.startLoc.line &&
@@ -68,14 +76,6 @@ export default class StoryPanel extends Component {
     });
   };
 
-  clickOnStory = (kind, story) => {
-    const { api } = this.props;
-
-    if (kind && story) {
-      api.selectStory(kind, story);
-    }
-  };
-
   createPart = (rows, stylesheet, useInlineStyles) =>
     rows.map((node, i) =>
       createElement({
@@ -86,7 +86,7 @@ export default class StoryPanel extends Component {
       })
     );
 
-  createStoryPart = (rows, stylesheet, useInlineStyles, location, kindStory) => {
+  createStoryPart = (rows, stylesheet, useInlineStyles, location, id) => {
     const { currentLocation } = this.state;
     const first = location.startLoc.line - 1;
     const last = location.endLoc.line;
@@ -95,26 +95,18 @@ export default class StoryPanel extends Component {
     const story = this.createPart(storyRows, stylesheet, useInlineStyles);
     const storyKey = `${first}-${last}`;
 
-    if (areLocationsEqual(location, currentLocation)) {
+    if (location && currentLocation && areLocationsEqual(location, currentLocation)) {
       return (
-        <div key={storyKey} ref={this.setSelectedStoryRef} style={styles.selectedStory}>
+        <SelectedStoryHighlight key={storyKey} ref={this.setSelectedStoryRef}>
           {story}
-        </div>
+        </SelectedStoryHighlight>
       );
     }
 
-    const [selectedKind, selectedStory] = kindStory.split('@');
-    const url = `/?selectedKind=${selectedKind}&selectedStory=${selectedStory}`;
-
     return (
-      <Typography.Link
-        href={url}
-        key={storyKey}
-        onClick={() => this.clickOnStory(selectedKind, selectedStory)}
-        style={styles.story}
-      >
+      <StyledStoryLink to={`/story/${id}`} key={storyKey}>
         {story}
-      </Typography.Link>
+      </StyledStoryLink>
     );
   };
 
@@ -171,15 +163,16 @@ export default class StoryPanel extends Component {
     const { source } = this.state;
 
     return active ? (
-      <SyntaxHighlighter
+      <StyledSyntaxHighlighter
         language="jsx"
         showLineNumbers="true"
         renderer={this.lineRenderer}
+        format={false}
         copyable={false}
         padded
       >
         {source}
-      </SyntaxHighlighter>
+      </StyledSyntaxHighlighter>
     ) : null;
   }
 }

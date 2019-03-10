@@ -1,0 +1,40 @@
+{
+  "name": "@storybook/client-api",
+  "version": "5.1.0-alpha.3",
+  "description": "Storybook Client API",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/client-api",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/client-api"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addons": "5.1.0-alpha.3",
+    "@storybook/client-logger": "5.1.0-alpha.3",
+    "@storybook/core-events": "5.1.0-alpha.3",
+    "@storybook/router": "5.1.0-alpha.3",
+    "common-tags": "^1.8.0",
+    "eventemitter3": "^3.1.0",
+    "global": "^4.3.2",
+    "is-plain-object": "^2.0.4",
+    "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.5.0",
+    "lodash.mergewith": "^4.6.1",
+    "memoizerific": "^1.11.3",
+    "qs": "^6.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

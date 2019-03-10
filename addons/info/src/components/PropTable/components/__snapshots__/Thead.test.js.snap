@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropTable/Thead renders a thead html node with children 1`] = `
+<thead>
+  <div>
+    foo bar
+  </div>
+</thead>
+`;
+
+exports[`PropTable/Thead renders a thead html node with multiple children elements 1`] = `
+<thead>
+  <div>
+    foo bar
+  </div>
+  <div>
+    baz
+  </div>
+</thead>
+`;

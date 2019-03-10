@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots basics/Tooltip/TooltipNote default 1`] = `
+.emotion-0 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-2 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 8px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.emotion-1 {
+  padding: 2px 6px;
+  line-height: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #FFFFFF;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: -1;
+  background: rgba(0,0,0,0.4);
+  margin: 6px;
+}
+
+<div
+  style="height:300px"
+>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      Tooltip
+    </div>
+  </div>
+  <div
+    class="emotion-2"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <div
+      class="emotion-1"
+    >
+      Lorem ipsum dolor
+    </div>
+  </div>
+</div>
+`;

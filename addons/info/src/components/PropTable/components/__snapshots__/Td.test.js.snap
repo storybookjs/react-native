@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropTable/Td renders a monospace td html node child element 1`] = `
+<td
+  className="info-table-monospace"
+>
+  <div>
+    foo bar
+  </div>
+</td>
+`;
+
+exports[`PropTable/Td renders a monospace td html node with multiple children elements 1`] = `
+<td
+  className="info-table-monospace"
+>
+  <div>
+    foo bar
+  </div>
+  <div>
+    baz
+  </div>
+</td>
+`;
+
+exports[`PropTable/Td renders a monospace td html node with one child node 1`] = `
+<td
+  className="info-table-monospace"
+>
+  foo bar
+</td>
+`;
+
+exports[`PropTable/Td renders a td html node child element 1`] = `
+<td
+  className={null}
+>
+  <div>
+    foo bar
+  </div>
+</td>
+`;
+
+exports[`PropTable/Td renders a td html node with multiple children elements 1`] = `
+<td
+  className={null}
+>
+  <div>
+    foo bar
+  </div>
+  <div>
+    baz
+  </div>
+</td>
+`;
+
+exports[`PropTable/Td renders a td html node with one child node 1`] = `
+<td
+  className={null}
+>
+  foo bar
+</td>
+`;
