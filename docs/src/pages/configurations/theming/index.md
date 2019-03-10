@@ -97,7 +97,7 @@ export default create({
 Finally, import your theme into `.storybook/config` and add it to your Storybook parameters.
 
 ```js
-import { yourTheme } from './yourTheme';
+import yourTheme from './yourTheme';
 
 addParameters({
   options: {
