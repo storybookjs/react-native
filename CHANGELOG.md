@@ -1,3 +1,22 @@
+## 5.1.0-alpha.4 (March 11, 2019)
+
+### Bug Fixes
+
+* CLI: Fix welcome component in dark theme ([#5998](https://github.com/storybooks/storybook/pull/5998))
+* Polymer: Fix re-rendering lit-html elements after non-lit-html element ([#5868](https://github.com/storybooks/storybook/pull/5868))
+* Addon-a11y: Fix respect 'element' arg in config ([#5996](https://github.com/storybooks/storybook/pull/5996))
+* Addon-a11y: Fix design icons ([#5991](https://github.com/storybooks/storybook/pull/5991))
+* Addon-viewport: Fix viewport iframe dimensions ([#5993](https://github.com/storybooks/storybook/pull/5993))
+
+### Maintenance
+
+* ADD parameters to compile-js to no longer copy .ts files into dist ([#5844](https://github.com/storybooks/storybook/pull/5844))
+
+### Dependency Upgrades
+
+* build(deps): bump react-is from 16.8.3 to 16.8.4 ([#6010](https://github.com/storybooks/storybook/pull/6010))
+* build(deps): bump react-dev-utils from 7.0.3 to 8.0.0 ([#6011](https://github.com/storybooks/storybook/pull/6011))
+
 ## 5.1.0-alpha.3 (March 9, 2019)
 
 ### Features
