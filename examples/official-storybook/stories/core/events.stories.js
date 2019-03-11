@@ -11,7 +11,6 @@ const increment = () => {
 
 export default {
   title: 'Core|Events',
-  module,
 };
 
 export const force = () => <Button onClick={increment}>Clicked: {timesClicked}</Button>;
