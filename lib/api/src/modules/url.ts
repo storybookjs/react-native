@@ -2,11 +2,12 @@ import { queryFromLocation } from '@storybook/router';
 import { toId } from '@storybook/router/dist/utils';
 
 import { Module } from '../index';
+import { PanelPositions } from './layout';
 
 interface Additions {
   isFullscreen?: boolean;
   showPanel?: boolean;
-  panelPosition?: 'bottom' | 'right';
+  panelPosition?: PanelPositions;
   showNav?: boolean;
   selectedPanel?: string;
 }

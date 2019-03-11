@@ -50,6 +50,55 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   outline: 0 none;
 }
 
+.emotion-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #FFFFFF;
+}
+
+.emotion-0 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #333333;
+  background: #FFFFFF;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(0,0,0,.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-0:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-0 + * {
+  border-left: 1px solid rgba(0,0,0,.1);
+  border-radius: 0;
+}
+
+.emotion-0:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+  outline: 0 none;
+}
+
 <div
   style="position:relative;width:300px;height:64px;margin:1rem;background:papayawhip;border:1px solid rgba(0,0,0,.05)"
 >
@@ -78,6 +127,55 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
 `;
 
 exports[`Storyshots Basics|ActionBar singleItem 1`] = `
+.emotion-1 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #FFFFFF;
+}
+
+.emotion-0 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #333333;
+  background: #FFFFFF;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(0,0,0,.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-0:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-0 + * {
+  border-left: 1px solid rgba(0,0,0,.1);
+  border-radius: 0;
+}
+
+.emotion-0:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+  outline: 0 none;
+}
+
 .emotion-1 {
   position: absolute;
   bottom: 0;
@@ -187,6 +285,441 @@ exports[`Storyshots Basics|Brand/StorybookLogo normal 1`] = `
 `;
 
 exports[`Storyshots Basics|DocumentFormatting withDOM 1`] = `
+.emotion-0 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emotion-0 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-0 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-0 h3 {
+  font-size: 20px;
+}
+
+.emotion-0 h4 {
+  font-size: 16px;
+}
+
+.emotion-0 h5 {
+  font-size: 14px;
+}
+
+.emotion-0 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-0 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-0 pre pre,
+.emotion-0 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-0 pre pre code,
+.emotion-0 pre.hljs code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-0 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-0 pre code,
+.emotion-0 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-0 body > *:first-of-type {
+  margin-top: 0 !important;
+}
+
+.emotion-0 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-0 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 a.absent {
+  color: #cc0000;
+}
+
+.emotion-0 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-0 h1,
+.emotion-0 h2,
+.emotion-0 h3,
+.emotion-0 h4,
+.emotion-0 h5,
+.emotion-0 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1:hover a.anchor,
+.emotion-0 h2:hover a.anchor,
+.emotion-0 h3:hover a.anchor,
+.emotion-0 h4:hover a.anchor,
+.emotion-0 h5:hover a.anchor,
+.emotion-0 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 h1 tt,
+.emotion-0 h1 code {
+  font-size: inherit;
+}
+
+.emotion-0 h2 tt,
+.emotion-0 h2 code {
+  font-size: inherit;
+}
+
+.emotion-0 h3 tt,
+.emotion-0 h3 code {
+  font-size: inherit;
+}
+
+.emotion-0 h4 tt,
+.emotion-0 h4 code {
+  font-size: inherit;
+}
+
+.emotion-0 h5 tt,
+.emotion-0 h5 code {
+  font-size: inherit;
+}
+
+.emotion-0 h6 tt,
+.emotion-0 h6 code {
+  font-size: inherit;
+}
+
+.emotion-0 p,
+.emotion-0 blockquote,
+.emotion-0 ul,
+.emotion-0 ol,
+.emotion-0 dl,
+.emotion-0 li,
+.emotion-0 table,
+.emotion-0 pre {
+  margin: 15px 0;
+}
+
+.emotion-0 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-0 body > h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1 p,
+.emotion-0 h2 p,
+.emotion-0 h3 p,
+.emotion-0 h4 p,
+.emotion-0 h5 p,
+.emotion-0 h6 p {
+  margin-top: 0;
+}
+
+.emotion-0 li p.first {
+  display: inline-block;
+}
+
+.emotion-0 ul,
+.emotion-0 ol {
+  padding-left: 30px;
+}
+
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 ul :last-child,
+.emotion-0 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl {
+  padding: 0;
+}
+
+.emotion-0 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-0 dl dt:first-of-type {
+  padding: 0;
+}
+
+.emotion-0 dl dt > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-0 dl dd > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-0 blockquote > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-0 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 table tr:nth-of-type(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-0 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 table tr th :last-child,
+.emotion-0 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 img {
+  max-width: 100%;
+}
+
+.emotion-0 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-0 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-0 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-0 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-0 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-0 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-0 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-0 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-0 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-0 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-0 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-0 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-0 code,
+.emotion-0 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+}
+
 .emotion-0 {
   font-size: 14px;
   line-height: 1.6;
@@ -1383,6 +1916,441 @@ exports[`Storyshots Basics|DocumentFormatting withMarkdown 1`] = `
   border-radius: 3px;
 }
 
+.emotion-0 {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emotion-0 h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.emotion-0 h2 {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-0 h3 {
+  font-size: 20px;
+}
+
+.emotion-0 h4 {
+  font-size: 16px;
+}
+
+.emotion-0 h5 {
+  font-size: 14px;
+}
+
+.emotion-0 h6 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.emotion-0 pre:not(.hljs) {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-0 pre pre,
+.emotion-0 pre.hljs {
+  padding: 15px;
+  margin: 0;
+  white-space: pre-wrap;
+  color: #333333;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.emotion-0 pre pre code,
+.emotion-0 pre.hljs code {
+  color: inherit;
+  font-size: inherit;
+}
+
+.emotion-0 pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.emotion-0 pre code,
+.emotion-0 pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-0 body > *:first-of-type {
+  margin-top: 0 !important;
+}
+
+.emotion-0 body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.emotion-0 a {
+  color: #1EA7FD;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 a.absent {
+  color: #cc0000;
+}
+
+.emotion-0 a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.emotion-0 h1,
+.emotion-0 h2,
+.emotion-0 h3,
+.emotion-0 h4,
+.emotion-0 h5,
+.emotion-0 h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  cursor: text;
+  position: relative;
+}
+
+.emotion-0 h2:first-of-type,
+.emotion-0 h1:first-of-type,
+.emotion-0 h1:first-of-type + h2,
+.emotion-0 h3:first-of-type,
+.emotion-0 h4:first-of-type,
+.emotion-0 h5:first-of-type,
+.emotion-0 h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1:hover a.anchor,
+.emotion-0 h2:hover a.anchor,
+.emotion-0 h3:hover a.anchor,
+.emotion-0 h4:hover a.anchor,
+.emotion-0 h5:hover a.anchor,
+.emotion-0 h6:hover a.anchor {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 h1 tt,
+.emotion-0 h1 code {
+  font-size: inherit;
+}
+
+.emotion-0 h2 tt,
+.emotion-0 h2 code {
+  font-size: inherit;
+}
+
+.emotion-0 h3 tt,
+.emotion-0 h3 code {
+  font-size: inherit;
+}
+
+.emotion-0 h4 tt,
+.emotion-0 h4 code {
+  font-size: inherit;
+}
+
+.emotion-0 h5 tt,
+.emotion-0 h5 code {
+  font-size: inherit;
+}
+
+.emotion-0 h6 tt,
+.emotion-0 h6 code {
+  font-size: inherit;
+}
+
+.emotion-0 p,
+.emotion-0 blockquote,
+.emotion-0 ul,
+.emotion-0 ol,
+.emotion-0 dl,
+.emotion-0 li,
+.emotion-0 table,
+.emotion-0 pre {
+  margin: 15px 0;
+}
+
+.emotion-0 hr {
+  border: 0 none;
+  color: rgba(0,0,0,.1);
+  height: 4px;
+  padding: 0;
+}
+
+.emotion-0 body > h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h1:first-of-type + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 body > h3:first-of-type,
+.emotion-0 body > h4:first-of-type,
+.emotion-0 body > h5:first-of-type,
+.emotion-0 body > h6:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 a:first-of-type h1,
+.emotion-0 a:first-of-type h2,
+.emotion-0 a:first-of-type h3,
+.emotion-0 a:first-of-type h4,
+.emotion-0 a:first-of-type h5,
+.emotion-0 a:first-of-type h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emotion-0 h1 p,
+.emotion-0 h2 p,
+.emotion-0 h3 p,
+.emotion-0 h4 p,
+.emotion-0 h5 p,
+.emotion-0 h6 p {
+  margin-top: 0;
+}
+
+.emotion-0 li p.first {
+  display: inline-block;
+}
+
+.emotion-0 ul,
+.emotion-0 ol {
+  padding-left: 30px;
+}
+
+.emotion-0 ul :first-of-type,
+.emotion-0 ol :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 ul :last-child,
+.emotion-0 ol :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl {
+  padding: 0;
+}
+
+.emotion-0 dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+.emotion-0 dl dt:first-of-type {
+  padding: 0;
+}
+
+.emotion-0 dl dt > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+.emotion-0 dl dd > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 blockquote {
+  border-left: 4px solid #DDDDDD;
+  padding: 0 15px;
+  color: #666666;
+}
+
+.emotion-0 blockquote > :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 table {
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.emotion-0 table tr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-0 table tr:nth-of-type(2n) {
+  background-color: #F8F8F8;
+}
+
+.emotion-0 table tr th {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr td {
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.emotion-0 table tr th :first-of-type,
+.emotion-0 table tr td :first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 table tr th :last-child,
+.emotion-0 table tr td :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 img {
+  max-width: 100%;
+}
+
+.emotion-0 span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.emotion-0 span.frame > span {
+  border: 1px solid #DDDDDD;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+.emotion-0 span.frame span img {
+  display: block;
+  float: left;
+}
+
+.emotion-0 span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+.emotion-0 span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+.emotion-0 span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-0 span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.emotion-0 span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+.emotion-0 span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.emotion-0 span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+.emotion-0 span.float-left span {
+  margin: 13px 0 0;
+}
+
+.emotion-0 span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+.emotion-0 span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+.emotion-0 code,
+.emotion-0 tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+}
+
 <div
   style="width:600px;margin:3rem auto;padding:40px 20px;background:white"
 >
@@ -1408,6 +2376,17 @@ exports[`Storyshots Basics|Placeholder singleChild 1`] = `
   font-weight: 700;
 }
 
+.emotion-1 {
+  padding: 30px;
+  text-align: center;
+  color: #333333;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  font-weight: 700;
+}
+
 <div
   class="emotion-1"
 >
@@ -1420,6 +2399,59 @@ exports[`Storyshots Basics|Placeholder singleChild 1`] = `
 `;
 
 exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
+.emotion-4 {
+  padding: 30px;
+  text-align: center;
+  color: #333333;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  font-weight: 700;
+}
+
+.emotion-2 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-2 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-2:hover,
+.emotion-2:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-2:hover svg path,
+.emotion-2:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-2:active {
+  color: #028ee6;
+}
+
+.emotion-2:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-2 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
 .emotion-4 {
   padding: 30px;
   text-align: center;
@@ -1500,6 +2532,31 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
 `;
 
 exports[`Storyshots Basics|ScrollArea both 1`] = `
+.emotion-401 {
+  white-space: nowrap;
+  line-height: 0px;
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.emotion-0 {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background: silver;
+  line-height: 40px;
+  text-align: center;
+  font-size: 9px;
+}
+
+.emotion-400 {
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
 .emotion-401 {
   white-space: nowrap;
   line-height: 0px;
@@ -3622,6 +4679,31 @@ exports[`Storyshots Basics|ScrollArea horizontal 1`] = `
   overflow-x: auto;
 }
 
+.emotion-21 {
+  white-space: nowrap;
+  line-height: 0px;
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.emotion-0 {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background: silver;
+  line-height: 40px;
+  text-align: center;
+  font-size: 9px;
+}
+
+.emotion-20 {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
 <div
   class="emotion-21"
 >
@@ -3774,6 +4856,31 @@ exports[`Storyshots Basics|ScrollArea horizontal 1`] = `
 `;
 
 exports[`Storyshots Basics|ScrollArea vertical 1`] = `
+.emotion-21 {
+  white-space: nowrap;
+  line-height: 0px;
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.emotion-20 {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.emotion-0 {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background: silver;
+  line-height: 40px;
+  text-align: center;
+  font-size: 9px;
+}
+
 .emotion-21 {
   white-space: nowrap;
   line-height: 0px;
@@ -4033,6 +5140,51 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
   fill: currentColor;
 }
 
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: top;
+  margin-right: 6px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
 <button
   class="emotion-0"
 >
@@ -4043,7 +5195,6 @@ exports[`Storyshots Core|Events Force re-render 1`] = `
 exports[`Storyshots Core|Parameters passed to story 1`] = `
 <pre>
   Parameters are {
-  "fileName": "undefined",
   "a11y": {
     "config": {},
     "options": {
@@ -4123,6 +5274,20 @@ exports[`Storyshots UI|Notifications/Item longText 1`] = `
   text-decoration: none;
 }
 
+.emotion-0 {
+  display: block;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 <div
   style="width:240px;margin:1rem"
 >
@@ -4135,6 +5300,20 @@ exports[`Storyshots UI|Notifications/Item longText 1`] = `
 `;
 
 exports[`Storyshots UI|Notifications/Item simple 1`] = `
+.emotion-0 {
+  display: block;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 .emotion-0 {
   display: block;
   padding: 16px 20px;
@@ -4175,6 +5354,20 @@ exports[`Storyshots UI|Notifications/Item withLink 1`] = `
   text-decoration: none;
 }
 
+.emotion-0 {
+  display: block;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 <div
   style="width:240px;margin:1rem"
 >
@@ -4188,6 +5381,36 @@ exports[`Storyshots UI|Notifications/Item withLink 1`] = `
 `;
 
 exports[`Storyshots UI|Notifications/Notifications all 1`] = `
+.emotion-0 {
+  display: block;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-3 {
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+
+.emotion-3 > * + * {
+  margin-top: 10px;
+}
+
+.emotion-3:empty {
+  display: none;
+}
+
 .emotion-0 {
   display: block;
   padding: 16px 20px;
@@ -4274,6 +5497,35 @@ exports[`Storyshots UI|Notifications/Notifications placement 1`] = `
   display: none;
 }
 
+.emotion-0 {
+  display: block;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-3 {
+  z-index: 10;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+}
+
+.emotion-3 > * + * {
+  margin-top: 10px;
+}
+
+.emotion-3:empty {
+  display: none;
+}
+
 <div
   style="width:240px;margin:1rem"
 >
@@ -4301,6 +5553,36 @@ exports[`Storyshots UI|Notifications/Notifications placement 1`] = `
 `;
 
 exports[`Storyshots UI|Notifications/Notifications single 1`] = `
+.emotion-0 {
+  display: block;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0.95);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-1 {
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+
+.emotion-1 > * + * {
+  margin-top: 10px;
+}
+
+.emotion-1:empty {
+  display: none;
+}
+
 .emotion-0 {
   display: block;
   padding: 16px 20px;
@@ -4455,6 +5737,84 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
   fill: #444444;
 }
 
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+  font-weight: 700;
+}
+
+.emotion-6 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-1 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-1 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-1:hover svg path,
+.emotion-1:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-1:active {
+  color: #028ee6;
+}
+
+.emotion-1:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-1 svg path {
+  fill: #999999;
+}
+
+.emotion-1:hover {
+  color: #666666;
+}
+
+.emotion-1:hover svg path {
+  fill: #666666;
+}
+
+.emotion-1:active {
+  color: #444444;
+}
+
+.emotion-1:active svg path {
+  fill: #444444;
+}
+
 <div
   style="width:600px;margin:2rem auto"
 >
@@ -4496,6 +5856,498 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
 `;
 
 exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
+.emotion-100 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-8 {
+  overflow-y: hidden;
+  overflow-x: auto;
+  color: #999999;
+  width: 100%;
+  height: 40px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+  background: #FFFFFF;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 40px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-2 > * {
+  margin-left: 15px;
+}
+
+.emotion-1 {
+  overflow: hidden;
+}
+
+.emotion-1:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-0 {
+  white-space: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  height: 40px;
+  line-height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  font-size: 13px;
+  color: #1EA7FD;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-0:focus {
+  outline: 0 none;
+  border-bottom-color: #1EA7FD;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 30px;
+}
+
+.emotion-6 > * {
+  margin-right: 15px;
+}
+
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-99 {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  height: calc(100% - 40px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  overflow: auto;
+}
+
+.emotion-99 > *:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+.emotion-5 {
+  height: 40px;
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  border: 0 solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
+  transition: color 0.2s linear,border-bottom-color 0.2s linear;
+}
+
+.emotion-5:hover,
+.emotion-5:focus {
+  outline: 0 none;
+  color: #1EA7FD;
+}
+
+.emotion-5 > svg {
+  width: 15px;
+}
+
+.emotion-96 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+  font-weight: 700;
+}
+
+.emotion-96 > * + * {
+  margin-left: 20px;
+}
+
+.emotion-91 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+  color: #999999;
+}
+
+.emotion-91 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-91:hover,
+.emotion-91:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-91:hover svg path,
+.emotion-91:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-91:active {
+  color: #028ee6;
+}
+
+.emotion-91:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-91 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-91 svg path {
+  fill: #999999;
+}
+
+.emotion-91:hover {
+  color: #666666;
+}
+
+.emotion-91:hover svg path {
+  fill: #666666;
+}
+
+.emotion-91:active {
+  color: #444444;
+}
+
+.emotion-91:active svg path {
+  fill: #444444;
+}
+
+.emotion-98 {
+  display: block;
+}
+
+.emotion-97 {
+  font-size: 14px;
+  padding: 3rem 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emotion-9 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 900;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-88 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(auto,auto);
+  margin-bottom: 20px;
+}
+
+.emotion-12 {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  display: grid;
+  margin: 10px 0;
+  grid-template-columns: 1fr 1fr 12px;
+}
+
+.emotion-12 > *:last-of-type {
+  grid-column: 2 / 2;
+  justify-self: flex-end;
+  grid-row: 1;
+}
+
+.emotion-10 {
+  font-weight: 700;
+}
+
+.emotion-17 {
+  padding: 6px 0;
+  border-top: 1px solid rgba(0,0,0,.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr 0px;
+}
+
+.emotion-13 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.emotion-14 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  display: inline;
+  text-align: left;
+  min-height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-self: flex-end;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: center;
+}
+
+.emotion-14:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-14[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-14:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-14::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-14::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-14:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-14::placeholder {
+  color: #999999;
+}
+
+.emotion-16 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  opacity: 0;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10px;
+  height: 14px;
+  width: 14px;
+}
+
+.emotion-89 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-89 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-89 svg path {
+  fill: currentColor;
+}
+
+.emotion-89:hover {
+  background: #f2f2f2;
+}
+
+.emotion-89:active {
+  background: #FFFFFF;
+}
+
+.emotion-89:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-89:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 .emotion-100 {
   width: 100%;
   height: 100%;
@@ -5619,6 +7471,93 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
   display: block;
 }
 
+.emotion-0 {
+  fill: currentColor;
+}
+
+.emotion-16 {
+  min-width: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.emotion-5 {
+  font-size: 12px;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  color: rgba(51,51,51,0.5);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 18px;
+  padding: 7px 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-5 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-5:hover {
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-5:hover svg {
+  opacity: 1;
+}
+
+.emotion-1 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  height: 10px;
+  width: 10px;
+  margin-left: -5px;
+  margin-right: -5px;
+  display: block;
+  color: #1EA7FD;
+}
+
+.emotion-4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-3 {
+  color: #333333;
+}
+
+.emotion-6 {
+  height: 10px;
+  width: 10px;
+  margin-left: -5px;
+  margin-right: -5px;
+  display: block;
+}
+
 <div
   class="emotion-16"
 >
@@ -5694,6 +7633,366 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-78 {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-77 {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.emotion-77 .simplebar-track.simplebar-vertical {
+  right: 4px;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 20px 20px 12px;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-2 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-1 {
+  display: block;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 {
+  width: auto;
+  height: 22px;
+  display: block;
+}
+
+.emotion-6 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-5 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-5 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
+.emotion-5 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-5:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-5:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-8 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+}
+
+.emotion-10 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #774dd7;
+}
+
+.emotion-76 {
+  margin-top: 8px;
+}
+
+.emotion-11 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+}
+
+.emotion-11.emotion-11 > * {
+  -webkit-animation: animation-0 1.5s ease-in-out infinite;
+  animation: animation-0 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
+  color: transparent;
+  cursor: progress;
+}
+
+.emotion-11.emotion-11 > span {
+  border-color: transparent;
+}
+
+.emotion-19 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 24px;
+}
+
+.emotion-19.emotion-19 > * {
+  -webkit-animation: animation-0 1.5s ease-in-out infinite;
+  animation: animation-0 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
+  color: transparent;
+  cursor: progress;
+}
+
+.emotion-19.emotion-19 > span {
+  border-color: transparent;
+}
+
+.emotion-27 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 39px;
+}
+
+.emotion-27.emotion-27 > * {
+  -webkit-animation: animation-0 1.5s ease-in-out infinite;
+  animation: animation-0 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
+  color: transparent;
+  cursor: progress;
+}
+
+.emotion-27.emotion-27 > span {
+  border-color: transparent;
+}
+
+.emotion-31 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 54px;
+}
+
+.emotion-31.emotion-31 > * {
+  -webkit-animation: animation-0 1.5s ease-in-out infinite;
+  animation: animation-0 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
+  color: transparent;
+  cursor: progress;
+}
+
+.emotion-31.emotion-31 > span {
+  border-color: transparent;
+}
+
 @keyframes animation-0 {
   0%, 100% {
     opacity: 1;
@@ -6994,6 +9293,491 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   color: #774dd7;
 }
 
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-49 {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-48 {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.emotion-48 .simplebar-track.simplebar-vertical {
+  right: 4px;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 20px 20px 12px;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-2 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-1 {
+  display: block;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 {
+  width: auto;
+  height: 22px;
+  display: block;
+}
+
+.emotion-6 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-5 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-5 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
+.emotion-5 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-5:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-5:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-14 {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  border-bottom: 1px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.2);
+  outline: 0;
+  position: relative;
+  margin: 0 20px 1rem;
+}
+
+.emotion-14 input {
+  color: #333333;
+  font-size: 13px;
+  line-height: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 20px;
+}
+
+.emotion-14 > svg {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  height: 12px;
+  width: 12px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  background: transparent;
+}
+
+.emotion-14 > svg path {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  fill: currentColor;
+  opacity: 0.3;
+}
+
+.emotion-8 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  box-sizing: inherit;
+  display: block;
+  outline: none;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+.emotion-8:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-8::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-8::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-8:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-8::placeholder {
+  color: #999999;
+}
+
+.emotion-8:placeholder-shown ~ button {
+  opacity: 0;
+}
+
+.emotion-13 {
+  border: 0;
+  margin: 0;
+  padding: 4px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: rgba(0,0,0,.1);
+  border-radius: 1em;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 2px;
+}
+
+.emotion-13 > svg {
+  display: block;
+  height: 8px;
+  width: 8px;
+  color: #333333;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+}
+
+.emotion-13:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+.emotion-32 + section {
+  margin-top: 20px;
+}
+
+.emotion-32:last-of-type {
+  margin-bottom: 40px;
+}
+
+.emotion-15 {
+  -webkit-letter-spacing: 0.35em;
+  -moz-letter-spacing: 0.35em;
+  -ms-letter-spacing: 0.35em;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 11px;
+  line-height: 24px;
+  color: rgba(51,51,51,0.5);
+  margin: 0 20px;
+}
+
+.emotion-20 {
+  color: inherit;
+  display: block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-19 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-19:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-16 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.emotion-18 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #1ea7fd;
+}
+
+.emotion-24 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 24px;
+  cursor: default;
+  background: #1EA7FD;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.emotion-21 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+  border-left-color: transparent;
+}
+
+.emotion-23 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #37d5d3;
+  color: inherit;
+}
+
+.emotion-29 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 24px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-29:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-28 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #37d5d3;
+}
+
+.emotion-34 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+}
+
+.emotion-43 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #774dd7;
+}
+
 <nav
   class="container emotion-49"
 >
@@ -7462,6 +10246,141 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
   max-width: 100%;
 }
 
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-2 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-1 {
+  display: block;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-6 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-5 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-5 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
+.emotion-5 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-5:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-5:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-0 {
+  width: auto;
+  display: block;
+  max-width: 100%;
+}
+
 <div
   style="width:240px;margin:1rem"
 >
@@ -7504,6 +10423,135 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
+.emotion-3 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-2 {
+  fill: currentColor;
+}
+
+.emotion-1 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-1 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-0 {
+  display: block;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-5 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-4 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-4 svg path {
+  fill: currentColor;
+}
+
+.emotion-4 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-4:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-4:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .emotion-3 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
@@ -7793,6 +10841,128 @@ exports[`Storyshots UI|Sidebar/SidebarHeading longText 1`] = `
   justify-content: space-between;
 }
 
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-0 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-4 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-3 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-3 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-3 svg path {
+  fill: currentColor;
+}
+
+.emotion-3 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-3:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-3:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 <div
   style="width:240px;margin:1rem"
 >
@@ -7826,6 +10996,152 @@ exports[`Storyshots UI|Sidebar/SidebarHeading longText 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-2 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-1 {
+  display: block;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 {
+  width: auto;
+  height: 22px;
+  display: block;
+}
+
+.emotion-6 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-5 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-5 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
+.emotion-5 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-5:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-5:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-5:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background: #66BF3C;
+}
+
 .emotion-4 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
@@ -8177,6 +11493,128 @@ exports[`Storyshots UI|Sidebar/SidebarHeading onlyText 1`] = `
   justify-content: space-between;
 }
 
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-0 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-4 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-3 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-3 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-3 svg path {
+  fill: currentColor;
+}
+
+.emotion-3 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-3:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-3:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 <div
   style="width:240px;margin:1rem"
 >
@@ -8210,6 +11648,141 @@ exports[`Storyshots UI|Sidebar/SidebarHeading onlyText 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-2 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-1 {
+  display: block;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0 {
+  width: auto;
+  height: 22px;
+  display: block;
+}
+
+.emotion-6 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-5 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-5 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
+.emotion-5 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-5:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-5:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .emotion-4 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
@@ -8556,6 +12129,134 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standardNoLink 1`] = `
   justify-content: space-between;
 }
 
+.emotion-3 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-2 {
+  fill: currentColor;
+}
+
+.emotion-1 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 28px;
+}
+
+.emotion-1 > * {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.emotion-0 {
+  width: auto;
+  height: 22px;
+  display: block;
+}
+
+.emotion-5 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  padding: 7px;
+}
+
+.emotion-4 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-4 svg path {
+  fill: currentColor;
+}
+
+.emotion-4 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-4:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-4:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 <div
   style="width:240px;margin:1rem"
 >
@@ -8634,6 +12335,66 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standardNoLink 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-3 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-3:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #1ea7fd;
+}
+
+.emotion-0 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+}
+
 .emotion-1 {
   fill: currentColor;
 }
@@ -8783,6 +12544,69 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   color: #1ea7fd;
 }
 
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-3 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-3:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-0 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #1ea7fd;
+}
+
 <div
   style="width:240px;margin:1rem;border:1px dotted #ccc"
 >
@@ -8809,6 +12633,66 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-3 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-3:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-0 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+}
+
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #774dd7;
+}
+
 .emotion-1 {
   fill: currentColor;
 }
@@ -9000,6 +12884,111 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
   border-color: transparent;
 }
 
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+}
+
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #774dd7;
+}
+
+.emotion-3 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+}
+
+.emotion-3.emotion-3 > * {
+  -webkit-animation: animation-0 1.5s ease-in-out infinite;
+  animation: animation-0 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
+  color: transparent;
+  cursor: progress;
+}
+
+.emotion-3.emotion-3 > span {
+  border-color: transparent;
+}
+
 <div
   style="width:240px;margin:1rem;border:1px dotted #ccc"
 >
@@ -9026,6 +13015,210 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-3 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-3:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-4 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.emotion-14 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #1ea7fd;
+}
+
+.emotion-16 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+  border-left-color: transparent;
+}
+
+.emotion-11 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 24px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-11:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-18 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #37d5d3;
+}
+
+.emotion-0 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+}
+
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #774dd7;
+}
+
+.emotion-15 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 39px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-15:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-19 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 54px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-19:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
 .emotion-1 {
   fill: currentColor;
 }
@@ -9395,6 +13588,67 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   color: #37d5d3;
 }
 
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-3 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-3:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-0 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+  border-left-color: transparent;
+}
+
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #37d5d3;
+}
+
 <div
   style="width:240px;margin:1rem;border:1px dotted #ccc"
 >
@@ -9421,6 +13675,65 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+  border-left-color: transparent;
+}
+
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #37d5d3;
+  color: inherit;
+}
+
+.emotion-3 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+  cursor: default;
+  background: #1EA7FD;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
 .emotion-1 {
   fill: currentColor;
 }
@@ -9566,6 +13879,66 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   transition: transform .1s ease-out;
 }
 
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-3 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-3:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #1ea7fd;
+}
+
+.emotion-0 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+}
+
 <div
   style="width:240px;margin:1rem;border:1px dotted #ccc"
 >
@@ -9592,6 +13965,129 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  box-sizing: inherit;
+  display: block;
+  outline: none;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-0:placeholder-shown ~ button {
+  opacity: 0;
+}
+
+.emotion-5 {
+  border: 0;
+  margin: 0;
+  padding: 4px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: rgba(0,0,0,.1);
+  border-radius: 1em;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 2px;
+}
+
+.emotion-5 > svg {
+  display: block;
+  height: 8px;
+  width: 8px;
+  color: #333333;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+}
+
+.emotion-5:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+.emotion-6 {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  border-bottom: 1px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.4);
+  outline: 0;
+  position: relative;
+}
+
+.emotion-6 input {
+  color: #333333;
+  font-size: 13px;
+  line-height: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 20px;
+}
+
+.emotion-6 > svg {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  height: 12px;
+  width: 12px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  background: transparent;
+}
+
+.emotion-6 > svg path {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  fill: currentColor;
+  opacity: 1;
+}
+
 .emotion-2 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
@@ -9881,6 +14377,129 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
   opacity: 1;
 }
 
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  box-sizing: inherit;
+  display: block;
+  outline: none;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-0:placeholder-shown ~ button {
+  opacity: 0;
+}
+
+.emotion-5 {
+  border: 0;
+  margin: 0;
+  padding: 4px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: rgba(0,0,0,.1);
+  border-radius: 1em;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 2px;
+}
+
+.emotion-5 > svg {
+  display: block;
+  height: 8px;
+  width: 8px;
+  color: #333333;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+}
+
+.emotion-5:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+.emotion-6 {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  border-bottom: 1px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.4);
+  outline: 0;
+  position: relative;
+}
+
+.emotion-6 input {
+  color: #333333;
+  font-size: 13px;
+  line-height: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 20px;
+}
+
+.emotion-6 > svg {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  height: 12px;
+  width: 12px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  background: transparent;
+}
+
+.emotion-6 > svg path {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  fill: currentColor;
+  opacity: 1;
+}
+
 <div
   style="width:240px;margin:1rem;padding:1rem;background:#999"
 >
@@ -9923,6 +14542,129 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  box-sizing: inherit;
+  display: block;
+  outline: none;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-0:placeholder-shown ~ button {
+  opacity: 0;
+}
+
+.emotion-5 {
+  border: 0;
+  margin: 0;
+  padding: 4px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: rgba(0,0,0,.1);
+  border-radius: 1em;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 2px;
+}
+
+.emotion-5 > svg {
+  display: block;
+  height: 8px;
+  width: 8px;
+  color: #333333;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+}
+
+.emotion-5:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+.emotion-6 {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  border-bottom: 1px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.2);
+  outline: 0;
+  position: relative;
+}
+
+.emotion-6 input {
+  color: #333333;
+  font-size: 13px;
+  line-height: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 20px;
+}
+
+.emotion-6 > svg {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  height: 12px;
+  width: 12px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  background: transparent;
+}
+
+.emotion-6 > svg path {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  fill: currentColor;
+  opacity: 0.3;
+}
+
 .emotion-2 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
@@ -10149,6 +14891,67 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
   margin-right: 0.4em;
 }
 
+.emotion-4 {
+  padding: 30px;
+  text-align: center;
+  color: #333333;
+  font-size: 13px;
+}
+
+.emotion-0 {
+  font-weight: 700;
+}
+
+.emotion-6 > * {
+  margin-top: 10px;
+}
+
+.emotion-6 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-2 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-2 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-2:hover,
+.emotion-2:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-2:hover svg path,
+.emotion-2:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-2:active {
+  color: #028ee6;
+}
+
+.emotion-2:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-2 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
 <div
   class="emotion-6"
 >
@@ -10185,6 +14988,218 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+@keyframes animation-0 {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+}
+
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #774dd7;
+}
+
+.emotion-3 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+}
+
+.emotion-3.emotion-3 > * {
+  -webkit-animation: animation-0 1.5s ease-in-out infinite;
+  animation: animation-0 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
+  color: transparent;
+  cursor: progress;
+}
+
+.emotion-3.emotion-3 > span {
+  border-color: transparent;
+}
+
+.emotion-11 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 24px;
+}
+
+.emotion-11.emotion-11 > * {
+  -webkit-animation: animation-0 1.5s ease-in-out infinite;
+  animation: animation-0 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
+  color: transparent;
+  cursor: progress;
+}
+
+.emotion-11.emotion-11 > span {
+  border-color: transparent;
+}
+
+.emotion-19 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 39px;
+}
+
+.emotion-19.emotion-19 > * {
+  -webkit-animation: animation-0 1.5s ease-in-out infinite;
+  animation: animation-0 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
+  color: transparent;
+  cursor: progress;
+}
+
+.emotion-19.emotion-19 > span {
+  border-color: transparent;
+}
+
+.emotion-23 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 54px;
+}
+
+.emotion-23.emotion-23 > * {
+  -webkit-animation: animation-0 1.5s ease-in-out infinite;
+  animation: animation-0 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
+  color: transparent;
+  cursor: progress;
+}
+
+.emotion-23.emotion-23 > span {
+  border-color: transparent;
+}
+
+.emotion-69 > * {
+  margin-top: 10px;
+}
+
+.emotion-69 > *:first-of-type {
+  margin-top: 0;
+}
+
 @keyframes animation-0 {
   0%, 100% {
     opacity: 1;
@@ -11095,6 +16110,370 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
   font-weight: 700;
 }
 
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-6 {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  border-bottom: 1px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.2);
+  outline: 0;
+  position: relative;
+  margin: 0 20px 1rem;
+}
+
+.emotion-6 input {
+  color: #333333;
+  font-size: 13px;
+  line-height: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 20px;
+}
+
+.emotion-6 > svg {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  height: 12px;
+  width: 12px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  background: transparent;
+}
+
+.emotion-6 > svg path {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  fill: currentColor;
+  opacity: 0.3;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  box-sizing: inherit;
+  display: block;
+  outline: none;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-0:placeholder-shown ~ button {
+  opacity: 0;
+}
+
+.emotion-5 {
+  border: 0;
+  margin: 0;
+  padding: 4px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: rgba(0,0,0,.1);
+  border-radius: 1em;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 2px;
+}
+
+.emotion-5 > svg {
+  display: block;
+  height: 8px;
+  width: 8px;
+  color: #333333;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+}
+
+.emotion-5:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+.emotion-39 + section {
+  margin-top: 20px;
+}
+
+.emotion-39:last-of-type {
+  margin-bottom: 40px;
+}
+
+.emotion-11 {
+  color: inherit;
+  display: block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-10 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-10:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-7 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.emotion-19 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #1ea7fd;
+}
+
+.emotion-12 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+  border-left-color: transparent;
+}
+
+.emotion-24 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #37d5d3;
+  color: inherit;
+}
+
+.emotion-15 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 24px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-15:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-14 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #37d5d3;
+}
+
+.emotion-34 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+}
+
+.emotion-9 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #774dd7;
+}
+
+.emotion-30 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 39px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-30:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-41 > * {
+  margin-top: 10px;
+}
+
+.emotion-41 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-25 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 39px;
+  cursor: default;
+  background: #1EA7FD;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
 <div
   class="emotion-41"
 >
@@ -11312,6 +16691,355 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
 `;
 
 exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
+.emotion-2 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-1 {
+  fill: currentColor;
+}
+
+.emotion-6 {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  border-bottom: 1px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.2);
+  outline: 0;
+  position: relative;
+  margin: 0 20px 1rem;
+}
+
+.emotion-6 input {
+  color: #333333;
+  font-size: 13px;
+  line-height: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 20px;
+}
+
+.emotion-6 > svg {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  height: 12px;
+  width: 12px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  background: transparent;
+}
+
+.emotion-6 > svg path {
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  fill: currentColor;
+  opacity: 0.3;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  box-sizing: inherit;
+  display: block;
+  outline: none;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+.emotion-0:placeholder-shown ~ button {
+  opacity: 0;
+}
+
+.emotion-5 {
+  border: 0;
+  margin: 0;
+  padding: 4px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: rgba(0,0,0,.1);
+  border-radius: 1em;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 2px;
+}
+
+.emotion-5 > svg {
+  display: block;
+  height: 8px;
+  width: 8px;
+  color: #333333;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+}
+
+.emotion-5:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+.emotion-24 + section {
+  margin-top: 20px;
+}
+
+.emotion-24:last-of-type {
+  margin-bottom: 40px;
+}
+
+.emotion-7 {
+  -webkit-letter-spacing: 0.35em;
+  -moz-letter-spacing: 0.35em;
+  -ms-letter-spacing: 0.35em;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 11px;
+  line-height: 24px;
+  color: rgba(51,51,51,0.5);
+  margin: 0 20px;
+}
+
+.emotion-12 {
+  color: inherit;
+  display: block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-11 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 9px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-11:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-8 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.emotion-10 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #1ea7fd;
+}
+
+.emotion-16 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 24px;
+  cursor: default;
+  background: #1EA7FD;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.emotion-13 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+  border-left-color: transparent;
+}
+
+.emotion-15 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #37d5d3;
+  color: inherit;
+}
+
+.emotion-21 {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: transparent;
+  padding-left: 24px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.emotion-21:hover {
+  color: #333333;
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-20 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #37d5d3;
+}
+
+.emotion-26 {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 3.5px solid rgba(0,0,0,0.3);
+  -webkit-transition: -webkit-transform .1s ease-out;
+  -webkit-transition: transform .1s ease-out;
+  transition: transform .1s ease-out;
+}
+
+.emotion-35 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  color: #774dd7;
+}
+
+.emotion-40 > * {
+  margin-top: 10px;
+}
+
+.emotion-40 > *:first-of-type {
+  margin-top: 0;
+}
+
 .emotion-2 {
   shape-rendering: inherit;
   -webkit-transform: translate3d(0,0,0);
