@@ -31,6 +31,7 @@
     "escape-html": "^1.0.3",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
+    "lodash.debounce": "^4.0.8",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
     "react-color": "^2.17.0",
