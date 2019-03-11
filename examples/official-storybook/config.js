@@ -73,22 +73,21 @@ function importAll(context) {
   const storyStore = window.__STORYBOOK_CLIENT_API__._storyStore; // eslint-disable-line no-undef, no-underscore-dangle
 
   context.keys().forEach(filename => {
-    const out = context(filename);
+    const fileExports = context(filename);
 
     // A old-style story file
-    if (!out.default) {
+    if (!fileExports.default) {
       return;
     }
 
-    const fileExports = out;
     const { default: component, ...examples } = fileExports;
-
-    const componentOptions =
-      component.prototype && component.prototype.isReactComponent ? { component } : component;
+    let componentOptions = component;
+    if (component.prototype && component.prototype.isReactComponent) {
+      componentOptions = { component };
+    }
     const kindName = componentOptions.title || componentOptions.component.displayName;
-    const m = componentOptions.module;
 
-    if (!m && previousExports[filename]) {
+    if (previousExports[filename]) {
       if (previousExports[filename] === fileExports) {
         return;
       }
@@ -99,7 +98,7 @@ function importAll(context) {
     }
 
     // We pass true here to avoid the warning about HMR. It's cool clientApi, we got this
-    const kind = storiesOf(kindName, m || true);
+    const kind = storiesOf(kindName, true);
 
     (componentOptions.decorators || []).forEach(decorator => {
       kind.addDecorator(decorator);
@@ -114,9 +113,7 @@ function importAll(context) {
       kind.add(title, example, parameters);
     });
 
-    if (!m) {
-      previousExports[filename] = fileExports;
-    }
+    previousExports[filename] = fileExports;
   });
 }
 
