@@ -40,6 +40,7 @@ export const color = {
 
 export const background = {
   app: '#F6F9FC',
+  bar: '#FFFFFF',
   content: color.lightest,
   hoverable: 'rgba(0,0,0,.05)', // hover state for items in a list
 
