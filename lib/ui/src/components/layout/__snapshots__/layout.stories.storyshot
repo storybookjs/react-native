@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI|Layout/Desktop bottom Panel 1`] = `
-Array [
-  .emotion-0 {
+.emotion-0 {
   z-index: 10;
   position: absolute;
   top: 0;
@@ -44,11 +43,118 @@ Array [
   background-repeat: no-repeat;
 }
 
-<div
-    class="react-draggable emotion-0"
-    style="touch-action:none;transform:translate(200px,0px)"
-  />,
-  .emotion-0 {
+.emotion-3 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-2 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-5 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 9;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-4 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-6 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-1 {
   z-index: 10;
   position: absolute;
   top: 0;
@@ -79,22 +185,18 @@ Array [
   background-repeat: no-repeat;
 }
 
-.emotion-0:hover {
+.emotion-1:hover {
   color: #1EA7FD;
 }
 
-.emotion-0:hover {
+.emotion-1:hover {
   background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
   background-size: 100% 50px;
   background-position: 50% 0;
   background-repeat: no-repeat;
 }
 
-<div
-    class="react-draggable emotion-0"
-    style="touch-action:none;left:210px;width:804px;margin-top:-10px;transform:translate(0px,368px)"
-  />,
-  .emotion-1 {
+.emotion-7 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -102,41 +204,29 @@ Array [
   width: 100%;
   height: 100%;
   opacity: 1;
+  border-top: 1px solid rgba(0,0,0,.1);
   -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
   -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-0 {
-  background: hotpink;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 <div
-    class="emotion-1"
+  style="min-height:600px;min-width:600px"
+>
+  <div
+    class="react-draggable emotion-0"
+    style="touch-action:none;transform:translate(200px,0px)"
+  />
+  <div
+    class="react-draggable emotion-1"
+    style="touch-action:none;left:210px;width:804px;margin-top:-10px;transform:translate(0px,368px)"
+  />
+  <div
+    class="emotion-3"
     style="height:768px;left:0;top:0;width:210px"
   >
     <div
-      class="emotion-0"
+      class="emotion-2"
       color="hotpink"
     >
       <h2
@@ -159,108 +249,20 @@ Array [
 }
       </pre>
     </div>
-  </div>,
-  .emotion-1 {
-  position: absolute;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  z-index: 9;
-  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
-  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
-  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
-}
-
-.emotion-4 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #FFFFFF;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-0 {
-  background: deepskyblue;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.emotion-2 {
-  background: orangered;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.emotion-3 {
-  position: absolute;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  border-top: 1px solid rgba(0,0,0,.1);
-  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
-  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
-  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
-}
-
-<div
-    class="emotion-1"
+  </div>
+  <div
+    class="emotion-5"
     style="height:748px;left:210px;top:10px;width:804px"
   >
     <div
-      class="emotion-4"
+      class="emotion-8"
     >
       <div
-        class="emotion-1"
+        class="emotion-5"
         style="height:358px;left:0;top:0;width:804px"
       >
         <div
-          class="emotion-0"
+          class="emotion-4"
           color="deepskyblue"
         >
           <h2
@@ -286,11 +288,11 @@ Array [
         </div>
       </div>
       <div
-        class="emotion-3"
+        class="emotion-7"
         style="height:390px;left:0;top:358px;width:804px"
       >
         <div
-          class="emotion-2"
+          class="emotion-6"
           color="orangered"
         >
           <h2
@@ -316,13 +318,12 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots UI|Layout/Desktop default 1`] = `
-Array [
-  .emotion-0 {
+.emotion-0 {
   z-index: 10;
   position: absolute;
   top: 0;
@@ -364,57 +365,7 @@ Array [
   background-repeat: no-repeat;
 }
 
-<div
-    class="react-draggable emotion-0"
-    style="touch-action:none;transform:translate(200px,0px)"
-  />,
-  .emotion-0 {
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: rgba(0,0,0,.1);
-  overflow: hidden;
-  -webkit-transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
-  transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
-  cursor: col-resize;
-  height: 100%;
-  width: 10px;
-  margin-left: 0;
-  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
-  background-size: 50px 100%;
-  background-position: 10px 50%;
-  background-repeat: no-repeat;
-}
-
-.emotion-0:hover {
-  color: #1EA7FD;
-}
-
-.emotion-0:hover {
-  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
-  background-size: 50px 100%;
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-}
-
-<div
-    class="react-draggable emotion-0"
-    style="touch-action:none;margin-left:-10px;transform:translate(624px,0px)"
-  />,
-  .emotion-1 {
+.emotion-3 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -427,7 +378,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-0 {
+.emotion-2 {
   background: hotpink;
   position: absolute;
   top: 0;
@@ -451,36 +402,7 @@ Array [
   overflow: hidden;
 }
 
-<div
-    class="emotion-1"
-    style="height:768px;left:0;top:0;width:210px"
-  >
-    <div
-      class="emotion-0"
-      color="hotpink"
-    >
-      <h2
-        style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-      >
-        1
-      </h2>
-      <pre>
-        {
-  "debug": {
-    "animate": true,
-    "hidden": false,
-    "position": {
-      "height": 768,
-      "left": 0,
-      "top": 0,
-      "width": 210
-    }
-  }
-}
-      </pre>
-    </div>
-  </div>,
-  .emotion-1 {
+.emotion-5 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -494,7 +416,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-4 {
+.emotion-8 {
   position: absolute;
   top: 0;
   left: 0;
@@ -506,7 +428,7 @@ Array [
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-0 {
+.emotion-4 {
   background: deepskyblue;
   position: absolute;
   top: 0;
@@ -530,7 +452,7 @@ Array [
   overflow: hidden;
 }
 
-.emotion-3 {
+.emotion-7 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -544,7 +466,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-2 {
+.emotion-6 {
   background: orangered;
   position: absolute;
   top: 0;
@@ -569,18 +491,58 @@ Array [
 }
 
 <div
-    class="emotion-1"
+  style="min-height:600px;min-width:600px"
+>
+  <div
+    class="react-draggable emotion-0"
+    style="touch-action:none;transform:translate(200px,0px)"
+  />
+  <div
+    class="react-draggable emotion-0"
+    style="touch-action:none;margin-left:-10px;transform:translate(624px,0px)"
+  />
+  <div
+    class="emotion-3"
+    style="height:768px;left:0;top:0;width:210px"
+  >
+    <div
+      class="emotion-2"
+      color="hotpink"
+    >
+      <h2
+        style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+      >
+        1
+      </h2>
+      <pre>
+        {
+  "debug": {
+    "animate": true,
+    "hidden": false,
+    "position": {
+      "height": 768,
+      "left": 0,
+      "top": 0,
+      "width": 210
+    }
+  }
+}
+      </pre>
+    </div>
+  </div>
+  <div
+    class="emotion-5"
     style="height:748px;left:210px;top:10px;width:804px"
   >
     <div
-      class="emotion-4"
+      class="emotion-8"
     >
       <div
-        class="emotion-1"
+        class="emotion-5"
         style="height:748px;left:0;top:0;width:414px"
       >
         <div
-          class="emotion-0"
+          class="emotion-4"
           color="deepskyblue"
         >
           <h2
@@ -606,11 +568,11 @@ Array [
         </div>
       </div>
       <div
-        class="emotion-3"
+        class="emotion-7"
         style="height:748px;left:414px;top:0;width:390px"
       >
         <div
-          class="emotion-2"
+          class="emotion-6"
           color="orangered"
         >
           <h2
@@ -636,8 +598,8 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots UI|Layout/Desktop full 1`] = `
@@ -728,25 +690,28 @@ exports[`Storyshots UI|Layout/Desktop full 1`] = `
 }
 
 <div
-  class="emotion-1"
+  style="min-height:600px;min-width:600px"
 >
   <div
-    class="emotion-4"
+    class="emotion-1"
   >
     <div
-      class="emotion-1"
+      class="emotion-4"
     >
       <div
-        class="emotion-0"
-        color="deepskyblue"
+        class="emotion-1"
       >
-        <h2
-          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+        <div
+          class="emotion-0"
+          color="deepskyblue"
         >
-          1
-        </h2>
-        <pre>
-          {
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
   "id": "main",
   "debug": {
     "animate": true,
@@ -754,24 +719,24 @@ exports[`Storyshots UI|Layout/Desktop full 1`] = `
     "position": {}
   }
 }
-        </pre>
+          </pre>
+        </div>
       </div>
-    </div>
-    <div
-      class="emotion-3"
-      style="height:748px;left:614px;top:0;width:390px"
-    >
       <div
-        class="emotion-2"
-        color="orangered"
+        class="emotion-3"
+        style="height:748px;left:614px;top:0;width:390px"
       >
-        <h2
-          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+        <div
+          class="emotion-2"
+          color="orangered"
         >
-          1
-        </h2>
-        <pre>
-          {
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
   "debug": {
     "animate": true,
     "align": "right",
@@ -784,7 +749,8 @@ exports[`Storyshots UI|Layout/Desktop full 1`] = `
     }
   }
 }
-        </pre>
+          </pre>
+        </div>
       </div>
     </div>
   </div>
@@ -792,8 +758,7 @@ exports[`Storyshots UI|Layout/Desktop full 1`] = `
 `;
 
 exports[`Storyshots UI|Layout/Desktop no Nav 1`] = `
-Array [
-  .emotion-0 {
+.emotion-0 {
   z-index: 10;
   position: absolute;
   top: 0;
@@ -835,11 +800,7 @@ Array [
   background-repeat: no-repeat;
 }
 
-<div
-    class="react-draggable emotion-0"
-    style="touch-action:none;margin-left:-10px;transform:translate(624px,0px)"
-  />,
-  .emotion-1 {
+.emotion-2 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -853,7 +814,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-4 {
+.emotion-5 {
   position: absolute;
   top: 0;
   left: 0;
@@ -865,7 +826,7 @@ Array [
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-0 {
+.emotion-1 {
   background: deepskyblue;
   position: absolute;
   top: 0;
@@ -889,7 +850,7 @@ Array [
   overflow: hidden;
 }
 
-.emotion-3 {
+.emotion-4 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -903,7 +864,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-2 {
+.emotion-3 {
   background: orangered;
   position: absolute;
   top: 0;
@@ -928,18 +889,25 @@ Array [
 }
 
 <div
-    class="emotion-1"
+  style="min-height:600px;min-width:600px"
+>
+  <div
+    class="react-draggable emotion-0"
+    style="touch-action:none;margin-left:-10px;transform:translate(624px,0px)"
+  />
+  <div
+    class="emotion-2"
     style="height:748px;left:10px;top:10px;width:1004px"
   >
     <div
-      class="emotion-4"
+      class="emotion-5"
     >
       <div
-        class="emotion-1"
+        class="emotion-2"
         style="height:748px;left:0;top:0;width:614px"
       >
         <div
-          class="emotion-0"
+          class="emotion-1"
           color="deepskyblue"
         >
           <h2
@@ -965,11 +933,11 @@ Array [
         </div>
       </div>
       <div
-        class="emotion-3"
+        class="emotion-4"
         style="height:748px;left:614px;top:0;width:390px"
       >
         <div
-          class="emotion-2"
+          class="emotion-3"
           color="orangered"
         >
           <h2
@@ -995,13 +963,12 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots UI|Layout/Desktop no Panel 1`] = `
-Array [
-  .emotion-0 {
+.emotion-0 {
   z-index: 10;
   position: absolute;
   top: 0;
@@ -1043,11 +1010,7 @@ Array [
   background-repeat: no-repeat;
 }
 
-<div
-    class="react-draggable emotion-0"
-    style="touch-action:none;transform:translate(200px,0px)"
-  />,
-  .emotion-1 {
+.emotion-2 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -1060,7 +1023,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-0 {
+.emotion-1 {
   background: hotpink;
   position: absolute;
   top: 0;
@@ -1084,36 +1047,7 @@ Array [
   overflow: hidden;
 }
 
-<div
-    class="emotion-1"
-    style="height:768px;left:0;top:0;width:210px"
-  >
-    <div
-      class="emotion-0"
-      color="hotpink"
-    >
-      <h2
-        style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-      >
-        1
-      </h2>
-      <pre>
-        {
-  "debug": {
-    "animate": true,
-    "hidden": false,
-    "position": {
-      "height": 768,
-      "left": 0,
-      "top": 0,
-      "width": 210
-    }
-  }
-}
-      </pre>
-    </div>
-  </div>,
-  .emotion-1 {
+.emotion-4 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -1127,7 +1061,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-4 {
+.emotion-7 {
   position: absolute;
   top: 0;
   left: 0;
@@ -1139,7 +1073,7 @@ Array [
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-0 {
+.emotion-3 {
   background: deepskyblue;
   position: absolute;
   top: 0;
@@ -1163,7 +1097,7 @@ Array [
   overflow: hidden;
 }
 
-.emotion-3 {
+.emotion-6 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -1177,7 +1111,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-2 {
+.emotion-5 {
   background: orangered;
   position: absolute;
   top: 0;
@@ -1202,17 +1136,53 @@ Array [
 }
 
 <div
-    class="emotion-1"
+  style="min-height:600px;min-width:600px"
+>
+  <div
+    class="react-draggable emotion-0"
+    style="touch-action:none;transform:translate(200px,0px)"
+  />
+  <div
+    class="emotion-2"
+    style="height:768px;left:0;top:0;width:210px"
+  >
+    <div
+      class="emotion-1"
+      color="hotpink"
+    >
+      <h2
+        style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+      >
+        1
+      </h2>
+      <pre>
+        {
+  "debug": {
+    "animate": true,
+    "hidden": false,
+    "position": {
+      "height": 768,
+      "left": 0,
+      "top": 0,
+      "width": 210
+    }
+  }
+}
+      </pre>
+    </div>
+  </div>
+  <div
+    class="emotion-4"
     style="height:748px;left:210px;top:10px;width:804px"
   >
     <div
-      class="emotion-4"
+      class="emotion-7"
     >
       <div
-        class="emotion-1"
+        class="emotion-4"
       >
         <div
-          class="emotion-0"
+          class="emotion-3"
           color="deepskyblue"
         >
           <h2
@@ -1233,11 +1203,11 @@ Array [
         </div>
       </div>
       <div
-        class="emotion-3"
+        class="emotion-6"
         style="height:748px;left:414px;top:0;width:390px"
       >
         <div
-          class="emotion-2"
+          class="emotion-5"
           color="orangered"
         >
           <h2
@@ -1263,8 +1233,8 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots UI|Layout/Desktop no Panel, no Nav 1`] = `
@@ -1355,25 +1325,28 @@ exports[`Storyshots UI|Layout/Desktop no Panel, no Nav 1`] = `
 }
 
 <div
-  class="emotion-1"
+  style="min-height:600px;min-width:600px"
 >
   <div
-    class="emotion-4"
+    class="emotion-1"
   >
     <div
-      class="emotion-1"
+      class="emotion-4"
     >
       <div
-        class="emotion-0"
-        color="deepskyblue"
+        class="emotion-1"
       >
-        <h2
-          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+        <div
+          class="emotion-0"
+          color="deepskyblue"
         >
-          1
-        </h2>
-        <pre>
-          {
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
   "id": "main",
   "debug": {
     "animate": true,
@@ -1381,24 +1354,24 @@ exports[`Storyshots UI|Layout/Desktop no Panel, no Nav 1`] = `
     "position": {}
   }
 }
-        </pre>
+          </pre>
+        </div>
       </div>
-    </div>
-    <div
-      class="emotion-3"
-      style="height:748px;left:614px;top:0;width:390px"
-    >
       <div
-        class="emotion-2"
-        color="orangered"
+        class="emotion-3"
+        style="height:748px;left:614px;top:0;width:390px"
       >
-        <h2
-          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+        <div
+          class="emotion-2"
+          color="orangered"
         >
-          1
-        </h2>
-        <pre>
-          {
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
   "debug": {
     "animate": true,
     "align": "right",
@@ -1411,7 +1384,8 @@ exports[`Storyshots UI|Layout/Desktop no Panel, no Nav 1`] = `
     }
   }
 }
-        </pre>
+          </pre>
+        </div>
       </div>
     </div>
   </div>
@@ -1419,8 +1393,7 @@ exports[`Storyshots UI|Layout/Desktop no Panel, no Nav 1`] = `
 `;
 
 exports[`Storyshots UI|Layout/Desktop page 1`] = `
-Array [
-  .emotion-0 {
+.emotion-0 {
   z-index: 10;
   position: absolute;
   top: 0;
@@ -1462,11 +1435,7 @@ Array [
   background-repeat: no-repeat;
 }
 
-<div
-    class="react-draggable emotion-0"
-    style="touch-action:none;transform:translate(200px,0px)"
-  />,
-  .emotion-1 {
+.emotion-2 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -1479,7 +1448,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-0 {
+.emotion-1 {
   background: hotpink;
   position: absolute;
   top: 0;
@@ -1503,36 +1472,7 @@ Array [
   overflow: hidden;
 }
 
-<div
-    class="emotion-1"
-    style="height:768px;left:0;top:0;width:210px"
-  >
-    <div
-      class="emotion-0"
-      color="hotpink"
-    >
-      <h2
-        style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
-      >
-        1
-      </h2>
-      <pre>
-        {
-  "debug": {
-    "animate": true,
-    "hidden": false,
-    "position": {
-      "height": 768,
-      "left": 0,
-      "top": 0,
-      "width": 210
-    }
-  }
-}
-      </pre>
-    </div>
-  </div>,
-  .emotion-6 {
+.emotion-9 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -1546,7 +1486,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-5 {
+.emotion-8 {
   position: absolute;
   top: 0;
   left: 0;
@@ -1558,7 +1498,7 @@ Array [
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-0 {
+.emotion-3 {
   background: deepskyblue;
   position: absolute;
   top: 0;
@@ -1582,7 +1522,7 @@ Array [
   overflow: hidden;
 }
 
-.emotion-2 {
+.emotion-5 {
   background: orangered;
   position: absolute;
   top: 0;
@@ -1606,7 +1546,7 @@ Array [
   overflow: hidden;
 }
 
-.emotion-1 {
+.emotion-4 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -1620,7 +1560,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-3 {
+.emotion-6 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -1634,7 +1574,7 @@ Array [
   transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
-.emotion-4 {
+.emotion-7 {
   background: cyan;
   position: absolute;
   top: 0;
@@ -1659,18 +1599,54 @@ Array [
 }
 
 <div
-    class="emotion-6"
+  style="min-height:600px;min-width:600px"
+>
+  <div
+    class="react-draggable emotion-0"
+    style="touch-action:none;transform:translate(200px,0px)"
+  />
+  <div
+    class="emotion-2"
+    style="height:768px;left:0;top:0;width:210px"
+  >
+    <div
+      class="emotion-1"
+      color="hotpink"
+    >
+      <h2
+        style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+      >
+        1
+      </h2>
+      <pre>
+        {
+  "debug": {
+    "animate": true,
+    "hidden": false,
+    "position": {
+      "height": 768,
+      "left": 0,
+      "top": 0,
+      "width": 210
+    }
+  }
+}
+      </pre>
+    </div>
+  </div>
+  <div
+    class="emotion-9"
     style="height:748px;left:210px;top:10px;width:804px"
   >
     <div
-      class="emotion-5"
+      class="emotion-8"
     >
       <div
-        class="emotion-1"
+        class="emotion-4"
         hidden=""
       >
         <div
-          class="emotion-0"
+          class="emotion-3"
           color="deepskyblue"
         >
           <h2
@@ -1691,12 +1667,12 @@ Array [
         </div>
       </div>
       <div
-        class="emotion-3"
+        class="emotion-6"
         hidden=""
         style="height:748px;left:414px;top:0;width:390px"
       >
         <div
-          class="emotion-2"
+          class="emotion-5"
           color="orangered"
         >
           <h2
@@ -1722,7 +1698,7 @@ Array [
         </div>
       </div>
       <div
-        class="emotion-4"
+        class="emotion-7"
         color="cyan"
       >
         <h2
@@ -1735,8 +1711,8 @@ Array [
         </pre>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots UI|Layout/Mobile initial 0 1`] = `
