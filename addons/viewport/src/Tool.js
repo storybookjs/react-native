@@ -135,6 +135,7 @@ export default class ViewportTool extends Component {
                 border: '1px solid #888',
                 borderRadius: 4,
                 boxShadow: '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);',
+                boxSizing: 'content-box',
 
                 ...(isRotated ? flip(item.value || {}) : item.value || {}),
               },
