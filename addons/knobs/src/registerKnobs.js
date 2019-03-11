@@ -1,13 +1,13 @@
 import addons from '@storybook/addons';
 import { STORY_CHANGED, FORCE_RE_RENDER, REGISTER_SUBSCRIPTION } from '@storybook/core-events';
-
 import debounce from 'lodash.debounce';
+
 import KnobManager from './KnobManager';
 import { CHANGE, CLICK, RESET, SET } from './shared';
 
 export const manager = new KnobManager();
 const { knobStore } = manager;
-const KNOB_CHANGED_DEBOUNCE_DELAY_MS = 150;
+const COMPONENT_FORCE_RENDER_DEBOUNCE_DELAY_MS = 325;
 
 function forceReRender() {
   addons.getChannel().emit(FORCE_RE_RENDER);
@@ -19,20 +19,17 @@ function setPaneKnobs(timestamp = +new Date()) {
 }
 
 // Increased performance by reducing the number of times a component is rendered during knob changes
-const debouncedOnKnobChanged = debounce(change => {
-  const { name, value } = change;
-
-  // Update the related knob and it's value.
-  const knobOptions = knobStore.get(name);
-
-  knobOptions.value = value;
+const debouncedOnKnobChanged = debounce(() => {
   knobStore.markAllUnused();
-
   forceReRender();
-}, KNOB_CHANGED_DEBOUNCE_DELAY_MS);
+}, COMPONENT_FORCE_RENDER_DEBOUNCE_DELAY_MS);
 
 function knobChanged(change) {
-  debouncedOnKnobChanged(change);
+  const { name } = change;
+  const { value } = change; // Update the related knob and it's value.
+  const knobOptions = knobStore.get(name);
+  knobOptions.value = value;
+  debouncedOnKnobChanged();
 }
 
 function knobClicked(clicked) {
