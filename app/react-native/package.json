@@ -58,7 +58,7 @@
     "lazy-universal-dotenv": "^2.0.0",
     "prop-types": "^15.7.2",
     "raw-loader": "^1.0.0",
-    "react-dev-utils": "^7.0.3",
+    "react-dev-utils": "^8.0.0",
     "react-native-swipe-gestures": "^1.0.2",
     "shelljs": "^0.8.3",
     "url-parse": "^1.4.4",

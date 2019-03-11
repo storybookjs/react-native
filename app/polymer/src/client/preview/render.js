@@ -1,6 +1,6 @@
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
-import { html, render, TemplateResult } from 'lit-html';
+import { render, TemplateResult } from 'lit-html';
 
 const rootElement = document.getElementById('root');
 
@@ -32,10 +32,12 @@ export default function renderMain({
     // `render` stores the TemplateInstance in the Node and tries to update based on that.
     // Since we reuse `rootElement` for all stories, remove the stored instance first.
     // But forceRender means that it's the same story, so we want too keep the state in that case.
-    if (!forceRender) {
-      render(html``, rootElement);
+    if (!forceRender || !rootElement.querySelector('[id="root-inner"]')) {
+      rootElement.innerHTML = '<div id="root-inner"></div>';
     }
-    render(element, rootElement);
+    const renderTo = rootElement.querySelector('[id="root-inner"]');
+
+    render(element, renderTo);
   } else {
     rootElement.innerHTML = '';
     rootElement.appendChild(element);
