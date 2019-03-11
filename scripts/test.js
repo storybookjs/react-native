@@ -170,13 +170,14 @@ selection
       const jestProjects = projects.filter(key => key.isJest).map(key => key.projectLocation);
       const nonJestProjects = projects.filter(key => !key.isJest);
       const extraParams = getExtraParams(list).join(' ');
+      const jest = path.join(__dirname, '..', 'node_modules', '.bin', 'jest');
 
       if (jestProjects.length > 0) {
         const projectsParam = jestProjects.some(project => project === '<all>')
           ? ''
           : `--projects ${jestProjects.join(' ')}`;
 
-        spawn(`jest ${projectsParam} ${extraParams}`);
+        spawn(`node --max_old_space_size=4096 ${jest} ${projectsParam} ${extraParams}`);
       }
 
       nonJestProjects.forEach(key =>
