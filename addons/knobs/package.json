@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "5.1.0-alpha.3",
+  "version": "5.1.0-alpha.4",
   "description": "Storybook Addon Prop Editor Component",
   "keywords": [
     "addon",
@@ -22,10 +22,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.3",
-    "@storybook/components": "5.1.0-alpha.3",
-    "@storybook/core-events": "5.1.0-alpha.3",
-    "@storybook/theming": "5.1.0-alpha.3",
+    "@storybook/addons": "5.1.0-alpha.4",
+    "@storybook/components": "5.1.0-alpha.4",
+    "@storybook/core-events": "5.1.0-alpha.4",
+    "@storybook/theming": "5.1.0-alpha.4",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^2.6.5",
     "escape-html": "^1.0.3",
