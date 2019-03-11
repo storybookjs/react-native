@@ -10,13 +10,13 @@ import Markdown from 'markdown-to-jsx';
 
 import { PARAM_KEY, API, Parameters } from './shared';
 
-const Panel = styled.div(props => ({
+const Panel = styled.div(({ theme }: { theme: any }) => ({
   padding: '3rem 40px',
   boxSizing: 'border-box',
   width: '100%',
   maxWidth: 980,
   margin: '0 auto',
-  ...props.theme.addonNotesTheme
+  ...theme.addonNotesTheme,
 }));
 
 interface Props {
@@ -47,7 +47,7 @@ export const SyntaxHighlighter = (props: any) => {
   if (props.className === undefined) {
     return <code>{props.children}</code>;
   }
-  //className: "lang-jsx"
+  // className: "lang-jsx"
   const language = props.className.split('-');
   return <SyntaxHighlighterBase language={language[1]} bordered copyable {...props} />;
 };
