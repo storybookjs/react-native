@@ -29,7 +29,19 @@ This will register all the addons and you'll be able to see the actions and note
 
 ![Stories without notes](../static/stories-without-notes.png)
 
-Now when you are writing a story, import it and add some notes:
+## Addons tab order
+
+The tab order is created by the import order in the `addons.js` file. In the example, the actions addon is the first and thus active tab. Resorting the imports results in the notes addon tab being placed before the actions tab:
+
+```js
+import '@storybook/addon-notes/register';
+import '@storybook/addon-actions/register';
+import '@storybook/addon-links/register';
+```
+
+## Using the addon
+
+Now when you are writing a story, you can import the actions addon to log actions. Also, you can add notes:
 
 ```js
 import { storiesOf } from '@storybook/react';
