@@ -4,7 +4,12 @@ import { types } from '@storybook/addons';
 import { styled } from '@storybook/theming';
 import { STORY_RENDERED } from '@storybook/core-events';
 
-import { SyntaxHighlighter as SyntaxHighlighterBase, Placeholder, DocumentFormatting, Link } from '@storybook/components';
+import {
+  SyntaxHighlighter as SyntaxHighlighterBase,
+  Placeholder,
+  DocumentFormatting,
+  Link,
+} from '@storybook/components';
 import Giphy from './giphy';
 import Markdown from 'markdown-to-jsx';
 
@@ -41,7 +46,15 @@ function read(param: Parameters | undefined): string | undefined {
   }
 }
 
-const SyntaxHighlighter = (props: any) => <SyntaxHighlighterBase bordered copyable {...props} />;
+export const SyntaxHighlighter = (props: any) => {
+  // markdown-to-jsx does not add className to inline code
+  if (props.className === undefined) {
+    return <code>{props.children}</code>;
+  }
+  // className: "lang-jsx"
+  const language = props.className.split('-');
+  return <SyntaxHighlighterBase language={language[1]} bordered copyable {...props} />;
+};
 
 const defaultOptions = {
   overrides: {
@@ -104,22 +117,33 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
     }
 
     // TODO: memoize
-    const extraElements = Object.entries(api.getElements(types.NOTES_ELEMENT)).reduce((acc, [k, v]) => ({ ...acc, [k]: v.render }), {});
-    const options = { ...defaultOptions, overrides: { ...defaultOptions.overrides, ...extraElements } };
+    const extraElements = Object.entries(api.getElements(types.NOTES_ELEMENT)).reduce(
+      (acc, [k, v]) => ({ ...acc, [k]: v.render }),
+      {}
+    );
+    const options = {
+      ...defaultOptions,
+      overrides: { ...defaultOptions.overrides, ...extraElements },
+    };
 
     return value ? (
       <Panel className="addon-notes-container">
-      <DocumentFormatting>
-        <Markdown options={options}>{value}</Markdown>
+        <DocumentFormatting>
+          <Markdown options={options}>{value}</Markdown>
         </DocumentFormatting>
       </Panel>
     ) : (
       <Placeholder>
+        <React.Fragment>No notes yet</React.Fragment>
         <React.Fragment>
-          No notes yet
-        </React.Fragment>
-        <React.Fragment>
-          Learn how to <Link href="https://github.com/storybooks/storybook/tree/master/addons/notes" target="_blank" withArrow>document components in Markdown</Link>
+          Learn how to{' '}
+          <Link
+            href="https://github.com/storybooks/storybook/tree/master/addons/notes"
+            target="_blank"
+            withArrow
+          >
+            document components in Markdown
+          </Link>
         </React.Fragment>
       </Placeholder>
     );

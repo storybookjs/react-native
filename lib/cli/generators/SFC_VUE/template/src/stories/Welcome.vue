@@ -87,10 +87,10 @@
 
 <style>
   .main {
-    margin: 15px;
-    max-width: 600px;
+    padding: 15px;
     line-height: 1.4;
     font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+    background-color: #ffffff;
   }
 
   .logo {
