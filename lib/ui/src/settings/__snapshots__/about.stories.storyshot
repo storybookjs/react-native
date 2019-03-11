@@ -1903,7 +1903,18 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
                               >
                                 &&
                               </span>
-                               yarn
+                               
+                              <span
+                                class="token function"
+                              >
+                                npm
+                              </span>
+                               
+                              <span
+                                class="token function"
+                              >
+                                install
+                              </span>
                             </code>
                           </pre>
                         </div>
