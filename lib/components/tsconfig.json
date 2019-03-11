@@ -2,7 +2,11 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "rootDir": "./src",
-    "types": ["webpack-env"]
+    "types": [
+      "webpack-env",
+      "jest",
+      "react-syntax-highlighter"
+    ]
   },
   "include": [
     "src/**/*"
