@@ -260,6 +260,7 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,.1);
+  background: #FFFFFF;
 }
 
 .emotion-2 {
