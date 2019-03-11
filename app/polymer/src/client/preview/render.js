@@ -32,9 +32,7 @@ export default function renderMain({
     // `render` stores the TemplateInstance in the Node and tries to update based on that.
     // Since we reuse `rootElement` for all stories, remove the stored instance first.
     // But forceRender means that it's the same story, so we want too keep the state in that case.
-    if (!forceRender) {
-      rootElement.innerHTML = '<div id="root-inner"></div>';
-    } else if (!rootElement.querySelector('[id="root-inner"]')) {
+    if (!forceRender || !rootElement.querySelector('[id="root-inner"]')) {
       rootElement.innerHTML = '<div id="root-inner"></div>';
     }
     const renderTo = rootElement.querySelector('[id="root-inner"]');
