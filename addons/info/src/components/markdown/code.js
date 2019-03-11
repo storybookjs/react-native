@@ -1,12 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { SyntaxHighlighter } from '@storybook/components';
+import { ThemeProvider, convert } from '@storybook/theming';
 
-// XXX: is this a bug? should it be (props) => ?
-const Code = ({ props }) => <SyntaxHighlighter bordered copyable {...props} />;
+const Code = ({ code, language, ...props }) => (
+  <ThemeProvider theme={convert()}>
+    <SyntaxHighlighter bordered copyable language={language} {...props}>
+      {code}
+    </SyntaxHighlighter>
+  </ThemeProvider>
+);
 
 Code.propTypes = {
-  props: PropTypes.shape({}).isRequired,
+  code: PropTypes.string.isRequired,
+  language: PropTypes.string,
+};
+
+Code.defaultProps = {
+  language: null,
 };
 
 export { Code };
