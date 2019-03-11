@@ -2,6 +2,7 @@
 
 const gitHubOrg = `https://github.com/storybooks`;
 const homepageUrl = `https://storybook.js.org`;
+const docsUrl = `${homepageUrl}/docs`;
 const npmApiBase = `https://api.npmjs.org/downloads/point/last-month`;
 
 export const metadata = {
@@ -42,8 +43,8 @@ export const url = {
   // Navigation
   home: `${homepageUrl}`,
   docs: {
-    home: `${homepageUrl}/basics/introduction/`,
-    addonInstruction: `${homepageUrl}/addons/writing-addons/`,
+    home: `${docsUrl}/basics/introduction/`,
+    addonInstruction: `${docsUrl}/addons/writing-addons/`,
   },
   addons: `${homepageUrl}/addons`,
   community: `${homepageUrl}/community`,
@@ -66,15 +67,15 @@ export const url = {
 
   // Framework docs
   framework: {
-    react: `${homepageUrl}/basics/guide-react/`,
-    reactNative: `${homepageUrl}/basics/guide-react-native/`,
-    vue: `${homepageUrl}/basics/guide-vue/`,
-    angular: `${homepageUrl}/basics/guide-angular/`,
-    ember: `${homepageUrl}/basics/guide-ember/`,
-    html: `${homepageUrl}/basics/guide-html/`,
-    svelte: `${homepageUrl}/basics/guide-svelte/`,
-    mithril: `${homepageUrl}/basics/guide-mithril/`,
-    riot: `${homepageUrl}/basics/guide-riot/`,
+    react: `${docsUrl}/guides/guide-react/`,
+    reactNative: `${docsUrl}/guides/guide-react-native/`,
+    vue: `${docsUrl}/guides/guide-vue/`,
+    angular: `${docsUrl}/guides/guide-angular/`,
+    ember: `${docsUrl}/guides/guide-ember/`,
+    html: `${docsUrl}/guides/guide-html/`,
+    svelte: `${docsUrl}/guides/guide-svelte/`,
+    mithril: `${docsUrl}/guides/guide-mithril/`,
+    riot: `${docsUrl}/guides/guide-riot/`,
   },
 
   // Official addons

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-centered",
-  "version": "5.1.0-alpha.3",
+  "version": "5.1.0-alpha.4",
   "description": "Storybook decorator to center components",
   "keywords": [
     "addon",

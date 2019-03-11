@@ -46,10 +46,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styles: [
     `
       main {
-        margin: 15px;
-        max-width: 600;
+        padding: 15px;
         line-height: 1.4;
         fontfamily: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+        background-color: #ffffff;
       }
 
       .note {
