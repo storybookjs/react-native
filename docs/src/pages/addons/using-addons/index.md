@@ -75,4 +75,4 @@ addParameters({
 
 Here's an example of a [production-ready config file](https://github.com/storybooks/storybook/blob/next/examples/cra-kitchen-sink/.storybook/config.js) from the cra-kitchen example.
 
-Just like this, you can install any other addon and use it. Have a look at our [addon gallery](/addons/addon-gallery) to discover more addons.
+Just like this, you can install any other addon and use it. Have a look at our [addon gallery](https://storybook.js.org/addons/) to discover more addons.

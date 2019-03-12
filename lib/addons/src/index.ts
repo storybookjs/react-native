@@ -48,7 +48,9 @@ export class AddonStore {
   getChannel = (): Channel => {
     // this.channel should get overwritten by setChannel. If it wasn't called (e.g. in non-browser environment), throw.
     if (!this.channel) {
-      throw new Error('Accessing non-existent addons channel, see https://storybook.js.org/basics/faq/#why-is-there-no-addons-channel');
+      throw new Error(
+        'Accessing non-existent addons channel, see https://storybook.js.org/basics/faq/#why-is-there-no-addons-channel'
+      );
     }
 
     return this.channel;

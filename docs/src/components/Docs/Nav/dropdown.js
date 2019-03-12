@@ -58,13 +58,21 @@ class Nav extends React.Component {
     ) : (
       <div>
         <div>
-          <select value={selectedSectionId} onChange={event => this.handleHeadingChange(event)}>
+          <select
+            className="custom-select custom-select-sm"
+            value={selectedSectionId}
+            onChange={event => this.handleHeadingChange(event)}
+          >
             {sections.map(section => this.renderHeadingOpts(section))}
           </select>
         </div>
 
         <div>
-          <select value={selectedItemId} onChange={event => this.handleNavChange(event)}>
+          <select
+            className="custom-select custom-select-sm"
+            value={selectedItemId}
+            onChange={event => this.handleNavChange(event)}
+          >
             {navs.map(nav => this.renderNavOpts(nav))}
           </select>
         </div>

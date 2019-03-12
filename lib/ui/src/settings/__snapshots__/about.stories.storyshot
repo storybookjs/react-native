@@ -1432,6 +1432,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,.1);
+  background: #FFFFFF;
 }
 
 .emotion-20 {
@@ -1903,7 +1904,18 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
                               >
                                 &&
                               </span>
-                               yarn
+                               
+                              <span
+                                class="token function"
+                              >
+                                npm
+                              </span>
+                               
+                              <span
+                                class="token function"
+                              >
+                                install
+                              </span>
                             </code>
                           </pre>
                         </div>
