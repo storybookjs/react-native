@@ -4,6 +4,8 @@
 
 * Addon-a11y: Remove bg color from reports ([#6026](https://github.com/storybooks/storybook/pull/6026))
 * Addon-knobs: Fix key press debouncing ([#6022](https://github.com/storybooks/storybook/pull/6022))
+* Addon-knobs: Fix error when removing value from number knob ([#6043](https://github.com/storybooks/storybook/pull/6043))
+
 
 ### Maintenance
 
