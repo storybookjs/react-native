@@ -10350,10 +10350,10 @@ fn-name@^2.0.1, fn-name@~2.0.1:
   resolved "https://registry.yarnpkg.com/fn-name/-/fn-name-2.0.1.tgz#5214d7537a4d06a4a301c0cc262feb84188002e7"
   integrity sha1-UhTXU3pNBqSjAcDMJi/rhBiAAuc=
 
-focus-lock@^0.5.2:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/focus-lock/-/focus-lock-0.5.4.tgz#537644d61b9e90fd97075aa680b8add1de24e819"
-  integrity sha512-A9ngdb0NyI6UygBQ0eD+p8SpLWTkdEDn67I3EGUUcDUfxH694mLA/xBWwhWhoj/2YLtsv2EoQdAx9UOKs8d/ZQ==
+focus-lock@^0.6.0:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/focus-lock/-/focus-lock-0.6.2.tgz#d8ac9dbc46250779789c3e6f43d978c7dfa59dcd"
+  integrity sha512-Wuq6TSOgsGQmzbpvinl1TcEw4BAUhD9T06myl5HvaBlO0geAz9ABtqBIqPkkNyO3AgPzEDazetL5hSRgj+2iqQ==
 
 follow-redirects@^1.0.0, follow-redirects@^1.2.5:
   version "1.7.0"
@@ -19006,13 +19006,13 @@ react-fast-compare@^2.0.2:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
 
-react-focus-lock@^1.17.7:
-  version "1.17.7"
-  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-1.17.7.tgz#ea7fd05d88d0e32833cad241f9333c124c35ba9a"
-  integrity sha512-zDCqkIhuuHCCmWzJghAz6EM6ROx8/sHhQJWjmO6oteQRHX+xTCE5FWIu3zLB5UiUa5eLd66tTh4Fs8YDp0G+6Q==
+react-focus-lock@^1.18.3:
+  version "1.18.3"
+  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-1.18.3.tgz#19d84afeab935c0b5de196922f71db7c481baba4"
+  integrity sha512-4fPAHnsr8oCYPgVmcMZ8NbAE9jm/OshPjXEM5PHseu2lDernzm/b1sHhYzZUO4OoW9D/u1AQsV6n4trRllow7w==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    focus-lock "^0.5.2"
+    focus-lock "^0.6.0"
     prop-types "^15.6.2"
     react-clientside-effect "^1.2.0"
 
