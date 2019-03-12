@@ -29,7 +29,7 @@ See more addon options at https://github.com/storybooks/storybook/tree/master/ad
 
 We have created two themes for you: "normal" (a light theme) and "dark" (a dark theme).
 
-You can get these themes like so:
+Here's an example of using the "dark" theme:
 
 ```js
 import { addParameters, configure } from '@storybook/react';
