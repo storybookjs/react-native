@@ -21,7 +21,7 @@ addParameters({
 });
 ```
 
-When setting a theme, set a full theme object, the theme is replaced, not combined.
+When setting a theme, set a full theme object. The theme is replaced not combined.
 
 See more addon options at https://github.com/storybooks/storybook/tree/master/addons/options
 
