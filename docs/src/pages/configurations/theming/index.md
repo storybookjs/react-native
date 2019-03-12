@@ -48,7 +48,7 @@ addParameters({
 
 The `storybook/theming` is built using TypeScript, so this should help create a valid theme for typescript users. The types are part of the package itself.
 
-The easiest way to customize Storybook is to generate a new theme using the `create()` function from `storybook/theming`. This function includes shorthands for the most common theme variables. Here's how to use it.
+The easiest way to customize Storybook is to generate a new theme using the `create()` function from `storybook/theming`. This function includes shorthands for the most common theme variables. Here's how to use it:
 
 First create a new file in `.storybook` called `yourTheme.js`.
 
