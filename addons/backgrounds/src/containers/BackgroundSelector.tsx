@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import memoize from 'memoizerific';
 
-import { Global } from '@storybook/theming';
+import { Global, background } from '@storybook/theming';
 
 import { SET_STORIES } from '@storybook/core-events';
 
@@ -36,11 +36,11 @@ const getSelectedBackgroundColor = (
   currentSelectedValue: string
 ): string => {
   if (!list.length) {
-    return 'transparent';
+    return background.content;
   }
 
   if (currentSelectedValue === 'transparent') {
-    return currentSelectedValue;
+    return background.content;
   }
 
   if (list.find(i => i.value === currentSelectedValue)) {
@@ -51,7 +51,7 @@ const getSelectedBackgroundColor = (
     return list.find(i => i.default).value;
   }
 
-  return 'transparent';
+  return background.content;
 };
 
 const getDisplayableState = memoize(10)(
