@@ -2,6 +2,7 @@ import global from 'global';
 // tslint:disable-next-line:no-implicit-dependencies
 import { ReactElement } from 'react';
 import { Channel } from '@storybook/channels';
+import { API } from '@storybook/api';
 import logger from '@storybook/client-logger';
 import { types, Types, isSupportedType } from './types';
 
@@ -25,7 +26,7 @@ export interface Addon {
   render: (renderOptions: RenderOptions) => ReactElement<any>;
 }
 
-export type Loader = (callback: (api: any) => void) => void;
+export type Loader = (api: API) => void;
 
 export { types, Types, isSupportedType };
 
@@ -77,7 +78,7 @@ export class AddonStore {
     collection[name] = { id: name, ...addon };
   };
 
-  register = (name: string, registerCallback: (api: any) => void): void => {
+  register = (name: string, registerCallback: (api: API) => void): void => {
     if (this.loaders[name]) {
       logger.warn(`${name} was loaded twice, this could have bad side-effects`);
     }
