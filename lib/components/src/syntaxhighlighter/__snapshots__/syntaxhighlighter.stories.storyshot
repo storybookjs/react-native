@@ -227,7 +227,7 @@ exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
                 >
                   &&
                 </span>
-                 yarn
+                 npm install
               </code>
             </pre>
           </div>
