@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@storybook/addons": "5.1.0-alpha.4",
+    "@storybook/api": "5.1.0-alpha.4",
     "@storybook/client-logger": "5.1.0-alpha.4",
     "@storybook/components": "5.1.0-alpha.4",
     "@storybook/core-events": "5.1.0-alpha.4",

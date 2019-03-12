@@ -3,6 +3,7 @@ import memoize from 'memoizerific';
 
 import { Global } from '@storybook/theming';
 
+import { API } from '@storybook/api';
 import { SET_STORIES } from '@storybook/core-events';
 
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
@@ -56,8 +57,9 @@ const getSelectedBackgroundColor = (
 
 const getDisplayableState = memoize(10)(
   (props: BackgroundToolProps, state: BackgroundToolState, change) => {
-    const data = props.api.getCurrentStoryData();
-    const list: BackgroundConfig[] = (data && data.parameters && data.parameters[PARAM_KEY]) || [];
+    const { api } = props;
+    const list: BackgroundConfig[] =
+      api.getParameters(api.getCurrentStoryData().id, PARAM_KEY) || [];
 
     const selectedBackgroundColor = getSelectedBackgroundColor(list, state.selected);
 
@@ -86,11 +88,7 @@ const getDisplayableState = memoize(10)(
 );
 
 interface BackgroundToolProps {
-  api: {
-    on(event: string, callback: (data: any) => void): void;
-    off(event: string, callback: (data: any) => void): void;
-    getCurrentStoryData(): any;
-  };
+  api: API;
 }
 
 interface BackgroundToolState {
