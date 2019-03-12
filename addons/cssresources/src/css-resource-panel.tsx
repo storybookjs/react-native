@@ -1,20 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import { SyntaxHighlighter } from '@storybook/components';
-import Eventtypes, { STORY_RENDERED } from '@storybook/core-events';
+import { STORY_RENDERED } from '@storybook/core-events';
+import { API } from '@storybook/api';
 
 import { EVENTS, PARAM_KEY } from './constants';
 import { CssResource } from './CssResource';
 
 interface Props {
   active: boolean;
-  api: {
-    emit(event: any, data: any): void;
-    on(event: Eventtypes, callback: (data: any) => void): void;
-    off(event: Eventtypes, callback: (data: any) => void): void;
-    getQueryParam(): void;
-    getParameters(id: string, paramKey: string): any;
-    setQueryParams(): void;
-  };
+  api: API;
 }
 
 interface State {
