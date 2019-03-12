@@ -19,7 +19,6 @@
     "prepare": "node ./scripts/generateVersion.js && node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.4",
     "@storybook/client-logger": "5.1.0-alpha.4",
     "@storybook/core-events": "5.1.0-alpha.4",
     "@storybook/router": "5.1.0-alpha.4",

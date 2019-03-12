@@ -1,5 +1,28 @@
-import { types, Addon, Types, Collection } from '@storybook/addons';
 import { Module } from '../index';
+import { RenderData as RouterData } from '@storybook/router';
+import { ReactElement } from 'react';
+
+export enum types {
+  TAB = 'tab',
+  PANEL = 'panel',
+  TOOL = 'tool',
+  PREVIEW = 'preview',
+  NOTES_ELEMENT = 'notes-element',
+}
+
+export type Types = types | string;
+
+export interface Addon {
+  title: string;
+  type?: Types;
+  id?: string;
+  route?: (routeOptions: RouterData) => string;
+  match?: (matchOptions: RouterData) => boolean;
+  render: (renderOptions: RouterData) => ReactElement<any>;
+}
+export interface Collection {
+  [key: string]: Addon;
+}
 
 interface Panels {
   [id: string]: Addon;

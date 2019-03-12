@@ -3,7 +3,6 @@ import memoize from 'memoizerific';
 
 import Events from '@storybook/core-events';
 import { RenderData as RouterData } from '@storybook/router';
-import { Collection, Types } from '@storybook/addons';
 import initProviderApi from './init-provider-api';
 
 import { createContext } from './context';
@@ -66,7 +65,6 @@ export interface Combo {
 interface Provider {
   handleAPI(api: API): void;
   renderPreview(): void;
-  getElements(type: Types): Collection;
   [key: string]: any;
 }
 

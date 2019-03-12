@@ -31,7 +31,7 @@ export default ({ provider }: Module) => {
       provider.channel.emit(type, event);
     },
     onStory: deprecate(
-      cb => api.on(STORY_CHANGED, cb),
+      (cb: CallBack) => api.on(STORY_CHANGED, cb),
       'onStory(...) has been replaced with on(STORY_CHANGED, ...)'
     ),
   };
