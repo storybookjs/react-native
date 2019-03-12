@@ -27,7 +27,7 @@ See more addon options at https://github.com/storybooks/storybook/tree/master/ad
 
 ## Get a theme
 
-We have created 2 themes for you: "normal" (a light theme) and "dark" (a dark theme).
+We have created two themes for you: "normal" (a light theme) and "dark" (a dark theme).
 
 You can get these themes like so:
 
