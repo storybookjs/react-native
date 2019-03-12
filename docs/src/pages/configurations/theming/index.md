@@ -7,7 +7,7 @@ Storybook is theme-able! You can change theme variables using the [options param
 
 ## Set a theme
 
-You can do this in a decorator, addon or in `.storybook/config.js`. Changing theme at runtime is supported!
+You can do this in a decorator, an addon or in `.storybook/config.js`. Changing theme at runtime is supported!
 
 Just modify `.storybook/config.js` to include your new options:
 
