@@ -8,14 +8,14 @@ export interface SubAPI {
   getChannel: () => any;
   on: (type: string, cb: CallBack, peer?: boolean) => () => void;
   off: (type: string, cb: CallBack) => void;
-  emit: (type: string, event: any) => void;
+  emit: (type: string, event?: any) => void;
   onStory: (cb: CallBack) => void;
 }
 
 export default ({ provider }: Module) => {
   const api: SubAPI = {
     getChannel: () => provider.channel,
-    on: (type: string, cb: CallBack, peer = true) => {
+    on: (type, cb, peer = true) => {
       if (peer) {
         provider.channel.addPeerListener(type, cb);
       } else {
@@ -24,14 +24,14 @@ export default ({ provider }: Module) => {
 
       return () => provider.channel.removeListener(type, cb);
     },
-    off: (type: string, cb: CallBack) => {
+    off: (type, cb) => {
       provider.channel.removeListener(type, cb);
     },
-    emit: (type: string, event: any) => {
+    emit: (type, event) => {
       provider.channel.emit(type, event);
     },
     onStory: deprecate(
-      (cb: CallBack) => api.on(STORY_CHANGED, cb),
+      cb => api.on(STORY_CHANGED, cb),
       'onStory(...) has been replaced with on(STORY_CHANGED, ...)'
     ),
   };
