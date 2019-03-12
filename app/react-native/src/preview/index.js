@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 
 import React from 'react';
-import { AsyncStorage, NativeModules } from 'react-native';
+import { AsyncStorage, NativeModules, Platform } from 'react-native';
 import parse from 'url-parse';
 import addons from '@storybook/addons';
 
@@ -63,8 +63,7 @@ export default class Preview {
       if (onDeviceUI && params.disableWebsockets) {
         channel = new Channel({ async: true });
       } else {
-        const host =
-          params.host || parse(NativeModules.SourceCode.scriptURL).hostname || 'localhost';
+        const host = this._getHost(params);
         const port = params.port !== false ? `:${params.port || 7007}` : '';
 
         const query = params.query || '';
@@ -133,6 +132,14 @@ export default class Preview {
         return <StoryView url={webUrl} events={channel} listenToEvents />;
       }
     };
+  }
+
+  _getHost(params = {}) {
+    if (params.host)
+      return params.host;
+    if (Platform.OS === 'android')
+      return '10.0.2.2';
+    return parse(NativeModules.SourceCode.scriptURL).hostname || 'localhost';
   }
 
   _sendSetStories() {
