@@ -8,7 +8,20 @@ import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/comp
 
 import { PARAM_KEY } from '../constants';
 import { ColorIcon } from '../components/ColorIcon';
-import { Input, Item } from '../models';
+
+interface Item {
+  id: string;
+  title: string;
+  onClick: () => void;
+  value: string;
+  right?: any;
+}
+
+interface Input {
+  name: string;
+  value: string;
+  default?: boolean;
+}
 
 const iframeId = 'storybook-preview-background';
 
