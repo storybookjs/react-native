@@ -104,4 +104,5 @@ function getAddonsStore(): AddonStore {
 // prefer import { addons } from '@storybook/addons' over import addons from '@storybook/addons'
 //
 // See public_api.ts
+
 export const addons = getAddonsStore();

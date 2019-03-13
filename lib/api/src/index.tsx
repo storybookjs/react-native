@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react';
+import React, { ReactElement, Component, useContext } from 'react';
 import memoize from 'memoizerific';
 
 import Events from '@storybook/core-events';
@@ -77,7 +77,7 @@ interface StoreData {
 }
 
 interface Children {
-  children: React.Component | ((props: Combo) => React.Component);
+  children: Component | ((props: Combo) => Component);
 }
 
 type Props = Children & RouterData & ProviderData;
@@ -200,14 +200,15 @@ class ManagerProvider extends Component<Props, State> {
 
 interface ConsumerProps<A> {
   filter: (c: Combo) => A;
-  children: (d: A) => React.ReactElement<any>;
+  pure?: boolean;
+  children: (d: A) => ReactElement<any> | null;
 }
 
-const ObjectToArray = memoize(100)((obj: object) =>
+const ObjectToArray = memoize(1000)((obj: object) =>
   Object.entries(obj).reduce((acc, [k, v]) => acc.concat([k, v]), [])
 );
 
-const ArrayToObject = memoize(100)((array: any[]) =>
+const ArrayToObject = memoize(1000)((array: any[]) =>
   array.reduce((acc, item, index, list) => {
     // is odd = value
     if (index % 2 !== 0) {
@@ -229,14 +230,18 @@ class ManagerConsumer extends Component<ConsumerProps<any>> {
   }
 
   render() {
-    const { children, filter } = this.props;
+    const { children, filter, pure } = this.props;
 
     return (
       <ManagerContext.Consumer>
         {d => {
           const data = filter ? this.dataMemory(filter)(d) : d;
 
-          return filter ? this.renderMemory(...ObjectToArray(data)) : children(data);
+          if (pure && filter) {
+            return this.renderMemory(...ObjectToArray(data));
+          } else {
+            return children(data);
+          }
         }}
       </ManagerContext.Consumer>
     );
