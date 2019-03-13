@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
 
@@ -35,6 +36,18 @@ const Violations = styled.span(({ theme }) => ({
 const Incomplete = styled.span(({ theme }) => ({
   color: theme.color.warning,
 }));
+
+const Loader = styled(({ className }) => (
+  <div className={className}>
+    <Icon inline icon="sync" status="running" /> Please wait while a11y scan is running ...
+  </div>
+))({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100%',
+});
+Loader.displayName = 'Loader';
 
 interface A11YPanelState {
   status: string;
@@ -142,29 +155,33 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
 
     return active ? (
       <Fragment>
-        <ScrollArea vertical horizontal>
-          <Tabs
-            key="tabs"
-            tabs={[
-              {
-                label: <Violations>{violations.length} Violations</Violations>,
-                panel: (
-                  <Report passes={false} items={violations} empty="No a11y violations found." />
-                ),
-              },
-              {
-                label: <Passes>{passes.length} Passes</Passes>,
-                panel: <Report passes items={passes} empty="No a11y check passed." />,
-              },
-              {
-                label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
-                panel: (
-                  <Report passes={false} items={incomplete} empty="No a11y incomplete found." />
-                ),
-              },
-            ]}
-          />
-        </ScrollArea>
+        {status === 'running' ? (
+          <Loader />
+        ) : (
+          <ScrollArea vertical horizontal>
+            <Tabs
+              key="tabs"
+              tabs={[
+                {
+                  label: <Violations>{violations.length} Violations</Violations>,
+                  panel: (
+                    <Report passes={false} items={violations} empty="No a11y violations found." />
+                  ),
+                },
+                {
+                  label: <Passes>{passes.length} Passes</Passes>,
+                  panel: <Report passes items={passes} empty="No a11y check passed." />,
+                },
+                {
+                  label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
+                  panel: (
+                    <Report passes={false} items={incomplete} empty="No a11y incomplete found." />
+                  ),
+                },
+              ]}
+            />
+          </ScrollArea>
+        )}
         <ActionBar key="actionbar" actionItems={[{ title: actionTitle, onClick: this.request }]} />
       </Fragment>
     ) : null;
