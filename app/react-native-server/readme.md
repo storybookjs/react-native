@@ -1,5 +1,5 @@
 # Storybook Server for React Native
-Additional package for @storybook/react-native to support server.
+Additional package for @storybook/react-native to support a web server and browser UI that runs alongside the RN on-device UI
 
 For more information visit: [storybook.js.org](https://storybook.js.org)
 
