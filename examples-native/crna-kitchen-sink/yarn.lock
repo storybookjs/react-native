@@ -1155,7 +1155,7 @@
 
 "@storybook/client-api@5.1.0-alpha.4", "@storybook/client-api@file:../../packs/storybook-client-api.tgz":
   version "5.1.0-alpha.4"
-  resolved "file:../../packs/storybook-client-api.tgz#ee3bec54d7955c54bc892f5590b4671dde536f5e"
+  resolved "file:../../packs/storybook-client-api.tgz#867cac42c41a74cc186a284d661252abc001029e"
   dependencies:
     "@storybook/addons" "5.1.0-alpha.4"
     "@storybook/client-logger" "5.1.0-alpha.4"
@@ -1354,7 +1354,7 @@
 
 "@storybook/react-native@file:../../packs/storybook-react-native.tgz":
   version "5.1.0-alpha.4"
-  resolved "file:../../packs/storybook-react-native.tgz#b1b3e5fe6871e19e00f154bc21b2d5a0611e7acf"
+  resolved "file:../../packs/storybook-react-native.tgz#51aeabea05cd74d12ae896bb5670eb0940023a03"
   dependencies:
     "@storybook/addons" "5.1.0-alpha.4"
     "@storybook/channel-websocket" "5.1.0-alpha.4"
@@ -3284,9 +3284,9 @@ can-use-dom@^0.1.0:
   integrity sha1-IsxKNKCrxDlQ9CxkEQJKP2NmtFo=
 
 caniuse-lite@^1.0.30000929, caniuse-lite@^1.0.30000939, caniuse-lite@^1.0.30000940:
-  version "1.0.30000943"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000943.tgz#00b25bd5808edc2ed1cfb53533a6a6ff6ca014ee"
-  integrity sha512-nJMjU4UaesbOHTcmz6VS+qaog++Fdepg4KAya5DL/AZrL/aaAZDGOOQ0AECtsJa09r4cJBdHZMive5mw8lnQ5A==
+  version "1.0.30000945"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000945.tgz#d51e3750416dd05126d5ac94a9c57d1c26c6fd21"
+  integrity sha512-PSGwYChNIXJ4FZr9Z9mrVzBCB1TF3yyiRmIDRIdKDHZ6u+1jYH6xeR28XaquxnMwcZVX3f48S9zi7eswO/G1nQ==
 
 capture-exit@^1.2.0:
   version "1.2.0"
@@ -5175,12 +5175,12 @@ find-cache-dir@^1.0.0:
     pkg-dir "^2.0.0"
 
 find-cache-dir@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/find-cache-dir/-/find-cache-dir-2.0.0.tgz#4c1faed59f45184530fb9d7fa123a4d04a98472d"
-  integrity sha512-LDUY6V1Xs5eFskUVYtIwatojt6+9xC9Chnlk/jYOOvn3FAFfSaWddxahDGyNHh0b2dMXa6YW2m0tk8TdVaXHlA==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/find-cache-dir/-/find-cache-dir-2.1.0.tgz#8d0f94cd13fe43c6c7c261a0d86115ca918c05f7"
+  integrity sha512-Tq6PixE0w/VMFfCgbONnkiQIVol/JJL7nRMi20fqzA4NRs9AfeqMGeRdPi3wIhYkxjeBaWh2rxwapn5Tu3IqOQ==
   dependencies:
     commondir "^1.0.1"
-    make-dir "^1.0.0"
+    make-dir "^2.0.0"
     pkg-dir "^3.0.0"
 
 find-root@^1.1.0:
@@ -7183,6 +7183,14 @@ make-dir@^1.0.0:
   dependencies:
     pify "^3.0.0"
 
+make-dir@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"
+  integrity sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==
+  dependencies:
+    pify "^4.0.1"
+    semver "^5.6.0"
+
 makeerror@1.0.x:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/makeerror/-/makeerror-1.0.11.tgz#e01a5c9109f2af79660e4e8b9587790184f5a96c"
@@ -8415,6 +8423,11 @@ pify@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
   integrity sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=
+
+pify@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/pify/-/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
+  integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
 
 pinkie-promise@^2.0.0:
   version "2.0.1"
@@ -10104,9 +10117,9 @@ source-map-support@^0.4.15:
     source-map "^0.5.6"
 
 source-map-support@^0.5.6, source-map-support@^0.5.9, source-map-support@~0.5.10:
-  version "0.5.10"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.10.tgz#2214080bc9d51832511ee2bab96e3c2f9353120c"
-  integrity sha512-YfQ3tQFTK/yzlGJuX8pTwa4tifQj4QS2Mj7UegOu8jAz59MqIiMGPXxQhVQiIMNzayuUSF/jEuVnfFF5JqybmQ==
+  version "0.5.11"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.11.tgz#efac2ce0800355d026326a0ca23e162aeac9a4e2"
+  integrity sha512-//sajEx/fGL3iw6fltKMdPvy8kL3kJ2O3iuYlRoT3k9Kb4BjOoZ+BZzaNHeuaruSt+Kf3Zk9tnfAQg9/AJqUVQ==
   dependencies:
     buffer-from "^1.0.0"
     source-map "^0.6.0"

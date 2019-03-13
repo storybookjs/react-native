@@ -146,6 +146,7 @@ export default class Preview {
     const channel = addons.getChannel();
     const stories = this._stories.dumpStoryBook();
     channel.emit(Events.SET_STORIES, { stories });
+    channel.emit(Events.STORIES_CONFIGURED);
   }
 
   _sendGetCurrentStory() {
