@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { API } from '@storybook/api';
 import { types } from '@storybook/addons';
 import { styled } from '@storybook/theming';
 import { STORY_RENDERED } from '@storybook/core-events';
@@ -13,7 +13,7 @@ import {
 import Giphy from './giphy';
 import Markdown from 'markdown-to-jsx';
 
-import { PARAM_KEY, API, Parameters } from './shared';
+import { PARAM_KEY, Parameters } from './shared';
 
 const Panel = styled.div({
   padding: '3rem 40px',
@@ -67,18 +67,7 @@ const defaultOptions = {
   },
 };
 
-export default class NotesPanel extends React.Component<Props, NotesPanelState> {
-  static propTypes = {
-    active: PropTypes.bool.isRequired,
-    api: PropTypes.shape({
-      on: PropTypes.func,
-      off: PropTypes.func,
-      emit: PropTypes.func,
-
-      getParameters: PropTypes.func,
-    }).isRequired,
-  };
-
+export default class NotesPanel extends Component<Props, NotesPanelState> {
   readonly state: NotesPanelState = {
     value: '',
   };

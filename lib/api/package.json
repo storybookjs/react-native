@@ -15,6 +15,7 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ./scripts/generateVersion.js && node ../../scripts/prepare.js"
   },
@@ -23,9 +24,7 @@
     "@storybook/core-events": "5.1.0-alpha.4",
     "@storybook/router": "5.1.0-alpha.4",
     "@storybook/theming": "5.1.0-alpha.4",
-    "@types/lodash.isequal": "^4.5.3",
-    "@types/lodash.mergewith": "^4.6.4",
-    "@types/lodash.pick": "^4.4.4",
+    "core-js": "^2.6.5",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
     "lodash.isequal": "^4.5.0",
@@ -38,7 +37,11 @@
     "telejson": "^2.1.1",
     "util-deprecate": "^1.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/lodash.isequal": "^4.5.3",
+    "@types/lodash.mergewith": "^4.6.4",
+    "@types/lodash.pick": "^4.4.4"
+  },
   "publishConfig": {
     "access": "public"
   }

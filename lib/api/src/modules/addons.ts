@@ -1,5 +1,4 @@
 import { Module } from '../index';
-import { RenderData as RouterData } from '@storybook/router';
 import { ReactElement } from 'react';
 
 export enum types {
@@ -11,14 +10,25 @@ export enum types {
 }
 
 export type Types = types | string;
+export interface RenderOptions {
+  active: boolean;
+  key: string;
+}
+
+export interface RouteOptions {
+  storyId: string;
+}
+export interface MatchOptions {
+  viewMode: string;
+}
 
 export interface Addon {
   title: string;
   type?: Types;
   id?: string;
-  route?: (routeOptions: RouterData) => string;
-  match?: (matchOptions: RouterData) => boolean;
-  render: (renderOptions: RouterData) => ReactElement<any>;
+  route?: (routeOptions: RouteOptions) => string;
+  match?: (matchOptions: MatchOptions) => boolean;
+  render: (renderOptions: RenderOptions) => ReactElement<any>;
 }
 export interface Collection {
   [key: string]: Addon;
@@ -50,13 +60,13 @@ export function ensurePanel(panels: Panels, selectedPanel?: string, currentPanel
 
 export default ({ provider, store }: Module) => {
   const api: SubAPI = {
-    getElements: (type: Types) => provider.getElements(type),
+    getElements: type => provider.getElements(type),
     getPanels: () => api.getElements(types.PANEL),
     getSelectedPanel: () => {
       const { selectedPanel } = store.getState();
       return ensurePanel(api.getPanels(), selectedPanel, selectedPanel);
     },
-    setSelectedPanel: (panelName: string) => {
+    setSelectedPanel: panelName => {
       store.setState({ selectedPanel: panelName }, { persistence: 'session' });
     },
   };
