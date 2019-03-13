@@ -188,7 +188,7 @@ describe('A11YPanel', () => {
     expect(wrapper.find(A11YPanel)).toMatchSnapshot();
   });
 
-  it("should NOT render report when it's running", () => {
+  it("should render loader when it's running", () => {
     // given
     const api = createApi();
     const wrapper = mount(<ThemedA11YPanel api={api} active />);
@@ -200,7 +200,9 @@ describe('A11YPanel', () => {
 
     // then
     expect(wrapper.find('ScrollArea').length).toBe(0);
+    expect(wrapper.find('Loader').length).toBe(1);
     expect(wrapper.find('ActionBar').length).toBe(1);
+    expect(wrapper.find('Loader')).toMatchSnapshot();
   });
 
   it('should NOT anything when tab is not active', () => {

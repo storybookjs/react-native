@@ -1,5 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`A11YPanel should render loader when it's running 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-2 {
+  height: 12px;
+  width: 12px;
+  margin-right: 4px;
+  -webkit-animation: animation-0 1s linear infinite;
+  animation: animation-0 1s linear infinite;
+}
+
+.emotion-1 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin-right: 4px;
+  -webkit-animation: animation-0 1s linear infinite;
+  animation: animation-0 1s linear infinite;
+}
+
+.emotion-0 {
+  fill: currentColor;
+}
+
+<Loader>
+  <Component
+    className="emotion-4"
+  >
+    <div
+      className="emotion-4"
+    >
+      <Styled(Icon)
+        icon="sync"
+        inline={true}
+        status="running"
+      >
+        <Icon
+          className="emotion-2"
+          icon="sync"
+          inline={true}
+          status="running"
+        >
+          <Svg
+            className="emotion-2"
+            inline={true}
+            status="running"
+            viewBox="0 0 1024 1024"
+          >
+            <svg
+              className="emotion-1"
+              viewBox="0 0 1024 1024"
+            >
+              <Styled(path)
+                d="M998.786 474.516l-91 90.988c-8.028 8.036-18.624 11.902-29.152 11.676-10.536 0.234-21.144-3.632-29.184-11.676l-92.3-92.296c-15.624-15.622-15.624-40.95 0-56.57 15.622-15.622 40.95-15.624 56.57 0l26.146 26.148c-13.774-61.416-44.624-117.806-90.216-163.394-63.46-63.464-147.84-98.414-237.586-98.414-89.75 0-174.128 34.95-237.59 98.414-27.012 27.012-48.836 57.824-65.024 91.214l-0.008-0.004c-6.722 12.632-20.008 21.242-35.32 21.242-22.090 0-40-17.906-40-40 0-5.464 1.102-10.668 3.086-15.414l-0.004-0.004c0.016-0.032 0.024-0.058 0.040-0.090 0.036-0.078 0.070-0.156 0.106-0.234 0.73-1.632 0.208-0.718 5.004-9.996 69.18-133.726 208.766-225.128 369.71-225.128 203.224 0 372.374 145.734 408.728 338.392l21.424-21.424c15.618-15.622 40.946-15.622 56.566 0s15.624 40.948 0.004 56.57zM889.992 682.11c0 5.464-1.106 10.672-3.090 15.414l0.008 0.004c-0.016 0.036-0.028 0.058-0.040 0.090-0.036 0.078-0.074 0.156-0.106 0.234-0.73 1.636-0.208 0.718-5.008 10-69.176 133.722-208.762 225.124-369.708 225.124-205.2 0-375.668-148.578-409.76-344.022l-19.478 19.478c-15.622 15.622-40.95 15.622-56.57 0-15.618-15.622-15.622-40.95 0-56.57l90.996-90.992c8.032-8.032 18.628-11.902 29.152-11.672 10.536-0.238 21.144 3.632 29.188 11.672l92.296 92.3c15.624 15.618 15.624 40.946 0 56.566-15.618 15.622-40.946 15.624-56.566 0.004l-29.292-29.292c12.466 65.568 44.214 125.882 92.448 174.116 63.46 63.46 147.84 98.41 237.586 98.41 89.75 0 174.124-34.95 237.59-98.41 27.012-27.012 48.836-57.824 65.020-91.218l0.008 0.004c6.726-12.632 20.012-21.242 35.324-21.242 22.092 0.002 40.002 17.912 40.002 40.002zM145.83 545.416l1.4 0.248-0.824-0.824-0.576 0.576z"
+              >
+                <path
+                  className="emotion-0"
+                  d="M998.786 474.516l-91 90.988c-8.028 8.036-18.624 11.902-29.152 11.676-10.536 0.234-21.144-3.632-29.184-11.676l-92.3-92.296c-15.624-15.622-15.624-40.95 0-56.57 15.622-15.622 40.95-15.624 56.57 0l26.146 26.148c-13.774-61.416-44.624-117.806-90.216-163.394-63.46-63.464-147.84-98.414-237.586-98.414-89.75 0-174.128 34.95-237.59 98.414-27.012 27.012-48.836 57.824-65.024 91.214l-0.008-0.004c-6.722 12.632-20.008 21.242-35.32 21.242-22.090 0-40-17.906-40-40 0-5.464 1.102-10.668 3.086-15.414l-0.004-0.004c0.016-0.032 0.024-0.058 0.040-0.090 0.036-0.078 0.070-0.156 0.106-0.234 0.73-1.632 0.208-0.718 5.004-9.996 69.18-133.726 208.766-225.128 369.71-225.128 203.224 0 372.374 145.734 408.728 338.392l21.424-21.424c15.618-15.622 40.946-15.622 56.566 0s15.624 40.948 0.004 56.57zM889.992 682.11c0 5.464-1.106 10.672-3.090 15.414l0.008 0.004c-0.016 0.036-0.028 0.058-0.040 0.090-0.036 0.078-0.074 0.156-0.106 0.234-0.73 1.636-0.208 0.718-5.008 10-69.176 133.722-208.762 225.124-369.708 225.124-205.2 0-375.668-148.578-409.76-344.022l-19.478 19.478c-15.622 15.622-40.95 15.622-56.57 0-15.618-15.622-15.622-40.95 0-56.57l90.996-90.992c8.032-8.032 18.628-11.902 29.152-11.672 10.536-0.238 21.144 3.632 29.188 11.672l92.296 92.3c15.624 15.618 15.624 40.946 0 56.566-15.618 15.622-40.946 15.624-56.566 0.004l-29.292-29.292c12.466 65.568 44.214 125.882 92.448 174.116 63.46 63.46 147.84 98.41 237.586 98.41 89.75 0 174.124-34.95 237.59-98.41 27.012-27.012 48.836-57.824 65.020-91.218l0.008 0.004c6.726-12.632 20.012-21.242 35.324-21.242 22.092 0.002 40.002 17.912 40.002 40.002zM145.83 545.416l1.4 0.248-0.824-0.824-0.576 0.576z"
+                />
+              </Styled(path)>
+            </svg>
+          </Svg>
+        </Icon>
+      </Styled(Icon)>
+       Please wait while a11y scan is running ...
+    </div>
+  </Component>
+</Loader>
+`;
+
 exports[`A11YPanel should render report 1`] = `
 .emotion-10 {
   overflow-y: auto;
@@ -203,6 +305,7 @@ exports[`A11YPanel should render report 1`] = `
               "qacwg0": true,
               "qb28": true,
               "snh8f7": true,
+              "tkevr6": true,
             },
             "key": "css",
             "nonce": undefined,
@@ -211,6 +314,7 @@ exports[`A11YPanel should render report 1`] = `
               "css-1977chw": "height:10px;width:10px;min-width:10px;color:#999999;margin-right:10px;transition:transform 0.1s ease-in-out;align-self:center;display:inline-flex;",
               "css-1l7fvsg": "height:12px;width:12px;margin-right:4px;",
               "css-jb2puo": "height:12px;width:12px;margin-right:4px;animation:animation-u07e3c 1s linear infinite;;",
+              "css-tkevr6": "display:flex;align-items:center;justify-content:center;height:100%;",
             },
             "sheet": StyleSheet {
               "before": null,
@@ -549,6 +653,12 @@ exports[`A11YPanel should render report 1`] = `
                   data-emotion="css"
                 >
                   
+                  .css-tkevr6{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;height:100%;}
+                </style>
+                <style
+                  data-emotion="css"
+                >
+                  
                   .css-jb2puo{height:12px;width:12px;margin-right:4px;-webkit-animation:animation-u07e3c 1s linear infinite;animation:animation-u07e3c 1s linear infinite;}
                 </style>
                 <style
@@ -612,7 +722,7 @@ exports[`A11YPanel should render report 1`] = `
                   .css-6hqipu{shape-rendering:inherit;-webkit-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);display:inline-block;height:12px;width:12px;margin-right:4px;}
                 </style>
               </head>,
-              "ctr": 28,
+              "ctr": 29,
               "isSpeedy": false,
               "key": "css",
               "nonce": undefined,
@@ -718,6 +828,12 @@ exports[`A11YPanel should render report 1`] = `
                 >
                   
                   .emotion-13:focus{box-shadow:#1EA7FD 0 -3px 0 0 inset;outline:0 none;}
+                </style>,
+                <style
+                  data-emotion="css"
+                >
+                  
+                  .css-tkevr6{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;height:100%;}
                 </style>,
                 <style
                   data-emotion="css"
