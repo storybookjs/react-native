@@ -309,6 +309,25 @@ https://url-of-storybook?path=/story/<storyId>
 
 The structure of `storyId` is a slugified `<selectedKind>--<selectedStory>` (slugified = lowercase, hyphen-separated). Each `storyId` must be unique. We plan to build more features into Storybook in upcoming versions based on this new structure.
 
+## Rename of the `--secure` cli parameter to `--https`
+
+Storybook for React Native's start commands & the Web versions' start command were a bit different, for no reason. 
+We've changed the start command for Reactnative to match the other.
+
+This means that when you previously used the `--secure` flag like so:
+
+```sh
+start-storybook --secure
+# or
+start-storybook --s
+```
+
+You have to replace it with:
+
+```sh
+start-storybook --https
+```
+
 ## From version 4.0.x to 4.1.x
 
 There are are a few migrations you should be aware of in 4.1, including one unintentionally breaking change for advanced addon usage.
