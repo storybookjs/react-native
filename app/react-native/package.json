@@ -18,7 +18,7 @@
     "directory": "app/react-native"
   },
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
