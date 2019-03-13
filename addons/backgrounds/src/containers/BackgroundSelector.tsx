@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import memoize from 'memoizerific';
 
+import { API } from '@storybook/api';
 import { Global } from '@storybook/theming';
 
-import { API } from '@storybook/api';
 import { SET_STORIES } from '@storybook/core-events';
 
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
