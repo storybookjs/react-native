@@ -1,7 +1,7 @@
 {
   "name": "@storybook/addon-ondevice-knobs",
   "private": true,
-  "version": "5.1.0-alpha.4",
+  "version": "5.1.0-alpha.5",
   "description": "Display storybook story knobs on your deviced.",
   "keywords": [
     "addon",
@@ -22,8 +22,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core-events": "5.1.0-alpha.4",
-    "@storybook/addons": "5.1.0-alpha.4",
+    "@storybook/addons": "5.1.0-alpha.5",
+    "@storybook/core-events": "5.1.0-alpha.5",
     "core-js": "^2.6.5",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
@@ -33,7 +33,7 @@
     "react-native-switch": "^1.5.0"
   },
   "peerDependencies": {
-    "@storybook/addon-knobs": "5.1.0-alpha.4",
+    "@storybook/addon-knobs": "5.1.0-alpha.5",
     "react": "*",
     "react-native": "*"
   },

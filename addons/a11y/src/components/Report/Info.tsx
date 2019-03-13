@@ -3,11 +3,10 @@ import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 import { Result } from 'axe-core';
 
-const Wrapper = styled.div(({ theme }) => ({
-  backgroundColor: theme.background.bar,
+const Wrapper = styled.div({
   padding: '12px',
   marginBottom: '10px',
-}));
+});
 const Help = styled.p({
   margin: '0 0 12px',
 });

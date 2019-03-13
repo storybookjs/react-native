@@ -46,11 +46,11 @@ export const url = {
     home: `${docsUrl}/basics/introduction/`,
     addonInstruction: `${docsUrl}/addons/writing-addons/`,
   },
-  addons: `${homepageUrl}/addons`,
-  community: `${homepageUrl}/community`,
-  useCases: `${homepageUrl}/use-cases`,
-  support: `${homepageUrl}/support`,
-  team: `${homepageUrl}/team`,
+  addons: `${homepageUrl}/addons/`,
+  community: `${homepageUrl}/community/`,
+  useCases: `${homepageUrl}/use-cases/`,
+  support: `${homepageUrl}/support/`,
+  team: `${homepageUrl}/team/`,
 
   // Social
   blog: `https://medium.com/storybookjs`,

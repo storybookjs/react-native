@@ -7,7 +7,7 @@ Storybook is theme-able! You can change theme variables using the [options param
 
 ## Set a theme
 
-You can do this in an decorator, addon or in `.storybook/config.js`. Changing theme at runtime is supported!
+You can do this in a decorator, an addon or in `.storybook/config.js`. Changing theme at runtime is also supported!
 
 Just modify `.storybook/config.js` to include your new options:
 
@@ -21,15 +21,15 @@ addParameters({
 });
 ```
 
-When setting a theme, set a full theme object, the theme is replaced, not combined.
+When setting a theme, set a full theme object. The theme is replaced not combined.
 
 See more addon options at https://github.com/storybooks/storybook/tree/master/addons/options
 
 ## Get a theme
 
-We have created 2 themes for you: "normal" (a light theme) and "dark" (a dark theme).
+We have created two themes for you: "normal" (a light theme) and "dark" (a dark theme).
 
-You can get these themes like so:
+Here's an example of using the "dark" theme:
 
 ```js
 import { addParameters, configure } from '@storybook/react';
@@ -46,9 +46,9 @@ addParameters({
 
 ## Create a theme quickstart
 
-The `storybook/theming` is build using TypeScript, so this should help create a valid theme for typescript users. The types are part of the package itself.
+The `storybook/theming` is built using TypeScript, so this should help create a valid theme for typescript users. The types are part of the package itself.
 
-The easiest way to customize Storybook to generate a new theme using `create()`. This function includes shorthands for the most common theme variables. Here's how to use it.
+The easiest way to customize Storybook is to generate a new theme using the `create()` function from `storybook/theming`. This function includes shorthands for the most common theme variables. Here's how to use it:
 
 First create a new file in `.storybook` called `yourTheme.js`.
 
@@ -97,7 +97,7 @@ export default create({
 Finally, import your theme into `.storybook/config` and add it to your Storybook parameters.
 
 ```js
-import { yourTheme } from './yourTheme';
+import yourTheme from './yourTheme';
 
 addParameters({
   options: {
@@ -124,7 +124,7 @@ export default create({
 
 Some addons require specific theme variables that a Storybook user must add. If you share your theme with the community make sure to support the official and other popular addons so your users have a consistent experience.
 
-For example, the popular Actions addon uses [react-inspector](https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js) which has themes of it's own. Supply additional theme variables to style it like so:
+For example, the popular Actions addon uses [react-inspector](https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js) which has themes of its own. Supply additional theme variables to style it like so:
 
 ```js
 addonActionsTheme: {

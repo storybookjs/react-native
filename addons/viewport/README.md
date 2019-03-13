@@ -89,7 +89,7 @@ import addStories from '@storybook/react';
 addStories('Stories', module)
   // To set a default viewport for all the stories for this component
   .addParameters({ viewport: { defaultViewport: 'iphone6' }})
-  .add('story', () => </>, { viewport: 'iphonex' });
+  .add('story', () => </>, { viewport: { defaultViewport: 'iphonex' }});
 ```
 
 ## Examples
