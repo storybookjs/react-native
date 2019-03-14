@@ -227,7 +227,18 @@ exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
                 >
                   &&
                 </span>
-                 yarn
+                 
+                <span
+                  class="token function"
+                >
+                  npm
+                </span>
+                 
+                <span
+                  class="token function"
+                >
+                  install
+                </span>
               </code>
             </pre>
           </div>
