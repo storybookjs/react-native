@@ -25,7 +25,7 @@ object Project : Project({
     buildType(OpenSourceProjects_Storybook_Docs)
     buildType(OpenSourceProjects_Storybook_Build_2)
     buildType(OpenSourceProjects_Storybook_CliTest)
-    buildType(OpenSourceProjects_Storybook_Test)
+    // buildType(OpenSourceProjects_Storybook_Test)
     buildType(OpenSourceProjects_Storybook_Lint)
     buildType(OpenSourceProjects_Storybook_Lint_Warnings)
     buildType(OpenSourceProjects_Storybook_SmokeTests)
@@ -124,44 +124,44 @@ object Project : Project({
             param("title", "Build Duration (all stages)")
             param("defaultFilters", "")
         }
-        feature {
-            type = "project-graphs"
-            id = "PROJECT_EXT_307"
-            param("series", """
-                [
-                  {
-                    "type": "valueType",
-                    "title": "Covered Percentage of JS Lines",
-                    "sourceBuildTypeId": "OpenSourceProjects_Storybook_Test",
-                    "key": "Covered Percentage of JS Lines"
-                  }
-                ]
-            """.trimIndent())
-            param("format", "percent")
-            param("hideFilters", "")
-            param("title", "Covered Percentage of JS Lines")
-            param("defaultFilters", "")
-            param("seriesTitle", "Serie")
-        }
-        feature {
-            type = "project-graphs"
-            id = "PROJECT_EXT_308"
-            param("series", """
-                [
-                  {
-                    "type": "valueType",
-                    "title": "Total Number of JS Statements",
-                    "sourceBuildTypeId": "OpenSourceProjects_Storybook_Test",
-                    "key": "Total Number of JS Statements"
-                  }
-                ]
-            """.trimIndent())
-            param("format", "integer")
-            param("seriesTitle", "Serie")
-            param("hideFilters", "")
-            param("title", "Total Number of JS Statements")
-            param("defaultFilters", "")
-        }
+        // feature {
+        //     type = "project-graphs"
+        //     id = "PROJECT_EXT_307"
+        //     param("series", """
+        //         [
+        //           {
+        //             "type": "valueType",
+        //             "title": "Covered Percentage of JS Lines",
+        //             "sourceBuildTypeId": "OpenSourceProjects_Storybook_Test",
+        //             "key": "Covered Percentage of JS Lines"
+        //           }
+        //         ]
+        //     """.trimIndent())
+        //     param("format", "percent")
+        //     param("hideFilters", "")
+        //     param("title", "Covered Percentage of JS Lines")
+        //     param("defaultFilters", "")
+        //     param("seriesTitle", "Serie")
+        // }
+        // feature {
+        //     type = "project-graphs"
+        //     id = "PROJECT_EXT_308"
+        //     param("series", """
+        //         [
+        //           {
+        //             "type": "valueType",
+        //             "title": "Total Number of JS Statements",
+        //             "sourceBuildTypeId": "OpenSourceProjects_Storybook_Test",
+        //             "key": "Total Number of JS Statements"
+        //           }
+        //         ]
+        //     """.trimIndent())
+        //     param("format", "integer")
+        //     param("seriesTitle", "Serie")
+        //     param("hideFilters", "")
+        //     param("title", "Total Number of JS Statements")
+        //     param("defaultFilters", "")
+        // }
         feature {
             type = "project-graphs"
             id = "PROJECT_EXT_117"
