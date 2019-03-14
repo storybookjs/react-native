@@ -21,7 +21,7 @@ npx -p @storybook/cli sb init --type html
 
 It's also useful if our automatic detection fails.
 
-By default npx will use the latest version, if you want to try out an next version, you can use the following:
+By default npx will use the latest version, if you want to try out the next version (or any specific version), you can use the following:
 
 ```sh
 npx -p @storybook/cli@5.0.0-rc.6 sb init
