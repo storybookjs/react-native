@@ -1,5 +1,6 @@
 import path from 'path';
 import { ContextReplacementPlugin } from 'webpack';
+import autoprefixer from 'autoprefixer';
 import getTsLoaderOptions from './ts_config';
 import createForkTsCheckerInstance from './create-fork-ts-checker-plugin';
 
@@ -32,7 +33,16 @@ export function webpack(config, { configDir }) {
         },
         {
           test: /\.s(c|a)ss$/,
-          use: [require.resolve('raw-loader'), require.resolve('sass-loader')],
+          use: [
+            require.resolve('raw-loader'),
+            {
+              loader: require.resolve('postcss-loader'),
+              options: {
+                plugins: [autoprefixer()],
+              },
+            },
+            require.resolve('sass-loader'),
+          ],
         },
       ],
     },

@@ -4,7 +4,6 @@ import deprecate from 'util-deprecate';
 import { stripIndents } from 'common-tags';
 
 import addons, { StoryWrapper } from '@storybook/addons';
-import { STORY_RENDERED } from '@storybook/core-events';
 import { EVENTS, PARAM_KEY } from './constants';
 
 const channel = addons.getChannel();
@@ -56,7 +55,6 @@ export const withA11y: StoryWrapper = (getStory, context) => {
   return getStory(context);
 };
 
-channel.on(STORY_RENDERED, () => run(setup.element, setup.config, setup.options));
 channel.on(EVENTS.REQUEST, () => run(setup.element, setup.config, setup.options));
 
 if (module && module.hot && module.hot.decline) {
