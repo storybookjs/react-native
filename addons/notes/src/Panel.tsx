@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { API } from '@storybook/api';
+import React, { ReactElement, Component, Fragment, ReactNode } from 'react';
 import { types } from '@storybook/addons';
+import { API, Consumer, Combo } from '@storybook/api';
 import { styled } from '@storybook/theming';
 import { STORY_RENDERED } from '@storybook/core-events';
 
@@ -28,7 +28,7 @@ interface Props {
   api: API;
 }
 
-interface NotesPanelState {
+interface State {
   value?: string;
 }
 
@@ -46,14 +46,21 @@ function read(param: Parameters | undefined): string | undefined {
   }
 }
 
-export const SyntaxHighlighter = (props: any) => {
+interface SyntaxHighlighterProps {
+  className?: string;
+  children: ReactElement;
+  [key: string]: any;
+}
+export const SyntaxHighlighter = ({ className, children, ...props }: SyntaxHighlighterProps) => {
   // markdown-to-jsx does not add className to inline code
-  if (props.className === undefined) {
-    return <code>{props.children}</code>;
+  if (className) {
+    return <code>{children}</code>;
   }
   // className: "lang-jsx"
-  const language = props.className.split('-');
-  return <SyntaxHighlighterBase language={language[1]} bordered copyable {...props} />;
+  const language = className.split('-');
+  return (
+    <SyntaxHighlighterBase language={language[1] || 'plaintext'} bordered copyable {...props} />
+  );
 };
 
 // use our SyntaxHighlighter component in place of a <code> element when
@@ -67,8 +74,31 @@ const defaultOptions = {
   },
 };
 
-export default class NotesPanel extends Component<Props, NotesPanelState> {
-  readonly state: NotesPanelState = {
+interface Overrides {
+  overrides: {
+    [type: string]: ReactNode;
+  };
+}
+type Options = typeof defaultOptions & Overrides;
+
+const mapper = ({ state, api }: Combo): { value?: string; options: Options } => {
+  const extraElements = Object.entries(api.getElements(types.NOTES_ELEMENT)).reduce(
+    (acc, [k, v]) => ({ ...acc, [k]: v.render }),
+    {}
+  );
+  const options = {
+    ...defaultOptions,
+    overrides: { ...defaultOptions.overrides, ...extraElements },
+  };
+
+  const story = state.storiesHash[state.storyId];
+  const value = read(story ? api.getParameters(story.id, PARAM_KEY) : undefined);
+
+  return { options, value };
+};
+
+export default class NotesPanel extends Component<Props, State> {
+  readonly state: State = {
     value: '',
   };
 
@@ -97,43 +127,38 @@ export default class NotesPanel extends Component<Props, NotesPanelState> {
   };
 
   render() {
-    const { active, api } = this.props;
-    const { value } = this.state;
+    const { active } = this.props;
 
     if (!active) {
       return null;
     }
 
-    // TODO: memoize
-    const extraElements = Object.entries(api.getElements(types.NOTES_ELEMENT)).reduce(
-      (acc, [k, v]) => ({ ...acc, [k]: v.render }),
-      {}
-    );
-    const options = {
-      ...defaultOptions,
-      overrides: { ...defaultOptions.overrides, ...extraElements },
-    };
-
-    return value ? (
-      <Panel className="addon-notes-container">
-        <DocumentFormatting>
-          <Markdown options={options}>{value}</Markdown>
-        </DocumentFormatting>
-      </Panel>
-    ) : (
-      <Placeholder>
-        <React.Fragment>No notes yet</React.Fragment>
-        <React.Fragment>
-          Learn how to{' '}
-          <Link
-            href="https://github.com/storybooks/storybook/tree/master/addons/notes"
-            target="_blank"
-            withArrow
-          >
-            document components in Markdown
-          </Link>
-        </React.Fragment>
-      </Placeholder>
+    return (
+      <Consumer filter={mapper}>
+        {({ options, value }: { options: Options; value?: string }) => {
+          return value ? (
+            <Panel className="addon-notes-container">
+              <DocumentFormatting>
+                <Markdown options={options}>{value}</Markdown>
+              </DocumentFormatting>
+            </Panel>
+          ) : (
+            <Placeholder>
+              <Fragment>No notes yet</Fragment>
+              <Fragment>
+                Learn how to{' '}
+                <Link
+                  href="https://github.com/storybooks/storybook/tree/master/addons/notes"
+                  target="_blank"
+                  withArrow
+                >
+                  document components in Markdown
+                </Link>
+              </Fragment>
+            </Placeholder>
+          );
+        }}
+      </Consumer>
     );
   }
 }
