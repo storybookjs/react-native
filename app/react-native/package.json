@@ -1,7 +1,7 @@
 {
   "name": "@storybook/react-native",
-  "private": true,
   "version": "5.1.0-alpha.6",
+  "private": true,
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",

@@ -3,13 +3,13 @@
   "version": "5.1.0-alpha.6",
   "private": true,
   "scripts": {
-    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "build-storybook": "build-storybook -c ./ -s built-storybooks",
     "chromatic": "chromatic test --storybook-addon --exit-zero-on-changes --app-code ab7m45tp9p",
     "do-image-snapshots": "../../node_modules/.bin/jest --projects=./image-snapshots",
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "graphql": "node ./graphql-server/index.js",
     "image-snapshots": "yarn run build-storybook && yarn run do-image-snapshots",
+    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 9011 -c ./ -s built-storybooks --no-dll"
   },
   "devDependencies": {

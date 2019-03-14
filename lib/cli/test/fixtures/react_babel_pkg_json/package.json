@@ -4,19 +4,21 @@
   "license": "MIT",
   "main": "stories/index.stories.js",
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-proposal-optional-chaining"
+    ]
   },
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-optional-chaining": "7.0.0",
     "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-optional-chaining": "7.0.0",
     "babel-loader": "^8.0.5"
-  },
-  "babel": {
-    "plugins": ["@babel/plugin-proposal-optional-chaining"]
   }
 }
