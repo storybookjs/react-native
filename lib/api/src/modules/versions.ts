@@ -6,7 +6,7 @@ import { version as currentVersion } from '../version';
 
 import { Module, API } from '../index';
 
-interface Version {
+export interface Version {
   version: string;
   info?: string;
   [key: string]: any;
