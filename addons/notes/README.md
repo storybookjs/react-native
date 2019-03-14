@@ -19,7 +19,10 @@ Then create a file called `addons.js` in your storybook config.
 Add following content to it:
 
 ```js
+// register the notes addon as a tab
 import '@storybook/addon-notes/register';
+// register the notes addon as a panel
+import '@storybook/addon-notes/register-panel';
 ```
 
 You can use the `notes` parameter to add a note to each story:
@@ -29,10 +32,9 @@ import { storiesOf } from '@storybook/react';
 
 import Component from './Component';
 
-storiesOf('Component', module)
-  .add('with some emoji', () => <Component />, {
-    notes: 'A very simple example of addon notes',
-  });
+storiesOf('Component', module).add('with some emoji', () => <Component />, {
+  notes: 'A very simple example of addon notes',
+});
 ```
 
 #### Using Markdown
@@ -44,8 +46,7 @@ import { storiesOf } from '@storybook/react';
 import Component from './Component';
 import notes from './someMarkdownText.md';
 
-storiesOf('Component', module)
-  .add('With Markdown', () => <Component />, { notes });
+storiesOf('Component', module).add('With Markdown', () => <Component />, { notes });
 ```
 
 ### Giphy
@@ -57,4 +58,3 @@ When using markdown, you can also embed gifs from Giphy into your markdown. Curr
 
 <Giphy gif='cheese' />
 ```
-
