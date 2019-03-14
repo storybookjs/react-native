@@ -40,7 +40,7 @@
     "@storybook/core-events": "file:../../packs/storybook-core-events.tgz",
     "@storybook/node-logger": "file:../../packs/storybook-node-logger.tgz",
     "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
-    "@storybook/react-native-server": "file:../../app/react-native-server.tgz",
+    "@storybook/react-native-server": "file:../../packs/storybook-react-native-server.tgz",
     "@storybook/addon-notes": "file:../../packs/storybook-addon-notes.tgz",
     "@storybook/addon-ondevice-backgrounds": "file:../../packs/storybook-addon-ondevice-backgrounds.tgz",
     "@storybook/addon-ondevice-knobs": "file:../../packs/storybook-addon-ondevice-knobs.tgz",
