@@ -1,3 +1,18 @@
+## 5.1.0-alpha.6 (March 14, 2019)
+
+### Features
+
+* Angular: add autoprefixing like angular-cli ([#5612](https://github.com/storybooks/storybook/pull/5612))
+
+### Bug Fixes
+
+* UI: Fixing search item in menu ([#6027](https://github.com/storybooks/storybook/pull/6027))
+* Addon-a11y: Run only when a11y tab is active ([#6044](https://github.com/storybooks/storybook/pull/6044))
+
+### Maintenance
+
+* UI: Update syntaxhighlighter stories ([#6054](https://github.com/storybooks/storybook/pull/6054))
+
 ## 5.1.0-alpha.5 (March 12, 2019)
 
 ### Bug Fixes
