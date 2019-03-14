@@ -21,7 +21,7 @@ Add following content to it:
 ```js
 // register the notes addon as a tab
 import '@storybook/addon-notes/register';
-// register the notes addon as a panel
+// or register the notes addon as a panel. Only one can be used!
 import '@storybook/addon-notes/register-panel';
 ```
 
