@@ -6,26 +6,20 @@ import { version as currentVersion } from '../version';
 
 import { Module, API } from '../index';
 
+interface Version {
+  version: string;
+  info?: string;
+  [key: string]: any;
+}
+
 export interface SubState {
   versions: {
     [key: string]: {
       [key: string]: any;
     };
-    latest?: {
-      version: string;
-      info: string;
-      [key: string]: any;
-    };
-    next?: {
-      version: string;
-      info: string;
-      [key: string]: any;
-    };
-    current?: {
-      version: string;
-      info?: string;
-      [key: string]: any;
-    };
+    latest?: Version;
+    next?: Version;
+    current?: Version;
   };
   lastVersionCheck: number;
   dismissedVersionNotification: undefined | string;
@@ -37,6 +31,12 @@ const versionsUrl = 'https://storybook.js.org/versions.json';
 async function fetchLatestVersion(v: string) {
   const fromFetch = await fetch(`${versionsUrl}?current=${v}`);
   return fromFetch.json();
+}
+
+export interface SubAPI {
+  getCurrentVersion: () => Version;
+  getLatestVersion: () => Version;
+  versionUpdateAvailable: () => boolean;
 }
 
 export default function({ store }: Module) {
@@ -62,7 +62,7 @@ export default function({ store }: Module) {
     dismissedVersionNotification,
   };
 
-  const api = {
+  const api: SubAPI = {
     getCurrentVersion: () => {
       const {
         versions: { current },

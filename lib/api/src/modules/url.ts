@@ -86,9 +86,21 @@ export interface QueryParams {
   [key: string]: string;
 }
 
+export interface SubAPI {
+  getQueryParam: (key: string) => string | undefined;
+  getUrlState: () => {
+    queryParams: QueryParams;
+    path: string;
+    viewMode?: string;
+    storyId?: string;
+    url: string;
+  };
+  setQueryParams: (input: QueryParams) => void;
+}
+
 export default function({ store, navigate, location, path: initialPath, ...rest }: Module) {
-  const api = {
-    getQueryParam: (key: string): string => {
+  const api: SubAPI = {
+    getQueryParam: key => {
       const { customQueryParams } = store.getState();
       if (customQueryParams) {
         return customQueryParams[key];
@@ -107,7 +119,7 @@ export default function({ store, navigate, location, path: initialPath, ...rest 
         url,
       };
     },
-    setQueryParams(input: QueryParams) {
+    setQueryParams(input) {
       const { customQueryParams } = store.getState();
       const queryParams: QueryParams = {};
       store.setState({

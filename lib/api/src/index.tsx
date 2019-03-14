@@ -21,8 +21,11 @@ import initShortcuts, {
   SubState as ShortcutsSubState,
   SubAPI as ShortcutsAPI,
 } from './modules/shortcuts';
-import initURL, { QueryParams } from './modules/url';
-import initVersions, { SubState as VersionsSubState } from './modules/versions';
+import initURL, { QueryParams, SubAPI as UrlAPI } from './modules/url';
+import initVersions, {
+  SubState as VersionsSubState,
+  SubAPI as VersionsAPI,
+} from './modules/versions';
 
 const ManagerContext = createContext({ api: undefined, state: getInitialState({}) });
 
@@ -44,6 +47,8 @@ export type API = AddonsAPI &
   LayoutAPI &
   NotificationAPI &
   ShortcutsAPI &
+  VersionsAPI &
+  UrlAPI &
   OtherAPI;
 
 interface OtherAPI {
