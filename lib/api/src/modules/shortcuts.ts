@@ -1,9 +1,14 @@
 import { navigator, document } from 'global';
 import { PREVIEW_KEYDOWN } from '@storybook/core-events';
 
+<<<<<<< HEAD:lib/api/src/modules/shortcuts.ts
 import { Module, API } from '../index';
 
 import { shortcutMatchesShortcut, eventToShortcut } from '../lib/shortcut';
+=======
+import { shortcutMatchesShortcut, eventToShortcut } from '../libs/shortcut';
+import { focusableUIElements } from './layout';
+>>>>>>> next:lib/ui/src/core/shortcuts.js
 
 export const isMacLike = () =>
   navigator && navigator.platform ? !!navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) : false;
@@ -137,11 +142,7 @@ export default function initShortcuts({ store }: Module) {
           if (!showNav) {
             fullApi.toggleNav();
           }
-          const element = document.getElementById('storybook-explorer-menu');
-
-          if (element) {
-            element.focus();
-          }
+          fullApi.focusOnUIElement(focusableUIElements.storyListMenu);
           break;
         }
 
@@ -154,11 +155,7 @@ export default function initShortcuts({ store }: Module) {
           }
 
           setTimeout(() => {
-            const element = document.getElementById('storybook-explorer-searchfield');
-
-            if (element) {
-              element.focus();
-            }
+            fullApi.focusOnUIElement(focusableUIElements.storySearchField);
           }, 0);
           break;
         }
@@ -184,11 +181,7 @@ export default function initShortcuts({ store }: Module) {
           if (!showPanel) {
             fullApi.togglePanel();
           }
-          const element = document.getElementById('storybook-panel-root');
-
-          if (element) {
-            element.focus();
-          }
+          fullApi.focusOnUIElement(focusableUIElements.storyPanelRoot);
           break;
         }
 

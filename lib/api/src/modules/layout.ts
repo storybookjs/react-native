@@ -1,3 +1,4 @@
+import { document } from 'global';
 import pick from 'lodash.pick';
 
 import deprecate from 'util-deprecate';
@@ -145,6 +146,12 @@ const initial: SubState = {
   theme: themes.light,
 };
 
+export const focusableUIElements = {
+  storySearchField: 'storybook-explorer-searchfield',
+  storyListMenu: 'storybook-explorer-menu',
+  storyPanelRoot: 'storybook-panel-root',
+};
+
 let hasSetOptions = false;
 export default function({ store }: { store: Store }) {
   const api = {
@@ -216,6 +223,16 @@ export default function({ store }: { store: Store }) {
           },
         };
       });
+    },
+
+    focusOnUIElement(elementId?: string) {
+      if (!elementId) {
+        return;
+      }
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.focus();
+      }
     },
 
     setOptions: (options: any) => {
