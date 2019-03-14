@@ -28,10 +28,6 @@ interface Props {
   api: API;
 }
 
-interface State {
-  value?: string;
-}
-
 function read(param: Parameters | undefined): string | undefined {
   if (!param) {
     return undefined;
@@ -53,13 +49,13 @@ interface SyntaxHighlighterProps {
 }
 export const SyntaxHighlighter = ({ className, children, ...props }: SyntaxHighlighterProps) => {
   // markdown-to-jsx does not add className to inline code
-  if (className) {
+  if (typeof className !== 'string') {
     return <code>{children}</code>;
   }
   // className: "lang-jsx"
   const language = className.split('-');
   return (
-    <SyntaxHighlighterBase language={language[1] || 'plaintext'} bordered copyable {...props} />
+    <SyntaxHighlighterBase language={language[1] || 'plaintext'} bordered copyable {...props}>{children}</SyntaxHighlighterBase>
   );
 };
 
@@ -97,68 +93,38 @@ const mapper = ({ state, api }: Combo): { value?: string; options: Options } => 
   return { options, value };
 };
 
-export default class NotesPanel extends Component<Props, State> {
-  readonly state: State = {
-    value: '',
-  };
-
-  mounted: boolean;
-
-  componentDidMount() {
-    const { api } = this.props;
-    api.on(STORY_RENDERED, this.onStoryChange);
+const NotesPanel = ({ active }: Props) => {
+  if (!active) {
+    return null;
   }
 
-  componentWillUnmount() {
-    const { api } = this.props;
-    api.off(STORY_RENDERED, this.onStoryChange);
-  }
+  return (
+    <Consumer filter={mapper}>
+      {({ options, value }: { options: Options; value?: string }) => {
+        return value ? (
+          <Panel className="addon-notes-container">
+            <DocumentFormatting>
+              <Markdown options={options}>{value}</Markdown>
+            </DocumentFormatting>
+          </Panel>
+        ) : (
+          <Placeholder>
+            <Fragment>No notes yet</Fragment>
+            <Fragment>
+              Learn how to{' '}
+              <Link
+                href="https://github.com/storybooks/storybook/tree/master/addons/notes"
+                target="_blank"
+                withArrow
+              >
+                document components in Markdown
+              </Link>
+            </Fragment>
+          </Placeholder>
+        );
+      }}
+    </Consumer>
+  );
+};
 
-  onStoryChange = (id: string) => {
-    const { api } = this.props;
-    const params = api.getParameters(id, PARAM_KEY);
-
-    const value = read(params);
-    if (value) {
-      this.setState({ value });
-    } else {
-      this.setState({ value: undefined });
-    }
-  };
-
-  render() {
-    const { active } = this.props;
-
-    if (!active) {
-      return null;
-    }
-
-    return (
-      <Consumer filter={mapper}>
-        {({ options, value }: { options: Options; value?: string }) => {
-          return value ? (
-            <Panel className="addon-notes-container">
-              <DocumentFormatting>
-                <Markdown options={options}>{value}</Markdown>
-              </DocumentFormatting>
-            </Panel>
-          ) : (
-            <Placeholder>
-              <Fragment>No notes yet</Fragment>
-              <Fragment>
-                Learn how to{' '}
-                <Link
-                  href="https://github.com/storybooks/storybook/tree/master/addons/notes"
-                  target="_blank"
-                  withArrow
-                >
-                  document components in Markdown
-                </Link>
-              </Fragment>
-            </Placeholder>
-          );
-        }}
-      </Consumer>
-    );
-  }
-}
+export default NotesPanel;
