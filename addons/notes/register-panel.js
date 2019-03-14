@@ -1,1 +1,1 @@
-require('./dist/register.js')('panel');
+require('./dist/register.js').default('panel');

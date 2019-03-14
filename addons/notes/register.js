@@ -1,1 +1,1 @@
-require('./dist/register.js')('tab');
+require('./dist/register.js').default('tab');
