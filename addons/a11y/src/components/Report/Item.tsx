@@ -42,6 +42,7 @@ const HeaderBar = styled.button(({ theme }) => ({
 interface ItemProps {
   item: Result;
   passes: boolean;
+  type: string;
 }
 
 interface ItemState {
@@ -59,7 +60,7 @@ export class Item extends Component<ItemProps, ItemState> {
     }));
 
   render() {
-    const { item, passes } = this.props;
+    const { item, passes, type } = this.props;
     const { open } = this.state;
 
     return (
@@ -78,7 +79,7 @@ export class Item extends Component<ItemProps, ItemState> {
         {open ? (
           <Fragment>
             <Info item={item} key="info" />
-            <Elements elements={item.nodes} passes={passes} key="elements" />
+            <Elements elements={item.nodes} passes={passes} type={type} key="elements" />
             <Tags tags={item.tags} key="tags" />
           </Fragment>
         ) : null}
