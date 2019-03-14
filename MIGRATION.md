@@ -164,7 +164,7 @@ storiesOf('Stories', module)
   .add('centered', () => 'Hello');
 ```
 
-The semantics has changed in SB5 so that calling `addDecorator` on a kind adds a decorator to all its stories, no mater the order. So in the previous example, both stories would be centered.
+The semantics has changed in SB5 so that calling `addDecorator` on a kind adds a decorator to all its stories, no matter the order. So in the previous example, both stories would be centered.
 
 To allow for a subset of the stories in a kind to be decorated, we've added the ability to add decorators to individual stories using parameters:
 
