@@ -1,14 +1,10 @@
 import { navigator, document } from 'global';
 import { PREVIEW_KEYDOWN } from '@storybook/core-events';
 
-<<<<<<< HEAD:lib/api/src/modules/shortcuts.ts
 import { Module, API } from '../index';
 
 import { shortcutMatchesShortcut, eventToShortcut } from '../lib/shortcut';
-=======
-import { shortcutMatchesShortcut, eventToShortcut } from '../libs/shortcut';
 import { focusableUIElements } from './layout';
->>>>>>> next:lib/ui/src/core/shortcuts.js
 
 export const isMacLike = () =>
   navigator && navigator.platform ? !!navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) : false;
