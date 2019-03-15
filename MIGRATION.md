@@ -78,6 +78,49 @@ In contrast, the 4.x configuration function accepted either two or three argumen
 
 Exporting an object from your custom webpack config puts storybook in "extend mode". This is still supported in 5.x but we've deprecated this and encourage users to use full-control mode instead.
 
+If your extend-mode webpack config looks like this:
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      /* ... */
+    ],
+  },
+};
+```
+
+You can replace it with the following full-control equivalent for identical behavior:
+
+```js
+const mergeConfigs = require('@storybook/core/merge-webpack-config');
+
+module.exports = async ({ config }) =>
+  mergeConfigs(config, {
+    module: {
+      rules: [
+        /* ... */
+      ],
+    },
+  });
+```
+
+You can also modify the default config more deliberately:
+
+```js
+module.exports = ({ config }) => ({
+  ...config
+  module: {
+    ...config.module
+    rules: [
+      /* ... some before */
+      ...config.module.rules,
+      /* ... & some after */
+    ]
+  }
+})
+```
+
 ## Theming overhaul
 
 Theming has been rewritten in v5. If you used theming in v4, please consult the [theming docs](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/theming/index.md) to learn about the new API.
