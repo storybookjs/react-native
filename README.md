@@ -161,7 +161,7 @@ Looking for a first issue to tackle?
 - [Talk to us](https://discord.gg/sMFvFsG), we'll find something to suits your skills and learning interest.
 
 ### Development scripts
-
+Storybook is organized as a monorepo using [Lerna](https://lernajs.io). Useful scripts include:
 #### `yarn bootstrap`
 
 > Installs package dependencies and links packages together - using lerna

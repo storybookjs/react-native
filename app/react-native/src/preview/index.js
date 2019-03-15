@@ -1,14 +1,13 @@
 /* eslint-disable no-underscore-dangle */
 
 import React from 'react';
-import { AsyncStorage, NativeModules } from 'react-native';
-import parse from 'url-parse';
+import AsyncStorage from '@react-native-community/async-storage';
+import getHost from 'rn-host-detect';
 import addons from '@storybook/addons';
-
 import Events from '@storybook/core-events';
 import Channel from '@storybook/channels';
 import createChannel from '@storybook/channel-websocket';
-import { StoryStore, ClientApi } from '@storybook/core/client';
+import { StoryStore, ClientApi } from '@storybook/client-api';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 
@@ -18,7 +17,8 @@ export default class Preview {
   constructor() {
     this._addons = {};
     this._decorators = [];
-    this._stories = new StoryStore();
+
+    this._stories = new StoryStore({});
     this._clientApi = new ClientApi({ storyStore: this._stories });
 
     [
@@ -62,8 +62,7 @@ export default class Preview {
       if (onDeviceUI && params.disableWebsockets) {
         channel = new Channel({ async: true });
       } else {
-        const host =
-          params.host || parse(NativeModules.SourceCode.scriptURL).hostname || 'localhost';
+        const host = getHost(params.host || 'localhost');
         const port = params.port !== false ? `:${params.port || 7007}` : '';
 
         const query = params.query || '';
@@ -87,12 +86,14 @@ export default class Preview {
       }
 
       addons.setChannel(channel);
+      this._stories.setChannel(channel);
 
       channel.emit(Events.CHANNEL_CREATED);
     }
 
     channel.on(Events.GET_STORIES, () => this._sendSetStories());
     channel.on(Events.SET_CURRENT_STORY, d => this._selectStoryEvent(d));
+
     this._sendSetStories();
 
     // If the app is started with server running, set the story as the one selected in the browser
@@ -136,6 +137,7 @@ export default class Preview {
     const channel = addons.getChannel();
     const stories = this._stories.dumpStoryBook();
     channel.emit(Events.SET_STORIES, { stories });
+    channel.emit(Events.STORIES_CONFIGURED);
   }
 
   _sendGetCurrentStory() {
@@ -187,8 +189,10 @@ export default class Preview {
   _selectStoryEvent(selection) {
     AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(selection));
 
-    const story = this._getStory(selection);
-    this._selectStory(story);
+    if (selection) {
+      const story = this._getStory(selection);
+      this._selectStory(story);
+    }
   }
 
   _selectStory(story) {

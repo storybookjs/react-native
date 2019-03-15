@@ -9,6 +9,11 @@
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "dependencies": {
     "vue": "^2.6.8"
   },
@@ -52,10 +57,5 @@
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  }
 }

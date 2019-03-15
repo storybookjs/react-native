@@ -11,11 +11,6 @@ export default class ReactProvider extends Provider {
     super();
     this.options = options;
     this.selection = null;
-    try {
-      this.channel = addons.getChannel();
-    } catch (err) {
-      this.channel = undefined;
-    }
 
     const { secured, host, port } = options;
     const websocketType = secured ? 'wss' : 'ws';
@@ -38,30 +33,37 @@ export default class ReactProvider extends Provider {
     }
   }
 
-  renderPreview(kind, story) {
-    this.selection = { kind, story };
-    this.channel.emit(Events.SET_CURRENT_STORY, { kind, story });
-    const renderPreview = addons.getPreview();
+  getElements(type) {
+    return addons.getElements(type);
+  }
 
-    const innerPreview = renderPreview ? renderPreview(kind, story) : null;
-    return innerPreview || <PreviewHelp />;
+  renderPreview(state, api) {
+    if (state.storiesHash[state.storyId]) {
+      const { kind, story } = state.storiesHash[state.storyId];
+
+      this.selection = { kind, story };
+      api.emit(Events.SET_CURRENT_STORY, { kind, story });
+      // FIXME: getPreview not implemented yet.
+      if (addons.getPreview) {
+        const renderPreview = addons.getPreview();
+        if (renderPreview) {
+          return renderPreview(kind, story);
+        }
+      }
+    }
+    return <PreviewHelp />;
   }
 
   handleAPI(api) {
+    addons.loadAddons(api);
+
     api.onStory((kind, story) => {
       this.selection = { kind, story };
-      this.channel.emit(Events.SET_CURRENT_STORY, this.selection);
+      api.emit(Events.SET_CURRENT_STORY, this.selection);
     });
-    this.channel.on(Events.SELECT_STORY, ({ kind, story }) => {
-      api.selectStory(kind, story);
+    api.on(Events.GET_CURRENT_STORY, () => {
+      api.emit(Events.SET_CURRENT_STORY, this.selection);
     });
-    this.channel.on(Events.SET_STORIES, data => {
-      api.setStories(data.stories);
-    });
-    this.channel.on(Events.GET_CURRENT_STORY, () => {
-      this.channel.emit(Events.SET_CURRENT_STORY, this.selection);
-    });
-    this.channel.emit(Events.GET_STORIES);
-    addons.loadAddons(api);
+    api.emit(Events.GET_STORIES);
   }
 }

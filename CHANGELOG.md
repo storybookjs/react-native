@@ -1,3 +1,38 @@
+## 5.1.0-alpha.6 (March 14, 2019)
+
+### Features
+
+* Angular: add autoprefixing like angular-cli ([#5612](https://github.com/storybooks/storybook/pull/5612))
+
+### Bug Fixes
+
+* UI: Fixing search item in menu ([#6027](https://github.com/storybooks/storybook/pull/6027))
+* Addon-a11y: Run only when a11y tab is active ([#6044](https://github.com/storybooks/storybook/pull/6044))
+
+### Maintenance
+
+* UI: Update syntaxhighlighter stories ([#6054](https://github.com/storybooks/storybook/pull/6054))
+
+## 5.1.0-alpha.5 (March 12, 2019)
+
+### Bug Fixes
+
+* Addon-a11y: Remove bg color from reports ([#6026](https://github.com/storybooks/storybook/pull/6026))
+* Addon-knobs: Fix key press debouncing ([#6022](https://github.com/storybooks/storybook/pull/6022))
+* Addon-knobs: Fix error when removing value from number knob ([#6043](https://github.com/storybooks/storybook/pull/6043))
+
+
+### Maintenance
+
+* Theming: Improve typescript typings ([#5988](https://github.com/storybooks/storybook/pull/5988))
+
+### Dependency Upgrades
+
+* build(deps): bump axe-core from 3.2.0 to 3.2.2 ([#6034](https://github.com/storybooks/storybook/pull/6034))
+* build(deps): bump css-loader from 2.1.0 to 2.1.1 ([#6033](https://github.com/storybooks/storybook/pull/6033))
+* build(deps): bump react-focus-lock from 1.17.7 to 1.18.3 ([#6031](https://github.com/storybooks/storybook/pull/6031))
+* Bump react-resize-detector from 3.4.0 to 4.0.2 ([#5899](https://github.com/storybooks/storybook/pull/5899))
+
 ## 5.1.0-alpha.4 (March 11, 2019)
 
 ### Bug Fixes

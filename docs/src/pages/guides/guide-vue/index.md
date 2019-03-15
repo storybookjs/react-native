@@ -140,7 +140,7 @@ storiesOf('Button', module)
   }));
 ```
 
-Each story is a single state of your component. In the above case, there are two stories for the demo button component:
+Each story is a single state of your component. In the above case, there are three stories for the demo button component:
 
 ```plaintext
 Button

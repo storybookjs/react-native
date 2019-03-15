@@ -1,7 +1,7 @@
 import deprecate from 'util-deprecate';
 import { makeDecorator, StoryContext, StoryGetter } from './make-decorator';
 
-// Copy & paste from internal api: core/client/preview/client_api
+// Copy & paste from internal api: client-api/src/client_api
 type DecoratorFn = (fn: StoryGetter, context: StoryContext) => any;
 
 export const defaultDecorateStory = (getStory: StoryGetter, decorators: DecoratorFn[]) =>
