@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import memoize from 'memoizerific';
 
 import { Combo, Consumer } from '@storybook/api';
-import { Global } from '@storybook/theming';
+import { Global, Theme } from '@storybook/theming';
 
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
 
@@ -123,11 +123,14 @@ export class BackgroundSelector extends Component<{}, State> {
             <Fragment>
               {selectedBackgroundColor ? (
                 <Global
-                  styles={{
+                  styles={(theme: Theme) => ({
                     [`#${iframeId}`]: {
-                      background: selectedBackgroundColor,
+                      background:
+                        selectedBackgroundColor === 'transparent'
+                          ? theme.background.content
+                          : selectedBackgroundColor,
                     },
-                  }}
+                  })}
                 />
               ) : null}
               <WithTooltip
