@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import memoize from 'memoizerific';
 
-import { Global, background } from '@storybook/theming';
+import { Global, Theme } from '@storybook/theming';
 
 import { SET_STORIES } from '@storybook/core-events';
 
@@ -36,11 +36,11 @@ const getSelectedBackgroundColor = (
   currentSelectedValue: string
 ): string => {
   if (!list.length) {
-    return background.content;
+    return 'transparent';
   }
 
   if (currentSelectedValue === 'transparent') {
-    return background.content;
+    return currentSelectedValue;
   }
 
   if (list.find(i => i.value === currentSelectedValue)) {
@@ -51,7 +51,7 @@ const getSelectedBackgroundColor = (
     return list.find(i => i.default).value;
   }
 
-  return background.content;
+  return 'transparent';
 };
 
 const getDisplayableState = memoize(10)(
@@ -138,11 +138,14 @@ export class BackgroundSelector extends Component<BackgroundToolProps, Backgroun
       <Fragment>
         {selectedBackgroundColor ? (
           <Global
-            styles={{
+            styles={(theme: Theme) => ({
               [`#${iframeId}`]: {
-                background: selectedBackgroundColor,
+                background:
+                  selectedBackgroundColor === 'transparent'
+                    ? theme.background.content
+                    : selectedBackgroundColor,
               },
-            }}
+            })}
           />
         ) : null}
         <WithTooltip
