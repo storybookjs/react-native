@@ -1213,7 +1213,7 @@
 
 "@storybook/client-api@5.1.0-alpha.6", "@storybook/client-api@file:../../packs/storybook-client-api.tgz":
   version "5.1.0-alpha.6"
-  resolved "file:../../packs/storybook-client-api.tgz#79ebc586d4105d1637e904e260973a2d90a80968"
+  resolved "file:../../packs/storybook-client-api.tgz#7e0ea3dad223e1b2031e366ac8c523deb2bdacda"
   dependencies:
     "@storybook/addons" "5.1.0-alpha.6"
     "@storybook/client-logger" "5.1.0-alpha.6"
@@ -1522,7 +1522,7 @@
 
 "@storybook/react-native@file:../../packs/storybook-react-native.tgz":
   version "5.1.0-alpha.6"
-  resolved "file:../../packs/storybook-react-native.tgz#afc55f2fd8bd9b5eac3f4116cc68f7234647b7d3"
+  resolved "file:../../packs/storybook-react-native.tgz#6d6b8a4a1f4ee39c5dc3b2ebbf076378b4ca3dd6"
   dependencies:
     "@storybook/addons" "5.1.0-alpha.6"
     "@storybook/channel-websocket" "5.1.0-alpha.6"

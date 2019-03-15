@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { Keyboard, KeyboardAvoidingView, Platform, Animated, TouchableOpacity } from 'react-native';
 import Events from '@storybook/core-events';
 
-import StoryListView from '../StoryListView/index';
-import StoryView from '../StoryView/index';
-import Addons from './addons/index';
+import StoryListView from '../StoryListView';
+import StoryView from '../StoryView';
+import Addons from './addons';
 import Panel from './panel';
-import Navigation from './navigation/index';
+import Navigation from './navigation';
 import AbsolutePositionedKeyboardAwareView from './absolute-positioned-keyboard-aware-view';
 
 import { PREVIEW } from './navigation/consts';
