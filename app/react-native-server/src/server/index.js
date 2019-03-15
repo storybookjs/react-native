@@ -1,17 +1,24 @@
-import express from 'express';
+#!/usr/bin/env node
+
 import querystring from 'querystring';
-import http from 'http';
 import ws from 'ws';
-import storybook from './middleware';
+import storybook from '@storybook/core/standalone';
+
+import extendOptions from './options';
+import getCli from './cli';
 
 export default class Server {
   constructor(options) {
-    this.options = options;
-    this.httpServer = http.createServer();
-    this.expressApp = express();
-    this.expressApp.use(storybook(options));
-    this.httpServer.on('request', this.expressApp);
-    this.wsServer = new ws.Server({ server: this.httpServer });
+    this.attachWS = this.attachWS.bind(this);
+    this.options = extendOptions(options, this.attachWS);
+  }
+
+  start() {
+    return storybook(this.options);
+  }
+
+  attachWS(server) {
+    this.wsServer = new ws.Server({ server });
     this.wsServer.on('connection', (s, req) => this.handleWS(s, req));
   }
 
@@ -32,8 +39,7 @@ export default class Server {
       });
     });
   }
-
-  listen(...args) {
-    this.httpServer.listen(...args);
-  }
 }
+
+const server = new Server(getCli());
+server.start();
