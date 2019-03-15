@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.4",
-    "@angular/cli": "^7.3.3",
+    "@angular/cli": "^7.3.6",
     "@angular/compiler-cli": "^7.2.6",
     "@storybook/addon-actions": "5.1.0-alpha.6",
     "@storybook/addon-backgrounds": "5.1.0-alpha.6",
