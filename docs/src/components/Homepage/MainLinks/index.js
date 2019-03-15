@@ -78,10 +78,10 @@ class MainLinks extends React.Component {
               </Link>
               <ul>
                 <li>
-                  <Link to="/basics/quick-start-guide/">Quick setup</Link>
+                  <Link to="/guides/quick-start-guide/">Quick setup</Link>
                 </li>
                 <li>
-                  <Link to="/basics/slow-start-guide/">Adding to existing project</Link>
+                  <Link to="/guides/slow-start-guide/">Adding to existing project</Link>
                 </li>
                 <li>
                   <Link to="/basics/writing-stories/">Writing stories</Link>
@@ -128,9 +128,6 @@ class MainLinks extends React.Component {
                 </li>
                 <li>
                   <Link to="/addons/using-addons/">Using Addons</Link>
-                </li>
-                <li>
-                  <Link to="/addons/addon-gallery/">Addon Gallery</Link>
                 </li>
                 <li>
                   <Link to="/addons/writing-addons/">Writing Addons</Link>

@@ -18,3 +18,8 @@ lib/cli/test
 !.eslintrc-markdown.js
 !.jest.config.js
 !.storybook
+
+REACT_NATIVE
+examples-native
+react-native
+ondevice-*

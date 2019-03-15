@@ -1,8 +1,10 @@
 import path from 'path';
 import { Configuration, ContextReplacementPlugin } from 'webpack';
+import autoprefixer from 'autoprefixer';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+
 import getTsLoaderOptions from './ts_config';
 import { createForkTsCheckerInstance } from './create-fork-ts-checker-plugin';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 export function webpack(config: Configuration, { configDir }: { configDir: string }) {
   const tsLoaderOptions = getTsLoaderOptions(configDir);
@@ -33,7 +35,16 @@ export function webpack(config: Configuration, { configDir }: { configDir: strin
         },
         {
           test: /\.s(c|a)ss$/,
-          use: [require.resolve('raw-loader'), require.resolve('sass-loader')],
+          use: [
+            require.resolve('raw-loader'),
+            {
+              loader: require.resolve('postcss-loader'),
+              options: {
+                plugins: [autoprefixer()],
+              },
+            },
+            require.resolve('sass-loader'),
+          ],
         },
       ],
     },

@@ -1,8 +1,6 @@
-import { create } from '../create';
-import { color, typography } from '../base';
+import { color, typography, ThemeVars } from '../base';
 
-export default create({
-  // Is this a light theme or a dark theme?
+const theme: ThemeVars = {
   base: 'dark',
 
   // Storybook-specific color palette
@@ -33,4 +31,6 @@ export default create({
   inputBorder: 'rgba(0,0,0,.3)',
   inputTextColor: color.lightest,
   inputBorderRadius: 4,
-});
+};
+
+export default theme;

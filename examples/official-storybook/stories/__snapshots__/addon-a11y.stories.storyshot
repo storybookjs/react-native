@@ -357,6 +357,12 @@ exports[`Storyshots Addons|A11y/Image Without alt 1`] = `
 />
 `;
 
+exports[`Storyshots Addons|A11y/Image Without alt but unchecked 1`] = `
+<img
+  src="http://placehold.it/350x150"
+/>
+`;
+
 exports[`Storyshots Addons|A11y/Typography Correct 1`] = `
 Array [
   <h1>

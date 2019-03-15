@@ -28,6 +28,7 @@ const style = {
   'preact-kitchen-sink',
 ].forEach(name => {
   chapter.add(name, () => <iframe style={style} title={name} src={`${name}/index.html`} />, {
+    chromatic: { delay: 2000 },
     notes: `You must build the storybook for the ${name} example for this story to work.`,
   });
 });

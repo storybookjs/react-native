@@ -55,7 +55,9 @@ function babelify(options = {}) {
   const { watch = false, silent = false, errorCallback } = options;
 
   if (!fs.existsSync('src')) {
-    if (!silent) console.log('No src dir');
+    if (!silent) {
+      console.log('No src dir');
+    }
     return;
   }
 

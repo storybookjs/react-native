@@ -23,14 +23,14 @@ import '@storybook/addon-storysource/register';
 Use this hook to a custom webpack.config. This will generate a decorator call in every story:
 
 ```js
-module.exports = function (baseConfig, env, defaultConfig) {
-  defaultConfig.module.rules.push({
+module.exports = function ({ config }) {
+  config.module.rules.push({
     test: /\.stories\.jsx?$/,
     loaders: [require.resolve('@storybook/addon-storysource/loader')],
     enforce: 'pre',
   });
 
-  return defaultConfig;
+  return config;
 };
 ```
 
@@ -72,7 +72,7 @@ The prettier configuration that will be used to format the story source in the a
 Defaults:
 ```js
 {
-  printWidth: 120,
+  printWidth: 100,
   tabWidth: 2,
   bracketSpacing: true,
   trailingComma: 'es5',
@@ -91,7 +91,7 @@ module.exports = function (baseConfig, env, defaultConfig) {
         loader: require.resolve('@storybook/addon-storysource/loader'),
         options: {
           prettierConfig: {
-            printWidth: 80,
+            printWidth: 100,
             singleQuote: false,
           }
         }

@@ -1,6 +1,5 @@
 import { styled } from '@storybook/theming';
 import { opacify } from 'polished';
-import { ActionBar } from '@storybook/components';
 
 export const Action = styled.div({
   display: 'flex',

@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { STORY_CHANGED } from '@storybook/core-events';
 import { TabsState } from '@storybook/components';
 
-import { ThemeProvider, themes } from '@storybook/theming';
+import { ThemeProvider, themes, convert } from '@storybook/theming';
 import Panel from '../Panel';
 import { CHANGE, SET } from '../../shared';
 import PropForm from '../PropForm';
@@ -191,7 +191,7 @@ describe('Panel', () => {
       // We have to do a full mount.
 
       const root = mount(
-        <ThemeProvider theme={themes.light}>
+        <ThemeProvider theme={convert(themes.light)}>
           <Panel channel={testChannel} api={testApi} active />
         </ThemeProvider>
       );
@@ -225,7 +225,7 @@ describe('Panel', () => {
 
     it('should have one tab per groupId and an empty ALL tab when all are defined', () => {
       const root = mount(
-        <ThemeProvider theme={themes.light}>
+        <ThemeProvider theme={convert(themes.light)}>
           <Panel channel={testChannel} api={testApi} active />
         </ThemeProvider>
       );
@@ -265,7 +265,7 @@ describe('Panel', () => {
 
     it('the ALL tab should have its own additional content when there are knobs both with and without a groupId', () => {
       const root = mount(
-        <ThemeProvider theme={themes.light}>
+        <ThemeProvider theme={convert(themes.light)}>
           <Panel channel={testChannel} api={testApi} active />
         </ThemeProvider>
       );
