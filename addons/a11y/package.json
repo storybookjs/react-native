@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-a11y",
-  "version": "5.0.0",
+  "version": "5.1.0-alpha.6",
   "description": "a11y addon for storybook",
   "keywords": [
     "a11y",
@@ -16,29 +16,31 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git"
+    "url": "git+https://github.com/storybooks/storybook.git",
+    "directory": "addons/a11y"
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0",
-    "@storybook/client-logger": "5.0.0",
-    "@storybook/components": "5.0.0",
-    "@storybook/core-events": "5.0.0",
-    "@storybook/theming": "5.0.0",
-    "axe-core": "^3.1.2",
+    "@storybook/addons": "5.1.0-alpha.6",
+    "@storybook/client-logger": "5.1.0-alpha.6",
+    "@storybook/components": "5.1.0-alpha.6",
+    "@storybook/core-events": "5.1.0-alpha.6",
+    "@storybook/theming": "5.1.0-alpha.6",
+    "axe-core": "^3.2.2",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.2",
+    "core-js": "^2.6.5",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
-    "prop-types": "^15.6.2",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "react": "^16.8.4",
     "util-deprecate": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/common-tags": "^1.8.0"
   },
   "publishConfig": {
     "access": "public"

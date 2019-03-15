@@ -22,6 +22,15 @@ export const docsData = {
       ],
     },
     {
+      id: 'guides',
+      heading: 'Guides',
+      items: [
+        { id: 'getting-started', title: 'Getting Started' },
+        { id: 'writing-stories', title: 'Writing Stories' },
+        { id: 'build-as-a-static-app', title: 'Build as a Static App' },
+      ],
+    },
+    {
       id: 'configurations',
       heading: 'Configuations',
       items: [

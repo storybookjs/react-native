@@ -1,0 +1,46 @@
+{
+  "name": "@storybook/react-native-server",
+  "version": "5.1.0-alpha.6",
+  "description": "A better way to develop React Native Components for your app",
+  "keywords": [
+    "react",
+    "react-native",
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react-native-server",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "license": "MIT",
+  "bin": {
+    "start-storybook": "./bin/index.js",
+    "storybook-server": "./bin/index.js"
+  },
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addons": "5.1.0-alpha.6",
+    "@storybook/channel-websocket": "5.1.0-alpha.6",
+    "@storybook/core": "5.1.0-alpha.6",
+    "@storybook/core-events": "5.1.0-alpha.6",
+    "@storybook/ui": "5.1.0-alpha.6",
+    "commander": "^2.19.0",
+    "global": "^4.3.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.8.4",
+    "uuid": "^3.3.2",
+    "webpack": "^4.23.1",
+    "ws": "^6.1.0"
+  },
+  "peerDependencies": {
+    "babel-loader": "^7.0.0 || ^8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

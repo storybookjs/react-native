@@ -4,7 +4,12 @@ import { types } from '@storybook/addons';
 import { styled } from '@storybook/theming';
 import { STORY_RENDERED } from '@storybook/core-events';
 
-import { SyntaxHighlighter as SyntaxHighlighterBase, Placeholder, DocumentFormatting, Link } from '@storybook/components';
+import {
+  SyntaxHighlighter as SyntaxHighlighterBase,
+  Placeholder,
+  DocumentFormatting,
+  Link,
+} from '@storybook/components';
 import Giphy from './giphy';
 import Markdown from 'markdown-to-jsx';
 
@@ -113,7 +118,10 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
     }
 
     // TODO: memoize
-    const extraElements = Object.entries(api.getElements(types.NOTES_ELEMENT)).reduce((acc, [k, v]) => ({ ...acc, [k]: v.render }), {});
+    const extraElements = Object.entries(api.getElements(types.NOTES_ELEMENT)).reduce(
+      (acc, [k, v]) => ({ ...acc, [k]: v.render }),
+      {}
+    );
     const options = {
       ...defaultOptions,
       overrides: { ...defaultOptions.overrides, ...extraElements },
@@ -130,7 +138,11 @@ export default class NotesPanel extends React.Component<Props, NotesPanelState> 
         <React.Fragment>No notes yet</React.Fragment>
         <React.Fragment>
           Learn how to{' '}
-          <Link href="https://github.com/storybooks/storybook/tree/master/addons/notes" target="_blank" withArrow>
+          <Link
+            href="https://github.com/storybooks/storybook/tree/master/addons/notes"
+            target="_blank"
+            withArrow
+          >
             document components in Markdown
           </Link>
         </React.Fragment>

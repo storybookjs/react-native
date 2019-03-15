@@ -61,7 +61,7 @@ We write an addon that responds to a change in story selection like so:
 // register.js
 
 import React from 'react';
-import { STORY_CHANGED } from '@storybook/core-events';
+import { STORY_RENDERED } from '@storybook/core-events';
 import addons, { types } from '@storybook/addons';
 
 const ADDON_ID = 'myaddon';
@@ -102,7 +102,7 @@ class MyPanel extends React.Component {
 }
 
 addons.register(ADDON_ID, api => {
-  const render = ({ active }) => <Panel api={api} active={active} />;
+  const render = ({ active }) => <MyPanel api={api} active={active} />;
   const title = 'My Addon';
 
   addons.add(PANEL_ID, {
@@ -141,7 +141,7 @@ The `@storybook/addons` package contains a `makeDecorator` function which we can
 import React from 'react';
 import addons, { makeDecorator } from '@storybook/addons';
 
-export withFoo = makeDecorator({
+export default makeDecorator({
   name: 'withFoo',
   parameterName: 'foo',
   // This means don't run this decorator if the notes decorator is not set
@@ -184,7 +184,7 @@ class MyPanel extends React.Component {
   componentDidMount() {
     const { api } = this.props;
     api.on('foo/doSomeAction', this.onSomeAction);
-    api.on(STORY_RENDERED this.onStoryChange);
+    api.on(STORY_RENDERED, this.onStoryChange);
   }
   componentWillUnmount() {
     const { api } = this.props;

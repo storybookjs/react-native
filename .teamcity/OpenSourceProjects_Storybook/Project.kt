@@ -21,7 +21,6 @@ object Project : Project({
     buildType(OpenSourceProjects_Storybook_Bootstrap)
     buildType(OpenSourceProjects_Storybook_CliTestLatestCra)
     buildType(OpenSourceProjects_Storybook_Examples)
-    buildType(OpenSourceProjects_Storybook_Danger)
     buildType(OpenSourceProjects_Storybook_NativeSmokeTests)
     buildType(OpenSourceProjects_Storybook_Docs)
     buildType(OpenSourceProjects_Storybook_Build_2)

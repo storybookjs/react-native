@@ -1,5 +1,4 @@
 // todo the following packages need definition files or a TS migration
-declare module '@storybook/theming';
 declare module '@storybook/components';
 
 // There are no types for markdown-to-jsx

@@ -5,10 +5,10 @@ const Main = props => (
   <article
     {...props}
     style={{
-      margin: 15,
-      maxWidth: 600,
+      padding: 15,
       lineHeight: 1.4,
       fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
+      backgroundColor: '#fff',
     }}
   />
 );

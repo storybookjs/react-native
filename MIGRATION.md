@@ -53,7 +53,7 @@
 
 Storybook 5.0 includes sweeping UI changes as well as changes to the addon API and custom webpack configuration. We've tried to keep backwards compatibility in most cases, but there are some notable exceptions documented below.
 
-## Webpack config simplifcation
+## Webpack config simplification
 
 The API for custom webpack configuration has been simplifed in 5.0, but it's a breaking change.
 
@@ -62,7 +62,7 @@ Storybook's "full control mode" for webpack allows you to override the webpack c
 In Storybook 5 there is a single signature for full-control mode that takes a parameters object with the fields `config` and `mode`:
 
 ```js
-module.exports = ({ config, mode }) => { config.modules.rules.push(...); return config; }
+module.exports = ({ config, mode }) => { config.module.rules.push(...); return config; }
 ```
 
 In contrast, the 4.x configuration function accepted either two or three arguments (`(baseConfig, mode)`, or `(baseConfig, mode, defaultConfig)`). The `config` object in the 5.x signature is equivalent to 4.x's `defaultConfig`.
@@ -164,7 +164,7 @@ storiesOf('Stories', module)
   .add('centered', () => 'Hello');
 ```
 
-The semantics has changed in SB5 so that calling `addDecorator` on a kind adds a decorator to all its stories, no mater the order. So in the previous example, both stories would be centered.
+The semantics has changed in SB5 so that calling `addDecorator` on a kind adds a decorator to all its stories, no matter the order. So in the previous example, both stories would be centered.
 
 To allow for a subset of the stories in a kind to be decorated, we've added the ability to add decorators to individual stories using parameters:
 
@@ -308,6 +308,25 @@ https://url-of-storybook?path=/story/<storyId>
 ```
 
 The structure of `storyId` is a slugified `<selectedKind>--<selectedStory>` (slugified = lowercase, hyphen-separated). Each `storyId` must be unique. We plan to build more features into Storybook in upcoming versions based on this new structure.
+
+## Rename of the `--secure` cli parameter to `--https`
+
+Storybook for React Native's start commands & the Web versions' start command were a bit different, for no reason. 
+We've changed the start command for Reactnative to match the other.
+
+This means that when you previously used the `--secure` flag like so:
+
+```sh
+start-storybook --secure
+# or
+start-storybook --s
+```
+
+You have to replace it with:
+
+```sh
+start-storybook --https
+```
 
 ## From version 4.0.x to 4.1.x
 

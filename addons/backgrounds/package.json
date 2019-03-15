@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-backgrounds",
-  "version": "5.0.0",
+  "version": "5.1.0-alpha.6",
   "description": "A storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",
@@ -14,7 +14,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/backgrounds"
   },
   "license": "MIT",
   "author": "jbaxleyiii",
@@ -24,15 +25,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0",
-    "@storybook/client-logger": "5.0.0",
-    "@storybook/components": "5.0.0",
-    "@storybook/core-events": "5.0.0",
-    "@storybook/theming": "5.0.0",
-    "core-js": "^2.6.2",
+    "@storybook/addons": "5.1.0-alpha.6",
+    "@storybook/client-logger": "5.1.0-alpha.6",
+    "@storybook/components": "5.1.0-alpha.6",
+    "@storybook/core-events": "5.1.0-alpha.6",
+    "@storybook/theming": "5.1.0-alpha.6",
+    "core-js": "^2.6.5",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
-    "react": "^16.8.1",
+    "react": "^16.8.4",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {

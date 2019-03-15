@@ -10,10 +10,13 @@ For more information visit: [storybook.js.org](https://storybook.js.org)
 
 The `storybook` CLI tool can be used to add Storybook to your React Native app. Install the `storybook` tool if necessary and run it from your project directory with these commands:
 
-```sh
+```shell
 cd my-rn-app
 npx -p @storybook/cli sb init
 ```
+
+During installation it will ask if you want to install storybook server.
+It allows you to control the storybook from your web browser. 
 
 The next thing you need to do is make Storybook UI visible in your app.
 
@@ -42,24 +45,13 @@ module.exports = __DEV__ ? StorybookUI : App;
 
 ## Start Storybook server (optional)
 
-If you want to control storybook from browser/VS Code/websockets you need to start the server.
-After initial setup start the storybook server with the storybook npm script.
+If you want to control storybook from browser/VS Code/websockets you need install and start the server.
 
 ```sh
 npm run storybook
 ```
 
 Now, you can open `<http://localhost:7007>` to view your storybook menus in the browser.
-
-## Old standalone behavior
-
-Since storybook version v4.0 packager is removed from storybook.
-The suggested storybook usage is to include it inside your app.
-If you want to keep the old behavior, you have to start the packager yourself with a different project root.
-
-```sh
-npm run storybook start -p 7007 | react-native start --projectRoot storybook
-```
 
 ## Start App
 
@@ -90,7 +82,7 @@ The following parameters can be passed to the start command:
     host to listen on
 -p, --port <port>
     port to listen on
--s, --secured
+--https
     whether server is running on https
 -c, --config-dir [dir-name]
     storybook config directory

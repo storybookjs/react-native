@@ -24,7 +24,7 @@ import the `withA11y` decorator to check your stories for violations within your
 
 ```js
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 
 // should only be added once
