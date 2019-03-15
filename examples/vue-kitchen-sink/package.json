@@ -3,10 +3,10 @@
   "version": "5.1.0-alpha.6",
   "private": true,
   "scripts": {
-    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "build-storybook": "build-storybook -s public",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "storybook": "start-storybook -p 9009 -s public"
   },
   "dependencies": {
