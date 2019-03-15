@@ -21,7 +21,7 @@ const Panel = styled.div(({ theme }) => ({
   width: '100%',
   maxWidth: 980,
   margin: '0 auto',
-  ...theme.addonNotesTheme,
+  ...(theme.addonNotesTheme || {}),
 }));
 
 interface Props {
