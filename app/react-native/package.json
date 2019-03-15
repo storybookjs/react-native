@@ -24,6 +24,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.2.1",
     "@storybook/addons": "5.1.0-alpha.6",
     "@storybook/channel-websocket": "5.1.0-alpha.6",
     "@storybook/channels": "5.1.0-alpha.6",
@@ -35,11 +36,11 @@
     "rn-host-detect": "^1.1.5"
   },
   "devDependencies": {
-    "react-native": "^0.52.2"
+    "react-native": "^0.57.8"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": ">=0.51.0"
+    "react-native": ">=0.57.0"
   },
   "publishConfig": {
     "access": "public"

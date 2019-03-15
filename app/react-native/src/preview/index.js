@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 
 import React from 'react';
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import getHost from 'rn-host-detect';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
