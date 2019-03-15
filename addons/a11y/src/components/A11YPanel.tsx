@@ -97,7 +97,6 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
 
   componentWillUnmount() {
     const { api } = this.props;
-
     api.off(STORY_RENDERED, this.request);
     api.off(EVENTS.RESULT, this.onUpdate);
   }
@@ -167,24 +166,25 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
           <ScrollArea vertical horizontal>
             <Tabs
               key="tabs"
-              tabs={[
-              {
-                label: <Violations>{violations.length} Violations</Violations>,
-                panel: (
-                  <Report passes={false} items={violations} type={RuleTypes.VIOLATIONS} empty="No a11y violations found." />
-                ),
-              },
-              {
-                label: <Passes>{passes.length} Passes</Passes>,
-                panel: <Report passes items={passes} type={RuleTypes.PASSES} empty="No a11y check passed." />,
-              },
-              {
-                label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
-                panel: (
-                  <Report passes={false} items={incomplete} type={RuleTypes.INCOMPLETIONS} empty="No a11y incomplete found." />
-                ),
-              },
-            ]}
+              tabs=
+              {[
+                {
+                  label: <Violations>{violations.length} Violations</Violations>,
+                  panel: (
+                    <Report passes={false} items={violations} type={RuleTypes.VIOLATIONS} empty="No a11y violations found." />
+                  ),
+                },
+                {
+                  label: <Passes>{passes.length} Passes</Passes>,
+                  panel: <Report passes items={passes} type={RuleTypes.PASSES} empty="No a11y check passed." />,
+                },
+                {
+                  label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
+                  panel: (
+                    <Report passes={false} items={incomplete} type={RuleTypes.INCOMPLETIONS} empty="No a11y incomplete found." />
+                  ),
+                },
+              ]}
             />
           </ScrollArea>
         )}
