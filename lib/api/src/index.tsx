@@ -3,7 +3,7 @@ import memoize from 'memoizerific';
 
 import Events from '@storybook/core-events';
 import { RenderData as RouterData } from '@storybook/router';
-import initProviderApi from './init-provider-api';
+import initProviderApi, { SubAPI as ProviderAPI, Provider } from './init-provider-api';
 
 import { createContext } from './context';
 import Store from './store';
@@ -43,6 +43,7 @@ export type State = Other &
 
 export type API = AddonsAPI &
   ChannelAPI &
+  ProviderAPI &
   StoriesAPI &
   LayoutAPI &
   NotificationAPI &
@@ -65,12 +66,6 @@ interface Other {
 export interface Combo {
   api: API;
   state: State;
-}
-
-interface Provider {
-  handleAPI(api: API): void;
-  renderPreview(): void;
-  [key: string]: any;
 }
 
 interface ProviderData {

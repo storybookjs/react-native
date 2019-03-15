@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-
+import { SELECT_STORY, FORCE_RE_RENDER } from '@storybook/core-events';
+import { SET, SET_OPTIONS, RESET, CHANGE, CLICK } from '@storybook/addon-knobs/events';
 import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
 
@@ -29,18 +30,16 @@ export default class Panel extends React.Component {
   componentDidMount() {
     const { channel } = this.props;
 
-    channel.on('addon:knobs:setKnobs', this.setKnobs);
-    channel.on('addon:knobs:setOptions', this.setOptions);
-
-    channel.on('selectStory', this.reset);
-
-    channel.emit('forceReRender');
+    channel.on(SET, this.setKnobs);
+    channel.on(SET_OPTIONS, this.setOptions);
+    channel.on(SELECT_STORY, this.reset);
+    channel.emit(FORCE_RE_RENDER);
   }
 
   componentWillUnmount() {
     const { channel } = this.props;
-    channel.removeListener('addon:knobs:setKnobs', this.setKnobs);
-    channel.removeListener('selectStory', this.reset);
+    channel.removeListener(SET, this.setKnobs);
+    channel.removeListener(SELECT_STORY, this.reset);
   }
 
   onGroupSelect(name) {
@@ -60,12 +59,12 @@ export default class Panel extends React.Component {
   reset = () => {
     const { channel } = this.props;
     this.setState({ knobs: {} });
-    channel.emit('addon:knobs:reset');
+    channel.emit(RESET);
   };
 
   emitChange(changedKnob) {
     const { channel } = this.props;
-    channel.emit('addon:knobs:knobChange', changedKnob);
+    channel.emit(CHANGE, changedKnob);
   }
 
   handleChange(changedKnob) {
@@ -86,7 +85,7 @@ export default class Panel extends React.Component {
   handleClick(knob) {
     const { channel } = this.props;
 
-    channel.emit('addon:knobs:knobClick', knob);
+    channel.emit(CLICK, knob);
   }
 
   render() {

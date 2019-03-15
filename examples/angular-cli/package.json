@@ -4,11 +4,11 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "build": "ng build",
     "build-storybook": "npm run storybook:prebuild && build-storybook -s src/assets",
     "e2e": "ng e2e",
     "ng": "ng",
+    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "start": "ng serve",
     "storybook": "npm run storybook:prebuild && start-storybook -p 9008 -s src/assets",
     "storybook:prebuild": "npm run test:generate-output",

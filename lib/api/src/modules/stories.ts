@@ -28,8 +28,8 @@ export interface SubAPI {
 }
 
 interface SeparatorOptions {
-  rootSeparator: RegExp;
-  groupSeparator: RegExp;
+  rootSeparator: string | RegExp;
+  groupSeparator: string | RegExp;
 }
 
 interface Group {
@@ -187,10 +187,14 @@ const initStoriesApi = ({
     const hash: StoriesHash = {};
     const storiesHashOutOfOrder = Object.values(input).reduce((acc, item) => {
       const { kind, parameters } = item;
+      // FIXME: figure out why parameters is missing when used with react-native-server
       const {
         hierarchyRootSeparator: rootSeparator,
         hierarchySeparator: groupSeparator,
-      } = parameters.options;
+      } = (parameters && parameters.options) || {
+        hierarchyRootSeparator: '/',
+        hierarchySeparator: '/',
+      };
 
       const { root, groups } = splitPath(kind, { rootSeparator, groupSeparator });
 

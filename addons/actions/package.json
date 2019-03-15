@@ -36,11 +36,11 @@
     "react-inspector": "^2.3.1",
     "uuid": "^3.3.2"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "devDependencies": {
     "@types/lodash": "^4.14.121",
     "@types/uuid": "^3.4.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

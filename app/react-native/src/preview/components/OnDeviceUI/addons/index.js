@@ -11,7 +11,7 @@ export default class Addons extends PureComponent {
     super();
 
     addons.loadAddons({});
-    this.panels = addons.getPanels();
+    this.panels = addons.getElements('panel');
 
     this.state = {
       addonSelected: Object.keys(this.panels)[0] || null,
