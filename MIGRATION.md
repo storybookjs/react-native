@@ -57,6 +57,13 @@ Storybook 5.0 includes sweeping UI changes as well as changes to the addon API a
 
 The API for custom webpack configuration has been simplifed in 5.0, but it's a breaking change.
 
+- We've simplified "full-control mode"
+- We've deprecated "extend mode"
+
+We describe each change below and encourage you to refer to the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
+
+### Simplified full control mode
+
 Storybook's "full control mode" for webpack allows you to override the webpack config with a function that returns a configuration object.
 
 In Storybook 5 there is a single signature for full-control mode that takes a parameters object with the fields `config` and `mode`:
@@ -67,7 +74,9 @@ module.exports = ({ config, mode }) => { config.module.rules.push(...); return c
 
 In contrast, the 4.x configuration function accepted either two or three arguments (`(baseConfig, mode)`, or `(baseConfig, mode, defaultConfig)`). The `config` object in the 5.x signature is equivalent to 4.x's `defaultConfig`.
 
-Please see the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
+### Deprecated extend mode
+
+Exporting an object from your custom webpack config puts storybook in "extend mode". This is still supported in 5.x but we've deprecated this and encourage users to use full-control mode instead.
 
 ## Theming overhaul
 
