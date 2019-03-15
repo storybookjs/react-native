@@ -17,6 +17,53 @@ const ItemTitle = styled.span({
   marginBottom: '4px',
 });
 
+const Switch = styled.label({
+  position: 'relative',
+  display: 'inline-block',
+  width: '40px',
+  height: '20px',
+  marginLeft: '10px',
+  marginBottom: '-5px',
+});
+
+const Checkbox = styled.input({
+  display: 'none',
+});
+
+const Slider = styled.span(
+  {
+    position: 'absolute',
+    cursor: 'pointer',
+    top: '0',
+    left: '0',
+    right: '0',
+    bottom: '0',
+    webkitTransition: '0.4s',
+    transition: '0.4s',
+    borderRadius: '34px',
+    '&:before': {
+      position: 'absolute',
+      content: '""',
+      height: '15px',
+      width: '15px',
+      left: '4px',
+      bottom: '3px',
+      backgroundColor: '#fff',
+      webkitTransition: '0.4s',
+      transition: '0.4s',
+      borderRadius: '50%',
+    },
+  },
+  ({ checked }: { checked: boolean | null }) => ({
+    backgroundColor: checked === true ? 'green' : '#d0d0d0',
+  }),
+  ({ checked }: { checked: boolean | null }) => ({
+    '&:before': {
+      transform: checked === true ? 'translateX(17px)' : '',
+    }
+  }),
+);
+
 interface ElementProps {
   element: NodeResult;
   passes: boolean;
@@ -30,7 +77,9 @@ const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => 
 
   return (
     <Item>
-      <ItemTitle>{element.target[0]}<HighlightToggle type={type} element={element}></HighlightToggle></ItemTitle>
+      <ItemTitle>{element.target[0]}
+        <HighlightToggle type={type} element={element}></HighlightToggle>
+      </ItemTitle>
       <Rules rules={rules} passes={passes} />
     </Item>
   );
@@ -62,47 +111,66 @@ interface ToggleState {
 
 export class HighlightToggle extends Component<ToggleProps, ToggleState> {
   state = {
-    isToggleOn: true,
+    isToggleOn: false,
     originalOutline: '',
   };
 
   getIframe = memoize(1)(() => document.getElementsByTagName("iframe")[0]);
 
   componentDidMount() {
-    const targetElement = this.getIframe().contentDocument.querySelector(this.props.element.target[0]);
-    this.state.originalOutline = targetElement.style.outline;
-    console.log(this.props.type);
+    if(this.props && this.props.element && this.props.element.target[0]){
+      const targetElement = this.getIframe().contentDocument.querySelector(this.props.element.target[0]);
+      if (targetElement) {
+        this.state.originalOutline = targetElement.style.outline;
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    if(this.props && this.props.element && this.props.element.target[0]){
+      const targetElement = this.getIframe().contentDocument.querySelector(this.props.element.target[0]);
+      if (targetElement) {
+        targetElement.style.outline = this.state.originalOutline;
+      }
+    }
   }
  
   higlightRuleLocation: any = (element:any, addHighlight:boolean) => {
+    const PASSES_OPTION = 'PASSES';
+    const VIOLATIONS_OPTION = 'VIOLATIONS';
+    const INCOMPLETIONS_OPTION = 'INCOMPLETIONS';
+
     const targetElement = this.getIframe().contentDocument.querySelector(element.target[0]);
-    if (addHighlight){
-      if(this.props.type==='PASSES'){
-        targetElement.style.outline = '2px dotted green';
-      }else if(this.props.type==='VIOLATIONS'){
-        targetElement.style.outline = '2px dotted red';
-      }else if(this.props.type==='INCOMPLETIONS'){
-        targetElement.style.outline = '2px dotted orange';
+    if (addHighlight) {
+      switch (this.props.type) {
+        case PASSES_OPTION:
+          targetElement.style.outline = '2px dotted green';
+          break;
+        case VIOLATIONS_OPTION:
+          targetElement.style.outline = '2px dotted red';
+          break;
+        case INCOMPLETIONS_OPTION:
+          targetElement.style.outline = '2px dotted orange';
+          break;
       }
     } else {
       targetElement.style.outline = this.state.originalOutline;
     }
-  }
+  };
 
   onToggle = () => {
-    this.setState(prevState => {
-      this.higlightRuleLocation(this.props.element, this.state.isToggleOn);
-      return { isToggleOn: !prevState.isToggleOn };
+    this.setState(()=> {
+      this.higlightRuleLocation(this.props.element, !this.state.isToggleOn);
+      return { isToggleOn: !this.state.isToggleOn, originalOutline: this.state.originalOutline};
     });
-  }
+  };
 
   render() {
-    const { isToggleOn } = this.state;
-
     return (
-      <button onClick={this.onToggle}>
-        {this.state.isToggleOn ? 'ON': 'OFF'}
-      </button>
+      <Switch>
+        <Checkbox type="checkbox" onChange={this.onToggle} checked={this.state.isToggleOn} />
+        <Slider checked={this.state.isToggleOn}></Slider>
+      </Switch>
     );
   }
 }
