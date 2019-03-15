@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
 
@@ -35,6 +36,18 @@ const Violations = styled.span(({ theme }) => ({
 const Incomplete = styled.span(({ theme }) => ({
   color: theme.color.warning,
 }));
+
+const Loader = styled(({ className }) => (
+  <div className={className}>
+    <Icon inline icon="sync" status="running" /> Please wait while a11y scan is running ...
+  </div>
+))({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100%',
+});
+Loader.displayName = 'Loader';
 
 interface A11YPanelState {
   status: string;
@@ -142,10 +155,13 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
 
     return active ? (
       <Fragment>
-        <ScrollArea vertical horizontal>
-          <Tabs
-            key="tabs"
-            tabs={[
+        {status === 'running' ? (
+          <Loader />
+        ) : (
+          <ScrollArea vertical horizontal>
+            <Tabs
+              key="tabs"
+              tabs={[
               {
                 label: <Violations>{violations.length} Violations</Violations>,
                 panel: (
@@ -163,8 +179,9 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
                 ),
               },
             ]}
-          />
-        </ScrollArea>
+            />
+          </ScrollArea>
+        )}
         <ActionBar key="actionbar" actionItems={[{ title: actionTitle, onClick: this.request }]} />
       </Fragment>
     ) : null;

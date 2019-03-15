@@ -2612,7 +2612,7 @@ babel-plugin-react-docgen@^2.0.2:
     react-docgen "^3.0.0"
     recast "^0.14.7"
 
-"babel-plugin-styled-components@>= 1":
+"babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.10.0.tgz#ff1f42ad2cc78c21f26b62266b8f564dbc862939"
   integrity sha512-sQVKG8irFXx14ZfaK1bBePirfkacl3j8nZwSZK+ZjsbnadRHKQTbhXbe/RB1vT6Vgkz45E+V95LBq4KqdhZUNw==
@@ -6964,6 +6964,13 @@ gatsby-plugin-sharp@^1.6.48:
     progress "^1.1.8"
     sharp "^0.20.0"
     svgo "^0.7.2"
+
+gatsby-plugin-styled-components@^2.0.0:
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-2.0.11.tgz#c3d3438c7970bbcc116e821fb966687098bdaf57"
+  integrity sha1-w9NDjHlwu8wRboIfuWZocJi9r1c=
+  dependencies:
+    babel-runtime "^6.26.0"
 
 gatsby-react-router-scroll@^1.0.18:
   version "1.0.18"

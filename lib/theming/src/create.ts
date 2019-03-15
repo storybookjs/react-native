@@ -129,6 +129,7 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
     color: createColors(inherit),
     background: {
       app: appBg,
+      bar: background.bar,
       content: appContentBg,
       hoverable:
         base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,

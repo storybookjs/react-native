@@ -11,7 +11,7 @@ You may have tried to use our quick start guide to setup your project for Storyb
 If it failed because it couldn't detect you're using react-native, you could try forcing it to use react-native:
 
 ```sh
-npx -p @storybook/cli sb init --type react-native
+npx -p @storybook/cli sb init --type react_native
 ```
 
 ## Manual setup
