@@ -1,10 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 
 import React from 'react';
-import { AsyncStorage, NativeModules, Platform } from 'react-native';
-import parse from 'url-parse';
+import { AsyncStorage } from 'react-native';
+import getHost from 'rn-host-detect';
 import addons from '@storybook/addons';
-
 import Events from '@storybook/core-events';
 import Channel from '@storybook/channels';
 import createChannel from '@storybook/channel-websocket';
@@ -63,7 +62,7 @@ export default class Preview {
       if (onDeviceUI && params.disableWebsockets) {
         channel = new Channel({ async: true });
       } else {
-        const host = this._getHost(params);
+        const host = getHost(params.host || 'localhost');
         const port = params.port !== false ? `:${params.port || 7007}` : '';
 
         const query = params.query || '';
@@ -132,14 +131,6 @@ export default class Preview {
         return <StoryView url={webUrl} events={channel} listenToEvents />;
       }
     };
-  }
-
-  _getHost(params = {}) {
-    if (params.host)
-      return params.host;
-    if (Platform.OS === 'android')
-      return '10.0.2.2';
-    return parse(NativeModules.SourceCode.scriptURL).hostname || 'localhost';
   }
 
   _sendSetStories() {
