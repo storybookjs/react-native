@@ -5,6 +5,7 @@ import memoize from 'memoizerific';
 
 import { NodeResult } from 'axe-core';
 import { Rules } from './Rules';
+import { RuleTypes } from '../A11YPanel';
 
 const Item = styled.li({
   fontWeight: 600,
@@ -67,7 +68,7 @@ const Slider = styled.span(
 interface ElementProps {
   element: NodeResult;
   passes: boolean;
-  type: string;
+  type: RuleTypes;
 }
 
 const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => {
@@ -88,7 +89,7 @@ const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => 
 interface ElementsProps {
   elements: NodeResult[];
   passes: boolean;
-  type: string;
+  type: RuleTypes;
 }
 
 export const Elements: FunctionComponent<ElementsProps> = ({ elements, passes, type }) => (
@@ -101,7 +102,7 @@ export const Elements: FunctionComponent<ElementsProps> = ({ elements, passes, t
 
 interface ToggleProps {
   element: any;
-  type: string;
+  type: RuleTypes;
 }
 
 interface ToggleState {
@@ -136,20 +137,17 @@ export class HighlightToggle extends Component<ToggleProps, ToggleState> {
   }
  
   higlightRuleLocation: any = (element:any, addHighlight:boolean) => {
-    const PASSES_OPTION = 'PASSES';
-    const VIOLATIONS_OPTION = 'VIOLATIONS';
-    const INCOMPLETIONS_OPTION = 'INCOMPLETIONS';
 
     const targetElement = this.getIframe().contentDocument.querySelector(element.target[0]);
     if (addHighlight) {
       switch (this.props.type) {
-        case PASSES_OPTION:
+        case RuleTypes.PASSES:
           targetElement.style.outline = '2px dotted green';
           break;
-        case VIOLATIONS_OPTION:
+        case RuleTypes.VIOLATIONS:
           targetElement.style.outline = '2px dotted red';
           break;
-        case INCOMPLETIONS_OPTION:
+        case RuleTypes.INCOMPLETIONS:
           targetElement.style.outline = '2px dotted orange';
           break;
       }

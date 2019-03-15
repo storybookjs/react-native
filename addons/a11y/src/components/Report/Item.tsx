@@ -7,6 +7,7 @@ import { Result } from 'axe-core';
 import { Info } from './Info';
 import { Elements } from './Elements';
 import { Tags } from './Tags';
+import { RuleTypes } from '../A11YPanel';
 
 const Wrapper = styled.div();
 
@@ -42,7 +43,7 @@ const HeaderBar = styled.button(({ theme }) => ({
 interface ItemProps {
   item: Result;
   passes: boolean;
-  type: string;
+  type: RuleTypes;
 }
 
 interface ItemState {

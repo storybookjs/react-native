@@ -11,6 +11,12 @@ import { Report } from './Report';
 import { Tabs } from './Tabs';
 import { EVENTS } from '../constants';
 
+export enum RuleTypes {
+  VIOLATIONS,
+  PASSES,
+  INCOMPLETIONS,
+}
+
 const Icon = styled(Icons)(
   {
     height: '12px',
@@ -165,17 +171,17 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
               {
                 label: <Violations>{violations.length} Violations</Violations>,
                 panel: (
-                  <Report passes={false} items={violations} type={'VIOLATIONS'} empty="No a11y violations found." />
+                  <Report passes={false} items={violations} type={RuleTypes.VIOLATIONS} empty="No a11y violations found." />
                 ),
               },
               {
                 label: <Passes>{passes.length} Passes</Passes>,
-                panel: <Report passes items={passes} type={'PASSES'} empty="No a11y check passed." />,
+                panel: <Report passes items={passes} type={RuleTypes.PASSES} empty="No a11y check passed." />,
               },
               {
                 label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
                 panel: (
-                  <Report passes={false} items={incomplete} type={'INCOMPLETIONS'} empty="No a11y incomplete found." />
+                  <Report passes={false} items={incomplete} type={RuleTypes.INCOMPLETIONS} empty="No a11y incomplete found." />
                 ),
               },
             ]}
