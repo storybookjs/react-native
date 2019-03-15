@@ -1,7 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 
 import React from 'react';
-import { AsyncStorage, NativeModules } from 'react-native';
+import { NativeModules } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import parse from 'url-parse';
 import addons from '@storybook/addons';
 
