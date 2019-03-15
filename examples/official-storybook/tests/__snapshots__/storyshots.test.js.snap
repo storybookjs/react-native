@@ -8388,7 +8388,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 <a
                   class="emotion-1"
                   href="./"
-                  target="_blank"
+                  target=""
                 >
                   <svg
                     class="emotion-0"
@@ -9814,7 +9814,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                 <a
                   class="emotion-1"
                   href="./"
-                  target="_blank"
+                  target=""
                 >
                   <svg
                     class="emotion-0"
@@ -11304,7 +11304,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
       <a
         class="emotion-1"
         href="./"
-        target="_blank"
+        target=""
       >
         <svg
           class="emotion-0"
@@ -11935,7 +11935,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
       <a
         class="emotion-1"
         href="./"
-        target="_blank"
+        target=""
       >
         <svg
           class="emotion-0"
