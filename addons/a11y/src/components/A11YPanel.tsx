@@ -165,17 +165,29 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
                 {
                   label: <Violations>{violations.length} Violations</Violations>,
                   panel: (
-                    <Report passes={false} items={violations} empty="No a11y violations found." />
+                    <Report
+                      name="violations"
+                      passes={false}
+                      items={violations}
+                      empty="No a11y violations found."
+                    />
                   ),
                 },
                 {
                   label: <Passes>{passes.length} Passes</Passes>,
-                  panel: <Report passes items={passes} empty="No a11y check passed." />,
+                  panel: (
+                    <Report name={'passes'} passes items={passes} empty="No a11y check passed." />
+                  ),
                 },
                 {
                   label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
                   panel: (
-                    <Report passes={false} items={incomplete} empty="No a11y incomplete found." />
+                    <Report
+                      name="incomplete"
+                      passes={false}
+                      items={incomplete}
+                      empty="No a11y incomplete found."
+                    />
                   ),
                 },
               ]}
