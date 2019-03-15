@@ -15,7 +15,11 @@ import initNotifications, {
   SubState as NotificationState,
   SubAPI as NotificationAPI,
 } from './modules/notifications';
-import initStories, { SubState as StoriesSubState, SubAPI as StoriesAPI } from './modules/stories';
+import initStories, {
+  SubState as StoriesSubState,
+  SubAPI as StoriesAPI,
+  StoriesRaw,
+} from './modules/stories';
 import initLayout, { SubState as LayoutSubState, SubAPI as LayoutAPI } from './modules/layout';
 import initShortcuts, {
   SubState as ShortcutsSubState,
@@ -58,8 +62,6 @@ interface OtherAPI {
 interface Other {
   customQueryParams: QueryParams;
 
-  notifications: Notification[];
-
   [key: string]: any;
 }
 
@@ -80,7 +82,9 @@ interface Children {
   children: Component | ((props: Combo) => Component);
 }
 
-type Props = Children & RouterData & ProviderData;
+type StatePartial = Partial<State>;
+
+export type Props = Children & RouterData & ProviderData;
 
 class ManagerProvider extends Component<Props, State> {
   constructor(props: Props) {
@@ -89,7 +93,7 @@ class ManagerProvider extends Component<Props, State> {
 
     const store = new Store({
       getState: () => this.state,
-      setState: (a: any, b: any) => this.setState(a, b),
+      setState: (stateChange: StatePartial, callback) => this.setState(stateChange, callback),
     });
 
     // Initialize the state to be the initial (persisted) state of the store.
@@ -129,15 +133,20 @@ class ManagerProvider extends Component<Props, State> {
     api.on(STORY_CHANGED, (id: string) => {
       const options = api.getParameters(id, 'options');
 
-      api.setOptions(options);
+      if (options) {
+        api.setOptions(options);
+      }
     });
 
-    api.on(SET_STORIES, (data: any) => {
+    api.on(SET_STORIES, (data: { stories: StoriesRaw }) => {
       api.setStories(data.stories);
     });
-    api.on(SELECT_STORY, ({ kind, story, ...rest }: { [k: string]: any }) => {
-      api.selectStory(kind, story, rest);
-    });
+    api.on(
+      SELECT_STORY,
+      ({ kind, story, ...rest }: { kind: string; story: string; [k: string]: any }) => {
+        api.selectStory(kind, story, rest);
+      }
+    );
 
     this.state = state;
     this.api = api;
@@ -198,50 +207,32 @@ class ManagerProvider extends Component<Props, State> {
   }
 }
 
-interface ConsumerProps<A> {
-  filter: (c: Combo) => A;
-  pure?: boolean;
-  children: (d: A) => ReactElement<any> | null;
+interface ConsumerProps<S, C> {
+  filter?: (combo: C) => S;
+  children: (d: S | C) => ReactElement<any> | null;
 }
 
-const ObjectToArray = memoize(1000)((obj: object) =>
-  Object.entries(obj).reduce((acc, [k, v]) => acc.concat([k, v]), [])
-);
+interface SubState {
+  [key: string]: any;
+}
 
-const ArrayToObject = memoize(1000)((array: any[]) =>
-  array.reduce((acc, item, index, list) => {
-    // is odd = value
-    if (index % 2 !== 0) {
-      const key = list[list.indexOf(item) - 1];
-      acc[key] = item;
-    }
-    return acc;
-  }, {})
-);
+class ManagerConsumer extends Component<ConsumerProps<SubState, Combo>> {
+  dataMemory?: (combo: Combo) => SubState;
 
-class ManagerConsumer extends Component<ConsumerProps<any>> {
-  renderMemory: (...args: any[]) => any;
-  dataMemory: (...args: any[]) => any;
-
-  constructor(props: ConsumerProps<any>) {
+  constructor(props: ConsumerProps<SubState, Combo>) {
     super(props);
-    this.renderMemory = memoize(10)((...args: any[]) => props.children(ArrayToObject(args)));
-    this.dataMemory = memoize(10);
+    this.dataMemory = props.filter ? memoize(10)(props.filter) : null;
   }
 
   render() {
-    const { children, filter, pure } = this.props;
+    const { children } = this.props;
 
     return (
       <ManagerContext.Consumer>
         {d => {
-          const data = filter ? this.dataMemory(filter)(d) : d;
+          const data = this.dataMemory ? this.dataMemory(d) : d;
 
-          if (pure && filter) {
-            return this.renderMemory(...ObjectToArray(data));
-          } else {
-            return children(data);
-          }
+          return children(data);
         }}
       </ManagerContext.Consumer>
     );
@@ -252,7 +243,5 @@ export function useStorybookState(): State {
   const { state } = useContext(ManagerContext);
   return state;
 }
-
-// example: useStorybookState();
 
 export { ManagerConsumer as Consumer, ManagerProvider as Provider };

@@ -40,9 +40,7 @@ interface Upstream {
   setState: SetState;
 }
 
-interface Patch {
-  [k: string]: any;
-}
+type Patch = Partial<State>;
 
 type InputFnPatch = (s: State) => Patch;
 type InputPatch = Patch | InputFnPatch;
@@ -77,7 +75,13 @@ export default class Store {
     return this.upstreamGetState();
   }
 
-  async setState(inputPatch: InputPatch, cbOrOptions?: CallbackOrOptions, inputOptions?: Options) {
+  async setState(inputPatch: InputPatch, options?: Options): Promise<State>;
+  async setState(inputPatch: InputPatch, callback?: CallBack, options?: Options): Promise<State>;
+  async setState(
+    inputPatch: InputPatch,
+    cbOrOptions?: CallbackOrOptions,
+    inputOptions?: Options
+  ): Promise<State> {
     let callback;
     let options;
     if (typeof cbOrOptions === 'function') {
