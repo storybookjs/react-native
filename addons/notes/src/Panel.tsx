@@ -15,7 +15,7 @@ import Markdown from 'markdown-to-jsx';
 
 import { PARAM_KEY, API, Parameters } from './shared';
 
-const Panel = styled.div(({ theme }: { theme: any }) => ({
+const Panel = styled.div(({ theme }) => ({
   padding: '3rem 40px',
   boxSizing: 'border-box',
   width: '100%',
