@@ -138,7 +138,7 @@
     "jest-config": "^24.0.0",
     "jest-diff": "^24.0.0",
     "jest-emotion": "^10.0.7",
-    "jest-environment-jsdom": "^24.0.0",
+    "jest-environment-jsdom": "^24.5.0",
     "jest-enzyme": "^7.0.0",
     "jest-image-snapshot": "^2.6.0",
     "jest-jasmine2": "^24.1.0",
