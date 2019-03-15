@@ -3,17 +3,11 @@ import deprecate from 'util-deprecate';
 
 const withViewport = makeDecorator({
   name: 'withViewport',
-  parameterName: 'viewports',
-  allowDeprecatedUsage: true,
+  parameterName: 'viewport',
   wrapper: deprecate(
     (getStory, context) => getStory(context),
-    'usage is deprecated, use .addParameters({ viewport }) instead'
+    'withViewport is no longer supported, use .addParameters({ viewport }) instead'
   ),
 });
 
 export default withViewport;
-
-export const Viewport = deprecate(
-  ({ children }) => children,
-  `<Viewport> usage is deprecated, use .addParameters({ viewport }) instead`
-);

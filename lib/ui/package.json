@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.0.0-beta.3",
+  "version": "5.1.0-alpha.6",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -22,12 +22,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-beta.3",
-    "@storybook/client-logger": "5.0.0-beta.3",
-    "@storybook/components": "5.0.0-beta.3",
-    "@storybook/core-events": "5.0.0-beta.3",
-    "@storybook/router": "5.0.0-beta.3",
-    "@storybook/theming": "5.0.0-beta.3",
+    "@storybook/addons": "5.1.0-alpha.6",
+    "@storybook/client-logger": "5.1.0-alpha.6",
+    "@storybook/components": "5.1.0-alpha.6",
+    "@storybook/core-events": "5.1.0-alpha.6",
+    "@storybook/router": "5.1.0-alpha.6",
+    "@storybook/theming": "5.1.0-alpha.6",
+    "core-js": "^2.6.5",
+    "fast-deep-equal": "^2.0.1",
     "fuzzy-search": "^3.0.1",
     "global": "^4.3.2",
     "lodash.debounce": "^4.0.8",
@@ -36,23 +38,24 @@
     "lodash.pick": "^4.4.0",
     "markdown-to-jsx": "^6.9.1",
     "memoizerific": "^1.11.3",
-    "polished": "^2.3.3",
-    "prop-types": "^15.6.2",
-    "qs": "^6.5.2",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.1",
+    "polished": "^3.0.0",
+    "prop-types": "^15.7.2",
+    "qs": "^6.6.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.3",
     "react-draggable": "^3.1.1",
     "react-helmet-async": "^0.2.0",
     "react-hotkeys": "2.0.0-pre4",
-    "react-resize-detector": "^3.2.1",
+    "react-resize-detector": "^4.0.2",
     "recompose": "^0.30.0",
     "semver": "^5.6.0",
+    "telejson": "^2.1.1",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
     "flush-promises": "^1.0.2",
     "terser-webpack-plugin": "^1.2.2",
-    "webpack": "^4.29.3"
+    "webpack": "^4.29.6"
   },
   "publishConfig": {
     "access": "public"

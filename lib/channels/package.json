@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channels",
-  "version": "5.0.0-beta.3",
+  "version": "5.1.0-alpha.6",
   "description": "",
   "keywords": [
     "storybook"
@@ -19,6 +19,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5"
   },
   "publishConfig": {
     "access": "public"

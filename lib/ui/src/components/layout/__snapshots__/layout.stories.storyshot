@@ -1,286 +1,1721 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI|Layout/Desktop (mocked) bottom Panel 1`] = `
+exports[`Storyshots UI|Layout/Desktop bottom Panel 1`] = `
 .emotion-0 {
-  position: fixed;
-  left: 0;
+  z-index: 10;
+  position: absolute;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(0,0,0,.1);
+  overflow: hidden;
+  -webkit-transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  cursor: col-resize;
+  height: 100%;
+  width: 10px;
+  margin-left: 0;
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 50px 100%;
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+}
+
+.emotion-0:hover {
+  color: #1EA7FD;
+}
+
+.emotion-0:hover {
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 50px 100%;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+.emotion-3 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-2 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-5 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 9;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-4 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-6 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-1 {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(0,0,0,.1);
+  overflow: hidden;
+  -webkit-transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  cursor: row-resize;
+  height: 10px;
+  width: 100%;
+  margin-top: 0;
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 100% 50px;
+  background-position: 50% 10px;
+  background-repeat: no-repeat;
+}
+
+.emotion-1:hover {
+  color: #1EA7FD;
+}
+
+.emotion-1:hover {
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 100% 50px;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+}
+
+.emotion-7 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-top: 1px solid rgba(0,0,0,.1);
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+<div
+  style="min-height:600px;min-width:600px"
+>
+  <div
+    class="react-draggable emotion-0"
+    style="touch-action:none;transform:translate(200px,0px)"
+  />
+  <div
+    class="react-draggable emotion-1"
+    style="touch-action:none;left:210px;width:804px;margin-top:-10px;transform:translate(0px,368px)"
+  />
+  <div
+    class="emotion-3"
+    style="height:768px;left:0;top:0;width:210px"
+  >
+    <div
+      class="emotion-2"
+      color="hotpink"
+    >
+      <h2
+        style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+      >
+        1
+      </h2>
+      <pre>
+        {
+  "debug": {
+    "animate": true,
+    "hidden": false,
+    "position": {
+      "height": 768,
+      "left": 0,
+      "top": 0,
+      "width": 210
+    }
+  }
+}
+      </pre>
+    </div>
+  </div>
+  <div
+    class="emotion-5"
+    style="height:748px;left:210px;top:10px;width:804px"
+  >
+    <div
+      class="emotion-8"
+    >
+      <div
+        class="emotion-5"
+        style="height:358px;left:0;top:0;width:804px"
+      >
+        <div
+          class="emotion-4"
+          color="deepskyblue"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "id": "main",
+  "debug": {
+    "animate": true,
+    "isFullscreen": false,
+    "position": {
+      "height": 358,
+      "left": 0,
+      "top": 0,
+      "width": 804
+    }
+  }
+}
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-7"
+        style="height:390px;left:0;top:358px;width:804px"
+      >
+        <div
+          class="emotion-6"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "debug": {
+    "animate": true,
+    "align": "bottom",
+    "hidden": false,
+    "position": {
+      "height": 390,
+      "left": 0,
+      "top": 358,
+      "width": 804
+    }
+  }
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Layout/Desktop default 1`] = `
+.emotion-0 {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(0,0,0,.1);
+  overflow: hidden;
+  -webkit-transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  cursor: col-resize;
+  height: 100%;
+  width: 10px;
+  margin-left: 0;
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 50px 100%;
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+}
+
+.emotion-0:hover {
+  color: #1EA7FD;
+}
+
+.emotion-0:hover {
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 50px 100%;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+.emotion-3 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-2 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-5 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 9;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-4 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-7 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-left: 1px solid rgba(0,0,0,.1);
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-6 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: hidden;
 }
 
 <div
-  class="emotion-0"
+  style="min-height:600px;min-width:600px"
 >
   <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+    class="react-draggable emotion-0"
+    style="touch-action:none;transform:translate(200px,0px)"
   />
-  <div />
+  <div
+    class="react-draggable emotion-0"
+    style="touch-action:none;margin-left:-10px;transform:translate(624px,0px)"
+  />
+  <div
+    class="emotion-3"
+    style="height:768px;left:0;top:0;width:210px"
+  >
+    <div
+      class="emotion-2"
+      color="hotpink"
+    >
+      <h2
+        style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+      >
+        1
+      </h2>
+      <pre>
+        {
+  "debug": {
+    "animate": true,
+    "hidden": false,
+    "position": {
+      "height": 768,
+      "left": 0,
+      "top": 0,
+      "width": 210
+    }
+  }
+}
+      </pre>
+    </div>
+  </div>
+  <div
+    class="emotion-5"
+    style="height:748px;left:210px;top:10px;width:804px"
+  >
+    <div
+      class="emotion-8"
+    >
+      <div
+        class="emotion-5"
+        style="height:748px;left:0;top:0;width:414px"
+      >
+        <div
+          class="emotion-4"
+          color="deepskyblue"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "id": "main",
+  "debug": {
+    "animate": true,
+    "isFullscreen": false,
+    "position": {
+      "height": 748,
+      "left": 0,
+      "top": 0,
+      "width": 414
+    }
+  }
+}
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-7"
+        style="height:748px;left:414px;top:0;width:390px"
+      >
+        <div
+          class="emotion-6"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "debug": {
+    "animate": true,
+    "align": "right",
+    "hidden": false,
+    "position": {
+      "height": 748,
+      "left": 414,
+      "top": 0,
+      "width": 390
+    }
+  }
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
-exports[`Storyshots UI|Layout/Desktop (mocked) default 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
+exports[`Storyshots UI|Layout/Desktop full 1`] = `
+.emotion-1 {
+  position: absolute;
+  box-sizing: border-box;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 9;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-0 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-3 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-left: 1px solid rgba(0,0,0,.1);
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-2 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+<div
+  style="min-height:600px;min-width:600px"
+>
+  <div
+    class="emotion-1"
+  >
+    <div
+      class="emotion-4"
+    >
+      <div
+        class="emotion-1"
+      >
+        <div
+          class="emotion-0"
+          color="deepskyblue"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "id": "main",
+  "debug": {
+    "animate": true,
+    "isFullscreen": true,
+    "position": {}
+  }
+}
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-3"
+        style="height:748px;left:614px;top:0;width:390px"
+      >
+        <div
+          class="emotion-2"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "debug": {
+    "animate": true,
+    "align": "right",
+    "hidden": true,
+    "position": {
+      "height": 748,
+      "left": 614,
+      "top": 0,
+      "width": 390
+    }
+  }
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Layout/Desktop no Nav 1`] = `
+.emotion-0 {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(0,0,0,.1);
+  overflow: hidden;
+  -webkit-transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  cursor: col-resize;
+  height: 100%;
+  width: 10px;
+  margin-left: 0;
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 50px 100%;
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+}
+
+.emotion-0:hover {
+  color: #1EA7FD;
+}
+
+.emotion-0:hover {
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 50px 100%;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+.emotion-2 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 9;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-left: 1px solid rgba(0,0,0,.1);
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-3 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: hidden;
 }
 
 <div
-  class="emotion-0"
+  style="min-height:600px;min-width:600px"
 >
   <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+    class="react-draggable emotion-0"
+    style="touch-action:none;margin-left:-10px;transform:translate(624px,0px)"
   />
-  <div />
+  <div
+    class="emotion-2"
+    style="height:748px;left:10px;top:10px;width:1004px"
+  >
+    <div
+      class="emotion-5"
+    >
+      <div
+        class="emotion-2"
+        style="height:748px;left:0;top:0;width:614px"
+      >
+        <div
+          class="emotion-1"
+          color="deepskyblue"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "id": "main",
+  "debug": {
+    "animate": true,
+    "isFullscreen": false,
+    "position": {
+      "height": 748,
+      "left": 0,
+      "top": 0,
+      "width": 614
+    }
+  }
+}
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-4"
+        style="height:748px;left:614px;top:0;width:390px"
+      >
+        <div
+          class="emotion-3"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "debug": {
+    "animate": true,
+    "align": "right",
+    "hidden": false,
+    "position": {
+      "height": 748,
+      "left": 614,
+      "top": 0,
+      "width": 390
+    }
+  }
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
-exports[`Storyshots UI|Layout/Desktop (mocked) full 1`] = `
+exports[`Storyshots UI|Layout/Desktop no Panel 1`] = `
 .emotion-0 {
-  position: fixed;
-  left: 0;
+  z-index: 10;
+  position: absolute;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(0,0,0,.1);
+  overflow: hidden;
+  -webkit-transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  cursor: col-resize;
+  height: 100%;
+  width: 10px;
+  margin-left: 0;
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 50px 100%;
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+}
+
+.emotion-0:hover {
+  color: #1EA7FD;
+}
+
+.emotion-0:hover {
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 50px 100%;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+.emotion-2 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-1 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 9;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-3 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-6 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-left: 1px solid rgba(0,0,0,.1);
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-5 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: hidden;
 }
 
 <div
-  class="emotion-0"
+  style="min-height:600px;min-width:600px"
 >
   <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+    class="react-draggable emotion-0"
+    style="touch-action:none;transform:translate(200px,0px)"
   />
-  <div />
+  <div
+    class="emotion-2"
+    style="height:768px;left:0;top:0;width:210px"
+  >
+    <div
+      class="emotion-1"
+      color="hotpink"
+    >
+      <h2
+        style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+      >
+        1
+      </h2>
+      <pre>
+        {
+  "debug": {
+    "animate": true,
+    "hidden": false,
+    "position": {
+      "height": 768,
+      "left": 0,
+      "top": 0,
+      "width": 210
+    }
+  }
+}
+      </pre>
+    </div>
+  </div>
+  <div
+    class="emotion-4"
+    style="height:748px;left:210px;top:10px;width:804px"
+  >
+    <div
+      class="emotion-7"
+    >
+      <div
+        class="emotion-4"
+      >
+        <div
+          class="emotion-3"
+          color="deepskyblue"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "id": "main",
+  "debug": {
+    "animate": true,
+    "isFullscreen": false,
+    "position": {}
+  }
+}
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-6"
+        style="height:748px;left:414px;top:0;width:390px"
+      >
+        <div
+          class="emotion-5"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "debug": {
+    "animate": true,
+    "align": "right",
+    "hidden": true,
+    "position": {
+      "height": 748,
+      "left": 414,
+      "top": 0,
+      "width": 390
+    }
+  }
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
-exports[`Storyshots UI|Layout/Desktop (mocked) no Nav 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
+exports[`Storyshots UI|Layout/Desktop no Panel, no Nav 1`] = `
+.emotion-1 {
+  position: absolute;
+  box-sizing: border-box;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 9;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-0 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-3 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-left: 1px solid rgba(0,0,0,.1);
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-2 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+<div
+  style="min-height:600px;min-width:600px"
+>
+  <div
+    class="emotion-1"
+  >
+    <div
+      class="emotion-4"
+    >
+      <div
+        class="emotion-1"
+      >
+        <div
+          class="emotion-0"
+          color="deepskyblue"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "id": "main",
+  "debug": {
+    "animate": true,
+    "isFullscreen": true,
+    "position": {}
+  }
+}
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-3"
+        style="height:748px;left:614px;top:0;width:390px"
+      >
+        <div
+          class="emotion-2"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "debug": {
+    "animate": true,
+    "align": "right",
+    "hidden": true,
+    "position": {
+      "height": 748,
+      "left": 614,
+      "top": 0,
+      "width": 390
+    }
+  }
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI|Layout/Desktop page 1`] = `
+.emotion-0 {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(0,0,0,.1);
+  overflow: hidden;
+  -webkit-transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  transition: color 0.2s linear,background-position 0.2s linear,background-size 0.2s linear,background 0.2s linear;
+  cursor: col-resize;
+  height: 100%;
+  width: 10px;
+  margin-left: 0;
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 50px 100%;
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+}
+
+.emotion-0:hover {
+  color: #1EA7FD;
+}
+
+.emotion-0:hover {
+  background-image: radial-gradient(at center center,rgba(0,0,0,0.2) 0%,transparent 70%,transparent 100%);
+  background-size: 50px 100%;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+.emotion-2 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-1 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-9 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 9;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-3 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-5 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 9;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-6 {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-left: 1px solid rgba(0,0,0,.1);
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
+  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
+}
+
+.emotion-7 {
+  background: cyan;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: hidden;
 }
 
 <div
-  class="emotion-0"
+  style="min-height:600px;min-width:600px"
 >
   <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
+    class="react-draggable emotion-0"
+    style="touch-action:none;transform:translate(200px,0px)"
   />
-  <div />
-</div>
-`;
-
-exports[`Storyshots UI|Layout/Desktop (mocked) no Panel 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  <div
+    class="emotion-2"
+    style="height:768px;left:0;top:0;width:210px"
+  >
+    <div
+      class="emotion-1"
+      color="hotpink"
+    >
+      <h2
+        style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+      >
+        1
+      </h2>
+      <pre>
+        {
+  "debug": {
+    "animate": true,
+    "hidden": false,
+    "position": {
+      "height": 768,
+      "left": 0,
+      "top": 0,
+      "width": 210
+    }
+  }
 }
-
-<div
-  class="emotion-0"
->
+      </pre>
+    </div>
+  </div>
   <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-  />
-  <div />
-</div>
-`;
-
-exports[`Storyshots UI|Layout/Desktop (mocked) no Panel, no Nav 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+    class="emotion-9"
+    style="height:748px;left:210px;top:10px;width:804px"
+  >
+    <div
+      class="emotion-8"
+    >
+      <div
+        class="emotion-4"
+        hidden=""
+      >
+        <div
+          class="emotion-3"
+          color="deepskyblue"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "id": "main",
+  "debug": {
+    "animate": true,
+    "isFullscreen": false,
+    "position": {}
+  }
 }
-
-<div
-  class="emotion-0"
->
-  <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-  />
-  <div />
-</div>
-`;
-
-exports[`Storyshots UI|Layout/Desktop (mocked) page 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-6"
+        hidden=""
+        style="height:748px;left:414px;top:0;width:390px"
+      >
+        <div
+          class="emotion-5"
+          color="orangered"
+        >
+          <h2
+            style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+          >
+            1
+          </h2>
+          <pre>
+            {
+  "debug": {
+    "animate": true,
+    "align": "right",
+    "hidden": true,
+    "position": {
+      "height": 748,
+      "left": 414,
+      "top": 0,
+      "width": 390
+    }
+  }
 }
-
-<div
-  class="emotion-0"
->
-  <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-  />
-  <div />
+          </pre>
+        </div>
+      </div>
+      <div
+        class="emotion-7"
+        color="cyan"
+      >
+        <h2
+          style="position:absolute;bottom:0;right:0;color:rgba(0,0,0,0.2);font-size:150px;line-height:150px;margin:-20px"
+        >
+          1
+        </h2>
+        <pre>
+          {}
+        </pre>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
-exports[`Storyshots UI|Layout/Desktop (real) bottom Panel 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-<div
-  class="emotion-0"
->
-  <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-  />
-  <div />
-</div>
-`;
-
-exports[`Storyshots UI|Layout/Desktop (real) default 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-<div
-  class="emotion-0"
->
-  <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-  />
-  <div />
-</div>
-`;
-
-exports[`Storyshots UI|Layout/Desktop (real) full 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-<div
-  class="emotion-0"
->
-  <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-  />
-  <div />
-</div>
-`;
-
-exports[`Storyshots UI|Layout/Desktop (real) no Nav 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-<div
-  class="emotion-0"
->
-  <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-  />
-  <div />
-</div>
-`;
-
-exports[`Storyshots UI|Layout/Desktop (real) no Panel 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-<div
-  class="emotion-0"
->
-  <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-  />
-  <div />
-</div>
-`;
-
-exports[`Storyshots UI|Layout/Desktop (real) no Panel, no Nav 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-<div
-  class="emotion-0"
->
-  <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-  />
-  <div />
-</div>
-`;
-
-exports[`Storyshots UI|Layout/Desktop (real) page 1`] = `
-.emotion-0 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-<div
-  class="emotion-0"
->
-  <div
-    style="position:absolute;width:0;height:0;visibility:hidden;display:none"
-  />
-  <div />
-</div>
-`;
-
-exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
+exports[`Storyshots UI|Layout/Mobile initial 0 1`] = `
 .emotion-7 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -371,6 +1806,78 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
+.emotion-0 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
 .emotion-11 {
   position: fixed;
   left: 0;
@@ -412,30 +1919,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   border-left: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-0 {
-  background: hotpink;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .emotion-3 {
   -webkit-transition: -webkit-transform .2s ease;
   -webkit-transition: transform .2s ease;
@@ -460,30 +1943,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
   border-left: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-2 {
-  background: deepskyblue;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .emotion-5 {
   -webkit-transition: -webkit-transform .2s ease;
   -webkit-transition: transform .2s ease;
@@ -506,30 +1965,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
 
 .emotion-5:nth-of-type(3) {
   border-left: 1px solid rgba(0,0,0,.1);
-}
-
-.emotion-4 {
-  background: orangered;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .emotion-10 {
@@ -644,7 +2079,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 0 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
+exports[`Storyshots UI|Layout/Mobile initial 1 1`] = `
 .emotion-7 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -690,6 +2125,78 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
+.emotion-0 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
 .emotion-11 {
   position: fixed;
   left: 0;
@@ -731,30 +2238,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   border-left: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-0 {
-  background: hotpink;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .emotion-3 {
   -webkit-transition: -webkit-transform .2s ease;
   -webkit-transition: transform .2s ease;
@@ -779,30 +2262,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
   border-left: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-2 {
-  background: deepskyblue;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .emotion-5 {
   -webkit-transition: -webkit-transform .2s ease;
   -webkit-transition: transform .2s ease;
@@ -825,30 +2284,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
 
 .emotion-5:nth-of-type(3) {
   border-left: 1px solid rgba(0,0,0,.1);
-}
-
-.emotion-4 {
-  background: orangered;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .emotion-10 {
@@ -963,7 +2398,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 1 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
+exports[`Storyshots UI|Layout/Mobile initial 2 1`] = `
 .emotion-7 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -1009,6 +2444,78 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
+.emotion-0 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
 .emotion-11 {
   position: fixed;
   left: 0;
@@ -1050,30 +2557,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   border-left: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-0 {
-  background: hotpink;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .emotion-3 {
   -webkit-transition: -webkit-transform .2s ease;
   -webkit-transition: transform .2s ease;
@@ -1098,30 +2581,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
   border-left: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-2 {
-  background: deepskyblue;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .emotion-5 {
   -webkit-transition: -webkit-transform .2s ease;
   -webkit-transition: transform .2s ease;
@@ -1144,30 +2603,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
 
 .emotion-5:nth-of-type(3) {
   border-left: 1px solid rgba(0,0,0,.1);
-}
-
-.emotion-4 {
-  background: orangered;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .emotion-10 {
@@ -1282,7 +2717,7 @@ exports[`Storyshots UI|Layout/Mobile (mocked) initial 2 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
+exports[`Storyshots UI|Layout/Mobile page 1`] = `
 .emotion-8 {
   white-space: normal;
   display: -webkit-inline-box;
@@ -1328,6 +2763,102 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   border-bottom-color: #1EA7FD;
 }
 
+.emotion-0 {
+  background: hotpink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  background: deepskyblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-5 {
+  background: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emotion-3 {
+  background: cyan;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
 .emotion-11 {
   position: fixed;
   left: 0;
@@ -1369,30 +2900,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   border-left: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-0 {
-  background: hotpink;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .emotion-4 {
   -webkit-transition: -webkit-transform .2s ease;
   -webkit-transition: transform .2s ease;
@@ -1415,30 +2922,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
 
 .emotion-4:nth-of-type(3) {
   border-left: 1px solid rgba(0,0,0,.1);
-}
-
-.emotion-2 {
-  background: deepskyblue;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .emotion-6 {
@@ -1465,30 +2948,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   border-left: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-5 {
-  background: orangered;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .emotion-10 {
   position: fixed;
   bottom: 0;
@@ -1507,30 +2966,6 @@ exports[`Storyshots UI|Layout/Mobile (mocked) page 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-}
-
-.emotion-3 {
-  background: cyan;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 <div

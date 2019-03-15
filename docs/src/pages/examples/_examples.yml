@@ -179,3 +179,10 @@ vanilla:
   demo: https://vanilla-framework.github.io/vanilla-framework-react/
   source: https://github.com/vanilla-framework/vanilla-framework-react
   site: https://vanillaframework.io/
+govuk:
+  thumbnail: gov-uk.png
+  title: GOV.UK react
+  description: An implementation of the GOV.UK Design System in React using CSSinJS
+  demo: https://govuk-react.github.io/govuk-react/
+  source: https://github.com/govuk-react/govuk-react
+  site: https://design-system.service.gov.uk/

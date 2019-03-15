@@ -8,26 +8,32 @@ export const withNotes = makeDecorator({
   skipIfNoParametersOrOptions: true,
   allowDeprecatedUsage: true,
 
-  wrapper: deprecate((getStory: StoryGetter, context: StoryContext, { options, parameters }: WrapperSettings) => {
-    const storyOptions = parameters || options;
+  wrapper: deprecate(
+    (getStory: StoryGetter, context: StoryContext, { options, parameters }: WrapperSettings) => {
+      const storyOptions = parameters || options;
 
-    const { text, markdown } =
-      typeof storyOptions === 'string'
-        ? {
-            text: storyOptions,
-            markdown: undefined,
-          }
-        : storyOptions;
+      const { text, markdown } =
+        typeof storyOptions === 'string'
+          ? {
+              text: storyOptions,
+              markdown: undefined,
+            }
+          : storyOptions;
 
-    if (!text && !markdown) {
-      throw new Error(`Parameter 'notes' must must be a string or an object with 'text' or 'markdown' properties`);
-    }
+      if (!text && !markdown) {
+        throw new Error(
+          `Parameter 'notes' must must be a string or an object with 'text' or 'markdown' properties`
+        );
+      }
 
-    return getStory(context);
-  }, 'withNotes is deprecated'),
+      return getStory(context);
+    },
+    'withNotes is deprecated'
+  ),
 });
 
-export const withMarkdownNotes = deprecate((text: string, options: any) => {}, 'withMarkdownNotes is deprecated');
+export const withMarkdownNotes = deprecate((text: string, options: any) => {},
+'withMarkdownNotes is deprecated');
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();

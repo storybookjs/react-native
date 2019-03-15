@@ -16,7 +16,9 @@ export const Wrapper = styled(({ children, className }) => (
   padding: '10px 5px 20px',
 });
 
-const ThemedInspector = withTheme(({ theme, ...props }) => <Inspector theme={theme.addonActionsTheme || 'chromeLight'} {...props} />);
+const ThemedInspector = withTheme(({ theme, ...props }) => (
+  <Inspector theme={theme.addonActionsTheme || 'chromeLight'} {...props} />
+));
 
 interface ActionLoggerProps {
   actions: ActionDisplay[];
@@ -30,7 +32,12 @@ export const ActionLogger = ({ actions, onClear }: ActionLoggerProps) => (
         <Action key={action.id}>
           {action.count > 1 && <Counter>{action.count}</Counter>}
           <InspectorContainer>
-            <ThemedInspector sortObjectKeys showNonenumerable={false} name={action.data.name} data={action.data.args || action.data} />
+            <ThemedInspector
+              sortObjectKeys
+              showNonenumerable={false}
+              name={action.data.name}
+              data={action.data.args || action.data}
+            />
           </InspectorContainer>
         </Action>
       ))}
