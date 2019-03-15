@@ -33,7 +33,7 @@
     "polished": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
-    "react-dom": "^16.8.3",
+    "react-dom": "^16.8.4",
     "react-focus-lock": "^1.18.3",
     "react-helmet-async": "^0.2.0",
     "react-popper-tooltip": "^2.8.0",

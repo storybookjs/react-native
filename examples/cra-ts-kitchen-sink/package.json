@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "react": "^16.8.4",
-    "react-dom": "^16.8.3"
+    "react-dom": "^16.8.4"
   },
   "devDependencies": {
     "@storybook/addon-actions": "5.1.0-alpha.6",
