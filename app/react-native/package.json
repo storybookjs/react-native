@@ -23,7 +23,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "^1.2.1",
     "@storybook/addons": "5.1.0-alpha.7",
     "@storybook/channel-websocket": "5.1.0-alpha.7",
     "@storybook/channels": "5.1.0-alpha.7",
