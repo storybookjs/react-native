@@ -18,7 +18,7 @@
     "expo": "^32.0.6",
     "prop-types": "^15.6.2",
     "react": "16.5.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
@@ -50,7 +50,7 @@
     "core-js": "^2.5.7",
     "babel-loader": "^8.0.4",
     "babel-preset-expo": "^5.0.0",
-    "jest-expo": "^31.0.0",
+    "jest-expo": "^32.0.0",
     "schedule": "^0.4.0",
     "react-test-renderer": "16.5.1"
   }
