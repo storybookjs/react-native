@@ -63,7 +63,7 @@ const getSelectedBackgroundColor = (list: Input[], currentSelectedValue: string)
   return 'transparent';
 };
 
-const mapper = ({ api, state }: Combo): { items: Item[] } => {
+const mapper = ({ api, state }: Combo): { items: Input[] } => {
   const story = state.storiesHash[state.storyId];
   const list = story ? api.getParameters(story.id, PARAM_KEY) : [];
 
@@ -115,7 +115,7 @@ export class BackgroundSelector extends Component<{}, State> {
 
     return (
       <Consumer filter={mapper}>
-        {({ items }) => {
+        {({ items }: { items: Input[] }) => {
           const selectedBackgroundColor = getSelectedBackgroundColor(items, selected);
           const links = getDisplayedItems(items, selectedBackgroundColor, this.change);
 
@@ -130,7 +130,7 @@ export class BackgroundSelector extends Component<{}, State> {
                           ? theme.background.content
                           : selectedBackgroundColor,
                     },
-                        })}
+                  })}
                 />
               ) : null}
               <WithTooltip
