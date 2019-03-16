@@ -33,7 +33,7 @@ const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => 
   return (
     <Item>
       <ItemTitle>{element.target[0]}
-        <HighlightToggle type={type} element={element}></HighlightToggle>
+        <HighlightToggle type={type} elements={[element]}></HighlightToggle>
       </ItemTitle>
       <Rules rules={rules} passes={passes} />
     </Item>

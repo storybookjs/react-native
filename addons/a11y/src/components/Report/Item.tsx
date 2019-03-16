@@ -8,6 +8,7 @@ import { Info } from './Info';
 import { Elements } from './Elements';
 import { Tags } from './Tags';
 import { RuleTypes } from '../A11YPanel';
+import { HighlightToggle } from './HighlightToggle';
 
 const Wrapper = styled.div();
 
@@ -77,6 +78,7 @@ export class Item extends Component<ItemProps, ItemState> {
           />
           {item.description}
         </HeaderBar>
+        <HighlightToggle type={type} elements={item.nodes}></HighlightToggle>
         {open ? (
           <Fragment>
             <Info item={item} key="info" />
