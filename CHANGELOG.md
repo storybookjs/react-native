@@ -1,3 +1,35 @@
+## 5.1.0-alpha.7 (March 16, 2019)
+
+### Breaking Changes
+
+* Core: Restore v4 webpack extend mode behavior AND deprecate it ([#6104](https://github.com/storybooks/storybook/pull/6104))
+* React native: Use @storybook/core ([#4942](https://github.com/storybooks/storybook/pull/4942))
+
+### Features
+
+* CLI: Add --debug-webpack option ([#6082](https://github.com/storybooks/storybook/pull/6082))
+* UI: open brandUrl in new window ([#6106](https://github.com/storybooks/storybook/pull/6106))
+
+### Bug Fixes
+
+* CLI: Clear build folder in static build ([#6024](https://github.com/storybooks/storybook/pull/6024))
+* Addon-a11y: Fix tab navigation ([#6118](https://github.com/storybooks/storybook/pull/6118))
+* Theming: FIX brandImage when theme created with brandTitle ([#6120](https://github.com/storybooks/storybook/pull/6120))
+* Addon-backgrounds: Set preview to theme color when "transparent" ([#6042](https://github.com/storybooks/storybook/pull/6042))
+
+### Maintenance
+
+* Sort package.json on precommit ([#6101](https://github.com/storybooks/storybook/pull/6101))
+
+### Dependency Upgrades
+
+* Use community AsyncStorage instead of deprecated React Native one ([#6079](https://github.com/storybooks/storybook/pull/6079))
+* Fix expo ([#6121](https://github.com/storybooks/storybook/pull/6121))
+* Bump graphiql from 0.12.0 to 0.13.0 ([#5901](https://github.com/storybooks/storybook/pull/5901))
+* Update expo requirement from ^31.0.4 to ^32.0.6 in /examples-native/crna-kitchen-sink ([#5664](https://github.com/storybooks/storybook/pull/5664))
+* Bump @angular/cli from 7.3.4 to 7.3.6 ([#6103](https://github.com/storybooks/storybook/pull/6103))
+* Bump react-dom from 16.8.3 to 16.8.4 ([#5903](https://github.com/storybooks/storybook/pull/5903))
+
 ## 5.1.0-alpha.6 (March 14, 2019)
 
 ### Features
