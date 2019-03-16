@@ -130,7 +130,7 @@ export class BackgroundSelector extends Component<{}, State> {
                           ? theme.background.content
                           : selectedBackgroundColor,
                     },
-                  })}
+                        })}
                 />
               ) : null}
               <WithTooltip
