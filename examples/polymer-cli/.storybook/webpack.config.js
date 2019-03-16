@@ -8,6 +8,6 @@ module.exports = async ({ config }) => {
     include: [path.resolve(__dirname, '../src')],
     enforce: 'pre',
   });
-  config.module.plugins.push(new webpack.IgnorePlugin(/vertx/));
+  config.plugins.push(new webpack.IgnorePlugin(/vertx/));
   return config;
 };
