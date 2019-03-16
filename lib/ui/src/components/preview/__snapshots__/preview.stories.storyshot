@@ -244,6 +244,7 @@ Array [
                 </span>
                 <button
                   class="emotion-2"
+                  title="Open canvas in new tab"
                 >
                   <svg
                     class="emotion-1"
@@ -731,6 +732,7 @@ Array [
                 </span>
                 <button
                   class="emotion-8"
+                  title="Open canvas in new tab"
                 >
                   <svg
                     class="emotion-7"
