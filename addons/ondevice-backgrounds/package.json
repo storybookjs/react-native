@@ -1,7 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-backgrounds",
   "version": "5.1.0-alpha.6",
-  "private": true,
   "description": "A storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",
