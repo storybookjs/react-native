@@ -194,7 +194,7 @@ jobs:
           at: .
       - run:
           name: Bootstrap
-          command: yarn bootstrap --reactnativeapp
+          command: yarn bootstrap --core
       - run:
           name: Run React-Native-App example
           command: |
