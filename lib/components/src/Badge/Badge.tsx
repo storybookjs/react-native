@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { styled, css } from '@storybook/theming';
 
-const BadgeWrapper = styled.div`
+type BadgeWrapperProps = BadgeProps;
+
+const BadgeWrapper = styled.div<BadgeWrapperProps>`
   display: inline-block;
   vertical-align: top;
   font-size: 11px;
@@ -21,7 +23,7 @@ const BadgeWrapper = styled.div`
     }
   }
 
-  ${(props: any) =>
+  ${props =>
     props.status === 'positive' &&
     css`
       color: ${props.theme.color.positive};
@@ -43,8 +45,12 @@ const BadgeWrapper = styled.div`
     `};
 `;
 
-function Badge({ ...props }) {
-  return <BadgeWrapper {...props} />;
+export interface BadgeProps {
+  status: 'positive' | 'negative' | 'neutral';
 }
+
+const Badge: FunctionComponent<BadgeProps> = ({ ...props }) => {
+  return <BadgeWrapper {...props} />;
+};
 
 export default Badge;
