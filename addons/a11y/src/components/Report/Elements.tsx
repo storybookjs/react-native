@@ -5,8 +5,8 @@ import memoize from 'memoizerific';
 
 import { NodeResult } from 'axe-core';
 import { Rules } from './Rules';
-import { RuleTypes } from '../A11YPanel';
-import { HighlightToggle } from './HighlightToggle';
+import { RuleType } from '../A11YPanel';
+import HighlightToggle from './HighlightToggle';
 
 const Item = styled.li({
   fontWeight: 600,
@@ -22,7 +22,7 @@ const ItemTitle = styled.span({
 interface ElementProps {
   element: NodeResult;
   passes: boolean;
-  type: RuleTypes;
+  type: RuleType;
 }
 
 const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => {
@@ -33,7 +33,7 @@ const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => 
   return (
     <Item>
       <ItemTitle>{element.target[0]}
-        <HighlightToggle type={type} elements={[element]}></HighlightToggle>
+        <HighlightToggle type={type} elementsToHighlight={[element]}></HighlightToggle>
       </ItemTitle>
       <Rules rules={rules} passes={passes} />
     </Item>
@@ -43,7 +43,7 @@ const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => 
 interface ElementsProps {
   elements: NodeResult[];
   passes: boolean;
-  type: RuleTypes;
+  type: RuleType;
 }
 
 export const Elements: FunctionComponent<ElementsProps> = ({ elements, passes, type }) => (

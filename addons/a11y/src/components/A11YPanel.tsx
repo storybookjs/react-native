@@ -11,10 +11,14 @@ import { Report } from './Report';
 import { Tabs } from './Tabs';
 import { EVENTS } from '../constants';
 
-export enum RuleTypes {
-  VIOLATIONS,
-  PASSES,
-  INCOMPLETIONS,
+import { Provider } from 'react-redux';
+import store from '../redux-config';
+
+
+export enum RuleType {
+  VIOLATION,
+  PASS,
+  INCOMPLETION,
 }
 
 const Icon = styled(Icons)(
@@ -160,35 +164,37 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
 
     return active ? (
       <Fragment>
-        {status === 'running' ? (
-          <Loader />
-        ) : (
-          <ScrollArea vertical horizontal>
-            <Tabs
-              key="tabs"
-              tabs=
-              {[
-                {
-                  label: <Violations>{violations.length} Violations</Violations>,
-                  panel: (
-                    <Report passes={false} items={violations} type={RuleTypes.VIOLATIONS} empty="No a11y violations found." />
-                  ),
-                },
-                {
-                  label: <Passes>{passes.length} Passes</Passes>,
-                  panel: <Report passes items={passes} type={RuleTypes.PASSES} empty="No a11y check passed." />,
-                },
-                {
-                  label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
-                  panel: (
-                    <Report passes={false} items={incomplete} type={RuleTypes.INCOMPLETIONS} empty="No a11y incomplete found." />
-                  ),
-                },
-              ]}
-            />
-          </ScrollArea>
-        )}
-        <ActionBar key="actionbar" actionItems={[{ title: actionTitle, onClick: this.request }]} />
+        <Provider store={store}>
+          {status === 'running' ? (
+            <Loader />
+          ) : (
+            <ScrollArea vertical horizontal>
+              <Tabs
+                key="tabs"
+                tabs=
+                {[
+                  {
+                    label: <Violations>{violations.length} Violations</Violations>,
+                    panel: (
+                      <Report passes={false} items={violations} type={RuleType.VIOLATION} empty="No a11y violations found." />
+                    ),
+                  },
+                  {
+                    label: <Passes>{passes.length} Passes</Passes>,
+                    panel: <Report passes items={passes} type={RuleType.PASS} empty="No a11y check passed." />,
+                  },
+                  {
+                    label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
+                    panel: (
+                      <Report passes={false} items={incomplete} type={RuleType.INCOMPLETION} empty="No a11y incomplete found." />
+                    ),
+                  },
+                ]}
+              />
+            </ScrollArea>
+          )}
+          <ActionBar key="actionbar" actionItems={[{ title: actionTitle, onClick: this.request }]} />
+        </Provider>
       </Fragment>
     ) : null;
   }
