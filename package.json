@@ -12,11 +12,11 @@
     "app/*",
     "lib/*",
     "examples/*",
+    "examples-native/*",
     "lib/cli/test/run/*"
   ],
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
-    "bootstrap:crna-kitchen-sink": "npm --prefix examples-native/crna-kitchen-sink install",
     "bootstrap:docs": "yarn install --cwd docs",
     "build-packs": "lerna exec --scope '@storybook/*' -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
     "build-storybooks": "./scripts/build-storybooks.sh",

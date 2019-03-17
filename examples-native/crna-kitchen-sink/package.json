@@ -1,6 +1,6 @@
 {
   "name": "crna-kitchen-sink",
-  "version": "0.1.0",
+  "version": "5.1.0-alpha.8",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -24,34 +24,24 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-transform-react-jsx-source": "^7.2.0",
-    "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
-    "@storybook/addon-knobs": "file:../../packs/storybook-addon-knobs.tgz",
-    "@storybook/addon-links": "file:../../packs/storybook-addon-links.tgz",
-    "@storybook/addon-options": "file:../../packs/storybook-addon-options.tgz",
-    "@storybook/addons": "file:../../packs/storybook-addons.tgz",
-    "@storybook/channel-postmessage": "file:../../packs/storybook-channel-postmessage.tgz",
-    "@storybook/channel-websocket": "file:../../packs/storybook-channel-websocket.tgz",
-    "@storybook/channels": "file:../../packs/storybook-channels.tgz",
-    "@storybook/client-api": "file:../../packs/storybook-client-api.tgz",
-    "@storybook/client-logger": "file:../../packs/storybook-client-logger.tgz",
-    "@storybook/components": "file:../../packs/storybook-components.tgz",
-    "@storybook/router": "file:../../packs/storybook-router.tgz",
-    "@storybook/core": "file:../../lib/core",
-    "@storybook/core-events": "file:../../packs/storybook-core-events.tgz",
-    "@storybook/node-logger": "file:../../packs/storybook-node-logger.tgz",
-    "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
-    "@storybook/react-native-server": "file:../../packs/storybook-react-native-server.tgz",
-    "@storybook/addon-notes": "file:../../packs/storybook-addon-notes.tgz",
-    "@storybook/addon-ondevice-backgrounds": "file:../../packs/storybook-addon-ondevice-backgrounds.tgz",
-    "@storybook/addon-ondevice-knobs": "file:../../packs/storybook-addon-ondevice-knobs.tgz",
-    "@storybook/addon-ondevice-notes": "file:../../packs/storybook-addon-ondevice-notes.tgz",
-    "@storybook/ui": "file:../../packs/storybook-ui.tgz",
-    "@storybook/theming": "file:../../packs/storybook-theming.tgz",
-    "core-js": "^2.5.7",
+    "@storybook/addon-knobs": "5.1.0-alpha.8",
+    "@storybook/addon-ondevice-knobs": "5.1.0-alpha.8",
+    "@storybook/addon-ondevice-notes": "5.1.0-alpha.8",
+    "@storybook/addons": "5.1.0-alpha.8",
+    "@storybook/react-native": "5.1.0-alpha.8",
     "babel-loader": "^8.0.4",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-expo": "^5.0.0",
+    "core-js": "^2.5.7",
     "jest-expo": "^32.0.0",
-    "schedule": "^0.4.0",
-    "react-test-renderer": "16.5.1"
+    "react-test-renderer": "16.5.1",
+    "schedule": "^0.4.0"
+  },
+  "workspaces": {
+    "nohoist": [
+      "react-native/**",
+      "**/app/react-native*",
+      "expo"
+    ]
   }
 }

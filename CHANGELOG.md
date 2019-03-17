@@ -1,3 +1,16 @@
+## 5.1.0-alpha.8 (March 17, 2019)
+
+### Bug Fixes
+
+* Accessibilty: Add aria label to search box ([#6131](https://github.com/storybooks/storybook/pull/6131))
+* Accessibilty: Add missing button titles ([#6124](https://github.com/storybooks/storybook/pull/6124))
+* Addon-cssresources: Fix `STORY_RENDERED` CSS reset ([#6050](https://github.com/storybooks/storybook/pull/6050))
+
+### Maintenance
+
+* React-native: Integrate crna-kitchen-sink example into monorepo ([#6125](https://github.com/storybooks/storybook/pull/6125))
+* Fix deprecations in examples ([#6134](https://github.com/storybooks/storybook/pull/6134))
+
 ## 5.0.2 (March 17, 2019)
 
 ### Features
