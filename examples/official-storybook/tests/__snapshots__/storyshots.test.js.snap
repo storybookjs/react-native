@@ -9895,6 +9895,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                 class="emotion-14"
               >
                 <input
+                  aria-label="Search stories"
                   class="emotion-8"
                   id="storybook-explorer-searchfield"
                   placeholder="Press \\"/\\" to search..."
@@ -14238,6 +14239,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
     class="emotion-6"
   >
     <input
+      aria-label="Search stories"
       class="emotion-0"
       id="storybook-explorer-searchfield"
       placeholder="Type to search..."
@@ -14528,6 +14530,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
     class="emotion-6"
   >
     <input
+      aria-label="Search stories"
       class="emotion-0"
       id="storybook-explorer-searchfield"
       placeholder="Type to search..."
@@ -14817,6 +14820,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
     class="emotion-6"
   >
     <input
+      aria-label="Search stories"
       class="emotion-0"
       id="storybook-explorer-searchfield"
       placeholder="Press \\"/\\" to search..."
@@ -16507,6 +16511,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
       class="emotion-6"
     >
       <input
+        aria-label="Search stories"
         class="emotion-0"
         id="storybook-explorer-searchfield"
         placeholder="Press \\"/\\" to search..."
@@ -17423,6 +17428,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       class="emotion-6"
     >
       <input
+        aria-label="Search stories"
         class="emotion-0"
         id="storybook-explorer-searchfield"
         placeholder="Press \\"/\\" to search..."
