@@ -7,6 +7,9 @@
       "barStyle": "light-content",
       "backgroundColor": "#C2185B"
     },
-    "assetBundlePatterns": ["**/*"]
+    "assetBundlePatterns": ["**/*"],
+    "packagerOpts": {
+      "config": "metro.config.js"
+    }
   }
 }

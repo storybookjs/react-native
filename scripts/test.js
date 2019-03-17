@@ -57,15 +57,6 @@ const tasks = {
     projectLocation: path.join(__dirname, '..', 'examples/official-storybook/image-snapshots'),
     isJest: true,
   }),
-  // 'crna-kitchen-sink': createProject({
-  //   name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}  ${chalk.red(
-  //     '[not implemented yet]'
-  //   )}`,
-  //   defaultValue: false,
-  //   option: '--reactnativeapp',
-  //   projectLocation: './examples-native/crna-kitchen-sink',
-  //   isJest: true,
-  // }),
   cli: createProject({
     name: `Command Line Interface ${chalk.gray('(cli)')}`,
     defaultValue: false,
