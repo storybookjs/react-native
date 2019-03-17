@@ -1,7 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 
-export const StorybookLogo = ({ alt, ...props }: any) => (
+export interface StorybookLogoProps {
+  alt: string;
+}
+
+export const StorybookLogo: FunctionComponent<StorybookLogoProps> = ({ alt, ...props }) => (
   <svg width="200px" height="40px" viewBox="0 0 200 40" {...props} role="img">
     {alt ? <title>{alt}</title> : null}
     <defs>
@@ -28,7 +31,3 @@ export const StorybookLogo = ({ alt, ...props }: any) => (
     </g>
   </svg>
 );
-
-StorybookLogo.propTypes = {
-  alt: PropTypes.string.isRequired,
-};
