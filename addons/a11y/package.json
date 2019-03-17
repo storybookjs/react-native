@@ -31,6 +31,7 @@
     "@storybook/components": "5.1.0-alpha.6",
     "@storybook/core-events": "5.1.0-alpha.6",
     "@storybook/theming": "5.1.0-alpha.6",
+    "@types/react-redux": "^7.0.3",
     "axe-core": "^3.2.2",
     "common-tags": "^1.8.0",
     "core-js": "^2.6.5",
@@ -40,7 +41,9 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/common-tags": "^1.8.0"
+    "@types/common-tags": "^1.8.0",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1"
   },
   "publishConfig": {
     "access": "public"
