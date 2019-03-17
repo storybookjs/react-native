@@ -1,9 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 import { styled, css } from '@storybook/theming';
 import { darken, lighten, rgba, transparentize } from 'polished';
 
-const ButtonWrapper = styled.button`
+type ButtonWrapperProps = ButtonProps;
+
+const ButtonWrapper = styled.button<ButtonWrapperProps>`
   border: 0;
   border-radius: 3em;
   cursor: pointer;
@@ -23,7 +24,7 @@ const ButtonWrapper = styled.button`
   background: transparent;
 
 
-  font-size: ${(props: any) =>
+  font-size: ${props =>
     props.small ? props.theme.typography.size.s1 : props.theme.typography.size.s2 - 1}px;
   font-weight: ${props => props.theme.typography.weight.bold};
   line-height: 1;
@@ -220,22 +221,23 @@ const ButtonWrapper = styled.button`
 
 const ButtonLink = ButtonWrapper.withComponent('a');
 
-function Button({ isLink, children, ...props }: any) {
+interface ButtonProps {
+  isLink?: boolean;
+  primary?: boolean;
+  secondary?: boolean;
+  tertiary?: boolean;
+  inForm?: boolean;
+  disabled?: boolean;
+  small?: boolean;
+  outline?: boolean;
+  containsIcon?: boolean;
+}
+
+const Button: FunctionComponent<ButtonProps> = ({ isLink, children, ...props }) => {
   if (isLink) {
     return <ButtonLink {...props}>{children}</ButtonLink>;
   }
   return <ButtonWrapper {...props}>{children}</ButtonWrapper>;
-}
-
-Button.propTypes = {
-  isLink: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-  primary: PropTypes.bool,
-  secondary: PropTypes.bool,
-  disabled: PropTypes.bool,
-  small: PropTypes.bool,
-  outline: PropTypes.bool,
-  containsIcon: PropTypes.bool,
 };
 
 Button.defaultProps = {
