@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 
 import { styled } from '@storybook/theming';
 
@@ -45,25 +44,21 @@ export const ActionButton = styled.button(({ theme }) => ({
 }));
 ActionButton.displayName = 'ActionButton';
 
-export const ActionBar = ({ actionItems, ...props }: any) => (
+export interface ActionItem {
+  title: string | JSX.Element;
+  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+}
+
+export interface ActionBarProps {
+  actionItems: ActionItem[];
+}
+
+export const ActionBar: FunctionComponent<ActionBarProps> = ({ actionItems, ...props }) => (
   <Container {...props}>
-    {actionItems.map(({ title, onClick }: any, index: number) => (
-      <ActionButton
-        // eslint-disable-next-line react/no-array-index-key
-        key={index}
-        onClick={onClick}
-      >
+    {actionItems.map(({ title, onClick }, index: number) => (
+      <ActionButton key={index} onClick={onClick}>
         {title}
       </ActionButton>
     ))}
   </Container>
 );
-
-ActionBar.propTypes = {
-  actionItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.node.isRequired,
-      onClick: PropTypes.func.isRequired,
-    }),
-  ).isRequired,
-};

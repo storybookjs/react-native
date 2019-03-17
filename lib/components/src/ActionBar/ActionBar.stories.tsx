@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { action } from '@storybook/addon-actions';
 
 import { ActionBar } from './ActionBar';
@@ -11,7 +11,7 @@ export default {
   Component: ActionBar,
   title: 'Basics|ActionBar',
   decorators: [
-    (storyFn: () => any) => (
+    (storyFn: () => ReactNode) => (
       <div
         style={{
           position: 'relative',
