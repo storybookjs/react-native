@@ -1,3 +1,25 @@
+## 5.0.2 (March 17, 2019)
+
+### Features
+
+* CLI: Add --debug-webpack option ([#6082](https://github.com/storybooks/storybook/pull/6082))
+
+### Bug Fixes
+
+* Addon-a11y: Fix design icons ([#5991](https://github.com/storybooks/storybook/pull/5991))
+* Addon-cssresources: Fix `STORY_RENDERED` CSS reset ([#6050](https://github.com/storybooks/storybook/pull/6050))
+* CLI: Clear build folder in static build ([#6024](https://github.com/storybooks/storybook/pull/6024))
+* Addon-backgrounds: Set preview to theme color when "transparent" ([#6042](https://github.com/storybooks/storybook/pull/6042))
+* UI: Fix search item in menu ([#6027](https://github.com/storybooks/storybook/pull/6027))
+* Addon-knobs: Fix key press debouncing ([#6022](https://github.com/storybooks/storybook/pull/6022))
+* CLI: Fix welcome component in dark theme ([#5998](https://github.com/storybooks/storybook/pull/5998))
+* Addon-viewport: Fix viewport iframe dimensions ([#5993](https://github.com/storybooks/storybook/pull/5993))
+* Core: fix selectStory with one parameter ([#5983](https://github.com/storybooks/storybook/pull/5983))
+
+### Maintenance
+
+* Addon-viewport: Change styling to more closely match v4 ([#5979](https://github.com/storybooks/storybook/pull/5979))
+
 ## 5.1.0-alpha.7 (March 16, 2019)
 
 ### Breaking Changes
