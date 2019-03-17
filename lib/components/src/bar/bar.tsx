@@ -1,17 +1,21 @@
-import React, { Children } from 'react';
-import PropTypes from 'prop-types';
+import React, { Children, FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 
 import { ScrollArea } from '../ScrollArea/ScrollArea';
 
-const Side = styled.div(
+interface SideProps {
+  left?: boolean;
+  right?: boolean;
+}
+
+const Side = styled.div<SideProps>(
   {
     display: 'flex',
     whiteSpace: 'nowrap',
     flexBasis: 'auto',
     flexShrink: 0,
   },
-  ({ left }: any) =>
+  ({ left }) =>
     left
       ? {
           '& > *': {
@@ -19,7 +23,7 @@ const Side = styled.div(
           },
         }
       : {},
-  ({ right }: any) =>
+  ({ right }) =>
     right
       ? {
           marginLeft: 30,
@@ -62,7 +66,11 @@ const BarInner = styled.div({
   height: 40,
 });
 
-export const FlexBar = ({ children, ...rest }: any) => {
+interface FlexBarProps {
+  border?: boolean;
+}
+
+export const FlexBar: FunctionComponent<FlexBarProps> = ({ children, ...rest }) => {
   const [left, right] = Children.toArray(children);
   return (
     <Bar {...rest}>
@@ -74,8 +82,3 @@ export const FlexBar = ({ children, ...rest }: any) => {
   );
 };
 FlexBar.displayName = 'FlexBar';
-
-FlexBar.propTypes = {
-  children: PropTypes.node.isRequired,
-  border: PropTypes.bool,
-};

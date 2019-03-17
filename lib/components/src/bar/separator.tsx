@@ -7,7 +7,6 @@ export const interleaveSeparators = (list: any[]) =>
       item ? (
         <Fragment key={item.id || item.key || `f-${index}`}>
           {acc}
-          {/* eslint-disable-next-line react/no-array-index-key */}
           {index > 0 ? <Separator key={`s-${index}`} /> : null}
           {item.render() || item}
         </Fragment>
@@ -17,14 +16,18 @@ export const interleaveSeparators = (list: any[]) =>
     null
   );
 
-export const Separator = styled.span(
+interface SeparatorProps {
+  force?: boolean;
+}
+
+export const Separator = styled.span<SeparatorProps>(
   ({ theme }) => ({
     width: 1,
     height: 24,
     background: theme.appBorderColor,
     marginTop: 8,
   }),
-  ({ force }: any) =>
+  ({ force }) =>
     force
       ? {}
       : {

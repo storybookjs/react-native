@@ -1,6 +1,10 @@
 import { styled } from '@storybook/theming';
 
-export const TabButton = styled.button(
+interface TabButtonProps {
+  active?: boolean;
+}
+
+export const TabButton = styled.button<TabButtonProps>(
   {
     whiteSpace: 'normal',
     display: 'inline-flex',
@@ -34,7 +38,7 @@ export const TabButton = styled.button(
       borderBottomColor: theme.color.secondary,
     },
   }),
-  ({ active, theme }: any) =>
+  ({ active, theme }) =>
     active
       ? {
           color: theme.barSelectedColor,
@@ -47,7 +51,11 @@ export const TabButton = styled.button(
 );
 TabButton.displayName = 'TabButton';
 
-export const IconButton = styled.button(
+interface IconButtonProps {
+  active?: boolean;
+}
+
+export const IconButton = styled.button<IconButtonProps>(
   ({ theme }) => ({
     height: 40,
     background: 'none',
@@ -69,7 +77,7 @@ export const IconButton = styled.button(
       width: 15,
     },
   }),
-  ({ active, theme }: any) =>
+  ({ active, theme }) =>
     active
       ? {
           outline: '0 none',
