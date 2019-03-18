@@ -1,11 +1,14 @@
+import { ReactElement } from 'react';
+import { Channel } from '@storybook/channels';
+
 import { API } from './index';
 import Store from './store';
-import { ReactElement } from 'react';
 
 export interface Provider {
-  [key: string]: any;
+  channel?: Channel;
   renderPreview?: () => ReactElement;
   handleAPI(api: API): void;
+  [key: string]: any;
 }
 
 export interface SubAPI {

@@ -35,7 +35,9 @@ const ManagerContext = createContext({ api: undefined, state: getInitialState({}
 
 const { STORY_CHANGED, SET_STORIES, SELECT_STORY } = Events;
 
-export type Module = StoreData & RouterData & ProviderData & { mode?: 'production' | 'development' };
+export type Module = StoreData &
+  RouterData &
+  ProviderData & { mode?: 'production' | 'development' };
 
 export type State = Other &
   LayoutSubState &
