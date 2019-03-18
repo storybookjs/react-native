@@ -46,7 +46,7 @@
     "ember-source": "~3.8.0",
     "loader.js": "^4.2.3",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.3.0"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
