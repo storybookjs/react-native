@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.1.0-alpha.8",
+  "version": "5.1.0-alpha.9",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -22,12 +22,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.8",
-    "@storybook/client-logger": "5.1.0-alpha.8",
-    "@storybook/components": "5.1.0-alpha.8",
-    "@storybook/core-events": "5.1.0-alpha.8",
-    "@storybook/router": "5.1.0-alpha.8",
-    "@storybook/theming": "5.1.0-alpha.8",
+    "@storybook/addons": "5.1.0-alpha.9",
+    "@storybook/client-logger": "5.1.0-alpha.9",
+    "@storybook/components": "5.1.0-alpha.9",
+    "@storybook/core-events": "5.1.0-alpha.9",
+    "@storybook/router": "5.1.0-alpha.9",
+    "@storybook/theming": "5.1.0-alpha.9",
     "core-js": "^2.6.5",
     "fast-deep-equal": "^2.0.1",
     "fuzzy-search": "^3.0.1",
@@ -36,7 +36,7 @@
     "lodash.isequal": "^4.5.0",
     "lodash.mergewith": "^4.6.1",
     "lodash.pick": "^4.4.0",
-    "markdown-to-jsx": "^6.9.1",
+    "markdown-to-jsx": "^6.9.3",
     "memoizerific": "^1.11.3",
     "polished": "^3.0.0",
     "prop-types": "^15.7.2",

@@ -28,7 +28,7 @@ Make sure that you have `vue`, `vue-loader`, `vue-template-compiler`, `@babel/co
 
 ```sh
 npm install vue --save
-npm install babel-loader vue-loader vue-template-compiler @babel/core --save-dev 
+npm install babel-loader vue-loader vue-template-compiler @babel/core --save-dev
 ```
 
 ## Step 2: Add a npm script
@@ -63,58 +63,58 @@ configure(loadStories, module);
 That'll load stories in `../stories/index.js`. You can choose where to place stories, you can co-locate them with source files, or place them in an other directory.
 
 > Requiring all your stories becomes bothersome real quick, so you can use this to load all stories matching a glob.
-> 
+>
 > <details>
 >   <summary>details</summary>
-> 
+>
 > ```js
 > import { configure } from '@storybook/vue';
-> 
+>
 > function loadStories() {
 >   const req = require.context('../stories', true, /\.stories\.js$/);
 >   req.keys().forEach(filename => req(filename));
 > }
-> 
+>
 > configure(loadStories, module);
 > ```
-> 
+>
 > </details>
-
-
+>
+>
 > You might be using global components or vue plugins such as vuex, in that case you'll need to register them in this `config.js` file.
-> 
+>
 > <details>
 >   <summary>details</summary>
-> 
+>
 > ```js
 > import { configure } from '@storybook/vue';
-> 
+>
 > import Vue from 'vue';
-> 
+>
 > // Import Vue plugins
 > import Vuex from 'vuex';
-> 
+>
 > // Import your global components.
 > import Mybutton from '../src/stories/Button.vue';
-> 
+>
 > // Install Vue plugins.
 > Vue.use(Vuex);
-> 
+>
 > // Register global components.
 > Vue.component('my-button', Mybutton);
-> 
+>
 > function loadStories() {
 >   // You can require as many stories as you need.
 >   require('../src/stories');
 > }
-> 
+>
 > configure(loadStories, module);
 > ```
-> 
+>
 > This example registered your custom `Button.vue` component, installed the Vuex plugin, and loaded your Storybook stories defined in `../stories/index.js`.
-> 
+>
 > All custom components and Vue plugins should be registered before calling `configure()`.
-> 
+>
 > </details>
 
 

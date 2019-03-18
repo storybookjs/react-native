@@ -1,6 +1,6 @@
 {
   "name": "ember-example",
-  "version": "5.1.0-alpha.8",
+  "version": "5.1.0-alpha.9",
   "private": true,
   "scripts": {
     "build": "ember build",
@@ -15,23 +15,23 @@
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
-    "@storybook/addon-a11y": "5.1.0-alpha.8",
-    "@storybook/addon-actions": "5.1.0-alpha.8",
-    "@storybook/addon-backgrounds": "5.1.0-alpha.8",
-    "@storybook/addon-centered": "5.1.0-alpha.8",
-    "@storybook/addon-knobs": "5.1.0-alpha.8",
-    "@storybook/addon-links": "5.1.0-alpha.8",
-    "@storybook/addon-notes": "5.1.0-alpha.8",
-    "@storybook/addon-options": "5.1.0-alpha.8",
-    "@storybook/addon-storysource": "5.1.0-alpha.8",
-    "@storybook/addon-viewport": "5.1.0-alpha.8",
-    "@storybook/addons": "5.1.0-alpha.8",
-    "@storybook/ember": "5.1.0-alpha.8",
+    "@storybook/addon-a11y": "5.1.0-alpha.9",
+    "@storybook/addon-actions": "5.1.0-alpha.9",
+    "@storybook/addon-backgrounds": "5.1.0-alpha.9",
+    "@storybook/addon-centered": "5.1.0-alpha.9",
+    "@storybook/addon-knobs": "5.1.0-alpha.9",
+    "@storybook/addon-links": "5.1.0-alpha.9",
+    "@storybook/addon-notes": "5.1.0-alpha.9",
+    "@storybook/addon-options": "5.1.0-alpha.9",
+    "@storybook/addon-storysource": "5.1.0-alpha.9",
+    "@storybook/addon-viewport": "5.1.0-alpha.9",
+    "@storybook/addons": "5.1.0-alpha.9",
+    "@storybook/ember": "5.1.0-alpha.9",
     "babel-loader": "^8",
     "broccoli-asset-rev": "^3.0.0",
     "cross-env": "^5.2.0",
     "ember-ajax": "^4.0.2",
-    "ember-cli": "~3.7.1",
+    "ember-cli": "~3.8.1",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^7.5.0",
     "ember-cli-htmlbars": "^3.0.1",
@@ -46,7 +46,7 @@
     "ember-source": "~3.8.0",
     "loader.js": "^4.2.3",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.3.0"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
