@@ -23,7 +23,7 @@ addParameters({
 
 When setting a theme, set a full theme object. The theme is replaced not combined.
 
-See more addon options at https://github.com/storybooks/storybook/tree/master/addons/options
+View more [addon options in the master branch](https://github.com/storybooks/storybook/tree/master/addons/options).
 
 ## Get a theme
 
