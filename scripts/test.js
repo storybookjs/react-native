@@ -81,6 +81,12 @@ const tasks = {
     option: '--runInBand',
     extraParam: '--runInBand',
   }),
+  w2: createOption({
+    name: `Run all tests in max 2 processes process ${chalk.gray('(w2)')}`,
+    defaultValue: false,
+    option: '--w2',
+    extraParam: '-w 2',
+  }),
   reportLeaks: createOption({
     name: `report memory leaks ${chalk.gray('(reportLeaks)')}`,
     defaultValue: false,
