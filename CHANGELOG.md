@@ -1,3 +1,13 @@
+## 5.0.3 (March 18, 2019)
+
+### Bug Fixes
+
+* Accessibility: Add missing button titles ([#6124](https://github.com/storybooks/storybook/pull/6124))
+
+### Maintenance
+
+* UI: Make update notifications much less aggressive ([#6143](https://github.com/storybooks/storybook/pull/6143))
+
 ## 4.1.16 (March 24, 2019)
 
 ### Bug Fixes
