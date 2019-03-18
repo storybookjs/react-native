@@ -1,3 +1,9 @@
+## 5.1.0-alpha.9 (March 18, 2019)
+
+### Maintenance
+
+* UI: Make update notifications much less aggressive ([#6143](https://github.com/storybooks/storybook/pull/6143))
+
 ## 5.1.0-alpha.8 (March 17, 2019)
 
 ### Bug Fixes
