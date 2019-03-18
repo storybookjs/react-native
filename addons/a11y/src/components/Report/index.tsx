@@ -8,12 +8,13 @@ export interface ReportProps {
   items: Result[];
   empty: string;
   passes: boolean;
+  name: string;
 }
 
-export const Report: FunctionComponent<ReportProps> = ({ items, empty, passes }) => (
+export const Report: FunctionComponent<ReportProps> = ({ items, empty, passes, name }) => (
   <Fragment>
     {items.length ? (
-      items.map(item => <Item passes={passes} item={item} key={item.id} />)
+      items.map(item => <Item passes={passes} item={item} key={`${name}:${item.id}`} />)
     ) : (
       <Placeholder key="placeholder">{empty}</Placeholder>
     )}

@@ -12,7 +12,12 @@ interface Props {
 }
 
 interface State {
+  currentStoryId: string;
   list: CssResource[];
+}
+
+interface CssResourceLookup {
+  [key: string]: CssResource;
 }
 
 export class CssResourcePanel extends Component<Props, State> {
@@ -20,6 +25,7 @@ export class CssResourcePanel extends Component<Props, State> {
     super(props);
 
     this.state = {
+      currentStoryId: '',
       list: [],
     };
   }
@@ -35,12 +41,26 @@ export class CssResourcePanel extends Component<Props, State> {
   }
 
   onStoryChange = (id: string) => {
+    const { list: currentList, currentStoryId } = this.state;
     const { api } = this.props;
     const list = api.getParameters(id, PARAM_KEY) as CssResource[];
 
-    if (list) {
-      const picked = list.filter(res => res.picked);
-      this.setState({ list }, () => this.emit(picked));
+    if (list && currentStoryId !== id) {
+      const existingIds = currentList.reduce((lookup: CssResourceLookup, res) => {
+        lookup[res.id] = res;
+        return lookup;
+      }, {}) as CssResourceLookup;
+      const mergedList = list.map(res => {
+        const existingItem = existingIds[res.id];
+        return existingItem
+          ? {
+              ...res,
+              picked: existingItem.picked,
+            }
+          : res;
+      });
+      const picked = mergedList.filter(res => res.picked);
+      this.setState({ list: mergedList, currentStoryId: id }, () => this.emit(picked));
     }
   };
 
@@ -59,7 +79,7 @@ export class CssResourcePanel extends Component<Props, State> {
   }
 
   render() {
-    const { list = [] } = this.state;
+    const { list } = this.state;
     const { active } = this.props;
 
     if (!active) {

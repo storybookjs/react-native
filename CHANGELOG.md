@@ -1,3 +1,70 @@
+## 5.1.0-alpha.8 (March 17, 2019)
+
+### Bug Fixes
+
+* Accessibilty: Add aria label to search box ([#6131](https://github.com/storybooks/storybook/pull/6131))
+* Accessibilty: Add missing button titles ([#6124](https://github.com/storybooks/storybook/pull/6124))
+* Addon-cssresources: Fix `STORY_RENDERED` CSS reset ([#6050](https://github.com/storybooks/storybook/pull/6050))
+
+### Maintenance
+
+* React-native: Integrate crna-kitchen-sink example into monorepo ([#6125](https://github.com/storybooks/storybook/pull/6125))
+* Fix deprecations in examples ([#6134](https://github.com/storybooks/storybook/pull/6134))
+
+## 5.0.2 (March 17, 2019)
+
+### Features
+
+* CLI: Add --debug-webpack option ([#6082](https://github.com/storybooks/storybook/pull/6082))
+
+### Bug Fixes
+
+* Addon-a11y: Fix design icons ([#5991](https://github.com/storybooks/storybook/pull/5991))
+* Addon-cssresources: Fix `STORY_RENDERED` CSS reset ([#6050](https://github.com/storybooks/storybook/pull/6050))
+* CLI: Clear build folder in static build ([#6024](https://github.com/storybooks/storybook/pull/6024))
+* Addon-backgrounds: Set preview to theme color when "transparent" ([#6042](https://github.com/storybooks/storybook/pull/6042))
+* UI: Fix search item in menu ([#6027](https://github.com/storybooks/storybook/pull/6027))
+* Addon-knobs: Fix key press debouncing ([#6022](https://github.com/storybooks/storybook/pull/6022))
+* CLI: Fix welcome component in dark theme ([#5998](https://github.com/storybooks/storybook/pull/5998))
+* Addon-viewport: Fix viewport iframe dimensions ([#5993](https://github.com/storybooks/storybook/pull/5993))
+* Core: fix selectStory with one parameter ([#5983](https://github.com/storybooks/storybook/pull/5983))
+
+### Maintenance
+
+* Addon-viewport: Change styling to more closely match v4 ([#5979](https://github.com/storybooks/storybook/pull/5979))
+
+## 5.1.0-alpha.7 (March 16, 2019)
+
+### Breaking Changes
+
+* Core: Restore v4 webpack extend mode behavior AND deprecate it ([#6104](https://github.com/storybooks/storybook/pull/6104))
+* React native: Use @storybook/core ([#4942](https://github.com/storybooks/storybook/pull/4942))
+
+### Features
+
+* CLI: Add --debug-webpack option ([#6082](https://github.com/storybooks/storybook/pull/6082))
+* UI: open brandUrl in new window ([#6106](https://github.com/storybooks/storybook/pull/6106))
+
+### Bug Fixes
+
+* CLI: Clear build folder in static build ([#6024](https://github.com/storybooks/storybook/pull/6024))
+* Addon-a11y: Fix tab navigation ([#6118](https://github.com/storybooks/storybook/pull/6118))
+* Theming: FIX brandImage when theme created with brandTitle ([#6120](https://github.com/storybooks/storybook/pull/6120))
+* Addon-backgrounds: Set preview to theme color when "transparent" ([#6042](https://github.com/storybooks/storybook/pull/6042))
+
+### Maintenance
+
+* Sort package.json on precommit ([#6101](https://github.com/storybooks/storybook/pull/6101))
+
+### Dependency Upgrades
+
+* Use community AsyncStorage instead of deprecated React Native one ([#6079](https://github.com/storybooks/storybook/pull/6079))
+* Fix expo ([#6121](https://github.com/storybooks/storybook/pull/6121))
+* Bump graphiql from 0.12.0 to 0.13.0 ([#5901](https://github.com/storybooks/storybook/pull/5901))
+* Update expo requirement from ^31.0.4 to ^32.0.6 in /examples-native/crna-kitchen-sink ([#5664](https://github.com/storybooks/storybook/pull/5664))
+* Bump @angular/cli from 7.3.4 to 7.3.6 ([#6103](https://github.com/storybooks/storybook/pull/6103))
+* Bump react-dom from 16.8.3 to 16.8.4 ([#5903](https://github.com/storybooks/storybook/pull/5903))
+
 ## 5.1.0-alpha.6 (March 14, 2019)
 
 ### Features

@@ -33,7 +33,7 @@ The viewport addon is configured by story parameters with the `viewport` key. To
 ```js
 import { addParameters } from '@storybook/react';
 
-addParameters({ viewport: options });
+addParameters({ viewport: { viewports: newViewports } });
 ```
 
 Options can take a object with the following keys:

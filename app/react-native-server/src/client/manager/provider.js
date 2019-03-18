@@ -53,7 +53,7 @@ export default class ReactProvider extends Provider {
           if (storiesHash[storyId]) {
             const { kind, story } = storiesHash[storyId];
 
-            if (this.selection.kind !== kind || this.selection.story !== story) {
+            if (!this.selection || this.selection.kind !== kind || this.selection.story !== story) {
               this.selection = { kind, story };
               // TODO: isn't this event sent twice now?
               api.emit(Events.SET_CURRENT_STORY, { kind, story });
