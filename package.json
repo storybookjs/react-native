@@ -168,7 +168,8 @@
     "tslint": "~5.13.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.3333",
+    "weak": "^1.0.1"
   },
   "resolutions": {
     "graphql": "^0.13.2"

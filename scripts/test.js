@@ -81,6 +81,12 @@ const tasks = {
     option: '--runInBand',
     extraParam: '--runInBand',
   }),
+  reportLeaks: createOption({
+    name: `report memory leaks ${chalk.gray('(reportLeaks)')}`,
+    defaultValue: false,
+    option: '--reportLeaks',
+    extraParam: '--detectLeaks',
+  }),
   update: createOption({
     name: `Update all snapshots ${chalk.gray('(update)')}`,
     defaultValue: false,
