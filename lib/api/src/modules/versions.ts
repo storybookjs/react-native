@@ -39,7 +39,7 @@ export interface SubAPI {
   versionUpdateAvailable: () => boolean;
 }
 
-export default function({ store, mode }: Module & { mode: 'production' | 'development' }) {
+export default function({ store, mode }: Module) {
   const {
     versions: persistedVersions = {},
     lastVersionCheck = 0,
@@ -118,7 +118,7 @@ export default function({ store, mode }: Module & { mode: 'production' | 'develo
         !semver.prerelease(latestVersion) &&
         mode !== 'production'
       ) {
-        addNotification({
+        fullApi.addNotification({
           id: 'update',
           link: '/settings/about',
           content: `🎉 Storybook ${latestVersion} is available!`,
