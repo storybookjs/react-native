@@ -62,11 +62,39 @@ export class HighlightedElementData {
   isHighlighted: boolean;
 }
 
+const getIframe = memoize(1)(() => document.getElementsByTagName('iframe')[0]);
+function getTargetElement(elementPath: string): any {
+  const iframe = getIframe();
+  if (iframe && elementPath) {
+    return iframe.contentDocument.querySelector(elementPath);
+  }
+  return null;
+}
+
+function areAllRequiredElementsHiglighted(elementsToHighlight: any, highlightedElementsMap: any): boolean {
+  let elementsInMapExist = false;
+  for (let element of elementsToHighlight) {
+    const targetElement = getTargetElement(element.target[0]);
+    if (highlightedElementsMap.get(targetElement)) {
+      elementsInMapExist = true;
+      if (!highlightedElementsMap.get(targetElement).isHighlighted) {
+        return false;
+      }
+    }
+  }
+  if (elementsInMapExist) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 interface ToggleProps {
   elementsToHighlight: any[];
   type: RuleType;
   addElement?: any;
   highlightedElementsMap?: Map<Element, HighlightedElementData>;
+  isToggledOn?: boolean;
 }
 
 function mapDispatchToProps(dispatch: any) {
@@ -75,17 +103,20 @@ function mapDispatchToProps(dispatch: any) {
   };
 }
 
-const mapStateToProps = (state: any) => {
-  return { highlightedElementsMap: state.highlightedElementsMap };
+const mapStateToProps = (state: any, ownProps: any) => {
+  const isToggledOn = areAllRequiredElementsHiglighted(ownProps.elementsToHighlight, state.highlightedElementsMap);
+  return {
+    highlightedElementsMap: state.highlightedElementsMap,
+    isToggledOn: isToggledOn,
+  };
 };
 
 class HighlightToggle extends Component<ToggleProps, {}> {
-  getIframe = memoize(1)(() => document.getElementsByTagName('iframe')[0]);
 
   componentDidMount() {
     if (this.props && this.props.elementsToHighlight) {
       for (let element of this.props.elementsToHighlight) {
-        const targetElement = this.getTargetElement(element.target[0]);
+        const targetElement = getTargetElement(element.target[0]);
         if (targetElement && !this.props.highlightedElementsMap.get(targetElement)) {
           this.saveElementDataToMap(
             targetElement,
@@ -139,37 +170,10 @@ class HighlightToggle extends Component<ToggleProps, {}> {
     targetElement.style.outline = outlineStyle;
   }
 
-  getTargetElement(elementPath: string): any {
-    const iframe = this.getIframe();
-    if (iframe && elementPath) {
-      return iframe.contentDocument.querySelector(elementPath);
-    }
-    return null;
-  }
-
-  areAllElementsHiglighted(): boolean {
-    let elementsInMapExist = false;
-    for (let element of this.props.elementsToHighlight) {
-      const targetElement = this.getTargetElement(element.target[0]);
-      if (this.props.highlightedElementsMap.get(targetElement)) {
-        elementsInMapExist = true;
-        if (!this.props.highlightedElementsMap.get(targetElement).isHighlighted) {
-          return false;
-        }
-      }
-    }
-    if (elementsInMapExist) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   onToggle(): void {
-    const areAllElementsHiglighted = this.areAllElementsHiglighted();
     for (let element of this.props.elementsToHighlight) {
-      const targetElement = this.getTargetElement(element.target[0]);
-      this.higlightRuleLocation(targetElement, !areAllElementsHiglighted);
+      const targetElement = getTargetElement(element.target[0]);
+      this.higlightRuleLocation(targetElement, !this.props.isToggledOn);
       if (this.props.highlightedElementsMap.get(targetElement)) {
         this.saveElementDataToMap(
           targetElement,
@@ -179,19 +183,17 @@ class HighlightToggle extends Component<ToggleProps, {}> {
         );
       }
     }
-    this.forceUpdate();
   }
 
   render() {
-    const areAllElementsHiglighted = this.areAllElementsHiglighted();
     return (
       <Switch>
         <Checkbox
           type="checkbox"
           onChange={() => this.onToggle()}
-          checked={areAllElementsHiglighted}
+          checked={this.props.isToggledOn}
         />
-        <Slider checked={areAllElementsHiglighted} />
+        <Slider checked={this.props.isToggledOn} />
       </Switch>
     );
   }
