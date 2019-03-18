@@ -26,7 +26,7 @@ export const linkTo = (kind, story) => (...args) => {
 
 export const hrefTo = (kind, name) =>
   new Promise(resolve => {
-    resolve(generateUrl(toId({ kind, name })));
+    resolve(generateUrl(toId(kind, name)));
   });
 
 const linksListener = e => {
