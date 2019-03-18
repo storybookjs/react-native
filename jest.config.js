@@ -42,7 +42,7 @@ module.exports = {
   ],
   snapshotSerializers: ['jest-emotion', 'enzyme-to-json/serializer'],
   coverageDirectory: 'coverage',
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom-thirteen',
   setupTestFrameworkScriptFile: './scripts/jest.init.js',
   setupFiles: ['raf/polyfill'],
   testURL: 'http://localhost',
