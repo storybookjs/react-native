@@ -66,19 +66,21 @@ export class Item extends Component<ItemProps, ItemState> {
     const { open } = this.state;
 
     return (
-      <Wrapper>
-        <HeaderBar onClick={this.onToggle}>
-          <Icon
-            icon="chevrondown"
-            size={10}
-            color="#9DA5AB"
-            style={{
-              transform: `rotate(${open ? 0 : -90}deg)`,
-            }}
-          />
-          {item.description}
-        </HeaderBar>
-        <HighlightToggle type={type} elementsToHighlight={item.nodes}></HighlightToggle>
+      <Fragment>
+        <Wrapper onClick={this.onToggle}>
+          <HeaderBar>
+            <Icon
+              icon="chevrondown"
+              size={10}
+              color="#9DA5AB"
+              style={{
+                transform: `rotate(${open ? 0 : -90}deg)`,
+              }}
+            />
+            {item.description}
+          <HighlightToggle type={type} elementsToHighlight={item.nodes} />
+          </HeaderBar>
+        </Wrapper>
         {open ? (
           <Fragment>
             <Info item={item} key="info" />
@@ -86,7 +88,7 @@ export class Item extends Component<ItemProps, ItemState> {
             <Tags tags={item.tags} key="tags" />
           </Fragment>
         ) : null}
-      </Wrapper>
+      </Fragment>
     );
   }
 }

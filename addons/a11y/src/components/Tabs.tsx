@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { styled } from '@storybook/theming';
+import store, { clearElements } from '../redux-config';
 // TODO: reuse the Tabs component from @storybook/theming instead
 // of re-building identical functionality
 
@@ -65,6 +66,8 @@ export class Tabs extends Component<TabsProps, TabsState> {
     this.setState({
       active: index,
     });
+    // removes all elements from the redux map in store from the previous panel
+    store.dispatch(clearElements(null));
   };
 
   render() {

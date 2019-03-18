@@ -12,7 +12,7 @@ import { Tabs } from './Tabs';
 import { EVENTS } from '../constants';
 
 import { Provider } from 'react-redux';
-import store from '../redux-config';
+import store, { clearElements } from '../redux-config';
 
 
 export enum RuleType {
@@ -95,6 +95,8 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
     const { active } = this.props;
 
     if (!prevProps.active && active) {
+      // removes all elements from the redux map in store from the previous panel
+      store.dispatch(clearElements(null));
       this.request();
     }
   }
