@@ -41,7 +41,8 @@
   "devDependencies": {
     "@types/autoprefixer": "^9.4.0",
     "@types/jest": "^24.0.9",
-    "zone.js": "^0.8.29"
+    "zone.js": "^0.8.29",
+    "@angular-devkit/core": ">=7.0.0"
   },
   "peerDependencies": {
     "@angular-devkit/core": "^0.6.1 || >=7.0.0",
