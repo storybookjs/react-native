@@ -34,7 +34,7 @@ export const Report: FunctionComponent<ReportProps> = ({ items, empty, type, pas
       Highlight Results: <HighlightToggle type={type} elementsToHighlight={retrieveAllNodeResults(items)} />
     </GlobalToggleWrapper>
     {items.length ? (
-      items.map(item => <Item passes={passes} item={item} key={item.id} type={type} />)
+      items.map(item => <Item passes={passes} item={item} key={`${type}:${item.id}`}  type={type} />)
     ) : (
       <Placeholder key="placeholder">{empty}</Placeholder>
     )}
