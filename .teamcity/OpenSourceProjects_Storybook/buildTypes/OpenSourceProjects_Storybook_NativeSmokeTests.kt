@@ -28,7 +28,7 @@ object OpenSourceProjects_Storybook_NativeSmokeTests : BuildType({
                 set -e -x
 
                 yarn
-                yarn bootstrap --reactnativeapp
+                yarn bootstrap --core
                 cd examples-native/crna-kitchen-sink
                 yarn storybook --smoke-test
             """.trimIndent()

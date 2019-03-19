@@ -244,6 +244,7 @@ Array [
                 </span>
                 <button
                   class="emotion-2"
+                  title="Open canvas in new tab"
                 >
                   <svg
                     class="emotion-1"
@@ -324,6 +325,7 @@ Array [
   position: absolute;
   top: 0;
   left: 0;
+  border: 0 none;
 }
 
 <div
@@ -343,6 +345,7 @@ Array [
           <iframe
             allowfullscreen=""
             id="storybook-preview-iframe"
+            scrolling="yes"
             src="http://example.com?id=string"
             title="string"
           />
@@ -729,6 +732,7 @@ Array [
                 </span>
                 <button
                   class="emotion-8"
+                  title="Open canvas in new tab"
                 >
                   <svg
                     class="emotion-7"
@@ -809,6 +813,7 @@ Array [
   position: absolute;
   top: 0;
   left: 0;
+  border: 0 none;
 }
 
 <div
@@ -828,6 +833,7 @@ Array [
           <iframe
             allowfullscreen=""
             id="storybook-preview-iframe"
+            scrolling="yes"
             src="http://example.com?id=string"
             title="string"
           />

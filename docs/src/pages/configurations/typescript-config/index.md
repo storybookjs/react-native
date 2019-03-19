@@ -110,7 +110,7 @@ module.exports = ({ config, mode }) => {
 
 ### `tsconfig.json`
 
-The default `tsconfig.json` that comes with CRA works great. If your stories are outside the `src` folder, for example the `stories` folder in root, then `rootDirs": ["src", "stories"]` needs to be added to be added to `compilerOptions` so it knows what folders to compile. Make sure `jsx` is set to preserve. Should be unchanged.
+The default `tsconfig.json` that comes with CRA works great. If your stories are outside the `src` folder, for example the `stories` folder in root, then `"rootDirs": ["src", "stories"]` needs to be added to be added to `compilerOptions` so it knows what folders to compile. Make sure `jsx` is set to preserve. Should be unchanged.
 
 ## Import tsx stories
 

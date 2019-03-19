@@ -31,7 +31,7 @@ npm install @storybook/riot --save-dev
 Make sure that you have `riot`, `@babel/core`, and `babel-loader` in your dependencies as well because we list these as a peer dependencies:
 
 ```sh
-npm install riot babel-loader @babel/core --save-dev 
+npm install riot babel-loader @babel/core --save-dev
 ```
 
 ## Step 2: Add a npm script
@@ -66,48 +66,48 @@ configure(loadStories, module);
 That'll load stories in `../stories/index.js`. You can choose where to place stories, you can co-locate them with source files, or place them in an other directory.
 
 > Requiring all your stories becomes bothersome real quick, so you can use this to load all stories matching a glob.
-> 
+>
 > <details>
 >   <summary>details</summary>
-> 
+>
 > ```ts
 > import { configure } from '@storybook/riot';
-> 
+>
 > function loadStories() {
 >   const req = require.context('../stories', true, /\.stories\.ts$/);
 >   req.keys().forEach(filename => req(filename));
 > }
-> 
+>
 > configure(loadStories, module);
 > ```
-> 
+>
 > </details>
-
-
+>
+>
 > Additionally this is the place where you can register global component.
-> 
+>
 > <details>
 >   <summary>details</summary>
-> 
+>
 > ```ts
 > import { configure } from '@storybook/riot';
-> 
+>
 > // Import your globally available components.
-> import '../src/stories/Button.tag'; 
-> 
+> import '../src/stories/Button.tag';
+>
 > function loadStories() {
 >   require('../stories/index.js');
 >   // You can require as many stories as you need.
-}
-> 
+> }
+>
 > configure(loadStories, module);
 > ```
-> 
+>
 > </details>
 
 ## Step 4: Storybook TypeScript configuration
 
-`@storybook/riot` is using [ForkTsCheckerWebpackPlugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to boost the build performance. 
+`@storybook/riot` is using [ForkTsCheckerWebpackPlugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to boost the build performance.
 This makes it necessary to create a `tsconfig.json` file at `.storybook/tsconfig.json` with the following content:
 
 ```json

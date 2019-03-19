@@ -7,6 +7,5 @@ module.exports = ({ config }) => {
     include: [path.resolve(__dirname, '../src')],
     enforce: 'pre',
   });
-
   return config;
 };

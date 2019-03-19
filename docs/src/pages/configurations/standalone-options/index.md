@@ -3,7 +3,7 @@ id: 'standalone-options'
 title: 'Standalone Options'
 ---
 
-There is also an API for running Storybook from the Node.
+There is also an API for running Storybook from Node.
 
 ```js
 const storybook = require('@storybook/{APP}/standalone');

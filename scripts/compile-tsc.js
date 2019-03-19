@@ -34,7 +34,9 @@ function tscfy(options = {}) {
   const tsConfigFile = 'tsconfig.json';
 
   if (!fs.existsSync(tsConfigFile)) {
-    if (!silent) console.log(`No ${tsConfigFile}`);
+    if (!silent) {
+      console.log(`No ${tsConfigFile}`);
+    }
     return;
   }
 
@@ -42,7 +44,9 @@ function tscfy(options = {}) {
   const tsConfig = JSON.parse(content);
 
   if (tsConfig && tsConfig.lerna && tsConfig.lerna.disabled === true) {
-    if (!silent) console.log('Lerna disabled');
+    if (!silent) {
+      console.log('Lerna disabled');
+    }
     return;
   }
 

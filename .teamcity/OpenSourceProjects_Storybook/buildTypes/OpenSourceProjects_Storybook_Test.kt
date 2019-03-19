@@ -25,7 +25,7 @@ object OpenSourceProjects_Storybook_Test : BuildType({
                 set -e -x
 
                 yarn
-                yarn test --core --coverage --runInBand --teamcity
+                yarn test --core --coverage --teamcity --w2
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
