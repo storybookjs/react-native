@@ -171,16 +171,31 @@ class HighlightToggle extends Component<ToggleProps, {}> {
   }
 
   onToggle(): void {
-    for (let element of this.props.elementsToHighlight) {
-      const targetElement = getTargetElement(element.target[0]);
-      this.higlightRuleLocation(targetElement, !this.props.isToggledOn);
-      if (this.props.highlightedElementsMap.get(targetElement)) {
-        this.saveElementDataToMap(
-          targetElement,
-          !this.props.highlightedElementsMap.get(targetElement).isHighlighted,
-          this.props.highlightedElementsMap.get(targetElement).originalOutline,
-          this.props.type
-        );
+    if(this.props.isToggledOn){
+      for (let element of this.props.elementsToHighlight) {
+        const targetElement = getTargetElement(element.target[0]);
+        if(this.props.highlightedElementsMap.get(targetElement) && this.props.highlightedElementsMap.get(targetElement).isHighlighted){
+          this.higlightRuleLocation(targetElement, false);
+          this.saveElementDataToMap(
+            targetElement,
+            false,
+            this.props.highlightedElementsMap.get(targetElement).originalOutline,
+            this.props.type
+          );
+        }
+      }
+    } else {
+      for (let element of this.props.elementsToHighlight) {
+        const targetElement = getTargetElement(element.target[0]);
+        if(this.props.highlightedElementsMap.get(targetElement) && !this.props.highlightedElementsMap.get(targetElement).isHighlighted){
+          this.higlightRuleLocation(targetElement, true);
+          this.saveElementDataToMap(
+            targetElement,
+            true,
+            this.props.highlightedElementsMap.get(targetElement).originalOutline,
+            this.props.type
+          );
+        }
       }
     }
   }
