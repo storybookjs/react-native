@@ -10,3 +10,4 @@ export const clearDecorators = preview.clearDecorators.bind(preview);
 export const configure = preview.configure.bind(preview);
 export const getStorybook = preview.getStorybook.bind(preview);
 export const getStorybookUI = preview.getStorybookUI.bind(preview);
+export const raw = preview.raw.bind(preview);

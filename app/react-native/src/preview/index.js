@@ -28,6 +28,7 @@ export default class Preview {
       'addParameters',
       'clearDecorators',
       'getStorybook',
+      'raw',
     ].forEach(method => {
       this[method] = this._clientApi[method].bind(this._clientApi);
     });
