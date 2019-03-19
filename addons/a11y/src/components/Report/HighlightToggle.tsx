@@ -90,7 +90,7 @@ function areAllRequiredElementsHiglighted(elementsToHighlight: NodeResult[], hig
 interface ToggleProps {
   elementsToHighlight: NodeResult[];
   type: RuleType;
-  addElement?: any;
+  addElement?: (data: any) => void;
   highlightedElementsMap?: Map<HTMLElement, HighlightedElementData>;
   isToggledOn?: boolean;
 }
@@ -127,13 +127,13 @@ class HighlightToggle extends Component<ToggleProps, {}> {
       if (addHighlight) {
         switch (this.props.type) {
           case RuleType.PASS:
-            this.setTargetElementOutlineStyle(targetElement, `2px dotted #66BF3C`);
+            this.setTargetElementOutlineStyle(targetElement, `1px dotted #66BF3C`);
             break;
           case RuleType.VIOLATION:
-            this.setTargetElementOutlineStyle(targetElement, `2px dotted #FF4400`);
+            this.setTargetElementOutlineStyle(targetElement, `1px dotted #FF4400`);
             break;
           case RuleType.INCOMPLETION:
-            this.setTargetElementOutlineStyle(targetElement, `2px dotted #E69D00`);
+            this.setTargetElementOutlineStyle(targetElement, `1px dotted #E69D00`);
             break;
         }
       } else {
@@ -163,8 +163,8 @@ class HighlightToggle extends Component<ToggleProps, {}> {
   onToggle(): void {
     for (let element of this.props.elementsToHighlight) {
       const targetElement = getElementBySelectorPath(element.target[0]);
-      let originalOutline = this.props.highlightedElementsMap.get(targetElement).originalOutline;
       if (this.props.highlightedElementsMap.get(targetElement)) {
+        let originalOutline = this.props.highlightedElementsMap.get(targetElement).originalOutline;
         if (this.props.isToggledOn && this.props.highlightedElementsMap.get(targetElement).isHighlighted) {
           this.higlightRuleLocation(targetElement, false);
           this.saveElementDataToMap(targetElement, false, originalOutline, this.props.type);

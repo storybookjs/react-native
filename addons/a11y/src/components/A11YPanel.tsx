@@ -177,9 +177,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
                 {[
                   {
                     label: <Violations>{violations.length} Violations</Violations>,
-                    panel: (
-                      <Report passes={false} items={violations} type={RuleType.VIOLATION} empty="No a11y violations found." />
-                    ),
+                    panel: <Report passes={false} items={violations} type={RuleType.VIOLATION} empty="No a11y violations found." />,
                   },
                   {
                     label: <Passes>{passes.length} Passes</Passes>,
@@ -187,9 +185,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
                   },
                   {
                     label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
-                    panel: (
-                      <Report passes={false} items={incomplete} type={RuleType.INCOMPLETION} empty="No a11y incomplete found." />
-                    ),
+                    panel: <Report passes={false} items={incomplete} type={RuleType.INCOMPLETION} empty="No a11y incomplete found." />,
                   },
                 ]}
               />
