@@ -33,7 +33,7 @@
     "ember-ajax": "^4.0.2",
     "ember-cli": "~3.8.1",
     "ember-cli-app-version": "^3.0.0",
-    "ember-cli-babel": "^7.5.0",
+    "ember-cli-babel": "^7.6.0",
     "ember-cli-htmlbars": "^3.0.1",
     "ember-cli-htmlbars-inline-precompile": "^2.1.0",
     "ember-cli-inject-live-reload": "^2.0.1",
