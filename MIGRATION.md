@@ -77,9 +77,9 @@ In full control mode, you need modify the default config to have the rules of yo
 
 ```js
 module.exports = ({ config }) => ({
-  ...config
+  ...config,
   module: {
-    ...config.module
+    ...config.module,
     rules: [
       /* your own rules "..." here and/or some subset of config.module.rules */
     ]
