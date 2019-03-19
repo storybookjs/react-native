@@ -7301,7 +7301,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
                 placeholder="Type keys"
                 readonly=""
                 spellcheck="false"
-                value="⌃ ⇧​ ,"
+                value="CTRL ⇧​ ,"
               />
               <svg
                 class="emotion-16"

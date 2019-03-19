@@ -9,6 +9,7 @@ import { AxeResults, Result } from 'axe-core';
 import { Report } from './Report';
 import { Tabs } from './Tabs';
 import { EVENTS } from '../constants';
+import { API } from '@storybook/api';
 
 const Icon = styled(Icons)(
   {
@@ -57,11 +58,7 @@ interface A11YPanelState {
 
 interface A11YPanelProps {
   active: boolean;
-  api: {
-    on(event: string, callback: (data: any) => void): void;
-    off(event: string, callback: (data: any) => void): void;
-    emit(event: string): void;
-  };
+  api: API;
 }
 
 export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {

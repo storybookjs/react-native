@@ -2,9 +2,9 @@ import global from 'global';
 // tslint:disable-next-line:no-implicit-dependencies
 import { ReactElement } from 'react';
 import { Channel } from '@storybook/channels';
+import { API } from '@storybook/api';
 import logger from '@storybook/client-logger';
 import { types, Types, isSupportedType } from './types';
-import deprecate from 'util-deprecate';
 
 export interface RenderOptions {
   active: boolean;
@@ -26,14 +26,14 @@ export interface Addon {
   render: (renderOptions: RenderOptions) => ReactElement<any>;
 }
 
-export type Loader = (callback: (api: any) => void) => void;
+export type Loader = (api: API) => void;
 
-export { types, isSupportedType };
+export { types, Types, isSupportedType };
 
 interface Loaders {
   [key: string]: Loader;
 }
-interface Collection {
+export interface Collection {
   [key: string]: Addon;
 }
 interface Elements {
@@ -78,7 +78,7 @@ export class AddonStore {
     collection[name] = { id: name, ...addon };
   };
 
-  register = (name: string, registerCallback: (api: any) => void): void => {
+  register = (name: string, registerCallback: (api: API) => void): void => {
     if (this.loaders[name]) {
       logger.warn(`${name} was loaded twice, this could have bad side-effects`);
     }
@@ -104,4 +104,5 @@ function getAddonsStore(): AddonStore {
 // prefer import { addons } from '@storybook/addons' over import addons from '@storybook/addons'
 //
 // See public_api.ts
+
 export const addons = getAddonsStore();

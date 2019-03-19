@@ -11,6 +11,7 @@ function getCommand(watch) {
     './src --out-dir ./dist',
     '--copy-files',
     '--ignore *.ts',
+    '--ignore *.tsx',
     `--config-file ${path.resolve(__dirname, '../.babelrc.js')}`,
   ];
 

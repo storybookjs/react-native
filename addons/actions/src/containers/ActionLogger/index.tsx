@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import deepEqual from 'fast-deep-equal';
 
+import { API } from '@storybook/api';
 import { STORY_RENDERED } from '@storybook/core-events';
 
 import { ActionLogger as ActionLoggerComponent } from '../../components/ActionLogger';
@@ -9,10 +10,7 @@ import { ActionDisplay } from '../../models';
 
 interface ActionLoggerProps {
   active: boolean;
-  api: {
-    on(event: string, callback: (data: any) => void): void;
-    off(event: string, callback: (data: any) => void): void;
-  };
+  api: API;
 }
 
 interface ActionLoggerState {
