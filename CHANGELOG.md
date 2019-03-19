@@ -1,3 +1,23 @@
+## 5.1.0-alpha.10 (March 19, 2019)
+
+### Features
+
+* New @storybook/api manager API package ([#5402](https://github.com/storybooks/storybook/pull/5402))
+
+### Bug Fixes
+
+* Angular: Fix rerender performance ([#6094](https://github.com/storybooks/storybook/pull/6094))
+* React-native: Add the raw method to preview ([#6182](https://github.com/storybooks/storybook/pull/6182))
+* Theming: Fix brandImage to occupy 100% width of BrandArea ([#5904](https://github.com/storybooks/storybook/pull/5904))
+
+### Dependency Upgrades
+
+* Bump emotion-theming from 10.0.7 to 10.0.9 ([#6138](https://github.com/storybooks/storybook/pull/6138))
+* Bump webpack-cli from 3.2.3 to 3.3.0 ([#6140](https://github.com/storybooks/storybook/pull/6140))
+* Bump tslint from 5.13.1 to 5.14.0 ([#6141](https://github.com/storybooks/storybook/pull/6141))
+* Bump ember-cli from 3.7.1 to 3.8.1 ([#6142](https://github.com/storybooks/storybook/pull/6142))
+* Bump markdown-to-jsx from 6.9.1 to 6.9.3 ([#6139](https://github.com/storybooks/storybook/pull/6139))
+
 ## 5.1.0-alpha.9 (March 18, 2019)
 
 ### Maintenance
