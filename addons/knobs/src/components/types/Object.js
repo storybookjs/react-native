@@ -9,9 +9,9 @@ class ObjectType extends Component {
     super(props);
 
     this.state = {
-      values: null,
+      value: null,
       failed: false,
-      state: '',
+      json: props.knob.value,
     };
   }
 
