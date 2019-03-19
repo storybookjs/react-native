@@ -18,7 +18,6 @@
     "comment-format": [true, "check-space"],
     "curly": true,
     "forin": true,
-    "import-blacklist": [true, "rxjs"],
     "interface-over-type-literal": true,
     "label-position": true,
     "member-access": false,
