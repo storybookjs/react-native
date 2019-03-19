@@ -72,7 +72,7 @@ If you wish to run the optional web server, you will need to do the following mi
 
 - Add `babel-loader` as a dev dependency
 - Add `@storybook/react-native-server` as a dev dependency
-- Change your "storybook" `package.json` script from `storybook start [-p ...]` to `storybook-server start [-p ...]`
+- Change your "storybook" `package.json` script from `storybook start [-p ...]` to `start-storybook [-p ...]`
 
 And with that you should be good to go!
 
