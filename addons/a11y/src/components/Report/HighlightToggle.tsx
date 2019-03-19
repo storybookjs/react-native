@@ -8,6 +8,7 @@ import { NodeResult } from 'axe-core';
 import { Rules } from './Rules';
 import { RuleType } from '../A11YPanel';
 import { addElement } from '../../redux-config';
+import { IFRAME } from '../../constants';
 
 const Switch = styled.label({
   position: 'relative',
@@ -47,7 +48,7 @@ const Slider = styled.span(
     },
   },
   ({ checked }: { checked: boolean | null }) => ({
-    backgroundColor: checked === true ? 'green' : '#d0d0d0',
+    backgroundColor: checked === true ? '#66BF3C' : '#DDDDDD', // positive and medium
   }),
   ({ checked }: { checked: boolean | null }) => ({
     '&:before': {
@@ -62,19 +63,20 @@ export class HighlightedElementData {
   isHighlighted: boolean;
 }
 
-const getIframe = memoize(1)(() => document.getElementsByTagName('iframe')[0]);
-function getTargetElement(elementPath: string): any {
+const getIframe = memoize(1)(() => document.getElementsByTagName(IFRAME)[0]);
+
+function getElementBySelectorPath(elementPath: string): HTMLElement {
   const iframe = getIframe();
-  if (iframe && elementPath) {
+  if (iframe && iframe.contentDocument && elementPath) {
     return iframe.contentDocument.querySelector(elementPath);
   }
   return null;
 }
 
-function areAllRequiredElementsHiglighted(elementsToHighlight: any, highlightedElementsMap: any): boolean {
+function areAllRequiredElementsHiglighted(elementsToHighlight: NodeResult[], highlightedElementsMap: Map<HTMLElement, HighlightedElementData>): boolean {
   let elementsInMapExist = false;
   for (let element of elementsToHighlight) {
-    const targetElement = getTargetElement(element.target[0]);
+    const targetElement = getElementBySelectorPath(element.target[0]);
     if (highlightedElementsMap.get(targetElement)) {
       elementsInMapExist = true;
       if (!highlightedElementsMap.get(targetElement).isHighlighted) {
@@ -82,18 +84,14 @@ function areAllRequiredElementsHiglighted(elementsToHighlight: any, highlightedE
       }
     }
   }
-  if (elementsInMapExist) {
-    return true;
-  } else {
-    return false;
-  }
+  return elementsInMapExist;
 }
 
 interface ToggleProps {
-  elementsToHighlight: any[];
+  elementsToHighlight: NodeResult[];
   type: RuleType;
   addElement?: any;
-  highlightedElementsMap?: Map<Element, HighlightedElementData>;
+  highlightedElementsMap?: Map<HTMLElement, HighlightedElementData>;
   isToggledOn?: boolean;
 }
 
@@ -116,31 +114,26 @@ class HighlightToggle extends Component<ToggleProps, {}> {
   componentDidMount() {
     if (this.props && this.props.elementsToHighlight) {
       for (let element of this.props.elementsToHighlight) {
-        const targetElement = getTargetElement(element.target[0]);
+        const targetElement = getElementBySelectorPath(element.target[0]);
         if (targetElement && !this.props.highlightedElementsMap.get(targetElement)) {
-          this.saveElementDataToMap(
-            targetElement,
-            false,
-            targetElement.style.outline,
-            this.props.type
-          );
+          this.saveElementDataToMap(targetElement, false, targetElement.style.outline, this.props.type);
         }
       }
     }
   }
 
-  higlightRuleLocation(targetElement: any, addHighlight: boolean): void {
+  higlightRuleLocation(targetElement: HTMLElement, addHighlight: boolean): void {
     if (targetElement) {
       if (addHighlight) {
         switch (this.props.type) {
           case RuleType.PASS:
-            this.setTargetElementOutlineStyle(targetElement, '1px dotted green');
+            this.setTargetElementOutlineStyle(targetElement, `2px dotted #66BF3C`);
             break;
           case RuleType.VIOLATION:
-            this.setTargetElementOutlineStyle(targetElement, '1px dotted red');
+            this.setTargetElementOutlineStyle(targetElement, `2px dotted #FF4400`);
             break;
           case RuleType.INCOMPLETION:
-            this.setTargetElementOutlineStyle(targetElement, '1px dotted orange');
+            this.setTargetElementOutlineStyle(targetElement, `2px dotted #E69D00`);
             break;
         }
       } else {
@@ -154,47 +147,30 @@ class HighlightToggle extends Component<ToggleProps, {}> {
     }
   }
 
-  saveElementDataToMap(targetElement: any, isHighlighted: boolean, originalOutline: string, ruleTypeState: RuleType): void {
+  saveElementDataToMap(targetElement: HTMLElement, isHighlighted: boolean, originalOutline: string, ruleTypeState: RuleType): void {
     const data: HighlightedElementData = new HighlightedElementData();
     data.isHighlighted = isHighlighted;
     data.originalOutline = originalOutline;
     data.ruleTypeState = ruleTypeState;
-    const payload = {
-      element: targetElement,
-      highlightedElementData: data,
-    };
+    const payload = { element: targetElement, highlightedElementData: data };
     this.props.addElement(payload);
   }
 
-  setTargetElementOutlineStyle(targetElement: any, outlineStyle: string): void {
+  setTargetElementOutlineStyle(targetElement: HTMLElement, outlineStyle: string): void {
     targetElement.style.outline = outlineStyle;
   }
 
   onToggle(): void {
-    if(this.props.isToggledOn){
-      for (let element of this.props.elementsToHighlight) {
-        const targetElement = getTargetElement(element.target[0]);
-        if(this.props.highlightedElementsMap.get(targetElement) && this.props.highlightedElementsMap.get(targetElement).isHighlighted){
+    for (let element of this.props.elementsToHighlight) {
+      const targetElement = getElementBySelectorPath(element.target[0]);
+      let originalOutline = this.props.highlightedElementsMap.get(targetElement).originalOutline;
+      if (this.props.highlightedElementsMap.get(targetElement)) {
+        if (this.props.isToggledOn && this.props.highlightedElementsMap.get(targetElement).isHighlighted) {
           this.higlightRuleLocation(targetElement, false);
-          this.saveElementDataToMap(
-            targetElement,
-            false,
-            this.props.highlightedElementsMap.get(targetElement).originalOutline,
-            this.props.type
-          );
-        }
-      }
-    } else {
-      for (let element of this.props.elementsToHighlight) {
-        const targetElement = getTargetElement(element.target[0]);
-        if(this.props.highlightedElementsMap.get(targetElement) && !this.props.highlightedElementsMap.get(targetElement).isHighlighted){
+          this.saveElementDataToMap(targetElement, false, originalOutline, this.props.type);
+        } else if (!this.props.isToggledOn && !this.props.highlightedElementsMap.get(targetElement).isHighlighted) {
           this.higlightRuleLocation(targetElement, true);
-          this.saveElementDataToMap(
-            targetElement,
-            true,
-            this.props.highlightedElementsMap.get(targetElement).originalOutline,
-            this.props.type
-          );
+          this.saveElementDataToMap(targetElement, true, originalOutline, this.props.type);
         }
       }
     }
@@ -203,11 +179,7 @@ class HighlightToggle extends Component<ToggleProps, {}> {
   render() {
     return (
       <Switch>
-        <Checkbox
-          type="checkbox"
-          onChange={() => this.onToggle()}
-          checked={this.props.isToggledOn}
-        />
+        <Checkbox type="checkbox" onChange={() => this.onToggle()} checked={this.props.isToggledOn}/>
         <Slider checked={this.props.isToggledOn} />
       </Switch>
     );
