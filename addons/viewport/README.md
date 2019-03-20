@@ -48,7 +48,7 @@ Setting this property to, let say `iphone6`, will make `iPhone 6` the default de
 
 ---
 
-A key-value pair of viewport's key and properties (see `Viewport` definition below) for all viewports to be displayed. Default is [`INITIAL_VIEWPORTS`](src/shared/index.js)
+A key-value pair of viewport's key and properties (see `Viewport` definition below) for all viewports to be displayed. Default is [`INITIAL_VIEWPORTS`](src/defaults.js)
 
 #### Viewport Model
 
@@ -125,7 +125,7 @@ addParameters({
 
 ### Add New Device
 
-This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is acheived by making use of the exported [`INITIAL_VIEWPORTS`](src/shared/index.js) property, by merging it with the new viewports and pass the result as `viewports` to `configureViewport` function
+This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is acheived by making use of the exported [`INITIAL_VIEWPORTS`](src/defaults.js) property, by merging it with the new viewports and pass the result as `viewports` to `configureViewport` function
 
 ```js
 import { addParameters } from '@storybook/react';
