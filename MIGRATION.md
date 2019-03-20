@@ -196,6 +196,7 @@ addParameters({
     }),
     isFullscreen: false,
     panelPosition: 'right',
+    isToolshown: true,
   },
 });
 ```
@@ -211,8 +212,11 @@ Here is the mapping from old options to new:
 | showAddonPanel    | showPanel        |
 | addonPanelInRight | panelPosition    |
 | showSearchBox     |                  |
+|                   | isToolshown      |
 
 Storybook v5 removes the search dialog box in favor of a quick search in the navigation view, so `showSearchBox` has been removed.
+
+Storybook v5 introduce a new tool bar above the story view and you can show\hide it with the new `isToolshown` option. 
 
 ## Individual story decorators
 
