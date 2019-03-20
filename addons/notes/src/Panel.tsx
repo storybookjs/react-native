@@ -15,13 +15,14 @@ import Markdown from 'markdown-to-jsx';
 
 import { PARAM_KEY, Parameters } from './shared';
 
-const Panel = styled.div({
+const Panel = styled.div(({ theme }) => ({
   padding: '3rem 40px',
   boxSizing: 'border-box',
   width: '100%',
   maxWidth: 980,
   margin: '0 auto',
-});
+  ...(theme.addonNotesTheme || {}),
+}));
 
 interface Props {
   active: boolean;
