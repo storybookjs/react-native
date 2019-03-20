@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
-import PropTypes from 'prop-types';
 
 const toNumber = (input: any) => (typeof input === 'number' ? input : Number(input));
 
-const Container = styled.div(
-  ({ theme, col, row = 1 }: any) =>
+interface ContainerProps {
+  col?: number;
+  row?: number;
+  outer?: number;
+}
+
+const Container = styled.div<ContainerProps>(
+  ({ theme, col, row = 1 }) =>
     col
       ? {
           display: 'inline-block',
@@ -26,7 +31,7 @@ const Container = styled.div(
             marginTop: 0,
           },
         },
-  ({ theme, outer, col, row }: any) => {
+  ({ theme, outer, col, row }) => {
     switch (true) {
       case !!(outer && col): {
         return {
@@ -47,7 +52,13 @@ const Container = styled.div(
   }
 );
 
-export const Spaced = ({ col, row, outer, children }: any) => {
+export interface SpacedProps {
+  col?: number;
+  row?: number;
+  outer?: number | boolean;
+}
+
+export const Spaced: FunctionComponent<SpacedProps> = ({ col, row, outer, children }) => {
   const outerAmount = toNumber(typeof outer === 'number' || !outer ? outer : col || row);
 
   return (
@@ -55,15 +66,4 @@ export const Spaced = ({ col, row, outer, children }: any) => {
       {children}
     </Container>
   );
-};
-Spaced.propTypes = {
-  col: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-  row: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-  outer: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-  children: PropTypes.node.isRequired,
-};
-Spaced.defaultProps = {
-  col: undefined,
-  row: undefined,
-  outer: undefined,
 };
