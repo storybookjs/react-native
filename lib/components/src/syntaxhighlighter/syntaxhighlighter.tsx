@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 import { document, window } from 'global';
 import memoize from 'memoizerific';
@@ -24,12 +23,17 @@ const themedSyntax = memoize(2)(theme =>
   Object.entries(theme.code || {}).reduce((acc, [key, val]) => ({ ...acc, [`* .${key}`]: val }), {})
 );
 
-const Wrapper = styled.div(
+interface WrapperProps {
+  bordered?: boolean;
+  padded?: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>(
   {
     position: 'relative',
     overflow: 'hidden',
   },
-  ({ theme, bordered }: any) =>
+  ({ theme, bordered }) =>
     bordered
       ? {
           border: `1px solid ${theme.appBorderColor}`,
@@ -55,7 +59,11 @@ const Scroller = styled(({ children, className }) => (
   ({ theme }) => themedSyntax(theme)
 );
 
-const Pre = styled.pre(({ theme, padded }: any) => ({
+interface PreProps {
+  padded?: boolean;
+}
+
+const Pre = styled.pre<PreProps>(({ theme, padded }) => ({
   display: 'flex',
   justifyContent: 'flex-start',
   margin: 0,
@@ -68,10 +76,35 @@ const Code = styled.code({
   opacity: 1,
 });
 
-export default class CopyableCode extends Component<any, any> {
+export interface CopyableCodeProps {
+  language: string;
+  copyable?: boolean;
+  bordered?: boolean;
+  padded?: boolean;
+  format?: boolean;
+  className?: string;
+}
+
+export interface CopyableCodeState {
+  copied: boolean;
+}
+
+export default class CopyableCode extends Component<
+  CopyableCodeProps & SyntaxHighlighterProps,
+  CopyableCodeState
+> {
+  static defaultProps: CopyableCodeProps = {
+    language: null,
+    copyable: false,
+    bordered: false,
+    padded: false,
+    format: true,
+    className: null,
+  };
+
   state = { copied: false };
 
-  formatCode = memoize(2)((language, code) => {
+  formatCode = memoize(2)((language: string, code: string) => {
     let formattedCode = code;
     if (language === 'jsx') {
       try {
@@ -90,7 +123,7 @@ export default class CopyableCode extends Component<any, any> {
     return formattedCode;
   });
 
-  onClick = (e: any) => {
+  onClick = (e: React.MouseEvent) => {
     const { children } = this.props;
 
     e.preventDefault();
@@ -147,21 +180,3 @@ export default class CopyableCode extends Component<any, any> {
     ) : null;
   }
 }
-
-(CopyableCode as any).propTypes = {
-  language: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  copyable: PropTypes.bool,
-  bordered: PropTypes.bool,
-  padded: PropTypes.bool,
-  format: PropTypes.bool,
-  className: PropTypes.string,
-};
-
-(CopyableCode as any).defaultProps = {
-  copyable: false,
-  bordered: false,
-  padded: false,
-  format: true,
-  className: null,
-};
