@@ -1,15 +1,23 @@
 {
   "expo": {
     "sdkVersion": "32.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "androidStatusBarColor": "#C2185B",
     "androidStatusBar": {
       "barStyle": "light-content",
       "backgroundColor": "#C2185B"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "packagerOpts": {
       "config": "metro.config.js"
-    }
+    },
+    "name": "crna-kitchen-sink",
+    "slug": "crna-kitchen-sink",
+    "githubUrl": "https://github.com/storybooks/storybook/"
   }
 }

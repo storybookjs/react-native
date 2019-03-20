@@ -37,6 +37,7 @@
     "lint:md": "remark -q",
     "lint:package": "sort-package-json",
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
+    "publish:crna": "yarn --cwd examples-native/crna-kitchen-sink expo publish",
     "publish:debug": "npm run publish:latest -- --npm-tag=debug --no-push",
     "publish:latest": "lerna publish --exact --concurrency 1 --force-publish",
     "publish:next": "npm run publish:latest -- --npm-tag=next",
