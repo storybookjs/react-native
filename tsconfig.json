@@ -2,10 +2,6 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": ".",
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,    
-    "skipLibCheck": true,
     "noImplicitAny": true,
     "jsx": "react",
     "module": "commonjs",
