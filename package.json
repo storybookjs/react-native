@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "5.0.0",
+  "version": "5.1.0-alpha.9",
   "private": true,
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "lint:md": "remark -q",
     "lint:package": "sort-package-json",
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
+    "publish:crna": "yarn --cwd examples-native/crna-kitchen-sink expo publish",
     "publish:debug": "npm run publish:latest -- --npm-tag=debug --no-push",
     "publish:latest": "lerna publish --exact --concurrency 1 --force-publish",
     "publish:next": "npm run publish:latest -- --npm-tag=next",
@@ -133,12 +134,13 @@
     "glob": "^7.1.3",
     "husky": "^1.3.1",
     "inquirer": "^6.2.0",
-    "jest": "^23.6.0",
+    "jest": "^24.5.0",
     "jest-cli": "^23.6.0",
     "jest-config": "^24.0.0",
     "jest-diff": "^24.0.0",
     "jest-emotion": "^10.0.7",
     "jest-environment-jsdom": "^24.5.0",
+    "jest-environment-jsdom-thirteen": "^1.0.0",
     "jest-enzyme": "^7.0.2",
     "jest-image-snapshot": "^2.6.0",
     "jest-jasmine2": "^24.1.0",
@@ -146,6 +148,7 @@
     "jest-raw-loader": "^1.0.1",
     "jest-teamcity-reporter": "^0.9.0",
     "jest-vue-preprocessor": "^1.4.0",
+    "jest-watch-typeahead": "^0.2.1",
     "lerna": "^3.13.0",
     "lint-staged": "^8.1.4",
     "lodash": "^4.17.11",
@@ -165,10 +168,11 @@
     "sort-package-json": "^1.21.0",
     "svelte-jest": "^0.2.0",
     "ts-jest": "^23.10.5",
-    "tslint": "~5.13.0",
+    "tslint": "~5.14.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.3333",
+    "weak": "^1.0.1"
   },
   "resolutions": {
     "graphql": "^0.13.2"

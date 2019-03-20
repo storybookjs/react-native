@@ -1,14 +1,56 @@
 import { navigator, document } from 'global';
 import { PREVIEW_KEYDOWN } from '@storybook/core-events';
 
-import { shortcutMatchesShortcut, eventToShortcut } from '../libs/shortcut';
+import { Module, API } from '../index';
+
+import { shortcutMatchesShortcut, eventToShortcut } from '../lib/shortcut';
 import { focusableUIElements } from './layout';
 
 export const isMacLike = () =>
   navigator && navigator.platform ? !!navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) : false;
 export const controlOrMetaKey = () => (isMacLike() ? 'meta' : 'control');
 
-export const defaultShortcuts = Object.freeze({
+export function keys<O>(o: O) {
+  return Object.keys(o) as Array<keyof O>;
+}
+
+export interface SubState {
+  shortcuts: Shortcuts;
+}
+
+export interface SubAPI {
+  getShortcutKeys(): Shortcuts;
+  setShortcuts(shortcuts: Shortcuts): Promise<Shortcuts>;
+  setShortcut(action: Action, value: KeyCollection): Promise<KeyCollection>;
+  restoreAllDefaultShortcuts(): Promise<Shortcuts>;
+  restoreDefaultShortcut(action: Action): Promise<KeyCollection>;
+  handleKeydownEvent(api: API, event: Event): void;
+  handleShortcutFeature(api: API, feature: Action): void;
+}
+export type KeyCollection = string[];
+
+export interface Shortcuts {
+  fullScreen: KeyCollection;
+  togglePanel: KeyCollection;
+  panelPosition: KeyCollection;
+  toggleNav: KeyCollection;
+  toolbar: KeyCollection;
+  search: KeyCollection;
+  focusNav: KeyCollection;
+  focusIframe: KeyCollection;
+  focusPanel: KeyCollection;
+  prevComponent: KeyCollection;
+  nextComponent: KeyCollection;
+  prevStory: KeyCollection;
+  nextStory: KeyCollection;
+  shortcutsPage: KeyCollection;
+  aboutPage: KeyCollection;
+  escape: KeyCollection;
+}
+
+export type Action = keyof Shortcuts;
+
+export const defaultShortcuts: Shortcuts = Object.freeze({
   fullScreen: ['F'],
   togglePanel: ['A'],
   panelPosition: ['D'],
@@ -24,17 +66,26 @@ export const defaultShortcuts = Object.freeze({
   nextStory: ['alt', 'ArrowRight'],
   shortcutsPage: [controlOrMetaKey(), 'shift', ','],
   aboutPage: [','],
-  // This one is not customizable
-  escape: ['escape'],
+  escape: ['escape'], // This one is not customizable
 });
 
-export default function initShortcuts({ store }) {
-  const api = {
+export interface Event extends KeyboardEvent {
+  target: {
+    tagName: string;
+    addEventListener(): void;
+    removeEventListener(): boolean;
+    dispatchEvent(event: Event): boolean;
+    getAttribute(attr: string): string | null;
+  };
+}
+
+export default function initShortcuts({ store }: Module) {
+  const api: SubAPI = {
     // Getting and setting shortcuts
-    getShortcutKeys() {
+    getShortcutKeys(): Shortcuts {
       return store.getState().shortcuts;
     },
-    async setShortcuts(shortcuts) {
+    async setShortcuts(shortcuts: Shortcuts) {
       await store.setState({ shortcuts }, { persistence: 'permanent' });
       return shortcuts;
     },
@@ -55,13 +106,13 @@ export default function initShortcuts({ store }) {
     handleKeydownEvent(fullApi, event) {
       const shortcut = eventToShortcut(event);
       const shortcuts = api.getShortcutKeys();
-      const matchedFeature = Object.keys(shortcuts).find(feature =>
+      const actions = keys(shortcuts);
+      const matchedFeature = actions.find((feature: Action) =>
         shortcutMatchesShortcut(shortcut, shortcuts[feature])
       );
       if (matchedFeature) {
-        return api.handleShortcutFeature(fullApi, matchedFeature);
+        api.handleShortcutFeature(fullApi, matchedFeature);
       }
-      return false;
     },
 
     handleShortcutFeature(fullApi, feature) {
@@ -206,17 +257,17 @@ export default function initShortcuts({ store }) {
     },
   };
 
-  const { shortcuts: persistedShortcuts = {} } = store.getState();
-  const state = {
+  const { shortcuts: persistedShortcuts = defaultShortcuts }: SubState = store.getState();
+  const state: SubState = {
     // Any saved shortcuts that are still in our set of defaults
-    shortcuts: Object.keys(defaultShortcuts).reduce(
+    shortcuts: keys(defaultShortcuts).reduce(
       (acc, key) => ({ ...acc, [key]: persistedShortcuts[key] || defaultShortcuts[key] }),
-      {}
+      defaultShortcuts
     ),
   };
 
-  const init = ({ api: fullApi }) => {
-    function focusInInput(event) {
+  const init = ({ api: fullApi }: API) => {
+    function focusInInput(event: Event) {
       return (
         /input|textarea/i.test(event.target.tagName) ||
         event.target.getAttribute('contenteditable') !== null
@@ -224,17 +275,18 @@ export default function initShortcuts({ store }) {
     }
 
     // Listen for keydown events in the manager
-    document.addEventListener('keydown', event => {
+    document.addEventListener('keydown', (event: Event) => {
       if (!focusInInput(event)) {
         fullApi.handleKeydownEvent(fullApi, event);
       }
     });
 
     // Also listen to keydown events sent over the channel
-    fullApi.on(PREVIEW_KEYDOWN, data => {
+    fullApi.on(PREVIEW_KEYDOWN, (data: { event: Event }) => {
       fullApi.handleKeydownEvent(fullApi, data.event);
     });
   };
+  const result = { api, state, init };
 
-  return { api, state, init };
+  return result;
 }

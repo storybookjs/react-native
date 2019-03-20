@@ -1,14 +1,89 @@
-import { toId, sanitize } from '@storybook/router/utils';
+import { toId, sanitize } from '@storybook/router/dist/utils';
 
-import merge from '../libs/merge';
+import { Module } from '../index';
+import merge from '../lib/merge';
+
+type Direction = -1 | 1;
+type StoryId = string;
+type ParameterName = string;
+
+type ViewMode = 'story' | 'info' | undefined;
+
+export interface SubState {
+  storiesHash: StoriesHash;
+  storyId: StoryId;
+  viewMode: ViewMode;
+  storiesConfigured: boolean;
+}
+
+export interface SubAPI {
+  storyId: typeof toId;
+  selectStory: (kindOrId: string, story?: string, obj?: any) => void;
+  getCurrentStoryData: () => Story | Group;
+  setStories: (stories: StoriesRaw) => void;
+  jumpToComponent: (direction: Direction) => void;
+  jumpToStory: (direction: Direction) => void;
+  getData: (storyId: StoryId) => Story | Group;
+  getParameters: (storyId: StoryId, parameterName?: ParameterName) => Story['parameters'] | any;
+}
+
+interface SeparatorOptions {
+  rootSeparator: string | RegExp;
+  groupSeparator: string | RegExp;
+}
+
+interface Group {
+  id: StoryId;
+  name: string;
+  children: StoryId[];
+  parent: StoryId;
+  depth: number;
+  isComponent: boolean;
+  isRoot: boolean;
+  isLeaf: boolean;
+}
+
+interface StoryInput {
+  id: StoryId;
+  name: string;
+  kind: string;
+  children: string[];
+  parameters: {
+    filename: string;
+    options: {
+      hierarchyRootSeparator: RegExp;
+      hierarchySeparator: RegExp;
+      [key: string]: any;
+    };
+    [parameterName: string]: any;
+  };
+  isLeaf: boolean;
+}
+
+type Story = StoryInput & Group;
+
+export interface StoriesHash {
+  [id: string]: Group | Story;
+}
+export type StoriesList = Array<Group | Story>;
+export type GroupsList = Group[];
+
+export interface StoriesRaw {
+  [id: string]: StoryInput;
+}
 
 const initStoriesApi = ({
   store,
   navigate,
   storyId: initialStoryId,
   viewMode: initialViewMode,
-}) => {
-  const getData = storyId => {
+}: Module) => {
+  const isStory = (obj: Group | Story): boolean => {
+    const story = obj as Story;
+    return !!(story && story.parameters);
+  };
+
+  const getData = (storyId: StoryId) => {
     const { storiesHash } = store.getState();
 
     return storiesHash[storyId];
@@ -18,16 +93,18 @@ const initStoriesApi = ({
 
     return getData(storyId);
   };
-  const getParameters = (storyId, addon) => {
+  const getParameters = (storyId: StoryId, parameterName?: ParameterName) => {
     const data = getData(storyId);
-    if (!data) {
-      return null;
+
+    if (isStory(data)) {
+      const { parameters } = data as Story;
+      return parameterName ? parameters[parameterName] : parameters;
     }
-    const { parameters } = data;
-    return addon ? parameters[addon] : parameters;
+
+    return null;
   };
 
-  const jumpToStory = direction => {
+  const jumpToStory = (direction: Direction) => {
     const { storiesHash, viewMode, storyId } = store.getState();
 
     // cannot navigate when there's no current selection
@@ -47,9 +124,6 @@ const initStoriesApi = ({
     if (index === 0 && direction < 0) {
       return;
     }
-    if (direction === 0) {
-      return;
-    }
 
     const result = lookupList[index + direction];
 
@@ -58,7 +132,7 @@ const initStoriesApi = ({
     }
   };
 
-  const jumpToComponent = direction => {
+  const jumpToComponent = (direction: Direction) => {
     const state = store.getState();
     const { storiesHash, viewMode, storyId } = state;
 
@@ -84,16 +158,13 @@ const initStoriesApi = ({
     if (index === 0 && direction < 0) {
       return;
     }
-    if (direction === 0) {
-      return;
-    }
 
     const result = lookupList[index + direction][0];
 
     navigate(`/${viewMode || 'story'}/${result}`);
   };
 
-  const splitPath = (kind, { rootSeparator, groupSeparator }) => {
+  const splitPath = (kind: string, { rootSeparator, groupSeparator }: SeparatorOptions) => {
     const [root, remainder] = kind.split(rootSeparator, 2);
     const groups = (remainder || kind).split(groupSeparator).filter(i => !!i);
 
@@ -104,17 +175,16 @@ const initStoriesApi = ({
     };
   };
 
-  const toKey = input =>
+  const toKey = (input: string) =>
     input.replace(/[^a-z0-9]+([a-z0-9])/gi, (...params) => params[1].toUpperCase());
 
-  const toGroup = name => ({
+  const toGroup = (name: string) => ({
     name,
-    children: [],
     id: toKey(name),
   });
 
-  const setStories = input => {
-    // This doesn't quite have the right order -- it does not group the top-level keys, see #5518
+  const setStories = (input: StoriesRaw) => {
+    const hash: StoriesHash = {};
     const storiesHashOutOfOrder = Object.values(input).reduce((acc, item) => {
       const { kind, parameters } = item;
       // FIXME: figure out why parameters is missing when used with react-native-server
@@ -133,22 +203,26 @@ const initStoriesApi = ({
         .concat(groups)
         .map(toGroup)
         // Map a bunch of extra fields onto the groups, collecting the path as we go (thus the reduce)
-        .reduce((soFar, group, index, original) => {
-          const { name } = group;
-          const parent = index > 0 && soFar[index - 1].id;
-          const id = sanitize(parent ? `${parent}-${name}` : name);
-          return soFar.concat([
-            {
+        .reduce(
+          (soFar, group, index, original) => {
+            const { name } = group;
+            const parent = index > 0 && soFar[index - 1].id;
+            const id = sanitize(parent ? `${parent}-${name}` : name);
+
+            const result: Group = {
               ...group,
               id,
               parent,
               depth: index,
+              children: [],
               isComponent: index === original.length - 1,
               isLeaf: false,
               isRoot: !!root && index === 0,
-            },
-          ]);
-        }, []);
+            };
+            return soFar.concat([result]);
+          },
+          [] as GroupsList
+        );
 
       const paths = [...rootAndGroups.map(g => g.id), item.id];
 
@@ -162,14 +236,15 @@ const initStoriesApi = ({
         });
       });
 
-      acc[item.id] = { ...item, parent: rootAndGroups[rootAndGroups.length - 1].id, isLeaf: true };
+      const story = { ...item, parent: rootAndGroups[rootAndGroups.length - 1].id, isLeaf: true };
+      acc[item.id] = story as Story;
 
       return acc;
-    }, {});
+    }, hash);
 
     // When adding a group, also add all of its children, depth first
-    function addItem(acc, item) {
-      if (!acc[item]) {
+    function addItem(acc: StoriesHash, item: Story | Group) {
+      if (!acc[item.id]) {
         // If we were already inserted as part of a group, that's great.
         acc[item.id] = item;
         const { children } = item;
@@ -181,24 +256,27 @@ const initStoriesApi = ({
     }
 
     // Now create storiesHash by reordering the above by group
-    const storiesHash = Object.values(storiesHashOutOfOrder).reduce(addItem, {});
+    const storiesHash: StoriesHash = Object.values(storiesHashOutOfOrder).reduce(addItem, {});
 
     const { storyId, viewMode } = store.getState();
 
     if (!storyId || !storiesHash[storyId]) {
       // when there's no storyId or the storyId item doesn't exist
       // we pick the first leaf and navigate
-      const firstLeaf = Object.values(storiesHash).find(s => !s.children);
+      const firstLeaf = Object.values(storiesHash).find((s: Story | Group) => !s.children);
 
       if (viewMode && firstLeaf) {
         navigate(`/${viewMode}/${firstLeaf.id}`);
       }
     }
 
-    store.setState({ storiesHash });
+    store.setState({
+      storiesHash,
+      storiesConfigured: true,
+    });
   };
 
-  const selectStory = (kindOrId, story) => {
+  const selectStory = (kindOrId: string, story?: string) => {
     const { viewMode = 'story', storyId, storiesHash } = store.getState();
     if (!story) {
       const s = storiesHash[sanitize(kindOrId)];
@@ -229,6 +307,7 @@ const initStoriesApi = ({
       storiesHash: {},
       storyId: initialStoryId,
       viewMode: initialViewMode,
+      storiesConfigured: false,
     },
   };
 };

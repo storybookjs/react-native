@@ -30,7 +30,7 @@ const sanitizeSafe = (string: string, part: string) => {
 export const toId = (kind: string, name: string) =>
   `${sanitizeSafe(kind, 'kind')}--${sanitizeSafe(name, 'name')}`;
 
-export const storyDataFromString: (path: string) => StoryData = memoize(1000)(
+export const storyDataFromString: (path?: string) => StoryData = memoize(1000)(
   (path: string | undefined | null) => {
     const result: StoryData = {
       viewMode: undefined,
@@ -50,9 +50,15 @@ export const storyDataFromString: (path: string) => StoryData = memoize(1000)(
   }
 );
 
-export const queryFromString = memoize(1000)(s => qs.parse(s, { ignoreQueryPrefix: true }));
+interface Query {
+  [key: string]: any;
+}
+
+export const queryFromString = memoize(1000)(
+  (s: string): Query => qs.parse(s, { ignoreQueryPrefix: true })
+);
 export const queryFromLocation = (location: { search: string }) => queryFromString(location.search);
-export const stringifyQuery = (query: object) =>
+export const stringifyQuery = (query: Query) =>
   qs.stringify(query, { addQueryPrefix: true, encode: false });
 
 export const getMatch = memoize(1000)(

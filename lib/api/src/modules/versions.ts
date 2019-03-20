@@ -1,21 +1,48 @@
-import { logger } from '@storybook/client-logger';
 import { fetch } from 'global';
 import semver from 'semver';
+import { logger } from '@storybook/client-logger';
 
-import { version as currentVersion } from '../../package.json';
+import { version as currentVersion } from '../version';
+
+import { Module, API } from '../index';
+
+export interface Version {
+  version: string;
+  info?: string;
+  [key: string]: any;
+}
+
+export interface SubState {
+  versions: {
+    [key: string]: {
+      [key: string]: any;
+    };
+    latest?: Version;
+    next?: Version;
+    current?: Version;
+  };
+  lastVersionCheck: number;
+  dismissedVersionNotification: undefined | string;
+}
 
 const checkInterval = 24 * 60 * 60 * 1000;
-
 const versionsUrl = 'https://storybook.js.org/versions.json';
-async function fetchLatestVersion() {
-  const fromFetch = await fetch(`${versionsUrl}?current=${currentVersion}`);
+
+async function fetchLatestVersion(v: string) {
+  const fromFetch = await fetch(`${versionsUrl}?current=${v}`);
   return fromFetch.json();
 }
 
-export default function({ store }) {
+export interface SubAPI {
+  getCurrentVersion: () => Version;
+  getLatestVersion: () => Version;
+  versionUpdateAvailable: () => boolean;
+}
+
+export default function({ store, mode }: Module) {
   const {
     versions: persistedVersions = {},
-    lastVersionCheck,
+    lastVersionCheck = 0,
     dismissedVersionNotification,
   } = store.getState();
 
@@ -35,7 +62,7 @@ export default function({ store }) {
     dismissedVersionNotification,
   };
 
-  const api = {
+  const api: SubAPI = {
     getCurrentVersion: () => {
       const {
         versions: { current },
@@ -55,21 +82,26 @@ export default function({ store }) {
       const latest = api.getLatestVersion();
       const current = api.getCurrentVersion();
 
+      if (!latest || !latest.version) {
+        return true;
+      }
       return latest && semver.gt(latest.version, current.version);
     },
   };
 
   // Grab versions from the server/local storage right away
-  async function init({ api: { versionUpdateAvailable, getLatestVersion, addNotification } }) {
+  async function init({ api: fullApi }: API) {
     const { versions = {} } = store.getState();
 
     const now = Date.now();
     if (!lastVersionCheck || now - lastVersionCheck > checkInterval) {
       try {
         const { latest, next } = await fetchLatestVersion(currentVersion);
-
         await store.setState(
-          { versions: { ...versions, latest, next }, lastVersionCheck: now },
+          {
+            versions: { ...versions, latest, next },
+            lastVersionCheck: now,
+          },
           { persistence: 'permanent' }
         );
       } catch (error) {
@@ -77,11 +109,16 @@ export default function({ store }) {
       }
     }
 
-    if (versionUpdateAvailable()) {
-      const latestVersion = getLatestVersion().version;
+    if (api.versionUpdateAvailable()) {
+      const latestVersion = api.getLatestVersion().version;
 
-      if (latestVersion !== dismissedVersionNotification) {
-        addNotification({
+      if (
+        latestVersion !== dismissedVersionNotification &&
+        !semver.patch(latestVersion) &&
+        !semver.prerelease(latestVersion) &&
+        mode !== 'production'
+      ) {
+        fullApi.addNotification({
           id: 'update',
           link: '/settings/about',
           content: `🎉 Storybook ${latestVersion} is available!`,
