@@ -3,7 +3,7 @@ id: 'exporting-storybook'
 title: 'Exporting Storybook as a Static App'
 ---
 
-Storybook gives a great developer experience with its dev time features, like instance change updates via Webpack's HMR.
+Storybook gives a great developer experience with its dev time features, like instant change updates via Webpack's HMR.
 
 But Storybook is also a tool you can use to showcase your components to others.
 Demos of [React Native Web](http://necolas.github.io/react-native-web/storybook/) and [React Dates](http://airbnb.io/react-dates/) are a good example for that.
