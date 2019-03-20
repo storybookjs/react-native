@@ -306,3 +306,5 @@ const icons = {
 };
 
 export default icons;
+
+export type IconKey = keyof typeof icons;

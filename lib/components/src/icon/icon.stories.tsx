@@ -3,14 +3,18 @@ import { styled } from '@storybook/theming';
 import { storiesOf } from '@storybook/react';
 
 import Icon from './icon';
-import icons from './icons';
+import icons, { IconKey } from './icons';
 
 const Meta = styled.div({
   color: '#333',
   fontSize: 12,
 });
 
-const Item = styled.div(
+interface ItemProps {
+  minimal?: boolean;
+}
+
+const Item = styled.div<ItemProps>(
   {
     display: 'inline-flex',
     flexDirection: 'row',
@@ -26,7 +30,7 @@ const Item = styled.div(
       height: 24,
     },
   },
-  ({ minimal }: any) =>
+  ({ minimal }) =>
     minimal
       ? {
           flex: 'none',
@@ -50,7 +54,7 @@ const List = styled.div({
   flexFlow: 'row wrap',
 });
 
-const list = Object.keys(icons).sort();
+const list = Object.keys(icons).sort() as IconKey[];
 
 storiesOf('Basics|Icon', module)
   .add('labels', () => (

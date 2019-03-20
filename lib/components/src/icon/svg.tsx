@@ -1,12 +1,16 @@
 import { styled } from '@storybook/theming';
 
-const Svg = styled.svg(
+interface SvgProps {
+  inline?: boolean;
+}
+
+const Svg = styled.svg<SvgProps>(
   {
     // Fix rendering bugs in Chrome for hdpi
     shapeRendering: 'inherit',
     transform: 'translate3d(0,0,0)',
   },
-  ({ inline }: any) =>
+  ({ inline }) =>
     inline
       ? {
           display: 'inline-block',

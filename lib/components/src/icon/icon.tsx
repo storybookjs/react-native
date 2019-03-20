@@ -1,7 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
-import icons from './icons';
+import icons, { IconKey } from './icons';
 
 import Svg from './svg';
 
@@ -9,17 +8,17 @@ const Path = styled.path({
   fill: 'currentColor',
 });
 
-// TODO: if we can resize the 1024 to 20, we can remove the size attributes
-function Icon({ icon, ...props }: any) {
-  return (
-    <Svg viewBox="0 0 1024 1024" {...props}>
-      <Path d={(icons as any)[icon]} />
-    </Svg>
-  );
+export interface IconProps {
+  icon: IconKey;
 }
 
-Icon.propTypes = {
-  icon: PropTypes.string.isRequired,
+// TODO: if we can resize the 1024 to 20, we can remove the size attributes
+const Icon: FunctionComponent<IconProps> = ({ icon, ...props }) => {
+  return (
+    <Svg viewBox="0 0 1024 1024" {...props}>
+      <Path d={icons[icon]} />
+    </Svg>
+  );
 };
 
 export default Icon;
