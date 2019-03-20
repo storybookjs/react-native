@@ -273,7 +273,7 @@ export default function({ store }: { store: Store }) {
         if (!deepEqual(theme, updatedTheme)) {
           modification.theme = updatedTheme;
         }
-        if (!deepEqual(selectedPanel, options.selectedPanel)) {
+        if (options.selectedPanel && !deepEqual(selectedPanel, options.selectedPanel)) {
           modification.selectedPanel = options.selectedPanel;
         }
 
