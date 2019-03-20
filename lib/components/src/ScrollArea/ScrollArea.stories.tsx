@@ -22,7 +22,15 @@ const Wrapper = styled.div({
   overflow: 'hidden',
 });
 
-const list = (filler: (data: any) => any) => [...new Array(20)].map((x, i) => filler(i));
+const list = (filler: (data: number) => JSX.Element) => {
+  const data = [];
+
+  for (let i = 0; i < 20; i++) {
+    data.push(filler(i));
+  }
+
+  return data;
+};
 
 export default {
   component: ScrollArea,

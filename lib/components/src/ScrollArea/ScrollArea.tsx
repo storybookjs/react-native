@@ -1,14 +1,19 @@
 // Storybook's implementation of SimpleBar https://github.com/Grsmto/simplebar
 // Note: "SimpleBar can't be used on the <body>, <textarea> or <iframe> elements."
 
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment, FunctionComponent } from 'react';
 import { styled, Global } from '@storybook/theming';
 
 import SimpleBar from 'simplebar-react';
 import { getScrollAreaStyles } from './ScrollAreaStyles';
 
-const Scroll = styled(({ vertical, horizontal, ...rest }) => <SimpleBar {...rest} />)(
+export interface ScrollProps {
+  horizontal?: boolean;
+  vertical?: boolean;
+  [key: string]: any;
+}
+
+const Scroll = styled(({ vertical, horizontal, ...rest }: ScrollProps) => <SimpleBar {...rest} />)(
   ({ vertical }) =>
     !vertical
       ? {
@@ -27,7 +32,18 @@ const Scroll = styled(({ vertical, horizontal, ...rest }) => <SimpleBar {...rest
         }
 );
 
-export const ScrollArea = ({ children, vertical, horizontal, ...props }: any) => (
+export interface ScrollAreaProps {
+  horizontal?: boolean;
+  vertical?: boolean;
+  className?: string;
+}
+
+export const ScrollArea: FunctionComponent<ScrollAreaProps> = ({
+  children,
+  vertical,
+  horizontal,
+  ...props
+}) => (
   <Fragment>
     <Global styles={getScrollAreaStyles} />
     <Scroll vertical={vertical} horizontal={horizontal} {...props}>
@@ -36,12 +52,6 @@ export const ScrollArea = ({ children, vertical, horizontal, ...props }: any) =>
   </Fragment>
 );
 
-ScrollArea.propTypes = {
-  children: PropTypes.node.isRequired,
-  horizontal: PropTypes.bool,
-  vertical: PropTypes.bool,
-  className: PropTypes.string
-};
 ScrollArea.defaultProps = {
   horizontal: false,
   vertical: false,

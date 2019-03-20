@@ -1,8 +1,10 @@
-export const getScrollAreaStyles = (theme: any) => ({
+import { Theme, Interpolation } from '@storybook/theming';
+
+export const getScrollAreaStyles: (theme: Theme) => Interpolation = (theme: Theme) => ({
   '[data-simplebar]': {
     position: 'relative',
-    flexDirection: 'column' as 'column',
-    flexWrap: 'wrap' as 'wrap',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
     justifyContent: 'flex-start',
     alignContent: 'flex-start',
     alignItems: 'flex-start',
@@ -36,9 +38,9 @@ export const getScrollAreaStyles = (theme: any) => ({
   },
 
   '.simplebar-offset': {
-    direction: 'inherit !important',
-    boxSizing: 'inherit !important',
-    resize: 'none !important',
+    direction: 'inherit !important' as 'inherit',
+    boxSizing: 'inherit !important' as 'inherit',
+    resize: 'none !important' as 'none',
     position: 'absolute',
     top: 0,
     left: 0,
@@ -51,7 +53,7 @@ export const getScrollAreaStyles = (theme: any) => ({
 
   '.simplebar-content': {
     direction: 'inherit',
-    boxSizing: 'border-box !important',
+    boxSizing: 'border-box !important' as 'border-box',
     position: 'relative',
     display: 'block',
     height:
@@ -71,7 +73,7 @@ export const getScrollAreaStyles = (theme: any) => ({
   },
 
   '.simplebar-height-auto-observer-wrapper': {
-    boxSizing: 'inherit !important',
+    boxSizing: 'inherit !important' as 'inherit',
     height: '100%',
     width: 'inherit',
     maxWidth: 1,
@@ -132,7 +134,7 @@ export const getScrollAreaStyles = (theme: any) => ({
 
   '.simplebar-track .simplebar-scrollbar.simplebar-visible:before': {
     /* When hovered, remove all transitions from drag handle */
-    opacity: '0.2',
+    opacity: 0.2,
     transition: 'opacity 0s linear',
   },
 
@@ -185,4 +187,4 @@ export const getScrollAreaStyles = (theme: any) => ({
     overflowY: 'hidden',
     overflowX: 'scroll',
   },
-} as any);
+});
