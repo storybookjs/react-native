@@ -34,6 +34,7 @@
     "babel-preset-expo": "^5.0.0",
     "core-js": "^2.5.7",
     "jest-expo": "^32.0.0",
+    "expo-cli": "^2.11.9",
     "react-test-renderer": "16.5.1",
     "schedule": "^0.4.0"
   },
