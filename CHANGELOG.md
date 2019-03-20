@@ -1,3 +1,19 @@
+## 5.1.0-alpha.11 (March 21, 2019)
+
+### Features
+
+* Addon-notes: Support theming ([#5922](https://github.com/storybooks/storybook/pull/5922))
+
+### Bug Fixes
+
+* Addon-knkobs: Fix color type button z-index ([#6203](https://github.com/storybooks/storybook/pull/6203))
+* Angular: Fix typo in demo example ([#6193](https://github.com/storybooks/storybook/pull/6193))
+* UI: Fix problem with selectedPanel reset ([#6149](https://github.com/storybooks/storybook/pull/6149))
+
+### Maintenance
+
+* React-native: Publish crna-kitchen-sink app to expo ([#6183](https://github.com/storybooks/storybook/pull/6183))
+
 ## 5.1.0-alpha.10 (March 19, 2019)
 
 ### Features
