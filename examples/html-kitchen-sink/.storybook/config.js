@@ -1,6 +1,9 @@
 import { configure, addParameters } from '@storybook/html';
 
 addParameters({
+  html: {
+    preventForcedRender: false, // default
+  },
   options: {
     hierarchyRootSeparator: /\|/,
   },
