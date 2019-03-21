@@ -8,6 +8,8 @@
     "src/**/*"
   ],
   "exclude": [
+    "dist",
+    "src/tests/**/*",
     "src/__tests__/**/*"
   ]
 }

@@ -1,15 +1,27 @@
 import React, { Component, Fragment } from 'react';
 import memoize from 'memoizerific';
 
+import { Combo, Consumer } from '@storybook/api';
 import { Global, Theme } from '@storybook/theming';
-
-import { SET_STORIES } from '@storybook/core-events';
 
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
 
 import { PARAM_KEY } from '../constants';
 import { ColorIcon } from '../components/ColorIcon';
-import { BackgroundConfig, BackgroundSelectorItem } from '../models';
+
+interface Item {
+  id: string;
+  title: string;
+  onClick: () => void;
+  value: string;
+  right?: any;
+}
+
+interface Input {
+  name: string;
+  value: string;
+  default?: boolean;
+}
 
 const iframeId = 'storybook-preview-background';
 
@@ -20,7 +32,7 @@ const createBackgroundSelectorItem = memoize(1000)(
     value: string,
     hasSwatch: boolean,
     change: (arg: { selected: string; expanded: boolean }) => void
-  ): BackgroundSelectorItem => ({
+  ): Item => ({
     id: id || name,
     title: name,
     onClick: () => {
@@ -31,10 +43,7 @@ const createBackgroundSelectorItem = memoize(1000)(
   })
 );
 
-const getSelectedBackgroundColor = (
-  list: BackgroundConfig[],
-  currentSelectedValue: string
-): string => {
+const getSelectedBackgroundColor = (list: Input[], currentSelectedValue: string): string => {
   if (!list.length) {
     return 'transparent';
   }
@@ -54,119 +63,96 @@ const getSelectedBackgroundColor = (
   return 'transparent';
 };
 
-const getDisplayableState = memoize(10)(
-  (props: BackgroundToolProps, state: BackgroundToolState, change) => {
-    const data = props.api.getCurrentStoryData();
-    const list: BackgroundConfig[] = (data && data.parameters && data.parameters[PARAM_KEY]) || [];
+const mapper = ({ api, state }: Combo): { items: Input[] } => {
+  const story = state.storiesHash[state.storyId];
+  const list = story ? api.getParameters(story.id, PARAM_KEY) : [];
 
-    const selectedBackgroundColor = getSelectedBackgroundColor(list, state.selected);
+  return { items: list || [] };
+};
 
-    let availableBackgroundSelectorItems: BackgroundSelectorItem[] = [];
+const getDisplayedItems = memoize(10)((list: Input[], selected: State['selected'], change) => {
+  let availableBackgroundSelectorItems: Item[] = [];
 
-    if (selectedBackgroundColor !== 'transparent') {
-      availableBackgroundSelectorItems.push(
-        createBackgroundSelectorItem('reset', 'Clear background', 'transparent', null, change)
-      );
-    }
-
-    if (list.length) {
-      availableBackgroundSelectorItems = [
-        ...availableBackgroundSelectorItems,
-        ...list.map(({ name, value }) =>
-          createBackgroundSelectorItem(null, name, value, true, change)
-        ),
-      ];
-    }
-
-    return {
-      items: availableBackgroundSelectorItems,
-      selectedBackgroundColor,
-    };
+  if (selected !== 'transparent') {
+    availableBackgroundSelectorItems.push(
+      createBackgroundSelectorItem('reset', 'Clear background', 'transparent', null, change)
+    );
   }
-);
 
-interface BackgroundToolProps {
-  api: {
-    on(event: string, callback: (data: any) => void): void;
-    off(event: string, callback: (data: any) => void): void;
-    getCurrentStoryData(): any;
-  };
-}
+  if (list.length) {
+    availableBackgroundSelectorItems = [
+      ...availableBackgroundSelectorItems,
+      ...list.map(({ name, value }) =>
+        createBackgroundSelectorItem(null, name, value, true, change)
+      ),
+    ];
+  }
 
-interface BackgroundToolState {
-  items: BackgroundSelectorItem[];
+  return availableBackgroundSelectorItems;
+});
+
+interface State {
   selected: string;
   expanded: boolean;
 }
 
-export class BackgroundSelector extends Component<BackgroundToolProps, BackgroundToolState> {
-  private listener = () => {
-    this.setState({ selected: null });
+export class BackgroundSelector extends Component<{}, State> {
+  state: State = {
+    selected: null,
+    expanded: false,
   };
 
-  constructor(props: BackgroundToolProps) {
-    super(props);
+  change = (args: State) => this.setState(args);
 
-    this.state = {
-      items: [],
-      selected: null,
-      expanded: false,
-    };
-  }
-
-  componentDidMount() {
-    const { api } = this.props;
-    api.on(SET_STORIES, this.listener);
-  }
-
-  componentWillUnmount() {
-    const { api } = this.props;
-    api.off(SET_STORIES, this.listener);
-  }
-
-  change = (args: { selected: string; expanded: boolean }) => this.setState(args);
+  onVisibilityChange = (s: boolean) => {
+    if (this.state.expanded !== s) {
+      this.setState({ expanded: s });
+    }
+  };
 
   render() {
-    const { expanded } = this.state;
-    const { items, selectedBackgroundColor } = getDisplayableState(
-      this.props,
-      this.state,
-      this.change
-    );
+    const { expanded, selected } = this.state;
 
-    return items.length ? (
-      <Fragment>
-        {selectedBackgroundColor ? (
-          <Global
-            styles={(theme: Theme) => ({
-              [`#${iframeId}`]: {
-                background:
-                  selectedBackgroundColor === 'transparent'
-                    ? theme.background.content
-                    : selectedBackgroundColor,
-              },
-            })}
-          />
-        ) : null}
-        <WithTooltip
-          placement="top"
-          trigger="click"
-          tooltipShown={expanded}
-          onVisibilityChange={(newVisibility: boolean) =>
-            this.setState({ expanded: newVisibility })
-          }
-          tooltip={<TooltipLinkList links={items} />}
-          closeOnClick
-        >
-          <IconButton
-            key="background"
-            active={selectedBackgroundColor !== 'transparent'}
-            title="Change the background of the preview"
-          >
-            <Icons icon="photo" />
-          </IconButton>
-        </WithTooltip>
-      </Fragment>
-    ) : null;
+    return (
+      <Consumer filter={mapper}>
+        {({ items }: { items: Input[] }) => {
+          const selectedBackgroundColor = getSelectedBackgroundColor(items, selected);
+          const links = getDisplayedItems(items, selectedBackgroundColor, this.change);
+
+          return items.length ? (
+            <Fragment>
+              {selectedBackgroundColor ? (
+                <Global
+                  styles={(theme: Theme) => ({
+                    [`#${iframeId}`]: {
+                      background:
+                        selectedBackgroundColor === 'transparent'
+                          ? theme.background.content
+                          : selectedBackgroundColor,
+                    },
+                  })}
+                />
+              ) : null}
+              <WithTooltip
+                placement="top"
+                trigger="click"
+                tooltipShown={expanded}
+                onVisibilityChange={this.onVisibilityChange}
+                tooltip={<TooltipLinkList links={links} />}
+                closeOnClick
+              >
+                <IconButton
+                  key="background"
+                  active={selectedBackgroundColor !== 'transparent'}
+                  title="Change the background of the preview"
+                >
+                  <Icons icon="photo" />
+                </IconButton>
+              </WithTooltip>
+            </Fragment>
+          ) : null;
+        }}
+      </Consumer>
+    );
   }
 }

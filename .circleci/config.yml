@@ -200,6 +200,10 @@ jobs:
           command: |
             cd examples-native/crna-kitchen-sink
             yarn storybook --smoke-test
+      - run:
+          name: Publish React-Native-App example
+          command: |
+            ./scripts/crna-publish.js
   frontpage:
     <<: *defaults
     steps:
@@ -264,7 +268,7 @@ jobs:
           at: .
       - run:
           name: Test
-          command: yarn test --coverage --runInBand --core
+          command: yarn test --coverage --w2 --core
       - persist_to_workspace:
           root: .
           paths:

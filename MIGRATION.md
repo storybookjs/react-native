@@ -1,5 +1,7 @@
 # Migration
 
+- [From version 4.0.x to 5.1.x](#from-version-40x-to-51x)
+  - [React native server](#react-native-server)
 - [From version 5.0.1 to 5.0.2](#from-version-501-to-502)
   - [Deprecate webpack extend mode](#deprecate-webpack-extend-mode)
 - [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
@@ -51,6 +53,29 @@
   - [Packages renaming](#packages-renaming)
   - [Deprecated embedded addons](#deprecated-embedded-addons)
 
+## From version 4.1.x to 5.1.x
+
+### React native server
+
+Storybook 5.1 contains a major overhaul of `@storybook/react-native` as compared to 4.1 (we didn't ship a version of RN in 5.0 due to timing constraints). Storybook for RN consists of an an UI for browsing stories on-device or in a simulator, and an optional webserver which can also be used to browse stories and web addons.
+
+5.1 refactors both pieces:
+
+- `@storybook/react-native` no longer depends on the Storybook UI and only contains on-device functionality
+- `@storybook/react-native-server` is a new package for those who wish to run a web server alongside their device UI
+
+In addition, both packages share more code with the rest of Storybook, which will reduce bugs and increase compatibility (e.g. with the latest versions of babel, etc.).
+
+As a user with an existing 4.1.x RN setup, no migration should be necessary to your RN app. Simply upgrading the library should be enough.
+
+If you wish to run the optional web server, you will need to do the following migration:
+
+- Add `babel-loader` as a dev dependency
+- Add `@storybook/react-native-server` as a dev dependency
+- Change your "storybook" `package.json` script from `storybook start [-p ...]` to `start-storybook [-p ...]`
+
+And with that you should be good to go!
+
 ## From version 5.0.1 to 5.0.2
 
 ### Deprecate webpack extend mode
@@ -77,9 +102,9 @@ In full control mode, you need modify the default config to have the rules of yo
 
 ```js
 module.exports = ({ config }) => ({
-  ...config
+  ...config,
   module: {
-    ...config.module
+    ...config.module,
     rules: [
       /* your own rules "..." here and/or some subset of config.module.rules */
     ]
@@ -171,6 +196,7 @@ addParameters({
     }),
     isFullscreen: false,
     panelPosition: 'right',
+    isToolshown: true,
   },
 });
 ```
@@ -186,8 +212,11 @@ Here is the mapping from old options to new:
 | showAddonPanel    | showPanel        |
 | addonPanelInRight | panelPosition    |
 | showSearchBox     |                  |
+|                   | isToolshown      |
 
 Storybook v5 removes the search dialog box in favor of a quick search in the navigation view, so `showSearchBox` has been removed.
+
+Storybook v5 introduce a new tool bar above the story view and you can show\hide it with the new `isToolshown` option. 
 
 ## Individual story decorators
 
@@ -349,7 +378,7 @@ The structure of `storyId` is a slugified `<selectedKind>--<selectedStory>` (slu
 
 ## Rename of the `--secure` cli parameter to `--https`
 
-Storybook for React Native's start commands & the Web versions' start command were a bit different, for no reason. 
+Storybook for React Native's start commands & the Web versions' start command were a bit different, for no reason.
 We've changed the start command for Reactnative to match the other.
 
 This means that when you previously used the `--secure` flag like so:

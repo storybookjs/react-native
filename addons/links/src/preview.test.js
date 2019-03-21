@@ -1,32 +1,14 @@
 import addons from '@storybook/addons';
 import { SELECT_STORY } from '@storybook/core-events';
 import { linkTo, hrefTo } from './preview';
-import EVENTS from './constants';
 
 jest.mock('@storybook/addons');
 
 export const mockChannel = () => {
-  let cb;
   return {
-    emit(id, payload) {
-      if (id === EVENTS.REQUEST) {
-        cb(
-          Object.values(payload)
-            .map(item => item.toString().toLowerCase())
-            .join('-')
-        );
-      }
-    },
-    on(id, callback) {
-      if (id === EVENTS.RECEIVE) {
-        cb = callback;
-      }
-    },
-    once(id, callback) {
-      if (id === EVENTS.RECEIVE) {
-        cb = callback;
-      }
-    },
+    emit: jest.fn(),
+    on: jest.fn(),
+    once: jest.fn(),
   };
 };
 
@@ -64,11 +46,8 @@ describe('preview', () => {
 
   describe('hrefTo()', () => {
     it('should return promise resolved with story href', async () => {
-      const channel = mockChannel();
-      addons.getChannel.mockReturnValue(channel);
-
       const href = await hrefTo('kind', 'name');
-      expect(href).toContain('?id=kind-name');
+      expect(href).toContain('?id=kind--name');
     });
   });
 });

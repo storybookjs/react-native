@@ -2,7 +2,7 @@
 
 exports[`LinkTo render should render a link 1`] = `
 <a
-  href="http://localhost/?id=foo-bar"
+  href="http://localhost/?id=foo--bar"
   onClick={[Function]}
 />
 `;

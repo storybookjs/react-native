@@ -7301,7 +7301,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
                 placeholder="Type keys"
                 readonly=""
                 spellcheck="false"
-                value="⌃ ⇧​ ,"
+                value="CTRL ⇧​ ,"
               />
               <svg
                 class="emotion-16"
@@ -7732,6 +7732,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -7750,6 +7751,8 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -8092,6 +8095,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8110,6 +8114,8 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -8869,6 +8875,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8887,6 +8894,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -9354,6 +9363,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -9372,6 +9382,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -10140,6 +10152,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -10158,6 +10171,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -10251,6 +10266,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
 
 .emotion-0 {
   width: auto;
+  height: 100%;
   display: block;
   max-width: 100%;
 }
@@ -10275,6 +10291,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -10293,6 +10310,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -10386,6 +10405,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
 
 .emotion-0 {
   width: auto;
+  height: 100%;
   display: block;
   max-width: 100%;
 }
@@ -10454,6 +10474,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -10472,6 +10493,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
 
 .emotion-0 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -10583,6 +10606,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -10601,6 +10625,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
 
 .emotion-0 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -10752,6 +10778,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading longText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -10874,6 +10901,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading longText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11030,6 +11058,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11048,6 +11077,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -11176,6 +11207,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11194,6 +11226,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -11407,6 +11441,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading onlyText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11529,6 +11564,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading onlyText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11685,6 +11721,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11703,6 +11740,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -11820,6 +11859,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11838,6 +11878,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -12040,6 +12082,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standardNoLink 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -12168,6 +12211,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standardNoLink 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;

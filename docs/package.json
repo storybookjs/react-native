@@ -17,10 +17,10 @@
     "storybook": "start-storybook -p 9009 -s src/pages"
   },
   "dependencies": {
-    "@storybook/addon-actions": "5.1.0-alpha.6",
-    "@storybook/addon-links": "5.1.0-alpha.6",
-    "@storybook/addons": "5.1.0-alpha.6",
-    "@storybook/react": "5.1.0-alpha.6",
+    "@storybook/addon-actions": "5.1.0-alpha.11",
+    "@storybook/addon-links": "5.1.0-alpha.11",
+    "@storybook/addons": "5.1.0-alpha.11",
+    "@storybook/react": "5.1.0-alpha.11",
     "babel-loader": "^6.4.1",
     "babel-plugin-styled-components": "^1.10.0",
     "bootstrap": "^4.3.1",
