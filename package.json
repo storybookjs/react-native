@@ -143,7 +143,7 @@
     "jest-environment-jsdom-thirteen": "^1.0.0",
     "jest-enzyme": "^7.0.2",
     "jest-image-snapshot": "^2.6.0",
-    "jest-jasmine2": "^24.1.0",
+    "jest-jasmine2": "^24.5.0",
     "jest-preset-angular": "^6.0.1",
     "jest-raw-loader": "^1.0.1",
     "jest-teamcity-reporter": "^0.9.0",
