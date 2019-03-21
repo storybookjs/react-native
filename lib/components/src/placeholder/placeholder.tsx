@@ -1,5 +1,4 @@
-import React, { Children } from 'react';
-import PropTypes from 'prop-types';
+import React, { Children, FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 
 const Title = styled.div`
@@ -15,7 +14,7 @@ const Message = styled.div`
   font-size: ${props => props.theme.typography.size.s2 - 1}px;
 `;
 
-export const Placeholder = ({ children, ...props }: any) => {
+export const Placeholder: FunctionComponent = ({ children, ...props }) => {
   const [title, desc] = Children.toArray(children);
   return (
     <Message {...props}>
@@ -24,9 +23,3 @@ export const Placeholder = ({ children, ...props }: any) => {
     </Message>
   );
 };
-
-Placeholder.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-Placeholder.defaultProps = {};
