@@ -1,4 +1,4 @@
-import React, { Children, Component, Fragment } from 'react';
+import React, { Children, Component, Fragment, FunctionComponent, MouseEvent, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 
@@ -6,8 +6,13 @@ import { Placeholder } from '../placeholder/placeholder';
 import { FlexBar } from '../bar/bar';
 import { TabButton } from '../bar/button';
 
-const Wrapper = styled.div(
-  ({ theme, bordered }: any) =>
+interface WrapperProps {
+  bordered?: boolean;
+  absolute?: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>(
+  ({ theme, bordered }) =>
     bordered
       ? {
           backgroundClip: 'padding-box',
@@ -16,7 +21,7 @@ const Wrapper = styled.div(
           overflow: 'hidden',
         }
       : {},
-  ({ absolute }: any) =>
+  ({ absolute }) =>
     absolute
       ? {
           width: '100%',
@@ -38,7 +43,11 @@ export const TabBar = styled.div({
   },
 });
 
-const Content = styled.div(
+interface ContentProps {
+  absolute?: boolean;
+}
+
+const Content = styled.div<ContentProps>(
   {
     display: 'block',
     position: 'relative',
@@ -46,7 +55,7 @@ const Content = styled.div(
   ({ theme }) => ({
     fontSize: theme.typography.size.s2 - 1,
   }),
-  ({ absolute }: any) =>
+  ({ absolute }) =>
     absolute
       ? {
           height: 'calc(100% - 40px)',
@@ -70,21 +79,23 @@ const Content = styled.div(
       : {}
 );
 
-const VisuallyHidden = styled.div(({ active }: any) =>
+interface VisuallyHiddenProps {
+  active?: boolean;
+}
+
+const VisuallyHidden = styled.div<VisuallyHiddenProps>(({ active }) =>
   active ? { display: 'block' } : { display: 'none' }
 );
-export const TabWrapper = ({ active, render, children }: any) => (
+
+interface TabWrapperProps {
+  active: boolean;
+  render?: () => JSX.Element;
+  children?: ReactNode;
+}
+
+export const TabWrapper: FunctionComponent<TabWrapperProps> = ({ active, render, children }) => (
   <VisuallyHidden active={active}>{render ? render() : children}</VisuallyHidden>
 );
-TabWrapper.propTypes = {
-  active: PropTypes.bool.isRequired,
-  render: PropTypes.func,
-  children: PropTypes.node,
-};
-TabWrapper.defaultProps = {
-  render: undefined,
-  children: undefined,
-};
 
 export const panelProps = {
   active: PropTypes.bool,
@@ -109,8 +120,20 @@ const childrenToList = (children: any, selected: string) =>
     };
   });
 
-export const Tabs = React.memo(
-  ({ children, selected, actions, absolute, bordered, tools, id: htmlId }: any) => {
+interface TabsProps {
+  id?: string;
+  children?: ReactNode;
+  tools?: ReactNode;
+  selected?: string;
+  actions?: {
+    onSelect: (id: string) => void;
+  };
+  absolute?: boolean;
+  bordered?: boolean;
+}
+
+export const Tabs = React.memo<TabsProps>(
+  ({ children, selected, actions, absolute, bordered, tools, id: htmlId }: TabsProps) => {
     const list = childrenToList(children, selected);
 
     return list.length ? (
@@ -122,7 +145,10 @@ export const Tabs = React.memo(
                 type="button"
                 key={id}
                 active={active}
-                onClick={(e: any) => e.preventDefault() || actions.onSelect(id)}
+                onClick={(e: MouseEvent) => {
+                  e.preventDefault();
+                  actions.onSelect(id);
+                }}
                 role="tab"
               >
                 {typeof title === 'function' ? title() : title}
@@ -143,17 +169,6 @@ export const Tabs = React.memo(
   }
 );
 Tabs.displayName = 'Tabs';
-(Tabs as any).propTypes = {
-  id: PropTypes.string,
-  children: PropTypes.node,
-  tools: PropTypes.node,
-  selected: PropTypes.string,
-  actions: PropTypes.shape({
-    onSelect: PropTypes.func.isRequired,
-  }).isRequired,
-  absolute: PropTypes.bool,
-  bordered: PropTypes.bool,
-};
 (Tabs as any).defaultProps = {
   id: null,
   children: null,
@@ -163,23 +178,28 @@ Tabs.displayName = 'Tabs';
   bordered: false,
 };
 
-// eslint-disable-next-line react/no-multi-comp
-export class TabsState extends Component<any, any> {
-  static propTypes = {
-    children: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.node, PropTypes.func])),
-    initial: PropTypes.string,
-    absolute: PropTypes.bool,
-    bordered: PropTypes.bool,
-  };
+type FuncChilden = () => void;
 
-  static defaultProps = {
-    children: [] as any[],
-    initial: null as any,
+interface TabsStateProps {
+  children: Array<ReactNode | FuncChilden>;
+  initial: string;
+  absolute: boolean;
+  bordered: boolean;
+}
+
+interface TabsStateState {
+  selected: string;
+}
+
+export class TabsState extends Component<TabsStateProps, TabsStateState> {
+  static defaultProps: TabsStateProps = {
+    children: [],
+    initial: null,
     absolute: false,
     bordered: false,
   };
 
-  constructor(props: any) {
+  constructor(props: TabsStateProps) {
     super(props);
 
     this.state = {
@@ -196,7 +216,7 @@ export class TabsState extends Component<any, any> {
         absolute={absolute}
         selected={selected}
         actions={{
-          onSelect: (id: any) => this.setState({ selected: id }),
+          onSelect: id => this.setState({ selected: id }),
         }}
       >
         {children}

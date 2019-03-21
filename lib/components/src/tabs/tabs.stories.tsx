@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Key } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { logger } from '@storybook/client-logger';
 
-import { Tabs, TabsState, panelProps, TabWrapper } from './tabs';
+import { Tabs, TabsState, TabWrapper } from './tabs';
 
 const colours = Array.from(new Array(15), (val, index) => index).map(i =>
   Math.floor((1 / 15) * i * 16777215)
@@ -11,7 +11,14 @@ const colours = Array.from(new Array(15), (val, index) => index).map(i =>
     .padStart(6, '0')
 );
 
-function fibonacci(num: any, memo = {} as any) {
+interface FibonacciMap {
+  [key: string]: number;
+}
+
+function fibonacci(num: number, memo?: FibonacciMap): number {
+  if (!memo) {
+    memo = {};
+  }
   if (memo[num]) {
     return memo[num];
   }
@@ -19,16 +26,22 @@ function fibonacci(num: any, memo = {} as any) {
     return 1;
   }
 
-  // eslint-disable-next-line no-param-reassign
   memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
   return memo[num];
 }
 
-const panels = {
+interface Panels {
+  [key: string]: {
+    title: string;
+    render: ({ active, key }: { active: boolean; key: Key }) => JSX.Element;
+  };
+}
+
+const panels: Panels = {
   test1: {
     title: 'Tab title #1',
     // eslint-disable-next-line react/prop-types
-    render: ({ active, key }: any) =>
+    render: ({ active, key }) =>
       active ? (
         <div id="test1" key={key}>
           CONTENT 1
@@ -38,7 +51,7 @@ const panels = {
   test2: {
     title: 'Tab title #2',
     // eslint-disable-next-line react/prop-types
-    render: ({ active, key }: any) => (
+    render: ({ active, key }) => (
       <div
         key={key}
         id="test2"
@@ -51,7 +64,7 @@ const panels = {
   test3: {
     title: 'Tab with scroll!',
     // eslint-disable-next-line react/prop-types
-    render: ({ active, key }: any) =>
+    render: ({ active, key }) =>
       active ? (
         <div id="test3" key={key}>
           {colours.map((colour, i) => (
@@ -69,7 +82,7 @@ const panels = {
   test4: {
     title: 'Tab title #4',
     // eslint-disable-next-line react/prop-types
-    render: ({ active, key }: any) =>
+    render: ({ active, key }) =>
       active ? (
         <div key={key} id="test4">
           CONTENT 4
@@ -79,7 +92,7 @@ const panels = {
   test5: {
     title: 'Tab title #5',
     // eslint-disable-next-line react/prop-types
-    render: ({ active, key }: any) =>
+    render: ({ active, key }) =>
       active ? (
         <div key={key} id="test5">
           CONTENT 5
@@ -89,17 +102,11 @@ const panels = {
   test6: {
     title: 'Tab title #6',
     // eslint-disable-next-line react/prop-types
-    render: ({ active, key }: any) => (
+    render: ({ active, key }) => (
       <TabWrapper key={key} active={active} render={() => <div>CONTENT 6</div>} />
     ),
   },
 };
-(panels.test1 as any).propTypes = panelProps;
-(panels.test2 as any).propTypes = panelProps;
-(panels.test3 as any).propTypes = panelProps;
-(panels.test4 as any).propTypes = panelProps;
-(panels.test5 as any).propTypes = panelProps;
-(panels.test6 as any).propTypes = panelProps;
 
 const onSelect = action('onSelect');
 
@@ -125,7 +132,9 @@ storiesOf('Basics|Tabs', module)
   .add('stateful - static', () => (
     <TabsState initial="test2">
       <div id="test1" title="With a function">
-        {({ active, selected }: any) => (active ? <div>{selected} is selected</div> : null)}
+        {({ active, selected }: { active: boolean; selected: string }) =>
+          active ? <div>{selected} is selected</div> : null
+        }
       </div>
       <div id="test2" title="With markup">
         <div>test2 is always active (but visually hidden)</div>
