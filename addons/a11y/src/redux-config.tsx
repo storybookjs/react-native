@@ -8,7 +8,7 @@ export function addElement(payload: any) {
   return { type: ADD_ELEMENT, payload };
 }
 
-// clear elements is a function to remove elements from the map
+// clear elements is a function to remove elements from the map and reset elements to their original state
 export function clearElements(payload: any) {
   return { type: CLEAR_ELEMENTS, payload };
 }
@@ -29,7 +29,6 @@ function rootReducer(state = initialState, action: any) {
   }
   return state;
 }
-
 
 // store
 const store = createStore(rootReducer);
