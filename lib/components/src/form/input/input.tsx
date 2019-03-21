@@ -120,7 +120,7 @@ export const Textarea = styled(TextareaAutoResize)(
 Textarea.displayName = 'Textarea';
 
 export const Button = withProps({ tertiary: true, small: true, inForm: true })(
-  styled(StyledButton)(sizes, validation, {
+  styled(StyledButton)(sizes as any, validation, {
     // Custom styling for color widget nested in buttons
     userSelect: 'none',
     overflow: 'visible',
