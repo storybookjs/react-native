@@ -1,6 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { styled, css } from '@storybook/theming';
+import React, { FunctionComponent } from 'react';
+import { styled, css, Theme } from '@storybook/theming';
 import { darken } from 'polished';
 
 import Icons from '../../icon/icon';
@@ -8,17 +7,25 @@ import Icons from '../../icon/icon';
 // Cmd/Ctrl/Shift/Alt + Click should trigger default browser behaviour. Same applies to non-left clicks
 const LEFT_BUTTON = 0;
 
-const isPlainLeftClick = (e: any) =>
+const isPlainLeftClick = (e: React.MouseEvent) =>
   e.button === LEFT_BUTTON && !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey;
 
-const cancelled = (e: any, cb = (_e: any) => {}) => {
+const cancelled = (e: React.MouseEvent, cb: (_e: React.MouseEvent) => void) => {
   if (isPlainLeftClick(e)) {
     e.preventDefault();
     cb(e);
   }
 };
 
-const linkStyles = (props: any) => css`
+interface LinkStylesProps {
+  secondary?: boolean;
+  tertiary?: boolean;
+  nochrome?: boolean;
+  inverse?: boolean;
+  isButton?: boolean;
+}
+
+const linkStyles = (props: LinkStylesProps & { theme: Theme }) => css`
   display: inline-block;
   transition: all 150ms ease-out;
   text-decoration: none;
@@ -140,8 +147,13 @@ const linkStyles = (props: any) => css`
     `};
 `;
 
+interface LinkInnerProps {
+  withArrow?: boolean;
+  containsIcon?: boolean;
+}
+
 const LinkInner = styled.span`
-  ${(props: any) =>
+  ${(props: LinkInnerProps) =>
     props.withArrow &&
     css`
       > svg:last-of-type {
@@ -168,49 +180,45 @@ const LinkInner = styled.span`
     `};
 `;
 
-const A = styled.a`
+interface AProps {
+  href?: string;
+}
+
+const A = styled.a<AProps>`
   ${linkStyles};
 `;
 
-A.propTypes = {
-  children: PropTypes.node.isRequired,
-  href: PropTypes.string,
-};
-
-function Link({ cancel, children, onClick, withArrow, containsIcon, className, ...rest }: any) {
+const Link: FunctionComponent<LinkProps> = ({
+  cancel,
+  children,
+  onClick,
+  withArrow,
+  containsIcon,
+  className,
+  ...rest
+}) => {
   return (
-    <A
-      {...rest}
-      onClick={cancel ? (e: any) => cancelled(e, onClick) : onClick}
-      className={className}
-    >
+    <A {...rest} onClick={cancel ? e => cancelled(e, onClick) : onClick} className={className}>
       <LinkInner withArrow={withArrow} containsIcon={containsIcon}>
         {children}
         {withArrow && <Icons icon="arrowright" />}
       </LinkInner>
     </A>
   );
+};
+
+interface LinkProps extends LinkInnerProps, LinkStylesProps {
+  cancel?: boolean;
+  className?: string;
+  style?: object;
+  onClick?: (e: React.MouseEvent) => void;
+  href?: string;
 }
 
-Link.propTypes = {
-  cancel: PropTypes.bool,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  children: PropTypes.node,
-  onClick: PropTypes.func,
-  withArrow: PropTypes.bool,
-  containsIcon: PropTypes.bool,
-  secondary: PropTypes.bool,
-  tertiary: PropTypes.bool,
-  nochrome: PropTypes.bool,
-  inverse: PropTypes.bool,
-  href: PropTypes.string,
-};
 Link.defaultProps = {
   cancel: true,
   className: undefined,
   style: undefined,
-  children: null,
   onClick: () => {},
   withArrow: false,
   containsIcon: false,
