@@ -10,52 +10,9 @@ import { RuleType } from '../A11YPanel';
 import { addElement } from '../../redux-config';
 import { IFRAME } from '../../constants';
 
-const Switch = styled.label({
-  position: 'relative',
-  display: 'inline-block',
-  width: '40px',
-  height: '20px',
-  marginLeft: '10px',
-  marginBottom: '-5px',
-});
-
 const Checkbox = styled.input({
-  display: 'none',
+  cursor: 'pointer',
 });
-
-const Slider = styled.span(
-  {
-    position: 'absolute',
-    cursor: 'pointer',
-    top: '0',
-    left: '0',
-    right: '0',
-    bottom: '0',
-    webkitTransition: '0.4s',
-    transition: '0.4s',
-    borderRadius: '34px',
-    '&:before': {
-      position: 'absolute',
-      content: '""',
-      height: '15px',
-      width: '15px',
-      left: '4px',
-      bottom: '3px',
-      backgroundColor: '#fff',
-      webkitTransition: '0.4s',
-      transition: '0.4s',
-      borderRadius: '50%',
-    },
-  },
-  ({ checked }: { checked: boolean | null }) => ({
-    backgroundColor: checked === true ? '#66BF3C' : '#DDDDDD', // positive and medium
-  }),
-  ({ checked }: { checked: boolean | null }) => ({
-    '&:before': {
-      transform: checked === true ? 'translateX(17px)' : '',
-    },
-  })
-);
 
 export class HighlightedElementData {
   ruleTypeState: RuleType;
@@ -93,6 +50,7 @@ interface ToggleProps {
   addElement?: (data: any) => void;
   highlightedElementsMap?: Map<HTMLElement, HighlightedElementData>;
   isToggledOn?: boolean;
+  toggleID?: string;
 }
 
 function mapDispatchToProps(dispatch: any) {
@@ -178,10 +136,7 @@ class HighlightToggle extends Component<ToggleProps, {}> {
 
   render() {
     return (
-      <Switch>
-        <Checkbox type="checkbox" onChange={() => this.onToggle()} checked={this.props.isToggledOn}/>
-        <Slider checked={this.props.isToggledOn} />
-      </Switch>
+      <Checkbox type="checkbox" id={this.props.toggleID} disabled={this.props.elementsToHighlight.length === 0} onChange={() => this.onToggle()} checked={this.props.isToggledOn}/>
     );
   }
 }
