@@ -7,6 +7,7 @@ import DocgenButton from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
 import ForwardedRefButton from '../components/ForwardedRefButton';
+import ForwardedRefButtonWDisplayName from '../components/ForwardedRefButtonWDisplayName';
 import { NamedExportButton } from '../components/NamedExportButton';
 import TableComponent from '../components/TableComponent';
 import externalMdDocs from './addon-info-resources/EXAMPLE.md';
@@ -319,6 +320,9 @@ storiesOf('Addons|Info/ForwardRef', module)
   .addDecorator(withInfo)
   .add('Displays forwarded ref components correctly', () => (
     <ForwardedRefButton label="Forwarded Ref Button" />
+  ))
+  .add('Uses forwardRef displayName if available', () => (
+    <ForwardedRefButtonWDisplayName label="Forwarded Ref Button w/ Display Name" />
   ));
 
 storiesOf('Addons|Info/deprecated', module).add(
