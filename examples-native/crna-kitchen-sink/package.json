@@ -31,7 +31,7 @@
     "@storybook/react-native": "5.1.0-alpha.11",
     "babel-loader": "^8.0.4",
     "babel-plugin-module-resolver": "^3.2.0",
-    "babel-preset-expo": "^5.0.0",
+    "babel-preset-expo": "^5.1.1",
     "core-js": "^2.5.7",
     "expo-cli": "^2.11.9",
     "jest-expo": "^32.0.0",
