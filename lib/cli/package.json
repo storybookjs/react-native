@@ -67,6 +67,7 @@
     "@storybook/react": "5.1.0-alpha.12",
     "@storybook/react-native": "5.1.0-alpha.12",
     "@storybook/riot": "5.1.0-alpha.12",
+    "@storybook/svelte": "5.1.0-alpha.12",
     "@storybook/ui": "5.1.0-alpha.12",
     "@storybook/vue": "5.1.0-alpha.12"
   },
