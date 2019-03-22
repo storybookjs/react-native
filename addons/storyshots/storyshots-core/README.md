@@ -38,7 +38,7 @@ Sometimes it's useful to configure Storybook with Webpack's require.context feat
 ```js
 import { configure } from '@storybook/react';
 
-const req = require.context('../stories', true, /.stories.js$/); // <- import all the stories at once
+const req = require.context('../stories', true, /\.stories\.js$/); // <- import all the stories at once
 
 function loadStories() {
   req.keys().forEach(filename => req(filename));
@@ -101,8 +101,8 @@ Now, inside of your Storybook config file, simply import the macro and run it in
 ```javascript
 import requireContext from 'require-context.macro';
 
-// const req = require.context('../stories', true, /.stories.js$/); <-- replaced
-const req = requireContext('../stories', true, /.stories.js$/);
+// const req = require.context('../stories', true, /\.stories\.js$/); <-- replaced
+const req = requireContext('../stories', true, /\.stories\.js$/);
 ```
 
 ### Configure Jest for React
@@ -491,7 +491,7 @@ initStoryshots({
 ```
 
 If you are using enzyme, you need to make sure jest knows how to serialize rendered components.
-For that, you can pass an enzyme-compatible snapshotSerializer (like [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json), [jest-serializer-enzyme](https://github.com/rogeliog/jest-serializer-enzyme) etc.) with the `snapshotSerializer` option (see below). 
+For that, you can pass an enzyme-compatible snapshotSerializer (like [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json), [jest-serializer-enzyme](https://github.com/rogeliog/jest-serializer-enzyme) etc.) with the `snapshotSerializer` option (see below).
 
 
 ### `snapshotSerializers`

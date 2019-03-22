@@ -71,6 +71,11 @@ addParameters({
      */
     enableShortcuts: true,
     /**
+     * show/hide tool bar
+     * @type {Boolean}
+     */
+    isToolshown: true,
+    /**
      * theme storybook, see link below
      */
     theme: undefined,

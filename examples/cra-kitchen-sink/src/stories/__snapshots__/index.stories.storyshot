@@ -28,7 +28,7 @@ exports[`Storyshots Button with new info 1`] = `
   </button>
   <div
     class="info__overlay"
-    style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
       class="info__close-button"
@@ -39,7 +39,7 @@ exports[`Storyshots Button with new info 1`] = `
     </button>
     <div>
       <div
-        style="font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif;color:black;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
