@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 
@@ -31,7 +31,17 @@ const MessageWrapper = styled.div`
   box-sizing: border-box;
 `;
 
-function TooltipMessage({ title, desc, links }: any) {
+export interface TooltipMessageProps {
+  title?: ReactNode;
+  desc?: ReactNode;
+  links?: Array<{
+    title: string;
+    href?: string;
+    onClick?: () => void;
+  }>;
+}
+
+const TooltipMessage: FunctionComponent<TooltipMessageProps> = ({ title, desc, links }) => {
   return (
     <MessageWrapper>
       <Message>
@@ -40,7 +50,7 @@ function TooltipMessage({ title, desc, links }: any) {
       </Message>
       {links && (
         <Links>
-          {links.map(({ title: linkTitle, ...other }: any) => (
+          {links.map(({ title: linkTitle, ...other }) => (
             <Link {...other} key={linkTitle}>
               {linkTitle}
             </Link>
@@ -49,18 +59,6 @@ function TooltipMessage({ title, desc, links }: any) {
       )}
     </MessageWrapper>
   );
-}
-
-TooltipMessage.propTypes = {
-  title: PropTypes.node,
-  desc: PropTypes.node,
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      href: PropTypes.string,
-      onClick: PropTypes.node,
-    })
-  ),
 };
 
 TooltipMessage.defaultProps = {

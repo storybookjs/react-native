@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 import { storiesOf } from '@storybook/react';
 import { styled } from '@storybook/theming';
 
@@ -29,17 +28,17 @@ const Trigger = styled.div`
   color: white;
 `;
 
-const Tooltip = ({ onHide }: any) => (
+interface TooltipProps {
+  onHide?: () => void;
+}
+
+const Tooltip: FunctionComponent<TooltipProps> = ({ onHide }) => (
   <TooltipMessage
     title="Lorem ipsum dolor sit"
     desc="Amet consectatur vestibulum concet durum politu coret weirom"
     links={[{ title: 'Continue', onClick: onHide }]}
   />
 );
-
-Tooltip.propTypes = {
-  onHide: PropTypes.func,
-};
 
 Tooltip.defaultProps = {
   onHide: null,

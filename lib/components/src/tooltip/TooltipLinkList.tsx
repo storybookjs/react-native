@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent, Key, ReactNode } from 'react';
 import { styled } from '@storybook/theming';
 
-import ListItem from './ListItem';
+import ListItem, { LinkWrapperType } from './ListItem';
 
 const List = styled.div(
   {
@@ -14,7 +13,21 @@ const List = styled.div(
   })
 );
 
-const TooltipLinkList = ({ links, LinkWrapper }: any) => (
+export interface Link {
+  id: string;
+  title?: ReactNode;
+  active?: boolean;
+  href?: string | object;
+  onClick?: () => void;
+  isGatsby?: boolean;
+}
+
+export interface TooltipLinkListProps {
+  links: Link[];
+  LinkWrapper: LinkWrapperType;
+}
+
+const TooltipLinkList: FunctionComponent<TooltipLinkListProps> = ({ links, LinkWrapper }) => (
   <List>
     {links.map(({ id, title, href, onClick, active, isGatsby, ...props }: any) => (
       <ListItem
@@ -29,18 +42,6 @@ const TooltipLinkList = ({ links, LinkWrapper }: any) => (
     ))}
   </List>
 );
-
-TooltipLinkList.propTypes = {
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.node.isRequired,
-      href: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
-      onClick: PropTypes.func,
-      active: PropTypes.bool,
-    }).isRequired
-  ).isRequired,
-  LinkWrapper: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.func]),
-};
 
 TooltipLinkList.defaultProps = {
   LinkWrapper: ListItem.defaultProps.LinkWrapper,

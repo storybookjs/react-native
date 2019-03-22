@@ -1,22 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent, ReactNode } from 'react';
 import { styled } from '@storybook/theming';
 import memoize from 'memoizerific';
 import { transparentize } from 'polished';
 
-const Title = styled.span(
-  ({ theme }: any) => ({
+interface TitleProps {
+  active?: boolean;
+  loading?: boolean;
+  disabled?: boolean;
+}
+
+const Title = styled.span<TitleProps>(
+  ({ theme }) => ({
     color: theme.color.defaultText,
-    fontWeight: theme.typography.weight.normal,
+    // Previously was theme.typography.weight.normal but this weight does not exists in Theme
+    fontWeight: theme.typography.weight.regular,
   }),
-  ({ active, theme }: any) =>
+  ({ active, theme }) =>
     active
       ? {
           color: theme.color.primary,
           fontWeight: theme.typography.weight.bold,
         }
       : {},
-  ({ loading, theme }: any) =>
+  ({ loading, theme }) =>
     loading
       ? {
           display: 'inline-block',
@@ -24,15 +30,19 @@ const Title = styled.span(
           ...theme.animation.inlineGlow,
         }
       : {},
-  ({ disabled, theme }: any) =>
+  ({ disabled, theme }) =>
     disabled
       ? {
           color: transparentize(0.7, theme.color.defaultText),
         }
-      : {}
+      : {},
 );
 
-const Right = styled.span(
+interface RightProps {
+  active?: boolean;
+}
+
+const Right = styled.span<RightProps>(
   {
     '& svg': {
       transition: 'all 200ms ease-out',
@@ -46,7 +56,7 @@ const Right = styled.span(
       fill: 'inherit',
     },
   },
-  ({ active, theme }: any) =>
+  ({ active, theme }) =>
     active
       ? {
           '& svg': {
@@ -56,7 +66,7 @@ const Right = styled.span(
             fill: theme.color.primary,
           },
         }
-      : {}
+      : {},
 );
 
 const Center = styled.span({
@@ -69,26 +79,35 @@ const Center = styled.span({
   },
 });
 
-const CenterText = styled.span(
+interface CenterTextProps {
+  active?: boolean;
+  disabled?: boolean;
+}
+
+const CenterText = styled.span<CenterTextProps>(
   {
     flex: 1,
     textAlign: 'center',
   },
-  ({ active, theme }: any) =>
+  ({ active, theme }) =>
     active
       ? {
           color: theme.color.primary,
         }
       : {},
-  ({ theme, disabled }: any) =>
+  ({ theme, disabled }) =>
     disabled
       ? {
           color: theme.color.mediumdark,
         }
-      : {}
+      : {},
 );
 
-const Left = styled.span(({ active, theme }: any) =>
+interface LeftProps {
+  active?: boolean;
+}
+
+const Left = styled.span<LeftProps>(({ active, theme }) =>
   active
     ? {
         '& svg': {
@@ -98,10 +117,14 @@ const Left = styled.span(({ active, theme }: any) =>
           fill: theme.color.primary,
         },
       }
-    : {}
+    : {},
 );
 
-const Item = styled.a(
+interface ItemProps {
+  disabled?: boolean;
+}
+
+const Item = styled.a<ItemProps>(
   ({ theme }) => ({
     fontSize: theme.typography.size.s1,
     transition: 'all 150ms ease-out',
@@ -126,12 +149,12 @@ const Item = styled.a(
       opacity: 1,
     },
   }),
-  ({ disabled }: any) =>
+  ({ disabled }) =>
     disabled
       ? {
           cursor: 'not-allowed',
         }
-      : {}
+      : {},
 );
 
 const getItemProps = memoize(100)((onClick, href, LinkWrapper) => {
@@ -156,7 +179,23 @@ const getItemProps = memoize(100)((onClick, href, LinkWrapper) => {
   return result;
 });
 
-export default function ListItem({
+
+export type LinkWrapperType = FunctionComponent;
+
+export interface ListItemProps {
+  loading?: boolean;
+  left?: ReactNode;
+  title?: ReactNode;
+  center?: ReactNode;
+  right?: ReactNode;
+  active?: boolean;
+  disabled?: boolean;
+  href?: string | object;
+  LinkWrapper?: LinkWrapperType;
+  onClick?: () => void;
+}
+
+const ListItem: FunctionComponent<ListItemProps> = ({
   loading,
   left,
   title,
@@ -168,7 +207,7 @@ export default function ListItem({
   onClick,
   LinkWrapper,
   ...rest
-}: any) {
+}) => {
   const itemProps = getItemProps(onClick, href, LinkWrapper);
   const commonProps = { active, disabled, loading };
 
@@ -184,19 +223,6 @@ export default function ListItem({
       {right && <Right {...commonProps}>{right}</Right>}
     </Item>
   );
-}
-
-ListItem.propTypes = {
-  loading: PropTypes.bool,
-  left: PropTypes.node,
-  title: PropTypes.node,
-  center: PropTypes.node,
-  right: PropTypes.node,
-  active: PropTypes.bool,
-  disabled: PropTypes.bool,
-  href: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
-  LinkWrapper: PropTypes.func,
-  onClick: PropTypes.func,
 };
 
 ListItem.defaultProps = {
@@ -211,3 +237,5 @@ ListItem.defaultProps = {
   LinkWrapper: null,
   onClick: null,
 };
+
+export default ListItem;

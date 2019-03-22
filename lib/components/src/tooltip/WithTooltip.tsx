@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent, ReactNode } from 'react';
 import { styled } from '@storybook/theming';
 import { logger } from '@storybook/client-logger';
 import { withState, lifecycle } from 'recompose';
@@ -7,20 +6,33 @@ import { document } from 'global';
 
 import TooltipTrigger from 'react-popper-tooltip';
 import Tooltip from './Tooltip';
+import { Modifiers, Placement } from 'popper.js';
 
 // A target that doesn't speak popper
-// prettier-ignore
-const TargetContainer = styled.div`
+const TargetContainer = styled.div<{ mode: string }>`
   display: inline-block;
-  cursor: ${(props: any) => props.mode === 'hover' ? 'default' : 'pointer'};
-`;
-
-const TargetSvgContainer = styled.g`
   cursor: ${props => (props.mode === 'hover' ? 'default' : 'pointer')};
 `;
 
+const TargetSvgContainer = styled.g<{ mode: string }>`
+  cursor: ${props => (props.mode === 'hover' ? 'default' : 'pointer')};
+`;
+
+interface WithTooltipPureProps {
+  svg?: boolean;
+  trigger?: 'none' | 'hover' | 'click' | 'right-click';
+  closeOnClick?: boolean;
+  placement?: Placement;
+  modifiers?: Modifiers;
+  hasChrome?: boolean;
+  tooltip: ReactNode;
+  children: ReactNode;
+  tooltipShown?: boolean;
+  onVisibilityChange?: (visibility: boolean) => void;
+}
+
 // Pure, does not bind to the body
-const WithTooltipPure = ({
+const WithTooltipPure: FunctionComponent<WithTooltipPureProps> = ({
   svg,
   trigger,
   closeOnClick,
@@ -32,7 +44,7 @@ const WithTooltipPure = ({
   tooltipShown,
   onVisibilityChange,
   ...props
-}: any) => {
+}) => {
   const Container = svg ? TargetSvgContainer : TargetContainer;
 
   return (
@@ -72,19 +84,6 @@ const WithTooltipPure = ({
   );
 };
 
-WithTooltipPure.propTypes = {
-  svg: PropTypes.bool,
-  trigger: PropTypes.string,
-  closeOnClick: PropTypes.bool,
-  placement: PropTypes.string,
-  modifiers: PropTypes.shape({}),
-  hasChrome: PropTypes.bool,
-  tooltip: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
-  children: PropTypes.node.isRequired,
-  tooltipShown: PropTypes.bool,
-  onVisibilityChange: PropTypes.func.isRequired,
-};
-
 WithTooltipPure.defaultProps = {
   svg: false,
   trigger: 'hover',
@@ -95,16 +94,16 @@ WithTooltipPure.defaultProps = {
   tooltipShown: false,
 };
 
-const WithTooltip = lifecycle({
+const WithTooltip = lifecycle<WithTooltipPureProps, {}>({
   componentDidMount() {
-    const { onVisibilityChange } = this.props as any;
+    const { onVisibilityChange } = this.props;
     const hide = () => onVisibilityChange(false);
     document.addEventListener('keydown', hide, false);
 
     // Find all iframes on the screen and bind to clicks inside them (waiting until the iframe is ready)
-    const iframes = Array.from(document.getElementsByTagName('iframe'));
-    const unbinders: any[] = [];
-    iframes.forEach((iframe: any) => {
+    const iframes: HTMLIFrameElement[] = Array.from(document.getElementsByTagName('iframe'));
+    const unbinders: Array<() => void> = [];
+    iframes.forEach(iframe => {
       const bind = () => {
         try {
           if (iframe.contentWindow.document) {

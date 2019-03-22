@@ -7473,6 +7473,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 
 .emotion-3 {
   color: #333333;
+  font-weight: 400;
 }
 
 .emotion-6 {
@@ -7560,6 +7561,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 
 .emotion-3 {
   color: #333333;
+  font-weight: 400;
 }
 
 .emotion-6 {
