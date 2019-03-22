@@ -1,3 +1,20 @@
+## 5.1.0-alpha.12 (March 22, 2019)
+
+### Bug Fixes
+
+* CLI: Fix stories regexp in config.js ([#6180](https://github.com/storybooks/storybook/pull/6180))
+* Addon-Info: Restore fonts and color styling ([#6186](https://github.com/storybooks/storybook/pull/6186))
+* Core: Add core-js as a dep to client-api ([#6209](https://github.com/storybooks/storybook/pull/6209))
+
+### Dependency Upgrades
+
+* Bump eslint-plugin-jest from 22.3.2 to 22.4.1 ([#6168](https://github.com/storybooks/storybook/pull/6168))
+* Bump ember-cli-babel from 7.5.0 to 7.6.0 ([#6165](https://github.com/storybooks/storybook/pull/6165))
+* Bump danger from 7.0.14 to 7.0.15 ([#6164](https://github.com/storybooks/storybook/pull/6164))
+* Bump babel-preset-expo from 5.0.0 to 5.1.1 ([#6167](https://github.com/storybooks/storybook/pull/6167))
+* Bump @emotion/core from 10.0.7 to 10.0.9 ([#6169](https://github.com/storybooks/storybook/pull/6169))
+* Bump marko from 4.15.4 to 4.16.2 ([#6205](https://github.com/storybooks/storybook/pull/6205))
+
 ## 5.1.0-alpha.11 (March 21, 2019)
 
 ### Features
