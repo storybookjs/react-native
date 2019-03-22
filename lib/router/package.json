@@ -1,6 +1,6 @@
 {
   "name": "@storybook/router",
-  "version": "5.1.0-alpha.6",
+  "version": "5.1.0-alpha.10",
   "description": "Core Storybook Router",
   "keywords": [
     "storybook"
@@ -16,16 +16,20 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "@storybook/theming": "5.1.0-alpha.6",
+    "@storybook/theming": "5.1.0-alpha.10",
     "core-js": "^2.6.5",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
     "qs": "^6.6.0"
+  },
+  "devDependencies": {
+    "@types/reach__router": "^1.2.3"
   },
   "peerDependencies": {
     "react": "*",

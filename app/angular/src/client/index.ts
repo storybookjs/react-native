@@ -1,4 +1,13 @@
-export { storiesOf, setAddon, addDecorator, addParameters, configure, getStorybook, forceReRender, raw } from './preview';
+export {
+  storiesOf,
+  setAddon,
+  addDecorator,
+  addParameters,
+  configure,
+  getStorybook,
+  forceReRender,
+  raw,
+} from './preview';
 
 export { moduleMetadata } from './preview/angular/decorators';
 

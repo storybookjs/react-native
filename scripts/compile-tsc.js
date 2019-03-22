@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
@@ -8,9 +7,9 @@ function getCommand(watch) {
 
   const args = ['--outDir ./dist', '--listEmittedFiles true'];
 
-  if (!process.cwd().includes(path.join('app', 'angular'))) {
-    args.push('--emitDeclarationOnly');
-  }
+  // if (!process.cwd().includes(path.join('app', 'angular'))) {
+  args.push('--emitDeclarationOnly --declaration true');
+  // }
 
   if (watch) {
     args.push('-w');
@@ -34,7 +33,9 @@ function tscfy(options = {}) {
   const tsConfigFile = 'tsconfig.json';
 
   if (!fs.existsSync(tsConfigFile)) {
-    if (!silent) console.log(`No ${tsConfigFile}`);
+    if (!silent) {
+      // console.log(`No ${tsConfigFile}`);
+    }
     return;
   }
 
@@ -42,7 +43,9 @@ function tscfy(options = {}) {
   const tsConfig = JSON.parse(content);
 
   if (tsConfig && tsConfig.lerna && tsConfig.lerna.disabled === true) {
-    if (!silent) console.log('Lerna disabled');
+    if (!silent) {
+      // console.log('Lerna disabled');
+    }
     return;
   }
 

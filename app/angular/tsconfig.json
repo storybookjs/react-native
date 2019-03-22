@@ -1,13 +1,14 @@
 {
   "extends": "../../tsconfig.json",
-  "include": [
-    "src/**/*.ts"
-  ],
-  "compileOnSave": false,
   "compilerOptions": {
     "rootDir": "./src",
     "types": ["webpack-env", "jest"],
-    "outDir": "./dist",
-    "resolveJsonModule": true
-  }
+    "experimentalDecorators": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/__tests__/**/*"
+  ]
 }

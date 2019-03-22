@@ -16,10 +16,10 @@ const Wrapper = styled.div({
 export default class EventsPanel extends Component {
   static propTypes = {
     active: PropTypes.bool.isRequired,
-    channel: PropTypes.shape({
-      on: PropTypes.func,
+    api: PropTypes.shape({
       emit: PropTypes.func,
-      removeListener: PropTypes.func,
+      off: PropTypes.func,
+      on: PropTypes.func,
     }).isRequired,
   };
 
@@ -28,15 +28,15 @@ export default class EventsPanel extends Component {
   };
 
   componentDidMount() {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.on(EVENTS.ADD, this.onAdd);
+    api.on(EVENTS.ADD, this.onAdd);
   }
 
   componentWillUnmount() {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.removeListener(EVENTS.ADD, this.onAdd);
+    api.off(EVENTS.ADD, this.onAdd);
   }
 
   onAdd = events => {
@@ -44,9 +44,9 @@ export default class EventsPanel extends Component {
   };
 
   onEmit = event => {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.emit(EVENTS.EMIT, event);
+    api.emit(EVENTS.EMIT, event);
   };
 
   render() {

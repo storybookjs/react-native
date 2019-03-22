@@ -113,15 +113,6 @@ const tasks = {
     },
     check: () => getDirectories(join(__dirname, '..', 'packs')).length > 0,
   }),
-  'crna-kitchen-sink': createTask({
-    name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}`,
-    defaultValue: false,
-    option: '--reactnativeapp',
-    pre: ['packs'],
-    command: () => {
-      spawn('yarn bootstrap:crna-kitchen-sink');
-    },
-  }),
 };
 
 Object.keys(tasks)

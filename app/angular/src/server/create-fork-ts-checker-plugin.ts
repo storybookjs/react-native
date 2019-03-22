@@ -1,6 +1,7 @@
 import { logger } from '@storybook/node-logger';
 import { Options } from 'ts-loader';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+// tslint:disable-next-line: no-duplicate-imports
 import * as ForkTs from 'fork-ts-checker-webpack-plugin';
 
 export function createForkTsCheckerInstance(tsLoaderOptions: Partial<Options>): ForkTs {

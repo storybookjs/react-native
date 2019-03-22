@@ -962,6 +962,7 @@ exports[`A11YPanel should render report 1`] = `
                             "panel": <Unknown
                               empty="No a11y violations found."
                               items={Array []}
+                              name="violations"
                               passes={false}
                             />,
                           },
@@ -973,6 +974,7 @@ exports[`A11YPanel should render report 1`] = `
                             "panel": <Unknown
                               empty="No a11y check passed."
                               items={Array []}
+                              name="passes"
                               passes={true}
                             />,
                           },
@@ -984,6 +986,7 @@ exports[`A11YPanel should render report 1`] = `
                             "panel": <Unknown
                               empty="No a11y incomplete found."
                               items={Array []}
+                              name="incomplete"
                               passes={false}
                             />,
                           },
@@ -1058,6 +1061,7 @@ exports[`A11YPanel should render report 1`] = `
                           <Component
                             empty="No a11y violations found."
                             items={Array []}
+                            name="violations"
                             passes={false}
                           >
                             <Placeholder

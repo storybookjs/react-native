@@ -52,7 +52,11 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
     }
   };
 
-  onVisibilityChange = (s: boolean) => this.setState({ expanded: s });
+  onVisibilityChange = (s: boolean) => {
+    if (this.state.expanded !== s) {
+      this.setState({ expanded: s });
+    }
+  };
 
   render() {
     const { filter, expanded } = this.state;
