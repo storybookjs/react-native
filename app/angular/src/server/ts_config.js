@@ -1,9 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { logger } from '@storybook/node-logger';
-import { Options } from 'ts-loader';
 
-function resolveTsConfig(tsConfigPath: string) {
+function resolveTsConfig(tsConfigPath) {
   if (!fs.existsSync(tsConfigPath)) {
     return null;
   }
@@ -13,8 +12,8 @@ function resolveTsConfig(tsConfigPath: string) {
   return tsConfigPath;
 }
 
-export default function(configDir: string): Partial<Options> {
-  const tsLoaderOptions: Partial<Options> = {
+export default function(configDir) {
+  const tsLoaderOptions = {
     transpileOnly: true,
   };
   const configFilePath = resolveTsConfig(path.resolve(configDir, 'tsconfig.json'));

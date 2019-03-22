@@ -1,15 +1,13 @@
 import { logger } from '@storybook/node-logger';
 
 import {
-  applyAngularCliWebpackConfig,
   getAngularCliWebpackConfigOptions,
+  applyAngularCliWebpackConfig,
 } from './angular-cli_config';
-import { Configuration } from 'webpack';
-import { Path } from '@angular-devkit/core';
 
-export function webpackFinal(config: Configuration) {
+export function webpackFinal(config) {
   const cwd = process.cwd();
-  const cliWebpackConfigOptions = getAngularCliWebpackConfigOptions(cwd as Path);
+  const cliWebpackConfigOptions = getAngularCliWebpackConfigOptions(cwd);
 
   if (cliWebpackConfigOptions) {
     logger.info('=> Loading angular-cli config.');

@@ -6,7 +6,7 @@ jest.mock('path', () => ({
   resolve: () => 'tsconfig.json',
 }));
 
-const setupFiles = (files: any) => {
+const setupFiles = files => {
   // eslint-disable-next-line no-underscore-dangle, global-require
   require('fs').__setMockFiles(files);
 };

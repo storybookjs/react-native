@@ -19,7 +19,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     `,
   ],
 })
-export class ButtonComponent {
+export default class ButtonComponent {
   @Input()
   text = '';
   @Output()

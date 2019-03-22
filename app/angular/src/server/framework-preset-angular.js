@@ -1,12 +1,10 @@
 import path from 'path';
-import { Configuration, ContextReplacementPlugin } from 'webpack';
+import { ContextReplacementPlugin } from 'webpack';
 import autoprefixer from 'autoprefixer';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-
 import getTsLoaderOptions from './ts_config';
-import { createForkTsCheckerInstance } from './create-fork-ts-checker-plugin';
+import createForkTsCheckerInstance from './create-fork-ts-checker-plugin';
 
-export function webpack(config: Configuration, { configDir }: { configDir: string }) {
+export function webpack(config, { configDir }) {
   const tsLoaderOptions = getTsLoaderOptions(configDir);
   return {
     ...config,
@@ -59,8 +57,7 @@ export function webpack(config: Configuration, { configDir }: { configDir: strin
         /@angular(\\|\/)core(\\|\/)(fesm5|bundles)/,
         path.resolve(__dirname, '..')
       ),
-      // tslint complained about the exports of the ForkTs package, therefore I needed to cast it
-      createForkTsCheckerInstance(tsLoaderOptions) as ForkTsCheckerWebpackPlugin,
+      createForkTsCheckerInstance(tsLoaderOptions),
     ],
   };
 }

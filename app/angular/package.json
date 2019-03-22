@@ -16,13 +16,14 @@
   },
   "license": "MIT",
   "main": "dist/client/index.js",
+  "jsnext:main": "src/client/index.js",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
     "storybook-server": "./bin/index.js"
   },
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
+    "prepare": "node %NODE_DEBUG_OPTION% ../../scripts/prepare.js"
   },
   "dependencies": {
     "@storybook/core": "5.1.0-alpha.12",
@@ -38,10 +39,7 @@
     "webpack": "^4.29.6"
   },
   "devDependencies": {
-    "@types/autoprefixer": "^9.4.0",
-    "@types/jest": "^24.0.9",
-    "zone.js": "^0.8.29",
-    "@angular-devkit/core": ">=7.0.0"
+    "zone.js": "^0.8.29"
   },
   "peerDependencies": {
     "@angular-devkit/core": "^0.6.1 || >=7.0.0",

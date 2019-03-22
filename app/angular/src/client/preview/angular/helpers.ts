@@ -91,7 +91,7 @@ const draw = (newModule: DynamicComponentType): void => {
   }
 };
 
-export const renderNgApp = (storyFn: IStoryFn, forced: boolean = false) => {
+export const renderNgApp = (storyFn: IStoryFn, forced: boolean) => {
   if (!forced) {
     draw(initModule(storyFn));
   } else {

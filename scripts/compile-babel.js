@@ -45,10 +45,6 @@ function handleExit(code, errorCallback) {
 }
 
 function babelify(options = {}) {
-  // if (process.cwd().includes(path.join('app', 'angular'))) {
-  //   return;
-  // }
-
   const { watch = false, silent = false, errorCallback } = options;
 
   if (!fs.existsSync('src')) {
