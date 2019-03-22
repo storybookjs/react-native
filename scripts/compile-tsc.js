@@ -17,19 +17,18 @@ function getCommand(watch) {
   const tsc = path.join(__dirname, '..', 'node_modules', '.bin', 'tsc');
 
   const args = ['--outDir ./dist', '--listEmittedFiles true'];
-  copyAngularDeclarations();
+
   if (!process.cwd().includes(path.join('app', 'angular'))) {
-    copyAngularDeclarations();
     args.push('--emitDeclarationOnly --declaration true');
   } else {
-    args.push('--declaration true');
+    args.push('--emitDeclarationOnly --declaration true');
     copyAngularDeclarations();
   }
 
   if (watch) {
     args.push('-w');
   }
-
+  console.log(`${tsc} ${args.join(' ')}`);
   return `${tsc} ${args.join(' ')}`;
 }
 
@@ -49,7 +48,7 @@ function tscfy(options = {}) {
 
   if (!fs.existsSync(tsConfigFile)) {
     if (!silent) {
-      // console.log(`No ${tsConfigFile}`);
+      console.log(`No ${tsConfigFile}`);
     }
     return;
   }
@@ -59,7 +58,7 @@ function tscfy(options = {}) {
 
   if (tsConfig && tsConfig.lerna && tsConfig.lerna.disabled === true) {
     if (!silent) {
-      // console.log('Lerna disabled');
+      console.log('Lerna disabled');
     }
     return;
   }
