@@ -8,7 +8,7 @@ import PropForm from './PropForm';
 
 const getTimestamp = () => +new Date();
 
-const DEFAULT_GROUP_ID = 'ALL';
+const DEFAULT_GROUP_ID = 'Other';
 
 export default class Panel extends React.Component {
   constructor(props) {
