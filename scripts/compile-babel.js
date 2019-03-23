@@ -18,7 +18,7 @@ function getCommand(watch) {
     '**/*.d.ts',
   ];
 
-  let args = [
+  const args = [
     './src',
     '--out-dir ./dist',
     `--config-file ${path.resolve(__dirname, '../.babelrc.js')}`,
@@ -26,15 +26,6 @@ function getCommand(watch) {
     `--copy-files`,
     `--ignore "${ignore.join('","')}"`,
   ];
-
-  /*
-   * angular needs to be compiled with tsc; a compilation with babel is possible but throws
-   * runtime errors because of the the babel decorators plugin
-   * Copy everything, the cleanup job will remove all ts files afterwards
-   */
-  if (process.cwd().includes(path.join('app', 'angular'))) {
-    args = ['./src', '--out-dir ./dist', '--copy-files'];
-  }
 
   if (watch) {
     args.push('-w');
