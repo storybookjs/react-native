@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "noImplicitAny": true,
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "jsx": "react",
     "module": "commonjs",
     "allowSyntheticDefaultImports": true,
