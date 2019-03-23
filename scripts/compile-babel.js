@@ -22,10 +22,20 @@ function getCommand(watch) {
     './src',
     '--out-dir ./dist',
     `--config-file ${path.resolve(__dirname, '../.babelrc.js')}`,
-    `--extensions ".js,.jsx,.ts,.tsx"`,
     `--copy-files`,
     `--ignore "${ignore.join('","')}"`,
   ];
+
+  /*
+   * angular needs to be compiled with tsc; a compilation with babel is possible but throws
+   * runtime errors because of the the babel decorators plugin
+   * Only transpile .js and let tsc do the job for .ts files
+   */
+  if (process.cwd().includes(path.join('app', 'angular'))) {
+    args.push(`--extensions ".js"`);
+  } else {
+    args.push(`--extensions ".js,.jsx,.ts,.tsx"`);
+  }
 
   if (watch) {
     args.push('-w');

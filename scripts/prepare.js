@@ -33,7 +33,7 @@ function cleanup() {
 
 function logError(type, packageJson) {
   log.error(
-    `FAILED to compile ${type}: ${chalk.boldco(`${packageJson.name}@${packageJson.version}`)}`
+    `FAILED to compile ${type}: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`
   );
 }
 
@@ -42,6 +42,7 @@ const packageJson = getPackageJson();
 removeDist();
 babelify({ errorCallback: () => logError('js', packageJson) });
 cleanup();
+
 tscfy({ errorCallback: () => logError('ts', packageJson) });
 
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));
