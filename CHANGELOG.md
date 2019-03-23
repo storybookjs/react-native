@@ -1,3 +1,15 @@
+## 5.1.0-alpha.13 (March 23, 2019)
+
+### Features
+
+* Svelte: add svelte cli generator ([#6132](https://github.com/storybooks/storybook/pull/6132))
+
+### Bug Fixes
+
+* Addon-knobs: Fix ObjectType knob react warning ([#6159](https://github.com/storybooks/storybook/pull/6159))
+* React: Fix forked CRA support on Windows ([#6236](https://github.com/storybooks/storybook/pull/6236))
+* UI: Fix tooltip event bindings, logger import ([#6238](https://github.com/storybooks/storybook/pull/6238))
+
 ## 5.1.0-alpha.12 (March 22, 2019)
 
 ### Bug Fixes
