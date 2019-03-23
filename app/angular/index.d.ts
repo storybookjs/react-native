@@ -1,4 +1,10 @@
+/*
+ * Ignore these two imports, because they do fail after tsc but actually work.
+ * tsc checks this file before emitting the needed declarations of the imported files
+ */
+// @ts-ignore
 import { NgModuleMetadata, ICollection } from './dist/client/preview/angular/types';
+// @ts-ignore
 export { moduleMetadata } from './dist/client/preview/angular/decorators';
 
 export interface IStorybookStory {
@@ -36,10 +42,16 @@ export interface IApi {
 
 declare module '@storybook/angular' {
   export function storiesOf(kind: string, module: NodeModule): IApi;
+
   export function setAddon(addon: any): void;
+
   export function addDecorator(decorator: any): IApi;
+
   export function addParameters(parameters: any): IApi;
+
   export function configure(loaders: () => void, module: NodeModule): void;
+
   export function getStorybook(): IStoribookSection[];
+
   export function forceReRender(): void;
 }

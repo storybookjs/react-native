@@ -23,7 +23,8 @@ function cleanup() {
   // --copy-files option doesn't work with --ignore
   // https://github.com/babel/babel/issues/5404
   if (fs.existsSync(path.join(process.cwd(), 'dist'))) {
-    const files = shell.find('dist').filter(tsFile => tsFile.match(/\.(ts|tsx)$/));
+    // ^(?!.*\.d\.ts$).*\.(ts|tsx)$ => Remove everything except .d.ts files https://regex101.com/r/gEBQ0U/16
+    const files = shell.find('dist').filter(tsFile => tsFile.match(/^(?!.*\.d\.ts$).*\.(ts|tsx)$/));
     if (files.length) {
       shell.rm(files);
     }
@@ -32,7 +33,7 @@ function cleanup() {
 
 function logError(type, packageJson) {
   log.error(
-    `FAILED to compile ${type}: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`
+    `FAILED to compile ${type}: ${chalk.boldco(`${packageJson.name}@${packageJson.version}`)}`
   );
 }
 
