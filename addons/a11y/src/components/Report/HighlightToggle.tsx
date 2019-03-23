@@ -35,12 +35,16 @@ function areAllRequiredElementsHiglighted(
   highlightedElementsMap: Map<HTMLElement, HighlightedElementData>
 ): boolean {
   let elementsInMapExist = false;
-  for (let element of elementsToHighlight) {
-    const targetElement = getElementBySelectorPath(element.target[0]);
-    if (highlightedElementsMap.get(targetElement)) {
-      elementsInMapExist = true;
-      if (!highlightedElementsMap.get(targetElement).isHighlighted) {
-        return false;
+  if (elementsToHighlight) {
+    for (let element of elementsToHighlight) {
+      if (element) {
+        const targetElement = getElementBySelectorPath(element.target[0]);
+        if (highlightedElementsMap.get(targetElement)) {
+          elementsInMapExist = true;
+          if (!highlightedElementsMap.get(targetElement).isHighlighted) {
+            return false;
+          }
+        }
       }
     }
   }
@@ -74,20 +78,22 @@ const mapStateToProps = (state: any, ownProps: any) => {
 };
 
 class HighlightToggle extends Component<ToggleProps, {}> {
-  static defaultProps = {
+  static defaultProps: Partial<ToggleProps> = {
     elementsToHighlight: [],
   };
 
   componentDidMount() {
     for (let element of this.props.elementsToHighlight) {
-      const targetElement = getElementBySelectorPath(element.target[0]);
-      if (targetElement && !this.props.highlightedElementsMap.get(targetElement)) {
-        this.saveElementDataToMap(
-          targetElement,
-          false,
-          targetElement.style.outline,
-          this.props.type
-        );
+      if (element) {
+        const targetElement = getElementBySelectorPath(element.target[0]);
+        if (targetElement && !this.props.highlightedElementsMap.get(targetElement)) {
+          this.saveElementDataToMap(
+            targetElement,
+            false,
+            targetElement.style.outline,
+            this.props.type
+          );
+        }
       }
     }
   }
@@ -137,24 +143,33 @@ class HighlightToggle extends Component<ToggleProps, {}> {
 
   onToggle(): void {
     for (let element of this.props.elementsToHighlight) {
-      const targetElement = getElementBySelectorPath(element.target[0]);
-      if (this.props.highlightedElementsMap.get(targetElement)) {
-        let originalOutline = this.props.highlightedElementsMap.get(targetElement).originalOutline;
-        if (
-          this.props.isToggledOn &&
-          this.props.highlightedElementsMap.get(targetElement).isHighlighted
-        ) {
-          this.higlightRuleLocation(targetElement, false);
-          this.saveElementDataToMap(targetElement, false, originalOutline, this.props.type);
-        } else if (
-          !this.props.isToggledOn &&
-          !this.props.highlightedElementsMap.get(targetElement).isHighlighted
-        ) {
-          this.higlightRuleLocation(targetElement, true);
-          this.saveElementDataToMap(targetElement, true, originalOutline, this.props.type);
+      if (element) {
+        const targetElement = getElementBySelectorPath(element.target[0]);
+        if (this.props.highlightedElementsMap.get(targetElement)) {
+          let originalOutline = this.props.highlightedElementsMap.get(targetElement).originalOutline;
+          if (
+            this.props.isToggledOn &&
+            this.props.highlightedElementsMap.get(targetElement).isHighlighted
+          ) {
+            this.higlightRuleLocation(targetElement, false);
+            this.saveElementDataToMap(targetElement, false, originalOutline, this.props.type);
+          } else if (
+            !this.props.isToggledOn &&
+            !this.props.highlightedElementsMap.get(targetElement).isHighlighted
+          ) {
+            this.higlightRuleLocation(targetElement, true);
+            this.saveElementDataToMap(targetElement, true, originalOutline, this.props.type);
+          }
         }
       }
     }
+  }
+
+  isHighlightToggleDisabled() {
+    if (this.props.elementsToHighlight && this.props.elementsToHighlight.length === 0) {
+      return true;
+    }
+    return false;
   }
 
   render() {
@@ -162,7 +177,7 @@ class HighlightToggle extends Component<ToggleProps, {}> {
       <Checkbox
         type="checkbox"
         id={this.props.toggleID}
-        disabled={this.props.elementsToHighlight.length === 0}
+        disabled={this.isHighlightToggleDisabled()}
         onChange={() => this.onToggle()}
         checked={this.props.isToggledOn}
       />
