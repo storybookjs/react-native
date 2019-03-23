@@ -111,16 +111,14 @@ export class Tabs extends Component<TabsProps, TabsState> {
       <Container>
         <List>
           {tabs.map((tab, index) => (
-            <Fragment>
-              <Item
-                // eslint-disable-next-line react/no-array-index-key
-                key={index}
-                active={active === index ? true : undefined}
-                onClick={() => this.onToggle(index)}
-              >
-                {tab.label}
-              </Item>
-            </Fragment>
+            <Item
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              active={active === index ? true : undefined}
+              onClick={() => this.onToggle(index)}
+            >
+              {tab.label}
+            </Item>
           ))}
           <GlobalToggleWrapper>
             <HighlightToggleLabel htmlFor={toggleId}>Highlight Results: </HighlightToggleLabel>

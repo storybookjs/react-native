@@ -74,18 +74,20 @@ const mapStateToProps = (state: any, ownProps: any) => {
 };
 
 class HighlightToggle extends Component<ToggleProps, {}> {
+  static defaultProps = {
+    elementsToHighlight: [],
+  };
+
   componentDidMount() {
-    if (this.props && this.props.elementsToHighlight) {
-      for (let element of this.props.elementsToHighlight) {
-        const targetElement = getElementBySelectorPath(element.target[0]);
-        if (targetElement && !this.props.highlightedElementsMap.get(targetElement)) {
-          this.saveElementDataToMap(
-            targetElement,
-            false,
-            targetElement.style.outline,
-            this.props.type
-          );
-        }
+    for (let element of this.props.elementsToHighlight) {
+      const targetElement = getElementBySelectorPath(element.target[0]);
+      if (targetElement && !this.props.highlightedElementsMap.get(targetElement)) {
+        this.saveElementDataToMap(
+          targetElement,
+          false,
+          targetElement.style.outline,
+          this.props.type
+        );
       }
     }
   }

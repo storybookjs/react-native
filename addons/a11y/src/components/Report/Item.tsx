@@ -93,7 +93,7 @@ export class Item extends Component<ItemProps, ItemState> {
             {item.description}
           </HeaderBar>
           <HighlightText>
-            <HighlightToggle toggleID={toggleId} type={type} elementsToHighlight={item.nodes} />
+            <HighlightToggle toggleID={toggleId} type={type} elementsToHighlight={item ? item.nodes : null} />
             <HighlightToggleLabel htmlFor={toggleId}>Highlight</HighlightToggleLabel>
           </HighlightText>
         </Wrapper>
