@@ -12,24 +12,35 @@ We are going to use an addon called [Notes](https://github.com/storybooks/storyb
 First, we need to install the addons:
 
 ```sh
-yarn add -D @storybook/addons @storybook/addon-actions @storybook/addon-links @storybook/addon-notes
+yarn add -D @storybook/addons @storybook/addon-actions @storybook/addon-knobs @storybook/addon-notes
 ```
 
 Then, we need to create a file called `addons.js` inside the storybook config directory and add the following content:
 
 ```js
 import '@storybook/addon-actions/register';
-import '@storybook/addon-links/register';
+import '@storybook/addon-knobs/register';
 import '@storybook/addon-notes/register';
 ```
 
 Once created, you'll have to restart storybook to make the underlying webpack aware of the addons file.
 
-This will register all the addons and you'll be able to see the actions and notes panels (in that order) when you are viewing the story. (Links do not register a tab--check individual addon docs to see which Storybook features they use!)
+This will register all the addons and you'll be able to see the actions and knobs panels (in that order) when you are viewing the story. (Links do not register a tab--check individual addon docs to see which Storybook features they use!)
 
 ![Stories without notes](../static/stories-without-notes.png)
 
-Now when you are writing a story, import it and add some notes:
+## Addons tab order
+
+The tab order is created by the import order in the `addons.js` file. In the example, the actions addon is the first and thus active tab. Resorting the imports results in the knobs addon tab being placed before the actions tab:
+
+```js
+import '@storybook/addon-actions/register';
+import '@storybook/addon-knobs/register';
+```
+
+## Using the addon
+
+Now when you are writing a story, you can import the actions addon to log actions. Also, you can add notes:
 
 ```js
 import { storiesOf } from '@storybook/react';

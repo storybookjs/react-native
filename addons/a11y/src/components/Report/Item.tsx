@@ -50,7 +50,6 @@ const HighlightText = styled.span({
   fontWeight: 'normal',
 });
 
-
 interface ItemProps {
   item: Result;
   passes: boolean;
@@ -74,7 +73,10 @@ export class Item extends Component<ItemProps, ItemState> {
   render() {
     const { item, passes, type } = this.props;
     const { open } = this.state;
-    const toggleId: string = type.toString().concat('-').concat(item.id);
+    const toggleId: string = type
+      .toString()
+      .concat('-')
+      .concat(item.id);
 
     return (
       <Fragment>

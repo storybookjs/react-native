@@ -16,6 +16,8 @@ import {
 } from '@angular/core';
 import { STORY } from '../app.token';
 import { NgStory, ICollection } from '../types';
+import { Observable, Subscription } from 'rxjs';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'storybook-dynamic-app-root',
@@ -24,22 +26,33 @@ import { NgStory, ICollection } from '../types';
 export class AppComponent implements OnInit, OnDestroy {
   @ViewChild('target', { read: ViewContainerRef })
   target: ViewContainerRef;
-  constructor(private cfr: ComponentFactoryResolver, @Inject(STORY) private data: NgStory) {}
+
+  subscription: Subscription;
+
+  constructor(
+    private cfr: ComponentFactoryResolver,
+    @Inject(STORY) private data: Observable<NgStory>
+  ) {}
 
   ngOnInit(): void {
-    this.putInMyHtml();
+    this.data.pipe(first()).subscribe((data: NgStory) => {
+      this.target.clear();
+      const compFactory = this.cfr.resolveComponentFactory(data.component);
+      const ref = this.target.createComponent(compFactory);
+      const instance = ref.instance;
+
+      this.subscription = this.data.subscribe(newData => {
+        this.setProps(instance, newData);
+        ref.changeDetectorRef.detectChanges();
+      });
+    });
   }
 
   ngOnDestroy(): void {
     this.target.clear();
-  }
-
-  private putInMyHtml(): void {
-    this.target.clear();
-    const compFactory = this.cfr.resolveComponentFactory(this.data.component);
-    const instance = this.target.createComponent(compFactory).instance;
-
-    this.setProps(instance, this.data);
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   /**

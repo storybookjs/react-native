@@ -18,18 +18,28 @@ function setPaneKnobs(timestamp = +new Date()) {
   channel.emit(SET, { knobs: knobStore.getAll(), timestamp });
 }
 
-// Increased performance by reducing the number of times a component is rendered during knob changes
-const debouncedOnKnobChanged = debounce(() => {
+const resetAndForceUpdate = () => {
   knobStore.markAllUnused();
   forceReRender();
-}, COMPONENT_FORCE_RENDER_DEBOUNCE_DELAY_MS);
+};
+
+// Increase performance by reducing how frequently the story is recreated during knob changes
+const debouncedResetAndForceUpdate = debounce(
+  resetAndForceUpdate,
+  COMPONENT_FORCE_RENDER_DEBOUNCE_DELAY_MS
+);
 
 function knobChanged(change) {
   const { name } = change;
   const { value } = change; // Update the related knob and it's value.
   const knobOptions = knobStore.get(name);
   knobOptions.value = value;
-  debouncedOnKnobChanged();
+
+  if (!manager.options.disableDebounce) {
+    debouncedResetAndForceUpdate();
+  } else {
+    resetAndForceUpdate();
+  }
 }
 
 function knobClicked(clicked) {

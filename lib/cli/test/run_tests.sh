@@ -38,8 +38,14 @@ do
   cd $dir
   echo "Running storybook-cli in $dir"
 
-  # run @storybook/cli
-  ../../../bin/index.js init --skip-install
+  if [ $dir == *"native"* ]
+  then
+    # run @storybook/cli
+    ../../../bin/index.js init --skip-install --yes --install-server
+  else
+    # run @storybook/cli
+    ../../../bin/index.js init --skip-install --yes
+  fi
 
   cd ..
 done

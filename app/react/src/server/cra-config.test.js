@@ -6,6 +6,7 @@ import mockConfig from './__mocks__/mockConfig';
 
 jest.mock('fs', () => ({
   realpathSync: jest.fn(),
+  readFileSync: jest.fn(),
   existsSync: () => true,
 }));
 jest.mock('mini-css-extract-plugin', () => {});
@@ -36,6 +37,38 @@ describe('cra-config', () => {
     beforeEach(() => {
       fs.realpathSync.mockImplementationOnce(filePath =>
         filePath.replace(SCRIPT_PATH, `custom-react-scripts/${SCRIPT_PATH}`)
+      );
+    });
+
+    it('should locate the react-scripts package', () => {
+      expect(getReactScriptsPath({ noCache: true })).toEqual(
+        '/test-project/node_modules/custom-react-scripts'
+      );
+    });
+  });
+
+  describe('when used with a custom react-scripts package without symlinks in .bin folder', () => {
+    beforeEach(() => {
+      // In case of .bin/react-scripts is not symlink (like it happens on Windows),
+      // realpathSync() method does not translate the path.
+      fs.realpathSync.mockImplementationOnce(filePath => filePath);
+
+      fs.readFileSync.mockImplementationOnce(
+        () => `#!/bin/sh
+basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+
+case \`uname\` in
+    *CYGWIN*) basedir=\`cygpath -w "$basedir"\`;;
+esac
+
+if [ -x "$basedir/node" ]; then
+  "$basedir/node"  "$basedir/../custom-react-scripts/bin/react-scripts.js" "$@"
+  ret=$?
+else 
+  node  "$basedir/../custom-react-scripts/bin/react-scripts.js" "$@"
+  ret=$?
+fi
+exit $ret`
       );
     });
 

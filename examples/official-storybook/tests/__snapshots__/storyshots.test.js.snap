@@ -5632,6 +5632,7 @@ exports[`Storyshots UI|Preview/Iframe errorStory 1`] = `
 <iframe
   allowfullscreen=""
   id="iframe"
+  scrolling="yes"
   src="/iframe.html?id=core-errors--story-throws-exception"
   style="width:100%;height:500px"
   title="Missing"
@@ -5642,6 +5643,7 @@ exports[`Storyshots UI|Preview/Iframe missingStory 1`] = `
 <iframe
   allowfullscreen=""
   id="iframe"
+  scrolling="yes"
   src="/iframe.html?id=missing"
   style="width:100%;height:500px"
   title="Missing"
@@ -5652,6 +5654,7 @@ exports[`Storyshots UI|Preview/Iframe workingStory 1`] = `
 <iframe
   allowfullscreen=""
   id="iframe"
+  scrolling="yes"
   src="/iframe.html?id=ui-panel--default"
   style="width:100%;height:500px"
   title="Missing"
@@ -7298,7 +7301,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
                 placeholder="Type keys"
                 readonly=""
                 spellcheck="false"
-                value="⌃ ⇧​ ,"
+                value="CTRL ⇧​ ,"
               />
               <svg
                 class="emotion-16"
@@ -7729,6 +7732,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -7747,6 +7751,8 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -8089,6 +8095,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8107,6 +8114,8 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -8388,6 +8397,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 <a
                   class="emotion-1"
                   href="./"
+                  target=""
                 >
                   <svg
                     class="emotion-0"
@@ -8442,6 +8452,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
               >
                 <button
                   class="emotion-5"
+                  title="Shortcuts"
                 >
                   <svg
                     class="emotion-4"
@@ -8864,6 +8875,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8882,6 +8894,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -9349,6 +9363,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -9367,6 +9382,8 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -9813,6 +9830,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                 <a
                   class="emotion-1"
                   href="./"
+                  target=""
                 >
                   <svg
                     class="emotion-0"
@@ -9867,6 +9885,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
               >
                 <button
                   class="emotion-5"
+                  title="Shortcuts"
                 >
                   <svg
                     class="emotion-4"
@@ -9888,6 +9907,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                 class="emotion-14"
               >
                 <input
+                  aria-label="Search stories"
                   class="emotion-8"
                   id="storybook-explorer-searchfield"
                   placeholder="Press \\"/\\" to search..."
@@ -9904,6 +9924,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                 </svg>
                 <button
                   class="emotion-13"
+                  title="Clear search"
                   type="reset"
                   value="reset"
                 >
@@ -10131,6 +10152,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -10149,6 +10171,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -10242,6 +10266,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
 
 .emotion-0 {
   width: auto;
+  height: 100%;
   display: block;
   max-width: 100%;
 }
@@ -10266,6 +10291,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -10284,6 +10310,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -10377,6 +10405,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
 
 .emotion-0 {
   width: auto;
+  height: 100%;
   display: block;
   max-width: 100%;
 }
@@ -10393,6 +10422,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
       <a
         class="emotion-1"
         href="https://example.com"
+        target="_blank"
       >
         <img
           alt="My Title"
@@ -10406,6 +10436,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
     >
       <button
         class="emotion-5"
+        title="Shortcuts"
       >
         <svg
           class="emotion-4"
@@ -10443,6 +10474,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -10461,6 +10493,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
 
 .emotion-0 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -10572,6 +10606,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -10590,6 +10625,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
 
 .emotion-0 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -10693,6 +10730,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
       <a
         class="emotion-0"
         href="https://example.com"
+        target="_blank"
       >
         My title
       </a>
@@ -10702,6 +10740,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading linkAndText 1`] = `
     >
       <button
         class="emotion-4"
+        title="Shortcuts"
       >
         <svg
           class="emotion-3"
@@ -10739,6 +10778,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading longText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -10861,6 +10901,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading longText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -10979,6 +11020,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading longText 1`] = `
     >
       <button
         class="emotion-3"
+        title="Shortcuts"
       >
         <svg
           class="emotion-2"
@@ -11016,6 +11058,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11034,6 +11077,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -11162,6 +11207,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11180,6 +11226,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -11300,6 +11348,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
       <a
         class="emotion-1"
         href="./"
+        target=""
       >
         <svg
           class="emotion-0"
@@ -11354,6 +11403,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
     >
       <button
         class="emotion-5"
+        title="Shortcuts"
       >
         <svg
           class="emotion-4"
@@ -11391,6 +11441,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading onlyText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11513,6 +11564,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading onlyText 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11631,6 +11683,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading onlyText 1`] = `
     >
       <button
         class="emotion-3"
+        title="Shortcuts"
       >
         <svg
           class="emotion-2"
@@ -11668,6 +11721,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11686,6 +11740,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -11803,6 +11859,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11821,6 +11878,8 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
 
 .emotion-1 {
   display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -11930,6 +11989,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
       <a
         class="emotion-1"
         href="./"
+        target=""
       >
         <svg
           class="emotion-0"
@@ -11984,6 +12044,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
     >
       <button
         class="emotion-5"
+        title="Shortcuts"
       >
         <svg
           class="emotion-4"
@@ -12021,6 +12082,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standardNoLink 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -12149,6 +12211,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standardNoLink 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -12318,6 +12381,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standardNoLink 1`] = `
     >
       <button
         class="emotion-4"
+        title="Shortcuts"
       >
         <svg
           class="emotion-3"
@@ -14219,6 +14283,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
     class="emotion-6"
   >
     <input
+      aria-label="Search stories"
       class="emotion-0"
       id="storybook-explorer-searchfield"
       placeholder="Type to search..."
@@ -14236,6 +14301,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch filledIn 1`] = `
     </svg>
     <button
       class="emotion-5"
+      title="Clear search"
       type="reset"
       value="reset"
     >
@@ -14508,6 +14574,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
     class="emotion-6"
   >
     <input
+      aria-label="Search stories"
       class="emotion-0"
       id="storybook-explorer-searchfield"
       placeholder="Type to search..."
@@ -14524,6 +14591,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch focussed 1`] = `
     </svg>
     <button
       class="emotion-5"
+      title="Clear search"
       type="reset"
       value="reset"
     >
@@ -14796,6 +14864,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
     class="emotion-6"
   >
     <input
+      aria-label="Search stories"
       class="emotion-0"
       id="storybook-explorer-searchfield"
       placeholder="Press \\"/\\" to search..."
@@ -14812,6 +14881,7 @@ exports[`Storyshots UI|Sidebar/SidebarSearch simple 1`] = `
     </svg>
     <button
       class="emotion-5"
+      title="Clear search"
       type="reset"
       value="reset"
     >
@@ -16485,6 +16555,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
       class="emotion-6"
     >
       <input
+        aria-label="Search stories"
         class="emotion-0"
         id="storybook-explorer-searchfield"
         placeholder="Press \\"/\\" to search..."
@@ -16501,6 +16572,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
       </svg>
       <button
         class="emotion-5"
+        title="Clear search"
         type="reset"
         value="reset"
       >
@@ -17400,6 +17472,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       class="emotion-6"
     >
       <input
+        aria-label="Search stories"
         class="emotion-0"
         id="storybook-explorer-searchfield"
         placeholder="Press \\"/\\" to search..."
@@ -17416,6 +17489,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       </svg>
       <button
         class="emotion-5"
+        title="Clear search"
         type="reset"
         value="reset"
       >

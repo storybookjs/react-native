@@ -123,7 +123,7 @@ export class Tabs extends Component<TabsProps, TabsState> {
             </Fragment>
           ))}
           <GlobalToggleWrapper>
-            <HighlightToggleLabel htmlFor={toggleId}>Highlight Results:{' '}</HighlightToggleLabel>
+            <HighlightToggleLabel htmlFor={toggleId}>Highlight Results: </HighlightToggleLabel>
             <HighlightToggle
               toggleID={toggleId}
               type={tabs[active].type}

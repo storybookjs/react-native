@@ -39,13 +39,17 @@ const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => 
   const { any, all, none } = element;
 
   const rules = [...any, ...all, ...none];
-  const toggleId: string = type.toString().concat('-').concat(element.target[0]);
+  const toggleId: string = type
+    .toString()
+    .concat('-')
+    .concat(element.target[0]);
 
   return (
     <Item>
-      <ItemTitle>{element.target[0]}
+      <ItemTitle>
+        {element.target[0]}
         <HighlightText>
-          <HighlightToggle toggleID={toggleId} type={type} elementsToHighlight={[element]}></HighlightToggle>
+          <HighlightToggle toggleID={toggleId} type={type} elementsToHighlight={[element]} />
           <HighlightToggleLabel htmlFor={toggleId}>Highlight</HighlightToggleLabel>
         </HighlightText>
       </ItemTitle>

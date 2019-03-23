@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
 
@@ -10,10 +9,10 @@ import { AxeResults, Result } from 'axe-core';
 import { Report } from './Report';
 import { Tabs } from './Tabs';
 import { EVENTS } from '../constants';
+import { API } from '@storybook/api';
 
 import { Provider } from 'react-redux';
 import store, { clearElements } from '../redux-config';
-
 
 export enum RuleType {
   VIOLATION,
@@ -68,11 +67,7 @@ interface A11YPanelState {
 
 interface A11YPanelProps {
   active: boolean;
-  api: {
-    on(event: string, callback: (data: any) => void): void;
-    off(event: string, callback: (data: any) => void): void;
-    emit(event: string): void;
-  };
+  api: API;
 }
 
 export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
@@ -173,23 +168,43 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
             <ScrollArea vertical horizontal>
               <Tabs
                 key="tabs"
-                tabs=
-                {[
+                tabs={[
                   {
                     label: <Violations>{violations.length} Violations</Violations>,
-                    panel: <Report passes={false} items={violations} type={RuleType.VIOLATION} empty="No a11y violations found." />,
+                    panel: (
+                      <Report
+                        passes={false}
+                        items={violations}
+                        type={RuleType.VIOLATION}
+                        empty="No a11y violations found."
+                      />
+                    ),
                     items: violations,
                     type: RuleType.VIOLATION,
                   },
                   {
                     label: <Passes>{passes.length} Passes</Passes>,
-                    panel: <Report passes items={passes} type={RuleType.PASS} empty="No a11y check passed." />,
+                    panel: (
+                      <Report
+                        passes
+                        items={passes}
+                        type={RuleType.PASS}
+                        empty="No a11y check passed."
+                      />
+                    ),
                     items: passes,
                     type: RuleType.PASS,
                   },
                   {
                     label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
-                    panel: <Report passes={false} items={incomplete} type={RuleType.INCOMPLETION} empty="No a11y incomplete found." />,
+                    panel: (
+                      <Report
+                        passes={false}
+                        items={incomplete}
+                        type={RuleType.INCOMPLETION}
+                        empty="No a11y incomplete found."
+                      />
+                    ),
                     items: incomplete,
                     type: RuleType.INCOMPLETION,
                   },
@@ -197,7 +212,10 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
               />
             </ScrollArea>
           )}
-          <ActionBar key="actionbar" actionItems={[{ title: actionTitle, onClick: this.request }]} />
+          <ActionBar
+            key="actionbar"
+            actionItems={[{ title: actionTitle, onClick: this.request }]}
+          />
         </Provider>
       </Fragment>
     ) : null;

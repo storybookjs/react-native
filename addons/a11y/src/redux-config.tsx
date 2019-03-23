@@ -20,12 +20,18 @@ const initialState = {
 
 function rootReducer(state = initialState, action: any) {
   if (action.type === ADD_ELEMENT) {
-    return { ...state, highlightedElementsMap: state.highlightedElementsMap.set(action.payload.element, action.payload.highlightedElementData) }
+    return {
+      ...state,
+      highlightedElementsMap: state.highlightedElementsMap.set(
+        action.payload.element,
+        action.payload.highlightedElementData
+      ),
+    };
   } else if (action.type === CLEAR_ELEMENTS) {
     for (let key of Array.from(state.highlightedElementsMap.keys())) {
       key.style.outline = state.highlightedElementsMap.get(key).originalOutline;
       state.highlightedElementsMap.delete(key);
-    };
+    }
   }
   return state;
 }
