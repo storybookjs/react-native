@@ -23,7 +23,7 @@
     "storybook-server": "./bin/index.js"
   },
   "scripts": {
-    "prepare": "node %NODE_DEBUG_OPTION% ../../scripts/prepare.js"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@storybook/core": "5.1.0-alpha.12",
