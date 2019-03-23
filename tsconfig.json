@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "noImplicitAny": true,
+    "experimentalDecorators": true,
     "jsx": "react",
     "module": "commonjs",
     "allowSyntheticDefaultImports": true,
