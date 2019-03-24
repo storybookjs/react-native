@@ -25,8 +25,8 @@ const GlobalToggleWrapper = styled.div(({ theme }) => ({
   lineHeight: 1,
   height: 40,
   border: 'none',
-  borderTop: '3px solid transparent',
-  borderBottom: '3px solid transparent',
+  borderTop: '2px solid transparent',
+  borderBottom: '2px solid transparent',
   background: 'transparent',
 }));
 

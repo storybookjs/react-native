@@ -184,8 +184,8 @@ exports[`A11YPanel should render report 1`] = `
   line-height: 1;
   height: 40px;
   border: none;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
   background: transparent;
 }
 
@@ -320,10 +320,10 @@ exports[`A11YPanel should render report 1`] = `
                 "152wg9i": true,
                 "1551xjo": true,
                 "176o2y5": true,
+                "17pe9dv": true,
                 "1977chw": true,
                 "1l7fvsg": true,
                 "1l7mgse": true,
-                "1msepgv": true,
                 "1myfomu": true,
                 "1s6ajii": true,
                 "1vwgrhn": true,
@@ -648,7 +648,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-8{float:right;padding-right:5px;-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-size:13px;line-height:1;height:40px;border:none;border-top:3px solid transparent;border-bottom:3px solid transparent;background:transparent;}
+                    .emotion-8{float:right;padding-right:5px;-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-size:13px;line-height:1;height:40px;border:none;border-top:2px solid transparent;border-bottom:2px solid transparent;background:transparent;}
                   </style>
                   <style
                     data-emotion="css"
@@ -858,7 +858,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-8{float:right;padding-right:5px;-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-size:13px;line-height:1;height:40px;border:none;border-top:3px solid transparent;border-bottom:3px solid transparent;background:transparent;}
+                    .emotion-8{float:right;padding-right:5px;-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-size:13px;line-height:1;height:40px;border:none;border-top:2px solid transparent;border-bottom:2px solid transparent;background:transparent;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -1165,7 +1165,7 @@ exports[`A11YPanel should render report 1`] = `
                                   >
                                     <Connect(HighlightToggle)
                                       elementsToHighlight={Array []}
-                                      label="Highlight Results"
+                                      label="Highlight results"
                                       toggleId="0-global-checkbox"
                                       type={0}
                                     >
@@ -1174,7 +1174,7 @@ exports[`A11YPanel should render report 1`] = `
                                         elementsToHighlight={Array []}
                                         highlightedElementsMap={Map {}}
                                         isToggledOn={false}
-                                        label="Highlight Results"
+                                        label="Highlight results"
                                         toggleId="0-global-checkbox"
                                         type={0}
                                       >
@@ -1201,7 +1201,7 @@ exports[`A11YPanel should render report 1`] = `
                                             className="emotion-7"
                                             htmlFor="0-global-checkbox"
                                           >
-                                            Highlight Results
+                                            Highlight results
                                           </label>
                                         </Styled(label)>
                                       </HighlightToggle>
