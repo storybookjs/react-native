@@ -21,7 +21,6 @@ const GlobalToggleWrapper = styled.div(({ theme }) => ({
   textDecoration: 'none',
   padding: '10px 15px',
   cursor: 'pointer',
-  fontWeight: theme.typography.weight.bold,
   fontSize: theme.typography.size.s2 - 1,
   lineHeight: 1,
   height: 40,
@@ -121,12 +120,12 @@ export class Tabs extends Component<TabsProps, TabsState> {
             </Item>
           ))}
           <GlobalToggleWrapper>
-            <HighlightToggleLabel htmlFor={toggleId}>Highlight Results: </HighlightToggleLabel>
             <HighlightToggle
               toggleID={toggleId}
               type={tabs[active].type}
               elementsToHighlight={this.retrieveAllNodeResults(tabs[active].items)}
             />
+            <HighlightToggleLabel htmlFor={toggleId}>Highlight Results</HighlightToggleLabel>
           </GlobalToggleWrapper>
         </List>
         {tabs[active].panel}

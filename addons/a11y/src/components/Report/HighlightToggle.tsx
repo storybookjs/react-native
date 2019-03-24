@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-
-import { styled } from '@storybook/theming';
+import { styled, themes, convert } from '@storybook/theming';
 import memoize from 'memoizerific';
 
 import { NodeResult } from 'axe-core';
@@ -103,13 +102,13 @@ class HighlightToggle extends Component<ToggleProps, {}> {
       if (addHighlight) {
         switch (this.props.type) {
           case RuleType.PASS:
-            this.setTargetElementOutlineStyle(targetElement, `1px dotted #66BF3C`);
+            this.setTargetElementOutlineStyle(targetElement, `1px dotted ${convert(themes.normal).color.positive}`);
             break;
           case RuleType.VIOLATION:
-            this.setTargetElementOutlineStyle(targetElement, `1px dotted #FF4400`);
+            this.setTargetElementOutlineStyle(targetElement, `1px dotted ${convert(themes.normal).color.negative}`);
             break;
           case RuleType.INCOMPLETION:
-            this.setTargetElementOutlineStyle(targetElement, `1px dotted #E69D00`);
+            this.setTargetElementOutlineStyle(targetElement, `1px dotted ${convert(themes.normal).color.positive}`);
             break;
         }
       } else {
