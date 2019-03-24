@@ -15,6 +15,7 @@ addParameters({
     hierarchySeparator: /\./,
     hierarchyRootSeparator: /\|/,
     enableShortcuts: true,
+    gridCellSize: 12,
   },
 });
 
