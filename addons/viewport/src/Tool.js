@@ -106,6 +106,16 @@ const ActiveViewportLabel = styled.div(({ theme }) => ({
   background: 'transparent',
 }));
 
+const IconButtonWithLabel = styled(IconButton)(() => ({
+  display: 'inline-flex',
+  alignItems: 'center',
+}));
+
+const IconButtonLabel = styled.div(({ theme }) => ({
+  fontSize: theme.typography.size.s2 - 1,
+  marginLeft: '10px',
+}));
+
 export default class ViewportTool extends Component {
   constructor(props) {
     super(props);
@@ -146,12 +156,15 @@ export default class ViewportTool extends Component {
 
     let viewportX = 0;
     let viewportY = 0;
+    let viewportTitle = '';
     if (item) {
       const height = item.value.height.replace('px', '');
       const width = item.value.width.replace('px', '');
 
       viewportX = isRotated ? height : width;
       viewportY = isRotated ? width : height;
+
+      viewportTitle = isRotated ? `${item.title} (L)` : `${item.title} (P)`;
     }
 
     return items.length ? (
@@ -177,9 +190,14 @@ export default class ViewportTool extends Component {
           tooltip={<TooltipLinkList links={items} />}
           closeOnClick
         >
-          <IconButton key="viewport" title="Change the size of the preview" active={!!item}>
+          <IconButtonWithLabel
+            key="viewport"
+            title="Change the size of the preview"
+            active={!!item}
+          >
             <Icons icon="grow" />
-          </IconButton>
+            <IconButtonLabel>{viewportTitle}</IconButtonLabel>
+          </IconButtonWithLabel>
         </WithTooltip>
         {item ? (
           <ActiveViewportSize>
