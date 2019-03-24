@@ -1,3 +1,7 @@
+## 5.0.5 (March 25, 2019)
+
+Bump version number (same as 5.0.4, but need to make this `latest` again!)
+
 ## 3.4.12 (March 24, 2019)
 
 ### Bug Fixes
