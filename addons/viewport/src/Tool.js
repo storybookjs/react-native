@@ -149,6 +149,13 @@ export default class ViewportTool extends Component {
   flipViewport = () =>
     this.setState(({ isRotated }) => ({ isRotated: !isRotated, expanded: false }));
 
+  resetViewport = e => {
+    e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
+
+    this.setState({ selected: undefined, expanded: false });
+  };
+
   render() {
     const { expanded } = this.state;
     const { items, selected, isRotated } = getState(this.props, this.state, this.change);
@@ -194,6 +201,7 @@ export default class ViewportTool extends Component {
             key="viewport"
             title="Change the size of the preview"
             active={!!item}
+            onDoubleClick={e => this.resetViewport(e)}
           >
             <Icons icon="grow" />
             <IconButtonLabel>{viewportTitle}</IconButtonLabel>
