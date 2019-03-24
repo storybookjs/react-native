@@ -41,7 +41,7 @@ const HeaderBar = styled.button(({ theme }) => ({
   },
 }));
 
-const HighlightText = styled.span({
+const HighlightToggleElement = styled.span({
   fontWeight: 'normal',
 });
 
@@ -85,9 +85,9 @@ export class Item extends Component<ItemProps, ItemState> {
             />
             {item.description}
           </HeaderBar>
-          <HighlightText>
+          <HighlightToggleElement>
             <HighlightToggle toggleId={highlightToggleId} type={type} elementsToHighlight={item ? item.nodes : null} label={highlightLabel} />
-          </HighlightText>
+          </HighlightToggleElement>
         </Wrapper>
         {open ? (
           <Fragment>

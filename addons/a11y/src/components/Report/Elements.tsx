@@ -20,7 +20,7 @@ const ItemTitle = styled.span({
   marginBottom: '4px',
 });
 
-const HighlightText = styled.span({
+const HighlightToggleElement = styled.span({
   paddingLeft: '15px',
   fontWeight: 'normal',
 });
@@ -41,9 +41,9 @@ const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => 
     <Item>
       <ItemTitle>
         {element.target[0]}
-        <HighlightText>
+        <HighlightToggleElement>
           <HighlightToggle toggleId={highlightToggleId} type={type} elementsToHighlight={[element]} label={highlightLabel} />
-        </HighlightText>
+        </HighlightToggleElement>
       </ItemTitle>
       <Rules rules={rules} passes={passes} />
     </Item>
