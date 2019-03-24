@@ -101,7 +101,7 @@ export class Tabs extends Component<TabsProps, TabsState> {
     const { tabs } = this.props;
     const { active } = this.state;
     const highlightToggleId = `${tabs[active].type}-global-checkbox`;
-    const highlightLabel = `Highlight Results`;
+    const highlightLabel = `Highlight results`;
     return (
       <Container>
         <List>
