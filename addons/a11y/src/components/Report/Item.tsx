@@ -14,11 +14,6 @@ const Wrapper = styled.div({
   width: '100%',
 });
 
-const HighlightToggleLabel = styled.label({
-  cursor: 'pointer',
-  userSelect: 'none',
-});
-
 const Icon = styled<any, any>(Icons)(({ theme }) => ({
   height: 10,
   width: 10,
@@ -73,10 +68,8 @@ export class Item extends Component<ItemProps, ItemState> {
   render() {
     const { item, passes, type } = this.props;
     const { open } = this.state;
-    const toggleId: string = type
-      .toString()
-      .concat('-')
-      .concat(item.id);
+    const highlightToggleId = `${type}-${item.id}`;
+    const highlightLabel = `Highlight`;
 
     return (
       <Fragment>
@@ -93,8 +86,7 @@ export class Item extends Component<ItemProps, ItemState> {
             {item.description}
           </HeaderBar>
           <HighlightText>
-            <HighlightToggle toggleID={toggleId} type={type} elementsToHighlight={item ? item.nodes : null} />
-            <HighlightToggleLabel htmlFor={toggleId}>Highlight</HighlightToggleLabel>
+            <HighlightToggle toggleId={highlightToggleId} type={type} elementsToHighlight={item ? item.nodes : null} label={highlightLabel} />
           </HighlightText>
         </Wrapper>
         {open ? (

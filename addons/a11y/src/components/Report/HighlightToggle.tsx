@@ -13,6 +13,12 @@ const Checkbox = styled.input({
   cursor: 'pointer',
 });
 
+const HighlightToggleLabel = styled.label(({ theme }) => ({
+  cursor: 'pointer',
+  userSelect: 'none',
+  color: theme.color.dark,
+}));
+
 export class HighlightedElementData {
   ruleTypeState: RuleType;
   originalOutline: string;
@@ -56,7 +62,8 @@ interface ToggleProps {
   addElement?: (data: any) => void;
   highlightedElementsMap?: Map<HTMLElement, HighlightedElementData>;
   isToggledOn?: boolean;
-  toggleID?: string;
+  toggleId?: string;
+  label: string;
 }
 
 function mapDispatchToProps(dispatch: any) {
@@ -98,17 +105,19 @@ class HighlightToggle extends Component<ToggleProps, {}> {
   }
 
   higlightRuleLocation(targetElement: HTMLElement, addHighlight: boolean): void {
+    const OUTLINE_STYLE = `dotted`;
+    const OUTLINE_WIDTH = `1px`;
     if (targetElement) {
       if (addHighlight) {
         switch (this.props.type) {
           case RuleType.PASS:
-            this.setTargetElementOutlineStyle(targetElement, `1px dotted ${convert(themes.normal).color.positive}`);
+            this.setTargetElementOutlineStyle(targetElement, `${convert(themes.normal).color.positive} ${OUTLINE_STYLE} ${OUTLINE_WIDTH}`);
             break;
           case RuleType.VIOLATION:
-            this.setTargetElementOutlineStyle(targetElement, `1px dotted ${convert(themes.normal).color.negative}`);
+            this.setTargetElementOutlineStyle(targetElement, `${convert(themes.normal).color.negative} ${OUTLINE_STYLE} ${OUTLINE_WIDTH}`);
             break;
           case RuleType.INCOMPLETION:
-            this.setTargetElementOutlineStyle(targetElement, `1px dotted ${convert(themes.normal).color.positive}`);
+            this.setTargetElementOutlineStyle(targetElement, `${convert(themes.normal).color.warning} ${OUTLINE_STYLE} ${OUTLINE_WIDTH}`);
             break;
         }
       } else {
@@ -173,13 +182,16 @@ class HighlightToggle extends Component<ToggleProps, {}> {
 
   render() {
     return (
-      <Checkbox
-        type="checkbox"
-        id={this.props.toggleID}
-        disabled={this.isHighlightToggleDisabled()}
-        onChange={() => this.onToggle()}
-        checked={this.props.isToggledOn}
-      />
+      <Fragment>
+        <Checkbox
+          type="checkbox"
+          id={this.props.toggleId}
+          disabled={this.isHighlightToggleDisabled()}
+          onChange={() => this.onToggle()}
+          checked={this.props.isToggledOn}
+        />
+        <HighlightToggleLabel htmlFor={this.props.toggleId}>{this.props.label}</HighlightToggleLabel>
+      </Fragment>
     );
   }
 }

@@ -30,11 +30,6 @@ const GlobalToggleWrapper = styled.div(({ theme }) => ({
   background: 'transparent',
 }));
 
-const HighlightToggleLabel = styled.label({
-  cursor: 'pointer',
-  userSelect: 'none',
-});
-
 const List = styled.div(({ theme }) => ({
   boxShadow: `${theme.appBorderColor} 0 -1px 0 0 inset`,
   background: 'rgba(0,0,0,.05)',
@@ -105,27 +100,26 @@ export class Tabs extends Component<TabsProps, TabsState> {
   render() {
     const { tabs } = this.props;
     const { active } = this.state;
-    const toggleId: string = tabs[active].type.toString().concat('-global-checkbox');
+    const highlightToggleId = `${tabs[active].type}-global-checkbox`;
+    const highlightLabel = `Highlight Results`;
     return (
       <Container>
         <List>
           {tabs.map((tab, index) => (
             <Item
-              // eslint-disable-next-line react/no-array-index-key
               key={index}
               active={active === index ? true : undefined}
-              onClick={() => this.onToggle(index)}
-            >
+              onClick={() => this.onToggle(index)}>
               {tab.label}
             </Item>
           ))}
           <GlobalToggleWrapper>
             <HighlightToggle
-              toggleID={toggleId}
+              toggleId={highlightToggleId}
               type={tabs[active].type}
               elementsToHighlight={this.retrieveAllNodeResults(tabs[active].items)}
+              label={highlightLabel}
             />
-            <HighlightToggleLabel htmlFor={toggleId}>Highlight Results</HighlightToggleLabel>
           </GlobalToggleWrapper>
         </List>
         {tabs[active].panel}

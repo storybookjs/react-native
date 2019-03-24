@@ -12,11 +12,6 @@ const Item = styled.li({
   fontWeight: 600,
 });
 
-const HighlightToggleLabel = styled.label({
-  cursor: 'pointer',
-  userSelect: 'none',
-});
-
 const ItemTitle = styled.span({
   borderBottom: '1px solid rgb(130, 130, 130)',
   width: '100%',
@@ -24,6 +19,7 @@ const ItemTitle = styled.span({
   paddingBottom: '4px',
   marginBottom: '4px',
 });
+
 const HighlightText = styled.span({
   paddingLeft: '15px',
   fontWeight: 'normal',
@@ -37,20 +33,16 @@ interface ElementProps {
 
 const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => {
   const { any, all, none } = element;
-
   const rules = [...any, ...all, ...none];
-  const toggleId: string = type
-    .toString()
-    .concat('-')
-    .concat(element.target[0]);
+  const highlightToggleId = `${type}-${element.target[0]}`;
+  const highlightLabel = `Highlight`;
 
   return (
     <Item>
       <ItemTitle>
         {element.target[0]}
         <HighlightText>
-          <HighlightToggle toggleID={toggleId} type={type} elementsToHighlight={[element]} />
-          <HighlightToggleLabel htmlFor={toggleId}>Highlight</HighlightToggleLabel>
+          <HighlightToggle toggleId={highlightToggleId} type={type} elementsToHighlight={[element]} label={highlightLabel} />
         </HighlightText>
       </ItemTitle>
       <Rules rules={rules} passes={passes} />
