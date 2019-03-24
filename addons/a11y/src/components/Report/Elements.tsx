@@ -1,7 +1,6 @@
-import React, { Component, Fragment, FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import { styled } from '@storybook/theming';
-import memoize from 'memoizerific';
 
 import { NodeResult } from 'axe-core';
 import { Rules } from './Rules';
@@ -12,18 +11,19 @@ const Item = styled.li({
   fontWeight: 600,
 });
 
-const ItemTitle = styled.span({
-  borderBottom: '1px solid rgb(130, 130, 130)',
+const ItemTitle = styled.span(({ theme }) => ({
+  borderBottom: `1px solid ${theme.appBorderColor}`,
   width: '100%',
   display: 'inline-block',
-  paddingBottom: '4px',
-  marginBottom: '4px',
-});
+  paddingBottom: '6px',
+  marginBottom: '6px',
+}));
 
 const HighlightToggleElement = styled.span({
   fontWeight: 'normal',
   float: 'right',
-  paddingRight: '10px',
+  paddingRight: '15px',
+  input: { margin: 0, },
 });
 
 interface ElementProps {

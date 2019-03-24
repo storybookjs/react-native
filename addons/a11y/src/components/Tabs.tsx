@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import { styled } from '@storybook/theming';
 import store, { clearElements } from '../redux-config';
@@ -19,27 +19,24 @@ const HighlightToggleLabel = styled.label(({ theme }) => ({
   cursor: 'pointer',
   userSelect: 'none',
   color: theme.color.dark,
-  paddingRight: '10px',
 }));
 
 const GlobalToggleWrapper = styled.div(({ theme }) => ({
-  float: 'right',
-  paddingRight: '5px',
-  textDecoration: 'none',
-  padding: '10px 15px',
+  padding: '10px 15px 10px 0',
   cursor: 'pointer',
   fontSize: theme.typography.size.s2 - 1,
-  lineHeight: 1,
   height: 40,
   border: 'none',
-  borderTop: '2px solid transparent',
-  borderBottom: '2px solid transparent',
-  background: 'transparent',
-}));
 
-const List = styled.div(({ theme }) => ({
-  boxShadow: `${theme.appBorderColor} 0 -1px 0 0 inset`,
-  background: 'rgba(0,0,0,.05)',
+  display: 'flex',
+  alignItems: 'center',
+
+  input: {
+    marginLeft: 10,
+    marginRight: 0,
+    marginTop: 0,
+    marginBottom: 0,
+  },
 }));
 
 const Item = styled.button(
@@ -69,6 +66,18 @@ const Item = styled.button(
         }
       : {}
 );
+
+const TabsWrapper = styled.div({});
+
+const List = styled.div(({ theme }) => ({
+  boxShadow: `${theme.appBorderColor} 0 -1px 0 0 inset`,
+  background: 'rgba(0,0,0,.05)',
+  display: 'flex',
+  justifyContent: 'space-between',
+  whiteSpace: 'nowrap',
+}));
+
+
 
 interface TabsProps {
   tabs: Array<{
@@ -112,6 +121,7 @@ export class Tabs extends Component<TabsProps, TabsState> {
     return (
       <Container>
         <List>
+          <TabsWrapper>
           {tabs.map((tab, index) => (
             <Item
               key={index}
@@ -120,6 +130,7 @@ export class Tabs extends Component<TabsProps, TabsState> {
               {tab.label}
             </Item>
           ))}
+          </TabsWrapper>
           <GlobalToggleWrapper>
             <HighlightToggleLabel htmlFor={highlightToggleId}>{highlightLabel}</HighlightToggleLabel>
             <HighlightToggle

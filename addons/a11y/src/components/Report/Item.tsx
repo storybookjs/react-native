@@ -12,9 +12,9 @@ import HighlightToggle from './HighlightToggle';
 
 const Wrapper = styled.div(({ theme }) => ({
   display: 'flex',
-  borderBottom: `1px solid rgba(0,0,0,.05)`,
+  borderBottom: `1px solid ${theme.appBorderColor}`,
   '&:hover': {
-    background: 'rgba(0,0,0,.05)',
+    background: theme.background.hoverable,
   },
 }));
 
@@ -50,6 +50,8 @@ const HighlightToggleElement = styled.span({
   float: 'right',
   marginRight: '15px',
   marginTop: '10px',
+
+  input: { margin: 0, },
 });
 
 interface ItemProps {
@@ -76,7 +78,6 @@ export class Item extends Component<ItemProps, ItemState> {
     const { item, passes, type } = this.props;
     const { open } = this.state;
     const highlightToggleId = `${type}-${item.id}`;
-    const highlightLabel = `Highlight`;
 
     return (
       <Fragment>
