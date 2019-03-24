@@ -7,7 +7,10 @@ function getCommand(watch) {
 
   const args = ['--outDir ./dist', '--listEmittedFiles true'];
 
-  if (!process.cwd().includes(path.join('app', 'angular'))) {
+  if (
+    !process.cwd().includes(path.join('app', 'angular')) &&
+    !process.cwd().includes(path.join('addons', 'storyshots'))
+  ) {
     args.push('--emitDeclarationOnly --declaration true');
   }
 

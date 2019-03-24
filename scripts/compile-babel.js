@@ -31,7 +31,10 @@ function getCommand(watch) {
    * runtime errors because of the the babel decorators plugin
    * Only transpile .js and let tsc do the job for .ts files
    */
-  if (process.cwd().includes(path.join('app', 'angular'))) {
+  if (
+    process.cwd().includes(path.join('app', 'angular')) ||
+    process.cwd().includes(path.join('addons', 'storyshots'))
+  ) {
     args.push(`--extensions ".js"`);
   } else {
     args.push(`--extensions ".js,.jsx,.ts,.tsx"`);
