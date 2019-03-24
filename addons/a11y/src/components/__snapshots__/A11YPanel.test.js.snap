@@ -322,21 +322,21 @@ exports[`A11YPanel should render report 1`] = `
                 "176o2y5": true,
                 "17pe9dv": true,
                 "1977chw": true,
+                "1i355qr": true,
                 "1l7fvsg": true,
-                "1l7mgse": true,
                 "1myfomu": true,
                 "1s6ajii": true,
                 "1vwgrhn": true,
                 "4g6ai3": true,
+                "4ryd4s": true,
                 "6hqipu": true,
                 "7t71pe": true,
-                "8atqhb": true,
                 "animation-u07e3c": true,
                 "fg630j": true,
                 "g90fw7": true,
                 "iau1th": true,
                 "jb2puo": true,
-                "jheumw": true,
+                "k7ar3m": true,
                 "kqzqgg": true,
                 "l0u0ek": true,
                 "qacwg0": true,
@@ -744,19 +744,25 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-8atqhb{width:100%;}
+                    .css-1i355qr{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-bottom:1px solid rgba(0,0,0,.05);}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-jheumw{padding:10px;padding-left:7px;border:0;background:none;color:inherit;text-align:left;border-left:3px solid transparent;}
+                    .css-1i355qr:hover{background:rgba(0,0,0,.05);}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-jheumw:focus{outline:0 none;border-left:3px solid #1EA7FD;}
+                    .css-4ryd4s{padding:10px;padding-left:7px;background:none;color:inherit;text-align:left;cursor:pointer;border-left:3px solid transparent;width:100%;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-4ryd4s:focus{outline:0 none;border-left:3px solid #1EA7FD;}
                   </style>
                   <style
                     data-emotion="css"
@@ -774,7 +780,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1l7mgse{font-weight:normal;}
+                    .css-k7ar3m{font-weight:normal;float:right;margin-right:15px;margin-top:10px;}
                   </style>
                   <style
                     data-emotion="css"
@@ -789,7 +795,7 @@ exports[`A11YPanel should render report 1`] = `
                     .css-6hqipu{shape-rendering:inherit;-webkit-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);display:inline-block;height:12px;width:12px;margin-right:4px;}
                   </style>
                 </head>,
-                "ctr": 34,
+                "ctr": 35,
                 "isSpeedy": false,
                 "key": "css",
                 "nonce": undefined,
@@ -954,19 +960,25 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-8atqhb{width:100%;}
+                    .css-1i355qr{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-bottom:1px solid rgba(0,0,0,.05);}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-jheumw{padding:10px;padding-left:7px;border:0;background:none;color:inherit;text-align:left;border-left:3px solid transparent;}
+                    .css-1i355qr:hover{background:rgba(0,0,0,.05);}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-jheumw:focus{outline:0 none;border-left:3px solid #1EA7FD;}
+                    .css-4ryd4s{padding:10px;padding-left:7px;background:none;color:inherit;text-align:left;cursor:pointer;border-left:3px solid transparent;width:100%;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-4ryd4s:focus{outline:0 none;border-left:3px solid #1EA7FD;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -984,7 +996,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1l7mgse{font-weight:normal;}
+                    .css-k7ar3m{font-weight:normal;float:right;margin-right:15px;margin-top:10px;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -1179,6 +1191,7 @@ exports[`A11YPanel should render report 1`] = `
                                         type={0}
                                       >
                                         <Styled(input)
+                                          aria-label="Highlight result"
                                           checked={false}
                                           disabled={true}
                                           id="0-global-checkbox"
@@ -1186,6 +1199,7 @@ exports[`A11YPanel should render report 1`] = `
                                           type="checkbox"
                                         >
                                           <input
+                                            aria-label="Highlight result"
                                             checked={false}
                                             className="emotion-6"
                                             disabled={true}
@@ -1194,18 +1208,18 @@ exports[`A11YPanel should render report 1`] = `
                                             type="checkbox"
                                           />
                                         </Styled(input)>
-                                        <Styled(label)
-                                          htmlFor="0-global-checkbox"
-                                        >
-                                          <label
-                                            className="emotion-7"
-                                            htmlFor="0-global-checkbox"
-                                          >
-                                            Highlight results
-                                          </label>
-                                        </Styled(label)>
                                       </HighlightToggle>
                                     </Connect(HighlightToggle)>
+                                    <Styled(label)
+                                      htmlFor="0-global-checkbox"
+                                    >
+                                      <label
+                                        className="emotion-7"
+                                        htmlFor="0-global-checkbox"
+                                      >
+                                        Highlight results
+                                      </label>
+                                    </Styled(label)>
                                   </div>
                                 </Styled(div)>
                               </div>

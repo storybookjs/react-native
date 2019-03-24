@@ -13,12 +13,6 @@ const Checkbox = styled.input({
   cursor: 'pointer',
 });
 
-const HighlightToggleLabel = styled.label(({ theme }) => ({
-  cursor: 'pointer',
-  userSelect: 'none',
-  color: theme.color.dark,
-}));
-
 export class HighlightedElementData {
   originalOutline: string;
   isHighlighted: boolean;
@@ -62,7 +56,6 @@ interface ToggleProps {
   highlightedElementsMap?: Map<HTMLElement, HighlightedElementData>;
   isToggledOn?: boolean;
   toggleId?: string;
-  label: string;
 }
 
 function mapDispatchToProps(dispatch: any) {
@@ -173,16 +166,14 @@ class HighlightToggle extends Component<ToggleProps, {}> {
 
   render() {
     return (
-      <Fragment>
-        <Checkbox
-          type="checkbox"
-          id={this.props.toggleId}
-          disabled={this.props.elementsToHighlight && this.props.elementsToHighlight.length === 0 ? true : false}
-          onChange={() => this.onToggle()}
-          checked={this.props.isToggledOn}
-        />
-        <HighlightToggleLabel htmlFor={this.props.toggleId}>{this.props.label}</HighlightToggleLabel>
-      </Fragment>
+      <Checkbox
+        id={this.props.toggleId}
+        type="checkbox"
+        aria-label="Highlight result"
+        disabled={this.props.elementsToHighlight && this.props.elementsToHighlight.length === 0 ? true : false}
+        onChange={() => this.onToggle()}
+        checked={this.props.isToggledOn}
+      />
     );
   }
 }

@@ -10,9 +10,13 @@ import { Tags } from './Tags';
 import { RuleType } from '../A11YPanel';
 import HighlightToggle from './HighlightToggle';
 
-const Wrapper = styled.div({
-  width: '100%',
-});
+const Wrapper = styled.div(({ theme }) => ({
+  display: 'flex',
+  borderBottom: `1px solid rgba(0,0,0,.05)`,
+  '&:hover': {
+    background: 'rgba(0,0,0,.05)',
+  },
+}));
 
 const Icon = styled<any, any>(Icons)(({ theme }) => ({
   height: 10,
@@ -25,15 +29,15 @@ const Icon = styled<any, any>(Icons)(({ theme }) => ({
   display: 'inline-flex',
 }));
 
-const HeaderBar = styled.button(({ theme }) => ({
+const HeaderBar = styled.div(({ theme }) => ({
   padding: theme.layoutMargin,
   paddingLeft: theme.layoutMargin - 3,
-  border: 0,
   background: 'none',
   color: 'inherit',
   textAlign: 'left',
-
+  cursor: 'pointer',
   borderLeft: '3px solid transparent',
+  width: '100%',
 
   '&:focus': {
     outline: '0 none',
@@ -43,6 +47,9 @@ const HeaderBar = styled.button(({ theme }) => ({
 
 const HighlightToggleElement = styled.span({
   fontWeight: 'normal',
+  float: 'right',
+  marginRight: '15px',
+  marginTop: '10px',
 });
 
 interface ItemProps {
@@ -74,7 +81,7 @@ export class Item extends Component<ItemProps, ItemState> {
     return (
       <Fragment>
         <Wrapper>
-          <HeaderBar onClick={this.onToggle}>
+          <HeaderBar onClick={this.onToggle} role="button">
             <Icon
               icon="chevrondown"
               size={10}
@@ -86,7 +93,7 @@ export class Item extends Component<ItemProps, ItemState> {
             {item.description}
           </HeaderBar>
           <HighlightToggleElement>
-            <HighlightToggle toggleId={highlightToggleId} type={type} elementsToHighlight={item ? item.nodes : null} label={highlightLabel} />
+            <HighlightToggle toggleId={highlightToggleId} type={type} elementsToHighlight={item ? item.nodes : null} />
           </HighlightToggleElement>
         </Wrapper>
         {open ? (

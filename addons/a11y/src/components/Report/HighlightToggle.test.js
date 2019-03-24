@@ -5,8 +5,6 @@ import { ThemeProvider, themes, convert } from '@storybook/theming';
 import HighlightToggle from './HighlightToggle.tsx';
 import store from '../../redux-config.tsx';
 
-const TEST_LABEL = `Highlight`;
-
 function ThemedHighlightToggle(props) {
   return (
     <ThemeProvider theme={convert(themes.normal)}>
@@ -32,7 +30,7 @@ describe('HighlightToggle component', () => {
     // given
     const wrapper = mount(
       <Provider store={store}>
-        <ThemedHighlightToggle label={TEST_LABEL} />
+        <ThemedHighlightToggle />
       </Provider>
     );
 

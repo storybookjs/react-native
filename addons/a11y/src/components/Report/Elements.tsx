@@ -21,8 +21,9 @@ const ItemTitle = styled.span({
 });
 
 const HighlightToggleElement = styled.span({
-  paddingLeft: '15px',
   fontWeight: 'normal',
+  float: 'right',
+  paddingRight: '10px',
 });
 
 interface ElementProps {
