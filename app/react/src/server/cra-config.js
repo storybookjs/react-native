@@ -3,7 +3,7 @@ import path from 'path';
 import semver from 'semver';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { normalizeCondition } from 'webpack/lib/RuleSet';
-import { logger } from '@storybook/client-logger';
+import { logger } from '@storybook/node-logger';
 
 const cssExtensions = ['.css', '.scss', '.sass'];
 const cssModuleExtensions = ['.module.css', '.module.scss', '.module.sass'];
