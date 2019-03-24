@@ -13,16 +13,6 @@
 * Core: Add core-js as a dep to client-api ([#6209](https://github.com/storybooks/storybook/pull/6209))
 * React: Fix logging in cra-config ([#6245](https://github.com/storybooks/storybook/pull/6245))
 
-## 5.0.3 (March 18, 2019)
-
-### Bug Fixes
-
-* Accessibility: Add missing button titles ([#6124](https://github.com/storybooks/storybook/pull/6124))
-
-### Maintenance
-
-* UI: Make update notifications much less aggressive ([#6143](https://github.com/storybooks/storybook/pull/6143))
-
 ## 4.1.16 (March 24, 2019)
 
 ### Bug Fixes
@@ -97,6 +87,16 @@ NPM publish failed
 * Bump tslint from 5.13.1 to 5.14.0 ([#6141](https://github.com/storybooks/storybook/pull/6141))
 * Bump ember-cli from 3.7.1 to 3.8.1 ([#6142](https://github.com/storybooks/storybook/pull/6142))
 * Bump markdown-to-jsx from 6.9.1 to 6.9.3 ([#6139](https://github.com/storybooks/storybook/pull/6139))
+
+## 5.0.3 (March 18, 2019)
+
+### Bug Fixes
+
+* Accessibility: Add missing button titles ([#6124](https://github.com/storybooks/storybook/pull/6124))
+
+### Maintenance
+
+* UI: Make update notifications much less aggressive ([#6143](https://github.com/storybooks/storybook/pull/6143))
 
 ## 5.1.0-alpha.9 (March 18, 2019)
 
