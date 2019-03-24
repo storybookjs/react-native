@@ -19,6 +19,7 @@ const HighlightToggleLabel = styled.label(({ theme }) => ({
   cursor: 'pointer',
   userSelect: 'none',
   color: theme.color.dark,
+  paddingRight: '10px',
 }));
 
 const GlobalToggleWrapper = styled.div(({ theme }) => ({
@@ -120,13 +121,13 @@ export class Tabs extends Component<TabsProps, TabsState> {
             </Item>
           ))}
           <GlobalToggleWrapper>
+            <HighlightToggleLabel htmlFor={highlightToggleId}>{highlightLabel}</HighlightToggleLabel>
             <HighlightToggle
               toggleId={highlightToggleId}
               type={tabs[active].type}
               elementsToHighlight={this.retrieveAllNodeResults(tabs[active].items)}
               label={highlightLabel}
             />
-            <HighlightToggleLabel htmlFor={highlightToggleId}>{highlightLabel}</HighlightToggleLabel>
           </GlobalToggleWrapper>
         </List>
         {tabs[active].panel}

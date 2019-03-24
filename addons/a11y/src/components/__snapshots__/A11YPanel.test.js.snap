@@ -191,15 +191,16 @@ exports[`A11YPanel should render report 1`] = `
 
 .emotion-6 {
   cursor: pointer;
-}
-
-.emotion-7 {
-  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   color: #666666;
+  padding-right: 10px;
+}
+
+.emotion-7 {
+  cursor: pointer;
 }
 
 .emotion-11 {
@@ -317,7 +318,6 @@ exports[`A11YPanel should render report 1`] = `
               "insert": [Function],
               "inserted": Object {
                 "110qmus": true,
-                "152wg9i": true,
                 "1551xjo": true,
                 "176o2y5": true,
                 "17pe9dv": true,
@@ -343,6 +343,7 @@ exports[`A11YPanel should render report 1`] = `
                 "qb28": true,
                 "snh8f7": true,
                 "tkevr6": true,
+                "wf3zah": true,
               },
               "key": "css",
               "nonce": undefined,
@@ -654,13 +655,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-6{cursor:pointer;}
+                    .emotion-6{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:#666666;padding-right:10px;}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-7{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:#666666;}
+                    .emotion-7{cursor:pointer;}
                   </style>
                   <style
                     data-emotion="css"
@@ -870,13 +871,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-6{cursor:pointer;}
+                    .emotion-6{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:#666666;padding-right:10px;}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-7{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:#666666;}
+                    .emotion-7{cursor:pointer;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -1175,6 +1176,16 @@ exports[`A11YPanel should render report 1`] = `
                                   <div
                                     className="emotion-8"
                                   >
+                                    <Styled(label)
+                                      htmlFor="0-global-checkbox"
+                                    >
+                                      <label
+                                        className="emotion-6"
+                                        htmlFor="0-global-checkbox"
+                                      >
+                                        Highlight results
+                                      </label>
+                                    </Styled(label)>
                                     <Connect(HighlightToggle)
                                       elementsToHighlight={Array []}
                                       label="Highlight results"
@@ -1201,7 +1212,7 @@ exports[`A11YPanel should render report 1`] = `
                                           <input
                                             aria-label="Highlight result"
                                             checked={false}
-                                            className="emotion-6"
+                                            className="emotion-7"
                                             disabled={true}
                                             id="0-global-checkbox"
                                             onChange={[Function]}
@@ -1210,16 +1221,6 @@ exports[`A11YPanel should render report 1`] = `
                                         </Styled(input)>
                                       </HighlightToggle>
                                     </Connect(HighlightToggle)>
-                                    <Styled(label)
-                                      htmlFor="0-global-checkbox"
-                                    >
-                                      <label
-                                        className="emotion-7"
-                                        htmlFor="0-global-checkbox"
-                                      >
-                                        Highlight results
-                                      </label>
-                                    </Styled(label)>
                                   </div>
                                 </Styled(div)>
                               </div>
