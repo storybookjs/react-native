@@ -20,7 +20,6 @@ const HighlightToggleLabel = styled.label(({ theme }) => ({
 }));
 
 export class HighlightedElementData {
-  ruleTypeState: RuleType;
   originalOutline: string;
   isHighlighted: boolean;
 }
@@ -140,7 +139,6 @@ class HighlightToggle extends Component<ToggleProps, {}> {
     const data: HighlightedElementData = new HighlightedElementData();
     data.isHighlighted = isHighlighted;
     data.originalOutline = originalOutline;
-    data.ruleTypeState = ruleTypeState;
     const payload = { element: targetElement, highlightedElementData: data };
     this.props.addElement(payload);
   }
@@ -173,20 +171,13 @@ class HighlightToggle extends Component<ToggleProps, {}> {
     }
   }
 
-  isHighlightToggleDisabled() {
-    if (this.props.elementsToHighlight && this.props.elementsToHighlight.length === 0) {
-      return true;
-    }
-    return false;
-  }
-
   render() {
     return (
       <Fragment>
         <Checkbox
           type="checkbox"
           id={this.props.toggleId}
-          disabled={this.isHighlightToggleDisabled()}
+          disabled={this.props.elementsToHighlight && this.props.elementsToHighlight.length === 0 ? true : false}
           onChange={() => this.onToggle()}
           checked={this.props.isToggledOn}
         />
