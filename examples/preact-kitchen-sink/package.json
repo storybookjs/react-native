@@ -34,7 +34,7 @@
     "preact-render-to-json": "^3.6.6",
     "raw-loader": "^1.0.0",
     "svg-url-loader": "^2.3.2",
-    "webpack": "^4.29.6",
+    "webpack": "^4.28.0",
     "webpack-dev-server": "^3.2.1"
   }
 }
