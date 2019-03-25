@@ -3,7 +3,7 @@ import { linkTo, hrefTo, withLinks } from './preview';
 
 let hasWarned = false;
 
-export function LinkTo() {
+export function LinkTo(): null {
   if (!hasWarned) {
     // eslint-disable-next-line no-console
     console.error(stripIndents`

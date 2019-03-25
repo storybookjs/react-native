@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
 import deprecate from 'util-deprecate';
 
-import { Global } from '@storybook/theming';
+import { styled, Global } from '@storybook/theming';
 
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
 import { SET_STORIES } from '@storybook/core-events';
@@ -88,6 +88,34 @@ const getState = memoize(10)((props, state, change) => {
   };
 });
 
+const ActiveViewportSize = styled.div(() => ({
+  display: 'inline-flex',
+}));
+
+const ActiveViewportLabel = styled.div(({ theme }) => ({
+  display: 'inline-block',
+  textDecoration: 'none',
+  padding: '10px',
+  fontWeight: theme.typography.weight.bold,
+  fontSize: theme.typography.size.s2 - 1,
+  lineHeight: 1,
+  height: 40,
+  border: 'none',
+  borderTop: '3px solid transparent',
+  borderBottom: '3px solid transparent',
+  background: 'transparent',
+}));
+
+const IconButtonWithLabel = styled(IconButton)(() => ({
+  display: 'inline-flex',
+  alignItems: 'center',
+}));
+
+const IconButtonLabel = styled.div(({ theme }) => ({
+  fontSize: theme.typography.size.s2 - 1,
+  marginLeft: '10px',
+}));
+
 export default class ViewportTool extends Component {
   constructor(props) {
     super(props);
@@ -118,10 +146,33 @@ export default class ViewportTool extends Component {
 
   change = (...args) => this.setState(...args);
 
+  flipViewport = () =>
+    this.setState(({ isRotated }) => ({ isRotated: !isRotated, expanded: false }));
+
+  resetViewport = e => {
+    e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
+
+    this.setState({ selected: undefined, expanded: false });
+  };
+
   render() {
     const { expanded } = this.state;
     const { items, selected, isRotated } = getState(this.props, this.state, this.change);
     const item = items.find(i => i.id === selected);
+
+    let viewportX = 0;
+    let viewportY = 0;
+    let viewportTitle = '';
+    if (item) {
+      const height = item.value.height.replace('px', '');
+      const width = item.value.width.replace('px', '');
+
+      viewportX = isRotated ? height : width;
+      viewportY = isRotated ? width : height;
+
+      viewportTitle = isRotated ? `${item.title} (L)` : `${item.title} (P)`;
+    }
 
     return items.length ? (
       <Fragment>
@@ -150,10 +201,25 @@ export default class ViewportTool extends Component {
           tooltip={<TooltipLinkList links={items} />}
           closeOnClick
         >
-          <IconButton key="viewport" title="Change the size of the preview" active={!!item}>
+          <IconButtonWithLabel
+            key="viewport"
+            title="Change the size of the preview"
+            active={!!item}
+            onDoubleClick={e => this.resetViewport(e)}
+          >
             <Icons icon="grow" />
-          </IconButton>
+            <IconButtonLabel>{viewportTitle}</IconButtonLabel>
+          </IconButtonWithLabel>
         </WithTooltip>
+        {item ? (
+          <ActiveViewportSize>
+            <ActiveViewportLabel title="Viewport width">{viewportX}</ActiveViewportLabel>
+            <IconButton key="viewport-rotate" title="Rotate viewport" onClick={this.flipViewport}>
+              <Icons icon="transfer" />
+            </IconButton>
+            <ActiveViewportLabel title="Viewport height">{viewportY}</ActiveViewportLabel>
+          </ActiveViewportSize>
+        ) : null}
       </Fragment>
     ) : null;
   }
