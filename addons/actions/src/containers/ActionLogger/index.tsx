@@ -17,6 +17,14 @@ interface ActionLoggerState {
   actions: ActionDisplay[];
 }
 
+const safeDeepEqual = (a: any, b: any): boolean => {
+  try {
+    return deepEqual(a, b);
+  } catch (e) {
+    return false;
+  }
+};
+
 export default class ActionLogger extends Component<ActionLoggerProps, ActionLoggerState> {
   private mounted: boolean;
 
@@ -50,18 +58,17 @@ export default class ActionLogger extends Component<ActionLoggerProps, ActionLog
   };
 
   addAction = (action: ActionDisplay) => {
-    let { actions = [] } = this.state;
-    actions = [...actions];
-
-    const previous = actions.length && actions[0];
-
-    if (previous && deepEqual(previous.data, action.data)) {
-      previous.count++; // eslint-disable-line
-    } else {
-      action.count = 1; // eslint-disable-line
-      actions.unshift(action);
-    }
-    this.setState({ actions: actions.slice(0, action.options.limit) });
+    this.setState((prevState: ActionLoggerState) => {
+      const actions = [...prevState.actions];
+      const previous = actions.length && actions[0];
+      if (previous && safeDeepEqual(previous.data, action.data)) {
+        previous.count++; // eslint-disable-line
+      } else {
+        action.count = 1; // eslint-disable-line
+        actions.unshift(action);
+      }
+      return { actions: actions.slice(0, action.options.limit) };
+    });
   };
 
   clearActions = () => {
