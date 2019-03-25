@@ -77,8 +77,6 @@ const List = styled.div(({ theme }) => ({
   whiteSpace: 'nowrap',
 }));
 
-
-
 interface TabsProps {
   tabs: Array<{
     label: JSX.Element;
