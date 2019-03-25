@@ -142,6 +142,7 @@ exports[`HighlightToggle component should match snapshot 1`] = `
             "app": "#F6F9FC",
             "bar": "#FFFFFF",
             "content": "#FFFFFF",
+            "gridCellSize": 10,
             "hoverable": "rgba(0,0,0,.05)",
             "negative": "#FEDED2",
             "positive": "#E1FFD4",
