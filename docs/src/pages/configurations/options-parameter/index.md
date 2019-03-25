@@ -34,7 +34,7 @@ addParameters({
     showPanel: true,
     /**
      * where to show the addon panel
-     * @type {String}
+     * @type {('bottom'|'right')}
      */
     panelPosition: 'bottom',
     /**
