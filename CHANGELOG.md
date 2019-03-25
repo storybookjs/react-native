@@ -1,3 +1,38 @@
+## 5.0.5 (March 25, 2019)
+
+Bump version number (same as 5.0.4, but need to make this `latest` again!)
+
+## 3.4.12 (March 24, 2019)
+
+### Bug Fixes
+
+* UI: Workaround broken treebeard animations ([#6249](https://github.com/storybooks/storybook/pull/6249))
+
+## 5.0.4 (March 24, 2019)
+
+### Bug Fixes
+
+* UI: Fix tooltip event bindings, logger import ([#6238](https://github.com/storybooks/storybook/pull/6238))
+* CLI: Fix stories regexp in config.js ([#6180](https://github.com/storybooks/storybook/pull/6180))
+* Accessibilty: Add missing button titles ([#6124](https://github.com/storybooks/storybook/pull/6124))
+* React: Fix forked CRA support on Windows ([#6236](https://github.com/storybooks/storybook/pull/6236))
+* Addon-knkobs: Fix color type button z-index ([#6203](https://github.com/storybooks/storybook/pull/6203))
+* Angular: Fix typo in demo example  ([#6193](https://github.com/storybooks/storybook/pull/6193))
+* Addon-Info: Restore fonts and color styling ([#6186](https://github.com/storybooks/storybook/pull/6186))
+* Addon-knobs: Fix ObjectType knob react warning ([#6159](https://github.com/storybooks/storybook/pull/6159))
+* Core: Add core-js as a dep to client-api ([#6209](https://github.com/storybooks/storybook/pull/6209))
+* React: Fix logging in cra-config ([#6245](https://github.com/storybooks/storybook/pull/6245))
+
+## 4.1.16 (March 24, 2019)
+
+### Bug Fixes
+
+* UI: Workaround broken treebeard animations ([#6249](https://github.com/storybooks/storybook/pull/6249))
+
+## 4.1.15 (March 24, 2019)
+
+NPM publish failed
+
 ## 5.1.0-alpha.13 (March 23, 2019)
 
 ### Features
@@ -62,6 +97,16 @@
 * Bump tslint from 5.13.1 to 5.14.0 ([#6141](https://github.com/storybooks/storybook/pull/6141))
 * Bump ember-cli from 3.7.1 to 3.8.1 ([#6142](https://github.com/storybooks/storybook/pull/6142))
 * Bump markdown-to-jsx from 6.9.1 to 6.9.3 ([#6139](https://github.com/storybooks/storybook/pull/6139))
+
+## 5.0.3 (March 18, 2019)
+
+### Bug Fixes
+
+* Accessibility: Add missing button titles ([#6124](https://github.com/storybooks/storybook/pull/6124))
+
+### Maintenance
+
+* UI: Make update notifications much less aggressive ([#6143](https://github.com/storybooks/storybook/pull/6143))
 
 ## 5.1.0-alpha.9 (March 18, 2019)
 

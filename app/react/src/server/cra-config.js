@@ -3,6 +3,7 @@ import path from 'path';
 import semver from 'semver';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { normalizeCondition } from 'webpack/lib/RuleSet';
+import { logger } from '@storybook/node-logger';
 
 const cssExtensions = ['.css', '.scss', '.sass'];
 const cssModuleExtensions = ['.module.css', '.module.scss', '.module.sass'];
@@ -42,7 +43,7 @@ export function getReactScriptsPath({ noCache } = {}) {
       }
     }
   } catch (e) {
-    console.warn('Error occured during react-scripts package path resolving.', e);
+    logger.warn(`Error occured during react-scripts package path resolving: ${e}`);
   }
 
   reactScriptsPath = path.join(reactScriptsScriptPath, '../..');

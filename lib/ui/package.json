@@ -31,7 +31,7 @@
     "@storybook/theming": "5.1.0-alpha.13",
     "core-js": "^2.6.5",
     "fast-deep-equal": "^2.0.1",
-    "fuzzy-search": "^3.0.1",
+    "fuse.js": "^3.4.4",
     "global": "^4.3.2",
     "lodash.debounce": "^4.0.8",
     "lodash.isequal": "^4.5.0",
