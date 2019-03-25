@@ -4,7 +4,7 @@ import addons from '@storybook/addons';
 
 import { SELECT_STORY } from '@storybook/core-events';
 import { mockChannel } from '../../preview.test';
-import LinkTo from './link';
+import LinkTo from './link.tsx';
 
 jest.mock('@storybook/addons');
 
