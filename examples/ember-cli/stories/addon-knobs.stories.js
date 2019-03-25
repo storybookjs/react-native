@@ -9,7 +9,7 @@ storiesOf('Addon|Knobs', module)
   .add('with text', () => ({
     template: hbs`
       {{welcome-banner
-        style=(if this.hidden "display: hidden")
+        style=(if hidden "display: none")
         backgroundColor=backgroundColor
         titleColor=titleColor
         subTitleColor=subTitleColor
