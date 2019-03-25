@@ -7,8 +7,16 @@ import { Result } from 'axe-core';
 import { Info } from './Info';
 import { Elements } from './Elements';
 import { Tags } from './Tags';
+import { RuleType } from '../A11YPanel';
+import HighlightToggle from './HighlightToggle';
 
-const Wrapper = styled.div();
+const Wrapper = styled.div(({ theme }) => ({
+  display: 'flex',
+  borderBottom: `1px solid ${theme.appBorderColor}`,
+  '&:hover': {
+    background: theme.background.hoverable,
+  },
+}));
 
 const Icon = styled<any, any>(Icons)(({ theme }) => ({
   height: 10,
@@ -21,17 +29,15 @@ const Icon = styled<any, any>(Icons)(({ theme }) => ({
   display: 'inline-flex',
 }));
 
-const HeaderBar = styled.button(({ theme }) => ({
+const HeaderBar = styled.div(({ theme }) => ({
   padding: theme.layoutMargin,
   paddingLeft: theme.layoutMargin - 3,
-  display: 'flex',
-  width: '100%',
-  border: 0,
   background: 'none',
   color: 'inherit',
   textAlign: 'left',
-
+  cursor: 'pointer',
   borderLeft: '3px solid transparent',
+  width: '100%',
 
   '&:focus': {
     outline: '0 none',
@@ -39,9 +45,19 @@ const HeaderBar = styled.button(({ theme }) => ({
   },
 }));
 
+const HighlightToggleElement = styled.span({
+  fontWeight: 'normal',
+  float: 'right',
+  marginRight: '15px',
+  marginTop: '10px',
+
+  input: { margin: 0, },
+});
+
 interface ItemProps {
   item: Result;
   passes: boolean;
+  type: RuleType;
 }
 
 interface ItemState {
@@ -59,30 +75,36 @@ export class Item extends Component<ItemProps, ItemState> {
     }));
 
   render() {
-    const { item, passes } = this.props;
+    const { item, passes, type } = this.props;
     const { open } = this.state;
+    const highlightToggleId = `${type}-${item.id}`;
 
     return (
-      <Wrapper>
-        <HeaderBar onClick={this.onToggle}>
-          <Icon
-            icon="chevrondown"
-            size={10}
-            color="#9DA5AB"
-            style={{
-              transform: `rotate(${open ? 0 : -90}deg)`,
-            }}
-          />
-          {item.description}
-        </HeaderBar>
+      <Fragment>
+        <Wrapper>
+          <HeaderBar onClick={this.onToggle} role="button">
+            <Icon
+              icon="chevrondown"
+              size={10}
+              color="#9DA5AB"
+              style={{
+                transform: `rotate(${open ? 0 : -90}deg)`,
+              }}
+            />
+            {item.description}
+          </HeaderBar>
+          <HighlightToggleElement>
+            <HighlightToggle toggleId={highlightToggleId} type={type} elementsToHighlight={item ? item.nodes : null} />
+          </HighlightToggleElement>
+        </Wrapper>
         {open ? (
           <Fragment>
             <Info item={item} key="info" />
-            <Elements elements={item.nodes} passes={passes} key="elements" />
+            <Elements elements={item.nodes} passes={passes} type={type} key="elements" />
             <Tags tags={item.tags} key="tags" />
           </Fragment>
         ) : null}
-      </Wrapper>
+      </Fragment>
     );
   }
 }

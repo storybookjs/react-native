@@ -41,7 +41,10 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/common-tags": "^1.8.0"
+    "@types/common-tags": "^1.8.0",
+    "@types/react-redux": "^7.0.3",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1"
   },
   "publishConfig": {
     "access": "public"
