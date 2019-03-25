@@ -34,7 +34,7 @@ addParameters({
     showPanel: true,
     /**
      * where to show the addon panel
-     * @type {String}
+     * @type {('bottom'|'right')}
      */
     panelPosition: 'bottom',
     /**
@@ -70,6 +70,11 @@ addParameters({
      * @type {Boolean}
      */
     enableShortcuts: true,
+    /**
+     * show/hide tool bar
+     * @type {Boolean}
+     */
+    isToolshown: true,
     /**
      * theme storybook, see link below
      */

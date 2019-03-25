@@ -1,3 +1,174 @@
+## 5.1.0-alpha.14 (March 25, 2019)
+
+### Features
+
+* Addon-backgrounds: Add custom grid size ([#6252](https://github.com/storybooks/storybook/pull/6252))
+* Addon-viewport: Show active viewport dimensions & rotate button ([#6045](https://github.com/storybooks/storybook/pull/6045))
+
+### Bug Fixes
+
+* UI: Use Fuse.js package for search ([#6244](https://github.com/storybooks/storybook/pull/6244))
+* React: Use node-logger instead of console ([#6245](https://github.com/storybooks/storybook/pull/6245))
+
+### Maintenance
+
+* Addon-links: Migrate to Typescript ([#6246](https://github.com/storybooks/storybook/pull/6246))
+
+### Dependency Upgrades
+
+* Bump react-resize-detector from 4.0.2 to 4.0.5 ([#6229](https://github.com/storybooks/storybook/pull/6229))
+
+## 5.0.5 (March 25, 2019)
+
+Bump version number (same as 5.0.4, but need to make this `latest` again!)
+
+## 3.4.12 (March 24, 2019)
+
+### Bug Fixes
+
+* UI: Workaround broken treebeard animations ([#6249](https://github.com/storybooks/storybook/pull/6249))
+
+## 5.0.4 (March 24, 2019)
+
+### Bug Fixes
+
+* UI: Fix tooltip event bindings, logger import ([#6238](https://github.com/storybooks/storybook/pull/6238))
+* CLI: Fix stories regexp in config.js ([#6180](https://github.com/storybooks/storybook/pull/6180))
+* Accessibilty: Add missing button titles ([#6124](https://github.com/storybooks/storybook/pull/6124))
+* React: Fix forked CRA support on Windows ([#6236](https://github.com/storybooks/storybook/pull/6236))
+* Addon-knkobs: Fix color type button z-index ([#6203](https://github.com/storybooks/storybook/pull/6203))
+* Angular: Fix typo in demo example  ([#6193](https://github.com/storybooks/storybook/pull/6193))
+* Addon-Info: Restore fonts and color styling ([#6186](https://github.com/storybooks/storybook/pull/6186))
+* Addon-knobs: Fix ObjectType knob react warning ([#6159](https://github.com/storybooks/storybook/pull/6159))
+* Core: Add core-js as a dep to client-api ([#6209](https://github.com/storybooks/storybook/pull/6209))
+* React: Fix logging in cra-config ([#6245](https://github.com/storybooks/storybook/pull/6245))
+
+## 4.1.16 (March 24, 2019)
+
+### Bug Fixes
+
+* UI: Workaround broken treebeard animations ([#6249](https://github.com/storybooks/storybook/pull/6249))
+
+## 4.1.15 (March 24, 2019)
+
+NPM publish failed
+
+## 5.1.0-alpha.13 (March 23, 2019)
+
+### Features
+
+* Svelte: add svelte cli generator ([#6132](https://github.com/storybooks/storybook/pull/6132))
+
+### Bug Fixes
+
+* Addon-knobs: Fix ObjectType knob react warning ([#6159](https://github.com/storybooks/storybook/pull/6159))
+* React: Fix forked CRA support on Windows ([#6236](https://github.com/storybooks/storybook/pull/6236))
+* UI: Fix tooltip event bindings, logger import ([#6238](https://github.com/storybooks/storybook/pull/6238))
+
+## 5.1.0-alpha.12 (March 22, 2019)
+
+### Bug Fixes
+
+* CLI: Fix stories regexp in config.js ([#6180](https://github.com/storybooks/storybook/pull/6180))
+* Addon-Info: Restore fonts and color styling ([#6186](https://github.com/storybooks/storybook/pull/6186))
+* Core: Add core-js as a dep to client-api ([#6209](https://github.com/storybooks/storybook/pull/6209))
+
+### Dependency Upgrades
+
+* Bump eslint-plugin-jest from 22.3.2 to 22.4.1 ([#6168](https://github.com/storybooks/storybook/pull/6168))
+* Bump ember-cli-babel from 7.5.0 to 7.6.0 ([#6165](https://github.com/storybooks/storybook/pull/6165))
+* Bump danger from 7.0.14 to 7.0.15 ([#6164](https://github.com/storybooks/storybook/pull/6164))
+* Bump babel-preset-expo from 5.0.0 to 5.1.1 ([#6167](https://github.com/storybooks/storybook/pull/6167))
+* Bump @emotion/core from 10.0.7 to 10.0.9 ([#6169](https://github.com/storybooks/storybook/pull/6169))
+* Bump marko from 4.15.4 to 4.16.2 ([#6205](https://github.com/storybooks/storybook/pull/6205))
+
+## 5.1.0-alpha.11 (March 21, 2019)
+
+### Features
+
+* Addon-notes: Support theming ([#5922](https://github.com/storybooks/storybook/pull/5922))
+
+### Bug Fixes
+
+* Addon-knkobs: Fix color type button z-index ([#6203](https://github.com/storybooks/storybook/pull/6203))
+* Angular: Fix typo in demo example ([#6193](https://github.com/storybooks/storybook/pull/6193))
+* UI: Fix problem with selectedPanel reset ([#6149](https://github.com/storybooks/storybook/pull/6149))
+
+### Maintenance
+
+* React-native: Publish crna-kitchen-sink app to expo ([#6183](https://github.com/storybooks/storybook/pull/6183))
+
+## 5.1.0-alpha.10 (March 19, 2019)
+
+### Features
+
+* New @storybook/api manager API package ([#5402](https://github.com/storybooks/storybook/pull/5402))
+
+### Bug Fixes
+
+* Angular: Fix rerender performance ([#6094](https://github.com/storybooks/storybook/pull/6094))
+* React-native: Add the raw method to preview ([#6182](https://github.com/storybooks/storybook/pull/6182))
+* Theming: Fix brandImage to occupy 100% width of BrandArea ([#5904](https://github.com/storybooks/storybook/pull/5904))
+
+### Dependency Upgrades
+
+* Bump emotion-theming from 10.0.7 to 10.0.9 ([#6138](https://github.com/storybooks/storybook/pull/6138))
+* Bump webpack-cli from 3.2.3 to 3.3.0 ([#6140](https://github.com/storybooks/storybook/pull/6140))
+* Bump tslint from 5.13.1 to 5.14.0 ([#6141](https://github.com/storybooks/storybook/pull/6141))
+* Bump ember-cli from 3.7.1 to 3.8.1 ([#6142](https://github.com/storybooks/storybook/pull/6142))
+* Bump markdown-to-jsx from 6.9.1 to 6.9.3 ([#6139](https://github.com/storybooks/storybook/pull/6139))
+
+## 5.0.3 (March 18, 2019)
+
+### Bug Fixes
+
+* Accessibility: Add missing button titles ([#6124](https://github.com/storybooks/storybook/pull/6124))
+
+### Maintenance
+
+* UI: Make update notifications much less aggressive ([#6143](https://github.com/storybooks/storybook/pull/6143))
+
+## 5.1.0-alpha.9 (March 18, 2019)
+
+### Maintenance
+
+* UI: Make update notifications much less aggressive ([#6143](https://github.com/storybooks/storybook/pull/6143))
+
+## 5.1.0-alpha.8 (March 17, 2019)
+
+### Bug Fixes
+
+* Accessibilty: Add aria label to search box ([#6131](https://github.com/storybooks/storybook/pull/6131))
+* Accessibilty: Add missing button titles ([#6124](https://github.com/storybooks/storybook/pull/6124))
+* Addon-cssresources: Fix `STORY_RENDERED` CSS reset ([#6050](https://github.com/storybooks/storybook/pull/6050))
+
+### Maintenance
+
+* React-native: Integrate crna-kitchen-sink example into monorepo ([#6125](https://github.com/storybooks/storybook/pull/6125))
+* Fix deprecations in examples ([#6134](https://github.com/storybooks/storybook/pull/6134))
+
+## 5.0.2 (March 17, 2019)
+
+### Features
+
+* CLI: Add --debug-webpack option ([#6082](https://github.com/storybooks/storybook/pull/6082))
+
+### Bug Fixes
+
+* Addon-a11y: Fix design icons ([#5991](https://github.com/storybooks/storybook/pull/5991))
+* Addon-cssresources: Fix `STORY_RENDERED` CSS reset ([#6050](https://github.com/storybooks/storybook/pull/6050))
+* CLI: Clear build folder in static build ([#6024](https://github.com/storybooks/storybook/pull/6024))
+* Addon-backgrounds: Set preview to theme color when "transparent" ([#6042](https://github.com/storybooks/storybook/pull/6042))
+* UI: Fix search item in menu ([#6027](https://github.com/storybooks/storybook/pull/6027))
+* Addon-knobs: Fix key press debouncing ([#6022](https://github.com/storybooks/storybook/pull/6022))
+* CLI: Fix welcome component in dark theme ([#5998](https://github.com/storybooks/storybook/pull/5998))
+* Addon-viewport: Fix viewport iframe dimensions ([#5993](https://github.com/storybooks/storybook/pull/5993))
+* Core: fix selectStory with one parameter ([#5983](https://github.com/storybooks/storybook/pull/5983))
+
+### Maintenance
+
+* Addon-viewport: Change styling to more closely match v4 ([#5979](https://github.com/storybooks/storybook/pull/5979))
+
 ## 5.1.0-alpha.7 (March 16, 2019)
 
 ### Breaking Changes

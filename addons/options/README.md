@@ -112,6 +112,11 @@ addParameters({
      * @type {Boolean}
      */
     enableShortcuts: false, // true by default
+    /**
+     * show/hide tool bar
+     * @type {Boolean}
+     */
+    isToolshown: false, // true by default
   },
 });
 

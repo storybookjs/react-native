@@ -1,20 +1,25 @@
 import { configure, addParameters, addDecorator } from '@storybook/react';
+import { create } from '@storybook/theming';
 
 import { withA11y } from '@storybook/addon-a11y';
 
 addDecorator(withA11y);
 addParameters({
   options: {
-    name: 'CRA Kitchen Sink',
-    url: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
-    goFullScreen: false,
+    isFullscreen: false,
     showAddonsPanel: true,
     showSearchBox: false,
-    addonPanelInRight: true,
+    panelPosition: 'right',
     sortStoriesByKind: false,
     hierarchySeparator: /\./,
     hierarchyRootSeparator: /\|/,
     enableShortcuts: true,
+    theme: create({
+      base: 'light',
+      brandTitle: 'CRA Kitchen Sink',
+      brandUrl: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
+      gridCellSize: 12,
+    }),
   },
 });
 

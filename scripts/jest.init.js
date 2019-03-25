@@ -8,8 +8,11 @@ import registerRequireContextHook from 'babel-plugin-require-context-hook/regist
 
 registerRequireContextHook();
 
+jest.mock('util-deprecate', () => fn => fn);
+
 // mock console.info calls for cleaner test execution
 global.console.info = jest.fn().mockImplementation(() => {});
+global.console.debug = jest.fn().mockImplementation(() => {});
 
 // mock local storage calls
 const localStorageMock = {
