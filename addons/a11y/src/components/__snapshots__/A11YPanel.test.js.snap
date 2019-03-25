@@ -924,7 +924,7 @@ exports[`A11YPanel should render report 1`] = `
         horizontal={true}
         vertical={true}
       >
-        <r
+        <l
           className="emotion-10"
         >
           <div
@@ -1107,7 +1107,7 @@ exports[`A11YPanel should render report 1`] = `
               />
             </div>
           </div>
-        </r>
+        </l>
       </Component>
     </Styled(Component)>
   </ScrollArea>
