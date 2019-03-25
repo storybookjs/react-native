@@ -1,11 +1,18 @@
+import { SyntheticEvent } from 'react';
 import { document } from 'global';
 import qs from 'qs';
 import addons from '@storybook/addons';
 import { SELECT_STORY, STORY_CHANGED } from '@storybook/core-events';
-import { toId } from '@storybook/router/utils';
+import { toId } from '@storybook/router';
 
-export const navigate = params => addons.getChannel().emit(SELECT_STORY, params);
-const generateUrl = id => {
+interface Params {
+  kind: string;
+  story: string;
+}
+
+export const navigate = (params: Params) => addons.getChannel().emit(SELECT_STORY, params);
+
+const generateUrl = (id: string) => {
   const { location } = document;
   const query = qs.parse(location.search, { ignoreQueryPrefix: true });
   return `${location.origin + location.pathname}?${qs.stringify(
@@ -14,9 +21,10 @@ const generateUrl = id => {
   )}`;
 };
 
-const valueOrCall = args => value => (typeof value === 'function' ? value(...args) : value);
+const valueOrCall = (args: string[]) => (value: string | ((...args: string[]) => string)) =>
+  typeof value === 'function' ? value(...args) : value;
 
-export const linkTo = (kind, story) => (...args) => {
+export const linkTo = (kind: string, story?: string) => (...args: string[]) => {
   const resolver = valueOrCall(args);
   navigate({
     kind: resolver(kind),
@@ -24,13 +32,13 @@ export const linkTo = (kind, story) => (...args) => {
   });
 };
 
-export const hrefTo = (kind, name) =>
+export const hrefTo = (kind: string, name: string): Promise<string> =>
   new Promise(resolve => {
     resolve(generateUrl(toId(kind, name)));
   });
 
-const linksListener = e => {
-  const { sbKind: kind, sbStory: story } = e.target.dataset;
+const linksListener = (e: SyntheticEvent<HTMLLinkElement>) => {
+  const { sbKind: kind, sbStory: story } = e.currentTarget.dataset;
   if (kind || story) {
     e.preventDefault();
     navigate({ kind, story });
@@ -52,7 +60,7 @@ const off = () => {
   }
 };
 
-export const withLinks = storyFn => {
+export const withLinks = (storyFn: () => void) => {
   on();
   addons.getChannel().once(STORY_CHANGED, off);
   return storyFn();
