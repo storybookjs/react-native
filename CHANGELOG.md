@@ -1,3 +1,23 @@
+## 5.1.0-alpha.14 (March 25, 2019)
+
+### Features
+
+* Addon-backgrounds: Add custom grid size ([#6252](https://github.com/storybooks/storybook/pull/6252))
+* Addon-viewport: Show active viewport dimensions & rotate button ([#6045](https://github.com/storybooks/storybook/pull/6045))
+
+### Bug Fixes
+
+* UI: Use Fuse.js package for search ([#6244](https://github.com/storybooks/storybook/pull/6244))
+* React: Use node-logger instead of console ([#6245](https://github.com/storybooks/storybook/pull/6245))
+
+### Maintenance
+
+* Addon-links: Migrate to Typescript ([#6246](https://github.com/storybooks/storybook/pull/6246))
+
+### Dependency Upgrades
+
+* Bump react-resize-detector from 4.0.2 to 4.0.5 ([#6229](https://github.com/storybooks/storybook/pull/6229))
+
 ## 5.0.5 (March 25, 2019)
 
 Bump version number (same as 5.0.4, but need to make this `latest` again!)
