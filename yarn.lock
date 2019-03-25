@@ -21879,10 +21879,10 @@ react-proxy@^1.1.7:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
 
-react-resize-detector@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/react-resize-detector/-/react-resize-detector-4.0.2.tgz#8eb3d0442ea352dd3e8b42cd241729006cb8bc91"
-  integrity sha512-s1O34sLjEAu8l6FLbrjVG9z6xrPeyZdbEFH50QqMmimfQ9nx7876R6zXKLFzLdBcpYSRjmPRqjt7Kkzo1mbclw==
+react-resize-detector@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/react-resize-detector/-/react-resize-detector-4.0.5.tgz#25eb7df5f34fd69ee1ef2229b1f5e728e14e8300"
+  integrity sha512-JbTkf+08No1R2lcplc1Xfcgyc/S7931ujs09tFtWKRy/cthZMuc2Nj25Pox7g6e4CwHk+OH8AQ6jF5s7utIQlA==
   dependencies:
     lodash "^4.17.11"
     lodash-es "^4.17.11"
