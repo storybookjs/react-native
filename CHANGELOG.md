@@ -1,3 +1,9 @@
+## 5.1.0-alpha.16 (March 26, 2019)
+
+### Bug Fixes
+
+* Upgrade `@babel/preset-env` to fix corejs option ([#6281](https://github.com/storybooks/storybook/pull/6281))
+
 ## 5.1.0-alpha.15 (March 26, 2019)
 
 ### Features
