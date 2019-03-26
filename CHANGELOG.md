@@ -1,3 +1,26 @@
+## 5.1.0-alpha.15 (March 26, 2019)
+
+### Features
+
+* Addon-a11y: Highlight a11y violations on component ([#6218](https://github.com/storybooks/storybook/pull/6218))
+* HTML: Allow forced renders in @storybook/html   ([#6190](https://github.com/storybooks/storybook/pull/6190))
+
+### Bug Fixes
+
+* Core: Enforces corejs v2 for babel ([#6267](https://github.com/storybooks/storybook/pull/6267))
+* Knobs: Rename ALL panel to Other for ungrouped knobs ([#6232](https://github.com/storybooks/storybook/pull/6232))
+* UI: zoom iframe content instead zoom iframe wrapper ([#6126](https://github.com/storybooks/storybook/pull/6126))
+* Addon-actions: safe render for cyclic obj ([#6240](https://github.com/storybooks/storybook/pull/6240))
+
+### Maintenance
+
+* Addon-knobs: adds an example of a boolean knob ([#6242](https://github.com/storybooks/storybook/pull/6242))
+
+### Dependency Upgrades
+
+* Bump simplebar-react from 0.1.4 to 0.1.5 ([#6226](https://github.com/storybooks/storybook/pull/6226))
+* FIX storybook having a incompatible version of webpack with vue-cli ([#6259](https://github.com/storybooks/storybook/pull/6259))
+
 ## 5.1.0-alpha.14 (March 25, 2019)
 
 ### Features
