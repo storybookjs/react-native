@@ -31,6 +31,6 @@
     "@storybook/addons": "5.1.0-alpha.14",
     "@storybook/marko": "5.1.0-alpha.14",
     "prettier": "^1.16.4",
-    "webpack": "^4.29.6"
+    "webpack": "^4.28.0"
   }
 }
