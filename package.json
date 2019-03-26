@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "5.1.0-alpha.11",
+  "version": "5.1.0-alpha.14",
   "private": true,
   "repository": {
     "type": "git",
@@ -91,7 +91,7 @@
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
-    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-env": "^7.4.1",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@types/common-tags": "^1.8.0",

@@ -1,6 +1,6 @@
 {
   "name": "polymer-cli",
-  "version": "5.1.0-alpha.13",
+  "version": "5.1.0-alpha.17",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook",
@@ -10,20 +10,20 @@
   },
   "dependencies": {
     "@polymer/polymer": "^2.6.0",
-    "@storybook/addon-actions": "5.1.0-alpha.13",
-    "@storybook/addon-backgrounds": "5.1.0-alpha.13",
-    "@storybook/addon-knobs": "5.1.0-alpha.13",
-    "@storybook/addon-links": "5.1.0-alpha.13",
-    "@storybook/addon-notes": "5.1.0-alpha.13",
-    "@storybook/addon-options": "5.1.0-alpha.13",
-    "@storybook/addon-storysource": "5.1.0-alpha.13",
-    "@storybook/addon-viewport": "5.1.0-alpha.13",
-    "@storybook/polymer": "5.1.0-alpha.13",
+    "@storybook/addon-actions": "5.1.0-alpha.17",
+    "@storybook/addon-backgrounds": "5.1.0-alpha.17",
+    "@storybook/addon-knobs": "5.1.0-alpha.17",
+    "@storybook/addon-links": "5.1.0-alpha.17",
+    "@storybook/addon-notes": "5.1.0-alpha.17",
+    "@storybook/addon-options": "5.1.0-alpha.17",
+    "@storybook/addon-storysource": "5.1.0-alpha.17",
+    "@storybook/addon-viewport": "5.1.0-alpha.17",
+    "@storybook/polymer": "5.1.0-alpha.17",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "global": "^4.3.2",
     "lit-html": "^1.0.0",
     "polymer-webpack-loader": "^2.0.3",
-    "webpack": "^4.29.6"
+    "webpack": "^4.28.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^5.0.0",

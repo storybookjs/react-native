@@ -119,6 +119,7 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
     brandTitle,
     brandUrl,
     brandImage,
+    gridCellSize,
     ...rest
   } = inherit;
 
@@ -131,6 +132,7 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
       app: appBg,
       bar: background.bar,
       content: appContentBg,
+      gridCellSize: gridCellSize || background.gridCellSize,
       hoverable:
         base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
 
