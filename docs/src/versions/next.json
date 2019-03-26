@@ -1,1 +1,1 @@
-{"version":"5.1.0-alpha.17","info":{"plain":"### Bug Fixes\n\n* Addon-a11y: move redux to dependencies ([#6286](https://github.com/storybooks/storybook/pull/6286))"}}
+{"version":"5.1.0-alpha.18","info":{"plain":"### Bug Fixes\n\n* Addon-a11y: Fix color-blindness emulation in Firefox ([#6297](https://github.com/storybooks/storybook/pull/6297))\n* UI: Set expanded stories to objects instead of arrays ([#6290](https://github.com/storybooks/storybook/pull/6290))"}}
