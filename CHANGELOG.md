@@ -1,3 +1,9 @@
+## 5.1.0-alpha.17 (March 26, 2019)
+
+### Bug Fixes
+
+* Addon-a11y: move redux to dependencies ([#6286](https://github.com/storybooks/storybook/pull/6286))
+
 ## 5.1.0-alpha.16 (March 26, 2019)
 
 ### Bug Fixes
