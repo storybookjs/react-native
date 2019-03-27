@@ -105,7 +105,7 @@
     "babel-loader": "^8.0.4",
     "babel-plugin-add-react-displayname": "^0.0.5",
     "babel-plugin-dynamic-import-node": "^2.2.0",
-    "babel-plugin-emotion": "^10.0.7",
+    "babel-plugin-emotion": "^10.0.9",
     "babel-plugin-macros": "^2.4.5",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-preset-vue": "^2.0.2",
