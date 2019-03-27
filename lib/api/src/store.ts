@@ -55,7 +55,7 @@ export default class Store {
     // We don't only merge at the very top level (the same way as React setState)
     // when you set keys, so it makes sense to do the same in combining the two storage modes
     // Really, you shouldn't store the same key in both places
-    return { ...base, ...get(store), ...get(store.session) };
+    return { ...base, ...get(store.local), ...get(store.session) };
   }
 
   getState() {
@@ -99,7 +99,7 @@ export default class Store {
     });
 
     if (persistence !== 'none') {
-      const storage = persistence === 'session' ? store.session : store;
+      const storage = persistence === 'session' ? store.session : store.local;
       await update(storage, delta);
     }
 
