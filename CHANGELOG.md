@@ -1,8 +1,15 @@
+## 5.1.0-alpha.18 (March 27, 2019)
+
+### Bug Fixes
+
+* Addon-a11y: Fix color-blindness emulation in Firefox ([#6297](https://github.com/storybooks/storybook/pull/6297))
+* UI: Set expanded stories to objects instead of arrays ([#6290](https://github.com/storybooks/storybook/pull/6290))
+
 ## 5.1.0-alpha.17 (March 26, 2019)
 
 ### Bug Fixes
 
-* Addon-a11y: move redux to dependencies ([#6286](https://github.com/storybooks/storybook/pull/6286))
+* Addon-a11y: Move redux to dependencies ([#6286](https://github.com/storybooks/storybook/pull/6286))
 
 ## 5.1.0-alpha.16 (March 26, 2019)
 
