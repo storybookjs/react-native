@@ -133,6 +133,8 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
         },
         () => {
           api.emit(EVENTS.REQUEST);
+          // removes all elements from the redux map in store from the previous panel
+          store.dispatch(clearElements(null));
         }
       );
     }
