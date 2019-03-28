@@ -84,6 +84,12 @@ exports[`Storyshots Addons|GraphQL get Pickachu 1`] = `
             </a>
             <a
               class="toolbar-button"
+              title="Merge Query (Shift-Ctrl-M)"
+            >
+              Merge
+            </a>
+            <a
+              class="toolbar-button"
               title="Show History"
             >
               History

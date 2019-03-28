@@ -1,8 +1,5 @@
 # Storybook server
-The default usage of React Native Storybook till version 4 involved starting Storybook server.
-Starting from v4 we do not expect user to start the server since in most cases it is not really necessary.
-
-In case you still want to run Storybook server simply call `npm run storybook` or `npx storybook start`.
+Since storybook v5 the storybook server is a standalone package. To keep using storybook server make sure to install @storybook/react-native-server package.
 
 ## Benefits of storybook server
 

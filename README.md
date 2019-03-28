@@ -85,18 +85,18 @@ For additional help, join us [in our Discord](https://discord.gg/sMFvFsG) or [Sl
 
 | Framework                        | Demo                                              |                                                                                                |
 | -------------------------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| [React](app/react)               | [v4.0.0](https://storybooks-official.netlify.com) | [![React](https://img.shields.io/npm/dm/@storybook/react.svg)](app/react)                      |
+| [React](app/react)               | [v5.0.0](https://storybooks-official.netlify.com) | [![React](https://img.shields.io/npm/dm/@storybook/react.svg)](app/react)                      |
 | [React Native](app/react-native) | -                                                 | [![React Native](https://img.shields.io/npm/dm/@storybook/react-native.svg)](app/react-native) |
-| [Vue](app/vue)                   | [v4.0.0](https://storybooks-vue.netlify.com/)     | [![Vue](https://img.shields.io/npm/dm/@storybook/vue.svg)](app/vue)                            |
-| [Angular](app/angular)           | [v4.0.0](https://storybooks-angular.netlify.com/) | [![Angular](https://img.shields.io/npm/dm/@storybook/angular.svg)](app/angular)                |
-| [Polymer](app/polymer)           | [v4.0.0](https://storybooks-polymer.netlify.com/) | [![Polymer](https://img.shields.io/npm/dm/@storybook/polymer.svg)](app/polymer)                |
-| [Mithril](app/mithril)           | [v4.0.0](https://storybooks-mithril.netlify.com/) | [![Mithril](https://img.shields.io/npm/dm/@storybook/mithril.svg)](app/mithril)                |
-| [Marko](app/marko)               | [v4.0.0](https://storybooks-marko.netlify.com/)   | [![Marko](https://img.shields.io/npm/dm/@storybook/marko.svg)](app/marko)                      |
-| [HTML](app/html)                 | [v4.0.0](https://storybooks-html.netlify.com/)    | [![HTML](https://img.shields.io/npm/dm/@storybook/html.svg)](app/html)                         |
-| [Svelte](app/svelte)             | [v4.0.0](https://storybooks-svelte.netlify.com/)  | [![Svelte](https://img.shields.io/npm/dm/@storybook/svelte.svg)](app/svelte)                   |
-| [Riot](app/riot)                 | [v4.0.0](https://storybooks-riot.netlify.com/)    | [![Riot](https://img.shields.io/npm/dm/@storybook/riot.svg)](app/riot)                         |
-| [Ember](app/ember)               | [v4.0.0](https://storybooks-ember.netlify.com/)   | [![Ember](https://img.shields.io/npm/dm/@storybook/ember.svg)](app/ember)                      |
-| [Preact](app/preact)             | [v4.0.0](https://storybooks-preact.netlify.com/)  | [![Preact](https://img.shields.io/npm/dm/@storybook/preact.svg)](app/preact)                   |
+| [Vue](app/vue)                   | [v5.0.0](https://storybooks-vue.netlify.com/)     | [![Vue](https://img.shields.io/npm/dm/@storybook/vue.svg)](app/vue)                            |
+| [Angular](app/angular)           | [v5.0.0](https://storybooks-angular.netlify.com/) | [![Angular](https://img.shields.io/npm/dm/@storybook/angular.svg)](app/angular)                |
+| [Polymer](app/polymer)           | [v5.0.0](https://storybooks-polymer.netlify.com/) | [![Polymer](https://img.shields.io/npm/dm/@storybook/polymer.svg)](app/polymer)                |
+| [Mithril](app/mithril)           | [v5.0.0](https://storybooks-mithril.netlify.com/) | [![Mithril](https://img.shields.io/npm/dm/@storybook/mithril.svg)](app/mithril)                |
+| [Marko](app/marko)               | [v5.0.0](https://storybooks-marko.netlify.com/)   | [![Marko](https://img.shields.io/npm/dm/@storybook/marko.svg)](app/marko)                      |
+| [HTML](app/html)                 | [v5.0.0](https://storybooks-html.netlify.com/)    | [![HTML](https://img.shields.io/npm/dm/@storybook/html.svg)](app/html)                         |
+| [Svelte](app/svelte)             | [v5.0.0](https://storybooks-svelte.netlify.com/)  | [![Svelte](https://img.shields.io/npm/dm/@storybook/svelte.svg)](app/svelte)                   |
+| [Riot](app/riot)                 | [v5.0.0](https://storybooks-riot.netlify.com/)    | [![Riot](https://img.shields.io/npm/dm/@storybook/riot.svg)](app/riot)                         |
+| [Ember](app/ember)               | [v5.0.0](https://storybooks-ember.netlify.com/)   | [![Ember](https://img.shields.io/npm/dm/@storybook/ember.svg)](app/ember)                      |
+| [Preact](app/preact)             | [v5.0.0](https://storybooks-preact.netlify.com/)  | [![Preact](https://img.shields.io/npm/dm/@storybook/preact.svg)](app/preact)                   |
 
 ### Sub Projects
 
@@ -161,7 +161,7 @@ Looking for a first issue to tackle?
 - [Talk to us](https://discord.gg/sMFvFsG), we'll find something to suits your skills and learning interest.
 
 ### Development scripts
-
+Storybook is organized as a monorepo using [Lerna](https://lernajs.io). Useful scripts include:
 #### `yarn bootstrap`
 
 > Installs package dependencies and links packages together - using lerna
@@ -195,7 +195,6 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 <a href="https://opencollective.com/storybook/sponsor/2/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/2/avatar.svg"></a>
 <a href="https://opencollective.com/storybook/sponsor/3/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/3/avatar.svg"></a>
 <a href="https://opencollective.com/storybook/sponsor/4/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/4/avatar.svg"></a>
-<a href="https://applitools.com/" target="_blank"><img src="https://file-xvimrfykua.now.sh/"></a>
 <a href="https://opencollective.com/storybook/sponsor/5/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/5/avatar.svg"></a>
 <a href="https://opencollective.com/storybook/sponsor/6/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/6/avatar.svg"></a>
 <a href="https://opencollective.com/storybook/sponsor/7/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/7/avatar.svg"></a>

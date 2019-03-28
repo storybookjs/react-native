@@ -24,8 +24,7 @@ We have had the best experience using `awesome-typescript-loader`, but other tut
 We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default) by creating a `webpack.config.js` file in our Storybook configuration directory (by default, it’s `.storybook`):
 
 ```js
-const path = require('path');
-module.exports = ({ config, mode }) => {
+module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
@@ -81,7 +80,7 @@ This is for the default configuration where `/stories` is a peer of `src`. If yo
 
 ## Setting up TypeScript with babel-loader
 
-When using latest create-react-app (CRA 2.0), Babel 7 has native TypeScript support. Setup becomes easier.  
+When using latest create-react-app (CRA 2.0), Babel 7 has native TypeScript support. Setup becomes easier.
 For a full working demo (that also uses react-docgen-typescript-loader) you can check out this [repo](https://github.com/johot/storybook4-cra2-typescript-react-docgen-typescript-demo).
 
 ### Dependencies you may need
@@ -110,7 +109,7 @@ module.exports = ({ config, mode }) => {
 
 ### `tsconfig.json`
 
-The default `tsconfig.json` that comes with CRA works great. If your stories are outside the `src` folder, for example the `stories` folder in root, then `rootDirs": ["src", "stories"]` needs to be added to be added to `compilerOptions` so it knows what folders to compile. Make sure `jsx` is set to preserve. Should be unchanged.
+The default `tsconfig.json` that comes with CRA works great. If your stories are outside the `src` folder, for example the `stories` folder in root, then `"rootDirs": ["src", "stories"]` needs to be added to be added to `compilerOptions` so it knows what folders to compile. Make sure `jsx` is set to preserve. Should be unchanged.
 
 ## Import tsx stories
 
@@ -119,7 +118,7 @@ Change `config.ts` inside the Storybook config directory (by default, it’s `.s
 ```js
 import { configure } from '@storybook/react';
 // automatically import all files ending in *.stories.tsx
-const req = require.context('../stories', true, /.stories.tsx$/);
+const req = require.context('../stories', true, /\.stories\.tsx$/);
 
 function loadStories() {
   req.keys().forEach(req);

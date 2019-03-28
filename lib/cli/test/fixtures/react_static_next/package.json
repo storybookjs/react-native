@@ -1,13 +1,13 @@
 {
   "name": "react-static-next-fixture",
   "version": "1.0.1",
-  "main": "index.js",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
-    "start": "react-static start",
-    "stage": "react-static build --staging",
     "build": "react-static build",
-    "serve": "serve dist -p 3000"
+    "serve": "serve dist -p 3000",
+    "stage": "react-static build --staging",
+    "start": "react-static start"
   },
   "dependencies": {
     "axios": "^0.18.0",

@@ -1,8 +1,9 @@
-import styled from '@emotion/styled';
+import emotionStyled, { CreateStyled } from '@emotion/styled';
 import dark from './themes/dark';
 import light from './themes/light';
+import { Theme } from './base';
 
-export { styled };
+export const styled = emotionStyled as CreateStyled<Theme>;
 
 export * from './base';
 

@@ -1,12 +1,28 @@
 import { storiesOf } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
 
-import { withKnobs, text, number, boolean, array, select, radios, color, date, button } from '@storybook/addon-knobs';
+import {
+  withKnobs,
+  text,
+  number,
+  boolean,
+  array,
+  select,
+  radios,
+  color,
+  date,
+  button,
+} from '@storybook/addon-knobs';
 
 import { SimpleKnobsComponent } from './knobs.component';
 import { AllKnobsComponent } from './all-knobs.component';
 
 storiesOf('Addon|Knobs', module)
+  .addParameters({
+    knobs: {
+      disableDebounce: true,
+    },
+  })
   .addDecorator(withKnobs)
   .add('Simple', () => {
     const name = text('name', 'John Doe');

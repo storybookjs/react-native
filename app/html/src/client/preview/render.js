@@ -4,6 +4,7 @@ import { stripIndents } from 'common-tags';
 const rootElement = document.getElementById('root');
 
 export default function renderMain({
+  parameters = {},
   storyFn,
   selectedKind,
   selectedStory,
@@ -11,13 +12,14 @@ export default function renderMain({
   showError,
   forceRender,
 }) {
+  const { html = {} } = parameters;
   const element = storyFn();
 
   showMain();
   if (typeof element === 'string') {
     rootElement.innerHTML = element;
   } else if (element instanceof Node) {
-    if (forceRender === true) {
+    if (html.preventForcedRender === true && forceRender === true) {
       return;
     }
 

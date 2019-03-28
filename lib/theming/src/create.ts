@@ -9,7 +9,10 @@ import { Theme, color, Color, background, typography, ThemeVars } from './base';
 import { easing, animation } from './animation';
 import { create as createSyntax } from './modules/syntax';
 
-const themes: { light: ThemeVars; dark: ThemeVars } = { light: lightThemeVars, dark: darkThemeVars };
+const themes: { light: ThemeVars; dark: ThemeVars } = {
+  light: lightThemeVars,
+  dark: darkThemeVars,
+};
 
 interface Rest {
   [key: string]: any;
@@ -116,6 +119,7 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
     brandTitle,
     brandUrl,
     brandImage,
+    gridCellSize,
     ...rest
   } = inherit;
 
@@ -126,8 +130,11 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
     color: createColors(inherit),
     background: {
       app: appBg,
+      bar: background.bar,
       content: appContentBg,
-      hoverable: base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
+      gridCellSize: gridCellSize || background.gridCellSize,
+      hoverable:
+        base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
 
       positive: background.positive,
       negative: background.negative,
@@ -165,7 +172,7 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
     brand: {
       title: brandTitle,
       url: brandUrl,
-      image: brandImage,
+      image: brandImage || brandTitle ? null : undefined,
     },
 
     code: createSyntax({

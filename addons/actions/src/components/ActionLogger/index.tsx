@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { styled, withTheme } from '@storybook/theming';
+import { styled, withTheme, Theme } from '@storybook/theming';
 
 import Inspector from 'react-inspector';
 import { ActionBar, ScrollArea } from '@storybook/components';
@@ -16,7 +16,17 @@ export const Wrapper = styled(({ children, className }) => (
   padding: '10px 5px 20px',
 });
 
-const ThemedInspector = withTheme(({ theme, ...props }) => <Inspector theme={theme.addonActionsTheme || 'chromeLight'} {...props} />);
+interface InspectorProps {
+  theme: Theme;
+  sortObjectKeys: boolean;
+  showNonenumerable: boolean;
+  name: any;
+  data: any;
+}
+
+const ThemedInspector = withTheme(({ theme, ...props }: InspectorProps) => (
+  <Inspector theme={theme.addonActionsTheme || 'chromeLight'} {...props} />
+));
 
 interface ActionLoggerProps {
   actions: ActionDisplay[];
@@ -30,7 +40,12 @@ export const ActionLogger = ({ actions, onClear }: ActionLoggerProps) => (
         <Action key={action.id}>
           {action.count > 1 && <Counter>{action.count}</Counter>}
           <InspectorContainer>
-            <ThemedInspector sortObjectKeys showNonenumerable={false} name={action.data.name} data={action.data.args || action.data} />
+            <ThemedInspector
+              sortObjectKeys
+              showNonenumerable={false}
+              name={action.data.name}
+              data={action.data.args || action.data}
+            />
           </InspectorContainer>
         </Action>
       ))}

@@ -73,7 +73,7 @@ export default function Node(props) {
     );
   }
 
-  if (isForwardRef(node)) {
+  if (isForwardRef(node) && !node.type.displayName) {
     const childElement = node.type.render(node.props);
     return (
       <div>

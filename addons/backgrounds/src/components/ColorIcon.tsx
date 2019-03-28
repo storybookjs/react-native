@@ -10,5 +10,5 @@ export const ColorIcon = styled.span(
   }),
   ({ theme }) => ({
     boxShadow: `${theme.appBorderColor} 0 0 0 1px inset`,
-  }),
+  })
 );

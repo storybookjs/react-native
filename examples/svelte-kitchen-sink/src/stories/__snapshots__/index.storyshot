@@ -105,7 +105,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
   class="storybook-snapshot-container"
 >
   <div
-    class="main svelte-1unvhkg"
+    class="main svelte-5n9a95"
   >
     <h1>
       Welcome to Storybook for Svelte
@@ -123,7 +123,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
       
 			    We've added some basic stories inside the 
       <code
-        class="code svelte-1unvhkg"
+        class="code svelte-5n9a95"
       >
         src/stories
       </code>
@@ -141,7 +141,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
 
 			  
     <h1
-      class="logo svelte-1unvhkg"
+      class="logo svelte-5n9a95"
     >
       Svelte
     </h1>
@@ -157,14 +157,14 @@ exports[`Storyshots Welcome Welcome 1`] = `
       
 			    (Try editing the 
       <code
-        class="code svelte-1unvhkg"
+        class="code svelte-5n9a95"
       >
         Button
       </code>
        component
 			    located at 
       <code
-        class="code svelte-1unvhkg"
+        class="code svelte-5n9a95"
       >
         src/stories/views/Welcome.svelte
       </code>
@@ -181,7 +181,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
 			    Have a look at the
 			    
       <a
-        class="link svelte-1unvhkg"
+        class="link svelte-5n9a95"
         href="https://storybook.js.org/basics/writing-stories"
         target="_blank"
       >
@@ -194,7 +194,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
     
 			  
     <p
-      class="note svelte-1unvhkg"
+      class="note svelte-5n9a95"
     >
       <b>
         NOTE:
@@ -206,7 +206,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
 			    Have a look at the
 			    
       <code
-        class="code svelte-1unvhkg"
+        class="code svelte-5n9a95"
       >
         .storybook/webpack.config.js
       </code>

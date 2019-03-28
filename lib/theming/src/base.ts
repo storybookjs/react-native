@@ -40,7 +40,9 @@ export const color = {
 
 export const background = {
   app: '#F6F9FC',
+  bar: '#FFFFFF',
   content: color.lightest,
+  gridCellSize: 10,
   hoverable: 'rgba(0,0,0,.05)', // hover state for items in a list
 
   // Notification, error, and warning backgrounds
@@ -128,6 +130,8 @@ export interface ThemeVars {
   brandTitle?: string;
   brandUrl?: string;
   brandImage?: string;
+
+  gridCellSize?: number;
 }
 
 export type Color = typeof color;

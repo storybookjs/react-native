@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`addon Info should render <Info /> and external markdown 1`] = `
-<deprecated>
+<Component>
   <Story
     PropTable={[Function]}
     components={
@@ -138,7 +138,6 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
             "background": "white",
             "bottom": 0,
             "display": "none",
-            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
             "left": 0,
             "overflow": "auto",
             "padding": "0 40px",
@@ -179,6 +178,8 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                 "backgroundColor": "#fff",
                 "border": "1px solid #eee",
                 "borderRadius": "2px",
+                "color": "black",
+                "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
                 "fontSize": "15px",
                 "fontWeight": 300,
                 "lineHeight": 1.45,
@@ -1249,11 +1250,11 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
       </div>
     </div>
   </Story>
-</deprecated>
+</Component>
 `;
 
 exports[`addon Info should render <Info /> and markdown 1`] = `
-<deprecated>
+<Component>
   <Story
     PropTable={[Function]}
     components={
@@ -1392,7 +1393,6 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
             "background": "white",
             "bottom": 0,
             "display": "none",
-            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
             "left": 0,
             "overflow": "auto",
             "padding": "0 40px",
@@ -1433,6 +1433,8 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                 "backgroundColor": "#fff",
                 "border": "1px solid #eee",
                 "borderRadius": "2px",
+                "color": "black",
+                "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
                 "fontSize": "15px",
                 "fontWeight": 300,
                 "lineHeight": 1.45,
@@ -2585,7 +2587,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
       </div>
     </div>
   </Story>
-</deprecated>
+</Component>
 `;
 
 exports[`addon Info should render component description if story kind matches component 1`] = `
@@ -2634,6 +2636,8 @@ exports[`addon Info should render component description if story kind matches co
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -2756,6 +2760,8 @@ exports[`addon Info should render component description if story kind matches co
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -3849,6 +3855,8 @@ exports[`addon Info should render component description if story name matches co
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
@@ -3971,6 +3979,8 @@ exports[`addon Info should render component description if story name matches co
               "backgroundColor": "#fff",
               "border": "1px solid #eee",
               "borderRadius": "2px",
+              "color": "black",
+              "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
               "fontSize": "15px",
               "fontWeight": 300,
               "lineHeight": 1.45,
