@@ -17,6 +17,8 @@ type DynamicComponentType = typeof componentClass;
 
 const storyData = new ReplaySubject(1);
 
+declare var NODE_ENV: string | 'development';
+
 const getModule = (
   declarations: Array<Type<any> | any[]>,
   entryComponents: Array<Type<any> | any[]>,
@@ -75,7 +77,9 @@ const draw = (newModule: DynamicComponentType): void => {
   if (!platform) {
     insertDynamicRoot();
     try {
-      enableProdMode();
+      if (NODE_ENV !== 'development') {
+        enableProdMode();
+      }
     } catch (e) {}
 
     platform = platformBrowserDynamic();

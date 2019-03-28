@@ -62,6 +62,7 @@
       window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__;
       window.__VUE_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__VUE_DEVTOOLS_GLOBAL_HOOK__;
     }
+    window.NODE_ENV = '%NODE_ENV%';
   } catch (e) {
     // eslint-disable-next-line no-console
     console.warn('unable to connect to parent frame for connecting dev tools');
