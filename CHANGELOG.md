@@ -1,3 +1,20 @@
+## 5.1.0-alpha.19 (March 28, 2019)
+
+### Bug Fixes
+
+* React-native: Fix "lib/addons" default export ([#6197](https://github.com/storybooks/storybook/pull/6197))
+* Addon-a11y: Remove element styling after re-running the a11y rules ([#6325](https://github.com/storybooks/storybook/pull/6325))
+* Addon-info: forwardRef elements use displayName if available ([#6222](https://github.com/storybooks/storybook/pull/6222))
+* React-native: Add background color for stories panel ([#6315](https://github.com/storybooks/storybook/pull/6315))
+
+### Dependency Upgrades
+
+* Upgrade babel-plugin-react-docgen ([#6329](https://github.com/storybooks/storybook/pull/6329))
+* Bump babel-plugin-emotion from 10.0.7 to 10.0.9 ([#6227](https://github.com/storybooks/storybook/pull/6227))
+* Bump @types/lodash.isequal from 4.5.3 to 4.5.5 ([#6269](https://github.com/storybooks/storybook/pull/6269))
+* Bump react-scripts from 2.1.5 to 2.1.8 ([#6230](https://github.com/storybooks/storybook/pull/6230))
+* Bump esm from 3.2.10 to 3.2.20 ([#6270](https://github.com/storybooks/storybook/pull/6270))
+
 ## 5.1.0-alpha.18 (March 27, 2019)
 
 ### Bug Fixes
