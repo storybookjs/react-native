@@ -1,4 +1,4 @@
-import { styled } from '@storybook/theming';
+import { styled, Theme } from '@storybook/theming';
 import { withProps } from 'recompose';
 
 import TextareaAutoResize from 'react-textarea-autosize';
@@ -18,7 +18,7 @@ const styleResets = {
   position: 'relative',
 };
 
-const styles = ({ theme }: any) => ({
+const styles = ({ theme }: Theme) => ({
   ...styleResets,
 
   transition: 'all 200ms ease-out',
@@ -43,7 +43,7 @@ const styles = ({ theme }: any) => ({
   },
 });
 
-const sizes = ({ size }: any) => {
+const sizes = ({ size }: { size?: string | number }) => {
   switch (size) {
     case '100%': {
       return { width: '100%' };
@@ -57,7 +57,7 @@ const sizes = ({ size }: any) => {
     }
   }
 };
-const alignment = ({ align }: any) => {
+const alignment = ({ align }: { align: string }) => {
   switch (align) {
     case 'end': {
       return { textAlign: 'right' };
@@ -71,7 +71,7 @@ const alignment = ({ align }: any) => {
     }
   }
 };
-const validation = ({ valid, theme }: any) => {
+const validation = ({ valid, theme }: { valid: string; theme: Theme }) => {
   switch (valid) {
     case 'valid': {
       return { boxShadow: `${theme.color.positive} 0 0 0 1px inset !important` };
@@ -92,7 +92,7 @@ const validation = ({ valid, theme }: any) => {
   }
 };
 
-export const Input = styled.input(styles as any, sizes, alignment as any, validation, {
+export const Input = styled.input<any>(styles as any, sizes, alignment as any, validation, {
   minHeight: 32,
 });
 (Input as any).styles = { ...styleResets, ...styles };
@@ -105,7 +105,7 @@ export const Select = styled.select(styles as any, sizes, validation, {
   userSelect: 'none',
   paddingRight: 20,
   appearance: 'menulist',
-} as any);
+} as any) as any;
 Select.displayName = 'Select';
 
 export const Textarea = styled(TextareaAutoResize)(
@@ -116,11 +116,11 @@ export const Textarea = styled(TextareaAutoResize)(
   {
     overflow: 'visible',
   }
-);
+) as any;
 Textarea.displayName = 'Textarea';
 
 export const Button = withProps({ tertiary: true, small: true, inForm: true })(
-  styled(StyledButton)(sizes as any, validation, {
+  styled(StyledButton)(sizes as any, validation as any, {
     // Custom styling for color widget nested in buttons
     userSelect: 'none',
     overflow: 'visible',
@@ -131,5 +131,5 @@ export const Button = withProps({ tertiary: true, small: true, inForm: true })(
       transform: 'none',
     },
   })
-);
+) as any;
 Button.displayName = 'Button';

@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent, ReactNode } from 'react';
 import { styled } from '@storybook/theming';
 
 const Wrapper = styled.label(({ theme }) => ({
@@ -23,7 +22,11 @@ const Label = styled.span(({ theme }) => ({
   lineHeight: '16px',
 }));
 
-const Field = ({ label, children }: any) => (
+export interface FieldProps {
+  label?: ReactNode;
+}
+
+const Field: FunctionComponent<FieldProps> = ({ label, children }) => (
   <Wrapper>
     {label ? (
       <Label>
@@ -33,10 +36,7 @@ const Field = ({ label, children }: any) => (
     {children}
   </Wrapper>
 );
-Field.propTypes = {
-  label: PropTypes.node,
-  children: PropTypes.node.isRequired,
-};
+
 Field.defaultProps = {
   label: undefined,
 };
