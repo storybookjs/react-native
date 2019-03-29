@@ -3,7 +3,7 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
 @Component({
   selector: 'storybook-chip',
   template: `
-    <span class="text">{{ displayText }}</span>
+    <span class="text">{{ displayText | chipText }}</span>
     <div class="remove" (click)="removeClicked.emit()">
       <span class="x">✕</span>
     </div>
