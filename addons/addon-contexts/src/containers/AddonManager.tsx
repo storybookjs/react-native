@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react';
 import { useChannel } from '../libs/hooks';
 import { ToolBar } from '../components/ToolBar';
 import { INIT_WRAPPER, UPDATE_MANAGER, UPDATE_WRAPPER } from '../libs/constants';
-import { TAddonManager } from '../libs/types';
+import { TAddonManager } from '../types';
 
 /**
  * Control addon states and addon-story interactions

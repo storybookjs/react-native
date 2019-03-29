@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ToolBarMenu } from '../components/ToolBarMenu';
 import { OPT_OUT } from '../libs/constants';
-import { TMenuController } from '../libs/types';
+import { TMenuController } from '../types';
 
 export const MenuController: TMenuController = ({
   nodeId,
@@ -19,7 +19,7 @@ export const MenuController: TMenuController = ({
     // validate the selected name
     (paramNames.concat(OPT_OUT).includes(selected) && selected) ||
     // fallback to default
-    params.find((param) => param.default).name ||
+    (params.find((param) => !!param.default) || { name: null }).name ||
     // fallback to the first
     params[0].name;
   const props = {
@@ -31,7 +31,7 @@ export const MenuController: TMenuController = ({
     optionsProps: {
       activeName,
       list,
-      onSelectOption: (name) => () => {
+      onSelectOption: (name: string) => () => {
         setExpanded(false);
         setSelected(name);
         setSelect(nodeId, name);
