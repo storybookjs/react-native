@@ -13,7 +13,7 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -24,7 +24,7 @@ exports[`Storyshots Addons|Info/Decorator Use Info as story decorator 1`] = `
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -258,7 +258,7 @@ exports[`Storyshots Addons|Info/ForwardRef Displays forwarded ref components cor
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -269,7 +269,7 @@ exports[`Storyshots Addons|Info/ForwardRef Displays forwarded ref components cor
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -812,7 +812,7 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -823,7 +823,7 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -976,7 +976,7 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -987,7 +987,7 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -1255,7 +1255,7 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -1266,7 +1266,7 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -1538,7 +1538,7 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -1549,7 +1549,7 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -1801,7 +1801,7 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -1812,7 +1812,7 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -2076,7 +2076,7 @@ exports[`Storyshots Addons|Info/Options.TableComponent Use a custom component fo
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -2087,7 +2087,7 @@ exports[`Storyshots Addons|Info/Options.TableComponent Use a custom component fo
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -2258,7 +2258,7 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -2269,7 +2269,7 @@ exports[`Storyshots Addons|Info/Options.excludedPropTypes Excludes propTypes tha
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -2482,7 +2482,7 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -2493,7 +2493,7 @@ exports[`Storyshots Addons|Info/Options.header Shows or hides Info Addon header 
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -2945,7 +2945,7 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -2956,7 +2956,7 @@ exports[`Storyshots Addons|Info/Options.propTables Shows additional component pr
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -3275,7 +3275,7 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -3286,7 +3286,7 @@ exports[`Storyshots Addons|Info/Options.propTablesExclude Exclude component from
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -3581,7 +3581,7 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -3592,7 +3592,7 @@ exports[`Storyshots Addons|Info/Options.source Shows or hides Info Addon source 
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -4008,7 +4008,7 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -4019,7 +4019,7 @@ exports[`Storyshots Addons|Info/Options.styles Full control over styles using a 
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -4252,7 +4252,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -4263,7 +4263,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -5228,7 +5228,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from Flow declarations 1`]
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -5239,7 +5239,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from Flow declarations 1`]
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -5447,7 +5447,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -5458,7 +5458,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -6250,7 +6250,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -6261,7 +6261,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -6513,7 +6513,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -6524,7 +6524,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -6851,7 +6851,7 @@ exports[`Storyshots Addons|Info/Story Source Array prop 1`] = `
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -6862,7 +6862,7 @@ exports[`Storyshots Addons|Info/Story Source Array prop 1`] = `
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -7313,7 +7313,7 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -7324,7 +7324,7 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -7629,7 +7629,7 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -7640,7 +7640,7 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -7890,7 +7890,7 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -7901,7 +7901,7 @@ exports[`Storyshots Addons|Info/Story Source Object prop 1`] = `
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -8210,7 +8210,7 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -8221,7 +8221,7 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
@@ -8446,7 +8446,7 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -8457,7 +8457,7 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
