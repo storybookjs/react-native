@@ -4,6 +4,7 @@ import { ChipsGroupComponent } from './chips-group.component';
 
 import { ChipsModule } from './chips.module';
 import { ChipComponent } from './chip.component';
+import { CHIP_COLOR } from './chip-color.token';
 
 storiesOf('Custom|Module Context', module)
   .addDecorator(withKnobs)
@@ -51,12 +52,30 @@ storiesOf('Custom|Module Context', module)
       `,
     }
   )
-  .add('Child component', () => {
+  .add('Component with default providers', () => {
     const props: { [K in keyof ChipComponent]?: any } = {
-      displayText: text('displayText', 'My Chip'),
+      displayText: text('Display Text', 'My Chip'),
     };
     return {
       component: ChipComponent,
+      requiresComponentDeclaration: false,
+      props,
+    };
+  })
+  .add('Component with overridden provider', () => {
+    const props: { [K in keyof ChipComponent]?: any } = {
+      displayText: text('Display Text', 'My Chip'),
+    };
+    return {
+      component: ChipComponent,
+      moduleMetadata: {
+        providers: [
+          {
+            provide: CHIP_COLOR,
+            useValue: 'yellow',
+          },
+        ],
+      },
       requiresComponentDeclaration: false,
       props,
     };

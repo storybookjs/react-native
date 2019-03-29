@@ -1,4 +1,13 @@
-import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  ChangeDetectionStrategy,
+  Output,
+  EventEmitter,
+  Inject,
+  HostBinding,
+} from '@angular/core';
+import { CHIP_COLOR } from './chip-color.token';
 
 @Component({
   selector: 'storybook-chip',
@@ -17,7 +26,6 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
         justify-content: center;
         padding: 0.2rem 0.5rem;
         border-radius: 1rem;
-        background-color: #eeeeee;
         border: solid 0.1rem transparent;
       }
       :host:hover {
@@ -50,4 +58,9 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
 export class ChipComponent {
   @Input() displayText: string;
   @Output() removeClicked = new EventEmitter();
+  @HostBinding('style.background-color') backgroundColor: string;
+
+  constructor(@Inject(CHIP_COLOR) chipColor: string) {
+    this.backgroundColor = chipColor;
+  }
 }
