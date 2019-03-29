@@ -36,20 +36,11 @@ storiesOf('Custom|Module Context', module)
     },
     {
       notes: `
-        Typically, when developing features in Angular, it is advantageous to use "feature modules"
-        which provide a "context" for declared components including required imports, declarations,
-        and providers.
+        This component includes a child component, a pipe, and a default provider, all which come from 
+        the specified feature module.
 
-        To simulate this context in Storybook, we may want to use the component delcared in this
-        context, rather than having to recreate this context using just to get the component to
-        perform its basic functionality.
-
-        However, as the default behavior of Storkybook for Angular is to delcare specified components
-        in a dynamic module, which prevents us from using the version of the component declared in our
-        feature module (with its appropriate context).
-
-        To prevent this dynamic declaration, set the "requiresComponentDeclaration" flag to false.
-      `,
+        This behavior is possible by setting the "requiresComponentDeclaration" flag to false.
+      `.replace(/ {1,}/g, ' '),
     }
   )
   .add('Component with default providers', () => {
