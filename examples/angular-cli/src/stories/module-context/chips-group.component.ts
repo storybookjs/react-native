@@ -5,12 +5,37 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
   template: `
     <storybook-chip
       *ngFor="let chip of chips"
+      class="chip"
       [text]="chip.text"
       (removeClicked)="removeAllChipsClick.emit(chip.id)"
     ></storybook-chip>
-    <span (click)="removeAllChipsClick.emit()">Remove All</span>
+    <div *ngIf="chips.length > 1" class="remove-all" (click)="removeAllChipsClick.emit()">
+      Remove All
+    </div>
   `,
-  styles: [``],
+  styles: [
+    `
+      :host {
+        display: flex;
+        align-content: center;
+        padding: 0.5rem;
+        background-color: lightgrey;
+        border-radius: 0.5rem;
+        width: fit-content;
+      }
+      .chip:not(:first-of-type) {
+        margin-left: 0.5rem;
+      }
+      .remove-all {
+        margin-left: 0.5rem;
+        padding: 0.2rem 0.5rem;
+        border: solid 0.1rem white;
+      }
+      .remove-all:hover {
+        background-color: palevioletred;
+      }
+    `,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChipsGroupComponent {

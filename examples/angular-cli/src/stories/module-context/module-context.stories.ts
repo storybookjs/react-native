@@ -17,6 +17,10 @@ storiesOf('Custom|Module Context', module)
           id: 1,
           text: 'Chip 1',
         },
+        {
+          id: 2,
+          text: 'Chip 2',
+        },
       ],
     },
   }));

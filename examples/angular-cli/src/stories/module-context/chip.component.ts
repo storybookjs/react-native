@@ -3,10 +3,49 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
 @Component({
   selector: 'storybook-chip',
   template: `
-    <span>{{ text }}</span>
-    <span (click)="removeClicked.emit()">X</span>
+    <span class="text">{{ text }}</span>
+    <div class="remove" (click)="removeClicked.emit()">
+      <span class="x">✕</span>
+    </div>
   `,
-  styles: [``],
+  styles: [
+    `
+      :host {
+        display: inline-flex;
+        cursor: default;
+        align-items: center;
+        justify-content: center;
+        padding: 0.2rem 0.5rem;
+        border-radius: 1rem;
+        background-color: white;
+        border: solid 0.1rem transparent;
+      }
+      :host:hover {
+        border-color: black;
+      }
+      .text {
+        font-family: inherit;
+      }
+      .remove {
+        margin-left: 1rem;
+        background-color: lightgrey;
+        border-radius: 50%;
+        width: 1rem;
+        height: 1rem;
+        text-align: center;
+      }
+      .remove:hover {
+        background-color: palevioletred;
+      }
+      .x {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        vertical-align: baseline;
+        line-height: 1rem;
+      }
+    `,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChipComponent {
