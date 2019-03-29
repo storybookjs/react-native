@@ -29,7 +29,7 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
       .remove-all {
         margin-left: 0.5rem;
         padding: 0.2rem 0.5rem;
-        border: solid 0.1rem white;
+        border: solid 0.1rem #eeeeee;
       }
       .remove-all:hover {
         background-color: palevioletred;

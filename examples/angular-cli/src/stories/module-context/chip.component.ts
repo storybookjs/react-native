@@ -17,7 +17,7 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
         justify-content: center;
         padding: 0.2rem 0.5rem;
         border-radius: 1rem;
-        background-color: white;
+        background-color: #eeeeee;
         border: solid 0.1rem transparent;
       }
       :host:hover {
@@ -39,7 +39,7 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
       }
       .x {
         display: inline-block;
-        color: white;
+        color: #eeeeee;
         text-align: center;
         vertical-align: baseline;
         line-height: 1rem;
