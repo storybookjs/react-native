@@ -6,7 +6,7 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
     <storybook-chip
       *ngFor="let chip of chips"
       class="chip"
-      [text]="chip.text"
+      [displayText]="chip.text"
       (removeClicked)="removeAllChipsClick.emit(chip.id)"
     ></storybook-chip>
     <div *ngIf="chips.length > 1" class="remove-all" (click)="removeAllChipsClick.emit()">
@@ -36,7 +36,6 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
       }
     `,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChipsGroupComponent {
   @Input() chips: Array<{

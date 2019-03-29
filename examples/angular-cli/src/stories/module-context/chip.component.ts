@@ -3,7 +3,7 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
 @Component({
   selector: 'storybook-chip',
   template: `
-    <span class="text">{{ text }}</span>
+    <span class="text">{{ displayText }}</span>
     <div class="remove" (click)="removeClicked.emit()">
       <span class="x">✕</span>
     </div>
@@ -46,9 +46,8 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
       }
     `,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChipComponent {
-  @Input() text: string;
+  @Input() displayText: string;
   @Output() removeClicked = new EventEmitter();
 }
