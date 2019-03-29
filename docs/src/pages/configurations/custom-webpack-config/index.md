@@ -174,7 +174,7 @@ If your file exports a **function**, it puts Storybook into **full-control-mode*
 
 Storybook will call the function with an object containing `config` and `mode` fields. `config` is Storybook's default configuration, and `mode` allows you to create different configurations for dev and production environments.
 
-For example, here's a `webpack.config.js` to add [SASS](http://sass-lang.com/) support using full-control-mode:
+For example, here's a `webpack.config.js` to add [SASS](http://sass-lang.com/) support using full-control mode:
 
 ```js
 const path = require('path');
@@ -197,7 +197,9 @@ module.exports = async ({ config, mode }) => {
 };
 ```
 
-Storybook uses the config returned from the above function. So edit `config` with care. Make sure to preserve the following config options:
+Storybook uses the config returned from the above function to render your components in Storybook's "preview" iframe. Note that Storybook has a completely separate webpack config for its own UI (also referred to as the "manager"), so the customizations you make only applies to the rendering of your stories.
+
+Nevertheless, edit `config` with care. Make sure to preserve the following config options:
 
 - entry
 - output
