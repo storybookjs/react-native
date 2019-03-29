@@ -34,9 +34,24 @@ const createComponentFromTemplate = (template: string) => {
 };
 
 export const initModuleData = (storyObj: NgStory): any => {
-  const { component, template, props, moduleMetadata = {} } = storyObj;
+  const {
+    component,
+    template,
+    props,
+    moduleMetadata = {},
+    requiresComponentDeclaration: componentRequiresDeclaration = true,
+  } = storyObj;
 
-  const AnnotatedComponent = template ? createComponentFromTemplate(template) : component;
+  const isCreatingComponentFromTemplate = Boolean(template);
+
+  const AnnotatedComponent = isCreatingComponentFromTemplate
+    ? createComponentFromTemplate(template)
+    : component;
+
+  const componentDeclarations =
+    isCreatingComponentFromTemplate || componentRequiresDeclaration
+      ? [AppComponent, AnnotatedComponent]
+      : [AppComponent];
 
   const story = {
     component: AnnotatedComponent,
@@ -44,7 +59,7 @@ export const initModuleData = (storyObj: NgStory): any => {
   };
 
   const moduleMeta = getModuleMeta(
-    [AppComponent, AnnotatedComponent],
+    componentDeclarations,
     [AnnotatedComponent],
     [AppComponent],
     story,

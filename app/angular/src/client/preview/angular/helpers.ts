@@ -47,9 +47,25 @@ const createComponentFromTemplate = (template: string, styles: string[]) => {
 
 const initModule = (storyFn: IStoryFn) => {
   const storyObj = storyFn();
-  const { component, template, props, styles, moduleMetadata = {} } = storyObj;
+  const {
+    component,
+    template,
+    props,
+    styles,
+    moduleMetadata = {},
+    requiresComponentDeclaration: componentRequiresDeclaration = true,
+  } = storyObj;
 
-  let AnnotatedComponent = template ? createComponentFromTemplate(template, styles) : component;
+  const isCreatingComponentFromTemplate = Boolean(template);
+
+  const AnnotatedComponent = isCreatingComponentFromTemplate
+    ? createComponentFromTemplate(template, styles)
+    : component;
+
+  const componentDeclarations =
+    isCreatingComponentFromTemplate || componentRequiresDeclaration
+      ? [AppComponent, AnnotatedComponent]
+      : [AppComponent];
 
   const story = {
     component: AnnotatedComponent,
@@ -57,7 +73,7 @@ const initModule = (storyFn: IStoryFn) => {
   };
 
   return getModule(
-    [AppComponent, AnnotatedComponent],
+    componentDeclarations,
     [AnnotatedComponent],
     [AppComponent],
     story,
