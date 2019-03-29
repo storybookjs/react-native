@@ -29,19 +29,23 @@ export const renderAggregatedContexts = (contextNodes, propsTree = {}) => (next)
     .reduce((acc, agg) => agg(() => acc), next());
 
 export const mergeSettings = (
-  { icon = '', title = '', components = [], params = [], options = {} } = {},
-  { params: additionalParams = [], options: localOptions = {} } = {}
+  { icon = '', title = '', components = [], params = [], options = {} },
+  { params: additionalParams = [], options: localOptions = {} }
 ) => ({
   nodeId: title,
   icon: icon,
   title: title,
   components: components,
   params: params.concat(additionalParams),
-  options: {
-    ...options,
-    ...localOptions,
-    separator: options.separator || 'none',
-  },
+  options: Object.assign(
+    {
+      deep: false,
+      disable: false,
+      cancelable: false,
+    },
+    options,
+    localOptions
+  ),
 });
 
 export const getNodes = ({ options = [], parameters = [] }) => {
@@ -50,8 +54,8 @@ export const getNodes = ({ options = [], parameters = [] }) => {
     .filter(Boolean)
     .map((title) =>
       mergeSettings(
-        options.find((option) => option.title === title),
-        parameters.find((param) => param.title === title)
+        options.find((option) => option.title === title) || {},
+        parameters.find((param) => param.title === title) || {}
       )
     );
 };
