@@ -40,7 +40,9 @@ export const color = {
 
 export const background = {
   app: '#F6F9FC',
+  bar: '#FFFFFF',
   content: color.lightest,
+  gridCellSize: 10,
   hoverable: 'rgba(0,0,0,.05)', // hover state for items in a list
 
   // Notification, error, and warning backgrounds
@@ -93,6 +95,44 @@ export const typography = {
     code: 90,
   },
 };
+
+export interface ThemeVars {
+  base: 'light' | 'dark';
+
+  colorPrimary?: string;
+  colorSecondary?: string;
+
+  // UI
+  appBg?: string;
+  appContentBg?: string;
+  appBorderColor?: string;
+  appBorderRadius?: number;
+
+  // Typography
+  fontBase?: string;
+  fontCode?: string;
+
+  // Text colors
+  textColor?: string;
+  textInverseColor?: string;
+
+  // Toolbar default and active colors
+  barTextColor?: string;
+  barSelectedColor?: string;
+  barBg?: string;
+
+  // Form colors
+  inputBg?: string;
+  inputBorder?: string;
+  inputTextColor?: string;
+  inputBorderRadius?: number;
+
+  brandTitle?: string;
+  brandUrl?: string;
+  brandImage?: string;
+
+  gridCellSize?: number;
+}
 
 export type Color = typeof color;
 export type Background = typeof background;

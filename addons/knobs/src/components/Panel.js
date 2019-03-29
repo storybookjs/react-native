@@ -6,7 +6,14 @@ import { styled } from '@storybook/theming';
 import copy from 'copy-to-clipboard';
 
 import { STORY_CHANGED } from '@storybook/core-events';
-import { Placeholder, TabWrapper, TabsState, ActionBar, Link } from '@storybook/components';
+import {
+  Placeholder,
+  TabWrapper,
+  TabsState,
+  ActionBar,
+  Link,
+  ScrollArea,
+} from '@storybook/components';
 import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
 import Types from './types';
@@ -14,11 +21,14 @@ import PropForm from './PropForm';
 
 const getTimestamp = () => +new Date();
 
-const DEFAULT_GROUP_ID = 'ALL';
+const DEFAULT_GROUP_ID = 'Other';
 
-const PanelWrapper = styled.div({
+const PanelWrapper = styled(({ children, className }) => (
+  <ScrollArea horizontal vertical className={className}>
+    {children}
+  </ScrollArea>
+))({
   height: '100%',
-  overflow: 'auto',
   width: '100%',
 });
 
@@ -187,30 +197,35 @@ export default class KnobPanel extends PureComponent {
     }
 
     const entries = Object.entries(groups);
+    // Always sort 'Other' (ungrouped) tab last without changing the remaining tabs
+    entries.sort((a, b) => (a[0] === 'Other' ? 1 : 0)); // eslint-disable-line no-unused-vars
+
     return (
-      <PanelWrapper>
-        {entries.length > 1 ? (
-          <TabsState>
-            {entries.map(([k, v]) => (
-              <div id={k} key={k} title={v.title}>
-                {v.render}
-              </div>
-            ))}
-          </TabsState>
-        ) : (
-          <PropForm
-            knobs={knobsArray}
-            onFieldChange={this.handleChange}
-            onFieldClick={this.handleClick}
-          />
-        )}
+      <Fragment>
+        <PanelWrapper>
+          {entries.length > 1 ? (
+            <TabsState>
+              {entries.map(([k, v]) => (
+                <div id={k} key={k} title={v.title}>
+                  {v.render}
+                </div>
+              ))}
+            </TabsState>
+          ) : (
+            <PropForm
+              knobs={knobsArray}
+              onFieldChange={this.handleChange}
+              onFieldClick={this.handleClick}
+            />
+          )}
+        </PanelWrapper>
         <ActionBar
           actionItems={[
             { title: 'Copy', onClick: this.copy },
             { title: 'Reset', onClick: this.reset },
           ]}
         />
-      </PanelWrapper>
+      </Fragment>
     );
   }
 }

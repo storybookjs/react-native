@@ -50,6 +50,8 @@ const stylesheetBase = {
     zIndex: 0,
   },
   infoBody: {
+    fontFamily: 'Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif',
+    color: 'black',
     fontWeight: 300,
     lineHeight: 1.45,
     fontSize: '15px',

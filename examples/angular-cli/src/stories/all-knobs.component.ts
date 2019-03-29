@@ -1,9 +1,13 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
+const logger = console;
+
 @Component({
   selector: 'storybook-simple-knobs-component',
   template: `
-    <div [ngStyle]="{ border: '2px dotted ' + border, 'padding.px': '8 22', 'border-radius.px': '8' }">
+    <div
+      [ngStyle]="{ border: '2px dotted ' + border, 'padding.px': '8 22', 'border-radius.px': '8' }"
+    >
       <h1>My name is {{ name }},</h1>
       <h3>today is {{ today | date }}</h3>
       <p *ngIf="stock">I have a stock of {{ stock }} {{ fruit }}, costing $ {{ price }} each.</p>
@@ -37,13 +41,13 @@ export class AllKnobsComponent implements OnChanges, OnInit {
   nice;
 
   constructor() {
-    console.log('constructor');
+    logger.debug('constructor');
   }
 
   ngOnInit(): void {
-    console.log('on init, user component');
+    logger.debug('on init, user component');
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+    logger.debug(changes);
   }
 }

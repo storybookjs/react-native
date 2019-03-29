@@ -84,7 +84,8 @@ RN application, e.g. on a tab or within an admin screen.
 
 ## Server support
 
-If you want to support having a storybook server running add following NPM script into your `package.json` file:
+If you want to support having a storybook server running install storybook server `npm install --save-dev @storybook/react-native-server`
+and add following NPM script into your `package.json` file:
 
 ```json
 {

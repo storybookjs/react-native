@@ -1,13 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
+import deprecate from 'util-deprecate';
 
-import { Global } from '@storybook/theming';
+import { styled, Global } from '@storybook/theming';
 
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
 import { SET_STORIES } from '@storybook/core-events';
 
 import { PARAM_KEY } from './constants';
+import { INITIAL_VIEWPORTS, DEFAULT_VIEWPORT } from './defaults';
 
 const toList = memoize(50)(items =>
   items ? Object.entries(items).map(([id, value]) => ({ ...value, id })) : []
@@ -26,14 +28,35 @@ const createItem = memoize(1000)((id, name, value, change) => ({
 
 const flip = ({ width, height }) => ({ height: width, width: height });
 
+const deprecatedViewportString = deprecate(
+  () => 0,
+  'The viewport parameter must be an object with keys `viewports` and `defaultViewport`'
+);
+const deprecateOnViewportChange = deprecate(
+  () => 0,
+  'The viewport parameter `onViewportChange` is no longer supported'
+);
+
 const getState = memoize(10)((props, state, change) => {
   const data = props.api.getCurrentStoryData();
-  const list = toList(data && data.parameters && data.parameters[PARAM_KEY]);
+  const parameters = data && data.parameters && data.parameters[PARAM_KEY];
+
+  if (parameters && typeof parameters !== 'object') {
+    deprecatedViewportString();
+  }
+
+  const { disable, viewports, defaultViewport, onViewportChange } = parameters || {};
+
+  if (onViewportChange) {
+    deprecateOnViewportChange();
+  }
+
+  const list = disable ? [] : toList(viewports || INITIAL_VIEWPORTS);
 
   const selected =
     state.selected === 'responsive' || list.find(i => i.id === state.selected)
       ? state.selected
-      : list.find(i => i.default) || 'responsive';
+      : list.find(i => i.default) || defaultViewport || DEFAULT_VIEWPORT;
 
   const resets =
     selected !== 'responsive'
@@ -65,6 +88,34 @@ const getState = memoize(10)((props, state, change) => {
   };
 });
 
+const ActiveViewportSize = styled.div(() => ({
+  display: 'inline-flex',
+}));
+
+const ActiveViewportLabel = styled.div(({ theme }) => ({
+  display: 'inline-block',
+  textDecoration: 'none',
+  padding: '10px',
+  fontWeight: theme.typography.weight.bold,
+  fontSize: theme.typography.size.s2 - 1,
+  lineHeight: 1,
+  height: 40,
+  border: 'none',
+  borderTop: '3px solid transparent',
+  borderBottom: '3px solid transparent',
+  background: 'transparent',
+}));
+
+const IconButtonWithLabel = styled(IconButton)(() => ({
+  display: 'inline-flex',
+  alignItems: 'center',
+}));
+
+const IconButtonLabel = styled.div(({ theme }) => ({
+  fontSize: theme.typography.size.s2 - 1,
+  marginLeft: '10px',
+}));
+
 export default class ViewportTool extends Component {
   constructor(props) {
     super(props);
@@ -95,10 +146,33 @@ export default class ViewportTool extends Component {
 
   change = (...args) => this.setState(...args);
 
+  flipViewport = () =>
+    this.setState(({ isRotated }) => ({ isRotated: !isRotated, expanded: false }));
+
+  resetViewport = e => {
+    e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
+
+    this.setState({ selected: undefined, expanded: false });
+  };
+
   render() {
     const { expanded } = this.state;
     const { items, selected, isRotated } = getState(this.props, this.state, this.change);
     const item = items.find(i => i.id === selected);
+
+    let viewportX = 0;
+    let viewportY = 0;
+    let viewportTitle = '';
+    if (item) {
+      const height = item.value.height.replace('px', '');
+      const width = item.value.width.replace('px', '');
+
+      viewportX = isRotated ? height : width;
+      viewportY = isRotated ? width : height;
+
+      viewportTitle = isRotated ? `${item.title} (L)` : `${item.title} (P)`;
+    }
 
     return items.length ? (
       <Fragment>
@@ -106,9 +180,13 @@ export default class ViewportTool extends Component {
           <Global
             styles={{
               [`#${iframeId}`]: {
-                border: '10px solid black',
+                position: 'relative',
+                display: 'block',
+                margin: '10px auto',
+                border: '1px solid #888',
                 borderRadius: 4,
-                margin: 10,
+                boxShadow: '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);',
+                boxSizing: 'content-box',
 
                 ...(isRotated ? flip(item.value || {}) : item.value || {}),
               },
@@ -123,10 +201,25 @@ export default class ViewportTool extends Component {
           tooltip={<TooltipLinkList links={items} />}
           closeOnClick
         >
-          <IconButton key="viewport" title="Change the size of the preview" active={!!item}>
+          <IconButtonWithLabel
+            key="viewport"
+            title="Change the size of the preview"
+            active={!!item}
+            onDoubleClick={e => this.resetViewport(e)}
+          >
             <Icons icon="grow" />
-          </IconButton>
+            <IconButtonLabel>{viewportTitle}</IconButtonLabel>
+          </IconButtonWithLabel>
         </WithTooltip>
+        {item ? (
+          <ActiveViewportSize>
+            <ActiveViewportLabel title="Viewport width">{viewportX}</ActiveViewportLabel>
+            <IconButton key="viewport-rotate" title="Rotate viewport" onClick={this.flipViewport}>
+              <Icons icon="transfer" />
+            </IconButton>
+            <ActiveViewportLabel title="Viewport height">{viewportY}</ActiveViewportLabel>
+          </ActiveViewportSize>
+        ) : null}
       </Fragment>
     ) : null;
   }

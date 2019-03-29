@@ -5,8 +5,14 @@ import { polyfill } from 'react-lifecycles-compat';
 import { Form } from '@storybook/components';
 
 class ObjectType extends Component {
+  state = {
+    value: {},
+    failed: false,
+    json: '',
+  };
+
   static getDerivedStateFromProps(props, state) {
-    if (!state || !deepEqual(props.knob.value, state.json)) {
+    if (!deepEqual(props.knob.value, state.json)) {
       try {
         return {
           value: JSON.stringify(props.knob.value, null, 2),

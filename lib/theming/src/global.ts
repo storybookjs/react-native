@@ -87,7 +87,15 @@ export const createReset = memoize(1)(
 );
 
 export const createGlobal = memoize(1)(
-  ({ color, background, typography }: { color: Color; background: Background; typography: Typography }): Return => {
+  ({
+    color,
+    background,
+    typography,
+  }: {
+    color: Color;
+    background: Background;
+    typography: Typography;
+  }): Return => {
     const resetStyles = createReset({ typography });
     return {
       ...resetStyles,
@@ -95,8 +103,7 @@ export const createGlobal = memoize(1)(
         ...resetStyles.body,
         color: color.defaultText,
         background: background.app,
-        overflowY: 'auto',
-        overflowX: 'hidden',
+        overflow: 'hidden',
       },
 
       hr: {

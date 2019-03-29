@@ -1,0 +1,364 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HighlightToggle component should match snapshot 1`] = `
+.emotion-0 {
+  cursor: pointer;
+}
+
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <ThemedHighlightToggle>
+    <ThemeProvider
+      theme={
+        Object {
+          "addonActionsTheme": Object {
+            "ARROW_COLOR": "rgba(0,0,0,0.3)",
+            "ARROW_FONT_SIZE": 8,
+            "ARROW_MARGIN_RIGHT": 4,
+            "BASE_BACKGROUND_COLOR": "transparent",
+            "BASE_COLOR": "#333333",
+            "BASE_FONT_FAMILY": "\\"Operator Mono\\", \\"Fira Code Retina\\", \\"Fira Code\\", \\"FiraCode-Retina\\", \\"Andale Mono\\", \\"Lucida Console\\", Consolas, Monaco, monospace",
+            "BASE_FONT_SIZE": 13,
+            "BASE_LINE_HEIGHT": "18px",
+            "HTML_ATTRIBUTE_NAME_COLOR": "rgb(153, 69, 0)",
+            "HTML_ATTRIBUTE_VALUE_COLOR": "rgb(26, 26, 166)",
+            "HTML_COMMENT_COLOR": "rgb(35, 110, 37)",
+            "HTML_DOCTYPE_COLOR": "rgb(192, 192, 192)",
+            "HTML_TAGNAME_COLOR": "rgb(136, 18, 128)",
+            "HTML_TAGNAME_TEXT_TRANSFORM": "lowercase",
+            "HTML_TAG_COLOR": "rgb(168, 148, 166)",
+            "OBJECT_NAME_COLOR": "rgb(136, 19, 145)",
+            "OBJECT_VALUE_BOOLEAN_COLOR": "rgb(28, 0, 207)",
+            "OBJECT_VALUE_FUNCTION_KEYWORD_COLOR": "rgb(170, 13, 145)",
+            "OBJECT_VALUE_NULL_COLOR": "rgb(128, 128, 128)",
+            "OBJECT_VALUE_NUMBER_COLOR": "rgb(28, 0, 207)",
+            "OBJECT_VALUE_REGEXP_COLOR": "rgb(196, 26, 22)",
+            "OBJECT_VALUE_STRING_COLOR": "rgb(196, 26, 22)",
+            "OBJECT_VALUE_SYMBOL_COLOR": "rgb(196, 26, 22)",
+            "OBJECT_VALUE_UNDEFINED_COLOR": "rgb(128, 128, 128)",
+            "TABLE_BORDER_COLOR": "#aaa",
+            "TABLE_DATA_BACKGROUND_IMAGE": "linear-gradient(to bottom, white, white 50%, rgb(234, 243, 255) 50%, rgb(234, 243, 255))",
+            "TABLE_DATA_BACKGROUND_SIZE": "128px 32px",
+            "TABLE_SORT_ICON_COLOR": "#6e6e6e",
+            "TABLE_TH_BACKGROUND_COLOR": "#eee",
+            "TABLE_TH_HOVER_COLOR": "hsla(0, 0%, 90%, 1)",
+            "TREENODE_FONT_FAMILY": "\\"Operator Mono\\", \\"Fira Code Retina\\", \\"Fira Code\\", \\"FiraCode-Retina\\", \\"Andale Mono\\", \\"Lucida Console\\", Consolas, Monaco, monospace",
+            "TREENODE_FONT_SIZE": 13,
+            "TREENODE_LINE_HEIGHT": "18px",
+            "TREENODE_PADDING_LEFT": 12,
+          },
+          "animation": Object {
+            "float": Object {
+              "anim": 1,
+              "name": "animation-6tolu8",
+              "styles": "@keyframes animation-6tolu8{
+  0% { transform: translateY(1px); }
+  25% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(1px); }
+}",
+              "toString": [Function],
+            },
+            "glow": Object {
+              "anim": 1,
+              "name": "animation-r0iffl",
+              "styles": "@keyframes animation-r0iffl{
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}",
+              "toString": [Function],
+            },
+            "hoverable": Object {
+              "map": undefined,
+              "name": "wpaw6f",
+              "next": undefined,
+              "styles": "
+  transition: all 150ms ease-out;
+  transform: translate3d(0, 0, 0);
+
+  &:hover {
+    transform: translate3d(0, -2px, 0);
+  }
+
+  &:active {
+    transform: translate3d(0, 0, 0);
+  }
+",
+            },
+            "inlineGlow": Object {
+              "map": undefined,
+              "name": "zv3h0s",
+              "next": Object {
+                "name": "animation-r0iffl",
+                "next": undefined,
+                "styles": "@keyframes animation-r0iffl{
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}",
+              },
+              "styles": "
+  animation: animation-r0iffl 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
+  color: transparent;
+  cursor: progress;
+",
+            },
+            "jiggle": Object {
+              "anim": 1,
+              "name": "animation-ynpq7w",
+              "styles": "@keyframes animation-ynpq7w{
+  0%, 100% { transform:translate3d(0,0,0); }
+  12.5%, 62.5% { transform:translate3d(-4px,0,0); }
+  37.5%, 87.5% {  transform: translate3d(4px,0,0);  }
+}",
+              "toString": [Function],
+            },
+            "rotate360": Object {
+              "anim": 1,
+              "name": "animation-u07e3c",
+              "styles": "@keyframes animation-u07e3c{
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}",
+              "toString": [Function],
+            },
+          },
+          "appBorderColor": "rgba(0,0,0,.1)",
+          "appBorderRadius": 4,
+          "background": Object {
+            "app": "#F6F9FC",
+            "bar": "#FFFFFF",
+            "content": "#FFFFFF",
+            "gridCellSize": 10,
+            "hoverable": "rgba(0,0,0,.05)",
+            "negative": "#FEDED2",
+            "positive": "#E1FFD4",
+            "warning": "#FFF5CF",
+          },
+          "barBg": "#FFFFFF",
+          "barSelectedColor": "#1EA7FD",
+          "barTextColor": "#999999",
+          "base": "light",
+          "brand": Object {
+            "image": undefined,
+            "title": undefined,
+            "url": undefined,
+          },
+          "code": Object {
+            "language-json .token.boolean": Object {
+              "color": "#0000ff",
+            },
+            "language-json .token.number": Object {
+              "color": "#0000ff",
+            },
+            "language-json .token.property": Object {
+              "color": "#2B91AF",
+            },
+            "namespace": Object {
+              "opacity": 0.7,
+            },
+            "token": Object {
+              "&.atrule": Object {
+                "color": "#0000ff",
+              },
+              "&.attr-name": Object {
+                "color": "#ff0000",
+              },
+              "&.attr-value": Object {
+                "color": "#0000ff",
+              },
+              "&.bold": Object {
+                "fontWeight": "bold",
+              },
+              "&.boolean": Object {
+                "color": "#36acaa",
+              },
+              "&.cdata": Object {
+                "color": "#008000",
+                "fontStyle": "italic",
+              },
+              "&.class-name": Object {
+                "color": "#2B91AF",
+              },
+              "&.comment": Object {
+                "color": "#008000",
+                "fontStyle": "italic",
+              },
+              "&.constant": Object {
+                "color": "#36acaa",
+              },
+              "&.deleted": Object {
+                "color": "#9a050f",
+              },
+              "&.directive.tag .tag": Object {
+                "background": "#ffff00",
+                "color": "#393A34",
+              },
+              "&.doctype": Object {
+                "color": "#008000",
+                "fontStyle": "italic",
+              },
+              "&.entity": Object {
+                "color": "#ff0000",
+              },
+              "&.function": Object {
+                "color": "#393A34",
+              },
+              "&.important": Object {
+                "fontWeight": "bold",
+              },
+              "&.inserted": Object {
+                "color": "#36acaa",
+              },
+              "&.italic": Object {
+                "fontStyle": "italic",
+              },
+              "&.keyword": Object {
+                "color": "#0000ff",
+              },
+              "&.number": Object {
+                "color": "#36acaa",
+              },
+              "&.operator": Object {
+                "color": "#393A34",
+              },
+              "&.prolog": Object {
+                "color": "#008000",
+                "fontStyle": "italic",
+              },
+              "&.property": Object {
+                "color": "#ff0000",
+              },
+              "&.punctuation": Object {
+                "color": "#393A34",
+              },
+              "&.regex": Object {
+                "color": "#ff0000",
+              },
+              "&.selector": Object {
+                "color": "#800000",
+              },
+              "&.string": Object {
+                "color": "#A31515",
+              },
+              "&.symbol": Object {
+                "color": "#36acaa",
+              },
+              "&.tag": Object {
+                "color": "#800000",
+              },
+              "&.url": Object {
+                "color": "#36acaa",
+              },
+              "&.variable": Object {
+                "color": "#36acaa",
+              },
+              "WebkitFontSmoothing": "antialiased",
+              "fontFamily": "\\"Operator Mono\\", \\"Fira Code Retina\\", \\"Fira Code\\", \\"FiraCode-Retina\\", \\"Andale Mono\\", \\"Lucida Console\\", Consolas, Monaco, monospace",
+            },
+          },
+          "color": Object {
+            "ancillary": "#22a699",
+            "border": "rgba(0,0,0,.1)",
+            "dark": "#666666",
+            "darker": "#444444",
+            "darkest": "#333333",
+            "defaultText": "#333333",
+            "gold": "#FFAE00",
+            "green": "#66BF3C",
+            "inverseText": "#FFFFFF",
+            "light": "#F3F3F3",
+            "lighter": "#F8F8F8",
+            "lightest": "#FFFFFF",
+            "medium": "#DDDDDD",
+            "mediumdark": "#999999",
+            "mediumlight": "#EEEEEE",
+            "negative": "#FF4400",
+            "orange": "#FC521F",
+            "positive": "#66BF3C",
+            "primary": "#FF4785",
+            "purple": "#6F2CAC",
+            "seafoam": "#37D5D3",
+            "secondary": "#1EA7FD",
+            "tertiary": "#FAFBFC",
+            "ultraviolet": "#2A0481",
+            "warning": "#E69D00",
+          },
+          "easing": Object {
+            "rubber": "cubic-bezier(0.175, 0.885, 0.335, 1.05)",
+          },
+          "input": Object {
+            "background": "#FFFFFF",
+            "border": "rgba(0,0,0,.1)",
+            "borderRadius": 4,
+            "color": "#333333",
+          },
+          "layoutMargin": 10,
+          "typography": Object {
+            "fonts": Object {
+              "base": "\\"Nunito Sans\\", -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "mono": "\\"Operator Mono\\", \\"Fira Code Retina\\", \\"Fira Code\\", \\"FiraCode-Retina\\", \\"Andale Mono\\", \\"Lucida Console\\", Consolas, Monaco, monospace",
+            },
+            "size": Object {
+              "code": 90,
+              "l1": 32,
+              "l2": 40,
+              "l3": 48,
+              "m1": 20,
+              "m2": 24,
+              "m3": 28,
+              "s1": 12,
+              "s2": 14,
+              "s3": 16,
+            },
+            "weight": Object {
+              "black": 900,
+              "bold": 700,
+              "regular": 400,
+            },
+          },
+        }
+      }
+    >
+      <Connect(HighlightToggle)>
+        <HighlightToggle
+          addElement={[Function]}
+          elementsToHighlight={Array []}
+          highlightedElementsMap={Map {}}
+          isToggledOn={false}
+        >
+          <Styled(input)
+            aria-label="Highlight result"
+            checked={false}
+            disabled={true}
+            onChange={[Function]}
+            type="checkbox"
+          >
+            <input
+              aria-label="Highlight result"
+              checked={false}
+              className="emotion-0"
+              disabled={true}
+              onChange={[Function]}
+              type="checkbox"
+            />
+          </Styled(input)>
+        </HighlightToggle>
+      </Connect(HighlightToggle)>
+    </ThemeProvider>
+  </ThemedHighlightToggle>
+</Provider>
+`;

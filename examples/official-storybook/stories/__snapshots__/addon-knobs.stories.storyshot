@@ -170,6 +170,9 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in gro
       Whiskey
     </li>
   </ul>
+  <p>
+    When I'm by myself, I say: "Mumble"
+  </p>
 </div>
 `;
 

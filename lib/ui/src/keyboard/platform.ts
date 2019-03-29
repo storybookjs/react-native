@@ -31,4 +31,8 @@ export const enum OperatingSystem {
   Linux = 3,
 }
 
-export const OS = _isMacintosh ? OperatingSystem.Macintosh : _isWindows ? OperatingSystem.Windows : OperatingSystem.Linux;
+export const OS = _isMacintosh
+  ? OperatingSystem.Macintosh
+  : _isWindows
+  ? OperatingSystem.Windows
+  : OperatingSystem.Linux;

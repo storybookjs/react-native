@@ -120,10 +120,10 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <article
       style={
         Object {
+          "backgroundColor": "#fff",
           "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
           "lineHeight": 1.4,
-          "margin": 15,
-          "maxWidth": 600,
+          "padding": 15,
         }
       }
     >

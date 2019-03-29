@@ -25,7 +25,7 @@ exports[`Storyshots Other|Demo/Button with text 1`] = `
 
 exports[`Storyshots Other|Demo/Welcome to Storybook 1`] = `
 <article
-  style="margin:15px;max-width:600px;line-height:1.4;font-family:\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif"
+  style="padding:15px;line-height:1.4;font-family:\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif;background-color:#fff"
 >
   <h1>
     Welcome to storybook
