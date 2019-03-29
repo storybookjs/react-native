@@ -2,9 +2,15 @@
   "name": "addon-contexts",
   "version": "1.0.0",
   "description": "Storybook Addon Contexts",
-  "main": "index.js",
   "keywords": [
     "storybook"
+  ],
+  "author": "Leo Y. Li",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
   ],
   "repository": {
     "type": "git",
@@ -13,21 +19,37 @@
   "bugs": {
     "url": "https://github.com/leoyli/addon-contexts/issues"
   },
-  "author": "Leo Y. Li",
-  "license": "MIT",
+  "scripts": {
+    "prettier": "prettier --config .prettierrc --write '**/*.{ts,tsx}'",
+    "type:check": "tsc",
+    "type:watch": "tsc --watch",
+    "type:emit": "tsc --noEmit false --emitDeclarationOnly",
+    "test": "jest --passWithNoTests",
+    "build": "yarn test && rm -rf dist && yarn type:emit && babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline --ignore src/**/*.d.ts"
+  },
   "dependencies": {
     "@storybook/addons": "^5.0.5",
-    "@storybook/components": "^5.0.5"
+    "@storybook/components": "^5.0.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.11",
     "@types/react": "^16.8.10",
+    "@types/storybook__react": "^4.0.1",
     "jest": "^24.5.0",
     "jest-dom": "^3.1.3",
+    "jest-haste-map": "^24.5.0",
+    "jest-resolve": "^24.5.0",
+    "prettier": "^1.16.4",
     "react-testing-library": "^6.0.3",
     "typescript": "^3.3.4000"
-  },
-  "peerDependencies": {
-    "react": "*"
   }
 }
