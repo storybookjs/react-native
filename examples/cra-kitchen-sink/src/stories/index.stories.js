@@ -36,17 +36,20 @@ storiesOf('Button', module)
   })
   .add(
     'with new info',
-    withInfo(
-      'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.'
-    )(context => (
+    context => (
       <Container>
         <span>
           click the <InfoButton /> label in top right for info about "{context.name}"
         </span>
       </Container>
-    )),
+    ),
     {
       notes: 'Composition: Info(Notes())',
       options: { selectedPanel: 'storybook/info/panel' },
+      decorators: [
+        withInfo(
+          'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.'
+        ),
+      ],
     }
   );
