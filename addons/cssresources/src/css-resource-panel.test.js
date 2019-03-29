@@ -56,7 +56,7 @@ describe('CSSResourcePanel', () => {
     });
 
     it('should render an empty div', () => {
-      expect(node.matchesElement('<div></div>')).toEqual(true);
+      expect(node.html()).toEqual('<div></div>');
     });
   });
 
