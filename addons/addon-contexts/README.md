@@ -11,11 +11,11 @@ sure they all looks great in any circumstance.
 
 Often enough, you will find it become very tedious wrapping a component deeply nested before you actually write your
 main content of story.  You even start to write wrapper components or factory functions just to make your life easier.
-How about changing the context of your story dynamically?!  There were simply have no good way so you ended up writing
+How about changing the context of your story dynamically?!  There were simply having no good way so you ended up writing
 stories like an accountant.
 
 That is why you need this.  An elegant way to wrap your component stories and change their contextual environment
-directly and dynamically in Storybook UI!  Kind of like a dependency injection, eh!  The best bit is **define it once
+directly and dynamically in Storybook UI!  Kind of like a dependency injection, eh!  The best bit is **you define it once
 and apply everywhere**.
 
 
@@ -52,10 +52,11 @@ Alternatively, just like other addons, you can also just use this addon for a gi
 ```js
 import { storiesOf } from '@storybook/react';
 import { withContexts } from '[addon-contexts]';
+import { contexts } from './configs/contexts';
 
 const stories = storiesOf('Storybook Knobs', module);
 
-stories.addDecorator(withKnobs(options));
+stories.addDecorator(withContexts(contexts));
 
 ...
 ```
