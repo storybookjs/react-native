@@ -53,7 +53,7 @@ const initModule = (storyFn: IStoryFn) => {
     props,
     styles,
     moduleMetadata = {},
-    requiresComponentDeclaration: componentRequiresDeclaration = true,
+    requiresComponentDeclaration = true,
   } = storyObj;
 
   const isCreatingComponentFromTemplate = Boolean(template);
@@ -63,7 +63,7 @@ const initModule = (storyFn: IStoryFn) => {
     : component;
 
   const componentDeclarations =
-    isCreatingComponentFromTemplate || componentRequiresDeclaration
+    isCreatingComponentFromTemplate || requiresComponentDeclaration
       ? [AppComponent, AnnotatedComponent]
       : [AppComponent];
 

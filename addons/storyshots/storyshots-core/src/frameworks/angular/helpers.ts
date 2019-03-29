@@ -39,7 +39,7 @@ export const initModuleData = (storyObj: NgStory): any => {
     template,
     props,
     moduleMetadata = {},
-    requiresComponentDeclaration: componentRequiresDeclaration = true,
+    requiresComponentDeclaration = true,
   } = storyObj;
 
   const isCreatingComponentFromTemplate = Boolean(template);
@@ -49,7 +49,7 @@ export const initModuleData = (storyObj: NgStory): any => {
     : component;
 
   const componentDeclarations =
-    isCreatingComponentFromTemplate || componentRequiresDeclaration
+    isCreatingComponentFromTemplate || requiresComponentDeclaration
       ? [AppComponent, AnnotatedComponent]
       : [AppComponent];
 
