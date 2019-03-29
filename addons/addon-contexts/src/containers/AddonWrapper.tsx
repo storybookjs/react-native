@@ -4,7 +4,7 @@ import { useChannel } from '../libs/hooks';
 import { getNodes, renderAggregatedContexts } from '../libs/helpers';
 import { propsTreeReducer, propsTreeUpdater } from '../libs/ducks';
 import { INIT_WRAPPER, UPDATE_MANAGER, UPDATE_WRAPPER } from '../libs/constants';
-import { TAddonWrapper, StringObject } from '../libs/types';
+import { TAddonWrapper, StringObject, StringTuple } from '../types';
 
 /**
  * Wrap story under addon-injected contexts
@@ -15,7 +15,7 @@ export const AddonWrapper: TAddonWrapper = ({ channel, settings, children }) => 
   const [ready, setReady] = useState(false);
 
   // register channel-event handlers
-  const updatePropsMap = (tuple) => dispatch(propsTreeUpdater(nodes)(tuple));
+  const updatePropsMap = (tuple: StringTuple) => dispatch(propsTreeUpdater(nodes)(tuple));
   useChannel(UPDATE_WRAPPER, updatePropsMap);
   useChannel(INIT_WRAPPER, (source: StringObject) => {
     nodes
