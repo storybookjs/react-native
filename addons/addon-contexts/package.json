@@ -3,12 +3,13 @@
   "version": "1.0.1",
   "description": "Storybook Addon Contexts",
   "keywords": [
-    "storybook"
+    "storybook",
+    "react"
   ],
   "author": "Leo Y. Li",
   "license": "MIT",
   "main": "dist/index.js",
-  "types": "dist/@types/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*"
   ],
