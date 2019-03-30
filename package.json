@@ -180,8 +180,7 @@
     "tslint": "~5.14.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.4.0-rc",
-    "weak": "^1.0.1"
+    "typescript": "^3.4.0-rc"
   },
   "resolutions": {
     "graphql": "^0.13.2"
