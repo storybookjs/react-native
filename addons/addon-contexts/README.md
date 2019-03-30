@@ -204,8 +204,6 @@ Disable this contextual environment completely.  Useful when you want to opt-out
 Allow this contextual environment to be opt-out optionally in toolbar.  When set to `true`, an **Off** option will
 be shown at first in the toolbar menu in your Storybook.
 
----
-
 ## 📖 License
 
 MIT
