@@ -5,7 +5,7 @@ declare type ReactNode = import('react').ReactNode;
 declare type ReactElement = import('react').ReactElement;
 declare type FC<P> = import('react').FunctionComponent<P>;
 
-// auxiliary types
+// auxiliary @types
 declare type FCNoChildren<P> = FC<{ children?: never } & P>;
 declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 declare type GenericFnWithReturn<T> = (...args: any[]) => T;
@@ -13,7 +13,7 @@ declare type GenericProps = { [key: string]: GenericProps } | null;
 export declare type StringObject = { [key: string]: string };
 export declare type StringTuple = [string, string];
 
-// config types
+// config @types
 export declare type AddonOptions = {
   deep?: boolean;
   disable?: boolean;
@@ -38,7 +38,7 @@ export declare type ContextNode = Required<AddonSetting> & {
   nodeId: string;
 };
 
-// duck types
+// duck @types
 export declare type UPDATE_PROPS_MAP = {
   type: 'UPDATE_PROPS_MAP';
   payload: {
@@ -50,7 +50,7 @@ export declare type PropsTreeUpdaterType = (
   nodes: ContextNode[]
 ) => ([nodeId, name]: StringTuple) => UPDATE_PROPS_MAP;
 
-// helper types
+// helper @types
 export declare type RenderAggregatedComponents = (
   ...arg: [ComponentType[], GenericProps, AddonOptions, number]
 ) => GenericFnWithReturn<unknown>;
@@ -65,7 +65,7 @@ export declare type UseChannel = (
   input?: unknown[]
 ) => void;
 
-// Component types
+// Component @types
 export declare type Wrapper = (...arg: [Function, unknown, WrapperSettings]) => ReactNode;
 export declare type TAddonManager = FCNoChildren<{
   channel: Channel;

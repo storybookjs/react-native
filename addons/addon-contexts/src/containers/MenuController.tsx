@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ToolBarMenu } from '../components/ToolBarMenu';
 import { OPT_OUT } from '../libs/constants';
-import { TMenuController } from '../types';
+import { TMenuController } from '../@types';
 
 export const MenuController: TMenuController = ({
   nodeId,

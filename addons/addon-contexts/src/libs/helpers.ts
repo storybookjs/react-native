@@ -4,7 +4,7 @@ import {
   MergeSettings,
   RenderAggregatedComponents,
   RenderAggregatedContexts,
-} from '../types';
+} from '../@types';
 
 export const renderAggregatedComponents: RenderAggregatedComponents = (
   components,
