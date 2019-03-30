@@ -1,7 +1,12 @@
 # Storybook Addon Contexts
 
-**Storybook Addon Contexts** is an addon for driving your components under dynamic contexts in Storybook.
+<p align="center">
+[![NPM](https://nodei.co/npm/addon-contexts.png)](https://nodei.co/npm/addon-contexts/)
+</p>
 
+---
+
+**Storybook Addon Contexts** is an addon for driving your components under dynamic contexts in Storybook.
 
 ## 💡 Why you need this?
 
@@ -121,7 +126,8 @@ The `contexts` is an array of object that should has the following properties:
 
 ---
 
-#### `icon : string?` (default `undefined`)
+#### `icon : string?`
+(default `undefined`)
 
 A icon displayed in the Storybook toolbar to control contextual props. This addon allows you to define an icon for
 each contextual environment individually.  Take a look from what are currently supported
@@ -129,10 +135,14 @@ each contextual environment individually.  Take a look from what are currently s
 story.  You must define an icon first if you want to take advantage on switching props dynamically in your Storybook
 toolbar.
 
+---
+
 #### `title : string`  
 (required)
 
 An unique name of a contextual environment.  Note, if you have duplicated name, the later is ignored.
+
+---
 
 #### `components : React.ComponentType[]`  
 (required)
@@ -143,7 +153,9 @@ wrapping behaviour can be useful in some cases; for instance, in the above examp
 `styled-componnets` and `material-ui` theme providers.
 
 Note, typically, components are `Providers` from [React Context API](https://reactjs.org/docs/context.html).  However,
-it is really up to your use cases.
+it is really up to you and have no limitation for your use cases.
+
+---
 
 #### `params : object[]`  
 (required) 
@@ -173,6 +185,8 @@ The `props` that is accepted by the wrapping component(s).
 
 Set to `true` if you want to use this param initially.  Note, only the first one marked as default is identified;
 
+---
+
 #### `options`
 
 A set of options offers more granular control over the defined contextual environment.  Note, they can be overridden
@@ -193,3 +207,9 @@ Disable this contextual environment completely.  Useful when you want to opt-out
 
 Allow this contextual environment to be opt-out optionally in toolbar.  When set to `true`, an **Off** option will
 be shown at first in the toolbar menu in your Storybook.
+
+---
+
+## 📖 License
+
+MIT
