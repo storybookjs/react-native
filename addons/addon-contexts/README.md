@@ -4,24 +4,43 @@
 
 
 ## Why you need this?
+
 Real world users expects your application being customizable, that is why often your components are **polymorphic**:
 they simply need to adapt themselves under different contextual environments.  Imagine your components can speak
 Chinese, English, or even French, and they change their skin tone under dark or light theme.  Yeah, you want to make
-sure they all looks great in any circumstance.
+sure a component look great in all scenario.
 
-Often enough, you will find it become very tedious wrapping a component deeply nested before you actually write your
-main content of story.  You even start to write wrapper components or factory functions just to make your life easier.
-How about changing the context of your story dynamically?!  There were simply having no good way so you ended up writing
-stories like an accountant.
+A good practice to write maintainable components is separate the presentation and its business logic.  Often enough,
+you will find it become very tedious to wrap each component deeply with its contextual environments before you can
+really write the main story.  You even start to write extra components or factory functions just to make your life
+easier.  How about changing the context of your story dynamically?!  There were simply having no good way so you
+ended up writing stories like an accountant.
 
 That is why you need this.  An elegant way to wrap your component stories and change their contextual environment
-directly and dynamically in Storybook UI!  Kind of like a dependency injection, eh!  The best bit is **you define it once
-and apply everywhere**.
+directly and dynamically in Storybook UI!  Kind of like a dependency injection, eh!  The best bit is **you define it
+once then apply it everywhere**.
+
+
+## Features
+
+1. Define a single global file for managing contextual environments (a.k.a. containers) for all of your stories 
+   declaratively.  No more repetitive setups or noisy wrapping, making your stories more focused and readable.
+2. Support dynamic contextual props switching from Storybook toolbar at runtime.  You can easily slicing into
+   different environments (e.g. languages or themes ) to understand how your component is going to response.
+3. Library agnostic: no presumption on what kind of components you want to wrap around your stories.  You can even
+   use it to bridge with your favorite routing, state-management solutions, or even your own `React.context` provider.
+4. Offer chainable and granular configurations.  It is even possible to customized at per story level.
+
+
+## Supported Environments
+
+Make sure the version of your Storybook is above v5.  Currently, only React is being supported.  However, this addon
+is aiming to expend its framework supports in the near future.
 
 
 ## Getting started
 
-To start, add this package into your project:
+To get it started, add this package into your project:
 
 ```bash
 yarn add -D addon-contexts
@@ -34,13 +53,13 @@ under the storybook config directory of your project):
 import 'addon-contexts/register';
 ```
 
-(In React) It is recommended to use this addon globally in your storybook, add the following lines into `config.js`
-file (you usually see this file peer to `addon.js` file):
+To load your contextual setups for your stories globally, adding the following lines into `config.js` file (you should
+see it near your `addon.js` file):
 
 ```js
 import { addDecorator } from '@storybook/react';
-import { withContexts } from '[addon-contexts]';
-import { contexts } from './configs/contexts'; // you will need to creat this addon-context config file later
+import { withContexts } from 'addon-contexts';
+import { contexts } from './configs/contexts'; // we will define the contextual setups later in API section
 
 addDecorator(withContexts(contexts));
 
@@ -51,46 +70,113 @@ Alternatively, just like other addons, you can also just use this addon for a gi
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { withContexts } from '[addon-contexts]';
+import { withContexts } from 'addon-contexts';
 import { contexts } from './configs/contexts';
 
-const stories = storiesOf('Storybook Knobs', module);
+const stories = storiesOf('Component With Contexts', module);
 
 stories.addDecorator(withContexts(contexts));
 
 ...
 ```
 
-## Configurations
+## Configurations (APIs)
 
-It is recommended to have a separate file for managing addon configuration assets.  Let's add a file named
-`context.js` and export the setting object `context`:
+It is recommended to have a separate file for managing your contextual setups.  Let's add a file named `context.js`
+first.  To use this addon to inject your theming contexts, let's take the following example:
 
 ```js
 // @context.js (example)
+const dark = {/* your dark theme */};
+const light = {/* your light theme */};
 
 export const contexts = [
   {
-    icon: 'box',                                            // <- icon for displaying in the Storybook manager toolbar
+    icon: 'box',              // <- icon used in the Storybook toolbar
     title: 'Themes',
-    components: [/* SCThemeProvider, MuiThemeProvider */],  // <- an array contains a chain of component wrappers
-    params: [
-      { name: 'Dark Theme', props: { theme: /* dark*/ }, default: true },
-      { name: 'Light Theme', props: { theme: /* light*/ } },
+    components: [             // <- an array contains a chain of component wrappers
+      /* SCThemeProvider, */
+      /* MuiThemeProvider, */
+    ],
+    params: [                 // <- params is an array of list to allow switching contextual props dynamically 
+      { name: 'Light Theme', props: { theme: light } },
+      { name: 'Dark Theme', props: { theme: dark }, default: true },
     ],
     options: {
-      deep: false,                                          // <- true to inject props to all components
-      disable: false,                                       // <- true to ignore the whole context
-      cancelable: false,                                    // <- true to give an option to opt-out temporarily
+      deep: false,            // <- true to inject props to all components; false to only the first
+      disable: false,         // <- true to ignore the whole context;
+      cancelable: false,      // <- true to give an option to opt-out (unwrap) temporarily in toolbar menu
     },
   },
+  /* ... */                   // <- multiple contexts setups are supported
 ];
 ```
 
-- Config expects to be an array contains object for defining contextual nodes.
-- You can provide multiple contextual nodes by adding more members with the same shape into the array. They are
-injected by the addon automatically (top(outer) -> down(inner).
-- It is possible to have multiple parent providers chaining together (left(outer) -> right(inner)).
-- Additional params or context nodes can be introduced in the level of a story (but can not overridden).
-- The addon will persist the active props, and fallback to the default setting or the first param if the param were
-gone from story to story.
+### `withContexts(contexts)` 
+
+An decorator for wrapping your stories under your predefined `contexts`.  This means multiple contextual environments
+are supported.  They are going to be loaded layer by layer and wraped in a descending oder (top -> down -> story). 
+The `contexts` is an array of object that should has the following properties:
+
+#### (optional) `icon : string | undefined`
+
+This addon allows you to define an icon for each contextual environment individually.  Take a look from what are
+currently supported [icon lists](https://storybooks-official.netlify.com/?path=/story/basics-icon--labels) from the
+official Storybook story.  You must define an icon first if you want to take advantage on switching props dynamically
+in your Storybook toolbar.
+
+#### (required) `title : string`
+
+An unique name of a contextual environment.  Note, if you have duplicated name, the later is ignored.
+
+#### (required) `components : React.ComponentType[]`
+
+An array of components that is going to be injected to wrap your stories.  This means this addon allow multiple
+wrapping components coexisted.  The wrapping sequence is from the left to right (parent -> children -> story). This
+nested wrapping behaviour can be useful in some cases; for instance, in the above example, we are wrapping stories
+under `styled-componnets` and `material-ui` theme providers.
+
+Typically, components are `Providers` from [React Context API](https://reactjs.org/docs/context.html).  However, it
+is really up to your use cases.
+
+#### (required) `params : object[]`
+
+An array of params contains information on a set of predefined `props` for `components`.
+
+Note:
+1. additional params can be appended at the story level later; however, they are never be able to overridden the
+global list. So it is important to have non-collided names.
+2. the addon will persist the selected params between stories, and it fallback to the default then the first param
+if the param were gone from story to story.
+
+This object has the following properties: 
+
+##### (required) `params.name : string`
+
+An unique name for representing the props.
+
+##### (required) `params.props : object | null:`
+
+The `props` that is accepted by the wrapping component(s).
+
+##### (optional) `params.defualt : true | undefined`
+
+Set to `true` if you want to use this param initially.  Note, only the first one marked as default is identified;
+
+#### (optional) `options`
+
+A set of options offers more granular control over the defined contextual environment.  Note, they can be overridden
+at the story level.
+
+##### (optional) `options.deep : boolean` (default: `false`)
+
+Pass the `props` deeply into all components.  Useful when you have multiple wrappers that take the same props.
+
+##### (optional) `options.disable : boolean` (default: `false`)
+
+Disable this contextual environment completely.  Useful when you want to opt-out this context from a given story.
+
+##### (optional) `options.cancelable : boolean` (default: `false`)
+
+Allow this contextual environment to be disabled temporarily.  When set to `true`, an **Off** option will be shown
+at first in the toolbar menu in your Storybook.
