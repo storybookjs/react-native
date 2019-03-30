@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icons, IconButton, WithTooltip } from '@storybook/components';
 import { ToolBarMenuOptions } from './ToolBarMenuOptions';
-import { TToolBarMenu } from '../types';
+import { TToolBarMenu } from '../@types';
 
 export const ToolBarMenu: TToolBarMenu = ({
   icon,
