@@ -1,11 +1,28 @@
 /*
- * Ignore these two imports, because they do fail after tsc but actually work.
- * tsc checks this file before emitting the needed declarations of the imported files
+ * ATTENTION:
+ * - moduleMetadata
+ * - NgModuleMetadata
+ * - ICollection
+ *
+ * These typings are coped out of decorators.d.ts and types.d.ts in order to fix a bug with tsc
+ * It was imported out of dist before which was not the proper way of exporting public API
+ *
+ * This can be fixed by migrating app/angular to typescript
  */
-// @ts-ignore
-import { NgModuleMetadata, ICollection } from './dist/client/preview/angular/types';
-// @ts-ignore
-export { moduleMetadata } from './dist/client/preview/angular/decorators';
+export declare const moduleMetadata: (
+  metadata: Partial<NgModuleMetadata>
+) => (storyFn: () => any) => any;
+
+export interface NgModuleMetadata {
+  declarations?: any[];
+  entryComponents?: any[];
+  imports?: any[];
+  schemas?: any[];
+  providers?: any[];
+}
+export interface ICollection {
+  [p: string]: any;
+}
 
 export interface IStorybookStory {
   name: string;

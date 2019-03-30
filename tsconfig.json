@@ -18,5 +18,13 @@
       "es2017",
       "dom"
     ]
-  }
+  },
+  "exclude": [
+    "**/dist",
+    "node_modules",
+    "**/node_modules",
+    "**/*.spec.ts",
+    "**/__tests__",
+    "**/*.test.ts"
+  ]
 }
