@@ -113,7 +113,7 @@ export const contexts = [
 ];
 ```
 
-### `withContexts(contexts)` 
+#### `withContexts(contexts)` 
 
 An decorator for wrapping your stories under your predefined `contexts`.  This means multiple contextual environments
 are supported.  They are going to be loaded layer by layer and wraped in a descending oder (top -> down -> story). 
@@ -121,7 +121,7 @@ The `contexts` is an array of object that should has the following properties:
 
 ---
 
-### `icon : string?` (default `undefined`)
+#### `icon : string?` (default `undefined`)
 
 A icon displayed in the Storybook toolbar to control contextual props. This addon allows you to define an icon for
 each contextual environment individually.  Take a look from what are currently supported
@@ -129,11 +129,13 @@ each contextual environment individually.  Take a look from what are currently s
 story.  You must define an icon first if you want to take advantage on switching props dynamically in your Storybook
 toolbar.
 
-### `title : string` (required)
+#### `title : string`  
+(required)
 
 An unique name of a contextual environment.  Note, if you have duplicated name, the later is ignored.
 
-### `components : React.ComponentType[]` (required)
+#### `components : React.ComponentType[]`  
+(required)
 
 An array of components that is going to be injected to wrap stories.  This means this addon allow multiple wrapping
 components coexisted.  The wrapping sequence is from the left to right (parent -> children -> story). This nested
@@ -143,7 +145,8 @@ wrapping behaviour can be useful in some cases; for instance, in the above examp
 Note, typically, components are `Providers` from [React Context API](https://reactjs.org/docs/context.html).  However,
 it is really up to your use cases.
 
-### `params : object[]` (required) 
+#### `params : object[]`  
+(required) 
 
 An array of params contains a set of predefined `props` for `components`.
 
@@ -155,32 +158,38 @@ if the param were gone from story to story.
 
 This object has the following properties: 
 
-### `params.name : string` (required) 
+#### `params.name : string`  
+(required) 
 
 An unique name for representing the props.
 
-### `params.props : object | null:` (required) 
+#### `params.props : object | null:`  
+(required) 
 
 The `props` that is accepted by the wrapping component(s).
 
-### `params.defualt : true?` (default: `undefined`)
+#### `params.defualt : true?`  
+(default: `undefined`)
 
 Set to `true` if you want to use this param initially.  Note, only the first one marked as default is identified;
 
-## `options`
+#### `options`
 
 A set of options offers more granular control over the defined contextual environment.  Note, they can be overridden
 at the story level.
 
-### `options.deep : boolean?` (default: `false`)
+#### `options.deep : boolean?`  
+(default: `false`)
 
 Pass the `props` deeply into all wrapping components.  Useful when you want them all taking the same props.
 
-### `options.disable : boolean?` (default: `false`)
+#### `options.disable : boolean?`  
+(default: `false`)
 
 Disable this contextual environment completely.  Useful when you want to opt-out this context from a given story.
 
-### `options.cancelable : boolean?` (default: `false`)
+#### `options.cancelable : boolean?`  
+(default: `false`)
 
 Allow this contextual environment to be opt-out optionally in toolbar.  When set to `true`, an **Off** option will
 be shown at first in the toolbar menu in your Storybook.
