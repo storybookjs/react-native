@@ -1,6 +1,6 @@
 {
   "name": "addon-contexts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Storybook Addon Contexts",
   "keywords": [
     "storybook"
@@ -25,14 +25,10 @@
     "type:watch": "tsc --watch",
     "type:emit": "tsc --noEmit false --emitDeclarationOnly",
     "test": "jest --passWithNoTests",
-    "build": "yarn test && rm -rf dist && yarn type:emit && babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline --ignore src/@types"
+    "build": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline --ignore src/@types",
+    "prepare": "yarn test && rm -rf dist && yarn type:emit && yarn build"
   },
-  "dependencies": {
-    "@storybook/addons": "^5.0.5",
-    "@storybook/components": "^5.0.5",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.4.0",
@@ -51,5 +47,10 @@
     "prettier": "^1.16.4",
     "react-testing-library": "^6.0.3",
     "typescript": "^3.3.4000"
+  },
+  "peerDependencies": {
+    "@storybook/addons": "^5.0.0",
+    "@storybook/components": "^5.0.0",
+    "react": "^16.8.0"
   }
 }
