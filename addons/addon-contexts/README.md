@@ -24,14 +24,14 @@ and apply everywhere**.
 To start, add this package into your project:
 
 ```bash
-yarn add -D
+yarn add -D addon-contexts
 ```
 
 Then, register the addon by adding the following line into your `addon.js` file (you should be able to find the file
 under the storybook config directory of your project):
 
 ```js
-import '[addon-contexts]/register';
+import 'addon-contexts/register';
 ```
 
 (In React) It is recommended to use this addon globally in your storybook, add the following lines into `config.js`
