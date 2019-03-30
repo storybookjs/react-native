@@ -47,6 +47,12 @@ exports[`Storyshots Addons|Knobs All knobs 1`] = `
 </div>
 `;
 
+exports[`Storyshots Addons|Knobs DOM 1`] = `
+<p>
+  John Doe
+</p>
+`;
+
 exports[`Storyshots Addons|Knobs Simple 1`] = `
 <div>
   I am John Doe and I'm 44 years old.

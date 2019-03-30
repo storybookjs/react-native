@@ -154,6 +154,9 @@ storiesOf('Addons|Knobs.withKnobs', module)
       GROUP_IDS.DISPLAY
     );
 
+    // Ungrouped
+    const ungrouped = text('Ungrouped', 'Mumble');
+
     const style = { backgroundColor, ...otherStyles };
 
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
@@ -178,6 +181,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
             <li key={`${item}`}>{item}</li>
           ))}
         </ul>
+        <p>When I'm by myself, I say: "{ungrouped}"</p>
       </div>
     );
   })

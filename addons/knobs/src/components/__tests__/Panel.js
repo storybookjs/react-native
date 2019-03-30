@@ -223,7 +223,7 @@ describe('Panel', () => {
       root.unmount();
     });
 
-    it('should have one tab per groupId and an empty ALL tab when all are defined', () => {
+    it('should have one tab per groupId and an empty Other tab when all are defined', () => {
       const root = mount(
         <ThemeProvider theme={convert(themes.light)}>
           <Panel channel={testChannel} api={testApi} active />
@@ -263,7 +263,7 @@ describe('Panel', () => {
       root.unmount();
     });
 
-    it('the ALL tab should have its own additional content when there are knobs both with and without a groupId', () => {
+    it('the Other tab should have its own additional content when there are knobs both with and without a groupId', () => {
       const root = mount(
         <ThemeProvider theme={convert(themes.light)}>
           <Panel channel={testChannel} api={testApi} active />
@@ -293,10 +293,10 @@ describe('Panel', () => {
         .find(TabsState)
         .find('button')
         .map(child => child.prop('children'));
-      expect(titles).toEqual(['foo', 'ALL']);
+      expect(titles).toEqual(['foo', 'Other']);
 
       const knobs = wrapper.find(PropForm).map(propForm => propForm.prop('knobs'));
-      // there are props with no groupId so ALL should also have its own PropForm
+      // there are props with no groupId so Other should also have its own PropForm
       expect(knobs.length).toEqual(titles.length);
       expect(knobs).toMatchSnapshot();
 

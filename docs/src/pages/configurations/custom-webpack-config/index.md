@@ -148,7 +148,6 @@ The webpack config [is configurable](/configurations/webpack), and the default c
 
 ### Debug the default webpack config
 
-<details>
   <summary>To effectively customise the webpack config, you might need to get the full default config it's using.</summary>
   
   <div></div>
@@ -160,12 +159,10 @@ The webpack config [is configurable](/configurations/webpack), and the default c
   ```
 - Then run storybook:
   ```sh
-  yarn storybook --quiet
+  yarn storybook --debug-webpack
   ```
 
 The console should log the entire config, for you to inspect.
-
-</details>
 
 ## Webpack customisation modes
 
@@ -207,7 +204,7 @@ Storybook uses the config returned from the above function. So edit `config` wit
 
 > If your custom webpack config uses a loader that does not explicitly include specific file extensions via the `test` property, it is necessary to `exclude` the `.ejs` file extension from that loader.
 
-### Extend Mode
+### Extend Mode (**Deprecated**)
 
 If your file exports an **object**, it puts Storybook into **extend-mode**. This mode is deprecated and will be removed in a future version.
 

@@ -64,11 +64,11 @@ interface OptionsMap {
 }
 
 const deprecatedThemeOptions: {
-  name: 'brandTitle';
-  url: 'brandUrl';
+  name: 'theme.brandTitle';
+  url: 'theme.brandUrl';
 } = {
-  name: 'brandTitle',
-  url: 'brandUrl',
+  name: 'theme.brandTitle',
+  url: 'theme.brandUrl',
 };
 
 const deprecatedLayoutOptions: {

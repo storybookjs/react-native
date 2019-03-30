@@ -55,8 +55,8 @@ describe('CSSResourcePanel', () => {
       expect(node).toHaveState({ list: [], currentStoryId: '' });
     });
 
-    it('should not render anything', () => {
-      expect(node).toBeEmptyRender();
+    it('should render an empty div', () => {
+      expect(node.html()).toEqual('<div></div>');
     });
   });
 

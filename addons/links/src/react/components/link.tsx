@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 
 import { navigate, hrefTo } from '../../preview';
 
@@ -9,32 +8,42 @@ import { navigate, hrefTo } from '../../preview';
 // Cmd/Ctrl/Shift/Alt + Click should trigger default browser behaviour. Same applies to non-left clicks
 const LEFT_BUTTON = 0;
 
-const isPlainLeftClick = e =>
+const isPlainLeftClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) =>
   e.button === LEFT_BUTTON && !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey;
 
-const cancelled = (e, cb = () => {}) => {
+const cancelled = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, cb = (_e: any) => {}) => {
   if (isPlainLeftClick(e)) {
     e.preventDefault();
     cb(e);
   }
 };
 
-export default class LinkTo extends PureComponent {
-  constructor(...args) {
-    super(...args);
+interface Props {
+  kind: string;
+  story: string;
+  children: React.ReactNode;
+}
 
-    this.state = {
-      href: '/',
-    };
+interface State {
+  href: string;
+}
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+export default class LinkTo extends PureComponent<Props, State> {
+  defaultProps: Props = {
+    kind: null,
+    story: null,
+    children: undefined,
+  };
+
+  state: State = {
+    href: '/',
+  };
 
   componentDidMount() {
     this.updateHref();
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: Props) {
     const { kind, story } = this.props;
 
     if (prevProps.kind !== kind || prevProps.story !== story) {
@@ -42,15 +51,15 @@ export default class LinkTo extends PureComponent {
     }
   }
 
-  async updateHref() {
+  updateHref = async () => {
     const { kind, story } = this.props;
     const href = await hrefTo(kind, story);
     this.setState({ href });
-  }
+  };
 
-  handleClick() {
+  handleClick = () => {
     navigate(this.props);
-  }
+  };
 
   render() {
     const { kind, story, children, ...rest } = this.props;
@@ -63,15 +72,3 @@ export default class LinkTo extends PureComponent {
     );
   }
 }
-
-LinkTo.defaultProps = {
-  kind: null,
-  story: null,
-  children: undefined,
-};
-
-LinkTo.propTypes = {
-  kind: PropTypes.string,
-  story: PropTypes.string,
-  children: PropTypes.node,
-};
