@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@types/common-tags": "^1.8.0",
-    "@types/react-redux": "^7.0.3"
+    "@types/react-redux": "^7.0.6"
   },
   "publishConfig": {
     "access": "public"
