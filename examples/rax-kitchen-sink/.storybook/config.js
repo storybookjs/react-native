@@ -7,21 +7,21 @@ addParameters({
     goFullScreen: false,
     showAddonsPanel: true,
     showSearchBox: false,
-    addonPanelInRight: true,
     sortStoriesByKind: false,
     hierarchySeparator: /\./,
     hierarchyRootSeparator: /\|/,
     enableShortcuts: true,
+    panelPosition: 'bottom',
   },
 });
 
 function loadStories() {
   // put welcome screen at the top of the list so it's the first one displayed
-  // require('../src/stories/index.stories');
+  require('../src/stories/index.stories');
 
   // automatically import all story js files that end with *.stories.js
   const req = require.context('../src/stories', true, /\.stories\.js$/);
-  req.keys().forEach(filename => req(filename));
+  req.keys().forEach((filename) => req(filename));
 }
 
 configure(loadStories, module);

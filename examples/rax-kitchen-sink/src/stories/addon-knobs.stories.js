@@ -40,7 +40,7 @@ stories.add('with a button', () => {
 
 // Knobs as dynamic variables.
 stories.add('as dynamic variables', () => {
-  const name = text('Name', 'Arunoda Susiripala');
+  const name = text('Name', 'Benjamin Button');
   const age = number('Age', 89);
 
   const content = `I am ${name} and I'm ${age} years old.`;
