@@ -7,7 +7,7 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
       *ngFor="let chip of chips"
       class="chip"
       [displayText]="chip.text"
-      (removeClicked)="removeAllChipsClick.emit(chip.id)"
+      (removeClicked)="removeChipClick.emit(chip.id)"
     ></storybook-chip>
     <div *ngIf="chips.length > 1" class="remove-all" (click)="removeAllChipsClick.emit()">
       Remove All
