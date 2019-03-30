@@ -1,10 +1,6 @@
 # Storybook Addon Contexts
 
-<p align="center">
-[![NPM](https://nodei.co/npm/addon-contexts.png)](https://nodei.co/npm/addon-contexts/)
-</p>
-
----
+[![npm version](https://badge.fury.io/js/addon-contexts.svg)](https://badge.fury.io/js/addon-contexts)
 
 **Storybook Addon Contexts** is an addon for driving your components under dynamic contexts in Storybook.
 
