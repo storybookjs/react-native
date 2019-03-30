@@ -4,7 +4,7 @@ import { useChannel } from '../libs/hooks';
 import { getNodes, renderAggregatedContexts } from '../libs/helpers';
 import { propsTreeReducer, propsTreeUpdater } from '../libs/ducks';
 import { INIT_WRAPPER, UPDATE_MANAGER, UPDATE_WRAPPER } from '../libs/constants';
-import { TAddonWrapper, StringObject, StringTuple } from '../types';
+import { TAddonWrapper, StringObject, StringTuple } from '../@types';
 
 /**
  * Wrap story under addon-injected contexts

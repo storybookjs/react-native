@@ -3,7 +3,7 @@
  * @see https://github.com/erikras/ducks-modular-redux
  */
 import { OPT_OUT } from './constants';
-import { UPDATE_PROPS_MAP, PropsTreeUpdaterType } from '../types';
+import { UPDATE_PROPS_MAP, PropsTreeUpdaterType } from '../@types';
 
 // reducers
 export const propsTreeReducer = (state: any, { type, payload }: UPDATE_PROPS_MAP) => {

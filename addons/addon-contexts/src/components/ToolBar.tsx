@@ -1,7 +1,7 @@
 import React from 'react';
 import { Separator } from '@storybook/components';
 import { MenuController } from '../containers/MenuController';
-import { TToolBar } from '../types';
+import { TToolBar } from '../@types';
 
 export const ToolBar: TToolBar = React.memo(({ nodes, setSelect }) =>
   nodes.length ? (

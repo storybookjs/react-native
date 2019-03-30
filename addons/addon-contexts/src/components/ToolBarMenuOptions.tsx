@@ -1,7 +1,7 @@
 import React from 'react';
 import { TooltipLinkList } from '@storybook/components';
 import { OPT_OUT } from '../libs/constants';
-import { TToolBarMenuOptions } from '../types';
+import { TToolBarMenuOptions } from '../@types';
 
 export const ToolBarMenuOptions: TToolBarMenuOptions = ({ activeName, list, onSelectOption }) => (
   <TooltipLinkList

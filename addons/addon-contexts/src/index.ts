@@ -2,7 +2,7 @@ import { createElement as h, Fragment } from 'react';
 import addons, { makeDecorator } from '@storybook/addons';
 import { AddonWrapper } from './containers/AddonWrapper';
 import { ID, PARAM } from './libs/constants';
-import { Wrapper } from './types';
+import { Wrapper } from './@types';
 
 const wrapper: Wrapper = (getStory, context, settings) =>
   h(AddonWrapper, {
