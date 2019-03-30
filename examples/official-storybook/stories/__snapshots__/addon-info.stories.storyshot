@@ -575,7 +575,7 @@ exports[`Storyshots Addons|Info/ForwardRef Uses forwardRef displayName if availa
   </div>
   <button
     class="info__show-button"
-    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
@@ -586,7 +586,7 @@ exports[`Storyshots Addons|Info/ForwardRef Uses forwardRef displayName if availa
   >
     <button
       class="info__close-button"
-      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#027ac5;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
