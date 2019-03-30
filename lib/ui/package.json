@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.1.0-alpha.19",
+  "version": "5.1.0-alpha.20",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -22,13 +22,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.19",
-    "@storybook/api": "5.1.0-alpha.19",
-    "@storybook/client-logger": "5.1.0-alpha.19",
-    "@storybook/components": "5.1.0-alpha.19",
-    "@storybook/core-events": "5.1.0-alpha.19",
-    "@storybook/router": "5.1.0-alpha.19",
-    "@storybook/theming": "5.1.0-alpha.19",
+    "@storybook/addons": "5.1.0-alpha.20",
+    "@storybook/api": "5.1.0-alpha.20",
+    "@storybook/client-logger": "5.1.0-alpha.20",
+    "@storybook/components": "5.1.0-alpha.20",
+    "@storybook/core-events": "5.1.0-alpha.20",
+    "@storybook/router": "5.1.0-alpha.20",
+    "@storybook/theming": "5.1.0-alpha.20",
     "core-js": "^2.6.5",
     "fast-deep-equal": "^2.0.1",
     "fuse.js": "^3.4.4",
@@ -50,6 +50,7 @@
     "react-resize-detector": "^4.0.5",
     "recompose": "^0.30.0",
     "semver": "^5.6.0",
+    "store2": "^2.7.1",
     "telejson": "^2.1.1",
     "util-deprecate": "^1.0.2"
   },

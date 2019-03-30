@@ -112,10 +112,10 @@ import { storiesOf } from '@storybook/angular';
 import { Button } from '@storybook/angular/demo';
 
 storiesOf('My Button', module)
-  .add('with emoji', () => ({
+ .add('with text', () => ({
     component: Button,
     props: {
-      text: '😀 😎 👍 💯',
+      text: 'Hello Button',
     },
   }))
   .add('with emoji', () => ({

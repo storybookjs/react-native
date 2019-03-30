@@ -113,7 +113,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "background": "#28c",
+            "background": "#027ac5",
             "border": "none",
             "borderRadius": "0 0 0 5px",
             "color": "#fff",
@@ -153,7 +153,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "background": "#28c",
+              "background": "#027ac5",
               "border": "none",
               "borderRadius": "0 0 0 5px",
               "color": "#fff",
@@ -1368,7 +1368,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
         onClick={[Function]}
         style={
           Object {
-            "background": "#28c",
+            "background": "#027ac5",
             "border": "none",
             "borderRadius": "0 0 0 5px",
             "color": "#fff",
@@ -1408,7 +1408,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
           onClick={[Function]}
           style={
             Object {
-              "background": "#28c",
+              "background": "#027ac5",
               "border": "none",
               "borderRadius": "0 0 0 5px",
               "color": "#fff",

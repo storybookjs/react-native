@@ -1,3 +1,18 @@
+## 5.1.0-alpha.20 (March 29, 2019)
+
+### Features
+
+* Addons: Manage local/session storage access with store2 ([#6310](https://github.com/storybooks/storybook/pull/6310))
+
+### Bug Fixes
+
+* Addon-cssresources: Fix panel layout ([#6263](https://github.com/storybooks/storybook/pull/6263))
+* Addon-info: Fixed contrast of Show Info button for a11y ([#6301](https://github.com/storybooks/storybook/pull/6301))
+
+### Maintenance
+
+* Migrate options and decorators in examples to new api ([#5954](https://github.com/storybooks/storybook/pull/5954))
+
 ## 5.1.0-alpha.19 (March 28, 2019)
 
 ### Bug Fixes
