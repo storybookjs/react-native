@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useState, useCallback } from 'react';
 import { useChannel } from '../libs/hooks';
 import { ToolBar } from '../components/ToolBar';

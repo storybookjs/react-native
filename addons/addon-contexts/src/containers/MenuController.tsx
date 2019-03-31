@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ToolBarMenu } from '../components/ToolBarMenu';
 import { OPT_OUT } from '../libs/constants';
 import { TMenuController } from '../@types';
