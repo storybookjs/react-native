@@ -27,17 +27,17 @@ once then apply it everywhere**.
 
 1. Define a single global file for managing contextual environments (a.k.a. containers) for all of your stories 
    declaratively.  No more repetitive setups or noisy wrapping, making your stories more focused and readable.
-2. Support dynamic contextual props switching from Storybook toolbar at runtime.  You can easily slicing into
+2. Support dynamic contextual props switching from Storybook toolbar at runtime.  You can easily slice into
    different environments (e.g. languages or themes ) to understand how your component is going to response.
 3. Library agnostic: no presumption on what kind of components you want to wrap around your stories.  You can even
    use it to bridge with your favorite routing, state-management solutions, or even your own `React.context` provider.
-4. Offer chainable and granular configurations.  It is even possible to customized at per story level.
+4. Offer chainable and granular configurations.  It is even possible to fine-tune at per story level.
 
 
-## 🧰 Supported Environments
+## 🧰 Requirements
 
-Make sure the version of your Storybook is above v5.  Currently, only React is being supported.  However, this addon
-is aiming to expend its framework supports in the near future.
+Make sure the version of your Storybook is above v5.  Currently, only React is supported.  However, this addon is aimed
+to expend its framework supports in the near future.
 
 
 ## 🎬 Getting started
@@ -64,48 +64,51 @@ import { withContexts } from 'addon-contexts';
 import { contexts } from './configs/contexts'; // we will define the contextual setups later in API section
 
 addDecorator(withContexts(contexts));
-
-...
 ```
 
-Alternatively, just like other addons, you can also just use this addon for a given set of stories:
+Alternatively, just like other addons, you can use this addon only for a given set of stories:
 
 ```js
 import { storiesOf } from '@storybook/react';
 import { withContexts } from 'addon-contexts';
 import { contexts } from './configs/contexts';
 
-const stories = storiesOf('Component With Contexts', module);
-
-stories.addDecorator(withContexts(contexts));
-
-...
+const story = storiesOf('Component With Contexts', module)
+  .addDecorator(withContexts(contexts));  // use this addon with a default contextual environment setups
 ```
 
-## ⚙️ Configurations (APIs)
-
-It is recommended to have a separate file for managing your contextual setups.  Let's add a file named `context.js`
-first.  To use this addon to inject your theming contexts, let's take the following example:
+Finally, you may want to modify the default setups at per story level.  Here is how you can do this:
 
 ```js
-// @context.js (example)
-const dark = {/* your dark theme */};
-const light = {/* your light theme */};
+story.add(
+  () => { /* some stories */ },
+  { contexts: [{ /* the modified setup goes here, sharing the same API signatures */ }] },
+);
+```
 
+## ⚙️ Setups
+
+### Overview
+
+It is recommended to have a separate file for managing your contextual environment setups.  Let's add a file named
+`contexts.js` first.  Before diving into API details, here is an overview on the landscape.  For example, to inject
+component theming contexts to both `styled-components` and `material-ui` theme providers in stories:
+
+```js
 export const contexts = [
   {
     icon: 'box',            // a icon displayed in the Storybook toolbar to control contextual props
     title: 'Themes',        // an unique name of a contextual environment
     components: [           // an array of components that is going to be injected to wrap stories
-      /* SCThemeProvider, */
-      /* MuiThemeProvider, */
+      /* Styled-components ThemeProvider, */
+      /* Material-ui ThemeProvider, */
     ],
     params: [               // an array of params contains a set of predefined `props` for `components`
-      { name: 'Light Theme', props: { theme: light } },
-      { name: 'Dark Theme', props: { theme: dark }, default: true },
+      { name: 'Light Theme', props: { theme /* : your dark theme */ } },
+      { name: 'Dark Theme', props: { theme /* : your light theme */ }, default: true },
     ],
     options: {
-      deep: false,          // pass the `props` deeply into all wrapping components
+      deep: true,           // pass the `props` deeply into all wrapping components
       disable: false,       // disable this contextual environment completely
       cancelable: false,    // allow this contextual environment to be opt-out optionally in toolbar
     },
@@ -114,11 +117,15 @@ export const contexts = [
 ];
 ```
 
-#### `withContexts(contexts)` 
+---
 
-An decorator for wrapping your stories under your predefined `contexts`.  This means multiple contextual environments
-are supported.  They are going to be loaded layer by layer and wraped in a descending oder (top -> down -> story). 
-The `contexts` is an array of object that should has the following properties:
+### APIs
+
+#### `withContexts(contexts) : function`
+
+A decorating function for wrapping your stories under your predefined `contexts`.  This means multiple contextual
+environments are supported.  They are going to be loaded layer by layer and wraped in a descending oder (top -> down
+-> story).  The `contexts` is an array of object that should has the following properties:
 
 ---
 
@@ -136,7 +143,7 @@ toolbar.
 #### `title : string`  
 (required)
 
-An unique name of a contextual environment.  Note, if you have duplicated name, the later is ignored.
+An unique name of a contextual environment; if duplicated names provided, the later is going to be ignored.
 
 ---
 
@@ -148,7 +155,7 @@ components coexisted.  The wrapping sequence is from the left to right (parent -
 wrapping behaviour can be useful in some cases; for instance, in the above example, we are wrapping stories under
 `styled-componnets` and `material-ui` theme providers.
 
-Note, typically, components are `Providers` from [React Context API](https://reactjs.org/docs/context.html).  However,
+Typically, components are `Providers` from [React Context API](https://reactjs.org/docs/context.html).  However,
 it is really up to you and have no limitation for your use cases.
 
 ---
@@ -156,15 +163,7 @@ it is really up to you and have no limitation for your use cases.
 #### `params : object[]`  
 (required) 
 
-An array of params contains a set of predefined `props` for `components`.
-
-Note:
-1. additional params can be appended at the story level later; however, they are never be able to overridden the
-global list. So it is important to have non-collided names.
-2. the addon will persist the selected params between stories, and it fallback to the default then the first param
-if the param were gone from story to story.
-
-This object has the following properties: 
+An array of params contains a set of predefined `props` for `components`. This object has the following properties: 
 
 #### `params.name : string`  
 (required) 
@@ -179,14 +178,14 @@ The `props` that is accepted by the wrapping component(s).
 #### `params.defualt : true?`  
 (default: `undefined`)
 
-Set to `true` if you want to use this param initially.  Note, only the first one marked as default is identified;
+Set to `true` if you want to use this param initially.  Only the first one marked as default is identified.
 
 ---
 
 #### `options`
 
-A set of options offers more granular control over the defined contextual environment.  Note, they can be overridden
-at the story level.
+A set of options offers more granular control over the defined contextual environment.  These properties can be
+overridden at the story level:
 
 #### `options.deep : boolean?`  
 (default: `false`)
@@ -203,6 +202,14 @@ Disable this contextual environment completely.  Useful when you want to opt-out
 
 Allow this contextual environment to be opt-out optionally in toolbar.  When set to `true`, an **Off** option will
 be shown at first in the toolbar menu in your Storybook.
+
+## 📓 Notes
+
+1. Additional params can be appended at the story level later (make sure it goes with the correct `title`); however,
+   they are never be able to overridden the default setups. So it is important to have non-collided names.
+2. The addon will persist the selected params between stories at run-time (similar to other addons).  If the active
+   param were gone after story switching, it fallback to the default then the first.
+3. Rule of thumbs, whenever collisions were possible, always the first wins.
 
 ## 📖 License
 
