@@ -41,7 +41,7 @@ export const mergeSettings: MergeSettings = (
   icon: icon,
   title: title,
   components: components,
-  params: !(params.length || storyParams.length)
+  params: !!(params.length || storyParams.length)
     ? params.concat(storyParams)
     : [{ name: '', props: {} }],
   options: Object.assign(
