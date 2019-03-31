@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.0.4] - 2019-03-30
+
+### Doc
+
+- Improve the quality of README.md.
+
+### Maintenance
+
+- Upgrade TypeScript to 3.4.1.
+- Update package organization.
+
+
 ## [1.0.3] - 2019-03-30
 
 ### Bugfix
@@ -26,7 +38,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Chore
 
 - Move all dependencies into peerDependencies.
-- Update README.md.
+- Add initial README.md.
 
 
 ## [1.0.0] - 2019-03-29
