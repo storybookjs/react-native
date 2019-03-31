@@ -25,21 +25,21 @@
     "prettier": "prettier --config .prettierrc --write '**/*.{ts,tsx}'",
     "type:check": "tsc --isolatedModules --noEmit ",
     "type:watch": "yarn type:check --watch",
-    "type:emit": "rm -rf dist && tsc --declaration --emitDeclarationOnly",
+    "type:emit": "rm -rf dist && tsc --declaration --removeComments --emitDeclarationOnly",
     "test": "jest --passWithNoTests",
     "build": "babel src --out-dir dist --extensions \".ts,.tsx\" --ignore src/@types",
     "prepare": "yarn test && yarn type:emit && yarn build"
   },
+  "dependencies": {
+    "@storybook/addons": "^5.0.0",
+    "@storybook/components": "^5.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "7.2.3",
     "@babel/core": "7.4.0",
-    "@babel/plugin-proposal-class-properties": "7.4.0",
-    "@babel/plugin-proposal-object-rest-spread": "7.4.0",
     "@babel/preset-env": "7.4.2",
     "@babel/preset-react": "7.0.0",
     "@babel/preset-typescript": "7.3.3",
-    "@storybook/addons": "5.0.5",
-    "@storybook/components": "5.0.5",
     "@types/jest": "24.0.11",
     "@types/react": "16.8.10",
     "jest": "24.5.0",
