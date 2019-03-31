@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.0.6] - 2019-03-31
+
+### Bugfix
+
+- Fix bug: use addon-contexts without param specified - (#11)
+
+
 ## [1.0.5] - 2019-03-31
 
 - Skip v1.0.4 due to a bad release.
