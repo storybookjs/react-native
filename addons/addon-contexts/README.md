@@ -2,7 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/addon-contexts.svg)](https://badge.fury.io/js/addon-contexts)
 
-**Storybook Addon Contexts** is an addon for driving your components under dynamic contexts in Storybook.
+**Storybook Addon Contexts** is an addon for driving your components under dynamic contexts in 
+[Storybook](https://storybook.js.org/).
 
 ## 💡 Why you need this?
 
@@ -12,7 +13,7 @@ Chinese, English, or even French, and they change their skin tone under dark or 
 sure a component look great in all scenario.
 
 A good practice to write maintainable components is separate the presentation and its business logic.  Storybook is
-a great place for exercising the visualization and interaction of your components, which may depended on a context.
+a great place for exercising the visualization and interaction of your components, which may depend on some contexts.
 Often enough, you will find it become very tedious to wrap each component deeply with its contextual environments
 before you can really write the main story.  You even start to write extra components or factory functions just to
 make your life easier.  How about changing the context of your story dynamically?!  There were simply having no good
@@ -30,7 +31,8 @@ once then apply it everywhere**.
 2. Support dynamic contextual props switching from Storybook toolbar at runtime.  You can easily slice into
    different environments (e.g. languages or themes ) to understand how your component is going to response.
 3. Library agnostic: no presumption on what kind of components you want to wrap around your stories.  You can even
-   use it to bridge with your favorite routing, state-management solutions, or even your own `React.context` provider.
+   use it to bridge with your favorite routing, state-management solutions, or even your own
+   [React Context](https://reactjs.org/docs/context.html) provider.
 4. Offer chainable and granular configurations.  It is even possible to fine-tune at per story level.
 
 
@@ -155,13 +157,10 @@ components coexisted.  The wrapping sequence is from the left to right (parent -
 wrapping behaviour can be useful in some cases; for instance, in the above example, we are wrapping stories under
 `styled-componnets` and `material-ui` theme providers.
 
-Typically, components are `Providers` from [React Context API](https://reactjs.org/docs/context.html).  However,
-it is really up to you and have no limitation for your use cases.
-
 ---
 
-#### `params : object[]`  
-(required) 
+#### `params : object[] | undefined`  
+(default: `undefined`)
 
 An array of params contains a set of predefined `props` for `components`. This object has the following properties: 
 
@@ -190,7 +189,7 @@ overridden at the story level:
 #### `options.deep : boolean?`  
 (default: `false`)
 
-Pass the `props` deeply into all wrapping components.  Useful when you want them all taking the same props.
+Pass the `props` deeply into all wrapping components.  Useful when you want them all to be passed with the same props.
 
 #### `options.disable : boolean?`  
 (default: `false`)
@@ -203,13 +202,17 @@ Disable this contextual environment completely.  Useful when you want to opt-out
 Allow this contextual environment to be opt-out optionally in toolbar.  When set to `true`, an **Off** option will
 be shown at first in the toolbar menu in your Storybook.
 
-## 📓 Notes
+## 📔 Notes
 
-1. Additional params can be appended at the story level later (make sure it goes with the correct `title`); however,
-   they are never be able to overridden the default setups. So it is important to have non-collided names.
-2. The addon will persist the selected params between stories at run-time (similar to other addons).  If the active
-   param were gone after story switching, it fallback to the default then the first.
-3. Rule of thumbs, whenever collisions were possible, always the first wins.
+1. You can use this addon to inject any valid components, that is why `icon`, and `params` can be just optional.
+2. As mentioned, extra contextual environment setups can be added at the story level.  Please make sure they are
+   passed via the second argument as `{ contexts: [{ /* extra contexts */ }}`.
+3. Additional `params` can be "appended" into an existed setups at the story level too (make sure it goes with the
+   correct `title`); however, they are never be able to overridden the default setups. So it is important to have
+   non-collided names.
+4. The addon will persist the selected params (the addon state) between stories at run-time (similar to other
+   addons). If the active param were gone after story switching, it fallback to the default then the first.  As a
+   rule of thumbs, whenever collisions made possible, always the first wins.
 
 ## 📖 License
 
