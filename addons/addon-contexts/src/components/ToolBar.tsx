@@ -7,9 +7,11 @@ export const ToolBar: TToolBar = React.memo(({ nodes, setSelect }) =>
   nodes.length ? (
     <>
       <Separator />
-      {nodes.map(({ components, ...rest }) => (
-        <MenuController {...rest} key={rest.nodeId} setSelect={setSelect} />
-      ))}
+      {nodes.map(({ components, ...props }) =>
+        props.params.length > 1 ? (
+          <MenuController {...props} key={props.nodeId} setSelect={setSelect} />
+        ) : null
+      )}
     </>
   ) : null
 );

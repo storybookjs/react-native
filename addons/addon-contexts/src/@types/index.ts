@@ -57,7 +57,9 @@ export declare type RenderAggregatedComponents = (
 export declare type RenderAggregatedContexts = (
   ...arg: [ContextNode[], Exclude<GenericProps, null>]
 ) => GenericFnWithReturn<ReactElement>;
-export declare type MergeSettings = (...args: Partial<AddonSetting>[]) => ContextNode;
+export declare type MergeSettings = (
+  ...args: [Partial<AddonSetting>, Partial<AddonSetting>]
+) => ContextNode;
 export declare type GetNodes = (settings: WrapperSettings) => ContextNode[];
 export declare type UseChannel = (
   event: string,
