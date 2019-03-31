@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useEffect, useMemo, useReducer, useState } from 'react';
 import { useChannel } from '../libs/hooks';
 import { getNodes, renderAggregatedContexts } from '../libs/helpers';
