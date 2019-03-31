@@ -23,9 +23,9 @@
   },
   "scripts": {
     "prettier": "prettier --config .prettierrc --write '**/*.{ts,tsx}'",
-    "type:check": "tsc",
-    "type:watch": "tsc --watch",
-    "type:emit": "tsc --noEmit false --emitDeclarationOnly",
+    "type:check": "tsc --isolatedModules --noEmit ",
+    "type:watch": "yarn type:check --watch",
+    "type:emit": "rm -rf dist && tsc --declaration --emitDeclarationOnly",
     "test": "jest --passWithNoTests",
     "build": "babel src --out-dir dist --extensions \".ts,.tsx\" --ignore src/@types",
     "prepare": "yarn test && yarn type:emit && yarn build"
