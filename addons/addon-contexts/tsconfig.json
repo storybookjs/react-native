@@ -10,5 +10,5 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "scripts", "jest", "lib", "src-js"]
+  "exclude": ["src/register.ts"]
 }
