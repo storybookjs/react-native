@@ -244,6 +244,7 @@ exports[`Storyshots Basics|Brand/StorybookLogo normal 1`] = `
 <svg
   height="40px"
   role="img"
+  title="Storybook"
   viewBox="0 0 200 40"
   width="200px"
 >
@@ -1254,15 +1255,15 @@ exports[`Storyshots Basics|DocumentFormatting withDOM 1`] = `
     </p>
     <ul>
       <li>
-        Create a list by starting a line with 
+        Create a list by starting a line with
         <code>
           +
         </code>
-        , 
+        ,
         <code>
           -
         </code>
-        , or 
+        , or
         <code>
           *
         </code>
@@ -1320,7 +1321,7 @@ exports[`Storyshots Basics|DocumentFormatting withDOM 1`] = `
       </li>
       <li>
         <p>
-          …or keep all the numbers as 
+          …or keep all the numbers as
           <code>
             1.
           </code>
@@ -1457,7 +1458,7 @@ exports[`Storyshots Basics|DocumentFormatting withDOM 1`] = `
       </a>
     </p>
     <p>
-      Autoconverted link 
+      Autoconverted link
       <a
         href="https://github.com/nodeca/pica"
       >
@@ -2519,7 +2520,7 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
   <div
     class="emotion-3"
   >
-    The second normal weight. Here's a 
+    The second normal weight. Here's a
     <a
       class="emotion-2"
       href="https://storybook.js.org"
@@ -14018,7 +14019,7 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
       />
     </svg>
     <span>
-      Story with a long and windy name that is descriptive, precise, and readable. 
+      Story with a long and windy name that is descriptive, precise, and readable.
     </span>
   </div>
 </div>
@@ -15035,7 +15036,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories empty 1`] = `
       <div
         class="emotion-3"
       >
-        Learn how to 
+        Learn how to
         <a
           class="emotion-2"
           href="https://storybook.js.org/basics/writing-stories/"
