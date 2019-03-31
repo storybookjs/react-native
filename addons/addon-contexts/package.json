@@ -28,31 +28,33 @@
     "type:emit": "tsc --noEmit false --emitDeclarationOnly",
     "test": "jest --passWithNoTests",
     "build": "babel src --out-dir dist --extensions \".ts,.tsx\" --ignore src/@types",
-    "prepare": "yarn test && rm -rf dist && yarn type:emit && yarn build"
+    "prepare": "yarn test && yarn type:emit && yarn build"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.4.0",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.3.3",
-    "@types/jest": "^24.0.11",
-    "@types/react": "^16.8.10",
-    "@types/storybook__react": "^4.0.1",
-    "jest": "^24.5.0",
-    "jest-dom": "^3.1.3",
-    "jest-haste-map": "^24.5.0",
-    "jest-resolve": "^24.5.0",
-    "prettier": "^1.16.4",
-    "react-testing-library": "^6.0.3",
-    "typescript": "^3.3.4000"
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.4.0",
+    "@babel/plugin-proposal-class-properties": "7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.4.0",
+    "@babel/preset-env": "7.4.2",
+    "@babel/preset-react": "7.0.0",
+    "@babel/preset-typescript": "7.3.3",
+    "@storybook/addons": "5.0.5",
+    "@storybook/components": "5.0.5",
+    "@types/jest": "24.0.11",
+    "@types/react": "16.8.10",
+    "jest": "24.5.0",
+    "jest-dom": "3.1.3",
+    "jest-haste-map": "24.5.0",
+    "jest-resolve": "24.5.0",
+    "prettier": "1.16.4",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-testing-library": "6.0.3",
+    "typescript": "3.4.1"
   },
   "peerDependencies": {
-    "@storybook/addons": ">= 5.0.0 < 6",
-    "@storybook/components": "@>= 5.0.0 < 6",
-    "react": ">= 16.8.0 < 17"
+    "@storybook/addons": ">=5 <6",
+    "@storybook/components": ">=5 <6",
+    "react": ">=16.8 <17"
   }
 }
