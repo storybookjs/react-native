@@ -5,8 +5,6 @@
     "jsx": "react",
     "target": "esnext",
     "moduleResolution": "node",
-    "declaration": true,
-    "noEmit": true,
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
