@@ -35,13 +35,15 @@ export const renderAggregatedContexts: RenderAggregatedContexts = (nodes, propsT
 
 export const mergeSettings: MergeSettings = (
   { icon = '', title = '', components = [], params = [], options = {} },
-  { params: additionalParams = [], options: localOptions = {} }
+  { params: storyParams = [], options: storyOptions = {} }
 ) => ({
   nodeId: title,
   icon: icon,
   title: title,
   components: components,
-  params: params.concat(additionalParams),
+  params: !(params.length || storyParams.length)
+    ? params.concat(storyParams)
+    : [{ name: '', props: {} }],
   options: Object.assign(
     {
       deep: false,
@@ -49,7 +51,7 @@ export const mergeSettings: MergeSettings = (
       cancelable: false,
     },
     options,
-    localOptions
+    storyOptions
   ),
 });
 
