@@ -9,6 +9,11 @@ function getCommand(watch) {
 
   const args = ['--outDir ./dist', '--listEmittedFiles true'];
 
+  /**
+   * Only emit declarations if it does not need to be compiled with tsc
+   * Currently, angular and storyshots (that contains an angular component) need to be compiled
+   * with tsc. (see comments in compile-babel.js)
+   */
   if (
     !process.cwd().includes(path.join('app', 'angular')) &&
     !process.cwd().includes(path.join('addons', 'storyshots'))
