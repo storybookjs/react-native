@@ -39,12 +39,13 @@
     "memoizerific": "^1.11.3",
     "react": "^16.8.4",
     "react-redux": "^6.0.1",
+    "hoist-non-react-statics": "^3.3.0",
     "redux": "^4.0.1",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
     "@types/common-tags": "^1.8.0",
-    "@types/react-redux": "^7.0.3"
+    "@types/react-redux": "^7.0.6"
   },
   "publishConfig": {
     "access": "public"
