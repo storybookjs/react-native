@@ -1,3 +1,17 @@
+## 5.0.6 (April 1, 2019)
+
+### Bug Fixes
+
+* Addon-a11y: Fix color-blindness emulation in Firefox ([#6297](https://github.com/storybooks/storybook/pull/6297))
+* Addon-info: Fixed contrast of Show Info button for a11y ([#6301](https://github.com/storybooks/storybook/pull/6301))
+* Addon-cssresources: Fix panel layout ([#6263](https://github.com/storybooks/storybook/pull/6263))
+* Addon-info: forwardRef elements use displayName if available ([#6222](https://github.com/storybooks/storybook/pull/6222))
+* UI: Set expanded stories to objects instead of arrays ([#6290](https://github.com/storybooks/storybook/pull/6290))
+* Addon-actions: safe render for cyclic obj ([#6240](https://github.com/storybooks/storybook/pull/6240))
+* Core: Upgrade @babel/preset-env to fix corejs option ([#6281](https://github.com/storybooks/storybook/pull/6281))
+* Core: Enforces corejs v2 for babel ([#6267](https://github.com/storybooks/storybook/pull/6267))
+* Knobs: Rename ALL panel to Other for ungrouped knobs ([#6232](https://github.com/storybooks/storybook/pull/6232))
+
 ## 5.1.0-alpha.20 (March 29, 2019)
 
 ### Features
