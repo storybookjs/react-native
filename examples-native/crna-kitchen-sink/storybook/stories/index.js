@@ -6,17 +6,19 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withNotes } from '@storybook/addon-ondevice-notes';
+import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import knobsWrapper from './Knobs';
 import Button from './Button';
 import CenterView from './CenterView';
 import Welcome from './Welcome';
 
 addDecorator(withNotes);
+addDecorator(withBackgrounds);
 
 addParameters({
   backgrounds: [
-    { name: 'light', value: '#eeeeee' },
-    { name: 'dark', value: '#222222', default: true },
+    { name: 'dark', value: '#222222' },
+    { name: 'white', value: '#ffffff', default: true },
   ],
 });
 
@@ -31,8 +33,8 @@ storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo(
 storiesOf('Button', module)
   .addParameters({
     backgrounds: [
-      { name: 'light', value: '#eeeeee' },
-      { name: 'dark', value: '#222222', default: true },
+      { name: 'dark', value: '#222222' },
+      { name: 'light', value: '#eeeeee', default: true },
     ],
     notes: `
 # Custom note\n

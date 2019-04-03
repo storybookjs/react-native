@@ -27,6 +27,7 @@
     "@storybook/addon-knobs": "5.1.0-alpha.20",
     "@storybook/addon-ondevice-knobs": "5.1.0-alpha.20",
     "@storybook/addon-ondevice-notes": "5.1.0-alpha.20",
+    "@storybook/addon-ondevice-backgrounds": "5.1.0-alpha.20",
     "@storybook/addons": "5.1.0-alpha.20",
     "@storybook/react-native": "5.1.0-alpha.20",
     "babel-loader": "^8.0.4",
