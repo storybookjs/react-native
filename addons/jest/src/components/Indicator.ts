@@ -1,8 +1,17 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 
 import { styled } from '@storybook/theming';
 
-const Indicator = styled.div(
+interface IndicatorProps {
+  color: string;
+  size: number;
+  children?: React.ReactNode;
+  right?: boolean;
+  overrides?: any;
+  styles?: any;
+}
+
+const Indicator = styled.div<IndicatorProps>(
   ({ color, size }) => ({
     boxSizing: 'border-box',
     padding: `0 ${size / 2}px`,
@@ -23,13 +32,6 @@ const Indicator = styled.div(
 Indicator.defaultProps = {
   right: false,
   children: '',
-};
-
-Indicator.propTypes = {
-  color: PropTypes.string.isRequired,
-  size: PropTypes.number.isRequired,
-  children: PropTypes.node,
-  right: PropTypes.bool,
 };
 
 export default Indicator;

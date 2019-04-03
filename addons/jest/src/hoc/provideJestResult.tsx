@@ -1,26 +1,51 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { STORY_CHANGED } from '@storybook/core-events';
 import { ADD_TESTS } from '../shared';
+import Channel from '@storybook/channels';
+import { API } from '@storybook/api';
 
-const provideTests = Component =>
-  class TestProvider extends React.Component {
-    static propTypes = {
-      channel: PropTypes.shape({
-        on: PropTypes.func,
-        removeListener: PropTypes.func,
-      }).isRequired,
-      api: PropTypes.shape({
-        on: PropTypes.func,
-      }).isRequired,
-      active: PropTypes.bool,
-    };
+// TODO: import type from @types/jest
+interface AssertionResult {
+  status: string;
+  fullName: string;
+  title: string;
+  failureMessages: string[];
+}
 
+export interface Test {
+  name: string;
+  result: {
+    status: string;
+    assertionResults: AssertionResult[];
+  };
+}
+
+interface InjectedProps {
+  tests?: Test[];
+}
+
+interface HocProps {
+  channel: Channel;
+  api: API;
+  active?: boolean;
+}
+
+interface HocState {
+  kind?: string;
+  storyName?: string;
+  tests?: Test[];
+}
+
+const provideTests = (Component: React.ComponentType<InjectedProps>) =>
+  class TestProvider extends React.Component<HocProps, HocState> {
     static defaultProps = {
       active: false,
     };
 
-    state = {};
+    mounted: boolean;
+    stopListeningOnStory: () => void;
+
+    state: HocState = {};
 
     componentDidMount() {
       this.mounted = true;
@@ -44,7 +69,7 @@ const provideTests = Component =>
       channel.removeListener(ADD_TESTS, this.onAddTests);
     }
 
-    onAddTests = ({ kind, storyName, tests }) => {
+    onAddTests = ({ kind, storyName, tests }: HocState) => {
       this.setState({ kind, storyName, tests });
     };
 
@@ -52,7 +77,7 @@ const provideTests = Component =>
       const { active } = this.props;
       const { tests } = this.state;
 
-      return active && tests ? <Component {...this.state} /> : null;
+      return active && tests ? <Component tests={tests} /> : null;
     }
   };
 

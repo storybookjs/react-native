@@ -23,7 +23,7 @@
   "license": "MIT",
   "author": "Renaud Tertrais <renaud.tertrais@gmail.com> (https://github.com/renaudtertrais)",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
@@ -38,6 +38,10 @@
     "react": "^16.8.4",
     "upath": "^1.1.0",
     "util-deprecate": "^1.0.2"
+  },
+  "devDependencies": {
+    "@storybook/api": "^5.1.0-alpha.20",
+    "@storybook/channels": "^5.1.0-alpha.20"
   },
   "peerDependencies": {
     "react": "*"
