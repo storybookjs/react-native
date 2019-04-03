@@ -7,7 +7,7 @@ exports[`Storyshots Addons|Centered button in center 1`] = `
 >
   <div
     id="sb-addon-centered-inner"
-    style="margin: auto; max-height: 100%;"
+    style="margin: auto; max-height: 100%; overflow: auto;"
   >
     <button>
       I am a Button !
