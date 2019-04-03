@@ -6,7 +6,7 @@ title: 'Custom Webpack Config'
 You can customize Storybook's webpack setup by providing a `webpack.config.js` file exporting a **webpack 4** compatible config exported as a **commonjs module**.
 
 Storybook has its own Webpack setup and a dev server.
-The webpack config [is configurable](/configurations/webpack), and the default can depend on which framework you're using and whether you've used a generator like [Create React App](https://github.com/facebookincubator/create-react-app) or Angular CLI etc.
+The webpack config [is configurable](/configurations/custom-webpack-config/), and the default can depend on which framework you're using and whether you've used a generator like [Create React App](https://github.com/facebookincubator/create-react-app) or Angular CLI etc.
 
 > We're trying to make storybook more zero-config over time, **help to hook into the config of generators is very welcome**.
 
