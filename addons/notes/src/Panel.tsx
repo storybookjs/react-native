@@ -1,6 +1,7 @@
 import React, { ReactElement, Component, Fragment, ReactNode } from 'react';
 import { types } from '@storybook/addons';
 import { API, Consumer, Combo } from '@storybook/api';
+import { Link as RouterLink } from '@storybook/router';
 import { styled } from '@storybook/theming';
 import { STORY_RENDERED } from '@storybook/core-events';
 
@@ -62,11 +63,34 @@ export const SyntaxHighlighter = ({ className, children, ...props }: SyntaxHighl
   );
 };
 
+interface NotesLinkProps {
+  href: string;
+  children: ReactElement;
+}
+export const NotesLink = ({ href, children, ...props }: NotesLinkProps) => {
+  /* https://github.com/sindresorhus/is-absolute-url/blob/master/index.js */
+  const isAbsoluteUrl = /^[a-z][a-z0-9+.-]*:/.test(href);
+  if (isAbsoluteUrl) {
+    return (
+      <a href={href} {...props}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <RouterLink to={href} {...props}>
+      {children}
+    </RouterLink>
+  );
+};
+
 // use our SyntaxHighlighter component in place of a <code> element when
 // converting markdown to react elements
 const defaultOptions = {
   overrides: {
     code: SyntaxHighlighter,
+    a: NotesLink,
     Giphy: {
       component: Giphy,
     },
