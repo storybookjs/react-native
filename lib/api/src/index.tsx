@@ -1,5 +1,6 @@
 import React, { ReactElement, Component, useContext } from 'react';
 import memoize from 'memoizerific';
+// @ts-ignore shallow-equal is not in DefinitelyTyped
 import shallowEqualObjects from 'shallow-equal/objects';
 
 import Events from '@storybook/core-events';
