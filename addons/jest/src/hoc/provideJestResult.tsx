@@ -24,13 +24,13 @@ interface InjectedProps {
   tests?: Test[];
 }
 
-interface HocProps {
+export interface HocProps {
   channel: Channel;
   api: API;
   active?: boolean;
 }
 
-interface HocState {
+export interface HocState {
   kind?: string;
   storyName?: string;
   tests?: Test[];
