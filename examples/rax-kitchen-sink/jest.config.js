@@ -9,5 +9,5 @@ module.exports = {
     '\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
     '\\.(md)$': '<rootDir>/__mocks__/htmlMock.js',
   },
-  moduleDirectories: ['<rootDir>/node_modules', 'src']
+  moduleDirectories: ['<rootDir>/node_modules', 'src'],
 };

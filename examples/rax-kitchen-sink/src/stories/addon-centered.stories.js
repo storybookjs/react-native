@@ -7,5 +7,9 @@ import App from '../components/App';
 
 storiesOf('Addon|addon-centered', module)
   .addDecorator(Centered)
-  .add('Button', () => <Button><Text>BUTTON</Text></Button>)
+  .add('Button', () => (
+    <Button>
+      <Text>BUTTON</Text>
+    </Button>
+  ))
   .add('App', () => <App />);

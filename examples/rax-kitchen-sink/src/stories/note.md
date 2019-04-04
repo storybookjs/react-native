@@ -6,6 +6,6 @@ hi **ho**
 - works with knobs
 - ...
 
-```javascript
+```js
 const hi = require('greeting');
 ```
