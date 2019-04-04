@@ -20,7 +20,7 @@ export function action(name: string, options: ActionOptions = {}): HandlerFuncti
       data: { name, args },
       options: {
         ...actionOptions,
-        depth: minDepth + actionOptions.depth,
+        depth: minDepth + (actionOptions.depth || 3),
       },
     };
     channel.emit(EVENT_ID, actionDisplayToEmit);
