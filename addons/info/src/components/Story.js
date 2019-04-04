@@ -23,7 +23,7 @@ const stylesheetBase = {
       display: 'block',
       position: 'fixed',
       border: 'none',
-      background: '#28c',
+      background: '#027ac5',
       color: '#fff',
       padding: '5px 15px',
       cursor: 'pointer',

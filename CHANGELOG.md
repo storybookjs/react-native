@@ -1,3 +1,51 @@
+## 5.1.0-alpha.21 (April 4, 2019)
+
+### Features
+
+* Addon-centered: Fix horizontal scrolling overflow ([#6361](https://github.com/storybooks/storybook/pull/6361))
+* Angular: Support OnPush change detection for class-specified components ([#6360](https://github.com/storybooks/storybook/pull/6360))
+* Addon-storysource: Reuase clientApi when possible ([#6154](https://github.com/storybooks/storybook/pull/6154))
+
+### Bug Fixes
+
+* React-native: Fix backgrounds addon ([#6393](https://github.com/storybooks/storybook/pull/6393))
+* UI: Fix 'read full changelog' link on about page ([#6385](https://github.com/storybooks/storybook/pull/6385))
+* Addon-a11y: Fix addon initialization with 'makeDecorator' ([#6354](https://github.com/storybooks/storybook/pull/6354))
+* Typescript: Fix a11y build by adding hoist-non-react-statics ([#6348](https://github.com/storybooks/storybook/pull/6348))
+
+### Maintenance
+
+* Typescript: Use Babel instead of tsc ([#5109](https://github.com/storybooks/storybook/pull/5109))
+
+## 5.0.6 (April 1, 2019)
+
+### Bug Fixes
+
+* Addon-a11y: Fix color-blindness emulation in Firefox ([#6297](https://github.com/storybooks/storybook/pull/6297))
+* Addon-info: Fixed contrast of Show Info button for a11y ([#6301](https://github.com/storybooks/storybook/pull/6301))
+* Addon-cssresources: Fix panel layout ([#6263](https://github.com/storybooks/storybook/pull/6263))
+* Addon-info: forwardRef elements use displayName if available ([#6222](https://github.com/storybooks/storybook/pull/6222))
+* UI: Set expanded stories to objects instead of arrays ([#6290](https://github.com/storybooks/storybook/pull/6290))
+* Addon-actions: safe render for cyclic obj ([#6240](https://github.com/storybooks/storybook/pull/6240))
+* Core: Upgrade @babel/preset-env to fix corejs option ([#6281](https://github.com/storybooks/storybook/pull/6281))
+* Core: Enforces corejs v2 for babel ([#6267](https://github.com/storybooks/storybook/pull/6267))
+* Knobs: Rename ALL panel to Other for ungrouped knobs ([#6232](https://github.com/storybooks/storybook/pull/6232))
+
+## 5.1.0-alpha.20 (March 29, 2019)
+
+### Features
+
+* Addons: Manage local/session storage access with store2 ([#6310](https://github.com/storybooks/storybook/pull/6310))
+
+### Bug Fixes
+
+* Addon-cssresources: Fix panel layout ([#6263](https://github.com/storybooks/storybook/pull/6263))
+* Addon-info: Fixed contrast of Show Info button for a11y ([#6301](https://github.com/storybooks/storybook/pull/6301))
+
+### Maintenance
+
+* Migrate options and decorators in examples to new api ([#5954](https://github.com/storybooks/storybook/pull/5954))
+
 ## 5.1.0-alpha.19 (March 28, 2019)
 
 ### Bug Fixes
