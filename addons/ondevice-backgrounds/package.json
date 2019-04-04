@@ -1,7 +1,7 @@
 {
   "name": "@storybook/addon-ondevice-backgrounds",
   "version": "5.1.0-alpha.20",
-  "description": "A storybook addon to show different backgrounds for your preview",
+  "description": "A react-native storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",
     "background",
