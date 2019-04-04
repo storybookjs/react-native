@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+/* tslint:disable:no-console */
 const path = require('path');
 const shell = require('shelljs');
 const chalk = require('chalk');
@@ -31,7 +32,8 @@ function cleanup() {
   }
 }
 
-function logError(type, packageJson) {
+function logError(type, packageJson, errorLogs) {
+  log.error(`FAILED (${type}) : ${errorLogs}`);
   log.error(
     `FAILED to compile ${type}: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`
   );
@@ -40,9 +42,9 @@ function logError(type, packageJson) {
 const packageJson = getPackageJson();
 
 removeDist();
-babelify({ errorCallback: () => logError('js', packageJson) });
+babelify({ errorCallback: errorLogs => logError('js', packageJson, errorLogs) });
 cleanup();
 
-tscfy({ errorCallback: () => logError('ts', packageJson) });
+tscfy({ errorCallback: errorLogs => logError('ts', packageJson, errorLogs) });
 
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));

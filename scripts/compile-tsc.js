@@ -28,10 +28,10 @@ function getCommand(watch) {
   return `${tsc} ${args.join(' ')}`;
 }
 
-function handleExit(code, errorCallback) {
+function handleExit(code, stderr, errorCallback) {
   if (code !== 0) {
     if (errorCallback && typeof errorCallback === 'function') {
-      errorCallback();
+      errorCallback(stderr);
     }
     shell.exit(code);
   }
@@ -59,9 +59,9 @@ function tscfy(options = {}) {
   }
 
   const command = getCommand(watch);
-  const { code } = shell.exec(command, { silent });
+  const { code, stderr } = shell.exec(command, { silent });
 
-  handleExit(code, errorCallback);
+  handleExit(code, stderr, errorCallback);
 }
 
 module.exports = {
