@@ -1,8 +1,7 @@
 // tslint:disable-next-line:no-implicit-dependencies
-import { _STORE_REDUCERS } from '@ngrx/store';
 import { OperatingSystem } from './platform';
 
-export const enum KeyCode {
+export enum KeyCode {
   Unknown = 0,
 
   Backspace = 1,
@@ -355,15 +354,15 @@ const userSettingsGeneralMap = new KeyCodeStrMap();
 })();
 
 // tslint:disable-next-line:no-namespace
-export namespace KeyCodeUtils {
-  export function toString(keyCode: KeyCode): string {
-    return uiMap.keyCodeToStr(keyCode);
-  }
+// export namespace KeyCodeUtils {
+//   export function toString(keyCode: KeyCode): string {
+//     return uiMap.keyCodeToStr(keyCode);
+//   }
 
-  export function fromString(key: string): KeyCode {
-    return uiMap.strToKeyCode(key);
-  }
-}
+//   export function fromString(key: string): KeyCode {
+//     return uiMap.strToKeyCode(key);
+//   }
+// }
 
 /**
  * Binary encoding strategy:
@@ -379,7 +378,7 @@ export namespace KeyCodeUtils {
  * ```
  */
 
-const enum BinaryKeybindingsMask {
+enum BinaryKeybindingsMask {
   // tslint:disable:no-bitwise
   CtrlCmd = (1 << 11) >>> 0,
   Shift = (1 << 10) >>> 0,
@@ -388,7 +387,7 @@ const enum BinaryKeybindingsMask {
   KeyCode = 0x000000ff,
 }
 
-export const enum KeyMod {
+export enum KeyMod {
   CtrlCmd = (1 << 11) >>> 0,
   Shift = (1 << 10) >>> 0,
   Alt = (1 << 9) >>> 0,
@@ -400,7 +399,7 @@ export function KeyChord(firstPart: number, secondPart: number): number {
   return (firstPart | chordPart) >>> 0;
 }
 
-export const enum KeybindingType {
+export enum KeybindingType {
   Simple = 1,
   Chord = 2,
 }
@@ -417,7 +416,13 @@ export class SimpleKeybinding {
 
   public readonly keyCode: KeyCode;
 
-  constructor(ctrlKey: boolean, shiftKey: boolean, altKey: boolean, metaKey: boolean, keyCode: KeyCode) {
+  constructor(
+    ctrlKey: boolean,
+    shiftKey: boolean,
+    altKey: boolean,
+    metaKey: boolean,
+    keyCode: KeyCode
+  ) {
     this.ctrlKey = ctrlKey;
     this.shiftKey = shiftKey;
     this.altKey = altKey;
@@ -493,7 +498,10 @@ export function createKeyBinding(keybinding: number, OS: OperatingSystem): Keybi
   const chordPart = (keybinding & 0xffff0000) >>> 16;
 
   if (chordPart !== 0) {
-    return new ChordKeybinding(createSimpleKeybinding(firstPart, OS), createSimpleKeybinding(chordPart, OS));
+    return new ChordKeybinding(
+      createSimpleKeybinding(firstPart, OS),
+      createSimpleKeybinding(chordPart, OS)
+    );
   }
 
   return createSimpleKeybinding(firstPart, OS);
@@ -526,7 +534,14 @@ export class ResolveKeybindingPart {
 
   readonly keyAriaLabel: string | null;
 
-  constructor(ctrlKey: boolean, shiftKey: boolean, altKey: boolean, metaKey: boolean, kbLabel: string | null, kbAriaLabel: string | null) {
+  constructor(
+    ctrlKey: boolean,
+    shiftKey: boolean,
+    altKey: boolean,
+    metaKey: boolean,
+    kbLabel: string | null,
+    kbAriaLabel: string | null
+  ) {
     this.ctrlKey = ctrlKey;
     this.shiftKey = shiftKey;
     this.altKey = altKey;

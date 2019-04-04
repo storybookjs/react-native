@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropTable/Table renders a table html node with multiple children elements 1`] = `
+<table
+  className="info-table"
+>
+  <div>
+    foo bar
+  </div>
+  <div>
+    baz
+  </div>
+</table>
+`;
+
+exports[`PropTable/Table renders a table html node with one child element 1`] = `
+<table
+  className="info-table"
+>
+  <div>
+    foo bar
+  </div>
+</table>
+`;

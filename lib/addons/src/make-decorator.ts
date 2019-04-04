@@ -19,25 +19,29 @@ export interface WrapperSettings {
 
 export type StoryGetter = (context: StoryContext) => any;
 
-export type StoryWrapper = (getStory: StoryGetter, context: StoryContext, settings: WrapperSettings) => any;
+export type StoryWrapper = (
+  getStory: StoryGetter,
+  context: StoryContext,
+  settings: WrapperSettings
+) => any;
 
 type MakeDecoratorResult = (...args: any) => any;
 
 interface MakeDecoratorOptions {
   name: string;
   parameterName: string;
-  allowDeprecatedUsage: boolean;
-  skipIfNoParametersOrOptions: boolean;
+  allowDeprecatedUsage?: boolean;
+  skipIfNoParametersOrOptions?: boolean;
   wrapper: StoryWrapper;
 }
 
-export const makeDecorator: MakeDecoratorResult = ({
+export const makeDecorator = ({
   name,
   parameterName,
   wrapper,
   skipIfNoParametersOrOptions = false,
   allowDeprecatedUsage = false,
-}: MakeDecoratorOptions) => {
+}: MakeDecoratorOptions): MakeDecoratorResult => {
   const decorator: any = (options: object) => (getStory: StoryGetter, context: StoryContext) => {
     const parameters = context.parameters && context.parameters[parameterName];
 

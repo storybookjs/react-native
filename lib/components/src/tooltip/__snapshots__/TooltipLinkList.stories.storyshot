@@ -1,0 +1,324 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots basics/Tooltip/TooltipLinkList links 1`] = `
+.emotion-8 {
+  min-width: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.emotion-4 {
+  font-size: 12px;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  color: rgba(51,51,51,0.5);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 18px;
+  padding: 7px 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-4 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-4:hover {
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-4:hover svg {
+  opacity: 1;
+}
+
+.emotion-3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-3 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-2 {
+  color: #333333;
+}
+
+.emotion-0 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-9 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: rgba(255,255,255,0.95);
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.emotion-1 {
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 0px;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
+  bottom: -8px;
+  top: autopx;
+  right: autopx;
+  left: autopx;
+  border-bottom-width: 0px;
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+  border-top-color: rgba(255,255,255,0.95);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+<div
+  style="height:300px"
+>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      Tooltip
+    </div>
+  </div>
+  <div
+    class="emotion-9"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-8"
+    >
+      <a
+        class="emotion-4"
+        href="http://google.com"
+      >
+        <span
+          class="emotion-3"
+        >
+          <span
+            class="emotion-2"
+          >
+            Link
+          </span>
+        </span>
+      </a>
+      <a
+        class="emotion-4"
+        href="http://google.com"
+      >
+        <span
+          class="emotion-3"
+        >
+          <span
+            class="emotion-2"
+          >
+            Link
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/TooltipLinkList links and callback 1`] = `
+.emotion-11 {
+  min-width: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.emotion-4 {
+  font-size: 12px;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  color: rgba(51,51,51,0.5);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 18px;
+  padding: 7px 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-4 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-4:hover {
+  background: rgba(0,0,0,.05);
+}
+
+.emotion-4:hover svg {
+  opacity: 1;
+}
+
+.emotion-3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-3 > * + * {
+  padding-left: 10px;
+}
+
+.emotion-2 {
+  color: #333333;
+}
+
+.emotion-0 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-12 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: rgba(255,255,255,0.95);
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.emotion-1 {
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 0px;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
+  bottom: -8px;
+  top: autopx;
+  right: autopx;
+  left: autopx;
+  border-bottom-width: 0px;
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+  border-top-color: rgba(255,255,255,0.95);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+<div
+  style="height:300px"
+>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      Tooltip
+    </div>
+  </div>
+  <div
+    class="emotion-12"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-11"
+    >
+      <a
+        class="emotion-4"
+        href="http://google.com"
+      >
+        <span
+          class="emotion-3"
+        >
+          <span
+            class="emotion-2"
+          >
+            Link
+          </span>
+        </span>
+      </a>
+      <a
+        class="emotion-4"
+        href="http://google.com"
+      >
+        <span
+          class="emotion-3"
+        >
+          <span
+            class="emotion-2"
+          >
+            Link
+          </span>
+        </span>
+      </a>
+      <a
+        class="emotion-4"
+      >
+        <span
+          class="emotion-3"
+        >
+          <span
+            class="emotion-2"
+          >
+            callback
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+`;

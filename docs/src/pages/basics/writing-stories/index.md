@@ -5,7 +5,7 @@ title: 'Writing Stories'
 
 Storybook is all about writing stories. A story usually contains a single state of one component, almost like a visual test case.
 
-> Technically, a story is a function that returns a React element.
+> Technically, a story is a function that returns something that can be rendered to screen.
 
 A Storybook can be comprised of many stories for many components.
 
@@ -13,9 +13,52 @@ A Storybook can be comprised of many stories for many components.
 
 There are no rules for this, but in general, stories are easier to maintain when they are located closer to components.
 
-For example, if the UI components live in a directory called: `src/components`, then the stories can be written inside the `src/stories` directory.
+Some examples:
 
-The Storybook config file can also be edited to load stories from other folders too.
+<details>
+  <summary>stories inside component directory</summary>
+
+  ```plaintext
+  •
+  └── src
+      └── components
+          └── button
+              ├── button.js
+              └── button.stories.js
+  ```
+
+</details>
+
+<details>
+  <summary>stories sub-directory in component directory</summary>
+
+  ```plaintext
+  •
+  └── src
+      └── components
+          └── button
+              ├── button.js
+              └── stories
+                  └── button.stories.js
+  ```
+
+</details>
+
+<details>
+  <summary>stories directory outside src directory</summary>
+
+  ```plaintext
+  •
+  ├── src
+  │   └── components
+  │       └── button.js
+  └── stories
+      └── button.stories.js
+  ```
+
+</details>
+
+It's up to you to find a naming/placing scheme that works for your project/team.
 
 ## Writing Stories
 
@@ -73,13 +116,13 @@ The **React Native** packager resolves all the imports at build-time, so it's no
 
 A decorator is a way to wrap a story with a common set of components. Here is an example for centering all components:
 
-```js
+```jsx
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import MyComponent from '../my_component';
 
 storiesOf('MyComponent', module)
-  .addDecorator(story => <div style={{ textAlign: 'center' }}>{story()}</div>)
+  .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('without props', () => <MyComponent />)
   .add('with some props', () => <MyComponent text="The Comp" />);
 ```
@@ -88,11 +131,11 @@ This only applies the decorator to the current set of stories. (In this example,
 
 It is possible to apply a decorator **globally** to all the stories. Here is an example of the Storybook config file:
 
-```js
+```jsx
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 
-addDecorator(story => <div style={{ textAlign: 'center' }}>{story()}</div>);
+addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
 
 configure(function() {
   // ...
@@ -103,7 +146,7 @@ configure(function() {
 
 As of storybook 3.3, [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) can be used in Storybook by default. Users can import a markdown file which extracts the raw markdown content into a string. The string can then be used in any addon that supports markdown such as notes and info.
 
-```js
+```jsx
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import MyComponent from './MyComponent';
@@ -118,7 +161,7 @@ storiesOf('Component', module).add('With Markdown', () => <MyComponent />, {
 
 Stories can be organized in a nested structure using "/" as a separator:
 
-```js
+```jsx
 // file: src/stories/index.js
 
 import React from 'react';

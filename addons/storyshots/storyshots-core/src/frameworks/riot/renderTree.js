@@ -13,9 +13,9 @@ function bootstrapADocumentAndReturnANode() {
 function makeSureThatResultIsRenderedSomehow({ context, result, rootElement }) {
   if (!rootElement.firstChild) {
     riotForStorybook.render({
-      story: () => result,
+      storyFn: () => result,
       selectedKind: context.kind,
-      selectedStory: context.story,
+      selectedStory: context.name,
     });
   }
 }

@@ -38,7 +38,7 @@ Sometimes it's useful to configure Storybook with Webpack's require.context feat
 ```js
 import { configure } from '@storybook/react';
 
-const req = require.context('../stories', true, /.stories.js$/); // <- import all the stories at once
+const req = require.context('../stories', true, /\.stories\.js$/); // <- import all the stories at once
 
 function loadStories() {
   req.keys().forEach(filename => req(filename));
@@ -52,9 +52,9 @@ other tools may lack this feature. Since Storyshot is running under Jest,
 we need to polyfill this functionality to work with Jest. The easiest
 way is to integrate it to babel.
 
-You can do this with a Babel [plugin](https://github.com/smrq/babel-plugin-require-context-hook) or [macro](https://github.com/storybooks/require-context.macro). If you're using `create-react-app` (v2 or above), you will use the macro.
+You can do this with a Babel [plugin](https://github.com/smrq/babel-plugin-require-context-hook) or [macro](https://github.com/storybooks/require-context.macro). If you're using `create-react-app` (v2 or above), use the macro.
 
-- *Plugin*
+#### Option 1: Plugin
 
 First, install it:
 
@@ -88,7 +88,7 @@ Finally, add the plugin to `.babelrc`:
 ```
 The plugin is only added to the test environment otherwise it could replace webpack's version of it.
 
-- *Macro*
+#### Option 2: Macro
 
 First, install it:
 
@@ -101,8 +101,8 @@ Now, inside of your Storybook config file, simply import the macro and run it in
 ```javascript
 import requireContext from 'require-context.macro';
 
-// const req = require.context('../stories', true, /.stories.js$/); <-- replaced
-const req = requireContext('../stories', true, /.stories.js$/);
+// const req = require.context('../stories', true, /\.stories\.js$/); <-- replaced
+const req = requireContext('../stories', true, /\.stories\.js$/);
 ```
 
 ### Configure Jest for React
@@ -491,7 +491,7 @@ initStoryshots({
 ```
 
 If you are using enzyme, you need to make sure jest knows how to serialize rendered components.
-For that, you can pass an enzyme-compatible snapshotSerializer (like [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json), [jest-serializer-enzyme](https://github.com/rogeliog/jest-serializer-enzyme) etc.) with the `snapshotSerializer` option (see below). 
+For that, you can pass an enzyme-compatible snapshotSerializer (like [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json), [jest-serializer-enzyme](https://github.com/rogeliog/jest-serializer-enzyme) etc.) with the `snapshotSerializer` option (see below).
 
 
 ### `snapshotSerializers`

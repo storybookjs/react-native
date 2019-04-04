@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { styled, monoFonts } from '@storybook/theming';
+import { styled } from '@storybook/theming';
 
 import Indicator from './Indicator';
 import colors from '../colors';
 
 const Pre = styled.pre({
   margin: 0,
-  ...monoFonts,
 });
 
 const FlexContainer = styled.div({

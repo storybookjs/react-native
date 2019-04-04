@@ -2,8 +2,8 @@ import { storiesOf } from '@storybook/polymer';
 import { document } from 'global';
 
 storiesOf('Custom|Decorator', module)
-  .addDecorator(story => {
-    const el = story();
+  .addDecorator(storyFn => {
+    const el = storyFn();
     el.setAttribute('title', `${el.getAttribute('title')} - decorated`);
     return el;
   })

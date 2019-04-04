@@ -19,10 +19,15 @@ storiesOf('Custom|Pipes', module)
       field: 'foobar',
     },
   }))
-  .addDecorator(withKnobs)
-  .add('With Knobs', () => ({
-    component: NameComponent,
-    props: {
-      field: text('field', 'foobar'),
-    },
-  }));
+  .add(
+    'With Knobs',
+    () => ({
+      component: NameComponent,
+      props: {
+        field: text('field', 'foobar'),
+      },
+    }),
+    {
+      decorators: [withKnobs],
+    }
+  );

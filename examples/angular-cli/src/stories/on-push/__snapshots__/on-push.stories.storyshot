@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Core|OnPush Class-specified component with OnPush and Knobs 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <storybook-on-push-box
+    _nghost-c13=""
+    style="background-color: rgb(255, 240, 0);"
+  >
+     Word of the day: OnPush 
+  </storybook-on-push-box>
+</storybook-dynamic-app-root>
+`;

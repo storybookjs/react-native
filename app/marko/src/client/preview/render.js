@@ -4,8 +4,15 @@ import { stripIndents } from 'common-tags';
 const rootEl = document.getElementById('root');
 let currLoadedComponent = null; // currently loaded marko widget!
 
-export default function renderMain({ story, selectedKind, selectedStory, showMain, showError }) {
-  const element = story();
+export default function renderMain({
+  storyFn,
+  selectedKind,
+  selectedStory,
+  showMain,
+  showError,
+  // forceRender,
+}) {
+  const element = storyFn();
 
   // We need to unmount the existing set of components in the DOM node.
   if (currLoadedComponent) {

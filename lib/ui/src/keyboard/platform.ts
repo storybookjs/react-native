@@ -6,7 +6,7 @@ let _isLinux = false;
 let _locale: string | undefined;
 let _language: string | undefined;
 
-export const enum Platform {
+export enum Platform {
   Mac,
   Linux,
   Windows,
@@ -25,10 +25,14 @@ if (typeof navigator === 'object') {
   _language = _locale;
 }
 
-export const enum OperatingSystem {
+export enum OperatingSystem {
   Windows = 1,
   Macintosh = 2,
   Linux = 3,
 }
 
-export const OS = _isMacintosh ? OperatingSystem.Macintosh : _isWindows ? OperatingSystem.Windows : OperatingSystem.Linux;
+export const OS = _isMacintosh
+  ? OperatingSystem.Macintosh
+  : _isWindows
+  ? OperatingSystem.Windows
+  : OperatingSystem.Linux;

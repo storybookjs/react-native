@@ -5,7 +5,6 @@ import { isForwardRef } from 'react-is';
 import { polyfill } from 'react-lifecycles-compat';
 import PropTypes from 'prop-types';
 import global from 'global';
-import { baseFonts } from '@storybook/theming/dist/base';
 
 import marksy from 'marksy';
 import Node from './Node';
@@ -24,7 +23,7 @@ const stylesheetBase = {
       display: 'block',
       position: 'fixed',
       border: 'none',
-      background: '#28c',
+      background: '#027ac5',
       color: '#fff',
       padding: '5px 15px',
       cursor: 'pointer',
@@ -51,7 +50,8 @@ const stylesheetBase = {
     zIndex: 0,
   },
   infoBody: {
-    ...baseFonts,
+    fontFamily: 'Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif',
+    color: 'black',
     fontWeight: 300,
     lineHeight: 1.45,
     fontSize: '15px',
@@ -266,11 +266,11 @@ class Story extends Component {
 
   _getComponentDescription() {
     const {
-      context: { kind, story },
+      context: { kind, name },
     } = this.props;
     let retDiv = null;
 
-    const validMatches = [kind, story];
+    const validMatches = [kind, name];
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {

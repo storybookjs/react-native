@@ -8,6 +8,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
   line-height: 12px;
   padding: 4px 12px;
   border-radius: 3em;
+  font-weight: 700;
   color: #66BF3C;
   background: #E1FFD4;
 }
@@ -20,7 +21,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
 }
 
 .emotion-0 svg path {
-  fill: #66BF3C;
+  fill: currentColor;
 }
 
 .emotion-1 {
@@ -30,6 +31,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
   line-height: 12px;
   padding: 4px 12px;
   border-radius: 3em;
+  font-weight: 700;
   color: #FF4400;
   background: #FEDED2;
 }
@@ -42,7 +44,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
 }
 
 .emotion-1 svg path {
-  fill: #FF4400;
+  fill: currentColor;
 }
 
 .emotion-2 {
@@ -52,6 +54,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
   line-height: 12px;
   padding: 4px 12px;
   border-radius: 3em;
+  font-weight: 700;
   color: #666666;
   background: #EEEEEE;
 }
@@ -64,7 +67,7 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
 }
 
 .emotion-2 svg path {
-  fill: #666666;
+  fill: currentColor;
 }
 
 <div>
@@ -83,95 +86,5 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
   >
     Neutral
   </div>
-</div>
-`;
-
-exports[`Storyshots Basics|Badge negative 1`] = `
-.emotion-0 {
-  display: inline-block;
-  vertical-align: top;
-  font-size: 11px;
-  line-height: 12px;
-  padding: 4px 12px;
-  border-radius: 3em;
-  color: #FF4400;
-  background: #FEDED2;
-}
-
-.emotion-0 svg {
-  height: 12px;
-  width: 12px;
-  margin-right: 4px;
-  margin-top: -2px;
-}
-
-.emotion-0 svg path {
-  fill: #FF4400;
-}
-
-<div
-  class="emotion-0"
->
-  Denied
-</div>
-`;
-
-exports[`Storyshots Basics|Badge neutral 1`] = `
-.emotion-0 {
-  display: inline-block;
-  vertical-align: top;
-  font-size: 11px;
-  line-height: 12px;
-  padding: 4px 12px;
-  border-radius: 3em;
-  color: #666666;
-  background: #EEEEEE;
-}
-
-.emotion-0 svg {
-  height: 12px;
-  width: 12px;
-  margin-right: 4px;
-  margin-top: -2px;
-}
-
-.emotion-0 svg path {
-  fill: #666666;
-}
-
-<div
-  class="emotion-0"
->
-  Neutral
-</div>
-`;
-
-exports[`Storyshots Basics|Badge positive 1`] = `
-.emotion-0 {
-  display: inline-block;
-  vertical-align: top;
-  font-size: 11px;
-  line-height: 12px;
-  padding: 4px 12px;
-  border-radius: 3em;
-  color: #66BF3C;
-  background: #E1FFD4;
-}
-
-.emotion-0 svg {
-  height: 12px;
-  width: 12px;
-  margin-right: 4px;
-  margin-top: -2px;
-}
-
-.emotion-0 svg path {
-  fill: #66BF3C;
-}
-
-<div
-  class="emotion-0"
->
-  Accepted
 </div>
 `;

@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'storybook-comp-with-store',
-  template: '<div>{{this.getSotreState()}}</div>',
+  template: '<div>{{this.getStoreState()}}</div>',
 })
 class WithStoreComponent {
   private store: Store<any>;
@@ -13,7 +13,7 @@ class WithStoreComponent {
     this.store = store;
   }
 
-  getSotreState() {
+  getStoreState() {
     return this.store === undefined ? 'Store is NOT injected' : 'Store is injected';
   }
 }

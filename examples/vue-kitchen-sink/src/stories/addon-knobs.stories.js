@@ -31,10 +31,10 @@ storiesOf('Addon|Knobs', module)
     },
 
     created() {
-      logger.log('created');
+      logger.debug('created');
     },
     destroyed() {
-      logger.log('destroyed');
+      logger.debug('destroyed');
     },
   }))
   .add('All knobs', () => {

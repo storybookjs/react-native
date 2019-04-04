@@ -57,15 +57,6 @@ const tasks = {
     projectLocation: path.join(__dirname, '..', 'examples/official-storybook/image-snapshots'),
     isJest: true,
   }),
-  // 'crna-kitchen-sink': createProject({
-  //   name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}  ${chalk.red(
-  //     '[not implemented yet]'
-  //   )}`,
-  //   defaultValue: false,
-  //   option: '--reactnativeapp',
-  //   projectLocation: './examples-native/crna-kitchen-sink',
-  //   isJest: true,
-  // }),
   cli: createProject({
     name: `Command Line Interface ${chalk.gray('(cli)')}`,
     defaultValue: false,
@@ -89,6 +80,18 @@ const tasks = {
     defaultValue: false,
     option: '--runInBand',
     extraParam: '--runInBand',
+  }),
+  w2: createOption({
+    name: `Run all tests in max 2 processes process ${chalk.gray('(w2)')}`,
+    defaultValue: false,
+    option: '--w2',
+    extraParam: '-w 2',
+  }),
+  reportLeaks: createOption({
+    name: `report memory leaks ${chalk.gray('(reportLeaks)')}`,
+    defaultValue: false,
+    option: '--reportLeaks',
+    extraParam: '--detectLeaks',
   }),
   update: createOption({
     name: `Update all snapshots ${chalk.gray('(update)')}`,
@@ -170,13 +173,14 @@ selection
       const jestProjects = projects.filter(key => key.isJest).map(key => key.projectLocation);
       const nonJestProjects = projects.filter(key => !key.isJest);
       const extraParams = getExtraParams(list).join(' ');
+      const jest = path.join(__dirname, '..', 'node_modules', '.bin', 'jest');
 
       if (jestProjects.length > 0) {
         const projectsParam = jestProjects.some(project => project === '<all>')
           ? ''
           : `--projects ${jestProjects.join(' ')}`;
 
-        spawn(`jest ${projectsParam} ${extraParams}`);
+        spawn(`node --max_old_space_size=4096 ${jest} ${projectsParam} ${extraParams}`);
       }
 
       nonJestProjects.forEach(key =>

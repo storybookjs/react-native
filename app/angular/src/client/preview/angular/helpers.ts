@@ -4,7 +4,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './components/app.component';
 import { STORY } from './app.token';
-import { NgModuleMetadata, IGetStory, NgStory } from './types';
+import { NgModuleMetadata, IStoryFn, NgStory } from './types';
+import { ReplaySubject } from 'rxjs';
 
 let platform: any = null;
 let promises: Array<Promise<NgModuleRef<any>>> = [];
@@ -14,6 +15,8 @@ const componentClass = class DynamicComponent {};
 
 type DynamicComponentType = typeof componentClass;
 
+const storyData = new ReplaySubject(1);
+
 const getModule = (
   declarations: Array<Type<any> | any[]>,
   entryComponents: Array<Type<any> | any[]>,
@@ -21,10 +24,12 @@ const getModule = (
   data: NgStory,
   moduleMetadata: NgModuleMetadata
 ) => {
+  storyData.next(data);
+
   const moduleMeta = {
     declarations: [...declarations, ...(moduleMetadata.declarations || [])],
     imports: [BrowserModule, FormsModule, ...(moduleMetadata.imports || [])],
-    providers: [{ provide: STORY, useValue: { ...data } }, ...(moduleMetadata.providers || [])],
+    providers: [{ provide: STORY, useValue: storyData }, ...(moduleMetadata.providers || [])],
     entryComponents: [...entryComponents, ...(moduleMetadata.entryComponents || [])],
     schemas: [...(moduleMetadata.schemas || [])],
     bootstrap: [...bootstrap],
@@ -40,8 +45,8 @@ const createComponentFromTemplate = (template: string, styles: string[]) => {
   })(componentClass);
 };
 
-const initModule = (currentStory: IGetStory) => {
-  const storyObj = currentStory();
+const initModule = (storyFn: IStoryFn) => {
+  const storyObj = storyFn();
   const { component, template, props, styles, moduleMetadata = {} } = storyObj;
 
   let AnnotatedComponent = template ? createComponentFromTemplate(template, styles) : component;
@@ -51,7 +56,13 @@ const initModule = (currentStory: IGetStory) => {
     props,
   };
 
-  return getModule([AppComponent, AnnotatedComponent], [AnnotatedComponent], [AppComponent], story, moduleMetadata);
+  return getModule(
+    [AppComponent, AnnotatedComponent],
+    [AnnotatedComponent],
+    [AppComponent],
+    story,
+    moduleMetadata
+  );
 };
 
 const staticRoot = document.getElementById('root');
@@ -80,6 +91,10 @@ const draw = (newModule: DynamicComponentType): void => {
   }
 };
 
-export const renderNgApp = (story: IGetStory) => {
-  draw(initModule(story));
+export const renderNgApp = (storyFn: IStoryFn, forced: boolean) => {
+  if (!forced) {
+    draw(initModule(storyFn));
+  } else {
+    storyData.next(storyFn());
+  }
 };
