@@ -198,6 +198,10 @@ storiesOf('Components|Button', module).add('base', () => (
 ));
 ```
 
+If you would prefer to use another character as the separator then you can
+configure it using the `hierarchyRootSeparator` config option. Visit the
+[configuration options parameter](/configurations/options-parameter) page to learn more.
+
 ## Generating nesting path based on \_\_dirname
 
 Nesting paths can be programmatically generated with template literals because story names are strings.
