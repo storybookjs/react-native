@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+// tslint:disable:no-console
 const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
@@ -6,7 +7,19 @@ const shell = require('shelljs');
 function getCommand(watch) {
   const tsc = path.join(__dirname, '..', 'node_modules', '.bin', 'tsc');
 
-  const args = ['--outDir ./dist', '-d true', '--listEmittedFiles true'];
+  const args = ['--outDir ./dist', '--listEmittedFiles true'];
+
+  /**
+   * Only emit declarations if it does not need to be compiled with tsc
+   * Currently, angular and storyshots (that contains an angular component) need to be compiled
+   * with tsc. (see comments in compile-babel.js)
+   */
+  if (
+    !process.cwd().includes(path.join('app', 'angular')) &&
+    !process.cwd().includes(path.join('addons', 'storyshots'))
+  ) {
+    args.push('--emitDeclarationOnly --declaration true');
+  }
 
   if (watch) {
     args.push('-w');
@@ -15,12 +28,11 @@ function getCommand(watch) {
   return `${tsc} ${args.join(' ')}`;
 }
 
-function handleExit(code, errorCallback) {
+function handleExit(code, stderr, errorCallback) {
   if (code !== 0) {
     if (errorCallback && typeof errorCallback === 'function') {
-      errorCallback();
+      errorCallback(stderr);
     }
-
     shell.exit(code);
   }
 }
@@ -47,9 +59,9 @@ function tscfy(options = {}) {
   }
 
   const command = getCommand(watch);
-  const { code } = shell.exec(command, { silent });
+  const { code, stderr } = shell.exec(command, { silent });
 
-  handleExit(code, errorCallback);
+  handleExit(code, stderr, errorCallback);
 }
 
 module.exports = {

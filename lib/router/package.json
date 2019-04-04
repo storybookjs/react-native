@@ -28,14 +28,14 @@
     "memoizerific": "^1.11.3",
     "qs": "^6.6.0"
   },
+  "devDependencies": {
+    "@types/reach__router": "^1.2.3"
+  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {
-    "@types/reach__router": "^1.2.3"
   }
 }

@@ -7891,7 +7891,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-11.emotion-11 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -7924,7 +7923,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-19.emotion-19 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -7957,7 +7955,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-27.emotion-27 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -7990,7 +7987,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-31.emotion-31 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -8254,7 +8250,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-11.emotion-11 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -8287,7 +8282,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-19.emotion-19 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -8320,7 +8314,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-27.emotion-27 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -8353,7 +8346,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 .emotion-31.emotion-31 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -12939,7 +12931,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
 .emotion-3.emotion-3 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -13044,7 +13035,6 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
 .emotion-3.emotion-3 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -15154,7 +15144,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
 .emotion-3.emotion-3 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -15187,7 +15176,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
 .emotion-11.emotion-11 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -15220,7 +15208,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
 .emotion-19.emotion-19 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -15253,7 +15240,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
 .emotion-23.emotion-23 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -15366,7 +15352,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
 .emotion-3.emotion-3 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -15399,7 +15384,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
 .emotion-11.emotion-11 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -15432,7 +15416,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
 .emotion-19.emotion-19 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -15465,7 +15448,6 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
 .emotion-23.emotion-23 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }

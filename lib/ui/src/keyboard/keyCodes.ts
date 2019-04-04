@@ -1,7 +1,7 @@
 // tslint:disable-next-line:no-implicit-dependencies
 import { OperatingSystem } from './platform';
 
-export const enum KeyCode {
+export enum KeyCode {
   Unknown = 0,
 
   Backspace = 1,
@@ -354,15 +354,15 @@ const userSettingsGeneralMap = new KeyCodeStrMap();
 })();
 
 // tslint:disable-next-line:no-namespace
-export namespace KeyCodeUtils {
-  export function toString(keyCode: KeyCode): string {
-    return uiMap.keyCodeToStr(keyCode);
-  }
+// export namespace KeyCodeUtils {
+//   export function toString(keyCode: KeyCode): string {
+//     return uiMap.keyCodeToStr(keyCode);
+//   }
 
-  export function fromString(key: string): KeyCode {
-    return uiMap.strToKeyCode(key);
-  }
-}
+//   export function fromString(key: string): KeyCode {
+//     return uiMap.strToKeyCode(key);
+//   }
+// }
 
 /**
  * Binary encoding strategy:
@@ -378,7 +378,7 @@ export namespace KeyCodeUtils {
  * ```
  */
 
-const enum BinaryKeybindingsMask {
+enum BinaryKeybindingsMask {
   // tslint:disable:no-bitwise
   CtrlCmd = (1 << 11) >>> 0,
   Shift = (1 << 10) >>> 0,
@@ -387,7 +387,7 @@ const enum BinaryKeybindingsMask {
   KeyCode = 0x000000ff,
 }
 
-export const enum KeyMod {
+export enum KeyMod {
   CtrlCmd = (1 << 11) >>> 0,
   Shift = (1 << 10) >>> 0,
   Alt = (1 << 9) >>> 0,
@@ -399,7 +399,7 @@ export function KeyChord(firstPart: number, secondPart: number): number {
   return (firstPart | chordPart) >>> 0;
 }
 
-export const enum KeybindingType {
+export enum KeybindingType {
   Simple = 1,
   Chord = 2,
 }

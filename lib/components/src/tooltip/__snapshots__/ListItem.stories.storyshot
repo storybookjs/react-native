@@ -242,7 +242,6 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   color: #333333;
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
@@ -947,7 +946,6 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
   color: #333333;
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
