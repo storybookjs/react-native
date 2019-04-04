@@ -1,6 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
 
-import PropTypes from 'prop-types';
 import React from 'react';
 import { styled } from '@storybook/theming';
 import colors from '../colors';
@@ -204,9 +203,6 @@ const Message = ({ msg }: MessageProps) => {
     );
 
   return <Pre>{data}</Pre>;
-};
-Message.propTypes = {
-  msg: PropTypes.string.isRequired,
 };
 
 export default Message;
