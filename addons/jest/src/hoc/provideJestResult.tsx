@@ -1,7 +1,6 @@
 import React from 'react';
 import { STORY_CHANGED } from '@storybook/core-events';
 import { ADD_TESTS } from '../shared';
-import Channel from '@storybook/channels';
 import { API } from '@storybook/api';
 
 // TODO: import type from @types/jest
@@ -25,7 +24,6 @@ interface InjectedProps {
 }
 
 export interface HocProps {
-  channel: Channel;
   api: API;
   active?: boolean;
 }
@@ -49,7 +47,7 @@ const provideTests = (Component: React.ComponentType<InjectedProps>) =>
 
     componentDidMount() {
       this.mounted = true;
-      const { channel, api } = this.props;
+      const { api } = this.props;
 
       this.stopListeningOnStory = api.on(STORY_CHANGED, () => {
         const { kind, storyName, tests } = this.state;
@@ -58,15 +56,15 @@ const provideTests = (Component: React.ComponentType<InjectedProps>) =>
         }
       });
 
-      channel.on(ADD_TESTS, this.onAddTests);
+      api.on(ADD_TESTS, this.onAddTests);
     }
 
     componentWillUnmount() {
       this.mounted = false;
-      const { channel } = this.props;
+      const { api } = this.props;
 
       this.stopListeningOnStory();
-      channel.removeListener(ADD_TESTS, this.onAddTests);
+      api.removeListener(ADD_TESTS, this.onAddTests);
     }
 
     onAddTests = ({ kind, storyName, tests }: HocState) => {
