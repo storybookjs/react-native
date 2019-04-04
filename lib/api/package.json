@@ -42,7 +42,8 @@
   "devDependencies": {
     "@types/lodash.isequal": "^4.5.3",
     "@types/lodash.mergewith": "^4.6.4",
-    "@types/lodash.pick": "^4.4.4"
+    "@types/lodash.pick": "^4.4.4",
+    "@types/semver": "^6.0.0"
   },
   "publishConfig": {
     "access": "public"
