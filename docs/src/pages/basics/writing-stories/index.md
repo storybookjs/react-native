@@ -181,6 +181,27 @@ storiesOf('My App/Buttons/Emoji', module).add('with some emoji', () => (
 ));
 ```
 
+## Organising stories with titles
+
+Stories can be organized under a title using "|" as a separator:
+
+```jsx
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import Button from '../components/Button';
+
+/**
+ * The Button stories will show up underneath the 'Components' title.
+ */
+storiesOf('Components|Button', module).add('base', () => (
+  <Button onClick={() => console.log('Clicked')}>Example Button</Button>
+));
+```
+
+If you would prefer to use another character as the separator then you can
+configure it using the `hierarchyRootSeparator` config option. Visit the
+[configuration options parameter](/configurations/options-parameter) page to learn more.
+
 ## Generating nesting path based on \_\_dirname
 
 Nesting paths can be programmatically generated with template literals because story names are strings.
