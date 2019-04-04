@@ -92,7 +92,6 @@ export class PostmsgTransport {
   }
 
   private handleEvent(rawEvent: RawEvent): void {
-    console.log(rawEvent);
     try {
       const { data } = rawEvent;
       const { key, event } = typeof data === 'string' && isJSON(data) ? parse(data) : data;
