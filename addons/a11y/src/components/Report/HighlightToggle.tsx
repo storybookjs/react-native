@@ -53,10 +53,6 @@ function setElementOutlineStyle(targetElement: HTMLElement, outlineStyle: string
   targetElement.style.outline = outlineStyle;
 }
 
-function highlightElement(targetElement: HTMLElement, type: RuleType) {
-  return setElementOutlineStyle(targetElement, `${colorsByType[type]} dotted 1px`);
-}
-
 function areAllRequiredElementsHighlighted(
   elementsToHighlight: NodeResult[],
   highlightedElementsMap: Map<HTMLElement, HighlightedElementData>
@@ -123,7 +119,7 @@ class HighlightToggle extends Component<ToggleProps> {
     }
 
     if (addHighlight) {
-      highlightElement(targetElement, this.props.type);
+      setElementOutlineStyle(targetElement, `${colorsByType[this.props.type]} dotted 1px`);
       return;
     }
 
