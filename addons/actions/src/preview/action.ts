@@ -4,8 +4,9 @@ import { EVENT_ID } from '../constants';
 import { ActionDisplay, ActionOptions, HandlerFunction } from '../models';
 import { config } from './configureActions';
 
-export function action(name: string, options: ActionOptions = config): HandlerFunction {
+export function action(name: string, options: ActionOptions = {}): HandlerFunction {
   const actionOptions = {
+    ...config,
     ...options,
   };
 

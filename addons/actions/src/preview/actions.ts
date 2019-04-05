@@ -7,7 +7,10 @@ export function actions(...args: any[]): ActionsMap {
   const names = args;
   // last argument can be options
   if (names.length !== 1 && typeof args[args.length - 1] !== 'string') {
-    options = names.pop();
+    options = {
+      ...config,
+      ...names.pop(),
+    };
   }
 
   let namesObject = names[0];
