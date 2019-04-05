@@ -1,10 +1,8 @@
 import React, { Fragment, FunctionComponent } from 'react';
 import { Placeholder } from '@storybook/components';
-import { styled } from '@storybook/theming';
-import { Result, NodeResult } from 'axe-core';
+import { Result } from 'axe-core';
 import { Item } from './Item';
 import { RuleType } from '../A11YPanel';
-import HighlightToggle from './HighlightToggle';
 
 export interface ReportProps {
   items: Result[];
