@@ -1,7 +1,7 @@
-import { useEffect, useReducer, useState } from 'react';
+import { createElement as h, useEffect, useReducer, useState } from 'react';
 import { INIT_WRAPPER, UPDATE_MANAGER, UPDATE_WRAPPER } from '../libs/constants';
 import { propsMapsReducer, PropsMapUpdater } from '../libs/ducks';
-import { renderAggregatedContexts } from '../libs/helpers';
+import { aggregateContexts } from '../libs/helpers';
 import { useChannel } from '../libs/hooks';
 import { TAddonWrapper, StringObject, StringTuple } from '../@types';
 
@@ -26,5 +26,5 @@ export const ReactWrapper: TAddonWrapper = ({ channel, nodes, children }) => {
   // push state to the manager (and wait to be initialized)
   useEffect(() => channel.emit(UPDATE_MANAGER, nodes), []);
 
-  return renderAggregatedContexts(nodes, propsMap)(children(ready));
+  return aggregateContexts(h)(nodes, propsMap)(children(ready));
 };
