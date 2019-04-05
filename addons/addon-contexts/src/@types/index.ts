@@ -2,13 +2,12 @@ declare type Channel = import('@storybook/channels').Channel;
 declare type ComponentType = import('react').ComponentType;
 declare type ComponentProps<C> = import('react').ComponentProps<C>;
 declare type ReactNode = import('react').ReactNode;
-declare type ReactElement = import('react').ReactElement;
 declare type FC<P> = import('react').FunctionComponent<P>;
 
 // auxiliary types
 declare type FCNoChildren<P> = FC<{ children?: never } & P>;
 declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-declare type GenericFnWithReturn<T> = (...args: any[]) => T;
+declare type AnyFunctionReturns<T> = (...args: any[]) => T;
 declare type GenericProps = { [key: string]: GenericProps } | null;
 export declare type StringObject = { [key: string]: string };
 export declare type StringTuple = [string, string];
@@ -51,23 +50,23 @@ export declare type PropsMapUpdaterType = (
 ) => ([nodeId, name]: StringTuple) => UPDATE_PROPS_MAP;
 
 // helper types
-export declare type RenderAggregatedComponents = (
-  ...arg: [ComponentType[], GenericProps, AddonOptions, number]
-) => GenericFnWithReturn<unknown>;
-export declare type RenderAggregatedContexts = (
-  ...arg: [ContextNode[], Exclude<GenericProps, null>]
-) => GenericFnWithReturn<ReactElement>;
+export declare type AggregateComponents = <T>(
+  h: (...arg: any[]) => T
+) => (...arg: [ComponentType[], GenericProps, AddonOptions, number]) => AnyFunctionReturns<T>;
+export declare type AggregateContexts = <T>(
+  h: (...arg: any[]) => T
+) => (...arg: [ContextNode[], Exclude<GenericProps, null>]) => AnyFunctionReturns<T>;
 export declare type MergeSettings = (
   ...args: [Partial<AddonSetting>, Partial<AddonSetting>]
 ) => ContextNode;
-export declare type GetNodes = (settings: WrapperSettings) => ContextNode[];
+export declare type GetContextNodes = (settings: WrapperSettings) => ContextNode[];
 export declare type Memorize = <T, U extends any[]>(
   fn: (...arg: U) => T,
   resolver: (...arg: U) => unknown
 ) => (...arg: U) => T;
 export declare type UseChannel = (
   event: string,
-  eventHandler: GenericFnWithReturn<void>,
+  eventHandler: AnyFunctionReturns<void>,
   input?: unknown[]
 ) => void;
 
