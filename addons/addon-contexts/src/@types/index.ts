@@ -61,6 +61,10 @@ export declare type MergeSettings = (
   ...args: [Partial<AddonSetting>, Partial<AddonSetting>]
 ) => ContextNode;
 export declare type GetNodes = (settings: WrapperSettings) => ContextNode[];
+export declare type Memorize = <T, U extends any[]>(
+  fn: (...arg: U) => T,
+  resolver: (...arg: U) => unknown
+) => (...arg: U) => T;
 export declare type UseChannel = (
   event: string,
   eventHandler: GenericFnWithReturn<void>,
