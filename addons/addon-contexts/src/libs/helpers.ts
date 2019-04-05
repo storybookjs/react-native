@@ -104,4 +104,4 @@ export const aggregateContexts: AggregateContexts = (h) => (nodes, propsMap) => 
     )
     .reduce((acc, agg) => agg(() => acc), next());
 
-export const getNodes = _memorize(_getContextNodes, ({ parameters }) => parameters);
+export const getContextNodes = _memorize(_getContextNodes, ({ parameters }) => parameters);

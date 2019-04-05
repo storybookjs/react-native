@@ -51,19 +51,19 @@ export declare type PropsMapUpdaterType = (
 
 // helper types
 export declare type AggregateComponents = <T>(
-  h: (...arg: any[]) => T
-) => (...arg: [ComponentType[], GenericProps, AddonOptions, number]) => AnyFunctionReturns<T>;
+  h: AnyFunctionReturns<T>
+) => (...args: [ComponentType[], GenericProps, AddonOptions, number]) => AnyFunctionReturns<T>;
 export declare type AggregateContexts = <T>(
-  h: (...arg: any[]) => T
-) => (...arg: [ContextNode[], Exclude<GenericProps, null>]) => AnyFunctionReturns<T>;
+  h: AnyFunctionReturns<T>
+) => (...args: [ContextNode[], Exclude<GenericProps, null>]) => AnyFunctionReturns<T>;
 export declare type MergeSettings = (
   ...args: [Partial<AddonSetting>, Partial<AddonSetting>]
 ) => ContextNode;
 export declare type GetContextNodes = (settings: WrapperSettings) => ContextNode[];
 export declare type Memorize = <T, U extends any[]>(
-  fn: (...arg: U) => T,
-  resolver: (...arg: U) => unknown
-) => (...arg: U) => T;
+  fn: (...args: U) => T,
+  resolver: (...args: U) => unknown
+) => (...args: U) => T;
 export declare type UseChannel = (
   event: string,
   eventHandler: AnyFunctionReturns<void>,
@@ -71,7 +71,7 @@ export declare type UseChannel = (
 ) => void;
 
 // Component types
-export declare type Wrapper = (...arg: [Function, unknown, WrapperSettings]) => ReactNode;
+export declare type Wrapper = (...args: [Function, unknown, WrapperSettings]) => unknown;
 export declare type TAddonManager = FCNoChildren<{
   channel: Channel;
 }>;
@@ -83,7 +83,7 @@ export declare type TAddonWrapper = FC<{
 export declare type TMenuController = FCNoChildren<
   Omit<
     ContextNode & {
-      setSelect: (...arg: StringTuple) => void;
+      setSelect: (...args: StringTuple) => void;
     },
     'components'
   >
