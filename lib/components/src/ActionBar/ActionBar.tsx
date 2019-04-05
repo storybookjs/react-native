@@ -53,21 +53,12 @@ export interface ActionBarProps {
   actionItems: ActionItem[];
 }
 
-// Need to define ActionBar using old fashioned `function ActionBar` to avoid TS compiler to
-// generate an anonymous function instead of naming it ActionBar...
-// See https://github.com/storybooks/storybook/pull/6095#issuecomment-477480930
-// tslint:disable-next-line:no-shadowed-variable
-export const ActionBar: FunctionComponent<ActionBarProps> = function ActionBar({
-  actionItems,
-  ...props
-}) {
-  return (
-    <Container {...props}>
-      {actionItems.map(({ title, onClick }, index: number) => (
-        <ActionButton key={index} onClick={onClick}>
-          {title}
-        </ActionButton>
-      ))}
-    </Container>
-  );
-};
+export const ActionBar: FunctionComponent<ActionBarProps> = ({ actionItems, ...props }) => (
+  <Container {...props}>
+    {actionItems.map(({ title, onClick }, index: number) => (
+      <ActionButton key={index} onClick={onClick}>
+        {title}
+      </ActionButton>
+    ))}
+  </Container>
+);
