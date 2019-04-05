@@ -1,9 +1,8 @@
-import React from 'react';
 import { useEffect, useReducer, useState } from 'react';
-import { useChannel } from '../libs/hooks';
-import { renderAggregatedContexts } from '../libs/helpers';
-import { propsTreeReducer, propsTreeUpdater } from '../libs/ducks';
 import { INIT_WRAPPER, UPDATE_MANAGER, UPDATE_WRAPPER } from '../libs/constants';
+import { propsTreeReducer, propsTreeUpdater } from '../libs/ducks';
+import { renderAggregatedContexts } from '../libs/helpers';
+import { useChannel } from '../libs/hooks';
 import { TAddonWrapper, StringObject, StringTuple } from '../@types';
 
 /**
