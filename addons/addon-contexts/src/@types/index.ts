@@ -46,7 +46,7 @@ export declare type UPDATE_PROPS_MAP = {
     props: GenericProps | null;
   };
 };
-export declare type PropsTreeUpdaterType = (
+export declare type PropsMapUpdaterType = (
   nodes: ContextNode[]
 ) => ([nodeId, name]: StringTuple) => UPDATE_PROPS_MAP;
 
