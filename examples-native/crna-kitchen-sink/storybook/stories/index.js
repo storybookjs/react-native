@@ -5,14 +5,12 @@ import { storiesOf, addDecorator, addParameters } from '@storybook/react-native'
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withKnobs } from '@storybook/addon-knobs';
-import { withNotes } from '@storybook/addon-ondevice-notes';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import knobsWrapper from './Knobs';
 import Button from './Button';
 import CenterView from './CenterView';
 import Welcome from './Welcome';
 
-addDecorator(withNotes);
 addDecorator(withBackgrounds);
 
 addParameters({
