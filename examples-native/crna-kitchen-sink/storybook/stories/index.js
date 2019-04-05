@@ -26,7 +26,7 @@ storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo(
   notes: `
 # Markdown!\n
 * List Item
-* [List Item with Link](https://twitter.com/Charles_Mangwa)
+* [List Item with Link](https://storybook.js.org)
 `,
 });
 
