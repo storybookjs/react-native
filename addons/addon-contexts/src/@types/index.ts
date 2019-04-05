@@ -31,8 +31,8 @@ export declare type AddonSetting = {
   options?: AddonOptions;
 };
 export declare type WrapperSettings = {
-  options: AddonSetting[];
-  parameters: AddonSetting[];
+  options?: AddonSetting[];
+  parameters?: AddonSetting[];
 };
 export declare type ContextNode = Required<AddonSetting> & {
   nodeId: string;
