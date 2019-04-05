@@ -3,7 +3,7 @@ import { KeyCode } from './keyCodes';
 /**
  * keyboardEvent.code
  */
-export const enum ScanCode {
+export enum ScanCode {
   None,
 
   Hyper,

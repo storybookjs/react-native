@@ -316,7 +316,7 @@ exports[`A11YPanel should render report 1`] = `
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(Symbol.observable): [Function],
+        Symbol(observable): [Function],
       }
     }
   >
@@ -1110,7 +1110,7 @@ exports[`A11YPanel should render report 1`] = `
                                 0
                                  Violations
                               </ForwardRef(render)>,
-                              "panel": <Unknown
+                              "panel": <Report
                                 empty="No a11y violations found."
                                 items={Array []}
                                 passes={false}
@@ -1124,7 +1124,7 @@ exports[`A11YPanel should render report 1`] = `
                                 0
                                  Passes
                               </ForwardRef(render)>,
-                              "panel": <Unknown
+                              "panel": <Report
                                 empty="No a11y check passed."
                                 items={Array []}
                                 passes={true}
@@ -1138,7 +1138,7 @@ exports[`A11YPanel should render report 1`] = `
                                 0
                                  Incomplete
                               </ForwardRef(render)>,
-                              "panel": <Unknown
+                              "panel": <Report
                                 empty="No a11y incomplete found."
                                 items={Array []}
                                 passes={false}
@@ -1271,7 +1271,7 @@ exports[`A11YPanel should render report 1`] = `
                                 </Styled(div)>
                               </div>
                             </Styled(div)>
-                            <Component
+                            <Report
                               empty="No a11y violations found."
                               items={Array []}
                               passes={false}
@@ -1294,7 +1294,7 @@ exports[`A11YPanel should render report 1`] = `
                                   </div>
                                 </Styled(div)>
                               </Placeholder>
-                            </Component>
+                            </Report>
                           </div>
                         </Styled(div)>
                       </Tabs>

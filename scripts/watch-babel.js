@@ -1,4 +1,4 @@
-const { babelify } = require('./compile-js');
+const { babelify } = require('./compile-babel');
 
 babelify({
   watch: true,

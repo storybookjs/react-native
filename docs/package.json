@@ -4,23 +4,17 @@
   "private": true,
   "description": "storybook.js.org documentation",
   "keywords": [
-    "react",
+    "documentation",
     "storybooks"
   ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build --prefix-paths && cp static/**/* ./public",
-    "build-storybook": "build-storybook",
     "dev": "gatsby develop",
-    "serve": "gatsby serve",
-    "storybook": "start-storybook -p 9009 -s src/pages"
+    "serve": "gatsby serve"
   },
   "dependencies": {
-    "@storybook/addon-actions": "5.1.0-alpha.11",
-    "@storybook/addon-links": "5.1.0-alpha.11",
-    "@storybook/addons": "5.1.0-alpha.11",
-    "@storybook/react": "5.1.0-alpha.11",
     "babel-loader": "^6.4.1",
     "babel-plugin-styled-components": "^1.10.0",
     "bootstrap": "^4.3.1",
