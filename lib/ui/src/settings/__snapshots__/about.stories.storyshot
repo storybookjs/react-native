@@ -1985,7 +1985,12 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
                             <code
                               class="emotion-18"
                             >
-                              yarn upgrade-interactive --latest
+                              <span
+                                class="token function"
+                              >
+                                yarn
+                              </span>
+                               upgrade-interactive --latest
                             </code>
                           </pre>
                         </div>
