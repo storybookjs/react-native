@@ -1,4 +1,4 @@
-const { tscfy } = require('./compile-ts');
+const { tscfy } = require('./compile-tsc');
 
 tscfy({
   watch: true,

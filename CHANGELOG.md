@@ -1,3 +1,22 @@
+## 5.1.0-alpha.21 (April 4, 2019)
+
+### Features
+
+* Addon-centered: Fix horizontal scrolling overflow ([#6361](https://github.com/storybooks/storybook/pull/6361))
+* Angular: Support OnPush change detection for class-specified components ([#6360](https://github.com/storybooks/storybook/pull/6360))
+* Addon-storysource: Reuase clientApi when possible ([#6154](https://github.com/storybooks/storybook/pull/6154))
+
+### Bug Fixes
+
+* React-native: Fix backgrounds addon ([#6393](https://github.com/storybooks/storybook/pull/6393))
+* UI: Fix 'read full changelog' link on about page ([#6385](https://github.com/storybooks/storybook/pull/6385))
+* Addon-a11y: Fix addon initialization with 'makeDecorator' ([#6354](https://github.com/storybooks/storybook/pull/6354))
+* Typescript: Fix a11y build by adding hoist-non-react-statics ([#6348](https://github.com/storybooks/storybook/pull/6348))
+
+### Maintenance
+
+* Typescript: Use Babel instead of tsc ([#5109](https://github.com/storybooks/storybook/pull/5109))
+
 ## 5.0.6 (April 1, 2019)
 
 ### Bug Fixes
