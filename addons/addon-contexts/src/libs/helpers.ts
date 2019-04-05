@@ -94,10 +94,10 @@ export const _renderAggregatedComponents: RenderAggregatedComponents = (
 /**
  * Aggregate aggregated-components among all contextual nodes in a descending order.
  */
-export const renderAggregatedContexts: RenderAggregatedContexts = (nodes, propsTree) => (next) =>
+export const renderAggregatedContexts: RenderAggregatedContexts = (nodes, propsMap) => (next) =>
   nodes
     .map(({ nodeId, components = [], options = {} }) =>
-      _renderAggregatedComponents(components, propsTree[nodeId], options, components.length - 1)
+      _renderAggregatedComponents(components, propsMap[nodeId], options, components.length - 1)
     )
     .reduce((acc, agg) => agg(() => acc), next());
 
