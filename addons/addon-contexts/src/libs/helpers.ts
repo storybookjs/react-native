@@ -1,10 +1,9 @@
-import { createElement as h } from 'react';
 import {
   Memorize,
-  GetNodes,
+  GetContextNodes,
   MergeSettings,
-  RenderAggregatedComponents,
-  RenderAggregatedContexts,
+  AggregateComponents,
+  AggregateContexts,
 } from '../@types';
 
 /**
@@ -15,7 +14,7 @@ import {
 export const _memorize: Memorize = (fn, resolver) => {
   const memo = new Map();
   return (...arg) => {
-    const key = resolver && resolver(...arg) || arg[0];
+    const key = (resolver && resolver(...arg)) || arg[0];
     return memo.get(key) || memo.set(key, fn(...arg)).get(key);
   };
 };
@@ -52,7 +51,7 @@ export const _mergeSettings: MergeSettings = (
  * pairs up settings for merging normalizations to produce the contextual definitions (-> nodes);
  * it guarantee the adding order can be respected but not duplicated.
  */
-export const _getNodes: GetNodes = ({ options, parameters }) => {
+export const _getContextNodes: GetContextNodes = ({ options, parameters }) => {
   const titles = Array()
     .concat(options, parameters)
     .map(({ title } = {}) => title);
@@ -70,8 +69,10 @@ export const _getNodes: GetNodes = ({ options, parameters }) => {
  * @private
  * Aggregates components with activated props in a descending order,
  * based on the given options in the contextual environment setup.
+
+ * @param {function} h - the associated `createElement` vNode creator from the framework
  */
-export const _renderAggregatedComponents: RenderAggregatedComponents = (
+export const _aggregateComponents: AggregateComponents = (h) => (
   components,
   props,
   options,
@@ -85,21 +86,22 @@ export const _renderAggregatedComponents: RenderAggregatedComponents = (
   (props === undefined && !options.cancelable)
     ? next()
     : components
-      .reverse()
-      .reduce(
-        (acc, C, index) => h(C, options.deep || index === last ? props : null, acc),
-        next()
-      );
+        .reverse()
+        .reduce(
+          (acc, C, index) => h(C, options.deep || index === last ? props : null, acc),
+          next()
+        );
 
 /**
  * Aggregate aggregated-components among all contextual nodes in a descending order.
+ *
+ * @param {function} h - the associated `createElement` vNode creator from the framework
  */
-export const renderAggregatedContexts: RenderAggregatedContexts = (nodes, propsMap) => (next) =>
+export const aggregateContexts: AggregateContexts = (h) => (nodes, propsMap) => (next) =>
   nodes
     .map(({ nodeId, components = [], options = {} }) =>
-      _renderAggregatedComponents(components, propsMap[nodeId], options, components.length - 1)
+      _aggregateComponents(h)(components, propsMap[nodeId], options, components.length - 1)
     )
     .reduce((acc, agg) => agg(() => acc), next());
 
-
-export const getNodes = _memorize(_getNodes, ({ parameters }) => parameters);
+export const getNodes = _memorize(_getContextNodes, ({ parameters }) => parameters);
