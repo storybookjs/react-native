@@ -78,7 +78,7 @@ export declare type TAddonManager = FCNoChildren<{
 }>;
 export declare type TAddonWrapper = FC<{
   channel: Channel;
-  settings: WrapperSettings;
+  nodes: ContextNode[];
   children: (ready: boolean) => ReactNode;
 }>;
 export declare type TMenuController = FCNoChildren<

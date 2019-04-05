@@ -1,15 +1,18 @@
-import { createElement as h, Fragment } from 'react';
+import { createElement as h } from 'react';
 import addons, { makeDecorator } from '@storybook/addons';
-import { AddonWrapper } from './containers/AddonWrapper';
+import { ReactWrapper } from './containers/ReactWrapper';
 import { ID, PARAM } from './libs/constants';
+import { getNodes } from './libs/helpers';
 import { WithContexts, Wrapper } from './@types';
 
-const wrapper: Wrapper = (getStory, context, settings) =>
-  h(AddonWrapper, {
-    settings,
+const wrapper: Wrapper = (getStory, context, settings) => {
+  const nodes = getNodes(settings);
+  return h(ReactWrapper, {
+    nodes,
     channel: addons.getChannel(),
-    children: (ready: boolean) => () => (ready ? getStory(context) : h(Fragment)),
+    children: (ready: boolean) => () => (ready ? getStory(context) : h('div')),
   });
+};
 
 export const withContexts: WithContexts = makeDecorator({
   name: ID,

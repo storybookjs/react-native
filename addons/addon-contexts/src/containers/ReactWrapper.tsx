@@ -1,7 +1,7 @@
 import React from 'react';
-import { useEffect, useMemo, useReducer, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { useChannel } from '../libs/hooks';
-import { getNodes, renderAggregatedContexts } from '../libs/helpers';
+import { renderAggregatedContexts } from '../libs/helpers';
 import { propsTreeReducer, propsTreeUpdater } from '../libs/ducks';
 import { INIT_WRAPPER, UPDATE_MANAGER, UPDATE_WRAPPER } from '../libs/constants';
 import { TAddonWrapper, StringObject, StringTuple } from '../@types';
@@ -9,8 +9,7 @@ import { TAddonWrapper, StringObject, StringTuple } from '../@types';
 /**
  * Wrap story under addon-injected contexts
  */
-export const AddonWrapper: TAddonWrapper = ({ channel, settings, children }) => {
-  const nodes = useMemo(() => getNodes(settings), []);
+export const ReactWrapper: TAddonWrapper = ({ channel, nodes, children }) => {
   const [propsMap, dispatch] = useReducer(propsTreeReducer, {});
   const [ready, setReady] = useState(false);
 
