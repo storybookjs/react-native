@@ -66,7 +66,7 @@ export class Channel {
   emit(eventName: string, ...args: any) {
     const event: ChannelEvent = { type: eventName, args, from: this.sender };
     let options = {};
-    if (args.length >= 1 && args[0].options) {
+    if (args.length >= 1 && args[0] && args[0].options) {
       options = args[0].options;
     }
 
