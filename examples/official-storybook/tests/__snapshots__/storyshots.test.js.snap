@@ -5827,6 +5827,7 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
     <a
       class="emotion-1"
       href="https://storybook.js.org"
+      target="_blank"
     >
       <span
         class="emotion-0"
@@ -5837,6 +5838,7 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
     <a
       class="emotion-1"
       href="https://github.com/storybooks/storybook"
+      target="_blank"
     >
       <span
         class="emotion-0"
@@ -5847,6 +5849,7 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
     <a
       class="emotion-1"
       href="https://storybook.js.org/support"
+      target="_blank"
     >
       <span
         class="emotion-0"
@@ -7351,6 +7354,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             <a
               class="emotion-91"
               href="https://storybook.js.org"
+              target="_blank"
             >
               <span
                 class="emotion-90"
@@ -7361,6 +7365,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             <a
               class="emotion-91"
               href="https://github.com/storybooks/storybook"
+              target="_blank"
             >
               <span
                 class="emotion-90"
@@ -7371,6 +7376,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             <a
               class="emotion-91"
               href="https://storybook.js.org/support"
+              target="_blank"
             >
               <span
                 class="emotion-90"
