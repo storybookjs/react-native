@@ -1,20 +1,19 @@
 import React from 'react';
-import { ToolBarMenu } from '../components/ToolBarMenu';
-import { OPT_OUT } from '../libs/constants';
-import { TMenuController } from '../@types';
+import { ToolBarMenu } from './ToolBarMenu';
+import { OPT_OUT } from '../constants';
+import { TToolbarControl } from '../@types';
 
-export const MenuController: TMenuController = ({
+export const ToolbarControl: TToolbarControl = ({
   nodeId,
   icon,
   title,
   params,
   options,
-  setSelect,
+  selected,
+  setSelected,
 }) => {
   const [expanded, setExpanded] = React.useState(false);
-  const [selected, setSelected] = React.useState('');
   const paramNames = params.map(({ name }) => name);
-  const list = options.cancelable === false ? paramNames : [OPT_OUT, ...paramNames];
   const activeName =
     // validate the selected name
     (paramNames.concat(OPT_OUT).includes(selected) && selected) ||
@@ -22,6 +21,7 @@ export const MenuController: TMenuController = ({
     (params.find((param) => !!param.default) || { name: null }).name ||
     // fallback to the first
     params[0].name;
+  const list = options.cancelable === false ? paramNames : [OPT_OUT, ...paramNames];
   const props = {
     icon,
     title,
@@ -33,8 +33,7 @@ export const MenuController: TMenuController = ({
       list,
       onSelectOption: (name: string) => () => {
         setExpanded(false);
-        setSelected(name);
-        setSelect(nodeId, name);
+        setSelected(nodeId, name);
       },
     },
   };
