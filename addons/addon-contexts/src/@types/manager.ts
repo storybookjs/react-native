@@ -2,11 +2,11 @@ import { Channel } from '@storybook/channels';
 import { FunctionComponent, ComponentProps } from 'react';
 import { AnyFunctionReturns, StringTuple, StringObject, Omit, ContextNode } from './index';
 
-// helper
-declare type FCNoChildren<P> = FunctionComponent<{ children?: never } & P>;
+// helpers
+type FCNoChildren<P> = FunctionComponent<{ children?: never } & P>;
 
 // hooks
-export declare type UseChannel = (
+export type UseChannel = (
   event: string,
   eventHandler: AnyFunctionReturns<void>,
   input?: unknown[]
