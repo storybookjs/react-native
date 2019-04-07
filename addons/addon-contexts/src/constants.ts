@@ -10,6 +10,5 @@ export const PARAM = 'contexts';
 export const OPT_OUT = '__OPT_OUT__';
 
 // events
-export const INIT_WRAPPER = `${ID}/INIT_WRAPPER`;
 export const UPDATE_MANAGER = `${ID}/UPDATE_MANAGER`;
-export const UPDATE_WRAPPER = `${ID}/UPDATE_WRAPPER`;
+export const UPDATE_PREVIEW = `${ID}/UPDATE_PREVIEW`;
