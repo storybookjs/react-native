@@ -1,12 +1,31 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import { Platform, Keyboard, Dimensions, View } from 'react-native';
-
+import {
+  Platform,
+  Keyboard,
+  Dimensions,
+  View,
+  EmitterSubscription,
+  LayoutChangeEvent,
+  KeyboardEvent,
+} from 'react-native';
 import style from './style';
+
+export interface PreviewDimens {
+  previewWidth: number;
+  previewHeight: number;
+}
+
+type Props = {
+  onLayout: (dimens: PreviewDimens) => void;
+} & PreviewDimens;
 
 // Android changes screen size when keyboard opens.
 // To avoid issues we use absolute positioned element with predefined screen size
-export default class AbsolutePositionedKeyboardAwareView extends PureComponent {
+export default class AbsolutePositionedKeyboardAwareView extends PureComponent<Props> {
+  keyboardDidShowListener: EmitterSubscription;
+  keyboardDidHideListener: EmitterSubscription;
+  keyboardOpen: boolean;
+
   componentWillMount() {
     this.keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',
@@ -25,7 +44,7 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent {
     Dimensions.removeEventListener('change', this.removeKeyboardOnOrientationChange);
   }
 
-  keyboardDidShowHandler = e => {
+  keyboardDidShowHandler = (e: KeyboardEvent) => {
     if (Platform.OS === 'android') {
       const { previewWidth } = this.props;
       // There is bug in RN android that keyboardDidShow event is called simply when you go from portrait to landscape.
@@ -50,7 +69,7 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent {
     }
   };
 
-  onLayoutHandler = ({ nativeEvent }) => {
+  onLayoutHandler = ({ nativeEvent }: LayoutChangeEvent) => {
     if (!this.keyboardOpen) {
       const { width, height } = nativeEvent.layout;
       const { onLayout } = this.props;
@@ -80,10 +99,3 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent {
     );
   }
 }
-
-AbsolutePositionedKeyboardAwareView.propTypes = {
-  children: PropTypes.node.isRequired,
-  previewWidth: PropTypes.number.isRequired,
-  previewHeight: PropTypes.number.isRequired,
-  onLayout: PropTypes.func.isRequired,
-};

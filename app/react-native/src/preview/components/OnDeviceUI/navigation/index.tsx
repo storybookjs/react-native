@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 import { View, SafeAreaView, StyleSheet } from 'react-native';
+// @ts-ignore TODO: add types for react-native-swipe-gestures
 import GestureRecognizer from 'react-native-swipe-gestures';
-import PropTypes from 'prop-types';
-
 import Bar from './bar';
 import VisibilityButton from './visibility-button';
 
@@ -20,13 +19,19 @@ const style = StyleSheet.create({
   },
 });
 
-export default class Navigation extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isUIVisible: props.initialUiVisible,
-    };
-  }
+interface Props {
+  initialUiVisible: boolean;
+  tabOpen: number;
+  onChangeTab: (index: number) => void;
+}
+
+export default class Navigation extends PureComponent<Props> {
+  static defaultProps = {
+    initialUiVisible: true,
+  };
+  state = {
+    isUIVisible: this.props.initialUiVisible,
+  };
 
   handleToggleUI = () => {
     const { isUIVisible } = this.state;
@@ -72,13 +77,3 @@ export default class Navigation extends PureComponent {
     );
   }
 }
-
-Navigation.propTypes = {
-  initialUiVisible: PropTypes.bool,
-  tabOpen: PropTypes.number.isRequired,
-  onChangeTab: PropTypes.func.isRequired,
-};
-
-Navigation.defaultProps = {
-  initialUiVisible: true,
-};

@@ -1,10 +1,15 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { TouchableOpacity, Text } from 'react-native';
 
 import style from '../style';
 
-export default class Tab extends PureComponent {
+export interface Props {
+  id: string;
+  title: string;
+  onPress: (id: string) => void;
+}
+
+export default class Tab extends PureComponent<Props> {
   onPressHandler = () => {
     const { onPress, id } = this.props;
     onPress(id);
@@ -19,9 +24,3 @@ export default class Tab extends PureComponent {
     );
   }
 }
-
-Tab.propTypes = {
-  onPress: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-};

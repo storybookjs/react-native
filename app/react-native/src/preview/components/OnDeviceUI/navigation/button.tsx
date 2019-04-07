@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 const style = StyleSheet.create({
@@ -15,7 +14,13 @@ const style = StyleSheet.create({
   },
 });
 
-export default class Button extends PureComponent {
+interface Props {
+  id: number | string;
+  active: boolean;
+  onPress: (id: number | string) => void;
+}
+
+export default class Button extends PureComponent<Props> {
   onPress = () => {
     const { onPress, id } = this.props;
     onPress(id);
@@ -34,7 +39,7 @@ export default class Button extends PureComponent {
             },
           ]}
         >
-          {children.toUpperCase()}
+          {children}
         </Text>
         <View
           style={[
@@ -48,10 +53,3 @@ export default class Button extends PureComponent {
     );
   }
 }
-
-Button.propTypes = {
-  onPress: PropTypes.func.isRequired,
-  active: PropTypes.bool.isRequired,
-  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-  children: PropTypes.node.isRequired,
-};

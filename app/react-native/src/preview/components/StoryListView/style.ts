@@ -1,4 +1,6 @@
-export default {
+import { StyleSheet } from 'react-native';
+
+export default StyleSheet.create({
   searchBar: {
     backgroundColor: '#eee',
     borderRadius: 5,
@@ -33,4 +35,4 @@ export default {
   itemTextSelected: {
     fontWeight: 'bold',
   },
-};
+});

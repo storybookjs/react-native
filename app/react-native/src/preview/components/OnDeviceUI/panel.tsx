@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
-import { StyleSheet, Animated } from 'react-native';
-import PropTypes from 'prop-types';
+import { StyleSheet, Animated, StyleProp, ViewStyle } from 'react-native';
 
 const style = StyleSheet.create({
   panel: {
@@ -13,14 +12,13 @@ const style = StyleSheet.create({
   },
 });
 
-export default class Panel extends PureComponent {
+interface Props {
+  style: any[];
+}
+
+export default class Panel extends PureComponent<Props> {
   render() {
     const { children, style: propsStyle } = this.props;
     return <Animated.View style={[style.panel, ...propsStyle]}>{children}</Animated.View>;
   }
 }
-
-Panel.propTypes = {
-  style: PropTypes.arrayOf(PropTypes.object).isRequired,
-  children: PropTypes.node.isRequired,
-};
