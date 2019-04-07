@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import addons from '@storybook/addons';
-import { UseChannel } from '../@types';
+import { useEffect } from 'react';
+import { UseChannel } from '../../@types';
 
 export const useChannel: UseChannel = (event, eventHandler, inputs = []) =>
   useEffect(() => {
