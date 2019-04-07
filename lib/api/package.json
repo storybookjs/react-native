@@ -1,6 +1,6 @@
 {
   "name": "@storybook/api",
-  "version": "5.1.0-alpha.21",
+  "version": "5.1.0-alpha.22",
   "description": "Core Storybook API & Context",
   "keywords": [
     "storybook"
@@ -20,11 +20,11 @@
     "prepare": "node ./scripts/generateVersion.js && node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "5.1.0-alpha.21",
-    "@storybook/client-logger": "5.1.0-alpha.21",
-    "@storybook/core-events": "5.1.0-alpha.21",
-    "@storybook/router": "5.1.0-alpha.21",
-    "@storybook/theming": "5.1.0-alpha.21",
+    "@storybook/channels": "5.1.0-alpha.22",
+    "@storybook/client-logger": "5.1.0-alpha.22",
+    "@storybook/core-events": "5.1.0-alpha.22",
+    "@storybook/router": "5.1.0-alpha.22",
+    "@storybook/theming": "5.1.0-alpha.22",
     "core-js": "^2.6.5",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
@@ -42,7 +42,8 @@
   "devDependencies": {
     "@types/lodash.isequal": "^4.5.3",
     "@types/lodash.mergewith": "^4.6.4",
-    "@types/lodash.pick": "^4.4.4"
+    "@types/lodash.pick": "^4.4.4",
+    "@types/semver": "^6.0.0"
   },
   "publishConfig": {
     "access": "public"

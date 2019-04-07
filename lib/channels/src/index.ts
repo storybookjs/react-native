@@ -1,7 +1,7 @@
 export type ChannelHandler = (event: ChannelEvent) => void;
 
 export interface ChannelTransport {
-  send(event: ChannelEvent): void;
+  send(event: ChannelEvent, options?: any): void;
   setHandler(handler: ChannelHandler): void;
 }
 
@@ -63,12 +63,16 @@ export class Channel {
     this.addListener(eventName, peerListener);
   }
 
-  emit(eventName: string, ...args: any[]) {
+  emit(eventName: string, ...args: any) {
     const event: ChannelEvent = { type: eventName, args, from: this.sender };
+    let options = {};
+    if (args.length >= 1 && args[0] && args[0].options) {
+      options = args[0].options;
+    }
 
     const handler = () => {
       if (this.transport) {
-        this.transport.send(event);
+        this.transport.send(event, options);
       }
       this.handleEvent(event, true);
     };

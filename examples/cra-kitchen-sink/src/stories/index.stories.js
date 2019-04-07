@@ -24,7 +24,7 @@ const InfoButton = () => (
 );
 
 storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>, {
+  .add('with text', () => <Button onClick={action('clicked', { depth: 1 })}>Hello Button</Button>, {
     options: { selectedPanel: 'storybook/actions/panel' },
   })
   .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>, {

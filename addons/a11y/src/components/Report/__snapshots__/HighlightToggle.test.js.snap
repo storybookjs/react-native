@@ -2,7 +2,7 @@
 
 exports[`HighlightToggle component should match snapshot 1`] = `
 .emotion-0 {
-  cursor: pointer;
+  cursor: not-allowed;
 }
 
 <Provider
@@ -321,6 +321,7 @@ exports[`HighlightToggle component should match snapshot 1`] = `
           addElement={[Function]}
           elementsToHighlight={Array []}
           highlightedElementsMap={Map {}}
+          indeterminate={false}
           isToggledOn={false}
         >
           <Styled(input)
