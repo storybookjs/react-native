@@ -13,7 +13,7 @@ import StoryView from './components/StoryView';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
-interface Params {
+export interface Params {
   onDeviceUI: boolean;
   resetStorybook: boolean;
   disableWebsockets: boolean;
