@@ -8,7 +8,7 @@ interface IndicatorProps {
   children?: React.ReactNode;
   right?: boolean;
   overrides?: any;
-  styles?: any;
+  styles?: React.CSSProperties;
 }
 
 const Indicator = styled.div<IndicatorProps>(

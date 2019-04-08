@@ -123,20 +123,16 @@ const createSubgroup = ({
     accList.push(null);
 
     return accList.reduce<MsgElement[]>((eacc, el, ei) => {
-      switch (true) {
-        case injectionPoint === 0 && ei === 0: {
-          // at index 0, inject before
-          return eacc.concat(grouper(grouped, grouperIndex)).concat(el);
-        }
-        case injectionPoint > 0 && injectionPoint === ei + 1: {
-          // at index > 0, and next index WOULD BE injectionPoint, inject after
-          return eacc.concat(el).concat(grouper(grouped, grouperIndex));
-        }
-        default: {
-          // do not inject
-          return eacc.concat(el);
-        }
+      if (injectionPoint === 0 && ei === 0) {
+        // at index 0, inject before
+        return eacc.concat(grouper(grouped, grouperIndex)).concat(el);
       }
+      if (injectionPoint > 0 && injectionPoint === ei + 1) {
+        // at index > 0, and next index WOULD BE injectionPoint, inject after
+        return eacc.concat(el).concat(grouper(grouped, grouperIndex));
+      }
+      // do not inject
+      return eacc.concat(el);
     }, []);
   }
   return acc;
@@ -154,13 +150,11 @@ const Message = ({ msg }: MessageProps) => {
     .split(/\[2m/)
     .join('')
     .split(/\[22m/)
-    .reduce<string[]>((acc, item) => acc.concat(item), [])
+    .reduce((acc, item) => acc.concat(item), [] as string[])
     .map((item, li) =>
-      typeof item === 'string'
-        ? item
-            .split(/\[32m(.*?)\[39m/)
-            .map((i, index) => (index % 2 ? <Positive key={`p_${li}_${i}`}>{i}</Positive> : i))
-        : item
+      item
+        .split(/\[32m(.*?)\[39m/)
+        .map((i, index) => (index % 2 ? <Positive key={`p_${li}_${i}`}>{i}</Positive> : i))
     )
     .reduce((acc, item) => acc.concat(item))
     .map((item, li) =>
@@ -179,12 +173,12 @@ const Message = ({ msg }: MessageProps) => {
       }),
       []
     )
-    .reduce<MsgElement[]>(
+    .reduce(
       (acc, it) =>
         typeof it === 'string' ? acc.concat(it.split(/(at(.|\n)+\d+:\d+\))/)) : acc.concat(it),
-      []
+      [] as MsgElement[]
     )
-    .reduce<MsgElement[]>((acc, item) => acc.concat(item), [])
+    .reduce((acc, item) => acc.concat(item), [] as MsgElement[])
     .reduce(
       createSubgroup({
         startTrigger: e => typeof e === 'string' && e.indexOf('Expected ') !== -1,

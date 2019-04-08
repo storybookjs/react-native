@@ -2,7 +2,6 @@ import React from 'react';
 
 import { styled } from '@storybook/theming';
 
-// @ts-ignore TODO: migrate Message to typescript
 import Message from './Message';
 import Indicator from './Indicator';
 import colors from '../colors';
