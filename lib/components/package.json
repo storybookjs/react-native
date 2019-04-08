@@ -45,8 +45,8 @@
     "simplebar-react": "^0.1.5"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.1.0-alpha.22",
-    "@storybook/react": "5.1.0-alpha.22",
+    "@storybook/addon-actions": "5.1.0-alpha.23",
+    "@storybook/react": "5.1.0-alpha.23",
     "@types/js-beautify": "^1.8.0",
     "@types/react-syntax-highlighter": "^10.1.0",
     "@types/react-textarea-autosize": "^4.3.3",
