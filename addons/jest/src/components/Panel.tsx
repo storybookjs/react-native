@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 import { ScrollArea } from '@storybook/components';
 
 import Indicator from './Indicator';
 import Result, { FailedResult } from './Result';
-import provideJestResult from '../hoc/provideJestResult';
+import provideJestResult, { Test } from '../hoc/provideJestResult';
 import colors from '../colors';
 
 const List = styled.ul({
@@ -95,7 +94,12 @@ const SuiteTitle = styled.div({
   alignItems: 'center',
 });
 
-const Content = styled(({ tests, className }) => (
+interface ContentProps {
+  tests: Test[];
+  className?: string;
+}
+
+const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
       if (!result) {
@@ -142,7 +146,11 @@ const Content = styled(({ tests, className }) => (
   flex: '1 1 0%',
 });
 
-const Panel = ({ tests }) => (
+interface PanelProps {
+  tests: null | Test[];
+}
+
+const Panel = ({ tests }: PanelProps) => (
   <ScrollArea vertical>
     {tests ? <Content tests={tests} /> : <NoTests>This story has no tests configured</NoTests>}
   </ScrollArea>
@@ -150,14 +158,6 @@ const Panel = ({ tests }) => (
 
 Panel.defaultProps = {
   tests: null,
-};
-
-Panel.propTypes = {
-  tests: PropTypes.arrayOf(
-    PropTypes.shape({
-      result: PropTypes.object,
-    })
-  ),
 };
 
 export default provideJestResult(Panel);
