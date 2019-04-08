@@ -3,7 +3,11 @@ import deprecate from 'util-deprecate';
 import { normalize } from 'upath';
 import { ADD_TESTS } from './shared';
 
-const findTestResults = (testFiles, jestTestResults, jestTestFilesExt) =>
+const findTestResults = (
+  testFiles: string[],
+  jestTestResults: { testResults: Array<{ name: string }> },
+  jestTestFilesExt: string
+) =>
   Object.values(testFiles).map(name => {
     const fileName = `${name}${jestTestFilesExt}`;
 
@@ -14,7 +18,7 @@ const findTestResults = (testFiles, jestTestResults, jestTestFilesExt) =>
         fileName,
         name,
         result: jestTestResults.testResults.find(test =>
-          normalize(test.name).match(fileNamePattern)
+          Boolean(normalize(test.name).match(fileNamePattern))
         ),
       };
     }
@@ -22,7 +26,17 @@ const findTestResults = (testFiles, jestTestResults, jestTestFilesExt) =>
     return { fileName, name };
   });
 
-const emitAddTests = ({ kind, story, testFiles, options }) => {
+const emitAddTests = ({
+  kind,
+  story,
+  testFiles,
+  options,
+}: {
+  kind: string;
+  story: () => void;
+  testFiles: any;
+  options: { results: { testResults: Array<{ name: string }> }; filesExt: string };
+}) => {
   addons.getChannel().emit(ADD_TESTS, {
     kind,
     storyName: story,
@@ -30,15 +44,16 @@ const emitAddTests = ({ kind, story, testFiles, options }) => {
   });
 };
 
-export const withTests = userOptions => {
+export const withTests = (userOptions: { results: any; filesExt: string }) => {
   const defaultOptions = {
     filesExt: '((\\.specs?)|(\\.tests?))?(\\.js)?$',
   };
-  const options = Object.assign({}, defaultOptions, userOptions);
+  const options = { ...defaultOptions, ...userOptions };
 
-  return (...args) => {
+  return (...args: [(string | (() => void)), { kind: string; parameters: { jest?: any } }]) => {
     if (typeof args[0] === 'string') {
-      return deprecate((storyFn, { kind }) => {
+      // tslint:disable-next-line:no-shadowed-variable
+      return deprecate((storyFn: () => void, { kind }: { kind: string }) => {
         emitAddTests({ kind, story: storyFn, testFiles: args, options });
 
         return storyFn();
