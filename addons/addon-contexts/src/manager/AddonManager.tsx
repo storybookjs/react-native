@@ -17,7 +17,7 @@ export const AddonManager: TAddonManager = ({ channel }) => {
   );
 
   // from preview
-  useChannel(UPDATE_MANAGER, (newNodes) => setNodes(newNodes), [state]);
+  useChannel(UPDATE_MANAGER, (newNodes) => setNodes(newNodes), []);
 
   // to preview
   useEffect(() => channel.emit(UPDATE_PREVIEW, state), [state]);
