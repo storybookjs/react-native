@@ -97,7 +97,14 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/__tests__/**', '**/*.test.js', '**/*.stories.js', '**/storyshots/**/stories/**'],
+      files: [
+        '**/__tests__/**',
+        '**/*.test.js',
+        '**/*.stories.js',
+        '**/storyshots/**/stories/**',
+        'docs/src/new-components/lib/StoryLinkWrapper.js',
+        'docs/src/stories/**',
+      ],
       rules: {
         'import/no-extraneous-dependencies': ignore,
       },

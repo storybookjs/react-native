@@ -91,7 +91,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
 
     if (!prevProps.active && active) {
       // removes all elements from the redux map in store from the previous panel
-      store.dispatch(clearElements(null));
+      store.dispatch(clearElements());
       this.request();
     }
   }
@@ -134,7 +134,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
         () => {
           api.emit(EVENTS.REQUEST);
           // removes all elements from the redux map in store from the previous panel
-          store.dispatch(clearElements(null));
+          store.dispatch(clearElements());
         }
       );
     }

@@ -51,7 +51,7 @@ const HighlightToggleElement = styled.span({
   marginRight: '15px',
   marginTop: '10px',
 
-  input: { margin: 0, },
+  input: { margin: 0 },
 });
 
 interface ItemProps {
@@ -94,7 +94,11 @@ export class Item extends Component<ItemProps, ItemState> {
             {item.description}
           </HeaderBar>
           <HighlightToggleElement>
-            <HighlightToggle toggleId={highlightToggleId} type={type} elementsToHighlight={item ? item.nodes : null} />
+            <HighlightToggle
+              toggleId={highlightToggleId}
+              type={type}
+              elementsToHighlight={item ? item.nodes : null}
+            />
           </HighlightToggleElement>
         </Wrapper>
         {open ? (

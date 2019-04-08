@@ -13,5 +13,8 @@
   "include": [
     "../src/**/*",
     "../projects/**/*"
+  ],
+  "files": [
+    "./typings.d.ts"
   ]
 }

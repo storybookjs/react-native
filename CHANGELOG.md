@@ -1,3 +1,22 @@
+## 5.1.0-alpha.22 (April 5, 2019)
+
+### Features
+
+* Addon-actions: Add depth option for serialization ([#6410](https://github.com/storybooks/storybook/pull/6410))
+
+### Bug Fixes
+
+* Core: Respect webpack config stats in static build ([#6401](https://github.com/storybooks/storybook/pull/6401))
+
+### Maintenance
+
+* Typescript: Migrate addon-options ([#6428](https://github.com/storybooks/storybook/pull/6428))
+
+### Dependency Upgrades
+
+* Bump danger from 7.0.15 to 7.0.19 ([#6371](https://github.com/storybooks/storybook/pull/6371))
+* Bump jest-cli from 23.6.0 to 24.0.0 ([#5389](https://github.com/storybooks/storybook/pull/5389))
+
 ## 5.1.0-alpha.21 (April 4, 2019)
 
 ### Features
