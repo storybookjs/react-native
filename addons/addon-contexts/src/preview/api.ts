@@ -27,6 +27,6 @@ export const addonContextsAPI = singleton(() => {
     getContextNodes: getContextNodesWithSideEffects,
     getSelectionState: () => selectionState,
     getPropsMap,
-    renderInContexts: aggregateContexts,
+    getRenderFrom: aggregateContexts,
   };
 });
