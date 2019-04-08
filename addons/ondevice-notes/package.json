@@ -1,11 +1,12 @@
 {
   "name": "@storybook/addon-ondevice-notes",
   "version": "5.1.0-alpha.23",
-  "description": "Write notes for your Storybook stories.",
+  "description": "Write notes for your react-native Storybook stories.",
   "keywords": [
     "addon",
     "notes",
-    "storybook"
+    "storybook",
+    "react-native"
   ],
   "repository": {
     "type": "git",
