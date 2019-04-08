@@ -1,8 +1,7 @@
 import addons from '@storybook/addons';
 import { FORCE_RE_RENDER } from '@storybook/core-events';
 import { UPDATE_PREVIEW, UPDATE_MANAGER } from '../constants';
-import { getContextNodes, getPropsMap, aggregateContexts } from './libs';
-import { singleton } from './libs/functionals';
+import { getContextNodes, getPropsMap, aggregateContexts, singleton } from './libs';
 import { GetContextNodes } from '../@types';
 
 /**
@@ -25,9 +24,9 @@ export const addonContextsAPI = singleton(() => {
   };
 
   return {
-    aggregate: aggregateContexts,
-    getSelectionState: () => selectionState,
     getContextNodes: getContextNodesWithSideEffects,
+    getSelectionState: () => selectionState,
     getPropsMap,
+    renderInContexts: aggregateContexts,
   };
 });
