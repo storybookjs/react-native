@@ -66,6 +66,7 @@ exports[`Storyshots basics|Tooltip/ListItem active icon 1`] = `
 
 .emotion-0 {
   color: #333333;
+  font-weight: 400;
   color: #FF4785;
   font-weight: 700;
 }
@@ -236,10 +237,12 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 
 .emotion-3 {
   color: #333333;
+  font-weight: 400;
 }
 
 .emotion-0 {
   color: #333333;
+  font-weight: 400;
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
   color: transparent;
@@ -277,6 +280,7 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 
 .emotion-19 {
   color: #333333;
+  font-weight: 400;
   color: #FF4785;
   font-weight: 700;
 }
@@ -350,6 +354,7 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
 
 .emotion-33 {
   color: #333333;
+  font-weight: 400;
   color: rgba(51,51,51,0.3);
 }
 
@@ -598,6 +603,7 @@ exports[`Storyshots basics|Tooltip/ListItem default 1`] = `
 
 .emotion-0 {
   color: #333333;
+  font-weight: 400;
 }
 
 <a
@@ -681,6 +687,7 @@ exports[`Storyshots basics|Tooltip/ListItem default icon 1`] = `
 
 .emotion-0 {
   color: #333333;
+  font-weight: 400;
 }
 
 .emotion-4 svg {
@@ -794,6 +801,7 @@ exports[`Storyshots basics|Tooltip/ListItem disabled 1`] = `
 
 .emotion-1 {
   color: #333333;
+  font-weight: 400;
   color: rgba(51,51,51,0.3);
 }
 
@@ -944,6 +952,7 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
 
 .emotion-0 {
   color: #333333;
+  font-weight: 400;
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
   color: transparent;
@@ -1021,6 +1030,7 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions 1`] = `
 
 .emotion-1 {
   color: #333333;
+  font-weight: 400;
 }
 
 .emotion-4 svg {
@@ -1136,6 +1146,7 @@ exports[`Storyshots basics|Tooltip/ListItem w/positions active 1`] = `
 
 .emotion-1 {
   color: #333333;
+  font-weight: 400;
   color: #FF4785;
   font-weight: 700;
 }
