@@ -1,3 +1,10 @@
+## 5.1.0-alpha.24 (April 9, 2019)
+
+### Maintenance
+
+- React-native: Remove channel dep from ondevice-notes ([#6431](https://github.com/storybooks/storybook/pull/6431))
+- Typescript: Migrate @storybook/components ([#6095](https://github.com/storybooks/storybook/pull/6095))
+
 ## 5.1.0-alpha.23 (April 8, 2019)
 
 ### Features
