@@ -387,11 +387,11 @@ initStoryshots({
 });
 ```
 
-**Note: if you're using lerna you'll probably want to change this here's an example:**
+**Note: if you're using lerna you'll probably want to change this; here's an example:**
 
-in this case this is within a create-react-app where the file structure is as follows:
+In this case this is within a create-react-app where the file structure is as follows:
 
-if we have a package in our lerna project called app the paths are as follows:
+If we have a package in our lerna project called `app`, the paths are as follows:
 
 `./packages/app/src/__tests__/storshots.js`
 
