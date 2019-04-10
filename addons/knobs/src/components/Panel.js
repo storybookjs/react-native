@@ -197,9 +197,9 @@ export default class KnobPanel extends PureComponent {
       );
     }
 
-    const entries = Object.entries(groups);
     // Always sort 'Other' (ungrouped) tab last without changing the remaining tabs
-    entries.sort((a, b) => (a[0] === 'Other' ? 1 : 0)); // eslint-disable-line no-unused-vars
+    const entries = Object.entries(groups).filter(entry => entry[0] !== 'Other');
+    entries.push(Object.entries(groups).find(entry => entry[0] === 'Other'));
 
     return (
       <Fragment>

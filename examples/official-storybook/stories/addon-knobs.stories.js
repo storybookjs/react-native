@@ -124,6 +124,9 @@ storiesOf('Addons|Knobs.withKnobs', module)
     // NOTE: the default value must not change - e.g., do not do date('Label', new Date()) or date('Label')
     const defaultBirthday = new Date('Jan 20 2017 GMT+0');
 
+    // Ungrouped
+    const ungrouped = text('Ungrouped', 'Mumble');
+
     // General
     const name = text('Name', 'Storyteller', GROUP_IDS.GENERAL);
     const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 }, GROUP_IDS.GENERAL);
@@ -153,9 +156,6 @@ storiesOf('Addons|Knobs.withKnobs', module)
       },
       GROUP_IDS.DISPLAY
     );
-
-    // Ungrouped
-    const ungrouped = text('Ungrouped', 'Mumble');
 
     const style = { backgroundColor, ...otherStyles };
 
