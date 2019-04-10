@@ -87,8 +87,8 @@ export default class KnobPanel extends PureComponent {
           }
         }
 
-        // set all knobsquery params to be deleted from URL
-        queryParams[`knob-${name}`] = null;
+        // set all knobsquery params to serialized value
+        queryParams[`knob-${name}`] = Types[knob.type].serialize(knobs[name].value);
       });
 
       api.setQueryParams(queryParams);
