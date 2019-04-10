@@ -17,6 +17,7 @@ module.exports = {
     '<rootDir>/examples/vue-kitchen-sink',
     '<rootDir>/examples/angular-cli',
     '<rootDir>/examples/preact-kitchen-sink',
+    '<rootDir>/examples/cra-react15',
   ],
   roots: [
     '<rootDir>/addons',
@@ -35,6 +36,7 @@ module.exports = {
     'addon-jest.test.js',
     '/cli/test/',
     '/examples/cra-kitchen-sink/src/App.test.js',
+    '/examples/cra-react15/src/App.test.js',
     '/examples/cra-ts-kitchen-sink/src/components/',
     '/examples/angular-cli/src/app/',
   ],

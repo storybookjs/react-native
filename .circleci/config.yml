@@ -110,6 +110,11 @@ jobs:
             cd examples/preact-kitchen-sink
             yarn build-storybook
       - run:
+          name: Build cra react15
+          command: |
+            cd examples/cra-react15
+            yarn build-storybook
+      - run:
           name: Build official-storybook
           command: |
             cd examples/official-storybook
@@ -185,6 +190,11 @@ jobs:
           name: Run preact kitchen-sink (smoke test)
           command: |
             cd examples/preact-kitchen-sink
+            yarn storybook --smoke-test --quiet
+      - run:
+          name: Run cra reac15 (smoke test)
+          command: |
+            cd examples/cra-react15
             yarn storybook --smoke-test --quiet
   native-smoke-tests:
     <<: *defaults
