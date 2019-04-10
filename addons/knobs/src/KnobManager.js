@@ -77,6 +77,8 @@ export default class KnobManager {
 
       knobInfo.defaultValue = value;
       knobInfo.value = value;
+
+      delete knobValuesFromUrl[name];
     } else {
       knobInfo.defaultValue = options.value;
     }
