@@ -46,10 +46,15 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
     throw new Error('angular.json must have projects entry.');
   }
 
-  let project = projects[Object.keys(projects)[0]];
+  // By default, look for a `storybook` project in angular.json to use as configuration default
+  let project = projects.storybook;
 
-  if (defaultProject) {
-    project = projects[defaultProject];
+  if (!project) {
+    project = projects[Object.keys(projects)[0]];
+
+    if (defaultProject) {
+      project = projects[defaultProject];
+    }
   }
 
   const { options: projectOptions } = project.architect.build;
