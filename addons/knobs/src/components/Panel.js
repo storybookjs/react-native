@@ -72,7 +72,7 @@ export default class KnobPanel extends PureComponent {
 
   setKnobs = ({ knobs, timestamp }) => {
     const queryParams = {};
-    const { api, channel } = this.props;
+    const { api } = this.props;
 
     if (!this.options.timestamps || !timestamp || this.lastEdit <= timestamp) {
       Object.keys(knobs).forEach(name => {
@@ -80,15 +80,14 @@ export default class KnobPanel extends PureComponent {
         // For the first time, get values from the URL and set them.
         if (!this.loadedFromUrl) {
           const urlValue = api.getQueryParam(`knob-${name}`);
+
+          // If the knob value present in url
           if (urlValue !== undefined) {
-            // If the knob value present in url
-            knob.value = Types[knob.type].deserialize(urlValue);
-            channel.emit(CHANGE, knob);
+            const value = Types[knob.type].deserialize(urlValue);
+            knob.value = value;
+            queryParams[`knob-${name}`] = value;
           }
         }
-
-        // set all knobsquery params to serialized value
-        queryParams[`knob-${name}`] = Types[knob.type].serialize(knobs[name].value);
       });
 
       api.setQueryParams(queryParams);
