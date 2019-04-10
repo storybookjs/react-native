@@ -1,5 +1,4 @@
 /* eslint no-underscore-dangle: 0 */
-import deepEqual from 'fast-deep-equal';
 import escape from 'escape-html';
 
 import { getQueryParams } from '@storybook/client-api';
@@ -63,7 +62,7 @@ export default class KnobManager {
     // We need to return the value set by the knob editor via this.
     // But, if the user changes the code for the defaultValue we should set
     // that value instead.
-    if (existingKnob && deepEqual(options.value, existingKnob.defaultValue)) {
+    if (existingKnob && options.type === existingKnob.type) {
       return this.getKnobValue(existingKnob);
     }
 
