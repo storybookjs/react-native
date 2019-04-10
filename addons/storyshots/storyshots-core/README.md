@@ -387,13 +387,7 @@ initStoryshots({
 });
 ```
 
-**Note: if you're using lerna you'll probably want to change this; here's an example:**
-
-In this case this is within a create-react-app where the file structure is as follows:
-
-If we have a package in our lerna project called `app`, the paths are as follows:
-
-`./packages/app/src/__tests__/storshots.js`
+Or, as a more complex example, if we have a package in our `lerna` project called `app` with the path `./packages/app/src/__tests__/storsyhots.js` and the storybook config directory `./packages/app/.storybook`:
 
 ```js
 import path from 'path';
@@ -401,8 +395,6 @@ import initStoryshots from '@storybook/addon-storyshots';
 
 initStoryshots({ configPath: path.resolve(__dirname, '../../.storybook') });
 ```
-
-and the `.storybook` directory is in the usual place: `./packages/app/.storybook`
 
 ---
 
