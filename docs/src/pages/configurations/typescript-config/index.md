@@ -13,7 +13,7 @@ This is a central reference for using Storybook with TypeScript.
 yarn add -D typescript
 yarn add -D awesome-typescript-loader
 yarn add -D @types/storybook__react # typings
-yarn add -D @storybook/addon-info react-docgen-typescript-webpack-plugin # optional but recommended
+yarn add -D @storybook/addon-info react-docgen-typescript-loader # optional but recommended
 yarn add -D jest "@types/jest" ts-jest #testing
 ```
 
