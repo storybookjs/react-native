@@ -387,6 +387,15 @@ initStoryshots({
 });
 ```
 
+Or, as a more complex example, if we have a package in our `lerna` project called `app` with the path `./packages/app/src/__tests__/storsyhots.js` and the storybook config directory `./packages/app/.storybook`:
+
+```js
+import path from 'path';
+import initStoryshots from '@storybook/addon-storyshots';
+
+initStoryshots({ configPath: path.resolve(__dirname, '../../.storybook') });
+```
+
 `configPath` can also specify path to the `config.js` itself. In this case, config directory will be
 a base directory of the `configPath`. It may be useful when the `config.js` for test should differ from the
 original one. It also may be useful for separating tests to different test configs:
