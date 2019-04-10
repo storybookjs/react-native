@@ -396,9 +396,6 @@ import initStoryshots from '@storybook/addon-storyshots';
 initStoryshots({ configPath: path.resolve(__dirname, '../../.storybook') });
 ```
 
----
-
-
 `configPath` can also specify path to the `config.js` itself. In this case, config directory will be
 a base directory of the `configPath`. It may be useful when the `config.js` for test should differ from the
 original one. It also may be useful for separating tests to different test configs:
