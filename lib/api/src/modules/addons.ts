@@ -44,7 +44,7 @@ export interface SubAPI {
   getPanels: () => Collection;
   getSelectedPanel: () => string;
   setSelectedPanel: (panelName: string) => void;
-  setAddonState: (addonId: string, state: any, options: Options) => Promise<State>;
+  setAddonState: (addonId: string, state: any, options?: Options) => Promise<State>;
 }
 
 export function ensurePanel(panels: Panels, selectedPanel?: string, currentPanel?: string) {
@@ -80,6 +80,7 @@ export default ({ provider, store }: Module) => {
     api,
     state: {
       selectedPanel: ensurePanel(api.getPanels(), store.getState().selectedPanel),
+      addons: {},
     },
   };
 };

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import memoize from 'memoizerific';
 
-import { Combo, Consumer } from '@storybook/api';
+import { Combo, Consumer, API } from '@storybook/api';
 import { Global, Theme } from '@storybook/theming';
 
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
@@ -63,14 +63,15 @@ const getSelectedBackgroundColor = (list: Input[], currentSelectedValue: string)
   return 'transparent';
 };
 
-const mapper = ({ api, state }: Combo): { items: Input[] } => {
+const mapper = ({ api, state }: Combo): { items: Input[]; selected: string | null } => {
   const story = state.storiesHash[state.storyId];
   const list = story ? api.getParameters(story.id, PARAM_KEY) : [];
+  const selected = state.addons[PARAM_KEY] || null;
 
-  return { items: list || [] };
+  return { items: list || [], selected };
 };
 
-const getDisplayedItems = memoize(10)((list: Input[], selected: State['selected'], change) => {
+const getDisplayedItems = memoize(10)((list: Input[], selected: string | null, change) => {
   let availableBackgroundSelectorItems: Item[] = [];
 
   if (selected !== 'transparent') {
@@ -92,17 +93,26 @@ const getDisplayedItems = memoize(10)((list: Input[], selected: State['selected'
 });
 
 interface State {
-  selected: string;
   expanded: boolean;
 }
 
-export class BackgroundSelector extends Component<{}, State> {
+interface Props {
+  api: API;
+}
+
+export class BackgroundSelector extends Component<Props, State> {
   state: State = {
-    selected: null,
     expanded: false,
   };
 
-  change = (args: State) => this.setState(args);
+  change = (args: State & { selected: string | null }) => {
+    if (typeof args.expanded === 'boolean') {
+      this.setState({ expanded: args.expanded });
+    }
+    if (typeof args.selected === 'string') {
+      this.props.api.setAddonState(PARAM_KEY, args.selected);
+    }
+  };
 
   onVisibilityChange = (s: boolean) => {
     if (this.state.expanded !== s) {
@@ -111,11 +121,11 @@ export class BackgroundSelector extends Component<{}, State> {
   };
 
   render() {
-    const { expanded, selected } = this.state;
+    const { expanded } = this.state;
 
     return (
       <Consumer filter={mapper}>
-        {({ items }: { items: Input[] }) => {
+        {({ items, selected }: ReturnType<typeof mapper>) => {
           const selectedBackgroundColor = getSelectedBackgroundColor(items, selected);
           const links = getDisplayedItems(items, selectedBackgroundColor, this.change);
 
