@@ -2,8 +2,19 @@
 import deepEqual from 'fast-deep-equal';
 import escape from 'escape-html';
 
+import { getQueryParams } from '@storybook/client-api';
+
 import KnobStore from './KnobStore';
 import { SET } from './shared';
+
+import { deserializers } from './converters';
+
+const knobValuesFromUrl = Object.entries(getQueryParams()).reduce((acc, [k, v]) => {
+  if (k.includes('knob-')) {
+    return { ...acc, [k.replace('knob-', '')]: v };
+  }
+  return acc;
+}, {});
 
 // This is used by _mayCallChannel to determine how long to wait to before triggering a panel update
 const PANEL_UPDATE_INTERVAL = 400;
@@ -56,12 +67,19 @@ export default class KnobManager {
       return this.getKnobValue(existingKnob);
     }
 
-    const defaultValue = options.value;
     const knobInfo = {
       ...options,
       name,
-      defaultValue,
     };
+
+    if (knobValuesFromUrl[name]) {
+      const value = deserializers[options.type](knobValuesFromUrl[name]);
+
+      knobInfo.defaultValue = value;
+      knobInfo.value = value;
+    } else {
+      knobInfo.defaultValue = options.value;
+    }
 
     knobStore.set(name, knobInfo);
     return this.getKnobValue(knobStore.get(name));
