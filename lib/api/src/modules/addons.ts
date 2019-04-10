@@ -1,5 +1,6 @@
-import { Module } from '../index';
+import { Module, State } from '../index';
 import { ReactElement } from 'react';
+import { Options } from '../store';
 
 export enum types {
   TAB = 'tab',
@@ -43,6 +44,7 @@ export interface SubAPI {
   getPanels: () => Collection;
   getSelectedPanel: () => string;
   setSelectedPanel: (panelName: string) => void;
+  setAddonState: (addonId: string, state: any, options: Options) => Promise<State>;
 }
 
 export function ensurePanel(panels: Panels, selectedPanel?: string, currentPanel?: string) {
@@ -68,6 +70,9 @@ export default ({ provider, store }: Module) => {
     },
     setSelectedPanel: panelName => {
       store.setState({ selectedPanel: panelName }, { persistence: 'session' });
+    },
+    setAddonState: (addonId, state, options) => {
+      return store.setState({ addons: { [addonId]: state } }, options);
     },
   };
 
