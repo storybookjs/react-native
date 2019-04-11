@@ -4,7 +4,7 @@ import { STORY_CHANGED } from '@storybook/core-events';
 import { TabsState } from '@storybook/components';
 
 import { ThemeProvider, themes, convert } from '@storybook/theming';
-import Panel from '../Panel';
+import Panel, { DEFAULT_GROUP_ID } from '../Panel';
 import { CHANGE, SET } from '../../shared';
 import PropForm from '../PropForm';
 
@@ -153,7 +153,7 @@ describe('Panel', () => {
       root.unmount();
     });
 
-    it('should have one tab per groupId and an empty Other tab when all are defined', () => {
+    it('should have one tab per groupId when all are defined', () => {
       const root = mount(
         <ThemeProvider theme={convert(themes.light)}>
           <Panel api={testApi} active />
@@ -193,7 +193,7 @@ describe('Panel', () => {
       root.unmount();
     });
 
-    it('the Other tab should have its own additional content when there are knobs both with and without a groupId', () => {
+    it(`the ${DEFAULT_GROUP_ID} tab should have its own additional content when there are knobs both with and without a groupId`, () => {
       const root = mount(
         <ThemeProvider theme={convert(themes.light)}>
           <Panel api={testApi} active />
@@ -202,17 +202,17 @@ describe('Panel', () => {
 
       testApi.on.mock.calls[0][1]({
         knobs: {
-          foo: {
-            name: 'foo',
-            defaultValue: 'test',
-            used: true,
-            groupId: 'foo',
-          },
           bar: {
             name: 'bar',
             defaultValue: 'test2',
             used: true,
             // no groupId
+          },
+          foo: {
+            name: 'foo',
+            defaultValue: 'test',
+            used: true,
+            groupId: 'foo',
           },
         },
       });
@@ -223,7 +223,7 @@ describe('Panel', () => {
         .find(TabsState)
         .find('button')
         .map(child => child.prop('children'));
-      expect(titles).toEqual(['foo', 'Other']);
+      expect(titles).toEqual(['foo', DEFAULT_GROUP_ID]);
 
       const knobs = wrapper.find(PropForm).map(propForm => propForm.prop('knobs'));
       // there are props with no groupId so Other should also have its own PropForm
