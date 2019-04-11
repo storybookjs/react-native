@@ -117,7 +117,9 @@ Right aligned columns
 
 [link with title](http://nodeca.github.io/pica/demo/ 'title text!')
 
+<!--lint disable no-literal-urls-->
 Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+<!--lint enable no-literal-urls-->
 
 ## Images
 

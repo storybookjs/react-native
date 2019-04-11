@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-options",
-  "version": "5.1.0-alpha.20",
+  "version": "5.1.0-alpha.24",
   "description": "Options addon for storybook",
   "keywords": [
     "addon",
@@ -17,11 +17,12 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "dist/public_api.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.20",
+    "@storybook/addons": "5.1.0-alpha.24",
     "core-js": "^2.6.5",
     "util-deprecate": "^1.0.2"
   },

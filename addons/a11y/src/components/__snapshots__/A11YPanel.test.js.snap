@@ -215,7 +215,7 @@ exports[`A11YPanel should render report 1`] = `
 }
 
 .emotion-8 {
-  cursor: pointer;
+  cursor: not-allowed;
 }
 
 .emotion-12 {
@@ -316,7 +316,7 @@ exports[`A11YPanel should render report 1`] = `
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(Symbol.observable): [Function],
+        Symbol(observable): [Function],
       }
     }
   >
@@ -336,16 +336,15 @@ exports[`A11YPanel should render report 1`] = `
                 "110qmus": true,
                 "152wg9i": true,
                 "1551xjo": true,
+                "15paq49": true,
                 "176o2y5": true,
                 "1977chw": true,
                 "1cwfnw4": true,
                 "1fp6daz": true,
-                "1kjdm0k": true,
                 "1l7fvsg": true,
                 "1myfomu": true,
                 "1s6ajii": true,
                 "1vwgrhn": true,
-                "4g6ai3": true,
                 "4ryd4s": true,
                 "6hqipu": true,
                 "animation-u07e3c": true,
@@ -360,6 +359,7 @@ exports[`A11YPanel should render report 1`] = `
                 "qb28": true,
                 "snh8f7": true,
                 "tkevr6": true,
+                "vdhlfv": true,
               },
               "key": "css",
               "nonce": undefined,
@@ -683,7 +683,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-8{cursor:pointer;}
+                    .emotion-8{cursor:not-allowed;}
                   </style>
                   <style
                     data-emotion="css"
@@ -911,7 +911,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-8{cursor:pointer;}
+                    .emotion-8{cursor:not-allowed;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -1110,7 +1110,7 @@ exports[`A11YPanel should render report 1`] = `
                                 0
                                  Violations
                               </ForwardRef(render)>,
-                              "panel": <Unknown
+                              "panel": <Report
                                 empty="No a11y violations found."
                                 items={Array []}
                                 passes={false}
@@ -1124,7 +1124,7 @@ exports[`A11YPanel should render report 1`] = `
                                 0
                                  Passes
                               </ForwardRef(render)>,
-                              "panel": <Unknown
+                              "panel": <Report
                                 empty="No a11y check passed."
                                 items={Array []}
                                 passes={true}
@@ -1138,7 +1138,7 @@ exports[`A11YPanel should render report 1`] = `
                                 0
                                  Incomplete
                               </ForwardRef(render)>,
-                              "panel": <Unknown
+                              "panel": <Report
                                 empty="No a11y incomplete found."
                                 items={Array []}
                                 passes={false}
@@ -1163,11 +1163,13 @@ exports[`A11YPanel should render report 1`] = `
                                   >
                                     <Styled(button)
                                       active={true}
+                                      data-index={0}
                                       key="0"
                                       onClick={[Function]}
                                     >
                                       <button
                                         className="emotion-1"
+                                        data-index={0}
                                         onClick={[Function]}
                                       >
                                         <Styled(span)>
@@ -1181,11 +1183,14 @@ exports[`A11YPanel should render report 1`] = `
                                       </button>
                                     </Styled(button)>
                                     <Styled(button)
+                                      active={false}
+                                      data-index={1}
                                       key="1"
                                       onClick={[Function]}
                                     >
                                       <button
                                         className="emotion-3"
+                                        data-index={1}
                                         onClick={[Function]}
                                       >
                                         <Styled(span)>
@@ -1199,11 +1204,14 @@ exports[`A11YPanel should render report 1`] = `
                                       </button>
                                     </Styled(button)>
                                     <Styled(button)
+                                      active={false}
+                                      data-index={2}
                                       key="2"
                                       onClick={[Function]}
                                     >
                                       <button
                                         className="emotion-3"
+                                        data-index={2}
                                         onClick={[Function]}
                                       >
                                         <Styled(span)>
@@ -1242,6 +1250,7 @@ exports[`A11YPanel should render report 1`] = `
                                         addElement={[Function]}
                                         elementsToHighlight={Array []}
                                         highlightedElementsMap={Map {}}
+                                        indeterminate={false}
                                         isToggledOn={false}
                                         label="Highlight results"
                                         toggleId="0-global-checkbox"
@@ -1271,7 +1280,7 @@ exports[`A11YPanel should render report 1`] = `
                                 </Styled(div)>
                               </div>
                             </Styled(div)>
-                            <Component
+                            <Report
                               empty="No a11y violations found."
                               items={Array []}
                               passes={false}
@@ -1294,7 +1303,7 @@ exports[`A11YPanel should render report 1`] = `
                                   </div>
                                 </Styled(div)>
                               </Placeholder>
-                            </Component>
+                            </Report>
                           </div>
                         </Styled(div)>
                       </Tabs>

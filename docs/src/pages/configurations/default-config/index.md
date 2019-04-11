@@ -25,7 +25,7 @@ So, you could use any babel plugins or presets that you have used in your projec
 
 We use Webpack to serve and load JavaScript modules for the web.
 
-The webpack config [is configurable](/configurations/webpack), and the default can depend on which framework you're using and whether you've used a generator like [Create React App](https://github.com/facebookincubator/create-react-app) or Angular CLI etc.
+The webpack config [is configurable](/configurations/custom-webpack-config/), and the default can depend on which framework you're using and whether you've used a generator like [Create React App](https://github.com/facebookincubator/create-react-app) or Angular CLI etc.
 
 > We're trying to make storybook more zero-config over time, **help to hook into the config of generators is very welcome**.
 

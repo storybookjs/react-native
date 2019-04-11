@@ -121,7 +121,7 @@ function loadStories() {
   req = require.context('../../lib/ui/src', true, /\.stories\.js$/);
   importAll(req);
 
-  req = require.context('../../lib/components/src', true, /\.stories\.js$/);
+  req = require.context('../../lib/components/src', true, /\.stories\.tsx?$/);
   importAll(req);
 
   req = require.context('./stories', true, /\.stories\.js$/);

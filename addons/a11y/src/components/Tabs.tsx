@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, SyntheticEvent } from 'react';
 
 import { styled } from '@storybook/theming';
 import store, { clearElements } from '../redux-config';
@@ -71,7 +71,7 @@ const TabsWrapper = styled.div({});
 
 const List = styled.div(({ theme }) => ({
   boxShadow: `${theme.appBorderColor} 0 -1px 0 0 inset`,
-  background: 'rgba(0,0,0,.05)',
+  background: 'rgba(0, 0, 0, .05)',
   display: 'flex',
   justifyContent: 'space-between',
   whiteSpace: 'nowrap',
@@ -90,26 +90,22 @@ interface TabsState {
   active: number;
 }
 
+function retrieveAllNodesFromResults(items: Result[]): NodeResult[] {
+  return items.reduce((acc, item) => acc.concat(item.nodes), []);
+}
+
 export class Tabs extends Component<TabsProps, TabsState> {
   state: TabsState = {
     active: 0,
   };
 
-  onToggle = (index: number) => {
+  onToggle = (event: SyntheticEvent) => {
     this.setState({
-      active: index,
+      active: parseInt(event.currentTarget.getAttribute('data-index'), 10),
     });
     // removes all elements from the redux map in store from the previous panel
-    store.dispatch(clearElements(null));
+    store.dispatch(clearElements());
   };
-
-  retrieveAllNodeResults(items: Result[]): NodeResult[] {
-    let nodeArray: NodeResult[] = [];
-    for (const item of items) {
-      nodeArray = nodeArray.concat(item.nodes);
-    }
-    return nodeArray;
-  }
 
   render() {
     const { tabs } = this.props;
@@ -120,21 +116,25 @@ export class Tabs extends Component<TabsProps, TabsState> {
       <Container>
         <List>
           <TabsWrapper>
-          {tabs.map((tab, index) => (
-            <Item
-              key={index}
-              active={active === index ? true : undefined}
-              onClick={() => this.onToggle(index)}>
-              {tab.label}
-            </Item>
-          ))}
+            {tabs.map((tab, index) => (
+              <Item
+                key={index}
+                data-index={index}
+                active={active === index}
+                onClick={this.onToggle}
+              >
+                {tab.label}
+              </Item>
+            ))}
           </TabsWrapper>
           <GlobalToggleWrapper>
-            <HighlightToggleLabel htmlFor={highlightToggleId}>{highlightLabel}</HighlightToggleLabel>
+            <HighlightToggleLabel htmlFor={highlightToggleId}>
+              {highlightLabel}
+            </HighlightToggleLabel>
             <HighlightToggle
               toggleId={highlightToggleId}
               type={tabs[active].type}
-              elementsToHighlight={this.retrieveAllNodeResults(tabs[active].items)}
+              elementsToHighlight={retrieveAllNodesFromResults(tabs[active].items)}
               label={highlightLabel}
             />
           </GlobalToggleWrapper>

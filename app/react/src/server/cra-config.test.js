@@ -13,6 +13,8 @@ jest.mock('mini-css-extract-plugin', () => {});
 
 const SCRIPT_PATH = '.bin/react-scripts';
 
+const stripCwd = loaderPath => loaderPath.replace(process.cwd(), '');
+
 describe('cra-config', () => {
   beforeEach(() => {
     fs.realpathSync.mockReset();
@@ -64,7 +66,7 @@ esac
 if [ -x "$basedir/node" ]; then
   "$basedir/node"  "$basedir/../custom-react-scripts/bin/react-scripts.js" "$@"
   ret=$?
-else 
+else
   node  "$basedir/../custom-react-scripts/bin/react-scripts.js" "$@"
   ret=$?
 fi
@@ -103,7 +105,10 @@ exit $ret`
     });
 
     it('should apply styling webpack rules', () => {
-      expect(applyCRAWebpackConfig(mockConfig, '/test-project')).toMatchSnapshot();
+      const webpackConfig = applyCRAWebpackConfig(mockConfig, '/test-project');
+      // We don't want full paths in snapshots.
+      webpackConfig.resolveLoader.modules = webpackConfig.resolveLoader.modules.map(stripCwd);
+      expect(webpackConfig).toMatchSnapshot();
     });
   });
 
@@ -116,7 +121,10 @@ exit $ret`
     });
 
     it('should apply Babel, styling rules and merge plugins', () => {
-      expect(applyCRAWebpackConfig(mockConfig, '/test-project')).toMatchSnapshot();
+      const webpackConfig = applyCRAWebpackConfig(mockConfig, '/test-project');
+      // We don't want full paths in snapshots.
+      webpackConfig.resolveLoader.modules = webpackConfig.resolveLoader.modules.map(stripCwd);
+      expect(webpackConfig).toMatchSnapshot();
     });
   });
 });
