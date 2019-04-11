@@ -2,15 +2,15 @@ import addons from '@storybook/addons';
 import { FORCE_RE_RENDER } from '@storybook/core-events';
 import { UPDATE_PREVIEW, UPDATE_MANAGER } from '../constants';
 import { getContextNodes, getPropsMap, aggregateContexts, singleton } from './libs';
-import { GetContextNodes } from '../@types';
+import { GenericProp, GetContextNodes } from '../@types';
 
 /**
  * @Public
  * A singleton for handling wrapper-manager side-effects
  */
 export const addonContextsAPI = singleton(() => {
-  let selectionState = {};
   const channel = addons.getChannel();
+  let selectionState = {};
 
   // from manager
   channel.on(UPDATE_PREVIEW, (state) => (selectionState = Object.freeze(state)));
@@ -23,10 +23,15 @@ export const addonContextsAPI = singleton(() => {
     return nodes;
   };
 
+  // (Vue) hold a reference for updating props in its reactive system
+  let reactivePropsMap = {};
+  const updateReactiveSystem = (propsMap: GenericProp) => Object.assign(reactivePropsMap, propsMap);
+
   return {
     getContextNodes: getContextNodesWithSideEffects,
     getSelectionState: () => selectionState,
     getPropsMap,
     getRenderFrom: aggregateContexts,
+    updateReactiveSystem,
   };
 });

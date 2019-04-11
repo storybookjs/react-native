@@ -8,27 +8,26 @@ import {
   StringObject,
   WrapperSettings,
 } from './index';
+import { Component } from 'vue';
 
 export type Memorize = <T, U extends any[]>(
-  fn: (...args: U) => T,
-  resolver?: (...args: U) => unknown
-) => (...args: U) => T;
+  fn: (...arg: U) => T,
+  resolver?: (...arg: U) => unknown
+) => (...arg: U) => T;
 
-export type Singleton = <T, U extends any[]>(fn: (...args: U) => T) => (...args: U) => T;
+export type Singleton = <T, U extends any[]>(fn: (...arg: U) => T) => (...arg: U) => T;
 
 export type AggregateComponents = <T>(
   h: AnyFunctionReturns<T>
 ) => (
-  ...args: [ContextNode['components'], GenericProp, AddonOptions, number]
+  ...arg: [ContextNode['components'], GenericProp, AddonOptions, number]
 ) => AnyFunctionReturns<T>;
 
 export type AggregateContexts = <T>(
   h: AnyFunctionReturns<T>
-) => (...args: [ContextNode[], GenericObject, AnyFunctionReturns<any>]) => T;
+) => (...arg: [ContextNode[], GenericObject, AnyFunctionReturns<any>]) => T;
 
-export type GetMergedSettings = (
-  ...args: [Partial<AddonSetting>, Partial<AddonSetting>]
-) => ContextNode;
+export type GetMergedSettings = (...arg: [Partial<AddonSetting>, Partial<AddonSetting>]) => ContextNode;
 
 export type GetContextNodes = (settings: WrapperSettings) => ContextNode[];
 

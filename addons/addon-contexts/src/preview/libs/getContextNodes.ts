@@ -2,7 +2,7 @@ import { GetContextNodes, GetMergedSettings } from '../../@types';
 
 /**
  * @private
- * Merges the global (options) and the local (parameters) from a pair of setting;
+ * Merges the global (options) and the story (parameters) from a pair of setting;
  * @return the normalized definition for a contextual environment (-> node).
  */
 export const _getMergedSettings: GetMergedSettings = (
