@@ -37,4 +37,5 @@ export const aggregateContexts: AggregateContexts = (h) => (nodes, propsMap, nex
     .map(({ nodeId, components = [], options = {} }) =>
       _aggregateComponents(h)(components, propsMap[nodeId], options, components.length - 1)
     )
+    .reverse()
     .reduce((acc, agg) => agg(() => acc), next());

@@ -21,7 +21,7 @@ export type TToolbarControl = FCNoChildren<
   Omit<
     ContextNode & {
       selected: string;
-      setSelected: (...args: StringTuple) => void;
+      setSelected: (...arg: StringTuple) => void;
     },
     'components'
   >

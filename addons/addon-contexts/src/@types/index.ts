@@ -1,8 +1,10 @@
+import { Component } from 'vue';
+
 export * from './manager';
 export * from './preview';
 
 // helpers
-export type AnyFunctionReturns<T> = (...args: any[]) => T;
+export type AnyFunctionReturns<T> = (...arg: any[]) => T;
 export type GenericObject = { [key: string]: GenericObject };
 export type GenericProp = GenericObject | null;
 export type StringTuple = [string, string];
@@ -38,6 +40,12 @@ export type WrapperSettings = {
   parameters?: AddonSetting[] | undefined;
 };
 
-export type Wrapper = (...args: [AnyFunctionReturns<unknown>, unknown, WrapperSettings]) => unknown;
+export type Wrapper = (...arg: [AnyFunctionReturns<any>, unknown, WrapperSettings]) => unknown;
 
-export type WithContexts = (contexts: AddonSetting[]) => unknown;
+export type Renderer = (
+  nodes: ContextNode[],
+  props: GenericObject,
+  next: AnyFunctionReturns<unknown>
+) => Component;
+
+export type GetAddonDecorator = (render: Renderer) => (contexts: AddonSetting[]) => unknown;

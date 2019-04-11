@@ -1,4 +1,4 @@
-import { createElement as h } from 'react';
+import { createElement } from 'react';
 import addons, { types } from '@storybook/addons';
 import { AddonManager } from './manager/AddonManager';
 import { ID } from './constants';
@@ -8,6 +8,6 @@ addons.register(ID, (api) =>
     title: ID,
     type: types.TOOL,
     match: ({ viewMode }) => viewMode === 'story',
-    render: () => h(AddonManager, { channel: api.getChannel() }),
+    render: () => createElement(AddonManager, { channel: api.getChannel() }),
   })
 );
