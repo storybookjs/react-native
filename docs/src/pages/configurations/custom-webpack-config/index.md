@@ -197,14 +197,23 @@ module.exports = async ({ config, mode }) => {
 };
 ```
 
-Storybook uses the config returned from the above function to render your components in Storybook's "preview" iframe. Note that Storybook has a completely separate webpack config for its own UI (also referred to as the "manager"), so the customizations you make only applies to the rendering of your stories.
+Storybook uses the config returned from the above function to render your components in Storybook's "preview" iframe. Note that Storybook has a completely separate webpack config for its own UI (also referred to as the "manager"), so the customizations you make only applies to the rendering of your stories, i.e. you can completely replace `config.module.rules` if you want.
 
 Nevertheless, edit `config` with care. Make sure to preserve the following config options:
 
 - entry
 - output
 
-> If your custom webpack config uses a loader that does not explicitly include specific file extensions via the `test` property, it is necessary to `exclude` the `.ejs` file extension from that loader.
+Furthermore, `config` requires the `HtmlWebpackplugin` to generate the preview page, so rather than overwriting `config.plugins` you should probably append to it (or overwrite it with care), see [Issue #6020](https://github.com/storybooks/storybook/issues/6020) for examples:
+
+```js
+module.exports = async ({ config, mode }) => {
+  config.plugins.push(...)
+  return config;
+}
+```
+
+Finally, if your custom webpack config uses a loader that does not explicitly include specific file extensions via the `test` property, it is necessary to `exclude` the `.ejs` file extension from that loader.
 
 ### Extend Mode (**Deprecated**)
 

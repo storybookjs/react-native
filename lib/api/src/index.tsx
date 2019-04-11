@@ -142,6 +142,10 @@ class ManagerProvider extends Component<Props, State> {
 
     api.on(SET_STORIES, (data: { stories: StoriesRaw }) => {
       api.setStories(data.stories);
+      const options = storyId
+        ? api.getParameters(storyId, 'options')
+        : api.getParameters(Object.keys(data.stories)[0], 'options');
+      api.setOptions(options);
     });
     api.on(
       SELECT_STORY,
