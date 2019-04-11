@@ -5,7 +5,7 @@ import createChannel from '@storybook/channel-websocket';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
 import uuid from 'uuid';
-import PreviewHelp from './components/PreviewHelp';
+import { PreviewHelp } from './components/PreviewHelp';
 
 const mapper = ({ state, api }) => ({
   api,

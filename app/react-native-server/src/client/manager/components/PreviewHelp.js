@@ -25,34 +25,54 @@ const styles = {
   },
 };
 
-const PreviewHelp = () => (
-  <div style={styles.main}>
-    <h1>Welcome to storybook</h1>
-    <p>This is a UI component dev environment for your app.</p>
-    <p>
-      We've added some basic stories inside the {<span style={styles.code}>storybook/stories</span>}{' '}
-      directory. A story is a single state of one or more UI components. You can have as many
-      stories as you want. Basically a story is like a visual test case.
-    </p>
-    <p>
-      To see your Storybook stories on the device, you should start your mobile app for the{' '}
-      <span style={styles.code}>&lt;platform&gt;</span> of your choice (typically ios or android).
-      (Note that due to an implementation detail, your stories will only show up in the left-pane
-      after your device has connected to this storybook server.)
-    </p>
-    <p>
-      For <span style={styles.code}>create-react-native-app</span> apps:
-    </p>
-    <div style={styles.codeBlock}>
-      <pre style={styles.instructionsCode}>npm run &lt;platform&gt;</pre>
-    </div>
-    <p>
-      For <span style={styles.code}>react-native init</span> apps:
-    </p>
-    <div style={styles.codeBlock}>
-      <pre style={styles.instructionsCode}>react-native run-&lt;platform&gt;</pre>
-    </div>
-  </div>
-);
+export class PreviewHelp extends React.Component {
+  state = {
+    elapsed: 0,
+  };
 
-export { PreviewHelp as default };
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      const { elapsed } = this.state;
+      this.setState({ elapsed: elapsed + 1 });
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
+  render() {
+    const { elapsed } = this.state;
+    return (
+      <div style={styles.main}>
+        <h1>Welcome to storybook</h1>
+        <p>elapsed: {elapsed}</p>
+        <p>This is a UI component dev environment for your app.</p>
+        <p>
+          We've added some basic stories inside the{' '}
+          {<span style={styles.code}>storybook/stories</span>} directory. A story is a single state
+          of one or more UI components. You can have as many stories as you want. Basically a story
+          is like a visual test case.
+        </p>
+        <p>
+          To see your Storybook stories on the device, you should start your mobile app for the{' '}
+          <span style={styles.code}>&lt;platform&gt;</span> of your choice (typically ios or
+          android). (Note that due to an implementation detail, your stories will only show up in
+          the left-pane after your device has connected to this storybook server.)
+        </p>
+        <p>
+          For <span style={styles.code}>create-react-native-app</span> apps:
+        </p>
+        <div style={styles.codeBlock}>
+          <pre style={styles.instructionsCode}>npm run &lt;platform&gt;</pre>
+        </div>
+        <p>
+          For <span style={styles.code}>react-native init</span> apps:
+        </p>
+        <div style={styles.codeBlock}>
+          <pre style={styles.instructionsCode}>react-native run-&lt;platform&gt;</pre>
+        </div>
+      </div>
+    );
+  }
+}
