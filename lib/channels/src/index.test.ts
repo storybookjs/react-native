@@ -82,6 +82,22 @@ describe('Channel', () => {
       expect(listenerOutputData).toEqual(listenerInputData);
     });
 
+    it('should be callable with options on the event', () => {
+      const eventName = 'event1';
+      const listenerInputData = [{ event: {}, options: { depth: 1 } }];
+      let listenerOutputData: any = null;
+
+      channel.addListener(eventName, (...data) => {
+        listenerOutputData = data;
+      });
+      const sendSpy = jest.fn();
+      // @ts-ignore
+      channel.transport.send = sendSpy;
+      channel.emit(eventName, ...listenerInputData);
+      expect(listenerOutputData).toEqual(listenerInputData);
+      expect(sendSpy.mock.calls[0][1]).toEqual({ depth: 1 });
+    });
+
     it('should use setImmediate if async is true', () => {
       channel = new Channel({ async: true, transport });
       channel.addListener('event1', jest.fn());

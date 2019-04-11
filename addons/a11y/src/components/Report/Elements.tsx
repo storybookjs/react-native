@@ -23,7 +23,7 @@ const HighlightToggleElement = styled.span({
   fontWeight: 'normal',
   float: 'right',
   paddingRight: '15px',
-  input: { margin: 0, },
+  input: { margin: 0 },
 });
 
 interface ElementProps {
@@ -43,7 +43,12 @@ const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => 
       <ItemTitle>
         {element.target[0]}
         <HighlightToggleElement>
-          <HighlightToggle toggleId={highlightToggleId} type={type} elementsToHighlight={[element]} label={highlightLabel} />
+          <HighlightToggle
+            toggleId={highlightToggleId}
+            type={type}
+            elementsToHighlight={[element]}
+            label={highlightLabel}
+          />
         </HighlightToggleElement>
       </ItemTitle>
       <Rules rules={rules} passes={passes} />

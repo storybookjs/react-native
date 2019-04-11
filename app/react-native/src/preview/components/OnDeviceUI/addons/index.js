@@ -9,8 +9,6 @@ import style from '../style';
 export default class Addons extends PureComponent {
   constructor() {
     super();
-
-    addons.loadAddons({});
     this.panels = addons.getElements('panel');
 
     this.state = {

@@ -3,16 +3,16 @@ import axe, { AxeResults, ElementContext, RunOptions, Spec } from 'axe-core';
 import deprecate from 'util-deprecate';
 import { stripIndents } from 'common-tags';
 
-import addons, { StoryWrapper } from '@storybook/addons';
+import addons, { makeDecorator } from '@storybook/addons';
 import { EVENTS, PARAM_KEY } from './constants';
 
-const channel = addons.getChannel();
 let progress = Promise.resolve();
-let setup: {
+interface Setup {
   element?: ElementContext;
   config: Spec;
   options: RunOptions;
-} = { element: null, config: {}, options: {} };
+}
+let setup: Setup = { element: null, config: {}, options: {} };
 
 const getElement = () => {
   const storyRoot = document.getElementById('story-root');
@@ -23,9 +23,7 @@ const getElement = () => {
   return document.getElementById('root');
 };
 
-const report = (input: AxeResults) => {
-  channel.emit(EVENTS.RESULT, input);
-};
+const report = (input: AxeResults) => addons.getChannel().emit(EVENTS.RESULT, input);
 
 const run = (element: ElementContext, config: Spec, options: RunOptions) => {
   progress = progress.then(() => {
@@ -46,20 +44,22 @@ const run = (element: ElementContext, config: Spec, options: RunOptions) => {
   });
 };
 
-// NOTE: we should add paramaters to the STORY_RENDERED event and deprecate this
-export const withA11y: StoryWrapper = (getStory, context) => {
-  const params = context.parameters[PARAM_KEY];
-  if (params) {
-    setup = params;
-  }
-  return getStory(context);
-};
-
-channel.on(EVENTS.REQUEST, () => run(setup.element, setup.config, setup.options));
-
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();
 }
+
+export const withA11y = makeDecorator({
+  name: 'withA11Y',
+  parameterName: PARAM_KEY,
+  wrapper: (getStory, context, { parameters }) => {
+    if (parameters) {
+      setup = parameters as Setup;
+    }
+    addons.getChannel().on(EVENTS.REQUEST, () => run(setup.element, setup.config, setup.options));
+
+    return getStory(context);
+  },
+});
 
 // TODO: REMOVE at v6.0.0
 export const withA11Y = deprecate(
