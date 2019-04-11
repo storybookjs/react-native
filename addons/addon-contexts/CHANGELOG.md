@@ -4,13 +4,25 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
+## [1.2.0] - 2019-04-11
+
+## Feature
+
+- Extend framework supports to Vue - (#14).
+
+### Deprecation
+
+- `import { withContexts } from 'addon-contexts'` has been deprecated.  Please import from 'addon-contexts/react'
+instead.
+
+
 ## [1.1.0] - 2019-04-07
 
 ### Feature
 
 - Rewrite the wrapper implementation so it can be extended into other frameworks later - (#14).
 
-### Bugfix
+### Bugfixed
 
 - Fix bug: problems in adding extra contextual environment into the Storybook toolbar at the story level.
 
@@ -22,7 +34,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.0.7] - 2019-03-31
 
-### Bugfix
+### Bugfixed
 
 - Fix typo - (#12)
 
@@ -57,7 +69,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Skip v1.0.2 due to a bad release.
 
-### Bugfix
+### Bugfixed
 
 - Fix the whitelist issue and install warnings for publishing on NPM.
 - Remove babel source map to strip down bundling size.
@@ -65,7 +77,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.0.1] - 2019-03-29
 
-### Bugfix
+### Bugfixed
 
 - Fix register path problem.
 
