@@ -46,9 +46,9 @@ export default class KnobPanel extends PureComponent {
 
   componentDidMount() {
     this.mounted = true;
-    const { channel, api } = this.props;
-    channel.on(SET, this.setKnobs);
-    channel.on(SET_OPTIONS, this.setOptions);
+    const { api } = this.props;
+    api.on(SET, this.setKnobs);
+    api.on(SET_OPTIONS, this.setOptions);
 
     this.stopListeningOnStory = api.on(STORY_CHANGED, () => {
       if (this.mounted) {
@@ -60,9 +60,9 @@ export default class KnobPanel extends PureComponent {
 
   componentWillUnmount() {
     this.mounted = false;
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.removeListener(SET, this.setKnobs);
+    api.off(SET, this.setKnobs);
     this.stopListeningOnStory();
   }
 
@@ -100,9 +100,9 @@ export default class KnobPanel extends PureComponent {
   };
 
   reset = () => {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.emit(RESET);
+    api.emit(RESET);
   };
 
   copy = () => {
@@ -120,9 +120,9 @@ export default class KnobPanel extends PureComponent {
   };
 
   emitChange = changedKnob => {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.emit(CHANGE, changedKnob);
+    api.emit(CHANGE, changedKnob);
   };
 
   handleChange = changedKnob => {
@@ -139,9 +139,9 @@ export default class KnobPanel extends PureComponent {
   };
 
   handleClick = knob => {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.emit(CLICK, knob);
+    api.emit(CLICK, knob);
   };
 
   render() {
@@ -234,11 +234,6 @@ export default class KnobPanel extends PureComponent {
 KnobPanel.propTypes = {
   active: PropTypes.bool.isRequired,
   onReset: PropTypes.object, // eslint-disable-line
-  channel: PropTypes.shape({
-    emit: PropTypes.func,
-    on: PropTypes.func,
-    removeListener: PropTypes.func,
-  }).isRequired,
   api: PropTypes.shape({
     on: PropTypes.func,
     getQueryParam: PropTypes.func,
