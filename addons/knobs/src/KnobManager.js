@@ -1,4 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
+import { navigator } from 'global';
 import escape from 'escape-html';
 
 import { getQueryParams } from '@storybook/client-api';
@@ -59,10 +60,17 @@ export default class KnobManager {
 
     const { knobStore } = this;
     const existingKnob = knobStore.get(name);
+
     // We need to return the value set by the knob editor via this.
-    // But, if the user changes the code for the defaultValue we should set
-    // that value instead.
-    if (existingKnob && options.type === existingKnob.type) {
+    // Normally the knobs are reset and so re-use is safe as long as the types match
+    // when in storyshots, though the change event isn't called and so the knobs aren't reset, making this code fail
+    // so always create a new knob when in storyshots
+    if (
+      existingKnob &&
+      options.type === existingKnob.type &&
+      navigator &&
+      !navigator.userAgent.includes('jsdom')
+    ) {
       return this.getKnobValue(existingKnob);
     }
 
