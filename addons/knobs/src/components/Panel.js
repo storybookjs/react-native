@@ -197,9 +197,11 @@ export default class KnobPanel extends PureComponent {
       );
     }
 
-    // Always sort 'Other' (ungrouped) tab last without changing the remaining tabs
-    const entries = Object.entries(groups).filter(entry => entry[0] !== 'Other');
-    entries.push(Object.entries(groups).find(entry => entry[0] === 'Other'));
+    // Always sort DEFAULT_GROUP_ID (ungrouped) tab last without changing the remaining tabs
+    const unsortedEntries = Object.entries(groups);
+    const entries = unsortedEntries
+      .filter(entry => entry[0] !== DEFAULT_GROUP_ID)
+      .push(unsortedEntries.find(entry => entry[0] === DEFAULT_GROUP_ID));
 
     return (
       <Fragment>
