@@ -19,14 +19,6 @@
 - chore(deps-dev): bump @types/react from 16.8.12 to 16.8.13 ([#6457](https://github.com/storybooks/storybook/pull/6457))
 - chore(deps-dev): bump typescript from 3.4.1 to 3.4.2 ([#6456](https://github.com/storybooks/storybook/pull/6456))
 
-### cleanup
-
-- Improve storyshots loader error message ([#6383](https://github.com/storybooks/storybook/pull/6383))
-
-### doc-dependencies:update
-
-- chore(deps): bump marked from 0.5.2 to 0.6.2 in /docs ([#6462](https://github.com/storybooks/storybook/pull/6462))
-
 ## 5.1.0-alpha.24 (April 9, 2019)
 
 ### Maintenance
