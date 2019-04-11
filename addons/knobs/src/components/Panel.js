@@ -21,7 +21,7 @@ import PropForm from './PropForm';
 
 const getTimestamp = () => +new Date();
 
-const DEFAULT_GROUP_ID = 'Other';
+export const DEFAULT_GROUP_ID = 'Other';
 
 const PanelWrapper = styled(({ children, className }) => (
   <ScrollArea horizontal vertical className={className}>
@@ -198,10 +198,17 @@ export default class KnobPanel extends PureComponent {
     }
 
     // Always sort DEFAULT_GROUP_ID (ungrouped) tab last without changing the remaining tabs
-    const unsortedEntries = Object.entries(groups);
-    const entries = unsortedEntries
-      .filter(entry => entry[0] !== DEFAULT_GROUP_ID)
-      .push(unsortedEntries.find(entry => entry[0] === DEFAULT_GROUP_ID));
+    const sortEntries = g => {
+      const unsortedKeys = Object.keys(g);
+      if (unsortedKeys.indexOf(DEFAULT_GROUP_ID) !== -1) {
+        const sortedKeys = unsortedKeys.filter(key => key !== DEFAULT_GROUP_ID);
+        sortedKeys.push(DEFAULT_GROUP_ID);
+        return sortedKeys.map(key => [key, g[key]]);
+      }
+      return Object.entries(g);
+    };
+
+    const entries = sortEntries(groups);
 
     return (
       <Fragment>
