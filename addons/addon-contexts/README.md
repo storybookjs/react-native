@@ -38,8 +38,8 @@ once then apply it everywhere**.
 
 ## 🧰 Requirements
 
-Make sure the version of your Storybook is above v5.  Currently, only React is supported.  However, this addon is aimed
-to expend its framework supports in the near future.
+Make sure the version of your Storybook is above v5.  Currently, this addon supports the following frameworks:
+**React**, and **Vue**.  Other frameworks might get supported in the near future (PRs are welcoming).
 
 
 ## 🎬 Getting started
@@ -61,8 +61,8 @@ To load your contextual setups for your stories globally, adding the following l
 see it near your `addon.js` file):
 
 ```js
-import { addDecorator } from '@storybook/react';
-import { withContexts } from 'addon-contexts';
+import { addDecorator } from '@storybook/react'; // or '@storybook/vue'
+import { withContexts } from 'addon-contexts/react'; // or 'addon-contexts/vue'
 import { contexts } from './configs/contexts'; // we will define the contextual setups later in API section
 
 addDecorator(withContexts(contexts));
@@ -71,8 +71,8 @@ addDecorator(withContexts(contexts));
 Alternatively, just like other addons, you can use this addon only for a given set of stories:
 
 ```js
-import { storiesOf } from '@storybook/react';
-import { withContexts } from 'addon-contexts';
+import { storiesOf } from '@storybook/react'; // or '@storybook/vue'
+import { withContexts } from 'addon-contexts/react'; // or 'addon-contexts/vue'
 import { contexts } from './configs/contexts';
 
 const story = storiesOf('Component With Contexts', module)
@@ -93,8 +93,8 @@ story.add(
 ### Overview
 
 It is recommended to have a separate file for managing your contextual environment setups.  Let's add a file named
-`contexts.js` first.  Before diving into API details, here is an overview on the landscape.  For example, to inject
-component theming contexts to both `styled-components` and `material-ui` theme providers in stories:
+`contexts.js` first.  Before diving into API details, here is an overview on the landscape.  For example (in React),
+to inject component theming contexts to both `styled-components` and `material-ui` theme providers in stories:
 
 ```js
 export const contexts = [
@@ -149,13 +149,13 @@ An unique name of a contextual environment; if duplicated names provided, the la
 
 ---
 
-#### `components : React.ComponentType[]`  
+#### `components : (Component|string)[]`  
 (required)
 
 An array of components that is going to be injected to wrap stories.  This means this addon allow multiple wrapping
-components coexisted.  The wrapping sequence is from the left to right (parent -> children -> story). This nested
+components coexisted.  The wrapping sequence is from the left to right (parent -> children -> story).  This nested
 wrapping behaviour can be useful in some cases; for instance, in the above example, we are wrapping stories under
-`styled-componnets` and `material-ui` theme providers.
+`styled-componnets` and `material-ui` theme providers.  Also, you can use this addon to wrap any valid HTML tags.
 
 ---
 
