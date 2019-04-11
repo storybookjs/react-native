@@ -2849,7 +2849,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
                         <div>
                           It's a 
                            story:
-                          <UNDEFINED
+                          <Memo(TestComponent)
                             array={
                               Array [
                                 1,
@@ -2899,7 +2899,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
                               <div>
                                 It's a 
                                  story:
-                                <UNDEFINED
+                                <Memo(TestComponent)
                                   array={
                                     Array [
                                       1,
@@ -3024,7 +3024,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
                           maxPropStringLength={50}
                           maxPropsIntoLine={3}
                           node={
-                            <UNDEFINED
+                            <Memo(TestComponent)
                               array={
                                 Array [
                                   1,
@@ -3069,7 +3069,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
                               maxPropStringLength={50}
                               maxPropsIntoLine={3}
                               node={
-                                <UNDEFINED
+                                <Memo(TestComponent)
                                   array={
                                     Array [
                                       1,
