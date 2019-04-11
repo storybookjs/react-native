@@ -86,6 +86,8 @@ export default class KnobPanel extends PureComponent {
             const value = Types[knob.type].deserialize(urlValue);
             knob.value = value;
             queryParams[`knob-${name}`] = Types[knob.type].serialize(value);
+
+            api.emit(CHANGE, knob);
           }
         }
       });
