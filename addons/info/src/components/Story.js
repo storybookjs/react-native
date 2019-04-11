@@ -9,11 +9,10 @@ import global from 'global';
 import marksy from 'marksy';
 import Node from './Node';
 import { Pre } from './markdown';
+import { getDisplayName, getType } from '../react-utils';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
 const { STORYBOOK_REACT_CLASSES } = global;
-
-const getName = type => type.displayName || type.name;
 
 const stylesheetBase = {
   button: {
@@ -379,14 +378,14 @@ class Story extends Component {
     extract(children);
 
     const array = Array.from(types.keys());
-    array.sort((a, b) => (getName(a) > getName(b) ? 1 : -1));
+    array.sort((a, b) => (getDisplayName(a) > getDisplayName(b) ? 1 : -1));
 
     propTables = array.map((type, i) => (
       // eslint-disable-next-line react/no-array-index-key
-      <div key={`${getName(type)}_${i}`}>
-        <h3 style={stylesheet.propTableHead}>"{getName(type)}" Component</h3>
+      <div key={`${getDisplayName(type)}_${i}`}>
+        <h3 style={stylesheet.propTableHead}>"{getDisplayName(type)}" Component</h3>
         <this.props.PropTable
-          type={type}
+          type={getType(type)}
           maxPropObjectKeys={maxPropObjectKeys}
           maxPropArrayLength={maxPropArrayLength}
           maxPropStringLength={maxPropStringLength}
