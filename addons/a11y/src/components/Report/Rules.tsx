@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
-
-import { Icons } from '@storybook/components';
+import { Badge, Icons } from '@storybook/components';
 import { CheckResult } from 'axe-core';
 
 const impactColors = {
@@ -19,10 +18,22 @@ const List = styled.div({
   fontWeight: '400',
 } as any);
 
-const Item = styled.div({
+const Item = styled.div(() => {
+  return `
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 6px;
+
+    @media (max-width: 665px) {
+      display: block;
+    }
+  `;
+});
+
+const BadgeWrapper = styled.div({
+  marginBottom: '5px',
+  marginLeft: '5px',
   display: 'flex',
-  flexDirection: 'row',
-  marginBottom: '6px',
 });
 
 const Message = styled.div({
@@ -47,9 +58,9 @@ interface RuleProps {
 
 const Rule: FunctionComponent<RuleProps> = ({ rule, passes }) => (
   <Item>
-    <Status passes={passes || undefined} impact={rule.impact}>
-      {passes ? <Icons icon="check" /> : <Icons icon="cross" />}
-    </Status>
+    <BadgeWrapper>
+      <Badge status={passes ? "positive" : "negative"}>{rule.impact}</Badge>
+    </BadgeWrapper>
     <Message>{rule.message}</Message>
   </Item>
 );
