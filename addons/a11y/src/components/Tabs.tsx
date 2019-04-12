@@ -6,8 +6,7 @@ import HighlightToggle from './Report/HighlightToggle';
 import { NodeResult, Result } from 'axe-core';
 import { RuleType } from './A11YPanel';
 
-// TODO: reuse the Tabs component from @storybook/theming instead
-// of re-building identical functionality
+// TODO: reuse the Tabs component from @storybook/theming instead of re-building identical functionality
 
 const Container = styled.div({
   width: '100%',
@@ -18,26 +17,40 @@ const Container = styled.div({
 const HighlightToggleLabel = styled.label(({ theme }) => ({
   cursor: 'pointer',
   userSelect: 'none',
+  marginBottom: '3px',
+  marginRight: '3px',
   color: theme.color.dark,
 }));
 
-const GlobalToggleWrapper = styled.div(({ theme }) => ({
-  padding: '10px 15px 10px 0',
-  cursor: 'pointer',
-  fontSize: theme.typography.size.s2 - 1,
-  height: 40,
-  border: 'none',
+const GlobalToggleWrapper = styled.div(({ theme }) => {
+  return `
+    padding: 10px 12px 10px 0;
+    cursor: pointer;
+    font-size: ${theme.typography.size.s2 - 1}px;
+    height: 40px;
+    border: none;
+    margin-top: -40px;
+    float: right;
+    display: flex;
+    align-items: center;
 
-  display: 'flex',
-  alignItems: 'center',
+    @media (max-width: 665px) {
+      display: block;
+      margin-top: 0px;
+      padding: 12px 0px 3px 12px;
+      width: 100%;
+      float: left;
+      border-bottom: 1px solid rgba(0,0,0,.1);
+    }
 
-  input: {
-    marginLeft: 10,
-    marginRight: 0,
-    marginTop: 0,
-    marginBottom: 0,
-  },
-}));
+    input: {
+      margin-left: 10;
+      margin-right: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  `;
+});
 
 const Item = styled.button(
   ({ theme }) => ({
@@ -127,18 +140,18 @@ export class Tabs extends Component<TabsProps, TabsState> {
               </Item>
             ))}
           </TabsWrapper>
-          <GlobalToggleWrapper>
-            <HighlightToggleLabel htmlFor={highlightToggleId}>
-              {highlightLabel}
-            </HighlightToggleLabel>
-            <HighlightToggle
-              toggleId={highlightToggleId}
-              type={tabs[active].type}
-              elementsToHighlight={retrieveAllNodesFromResults(tabs[active].items)}
-              label={highlightLabel}
-            />
-          </GlobalToggleWrapper>
         </List>
+        <GlobalToggleWrapper>
+          <HighlightToggleLabel htmlFor={highlightToggleId}>
+            {highlightLabel}
+          </HighlightToggleLabel>
+          <HighlightToggle
+            toggleId={highlightToggleId}
+            type={tabs[active].type}
+            elementsToHighlight={retrieveAllNodesFromResults(tabs[active].items)}
+            label={highlightLabel}
+          />
+        </GlobalToggleWrapper>
         {tabs[active].panel}
       </Container>
     );

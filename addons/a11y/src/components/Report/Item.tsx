@@ -12,6 +12,7 @@ import HighlightToggle from './HighlightToggle';
 
 const Wrapper = styled.div(({ theme }) => ({
   display: 'flex',
+  width: '100%',
   borderBottom: `1px solid ${theme.appBorderColor}`,
   '&:hover': {
     background: theme.background.hoverable,
@@ -49,8 +50,7 @@ const HighlightToggleElement = styled.span({
   fontWeight: 'normal',
   float: 'right',
   marginRight: '15px',
-  marginTop: '10px',
-
+  alignSelf: 'center',
   input: { margin: 0 },
 });
 
