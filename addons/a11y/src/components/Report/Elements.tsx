@@ -28,11 +28,10 @@ const HighlightToggleElement = styled.span({
 
 interface ElementProps {
   element: NodeResult;
-  passes: boolean;
   type: RuleType;
 }
 
-const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => {
+const Element: FunctionComponent<ElementProps> = ({ element, type }) => {
   const { any, all, none } = element;
   const rules = [...any, ...all, ...none];
   const highlightToggleId = `${type}-${element.target[0]}`;
@@ -51,21 +50,20 @@ const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => 
           />
         </HighlightToggleElement>
       </ItemTitle>
-      <Rules rules={rules} passes={passes} />
+      <Rules rules={rules} type={type} />
     </Item>
   );
 };
 
 interface ElementsProps {
   elements: NodeResult[];
-  passes: boolean;
   type: RuleType;
 }
 
-export const Elements: FunctionComponent<ElementsProps> = ({ elements, passes, type }) => (
+export const Elements: FunctionComponent<ElementsProps> = ({ elements, type }) => (
   <ol>
     {elements.map((element, index) => (
-      <Element passes={passes} element={element} key={index} type={type} />
+      <Element element={element} key={index} type={type} />
     ))}
   </ol>
 );

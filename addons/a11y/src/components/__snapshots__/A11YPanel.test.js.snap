@@ -114,7 +114,7 @@ exports[`A11YPanel should render report 1`] = `
   min-height: 100%;
 }
 
-.emotion-10 {
+.emotion-7 {
   box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
   background: rgba(0,0,0,.05);
   display: -webkit-box;
@@ -182,12 +182,14 @@ exports[`A11YPanel should render report 1`] = `
   color: #E69D00;
 }
 
-.emotion-9 {
-  padding: 10px 15px 10px 0;
+.emotion-10 {
+  padding: 10px 12px 10px 0;
   cursor: pointer;
   font-size: 13px;
   height: 40px;
   border: none;
+  margin-top: -40px;
+  float: right;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -198,23 +200,36 @@ exports[`A11YPanel should render report 1`] = `
   align-items: center;
 }
 
-.emotion-9 input {
-  margin-left: 10px;
+@media (max-width:665px) {
+  .emotion-10 {
+    display: block;
+    margin-top: 0px;
+    padding: 12px 0px 3px 12px;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+  }
+}
+
+.emotion-10 input: {
+  margin-left: 10;
   margin-right: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.emotion-7 {
+.emotion-8 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  margin-bottom: 3px;
+  margin-right: 3px;
   color: #666666;
 }
 
-.emotion-8 {
+.emotion-9 {
   cursor: not-allowed;
 }
 
@@ -334,13 +349,13 @@ exports[`A11YPanel should render report 1`] = `
               "inserted": Object {
                 "0": true,
                 "110qmus": true,
-                "152wg9i": true,
                 "1551xjo": true,
                 "15paq49": true,
                 "176o2y5": true,
+                "195aj2u": true,
                 "1977chw": true,
-                "1cwfnw4": true,
-                "1fp6daz": true,
+                "19mcg9j": true,
+                "1kbt4a0": true,
                 "1l7fvsg": true,
                 "1myfomu": true,
                 "1s6ajii": true,
@@ -348,13 +363,13 @@ exports[`A11YPanel should render report 1`] = `
                 "4ryd4s": true,
                 "6hqipu": true,
                 "animation-u07e3c": true,
+                "aq4p19": true,
                 "fg630j": true,
                 "g90fw7": true,
                 "iau1th": true,
                 "jb2puo": true,
                 "kqzqgg": true,
                 "l0u0ek": true,
-                "nuzmgr": true,
                 "qacwg0": true,
                 "qb28": true,
                 "snh8f7": true,
@@ -617,7 +632,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-10{box-shadow:rgba(0,0,0,.1) 0 -1px 0 0 inset;background:rgba(0,0,0,.05);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;white-space:nowrap;}
+                    .emotion-7{box-shadow:rgba(0,0,0,.1) 0 -1px 0 0 inset;background:rgba(0,0,0,.05);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;white-space:nowrap;}
                   </style>
                   <style
                     data-emotion="css"
@@ -665,25 +680,31 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-9{padding:10px 15px 10px 0;cursor:pointer;font-size:13px;height:40px;border:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
+                    .emotion-10{padding:10px 12px 10px 0;cursor:pointer;font-size:13px;height:40px;border:none;margin-top:-40px;float:right;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-9 input{margin-left:10px;margin-right:0;margin-top:0;margin-bottom:0;}
+                    @media (max-width:665px){.emotion-10{display:block;margin-top:0px;padding:12px 0px 3px 12px;width:100%;float:left;border-bottom:1px solid rgba(0,0,0,.1);}}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-7{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:#666666;}
+                    .emotion-10 input:{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-8{cursor:not-allowed;}
+                    .emotion-8{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin-bottom:3px;margin-right:3px;color:#666666;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .emotion-9{cursor:not-allowed;}
                   </style>
                   <style
                     data-emotion="css"
@@ -767,13 +788,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-nuzmgr{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-bottom:1px solid rgba(0,0,0,.1);}
+                    .css-aq4p19{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-nuzmgr:hover{background:rgba(0,0,0,.05);}
+                    .css-aq4p19:hover{background:rgba(0,0,0,.05);}
                   </style>
                   <style
                     data-emotion="css"
@@ -803,13 +824,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1fp6daz{font-weight:normal;float:right;margin-right:15px;margin-top:10px;}
+                    .css-19mcg9j{font-weight:normal;float:right;margin-right:15px;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-1fp6daz input{margin:0;}
+                    .css-19mcg9j input{margin:0;}
                   </style>
                   <style
                     data-emotion="css"
@@ -824,7 +845,7 @@ exports[`A11YPanel should render report 1`] = `
                     .css-6hqipu{shape-rendering:inherit;-webkit-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);display:inline-block;height:12px;width:12px;margin-right:4px;}
                   </style>
                 </head>,
-                "ctr": 37,
+                "ctr": 38,
                 "isSpeedy": false,
                 "key": "css",
                 "nonce": undefined,
@@ -845,7 +866,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-10{box-shadow:rgba(0,0,0,.1) 0 -1px 0 0 inset;background:rgba(0,0,0,.05);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;white-space:nowrap;}
+                    .emotion-7{box-shadow:rgba(0,0,0,.1) 0 -1px 0 0 inset;background:rgba(0,0,0,.05);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;white-space:nowrap;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -893,25 +914,31 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-9{padding:10px 15px 10px 0;cursor:pointer;font-size:13px;height:40px;border:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
+                    .emotion-10{padding:10px 12px 10px 0;cursor:pointer;font-size:13px;height:40px;border:none;margin-top:-40px;float:right;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-9 input{margin-left:10px;margin-right:0;margin-top:0;margin-bottom:0;}
+                    @media (max-width:665px){.emotion-10{display:block;margin-top:0px;padding:12px 0px 3px 12px;width:100%;float:left;border-bottom:1px solid rgba(0,0,0,.1);}}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-7{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:#666666;}
+                    .emotion-10 input:{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-8{cursor:not-allowed;}
+                    .emotion-8{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin-bottom:3px;margin-right:3px;color:#666666;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .emotion-9{cursor:not-allowed;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -995,13 +1022,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-nuzmgr{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-bottom:1px solid rgba(0,0,0,.1);}
+                    .css-aq4p19{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-nuzmgr:hover{background:rgba(0,0,0,.05);}
+                    .css-aq4p19:hover{background:rgba(0,0,0,.05);}
                   </style>,
                   <style
                     data-emotion="css"
@@ -1031,13 +1058,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1fp6daz{font-weight:normal;float:right;margin-right:15px;margin-top:10px;}
+                    .css-19mcg9j{font-weight:normal;float:right;margin-right:15px;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-1fp6daz input{margin:0;}
+                    .css-19mcg9j input{margin:0;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -1111,7 +1138,7 @@ exports[`A11YPanel should render report 1`] = `
                                  Violations
                               </ForwardRef(render)>,
                               "panel": <Report
-                                empty="No a11y violations found."
+                                empty="No accessibility violations found."
                                 items={Array []}
                                 passes={false}
                                 type={0}
@@ -1125,7 +1152,7 @@ exports[`A11YPanel should render report 1`] = `
                                  Passes
                               </ForwardRef(render)>,
                               "panel": <Report
-                                empty="No a11y check passed."
+                                empty="No accessibility checks passed."
                                 items={Array []}
                                 passes={true}
                                 type={1}
@@ -1139,7 +1166,7 @@ exports[`A11YPanel should render report 1`] = `
                                  Incomplete
                               </ForwardRef(render)>,
                               "panel": <Report
-                                empty="No a11y incomplete found."
+                                empty="No accessibility checks incomplete."
                                 items={Array []}
                                 passes={false}
                                 type={2}
@@ -1155,7 +1182,7 @@ exports[`A11YPanel should render report 1`] = `
                           >
                             <Styled(div)>
                               <div
-                                className="emotion-10"
+                                className="emotion-7"
                               >
                                 <Styled(div)>
                                   <div
@@ -1226,62 +1253,62 @@ exports[`A11YPanel should render report 1`] = `
                                     </Styled(button)>
                                   </div>
                                 </Styled(div)>
-                                <Styled(div)>
-                                  <div
-                                    className="emotion-9"
+                              </div>
+                            </Styled(div)>
+                            <Styled(div)>
+                              <div
+                                className="emotion-10"
+                              >
+                                <Styled(label)
+                                  htmlFor="0-global-checkbox"
+                                >
+                                  <label
+                                    className="emotion-8"
+                                    htmlFor="0-global-checkbox"
                                   >
-                                    <Styled(label)
-                                      htmlFor="0-global-checkbox"
+                                    Highlight results
+                                  </label>
+                                </Styled(label)>
+                                <Connect(HighlightToggle)
+                                  elementsToHighlight={Array []}
+                                  label="Highlight results"
+                                  toggleId="0-global-checkbox"
+                                  type={0}
+                                >
+                                  <HighlightToggle
+                                    addElement={[Function]}
+                                    elementsToHighlight={Array []}
+                                    highlightedElementsMap={Map {}}
+                                    indeterminate={false}
+                                    isToggledOn={false}
+                                    label="Highlight results"
+                                    toggleId="0-global-checkbox"
+                                    type={0}
+                                  >
+                                    <Styled(input)
+                                      aria-label="Highlight result"
+                                      checked={false}
+                                      disabled={true}
+                                      id="0-global-checkbox"
+                                      onChange={[Function]}
+                                      type="checkbox"
                                     >
-                                      <label
-                                        className="emotion-7"
-                                        htmlFor="0-global-checkbox"
-                                      >
-                                        Highlight results
-                                      </label>
-                                    </Styled(label)>
-                                    <Connect(HighlightToggle)
-                                      elementsToHighlight={Array []}
-                                      label="Highlight results"
-                                      toggleId="0-global-checkbox"
-                                      type={0}
-                                    >
-                                      <HighlightToggle
-                                        addElement={[Function]}
-                                        elementsToHighlight={Array []}
-                                        highlightedElementsMap={Map {}}
-                                        indeterminate={false}
-                                        isToggledOn={false}
-                                        label="Highlight results"
-                                        toggleId="0-global-checkbox"
-                                        type={0}
-                                      >
-                                        <Styled(input)
-                                          aria-label="Highlight result"
-                                          checked={false}
-                                          disabled={true}
-                                          id="0-global-checkbox"
-                                          onChange={[Function]}
-                                          type="checkbox"
-                                        >
-                                          <input
-                                            aria-label="Highlight result"
-                                            checked={false}
-                                            className="emotion-8"
-                                            disabled={true}
-                                            id="0-global-checkbox"
-                                            onChange={[Function]}
-                                            type="checkbox"
-                                          />
-                                        </Styled(input)>
-                                      </HighlightToggle>
-                                    </Connect(HighlightToggle)>
-                                  </div>
-                                </Styled(div)>
+                                      <input
+                                        aria-label="Highlight result"
+                                        checked={false}
+                                        className="emotion-9"
+                                        disabled={true}
+                                        id="0-global-checkbox"
+                                        onChange={[Function]}
+                                        type="checkbox"
+                                      />
+                                    </Styled(input)>
+                                  </HighlightToggle>
+                                </Connect(HighlightToggle)>
                               </div>
                             </Styled(div)>
                             <Report
-                              empty="No a11y violations found."
+                              empty="No accessibility violations found."
                               items={Array []}
                               passes={false}
                               type={0}
@@ -1297,7 +1324,7 @@ exports[`A11YPanel should render report 1`] = `
                                       <div
                                         className="emotion-11"
                                       >
-                                        No a11y violations found.
+                                        No accessibility violations found.
                                       </div>
                                     </Styled(div)>
                                   </div>

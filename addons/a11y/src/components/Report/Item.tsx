@@ -56,7 +56,6 @@ const HighlightToggleElement = styled.span({
 
 interface ItemProps {
   item: Result;
-  passes: boolean;
   type: RuleType;
 }
 
@@ -75,7 +74,7 @@ export class Item extends Component<ItemProps, ItemState> {
     }));
 
   render() {
-    const { item, passes, type } = this.props;
+    const { item, type } = this.props;
     const { open } = this.state;
     const highlightToggleId = `${type}-${item.id}`;
 
@@ -104,7 +103,7 @@ export class Item extends Component<ItemProps, ItemState> {
         {open ? (
           <Fragment>
             <Info item={item} key="info" />
-            <Elements elements={item.nodes} passes={passes} type={type} key="elements" />
+            <Elements elements={item.nodes} type={type} key="elements" />
             <Tags tags={item.tags} key="tags" />
           </Fragment>
         ) : null}

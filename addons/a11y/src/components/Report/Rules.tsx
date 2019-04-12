@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 import { Badge, Icons } from '@storybook/components';
 import { CheckResult } from 'axe-core';
+import { RuleType } from '../A11YPanel';
 
 const impactColors = {
   minor: '#f1c40f',
@@ -53,28 +54,45 @@ const Status = styled.div(({ passes, impact }: { passes: boolean; impact: string
 
 interface RuleProps {
   rule: CheckResult;
-  passes: boolean;
+  type: RuleType;
 }
 
-const Rule: FunctionComponent<RuleProps> = ({ rule, passes }) => (
-  <Item>
-    <BadgeWrapper>
-      <Badge status={passes ? "positive" : "negative"}>{rule.impact}</Badge>
-    </BadgeWrapper>
-    <Message>{rule.message}</Message>
-  </Item>
-);
+const Rule: FunctionComponent<RuleProps> = ({ rule, type }) => {
+  let badgeType = '';
+
+  switch(type) {
+    case RuleType.PASS:
+      badgeType = 'positive';
+      break;
+    case RuleType.VIOLATION:
+      badgeType = 'negative';
+    break;
+    case RuleType.INCOMPLETION:
+      badgeType = 'neutral';
+    break;
+    default:
+      break;
+  }
+  return (
+    <Item>
+      <BadgeWrapper>
+        <Badge status={badgeType}>{rule.impact}</Badge>
+      </BadgeWrapper>
+      <Message>{rule.message}</Message>
+    </Item>
+  );
+}
 
 interface RulesProps {
   rules: CheckResult[];
-  passes: boolean;
+  type: RuleType;
 }
 
-export const Rules: FunctionComponent<RulesProps> = ({ rules, passes }) => {
+export const Rules: FunctionComponent<RulesProps> = ({ rules, type }) => {
   return (
     <List>
       {rules.map((rule, index) => (
-        <Rule passes={passes} rule={rule} key={index} />
+        <Rule type={type} rule={rule} key={index} />
       ))}
     </List>
   );
