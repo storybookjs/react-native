@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import SyntaxHighlighter from './syntaxhighlighter';
+import { SyntaxHighlighter } from './syntaxhighlighter';
 
 storiesOf('Basics|SyntaxHighlighter', module)
   .add('bash', () => (

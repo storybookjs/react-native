@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { storiesOf } from '@storybook/react';
 import { styled } from '@storybook/theming';
 
-import TooltipMessage from './TooltipMessage';
+import { TooltipMessage } from './TooltipMessage';
 import { WithToolTipState as WithTooltip } from './WithTooltip';
 
 const ViewPort = styled.div`

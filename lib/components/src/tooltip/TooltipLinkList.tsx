@@ -27,7 +27,10 @@ export interface TooltipLinkListProps {
   LinkWrapper?: LinkWrapperType;
 }
 
-const TooltipLinkList: FunctionComponent<TooltipLinkListProps> = ({ links, LinkWrapper }) => (
+export const TooltipLinkList: FunctionComponent<TooltipLinkListProps> = ({
+  links,
+  LinkWrapper,
+}) => (
   <List>
     {links.map(({ id, title, href, onClick, active, isGatsby, ...props }) => (
       <ListItem
@@ -46,5 +49,3 @@ const TooltipLinkList: FunctionComponent<TooltipLinkListProps> = ({ links, LinkW
 TooltipLinkList.defaultProps = {
   LinkWrapper: ListItem.defaultProps.LinkWrapper,
 };
-
-export default TooltipLinkList;

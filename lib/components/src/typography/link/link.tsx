@@ -2,7 +2,7 @@ import React, { AnchorHTMLAttributes, FunctionComponent } from 'react';
 import { styled, css, Theme } from '@storybook/theming';
 import { darken } from 'polished';
 
-import Icons from '../../icon/icon';
+import { Icons } from '../../icon/icon';
 
 // Cmd/Ctrl/Shift/Alt + Click should trigger default browser behaviour. Same applies to non-left clicks
 const LEFT_BUTTON = 0;
@@ -186,7 +186,15 @@ const A = styled.a<AProps>`
   ${linkStyles};
 `;
 
-const Link: FunctionComponent<LinkProps & AProps> = ({
+interface LinkProps extends LinkInnerProps, LinkStylesProps {
+  cancel?: boolean;
+  className?: string;
+  style?: object;
+  onClick?: (e: React.MouseEvent) => void;
+  href?: string;
+}
+
+export const Link: FunctionComponent<LinkProps & AProps> = ({
   cancel,
   children,
   onClick,
@@ -205,14 +213,6 @@ const Link: FunctionComponent<LinkProps & AProps> = ({
   );
 };
 
-interface LinkProps extends LinkInnerProps, LinkStylesProps {
-  cancel?: boolean;
-  className?: string;
-  style?: object;
-  onClick?: (e: React.MouseEvent) => void;
-  href?: string;
-}
-
 Link.defaultProps = {
   cancel: true,
   className: undefined,
@@ -221,5 +221,3 @@ Link.defaultProps = {
   withArrow: false,
   containsIcon: false,
 };
-
-export default Link;

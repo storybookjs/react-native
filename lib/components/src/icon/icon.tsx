@@ -8,17 +8,15 @@ const Path = styled.path({
   fill: 'currentColor',
 });
 
-export interface IconProps {
+export interface IconsProps {
   icon: IconKey;
 }
 
 // TODO: if we can resize the 1024 to 20, we can remove the size attributes
-const Icon: FunctionComponent<IconProps> = ({ icon, ...props }) => {
+export const Icons: FunctionComponent<IconsProps> = ({ icon, ...props }) => {
   return (
     <Svg viewBox="0 0 1024 1024" {...props}>
       <Path d={icons[icon]} />
     </Svg>
   );
 };
-
-export default Icon;

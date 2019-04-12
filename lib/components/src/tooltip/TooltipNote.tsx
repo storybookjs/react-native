@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 
 const Note = styled.div`
@@ -21,8 +20,6 @@ export interface TooltipNoteProps {
   note: string;
 }
 
-const TooltipNote: FunctionComponent<TooltipNoteProps> = ({ note }) => {
+export const TooltipNote: FunctionComponent<TooltipNoteProps> = ({ note }) => {
   return <Note>{note}</Note>;
 };
-
-export default TooltipNote;
