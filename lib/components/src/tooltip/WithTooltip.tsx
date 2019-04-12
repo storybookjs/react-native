@@ -29,6 +29,7 @@ interface WithTooltipPureProps {
   children: ReactNode;
   tooltipShown?: boolean;
   onVisibilityChange?: (visibility: boolean) => void;
+  onDoubleClick?: () => void;
 }
 
 // Pure, does not bind to the body

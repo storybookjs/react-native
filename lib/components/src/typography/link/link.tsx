@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { AnchorHTMLAttributes, FunctionComponent } from 'react';
 import { styled, css, Theme } from '@storybook/theming';
 import { darken } from 'polished';
 
@@ -180,15 +180,13 @@ const LinkInner = styled.span`
     `};
 `;
 
-interface AProps {
-  href?: string;
-}
+type AProps = AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const A = styled.a<AProps>`
   ${linkStyles};
 `;
 
-const Link: FunctionComponent<LinkProps> = ({
+const Link: FunctionComponent<LinkProps & AProps> = ({
   cancel,
   children,
   onClick,
