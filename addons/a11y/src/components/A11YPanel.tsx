@@ -178,7 +178,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
                         passes={false}
                         items={violations}
                         type={RuleType.VIOLATION}
-                        empty="No a11y violations found."
+                        empty="No accessibility violations found."
                       />
                     ),
                     items: violations,
@@ -191,7 +191,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
                         passes
                         items={passes}
                         type={RuleType.PASS}
-                        empty="No a11y check passed."
+                        empty="No accessibility checks passed."
                       />
                     ),
                     items: passes,
@@ -204,7 +204,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
                         passes={false}
                         items={incomplete}
                         type={RuleType.INCOMPLETION}
-                        empty="No a11y incomplete found."
+                        empty="No accessibility checks incomplete."
                       />
                     ),
                     items: incomplete,
