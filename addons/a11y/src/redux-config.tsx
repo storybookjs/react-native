@@ -1,16 +1,17 @@
 import { createStore } from 'redux';
 import { ADD_ELEMENT, CLEAR_ELEMENTS } from './constants';
+import { HighlightedElementData } from './components/Report/HighlightToggle';
 
 // actions
 
 // add element is passed a HighlightedElementData object as the payload
-export function addElement(payload: any) {
+export function addElement(payload: { element: HTMLElement; data: HighlightedElementData }) {
   return { type: ADD_ELEMENT, payload };
 }
 
 // clear elements is a function to remove elements from the map and reset elements to their original state
-export function clearElements(payload: any) {
-  return { type: CLEAR_ELEMENTS, payload };
+export function clearElements() {
+  return { type: CLEAR_ELEMENTS };
 }
 
 // reducers

@@ -26,6 +26,7 @@ const axeResult = {
         'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
       help: 'Elements must have sufficient color contrast',
       helpUrl: 'https://dequeuniversity.com/rules/axe/3.2/color-contrast?application=axeAPI',
+      nodes: [],
     },
   ],
   passes: [
@@ -36,6 +37,7 @@ const axeResult = {
       description: "Ensures ARIA attributes are allowed for an element's role",
       help: 'Elements must only use allowed ARIA attributes',
       helpUrl: 'https://dequeuniversity.com/rules/axe/3.2/aria-allowed-attr?application=axeAPI',
+      nodes: [],
     },
   ],
   violations: [
@@ -47,6 +49,7 @@ const axeResult = {
         'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
       help: 'Elements must have sufficient color contrast',
       helpUrl: 'https://dequeuniversity.com/rules/axe/3.2/color-contrast?application=axeAPI',
+      nodes: [],
     },
   ],
 };

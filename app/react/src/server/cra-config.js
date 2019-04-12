@@ -60,7 +60,7 @@ export function isReactScriptsInstalled(requiredVersion = '2.0.0') {
   try {
     // eslint-disable-next-line import/no-dynamic-require,global-require
     const reactScriptsJson = require(path.join(getReactScriptsPath(), 'package.json'));
-    return !semver.lt(reactScriptsJson.version, requiredVersion);
+    return !semver.gtr(requiredVersion, reactScriptsJson.version);
   } catch (e) {
     return false;
   }
@@ -175,6 +175,9 @@ export function applyCRAWebpackConfig(baseConfig, configDir) {
     resolve: {
       ...baseConfig.resolve,
       extensions: [...baseConfig.resolve.extensions, ...tsExtensions],
+    },
+    resolveLoader: {
+      modules: ['node_modules', path.join(getReactScriptsPath(), 'node_modules')],
     },
   };
 }
