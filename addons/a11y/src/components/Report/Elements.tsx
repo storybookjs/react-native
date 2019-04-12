@@ -14,14 +14,15 @@ const Item = styled.li({
 const ItemTitle = styled.span(({ theme }) => ({
   borderBottom: `1px solid ${theme.appBorderColor}`,
   width: '100%',
-  display: 'inline-block',
+  display: 'flex',
   paddingBottom: '6px',
   marginBottom: '6px',
+  justifyContent: 'space-between',
 }));
 
 const HighlightToggleElement = styled.span({
   fontWeight: 'normal',
-  float: 'right',
+  alignSelf: 'center',
   paddingRight: '15px',
   input: { margin: 0 },
 });

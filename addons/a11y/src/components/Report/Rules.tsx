@@ -27,12 +27,13 @@ const Item = styled.div(() => {
 
     @media (max-width: 665px) {
       display: block;
+      margin-bottom: 12px;
     }
   `;
 });
 
 const BadgeWrapper = styled.div({
-  marginBottom: '5px',
+  marginBottom: '3px',
   marginLeft: '5px',
   display: 'flex',
 });
