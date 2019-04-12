@@ -1,3 +1,24 @@
+## 5.1.0-alpha.25 (April 12, 2019)
+
+### Features
+
+- Addon-info: Add support for memoized components ([#6347](https://github.com/storybooks/storybook/pull/6347))
+- Addon-notes: Register notes as a panel or tab ([#6091](https://github.com/storybooks/storybook/pull/6091))
+
+### Bug Fixes
+
+- Core: Fix: custom parameters on preview url ([#6486](https://github.com/storybooks/storybook/pull/6486))
+- Addon-knobs: Fix sorting of ungrouped knobs panel ([#6480](https://github.com/storybooks/storybook/pull/6480))
+- Core: Use babel-loader from react-scripts ([#5308](https://github.com/storybooks/storybook/pull/5308))
+
+### Dependency Upgrades
+
+- Bump opn from 5.4.0 to 6.0.0 ([#6370](https://github.com/storybooks/storybook/pull/6370))
+- Bump @angular/forms from 7.2.7 to 7.2.12 ([#6424](https://github.com/storybooks/storybook/pull/6424))
+- chore(deps): bump marko from 4.16.7 to 4.16.9 ([#6459](https://github.com/storybooks/storybook/pull/6459))
+- chore(deps-dev): bump @types/react from 16.8.12 to 16.8.13 ([#6457](https://github.com/storybooks/storybook/pull/6457))
+- chore(deps-dev): bump typescript from 3.4.1 to 3.4.2 ([#6456](https://github.com/storybooks/storybook/pull/6456))
+
 ## 5.1.0-alpha.24 (April 9, 2019)
 
 ### Maintenance

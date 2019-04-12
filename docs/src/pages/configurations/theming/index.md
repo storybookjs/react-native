@@ -38,7 +38,6 @@ import { themes } from '@storybook/theming';
 // Option defaults.
 addParameters({
   options: {
-    name: 'Foo',
     theme: themes.dark,
   },
 });
