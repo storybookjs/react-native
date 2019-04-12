@@ -40,6 +40,7 @@ const BadgeWrapper = styled.div({
 
 const Message = styled.div({
   paddingLeft: '6px',
+  paddingRight: '23px',
 });
 
 const Status = styled.div(({ passes, impact }: { passes: boolean; impact: string }) => ({
