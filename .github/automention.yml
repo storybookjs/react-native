@@ -1,0 +1,5 @@
+'app: angular': ['kroeder', 'igor-dv']
+'app: react-native': ['benoitdion']
+'app: vue': ['backbone87']
+'addon: a11y': ['CodeByAlex', 'Armanio', 'jsomsanith']
+typescript: ['kroeder', 'gaetanmasse', 'ndelangen']
