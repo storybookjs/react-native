@@ -1,1 +1,1 @@
-{"version":"5.1.0-alpha.24","info":{"plain":"### Maintenance\n\n- React-native: Remove channel dep from ondevice-notes ([#6431](https://github.com/storybooks/storybook/pull/6431))\n- Typescript: Migrate @storybook/components ([#6095](https://github.com/storybooks/storybook/pull/6095))"}}
+{"version":"5.1.0-alpha.26","info":{"plain":"### Bug Fixes\n\n- Addon-background: Fix addon by moving 'iframe' styles ([#6502](https://github.com/storybooks/storybook/pull/6502))"}}

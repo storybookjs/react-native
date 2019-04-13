@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PropVal from './PropVal';
+import { getType } from '../react-utils';
 
 const stylesheet = {
   propStyle: {},
@@ -18,7 +19,7 @@ export default function Props(props) {
     singleLine,
   } = props;
   const nodeProps = node.props;
-  const { defaultProps } = node.type;
+  const { defaultProps } = getType(node.type);
   if (!nodeProps || typeof nodeProps !== 'object') {
     return <span />;
   }

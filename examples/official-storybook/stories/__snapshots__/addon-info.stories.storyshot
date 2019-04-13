@@ -940,7 +940,7 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
             <h3
               style="margin:20px 0 0 0"
             >
-              "" Component
+              "Unknown" Component
             </h3>
             <small>
               No propTypes defined!
@@ -950,7 +950,7 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
             <h3
               style="margin:20px 0 0 0"
             >
-              "" Component
+              "Unknown" Component
             </h3>
             <small>
               No propTypes defined!

@@ -1,9 +1,20 @@
 /* eslint no-underscore-dangle: 0 */
-import deepEqual from 'fast-deep-equal';
+import { navigator } from 'global';
 import escape from 'escape-html';
+
+import { getQueryParams } from '@storybook/client-api';
 
 import KnobStore from './KnobStore';
 import { SET } from './shared';
+
+import { deserializers } from './converters';
+
+const knobValuesFromUrl = Object.entries(getQueryParams()).reduce((acc, [k, v]) => {
+  if (k.includes('knob-')) {
+    return { ...acc, [k.replace('knob-', '')]: v };
+  }
+  return acc;
+}, {});
 
 // This is used by _mayCallChannel to determine how long to wait to before triggering a panel update
 const PANEL_UPDATE_INTERVAL = 400;
@@ -49,19 +60,35 @@ export default class KnobManager {
 
     const { knobStore } = this;
     const existingKnob = knobStore.get(name);
+
     // We need to return the value set by the knob editor via this.
-    // But, if the user changes the code for the defaultValue we should set
-    // that value instead.
-    if (existingKnob && deepEqual(options.value, existingKnob.defaultValue)) {
+    // Normally the knobs are reset and so re-use is safe as long as the types match
+    // when in storyshots, though the change event isn't called and so the knobs aren't reset, making this code fail
+    // so always create a new knob when in storyshots
+    if (
+      existingKnob &&
+      options.type === existingKnob.type &&
+      navigator &&
+      !navigator.userAgent.includes('jsdom')
+    ) {
       return this.getKnobValue(existingKnob);
     }
 
-    const defaultValue = options.value;
     const knobInfo = {
       ...options,
       name,
-      defaultValue,
     };
+
+    if (knobValuesFromUrl[name]) {
+      const value = deserializers[options.type](knobValuesFromUrl[name]);
+
+      knobInfo.defaultValue = value;
+      knobInfo.value = value;
+
+      delete knobValuesFromUrl[name];
+    } else {
+      knobInfo.defaultValue = options.value;
+    }
 
     knobStore.set(name, knobInfo);
     return this.getKnobValue(knobStore.get(name));
