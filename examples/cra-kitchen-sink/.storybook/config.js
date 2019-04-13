@@ -20,12 +20,11 @@ addParameters({
       brandUrl: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
       gridCellSize: 12,
     }),
-    storySort: (a, b) => (a.id > b.id ? -1 : 1),
   },
 });
 
 function loadStories() {
-  // put welcome screen at the top of the list so it's the first one displayed
+  // order of imports has no bearing, they are default sorted by localeCompare
   require('../src/stories/welcome');
 
   // automatically import all story js files that end with *.stories.js

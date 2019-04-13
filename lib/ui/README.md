@@ -174,3 +174,7 @@ The above action(or the `handleShortcut` method) accepts events as a constant de
 ### URL Changes
 
 TODO: state we use reach/router customized to query params
+
+### Story Order
+
+Stories are sorted alphabetically by the compareLocale function. The order in which they were imported has no bearing on the order.
