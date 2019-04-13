@@ -1,3 +1,9 @@
+## 5.1.0-alpha.26 (April 13, 2019)
+
+### Bug Fixes
+
+* Addon-background: Fix addon by moving 'iframe' styles ([#6502](https://github.com/storybooks/storybook/pull/6502))
+
 ## 5.1.0-alpha.25 (April 12, 2019)
 
 ### Features
