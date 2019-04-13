@@ -121,7 +121,7 @@
     "babel-preset-vue": "^2.0.2",
     "chalk": "^2.4.2",
     "codecov": "^3.1.0",
-    "codelyzer": "^4.5.0",
+    "codelyzer": "^5.0.0",
     "commander": "^2.19.0",
     "concurrently": "^4.0.1",
     "core-js": "^2.6.5",
