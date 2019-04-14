@@ -1,13 +1,21 @@
+## 5.0.7 (April 14, 2019)
+
+### Bug Fixes
+
+- Addon-Knobs: Fix sorting of knobs Panels ([#6480](https://github.com/storybooks/storybook/pull/6480))
+- UI: Fix clickable footer links on about page ([#6441](https://github.com/storybooks/storybook/pull/6441))
+- UI: Fix 'read full changelog' link on about page ([#6385](https://github.com/storybooks/storybook/pull/6385))
+
 ## 5.1.0-alpha.27 (April 14, 2019)
 
 ### Features
 
-* Core: Disable webpack performance hints in manager config ([#6390](https://github.com/storybooks/storybook/pull/6390))
-* Addon-A11y: Drop a11y filter on double click ([#6503](https://github.com/storybooks/storybook/pull/6503))
+- Core: Disable webpack performance hints in manager config ([#6390](https://github.com/storybooks/storybook/pull/6390))
+- Addon-A11y: Drop a11y filter on double click ([#6503](https://github.com/storybooks/storybook/pull/6503))
 
 ### Bug Fixes
 
-* Addon-Jest: use 'off' instead of 'removeListener' ([#6508](https://github.com/storybooks/storybook/pull/6508))
+- Addon-Jest: use 'off' instead of 'removeListener' ([#6508](https://github.com/storybooks/storybook/pull/6508))
 
 ## 5.1.0-alpha.26 (April 13, 2019)
 
@@ -463,6 +471,22 @@ NPM publish failed
 - Bump ts-node from 8.0.2 to 8.0.3 ([#5938](https://github.com/storybooks/storybook/pull/5938))
 - Bump react from 16.8.3 to 16.8.4 ([#5902](https://github.com/storybooks/storybook/pull/5902))
 - Bump marko from 4.15.3 to 4.15.4 ([#5939](https://github.com/storybooks/storybook/pull/5939))
+
+### Bug Fixes
+
+- Addon-a11y: Fix design icons ([#5991](https://github.com/storybooks/storybook/pull/5991))
+- Addon-cssresources: Fix `STORY_RENDERED` CSS reset ([#6050](https://github.com/storybooks/storybook/pull/6050))
+- CLI: Clear build folder in static build ([#6024](https://github.com/storybooks/storybook/pull/6024))
+- Addon-backgrounds: Set preview to theme color when "transparent" ([#6042](https://github.com/storybooks/storybook/pull/6042))
+- UI: Fix search item in menu ([#6027](https://github.com/storybooks/storybook/pull/6027))
+- Addon-knobs: Fix key press debouncing ([#6022](https://github.com/storybooks/storybook/pull/6022))
+- CLI: Fix welcome component in dark theme ([#5998](https://github.com/storybooks/storybook/pull/5998))
+- Addon-viewport: Fix viewport iframe dimensions ([#5993](https://github.com/storybooks/storybook/pull/5993))
+- Core: fix selectStory with one parameter ([#5983](https://github.com/storybooks/storybook/pull/5983))
+
+### Maintenance
+
+- Addon-viewport: Change styling to more closely match v4 ([#5979](https://github.com/storybooks/storybook/pull/5979))
 
 ## 5.0.1 (March 9, 2019)
 
