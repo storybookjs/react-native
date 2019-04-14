@@ -1,3 +1,14 @@
+## 5.1.0-alpha.27 (April 14, 2019)
+
+### Features
+
+* Core: Disable webpack performance hints in manager config ([#6390](https://github.com/storybooks/storybook/pull/6390))
+* Addon-A11y: Drop a11y filter on double click ([#6503](https://github.com/storybooks/storybook/pull/6503))
+
+### Bug Fixes
+
+* Addon-Jest: use 'off' instead of 'removeListener' ([#6508](https://github.com/storybooks/storybook/pull/6508))
+
 ## 5.1.0-alpha.26 (April 13, 2019)
 
 ### Bug Fixes
