@@ -1,7 +1,7 @@
 import addons from '@storybook/addons';
 import { FORCE_RE_RENDER } from '@storybook/core-events';
 import { UPDATE_PREVIEW, UPDATE_MANAGER } from '../constants';
-import { getContextNodes, getPropsMap, aggregateContexts, singleton } from './libs';
+import { getContextNodes, getPropsMap, getRendererFrom, singleton } from './libs';
 import { GenericProp, GetContextNodes } from '../@types';
 
 /**
@@ -28,10 +28,13 @@ export const addonContextsAPI = singleton(() => {
   const updateReactiveSystem = (propsMap: GenericProp) => Object.assign(reactivePropsMap, propsMap);
 
   return {
+    // methods get called on Storybook event lifecycle
     getContextNodes: getContextNodesWithSideEffects,
     getSelectionState: () => selectionState,
     getPropsMap,
-    getRenderFrom: aggregateContexts,
+
+    // methods for processing framework specific bindings
+    getRendererFrom,
     updateReactiveSystem,
   };
 });

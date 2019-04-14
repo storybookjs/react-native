@@ -1,4 +1,4 @@
-export { aggregateContexts } from './aggregators';
+export { memorize, singleton } from './functionals';
 export { getContextNodes } from './getContextNodes';
 export { getPropsMap } from './getPropsMap';
-export { memorize, singleton } from './functionals';
+export { getRendererFrom } from './getRendererFrom';

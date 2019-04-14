@@ -4,8 +4,8 @@ import { addonContextsAPI } from '../api';
 import { Renderer } from '../../@types';
 
 export const renderReact: Renderer = (...arg) => {
-  const { getRenderFrom } = addonContextsAPI();
-  return getRenderFrom(React.createElement)(...arg);
+  const { getRendererFrom } = addonContextsAPI();
+  return getRendererFrom(React.createElement)(...arg);
 };
 
 export const withContexts = getAddonDecorator(renderReact);
