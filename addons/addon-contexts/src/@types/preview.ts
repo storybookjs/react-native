@@ -16,13 +16,11 @@ export type Memorize = <T, U extends any[]>(
 
 export type Singleton = <T, U extends any[]>(fn: (...arg: U) => T) => (...arg: U) => T;
 
-export type AggregateComponents = <T>(
+export type GetAggregatedWrap = <T>(
   h: AnyFunctionReturns<T>
-) => (
-  ...arg: [ContextNode['components'], GenericProp, AddonOptions, number]
-) => AnyFunctionReturns<T>;
+) => (...arg: [ContextNode['components'], GenericProp, AddonOptions]) => AnyFunctionReturns<T>;
 
-export type AggregateContexts = <T>(
+export type GetRendererFrom = <T>(
   h: AnyFunctionReturns<T>
 ) => (...arg: [ContextNode[], GenericObject, AnyFunctionReturns<any>]) => T;
 
