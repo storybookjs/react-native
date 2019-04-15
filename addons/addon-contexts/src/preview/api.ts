@@ -1,8 +1,8 @@
 import addons from '@storybook/addons';
-import { FORCE_RE_RENDER } from '@storybook/core-events';
+import { FORCE_RE_RENDER, SET_CURRENT_STORY } from '@storybook/core-events';
 import { UPDATE_PREVIEW, UPDATE_MANAGER } from '../constants';
 import { getContextNodes, getPropsMap, getRendererFrom, singleton } from './libs';
-import { GenericProp, GetContextNodes } from '../@types';
+import { ContextNode, GenericObject, GetContextNodes } from '../@types';
 
 /**
  * @Public
@@ -10,22 +10,28 @@ import { GenericProp, GetContextNodes } from '../@types';
  */
 export const addonContextsAPI = singleton(() => {
   const channel = addons.getChannel();
+  let memorizedNodes: null | ContextNode[] = null;
   let selectionState = {};
 
   // from manager
+  channel.on(SET_CURRENT_STORY, () => (memorizedNodes = null));
   channel.on(UPDATE_PREVIEW, (state) => (selectionState = Object.freeze(state)));
   channel.on(UPDATE_PREVIEW, () => channel.emit(FORCE_RE_RENDER));
 
   // to manager
   const getContextNodesWithSideEffects: GetContextNodes = (...arg) => {
-    const nodes = getContextNodes(...arg);
-    channel.emit(UPDATE_MANAGER, nodes);
-    return nodes;
+    // we want to notify the manager only when the story changed since `parameter` can be changed
+    if (memorizedNodes === null) {
+      memorizedNodes = getContextNodes(...arg);
+      channel.emit(UPDATE_MANAGER, memorizedNodes);
+    }
+    return memorizedNodes;
   };
 
   // (Vue) hold a reference for updating props in its reactive system
   let reactivePropsMap = {};
-  const updateReactiveSystem = (propsMap: GenericProp) => Object.assign(reactivePropsMap, propsMap);
+  const updateReactiveSystem = (propsMap: GenericObject) =>
+    Object.assign(reactivePropsMap, propsMap);
 
   return {
     // methods get called on Storybook event lifecycle
