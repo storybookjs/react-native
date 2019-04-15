@@ -7,6 +7,12 @@ import { STORY } from './app.token';
 import { NgModuleMetadata, IStoryFn, NgStory } from './types';
 import { ReplaySubject } from 'rxjs';
 
+declare global {
+  interface Window {
+    NODE_ENV: 'string' | 'development' | undefined;
+  }
+}
+
 let platform: any = null;
 let promises: Array<Promise<NgModuleRef<any>>> = [];
 
@@ -16,8 +22,6 @@ const componentClass = class DynamicComponent {};
 type DynamicComponentType = typeof componentClass;
 
 const storyData = new ReplaySubject(1);
-
-declare var NODE_ENV: string | 'development';
 
 const getModule = (
   declarations: Array<Type<any> | any[]>,
@@ -77,7 +81,7 @@ const draw = (newModule: DynamicComponentType): void => {
   if (!platform) {
     insertDynamicRoot();
     try {
-      if (NODE_ENV !== 'development') {
+      if (window.NODE_ENV !== 'development') {
         enableProdMode();
       }
     } catch (e) {}
