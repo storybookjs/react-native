@@ -1,6 +1,7 @@
 'app: angular': ['kroeder', 'igor-dv']
 'app: react-native': ['benoitdion']
 'app: vue': ['backbone87']
+'api: addons': ['ndelangen']
 'addon: a11y': ['CodeByAlex', 'Armanio', 'jsomsanith']
 'addon: storysource': ['igor-dv', 'libetl']
 'addon: knobs': ['leoyli']
