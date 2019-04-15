@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
+
+## [1.2.1] - 2019-04-14
+
+## Feature
+
+- General improvement on addon performance and internal typing.
+
+
 ## [1.2.0] - 2019-04-11
 
 ## Feature
@@ -22,7 +30,7 @@ instead.
 
 - Rewrite the wrapper implementation so it can be extended into other frameworks later - (#14).
 
-### Bugfixed
+### Bug fixes
 
 - Fix bug: problems in adding extra contextual environment into the Storybook toolbar at the story level.
 
@@ -34,14 +42,14 @@ instead.
 
 ## [1.0.7] - 2019-03-31
 
-### Bugfixed
+### Bug fixes
 
 - Fix typo - (#12)
 
 
 ## [1.0.6] - 2019-03-31
 
-### Bugfix
+### Bug fixes
 
 - Fix bug: use addon-contexts without param specified - (#11).
 
@@ -69,7 +77,7 @@ instead.
 
 - Skip v1.0.2 due to a bad release.
 
-### Bugfixed
+### Bug fixes
 
 - Fix the whitelist issue and install warnings for publishing on NPM.
 - Remove babel source map to strip down bundling size.
@@ -77,7 +85,7 @@ instead.
 
 ## [1.0.1] - 2019-03-29
 
-### Bugfixed
+### Bug fixes
 
 - Fix register path problem.
 
