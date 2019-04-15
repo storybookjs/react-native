@@ -1,5 +1,3 @@
-import { Component } from 'vue';
-
 export * from './manager';
 export * from './preview';
 
@@ -46,6 +44,6 @@ export type Renderer = (
   nodes: ContextNode[],
   props: GenericObject,
   next: AnyFunctionReturns<unknown>
-) => Component;
+) => unknown;
 
-export type GetAddonDecorator = (render: Renderer) => (contexts: AddonSetting[]) => unknown;
+export type CreateAddonDecorator = (render: Renderer) => (contexts: AddonSetting[]) => unknown;

@@ -3,6 +3,7 @@ import { GetContextNodes, GetMergedSettings } from '../../@types';
 /**
  * @private
  * Merges the global (options) and the story (parameters) from a pair of setting;
+ *
  * @return the normalized definition for a contextual environment (-> node).
  */
 export const _getMergedSettings: GetMergedSettings = (
@@ -28,6 +29,7 @@ export const _getMergedSettings: GetMergedSettings = (
 });
 
 /**
+ * @nosideeffects
  * pairs up settings for merging normalizations to produce the contextual definitions (-> nodes);
  * it guarantee the adding order can be respected but not duplicated.
  */
