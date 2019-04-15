@@ -21,6 +21,7 @@ export const _getPropsByParamName: GetPropsByParamName = (params = [], name) => 
 };
 
 /**
+ * @nosideeffects
  * construct propsMap from Nodes based on a controlled state tracker.
  */
 export const getPropsMap: GetPropsMap = (nodes: ContextNode[], state) =>

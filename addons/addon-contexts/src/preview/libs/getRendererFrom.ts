@@ -30,7 +30,9 @@ export const _getAggregatedWrap: GetAggregatedWrap = (h) => (components, props, 
 };
 
 /**
- * Aggregate aggregated-components among all contextual nodes in a descending order.
+ * @nosideeffects
+ * Aggregate aggregated-components among all contextual nodes in a descending order;
+ * this is the core of this addon, which is based on the general virtual DOM implementation.
  *
  * @param {function} h - the associated `createElement` vNode creator from the framework
  */

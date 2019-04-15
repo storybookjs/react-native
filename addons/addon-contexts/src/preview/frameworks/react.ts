@@ -1,13 +1,15 @@
 import React from 'react';
-import { getAddonDecorator } from '../index';
+import { createAddonDecorator } from '../index';
 import { addonContextsAPI } from '../api';
 import { Renderer } from '../../@types';
 
-export const renderReact: Renderer = (...arg) => {
+/**
+ * This is the framework specific bindings for React.
+ * '@storybook/react' expects the returning object from a decorator to be a 'React Element' (vNode).
+ */
+export const renderReact: Renderer = (nodes, props, next) => {
   const { getRendererFrom } = addonContextsAPI();
-  return getRendererFrom(React.createElement)(...arg);
+  return getRendererFrom(React.createElement)(nodes, props, next);
 };
 
-export const withContexts = getAddonDecorator(renderReact);
-
-export default withContexts;
+export const withContexts = createAddonDecorator(renderReact);
