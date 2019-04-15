@@ -65,6 +65,7 @@ import { STORY_RENDERED } from '@storybook/core-events';
 import addons, { types } from '@storybook/addons';
 
 const ADDON_ID = 'myaddon';
+const PARAM_KEY = 'myAddon';
 const PANEL_ID = `${ADDON_ID}/panel`;
 
 class MyPanel extends React.Component {
