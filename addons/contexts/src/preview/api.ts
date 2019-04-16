@@ -15,7 +15,7 @@ export const addonContextsAPI = singleton(() => {
 
   // from manager
   channel.on(SET_CURRENT_STORY, () => (memorizedNodes = null));
-  channel.on(UPDATE_PREVIEW, (state) => (selectionState = Object.freeze(state)));
+  channel.on(UPDATE_PREVIEW, state => (selectionState = Object.freeze(state)));
   channel.on(UPDATE_PREVIEW, () => channel.emit(FORCE_RE_RENDER));
 
   // to manager
@@ -30,8 +30,7 @@ export const addonContextsAPI = singleton(() => {
 
   // (Vue) hold a reference for updating props in its reactive system
   let reactivePropsMap = {};
-  const updateReactiveSystem = (propsMap: GenericObject) =>
-    Object.assign(reactivePropsMap, propsMap);
+  const updateReactiveSystem = (propsMap: GenericObject) => ({ ...reactivePropsMap, ...propsMap });
 
   return {
     // methods get called on Storybook event lifecycle

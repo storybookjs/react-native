@@ -7,9 +7,7 @@ import { GetAggregatedWrap, GetRendererFrom } from '../../@types';
 
  * @param {function} h - the associated `createElement` vNode creator from the framework
  */
-export const _getAggregatedWrap: GetAggregatedWrap = (h) => (components, props, options) => (
-  vNode
-) => {
+export const _getAggregatedWrap: GetAggregatedWrap = h => (components, props, options) => vNode => {
   const last = components.length - 1;
   const isSkipped =
     // when set to disable
@@ -36,7 +34,7 @@ export const _getAggregatedWrap: GetAggregatedWrap = (h) => (components, props, 
  *
  * @param {function} h - the associated `createElement` vNode creator from the framework
  */
-export const getRendererFrom: GetRendererFrom = (h) => (nodes, propsMap, getStoryVNode) =>
+export const getRendererFrom: GetRendererFrom = h => (nodes, propsMap, getStoryVNode) =>
   nodes
     // map over contextual nodes to get the wrapping function
     .map(({ nodeId, components, options }) =>

@@ -10,9 +10,9 @@ export const _getPropsByParamName: GetPropsByParamName = (params = [], name) => 
     // when opt-out context
     (name === OPT_OUT && {}) ||
     // when menu option get selected
-    (name && params.find((param) => param.name === name)) ||
+    (name && params.find(param => param.name === name)) ||
     // when being initialized
-    params.find((param) => !!param.default) ||
+    params.find(param => !!param.default) ||
     // fallback to the first
     params[0] ||
     // fallback for destructuring

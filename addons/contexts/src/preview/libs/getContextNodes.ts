@@ -13,19 +13,17 @@ export const _getMergedSettings: GetMergedSettings = (
   nodeId: title || story.title || '',
   icon: icon || story.icon || '',
   title: title || story.title || '',
-  components: components,
+  components,
   params: !!(params.length || storyParams.length)
     ? params.concat(storyParams)
     : [{ name: '', props: {} }],
-  options: Object.assign(
-    {
-      deep: false,
-      disable: false,
-      cancelable: false,
-    },
-    options,
-    storyOptions
-  ),
+  options: {
+    deep: false,
+    disable: false,
+    cancelable: false,
+    ...options,
+    ...storyOptions,
+  },
 });
 
 /**
@@ -39,10 +37,10 @@ export const getContextNodes: GetContextNodes = ({ options, parameters }) => {
     .map(({ title } = {}) => title);
   return Array.from(new Set(titles))
     .filter(Boolean)
-    .map((title) =>
+    .map(title =>
       _getMergedSettings(
-        (options && options.find((option) => option.title === title)) || {},
-        (parameters && parameters.find((param) => param.title === title)) || {}
+        (options && options.find(option => option.title === title)) || {},
+        (parameters && parameters.find(param => param.title === title)) || {}
       )
     );
 };

@@ -14,7 +14,7 @@ export const renderVue: Renderer = (nodes, props, next) => {
   return Vue.extend({
     name: ID,
     data: () => reactiveProps,
-    render: (createElement) =>
+    render: createElement =>
       getRendererFrom((component, props, children) =>
         createElement(component, { props }, [children])
       )(nodes, reactiveProps, () => createElement(next() as Component)),

@@ -1,4 +1,4 @@
-import { Memorize, Singleton } from '../../@types';
+import { Memorize, Singleton } from '../../@types/';
 
 /**
  * Memorizes the calculated result of a function by an ES6 Map;
@@ -18,4 +18,4 @@ export const memorize: Memorize = function(fn, resolver) {
  * the returned value is cached for resolving the subsequent calls.
  * @return the singleton version of a function.
  */
-export const singleton: Singleton = (fn) => memorize(fn, () => 'singleton');
+export const singleton: Singleton = fn => memorize(fn, () => 'singleton');

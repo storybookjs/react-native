@@ -16,7 +16,7 @@ import { CreateAddonDecorator, Wrapper } from '../@types';
  *
  * @param render - framework specific bindings
  */
-export const createAddonDecorator: CreateAddonDecorator = (render) => {
+export const createAddonDecorator: CreateAddonDecorator = render => {
   const wrapper: Wrapper = (getStory, context, settings) => {
     const { getContextNodes, getSelectionState, getPropsMap } = addonContextsAPI();
     const nodes = getContextNodes(settings);
