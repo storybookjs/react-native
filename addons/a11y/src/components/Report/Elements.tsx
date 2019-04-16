@@ -51,7 +51,7 @@ const Element: FunctionComponent<ElementProps> = ({ element, type }) => {
           />
         </HighlightToggleElement>
       </ItemTitle>
-      <Rules rules={rules} type={type} />
+      <Rules rules={rules} />
     </Item>
   );
 };

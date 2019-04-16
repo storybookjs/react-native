@@ -54,24 +54,32 @@ const Status = styled.div(({ passes, impact }: { passes: boolean; impact: string
   },
 }));
 
-interface RuleProps {
-  rule: CheckResult;
-  type: RuleType;
+export enum ImpactValue {
+  MINOR = 'minor',
+  MODERATE = 'moderate',
+  SERIOUS = 'serious',
+  CRITICAL = 'critical',
 }
 
-const Rule: FunctionComponent<RuleProps> = ({ rule, type }) => {
-  let badgeType = '';
+interface RuleProps {
+  rule: CheckResult;
+}
 
-  switch(type) {
-    case RuleType.PASS:
-      badgeType = 'positive';
+const Rule: FunctionComponent<RuleProps> = ({ rule }) => {
+  let badgeType = '';
+  switch (rule.impact) {
+    case ImpactValue.CRITICAL:
+      badgeType = 'critical';
       break;
-    case RuleType.VIOLATION:
+    case ImpactValue.SERIOUS:
       badgeType = 'negative';
-    break;
-    case RuleType.INCOMPLETION:
+      break;
+    case ImpactValue.MODERATE:
+      badgeType = 'warning';
+      break;
+    case ImpactValue.MINOR:
       badgeType = 'neutral';
-    break;
+      break;
     default:
       break;
   }
@@ -83,18 +91,17 @@ const Rule: FunctionComponent<RuleProps> = ({ rule, type }) => {
       <Message>{rule.message}</Message>
     </Item>
   );
-}
+};
 
 interface RulesProps {
   rules: CheckResult[];
-  type: RuleType;
 }
 
-export const Rules: FunctionComponent<RulesProps> = ({ rules, type }) => {
+export const Rules: FunctionComponent<RulesProps> = ({ rules }) => {
   return (
     <List>
       {rules.map((rule, index) => (
-        <Rule type={type} rule={rule} key={index} />
+        <Rule rule={rule} key={index} />
       ))}
     </List>
   );
