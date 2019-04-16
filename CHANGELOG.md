@@ -1,3 +1,66 @@
+## 4.1.18 (April 15, 2019)
+
+### Bug Fixes
+
+- Pin react-treebeard dependency at 3.1.0 ([#6517](https://github.com/storybooks/storybook/pull/6517))
+
+## 4.1.17 (April 15, 2019)
+
+NPM publish failed
+
+## 5.0.7 (April 14, 2019)
+
+### Bug Fixes
+
+- Addon-Knobs: Fix sorting of knobs Panels ([#6480](https://github.com/storybooks/storybook/pull/6480))
+- UI: Fix clickable footer links on about page ([#6441](https://github.com/storybooks/storybook/pull/6441))
+- UI: Fix 'read full changelog' link on about page ([#6385](https://github.com/storybooks/storybook/pull/6385))
+
+## 5.1.0-alpha.27 (April 14, 2019)
+
+### Features
+
+- Core: Disable webpack performance hints in manager config ([#6390](https://github.com/storybooks/storybook/pull/6390))
+- Addon-A11y: Drop a11y filter on double click ([#6503](https://github.com/storybooks/storybook/pull/6503))
+
+### Bug Fixes
+
+- Addon-Jest: use 'off' instead of 'removeListener' ([#6508](https://github.com/storybooks/storybook/pull/6508))
+
+## 5.1.0-alpha.26 (April 13, 2019)
+
+### Bug Fixes
+
+- Addon-background: Fix addon by moving 'iframe' styles ([#6502](https://github.com/storybooks/storybook/pull/6502))
+
+## 5.1.0-alpha.25 (April 12, 2019)
+
+### Features
+
+- Addon-info: Add support for memoized components ([#6347](https://github.com/storybooks/storybook/pull/6347))
+- Addon-notes: Register notes as a panel or tab ([#6091](https://github.com/storybooks/storybook/pull/6091))
+
+### Bug Fixes
+
+- Core: Fix: custom parameters on preview url ([#6486](https://github.com/storybooks/storybook/pull/6486))
+- Addon-knobs: Fix sorting of ungrouped knobs panel ([#6480](https://github.com/storybooks/storybook/pull/6480))
+- Core: Use babel-loader from react-scripts ([#5308](https://github.com/storybooks/storybook/pull/5308))
+
+### Dependency Upgrades
+
+- Bump opn from 5.4.0 to 6.0.0 ([#6370](https://github.com/storybooks/storybook/pull/6370))
+- Bump @angular/forms from 7.2.7 to 7.2.12 ([#6424](https://github.com/storybooks/storybook/pull/6424))
+- chore(deps): bump marko from 4.16.7 to 4.16.9 ([#6459](https://github.com/storybooks/storybook/pull/6459))
+- chore(deps-dev): bump @types/react from 16.8.12 to 16.8.13 ([#6457](https://github.com/storybooks/storybook/pull/6457))
+- chore(deps-dev): bump typescript from 3.4.1 to 3.4.2 ([#6456](https://github.com/storybooks/storybook/pull/6456))
+
+## 5.1.0-alpha.24 (April 9, 2019)
+
+### Maintenance
+
+- React-native: Remove channel dep from ondevice-notes ([#6431](https://github.com/storybooks/storybook/pull/6431))
+- Typescript: Migrate @storybook/components ([#6095](https://github.com/storybooks/storybook/pull/6095))
+
 ## 5.1.0-alpha.23 (April 8, 2019)
 
 ### Features
@@ -418,6 +481,22 @@ NPM publish failed
 - Bump ts-node from 8.0.2 to 8.0.3 ([#5938](https://github.com/storybooks/storybook/pull/5938))
 - Bump react from 16.8.3 to 16.8.4 ([#5902](https://github.com/storybooks/storybook/pull/5902))
 - Bump marko from 4.15.3 to 4.15.4 ([#5939](https://github.com/storybooks/storybook/pull/5939))
+
+### Bug Fixes
+
+- Addon-a11y: Fix design icons ([#5991](https://github.com/storybooks/storybook/pull/5991))
+- Addon-cssresources: Fix `STORY_RENDERED` CSS reset ([#6050](https://github.com/storybooks/storybook/pull/6050))
+- CLI: Clear build folder in static build ([#6024](https://github.com/storybooks/storybook/pull/6024))
+- Addon-backgrounds: Set preview to theme color when "transparent" ([#6042](https://github.com/storybooks/storybook/pull/6042))
+- UI: Fix search item in menu ([#6027](https://github.com/storybooks/storybook/pull/6027))
+- Addon-knobs: Fix key press debouncing ([#6022](https://github.com/storybooks/storybook/pull/6022))
+- CLI: Fix welcome component in dark theme ([#5998](https://github.com/storybooks/storybook/pull/5998))
+- Addon-viewport: Fix viewport iframe dimensions ([#5993](https://github.com/storybooks/storybook/pull/5993))
+- Core: fix selectStory with one parameter ([#5983](https://github.com/storybooks/storybook/pull/5983))
+
+### Maintenance
+
+- Addon-viewport: Change styling to more closely match v4 ([#5979](https://github.com/storybooks/storybook/pull/5979))
 
 ## 5.0.1 (March 9, 2019)
 

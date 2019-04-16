@@ -247,6 +247,9 @@ exports[`Storyshots Basics|Brand/StorybookLogo normal 1`] = `
   viewBox="0 0 200 40"
   width="200px"
 >
+  <title>
+    Storybook logo
+  </title>
   <defs>
     <path
       d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
@@ -7470,6 +7473,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 
 .emotion-3 {
   color: #333333;
+  font-weight: 400;
 }
 
 .emotion-6 {
@@ -7557,6 +7561,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 
 .emotion-3 {
   color: #333333;
+  font-weight: 400;
 }
 
 .emotion-6 {
@@ -8401,7 +8406,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                     class="emotion-0"
                     height="40px"
                     role="img"
-                    title="Storybook"
                     viewBox="0 0 200 40"
                     width="200px"
                   >
@@ -9834,7 +9838,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                     class="emotion-0"
                     height="40px"
                     role="img"
-                    title="Storybook"
                     viewBox="0 0 200 40"
                     width="200px"
                   >
@@ -11352,7 +11355,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
           class="emotion-0"
           height="40px"
           role="img"
-          title="Storybook"
           viewBox="0 0 200 40"
           width="200px"
         >
@@ -11993,7 +11995,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
           class="emotion-0"
           height="40px"
           role="img"
-          title="Storybook"
           viewBox="0 0 200 40"
           width="200px"
         >
@@ -12331,7 +12332,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standardNoLink 1`] = `
         class="emotion-0"
         height="40px"
         role="img"
-        title="Storybook"
         viewBox="0 0 200 40"
         width="200px"
       >

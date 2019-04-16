@@ -305,6 +305,15 @@ Array [
   background: #FFFFFF;
 }
 
+.emotion-0 iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0 none;
+}
+
 <div
     class="emotion-1"
     offset="40"
@@ -320,7 +329,6 @@ Array [
           id="storybook-preview-iframe"
           scrolling="yes"
           src="http://example.com?id=string"
-          style="width:100%;height:100%;position:absolute;top:0;left:0;border:0 none"
           title="string"
         />
       </div>
@@ -766,6 +774,15 @@ Array [
   background: #FFFFFF;
 }
 
+.emotion-0 iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0 none;
+}
+
 <div
     class="emotion-1"
     offset="40"
@@ -781,7 +798,6 @@ Array [
           id="storybook-preview-iframe"
           scrolling="yes"
           src="http://example.com?id=string"
-          style="width:100%;height:100%;position:absolute;top:0;left:0;border:0 none"
           title="string"
         />
       </div>
