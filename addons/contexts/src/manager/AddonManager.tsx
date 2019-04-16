@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { useChannel } from './libs/useChannel';
 import { ToolBar } from './ToolBar';
 import { UPDATE_MANAGER, UPDATE_PREVIEW } from '../constants';
@@ -11,12 +12,12 @@ export const AddonManager: TAddonManager = ({ channel }) => {
   const [nodes, setNodes] = useState([]);
   const [state, setState] = useState({});
   const setSelected = useCallback(
-    (nodeId, name) => setState(obj => ({ ...obj, [nodeId]: name })),
+    (nodeId, name) => setState((state) => ({ ...state, [nodeId]: name })),
     []
   );
 
   // from preview
-  useChannel(UPDATE_MANAGER, newNodes => setNodes(newNodes), []);
+  useChannel(UPDATE_MANAGER, (newNodes) => setNodes(newNodes), []);
 
   // to preview
   useEffect(() => channel.emit(UPDATE_PREVIEW, state), [state]);

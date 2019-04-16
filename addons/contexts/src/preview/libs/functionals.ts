@@ -5,10 +5,10 @@ import { Memorize, Singleton } from '../../@types/';
  * the default is to memorize its the first argument;
  * @return the memorized version of a function.
  */
-export const memorize: Memorize = (fn, resolver) => {
+export const memorize: Memorize = function(fn, resolver) {
   const memo = new Map();
   return (...arg) => {
-    const key = resolver ? resolver(...arg) : arg[0];
+    const key = arguments.length === 1 ? arg[0] : resolver && resolver(...arg);
     return memo.get(key) || memo.set(key, fn(...arg)).get(key);
   };
 };

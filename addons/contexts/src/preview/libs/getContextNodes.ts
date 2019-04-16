@@ -2,27 +2,27 @@ import { GetContextNodes, GetMergedSettings } from '../../@types';
 
 /**
  * @private
- * Merges the top-level (global options) and the story-level (parameters) from a pair of setting;
+ * Merges the global (options) and the story (parameters) from a pair of setting;
  *
  * @return the normalized definition for a contextual environment (-> node).
  */
-export const _getMergedSettings: GetMergedSettings = (topLevel, storyLevel) => ({
-  nodeId: topLevel.title || storyLevel.title || '',
-  icon: topLevel.icon || storyLevel.icon || '',
-  title: topLevel.title || storyLevel.title || '',
-  components: topLevel.components || storyLevel.components || [],
-  params:
-    topLevel.params || storyLevel.params
-      ? Array()
-          .concat(topLevel.params, storyLevel.params)
-          .filter(Boolean)
-      : [{ name: '', props: {} }],
+export const _getMergedSettings: GetMergedSettings = (
+  { icon, title, components = [], params = [], options = {} },
+  { params: storyParams = [], options: storyOptions = {}, ...story }
+) => ({
+  nodeId: title || story.title || '',
+  icon: icon || story.icon || '',
+  title: title || story.title || '',
+  components,
+  params: !!(params.length || storyParams.length)
+    ? params.concat(storyParams)
+    : [{ name: '', props: {} }],
   options: {
     deep: false,
     disable: false,
     cancelable: false,
-    ...topLevel.options,
-    ...storyLevel.options,
+    ...options,
+    ...storyOptions,
   },
 });
 

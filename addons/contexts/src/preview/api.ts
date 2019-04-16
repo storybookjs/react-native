@@ -28,15 +28,9 @@ export const addonContextsAPI = singleton(() => {
     return memorizedNodes;
   };
 
-  /**
-   * (Vue specific)
-   * Vue will inject getter/setters on the first rendering of the addon,
-   * which is the reason why we have to keep an internal reference and use `Object.assign` to update it.
-   */
+  // (Vue) hold a reference for updating props in its reactive system
   let reactivePropsMap = {};
-  const updateReactiveSystem = (propsMap: GenericObject) =>
-    /* tslint:disable:prefer-object-spread */
-    Object.assign(reactivePropsMap, propsMap);
+  const updateReactiveSystem = (propsMap: GenericObject) => ({ ...reactivePropsMap, ...propsMap });
 
   return {
     // methods get called on Storybook event lifecycle
