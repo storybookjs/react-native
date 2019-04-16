@@ -8456,9 +8456,9 @@ damerau-levenshtein@^1.0.4:
   integrity sha1-AxkcQyy27qFou3fzpV/9zLiXhRQ=
 
 danger@^7.0.15:
-  version "7.0.19"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-7.0.19.tgz#aa3d976fc7bfa616e1537ad8951c0d13f0a1c42d"
-  integrity sha512-vqV3kF71asWTxa/YvOfDg379SS20MwAp33uoHKz+hcd8zlmLSpA90V+ZonNsNbQkbsuTTjQGtLVlGVBVezL5DA==
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-7.1.2.tgz#eeb311c9bb6f0cd0244fe2af38c19f918a7db3a5"
+  integrity sha512-9rXe/w62QU8NC6xMgyLwKc7m/dI+PMkbu+88EMJ1RakwoQnQeoMyxqATyH0ORmIbqNG8dkxtU7sOwZ2eAzxpyQ==
   dependencies:
     "@babel/polyfill" "^7.2.5"
     "@octokit/rest" "^16.14.1"
@@ -8477,8 +8477,10 @@ danger@^7.0.15:
     lodash.includes "^4.3.0"
     lodash.isobject "^3.0.2"
     lodash.keys "^4.0.8"
+    lodash.mapvalues "^4.6.0"
     lodash.memoize "^4.1.2"
     memfs-or-file-map-to-github-branch "^1.1.0"
+    micromatch "^3.1.10"
     node-cleanup "^2.1.2"
     node-fetch "^2.3.0"
     override-require "^1.1.1"
