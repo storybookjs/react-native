@@ -54,7 +54,7 @@ Then, register the addon by adding the following line into your `addon.js` file 
 under the storybook config directory of your project):
 
 ```js
-import 'addon-contexts/register';
+import '@storybook/addon-contexts/register';
 ```
 
 To load your contextual setups for your stories globally, adding the following lines into `config.js` file (you should
@@ -62,7 +62,7 @@ see it near your `addon.js` file):
 
 ```js
 import { addDecorator } from '@storybook/react'; // or '@storybook/vue'
-import { withContexts } from 'addon-contexts/react'; // or 'addon-contexts/vue'
+import { withContexts } from '@storybook/addon-contexts/react'; // or '@storybook/addon-contexts/vue'
 import { contexts } from './configs/contexts'; // we will define the contextual setups later in API section
 
 addDecorator(withContexts(contexts));
@@ -72,7 +72,7 @@ Alternatively, just like other addons, you can use this addon only for a given s
 
 ```js
 import { storiesOf } from '@storybook/react'; // or '@storybook/vue'
-import { withContexts } from 'addon-contexts/react'; // or 'addon-contexts/vue'
+import { withContexts } from '@storybook/addon-contexts/react'; // or '@storybook/addon-contexts/vue'
 import { contexts } from './configs/contexts';
 
 const story = storiesOf('Component With Contexts', module)
