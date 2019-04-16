@@ -9,7 +9,7 @@ const findTestResults = (
   jestTestFilesExt: string
 ) =>
   Object.values(testFiles).map(name => {
-    const fileName = `${name}${jestTestFilesExt}`;
+    const fileName = `[\\/\\\\]${name}${jestTestFilesExt}`;
 
     if (jestTestResults && jestTestResults.testResults) {
       const fileNamePattern = new RegExp(fileName);
