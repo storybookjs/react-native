@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "5.1.0-alpha.27",
+  "version": "5.1.0-alpha.28",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -22,17 +22,17 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.27",
-    "@storybook/channel-websocket": "5.1.0-alpha.27",
-    "@storybook/channels": "5.1.0-alpha.27",
-    "@storybook/client-api": "5.1.0-alpha.27",
-    "@storybook/core-events": "5.1.0-alpha.27",
+    "@storybook/addons": "5.1.0-alpha.28",
+    "@storybook/channel-websocket": "5.1.0-alpha.28",
+    "@storybook/channels": "5.1.0-alpha.28",
+    "@storybook/client-api": "5.1.0-alpha.28",
+    "@storybook/core-events": "5.1.0-alpha.28",
     "react-native-swipe-gestures": "^1.0.3",
     "rn-host-detect": "^1.1.5"
   },
   "devDependencies": {
-    "react-native": "^0.57.8",
-    "@types/react-native": "^0.57.42"
+    "@types/react-native": "^0.57.42",
+    "react-native": "^0.57.8"
   },
   "peerDependencies": {
     "react": "*",
