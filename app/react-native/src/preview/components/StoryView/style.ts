@@ -1,4 +1,5 @@
-export default {
+import { StyleSheet } from 'react-native';
+export default StyleSheet.create({
   main: {
     flex: 1,
   },
@@ -8,4 +9,4 @@ export default {
     alignItems: 'center',
     justifyContent: 'center',
   },
-};
+});

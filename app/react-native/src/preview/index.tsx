@@ -1,50 +1,64 @@
-/* eslint-disable no-underscore-dangle */
-
 import React from 'react';
 import { AsyncStorage } from 'react-native';
+// @ts-ignore
 import getHost from 'rn-host-detect';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
 import Channel from '@storybook/channels';
 import createChannel from '@storybook/channel-websocket';
+// @ts-ignore remove when client-api is migrated to TS
 import { StoryStore, ClientApi } from '@storybook/client-api';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
+export interface Params {
+  onDeviceUI: boolean;
+  resetStorybook: boolean;
+  disableWebsockets: boolean;
+  query: string;
+  host: string;
+  port: number;
+  secured: boolean;
+  initialSelection: any;
+  shouldPersistSelection: boolean;
+  tabOpen: number;
+  isUIHidden: boolean;
+  shouldDisableKeyboardAvoidingView: boolean;
+  keyboardAvoidingViewVerticalOffset: number;
+}
+
 export default class Preview {
+  currentStory: any;
+  _clientApi: ClientApi;
+  _stories: StoryStore;
+  _addons: any;
+  _decorators: any[];
+
   constructor() {
     this._addons = {};
     this._decorators = [];
 
     this._stories = new StoryStore({});
     this._clientApi = new ClientApi({ storyStore: this._stories });
-
-    [
-      'storiesOf',
-      'setAddon',
-      'addDecorator',
-      'addParameters',
-      'clearDecorators',
-      'getStorybook',
-      'raw',
-    ].forEach(method => {
-      this[method] = this._clientApi[method].bind(this._clientApi);
-    });
   }
 
-  configure(loadStories, module) {
+  api = () => {
+    return this._clientApi;
+  };
+
+  configure = (loadStories: () => void, module: any) => {
     loadStories();
     if (module && module.hot) {
       module.hot.accept(() => this._sendSetStories());
       // TODO remove all global decorators on dispose
     }
-  }
+  };
 
-  getStorybookUI(params = {}) {
-    let webUrl = null;
-    let channel = null;
+  getStorybookUI = (params: Partial<Params> = {}) => {
+    let webUrl: string = null;
+    let channel: Channel = null;
 
     const onDeviceUI = params.onDeviceUI !== false;
     const { initialSelection, shouldPersistSelection } = params;
@@ -64,7 +78,7 @@ export default class Preview {
         channel = new Channel({ async: true });
       } else {
         const host = getHost(params.host || 'localhost');
-        const port = params.port !== false ? `:${params.port || 7007}` : '';
+        const port = params.port ? `:${params.port || 7007}` : '';
 
         const query = params.query || '';
         const { secured } = params;
@@ -104,6 +118,7 @@ export default class Preview {
       setInitialStory = true;
     }
 
+    // tslint:disable-next-line:no-this-assignment
     const preview = this;
 
     addons.loadAddons(this._clientApi);
@@ -116,7 +131,6 @@ export default class Preview {
           return (
             <OnDeviceUI
               stories={preview._stories}
-              events={channel}
               url={webUrl}
               isUIHidden={params.isUIHidden}
               tabOpen={params.tabOpen}
@@ -131,10 +145,10 @@ export default class Preview {
           );
         }
 
-        return <StoryView url={webUrl} events={channel} listenToEvents />;
+        return <StoryView url={webUrl} listenToEvents />;
       }
     };
-  }
+  };
 
   _sendSetStories() {
     const channel = addons.getChannel();
@@ -151,7 +165,7 @@ export default class Preview {
     channel.emit(Events.GET_CURRENT_STORY);
   }
 
-  _setInitialStory = async (initialSelection, shouldPersistSelection = true) => {
+  _setInitialStory = async (initialSelection: any, shouldPersistSelection = true) => {
     const story = await this._getInitialStory(initialSelection, shouldPersistSelection)();
 
     if (story) {
@@ -159,7 +173,7 @@ export default class Preview {
     }
   };
 
-  _getInitialStory = (initialSelection, shouldPersistSelection = true) => async () => {
+  _getInitialStory = (initialSelection: any, shouldPersistSelection = true) => async () => {
     let story = null;
     if (initialSelection && this._checkStory(initialSelection)) {
       story = initialSelection;
@@ -178,7 +192,7 @@ export default class Preview {
 
     const dump = this._stories.dumpStoryBook();
 
-    const nonEmptyKind = dump.find(kind => kind.stories.length > 0);
+    const nonEmptyKind = dump.find((kind: any) => kind.stories.length > 0);
     if (nonEmptyKind) {
       return this._getStory({ kind: nonEmptyKind.kind, story: nonEmptyKind.stories[0] });
     }
@@ -186,13 +200,13 @@ export default class Preview {
     return null;
   };
 
-  _getStory(selection) {
+  _getStory(selection: { kind: string; story: string }) {
     const { kind, story } = selection;
     const storyFn = this._stories.getStoryWithContext(kind, story);
     return { ...selection, storyFn };
   }
 
-  _selectStoryEvent(selection) {
+  _selectStoryEvent(selection: { kind: string; story: string }) {
     AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(selection));
 
     if (selection) {
@@ -201,13 +215,13 @@ export default class Preview {
     }
   }
 
-  _selectStory(story) {
+  _selectStory(story: any) {
     this.currentStory = story;
     const channel = addons.getChannel();
     channel.emit(Events.SELECT_STORY, story);
   }
 
-  _checkStory(selection) {
+  _checkStory(selection: any) {
     if (!selection || typeof selection !== 'object' || !selection.kind || !selection.story) {
       return null;
     }

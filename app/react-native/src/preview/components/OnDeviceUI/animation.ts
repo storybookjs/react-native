@@ -1,10 +1,11 @@
-import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/consts';
+import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/constants';
+import { Animated, ViewProps } from 'react-native';
 
 const PREVIEW_SCALE = 0.3;
 
-const panelWidth = width => width * (1 - PREVIEW_SCALE - 0.05);
+const panelWidth = (width: number) => width * (1 - PREVIEW_SCALE - 0.05);
 
-export function getNavigatorPanelPosition(animatedValue, previewWidth) {
+export const getNavigatorPanelPosition = (animatedValue: Animated.Value, previewWidth: number) => {
   return [
     {
       transform: [
@@ -18,9 +19,9 @@ export function getNavigatorPanelPosition(animatedValue, previewWidth) {
       width: panelWidth(previewWidth),
     },
   ];
-}
+};
 
-export function getAddonPanelPosition(animatedValue, previewWidth) {
+export const getAddonPanelPosition = (animatedValue: Animated.Value, previewWidth: number) => {
   return [
     {
       transform: [
@@ -34,14 +35,14 @@ export function getAddonPanelPosition(animatedValue, previewWidth) {
       width: panelWidth(previewWidth),
     },
   ];
-}
+};
 
-export function getPreviewPosition(
-  animatedValue,
-  previewWidth,
-  previewHeight,
-  slideBetweenAnimation
-) {
+export const getPreviewPosition = (
+  animatedValue: Animated.Value,
+  previewWidth: number,
+  previewHeight: number,
+  slideBetweenAnimation: boolean
+) => {
   const translateX = previewWidth / 2 - (previewWidth * PREVIEW_SCALE) / 2 - 6;
   const translateY = -(previewHeight / 2 - (previewHeight * PREVIEW_SCALE) / 2 - 12);
 
@@ -61,9 +62,9 @@ export function getPreviewPosition(
       },
     ],
   };
-}
+};
 
-export function getPreviewScale(animatedValue, slideBetweenAnimation) {
+export const getPreviewScale = (animatedValue: Animated.Value, slideBetweenAnimation: boolean) => {
   return {
     transform: [
       {
@@ -74,4 +75,4 @@ export function getPreviewScale(animatedValue, slideBetweenAnimation) {
       },
     ],
   };
-}
+};

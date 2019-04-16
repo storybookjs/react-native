@@ -1,9 +1,12 @@
 import React, { PureComponent } from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import PropTypes from 'prop-types';
 import style from '../style';
 
-export default class VisibilityButton extends PureComponent {
+interface Props {
+  onPress: () => void;
+}
+
+export default class VisibilityButton extends PureComponent<Props> {
   render() {
     const { onPress } = this.props;
     return (
@@ -19,7 +22,3 @@ export default class VisibilityButton extends PureComponent {
     );
   }
 }
-
-VisibilityButton.propTypes = {
-  onPress: PropTypes.func.isRequired,
-};

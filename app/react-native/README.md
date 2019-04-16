@@ -16,7 +16,7 @@ npx -p @storybook/cli sb init
 ```
 
 During installation it will ask if you want to install storybook server.
-It allows you to control the storybook from your web browser. 
+It allows you to control the storybook from your web browser.
 
 The next thing you need to do is make Storybook UI visible in your app.
 

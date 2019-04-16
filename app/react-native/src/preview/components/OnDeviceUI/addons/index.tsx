@@ -1,22 +1,22 @@
 import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
 import addons from '@storybook/addons';
-
 import AddonsList from './list';
 import AddonWrapper from './wrapper';
 import style from '../style';
 
-export default class Addons extends PureComponent {
-  constructor() {
-    super();
-    this.panels = addons.getElements('panel');
+export default class Addons extends PureComponent<{}, { addonSelected: string }> {
+  panels = addons.getElements('panel');
+
+  constructor(props: {}) {
+    super(props);
 
     this.state = {
       addonSelected: Object.keys(this.panels)[0] || null,
     };
   }
 
-  onPressAddon = addonSelected => {
+  onPressAddon = (addonSelected: string) => {
     this.setState({ addonSelected });
   };
 
@@ -26,7 +26,7 @@ export default class Addons extends PureComponent {
     if (Object.keys(this.panels).length === 0) {
       return (
         <View style={[style.flex, style.center]}>
-          <Text style={style.text}>No onDevice addons loaded.</Text>
+          <Text style={style.text}>No addons loaded.</Text>
         </View>
       );
     }

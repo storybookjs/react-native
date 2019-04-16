@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { View, ScrollView, StyleSheet } from 'react-native';
-
+import { Collection } from '@storybook/addons';
 import Button from '../navigation/button';
 
 const style = StyleSheet.create({
@@ -13,12 +12,18 @@ const style = StyleSheet.create({
   },
 });
 
-export default class AddonList extends PureComponent {
-  renderTab = (id, title) => {
+export interface Props {
+  panels: Collection;
+  addonSelected: string;
+  onPressAddon: (id: string) => void;
+}
+
+export default class AddonList extends PureComponent<Props> {
+  renderTab = (id: string, title: string) => {
     const { addonSelected, onPressAddon } = this.props;
 
     return (
-      <Button active={id === addonSelected} key={id} id={id} onPress={onPressAddon}>
+      <Button active={id === addonSelected} key={id} id={id} onPress={() => onPressAddon(id)}>
         {title}
       </Button>
     );
@@ -30,21 +35,10 @@ export default class AddonList extends PureComponent {
 
     return (
       <View style={style.list}>
-        <ScrollView showsHorizontalScrollIndicator={false} horizontal style={style.addonList}>
+        <ScrollView showsHorizontalScrollIndicator={false} horizontal>
           {addonKeys.map(id => this.renderTab(id, panels[id].title))}
         </ScrollView>
       </View>
     );
   }
 }
-
-AddonList.propTypes = {
-  panels: PropTypes.objectOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      render: PropTypes.func.isRequired,
-    }).isRequired
-  ).isRequired,
-  onPressAddon: PropTypes.func.isRequired,
-  addonSelected: PropTypes.string.isRequired,
-};

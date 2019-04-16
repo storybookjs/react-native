@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
-
 import Button from './button';
-import { NAVIGATOR, PREVIEW, ADDONS } from './consts';
+import { NAVIGATOR, PREVIEW, ADDONS } from './constants';
 
 const style = StyleSheet.create({
   bar: {
@@ -17,7 +15,12 @@ const style = StyleSheet.create({
   },
 });
 
-export default class Bar extends PureComponent {
+export interface Props {
+  index: number;
+  onPress: (id: number) => void;
+}
+
+export default class Bar extends PureComponent<Props> {
   render() {
     const { index, onPress } = this.props;
     return (
@@ -35,8 +38,3 @@ export default class Bar extends PureComponent {
     );
   }
 }
-
-Bar.propTypes = {
-  onPress: PropTypes.func.isRequired,
-  index: PropTypes.number.isRequired,
-};
