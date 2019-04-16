@@ -34,7 +34,7 @@
     "docs:build": "npm --prefix docs run build",
     "docs:dev": "npm --prefix docs run dev",
     "github-release": "github-release-from-changelog",
-    "lint": "yarn lint:js . && yarn lint:ts **/*.ts **/.tsx && yarn lint:md .",
+    "lint": "yarn lint:js . && yarn lint:ts **/*.ts **/*.tsx && yarn lint:md .",
     "lint:ci": "yarn lint:js --format ./node_modules/eslint-teamcity/index.js . && yarn lint:ts **/*.ts && yarn lint:md .",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json,.html --report-unused-disable-directives",
     "lint:md": "remark -q",

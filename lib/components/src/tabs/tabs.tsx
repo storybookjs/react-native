@@ -1,4 +1,11 @@
-import React, { Children, Component, Fragment, FunctionComponent, MouseEvent, ReactNode } from 'react';
+import React, {
+  Children,
+  Component,
+  Fragment,
+  FunctionComponent,
+  MouseEvent,
+  ReactNode,
+} from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 
