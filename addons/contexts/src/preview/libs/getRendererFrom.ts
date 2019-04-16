@@ -4,7 +4,7 @@ import { GetAggregatedWrap, GetRendererFrom } from '../../@types';
  * @private
  * Aggregates component vNodes with activated props in a descending order,
  * based on the given options in the contextual environment setup.
-
+ *
  * @param {function} h - the associated `createElement` vNode creator from the framework
  */
 export const _getAggregatedWrap: GetAggregatedWrap = h => (components, props, options) => vNode => {
