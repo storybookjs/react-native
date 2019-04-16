@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import { View, SafeAreaView, StyleSheet } from 'react-native';
-// @ts-ignore TODO: add types for react-native-swipe-gestures
-import GestureRecognizer from 'react-native-swipe-gestures';
+import GestureRecognizer, { GestureRecognizerConfig } from 'react-native-swipe-gestures';
 import Bar from './bar';
 import VisibilityButton from './visibility-button';
 
-const SWIPE_CONFIG = {
+const SWIPE_CONFIG: GestureRecognizerConfig = {
   velocityThreshold: 0.2,
   directionalOffsetThreshold: 80,
 };
