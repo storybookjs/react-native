@@ -20,17 +20,14 @@ const style = StyleSheet.create({
 });
 
 interface Props {
-  initialUiVisible: boolean;
+  initialUiVisible?: boolean;
   tabOpen: number;
   onChangeTab: (index: number) => void;
 }
 
 export default class Navigation extends PureComponent<Props> {
-  static defaultProps = {
-    initialUiVisible: true,
-  };
   state = {
-    isUIVisible: this.props.initialUiVisible,
+    isUIVisible: this.props.initialUiVisible !== undefined ? this.props.initialUiVisible : true,
   };
 
   handleToggleUI = () => {
