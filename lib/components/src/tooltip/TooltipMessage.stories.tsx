@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import {WithTooltip} from './WithTooltip';
+import { WithTooltip } from './WithTooltip';
 
 import { TooltipMessage } from './TooltipMessage';
 

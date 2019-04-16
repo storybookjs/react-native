@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import {Link} from './link';
+import { Link } from './link';
 import { Icons } from '../../icon/icon';
 
 const onClick = action('onClick');
