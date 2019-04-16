@@ -28,7 +28,7 @@ export default {
   ],
 };
 
-export const singleItem = () => <ActionBar actionItems={[{ title: 'Clear', onClick: action1 }]}/>;
+export const singleItem = () => <ActionBar actionItems={[{ title: 'Clear', onClick: action1 }]} />;
 
 export const manyItems = () => (
   <ActionBar
