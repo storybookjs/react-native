@@ -46,7 +46,7 @@ const emitAddTests = ({
 
 export const withTests = (userOptions: { results: any; filesExt: string }) => {
   const defaultOptions = {
-    filesExt: '((\\.specs?)|(\\.tests?))?(\\.js)?$',
+    filesExt: '((\\.specs?)|(\\.tests?))?(\\.[jt]sx?)?$',
   };
   const options = { ...defaultOptions, ...userOptions };
 
