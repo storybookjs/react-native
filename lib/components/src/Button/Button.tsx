@@ -233,7 +233,7 @@ interface ButtonProps {
   containsIcon?: boolean;
 }
 
-const Button: FunctionComponent<ButtonProps> = ({ isLink, children, ...props }) => {
+export const Button: FunctionComponent<ButtonProps> = ({ isLink, children, ...props }) => {
   if (isLink) {
     return <ButtonLink {...props}>{children}</ButtonLink>;
   }
@@ -243,5 +243,3 @@ const Button: FunctionComponent<ButtonProps> = ({ isLink, children, ...props }) 
 Button.defaultProps = {
   isLink: false,
 };
-
-export default Button;

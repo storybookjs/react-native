@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import Link from './link';
+import { Link } from './link';
 
 const LEFT_BUTTON = 0;
 const MIDDLE_BUTTON = 1;

@@ -5,7 +5,7 @@ import { withState, lifecycle } from 'recompose';
 import { document } from 'global';
 
 import TooltipTrigger from 'react-popper-tooltip';
-import Tooltip from './Tooltip';
+import { Tooltip } from './Tooltip';
 import { Modifiers, Placement } from 'popper.js';
 
 // A target that doesn't speak popper
@@ -29,6 +29,7 @@ interface WithTooltipPureProps {
   children: ReactNode;
   tooltipShown?: boolean;
   onVisibilityChange?: (visibility: boolean) => void;
+  onDoubleClick?: () => void;
 }
 
 // Pure, does not bind to the body
@@ -94,7 +95,7 @@ WithTooltipPure.defaultProps = {
   tooltipShown: false,
 };
 
-const WithTooltip = lifecycle<WithTooltipPureProps, {}>({
+export const WithTooltip = lifecycle<WithTooltipPureProps, {}>({
   componentDidMount() {
     const { onVisibilityChange } = this.props;
     const hide = () => onVisibilityChange(false);
@@ -141,8 +142,6 @@ const WithTooltip = lifecycle<WithTooltipPureProps, {}>({
     }
   },
 })(WithTooltipPure);
-
-export default WithTooltip;
 
 const WithToolTipState: any = withState(
   'tooltipShown',

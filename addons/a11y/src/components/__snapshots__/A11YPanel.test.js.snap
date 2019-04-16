@@ -63,12 +63,12 @@ exports[`A11YPanel should render loader when it's running 1`] = `
     <div
       className="emotion-4"
     >
-      <Styled(Icon)
+      <Styled(Icons)
         icon="sync"
         inline={true}
         status="running"
       >
-        <Icon
+        <Icons
           className="emotion-2"
           icon="sync"
           inline={true}
@@ -94,8 +94,8 @@ exports[`A11YPanel should render loader when it's running 1`] = `
               </Styled(path)>
             </svg>
           </Svg>
-        </Icon>
-      </Styled(Icon)>
+        </Icons>
+      </Styled(Icons)>
        Please wait while a11y scan is running ...
     </div>
   </Component>

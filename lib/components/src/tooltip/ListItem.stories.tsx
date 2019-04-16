@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ListItem from './ListItem';
 
-import Icons from '../icon/icon';
+import { Icons } from '../icon/icon';
 
 storiesOf('basics|Tooltip/ListItem', module)
   .add('all', () => (

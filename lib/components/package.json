@@ -21,10 +21,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.28",
     "@storybook/client-logger": "5.1.0-alpha.28",
-    "@storybook/core-events": "5.1.0-alpha.28",
-    "@storybook/router": "5.1.0-alpha.28",
     "@storybook/theming": "5.1.0-alpha.28",
     "core-js": "^2.6.5",
     "global": "^4.3.2",
@@ -45,8 +42,6 @@
     "simplebar-react": "^0.1.5"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.1.0-alpha.28",
-    "@storybook/react": "5.1.0-alpha.28",
     "@types/js-beautify": "^1.8.0",
     "@types/react-syntax-highlighter": "^10.1.0",
     "@types/react-textarea-autosize": "^4.3.3",
