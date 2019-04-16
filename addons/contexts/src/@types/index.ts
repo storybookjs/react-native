@@ -22,7 +22,7 @@ export interface AddonOptions {
 
 export interface AddonSetting {
   icon?: string;
-  title: string;
+  title?: string;
   components?: unknown[];
   params?: Array<{
     name: string;
@@ -38,8 +38,8 @@ export type ContextNode = Required<AddonSetting> & {
 
 // wrappers
 export interface WrapperSettings {
-  options: AddonSetting[] | undefined;
-  parameters?: AddonSetting[] | undefined;
+  options: AddonSetting | undefined;
+  parameters?: AddonSetting | undefined;
 }
 
 export type Wrapper = (...arg: [AnyFunctionReturns<any>, unknown, WrapperSettings]) => unknown;
