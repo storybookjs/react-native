@@ -22,7 +22,7 @@ export interface AddonOptions {
 
 export interface AddonSetting {
   icon?: string;
-  title?: string;
+  title: string;
   components?: unknown[];
   params?: Array<{
     name: string;
@@ -38,8 +38,13 @@ export type ContextNode = Required<AddonSetting> & {
 
 // wrappers
 export interface WrapperSettings {
-  options: AddonSetting | undefined;
-  parameters?: AddonSetting | undefined;
+  options: Array<Partial<AddonSetting>> | undefined;
+
+  /**
+   * Although parameters could be an object for disable this addon (i.e. { contexts: false }),
+   * we are not bother on typing it since the logic is out of the scope here.
+   */
+  parameters?: Array<Partial<AddonSetting>>;
 }
 
 export type Wrapper = (...arg: [AnyFunctionReturns<any>, unknown, WrapperSettings]) => unknown;
