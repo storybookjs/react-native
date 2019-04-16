@@ -225,6 +225,19 @@ export default function({ store }: { store: Store }) {
       });
     },
 
+    resetLayout() {
+      return store.setState((state: State) => {
+        return {
+          layout: {
+            ...state.layout,
+            showNav: false,
+            showPanel: false,
+            isFullscreen: false,
+          },
+        };
+      });
+    },
+
     focusOnUIElement(elementId?: string) {
       if (!elementId) {
         return;
