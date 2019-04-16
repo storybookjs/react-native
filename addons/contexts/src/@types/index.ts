@@ -38,13 +38,8 @@ export type ContextNode = Required<AddonSetting> & {
 
 // wrappers
 export interface WrapperSettings {
-  options: Array<Partial<AddonSetting>> | undefined;
-
-  /**
-   * Although parameters could be an object for disable this addon (i.e. { contexts: false }),
-   * we are not bother on typing it since the logic is out of the scope here.
-   */
-  parameters?: Array<Partial<AddonSetting>>;
+  options: AddonSetting[] | undefined;
+  parameters?: AddonSetting[] | undefined;
 }
 
 export type Wrapper = (...arg: [AnyFunctionReturns<any>, unknown, WrapperSettings]) => unknown;
