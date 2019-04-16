@@ -1,3 +1,17 @@
+## 5.1.0-alpha.28 (April 16, 2019)
+
+### Bug Fixes
+
+* UI: Fix panel toggle behavior in fullscreen ([#6525](https://github.com/storybooks/storybook/pull/6525))
+* Addon-Knobs: Add missing groupId for files knob ([#6534](https://github.com/storybooks/storybook/pull/6534))
+
+### Maintenance
+
+* Typescript: Fix ts-lint config to lint `tsx` files ([#6533](https://github.com/storybooks/storybook/pull/6533))
+* Typescript: Migrate app/react-native ([#6448](https://github.com/storybooks/storybook/pull/6448))
+* CLI: Improve cli for react-native ([#6515](https://github.com/storybooks/storybook/pull/6515))
+* Workflow: Automention for project maintainers ([#6509](https://github.com/storybooks/storybook/pull/6509))
+
 ## 5.0.8 (April 15, 2019)
 
 Bump version to make `5.0.x` latest since I just released a patch in `v4.1.18`
