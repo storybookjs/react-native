@@ -4,11 +4,6 @@
     "rootDir": "./src",
     "types": ["webpack-env"]
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "src/register.ts",
-    "src/__tests__/**/*"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["src/register.ts", "src/__tests__/**/*"]
 }

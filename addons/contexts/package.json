@@ -28,10 +28,11 @@
   "dependencies": {
     "@storybook/addons": "5.1.0-alpha.27",
     "@storybook/components": "5.1.0-alpha.27",
-    "@storybook/core-events": "5.1.0-alpha.27"
+    "@storybook/core-events": "5.1.0-alpha.27",
+    "@storybook/channels": "5.1.0-alpha.27"
   },
-  "peerDependencies": {
-    "@storybook/addons": ">=5 <6",
-    "@storybook/components": ">=5 <6"
+  "optionalDependencies": {
+    "react": "*",
+    "vue": "*"
   }
 }

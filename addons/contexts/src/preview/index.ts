@@ -1,7 +1,7 @@
-import { makeDecorator } from '@storybook/addons';
+import { makeDecorator, StoryWrapper } from '@storybook/addons';
 import { addonContextsAPI } from './api';
 import { ID, PARAM } from '../constants';
-import { CreateAddonDecorator, Wrapper } from '../@types';
+import { CreateAddonDecorator } from '../@types';
 
 /**
  * This file serves a idiomatic facade of a Storybook decorator.
@@ -17,7 +17,7 @@ import { CreateAddonDecorator, Wrapper } from '../@types';
  * @param render - framework specific bindings
  */
 export const createAddonDecorator: CreateAddonDecorator = render => {
-  const wrapper: Wrapper = (getStory, context, settings) => {
+  const wrapper: StoryWrapper = (getStory, context, settings: any) => {
     const { getContextNodes, getSelectionState, getPropsMap } = addonContextsAPI();
     const nodes = getContextNodes(settings);
     const state = getSelectionState();

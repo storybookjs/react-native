@@ -5,7 +5,7 @@ import { TToolBarMenuOptions } from '../@types';
 
 export const ToolBarMenuOptions: TToolBarMenuOptions = ({ activeName, list, onSelectOption }) => (
   <TooltipLinkList
-    links={list.map((name) => ({
+    links={list.map(name => ({
       key: name,
       id: name,
       title: name !== OPT_OUT ? name : 'Off',
