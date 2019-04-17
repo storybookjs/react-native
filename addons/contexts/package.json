@@ -29,7 +29,7 @@
     "@storybook/addons": "5.1.0-alpha.29",
     "@storybook/channels": "5.1.0-alpha.29",
     "@storybook/components": "5.1.0-alpha.29",
-    "@storybook/core-events": "5.1.0-alpha.29",
+    "@storybook/core-events": "5.1.0-alpha.29"
   },
   "optionalDependencies": {
     "react": "*",
