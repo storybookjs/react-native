@@ -1472,7 +1472,7 @@ exports[`Storyshots UI|Layout/Desktop page 1`] = `
   overflow: hidden;
 }
 
-.emotion-9 {
+.emotion-4 {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -1544,20 +1544,6 @@ exports[`Storyshots UI|Layout/Desktop page 1`] = `
   -ms-flex-align: center;
   align-items: center;
   overflow: hidden;
-}
-
-.emotion-4 {
-  position: absolute;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 9;
-  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,-webkit-transform 0.1s ease-out;
-  -webkit-transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
-  transition: width 0.1s ease-out,height 0.1s ease-out,top 0.1s ease-out,left 0.1s ease-out,background 0.1s ease-out,opacity 0.1s ease-out,transform 0.1s ease-out;
 }
 
 .emotion-6 {
@@ -1635,7 +1621,7 @@ exports[`Storyshots UI|Layout/Desktop page 1`] = `
     </div>
   </div>
   <div
-    class="emotion-9"
+    class="emotion-4"
     style="height:748px;left:210px;top:10px;width:804px"
   >
     <div
@@ -1643,7 +1629,6 @@ exports[`Storyshots UI|Layout/Desktop page 1`] = `
     >
       <div
         class="emotion-4"
-        hidden=""
       >
         <div
           class="emotion-3"
