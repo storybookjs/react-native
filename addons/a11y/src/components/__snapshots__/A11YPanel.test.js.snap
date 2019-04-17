@@ -1240,7 +1240,7 @@ exports[`A11YPanel should render report 1`] = `
                                         Highlight results
                                       </label>
                                     </Styled(label)>
-                                    <Connect(HighlightToggle)
+                                    <ConnectFunction
                                       elementsToHighlight={Array []}
                                       label="Highlight results"
                                       toggleId="0-global-checkbox"
@@ -1275,7 +1275,7 @@ exports[`A11YPanel should render report 1`] = `
                                           />
                                         </Styled(input)>
                                       </HighlightToggle>
-                                    </Connect(HighlightToggle)>
+                                    </ConnectFunction>
                                   </div>
                                 </Styled(div)>
                               </div>
