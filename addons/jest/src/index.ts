@@ -7,11 +7,6 @@ interface AddonParameters {
   jest?: string | string[] | { disable: true };
 }
 
-interface AddonOptions {
-  results: { testResults: Array<{ name: string }> };
-  filesExt: string;
-}
-
 const findTestResults = (
   testFiles: string[],
   jestTestResults: { testResults: Array<{ name: string }> },
@@ -39,7 +34,10 @@ interface EmitAddTestsArg {
   kind: string;
   story: () => void;
   testFiles: string[];
-  options: AddonOptions;
+  options: {
+    results: { testResults: Array<{ name: string }> };
+    filesExt: string;
+  };
 }
 
 const emitAddTests = ({ kind, story, testFiles, options }: EmitAddTestsArg) => {
@@ -50,7 +48,7 @@ const emitAddTests = ({ kind, story, testFiles, options }: EmitAddTestsArg) => {
   });
 };
 
-export const withTests = (userOptions: AddonOptions) => {
+export const withTests = (userOptions: { results: any; filesExt?: string }) => {
   const defaultOptions = {
     filesExt: '((\\.specs?)|(\\.tests?))?(\\.[jt]sx?)?$',
   };
