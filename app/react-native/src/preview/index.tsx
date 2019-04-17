@@ -78,7 +78,7 @@ export default class Preview {
         channel = new Channel({ async: true });
       } else {
         const host = getHost(params.host || 'localhost');
-        const port = params.port ? `:${params.port || 7007}` : '';
+        const port = `:${params.port || 7007}`;
 
         const query = params.query || '';
         const { secured } = params;
