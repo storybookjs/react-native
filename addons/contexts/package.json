@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-contexts",
-  "version": "5.1.0-alpha.28",
+  "version": "5.1.0-alpha.29",
   "description": "Storybook Addon Contexts",
   "keywords": [
     "storybook",
@@ -26,10 +26,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.28",
-    "@storybook/components": "5.1.0-alpha.28",
-    "@storybook/core-events": "5.1.0-alpha.28",
-    "@storybook/channels": "5.1.0-alpha.28"
+    "@storybook/addons": "5.1.0-alpha.29",
+    "@storybook/channels": "5.1.0-alpha.29",
+    "@storybook/components": "5.1.0-alpha.29",
+    "@storybook/core-events": "5.1.0-alpha.29",
   },
   "optionalDependencies": {
     "react": "*",
