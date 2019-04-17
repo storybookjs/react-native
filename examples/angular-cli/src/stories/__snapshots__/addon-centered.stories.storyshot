@@ -92,11 +92,11 @@ exports[`Storyshots Addon|Centered centered template 1`] = `
         style="margin: auto; max-height: 100%; overflow: auto;"
       >
         <storybook-button-component
-          _nghost-c6=""
+          _nghost-a-c6=""
           ng-reflect-text="Hello Button"
         >
           <button
-            _ngcontent-c6=""
+            _ngcontent-a-c6=""
           >
             Hello Button
           </button>
