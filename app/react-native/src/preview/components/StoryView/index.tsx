@@ -77,6 +77,9 @@ export default class StoryView extends Component<Props, State> {
   }
 
   renderListening = () => {
+    if (!this.state) {
+      return null;
+    }
     const { storyFn, selection } = this.state;
     const { kind, story } = selection;
 
