@@ -172,7 +172,7 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
     brand: {
       title: brandTitle,
       url: brandUrl,
-      image: brandImage || brandTitle ? null : undefined,
+      image: brandTitle && !brandImage ? null : brandImage,
     },
 
     code: createSyntax({
