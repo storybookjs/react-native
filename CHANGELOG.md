@@ -1,16 +1,31 @@
+## 5.1.0-alpha.29 (April 17, 2019)
+
+### Bug Fixes
+
+- Theming: Fix null brandImage ([#6544](https://github.com/storybooks/storybook/pull/6544))
+
+### Maintenance
+
+- Typescript: Migrate @storybook/components part 2 ([#6500](https://github.com/storybooks/storybook/pull/6500))
+
+### Dependency Upgrades
+
+- Bump @types/node from 11.11.8 to 11.13.4 ([#6527](https://github.com/storybooks/storybook/pull/6527))
+- Bump danger from 7.0.19 to 7.1.2 ([#6530](https://github.com/storybooks/storybook/pull/6530))
+
 ## 5.1.0-alpha.28 (April 16, 2019)
 
 ### Bug Fixes
 
-* UI: Fix panel toggle behavior in fullscreen ([#6525](https://github.com/storybooks/storybook/pull/6525))
-* Addon-Knobs: Add missing groupId for files knob ([#6534](https://github.com/storybooks/storybook/pull/6534))
+- UI: Fix panel toggle behavior in fullscreen ([#6525](https://github.com/storybooks/storybook/pull/6525))
+- Addon-Knobs: Add missing groupId for files knob ([#6534](https://github.com/storybooks/storybook/pull/6534))
 
 ### Maintenance
 
-* Typescript: Fix ts-lint config to lint `tsx` files ([#6533](https://github.com/storybooks/storybook/pull/6533))
-* Typescript: Migrate app/react-native ([#6448](https://github.com/storybooks/storybook/pull/6448))
-* CLI: Improve cli for react-native ([#6515](https://github.com/storybooks/storybook/pull/6515))
-* Workflow: Automention for project maintainers ([#6509](https://github.com/storybooks/storybook/pull/6509))
+- Typescript: Fix ts-lint config to lint `tsx` files ([#6533](https://github.com/storybooks/storybook/pull/6533))
+- Typescript: Migrate app/react-native ([#6448](https://github.com/storybooks/storybook/pull/6448))
+- CLI: Improve cli for react-native ([#6515](https://github.com/storybooks/storybook/pull/6515))
+- Workflow: Automention for project maintainers ([#6509](https://github.com/storybooks/storybook/pull/6509))
 
 ## 5.0.8 (April 15, 2019)
 
