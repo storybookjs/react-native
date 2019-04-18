@@ -50,7 +50,7 @@ export const background = {
   positive: '#E1FFD4',
   negative: '#FEDED2',
   warning: '#FFF5CF',
-  critical: '#F5794C',
+  critical: '#FF4400',
 };
 
 export const typography = {

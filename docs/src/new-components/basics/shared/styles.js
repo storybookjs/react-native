@@ -7,7 +7,7 @@ export const background = {
   positive: '#E1FFD4',
   negative: '#FEDED2',
   warning: '#FFF5CF',
-  critical: '#FFFFFF',
+  critical: '#FF4400',
 };
 
 export const color = {
@@ -39,7 +39,7 @@ export const color = {
   // Status
   positive: '#66BF3C',
   negative: '#FF4400',
-  critical: '#F5794C',
+  critical: '#FFFFFF',
 };
 
 export const spacing = {

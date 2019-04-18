@@ -15,7 +15,9 @@ const impactColors = {
 const List = styled.div({
   display: 'flex',
   flexDirection: 'column',
-  padding: '4px',
+  paddingBottom: '4px',
+  paddingRight: '4px',
+  paddingTop: '4px',
   fontWeight: '400',
 } as any);
 
@@ -34,7 +36,7 @@ const Item = styled.div(() => {
 
 const BadgeWrapper = styled.div({
   marginBottom: '3px',
-  marginLeft: '5px',
+  minWidth: '70px',
   display: 'flex',
 });
 
@@ -65,6 +67,13 @@ interface RuleProps {
   rule: CheckResult;
 }
 
+const formatSeverityText = (severity: string) => {
+  return severity
+    .charAt(0)
+    .toUpperCase()
+    .concat(severity.slice(1));
+};
+
 const Rule: FunctionComponent<RuleProps> = ({ rule }) => {
   let badgeType = '';
   switch (rule.impact) {
@@ -86,7 +95,7 @@ const Rule: FunctionComponent<RuleProps> = ({ rule }) => {
   return (
     <Item>
       <BadgeWrapper>
-        <Badge status={badgeType}>{rule.impact}</Badge>
+        <Badge status={badgeType}>{formatSeverityText(rule.impact)}</Badge>
       </BadgeWrapper>
       <Message>{rule.message}</Message>
     </Item>
