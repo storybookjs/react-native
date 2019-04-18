@@ -5,6 +5,7 @@ import store, { clearElements } from '../redux-config';
 import HighlightToggle from './Report/HighlightToggle';
 import { NodeResult, Result } from 'axe-core';
 import { RuleType } from './A11YPanel';
+import { SizeMe } from 'react-sizeme';
 
 // TODO: reuse the Tabs component from @storybook/theming instead of re-building identical functionality
 
@@ -22,34 +23,28 @@ const HighlightToggleLabel = styled.label(({ theme }) => ({
   color: theme.color.dark,
 }));
 
-const GlobalToggleWrapper = styled.div(({ theme }) => {
-  return `
-    padding: 10px 12px 10px 0;
-    cursor: pointer;
-    font-size: ${theme.typography.size.s2 - 1}px;
-    height: 40px;
-    border: none;
-    margin-top: -40px;
-    float: right;
-    display: flex;
-    align-items: center;
-
-    @media (max-width: 665px) {
-      display: block;
-      margin-top: 0px;
-      padding: 12px 0px 3px 12px;
-      width: 100%;
-      float: left;
-      border-bottom: 1px solid rgba(0,0,0,.1);
-    }
+const GlobalToggleWrapper = styled.div(({ theme, elementWidth }) => {
+  const maxElementWidth = 450;
+  return {
+    padding: elementWidth > maxElementWidth ? '12px 15px 10px 0' : '12px 0px 3px 12px',
+    cursor: 'pointer',
+    fontSize: theme.typography.size.s2 - 1 + 'px',
+    height: '40px',
+    border: 'none',
+    marginTop: elementWidth > maxElementWidth ? '-40px' : '0px',
+    float: elementWidth > maxElementWidth ? 'right' : 'left',
+    display: elementWidth > maxElementWidth ? 'flex' : 'block',
+    alignItems: 'center',
+    width: elementWidth > maxElementWidth ? 'auto' : '100%',
+    borderBottom: elementWidth > maxElementWidth ? 'none' : '1px solid rgba(0,0,0,.1)',
 
     input: {
-      margin-left: 10;
-      margin-right: 0;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  `;
+      marginLeft: '10',
+      marginRight: '0',
+      marginTop: '0',
+      marginBottom: '0',
+    },
+  };
 });
 
 const Item = styled.button(
@@ -126,34 +121,38 @@ export class Tabs extends Component<TabsProps, TabsState> {
     const highlightToggleId = `${tabs[active].type}-global-checkbox`;
     const highlightLabel = `Highlight results`;
     return (
-      <Container>
-        <List>
-          <TabsWrapper>
-            {tabs.map((tab, index) => (
-              <Item
-                key={index}
-                data-index={index}
-                active={active === index}
-                onClick={this.onToggle}
-              >
-                {tab.label}
-              </Item>
-            ))}
-          </TabsWrapper>
-        </List>
-        <GlobalToggleWrapper>
-          <HighlightToggleLabel htmlFor={highlightToggleId}>
-            {highlightLabel}
-          </HighlightToggleLabel>
-          <HighlightToggle
-            toggleId={highlightToggleId}
-            type={tabs[active].type}
-            elementsToHighlight={retrieveAllNodesFromResults(tabs[active].items)}
-            label={highlightLabel}
-          />
-        </GlobalToggleWrapper>
-        {tabs[active].panel}
-      </Container>
+      <SizeMe>
+        {({ size }) => (
+          <Container>
+            <List>
+              <TabsWrapper>
+                {tabs.map((tab, index) => (
+                  <Item
+                    key={index}
+                    data-index={index}
+                    active={active === index}
+                    onClick={this.onToggle}
+                  >
+                    {tab.label}
+                  </Item>
+                ))}
+              </TabsWrapper>
+            </List>
+            <GlobalToggleWrapper elementWidth={size.width}>
+              <HighlightToggleLabel htmlFor={highlightToggleId}>
+                {highlightLabel}
+              </HighlightToggleLabel>
+              <HighlightToggle
+                toggleId={highlightToggleId}
+                type={tabs[active].type}
+                elementsToHighlight={retrieveAllNodesFromResults(tabs[active].items)}
+                label={highlightLabel}
+              />
+            </GlobalToggleWrapper>
+            {tabs[active].panel}
+          </Container>
+        )}
+      </SizeMe>
     );
   }
 }
