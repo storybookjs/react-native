@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import memoize from 'memoizerific';
 
-import { Combo, Consumer } from '@storybook/api';
+import { Combo, Consumer, API } from '@storybook/api';
 import { Global, Theme } from '@storybook/theming';
 
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
 
-import { PARAM_KEY } from '../constants';
+import { PARAM_KEY, EVENTS } from '../constants';
 import { ColorIcon } from '../components/ColorIcon';
 
 interface Item {
@@ -31,12 +31,12 @@ const createBackgroundSelectorItem = memoize(1000)(
     name: string,
     value: string,
     hasSwatch: boolean,
-    change: (arg: { selected: string; expanded: boolean }) => void
+    change: (arg: { selected: string; name: string }) => void
   ): Item => ({
     id: id || name,
     title: name,
     onClick: () => {
-      change({ selected: value, expanded: false });
+      change({ selected: value, name });
     },
     value,
     right: hasSwatch ? <ColorIcon background={value} /> : undefined,
@@ -96,13 +96,16 @@ interface State {
   expanded: boolean;
 }
 
-export class BackgroundSelector extends Component<{}, State> {
+export class BackgroundSelector extends Component<{ api: API }, State> {
   state: State = {
     selected: null,
     expanded: false,
   };
 
-  change = (args: State) => this.setState(args);
+  change = ({ selected, name }: { selected: string; name: string }) => {
+    this.props.api.emit(EVENTS.UPDATE, { selected, name });
+    this.setState({ selected, expanded: false });
+  };
 
   onVisibilityChange = (s: boolean) => {
     if (this.state.expanded !== s) {
