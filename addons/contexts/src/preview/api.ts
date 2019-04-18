@@ -1,6 +1,6 @@
 import addons from '@storybook/addons';
 import { FORCE_RE_RENDER, SET_CURRENT_STORY } from '@storybook/core-events';
-import { UPDATE_PREVIEW, UPDATE_MANAGER } from '../constants';
+import { REBOOT_MANAGER, UPDATE_PREVIEW, UPDATE_MANAGER } from '../constants';
 import { getContextNodes, getPropsMap, getRendererFrom, singleton } from './libs';
 import { ContextNode, GenericObject, GetContextNodes } from '../@types';
 
@@ -15,6 +15,7 @@ export const addonContextsAPI = singleton(() => {
 
   // from manager
   channel.on(SET_CURRENT_STORY, () => (memorizedNodes = null));
+  channel.on(REBOOT_MANAGER, () => channel.emit(UPDATE_MANAGER, memorizedNodes, selectionState));
   channel.on(UPDATE_PREVIEW, state => (selectionState = Object.freeze(state)));
   channel.on(UPDATE_PREVIEW, () => channel.emit(FORCE_RE_RENDER));
 
