@@ -22,23 +22,20 @@ const List = styled.div({
   fontWeight: '400',
 } as any);
 
-const Item = styled.div(({ elementWidth }) => {
-  const maxElementWidth = 407;
-  return {
-    flexDirection: elementWidth > maxElementWidth ? 'row' : 'inherit',
-    marginBottom: elementWidth > maxElementWidth ? '6px' : '12px',
-    display: elementWidth > maxElementWidth ? 'flex' : 'block',
-  };
-});
+const Item = styled.div(({ elementWidth }: { elementWidth: number }) => ({
+  flexDirection: elementWidth > 407 ? 'row' : 'inherit',
+  marginBottom: elementWidth > 407 ? '6px' : '12px',
+  display: elementWidth > 407 ? 'flex' : 'block',
+}));
 
-const StyledBadge = styled(Badge)({
+const StyledBadge = styled(Badge)(({ status }: { status: string }) => ({
   padding: '2px 8px',
   marginBottom: '3px',
   minWidth: '65px',
   maxWidth: 'fit-content',
   width: '100%',
   textAlign: 'center',
-});
+}));
 
 const Message = styled.div({
   paddingLeft: '6px',
@@ -94,7 +91,7 @@ const Rule: FunctionComponent<RuleProps> = ({ rule }) => {
   }
   return (
     <SizeMe refreshMode="debounce">
-      {({ size }) => (
+      {({ size }: { size: any }) => (
         <Item elementWidth={size.width}>
           <StyledBadge status={badgeType}>{formatSeverityText(rule.impact)}</StyledBadge>
           <Message>{rule.message}</Message>

@@ -1,6 +1,6 @@
 import React, { Component, SyntheticEvent } from 'react';
 
-import { styled } from '@storybook/theming';
+import { styled, themes } from '@storybook/theming';
 import store, { clearElements } from '../redux-config';
 import HighlightToggle from './Report/HighlightToggle';
 import { NodeResult, Result } from 'axe-core';
@@ -23,12 +23,12 @@ const HighlightToggleLabel = styled.label(({ theme }) => ({
   color: theme.color.dark,
 }));
 
-const GlobalToggleWrapper = styled.div(({ theme, elementWidth }) => {
+const GlobalToggle = styled.div(({ elementWidth }: { elementWidth: number }) => {
   const maxElementWidth = 450;
   return {
-    padding: elementWidth > maxElementWidth ? '12px 15px 10px 0' : '12px 0px 3px 12px',
     cursor: 'pointer',
-    fontSize: theme.typography.size.s2 - 1 + 'px',
+    fontSize: '14px',
+    padding: elementWidth > maxElementWidth ? '12px 15px 10px 0' : '12px 0px 3px 12px',
     height: '40px',
     border: 'none',
     marginTop: elementWidth > maxElementWidth ? '-40px' : '0px',
@@ -122,7 +122,7 @@ export class Tabs extends Component<TabsProps, TabsState> {
     const highlightLabel = `Highlight results`;
     return (
       <SizeMe refreshMode="debounce">
-        {({ size }) => (
+        {({ size }: { size: any }) => (
           <Container>
             <List>
               <TabsWrapper>
@@ -139,7 +139,7 @@ export class Tabs extends Component<TabsProps, TabsState> {
               </TabsWrapper>
             </List>
             {tabs[active].items.length > 0 ? (
-              <GlobalToggleWrapper elementWidth={size.width}>
+              <GlobalToggle elementWidth={size.width}>
                 <HighlightToggleLabel htmlFor={highlightToggleId}>
                   {highlightLabel}
                 </HighlightToggleLabel>
@@ -149,7 +149,7 @@ export class Tabs extends Component<TabsProps, TabsState> {
                   elementsToHighlight={retrieveAllNodesFromResults(tabs[active].items)}
                   label={highlightLabel}
                 />
-              </GlobalToggleWrapper>
+              </GlobalToggle>
             ) : null}
             {tabs[active].panel}
           </Container>
