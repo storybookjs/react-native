@@ -121,7 +121,7 @@ export class Tabs extends Component<TabsProps, TabsState> {
     const highlightToggleId = `${tabs[active].type}-global-checkbox`;
     const highlightLabel = `Highlight results`;
     return (
-      <SizeMe>
+      <SizeMe refreshMode="debounce">
         {({ size }) => (
           <Container>
             <List>
@@ -138,17 +138,19 @@ export class Tabs extends Component<TabsProps, TabsState> {
                 ))}
               </TabsWrapper>
             </List>
-            <GlobalToggleWrapper elementWidth={size.width}>
-              <HighlightToggleLabel htmlFor={highlightToggleId}>
-                {highlightLabel}
-              </HighlightToggleLabel>
-              <HighlightToggle
-                toggleId={highlightToggleId}
-                type={tabs[active].type}
-                elementsToHighlight={retrieveAllNodesFromResults(tabs[active].items)}
-                label={highlightLabel}
-              />
-            </GlobalToggleWrapper>
+            {tabs[active].items.length > 0 ? (
+              <GlobalToggleWrapper elementWidth={size.width}>
+                <HighlightToggleLabel htmlFor={highlightToggleId}>
+                  {highlightLabel}
+                </HighlightToggleLabel>
+                <HighlightToggle
+                  toggleId={highlightToggleId}
+                  type={tabs[active].type}
+                  elementsToHighlight={retrieveAllNodesFromResults(tabs[active].items)}
+                  label={highlightLabel}
+                />
+              </GlobalToggleWrapper>
+            ) : null}
             {tabs[active].panel}
           </Container>
         )}

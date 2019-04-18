@@ -3,6 +3,7 @@ import { styled } from '@storybook/theming';
 import { Badge, Icons } from '@storybook/components';
 import { CheckResult } from 'axe-core';
 import { RuleType } from '../A11YPanel';
+import { SizeMe } from 'react-sizeme';
 
 const impactColors = {
   minor: '#f1c40f',
@@ -21,23 +22,22 @@ const List = styled.div({
   fontWeight: '400',
 } as any);
 
-const Item = styled.div(() => {
-  return `
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 6px;
-
-    @media (max-width: 665px) {
-      display: block;
-      margin-bottom: 12px;
-    }
-  `;
+const Item = styled.div(({ elementWidth }) => {
+  const maxElementWidth = 407;
+  return {
+    flexDirection: elementWidth > maxElementWidth ? 'row' : 'inherit',
+    marginBottom: elementWidth > maxElementWidth ? '6px' : '12px',
+    display: elementWidth > maxElementWidth ? 'flex' : 'block',
+  };
 });
 
-const BadgeWrapper = styled.div({
+const StyledBadge = styled(Badge)({
+  marginTop: '-1px',
   marginBottom: '3px',
   minWidth: '70px',
-  display: 'flex',
+  maxWidth: 'fit-content',
+  width: '100%',
+  textAlign: 'center',
 });
 
 const Message = styled.div({
@@ -93,12 +93,14 @@ const Rule: FunctionComponent<RuleProps> = ({ rule }) => {
       break;
   }
   return (
-    <Item>
-      <BadgeWrapper>
-        <Badge status={badgeType}>{formatSeverityText(rule.impact)}</Badge>
-      </BadgeWrapper>
-      <Message>{rule.message}</Message>
-    </Item>
+    <SizeMe refreshMode="debounce">
+      {({ size }) => (
+        <Item elementWidth={size.width}>
+          <StyledBadge status={badgeType}>{formatSeverityText(rule.impact)}</StyledBadge>
+          <Message>{rule.message}</Message>
+        </Item>
+      )}
+    </SizeMe>
   );
 };
 
