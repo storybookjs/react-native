@@ -32,9 +32,9 @@ const Item = styled.div(({ elementWidth }) => {
 });
 
 const StyledBadge = styled(Badge)({
-  marginTop: '-1px',
+  padding: '2px 8px',
   marginBottom: '3px',
-  minWidth: '70px',
+  minWidth: '65px',
   maxWidth: 'fit-content',
   width: '100%',
   textAlign: 'center',
