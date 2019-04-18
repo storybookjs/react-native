@@ -88,14 +88,14 @@ const deprecationMessage = (optionsMap: OptionsMap, prefix: string = '') =>
     prefix ? `${prefix}'s` : ''
   } { ${Object.values(optionsMap).join(', ')} } instead.`;
 
-const applyDeprecatedThemeOptions = deprecate(
-  ({ name, url, ...options }: Options): PartialThemeVars => ({
-    brandTitle: options.brandTitle || name,
-    brandUrl: options.brandUrl || url,
-    brandImage: options.brandImage || null,
-  }),
-  deprecationMessage(deprecatedThemeOptions)
-);
+const applyDeprecatedThemeOptions = deprecate(({ name, url, theme }: Options): PartialThemeVars => {
+  const { brandTitle, brandUrl, brandImage }: PartialThemeVars = theme || {};
+  return {
+    brandTitle: brandTitle || name,
+    brandUrl: brandUrl || url,
+    brandImage: brandImage || null,
+  };
+}, deprecationMessage(deprecatedThemeOptions));
 
 const applyDeprecatedLayoutOptions = deprecate((options: Options): PartialLayout => {
   const layoutUpdate: PartialLayout = {};
