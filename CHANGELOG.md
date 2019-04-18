@@ -1,3 +1,10 @@
+## 5.0.10 (April 18, 2019)
+
+### Bug Fixes
+
+- Theming: legacy options don't override set config options ([#6543](https://github.com/storybooks/storybook/pull/6543))
+- Theming: Fix null brandImage ([#6544](https://github.com/storybooks/storybook/pull/6544))
+
 ## 5.1.0-alpha.30 (April 18, 2019)
 
 ### Bug Fixes
@@ -28,6 +35,14 @@
 
 - Bump @types/node from 11.11.8 to 11.13.4 ([#6527](https://github.com/storybooks/storybook/pull/6527))
 - Bump danger from 7.0.19 to 7.1.2 ([#6530](https://github.com/storybooks/storybook/pull/6530))
+
+## 5.0.9 (April 17, 2019)
+
+### Bug Fixes
+
+- UI: Fix panel toggle behavior in fullscreen ([#6525](https://github.com/storybooks/storybook/pull/6525))
+- Addon-Knobs: Add missing groupId for files knob ([#6534](https://github.com/storybooks/storybook/pull/6534))
+- Theming: FIX brandImage when theme created with brandTitle ([#6120](https://github.com/storybooks/storybook/pull/6120))
 
 ## 5.1.0-alpha.28 (April 16, 2019)
 
