@@ -1,3 +1,19 @@
+## 5.1.0-alpha.30 (April 18, 2019)
+
+### Bug Fixes
+
+- UI: Fix hard-coded viewmode to enable tabbed addons ([#6551](https://github.com/storybooks/storybook/pull/6551))
+- Theming: legacy options don't override set config options ([#6543](https://github.com/storybooks/storybook/pull/6543))
+- React-native: Fix preview only UI ([#6549](https://github.com/storybooks/storybook/pull/6549))
+
+### Dependency Upgrades
+
+- Bump react-redux from 6.0.1 to 7.0.2 ([#6529](https://github.com/storybooks/storybook/pull/6529))
+
+### Maintenance
+
+- Addon-storysource: Migrate from using channel to api ([#6550](https://github.com/storybooks/storybook/pull/6550))
+
 ## 5.1.0-alpha.29 (April 17, 2019)
 
 ### Bug Fixes
