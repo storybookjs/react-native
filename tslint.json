@@ -55,7 +55,7 @@
     "prefer-const": false,
     "quotemark": false,
     "radix": true,
-    "no-implicit-dependencies": [true, "dev", ["@storybook/react", "@storybook/addon-actions"]],
+    "no-implicit-dependencies": [true, "dev", "optional", ["@storybook/react", "@storybook/addon-actions"]],
     "triple-equals": [true, "allow-null-check"],
     "unified-signatures": true,
     "variable-name": false,

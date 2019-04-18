@@ -17,6 +17,7 @@
     "@storybook/addon-actions": "5.1.0-alpha.30",
     "@storybook/addon-backgrounds": "5.1.0-alpha.30",
     "@storybook/addon-centered": "5.1.0-alpha.30",
+    "@storybook/addon-contexts": "5.1.0-alpha.30",
     "@storybook/addon-cssresources": "5.1.0-alpha.30",
     "@storybook/addon-events": "5.1.0-alpha.30",
     "@storybook/addon-graphql": "5.1.0-alpha.30",
