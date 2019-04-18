@@ -7343,17 +7343,20 @@ codecov@^3.1.0:
     teeny-request "^3.7.0"
     urlgrey "^0.4.4"
 
-codelyzer@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/codelyzer/-/codelyzer-4.5.0.tgz#a65ddeeeca2894653253a89bfa229118ff9f59b1"
-  integrity sha512-oO6vCkjqsVrEsmh58oNlnJkRXuA30hF8cdNAQV9DytEalDwyOFRvHMnlKFzmOStNerOmPGZU9GAHnBo4tGvtiQ==
+codelyzer@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/codelyzer/-/codelyzer-5.0.0.tgz#e4032efb23a7c5d4bcfe7321fc1789490c679837"
+  integrity sha512-Bif70XYt8NFf/Q9GPTxmC86OsBRfQZq1dBjdruJ5kZhJ8/jKhJL6MvCLKnYtSOG6Rhiv/44DU0cHk6GYthjy8Q==
   dependencies:
     app-root-path "^2.1.0"
-    css-selector-tokenizer "^0.7.0"
+    aria-query "^3.0.0"
+    axobject-query "^2.0.2"
+    css-selector-tokenizer "^0.7.1"
     cssauron "^1.4.0"
+    damerau-levenshtein "^1.0.4"
     semver-dsl "^1.0.1"
     source-map "^0.5.7"
-    sprintf-js "^1.1.1"
+    sprintf-js "^1.1.2"
 
 codemirror-graphql@^0.7.1:
   version "0.7.1"
@@ -8252,7 +8255,7 @@ css-select@^2.0.0:
     domutils "^1.7.0"
     nth-check "^1.0.2"
 
-css-selector-tokenizer@^0.7.0:
+css-selector-tokenizer@^0.7.0, css-selector-tokenizer@^0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/css-selector-tokenizer/-/css-selector-tokenizer-0.7.1.tgz#a177271a8bca5019172f4f891fc6eed9cbf68d5d"
   integrity sha512-xYL0AMZJ4gFzJQsHUKa5jiWWi2vH77WVNg7JYRyewwj6oPh4yb/y6Y9ZCw9dsj/9UauMhtuxR+ogQd//EdEVNA==
@@ -24028,7 +24031,7 @@ split@1.0.1, split@^1.0.0:
   dependencies:
     through "2"
 
-sprintf-js@^1.0.3, sprintf-js@^1.1.1:
+sprintf-js@^1.0.3, sprintf-js@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.1.2.tgz#da1765262bf8c0f571749f2ad6c26300207ae673"
   integrity sha512-VE0SOVEHCk7Qc8ulkWw3ntAzXuqf7S2lvwQaDLRnUeIEaKNQJzV6BwmLKhOqT61aGhfUMrXeaBk+oDGCzvhcug==
