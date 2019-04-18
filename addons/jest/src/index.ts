@@ -1,6 +1,6 @@
 import addons from '@storybook/addons';
 import deprecate from 'util-deprecate';
-import { normalize } from 'upath';
+import { normalize, sep } from 'upath';
 import { ADD_TESTS } from './shared';
 
 interface AddonParameters {
@@ -13,7 +13,7 @@ const findTestResults = (
   jestTestFilesExt: string
 ) =>
   Object.values(testFiles).map(name => {
-    const fileName = `[\\/\\\\]${name}${jestTestFilesExt}`;
+    const fileName = `${sep}${name}${jestTestFilesExt}`;
 
     if (jestTestResults && jestTestResults.testResults) {
       const fileNamePattern = new RegExp(fileName);
