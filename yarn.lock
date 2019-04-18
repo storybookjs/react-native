@@ -2612,6 +2612,95 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
+"@storybook/addons@5.1.0-alpha.28":
+  version "5.1.0-alpha.28"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.1.0-alpha.28.tgz#03cbc01fafe90b7b7e15a377e2ccd3572b7ae67b"
+  integrity sha512-oUNIRd3A7SX/r6C3+lIqZBitDgCGlqezHbblsRoGDOTnwVmMahCr7hwQ+wfLsEm1SOOwwACr1JG8n/kzic2sSw==
+  dependencies:
+    "@storybook/api" "5.1.0-alpha.28"
+    "@storybook/channels" "5.1.0-alpha.28"
+    "@storybook/client-logger" "5.1.0-alpha.28"
+    core-js "^2.6.5"
+    global "^4.3.2"
+    util-deprecate "^1.0.2"
+
+"@storybook/api@5.1.0-alpha.28":
+  version "5.1.0-alpha.28"
+  resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.1.0-alpha.28.tgz#a020826069be70013b072c6e954aa0402f4e8ca7"
+  integrity sha512-wI6s7leJk8EwOHiwzZUDwu+MoLfL3yCryvlbQNTu3YudrkFaKytKLRRRc6pAqmoBvjPS9MhT4kmSbt5/fNoVUA==
+  dependencies:
+    "@storybook/channels" "5.1.0-alpha.28"
+    "@storybook/client-logger" "5.1.0-alpha.28"
+    "@storybook/core-events" "5.1.0-alpha.28"
+    "@storybook/router" "5.1.0-alpha.28"
+    "@storybook/theming" "5.1.0-alpha.28"
+    core-js "^2.6.5"
+    fast-deep-equal "^2.0.1"
+    global "^4.3.2"
+    lodash.isequal "^4.5.0"
+    lodash.mergewith "^4.6.1"
+    lodash.pick "^4.4.0"
+    memoizerific "^1.11.3"
+    prop-types "^15.6.2"
+    react "^16.7.0"
+    semver "^5.6.0"
+    store2 "^2.7.1"
+    telejson "^2.1.1"
+    util-deprecate "^1.0.2"
+
+"@storybook/channels@5.1.0-alpha.28":
+  version "5.1.0-alpha.28"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.1.0-alpha.28.tgz#712ba41efbd118cfa7d31847434b1491d58fb4c4"
+  integrity sha512-lt56WzPydouXmmSU0+F7bVvQNXDJ9/DmNf3rLv8kwzX2eqNihwS59lc16/VVu+/g1CQfNmp9c2OWZihVbGpNYg==
+  dependencies:
+    core-js "^2.6.5"
+
+"@storybook/client-logger@5.1.0-alpha.28":
+  version "5.1.0-alpha.28"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.1.0-alpha.28.tgz#380400ee9fc8e45e94433a5f5a192141e3b70afa"
+  integrity sha512-K/LNF7mIwQGKXKrPn09JHXO5iTcAhUfS/nZDNtWAuU9fdU5sSndqMM3LrSOQmPPL2MnaYRzDdIMUtI6ok4udTg==
+  dependencies:
+    core-js "^2.6.5"
+
+"@storybook/core-events@5.1.0-alpha.28":
+  version "5.1.0-alpha.28"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.1.0-alpha.28.tgz#7e267b239a0f68e4b07e693c391dc40d7d65998c"
+  integrity sha512-nRHMrHixNAfIf4NBaL2ZzCIxqoSuW2LJC6Q35xWD7bd2on7VnTkvn9YfEFBIY24HampAJCcf31eLLa5Nnr6OQQ==
+  dependencies:
+    core-js "^2.6.5"
+
+"@storybook/router@5.1.0-alpha.28":
+  version "5.1.0-alpha.28"
+  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.1.0-alpha.28.tgz#d40ab25ff3274f86fd85569651eb5067788df3d6"
+  integrity sha512-esCxKgX4Wls8N4AypLLc3u8j39dkxIiynzzE+DoECOpZl5NvIB/BX2LRpBAB2nub2ocoKbF0bBU4zKNIB+002Q==
+  dependencies:
+    "@reach/router" "^1.2.1"
+    "@storybook/theming" "5.1.0-alpha.28"
+    core-js "^2.6.5"
+    global "^4.3.2"
+    memoizerific "^1.11.3"
+    qs "^6.6.0"
+
+"@storybook/theming@5.1.0-alpha.28":
+  version "5.1.0-alpha.28"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.1.0-alpha.28.tgz#f9c1214f680c011db76f76197bd45ce6163a5420"
+  integrity sha512-N6A5+zLfmeYVGMrMmEBe8q5cuwj0QRWM3LwXuaQ4Dep+gYAm1qZsjagLEu1PTxYjaIKuHD9udnkGn4wFHBqvIA==
+  dependencies:
+    "@emotion/core" "^10.0.9"
+    "@emotion/styled" "^10.0.7"
+    "@storybook/client-logger" "5.1.0-alpha.28"
+    common-tags "^1.8.0"
+    core-js "^2.6.5"
+    deep-object-diff "^1.1.0"
+    emotion-theming "^10.0.9"
+    global "^4.3.2"
+    lodash.isequal "^4.5.0"
+    lodash.mergewith "^4.6.1"
+    memoizerific "^1.11.3"
+    polished "^3.0.0"
+    prop-types "^15.7.2"
+    react-inspector "^2.3.1"
+
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
@@ -21530,7 +21619,7 @@ react-native-gesture-handler@~1.0.14:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
-"react-native-maps@github:expo/react-native-maps#v0.22.1-exp.0":
+react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
   resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
 
