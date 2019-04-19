@@ -22,11 +22,14 @@ const List = styled.div({
   fontWeight: '400',
 } as any);
 
-const Item = styled.div(({ elementWidth }: { elementWidth: number }) => ({
-  flexDirection: elementWidth > 407 ? 'row' : 'inherit',
-  marginBottom: elementWidth > 407 ? '6px' : '12px',
-  display: elementWidth > 407 ? 'flex' : 'block',
-}));
+const Item = styled.div(({ elementWidth }: { elementWidth: number }) => {
+  const maxWidthBeforeBreak = 407;
+  return {
+    flexDirection: elementWidth > maxWidthBeforeBreak ? 'row' : 'inherit',
+    marginBottom: elementWidth > maxWidthBeforeBreak ? '6px' : '12px',
+    display: elementWidth > maxWidthBeforeBreak ? 'flex' : 'block',
+  };
+});
 
 const StyledBadge = styled(Badge)(({ status }: { status: string }) => ({
   padding: '2px 8px',

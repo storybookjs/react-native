@@ -218,7 +218,7 @@ exports[`A11YPanel should render report 1`] = `
                 "176o2y5": true,
                 "1977chw": true,
                 "19mcg9j": true,
-                "1juf3a4": true,
+                "1ez3l8h": true,
                 "1kbt4a0": true,
                 "1l7fvsg": true,
                 "1myfomu": true,
@@ -608,13 +608,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1juf3a4{padding:12px 0px 3px 12px;cursor:pointer;font-size:13px;height:40px;border:none;margin-top:0px;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
+                    .css-1ez3l8h{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0px;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-1juf3a4 input{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
+                    .css-1ez3l8h input{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
                   </style>
                   <style
                     data-emotion="css"
@@ -834,13 +834,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1juf3a4{padding:12px 0px 3px 12px;cursor:pointer;font-size:13px;height:40px;border:none;margin-top:0px;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
+                    .css-1ez3l8h{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0px;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-1juf3a4 input{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
+                    .css-1ez3l8h input{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
                   </style>,
                   <style
                     data-emotion="css"
