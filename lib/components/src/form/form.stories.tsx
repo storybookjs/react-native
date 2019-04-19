@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { Input, Button, Select, Textarea } from './input/input';
-import Field from './field/field';
+import { Field } from './field/field';
 import { Spaced } from '../spaced/Spaced';
 
 const Flexed = styled.div({ display: 'flex' });

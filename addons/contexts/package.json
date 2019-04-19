@@ -1,0 +1,41 @@
+{
+  "name": "@storybook/addon-contexts",
+  "version": "5.1.0-alpha.31",
+  "description": "Storybook Addon Contexts",
+  "keywords": [
+    "storybook",
+    "react",
+    "vue"
+  ],
+  "author": "Leo Y. Li",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "register.js",
+    "react.js",
+    "vue.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/contexts"
+  },
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addons": "5.1.0-alpha.31",
+    "@storybook/channels": "5.1.0-alpha.31",
+    "@storybook/components": "5.1.0-alpha.31",
+    "@storybook/core-events": "5.1.0-alpha.31"
+  },
+  "optionalDependencies": {
+    "react": "*",
+    "vue": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

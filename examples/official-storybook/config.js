@@ -49,6 +49,7 @@ addParameters({
   options: {
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: '|',
+    theme: { base: 'light', brandTitle: 'Storybook!' },
   },
   backgrounds: [
     { name: 'storybook app', value: themes.light.appBg, default: true },

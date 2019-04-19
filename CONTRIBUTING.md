@@ -90,7 +90,7 @@ After that, the `run` directory content will be compared with `snapshots`. You c
 
 In that case, please check the git diff before committing to make sure it only contains the intended changes.
 
-#### 2c. Link `storybook` and any other required dependencies:
+#### 2c. Link `storybook` and any other required dependencies
 
 If you want to test your own existing project using the GitHub version of storybook, you need to `link` the packages you use in your project.
 

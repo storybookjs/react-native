@@ -119,7 +119,7 @@ export interface TooltipProps {
   color?: keyof Color;
 }
 
-const Tooltip: FunctionComponent<TooltipProps> = ({
+export const Tooltip: FunctionComponent<TooltipProps> = ({
   placement,
   hasChrome,
   children,
@@ -145,5 +145,3 @@ Tooltip.defaultProps = {
   placement: 'top',
   arrowProps: {},
 };
-
-export default Tooltip;

@@ -49,8 +49,6 @@ export interface BadgeProps {
   status: 'positive' | 'negative' | 'neutral';
 }
 
-const Badge: FunctionComponent<BadgeProps> = ({ ...props }) => {
+export const Badge: FunctionComponent<BadgeProps> = ({ ...props }) => {
   return <BadgeWrapper {...props} />;
 };
-
-export default Badge;

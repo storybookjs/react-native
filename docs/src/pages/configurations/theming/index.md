@@ -14,7 +14,7 @@ We've created two basic themes that look good of the box: "normal" (a light them
 As the simplest example example, you can tell Storybook to use the "dark" theme by modifyig `.storybook/config.js`:
 
 ```js
-import { addParameters, configure } from '@storybook/react';
+import { addParameters } from '@storybook/react';
 import { themes } from '@storybook/theming';
 
 // Option defaults.

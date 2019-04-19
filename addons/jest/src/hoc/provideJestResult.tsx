@@ -64,7 +64,7 @@ const provideTests = (Component: React.ComponentType<InjectedProps>) =>
       const { api } = this.props;
 
       this.stopListeningOnStory();
-      api.removeListener(ADD_TESTS, this.onAddTests);
+      api.off(ADD_TESTS, this.onAddTests);
     }
 
     onAddTests = ({ kind, storyName, tests }: HocState) => {

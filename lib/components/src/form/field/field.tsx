@@ -26,7 +26,7 @@ export interface FieldProps {
   label?: ReactNode;
 }
 
-const Field: FunctionComponent<FieldProps> = ({ label, children }) => (
+export const Field: FunctionComponent<FieldProps> = ({ label, children }) => (
   <Wrapper>
     {label ? (
       <Label>
@@ -40,5 +40,3 @@ const Field: FunctionComponent<FieldProps> = ({ label, children }) => (
 Field.defaultProps = {
   label: undefined,
 };
-
-export default Field;
