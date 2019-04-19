@@ -1,3 +1,20 @@
+## 5.1.0-alpha.31 (April 19, 2019)
+
+### Features
+
+* Addon-backgrounds: Emit event on updating background ([#6561](https://github.com/storybooks/storybook/pull/6561))
+* Addon-contexts: Merge into monorepo ([#6559](https://github.com/storybooks/storybook/pull/6559))
+
+### Bug Fixes
+
+* Angular: Fix sourceMap property of angulars webpack config ([#6535](https://github.com/storybooks/storybook/pull/6535))
+* Addon-jest: Fix result display ([#6539](https://github.com/storybooks/storybook/pull/6539))
+
+### Dependency Upgrades
+
+* Bump ember-source from 3.8.1 to 3.9.1 ([#6531](https://github.com/storybooks/storybook/pull/6531))
+* Bump typescript from 3.4.2 to 3.4.3 ([#6528](https://github.com/storybooks/storybook/pull/6528))
+
 ## 5.0.10 (April 18, 2019)
 
 ### Bug Fixes
