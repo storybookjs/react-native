@@ -472,11 +472,9 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
             class="emotion-9"
           >
             <svg
+              title="Storybook icon"
               viewBox="0 0 64 64"
             >
-              <title>
-                Storybook icon
-              </title>
               <g
                 fill="none"
                 fill-rule="evenodd"
@@ -1768,11 +1766,9 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
             class="emotion-9"
           >
             <svg
+              title="Storybook icon"
               viewBox="0 0 64 64"
             >
-              <title>
-                Storybook icon
-              </title>
               <g
                 fill="none"
                 fill-rule="evenodd"
@@ -3030,11 +3026,9 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
             class="emotion-9"
           >
             <svg
+              title="Storybook icon"
               viewBox="0 0 64 64"
             >
-              <title>
-                Storybook icon
-              </title>
               <g
                 fill="none"
                 fill-rule="evenodd"

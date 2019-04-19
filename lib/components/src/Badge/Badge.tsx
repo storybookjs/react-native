@@ -60,7 +60,7 @@ const BadgeWrapper = styled.div<BadgeWrapperProps>`
 `;
 
 export interface BadgeProps {
-  status: 'positive' | 'negative' | 'neutral';
+  status: 'positive' | 'negative' | 'neutral' | 'warning' | 'critical';
 }
 
 export const Badge: FunctionComponent<BadgeProps> = ({ ...props }) => {

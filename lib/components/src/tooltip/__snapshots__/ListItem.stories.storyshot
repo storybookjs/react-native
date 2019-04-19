@@ -235,18 +235,19 @@ exports[`Storyshots basics|Tooltip/ListItem all 1`] = `
   padding-left: 10px;
 }
 
-.emotion-3 {
-  color: #333333;
-  font-weight: 400;
-}
-
 .emotion-0 {
   color: #333333;
   font-weight: 400;
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
+}
+
+.emotion-3 {
+  color: #333333;
+  font-weight: 400;
 }
 
 .emotion-10 svg {
@@ -955,6 +956,7 @@ exports[`Storyshots basics|Tooltip/ListItem loading 1`] = `
   font-weight: 400;
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
+  background: rgba(0,0,0,.1);
   color: transparent;
   cursor: progress;
 }
