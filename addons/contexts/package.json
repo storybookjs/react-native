@@ -34,5 +34,8 @@
   "optionalDependencies": {
     "react": "*",
     "vue": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
