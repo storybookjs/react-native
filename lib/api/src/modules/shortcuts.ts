@@ -209,6 +209,7 @@ export default function initShortcuts({ store }: Module) {
         case 'togglePanel': {
           if (isFullscreen) {
             fullApi.toggleFullscreen();
+            fullApi.resetLayout();
           }
 
           fullApi.togglePanel();
@@ -218,6 +219,7 @@ export default function initShortcuts({ store }: Module) {
         case 'toggleNav': {
           if (isFullscreen) {
             fullApi.toggleFullscreen();
+            fullApi.resetLayout();
           }
 
           fullApi.toggleNav();

@@ -1,6 +1,6 @@
 # Migration
 
-- [From version 4.0.x to 5.1.x](#from-version-40x-to-51x)
+- [From version 5.0.x to 5.1.x](#from-version-50x-to-51x)
   - [React native server](#react-native-server)
 - [From version 5.0.1 to 5.0.2](#from-version-501-to-502)
   - [Deprecate webpack extend mode](#deprecate-webpack-extend-mode)
@@ -53,7 +53,7 @@
   - [Packages renaming](#packages-renaming)
   - [Deprecated embedded addons](#deprecated-embedded-addons)
 
-## From version 4.1.x to 5.1.x
+## From version 5.0.x to 5.1.x
 
 ### React native server
 

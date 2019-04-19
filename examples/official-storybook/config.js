@@ -49,6 +49,7 @@ addParameters({
   options: {
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: '|',
+    theme: { base: 'light', brandTitle: 'Storybook!' },
   },
   backgrounds: [
     { name: 'storybook app', value: themes.light.appBg, default: true },
@@ -121,7 +122,7 @@ function loadStories() {
   req = require.context('../../lib/ui/src', true, /\.stories\.js$/);
   importAll(req);
 
-  req = require.context('../../lib/components/src', true, /\.stories\.js$/);
+  req = require.context('../../lib/components/src', true, /\.stories\.tsx?$/);
   importAll(req);
 
   req = require.context('./stories', true, /\.stories\.js$/);

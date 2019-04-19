@@ -47,6 +47,12 @@ Object {
       ".jsx",
     ],
   },
+  "resolveLoader": Object {
+    "modules": Array [
+      "node_modules",
+      "/app/react/src/server/__mocks__/react-scripts-2-0-0/node_modules",
+    ],
+  },
 }
 `;
 
@@ -108,6 +114,12 @@ Object {
       ".jsx",
       ".ts",
       ".tsx",
+    ],
+  },
+  "resolveLoader": Object {
+    "modules": Array [
+      "node_modules",
+      "/app/react/src/server/__mocks__/react-scripts-2-1-0/node_modules",
     ],
   },
 }

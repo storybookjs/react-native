@@ -75,7 +75,7 @@ const formatSeverityText = (severity: string) => {
 };
 
 const Rule: FunctionComponent<RuleProps> = ({ rule }) => {
-  let badgeType = '';
+  let badgeType: any = null;
   switch (rule.impact) {
     case ImpactValue.CRITICAL:
       badgeType = 'critical';
