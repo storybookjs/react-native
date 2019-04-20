@@ -58,14 +58,14 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links 1`] = `
   padding-left: 10px;
 }
 
-.emotion-0 {
-  display: inline-block;
-  cursor: pointer;
-}
-
 .emotion-2 {
   color: #333333;
   font-weight: 400;
+}
+
+.emotion-0 {
+  display: inline-block;
+  cursor: pointer;
 }
 
 .emotion-9 {
@@ -214,14 +214,14 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links and callback 1`] = `
   padding-left: 10px;
 }
 
-.emotion-0 {
-  display: inline-block;
-  cursor: pointer;
-}
-
 .emotion-2 {
   color: #333333;
   font-weight: 400;
+}
+
+.emotion-0 {
+  display: inline-block;
+  cursor: pointer;
 }
 
 .emotion-12 {
