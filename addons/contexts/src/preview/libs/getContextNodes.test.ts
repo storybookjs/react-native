@@ -17,7 +17,7 @@ describe('Test on the merging result of a pair of settings', () => {
   it('should correctly merge two settings', () => {
     // setup
     const someTopLevelSettings = {
-      icon: 'box',
+      icon: 'box' as const,
       title: 'Some Context',
       components: ['div'],
       params: [{ name: 'T1', props: {} }, { name: 'T2', props: {} }],
@@ -27,7 +27,7 @@ describe('Test on the merging result of a pair of settings', () => {
       },
     };
     const someStoryLevelSettings = {
-      icon: 'box',
+      icon: 'box' as const,
       title: 'Some Context',
       components: ['span'],
       params: [{ name: 'S1', props: {} }, { name: 'S2', props: {} }],

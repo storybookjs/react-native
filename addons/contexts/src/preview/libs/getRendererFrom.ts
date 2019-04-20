@@ -1,12 +1,20 @@
-import { GetAggregatedWrap, GetRendererFrom } from '../../@types';
+import { AddonOptions, AnyFunctionReturns, ContextNode, GenericProp, PropsMap } from '../../types';
 
 /**
  * @private
- * Aggregates component vNodes with activated props in a descending order,
+ * Aggregate component vNodes with activated props in a descending order,
  * based on the given options in the contextual environment setup.
  *
  * @param {function} h - the associated `createElement` vNode creator from the framework
  */
+type GetAggregatedWrap = <T>(
+  h: AnyFunctionReturns<T>
+) => (
+  components: ContextNode['components'],
+  props: GenericProp,
+  options: AddonOptions
+) => AnyFunctionReturns<T>;
+
 export const _getAggregatedWrap: GetAggregatedWrap = h => (components, props, options) => vNode => {
   const last = components.length - 1;
   const isSkipped =
@@ -34,8 +42,12 @@ export const _getAggregatedWrap: GetAggregatedWrap = h => (components, props, op
  *
  * @param {function} h - the associated `createElement` vNode creator from the framework
  */
-export const getRendererFrom: GetRendererFrom = h => (nodes, propsMap, getStoryVNode) =>
-  nodes
+type GetRendererFrom = <T>(
+  h: AnyFunctionReturns<T>
+) => (...args: [ContextNode[], PropsMap, AnyFunctionReturns<any>]) => T;
+
+export const getRendererFrom: GetRendererFrom = h => (contextNodes, propsMap, getStoryVNode) =>
+  contextNodes
     // map over contextual nodes to get the wrapping function
     .map(({ nodeId, components, options }) =>
       _getAggregatedWrap(h)(components, propsMap[nodeId], options)

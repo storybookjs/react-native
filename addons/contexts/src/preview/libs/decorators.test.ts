@@ -1,4 +1,4 @@
-import { memorize, singleton } from './functionals';
+import { memorize, singleton } from './decorators';
 
 describe('Test on functional helpers: memorize', () => {
   it('should memorize the calculated result', () => {
