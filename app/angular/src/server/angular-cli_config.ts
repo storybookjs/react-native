@@ -9,8 +9,26 @@ import {
   getAngularCliParts,
 } from './angular-cli_utils';
 
-function getTsConfigOptions(tsConfigPath) {
-  const basicOptions = {
+// todo add more accurate typings
+interface BasicOptions {
+  options: {
+    baseUrl?: string | undefined;
+  };
+  raw: object;
+  fileNames: string[];
+  errors: any[];
+}
+
+interface TsConfig {
+  compilerOptions: TsConfigCompilerOptions | undefined;
+}
+
+interface TsConfigCompilerOptions {
+  baseUrl: string | undefined;
+}
+
+function getTsConfigOptions(tsConfigPath: Path) {
+  const basicOptions: BasicOptions = {
     options: {},
     raw: {},
     fileNames: [],
@@ -21,8 +39,9 @@ function getTsConfigOptions(tsConfigPath) {
     return basicOptions;
   }
 
-  const tsConfig = JSON.parse(fs.readFileSync(tsConfigPath, 'utf8'));
-  const { baseUrl } = tsConfig.compilerOptions || {};
+  const tsConfig: TsConfig = JSON.parse(fs.readFileSync(tsConfigPath, 'utf8'));
+
+  const { baseUrl } = tsConfig.compilerOptions;
 
   if (baseUrl) {
     const tsConfigDirName = path.dirname(tsConfigPath);
@@ -32,7 +51,7 @@ function getTsConfigOptions(tsConfigPath) {
   return basicOptions;
 }
 
-export function getAngularCliWebpackConfigOptions(dirToSearch) {
+export function getAngularCliWebpackConfigOptions(dirToSearch: string) {
   const fname = path.join(dirToSearch, 'angular.json');
 
   if (!fs.existsSync(fname)) {
@@ -79,7 +98,8 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
   };
 }
 
-export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions) {
+// todo add types
+export function applyAngularCliWebpackConfig(baseConfig: any, cliWebpackConfigOptions: any) {
   if (!cliWebpackConfigOptions) {
     return baseConfig;
   }
@@ -105,9 +125,10 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
   const rulesExcludingStyles = filterOutStylingRules(baseConfig);
 
   // cliStyleConfig.entry adds global style files to the webpack context
+  // todo add type for acc
   const entry = [
     ...baseConfig.entry,
-    ...Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), []),
+    ...Object.values(cliStyleConfig.entry).reduce((acc: any, item) => acc.concat(item), []),
   ];
 
   const module = {

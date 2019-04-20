@@ -1,5 +1,5 @@
-import { getAngularCliWebpackConfigOptions } from './angular-cli_config';
-import angularJson from '../../../../examples/angular-cli/angular.json';
+import { getAngularCliWebpackConfigOptions } from '../angular-cli_config';
+import angularJson from './angular.json';
 
 // eslint-disable-next-line global-require
 jest.mock('fs', () => require('../../../../__mocks__/fs'));

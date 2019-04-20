@@ -1,6 +1,7 @@
 import { renderNgApp } from './angular/helpers';
 
-export default function render({ storyFn, showMain, forceRender }) {
+// add proper types
+export default function render({ storyFn, showMain, forceRender }: any) {
   showMain();
   renderNgApp(storyFn, forceRender);
 }

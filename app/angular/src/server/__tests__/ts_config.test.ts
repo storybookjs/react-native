@@ -1,4 +1,4 @@
-import getTsLoaderOptions from './ts_config';
+import getTsLoaderOptions from '../ts_config';
 
 // eslint-disable-next-line global-require
 jest.mock('fs', () => require('../../../../__mocks__/fs'));

@@ -1,7 +1,18 @@
 import fs from 'fs';
 import { basename, dirname, normalize, relative, resolve } from '@angular-devkit/core';
 
-function isDirectory(assetPath) {
+// todo check if there's already a correct type for this
+interface Rule {
+  test: RegExp;
+}
+
+interface Config {
+  module: {
+    rules: Rule[];
+  };
+}
+
+function isDirectory(assetPath: string) {
   try {
     return fs.statSync(assetPath).isDirectory();
   } catch (e) {
@@ -9,7 +20,7 @@ function isDirectory(assetPath) {
   }
 }
 
-function getAssetsParts(resolvedAssetPath, assetPath) {
+function getAssetsParts(resolvedAssetPath: Path, assetPath: Path) {
   if (isDirectory(resolvedAssetPath)) {
     return {
       glob: '**/*', // Folders get a recursive star glob.
@@ -23,7 +34,7 @@ function getAssetsParts(resolvedAssetPath, assetPath) {
   };
 }
 
-function isStylingRule(rule) {
+function isStylingRule(rule: Rule) {
   const { test } = rule;
 
   if (!test) {
@@ -37,7 +48,7 @@ function isStylingRule(rule) {
   return test.test('.css') || test.test('.scss') || test.test('.sass');
 }
 
-export function filterOutStylingRules(config) {
+export function filterOutStylingRules(config: Config) {
   return config.module.rules.filter(rule => !isStylingRule(rule));
 }
 
@@ -50,8 +61,10 @@ export function isBuildAngularInstalled() {
   }
 }
 
-export function getAngularCliParts(cliWebpackConfigOptions) {
+// todo add type
+export function getAngularCliParts(cliWebpackConfigOptions: any) {
   // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+  // tslint:disable-next-line: no-implicit-dependencies
   const ngCliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
 
   try {
@@ -64,12 +77,14 @@ export function getAngularCliParts(cliWebpackConfigOptions) {
   }
 }
 
-export function normalizeAssetPatterns(assetPatterns, dirToSearch, sourceRoot) {
+// todo fix any
+export function normalizeAssetPatterns(assetPatterns: any, dirToSearch: Path, sourceRoot: Path) {
   if (!assetPatterns || !assetPatterns.length) {
     return [];
   }
 
-  return assetPatterns.map(assetPattern => {
+  // todo fix any
+  return assetPatterns.map((assetPattern: any) => {
     if (typeof assetPattern === 'object') {
       return assetPattern;
     }

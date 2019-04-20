@@ -3,8 +3,9 @@ import { ContextReplacementPlugin } from 'webpack';
 import autoprefixer from 'autoprefixer';
 import getTsLoaderOptions from './ts_config';
 import createForkTsCheckerInstance from './create-fork-ts-checker-plugin';
+import { WebpackConfig } from '.';
 
-export function webpack(config, { configDir }) {
+export function webpack(config: WebpackConfig, { configDir }: { configDir: string }) {
   const tsLoaderOptions = getTsLoaderOptions(configDir);
   return {
     ...config,

@@ -1,9 +1,9 @@
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import getTsLoaderOptions from './ts_config';
-import createForkTsCheckerInstance from './create-fork-ts-checker-plugin';
+import getTsLoaderOptions from '../ts_config';
+import createForkTsCheckerInstance from '../create-fork-ts-checker-plugin';
 
 // eslint-disable-next-line global-require
-jest.mock('fs', () => require('../../../../__mocks__/fs'));
+jest.mock('fs', () => require('./fs'));
 jest.mock('path', () => ({
   resolve: () => 'tsconfig.json',
 }));
@@ -18,7 +18,9 @@ describe('create-fork-ts-checker-plugin.test', () => {
     setupFiles({ 'tsconfig.json': '{}' });
 
     const tsLoaderOptions = getTsLoaderOptions('.foo');
-    const instance = createForkTsCheckerInstance(tsLoaderOptions);
+
+    // todo resolve any
+    const instance: any = createForkTsCheckerInstance(tsLoaderOptions);
 
     expect(instance).toBeInstanceOf(ForkTsCheckerWebpackPlugin);
     expect(instance.tsconfig).toEqual(tsLoaderOptions.configFile);
