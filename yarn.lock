@@ -5652,6 +5652,11 @@ basic-auth@~2.0.0:
   dependencies:
     safe-buffer "5.1.2"
 
+batch-processor@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
+  integrity sha1-dclcMrdI4IUNEMKxaPa9vpiRrOg=
+
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
@@ -9243,6 +9248,13 @@ elegant-spinner@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/elegant-spinner/-/elegant-spinner-1.0.1.tgz#db043521c95d7e303fd8f345bedc3349cfb0729e"
   integrity sha1-2wQ1IcldfjA/2PNFvtwzSc+wcp4=
+
+element-resize-detector@^1.1.12:
+  version "1.1.15"
+  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.1.15.tgz#48eba1a2eaa26969a4c998d972171128c971d8d2"
+  integrity sha512-16/5avDegXlUxytGgaumhjyQoM6hpp5j3+L79sYq5hlXfTNRy5WMMuTVWkZU3egp/CokCmTmvf18P3KeB57Iog==
+  dependencies:
+    batch-processor "^1.0.0"
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -21630,9 +21642,9 @@ react-redux@^7.0.2:
     react-is "^16.8.6"
 
 react-resize-detector@^4.0.5:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/react-resize-detector/-/react-resize-detector-4.0.5.tgz#25eb7df5f34fd69ee1ef2229b1f5e728e14e8300"
-  integrity sha512-JbTkf+08No1R2lcplc1Xfcgyc/S7931ujs09tFtWKRy/cthZMuc2Nj25Pox7g6e4CwHk+OH8AQ6jF5s7utIQlA==
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/react-resize-detector/-/react-resize-detector-4.1.3.tgz#cada852b63b07453e11c9078eb571b9c4bc9d48f"
+  integrity sha512-tzVDVFxhUVdTjxyR1OqNggkbFAA7srawgwhcm4XQjyGq/R8M13MiceI+4C7xfzHqaKk0Oq7ErIXexGGSgQEKcQ==
   dependencies:
     lodash "^4.17.11"
     lodash-es "^4.17.11"
@@ -21706,6 +21718,17 @@ react-select@^2.2.0:
     raf "^3.4.0"
     react-input-autosize "^2.2.1"
     react-transition-group "^2.2.1"
+
+react-sizeme@^2.5.2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/react-sizeme/-/react-sizeme-2.5.2.tgz#e7041390cfb895ed15d896aa91d76e147e3b70b5"
+  integrity sha512-hYvcncV1FxVzPm2EhVwlOLf7Tk+k/ttO6rI7bfKUL/aL1gYzrY3DXJsdZ6nFaFgGSU/i8KC6gCoptOhBbRJpXQ==
+  dependencies:
+    element-resize-detector "^1.1.12"
+    invariant "^2.2.2"
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
+    shallowequal "^1.0.2"
 
 react-syntax-highlighter@^8.0.1:
   version "8.1.0"
