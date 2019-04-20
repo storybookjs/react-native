@@ -1,6 +1,6 @@
 # Storybook Addon Contexts
 
-[![npm version](https://badge.fury.io/js/@storybook/addon-contexts.svg)](https://badge.fury.io/js/@storybook/addon-contexts)
+[![npm version](https://badge.fury.io/js/%40storybook%2Faddon-contexts.svg)](https://badge.fury.io/js/%40storybook%2Faddon-contexts)
 
 **Storybook Addon Contexts** is an addon for driving your components under dynamic contexts in
 [Storybook](https://storybook.js.org/).
