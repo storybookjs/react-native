@@ -5,12 +5,15 @@ import { ContextNode, GenericProp, PropsMap, SelectionState } from '../../types'
  * @private
  * Extract the activated props by name from a given contextual params.
  */
-type GetPropsByParamName = (params: ContextNode['params'], name?: string) => GenericProp;
+type GetPropsByParamName = (
+  params: ContextNode['params'],
+  name?: string
+) => GenericProp | typeof OPT_OUT;
 
 export const _getPropsByParamName: GetPropsByParamName = (params, name) => {
   const { props = null } =
     // when opt-out context
-    (name === OPT_OUT && {}) ||
+    (name === OPT_OUT && { props: OPT_OUT }) ||
     // when menu option get selected
     (name && params.find(param => param.name === name)) ||
     // when being initialized

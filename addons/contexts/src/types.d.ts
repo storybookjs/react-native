@@ -30,6 +30,7 @@ export declare interface AddonSetting {
 
 export declare interface ContextNode extends Required<AddonSetting> {
   nodeId: string;
+  options: Required<AddonOptions>;
 }
 
 export declare interface SelectionState {
