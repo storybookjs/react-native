@@ -1,17 +1,21 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { useChannel } from './libs/useChannel';
+import { useChannel, Channel } from './libs/useChannel';
 import { ToolBar } from './ToolBar';
 import { REBOOT_MANAGER, UPDATE_MANAGER, UPDATE_PREVIEW } from '../constants';
-import { TAddonManager, StringObject } from '../@types';
+import { SelectionState, FCNoChildren } from '../types';
 
 /**
  * Control addon states and addon-story interactions
  */
-export const AddonManager: TAddonManager = ({ channel }) => {
+type AddonManager = FCNoChildren<{
+  channel: Channel;
+}>;
+
+export const AddonManager: AddonManager = ({ channel }) => {
   const [nodes, setNodes] = useState([]);
-  const [state, setState] = useState(undefined);
+  const [state, setState] = useState<SelectionState>(undefined);
   const setSelected = useCallback(
-    (nodeId, name) => setState((obj: StringObject = {}) => ({ ...obj, [nodeId]: name })),
+    (nodeId, name) => setState((obj = {}) => ({ ...obj, [nodeId]: name })),
     []
   );
 

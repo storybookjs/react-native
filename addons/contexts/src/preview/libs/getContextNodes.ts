@@ -1,11 +1,15 @@
-import { GetContextNodes, GetMergedSettings } from '../../@types';
+import { AddonSetting, ContextNode, WrapperSettings } from '../../types';
 
 /**
  * @private
- * Merges the top-level (global options) and the story-level (parameters) from a pair of setting;
- *
- * @return the normalized definition for a contextual environment (-> node).
+ * Merge the top-level (global options) and the story-level (parameters) from a pair of setting;
+ * @return the normalized definition for a contextual environment (i.e. a contextNode).
  */
+type GetMergedSettings = (
+  topLevel: Partial<AddonSetting>,
+  storyLevel: Partial<AddonSetting>
+) => ContextNode;
+
 export const _getMergedSettings: GetMergedSettings = (topLevel, storyLevel) => ({
   nodeId: topLevel.title || storyLevel.title || '',
   icon: topLevel.icon || storyLevel.icon || '',
@@ -28,13 +32,17 @@ export const _getMergedSettings: GetMergedSettings = (topLevel, storyLevel) => (
 
 /**
  * @nosideeffects
- * pairs up settings for merging normalizations to produce the contextual definitions (-> nodes);
+ * Pair up settings for merging normalizations to produce the contextual definitions (i.e. contextNodes);
  * it guarantee the adding order can be respected but not duplicated.
  */
+type GetContextNodes = (settings: WrapperSettings) => ContextNode[];
+
 export const getContextNodes: GetContextNodes = ({ options, parameters }) => {
   const titles = Array()
     .concat(options, parameters)
-    .map(({ title } = {}) => title);
+    .filter(Boolean)
+    .map(({ title }) => title);
+
   return Array.from(new Set(titles))
     .filter(Boolean)
     .map(title =>
