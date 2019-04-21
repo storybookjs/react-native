@@ -8,6 +8,7 @@ import {
   filterOutStylingRules,
   getAngularCliParts,
 } from './angular-cli_utils';
+import { Path } from '@angular-devkit/core';
 
 // todo add more accurate typings
 interface BasicOptions {
@@ -51,7 +52,7 @@ function getTsConfigOptions(tsConfigPath: Path) {
   return basicOptions;
 }
 
-export function getAngularCliWebpackConfigOptions(dirToSearch: string) {
+export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
   const fname = path.join(dirToSearch, 'angular.json');
 
   if (!fs.existsSync(fname)) {
@@ -80,7 +81,7 @@ export function getAngularCliWebpackConfigOptions(dirToSearch: string) {
   );
 
   const projectRoot = path.resolve(dirToSearch, project.root);
-  const tsConfigPath = path.resolve(dirToSearch, projectOptions.tsConfig);
+  const tsConfigPath = path.resolve(dirToSearch, projectOptions.tsConfig) as Path;
   const tsConfig = getTsConfigOptions(tsConfigPath);
 
   return {

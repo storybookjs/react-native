@@ -5,9 +5,10 @@ import {
   applyAngularCliWebpackConfig,
 } from './angular-cli_config';
 import { WebpackConfig } from '.';
+import { Path } from '@angular-devkit/core';
 
 export function webpackFinal(config: WebpackConfig) {
-  const cwd = process.cwd();
+  const cwd = process.cwd() as Path;
   const cliWebpackConfigOptions = getAngularCliWebpackConfigOptions(cwd);
 
   if (cliWebpackConfigOptions) {

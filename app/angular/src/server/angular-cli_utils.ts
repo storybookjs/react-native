@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { basename, dirname, normalize, relative, resolve } from '@angular-devkit/core';
+import { basename, dirname, normalize, relative, resolve, Path } from '@angular-devkit/core';
 
 // todo check if there's already a correct type for this
 interface Rule {
