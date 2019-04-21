@@ -40,7 +40,9 @@ type GetContextNodes = (settings: WrapperSettings) => ContextNode[];
 export const getContextNodes: GetContextNodes = ({ options, parameters }) => {
   const titles = Array()
     .concat(options, parameters)
-    .map(({ title } = {}) => title);
+    .filter(Boolean)
+    .map(({ title }) => title);
+
   return Array.from(new Set(titles))
     .filter(Boolean)
     .map(title =>

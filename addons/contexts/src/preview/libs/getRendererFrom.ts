@@ -43,7 +43,7 @@ export const _getAggregatedWrap: GetAggregatedWrap = h => (components, props, op
  */
 type GetRendererFrom = <T>(
   h: AnyFunctionReturns<T>
-) => (contextNodes: ContextNode[], propsMap: PropsMap, getStoryVNode: AnyFunctionReturns<any>) => T;
+) => (contextNodes: ContextNode[], propsMap: PropsMap, getStoryVNode: AnyFunctionReturns<T>) => T;
 
 export const getRendererFrom: GetRendererFrom = h => (contextNodes, propsMap, getStoryVNode) =>
   contextNodes

@@ -1,5 +1,5 @@
-import Vue, { Component } from 'vue';
-import { createAddonDecorator, Renderer } from '../index';
+import Vue from 'vue';
+import { createAddonDecorator, Render } from '../index';
 import { addonContextsAPI } from '../api';
 import { ID } from '../../constants';
 
@@ -7,7 +7,7 @@ import { ID } from '../../constants';
  * This is the framework specific bindings for Vue.
  * '@storybook/vue' expects the returning object from a decorator to be a 'VueComponent'.
  */
-export const renderVue: Renderer = (contextNodes, propsMap, getStoryVNode) => {
+export const renderVue: Render<Vue.Component> = (contextNodes, propsMap, getStoryVNode) => {
   const { getRendererFrom, updateReactiveSystem } = addonContextsAPI();
   const reactiveProps = updateReactiveSystem(propsMap);
   return Vue.extend({
@@ -16,7 +16,7 @@ export const renderVue: Renderer = (contextNodes, propsMap, getStoryVNode) => {
     render: createElement =>
       getRendererFrom((component, props, children) =>
         createElement(component, { props }, [children])
-      )(contextNodes, reactiveProps, () => createElement(getStoryVNode() as Component)),
+      )(contextNodes, reactiveProps, () => createElement(getStoryVNode())),
   });
 };
 

@@ -14,10 +14,10 @@ import { AddonSetting, AnyFunctionReturns, ContextNode, PropsMap } from '../type
  * who is also knowing how to communicate with the Storybook manager (in React) via the Storybook
  * event system.
  *
- * @param {Renderer} render - framework specific bindings
+ * @param {Render} render - framework specific bindings
  */
-export type Renderer = (...args: [ContextNode[], PropsMap, AnyFunctionReturns<unknown>]) => unknown;
-type CreateAddonDecorator = (renderer: Renderer) => (contexts: AddonSetting[]) => unknown;
+export type Render<T> = (...args: [ContextNode[], PropsMap, AnyFunctionReturns<T>]) => T;
+type CreateAddonDecorator = <T>(render: Render<T>) => (contexts: AddonSetting[]) => T;
 
 export const createAddonDecorator: CreateAddonDecorator = render => {
   const wrapper: StoryWrapper = (getStory, context, settings: any) => {
