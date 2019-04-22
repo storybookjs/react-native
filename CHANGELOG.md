@@ -1,3 +1,13 @@
+## 5.1.0-alpha.32 (April 22, 2019)
+
+### Bug Fixes
+
+* Addon-contexts: bug-fixing, testing, typing ([#6572](https://github.com/storybooks/storybook/pull/6572))
+
+### Dependency Upgrades
+
+* CHANGE opn to open ([#6567](https://github.com/storybooks/storybook/pull/6567))
+
 ## 5.1.0-alpha.31 (April 19, 2019)
 
 ### Features
