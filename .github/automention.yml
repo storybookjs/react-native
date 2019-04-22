@@ -12,7 +12,7 @@
 'addon: contexts': ['leoyli']
 'addon: storysource': ['igor-dv', 'libetl']
 'addon: info': ['shilman']
-'addon: knobs': ['leoyli']
+'addon: knobs': ['leoyli', 'Armanio']
 typescript: ['kroeder', 'gaetanmaisse', 'ndelangen']
 theming: ['ndelangen', 'domyen']
 cra: ['mrmckeb']
