@@ -1,16 +1,7 @@
 import fs from 'fs';
 import { basename, dirname, normalize, relative, resolve, Path } from '@angular-devkit/core';
 
-// todo check if there's already a correct type for this
-interface Rule {
-  test: RegExp;
-}
-
-interface Config {
-  module: {
-    rules: Rule[];
-  };
-}
+import { RuleSetRule, Configuration } from 'webpack';
 
 function isDirectory(assetPath: string) {
   try {
@@ -34,7 +25,7 @@ function getAssetsParts(resolvedAssetPath: Path, assetPath: Path) {
   };
 }
 
-function isStylingRule(rule: Rule) {
+function isStylingRule(rule: RuleSetRule) {
   const { test } = rule;
 
   if (!test) {
@@ -48,7 +39,7 @@ function isStylingRule(rule: Rule) {
   return test.test('.css') || test.test('.scss') || test.test('.sass');
 }
 
-export function filterOutStylingRules(config: Config) {
+export function filterOutStylingRules(config: Configuration) {
   return config.module.rules.filter(rule => !isStylingRule(rule));
 }
 

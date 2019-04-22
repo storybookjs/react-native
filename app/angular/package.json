@@ -41,6 +41,7 @@
   "devDependencies": {
     "@types/autoprefixer": "^9.4.0",
     "@types/webpack-env": "^1.13.9",
+    "typescript": "^3.4.4",
     "zone.js": "^0.8.29"
   },
   "peerDependencies": {

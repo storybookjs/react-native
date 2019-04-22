@@ -17,7 +17,8 @@ describe('create-fork-ts-checker-plugin.test', () => {
   it('should create a ForkTsCheckerWebpackPlugin instance', () => {
     setupFiles({ 'tsconfig.json': '{}' });
 
-    const tsLoaderOptions = getTsLoaderOptions('.foo');
+    // todo add proper typing
+    const tsLoaderOptions: any = getTsLoaderOptions('.foo');
 
     // todo resolve any
     const instance: any = createForkTsCheckerInstance(tsLoaderOptions);
@@ -27,7 +28,8 @@ describe('create-fork-ts-checker-plugin.test', () => {
   });
 
   it('should create a ForkTsCheckerWebpackPlugin instance without passing options', () => {
-    const instance = createForkTsCheckerInstance({});
+    // add proper typing
+    const instance = createForkTsCheckerInstance({} as any);
     expect(instance).toBeInstanceOf(ForkTsCheckerWebpackPlugin);
   });
 });

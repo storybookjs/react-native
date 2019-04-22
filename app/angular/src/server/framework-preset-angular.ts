@@ -1,11 +1,13 @@
 import path from 'path';
-import { ContextReplacementPlugin } from 'webpack';
+import { ContextReplacementPlugin, Configuration } from 'webpack';
 import autoprefixer from 'autoprefixer';
 import getTsLoaderOptions from './ts_config';
 import createForkTsCheckerInstance from './create-fork-ts-checker-plugin';
-import { WebpackConfig } from '.';
 
-export function webpack(config: WebpackConfig, { configDir }: { configDir: string }) {
+export function webpack(
+  config: Configuration,
+  { configDir }: { configDir: string }
+): Configuration {
   const tsLoaderOptions = getTsLoaderOptions(configDir);
   return {
     ...config,

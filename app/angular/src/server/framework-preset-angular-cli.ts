@@ -4,10 +4,10 @@ import {
   getAngularCliWebpackConfigOptions,
   applyAngularCliWebpackConfig,
 } from './angular-cli_config';
-import { WebpackConfig } from '.';
 import { Path } from '@angular-devkit/core';
+import { Configuration } from 'webpack';
 
-export function webpackFinal(config: WebpackConfig) {
+export function webpackFinal(config: Configuration) {
   const cwd = process.cwd() as Path;
   const cliWebpackConfigOptions = getAngularCliWebpackConfigOptions(cwd);
 

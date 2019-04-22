@@ -10,6 +10,8 @@ import {
 } from './angular-cli_utils';
 import { Path } from '@angular-devkit/core';
 
+import { CompilerOptions } from 'typescript';
+
 // todo add more accurate typings
 interface BasicOptions {
   options: {
@@ -18,14 +20,6 @@ interface BasicOptions {
   raw: object;
   fileNames: string[];
   errors: any[];
-}
-
-interface TsConfig {
-  compilerOptions: TsConfigCompilerOptions | undefined;
-}
-
-interface TsConfigCompilerOptions {
-  baseUrl: string | undefined;
 }
 
 function getTsConfigOptions(tsConfigPath: Path) {
@@ -40,9 +34,9 @@ function getTsConfigOptions(tsConfigPath: Path) {
     return basicOptions;
   }
 
-  const tsConfig: TsConfig = JSON.parse(fs.readFileSync(tsConfigPath, 'utf8'));
+  const tsConfig = JSON.parse(fs.readFileSync(tsConfigPath, 'utf8'));
 
-  const { baseUrl } = tsConfig.compilerOptions;
+  const { baseUrl } = tsConfig.compilerOptions as CompilerOptions;
 
   if (baseUrl) {
     const tsConfigDirName = path.dirname(tsConfigPath);
