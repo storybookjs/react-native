@@ -3,7 +3,7 @@ import { logger } from '@storybook/node-logger';
 
 import { Options } from 'ts-loader';
 
-export default function(tsLoaderOptions: Options) {
+export default function(tsLoaderOptions: Partial<Options>) {
   if (tsLoaderOptions && tsLoaderOptions.configFile) {
     return new ForkTsCheckerWebpackPlugin({
       tsconfig: tsLoaderOptions.configFile,

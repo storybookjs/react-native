@@ -17,8 +17,7 @@ describe('create-fork-ts-checker-plugin.test', () => {
   it('should create a ForkTsCheckerWebpackPlugin instance', () => {
     setupFiles({ 'tsconfig.json': '{}' });
 
-    // todo add proper typing
-    const tsLoaderOptions: any = getTsLoaderOptions('.foo');
+    const tsLoaderOptions = getTsLoaderOptions('.foo');
 
     // todo resolve any
     const instance: any = createForkTsCheckerInstance(tsLoaderOptions);
