@@ -8,8 +8,8 @@ export function register() {
     addons.add(ADDON_ID, {
       title: 'GraphiQL',
       type: types.TAB,
-      route: ({ storyId }) => `/graphql/${storyId}`, // todo add type
-      match: ({ viewMode }) => viewMode === 'graphql', // todo add type
+      route: ({ storyId }) => `/graphql/${storyId}`,
+      match: ({ viewMode }) => viewMode === 'graphql',
       render: GQL,
     });
   });
