@@ -72,15 +72,15 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
     const { filter, expanded } = this.state;
 
     let colorList = [
-      'protanopia',
-      'protanomaly',
-      'deuteranopia',
-      'deuteranomaly',
-      'tritanopia',
-      'tritanomaly',
-      'achromatopsia',
-      'achromatomaly',
-      'mono',
+      'Protanopia',
+      'Protanomaly',
+      'Deuteranopia',
+      'Deuteranomaly',
+      'Tritanopia',
+      'Tritanomaly',
+      'Achromatopsia',
+      'Achromatomaly',
+      'Mono',
     ].map(i => ({
       id: i,
       title: i,
