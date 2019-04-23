@@ -12,7 +12,7 @@ const getFilter = (filter: string | null) => {
   if (filter === null) {
     return 'none';
   }
-  if (filter === 'mono') {
+  if (filter === 'Mono') {
     return 'grayscale(100%)';
   }
   return `url('#${filter}')`;
