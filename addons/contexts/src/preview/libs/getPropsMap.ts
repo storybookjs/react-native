@@ -5,12 +5,12 @@ import { ContextNode, GenericProp, PropsMap, SelectionState } from '../../types'
  * @private
  * Extract the activated props by name from a given contextual params.
  */
-type GetPropsByParamName = (
+type _getPropsByParamName = (
   params: ContextNode['params'],
   name?: string
 ) => GenericProp | typeof OPT_OUT;
 
-export const _getPropsByParamName: GetPropsByParamName = (params, name) => {
+export const _getPropsByParamName: _getPropsByParamName = (params, name) => {
   const { props = null } =
     // when opt-out context
     (name === OPT_OUT && { props: OPT_OUT }) ||
@@ -29,9 +29,9 @@ export const _getPropsByParamName: GetPropsByParamName = (params, name) => {
  * @nosideeffects
  * Collect the propsMap from Nodes based on a controlled state tracker.
  */
-type GetPropsMap = (contextNodes: ContextNode[], selectionState: SelectionState) => PropsMap;
+type getPropsMap = (contextNodes: ContextNode[], selectionState: SelectionState) => PropsMap;
 
-export const getPropsMap: GetPropsMap = (contextNodes, selectionState) =>
+export const getPropsMap: getPropsMap = (contextNodes, selectionState) =>
   contextNodes.reduce((agg, { nodeId, params }) => {
     agg[nodeId] = _getPropsByParamName(params, selectionState[nodeId]);
     return agg;

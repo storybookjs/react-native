@@ -17,7 +17,7 @@ import { AddonSetting, AnyFunctionReturns, ContextNode, PropsMap } from '../type
  * @param {Render} render - framework specific bindings
  */
 export type Render<T> = (...args: [ContextNode[], PropsMap, AnyFunctionReturns<T>]) => T;
-type CreateAddonDecorator = <T>(render: Render<T>) => (contexts: AddonSetting[]) => T;
+type CreateAddonDecorator = <T>(render: Render<T>) => (contexts: AddonSetting[]) => unknown;
 
 export const createAddonDecorator: CreateAddonDecorator = render => {
   const wrapper: StoryWrapper = (getStory, context, settings: any) => {
