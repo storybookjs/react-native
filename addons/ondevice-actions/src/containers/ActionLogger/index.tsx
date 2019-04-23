@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import deepEqual from 'fast-deep-equal';
 
-import { API } from '@storybook/api';
+import { addons } from '@storybook/addons';
 import { STORY_RENDERED } from '@storybook/core-events';
-import { EVENT_ID, ActionDisplay } from '@storybook/addon-actions';
+import { ActionDisplay, EVENT_ID } from '@storybook/addon-actions';
 
 import { ActionLogger as ActionLoggerComponent } from '../../components/ActionLogger';
 
 interface ActionLoggerProps {
   active: boolean;
-  api: API;
 }
 
 interface ActionLoggerState {
@@ -25,7 +24,7 @@ const safeDeepEqual = (a: any, b: any): boolean => {
 };
 
 export default class ActionLogger extends Component<ActionLoggerProps, ActionLoggerState> {
-  private mounted: boolean;
+  private channel = addons.getChannel();
 
   constructor(props: ActionLoggerProps) {
     super(props);
@@ -34,19 +33,13 @@ export default class ActionLogger extends Component<ActionLoggerProps, ActionLog
   }
 
   componentDidMount() {
-    this.mounted = true;
-    const { api } = this.props;
-
-    api.on(EVENT_ID, this.addAction);
-    api.on(STORY_RENDERED, this.handleStoryChange);
+    this.channel.addListener(EVENT_ID, this.addAction);
+    this.channel.addListener(STORY_RENDERED, this.handleStoryChange);
   }
 
   componentWillUnmount() {
-    this.mounted = false;
-    const { api } = this.props;
-
-    api.off(STORY_RENDERED, this.handleStoryChange);
-    api.off(EVENT_ID, this.addAction);
+    this.channel.removeListener(STORY_RENDERED, this.handleStoryChange);
+    this.channel.removeListener(EVENT_ID, this.addAction);
   }
 
   handleStoryChange = () => {
