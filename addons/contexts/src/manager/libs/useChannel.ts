@@ -1,4 +1,3 @@
-export { Channel } from '@storybook/channels';
 import addons from '@storybook/addons';
 import { useEffect } from 'react';
 import { AnyFunctionReturns } from '../../types';

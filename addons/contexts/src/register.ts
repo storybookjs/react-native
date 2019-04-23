@@ -8,6 +8,6 @@ addons.register(ID, api =>
     title: ID,
     type: types.TOOL,
     match: ({ viewMode }) => viewMode === 'story',
-    render: () => createElement(AddonManager, { channel: api.getChannel() }),
+    render: () => createElement(AddonManager, { api }),
   })
 );

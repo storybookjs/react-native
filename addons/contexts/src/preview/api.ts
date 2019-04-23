@@ -10,6 +10,8 @@ import { ContextNode, PropsMap } from '../types';
  */
 export const addonContextsAPI = singleton(() => {
   const channel = addons.getChannel();
+  const x: any = window;
+  x._addons = addons;
   let memorizedNodes: null | ContextNode[] = null;
   let selectionState = {};
 

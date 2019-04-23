@@ -1,19 +1,20 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { useChannel, Channel } from './libs/useChannel';
+import { useChannel } from './libs/useChannel';
 import { ToolBar } from './ToolBar';
-import { REBOOT_MANAGER, UPDATE_MANAGER, UPDATE_PREVIEW } from '../constants';
+import { PARAM, REBOOT_MANAGER, UPDATE_MANAGER, UPDATE_PREVIEW } from '../constants';
 import { SelectionState, FCNoChildren } from '../types';
+import { deserialize, serialize } from './libs/processQueryParam';
 
 /**
  * Control addon states and addon-story interactions
  */
 type AddonManager = FCNoChildren<{
-  channel: Channel;
+  api: any;
 }>;
 
-export const AddonManager: AddonManager = ({ channel }) => {
+export const AddonManager: AddonManager = ({ api }) => {
   const [nodes, setNodes] = useState([]);
-  const [state, setState] = useState<SelectionState>(undefined);
+  const [state, setState] = useState<SelectionState>(deserialize(api.getQueryParam(PARAM)));
   const setSelected = useCallback(
     (nodeId, name) => setState((obj = {}) => ({ ...obj, [nodeId]: name })),
     []
@@ -24,8 +25,11 @@ export const AddonManager: AddonManager = ({ channel }) => {
   useChannel(UPDATE_MANAGER, (_, newState) => newState && setState(newState), []);
 
   // to preview
-  useEffect(() => channel.emit(REBOOT_MANAGER), []);
-  useEffect(() => state && channel.emit(UPDATE_PREVIEW, state), [state]);
+  useEffect(() => api.emit(REBOOT_MANAGER), []);
+  useEffect(() => state && api.emit(UPDATE_PREVIEW, state), [state]);
+
+  // routing state
+  useEffect(() => api.setQueryParam({ [PARAM]: serialize(state) }), [state]);
 
   return <ToolBar nodes={nodes} state={state || {}} setSelected={setSelected} />;
 };
