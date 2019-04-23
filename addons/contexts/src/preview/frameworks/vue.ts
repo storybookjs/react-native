@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { createAddonDecorator, Render } from '../index';
 import { addonContextsAPI } from '../api';
-import { ID } from '../../constants';
+import { ID } from '../../shared/constants';
 
 /**
  * This is the framework specific bindings for Vue.

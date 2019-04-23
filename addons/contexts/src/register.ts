@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import addons, { types } from '@storybook/addons';
 import { AddonManager } from './manager/AddonManager';
-import { ID } from './constants';
+import { ID } from './shared/constants';
 
 addons.register(ID, api =>
   addons.add(ID, {

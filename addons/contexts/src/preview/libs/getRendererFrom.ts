@@ -1,5 +1,5 @@
-import { OPT_OUT } from '../../constants';
-import { AddonOptions, AnyFunctionReturns, ContextNode, GenericProp, PropsMap } from '../../types';
+import { OPT_OUT } from '../../shared/constants';
+import { AddonOptions, AnyFunctionReturns, ContextNode, GenericProp, PropsMap } from '../../shared/types';
 
 /**
  * @private

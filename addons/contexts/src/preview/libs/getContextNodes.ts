@@ -1,4 +1,4 @@
-import { AddonSetting, ContextNode, WrapperSettings } from '../../types';
+import { AddonSetting, ContextNode, WrapperSettings } from '../../shared/types';
 
 /**
  * @private

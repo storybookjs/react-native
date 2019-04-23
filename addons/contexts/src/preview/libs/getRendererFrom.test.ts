@@ -1,5 +1,5 @@
 import { _getAggregatedWrap, getRendererFrom } from './getRendererFrom';
-import { OPT_OUT } from '../../constants';
+import { OPT_OUT } from '../../shared/constants';
 
 // mocks
 const h = jest.fn();

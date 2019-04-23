@@ -9,8 +9,7 @@
   ],
   "author": "Leo Y. Li",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/register.js",
   "files": [
     "dist/**/*",
     "register.js",
@@ -27,9 +26,11 @@
   },
   "dependencies": {
     "@storybook/addons": "5.1.0-alpha.33",
-    "@storybook/channels": "5.1.0-alpha.33",
     "@storybook/components": "5.1.0-alpha.33",
     "@storybook/core-events": "5.1.0-alpha.33"
+  },
+  "peerDependencies": {
+    "qs": "*"
   },
   "optionalDependencies": {
     "react": "*",

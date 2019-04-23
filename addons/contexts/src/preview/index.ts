@@ -1,7 +1,7 @@
 import { makeDecorator, StoryWrapper } from '@storybook/addons';
 import { addonContextsAPI } from './api';
-import { ID, PARAM } from '../constants';
-import { AddonSetting, AnyFunctionReturns, ContextNode, PropsMap } from '../types';
+import { ID, PARAM } from '../shared/constants';
+import { AddonSetting, AnyFunctionReturns, ContextNode, PropsMap } from '../shared/types';
 
 /**
  * This file serves a idiomatic facade of a Storybook decorator.

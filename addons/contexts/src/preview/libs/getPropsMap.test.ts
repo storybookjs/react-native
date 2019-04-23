@@ -1,5 +1,5 @@
 import { _getPropsByParamName, getPropsMap } from './getPropsMap';
-import { OPT_OUT } from '../../constants';
+import { OPT_OUT } from '../../shared/constants';
 
 describe('Test on behaviors from collecting the propsMap', () => {
   const someParams = [{ name: 'A', props: {} }, { name: 'B', props: {} }];

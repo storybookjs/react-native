@@ -1,5 +1,5 @@
-import { OPT_OUT } from '../../constants';
-import { ContextNode, GenericProp, PropsMap, SelectionState } from '../../types';
+import { OPT_OUT } from '../../shared/constants';
+import { ContextNode, GenericProp, PropsMap, SelectionState } from '../../shared/types';
 
 /**
  * @private
