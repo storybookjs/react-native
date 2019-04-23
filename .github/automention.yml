@@ -11,7 +11,7 @@
 'addon: a11y': ['CodeByAlex', 'Armanio', 'jsomsanith']
 'addon: contexts': ['leoyli']
 'addon: storysource': ['igor-dv', 'libetl']
-'addon: info': ['shilman']
+'addon: info': ['shilman', 'elevatebart']
 'addon: knobs': ['leoyli', 'Armanio']
 typescript: ['kroeder', 'gaetanmaisse', 'ndelangen']
 theming: ['ndelangen', 'domyen']
