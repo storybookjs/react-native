@@ -1,13 +1,18 @@
 import fs from 'fs';
 import path from 'path';
-import { getReactScriptsPath, getTypeScriptRules, applyCRAWebpackConfig } from './cra-config';
+import {
+  applyCRAWebpackConfig,
+  getModulePath,
+  getReactScriptsPath,
+  getTypeScriptRules,
+} from './cra-config';
 import mockRules from './__mocks__/mockRules';
 import mockConfig from './__mocks__/mockConfig';
 
 jest.mock('fs', () => ({
-  realpathSync: jest.fn(),
+  realpathSync: jest.fn(() => '/test-project'),
   readFileSync: jest.fn(),
-  existsSync: () => true,
+  existsSync: jest.fn(() => true),
 }));
 jest.mock('mini-css-extract-plugin', () => {});
 
@@ -16,11 +21,6 @@ const SCRIPT_PATH = '.bin/react-scripts';
 const stripCwd = loaderPath => loaderPath.replace(process.cwd(), '');
 
 describe('cra-config', () => {
-  beforeEach(() => {
-    fs.realpathSync.mockReset();
-    fs.realpathSync.mockImplementationOnce(() => '/test-project');
-  });
-
   describe('when used with the default react-scripts package', () => {
     beforeEach(() => {
       fs.realpathSync.mockImplementationOnce(filePath =>
@@ -93,6 +93,21 @@ exit $ret`
     it('should add the Storybook config directory to `include`', () => {
       const rules = getTypeScriptRules(mockRules, './.storybook');
       expect(rules[0].include.findIndex(string => string.includes('.storybook'))).toEqual(1);
+    });
+
+    it('should get the baseUrl from a tsconfig.json', () => {
+      jest.spyOn(path, 'join').mockImplementation(() => 'project/tsconfig.json');
+      jest.mock(
+        'project/tsconfig.json',
+        () => ({
+          compilerOptions: {
+            baseUrl: 'src',
+          },
+        }),
+        { virtual: true }
+      );
+      expect(getModulePath()).toEqual('src');
+      path.join.mockRestore();
     });
   });
 
