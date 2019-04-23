@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-contexts",
-  "version": "5.1.0-alpha.30",
+  "version": "5.1.0-alpha.33",
   "description": "Storybook Addon Contexts",
   "keywords": [
     "storybook",
@@ -26,13 +26,16 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.30",
-    "@storybook/channels": "5.1.0-alpha.30",
-    "@storybook/components": "5.1.0-alpha.30",
-    "@storybook/core-events": "5.1.0-alpha.30"
+    "@storybook/addons": "5.1.0-alpha.33",
+    "@storybook/channels": "5.1.0-alpha.33",
+    "@storybook/components": "5.1.0-alpha.33",
+    "@storybook/core-events": "5.1.0-alpha.33"
   },
   "optionalDependencies": {
     "react": "*",
     "vue": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

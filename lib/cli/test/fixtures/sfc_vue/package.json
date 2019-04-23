@@ -38,7 +38,7 @@
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^4.0.0-beta.2",
     "http-proxy-middleware": "^0.19.1",
-    "opn": "^5.4.0",
+    "open": "^6.1.0",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "ora": "^3.2.0",
     "rimraf": "^2.6.3",

@@ -2,7 +2,7 @@ import addons from '@storybook/addons';
 import { FORCE_RE_RENDER, SET_CURRENT_STORY } from '@storybook/core-events';
 import { REBOOT_MANAGER, UPDATE_PREVIEW, UPDATE_MANAGER } from '../constants';
 import { getContextNodes, getPropsMap, getRendererFrom, singleton } from './libs';
-import { ContextNode, GenericObject, GetContextNodes } from '../@types';
+import { ContextNode, PropsMap } from '../types';
 
 /**
  * @Public
@@ -20,7 +20,7 @@ export const addonContextsAPI = singleton(() => {
   channel.on(UPDATE_PREVIEW, () => channel.emit(FORCE_RE_RENDER));
 
   // to manager
-  const getContextNodesWithSideEffects: GetContextNodes = (...arg) => {
+  const getContextNodesWithSideEffects: typeof getContextNodes = (...arg) => {
     // we want to notify the manager only when the story changed since `parameter` can be changed
     if (memorizedNodes === null) {
       memorizedNodes = getContextNodes(...arg);
@@ -35,7 +35,7 @@ export const addonContextsAPI = singleton(() => {
    * which is the reason why we have to keep an internal reference and use `Object.assign` to update it.
    */
   let reactivePropsMap = {};
-  const updateReactiveSystem = (propsMap: GenericObject) =>
+  const updateReactiveSystem = (propsMap: PropsMap) =>
     /* tslint:disable:prefer-object-spread */
     Object.assign(reactivePropsMap, propsMap);
 

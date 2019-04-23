@@ -1,9 +1,19 @@
 import React from 'react';
 import { ToolBarMenu } from './ToolBarMenu';
 import { OPT_OUT } from '../constants';
-import { TToolbarControl } from '../@types';
+import { ContextNode, FCNoChildren, Omit } from '../types';
 
-export const ToolbarControl: TToolbarControl = ({
+type ToolbarControl = FCNoChildren<
+  Omit<
+    ContextNode & {
+      selected: string;
+      setSelected: (nodeId: string, name: string) => void;
+    },
+    'components'
+  >
+>;
+
+export const ToolbarControl: ToolbarControl = ({
   nodeId,
   icon,
   title,

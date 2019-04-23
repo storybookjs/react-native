@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { Separator } from '@storybook/components';
 import { ToolbarControl } from './ToolbarControl';
-import { TToolBar } from '../@types';
+import { ContextNode, FCNoChildren, SelectionState } from '../types';
 
-export const ToolBar: TToolBar = React.memo(({ nodes, state, setSelected }) =>
+type ToolBar = FCNoChildren<{
+  nodes: ContextNode[];
+  state: SelectionState;
+  setSelected: ComponentProps<typeof ToolbarControl>['setSelected'];
+}>;
+
+export const ToolBar: ToolBar = React.memo(({ nodes, state, setSelected }) =>
   nodes.length ? (
     <>
       <Separator />

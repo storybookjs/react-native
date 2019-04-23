@@ -1,21 +1,28 @@
-import { GetAggregatedWrap, GetRendererFrom } from '../../@types';
+import { OPT_OUT } from '../../constants';
+import { AddonOptions, AnyFunctionReturns, ContextNode, GenericProp, PropsMap } from '../../types';
 
 /**
  * @private
- * Aggregates component vNodes with activated props in a descending order,
+ * Aggregate component vNodes with activated props in a descending order,
  * based on the given options in the contextual environment setup.
  *
  * @param {function} h - the associated `createElement` vNode creator from the framework
  */
+type GetAggregatedWrap = <T>(
+  h: AnyFunctionReturns<T>
+) => (
+  components: ContextNode['components'],
+  props: GenericProp | typeof OPT_OUT,
+  options: AddonOptions
+) => AnyFunctionReturns<T>;
+
 export const _getAggregatedWrap: GetAggregatedWrap = h => (components, props, options) => vNode => {
   const last = components.length - 1;
   const isSkipped =
     // when set to disable
     options.disable ||
     // when opt-out context
-    props === null ||
-    // when get uninitialized props but set to non-cancelable (i.e. props is required)
-    (props === undefined && !options.cancelable);
+    props === OPT_OUT;
 
   return isSkipped
     ? vNode
@@ -34,8 +41,12 @@ export const _getAggregatedWrap: GetAggregatedWrap = h => (components, props, op
  *
  * @param {function} h - the associated `createElement` vNode creator from the framework
  */
-export const getRendererFrom: GetRendererFrom = h => (nodes, propsMap, getStoryVNode) =>
-  nodes
+type GetRendererFrom = <T>(
+  h: AnyFunctionReturns<T>
+) => (contextNodes: ContextNode[], propsMap: PropsMap, getStoryVNode: AnyFunctionReturns<T>) => T;
+
+export const getRendererFrom: GetRendererFrom = h => (contextNodes, propsMap, getStoryVNode) =>
+  contextNodes
     // map over contextual nodes to get the wrapping function
     .map(({ nodeId, components, options }) =>
       _getAggregatedWrap(h)(components, propsMap[nodeId], options)

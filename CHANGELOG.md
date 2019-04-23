@@ -1,3 +1,43 @@
+## 5.1.0-alpha.33 (April 23, 2019)
+
+### Features
+
+* React: Add support for create-react-app@3.0.0 ([#6560](https://github.com/storybooks/storybook/pull/6560))
+
+## 5.1.0-alpha.32 (April 22, 2019)
+
+### Bug Fixes
+
+* Addon-contexts: bug-fixing, testing, typing ([#6572](https://github.com/storybooks/storybook/pull/6572))
+
+### Dependency Upgrades
+
+* CHANGE opn to open ([#6567](https://github.com/storybooks/storybook/pull/6567))
+
+## 5.1.0-alpha.31 (April 19, 2019)
+
+### Features
+
+* Addon-backgrounds: Emit event on updating background ([#6561](https://github.com/storybooks/storybook/pull/6561))
+* Addon-contexts: Merge into monorepo ([#6559](https://github.com/storybooks/storybook/pull/6559))
+
+### Bug Fixes
+
+* Angular: Fix sourceMap property of angulars webpack config ([#6535](https://github.com/storybooks/storybook/pull/6535))
+* Addon-jest: Fix result display ([#6539](https://github.com/storybooks/storybook/pull/6539))
+
+### Dependency Upgrades
+
+* Bump ember-source from 3.8.1 to 3.9.1 ([#6531](https://github.com/storybooks/storybook/pull/6531))
+* Bump typescript from 3.4.2 to 3.4.3 ([#6528](https://github.com/storybooks/storybook/pull/6528))
+
+## 5.0.10 (April 18, 2019)
+
+### Bug Fixes
+
+- Theming: legacy options don't override set config options ([#6543](https://github.com/storybooks/storybook/pull/6543))
+- Theming: Fix null brandImage ([#6544](https://github.com/storybooks/storybook/pull/6544))
+
 ## 5.1.0-alpha.30 (April 18, 2019)
 
 ### Bug Fixes
@@ -28,6 +68,14 @@
 
 - Bump @types/node from 11.11.8 to 11.13.4 ([#6527](https://github.com/storybooks/storybook/pull/6527))
 - Bump danger from 7.0.19 to 7.1.2 ([#6530](https://github.com/storybooks/storybook/pull/6530))
+
+## 5.0.9 (April 17, 2019)
+
+### Bug Fixes
+
+- UI: Fix panel toggle behavior in fullscreen ([#6525](https://github.com/storybooks/storybook/pull/6525))
+- Addon-Knobs: Add missing groupId for files knob ([#6534](https://github.com/storybooks/storybook/pull/6534))
+- Theming: FIX brandImage when theme created with brandTitle ([#6120](https://github.com/storybooks/storybook/pull/6120))
 
 ## 5.1.0-alpha.28 (April 16, 2019)
 
