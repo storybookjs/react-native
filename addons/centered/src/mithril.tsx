@@ -4,7 +4,7 @@
 import m from 'mithril';
 import styles from './styles';
 
-export default function(storyFn) {
+export default function(storyFn: any) {
   return {
     view: () => (
       <div style={styles.style}>

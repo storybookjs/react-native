@@ -4,7 +4,7 @@ import styles from './styles';
 const INNER_ID = 'sb-addon-centered-inner';
 const WRAPPER_ID = 'sb-addon-centered-wrapper';
 
-function getOrCreate(id, style) {
+function getOrCreate(id: string, style: any) {
   const elementOnDom = document.getElementById(id);
 
   if (elementOnDom) {
@@ -26,7 +26,7 @@ function getWrapperDiv() {
   return getOrCreate(WRAPPER_ID, styles.style);
 }
 
-export default function(storyFn) {
+export default function(storyFn: any) {
   const inner = getInnerDiv();
   const wrapper = getWrapperDiv();
   wrapper.appendChild(inner);

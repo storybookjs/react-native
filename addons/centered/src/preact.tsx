@@ -3,7 +3,7 @@
 import { h } from 'preact';
 import styles from './styles';
 
-export default function(storyFn) {
+export default function(storyFn: any) {
   return (
     <div style={styles.style}>
       <div style={styles.innerStyle}>{storyFn()}</div>
