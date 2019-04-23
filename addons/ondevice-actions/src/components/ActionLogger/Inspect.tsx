@@ -81,7 +81,7 @@ class Inspect extends React.Component<{ name?: string; value: any }, { expanded:
         </View>
       );
     }
-    if (typeof value === 'object' && !(value instanceof RegExp)) {
+    if (value && typeof value === 'object' && !(value instanceof RegExp)) {
       if (name) {
         return (
           <>
