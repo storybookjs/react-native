@@ -16,7 +16,7 @@ export const ContextsManager: ContextsManager = ({ api }) => {
   const [nodes, setNodes] = useState([]);
   const [state, setState] = useState<SelectionState>(deserialize(api.getQueryParam(PARAM)));
   const setSelected = useCallback(
-    (nodeId, name) => setState((obj = {}) => ({ ...obj, [nodeId]: name })),
+    (nodeId, name) => setState(obj => ({ ...obj, [nodeId]: name })),
     []
   );
 

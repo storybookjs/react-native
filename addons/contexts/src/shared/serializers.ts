@@ -15,15 +15,15 @@ export const serialize: serialize = state =>
 /**
  * Deserialize URL query param into the specified selection state.
  */
-type deserialize = (param: string) => SelectionState | undefined;
+type deserialize = (param: string) => SelectionState | null;
 
 export const deserialize: deserialize = param =>
   !param
-    ? undefined
+    ? null
     : param
         .split(/,+/g)
         .map(str => str.split(/=+/g))
-        .reduce(
+        .reduce<SelectionState | null>(
           (acc, [nodeId, name]) => (nodeId && name ? { ...acc, [nodeId]: name } : acc),
-          undefined
+          null
         );
