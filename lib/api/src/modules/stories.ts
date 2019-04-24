@@ -176,7 +176,7 @@ const initStoriesApi = ({
         hierarchyRootSeparator: rootSeparator,
         hierarchySeparator: groupSeparator,
       } = (parameters && parameters.options) || {
-        hierarchyRootSeparator: '/',
+        hierarchyRootSeparator: '|',
         hierarchySeparator: '/',
       };
 
