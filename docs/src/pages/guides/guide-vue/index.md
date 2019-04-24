@@ -156,17 +156,17 @@ Button
 > <details>
 >   <summary>details</summary>
 > 
-> If your story returns a plain string like below, you will need to register each VueJs component that it uses globally. 
+> If your story returns a plain string like below, you will need to register globally each VueJs component that it uses. 
 >
 > ```js
 >  .add('with text', () => '<my-component>with text</my-component>')
 > ```
 >
 > Globally registered components can conflict with each other.
-> If you do not want to register components globally.
+> If you another way to use components.
 >
-> - use the "components" parameter of the vue component object as shown above in "as a component"
-> - use a JSX render function like below
+> - register components locally in the "components" member of the vue component object. See the story "as a component" above.
+> - use a JSX render function like below, no need to register anything then.
 >
 > ```jsx
 >   .add('with text', () => ({
