@@ -1,16 +1,15 @@
 import React, { PureComponent } from 'react';
-import { View, ScrollView, StyleSheet } from 'react-native';
+import { ScrollView } from 'react-native';
+import styled from '@emotion/native';
 import { Collection } from '@storybook/addons';
 import Button from '../navigation/button';
+import { EmotionProps } from '../../Shared/theme';
 
-const style = StyleSheet.create({
-  list: {
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    borderBottomWidth: 1,
-    borderBottomColor: '#e6e6e6',
-  },
-});
+const Container = styled.View`
+  flex-direction: row;
+  border-bottom-width: 1;
+  border-bottom-color: ${(props: EmotionProps) => props.theme.borderColor};
+`;
 
 export interface Props {
   panels: Collection;
@@ -34,11 +33,11 @@ export default class AddonList extends PureComponent<Props> {
     const addonKeys = Object.keys(panels);
 
     return (
-      <View style={style.list}>
+      <Container>
         <ScrollView showsHorizontalScrollIndicator={false} horizontal>
           {addonKeys.map(id => this.renderTab(id, panels[id].title))}
         </ScrollView>
-      </View>
+      </Container>
     );
   }
 }

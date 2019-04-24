@@ -1,6 +1,7 @@
 import React from 'react';
 import { AsyncStorage } from 'react-native';
 // @ts-ignore
+import { ThemeProvider } from 'emotion-theming';
 import getHost from 'rn-host-detect';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
@@ -10,6 +11,7 @@ import createChannel from '@storybook/channel-websocket';
 import { StoryStore, ClientApi } from '@storybook/client-api';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
+import { theme } from './components/Shared/theme';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -129,23 +131,29 @@ export default class Preview {
       render() {
         if (onDeviceUI) {
           return (
-            <OnDeviceUI
-              stories={preview._stories}
-              url={webUrl}
-              isUIHidden={params.isUIHidden}
-              tabOpen={params.tabOpen}
-              getInitialStory={
-                setInitialStory
-                  ? preview._getInitialStory(initialSelection, shouldPersistSelection)
-                  : null
-              }
-              shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
-              keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
-            />
+            <ThemeProvider theme={theme}>
+              <OnDeviceUI
+                stories={preview._stories}
+                url={webUrl}
+                isUIHidden={params.isUIHidden}
+                tabOpen={params.tabOpen}
+                getInitialStory={
+                  setInitialStory
+                    ? preview._getInitialStory(initialSelection, shouldPersistSelection)
+                    : null
+                }
+                shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
+                keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
+              />
+            </ThemeProvider>
           );
         }
 
-        return <StoryView url={webUrl} listenToEvents />;
+        return (
+          <ThemeProvider theme={theme}>
+            <StoryView url={webUrl} listenToEvents />
+          </ThemeProvider>
+        );
       }
     };
   };

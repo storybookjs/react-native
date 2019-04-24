@@ -31,9 +31,6 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: '#b3b3b3',
   },
-  tab: {
-    marginRight: 15,
-  },
   addonList: {
     flexDirection: 'row',
   },
