@@ -166,18 +166,18 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
     } = this.state;
 
     const previewWrapperStyles = [
-      style.flex,
+      { flex: 1 },
       getPreviewPosition(this.animatedValue, previewWidth, previewHeight, slideBetweenAnimation),
     ];
 
-    const previewStyles = [style.flex, getPreviewScale(this.animatedValue, slideBetweenAnimation)];
+    const previewStyles = [{ flex: 1 }, getPreviewScale(this.animatedValue, slideBetweenAnimation)];
 
     return (
       <KeyboardAvoidingView
         enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
         behavior={IS_IOS ? 'padding' : null}
         keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
-        style={style.flex}
+        style={{ flex: 1 }}
       >
         <AbsolutePositionedKeyboardAwareView
           onLayout={this.onLayout}

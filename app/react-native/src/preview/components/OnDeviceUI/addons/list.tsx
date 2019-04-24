@@ -23,7 +23,7 @@ export default class AddonList extends PureComponent<Props> {
 
     return (
       <Button active={id === addonSelected} key={id} id={id} onPress={() => onPressAddon(id)}>
-        {title}
+        {title.toUpperCase()}
       </Button>
     );
   };
