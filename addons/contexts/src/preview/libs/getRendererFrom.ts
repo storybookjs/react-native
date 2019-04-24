@@ -32,7 +32,7 @@ export const _getAggregatedWrap: _getAggregatedWrap = h => (
     // when set to disable
     options.disable ||
     // when opt-out context
-    props === OPT_OUT;
+    (options.cancelable && props === OPT_OUT);
 
   return isSkipped
     ? vNode

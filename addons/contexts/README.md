@@ -231,7 +231,7 @@ be shown at first in the toolbar menu in your Storybook.
    rule of thumbs, whenever collisions made possible, always the first wins.
 5. Query parameters are supported for pre-selecting contexts param, which comes handy for visual regression testing.
    You can do this by appending `&contexts=[name of contexts]=[name of param]` in the URL under iframe mode. Use `,`
-   to separate multiple contexts (e.g. `&contexts=Theme=Forests,Language=Fr`.
+   to separate multiple contexts (e.g. `&contexts=Theme=Forests,Language=Fr`).
 
 ## 📖 License
 

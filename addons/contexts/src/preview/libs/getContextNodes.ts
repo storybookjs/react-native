@@ -11,7 +11,8 @@ type _getMergedSettings = (
 ) => ContextNode;
 
 export const _getMergedSettings: _getMergedSettings = (topLevel, storyLevel) => ({
-  nodeId: topLevel.title || storyLevel.title || '',
+  // strip out special characters reserved for serializing
+  nodeId: (topLevel.title || storyLevel.title || '').replace(/[,+]/g, ''),
   icon: topLevel.icon || storyLevel.icon || '',
   title: topLevel.title || storyLevel.title || '',
   components: topLevel.components || storyLevel.components || [],
