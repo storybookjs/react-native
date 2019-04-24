@@ -35,7 +35,7 @@ const sanitizeSafe = (string: string, part: string) => {
 export const toId = (kind: string, name: string) =>
   `${sanitizeSafe(kind, 'kind')}--${sanitizeSafe(name, 'name')}`;
 
-export const storyDataFromString: (path?: string) => StoryData = memoize(1000)(
+export const parsePath: (path?: string) => StoryData = memoize(1000)(
   (path: string | undefined | null) => {
     const result: StoryData = {
       viewMode: undefined,
@@ -79,7 +79,7 @@ export const getMatch = memoize(1000)(
   }
 );
 
-export const splitPath = (kind: string, { rootSeparator, groupSeparator }: SeparatorOptions) => {
+export const parseKind = (kind: string, { rootSeparator, groupSeparator }: SeparatorOptions) => {
   const [root, remainder] = kind.split(rootSeparator, 2);
   const groups = (remainder || kind).split(groupSeparator).filter(i => !!i);
 

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Link, Location, navigate, LocationProvider, RouteComponentProps } from '@reach/router';
 import { ToggleVisibility } from './visibility';
-import { queryFromString, storyDataFromString, getMatch } from './utils';
+import { queryFromString, parsePath, getMatch } from './utils';
 
 interface Other {
   viewMode?: string;
@@ -56,7 +56,7 @@ const QueryLocation = ({ children }: QueryLocationProps) => (
   <Location>
     {({ location }: RouteComponentProps): React.ReactNode => {
       const { path } = queryFromString(location.search);
-      const { viewMode, storyId } = storyDataFromString(path);
+      const { viewMode, storyId } = parsePath(path);
       return children({ path, location, navigate: queryNavigate, viewMode, storyId });
     }}
   </Location>

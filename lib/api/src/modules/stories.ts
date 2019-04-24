@@ -1,5 +1,5 @@
 // FIXME: we shouldn't import from dist but there are no types otherwise
-import { toId, sanitize, splitPath } from '@storybook/router/dist/utils';
+import { toId, sanitize, parseKind } from '@storybook/router/dist/utils';
 
 import { Module } from '../index';
 import merge from '../lib/merge';
@@ -181,7 +181,7 @@ const initStoriesApi = ({
         hierarchySeparator: '/',
       };
 
-      const { root, groups } = splitPath(kind, { rootSeparator, groupSeparator });
+      const { root, groups } = parseKind(kind, { rootSeparator, groupSeparator });
 
       const rootAndGroups = []
         .concat(root || [])
