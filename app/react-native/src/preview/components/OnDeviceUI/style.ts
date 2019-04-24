@@ -16,17 +16,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  hideButtonText: {
-    fontSize: 14,
-    color: '#999999',
-  },
-  hideButton: {
-    backgroundColor: 'transparent',
-    position: 'absolute',
-    right: 8,
-    bottom: 12,
-    zIndex: 100,
-  },
   previewMinimized: {
     borderWidth: 1,
     borderColor: '#b3b3b3',

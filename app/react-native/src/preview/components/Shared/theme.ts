@@ -3,6 +3,8 @@ export const theme = {
   headerTextColor: 'black',
   labelColor: 'black',
   borderColor: '#e6e6e6',
+  buttonTextColor: '#999999',
+  buttonActiveTextColor: '#444444',
 };
 
 export interface EmotionProps {
