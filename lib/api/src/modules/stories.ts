@@ -192,6 +192,15 @@ const initStoriesApi = ({
             const { name } = group;
             const parent = index > 0 && soFar[index - 1].id;
             const id = sanitize(parent ? `${parent}-${name}` : name);
+            if (parent === id) {
+              throw new Error(
+                `
+Invalid kind with id === parentId: '${id}'
+
+Did you create a path that uses the separator char accidentally, such as 'Vue <docs/>' where '/' is a separator char? See https://github.com/storybooks/storybook/issues/6128
+              `.trim()
+              );
+            }
 
             const result: Group = {
               ...group,
