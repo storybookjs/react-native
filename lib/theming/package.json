@@ -23,7 +23,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.9",
     "@emotion/styled": "^10.0.7",
-    "@storybook/client-logger": "5.1.0-alpha.33",
+    "@storybook/client-logger": "^5.1.0-alpha.33",
     "common-tags": "^1.8.0",
     "core-js": "^2.6.5",
     "deep-object-diff": "^1.1.0",

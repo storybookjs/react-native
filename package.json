@@ -159,7 +159,7 @@
     "jest-teamcity-reporter": "^0.9.0",
     "jest-vue-preprocessor": "^1.5.0",
     "jest-watch-typeahead": "^0.3.0",
-    "lerna": "^3.13.0",
+    "lerna": "^3.13.3",
     "lint-staged": "^8.1.4",
     "lodash": "^4.17.11",
     "node-fetch": "^2.3.0",

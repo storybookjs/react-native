@@ -81,8 +81,7 @@ PACKAGE_VERSION=$(cat package.json \
 
 # Publish the monorepo
 git clean -df
-./scripts/publish.sh --yes --force-publish=* --skip-git --repo-version $PACKAGE_VERSION --exact --npm-tag=latest --registry "$custom_registry_url"
-
+./scripts/publish.sh $PACKAGE_VERSION --force-publish="*" --amend --yes --skip-git --ignore-prepublish --ignore-scripts --no-verify-access --no-push --no-git-reset --no-git-tag-version --git-remote=false --dist-tag=latest --registry "$custom_registry_url"
 
 # ******************************************************************************
 # Registry is running
