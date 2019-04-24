@@ -1,7 +1,7 @@
 import React from 'react';
 import { TooltipLinkList } from '@storybook/components';
-import { OPT_OUT } from '../shared/constants';
-import { FCNoChildren } from '../shared/types';
+import { OPT_OUT } from '../../shared/constants';
+import { FCNoChildren } from '../../shared/types';
 
 type ToolBarMenuOptions = FCNoChildren<{
   activeName: string;

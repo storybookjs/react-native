@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useChannel } from './libs/useChannel';
-import { ToolBar } from './ToolBar';
+import { ToolBar } from './components/ToolBar';
 import { deserialize, serialize } from '../shared/serializers';
 import { PARAM, REBOOT_MANAGER, UPDATE_MANAGER, UPDATE_PREVIEW } from '../shared/constants';
 import { FCNoChildren, ManagerAPI, SelectionState } from '../shared/types';
