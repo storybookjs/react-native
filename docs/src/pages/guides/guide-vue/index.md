@@ -167,7 +167,7 @@ Button
 > Here are two other ways to use components in your stories without globally registering them.
 >
 > - register components locally in the "components" member of the vue component object. See the story "as a component" above.
-> - use a JSX render function like below, no need to register anything then.
+> - use a JSX render function like below. No need to register anything.
 >
 > ```jsx
 >   .add('with text', () => ({
