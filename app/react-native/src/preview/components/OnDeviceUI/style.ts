@@ -16,10 +16,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  previewMinimized: {
-    borderWidth: 1,
-    borderColor: '#b3b3b3',
-  },
   addonList: {
     flexDirection: 'row',
   },

@@ -8,7 +8,6 @@ import {
   LayoutChangeEvent,
   KeyboardEvent,
 } from 'react-native';
-import style from './style';
 
 export interface PreviewDimens {
   previewWidth: number;
@@ -85,11 +84,11 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent<P
     const { children, previewWidth, previewHeight } = this.props;
 
     return (
-      <View style={style.flex} onLayout={this.onLayoutHandler}>
+      <View style={{ flex: 1 }} onLayout={this.onLayoutHandler}>
         <View
           style={
             previewWidth === 0
-              ? style.flex
+              ? { flex: 1 }
               : { position: 'absolute', width: previewWidth, height: previewHeight }
           }
         >

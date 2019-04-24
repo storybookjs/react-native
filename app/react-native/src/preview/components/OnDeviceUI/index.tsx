@@ -1,5 +1,13 @@
 import React, { PureComponent } from 'react';
-import { Keyboard, KeyboardAvoidingView, Platform, Animated, TouchableOpacity } from 'react-native';
+import {
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  Animated,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from 'react-native';
+import styled from '@emotion/native';
 import Events from '@storybook/core-events';
 import addons from '@storybook/addons';
 import Channel from '@storybook/channels';
@@ -19,6 +27,7 @@ import {
   getNavigatorPanelPosition,
 } from './animation';
 import style from './style';
+import { EmotionProps } from '../Shared/theme';
 
 const ANIMATION_DURATION = 300;
 const IS_IOS = Platform.OS === 'ios';
@@ -41,6 +50,18 @@ interface OnDeviceUIState {
   previewWidth: number;
   previewHeight: number;
 }
+
+type EmotionPreviewProps = EmotionProps & TouchableOpacityProps;
+
+const Preview: typeof TouchableOpacity = styled.TouchableOpacity`
+  flex: 1;
+  border-left-width: ${(props: EmotionPreviewProps) => (props.disabled ? '0' : '1')};
+  border-top-width: ${(props: EmotionPreviewProps) => (props.disabled ? '0' : '1')};
+  border-right-width: ${(props: EmotionPreviewProps) => (props.disabled ? '0' : '1')};
+  border-bottom-width: ${(props: EmotionPreviewProps) => (props.disabled ? '0' : '1')};
+  border-color: ${(props: EmotionPreviewProps) =>
+    props.disabled ? 'transparent' : props.theme.previewBorderColor};
+`;
 
 export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceUIState> {
   animatedValue: Animated.Value;
@@ -149,11 +170,7 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
       getPreviewPosition(this.animatedValue, previewWidth, previewHeight, slideBetweenAnimation),
     ];
 
-    const previewStyles = [
-      style.flex,
-      tabOpen !== 0 && style.previewMinimized,
-      getPreviewScale(this.animatedValue, slideBetweenAnimation),
-    ];
+    const previewStyles = [style.flex, getPreviewScale(this.animatedValue, slideBetweenAnimation)];
 
     return (
       <KeyboardAvoidingView
@@ -169,9 +186,8 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
         >
           <Animated.View style={previewWrapperStyles}>
             <Animated.View style={previewStyles}>
-              <TouchableOpacity
+              <Preview
                 accessible={false}
-                style={style.flex}
                 disabled={tabOpen === PREVIEW}
                 onPress={this.handleOpenPreview}
               >
@@ -181,7 +197,7 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
                   storyFn={storyFn}
                   listenToEvents={false}
                 />
-              </TouchableOpacity>
+              </Preview>
             </Animated.View>
           </Animated.View>
           <Panel style={getNavigatorPanelPosition(this.animatedValue, previewWidth)}>
