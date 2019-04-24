@@ -46,9 +46,13 @@ export const ContextsPreviewAPI = singleton(() => {
    */
   // from manager
   channel.on(SET_CURRENT_STORY, () => (contextsNodesMemo = null));
-  channel.on(REBOOT_MANAGER, () => channel.emit(UPDATE_MANAGER, contextsNodesMemo, selectionState));
-  channel.on(UPDATE_PREVIEW, state => state && (selectionState = state));
-  channel.on(UPDATE_PREVIEW, () => channel.emit(FORCE_RE_RENDER));
+  channel.on(REBOOT_MANAGER, () => channel.emit(UPDATE_MANAGER, contextsNodesMemo));
+  channel.on(UPDATE_PREVIEW, state => {
+    if (state) {
+      selectionState = state;
+      channel.emit(FORCE_RE_RENDER);
+    }
+  });
 
   // to manager
   const getContextNodesWithSideEffects: typeof getContextNodes = (...arg) => {

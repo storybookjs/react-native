@@ -23,4 +23,7 @@ export const deserialize: deserialize = param =>
     : param
         .split(/,+/g)
         .map(str => str.split(/=+/g))
-        .reduce((acc, [nodeId, name]) => (nodeId && name ? { ...acc, [nodeId]: name } : acc), {});
+        .reduce(
+          (acc, [nodeId, name]) => (nodeId && name ? { ...acc, [nodeId]: name } : acc),
+          undefined
+        );

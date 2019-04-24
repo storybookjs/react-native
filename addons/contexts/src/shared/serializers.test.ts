@@ -14,6 +14,7 @@ describe('Test on serializers', () => {
 
   it('Should deserialize a string representation into the represented selection state', () => {
     expect(deserialize('')).toEqual(undefined);
+    expect(deserialize('I am a bad string=')).toEqual(undefined);
     expect(deserialize(someContextsQueryParam)).toEqual(someSelectionState);
   });
 });

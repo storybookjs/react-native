@@ -21,8 +21,7 @@ export const ContextsManager: ContextsManager = ({ api }) => {
   );
 
   // from preview
-  useChannel(UPDATE_MANAGER, newNodes => newNodes && setNodes(newNodes), []);
-  useChannel(UPDATE_MANAGER, (_, newState) => newState && setState(newState), []);
+  useChannel(UPDATE_MANAGER, newNodes => setNodes(newNodes), []);
 
   // to preview
   useEffect(() => api.emit(REBOOT_MANAGER), []);
