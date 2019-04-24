@@ -26,7 +26,6 @@ import {
   getAddonPanelPosition,
   getNavigatorPanelPosition,
 } from './animation';
-import style from './style';
 import { EmotionProps } from '../Shared/theme';
 
 const ANIMATION_DURATION = 300;

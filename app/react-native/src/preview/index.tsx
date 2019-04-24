@@ -1,7 +1,7 @@
 import React from 'react';
 import { AsyncStorage } from 'react-native';
-// @ts-ignore
 import { ThemeProvider } from 'emotion-theming';
+// @ts-ignore
 import getHost from 'rn-host-detect';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
@@ -11,11 +11,11 @@ import createChannel from '@storybook/channel-websocket';
 import { StoryStore, ClientApi } from '@storybook/client-api';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
-import { theme } from './components/Shared/theme';
+import { theme, EmotionProps } from './components/Shared/theme';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
-export interface Params {
+export type Params = {
   onDeviceUI: boolean;
   resetStorybook: boolean;
   disableWebsockets: boolean;
@@ -29,7 +29,7 @@ export interface Params {
   isUIHidden: boolean;
   shouldDisableKeyboardAvoidingView: boolean;
   keyboardAvoidingViewVerticalOffset: number;
-}
+} & EmotionProps;
 
 export default class Preview {
   currentStory: any;
@@ -125,13 +125,15 @@ export default class Preview {
 
     addons.loadAddons(this._clientApi);
 
+    const appliedTheme = { ...theme, ...params.theme };
+
     // react-native hot module loader must take in a Class - https://github.com/facebook/react-native/issues/10991
     // eslint-disable-next-line react/prefer-stateless-function
     return class StorybookRoot extends React.PureComponent {
       render() {
         if (onDeviceUI) {
           return (
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={appliedTheme}>
               <OnDeviceUI
                 stories={preview._stories}
                 url={webUrl}
@@ -150,7 +152,7 @@ export default class Preview {
         }
 
         return (
-          <ThemeProvider theme={theme}>
+          <ThemeProvider theme={appliedTheme}>
             <StoryView url={webUrl} listenToEvents />
           </ThemeProvider>
         );
