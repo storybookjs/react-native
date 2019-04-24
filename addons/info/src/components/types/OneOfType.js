@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import React from 'react';
 
 import PrettyPropType from './PrettyPropType';

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import PropTypes from 'prop-types';
 import React from 'react';
 
