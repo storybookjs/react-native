@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 import addons, { types } from '@storybook/addons';
-import { AddonManager } from './manager/AddonManager';
+import { ContextsManager } from './manager/ContextsManager';
 import { ID } from './shared/constants';
 
 addons.register(ID, api =>
@@ -8,6 +8,6 @@ addons.register(ID, api =>
     title: ID,
     type: types.TOOL,
     match: ({ viewMode }) => viewMode === 'story',
-    render: () => createElement(AddonManager, { api }),
+    render: () => createElement(ContextsManager, { api }),
   })
 );

@@ -1,4 +1,5 @@
 import { ComponentProps, FunctionComponent } from 'react';
+export { API as ManagerAPI } from '@storybook/api';
 import { Icons } from '@storybook/components';
 
 // helpers

@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import { createAddonDecorator, Render } from '../index';
-import { addonContextsAPI } from '../api';
+import { createAddonDecorator, Render } from '../../index';
+import { ContextsPreviewAPI } from '../ContextsPreviewAPI';
 import { ID } from '../../shared/constants';
 
 /**
@@ -8,7 +8,7 @@ import { ID } from '../../shared/constants';
  * '@storybook/vue' expects the returning object from a decorator to be a 'VueComponent'.
  */
 export const renderVue: Render<Vue.Component> = (contextNodes, propsMap, getStoryVNode) => {
-  const { getRendererFrom, updateReactiveSystem } = addonContextsAPI();
+  const { getRendererFrom, updateReactiveSystem } = ContextsPreviewAPI();
   const reactiveProps = updateReactiveSystem(propsMap);
   return Vue.extend({
     name: ID,

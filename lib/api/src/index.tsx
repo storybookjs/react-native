@@ -128,7 +128,7 @@ class ManagerProvider extends Component<Props, State> {
     const state = getInitialState(...this.modules.map(m => m.state));
 
     // Get our API by combining the APIs exported by each module
-    const combo = Object.assign({ navigate }, ...this.modules.map(m => m.api));
+    const combo = Object.assign({ navigate }, ...this.modules.map(m => m.AddonPreviewAPI));
 
     const api = initProviderApi({ provider, store, api: combo });
 
