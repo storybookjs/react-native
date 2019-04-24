@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { StyleSheet, Animated } from 'react-native';
-
 import styled from '@emotion/native';
 import { EmotionProps } from '../Shared/theme';
 

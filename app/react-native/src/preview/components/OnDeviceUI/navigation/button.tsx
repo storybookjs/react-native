@@ -35,7 +35,7 @@ export default class Button extends PureComponent<Props> {
     const { active, children } = this.props;
 
     return (
-      <TouchableOpacity onPress={this.onPress}>
+      <TouchableOpacity onPress={this.onPress} activeOpacity={0.8}>
         <ButtonText active={active}>{children}</ButtonText>
         <ActiveBorder active={active} />
       </TouchableOpacity>
