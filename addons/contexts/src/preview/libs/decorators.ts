@@ -3,12 +3,12 @@
  * the default is to memorize its the first argument;
  * @return the memorized version of a function.
  */
-type Memorize = <T, U extends any[]>(
+type memorize = <T, U extends any[]>(
   fn: (...args: U) => T,
   resolver?: (...args: U) => unknown
 ) => (...args: U) => T;
 
-export const memorize: Memorize = (fn, resolver) => {
+export const memorize: memorize = (fn, resolver) => {
   const memo = new Map();
   return (...arg) => {
     const key = resolver ? resolver(...arg) : arg[0];
@@ -21,6 +21,6 @@ export const memorize: Memorize = (fn, resolver) => {
  * the returned value is cached for resolving the subsequent calls.
  * @return the singleton version of a function.
  */
-type Singleton = <T, U extends any[]>(fn: (...args: U) => T) => (...args: U) => T;
+type singleton = <T, U extends any[]>(fn: (...args: U) => T) => (...args: U) => T;
 
-export const singleton: Singleton = fn => memorize(fn, () => 'singleton');
+export const singleton: singleton = fn => memorize(fn, () => 'singleton');
