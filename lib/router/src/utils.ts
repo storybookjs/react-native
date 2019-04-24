@@ -81,7 +81,7 @@ export const getMatch = memoize(1000)(
 
 export const splitPath = (kind: string, { rootSeparator, groupSeparator }: SeparatorOptions) => {
   const [root, remainder] = kind.split(rootSeparator, 2);
-  const groups = (remainder || kind).split(groupSeparator).filter(i => !!sanitize(i));
+  const groups = (remainder || kind).split(groupSeparator).filter(i => !!i);
 
   // when there's no remainder, it means the root wasn't found/split
   return {
