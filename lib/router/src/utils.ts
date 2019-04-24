@@ -6,8 +6,13 @@ interface StoryData {
   storyId?: string;
 }
 
+interface SeparatorOptions {
+  rootSeparator: string | RegExp;
+  groupSeparator: string | RegExp;
+}
+
 export const knownNonViewModesRegex = /(settings)/;
-const splitPath = /\/([^/]+)\/([^/]+)?/;
+const splitPathRegex = /\/([^/]+)\/([^/]+)?/;
 
 // Remove punctuation https://gist.github.com/davidjrice/9d2af51100e41c6c4b4a
 export const sanitize = (string: string) => {
@@ -38,7 +43,7 @@ export const storyDataFromString: (path?: string) => StoryData = memoize(1000)(
     };
 
     if (path) {
-      const [, viewMode, storyId] = path.match(splitPath) || [undefined, undefined, undefined];
+      const [, viewMode, storyId] = path.match(splitPathRegex) || [undefined, undefined, undefined];
       if (viewMode && !viewMode.match(knownNonViewModesRegex)) {
         Object.assign(result, {
           viewMode,
@@ -73,3 +78,14 @@ export const getMatch = memoize(1000)(
     return null;
   }
 );
+
+export const splitPath = (kind: string, { rootSeparator, groupSeparator }: SeparatorOptions) => {
+  const [root, remainder] = kind.split(rootSeparator, 2);
+  const groups = (remainder || kind).split(groupSeparator).filter(i => !!sanitize(i));
+
+  // when there's no remainder, it means the root wasn't found/split
+  return {
+    root: remainder ? root : null,
+    groups,
+  };
+};

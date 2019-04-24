@@ -1,4 +1,4 @@
-import { toId, sanitize } from '@storybook/router/dist/utils';
+import { toId, sanitize, splitPath } from '@storybook/router/utils';
 
 import { Module } from '../index';
 import merge from '../lib/merge';
@@ -25,11 +25,6 @@ export interface SubAPI {
   jumpToStory: (direction: Direction) => void;
   getData: (storyId: StoryId) => Story | Group;
   getParameters: (storyId: StoryId, parameterName?: ParameterName) => Story['parameters'] | any;
-}
-
-interface SeparatorOptions {
-  rootSeparator: string | RegExp;
-  groupSeparator: string | RegExp;
 }
 
 interface Group {
@@ -162,17 +157,6 @@ const initStoriesApi = ({
     const result = lookupList[index + direction][0];
 
     navigate(`/${viewMode || 'story'}/${result}`);
-  };
-
-  const splitPath = (kind: string, { rootSeparator, groupSeparator }: SeparatorOptions) => {
-    const [root, remainder] = kind.split(rootSeparator, 2);
-    const groups = (remainder || kind).split(groupSeparator).filter(i => !!i);
-
-    // when there's no remainder, it means the root wasn't found/split
-    return {
-      root: remainder ? root : null,
-      groups,
-    };
   };
 
   const toKey = (input: string) =>
