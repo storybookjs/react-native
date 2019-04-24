@@ -1,4 +1,5 @@
-import { toId, sanitize, splitPath } from '@storybook/router/utils';
+// FIXME: we shouldn't import from dist but there are no types otherwise
+import { toId, sanitize, splitPath } from '@storybook/router/dist/utils';
 
 import { Module } from '../index';
 import merge from '../lib/merge';
