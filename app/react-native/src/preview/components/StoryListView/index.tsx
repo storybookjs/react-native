@@ -148,7 +148,7 @@ export default class StoryListView extends Component<Props, State> {
             />
           )}
           renderSectionHeader={({ section: { title } }) => (
-            <SectionHeader title={'title'} selected={title === selectedKind} />
+            <SectionHeader title={title} selected={title === selectedKind} />
           )}
           keyExtractor={(item, index) => item + index}
           sections={data}

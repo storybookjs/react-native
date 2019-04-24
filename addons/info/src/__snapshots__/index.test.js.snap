@@ -2654,45 +2654,47 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
             }
             string="seven"
           >
-            <h1>
-              function func(x) {
+            <div>
+              <h1>
+                function func(x) {
           return x + 1;
         }
-            </h1>
-            <h2>
-              [object Object]
-            </h2>
-            <h3>
-              1,2,3
-            </h3>
-            <h4>
-              7
-            </h4>
-            <h5>
-              seven
-            </h5>
-            <h6>
-              true
-            </h6>
-            <p>
-              undefined
-            </p>
-            <a
-              href="#"
-            >
-              test
-            </a>
-            <code>
-              storiesOf
-            </code>
-            <ul>
-              <li>
-                1
-              </li>
-              <li>
-                2
-              </li>
-            </ul>
+              </h1>
+              <h2>
+                [object Object]
+              </h2>
+              <h3>
+                1,2,3
+              </h3>
+              <h4>
+                7
+              </h4>
+              <h5>
+                seven
+              </h5>
+              <h6>
+                true
+              </h6>
+              <p>
+                undefined
+              </p>
+              <a
+                href="#"
+              >
+                test
+              </a>
+              <code>
+                storiesOf
+              </code>
+              <ul>
+                <li>
+                  1
+                </li>
+                <li>
+                  2
+                </li>
+              </ul>
+            </div>
           </TestComponent>
         </div>
       </div>

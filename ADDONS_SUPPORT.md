@@ -6,6 +6,7 @@
 |[actions](addons/actions)                   |+|+|+|+|+|+|+|+|+|+|+|+|
 |[backgrounds](addons/backgrounds)           |+|*|+|+|+|+|+|+|+|+|+|+|
 |[centered](addons/centered)                 |+| |+|+| |+|+| |+| |+|+|
+|[contexts](addons/contexts)                 |+| |+| | | | | | | | | |
 |[events](addons/events)                     |+| |+|+|+|+|+|+| | |+|+|
 |[graphql](addons/graphql)                   |+| | | | | | | | | | | |
 |[google-analytics](addons/google-analytics) |+|+|+|+|+|+|+|+|+|+|+|+|

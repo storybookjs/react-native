@@ -77,6 +77,7 @@ const WithTooltipPure: FunctionComponent<WithTooltipPureProps> = ({
       )}
     >
       {({ getTriggerProps, triggerRef }) => (
+        // @ts-ignore
         <Container ref={triggerRef} {...getTriggerProps()} {...props}>
           {children}
         </Container>
