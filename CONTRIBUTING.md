@@ -158,13 +158,18 @@ So the way our script works is that it:
 - builds all packages in the storybook repo
 - publishes all packages as latest
 
-Our script leaves the local registry running, for as long as you keep it running you can 
+Our script leaves the local registry running, for **as long as you keep it running** you can install storybook packages from this local registry.
 
+- Navigate to your own project and then change `package.json` so the storybook packages match the version of the one you just published.
+- Then just do the normal install procedure using `yarn` or `npm`
+- Start using your storybook as normally.
 
+If you've made a change to storybook's codebase and would want this change to be reflected in your app:
 
-
-
-
+- Ensure the storybook packages are transpiled, by either having run `yarn dev` or `yarn bootstrap --core`.
+- Go to the terminal where the local regitry is running and press `<Enter>`. This will kick off a new publish.
+- Run the install procedure again in your local repo, (you may need to clean out node_modules first).
+- Restart your storybook.
 
 ### Updating Tests
 

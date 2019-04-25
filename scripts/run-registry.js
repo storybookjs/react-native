@@ -7,19 +7,23 @@ import { stripIndents } from 'common-tags';
 
 import nodeCleanup from 'node-cleanup';
 
+const logger = console;
+
 const freePort = port => detectFreePort(port);
+
+let verdaccioProcess;
 
 const startVerdaccio = port => {
   let resolved = false;
   return new Promise((res, rej) => {
-    const verdaccio = spawn('npx', [
+    verdaccioProcess = spawn('npx', [
       'verdaccio@4.0.0-beta.1',
       '-c',
       'scripts/verdaccio.yaml',
       '-l',
       port,
     ]);
-    verdaccio.stdout.on('data', data => {
+    verdaccioProcess.stdout.on('data', data => {
       if (!resolved && data && data.toString().match(/http address/)) {
         const [url] = data.toString().match(/(http:.*\d\/)/);
         res(url);
@@ -30,6 +34,7 @@ const startVerdaccio = port => {
     setTimeout(() => {
       rej(new Error(`TIMEOUT - verdaccio didn't start within 60s`));
       resolved = true;
+      verdaccioProcess.kill();
     }, 60000);
   });
 };
@@ -48,12 +53,20 @@ const registryUrl = (command, url) =>
 const registriesUrl = (yarnUrl, npmUrl) =>
   Promise.all([registryUrl('yarn', yarnUrl), registryUrl('npm', npmUrl || yarnUrl)]);
 
+nodeCleanup(() => {
+  try {
+    verdaccioProcess.kill();
+  } catch (e) {
+    //
+  }
+});
+
 const applyRegistriesUrl = (yarnUrl, npmUrl, originalYarnUrl, originalNpmUrl) => {
-  console.log(`↪️  changing system config`);
+  logger.log(`↪️  changing system config`);
   nodeCleanup(() => {
     registriesUrl(originalYarnUrl, originalNpmUrl);
 
-    console.log(stripIndents`
+    logger.log(stripIndents`
       Your registry config has been restored from:
       npm: ${npmUrl} to ${originalNpmUrl} 
       yarn: ${yarnUrl} to ${originalYarnUrl} 
@@ -65,7 +78,7 @@ const applyRegistriesUrl = (yarnUrl, npmUrl, originalYarnUrl, originalNpmUrl) =>
 
 const addUser = url =>
   new Promise((res, rej) => {
-    console.log(`👤 add temp user to verdaccio`);
+    logger.log(`👤 add temp user to verdaccio`);
 
     exec(`npx npm-cli-adduser -r "${url}" -a -u user -p password -e user@example.com`, e => {
       if (e) {
@@ -85,13 +98,13 @@ const publish = (packages, url) =>
   packages.reduce((acc, { name, location }) => {
     return acc.then(() => {
       return new Promise((res, rej) => {
-        console.log(`🛫 publishing ${name} (${location})`);
+        logger.log(`🛫 publishing ${name} (${location})`);
         const command = `cd ${location} && npm publish --registry ${url} --force --access restricted`;
         exec(command, e => {
           if (e) {
             rej(e);
           } else {
-            console.log(`🛬 successful publish of ${name}!`);
+            logger.log(`🛬 successful publish of ${name}!`);
             res();
           }
         });
@@ -138,13 +151,13 @@ const askForReset = () =>
     ])
     .then(({ sure }) => {
       if (sure) {
-        console.log(`↩️ changing system config`);
+        logger.log(`↩️ changing system config`);
         return registriesUrl('https://registry.npmjs.org/');
       }
       return process.exit(1);
     });
 
-const askForPublish = (packages, url) =>
+const askForPublish = (packages, url, version) =>
   inquirer
     .prompt([
       {
@@ -155,8 +168,8 @@ const askForPublish = (packages, url) =>
     ])
     .then(({ sure }) => {
       if (sure) {
-        console.log(`🚀 publishing`);
-        return publish(packages, url).then(() => askForPublish(packages, url));
+        logger.log(`🚀 publishing version ${version}`);
+        return publish(packages, url).then(() => askForPublish(packages, url, version));
       }
       return false;
     });
@@ -176,9 +189,9 @@ const askForSubset = packages =>
 
 const run = async () => {
   const port = await freePort(4873);
-  console.log(`🌏 found a open port: ${port}`);
+  logger.log(`🌏 found a open port: ${port}`);
 
-  console.log(`🔖 reading current registry settings`);
+  logger.log(`🔖 reading current registry settings`);
   let [originalYarnRegistryUrl, originalNpmRegistryUrl] = await registriesUrl();
   if (
     originalYarnRegistryUrl.includes('localhost') ||
@@ -189,9 +202,9 @@ const run = async () => {
     originalNpmRegistryUrl = 'https://registry.npmjs.org/';
   }
 
-  console.log(`📐 reading version of storybook`);
-  console.log(`🚛 listing storybook packages`);
-  console.log(`🎬 starting verdaccio (this takes ±20 seconds, so be patient)`);
+  logger.log(`📐 reading version of storybook`);
+  logger.log(`🚛 listing storybook packages`);
+  logger.log(`🎬 starting verdaccio (this takes ±20 seconds, so be patient)`);
 
   const [shouldOverwrite, verdaccioUrl, packages, version] = await Promise.all([
     askForPermission(),
@@ -200,10 +213,10 @@ const run = async () => {
     currentVersion(),
   ]);
 
-  console.log(`🌿 verdaccio running on ${verdaccioUrl}`);
+  logger.log(`🌿 verdaccio running on ${verdaccioUrl}`);
 
   if (shouldOverwrite) {
-    console.log(stripIndents`
+    logger.log(stripIndents`
       You have chosen to change your system's default registry url. If this process fails for some reason and doesn't exit correctly, you may be stuck with a npm/yarn config that's broken.
       To fix this you can revert back to the registry urls you had before by running:
 
@@ -215,7 +228,7 @@ const run = async () => {
       The registry url is: ${verdaccioUrl}
     `);
   } else {
-    console.log(stripIndents`
+    logger.log(stripIndents`
       You have chosen to NOT change your system's default registry url. 
 
       The registry is running locally, but you'll need to add a npm/yarn config file in your project in that points to the registry.
@@ -226,40 +239,28 @@ const run = async () => {
     `);
   }
 
-  const [tempYarnRegistryUrl, tempNpmRegistryUrl] = shouldOverwrite
-    ? await applyRegistriesUrl(
-        verdaccioUrl,
-        verdaccioUrl,
-        originalYarnRegistryUrl,
-        originalNpmRegistryUrl
-      )
-    : [originalYarnRegistryUrl, originalNpmRegistryUrl];
+  if (shouldOverwrite) {
+    await applyRegistriesUrl(
+      verdaccioUrl,
+      verdaccioUrl,
+      originalYarnRegistryUrl,
+      originalNpmRegistryUrl
+    );
+  }
 
   await addUser(verdaccioUrl);
 
-  console.log(`📦 found ${packages.length} storybook packages at version ${version}`);
+  logger.log(`📦 found ${packages.length} storybook packages at version ${chalk.blue(version)}`);
+
   const subset = await askForSubset(packages);
 
-  await askForPublish(subset, verdaccioUrl);
+  await askForPublish(subset, verdaccioUrl, version);
 
-  console.log(`↩️  reset it all back to how it was`);
-  const [restoredYarnRegistryUrl, restoredNpmRegistryUrl] = shouldOverwrite
-    ? await registriesUrl(originalYarnRegistryUrl, originalNpmRegistryUrl)
-    : [originalYarnRegistryUrl, originalNpmRegistryUrl];
-
-  if (shouldOverwrite) {
-    console.log(stripIndents`
-      Your registry config has been restored from:
-      npm: ${tempNpmRegistryUrl} to ${restoredNpmRegistryUrl} 
-      yarn: ${tempYarnRegistryUrl} to ${restoredYarnRegistryUrl} 
-    `);
-  }
-
-  console.log(stripIndents`
-    The verdaccio registry will now be terminated
+  logger.log(stripIndents`
+    The verdaccio registry will now be terminated (this can take ±15 seconds, please be patient)
   `);
 
-  process.exit(0);
+  verdaccioProcess.kill();
 };
 
 run();
