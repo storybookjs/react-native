@@ -36,7 +36,7 @@
     "github-release": "github-release-from-changelog",
     "lint": "yarn lint:js . && yarn lint:md .",
     "lint:ci": "yarn lint:js --format ./node_modules/eslint-teamcity/index.js . && yarn lint:md .",
-    "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives --fix",
+    "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
     "lint:md": "remark -q",
     "lint:package": "sort-package-json",
     "publish:crna": "yarn --cwd examples-native/crna-kitchen-sink expo publish",
