@@ -12,7 +12,7 @@ const getFilter = (filter: string | null) => {
   if (filter === null) {
     return 'none';
   }
-  if (filter === 'Mono') {
+  if (filter === 'mono') {
     return 'grayscale(100%)';
   }
   return `url('#${filter}')`;
@@ -85,9 +85,9 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
       id: i,
       title: i,
       onClick: () => {
-        this.setFilter(i);
+        this.setFilter(i.toLowerCase());
       },
-      right: <ColorIcon filter={i} />,
+      right: <ColorIcon filter={i.toLowerCase()} />,
       active: filter === i,
     }));
 
