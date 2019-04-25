@@ -52,7 +52,7 @@ stories.add(
   }
 );
 
-// Example B: Language (React Contexts API)
+// Example B: Language (Vue provide/inject API)
 const createContext = initialValue => {
   const uid = `_${Date.now()}${Math.random()}`;
   return {
