@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import WithTooltip from './WithTooltip';
+import { WithTooltip } from './WithTooltip';
 
-import TooltipNote from './TooltipNote';
+import { TooltipNote } from './TooltipNote';
 
 storiesOf('basics/Tooltip/TooltipNote', module)
   .addDecorator(storyFn => (

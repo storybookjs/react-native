@@ -208,7 +208,7 @@ Furthermore, `config` requires the `HtmlWebpackplugin` to generate the preview p
 
 ```js
 module.exports = async ({ config, mode }) => {
-  config.plugins.append(...)
+  config.plugins.push(...)
   return config;
 }
 ```

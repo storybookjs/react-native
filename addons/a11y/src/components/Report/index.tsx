@@ -7,14 +7,13 @@ import { RuleType } from '../A11YPanel';
 export interface ReportProps {
   items: Result[];
   empty: string;
-  passes: boolean;
   type: RuleType;
 }
 
-export const Report: FunctionComponent<ReportProps> = ({ items, empty, type, passes }) => (
+export const Report: FunctionComponent<ReportProps> = ({ items, empty, type }) => (
   <Fragment>
     {items && items.length ? (
-      items.map(item => <Item passes={passes} item={item} key={`${type}:${item.id}`} type={type} />)
+      items.map(item => <Item item={item} key={`${type}:${item.id}`} type={type} />)
     ) : (
       <Placeholder key="placeholder">{empty}</Placeholder>
     )}

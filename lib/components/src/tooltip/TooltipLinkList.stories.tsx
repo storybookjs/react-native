@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import WithToolTip from './WithTooltip';
+import { WithTooltip } from './WithTooltip';
 
-import TooltipLinkList from './TooltipLinkList';
+import { TooltipLinkList } from './TooltipLinkList';
 import StoryLinkWrapper from '../StoryLinkWrapper';
 
 export const links = [
@@ -15,9 +15,9 @@ export const links = [
 storiesOf('basics/Tooltip/TooltipLinkList', module)
   .addDecorator(storyFn => (
     <div style={{ height: '300px' }}>
-      <WithToolTip placement="top" trigger="click" tooltipShown tooltip={storyFn()}>
+      <WithTooltip placement="top" trigger="click" tooltipShown tooltip={storyFn()}>
         <div>Tooltip</div>
-      </WithToolTip>
+      </WithTooltip>
     </div>
   ))
   .add('links', () => <TooltipLinkList links={links.slice(0, 2)} LinkWrapper={StoryLinkWrapper} />)

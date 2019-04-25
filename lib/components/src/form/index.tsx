@@ -1,8 +1,8 @@
 import { styled } from '@storybook/theming';
-import Field from './field/field';
+import { Field } from './field/field';
 import { Input, Select, Textarea, Button } from './input/input';
 
-const Form = Object.assign(
+export const Form = Object.assign(
   styled.form({
     boxSizing: 'border-box',
     width: '100%',
@@ -15,5 +15,3 @@ const Form = Object.assign(
     Button,
   }
 );
-
-export default Form;

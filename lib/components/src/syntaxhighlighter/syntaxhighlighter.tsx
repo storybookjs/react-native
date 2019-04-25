@@ -8,7 +8,7 @@ import bash from 'react-syntax-highlighter/languages/prism/bash';
 import css from 'react-syntax-highlighter/languages/prism/css';
 import html from 'react-syntax-highlighter/languages/prism/markup';
 
-import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
+import ReactSyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
 
 import { js as beautify } from 'js-beautify';
 import { ActionBar } from '../ActionBar/ActionBar';
@@ -76,7 +76,7 @@ const Code = styled.code({
   opacity: 1,
 });
 
-export interface CopyableCodeProps {
+export interface SyntaxHighlighterProps {
   language: string;
   copyable?: boolean;
   bordered?: boolean;
@@ -85,15 +85,17 @@ export interface CopyableCodeProps {
   className?: string;
 }
 
-export interface CopyableCodeState {
+export interface SyntaxHighlighterState {
   copied: boolean;
 }
 
-export default class CopyableCode extends Component<
-  CopyableCodeProps & SyntaxHighlighterProps,
-  CopyableCodeState
+type ReactSyntaxHighlighterProps = React.ComponentProps<typeof ReactSyntaxHighlighter>;
+
+export class SyntaxHighlighter extends Component<
+  SyntaxHighlighterProps & ReactSyntaxHighlighterProps,
+  SyntaxHighlighterState
 > {
-  static defaultProps: CopyableCodeProps = {
+  static defaultProps: SyntaxHighlighterProps = {
     language: null,
     copyable: false,
     bordered: false,
@@ -159,7 +161,7 @@ export default class CopyableCode extends Component<
     return children ? (
       <Wrapper bordered={bordered} padded={padded} className={className}>
         <Scroller>
-          <SyntaxHighlighter
+          <ReactSyntaxHighlighter
             padded={padded || bordered}
             language={language}
             useInlineStyles={false}
@@ -171,7 +173,7 @@ export default class CopyableCode extends Component<
             {format
               ? this.formatCode(language, (children as string).trim())
               : (children as string).trim()}
-          </SyntaxHighlighter>
+          </ReactSyntaxHighlighter>
         </Scroller>
         {copyable ? (
           <ActionBar actionItems={[{ title: copied ? 'Copied' : 'Copy', onClick: this.onClick }]} />

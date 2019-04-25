@@ -83,7 +83,7 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
       'mono',
     ].map(i => ({
       id: i,
-      title: i,
+      title: i.charAt(0).toUpperCase() + i.slice(1),
       onClick: () => {
         this.setFilter(i);
       },
@@ -114,6 +114,7 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
         onVisibilityChange={this.onVisibilityChange}
         tooltip={<TooltipLinkList links={colorList} />}
         closeOnClick
+        onDoubleClick={() => this.setFilter(null)}
       >
         <IconButton key="filter" active={!!filter} title="Color Blindness Emulation">
           <Icons icon="mirror" />

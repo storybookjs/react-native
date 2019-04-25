@@ -24,14 +24,17 @@ export interface Link {
 
 export interface TooltipLinkListProps {
   links: Link[];
-  LinkWrapper: LinkWrapperType;
+  LinkWrapper?: LinkWrapperType;
 }
 
-const TooltipLinkList: FunctionComponent<TooltipLinkListProps> = ({ links, LinkWrapper }) => (
+export const TooltipLinkList: FunctionComponent<TooltipLinkListProps> = ({
+  links,
+  LinkWrapper,
+}) => (
   <List>
-    {links.map(({ id, title, href, onClick, active, isGatsby, ...props }: any) => (
+    {links.map(({ id, title, href, onClick, active, isGatsby, ...props }) => (
       <ListItem
-        key={id || title}
+        key={id || (title as string)}
         title={title}
         onClick={onClick}
         active={active}
@@ -46,5 +49,3 @@ const TooltipLinkList: FunctionComponent<TooltipLinkListProps> = ({ links, LinkW
 TooltipLinkList.defaultProps = {
   LinkWrapper: ListItem.defaultProps.LinkWrapper,
 };
-
-export default TooltipLinkList;

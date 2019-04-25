@@ -6,7 +6,7 @@ interface StoryData {
   storyId?: string;
 }
 
-const knownViewModesRegex = /(story|info)/;
+export const knownNonViewModesRegex = /(settings)/;
 const splitPath = /\/([^/]+)\/([^/]+)?/;
 
 // Remove punctuation https://gist.github.com/davidjrice/9d2af51100e41c6c4b4a
@@ -39,7 +39,7 @@ export const storyDataFromString: (path?: string) => StoryData = memoize(1000)(
 
     if (path) {
       const [, viewMode, storyId] = path.match(splitPath) || [undefined, undefined, undefined];
-      if (viewMode && viewMode.match(knownViewModesRegex)) {
+      if (viewMode && !viewMode.match(knownNonViewModesRegex)) {
         Object.assign(result, {
           viewMode,
           storyId,

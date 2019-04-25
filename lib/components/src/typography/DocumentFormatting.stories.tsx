@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Markdown from 'markdown-to-jsx';
-import DocumentFormatting from './DocumentFormatting';
+import { DocumentFormatting } from './DocumentFormatting';
 import markdownSample from './DocumentFormattingSample.md';
 
 export default {

@@ -31,12 +31,12 @@ const createBackgroundSelectorItem = memoize(1000)(
     name: string,
     value: string,
     hasSwatch: boolean,
-    change: (arg: { selected: string; expanded: boolean }) => void
+    change: (arg: { selected: string; name: string }) => void
   ): Item => ({
     id: id || name,
     title: name,
     onClick: () => {
-      change({ selected: value, expanded: false });
+      change({ selected: value, name });
     },
     value,
     right: hasSwatch ? <ColorIcon background={value} /> : undefined,
@@ -92,6 +92,10 @@ const getDisplayedItems = memoize(10)((list: Input[], selected: string | null, c
   return availableBackgroundSelectorItems;
 });
 
+interface GlobalState {
+  selected: string | undefined;
+}
+
 interface State {
   expanded: boolean;
 }
@@ -105,9 +109,9 @@ export class BackgroundSelector extends Component<Props, State> {
     expanded: false,
   };
 
-  change = (args: State & { selected: string | null }) => {
-    if (typeof args.expanded === 'boolean') {
-      this.setState({ expanded: args.expanded });
+  change = (args: GlobalState) => {
+    if (this.state.expanded) {
+      this.setState({ expanded: false });
     }
     if (typeof args.selected === 'string') {
       this.props.api.setAddonState(PARAM_KEY, args.selected);

@@ -1,6 +1,23 @@
 import { shallow } from 'enzyme'; // eslint-disable-line
 import KnobManager from './KnobManager';
 
+jest.mock('global', () => ({
+  navigator: { userAgent: 'browser', platform: '' },
+  window: {
+    __STORYBOOK_CLIENT_API__: undefined,
+    addEventListener: jest.fn(),
+    location: { search: '' },
+    history: { replaceState: jest.fn() },
+  },
+  document: {
+    addEventListener: jest.fn(),
+    getElementById: jest.fn().mockReturnValue({}),
+    body: { classList: { add: jest.fn(), remove: jest.fn() } },
+    documentElement: {},
+    location: { search: '?id=kind--story' },
+  },
+}));
+
 describe('KnobManager', () => {
   describe('knob()', () => {
     describe('when the knob is present in the knobStore', () => {
@@ -11,15 +28,17 @@ describe('KnobManager', () => {
           set: jest.fn(),
           get: () => ({
             defaultValue: 'default value',
-            value: 'current value',
             name: 'foo',
+            type: 'string',
+            value: 'current value',
           }),
         };
       });
 
-      it('should return the existing knob value when defaults match', () => {
+      it('should return the existing knob value when types match', () => {
         const defaultKnob = {
           name: 'foo',
+          type: 'string',
           value: 'default value',
         };
         const knob = testManager.knob('foo', defaultKnob);
@@ -30,7 +49,8 @@ describe('KnobManager', () => {
       it('should return the new default knob value when default has changed', () => {
         const defaultKnob = {
           name: 'foo',
-          value: 'changed default value',
+          value: true,
+          type: 'boolean',
         };
         testManager.knob('foo', defaultKnob);
 
