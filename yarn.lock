@@ -15285,7 +15285,7 @@ jest-preset-angular@^6.0.1:
     jest-zone-patch ">=0.0.9 <1.0.0"
     ts-jest "~23.1.3"
 
-jest-preset-angular@^7.0.1:
+jest-preset-angular@^7.1.0:
   version "7.1.0"
   resolved "https://registry.npmjs.org/jest-preset-angular/-/jest-preset-angular-7.1.0.tgz#df023f8bd9bf4f20497701bcd813906fa26e04ce"
   integrity sha512-MSenqcEbmkNYXh77zpsFbIJvMBsVD2kPTy5+2GLm/07e7cQe29GEQLNN4F52VZMGW70RCvGFAiAE4ljsK9hYSg==
