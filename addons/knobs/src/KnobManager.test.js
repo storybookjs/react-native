@@ -1,4 +1,4 @@
-import { shallow } from 'enzyme'; // eslint-disable-line
+import { shallow } from 'enzyme';
 import KnobManager from './KnobManager';
 
 jest.mock('global', () => ({

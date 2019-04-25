@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable lines-between-class-members */
 import { KeyCode } from './keyCodes';
 
 /**

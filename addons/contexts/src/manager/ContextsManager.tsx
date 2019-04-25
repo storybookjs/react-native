@@ -3,7 +3,7 @@ import { useChannel } from './libs/useChannel';
 import { ToolBar } from './components/ToolBar';
 import { deserialize, serialize } from '../shared/serializers';
 import { PARAM, REBOOT_MANAGER, UPDATE_MANAGER, UPDATE_PREVIEW } from '../shared/constants';
-import { FCNoChildren, ManagerAPI, SelectionState } from '../shared/types';
+import { FCNoChildren, ManagerAPI, SelectionState } from '../shared/types.d';
 
 /**
  * A smart component for handling manager-preview interactions

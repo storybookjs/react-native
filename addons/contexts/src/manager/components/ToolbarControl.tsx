@@ -1,7 +1,7 @@
 import React from 'react';
 import { ToolBarMenu } from './ToolBarMenu';
 import { OPT_OUT } from '../../shared/constants';
-import { ContextNode, FCNoChildren, Omit } from '../../shared/types';
+import { ContextNode, FCNoChildren, Omit } from '../../shared/types.d';
 
 type ToolbarControl = FCNoChildren<
   Omit<

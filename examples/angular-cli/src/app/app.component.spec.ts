@@ -1,5 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
-// tslint:disable-next-line:no-implicit-dependencies
+// eslint-disable-next-line import/no-extraneous-dependencies
 import 'jasmine';
 
 import { AppComponent } from './app.component';

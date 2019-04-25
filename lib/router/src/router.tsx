@@ -36,7 +36,7 @@ interface QueryLinkProps {
   children: React.ReactNode;
 }
 
-const getBase = () => document.location.pathname + '?';
+const getBase = () => `${document.location.pathname}?`;
 
 const queryNavigate = (to: string) => {
   navigate(`${getBase()}path=${to}`);

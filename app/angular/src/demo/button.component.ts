@@ -22,6 +22,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export default class ButtonComponent {
   @Input()
   text = '';
+
   @Output()
   onClick = new EventEmitter<any>();
 }
