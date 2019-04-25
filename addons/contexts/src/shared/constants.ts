@@ -1,3 +1,5 @@
+export { FORCE_RE_RENDER, SET_CURRENT_STORY } from '@storybook/core-events';
+
 // configs
 export const ID = 'addon-contexts' as const;
 export const PARAM = 'contexts' as const;

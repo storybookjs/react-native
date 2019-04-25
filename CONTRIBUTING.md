@@ -69,7 +69,7 @@ Before the tests are run, the project must be bootstrapped with core. You can ac
 This option executes tests from `<rootdir>/examples/official-storybook`
 In order for the image snapshots to be correctly generated, you must have a static build of the storybook up-to-date :
 
-```js
+```sh
 cd examples/official-storybook
 yarn build-storybook
 cd ../..
