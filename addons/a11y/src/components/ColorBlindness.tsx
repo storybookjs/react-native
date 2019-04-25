@@ -83,7 +83,7 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
       'mono',
     ].map(i => ({
       id: i,
-      title: i,
+      title: i.charAt(0).toUpperCase() + i.slice(1),
       onClick: () => {
         this.setFilter(i);
       },

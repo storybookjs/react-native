@@ -125,6 +125,7 @@ exports[`HighlightToggle component should match snapshot 1`] = `
             "app": "#F6F9FC",
             "bar": "#FFFFFF",
             "content": "#FFFFFF",
+            "critical": "#FF4400",
             "gridCellSize": 10,
             "hoverable": "rgba(0,0,0,.05)",
             "negative": "#FEDED2",
@@ -256,6 +257,7 @@ exports[`HighlightToggle component should match snapshot 1`] = `
           "color": Object {
             "ancillary": "#22a699",
             "border": "rgba(0,0,0,.1)",
+            "critical": "#FFFFFF",
             "dark": "#666666",
             "darker": "#444444",
             "darkest": "#333333",

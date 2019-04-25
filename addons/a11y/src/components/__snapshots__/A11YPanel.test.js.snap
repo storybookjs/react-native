@@ -103,133 +103,12 @@ exports[`A11YPanel should render loader when it's running 1`] = `
 `;
 
 exports[`A11YPanel should render report 1`] = `
-.emotion-14 {
+.emotion-0 {
   overflow-y: auto;
   overflow-x: auto;
 }
 
-.emotion-13 {
-  width: 100%;
-  position: relative;
-  min-height: 100%;
-}
-
-.emotion-10 {
-  box-shadow: rgba(0,0,0,.1) 0 -1px 0 0 inset;
-  background: rgba(0,0,0,.05);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  white-space: nowrap;
-}
-
-.emotion-1 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 1;
-  height: 40px;
-  border: none;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  background: transparent;
-  opacity: 1;
-  border-bottom: 3px solid #1EA7FD;
-}
-
-.emotion-1:focus {
-  outline: 0 none;
-  border-bottom: 3px solid #1EA7FD;
-}
-
-.emotion-0 {
-  color: #FF4400;
-}
-
-.emotion-3 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 1;
-  height: 40px;
-  border: none;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  background: transparent;
-}
-
-.emotion-3:focus {
-  outline: 0 none;
-  border-bottom: 3px solid #1EA7FD;
-}
-
-.emotion-2 {
-  color: #66BF3C;
-}
-
 .emotion-4 {
-  color: #E69D00;
-}
-
-.emotion-9 {
-  padding: 10px 15px 10px 0;
-  cursor: pointer;
-  font-size: 13px;
-  height: 40px;
-  border: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-9 input {
-  margin-left: 10px;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.emotion-7 {
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: #666666;
-}
-
-.emotion-8 {
-  cursor: not-allowed;
-}
-
-.emotion-12 {
-  padding: 30px;
-  text-align: center;
-  color: #333333;
-  font-size: 13px;
-}
-
-.emotion-11 {
-  font-weight: 700;
-}
-
-.emotion-18 {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -241,7 +120,7 @@ exports[`A11YPanel should render report 1`] = `
   background: #FFFFFF;
 }
 
-.emotion-17 {
+.emotion-3 {
   border: 0 none;
   padding: 4px 10px;
   cursor: pointer;
@@ -264,16 +143,16 @@ exports[`A11YPanel should render report 1`] = `
   border-radius: 4px 0 0 0;
 }
 
-.emotion-17:not(:last-child) {
+.emotion-3:not(:last-child) {
   border-right: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-17 + * {
+.emotion-3 + * {
   border-left: 1px solid rgba(0,0,0,.1);
   border-radius: 0;
 }
 
-.emotion-17:focus {
+.emotion-3:focus {
   box-shadow: #1EA7FD 0 -3px 0 0 inset;
   outline: 0 none;
 }
@@ -334,27 +213,25 @@ exports[`A11YPanel should render report 1`] = `
               "inserted": Object {
                 "0": true,
                 "110qmus": true,
-                "152wg9i": true,
                 "1551xjo": true,
                 "15paq49": true,
                 "176o2y5": true,
                 "1977chw": true,
-                "1cwfnw4": true,
-                "1fp6daz": true,
+                "19mcg9j": true,
+                "1ez3l8h": true,
+                "1kbt4a0": true,
                 "1l7fvsg": true,
                 "1myfomu": true,
-                "1s6ajii": true,
                 "1vwgrhn": true,
                 "4ryd4s": true,
                 "6hqipu": true,
                 "animation-u07e3c": true,
+                "aq4p19": true,
                 "fg630j": true,
-                "g90fw7": true,
                 "iau1th": true,
                 "jb2puo": true,
                 "kqzqgg": true,
                 "l0u0ek": true,
-                "nuzmgr": true,
                 "qacwg0": true,
                 "qb28": true,
                 "snh8f7": true,
@@ -364,7 +241,7 @@ exports[`A11YPanel should render report 1`] = `
               "key": "css",
               "nonce": undefined,
               "registered": Object {
-                "emotion-14": "overflow-y:auto;overflow-x:auto;",
+                "emotion-0": "overflow-y:auto;overflow-x:auto;",
                 "css-1977chw": "height:10px;width:10px;min-width:10px;color:#999999;margin-right:10px;transition:transform 0.1s ease-in-out;align-self:center;display:inline-flex;",
                 "css-1l7fvsg": "height:12px;width:12px;margin-right:4px;",
                 "css-jb2puo": "height:12px;width:12px;margin-right:4px;animation:animation-u07e3c 1s linear infinite;;",
@@ -605,127 +482,37 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-14{overflow-y:auto;overflow-x:auto;}
+                    .emotion-0{overflow-y:auto;overflow-x:auto;}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-13{width:100%;position:relative;min-height:100%;}
+                    .emotion-4{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-10{box-shadow:rgba(0,0,0,.1) 0 -1px 0 0 inset;background:rgba(0,0,0,.05);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;white-space:nowrap;}
+                    .emotion-3{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-1{-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-weight:700;font-size:13px;line-height:1;height:40px;border:none;border-top:3px solid transparent;border-bottom:3px solid transparent;background:transparent;opacity:1;border-bottom:3px solid #1EA7FD;}
+                    .emotion-3:not(:last-child){border-right:1px solid rgba(0,0,0,.1);}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-1:focus{outline:0 none;border-bottom:3px solid #1EA7FD;}
+                    .emotion-3 + *{border-left:1px solid rgba(0,0,0,.1);border-radius:0;}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-0{color:#FF4400;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-3{-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-weight:700;font-size:13px;line-height:1;height:40px;border:none;border-top:3px solid transparent;border-bottom:3px solid transparent;background:transparent;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-3:focus{outline:0 none;border-bottom:3px solid #1EA7FD;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-2{color:#66BF3C;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-4{color:#E69D00;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-9{padding:10px 15px 10px 0;cursor:pointer;font-size:13px;height:40px;border:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-9 input{margin-left:10px;margin-right:0;margin-top:0;margin-bottom:0;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-7{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:#666666;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-8{cursor:not-allowed;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-12{padding:30px;text-align:center;color:#333333;font-size:13px;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-11{font-weight:700;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-18{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-17{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-17:not(:last-child){border-right:1px solid rgba(0,0,0,.1);}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-17 + *{border-left:1px solid rgba(0,0,0,.1);border-radius:0;}
-                  </style>
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-17:focus{box-shadow:#1EA7FD 0 -3px 0 0 inset;outline:0 none;}
+                    .emotion-3:focus{box-shadow:#1EA7FD 0 -3px 0 0 inset;outline:0 none;}
                   </style>
                   <style
                     data-emotion="css"
@@ -767,13 +554,91 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-nuzmgr{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-bottom:1px solid rgba(0,0,0,.1);}
+                    .css-snh8f7{width:100%;position:relative;min-height:100%;}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-nuzmgr:hover{background:rgba(0,0,0,.05);}
+                    .css-15paq49{box-shadow:rgba(0,0,0,.1) 0 -1px 0 0 inset;background:rgba(0,0,0,.05);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;white-space:nowrap;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-1551xjo{-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-weight:700;font-size:13px;line-height:1;height:40px;border:none;border-top:3px solid transparent;border-bottom:3px solid transparent;background:transparent;opacity:1;border-bottom:3px solid #1EA7FD;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-1551xjo:focus{outline:0 none;border-bottom:3px solid #1EA7FD;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-qacwg0{color:#FF4400;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-qb28{-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-weight:700;font-size:13px;line-height:1;height:40px;border:none;border-top:3px solid transparent;border-bottom:3px solid transparent;background:transparent;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-qb28:focus{outline:0 none;border-bottom:3px solid #1EA7FD;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-fg630j{color:#66BF3C;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-iau1th{color:#E69D00;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-1ez3l8h{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0px;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-1ez3l8h input{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-1kbt4a0{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin-bottom:3px;margin-right:3px;color:#666666;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-vdhlfv{cursor:not-allowed;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-aq4p19{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
+                  </style>
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-aq4p19:hover{background:rgba(0,0,0,.05);}
                   </style>
                   <style
                     data-emotion="css"
@@ -803,13 +668,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1fp6daz{font-weight:normal;float:right;margin-right:15px;margin-top:10px;}
+                    .css-19mcg9j{font-weight:normal;float:right;margin-right:15px;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-1fp6daz input{margin:0;}
+                    .css-19mcg9j input{margin:0;}
                   </style>
                   <style
                     data-emotion="css"
@@ -823,8 +688,18 @@ exports[`A11YPanel should render report 1`] = `
                     
                     .css-6hqipu{shape-rendering:inherit;-webkit-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);display:inline-block;height:12px;width:12px;margin-right:4px;}
                   </style>
+                  <style
+                    id="erd_scroll_detection_scrollbar_style"
+                  >
+                    /* Created by the element-resize-detector library. */
+.erd_scroll_detection_container &gt; div::-webkit-scrollbar { display: none; }
+
+.erd_scroll_detection_container_animation_active { -webkit-animation-duration: 0.1s; animation-duration: 0.1s; -webkit-animation-name: erd_scroll_detection_container_animation; animation-name: erd_scroll_detection_container_animation; }
+@-webkit-keyframes erd_scroll_detection_container_animation { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes erd_scroll_detection_container_animation { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+                  </style>
                 </head>,
-                "ctr": 37,
+                "ctr": 35,
                 "isSpeedy": false,
                 "key": "css",
                 "nonce": undefined,
@@ -833,127 +708,37 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-14{overflow-y:auto;overflow-x:auto;}
+                    .emotion-0{overflow-y:auto;overflow-x:auto;}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-13{width:100%;position:relative;min-height:100%;}
+                    .emotion-4{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-10{box-shadow:rgba(0,0,0,.1) 0 -1px 0 0 inset;background:rgba(0,0,0,.05);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;white-space:nowrap;}
+                    .emotion-3{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-1{-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-weight:700;font-size:13px;line-height:1;height:40px;border:none;border-top:3px solid transparent;border-bottom:3px solid transparent;background:transparent;opacity:1;border-bottom:3px solid #1EA7FD;}
+                    .emotion-3:not(:last-child){border-right:1px solid rgba(0,0,0,.1);}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-1:focus{outline:0 none;border-bottom:3px solid #1EA7FD;}
+                    .emotion-3 + *{border-left:1px solid rgba(0,0,0,.1);border-radius:0;}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-0{color:#FF4400;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-3{-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-weight:700;font-size:13px;line-height:1;height:40px;border:none;border-top:3px solid transparent;border-bottom:3px solid transparent;background:transparent;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-3:focus{outline:0 none;border-bottom:3px solid #1EA7FD;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-2{color:#66BF3C;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-4{color:#E69D00;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-9{padding:10px 15px 10px 0;cursor:pointer;font-size:13px;height:40px;border:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-9 input{margin-left:10px;margin-right:0;margin-top:0;margin-bottom:0;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-7{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:#666666;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-8{cursor:not-allowed;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-12{padding:30px;text-align:center;color:#333333;font-size:13px;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-11{font-weight:700;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-18{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-17{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-17:not(:last-child){border-right:1px solid rgba(0,0,0,.1);}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-17 + *{border-left:1px solid rgba(0,0,0,.1);border-radius:0;}
-                  </style>,
-                  <style
-                    data-emotion="css"
-                  >
-                    
-                    .emotion-17:focus{box-shadow:#1EA7FD 0 -3px 0 0 inset;outline:0 none;}
+                    .emotion-3:focus{box-shadow:#1EA7FD 0 -3px 0 0 inset;outline:0 none;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -995,13 +780,91 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-nuzmgr{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-bottom:1px solid rgba(0,0,0,.1);}
+                    .css-snh8f7{width:100%;position:relative;min-height:100%;}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-nuzmgr:hover{background:rgba(0,0,0,.05);}
+                    .css-15paq49{box-shadow:rgba(0,0,0,.1) 0 -1px 0 0 inset;background:rgba(0,0,0,.05);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;white-space:nowrap;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-1551xjo{-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-weight:700;font-size:13px;line-height:1;height:40px;border:none;border-top:3px solid transparent;border-bottom:3px solid transparent;background:transparent;opacity:1;border-bottom:3px solid #1EA7FD;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-1551xjo:focus{outline:0 none;border-bottom:3px solid #1EA7FD;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-qacwg0{color:#FF4400;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-qb28{-webkit-text-decoration:none;text-decoration:none;padding:10px 15px;cursor:pointer;font-weight:700;font-size:13px;line-height:1;height:40px;border:none;border-top:3px solid transparent;border-bottom:3px solid transparent;background:transparent;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-qb28:focus{outline:0 none;border-bottom:3px solid #1EA7FD;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-fg630j{color:#66BF3C;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-iau1th{color:#E69D00;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-1ez3l8h{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0px;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-1ez3l8h input{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-1kbt4a0{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin-bottom:3px;margin-right:3px;color:#666666;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-vdhlfv{cursor:not-allowed;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-aq4p19{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                  >
+                    
+                    .css-aq4p19:hover{background:rgba(0,0,0,.05);}
                   </style>,
                   <style
                     data-emotion="css"
@@ -1031,13 +894,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1fp6daz{font-weight:normal;float:right;margin-right:15px;margin-top:10px;}
+                    .css-19mcg9j{font-weight:normal;float:right;margin-right:15px;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-1fp6daz input{margin:0;}
+                    .css-19mcg9j input{margin:0;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -1070,15 +933,15 @@ exports[`A11YPanel should render report 1`] = `
         vertical={true}
       >
         <Component
-          className="emotion-14"
+          className="emotion-0"
           horizontal={true}
           vertical={true}
         >
           <l
-            className="emotion-14"
+            className="emotion-0"
           >
             <div
-              className="emotion-14"
+              className="emotion-0"
               data-simplebar={true}
             >
               <div
@@ -1111,9 +974,8 @@ exports[`A11YPanel should render report 1`] = `
                                  Violations
                               </ForwardRef(render)>,
                               "panel": <Report
-                                empty="No a11y violations found."
+                                empty="No accessibility violations found."
                                 items={Array []}
-                                passes={false}
                                 type={0}
                               />,
                               "type": 0,
@@ -1125,9 +987,8 @@ exports[`A11YPanel should render report 1`] = `
                                  Passes
                               </ForwardRef(render)>,
                               "panel": <Report
-                                empty="No a11y check passed."
+                                empty="No accessibility checks passed."
                                 items={Array []}
-                                passes={true}
                                 type={1}
                               />,
                               "type": 1,
@@ -1139,9 +1000,8 @@ exports[`A11YPanel should render report 1`] = `
                                  Incomplete
                               </ForwardRef(render)>,
                               "panel": <Report
-                                empty="No a11y incomplete found."
+                                empty="No accessibility checks incomplete."
                                 items={Array []}
-                                passes={false}
                                 type={2}
                               />,
                               "type": 2,
@@ -1149,163 +1009,39 @@ exports[`A11YPanel should render report 1`] = `
                           ]
                         }
                       >
-                        <Styled(div)>
-                          <div
-                            className="emotion-13"
+                        <SizeMe
+                          refreshMode="debounce"
+                        >
+                          <SizeMe(Component)
+                            onSize={[Function]}
                           >
-                            <Styled(div)>
-                              <div
-                                className="emotion-10"
-                              >
-                                <Styled(div)>
-                                  <div
-                                    className="emotion-6"
-                                  >
-                                    <Styled(button)
-                                      active={true}
-                                      data-index={0}
-                                      key="0"
-                                      onClick={[Function]}
-                                    >
-                                      <button
-                                        className="emotion-1"
-                                        data-index={0}
-                                        onClick={[Function]}
-                                      >
-                                        <Styled(span)>
-                                          <span
-                                            className="emotion-0"
-                                          >
-                                            0
-                                             Violations
-                                          </span>
-                                        </Styled(span)>
-                                      </button>
-                                    </Styled(button)>
-                                    <Styled(button)
-                                      active={false}
-                                      data-index={1}
-                                      key="1"
-                                      onClick={[Function]}
-                                    >
-                                      <button
-                                        className="emotion-3"
-                                        data-index={1}
-                                        onClick={[Function]}
-                                      >
-                                        <Styled(span)>
-                                          <span
-                                            className="emotion-2"
-                                          >
-                                            0
-                                             Passes
-                                          </span>
-                                        </Styled(span)>
-                                      </button>
-                                    </Styled(button)>
-                                    <Styled(button)
-                                      active={false}
-                                      data-index={2}
-                                      key="2"
-                                      onClick={[Function]}
-                                    >
-                                      <button
-                                        className="emotion-3"
-                                        data-index={2}
-                                        onClick={[Function]}
-                                      >
-                                        <Styled(span)>
-                                          <span
-                                            className="emotion-4"
-                                          >
-                                            0
-                                             Incomplete
-                                          </span>
-                                        </Styled(span)>
-                                      </button>
-                                    </Styled(button)>
-                                  </div>
-                                </Styled(div)>
-                                <Styled(div)>
-                                  <div
-                                    className="emotion-9"
-                                  >
-                                    <Styled(label)
-                                      htmlFor="0-global-checkbox"
-                                    >
-                                      <label
-                                        className="emotion-7"
-                                        htmlFor="0-global-checkbox"
-                                      >
-                                        Highlight results
-                                      </label>
-                                    </Styled(label)>
-                                    <ConnectFunction
-                                      elementsToHighlight={Array []}
-                                      label="Highlight results"
-                                      toggleId="0-global-checkbox"
-                                      type={0}
-                                    >
-                                      <HighlightToggle
-                                        addElement={[Function]}
-                                        elementsToHighlight={Array []}
-                                        highlightedElementsMap={Map {}}
-                                        indeterminate={false}
-                                        isToggledOn={false}
-                                        label="Highlight results"
-                                        toggleId="0-global-checkbox"
-                                        type={0}
-                                      >
-                                        <Styled(input)
-                                          aria-label="Highlight result"
-                                          checked={false}
-                                          disabled={true}
-                                          id="0-global-checkbox"
-                                          onChange={[Function]}
-                                          type="checkbox"
-                                        >
-                                          <input
-                                            aria-label="Highlight result"
-                                            checked={false}
-                                            className="emotion-8"
-                                            disabled={true}
-                                            id="0-global-checkbox"
-                                            onChange={[Function]}
-                                            type="checkbox"
-                                          />
-                                        </Styled(input)>
-                                      </HighlightToggle>
-                                    </ConnectFunction>
-                                  </div>
-                                </Styled(div)>
-                              </div>
-                            </Styled(div)>
-                            <Report
-                              empty="No a11y violations found."
-                              items={Array []}
-                              passes={false}
-                              type={0}
+                            <SizeMeRenderer(Component)
+                              disablePlaceholder={false}
+                              explicitRef={[Function]}
+                              onSize={[Function]}
+                              size={
+                                Object {
+                                  "height": undefined,
+                                  "position": undefined,
+                                  "width": undefined,
+                                }
+                              }
                             >
-                              <Placeholder
-                                key="placeholder"
-                              >
-                                <Styled(div)>
+                              <SizeMeReferenceWrapper>
+                                <SizeMePlaceholder>
                                   <div
-                                    className="emotion-12"
-                                  >
-                                    <Styled(div)>
-                                      <div
-                                        className="emotion-11"
-                                      >
-                                        No a11y violations found.
-                                      </div>
-                                    </Styled(div)>
-                                  </div>
-                                </Styled(div)>
-                              </Placeholder>
-                            </Report>
-                          </div>
-                        </Styled(div)>
+                                    style={
+                                      Object {
+                                        "height": "100%",
+                                        "width": "100%",
+                                      }
+                                    }
+                                  />
+                                </SizeMePlaceholder>
+                              </SizeMeReferenceWrapper>
+                            </SizeMeRenderer(Component)>
+                          </SizeMe(Component)>
+                        </SizeMe>
                       </Tabs>
                     </div>
                   </div>
@@ -1346,14 +1082,14 @@ exports[`A11YPanel should render report 1`] = `
     >
       <Styled(div)>
         <div
-          className="emotion-18"
+          className="emotion-4"
         >
           <ActionButton
             key="0"
             onClick={[Function]}
           >
             <button
-              className="emotion-17"
+              className="emotion-3"
               onClick={[Function]}
             >
               Rerun tests
