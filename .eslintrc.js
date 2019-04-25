@@ -150,5 +150,11 @@ module.exports = {
         'no-dupe-class-members': ignore, // this is called overloads in typescript
       },
     },
+    {
+      files: ['**/*.d.ts'],
+      rules: {
+        'no-var': ignore, // this is how typescript works
+      },
+    },
   ],
 };
