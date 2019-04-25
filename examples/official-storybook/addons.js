@@ -10,6 +10,7 @@ import '@storybook/addon-backgrounds/register';
 import '@storybook/addon-a11y/register';
 import '@storybook/addon-jest/register';
 import '@storybook/addon-viewport/register';
+import '@storybook/addon-graphql/register';
 import '@storybook/addon-contexts/register';
 
 import addHeadWarning from './head-warning';

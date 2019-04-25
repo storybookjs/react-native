@@ -1,17 +1,18 @@
-import { AddonSetting, ContextNode, WrapperSettings } from '../../types';
+import { AddonSetting, ContextNode, WrapperSettings } from '../../shared/types';
 
 /**
  * @private
  * Merge the top-level (global options) and the story-level (parameters) from a pair of setting;
  * @return the normalized definition for a contextual environment (i.e. a contextNode).
  */
-type GetMergedSettings = (
+type _getMergedSettings = (
   topLevel: Partial<AddonSetting>,
   storyLevel: Partial<AddonSetting>
 ) => ContextNode;
 
-export const _getMergedSettings: GetMergedSettings = (topLevel, storyLevel) => ({
-  nodeId: topLevel.title || storyLevel.title || '',
+export const _getMergedSettings: _getMergedSettings = (topLevel, storyLevel) => ({
+  // strip out special characters reserved for serializing
+  nodeId: (topLevel.title || storyLevel.title || '').replace(/[,+]/g, ''),
   icon: topLevel.icon || storyLevel.icon || '',
   title: topLevel.title || storyLevel.title || '',
   components: topLevel.components || storyLevel.components || [],
@@ -35,9 +36,9 @@ export const _getMergedSettings: GetMergedSettings = (topLevel, storyLevel) => (
  * Pair up settings for merging normalizations to produce the contextual definitions (i.e. contextNodes);
  * it guarantee the adding order can be respected but not duplicated.
  */
-type GetContextNodes = (settings: WrapperSettings) => ContextNode[];
+type getContextNodes = (settings: WrapperSettings) => ContextNode[];
 
-export const getContextNodes: GetContextNodes = ({ options, parameters }) => {
+export const getContextNodes: getContextNodes = ({ options, parameters }) => {
   const titles = Array()
     .concat(options, parameters)
     .filter(Boolean)

@@ -1,35 +1,47 @@
+## 5.1.0-alpha.34 (April 24, 2019)
+
+### Features
+
+- Addon-contexts: Add URL query param feature ([#6601](https://github.com/storybooks/storybook/pull/6601))
+- UI: Add classNames to sidebar nav elements ([#6571](https://github.com/storybooks/storybook/pull/6571))
+
+### Bug Fixes
+
+- Addon-knobs: Check color knob value before applying uppercase ([#6598](https://github.com/storybooks/storybook/pull/6598))
+- React-native: Restore title in section header ([#6599](https://github.com/storybooks/storybook/pull/6599))
+
 ## 5.1.0-alpha.33 (April 23, 2019)
 
 ### Features
 
-* React: Add support for create-react-app@3.0.0 ([#6560](https://github.com/storybooks/storybook/pull/6560))
+- React: Add support for create-react-app@3.0.0 ([#6560](https://github.com/storybooks/storybook/pull/6560))
 
 ## 5.1.0-alpha.32 (April 22, 2019)
 
 ### Bug Fixes
 
-* Addon-contexts: bug-fixing, testing, typing ([#6572](https://github.com/storybooks/storybook/pull/6572))
+- Addon-contexts: bug-fixing, testing, typing ([#6572](https://github.com/storybooks/storybook/pull/6572))
 
 ### Dependency Upgrades
 
-* CHANGE opn to open ([#6567](https://github.com/storybooks/storybook/pull/6567))
+- CHANGE opn to open ([#6567](https://github.com/storybooks/storybook/pull/6567))
 
 ## 5.1.0-alpha.31 (April 19, 2019)
 
 ### Features
 
-* Addon-backgrounds: Emit event on updating background ([#6561](https://github.com/storybooks/storybook/pull/6561))
-* Addon-contexts: Merge into monorepo ([#6559](https://github.com/storybooks/storybook/pull/6559))
+- Addon-backgrounds: Emit event on updating background ([#6561](https://github.com/storybooks/storybook/pull/6561))
+- Addon-contexts: Merge into monorepo ([#6559](https://github.com/storybooks/storybook/pull/6559))
 
 ### Bug Fixes
 
-* Angular: Fix sourceMap property of angulars webpack config ([#6535](https://github.com/storybooks/storybook/pull/6535))
-* Addon-jest: Fix result display ([#6539](https://github.com/storybooks/storybook/pull/6539))
+- Angular: Fix sourceMap property of angulars webpack config ([#6535](https://github.com/storybooks/storybook/pull/6535))
+- Addon-jest: Fix result display ([#6539](https://github.com/storybooks/storybook/pull/6539))
 
 ### Dependency Upgrades
 
-* Bump ember-source from 3.8.1 to 3.9.1 ([#6531](https://github.com/storybooks/storybook/pull/6531))
-* Bump typescript from 3.4.2 to 3.4.3 ([#6528](https://github.com/storybooks/storybook/pull/6528))
+- Bump ember-source from 3.8.1 to 3.9.1 ([#6531](https://github.com/storybooks/storybook/pull/6531))
+- Bump typescript from 3.4.2 to 3.4.3 ([#6528](https://github.com/storybooks/storybook/pull/6528))
 
 ## 5.0.10 (April 18, 2019)
 

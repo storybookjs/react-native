@@ -127,7 +127,6 @@ export default function initShortcuts({ store }: Module) {
           } else if (!showNav) {
             fullApi.toggleNav();
           }
-          document.activeElement.blur();
           break;
         }
 
