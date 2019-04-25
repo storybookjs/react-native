@@ -149,8 +149,7 @@ Sometimes your storybook is deeply ingrained in your own setup and it's hard to 
 
 Inside the storybook repo we have a script that allows you to test the packages inside this repo in your own seperate project.
 
-Though you can use `npm link` on all packages, this would be work, but npm linking is cumbersome.
-
+You can use `npm link` on all packages, but npm linking is cumbersome and has subtle differences from what happens in a registry-based installation.
 So the way our script works is that it:
 
 - sets up a npm registry running on your own local machine
