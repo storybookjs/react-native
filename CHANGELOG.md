@@ -1,3 +1,31 @@
+## 5.1.0-alpha.35 (April 27, 2019)
+
+### Features
+
+* Addon-notes: use @storybook/router <Link> to render links in notes ([#6398](https://github.com/storybooks/storybook/pull/6398))
+* Angular: Support default `storybook` project configuration ([#6484](https://github.com/storybooks/storybook/pull/6484))
+* Addon-contexts: Improve Vue integration ([#6632](https://github.com/storybooks/storybook/pull/6632))
+* Addon-a11y: Design enhancements ([#6563](https://github.com/storybooks/storybook/pull/6563))
+
+### Bug Fixes
+
+* UI: `active` PropTypes on MobileLayout ([#6241](https://github.com/storybooks/storybook/pull/6241))
+* Core: Fix css import when sideEffects is false ([#6650](https://github.com/storybooks/storybook/pull/6650))
+* Core: Fix infinite loop with special characters in kind names ([#6607](https://github.com/storybooks/storybook/pull/6607))
+* UI: Fix 'Escape' onKeyUp event doesn't work ([#6578](https://github.com/storybooks/storybook/pull/6578))
+
+### Maintenance
+
+* UI: Add missing props in stories ([#6353](https://github.com/storybooks/storybook/pull/6353))
+* Build: tslint, and use eslint for everything ([#6621](https://github.com/storybooks/storybook/pull/6621))
+* Build: deploy to local registry ([#6619](https://github.com/storybooks/storybook/pull/6619))
+
+### Dependency Upgrades
+
+* Bump ts-node from 8.0.3 to 8.1.0 ([#6585](https://github.com/storybooks/storybook/pull/6585))
+* Bump semver from 5.7.0 to 6.0.0 ([#6580](https://github.com/storybooks/storybook/pull/6580))
+* Bump react-color from 2.17.0 to 2.17.1 ([#6583](https://github.com/storybooks/storybook/pull/6583))
+
 ## 5.1.0-alpha.34 (April 24, 2019)
 
 ### Features
