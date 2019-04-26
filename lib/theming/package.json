@@ -25,7 +25,7 @@
     "@emotion/styled": "^10.0.7",
     "@storybook/client-logger": "5.1.0-alpha.36",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "deep-object-diff": "^1.1.0",
     "emotion-theming": "^10.0.9",
     "global": "^4.3.2",

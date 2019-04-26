@@ -1,6 +1,6 @@
 module.exports = {
   presets: [
-    ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '2' }],
+    ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
     '@babel/preset-typescript',
     '@babel/preset-react',
     '@babel/preset-flow',
@@ -22,7 +22,7 @@ module.exports = {
   env: {
     test: {
       presets: [
-        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '2' }],
+        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
       ],
       plugins: [
         'babel-plugin-require-context-hook',
@@ -39,7 +39,7 @@ module.exports = {
     {
       test: './lib',
       presets: [
-        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '2' }],
+        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
         '@babel/preset-react',
       ],
       plugins: [
@@ -72,7 +72,7 @@ module.exports = {
             targets: {
               node: '8.11',
             },
-            corejs: '2',
+            corejs: '3',
           },
         ],
       ],

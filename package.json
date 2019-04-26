@@ -143,7 +143,7 @@
     "codelyzer": "^5.0.0",
     "commander": "^2.19.0",
     "concurrently": "^4.0.1",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "cross-env": "^5.2.0",
     "danger": "^7.0.15",
     "enzyme": "^3.9.0",

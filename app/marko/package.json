@@ -28,7 +28,7 @@
   "dependencies": {
     "@storybook/core": "5.1.0-alpha.36",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
     "marko-loader": "^1.5.0",
     "raw-loader": "^1.0.0",

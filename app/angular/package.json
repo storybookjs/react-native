@@ -29,7 +29,7 @@
     "@storybook/core": "5.1.0-alpha.36",
     "@storybook/node-logger": "5.1.0-alpha.36",
     "angular2-template-loader": "^0.6.2",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "global": "^4.3.2",
     "regenerator-runtime": "^0.12.1",
