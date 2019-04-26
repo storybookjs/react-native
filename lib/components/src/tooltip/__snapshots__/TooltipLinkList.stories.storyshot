@@ -60,6 +60,7 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links 1`] = `
 
 .emotion-2 {
   color: #333333;
+  font-weight: 400;
 }
 
 .emotion-0 {
@@ -215,6 +216,7 @@ exports[`Storyshots basics/Tooltip/TooltipLinkList links and callback 1`] = `
 
 .emotion-2 {
   color: #333333;
+  font-weight: 400;
 }
 
 .emotion-0 {

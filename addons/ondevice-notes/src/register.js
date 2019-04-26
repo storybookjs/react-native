@@ -1,65 +1,54 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import Markdown from 'react-native-simple-markdown';
 import addons from '@storybook/addons';
+import Events from '@storybook/core-events';
 
-export class Notes extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this.state = { text: '' };
-    this.onAddNotes = this.onAddNotes.bind(this);
-  }
+export const PARAM_KEY = `notes`;
+
+class Notes extends React.Component {
+  setBackgroundFromSwatch = background => {
+    this.props.channel.emit(Constants.UPDATE_BACKGROUND, background);
+  };
 
   componentDidMount() {
-    const { channel } = this.props;
-    // Listen to the notes and render it.
-    channel.on('storybook/notes/add_notes', this.onAddNotes);
+    this.props.channel.on(Events.SELECT_STORY, this.onStorySelected);
   }
 
-  // This is some cleanup tasks when the Notes panel is unmounting.
   componentWillUnmount() {
-    this.unmounted = true;
-    const { channel } = this.props;
-    channel.removeListener('storybook/notes/add_notes', this.onAddNotes);
+    this.props.channel.removeListener(Events.SELECT_STORY, this.onStorySelected);
   }
 
-  onAddNotes(text) {
-    this.setState({ text });
-  }
+  onStorySelected = selection => {
+    this.setState({ selection });
+  };
 
   render() {
-    const { active } = this.props;
-    const { text } = this.state;
+    const { active, api } = this.props;
+
+    if (!active) {
+      return null;
+    }
+
+    const story = api
+      .store()
+      .getStoryAndParameters(this.state.selection.kind, this.state.selection.story);
+    const text = story.parameters[PARAM_KEY];
+
     const textAfterFormatted = text ? text.trim() : '';
 
-    return active ? (
+    return (
       <View style={{ padding: 10, flex: 1 }}>
         <Markdown>{textAfterFormatted}</Markdown>
       </View>
-    ) : null;
+    );
   }
 }
-
-Notes.propTypes = {
-  active: PropTypes.bool.isRequired,
-  channel: PropTypes.shape({
-    on: PropTypes.func,
-    emit: PropTypes.func,
-    removeListener: PropTypes.func,
-  }).isRequired,
-  api: PropTypes.shape({
-    on: PropTypes.func,
-    getQueryParam: PropTypes.func,
-    setQueryParams: PropTypes.func,
-  }).isRequired,
-};
 
 addons.register('storybook/notes', api => {
   const channel = addons.getChannel();
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
-    // eslint-disable-next-line react/prop-types
     render: ({ active, key }) => <Notes key={key} channel={channel} api={api} active={active} />,
   });
 });

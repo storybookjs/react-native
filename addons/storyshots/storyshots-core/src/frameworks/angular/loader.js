@@ -1,9 +1,15 @@
+import 'core-js';
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
 import hasDependency from '../hasDependency';
 import configure from '../configure';
 
 function setupAngularJestPreset() {
   // Needed to prevent "Zone.js has detected that ZoneAwarePromise `(window|global).Promise` has been overwritten."
+  require.requireActual('core-js');
   require.requireActual('core-js/modules/es6.promise');
+  // require.requireActual('core-js/es6/reflect');
+  // require.requireActual('core-js/es7/reflect');
 
   // Angular + Jest + Storyshots = Crazy Shit:
   // We need to require 'jest-preset-angular/setupJest' before any storybook code

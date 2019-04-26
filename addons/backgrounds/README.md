@@ -83,3 +83,14 @@ storiesOf('Button', module)
     backgrounds: { disable: true },
   });
 ```
+
+## Events
+
+If you want to react to a background change—for instance to implement some custom logic in your Storybook—you can subscribe to the `storybook/background/update` event. It will be emitted when the user changes the background.
+
+```js
+addonAPI.getChannel().on('storybook/background/update', (bg) => {
+  console.log('Background color', bg.selected);
+  console.log('Background name', bg.name);
+});
+```

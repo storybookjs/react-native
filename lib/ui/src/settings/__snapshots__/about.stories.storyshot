@@ -472,9 +472,11 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
             class="emotion-9"
           >
             <svg
-              title="Storybook icon"
               viewBox="0 0 64 64"
             >
+              <title>
+                Storybook icon
+              </title>
               <g
                 fill="none"
                 fill-rule="evenodd"
@@ -538,6 +540,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
             <a
               class="emotion-17"
               href="https://storybook.js.org"
+              target="_blank"
             >
               <span
                 class="emotion-16"
@@ -548,6 +551,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
             <a
               class="emotion-17"
               href="https://github.com/storybooks/storybook"
+              target="_blank"
             >
               <span
                 class="emotion-16"
@@ -558,6 +562,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
             <a
               class="emotion-17"
               href="https://storybook.js.org/support"
+              target="_blank"
             >
               <span
                 class="emotion-16"
@@ -1763,9 +1768,11 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
             class="emotion-9"
           >
             <svg
-              title="Storybook icon"
               viewBox="0 0 64 64"
             >
+              <title>
+                Storybook icon
+              </title>
               <g
                 fill="none"
                 fill-rule="evenodd"
@@ -1985,7 +1992,12 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
                             <code
                               class="emotion-18"
                             >
-                              yarn upgrade-interactive --latest
+                              <span
+                                class="token function"
+                              >
+                                yarn
+                              </span>
+                               upgrade-interactive --latest
                             </code>
                           </pre>
                         </div>
@@ -2028,6 +2040,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
             <a
               class="emotion-33"
               href="https://storybook.js.org"
+              target="_blank"
             >
               <span
                 class="emotion-32"
@@ -2038,6 +2051,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
             <a
               class="emotion-33"
               href="https://github.com/storybooks/storybook"
+              target="_blank"
             >
               <span
                 class="emotion-32"
@@ -2048,6 +2062,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
             <a
               class="emotion-33"
               href="https://storybook.js.org/support"
+              target="_blank"
             >
               <span
                 class="emotion-32"
@@ -3015,9 +3030,11 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
             class="emotion-9"
           >
             <svg
-              title="Storybook icon"
               viewBox="0 0 64 64"
             >
+              <title>
+                Storybook icon
+              </title>
               <g
                 fill="none"
                 fill-rule="evenodd"
@@ -3107,6 +3124,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
             <a
               class="emotion-19"
               href="https://storybook.js.org"
+              target="_blank"
             >
               <span
                 class="emotion-18"
@@ -3117,6 +3135,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
             <a
               class="emotion-19"
               href="https://github.com/storybooks/storybook"
+              target="_blank"
             >
               <span
                 class="emotion-18"
@@ -3127,6 +3146,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
             <a
               class="emotion-19"
               href="https://storybook.js.org/support"
+              target="_blank"
             >
               <span
                 class="emotion-18"

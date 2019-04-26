@@ -1,6 +1,6 @@
 {
   "name": "cra-kitchen-sink",
-  "version": "5.1.0-alpha.14",
+  "version": "5.1.0-alpha.34",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
@@ -19,27 +19,22 @@
     "react-lifecycles-compat": "^3.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "5.1.0-alpha.14",
-    "@storybook/addon-actions": "5.1.0-alpha.14",
-    "@storybook/addon-backgrounds": "5.1.0-alpha.14",
-    "@storybook/addon-centered": "5.1.0-alpha.14",
-    "@storybook/addon-events": "5.1.0-alpha.14",
-    "@storybook/addon-info": "5.1.0-alpha.14",
-    "@storybook/addon-jest": "5.1.0-alpha.14",
-    "@storybook/addon-knobs": "5.1.0-alpha.14",
-    "@storybook/addon-links": "5.1.0-alpha.14",
-    "@storybook/addon-notes": "5.1.0-alpha.14",
-    "@storybook/addon-options": "5.1.0-alpha.14",
-    "@storybook/addon-storyshots": "5.1.0-alpha.14",
-    "@storybook/addons": "5.1.0-alpha.14",
-    "@storybook/client-logger": "5.1.0-alpha.14",
-    "@storybook/react": "5.1.0-alpha.14",
-    "@storybook/theming": "5.1.0-alpha.14",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.9.1",
-    "enzyme-to-json": "^3.3.5",
-    "jest": "^23.6.0",
-    "jest-emotion": "^10.0.7",
-    "react-scripts": "^2.1.3"
+    "@storybook/addon-a11y": "5.1.0-alpha.34",
+    "@storybook/addon-actions": "5.1.0-alpha.34",
+    "@storybook/addon-backgrounds": "5.1.0-alpha.34",
+    "@storybook/addon-centered": "5.1.0-alpha.34",
+    "@storybook/addon-events": "5.1.0-alpha.34",
+    "@storybook/addon-info": "5.1.0-alpha.34",
+    "@storybook/addon-jest": "5.1.0-alpha.34",
+    "@storybook/addon-knobs": "5.1.0-alpha.34",
+    "@storybook/addon-links": "5.1.0-alpha.34",
+    "@storybook/addon-notes": "5.1.0-alpha.34",
+    "@storybook/addon-options": "5.1.0-alpha.34",
+    "@storybook/addon-storyshots": "5.1.0-alpha.34",
+    "@storybook/addons": "5.1.0-alpha.34",
+    "@storybook/client-logger": "5.1.0-alpha.34",
+    "@storybook/react": "5.1.0-alpha.34",
+    "@storybook/theming": "5.1.0-alpha.34",
+    "react-scripts": "^2.1.8"
   }
 }

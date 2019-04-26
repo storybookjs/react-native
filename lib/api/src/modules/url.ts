@@ -76,7 +76,7 @@ const initialUrlSupport = ({ navigate, location, path }: Module) => {
     setTimeout(() => navigate(`/story/*`, { replace: true }), 1);
   } else if (Object.keys(query).length > 1) {
     // remove other queries
-    setTimeout(() => navigate(`/${queryPath}`, { replace: true }), 1);
+    setTimeout(() => navigate(`${queryPath}`, { replace: true }), 1);
   }
 
   return { layout: addition, selectedPanel, location, path, customQueryParams };

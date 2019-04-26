@@ -1,13 +1,17 @@
 import React, { Fragment, FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 
+import { addons, types } from '@storybook/addons';
 import { ADDON_ID, PANEL_ID } from './constants';
 import { ColorBlindness } from './components/ColorBlindness';
 import { A11YPanel } from './components/A11YPanel';
-import { addons, types } from '@storybook/addons';
 
 const Hidden = styled.div(() => ({
-  display: 'none',
+  '&, & svg': {
+    position: 'absolute',
+    width: 0,
+    height: 0,
+  },
 }));
 
 const PreviewWrapper: FunctionComponent<{}> = p => (

@@ -29,6 +29,8 @@ Options:
 --smoke-test                  Exit after successful start
 --ci                          CI mode (skip interactive prompts, don't open browser)
 --quiet                       Suppress verbose build output
+--no-dll                      Do not use dll reference
+--debug-webpack               Display final webpack configurations for debugging purposes
 ```
 
 ## For build-storybook
@@ -44,4 +46,7 @@ Options:
 -o, --output-dir [dir-name]   Directory where to store built files
 -c, --config-dir [dir-name]   Directory where to load Storybook configurations from
 -w, --watch                   Enable watch mode
+--quiet                       Suppress verbose build output
+--no-dll                      Do not use dll reference
+--debug-webpack               Display final webpack configurations for debugging purposes
 ```

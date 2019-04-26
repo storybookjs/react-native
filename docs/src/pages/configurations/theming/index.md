@@ -3,50 +3,49 @@ id: 'theming'
 title: 'Theming Storybook'
 ---
 
-Storybook is theme-able! You can change theme variables using the [options parameter](../options-parameter).
+Storybook is theme-able! Just set a `theme` in the [options parameter](../options-parameter)!
 
-## Set a theme
+## Global theming
 
-You can do this in a decorator, an addon or in `.storybook/config.js`. Changing theme at runtime is also supported!
+It's really easy to theme Storybook globally.
 
-Just modify `.storybook/config.js` to include your new options:
+We've created two basic themes that look good of the box: "normal" (a light theme) and "dark" (a dark theme).
+
+As the simplest example example, you can tell Storybook to use the "dark" theme by modifyig `.storybook/config.js`:
 
 ```js
-import { addParameters, configure } from '@storybook/react';
+import { addParameters } from '@storybook/react';
+import { themes } from '@storybook/theming';
 
+// Option defaults.
 addParameters({
   options: {
-    theme: {},
+    theme: themes.dark,
   },
 });
 ```
 
 When setting a theme, set a full theme object. The theme is replaced not combined.
 
-View more [addon options in the master branch](https://github.com/storybooks/storybook/tree/master/addons/options).
+## Dynamic theming
 
-## Get a theme
+You can also theme dynamically based on the story you're viewing or based on UI in an addon (e.g. a theme picker).
 
-We have created two themes for you: "normal" (a light theme) and "dark" (a dark theme).
-
-Here's an example of using the "dark" theme:
+For example, you can update the theme when the user is viewing a specific component:
 
 ```js
-import { addParameters, configure } from '@storybook/react';
-import { themes } from '@storybook/theming';
+import { storiesOf } from '@storybook/react';
+import yourTheme from './yourTheme';
 
-// Option defaults.
-addParameters({
-  options: {
-    name: 'Foo',
-    theme: themes.dark,
-  },
+storiesOf('MyComponent', module)
+  .addParameters({ options: { theme: yourTheme } })
+  .add(...)
 });
 ```
 
-## Create a theme quickstart
+Read on for more on how to create your own theme.
 
-The `storybook/theming` is built using TypeScript, so this should help create a valid theme for typescript users. The types are part of the package itself.
+## Create a theme quickstart
 
 The easiest way to customize Storybook is to generate a new theme using the `create()` function from `storybook/theming`. This function includes shorthands for the most common theme variables. Here's how to use it:
 
@@ -106,6 +105,8 @@ addParameters({
 });
 ```
 
+The `storybook/theming` package is built using TypeScript, so this should help create a valid theme for typescript users. The types are part of the package itself.
+
 Many theme variables are optional, the `base` property is NOT. This is a perfectly valid theme:
 
 ```ts
@@ -145,12 +146,10 @@ import { styled } from '@storybook/theming';
 Use the theme variables in object notation:
 
 ```js
-const Component = styled.div(
-  ({ theme }) => ({
-    background: theme.background.app,
-    width: 0,
-  }),
-);
+const Component = styled.div(({ theme }) => ({
+  background: theme.background.app,
+  width: 0,
+}));
 ```
 
 Or with template literals:

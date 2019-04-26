@@ -99,7 +99,7 @@ Let's go ahead and add all of these:
 yarn add jest puppeteer jest-puppeteer jest-image-snapshot start-server-and-test --dev
 ```
 
-There's a bit of setup code that needs to run before your tests, so we'll need to configure a Jest setup file to run first, if you haven't already. This is done with the [`setupTestFrameworkScriptFile` config property](https://jestjs.io/docs/en/configuration.html#setuptestframeworkscriptfile-string), either in your package.json or in your `jest.config.js`. We'll also set `"preset": "jest-puppeteer"` so that we get the nice integration from jest-puppeteer.
+There's a bit of setup code that needs to run before your tests, so we'll need to configure a Jest setup file to run first, if you haven't already. This is done with the [`setupFilesAfterEnv` config property](https://jestjs.io/docs/en/configuration.html#setupFilesAfterEnv-string), either in your package.json or in your `jest.config.js`. We'll also set `"preset": "jest-puppeteer"` so that we get the nice integration from jest-puppeteer.
 
 #### `integration/jest.config.js`
 
@@ -107,7 +107,7 @@ There's a bit of setup code that needs to run before your tests, so we'll need t
 module.exports = {
   preset: 'jest-puppeteer',
   testRegex: './*\\.test\\.js$',
-  setupTestFrameworkScriptFile: './setupTests.js'
+  setupFilesAfterEnv: ['./setupTests.js']
 };
 
  ```

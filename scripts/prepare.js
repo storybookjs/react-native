@@ -1,10 +1,12 @@
 /* eslint-disable no-console */
+/* tslint:disable:no-console */
 const path = require('path');
 const shell = require('shelljs');
 const chalk = require('chalk');
+const fs = require('fs');
 const log = require('npmlog');
-const { babelify } = require('./compile-js');
-const { tscfy } = require('./compile-ts');
+const { babelify } = require('./compile-babel');
+const { tscfy } = require('./compile-tsc');
 
 function getPackageJson() {
   const modulePath = path.resolve('./');
@@ -17,19 +19,21 @@ function removeDist() {
   shell.rm('-rf', 'dist');
 }
 
-function removeTsFromDist() {
+function cleanup() {
   // add .ts filtering to babel args and remove after babel - 7 is adopted
   // --copy-files option doesn't work with --ignore
   // https://github.com/babel/babel/issues/5404
-
-  const tsFiles = shell.find('dist').filter(tsFile => tsFile.match(/\.ts$/));
-
-  if (tsFiles.length) {
-    shell.rm(tsFiles);
+  if (fs.existsSync(path.join(process.cwd(), 'dist'))) {
+    // ^(?!.*\.d\.ts$).*\.(ts|tsx)$ => Remove everything except .d.ts files https://regex101.com/r/gEBQ0U/16
+    const files = shell.find('dist').filter(tsFile => tsFile.match(/^(?!.*\.d\.ts$).*\.(ts|tsx)$/));
+    if (files.length) {
+      shell.rm(files);
+    }
   }
 }
 
-function logError(type, packageJson) {
+function logError(type, packageJson, errorLogs) {
+  log.error(`FAILED (${type}) : ${errorLogs}`);
   log.error(
     `FAILED to compile ${type}: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`
   );
@@ -38,12 +42,9 @@ function logError(type, packageJson) {
 const packageJson = getPackageJson();
 
 removeDist();
-if (packageJson && packageJson.types && packageJson.types.indexOf('d.ts') !== -1) {
-  tscfy({ errorCallback: () => logError('ts', packageJson) });
-} else {
-  babelify({ errorCallback: () => logError('js', packageJson) });
-  removeTsFromDist();
-  tscfy({ errorCallback: () => logError('ts', packageJson) });
-}
+babelify({ errorCallback: errorLogs => logError('js', packageJson, errorLogs) });
+cleanup();
+
+tscfy({ errorCallback: errorLogs => logError('ts', packageJson, errorLogs) });
 
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));

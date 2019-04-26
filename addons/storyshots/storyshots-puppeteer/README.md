@@ -3,7 +3,7 @@
 Add the following module into your app.
 
 ```sh
-yarn add @storybook/addon-storyshots-puppeteer --dev
+npm install @storybook/addon-storyshots-puppeteer --save-dev
 ```
 
 ## Configure Storyshots for image snapshots
@@ -14,8 +14,8 @@ Internally, it uses [jest-image-snapshot](https://github.com/americanexpress/jes
 
 When willing to generate and compare image snapshots for your stories, you have two options:
 
-- Have a storybook running (ie. accessible via http(s), for instance using `yarn run storybook`)
-- Have a static build of the storybook (for instance, using `yarn run build-storybook`)
+- Have a storybook running (ie. accessible via http(s), for instance using `npm run storybook`)
+- Have a static build of the storybook (for instance, using `npm run build-storybook`)
 
 Then you will need to reference the storybook URL (`file://...` if local, `http(s)://...` if served)
 
@@ -220,7 +220,7 @@ You have two options here, you can either:
 
   Note that you will certainly need a custom config file for Jest as you run it outside of the CRA scope and thus you do not have the built-in config.
 
-  Once that's setup, you can run `yarn run image-snapshots` (or `npm run image-snapshots`).
+  Once that's setup, you can run `npm run image-snapshots`.
 
 ### Reminder
 
@@ -231,5 +231,5 @@ The browser opens a page (either using the static build of storybook or a runnin
 If you run your test without either the static build or a running instance, this wont work.
 
 To make sure your screenshots are taken from latest changes of your Storybook, you must keep your static build or running Storybook up-to-date.
-This can be achieved by adding a step before running the test ie: `yarn run build-storybook && yarn run image-snapshots`.
+This can be achieved by adding a step before running the test ie: `npm run build-storybook && npm run image-snapshots`.
 If you run the image snapshots against a running Storybook in dev mode, you don't have to worry about the snapshots being up-to-date because the dev-server is watching changes and rebuilds automatically.

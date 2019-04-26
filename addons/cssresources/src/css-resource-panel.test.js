@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { SyntaxHighlighter } from '@storybook/components';
 import { STORY_RENDERED } from '@storybook/core-events';
 import { EVENTS, PARAM_KEY } from './constants';
-import { CssResourcePanel } from './css-resource-panel.tsx';
+import { CssResourcePanel } from './css-resource-panel';
 
 configure({
   adapter: new Adapter(),
@@ -55,8 +55,8 @@ describe('CSSResourcePanel', () => {
       expect(node).toHaveState({ list: [], currentStoryId: '' });
     });
 
-    it('should not render anything', () => {
-      expect(node).toBeEmptyRender();
+    it('should render an empty div', () => {
+      expect(node.html()).toEqual('<div></div>');
     });
   });
 

@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "monorepo",
+  "public": true,
   "builds": [
     { "src": "examples/angular-cli/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
     { "src": "examples/cra-kitchen-sink/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
