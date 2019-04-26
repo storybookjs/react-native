@@ -46,10 +46,10 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)`;
 
 describe('addon Info', () => {
   // eslint-disable-next-line react/prop-types
-  const storyFn = ({ name }) => (
+  const createStoryFn = Component => ({ name }) => (
     <div>
       It's a {name} story:
-      <TestComponent
+      <Component
         func={x => x + 1}
         obj={{ a: 'a', b: 'b' }}
         array={[1, 2, 3]}
@@ -59,6 +59,8 @@ describe('addon Info', () => {
       />
     </div>
   );
+  const storyFn = createStoryFn(TestComponent);
+
   it('should render <Info /> and markdown', () => {
     const Info = withInfo(testMarkdown)(storyFn);
 
@@ -77,6 +79,12 @@ describe('addon Info', () => {
     setDefaults(testOptions);
     const Info = withInfo()(storyFn);
     mount(<Info />);
+  });
+  it('should render <Info /> for memoized component', () => {
+    const MemoizedTestComponent = React.memo(TestComponent);
+    const Info = withInfo()(createStoryFn(MemoizedTestComponent));
+
+    expect(mount(<Info />)).toMatchSnapshot();
   });
 
   it('should render component description if story kind matches component', () => {

@@ -1,11 +1,13 @@
+// @ts-ignore
+import { document } from 'global';
 import { enableProdMode, NgModule, Component, NgModuleRef, Type } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReplaySubject } from 'rxjs';
 import { AppComponent } from './components/app.component';
 import { STORY } from './app.token';
 import { NgModuleMetadata, IStoryFn, NgStory } from './types';
-import { ReplaySubject } from 'rxjs';
 
 declare global {
   interface Window {
@@ -14,7 +16,7 @@ declare global {
 }
 
 let platform: any = null;
-let promises: Array<Promise<NgModuleRef<any>>> = [];
+let promises: Promise<NgModuleRef<any>>[] = [];
 
 const moduleClass = class DynamicModule {};
 const componentClass = class DynamicComponent {};
@@ -24,9 +26,9 @@ type DynamicComponentType = typeof componentClass;
 const storyData = new ReplaySubject(1);
 
 const getModule = (
-  declarations: Array<Type<any> | any[]>,
-  entryComponents: Array<Type<any> | any[]>,
-  bootstrap: Array<Type<any> | any[]>,
+  declarations: (Type<any> | any[])[],
+  entryComponents: (Type<any> | any[])[],
+  bootstrap: (Type<any> | any[])[],
   data: NgStory,
   moduleMetadata: NgModuleMetadata
 ) => {
@@ -55,7 +57,7 @@ const initModule = (storyFn: IStoryFn) => {
   const storyObj = storyFn();
   const { component, template, props, styles, moduleMetadata = {} } = storyObj;
 
-  let AnnotatedComponent = template ? createComponentFromTemplate(template, styles) : component;
+  const AnnotatedComponent = template ? createComponentFromTemplate(template, styles) : component;
 
   const story = {
     component: AnnotatedComponent,
@@ -80,11 +82,13 @@ const insertDynamicRoot = () => {
 const draw = (newModule: DynamicComponentType): void => {
   if (!platform) {
     insertDynamicRoot();
-    try {
-      if (window.NODE_ENV !== 'development') {
+    if (typeof NODE_ENV === 'string' && NODE_ENV !== 'development') {
+      try {
         enableProdMode();
+      } catch (e) {
+        //
       }
-    } catch (e) {}
+    }
 
     platform = platformBrowserDynamic();
     promises.push(platform.bootstrapModule(newModule));

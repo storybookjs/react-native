@@ -20,7 +20,7 @@
     "riot-compiler": "^3.6.0",
     "riot-hot-reload": "^1.0.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.29.6",
+    "webpack": "^4.28.0",
     "webpack-bundle-analyzer": "^3.1.0",
     "webpack-cli": "^3.2.3"
   }

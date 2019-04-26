@@ -1,6 +1,6 @@
-const path = require('path');
+import { resolve } from 'path';
 
-module.exports = async ({ config }) => {
+module.exports = async ({ config }: { config: any }) => {
   config.module.rules.push({
     test: [/\.stories\.tsx?$/, /index\.ts$/],
     loaders: [
@@ -11,7 +11,7 @@ module.exports = async ({ config }) => {
         },
       },
     ],
-    include: [path.resolve(__dirname, '../src')],
+    include: [resolve(__dirname, '../src')],
     enforce: 'pre',
   });
   return config;

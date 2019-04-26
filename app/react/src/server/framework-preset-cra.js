@@ -1,5 +1,6 @@
+import path from 'path';
 import { logger } from '@storybook/node-logger';
-import { applyCRAWebpackConfig, isReactScriptsInstalled } from './cra-config';
+import { applyCRAWebpackConfig, getReactScriptsPath, isReactScriptsInstalled } from './cra-config';
 
 export function webpackFinal(config, { configDir }) {
   if (!isReactScriptsInstalled()) {
@@ -10,6 +11,19 @@ export function webpackFinal(config, { configDir }) {
   logger.info('=> Loading create-react-app config.');
 
   return applyCRAWebpackConfig(config, configDir);
+}
+
+export function managerWebpack(config) {
+  if (!isReactScriptsInstalled()) {
+    return config;
+  }
+
+  return {
+    ...config,
+    resolveLoader: {
+      modules: ['node_modules', path.join(getReactScriptsPath(), 'node_modules')],
+    },
+  };
 }
 
 export function babelDefault(config) {

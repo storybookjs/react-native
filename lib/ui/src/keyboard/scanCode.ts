@@ -1,9 +1,11 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable lines-between-class-members */
 import { KeyCode } from './keyCodes';
 
 /**
  * keyboardEvent.code
  */
-export const enum ScanCode {
+export enum ScanCode {
   None,
 
   Hyper,

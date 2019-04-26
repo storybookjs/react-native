@@ -33,6 +33,7 @@ export const color = {
   positive: '#66BF3C',
   negative: '#FF4400',
   warning: '#E69D00',
+  critical: '#FFFFFF',
 
   defaultText: '#333333',
   inverseText: '#FFFFFF',
@@ -42,12 +43,14 @@ export const background = {
   app: '#F6F9FC',
   bar: '#FFFFFF',
   content: color.lightest,
+  gridCellSize: 10,
   hoverable: 'rgba(0,0,0,.05)', // hover state for items in a list
 
   // Notification, error, and warning backgrounds
   positive: '#E1FFD4',
   negative: '#FEDED2',
   warning: '#FFF5CF',
+  critical: '#FF4400',
 };
 
 export const typography = {
@@ -129,6 +132,8 @@ export interface ThemeVars {
   brandTitle?: string;
   brandUrl?: string;
   brandImage?: string;
+
+  gridCellSize?: number;
 }
 
 export type Color = typeof color;

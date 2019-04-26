@@ -1,7 +1,4 @@
 import { TestBed, async } from '@angular/core/testing';
-// tslint:disable-next-line:no-implicit-dependencies
-import 'jasmine';
-
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {

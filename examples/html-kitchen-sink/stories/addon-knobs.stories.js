@@ -22,6 +22,13 @@ storiesOf('Addons|Knobs', module)
 
     return `<div>${content}</div>`;
   })
+  .add('DOM', () => {
+    const name = text('Name', 'John Doe');
+    // eslint-disable-next-line
+    const container = document.createElement('p');
+    container.textContent = name;
+    return container;
+  })
   .add('All knobs', () => {
     const name = text('Name', 'Jane');
     const stock = number('Stock', 20, {

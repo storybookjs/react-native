@@ -6,10 +6,19 @@ import { STORY_RENDERED } from '@storybook/core-events';
 import { ActionBar, Icons, ScrollArea } from '@storybook/components';
 
 import { AxeResults, Result } from 'axe-core';
+import { API } from '@storybook/api';
+import { Provider } from 'react-redux';
 import { Report } from './Report';
 import { Tabs } from './Tabs';
 import { EVENTS } from '../constants';
-import { API } from '@storybook/api';
+
+import store, { clearElements } from '../redux-config';
+
+export enum RuleType {
+  VIOLATION,
+  PASS,
+  INCOMPLETION,
+}
 
 const Icon = styled(Icons)(
   {
@@ -81,13 +90,14 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
     const { active } = this.props;
 
     if (!prevProps.active && active) {
+      // removes all elements from the redux map in store from the previous panel
+      store.dispatch(clearElements());
       this.request();
     }
   }
 
   componentWillUnmount() {
     const { api } = this.props;
-
     api.off(STORY_RENDERED, this.request);
     api.off(EVENTS.RESULT, this.onUpdate);
   }
@@ -123,6 +133,8 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
         },
         () => {
           api.emit(EVENTS.REQUEST);
+          // removes all elements from the redux map in store from the previous panel
+          store.dispatch(clearElements());
         }
       );
     }
@@ -151,46 +163,59 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
 
     return active ? (
       <Fragment>
-        {status === 'running' ? (
-          <Loader />
-        ) : (
-          <ScrollArea vertical horizontal>
-            <Tabs
-              key="tabs"
-              tabs={[
-                {
-                  label: <Violations>{violations.length} Violations</Violations>,
-                  panel: (
-                    <Report
-                      name="violations"
-                      passes={false}
-                      items={violations}
-                      empty="No a11y violations found."
-                    />
-                  ),
-                },
-                {
-                  label: <Passes>{passes.length} Passes</Passes>,
-                  panel: (
-                    <Report name={'passes'} passes items={passes} empty="No a11y check passed." />
-                  ),
-                },
-                {
-                  label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
-                  panel: (
-                    <Report
-                      name="incomplete"
-                      passes={false}
-                      items={incomplete}
-                      empty="No a11y incomplete found."
-                    />
-                  ),
-                },
-              ]}
-            />
-          </ScrollArea>
-        )}
-        <ActionBar key="actionbar" actionItems={[{ title: actionTitle, onClick: this.request }]} />
+        <Provider store={store}>
+          {status === 'running' ? (
+            <Loader />
+          ) : (
+            <ScrollArea vertical horizontal>
+              <Tabs
+                key="tabs"
+                tabs={[
+                  {
+                    label: <Violations>{violations.length} Violations</Violations>,
+                    panel: (
+                      <Report
+                        items={violations}
+                        type={RuleType.VIOLATION}
+                        empty="No accessibility violations found."
+                      />
+                    ),
+                    items: violations,
+                    type: RuleType.VIOLATION,
+                  },
+                  {
+                    label: <Passes>{passes.length} Passes</Passes>,
+                    panel: (
+                      <Report
+                        items={passes}
+                        type={RuleType.PASS}
+                        empty="No accessibility checks passed."
+                      />
+                    ),
+                    items: passes,
+                    type: RuleType.PASS,
+                  },
+                  {
+                    label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
+                    panel: (
+                      <Report
+                        items={incomplete}
+                        type={RuleType.INCOMPLETION}
+                        empty="No accessibility checks incomplete."
+                      />
+                    ),
+                    items: incomplete,
+                    type: RuleType.INCOMPLETION,
+                  },
+                ]}
+              />
+            </ScrollArea>
+          )}
+          <ActionBar
+            key="actionbar"
+            actionItems={[{ title: actionTitle, onClick: this.request }]}
+          />
+        </Provider>
       </Fragment>
     ) : null;
   }
