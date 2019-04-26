@@ -18,6 +18,7 @@
     "@storybook/addon-actions": "5.1.0-alpha.34",
     "@storybook/addon-backgrounds": "5.1.0-alpha.34",
     "@storybook/addon-centered": "5.1.0-alpha.34",
+    "@storybook/addon-contexts": "5.1.0-alpha.34",
     "@storybook/addon-knobs": "5.1.0-alpha.34",
     "@storybook/addon-links": "5.1.0-alpha.34",
     "@storybook/addon-notes": "5.1.0-alpha.34",
