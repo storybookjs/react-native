@@ -2,9 +2,11 @@
 
 exports[`Storyshots Basics|Brand/StorybookIcon default 1`] = `
 <svg
-  title="Storybook icon"
   viewBox="0 0 64 64"
 >
+  <title>
+    Storybook icon
+  </title>
   <g
     fill="none"
     fill-rule="evenodd"

@@ -940,7 +940,7 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
             <h3
               style="margin:20px 0 0 0"
             >
-              "" Component
+              "Unknown" Component
             </h3>
             <small>
               No propTypes defined!
@@ -950,7 +950,7 @@ exports[`Storyshots Addons|Info/GitHub issues #1814 1`] = `
             <h3
               style="margin:20px 0 0 0"
             >
-              "" Component
+              "Unknown" Component
             </h3>
             <small>
               No propTypes defined!
@@ -1066,7 +1066,7 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -1349,7 +1349,7 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -1612,7 +1612,7 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -1887,7 +1887,7 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -4346,7 +4346,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -4597,7 +4597,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
                       <span
                         style="color:#170"
                       >
-                        action
+                        actionHandler
                       </span>
                       }
                     </span>
@@ -5302,7 +5302,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from Flow declarations 1`]
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -5524,7 +5524,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -6324,7 +6324,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -6587,7 +6587,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -7447,7 +7447,7 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
                           <span
                             style="color:#170"
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -7712,7 +7712,7 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -8540,7 +8540,7 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>

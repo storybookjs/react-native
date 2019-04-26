@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { SyntaxHighlighter } from '@storybook/components';
 import { STORY_RENDERED } from '@storybook/core-events';
 import { EVENTS, PARAM_KEY } from './constants';
-import { CssResourcePanel } from './css-resource-panel.tsx';
+import { CssResourcePanel } from './css-resource-panel';
 
 configure({
   adapter: new Adapter(),

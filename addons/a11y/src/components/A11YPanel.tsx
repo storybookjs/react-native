@@ -6,12 +6,12 @@ import { STORY_RENDERED } from '@storybook/core-events';
 import { ActionBar, Icons, ScrollArea } from '@storybook/components';
 
 import { AxeResults, Result } from 'axe-core';
+import { API } from '@storybook/api';
+import { Provider } from 'react-redux';
 import { Report } from './Report';
 import { Tabs } from './Tabs';
 import { EVENTS } from '../constants';
-import { API } from '@storybook/api';
 
-import { Provider } from 'react-redux';
 import store, { clearElements } from '../redux-config';
 
 export enum RuleType {
@@ -175,10 +175,9 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
                     label: <Violations>{violations.length} Violations</Violations>,
                     panel: (
                       <Report
-                        passes={false}
                         items={violations}
                         type={RuleType.VIOLATION}
-                        empty="No a11y violations found."
+                        empty="No accessibility violations found."
                       />
                     ),
                     items: violations,
@@ -188,10 +187,9 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
                     label: <Passes>{passes.length} Passes</Passes>,
                     panel: (
                       <Report
-                        passes
                         items={passes}
                         type={RuleType.PASS}
-                        empty="No a11y check passed."
+                        empty="No accessibility checks passed."
                       />
                     ),
                     items: passes,
@@ -201,10 +199,9 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
                     label: <Incomplete>{incomplete.length} Incomplete</Incomplete>,
                     panel: (
                       <Report
-                        passes={false}
                         items={incomplete}
                         type={RuleType.INCOMPLETION}
-                        empty="No a11y incomplete found."
+                        empty="No accessibility checks incomplete."
                       />
                     ),
                     items: incomplete,

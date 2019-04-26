@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import { configure, addParameters } from '@storybook/angular';
 import addCssWarning from '../src/cssWarning';
 

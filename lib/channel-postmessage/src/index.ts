@@ -26,8 +26,10 @@ export const KEY = 'storybook-channel';
 
 export class PostmsgTransport {
   private buffer: BufferedEvent[];
+
   private handler: ChannelHandler;
 
+  // eslint-disable-next-line @typescript-eslint/no-parameter-properties
   constructor(private readonly config: Config) {
     this.buffer = [];
     this.handler = null;
@@ -57,6 +59,7 @@ export class PostmsgTransport {
     }
     let depth = 15;
     if (options && Number.isInteger(options.depth)) {
+      // eslint-disable-next-line prefer-destructuring
       depth = options.depth;
     }
 
@@ -69,7 +72,7 @@ export class PostmsgTransport {
   }
 
   private flush(): void {
-    const buffer = this.buffer;
+    const { buffer } = this;
     this.buffer = [];
     buffer.forEach(item => {
       this.send(item.event)

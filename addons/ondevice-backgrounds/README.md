@@ -7,12 +7,12 @@ Storybook Backgrounds Addon for react-native can be used to change background co
 ## Installation
 
 ```sh
-npm i -D @storybook/addon-ondevice-backgrounds
+yarn add -D @storybook/addon-ondevice-backgrounds
 ```
 
 ## Configuration
 
-Then create a file called `rn-addons.js` in your storybook config.
+Create a file called `rn-addons.js` in your storybook config.
 
 Add following content to it:
 
@@ -21,6 +21,7 @@ import '@storybook/addon-ondevice-backgrounds/register';
 ```
 
 Then import `rn-addons.js` next to your `getStorybookUI` call.
+
 ```js
 import './rn-addons';
 ```

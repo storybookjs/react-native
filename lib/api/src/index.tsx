@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 import React, { ReactElement, Component, useContext } from 'react';
 import memoize from 'memoizerific';
 
@@ -89,6 +90,8 @@ type StatePartial = Partial<State>;
 export type Props = Children & RouterData & ProviderData;
 
 class ManagerProvider extends Component<Props, State> {
+  static displayName = 'Manager';
+
   constructor(props: Props) {
     super(props);
     const { provider, location, path, viewMode, storyId, navigate } = props;
@@ -142,6 +145,10 @@ class ManagerProvider extends Component<Props, State> {
 
     api.on(SET_STORIES, (data: { stories: StoriesRaw }) => {
       api.setStories(data.stories);
+      const options = storyId
+        ? api.getParameters(storyId, 'options')
+        : api.getParameters(Object.keys(data.stories)[0], 'options');
+      api.setOptions(options);
     });
     api.on(
       SELECT_STORY,
@@ -153,10 +160,6 @@ class ManagerProvider extends Component<Props, State> {
     this.state = state;
     this.api = api;
   }
-
-  static displayName = 'Manager';
-  api: API;
-  modules: any[];
 
   static getDerivedStateFromProps = (props: Props, state: State) => {
     if (state.path !== props.path) {
@@ -194,6 +197,10 @@ class ManagerProvider extends Component<Props, State> {
     return false;
   }
 
+  api: API;
+
+  modules: any[];
+
   render() {
     const { children } = this.props;
     const value = {
@@ -219,12 +226,12 @@ interface SubState {
 }
 
 class ManagerConsumer extends Component<ConsumerProps<SubState, Combo>> {
-  dataMemory?: (combo: Combo) => SubState;
-
   constructor(props: ConsumerProps<SubState, Combo>) {
     super(props);
     this.dataMemory = props.filter ? memoize(10)(props.filter) : null;
   }
+
+  dataMemory?: (combo: Combo) => SubState;
 
   render() {
     const { children } = this.props;
