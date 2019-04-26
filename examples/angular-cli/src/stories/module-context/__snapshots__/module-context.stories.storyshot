@@ -7,21 +7,21 @@ exports[`Storyshots Custom|Feature Module as Context Component with default prov
   target={[Function ViewContainerRef_]}
 >
   <storybook-chip
-    _nghost-c15=""
+    _nghost-a-c15=""
     style="background-color: rgb(238, 238, 238);"
   >
     <span
-      _ngcontent-c15=""
+      _ngcontent-a-c15=""
       class="text"
     >
       My Chíp
     </span>
     <div
-      _ngcontent-c15=""
+      _ngcontent-a-c15=""
       class="remove"
     >
       <span
-        _ngcontent-c15=""
+        _ngcontent-a-c15=""
         class="x"
       >
         ✕
@@ -38,21 +38,21 @@ exports[`Storyshots Custom|Feature Module as Context Component with overridden p
   target={[Function ViewContainerRef_]}
 >
   <storybook-chip
-    _nghost-c16=""
+    _nghost-a-c16=""
     style="background-color: yellow;"
   >
     <span
-      _ngcontent-c16=""
+      _ngcontent-a-c16=""
       class="text"
     >
       My Chíp
     </span>
     <div
-      _ngcontent-c16=""
+      _ngcontent-a-c16=""
       class="remove"
     >
       <span
-        _ngcontent-c16=""
+        _ngcontent-a-c16=""
         class="x"
       >
         ✕
@@ -69,28 +69,28 @@ exports[`Storyshots Custom|Feature Module as Context Component with self and dep
   target={[Function ViewContainerRef_]}
 >
   <storybook-chips-group
-    _nghost-c13=""
+    _nghost-a-c13=""
   >
     
     <storybook-chip
-      _ngcontent-c13=""
-      _nghost-c14=""
+      _ngcontent-a-c13=""
+      _nghost-a-c14=""
       class="chip"
       ng-reflect-display-text="Chip 1"
       style="background-color: rgb(238, 238, 238);"
     >
       <span
-        _ngcontent-c14=""
+        _ngcontent-a-c14=""
         class="text"
       >
         Chíp 1
       </span>
       <div
-        _ngcontent-c14=""
+        _ngcontent-a-c14=""
         class="remove"
       >
         <span
-          _ngcontent-c14=""
+          _ngcontent-a-c14=""
           class="x"
         >
           ✕
@@ -98,24 +98,24 @@ exports[`Storyshots Custom|Feature Module as Context Component with self and dep
       </div>
     </storybook-chip>
     <storybook-chip
-      _ngcontent-c13=""
-      _nghost-c14=""
+      _ngcontent-a-c13=""
+      _nghost-a-c14=""
       class="chip"
       ng-reflect-display-text="Chip 2"
       style="background-color: rgb(238, 238, 238);"
     >
       <span
-        _ngcontent-c14=""
+        _ngcontent-a-c14=""
         class="text"
       >
         Chíp 2
       </span>
       <div
-        _ngcontent-c14=""
+        _ngcontent-a-c14=""
         class="remove"
       >
         <span
-          _ngcontent-c14=""
+          _ngcontent-a-c14=""
           class="x"
         >
           ✕
@@ -124,7 +124,7 @@ exports[`Storyshots Custom|Feature Module as Context Component with self and dep
     </storybook-chip>
     
     <div
-      _ngcontent-c13=""
+      _ngcontent-a-c13=""
       class="remove-all"
     >
        Remove All 
