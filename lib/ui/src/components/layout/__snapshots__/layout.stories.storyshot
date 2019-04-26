@@ -2859,7 +2859,7 @@ exports[`Storyshots UI|Layout/Mobile page 1`] = `
   overflow: hidden;
 }
 
-.emotion-11 {
+.emotion-12 {
   position: fixed;
   left: 0;
   top: 0;
@@ -2948,7 +2948,7 @@ exports[`Storyshots UI|Layout/Mobile page 1`] = `
   border-left: 1px solid rgba(0,0,0,.1);
 }
 
-.emotion-10 {
+.emotion-11 {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -2962,14 +2962,14 @@ exports[`Storyshots UI|Layout/Mobile page 1`] = `
   background: #FFFFFF;
 }
 
-.emotion-10 > * {
+.emotion-11 > * {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
 <div
-  class="emotion-11"
+  class="emotion-12"
 >
   <div
     class="emotion-7"
@@ -2995,9 +2995,7 @@ exports[`Storyshots UI|Layout/Mobile page 1`] = `
       class="emotion-4"
     >
       <div>
-        <div
-          hidden=""
-        >
+        <div>
           <div
             class="emotion-2"
             color="deepskyblue"
@@ -3010,6 +3008,7 @@ exports[`Storyshots UI|Layout/Mobile page 1`] = `
             <pre>
               {
   "id": "main",
+  "viewMode": "settings",
   "debug": {
     "initialActive": 1
   }
@@ -3046,14 +3045,14 @@ exports[`Storyshots UI|Layout/Mobile page 1`] = `
         </h2>
         <pre>
           {
-  "hidden": true
+  "hidden": false
 }
         </pre>
       </div>
     </div>
   </div>
   <nav
-    class="emotion-10"
+    class="emotion-11"
   >
     <button
       class="emotion-8"
@@ -3063,7 +3062,12 @@ exports[`Storyshots UI|Layout/Mobile page 1`] = `
     <button
       class="emotion-8"
     >
-      settings
+      Canvassettings
+    </button>
+    <button
+      class="emotion-8"
+    >
+      Addons
     </button>
   </nav>
 </div>

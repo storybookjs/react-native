@@ -7,6 +7,7 @@ auth:
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
+    cache: true
 
 packages:
   # storybook's 'legacy' packages

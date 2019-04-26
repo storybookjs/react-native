@@ -1,4 +1,5 @@
-import { toId, sanitize } from '@storybook/router/dist/utils';
+// FIXME: we shouldn't import from dist but there are no types otherwise
+import { toId, sanitize, parseKind } from '@storybook/router';
 
 import { Module } from '../index';
 import merge from '../lib/merge';
@@ -25,11 +26,6 @@ export interface SubAPI {
   jumpToStory: (direction: Direction) => void;
   getData: (storyId: StoryId) => Story | Group;
   getParameters: (storyId: StoryId, parameterName?: ParameterName) => Story['parameters'] | any;
-}
-
-interface SeparatorOptions {
-  rootSeparator: string | RegExp;
-  groupSeparator: string | RegExp;
 }
 
 interface Group {
@@ -65,7 +61,7 @@ type Story = StoryInput & Group;
 export interface StoriesHash {
   [id: string]: Group | Story;
 }
-export type StoriesList = Array<Group | Story>;
+export type StoriesList = (Group | Story)[];
 export type GroupsList = Group[];
 
 export interface StoriesRaw {
@@ -164,17 +160,6 @@ const initStoriesApi = ({
     navigate(`/${viewMode || 'story'}/${result}`);
   };
 
-  const splitPath = (kind: string, { rootSeparator, groupSeparator }: SeparatorOptions) => {
-    const [root, remainder] = kind.split(rootSeparator, 2);
-    const groups = (remainder || kind).split(groupSeparator).filter(i => !!i);
-
-    // when there's no remainder, it means the root wasn't found/split
-    return {
-      root: remainder ? root : null,
-      groups,
-    };
-  };
-
   const toKey = (input: string) =>
     input.replace(/[^a-z0-9]+([a-z0-9])/gi, (...params) => params[1].toUpperCase());
 
@@ -192,11 +177,11 @@ const initStoriesApi = ({
         hierarchyRootSeparator: rootSeparator,
         hierarchySeparator: groupSeparator,
       } = (parameters && parameters.options) || {
-        hierarchyRootSeparator: '/',
+        hierarchyRootSeparator: '|',
         hierarchySeparator: '/',
       };
 
-      const { root, groups } = splitPath(kind, { rootSeparator, groupSeparator });
+      const { root, groups } = parseKind(kind, { rootSeparator, groupSeparator });
 
       const rootAndGroups = []
         .concat(root || [])
@@ -208,6 +193,15 @@ const initStoriesApi = ({
             const { name } = group;
             const parent = index > 0 && soFar[index - 1].id;
             const id = sanitize(parent ? `${parent}-${name}` : name);
+            if (parent === id) {
+              throw new Error(
+                `
+Invalid part '${name}', leading to id === parentId ('${id}'), inside kind '${kind}'
+
+Did you create a path that uses the separator char accidentally, such as 'Vue <docs/>' where '/' is a separator char? See https://github.com/storybooks/storybook/issues/6128
+              `.trim()
+              );
+            }
 
             const result: Group = {
               ...group,

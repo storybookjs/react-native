@@ -46,6 +46,7 @@ Object {
       ".js",
       ".jsx",
     ],
+    "modules": Array [],
   },
   "resolveLoader": Object {
     "modules": Array [
@@ -115,6 +116,7 @@ Object {
       ".ts",
       ".tsx",
     ],
+    "modules": Array [],
   },
   "resolveLoader": Object {
     "modules": Array [

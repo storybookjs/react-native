@@ -441,6 +441,4 @@ const Wrapper = styled.div(
   `
 );
 
-const StyledMarkdown = (props: any) => <Wrapper {...props} />;
-
-export default StyledMarkdown;
+export const DocumentFormatting = (props: any) => <Wrapper {...props} />;

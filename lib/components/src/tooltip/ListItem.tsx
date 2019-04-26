@@ -35,7 +35,7 @@ const Title = styled.span<TitleProps>(
       ? {
           color: transparentize(0.7, theme.color.defaultText),
         }
-      : {},
+      : {}
 );
 
 interface RightProps {
@@ -66,7 +66,7 @@ const Right = styled.span<RightProps>(
             fill: theme.color.primary,
           },
         }
-      : {},
+      : {}
 );
 
 const Center = styled.span({
@@ -100,7 +100,7 @@ const CenterText = styled.span<CenterTextProps>(
       ? {
           color: theme.color.mediumdark,
         }
-      : {},
+      : {}
 );
 
 interface LeftProps {
@@ -117,7 +117,7 @@ const Left = styled.span<LeftProps>(({ active, theme }) =>
           fill: theme.color.primary,
         },
       }
-    : {},
+    : {}
 );
 
 interface ItemProps {
@@ -154,7 +154,7 @@ const Item = styled.a<ItemProps>(
       ? {
           cursor: 'not-allowed',
         }
-      : {},
+      : {}
 );
 
 const getItemProps = memoize(100)((onClick, href, LinkWrapper) => {
@@ -178,7 +178,6 @@ const getItemProps = memoize(100)((onClick, href, LinkWrapper) => {
   }
   return result;
 });
-
 
 export type LinkWrapperType = FunctionComponent;
 

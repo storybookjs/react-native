@@ -7,10 +7,10 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-button-component
-    _nghost-c10=""
+    _nghost-a-c10=""
   >
     <button
-      _ngcontent-c10=""
+      _ngcontent-a-c10=""
     >
       Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"globalParameter":"globalParameter","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
     </button>

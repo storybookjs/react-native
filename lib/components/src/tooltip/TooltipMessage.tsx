@@ -1,8 +1,7 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 
-import Link from '../typography/link/link';
+import { Link } from '../typography/link/link';
 
 const Title = styled.div`
   font-weight: ${props => props.theme.typography.weight.black};
@@ -34,14 +33,14 @@ const MessageWrapper = styled.div`
 export interface TooltipMessageProps {
   title?: ReactNode;
   desc?: ReactNode;
-  links?: Array<{
+  links?: {
     title: string;
     href?: string;
     onClick?: () => void;
-  }>;
+  }[];
 }
 
-const TooltipMessage: FunctionComponent<TooltipMessageProps> = ({ title, desc, links }) => {
+export const TooltipMessage: FunctionComponent<TooltipMessageProps> = ({ title, desc, links }) => {
   return (
     <MessageWrapper>
       <Message>
@@ -66,5 +65,3 @@ TooltipMessage.defaultProps = {
   desc: null,
   links: null,
 };
-
-export default TooltipMessage;

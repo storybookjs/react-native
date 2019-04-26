@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Button from './Button';
-import Icon from '../icon/icon';
+import { Button } from './Button';
+import { Icons } from '../icon/icon';
 
-import Form from '../form/index';
+import { Form } from '../form/index';
 
 const { Button: FormButton } = Form;
 
@@ -16,7 +16,7 @@ storiesOf('Basics|Button', module).add('all buttons', () => (
     <Button primary>Primary</Button>
     <Button secondary>Secondary</Button>
     <Button outline containsIcon>
-      <Icon icon="link" />
+      <Icons icon="link" />
     </Button>
     <br />
     <Button outline>Outline</Button>
@@ -43,10 +43,10 @@ storiesOf('Basics|Button', module).add('all buttons', () => (
       Disabled
     </Button>
     <Button outline small containsIcon>
-      <Icon icon="link" />
+      <Icons icon="link" />
     </Button>
     <Button outline small>
-      <Icon icon="link" />
+      <Icons icon="link" />
       Link
     </Button>
   </div>

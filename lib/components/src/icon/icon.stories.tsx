@@ -2,8 +2,8 @@ import React from 'react';
 import { styled } from '@storybook/theming';
 import { storiesOf } from '@storybook/react';
 
-import Icon from './icon';
-import icons, { IconKey } from './icons';
+import { Icons } from './icon';
+import { icons, IconKey } from './icons';
 
 const Meta = styled.div({
   color: '#333',
@@ -61,7 +61,7 @@ storiesOf('Basics|Icon', module)
     <List>
       {list.map(key => (
         <Item key={key}>
-          <Icon icon={key} /> <Meta>{key}</Meta>
+          <Icons icon={key} /> <Meta>{key}</Meta>
         </Item>
       ))}
     </List>
@@ -70,7 +70,7 @@ storiesOf('Basics|Icon', module)
     <List>
       {list.map(key => (
         <Item minimal key={key}>
-          <Icon icon={key} />
+          <Icons icon={key} />
         </Item>
       ))}
     </List>

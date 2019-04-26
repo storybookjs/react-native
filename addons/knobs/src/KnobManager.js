@@ -69,7 +69,8 @@ export default class KnobManager {
       existingKnob &&
       options.type === existingKnob.type &&
       navigator &&
-      !navigator.userAgent.includes('jsdom')
+      // userAgent is not set in react-native
+      (!navigator.userAgent || !navigator.userAgent.includes('jsdom'))
     ) {
       return this.getKnobValue(existingKnob);
     }
