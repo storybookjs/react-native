@@ -4476,25 +4476,13 @@ exports[`addon Info should render component description if story kind matches co
                         "toString": [Function],
                       },
                       "hoverable": Object {
-                        "map": undefined,
-                        "name": "wpaw6f",
-                        "next": undefined,
-                        "styles": "
-  transition: all 150ms ease-out;
-  transform: translate3d(0, 0, 0);
-
-  &:hover {
-    transform: translate3d(0, -2px, 0);
-  }
-
-  &:active {
-    transform: translate3d(0, 0, 0);
-  }
-",
+                        "map": "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9hbmltYXRpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBd0NxQiIsImZpbGUiOiIuLi9zcmMvYW5pbWF0aW9uLnRzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY3NzLCBrZXlmcmFtZXMgfSBmcm9tICdAZW1vdGlvbi9jb3JlJztcblxuZXhwb3J0IGNvbnN0IGVhc2luZyA9IHtcbiAgcnViYmVyOiAnY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMzUsIDEuMDUpJyxcbn07XG5cbmNvbnN0IHJvdGF0ZTM2MCA9IGtleWZyYW1lc2Bcblx0ZnJvbSB7XG5cdFx0dHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XG5cdH1cblx0dG8ge1xuXHRcdHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7XG5cdH1cbmA7XG5cbmNvbnN0IGdsb3cgPSBrZXlmcmFtZXNgXG4gIDAlLCAxMDAlIHsgb3BhY2l0eTogMTsgfVxuICA1MCUgeyBvcGFjaXR5OiAuNDsgfVxuYDtcblxuY29uc3QgZmxvYXQgPSBrZXlmcmFtZXNgXG4gIDAlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7IH1cbiAgMjUlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDBweCk7IH1cbiAgNTAlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0zcHgpOyB9XG4gIDEwMCUgeyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsgfVxuYDtcblxuY29uc3QgamlnZ2xlID0ga2V5ZnJhbWVzYFxuICAwJSwgMTAwJSB7IHRyYW5zZm9ybTp0cmFuc2xhdGUzZCgwLDAsMCk7IH1cbiAgMTIuNSUsIDYyLjUlIHsgdHJhbnNmb3JtOnRyYW5zbGF0ZTNkKC00cHgsMCwwKTsgfVxuICAzNy41JSwgODcuNSUgeyAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCg0cHgsMCwwKTsgIH1cbmA7XG5cbmNvbnN0IGlubGluZUdsb3cgPSBjc3NgXG4gIGFuaW1hdGlvbjogJHtnbG93fSAxLjVzIGVhc2UtaW4tb3V0IGluZmluaXRlO1xuICBjb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGN1cnNvcjogcHJvZ3Jlc3M7XG5gO1xuXG4vLyBob3ZlciAmIGFjdGl2ZSBzdGF0ZSBmb3IgbGlua3MgYW5kIGJ1dHRvbnNcbmNvbnN0IGhvdmVyYWJsZSA9IGNzc2BcbiAgdHJhbnNpdGlvbjogYWxsIDE1MG1zIGVhc2Utb3V0O1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDAsIDAsIDApO1xuXG4gICY6aG92ZXIge1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMCwgLTJweCwgMCk7XG4gIH1cblxuICAmOmFjdGl2ZSB7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgwLCAwLCAwKTtcbiAgfVxuYDtcblxuZXhwb3J0IGNvbnN0IGFuaW1hdGlvbiA9IHtcbiAgcm90YXRlMzYwLFxuICBnbG93LFxuICBmbG9hdCxcbiAgamlnZ2xlLFxuICBpbmxpbmVHbG93LFxuICBob3ZlcmFibGUsXG59O1xuIl19 */",
+                        "name": "1023qba-hoverable",
+                        "styles": "transition:all 150ms ease-out;transform:translate3d(0,0,0);&:hover{transform:translate3d(0,-2px,0);}&:active{transform:translate3d(0,0,0);}label:hoverable;",
                       },
                       "inlineGlow": Object {
-                        "map": undefined,
-                        "name": "zv3h0s",
+                        "map": "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9hbmltYXRpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBaUNzQiIsImZpbGUiOiIuLi9zcmMvYW5pbWF0aW9uLnRzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY3NzLCBrZXlmcmFtZXMgfSBmcm9tICdAZW1vdGlvbi9jb3JlJztcblxuZXhwb3J0IGNvbnN0IGVhc2luZyA9IHtcbiAgcnViYmVyOiAnY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMzUsIDEuMDUpJyxcbn07XG5cbmNvbnN0IHJvdGF0ZTM2MCA9IGtleWZyYW1lc2Bcblx0ZnJvbSB7XG5cdFx0dHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XG5cdH1cblx0dG8ge1xuXHRcdHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7XG5cdH1cbmA7XG5cbmNvbnN0IGdsb3cgPSBrZXlmcmFtZXNgXG4gIDAlLCAxMDAlIHsgb3BhY2l0eTogMTsgfVxuICA1MCUgeyBvcGFjaXR5OiAuNDsgfVxuYDtcblxuY29uc3QgZmxvYXQgPSBrZXlmcmFtZXNgXG4gIDAlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7IH1cbiAgMjUlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDBweCk7IH1cbiAgNTAlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0zcHgpOyB9XG4gIDEwMCUgeyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsgfVxuYDtcblxuY29uc3QgamlnZ2xlID0ga2V5ZnJhbWVzYFxuICAwJSwgMTAwJSB7IHRyYW5zZm9ybTp0cmFuc2xhdGUzZCgwLDAsMCk7IH1cbiAgMTIuNSUsIDYyLjUlIHsgdHJhbnNmb3JtOnRyYW5zbGF0ZTNkKC00cHgsMCwwKTsgfVxuICAzNy41JSwgODcuNSUgeyAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCg0cHgsMCwwKTsgIH1cbmA7XG5cbmNvbnN0IGlubGluZUdsb3cgPSBjc3NgXG4gIGFuaW1hdGlvbjogJHtnbG93fSAxLjVzIGVhc2UtaW4tb3V0IGluZmluaXRlO1xuICBjb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGN1cnNvcjogcHJvZ3Jlc3M7XG5gO1xuXG4vLyBob3ZlciAmIGFjdGl2ZSBzdGF0ZSBmb3IgbGlua3MgYW5kIGJ1dHRvbnNcbmNvbnN0IGhvdmVyYWJsZSA9IGNzc2BcbiAgdHJhbnNpdGlvbjogYWxsIDE1MG1zIGVhc2Utb3V0O1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDAsIDAsIDApO1xuXG4gICY6aG92ZXIge1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMCwgLTJweCwgMCk7XG4gIH1cblxuICAmOmFjdGl2ZSB7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgwLCAwLCAwKTtcbiAgfVxuYDtcblxuZXhwb3J0IGNvbnN0IGFuaW1hdGlvbiA9IHtcbiAgcm90YXRlMzYwLFxuICBnbG93LFxuICBmbG9hdCxcbiAgamlnZ2xlLFxuICBpbmxpbmVHbG93LFxuICBob3ZlcmFibGUsXG59O1xuIl19 */",
+                        "name": "1euta6d-inlineGlow",
                         "next": Object {
                           "name": "animation-r0iffl",
                           "next": undefined,
@@ -4503,12 +4491,7 @@ exports[`addon Info should render component description if story kind matches co
   50% { opacity: .4; }
 }",
                         },
-                        "styles": "
-  animation: animation-r0iffl 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
-  color: transparent;
-  cursor: progress;
-",
+                        "styles": "animation:animation-r0iffl 1.5s ease-in-out infinite;color:transparent;cursor:progress;label:inlineGlow;",
                       },
                       "jiggle": Object {
                         "anim": 1,
@@ -4540,6 +4523,8 @@ exports[`addon Info should render component description if story kind matches co
                       "app": "#F6F9FC",
                       "bar": "#FFFFFF",
                       "content": "#FFFFFF",
+                      "critical": "#FF4400",
+                      "gridCellSize": 10,
                       "hoverable": "rgba(0,0,0,.05)",
                       "negative": "#FEDED2",
                       "positive": "#E1FFD4",
@@ -4670,6 +4655,7 @@ exports[`addon Info should render component description if story kind matches co
                     "color": Object {
                       "ancillary": "#22a699",
                       "border": "rgba(0,0,0,.1)",
+                      "critical": "#FFFFFF",
                       "dark": "#666666",
                       "darker": "#444444",
                       "darkest": "#333333",
@@ -4730,7 +4716,7 @@ exports[`addon Info should render component description if story kind matches co
                   }
                 }
               >
-                <CopyableCode
+                <SyntaxHighlighter
                   bordered={true}
                   className={null}
                   copyable={true}
@@ -5908,7 +5894,7 @@ exports[`addon Info should render component description if story kind matches co
                                 horizontal={true}
                                 vertical={true}
                               >
-                                <r
+                                <l
                                   className="emotion-2"
                                 >
                                   <div
@@ -6019,7 +6005,7 @@ exports[`addon Info should render component description if story kind matches co
                                       />
                                     </div>
                                   </div>
-                                </r>
+                                </l>
                               </Component>
                             </Styled(Component)>
                           </ScrollArea>
@@ -6055,7 +6041,7 @@ exports[`addon Info should render component description if story kind matches co
                       </ActionBar>
                     </div>
                   </Styled(div)>
-                </CopyableCode>
+                </SyntaxHighlighter>
               </ThemeProvider>
             </Code>
           </div>
@@ -7730,25 +7716,13 @@ exports[`addon Info should render component description if story name matches co
                         "toString": [Function],
                       },
                       "hoverable": Object {
-                        "map": undefined,
-                        "name": "wpaw6f",
-                        "next": undefined,
-                        "styles": "
-  transition: all 150ms ease-out;
-  transform: translate3d(0, 0, 0);
-
-  &:hover {
-    transform: translate3d(0, -2px, 0);
-  }
-
-  &:active {
-    transform: translate3d(0, 0, 0);
-  }
-",
+                        "map": "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9hbmltYXRpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBd0NxQiIsImZpbGUiOiIuLi9zcmMvYW5pbWF0aW9uLnRzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY3NzLCBrZXlmcmFtZXMgfSBmcm9tICdAZW1vdGlvbi9jb3JlJztcblxuZXhwb3J0IGNvbnN0IGVhc2luZyA9IHtcbiAgcnViYmVyOiAnY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMzUsIDEuMDUpJyxcbn07XG5cbmNvbnN0IHJvdGF0ZTM2MCA9IGtleWZyYW1lc2Bcblx0ZnJvbSB7XG5cdFx0dHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XG5cdH1cblx0dG8ge1xuXHRcdHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7XG5cdH1cbmA7XG5cbmNvbnN0IGdsb3cgPSBrZXlmcmFtZXNgXG4gIDAlLCAxMDAlIHsgb3BhY2l0eTogMTsgfVxuICA1MCUgeyBvcGFjaXR5OiAuNDsgfVxuYDtcblxuY29uc3QgZmxvYXQgPSBrZXlmcmFtZXNgXG4gIDAlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7IH1cbiAgMjUlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDBweCk7IH1cbiAgNTAlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0zcHgpOyB9XG4gIDEwMCUgeyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsgfVxuYDtcblxuY29uc3QgamlnZ2xlID0ga2V5ZnJhbWVzYFxuICAwJSwgMTAwJSB7IHRyYW5zZm9ybTp0cmFuc2xhdGUzZCgwLDAsMCk7IH1cbiAgMTIuNSUsIDYyLjUlIHsgdHJhbnNmb3JtOnRyYW5zbGF0ZTNkKC00cHgsMCwwKTsgfVxuICAzNy41JSwgODcuNSUgeyAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCg0cHgsMCwwKTsgIH1cbmA7XG5cbmNvbnN0IGlubGluZUdsb3cgPSBjc3NgXG4gIGFuaW1hdGlvbjogJHtnbG93fSAxLjVzIGVhc2UtaW4tb3V0IGluZmluaXRlO1xuICBjb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGN1cnNvcjogcHJvZ3Jlc3M7XG5gO1xuXG4vLyBob3ZlciAmIGFjdGl2ZSBzdGF0ZSBmb3IgbGlua3MgYW5kIGJ1dHRvbnNcbmNvbnN0IGhvdmVyYWJsZSA9IGNzc2BcbiAgdHJhbnNpdGlvbjogYWxsIDE1MG1zIGVhc2Utb3V0O1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDAsIDAsIDApO1xuXG4gICY6aG92ZXIge1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMCwgLTJweCwgMCk7XG4gIH1cblxuICAmOmFjdGl2ZSB7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgwLCAwLCAwKTtcbiAgfVxuYDtcblxuZXhwb3J0IGNvbnN0IGFuaW1hdGlvbiA9IHtcbiAgcm90YXRlMzYwLFxuICBnbG93LFxuICBmbG9hdCxcbiAgamlnZ2xlLFxuICBpbmxpbmVHbG93LFxuICBob3ZlcmFibGUsXG59O1xuIl19 */",
+                        "name": "1023qba-hoverable",
+                        "styles": "transition:all 150ms ease-out;transform:translate3d(0,0,0);&:hover{transform:translate3d(0,-2px,0);}&:active{transform:translate3d(0,0,0);}label:hoverable;",
                       },
                       "inlineGlow": Object {
-                        "map": undefined,
-                        "name": "zv3h0s",
+                        "map": "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9hbmltYXRpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBaUNzQiIsImZpbGUiOiIuLi9zcmMvYW5pbWF0aW9uLnRzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY3NzLCBrZXlmcmFtZXMgfSBmcm9tICdAZW1vdGlvbi9jb3JlJztcblxuZXhwb3J0IGNvbnN0IGVhc2luZyA9IHtcbiAgcnViYmVyOiAnY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMzUsIDEuMDUpJyxcbn07XG5cbmNvbnN0IHJvdGF0ZTM2MCA9IGtleWZyYW1lc2Bcblx0ZnJvbSB7XG5cdFx0dHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XG5cdH1cblx0dG8ge1xuXHRcdHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7XG5cdH1cbmA7XG5cbmNvbnN0IGdsb3cgPSBrZXlmcmFtZXNgXG4gIDAlLCAxMDAlIHsgb3BhY2l0eTogMTsgfVxuICA1MCUgeyBvcGFjaXR5OiAuNDsgfVxuYDtcblxuY29uc3QgZmxvYXQgPSBrZXlmcmFtZXNgXG4gIDAlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7IH1cbiAgMjUlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDBweCk7IH1cbiAgNTAlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0zcHgpOyB9XG4gIDEwMCUgeyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsgfVxuYDtcblxuY29uc3QgamlnZ2xlID0ga2V5ZnJhbWVzYFxuICAwJSwgMTAwJSB7IHRyYW5zZm9ybTp0cmFuc2xhdGUzZCgwLDAsMCk7IH1cbiAgMTIuNSUsIDYyLjUlIHsgdHJhbnNmb3JtOnRyYW5zbGF0ZTNkKC00cHgsMCwwKTsgfVxuICAzNy41JSwgODcuNSUgeyAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCg0cHgsMCwwKTsgIH1cbmA7XG5cbmNvbnN0IGlubGluZUdsb3cgPSBjc3NgXG4gIGFuaW1hdGlvbjogJHtnbG93fSAxLjVzIGVhc2UtaW4tb3V0IGluZmluaXRlO1xuICBjb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGN1cnNvcjogcHJvZ3Jlc3M7XG5gO1xuXG4vLyBob3ZlciAmIGFjdGl2ZSBzdGF0ZSBmb3IgbGlua3MgYW5kIGJ1dHRvbnNcbmNvbnN0IGhvdmVyYWJsZSA9IGNzc2BcbiAgdHJhbnNpdGlvbjogYWxsIDE1MG1zIGVhc2Utb3V0O1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDAsIDAsIDApO1xuXG4gICY6aG92ZXIge1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMCwgLTJweCwgMCk7XG4gIH1cblxuICAmOmFjdGl2ZSB7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgwLCAwLCAwKTtcbiAgfVxuYDtcblxuZXhwb3J0IGNvbnN0IGFuaW1hdGlvbiA9IHtcbiAgcm90YXRlMzYwLFxuICBnbG93LFxuICBmbG9hdCxcbiAgamlnZ2xlLFxuICBpbmxpbmVHbG93LFxuICBob3ZlcmFibGUsXG59O1xuIl19 */",
+                        "name": "1euta6d-inlineGlow",
                         "next": Object {
                           "name": "animation-r0iffl",
                           "next": undefined,
@@ -7757,12 +7731,7 @@ exports[`addon Info should render component description if story name matches co
   50% { opacity: .4; }
 }",
                         },
-                        "styles": "
-  animation: animation-r0iffl 1.5s ease-in-out infinite;
-  background: rgba(0,0,0,.1);
-  color: transparent;
-  cursor: progress;
-",
+                        "styles": "animation:animation-r0iffl 1.5s ease-in-out infinite;color:transparent;cursor:progress;label:inlineGlow;",
                       },
                       "jiggle": Object {
                         "anim": 1,
@@ -7794,6 +7763,8 @@ exports[`addon Info should render component description if story name matches co
                       "app": "#F6F9FC",
                       "bar": "#FFFFFF",
                       "content": "#FFFFFF",
+                      "critical": "#FF4400",
+                      "gridCellSize": 10,
                       "hoverable": "rgba(0,0,0,.05)",
                       "negative": "#FEDED2",
                       "positive": "#E1FFD4",
@@ -7924,6 +7895,7 @@ exports[`addon Info should render component description if story name matches co
                     "color": Object {
                       "ancillary": "#22a699",
                       "border": "rgba(0,0,0,.1)",
+                      "critical": "#FFFFFF",
                       "dark": "#666666",
                       "darker": "#444444",
                       "darkest": "#333333",
@@ -7984,7 +7956,7 @@ exports[`addon Info should render component description if story name matches co
                   }
                 }
               >
-                <CopyableCode
+                <SyntaxHighlighter
                   bordered={true}
                   className={null}
                   copyable={true}
@@ -9276,7 +9248,7 @@ exports[`addon Info should render component description if story name matches co
                                 horizontal={true}
                                 vertical={true}
                               >
-                                <r
+                                <l
                                   className="emotion-2"
                                 >
                                   <div
@@ -9387,7 +9359,7 @@ exports[`addon Info should render component description if story name matches co
                                       />
                                     </div>
                                   </div>
-                                </r>
+                                </l>
                               </Component>
                             </Styled(Component)>
                           </ScrollArea>
@@ -9423,7 +9395,7 @@ exports[`addon Info should render component description if story name matches co
                       </ActionBar>
                     </div>
                   </Styled(div)>
-                </CopyableCode>
+                </SyntaxHighlighter>
               </ThemeProvider>
             </Code>
           </div>
