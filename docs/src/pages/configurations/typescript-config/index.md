@@ -13,7 +13,7 @@ This is a central reference for using Storybook with TypeScript.
 yarn add -D typescript
 yarn add -D awesome-typescript-loader
 yarn add -D @types/storybook__react # typings
-yarn add -D @storybook/addon-info react-docgen-typescript-webpack-plugin # optional but recommended
+yarn add -D @storybook/addon-info react-docgen-typescript-loader # optional but recommended
 yarn add -D jest "@types/jest" ts-jest #testing
 ```
 
@@ -24,8 +24,7 @@ We have had the best experience using `awesome-typescript-loader`, but other tut
 We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default) by creating a `webpack.config.js` file in our Storybook configuration directory (by default, it’s `.storybook`):
 
 ```js
-const path = require('path');
-module.exports = ({ config, mode }) => {
+module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [

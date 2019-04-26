@@ -45,7 +45,7 @@ const updateElement = (id: string, code: string, value: boolean) => {
 
 const list: any[] = [];
 
-const setResources = (resources: Array<{ code: string; id: string }>) => {
+const setResources = (resources: { code: string; id: string }[]) => {
   const added = resources.filter(i => !list.find(r => r.code === i.code));
   const removed = list.filter(i => !resources.find(r => r.code === i.code));
 

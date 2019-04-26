@@ -8,7 +8,7 @@ storiesOf('Addon|Notes', module)
     () => ({
       Component: ButtonView,
     }),
-    { notes: 'My notes on the ButtonView component' }
+    { notes: 'My notes on the [ButtonView](/story/addon-notes--simple-note) component' }
   )
   .add(
     'Note with HTML',

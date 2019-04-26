@@ -51,6 +51,7 @@ const createColors = (vars: ThemeVars): Color => ({
   positive: color.positive,
   negative: color.negative,
   warning: color.warning,
+  critical: color.critical,
 
   defaultText: vars.textColor || color.darkest,
   inverseText: vars.textInverseColor || color.lightest,
@@ -119,6 +120,7 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
     brandTitle,
     brandUrl,
     brandImage,
+    gridCellSize,
     ...rest
   } = inherit;
 
@@ -131,12 +133,14 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
       app: appBg,
       bar: background.bar,
       content: appContentBg,
+      gridCellSize: gridCellSize || background.gridCellSize,
       hoverable:
         base === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(250,250,252,.1)' || background.hoverable,
 
       positive: background.positive,
       negative: background.negative,
       warning: background.warning,
+      critical: background.critical,
     },
     typography: {
       fonts: {
@@ -170,7 +174,7 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
     brand: {
       title: brandTitle,
       url: brandUrl,
-      image: brandImage || brandTitle ? null : undefined,
+      image: brandImage || (brandTitle ? null : undefined),
     },
 
     code: createSyntax({

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/client-logger",
-  "version": "5.1.0-alpha.12",
+  "version": "5.1.0-alpha.34",
   "description": "",
   "keywords": [
     "storybook"
@@ -20,10 +20,10 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
     "core-js": "^2.6.5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

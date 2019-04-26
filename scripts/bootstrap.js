@@ -113,6 +113,14 @@ const tasks = {
     },
     check: () => getDirectories(join(__dirname, '..', 'packs')).length > 0,
   }),
+  registry: createTask({
+    name: `Run local registry ${chalk.gray('(reg)')}`,
+    defaultValue: false,
+    option: '--reg',
+    command: () => {
+      spawn('./scripts/run-registry.js');
+    },
+  }),
 };
 
 Object.keys(tasks)

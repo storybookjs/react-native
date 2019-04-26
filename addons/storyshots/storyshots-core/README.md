@@ -52,9 +52,9 @@ other tools may lack this feature. Since Storyshot is running under Jest,
 we need to polyfill this functionality to work with Jest. The easiest
 way is to integrate it to babel.
 
-You can do this with a Babel [plugin](https://github.com/smrq/babel-plugin-require-context-hook) or [macro](https://github.com/storybooks/require-context.macro). If you're using `create-react-app` (v2 or above), you will use the macro.
+You can do this with a Babel [plugin](https://github.com/smrq/babel-plugin-require-context-hook) or [macro](https://github.com/storybooks/require-context.macro). If you're using `create-react-app` (v2 or above), use the macro.
 
-- *Plugin*
+#### Option 1: Plugin
 
 First, install it:
 
@@ -88,7 +88,7 @@ Finally, add the plugin to `.babelrc`:
 ```
 The plugin is only added to the test environment otherwise it could replace webpack's version of it.
 
-- *Macro*
+#### Option 2: Macro
 
 First, install it:
 
@@ -385,6 +385,15 @@ import initStoryshots from '@storybook/addon-storyshots';
 initStoryshots({
   configPath: '.my-storybook-config-dir'
 });
+```
+
+Or, as a more complex example, if we have a package in our `lerna` project called `app` with the path `./packages/app/src/__tests__/storsyhots.js` and the storybook config directory `./packages/app/.storybook`:
+
+```js
+import path from 'path';
+import initStoryshots from '@storybook/addon-storyshots';
+
+initStoryshots({ configPath: path.resolve(__dirname, '../../.storybook') });
 ```
 
 `configPath` can also specify path to the `config.js` itself. In this case, config directory will be

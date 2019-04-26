@@ -3,7 +3,12 @@ import path from 'path';
 import semver from 'semver';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { normalizeCondition } from 'webpack/lib/RuleSet';
+import { logger } from '@storybook/node-logger';
 
+const JSCONFIG = 'jsconfig.json';
+const TSCONFIG = 'tsconfig.json';
+
+const appDirectory = fs.realpathSync(process.cwd());
 const cssExtensions = ['.css', '.scss', '.sass'];
 const cssModuleExtensions = ['.module.css', '.module.scss', '.module.sass'];
 const typeScriptExtensions = ['.ts', '.tsx'];
@@ -13,10 +18,36 @@ let reactScriptsPath;
 export function getReactScriptsPath({ noCache } = {}) {
   if (reactScriptsPath && !noCache) return reactScriptsPath;
 
-  const appDirectory = fs.realpathSync(process.cwd());
-  const reactScriptsScriptPath = fs.realpathSync(
+  let reactScriptsScriptPath = fs.realpathSync(
     path.join(appDirectory, '/node_modules/.bin/react-scripts')
   );
+
+  try {
+    // Note: Since there is no symlink for .bin/react-scripts on Windows
+    // we'll parse react-scripts file to find actual package path.
+    // This is important if you use fork of CRA.
+
+    const pathIsNotResolved = /node_modules[\\/]\.bin[\\/]react-scripts/i.test(
+      reactScriptsScriptPath
+    );
+
+    if (pathIsNotResolved) {
+      const content = fs.readFileSync(reactScriptsScriptPath, 'utf8');
+      const packagePathMatch = content.match(
+        /"\$basedir[\\/]([^\s]+?[\\/]bin[\\/]react-scripts\.js")/i
+      );
+
+      if (packagePathMatch && packagePathMatch.length > 1) {
+        reactScriptsScriptPath = path.join(
+          appDirectory,
+          '/node_modules/.bin/',
+          packagePathMatch[1]
+        );
+      }
+    }
+  } catch (e) {
+    logger.warn(`Error occured during react-scripts package path resolving: ${e}`);
+  }
 
   reactScriptsPath = path.join(reactScriptsScriptPath, '../..');
   const scriptsPkgJson = path.join(reactScriptsPath, 'package.json');
@@ -32,7 +63,7 @@ export function isReactScriptsInstalled(requiredVersion = '2.0.0') {
   try {
     // eslint-disable-next-line import/no-dynamic-require,global-require
     const reactScriptsJson = require(path.join(getReactScriptsPath(), 'package.json'));
-    return !semver.lt(reactScriptsJson.version, requiredVersion);
+    return !semver.gtr(requiredVersion, reactScriptsJson.version);
   } catch (e) {
     return false;
   }
@@ -78,6 +109,23 @@ export const getTypeScriptRules = (webpackConfigRules, configDir) => {
   ];
 };
 
+export const getModulePath = () => {
+  // As with CRA, we only support `jsconfig.json` if `tsconfig.json` doesn't exist.
+  let configName;
+  if (fs.existsSync(path.join(appDirectory, TSCONFIG))) {
+    configName = TSCONFIG;
+  } else if (fs.existsSync(path.join(appDirectory, JSCONFIG))) {
+    configName = JSCONFIG;
+  }
+
+  if (configName) {
+    // eslint-disable-next-line import/no-dynamic-require,global-require
+    const config = require(path.join(appDirectory, configName));
+    return config.compilerOptions && config.compilerOptions.baseUrl;
+  }
+  return false;
+};
+
 function mergePlugins(basePlugins, additionalPlugins) {
   return [...basePlugins, ...additionalPlugins].reduce((plugins, plugin) => {
     if (
@@ -118,6 +166,10 @@ export function applyCRAWebpackConfig(baseConfig, configDir) {
   const tsExtensions = hasTsSupport ? typeScriptExtensions : [];
   const extensions = [...cssExtensions, ...tsExtensions];
 
+  // Support for this was added in `react-scripts@3.0.0`.
+  // https://github.com/facebook/create-react-app/pull/6656
+  const modulePath = isReactScriptsInstalled('3.0.0') && getModulePath();
+
   // Remove any rules from baseConfig that test true for any one of the extensions
   const filteredBaseRules = baseConfig.module.rules.filter(
     rule => !rule.test || !extensions.some(normalizeCondition(rule.test))
@@ -147,6 +199,10 @@ export function applyCRAWebpackConfig(baseConfig, configDir) {
     resolve: {
       ...baseConfig.resolve,
       extensions: [...baseConfig.resolve.extensions, ...tsExtensions],
+      modules: baseConfig.resolve.modules.concat(modulePath || []),
+    },
+    resolveLoader: {
+      modules: ['node_modules', path.join(getReactScriptsPath(), 'node_modules')],
     },
   };
 }
