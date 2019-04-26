@@ -125,6 +125,21 @@ import 'path/to/register.js';
 Now restart/rebuild storybook and the addon should show up!
 When changing stories, the addon's onStoryChange method will be invoked with the new storyId.
 
+#### Note:
+If you get an error similar to:
+
+```
+ModuleParseError: Module parse failed: Unexpected token (92:22)
+You may need an appropriate loader to handle this file type.
+|       var value = this.state.value;
+|       var active = this.props.active;
+>       return active ? <div>{value}</div> : null;
+|     }
+|   }]);
+```
+
+It is likely because you do not have a `.babelrc` file or do not have it configured with the correct presets `{ "presets": ["@babel/preset-env", "@babel/preset-react"] }`
+
 ## A more complex addon
 
 If we want to create a more complex addon, one that wraps the component being rendered for example, there are a few more steps.
