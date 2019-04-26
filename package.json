@@ -10,9 +10,10 @@
     "addons/*",
     "addons/storyshots/*",
     "app/*",
-    "lib/*",
-    "examples/*",
+    "dev-kits/*",
     "examples-native/*",
+    "examples/*",
+    "lib/*",
     "lib/cli/test/run/*"
   ],
   "scripts": {
