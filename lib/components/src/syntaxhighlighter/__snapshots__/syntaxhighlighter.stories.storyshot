@@ -621,7 +621,11 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
                     >
                       &lt;
                     </span>
-                    Good
+                    <span
+                      class="token class-name"
+                    >
+                      Good
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -640,7 +644,11 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
                     >
                       &lt;
                     </span>
-                    Things
+                    <span
+                      class="token class-name"
+                    >
+                      Things
+                    </span>
                   </span>
                    
                   <span
@@ -660,7 +668,11 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
                     >
                       &lt;/
                     </span>
-                    Good
+                    <span
+                      class="token class-name"
+                    >
+                      Good
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -1052,7 +1064,11 @@ exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
                     >
                       &lt;
                     </span>
-                    Good
+                    <span
+                      class="token class-name"
+                    >
+                      Good
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -1071,7 +1087,11 @@ exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
                     >
                       &lt;
                     </span>
-                    Things
+                    <span
+                      class="token class-name"
+                    >
+                      Things
+                    </span>
                   </span>
                    
                   <span
@@ -1121,7 +1141,11 @@ exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
                     >
                       &lt;/
                     </span>
-                    Good
+                    <span
+                      class="token class-name"
+                    >
+                      Good
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -1504,7 +1528,11 @@ exports[`Storyshots Basics|SyntaxHighlighter padded 1`] = `
                     >
                       &lt;
                     </span>
-                    Good
+                    <span
+                      class="token class-name"
+                    >
+                      Good
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -1523,7 +1551,11 @@ exports[`Storyshots Basics|SyntaxHighlighter padded 1`] = `
                     >
                       &lt;
                     </span>
-                    Things
+                    <span
+                      class="token class-name"
+                    >
+                      Things
+                    </span>
                   </span>
                    
                   <span
@@ -1543,7 +1575,11 @@ exports[`Storyshots Basics|SyntaxHighlighter padded 1`] = `
                     >
                       &lt;/
                     </span>
-                    Good
+                    <span
+                      class="token class-name"
+                    >
+                      Good
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -1958,7 +1994,11 @@ exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
                     >
                       &lt;
                     </span>
-                    Good
+                    <span
+                      class="token class-name"
+                    >
+                      Good
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -1977,7 +2017,11 @@ exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
                     >
                       &lt;
                     </span>
-                    Things
+                    <span
+                      class="token class-name"
+                    >
+                      Things
+                    </span>
                   </span>
                    
                   <span
@@ -1997,7 +2041,11 @@ exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
                     >
                       &lt;/
                     </span>
-                    Good
+                    <span
+                      class="token class-name"
+                    >
+                      Good
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2620,7 +2668,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;
                     </span>
-                    Holder
+                    <span
+                      class="token class-name"
+                    >
+                      Holder
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2645,7 +2697,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;
                     </span>
-                    Heading
+                    <span
+                      class="token class-name"
+                    >
+                      Heading
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2669,7 +2725,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;/
                     </span>
-                    Heading
+                    <span
+                      class="token class-name"
+                    >
+                      Heading
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2694,7 +2754,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;/
                     </span>
-                    Holder
+                    <span
+                      class="token class-name"
+                    >
+                      Holder
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2719,7 +2783,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;
                     </span>
-                    Holder
+                    <span
+                      class="token class-name"
+                    >
+                      Holder
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2744,7 +2812,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;
                     </span>
-                    Heading
+                    <span
+                      class="token class-name"
+                    >
+                      Heading
+                    </span>
                   </span>
                    
                   <span
@@ -2794,7 +2866,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;/
                     </span>
-                    Heading
+                    <span
+                      class="token class-name"
+                    >
+                      Heading
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2819,7 +2895,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;/
                     </span>
-                    Holder
+                    <span
+                      class="token class-name"
+                    >
+                      Holder
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2844,7 +2924,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;
                     </span>
-                    Holder
+                    <span
+                      class="token class-name"
+                    >
+                      Holder
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2869,7 +2953,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;
                     </span>
-                    Heading
+                    <span
+                      class="token class-name"
+                    >
+                      Heading
+                    </span>
                   </span>
                    
                   <span
@@ -2919,7 +3007,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;/
                     </span>
-                    Heading
+                    <span
+                      class="token class-name"
+                    >
+                      Heading
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2944,7 +3036,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;/
                     </span>
-                    Holder
+                    <span
+                      class="token class-name"
+                    >
+                      Holder
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2969,7 +3065,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;
                     </span>
-                    Holder
+                    <span
+                      class="token class-name"
+                    >
+                      Holder
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -2994,7 +3094,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;
                     </span>
-                    Heading
+                    <span
+                      class="token class-name"
+                    >
+                      Heading
+                    </span>
                   </span>
                    
                   <span
@@ -3072,7 +3176,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;/
                     </span>
-                    Heading
+                    <span
+                      class="token class-name"
+                    >
+                      Heading
+                    </span>
                   </span>
                   <span
                     class="token punctuation"
@@ -3097,7 +3205,11 @@ exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
                     >
                       &lt;/
                     </span>
-                    Holder
+                    <span
+                      class="token class-name"
+                    >
+                      Holder
+                    </span>
                   </span>
                   <span
                     class="token punctuation"

@@ -7,7 +7,6 @@ This is the source for [storybook.js.org](https://storybook.js.org). It document
 ```sh
 yarn
 yarn dev
-yarn storybook
 ```
 
 ### Edit Documentation

@@ -1,3 +1,7 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+import { IApi, IStoribookSection } from '../../../index';
+
 export function storiesOf(kind: string, module: NodeModule): IApi;
 export function setAddon(addon: any): void;
 export function addDecorator(decorator: any): IApi;

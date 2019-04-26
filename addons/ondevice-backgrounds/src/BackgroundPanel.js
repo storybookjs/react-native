@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
-import Events from './constants';
+import Events from '@storybook/core-events';
 import Swatch from './Swatch';
+import Constants from './constants';
 
-const defaultBackground = {
-  name: 'default',
-  value: 'transparent',
-};
-
-const instructionsHtml = `
+const codeSample = `
 import { storiesOf } from '@storybook/react-native';
+import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+
+addDecorator(withBackgrounds);
 
 storiesOf('First Component', module)
   .addParameters({
@@ -19,7 +17,7 @@ storiesOf('First Component', module)
       { name: 'cool', value: 'deepskyblue' },
     ],
   })
-  .add("First Button", () => <button>Click me</button>);
+  .add("First Button", () => <Button>Click me</Button>);
 `.trim();
 
 const Instructions = () => (
@@ -33,81 +31,51 @@ const Instructions = () => (
     <Text>
       Below is an example of how to add the background decorator to your story definition.
     </Text>
-    <Text>{instructionsHtml}</Text>
+    <Text>{codeSample}</Text>
   </View>
 );
 
 export default class BackgroundPanel extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { backgrounds: [] };
-  }
+  setBackgroundFromSwatch = background => {
+    this.props.channel.emit(Constants.UPDATE_BACKGROUND, background);
+  };
 
   componentDidMount() {
-    const { channel } = this.props;
-
-    this.onSet = channel.on(Events.SET, data => {
-      const backgrounds = [...data];
-
-      this.setState({ backgrounds });
-    });
-
-    this.onUnset = channel.on(Events.UNSET, () => {
-      this.setState({ backgrounds: [] });
-    });
+    this.props.channel.on(Events.SELECT_STORY, this.onStorySelected);
   }
 
   componentWillUnmount() {
-    const { channel } = this.props;
-    channel.removeListener(Events.SET, this.onSet);
-    channel.removeListener(Events.UNSET, this.onUnset);
+    this.props.channel.removeListener(Events.SELECT_STORY, this.onStorySelected);
   }
 
-  setBackgroundFromSwatch = background => {
-    this.update(background);
+  onStorySelected = selection => {
+    this.setState({ selection });
   };
 
-  update(background) {
-    const { channel } = this.props;
-    channel.emit(Events.UPDATE_BACKGROUND, background);
-  }
-
   render() {
-    const { active } = this.props;
-    const { backgrounds = [] } = this.state;
+    const { active, api } = this.props;
 
     if (!active) {
       return null;
     }
-    if (!backgrounds.length) return <Instructions />;
 
-    const hasDefault = backgrounds.filter(x => x.default).length;
-    if (!hasDefault) backgrounds.push(defaultBackground);
+    const story = api
+      .store()
+      .getStoryAndParameters(this.state.selection.kind, this.state.selection.story);
+    const backgrounds = story.parameters[Constants.PARAM_KEY];
 
     return (
       <View>
-        {backgrounds.map(({ value, name }) => (
-          <View key={`${name} ${value}`}>
-            <Swatch value={value} name={name} setBackground={this.setBackgroundFromSwatch} />
-          </View>
-        ))}
+        {backgrounds ? (
+          backgrounds.map(({ value, name }) => (
+            <View key={`${name} ${value}`}>
+              <Swatch value={value} name={name} setBackground={this.setBackgroundFromSwatch} />
+            </View>
+          ))
+        ) : (
+          <Instructions />
+        )}
       </View>
     );
   }
 }
-BackgroundPanel.propTypes = {
-  active: PropTypes.bool.isRequired,
-  api: PropTypes.shape({
-    getQueryParam: PropTypes.func,
-    setQueryParams: PropTypes.func,
-  }).isRequired,
-  channel: PropTypes.shape({
-    emit: PropTypes.func,
-    on: PropTypes.func,
-    removeListener: PropTypes.func,
-  }),
-};
-BackgroundPanel.defaultProps = {
-  channel: undefined,
-};
