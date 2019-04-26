@@ -8,7 +8,6 @@
     "test": "jest",
     "start": "rax-scripts start",
     "build": "rax-scripts build",
-    "lint": "eslint --ext .js --ext .jsx ./src",
     "storybook": "start-storybook -p 9009 -s public",
     "prestorybook": "npm run test:generate-output",
     "prebuild:storybook": "npm run test:generate-output",
@@ -43,8 +42,6 @@
     "@storybook/rax": "5.1.0-alpha.34",
     "babel-eslint": "^8.2.2",
     "babel-preset-rax": "^1.0.0-beta.0",
-    "eslint": "^4.18.1",
-    "eslint-plugin-react": "^7.7.0",
     "rax-scripts": "^1.0.0-beta.10",
     "rax-test-renderer": "^0.6.5",
     "stylesheet-loader": "^0.6.5"
