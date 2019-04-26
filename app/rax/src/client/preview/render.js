@@ -1,4 +1,3 @@
-/* eslint-disable-next-line no-unused-vars */
 import { createElement, render } from 'rax';
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
