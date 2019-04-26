@@ -12,7 +12,7 @@ describe('Test on functional helpers: memorize', () => {
     const resultC = someFnMemo(1);
 
     // assertion
-    expect(someFn).toBeCalledTimes(2);
+    expect(someFn).toHaveBeenCalledTimes(2);
     expect(resultA).toEqual(someFn(1));
     expect(resultA).not.toEqual(resultB);
     expect(resultA).toBe(resultC);
@@ -30,7 +30,7 @@ describe('Test on functional helpers: memorize', () => {
     const resultC = someFnMemo(1, 3);
 
     // assertion
-    expect(someFn).toBeCalledTimes(2);
+    expect(someFn).toHaveBeenCalledTimes(2);
     expect(resultA).toEqual(someFn(1, 2));
     expect(resultA).toBe(resultB);
     expect(resultA).not.toEqual(resultC);
@@ -49,7 +49,7 @@ describe('Test on functional helpers: singleton', () => {
     const resultC = someFnSingleton(7, 8, 9);
 
     // assertion
-    expect(someFn).toBeCalledTimes(1);
+    expect(someFn).toHaveBeenCalledTimes(1);
     expect(resultA).toEqual(someFn(1, 2, 3));
     expect(resultA).toBe(resultB);
     expect(resultA).toBe(resultC);

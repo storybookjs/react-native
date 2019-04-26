@@ -103,12 +103,14 @@ export class BackgroundSelector extends Component<{ api: API }, State> {
   };
 
   change = ({ selected, name }: { selected: string; name: string }) => {
-    this.props.api.emit(EVENTS.UPDATE, { selected, name });
+    const { api } = this.props;
+    api.emit(EVENTS.UPDATE, { selected, name });
     this.setState({ selected, expanded: false });
   };
 
   onVisibilityChange = (s: boolean) => {
-    if (this.state.expanded !== s) {
+    const { expanded } = this.state;
+    if (expanded !== s) {
       this.setState({ expanded: s });
     }
   };

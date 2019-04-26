@@ -2,8 +2,8 @@ import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 import { Badge, Icons } from '@storybook/components';
 import { CheckResult } from 'axe-core';
-import { RuleType } from '../A11YPanel';
 import { SizeMe } from 'react-sizeme';
+import { RuleType } from '../A11YPanel';
 
 const impactColors = {
   minor: '#f1c40f',
@@ -112,6 +112,7 @@ export const Rules: FunctionComponent<RulesProps> = ({ rules }) => {
   return (
     <List>
       {rules.map((rule, index) => (
+        // eslint-disable-next-line react/no-array-index-key
         <Rule rule={rule} key={index} />
       ))}
     </List>

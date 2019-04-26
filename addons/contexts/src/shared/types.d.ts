@@ -1,6 +1,7 @@
 import { ComponentProps, FunctionComponent } from 'react';
-export { API as ManagerAPI } from '@storybook/api';
 import { Icons } from '@storybook/components';
+
+export { API as ManagerAPI } from '@storybook/api';
 
 // helpers
 export declare type AnyFunctionReturns<T> = (...arg: any[]) => T;
@@ -21,11 +22,11 @@ export declare interface AddonSetting {
   icon?: ComponentProps<typeof Icons>['icon'] | '';
   title: string;
   components?: unknown[];
-  params?: Array<{
+  params?: {
     name: string;
     props: GenericProp;
     default?: boolean;
-  }>;
+  }[];
   options?: AddonOptions;
 }
 

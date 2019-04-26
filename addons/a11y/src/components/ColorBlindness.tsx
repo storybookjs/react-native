@@ -34,7 +34,7 @@ const ColorIcon = styled.span(
   })
 );
 
-// tslint:disable-next-line:no-empty-interface
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface ColorBlindnessProps {}
 
 interface ColorBlindnessState {
@@ -63,7 +63,8 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
   };
 
   onVisibilityChange = (s: boolean) => {
-    if (this.state.expanded !== s) {
+    const { expanded } = this.state;
+    if (expanded !== s) {
       this.setState({ expanded: s });
     }
   };

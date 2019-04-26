@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { SyntaxHighlighter as SyntaxHighlighterBase } from '@storybook/components';
-import { SyntaxHighlighter } from './Panel.tsx';
+import { SyntaxHighlighter } from './Panel';
 
 describe('NotesPanel', () => {
   describe('SyntaxHighlighter component', () => {

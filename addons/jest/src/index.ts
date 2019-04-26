@@ -9,7 +9,7 @@ interface AddonParameters {
 
 const findTestResults = (
   testFiles: string[],
-  jestTestResults: { testResults: Array<{ name: string }> },
+  jestTestResults: { testResults: { name: string }[] },
   jestTestFilesExt: string
 ) =>
   Object.values(testFiles).map(name => {
@@ -35,7 +35,7 @@ interface EmitAddTestsArg {
   story: () => void;
   testFiles: string[];
   options: {
-    results: { testResults: Array<{ name: string }> };
+    results: { testResults: { name: string }[] };
     filesExt: string;
   };
 }
@@ -56,7 +56,6 @@ export const withTests = (userOptions: { results: any; filesExt?: string }) => {
 
   return (...args: [(string | (() => void)), { kind: string; parameters: AddonParameters }]) => {
     if (typeof args[0] === 'string') {
-      // tslint:disable-next-line:no-shadowed-variable
       return deprecate((storyFn: () => void, { kind }: { kind: string }) => {
         emitAddTests({ kind, story: storyFn, testFiles: args as string[], options });
 

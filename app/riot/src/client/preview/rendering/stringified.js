@@ -35,7 +35,7 @@ export default function renderStringified({
   template = `<${(tags[0] || []).boundAs || guessRootName(tags[0] || '')}/>`,
   tagConstructor,
 }) {
-  const tag2 = tag; // eslint-disable-line no-unused-vars
+  const tag2 = tag;
   tags.forEach(oneTag => {
     const rootName = oneTag.boundAs || guessRootName(oneTag);
     const { content } = oneTag || {};
