@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-object-literal-type-assertion */
 import { document } from 'global';
 import axe, { AxeResults, ElementContext, RunOptions, Spec } from 'axe-core';
 import deprecate from 'util-deprecate';
@@ -35,7 +36,6 @@ const run = (element: ElementContext, config: Spec, options: RunOptions) => {
       .run(
         element || getElement(),
         options ||
-          // tslint:disable-next-line:no-object-literal-type-assertion
           ({
             restoreScroll: true,
           } as RunOptions) // cast to RunOptions is necessary because axe types are not up to date

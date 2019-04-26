@@ -3,7 +3,7 @@ import { withProps } from 'recompose';
 
 import TextareaAutoResize from 'react-textarea-autosize';
 
-import StyledButton from '../../Button/Button';
+import { Button as StyledButton } from '../../Button/Button';
 
 const styleResets = {
   // resets

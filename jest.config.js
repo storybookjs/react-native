@@ -38,7 +38,7 @@ module.exports = {
     '/examples/cra-kitchen-sink/src/App.test.js',
     '/examples/cra-react15/src/App.test.js',
     '/examples/cra-ts-kitchen-sink/src/components/',
-    '/examples/angular-cli/src/app/',
+    '/examples/angular-cli/src/app/*',
   ],
   collectCoverage: false,
   collectCoverageFrom: [

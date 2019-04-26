@@ -27,5 +27,33 @@ describe('angualr-cli_config', () => {
         },
       });
     });
+
+    it('should use `storybook` project by default when project is defined', () => {
+      // Lazy clone example angular json
+      const overrideAngularJson = JSON.parse(JSON.stringify(angularJson));
+      // Add storybook project
+      overrideAngularJson.projects.storybook = {
+        architect: {
+          build: {
+            options: {
+              assets: [],
+              styles: ['custom/styles'],
+            },
+          },
+        },
+      };
+
+      setupFiles({ 'angular.json': JSON.stringify(overrideAngularJson) });
+
+      const config = getAngularCliWebpackConfigOptions('/');
+
+      // Assure configuration matches values from `storybook` project
+      expect(config).toMatchObject({
+        buildOptions: {
+          assets: [],
+          styles: ['custom/styles'],
+        },
+      });
+    });
   });
 });

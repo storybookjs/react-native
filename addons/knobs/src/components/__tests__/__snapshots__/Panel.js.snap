@@ -17,7 +17,7 @@ Array [
 ]
 `;
 
-exports[`Panel groups should have one tab per groupId and an empty Other tab when all are defined 1`] = `
+exports[`Panel groups should have one tab per groupId when all are defined 1`] = `
 Array [
   .emotion-2 {
   box-sizing: border-box;

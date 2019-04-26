@@ -19,7 +19,10 @@ Then create a file called `addons.js` in your Storybook config.
 Add following content to it:
 
 ```js
+// register the notes addon as a tab
 import '@storybook/addon-notes/register';
+// or register the notes addon as a panel. Only one can be used!
+import '@storybook/addon-notes/register-panel';
 ```
 
 Now, you can use the `notes` parameter to add a note to each story.
@@ -31,10 +34,9 @@ import { storiesOf } from '@storybook/react';
 
 import Component from './Component';
 
-storiesOf('Component', module)
-  .add('with some emoji', () => <Component />, {
-    notes: 'A very simple example of addon notes',
-  });
+storiesOf('Component', module).add('with some emoji', () => <Component />, {
+  notes: 'A very simple example of addon notes',
+});
 ```
 
 ### With Vue
@@ -44,13 +46,16 @@ import { storiesOf } from '@storybook/vue';
 
 import MyButton from './MyButton.vue';
 
-storiesOf('MyButton', module)
-  .add('with some emoji', () => ({
+storiesOf('MyButton', module).add(
+  'with some emoji',
+  () => ({
     components: { MyButton },
-    template: '<my-button>😀 😎 👍 💯</my-button>'
-  }), {
+    template: '<my-button>😀 😎 👍 💯</my-button>',
+  }),
+  {
     notes: 'A very simple example of addon notes',
-  });
+  }
+);
 ```
 
 ## Using Markdown
@@ -60,10 +65,11 @@ Using Markdown in your notes is supported, Storybook will load Markdown as raw b
 ```js
 import { storiesOf } from '@storybook/react';
 import Component from './Component';
-import notes from './someMarkdownText.md';
+import markdownNotes from './someMarkdownText.md';
 
-storiesOf('Component', module)
-  .add('With Markdown', () => <Component />, { notes });
+storiesOf('Component', module).add('With Markdown', () => <Component />, {
+  notes: { markdown: markdownNotes },
+});
 ```
 
 ## Giphy

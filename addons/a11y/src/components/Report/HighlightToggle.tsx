@@ -1,3 +1,4 @@
+import { document } from 'global';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { styled, themes, convert } from '@storybook/theming';
@@ -10,6 +11,7 @@ import { IFRAME } from '../../constants';
 
 export class HighlightedElementData {
   originalOutline: string;
+
   isHighlighted: boolean;
 }
 
@@ -50,6 +52,7 @@ function getElementBySelectorPath(elementPath: string): HTMLElement {
 }
 
 function setElementOutlineStyle(targetElement: HTMLElement, outlineStyle: string): void {
+  // eslint-disable-next-line no-param-reassign
   targetElement.style.outline = outlineStyle;
 }
 
@@ -65,6 +68,7 @@ function areAllRequiredElementsHighlighted(
     );
   }).length;
 
+  // eslint-disable-next-line no-nested-ternary
   return highlightedCount === 0
     ? CheckBoxStates.UNCHECKED
     : highlightedCount === elementsToHighlight.length
@@ -99,58 +103,31 @@ class HighlightToggle extends Component<ToggleProps> {
   private checkBoxRef = React.createRef<HTMLInputElement>();
 
   componentDidMount() {
-    this.props.elementsToHighlight.forEach(element => {
+    const { elementsToHighlight, highlightedElementsMap } = this.props;
+    elementsToHighlight.forEach(element => {
       const targetElement = getElementBySelectorPath(element.target[0]);
-      if (targetElement && !this.props.highlightedElementsMap.has(targetElement)) {
+      if (targetElement && !highlightedElementsMap.has(targetElement)) {
         this.saveElementDataToMap(targetElement, false, targetElement.style.outline);
       }
     });
   }
 
   componentDidUpdate(prevProps: Readonly<ToggleProps>): void {
+    const { indeterminate } = this.props;
     if (this.checkBoxRef.current) {
-      this.checkBoxRef.current.indeterminate = this.props.indeterminate;
+      this.checkBoxRef.current.indeterminate = indeterminate;
     }
-  }
-
-  highlightRuleLocation(targetElement: HTMLElement, addHighlight: boolean): void {
-    if (!targetElement) {
-      return;
-    }
-
-    if (addHighlight) {
-      setElementOutlineStyle(targetElement, `${colorsByType[this.props.type]} dotted 1px`);
-      return;
-    }
-
-    if (this.props.highlightedElementsMap.has(targetElement)) {
-      setElementOutlineStyle(
-        targetElement,
-        this.props.highlightedElementsMap.get(targetElement).originalOutline
-      );
-    }
-  }
-
-  saveElementDataToMap(
-    targetElement: HTMLElement,
-    isHighlighted: boolean,
-    originalOutline: string
-  ): void {
-    const data: HighlightedElementData = new HighlightedElementData();
-    data.isHighlighted = isHighlighted;
-    data.originalOutline = originalOutline;
-    const payload = { element: targetElement, highlightedElementData: data };
-    this.props.addElement(payload);
   }
 
   onToggle = (): void => {
-    this.props.elementsToHighlight.forEach(element => {
+    const { elementsToHighlight, highlightedElementsMap } = this.props;
+    elementsToHighlight.forEach(element => {
       const targetElement = getElementBySelectorPath(element.target[0]);
-      if (!this.props.highlightedElementsMap.has(targetElement)) {
+      if (!highlightedElementsMap.has(targetElement)) {
         return;
       }
-      const originalOutline = this.props.highlightedElementsMap.get(targetElement).originalOutline;
-      const { isHighlighted } = this.props.highlightedElementsMap.get(targetElement);
+      const { originalOutline } = highlightedElementsMap.get(targetElement);
+      const { isHighlighted } = highlightedElementsMap.get(targetElement);
       const { isToggledOn } = this.props;
       if ((isToggledOn && isHighlighted) || (!isToggledOn && !isHighlighted)) {
         const addHighlight = !isToggledOn && !isHighlighted;
@@ -160,16 +137,49 @@ class HighlightToggle extends Component<ToggleProps> {
     });
   };
 
+  highlightRuleLocation(targetElement: HTMLElement, addHighlight: boolean): void {
+    const { highlightedElementsMap, type } = this.props;
+    if (!targetElement) {
+      return;
+    }
+
+    if (addHighlight) {
+      setElementOutlineStyle(targetElement, `${colorsByType[type]} dotted 1px`);
+      return;
+    }
+
+    if (highlightedElementsMap.has(targetElement)) {
+      setElementOutlineStyle(
+        targetElement,
+        highlightedElementsMap.get(targetElement).originalOutline
+      );
+    }
+  }
+
+  saveElementDataToMap(
+    targetElement: HTMLElement,
+    isHighlighted: boolean,
+    originalOutline: string
+  ): void {
+    const { addElement: localAddElement } = this.props;
+    const data: HighlightedElementData = new HighlightedElementData();
+    data.isHighlighted = isHighlighted;
+    data.originalOutline = originalOutline;
+    const payload = { element: targetElement, highlightedElementData: data };
+    localAddElement(payload);
+  }
+
   render() {
+    const { toggleId, elementsToHighlight, isToggledOn } = this.props;
     return (
       <Checkbox
         ref={this.checkBoxRef}
-        id={this.props.toggleId}
+        id={toggleId}
         type="checkbox"
         aria-label="Highlight result"
-        disabled={!this.props.elementsToHighlight.length}
+        disabled={!elementsToHighlight.length}
         onChange={this.onToggle}
-        checked={this.props.isToggledOn}
+        checked={isToggledOn}
       />
     );
   }
