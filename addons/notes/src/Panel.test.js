@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Link } from '@reach/router';
 import { SyntaxHighlighter as SyntaxHighlighterBase } from '@storybook/components';
-import { SyntaxHighlighter, NotesLink } from './Panel.tsx';
+import { SyntaxHighlighter, NotesLink } from './Panel';
 
 describe('NotesPanel', () => {
   describe('SyntaxHighlighter component', () => {

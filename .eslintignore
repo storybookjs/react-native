@@ -7,10 +7,9 @@ docs/public
 storybook-static
 built-storybooks
 lib/cli/test
+scripts/storage
 *.bundle.js
 *.js.map
-*.ts
-*.tsx
 
 !.remarkrc.js
 !.babelrc.js

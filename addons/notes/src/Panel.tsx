@@ -1,9 +1,8 @@
-import React, { ReactElement, Component, Fragment, ReactNode } from 'react';
+import React, { ReactElement, Fragment, ReactNode } from 'react';
 import { types } from '@storybook/addons';
 import { API, Consumer, Combo } from '@storybook/api';
 import { Link as RouterLink } from '@storybook/router';
 import { styled } from '@storybook/theming';
-import { STORY_RENDERED } from '@storybook/core-events';
 
 import {
   SyntaxHighlighter as SyntaxHighlighterBase,
@@ -11,8 +10,8 @@ import {
   DocumentFormatting,
   Link,
 } from '@storybook/components';
-import Giphy from './giphy';
 import Markdown from 'markdown-to-jsx';
+import Giphy from './giphy';
 
 import { PARAM_KEY, Parameters } from './shared';
 
@@ -33,15 +32,20 @@ interface Props {
 function read(param: Parameters | undefined): string | undefined {
   if (!param) {
     return undefined;
-  } else if (typeof param === 'string') {
+  }
+  if (typeof param === 'string') {
     return param;
-  } else if ('disabled' in param) {
+  }
+  if ('disabled' in param) {
     return undefined;
-  } else if ('text' in param) {
+  }
+  if ('text' in param) {
     return param.text;
-  } else if ('markdown' in param) {
+  }
+  if ('markdown' in param) {
     return param.markdown;
   }
+  return undefined;
 }
 
 interface SyntaxHighlighterProps {

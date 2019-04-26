@@ -42,6 +42,7 @@ export const FailedResult = styled(({ fullName, title, status, failureMessages, 
       </Indicator>
     </Head>
     {failureMessages.map((msg: string, i: number) => (
+      // eslint-disable-next-line react/no-array-index-key
       <Message msg={msg} key={i} />
     ))}
   </div>

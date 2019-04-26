@@ -5,7 +5,7 @@ import { ThemeProvider, themes, convert } from '@storybook/theming';
 import { STORY_RENDERED } from '@storybook/core-events';
 import { ScrollArea } from '@storybook/components';
 
-import { A11YPanel } from './A11YPanel.tsx';
+import { A11YPanel } from './A11YPanel';
 import { EVENTS } from '../constants';
 
 function createApi() {
