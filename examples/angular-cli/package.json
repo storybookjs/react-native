@@ -44,6 +44,7 @@
     "@storybook/addon-options": "5.1.0-alpha.34",
     "@storybook/addon-storyshots": "5.1.0-alpha.34",
     "@storybook/addon-storysource": "5.1.0-alpha.34",
+    "@storybook/addon-a11y": "5.1.0-alpha.34",
     "@storybook/addons": "5.1.0-alpha.34",
     "@storybook/angular": "5.1.0-alpha.34",
     "@types/core-js": "^2.5.0",

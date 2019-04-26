@@ -1,6 +1,8 @@
-import { configure, addParameters } from '@storybook/angular';
+import { configure, addParameters, addDecorator } from '@storybook/angular';
 import addCssWarning from '../src/cssWarning';
+import { withA11y } from '@storybook/addon-a11y';
 
+addDecorator(withA11y);
 addCssWarning();
 
 addParameters({
