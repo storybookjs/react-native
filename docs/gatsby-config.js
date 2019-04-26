@@ -16,6 +16,7 @@ module.exports = {
       guides: [
         '/guides/quick-start-guide/',
         '/guides/slow-start-guide/',
+        '/guides/guide-html/',
         '/guides/guide-react/',
         '/guides/guide-react-native/',
         '/guides/guide-vue/',
