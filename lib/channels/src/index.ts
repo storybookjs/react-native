@@ -37,7 +37,9 @@ export class Channel {
   readonly isAsync: boolean;
 
   private sender = generateRandomId();
+
   private events: EventsKeyValue = {};
+
   private readonly transport: ChannelTransport;
 
   constructor({ transport, async = false }: ChannelArgs = {}) {
@@ -67,6 +69,7 @@ export class Channel {
     const event: ChannelEvent = { type: eventName, args, from: this.sender };
     let options = {};
     if (args.length >= 1 && args[0] && args[0].options) {
+      // eslint-disable-next-line prefer-destructuring
       options = args[0].options;
     }
 
@@ -96,7 +99,7 @@ export class Channel {
 
   listeners(eventName: string): Listener[] | undefined {
     const listeners = this.events[eventName];
-    return listeners ? listeners : undefined;
+    return listeners || undefined;
   }
 
   once(eventName: string, listener: Listener) {

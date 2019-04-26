@@ -1,5 +1,5 @@
-import { Color, Background, Typography } from './base';
 import memoize from 'memoizerific';
+import { Color, Background, Typography } from './base';
 
 type Value = string | number;
 interface Return {

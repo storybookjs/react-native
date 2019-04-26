@@ -1,23 +1,41 @@
 const error = 2;
 const warn = 1;
 const ignore = 0;
+
 module.exports = {
   root: true,
   extends: [
     'airbnb',
     'plugin:jest/recommended',
     'plugin:import/react-native',
+    'plugin:@typescript-eslint/recommended',
     'prettier',
     'prettier/react',
+    'prettier/@typescript-eslint',
   ],
-  plugins: ['prettier', 'jest', 'import', 'react', 'jsx-a11y', 'json', 'html'],
-  parser: 'babel-eslint',
-  parserOptions: { ecmaVersion: 8, sourceType: 'module' },
+  plugins: [
+    '@typescript-eslint',
+    'prettier',
+    'jest',
+    'import',
+    'react',
+    'jsx-a11y',
+    'json',
+    'html',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 8,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
   env: { es6: true, node: true, 'jest/globals': true },
   settings: {
     'import/core-modules': ['enzyme'],
     'import/ignore': ['node_modules\\/(?!@storybook)'],
-    'import/resolver': { node: { extensions: ['.js', '.ts'] } },
+    'import/resolver': { node: { extensions: ['.js', '.ts', '.tsx', '.mjs'] } },
     'html/html-extensions': ['.html'],
   },
   rules: {
@@ -30,6 +48,7 @@ module.exports = {
       {
         js: 'never',
         ts: 'never',
+        tsx: 'never',
         mjs: 'never',
       },
     ],
@@ -42,11 +61,11 @@ module.exports = {
           '**/example/**',
           '*.js',
           '**/*.test.js',
-          '**/*.stories.js',
+          '**/*.stories.*',
           '**/scripts/*.js',
           '**/stories/**/*.js',
           '**/__tests__/**/*.js',
-          '**/.storybook/**/*.js',
+          '**/.storybook/**/*.*',
         ],
         peerDependencies: true,
       },
@@ -94,13 +113,21 @@ module.exports = {
       error,
       { allow: ['__STORYBOOK_CLIENT_API__', '__STORYBOOK_ADDONS_CHANNEL__'] },
     ],
+    '@typescript-eslint/no-var-requires': ignore,
+    '@typescript-eslint/camelcase': ignore,
+    '@typescript-eslint/no-unused-vars': ignore,
+    '@typescript-eslint/explicit-member-accessibility': ignore,
+    '@typescript-eslint/explicit-function-return-type': ignore,
+    '@typescript-eslint/no-explicit-any': ignore, // would prefer to enable this
+    '@typescript-eslint/no-use-before-define': ignore, // this is duplicated
+    '@typescript-eslint/interface-name-prefix': ignore, // I don't agree
   },
   overrides: [
     {
       files: [
         '**/__tests__/**',
-        '**/*.test.js',
-        '**/*.stories.js',
+        '**/*.test.*',
+        '**/*.stories.*',
         '**/storyshots/**/stories/**',
         'docs/src/new-components/lib/StoryLinkWrapper.js',
         'docs/src/stories/**',
@@ -110,5 +137,25 @@ module.exports = {
       },
     },
     { files: '**/.storybook/config.js', rules: { 'global-require': ignore } },
+    {
+      files: ['**/*.stories.*'],
+      rules: {
+        'no-console': ignore,
+      },
+    },
+    {
+      files: ['**/*.tsx', '**/*.ts'],
+      rules: {
+        'react/prop-types': ignore, // we should use types
+        'no-dupe-class-members': ignore, // this is called overloads in typescript
+      },
+    },
+    {
+      files: ['**/*.d.ts'],
+      rules: {
+        'no-var': ignore, // this is how typescript works
+        'spaced-comment': ignore,
+      },
+    },
   ],
 };

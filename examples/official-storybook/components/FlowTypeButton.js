@@ -1,41 +1,39 @@
 // @flow
 import React from 'react';
 
-/* eslint-disable react/no-unused-prop-types,react/require-default-props */
-
 const Message = {};
 
-type PropsType = {
+interface PropsType {
   /** A multi-type prop to be rendered in the button */
-  label: string,
+  label: string;
   /** Function to be called when the button is clicked */
-  onClick?: Function,
+  onClick?: Function;
   /** Boolean representing whether the button is disabled */
-  disabled?: boolean,
+  disabled?: boolean;
   /** A plain object */
-  obj?: Object,
+  obj?: Record<string, any>;
   /** A complex Object with nested types */
   shape: {
     id: number,
     func?: Function,
-    arr?: Array<{
+    arr?: {
       index: number,
-    }>,
+    }[],
     shape?: {
       shape?: {
         foo?: string,
       },
     },
-  },
+  };
   /** An array of numbers */
-  arrayOf?: Array<number>,
+  arrayOf?: number[];
   /** A custom type */
-  msg?: typeof Message,
+  msg?: typeof Message;
   /** `oneOf` as Enum */
-  enm?: 'News' | 'Photos',
+  enm?: 'News' | 'Photos';
   /** `oneOf` A multi-type prop of string or custom Message */
-  union?: string | typeof Message,
-};
+  union?: string | typeof Message;
+}
 
 /** FlowTypeButton component description imported from comments inside the component file */
 const FlowTypeButton = ({ label, onClick, disabled }: PropsType) => (

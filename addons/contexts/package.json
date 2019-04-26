@@ -28,7 +28,8 @@
     "@storybook/addons": "5.1.0-alpha.34",
     "@storybook/api": "5.1.0-alpha.34",
     "@storybook/components": "5.1.0-alpha.34",
-    "@storybook/core-events": "5.1.0-alpha.34"
+    "@storybook/core-events": "5.1.0-alpha.34",
+    "global": "^4.3.2"
   },
   "peerDependencies": {
     "qs": "*"
