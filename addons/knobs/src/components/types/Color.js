@@ -20,6 +20,10 @@ const Swatch = styled.div(({ theme }) => ({
   borderRadius: '1rem',
 }));
 
+const ColorButton = styled(Button)(({ active }) => ({
+  zIndex: active ? 3 : 'unset',
+}));
+
 const Popover = styled.div({
   position: 'absolute',
   zIndex: '2',
@@ -78,10 +82,15 @@ class ColorType extends React.Component {
     const colorStyle = {
       background: knob.value,
     };
-
     return (
-      <Button type="button" name={knob.name} onClick={this.handleClick} size="flex">
-        {knob.value.toUpperCase()}
+      <ColorButton
+        active={displayColorPicker}
+        type="button"
+        name={knob.name}
+        onClick={this.handleClick}
+        size="flex"
+      >
+        {knob.value && knob.value.toUpperCase()}
         <Swatch style={colorStyle} />
         {displayColorPicker ? (
           <Popover
@@ -92,7 +101,7 @@ class ColorType extends React.Component {
             <SketchPicker color={knob.value} onChange={this.handleChange} />
           </Popover>
         ) : null}
-      </Button>
+      </ColorButton>
     );
   }
 }

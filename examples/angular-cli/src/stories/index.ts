@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { Welcome, Button } from '@storybook/angular/demo';
 import { linkTo } from '@storybook/addon-links';
@@ -27,7 +28,7 @@ storiesOf('Button', module)
     template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
     props: {
       text: 'Hello Button',
-      onClick: event => {
+      onClick: (event: any) => {
         console.log('some bindings work');
         console.log(event);
       },

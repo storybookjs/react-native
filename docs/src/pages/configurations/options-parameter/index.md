@@ -21,7 +21,7 @@ addParameters({
      * show story component as full screen
      * @type {Boolean}
      */
-    isFullScreen: false,
+    isFullscreen: false,
     /**
      * display panel that shows a list of stories
      * @type {Boolean}
@@ -34,7 +34,7 @@ addParameters({
     showPanel: true,
     /**
      * where to show the addon panel
-     * @type {String}
+     * @type {('bottom'|'right')}
      */
     panelPosition: 'bottom',
     /**
@@ -70,6 +70,11 @@ addParameters({
      * @type {Boolean}
      */
     enableShortcuts: true,
+    /**
+     * show/hide tool bar
+     * @type {Boolean}
+     */
+    isToolshown: true,
     /**
      * theme storybook, see link below
      */

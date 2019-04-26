@@ -26,8 +26,10 @@ export const KEY = 'storybook-channel';
 
 export class PostmsgTransport {
   private buffer: BufferedEvent[];
+
   private handler: ChannelHandler;
 
+  // eslint-disable-next-line @typescript-eslint/no-parameter-properties
   constructor(private readonly config: Config) {
     this.buffer = [];
     this.handler = null;
@@ -48,15 +50,20 @@ export class PostmsgTransport {
    * the event will be stored in a buffer and sent when the window exists.
    * @param event
    */
-  send(event: ChannelEvent): Promise<any> {
+  send(event: ChannelEvent, options?: any): Promise<any> {
     const iframeWindow = this.getWindow();
     if (!iframeWindow) {
       return new Promise((resolve, reject) => {
         this.buffer.push({ event, resolve, reject });
       });
     }
+    let depth = 15;
+    if (options && Number.isInteger(options.depth)) {
+      // eslint-disable-next-line prefer-destructuring
+      depth = options.depth;
+    }
 
-    const data = stringify({ key: KEY, event }, { maxDepth: 15 });
+    const data = stringify({ key: KEY, event }, { maxDepth: depth });
 
     // TODO: investigate http://blog.teamtreehouse.com/cross-domain-messaging-with-postmessage
     // might replace '*' with document.location ?
@@ -65,7 +72,7 @@ export class PostmsgTransport {
   }
 
   private flush(): void {
-    const buffer = this.buffer;
+    const { buffer } = this;
     this.buffer = [];
     buffer.forEach(item => {
       this.send(item.event)

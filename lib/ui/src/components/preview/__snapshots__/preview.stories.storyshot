@@ -244,6 +244,7 @@ Array [
                 </span>
                 <button
                   class="emotion-2"
+                  title="Open canvas in new tab"
                 >
                   <svg
                     class="emotion-1"
@@ -279,7 +280,7 @@ Array [
       />
     </div>
   </div>,
-  .emotion-2 {
+  .emotion-1 {
   position: absolute;
   overflow: auto;
   left: 0;
@@ -293,7 +294,7 @@ Array [
   background: transparent;
 }
 
-.emotion-1 {
+.emotion-0 {
   position: absolute;
   top: 0;
   left: 0;
@@ -304,49 +305,32 @@ Array [
   background: #FFFFFF;
 }
 
-.emotion-0 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 0 none;
-  -webkit-transition: -webkit-transform .2s ease-out,height .2s ease-out,width .2s ease-out;
-  -webkit-transition: transform .2s ease-out,height .2s ease-out,width .2s ease-out;
-  transition: transform .2s ease-out,height .2s ease-out,width .2s ease-out;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  overflow: auto;
-}
-
-.emotion-0 > iframe {
+.emotion-0 iframe {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  border: 0 none;
 }
 
 <div
-    class="emotion-2"
+    class="emotion-1"
     offset="40"
   >
     <div>
       <div
-        class="emotion-1"
+        class="emotion-0"
         id="storybook-preview-background"
         value="transparent"
       >
-        <div
-          class="emotion-0"
-          style="width:100%;height:100%;transform:scale(1)"
-        >
-          <iframe
-            allowfullscreen=""
-            id="storybook-preview-iframe"
-            src="http://example.com?id=string"
-            title="string"
-          />
-        </div>
+        <iframe
+          allowfullscreen=""
+          id="storybook-preview-iframe"
+          scrolling="yes"
+          src="http://example.com?id=string"
+          title="string"
+        />
       </div>
     </div>
   </div>,
@@ -729,6 +713,7 @@ Array [
                 </span>
                 <button
                   class="emotion-8"
+                  title="Open canvas in new tab"
                 >
                   <svg
                     class="emotion-7"
@@ -764,7 +749,7 @@ Array [
       />
     </div>
   </div>,
-  .emotion-2 {
+  .emotion-1 {
   position: absolute;
   overflow: auto;
   left: 0;
@@ -778,7 +763,7 @@ Array [
   background: transparent;
 }
 
-.emotion-1 {
+.emotion-0 {
   position: absolute;
   top: 0;
   left: 0;
@@ -789,49 +774,32 @@ Array [
   background: #FFFFFF;
 }
 
-.emotion-0 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 0 none;
-  -webkit-transition: -webkit-transform .2s ease-out,height .2s ease-out,width .2s ease-out;
-  -webkit-transition: transform .2s ease-out,height .2s ease-out,width .2s ease-out;
-  transition: transform .2s ease-out,height .2s ease-out,width .2s ease-out;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  overflow: auto;
-}
-
-.emotion-0 > iframe {
+.emotion-0 iframe {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  border: 0 none;
 }
 
 <div
-    class="emotion-2"
+    class="emotion-1"
     offset="40"
   >
     <div>
       <div
-        class="emotion-1"
+        class="emotion-0"
         id="storybook-preview-background"
         value="transparent"
       >
-        <div
-          class="emotion-0"
-          style="width:100%;height:100%;transform:scale(1)"
-        >
-          <iframe
-            allowfullscreen=""
-            id="storybook-preview-iframe"
-            src="http://example.com?id=string"
-            title="string"
-          />
-        </div>
+        <iframe
+          allowfullscreen=""
+          id="storybook-preview-iframe"
+          scrolling="yes"
+          src="http://example.com?id=string"
+          title="string"
+        />
       </div>
     </div>
   </div>,

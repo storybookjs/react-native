@@ -32,7 +32,7 @@ Make sure that you have `vue`, `vue-loader`, `vue-template-compiler`, `@babel/co
 
 ```sh
 npm install vue --save
-npm install vue-loader vue-template-compiler @babel/core babel-loader babel-preset-vue --save-dev 
+npm install vue-loader vue-template-compiler @babel/core babel-loader babel-preset-vue --save-dev
 ```
 
 ## Step 2: Add a npm script
@@ -67,58 +67,58 @@ configure(loadStories, module);
 That'll load stories in `../stories/index.js`. You can choose where to place stories, you can co-locate them with source files, or place them in an other directory.
 
 > Requiring all your stories becomes bothersome real quick, so you can use this to load all stories matching a glob.
-> 
+>
 > <details>
 >   <summary>details</summary>
-> 
+>
 > ```js
 > import { configure } from '@storybook/vue';
-> 
+>
 > function loadStories() {
 >   const req = require.context('../stories', true, /\.stories\.js$/);
 >   req.keys().forEach(filename => req(filename));
 > }
-> 
+>
 > configure(loadStories, module);
 > ```
-> 
+>
 > </details>
-
-
+>
+>
 > You might be using global components or vue plugins such as vuex, in that case you'll need to register them in this `config.js` file.
-> 
+>
 > <details>
 >   <summary>details</summary>
-> 
+>
 > ```js
 > import { configure } from '@storybook/vue';
-> 
+>
 > import Vue from 'vue';
-> 
+>
 > // Import Vue plugins
 > import Vuex from 'vuex';
-> 
+>
 > // Import your global components.
 > import Mybutton from '../src/stories/Button.vue';
-> 
+>
 > // Install Vue plugins.
 > Vue.use(Vuex);
-> 
+>
 > // Register global components.
 > Vue.component('my-button', Mybutton);
-> 
+>
 > function loadStories() {
 >   // You can require as many stories as you need.
 >   require('../src/stories');
 > }
-> 
+>
 > configure(loadStories, module);
 > ```
-> 
+>
 > This example registered your custom `Button.vue` component, installed the Vuex plugin, and loaded your Storybook stories defined in `../stories/index.js`.
-> 
+>
 > All custom components and Vue plugins should be registered before calling `configure()`.
-> 
+>
 > </details>
 
 
@@ -148,6 +148,34 @@ Button
   ├── with emoji
   └── as a component
 ```
+
+> If your story is returning a plain template you can only use globally registered components.
+>
+> To register them, use `Vue.component('my-button', Mybutton)` in your `config.js` file.
+>
+> <details>
+>   <summary>details</summary>
+>
+> If your story returns a plain string like below, you will need to register globally each VueJs component that it uses. 
+>
+> ```js
+>  .add('with text', () => '<my-component>with text</my-component>')
+> ```
+>
+> In big solutions, globally registered components can conflict with each other.
+>
+> Here are two other ways to use components in your stories without globally registering them.
+>
+> - register components locally in the "components" member of the vue component object. See the story "as a component" above.
+> - use a JSX render function like below. No need to register anything.
+>
+> ```jsx
+>   .add('with text', () => ({
+>      render: h => <my-component>with text</my-component>
+>   }))
+> ```
+>
+> </details>
 
 ## Finally: Run your Storybook
 

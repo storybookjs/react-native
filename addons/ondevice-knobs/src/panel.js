@@ -2,13 +2,13 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { SELECT_STORY, FORCE_RE_RENDER } from '@storybook/core-events';
-import { SET, SET_OPTIONS, RESET, CHANGE, CLICK } from '@storybook/addon-knobs/events';
+import { SET, SET_OPTIONS, RESET, CHANGE, CLICK } from '@storybook/addon-knobs';
 import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
 
 const getTimestamp = () => +new Date();
 
-const DEFAULT_GROUP_ID = 'ALL';
+const DEFAULT_GROUP_ID = 'Other';
 
 export default class Panel extends React.Component {
   constructor(props) {

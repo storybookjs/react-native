@@ -1,3 +1,9 @@
+action "Danger JS" {
+  uses = "danger/danger-js@master"
+  secrets = ["GITHUB_TOKEN"]
+  args = "--dangerfile .ci/danger/dangerfile.ts"
+}
+
 workflow "Dangerfile JS Pull" {
   on = "pull_request"
   resolves = "Danger JS"
@@ -8,8 +14,19 @@ workflow "Dangerfile JS Label" {
   resolves = "Danger JS"
 }
 
-action "Danger JS" {
-  uses = "danger/danger-js@master"
+# ===
+
+action "Automention" {
+  uses = "shilman/automention@master"
   secrets = ["GITHUB_TOKEN"]
-  args = "--dangerfile .ci/danger/dangerfile.ts"
+}
+
+workflow "Automention Issues" {
+  on = "issues"
+  resolves = "Automention"
+}
+
+workflow "Automention PRs" {
+  on = "pull_request"
+  resolves = "Automention"
 }
