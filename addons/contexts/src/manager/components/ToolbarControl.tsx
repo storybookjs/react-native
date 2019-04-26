@@ -1,7 +1,7 @@
 import React from 'react';
 import { ToolBarMenu } from './ToolBarMenu';
-import { OPT_OUT } from '../constants';
-import { ContextNode, FCNoChildren, Omit } from '../types';
+import { OPT_OUT } from '../../shared/constants';
+import { ContextNode, FCNoChildren, Omit } from '../../shared/types.d';
 
 type ToolbarControl = FCNoChildren<
   Omit<
@@ -25,8 +25,8 @@ export const ToolbarControl: ToolbarControl = ({
   const [expanded, setExpanded] = React.useState(false);
   const paramNames = params.map(({ name }) => name);
   const activeName =
-    // validate the selected name
-    (paramNames.concat(OPT_OUT).includes(selected) && selected) ||
+    // validate the integrity of the selected name
+    (paramNames.concat(options.cancelable && OPT_OUT).includes(selected) && selected) ||
     // fallback to default
     (params.find(param => !!param.default) || { name: null }).name ||
     // fallback to the first

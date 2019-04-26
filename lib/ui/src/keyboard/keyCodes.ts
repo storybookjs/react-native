@@ -1,4 +1,7 @@
-// tslint:disable-next-line:no-implicit-dependencies
+/* eslint-disable no-shadow */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-bitwise */
+/* eslint-disable no-underscore-dangle */
 import { OperatingSystem } from './platform';
 
 export enum KeyCode {
@@ -329,7 +332,6 @@ const userSettingsGeneralMap = new KeyCodeStrMap();
   define(KeyCode.US_OPEN_SQUARE_BRACKET, '[', '[', 'OEM_4');
   define(KeyCode.US_BACKSLASH, '\\', '\\', 'OEM_5');
   define(KeyCode.US_CLOSE_SQUARE_BRACKET, ']', ']', 'OEM_6');
-  // tslint:disable-next-line:quotemark
   define(KeyCode.US_QUOTE, "'", "'", 'OEM_7');
   define(KeyCode.OEM_8, 'OEM_8');
   define(KeyCode.OEM_102, 'OEM_102');
@@ -353,7 +355,6 @@ const userSettingsGeneralMap = new KeyCodeStrMap();
   define(KeyCode.NUMPAD_DIVIDE, 'NumPad_Divide');
 })();
 
-// tslint:disable-next-line:no-namespace
 // export namespace KeyCodeUtils {
 //   export function toString(keyCode: KeyCode): string {
 //     return uiMap.keyCodeToStr(keyCode);
@@ -379,7 +380,6 @@ const userSettingsGeneralMap = new KeyCodeStrMap();
  */
 
 enum BinaryKeybindingsMask {
-  // tslint:disable:no-bitwise
   CtrlCmd = (1 << 11) >>> 0,
   Shift = (1 << 10) >>> 0,
   Alt = (1 << 9) >>> 0,
@@ -551,7 +551,6 @@ export class ResolveKeybindingPart {
   }
 }
 
-// tslint:disable-next-line:max-classes-per-file
 export abstract class ResolvedKeybinding {
   /**
    * This prints the binding in a format suitable for displaying in the UI.

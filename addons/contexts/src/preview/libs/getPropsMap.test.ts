@@ -1,5 +1,5 @@
 import { _getPropsByParamName, getPropsMap } from './getPropsMap';
-import { OPT_OUT } from '../../constants';
+import { OPT_OUT } from '../../shared/constants';
 
 describe('Test on behaviors from collecting the propsMap', () => {
   const someParams = [{ name: 'A', props: {} }, { name: 'B', props: {} }];
@@ -10,7 +10,7 @@ describe('Test on behaviors from collecting the propsMap', () => {
   });
 
   it('should return "OPT_OUT" token when the context being opted out', () => {
-    const result = _getPropsByParamName(someParams, OPT_OUT);
+    const result = _getPropsByParamName(someParams, OPT_OUT, { cancelable: true });
     expect(result).toBe(OPT_OUT);
   });
 
@@ -66,7 +66,7 @@ describe('Test on the integrity of the method to get the propMaps', () => {
     ];
     const someSelectionState = {
       'Some Context': 'A1',
-      'Another Context': OPT_OUT,
+      'Another Context': OPT_OUT, // an inconsistent but possible state being introduced via query param
     };
 
     // exercise
@@ -75,7 +75,7 @@ describe('Test on the integrity of the method to get the propMaps', () => {
     // assertion
     expect(result).toEqual({
       'Some Context': { a: 1 },
-      'Another Context': OPT_OUT,
+      'Another Context': { b: 1 }, // not equal to `OPT_OUT` due to the context is not cancelable
       'Other Contexts': { c: 1 },
     });
   });

@@ -1,6 +1,8 @@
 import { ComponentProps, FunctionComponent } from 'react';
 import { Icons } from '@storybook/components';
 
+export { API as ManagerAPI } from '@storybook/api';
+
 // helpers
 export declare type AnyFunctionReturns<T> = (...arg: any[]) => T;
 export declare type FCNoChildren<P> = FunctionComponent<{ children?: never } & P>;
@@ -20,11 +22,11 @@ export declare interface AddonSetting {
   icon?: ComponentProps<typeof Icons>['icon'] | '';
   title: string;
   components?: unknown[];
-  params?: Array<{
+  params?: {
     name: string;
     props: GenericProp;
     default?: boolean;
-  }>;
+  }[];
   options?: AddonOptions;
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "5.1.0-alpha.14",
+  "version": "5.1.0-alpha.33",
   "private": true,
   "repository": {
     "type": "git",
@@ -34,12 +34,11 @@
     "docs:build": "npm --prefix docs run build",
     "docs:dev": "npm --prefix docs run dev",
     "github-release": "github-release-from-changelog",
-    "lint": "yarn lint:js . && yarn lint:ts **/*.ts **/*.tsx && yarn lint:md .",
-    "lint:ci": "yarn lint:js --format ./node_modules/eslint-teamcity/index.js . && yarn lint:ts **/*.ts && yarn lint:md .",
-    "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json,.html --report-unused-disable-directives",
+    "lint": "yarn lint:js . && yarn lint:md .",
+    "lint:ci": "yarn lint:js --format ./node_modules/eslint-teamcity/index.js . && yarn lint:md .",
+    "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
     "lint:md": "remark -q",
     "lint:package": "sort-package-json",
-    "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "publish:crna": "yarn --cwd examples-native/crna-kitchen-sink expo publish",
     "publish:debug": "npm run publish:latest -- --npm-tag=debug --no-push",
     "publish:latest": "lerna publish --exact --concurrency 1 --force-publish",
@@ -61,8 +60,24 @@
         "yarn lint:js --fix",
         "git add"
       ],
+      "*.jsx": [
+        "yarn lint:js --fix",
+        "git add"
+      ],
+      "*.mjs": [
+        "yarn lint:js --fix",
+        "git add"
+      ],
+      "*.html": [
+        "yarn lint:js --fix",
+        "git add"
+      ],
       "*.ts": [
-        "yarn lint:ts --fix",
+        "yarn lint:js --fix",
+        "git add"
+      ],
+      "*.tsx": [
+        "yarn lint:js --fix",
         "git add"
       ],
       "*.json": [
@@ -78,9 +93,13 @@
   "browserslist": "defaults",
   "dependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
     "babel-plugin-add-react-displayname": "^0.0.5",
+    "common-tags": "^1.8.0",
+    "detect-port": "^1.3.0",
     "eslint-plugin-html": "^5.0.3",
     "jest-matcher-utils": "^24.7.0",
+    "node-cleanup": "^2.1.2",
     "react-testing-library": "^6.0.0"
   },
   "devDependencies": {
@@ -106,7 +125,7 @@
     "@types/jest": "^24.0.11",
     "@types/lodash": "^4.14.123",
     "@types/node": "~11.13.4",
-    "@types/react": "^16.8.4",
+    "@types/react": "^16.8.14",
     "@types/webpack": "^4.4.25",
     "@types/webpack-env": "^1.13.7",
     "babel-core": "^7.0.0-bridge.0",
@@ -159,7 +178,7 @@
     "jest-teamcity-reporter": "^0.9.0",
     "jest-vue-preprocessor": "^1.5.0",
     "jest-watch-typeahead": "^0.3.0",
-    "lerna": "^3.13.0",
+    "lerna": "^3.13.3",
     "lint-staged": "^8.1.4",
     "lodash": "^4.17.11",
     "node-fetch": "^2.3.0",
@@ -178,14 +197,8 @@
     "sort-package-json": "^1.21.0",
     "svelte-jest": "^0.2.0",
     "ts-jest": "^23.10.5",
-    "tslint": "~5.14.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.4.1",
     "weak": "^1.0.1"
-  },
-  "resolutions": {
-    "graphql": "^0.13.2"
   },
   "engines": {
     "node": ">=8.6.0",

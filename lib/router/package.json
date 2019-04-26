@@ -1,6 +1,6 @@
 {
   "name": "@storybook/router",
-  "version": "5.1.0-alpha.33",
+  "version": "5.1.0-alpha.35",
   "description": "Core Storybook Router",
   "keywords": [
     "storybook"
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "@storybook/theming": "5.1.0-alpha.33",
+    "@storybook/theming": "5.1.0-alpha.35",
     "core-js": "^2.6.5",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",

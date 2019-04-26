@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react';
 import { Icons, IconButton, WithTooltip } from '@storybook/components';
 import { ToolBarMenuOptions } from './ToolBarMenuOptions';
-import { ContextNode, FCNoChildren } from '../types';
+import { ContextNode, FCNoChildren } from '../../shared/types.d';
 
 type ToolBarMenu = FCNoChildren<{
   icon: ContextNode['icon'];

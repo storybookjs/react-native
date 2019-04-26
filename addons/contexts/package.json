@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-contexts",
-  "version": "5.1.0-alpha.33",
+  "version": "5.1.0-alpha.35",
   "description": "Storybook Addon Contexts",
   "keywords": [
     "storybook",
@@ -9,8 +9,7 @@
   ],
   "author": "Leo Y. Li",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/register.js",
   "files": [
     "dist/**/*",
     "register.js",
@@ -26,10 +25,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.33",
-    "@storybook/channels": "5.1.0-alpha.33",
-    "@storybook/components": "5.1.0-alpha.33",
-    "@storybook/core-events": "5.1.0-alpha.33"
+    "@storybook/addons": "5.1.0-alpha.35",
+    "@storybook/api": "5.1.0-alpha.35",
+    "@storybook/components": "5.1.0-alpha.35",
+    "@storybook/core-events": "5.1.0-alpha.35",
+    "global": "^4.3.2"
+  },
+  "peerDependencies": {
+    "qs": "*"
   },
   "optionalDependencies": {
     "react": "*",

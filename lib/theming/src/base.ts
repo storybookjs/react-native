@@ -33,6 +33,7 @@ export const color = {
   positive: '#66BF3C',
   negative: '#FF4400',
   warning: '#E69D00',
+  critical: '#FFFFFF',
 
   defaultText: '#333333',
   inverseText: '#FFFFFF',
@@ -49,6 +50,7 @@ export const background = {
   positive: '#E1FFD4',
   negative: '#FEDED2',
   warning: '#FFF5CF',
+  critical: '#FF4400',
 };
 
 export const typography = {

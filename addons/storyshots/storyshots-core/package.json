@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-storyshots",
-  "version": "5.1.0-alpha.33",
+  "version": "5.1.0-alpha.35",
   "description": "StoryShots is a Jest Snapshot Testing Addon for Storybook.",
   "keywords": [
     "addon",
@@ -25,7 +25,7 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.33",
+    "@storybook/addons": "5.1.0-alpha.35",
     "core-js": "^2.6.5",
     "glob": "^7.1.3",
     "global": "^4.3.2",

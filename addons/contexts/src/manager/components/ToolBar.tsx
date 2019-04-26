@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react';
 import { Separator } from '@storybook/components';
 import { ToolbarControl } from './ToolbarControl';
-import { ContextNode, FCNoChildren, SelectionState } from '../types';
+import { ContextNode, FCNoChildren, SelectionState } from '../../shared/types.d';
 
 type ToolBar = FCNoChildren<{
   nodes: ContextNode[];

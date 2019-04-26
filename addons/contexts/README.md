@@ -31,6 +31,8 @@ once then apply it everywhere**.
    use it to bridge with your favorite routing, state-management solutions, or even your own
    [React Context](https://reactjs.org/docs/context.html) provider.
 4. Offer chainable and granular configurations. It is even possible to fine-tune at per story level.
+5. Visual regression friendly.  You can use this addon to driving the same story under different contexts to smoke
+   testing important visual states.
 
 ## 🧰 Requirements
 
@@ -227,6 +229,9 @@ be shown at first in the toolbar menu in your Storybook.
 4. The addon will persist the selected params (the addon state) between stories at run-time (similar to other
    addons). If the active param were gone after story switching, it fallback to the default then the first. As a
    rule of thumbs, whenever collisions made possible, always the first wins.
+5. Query parameters are supported for pre-selecting contexts param, which comes handy for visual regression testing.
+   You can do this by appending `&contexts=[name of contexts]=[name of param]` in the URL under iframe mode. Use `,`
+   to separate multiple contexts (e.g. `&contexts=Theme=Forests,Language=Fr`).
 
 ## 📖 License
 
