@@ -8,8 +8,7 @@ export function action(name: string, options: ActionOptions = {}): HandlerFuncti
     ...options,
   };
 
-  // tslint:disable-next-line:no-shadowed-variable
-  const handler = function action(...args: any[]) {
+  const handler = function actionHandler(...args: any[]) {
     const channel = addons.getChannel();
     const id = uuid();
     const minDepth = 5; // anything less is really just storybook internals

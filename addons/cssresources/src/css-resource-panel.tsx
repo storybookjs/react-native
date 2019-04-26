@@ -47,6 +47,7 @@ export class CssResourcePanel extends Component<Props, State> {
 
     if (list && currentStoryId !== id) {
       const existingIds = currentList.reduce((lookup: CssResourceLookup, res) => {
+        // eslint-disable-next-line no-param-reassign
         lookup[res.id] = res;
         return lookup;
       }, {}) as CssResourceLookup;

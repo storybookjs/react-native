@@ -8,6 +8,7 @@ export default {
     alias: {
       baseAlias: 'base-alias',
     },
+    modules: [],
   },
   module: {
     noParse: /jquery/,

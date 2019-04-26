@@ -1,3 +1,99 @@
+## 5.1.0-alpha.35 (April 27, 2019)
+
+### Features
+
+* Addon-notes: use @storybook/router <Link> to render links in notes ([#6398](https://github.com/storybooks/storybook/pull/6398))
+* Angular: Support default `storybook` project configuration ([#6484](https://github.com/storybooks/storybook/pull/6484))
+* Addon-contexts: Improve Vue integration ([#6632](https://github.com/storybooks/storybook/pull/6632))
+* Addon-a11y: Design enhancements ([#6563](https://github.com/storybooks/storybook/pull/6563))
+
+### Bug Fixes
+
+* UI: `active` PropTypes on MobileLayout ([#6241](https://github.com/storybooks/storybook/pull/6241))
+* Core: Fix css import when sideEffects is false ([#6650](https://github.com/storybooks/storybook/pull/6650))
+* Core: Fix infinite loop with special characters in kind names ([#6607](https://github.com/storybooks/storybook/pull/6607))
+* UI: Fix 'Escape' onKeyUp event doesn't work ([#6578](https://github.com/storybooks/storybook/pull/6578))
+
+### Maintenance
+
+* UI: Add missing props in stories ([#6353](https://github.com/storybooks/storybook/pull/6353))
+* Build: tslint, and use eslint for everything ([#6621](https://github.com/storybooks/storybook/pull/6621))
+* Build: deploy to local registry ([#6619](https://github.com/storybooks/storybook/pull/6619))
+
+### Dependency Upgrades
+
+* Bump ts-node from 8.0.3 to 8.1.0 ([#6585](https://github.com/storybooks/storybook/pull/6585))
+* Bump semver from 5.7.0 to 6.0.0 ([#6580](https://github.com/storybooks/storybook/pull/6580))
+* Bump react-color from 2.17.0 to 2.17.1 ([#6583](https://github.com/storybooks/storybook/pull/6583))
+
+## 5.1.0-alpha.34 (April 24, 2019)
+
+### Features
+
+- Addon-contexts: Add URL query param feature ([#6601](https://github.com/storybooks/storybook/pull/6601))
+- UI: Add classNames to sidebar nav elements ([#6571](https://github.com/storybooks/storybook/pull/6571))
+
+### Bug Fixes
+
+- Addon-knobs: Check color knob value before applying uppercase ([#6598](https://github.com/storybooks/storybook/pull/6598))
+- React-native: Restore title in section header ([#6599](https://github.com/storybooks/storybook/pull/6599))
+
+## 5.1.0-alpha.33 (April 23, 2019)
+
+### Features
+
+- React: Add support for create-react-app@3.0.0 ([#6560](https://github.com/storybooks/storybook/pull/6560))
+
+## 5.1.0-alpha.32 (April 22, 2019)
+
+### Bug Fixes
+
+- Addon-contexts: bug-fixing, testing, typing ([#6572](https://github.com/storybooks/storybook/pull/6572))
+
+### Dependency Upgrades
+
+- CHANGE opn to open ([#6567](https://github.com/storybooks/storybook/pull/6567))
+
+## 5.1.0-alpha.31 (April 19, 2019)
+
+### Features
+
+- Addon-backgrounds: Emit event on updating background ([#6561](https://github.com/storybooks/storybook/pull/6561))
+- Addon-contexts: Merge into monorepo ([#6559](https://github.com/storybooks/storybook/pull/6559))
+
+### Bug Fixes
+
+- Angular: Fix sourceMap property of angulars webpack config ([#6535](https://github.com/storybooks/storybook/pull/6535))
+- Addon-jest: Fix result display ([#6539](https://github.com/storybooks/storybook/pull/6539))
+
+### Dependency Upgrades
+
+- Bump ember-source from 3.8.1 to 3.9.1 ([#6531](https://github.com/storybooks/storybook/pull/6531))
+- Bump typescript from 3.4.2 to 3.4.3 ([#6528](https://github.com/storybooks/storybook/pull/6528))
+
+## 5.0.10 (April 18, 2019)
+
+### Bug Fixes
+
+- Theming: legacy options don't override set config options ([#6543](https://github.com/storybooks/storybook/pull/6543))
+- Theming: Fix null brandImage ([#6544](https://github.com/storybooks/storybook/pull/6544))
+
+## 5.1.0-alpha.30 (April 18, 2019)
+
+### Bug Fixes
+
+- UI: Fix hard-coded viewmode to enable tabbed addons ([#6551](https://github.com/storybooks/storybook/pull/6551))
+- Theming: legacy options don't override set config options ([#6543](https://github.com/storybooks/storybook/pull/6543))
+- React-native: Fix preview only UI ([#6549](https://github.com/storybooks/storybook/pull/6549))
+
+### Dependency Upgrades
+
+- Bump react-redux from 6.0.1 to 7.0.2 ([#6529](https://github.com/storybooks/storybook/pull/6529))
+
+### Maintenance
+
+- Addon-storysource: Migrate from using channel to api ([#6550](https://github.com/storybooks/storybook/pull/6550))
+
 ## 5.1.0-alpha.29 (April 17, 2019)
 
 ### Bug Fixes
@@ -12,6 +108,14 @@
 
 - Bump @types/node from 11.11.8 to 11.13.4 ([#6527](https://github.com/storybooks/storybook/pull/6527))
 - Bump danger from 7.0.19 to 7.1.2 ([#6530](https://github.com/storybooks/storybook/pull/6530))
+
+## 5.0.9 (April 17, 2019)
+
+### Bug Fixes
+
+- UI: Fix panel toggle behavior in fullscreen ([#6525](https://github.com/storybooks/storybook/pull/6525))
+- Addon-Knobs: Add missing groupId for files knob ([#6534](https://github.com/storybooks/storybook/pull/6534))
+- Theming: FIX brandImage when theme created with brandTitle ([#6120](https://github.com/storybooks/storybook/pull/6120))
 
 ## 5.1.0-alpha.28 (April 16, 2019)
 

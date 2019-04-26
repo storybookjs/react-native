@@ -26,8 +26,6 @@ const safeDeepEqual = (a: any, b: any): boolean => {
 };
 
 export default class ActionLogger extends Component<ActionLoggerProps, ActionLoggerState> {
-  private mounted: boolean;
-
   constructor(props: ActionLoggerProps) {
     super(props);
 
@@ -74,6 +72,8 @@ export default class ActionLogger extends Component<ActionLoggerProps, ActionLog
   clearActions = () => {
     this.setState({ actions: [] });
   };
+
+  private mounted: boolean;
 
   render() {
     const { actions = [] } = this.state;

@@ -48,7 +48,7 @@ type PartialThemeVars = Partial<ThemeVars>;
 type PartialLayout = Partial<Layout>;
 type PartialUI = Partial<UI>;
 
-interface Options {
+interface Options extends ThemeVars {
   name?: string;
   url?: string;
   goFullScreen: boolean;
@@ -88,14 +88,14 @@ const deprecationMessage = (optionsMap: OptionsMap, prefix: string = '') =>
     prefix ? `${prefix}'s` : ''
   } { ${Object.values(optionsMap).join(', ')} } instead.`;
 
-const applyDeprecatedThemeOptions = deprecate(
-  ({ name, url }: Options): PartialThemeVars => ({
-    brandTitle: name,
-    brandUrl: url,
-    brandImage: null,
-  }),
-  deprecationMessage(deprecatedThemeOptions)
-);
+const applyDeprecatedThemeOptions = deprecate(({ name, url, theme }: Options): PartialThemeVars => {
+  const { brandTitle, brandUrl, brandImage }: PartialThemeVars = theme || {};
+  return {
+    brandTitle: brandTitle || name,
+    brandUrl: brandUrl || url,
+    brandImage: brandImage || null,
+  };
+}, deprecationMessage(deprecatedThemeOptions));
 
 const applyDeprecatedLayoutOptions = deprecate((options: Options): PartialLayout => {
   const layoutUpdate: PartialLayout = {};
@@ -116,14 +116,14 @@ const applyDeprecatedLayoutOptions = deprecate((options: Options): PartialLayout
 }, deprecationMessage(deprecatedLayoutOptions));
 
 const checkDeprecatedThemeOptions = (options: Options) => {
-  if (Object.values(deprecatedThemeOptions).find(v => !!v)) {
+  if (Object.keys(deprecatedThemeOptions).find(v => v in options)) {
     return applyDeprecatedThemeOptions(options);
   }
   return {};
 };
 
 const checkDeprecatedLayoutOptions = (options: Options) => {
-  if (Object.values(deprecatedLayoutOptions).find(v => typeof v !== 'undefined')) {
+  if (Object.keys(deprecatedLayoutOptions).find(v => v in options)) {
     return applyDeprecatedLayoutOptions(options);
   }
   return {};

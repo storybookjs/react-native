@@ -14,25 +14,25 @@ const Item = styled.li({
 const ItemTitle = styled.span(({ theme }) => ({
   borderBottom: `1px solid ${theme.appBorderColor}`,
   width: '100%',
-  display: 'inline-block',
+  display: 'flex',
   paddingBottom: '6px',
   marginBottom: '6px',
+  justifyContent: 'space-between',
 }));
 
 const HighlightToggleElement = styled.span({
   fontWeight: 'normal',
-  float: 'right',
+  alignSelf: 'center',
   paddingRight: '15px',
   input: { margin: 0 },
 });
 
 interface ElementProps {
   element: NodeResult;
-  passes: boolean;
   type: RuleType;
 }
 
-const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => {
+const Element: FunctionComponent<ElementProps> = ({ element, type }) => {
   const { any, all, none } = element;
   const rules = [...any, ...all, ...none];
   const highlightToggleId = `${type}-${element.target[0]}`;
@@ -51,21 +51,21 @@ const Element: FunctionComponent<ElementProps> = ({ element, passes, type }) => 
           />
         </HighlightToggleElement>
       </ItemTitle>
-      <Rules rules={rules} passes={passes} />
+      <Rules rules={rules} />
     </Item>
   );
 };
 
 interface ElementsProps {
   elements: NodeResult[];
-  passes: boolean;
   type: RuleType;
 }
 
-export const Elements: FunctionComponent<ElementsProps> = ({ elements, passes, type }) => (
+export const Elements: FunctionComponent<ElementsProps> = ({ elements, type }) => (
   <ol>
     {elements.map((element, index) => (
-      <Element passes={passes} element={element} key={index} type={type} />
+      // eslint-disable-next-line react/no-array-index-key
+      <Element element={element} key={index} type={type} />
     ))}
   </ol>
 );

@@ -28,14 +28,16 @@ To test your project against the current latest version of storybook, you can cl
 git clone https://github.com/storybooks/storybook.git
 cd storybook
 yarn install
-yarn bootstrap --core
+yarn bootstrap
 ```
 
 The bootstrap command might ask which sections of the codebase you want to bootstrap. Unless you're going to work with ReactNative or the Documentation, you can keep the default.
 
 You can also pick directly from CLI:
 
-    yarn bootstrap --core
+```sh
+yarn bootstrap --core
+```
 
 #### 2a. Run unit tests
 
@@ -67,7 +69,7 @@ Before the tests are run, the project must be bootstrapped with core. You can ac
 This option executes tests from `<rootdir>/examples/official-storybook`
 In order for the image snapshots to be correctly generated, you must have a static build of the storybook up-to-date :
 
-```javascript
+```sh
 cd examples/official-storybook
 yarn build-storybook
 cd ../..
@@ -80,60 +82,110 @@ Puppeteer is used to launch and grab screenshots of example pages, while jest is
 
 If you made any changes to the `lib/cli` package, the easiest way to verify that it doesn't break anything is to run e2e tests:
 
-    yarn test --cli
+```sh
+yarn test --cli
+```
 
 This will run a bash script located at `lib/cli/test/run_tests.sh`. It will copy the contents of `fixtures` into a temporary `run` directory, run `getstorybook` in each of the subdirectories, and check that storybook starts successfully using `yarn storybook --smoke-test`.
 
 After that, the `run` directory content will be compared with `snapshots`. You can update the snapshots by passing an `--update` flag:
 
-    yarn test --cli --update
+```sh
+yarn test --cli --update
+```
 
 In that case, please check the git diff before committing to make sure it only contains the intended changes.
 
-#### 2c. Link `storybook` and any other required dependencies
+#### 2c. Run Linter
 
-If you want to test your own existing project using the GitHub version of storybook, you need to `link` the packages you use in your project.
+We use eslint as a linter for all code (including typescript code).
+
+All you have to run is:
 
 ```sh
-    cd app/react
-    yarn link
-
-    cd <your-project>
-    yarn link @storybook/react
-
-    # repeat with whichever other parts of the monorepo you are using.
+yarn lint
 ```
 
+It can be immensely helpful to get feedback in your editor, if you're using VsCode, you should install the `eslint` plugin and configure it with these settings:
+
+```plaintext
+"eslint.autoFixOnSave": true,
+"eslint.packageManager": "yarn",
+"eslint.options": {
+  "cache": true,
+  "cacheLocation": ".cache/eslint",
+  "extensions": [".js", ".jsx", ".mjs", ".json", ".ts", ".tsx"]
+},
+"eslint.validate": [
+  "javascript",
+  "javascriptreact",
+  {"language": "typescript", "autoFix": true },
+  {"language": "typescriptreact", "autoFix": true }
+],
+"eslint.alwaysShowStatus": true
+```
+
+This should enable auto-fix for all source files, and give linting warnings and errors within your editor.
+
 ### Reproductions
+
+#### In the monorepo
 
 The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch.
 
 A good way to do that is using the example `cra-kitchen-sink` app embedded in this repository:
 
 ```sh
-    # Download and build this repository:
-    git clone https://github.com/storybooks/storybook.git
-    cd storybook
-    yarn install
-    yarn bootstrap --core
+# Download and build this repository:
+git clone https://github.com/storybooks/storybook.git
+cd storybook
+yarn install
+yarn bootstrap --core
 
-    # make changes to try and reproduce the problem, such as adding components + stories
-    cd examples/cra-kitchen-sink
-    yarn storybook
+# make changes to try and reproduce the problem, such as adding components + stories
+cd examples/cra-kitchen-sink
+yarn storybook
 
-    # see if you can see the problem, if so, commit it:
-    git checkout "branch-describing-issue"
-    git add -A
-    git commit -m "reproduction for issue #123"
+# see if you can see the problem, if so, commit it:
+git checkout "branch-describing-issue"
+git add -A
+git commit -m "reproduction for issue #123"
 
-    # fork the storybook repo to your account, then add the resulting remote
-    git remote add <your-username> https://github.com/<your-username>/storybook.git
-    git push -u <your-username> master
+# fork the storybook repo to your account, then add the resulting remote
+git remote add <your-username> https://github.com/<your-username>/storybook.git
+git push -u <your-username> master
 ```
 
 If you follow that process, you can then link to the GitHub repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
 
 **NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however, you can still modify storybook's to mirror your app's version of the storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
+
+#### Outside the monorepo
+
+Sometimes your storybook is deeply ingrained in your own setup and it's hard to create a minimal viable reproduction somewhere else.
+
+Inside the storybook repo we have a script that allows you to test the packages inside this repo in your own seperate project.
+
+You can use `npm link` on all packages, but npm linking is cumbersome and has subtle differences from what happens in a registry-based installation.
+So the way our script works is that it:
+
+- sets up a npm registry running on your own local machine
+- changes your default registry to this local one
+- builds all packages in the storybook repo
+- publishes all packages as latest
+
+Our script leaves the local registry running, for **as long as you keep it running** you can install storybook packages from this local registry.
+
+- Navigate to your own project and then change `package.json` so the storybook packages match the version of the one you just published.
+- Then just do the normal install procedure using `yarn` or `npm`
+- Start using your storybook as normally.
+
+If you've made a change to storybook's codebase and would want this change to be reflected in your app:
+
+- Ensure the storybook packages are transpiled, by either having run `yarn dev` or `yarn bootstrap --core`.
+- Go to the terminal where the local regitry is running and press `<Enter>`. This will kick off a new publish.
+- Run the install procedure again in your local repo, (you may need to clean out node_modules first).
+- Restart your storybook.
 
 ### Updating Tests
 
@@ -141,7 +193,7 @@ Before any contributes are submitted in a PR, make sure to add or update meaning
 When creating new unit test files, the tests should adhere to a particular folder structure and naming convention, as defined below.
 
 ```sh
-#Proper naming convention and structure for js tests files
+# Proper naming convention and structure for js tests files
 +-- parentFolder
 |   +-- [filename].js
 |   +-- [filename].test.js
@@ -149,14 +201,9 @@ When creating new unit test files, the tests should adhere to a particular folde
 
 ## Pull Requests (PRs)
 
-We welcome your contributions. There are many ways you can help us. This is few of those ways:
+We welcome all contributions. There are many ways you can help us. This is few of those ways:
 
-- Fix typos and add more [documentation](https://github.com/storybooks/storybook/labels/needs%20docs).
-- Try to fix some [bugs](https://github.com/storybooks/storybook/labels/bug).
-- Work on [API](https://github.com/storybooks/storybook/labels/enhancement%3A%20api), [Addons](https://github.com/storybooks/storybook/labels/enhancement%3A%20addons), [UI](https://github.com/storybooks/storybook/labels/enhancement%3A%20ui) or [Webpack](https://github.com/storybooks/storybook/labels/enhancement%3A%20webpack) use enhancements and new [features](https://github.com/storybooks/storybook/labels/feature%20request).
-- Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (especially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
-
-Before you submit a new PR, make sure you run `yarn test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
+Before you submit a new PR, make sure you run `yarn test`. Do not submit a PR if tests are failing. If you need any help, the best way is to [join the discord server and ask in the maintenance channel](https://discord.gg/sMFvFsG).
 
 ### Reviewing PRs
 

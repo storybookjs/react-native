@@ -110,7 +110,7 @@ export class SyntaxHighlighter extends Component<
     let formattedCode = code;
     if (language === 'jsx') {
       try {
-        // tslint:disable-next-line:no-object-literal-type-assertion
+        // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
         formattedCode = beautify(code, {
           indent_size: 2,
           brace_style: 'collapse-preserve-inline',
@@ -119,7 +119,8 @@ export class SyntaxHighlighter extends Component<
           e4x: true, // e4x is not available in JsBeautify types for now
         } as JsBeautifyOptions);
       } catch (error) {
-        console.warn("Couldn't format code", formattedCode); // eslint-disable-line no-console
+        // eslint-disable-next-line no-console
+        console.warn("Couldn't format code", formattedCode);
       }
     }
     return formattedCode;
