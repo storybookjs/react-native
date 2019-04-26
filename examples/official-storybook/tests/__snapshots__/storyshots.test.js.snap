@@ -247,6 +247,9 @@ exports[`Storyshots Basics|Brand/StorybookLogo normal 1`] = `
   viewBox="0 0 200 40"
   width="200px"
 >
+  <title>
+    Storybook logo
+  </title>
   <defs>
     <path
       d="M1.2 36.9L0 3.9c0-1.1.8-2 1.9-2.1l28-1.8a2 2 0 0 1 2.2 1.9 2 2 0 0 1 0 .1v36a2 2 0 0 1-2 2 2 2 0 0 1-.1 0L3.2 38.8a2 2 0 0 1-2-2z"
@@ -5827,6 +5830,7 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
     <a
       class="emotion-1"
       href="https://storybook.js.org"
+      target="_blank"
     >
       <span
         class="emotion-0"
@@ -5837,6 +5841,7 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
     <a
       class="emotion-1"
       href="https://github.com/storybooks/storybook"
+      target="_blank"
     >
       <span
         class="emotion-0"
@@ -5847,6 +5852,7 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
     <a
       class="emotion-1"
       href="https://storybook.js.org/support"
+      target="_blank"
     >
       <span
         class="emotion-0"
@@ -7351,6 +7357,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             <a
               class="emotion-91"
               href="https://storybook.js.org"
+              target="_blank"
             >
               <span
                 class="emotion-90"
@@ -7361,6 +7368,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             <a
               class="emotion-91"
               href="https://github.com/storybooks/storybook"
+              target="_blank"
             >
               <span
                 class="emotion-90"
@@ -7371,6 +7379,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             <a
               class="emotion-91"
               href="https://storybook.js.org/support"
+              target="_blank"
             >
               <span
                 class="emotion-90"
@@ -7464,6 +7473,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 
 .emotion-3 {
   color: #333333;
+  font-weight: 400;
 }
 
 .emotion-6 {
@@ -7551,6 +7561,7 @@ exports[`Storyshots UI|Sidebar/ListItemIcon all 1`] = `
 
 .emotion-3 {
   color: #333333;
+  font-weight: 400;
 }
 
 .emotion-6 {
@@ -8355,7 +8366,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
 }
 
 <nav
-  class="container emotion-78"
+  class="container sidebar-container emotion-78"
 >
   <div
     class="emotion-77"
@@ -8381,7 +8392,7 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
             class="simplebar-content"
           >
             <div
-              class="emotion-7"
+              class="sidebar-header emotion-7"
             >
               <div
                 class="emotion-2"
@@ -8395,7 +8406,6 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                     class="emotion-0"
                     height="40px"
                     role="img"
-                    title="Storybook"
                     viewBox="0 0 200 40"
                     width="200px"
                   >
@@ -8462,13 +8472,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
               class="emotion-76"
             >
               <div
-                class="emotion-11"
+                class="sidebar-item emotion-11"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8481,13 +8491,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-11"
+                class="sidebar-item emotion-11"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8500,13 +8510,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-19"
+                class="sidebar-item emotion-19"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8519,13 +8529,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-19"
+                class="sidebar-item emotion-19"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8538,13 +8548,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-27"
+                class="sidebar-item emotion-27"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8557,13 +8567,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-31"
+                class="sidebar-item emotion-31"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8576,13 +8586,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-31"
+                class="sidebar-item emotion-31"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8595,13 +8605,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-31"
+                class="sidebar-item emotion-31"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8614,13 +8624,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-19"
+                class="sidebar-item emotion-19"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8633,13 +8643,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-19"
+                class="sidebar-item emotion-19"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8652,13 +8662,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-19"
+                class="sidebar-item emotion-19"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8671,13 +8681,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-27"
+                class="sidebar-item emotion-27"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8690,13 +8700,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-27"
+                class="sidebar-item emotion-27"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8709,13 +8719,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-27"
+                class="sidebar-item emotion-27"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8728,13 +8738,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-31"
+                class="sidebar-item emotion-31"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8747,13 +8757,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-11"
+                class="sidebar-item emotion-11"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -8766,13 +8776,13 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
                 </span>
               </div>
               <div
-                class="emotion-11"
+                class="sidebar-item emotion-11"
               >
                 <span
-                  class="emotion-8"
+                  class="sidebar-expander emotion-8"
                 />
                 <svg
-                  class="emotion-10"
+                  class="sidebar-svg-icon emotion-10"
                   viewBox="0 0 1024 1024"
                 >
                   <path
@@ -9788,7 +9798,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
 }
 
 <nav
-  class="container emotion-49"
+  class="container sidebar-container emotion-49"
 >
   <div
     class="emotion-48"
@@ -9814,7 +9824,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
             class="simplebar-content"
           >
             <div
-              class="emotion-7"
+              class="sidebar-header emotion-7"
             >
               <div
                 class="emotion-2"
@@ -9828,7 +9838,6 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                     class="emotion-0"
                     height="40px"
                     role="img"
-                    title="Storybook"
                     viewBox="0 0 200 40"
                     width="200px"
                   >
@@ -9935,7 +9944,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                 class="emotion-32"
               >
                 <div
-                  class="emotion-15"
+                  class="sidebar-subheading emotion-15"
                   type="section"
                 >
                   Root 1
@@ -9946,14 +9955,14 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                   title="Child A2"
                 >
                   <div
-                    class="emotion-19"
+                    class="sidebar-item emotion-19"
                     id="1-12"
                   >
                     <span
-                      class="emotion-16"
+                      class="sidebar-expander emotion-16"
                     />
                     <svg
-                      class="emotion-18"
+                      class="sidebar-svg-icon emotion-18"
                       viewBox="0 0 1024 1024"
                     >
                       <path
@@ -9976,14 +9985,14 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                     title="GrandChild A1.1"
                   >
                     <div
-                      class="emotion-24"
+                      class="sidebar-item selected emotion-24"
                       id="1-12-121"
                     >
                       <span
-                        class="emotion-21"
+                        class="sidebar-expander emotion-21"
                       />
                       <svg
-                        class="emotion-23"
+                        class="sidebar-svg-icon emotion-23"
                         viewBox="0 0 1024 1024"
                       >
                         <path
@@ -10003,14 +10012,14 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                     title="GrandChild A1.2"
                   >
                     <div
-                      class="emotion-29"
+                      class="sidebar-item emotion-29"
                       id="1-12-122"
                     >
                       <span
-                        class="emotion-21"
+                        class="sidebar-expander emotion-21"
                       />
                       <svg
-                        class="emotion-28"
+                        class="sidebar-svg-icon emotion-28"
                         viewBox="0 0 1024 1024"
                       >
                         <path
@@ -10029,7 +10038,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                 class="emotion-32"
               >
                 <div
-                  class="emotion-15"
+                  class="sidebar-subheading emotion-15"
                   type="section"
                 >
                   Root 3
@@ -10040,14 +10049,14 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                   title="Child A2"
                 >
                   <div
-                    class="emotion-19"
+                    class="sidebar-item emotion-19"
                     id="3-32"
                   >
                     <span
-                      class="emotion-34"
+                      class="sidebar-expander emotion-34"
                     />
                     <svg
-                      class="emotion-18"
+                      class="sidebar-svg-icon emotion-18"
                       viewBox="0 0 1024 1024"
                     >
                       <path
@@ -10065,7 +10074,7 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                 class="emotion-32"
               >
                 <div
-                  class="emotion-15"
+                  class="sidebar-subheading emotion-15"
                   type="section"
                 >
                   Others
@@ -10076,14 +10085,14 @@ exports[`Storyshots UI|Sidebar/Sidebar simple 1`] = `
                   title="Group 1"
                 >
                   <div
-                    class="emotion-19"
+                    class="sidebar-item emotion-19"
                     id="2"
                   >
                     <span
-                      class="emotion-34"
+                      class="sidebar-expander emotion-34"
                     />
                     <svg
-                      class="emotion-43"
+                      class="sidebar-svg-icon emotion-43"
                       viewBox="0 0 1024 1024"
                     >
                       <path
@@ -10258,7 +10267,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
 
 .emotion-0 {
   width: auto;
-  height: 100%;
+  height: auto;
   display: block;
   max-width: 100%;
 }
@@ -10397,7 +10406,7 @@ exports[`Storyshots UI|Sidebar/SidebarHeading customBrandImage 1`] = `
 
 .emotion-0 {
   width: auto;
-  height: 100%;
+  height: auto;
   display: block;
   max-width: 100%;
 }
@@ -11346,7 +11355,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading menuHighlighted 1`] = `
           class="emotion-0"
           height="40px"
           role="img"
-          title="Storybook"
           viewBox="0 0 200 40"
           width="200px"
         >
@@ -11987,7 +11995,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standard 1`] = `
           class="emotion-0"
           height="40px"
           role="img"
-          title="Storybook"
           viewBox="0 0 200 40"
           width="200px"
         >
@@ -12325,7 +12332,6 @@ exports[`Storyshots UI|Sidebar/SidebarHeading standardNoLink 1`] = `
         class="emotion-0"
         height="40px"
         role="img"
-        title="Storybook"
         viewBox="0 0 200 40"
         width="200px"
       >
@@ -12515,13 +12521,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem component 1`] = `
   style="width:240px;margin:1rem;border:1px dotted #ccc"
 >
   <div
-    class="emotion-3"
+    class="sidebar-item emotion-3"
   >
     <span
-      class="emotion-0"
+      class="sidebar-expander emotion-0"
     />
     <svg
-      class="emotion-2"
+      class="sidebar-svg-icon emotion-2"
       viewBox="0 0 1024 1024"
     >
       <path
@@ -12667,13 +12673,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem componentExpanded 1`] = `
   style="width:240px;margin:1rem;border:1px dotted #ccc"
 >
   <div
-    class="emotion-3"
+    class="sidebar-item emotion-3"
   >
     <span
-      class="emotion-0"
+      class="sidebar-expander emotion-0"
     />
     <svg
-      class="emotion-2"
+      class="sidebar-svg-icon emotion-2"
       viewBox="0 0 1024 1024"
     >
       <path
@@ -12813,13 +12819,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem group 1`] = `
   style="width:240px;margin:1rem;border:1px dotted #ccc"
 >
   <div
-    class="emotion-3"
+    class="sidebar-item emotion-3"
   >
     <span
-      class="emotion-0"
+      class="sidebar-expander emotion-0"
     />
     <svg
-      class="emotion-2"
+      class="sidebar-svg-icon emotion-2"
       viewBox="0 0 1024 1024"
     >
       <path
@@ -13047,13 +13053,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
   style="width:240px;margin:1rem;border:1px dotted #ccc"
 >
   <div
-    class="emotion-3"
+    class="sidebar-item emotion-3"
   >
     <span
-      class="emotion-0"
+      class="sidebar-expander emotion-0"
     />
     <svg
-      class="emotion-2"
+      class="sidebar-svg-icon emotion-2"
       viewBox="0 0 1024 1024"
     >
       <path
@@ -13482,13 +13488,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
 >
   <div>
     <div
-      class="emotion-3"
+      class="sidebar-item emotion-3"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -13501,13 +13507,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
       </span>
     </div>
     <div
-      class="emotion-3"
+      class="sidebar-item emotion-3"
     >
       <span
-        class="emotion-4"
+        class="sidebar-expander emotion-4"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -13520,13 +13526,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
       </span>
     </div>
     <div
-      class="emotion-11"
+      class="sidebar-item emotion-11"
     >
       <span
-        class="emotion-4"
+        class="sidebar-expander emotion-4"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -13539,13 +13545,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
       </span>
     </div>
     <div
-      class="emotion-15"
+      class="sidebar-item emotion-15"
     >
       <span
-        class="emotion-4"
+        class="sidebar-expander emotion-4"
       />
       <svg
-        class="emotion-14"
+        class="sidebar-svg-icon emotion-14"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -13558,13 +13564,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem nestedDepths 1`] = `
       </span>
     </div>
     <div
-      class="emotion-19"
+      class="sidebar-item emotion-19"
     >
       <span
-        class="emotion-16"
+        class="sidebar-expander emotion-16"
       />
       <svg
-        class="emotion-18"
+        class="sidebar-svg-icon emotion-18"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -13707,13 +13713,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem story 1`] = `
   style="width:240px;margin:1rem;border:1px dotted #ccc"
 >
   <div
-    class="emotion-3"
+    class="sidebar-item emotion-3"
   >
     <span
-      class="emotion-0"
+      class="sidebar-expander emotion-0"
     />
     <svg
-      class="emotion-2"
+      class="sidebar-svg-icon emotion-2"
       viewBox="0 0 1024 1024"
     >
       <path
@@ -13851,13 +13857,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem storySelected 1`] = `
   style="width:240px;margin:1rem;border:1px dotted #ccc"
 >
   <div
-    class="emotion-3"
+    class="sidebar-item selected emotion-3"
   >
     <span
-      class="emotion-0"
+      class="sidebar-expander emotion-0"
     />
     <svg
-      class="emotion-2"
+      class="sidebar-svg-icon emotion-2"
       viewBox="0 0 1024 1024"
     >
       <path
@@ -13997,13 +14003,13 @@ exports[`Storyshots UI|Sidebar/SidebarItem with long name 1`] = `
   style="width:240px;margin:1rem;border:1px dotted #ccc"
 >
   <div
-    class="emotion-3"
+    class="sidebar-item emotion-3"
   >
     <span
-      class="emotion-0"
+      class="sidebar-expander emotion-0"
     />
     <svg
-      class="emotion-2"
+      class="sidebar-svg-icon emotion-2"
       viewBox="0 0 1024 1024"
     >
       <path
@@ -15471,13 +15477,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
     class="emotion-68"
   >
     <div
-      class="emotion-3"
+      class="sidebar-item emotion-3"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15490,13 +15496,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-3"
+      class="sidebar-item emotion-3"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15509,13 +15515,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-11"
+      class="sidebar-item emotion-11"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15528,13 +15534,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-11"
+      class="sidebar-item emotion-11"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15547,13 +15553,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-19"
+      class="sidebar-item emotion-19"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15566,13 +15572,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-23"
+      class="sidebar-item emotion-23"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15585,13 +15591,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-23"
+      class="sidebar-item emotion-23"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15604,13 +15610,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-23"
+      class="sidebar-item emotion-23"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15623,13 +15629,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-11"
+      class="sidebar-item emotion-11"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15642,13 +15648,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-11"
+      class="sidebar-item emotion-11"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15661,13 +15667,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-11"
+      class="sidebar-item emotion-11"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15680,13 +15686,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-19"
+      class="sidebar-item emotion-19"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15699,13 +15705,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-19"
+      class="sidebar-item emotion-19"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15718,13 +15724,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-19"
+      class="sidebar-item emotion-19"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15737,13 +15743,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-23"
+      class="sidebar-item emotion-23"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15756,13 +15762,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-3"
+      class="sidebar-item emotion-3"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -15775,13 +15781,13 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
       </span>
     </div>
     <div
-      class="emotion-3"
+      class="sidebar-item emotion-3"
     >
       <span
-        class="emotion-0"
+        class="sidebar-expander emotion-0"
       />
       <svg
-        class="emotion-2"
+        class="sidebar-svg-icon emotion-2"
         viewBox="0 0 1024 1024"
       >
         <path
@@ -16578,14 +16584,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
         title="Parent A"
       >
         <div
-          class="emotion-10"
+          class="sidebar-item emotion-10"
           id="1"
         >
           <span
-            class="emotion-7"
+            class="sidebar-expander emotion-7"
           />
           <svg
-            class="emotion-9"
+            class="sidebar-svg-icon emotion-9"
             viewBox="0 0 1024 1024"
           >
             <path
@@ -16608,14 +16614,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
           title="Child A1"
         >
           <div
-            class="emotion-15"
+            class="sidebar-item emotion-15"
             id="1-11"
           >
             <span
-              class="emotion-12"
+              class="sidebar-expander emotion-12"
             />
             <svg
-              class="emotion-14"
+              class="sidebar-svg-icon emotion-14"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -16634,14 +16640,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
           title="Child A2"
         >
           <div
-            class="emotion-15"
+            class="sidebar-item emotion-15"
             id="1-12"
           >
             <span
-              class="emotion-7"
+              class="sidebar-expander emotion-7"
             />
             <svg
-              class="emotion-19"
+              class="sidebar-svg-icon emotion-19"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -16664,14 +16670,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
             title="GrandChild A1.1"
           >
             <div
-              class="emotion-25"
+              class="sidebar-item selected emotion-25"
               id="1-12-121"
             >
               <span
-                class="emotion-12"
+                class="sidebar-expander emotion-12"
               />
               <svg
-                class="emotion-24"
+                class="sidebar-svg-icon emotion-24"
                 viewBox="0 0 1024 1024"
               >
                 <path
@@ -16691,14 +16697,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
             title="GrandChild A1.2"
           >
             <div
-              class="emotion-30"
+              class="sidebar-item emotion-30"
               id="1-12-122"
             >
               <span
-                class="emotion-12"
+                class="sidebar-expander emotion-12"
               />
               <svg
-                class="emotion-14"
+                class="sidebar-svg-icon emotion-14"
                 viewBox="0 0 1024 1024"
               >
                 <path
@@ -16719,14 +16725,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories noRoot 1`] = `
         title="Parent B"
       >
         <div
-          class="emotion-10"
+          class="sidebar-item emotion-10"
           id="2"
         >
           <span
-            class="emotion-34"
+            class="sidebar-expander emotion-34"
           />
           <svg
-            class="emotion-19"
+            class="sidebar-svg-icon emotion-19"
             viewBox="0 0 1024 1024"
           >
             <path
@@ -17490,7 +17496,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       class="emotion-24"
     >
       <div
-        class="emotion-7"
+        class="sidebar-subheading emotion-7"
         type="section"
       >
         Root 1
@@ -17501,14 +17507,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
         title="Child A2"
       >
         <div
-          class="emotion-11"
+          class="sidebar-item emotion-11"
           id="1-12"
         >
           <span
-            class="emotion-8"
+            class="sidebar-expander emotion-8"
           />
           <svg
-            class="emotion-10"
+            class="sidebar-svg-icon emotion-10"
             viewBox="0 0 1024 1024"
           >
             <path
@@ -17531,14 +17537,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
           title="GrandChild A1.1"
         >
           <div
-            class="emotion-16"
+            class="sidebar-item selected emotion-16"
             id="1-12-121"
           >
             <span
-              class="emotion-13"
+              class="sidebar-expander emotion-13"
             />
             <svg
-              class="emotion-15"
+              class="sidebar-svg-icon emotion-15"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -17558,14 +17564,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
           title="GrandChild A1.2"
         >
           <div
-            class="emotion-21"
+            class="sidebar-item emotion-21"
             id="1-12-122"
           >
             <span
-              class="emotion-13"
+              class="sidebar-expander emotion-13"
             />
             <svg
-              class="emotion-20"
+              class="sidebar-svg-icon emotion-20"
               viewBox="0 0 1024 1024"
             >
               <path
@@ -17584,7 +17590,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       class="emotion-24"
     >
       <div
-        class="emotion-7"
+        class="sidebar-subheading emotion-7"
         type="section"
       >
         Root 3
@@ -17595,14 +17601,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
         title="Child A2"
       >
         <div
-          class="emotion-11"
+          class="sidebar-item emotion-11"
           id="3-32"
         >
           <span
-            class="emotion-26"
+            class="sidebar-expander emotion-26"
           />
           <svg
-            class="emotion-10"
+            class="sidebar-svg-icon emotion-10"
             viewBox="0 0 1024 1024"
           >
             <path
@@ -17620,7 +17626,7 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
       class="emotion-24"
     >
       <div
-        class="emotion-7"
+        class="sidebar-subheading emotion-7"
         type="section"
       >
         Others
@@ -17631,14 +17637,14 @@ exports[`Storyshots UI|Sidebar/SidebarStories withRoot 1`] = `
         title="Group 1"
       >
         <div
-          class="emotion-11"
+          class="sidebar-item emotion-11"
           id="2"
         >
           <span
-            class="emotion-26"
+            class="sidebar-expander emotion-26"
           />
           <svg
-            class="emotion-35"
+            class="sidebar-svg-icon emotion-35"
             viewBox="0 0 1024 1024"
           >
             <path

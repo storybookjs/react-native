@@ -1,24 +1,26 @@
 import fs from 'fs';
 import path from 'path';
-import { getReactScriptsPath, getTypeScriptRules, applyCRAWebpackConfig } from './cra-config';
+import {
+  applyCRAWebpackConfig,
+  getModulePath,
+  getReactScriptsPath,
+  getTypeScriptRules,
+} from './cra-config';
 import mockRules from './__mocks__/mockRules';
 import mockConfig from './__mocks__/mockConfig';
 
 jest.mock('fs', () => ({
-  realpathSync: jest.fn(),
+  realpathSync: jest.fn(() => '/test-project'),
   readFileSync: jest.fn(),
-  existsSync: () => true,
+  existsSync: jest.fn(() => true),
 }));
 jest.mock('mini-css-extract-plugin', () => {});
 
 const SCRIPT_PATH = '.bin/react-scripts';
 
-describe('cra-config', () => {
-  beforeEach(() => {
-    fs.realpathSync.mockReset();
-    fs.realpathSync.mockImplementationOnce(() => '/test-project');
-  });
+const stripCwd = loaderPath => loaderPath.replace(process.cwd(), '');
 
+describe('cra-config', () => {
   describe('when used with the default react-scripts package', () => {
     beforeEach(() => {
       fs.realpathSync.mockImplementationOnce(filePath =>
@@ -64,7 +66,7 @@ esac
 if [ -x "$basedir/node" ]; then
   "$basedir/node"  "$basedir/../custom-react-scripts/bin/react-scripts.js" "$@"
   ret=$?
-else 
+else
   node  "$basedir/../custom-react-scripts/bin/react-scripts.js" "$@"
   ret=$?
 fi
@@ -92,6 +94,21 @@ exit $ret`
       const rules = getTypeScriptRules(mockRules, './.storybook');
       expect(rules[0].include.findIndex(string => string.includes('.storybook'))).toEqual(1);
     });
+
+    it('should get the baseUrl from a tsconfig.json', () => {
+      jest.spyOn(path, 'join').mockImplementation(() => 'project/tsconfig.json');
+      jest.mock(
+        'project/tsconfig.json',
+        () => ({
+          compilerOptions: {
+            baseUrl: 'src',
+          },
+        }),
+        { virtual: true }
+      );
+      expect(getModulePath()).toEqual('src');
+      path.join.mockRestore();
+    });
   });
 
   describe('when used with react-scripts < 2.1.0', () => {
@@ -103,7 +120,10 @@ exit $ret`
     });
 
     it('should apply styling webpack rules', () => {
-      expect(applyCRAWebpackConfig(mockConfig, '/test-project')).toMatchSnapshot();
+      const webpackConfig = applyCRAWebpackConfig(mockConfig, '/test-project');
+      // We don't want full paths in snapshots.
+      webpackConfig.resolveLoader.modules = webpackConfig.resolveLoader.modules.map(stripCwd);
+      expect(webpackConfig).toMatchSnapshot();
     });
   });
 
@@ -116,7 +136,10 @@ exit $ret`
     });
 
     it('should apply Babel, styling rules and merge plugins', () => {
-      expect(applyCRAWebpackConfig(mockConfig, '/test-project')).toMatchSnapshot();
+      const webpackConfig = applyCRAWebpackConfig(mockConfig, '/test-project');
+      // We don't want full paths in snapshots.
+      webpackConfig.resolveLoader.modules = webpackConfig.resolveLoader.modules.map(stripCwd);
+      expect(webpackConfig).toMatchSnapshot();
     });
   });
 });

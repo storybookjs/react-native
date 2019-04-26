@@ -8,7 +8,7 @@
   },
   "snapshotSerializers": ["jest-emotion", "enzyme-to-json/serializer"],
   "setupFiles": ["raf/polyfill"],
-  "setupTestFrameworkScriptFile": "<rootDir>/scripts/jest.init.js",
+  "setupFilesAfterEnv": ["<rootDir>/scripts/jest.init.js"],
   "moduleNameMapper": {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>__mocks__/fileMock.js",
     "\\.s?css$": "<rootDir>__mocks__/styleMock.js"

@@ -2,8 +2,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { ThemeProvider, themes, convert } from '@storybook/theming';
-import HighlightToggle from './HighlightToggle.tsx';
-import store from '../../redux-config.tsx';
+import HighlightToggle from './HighlightToggle';
+import store from '../../redux-config';
 
 function ThemedHighlightToggle(props) {
   return (
