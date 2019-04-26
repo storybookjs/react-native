@@ -1,13 +1,13 @@
 import store, { StoreAPI } from 'store2';
 import storeSetup from './lib/store-setup';
 
+import { State } from './index';
+
 // setting up the store, overriding set and get to use telejson
 // @ts-ignore
 storeSetup(store._);
 
 export const STORAGE_KEY = '@storybook/ui/store';
-
-import { State } from './index';
 
 function get(storage: StoreAPI) {
   const data = storage.get(STORAGE_KEY);
@@ -47,6 +47,7 @@ type CallbackOrOptions = CallBack | Options;
 // It has been augmented to persist state to local/sessionStorage
 export default class Store {
   upstreamGetState: GetState;
+
   upstreamSetState: SetState;
 
   constructor({ setState, getState }: Upstream) {
@@ -68,7 +69,9 @@ export default class Store {
   }
 
   async setState(inputPatch: InputPatch, options?: Options): Promise<State>;
+
   async setState(inputPatch: InputPatch, callback?: CallBack, options?: Options): Promise<State>;
+
   async setState(
     inputPatch: InputPatch,
     cbOrOptions?: CallbackOrOptions,

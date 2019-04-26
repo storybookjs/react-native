@@ -33,11 +33,11 @@ const MessageWrapper = styled.div`
 export interface TooltipMessageProps {
   title?: ReactNode;
   desc?: ReactNode;
-  links?: Array<{
+  links?: {
     title: string;
     href?: string;
     onClick?: () => void;
-  }>;
+  }[];
 }
 
 export const TooltipMessage: FunctionComponent<TooltipMessageProps> = ({ title, desc, links }) => {

@@ -11,12 +11,15 @@ const splitPath = /\/([^/]+)\/([^/]+)?/;
 
 // Remove punctuation https://gist.github.com/davidjrice/9d2af51100e41c6c4b4a
 export const sanitize = (string: string) => {
-  return string
-    .toLowerCase()
-    .replace(/[ ’–—―′¿'`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-+/, '')
-    .replace(/-+$/, '');
+  return (
+    string
+      .toLowerCase()
+      // eslint-disable-next-line no-useless-escape
+      .replace(/[ ’–—―′¿'`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-+/, '')
+      .replace(/-+$/, '')
+  );
 };
 
 const sanitizeSafe = (string: string, part: string) => {

@@ -18,5 +18,6 @@ import { Component, Input, ChangeDetectionStrategy, HostBinding } from '@angular
 })
 export class OnPushBoxComponent {
   @Input() word: string;
+
   @Input() @HostBinding('style.background-color') bgColor: string;
 }

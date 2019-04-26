@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { OPT_OUT } from '../../shared/constants';
 import {
   AddonOptions,
@@ -5,7 +6,7 @@ import {
   ContextNode,
   GenericProp,
   PropsMap,
-} from '../../shared/types';
+} from '../../shared/types.d';
 
 /**
  * @private

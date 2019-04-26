@@ -65,7 +65,7 @@ type Story = StoryInput & Group;
 export interface StoriesHash {
   [id: string]: Group | Story;
 }
-export type StoriesList = Array<Group | Story>;
+export type StoriesList = (Group | Story)[];
 export type GroupsList = Group[];
 
 export interface StoriesRaw {

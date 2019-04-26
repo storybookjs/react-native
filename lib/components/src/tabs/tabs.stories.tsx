@@ -16,6 +16,7 @@ interface FibonacciMap {
 }
 
 function fibonacci(num: number, memo?: FibonacciMap): number {
+  /* eslint-disable no-param-reassign */
   if (!memo) {
     memo = {};
   }
@@ -28,6 +29,7 @@ function fibonacci(num: number, memo?: FibonacciMap): number {
 
   memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
   return memo[num];
+  /* eslint-enable no-param-reassign */
 }
 
 interface Panels {
@@ -40,7 +42,6 @@ interface Panels {
 const panels: Panels = {
   test1: {
     title: 'Tab title #1',
-    // eslint-disable-next-line react/prop-types
     render: ({ active, key }) =>
       active ? (
         <div id="test1" key={key}>
@@ -50,7 +51,6 @@ const panels: Panels = {
   },
   test2: {
     title: 'Tab title #2',
-    // eslint-disable-next-line react/prop-types
     render: ({ active, key }) => (
       <div
         key={key}
@@ -63,7 +63,6 @@ const panels: Panels = {
   },
   test3: {
     title: 'Tab with scroll!',
-    // eslint-disable-next-line react/prop-types
     render: ({ active, key }) =>
       active ? (
         <div id="test3" key={key}>
@@ -81,7 +80,6 @@ const panels: Panels = {
   },
   test4: {
     title: 'Tab title #4',
-    // eslint-disable-next-line react/prop-types
     render: ({ active, key }) =>
       active ? (
         <div key={key} id="test4">
@@ -91,7 +89,6 @@ const panels: Panels = {
   },
   test5: {
     title: 'Tab title #5',
-    // eslint-disable-next-line react/prop-types
     render: ({ active, key }) =>
       active ? (
         <div key={key} id="test5">
@@ -101,7 +98,6 @@ const panels: Panels = {
   },
   test6: {
     title: 'Tab title #6',
-    // eslint-disable-next-line react/prop-types
     render: ({ active, key }) => (
       <TabWrapper key={key} active={active} render={() => <div>CONTENT 6</div>} />
     ),

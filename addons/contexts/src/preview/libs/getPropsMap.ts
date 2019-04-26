@@ -1,5 +1,6 @@
+/* eslint-disable no-underscore-dangle */
 import { OPT_OUT } from '../../shared/constants';
-import { ContextNode, GenericProp, PropsMap, SelectionState } from '../../shared/types';
+import { ContextNode, GenericProp, PropsMap, SelectionState } from '../../shared/types.d';
 
 /**
  * @private
@@ -34,6 +35,7 @@ type getPropsMap = (contextNodes: ContextNode[], selectionState: SelectionState)
 
 export const getPropsMap: getPropsMap = (contextNodes, selectionState) =>
   contextNodes.reduce((agg, { nodeId, params, options }) => {
+    // eslint-disable-next-line no-param-reassign
     agg[nodeId] = _getPropsByParamName(params, selectionState[nodeId], options);
     return agg;
   }, Object());

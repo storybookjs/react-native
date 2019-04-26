@@ -1,5 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { AppPage } from './app.po';
-// tslint:disable-next-line:no-implicit-dependencies
 import 'jasmine';
 
 describe('ng5test App', () => {

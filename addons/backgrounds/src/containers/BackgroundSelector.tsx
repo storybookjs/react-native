@@ -6,7 +6,7 @@ import { Global, Theme } from '@storybook/theming';
 
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
 
-import { PARAM_KEY } from '../constants';
+import { PARAM_KEY, EVENTS } from '../constants';
 import { ColorIcon } from '../components/ColorIcon';
 
 interface Item {
@@ -93,6 +93,7 @@ const getDisplayedItems = memoize(10)((list: Input[], selected: string | null, c
 });
 
 interface GlobalState {
+  name: string | undefined;
   selected: string | undefined;
 }
 
@@ -109,17 +110,21 @@ export class BackgroundSelector extends Component<Props, State> {
     expanded: false,
   };
 
-  change = (args: GlobalState) => {
-    if (this.state.expanded) {
+  change = ({ selected, name }: GlobalState) => {
+    const { api } = this.props;
+    const { expanded } = this.state;
+    if (expanded) {
       this.setState({ expanded: false });
     }
-    if (typeof args.selected === 'string') {
-      this.props.api.setAddonState(PARAM_KEY, args.selected);
+    if (typeof selected === 'string') {
+      api.setAddonState(PARAM_KEY, selected);
     }
+    api.emit(EVENTS.UPDATE, { selected, name });
   };
 
   onVisibilityChange = (s: boolean) => {
-    if (this.state.expanded !== s) {
+    const { expanded } = this.state;
+    if (expanded !== s) {
       this.setState({ expanded: s });
     }
   };

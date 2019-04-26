@@ -96,19 +96,36 @@ yarn test --cli --update
 
 In that case, please check the git diff before committing to make sure it only contains the intended changes.
 
-#### 2c. Link `storybook` and any other required dependencies
+#### 2c. Run Linter
 
-If you want to test your own existing project using the GitHub version of storybook, you need to `link` the packages you use in your project.
+We use eslint as a linter for all code (including typescript code).
+
+All you have to run is:
 
 ```sh
-cd app/react
-yarn link
-
-cd <your-project>
-yarn link @storybook/react
-
-# repeat with whichever other parts of the monorepo you are using.
+yarn lint
 ```
+
+It can be immensely helpful to get feedback in your editor, if you're using VsCode, you should install the `eslint` plugin and configure it with these settings:
+
+```plaintext
+"eslint.autoFixOnSave": true,
+"eslint.packageManager": "yarn",
+"eslint.options": {
+  "cache": true,
+  "cacheLocation": ".cache/eslint",
+  "extensions": [".js", ".jsx", ".mjs", ".json", ".ts", ".tsx"]
+},
+"eslint.validate": [
+  "javascript",
+  "javascriptreact",
+  {"language": "typescript", "autoFix": true },
+  {"language": "typescriptreact", "autoFix": true }
+],
+"eslint.alwaysShowStatus": true
+```
+
+This should enable auto-fix for all source files, and give linting warnings and errors within your editor.
 
 ### Reproductions
 

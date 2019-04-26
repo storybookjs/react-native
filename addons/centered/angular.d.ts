@@ -1,4 +1,3 @@
-// tslint:disable-next-line:no-implicit-dependencies
 export interface ICollection {
   [p: string]: any;
 }

@@ -1,5 +1,6 @@
-import { Module, State } from '../index';
 import { ReactElement } from 'react';
+
+import { Module, State } from '../index';
 import { Options } from '../store';
 
 export enum types {
