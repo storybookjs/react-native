@@ -57,7 +57,9 @@ import { CHIP_COLOR } from './chip-color.token';
 })
 export class ChipComponent {
   @Input() displayText: string;
+
   @Output() removeClicked = new EventEmitter();
+
   @HostBinding('style.background-color') backgroundColor: string;
 
   constructor(@Inject(CHIP_COLOR) chipColor: string) {

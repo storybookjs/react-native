@@ -38,10 +38,12 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
   ],
 })
 export class ChipsGroupComponent {
-  @Input() chips: Array<{
+  @Input() chips: {
     id: number;
     text: string;
-  }>;
+  }[];
+
   @Output() removeChipClick = new EventEmitter<number>();
+
   @Output() removeAllChipsClick = new EventEmitter();
 }
