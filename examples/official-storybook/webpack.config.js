@@ -12,8 +12,7 @@ module.exports = async ({ config }) => ({
           {
             loader: 'babel-loader',
             options: {
-              cacheDirectory:
-                '/Users/dev/Projects/GitHub/storybook/core/examples/official-storybook/node_modules/.cache/storybook',
+              cacheDirectory: `.cache/storybook`,
               presets: [
                 ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: 2 }],
                 '@babel/preset-typescript',
