@@ -1066,7 +1066,7 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -1243,6 +1243,239 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
 `;
 
 exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = `
+.emotion-5 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.1);
+  background: #FFFFFF;
+}
+
+.emotion-2 {
+  overflow-y: auto;
+  overflow-x: auto;
+  position: relative;
+}
+
+.emotion-2 code {
+  padding-right: 10px;
+}
+
+.emotion-2 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-2 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.string {
+  color: #A31515;
+}
+
+.emotion-2 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-2 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-2 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.function {
+  color: #393A34;
+}
+
+.emotion-2 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-2 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-2 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-2 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-2 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-2 * .token.tag {
+  color: #800000;
+}
+
+.emotion-2 * .token.selector {
+  color: #800000;
+}
+
+.emotion-2 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-2 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-2 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-2 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-2 * .namespace {
+  opacity: 0.7;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 10px;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #FFFFFF;
+}
+
+.emotion-3 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #333333;
+  background: #FFFFFF;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(0,0,0,.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-3:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-3 + * {
+  border-left: 1px solid rgba(0,0,0,.1);
+  border-radius: 0;
+}
+
+.emotion-3:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+  outline: 0 none;
+}
+
 <div>
   <div
     style="position:relative;z-index:0"
@@ -1301,7 +1534,133 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
           <div
             style="font-size:15px"
           >
-            Sometimes you might want to manually include some code examples:
+            Sometimes you might want to manually include some 
+            <code>
+              code
+            </code>
+             examples:
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-2"
+              data-simplebar="true"
+            >
+              <div
+                class="simplebar-wrapper"
+              >
+                <div
+                  class="simplebar-height-auto-observer-wrapper"
+                >
+                  <div
+                    class="simplebar-height-auto-observer"
+                  />
+                </div>
+                <div
+                  class="simplebar-mask"
+                >
+                  <div
+                    class="simplebar-offset"
+                  >
+                    <div
+                      class="simplebar-content"
+                    >
+                      <pre
+                        class="hljs emotion-1"
+                      >
+                        <code
+                          class="emotion-0"
+                        >
+                          <span
+                            class="token keyword"
+                          >
+                            const
+                          </span>
+                           
+                          <span
+                            class="token function-variable function"
+                          >
+                            Button
+                          </span>
+                           
+                          <span
+                            class="token operator"
+                          >
+                            =
+                          </span>
+                           
+                          <span
+                            class="token punctuation"
+                          >
+                            (
+                          </span>
+                          <span
+                            class="token punctuation"
+                          >
+                            )
+                          </span>
+                           
+                          <span
+                            class="token operator"
+                          >
+                            =&gt;
+                          </span>
+                           
+                          <span
+                            class="token operator"
+                          >
+                            &lt;
+                          </span>
+                          button 
+                          <span
+                            class="token operator"
+                          >
+                            /
+                          </span>
+                          <span
+                            class="token operator"
+                          >
+                            &gt;
+                          </span>
+                          <span
+                            class="token punctuation"
+                          >
+                            ;
+                          </span>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="simplebar-placeholder"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-horizontal"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-vertical"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <button
+                class="emotion-3"
+              >
+                Copy
+              </button>
+            </div>
           </div>
           <div
             style="font-size:15px"
@@ -1349,7 +1708,7 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -1612,7 +1971,7 @@ exports[`Storyshots Addons|Info/Markdown From external Markdown file 1`] = `
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -1887,7 +2246,7 @@ exports[`Storyshots Addons|Info/Markdown From internal Markdown file 1`] = `
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -4240,6 +4599,239 @@ exports[`Storyshots Addons|Info/Parameters Disable the addon entirely 1`] = `
 `;
 
 exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdown variable 1`] = `
+.emotion-5 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.1);
+  background: #FFFFFF;
+}
+
+.emotion-2 {
+  overflow-y: auto;
+  overflow-x: auto;
+  position: relative;
+}
+
+.emotion-2 code {
+  padding-right: 10px;
+}
+
+.emotion-2 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-2 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.string {
+  color: #A31515;
+}
+
+.emotion-2 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-2 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-2 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.function {
+  color: #393A34;
+}
+
+.emotion-2 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-2 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-2 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-2 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-2 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-2 * .token.tag {
+  color: #800000;
+}
+
+.emotion-2 * .token.selector {
+  color: #800000;
+}
+
+.emotion-2 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-2 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-2 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-2 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-2 * .namespace {
+  opacity: 0.7;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 10px;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #FFFFFF;
+}
+
+.emotion-3 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #333333;
+  background: #FFFFFF;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(0,0,0,.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-3:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-3 + * {
+  border-left: 1px solid rgba(0,0,0,.1);
+  border-radius: 0;
+}
+
+.emotion-3:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+  outline: 0 none;
+}
+
 <div>
   <div
     style="position:relative;z-index:0"
@@ -4298,7 +4890,133 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
           <div
             style="font-size:15px"
           >
-            Sometimes you might want to manually include some code examples:
+            Sometimes you might want to manually include some 
+            <code>
+              code
+            </code>
+             examples:
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-2"
+              data-simplebar="true"
+            >
+              <div
+                class="simplebar-wrapper"
+              >
+                <div
+                  class="simplebar-height-auto-observer-wrapper"
+                >
+                  <div
+                    class="simplebar-height-auto-observer"
+                  />
+                </div>
+                <div
+                  class="simplebar-mask"
+                >
+                  <div
+                    class="simplebar-offset"
+                  >
+                    <div
+                      class="simplebar-content"
+                    >
+                      <pre
+                        class="hljs emotion-1"
+                      >
+                        <code
+                          class="emotion-0"
+                        >
+                          <span
+                            class="token keyword"
+                          >
+                            const
+                          </span>
+                           
+                          <span
+                            class="token function-variable function"
+                          >
+                            Button
+                          </span>
+                           
+                          <span
+                            class="token operator"
+                          >
+                            =
+                          </span>
+                           
+                          <span
+                            class="token punctuation"
+                          >
+                            (
+                          </span>
+                          <span
+                            class="token punctuation"
+                          >
+                            )
+                          </span>
+                           
+                          <span
+                            class="token operator"
+                          >
+                            =&gt;
+                          </span>
+                           
+                          <span
+                            class="token operator"
+                          >
+                            &lt;
+                          </span>
+                          button 
+                          <span
+                            class="token operator"
+                          >
+                            /
+                          </span>
+                          <span
+                            class="token operator"
+                          >
+                            &gt;
+                          </span>
+                          <span
+                            class="token punctuation"
+                          >
+                            ;
+                          </span>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="simplebar-placeholder"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-horizontal"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-vertical"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <button
+                class="emotion-3"
+              >
+                Copy
+              </button>
+            </div>
           </div>
           <div
             style="font-size:15px"
@@ -4346,7 +5064,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -4523,6 +5241,239 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
 `;
 
 exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with markdown inline 1`] = `
+.emotion-5 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.1);
+  background: #FFFFFF;
+}
+
+.emotion-2 {
+  overflow-y: auto;
+  overflow-x: auto;
+  position: relative;
+}
+
+.emotion-2 code {
+  padding-right: 10px;
+}
+
+.emotion-2 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-2 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.string {
+  color: #A31515;
+}
+
+.emotion-2 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-2 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-2 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.function {
+  color: #393A34;
+}
+
+.emotion-2 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-2 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-2 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-2 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-2 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-2 * .token.tag {
+  color: #800000;
+}
+
+.emotion-2 * .token.selector {
+  color: #800000;
+}
+
+.emotion-2 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-2 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-2 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-2 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-2 * .namespace {
+  opacity: 0.7;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 10px;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #FFFFFF;
+}
+
+.emotion-3 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #333333;
+  background: #FFFFFF;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(0,0,0,.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-3:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-3 + * {
+  border-left: 1px solid rgba(0,0,0,.1);
+  border-radius: 0;
+}
+
+.emotion-3:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+  outline: 0 none;
+}
+
 <div>
   <div>
     <div
@@ -4565,6 +5516,100 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
         >
           description or documentation about my component, supports markdown
         </div>
+        <div
+          class="emotion-5"
+        >
+          <div
+            class="emotion-2"
+            data-simplebar="true"
+          >
+            <div
+              class="simplebar-wrapper"
+            >
+              <div
+                class="simplebar-height-auto-observer-wrapper"
+              >
+                <div
+                  class="simplebar-height-auto-observer"
+                />
+              </div>
+              <div
+                class="simplebar-mask"
+              >
+                <div
+                  class="simplebar-offset"
+                >
+                  <div
+                    class="simplebar-content"
+                  >
+                    <pre
+                      class="hljs emotion-1"
+                    >
+                      <code
+                        class="emotion-0"
+                      >
+                        <span
+                          class="token operator"
+                        >
+                          &lt;
+                        </span>
+                        Button
+                        <span
+                          class="token operator"
+                        >
+                          &gt;
+                        </span>
+                        Click Here
+                        <span
+                          class="token operator"
+                        >
+                          &lt;
+                        </span>
+                        <span
+                          class="token operator"
+                        >
+                          /
+                        </span>
+                        Button
+                        <span
+                          class="token operator"
+                        >
+                          &gt;
+                        </span>
+                      </code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="simplebar-placeholder"
+              />
+            </div>
+            <div
+              class="simplebar-track simplebar-horizontal"
+            >
+              <div
+                class="simplebar-scrollbar"
+              />
+            </div>
+            <div
+              class="simplebar-track simplebar-vertical"
+            >
+              <div
+                class="simplebar-scrollbar"
+              />
+            </div>
+          </div>
+          <div
+            class="emotion-4"
+          >
+            <button
+              class="emotion-3"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
       </div>
       <div>
         <h1
@@ -4597,7 +5642,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
                       <span
                         style="color:#170"
                       >
-                        action
+                        actionHandler
                       </span>
                       }
                     </span>
@@ -5302,7 +6347,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from Flow declarations 1`]
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -5524,7 +6569,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from PropType declarations
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -6324,7 +7369,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from component declaration
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -6587,7 +7632,7 @@ exports[`Storyshots Addons|Info/React Docgen Comments from named export componen
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -7447,7 +8492,7 @@ exports[`Storyshots Addons|Info/Story Source Children 1`] = `
                           <span
                             style="color:#170"
                           >
-                            action
+                            actionHandler
                           </span>
                           }
                         </span>
@@ -7712,7 +8757,7 @@ exports[`Storyshots Addons|Info/Story Source Many props 1`] = `
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>
@@ -8434,6 +9479,239 @@ exports[`Storyshots Addons|Info/Story Source One prop 1`] = `
 `;
 
 exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] = `
+.emotion-5 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.1);
+  background: #FFFFFF;
+}
+
+.emotion-2 {
+  overflow-y: auto;
+  overflow-x: auto;
+  position: relative;
+}
+
+.emotion-2 code {
+  padding-right: 10px;
+}
+
+.emotion-2 * .token {
+  font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-2 * .token.comment {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.prolog {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.doctype {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.emotion-2 * .token.string {
+  color: #A31515;
+}
+
+.emotion-2 * .token.punctuation {
+  color: #393A34;
+}
+
+.emotion-2 * .token.operator {
+  color: #393A34;
+}
+
+.emotion-2 * .token.url {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.symbol {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.number {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.boolean {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.variable {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.constant {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.inserted {
+  color: #36acaa;
+}
+
+.emotion-2 * .token.atrule {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.keyword {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.attr-value {
+  color: #0000ff;
+}
+
+.emotion-2 * .token.function {
+  color: #393A34;
+}
+
+.emotion-2 * .token.deleted {
+  color: #9a050f;
+}
+
+.emotion-2 * .token.important {
+  font-weight: bold;
+}
+
+.emotion-2 * .token.bold {
+  font-weight: bold;
+}
+
+.emotion-2 * .token.italic {
+  font-style: italic;
+}
+
+.emotion-2 * .token.class-name {
+  color: #2B91AF;
+}
+
+.emotion-2 * .token.tag {
+  color: #800000;
+}
+
+.emotion-2 * .token.selector {
+  color: #800000;
+}
+
+.emotion-2 * .token.attr-name {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.property {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.regex {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.entity {
+  color: #ff0000;
+}
+
+.emotion-2 * .token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+.emotion-2 * .language-json .token.boolean {
+  color: #0000ff;
+}
+
+.emotion-2 * .language-json .token.number {
+  color: #0000ff;
+}
+
+.emotion-2 * .language-json .token.property {
+  color: #2B91AF;
+}
+
+.emotion-2 * .namespace {
+  opacity: 0.7;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 10px;
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+}
+
+.emotion-4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #FFFFFF;
+}
+
+.emotion-3 {
+  border: 0 none;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #333333;
+  background: #FFFFFF;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(0,0,0,.1);
+  margin-left: -1px;
+  border-radius: 4px 0 0 0;
+}
+
+.emotion-3:not(:last-child) {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.emotion-3 + * {
+  border-left: 1px solid rgba(0,0,0,.1);
+  border-radius: 0;
+}
+
+.emotion-3:focus {
+  box-shadow: #1EA7FD 0 -3px 0 0 inset;
+  outline: 0 none;
+}
+
 <div>
   <div
     style="position:relative;z-index:0"
@@ -8492,7 +9770,133 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
           <div
             style="font-size:15px"
           >
-            Sometimes you might want to manually include some code examples:
+            Sometimes you might want to manually include some 
+            <code>
+              code
+            </code>
+             examples:
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-2"
+              data-simplebar="true"
+            >
+              <div
+                class="simplebar-wrapper"
+              >
+                <div
+                  class="simplebar-height-auto-observer-wrapper"
+                >
+                  <div
+                    class="simplebar-height-auto-observer"
+                  />
+                </div>
+                <div
+                  class="simplebar-mask"
+                >
+                  <div
+                    class="simplebar-offset"
+                  >
+                    <div
+                      class="simplebar-content"
+                    >
+                      <pre
+                        class="hljs emotion-1"
+                      >
+                        <code
+                          class="emotion-0"
+                        >
+                          <span
+                            class="token keyword"
+                          >
+                            const
+                          </span>
+                           
+                          <span
+                            class="token function-variable function"
+                          >
+                            Button
+                          </span>
+                           
+                          <span
+                            class="token operator"
+                          >
+                            =
+                          </span>
+                           
+                          <span
+                            class="token punctuation"
+                          >
+                            (
+                          </span>
+                          <span
+                            class="token punctuation"
+                          >
+                            )
+                          </span>
+                           
+                          <span
+                            class="token operator"
+                          >
+                            =&gt;
+                          </span>
+                           
+                          <span
+                            class="token operator"
+                          >
+                            &lt;
+                          </span>
+                          button 
+                          <span
+                            class="token operator"
+                          >
+                            /
+                          </span>
+                          <span
+                            class="token operator"
+                          >
+                            &gt;
+                          </span>
+                          <span
+                            class="token punctuation"
+                          >
+                            ;
+                          </span>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="simplebar-placeholder"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-horizontal"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-vertical"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <button
+                class="emotion-3"
+              >
+                Copy
+              </button>
+            </div>
           </div>
           <div
             style="font-size:15px"
@@ -8540,7 +9944,7 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
                         <span
                           style="color:#170"
                         >
-                          action
+                          actionHandler
                         </span>
                         }
                       </span>

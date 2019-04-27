@@ -28,8 +28,10 @@ function rootReducer(state = initialState, action: any) {
         action.payload.highlightedElementData
       ),
     };
-  } else if (action.type === CLEAR_ELEMENTS) {
-    for (let key of Array.from(state.highlightedElementsMap.keys())) {
+  }
+  if (action.type === CLEAR_ELEMENTS) {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key of Array.from(state.highlightedElementsMap.keys())) {
       key.style.outline = state.highlightedElementsMap.get(key).originalOutline;
       state.highlightedElementsMap.delete(key);
     }

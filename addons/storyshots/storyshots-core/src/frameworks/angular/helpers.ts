@@ -1,17 +1,15 @@
-// tslint:disable-next-line:no-implicit-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 import { Component, Type } from '@angular/core';
-// tslint:disable-next-line:no-implicit-dependencies
 import { FormsModule } from '@angular/forms';
-// tslint:disable-next-line:no-implicit-dependencies
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { STORY } from './app.token';
 import { NgStory } from './types';
 
 const getModuleMeta = (
-  declarations: Array<Type<any> | any[]>,
-  entryComponents: Array<Type<any> | any[]>,
-  bootstrap: Array<Type<any> | any[]>,
+  declarations: (Type<any> | any[])[],
+  entryComponents: (Type<any> | any[])[],
+  bootstrap: (Type<any> | any[])[],
   data: NgStory,
   moduleMetadata: any
 ) => {
@@ -34,9 +32,24 @@ const createComponentFromTemplate = (template: string) => {
 };
 
 export const initModuleData = (storyObj: NgStory): any => {
-  const { component, template, props, moduleMetadata = {} } = storyObj;
+  const {
+    component,
+    template,
+    props,
+    moduleMetadata = {},
+    requiresComponentDeclaration = true,
+  } = storyObj;
 
-  const AnnotatedComponent = template ? createComponentFromTemplate(template) : component;
+  const isCreatingComponentFromTemplate = Boolean(template);
+
+  const AnnotatedComponent = isCreatingComponentFromTemplate
+    ? createComponentFromTemplate(template)
+    : component;
+
+  const componentDeclarations =
+    isCreatingComponentFromTemplate || requiresComponentDeclaration
+      ? [AppComponent, AnnotatedComponent]
+      : [AppComponent];
 
   const story = {
     component: AnnotatedComponent,
@@ -44,7 +57,7 @@ export const initModuleData = (storyObj: NgStory): any => {
   };
 
   const moduleMeta = getModuleMeta(
-    [AppComponent, AnnotatedComponent],
+    componentDeclarations,
     [AnnotatedComponent],
     [AppComponent],
     story,

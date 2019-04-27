@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import { configure, addParameters, addDecorator } from '@storybook/angular';
 import addCssWarning from '../src/cssWarning';
 import { withA11y } from '@storybook/addon-a11y';

@@ -118,7 +118,6 @@ export default class Preview {
       setInitialStory = true;
     }
 
-    // tslint:disable-next-line:no-this-assignment
     const preview = this;
 
     addons.loadAddons(this._clientApi);

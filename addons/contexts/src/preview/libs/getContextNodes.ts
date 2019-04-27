@@ -1,4 +1,5 @@
-import { AddonSetting, ContextNode, WrapperSettings } from '../../shared/types';
+/* eslint-disable no-underscore-dangle */
+import { AddonSetting, ContextNode, WrapperSettings } from '../../shared/types.d';
 
 /**
  * @private
@@ -18,9 +19,7 @@ export const _getMergedSettings: _getMergedSettings = (topLevel, storyLevel) => 
   components: topLevel.components || storyLevel.components || [],
   params:
     topLevel.params || storyLevel.params
-      ? Array()
-          .concat(topLevel.params, storyLevel.params)
-          .filter(Boolean)
+      ? [].concat(topLevel.params, storyLevel.params).filter(Boolean)
       : [{ name: '', props: {} }],
   options: {
     deep: false,
@@ -39,7 +38,7 @@ export const _getMergedSettings: _getMergedSettings = (topLevel, storyLevel) => 
 type getContextNodes = (settings: WrapperSettings) => ContextNode[];
 
 export const getContextNodes: getContextNodes = ({ options, parameters }) => {
-  const titles = Array()
+  const titles = []
     .concat(options, parameters)
     .filter(Boolean)
     .map(({ title }) => title);

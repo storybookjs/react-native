@@ -1,4 +1,4 @@
-import { SelectionState } from './types';
+import { SelectionState } from './types.d';
 
 /**
  * Serialize the selection state in its string representation.

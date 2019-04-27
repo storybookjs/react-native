@@ -6,12 +6,12 @@ import { STORY_RENDERED } from '@storybook/core-events';
 import { ActionBar, Icons, ScrollArea } from '@storybook/components';
 
 import { AxeResults, Result } from 'axe-core';
+import { API } from '@storybook/api';
+import { Provider } from 'react-redux';
 import { Report } from './Report';
 import { Tabs } from './Tabs';
 import { EVENTS } from '../constants';
-import { API } from '@storybook/api';
 
-import { Provider } from 'react-redux';
 import store, { clearElements } from '../redux-config';
 
 export enum RuleType {

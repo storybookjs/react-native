@@ -1,3 +1,4 @@
+import { window } from 'global';
 import addons from '@storybook/addons';
 import { parse } from 'qs';
 import { getContextNodes, getPropsMap, getRendererFrom, singleton } from './libs';
@@ -10,7 +11,7 @@ import {
   FORCE_RE_RENDER,
   SET_CURRENT_STORY,
 } from '../shared/constants';
-import { ContextNode, PropsMap, SelectionState } from '../shared/types';
+import { ContextNode, PropsMap, SelectionState } from '../shared/types.d';
 
 /**
  * A singleton for handling preview-manager and one-time-only side-effects
@@ -36,7 +37,7 @@ export const ContextsPreviewAPI = singleton(() => {
    * Vue will inject getter/setters on the first rendering of the addon,
    * which is the reason why we have to keep an internal reference and use `Object.assign` to update it.
    */
-  let reactivePropsMap = {};
+  const reactivePropsMap = {};
   const updateReactiveSystem = (propsMap: PropsMap) =>
     /* tslint:disable:prefer-object-spread */
     Object.assign(reactivePropsMap, propsMap);
@@ -45,7 +46,9 @@ export const ContextsPreviewAPI = singleton(() => {
    * Preview-manager communications.
    */
   // from manager
-  channel.on(SET_CURRENT_STORY, () => (contextsNodesMemo = null));
+  channel.on(SET_CURRENT_STORY, () => {
+    contextsNodesMemo = null;
+  });
   channel.on(REBOOT_MANAGER, () => channel.emit(UPDATE_MANAGER, contextsNodesMemo));
   channel.on(UPDATE_PREVIEW, state => {
     if (state) {
