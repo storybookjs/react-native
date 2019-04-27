@@ -1,6 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "preact": ["src/shared/@mock-types/_preact.d.ts"]
+    },
     "removeComments": true,
     "rootDir": "./src",
     "types": ["webpack-env", "jest"]

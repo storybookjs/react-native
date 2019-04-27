@@ -1,0 +1,21 @@
+{
+  "name": "webpack-react-frozen-lock-fixture",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "react": "16.8.4",
+    "react-dom": "16.8.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-external-helpers": "7.2.0",
+    "@babel/preset-react": "7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.28.0"
+  }
+}

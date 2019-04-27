@@ -31,13 +31,13 @@ once then apply it everywhere**.
    use it to bridge with your favorite routing, state-management solutions, or even your own
    [React Context](https://reactjs.org/docs/context.html) provider.
 4. Offer chainable and granular configurations. It is even possible to fine-tune at per story level.
-5. Visual regression friendly.  You can use this addon to driving the same story under different contexts to smoke
+5. Visual regression friendly. You can use this addon to driving the same story under different contexts to smoke
    testing important visual states.
 
 ## 🧰 Requirements
 
-Make sure the version of your Storybook is above v5. Currently, this addon supports the following frameworks:
-**React**, and **Vue**. Other frameworks might get support in the near future (PRs are welcome!).
+Make sure the version of your Storybook is above v5. For the full list the current supported framework, see
+[Addon / Framework Support Table](../../ADDONS_SUPPORT.md).
 
 ## 🎬 Getting started
 
@@ -58,8 +58,8 @@ To load your contextual setups for your stories globally, adding the following l
 see it near your `addon.js` file):
 
 ```js
-import { addDecorator } from '@storybook/react'; // or '@storybook/vue'
-import { withContexts } from '@storybook/addon-contexts/react'; // or '@storybook/addon-contexts/vue'
+import { addDecorator } from '@storybook/[framework]';
+import { withContexts } from '@storybook/addon-contexts/[framework]';
 import { contexts } from './configs/contexts'; // we will define the contextual setups later in API section
 
 addDecorator(withContexts(contexts));
@@ -68,8 +68,8 @@ addDecorator(withContexts(contexts));
 Alternatively, just like other addons, you can use this addon only for a given set of stories:
 
 ```js
-import { storiesOf } from '@storybook/react'; // or '@storybook/vue'
-import { withContexts } from '@storybook/addon-contexts/react'; // or '@storybook/addon-contexts/vue'
+import { storiesOf } from '@storybook/[framework]';
+import { withContexts } from '@storybook/addon-contexts/[framework]';
 import { contexts } from './configs/contexts';
 
 const story = storiesOf('Component With Contexts', module).addDecorator(withContexts(contexts)); // use this addon with a default contextual environment setups
