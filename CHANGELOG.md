@@ -1,3 +1,18 @@
+## 5.1.0-alpha.36 (April 27, 2019)
+
+### Features
+
+* Addon-contexts: Preact support ([#6660](https://github.com/storybooks/storybook/pull/6660))
+* Angular: Allow optional component declaration ([#6346](https://github.com/storybooks/storybook/pull/6346))
+
+### Bug Fixes
+
+* CLI: Fix `sb init` for projects with frozen lock files ([#6629](https://github.com/storybooks/storybook/pull/6629))
+
+### Dependency Upgrades
+
+* [Snyk] Fix for 1 vulnerable dependencies ([#6647](https://github.com/storybooks/storybook/pull/6647))
+
 ## 5.1.0-alpha.35 (April 27, 2019)
 
 ### Features
