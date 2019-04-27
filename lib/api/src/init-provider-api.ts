@@ -19,6 +19,7 @@ export default ({ provider, api }: { provider: Provider; api: API; store: Store 
   provider.handleAPI(api);
 
   if (provider.renderPreview) {
+    // eslint-disable-next-line no-param-reassign
     api.renderPreview = provider.renderPreview;
   }
 

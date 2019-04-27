@@ -2,6 +2,7 @@ import React from 'react';
 import { isForwardRef } from 'react-is';
 import PropTypes from 'prop-types';
 import Props from './Props';
+import { getDisplayName } from '../react-utils';
 
 const stylesheet = {
   containerStyle: {},
@@ -32,13 +33,7 @@ function getData(element) {
   }
 
   data.children = element.props.children;
-  const { type } = element;
-
-  if (typeof type === 'string') {
-    data.name = type;
-  } else {
-    data.name = type.displayName || type.name || 'Unknown';
-  }
+  data.name = getDisplayName(element.type);
 
   return data;
 }

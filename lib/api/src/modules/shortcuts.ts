@@ -11,7 +11,7 @@ export const isMacLike = () =>
 export const controlOrMetaKey = () => (isMacLike() ? 'meta' : 'control');
 
 export function keys<O>(o: O) {
-  return Object.keys(o) as Array<keyof O>;
+  return Object.keys(o) as (keyof O)[];
 }
 
 export interface SubState {
@@ -127,7 +127,6 @@ export default function initShortcuts({ store }: Module) {
           } else if (!showNav) {
             fullApi.toggleNav();
           }
-          document.activeElement.blur();
           break;
         }
 
@@ -209,6 +208,7 @@ export default function initShortcuts({ store }: Module) {
         case 'togglePanel': {
           if (isFullscreen) {
             fullApi.toggleFullscreen();
+            fullApi.resetLayout();
           }
 
           fullApi.togglePanel();
@@ -218,6 +218,7 @@ export default function initShortcuts({ store }: Module) {
         case 'toggleNav': {
           if (isFullscreen) {
             fullApi.toggleFullscreen();
+            fullApi.resetLayout();
           }
 
           fullApi.toggleNav();

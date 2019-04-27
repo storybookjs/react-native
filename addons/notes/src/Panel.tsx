@@ -1,8 +1,8 @@
-import React, { ReactElement, Component, Fragment, ReactNode } from 'react';
+import React, { ReactElement, Fragment, ReactNode } from 'react';
 import { types } from '@storybook/addons';
 import { API, Consumer, Combo } from '@storybook/api';
+import { Link as RouterLink } from '@storybook/router';
 import { styled } from '@storybook/theming';
-import { STORY_RENDERED } from '@storybook/core-events';
 
 import {
   SyntaxHighlighter as SyntaxHighlighterBase,
@@ -10,8 +10,8 @@ import {
   DocumentFormatting,
   Link,
 } from '@storybook/components';
-import Giphy from './giphy';
 import Markdown from 'markdown-to-jsx';
+import Giphy from './giphy';
 
 import { PARAM_KEY, Parameters } from './shared';
 
@@ -32,15 +32,20 @@ interface Props {
 function read(param: Parameters | undefined): string | undefined {
   if (!param) {
     return undefined;
-  } else if (typeof param === 'string') {
+  }
+  if (typeof param === 'string') {
     return param;
-  } else if ('disabled' in param) {
+  }
+  if ('disabled' in param) {
     return undefined;
-  } else if ('text' in param) {
+  }
+  if ('text' in param) {
     return param.text;
-  } else if ('markdown' in param) {
+  }
+  if ('markdown' in param) {
     return param.markdown;
   }
+  return undefined;
 }
 
 interface SyntaxHighlighterProps {
@@ -62,11 +67,34 @@ export const SyntaxHighlighter = ({ className, children, ...props }: SyntaxHighl
   );
 };
 
+interface NotesLinkProps {
+  href: string;
+  children: ReactElement;
+}
+export const NotesLink = ({ href, children, ...props }: NotesLinkProps) => {
+  /* https://github.com/sindresorhus/is-absolute-url/blob/master/index.js */
+  const isAbsoluteUrl = /^[a-z][a-z0-9+.-]*:/.test(href);
+  if (isAbsoluteUrl) {
+    return (
+      <a href={href} {...props}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <RouterLink to={href} {...props}>
+      {children}
+    </RouterLink>
+  );
+};
+
 // use our SyntaxHighlighter component in place of a <code> element when
 // converting markdown to react elements
 const defaultOptions = {
   overrides: {
     code: SyntaxHighlighter,
+    a: NotesLink,
     Giphy: {
       component: Giphy,
     },

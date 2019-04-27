@@ -149,6 +149,34 @@ Button
   └── as a component
 ```
 
+> If your story is returning a plain template you can only use globally registered components.
+>
+> To register them, use `Vue.component('my-button', Mybutton)` in your `config.js` file.
+>
+> <details>
+>   <summary>details</summary>
+>
+> If your story returns a plain string like below, you will need to register globally each VueJs component that it uses. 
+>
+> ```js
+>  .add('with text', () => '<my-component>with text</my-component>')
+> ```
+>
+> In big solutions, globally registered components can conflict with each other.
+>
+> Here are two other ways to use components in your stories without globally registering them.
+>
+> - register components locally in the "components" member of the vue component object. See the story "as a component" above.
+> - use a JSX render function like below. No need to register anything.
+>
+> ```jsx
+>   .add('with text', () => ({
+>      render: h => <my-component>with text</my-component>
+>   }))
+> ```
+>
+> </details>
+
 ## Finally: Run your Storybook
 
 Now everything is ready. Run your storybook with:

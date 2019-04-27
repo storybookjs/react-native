@@ -1,5 +1,5 @@
 import global from 'global';
-// tslint:disable-next-line:no-implicit-dependencies
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { ReactElement } from 'react';
 import { Channel } from '@storybook/channels';
 import { API } from '@storybook/api';
@@ -42,7 +42,9 @@ interface Elements {
 
 export class AddonStore {
   private loaders: Loaders = {};
+
   private elements: Elements = {};
+
   private channel: Channel | undefined;
 
   getChannel = (): Channel => {
@@ -55,7 +57,9 @@ export class AddonStore {
 
     return this.channel;
   };
+
   hasChannel = (): boolean => !!this.channel;
+
   setChannel = (channel: Channel): void => {
     this.channel = channel;
   };
@@ -66,12 +70,14 @@ export class AddonStore {
     }
     return this.elements[type];
   };
+
   addPanel = (name: string, options: Addon): void => {
     this.add(name, {
       type: types.PANEL,
       ...options,
     });
   };
+
   add = (name: string, addon: Addon) => {
     const { type } = addon;
     const collection = this.getElements(type);

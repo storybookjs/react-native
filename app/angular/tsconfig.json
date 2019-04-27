@@ -5,6 +5,14 @@
   ],
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": "./src"
+    "outDir": "dist",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "rootDir": "./src",
+    "lib": [
+      "es2017",
+      "dom"
+    ]
   }
 }
