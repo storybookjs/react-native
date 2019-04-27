@@ -1,7 +1,5 @@
 /** @jsx h */
-
 import { h } from 'preact';
-
 import { storiesOf } from '@storybook/preact';
 import { withContexts } from '@storybook/addon-contexts/preact';
 
@@ -47,7 +45,7 @@ const stories = storiesOf('Addons|Contexts', module).addDecorator(withContexts(t
 
 stories.add(
   'Simple CSS Theming',
-  () => <>I'm a children of the injected 'div' (where provides a theming context).</>,
+  () => <div>I'm a children of the injected 'div' (where provides a theming context).</div>,
   {
     contexts: storyLevelContexts,
   }

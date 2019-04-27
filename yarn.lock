@@ -21025,7 +21025,7 @@ preact-render-to-json@^3.6.6:
   resolved "https://registry.npmjs.org/preact-render-to-json/-/preact-render-to-json-3.6.6.tgz#f67f48581912ac53fc9f4873bc6d7ce342f71c20"
   integrity sha1-9n9IWBkSrFP8n0hzvG1840L3HCA=
 
-preact@^8.4.2:
+preact@*, preact@^8.4.2:
   version "8.4.2"
   resolved "https://registry.npmjs.org/preact/-/preact-8.4.2.tgz#1263b974a17d1ea80b66590e41ef786ced5d6a23"
   integrity sha512-TsINETWiisfB6RTk0wh3/mvxbGRvx+ljeBccZ4Z6MPFKgu/KFGyf2Bmw3Z/jlXhL5JlNKY6QAbA9PVyzIy9//A==
