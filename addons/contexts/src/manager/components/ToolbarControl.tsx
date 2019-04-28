@@ -33,7 +33,6 @@ export const ToolbarControl: ToolbarControl = ({
     params[0].name;
   const list = options.cancelable ? [OPT_OUT, ...paramNames] : paramNames;
   const props = {
-    icon,
     title,
     active: activeName !== OPT_OUT,
     expanded,
@@ -48,5 +47,5 @@ export const ToolbarControl: ToolbarControl = ({
     },
   };
 
-  return options.disable || list.length < 2 ? null : <ToolBarMenu {...props} />;
+  return icon && list.length && !options.disable ? <ToolBarMenu icon={icon} {...props} /> : null;
 };
