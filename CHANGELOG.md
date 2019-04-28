@@ -1,3 +1,15 @@
+## 5.0.11 (April 28, 2019)
+
+### Bug Fixes
+
+- Polymer: Fix re-rendering lit-html elements after non-lit-html element ([#5868](https://github.com/storybooks/storybook/pull/5868))
+- Addon-knobs: Check color knob value before applying uppercase ([#6598](https://github.com/storybooks/storybook/pull/6598))
+- Angular: Fix sourceMap property of angulars webpack config ([#6535](https://github.com/storybooks/storybook/pull/6535))
+
+### Maintenance
+
+- UI: Add missing props in stories ([#6353](https://github.com/storybooks/storybook/pull/6353))
+
 ## 5.1.0-alpha.36 (April 27, 2019)
 
 ### Features
