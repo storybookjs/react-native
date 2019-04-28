@@ -26,12 +26,12 @@ export const ToolbarControl: ToolbarControl = ({
   const paramNames = params.map(({ name }) => name);
   const activeName =
     // validate the integrity of the selected name
-    (paramNames.concat(options.cancelable && OPT_OUT).includes(selected) && selected) ||
+    ([...paramNames, options.cancelable && OPT_OUT].includes(selected) && selected) ||
     // fallback to default
     (params.find(param => !!param.default) || { name: null }).name ||
     // fallback to the first
     params[0].name;
-  const list = options.cancelable === false ? paramNames : [OPT_OUT, ...paramNames];
+  const list = options.cancelable ? [OPT_OUT, ...paramNames] : paramNames;
   const props = {
     icon,
     title,

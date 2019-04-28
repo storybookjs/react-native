@@ -83,7 +83,7 @@ const initialUrlSupport = ({ navigate, location, path }: Module) => {
 };
 
 export interface QueryParams {
-  [key: string]: string;
+  [key: string]: string | null;
 }
 
 export interface SubAPI {
