@@ -6,7 +6,7 @@ import configure from '../configure';
 function setupAngularJestPreset() {
   // Needed to prevent "Zone.js has detected that ZoneAwarePromise `(window|global).Promise` has been overwritten."
   require.requireActual('core-js');
-  require.requireActual('core-js/es/promise');
+  require.requireActual('core-js/modules/es.promise');
   // require.requireActual('core-js/es6/reflect');
   // require.requireActual('core-js/es7/reflect');
 
