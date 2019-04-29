@@ -30,6 +30,7 @@
     "@storybook/router": "5.1.0-alpha.36",
     "@storybook/theming": "5.1.0-alpha.36",
     "core-js": "^3.0.1",
+    "core-js-pure": "^3.0.1",
     "fast-deep-equal": "^2.0.1",
     "fuse.js": "^3.4.4",
     "global": "^4.3.2",
