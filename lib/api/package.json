@@ -34,6 +34,7 @@
     "memoizerific": "^1.11.3",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
+    "shallow-equal": "^1.1.0",
     "semver": "^6.0.0",
     "store2": "^2.7.1",
     "telejson": "^2.1.1",
