@@ -8,33 +8,33 @@ function cleanUpPreviousStory() {
     return;
   }
 
-  previousComponent.destroy();
+  previousComponent.$destroy();
   previousComponent = null;
 }
 
-function mountView({ Component, target, data, on, Wrapper, WrapperData }) {
+function mountView({ Component, target, props, on, Wrapper, WrapperData }) {
   let component;
 
   if (Wrapper) {
     const fragment = document.createDocumentFragment();
-    component = new Component({ target: fragment, data });
+    component = new Component({ target: fragment, props });
 
     const wrapper = new Wrapper({
       target,
       slots: { default: fragment },
-      data: WrapperData || {},
+      props: WrapperData || {},
     });
-    component.on('destroy', () => {
-      wrapper.destroy(true);
+    component.$on('destroy', () => {
+      wrapper.$destroy(true);
     });
   } else {
-    component = new Component({ target, data });
+    component = new Component({ target, props });
   }
 
   if (on) {
     // Attach svelte event listeners.
     Object.keys(on).forEach(eventName => {
-      component.on(eventName, on[eventName]);
+      component.$on(eventName, on[eventName]);
     });
   }
 
@@ -53,7 +53,7 @@ export default function render({
     /** @type {SvelteComponent} */
     Component,
     /** @type {any} */
-    data,
+    props,
     /** @type {{[string]: () => {}}} Attach svelte event handlers */
     on,
     Wrapper,
@@ -79,7 +79,7 @@ export default function render({
 
   target.innerHTML = '';
 
-  mountView({ Component, target, data, on, Wrapper, WrapperData });
+  mountView({ Component, target, props, on, Wrapper, WrapperData });
 
   showMain();
 }

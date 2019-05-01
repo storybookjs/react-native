@@ -25314,10 +25314,10 @@ svelte-loader@^2.13.3:
     loader-utils "^1.1.0"
     svelte-dev-helper "^1.1.9"
 
-svelte@^2.16.1:
-  version "2.16.1"
-  resolved "https://registry.npmjs.org/svelte/-/svelte-2.16.1.tgz#559a68452029e72280311ccc8dfd2ff10d0a5f18"
-  integrity sha512-TpXdfukSkmWkMnH6PPVm7FRW8SSFcTyqBiP+6VN8rtZJ7Lp1Xbf/e3oz73eQBxF0UPZw1aAn1b91lX2XTeD3zg==
+svelte@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.1.0.tgz#87a4b643169037f0b3d28a6b1832c28dc0a3fbc3"
+  integrity sha512-b5TyzV7Dx1ijN4QPNarhKq5rX98QHDmi18nF0G8KV3d5KX3Jj98Yu4+tzM97ktnXcfoVJmvONvPaX1ZI0mr8Dw==
 
 svg-tags@^1.0.0:
   version "1.0.0"

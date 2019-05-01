@@ -33,12 +33,12 @@
     "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
-    "svelte": "^2.16.1",
+    "svelte": "^3.1.0",
     "svelte-loader": "^2.13.3"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
-    "svelte": "^2.7.2",
+    "svelte": "^3.1.0",
     "svelte-loader": "^2.9.1"
   },
   "publishConfig": {
