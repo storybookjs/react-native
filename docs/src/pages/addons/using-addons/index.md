@@ -77,7 +77,7 @@ import { configure, addParameters } from '@storybook/react';
 addParameters({
   options: {
     name: 'CRA Kitchen Sink',
-    isFullScreen: false,
+    isFullscreen: false,
     showPanel: true,
     // more configuration here
   },

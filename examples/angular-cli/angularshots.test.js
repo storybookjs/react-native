@@ -2,7 +2,7 @@ import path from 'path';
 import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
 
 jest.mock('./addon-jest.testresults.json', () => ({}), { virtual: true });
-jest.mock('environments/environment', () => ({}), { virtual: true });
+jest.mock('./environments/environment', () => ({}), { virtual: true });
 
 initStoryshots({
   framework: 'angular',

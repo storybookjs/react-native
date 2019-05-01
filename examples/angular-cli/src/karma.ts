@@ -1,6 +1,7 @@
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 import 'zone.js/dist/long-stack-trace-zone';
+// eslint-disable-next-line import/extensions
 import 'zone.js/dist/proxy.js';
 import 'zone.js/dist/sync-test';
 import 'zone.js/dist/jasmine-patch';
@@ -13,6 +14,7 @@ import {
 } from '@angular/platform-browser-dynamic/testing';
 
 // Unfortunately there's no typing for the `__karma__` variable. Just declare it as any.
+// eslint-disable-next-line no-underscore-dangle
 declare const __karma__: any;
 declare const require: any;
 

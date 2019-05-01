@@ -25,18 +25,25 @@ const logger = console;
 export class AllKnobsComponent implements OnChanges, OnInit {
   @Input()
   price;
+
   @Input()
   border;
+
   @Input()
   fruit;
+
   @Input()
   name;
+
   @Input()
   items;
+
   @Input()
   today;
+
   @Input()
   stock;
+
   @Input()
   nice;
 
@@ -47,6 +54,7 @@ export class AllKnobsComponent implements OnChanges, OnInit {
   ngOnInit(): void {
     logger.debug('on init, user component');
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     logger.debug(changes);
   }

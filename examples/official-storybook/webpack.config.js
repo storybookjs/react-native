@@ -1,12 +1,43 @@
 const path = require('path');
-const { DefinePlugin, ContextReplacementPlugin } = require('webpack');
 
 module.exports = async ({ config }) => ({
   ...config,
   module: {
     ...config.module,
     rules: [
-      ...config.module.rules,
+      ...config.module.rules.slice(1),
+      {
+        test: /\.(mjs|jsx?|tsx?)$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: `.cache/storybook`,
+              presets: [
+                ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: 2 }],
+                '@babel/preset-typescript',
+                ['babel-preset-minify', { builtIns: false, mangle: false }],
+                '@babel/preset-react',
+                '@babel/preset-flow',
+              ],
+              plugins: [
+                '@babel/plugin-proposal-object-rest-spread',
+                '@babel/plugin-proposal-class-properties',
+                '@babel/plugin-syntax-dynamic-import',
+                ['babel-plugin-emotion', { sourceMap: true, autoLabel: true }],
+                'babel-plugin-macros',
+                '@babel/plugin-transform-react-constant-elements',
+                'babel-plugin-add-react-displayname',
+                [
+                  'babel-plugin-react-docgen',
+                  { DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES' },
+                ],
+              ],
+            },
+          },
+        ],
+        exclude: [/node_modules/, /dist/],
+      },
       {
         test: /\.stories\.jsx?$/,
         use: require.resolve('@storybook/addon-storysource/loader'),
@@ -17,33 +48,8 @@ module.exports = async ({ config }) => ({
         ],
         enforce: 'pre',
       },
-      {
-        test: /\.js/,
-        use: config.module.rules[0].use,
-        include: [
-          path.resolve(__dirname, '../../lib/ui/src'),
-          path.resolve(__dirname, '../../lib/components/src'),
-        ],
-      },
-      {
-        test: /\.tsx?$/,
-        use: [
-          {
-            loader: require.resolve('ts-loader'),
-          },
-        ],
-      },
     ],
   },
-  plugins: [
-    ...config.plugins,
-    // graphql sources check process variable
-    new DefinePlugin({
-      process: JSON.stringify(true),
-    }),
-    // See https://github.com/graphql/graphql-language-service/issues/111#issuecomment-306723400
-    new ContextReplacementPlugin(/graphql-language-service-interface[/\\]dist/, /\.js$/),
-  ],
   resolve: {
     ...config.resolve,
     extensions: [...(config.resolve.extensions || []), '.ts', '.tsx'],

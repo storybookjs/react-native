@@ -4,7 +4,7 @@ StoryShots adds automatic Jest Snapshot Testing for [Storybook](https://storyboo
 
 [Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![StoryShots In Action](docs/storyshots-fail.png)
+![StoryShots In Action](https://raw.githubusercontent.com/storybooks/storybook/HEAD/addons/storyshots/storyshots-core/docs/storyshots-fail.png)
 
 To use StoryShots, you must use your existing Storybook stories as the input for Jest Snapshot Testing.
 
@@ -194,7 +194,7 @@ That's all.
 
 Now run your Jest test command. (Usually, `npm test`.) Then you can see all of your stories are converted as Jest snapshot tests.
 
-![Screenshot](docs/storyshots.png)
+![Screenshot](https://raw.githubusercontent.com/storybooks/storybook/HEAD/addons/storyshots/storyshots-core/docs/storyshots.png)
 
 
 ### Using `createNodeMock` to mock refs
@@ -385,6 +385,15 @@ import initStoryshots from '@storybook/addon-storyshots';
 initStoryshots({
   configPath: '.my-storybook-config-dir'
 });
+```
+
+Or, as a more complex example, if we have a package in our `lerna` project called `app` with the path `./packages/app/src/__tests__/storsyhots.js` and the storybook config directory `./packages/app/.storybook`:
+
+```js
+import path from 'path';
+import initStoryshots from '@storybook/addon-storyshots';
+
+initStoryshots({ configPath: path.resolve(__dirname, '../../.storybook') });
 ```
 
 `configPath` can also specify path to the `config.js` itself. In this case, config directory will be

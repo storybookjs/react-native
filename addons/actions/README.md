@@ -4,7 +4,7 @@ Storybook Addon Actions can be used to display data received by event handlers i
 
 [Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Screenshot](docs/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/storybooks/storybook/HEAD/addons/actions/docs/screenshot.png)
 
 ## Getting Started
 

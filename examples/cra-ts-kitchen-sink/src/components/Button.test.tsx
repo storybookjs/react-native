@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Button from './Button';
 import { shallow } from 'enzyme';
+import Button from './Button';
 
 describe('Button', () => {
   it('renders', () => {
@@ -18,6 +18,6 @@ describe('Button', () => {
     const handleClick = jest.fn();
     const wrapper = shallow(<Button onClick={handleClick}>OK</Button>);
     wrapper.find('button').simulate('click');
-    expect(handleClick).toBeCalled();
+    expect(handleClick).toHaveBeenCalled();
   });
 });

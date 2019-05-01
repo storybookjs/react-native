@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "preact": ["src/shared/@mock-types/_preact.d.ts"]
+    },
+    "strictNullChecks": true,
+    "removeComments": true,
+    "rootDir": "./src",
+    "types": ["webpack-env", "jest"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/register.ts", "src/**/*.test.ts"]
+}
