@@ -1,7 +1,7 @@
 import React from 'react';
 import { ToolBarMenu } from './ToolBarMenu';
-import { OPT_OUT } from '../constants';
-import { ContextNode, FCNoChildren, Omit } from '../types';
+import { OPT_OUT } from '../../shared/constants';
+import { ContextNode, FCNoChildren, Omit } from '../../shared/types.d';
 
 type ToolbarControl = FCNoChildren<
   Omit<
@@ -25,15 +25,14 @@ export const ToolbarControl: ToolbarControl = ({
   const [expanded, setExpanded] = React.useState(false);
   const paramNames = params.map(({ name }) => name);
   const activeName =
-    // validate the selected name
-    (paramNames.concat(OPT_OUT).includes(selected) && selected) ||
+    // validate the integrity of the selected name
+    ([...paramNames, options.cancelable && OPT_OUT].includes(selected) && selected) ||
     // fallback to default
     (params.find(param => !!param.default) || { name: null }).name ||
     // fallback to the first
     params[0].name;
-  const list = options.cancelable === false ? paramNames : [OPT_OUT, ...paramNames];
+  const list = options.cancelable ? [OPT_OUT, ...paramNames] : paramNames;
   const props = {
-    icon,
     title,
     active: activeName !== OPT_OUT,
     expanded,
@@ -48,5 +47,5 @@ export const ToolbarControl: ToolbarControl = ({
     },
   };
 
-  return options.disable || list.length < 2 ? null : <ToolBarMenu {...props} />;
+  return icon && list.length && !options.disable ? <ToolBarMenu icon={icon} {...props} /> : null;
 };

@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/angular';
-import { OnPushBoxComponent } from './on-push-box.component';
 import { withKnobs, text, color } from '@storybook/addon-knobs';
+import { OnPushBoxComponent } from './on-push-box.component';
 
 storiesOf('Core|OnPush', module)
   .addDecorator(withKnobs)

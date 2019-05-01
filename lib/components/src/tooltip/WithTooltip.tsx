@@ -5,8 +5,8 @@ import { withState, lifecycle } from 'recompose';
 import { document } from 'global';
 
 import TooltipTrigger from 'react-popper-tooltip';
-import { Tooltip } from './Tooltip';
 import { Modifiers, Placement } from 'popper.js';
+import { Tooltip } from './Tooltip';
 
 // A target that doesn't speak popper
 const TargetContainer = styled.div<{ mode: string }>`
@@ -77,6 +77,7 @@ const WithTooltipPure: FunctionComponent<WithTooltipPureProps> = ({
       )}
     >
       {({ getTriggerProps, triggerRef }) => (
+        // @ts-ignore
         <Container ref={triggerRef} {...getTriggerProps()} {...props}>
           {children}
         </Container>
@@ -103,7 +104,7 @@ export const WithTooltip = lifecycle<WithTooltipPureProps, {}>({
 
     // Find all iframes on the screen and bind to clicks inside them (waiting until the iframe is ready)
     const iframes: HTMLIFrameElement[] = Array.from(document.getElementsByTagName('iframe'));
-    const unbinders: Array<() => void> = [];
+    const unbinders: (() => void)[] = [];
     iframes.forEach(iframe => {
       const bind = () => {
         try {

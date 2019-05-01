@@ -28,7 +28,7 @@ Now you can deploy the content in the `.out` directory wherever you want.
 To test it locally:
 
 ```sh
-npx serve .
+npx http-server .out
 ```
 
 ## Deploying to GitHub Pages

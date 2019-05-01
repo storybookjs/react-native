@@ -1,5 +1,5 @@
 import { _getAggregatedWrap, getRendererFrom } from './getRendererFrom';
-import { OPT_OUT } from '../../constants';
+import { OPT_OUT } from '../../shared/constants';
 
 // mocks
 const h = jest.fn();
@@ -18,21 +18,21 @@ describe('Test on aggregation of a single context', () => {
     const testedProps = {};
     const testedOption = { disable: true };
     spiedAggregator([fakeTag, fakeComponent], testedProps, testedOption)();
-    expect(h).toBeCalledTimes(0);
+    expect(h).toHaveBeenCalledTimes(0);
   });
 
   it('should skip wrapping when props is marked as "OPT_OUT"', () => {
     const testedProps = OPT_OUT;
-    const testedOption = {};
+    const testedOption = { cancelable: true };
     spiedAggregator([fakeTag, fakeComponent], testedProps, testedOption)();
-    expect(h).toBeCalledTimes(0);
+    expect(h).toHaveBeenCalledTimes(0);
   });
 
   it('should wrap components in the stacking order', () => {
     const testedProps = {};
     const testedOption = {};
     spiedAggregator([fakeTag, fakeComponent], testedProps, testedOption)();
-    expect(h).toBeCalledTimes(2);
+    expect(h).toHaveBeenCalledTimes(2);
     expect(h.mock.calls[0][0]).toBe(fakeComponent);
     expect(h.mock.calls[1][0]).toBe(fakeTag);
   });

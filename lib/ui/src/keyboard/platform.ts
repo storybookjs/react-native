@@ -1,3 +1,6 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-underscore-dangle */
 import { navigator } from 'global';
 
 let _isWindows = false;

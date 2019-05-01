@@ -30,7 +30,6 @@ const hasMatchInAncestry = (element: any, selector: any): boolean => {
 const createHandlers = (actionsFn: (...arg: any[]) => object, ...args: any[]) => {
   const actionsObject = actionsFn(...args);
   return Object.entries(actionsObject).map(([key, action]) => {
-    // eslint-disable-next-line no-unused-vars
     const [_, eventName, selector] = key.match(delegateEventSplitter);
     return {
       eventName,
