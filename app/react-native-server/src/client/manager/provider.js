@@ -61,8 +61,7 @@ export default class ReactProvider extends Provider {
 
   handleAPI(api) {
     addons.loadAddons(api);
-
-    api.onStory(() => {
+    api.on(Events.STORY_CHANGED, () => {
       api.emit(Events.SET_CURRENT_STORY, this.selection);
     });
     api.on(Events.GET_CURRENT_STORY, () => {
