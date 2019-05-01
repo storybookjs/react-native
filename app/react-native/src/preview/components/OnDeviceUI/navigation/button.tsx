@@ -1,18 +1,23 @@
 import React, { PureComponent } from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import styled from '@emotion/native';
+import { EmotionProps } from '../../Shared/theme';
 
-const style = StyleSheet.create({
-  text: {
-    color: '#999999',
-    paddingHorizontal: 8,
-    paddingVertical: 10,
-    fontSize: 11,
-  },
-  underline: {
-    height: 3,
-    backgroundColor: 'transparent',
-  },
-});
+type EmotionButtonProps = EmotionProps & { active: boolean };
+
+const ActiveBorder = styled.View`
+  background: ${(props: EmotionButtonProps) =>
+    props.active ? props.theme.borderColor : 'transparent'};
+  height: 3;
+`;
+
+const ButtonText = styled.Text`
+  color: ${(props: EmotionButtonProps) =>
+    props.active ? props.theme.buttonActiveTextColor : props.theme.buttonTextColor};
+  padding-horizontal: 8;
+  padding-vertical: 10;
+  font-size: 11;
+`;
 
 interface Props {
   id: number | string;
@@ -30,25 +35,9 @@ export default class Button extends PureComponent<Props> {
     const { active, children } = this.props;
 
     return (
-      <TouchableOpacity onPress={this.onPress}>
-        <Text
-          style={[
-            style.text,
-            active && {
-              color: 'rgb(68, 68, 68)',
-            },
-          ]}
-        >
-          {children}
-        </Text>
-        <View
-          style={[
-            style.underline,
-            active && {
-              backgroundColor: '#e6e6e6',
-            },
-          ]}
-        />
+      <TouchableOpacity onPress={this.onPress} activeOpacity={0.8}>
+        <ButtonText active={active}>{children}</ButtonText>
+        <ActiveBorder active={active} />
       </TouchableOpacity>
     );
   }
