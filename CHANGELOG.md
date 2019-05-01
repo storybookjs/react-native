@@ -1,3 +1,15 @@
+## 5.1.0-alpha.37 (May 1, 2019)
+
+### Bug Fixes
+
+* Core: Fix regression with deep linking ([#6688](https://github.com/storybooks/storybook/pull/6688))
+* Addon-contexts: No cancel option in UI if the context have no param ([#6669](https://github.com/storybooks/storybook/pull/6669))
+* CLI: Fix `sb init` for projects with frozen lock files ([#6629](https://github.com/storybooks/storybook/pull/6629))
+
+### Maintenance
+
+* CLI: Refactor how we install dev dependencies in cli ([#6695](https://github.com/storybooks/storybook/pull/6695))
+
 ## 5.0.11 (April 28, 2019)
 
 ### Bug Fixes
