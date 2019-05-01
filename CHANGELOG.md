@@ -1,3 +1,42 @@
+## 5.1.0-alpha.37 (May 1, 2019)
+
+### Bug Fixes
+
+* Core: Fix regression with deep linking ([#6688](https://github.com/storybooks/storybook/pull/6688))
+* Addon-contexts: No cancel option in UI if the context have no param ([#6669](https://github.com/storybooks/storybook/pull/6669))
+* CLI: Fix `sb init` for projects with frozen lock files ([#6629](https://github.com/storybooks/storybook/pull/6629))
+
+### Maintenance
+
+* CLI: Refactor how we install dev dependencies in cli ([#6695](https://github.com/storybooks/storybook/pull/6695))
+
+## 5.0.11 (April 28, 2019)
+
+### Bug Fixes
+
+- Polymer: Fix re-rendering lit-html elements after non-lit-html element ([#5868](https://github.com/storybooks/storybook/pull/5868))
+- Addon-knobs: Check color knob value before applying uppercase ([#6598](https://github.com/storybooks/storybook/pull/6598))
+- Angular: Fix sourceMap property of angulars webpack config ([#6535](https://github.com/storybooks/storybook/pull/6535))
+
+### Maintenance
+
+- UI: Add missing props in stories ([#6353](https://github.com/storybooks/storybook/pull/6353))
+
+## 5.1.0-alpha.36 (April 27, 2019)
+
+### Features
+
+* Addon-contexts: Preact support ([#6660](https://github.com/storybooks/storybook/pull/6660))
+* Angular: Allow optional component declaration ([#6346](https://github.com/storybooks/storybook/pull/6346))
+
+### Bug Fixes
+
+* CLI: Fix `sb init` for projects with frozen lock files ([#6629](https://github.com/storybooks/storybook/pull/6629))
+
+### Dependency Upgrades
+
+* [Snyk] Fix for 1 vulnerable dependencies ([#6647](https://github.com/storybooks/storybook/pull/6647))
+
 ## 5.1.0-alpha.35 (April 27, 2019)
 
 ### Features

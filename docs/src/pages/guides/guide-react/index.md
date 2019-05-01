@@ -6,11 +6,13 @@ title: 'Storybook for React'
 ## Automatic setup
 
 You may have tried to use our quick start guide to setup your project for Storybook.
-If it failed because it couldn't detect you're using react, you could try forcing it to use react:
+If it failed because it couldn't detect you're using React, you could try forcing it to use React:
 
 ```sh
 npx -p @storybook/cli sb init --type react
 ```
+
+Note: be sure you have a `package.json` in your project or the above command will fail.
 
 ## Manual setup
 

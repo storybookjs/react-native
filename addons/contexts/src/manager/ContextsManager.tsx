@@ -3,10 +3,10 @@ import { useChannel } from './libs/useChannel';
 import { ToolBar } from './components/ToolBar';
 import { deserialize, serialize } from '../shared/serializers';
 import { PARAM, REBOOT_MANAGER, UPDATE_MANAGER, UPDATE_PREVIEW } from '../shared/constants';
-import { FCNoChildren, ManagerAPI, SelectionState } from '../shared/types.d';
+import { FCNoChildren, ManagerAPI } from '../shared/types.d';
 
 /**
- * A smart component for handling manager-preview interactions
+ * A smart component for handling manager-preview interactions.
  */
 type ContextsManager = FCNoChildren<{
   api: ManagerAPI;
@@ -14,7 +14,7 @@ type ContextsManager = FCNoChildren<{
 
 export const ContextsManager: ContextsManager = ({ api }) => {
   const [nodes, setNodes] = useState([]);
-  const [state, setState] = useState<SelectionState>(deserialize(api.getQueryParam(PARAM)));
+  const [state, setState] = useState(deserialize(api.getQueryParam(PARAM)));
   const setSelected = useCallback(
     (nodeId, name) => setState(obj => ({ ...obj, [nodeId]: name })),
     []
