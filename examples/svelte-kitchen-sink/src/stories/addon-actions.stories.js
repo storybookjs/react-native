@@ -6,13 +6,13 @@ import Button from '../components/Button.svelte';
 
 storiesOf('Addon|Actions', module)
   .add('Action on view method', () => ({
-    Component: ButtonView,
+    Component: ButtonView.default,
     props: {
       click: action('I am logging in the actions tab'),
     },
   }))
   .add('Action on component method', () => ({
-    Component: Button,
+    Component: Button.default,
     props: {
       text: 'Custom text',
     },

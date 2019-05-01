@@ -21,7 +21,7 @@
 </style>
 
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, afterUpdate } from 'svelte';
   export let count = 0;
   export let text = '';
   export let rounded = true;
@@ -33,4 +33,8 @@
 
     dispatch('click', event);
   }
+
+  afterUpdate(() => {
+    dispatch('afterUpdate');
+  });
 </script>

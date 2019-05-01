@@ -8,7 +8,7 @@
 <script>
   import Button from '../../components/Button.svelte';
 
-  export let rounded = true;
+  export let rounded = false;
   export let count = 0;
   export let text = 'You clicked';
 

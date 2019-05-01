@@ -4,7 +4,7 @@ import { linkTo } from '@storybook/addon-links';
 import ActionLinkView from './views/ActionLinkView.svelte';
 
 storiesOf('Addon|Links', module).add('Go to welcome view', () => ({
-  Component: ActionLinkView,
+  Component: ActionLinkView.default,
   on: {
     click: linkTo('Welcome'),
   },
