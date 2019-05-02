@@ -241,14 +241,14 @@ class ManagerConsumer extends Component<ConsumerProps<SubState, Combo>> {
   prevData?: SubState;
 
   render() {
-    const { children } = this.props;
+    const { children, pure } = this.props;
 
     return (
       <ManagerContext.Consumer>
         {d => {
           const data = this.dataMemory ? this.dataMemory(d) : d;
           if (
-            this.props.pure &&
+            pure &&
             this.prevChildren &&
             this.prevData &&
             shallowEqualObjects(data, this.prevData)
