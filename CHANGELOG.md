@@ -1,4 +1,4 @@
-## 5.1.0-alpha.38 (May 2, 2019)
+## 5.1.0-alpha.39 (May 2, 2019)
 
 ### Features
 
@@ -8,6 +8,10 @@
 ### Bug Fixes
 
 - API: Mimic PureComponent behavior for Consumer children ([#6412](https://github.com/storybooks/storybook/pull/6412))
+
+## 5.1.0-alpha.38 (May 2, 2019)
+
+Failed publish
 
 ## 5.1.0-alpha.37 (May 1, 2019)
 
