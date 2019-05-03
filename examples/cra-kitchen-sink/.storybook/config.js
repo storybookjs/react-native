@@ -25,7 +25,7 @@ addParameters({
 });
 
 function loadStories() {
-  // order of imports has no bearing, they are default sorted by localeCompare
+  // order of imports will determine the order of the stories unless a storySort is passed to the options object
   require('../src/stories/welcome');
 
   // automatically import all story js files that end with *.stories.js
