@@ -39,7 +39,6 @@ export default class ReactProvider extends Provider {
     this.addons = addons;
     this.channel = channel;
     this.options = options;
-    this.selection = null;
   }
 
   getElements(type) {
@@ -48,24 +47,11 @@ export default class ReactProvider extends Provider {
 
   renderPreview() {
     return (
-      <Consumer filter={mapper}>
+      <Consumer filter={mapper} pure>
         {({ storiesHash, storyId, api }) => {
           if (storiesHash[storyId]) {
             const { kind, story } = storiesHash[storyId];
-
-            if (!this.selection || this.selection.kind !== kind || this.selection.story !== story) {
-              this.selection = { kind, story };
-              // TODO: isn't this event sent twice now?
-              api.emit(Events.SET_CURRENT_STORY, { kind, story });
-            }
-
-            // FIXME: getPreview not implemented yet.
-            if (addons.getPreview) {
-              const renderPreview = addons.getPreview();
-              if (renderPreview) {
-                return renderPreview(kind, story);
-              }
-            }
+            api.emit(Events.SET_CURRENT_STORY, { kind, story });
           }
           return <PreviewHelp />;
         }}
@@ -75,9 +61,7 @@ export default class ReactProvider extends Provider {
 
   handleAPI(api) {
     addons.loadAddons(api);
-
-    api.onStory((kind, story) => {
-      this.selection = { kind, story };
+    api.on(Events.STORY_CHANGED, () => {
       api.emit(Events.SET_CURRENT_STORY, this.selection);
     });
     api.on(Events.GET_CURRENT_STORY, () => {

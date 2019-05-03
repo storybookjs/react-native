@@ -12,6 +12,7 @@ export interface ICollection {
 
 export interface NgStory {
   component?: any;
+  requiresComponentDeclaration?: boolean;
   props: ICollection;
   propsMeta?: ICollection;
   moduleMetadata?: NgModuleMetadata;

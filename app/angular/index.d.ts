@@ -45,6 +45,7 @@ export interface IStory {
   props?: ICollection;
   moduleMetadata?: Partial<NgModuleMetadata>;
   component?: any;
+  requiresComponentDeclaration?: boolean;
   template?: string;
 }
 
