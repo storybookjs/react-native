@@ -20,6 +20,7 @@ addParameters({
       brandUrl: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
       gridCellSize: 12,
     }),
+    storySort: (a, b) => a[1].id.localeCompare(b[1].id),
   },
 });
 
