@@ -11,6 +11,7 @@
     "mithril": "^1.1.6"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "5.1.0-alpha.39",
     "@storybook/addon-actions": "5.1.0-alpha.39",
     "@storybook/addon-backgrounds": "5.1.0-alpha.39",
     "@storybook/addon-centered": "5.1.0-alpha.39",

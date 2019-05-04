@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@polymer/polymer": "^2.6.0",
+    "@storybook/addon-a11y": "5.1.0-alpha.39",
     "@storybook/addon-actions": "5.1.0-alpha.39",
     "@storybook/addon-backgrounds": "5.1.0-alpha.39",
     "@storybook/addon-knobs": "5.1.0-alpha.39",
