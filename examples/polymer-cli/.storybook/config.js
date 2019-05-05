@@ -1,5 +1,7 @@
-import { configure, addParameters } from '@storybook/polymer';
+import { configure, addParameters, addDecorator } from '@storybook/polymer';
+import { withA11y } from '@storybook/addon-a11y';
 
+addDecorator(withA11y);
 addParameters({
   options: {
     hierarchyRootSeparator: /\|/,

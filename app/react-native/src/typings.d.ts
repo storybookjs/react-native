@@ -25,3 +25,6 @@ declare module 'react-native-swipe-gestures' {
 
   export default GestureRecognizer;
 }
+
+// https://github.com/emotion-js/emotion/pull/1176/
+declare module '@emotion/native';
