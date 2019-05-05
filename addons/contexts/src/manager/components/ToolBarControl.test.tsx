@@ -59,6 +59,17 @@ describe('Tests on addon-contexts component: ToolBarControl', () => {
     expect(result.props().optionsProps.activeName).toBe(someBasicProps.params[0].name);
   });
 
+  it('should render nothing if being disabled', () => {
+    // given
+    const options = { ...someBasicProps.options, disable: true };
+
+    // when
+    const result = shallow(<ToolBarControl {...someBasicProps} options={options} />);
+
+    // then
+    expect(result).toMatchInlineSnapshot(`""`);
+  });
+
   it('should document the shallowly rendered result', () => {
     // when
     const result = shallow(<ToolBarControl {...someBasicProps} />);
