@@ -25352,6 +25352,11 @@ svelte-loader@^2.13.3:
     loader-utils "^1.1.0"
     svelte-dev-helper "^1.1.9"
 
+svelte@^3.0.1:
+  version "3.2.1"
+  resolved "https://registry.npmjs.org/svelte/-/svelte-3.2.1.tgz#2bd89dbb49de623cea72730a4acaf92b4c1ec8e4"
+  integrity sha512-DH3WZHua5t87AjvCx8gU5cLQlhRF/KCyRWLpz4TXWwDVs1FEibIhXTXUWRd0EqU8/m/1e4stzL4MnboF8LxyHg==
+
 svelte@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.1.0.tgz#87a4b643169037f0b3d28a6b1832c28dc0a3fbc3"

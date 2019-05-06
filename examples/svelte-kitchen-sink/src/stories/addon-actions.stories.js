@@ -4,15 +4,17 @@ import { action } from '@storybook/addon-actions';
 import ButtonView from './views/ButtonView.svelte';
 import Button from '../components/Button.svelte';
 
+console.log(ButtonView);
+
 storiesOf('Addon|Actions', module)
   .add('Action on view method', () => ({
-    Component: ButtonView.default,
+    Component: ButtonView,
     props: {
       click: action('I am logging in the actions tab'),
     },
   }))
   .add('Action on component method', () => ({
-    Component: Button.default,
+    Component: Button,
     props: {
       text: 'Custom text',
     },

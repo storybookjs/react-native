@@ -6,14 +6,14 @@ storiesOf('Addon|Notes', module)
   .add(
     'Simple note',
     () => ({
-      Component: ButtonView.default,
+      Component: ButtonView,
     }),
     { notes: 'My notes on the [ButtonView](/story/addon-notes--simple-note) component' }
   )
   .add(
     'Note with HTML',
     () => ({
-      Component: ButtonView.default,
+      Component: ButtonView,
       props: {
         text: '🤔😳😯😮😄😩😓😱🤓😑😶😊',
       },

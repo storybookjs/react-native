@@ -4,19 +4,19 @@ import WelcomeView from './views/WelcomeView.svelte';
 import ButtonView from './views/ButtonView.svelte';
 
 storiesOf('Welcome', module).add('Welcome', () => ({
-  Component: WelcomeView.default,
+  Component: WelcomeView,
 }));
 
 storiesOf('Button', module)
   .add('rounded', () => ({
-    Component: ButtonView.default,
+    Component: ButtonView,
     props: {
       rounded: true,
       message: 'Rounded text',
     },
   }))
   .add('square', () => ({
-    Component: ButtonView.default,
+    Component: ButtonView,
     props: {
       rounded: false,
       message: 'Squared text',

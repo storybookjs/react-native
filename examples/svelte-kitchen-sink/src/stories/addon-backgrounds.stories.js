@@ -10,5 +10,5 @@ storiesOf('Addon|Backgrounds', module)
     ],
   })
   .add('story 1', () => ({
-    Component: ButtonView.default,
+    Component: ButtonView,
   }));

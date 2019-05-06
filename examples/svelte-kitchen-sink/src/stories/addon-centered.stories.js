@@ -7,14 +7,14 @@ import Button from '../components/Button.svelte';
 storiesOf('Addon|Centered', module)
   .addDecorator(Centered)
   .add('rounded', () => ({
-    Component: Button.default,
+    Component: Button,
     props: {
       rounded: true,
       text: "Look, I'm centered!",
     },
   }))
   .add('with action', () => ({
-    Component: Button.default,
+    Component: Button,
     on: {
       click: action(`Tell me it ain't so! Centered and with actions! Thanks @ekhaled :)`),
     },

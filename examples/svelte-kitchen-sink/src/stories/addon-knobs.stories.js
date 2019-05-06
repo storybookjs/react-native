@@ -22,7 +22,7 @@ storiesOf('Addon|Knobs', module)
     });
 
     return {
-      Component: ActionKnobView.default,
+      Component: ActionKnobView,
       props: {
         backgroundColor,
         width,
