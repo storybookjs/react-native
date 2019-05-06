@@ -9,6 +9,7 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetr
 enum class StorybookApp(val appName: String, val exampleDir: String, val merged: Boolean = true) {
     CRA("CRA", "cra-kitchen-sink"),
     CRA_TS("CRA TS", "cra-ts-kitchen-sink"),
+    CRA_REACT15("CRA REACT15", "cra-react15", false),
     VUE("Vue", "vue-kitchen-sink"),
     ANGULAR("Angular", "angular-cli"),
     POLYMER("Polymer", "polymer-cli"),

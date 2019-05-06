@@ -1,16 +1,11 @@
 import React, { PureComponent } from 'react';
-import { StyleSheet, Animated, StyleProp, ViewStyle } from 'react-native';
+import { StyleSheet, Animated } from 'react-native';
+import styled from '@emotion/native';
+import { EmotionProps } from '../Shared/theme';
 
-const style = StyleSheet.create({
-  panel: {
-    ...StyleSheet.absoluteFillObject,
-    borderWidth: 1,
-    borderTopWidth: 1,
-    borderBottomWidth: 0,
-    borderColor: '#e6e6e6',
-    backgroundColor: '#ffffff',
-  },
-});
+const Container: typeof Animated.View = styled(Animated.View)`
+  background: ${(props: EmotionProps) => props.theme.backgroundColor};
+`;
 
 interface Props {
   style: any[];
@@ -18,7 +13,7 @@ interface Props {
 
 export default class Panel extends PureComponent<Props> {
   render() {
-    const { children, style: propsStyle } = this.props;
-    return <Animated.View style={[style.panel, ...propsStyle]}>{children}</Animated.View>;
+    const { children, style } = this.props;
+    return <Container style={[StyleSheet.absoluteFillObject, ...style]}>{children}</Container>;
   }
 }

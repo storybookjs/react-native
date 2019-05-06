@@ -38,6 +38,7 @@ Here are some in alphabetical order:
 
 - [Applitools](https://applitools.com/storybook)
 - [Chromatic](https://www.chromaticqa.com)
+- [Happo](https://happo.io)
 - [Loki](https://loki.js.org/)
 - [Percy](https://docs.percy.io/docs/storybook-for-react)
 - [Screener](https://screener.io/v2/docs)

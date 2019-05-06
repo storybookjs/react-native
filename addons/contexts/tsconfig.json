@@ -5,10 +5,11 @@
     "paths": {
       "preact": ["src/shared/@mock-types/_preact.d.ts"]
     },
+    "strictNullChecks": true,
     "removeComments": true,
     "rootDir": "./src",
     "types": ["webpack-env", "jest"]
   },
   "include": ["src/**/*"],
-  "exclude": ["src/register.ts", "src/__tests__/**/*", "src/**/*.test.ts"]
+  "exclude": ["src/register.ts", "src/**/*.test.ts"]
 }

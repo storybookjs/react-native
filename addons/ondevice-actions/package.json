@@ -1,0 +1,38 @@
+{
+  "name": "@storybook/addon-ondevice-actions",
+  "version": "5.1.0-alpha.39",
+  "description": "Action Logger addon for react-native storybook",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/actions",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addons": "5.1.0-alpha.39",
+    "@storybook/core-events": "5.1.0-alpha.39",
+    "core-js": "^2.5.7",
+    "fast-deep-equal": "^2.0.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "5.1.0-alpha.39"
+  },
+  "peerDependencies": {
+    "@storybook/addon-actions": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

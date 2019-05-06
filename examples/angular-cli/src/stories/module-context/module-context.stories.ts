@@ -33,17 +33,12 @@ storiesOf('Custom|Feature Module as Context', module)
       };
       return {
         component: ChipsGroupComponent,
-        requiresComponentDeclaration: false,
         props,
       };
     },
     {
-      notes: `
-        This component includes a child component, a pipe, and a default provider, all which come from 
-        the specified feature module.
-
-        This behavior is possible by setting the "requiresComponentDeclaration" flag to false.
-      `.replace(/ {1,}/g, ' '),
+      notes: `This component includes a child component, a pipe, and a default provider, all which come from 
+        the specified feature module.`,
     }
   )
   .add('Component with default providers', () => {
@@ -53,7 +48,6 @@ storiesOf('Custom|Feature Module as Context', module)
     };
     return {
       component: ChipComponent,
-      requiresComponentDeclaration: false,
       props,
     };
   })
@@ -72,7 +66,6 @@ storiesOf('Custom|Feature Module as Context', module)
           },
         ],
       },
-      requiresComponentDeclaration: false,
       props,
     };
   });
