@@ -66,9 +66,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
           >
             <div>
               <h1>
-                function func(x) {
-          return x + 1;
-        }
+                x =&gt; x + 1
               </h1>
               <h2>
                 [object Object]
@@ -1321,9 +1319,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
           >
             <div>
               <h1>
-                function func(x) {
-          return x + 1;
-        }
+                x =&gt; x + 1
               </h1>
               <h2>
                 [object Object]
@@ -2656,9 +2652,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
           >
             <div>
               <h1>
-                function func(x) {
-          return x + 1;
-        }
+                x =&gt; x + 1
               </h1>
               <h2>
                 [object Object]
@@ -3899,9 +3893,7 @@ exports[`addon Info should render component description if story kind matches co
           >
             <div>
               <h1>
-                function func(x) {
-          return x + 1;
-        }
+                x =&gt; x + 1
               </h1>
               <h2>
                 [object Object]
@@ -5118,9 +5110,7 @@ exports[`addon Info should render component description if story name matches co
           >
             <div>
               <h1>
-                function func(x) {
-          return x + 1;
-        }
+                x =&gt; x + 1
               </h1>
               <h2>
                 [object Object]

@@ -1,3 +1,17 @@
+const withTests = {
+  presets: [
+    [
+      '@babel/preset-env',
+      { shippedProposals: true, useBuiltIns: 'usage', corejs: '3', targets: { node: 'current' } },
+    ],
+  ],
+  plugins: [
+    'babel-plugin-require-context-hook',
+    'babel-plugin-dynamic-import-node',
+    '@babel/plugin-transform-runtime',
+  ],
+};
+
 module.exports = {
   presets: [
     ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
@@ -20,21 +34,15 @@ module.exports = {
     ['emotion', { sourceMap: true, autoLabel: true }],
   ],
   env: {
-    test: {
-      presets: [
-        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
-      ],
-      plugins: [
-        'babel-plugin-require-context-hook',
-        'babel-plugin-dynamic-import-node',
-        '@babel/plugin-transform-runtime',
-      ],
-    },
+    test: withTests,
   },
   overrides: [
     {
       test: './examples/vue-kitchen-sink',
       presets: ['babel-preset-vue'],
+      env: {
+        test: withTests,
+      },
     },
     {
       test: './lib',
@@ -52,6 +60,9 @@ module.exports = {
         '@babel/plugin-transform-react-constant-elements',
         'babel-plugin-add-react-displayname',
       ],
+      env: {
+        test: withTests,
+      },
     },
     {
       test: [
@@ -83,6 +94,9 @@ module.exports = {
         '@babel/plugin-proposal-object-rest-spread',
         '@babel/plugin-proposal-export-default-from',
       ],
+      env: {
+        test: withTests,
+      },
     },
   ],
 };
