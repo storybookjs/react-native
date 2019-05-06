@@ -61,8 +61,10 @@ export default function render({
   } = storyFn();
 
   cleanUpPreviousStory();
+  const DefaultCompatComponent = Component.default || Component;
+  const DefaultCompatWrapper = Wrapper.default || Wrapper;
 
-  if (!Component) {
+  if (!DefaultCompatComponent) {
     showError({
       title: `Expecting a Svelte component from the story: "${selectedStory}" of "${selectedKind}".`,
       description: stripIndents`
@@ -79,7 +81,14 @@ export default function render({
 
   target.innerHTML = '';
 
-  mountView({ Component, target, props, on, Wrapper, WrapperData });
+  mountView({
+    Component: DefaultCompatComponent,
+    target,
+    props,
+    on,
+    Wrapper: DefaultCompatWrapper,
+    WrapperData,
+  });
 
   showMain();
 }

@@ -6,8 +6,10 @@ function process(src, filename) {
     filename,
   });
 
+  const code = result.js ? result.js.code : result.code;
+
   return {
-    code: result.js ? result.js.code : result.code,
+    code,
     map: result.js ? result.js.map : result.map,
   };
 }

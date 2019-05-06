@@ -4,8 +4,6 @@ import { action } from '@storybook/addon-actions';
 import ButtonView from './views/ButtonView.svelte';
 import Button from '../components/Button.svelte';
 
-console.log(ButtonView);
-
 storiesOf('Addon|Actions', module)
   .add('Action on view method', () => ({
     Component: ButtonView,
