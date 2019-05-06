@@ -254,7 +254,16 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
 
     const { storyId, viewMode } = store.getState();
 
-    if (!storyId || !storiesHash[storyId]) {
+    if (storyId && storyId.match(/--\*$/)) {
+      const idStart = storyId.slice(0, -1); // drop the * at the end
+      const firstKindLeaf = Object.values(storiesHash).find(
+        (s: Story | Group) => !s.children && s.id.substring(0, idStart.length) === idStart
+      );
+
+      if (viewMode && firstKindLeaf) {
+        navigate(`/${viewMode}/${firstKindLeaf.id}`);
+      }
+    } else if (!storyId || storyId === '*' || !storiesHash[storyId]) {
       // when there's no storyId or the storyId item doesn't exist
       // we pick the first leaf and navigate
       const firstLeaf = Object.values(storiesHash).find((s: Story | Group) => !s.children);
