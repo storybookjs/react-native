@@ -61,8 +61,8 @@ export default function render({
   } = storyFn();
 
   cleanUpPreviousStory();
-  const DefaultCompatComponent = Component.default || Component;
-  const DefaultCompatWrapper = Wrapper.default || Wrapper;
+  const DefaultCompatComponent = Component ? Component.default || Component : undefined;
+  const DefaultCompatWrapper = Wrapper ? Wrapper.default || Wrapper : undefined;
 
   if (!DefaultCompatComponent) {
     showError({
