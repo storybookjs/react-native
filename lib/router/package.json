@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "@storybook/theming": "5.1.0-alpha.39",
     "core-js": "^2.6.5",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
