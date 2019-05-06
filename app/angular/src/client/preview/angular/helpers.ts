@@ -9,6 +9,12 @@ import { AppComponent } from './components/app.component';
 import { STORY } from './app.token';
 import { NgModuleMetadata, IStoryFn, NgStory } from './types';
 
+declare global {
+  interface Window {
+    NODE_ENV: 'string' | 'development' | undefined;
+  }
+}
+
 let platform: any = null;
 let promises: Promise<NgModuleRef<any>>[] = [];
 
@@ -139,10 +145,13 @@ const insertDynamicRoot = () => {
 const draw = (newModule: DynamicComponentType): void => {
   if (!platform) {
     insertDynamicRoot();
-    try {
-      enableProdMode();
-    } catch (e) {
-      //
+    // eslint-disable-next-line no-undef
+    if (typeof NODE_ENV === 'string' && NODE_ENV !== 'development') {
+      try {
+        enableProdMode();
+      } catch (e) {
+        //
+      }
     }
 
     platform = platformBrowserDynamic();
