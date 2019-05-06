@@ -72,6 +72,10 @@ const initialUrlSupport = ({ navigate, location, path }: Module) => {
   if (selectedKind && selectedStory) {
     const storyId = toId(selectedKind, selectedStory);
     setTimeout(() => navigate(`/story/${storyId}`, { replace: true }), 1);
+  } else if (selectedKind) {
+    // Create a "storyId" of the form `kind-sanitized--*`
+    const standInId = toId(selectedKind, 'star').replace(/star$/, '*');
+    setTimeout(() => navigate(`/story/${standInId}`, { replace: true }), 1);
   } else if (!queryPath || queryPath === '/') {
     setTimeout(() => navigate(`/story/*`, { replace: true }), 1);
   } else if (Object.keys(query).length > 1) {

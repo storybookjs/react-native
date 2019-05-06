@@ -1,12 +1,23 @@
 import React, { PureComponent } from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
 import { Collection } from '@storybook/addons';
-import style from '../style';
 
 export interface Props {
   panels: Collection;
   addonSelected: string;
 }
+
+const style = StyleSheet.create({
+  invisible: {
+    height: 0,
+    width: 0,
+    opacity: 0,
+    position: 'absolute',
+  },
+  flex: {
+    flex: 1,
+  },
+});
 
 export default class Wrapper extends PureComponent<Props> {
   static defaultProps = {
@@ -23,9 +34,7 @@ export default class Wrapper extends PureComponent<Props> {
 
       return (
         <View key={id} style={selected ? style.flex : style.invisible}>
-          <ScrollView style={style.flex}>
-            {panels[id].render({ active: selected, key: id })}
-          </ScrollView>
+          <ScrollView>{panels[id].render({ active: selected, key: id })}</ScrollView>
         </View>
       );
     });

@@ -96,7 +96,7 @@ exports[`A11YPanel should render loader when it's running 1`] = `
           </Svg>
         </Icons>
       </Styled(Icons)>
-       Please wait while a11y scan is running ...
+       Please wait while the accessibility scan is running ...
     </div>
   </Component>
 </Loader>
