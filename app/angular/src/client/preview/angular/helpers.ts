@@ -53,11 +53,74 @@ const createComponentFromTemplate = (template: string, styles: string[]) => {
   })(componentClass);
 };
 
+const extractNgModuleMetadata = (importItem: any): NgModule => {
+  const decoratorKey = '__annotations__';
+  const decorators: any[] =
+    Reflect && Reflect.getOwnPropertyDescriptor
+      ? Reflect.getOwnPropertyDescriptor(importItem, decoratorKey).value
+      : importItem[decoratorKey];
+
+  if (!decorators || decorators.length === 0) {
+    return null;
+  }
+
+  const ngModuleDecorator: NgModule | undefined = decorators.find(
+    decorator => decorator instanceof NgModule
+  );
+  if (!ngModuleDecorator) {
+    return null;
+  }
+  return ngModuleDecorator;
+};
+
+const getExistenceOfComponentInModules = (
+  component: any,
+  declarations: any[],
+  imports: any[]
+): boolean => {
+  if (declarations && declarations.some(declaration => declaration === component)) {
+    // Found component in declarations array
+    return true;
+  }
+  if (!imports) {
+    return false;
+  }
+
+  return imports.some(importItem => {
+    const extractedNgModuleMetadata = extractNgModuleMetadata(importItem);
+    if (!extractedNgModuleMetadata) {
+      // Not an NgModule
+      return false;
+    }
+    return getExistenceOfComponentInModules(
+      component,
+      extractedNgModuleMetadata.declarations,
+      extractedNgModuleMetadata.imports
+    );
+  });
+};
+
 const initModule = (storyFn: IStoryFn) => {
   const storyObj = storyFn();
   const { component, template, props, styles, moduleMetadata = {} } = storyObj;
 
-  const AnnotatedComponent = template ? createComponentFromTemplate(template, styles) : component;
+  const isCreatingComponentFromTemplate = Boolean(template);
+
+  const AnnotatedComponent = isCreatingComponentFromTemplate
+    ? createComponentFromTemplate(template, styles)
+    : component;
+
+  const componentRequiesDeclaration =
+    isCreatingComponentFromTemplate ||
+    !getExistenceOfComponentInModules(
+      component,
+      moduleMetadata.declarations,
+      moduleMetadata.imports
+    );
+
+  const componentDeclarations = componentRequiesDeclaration
+    ? [AppComponent, AnnotatedComponent]
+    : [AppComponent];
 
   const story = {
     component: AnnotatedComponent,
@@ -65,7 +128,7 @@ const initModule = (storyFn: IStoryFn) => {
   };
 
   return getModule(
-    [AppComponent, AnnotatedComponent],
+    componentDeclarations,
     [AnnotatedComponent],
     [AppComponent],
     story,

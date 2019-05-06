@@ -1,6 +1,8 @@
 /* eslint-disable react/no-multi-comp */
 import React, { ReactElement, Component, useContext } from 'react';
 import memoize from 'memoizerific';
+// @ts-ignore shallow-equal is not in DefinitelyTyped
+import shallowEqualObjects from 'shallow-equal/objects';
 
 import Events from '@storybook/core-events';
 import { RenderData as RouterData } from '@storybook/router';
@@ -218,6 +220,7 @@ class ManagerProvider extends Component<Props, State> {
 
 interface ConsumerProps<S, C> {
   filter?: (combo: C) => S;
+  pure?: boolean;
   children: (d: S | C) => ReactElement<any> | null;
 }
 
@@ -233,15 +236,28 @@ class ManagerConsumer extends Component<ConsumerProps<SubState, Combo>> {
 
   dataMemory?: (combo: Combo) => SubState;
 
+  prevChildren?: ReactElement<any> | null;
+
+  prevData?: SubState;
+
   render() {
-    const { children } = this.props;
+    const { children, pure } = this.props;
 
     return (
       <ManagerContext.Consumer>
         {d => {
           const data = this.dataMemory ? this.dataMemory(d) : d;
-
-          return children(data);
+          if (
+            pure &&
+            this.prevChildren &&
+            this.prevData &&
+            shallowEqualObjects(data, this.prevData)
+          ) {
+            return this.prevChildren;
+          }
+          this.prevChildren = children(data);
+          this.prevData = data;
+          return this.prevChildren;
         }}
       </ManagerContext.Consumer>
     );
