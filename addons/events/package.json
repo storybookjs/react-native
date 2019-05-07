@@ -27,7 +27,7 @@
     "@storybook/addons": "5.1.0-alpha.39",
     "@storybook/core-events": "5.1.0-alpha.39",
     "@storybook/theming": "5.1.0-alpha.39",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "format-json": "^1.0.3",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",

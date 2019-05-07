@@ -26,7 +26,7 @@
     "@storybook/components": "5.1.0-alpha.39",
     "@storybook/router": "5.1.0-alpha.39",
     "@storybook/theming": "5.1.0-alpha.39",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "estraverse": "^4.2.0",
     "loader-utils": "^1.2.3",
     "prettier": "^1.16.4",

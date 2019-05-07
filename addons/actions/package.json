@@ -26,14 +26,14 @@
     "@storybook/components": "5.1.0-alpha.39",
     "@storybook/core-events": "5.1.0-alpha.39",
     "@storybook/theming": "5.1.0-alpha.39",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
     "lodash": "^4.17.11",
     "polished": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
-    "react-inspector": "^2.3.1",
+    "react-inspector": "^3.0.2",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

@@ -23,7 +23,7 @@
   "dependencies": {
     "@storybook/channels": "5.1.0-alpha.39",
     "@storybook/client-logger": "5.1.0-alpha.39",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
     "telejson": "^2.1.1"
   },

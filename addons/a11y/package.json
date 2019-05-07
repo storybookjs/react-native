@@ -34,7 +34,7 @@
     "@storybook/theming": "5.1.0-alpha.39",
     "axe-core": "^3.2.2",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
     "hoist-non-react-statics": "^3.3.0",
     "memoizerific": "^1.11.3",

@@ -961,88 +961,92 @@ exports[`A11YPanel should render report 1`] = `
                     className="simplebar-offset"
                   >
                     <div
-                      className="simplebar-content"
+                      className="simplebar-content-wrapper"
                     >
-                      <Tabs
-                        key="tabs"
-                        tabs={
-                          Array [
-                            Object {
-                              "items": Array [],
-                              "label": <ForwardRef(render)>
-                                0
-                                 Violations
-                              </ForwardRef(render)>,
-                              "panel": <Report
-                                empty="No accessibility violations found."
-                                items={Array []}
-                                type={0}
-                              />,
-                              "type": 0,
-                            },
-                            Object {
-                              "items": Array [],
-                              "label": <ForwardRef(render)>
-                                0
-                                 Passes
-                              </ForwardRef(render)>,
-                              "panel": <Report
-                                empty="No accessibility checks passed."
-                                items={Array []}
-                                type={1}
-                              />,
-                              "type": 1,
-                            },
-                            Object {
-                              "items": Array [],
-                              "label": <ForwardRef(render)>
-                                0
-                                 Incomplete
-                              </ForwardRef(render)>,
-                              "panel": <Report
-                                empty="No accessibility checks incomplete."
-                                items={Array []}
-                                type={2}
-                              />,
-                              "type": 2,
-                            },
-                          ]
-                        }
+                      <div
+                        className="simplebar-content"
                       >
-                        <SizeMe
-                          refreshMode="debounce"
+                        <Tabs
+                          key="tabs"
+                          tabs={
+                            Array [
+                              Object {
+                                "items": Array [],
+                                "label": <ForwardRef(render)>
+                                  0
+                                   Violations
+                                </ForwardRef(render)>,
+                                "panel": <Report
+                                  empty="No accessibility violations found."
+                                  items={Array []}
+                                  type={0}
+                                />,
+                                "type": 0,
+                              },
+                              Object {
+                                "items": Array [],
+                                "label": <ForwardRef(render)>
+                                  0
+                                   Passes
+                                </ForwardRef(render)>,
+                                "panel": <Report
+                                  empty="No accessibility checks passed."
+                                  items={Array []}
+                                  type={1}
+                                />,
+                                "type": 1,
+                              },
+                              Object {
+                                "items": Array [],
+                                "label": <ForwardRef(render)>
+                                  0
+                                   Incomplete
+                                </ForwardRef(render)>,
+                                "panel": <Report
+                                  empty="No accessibility checks incomplete."
+                                  items={Array []}
+                                  type={2}
+                                />,
+                                "type": 2,
+                              },
+                            ]
+                          }
                         >
-                          <SizeMe(Component)
-                            onSize={[Function]}
+                          <SizeMe
+                            refreshMode="debounce"
                           >
-                            <SizeMeRenderer(Component)
-                              disablePlaceholder={false}
-                              explicitRef={[Function]}
+                            <SizeMe(Component)
                               onSize={[Function]}
-                              size={
-                                Object {
-                                  "height": undefined,
-                                  "position": undefined,
-                                  "width": undefined,
-                                }
-                              }
                             >
-                              <SizeMeReferenceWrapper>
-                                <SizeMePlaceholder>
-                                  <div
-                                    style={
-                                      Object {
-                                        "height": "100%",
-                                        "width": "100%",
+                              <SizeMeRenderer(Component)
+                                disablePlaceholder={false}
+                                explicitRef={[Function]}
+                                onSize={[Function]}
+                                size={
+                                  Object {
+                                    "height": undefined,
+                                    "position": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <SizeMeReferenceWrapper>
+                                  <SizeMePlaceholder>
+                                    <div
+                                      style={
+                                        Object {
+                                          "height": "100%",
+                                          "width": "100%",
+                                        }
                                       }
-                                    }
-                                  />
-                                </SizeMePlaceholder>
-                              </SizeMeReferenceWrapper>
-                            </SizeMeRenderer(Component)>
-                          </SizeMe(Component)>
-                        </SizeMe>
-                      </Tabs>
+                                    />
+                                  </SizeMePlaceholder>
+                                </SizeMeReferenceWrapper>
+                              </SizeMeRenderer(Component)>
+                            </SizeMe(Component)>
+                          </SizeMe>
+                        </Tabs>
+                      </div>
                     </div>
                   </div>
                 </div>

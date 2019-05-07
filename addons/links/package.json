@@ -26,7 +26,7 @@
     "@storybook/core-events": "5.1.0-alpha.39",
     "@storybook/router": "5.1.0-alpha.39",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
     "prop-types": "^15.7.2",
     "qs": "^6.6.0"

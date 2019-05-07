@@ -33,7 +33,7 @@
     "@storybook/codemod": "5.1.0-alpha.39",
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "cross-spawn": "^6.0.5",
     "inquirer": "^6.2.0",
     "jscodeshift": "^0.6.3",
