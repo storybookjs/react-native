@@ -4,8 +4,6 @@ import { action } from '@storybook/addon-actions';
 
 import Button from '../components/Button.svelte';
 
-console.log({ Button });
-
 storiesOf('Addon|Centered', module)
   .addDecorator(Centered)
   .add('rounded', () => ({
