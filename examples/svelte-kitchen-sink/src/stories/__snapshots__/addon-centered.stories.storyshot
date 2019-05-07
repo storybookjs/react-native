@@ -5,18 +5,16 @@ exports[`Storyshots Addon|Centered rounded 1`] = `
   class="storybook-snapshot-container"
 >
   <button
-    class="button rounded svelte-n2tx93"
+    class="button svelte-n2tx93 rounded"
   >
     <strong>
       Round
        corners
     </strong>
     <br />
-    
-  
+     
     Look, I'm centered!
-    
-  
+     
   </button>
 </section>
 `;
@@ -26,18 +24,16 @@ exports[`Storyshots Addon|Centered with action 1`] = `
   class="storybook-snapshot-container"
 >
   <button
-    class="button rounded svelte-n2tx93"
+    class="button svelte-n2tx93 rounded"
   >
     <strong>
       Round
        corners
     </strong>
     <br />
+     
     
-  
-    
-    
-  
+     
   </button>
 </section>
 `;
