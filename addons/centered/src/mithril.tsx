@@ -1,10 +1,10 @@
 /** @jsx m */
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-import m from 'mithril';
+import m, { ComponentTypes } from 'mithril';
 import styles from './styles';
 
-export default function(storyFn: any) {
+export default function(storyFn: () => ComponentTypes) {
   return {
     view: () => (
       <div style={styles.style}>

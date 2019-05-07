@@ -1,7 +1,7 @@
 import { document } from 'global';
 import styles from './styles';
 
-export default function(storyFn: any) {
+export default function(storyFn: () => { template: any; context: any }) {
   const { template, context } = storyFn();
 
   const element = document.createElement('div');
