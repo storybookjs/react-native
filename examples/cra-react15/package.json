@@ -1,0 +1,29 @@
+{
+  "name": "cra-react15",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "babel-loader": "7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-scripts": "1.1.5",
+    "global": "^4.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "5.1.0-alpha.39",
+    "@storybook/addon-links": "5.1.0-alpha.39",
+    "@storybook/theming": "5.1.0-alpha.39",
+    "@storybook/react": "5.1.0-alpha.39",
+    "babel-core": "6",
+    "babel-runtime": "6"
+  }
+}
