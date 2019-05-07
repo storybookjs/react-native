@@ -69,7 +69,7 @@
     "postcss-loader": "^3.0.0",
     "pretty-hrtime": "^1.0.3",
     "qs": "^6.6.0",
-    "raw-loader": "^1.0.0",
+    "raw-loader": "^2.0.0",
     "react-dev-utils": "^9.0.0",
     "regenerator-runtime": "^0.12.1",
     "resolve": "^1.10.0",
