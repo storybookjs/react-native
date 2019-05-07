@@ -50,6 +50,10 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
   const firstProject = projects[Object.keys(projects)[0]];
   const project = projects.storybook || fallbackProject || firstProject;
 
+  if (!project.architect.build) {
+    return null;
+  }
+
   const { options: projectOptions } = project.architect.build;
 
   const normalizedAssets = normalizeAssetPatterns(

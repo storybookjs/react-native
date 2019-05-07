@@ -55,5 +55,15 @@ describe('angualr-cli_config', () => {
         },
       });
     });
+
+    it('should return null if `architect.build` option are not exists.', () => {
+      const angularJsonWithNoBuildOptions = { ...angularJson };
+      angularJsonWithNoBuildOptions.projects['angular-cli'].architect.build = undefined;
+
+      setupFiles({ 'angular.json': JSON.stringify(angularJsonWithNoBuildOptions) });
+
+      const config = getAngularCliWebpackConfigOptions('/');
+      expect(config).toBeNull();
+    });
   });
 });
