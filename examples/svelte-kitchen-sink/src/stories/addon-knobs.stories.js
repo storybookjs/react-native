@@ -23,7 +23,7 @@ storiesOf('Addon|Knobs', module)
 
     return {
       Component: ActionKnobView,
-      data: {
+      props: {
         backgroundColor,
         width,
         height,

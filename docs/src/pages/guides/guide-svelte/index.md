@@ -96,14 +96,14 @@ import MyButton from '../components/MyButton.svelte';
 storiesOf('MyButton', module)
   .add('with text', () => ({
     Component: MyButton,
-    data: {
+    props: {
       buttonText: 'some text',
     },
   })),
   .add('with text', () => ({
     Component: MyButton,
 
-    data: {
+    props: {
       buttonText: '😀 😎 👍 💯',
     },
   }));
@@ -116,7 +116,7 @@ So you can create a story "view" file, essentially just a .svelte file to load y
 
 ```html
 <!-- MyButtonView  -->
-<MyButton rounded="{rounded}" on:click>
+<MyButton {rounded} on:click>
   {buttonText}
 </Button>
 ```
@@ -136,7 +136,7 @@ storiesOf('Button', module)
   .add('wrapped component(s) example', () => ({
     Components: MyButtonView,
 
-    data: {
+    props: {
       buttonText: 'some text',
       rounded: true,
     },

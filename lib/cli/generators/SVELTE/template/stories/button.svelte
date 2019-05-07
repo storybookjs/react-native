@@ -1,4 +1,4 @@
-<button class="button" on:click="onClick(event)">
+<button class="button" on:click={onClick}>
     {text}
 </button>
 
@@ -15,11 +15,11 @@
 </style>
 
 <script>
-  export default {
-    methods: {
-      onClick(event) {
-        this.fire('click', event)
-      }
-    }
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
+
+  function onClick(event) {
+    dispatch('click', event)
   }
 </script>
