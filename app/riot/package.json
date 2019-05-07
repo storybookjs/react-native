@@ -29,7 +29,7 @@
     "common-tags": "^1.8.0",
     "core-js": "^2.6.5",
     "global": "^4.3.2",
-    "raw-loader": "^1.0.0",
+    "raw-loader": "^2.0.0",
     "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
