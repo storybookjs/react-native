@@ -24,6 +24,7 @@ module.exports = {
         '/guides/guide-mithril/',
         '/guides/guide-ember/',
         '/guides/guide-riot/',
+        '/guides/guide-svelte/',
       ],
       configurations: [
         '/configurations/options-parameter/',
