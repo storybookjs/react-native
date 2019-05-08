@@ -99,7 +99,7 @@ storiesOf('MyButton', module)
     data: {
       buttonText: 'some text',
     },
-  })),
+  }))
   .add('with text', () => ({
     Component: MyButton,
 
