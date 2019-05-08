@@ -19,7 +19,7 @@ export const _getMergedSettings: _getMergedSettings = (topLevel, storyLevel) => 
   components: topLevel.components || storyLevel.components || [],
   params:
     topLevel.params || storyLevel.params
-      ? [].concat(topLevel.params, storyLevel.params).filter(Boolean)
+      ? [...(topLevel.params || []), ...(storyLevel.params || [])].filter(Boolean)
       : [{ name: '', props: {} }],
   options: {
     deep: false,
@@ -38,8 +38,7 @@ export const _getMergedSettings: _getMergedSettings = (topLevel, storyLevel) => 
 type getContextNodes = (settings: WrapperSettings) => ContextNode[];
 
 export const getContextNodes: getContextNodes = ({ options, parameters }) => {
-  const titles = []
-    .concat(options, parameters)
+  const titles = [...(options || []), ...(parameters || [])]
     .filter(Boolean)
     .map(({ title }) => title);
 

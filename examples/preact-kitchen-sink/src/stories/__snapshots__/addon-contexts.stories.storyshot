@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addons|Contexts Simple CSS Theming 1`] = `
+<div
+  style={
+    Object {
+      "background": "#173F5F",
+      "color": "white",
+      "height": "100vh",
+      "padding": "10px",
+    }
+  }
+>
+  <div>
+    I'm a children of the injected 'div' (where provides a theming context).
+  </div>
+</div>
+`;

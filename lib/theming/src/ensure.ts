@@ -4,8 +4,8 @@ import { deletedDiff } from 'deep-object-diff';
 import { stripIndent } from 'common-tags';
 
 import light from './themes/light';
-import { Theme, ThemeVars } from './base';
-import { convert } from './create';
+import { Theme, ThemeVars } from './types';
+import { convert } from './convert';
 
 export const ensure = (input: ThemeVars): Theme => {
   if (!input) {
