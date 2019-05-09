@@ -157,6 +157,22 @@ storiesOf('Component', module).add('With Markdown', () => <MyComponent />, {
 });
 ```
 
+## Searching
+
+By default, search results will show up based on the file name of your stories. As of storybook 5, you can extend this with `notes` to have certain stories show up when the search input contains matches. For example, if you built a `Callout` component that you want to be found by searching for `popover` or `tooltip` as well, you could use `notes` like this:
+
+```jsx
+.add(
+  "Callout",
+  () => (
+    <Callout>Some children</Callout>
+  ),
+  {
+    notes: "popover tooltip"
+  }
+)
+```
+
 ## Nesting stories
 
 Stories can be organized in a nested structure using "/" as a separator:
