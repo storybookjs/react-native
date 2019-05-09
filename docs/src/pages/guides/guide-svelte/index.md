@@ -100,7 +100,7 @@ storiesOf('MyButton', module)
       buttonText: 'some text',
     },
   }))
-  .add('with text', () => ({
+  .add('with some emojies', () => ({
     Component: MyButton,
 
     props: {
