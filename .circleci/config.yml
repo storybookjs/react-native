@@ -134,6 +134,14 @@ jobs:
       - store_artifacts:
           path: examples/official-storybook/image-snapshots/__image_snapshots__
           destination: official_storybook_image_snapshots
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+            - examples
+            - addons
+            - app
+            - lib
   smoke-tests:
     <<: *defaults
     steps:
