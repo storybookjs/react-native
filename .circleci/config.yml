@@ -40,6 +40,12 @@ jobs:
             - addons
             - app
             - lib
+  chromatic:
+    <<: *defaults
+    steps:
+      - run:
+        name: Run chromatic on the pre-built storybook
+        command: yarn chromatic -- -d ./storybook-static
   examples:
     <<: *defaults
     steps:
@@ -347,3 +353,6 @@ workflows:
       - cli-test-latest-cra:
           requires:
             - build
+      - chromatic:
+          requires:
+            - examples
