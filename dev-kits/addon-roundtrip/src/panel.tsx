@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const Panel = ({ active }: Props) => {
-  const { 0: results, 1: setState } = useAddonState<Results>(ADDON_ID, []);
+  const [results, setState] = useAddonState<Results>(ADDON_ID, []);
   const emit = useChannel({
     [EVENTS.RESULT]: newResults => setState(newResults),
   });

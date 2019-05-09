@@ -282,14 +282,11 @@ export interface EventMap {
   [eventId: string]: Listener;
 }
 
-function getAddonStateOrDefault<S>(api: API, addonId: string, defaultState: S): S {
-  const fromStore = api.getAddonState(addonId);
+function stateOrDefault<S>(fromStore: S, defaultState: S): S {
   if (typeof fromStore === 'undefined') {
-    api.setAddonState<S>(addonId, defaultState);
-
     return defaultState;
   }
-  return fromStore as S;
+  return fromStore;
 }
 
 type StateMerger<S> = (input: S) => S;
@@ -297,12 +294,21 @@ type StateMerger<S> = (input: S) => S;
 export function useAddonState<S>(addonId: string, defaultState?: S) {
   const api = useStorybookApi();
 
-  const setState = (newStateOrMerger: S | StateMerger<S>, options?: Options) =>
-    api.setAddonState<S>(addonId, newStateOrMerger, options);
+  const existingState = api.getAddonState<S>(addonId);
+  const state = stateOrDefault<S>(existingState, defaultState);
 
-  const state = getAddonStateOrDefault<S>(api, addonId, defaultState);
+  const setState = (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
+    return api.setAddonState<S>(addonId, newStateOrMerger, options);
+  };
 
-  return { 0: state, 1: setState };
+  if (typeof existingState === 'undefined') {
+    api.setAddonState<S>(addonId, state);
+  }
+
+  return [state, setState] as [
+    S,
+    (newStateOrMerger: S | StateMerger<S>, options?: Options) => Promise<S>
+  ];
 }
 
 export const useChannel = (eventMap: EventMap) => {
