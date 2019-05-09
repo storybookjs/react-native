@@ -11,7 +11,7 @@ interface Props {
 export const Panel = ({ active }: Props) => {
   const [results, setState] = useAddonState<Results>(ADDON_ID, []);
   const emit = useChannel({
-    [EVENTS.RESULT]: newResults => setState(newResults),
+    [EVENTS.RESULT]: (newResults: Results) => setState(newResults),
   });
 
   const output = useMemo(
@@ -20,20 +20,20 @@ export const Panel = ({ active }: Props) => {
         {results.length ? (
           <ol>
             {results.map((i: string) => (
-              <li key={i.toString()}>{i}</li>
+              <li>{i}</li>
             ))}
           </ol>
         ) : null}
         <button type="button" onClick={() => emit(EVENTS.REQUEST)}>
           emit
         </button>
-        <button type="button" onClick={() => setState([])}>
+        <button type="button" onClick={() => setState(['foo'])}>
           setState
         </button>
-        <button type="button" onClick={() => setState([], { persistence: 'session' })}>
+        <button type="button" onClick={() => setState(['bar'], { persistence: 'session' })}>
           setState with options
         </button>
-        <button type="button" onClick={() => setState(s => [...s, 'foo'])}>
+        <button type="button" onClick={() => setState(s => [...s, 'baz'])}>
           setState with function
         </button>
       </div>
@@ -43,4 +43,3 @@ export const Panel = ({ active }: Props) => {
 
   return <Fragment>{output}</Fragment>;
 };
-
