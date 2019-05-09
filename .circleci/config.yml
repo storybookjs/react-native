@@ -47,8 +47,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-        name: Run chromatic on the pre-built storybook
-        command: yarn chromatic -- -d ./storybook-static
+          name: Run chromatic on the pre-built storybook
+          command: yarn chromatic -- -d ./storybook-static
   examples:
     <<: *defaults
     steps:
