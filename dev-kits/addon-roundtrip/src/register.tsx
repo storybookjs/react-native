@@ -8,7 +8,11 @@ addons.register(ADDON_ID, () => {
   addons.add('placeholder', {
     title: 'empty placeholder',
     type: types.PANEL,
-    render: ({ active, key }) => <div key={key}>{active}Empty indeed</div>,
+    render: ({ active, key }) => (
+      <div hidden={!active} key={key}>
+        {active}Empty indeed
+      </div>
+    ),
   });
   addons.add(PANEL_ID, {
     title: 'roundtrip',

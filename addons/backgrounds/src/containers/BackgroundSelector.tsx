@@ -117,7 +117,7 @@ export class BackgroundSelector extends Component<Props, State> {
       this.setState({ expanded: false });
     }
     if (typeof selected === 'string') {
-      api.setAddonState(PARAM_KEY, selected);
+      api.setAddonState<string>(PARAM_KEY, selected);
     }
     api.emit(EVENTS.UPDATE, { selected, name });
   };

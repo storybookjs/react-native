@@ -40,13 +40,19 @@ interface Panels {
   [id: string]: Addon;
 }
 
+type StateMerger<S> = (input: S) => S;
+
 export interface SubAPI {
   getElements: (type: Types) => Collection;
   getPanels: () => Collection;
   getSelectedPanel: () => string;
   setSelectedPanel: (panelName: string) => void;
-  setAddonState: (addonId: string, state: any, options?: Options) => Promise<State>;
-  getAddonState: (addonId: string) => any;
+  setAddonState<S>(
+    addonId: string,
+    newStateOrMerger: S | StateMerger<S>,
+    options?: Options
+  ): Promise<S>;
+  getAddonState<S>(addonId: string): S;
 }
 
 export function ensurePanel(panels: Panels, selectedPanel?: string, currentPanel?: string) {
@@ -73,12 +79,21 @@ export default ({ provider, store }: Module) => {
     setSelectedPanel: panelName => {
       store.setState({ selectedPanel: panelName }, { persistence: 'session' });
     },
-    setAddonState: (addonId, state, options) => {
-      if (typeof state === 'function') {
-        const s = state(api.getAddonState(addonId));
-        return store.setState({ addons: { [addonId]: s } }, options);
+    setAddonState<S>(
+      addonId: string,
+      newStateOrMerger: S | StateMerger<S>,
+      options?: Options
+    ): Promise<S> {
+      let nextState;
+      if (typeof newStateOrMerger === 'function') {
+        const merger = newStateOrMerger as StateMerger<S>;
+        nextState = merger(api.getAddonState<S>(addonId));
+      } else {
+        nextState = newStateOrMerger;
       }
-      return store.setState({ addons: { [addonId]: state } }, options);
+      return store
+        .setState({ addons: { [addonId]: nextState } }, options)
+        .then(() => api.getAddonState(addonId));
     },
     getAddonState: addonId => {
       return store.getState().addons[addonId];
