@@ -1,3 +1,41 @@
+## 5.1.0-beta.0 (May 10, 2019)
+
+Welcome to the 5.1 beta! Feature development's done; `beta.0` kicks off the stabilization process for the 5.1 final release. 🚀
+
+## 5.1.0-alpha.40 (May 8, 2019)
+
+### Features
+
+- Svelte: Add svelte v3 support ([#6698](https://github.com/storybooks/storybook/pull/6698))
+- Angular: Disable production mode for debugging components ([#6215](https://github.com/storybooks/storybook/pull/6215))
+- Angular: Allow optional component declaration without additional configuration ([#6666](https://github.com/storybooks/storybook/pull/6666))
+- Core: Allow browsing to a kind and get the first story ([#6720](https://github.com/storybooks/storybook/pull/6720))
+
+### Bug Fixes
+
+- UI: Preserve dimensions on resizing for panel ([#6696](https://github.com/storybooks/storybook/pull/6696))
+
+### Maintenance
+
+- Add CRA React15 example to test back-compat ([#6475](https://github.com/storybooks/storybook/pull/6475))
+- Remove teamcity CLI tests ([#6707](https://github.com/storybooks/storybook/pull/6707))
+
+### Dependency Upgrades
+
+- Upgrade to core-js v3 ([#6655](https://github.com/storybooks/storybook/pull/6655))
+- Bump eslint-plugin-react from 7.12.4 to 7.13.0 ([#6728](https://github.com/storybooks/storybook/pull/6728))
+- Bump @types/react-native from 0.57.50 to 0.57.51 ([#6732](https://github.com/storybooks/storybook/pull/6732))
+- Bump @types/node from 11.13.7 to 12.0.0 ([#6730](https://github.com/storybooks/storybook/pull/6730))
+- Bump jest-cli from 24.7.1 to 24.8.0 ([#6729](https://github.com/storybooks/storybook/pull/6729))
+- Bump @babel/preset-env from 7.4.3 to 7.4.4 ([#6731](https://github.com/storybooks/storybook/pull/6731))
+- Bump raw-loader from 1.0.0 to 2.0.0 ([#6685](https://github.com/storybooks/storybook/pull/6685))
+- Bump react-color from 2.17.1 to 2.17.3 ([#6681](https://github.com/storybooks/storybook/pull/6681))
+- Bump @babel/plugin-proposal-class-properties from 7.4.0 to 7.4.4 ([#6686](https://github.com/storybooks/storybook/pull/6686))
+- Bump react-dev-utils from 8.0.0 to 9.0.0 ([#6682](https://github.com/storybooks/storybook/pull/6682))
+- Bump codelyzer from 5.0.0 to 5.0.1 ([#6687](https://github.com/storybooks/storybook/pull/6687))
+- Bump @types/react from 16.8.14 to 16.8.16 ([#6717](https://github.com/storybooks/storybook/pull/6717))
+- Bump react-redux from 7.0.2 to 7.0.3 ([#6684](https://github.com/storybooks/storybook/pull/6684))
+
 ## 5.1.0-alpha.39 (May 2, 2019)
 
 ### Features

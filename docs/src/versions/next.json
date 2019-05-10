@@ -1,1 +1,1 @@
-{"version":"5.1.0-alpha.39","info":{"plain":"### Features\n\n- React-native: Ondevice actions ([#6594](https://github.com/storybooks/storybook/pull/6594))\n- React-native: Use emotion to style RN UI ([#6603](https://github.com/storybooks/storybook/pull/6603))\n\n### Bug Fixes\n\n- API: Mimic PureComponent behavior for Consumer children ([#6412](https://github.com/storybooks/storybook/pull/6412))"}}
+{"version":"5.1.0-beta.0","info":{"plain":"Welcome to the 5.1 beta! Feature development's done; `beta.0` kicks off the stabilization process for the 5.1 final release. 🚀"}}

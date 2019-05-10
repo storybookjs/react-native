@@ -40,6 +40,15 @@ jobs:
             - addons
             - app
             - lib
+  chromatic:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run chromatic on the pre-built storybook
+          command: yarn chromatic -- -d ./storybook-static
   examples:
     <<: *defaults
     steps:
@@ -125,6 +134,14 @@ jobs:
       - store_artifacts:
           path: examples/official-storybook/image-snapshots/__image_snapshots__
           destination: official_storybook_image_snapshots
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+            - examples
+            - addons
+            - app
+            - lib
   smoke-tests:
     <<: *defaults
     steps:
@@ -347,3 +364,6 @@ workflows:
       - cli-test-latest-cra:
           requires:
             - build
+      - chromatic:
+          requires:
+            - examples
