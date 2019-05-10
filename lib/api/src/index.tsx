@@ -282,7 +282,7 @@ export interface EventMap {
   [eventId: string]: Listener;
 }
 
-function stateOrDefault<S>(fromStore: S, defaultState: S): S {
+function itOrDefault<S>(fromStore: S, defaultState: S): S {
   if (typeof fromStore === 'undefined') {
     return defaultState;
   }
@@ -295,7 +295,7 @@ export function useAddonState<S>(addonId: string, defaultState?: S) {
   const api = useStorybookApi();
 
   const existingState = api.getAddonState<S>(addonId);
-  const state = stateOrDefault<S>(existingState, defaultState);
+  const state = itOrDefault<S>(existingState, defaultState);
 
   const setState = (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
     return api.setAddonState<S>(addonId, newStateOrMerger, options);
@@ -322,3 +322,10 @@ export const useChannel = (eventMap: EventMap) => {
 
   return api.emit;
 };
+
+export function useParameter<S>(parameterKey: string, defaultValue?: S) {
+  const api = useStorybookApi();
+
+  const result = api.getCurrentParameter<S>(parameterKey);
+  return itOrDefault<S>(result, defaultValue);
+}

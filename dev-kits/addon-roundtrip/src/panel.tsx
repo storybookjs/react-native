@@ -1,5 +1,6 @@
 import React, { Fragment, useMemo } from 'react';
 import { useAddonState, useChannel } from '@storybook/api';
+import { ActionBar } from '@storybook/components';
 import { ADDON_ID, EVENTS } from './constants';
 
 type Results = string[];
@@ -24,18 +25,18 @@ export const Panel = ({ active }: Props) => {
             ))}
           </ol>
         ) : null}
-        <button type="button" onClick={() => emit(EVENTS.REQUEST)}>
-          emit
-        </button>
-        <button type="button" onClick={() => setState(['foo'])}>
-          setState
-        </button>
-        <button type="button" onClick={() => setState(['bar'], { persistence: 'session' })}>
-          setState with options
-        </button>
-        <button type="button" onClick={() => setState(s => [...s, 'baz'])}>
-          setState with function
-        </button>
+        <ActionBar
+          key="actionbar"
+          actionItems={[
+            { title: 'emit', onClick: () => emit(EVENTS.REQUEST) },
+            { title: 'setState', onClick: () => setState(['foo']) },
+            {
+              title: 'setState with options',
+              onClick: () => setState(['bar'], { persistence: 'session' }),
+            },
+            { title: 'setState with function', onClick: () => setState(s => [...s, 'baz']) },
+          ]}
+        />
       </div>
     ),
     [active, results]
@@ -43,3 +44,9 @@ export const Panel = ({ active }: Props) => {
 
   return <Fragment>{output}</Fragment>;
 };
+/*
+** addon-design-assets **
+an addon took an asset (design png)
+connct that asset to a panel
+goal: show this side by side with component
+*/

@@ -26,6 +26,7 @@ export interface SubAPI {
   jumpToStory: (direction: Direction) => void;
   getData: (storyId: StoryId) => Story | Group;
   getParameters: (storyId: StoryId, parameterName?: ParameterName) => Story['parameters'] | any;
+  getCurrentParameter<S>(parameterName?: ParameterName): S;
 }
 
 interface Group {
@@ -98,6 +99,16 @@ const initStoriesApi = ({
     }
 
     return null;
+  };
+
+  const getCurrentParameter = function getCurrentParameter<S>(parameterName: ParameterName) {
+    const { storyId } = store.getState();
+    const parameters = getParameters(storyId, parameterName);
+
+    if (parameters) {
+      return parameters as S;
+    }
+    return undefined;
   };
 
   const jumpToStory = (direction: Direction) => {
@@ -305,6 +316,7 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       jumpToStory,
       getData,
       getParameters,
+      getCurrentParameter,
     },
     state: {
       storiesHash: {},
