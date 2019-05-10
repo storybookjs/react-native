@@ -28868,6 +28868,11 @@ urlgrey@^0.4.4:
   resolved "https://registry.yarnpkg.com/urlgrey/-/urlgrey-0.4.4.tgz#892fe95960805e85519f1cd4389f2cb4cbb7652f"
   integrity sha1-iS/pWWCAXoVRnxzUOJ8stMu3ZS8=
 
+use-image@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/use-image/-/use-image-1.0.3.tgz#550d19d828b82c115852181a33ee7759b7c1fa50"
+  integrity sha512-0cFB0cmHeUU/2hte3mrLnDnj2+So0mS77s7HVqYgc44sgLLxI9O9SH2KV7CmR/0uPGERdWsXXcj7yMyA7UhVvA==
+
 use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
