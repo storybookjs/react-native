@@ -34,3 +34,22 @@ storiesOf('root|group/component', module)
   })
   .add('variant', () => <div>your story here</div>);
 ```
+
+If you have a set of different assets on 1 story, you might want to name then:
+```js
+import { storiesOf } from '@storybook/react';
+
+import imageUrl from './images/my-image.jpg'; 
+
+storiesOf('root|group/component', module)
+  .addParameters({
+    assets: [{
+      url: 'https://via.placeholder.com/300/09f/fff.png', // link to an external image
+      name: 'blue',
+    }, {
+      url: 'https://via.placeholder.com/300/f90/fff.png', // link to an external image
+      name: 'orange',
+    }],
+  })
+  .add('variant', () => <div>your story here</div>);
+```
