@@ -1,3 +1,7 @@
+## 5.1.0-beta.0 (May 10, 2019)
+
+Welcome to the 5.1 beta! Feature development's done; `beta.0` kicks off the stabilization process for the 5.1 final release. 🚀
+
 ## 5.1.0-alpha.40 (May 8, 2019)
 
 ### Features
