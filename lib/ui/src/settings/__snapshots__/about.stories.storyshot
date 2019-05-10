@@ -1631,6 +1631,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-21 {

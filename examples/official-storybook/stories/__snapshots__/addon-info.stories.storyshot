@@ -1437,6 +1437,7 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-3 {
@@ -4797,6 +4798,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-3 {
@@ -5443,6 +5445,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-3 {
@@ -9685,6 +9688,7 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-3 {

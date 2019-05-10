@@ -465,6 +465,7 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-3 {
