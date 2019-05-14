@@ -44,7 +44,7 @@
     "react-router": "^4.3.1",
     "react-stack-grid": "^0.7.1",
     "recompose": "^0.30.0",
-    "sitemap": "^2.1.0",
+    "sitemap": "^2.2.0",
     "styled-components": "^4.2.0",
     "validatorjs": "^3.15.1"
   }
