@@ -52,7 +52,7 @@
     "recompose": "^0.30.0",
     "semver": "^6.0.0",
     "store2": "^2.7.1",
-    "telejson": "^2.1.1",
+    "telejson": "^2.2.1",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
