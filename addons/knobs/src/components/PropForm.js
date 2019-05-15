@@ -26,7 +26,7 @@ export default class PropForm extends Component {
           const InputType = TypeMap[knob.type] || InvalidType;
 
           return (
-            <Form.Field key={knob.name} label={!knob.hideLabel && `${knob.name}`}>
+            <Form.Field key={knob.name} label={!knob.hideLabel && `${knob.label || knob.name}`}>
               <InputType knob={knob} onChange={changeHandler} onClick={onFieldClick} />
             </Form.Field>
           );

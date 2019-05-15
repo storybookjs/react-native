@@ -143,6 +143,9 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in gro
   <p>
     Years in NY: 9
   </p>
+  <p>
+    Notes: 
+  </p>
   <hr />
   <h1>
     Favorites
@@ -172,6 +175,9 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in gro
   </ul>
   <p>
     When I'm by myself, I say: "Mumble"
+  </p>
+  <p>
+    Notes: 
   </p>
 </div>
 `;
