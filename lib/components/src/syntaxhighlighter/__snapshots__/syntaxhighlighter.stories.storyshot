@@ -3,7 +3,9 @@
 exports[`Storyshots Basics|SyntaxHighlighter bash 1`] = `
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -280,7 +282,9 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
 
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -772,7 +776,9 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
 exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -1240,7 +1246,9 @@ exports[`Storyshots Basics|SyntaxHighlighter jsx 1`] = `
 exports[`Storyshots Basics|SyntaxHighlighter padded 1`] = `
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -1678,7 +1686,9 @@ exports[`Storyshots Basics|SyntaxHighlighter padded 1`] = `
 exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -2148,7 +2158,9 @@ exports[`Storyshots Basics|SyntaxHighlighter showLineNumbers 1`] = `
 exports[`Storyshots Basics|SyntaxHighlighter story 1`] = `
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 

@@ -1252,7 +1252,9 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
 
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -4613,7 +4615,9 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
 
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -5260,7 +5264,9 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
 
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -9503,7 +9509,9 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
 
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
