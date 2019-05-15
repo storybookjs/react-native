@@ -29,12 +29,14 @@ export class PostmsgTransport {
 
   private handler: ChannelHandler;
 
+  private connected: boolean;
+
   // eslint-disable-next-line @typescript-eslint/no-parameter-properties
   constructor(private readonly config: Config) {
     this.buffer = [];
     this.handler = null;
     window.addEventListener('message', this.handleEvent.bind(this), false);
-    document.addEventListener('DOMContentLoaded', () => this.flush());
+
     // Check whether the config.page parameter has a valid value
     if (config.page !== 'manager' && config.page !== 'preview') {
       throw new Error(`postmsg-channel: "config.page" cannot be "${config.page}"`);
@@ -42,7 +44,14 @@ export class PostmsgTransport {
   }
 
   setHandler(handler: ChannelHandler): void {
-    this.handler = handler;
+    this.handler = (...args) => {
+      handler.apply(this, args);
+
+      if (!this.connected && this.getWindow()) {
+        this.flush();
+        this.connected = true;
+      }
+    };
   }
 
   /**
