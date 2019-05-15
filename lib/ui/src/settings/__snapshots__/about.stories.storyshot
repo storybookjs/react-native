@@ -17,6 +17,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 .emotion-8 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -599,6 +600,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 .emotion-8 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -1446,7 +1448,9 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 
 .emotion-20 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -2111,6 +2115,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 .emotion-8 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
