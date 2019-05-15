@@ -13,10 +13,6 @@ interface AssetDescription {
 type Results = (string | AssetDescription)[];
 type Selected = number;
 
-interface Props {
-  active: boolean;
-}
-
 const Iframe = styled.iframe({
   width: '100%',
   height: '100%',
@@ -49,7 +45,7 @@ const getUrl = (input: AssetDescription | string): string => {
   return typeof input === 'string' ? input : input.url;
 };
 
-export const Panel = ({ active }: Props) => {
+export const Panel = () => {
   const results = useParameter<Results>(PARAM_KEY, []);
   const [selected, setSelected] = useAddonState<Selected>(ADDON_ID, 0);
   const { storyId } = useStorybookState();
@@ -63,10 +59,10 @@ export const Panel = ({ active }: Props) => {
     return null;
   }
 
-  const output = useMemo(() => {
+  return useMemo(() => {
     const url = getUrl(results[selected]).replace('{id}', storyId);
     return (
-      <div hidden={!active}>
+      <Fragment>
         <Asset url={url} />
         {results.length > 1 ? (
           <ActionBar
@@ -77,9 +73,7 @@ export const Panel = ({ active }: Props) => {
             }))}
           />
         ) : null}
-      </div>
+      </Fragment>
     );
-  }, [active, results, selected, storyId]);
-
-  return <Fragment>{output}</Fragment>;
+  }, [results, selected, storyId]);
 };
