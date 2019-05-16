@@ -1,3 +1,20 @@
+## 5.1.0-beta.1 (May 16, 2019)
+
+### Bug Fixes
+
+* UI: Scrollbar supports theming again ([#6794](https://github.com/storybooks/storybook/pull/6794))
+* UI: Fix scrolling styling ([#6785](https://github.com/storybooks/storybook/pull/6785))
+* UI: Fix iframe refresh ([#6787](https://github.com/storybooks/storybook/pull/6787))
+* UI: Preserve dimensions on resizing for panel ([#6696](https://github.com/storybooks/storybook/pull/6696))
+
+### Maintenance
+
+* Move chromatic to circle ci ([#6752](https://github.com/storybooks/storybook/pull/6752))
+
+### Dependency Upgrades
+
+* Bump fs-extra from 7.0.1 to 8.0.1 ([#6776](https://github.com/storybooks/storybook/pull/6776))
+
 ## 5.1.0-beta.0 (May 10, 2019)
 
 Welcome to the 5.1 beta! Feature development's done; `beta.0` kicks off the stabilization process for the 5.1 final release. 🚀
