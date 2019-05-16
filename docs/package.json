@@ -21,6 +21,7 @@
     "common-tags": "^1.8.0",
     "gatsby": "^1.9.279",
     "gatsby-link": "^1.6.45",
+    "gatsby-plugin-segment": "^1.0.2",
     "gatsby-plugin-sharp": "^1.6.48",
     "gatsby-plugin-styled-components": "^2.0.0",
     "gatsby-remark-autolink-headers": "^1.4.19",
