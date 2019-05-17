@@ -10,7 +10,6 @@ import html from 'react-syntax-highlighter/languages/prism/markup';
 
 import ReactSyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
 
-import { js as beautify } from 'js-beautify';
 import { ActionBar } from '../ActionBar/ActionBar';
 import { ScrollArea } from '../ScrollArea/ScrollArea';
 
@@ -29,17 +28,17 @@ interface WrapperProps {
 }
 
 const Wrapper = styled.div<WrapperProps>(
-  {
+  ({ theme }) => ({
     position: 'relative',
     overflow: 'hidden',
-  },
+    color: theme.color.defaultText,
+  }),
   ({ theme, bordered }) =>
     bordered
       ? {
           border: `1px solid ${theme.appBorderColor}`,
           borderRadius: theme.borderRadius,
           background: theme.background.bar,
-          color: theme.color.defaultText,
         }
       : {}
 );
@@ -92,6 +91,31 @@ export interface SyntaxHighlighterState {
 
 type ReactSyntaxHighlighterProps = React.ComponentProps<typeof ReactSyntaxHighlighter>;
 
+const formatter = memoize(2)((code: string) => {
+  // code provided to the component is often coming from template literals, which preserve whitespace.
+  // sometimes the first line doesn't have padding, but the second does.
+  // we split the code-string into lines, then if we find padding on line 0 or 1,
+  // we assume that padding is bad, and remove that much padding on all following lines
+  return code
+    .split(/\n/)
+    .reduce(
+      (acc, i, index) => {
+        const match = i.match(/^((:?\s|\t)+)/);
+        const padding = match ? match[1] : '';
+
+        if (acc.firstIndent === '' && padding && index < 3) {
+          return { result: `${acc.result}\n${i.replace(padding, '')}`, firstIndent: padding };
+        }
+        return {
+          result: `${acc.result}\n${i.replace(acc.firstIndent, '')}`,
+          firstIndent: acc.firstIndent,
+        };
+      },
+      { firstIndent: '', result: '' }
+    )
+    .result.trim();
+});
+
 export class SyntaxHighlighter extends Component<
   SyntaxHighlighterProps & ReactSyntaxHighlighterProps,
   SyntaxHighlighterState
@@ -106,26 +130,6 @@ export class SyntaxHighlighter extends Component<
   };
 
   state = { copied: false };
-
-  formatCode = memoize(2)((language: string, code: string) => {
-    let formattedCode = code;
-    if (language === 'jsx') {
-      try {
-        // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
-        formattedCode = beautify(code, {
-          indent_size: 2,
-          brace_style: 'collapse-preserve-inline',
-          end_with_newline: true,
-          wrap_line_length: 80,
-          e4x: true, // e4x is not available in JsBeautify types for now
-        } as JsBeautifyOptions);
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.warn("Couldn't format code", formattedCode);
-      }
-    }
-    return formattedCode;
-  });
 
   onClick = (e: React.MouseEvent) => {
     const { children } = this.props;
@@ -172,9 +176,7 @@ export class SyntaxHighlighter extends Component<
             lineNumberContainerStyle={{}}
             {...rest}
           >
-            {format
-              ? this.formatCode(language, (children as string).trim())
-              : (children as string).trim()}
+            {format ? formatter((children as string).trim()) : (children as string).trim()}
           </ReactSyntaxHighlighter>
         </Scroller>
         {copyable ? (
