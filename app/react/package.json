@@ -51,6 +51,9 @@
     "react": "*",
     "react-dom": "*"
   },
+  "engines": {
+    "node": "^8"
+  },
   "publishConfig": {
     "access": "public"
   }
