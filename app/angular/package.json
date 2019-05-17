@@ -54,6 +54,9 @@
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.29"
   },
+  "engines": {
+    "node": "^8"
+  },
   "publishConfig": {
     "access": "public"
   }

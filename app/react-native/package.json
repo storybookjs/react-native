@@ -39,6 +39,9 @@
     "react": "*",
     "react-native": ">=0.57.0"
   },
+  "engines": {
+    "node": "^8"
+  },
   "publishConfig": {
     "access": "public"
   }
