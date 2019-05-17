@@ -1,8 +1,7 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './styles';
 
-export default function(storyFn) {
+export default function(storyFn: () => ReactNode) {
   return (
     <div style={styles.style}>
       <div style={styles.innerStyle}>{storyFn()}</div>

@@ -1,11 +1,11 @@
 import styles from './styles';
 
-function getComponentSelector(component) {
+function getComponentSelector(component: any) {
   // eslint-disable-next-line no-underscore-dangle
   return component.__annotations__[0].selector;
 }
 
-function getTemplate(metadata) {
+function getTemplate(metadata: any) {
   let tpl = '';
   if (metadata.component) {
     const selector = getComponentSelector(metadata.component);
@@ -24,7 +24,7 @@ function getTemplate(metadata) {
       </div>`;
 }
 
-function getModuleMetadata(metadata) {
+function getModuleMetadata(metadata: any) {
   const { moduleMetadata, component } = metadata;
 
   if (component && !moduleMetadata) {
@@ -43,7 +43,7 @@ function getModuleMetadata(metadata) {
   return moduleMetadata;
 }
 
-export default function(metadataFn) {
+export default function(metadataFn: any) {
   const metadata = metadataFn();
 
   return {

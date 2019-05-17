@@ -1,7 +1,7 @@
 import { document } from 'global';
 import styles from './styles';
 
-export default function(storyFn) {
+export default function(storyFn: () => { template: any; context: any }) {
   const { template, context } = storyFn();
 
   const element = document.createElement('div');
@@ -13,7 +13,7 @@ export default function(storyFn) {
   element.appendChild(innerElement);
 
   // the inner element should append the parent
-  innerElement.appendTo = function appendTo(el) {
+  innerElement.appendTo = function appendTo(el: any) {
     el.appendChild(element);
   };
 
