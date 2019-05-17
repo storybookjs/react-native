@@ -34,7 +34,8 @@
     "memoizerific": "^1.11.3",
     "polished": "^3.0.0",
     "prop-types": "^15.7.2",
-    "react-inspector": "^3.0.2"
+    "react-inspector": "^3.0.2",
+    "resolve-from": "^5.0.0"
   },
   "peerDependencies": {
     "react": "*",
