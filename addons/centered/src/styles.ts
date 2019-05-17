@@ -1,19 +1,19 @@
 const styles = {
   style: {
-    position: 'fixed' as const,
+    position: 'fixed',
     top: '0',
     left: '0',
     bottom: '0',
     right: '0',
-    display: 'flex' as const,
-    alignItems: 'center' as const,
-    overflow: 'auto' as const,
+    display: 'flex',
+    alignItems: 'center',
+    overflow: 'auto',
   },
   innerStyle: {
-    margin: 'auto' as const,
-    maxHeight: '100%' as const, // Hack for centering correctly in IE11
-    overflow: 'auto' as const,
+    margin: 'auto',
+    maxHeight: '100%', // Hack for centering correctly in IE11
+    overflow: 'auto',
   },
-};
+} as const;
 
 export default styles;
