@@ -107,7 +107,7 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
     color: createColors(inherit),
     background: {
       app: appBg,
-      bar: background.bar,
+      bar: barBg,
       content: appContentBg,
       gridCellSize: gridCellSize || background.gridCellSize,
       hoverable:

@@ -39,6 +39,7 @@ const Wrapper = styled.div<WrapperProps>(
           border: `1px solid ${theme.appBorderColor}`,
           borderRadius: theme.borderRadius,
           background: theme.background.bar,
+          color: theme.color.defaultText,
         }
       : {}
 );

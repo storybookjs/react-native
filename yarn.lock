@@ -3599,27 +3599,6 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 
-"@types/storybook__addon-actions@^3.4.1":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-actions/-/storybook__addon-actions-3.4.2.tgz#1d08689cc3259269ddb3479a2307c9d16944309e"
-  integrity sha512-CWxGz2pXav9PHcwrtXmkuH+xJL7sAu2AmIGEbkdT3Xs5jzBPZUEDEN//ZF7o6IOPP/tdXU37K1hrVMt9TDO0Bw==
-
-"@types/storybook__addon-info@^4.1.0":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-info/-/storybook__addon-info-4.1.1.tgz#8b05daa1cae8f6bfa252c9fa5d67aa648dfdf28c"
-  integrity sha512-ugk/BXBBZl0c8xhvIBIVFCF/WLxQhK6Mh8V4st6nbouLXA07SQMLtF1Fcuo2fLdDr1Ao1smABaQUiC2L2UwZwA==
-  dependencies:
-    "@types/react" "*"
-    "@types/storybook__react" "*"
-
-"@types/storybook__react@*", "@types/storybook__react@^4.0.0":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@types/storybook__react/-/storybook__react-4.0.1.tgz#b6320c9d027b8ee7ef1445fef8b4cba196d48ace"
-  integrity sha512-knkZErqv8Iy2QbebqBa5tsy2itIMKdO6bcQ7C19nmgTc+j1pnQhXCGcVyARzAQ1/NAuSYudSWQAKG+plgK7hyQ==
-  dependencies:
-    "@types/react" "*"
-    "@types/webpack-env" "*"
-
 "@types/symlink-or-copy@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@types/symlink-or-copy/-/symlink-or-copy-1.2.0.tgz#4151a81b4052c80bc2becbae09f3a9ec010a9c7a"
@@ -3681,7 +3660,7 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@types/webpack-env@*", "@types/webpack-env@^1.13.7":
+"@types/webpack-env@^1.13.7":
   version "1.13.9"
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.13.9.tgz#a67287861c928ebf4159a908d1fb1a2a34d4097a"
   integrity sha512-p8zp5xqkly3g4cCmo2mKOHI9+Z/kObmDj0BmjbDDJQlgDTiEGTbm17MEwTAusV6XceCy+bNw9q/ZHXHyKo3zkg==

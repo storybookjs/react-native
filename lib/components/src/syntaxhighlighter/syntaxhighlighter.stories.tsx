@@ -41,7 +41,7 @@ storiesOf('Basics|SyntaxHighlighter', module)
       `}
     </SyntaxHighlighter>
   ))
-  .add('themed unsupported', () => {
+  .add('dark unsupported', () => {
     const theme = ensure(themes.dark);
     return (
       <ThemeProvider theme={theme}>
