@@ -40,7 +40,7 @@
     "react-native": ">=0.57.0"
   },
   "engines": {
-    "node": "^8"
+    "node": ">=8.0.0" 
   },
   "publishConfig": {
     "access": "public"
