@@ -1,6 +1,4 @@
 /** @jsx m */
-
-// eslint-disable-next-line import/no-extraneous-dependencies
 import m, { ComponentTypes } from 'mithril';
 import styles from './styles';
 

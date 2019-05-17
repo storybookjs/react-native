@@ -1,5 +1,4 @@
 /** @jsx h */
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Component, h } from 'preact';
 import styles from './styles';
 
