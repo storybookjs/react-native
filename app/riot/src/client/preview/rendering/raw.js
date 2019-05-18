@@ -3,7 +3,7 @@ import compiler from 'riot-compiler';
 import { alreadyCompiledMarker, getRidOfRiotNoise } from '../compileStageFunctions';
 
 export default function renderRaw(sourceCode) {
-  const tag2 = tag; // eslint-disable-line no-unused-vars
+  const tag2 = tag;
   // eslint-disable-next-line no-eval
   eval(
     getRidOfRiotNoise(

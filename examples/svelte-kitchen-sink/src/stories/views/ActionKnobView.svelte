@@ -3,13 +3,7 @@
 </div>
 
 <script>
-    export default {
-        data() {
-            return {
-                width: 200,
-                height: 100,
-                backgroundColor: 'yellow'
-            };
-        }
-    };
+  export let width = 200;
+  export let height = 100;
+  export let backgroundColor = 'yellow';
 </script>

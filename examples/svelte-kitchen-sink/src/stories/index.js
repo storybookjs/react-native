@@ -10,14 +10,14 @@ storiesOf('Welcome', module).add('Welcome', () => ({
 storiesOf('Button', module)
   .add('rounded', () => ({
     Component: ButtonView,
-    data: {
+    props: {
       rounded: true,
       message: 'Rounded text',
     },
   }))
   .add('square', () => ({
     Component: ButtonView,
-    data: {
+    props: {
       rounded: false,
       message: 'Squared text',
     },

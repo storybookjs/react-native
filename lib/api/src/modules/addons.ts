@@ -1,5 +1,5 @@
-import { Module } from '../index';
 import { ReactElement } from 'react';
+import { Module } from '../index';
 
 export enum types {
   TAB = 'tab',

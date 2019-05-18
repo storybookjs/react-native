@@ -11,11 +11,11 @@ It's really easy to theme Storybook globally.
 
 We've created two basic themes that look good of the box: "normal" (a light theme) and "dark" (a dark theme).
 
-As the simplest example example, you can tell Storybook to use the "dark" theme by modifyig `.storybook/config.js`:
+As the simplest example, you can tell Storybook to use the "dark" theme by modifying `.storybook/config.js`:
 
 ```js
 import { addParameters } from '@storybook/react';
-import { themes } from '@storybook/theming';
+import { themes } from '@storybook/theming/create';
 
 // Option defaults.
 addParameters({
@@ -25,7 +25,7 @@ addParameters({
 });
 ```
 
-When setting a theme, set a full theme object. The theme is replaced not combined.
+When setting a theme, set a full theme object. The theme is replaced, not combined.
 
 ## Dynamic theming
 
@@ -47,14 +47,14 @@ Read on for more on how to create your own theme.
 
 ## Create a theme quickstart
 
-The easiest way to customize Storybook is to generate a new theme using the `create()` function from `storybook/theming`. This function includes shorthands for the most common theme variables. Here's how to use it:
+The easiest way to customize Storybook is to generate a new theme using the `create()` function from `storybook/theming/create`. This function includes shorthands for the most common theme variables. Here's how to use it:
 
 First create a new file in `.storybook` called `yourTheme.js`.
 
 Next paste the code below and tweak the variables.
 
 ```ts
-import { create } from '@storybook/theming';
+import { create } from '@storybook/theming/create';
 
 export default create({
   base: 'light',
@@ -110,7 +110,7 @@ The `storybook/theming` package is built using TypeScript, so this should help c
 Many theme variables are optional, the `base` property is NOT. This is a perfectly valid theme:
 
 ```ts
-import { create } from '@storybook/theming';
+import { create } from '@storybook/theming/create';
 
 export default create({
   base: 'light',
@@ -123,7 +123,7 @@ export default create({
 
 ## Addons and theme creation
 
-Some addons require specific theme variables that a Storybook user must add. If you share your theme with the community make sure to support the official and other popular addons so your users have a consistent experience.
+Some addons require specific theme variables that a Storybook user must add. If you share your theme with the community, make sure to support the official and other popular addons so your users have a consistent experience.
 
 For example, the popular Actions addon uses [react-inspector](https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js) which has themes of its own. Supply additional theme variables to style it like so:
 

@@ -1,11 +1,11 @@
 import React, { Component, SyntheticEvent } from 'react';
 
 import { styled, themes } from '@storybook/theming';
+import { NodeResult, Result } from 'axe-core';
+import { SizeMe } from 'react-sizeme';
 import store, { clearElements } from '../redux-config';
 import HighlightToggle from './Report/HighlightToggle';
-import { NodeResult, Result } from 'axe-core';
 import { RuleType } from './A11YPanel';
-import { SizeMe } from 'react-sizeme';
 
 // TODO: reuse the Tabs component from @storybook/theming instead of re-building identical functionality
 
@@ -86,12 +86,12 @@ const List = styled.div(({ theme }) => ({
 }));
 
 interface TabsProps {
-  tabs: Array<{
+  tabs: {
     label: JSX.Element;
     panel: JSX.Element;
     items: Result[];
     type: RuleType;
-  }>;
+  }[];
 }
 
 interface TabsState {
@@ -128,6 +128,7 @@ export class Tabs extends Component<TabsProps, TabsState> {
               <TabsWrapper>
                 {tabs.map((tab, index) => (
                   <Item
+                    /* eslint-disable-next-line react/no-array-index-key */
                     key={index}
                     data-index={index}
                     active={active === index}

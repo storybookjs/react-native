@@ -1,5 +1,8 @@
+/* eslint-disable react/no-multi-comp */
 import React, { ReactElement, Component, useContext } from 'react';
 import memoize from 'memoizerific';
+// @ts-ignore shallow-equal is not in DefinitelyTyped
+import shallowEqualObjects from 'shallow-equal/objects';
 
 import Events from '@storybook/core-events';
 import { RenderData as RouterData } from '@storybook/router';
@@ -89,6 +92,12 @@ type StatePartial = Partial<State>;
 export type Props = Children & RouterData & ProviderData;
 
 class ManagerProvider extends Component<Props, State> {
+  static displayName = 'Manager';
+
+  api: API;
+
+  modules: any[];
+
   constructor(props: Props) {
     super(props);
     const { provider, location, path, viewMode, storyId, navigate } = props;
@@ -158,10 +167,6 @@ class ManagerProvider extends Component<Props, State> {
     this.api = api;
   }
 
-  static displayName = 'Manager';
-  api: API;
-  modules: any[];
-
   static getDerivedStateFromProps = (props: Props, state: State) => {
     if (state.path !== props.path) {
       return {
@@ -215,6 +220,7 @@ class ManagerProvider extends Component<Props, State> {
 
 interface ConsumerProps<S, C> {
   filter?: (combo: C) => S;
+  pure?: boolean;
   children: (d: S | C) => ReactElement<any> | null;
 }
 
@@ -225,20 +231,33 @@ interface SubState {
 class ManagerConsumer extends Component<ConsumerProps<SubState, Combo>> {
   dataMemory?: (combo: Combo) => SubState;
 
+  prevChildren?: ReactElement<any> | null;
+
+  prevData?: SubState;
+
   constructor(props: ConsumerProps<SubState, Combo>) {
     super(props);
     this.dataMemory = props.filter ? memoize(10)(props.filter) : null;
   }
 
   render() {
-    const { children } = this.props;
+    const { children, pure } = this.props;
 
     return (
       <ManagerContext.Consumer>
         {d => {
           const data = this.dataMemory ? this.dataMemory(d) : d;
-
-          return children(data);
+          if (
+            pure &&
+            this.prevChildren &&
+            this.prevData &&
+            shallowEqualObjects(data, this.prevData)
+          ) {
+            return this.prevChildren;
+          }
+          this.prevChildren = children(data);
+          this.prevData = data;
+          return this.prevChildren;
         }}
       </ManagerContext.Consumer>
     );

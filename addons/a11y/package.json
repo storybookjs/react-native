@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-a11y",
-  "version": "5.1.0-alpha.34",
+  "version": "5.1.0-beta.1",
   "description": "a11y addon for storybook",
   "keywords": [
     "a11y",
@@ -26,15 +26,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.34",
-    "@storybook/api": "5.1.0-alpha.34",
-    "@storybook/client-logger": "5.1.0-alpha.34",
-    "@storybook/components": "5.1.0-alpha.34",
-    "@storybook/core-events": "5.1.0-alpha.34",
-    "@storybook/theming": "5.1.0-alpha.34",
+    "@storybook/addons": "5.1.0-beta.1",
+    "@storybook/api": "5.1.0-beta.1",
+    "@storybook/client-logger": "5.1.0-beta.1",
+    "@storybook/components": "5.1.0-beta.1",
+    "@storybook/core-events": "5.1.0-beta.1",
+    "@storybook/theming": "5.1.0-beta.1",
     "axe-core": "^3.2.2",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
     "hoist-non-react-statics": "^3.3.0",
     "memoizerific": "^1.11.3",

@@ -64,6 +64,7 @@ interface ElementsProps {
 export const Elements: FunctionComponent<ElementsProps> = ({ elements, type }) => (
   <ol>
     {elements.map((element, index) => (
+      // eslint-disable-next-line react/no-array-index-key
       <Element element={element} key={index} type={type} />
     ))}
   </ol>

@@ -46,11 +46,9 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
     throw new Error('angular.json must have projects entry.');
   }
 
-  let project = projects[Object.keys(projects)[0]];
-
-  if (defaultProject) {
-    project = projects[defaultProject];
-  }
+  const fallbackProject = defaultProject && projects[defaultProject];
+  const firstProject = projects[Object.keys(projects)[0]];
+  const project = projects.storybook || fallbackProject || firstProject;
 
   const { options: projectOptions } = project.architect.build;
 

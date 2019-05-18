@@ -1,4 +1,5 @@
 import addons from '@storybook/addons';
+import { window } from 'global';
 import { parse } from 'qs';
 import { getContextNodes, getPropsMap, getRendererFrom, singleton } from './libs';
 import { deserialize } from '../shared/serializers';
@@ -10,14 +11,14 @@ import {
   FORCE_RE_RENDER,
   SET_CURRENT_STORY,
 } from '../shared/constants';
-import { ContextNode, PropsMap, SelectionState } from '../shared/types';
+import { ContextNode, PropsMap, SelectionState } from '../shared/types.d';
 
 /**
- * A singleton for handling preview-manager and one-time-only side-effects
+ * A singleton for handling preview-manager and one-time-only side-effects.
  */
 export const ContextsPreviewAPI = singleton(() => {
   const channel = addons.getChannel();
-  let contextsNodesMemo: ContextNode[] = null;
+  let contextsNodesMemo: ContextNode[] | null = null;
   let selectionState: SelectionState = {};
 
   /**
@@ -25,38 +26,37 @@ export const ContextsPreviewAPI = singleton(() => {
    * which is useful for performing image snapshot testing or URL sharing.
    */
   if (window && window.location) {
-    const contextQuery = parse(window.location.search)[PARAM];
-    if (contextQuery) {
-      selectionState = deserialize(contextQuery);
-    }
+    selectionState = deserialize(parse(window.location.search)[PARAM]) || {};
   }
 
   /**
    * (Vue specific)
-   * Vue will inject getter/setters on the first rendering of the addon,
-   * which is the reason why we have to keep an internal reference and use `Object.assign` to update it.
+   * Vue will inject getter/setter watchers on the first rendering of the addon,
+   * which is why we have to keep an internal reference and use `Object.assign` to notify the watcher.
    */
-  let reactivePropsMap = {};
-  const updateReactiveSystem = (propsMap: PropsMap) =>
-    /* tslint:disable:prefer-object-spread */
-    Object.assign(reactivePropsMap, propsMap);
+  const reactivePropsMap = {};
+  const updateReactiveSystem = (propsMap: PropsMap) => Object.assign(reactivePropsMap, propsMap);
 
   /**
    * Preview-manager communications.
    */
   // from manager
-  channel.on(SET_CURRENT_STORY, () => (contextsNodesMemo = null));
-  channel.on(REBOOT_MANAGER, () => channel.emit(UPDATE_MANAGER, contextsNodesMemo));
   channel.on(UPDATE_PREVIEW, state => {
     if (state) {
       selectionState = state;
       channel.emit(FORCE_RE_RENDER);
     }
   });
+  channel.on(REBOOT_MANAGER, () => {
+    channel.emit(UPDATE_MANAGER, contextsNodesMemo);
+  });
+  channel.on(SET_CURRENT_STORY, () => {
+    // trash the memorization since the story-level setting may change (diffing it is much expensive)
+    contextsNodesMemo = null;
+  });
 
   // to manager
   const getContextNodesWithSideEffects: typeof getContextNodes = (...arg) => {
-    // we want to notify the manager only when the story changed since `parameter` can be changed
     if (contextsNodesMemo === null) {
       contextsNodesMemo = getContextNodes(...arg);
       channel.emit(UPDATE_MANAGER, contextsNodesMemo);
