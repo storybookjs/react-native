@@ -40,7 +40,7 @@
     "lodash.pick": "^4.4.0",
     "markdown-to-jsx": "^6.9.3",
     "memoizerific": "^1.11.3",
-    "polished": "^3.0.0",
+    "polished": "^3.3.1",
     "prop-types": "^15.7.2",
     "qs": "^6.6.0",
     "react": "^16.8.4",
@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "flush-promises": "^1.0.2",
-    "terser-webpack-plugin": "^1.2.2",
+    "terser-webpack-plugin": "^1.2.4",
     "webpack": "^4.28.0"
   },
   "publishConfig": {
