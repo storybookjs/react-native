@@ -22310,6 +22310,13 @@ polished@^3.0.0:
   dependencies:
     "@babel/runtime" "^7.4.4"
 
+polished@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-3.3.1.tgz#a3decc7df2f147c9876b82c4b218fc7502504de0"
+  integrity sha512-rWh6wsz4sYR2hKFBIrwQKt+U2AFJixkrJRjItf1pHXNv9p+/XkbCf1hpkzhBvxx8JalSM4L3U2vBwOTHOnP1qA==
+  dependencies:
+    "@babel/runtime" "^7.4.4"
+
 polymer-webpack-loader@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/polymer-webpack-loader/-/polymer-webpack-loader-2.0.3.tgz#2a2d1c2ef05bff372b573d3b761628a3b4ad3e7f"
