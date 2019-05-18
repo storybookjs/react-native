@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SyntaxHighlighter } from '@storybook/components';
 
-// XXX: is this a bug? should it be (props) => ?
-const Code = ({ props }) => <SyntaxHighlighter bordered copyable {...props} />;
-
+const Code = ({ language, code }) => (
+  <SyntaxHighlighter bordered copyable language={language}>
+    {code}
+  </SyntaxHighlighter>
+);
 Code.propTypes = {
-  props: PropTypes.shape({}).isRequired,
+  language: PropTypes.string.isRequired,
+  code: PropTypes.string.isRequired,
 };
 
 export { Code };

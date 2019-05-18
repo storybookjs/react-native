@@ -3,7 +3,7 @@ import { SelectionState } from './types.d';
 /**
  * Serialize the selection state in its string representation.
  */
-type serialize = (state: SelectionState) => string | null;
+type serialize = (state: ReturnType<deserialize>) => string | null;
 
 export const serialize: serialize = state =>
   !state
@@ -15,7 +15,7 @@ export const serialize: serialize = state =>
 /**
  * Deserialize URL query param into the specified selection state.
  */
-type deserialize = (param: string) => SelectionState | null;
+type deserialize = (param?: string) => SelectionState | null;
 
 export const deserialize: deserialize = param =>
   !param

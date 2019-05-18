@@ -5,18 +5,16 @@ exports[`Storyshots Addon|Actions Action on component method 1`] = `
   class="storybook-snapshot-container"
 >
   <button
-    class="button rounded svelte-n2tx93"
+    class="button svelte-n2tx93 rounded"
   >
     <strong>
       Round
        corners
     </strong>
     <br />
-    
-  
+     
     Custom text
-    
-  
+     
   </button>
 </section>
 `;
@@ -28,43 +26,35 @@ exports[`Storyshots Addon|Actions Action on view method 1`] = `
   <h1>
     Button view
   </h1>
-  
-
+   
   <button
-    class="button  svelte-n2tx93"
+    class="button svelte-n2tx93"
   >
     <strong>
       Square
        corners
     </strong>
     <br />
+     
     
-  
-    
-    
-  
-    <!---->
+     
     You clicked
     : 
     0
   </button>
-  
-
+   
   <p>
     A little text to show this is a view.
   </p>
-  
-
+   
   <p>
     If we need to test components in a Svelte environment, for instance to test slot behaviour,
   </p>
-  
-
+   
   <p>
     then wrapping the component up in a view
   </p>
-  
-
+   
   <p>
     made just for the story is the simplest way to achieve this.
   </p>

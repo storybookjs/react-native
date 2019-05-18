@@ -1,5 +1,5 @@
 <h1>Button view</h1>
-<Button {rounded} on:click="handleClick(event)">{text}: {count}</Button>
+<Button {rounded} on:click={handleClick}>{text}: {count}</Button>
 <p>A little text to show this is a view.</p>
 <p>If we need to test components in a Svelte environment, for instance to test slot behaviour,</p>
 <p>then wrapping the component up in a view</p>
@@ -8,32 +8,11 @@
 <script>
   import Button from '../../components/Button.svelte';
 
-  export default {
-    data() {
-      return {
-        count: 0,
-        text: 'You clicked'
-      };
-    },
+  export let rounded = false;
+  export let count = 0;
+  export let text = 'You clicked';
 
-    methods: {
-      handleClick(event) {
-        this.incrementCount();
-
-        this.fire('click', { event });
-      },
-
-      incrementCount() {
-        let {count} = this.get();
-
-        count += 1;
-
-        this.set({count})
-      }
-    },
-
-    components: {
-      Button
-    }
-  };
+  function handleClick(event) {
+    count += 1;
+  }
 </script>

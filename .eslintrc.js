@@ -153,6 +153,7 @@ module.exports = {
     {
       files: ['**/*.d.ts'],
       rules: {
+        'vars-on-top': ignore,
         'no-var': ignore, // this is how typescript works
         'spaced-comment': ignore,
       },

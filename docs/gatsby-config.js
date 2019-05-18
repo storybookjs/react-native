@@ -16,6 +16,7 @@ module.exports = {
       guides: [
         '/guides/quick-start-guide/',
         '/guides/slow-start-guide/',
+        '/guides/guide-html/',
         '/guides/guide-react/',
         '/guides/guide-react-native/',
         '/guides/guide-vue/',
@@ -23,6 +24,7 @@ module.exports = {
         '/guides/guide-mithril/',
         '/guides/guide-ember/',
         '/guides/guide-riot/',
+        '/guides/guide-svelte/',
       ],
       configurations: [
         '/configurations/options-parameter/',
@@ -83,5 +85,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-segment',
+      options: {
+        writeKey: 'AvvBObOmHaEMqfub8JJUXq5umjsuaqS8',
+      },
+    },
   ],
 };
