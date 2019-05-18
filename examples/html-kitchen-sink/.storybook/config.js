@@ -11,9 +11,6 @@ addParameters({
       restoreScroll: true,
     },
   },
-  html: {
-    preventForcedRender: false, // default
-  },
   options: {
     hierarchyRootSeparator: /\|/,
   },
