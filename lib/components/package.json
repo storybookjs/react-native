@@ -42,7 +42,7 @@
     "simplebar-react": "^1.0.0-alpha.6"
   },
   "devDependencies": {
-    "@types/js-beautify": "^1.8.0",
+    "@types/js-beautify": "^1.8.1",
     "@types/react-syntax-highlighter": "^10.1.0",
     "@types/react-textarea-autosize": "^4.3.3",
     "@types/recompose": "^0.30.5",

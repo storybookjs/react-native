@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "flush-promises": "^1.0.2",
-    "terser-webpack-plugin": "^1.2.2",
+    "terser-webpack-plugin": "^1.2.4",
     "webpack": "^4.28.0"
   },
   "publishConfig": {
