@@ -38,7 +38,7 @@ export const hrefTo = (kind: string, name: string): Promise<string> =>
   });
 
 const linksListener = (e: SyntheticEvent<HTMLLinkElement>) => {
-  const { sbKind: kind, sbStory: story } = e.currentTarget.dataset;
+  const { sbKind: kind, sbStory: story } = e.target.dataset;
   if (kind || story) {
     e.preventDefault();
     navigate({ kind, story });
