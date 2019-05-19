@@ -145,6 +145,10 @@ Wrap the story in a function call to setup state management. The story can modif
 state properties with the provided store. The addon provides a panel to view and
 reset state.
 
+### [State](https://github.com/adierkens/storybook-addon-state)	
+
+Store/retrieve arbitrary data. Similar to knobs this doesn't add any additional React wrappers to the story, so any other addons used (prop-types, jsx) aren't effected. Has a React hooks like API.
+
 ### [story2sketch](https://github.com/chrisvxd/story2sketch)
 
 Convert stories into Sketch 💎 symbols.
@@ -168,3 +172,15 @@ Provides live react story editing and preview.
 ### [copy-code-block](https://www.npmjs.com/package/@pickra/copy-code-block)
 
 Display code and copy it to the clipboard. It also has options to customize colors and syntax highlighting for any language. There is similar functionality via [@storybook/addon-info](https://www.npmjs.com/package/@storybook/addon-info) but addon-info doesn't currently work when using [@storybook/html](https://www.npmjs.com/package/@storybook/html).
+
+### [storybook-addon-react-docgen](https://github.com/hipstersmoothie/storybook-addon-react-docgen/)
+
+Display react docgen info. This addon is a drop in replacement for the [@storybook/addon-info](https://www.npmjs.com/package/@storybook/addon-info)'s prop table functionality. Rather than rendering with the component it renders in the addons panel. Works with typescript too!
+
+### [storybook-dark-mode](https://github.com/hipstersmoothie/storybook-dark-mode)
+
+Let your users toggle between a dark and light mode.
+
+
+
+

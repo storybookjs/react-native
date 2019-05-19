@@ -28,7 +28,7 @@
     "js-beautify": "^1.8.9",
     "markdown-to-jsx": "^6.9.1",
     "memoizerific": "^1.11.3",
-    "polished": "^3.0.0",
+    "polished": "^3.3.1",
     "popper.js": "^1.14.7",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
@@ -42,7 +42,7 @@
     "simplebar-react": "^1.0.0-alpha.6"
   },
   "devDependencies": {
-    "@types/js-beautify": "^1.8.0",
+    "@types/js-beautify": "^1.8.1",
     "@types/react-syntax-highlighter": "^10.1.0",
     "@types/react-textarea-autosize": "^4.3.3",
     "@types/recompose": "^0.30.5",

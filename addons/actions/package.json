@@ -30,14 +30,14 @@
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
     "lodash": "^4.17.11",
-    "polished": "^3.0.0",
+    "polished": "^3.3.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-inspector": "^3.0.2",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.123",
+    "@types/lodash": "^4.14.129",
     "@types/uuid": "^3.4.4"
   },
   "publishConfig": {
