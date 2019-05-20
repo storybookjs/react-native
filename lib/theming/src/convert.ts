@@ -1,10 +1,9 @@
-import { chromeLight, chromeDark } from 'react-inspector';
 import { opacify } from 'polished';
 
 import { background, typography, color } from './base';
 import { Theme, Color, ThemeVars } from './types';
 import { easing, animation } from './animation';
-import { create as createSyntax } from './modules/syntax';
+import { create as createSyntax, chromeLight, chromeDark } from './modules/syntax';
 
 import lightThemeVars from './themes/light';
 
