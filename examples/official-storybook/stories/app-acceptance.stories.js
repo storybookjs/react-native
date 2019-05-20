@@ -26,6 +26,7 @@ const style = {
   'html-kitchen-sink',
   'riot-kitchen-sink',
   'preact-kitchen-sink',
+  'cra-react15',
 ].forEach(name => {
   chapter.add(name, () => <iframe style={style} title={name} src={`${name}/index.html`} />, {
     chromatic: { delay: 2000 },

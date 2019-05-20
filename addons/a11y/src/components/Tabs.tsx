@@ -1,13 +1,13 @@
 import React, { Component, SyntheticEvent } from 'react';
 
-import { styled } from '@storybook/theming';
+import { styled, themes } from '@storybook/theming';
+import { NodeResult, Result } from 'axe-core';
+import { SizeMe } from 'react-sizeme';
 import store, { clearElements } from '../redux-config';
 import HighlightToggle from './Report/HighlightToggle';
-import { NodeResult, Result } from 'axe-core';
 import { RuleType } from './A11YPanel';
 
-// TODO: reuse the Tabs component from @storybook/theming instead
-// of re-building identical functionality
+// TODO: reuse the Tabs component from @storybook/theming instead of re-building identical functionality
 
 const Container = styled.div({
   width: '100%',
@@ -18,26 +18,34 @@ const Container = styled.div({
 const HighlightToggleLabel = styled.label(({ theme }) => ({
   cursor: 'pointer',
   userSelect: 'none',
+  marginBottom: '3px',
+  marginRight: '3px',
   color: theme.color.dark,
 }));
 
-const GlobalToggleWrapper = styled.div(({ theme }) => ({
-  padding: '10px 15px 10px 0',
-  cursor: 'pointer',
-  fontSize: theme.typography.size.s2 - 1,
-  height: 40,
-  border: 'none',
+const GlobalToggle = styled.div(({ elementWidth }: { elementWidth: number }) => {
+  const maxWidthBeforeBreak = 450;
+  return {
+    cursor: 'pointer',
+    fontSize: '14px',
+    padding: elementWidth > maxWidthBeforeBreak ? '12px 15px 10px 0' : '12px 0px 3px 12px',
+    height: '40px',
+    border: 'none',
+    marginTop: elementWidth > maxWidthBeforeBreak ? '-40px' : '0px',
+    float: elementWidth > maxWidthBeforeBreak ? 'right' : 'left',
+    display: elementWidth > maxWidthBeforeBreak ? 'flex' : 'block',
+    alignItems: 'center',
+    width: elementWidth > maxWidthBeforeBreak ? 'auto' : '100%',
+    borderBottom: elementWidth > maxWidthBeforeBreak ? 'none' : '1px solid rgba(0,0,0,.1)',
 
-  display: 'flex',
-  alignItems: 'center',
-
-  input: {
-    marginLeft: 10,
-    marginRight: 0,
-    marginTop: 0,
-    marginBottom: 0,
-  },
-}));
+    input: {
+      marginLeft: '10',
+      marginRight: '0',
+      marginTop: '0',
+      marginBottom: '0',
+    },
+  };
+});
 
 const Item = styled.button(
   ({ theme }) => ({
@@ -78,12 +86,12 @@ const List = styled.div(({ theme }) => ({
 }));
 
 interface TabsProps {
-  tabs: Array<{
+  tabs: {
     label: JSX.Element;
     panel: JSX.Element;
     items: Result[];
     type: RuleType;
-  }>;
+  }[];
 }
 
 interface TabsState {
@@ -113,34 +121,41 @@ export class Tabs extends Component<TabsProps, TabsState> {
     const highlightToggleId = `${tabs[active].type}-global-checkbox`;
     const highlightLabel = `Highlight results`;
     return (
-      <Container>
-        <List>
-          <TabsWrapper>
-            {tabs.map((tab, index) => (
-              <Item
-                key={index}
-                data-index={index}
-                active={active === index}
-                onClick={this.onToggle}
-              >
-                {tab.label}
-              </Item>
-            ))}
-          </TabsWrapper>
-          <GlobalToggleWrapper>
-            <HighlightToggleLabel htmlFor={highlightToggleId}>
-              {highlightLabel}
-            </HighlightToggleLabel>
-            <HighlightToggle
-              toggleId={highlightToggleId}
-              type={tabs[active].type}
-              elementsToHighlight={retrieveAllNodesFromResults(tabs[active].items)}
-              label={highlightLabel}
-            />
-          </GlobalToggleWrapper>
-        </List>
-        {tabs[active].panel}
-      </Container>
+      <SizeMe refreshMode="debounce">
+        {({ size }: { size: any }) => (
+          <Container>
+            <List>
+              <TabsWrapper>
+                {tabs.map((tab, index) => (
+                  <Item
+                    /* eslint-disable-next-line react/no-array-index-key */
+                    key={index}
+                    data-index={index}
+                    active={active === index}
+                    onClick={this.onToggle}
+                  >
+                    {tab.label}
+                  </Item>
+                ))}
+              </TabsWrapper>
+            </List>
+            {tabs[active].items.length > 0 ? (
+              <GlobalToggle elementWidth={size.width}>
+                <HighlightToggleLabel htmlFor={highlightToggleId}>
+                  {highlightLabel}
+                </HighlightToggleLabel>
+                <HighlightToggle
+                  toggleId={highlightToggleId}
+                  type={tabs[active].type}
+                  elementsToHighlight={retrieveAllNodesFromResults(tabs[active].items)}
+                  label={highlightLabel}
+                />
+              </GlobalToggle>
+            ) : null}
+            {tabs[active].panel}
+          </Container>
+        )}
+      </SizeMe>
     );
   }
 }

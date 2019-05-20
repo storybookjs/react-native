@@ -16,6 +16,7 @@
   - [Addon a11y uses parameters](#addon-a11y-uses-parameters-decorator-renamed)
   - [New keyboard shortcuts defaults](#new-keyboard-shortcuts-defaults)
   - [New URL structure](#new-url-structure)
+  - [Vue integration](#vue-integration)
 - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
@@ -107,9 +108,9 @@ module.exports = ({ config }) => ({
     ...config.module,
     rules: [
       /* your own rules "..." here and/or some subset of config.module.rules */
-    ]
-  }
-})
+    ],
+  },
+});
 ```
 
 Please refer to the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config and to [Issue #6081](https://github.com/storybooks/storybook/issues/6081) for more information about the change.
@@ -216,7 +217,7 @@ Here is the mapping from old options to new:
 
 Storybook v5 removes the search dialog box in favor of a quick search in the navigation view, so `showSearchBox` has been removed.
 
-Storybook v5 introduce a new tool bar above the story view and you can show\hide it with the new `isToolshown` option. 
+Storybook v5 introduce a new tool bar above the story view and you can show\hide it with the new `isToolshown` option.
 
 ## Individual story decorators
 
@@ -394,6 +395,12 @@ You have to replace it with:
 ```sh
 start-storybook --https
 ```
+
+## Vue integration
+
+The Vue integration was updated, so that every story returned from a story or decorator function is now being normalized with `Vue.extend` **and** is being wrapped by a functional component. Returning a string from a story or decorator function is still supported and is treated as a component with the returned string as the template.
+
+Currently there is no recommended way of accessing the component options of a story inside a decorator.
 
 ## From version 4.0.x to 4.1.x
 

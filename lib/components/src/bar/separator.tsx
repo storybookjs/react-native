@@ -25,6 +25,7 @@ export const interleaveSeparators = (list: any[]) =>
       item ? (
         <Fragment key={item.id || item.key || `f-${index}`}>
           {acc}
+          {/* eslint-disable-next-line react/no-array-index-key */}
           {index > 0 ? <Separator key={`s-${index}`} /> : null}
           {item.render() || item}
         </Fragment>

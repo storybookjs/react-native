@@ -1,7 +1,7 @@
 import React from 'react';
 import { STORY_CHANGED } from '@storybook/core-events';
-import { ADD_TESTS } from '../shared';
 import { API } from '@storybook/api';
+import { ADD_TESTS } from '../shared';
 
 // TODO: import type from @types/jest
 interface AssertionResult {
@@ -36,14 +36,15 @@ export interface HocState {
 
 const provideTests = (Component: React.ComponentType<InjectedProps>) =>
   class TestProvider extends React.Component<HocProps, HocState> {
+    stopListeningOnStory: () => void;
+
+    mounted: boolean;
+
+    state: HocState = {};
+
     static defaultProps = {
       active: false,
     };
-
-    mounted: boolean;
-    stopListeningOnStory: () => void;
-
-    state: HocState = {};
 
     componentDidMount() {
       this.mounted = true;

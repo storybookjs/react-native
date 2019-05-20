@@ -1,6 +1,15 @@
 import addons from '@storybook/addons';
 import { useEffect } from 'react';
-import { UseChannel } from '../../@types';
+import { AnyFunctionReturns } from '../../shared/types.d';
+
+/**
+ * The React hook version of Storybook Channel API.
+ */
+type UseChannel = (
+  event: string,
+  eventHandler: AnyFunctionReturns<void>,
+  input?: unknown[]
+) => void;
 
 export const useChannel: UseChannel = (event, eventHandler, inputs = []) =>
   useEffect(() => {

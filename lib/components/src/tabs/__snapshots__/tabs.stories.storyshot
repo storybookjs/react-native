@@ -4,6 +4,7 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
 .emotion-9 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -190,60 +191,64 @@ exports[`Storyshots Basics|Tabs stateful - dynamic 1`] = `
             class="simplebar-offset"
           >
             <div
-              class="simplebar-content"
+              class="simplebar-content-wrapper"
             >
               <div
-                class="emotion-8"
+                class="simplebar-content"
               >
                 <div
-                  class="emotion-7"
+                  class="emotion-8"
                 >
                   <div
-                    class="emotion-6"
-                    role="tablist"
+                    class="emotion-7"
                   >
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
+                    <div
+                      class="emotion-6"
+                      role="tablist"
                     >
-                      Tab title #1
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #2
-                    </button>
-                    <button
-                      class="emotion-2"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab with scroll!
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #4
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #5
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #6
-                    </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #1
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #2
+                      </button>
+                      <button
+                        class="emotion-2"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab with scroll!
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #4
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #5
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #6
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -343,6 +348,7 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
 .emotion-9 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -529,60 +535,64 @@ exports[`Storyshots Basics|Tabs stateful - no initial 1`] = `
             class="simplebar-offset"
           >
             <div
-              class="simplebar-content"
+              class="simplebar-content-wrapper"
             >
               <div
-                class="emotion-8"
+                class="simplebar-content"
               >
                 <div
-                  class="emotion-7"
+                  class="emotion-8"
                 >
                   <div
-                    class="emotion-6"
-                    role="tablist"
+                    class="emotion-7"
                   >
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
+                    <div
+                      class="emotion-6"
+                      role="tablist"
                     >
-                      Tab title #1
-                    </button>
-                    <button
-                      class="emotion-1"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #2
-                    </button>
-                    <button
-                      class="emotion-1"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab with scroll!
-                    </button>
-                    <button
-                      class="emotion-1"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #4
-                    </button>
-                    <button
-                      class="emotion-1"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #5
-                    </button>
-                    <button
-                      class="emotion-1"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #6
-                    </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #1
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #2
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab with scroll!
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #4
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #5
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #6
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -638,6 +648,7 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
 .emotion-5 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -820,32 +831,36 @@ exports[`Storyshots Basics|Tabs stateful - static 1`] = `
             class="simplebar-offset"
           >
             <div
-              class="simplebar-content"
+              class="simplebar-content-wrapper"
             >
               <div
-                class="emotion-4"
+                class="simplebar-content"
               >
                 <div
-                  class="emotion-3"
+                  class="emotion-4"
                 >
                   <div
-                    class="emotion-2"
-                    role="tablist"
+                    class="emotion-3"
                   >
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
+                    <div
+                      class="emotion-2"
+                      role="tablist"
                     >
-                      With a function
-                    </button>
-                    <button
-                      class="emotion-1"
-                      role="tab"
-                      type="button"
-                    >
-                      With markup
-                    </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        With a function
+                      </button>
+                      <button
+                        class="emotion-1"
+                        role="tab"
+                        type="button"
+                      >
+                        With markup
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -891,6 +906,7 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
 .emotion-9 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -1107,60 +1123,64 @@ exports[`Storyshots Basics|Tabs stateless - absolute 1`] = `
             class="simplebar-offset"
           >
             <div
-              class="simplebar-content"
+              class="simplebar-content-wrapper"
             >
               <div
-                class="emotion-8"
+                class="simplebar-content"
               >
                 <div
-                  class="emotion-7"
+                  class="emotion-8"
                 >
                   <div
-                    class="emotion-6"
-                    role="tablist"
+                    class="emotion-7"
                   >
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
+                    <div
+                      class="emotion-6"
+                      role="tablist"
                     >
-                      Tab title #1
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #2
-                    </button>
-                    <button
-                      class="emotion-2"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab with scroll!
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #4
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #5
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #6
-                    </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #1
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #2
+                      </button>
+                      <button
+                        class="emotion-2"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab with scroll!
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #4
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #5
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #6
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1260,6 +1280,7 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
 .emotion-9 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -1450,60 +1471,64 @@ exports[`Storyshots Basics|Tabs stateless - bordered 1`] = `
             class="simplebar-offset"
           >
             <div
-              class="simplebar-content"
+              class="simplebar-content-wrapper"
             >
               <div
-                class="emotion-8"
+                class="simplebar-content"
               >
                 <div
-                  class="emotion-7"
+                  class="emotion-8"
                 >
                   <div
-                    class="emotion-6"
-                    role="tablist"
+                    class="emotion-7"
                   >
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
+                    <div
+                      class="emotion-6"
+                      role="tablist"
                     >
-                      Tab title #1
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #2
-                    </button>
-                    <button
-                      class="emotion-2"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab with scroll!
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #4
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #5
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #6
-                    </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #1
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #2
+                      </button>
+                      <button
+                        class="emotion-2"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab with scroll!
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #4
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #5
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #6
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1630,6 +1655,7 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
 .emotion-10 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -1835,75 +1861,79 @@ exports[`Storyshots Basics|Tabs stateless - with tools 1`] = `
             class="simplebar-offset"
           >
             <div
-              class="simplebar-content"
+              class="simplebar-content-wrapper"
             >
               <div
-                class="emotion-9"
+                class="simplebar-content"
               >
                 <div
-                  class="emotion-7"
+                  class="emotion-9"
                 >
                   <div
-                    class="emotion-6"
-                    role="tablist"
+                    class="emotion-7"
+                  >
+                    <div
+                      class="emotion-6"
+                      role="tablist"
+                    >
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #1
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #2
+                      </button>
+                      <button
+                        class="emotion-2"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab with scroll!
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #4
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #5
+                      </button>
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        Tab title #6
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="emotion-8"
                   >
                     <button
-                      class="emotion-0"
-                      role="tab"
                       type="button"
                     >
-                      Tab title #1
+                      1
                     </button>
                     <button
-                      class="emotion-0"
-                      role="tab"
                       type="button"
                     >
-                      Tab title #2
-                    </button>
-                    <button
-                      class="emotion-2"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab with scroll!
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #4
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #5
-                    </button>
-                    <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
-                    >
-                      Tab title #6
+                      2
                     </button>
                   </div>
-                </div>
-                <div
-                  class="emotion-8"
-                >
-                  <button
-                    type="button"
-                  >
-                    1
-                  </button>
-                  <button
-                    type="button"
-                  >
-                    2
-                  </button>
                 </div>
               </div>
             </div>

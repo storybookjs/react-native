@@ -1,3 +1,5 @@
+/* eslint-disable no-return-assign */
+/* eslint-disable no-undef */
 const mock = () => {
   let storage = {};
   return {

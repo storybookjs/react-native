@@ -1,14 +1,21 @@
-import { OPT_OUT } from '../../constants';
-import { ContextNode, GetPropsByParamName, GetPropsMap } from '../../@types';
+/* eslint-disable no-underscore-dangle */
+import { OPT_OUT } from '../../shared/constants';
+import { ContextNode, GenericProp, PropsMap, SelectionState } from '../../shared/types.d';
 
 /**
  * @private
- * get the activated props by name from a given contextual params.
+ * Extract the activated props by name from a given contextual params.
  */
-export const _getPropsByParamName: GetPropsByParamName = (params = [], name) => {
+type _getPropsByParamName = (
+  params: ContextNode['params'],
+  name?: string,
+  options?: Partial<ContextNode['options']>
+) => GenericProp | typeof OPT_OUT;
+
+export const _getPropsByParamName: _getPropsByParamName = (params, name = '', options = {}) => {
   const { props = null } =
     // when opt-out context
-    (name === OPT_OUT && {}) ||
+    (options.cancelable && name === OPT_OUT && { props: OPT_OUT }) ||
     // when menu option get selected
     (name && params.find(param => param.name === name)) ||
     // when being initialized
@@ -22,10 +29,13 @@ export const _getPropsByParamName: GetPropsByParamName = (params = [], name) => 
 
 /**
  * @nosideeffects
- * construct propsMap from Nodes based on a controlled state tracker.
+ * Collect the propsMap from Nodes based on a controlled state tracker.
  */
-export const getPropsMap: GetPropsMap = (nodes: ContextNode[], state) =>
-  nodes.reduce((agg, { nodeId, params }) => {
-    agg[nodeId] = _getPropsByParamName(params, state[nodeId]);
+type getPropsMap = (contextNodes: ContextNode[], selectionState: SelectionState) => PropsMap;
+
+export const getPropsMap: getPropsMap = (contextNodes, selectionState) =>
+  contextNodes.reduce((agg, { nodeId, params, options }) => {
+    // eslint-disable-next-line no-param-reassign
+    agg[nodeId] = _getPropsByParamName(params, selectionState[nodeId], options);
     return agg;
   }, Object());

@@ -7,10 +7,10 @@ exports[`Storyshots Addon|Actions Action and method 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-button-component
-    _nghost-c4=""
+    _nghost-a-c4=""
   >
     <button
-      _ngcontent-c4=""
+      _ngcontent-a-c4=""
     >
       Action and Method
     </button>
@@ -25,10 +25,10 @@ exports[`Storyshots Addon|Actions Action only 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-button-component
-    _nghost-c3=""
+    _nghost-a-c3=""
   >
     <button
-      _ngcontent-c3=""
+      _ngcontent-a-c3=""
     >
       Action only
     </button>
