@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": { "*": ["types/*"] },
     "target": "es5",
     "module": "esnext",

@@ -1048,9 +1048,9 @@ exports[`Storyshots Basics|SyntaxHighlighter dark unsupported 1`] = `
 using System;
 namespace HelloWorld
 {
-  class Hello 
+  class Hello
   {
-    static void Main() 
+    static void Main()
     {
       Console.WriteLine("Hello World!");
 
@@ -3921,9 +3921,9 @@ exports[`Storyshots Basics|SyntaxHighlighter unsupported 1`] = `
 using System;
 namespace HelloWorld
 {
-  class Hello 
+  class Hello
   {
-    static void Main() 
+    static void Main()
     {
       Console.WriteLine("Hello World!");
 
