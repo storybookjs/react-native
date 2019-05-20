@@ -1,29 +1,43 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 import copy from 'copy-to-clipboard';
 
-import { Placeholder, TabWrapper, TabsState, ActionBar, ActionButton } from '@storybook/components';
+import { STORY_CHANGED } from '@storybook/core-events';
+import {
+  Placeholder,
+  TabWrapper,
+  TabsState,
+  ActionBar,
+  Link,
+  ScrollArea,
+} from '@storybook/components';
+import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
 import Types from './types';
 import PropForm from './PropForm';
 
 const getTimestamp = () => +new Date();
 
-const DEFAULT_GROUP_ID = 'ALL';
+export const DEFAULT_GROUP_ID = 'Other';
 
-const PanelWrapper = styled.div({
+const PanelWrapper = styled(({ children, className }) => (
+  <ScrollArea horizontal vertical className={className}>
+    {children}
+  </ScrollArea>
+))({
   height: '100%',
-  overflow: 'auto',
   width: '100%',
 });
 
-export default class Panel extends PureComponent {
+export default class KnobPanel extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = { knobs: {} };
+    this.state = {
+      knobs: {},
+    };
     this.options = {};
 
     this.lastEdit = getTimestamp();
@@ -31,20 +45,24 @@ export default class Panel extends PureComponent {
   }
 
   componentDidMount() {
-    const { channel, api } = this.props;
-    channel.on('addon:knobs:setKnobs', this.setKnobs);
-    channel.on('addon:knobs:setOptions', this.setOptions);
+    this.mounted = true;
+    const { api } = this.props;
+    api.on(SET, this.setKnobs);
+    api.on(SET_OPTIONS, this.setOptions);
 
-    this.stopListeningOnStory = api.onStory(() => {
-      this.setState({ knobs: {} });
-      channel.emit('addon:knobs:reset');
+    this.stopListeningOnStory = api.on(STORY_CHANGED, () => {
+      if (this.mounted) {
+        this.setKnobs({ knobs: {} });
+      }
+      this.setKnobs({ knobs: {} });
     });
   }
 
   componentWillUnmount() {
-    const { channel } = this.props;
+    this.mounted = false;
+    const { api } = this.props;
 
-    channel.removeListener('addon:knobs:setKnobs', this.setKnobs);
+    api.off(SET, this.setKnobs);
     this.stopListeningOnStory();
   }
 
@@ -54,7 +72,7 @@ export default class Panel extends PureComponent {
 
   setKnobs = ({ knobs, timestamp }) => {
     const queryParams = {};
-    const { api, channel } = this.props;
+    const { api } = this.props;
 
     if (!this.options.timestamps || !timestamp || this.lastEdit <= timestamp) {
       Object.keys(knobs).forEach(name => {
@@ -62,15 +80,16 @@ export default class Panel extends PureComponent {
         // For the first time, get values from the URL and set them.
         if (!this.loadedFromUrl) {
           const urlValue = api.getQueryParam(`knob-${name}`);
+
+          // If the knob value present in url
           if (urlValue !== undefined) {
-            // If the knob value present in url
-            knob.value = Types[knob.type].deserialize(urlValue);
-            channel.emit('addon:knobs:knobChange', knob);
+            const value = Types[knob.type].deserialize(urlValue);
+            knob.value = value;
+            queryParams[`knob-${name}`] = Types[knob.type].serialize(value);
+
+            api.emit(CHANGE, knob);
           }
         }
-
-        // set all knobsquery params to be deleted from URL
-        queryParams[`knob-${name}`] = null;
       });
 
       api.setQueryParams(queryParams);
@@ -81,29 +100,29 @@ export default class Panel extends PureComponent {
   };
 
   reset = () => {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.emit('addon:knobs:reset');
+    api.emit(RESET);
   };
 
   copy = () => {
     const { location } = document;
-    const query = qs.parse(location.search.replace('?', ''));
+    const query = qs.parse(location.search, { ignoreQueryPrefix: true });
     const { knobs } = this.state;
 
     Object.entries(knobs).forEach(([name, knob]) => {
       query[`knob-${name}`] = Types[knob.type].serialize(knob.value);
     });
 
-    copy(`${location.origin + location.pathname}?${qs.stringify(query)}`);
+    copy(`${location.origin + location.pathname}?${qs.stringify(query, { encode: false })}`);
 
     // TODO: show some notification of this
   };
 
   emitChange = changedKnob => {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.emit('addon:knobs:knobChange', changedKnob);
+    api.emit(CHANGE, changedKnob);
   };
 
   handleChange = changedKnob => {
@@ -120,32 +139,35 @@ export default class Panel extends PureComponent {
   };
 
   handleClick = knob => {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.emit('addon:knobs:knobClick', knob);
+    api.emit(CLICK, knob);
   };
 
   render() {
     const { knobs } = this.state;
-    const { active } = this.props;
-
-    if (!active) {
+    const { active: panelActive } = this.props;
+    if (!panelActive) {
       return null;
     }
 
     const groups = {};
     const groupIds = [];
 
-    let knobsArray = Object.keys(knobs).filter(key => knobs[key].used);
+    const knobKeysArray = Object.keys(knobs).filter(key => knobs[key].used);
 
-    knobsArray.filter(key => knobs[key].groupId).forEach(key => {
-      const knobKeyGroupId = knobs[key].groupId;
+    knobKeysArray.forEach(key => {
+      const knobKeyGroupId = knobs[key].groupId || DEFAULT_GROUP_ID;
       groupIds.push(knobKeyGroupId);
       groups[knobKeyGroupId] = {
-        render: ({ active: groupActive, selected }) => (
-          <TabWrapper active={groupActive || selected === DEFAULT_GROUP_ID}>
+        render: ({ active }) => (
+          <TabWrapper key={knobKeyGroupId} active={active}>
             <PropForm
-              knobs={knobsArray.filter(knob => knob.groupId === knobKeyGroupId)}
+              // false positive
+              // eslint-disable-next-line no-use-before-define
+              knobs={knobsArray.filter(
+                knob => (knob.groupId || DEFAULT_GROUP_ID) === knobKeyGroupId
+              )}
               onFieldChange={this.handleChange}
               onFieldClick={this.handleClick}
             />
@@ -155,53 +177,74 @@ export default class Panel extends PureComponent {
       };
     });
 
-    groups[DEFAULT_GROUP_ID] = {
-      render: () => null,
-      title: DEFAULT_GROUP_ID,
-    };
-
-    knobsArray = knobsArray.map(key => knobs[key]);
+    const knobsArray = knobKeysArray.map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
-      return <Placeholder>NO KNOBS</Placeholder>;
+      return (
+        <Placeholder>
+          <Fragment>No knobs found</Fragment>
+          <Fragment>
+            Learn how to{' '}
+            <Link
+              href="https://github.com/storybooks/storybook/tree/master/addons/knobs"
+              target="_blank"
+              withArrow
+            >
+              dynamically interact with components
+            </Link>
+          </Fragment>
+        </Placeholder>
+      );
     }
 
+    // Always sort DEFAULT_GROUP_ID (ungrouped) tab last without changing the remaining tabs
+    const sortEntries = g => {
+      const unsortedKeys = Object.keys(g);
+      if (unsortedKeys.indexOf(DEFAULT_GROUP_ID) !== -1) {
+        const sortedKeys = unsortedKeys.filter(key => key !== DEFAULT_GROUP_ID);
+        sortedKeys.push(DEFAULT_GROUP_ID);
+        return sortedKeys.map(key => [key, g[key]]);
+      }
+      return Object.entries(g);
+    };
+
+    const entries = sortEntries(groups);
+
     return (
-      <PanelWrapper>
-        {groupIds.length > 0 ? (
-          <TabsState>
-            {Object.entries(groups).map(([k, v]) => (
-              <div id={k} title={v.title}>
-                {v.render}
-              </div>
-            ))}
-          </TabsState>
-        ) : (
-          <PropForm
-            knobs={knobsArray}
-            onFieldChange={this.handleChange}
-            onFieldClick={this.handleClick}
-          />
-        )}
-        <ActionBar>
-          <ActionButton onClick={this.copy}>COPY</ActionButton>
-          <ActionButton onClick={this.reset}>RESET</ActionButton>
-        </ActionBar>
-      </PanelWrapper>
+      <Fragment>
+        <PanelWrapper>
+          {entries.length > 1 ? (
+            <TabsState>
+              {entries.map(([k, v]) => (
+                <div id={k} key={k} title={v.title}>
+                  {v.render}
+                </div>
+              ))}
+            </TabsState>
+          ) : (
+            <PropForm
+              knobs={knobsArray}
+              onFieldChange={this.handleChange}
+              onFieldClick={this.handleClick}
+            />
+          )}
+        </PanelWrapper>
+        <ActionBar
+          actionItems={[
+            { title: 'Copy', onClick: this.copy },
+            { title: 'Reset', onClick: this.reset },
+          ]}
+        />
+      </Fragment>
     );
   }
 }
 
-Panel.propTypes = {
+KnobPanel.propTypes = {
   active: PropTypes.bool.isRequired,
   onReset: PropTypes.object, // eslint-disable-line
-  channel: PropTypes.shape({
-    emit: PropTypes.func,
-    on: PropTypes.func,
-    removeListener: PropTypes.func,
-  }).isRequired,
   api: PropTypes.shape({
-    onStory: PropTypes.func,
+    on: PropTypes.func,
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,
   }).isRequired,

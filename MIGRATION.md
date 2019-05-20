@@ -1,5 +1,25 @@
 # Migration
 
+- [From version 5.0.x to 5.1.x](#from-version-50x-to-51x)
+  - [React native server](#react-native-server)
+- [From version 5.0.1 to 5.0.2](#from-version-501-to-502)
+  - [Deprecate webpack extend mode](#deprecate-webpack-extend-mode)
+- [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
+  - [Webpack config simplification](#webpack-config-simplification)
+  - [Theming overhaul](#theming-overhaul)
+  - [Story hierarchy defaults](#story-hierarchy-defaults)
+  - [Options addon deprecated](#options-addon-deprecated)
+  - [Individual story decorators](#individual-story-decorators)
+  - [Addon backgrounds uses parameters](#addon-backgrounds-uses-parameters)
+  - [Addon cssresources name attribute renamed](#addon-cssresources-name-attribute-renamed)
+  - [Addon viewport uses parameters](#addon-viewport-uses-parameters)
+  - [Addon a11y uses parameters](#addon-a11y-uses-parameters-decorator-renamed)
+  - [New keyboard shortcuts defaults](#new-keyboard-shortcuts-defaults)
+  - [New URL structure](#new-url-structure)
+  - [Vue integration](#vue-integration)
+- [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
+  - [Private addon config](#private-addon-config)
+  - [React 15.x](#react-15x)
 - [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
   - [React 16.3+](#react-163)
   - [Generic addons](#generic-addons)
@@ -34,9 +54,369 @@
   - [Packages renaming](#packages-renaming)
   - [Deprecated embedded addons](#deprecated-embedded-addons)
 
+## From version 5.0.x to 5.1.x
+
+### React native server
+
+Storybook 5.1 contains a major overhaul of `@storybook/react-native` as compared to 4.1 (we didn't ship a version of RN in 5.0 due to timing constraints). Storybook for RN consists of an an UI for browsing stories on-device or in a simulator, and an optional webserver which can also be used to browse stories and web addons.
+
+5.1 refactors both pieces:
+
+- `@storybook/react-native` no longer depends on the Storybook UI and only contains on-device functionality
+- `@storybook/react-native-server` is a new package for those who wish to run a web server alongside their device UI
+
+In addition, both packages share more code with the rest of Storybook, which will reduce bugs and increase compatibility (e.g. with the latest versions of babel, etc.).
+
+As a user with an existing 4.1.x RN setup, no migration should be necessary to your RN app. Simply upgrading the library should be enough.
+
+If you wish to run the optional web server, you will need to do the following migration:
+
+- Add `babel-loader` as a dev dependency
+- Add `@storybook/react-native-server` as a dev dependency
+- Change your "storybook" `package.json` script from `storybook start [-p ...]` to `start-storybook [-p ...]`
+
+And with that you should be good to go!
+
+## From version 5.0.1 to 5.0.2
+
+### Deprecate webpack extend mode
+
+Exporting an object from your custom webpack config puts storybook in "extend mode".
+
+There was a bad bug in `v5.0.0` involving webpack "extend mode" that caused webpack issues for users migrating from `4.x`. We've fixed this problem in `v5.0.2` but it means that extend-mode has a different behavior if you're migrating from `5.0.0` or `5.0.1`. In short, `4.x` extended a base config with the custom config, whereas `5.0.0-1` extended the base with a richer config object that could conflict with the custom config in different ways from `4.x`.
+
+We've also deprecated "extend mode" because it doesn't add a lot of value over "full control mode", but adds more code paths, documentation, user confusion etc. Starting in SB6.0 we will only support "full control mode" customization.
+
+To migrate from extend-mode to full-control mode, if your extend-mode webpack config looks like this:
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      /* ... */
+    ],
+  },
+};
+```
+
+In full control mode, you need modify the default config to have the rules of your liking:
+
+```js
+module.exports = ({ config }) => ({
+  ...config,
+  module: {
+    ...config.module,
+    rules: [
+      /* your own rules "..." here and/or some subset of config.module.rules */
+    ],
+  },
+});
+```
+
+Please refer to the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config and to [Issue #6081](https://github.com/storybooks/storybook/issues/6081) for more information about the change.
+
+## From version 4.1.x to 5.0.x
+
+Storybook 5.0 includes sweeping UI changes as well as changes to the addon API and custom webpack configuration. We've tried to keep backwards compatibility in most cases, but there are some notable exceptions documented below.
+
+## Webpack config simplification
+
+The API for custom webpack configuration has been simplifed in 5.0, but it's a breaking change. Storybook's "full control mode" for webpack allows you to override the webpack config with a function that returns a configuration object.
+
+In Storybook 5 there is a single signature for full-control mode that takes a parameters object with the fields `config` and `mode`:
+
+```js
+module.exports = ({ config, mode }) => { config.module.rules.push(...); return config; }
+```
+
+In contrast, the 4.x configuration function accepted either two or three arguments (`(baseConfig, mode)`, or `(baseConfig, mode, defaultConfig)`). The `config` object in the 5.x signature is equivalent to 4.x's `defaultConfig`.
+
+Please see the [current custom webpack documentation](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
+
+## Theming overhaul
+
+Theming has been rewritten in v5. If you used theming in v4, please consult the [theming docs](https://github.com/storybooks/storybook/blob/next/docs/src/pages/configurations/theming/index.md) to learn about the new API.
+
+## Story hierarchy defaults
+
+Storybook's UI contains a hierarchical tree of stories that can be configured by `hierarchySeparator` and `hierarchyRootSeparator` [options](./addons/options/README.md).
+
+In Storybook 4.x the values defaulted to `null` for both of these options, so that there would be no hierarchy by default.
+
+In 5.0, we now provide recommended defaults:
+
+```js
+{
+  hierarchyRootSeparator: '|',
+  hierarchySeparator: /\/|\./,
+}
+```
+
+This means if you use the characters { `|`, `/`, `.` } in your story kinds it will triggger the story hierarchy to appear. For example `storiesOf('UI|Widgets/Basics/Button')` will create a story root called `UI` containing a `Widgets/Basics` group, containing a `Button` component.
+
+If you wish to opt-out of this new behavior and restore the flat UI, simply set them back to `null` in your storybook config, or remove { `|`, `/`, `.` } from your story kinds:
+
+```js
+addParameters({
+  options: {
+    hierarchyRootSeparator: null,
+    hierarchySeparator: null,
+  },
+});
+```
+
+## Options addon deprecated
+
+In 4.x we added story parameters. In 5.x we've deprecated the options addon in favor of [global parameters](./docs/src/pages/configurations/options-parameter/index.md), and we've also renamed some of the options in the process (though we're maintaining backwards compatibility until 6.0).
+
+Here's an old configuration:
+
+```js
+addDecorator(
+  withOptions({
+    name: 'Storybook',
+    url: 'https://storybook.js.org',
+    goFullScreen: false,
+    addonPanelInRight: true,
+  })
+);
+```
+
+And here's its new counterpart:
+
+```js
+import { create } from '@storybook/theming';
+addParameters({
+  options: {
+    theme: create({
+      base: 'light',
+      brandTitle: 'Storybook',
+      brandUrl: 'https://storybook.js.org',
+      // To control appearance:
+      // brandImage: 'http://url.of/some.svg',
+    }),
+    isFullscreen: false,
+    panelPosition: 'right',
+    isToolshown: true,
+  },
+});
+```
+
+Here is the mapping from old options to new:
+
+| Old               | New              |
+| ----------------- | ---------------- |
+| name              | theme.brandTitle |
+| url               | theme.brandUrl   |
+| goFullScreen      | isFullscreen     |
+| showStoriesPanel  | showNav          |
+| showAddonPanel    | showPanel        |
+| addonPanelInRight | panelPosition    |
+| showSearchBox     |                  |
+|                   | isToolshown      |
+
+Storybook v5 removes the search dialog box in favor of a quick search in the navigation view, so `showSearchBox` has been removed.
+
+Storybook v5 introduce a new tool bar above the story view and you can show\hide it with the new `isToolshown` option.
+
+## Individual story decorators
+
+The behavior of adding decorators to a kind has changed in SB5 ([#5781](https://github.com/storybooks/storybook/issues/5781)).
+
+In SB4 it was possible to add decorators to only a subset of the stories of a kind.
+
+```js
+storiesOf('Stories', module)
+  .add('noncentered', () => 'Hello')
+  .addDecorator(centered)
+  .add('centered', () => 'Hello');
+```
+
+The semantics has changed in SB5 so that calling `addDecorator` on a kind adds a decorator to all its stories, no matter the order. So in the previous example, both stories would be centered.
+
+To allow for a subset of the stories in a kind to be decorated, we've added the ability to add decorators to individual stories using parameters:
+
+```js
+storiesOf('Stories', module)
+  .add('noncentered', () => 'Hello')
+  .add('centered', () => 'Hello', { decorators: [centered] });
+```
+
+## Addon backgrounds uses parameters
+
+Similarly, `@storybook/addon-backgrounds` uses parameters to pass background options. If you previously had:
+
+```js
+import { withBackgrounds } from `@storybook/addon-backgrounds`;
+
+storiesOf('Stories', module)
+  .addDecorator(withBackgrounds(options));
+```
+
+You should replace it with:
+
+```js
+storiesOf('Stories', module).addParameters({ backgrounds: options });
+```
+
+You can pass `backgrounds` parameters at the global level (via `addParameters` imported from `@storybook/react` et al.), and the story level (via the third argument to `.add()`).
+
+## Addon cssresources name attribute renamed
+
+In the options object for `@storybook/addon-cssresources`, the `name` attribute for each resource has been renamed to `id`. If you previously had:
+
+```js
+import { withCssResources } from '@storybook/addon-cssresources';
+import { addDecorator } from '@storybook/react';
+
+addDecorator(
+  withCssResources({
+    cssresources: [
+      {
+        name: `bluetheme`, // Previous
+        code: `<style>body { background-color: lightblue; }</style>`,
+        picked: false,
+      },
+    ],
+  })
+);
+```
+
+You should replace it with:
+
+```js
+import { withCssResources } from '@storybook/addon-cssresources';
+import { addDecorator } from '@storybook/react';
+
+addDecorator(
+  withCssResources({
+    cssresources: [
+      {
+        id: `bluetheme`, // Renamed
+        code: `<style>body { background-color: lightblue; }</style>`,
+        picked: false,
+      },
+    ],
+  })
+);
+```
+
+## Addon viewport uses parameters
+
+Similarly, `@storybook/addon-viewport` uses parameters to pass viewport options. If you previously had:
+
+```js
+import { configureViewport } from `@storybook/addon-viewport`;
+
+configureViewport(options);
+```
+
+You should replace it with:
+
+```js
+import { addParameters } from '@storybook/react'; // or others
+
+addParameters({ viewport: options });
+```
+
+The `withViewport` decorator is also no longer supported and should be replaced with a parameter based API as above. Also the `onViewportChange` callback is no longer supported.
+
+See the [viewport addon README](https://github.com/storybooks/storybook/blob/master/addons/viewport/README.md) for more information.
+
+## Addon a11y uses parameters, decorator renamed
+
+Similarly, `@storybook/addon-a11y` uses parameters to pass a11y options. If you previously had:
+
+```js
+import { configureA11y } from `@storybook/addon-a11y`;
+
+configureA11y(options);
+```
+
+You should replace it with:
+
+```js
+import { addParameters } from '@storybook/react'; // or others
+
+addParameters({ a11y: options });
+```
+
+You can also pass `a11y` parameters at the component level (via `storiesOf(...).addParameters`), and the story level (via the third argument to `.add()`).
+
+Furthermore, the decorator `checkA11y` has been deprecated and renamed to `withA11y` to make it consistent with other Storybook decorators.
+
+See the [a11y addon README](https://github.com/storybooks/storybook/blob/master/addons/a11y/README.md) for more information.
+
+## New keyboard shortcuts defaults
+
+Storybook's keyboard shortcuts are updated in 5.0, but they are configurable via the menu so if you want to set them back you can:
+
+| Shorctut               | Old         | New   |
+| ---------------------- | ----------- | ----- |
+| Toggle sidebar         | cmd-shift-X | S     |
+| Toggle addons panel    | cmd-shift-Z | A     |
+| Toggle addons position | cmd-shift-G | D     |
+| Toggle fullscreen      | cmd-shift-F | F     |
+| Next story             | cmd-shift-→ | alt-→ |
+| Prev story             | cmd-shift-← | alt-← |
+| Next component         |             | alt-↓ |
+| Prev component         |             | alt-↑ |
+| Search                 |             | /     |
+
+## New URL structure
+
+We've update Storybook's URL structure in 5.0. The old structure used URL parameters to save the UI state, resulting in long ugly URLs. v5 respects the old URL parameters, but largely does away with them.
+
+The old structure encoded `selectedKind` and `selectedStory` among other parameters. Storybook v5 respects these parameters but will issue a deprecation message in the browser console warning of potential future removal.
+
+The new URL structure looks like:
+
+```
+https://url-of-storybook?path=/story/<storyId>
+```
+
+The structure of `storyId` is a slugified `<selectedKind>--<selectedStory>` (slugified = lowercase, hyphen-separated). Each `storyId` must be unique. We plan to build more features into Storybook in upcoming versions based on this new structure.
+
+## Rename of the `--secure` cli parameter to `--https`
+
+Storybook for React Native's start commands & the Web versions' start command were a bit different, for no reason.
+We've changed the start command for Reactnative to match the other.
+
+This means that when you previously used the `--secure` flag like so:
+
+```sh
+start-storybook --secure
+# or
+start-storybook --s
+```
+
+You have to replace it with:
+
+```sh
+start-storybook --https
+```
+
+## Vue integration
+
+The Vue integration was updated, so that every story returned from a story or decorator function is now being normalized with `Vue.extend` **and** is being wrapped by a functional component. Returning a string from a story or decorator function is still supported and is treated as a component with the returned string as the template.
+
+Currently there is no recommended way of accessing the component options of a story inside a decorator.
+
+## From version 4.0.x to 4.1.x
+
+There are are a few migrations you should be aware of in 4.1, including one unintentionally breaking change for advanced addon usage.
+
+## Private addon config
+
+If your Storybook contains custom addons defined that are defined in your app (as opposed to installed from packages) and those addons rely on reconfiguring webpack/babel, Storybook 4.1 may break for you. There's a workaround [described in the issue](https://github.com/storybooks/storybook/issues/4995), and we're working on official support in the next release.
+
+## React 15.x
+
+Storybook 4.1 supports React 15.x (which had been [lost in the 4.0 release](#react-163)). So if you've been blocked on upgrading, we've got you covered. You should be able to upgrade according to the 4.0 migration notes below, or following the [4.0 upgrade guide](https://medium.com/storybookjs/migrating-to-storybook-4-c65b19a03d2c).
+
 ## From version 3.4.x to 4.0.x
 
-With 4.0 as our first major release in over a year, we've collected a lot of cleanup tasks. Most of the deprecations have been marked for months, so we hope that there will be no significant impact on your project.
+With 4.0 as our first major release in over a year, we've collected a lot of cleanup tasks. Most of the deprecations have been marked for months, so we hope that there will be no significant impact on your project. We've also created a [step-by-step guide to help you upgrade](https://medium.com/storybookjs/migrating-to-storybook-4-c65b19a03d2c).
 
 ### React 16.3+
 
@@ -51,17 +431,19 @@ However, if you're developing React components, this means you need to upgrade t
 Also, here's the error you'll get if you're running an older version of React:
 
 ```
+
 core.browser.esm.js:15 Uncaught TypeError: Object(...) is not a function
-    at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
-    at __webpack_require__ (bootstrap:724)
-    at fn (bootstrap:101)
-    at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
-    at __webpack_require__ (bootstrap:724)
-    at fn (bootstrap:101)
-    at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
-    at __webpack_require__ (bootstrap:724)
-    at fn (bootstrap:101)
-    at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
+at Module../node_modules/@emotion/core/dist/core.browser.esm.js (core.browser.esm.js:15)
+at **webpack_require** (bootstrap:724)
+at fn (bootstrap:101)
+at Module../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js (styled-base.browser.esm.js:1)
+at **webpack_require** (bootstrap:724)
+at fn (bootstrap:101)
+at Module../node_modules/@emotion/styled/dist/styled.esm.js (styled.esm.js:1)
+at **webpack_require** (bootstrap:724)
+at fn (bootstrap:101)
+at Object../node_modules/@storybook/components/dist/navigation/MenuLink.js (MenuLink.js:12)
+
 ```
 
 ### Generic addons
@@ -69,13 +451,13 @@ core.browser.esm.js:15 Uncaught TypeError: Object(...) is not a function
 4.x introduces generic addon decorators that are not tied to specific view layers [#3555](https://github.com/storybooks/storybook/pull/3555). So for example:
 
 ```js
-import { number } from "@storybook/addon-knobs/react";
+import { number } from '@storybook/addon-knobs/react';
 ```
 
 Becomes:
 
 ```js
-import { number } from "@storybook/addon-knobs";
+import { number } from '@storybook/addon-knobs';
 ```
 
 ### Knobs select ordering
@@ -86,7 +468,7 @@ import { number } from "@storybook/addon-knobs";
 
 Addon-knobs no longer updates the URL parameters interactively as you edit a knob. This is a UI change but it shouldn't break any code because old URLs are still supported.
 
-In 3.x, editing knobs updated the URL parameters interactively. The implementation had performance and architectural problems. So in 4.0, we changed this to a "copy" button tp the addon which generates a URL with the updated knob values and copies it to the clipboard.
+In 3.x, editing knobs updated the URL parameters interactively. The implementation had performance and architectural problems. So in 4.0, we changed this to a "copy" button in the addon which generates a URL with the updated knob values and copies it to the clipboard.
 
 ### Keyboard shortcuts moved
 
@@ -144,7 +526,7 @@ If you are using `create-react-app` (aka CRA), you may need to do some manual st
 
 - `create-react-app@1` may require manual migrations.
   - If you're adding storybook for the first time, it should just work: `sb init` should add the correct dependencies.
-  - If you've upgrading an existing project, your `package.json` probably already uses Babel 6, making it incompatible with `@storybook/react@4` which uses Babel 7. There are two ways to make it compatible, each of which is spelled out in detail in the next section:
+  - If you're upgrading an existing project, your `package.json` probably already uses Babel 6, making it incompatible with `@storybook/react@4` which uses Babel 7. There are two ways to make it compatible, each of which is spelled out in detail in the next section:
     - Upgrade to Babel 7 if you are not dependent on Babel 6-specific features.
     - Migrate Babel 6 if you're heavily dependent on some Babel 6-specific features).
 - `create-react-app@2` should be compatible as is, since it uses babel 7.
@@ -162,7 +544,7 @@ yarn add @babel/core babel-loader --dev
 yarn add babel-loader@7
 ```
 
-Also make sure you have a `.babelrc` in your project directory. You probably already do if you are using Babel 6 features (otherwise you should consider upgrading to Babel 7 instead). If you don't have one, here's a simple one that works:
+Also, make sure you have a `.babelrc` in your project directory. You probably already do if you are using Babel 6 features (otherwise you should consider upgrading to Babel 7 instead). If you don't have one, here's a simple one that works:
 
 ```json
 {
@@ -221,22 +603,22 @@ There are no expected breaking changes in the 3.4.x release, but 3.4 contains a 
 
 ## From version 3.2.x to 3.3.x
 
-There wasn't expected be any breaking changes in this release, but unfortunately it turned out that there are some. We're revisiting our [release strategy](https://github.com/storybooks/storybook/blob/master/RELEASES.md) to follow semver more strictly.
+It wasn't expected that there would be any breaking changes in this release, but unfortunately it turned out that there are some. We're revisiting our [release strategy](https://github.com/storybooks/storybook/blob/master/RELEASES.md) to follow semver more strictly.
 Also read on if you're using `addon-knobs`: we advise an update to your code for efficiency's sake.
 
 ### `babel-core` is now a peer dependency ([#2494](https://github.com/storybooks/storybook/pull/2494))
 
 This affects you if you don't use babel in your project. You may need to add `babel-core` as dev dependency:
 
-```
-npm install --save-dev babel-core
+```sh
+yarn add babel-core --dev
 ```
 
 This was done to support different major versions of babel.
 
 ### Base webpack config now contains vital plugins ([#1775](https://github.com/storybooks/storybook/pull/1775))
 
-This affects you if you use custom webpack config in [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode) while not preserving the plugins from `storybookBaseConfig`. Before `3.3`, preserving them was just a reccomendation, but now it [became](https://github.com/storybooks/storybook/pull/2578) a requirement.
+This affects you if you use custom webpack config in [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode) while not preserving the plugins from `storybookBaseConfig`. Before `3.3`, preserving them was just a recommendation, but now it [became](https://github.com/storybooks/storybook/pull/2578) a requirement.
 
 ### Refactored Knobs
 
@@ -245,7 +627,7 @@ Knobs users: there was a bug in 3.2.x where using the knobs addon imported all f
 In the case of React or React-Native, import knobs like this:
 
 ```js
-import { withKnobs, text, boolean, number } from "@storybook/addon-knobs/react";
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
 ```
 
 In the case of Vue: `import { ... } from '@storybook/addon-knobs/vue';`
@@ -261,22 +643,22 @@ In the case of Angular: `import { ... } from '@storybook/addon-knobs/angular';`
 TypeScript users: we've moved the rest of our addons type definitions into [DefinitelyTyped](http://definitelytyped.org/). Starting in 3.2.0 make sure to use the right addons types:
 
 ```sh
-npm install @types/storybook__addon-notes @types/storybook__addon-options @types/storybook__addon-knobs @types/storybook__addon-links --save-dev
+yarn add @types/storybook__addon-notes @types/storybook__addon-options @types/storybook__addon-knobs @types/storybook__addon-links --dev
 ```
 
 See also [TypeScript definitions in 3.1.x](#moved-typescript-definitions).
 
 ### Updated Addons API
 
-We're in the process of upgrading our addons APIs. As a first step, we've upgraded the Info and Notes addons. The old API will still work with your existing projects, but will be deprecated soon and removed in Storybook 4.0.
+We're in the process of upgrading our addons APIs. As a first step, we've upgraded the Info and Notes addons. The old API will still work with your existing projects but will be deprecated soon and removed in Storybook 4.0.
 
 Here's an example of using Notes and Info in 3.2 with the new API.
 
 ```js
-storiesOf("composition", module).add(
-  "new addons api",
-  withInfo("see Notes panel for composition info")(
-    withNotes({ text: "Composition: Info(Notes())" })(context => (
+storiesOf('composition', module).add(
+  'new addons api',
+  withInfo('see Notes panel for composition info')(
+    withNotes({ text: 'Composition: Info(Notes())' })(context => (
       <MyComponent name={context.story} />
     ))
   )
@@ -287,14 +669,14 @@ It's not beautiful, but we'll be adding a more convenient/idiomatic way of using
 
 ## From version 3.0.x to 3.1.x
 
-**NOTE:** technically this is a breaking change and should be a 4.0.0 release according to semver. However, we're still figuring things out, and didn't think this change necessitated a major release. Please bear with us!
+**NOTE:** technically this is a breaking change and should be a 4.0.0 release according to semver. However, we're still figuring things out and didn't think this change necessitated a major release. Please bear with us!
 
 ### Moved TypeScript definitions
 
 TypeScript users: we are in the process of moving our typescript definitions into [DefinitelyTyped](http://definitelytyped.org/). If you're using TypeScript, starting in 3.1.0 you need to make sure your type definitions are installed:
 
 ```sh
-npm install @types/node @types/react @types/storybook__react --save-dev
+yarn add @types/node @types/react @types/storybook__react --dev
 ```
 
 ### Deprecated head.html
@@ -334,7 +716,7 @@ npx -p @storybook/cli sb init
 
 If the above doesn't work, or you want to make the changes manually, the details are below:
 
-> We have adopted the same versioning strategy as have been adopted by babel, jest and apollo.
+> We have adopted the same versioning strategy that has been adopted by babel, jest and apollo.
 > It's a strategy best suited for ecosystem type tools, which consist of many separately installable features / packages.
 > We think this describes storybook pretty well.
 
@@ -379,7 +761,7 @@ You have to change your `package.json`, prune old and install new dependencies b
 
 ### Deprecated embedded addons
 
-We used to ship 2 addons with every single installation of storybook: `actions` and `links`. But in practice not everyone is using them, so we decided to deprecate this and in the future they will be completely removed. If you use `@storybook/react/addons` you will get a deprecation warning.
+We used to ship 2 addons with every single installation of storybook: `actions` and `links`. But in practice not everyone is using them, so we decided to deprecate this and in the future, they will be completely removed. If you use `@storybook/react/addons` you will get a deprecation warning.
 
 If you **are** using these addons, migrating is simple:
 
@@ -387,13 +769,13 @@ If you **are** using these addons, migrating is simple:
 - update your code:
   change `addons.js` like so:
   ```js
-  import "@storybook/addon-actions/register";
-  import "@storybook/addon-links/register";
+  import '@storybook/addon-actions/register';
+  import '@storybook/addon-links/register';
   ```
   change `x.story.js` like so:
   ```js
-  import React from "react";
-  import { storiesOf } from "@storybook/react";
-  import { action } from "@storybook/addon-actions";
-  import { linkTo } from "@storybook/addon-links";
+  import React from 'react';
+  import { storiesOf } from '@storybook/react';
+  import { action } from '@storybook/addon-actions';
+  import { linkTo } from '@storybook/addon-links';
   ```

@@ -34,7 +34,7 @@ function prettifyCode(source, { prettierConfig, parser, filepath }) {
     if (parser) {
       config = {
         ...prettierConfig,
-        parser: parser === 'javascript' ? 'babylon' : parser,
+        parser: parser === 'javascript' ? 'babel' : parser,
       };
     } else if (filepath) {
       config = {
@@ -44,7 +44,7 @@ function prettifyCode(source, { prettierConfig, parser, filepath }) {
     } else {
       config = {
         ...prettierConfig,
-        parser: 'babylon',
+        parser: 'babel',
       };
     }
   }

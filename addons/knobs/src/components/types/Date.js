@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
-import { Input } from '@storybook/components';
+import { styled } from '@storybook/theming';
+import { Form } from '@storybook/components';
 
 const FlexSpaced = styled.div({
   flex: 1,
   display: 'flex',
-  '& > *': {
+  '&& > *': {
     marginLeft: 10,
   },
-  '& > *:first-child': {
+  '&& > *:first-of-type': {
     marginLeft: 0,
   },
 });
-const FlexInput = styled(Input)({ flex: 1 });
+const FlexInput = styled(Form.Input)({ flex: 1 });
 
 const formatDate = date => {
   const year = `000${date.getFullYear()}`.slice(-4);
@@ -104,11 +104,13 @@ class DateType extends Component {
             this.dateInput = el;
           }}
           id={`${name}date`}
+          name={`${name}date`}
           onChange={this.onDateChange}
         />
         <FlexInput
           type="time"
           id={`${name}time`}
+          name={`${name}time`}
           ref={el => {
             this.timeInput = el;
           }}

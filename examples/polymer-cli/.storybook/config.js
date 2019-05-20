@@ -1,8 +1,11 @@
-import { configure } from '@storybook/polymer';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addParameters, addDecorator } from '@storybook/polymer';
+import { withA11y } from '@storybook/addon-a11y';
 
-setOptions({
-  hierarchyRootSeparator: /\|/,
+addDecorator(withA11y);
+addParameters({
+  options: {
+    hierarchyRootSeparator: /\|/,
+  },
 });
 
 function loadStories() {

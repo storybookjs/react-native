@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withNotes } from '@storybook/addon-notes';
 
 // For these stories to work, you must build the static version of the
-//   example storybooks *before* running this storybook.
+// example storybooks *before* running this storybook.
 
 const chapter = storiesOf('App|acceptance', module);
 
@@ -18,6 +17,7 @@ const style = {
 
 [
   'cra-kitchen-sink',
+  'cra-ts-kitchen-sink',
   'vue-kitchen-sink',
   'svelte-kitchen-sink',
   'angular-cli',
@@ -25,11 +25,11 @@ const style = {
   'mithril-kitchen-sink',
   'html-kitchen-sink',
   'riot-kitchen-sink',
+  'preact-kitchen-sink',
+  'cra-react15',
 ].forEach(name => {
-  chapter.add(
-    name,
-    withNotes(`You must build the storybook for the ${name} example for this story to work.`)(
-      () => <iframe style={style} title={name} src={`${name}/index.html`} />
-    )
-  );
+  chapter.add(name, () => <iframe style={style} title={name} src={`${name}/index.html`} />, {
+    chromatic: { delay: 2000 },
+    notes: `You must build the storybook for the ${name} example for this story to work.`,
+  });
 });

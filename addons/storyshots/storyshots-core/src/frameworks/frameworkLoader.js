@@ -22,7 +22,9 @@ function loadFramework(options) {
   const loader = loaders.find(frameworkLoader => frameworkLoader.test(options));
 
   if (!loader) {
-    throw new Error('storyshots is intended only to be used with storybook');
+    throw new Error(
+      "Couldn't find an appropriate framework loader -- do you need to set the `frameowrk` option?"
+    );
   }
 
   return loader.load(options);

@@ -1,0 +1,514 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots basics/Tooltip/TooltipMessage default 1`] = `
+.emotion-0 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: rgba(255,255,255,0.95);
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.emotion-1 {
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 0px;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
+  bottom: -8px;
+  top: autopx;
+  right: autopx;
+  left: autopx;
+  border-bottom-width: 0px;
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+  border-top-color: rgba(255,255,255,0.95);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.emotion-5 {
+  padding: 15px;
+  width: 280px;
+  box-sizing: border-box;
+}
+
+.emotion-4 {
+  color: #444444;
+  line-height: 18px;
+}
+
+.emotion-2 {
+  font-weight: 900;
+}
+
+<div
+  style="height:300px"
+>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      Tooltip
+    </div>
+  </div>
+  <div
+    class="emotion-6"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-5"
+    >
+      <div
+        class="emotion-4"
+      >
+        <div
+          class="emotion-2"
+        >
+          Lorem ipsum dolor sit
+        </div>
+        <span
+          class="emotion-3"
+        >
+          Amet consectatur vestibulum concet durum politu coret weirom
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/TooltipMessage minimal message 1`] = `
+.emotion-0 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-5 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: rgba(255,255,255,0.95);
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.emotion-1 {
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 0px;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
+  bottom: -8px;
+  top: autopx;
+  right: autopx;
+  left: autopx;
+  border-bottom-width: 0px;
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+  border-top-color: rgba(255,255,255,0.95);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.emotion-4 {
+  padding: 15px;
+  width: 280px;
+  box-sizing: border-box;
+}
+
+.emotion-3 {
+  color: #444444;
+  line-height: 18px;
+}
+
+<div
+  style="height:300px"
+>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      Tooltip
+    </div>
+  </div>
+  <div
+    class="emotion-5"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-4"
+    >
+      <div
+        class="emotion-3"
+      >
+        <span
+          class="emotion-2"
+        >
+          Amet consectatur vestibulum concet durum politu coret weirom
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/TooltipMessage with link 1`] = `
+.emotion-0 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-6 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-6:hover,
+.emotion-6:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-6:hover svg path,
+.emotion-6:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-6:active {
+  color: #028ee6;
+}
+
+.emotion-6:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-6 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-9 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: rgba(255,255,255,0.95);
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.emotion-1 {
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 0px;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
+  bottom: -8px;
+  top: autopx;
+  right: autopx;
+  left: autopx;
+  border-bottom-width: 0px;
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+  border-top-color: rgba(255,255,255,0.95);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.emotion-8 {
+  padding: 15px;
+  width: 280px;
+  box-sizing: border-box;
+}
+
+.emotion-4 {
+  color: #444444;
+  line-height: 18px;
+}
+
+.emotion-2 {
+  font-weight: 900;
+}
+
+.emotion-7 {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.emotion-7 > * {
+  margin: 0 8px;
+  font-weight: 900;
+}
+
+<div
+  style="height:300px"
+>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      Tooltip
+    </div>
+  </div>
+  <div
+    class="emotion-9"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-8"
+    >
+      <div
+        class="emotion-4"
+      >
+        <div
+          class="emotion-2"
+        >
+          Lorem ipsum dolor sit
+        </div>
+        <span
+          class="emotion-3"
+        >
+          Amet consectatur vestibulum concet durum politu coret weirom
+        </span>
+      </div>
+      <div
+        class="emotion-7"
+      >
+        <a
+          class="emotion-6"
+          href="test"
+        >
+          <span
+            class="emotion-5"
+          >
+            Continue
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots basics/Tooltip/TooltipMessage with links 1`] = `
+.emotion-0 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  display: inline-block;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1EA7FD;
+}
+
+.emotion-6 svg path {
+  fill: #1EA7FD;
+}
+
+.emotion-6:hover,
+.emotion-6:focus {
+  cursor: pointer;
+  color: #0297f5;
+}
+
+.emotion-6:hover svg path,
+.emotion-6:focus svg path {
+  fill: #0297f5;
+}
+
+.emotion-6:active {
+  color: #028ee6;
+}
+
+.emotion-6:active svg path {
+  fill: #028ee6;
+}
+
+.emotion-6 svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+  position: relative;
+  bottom: -0.125em;
+  margin-right: 0.4em;
+}
+
+.emotion-11 {
+  display: inline-block;
+  z-index: 2147483647;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: rgba(255,255,255,0.95);
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.emotion-1 {
+  position: absolute;
+  border-style: solid;
+  margin-bottom: 0px;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
+  bottom: -8px;
+  top: autopx;
+  right: autopx;
+  left: autopx;
+  border-bottom-width: 0px;
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+  border-top-color: rgba(255,255,255,0.95);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.emotion-10 {
+  padding: 15px;
+  width: 280px;
+  box-sizing: border-box;
+}
+
+.emotion-4 {
+  color: #444444;
+  line-height: 18px;
+}
+
+.emotion-2 {
+  font-weight: 900;
+}
+
+.emotion-9 {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.emotion-9 > * {
+  margin: 0 8px;
+  font-weight: 900;
+}
+
+<div
+  style="height:300px"
+>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      Tooltip
+    </div>
+  </div>
+  <div
+    class="emotion-11"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-10"
+    >
+      <div
+        class="emotion-4"
+      >
+        <div
+          class="emotion-2"
+        >
+          Lorem ipsum dolor sit
+        </div>
+        <span
+          class="emotion-3"
+        >
+          Amet consectatur vestibulum concet durum politu coret weirom
+        </span>
+      </div>
+      <div
+        class="emotion-9"
+      >
+        <a
+          class="emotion-6"
+          href="test"
+        >
+          <span
+            class="emotion-5"
+          >
+            Get more tips
+          </span>
+        </a>
+        <a
+          class="emotion-6"
+          href="test"
+        >
+          <span
+            class="emotion-5"
+          >
+            Done
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

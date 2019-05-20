@@ -1,12 +1,12 @@
 import { document, setTimeout } from 'global';
 import { storiesOf } from '@storybook/html';
-import { checkA11y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
 
 const text = 'Testing the a11y addon';
 
 storiesOf('Addons|a11y', module)
-  .addDecorator(checkA11y)
-  .addParameters({ options: { selectedAddonPanel: '@storybook/addon-a11y/panel' } })
+  .addDecorator(withA11y)
+  .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
   .add('Default', () => `<button></button>`)
   .add('Label', () => `<button>${text}</button>`)
   .add('Disabled', () => `<button disabled>${text}</button>`)

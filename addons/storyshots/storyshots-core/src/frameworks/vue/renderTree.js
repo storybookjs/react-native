@@ -1,13 +1,16 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Vue from 'vue';
 
-function getRenderedTree(story, context) {
-  const storyElement = story.render(context);
+function getRenderedTree(story) {
+  const component = story.render();
 
-  const Constructor = Vue.extend(storyElement);
-  const vm = new Constructor().$mount();
+  const vm = new Vue({
+    render(h) {
+      return h(component);
+    },
+  });
 
-  return vm.$el;
+  return vm.$mount().$el;
 }
 
 export default getRenderedTree;

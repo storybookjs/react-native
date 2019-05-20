@@ -1,22 +1,20 @@
 import { storiesOf } from '@storybook/svelte';
-import { withNotes } from '@storybook/addon-notes';
 
 import ButtonView from './views/ButtonView.svelte';
 
 storiesOf('Addon|Notes', module)
-  .addDecorator(withNotes)
   .add(
     'Simple note',
     () => ({
       Component: ButtonView,
     }),
-    { notes: 'My notes on the ButtonView component' }
+    { notes: 'My notes on the [ButtonView](/story/addon-notes--simple-note) component' }
   )
   .add(
     'Note with HTML',
     () => ({
       Component: ButtonView,
-      data: {
+      props: {
         text: '🤔😳😯😮😄😩😓😱🤓😑😶😊',
       },
     }),

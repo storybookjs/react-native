@@ -1,8 +1,12 @@
-import { configure } from '@storybook/svelte';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addParameters, addDecorator } from '@storybook/svelte';
+import { withA11y } from '@storybook/addon-a11y';
 
-// Used with @storybook/addon-options/register
-setOptions({ hierarchyRootSeparator: /\|/ });
+addDecorator(withA11y);
+addParameters({
+  options: {
+    hierarchyRootSeparator: /\|/,
+  },
+});
 
 function loadStories() {
   require('../src/stories');

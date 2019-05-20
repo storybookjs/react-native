@@ -20,8 +20,23 @@ const TestComponent = ({ func, obj, array, number, string, bool, empty }) => (
       <li>1</li>
       <li>2</li>
     </ul>
-  </div>);
+  </div>
+);
 /* eslint-enable */
+
+const reactClassPath = 'some/path/TestComponent.jsx';
+const storybookReactClassMock = {
+  name: 'TestComponent',
+  path: reactClassPath,
+  docgenInfo: {
+    description: `
+# Awesome test component description
+## with markdown support
+**bold** *cursive*
+    `,
+    name: 'TestComponent',
+  },
+};
 
 const testOptions = { propTables: false };
 
@@ -31,10 +46,10 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)`;
 
 describe('addon Info', () => {
   // eslint-disable-next-line react/prop-types
-  const storyFn = ({ story }) => (
+  const createStoryFn = Component => ({ name }) => (
     <div>
-      It's a {story} story:
-      <TestComponent
+      It's a {name} story:
+      <Component
         func={x => x + 1}
         obj={{ a: 'a', b: 'b' }}
         array={[1, 2, 3]}
@@ -44,6 +59,8 @@ describe('addon Info', () => {
       />
     </div>
   );
+  const storyFn = createStoryFn(TestComponent);
+
   it('should render <Info /> and markdown', () => {
     const Info = withInfo(testMarkdown)(storyFn);
 
@@ -62,5 +79,41 @@ describe('addon Info', () => {
     setDefaults(testOptions);
     const Info = withInfo()(storyFn);
     mount(<Info />);
+  });
+  it('should render <Info /> for memoized component', () => {
+    const MemoizedTestComponent = React.memo(TestComponent);
+    const Info = withInfo()(createStoryFn(MemoizedTestComponent));
+
+    expect(mount(<Info />)).toMatchSnapshot();
+  });
+
+  it('should render component description if story kind matches component', () => {
+    const previousReactClassesValue = global.STORYBOOK_REACT_CLASSES[reactClassPath];
+    Object.assign(global.STORYBOOK_REACT_CLASSES, { [reactClassPath]: storybookReactClassMock });
+
+    const Info = () =>
+      withInfo({ inline: true, propTables: false })(storyFn, {
+        kind: 'TestComponent',
+        name: 'Basic test',
+      });
+
+    expect(mount(<Info />)).toMatchSnapshot();
+
+    Object.assign(global.STORYBOOK_REACT_CLASSES, { [reactClassPath]: previousReactClassesValue });
+  });
+
+  it('should render component description if story name matches component', () => {
+    const previousReactClassesValue = global.STORYBOOK_REACT_CLASSES[reactClassPath];
+    Object.assign(global.STORYBOOK_REACT_CLASSES, { [reactClassPath]: storybookReactClassMock });
+
+    const Info = () =>
+      withInfo({ inline: true, propTables: false })(storyFn, {
+        kind: 'Test Components',
+        name: 'TestComponent',
+      });
+
+    expect(mount(<Info />)).toMatchSnapshot();
+
+    Object.assign(global.STORYBOOK_REACT_CLASSES, { [reactClassPath]: previousReactClassesValue });
   });
 });

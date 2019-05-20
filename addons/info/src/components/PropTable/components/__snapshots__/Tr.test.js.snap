@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropTable/Tr renders a tr html node with html node children 1`] = `
+<tr>
+  foo bar baz
+</tr>
+`;
+
+exports[`PropTable/Tr renders a tr html node with one child node 1`] = `
+<tr>
+  foo bar
+</tr>
+`;
+
+exports[`PropTable/Tr renders a tr html node with react element children 1`] = `
+<tr>
+  <Td
+    isMonospace={false}
+  >
+    foo bar
+  </Td>
+  <Td
+    isMonospace={false}
+  >
+    baz
+  </Td>
+</tr>
+`;

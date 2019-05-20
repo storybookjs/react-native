@@ -1,57 +1,66 @@
 {
   "name": "@storybook/ui",
-  "version": "4.1.0-alpha.1",
+  "version": "5.1.0-beta.1",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/ui",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/ui"
   },
   "license": "MIT",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js",
-    "publish-storybook": "bash ./.scripts/publish_storybook.sh",
-    "storybook": "start-storybook -p 9010"
+    "createDlls": "node -r esm ./scripts/createDlls.js",
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^0.13.1",
-    "@emotion/provider": "^0.11.2",
-    "@emotion/styled": "^0.10.6",
-    "@storybook/components": "4.1.0-alpha.1",
-    "@storybook/core-events": "4.1.0-alpha.1",
-    "@storybook/mantra-core": "^1.7.2",
-    "@storybook/podda": "^1.2.3",
-    "@storybook/react-komposer": "^2.0.5",
-    "deep-equal": "^1.0.1",
-    "events": "^3.0.0",
-    "fuse.js": "^3.3.0",
+    "@storybook/addons": "5.1.0-beta.1",
+    "@storybook/api": "5.1.0-beta.1",
+    "@storybook/client-logger": "5.1.0-beta.1",
+    "@storybook/components": "5.1.0-beta.1",
+    "@storybook/core-events": "5.1.0-beta.1",
+    "@storybook/router": "5.1.0-beta.1",
+    "@storybook/theming": "5.1.0-beta.1",
+    "core-js": "^3.0.1",
+    "core-js-pure": "^3.0.1",
+    "fast-deep-equal": "^2.0.1",
+    "fuse.js": "^3.4.4",
     "global": "^4.3.2",
-    "keycode": "^2.2.0",
-    "lodash": "^4.17.11",
-    "prop-types": "^15.6.2",
-    "qs": "^6.5.2",
-    "react-fuzzy": "^0.5.2",
-    "react-lifecycles-compat": "^3.0.4",
-    "react-modal": "^3.6.1",
-    "react-treebeard": "^3.1.0"
+    "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.5.0",
+    "lodash.mergewith": "^4.6.1",
+    "lodash.pick": "^4.4.0",
+    "markdown-to-jsx": "^6.9.3",
+    "memoizerific": "^1.11.3",
+    "polished": "^3.3.1",
+    "prop-types": "^15.7.2",
+    "qs": "^6.6.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-draggable": "^3.1.1",
+    "react-helmet-async": "^1.0.2",
+    "react-hotkeys": "2.0.0-pre4",
+    "react-resize-detector": "^4.0.5",
+    "recompose": "^0.30.0",
+    "semver": "^6.0.0",
+    "store2": "^2.7.1",
+    "telejson": "^2.2.1",
+    "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.1.0-alpha.1",
-    "@storybook/react": "4.1.0-alpha.1"
+    "flush-promises": "^1.0.2",
+    "terser-webpack-plugin": "^1.2.4",
+    "webpack": "^4.28.0"
   },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+  "publishConfig": {
+    "access": "public"
   }
 }

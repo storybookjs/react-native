@@ -1,36 +1,40 @@
 {
   "name": "@storybook/addon-links",
-  "version": "4.1.0-alpha.1",
+  "version": "5.1.0-beta.1",
   "description": "Story Links addon for storybook",
   "keywords": [
     "addon",
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/links",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/links"
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.1.0-alpha.1",
-    "@storybook/components": "4.1.0-alpha.1",
-    "@storybook/core-events": "4.1.0-alpha.1",
+    "@storybook/addons": "5.1.0-beta.1",
+    "@storybook/core-events": "5.1.0-beta.1",
+    "@storybook/router": "5.1.0-beta.1",
+    "common-tags": "^1.8.0",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.7.2",
+    "qs": "^6.6.0"
   },
   "peerDependencies": {
     "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

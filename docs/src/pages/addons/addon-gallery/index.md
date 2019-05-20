@@ -46,7 +46,7 @@ Storyshots is a way to automatically jest-snapshot all your stories. [More info 
 
 Redirects console output (logs, errors, warnings) into Action Logger Panel. `withConsole` decorator notifies from what stories logs are coming.
 
-### [Backgrounds](https://github.com/storybooks/storybook/tree/master/addons/background)
+### [Backgrounds](https://github.com/storybooks/storybook/tree/master/addons/backgrounds)
 
 With this addon, you can switch between background colors and background images for your preview components. It is really helpful for styleguides.
 
@@ -134,9 +134,9 @@ Add ability to customize styles in the story preview area
 
 Embed [Figma](https://figma.com) designs in a storybook panel.
 
-### [State](https://github.com/Sambego/storybook-state)
+### [State](https://github.com/Sambego/storybook-state)	
 
-Manage state inside a story. Update components when this state changes.
+Manage state inside a story using a store. Update components when this state changes.	
 
 ### [State](https://github.com/dump247/storybook-state/)
 
@@ -144,6 +144,10 @@ Manage state inside a story. Update components when this state changes.
 Wrap the story in a function call to setup state management. The story can modify
 state properties with the provided store. The addon provides a panel to view and
 reset state.
+
+### [State](https://github.com/adierkens/storybook-addon-state)	
+
+Store/retrieve arbitrary data. Similar to knobs this doesn't add any additional React wrappers to the story, so any other addons used (prop-types, jsx) aren't effected. Has a React hooks like API.
 
 ### [story2sketch](https://github.com/chrisvxd/story2sketch)
 
@@ -164,3 +168,19 @@ JSS theme selection.
 ### [React live edit](https://github.com/vertexbz/storybook-addon-react-live-edit)
 
 Provides live react story editing and preview.
+
+### [copy-code-block](https://www.npmjs.com/package/@pickra/copy-code-block)
+
+Display code and copy it to the clipboard. It also has options to customize colors and syntax highlighting for any language. There is similar functionality via [@storybook/addon-info](https://www.npmjs.com/package/@storybook/addon-info) but addon-info doesn't currently work when using [@storybook/html](https://www.npmjs.com/package/@storybook/html).
+
+### [storybook-addon-react-docgen](https://github.com/hipstersmoothie/storybook-addon-react-docgen/)
+
+Display react docgen info. This addon is a drop in replacement for the [@storybook/addon-info](https://www.npmjs.com/package/@storybook/addon-info)'s prop table functionality. Rather than rendering with the component it renders in the addons panel. Works with typescript too!
+
+### [storybook-dark-mode](https://github.com/hipstersmoothie/storybook-dark-mode)
+
+Let your users toggle between a dark and light mode.
+
+
+
+

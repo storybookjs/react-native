@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import deepEqual from 'fast-deep-equal';
 import { polyfill } from 'react-lifecycles-compat';
-import { Textarea } from '@storybook/components';
+import { Form } from '@storybook/components';
 
 class ObjectType extends Component {
+  state = {
+    value: {},
+    failed: false,
+    json: '',
+  };
+
   static getDerivedStateFromProps(props, state) {
-    if (!state || !deepEqual(props.knob.value, state.json)) {
+    if (!deepEqual(props.knob.value, state.json)) {
       try {
         return {
           value: JSON.stringify(props.knob.value, null, 2),
@@ -45,9 +51,11 @@ class ObjectType extends Component {
 
   render() {
     const { value, failed } = this.state;
+    const { knob } = this.props;
 
     return (
-      <Textarea
+      <Form.Textarea
+        name={knob.name}
         valid={failed ? 'error' : null}
         value={value}
         onChange={this.handleChange}

@@ -26,9 +26,7 @@
       class="link"
       href="https://storybook.js.org/basics/writing-stories"
       target="_blank"
-    >
-      Writing Stories
-    </a>
+    >Writing Stories</a>
     section in our documentation.
   </p>
   <p class="note">
@@ -45,10 +43,10 @@
   @import url('https://fonts.googleapis.com/css?family=Rajdhani');
 
   .main {
-    margin: 15px;
-    max-width: 600;
+    padding: 15px;
     line-height: 1.4;
     font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+    background-color: #ffffff;
   }
 
   .logo {

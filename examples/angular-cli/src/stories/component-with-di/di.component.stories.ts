@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/angular';
-import { withKnobs, text } from '@storybook/addon-knobs/angular';
+import { withKnobs, text } from '@storybook/addon-knobs';
 import { DiComponent } from './di.component';
 
 storiesOf('Custom|Dependencies', module)
@@ -9,10 +9,15 @@ storiesOf('Custom|Dependencies', module)
       title: 'Component dependencies',
     },
   }))
-  .addDecorator(withKnobs)
-  .add('inputs and inject dependencies with knobs', () => ({
-    component: DiComponent,
-    props: {
-      title: text('title', 'Component dependencies'),
-    },
-  }));
+  .add(
+    'inputs and inject dependencies with knobs',
+    () => ({
+      component: DiComponent,
+      props: {
+        title: text('title', 'Component dependencies'),
+      },
+    }),
+    {
+      decorators: [withKnobs],
+    }
+  );

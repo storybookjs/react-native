@@ -26,10 +26,10 @@ object OpenSourceProjects_Storybook_Chromatic : BuildType({
             scriptContent = """
                 #!/bin/sh
 
-                set -e -x
-
-                yarn
-                yarn chromatic
+                # set -e -x
+                # yarn
+                # yarn chromatic
+                echo "chromatic moved to cirlce CI"
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }

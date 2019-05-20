@@ -1,0 +1,1028 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Basics|Button all buttons 1`] = `
+.emotion-4 {
+  shape-rendering: inherit;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: block;
+}
+
+.emotion-3 {
+  fill: currentColor;
+}
+
+.emotion-0 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #fafafa;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.emotion-0 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-0 svg path {
+  fill: currentColor;
+}
+
+.emotion-0:hover {
+  background: #f2f2f2;
+}
+
+.emotion-0:active {
+  background: #FFFFFF;
+}
+
+.emotion-0:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 0 0 1px inset;
+}
+
+.emotion-0:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-1 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  background: #FF4785;
+  color: #FFFFFF;
+}
+
+.emotion-1 svg {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: top;
+  margin-right: 6px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+
+.emotion-1 svg path {
+  fill: currentColor;
+}
+
+.emotion-1:hover {
+  background: #ff2d74;
+}
+
+.emotion-1:active {
+  box-shadow: rgba(0,0,0,0.1) 0 0 0 3em inset;
+}
+
+.emotion-1:focus {
+  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+}
+
+.emotion-1:focus:hover {
+  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+}
+
+.emotion-2 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  background: #1EA7FD;
+  color: #FFFFFF;
+}
+
+.emotion-2 svg {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: top;
+  margin-right: 6px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+
+.emotion-2 svg path {
+  fill: currentColor;
+}
+
+.emotion-2:hover {
+  background: #059dfd;
+}
+
+.emotion-2:active {
+  box-shadow: rgba(0,0,0,0.1) 0 0 0 3em inset;
+}
+
+.emotion-2:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
+}
+
+.emotion-2:focus:hover {
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
+}
+
+.emotion-5 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 12px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+}
+
+.emotion-5 svg {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: top;
+  margin-right: 6px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+
+.emotion-5 svg path {
+  fill: currentColor;
+}
+
+.emotion-5 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-5:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-5:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-6 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+}
+
+.emotion-6 svg {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: top;
+  margin-right: 6px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+
+.emotion-6 svg path {
+  fill: currentColor;
+}
+
+.emotion-6:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-6:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-7 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  background: #FF4785;
+  color: #FFFFFF;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  box-shadow: #FF4785 0 0 0 1px inset;
+  color: #FF4785;
+}
+
+.emotion-7 svg {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: top;
+  margin-right: 6px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+
+.emotion-7 svg path {
+  fill: currentColor;
+}
+
+.emotion-7:hover {
+  background: #ff2d74;
+}
+
+.emotion-7:active {
+  box-shadow: rgba(0,0,0,0.1) 0 0 0 3em inset;
+}
+
+.emotion-7:focus {
+  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+}
+
+.emotion-7:focus:hover {
+  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+}
+
+.emotion-7:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-7:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-7 svg path {
+  fill: #FF4785;
+}
+
+.emotion-7:hover {
+  box-shadow: #FF4785 0 0 0 1px inset;
+  background: transparent;
+}
+
+.emotion-7:active {
+  background: #FF4785;
+  box-shadow: #FF4785 0 0 0 1px inset;
+  color: #FFFFFF;
+}
+
+.emotion-7:focus {
+  box-shadow: #FF4785 0 0 0 1px inset, rgba(255,71,133,0.4) 0 1px 9px 2px;
+}
+
+.emotion-7:focus:hover {
+  box-shadow: #FF4785 0 0 0 1px inset, rgba(255,71,133,0.2) 0 8px 18px 0px;
+}
+
+.emotion-8 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  background: #1EA7FD;
+  color: #FFFFFF;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+  color: #1EA7FD;
+}
+
+.emotion-8 svg {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: top;
+  margin-right: 6px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+
+.emotion-8 svg path {
+  fill: currentColor;
+}
+
+.emotion-8:hover {
+  background: #059dfd;
+}
+
+.emotion-8:active {
+  box-shadow: rgba(0,0,0,0.1) 0 0 0 3em inset;
+}
+
+.emotion-8:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
+}
+
+.emotion-8:focus:hover {
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
+}
+
+.emotion-8:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-8:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-8:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+  background: transparent;
+}
+
+.emotion-8:active {
+  background: #1EA7FD;
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+  color: #FFFFFF;
+}
+
+.emotion-8:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset, rgba(30,167,253,0.4) 0 1px 9px 2px;
+}
+
+.emotion-8:focus:hover {
+  box-shadow: #1EA7FD 0 0 0 1px inset, rgba(30,167,253,0.2) 0 8px 18px 0px;
+}
+
+.emotion-9 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: not-allowed !important;
+  opacity: 0.5;
+  background: #FF4785;
+  color: #FFFFFF;
+}
+
+.emotion-9 svg {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: top;
+  margin-right: 6px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+
+.emotion-9 svg path {
+  fill: currentColor;
+}
+
+.emotion-9:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-9:hover {
+  background: #ff2d74;
+}
+
+.emotion-9:active {
+  box-shadow: rgba(0,0,0,0.1) 0 0 0 3em inset;
+}
+
+.emotion-9:focus {
+  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+}
+
+.emotion-9:focus:hover {
+  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+}
+
+.emotion-10 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #FF4785;
+  color: #FFFFFF;
+}
+
+.emotion-10 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-10 svg path {
+  fill: currentColor;
+}
+
+.emotion-10:hover {
+  background: #ff2d74;
+}
+
+.emotion-10:active {
+  box-shadow: rgba(0,0,0,0.1) 0 0 0 3em inset;
+}
+
+.emotion-10:focus {
+  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+}
+
+.emotion-10:focus:hover {
+  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+}
+
+.emotion-11 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #1EA7FD;
+  color: #FFFFFF;
+}
+
+.emotion-11 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-11 svg path {
+  fill: currentColor;
+}
+
+.emotion-11:hover {
+  background: #059dfd;
+}
+
+.emotion-11:active {
+  box-shadow: rgba(0,0,0,0.1) 0 0 0 3em inset;
+}
+
+.emotion-11:focus {
+  box-shadow: rgba(30,167,253,0.4) 0 1px 9px 2px;
+}
+
+.emotion-11:focus:hover {
+  box-shadow: rgba(30,167,253,0.2) 0 8px 18px 0px;
+}
+
+.emotion-12 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+}
+
+.emotion-12 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-12 svg path {
+  fill: currentColor;
+}
+
+.emotion-12:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-12:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+.emotion-13 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: not-allowed !important;
+  opacity: 0.5;
+  background: #FF4785;
+  color: #FFFFFF;
+}
+
+.emotion-13 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-13 svg path {
+  fill: currentColor;
+}
+
+.emotion-13:hover {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-13:hover {
+  background: #ff2d74;
+}
+
+.emotion-13:active {
+  box-shadow: rgba(0,0,0,0.1) 0 0 0 3em inset;
+}
+
+.emotion-13:focus {
+  box-shadow: rgba(255,71,133,0.4) 0 1px 9px 2px;
+}
+
+.emotion-13:focus:hover {
+  box-shadow: rgba(255,71,133,0.2) 0 8px 18px 0px;
+}
+
+.emotion-16 {
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px;
+  box-shadow: rgba(51,51,51,0.2) 0 0 0 1px inset;
+  color: rgba(51,51,51,0.7);
+  background: transparent;
+}
+
+.emotion-16 svg {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+  margin-right: 4px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+.emotion-16 svg path {
+  fill: currentColor;
+}
+
+.emotion-16 svg {
+  display: block;
+  margin: 0;
+}
+
+.emotion-16:hover {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 1px inset;
+}
+
+.emotion-16:active {
+  box-shadow: rgba(51,51,51,0.5) 0 0 0 2px inset;
+  color: #333;
+}
+
+<div>
+  <p>
+    Button that is used for forms
+  </p>
+  <button
+    class="emotion-0"
+  >
+    Form.Button
+  </button>
+  <br />
+  <p>
+    Buttons that are used for everything else
+  </p>
+  <button
+    class="emotion-1"
+  >
+    Primary
+  </button>
+  <button
+    class="emotion-2"
+  >
+    Secondary
+  </button>
+  <button
+    class="emotion-5"
+  >
+    <svg
+      class="emotion-4"
+      viewBox="0 0 1024 1024"
+    >
+      <path
+        class="emotion-3"
+        d="M743.52 529.234c5.616-5.616 83.048-83.046 88.462-88.46 30.944-32.778 47.97-75.636 47.97-120.792 0-47.048-18.304-91.26-51.542-124.484-33.228-33.22-77.43-51.516-124.458-51.516-45.024 0-87.792 16.94-120.536 47.72l-104.458 104.456c-30.792 32.738-47.734 75.512-47.734 120.548 0 41.916 14.576 81.544 41.248 113.196 3.264 3.876 6.666 7.664 10.292 11.29 4.258 4.258 8.704 8.262 13.304 12.022 0.054 0.080 0.096 0.152 0.148 0.232 9.572 7.308 15.778 18.804 15.778 31.776 0 22.094-17.914 40-40.004 40-8.542 0-16.442-2.696-22.938-7.26-2.746-1.93-20.622-17.43-30.35-28.050-0.008-0.010-0.018-0.018-0.026-0.028-4.992-5.432-13.234-15.23-18.552-22.65s-16.556-25.872-17.036-26.736c-0.7-1.262-2.974-5.526-3.422-6.39-0.69-1.334-6.118-12.67-6.114-12.67-14.342-31.96-22.332-67.4-22.332-104.728 0-60.826 21.198-116.648 56.58-160.544 0.252-0.314 4.61-5.594 6.594-7.866 0.304-0.35 5.038-5.636 7.16-7.874 0.252-0.268 105.86-105.874 106.128-106.126 45.902-43.584 107.958-70.314 176.264-70.314 141.382 0 255.998 114.5 255.998 256 0 68.516-26.882 130.688-70.652 176.61-0.144 0.148-109.854 109.546-112.090 111.528-0.958 0.848-5.072 4.352-5.072 4.352-6.448 5.434-13.132 10.592-20.1 15.378 0.412-6.836 0.644-13.702 0.644-20.6 0-26.46-3.108-52.206-8.918-76.918l-0.236-1.102zM616.144 767.82c35.382-43.896 56.58-99.718 56.58-160.544 0-37.328-7.99-72.768-22.332-104.728 0.004 0 0.006-0.002 0.010-0.004-0.258-0.576-0.538-1.14-0.8-1.714-0.686-1.498-2.894-6.112-3.296-6.93-0.668-1.344-2.952-5.732-3.386-6.604-3.48-6.982-8.708-15.126-9.49-16.366-0.498-0.792-0.996-1.58-1.502-2.364-0.834-1.29-15.364-22.066-26.656-34.466-0.008-0.010-0.018-0.018-0.026-0.028-7.056-8.448-24.932-24.198-30.35-28.050-6.47-4.602-14.396-7.26-22.938-7.26-22.090 0-40.004 17.906-40.004 40 0 12.97 6.206 24.466 15.778 31.776 0.052 0.080 0.094 0.152 0.148 0.232 4.602 3.76 20.334 19.434 23.598 23.31 26.672 31.65 41.248 71.28 41.248 113.196 0 45.038-16.944 87.81-47.734 120.548l-104.458 104.456c-32.742 30.782-75.512 47.72-120.536 47.72-47.028 0-91.228-18.294-124.458-51.516-33.236-33.224-51.542-77.436-51.542-124.484 0-45.154 17.028-88.014 47.97-120.792 5.414-5.414 40.812-40.812 68.958-68.958 7.176-7.176 13.888-13.886 19.504-19.502v-0.002c-0.356-1.562-0.246-1.096-0.246-1.096-5.81-24.712-8.918-50.458-8.918-76.918 0-6.898 0.232-13.764 0.644-20.6-6.966 4.788-20.1 15.33-20.1 15.33-0.734 0.62-9.518 8.388-11.68 10.45-0.16 0.154-105.338 105.33-105.482 105.478-43.77 45.922-70.652 108.094-70.652 176.61 0 141.5 114.616 256 255.998 256 68.306 0 130.362-26.73 176.264-70.314 0.27-0.254 105.876-105.86 106.128-106.126 0.004-0.002 13.506-15.426 13.758-15.74z"
+      />
+    </svg>
+  </button>
+  <br />
+  <button
+    class="emotion-6"
+  >
+    Outline
+  </button>
+  <button
+    class="emotion-7"
+  >
+    Outline primary
+  </button>
+  <button
+    class="emotion-8"
+  >
+    Outline secondary
+  </button>
+  <button
+    class="emotion-9"
+    disabled=""
+  >
+    Disabled
+  </button>
+  <br />
+  <button
+    class="emotion-10"
+  >
+    Primary
+  </button>
+  <button
+    class="emotion-11"
+  >
+    Secondary
+  </button>
+  <button
+    class="emotion-12"
+  >
+    Outline
+  </button>
+  <button
+    class="emotion-13"
+    disabled=""
+  >
+    Disabled
+  </button>
+  <button
+    class="emotion-16"
+  >
+    <svg
+      class="emotion-4"
+      viewBox="0 0 1024 1024"
+    >
+      <path
+        class="emotion-3"
+        d="M743.52 529.234c5.616-5.616 83.048-83.046 88.462-88.46 30.944-32.778 47.97-75.636 47.97-120.792 0-47.048-18.304-91.26-51.542-124.484-33.228-33.22-77.43-51.516-124.458-51.516-45.024 0-87.792 16.94-120.536 47.72l-104.458 104.456c-30.792 32.738-47.734 75.512-47.734 120.548 0 41.916 14.576 81.544 41.248 113.196 3.264 3.876 6.666 7.664 10.292 11.29 4.258 4.258 8.704 8.262 13.304 12.022 0.054 0.080 0.096 0.152 0.148 0.232 9.572 7.308 15.778 18.804 15.778 31.776 0 22.094-17.914 40-40.004 40-8.542 0-16.442-2.696-22.938-7.26-2.746-1.93-20.622-17.43-30.35-28.050-0.008-0.010-0.018-0.018-0.026-0.028-4.992-5.432-13.234-15.23-18.552-22.65s-16.556-25.872-17.036-26.736c-0.7-1.262-2.974-5.526-3.422-6.39-0.69-1.334-6.118-12.67-6.114-12.67-14.342-31.96-22.332-67.4-22.332-104.728 0-60.826 21.198-116.648 56.58-160.544 0.252-0.314 4.61-5.594 6.594-7.866 0.304-0.35 5.038-5.636 7.16-7.874 0.252-0.268 105.86-105.874 106.128-106.126 45.902-43.584 107.958-70.314 176.264-70.314 141.382 0 255.998 114.5 255.998 256 0 68.516-26.882 130.688-70.652 176.61-0.144 0.148-109.854 109.546-112.090 111.528-0.958 0.848-5.072 4.352-5.072 4.352-6.448 5.434-13.132 10.592-20.1 15.378 0.412-6.836 0.644-13.702 0.644-20.6 0-26.46-3.108-52.206-8.918-76.918l-0.236-1.102zM616.144 767.82c35.382-43.896 56.58-99.718 56.58-160.544 0-37.328-7.99-72.768-22.332-104.728 0.004 0 0.006-0.002 0.010-0.004-0.258-0.576-0.538-1.14-0.8-1.714-0.686-1.498-2.894-6.112-3.296-6.93-0.668-1.344-2.952-5.732-3.386-6.604-3.48-6.982-8.708-15.126-9.49-16.366-0.498-0.792-0.996-1.58-1.502-2.364-0.834-1.29-15.364-22.066-26.656-34.466-0.008-0.010-0.018-0.018-0.026-0.028-7.056-8.448-24.932-24.198-30.35-28.050-6.47-4.602-14.396-7.26-22.938-7.26-22.090 0-40.004 17.906-40.004 40 0 12.97 6.206 24.466 15.778 31.776 0.052 0.080 0.094 0.152 0.148 0.232 4.602 3.76 20.334 19.434 23.598 23.31 26.672 31.65 41.248 71.28 41.248 113.196 0 45.038-16.944 87.81-47.734 120.548l-104.458 104.456c-32.742 30.782-75.512 47.72-120.536 47.72-47.028 0-91.228-18.294-124.458-51.516-33.236-33.224-51.542-77.436-51.542-124.484 0-45.154 17.028-88.014 47.97-120.792 5.414-5.414 40.812-40.812 68.958-68.958 7.176-7.176 13.888-13.886 19.504-19.502v-0.002c-0.356-1.562-0.246-1.096-0.246-1.096-5.81-24.712-8.918-50.458-8.918-76.918 0-6.898 0.232-13.764 0.644-20.6-6.966 4.788-20.1 15.33-20.1 15.33-0.734 0.62-9.518 8.388-11.68 10.45-0.16 0.154-105.338 105.33-105.482 105.478-43.77 45.922-70.652 108.094-70.652 176.61 0 141.5 114.616 256 255.998 256 68.306 0 130.362-26.73 176.264-70.314 0.27-0.254 105.876-105.86 106.128-106.126 0.004-0.002 13.506-15.426 13.758-15.74z"
+      />
+    </svg>
+  </button>
+  <button
+    class="emotion-12"
+  >
+    <svg
+      class="emotion-4"
+      viewBox="0 0 1024 1024"
+    >
+      <path
+        class="emotion-3"
+        d="M743.52 529.234c5.616-5.616 83.048-83.046 88.462-88.46 30.944-32.778 47.97-75.636 47.97-120.792 0-47.048-18.304-91.26-51.542-124.484-33.228-33.22-77.43-51.516-124.458-51.516-45.024 0-87.792 16.94-120.536 47.72l-104.458 104.456c-30.792 32.738-47.734 75.512-47.734 120.548 0 41.916 14.576 81.544 41.248 113.196 3.264 3.876 6.666 7.664 10.292 11.29 4.258 4.258 8.704 8.262 13.304 12.022 0.054 0.080 0.096 0.152 0.148 0.232 9.572 7.308 15.778 18.804 15.778 31.776 0 22.094-17.914 40-40.004 40-8.542 0-16.442-2.696-22.938-7.26-2.746-1.93-20.622-17.43-30.35-28.050-0.008-0.010-0.018-0.018-0.026-0.028-4.992-5.432-13.234-15.23-18.552-22.65s-16.556-25.872-17.036-26.736c-0.7-1.262-2.974-5.526-3.422-6.39-0.69-1.334-6.118-12.67-6.114-12.67-14.342-31.96-22.332-67.4-22.332-104.728 0-60.826 21.198-116.648 56.58-160.544 0.252-0.314 4.61-5.594 6.594-7.866 0.304-0.35 5.038-5.636 7.16-7.874 0.252-0.268 105.86-105.874 106.128-106.126 45.902-43.584 107.958-70.314 176.264-70.314 141.382 0 255.998 114.5 255.998 256 0 68.516-26.882 130.688-70.652 176.61-0.144 0.148-109.854 109.546-112.090 111.528-0.958 0.848-5.072 4.352-5.072 4.352-6.448 5.434-13.132 10.592-20.1 15.378 0.412-6.836 0.644-13.702 0.644-20.6 0-26.46-3.108-52.206-8.918-76.918l-0.236-1.102zM616.144 767.82c35.382-43.896 56.58-99.718 56.58-160.544 0-37.328-7.99-72.768-22.332-104.728 0.004 0 0.006-0.002 0.010-0.004-0.258-0.576-0.538-1.14-0.8-1.714-0.686-1.498-2.894-6.112-3.296-6.93-0.668-1.344-2.952-5.732-3.386-6.604-3.48-6.982-8.708-15.126-9.49-16.366-0.498-0.792-0.996-1.58-1.502-2.364-0.834-1.29-15.364-22.066-26.656-34.466-0.008-0.010-0.018-0.018-0.026-0.028-7.056-8.448-24.932-24.198-30.35-28.050-6.47-4.602-14.396-7.26-22.938-7.26-22.090 0-40.004 17.906-40.004 40 0 12.97 6.206 24.466 15.778 31.776 0.052 0.080 0.094 0.152 0.148 0.232 4.602 3.76 20.334 19.434 23.598 23.31 26.672 31.65 41.248 71.28 41.248 113.196 0 45.038-16.944 87.81-47.734 120.548l-104.458 104.456c-32.742 30.782-75.512 47.72-120.536 47.72-47.028 0-91.228-18.294-124.458-51.516-33.236-33.224-51.542-77.436-51.542-124.484 0-45.154 17.028-88.014 47.97-120.792 5.414-5.414 40.812-40.812 68.958-68.958 7.176-7.176 13.888-13.886 19.504-19.502v-0.002c-0.356-1.562-0.246-1.096-0.246-1.096-5.81-24.712-8.918-50.458-8.918-76.918 0-6.898 0.232-13.764 0.644-20.6-6.966 4.788-20.1 15.33-20.1 15.33-0.734 0.62-9.518 8.388-11.68 10.45-0.16 0.154-105.338 105.33-105.482 105.478-43.77 45.922-70.652 108.094-70.652 176.61 0 141.5 114.616 256 255.998 256 68.306 0 130.362-26.73 176.264-70.314 0.27-0.254 105.876-105.86 106.128-106.126 0.004-0.002 13.506-15.426 13.758-15.74z"
+      />
+    </svg>
+    Link
+  </button>
+</div>
+`;

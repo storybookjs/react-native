@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { baseFonts } from '@storybook/components';
 
 const defaultProps = {
   children: null,
@@ -13,7 +12,6 @@ const propTypes = {
 
 export function H1({ id, children }) {
   const styles = {
-    ...baseFonts,
     borderBottom: '1px solid #eee',
     fontWeight: 600,
     margin: 0,
@@ -32,7 +30,6 @@ H1.propTypes = propTypes;
 
 export function H2({ id, children }) {
   const styles = {
-    ...baseFonts,
     fontWeight: 600,
     margin: 0,
     padding: 0,
@@ -50,7 +47,6 @@ H2.propTypes = propTypes;
 
 export function H3({ id, children }) {
   const styles = {
-    ...baseFonts,
     fontWeight: 600,
     margin: 0,
     padding: 0,
@@ -69,7 +65,6 @@ H3.propTypes = propTypes;
 
 export function H4({ id, children }) {
   const styles = {
-    ...baseFonts,
     fontWeight: 600,
     margin: 0,
     padding: 0,
@@ -87,7 +82,6 @@ H4.propTypes = propTypes;
 
 export function H5({ id, children }) {
   const styles = {
-    ...baseFonts,
     fontWeight: 600,
     margin: 0,
     padding: 0,
@@ -105,7 +99,6 @@ H5.propTypes = propTypes;
 
 export function H6({ id, children }) {
   const styles = {
-    ...baseFonts,
     fontWeight: 400,
     margin: 0,
     padding: 0,

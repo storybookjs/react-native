@@ -2,15 +2,23 @@
 
 exports[`Storyshots Addons|Viewport default 1`] = `
 <div
-  class="css-0 ehw333c0"
+  class="emotion-0"
 >
   I don't have problems being rendered using the default viewport.
 </div>
 `;
 
+exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Disabled 1`] = `
+<div
+  class="emotion-0"
+>
+  There should be no viewport selector in the toolbar
+</div>
+`;
+
 exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Inherited 1`] = `
 <div
-  class="css-0 ehw333c0"
+  class="emotion-0"
 >
   I've inherited 
   <b>
@@ -22,49 +30,12 @@ exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Inherited 1`]
 
 exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden via "withViewport" parameterized decorator 1`] = `
 <div
-  class="css-0 ehw333c0"
+  class="emotion-0"
 >
   I respect my parents but I should be looking good on 
   <b>
     iPad
   </b>
   .
-</div>
-`;
-
-exports[`Storyshots Addons|Viewport.deprecated Overridden via "Viewport" component 1`] = `
-<div
-  class="css-0 ehw333c0"
->
-  I respect my parents but I should be looking good on 
-  <b>
-    iPhone 6 Plus
-  </b>
-  .
-</div>
-`;
-
-exports[`Storyshots Addons|Viewport.deprecated Overridden via "withViewport" decorator 1`] = `
-<div
-  class="css-0 ehw333c0"
->
-  I respect my parents but I should be looking good on 
-  <b>
-    iPhone 6
-  </b>
-  .
-</div>
-`;
-
-exports[`Storyshots Addons|Viewport.withViewport onViewportChange 1`] = `
-<div
-  class="css-1ruxp1v e1igy6c50"
->
-  <h1
-    class="css-1uk1gs8 e1igy6c51"
-  >
-    Select device/viewport
-  </h1>
-  <dl />
 </div>
 `;

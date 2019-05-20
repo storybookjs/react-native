@@ -1,20 +1,18 @@
 /* eslint no-underscore-dangle: 0 */
 
 import React, { Component, createElement } from 'react';
+import { isForwardRef } from 'react-is';
 import { polyfill } from 'react-lifecycles-compat';
 import PropTypes from 'prop-types';
 import global from 'global';
-import { baseFonts } from '@storybook/components';
 
 import marksy from 'marksy';
-
 import Node from './Node';
 import { Pre } from './markdown';
+import { getDisplayName, getType } from '../react-utils';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
 const { STORYBOOK_REACT_CLASSES } = global;
-
-const getName = type => type.displayName || type.name;
 
 const stylesheetBase = {
   button: {
@@ -24,7 +22,7 @@ const stylesheetBase = {
       display: 'block',
       position: 'fixed',
       border: 'none',
-      background: '#28c',
+      background: '#027ac5',
       color: '#fff',
       padding: '5px 15px',
       cursor: 'pointer',
@@ -51,7 +49,8 @@ const stylesheetBase = {
     zIndex: 0,
   },
   infoBody: {
-    ...baseFonts,
+    fontFamily: 'Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif',
+    color: 'black',
     fontWeight: 300,
     lineHeight: 1.45,
     fontSize: '15px',
@@ -81,6 +80,12 @@ const stylesheetBase = {
       padding: 0,
       fontWeight: 400,
       fontSize: '22px',
+    },
+    h3: {
+      margin: '0 0 10px 0',
+      padding: 0,
+      fontWeight: 400,
+      fontSize: '18px',
     },
     body: {
       borderBottom: '1px solid #eee',
@@ -117,7 +122,11 @@ class Story extends Component {
     const { stylesheet } = this.state;
     const { children } = this.props;
 
-    return <div style={stylesheet.infoStory}>{children}</div>;
+    return (
+      <div id="story-root" style={stylesheet.infoStory}>
+        {children}
+      </div>
+    );
   }
 
   _renderInline() {
@@ -180,11 +189,21 @@ class Story extends Component {
     return (
       <div>
         <div style={stylesheet.children}>{children}</div>
-        <button type="button" style={buttonStyle} onClick={openOverlay}>
+        <button
+          type="button"
+          style={buttonStyle}
+          onClick={openOverlay}
+          className="info__show-button"
+        >
           Show Info
         </button>
-        <div style={infoStyle}>
-          <button type="button" style={buttonStyle} onClick={closeOverlay}>
+        <div style={infoStyle} className="info__overlay">
+          <button
+            type="button"
+            style={buttonStyle}
+            onClick={closeOverlay}
+            className="info__close-button"
+          >
             ×
           </button>
           <div style={stylesheet.infoPage}>
@@ -212,7 +231,7 @@ class Story extends Component {
     return (
       <div style={stylesheet.header.body}>
         <h1 style={stylesheet.header.h1}>{context.kind}</h1>
-        <h2 style={stylesheet.header.h2}>{context.story}</h2>
+        <h2 style={stylesheet.header.h2}>{context.name}</h2>
       </div>
     );
   }
@@ -245,13 +264,18 @@ class Story extends Component {
   }
 
   _getComponentDescription() {
-    const { context } = this.props;
+    const {
+      context: { kind, name },
+    } = this.props;
     let retDiv = null;
+
+    const validMatches = [kind, name];
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
-        if (STORYBOOK_REACT_CLASSES[key].name === context.story) {
-          retDiv = <div>{STORYBOOK_REACT_CLASSES[key].docgenInfo.description}</div>;
+        if (validMatches.includes(STORYBOOK_REACT_CLASSES[key].name)) {
+          const componentDescription = STORYBOOK_REACT_CLASSES[key].docgenInfo.description;
+          retDiv = <div>{this.marksy(componentDescription).tree}</div>;
         }
       });
     }
@@ -280,7 +304,7 @@ class Story extends Component {
         <Pre>
           {React.Children.map(children, (root, idx) => (
             <Node
-              key={idx}
+              key={idx} // eslint-disable-line react/no-array-index-key
               node={root}
               depth={0}
               maxPropsIntoLine={maxPropsIntoLine}
@@ -333,9 +357,13 @@ class Story extends Component {
       if (innerChildren.props && innerChildren.props.children) {
         extract(innerChildren.props.children);
       }
+      if (isForwardRef(innerChildren)) {
+        extract(innerChildren.type.render(innerChildren.props));
+      }
       if (
         typeof innerChildren === 'string' ||
         typeof innerChildren.type === 'string' ||
+        isForwardRef(innerChildren) ||
         (Array.isArray(propTablesExclude) && // also ignore excluded types
           ~propTablesExclude.indexOf(innerChildren.type)) // eslint-disable-line no-bitwise
       ) {
@@ -350,14 +378,14 @@ class Story extends Component {
     extract(children);
 
     const array = Array.from(types.keys());
-    array.sort((a, b) => (getName(a) > getName(b) ? 1 : -1));
+    array.sort((a, b) => (getDisplayName(a) > getDisplayName(b) ? 1 : -1));
 
     propTables = array.map((type, i) => (
       // eslint-disable-next-line react/no-array-index-key
-      <div key={`${getName(type)}_${i}`}>
-        <h2 style={stylesheet.propTableHead}>"{getName(type)}" Component</h2>
+      <div key={`${getDisplayName(type)}_${i}`}>
+        <h3 style={stylesheet.propTableHead}>"{getDisplayName(type)}" Component</h3>
         <this.props.PropTable
-          type={type}
+          type={getType(type)}
           maxPropObjectKeys={maxPropObjectKeys}
           maxPropArrayLength={maxPropArrayLength}
           maxPropStringLength={maxPropStringLength}
@@ -392,7 +420,7 @@ Story.displayName = 'Story';
 Story.propTypes = {
   context: PropTypes.shape({
     kind: PropTypes.string,
-    story: PropTypes.string,
+    name: PropTypes.string,
   }),
   info: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   propTables: PropTypes.arrayOf(PropTypes.func),

@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import { Component, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -6,7 +7,7 @@ const NOOP = () => {};
 @Component({
   selector: 'storybook-custom-cva-component',
   template: `
-    <div>{{value}}</div>
+    <div>{{ value }}</div>
     <input type="text" [(ngModel)]="value" />
   `,
   providers: [
@@ -21,7 +22,9 @@ export class CustomCvaComponent implements ControlValueAccessor {
   disabled: boolean;
 
   protected onChange: (value: any) => void = NOOP;
+
   protected onTouch: () => void = NOOP;
+
   protected internalValue: any;
 
   get value(): any {

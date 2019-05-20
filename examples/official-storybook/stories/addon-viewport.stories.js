@@ -1,12 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
-import { Viewport, withViewport } from '@storybook/addon-viewport';
-import EventEmitter from 'eventemitter3';
-
-import Logger from './Logger';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const Panel = styled.div();
 
@@ -15,7 +12,20 @@ storiesOf('Addons|Viewport', module).add('default', () => (
 ));
 
 storiesOf('Addons|Viewport.Custom Default (Kindle Fire 2)', module)
-  .addDecorator(withViewport('kindleFire2'))
+  .addParameters({
+    viewport: {
+      viewports: {
+        ...INITIAL_VIEWPORTS,
+        kindleFire2: {
+          name: 'Kindle Fire 2',
+          styles: {
+            width: '600px',
+            height: '963px',
+          },
+        },
+      },
+    },
+  })
   .add('Inherited', () => (
     <Panel>
       I've inherited <b>Kindle Fire 2</b> viewport from my parent.
@@ -28,38 +38,8 @@ storiesOf('Addons|Viewport.Custom Default (Kindle Fire 2)', module)
         I respect my parents but I should be looking good on <b>iPad</b>.
       </Panel>
     ),
-    { viewport: 'ipad' }
-  );
-
-const emitter = new EventEmitter();
-
-storiesOf('Addons|Viewport.withViewport', module)
-  .addDecorator(
-    withViewport({
-      onViewportChange({ viewport }) {
-        emitter.emit(Logger.LOG_EVENT, {
-          name: 'Viewport Changed',
-          payload: `${viewport.name} (${viewport.type})`,
-        });
-      },
-    })
+    { viewport: { defaultViewport: 'ipad' } }
   )
-  .add('onViewportChange', () => <Logger title="Select device/viewport" emitter={emitter} />);
-
-storiesOf('Addons|Viewport.deprecated', module)
-  .addDecorator(withViewport('kindleFire2'))
-  .add(
-    'Overridden via "withViewport" decorator',
-    withViewport('iphone6')(() => (
-      <Panel>
-        I respect my parents but I should be looking good on <b>iPhone 6</b>.
-      </Panel>
-    ))
-  )
-  .add('Overridden via "Viewport" component', () => (
-    <Viewport name="iphone6p">
-      <Panel>
-        I respect my parents but I should be looking good on <b>iPhone 6 Plus</b>.
-      </Panel>
-    </Viewport>
-  ));
+  .add('Disabled', () => <Panel>There should be no viewport selector in the toolbar</Panel>, {
+    viewport: { disable: true },
+  });

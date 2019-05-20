@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -31,15 +32,13 @@ const PrettyPropType = props => {
     return <span>unknown</span>;
   }
 
-  const { name } = propType || {};
-
-  if (propTypeComponentMap.has(name)) {
-    const Component = propTypeComponentMap.get(name);
+  if (propTypeComponentMap.has(propType.name)) {
+    const Component = propTypeComponentMap.get(propType.name);
     return <Component propType={propType} depth={depth} />;
   }
 
   // Otherwise, propType does not have a dedicated component, display proptype name by default
-  return <span>{name}</span>;
+  return <span>{propType.name || propType}</span>;
 };
 
 PrettyPropType.displayName = 'PrettyPropType';

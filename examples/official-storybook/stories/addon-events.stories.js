@@ -68,14 +68,24 @@ const events = [
 ];
 
 storiesOf('Addons|Events', module)
+  .addParameters({
+    options: {
+      selectedPanel: 'storybook/events/panel',
+    },
+  })
   .addDecorator(withEvents({ emit, events }))
   .add('Logger', () => <Logger emitter={emitter} />);
 
 const WithEvents = withEvents;
 storiesOf('Addons|Events.deprecated', module)
-  .addDecorator(story => (
+  .addParameters({
+    options: {
+      selectedPanel: 'storybook/events/panel',
+    },
+  })
+  .addDecorator(storyFn => (
     <WithEvents emit={emit} events={events}>
-      {story()}
+      {storyFn()}
     </WithEvents>
   ))
   .add('Logger', () => <Logger emitter={emitter} />);

@@ -1,14 +1,33 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "skipLibCheck": true,
+    "baseUrl": ".",
+    "incremental": false,
     "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "target": "es5",
+    "types": [
+      "node",
+      "jest"
+    ],
     "lib": [
-      "es2016",
+      "es2017",
       "dom"
     ]
-  }
+  },
+  "exclude": [
+    "**/dist",
+    "node_modules",
+    "**/node_modules",
+    "**/*.spec.ts",
+    "**/__tests__",
+    "**/*.test.ts"
+  ]
 }

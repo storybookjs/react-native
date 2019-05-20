@@ -12,13 +12,12 @@
 
 #header-links a {
   padding-left: 15px;
-  text-transform: uppercase;
+  color: rgb(102, 102, 102);
 }
 
 #header-links a.selected {
   font-weight: 600;
 }
-
 
 @media only screen and (max-width: 540px) {
   #header {

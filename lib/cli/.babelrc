@@ -2,11 +2,10 @@
   "presets": [
     ["@babel/preset-env", {
       "targets": {
-        "node": 4
-      }
-    }]
-  ],
-  "plugins": [
-    ["@babel/plugin-transform-runtime"]
+        "node": 8
+      },
+      "useBuiltIns": "usage",
+      "corejs": 3,
+    },]
   ]
 }

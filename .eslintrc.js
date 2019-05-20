@@ -8,40 +8,38 @@ module.exports = {
     'airbnb',
     'plugin:jest/recommended',
     'plugin:import/react-native',
+    'plugin:@typescript-eslint/recommended',
     'prettier',
     'prettier/react',
+    'prettier/@typescript-eslint',
   ],
-  plugins: ['prettier', 'jest', 'import', 'react', 'jsx-a11y', 'json'],
-  parser: 'babel-eslint',
+  plugins: [
+    '@typescript-eslint',
+    'prettier',
+    'jest',
+    'import',
+    'react',
+    'jsx-a11y',
+    'json',
+    'html',
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
-  env: {
-    es6: true,
-    node: true,
-    'jest/globals': true,
-  },
+  env: { es6: true, node: true, 'jest/globals': true },
   settings: {
     'import/core-modules': ['enzyme'],
     'import/ignore': ['node_modules\\/(?!@storybook)'],
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.ts'],
-      },
-    },
+    'import/resolver': { node: { extensions: ['.js', '.ts', '.tsx', '.mjs'] } },
+    'html/html-extensions': ['.html'],
   },
   rules: {
-    'prettier/prettier': [
-      warn,
-      {
-        printWidth: 100,
-        tabWidth: 2,
-        bracketSpacing: true,
-        trailingComma: 'es5',
-        singleQuote: true,
-      },
-    ],
+    'prettier/prettier': [warn],
     'no-debugger': process.env.NODE_ENV === 'production' ? error : ignore,
     'class-methods-use-this': ignore,
     'import/extensions': [
@@ -50,6 +48,8 @@ module.exports = {
       {
         js: 'never',
         ts: 'never',
+        tsx: 'never',
+        mjs: 'never',
       },
     ],
     'import/no-extraneous-dependencies': [
@@ -61,11 +61,11 @@ module.exports = {
           '**/example/**',
           '*.js',
           '**/*.test.js',
-          '**/*.stories.js',
+          '**/*.stories.*',
           '**/scripts/*.js',
           '**/stories/**/*.js',
           '**/__tests__/**/*.js',
-          '**/.storybook/**/*.js',
+          '**/.storybook/**/*.*',
         ],
         peerDependencies: true,
       },
@@ -77,7 +77,7 @@ module.exports = {
     'react/jsx-filename-extension': [
       warn,
       {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.tsx'],
       },
     ],
     'react/jsx-no-bind': [
@@ -90,6 +90,7 @@ module.exports = {
         allowBind: true,
       },
     ],
+    'jsx-a11y/accessible-emoji': ignore,
     'jsx-a11y/label-has-associated-control': [
       warn,
       {
@@ -100,39 +101,61 @@ module.exports = {
       },
     ],
     'react/no-unescaped-entities': ignore,
-    'jsx-a11y/label-has-for': [
-      error,
-      {
-        required: {
-          some: ['nesting', 'id'],
-        },
-      },
-    ],
+    'jsx-a11y/label-has-for': [error, { required: { some: ['nesting', 'id'] } }],
     'jsx-a11y/anchor-is-valid': [
       error,
       {
-        components: ['RoutedLink', 'MenuLink', 'LinkTo', 'Link'],
+        components: ['A', 'LinkTo', 'Link'],
         specialLink: ['overrideParams', 'kind', 'story', 'to'],
       },
     ],
     'no-underscore-dangle': [
       error,
-      {
-        allow: ['__STORYBOOK_CLIENT_API__', '__STORYBOOK_ADDONS_CHANNEL__'],
-      },
+      { allow: ['__STORYBOOK_CLIENT_API__', '__STORYBOOK_ADDONS_CHANNEL__'] },
     ],
+    '@typescript-eslint/no-var-requires': ignore,
+    '@typescript-eslint/camelcase': ignore,
+    '@typescript-eslint/no-unused-vars': ignore,
+    '@typescript-eslint/explicit-member-accessibility': ignore,
+    '@typescript-eslint/explicit-function-return-type': ignore,
+    '@typescript-eslint/no-explicit-any': ignore, // would prefer to enable this
+    '@typescript-eslint/no-use-before-define': ignore, // this is duplicated
+    '@typescript-eslint/interface-name-prefix': ignore, // I don't agree
   },
   overrides: [
     {
-      files: ['**/react-native*/**', '**/REACT_NATIVE*/**', '**/crna*/**'],
+      files: [
+        '**/__tests__/**',
+        '**/*.test.*',
+        '**/*.stories.*',
+        '**/storyshots/**/stories/**',
+        'docs/src/new-components/lib/StoryLinkWrapper.js',
+        'docs/src/stories/**',
+      ],
       rules: {
-        'jsx-a11y/accessible-emoji': ignore,
+        'import/no-extraneous-dependencies': ignore,
+      },
+    },
+    { files: '**/.storybook/config.js', rules: { 'global-require': ignore } },
+    {
+      files: ['**/*.stories.*'],
+      rules: {
+        'no-console': ignore,
       },
     },
     {
-      files: '**/.storybook/config.js',
+      files: ['**/*.tsx', '**/*.ts'],
       rules: {
-        'global-require': ignore,
+        'react/prop-types': ignore, // we should use types
+        'no-dupe-class-members': ignore, // this is called overloads in typescript
+      },
+    },
+    {
+      files: ['**/*.d.ts'],
+      rules: {
+        'vars-on-top': ignore,
+        'no-var': ignore, // this is how typescript works
+        'spaced-comment': ignore,
       },
     },
   ],

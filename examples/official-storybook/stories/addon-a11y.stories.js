@@ -1,28 +1,23 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
 
-import { checkA11y } from '@storybook/addon-a11y';
+import { Form } from '@storybook/components';
 import BaseButton from '../components/BaseButton';
 import DelayedRender from '../components/DelayedRender';
 import Button from '../components/addon-a11y/Button';
-import Image from '../components/addon-a11y/Image';
-import * as Form from '../components/addon-a11y/Form';
-import * as Typography from '../components/addon-a11y/Typography';
 
 const text = 'Testing the a11y addon';
+const image = 'http://placehold.it/350x150';
+// eslint-disable-next-line no-script-url
+const href = 'javascript:void 0';
 
-storiesOf('Addons|a11y', module)
-  .addDecorator(checkA11y)
-  .addDecorator(fn => {
-    setOptions({ selectedAddonPanel: '@storybook/addon-a11y/panel' });
-    return fn();
-  })
+storiesOf('Addons|A11y/BaseButton', module)
+  .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
   .add('Default', () => <BaseButton label="" />)
   .add('Label', () => <BaseButton label={text} />)
   .add('Disabled', () => <BaseButton disabled label={text} />)
   .add('Invalid contrast', () => (
-    // FIXME has no effect on score
+    // FIXME: has no effect on score
     <BaseButton style={{ color: 'black', backgroundColor: 'black' }} label={text} />
   ))
   .add('delayed render', () => (
@@ -31,45 +26,61 @@ storiesOf('Addons|a11y', module)
     </DelayedRender>
   ));
 
-storiesOf('Addons|a11y/Button', module)
-  .addDecorator(checkA11y)
+storiesOf('Addons|A11y/Button', module)
+  .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
   .add('Default', () => <Button />)
   .add('Content', () => <Button content={text} />)
   .add('Label', () => <Button label={text} />)
   .add('Disabled', () => <Button disabled content={text} />)
   .add('Invalid contrast', () => <Button contrast="wrong" content={text} />);
 
-storiesOf('Addons|a11y/Form', module)
-  .addDecorator(checkA11y)
-  .add('Without Label', () => <Form.Row input={<Form.Input />} />)
+storiesOf('Addons|A11y/Form', module)
+  .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
+  .add('Without Label', () => (
+    <Form.Field label="">
+      <Form.Input />
+    </Form.Field>
+  ))
   .add('With label', () => (
-    <Form.Row label={<Form.Label content={text} id="1" />} input={<Form.Input id="1" />} />
+    <Form.Field label={text}>
+      <Form.Input id="1" />
+    </Form.Field>
   ))
-  .add('With placeholder', () => <Form.Row input={<Form.Input id="1" placeholder={text} />} />);
+  .add('With placeholder', () => (
+    <Form.Field label="">
+      <Form.Input id="1" placeholder={text} />
+    </Form.Field>
+  ));
 
-const image = 'http://placehold.it/350x150';
+storiesOf('Addons|A11y/Image', module)
+  .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
+  /* eslint-disable jsx-a11y/alt-text */
+  .add('Without alt', () => <img src={image} />)
+  .add('Without alt but unchecked', () => <img src={image} />, {
+    a11y: {
+      config: {
+        disableOtherRules: true,
+        rules: [],
+      },
+      options: {},
+    },
+  })
+  .add('With alt', () => <img src={image} alt={text} />)
+  .add('Presentation', () => <img role="presentation" src={image} />);
 
-storiesOf('Addons|a11y/Image', module)
-  .addDecorator(checkA11y)
-  .add('Without alt', () => <Image src={image} />)
-  .add('With alt', () => <Image src={image} alt={text} />)
-  .add('Presentation', () => <Image presentation src={image} />);
-
-// eslint-disable-next-line no-script-url
-const href = 'javascript:void 0';
-
-storiesOf('Addons|a11y/Typography', module)
-  .addDecorator(checkA11y)
+storiesOf('Addons|A11y/Typography', module)
+  .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
   .add('Correct', () => (
-    <div>
-      <Typography.Heading level={1}>{text}</Typography.Heading>
-
-      <Typography.Text>{text}</Typography.Text>
-
-      <Typography.Link content={`${text}...`} href={href} />
-    </div>
+    <Fragment>
+      <h1>{text}</h1>
+      <p>{text}</p>
+      <a href={href}>{`${text}...`}</a>
+    </Fragment>
   ))
-  .add('Empty Heading', () => <Typography.Heading level={2} />)
-  .add('Empty Paragraph', () => <Typography.Text />)
-  .add('Empty Link', () => <Typography.Link href={href} />)
-  .add('Link without href', () => <Typography.Link content={`${text}...`} />);
+  /* eslint-disable jsx-a11y/heading-has-content */
+  .add('Empty Heading', () => <h1 />)
+  .add('Empty Paragraph', () => <p />)
+  /* eslint-disable jsx-a11y/anchor-has-content */
+  .add('Empty Link', () => <a href={href} />)
+  /* eslint-disable jsx-a11y/anchor-is-valid */
+  .add('Link without href', () => <a>{`${text}...`}</a>);

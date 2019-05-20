@@ -8,33 +8,33 @@ function cleanUpPreviousStory() {
     return;
   }
 
-  previousComponent.destroy();
+  previousComponent.$destroy();
   previousComponent = null;
 }
 
-function mountView({ Component, target, data, on, Wrapper, WrapperData }) {
+function mountView({ Component, target, props, on, Wrapper, WrapperData }) {
   let component;
 
   if (Wrapper) {
     const fragment = document.createDocumentFragment();
-    component = new Component({ target: fragment, data });
+    component = new Component({ target: fragment, props });
 
     const wrapper = new Wrapper({
       target,
       slots: { default: fragment },
-      data: WrapperData || {},
+      props: WrapperData || {},
     });
-    component.on('destroy', () => {
-      wrapper.destroy(true);
+    component.$on('destroy', () => {
+      wrapper.$destroy(true);
     });
   } else {
-    component = new Component({ target, data });
+    component = new Component({ target, props });
   }
 
   if (on) {
     // Attach svelte event listeners.
     Object.keys(on).forEach(eventName => {
-      component.on(eventName, on[eventName]);
+      component.$on(eventName, on[eventName]);
     });
   }
 
@@ -42,7 +42,7 @@ function mountView({ Component, target, data, on, Wrapper, WrapperData }) {
 }
 
 export default function render({
-  story,
+  storyFn,
   selectedKind,
   selectedStory,
   showMain,
@@ -53,16 +53,18 @@ export default function render({
     /** @type {SvelteComponent} */
     Component,
     /** @type {any} */
-    data,
+    props,
     /** @type {{[string]: () => {}}} Attach svelte event handlers */
     on,
     Wrapper,
     WrapperData,
-  } = story();
+  } = storyFn();
 
   cleanUpPreviousStory();
+  const DefaultCompatComponent = Component ? Component.default || Component : undefined;
+  const DefaultCompatWrapper = Wrapper ? Wrapper.default || Wrapper : undefined;
 
-  if (!Component) {
+  if (!DefaultCompatComponent) {
     showError({
       title: `Expecting a Svelte component from the story: "${selectedStory}" of "${selectedKind}".`,
       description: stripIndents`
@@ -79,7 +81,14 @@ export default function render({
 
   target.innerHTML = '';
 
-  mountView({ Component, target, data, on, Wrapper, WrapperData });
+  mountView({
+    Component: DefaultCompatComponent,
+    target,
+    props,
+    on,
+    Wrapper: DefaultCompatWrapper,
+    WrapperData,
+  });
 
   showMain();
 }

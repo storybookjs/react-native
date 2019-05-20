@@ -15,5 +15,12 @@ export function webpack(config) {
         },
       ],
     },
+    resolve: {
+      ...config.resolve,
+      alias: {
+        ...config.resolve.alias,
+        'riot-compiler': 'riot-compiler/dist/es6.compiler',
+      },
+    },
   };
 }

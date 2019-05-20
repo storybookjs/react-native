@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
-
-import { Field } from '@storybook/components';
+import { Form } from '@storybook/components';
 import TypeMap from './types';
-
-const Form = styled.form({
-  boxSizing: 'border-box',
-  width: '100%',
-});
 
 const InvalidType = () => <span>Invalid Type</span>;
 
@@ -17,7 +10,7 @@ export default class PropForm extends Component {
   makeChangeHandler(name, type) {
     const { onFieldChange } = this.props;
     return value => {
-      const change = { name, type, value };
+      const change = { name, type, value: value || '' };
 
       onFieldChange(change);
     };
@@ -33,9 +26,9 @@ export default class PropForm extends Component {
           const InputType = TypeMap[knob.type] || InvalidType;
 
           return (
-            <Field key={knob.name} label={!knob.hideLabel && `${knob.name}`}>
+            <Form.Field key={knob.name} label={!knob.hideLabel && `${knob.name}`}>
               <InputType knob={knob} onChange={changeHandler} onClick={onFieldClick} />
-            </Field>
+            </Form.Field>
           );
         })}
       </Form>

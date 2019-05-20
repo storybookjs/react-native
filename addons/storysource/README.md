@@ -1,6 +1,6 @@
 # Storybook Storysource Addon
 
-This addon is used to show stories source in the addon panel. 
+This addon is used to show stories source in the addon panel.
 
 [Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
@@ -11,7 +11,7 @@ This addon is used to show stories source in the addon panel.
 First, install the addon
 
 ```sh
-npm install -D @storybook/addon-storysource
+yarn add @storybook/addon-storysource --dev
 ```
 
 Add this line to your `addons.js` file
@@ -23,16 +23,14 @@ import '@storybook/addon-storysource/register';
 Use this hook to a custom webpack.config. This will generate a decorator call in every story:
 
 ```js
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.stories\.jsx?$/,
-        loaders: [require.resolve('@storybook/addon-storysource/loader')],
-        enforce: 'pre',
-      },
-    ],
-  },
+module.exports = function({ config }) {
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
+  });
+
+  return config;
 };
 ```
 
@@ -41,30 +39,31 @@ module.exports = {
 The loader can be customized with the following options:
 
 ### parser
+
 The parser that will be parsing your code to AST (based on [prettier](https://github.com/prettier/prettier/tree/master/src/language-js))
 
-Alowed values:
-* `javascript` - default
-* `typescript`
+Allowed values:
+
+- `javascript` - default
+- `typescript`
+- `flow`
 
 Usage:
 
 ```js
-module.exports = {
-  module: {
-    rules: [
+module.exports = function({ config }) {
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [
       {
-        test: /\.stories\.jsx?$/,
-        loaders: [
-          {
-            loader: require.resolve('@storybook/addon-storysource/loader'),
-            options: { parser: 'typescript' }
-          }
-        ],
-        enforce: 'pre',
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: { parser: 'typescript' },
       },
     ],
-  },
+    enforce: 'pre',
+  });
+
+  return config;
 };
 ```
 
@@ -73,9 +72,10 @@ module.exports = {
 The prettier configuration that will be used to format the story source in the addon panel.
 
 Defaults:
+
 ```js
 {
-  printWidth: 120,
+  printWidth: 100,
   tabWidth: 2,
   bracketSpacing: true,
   trailingComma: 'es5',
@@ -83,29 +83,27 @@ Defaults:
 }
 ```
 
-Usage: 
+Usage:
 
 ```js
-module.exports = {
-  module: {
-    rules: [
+module.exports = function({ config }) {
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [
       {
-        test: /\.stories\.jsx?$/,
-        loaders: [
-          {
-            loader: require.resolve('@storybook/addon-storysource/loader'),
-            options: {
-              prettierConfig: {
-                printWidth: 80,
-                singleQuote: false,
-              }
-            }
-          }
-        ],
-        enforce: 'pre',
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: {
+          prettierConfig: {
+            printWidth: 100,
+            singleQuote: false,
+          },
+        },
       },
     ],
-  },
+    enforce: 'pre',
+  });
+
+  return config;
 };
 ```
 
@@ -114,37 +112,34 @@ module.exports = {
 The array of regex that is used to remove "ugly" comments.
 
 Defaults:
+
 ```js
-[/^eslint-.*/, /^global.*/]
+[/^eslint-.*/, /^global.*/];
 ```
 
 Usage:
 
 ```js
-module.exports = {
-  module: {
-    rules: [
+module.exports = function({ config }) {
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [
       {
-        test: /\.stories\.jsx?$/,
-        loaders: [
-          {
-            loader: require.resolve('@storybook/addon-storysource/loader'),
-            options: {
-              uglyCommentsRegex: [
-                /^eslint-.*/, 
-                /^global.*/,
-              ]
-            }
-          }
-        ],
-        enforce: 'pre',
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: {
+          uglyCommentsRegex: [/^eslint-.*/, /^global.*/],
+        },
       },
     ],
-  },
+    enforce: 'pre',
+  });
+
+  return config;
 };
 ```
 
 ### injectDecorator
+
 Tell storysource whether you need inject decorator.If false, you need to add the decorator by yourself;
 
 Defaults: true
@@ -152,20 +147,18 @@ Defaults: true
 Usage:
 
 ```js
-module.exports = {
-  module: {
-    rules: [
+module.exports = function({ config }) {
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [
       {
-        test: /\.stories\.jsx?$/,
-        loaders: [
-          {
-            loader: require.resolve('@storybook/addon-storysource/loader'),
-            options: { injectDecorator: false }
-          }
-        ],
-        enforce: 'pre',
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: { injectDecorator: false },
       },
     ],
-  },
+    enforce: 'pre',
+  });
+
+  return config;
 };
 ```

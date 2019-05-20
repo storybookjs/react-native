@@ -1,22 +1,14 @@
 import addons from '@storybook/addons';
+import { SELECT_STORY } from '@storybook/core-events';
 import { linkTo, hrefTo } from './preview';
-import { EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from '.';
 
 jest.mock('@storybook/addons');
 
 export const mockChannel = () => {
-  let cb;
   return {
-    emit(id, payload) {
-      if (id === REQUEST_HREF_EVENT_ID) {
-        cb(`?selectedKind=${payload.kind}&selectedStory=${payload.story}`);
-      }
-    },
-    on(id, callback) {
-      if (id === RECEIVE_HREF_EVENT_ID) {
-        cb = callback;
-      }
-    },
+    emit: jest.fn(),
+    on: jest.fn(),
+    once: jest.fn(),
   };
 };
 
@@ -26,12 +18,12 @@ describe('preview', () => {
       const channel = { emit: jest.fn() };
       addons.getChannel.mockReturnValue(channel);
 
-      const handler = linkTo('kind', 'story');
+      const handler = linkTo('kind', 'name');
       handler();
 
-      expect(channel.emit).toHaveBeenCalledWith(EVENT_ID, {
+      expect(channel.emit).toHaveBeenCalledWith(SELECT_STORY, {
         kind: 'kind',
-        story: 'story',
+        story: 'name',
       });
     });
 
@@ -40,22 +32,22 @@ describe('preview', () => {
       addons.getChannel.mockReturnValue(channel);
 
       const handler = linkTo((a, b) => a + b, (a, b) => b + a);
-      handler('foo', 'bar');
+      handler('kind', 'name');
 
-      expect(channel.emit).toHaveBeenCalledWith(EVENT_ID, {
-        kind: 'foobar',
-        story: 'barfoo',
-      });
+      expect(channel.emit.mock.calls).toContainEqual([
+        SELECT_STORY,
+        {
+          kind: 'kindname',
+          story: 'namekind',
+        },
+      ]);
     });
   });
 
   describe('hrefTo()', () => {
     it('should return promise resolved with story href', async () => {
-      const channel = mockChannel();
-      addons.getChannel.mockReturnValue(channel);
-
-      const href = await hrefTo('kind', 'story');
-      expect(href).toBe('?selectedKind=kind&selectedStory=story');
+      const href = await hrefTo('kind', 'name');
+      expect(href).toContain('?id=kind--name');
     });
   });
 });

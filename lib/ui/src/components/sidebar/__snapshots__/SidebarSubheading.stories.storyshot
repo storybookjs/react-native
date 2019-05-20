@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI|Sidebar/SidebarSubheading default 1`] = `
+.emotion-0 {
+  -webkit-letter-spacing: 0.35em;
+  -moz-letter-spacing: 0.35em;
+  -ms-letter-spacing: 0.35em;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 11px;
+  line-height: 24px;
+  color: rgba(51,51,51,0.5);
+}
+
+<div
+  class="emotion-0"
+>
+  Subheading
+</div>
+`;

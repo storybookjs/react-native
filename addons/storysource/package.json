@@ -1,21 +1,19 @@
 {
   "name": "@storybook/addon-storysource",
-  "version": "4.1.0-alpha.1",
+  "version": "5.1.0-beta.1",
   "description": "Stories addon for storybook",
   "keywords": [
     "addon",
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/storysource",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/storysource"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -24,16 +22,22 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.2",
-    "@storybook/addons": "4.1.0-alpha.1",
-    "@storybook/components": "4.1.0-alpha.1",
+    "@storybook/addons": "5.1.0-beta.1",
+    "@storybook/components": "5.1.0-beta.1",
+    "@storybook/router": "5.1.0-beta.1",
+    "@storybook/theming": "5.1.0-beta.1",
+    "core-js": "^3.0.1",
     "estraverse": "^4.2.0",
-    "loader-utils": "^1.1.0",
-    "prettier": "^1.14.3",
-    "prop-types": "^15.6.2",
-    "react-syntax-highlighter": "^10.0.0"
+    "loader-utils": "^1.2.3",
+    "prettier": "^1.16.4",
+    "prop-types": "^15.7.2",
+    "react-syntax-highlighter": "^8.0.1",
+    "regenerator-runtime": "^0.12.1"
   },
   "peerDependencies": {
     "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

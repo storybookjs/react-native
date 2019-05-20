@@ -1,3 +1,6 @@
+/* eslint-disable no-empty-function */
+/* eslint-disable no-useless-constructor */
+/* eslint-disable @typescript-eslint/no-parameter-properties */
 // We could use NgComponentOutlet here but there's currently no easy way
 // to provide @Inputs and subscribe to @Outputs, see
 // https://github.com/angular/angular/issues/15360
@@ -13,7 +16,10 @@ import {
   EventEmitter,
   SimpleChanges,
   SimpleChange,
+  ChangeDetectorRef,
 } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { first } from 'rxjs/operators';
 import { STORY } from '../app.token';
 import { NgStory, ICollection } from '../types';
 
@@ -24,22 +30,40 @@ import { NgStory, ICollection } from '../types';
 export class AppComponent implements OnInit, OnDestroy {
   @ViewChild('target', { read: ViewContainerRef })
   target: ViewContainerRef;
-  constructor(private cfr: ComponentFactoryResolver, @Inject(STORY) private data: NgStory) {}
+
+  subscription: Subscription;
+
+  constructor(
+    private cfr: ComponentFactoryResolver,
+    private changeDetectorRef: ChangeDetectorRef,
+    @Inject(STORY) private data: Observable<NgStory>
+  ) {}
 
   ngOnInit(): void {
-    this.putInMyHtml();
+    this.data.pipe(first()).subscribe((data: NgStory) => {
+      this.target.clear();
+      const compFactory = this.cfr.resolveComponentFactory(data.component);
+      const componentRef = this.target.createComponent(compFactory);
+      const { instance } = componentRef;
+      // For some reason, manual change detection ref is only working when getting the ref from the injector (rather than componentRef.changeDetectorRef)
+      const childChangeDetectorRef: ChangeDetectorRef = componentRef.injector.get(
+        ChangeDetectorRef
+      );
+
+      this.subscription = this.data.subscribe(newData => {
+        this.setProps(instance, newData);
+        childChangeDetectorRef.markForCheck();
+        // Must detect changes on the current component in order to update any changes in child component's @HostBinding properties (angular/angular#22560)
+        this.changeDetectorRef.detectChanges();
+      });
+    });
   }
 
   ngOnDestroy(): void {
     this.target.clear();
-  }
-
-  private putInMyHtml(): void {
-    this.target.clear();
-    const compFactory = this.cfr.resolveComponentFactory(this.data.component);
-    const instance = this.target.createComponent(compFactory).instance;
-
-    this.setProps(instance, this.data);
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   /**
@@ -47,13 +71,14 @@ export class AppComponent implements OnInit, OnDestroy {
    */
   private setProps(instance: any, { props = {} }: NgStory): void {
     const changes: SimpleChanges = {};
-    const hasNgOnChangesHook = !!instance['ngOnChanges'];
+    const hasNgOnChangesHook = !!instance.ngOnChanges;
 
-    Object.keys(props).map((key: string) => {
+    Object.keys(props).forEach((key: string) => {
       const value = props[key];
       const instanceProperty = instance[key];
 
       if (!(instanceProperty instanceof EventEmitter) && (value !== undefined && value !== null)) {
+        // eslint-disable-next-line no-param-reassign
         instance[key] = value;
         if (hasNgOnChangesHook) {
           changes[key] = new SimpleChange(undefined, value, instanceProperty === undefined);
@@ -72,7 +97,7 @@ export class AppComponent implements OnInit, OnDestroy {
    * Issue: [https://github.com/angular/angular/issues/8903]
    */
   private callNgOnChangesHook(instance: any, changes: SimpleChanges): void {
-    if (!!Object.keys(changes).length) {
+    if (Object.keys(changes).length) {
       instance.ngOnChanges(changes);
     }
   }
@@ -81,7 +106,7 @@ export class AppComponent implements OnInit, OnDestroy {
    * If component implements ControlValueAccessor interface try to set ngModel
    */
   private setNgModel(instance: any, props: ICollection): void {
-    if (!!props['ngModel']) {
+    if (props.ngModel) {
       instance.writeValue(props.ngModel);
     }
 

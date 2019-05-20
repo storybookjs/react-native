@@ -1,6 +1,8 @@
 import React from 'react';
+import { isForwardRef } from 'react-is';
 import PropTypes from 'prop-types';
 import Props from './Props';
+import { getDisplayName } from '../react-utils';
 
 const stylesheet = {
   containerStyle: {},
@@ -31,13 +33,7 @@ function getData(element) {
   }
 
   data.children = element.props.children;
-  const { type } = element;
-
-  if (typeof type === 'string') {
-    data.name = type;
-  } else {
-    data.name = type.displayName || type.name || 'Unknown';
-  }
+  data.name = getDisplayName(element.type);
 
   return data;
 }
@@ -68,6 +64,43 @@ export default function Node(props) {
     return (
       <div style={containerStyleCopy}>
         <span style={tagStyle}>{text}</span>
+      </div>
+    );
+  }
+
+  if (isForwardRef(node) && !node.type.displayName) {
+    const childElement = node.type.render(node.props);
+    return (
+      <div>
+        <div style={containerStyleCopy}>
+          <span style={tagStyle}>
+            &lt;
+            {`ForwardRef`}
+          </span>
+          <Props
+            node={node}
+            maxPropsIntoLine={maxPropsIntoLine}
+            maxPropObjectKeys={maxPropObjectKeys}
+            maxPropArrayLength={maxPropArrayLength}
+            maxPropStringLength={maxPropStringLength}
+          />
+          <span style={tagStyle}>&gt;</span>
+        </div>
+        <Node
+          node={childElement}
+          depth={depth + 1}
+          maxPropsIntoLine={maxPropsIntoLine}
+          maxPropObjectKeys={maxPropObjectKeys}
+          maxPropArrayLength={maxPropArrayLength}
+          maxPropStringLength={maxPropStringLength}
+        />
+        <div style={containerStyleCopy}>
+          <span style={tagStyle}>
+            &lt;/
+            {`ForwardRef`}
+            &gt;
+          </span>
+        </div>
       </div>
     );
   }

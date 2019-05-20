@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from '@emotion/styled';
+import { styled } from '@storybook/theming';
 
 import { EVENTS } from '../constants';
 import Event from './Event';
@@ -13,13 +13,13 @@ const Wrapper = styled.div({
   minHeight: '100%',
 });
 
-export default class Events extends Component {
+export default class EventsPanel extends Component {
   static propTypes = {
     active: PropTypes.bool.isRequired,
-    channel: PropTypes.shape({
-      on: PropTypes.func,
+    api: PropTypes.shape({
       emit: PropTypes.func,
-      removeListener: PropTypes.func,
+      off: PropTypes.func,
+      on: PropTypes.func,
     }).isRequired,
   };
 
@@ -28,15 +28,15 @@ export default class Events extends Component {
   };
 
   componentDidMount() {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.on(EVENTS.ADD, this.onAdd);
+    api.on(EVENTS.ADD, this.onAdd);
   }
 
   componentWillUnmount() {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.removeListener(EVENTS.ADD, this.onAdd);
+    api.off(EVENTS.ADD, this.onAdd);
   }
 
   onAdd = events => {
@@ -44,9 +44,9 @@ export default class Events extends Component {
   };
 
   onEmit = event => {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.emit(EVENTS.EMIT, event);
+    api.emit(EVENTS.EMIT, event);
   };
 
   render() {

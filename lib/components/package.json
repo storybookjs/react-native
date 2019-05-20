@@ -1,48 +1,60 @@
 {
   "name": "@storybook/components",
-  "version": "4.1.0-alpha.1",
+  "version": "5.1.0-beta.1",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/components",
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/components"
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build-storybook": "build-storybook",
-    "prepare": "node ../../scripts/prepare.js",
-    "storybook": "start-storybook -p 6006"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^0.13.1",
-    "@emotion/provider": "^0.11.2",
-    "@emotion/styled": "^0.10.6",
+    "@storybook/client-logger": "5.1.0-beta.1",
+    "@storybook/theming": "5.1.0-beta.1",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "lodash": "^4.17.11",
-    "prop-types": "^15.6.2",
-    "react-inspector": "^2.3.0",
-    "react-split-pane": "^0.1.84",
-    "react-textarea-autosize": "^7.0.4",
-    "render-fragment": "^0.1.1"
+    "js-beautify": "^1.8.9",
+    "markdown-to-jsx": "^6.9.1",
+    "memoizerific": "^1.11.3",
+    "polished": "^3.3.1",
+    "popper.js": "^1.14.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-focus-lock": "^1.18.3",
+    "react-helmet-async": "^1.0.2",
+    "react-popper-tooltip": "^2.8.0",
+    "react-syntax-highlighter": "^8.0.1",
+    "react-textarea-autosize": "^7.1.0",
+    "recompose": "^0.30.0",
+    "simplebar-react": "^1.0.0-alpha.6"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.1.0-alpha.1",
-    "@storybook/addon-knobs": "4.1.0-alpha.1",
-    "@storybook/react": "4.1.0-alpha.1"
+    "@types/js-beautify": "^1.8.1",
+    "@types/react-syntax-highlighter": "^10.1.0",
+    "@types/react-textarea-autosize": "^4.3.3",
+    "@types/recompose": "^0.30.5",
+    "enzyme": "^3.9.0",
+    "jest": "^24.7.1",
+    "jest-enzyme": "^7.0.2"
   },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

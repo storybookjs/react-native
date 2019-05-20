@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { baseFonts } from '@storybook/components';
 
 const defaultProps = { children: null };
 const propTypes = { children: PropTypes.node };
 
 export function P({ children }) {
   const style = {
-    ...baseFonts,
     fontSize: '15px',
   };
 
@@ -23,7 +21,6 @@ P.propTypes = propTypes;
 
 export function LI({ children }) {
   const style = {
-    ...baseFonts,
     fontSize: '15px',
   };
   return <li style={style}>{children}</li>;
@@ -34,7 +31,6 @@ LI.propTypes = propTypes;
 
 export function UL({ children }) {
   const style = {
-    ...baseFonts,
     fontSize: '15px',
   };
   return <ul style={style}>{children}</ul>;

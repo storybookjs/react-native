@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|a11y Default 1`] = `
+exports[`Storyshots Addons|A11y/BaseButton Default 1`] = `
 <button
   type="button"
 />
 `;
 
-exports[`Storyshots Addons|a11y Disabled 1`] = `
+exports[`Storyshots Addons|A11y/BaseButton Disabled 1`] = `
 <button
   disabled=""
   type="button"
@@ -15,7 +15,7 @@ exports[`Storyshots Addons|a11y Disabled 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|a11y Invalid contrast 1`] = `
+exports[`Storyshots Addons|A11y/BaseButton Invalid contrast 1`] = `
 <button
   style="color:black;background-color:black"
   type="button"
@@ -24,7 +24,7 @@ exports[`Storyshots Addons|a11y Invalid contrast 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|a11y Label 1`] = `
+exports[`Storyshots Addons|A11y/BaseButton Label 1`] = `
 <button
   type="button"
 >
@@ -32,9 +32,9 @@ exports[`Storyshots Addons|a11y Label 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|a11y delayed render 1`] = `<div />`;
+exports[`Storyshots Addons|A11y/BaseButton delayed render 1`] = `<div />`;
 
-exports[`Storyshots Addons|a11y/Button Content 1`] = `
+exports[`Storyshots Addons|A11y/Button Content 1`] = `
 <button
   style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
   type="button"
@@ -43,7 +43,7 @@ exports[`Storyshots Addons|a11y/Button Content 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|a11y/Button Default 1`] = `
+exports[`Storyshots Addons|A11y/Button Default 1`] = `
 <button
   style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
   type="button"
@@ -52,7 +52,7 @@ exports[`Storyshots Addons|a11y/Button Default 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|a11y/Button Disabled 1`] = `
+exports[`Storyshots Addons|A11y/Button Disabled 1`] = `
 <button
   disabled=""
   style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
@@ -62,7 +62,7 @@ exports[`Storyshots Addons|a11y/Button Disabled 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|a11y/Button Invalid contrast 1`] = `
+exports[`Storyshots Addons|A11y/Button Invalid contrast 1`] = `
 <button
   style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;color:#ffffff;background-color:#4caf50"
   type="button"
@@ -71,7 +71,7 @@ exports[`Storyshots Addons|a11y/Button Invalid contrast 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|a11y/Button Label 1`] = `
+exports[`Storyshots Addons|A11y/Button Label 1`] = `
 <button
   style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
   type="button"
@@ -80,82 +80,316 @@ exports[`Storyshots Addons|a11y/Button Label 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|a11y/Form With label 1`] = `
-<div>
-  <label
-    for="1"
-    style="padding:0 6px"
+exports[`Storyshots Addons|A11y/Form With label 1`] = `
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin: 0 15px;
+  padding: 8px 0;
+}
+
+.emotion-2:last-child {
+  margin-bottom: 3rem;
+}
+
+.emotion-0 {
+  min-width: 100px;
+  font-weight: 700;
+  margin-right: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 16px;
+}
+
+.emotion-1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  display: inline;
+  text-align: left;
+  min-height: 32px;
+}
+
+.emotion-1:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-1[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-1:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-1::placeholder {
+  color: #999999;
+}
+
+<label
+  class="emotion-2"
+>
+  <span
+    class="emotion-0"
   >
-    Testing the a11y addon
-  </label>
+    <span>
+      Testing the a11y addon
+    </span>
+  </span>
   <input
+    class="emotion-1"
     id="1"
   />
-</div>
+</label>
 `;
 
-exports[`Storyshots Addons|a11y/Form With placeholder 1`] = `
-<div>
+exports[`Storyshots Addons|A11y/Form With placeholder 1`] = `
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin: 0 15px;
+  padding: 8px 0;
+}
+
+.emotion-1:last-child {
+  margin-bottom: 3rem;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  display: inline;
+  text-align: left;
+  min-height: 32px;
+}
+
+.emotion-0:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+<label
+  class="emotion-1"
+>
   <input
+    class="emotion-0"
     id="1"
     placeholder="Testing the a11y addon"
   />
-</div>
+</label>
 `;
 
-exports[`Storyshots Addons|a11y/Form Without Label 1`] = `
-<div>
-  <input />
-</div>
+exports[`Storyshots Addons|A11y/Form Without Label 1`] = `
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin: 0 15px;
+  padding: 8px 0;
+}
+
+.emotion-1:last-child {
+  margin-bottom: 3rem;
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  background: #FFFFFF;
+  padding: .42em 1em;
+  font-size: 13px;
+  position: relative;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  color: #333333;
+  box-shadow: rgba(0,0,0,.1) 0 0 0 1px inset;
+  border-radius: 4px;
+  line-height: 20px;
+  display: inline;
+  text-align: left;
+  min-height: 32px;
+}
+
+.emotion-0:focus {
+  box-shadow: #1EA7FD 0 0 0 1px inset;
+}
+
+.emotion-0[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 3em #FFFFFF inset;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #999999;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.emotion-0::placeholder {
+  color: #999999;
+}
+
+<label
+  class="emotion-1"
+>
+  <input
+    class="emotion-0"
+  />
+</label>
 `;
 
-exports[`Storyshots Addons|a11y/Image Presentation 1`] = `
+exports[`Storyshots Addons|A11y/Image Presentation 1`] = `
 <img
   role="presentation"
   src="http://placehold.it/350x150"
 />
 `;
 
-exports[`Storyshots Addons|a11y/Image With alt 1`] = `
+exports[`Storyshots Addons|A11y/Image With alt 1`] = `
 <img
   alt="Testing the a11y addon"
   src="http://placehold.it/350x150"
 />
 `;
 
-exports[`Storyshots Addons|a11y/Image Without alt 1`] = `
+exports[`Storyshots Addons|A11y/Image Without alt 1`] = `
 <img
   src="http://placehold.it/350x150"
 />
 `;
 
-exports[`Storyshots Addons|a11y/Typography Correct 1`] = `
-<div>
+exports[`Storyshots Addons|A11y/Image Without alt but unchecked 1`] = `
+<img
+  src="http://placehold.it/350x150"
+/>
+`;
+
+exports[`Storyshots Addons|A11y/Typography Correct 1`] = `
+Array [
   <h1>
     Testing the a11y addon
-  </h1>
+  </h1>,
   <p>
     Testing the a11y addon
-  </p>
+  </p>,
   <a
     href="javascript:void 0"
   >
     Testing the a11y addon...
-  </a>
-</div>
+  </a>,
+]
 `;
 
-exports[`Storyshots Addons|a11y/Typography Empty Heading 1`] = `<h2 />`;
+exports[`Storyshots Addons|A11y/Typography Empty Heading 1`] = `<h1 />`;
 
-exports[`Storyshots Addons|a11y/Typography Empty Link 1`] = `
+exports[`Storyshots Addons|A11y/Typography Empty Link 1`] = `
 <a
   href="javascript:void 0"
 />
 `;
 
-exports[`Storyshots Addons|a11y/Typography Empty Paragraph 1`] = `<p />`;
+exports[`Storyshots Addons|A11y/Typography Empty Paragraph 1`] = `<p />`;
 
-exports[`Storyshots Addons|a11y/Typography Link without href 1`] = `
+exports[`Storyshots Addons|A11y/Typography Link without href 1`] = `
 <a>
   Testing the a11y addon...
 </a>

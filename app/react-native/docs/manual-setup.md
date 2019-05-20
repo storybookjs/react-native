@@ -3,7 +3,7 @@
 First, install the `@storybook/react-native` module
 
 ```sh
-npm install @storybook/react-native
+yarn add @storybook/react-native --dev
 ```
 
 Create a new directory called `storybook` in your project root and create an entry file (index.js) as given below.
@@ -84,7 +84,8 @@ RN application, e.g. on a tab or within an admin screen.
 
 ## Server support
 
-If you want to support having a storybook server running add following NPM script into your `package.json` file:
+If you want to support having a storybook server running install storybook server `npm install --save-dev @storybook/react-native-server`
+and add following NPM script into your `package.json` file:
 
 ```json
 {

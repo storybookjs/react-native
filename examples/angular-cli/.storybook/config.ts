@@ -1,11 +1,15 @@
-import { configure } from '@storybook/angular';
-import { setOptions } from '@storybook/addon-options';
+/* eslint-disable global-require */
+import { configure, addParameters, addDecorator } from '@storybook/angular';
+import { withA11y } from '@storybook/addon-a11y';
 import addCssWarning from '../src/cssWarning';
 
+addDecorator(withA11y);
 addCssWarning();
 
-setOptions({
-  hierarchyRootSeparator: /\|/,
+addParameters({
+  options: {
+    hierarchyRootSeparator: /\|/,
+  },
 });
 
 function loadStories() {

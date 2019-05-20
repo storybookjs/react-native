@@ -19,6 +19,45 @@ storiesOf('Custom|ng-content', module).add('Default', () => ({
 "
 `;
 
+exports[`inject-decorator injectDecorator option is false - flow does not inject stories decorator after the all "storiesOf" functions 1`] = `
+"// @flow
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+
+import TableComponent from '../components/TableComponent';
+
+import type { JssClasses } from '../types';
+
+type State = {
+  value: any,
+};
+
+type Props = {
+  classes: JssClasses,
+  name: string,
+};
+
+class Table extends React.Component<Props, State> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: undefined,
+    };
+  }
+
+  state: State;
+
+  render() {
+    return <TableComponent />;
+  }
+}
+
+const stories = storiesOf('Table', module);
+stories.add('Flow Class', withInfo('Lorum Ipsum Nem')(() => <Table />));
+"
+`;
+
 exports[`inject-decorator injectDecorator option is false - ts does not inject stories decorator after the all "storiesOf" functions 1`] = `
 "import { Component } from '@angular/core';
 import { Store, StoreModule } from '@ngrx/store';
@@ -213,14 +252,14 @@ storiesOf('Addons|Info.GitHub issues', module).add(
 
 exports[`inject-decorator positive - angular calculates "adds" map 1`] = `
 Object {
-  "Custom|ng-content@Default": Object {
+  "custom-ng-content--default": Object {
     "endLoc": Object {
       "col": 2,
-      "line": 15,
+      "line": 17,
     },
     "startLoc": Object {
       "col": 43,
-      "line": 10,
+      "line": 12,
     },
   },
 }
@@ -245,9 +284,50 @@ storiesOf('Custom|ng-content', module).addDecorator(withStorySource(__STORY__, _
 "
 `;
 
+exports[`inject-decorator positive - flow calculates "adds" map 1`] = `Object {}`;
+
+exports[`inject-decorator positive - flow injects stories decorator after the all "storiesOf" functions 1`] = `
+"// @flow
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+
+import TableComponent from '../components/TableComponent';
+
+import type { JssClasses } from '../types';
+
+type State = {
+  value: any,
+};
+
+type Props = {
+  classes: JssClasses,
+  name: string,
+};
+
+class Table extends React.Component<Props, State> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: undefined,
+    };
+  }
+
+  state: State;
+
+  render() {
+    return <TableComponent />;
+  }
+}
+
+const stories = storiesOf('Table', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__));
+stories.add('Flow Class', withInfo('Lorum Ipsum Nem')(() => <Table />));
+"
+`;
+
 exports[`inject-decorator positive - ts calculates "adds" map 1`] = `
 Object {
-  "ngrx|Store@With component": Object {
+  "ngrx-store--with-component": Object {
     "endLoc": Object {
       "col": 3,
       "line": 32,
@@ -297,7 +377,7 @@ storiesOf('ngrx|Store', module).addDecorator(withStorySource(__STORY__, __ADDS_M
 
 exports[`inject-decorator positive calculates "adds" map 1`] = `
 Object {
-  "Addons|Info.Decorator@Use Info as story decorator": Object {
+  "addons-info-decorator--use-info-as-story-decorator": Object {
     "endLoc": Object {
       "col": 73,
       "line": 137,
@@ -307,7 +387,7 @@ Object {
       "line": 137,
     },
   },
-  "Addons|Info.GitHub issues@#1814": Object {
+  "addons-info-github-issues--1814": Object {
     "endLoc": Object {
       "col": 4,
       "line": 152,
@@ -317,7 +397,7 @@ Object {
       "line": 146,
     },
   },
-  "Addons|Info.Markdown@Displays Markdown in description": Object {
+  "addons-info-markdown--displays-markdown-in-description": Object {
     "endLoc": Object {
       "col": 96,
       "line": 44,
@@ -327,17 +407,7 @@ Object {
       "line": 43,
     },
   },
-  "Addons|Info.Options.TableComponent@Use a custom component for the table": Object {
-    "endLoc": Object {
-      "col": 41,
-      "line": 130,
-    },
-    "startLoc": Object {
-      "col": 2,
-      "line": 127,
-    },
-  },
-  "Addons|Info.Options.header@Shows or hides Info Addon header": Object {
+  "addons-info-options-header--shows-or-hides-info-addon-header": Object {
     "endLoc": Object {
       "col": 41,
       "line": 60,
@@ -347,7 +417,7 @@ Object {
       "line": 56,
     },
   },
-  "Addons|Info.Options.inline@Inlines component inside story": Object {
+  "addons-info-options-inline--inlines-component-inside-story": Object {
     "endLoc": Object {
       "col": 41,
       "line": 52,
@@ -357,7 +427,7 @@ Object {
       "line": 48,
     },
   },
-  "Addons|Info.Options.propTables@Shows additional component prop tables": Object {
+  "addons-info-options-proptables--shows-additional-component-prop-tables": Object {
     "endLoc": Object {
       "col": 41,
       "line": 76,
@@ -367,7 +437,7 @@ Object {
       "line": 72,
     },
   },
-  "Addons|Info.Options.propTablesExclude@Exclude component from prop tables": Object {
+  "addons-info-options-proptablesexclude--exclude-component-from-prop-tables": Object {
     "endLoc": Object {
       "col": 4,
       "line": 89,
@@ -377,7 +447,7 @@ Object {
       "line": 80,
     },
   },
-  "Addons|Info.Options.source@Shows or hides Info Addon source": Object {
+  "addons-info-options-source--shows-or-hides-info-addon-source": Object {
     "endLoc": Object {
       "col": 41,
       "line": 68,
@@ -387,7 +457,7 @@ Object {
       "line": 64,
     },
   },
-  "Addons|Info.Options.styles@Extend info styles with an object": Object {
+  "addons-info-options-styles--extend-info-styles-with-an-object": Object {
     "endLoc": Object {
       "col": 43,
       "line": 108,
@@ -397,7 +467,7 @@ Object {
       "line": 94,
     },
   },
-  "Addons|Info.Options.styles@Full control over styles using a function": Object {
+  "addons-info-options-styles--full-control-over-styles-using-a-function": Object {
     "endLoc": Object {
       "col": 43,
       "line": 123,
@@ -407,7 +477,27 @@ Object {
       "line": 111,
     },
   },
-  "Addons|Info.React Docgen@Comments from Flow declarations": Object {
+  "addons-info-options-tablecomponent--use-a-custom-component-for-the-table": Object {
+    "endLoc": Object {
+      "col": 41,
+      "line": 130,
+    },
+    "startLoc": Object {
+      "col": 2,
+      "line": 127,
+    },
+  },
+  "addons-info-react-docgen--comments-from-component-declaration": Object {
+    "endLoc": Object {
+      "col": 70,
+      "line": 28,
+    },
+    "startLoc": Object {
+      "col": 4,
+      "line": 25,
+    },
+  },
+  "addons-info-react-docgen--comments-from-flow-declarations": Object {
     "endLoc": Object {
       "col": 85,
       "line": 22,
@@ -417,7 +507,7 @@ Object {
       "line": 19,
     },
   },
-  "Addons|Info.React Docgen@Comments from PropType declarations": Object {
+  "addons-info-react-docgen--comments-from-proptype-declarations": Object {
     "endLoc": Object {
       "col": 79,
       "line": 16,
@@ -425,16 +515,6 @@ Object {
     "startLoc": Object {
       "col": 4,
       "line": 13,
-    },
-  },
-  "Addons|Info.React Docgen@Comments from component declaration": Object {
-    "endLoc": Object {
-      "col": 70,
-      "line": 28,
-    },
-    "startLoc": Object {
-      "col": 4,
-      "line": 25,
     },
   },
 }

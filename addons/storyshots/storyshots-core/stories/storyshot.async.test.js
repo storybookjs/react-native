@@ -19,7 +19,7 @@ initStoryshots({
     if (context.kind === 'Async') {
       const converter = new Stories2SnapsConverter({ snapshotExtension: '.async.storyshot' });
       const snapshotFilename = converter.getSnapshotFileName(context);
-      const storyElement = story.render(context);
+      const storyElement = story.render();
 
       // Mount the component
       let wrapper = mount(storyElement);

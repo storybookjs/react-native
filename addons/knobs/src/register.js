@@ -1,12 +1,12 @@
 import React from 'react';
 import addons from '@storybook/addons';
 import Panel from './components/Panel';
+import { ADDON_ID, PANEL_ID } from './shared';
 
-addons.register('storybooks/storybook-addon-knobs', api => {
-  const channel = addons.getChannel();
-  addons.addPanel('storybooks/storybook-addon-knobs', {
+addons.register(ADDON_ID, api => {
+  addons.addPanel(PANEL_ID, {
     title: 'Knobs',
     // eslint-disable-next-line react/prop-types
-    render: ({ active }) => <Panel channel={channel} api={api} key="knobs-panel" active={active} />,
+    render: ({ active, key }) => <Panel api={api} key={key} active={active} />,
   });
 });

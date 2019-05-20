@@ -46,11 +46,9 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
     throw new Error('angular.json must have projects entry.');
   }
 
-  let project = projects[Object.keys(projects)[0]];
-
-  if (defaultProject) {
-    project = projects[defaultProject];
-  }
+  const fallbackProject = defaultProject && projects[defaultProject];
+  const firstProject = projects[Object.keys(projects)[0]];
+  const project = projects.storybook || fallbackProject || firstProject;
 
   const { options: projectOptions } = project.architect.build;
 
@@ -71,6 +69,8 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
     tsConfig,
     supportES2015: false,
     buildOptions: {
+      sourceMap: false,
+      optimization: {},
       ...projectOptions,
       assets: normalizedAssets,
     },
@@ -103,12 +103,10 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
   const rulesExcludingStyles = filterOutStylingRules(baseConfig);
 
   // cliStyleConfig.entry adds global style files to the webpack context
-  const entry = {
+  const entry = [
     ...baseConfig.entry,
-    iframe: []
-      .concat(baseConfig.entry.iframe)
-      .concat(Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), [])),
-  };
+    ...Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), []),
+  ];
 
   const module = {
     ...baseConfig.module,

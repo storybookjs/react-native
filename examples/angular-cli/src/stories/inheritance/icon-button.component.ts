@@ -4,7 +4,7 @@ import { BaseButtonComponent } from './base-button.component';
 @Component({
   selector: `storybook-icon-button`,
   template: `
-    <button>{{label}} - {{icon}}</button>
+    <button>{{ label }} - {{ icon }}</button>
   `,
 })
 export class IconButtonComponent extends BaseButtonComponent {
