@@ -3746,36 +3746,10 @@
   dependencies:
     "@types/jest-diff" "*"
 
-"@types/js-beautify@^1.8.1":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@types/js-beautify/-/js-beautify-1.8.1.tgz#c210b3206bece04dc240b1deeec185f7b5b03534"
-  integrity sha512-B1Br8yE27obcYvFx5ECZswT/947aAFNb9lHqnkUOhtOfvJqaa6Axibo4T+5G6iQlUfjgSd8am9R/9j9UBfRlrw==
-
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
-
-"@types/lodash.isequal@^4.5.3":
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/@types/lodash.isequal/-/lodash.isequal-4.5.5.tgz#4fed1b1b00bef79e305de0352d797e9bb816c8ff"
-  integrity sha512-4IKbinG7MGP131wRfceK6W4E/Qt3qssEFLF30LnJbjYiSfHGGRU/Io8YxXrZX109ir+iDETC8hw8QsDijukUVg==
-  dependencies:
-    "@types/lodash" "*"
-
-"@types/lodash.mergewith@^4.6.4":
-  version "4.6.6"
-  resolved "https://registry.yarnpkg.com/@types/lodash.mergewith/-/lodash.mergewith-4.6.6.tgz#c4698f5b214a433ff35cb2c75ee6ec7f99d79f10"
-  integrity sha512-RY/8IaVENjG19rxTZu9Nukqh0W2UrYgmBj5sdns4hWRZaV8PqR7wIKHFKzvOTjo4zVRV7sVI+yFhAJql12Kfqg==
-  dependencies:
-    "@types/lodash" "*"
-
-"@types/lodash.pick@^4.4.4":
-  version "4.4.6"
-  resolved "https://registry.yarnpkg.com/@types/lodash.pick/-/lodash.pick-4.4.6.tgz#ae4e8f109e982786313bb6aac4b1a73aefa6e9be"
-  integrity sha512-u8bzA16qQ+8dY280z3aK7PoWb3fzX5ATJ0rJB6F+uqchOX2VYF02Aqa+8aYiHiHgPzQiITqCgeimlyKFy4OA6g==
-  dependencies:
-    "@types/lodash" "*"
 
 "@types/lodash.zipobject@^4.1.4":
   version "4.1.6"
@@ -3872,9 +3846,9 @@
     "@types/react" "*"
 
 "@types/react-native@^0.57.57":
-  version "0.57.57"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.57.tgz#4b59068acf6e542ac8e1e02e8a639b47e3e02c02"
-  integrity sha512-OZyBlMyMeU3gXAmc1nnJhlWGihWUOiVR5Tj0y4TAA0rkKKHJwuNPPba6aaFmEaNcoZ9ejc3G30H+dneDOqICdg==
+  version "0.57.58"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.58.tgz#630258e10497772dbbfdf813205d38b76b54fa2a"
+  integrity sha512-SshKU18ajdpQQ5RZrHyUTI3e++pMo4fcrWnnbGFjzgp5ykYhbfUQ005Q93a/UV9ObsAmRppHVuq11d3b4tiDug==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -3938,27 +3912,6 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 
-"@types/storybook__addon-actions@^3.4.1":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-actions/-/storybook__addon-actions-3.4.2.tgz#1d08689cc3259269ddb3479a2307c9d16944309e"
-  integrity sha512-CWxGz2pXav9PHcwrtXmkuH+xJL7sAu2AmIGEbkdT3Xs5jzBPZUEDEN//ZF7o6IOPP/tdXU37K1hrVMt9TDO0Bw==
-
-"@types/storybook__addon-info@^4.1.0":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-info/-/storybook__addon-info-4.1.1.tgz#8b05daa1cae8f6bfa252c9fa5d67aa648dfdf28c"
-  integrity sha512-ugk/BXBBZl0c8xhvIBIVFCF/WLxQhK6Mh8V4st6nbouLXA07SQMLtF1Fcuo2fLdDr1Ao1smABaQUiC2L2UwZwA==
-  dependencies:
-    "@types/react" "*"
-    "@types/storybook__react" "*"
-
-"@types/storybook__react@*", "@types/storybook__react@^4.0.0":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@types/storybook__react/-/storybook__react-4.0.1.tgz#b6320c9d027b8ee7ef1445fef8b4cba196d48ace"
-  integrity sha512-knkZErqv8Iy2QbebqBa5tsy2itIMKdO6bcQ7C19nmgTc+j1pnQhXCGcVyARzAQ1/NAuSYudSWQAKG+plgK7hyQ==
-  dependencies:
-    "@types/react" "*"
-    "@types/webpack-env" "*"
-
 "@types/symlink-or-copy@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@types/symlink-or-copy/-/symlink-or-copy-1.2.0.tgz#4151a81b4052c80bc2becbae09f3a9ec010a9c7a"
@@ -4020,7 +3973,7 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@types/webpack-env@*", "@types/webpack-env@^1.13.7":
+"@types/webpack-env@^1.13.7":
   version "1.13.9"
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.13.9.tgz#a67287861c928ebf4159a908d1fb1a2a34d4097a"
   integrity sha512-p8zp5xqkly3g4cCmo2mKOHI9+Z/kObmDj0BmjbDDJQlgDTiEGTbm17MEwTAusV6XceCy+bNw9q/ZHXHyKo3zkg==
@@ -7917,7 +7870,7 @@ browserslist@^3.2.6:
     caniuse-lite "^1.0.30000844"
     electron-to-chromium "^1.3.47"
 
-browserslist@^4.0.0, browserslist@^4.1.1, browserslist@^4.3.4, browserslist@^4.3.5, browserslist@^4.4.1, browserslist@^4.5.2, browserslist@^4.5.4:
+browserslist@^4.0.0, browserslist@^4.1.1, browserslist@^4.3.4, browserslist@^4.3.5, browserslist@^4.4.1, browserslist@^4.5.2, browserslist@^4.5.4, browserslist@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.6.0.tgz#5274028c26f4d933d5b1323307c1d1da5084c9ff"
   integrity sha512-Jk0YFwXBuMOOol8n6FhgkDzn3mY9PYLYGk29zybF05SbRTsMgPqmTNeQQhOghCxq5oFqAXE3u4sYddr4C0uRhg==
@@ -9164,7 +9117,7 @@ concurrently@^4.0.1:
     tree-kill "^1.1.0"
     yargs "^12.0.1"
 
-config-chain@^1.1.11, config-chain@^1.1.12:
+config-chain@^1.1.11:
   version "1.1.12"
   resolved "https://registry.yarnpkg.com/config-chain/-/config-chain-1.1.12.tgz#0fde8d091200eb5e808caf25fe618c02f48e4efa"
   integrity sha512-a1eOIcu8+7lUInge4Rpf/n4Krkf3Dd9lqhljRzII1/Zno/kRtUWnznPO3jOKBmTEktkt3fkxisUcivoj0ebzoA==
@@ -9460,26 +9413,25 @@ copy-webpack-plugin@^5.0.0:
     webpack-log "^2.0.0"
 
 core-js-compat@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.0.1.tgz#bff73ba31ca8687431b9c88f78d3362646fb76f0"
-  integrity sha512-2pC3e+Ht/1/gD7Sim/sqzvRplMiRnFQVlPpDVaHtY9l7zZP7knamr3VRD6NyGfHd84MrDC0tAM9ulNxYMW0T3g==
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.1.0.tgz#340492a001d81100812e0f6e874ee6e21639ae92"
+  integrity sha512-v8M7YAMacMOJ4T4Z9QSud3dFYASMDvK9d2RWBHRSJlO4nGboLQVtFdbDmgzxfM7XrvcvO56L0sHcqGjuk/4wTQ==
   dependencies:
-    browserslist "^4.5.4"
-    core-js "3.0.1"
-    core-js-pure "3.0.1"
+    browserslist "^4.6.0"
+    core-js-pure "3.1.0"
     semver "^6.0.0"
 
-core-js-pure@3.0.1, core-js-pure@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.0.1.tgz#37358fb0d024e6b86d443d794f4e37e949098cbe"
-  integrity sha512-mSxeQ6IghKW3MoyF4cz19GJ1cMm7761ON+WObSyLfTu/Jn3x7w4NwNFnrZxgl4MTSvYYepVLNuRtlB4loMwJ5g==
+core-js-pure@3.1.0, core-js-pure@^3.0.1:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.1.0.tgz#5e12e66435df4f2cc7df84cc891350aaeb66d0f0"
+  integrity sha512-9NxJBUp8p35vrBbEhQl+FvKbYY68fELWld0asAXMnfWl9xRrN472mw/n+ZvmnG0fYh4U7agPcJZ7iqcJW5R9Rg==
 
 core-js@2.6.4:
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.4.tgz#b8897c062c4d769dd30a0ac5c73976c47f92ea0d"
   integrity sha512-05qQ5hXShcqGkPZpXEFLIpxayZscVD2kuMBZewxiIPPEagukO4mqgPA9CWhUvFBJfy3ODdK2p9xyHh7FTU9/7A==
 
-core-js@3.0.1, core-js@^3.0.0, core-js@^3.0.1:
+core-js@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.0.1.tgz#1343182634298f7f38622f95e73f54e48ddf4738"
   integrity sha512-sco40rF+2KlE0ROMvydjkrVMMG1vYilP2ALoRXcYR4obqbYIuV3Bg+51GEDW+HF8n7NRA+iaA4qD0nD9lo9mew==
@@ -9489,10 +9441,20 @@ core-js@^1.0.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
   integrity sha1-ZSKUwUZR2yj6k70tX/KYOk8IxjY=
 
-core-js@^2.2.2, core-js@^2.4.0, core-js@^2.4.1, core-js@^2.5.0, core-js@^2.5.7, core-js@^2.6.2, core-js@^2.6.5:
+core-js@^2.2.2, core-js@^2.4.0, core-js@^2.4.1, core-js@^2.5.0, core-js@^2.5.7, core-js@^2.6.5:
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.6.tgz#00eb6d6bf815471cc16d8563edd7d38786dec50b"
+  integrity sha512-Mt/LaAym54NXnrjEMdo918cT2h70tqb/Yl7T3uPHQHRm5SxVoqlKmerUy4mL11k8saSBDWQ7ULIHxmeFyT3pfg==
+
+core-js@^2.6.2:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
   integrity sha512-klh/kDpwX8hryYL14M9w/xei6vrv6sE8gTHDG7/T/+SEovB/G4ejwcfE/CBzO6Edsu+OETZMZ3wcX/EjUkrl5A==
+
+core-js@^3.0.0, core-js@^3.0.1:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.1.0.tgz#7118f0dad99054204b6821c1f82e67b42cc21628"
+  integrity sha512-EyF8cMvUWRDWRLmC3+i50D1DqK4aFZWb/6PDPP2QfX2r0zXkgR2V9wt7jX7TRM0Qdj/3f6+JQkqfCaGkSj92iQ==
 
 core-object@^3.1.5:
   version "3.1.5"
@@ -10917,16 +10879,6 @@ editions@^1.1.1:
   resolved "https://registry.yarnpkg.com/editions/-/editions-1.3.4.tgz#3662cb592347c3168eb8e498a0ff73271d67f50b"
   integrity sha512-gzao+mxnYDzIysXKMQi/+M1mjy/rjestjg6OPoYTtI+3Izp23oiGZitsl9lPDPiTGXbcSIk1iJWhliSaglxnUg==
 
-editorconfig@^0.15.3:
-  version "0.15.3"
-  resolved "https://registry.yarnpkg.com/editorconfig/-/editorconfig-0.15.3.tgz#bef84c4e75fb8dcb0ce5cee8efd51c15999befc5"
-  integrity sha512-M9wIMFx96vq0R4F+gRpY3o2exzb8hEj/n9S8unZtHSvYjibBp/iMufSzvmOcV/laG0ZtuTVGtiJggPOSW2r93g==
-  dependencies:
-    commander "^2.19.0"
-    lru-cache "^4.1.5"
-    semver "^5.6.0"
-    sigmund "^1.0.1"
-
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -11480,11 +11432,12 @@ envinfo@^5.7.0:
   integrity sha512-pwdo0/G3CIkQ0y6PCXq4RdkvId2elvtPCJMG0konqlrfkWQbf1DWeH9K2b/cvu2YgGvPPTOnonZxXM1gikFu1w==
 
 enzyme-adapter-react-16@^1.9.1:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.13.0.tgz#530e4aed3c127d7a7c5c7f4f634ad9ba65f719f6"
-  integrity sha512-ZUVo9XATKrKavfe9v61EiYDu6V1NJCKtJyp1X2ILPgtuGQ58bItUR9uWwH6gzKJNww3sUiXM826jIiwPgO9iVQ==
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.13.1.tgz#2e8ee300e38674b9914ae52b04af9493050355e2"
+  integrity sha512-DCKbkiVlfLTbn4SXO8mXDQx1SmmwON5oKXn2QfQSMCt8eTYGwUXy/OBGSuss6KKwY5w5QfK1sQFxhgFOkMCjrw==
   dependencies:
     enzyme-adapter-utils "^1.12.0"
+    has "^1.0.3"
     object.assign "^4.1.0"
     object.values "^1.1.0"
     prop-types "^15.7.2"
@@ -17211,11 +17164,12 @@ jest-preset-angular@^6.0.1:
     ts-jest "~23.1.3"
 
 jest-preset-angular@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/jest-preset-angular/-/jest-preset-angular-7.1.0.tgz#df023f8bd9bf4f20497701bcd813906fa26e04ce"
-  integrity sha512-MSenqcEbmkNYXh77zpsFbIJvMBsVD2kPTy5+2GLm/07e7cQe29GEQLNN4F52VZMGW70RCvGFAiAE4ljsK9hYSg==
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/jest-preset-angular/-/jest-preset-angular-7.1.1.tgz#b51fc910e5abea91701fcd89532823ae5990450b"
+  integrity sha512-/uJUi9IHoCxtB6aH6I+llpHjyfGfP2q32lcBCUKKk16v1uYKXvj1Nfdlvfvu/eqjZVoKEDLP+Ejup4bbsc0gAA==
   dependencies:
     jest-environment-jsdom-thirteen "^1.0.0"
+    pretty-format "^24.0.0"
     ts-jest "^24.0.0"
 
 jest-raw-loader@^1.0.1:
@@ -17740,17 +17694,6 @@ js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"
   integrity sha512-M7kLczedRMYX4L8Mdh4MzyAMM9O5osx+4FcOQuTvr3A9F2D9S5JXheN0ewNbrvK2UatkTRhL5ejGmGSjNMiZuw==
-
-js-beautify@^1.8.9:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/js-beautify/-/js-beautify-1.10.0.tgz#9753a13c858d96828658cd18ae3ca0e5783ea672"
-  integrity sha512-OMwf/tPDpE/BLlYKqZOhqWsd3/z2N3KOlyn1wsCRGFwViE8LOQTcDtathQvHvZc+q+zWmcNAbwKSC+iJoMaH2Q==
-  dependencies:
-    config-chain "^1.1.12"
-    editorconfig "^0.15.3"
-    glob "^7.1.3"
-    mkdirp "~0.5.1"
-    nopt "~4.0.1"
 
 js-levenshtein@^1.1.3:
   version "1.1.6"
@@ -19497,7 +19440,7 @@ lowlight@~1.9.1:
     fault "^1.0.2"
     highlight.js "~9.12.0"
 
-lru-cache@^4.0.1, lru-cache@^4.1.1, lru-cache@^4.1.2, lru-cache@^4.1.3, lru-cache@^4.1.5:
+lru-cache@^4.0.1, lru-cache@^4.1.1, lru-cache@^4.1.2, lru-cache@^4.1.3:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.5.tgz#8bbe50ea85bed59bc9e33dcab8235ee9bcf443cd"
   integrity sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==
@@ -21179,7 +21122,7 @@ noop-logger@^0.1.1:
   dependencies:
     abbrev "1"
 
-nopt@^4.0.1, nopt@~4.0.1:
+nopt@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-4.0.1.tgz#d0d4685afd5415193c8c7505602d0d17cd64474d"
   integrity sha1-0NRoWv1UFRk8jHUFYC0NF81kR00=
@@ -23744,7 +23687,7 @@ pretty-format@^23.4.1, pretty-format@^23.6.0:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
-pretty-format@^24.7.0, pretty-format@^24.8.0:
+pretty-format@^24.0.0, pretty-format@^24.7.0, pretty-format@^24.8.0:
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-24.8.0.tgz#8dae7044f58db7cb8be245383b565a963e3c27f2"
   integrity sha512-P952T7dkrDEplsR+TuY7q3VXDae5Sr7zmQb12JU/NDQa/3CH7/QW0yvqLcGN6jL+zQFKaoJcPc+yJxMTGmosqw==
@@ -27366,11 +27309,6 @@ shorthash@0.0.2:
   resolved "https://registry.yarnpkg.com/shorthash/-/shorthash-0.0.2.tgz#59b268eecbde59038b30da202bcfbddeb2c4a4eb"
   integrity sha1-WbJo7sveWQOLMNogK8+93rLEpOs=
 
-sigmund@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/sigmund/-/sigmund-1.0.1.tgz#3ff21f198cad2175f9f3b781853fd94d0d19b590"
-  integrity sha1-P/IfGYytIXX587eBhT/ZTQ0ZtZA=
-
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
@@ -29674,9 +29612,9 @@ uglify-js@^3.0.0:
     source-map "~0.6.1"
 
 uglify-js@^3.0.13, uglify-js@^3.1.4:
-  version "3.5.13"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.5.13.tgz#d2d8857b598d77f8764ae3bfcf90bb1df134d2bd"
-  integrity sha512-Lho+IJlquX6sdJgyKSJx/M9y4XbDd3ekPjD8S6HYmT5yVSwDtlSuca2w5hV4g2dIsp0Y/4orbfWxKexodmFv7w==
+  version "3.5.14"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.5.14.tgz#edf2a322c37fd7173a954fb35af199b52fb10946"
+  integrity sha512-dgyjIw8KFK6AyVl5vm2tEqPewv5TKGEiiVFLI1LbF+oHua/Njd8tZk3lIbF1AWU1rNdEg7scaceADb4zqCcWXg==
   dependencies:
     commander "~2.20.0"
     source-map "~0.6.1"
@@ -31164,9 +31102,9 @@ webpack@4.29.6:
     webpack-sources "^1.3.0"
 
 webpack@^4.23.1, webpack@^4.28.0:
-  version "4.31.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.31.0.tgz#ae201d45f0571336e42d1c2b5c8ab56c4d3b0c63"
-  integrity sha512-n6RVO3X0LbbipoE62akME9K/JI7qYrwwufs20VvgNNpqUoH4860KkaxJTbGq5bgkVZF9FqyyTG/0WPLH3PVNJA==
+  version "4.32.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.32.0.tgz#d8726fe73bb362e0e48171990f362df5e747747b"
+  integrity sha512-ofFq9jjAn4HRzlmkcZZrjijbRZcqDw+mM9KrjKd0r6lS0qxyZ7jzICzhphGafXL62dGdjP7TgMK9mZeMLUgZgw==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"

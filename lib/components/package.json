@@ -25,7 +25,6 @@
     "@storybook/theming": "5.1.0-beta.1",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "js-beautify": "^1.8.9",
     "markdown-to-jsx": "^6.9.1",
     "memoizerific": "^1.11.3",
     "polished": "^3.3.1",
@@ -42,7 +41,6 @@
     "simplebar-react": "^1.0.0-alpha.6"
   },
   "devDependencies": {
-    "@types/js-beautify": "^1.8.1",
     "@types/react-syntax-highlighter": "^10.1.0",
     "@types/react-textarea-autosize": "^4.3.3",
     "@types/recompose": "^0.30.5",

@@ -39,6 +39,30 @@ module.exports = {
     'html/html-extensions': ['.html'],
   },
   rules: {
+    'no-restricted-imports': [
+      error,
+      {
+        paths: [
+          {
+            name: 'lodash.isequal',
+            message:
+              'Lodash modularised (and lodash < 4.17.11) have CVE vulnerabilities. Please use tree-shakeable imports like lodash/xxx instead',
+          },
+          {
+            name: 'lodash.mergewith',
+            message:
+              'Lodash modularised (and lodash < 4.17.11) have CVE vulnerabilities. Please use tree-shakeable imports like lodash/xxx instead',
+          },
+          {
+            name: 'lodash.pick',
+            message:
+              'Lodash modularised (and lodash < 4.17.11) have CVE vulnerabilities. Please use tree-shakeable imports like lodash/xxx instead',
+          },
+        ],
+        // catch-all for any lodash modularised. The CVE is listed against the entire family for lodash < 4.17.11
+        patterns: ['lodash.*'],
+      },
+    ],
     'prettier/prettier': [warn],
     'no-debugger': process.env.NODE_ENV === 'production' ? error : ignore,
     'class-methods-use-this': ignore,
