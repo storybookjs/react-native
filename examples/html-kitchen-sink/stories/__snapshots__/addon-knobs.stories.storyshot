@@ -47,6 +47,14 @@ exports[`Storyshots Addons|Knobs All knobs 1`] = `
 </div>
 `;
 
+exports[`Storyshots Addons|Knobs CSS transitions 1`] = `
+<p
+  style="transition: color 0.5s ease-out; color: orangered;"
+>
+  John Doe
+</p>
+`;
+
 exports[`Storyshots Addons|Knobs DOM 1`] = `
 <p>
   John Doe

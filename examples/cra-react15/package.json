@@ -3,7 +3,7 @@
   "version": "5.1.0-beta.1",
   "private": true,
   "dependencies": {
-    "babel-loader": "7",
+    "babel-loader": "8.0.6",
     "global": "^4.3.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

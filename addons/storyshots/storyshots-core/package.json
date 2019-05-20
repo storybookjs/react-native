@@ -30,7 +30,7 @@
     "glob": "^7.1.3",
     "global": "^4.3.2",
     "jest-specific-snapshot": "^2.0.0",
-    "read-pkg-up": "^5.0.0",
+    "read-pkg-up": "^6.0.0",
     "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {

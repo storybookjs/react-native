@@ -32,7 +32,7 @@
     "lodash.isequal": "^4.5.0",
     "lodash.mergewith": "^4.6.1",
     "memoizerific": "^1.11.3",
-    "polished": "^3.0.0",
+    "polished": "^3.3.1",
     "prop-types": "^15.7.2",
     "react-inspector": "^3.0.2"
   },
