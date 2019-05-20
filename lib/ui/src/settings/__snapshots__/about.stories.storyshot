@@ -1442,6 +1442,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 .emotion-23 {
   position: relative;
   overflow: hidden;
+  color: #333333;
   border: 1px solid rgba(0,0,0,.1);
   background: #FFFFFF;
 }
