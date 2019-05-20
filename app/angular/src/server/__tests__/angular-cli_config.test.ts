@@ -2,7 +2,7 @@ import { getAngularCliWebpackConfigOptions } from '../angular-cli_config';
 import angularJson from './angular.json';
 
 // eslint-disable-next-line global-require
-jest.mock('fs', () => require('../../../../__mocks__/fs'));
+jest.mock('fs', () => require('../../../../../__mocks__/fs'));
 jest.mock('path', () => ({
   join: () => 'angular.json',
   resolve: () => 'tsconfig.json',
