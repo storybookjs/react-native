@@ -10,9 +10,10 @@ import html from 'react-syntax-highlighter/languages/prism/markup';
 
 import ReactSyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
 
-import { js as beautify } from 'js-beautify';
 import { ActionBar } from '../ActionBar/ActionBar';
 import { ScrollArea } from '../ScrollArea/ScrollArea';
+
+import { formatter } from './formatter';
 
 registerLanguage('jsx', jsx);
 registerLanguage('bash', bash);
@@ -29,10 +30,11 @@ interface WrapperProps {
 }
 
 const Wrapper = styled.div<WrapperProps>(
-  {
+  ({ theme }) => ({
     position: 'relative',
     overflow: 'hidden',
-  },
+    color: theme.color.defaultText,
+  }),
   ({ theme, bordered }) =>
     bordered
       ? {
@@ -106,26 +108,6 @@ export class SyntaxHighlighter extends Component<
 
   state = { copied: false };
 
-  formatCode = memoize(2)((language: string, code: string) => {
-    let formattedCode = code;
-    if (language === 'jsx') {
-      try {
-        // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
-        formattedCode = beautify(code, {
-          indent_size: 2,
-          brace_style: 'collapse-preserve-inline',
-          end_with_newline: true,
-          wrap_line_length: 80,
-          e4x: true, // e4x is not available in JsBeautify types for now
-        } as JsBeautifyOptions);
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.warn("Couldn't format code", formattedCode);
-      }
-    }
-    return formattedCode;
-  });
-
   onClick = (e: React.MouseEvent) => {
     const { children } = this.props;
 
@@ -171,9 +153,7 @@ export class SyntaxHighlighter extends Component<
             lineNumberContainerStyle={{}}
             {...rest}
           >
-            {format
-              ? this.formatCode(language, (children as string).trim())
-              : (children as string).trim()}
+            {format ? formatter((children as string).trim()) : (children as string).trim()}
           </ReactSyntaxHighlighter>
         </Scroller>
         {copyable ? (

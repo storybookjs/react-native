@@ -1246,6 +1246,7 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
 .emotion-5 {
   position: relative;
   overflow: hidden;
+  color: #333333;
   border: 1px solid rgba(0,0,0,.1);
   background: #FFFFFF;
 }
@@ -4608,6 +4609,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
 .emotion-5 {
   position: relative;
   overflow: hidden;
+  color: #333333;
   border: 1px solid rgba(0,0,0,.1);
   background: #FFFFFF;
 }
@@ -5256,6 +5258,7 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the text parameter with mar
 .emotion-5 {
   position: relative;
   overflow: hidden;
+  color: #333333;
   border: 1px solid rgba(0,0,0,.1);
   background: #FFFFFF;
 }
@@ -9500,6 +9503,7 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
 .emotion-5 {
   position: relative;
   overflow: hidden;
+  color: #333333;
   border: 1px solid rgba(0,0,0,.1);
   background: #FFFFFF;
 }
