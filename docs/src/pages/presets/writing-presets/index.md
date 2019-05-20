@@ -81,7 +81,7 @@ export function addons(entry = []) {
 This is equivalent to [registering the addon manually](../../addons/using-addons/) in `addons.js`:
 
 ```js
-import '@storybook/addon-storysource/resgister';
+import '@storybook/addon-storysource/register';
 ```
 
 ### Entries
