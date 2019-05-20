@@ -18,7 +18,7 @@ const centeredStyles = {
  *
  * @see https://svelte.technology/guide#svelte-component
  */
-export default function(storyFn) {
+export default function(storyFn: () => any) {
   const { Component: OriginalComponent, props, on } = storyFn();
 
   return {

@@ -39,6 +39,9 @@
     "marko": "^4.15.2",
     "marko-widgets": "^7.0.1"
   },
+  "engines": {
+    "node": ">=8.0.0" 
+  },
   "publishConfig": {
     "access": "public"
   }

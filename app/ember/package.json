@@ -36,6 +36,9 @@
     "ember-cli-htmlbars-inline-precompile": "^1.0.3",
     "ember-source": "^3.4.0"
   },
+  "engines": {
+    "node": ">=8.0.0" 
+  },
   "publishConfig": {
     "access": "public"
   }

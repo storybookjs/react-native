@@ -1,5 +1,5 @@
 import { document } from 'global';
-import pick from 'lodash.pick';
+import pick from 'lodash/pick';
 
 import deprecate from 'util-deprecate';
 import deepEqual from 'fast-deep-equal';

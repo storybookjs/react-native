@@ -85,5 +85,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-segment',
+      options: {
+        writeKey: 'AvvBObOmHaEMqfub8JJUXq5umjsuaqS8',
+      },
+    },
   ],
 };

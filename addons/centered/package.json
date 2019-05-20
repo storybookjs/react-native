@@ -18,7 +18,7 @@
   "license": "MIT",
   "author": "Muhammed Thanish <mnmtanish@gmail.com>",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
@@ -26,6 +26,14 @@
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/mithril": "^1.1.16"
+  },
+  "optionalDependencies": {
+    "react": "*",
+    "preact": "*",
+    "mithril": "*"
   },
   "publishConfig": {
     "access": "public"

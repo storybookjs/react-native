@@ -10,11 +10,11 @@ import { document } from 'global';
  * @returns {string}
  * @see https://stackoverflow.com/questions/38533544/jsx-css-to-inline-styles
  */
-export default function jsonToCss(jsonStyles) {
-  const frag = document.createElement('div');
+export default function jsonToCss(jsonStyles: Partial<CSSStyleDeclaration>) {
+  const frag = document.createElement('div') as HTMLDivElement;
 
   Object.keys(jsonStyles).forEach(key => {
-    frag.style[key] = jsonStyles[key];
+    (frag.style as any)[key] = (jsonStyles as any)[key];
   });
 
   return frag.getAttribute('style');

@@ -1,10 +1,10 @@
 const styles = {
   style: {
     position: 'fixed',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
+    top: '0',
+    left: '0',
+    bottom: '0',
+    right: '0',
     display: 'flex',
     alignItems: 'center',
     overflow: 'auto',
@@ -14,6 +14,6 @@ const styles = {
     maxHeight: '100%', // Hack for centering correctly in IE11
     overflow: 'auto',
   },
-};
+} as const;
 
 export default styles;
