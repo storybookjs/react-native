@@ -1,3 +1,29 @@
+## 5.1.0-rc.0 (May 21, 2019)
+
+### Bug Fixes
+
+* UI: Fix initial bottom panel size ([#6822](https://github.com/storybooks/storybook/pull/6822))
+* UI: Fix syntaxthighlighter themes ([#6814](https://github.com/storybooks/storybook/pull/6814))
+* Addon-knobs: Fix Boolean knob (#6366) ([#6830](https://github.com/storybooks/storybook/pull/6830))
+* Theming: Change lib/theming so it no longer depends on react-inspector ([#6818](https://github.com/storybooks/storybook/pull/6818))
+* Core: Handle loading `.storybook/babel.config.js` (#6633) ([#6634](https://github.com/storybooks/storybook/pull/6634))
+* CLI: Fix init in create-react-library projects ([#6815](https://github.com/storybooks/storybook/pull/6815))
+* HTML: support knobs for both cached and uncached nodes ([#6783](https://github.com/storybooks/storybook/pull/6783))
+* Uncorrupt yarn lock ([#6811](https://github.com/storybooks/storybook/pull/6811))
+* Core: set a better value for process in manager webpack config ([#6767](https://github.com/storybooks/storybook/pull/6767))
+
+### Maintenance
+
+* Typescript: Migrate addon-centered ([#6772](https://github.com/storybooks/storybook/pull/6772))
+* Add engine field to package.json in apps ([#6809](https://github.com/storybooks/storybook/pull/6809))
+* Fix required engine for apps ([#6810](https://github.com/storybooks/storybook/pull/6810))
+
+### Dependency Upgrades
+
+* Upgrade lodash to latest ([#6832](https://github.com/storybooks/storybook/pull/6832))
+* Bump svelte from 3.4.1 to 3.4.2 ([#6838](https://github.com/storybooks/storybook/pull/6838))
+* Misc upgrades ([#6820](https://github.com/storybooks/storybook/pull/6820))
+
 ## 5.1.0-beta.1 (May 16, 2019)
 
 ### Bug Fixes
