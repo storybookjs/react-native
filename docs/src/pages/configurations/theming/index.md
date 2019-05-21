@@ -15,7 +15,7 @@ As the simplest example, you can tell Storybook to use the "dark" theme by modif
 
 ```js
 import { addParameters } from '@storybook/react';
-import { themes } from '@storybook/theming/create';
+import { themes } from '@storybook/theming';
 
 // Option defaults.
 addParameters({
@@ -47,14 +47,14 @@ Read on for more on how to create your own theme.
 
 ## Create a theme quickstart
 
-The easiest way to customize Storybook is to generate a new theme using the `create()` function from `storybook/theming/create`. This function includes shorthands for the most common theme variables. Here's how to use it:
+The easiest way to customize Storybook is to generate a new theme using the `create()` function from `storybook/theming`. This function includes shorthands for the most common theme variables. Here's how to use it:
 
 First create a new file in `.storybook` called `yourTheme.js`.
 
 Next paste the code below and tweak the variables.
 
 ```ts
-import { create } from '@storybook/theming/create';
+import { create } from '@storybook/theming';
 
 export default create({
   base: 'light',
@@ -110,7 +110,7 @@ The `storybook/theming` package is built using TypeScript, so this should help c
 Many theme variables are optional, the `base` property is NOT. This is a perfectly valid theme:
 
 ```ts
-import { create } from '@storybook/theming/create';
+import { create } from '@storybook/theming';
 
 export default create({
   base: 'light',
