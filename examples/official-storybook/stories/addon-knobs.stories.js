@@ -104,9 +104,9 @@ storiesOf('Addons|Knobs.withKnobs', module)
   })
   .add('tweaks static values organized in groups', () => {
     const GROUP_IDS = {
-      DISPLAY: 'DISPLAY',
-      GENERAL: 'GENERAL',
-      FAVORITES: 'FAVORITES',
+      DISPLAY: 'Display',
+      GENERAL: 'General',
+      FAVORITES: 'Favorites',
     };
 
     const fruits = {
@@ -123,6 +123,9 @@ storiesOf('Addons|Knobs.withKnobs', module)
 
     // NOTE: the default value must not change - e.g., do not do date('Label', new Date()) or date('Label')
     const defaultBirthday = new Date('Jan 20 2017 GMT+0');
+
+    // Ungrouped
+    const ungrouped = text('Ungrouped', 'Mumble');
 
     // General
     const name = text('Name', 'Storyteller', GROUP_IDS.GENERAL);
@@ -178,6 +181,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
             <li key={`${item}`}>{item}</li>
           ))}
         </ul>
+        <p>When I'm by myself, I say: "{ungrouped}"</p>
       </div>
     );
   })
@@ -197,15 +201,16 @@ storiesOf('Addons|Knobs.withKnobs', module)
         number: 1,
         string: 'string',
         object: {},
-        array: [],
+        array: [1, 2, 3],
         function: () => {},
       },
       'string'
     );
     const value = m.toString();
+    const type = Array.isArray(m) ? 'array' : typeof m;
     return (
       <pre>
-        the type of {JSON.stringify(value, null, 2)} = {typeof m}
+        the type of {JSON.stringify(value, null, 2)} = {type}
       </pre>
     );
   })

@@ -19,11 +19,7 @@ For example, let's say we want to center a story rendered on the screen. For tha
 const styles = {
   textAlign: 'center',
 };
-const Center = ({ children }) => (
-  <div style={styles}>
-    { children }
-  </div>
-);
+const Center = ({ children }) => <div style={styles}>{children}</div>;
 ```
 
 Then we can use it when writing stories.
@@ -35,12 +31,11 @@ import { action } from '@storybook/addon-actions';
 import Center from './center';
 import Button from './button';
 
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Center>
-      <Button onClick={action('clicked')}>Hello Button</Button>
-    </Center>
-  ));
+storiesOf('Button', module).add('with text', () => (
+  <Center>
+    <Button onClick={action('clicked')}>Hello Button</Button>
+  </Center>
+));
 ```
 
 ### Storybook Decorators
@@ -56,19 +51,17 @@ import Button from './button';
 const styles = {
   textAlign: 'center',
 };
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
-    { storyFn() }
-  </div>
-);
+const CenterDecorator = storyFn => <div style={styles}>{storyFn()}</div>;
 
 storiesOf('Button', module)
   .addDecorator(CenterDecorator)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
-  ))
+  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
   .add('with some emojies', () => (
-    <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
+    <Button onClick={action('clicked')}>
+      <span role="img" aria-label="so cool">
+        😀 😎 👍 💯
+      </span>
+    </Button>
   ));
 ```
 
@@ -85,24 +78,19 @@ import Welcome from './welcome';
 const styles = {
   textAlign: 'center',
 };
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
-    { storyFn() }
-  </div>
-);
+const CenterDecorator = storyFn => <div style={styles}>{storyFn()}</div>;
 addDecorator(CenterDecorator);
 
-storiesOf('Welcome', module)
-  .add('to Storybook', () => (
-    <Welcome showApp={linkTo('Button')}/>
-  ));
+storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
-  ))
+  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
   .add('with some emojies', () => (
-    <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
+    <Button onClick={action('clicked')}>
+      <span role="img" aria-label="so cool">
+        😀 😎 👍 💯
+      </span>
+    </Button>
   ));
 ```
 
@@ -120,6 +108,6 @@ It will allow you to inspect the parameters of any event of your components.
 
 See the following links to learn more about native addons:
 
--   [Using addons](/addons/using-addons)
--   [Addon gallery](/addons/addon-gallery)
--   [Write your own addon](/addons/writing-addons)
+- [Using addons](/addons/using-addons)
+- [Addon gallery](https://storybook.js.org/addons/)
+- [Write your own addon](/addons/writing-addons)

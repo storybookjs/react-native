@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Typography, Form } from '@storybook/components';
+import { Form } from '@storybook/components';
 import BaseButton from '../components/BaseButton';
 import DelayedRender from '../components/DelayedRender';
 import Button from '../components/addon-a11y/Button';
@@ -54,20 +54,33 @@ storiesOf('Addons|A11y/Form', module)
 
 storiesOf('Addons|A11y/Image', module)
   .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
-  .add('Without alt', () => <Typography.Image src={image} />)
-  .add('With alt', () => <Typography.Image src={image} alt={text} />)
-  .add('Presentation', () => <Typography.Image role="presentation" src={image} />);
+  /* eslint-disable jsx-a11y/alt-text */
+  .add('Without alt', () => <img src={image} />)
+  .add('Without alt but unchecked', () => <img src={image} />, {
+    a11y: {
+      config: {
+        disableOtherRules: true,
+        rules: [],
+      },
+      options: {},
+    },
+  })
+  .add('With alt', () => <img src={image} alt={text} />)
+  .add('Presentation', () => <img role="presentation" src={image} />);
 
 storiesOf('Addons|A11y/Typography', module)
   .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
   .add('Correct', () => (
     <Fragment>
-      <Typography.Heading el="h1">{text}</Typography.Heading>
-      <Typography.Text>{text}</Typography.Text>
-      <Typography.Link href={href}>{`${text}...`}</Typography.Link>
+      <h1>{text}</h1>
+      <p>{text}</p>
+      <a href={href}>{`${text}...`}</a>
     </Fragment>
   ))
-  .add('Empty Heading', () => <Typography.Heading level={2} />)
-  .add('Empty Paragraph', () => <Typography.Text />)
-  .add('Empty Link', () => <Typography.Link href={href} />)
-  .add('Link without href', () => <Typography.Link>{`${text}...`}</Typography.Link>);
+  /* eslint-disable jsx-a11y/heading-has-content */
+  .add('Empty Heading', () => <h1 />)
+  .add('Empty Paragraph', () => <p />)
+  /* eslint-disable jsx-a11y/anchor-has-content */
+  .add('Empty Link', () => <a href={href} />)
+  /* eslint-disable jsx-a11y/anchor-is-valid */
+  .add('Link without href', () => <a>{`${text}...`}</a>);

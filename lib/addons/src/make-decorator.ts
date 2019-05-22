@@ -1,13 +1,20 @@
 import deprecate from 'util-deprecate';
 
 export interface StoryContext {
-  story: string;
+  name: string;
   kind: string;
+  parameters: {
+    [key: string]: any;
+  };
 }
 
 export interface WrapperSettings {
-  options: object;
-  parameters: any;
+  options: {
+    [key: string]: any;
+  };
+  parameters: {
+    [key: string]: any;
+  };
 }
 
 export type StoryGetter = (context: StoryContext) => any;
@@ -23,19 +30,19 @@ type MakeDecoratorResult = (...args: any) => any;
 interface MakeDecoratorOptions {
   name: string;
   parameterName: string;
-  allowDeprecatedUsage: boolean;
-  skipIfNoParametersOrOptions: boolean;
+  allowDeprecatedUsage?: boolean;
+  skipIfNoParametersOrOptions?: boolean;
   wrapper: StoryWrapper;
 }
 
-export const makeDecorator: MakeDecoratorResult = ({
+export const makeDecorator = ({
   name,
   parameterName,
   wrapper,
   skipIfNoParametersOrOptions = false,
   allowDeprecatedUsage = false,
-}: MakeDecoratorOptions) => {
-  const decorator: any = (options: object) => (getStory: any, context: any) => {
+}: MakeDecoratorOptions): MakeDecoratorResult => {
+  const decorator: any = (options: object) => (getStory: StoryGetter, context: StoryContext) => {
     const parameters = context.parameters && context.parameters[parameterName];
 
     if (parameters && parameters.disable) {

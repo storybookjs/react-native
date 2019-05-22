@@ -8,5 +8,5 @@ storiesOf('Button', module).add(
   () => <Button onClick={action('button clicked')}>OK</Button>,
   {
     info: { inline: true },
-  },
+  }
 );

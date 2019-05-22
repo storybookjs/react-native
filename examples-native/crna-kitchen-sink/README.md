@@ -4,6 +4,6 @@ This project was bootstrapped wit [Expo](https://github.com/expo/expo-cli) and s
 
 ## Getting started
 
-1. Install dependencies: `yarn install`
-2. Run storybook: `yarn storybook`
+1. Install dependencies: `yarn install` at the root
+2. Run the storybook server: `yarn storybook`
 3. Run the app: `yarn start`

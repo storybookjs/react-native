@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
+const logger = console;
+
 @Component({
   selector: 'storybook-simple-knobs-component',
   template: `
@@ -23,29 +25,37 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/cor
 export class AllKnobsComponent implements OnChanges, OnInit {
   @Input()
   price;
+
   @Input()
   border;
+
   @Input()
   fruit;
+
   @Input()
   name;
+
   @Input()
   items;
+
   @Input()
   today;
+
   @Input()
   stock;
+
   @Input()
   nice;
 
   constructor() {
-    console.log('constructor');
+    logger.debug('constructor');
   }
 
   ngOnInit(): void {
-    console.log('on init, user component');
+    logger.debug('on init, user component');
   }
+
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+    logger.debug(changes);
   }
 }

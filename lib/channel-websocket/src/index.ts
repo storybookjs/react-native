@@ -17,15 +17,15 @@ interface CreateChannelArgs {
 
 export class WebsocketTransport {
   private socket: WebSocket;
+
   private handler: ChannelHandler;
+
   private buffer: string[] = [];
+
   private isReady = false;
 
   constructor({ url, onError }: WebsocketTransportArgs) {
-    this.connect(
-      url,
-      onError
-    );
+    this.connect(url, onError);
   }
 
   setHandler(handler: ChannelHandler) {
@@ -50,7 +50,7 @@ export class WebsocketTransport {
   }
 
   private flush() {
-    const buffer = this.buffer;
+    const { buffer } = this;
     this.buffer = [];
     buffer.forEach(event => this.send(event));
   }

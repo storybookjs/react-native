@@ -30,7 +30,7 @@ With an addon, you can add more functionality to Storybook. Here are a few thing
 - Navigating.
 - Register keyboard shortcuts (coming soon).
 
-With this, you can write some pretty cool addons. Look at our [Addon gallery](/addons/addon-gallery) to have a look at some sample addons.
+With this, you can write some pretty cool addons. Look at our [Addon gallery](https://storybook.js.org/addons/) to have a look at some sample addons.
 
 ## Getting Started
 
@@ -61,10 +61,11 @@ We write an addon that responds to a change in story selection like so:
 // register.js
 
 import React from 'react';
-import { STORY_CHANGED } from '@storybook/core-events';
+import { STORY_RENDERED } from '@storybook/core-events';
 import addons, { types } from '@storybook/addons';
 
 const ADDON_ID = 'myaddon';
+const PARAM_KEY = 'myAddon';
 const PANEL_ID = `${ADDON_ID}/panel`;
 
 class MyPanel extends React.Component {
@@ -73,13 +74,13 @@ class MyPanel extends React.Component {
   componentDidMount() {
     const { api } = this.props;
 
-    api.on(STORY_CHANGED, this.onStoryChange);
+    api.on(STORY_RENDERED, this.onStoryChange);
   }
 
   componentWillUnmount() {
     const { api } = this.props;
 
-    api.off(STORY_CHANGED, this.onStoryChange);
+    api.off(STORY_RENDERED, this.onStoryChange);
   }
 
   onStoryChange = id => {
@@ -102,7 +103,7 @@ class MyPanel extends React.Component {
 }
 
 addons.register(ADDON_ID, api => {
-  const render = ({ active }) => <Panel api={api} active={active} />;
+  const render = ({ active }) => <MyPanel api={api} active={active} />;
   const title = 'My Addon';
 
   addons.add(PANEL_ID, {
@@ -124,6 +125,21 @@ import 'path/to/register.js';
 Now restart/rebuild storybook and the addon should show up!
 When changing stories, the addon's onStoryChange method will be invoked with the new storyId.
 
+#### Note:
+If you get an error similar to:
+
+```
+ModuleParseError: Module parse failed: Unexpected token (92:22)
+You may need an appropriate loader to handle this file type.
+|       var value = this.state.value;
+|       var active = this.props.active;
+>       return active ? <div>{value}</div> : null;
+|     }
+|   }]);
+```
+
+It is likely because you do not have a `.babelrc` file or do not have it configured with the correct presets `{ "presets": ["@babel/preset-env", "@babel/preset-react"] }`
+
 ## A more complex addon
 
 If we want to create a more complex addon, one that wraps the component being rendered for example, there are a few more steps.
@@ -141,7 +157,7 @@ The `@storybook/addons` package contains a `makeDecorator` function which we can
 import React from 'react';
 import addons, { makeDecorator } from '@storybook/addons';
 
-export withFoo = makeDecorator({
+export default makeDecorator({
   name: 'withFoo',
   parameterName: 'foo',
   // This means don't run this decorator if the notes decorator is not set
@@ -184,12 +200,12 @@ class MyPanel extends React.Component {
   componentDidMount() {
     const { api } = this.props;
     api.on('foo/doSomeAction', this.onSomeAction);
-    api.on(STORY_CHANGED, this.onStoryChange);
+    api.on(STORY_RENDERED, this.onStoryChange);
   }
   componentWillUnmount() {
     const { api } = this.props;
     api.off('foo/doSomeAction', this.onSomeAction);
-    api.off(STORY_CHANGED, this.onStoryChange);
+    api.off(STORY_RENDERED, this.onStoryChange);
   }
 
   render() {

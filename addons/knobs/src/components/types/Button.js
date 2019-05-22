@@ -4,7 +4,7 @@ import React from 'react';
 import { Form } from '@storybook/components';
 
 const ButtonType = ({ knob, onClick }) => (
-  <Form.Button type="button" onClick={() => onClick(knob)}>
+  <Form.Button type="button" name={knob.name} onClick={() => onClick(knob)}>
     {knob.name}
   </Form.Button>
 );

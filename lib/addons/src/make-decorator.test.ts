@@ -1,24 +1,23 @@
 import deprecate from 'util-deprecate';
-import { makeDecorator, StoryContext } from './make-decorator';
+import { makeDecorator, StoryContext, StoryGetter } from './make-decorator';
 
-// Copy & paste from internal api: core/client/preview/client_api
-export const defaultDecorateStory = (getStory: Function, decorators: Function[]) =>
+// Copy & paste from internal api: client-api/src/client_api
+type DecoratorFn = (fn: StoryGetter, context: StoryContext) => any;
+
+export const defaultDecorateStory = (getStory: StoryGetter, decorators: DecoratorFn[]) =>
   decorators.reduce(
     (decorated, decorator) => (context: StoryContext) =>
       decorator(() => decorated(context), context),
     getStory
   );
 
-jest.mock('util-deprecate');
-let deprecatedFns: any[] = [];
-(deprecate as any).mockImplementation((fn: (...args: any) => any, warning: string) => {
-  const deprecatedFn = jest.fn(fn);
-  deprecatedFns.push({
-    deprecatedFn,
-    warning,
-  });
-  return deprecatedFn;
-});
+jest.mock('util-deprecate', () => jest.fn(fn => jest.fn((...a) => fn(...a))));
+
+const baseContext = {
+  name: '',
+  kind: '',
+  parameters: {},
+};
 
 describe('makeDecorator', () => {
   it('returns a decorator that passes parameters on the parameters argument', () => {
@@ -27,7 +26,7 @@ describe('makeDecorator', () => {
     const story = jest.fn();
     const decoratedStory = defaultDecorateStory(story, [decorator]);
 
-    const context = { parameters: { test: 'test-val' } };
+    const context = { kind: '', name: '', parameters: { test: 'test-val' } };
     decoratedStory(context);
 
     expect(wrapper).toHaveBeenCalledWith(expect.any(Function), context, { parameters: 'test-val' });
@@ -40,7 +39,7 @@ describe('makeDecorator', () => {
     const options = 'test-val';
     const decoratedStory = defaultDecorateStory(story, [decorator(options)]);
 
-    const context = {};
+    const context = { ...baseContext };
     decoratedStory(context);
 
     expect(wrapper).toHaveBeenCalledWith(expect.any(Function), context, { options: 'test-val' });
@@ -53,7 +52,7 @@ describe('makeDecorator', () => {
     const options = 'test-val';
     const decoratedStory = defaultDecorateStory(story, [decorator(options)]);
 
-    const context = { parameters: { test: 'test-val' } };
+    const context = { ...baseContext, parameters: { test: 'test-val' } };
     decoratedStory(context);
 
     expect(wrapper).toHaveBeenCalledWith(expect.any(Function), context, {
@@ -68,7 +67,7 @@ describe('makeDecorator', () => {
     const story = jest.fn();
     const decoratedStory = defaultDecorateStory(story, [decorator]);
 
-    const context = {};
+    const context = { ...baseContext };
     decoratedStory(context);
 
     expect(wrapper).toHaveBeenCalledWith(expect.any(Function), context, {});
@@ -85,7 +84,7 @@ describe('makeDecorator', () => {
     const story = jest.fn();
     const decoratedStory = defaultDecorateStory(story, [decorator]);
 
-    const context = {};
+    const context = { ...baseContext };
     decoratedStory(context);
 
     expect(wrapper).not.toHaveBeenCalled();
@@ -103,7 +102,7 @@ describe('makeDecorator', () => {
     const story = jest.fn();
     const decoratedStory = defaultDecorateStory(story, [decorator]);
 
-    const context = { disable: true };
+    const context = { ...baseContext, parameters: { test: { disable: true } } };
     decoratedStory(context);
 
     expect(wrapper).not.toHaveBeenCalled();
@@ -111,7 +110,6 @@ describe('makeDecorator', () => {
   });
 
   it('passes options added at story time, but with a deprecation warning, if allowed', () => {
-    deprecatedFns = [];
     const wrapper = jest.fn();
     const decorator = makeDecorator({
       wrapper,
@@ -122,16 +120,20 @@ describe('makeDecorator', () => {
     const options = 'test-val';
     const story = jest.fn();
     const decoratedStory = decorator(options)(story);
-    expect(deprecatedFns).toHaveLength(1);
-    expect(deprecatedFns[0].warning).toMatch('addDecorator(test)');
+    expect(deprecate).toHaveBeenCalledTimes(1);
+    expect(deprecate.mock.calls[0]).toEqual([
+      expect.any(Function),
+      expect.stringContaining(
+        `instead use addDecorator(test) and pass options with the 'test' parameter`
+      ),
+    ]);
 
-    const context = {};
+    const context = { ...baseContext };
     decoratedStory(context);
 
     expect(wrapper).toHaveBeenCalledWith(expect.any(Function), context, {
       options: 'test-val',
     });
-    expect(deprecatedFns[0].deprecatedFn).toHaveBeenCalled();
   });
 
   it('throws if options are added at storytime, if not allowed', () => {

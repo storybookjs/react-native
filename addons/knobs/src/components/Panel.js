@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
@@ -6,7 +6,14 @@ import { styled } from '@storybook/theming';
 import copy from 'copy-to-clipboard';
 
 import { STORY_CHANGED } from '@storybook/core-events';
-import { Placeholder, TabWrapper, TabsState, ActionBar, ActionButton } from '@storybook/components';
+import {
+  Placeholder,
+  TabWrapper,
+  TabsState,
+  ActionBar,
+  Link,
+  ScrollArea,
+} from '@storybook/components';
 import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
 import Types from './types';
@@ -14,11 +21,14 @@ import PropForm from './PropForm';
 
 const getTimestamp = () => +new Date();
 
-const DEFAULT_GROUP_ID = 'ALL';
+export const DEFAULT_GROUP_ID = 'Other';
 
-const PanelWrapper = styled.div({
+const PanelWrapper = styled(({ children, className }) => (
+  <ScrollArea horizontal vertical className={className}>
+    {children}
+  </ScrollArea>
+))({
   height: '100%',
-  overflow: 'auto',
   width: '100%',
 });
 
@@ -36,9 +46,9 @@ export default class KnobPanel extends PureComponent {
 
   componentDidMount() {
     this.mounted = true;
-    const { channel, api } = this.props;
-    channel.on(SET, this.setKnobs);
-    channel.on(SET_OPTIONS, this.setOptions);
+    const { api } = this.props;
+    api.on(SET, this.setKnobs);
+    api.on(SET_OPTIONS, this.setOptions);
 
     this.stopListeningOnStory = api.on(STORY_CHANGED, () => {
       if (this.mounted) {
@@ -50,9 +60,9 @@ export default class KnobPanel extends PureComponent {
 
   componentWillUnmount() {
     this.mounted = false;
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.removeListener(SET, this.setKnobs);
+    api.off(SET, this.setKnobs);
     this.stopListeningOnStory();
   }
 
@@ -62,7 +72,7 @@ export default class KnobPanel extends PureComponent {
 
   setKnobs = ({ knobs, timestamp }) => {
     const queryParams = {};
-    const { api, channel } = this.props;
+    const { api } = this.props;
 
     if (!this.options.timestamps || !timestamp || this.lastEdit <= timestamp) {
       Object.keys(knobs).forEach(name => {
@@ -70,15 +80,16 @@ export default class KnobPanel extends PureComponent {
         // For the first time, get values from the URL and set them.
         if (!this.loadedFromUrl) {
           const urlValue = api.getQueryParam(`knob-${name}`);
+
+          // If the knob value present in url
           if (urlValue !== undefined) {
-            // If the knob value present in url
-            knob.value = Types[knob.type].deserialize(urlValue);
-            channel.emit(CHANGE, knob);
+            const value = Types[knob.type].deserialize(urlValue);
+            knob.value = value;
+            queryParams[`knob-${name}`] = Types[knob.type].serialize(value);
+
+            api.emit(CHANGE, knob);
           }
         }
-
-        // set all knobsquery params to be deleted from URL
-        queryParams[`knob-${name}`] = null;
       });
 
       api.setQueryParams(queryParams);
@@ -89,9 +100,9 @@ export default class KnobPanel extends PureComponent {
   };
 
   reset = () => {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.emit(RESET);
+    api.emit(RESET);
   };
 
   copy = () => {
@@ -109,9 +120,9 @@ export default class KnobPanel extends PureComponent {
   };
 
   emitChange = changedKnob => {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.emit(CHANGE, changedKnob);
+    api.emit(CHANGE, changedKnob);
   };
 
   handleChange = changedKnob => {
@@ -128,9 +139,9 @@ export default class KnobPanel extends PureComponent {
   };
 
   handleClick = knob => {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.emit(CLICK, knob);
+    api.emit(CLICK, knob);
   };
 
   render() {
@@ -169,32 +180,62 @@ export default class KnobPanel extends PureComponent {
     const knobsArray = knobKeysArray.map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
-      return <Placeholder>NO KNOBS</Placeholder>;
+      return (
+        <Placeholder>
+          <Fragment>No knobs found</Fragment>
+          <Fragment>
+            Learn how to{' '}
+            <Link
+              href="https://github.com/storybooks/storybook/tree/master/addons/knobs"
+              target="_blank"
+              withArrow
+            >
+              dynamically interact with components
+            </Link>
+          </Fragment>
+        </Placeholder>
+      );
     }
 
-    const entries = Object.entries(groups);
+    // Always sort DEFAULT_GROUP_ID (ungrouped) tab last without changing the remaining tabs
+    const sortEntries = g => {
+      const unsortedKeys = Object.keys(g);
+      if (unsortedKeys.indexOf(DEFAULT_GROUP_ID) !== -1) {
+        const sortedKeys = unsortedKeys.filter(key => key !== DEFAULT_GROUP_ID);
+        sortedKeys.push(DEFAULT_GROUP_ID);
+        return sortedKeys.map(key => [key, g[key]]);
+      }
+      return Object.entries(g);
+    };
+
+    const entries = sortEntries(groups);
+
     return (
-      <PanelWrapper>
-        {entries.length > 1 ? (
-          <TabsState>
-            {entries.map(([k, v]) => (
-              <div id={k} key={k} title={v.title}>
-                {v.render}
-              </div>
-            ))}
-          </TabsState>
-        ) : (
-          <PropForm
-            knobs={knobsArray}
-            onFieldChange={this.handleChange}
-            onFieldClick={this.handleClick}
-          />
-        )}
-        <ActionBar>
-          <ActionButton onClick={this.copy}>COPY</ActionButton>
-          <ActionButton onClick={this.reset}>RESET</ActionButton>
-        </ActionBar>
-      </PanelWrapper>
+      <Fragment>
+        <PanelWrapper>
+          {entries.length > 1 ? (
+            <TabsState>
+              {entries.map(([k, v]) => (
+                <div id={k} key={k} title={v.title}>
+                  {v.render}
+                </div>
+              ))}
+            </TabsState>
+          ) : (
+            <PropForm
+              knobs={knobsArray}
+              onFieldChange={this.handleChange}
+              onFieldClick={this.handleClick}
+            />
+          )}
+        </PanelWrapper>
+        <ActionBar
+          actionItems={[
+            { title: 'Copy', onClick: this.copy },
+            { title: 'Reset', onClick: this.reset },
+          ]}
+        />
+      </Fragment>
     );
   }
 }
@@ -202,11 +243,6 @@ export default class KnobPanel extends PureComponent {
 KnobPanel.propTypes = {
   active: PropTypes.bool.isRequired,
   onReset: PropTypes.object, // eslint-disable-line
-  channel: PropTypes.shape({
-    emit: PropTypes.func,
-    on: PropTypes.func,
-    removeListener: PropTypes.func,
-  }).isRequired,
   api: PropTypes.shape({
     on: PropTypes.func,
     getQueryParam: PropTypes.func,

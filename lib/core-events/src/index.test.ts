@@ -1,6 +1,6 @@
+/* eslint-disable import/no-duplicates */
 import * as EventsPackageExport from '.';
-import EventsDefaultExport from '.';
-import { CHANNEL_CREATED } from '.';
+import EventsDefaultExport, { CHANNEL_CREATED } from './index';
 
 describe('Core Events', () => {
   it('Should export the module as a namespace', () => {

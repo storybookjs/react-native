@@ -1,6 +1,4 @@
 import { TestBed, async } from '@angular/core/testing';
-import 'jasmine';
-
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {

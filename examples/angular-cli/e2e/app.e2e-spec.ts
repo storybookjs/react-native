@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { AppPage } from './app.po';
 import 'jasmine';
 
@@ -10,6 +11,6 @@ describe('ng5test App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(<any>page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText() as any).toEqual('Welcome to app!');
   });
 });

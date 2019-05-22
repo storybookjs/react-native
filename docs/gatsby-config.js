@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/docs',
   siteMetadata: {
     siteTitle: 'Storybook',
     baseColor: '#e64074',
@@ -7,21 +8,26 @@ module.exports = {
     docSections: {
       basics: [
         '/basics/introduction/',
-        '/basics/quick-start-guide/',
-        '/basics/slow-start-guide/',
-        '/basics/guide-react/',
-        '/basics/guide-react-native/',
-        '/basics/guide-vue/',
-        '/basics/guide-angular/',
-        '/basics/guide-mithril/',
-        '/basics/guide-ember/',
         '/basics/writing-stories/',
         '/basics/exporting-storybook/',
         '/basics/faq/',
-        '/basics/community/',
         '/basics/live-examples/',
       ],
+      guides: [
+        '/guides/quick-start-guide/',
+        '/guides/slow-start-guide/',
+        '/guides/guide-html/',
+        '/guides/guide-react/',
+        '/guides/guide-react-native/',
+        '/guides/guide-vue/',
+        '/guides/guide-angular/',
+        '/guides/guide-mithril/',
+        '/guides/guide-ember/',
+        '/guides/guide-riot/',
+        '/guides/guide-svelte/',
+      ],
       configurations: [
+        '/configurations/options-parameter/',
         '/configurations/default-config/',
         '/configurations/custom-webpack-config/',
         '/configurations/custom-babel-config/',
@@ -43,7 +49,6 @@ module.exports = {
       addons: [
         '/addons/introduction/',
         '/addons/using-addons/',
-        '/addons/addon-gallery/',
         '/addons/writing-addons/',
         '/addons/api/',
       ],
@@ -56,6 +61,12 @@ module.exports = {
       options: {
         name: 'pages',
         path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        repoUrl: 'https://github.com/storybooks/storybook',
       },
     },
     {
@@ -75,5 +86,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-segment',
+      options: {
+        writeKey: 'AvvBObOmHaEMqfub8JJUXq5umjsuaqS8',
+      },
+    },
   ],
 };

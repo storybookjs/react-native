@@ -21,7 +21,13 @@ class TextType extends React.Component {
     const { knob } = this.props;
 
     return (
-      <Form.Textarea id={knob.name} value={knob.value} onChange={this.handleChange} size="flex" />
+      <Form.Textarea
+        id={knob.name}
+        name={knob.name}
+        value={knob.value}
+        onChange={this.handleChange}
+        size="flex"
+      />
     );
   }
 }

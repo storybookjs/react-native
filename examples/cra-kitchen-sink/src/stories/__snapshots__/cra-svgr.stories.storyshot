@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Storyshots CRA Svgr 1`] = `
-<svg>
-  logo.svg
-</svg>
-`;

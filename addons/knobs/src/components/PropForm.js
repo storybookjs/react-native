@@ -9,7 +9,7 @@ const InvalidType = () => <span>Invalid Type</span>;
 export default class PropForm extends Component {
   makeChangeHandler(name, type) {
     const { onFieldChange } = this.props;
-    return value => {
+    return (value = '') => {
       const change = { name, type, value };
 
       onFieldChange(change);

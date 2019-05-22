@@ -9,7 +9,7 @@ exports[`Storyshots Addon|Knobs All knobs 1`] = `
   <storybook-simple-knobs-component>
     <div
       ng-reflect-ng-style="[object Object]"
-      style="border-radius: 8px;"
+      style="border: 2px dotted deeppink; border-radius: 8px;"
     >
       <h1>
         My name is Jane,

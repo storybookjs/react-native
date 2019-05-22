@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
+    "paths": { "*": ["types/*"] },
     "target": "es5",
     "module": "esnext",
     "lib" : ["esnext", "dom"],
@@ -12,10 +14,12 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "isolatedModules": true
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "src/setupTests.js"
   ]
 }

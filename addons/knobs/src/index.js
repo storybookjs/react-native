@@ -69,8 +69,8 @@ export function button(name, callback, groupId) {
   return manager.knob(name, { type: 'button', callback, hideLabel: true, groupId });
 }
 
-export function files(name, accept, value = []) {
-  return manager.knob(name, { type: 'files', accept, value });
+export function files(name, accept, value = [], groupId) {
+  return manager.knob(name, { type: 'files', accept, value, groupId });
 }
 
 export function optionsKnob(name, valuesObj, value, optionsObj, groupId) {
@@ -99,6 +99,8 @@ export const withKnobs = makeDecorator({
     return getStory(context);
   },
 });
+
+export * from './shared';
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();

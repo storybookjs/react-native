@@ -36,9 +36,16 @@ cd run
 for dir in *
 do
   cd $dir
+  echo "Running storybook-cli in $dir"
 
-  # run @storybook/cli
-  ../../../bin/index.js init --skip-install
+  if [ $dir == *"native"* ]
+  then
+    # run @storybook/cli
+    ../../../bin/index.js init --skip-install --yes --install-server
+  else
+    # run @storybook/cli
+    ../../../bin/index.js init --skip-install --yes
+  fi
 
   cd ..
 done
@@ -47,6 +54,7 @@ cd ..
 
 # install all the dependencies in a single run
 cd ../../..
+echo "Running bootstrap"
 yarn install --non-interactive --silent --pure-lockfile
 cd ${test_root}/run
 

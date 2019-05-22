@@ -1,6 +1,6 @@
 {
   "name": "@storybook/client-logger",
-  "version": "5.0.0-alpha.7",
+  "version": "5.1.0-rc.0",
   "description": "",
   "keywords": [
     "storybook"
@@ -11,13 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "lib/client-logger"
   },
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "core-js": "^3.0.1"
   },
   "publishConfig": {
     "access": "public"

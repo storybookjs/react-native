@@ -1,10 +1,13 @@
 /** @jsx h */
-import { configure } from '@storybook/preact';
-import { setOptions } from '@storybook/addon-options';
+import { addParameters, configure, addDecorator } from '@storybook/preact';
+import { withA11y } from '@storybook/addon-a11y';
 
-setOptions({
-  hierarchySeparator: /\/|\./,
-  hierarchyRootSeparator: /\|/,
+addDecorator(withA11y);
+addParameters({
+  options: {
+    hierarchySeparator: /\/|\./,
+    hierarchyRootSeparator: /\|/,
+  },
 });
 
 const loadStories = () => {

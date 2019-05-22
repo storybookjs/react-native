@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import npmLog from 'npmlog';
 import prettyTime from 'pretty-hrtime';
 import chalk from 'chalk';
@@ -20,6 +21,9 @@ export const logger = {
   error: (message: string): void => npmLog.error('', message),
   trace: ({ message, time }: { message: string; time: [number, number] }): void =>
     npmLog.info('', `${message} (${colors.purple(prettyTime(time))})`),
+  setLevel: (level: string = 'info'): void => {
+    npmLog.level = level;
+  },
 };
 
 export { npmLog as instance };

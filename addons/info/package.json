@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "5.0.0-alpha.7",
+  "version": "5.1.0-rc.0",
   "description": "A Storybook addon to show additional information for your stories.",
   "keywords": [
     "addon",
@@ -12,7 +12,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git",
+    "directory": "addons/info"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -21,24 +22,24 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.0.0-alpha.7",
-    "@storybook/client-logger": "5.0.0-alpha.7",
-    "@storybook/components": "5.0.0-alpha.7",
-    "@storybook/theming": "5.0.0-alpha.7",
-    "core-js": "^2.6.2",
+    "@storybook/addons": "5.1.0-rc.0",
+    "@storybook/client-logger": "5.1.0-rc.0",
+    "@storybook/components": "5.1.0-rc.0",
+    "@storybook/theming": "5.1.0-rc.0",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "marksy": "^6.1.0",
-    "nested-object-assign": "^1.0.1",
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-addons-create-fragment": "^15.5.3",
+    "marksy": "^7.0.0",
+    "nested-object-assign": "^1.0.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-addons-create-fragment": "^15.6.2",
     "react-element-to-jsx-string": "^14.0.2",
-    "react-is": "^16.7.0",
+    "react-is": "^16.8.4",
     "react-lifecycles-compat": "^3.0.4",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "react-test-renderer": "^16.7.0"
+    "react-test-renderer": "^16.8.4"
   },
   "peerDependencies": {
     "react": "*"

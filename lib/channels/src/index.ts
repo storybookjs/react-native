@@ -1,7 +1,7 @@
 export type ChannelHandler = (event: ChannelEvent) => void;
 
 export interface ChannelTransport {
-  send(event: ChannelEvent): void;
+  send(event: ChannelEvent, options?: any): void;
   setHandler(handler: ChannelHandler): void;
 }
 
@@ -37,7 +37,9 @@ export class Channel {
   readonly isAsync: boolean;
 
   private sender = generateRandomId();
+
   private events: EventsKeyValue = {};
+
   private readonly transport: ChannelTransport;
 
   constructor({ transport, async = false }: ChannelArgs = {}) {
@@ -63,12 +65,17 @@ export class Channel {
     this.addListener(eventName, peerListener);
   }
 
-  emit(eventName: string, ...args: any[]) {
+  emit(eventName: string, ...args: any) {
     const event: ChannelEvent = { type: eventName, args, from: this.sender };
+    let options = {};
+    if (args.length >= 1 && args[0] && args[0].options) {
+      // eslint-disable-next-line prefer-destructuring
+      options = args[0].options;
+    }
 
     const handler = () => {
       if (this.transport) {
-        this.transport.send(event);
+        this.transport.send(event, options);
       }
       this.handleEvent(event, true);
     };
@@ -92,7 +99,7 @@ export class Channel {
 
   listeners(eventName: string): Listener[] | undefined {
     const listeners = this.events[eventName];
-    return listeners ? listeners : undefined;
+    return listeners || undefined;
   }
 
   once(eventName: string, listener: Listener) {

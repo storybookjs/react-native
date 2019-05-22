@@ -61,6 +61,7 @@ class NumberType extends React.Component {
         <RangeInput
           value={knob.value}
           type="range"
+          name={knob.name}
           min={knob.min}
           max={knob.max}
           step={knob.step}
@@ -72,6 +73,7 @@ class NumberType extends React.Component {
       <Form.Input
         value={knob.value}
         type="number"
+        name={knob.name}
         min={knob.min}
         max={knob.max}
         step={knob.step}

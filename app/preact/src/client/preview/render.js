@@ -1,4 +1,3 @@
-/* eslint-disable-next-line no-unused-vars */
 import { h, render } from 'preact';
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
@@ -6,8 +5,15 @@ import { stripIndents } from 'common-tags';
 let renderedStory;
 const rootElement = document ? document.getElementById('root') : null;
 
-export default function renderMain({ story, selectedKind, selectedStory, showMain, showError }) {
-  const element = story();
+export default function renderMain({
+  storyFn,
+  selectedKind,
+  selectedStory,
+  showMain,
+  showError,
+  // forceRender,
+}) {
+  const element = storyFn();
 
   if (!element) {
     showError({

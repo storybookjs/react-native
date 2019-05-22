@@ -1,13 +1,14 @@
-import { configure, addDecorator } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { withA11y } from '@storybook/addon-a11y';
 
-addDecorator(
-  withOptions({
-    name: 'CRA TypeScript Kitchen Sink',
-    url: 'https://github.com/storybooks/storybook/tree/master/examples/cra-ts-kitchen-sink',
-  })
-);
+addDecorator(withA11y);
+addParameters({
+  options: {
+    brandTitle: 'CRA TypeScript Kitchen Sink',
+    brandUrl: 'https://github.com/storybooks/storybook/tree/master/examples/cra-ts-kitchen-sink',
+  },
+});
 addDecorator(withInfo());
 
 function loadStories() {

@@ -1,9 +1,11 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable lines-between-class-members */
 import { KeyCode } from './keyCodes';
 
 /**
  * keyboardEvent.code
  */
-export const enum ScanCode {
+export enum ScanCode {
   None,
 
   Hyper,
@@ -229,7 +231,13 @@ export class ScanCodeBinding {
   public readonly metaKey: boolean;
   public readonly scanCode: ScanCode;
 
-  constructor(ctrlKey: boolean, shiftKey: boolean, altKey: boolean, metaKey: boolean, scanCode: ScanCode) {
+  constructor(
+    ctrlKey: boolean,
+    shiftKey: boolean,
+    altKey: boolean,
+    metaKey: boolean,
+    scanCode: ScanCode
+  ) {
     this.ctrlKey = ctrlKey;
     this.shiftKey = shiftKey;
     this.altKey = altKey;
@@ -252,15 +260,19 @@ export class ScanCodeBinding {
    */
   public isDuplicateModifierCase(): boolean {
     return (
-      (this.ctrlKey && (this.scanCode === ScanCode.ControlLeft || this.scanCode === ScanCode.ControlRight)) ||
-      (this.shiftKey && (this.scanCode === ScanCode.ShiftLeft || this.scanCode === ScanCode.ShiftRight)) ||
-      (this.altKey && (this.scanCode === ScanCode.AltLeft || this.scanCode === ScanCode.AltRight)) ||
-      (this.metaKey && (this.scanCode === ScanCode.MetaLeft || this.scanCode === ScanCode.MetaRight))
+      (this.ctrlKey &&
+        (this.scanCode === ScanCode.ControlLeft || this.scanCode === ScanCode.ControlRight)) ||
+      (this.shiftKey &&
+        (this.scanCode === ScanCode.ShiftLeft || this.scanCode === ScanCode.ShiftRight)) ||
+      (this.altKey &&
+        (this.scanCode === ScanCode.AltLeft || this.scanCode === ScanCode.AltRight)) ||
+      (this.metaKey &&
+        (this.scanCode === ScanCode.MetaLeft || this.scanCode === ScanCode.MetaRight))
     );
   }
 }
 
-(function() {
+(() => {
   function d(intScanCode: ScanCode, strScanCode: string): void {
     scanCodeIntToStr[intScanCode] = strScanCode;
     scanCodeStrToInt[strScanCode] = intScanCode;
@@ -461,7 +473,7 @@ export class ScanCodeBinding {
   d(ScanCode.MailSend, 'MailSend');
 })();
 
-(function() {
+(() => {
   for (let i = 0; i <= ScanCode.MAX_VALUE; i++) {
     IMMUTABLE_CODE_TO_KEYCODE[i] = -1;
   }

@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Basics|Spaced col 1`] = `
+.emotion-0 {
+  background: silver;
+  display: inline-block;
+  padding: 20px;
+}
+
+.emotion-4 {
+  display: inline-block;
+  vertical-align: inherit;
+}
+
+.emotion-4 > * {
+  margin-left: 10px;
+  vertical-align: inherit;
+}
+
+.emotion-4 > *:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-1 {
+  background: hotpink;
+  display: inline-block;
+  padding: 20px;
+}
+
+<div>
+  <span
+    class="emotion-0"
+    color="silver"
+  />
+  <div
+    class="emotion-4"
+  >
+    <span
+      class="emotion-1"
+    />
+    <span
+      class="emotion-1"
+    />
+    <span
+      class="emotion-1"
+    />
+  </div>
+  <span
+    class="emotion-0"
+    color="silver"
+  />
+</div>
+`;
+
+exports[`Storyshots Basics|Spaced col outer 1`] = `
+.emotion-0 {
+  background: silver;
+  display: inline-block;
+  padding: 20px;
+}
+
+.emotion-1 {
+  background: hotpink;
+  display: inline-block;
+  padding: 20px;
+}
+
+.emotion-4 {
+  display: inline-block;
+  vertical-align: inherit;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.emotion-4 > * {
+  margin-left: 10px;
+  vertical-align: inherit;
+}
+
+.emotion-4 > *:first-of-type {
+  margin-left: 0;
+}
+
+<div>
+  <span
+    class="emotion-0"
+    color="silver"
+  />
+  <div
+    class="emotion-4"
+  >
+    <span
+      class="emotion-1"
+    />
+    <span
+      class="emotion-1"
+    />
+    <span
+      class="emotion-1"
+    />
+  </div>
+  <span
+    class="emotion-0"
+    color="silver"
+  />
+</div>
+`;
+
+exports[`Storyshots Basics|Spaced row 1`] = `
+.emotion-4 > * {
+  margin-top: 10px;
+}
+
+.emotion-4 > *:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+.emotion-1 {
+  background: hotpink;
+  padding: 20px;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    color="silver"
+  />
+  <div
+    class="emotion-4"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-1"
+    />
+  </div>
+  <div
+    class="emotion-0"
+    color="silver"
+  />
+</div>
+`;
+
+exports[`Storyshots Basics|Spaced row multiply 1`] = `
+.emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+.emotion-1 {
+  background: hotpink;
+  padding: 20px;
+}
+
+.emotion-4 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.emotion-4 > * {
+  margin-top: 30px;
+}
+
+.emotion-4 > *:first-of-type {
+  margin-top: 0;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    color="silver"
+  />
+  <div
+    class="emotion-4"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-1"
+    />
+  </div>
+  <div
+    class="emotion-0"
+    color="silver"
+  />
+</div>
+`;
+
+exports[`Storyshots Basics|Spaced row outer 1`] = `
+.emotion-0 {
+  background: silver;
+  padding: 20px;
+}
+
+.emotion-1 {
+  background: hotpink;
+  padding: 20px;
+}
+
+.emotion-4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.emotion-4 > * {
+  margin-top: 10px;
+}
+
+.emotion-4 > *:first-of-type {
+  margin-top: 0;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    color="silver"
+  />
+  <div
+    class="emotion-4"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-1"
+    />
+  </div>
+  <div
+    class="emotion-0"
+    color="silver"
+  />
+</div>
+`;

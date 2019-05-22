@@ -1,10 +1,19 @@
+#NOTE: Options Addon is deprecated as of Storybook 5.0
+
+Options are now configured using the [`options` parameter](../../docs/src/pages/configurations/options-parameter/index.md) which is built into Storybook.
+
+- Global options: `addParameters({ options: { ... }})` and no addon is needed.
+- Story options: `storiesOf(...).add('name', storyFn, { options: { ... }})`
+
+See the [migration docs](../../MIGRATION.md#options-addon-deprecated) for what's changed.
+
 # Storybook Options Addon
 
 The Options addon can be used to (re-)configure the [Storybook](https://storybook.js.org) UI at runtime.
 
 [Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Screenshot](docs/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/storybooks/storybook/HEAD/addons/options/docs/screenshot.png)
 
 ## Getting Started
 
@@ -20,7 +29,7 @@ Add this line to your `addons.js` file (create this file inside your storybook c
 import '@storybook/addon-options/register';
 ```
 
-###Set options globally
+### Set options globally
 
 Import and use the `addParameters` + `options`-key in your `config.js` file.
 
@@ -103,6 +112,11 @@ addParameters({
      * @type {Boolean}
      */
     enableShortcuts: false, // true by default
+    /**
+     * show/hide tool bar
+     * @type {Boolean}
+     */
+    isToolshown: false, // true by default
   },
 });
 
@@ -128,13 +142,13 @@ storiesOf('Addons|Custom options', module)
   );
 ```
 
-## Typescript
+## TypeScript
 
 To install type definitions: `yarn add @types/storybook__addon-options --dev`
 
 Make sure you also have the type definitions installed for the following libs:
 
-- node
-- react
- 
-You can install them using `yarn add @types/node @types/react --dev`, assuming you are using Typescript >2.0.
+- Node
+- React
+
+You can install them using `yarn add @types/node @types/react --dev`, assuming you are using TypeScript >2.0.
