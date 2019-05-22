@@ -75,11 +75,6 @@ addParameters({
      */
     addonPanelInRight: false,
     /**
-     * sorts stories
-     * @type {Boolean}
-     */
-    sortStoriesByKind: false,
-    /**
      * regex for finding the hierarchy separator
      * @example:
      *   null - turn off hierarchy
