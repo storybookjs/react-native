@@ -15,9 +15,22 @@ Each configuration has a similar signature, accepting a base configuration objec
 
 ```js
 export async function webpack(baseConfig, options) {
-  // modify or replace config
-  config.module.rules.push(/* some loader */);
-  return config;
+  // Modify or replace config. Mutating the original reference object can cause unexpected bugs,
+  // so in this example we replace.
+  const { module = {} } = baseConfig;
+
+  return {
+    ...baseConfig,
+    module: {
+      ...module,
+      rules: [
+        ...(module.rules || []),
+        {
+          /* some new loader */
+        },
+      ],
+    },
+  };
 }
 ```
 
@@ -86,7 +99,7 @@ import '@storybook/addon-storysource/register';
 
 ### Entries
 
-FIXME: what does this do?
+Entries are the place to register entry points for the preview. For example it could be used to make a basic configure-storybook preset that loads all the `*.stories.js` files into SB, instead of forcing people to copy-paste the same thing everywhere.
 
 ## Advanced Configuration
 
