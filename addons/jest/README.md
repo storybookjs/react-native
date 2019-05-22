@@ -193,7 +193,7 @@ storiesOf('MyComponent', module)
 
 ## Contributing
 
-Every ideas and contributions are welcomed.
+All ideas and contributions are welcomed.
 
 ## Licence
 
