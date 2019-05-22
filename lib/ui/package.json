@@ -47,6 +47,7 @@
     "react-hotkeys": "2.0.0-pre4",
     "react-resize-detector": "^4.0.5",
     "recompose": "^0.30.0",
+    "resolve-from": "^5.0.0",
     "semver": "^6.0.0",
     "store2": "^2.7.1",
     "telejson": "^2.2.1",

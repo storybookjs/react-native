@@ -29,11 +29,10 @@
     "deep-object-diff": "^1.1.0",
     "emotion-theming": "^10.0.9",
     "global": "^4.3.2",
-    "lodash.isequal": "^4.5.0",
-    "lodash.mergewith": "^4.6.1",
     "memoizerific": "^1.11.3",
     "polished": "^3.3.1",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "resolve-from": "^5.0.0"
   },
   "peerDependencies": {
     "react": "*",
