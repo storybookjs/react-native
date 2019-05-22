@@ -26855,17 +26855,17 @@ simple-swizzle@^0.2.2:
     is-arrayish "^0.3.1"
 
 simplebar-react@^1.0.0-alpha.6:
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/simplebar-react/-/simplebar-react-1.0.0-alpha.9.tgz#06d774b425c6ea611e8738773abe88bcbcf025c6"
-  integrity sha512-xP6/7Rpxz6z0o3PoF72BoavxJ9vF0+Br60AFGN6G4Tj4Y5eGbU8JnCcgdeY+JvWGqs6YnRMAqKr+vkIaWiPmPg==
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/simplebar-react/-/simplebar-react-1.0.0.tgz#8fe914d7f980dd077cc9dfd3e22ec5596f006b8d"
+  integrity sha512-FbM2yn7D/UzrJGCY60CKeLkZ3gOs7tYr7KmyamteUt9SKh2x4yW5KVM4IQBw86x4ofRoD6FT19MWmfMKv4Onhw==
   dependencies:
     prop-types "^15.6.1"
-    simplebar "^4.0.0-alpha.9"
+    simplebar "^4.0.0"
 
-simplebar@^4.0.0-alpha.9:
-  version "4.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/simplebar/-/simplebar-4.0.0-alpha.9.tgz#e6cf24a2e613abbef952e962680ed2429d421617"
-  integrity sha512-WGscL/Lsrfk0uTuG1Pyl/jV6ZkZh0A70atCxcVfvS81aGZdnRjQfHntQPT/nSr+8jxv6YSib5F+FnPCGVw9raw==
+simplebar@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/simplebar/-/simplebar-4.0.0.tgz#7f1b9e735ec94a58f887d4803f6b15abf401b6b5"
+  integrity sha512-td6vJVhqIXfa3JgNZR5OgETPLfmHNSSpt+OXIbk6WH/nOrUtX3Qcyio30+5rdxxAV/61+F5eJ4jJV4Ek7/KJYQ==
   dependencies:
     can-use-dom "^0.1.0"
     core-js "^3.0.1"
