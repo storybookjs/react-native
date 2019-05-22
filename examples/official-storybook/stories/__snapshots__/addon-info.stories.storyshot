@@ -555,6 +555,128 @@ exports[`Storyshots Addons|Info/ForwardRef Displays forwarded ref components cor
               </tbody>
             </table>
           </div>
+          <div>
+            <h3
+              style="margin:20px 0 0 0"
+            >
+              "Unknown" Component
+            </h3>
+            <table
+              class="info-table"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                  <th>
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    <span>
+                      bool
+                    </span>
+                  </td>
+                  <td>
+                    -
+                  </td>
+                  <td>
+                    <span>
+                      false
+                    </span>
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    label
+                  </td>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    <span>
+                      string
+                    </span>
+                  </td>
+                  <td>
+                    yes
+                  </td>
+                  <td>
+                    -
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    <span>
+                      func
+                    </span>
+                  </td>
+                  <td>
+                    -
+                  </td>
+                  <td>
+                    <span>
+                      onClick
+                    </span>
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    style
+                  </td>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    <span>
+                      other
+                    </span>
+                  </td>
+                  <td>
+                    -
+                  </td>
+                  <td>
+                    <span>
+                      {}
+                    </span>
+                  </td>
+                  <td />
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -674,6 +796,128 @@ exports[`Storyshots Addons|Info/ForwardRef Uses forwardRef displayName if availa
               style="margin:20px 0 0 0"
             >
               "BaseButton" Component
+            </h3>
+            <table
+              class="info-table"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                  <th>
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    <span>
+                      bool
+                    </span>
+                  </td>
+                  <td>
+                    -
+                  </td>
+                  <td>
+                    <span>
+                      false
+                    </span>
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    label
+                  </td>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    <span>
+                      string
+                    </span>
+                  </td>
+                  <td>
+                    yes
+                  </td>
+                  <td>
+                    -
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    <span>
+                      func
+                    </span>
+                  </td>
+                  <td>
+                    -
+                  </td>
+                  <td>
+                    <span>
+                      onClick
+                    </span>
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    style
+                  </td>
+                  <td
+                    class="info-table-monospace"
+                  >
+                    <span>
+                      other
+                    </span>
+                  </td>
+                  <td>
+                    -
+                  </td>
+                  <td>
+                    <span>
+                      {}
+                    </span>
+                  </td>
+                  <td />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h3
+              style="margin:20px 0 0 0"
+            >
+              "ButtonDisplayName" Component
             </h3>
             <table
               class="info-table"
