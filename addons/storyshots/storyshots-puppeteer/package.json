@@ -30,7 +30,7 @@
     "regenerator-runtime": "^0.12.1"
   },
   "peerDependencies": {
-    "@storybook/addon-storyshots": "5.1.0-alpha.11"
+    "@storybook/addon-storyshots": "5.1.0-rc.0"
   },
   "publishConfig": {
     "access": "public"
