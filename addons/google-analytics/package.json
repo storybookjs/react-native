@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-google-analytics",
-  "version": "5.1.0-alpha.33",
+  "version": "5.1.0-rc.0",
   "description": "Storybook addon for google analytics",
   "keywords": [
     "addon",
@@ -20,9 +20,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.33",
-    "@storybook/core-events": "5.1.0-alpha.33",
-    "core-js": "^2.6.5",
+    "@storybook/addons": "5.1.0-rc.0",
+    "@storybook/core-events": "5.1.0-rc.0",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
     "react-ga": "^2.5.7"
   },

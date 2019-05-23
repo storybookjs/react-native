@@ -68,7 +68,8 @@ storiesOf('Addons|Info/React Docgen', module)
 const markdownDescription = `
 #### You can use markdown in your withInfo description.
 
-Sometimes you might want to manually include some code examples:
+Sometimes you might want to manually include some \`code\` examples:
+
 ~~~js
 const Button = () => <button />;
 ~~~

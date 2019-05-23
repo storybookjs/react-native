@@ -1,6 +1,6 @@
 import addons from '@storybook/addons';
 import { STORY_CHANGED, FORCE_RE_RENDER, REGISTER_SUBSCRIPTION } from '@storybook/core-events';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash/debounce';
 
 import KnobManager from './KnobManager';
 import { CHANGE, CLICK, RESET, SET } from './shared';

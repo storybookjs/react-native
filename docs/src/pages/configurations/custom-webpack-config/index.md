@@ -83,7 +83,7 @@ The webpack config [is configurable](/configurations/custom-webpack-config/), an
           { loader: 'babel-loader', options:
             { cacheDirectory: './node_modules/.cache/storybook',
               presets: [
-                [ './node_modules/@babel/preset-env/lib/index.js', { shippedProposals: true, useBuiltIns: 'usage' } ],
+                [ './node_modules/@babel/preset-env/lib/index.js', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' } ],
                 './node_modules/@babel/preset-react/lib/index.js',
                 './node_modules/@babel/preset-flow/lib/index.js',
               ],
@@ -188,7 +188,7 @@ module.exports = async ({ config, mode }) => {
   // Make whatever fine-grained changes you need
   config.module.rules.push({
     test: /\.scss$/,
-    loaders: ['style-loader', 'css-loader', 'sass-loader'],
+    use: ['style-loader', 'css-loader', 'sass-loader'],
     include: path.resolve(__dirname, '../'),
   });
 
@@ -231,7 +231,7 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
         include: path.resolve(__dirname, '../'),
       },
     ],
@@ -262,6 +262,6 @@ const path = require('path');
 const custom = require('../webpack.config.js');
 
 module.exports = async ({ config, mode }) => {
-  return { ...config, loaders: custom.loaders };
+  return { ...config, module: { ...config.module, rules: custom.module.rules } };
 };
 ```

@@ -17,8 +17,11 @@ interface CreateChannelArgs {
 
 export class WebsocketTransport {
   private socket: WebSocket;
+
   private handler: ChannelHandler;
+
   private buffer: string[] = [];
+
   private isReady = false;
 
   constructor({ url, onError }: WebsocketTransportArgs) {
@@ -47,7 +50,7 @@ export class WebsocketTransport {
   }
 
   private flush() {
-    const buffer = this.buffer;
+    const { buffer } = this;
     this.buffer = [];
     buffer.forEach(event => this.send(event));
   }

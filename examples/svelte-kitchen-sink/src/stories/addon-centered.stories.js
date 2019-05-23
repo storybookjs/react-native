@@ -8,7 +8,7 @@ storiesOf('Addon|Centered', module)
   .addDecorator(Centered)
   .add('rounded', () => ({
     Component: Button,
-    data: {
+    props: {
       rounded: true,
       text: "Look, I'm centered!",
     },

@@ -1,3 +1,6 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-control-regex */
 /* tslint:disable:object-literal-sort-keys */
 
 import React from 'react';
