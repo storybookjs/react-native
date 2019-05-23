@@ -3,7 +3,7 @@ import { ToolBarMenu } from './ToolBarMenu';
 import { OPT_OUT } from '../../shared/constants';
 import { ContextNode, FCNoChildren, Omit } from '../../shared/types.d';
 
-type ToolbarControl = FCNoChildren<
+type ToolBarControl = FCNoChildren<
   Omit<
     ContextNode & {
       selected: string;
@@ -13,7 +13,7 @@ type ToolbarControl = FCNoChildren<
   >
 >;
 
-export const ToolbarControl: ToolbarControl = ({
+export const ToolBarControl: ToolBarControl = ({
   nodeId,
   icon,
   title,

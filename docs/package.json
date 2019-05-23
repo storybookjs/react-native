@@ -35,7 +35,7 @@
     "is-builtin-module": "^3.0.0",
     "lodash": "^4.17.11",
     "marked": "^0.6.2",
-    "polished": "^3.3.0",
+    "polished": "^3.3.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-document-title": "^2.0.3",

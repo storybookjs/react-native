@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-contexts",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.0",
   "description": "Storybook Addon Contexts",
   "keywords": [
     "storybook",
@@ -28,10 +28,10 @@
     "dev:check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-beta.1",
-    "@storybook/api": "5.1.0-beta.1",
-    "@storybook/components": "5.1.0-beta.1",
-    "@storybook/core-events": "5.1.0-beta.1"
+    "@storybook/addons": "5.1.0-rc.0",
+    "@storybook/api": "5.1.0-rc.0",
+    "@storybook/components": "5.1.0-rc.0",
+    "@storybook/core-events": "5.1.0-rc.0"
   },
   "peerDependencies": {
     "global": "*",

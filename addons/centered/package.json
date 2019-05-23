@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-centered",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.0",
   "description": "Storybook decorator to center components",
   "keywords": [
     "addon",
@@ -31,9 +31,9 @@
     "@types/mithril": "^1.1.16"
   },
   "optionalDependencies": {
-    "react": "*",
+    "mithril": "*",
     "preact": "*",
-    "mithril": "*"
+    "react": "*"
   },
   "publishConfig": {
     "access": "public"
