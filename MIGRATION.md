@@ -119,6 +119,29 @@ Please refer to the [current custom webpack documentation](https://github.com/st
 
 Storybook 5.0 includes sweeping UI changes as well as changes to the addon API and custom webpack configuration. We've tried to keep backwards compatibility in most cases, but there are some notable exceptions documented below.
 
+### sortStoriesByKind
+
+In Storybook 5.0 we changed a lot of UI related code, and 1 oversight caused the `sortStoriesByKind` options to stop working.
+We're working on providing a better way of sorting stories for now the feature has been removed. Stories appear in the order they are loaded.
+
+If you're using webpack's `require.context` to load stories, you can sort the execution of requires:
+
+```js
+var context = require.context('../stories', true, /\.stories\.js$/);
+var modules = context.keys();
+
+// sort them
+var sortedModules = modules.slice().sort((a, b) => {
+  // sort the stories based on filename/path
+  return a < b ? -1 : (a > b ? 1 : 0);
+});
+
+// execute them
+sortedModules.forEach((key) => {
+  context(key);
+});
+```
+
 ## Webpack config simplification
 
 The API for custom webpack configuration has been simplifed in 5.0, but it's a breaking change. Storybook's "full control mode" for webpack allows you to override the webpack config with a function that returns a configuration object.
