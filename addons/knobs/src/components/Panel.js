@@ -127,6 +127,7 @@ export default class KnobPanel extends PureComponent {
 
   handleChange = changedKnob => {
     this.lastEdit = getTimestamp();
+    const { api } = this.props;
     const { knobs } = this.state;
     const { name } = changedKnob;
     const newKnobs = { ...knobs };
@@ -135,7 +136,18 @@ export default class KnobPanel extends PureComponent {
       ...changedKnob,
     };
 
-    this.setState({ knobs: newKnobs }, this.emitChange(changedKnob));
+    this.setState({ knobs: newKnobs }, () => {
+      this.emitChange(changedKnob);
+
+      const queryParams = {};
+
+      Object.keys(newKnobs).forEach(n => {
+        const knob = newKnobs[n];
+        queryParams[`knob-${n}`] = Types[knob.type].serialize(knob.value);
+      });
+
+      api.setQueryParams(queryParams);
+    });
   };
 
   handleClick = knob => {
