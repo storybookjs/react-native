@@ -41,7 +41,7 @@
     "react-document-title": "^2.0.3",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "react-popper-tooltip": "^2.8.2",
+    "react-popper-tooltip": "^2.8.3",
     "react-router": "^4.3.1",
     "react-stack-grid": "^0.7.1",
     "recompose": "^0.30.0",

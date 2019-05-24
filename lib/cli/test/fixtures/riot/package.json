@@ -21,7 +21,7 @@
     "riot-hot-reload": "^1.0.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.0",
-    "webpack-bundle-analyzer": "^3.1.0",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.2.3"
   }
 }
