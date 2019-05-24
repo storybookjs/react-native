@@ -12,7 +12,6 @@ const styles = {
   innerStyle: {
     margin: 'auto',
     maxHeight: '100%', // Hack for centering correctly in IE11
-    overflow: 'auto',
   },
 } as const;
 

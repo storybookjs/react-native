@@ -20,7 +20,6 @@ exports[`Storyshots Addons|Centered Button 1`] = `
       Object {
         "margin": "auto",
         "maxHeight": "100%",
-        "overflow": "auto",
       }
     }
   >
