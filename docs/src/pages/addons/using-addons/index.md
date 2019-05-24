@@ -51,15 +51,13 @@ import Button from './Button';
 storiesOf('Button', module).add(
   'with some emoji',
   () => (
-    () => (
-      <Button onClick={action('clicked')}>
-        <span role="img" aria-label="so cool">
-          😀 😎 👍 💯
-        </span>
-      </Button>
-    ),
-    { notes: 'A very simple component' }
-  )
+    <Button onClick={action('clicked')}>
+      <span role="img" aria-label="so cool">
+        😀 😎 👍 💯
+      </span>
+    </Button>
+  ),
+  { notes: 'A very simple component' }
 );
 ```
 
