@@ -24,7 +24,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
-    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-env": "^7.4.5",
     "@storybook/addons": "5.1.0-rc.0",
     "@storybook/channel-postmessage": "5.1.0-rc.0",
     "@storybook/client-api": "5.1.0-rc.0",
@@ -81,7 +81,7 @@
     "terser-webpack-plugin": "^1.2.4",
     "url-loader": "^1.1.2",
     "util-deprecate": "^1.0.2",
-    "webpack": "^4.28.0",
+    "webpack": "^4.32.0",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-hot-middleware": "^2.25.0"
   },

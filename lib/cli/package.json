@@ -27,8 +27,8 @@
     "test-latest-cra": "cd test && ./test_latest_cra.sh"
   },
   "dependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.4.1",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "@babel/register": "^7.0.0",
     "@storybook/codemod": "5.1.0-rc.0",
     "chalk": "^2.4.1",
