@@ -1,3 +1,31 @@
+## 5.1.0-rc.1 (May 24, 2019)
+
+### Features
+
+* Core: Support loglevel for production/ci builds ([#6825](https://github.com/storybooks/storybook/pull/6825))
+
+### Bug Fixes
+
+* Addon-storysource: Fix link color ([#6876](https://github.com/storybooks/storybook/pull/6876))
+* RAddon-centered: Fix unnecessary scroll bar ([#6862](https://github.com/storybooks/storybook/pull/6862))
+* UI: Apply customQueryParams to eject iframe button ([#6817](https://github.com/storybooks/storybook/pull/6817))
+* Theming: resolve paths locally if possible ([#6808](https://github.com/storybooks/storybook/pull/6808))
+* Addon-links: Fix withLinks decorator ([#6823](https://github.com/storybooks/storybook/pull/6823))
+
+### Maintenance
+
+* Addon-contexts: component tests and readability improvements ([#6716](https://github.com/storybooks/storybook/pull/6716))
+
+### Dependency Upgrades
+
+* Upgrade CRA preset dependencies to match CRA v3 ([#6589](https://github.com/storybooks/storybook/pull/6589))
+* Bump schedule from 0.4.0 to 0.5.0 ([#6843](https://github.com/storybooks/storybook/pull/6843))
+* UPGRADE dependencies & fix a security vulnerability (low-prio) ([#6875](https://github.com/storybooks/storybook/pull/6875))
+* Bump simplebar-react from 1.0.0-alpha.9 to 1.0.0 ([#6842](https://github.com/storybooks/storybook/pull/6842))
+* Bump ts-loader from 5.4.5 to 6.0.1 ([#6839](https://github.com/storybooks/storybook/pull/6839))
+* Bump @types/react from 16.8.17 to 16.8.18 ([#6841](https://github.com/storybooks/storybook/pull/6841))
+* Bump core-js-pure from 3.1.0 to 3.1.1 ([#6840](https://github.com/storybooks/storybook/pull/6840))
+
 ## 5.1.0-rc.0 (May 21, 2019)
 
 ### Bug Fixes
