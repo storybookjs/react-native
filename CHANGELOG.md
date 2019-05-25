@@ -7,7 +7,7 @@
 ### Bug Fixes
 
 * Addon-storysource: Fix link color ([#6876](https://github.com/storybooks/storybook/pull/6876))
-* RAddon-centered: Fix unnecessary scroll bar ([#6862](https://github.com/storybooks/storybook/pull/6862))
+* Addon-centered: Fix unnecessary scroll bar ([#6862](https://github.com/storybooks/storybook/pull/6862))
 * UI: Apply customQueryParams to eject iframe button ([#6817](https://github.com/storybooks/storybook/pull/6817))
 * Theming: resolve paths locally if possible ([#6808](https://github.com/storybooks/storybook/pull/6808))
 * Addon-links: Fix withLinks decorator ([#6823](https://github.com/storybooks/storybook/pull/6823))
