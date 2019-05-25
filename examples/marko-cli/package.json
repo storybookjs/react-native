@@ -1,6 +1,6 @@
 {
   "name": "marko-cli",
-  "version": "5.1.0-rc.0",
+  "version": "5.1.0-rc.1",
   "private": true,
   "description": "Demo of how to build an app using marko-starter",
   "repository": {
@@ -24,13 +24,13 @@
     "marko-starter": "^2.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "5.1.0-rc.0",
-    "@storybook/addon-actions": "5.1.0-rc.0",
-    "@storybook/addon-knobs": "5.1.0-rc.0",
-    "@storybook/addon-options": "5.1.0-rc.0",
-    "@storybook/addon-storysource": "5.1.0-rc.0",
-    "@storybook/addons": "5.1.0-rc.0",
-    "@storybook/marko": "5.1.0-rc.0",
+    "@storybook/addon-a11y": "5.1.0-rc.1",
+    "@storybook/addon-actions": "5.1.0-rc.1",
+    "@storybook/addon-knobs": "5.1.0-rc.1",
+    "@storybook/addon-options": "5.1.0-rc.1",
+    "@storybook/addon-storysource": "5.1.0-rc.1",
+    "@storybook/addons": "5.1.0-rc.1",
+    "@storybook/marko": "5.1.0-rc.1",
     "prettier": "^1.16.4",
     "webpack": "^4.28.0"
   }
