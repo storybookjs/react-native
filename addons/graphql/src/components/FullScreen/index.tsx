@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './style';
 
-export default function FullScreen({ children }) {
+export default function FullScreen({ children }: any) {
   return <div style={style.wrapper}>{children}</div>;
 }
 

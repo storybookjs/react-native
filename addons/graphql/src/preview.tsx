@@ -10,22 +10,22 @@ const FETCH_OPTIONS = {
   headers: { 'Content-Type': 'application/json' },
 };
 
-function getDefautlFetcher(url) {
-  return params => {
+function getDefautlFetcher(url: any) {
+  return (params: any) => {
     const body = JSON.stringify(params);
     const options = Object.assign({ body }, FETCH_OPTIONS);
-    return fetch(url, options).then(res => res.json());
+    return fetch(url, options).then((res: any) => res.json());
   };
 }
 
-function reIndentQuery(query) {
+function reIndentQuery(query: any) {
   const lines = query.split('\n');
   const spaces = lines[lines.length - 1].length - 1;
-  return lines.map((l, i) => (i === 0 ? l : l.slice(spaces))).join('\n');
+  return lines.map((l: any, i: any) => (i === 0 ? l : l.slice(spaces))).join('\n');
 }
 
-export function setupGraphiQL(config) {
-  return (_query, variables = '{}') => {
+export function setupGraphiQL(config: any) {
+  return (_query: any, variables = '{}') => {
     const query = reIndentQuery(_query);
     const fetcher = config.fetcher || getDefautlFetcher(config.url);
     return () => (
