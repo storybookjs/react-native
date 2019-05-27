@@ -31,6 +31,8 @@ export class AppComponent implements OnInit, OnDestroy {
   @ViewChild('target', { read: ViewContainerRef })
   target: ViewContainerRef;
 
+  readonly previousValues: { [key: string]: any } = {};
+
   subscription: Subscription;
 
   constructor(
@@ -81,7 +83,12 @@ export class AppComponent implements OnInit, OnDestroy {
         // eslint-disable-next-line no-param-reassign
         instance[key] = value;
         if (hasNgOnChangesHook) {
-          changes[key] = new SimpleChange(undefined, value, instanceProperty === undefined);
+          const previousValue = this.previousValues[key];
+
+          if (previousValue !== value) {
+            changes[key] = new SimpleChange(previousValue, value, !this.previousValues.hasOwnProperty(key));
+            this.previousValues[key] = value;
+          }
         }
       } else if (typeof value === 'function' && key !== 'ngModelChange') {
         instanceProperty.subscribe(value);
