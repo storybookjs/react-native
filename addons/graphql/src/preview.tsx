@@ -3,7 +3,7 @@ import GraphiQL from 'graphiql';
 import { fetch } from 'global';
 import 'graphiql/graphiql.css';
 
-import FullScreen from './components/FullScreen';
+import { FullScreen } from './components/FullScreen';
 
 const FETCH_OPTIONS = {
   method: 'post',

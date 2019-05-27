@@ -1,6 +1,6 @@
 export default {
   wrapper: {
-    position: 'absolute',
+    position: 'absolute' as 'absolute',
     top: 0,
     right: 0,
     bottom: 0,
