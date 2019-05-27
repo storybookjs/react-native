@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core-events",
-  "version": "5.1.0-rc.1",
+  "version": "5.1.0-rc.2",
   "description": "Event names used in storybook core",
   "keywords": [
     "storybook"
