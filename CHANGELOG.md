@@ -1,3 +1,9 @@
+## 5.1.0-rc.2 (May 27, 2019)
+
+### Bug Fixes
+
+* Core: Fix JS/JSON loading babel config ([#6878](https://github.com/storybooks/storybook/pull/6878))
+
 ## 5.1.0-rc.1 (May 24, 2019)
 
 ### Features
