@@ -33,6 +33,7 @@
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "markdown-to-jsx": "^6.9.3",
+    "memoizerific": "^1.11.3",
     "prop-types": "^15.7.2",
     "util-deprecate": "^1.0.2"
   },
