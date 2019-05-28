@@ -1,7 +1,6 @@
 # Storybook
 
 <p align="center">
-  <a href="https://teamcity.jetbrains.com/viewType.html?buildTypeId=OpenSourceProjects_Storybook_Build_2&amp;branch_OpenSourceProjects_Storybook=%3Cdefault%3E&amp;tab=buildTypeStatusDiv"><img src="https://teamcity.jetbrains.com/app/rest/builds/buildType:OpenSourceProjects_Storybook_Build_2/statusIcon.svg" alt="Build Status on TeamCity" /></a>
   <a href="https://circleci.com/gh/storybooks/storybook"><img src="https://circleci.com/gh/storybooks/storybook.svg?style=shield" alt="Build Status on CircleCI" /></a>
   <a href="https://www.codefactor.io/repository/github/storybooks/storybook"><img src="https://www.codefactor.io/repository/github/storybooks/storybook/badge" alt="CodeFactor" /></a>
   <a href="https://snyk.io/test/github/storybooks/storybook"><img src="https://snyk.io/test/github/storybooks/storybook/badge.svg" alt="Known Vulnerabilities" /></a>
