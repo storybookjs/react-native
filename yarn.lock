@@ -27944,9 +27944,9 @@ svelte-loader@^2.13.4:
     svelte-dev-helper "^1.1.9"
 
 svelte@^3.4.1:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.4.2.tgz#55e34d7a53f9a732387dbf0fcb68e2fa4b598c93"
-  integrity sha512-sh7UCIBAgRrNxDx3afw+sKipY2ilpNNsBHXQXtwU481ZWGidAOowcZw1JrfB86hpLJvGqxkzBJqCQoGGtA35qA==
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.4.4.tgz#8dcb60796b2b5a47175371f0763a612bf33a0944"
+  integrity sha512-O9tzroEWVPOQe1QITW1jP8LAJwXmCfDDGdkOCa9Y6NlJ+gQwn+/rhFbMQ+vu2PWPLZt1gxN8DjTFM4nOBuMLFg==
 
 svg-tags@^1.0.0:
   version "1.0.0"
