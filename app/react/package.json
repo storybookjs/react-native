@@ -39,7 +39,7 @@
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "lodash": "^4.17.11",
-    "mini-css-extract-plugin": "^0.6.0",
+    "mini-css-extract-plugin": "^0.7.0",
     "prop-types": "^15.7.2",
     "react-dev-utils": "^9.0.0",
     "regenerator-runtime": "^0.12.1",
