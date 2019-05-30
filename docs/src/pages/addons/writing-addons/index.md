@@ -187,7 +187,7 @@ Notice how the storybook API itself has `.on()`, `.off()` and `.emit()` methods 
 ```js
 import React from 'react';
 import addons from '@storybook/addons';
-import { STORY_RENDERED } from '@storybook/core-events';
+import { STORY_CHANGED } from '@storybook/core-events';
 
 class MyPanel extends React.Component {
   onSomeAction = text => {
@@ -200,12 +200,12 @@ class MyPanel extends React.Component {
   componentDidMount() {
     const { api } = this.props;
     api.on('foo/doSomeAction', this.onSomeAction);
-    api.on(STORY_RENDERED, this.onStoryChange);
+    api.on(STORY_CHANGED, this.onStoryChange);
   }
   componentWillUnmount() {
     const { api } = this.props;
     api.off('foo/doSomeAction', this.onSomeAction);
-    api.off(STORY_RENDERED, this.onStoryChange);
+    api.off(STORY_CHANGED, this.onStoryChange);
   }
 
   render() {
