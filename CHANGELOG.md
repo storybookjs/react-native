@@ -1,3 +1,23 @@
+## 5.1.0-rc.3 (May 29, 2019)
+
+### Features
+
+* React-native: Add accessibility on searchbar ([#6819](https://github.com/storybooks/storybook/pull/6819))
+
+### Bug Fixes
+
+* Storyshots: make compatible with read-pkg-up version ([#6907](https://github.com/storybooks/storybook/pull/6907))
+* Addon-info: Fix issue where forwardRefs throw ([#6859](https://github.com/storybooks/storybook/pull/6859))
+* Addon-notes: Fix whitespace rendering bug ([#6881](https://github.com/storybooks/storybook/pull/6881))
+
+### Dependency Upgrades
+
+* Bump @types/enzyme from 3.9.2 to 3.9.3 ([#6891](https://github.com/storybooks/storybook/pull/6891))
+* Bump eslint-plugin-import from 2.17.2 to 2.17.3 ([#6894](https://github.com/storybooks/storybook/pull/6894))
+* Bump mini-css-extract-plugin from 0.6.0 to 0.7.0 ([#6895](https://github.com/storybooks/storybook/pull/6895))
+* Bump ts-node from 8.1.0 to 8.2.0 ([#6890](https://github.com/storybooks/storybook/pull/6890))
+* Bump svelte from 3.4.2 to 3.4.4 ([#6892](https://github.com/storybooks/storybook/pull/6892))
+
 ## 5.1.0-rc.2 (May 27, 2019)
 
 ### Bug Fixes
