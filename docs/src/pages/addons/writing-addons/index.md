@@ -187,7 +187,7 @@ Notice how the storybook API itself has `.on()`, `.off()` and `.emit()` methods 
 ```js
 import React from 'react';
 import addons from '@storybook/addons';
-import { STORY_CHANGED } from '@storybook/core-events';
+import { STORY_RENDERED } from '@storybook/core-events';
 
 class MyPanel extends React.Component {
   onSomeAction = text => {
