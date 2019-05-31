@@ -2,7 +2,7 @@ import React from 'react';
 import addons from '@storybook/addons';
 
 import Panel from './components/Panel';
-import { ADDON_ID, PANEL_ID } from './constants';
+import { ADDON_ID, PANEL_ID, PARAM_KEY } from './constants';
 
 export function register() {
   addons.register(ADDON_ID, api => {
@@ -10,6 +10,7 @@ export function register() {
       title: 'Events',
       // eslint-disable-next-line react/prop-types
       render: ({ active, key }) => <Panel key={key} api={api} active={active} />,
+      paramKey: PARAM_KEY,
     });
   });
 }
