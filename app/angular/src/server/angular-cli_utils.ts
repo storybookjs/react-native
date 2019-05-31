@@ -1,5 +1,9 @@
 import fs from 'fs';
 import { basename, dirname, normalize, relative, resolve, Path } from '@angular-devkit/core';
+import {
+  getCommonConfig,
+  getStylesConfig,
+} from '@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs';
 
 import { RuleSetRule, Configuration } from 'webpack';
 
@@ -54,14 +58,10 @@ export function isBuildAngularInstalled() {
 
 // todo add type
 export function getAngularCliParts(cliWebpackConfigOptions: any) {
-  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  // tslint:disable-next-line: no-implicit-dependencies
-  const ngCliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
-
   try {
     return {
-      cliCommonConfig: ngCliConfigFactory.getCommonConfig(cliWebpackConfigOptions),
-      cliStyleConfig: ngCliConfigFactory.getStylesConfig(cliWebpackConfigOptions),
+      cliCommonConfig: getCommonConfig(cliWebpackConfigOptions),
+      cliStyleConfig: getStylesConfig(cliWebpackConfigOptions),
     };
   } catch (e) {
     return null;

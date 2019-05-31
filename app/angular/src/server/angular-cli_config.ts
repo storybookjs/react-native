@@ -1,3 +1,5 @@
+import { CompilerOptions } from 'typescript';
+import { Path } from '@angular-devkit/core';
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@storybook/node-logger';
@@ -8,9 +10,6 @@ import {
   filterOutStylingRules,
   getAngularCliParts,
 } from './angular-cli_utils';
-import { Path } from '@angular-devkit/core';
-
-import { CompilerOptions } from 'typescript';
 
 // todo add more accurate typings
 interface BasicOptions {
