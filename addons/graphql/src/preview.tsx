@@ -17,14 +17,15 @@ export interface SetupGraphiQLConfig {
   fetcher: (params: FetcherParams) => Promise<any>;
 }
 
-export function setupGraphiQL(config: SetupGraphiQLConfig) {
-  return (_query: string, variables = '{}') => {
-    const query = reIndentQuery(_query);
-    const fetcher = config.fetcher || getDefaultFetcher(config.url);
-    return () => (
-      <FullScreen>
-        <GraphiQL query={query} variables={variables} fetcher={fetcher} />
-      </FullScreen>
-    );
-  };
-}
+export const setupGraphiQL = (config: SetupGraphiQLConfig) => (
+  _query: string,
+  variables = '{}'
+) => {
+  const query = reIndentQuery(_query);
+  const fetcher = config.fetcher || getDefaultFetcher(config.url);
+  return () => (
+    <FullScreen>
+      <GraphiQL query={query} variables={variables} fetcher={fetcher} />
+    </FullScreen>
+  );
+};

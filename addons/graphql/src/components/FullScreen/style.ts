@@ -1,4 +1,4 @@
-export default {
+export const style = {
   wrapper: {
     position: 'absolute' as 'absolute',
     top: 0,
