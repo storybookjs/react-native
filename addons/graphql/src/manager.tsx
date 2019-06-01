@@ -1,4 +1,3 @@
-import { fetch } from 'global';
 import React, { FunctionComponent } from 'react';
 import PropTypes from 'prop-types';
 import GraphiQL from 'graphiql';
@@ -7,25 +6,8 @@ import 'graphiql/graphiql.css';
 import { Consumer, Combo } from '@storybook/api';
 
 import { PARAM_KEY } from '.';
+import { reIndentQuery, getDefaultFetcher } from './shared';
 
-const FETCH_OPTIONS = {
-  method: 'post',
-  headers: { 'Content-Type': 'application/json' },
-};
-
-function getDefaultFetcher(url: string) {
-  return (params: any) => {
-    const body = JSON.stringify(params);
-    const options = Object.assign({ body }, FETCH_OPTIONS);
-    return fetch(url, options).then((res: any) => res.json());
-  };
-}
-
-function reIndentQuery(query: string) {
-  const lines = query.split('\n');
-  const spaces = lines[lines.length - 1].length - 1;
-  return lines.map((l: string, i: number) => (i === 0 ? l : l.slice(spaces))).join('\n');
-}
 interface GQLProps {
   active: boolean;
 }
