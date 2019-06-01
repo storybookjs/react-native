@@ -16,6 +16,7 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
@@ -31,7 +32,8 @@
     "is-plain-object": "^3.0.0",
     "lodash": "^4.17.11",
     "memoizerific": "^1.11.3",
-    "qs": "^6.6.0"
+    "qs": "^6.6.0",
+    "util-deprecate": "^1.0.2"
   },
   "publishConfig": {
     "access": "public"

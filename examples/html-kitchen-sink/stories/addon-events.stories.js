@@ -1,6 +1,7 @@
 import EventEmitter from 'eventemitter3';
 import { storiesOf } from '@storybook/html';
 import addons from '@storybook/addons';
+import { useEffect, useState } from '@storybook/client-api';
 import CoreEvents from '@storybook/core-events';
 import json from 'format-json';
 
@@ -17,20 +18,6 @@ const TEST_EVENTS = {
 
 const emitter = new EventEmitter();
 const emit = emitter.emit.bind(emitter);
-
-const events = [];
-const eventHandlers = Object.values(TEST_EVENTS).map(name => ({
-  name,
-  handler: payload => {
-    events.push({ name, payload });
-    addons.getChannel().emit(CoreEvents.FORCE_RE_RENDER);
-  },
-}));
-
-const subscription = () => {
-  eventHandlers.forEach(({ name, handler }) => emitter.on(name, handler));
-  return () => eventHandlers.forEach(({ name, handler }) => emitter.removeListener(name, handler));
-};
 
 storiesOf('Addons|Events', module)
   .addDecorator(
@@ -85,13 +72,21 @@ storiesOf('Addons|Events', module)
       ],
     })
   )
-  .addDecorator(storyFn => {
-    addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
-    return storyFn();
-  })
-  .add(
-    'Logger',
-    () => `
+  .add('Logger', () => {
+    const [events, setEvents] = useState([]);
+    useEffect(() => {
+      const eventHandlers = Object.values(TEST_EVENTS).map(name => ({
+        name,
+        handler: payload => {
+          setEvents(prevEvents => [...prevEvents, { name, payload }]);
+        },
+      }));
+      eventHandlers.forEach(({ name, handler }) => emitter.on(name, handler));
+      return () =>
+        eventHandlers.forEach(({ name, handler }) => emitter.removeListener(name, handler));
+    }, []);
+
+    return `
       <div class="wrapper">
         <h1 class="title">Logger</h1>
         <dl>
@@ -111,5 +106,5 @@ storiesOf('Addons|Events', module)
             .join('')}
         </dl>
       </div>
-    `
-  );
+    `;
+  });

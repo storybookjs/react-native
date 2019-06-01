@@ -1,5 +1,6 @@
 import addons from '@storybook/addons';
-import { STORY_CHANGED, FORCE_RE_RENDER, REGISTER_SUBSCRIPTION } from '@storybook/core-events';
+import { useEffect } from '@storybook/client-api';
+import { STORY_CHANGED, FORCE_RE_RENDER } from '@storybook/core-events';
 import debounce from 'lodash/debounce';
 
 import KnobManager from './KnobManager';
@@ -83,5 +84,5 @@ function connectCallbacks() {
 }
 
 export function registerKnobs() {
-  addons.getChannel().emit(REGISTER_SUBSCRIPTION, connectCallbacks);
+  useEffect(connectCallbacks, []);
 }
