@@ -1,10 +1,10 @@
 import { fetch } from 'global';
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import PropTypes from 'prop-types';
 import GraphiQL from 'graphiql';
 import 'graphiql/graphiql.css';
 
-import { Consumer } from '@storybook/api';
+import { Consumer, Combo } from '@storybook/api';
 
 import { PARAM_KEY } from '.';
 
@@ -13,7 +13,7 @@ const FETCH_OPTIONS = {
   headers: { 'Content-Type': 'application/json' },
 };
 
-function getDefaultFetcher(url: any) {
+function getDefaultFetcher(url: string) {
   return (params: any) => {
     const body = JSON.stringify(params);
     const options = Object.assign({ body }, FETCH_OPTIONS);
@@ -21,16 +21,19 @@ function getDefaultFetcher(url: any) {
   };
 }
 
-function reIndentQuery(query: any) {
+function reIndentQuery(query: string) {
   const lines = query.split('\n');
   const spaces = lines[lines.length - 1].length - 1;
-  return lines.map((l: any, i: any) => (i === 0 ? l : l.slice(spaces))).join('\n');
+  return lines.map((l: string, i: number) => (i === 0 ? l : l.slice(spaces))).join('\n');
+}
+interface GQLProps {
+  active: boolean;
 }
 
-const GQL = ({ active }: any) => {
+const GQL: FunctionComponent<GQLProps> = ({ active }) => {
   return active ? (
     <Consumer>
-      {({ api, state }) => {
+      {({ api, state }: Combo) => {
         const story = state.storiesHash[state.storyId];
         const parameters = story ? api.getParameters(story.id, PARAM_KEY) : null;
 

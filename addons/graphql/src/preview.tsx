@@ -10,22 +10,33 @@ const FETCH_OPTIONS = {
   headers: { 'Content-Type': 'application/json' },
 };
 
-function getDefautlFetcher(url: any) {
-  return (params: any) => {
+function getDefautlFetcher(url: string) {
+  return (params: FetcherParams) => {
     const body = JSON.stringify(params);
     const options = Object.assign({ body }, FETCH_OPTIONS);
     return fetch(url, options).then((res: any) => res.json());
   };
 }
 
-function reIndentQuery(query: any) {
+function reIndentQuery(query: string) {
   const lines = query.split('\n');
   const spaces = lines[lines.length - 1].length - 1;
-  return lines.map((l: any, i: any) => (i === 0 ? l : l.slice(spaces))).join('\n');
+  return lines.map((l: string, i: number) => (i === 0 ? l : l.slice(spaces))).join('\n');
 }
 
-export function setupGraphiQL(config: any) {
-  return (_query: any, variables = '{}') => {
+export interface FetcherParams {
+  query: string;
+  variables?: string;
+  operationName?: string;
+}
+
+interface SetupGraphiQLConfig {
+  url: string;
+  fetcher: (params: FetcherParams) => any;
+}
+
+export function setupGraphiQL(config: SetupGraphiQLConfig) {
+  return (_query: string, variables = '{}') => {
     const query = reIndentQuery(_query);
     const fetcher = config.fetcher || getDefautlFetcher(config.url);
     return () => (
