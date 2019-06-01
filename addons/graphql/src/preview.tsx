@@ -14,7 +14,7 @@ export interface FetcherParams {
 
 export interface SetupGraphiQLConfig {
   url: string;
-  fetcher: (params: FetcherParams) => Promise<any>;
+  fetcher?: (params: FetcherParams) => Promise<any>;
 }
 
 export const setupGraphiQL = (config: SetupGraphiQLConfig) => (
