@@ -51,6 +51,11 @@ const triggerEffects = () => {
 };
 
 const hookify = (fn: AbstractFunction) => (...args: any[]) => {
+  const prevPhase = currentPhase;
+  const prevHooks = currentHooks;
+  const prevNextHookIndex = nextHookIndex;
+  const prevDecoratorName = currentDecoratorName;
+
   currentDecoratorName = fn.name;
   if (mountedDecorators.has(fn)) {
     currentPhase = 'UPDATE';
@@ -70,7 +75,10 @@ const hookify = (fn: AbstractFunction) => (...args: any[]) => {
     );
   }
 
-  currentDecoratorName = null;
+  currentPhase = prevPhase;
+  currentHooks = prevHooks;
+  nextHookIndex = prevNextHookIndex;
+  currentDecoratorName = prevDecoratorName;
   return result;
 };
 
@@ -96,7 +104,6 @@ export const applyHooks = (
         );
       }
     }
-    currentPhase = 'NONE';
     triggerEffects();
     return result;
   };
