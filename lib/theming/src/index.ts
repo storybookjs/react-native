@@ -13,3 +13,5 @@ export { createGlobal, createReset } from './global';
 export * from './create';
 export * from './convert';
 export * from './ensure';
+
+export { lightenColor, darkenColor } from './utils';
