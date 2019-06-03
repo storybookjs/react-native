@@ -3,7 +3,7 @@ id: 'faq'
 title: 'Frequently Asked Questions'
 ---
 
-Here are some answers to frequently asked questions. If you have a question, you can ask it by opening an issue on the [Storybook Repository](https://github.com/storybooks/storybook/).
+Here are some answers to frequently asked questions. If you have a question, you can ask it by opening an issue on the [Storybook Repository](https://github.com/storybookjs/storybook/).
 
 ### How can I run coverage tests with Create React App and leave out stories?
 
@@ -35,7 +35,7 @@ A common error is that an addon tries to access the "channel", but the channel i
     addons.setChannel(mockChannel());
     ```
 
-2.  In React Native, it's a special case that's documented in [#1192](https://github.com/storybooks/storybook/issues/1192)
+2.  In React Native, it's a special case that's documented in [#1192](https://github.com/storybookjs/storybook/issues/1192)
 
 ### Can I modify React component state in stories?
 

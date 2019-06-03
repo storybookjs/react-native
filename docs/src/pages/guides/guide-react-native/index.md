@@ -45,7 +45,7 @@ configure(() => {
   require('./stories');
 }, module);
 
-// Refer to https://github.com/storybooks/storybook/tree/master/app/react-native#start-command-parameters
+// Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters
 // To find allowed options for getStorybookUI
 const StorybookUIRoot = getStorybookUI({});
 
@@ -166,7 +166,7 @@ export default StorybookUI;
 This step is done automatically when you install Storybook for the first time.
 
 ## Compatibility
-Web and onDevice addon compatibility can be found [here](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+Web and onDevice addon compatibility can be found [here](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ## Performance of on device addons
 Because on device addons are inside the app, they are also rerendered on every change. Be aware that this can have

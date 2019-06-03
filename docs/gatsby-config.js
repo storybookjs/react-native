@@ -52,6 +52,7 @@ module.exports = {
         '/addons/writing-addons/',
         '/addons/api/',
       ],
+      presets: ['/presets/introduction/', '/presets/preset-gallery/', '/presets/writing-presets/'],
     },
   },
   plugins: [
@@ -65,7 +66,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        repoUrl: 'https://github.com/storybooks/storybook',
+        repoUrl: 'https://github.com/storybookjs/storybook',
       },
     },
     {
@@ -85,5 +86,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-segment',
+      options: {
+        writeKey: 'AvvBObOmHaEMqfub8JJUXq5umjsuaqS8',
+      },
+    },
   ],
 };

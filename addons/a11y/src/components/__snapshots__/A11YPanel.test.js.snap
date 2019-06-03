@@ -105,7 +105,9 @@ exports[`A11YPanel should render loader when it's running 1`] = `
 exports[`A11YPanel should render report 1`] = `
 .emotion-0 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
 }
 
 .emotion-4 {
@@ -215,7 +217,6 @@ exports[`A11YPanel should render report 1`] = `
                 "110qmus": true,
                 "1551xjo": true,
                 "15paq49": true,
-                "176o2y5": true,
                 "1977chw": true,
                 "19mcg9j": true,
                 "1ez3l8h": true,
@@ -225,6 +226,7 @@ exports[`A11YPanel should render report 1`] = `
                 "1vwgrhn": true,
                 "4ryd4s": true,
                 "6hqipu": true,
+                "6z0ulf": true,
                 "animation-u07e3c": true,
                 "aq4p19": true,
                 "fg630j": true,
@@ -241,9 +243,9 @@ exports[`A11YPanel should render report 1`] = `
               "key": "css",
               "nonce": undefined,
               "registered": Object {
-                "emotion-0": "overflow-y:auto;overflow-x:auto;",
                 "css-1977chw": "height:10px;width:10px;min-width:10px;color:#999999;margin-right:10px;transition:transform 0.1s ease-in-out;align-self:center;display:inline-flex;",
                 "css-1l7fvsg": "height:12px;width:12px;margin-right:4px;",
+                "emotion-0": "overflow-y:auto;height:100%;overflow-x:auto;width:100%;",
                 "css-jb2puo": "height:12px;width:12px;margin-right:4px;animation:animation-u07e3c 1s linear infinite;;",
                 "css-tkevr6": "display:flex;align-items:center;justify-content:center;height:100%;",
               },
@@ -254,7 +256,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css-global"
                   >
                     
-                    [data-simplebar]{position:relative;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}
+                    [data-simplebar]{position:relative;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;}
                   </style>
                   <style
                     data-emotion="css-global"
@@ -272,13 +274,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-offset{direction:inherit !important;box-sizing:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}
+                    .simplebar-offset{direction:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-content{direction:inherit;box-sizing:border-box !important;position:relative;display:block;height:100%;width:auto;visibility:visible;overflow:scroll;max-width:100%;max-height:100%;}
+                    .simplebar-content-wrapper{direction:inherit;position:relative;display:block;visibility:visible;}
                   </style>
                   <style
                     data-emotion="css-global"
@@ -290,43 +292,49 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-height-auto-observer-wrapper{box-sizing:inherit !important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;-webkit-box-flex:inherit;-webkit-flex-grow:inherit;-ms-flex-positive:inherit;flex-grow:inherit;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0;}
+                    .simplebar-height-auto-observer-wrapper{height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;-webkit-box-flex:inherit;-webkit-flex-grow:inherit;-ms-flex-positive:inherit;flex-grow:inherit;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-height-auto-observer{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}
+                    .simplebar-height-auto-observer{display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;}
+                    .simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-scrollbar{position:absolute;right:2px;width:6px;min-height:10px;}
+                    [data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-scrollbar:before{position:absolute;content:"";border-radius:6px;left:0;right:0;opacity:0;-webkit-transition:opacity 0.2s linear;transition:opacity 0.2s linear;background:#333333;}
+                    .simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.2;-webkit-transition:opacity 0s linear;transition:opacity 0s linear;}
+                    .simplebar-scrollbar:before{position:absolute;content:"";border-radius:7px;left:0;right:0;opacity:0;-webkit-transition:opacity 0.2s linear;transition:opacity 0.2s linear;background:#333333;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-track.simplebar-vertical{top:0;width:10px;right:0;}
+                    .simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;-webkit-transition:opacity 0s linear;transition:opacity 0s linear;}
+                  </style>
+                  <style
+                    data-emotion="css-global"
+                  >
+                    
+                    .simplebar-track.simplebar-vertical{top:0;width:11px;}
                   </style>
                   <style
                     data-emotion="css-global"
@@ -338,7 +346,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-track.simplebar-horizontal{left:0;height:10px;bottom:0;}
+                    .simplebar-track.simplebar-horizontal{left:0;height:11px;}
                   </style>
                   <style
                     data-emotion="css-global"
@@ -350,7 +358,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:6px;min-height:0;min-width:10px;width:auto;}
+                    .simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}
                   </style>
                   <style
                     data-emotion="css-global"
@@ -362,13 +370,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css-global"
                   >
                     
-                    .hs-dummy-scrollbar-size{direction:rtl;position:fixed;opacity:0;visibility:hidden;height:500px;width:500px;overflow-y:hidden;overflow-x:scroll;}
-                  </style>
-                  <style
-                    data-emotion="css-global"
-                  >
-                    
-                    [data-simplebar]{position:relative;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}
+                    [data-simplebar]{position:relative;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;}
                   </style>
                   <style
                     data-emotion="css-global"
@@ -386,13 +388,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-offset{direction:inherit !important;box-sizing:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}
+                    .simplebar-offset{direction:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-content{direction:inherit;box-sizing:border-box !important;position:relative;display:block;height:100%;width:auto;visibility:visible;overflow:scroll;max-width:100%;max-height:100%;}
+                    .simplebar-content-wrapper{direction:inherit;position:relative;display:block;visibility:visible;}
                   </style>
                   <style
                     data-emotion="css-global"
@@ -404,43 +406,49 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-height-auto-observer-wrapper{box-sizing:inherit !important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;-webkit-box-flex:inherit;-webkit-flex-grow:inherit;-ms-flex-positive:inherit;flex-grow:inherit;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0;}
+                    .simplebar-height-auto-observer-wrapper{height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;-webkit-box-flex:inherit;-webkit-flex-grow:inherit;-ms-flex-positive:inherit;flex-grow:inherit;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-height-auto-observer{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}
+                    .simplebar-height-auto-observer{display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;}
+                    .simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-scrollbar{position:absolute;right:2px;width:6px;min-height:10px;}
+                    [data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-scrollbar:before{position:absolute;content:"";border-radius:6px;left:0;right:0;opacity:0;-webkit-transition:opacity 0.2s linear;transition:opacity 0.2s linear;background:#333333;}
+                    .simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.2;-webkit-transition:opacity 0s linear;transition:opacity 0s linear;}
+                    .simplebar-scrollbar:before{position:absolute;content:"";border-radius:7px;left:0;right:0;opacity:0;-webkit-transition:opacity 0.2s linear;transition:opacity 0.2s linear;background:#333333;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-track.simplebar-vertical{top:0;width:10px;right:0;}
+                    .simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;-webkit-transition:opacity 0s linear;transition:opacity 0s linear;}
+                  </style>
+                  <style
+                    data-emotion="css-global"
+                  >
+                    
+                    .simplebar-track.simplebar-vertical{top:0;width:11px;}
                   </style>
                   <style
                     data-emotion="css-global"
@@ -452,7 +460,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-track.simplebar-horizontal{left:0;height:10px;bottom:0;}
+                    .simplebar-track.simplebar-horizontal{left:0;height:11px;}
                   </style>
                   <style
                     data-emotion="css-global"
@@ -464,25 +472,19 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css-global"
                   >
                     
-                    .simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:6px;min-height:0;min-width:10px;width:auto;}
+                    .simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}
                   </style>
                   <style
                     data-emotion="css-global"
                   >
                     
                     [data-simplebar-direction="rtl"] .simplebar-track.simplebar-vertical{right:auto;left:0;}
-                  </style>
-                  <style
-                    data-emotion="css-global"
-                  >
-                    
-                    .hs-dummy-scrollbar-size{direction:rtl;position:fixed;opacity:0;visibility:hidden;height:500px;width:500px;overflow-y:hidden;overflow-x:scroll;}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .emotion-0{overflow-y:auto;overflow-x:auto;}
+                    .emotion-0{overflow-y:auto;height:100%;overflow-x:auto;width:100%;}
                   </style>
                   <style
                     data-emotion="css"
@@ -708,7 +710,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-0{overflow-y:auto;overflow-x:auto;}
+                    .emotion-0{overflow-y:auto;height:100%;overflow-x:auto;width:100%;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -921,9 +923,9 @@ exports[`A11YPanel should render report 1`] = `
           serialized={
             Object {
               "map": undefined,
-              "name": "6ym4y",
+              "name": "nh5djz",
               "next": undefined,
-              "styles": "[data-simplebar]{position:relative;flex-direction:column;flex-wrap:wrap;justify-content:flex-start;align-content:flex-start;align-items:flex-start;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-wrapper{overflow:hidden;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-mask{direction:inherit;position:absolute;overflow:hidden;padding:0;margin:0;left:0;top:0;bottom:0;right:0;width:auto !important;height:auto !important;z-index:0;}.simplebar-offset{direction:inherit !important;box-sizing:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}.simplebar-content{direction:inherit;box-sizing:border-box !important;position:relative;display:block;height:100% /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */;width:auto;visibility:visible;overflow:scroll;max-width:100% /* Not required for horizontal scroll to trigger */;max-height:100% /* Needed for vertical scroll to trigger */;}.simplebar-placeholder{max-height:100%;max-width:100%;width:100%;pointer-events:none;}.simplebar-height-auto-observer-wrapper{box-sizing:inherit !important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;flex-grow:inherit;flex-shrink:0;flex-basis:0;}.simplebar-height-auto-observer{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}.simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;}.simplebar-scrollbar{position:absolute;right:2px;width:6px;min-height:10px;}.simplebar-scrollbar:before{position:absolute;content:\\"\\";border-radius:6px;left:0;right:0;opacity:0;transition:opacity 0.2s linear;background:#333333;}.simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.2;transition:opacity 0s linear;}.simplebar-track.simplebar-vertical{top:0;width:10px;right:0;}.simplebar-track.simplebar-vertical .simplebar-scrollbar:before{top:2px;bottom:2px;}.simplebar-track.simplebar-horizontal{left:0;height:10px;bottom:0;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before{height:100%;left:2px;right:2px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:6px;min-height:0;min-width:10px;width:auto;}[data-simplebar-direction=\\"rtl\\"] .simplebar-track.simplebar-vertical{right:auto;left:0;}.hs-dummy-scrollbar-size{direction:rtl;position:fixed;opacity:0;visibility:hidden;height:500px;width:500px;overflow-y:hidden;overflow-x:scroll;}",
+              "styles": "[data-simplebar]{position:relative;flex-direction:column;flex-wrap:wrap;justify-content:flex-start;align-content:flex-start;align-items:flex-start;}.simplebar-wrapper{overflow:hidden;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-mask{direction:inherit;position:absolute;overflow:hidden;padding:0;margin:0;left:0;top:0;bottom:0;right:0;width:auto !important;height:auto !important;z-index:0;}.simplebar-offset{direction:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}.simplebar-content-wrapper{direction:inherit;position:relative;display:block;visibility:visible;}.simplebar-placeholder{max-height:100%;max-width:100%;width:100%;pointer-events:none;}.simplebar-height-auto-observer-wrapper{height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;flex-grow:inherit;flex-shrink:0;flex-basis:0;}.simplebar-height-auto-observer{display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}.simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}[data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}.simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}.simplebar-scrollbar:before{position:absolute;content:\\"\\";border-radius:7px;left:0;right:0;opacity:0;transition:opacity 0.2s linear;background:#333333;}.simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;transition:opacity 0s linear;}.simplebar-track.simplebar-vertical{top:0;width:11px;}.simplebar-track.simplebar-vertical .simplebar-scrollbar:before{top:2px;bottom:2px;}.simplebar-track.simplebar-horizontal{left:0;height:11px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before{height:100%;left:2px;right:2px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}[data-simplebar-direction=\\"rtl\\"] .simplebar-track.simplebar-vertical{right:auto;left:0;}",
             }
           }
         />

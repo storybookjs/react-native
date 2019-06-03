@@ -73,6 +73,7 @@ Array [
 .emotion-26 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -526,6 +527,7 @@ Array [
 .emotion-32 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;

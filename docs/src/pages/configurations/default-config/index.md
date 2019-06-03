@@ -14,7 +14,7 @@ Here are some key features of Storybook's Babel configurations.
 
 We have added ES2016 support with Babel for transpiling your JS code.
 In addition to that, we've added a few experimental features, like object spreading and async await.
-Check out our [source](https://github.com/storybooks/storybook/blob/master/lib/core/src/server/config/babel.dev.js) to learn more about these plugins.
+Check out our [source](https://github.com/storybookjs/storybook/blob/master/lib/core/src/server/config/babel.dev.js) to learn more about these plugins.
 
 ### .babelrc support
 
@@ -102,7 +102,7 @@ The webpack config [is configurable](/configurations/custom-webpack-config/), an
             { loader: 'babel-loader', options:
               { cacheDirectory: './node_modules/.cache/storybook',
                 presets: [
-                  [ './node_modules/@babel/preset-env/lib/index.js', { shippedProposals: true, useBuiltIns: 'usage' } ],
+                  [ './node_modules/@babel/preset-env/lib/index.js', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' } ],
                   './node_modules/@babel/preset-react/lib/index.js',
                   './node_modules/@babel/preset-flow/lib/index.js',
                 ],

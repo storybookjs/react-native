@@ -1,17 +1,17 @@
 {
   "name": "@storybook/core-events",
-  "version": "5.1.0-beta.0",
+  "version": "5.1.0-rc.4",
   "description": "Event names used in storybook core",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core-events",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/core-events",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/core-events"
   },
   "license": "MIT",

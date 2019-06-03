@@ -1,13 +1,12 @@
 # Storybook
 
 <p align="center">
-  <a href="https://teamcity.jetbrains.com/viewType.html?buildTypeId=OpenSourceProjects_Storybook_Build_2&amp;branch_OpenSourceProjects_Storybook=%3Cdefault%3E&amp;tab=buildTypeStatusDiv"><img src="https://teamcity.jetbrains.com/app/rest/builds/buildType:OpenSourceProjects_Storybook_Build_2/statusIcon.svg" alt="Build Status on TeamCity" /></a>
-  <a href="https://circleci.com/gh/storybooks/storybook"><img src="https://circleci.com/gh/storybooks/storybook.svg?style=shield" alt="Build Status on CircleCI" /></a>
-  <a href="https://www.codefactor.io/repository/github/storybooks/storybook"><img src="https://www.codefactor.io/repository/github/storybooks/storybook/badge" alt="CodeFactor" /></a>
-  <a href="https://snyk.io/test/github/storybooks/storybook"><img src="https://snyk.io/test/github/storybooks/storybook/badge.svg" alt="Known Vulnerabilities" /></a>
-  <a href="https://bettercodehub.com/results/storybooks/storybook"><img src="https://bettercodehub.com/edge/badge/storybooks/storybook" alt="BCH compliance" /></a>
-  <a href="https://codecov.io/gh/storybooks/storybook"><img src="https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg" alt="codecov" /></a>
-  <a href="https://github.com/storybooks/storybook/blob/master/LICENSE"><img src="https://img.shields.io/github/license/storybooks/storybook.svg" alt="License" /></a></p>
+  <a href="https://circleci.com/gh/storybookjs/storybook"><img src="https://circleci.com/gh/storybookjs/storybook.svg?style=shield" alt="Build Status on CircleCI" /></a>
+  <a href="https://www.codefactor.io/repository/github/storybookjs/storybook"><img src="https://www.codefactor.io/repository/github/storybookjs/storybook/badge" alt="CodeFactor" /></a>
+  <a href="https://snyk.io/test/github/storybookjs/storybook"><img src="https://snyk.io/test/github/storybookjs/storybook/badge.svg" alt="Known Vulnerabilities" /></a>
+  <a href="https://bettercodehub.com/results/storybookjs/storybook"><img src="https://bettercodehub.com/edge/badge/storybookjs/storybook" alt="BCH compliance" /></a>
+  <a href="https://codecov.io/gh/storybookjs/storybook"><img src="https://codecov.io/gh/storybookjs/storybook/branch/master/graph/badge.svg" alt="codecov" /></a>
+  <a href="https://github.com/storybookjs/storybook/blob/master/LICENSE"><img src="https://img.shields.io/github/license/storybookjs/storybook.svg" alt="License" /></a></p>
 </p>
 <p align="center">
   <a href="https://discord.gg/sMFvFsG"><img src="https://img.shields.io/badge/discord-join-7289DA.svg?logo=discord&longCache=true&style=flat" /></a>
@@ -132,13 +131,13 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 
 We have a badge! Link it to your live Storybook example.
 
-![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)
+![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)
 
 ```md
-[![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](link to site)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](link to site)
 ```
 
-If you're looking for material to use in your presentation about storybook, like logo's video material and the colors we use etc, you can find all of that at our [press repo](https://github.com/storybooks/press).
+If you're looking for material to use in your presentation about storybook, like logo's video material and the colors we use etc, you can find all of that at our [press repo](https://github.com/storybookjs/press).
 
 ## Community
 
@@ -158,7 +157,7 @@ We welcome contributions to Storybook!
 
 Looking for a first issue to tackle?
 
-- We tag issues with [![Good First Issue](https://img.shields.io/github/issues/storybooks/storybook/good%20first%20issue.svg)](https://github.com/storybooks/storybook/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) when we think they are well suited for people who are new to the codebase or OSS in general.
+- We tag issues with [![Good First Issue](https://img.shields.io/github/issues/storybookjs/storybook/good%20first%20issue.svg)](https://github.com/storybookjs/storybook/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) when we think they are well suited for people who are new to the codebase or OSS in general.
 - [Talk to us](https://discord.gg/sMFvFsG), we'll find something to suits your skills and learning interest.
 
 ### Development scripts
@@ -259,6 +258,6 @@ Support us with a monthly donation and help us continue our activities. \[[Becom
 
 ## License
 
-[MIT](https://github.com/storybooks/storybook/blob/master/LICENSE)
+[MIT](https://github.com/storybookjs/storybook/blob/master/LICENSE)
 
 -the end-

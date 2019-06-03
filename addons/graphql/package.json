@@ -1,18 +1,18 @@
 {
   "name": "@storybook/addon-graphql",
-  "version": "5.1.0-beta.0",
+  "version": "5.1.0-rc.4",
   "description": "Storybook addon to display the GraphiQL IDE",
   "keywords": [
     "addon",
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/graphql",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/graphql",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/graphql"
   },
   "license": "MIT",
@@ -22,8 +22,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.28",
-    "@storybook/api": "5.1.0-alpha.28",
+    "@storybook/addons": "5.1.0-rc.4",
+    "@storybook/api": "5.1.0-rc.4",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "graphiql": "^0.13.0",
