@@ -14,4 +14,4 @@ export * from './create';
 export * from './convert';
 export * from './ensure';
 
-export { lightenColor, darkenColor } from './utils';
+export { lightenColor as lighten, darkenColor as darken } from './utils';
