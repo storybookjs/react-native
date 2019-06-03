@@ -111,6 +111,10 @@ module.exports = ({ config, mode }) => {
 
 The default `tsconfig.json` that comes with CRA works great. If your stories are outside the `src` folder, for example the `stories` folder in root, then `"rootDirs": ["src", "stories"]` needs to be added to be added to `compilerOptions` so it knows what folders to compile. Make sure `jsx` is set to preserve. Should be unchanged.
 
+## Create a TSX storybook index 
+
+The default storybook index file is `stories/index.js` -- you'll want to rename this to `stories/index.tsx`.
+
 ## Import tsx stories
 
 Change `config.ts` inside the Storybook config directory (by default, it’s `.storybook`) to import stories made with TypeScript:
