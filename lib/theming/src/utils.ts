@@ -6,17 +6,17 @@ export const mkColor = (color: string) => ({ color });
 // to library polished's functions such as lighten or darken throws the error
 // that crashes the entire storybook. It needs to be guarded when arguments
 // of those functions are from user input.
-const isLinearGradient = (color: string) => {
-  return typeof color === 'string' && color.includes('linear-gradient');
+const isColorVarChangeable = (color: string) => {
+  return !!color.match(/(gradient|var)/);
 };
 
 const colorFactory = (type: string) => (color: string) => {
   if (type === 'darken') {
-    return isLinearGradient(color) ? color : rgba(`${darken(1, color)}`, 0.95);
+    return isColorVarChangeable(color) ? color : rgba(`${darken(1, color)}`, 0.95);
   }
 
   if (type === 'lighten') {
-    return isLinearGradient(color) ? color : rgba(`${lighten(1, color)}`, 0.95);
+    return isColorVarChangeable(color) ? color : rgba(`${lighten(1, color)}`, 0.95);
   }
 
   return color;
