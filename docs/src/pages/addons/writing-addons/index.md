@@ -61,7 +61,7 @@ We write an addon that responds to a change in story selection like so:
 // register.js
 
 import React from 'react';
-import { STORY_RENDERED } from '@storybook/core-events';
+import { STORY_CHANGED } from '@storybook/core-events';
 import addons, { types } from '@storybook/addons';
 
 const ADDON_ID = 'myaddon';
@@ -74,13 +74,13 @@ class MyPanel extends React.Component {
   componentDidMount() {
     const { api } = this.props;
 
-    api.on(STORY_RENDERED, this.onStoryChange);
+    api.on(STORY_CHANGED, this.onStoryChange);
   }
 
   componentWillUnmount() {
     const { api } = this.props;
 
-    api.off(STORY_RENDERED, this.onStoryChange);
+    api.off(STORY_CHANGED, this.onStoryChange);
   }
 
   onStoryChange = id => {
@@ -200,12 +200,12 @@ class MyPanel extends React.Component {
   componentDidMount() {
     const { api } = this.props;
     api.on('foo/doSomeAction', this.onSomeAction);
-    api.on(STORY_RENDERED, this.onStoryChange);
+    api.on(STORY_CHANGED, this.onStoryChange);
   }
   componentWillUnmount() {
     const { api } = this.props;
     api.off('foo/doSomeAction', this.onSomeAction);
-    api.off(STORY_RENDERED, this.onStoryChange);
+    api.off(STORY_CHANGED, this.onStoryChange);
   }
 
   render() {
