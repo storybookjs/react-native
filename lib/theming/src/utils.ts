@@ -2,10 +2,10 @@ import { rgba, lighten, darken } from 'polished';
 
 export const mkColor = (color: string) => ({ color });
 
-// Passing linear-gradient string to library polished's functions such as
-// lighten or darken throws the error that crashes the entire storybook.
-// It needs to be guarded when arguments of those functions are from
-// user input.
+// Passing arguments that can't be converted to RGB such as linear-gradient
+// to library polished's functions such as lighten or darken throws the error
+// that crashes the entire storybook. It needs to be guarded when arguments
+// of those functions are from user input.
 const isLinearGradient = (color: string) => {
   return typeof color === 'string' && color.includes('linear-gradient');
 };
