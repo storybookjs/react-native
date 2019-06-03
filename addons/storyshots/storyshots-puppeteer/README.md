@@ -120,7 +120,7 @@ You might use `getScreenshotOptions` to specify options for screenshot. Will be 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
-const getScreenshotOptions = ({context, url}) {
+const getScreenshotOptions = ({context, url}) => {
   return {
     fullPage: false // Do not take the full page screenshot. Default is 'true' in Storyshots.
   }
