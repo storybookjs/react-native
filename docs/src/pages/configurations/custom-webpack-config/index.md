@@ -204,7 +204,7 @@ Nevertheless, edit `config` with care. Make sure to preserve the following confi
 - entry
 - output
 
-Furthermore, `config` requires the `HtmlWebpackplugin` to generate the preview page, so rather than overwriting `config.plugins` you should probably append to it (or overwrite it with care), see [Issue #6020](https://github.com/storybooks/storybook/issues/6020) for examples:
+Furthermore, `config` requires the `HtmlWebpackplugin` to generate the preview page, so rather than overwriting `config.plugins` you should probably append to it (or overwrite it with care), see [Issue #6020](https://github.com/storybookjs/storybook/issues/6020) for examples:
 
 ```js
 module.exports = async ({ config, mode }) => {
@@ -219,7 +219,7 @@ Finally, if your custom webpack config uses a loader that does not explicitly in
 
 If your file exports an **object**, it puts Storybook into **extend-mode**. This mode is deprecated and will be removed in a future version.
 
-Extend-mode _merges_ the exported object with Storybook's [default webpack configuration](../default-config/) which supports a bunch of common file types. The [merge operation](https://github.com/storybooks/storybook/blob/next/lib/core/src/server/utils/merge-webpack-config.js) appends webpack arrays like `rules` and `plugins` and merges objects like `optimization`.
+Extend-mode _merges_ the exported object with Storybook's [default webpack configuration](../default-config/) which supports a bunch of common file types. The [merge operation](https://github.com/storybookjs/storybook/blob/next/lib/core/src/server/utils/merge-webpack-config.js) appends webpack arrays like `rules` and `plugins` and merges objects like `optimization`.
 
 For example, to add [SASS](http://sass-lang.com/) support to Storybook, install `style-loader`, `css-loader`, `sass-loader`, and `node-sass` and add the following snippet to `.storybook/webpack.config.js`:
 

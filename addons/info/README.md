@@ -3,9 +3,9 @@
 Storybook Info Addon will show additional information for your stories in [Storybook](https://storybook.js.org).
 Useful when you want to display usage or other types of documentation alongside your story.
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Screenshot](https://raw.githubusercontent.com/storybooks/storybook/HEAD/addons/info/docs/home-screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/storybookjs/storybook/HEAD/addons/info/docs/home-screenshot.png)
 
 ## Installation
 
@@ -198,7 +198,7 @@ In order, all of them will be combined together, with a later call overriding th
   propTablesExclude: Array<React.ComponentType>,
   /**
    * Overrides styles of addon. The object should follow this shape:
-   * https://github.com/storybooks/storybook/blob/master/addons/info/src/components/Story.js#L19.
+   * https://github.com/storybookjs/storybook/blob/master/addons/info/src/components/Story.js#L19.
    * This prop can also accept a function which has the default stylesheet passed as an argument
    */
   styles: Object | Function,

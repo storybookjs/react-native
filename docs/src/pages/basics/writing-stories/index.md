@@ -222,7 +222,7 @@ configure it using the `hierarchyRootSeparator` config option. Visit the
 
 Nesting paths can be programmatically generated with template literals because story names are strings.
 
-One example would be to use `base` from [`paths.macro`](https://github.com/storybooks/paths.macro):
+One example would be to use `base` from [`paths.macro`](https://github.com/storybookjs/paths.macro):
 
 ```js
 import React from 'react';

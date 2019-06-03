@@ -8,13 +8,13 @@
     "react",
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/events",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/events",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/events"
   },
   "license": "MIT",

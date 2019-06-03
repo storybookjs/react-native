@@ -252,7 +252,7 @@ export default function({ store }: { store: Store }) {
       // to avoid a FOUC (e.g. initial rendering the wrong theme while we waited for the stories to load)
       // However, we don't want to have a memory about these things, otherwise we see bugs like the
       // user setting a name for their storybook, persisting it, then never being able to unset it
-      // without clearing localstorage. See https://github.com/storybooks/storybook/issues/5857
+      // without clearing localstorage. See https://github.com/storybookjs/storybook/issues/5857
       const { layout, ui, selectedPanel, theme } = hasSetOptions ? store.getState() : initial;
 
       if (options) {

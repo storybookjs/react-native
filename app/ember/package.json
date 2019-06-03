@@ -2,13 +2,13 @@
   "name": "@storybook/ember",
   "version": "5.1.0-rc.4",
   "description": "Storybook for Ember: Develop Ember Component in isolation with Hot Reloading.",
-  "homepage": "https://github.com/storybooks/storybook/tree/master/app/ember",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/app/ember",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "app/ember"
   },
   "license": "MIT",
