@@ -1,3 +1,14 @@
+## 5.1.0-rc.4 (June 2, 2019)
+
+### Features
+
+* Core: deep merge global options parameter ([#6900](https://github.com/storybooks/storybook/pull/6900))
+
+### Bug Fixes
+
+* Core: Fix webpack `process.*` variable definitions ([#6946](https://github.com/storybooks/storybook/pull/6946))
+* Angular: Fix tsconfig.app.json detection for Angular 8 ([#6940](https://github.com/storybooks/storybook/pull/6940))
+
 ## 5.1.0-rc.3 (May 29, 2019)
 
 ### Features
