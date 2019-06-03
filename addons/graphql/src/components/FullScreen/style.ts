@@ -1,6 +1,6 @@
 export const style = {
   wrapper: {
-    position: 'absolute' as 'absolute',
+    position: 'absolute' as const,
     top: 0,
     right: 0,
     bottom: 0,
