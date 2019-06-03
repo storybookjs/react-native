@@ -198,7 +198,7 @@ const initStoriesApi = ({
                 `
 Invalid part '${name}', leading to id === parentId ('${id}'), inside kind '${kind}'
 
-Did you create a path that uses the separator char accidentally, such as 'Vue <docs/>' where '/' is a separator char? See https://github.com/storybooks/storybook/issues/6128
+Did you create a path that uses the separator char accidentally, such as 'Vue <docs/>' where '/' is a separator char? See https://github.com/storybookjs/storybook/issues/6128
               `.trim()
               );
             }

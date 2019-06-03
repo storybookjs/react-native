@@ -7,13 +7,13 @@
     "react-native",
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react-native",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/app/react-native",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "app/react-native"
   },
   "license": "MIT",

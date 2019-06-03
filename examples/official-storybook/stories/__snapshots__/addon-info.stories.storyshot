@@ -1266,7 +1266,7 @@ exports[`Storyshots Addons|Info/JSX Displays JSX in description 1`] = `
             </p>
             <p>
               <a
-                href="https://github.com/storybooks/react-storybook-addon-info"
+                href="https://github.com/storybookjs/react-storybook-addon-info"
               >
                 This is a link
               </a>

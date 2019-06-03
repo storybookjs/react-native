@@ -5949,7 +5949,7 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
     </a>
     <a
       class="emotion-1"
-      href="https://github.com/storybooks/storybook"
+      href="https://github.com/storybookjs/storybook"
       target="_blank"
     >
       <span
@@ -7482,7 +7482,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </a>
             <a
               class="emotion-91"
-              href="https://github.com/storybooks/storybook"
+              href="https://github.com/storybookjs/storybook"
               target="_blank"
             >
               <span

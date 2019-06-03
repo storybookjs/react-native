@@ -7,9 +7,9 @@ title: 'Preset Gallery'
 
 ## Presets maintained by storybook team
 
-Storybook-maintained presets are available in the [Presets repo](https://github.com/storybooks/presets). They include:
+Storybook-maintained presets are available in the [Presets repo](https://github.com/storybookjs/presets). They include:
 
-### [Typescript](https://github.com/storybooks/presets/tree/master/packages/preset-typescript)
+### [Typescript](https://github.com/storybookjs/presets/tree/master/packages/preset-typescript)
 
 Write your stories in typescript with a single line of configuration.
 

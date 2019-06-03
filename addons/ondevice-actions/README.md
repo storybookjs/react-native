@@ -2,9 +2,9 @@
 
 Storybook Actions Addon allows you to log events/actions inside stories in [Storybook](https://storybook.js.org).
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-**This addon is a wrapper for addon [@storybook/addon-actions](https://github.com/storybooks/storybook/blob/master/addons/actions).
+**This addon is a wrapper for addon [@storybook/addon-actions](https://github.com/storybookjs/storybook/blob/master/addons/actions).
 Refer to its documentation to understand how to use actions**
 
 ## Installation
@@ -29,4 +29,4 @@ Then import `rn-addons.js` next to your `getStorybookUI` call.
 import './rn-addons';
 ```
 
-See [@storybook/addon-actions](https://github.com/storybooks/storybook/blob/master/addons/actions) to learn how to write stories with actions and the [crna-kitchen-sink app](../../examples-native/crna-kitchen-sink) for more examples.
+See [@storybook/addon-actions](https://github.com/storybookjs/storybook/blob/master/addons/actions) to learn how to write stories with actions and the [crna-kitchen-sink app](../../examples-native/crna-kitchen-sink) for more examples.
