@@ -11,6 +11,7 @@ const mapper = ({ state, api }) => ({
   api,
   storiesHash: state.storiesHash,
   storyId: state.storyId,
+  viewMode: state.viewMode,
 });
 
 export default class ReactProvider extends Provider {
@@ -48,12 +49,12 @@ export default class ReactProvider extends Provider {
   renderPreview() {
     return (
       <Consumer filter={mapper} pure>
-        {({ storiesHash, storyId, api }) => {
+        {({ storiesHash, storyId, api, viewMode }) => {
           if (storiesHash[storyId]) {
             const { kind, story } = storiesHash[storyId];
             api.emit(Events.SET_CURRENT_STORY, { kind, story });
           }
-          return <PreviewHelp />;
+          return viewMode === 'story' ? <PreviewHelp /> : null;
         }}
       </Consumer>
     );
