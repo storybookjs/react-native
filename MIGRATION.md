@@ -2,6 +2,7 @@
 
 - [From version 5.0.x to 5.1.x](#from-version-50x-to-51x)
   - [React native server](#react-native-server)
+  - [Angular 7](#angular-7)
 - [From version 5.0.1 to 5.0.2](#from-version-501-to-502)
   - [Deprecate webpack extend mode](#deprecate-webpack-extend-mode)
 - [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
@@ -79,7 +80,7 @@ And with that you should be good to go!
 
 ### Angular 7
 
-Storybook 5.1 relies on `core-js@^3.0.0` and therefore causes a conflict with Angular 7 that relies on `core-js@^2.0.0`. In order to get Storybook running on Angular 7 you can either update to Angular 8 (which dropped core-js as a dependency) or follow the upcoming steps:
+Storybook 5.1 relies on `core-js@^3.0.0` and therefore causes a conflict with Angular 7 that relies on `core-js@^2.0.0`. In order to get Storybook running on Angular 7 you can either update to Angular 8 (which dropped `core-js` as a dependency) or follow these steps:
 
 - Remove `node_modules/@storybook`
 - `npm i core-js@^3.0.0` / `yarn add core-js@^3.0.0`
