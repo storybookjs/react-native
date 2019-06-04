@@ -155,7 +155,7 @@ export default function({ store }: { store: Store }) {
   const api = {
     toggleFullscreen(toggled?: boolean) {
       return store.setState((state: State) => {
-        const value = typeof toggled !== 'undefined' ? toggled : !state.layout.isFullscreen;
+        const value = typeof toggled === 'boolean' ? toggled : !state.layout.isFullscreen;
 
         return {
           layout: {
