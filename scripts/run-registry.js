@@ -4,6 +4,7 @@ import inquirer from 'inquirer';
 import chalk from 'chalk';
 import detectFreePort from 'detect-port';
 import { stripIndents } from 'common-tags';
+import fs from 'fs';
 
 import nodeCleanup from 'node-cleanup';
 
@@ -15,28 +16,40 @@ let verdaccioProcess;
 
 const startVerdaccio = port => {
   let resolved = false;
-  return new Promise((res, rej) => {
-    verdaccioProcess = spawn('npx', [
-      'verdaccio@4.0.0-beta.1',
-      '-c',
-      'scripts/verdaccio.yaml',
-      '-l',
-      port,
-    ]);
-    verdaccioProcess.stdout.on('data', data => {
-      if (!resolved && data && data.toString().match(/http address/)) {
-        const [url] = data.toString().match(/(http:.*\d\/)/);
-        res(url);
-        resolved = true;
-      }
-    });
+  return Promise.race([
+    new Promise(res => {
+      verdaccioProcess = spawn('npx', [
+        'verdaccio@4.0.1',
+        '-c',
+        'scripts/verdaccio.yaml',
+        '-l',
+        port,
+      ]);
+      verdaccioProcess.stdout.on('data', data => {
+        if (!resolved && data && data.toString().match(/http address/)) {
+          const [url] = data.toString().match(/(http:.*\d\/)/);
+          res(url);
+          resolved = true;
+        }
+        fs.appendFile('verdaccio.log', data, err => {
+          if (err) {
+            throw err;
+          }
+        });
+      });
+    }),
+    new Promise((res, rej) => {
+      setTimeout(() => {
+        if (!resolved) {
+          rej(new Error(`TIMEOUT - verdaccio didn't start within 60s`));
 
-    setTimeout(() => {
-      rej(new Error(`TIMEOUT - verdaccio didn't start within 60s`));
-      resolved = true;
-      verdaccioProcess.kill();
-    }, 60000);
-  });
+          resolved = true;
+
+          verdaccioProcess.kill();
+        }
+      }, 60000);
+    }),
+  ]);
 };
 const registryUrl = (command, url) =>
   new Promise((res, rej) => {
@@ -145,7 +158,7 @@ const askForReset = () =>
         type: 'confirm',
         message: `${chalk.red(
           'THIS IS BAD'
-        )} looks like something bad hapened, OR you're already using a local registry, shall we reset to the default registry https://registry.npmjs.org/ ?`,
+        )} looks like something bad happened, OR you're already using a local registry, shall we reset to the default registry https://registry.npmjs.org/ ?`,
         name: 'sure',
       },
     ])
