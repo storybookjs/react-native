@@ -77,6 +77,29 @@ If you wish to run the optional web server, you will need to do the following mi
 
 And with that you should be good to go!
 
+### Angular 7
+
+Storybook 5.1 relies on `core-js@^3.0.0` and therefore causes a conflict with Angular 7 that relies on `core-js@^2.0.0`. In order to get Storybook running on Angular 7 you can either update to Angular 8 (which dropped core-js as a dependency) or follow the upcoming steps:
+
+- Remove `node_modules/@storybook`
+- `npm i core-js@^3.0.0` / `yarn add core-js@^3.0.0`
+- Add the following paths to your `tsconfig.json`
+
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "core-js/es7/reflect": ["node_modules/core-js/proposals/reflect-metadata"],
+      "core-js/es6/*": ["node_modules/core-js/es"]
+    }
+  }
+}
+```
+
+You should now be able to run Storybook and Angular 7 without any errors.
+
+Reference issue: [https://github.com/angular/angular-cli/issues/13954](https://github.com/angular/angular-cli/issues/13954)
+
 ## From version 5.0.1 to 5.0.2
 
 ### Deprecate webpack extend mode
@@ -133,11 +156,11 @@ var modules = context.keys();
 // sort them
 var sortedModules = modules.slice().sort((a, b) => {
   // sort the stories based on filename/path
-  return a < b ? -1 : (a > b ? 1 : 0);
+  return a < b ? -1 : a > b ? 1 : 0;
 });
 
 // execute them
-sortedModules.forEach((key) => {
+sortedModules.forEach(key => {
   context(key);
 });
 ```
