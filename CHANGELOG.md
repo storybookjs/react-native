@@ -1,3 +1,21 @@
+## 5.1.0-rc.5 (June 4, 2019)
+
+### Features
+
+* UI: Add copy button for individual story ([#6719](https://github.com/storybookjs/storybook/pull/6719))
+
+### Bug Fixes
+
+* UI: Fix canvas rendering issue ([#6968](https://github.com/storybookjs/storybook/pull/6968))
+* Angular: Remove zonejs from devDeps; allow ^0.8.0 || ^0.9.0 ([#6957](https://github.com/storybookjs/storybook/pull/6957))
+* Jest: layout/design fixes ([#6847](https://github.com/storybookjs/storybook/pull/6847))
+* Angular: Add 'addParameters' to index.d.ts ([#6929](https://github.com/storybookjs/storybook/pull/6929))
+
+### Maintenance
+
+* FIX race condition in startup of verdaccio && FIX typos ([#6956](https://github.com/storybookjs/storybook/pull/6956))
+* Github org rename to storybookjs ([#6954](https://github.com/storybookjs/storybook/pull/6954))
+
 ## 5.1.0-rc.4 (June 2, 2019)
 
 ### Features
