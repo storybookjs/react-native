@@ -15,8 +15,8 @@
     "directory": "app/angular"
   },
   "license": "MIT",
-  "main": "dist/client/index.js",
-  "jsnext:main": "src/client/index.js",
+  "main": "dist/index.js",
+  "types": "dist/public_api.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
