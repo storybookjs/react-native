@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-events",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
   "description": "Add events to your Storybook stories.",
   "keywords": [
     "addon",
@@ -8,13 +8,13 @@
     "react",
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/events",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/events",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/events"
   },
   "license": "MIT",
@@ -24,9 +24,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-beta.1",
-    "@storybook/core-events": "5.1.0-beta.1",
-    "@storybook/theming": "5.1.0-beta.1",
+    "@storybook/addons": "5.1.0-rc.5",
+    "@storybook/core-events": "5.1.0-rc.5",
+    "@storybook/theming": "5.1.0-rc.5",
     "core-js": "^3.0.1",
     "format-json": "^1.0.3",
     "prop-types": "^15.7.2",

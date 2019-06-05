@@ -1,18 +1,18 @@
 {
   "name": "@storybook/addon-links",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
   "description": "Story Links addon for storybook",
   "keywords": [
     "addon",
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/links",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/links",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/links"
   },
   "license": "MIT",
@@ -22,9 +22,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-beta.1",
-    "@storybook/core-events": "5.1.0-beta.1",
-    "@storybook/router": "5.1.0-beta.1",
+    "@storybook/addons": "5.1.0-rc.5",
+    "@storybook/core-events": "5.1.0-rc.5",
+    "@storybook/router": "5.1.0-rc.5",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",

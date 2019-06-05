@@ -1,10 +1,12 @@
 {
   "name": "@storybook/root",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
+  "description": "Storybook is an open source tool for developing UI components in isolation for React, Vue and Angular. It makes building stunning UIs organized and efficient.",
+  "homepage": "https://storybook.js.org/",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybookjs/storybook.git"
   },
   "workspaces": [
     "addons/*",
@@ -36,7 +38,6 @@
     "docs:dev": "npm --prefix docs run dev",
     "github-release": "github-release-from-changelog",
     "lint": "yarn lint:js . && yarn lint:md .",
-    "lint:ci": "yarn lint:js --format ./node_modules/eslint-teamcity/index.js . && yarn lint:md .",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
     "lint:md": "remark -q",
     "lint:package": "sort-package-json",
@@ -158,7 +159,6 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-teamcity": "^2.1.0",
     "esm": "^3.2.25",
     "github-release-from-changelog": "^1.3.2",
     "glob": "^7.1.3",
@@ -176,7 +176,6 @@
     "jest-jasmine2": "^24.7.1",
     "jest-preset-angular": "^6.0.1",
     "jest-raw-loader": "^1.0.1",
-    "jest-teamcity-reporter": "^0.9.0",
     "jest-vue-preprocessor": "^1.5.0",
     "jest-watch-typeahead": "^0.3.0",
     "lerna": "^3.14.1",
@@ -209,9 +208,6 @@
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
-  },
-  "eslint-teamcity": {
-    "reporter": "inspections"
   },
   "pr-log": {
     "skipLabels": [
@@ -252,5 +248,27 @@
         "Other"
       ]
     ]
-  }
+  },
+  "keywords": [
+    "ui",
+    "user interface",
+    "components",
+    "storybook",
+    "storybookjs",
+    "react",
+    "reactjs",
+    "angular",
+    "angularjs",
+    "vue",
+    "vuejs",
+    "babel",
+    "eslint",
+    "frontend",
+    "jamstack",
+    "documentation",
+    "tool",
+    "templated",
+    "reuseable",
+    "markup"
+  ]
 }

@@ -76,7 +76,7 @@ class ReactProvider extends Provider {
   handleAPI(api) {
     api.setOptions({
       // see available options in
-      // https://github.com/storybooks/storybook/tree/master/addons/options#getting-started
+      // https://github.com/storybookjs/storybook/tree/master/addons/options#getting-started
     });
   }
 };

@@ -37,7 +37,7 @@ describe('Test on behaviors from collecting the propsMap', () => {
 
 describe('Test on the integrity of the method to get the propMaps', () => {
   it('should return the correct propsMap from the specified selectionState', () => {
-    // setup
+    // given
     const someContextNodes = [
       {
         components: ['div'],
@@ -69,10 +69,10 @@ describe('Test on the integrity of the method to get the propMaps', () => {
       'Another Context': OPT_OUT, // an inconsistent but possible state being introduced via query param
     };
 
-    // exercise
+    // when
     const result = getPropsMap(someContextNodes, someSelectionState);
 
-    // assertion
+    // then
     expect(result).toEqual({
       'Some Context': { a: 1 },
       'Another Context': { b: 1 }, // not equal to `OPT_OUT` due to the context is not cancelable

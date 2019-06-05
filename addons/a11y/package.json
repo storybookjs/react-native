@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-a11y",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
   "description": "a11y addon for storybook",
   "keywords": [
     "a11y",
@@ -10,13 +10,13 @@
     "valid",
     "verify"
   ],
-  "homepage": "https://github.com/storybooks/storybook#readme",
+  "homepage": "https://github.com/storybookjs/storybook#readme",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git",
+    "url": "git+https://github.com/storybookjs/storybook.git",
     "directory": "addons/a11y"
   },
   "license": "MIT",
@@ -26,12 +26,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-beta.1",
-    "@storybook/api": "5.1.0-beta.1",
-    "@storybook/client-logger": "5.1.0-beta.1",
-    "@storybook/components": "5.1.0-beta.1",
-    "@storybook/core-events": "5.1.0-beta.1",
-    "@storybook/theming": "5.1.0-beta.1",
+    "@storybook/addons": "5.1.0-rc.5",
+    "@storybook/api": "5.1.0-rc.5",
+    "@storybook/client-logger": "5.1.0-rc.5",
+    "@storybook/components": "5.1.0-rc.5",
+    "@storybook/core-events": "5.1.0-rc.5",
+    "@storybook/theming": "5.1.0-rc.5",
     "axe-core": "^3.2.2",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",

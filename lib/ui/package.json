@@ -1,17 +1,17 @@
 {
   "name": "@storybook/ui",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/ui",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/ui",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/ui"
   },
   "license": "MIT",
@@ -22,13 +22,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-beta.1",
-    "@storybook/api": "5.1.0-beta.1",
-    "@storybook/client-logger": "5.1.0-beta.1",
-    "@storybook/components": "5.1.0-beta.1",
-    "@storybook/core-events": "5.1.0-beta.1",
-    "@storybook/router": "5.1.0-beta.1",
-    "@storybook/theming": "5.1.0-beta.1",
+    "@storybook/addons": "5.1.0-rc.5",
+    "@storybook/api": "5.1.0-rc.5",
+    "@storybook/client-logger": "5.1.0-rc.5",
+    "@storybook/components": "5.1.0-rc.5",
+    "@storybook/core-events": "5.1.0-rc.5",
+    "@storybook/router": "5.1.0-rc.5",
+    "@storybook/theming": "5.1.0-rc.5",
+    "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
     "fast-deep-equal": "^2.0.1",
@@ -47,6 +48,7 @@
     "react-hotkeys": "2.0.0-pre4",
     "react-resize-detector": "^4.0.5",
     "recompose": "^0.30.0",
+    "resolve-from": "^5.0.0",
     "semver": "^6.0.0",
     "store2": "^2.7.1",
     "telejson": "^2.2.1",

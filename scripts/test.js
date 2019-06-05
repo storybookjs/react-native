@@ -99,12 +99,6 @@ const tasks = {
     option: '--update',
     extraParam: '-u --updateSnapshot',
   }),
-  teamcity: createOption({
-    name: `Use TeamCity reporter`,
-    defaultValue: false,
-    option: '--teamcity',
-    extraParam: '-t --testResultsProcessor=jest-teamcity-reporter',
-  }),
 };
 
 const getProjects = list => list.filter(key => key.projectLocation);

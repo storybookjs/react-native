@@ -1,17 +1,17 @@
 {
   "name": "@storybook/react",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/app/react",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "app/react"
   },
   "license": "MIT",
@@ -29,8 +29,8 @@
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/core": "5.1.0-beta.1",
-    "@storybook/node-logger": "5.1.0-beta.1",
+    "@storybook/core": "5.1.0-rc.5",
+    "@storybook/node-logger": "5.1.0-rc.5",
     "@svgr/webpack": "^4.0.3",
     "babel-plugin-named-asset-import": "^0.3.1",
     "babel-plugin-react-docgen": "^3.0.0",
@@ -39,7 +39,7 @@
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "lodash": "^4.17.11",
-    "mini-css-extract-plugin": "^0.6.0",
+    "mini-css-extract-plugin": "^0.7.0",
     "prop-types": "^15.7.2",
     "react-dev-utils": "^9.0.0",
     "regenerator-runtime": "^0.12.1",
