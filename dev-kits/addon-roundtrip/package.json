@@ -1,0 +1,45 @@
+{
+    "name": "@storybook/addon-roundtrip",
+    "version": "5.1.0-rc.5",
+    "description": "roundtrip addon for storybook",
+    "keywords": [
+      "devkit",
+      "addon",
+      "storybook",
+      "roundtrip"
+    ],
+    "homepage": "https://github.com/storybooks/storybook#readme",
+    "bugs": {
+      "url": "https://github.com/storybooks/storybook/issues"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/storybooks/storybook.git",
+      "directory": "dev-kit/addon-roundtrip"
+    },
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+      "prepare": "node ../../scripts/prepare.js"
+    },
+    "dependencies": {
+      "@storybook/addons": "5.1.0-rc.5",
+      "@storybook/api": "5.1.0-rc.5",
+      "@storybook/client-logger": "5.1.0-rc.5",
+      "@storybook/components": "5.1.0-rc.5",
+      "@storybook/core-events": "5.1.0-rc.5",
+      "@storybook/theming": "5.1.0-rc.5",
+      "common-tags": "^1.8.0",
+      "core-js": "^2.6.5",
+      "global": "^4.3.2",
+      "react": "^16.8.4"
+    },
+    "devDependencies": {
+      "@types/common-tags": "^1.8.0"
+    },
+    "publishConfig": {
+      "access": "public"
+    }
+  }
+  

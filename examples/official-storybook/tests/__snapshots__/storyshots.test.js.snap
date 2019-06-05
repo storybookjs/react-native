@@ -11,6 +11,7 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-0 {
@@ -60,6 +61,7 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-0 {
@@ -137,6 +139,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-0 {
@@ -186,6 +189,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-0 {
