@@ -186,7 +186,7 @@ An unique name for representing the props.
 
 The `props` that is accepted by the wrapping component(s).
 
-#### `params.defualt : true?`
+#### `params.default : true?`
 
 (default: `undefined`)
 
