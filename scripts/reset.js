@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { spawn, exec } from 'child_process';
 import trash from 'trash';
+import del from 'del';
 
 fs.writeFileSync('reset.log', '');
 
@@ -22,7 +23,15 @@ cleaningProcess.stdout.on('data', data => {
         const [, uri] = i.match(/Would remove (.*)$/) || [];
 
         if (uri) {
-          trash(uri);
+          if (uri.match(/node_modules/)) {
+            del(uri).then(() => {
+              console.log('deleted ' + uri);
+            });
+          } else {
+            trash(uri).then(() => {
+              console.log('trashed ' + uri);
+            });
+          }
         }
       });
   }
