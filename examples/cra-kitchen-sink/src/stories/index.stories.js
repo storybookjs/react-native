@@ -48,7 +48,7 @@ storiesOf('Button', module)
       options: { selectedPanel: 'storybook/info/panel' },
       decorators: [
         withInfo(
-          'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.'
+          'Use the [info addon](https://github.com/storybookjs/storybook/tree/master/addons/info) with its new painless API.'
         ),
       ],
     }

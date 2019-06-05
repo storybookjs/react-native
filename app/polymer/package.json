@@ -1,17 +1,17 @@
 {
   "name": "@storybook/polymer",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
   "description": "Storybook for Polymer: Develop Polymer components in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/app/polymer",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/app/polymer",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "app/polymer"
   },
   "license": "MIT",
@@ -25,13 +25,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "5.1.0-beta.1",
+    "@storybook/core": "5.1.0-rc.5",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "regenerator-runtime": "^0.12.1",
-    "webpack": "^4.28.0"
+    "webpack": "^4.32.2"
   },
   "devDependencies": {
     "lit-html": "^1.0.0",
@@ -43,7 +43,7 @@
     "polymer-webpack-loader": "^2.0.2"
   },
   "engines": {
-    "node": ">=8.0.0" 
+    "node": ">=8.0.0"
   },
   "publishConfig": {
     "access": "public"

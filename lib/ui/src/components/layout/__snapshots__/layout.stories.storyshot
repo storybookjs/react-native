@@ -219,7 +219,7 @@ exports[`Storyshots UI|Layout/Desktop bottom Panel 1`] = `
   />
   <div
     class="react-draggable emotion-1"
-    style="touch-action:none;left:210px;width:804px;margin-top:-10px;transform:translate(0px,368px)"
+    style="touch-action:none;left:210px;width:804px;margin-top:-10px;transform:translate(0px,461px)"
   />
   <div
     class="emotion-3"
@@ -259,7 +259,7 @@ exports[`Storyshots UI|Layout/Desktop bottom Panel 1`] = `
     >
       <div
         class="emotion-5"
-        style="height:358px;left:0;top:0;width:804px"
+        style="height:451px;left:0;top:0;width:804px"
       >
         <div
           class="emotion-4"
@@ -277,7 +277,7 @@ exports[`Storyshots UI|Layout/Desktop bottom Panel 1`] = `
     "animate": true,
     "isFullscreen": false,
     "position": {
-      "height": 358,
+      "height": 451,
       "left": 0,
       "top": 0,
       "width": 804
@@ -289,7 +289,7 @@ exports[`Storyshots UI|Layout/Desktop bottom Panel 1`] = `
       </div>
       <div
         class="emotion-7"
-        style="height:390px;left:0;top:358px;width:804px"
+        style="height:297px;left:0;top:451px;width:804px"
       >
         <div
           class="emotion-6"
@@ -307,9 +307,9 @@ exports[`Storyshots UI|Layout/Desktop bottom Panel 1`] = `
     "align": "bottom",
     "hidden": false,
     "position": {
-      "height": 390,
+      "height": 297,
       "left": 0,
-      "top": 358,
+      "top": 451,
       "width": 804
     }
   }

@@ -1,17 +1,17 @@
 {
   "name": "@storybook/api",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
   "description": "Core Storybook API & Context",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/api",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/api",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybookjs/storybook.git"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -20,20 +20,18 @@
     "prepare": "node ./scripts/generateVersion.js && node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "5.1.0-beta.1",
-    "@storybook/client-logger": "5.1.0-beta.1",
-    "@storybook/core-events": "5.1.0-beta.1",
-    "@storybook/router": "5.1.0-beta.1",
-    "@storybook/theming": "5.1.0-beta.1",
+    "@storybook/channels": "5.1.0-rc.5",
+    "@storybook/client-logger": "5.1.0-rc.5",
+    "@storybook/core-events": "5.1.0-rc.5",
+    "@storybook/router": "5.1.0-rc.5",
+    "@storybook/theming": "5.1.0-rc.5",
     "core-js": "^3.0.1",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
-    "lodash.isequal": "^4.5.0",
-    "lodash.mergewith": "^4.6.1",
-    "lodash.pick": "^4.4.0",
+    "lodash": "^4.17.11",
     "memoizerific": "^1.11.3",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0",
+    "react": "^16.8.4",
     "semver": "^6.0.0",
     "shallow-equal": "^1.1.0",
     "store2": "^2.7.1",
@@ -41,9 +39,7 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/lodash.isequal": "^4.5.3",
-    "@types/lodash.mergewith": "^4.6.4",
-    "@types/lodash.pick": "^4.4.4",
+    "@types/lodash": "^4.14.129",
     "@types/semver": "^6.0.0"
   },
   "publishConfig": {

@@ -10,5 +10,5 @@ This storybook includes stories for:
 ## How to make new `build-storybook`s:
 
 ```sh
-sudo ln -s ../../{new-example}/storybook-static /Users/{user}/{location-of-storybook-repo}/core/examples/official-storybook/built-storybooks/{new-example}
+sudo ln -s ../../{new-example}/storybook-static /Users/{user}/{location-of-storybook-repo}/core/examples/official-storybook/built-storybookjs/{new-example}
 ```

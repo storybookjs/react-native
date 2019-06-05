@@ -1,19 +1,19 @@
 {
   "name": "@storybook/react-native-server",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
     "react-native",
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react-native-server",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/app/react-native-server",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybookjs/storybook.git"
   },
   "license": "MIT",
   "bin": {
@@ -24,12 +24,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-beta.1",
-    "@storybook/api": "5.1.0-beta.1",
-    "@storybook/channel-websocket": "5.1.0-beta.1",
-    "@storybook/core": "5.1.0-beta.1",
-    "@storybook/core-events": "5.1.0-beta.1",
-    "@storybook/ui": "5.1.0-beta.1",
+    "@storybook/addons": "5.1.0-rc.5",
+    "@storybook/api": "5.1.0-rc.5",
+    "@storybook/channel-websocket": "5.1.0-rc.5",
+    "@storybook/core": "5.1.0-rc.5",
+    "@storybook/core-events": "5.1.0-rc.5",
+    "@storybook/ui": "5.1.0-rc.5",
     "commander": "^2.19.0",
     "global": "^4.3.2",
     "react": "^16.6.0",
@@ -42,7 +42,7 @@
     "babel-loader": "^7.0.0 || ^8.0.0"
   },
   "engines": {
-    "node": ">=8.0.0" 
+    "node": ">=8.0.0"
   },
   "publishConfig": {
     "access": "public"

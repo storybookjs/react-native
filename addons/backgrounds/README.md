@@ -2,7 +2,7 @@
 
 Storybook Background Addon can be used to change background colors inside the preview in [Storybook](https://storybook.js.org).
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ![React Storybook Screenshot](https://storybook.js.org/img/addon-backgrounds.gif)
 

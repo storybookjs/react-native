@@ -1,6 +1,6 @@
 {
   "name": "cra-ts-kitchen-sink",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook -s public",
@@ -14,18 +14,15 @@
     "react-dom": "^16.8.4"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "5.1.0-beta.1",
-    "@storybook/addon-actions": "5.1.0-beta.1",
-    "@storybook/addon-info": "5.1.0-beta.1",
-    "@storybook/addon-options": "5.1.0-beta.1",
-    "@storybook/addons": "5.1.0-beta.1",
-    "@storybook/react": "5.1.0-beta.1",
+    "@storybook/addon-a11y": "5.1.0-rc.5",
+    "@storybook/addon-actions": "5.1.0-rc.5",
+    "@storybook/addon-info": "5.1.0-rc.5",
+    "@storybook/addon-options": "5.1.0-rc.5",
+    "@storybook/addons": "5.1.0-rc.5",
+    "@storybook/react": "5.1.0-rc.5",
     "@types/enzyme": "^3.9.0",
     "@types/react": "^16.8.4",
     "@types/react-dom": "^16.8.2",
-    "@types/storybook__addon-actions": "^3.4.1",
-    "@types/storybook__addon-info": "^4.1.0",
-    "@types/storybook__react": "^4.0.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",

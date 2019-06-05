@@ -1,17 +1,17 @@
 {
   "name": "@storybook/addons",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
   "description": "Storybook addons store",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/addons",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/addons",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/addons"
   },
   "license": "MIT",
@@ -21,9 +21,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/api": "5.1.0-beta.1",
-    "@storybook/channels": "5.1.0-beta.1",
-    "@storybook/client-logger": "5.1.0-beta.1",
+    "@storybook/api": "5.1.0-rc.5",
+    "@storybook/channels": "5.1.0-rc.5",
+    "@storybook/client-logger": "5.1.0-rc.5",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"

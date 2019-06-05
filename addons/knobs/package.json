@@ -1,18 +1,18 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "5.1.0-beta.1",
+  "version": "5.1.0-rc.5",
   "description": "Storybook Addon Prop Editor Component",
   "keywords": [
     "addon",
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/knobs",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/knobs",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/knobs"
   },
   "license": "MIT",
@@ -22,17 +22,17 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-beta.1",
-    "@storybook/client-api": "5.1.0-beta.1",
-    "@storybook/components": "5.1.0-beta.1",
-    "@storybook/core-events": "5.1.0-beta.1",
-    "@storybook/theming": "5.1.0-beta.1",
+    "@storybook/addons": "5.1.0-rc.5",
+    "@storybook/client-api": "5.1.0-rc.5",
+    "@storybook/components": "5.1.0-rc.5",
+    "@storybook/core-events": "5.1.0-rc.5",
+    "@storybook/theming": "5.1.0-rc.5",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "escape-html": "^1.0.3",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
-    "lodash.debounce": "^4.0.8",
+    "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
     "qs": "^6.6.0",
     "react-color": "^2.17.0",

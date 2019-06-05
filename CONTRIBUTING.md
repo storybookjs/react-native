@@ -10,7 +10,7 @@ This repo uses yarn workspaces, so you should install `yarn@1.3.2` or higher as 
 
 No software is bug-free. So, if you got an issue, follow these steps:
 
-- Search the [issue list](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
+- Search the [issue list](https://github.com/storybookjs/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
   - If you find an existing issue, please UPVOTE the issue by adding a "thumbs-up reaction". We use this to help prioritize issues!
 - If none of that is helping, create an issue with the following information:
   - Clear title (shorter is better).
@@ -25,7 +25,7 @@ To test your project against the current latest version of storybook, you can cl
 #### 1. Download the latest version of this project, and build it:
 
 ```sh
-git clone https://github.com/storybooks/storybook.git
+git clone https://github.com/storybookjs/storybook.git
 cd storybook
 yarn install
 yarn bootstrap
@@ -137,7 +137,7 @@ A good way to do that is using the example `cra-kitchen-sink` app embedded in th
 
 ```sh
 # Download and build this repository:
-git clone https://github.com/storybooks/storybook.git
+git clone https://github.com/storybookjs/storybook.git
 cd storybook
 yarn install
 yarn bootstrap --core
@@ -156,7 +156,7 @@ git remote add <your-username> https://github.com/<your-username>/storybook.git
 git push -u <your-username> master
 ```
 
-If you follow that process, you can then link to the GitHub repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
+If you follow that process, you can then link to the GitHub repository in the issue. See <https://github.com/storybookjs/storybook/issues/708#issuecomment-290589886> for an example.
 
 **NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however, you can still modify storybook's to mirror your app's version of the storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
 
@@ -207,7 +207,7 @@ Before you submit a new PR, make sure you run `yarn test`. Do not submit a PR if
 
 ### Reviewing PRs
 
-**As a PR submitter**, you should reference the issue if there is one, include a short description of what you contributed and, if it is a code change, instructions for how to manually test out the change. This is informally enforced by our [PR template](https://github.com/storybooks/storybook/blob/master/.github/PULL_REQUEST_TEMPLATE.md). If your PR is reviewed as only needing trivial changes (e.g. small typos etc), and you have commit access, then you can merge the PR after making those changes.
+**As a PR submitter**, you should reference the issue if there is one, include a short description of what you contributed and, if it is a code change, instructions for how to manually test out the change. This is informally enforced by our [PR template](https://github.com/storybookjs/storybook/blob/master/.github/PULL_REQUEST_TEMPLATE.md). If your PR is reviewed as only needing trivial changes (e.g. small typos etc), and you have commit access, then you can merge the PR after making those changes.
 
 **As a PR reviewer**, you should read through the changes and comment on any potential problems. If you see something cool, a kind word never hurts either! Additionally, you should follow the testing instructions and manually test the changes. If the instructions are missing, unclear, or overly complex, feel free to request better instructions from the submitter. Unless the PR is tagged with the `do not merge` label, if you approve the review and there is no other required discussion or changes, you should also go ahead and merge the PR.
 
@@ -217,7 +217,7 @@ If you are looking for a way to help the project, triaging issues is a great pla
 
 ### Responding to issues
 
-Issues that are tagged `question / support` or `needs reproduction` are great places to help. If you can answer a question, it will help the asker as well as anyone searching. If an issue needs reproduction, you may be able to guide the reporter toward one, or even reproduce it yourself using [this technique](https://github.com/storybooks/storybook/blob/master/CONTRIBUTING.md#reproductions).
+Issues that are tagged `question / support` or `needs reproduction` are great places to help. If you can answer a question, it will help the asker as well as anyone searching. If an issue needs reproduction, you may be able to guide the reporter toward one, or even reproduce it yourself using [this technique](https://github.com/storybookjs/storybook/blob/master/CONTRIBUTING.md#reproductions).
 
 ### Triaging issues
 
@@ -233,7 +233,7 @@ All issues should have a `type` label. `bug`/`feature`/`question`/`discussion` a
 
 They should also have one or more `area`/`status` labels. We use these labels to filter issues down so we can easily see all of the issues for a particular area, and keep the total number of open issues under control.
 
-For example, here is the list of [open, untyped issues](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20-label%3A%22bug%22%20-label%3A%22discussion%22%20-label%3A%22feature%22%20-label%3A%22maintenance%22%20-label%3A%22question%20%2F%20support%22%20-label%3A%22documentation%22%20-label%3A%22greenkeeper%22), or here is a list of [bugs that have not been modified since 2017-04-01](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20label%3A%22bug%22%20updated%3A%3C%3D2017-04-01%20). For more info see [searching issues](https://help.github.com/articles/searching-issues/) in the Github docs.
+For example, here is the list of [open, untyped issues](https://github.com/storybookjs/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20-label%3A%22bug%22%20-label%3A%22discussion%22%20-label%3A%22feature%22%20-label%3A%22maintenance%22%20-label%3A%22question%20%2F%20support%22%20-label%3A%22documentation%22%20-label%3A%22greenkeeper%22), or here is a list of [bugs that have not been modified since 2017-04-01](https://github.com/storybookjs/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20label%3A%22bug%22%20updated%3A%3C%3D2017-04-01%20). For more info see [searching issues](https://help.github.com/articles/searching-issues/) in the Github docs.
 
 If an issue is a `bug`, and it doesn't have a clear reproduction that you have personally confirmed, label it `needs reproduction` and ask the author to try and create a reproduction, or have a go yourself.
 
@@ -251,7 +251,7 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 
 ## Development Guide
 
-> If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/storybooks/storybook/tree/master/lib/ui) page.
+> If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/storybookjs/storybook/tree/master/lib/ui) page.
 
 ### Prerequisites
 
@@ -265,7 +265,7 @@ Please have the **_latest_** stable versions of the following on your machine
 If you run into trouble here, make sure your node, npm, and **_yarn_** are on the latest versions (yarn at least v1.3.2).
 
 1.  `cd ~` (optional)
-2.  `git clone https://github.com/storybooks/storybook.git` _bonus_: use your own fork for this step
+2.  `git clone https://github.com/storybookjs/storybook.git` _bonus_: use your own fork for this step
 3.  `cd storybook`
 4.  `yarn`
 5.  `yarn bootstrap --core`
@@ -342,7 +342,7 @@ If you don't see the changes rerun `yarn storybook` again in your sandbox app
 This section is for Storybook maintainers who will be creating releases. It assumes:
 
 - yarn >= 1.3.2
-- you've yarn linked `pr-log` from <https://github.com/storybooks/pr-log/pull/2>
+- you've yarn linked `pr-log` from <https://github.com/storybookjs/pr-log/pull/2>
 
 The current manual release sequence is as follows:
 
@@ -384,7 +384,7 @@ yarn bootstrap --reset --core
 yarn run publish:next
 
 # update the release page
-open https://github.com/storybooks/storybook/releases
+open https://github.com/storybookjs/storybook/releases
 ```
 
 #### Full release:
@@ -408,5 +408,5 @@ yarn bootstrap --reset --core
 yarn run publish:latest
 
 # update the release page
-open https://github.com/storybooks/storybook/releases
+open https://github.com/storybookjs/storybook/releases
 ```
