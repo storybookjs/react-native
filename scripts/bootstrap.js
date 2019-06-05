@@ -37,15 +37,24 @@ const spawn = (command, options = {}) => {
 };
 
 const main = program
-  .version('3.0.0')
+  .version('5.0.0')
   .option('--all', `Bootstrap everything ${chalk.gray('(all)')}`);
 
-const createTask = ({ defaultValue, option, name, check = () => true, command, pre = [] }) => ({
+const createTask = ({
+  defaultValue,
+  option,
+  name,
+  check = () => true,
+  command,
+  pre = [],
+  order,
+}) => ({
   value: false,
   defaultValue: defaultValue || false,
   option: option || undefined,
   name: name || 'unnamed task',
   check: check || (() => true),
+  order,
   command: () => {
     // run all pre tasks
     pre
@@ -63,6 +72,16 @@ const createTask = ({ defaultValue, option, name, check = () => true, command, p
 });
 
 const tasks = {
+  core: createTask({
+    name: `Core, Dll & Examples ${chalk.gray('(core)')}`,
+    defaultValue: true,
+    option: '--core',
+    command: () => {
+      log.info(prefix, 'yarn workspace');
+    },
+    pre: ['install', 'build', 'dll'],
+    order: 1,
+  }),
   reset: createTask({
     name: `Clean and re-install dependencies ${chalk.red('(reset)')}`,
     defaultValue: false,
@@ -70,22 +89,27 @@ const tasks = {
     command: () => {
       log.info(prefix, 'git clean');
       spawn('git clean -fdx --exclude=".vscode" --exclude=".idea"');
-      log.info(prefix, 'yarn install');
-      spawn('yarn install');
     },
+    order: 0,
   }),
-  core: createTask({
-    name: `Core, Dll & Examples ${chalk.gray('(core)')}`,
-    defaultValue: true,
-    option: '--core',
+  install: createTask({
+    name: `install dependencies ${chalk.gray('(install)')}`,
+    defaultValue: false,
+    option: '--install',
     command: () => {
-      log.info(prefix, 'yarn workspace');
-      spawn('yarn install');
+      spawn('yarn install --ignore-optional --no-scripts');
+    },
+    order: 1,
+  }),
+  build: createTask({
+    name: `Core, Dll & Examples ${chalk.gray('(build)')}`,
+    defaultValue: false,
+    option: '--build',
+    command: () => {
       log.info(prefix, 'prepare');
       spawn('lerna run prepare');
-      log.info(prefix, 'dll');
-      spawn('lerna run createDlls --scope "@storybook/ui"');
     },
+    order: 2,
   }),
   dll: createTask({
     name: `Generate DLL ${chalk.gray('(dll)')}`,
@@ -95,6 +119,7 @@ const tasks = {
       log.info(prefix, 'dll');
       spawn('lerna run createDlls --scope "@storybook/ui"');
     },
+    order: 3,
   }),
   docs: createTask({
     name: `Documentation ${chalk.gray('(docs)')}`,
@@ -103,6 +128,7 @@ const tasks = {
     command: () => {
       spawn('yarn bootstrap:docs');
     },
+    order: 6,
   }),
   packs: createTask({
     name: `Build tarballs of packages ${chalk.gray('(build-packs)')}`,
@@ -112,6 +138,7 @@ const tasks = {
       spawn('yarn build-packs');
     },
     check: () => getDirectories(join(__dirname, '..', 'packs')).length > 0,
+    order: 5,
   }),
   registry: createTask({
     name: `Run local registry ${chalk.gray('(reg)')}`,
@@ -120,7 +147,14 @@ const tasks = {
     command: () => {
       spawn('./scripts/run-registry.js');
     },
+    order: 11,
   }),
+};
+
+const groups = {
+  main: ['core', 'docs'],
+  subtasks: ['install', 'build', 'dll', 'packs'],
+  devtasks: ['registry', 'reset'],
 };
 
 Object.keys(tasks)
@@ -130,6 +164,21 @@ Object.keys(tasks)
 Object.keys(tasks).forEach(key => {
   tasks[key].value = program[tasks[key].option.replace('--', '')] || program.all;
 });
+
+const createSeperator = input => `- ${input}${' ---------'.substr(0, 12)}`;
+
+const choices = Object.values(groups)
+  .map(l =>
+    l.map(key => ({
+      name: tasks[key].name,
+      checked: tasks[key].defaultValue,
+    }))
+  )
+  .reduce(
+    (acc, i, k) =>
+      acc.concat(new inquirer.Separator(createSeperator(Object.keys(groups)[k]))).concat(i),
+    []
+  );
 
 let selection;
 if (
@@ -141,12 +190,10 @@ if (
     .prompt([
       {
         type: 'checkbox',
-        message: 'Select which packages to bootstrap',
+        message: 'Select the bootstrap activities',
         name: 'todo',
-        choices: Object.keys(tasks).map(key => ({
-          name: tasks[key].name,
-          checked: tasks[key].defaultValue,
-        })),
+        pageSize: Object.keys(tasks).length + Object.keys(groups).length,
+        choices,
       },
     ])
     .then(({ todo }) =>
@@ -186,9 +233,11 @@ selection
     if (list.length === 0) {
       log.warn(prefix, 'Nothing to bootstrap');
     } else {
-      list.forEach(key => {
-        key.command();
-      });
+      list
+        .sort((a, b) => a.order - b.order)
+        .forEach(key => {
+          key.command();
+        });
       process.stdout.write('\x07');
     }
   })

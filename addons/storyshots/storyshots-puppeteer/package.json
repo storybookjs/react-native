@@ -26,11 +26,14 @@
     "@storybook/router": "5.1.0-rc.5",
     "core-js": "^3.0.1",
     "jest-image-snapshot": "^2.8.2",
-    "puppeteer": "^1.12.2",
     "regenerator-runtime": "^0.12.1"
   },
+  "optionalDependencies": {
+    "puppeteer": "^1.12.2"
+  },
   "peerDependencies": {
-    "@storybook/addon-storyshots": "5.1.0-rc.0"
+    "@storybook/addon-storyshots": "5.1.0-rc.0",
+    "puppeteer": "^1.12.2"
   },
   "publishConfig": {
     "access": "public"
