@@ -358,17 +358,22 @@ class Story extends Component {
         extract(innerChildren.props.children);
       }
       if (isForwardRef(innerChildren)) {
-        extract(innerChildren.type.render(innerChildren.props));
+        try {
+          // this might fail because of hooks being used
+          extract(innerChildren.type.render(innerChildren.props));
+        } catch (e) {
+          // do nothing
+        }
       }
       if (
         typeof innerChildren === 'string' ||
         typeof innerChildren.type === 'string' ||
-        isForwardRef(innerChildren) ||
         (Array.isArray(propTablesExclude) && // also ignore excluded types
           ~propTablesExclude.indexOf(innerChildren.type)) // eslint-disable-line no-bitwise
       ) {
         return;
       }
+
       if (innerChildren.type && !types.has(innerChildren.type)) {
         types.set(innerChildren.type, true);
       }

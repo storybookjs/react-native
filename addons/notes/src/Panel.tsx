@@ -13,6 +13,8 @@ import {
 import Markdown from 'markdown-to-jsx';
 import Giphy from './giphy';
 
+import { formatter } from './formatter';
+
 import { PARAM_KEY, Parameters } from './shared';
 
 const Panel = styled.div(({ theme }) => ({
@@ -135,7 +137,7 @@ const NotesPanel = ({ active }: Props) => {
         return value ? (
           <Panel className="addon-notes-container">
             <DocumentFormatting>
-              <Markdown options={options}>{value}</Markdown>
+              <Markdown options={options}>{formatter(value)}</Markdown>
             </DocumentFormatting>
           </Panel>
         ) : (
@@ -144,7 +146,7 @@ const NotesPanel = ({ active }: Props) => {
             <Fragment>
               Learn how to{' '}
               <Link
-                href="https://github.com/storybooks/storybook/tree/master/addons/notes"
+                href="https://github.com/storybookjs/storybook/tree/master/addons/notes"
                 target="_blank"
                 withArrow
               >

@@ -13,7 +13,7 @@ exports[`Storyshots Addon|Centered centered component 1`] = `
     >
       <div
         ng-reflect-ng-style="[object Object]"
-        style="margin: auto; max-height: 100%; overflow: auto;"
+        style="margin: auto; max-height: 100%;"
       >
         <storybook-app-root>
           <div
@@ -89,7 +89,7 @@ exports[`Storyshots Addon|Centered centered template 1`] = `
     >
       <div
         ng-reflect-ng-style="[object Object]"
-        style="margin: auto; max-height: 100%; overflow: auto;"
+        style="margin: auto; max-height: 100%;"
       >
         <storybook-button-component
           _nghost-a-c6=""

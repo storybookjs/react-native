@@ -2,8 +2,10 @@ import { _getMergedSettings, getContextNodes } from './getContextNodes';
 
 describe('Test on the merging result of a pair of settings', () => {
   it('should retain the basic structure even receiving empty objects', () => {
+    // when
     const result = _getMergedSettings({}, {});
 
+    // then
     expect(result).toEqual({
       components: [],
       icon: '',
@@ -15,7 +17,7 @@ describe('Test on the merging result of a pair of settings', () => {
   });
 
   it('should correctly merge two settings', () => {
-    // setup
+    // given
     const someTopLevelSettings = {
       icon: 'box' as const,
       title: 'Some Context',
@@ -37,10 +39,10 @@ describe('Test on the merging result of a pair of settings', () => {
       },
     };
 
-    // exercise
+    // when
     const result = _getMergedSettings(someTopLevelSettings, someStoryLevelSettings);
 
-    // assertion
+    // then
     expect(result).toEqual({
       // topLevel over storyLevel
       nodeId: someTopLevelSettings.title,
@@ -63,6 +65,7 @@ describe('Test on the merging result of a pair of settings', () => {
 
 describe('Test on reconciliation of settings', () => {
   it('should have a stable array ordering after normalization', () => {
+    // when
     const result = getContextNodes({
       // from the topLevel
       options: [
@@ -96,6 +99,7 @@ describe('Test on reconciliation of settings', () => {
       ],
     });
 
+    // then
     expect(result).toEqual([
       {
         components: ['div'],

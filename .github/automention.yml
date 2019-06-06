@@ -6,6 +6,7 @@
 'app: preact': ['BartWaardenburg']
 'app: react-native': ['benoitdion', 'gongreg']
 'app: react-native-server': ['benoitdion', 'igor-dv']
+'app: svelte': ['cam-stitt', 'plumpNation']
 'app: vue': ['backbone87', 'elevatebart']
 'api: addons': ['ndelangen']
 'addon: a11y': ['CodeByAlex', 'Armanio', 'jsomsanith']

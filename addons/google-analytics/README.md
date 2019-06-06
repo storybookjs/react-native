@@ -2,7 +2,7 @@
 
 Storybook Addon Google Analytics can be used to support google analytics in [Storybook](https://storybook.js.org).
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ## Getting Started
 
