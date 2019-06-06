@@ -478,7 +478,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
           >
             <a
               class="emotion-14"
-              href="https://github.com/storybooks/storybook/releases"
+              href="https://github.com/storybookjs/storybook/releases"
               target="_blank"
             >
               <span
@@ -513,7 +513,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
             </a>
             <a
               class="emotion-14"
-              href="https://github.com/storybooks/storybook"
+              href="https://github.com/storybookjs/storybook"
               target="_blank"
             >
               <span
@@ -1594,6 +1594,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-21 {
@@ -1787,7 +1788,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
             </span>
             <a
               class="emotion-15"
-              href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
+              href="https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md"
               target="_blank"
             >
               <span
@@ -2029,7 +2030,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
             </a>
             <a
               class="emotion-33"
-              href="https://github.com/storybooks/storybook"
+              href="https://github.com/storybookjs/storybook"
               target="_blank"
             >
               <span
@@ -3062,7 +3063,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
             </span>
             <a
               class="emotion-15"
-              href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
+              href="https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md"
               target="_blank"
             >
               <span
@@ -3118,7 +3119,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
             </a>
             <a
               class="emotion-19"
-              href="https://github.com/storybooks/storybook"
+              href="https://github.com/storybookjs/storybook"
               target="_blank"
             >
               <span

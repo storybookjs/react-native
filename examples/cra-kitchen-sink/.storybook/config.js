@@ -15,7 +15,7 @@ addParameters({
     theme: create({
       base: 'light',
       brandTitle: 'CRA Kitchen Sink',
-      brandUrl: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
+      brandUrl: 'https://github.com/storybookjs/storybook/tree/master/examples/cra-kitchen-sink',
       gridCellSize: 12,
     }),
   },
