@@ -64,6 +64,7 @@
     "@storybook/mithril": "5.1.1",
     "@storybook/polymer": "5.1.1",
     "@storybook/preact": "5.1.1",
+    "@storybook/rax": "5.1.1",
     "@storybook/react": "5.1.1",
     "@storybook/react-native": "5.1.1",
     "@storybook/riot": "5.1.1",
