@@ -149,6 +149,8 @@ const NotesPanel = ({ active }: Props) => {
                 href="https://github.com/storybookjs/storybook/tree/master/addons/notes"
                 target="_blank"
                 withArrow
+                secondary
+                cancel={false}
               >
                 document components in Markdown
               </Link>

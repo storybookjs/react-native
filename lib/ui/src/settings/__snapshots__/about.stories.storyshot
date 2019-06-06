@@ -195,6 +195,21 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   width: 15px;
 }
 
+.emotion-22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+  font-weight: 700;
+}
+
+.emotion-22 > * + * {
+  margin-left: 20px;
+}
+
 .emotion-14 {
   display: inline-block;
   -webkit-transition: all 150ms ease-out;
@@ -202,6 +217,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #1EA7FD;
+  color: #999999;
 }
 
 .emotion-14 svg path {
@@ -237,81 +253,23 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   margin-right: 0.4em;
 }
 
-.emotion-22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(0,0,0,.1);
-  font-weight: 700;
-}
-
-.emotion-22 > * + * {
-  margin-left: 20px;
-}
-
-.emotion-17 {
-  display: inline-block;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #1EA7FD;
-  color: #999999;
-}
-
-.emotion-17 svg path {
-  fill: #1EA7FD;
-}
-
-.emotion-17:hover,
-.emotion-17:focus {
-  cursor: pointer;
-  color: #0297f5;
-}
-
-.emotion-17:hover svg path,
-.emotion-17:focus svg path {
-  fill: #0297f5;
-}
-
-.emotion-17:active {
-  color: #028ee6;
-}
-
-.emotion-17:active svg path {
-  fill: #028ee6;
-}
-
-.emotion-17 svg {
-  display: inline-block;
-  height: 1em;
-  width: 1em;
-  vertical-align: text-top;
-  position: relative;
-  bottom: -0.125em;
-  margin-right: 0.4em;
-}
-
-.emotion-17 svg path {
+.emotion-14 svg path {
   fill: #999999;
 }
 
-.emotion-17:hover {
+.emotion-14:hover {
   color: #666666;
 }
 
-.emotion-17:hover svg path {
+.emotion-14:hover svg path {
   fill: #666666;
 }
 
-.emotion-17:active {
+.emotion-14:active {
   color: #444444;
 }
 
-.emotion-17:active svg path {
+.emotion-14:active svg path {
   fill: #444444;
 }
 
@@ -543,7 +501,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
             class="emotion-22"
           >
             <a
-              class="emotion-17"
+              class="emotion-14"
               href="https://storybook.js.org"
               target="_blank"
             >
@@ -554,7 +512,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
               </span>
             </a>
             <a
-              class="emotion-17"
+              class="emotion-14"
               href="https://github.com/storybookjs/storybook"
               target="_blank"
             >
@@ -565,7 +523,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
               </span>
             </a>
             <a
-              class="emotion-17"
+              class="emotion-14"
               href="https://storybook.js.org/support"
               target="_blank"
             >
