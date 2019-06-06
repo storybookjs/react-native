@@ -25,11 +25,11 @@ cleaningProcess.stdout.on('data', data => {
         if (uri) {
           if (uri.match(/node_modules/)) {
             del(uri).then(() => {
-              console.log('deleted ' + uri);
+              console.log(`deleted ${uri}`);
             });
           } else {
             trash(uri).then(() => {
-              console.log('trashed ' + uri);
+              console.log(`trashed ${uri}`);
             });
           }
         }
