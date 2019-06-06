@@ -38,6 +38,7 @@ jobs:
             - node_modules
             - examples
             - addons
+            - dev-kits
             - app
             - lib
   chromatic:

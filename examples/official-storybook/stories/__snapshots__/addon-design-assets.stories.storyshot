@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addons|Design assets multiple images 1`] = `
+<div>
+  This story should a multiple images in the assets panel
+</div>
+`;
+
+exports[`Storyshots Addons|Design assets named assets 1`] = `
+<div>
+  This story should a single image in the assets panel
+</div>
+`;
+
+exports[`Storyshots Addons|Design assets single image 1`] = `
+<div>
+  This story should a single image in the assets panel
+</div>
+`;
+
+exports[`Storyshots Addons|Design assets single webpage 1`] = `
+<div>
+  This story should a single image in the assets panel
+</div>
+`;
+
+exports[`Storyshots Addons|Design assets url replacement 1`] = `
+<div>
+  This story should have a webpge, with within it's url the storyId
+</div>
+`;
+
+exports[`Storyshots Addons|Design assets youtube video 1`] = `
+<div>
+  This story should a single image in the assets panel
+</div>
+`;

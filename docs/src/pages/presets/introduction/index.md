@@ -23,7 +23,7 @@ Then load it in the file `presets.js` in your storybook folder (`.storybook` by 
 module.exports = ['@storybook/preset-typescript'];
 ```
 
-That's it. When Storybook starts up, it will configure itself for typescript without any further configuration. For more information, see the Typescript preset [README](https://github.com/storybooks/presets/tree/master/packages/preset-typescript).
+That's it. When Storybook starts up, it will configure itself for typescript without any further configuration. For more information, see the Typescript preset [README](https://github.com/storybookjs/presets/tree/master/packages/preset-typescript).
 
 ## Preset configuration
 

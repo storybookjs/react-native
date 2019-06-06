@@ -1,17 +1,17 @@
 {
   "name": "@storybook/theming",
-  "version": "5.1.0-rc.0",
+  "version": "5.1.1",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/theming",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/theming",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/theming"
   },
   "license": "MIT",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.9",
     "@emotion/styled": "^10.0.7",
-    "@storybook/client-logger": "5.1.0-rc.0",
+    "@storybook/client-logger": "5.1.1",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "deep-object-diff": "^1.1.0",

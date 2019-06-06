@@ -12,7 +12,7 @@ export const withBackgrounds = deprecate(
     },
   }),
   `Note that withBackgrounds(options) has been replaced by addParameters({ backgrounds: options})
-Read more about it in the migration guide: https://github.com/storybooks/storybook/blob/master/MIGRATION.md`
+Read more about it in the migration guide: https://github.com/storybookjs/storybook/blob/master/MIGRATION.md`
 );
 
 if (module && module.hot && module.hot.decline) {

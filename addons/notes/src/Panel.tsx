@@ -15,6 +15,8 @@ import {
 import Markdown from 'markdown-to-jsx';
 import Giphy from './giphy';
 
+import { formatter } from './formatter';
+
 import { PARAM_KEY, Parameters } from './shared';
 
 const Panel = styled.div(({ theme }) => ({
@@ -163,7 +165,7 @@ const NotesPanel = ({ active }: Props) => {
             <Panel className="addon-notes-container">
               <DocumentFormatting>
                 <Markdown options={options}>
-                  {typeof value === 'object' ? Object.values(value)[0] : value}
+                  {typeof value === 'object' ? Object.values(formatter(value))[0] : value}
                 </Markdown>
               </DocumentFormatting>
             </Panel>
@@ -178,7 +180,7 @@ const NotesPanel = ({ active }: Props) => {
               <TabWrapper key={title} active={isActive}>
                 <Panel>
                   <DocumentFormatting>
-                    <Markdown options={options}>{docs}</Markdown>
+                    <Markdown options={options}>{formatter(docs)}</Markdown>
                   </DocumentFormatting>
                 </Panel>
               </TabWrapper>

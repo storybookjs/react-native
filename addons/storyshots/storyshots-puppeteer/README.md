@@ -120,7 +120,7 @@ You might use `getScreenshotOptions` to specify options for screenshot. Will be 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
-const getScreenshotOptions = ({context, url}) {
+const getScreenshotOptions = ({context, url}) => {
   return {
     fullPage: false // Do not take the full page screenshot. Default is 'true' in Storyshots.
   }
@@ -196,7 +196,7 @@ initStoryshots({
 ### Integrate image storyshots with regular app
 
 You may want to use another Jest project to run your image snapshots as they require more resources: Chrome and Storybook built/served.
-You can find a working example of this in the [official-storybook](https://github.com/storybooks/storybook/tree/master/examples/official-storybook) example.
+You can find a working example of this in the [official-storybook](https://github.com/storybookjs/storybook/tree/master/examples/official-storybook) example.
 
 ### Integrate image storyshots with [Create React App](https://github.com/facebookincubator/create-react-app)
 

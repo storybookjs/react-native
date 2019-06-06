@@ -63,14 +63,15 @@ const getSelectedBackgroundColor = (list: Input[], currentSelectedValue: string)
   return 'transparent';
 };
 
-const mapper = ({ api, state }: Combo): { items: Input[] } => {
+const mapper = ({ api, state }: Combo): { items: Input[]; selected: string | null } => {
   const story = state.storiesHash[state.storyId];
   const list = story ? api.getParameters(story.id, PARAM_KEY) : [];
+  const selected = state.addons[PARAM_KEY] || null;
 
-  return { items: list || [] };
+  return { items: list || [], selected };
 };
 
-const getDisplayedItems = memoize(10)((list: Input[], selected: State['selected'], change) => {
+const getDisplayedItems = memoize(10)((list: Input[], selected: string | null, change) => {
   let availableBackgroundSelectorItems: Item[] = [];
 
   if (selected !== 'transparent') {
@@ -91,21 +92,34 @@ const getDisplayedItems = memoize(10)((list: Input[], selected: State['selected'
   return availableBackgroundSelectorItems;
 });
 
+interface GlobalState {
+  name: string | undefined;
+  selected: string | undefined;
+}
+
 interface State {
-  selected: string;
   expanded: boolean;
 }
 
-export class BackgroundSelector extends Component<{ api: API }, State> {
+interface Props {
+  api: API;
+}
+
+export class BackgroundSelector extends Component<Props, State> {
   state: State = {
-    selected: null,
     expanded: false,
   };
 
-  change = ({ selected, name }: { selected: string; name: string }) => {
+  change = ({ selected, name }: GlobalState) => {
     const { api } = this.props;
+    const { expanded } = this.state;
+    if (expanded) {
+      this.setState({ expanded: false });
+    }
+    if (typeof selected === 'string') {
+      api.setAddonState<string>(PARAM_KEY, selected);
+    }
     api.emit(EVENTS.UPDATE, { selected, name });
-    this.setState({ selected, expanded: false });
   };
 
   onVisibilityChange = (s: boolean) => {
@@ -116,11 +130,11 @@ export class BackgroundSelector extends Component<{ api: API }, State> {
   };
 
   render() {
-    const { expanded, selected } = this.state;
+    const { expanded } = this.state;
 
     return (
       <Consumer filter={mapper}>
-        {({ items }: { items: Input[] }) => {
+        {({ items, selected }: ReturnType<typeof mapper>) => {
           const selectedBackgroundColor = getSelectedBackgroundColor(items, selected);
           const links = getDisplayedItems(items, selectedBackgroundColor, this.change);
 
