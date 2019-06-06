@@ -46,7 +46,7 @@
     "react-draggable": "^3.1.1",
     "react-helmet-async": "^1.0.2",
     "react-hotkeys": "2.0.0-pre4",
-    "react-resize-detector": "^4.0.5",
+    "react-sizeme": "^2.6.7",
     "recompose": "^0.30.0",
     "resolve-from": "^5.0.0",
     "semver": "^6.0.0",
