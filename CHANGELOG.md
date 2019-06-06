@@ -1,3 +1,11 @@
+## 5.1.2 (June 6, 2019)
+
+### Bug Fixes
+
+* UI: Fix links that are not working with plain left click ([#6970](https://github.com/storybookjs/storybook/pull/6970))
+* Core: Don't redefine `process` variable ([#6991](https://github.com/storybookjs/storybook/pull/6991))
+* Core: Don't mutate user's babel config ([#6987](https://github.com/storybookjs/storybook/pull/6987))
+
 ## 5.1.1 (June 5, 2019)
 
 Storybook 5.1 is a juicy upgrade including:
