@@ -41,11 +41,21 @@ interface Elements {
 }
 
 export class AddonStore {
+  constructor() {
+    this.promise = new Promise(res => {
+      this.resolve = () => res(this.getChannel());
+    }) as Promise<Channel>;
+  }
+
   private loaders: Loaders = {};
 
   private elements: Elements = {};
 
   private channel: Channel | undefined;
+
+  private promise: any;
+
+  private resolve: any;
 
   getChannel = (): Channel => {
     // this.channel should get overwritten by setChannel. If it wasn't called (e.g. in non-browser environment), throw.
@@ -58,10 +68,13 @@ export class AddonStore {
     return this.channel;
   };
 
+  ready = (): Promise<Channel> => this.promise;
+
   hasChannel = (): boolean => !!this.channel;
 
   setChannel = (channel: Channel): void => {
     this.channel = channel;
+    this.resolve();
   };
 
   getElements = (type: Types): Collection => {

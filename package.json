@@ -1,9 +1,31 @@
 {
   "name": "@storybook/root",
-  "description": "Storybook is an open source tool for developing UI components in isolation for React, Vue and Angular. It makes building stunning UIs organized and efficient.",
-  "homepage": "https://storybook.js.org/",
-  "version": "5.1.0-rc.0",
+  "version": "5.1.1",
   "private": true,
+  "description": "Storybook is an open source tool for developing UI components in isolation for React, Vue and Angular. It makes building stunning UIs organized and efficient.",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "babel",
+    "components",
+    "documentation",
+    "eslint",
+    "frontend",
+    "jamstack",
+    "markup",
+    "react",
+    "reactjs",
+    "reuseable",
+    "storybook",
+    "storybookjs",
+    "templated",
+    "tool",
+    "ui",
+    "user interface",
+    "vue",
+    "vuejs"
+  ],
+  "homepage": "https://storybook.js.org/",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybookjs/storybook.git"
@@ -12,9 +34,10 @@
     "addons/*",
     "addons/storyshots/*",
     "app/*",
-    "lib/*",
-    "examples/*",
+    "dev-kits/*",
     "examples-native/*",
+    "examples/*",
+    "lib/*",
     "lib/cli/test/run/*"
   ],
   "scripts": {
@@ -247,27 +270,5 @@
         "Other"
       ]
     ]
-  },
-  "keywords": [
-    "ui",
-    "user interface",
-    "components",
-    "storybook",
-    "storybookjs",
-    "react",
-    "reactjs",
-    "angular",
-    "angularjs",
-    "vue",
-    "vuejs",
-    "babel",
-    "eslint",
-    "frontend",
-    "jamstack",
-    "documentation",
-    "tool",
-    "templated",
-    "reuseable",
-    "markup"
-  ]
+  }
 }

@@ -36,7 +36,7 @@ With this, you can write some pretty cool addons. Look at our [Addon gallery](ht
 
 Let's write a simplistic addon for Storybook. We'll add some metadata to the story, which the addon can then use.
 
-### Add simple metadata
+### Add simple metadata using parameters
 
 We write a story for our addon like this:
 
@@ -46,11 +46,12 @@ import { storiesOf } from '@storybook/react';
 
 import Button from './Button';
 
-storiesOf('Button', module).add('with text', () => <Button>Hello Button</Button>, {
-  myAddon: {
-    data: 'this data is passed to the addon',
-  },
-});
+storiesOf('Button', module)
+  .add('with text', () => <Button>Hello Button</Button>, {
+    myAddon: {
+      data: 'this data is passed to the addon',
+    },
+  });
 ```
 
 ### Add a panel
@@ -61,49 +62,27 @@ We write an addon that responds to a change in story selection like so:
 // register.js
 
 import React from 'react';
-import { STORY_CHANGED } from '@storybook/core-events';
-import addons, { types } from '@storybook/addons';
+import { STORY_RENDERED } from '@storybook/core-events';
+import { addons, types } from '@storybook/addons';
+import { useParameter } from '@storybook/api';
+import { AddonPanel } from '@storybook/components';
 
 const ADDON_ID = 'myaddon';
 const PARAM_KEY = 'myAddon';
 const PANEL_ID = `${ADDON_ID}/panel`;
 
-class MyPanel extends React.Component {
-  state = { value: '' };
-
-  componentDidMount() {
-    const { api } = this.props;
-
-    api.on(STORY_CHANGED, this.onStoryChange);
-  }
-
-  componentWillUnmount() {
-    const { api } = this.props;
-
-    api.off(STORY_CHANGED, this.onStoryChange);
-  }
-
-  onStoryChange = id => {
-    const { api } = this.props;
-    const params = api.getParameters(id, PARAM_KEY);
-
-    if (params && !params.disable) {
-      const value = params.data;
-      this.setState({ value });
-    } else {
-      this.setState({ value: undefined });
-    }
-  };
-
-  render() {
-    const { value } = this.state;
-    const { active } = this.props;
-    return active ? <div>{value}</div> : null;
-  }
+const MyPanel = () => {
+  const value = useParameter(PARAM_KEY, null);
+  
+  return <div>{value}</div>;
 }
 
 addons.register(ADDON_ID, api => {
-  const render = ({ active }) => <MyPanel api={api} active={active} />;
+  const render = ({ active, key }) => (
+    <AddonPanel active={active} key={key}>
+      <MyPanel />
+    </AddonPanel>
+  );
   const title = 'My Addon';
 
   addons.add(PANEL_ID, {
@@ -158,8 +137,8 @@ import React from 'react';
 import addons, { makeDecorator } from '@storybook/addons';
 
 export default makeDecorator({
-  name: 'withFoo',
-  parameterName: 'foo',
+  name: 'withMyAddon',
+  parameterName: 'myParameter',
   // This means don't run this decorator if the notes decorator is not set
   skipIfNoParametersOrOptions: true,
   wrapper: (getStory, context, { parameters }) => {
@@ -167,7 +146,7 @@ export default makeDecorator({
 
     // Our simple API above simply sets the notes parameter to a string,
     // which we send to the channel
-    channel.emit('foo/doSomeAction', parameters);
+    channel.emit('my/customEvent', parameters);
     // we can also add subscriptions here using channel.on('eventName', callback);
 
     return getStory(context);
@@ -182,60 +161,68 @@ In the above case, it will emit the notes' text to the channel, so our panel can
 
 Then add the following code to the `register.js`.
 
-Notice how the storybook API itself has `.on()`, `.off()` and `.emit()` methods just like the [EventEmitter](https://nodejs.org/api/events.html).
+The storybook API itself has `.on()`, `.off()` and `.emit()` methods just like the [EventEmitter](https://nodejs.org/api/events.html).
+
+A very convenient way of using the channel in the manager is using the `useChannel` hook.
 
 ```js
 import React from 'react';
 import addons from '@storybook/addons';
+import { useChannel } from '@storybook/api';
 import { STORY_CHANGED } from '@storybook/core-events';
 
-class MyPanel extends React.Component {
-  onSomeAction = text => {
-    // do something with the passed data
-  };
-  onStoryChange = id => {
-    // do something with the new selected storyId
-  };
+const MyPanel = () => {
+  const emit = useChannel({
+    STORY_RENDERED: id => { /* do something */ },
+    'my/customEvent': () => { /* so something */ },
+  });
 
-  componentDidMount() {
-    const { api } = this.props;
-    api.on('foo/doSomeAction', this.onSomeAction);
-    api.on(STORY_CHANGED, this.onStoryChange);
-  }
-  componentWillUnmount() {
-    const { api } = this.props;
-    api.off('foo/doSomeAction', this.onSomeAction);
-    api.off(STORY_CHANGED, this.onStoryChange);
-  }
-
-  render() {
-    const { active } = this.props;
-
-    return active ? <div /> : null;
-  }
+  return <button onClick={() => emit('my/otherEvent')}>click to emit</button>;
 }
 
 // Register the addon with a unique name.
-addons.register('MYADDON', api => {
+addons.register('my/addon', api => {
   // Also need to set a unique name to the panel.
-  addons.addPanel('MYADDON/panel', {
+  addons.addPanel('my/addon/panel', {
     title: 'My Addon',
-    render: ({ active, key }) => <MyPanel key={key} api={api} active={active} />,
+    render: ({ active, key }) => (
+      <AddonPanel key={key} active={active}>
+        <MyPanel />
+      </AddonPanel>
+    ),
   });
 });
 ```
 
-It will register our addon and add a panel. In this case, the panel represents a React component called `MyPanel`.
-That component has access to the storybook API.
+It will register our addon and add a panel. In that we'll render React component called `MyPanel`.
 
-Then it will listen for events. You can listen for core storybook events, event by other addons or custom events created by `index.js`.
-Have a look at the above annotated code.
+Using the hook, we'll listen for events and gain access to the `emit` function for emitting events from our component.
 
-> In this example, we are only sending messages from the Preview Area to the Manager App (our panel). But we can do it the other way around as well.
+> In this example, we are only sending messages from the Preview Area to the Manager App (our panel).
 
-It also listens to another event, called onStory, in the storybook API, which fires when the user selects a story. We use that event to clear the previous notes when selecting a story.
+It also listens to another event, called onStory, in the storybook API, which fires when the user selects a story.
 
 Multiple addons can be loaded, but only a single panel can be shown, the render function will receive an `active` prop, which is true if the addon is shown. It is up to you to decide if this mean your component must be unmounted, or just visually hidden. This allows you to keep state but unmount expensive renderings.
+
+The `AddonPanel` component will stop rendering of it's children if it's `active`-prop is false.
+
+A great way of preserving state even when your component is unmounted is using the `useAddonState` hook:
+
+```js
+export const Panel = () => {
+  const [state, setState] = useAddonState('my/addon-id', 'initial state');
+
+  return (
+    <button onClick={() => setState('a new value')}>
+      the state = "{state}"
+    </button>
+  );
+}
+```
+
+This will store your addon's state into storybook core state, and so when your component gets unmounted & remounted, the state will just be restored.
+
+This is also a great way to sync state between multiple components of the same addon.
 
 ### Using the complex addon
 
@@ -246,14 +233,14 @@ Then you need to start using the decorator:
 ```js
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import withFoo from 'path/to/index.js';
+import withMyAddon from 'path/to/index.js';
 
 import Button from './Button';
 
 storiesOf('Button', module)
-  .addDecorator(withFoo)
+  .addDecorator(withMyAddon)
   .add('with text', () => <Button>Hello Button</Button>, {
-    foo: {
+    myParameter: {
       data: 'awesome',
     },
   });
@@ -264,6 +251,8 @@ storiesOf('Button', module)
 We use [emotion](https://emotion.sh) for styling, AND we provide a theme which can be set by the user!
 
 We highly recommend you also use emotion to style your components for storybook, but it's not a requirement. You can use inline styles or another css-in-js lib. You can receive the theme as a prop by using the `withTheme` hoc from emotion. [Read more about theming](/configurations/theming).
+
+But if you do use emotion, you can use the active storybook theme, which benefits users.
 
 ## Re-using existing components
 
@@ -277,7 +266,7 @@ You can learn more about the complete API [here](/addons/api).
 
 ## Packaging
 
-You can package this addon into a NPM module very easily. As an example, have a look at this [package](https://github.com/storybookjs/storybook/tree/master/addons/notes).
+You can package this addon into a NPM module very easily. As an example, have a look at this [package](https://github.com/storybooks/storybook/tree/master/addons/notes).
 
 In addition to moving the above code to a NPM module, we've set `react` and `@storybook/addons` as peer dependencies.
 
