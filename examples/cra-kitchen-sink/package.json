@@ -35,6 +35,6 @@
     "@storybook/client-logger": "5.1.1",
     "@storybook/react": "5.1.1",
     "@storybook/theming": "5.1.1",
-    "react-scripts": "^2.1.8"
+    "react-scripts": "^3.0.1"
   }
 }
