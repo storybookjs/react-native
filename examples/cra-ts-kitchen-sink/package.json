@@ -10,8 +10,8 @@
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "5.1.1",
@@ -21,7 +21,7 @@
     "@storybook/addons": "5.1.1",
     "@storybook/react": "5.1.1",
     "@types/enzyme": "^3.9.0",
-    "@types/react": "^16.8.4",
+    "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.2",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
