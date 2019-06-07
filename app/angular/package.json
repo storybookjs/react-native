@@ -15,7 +15,7 @@
     "directory": "app/angular"
   },
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/client/index.js",
   "types": "dist/public_api.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
