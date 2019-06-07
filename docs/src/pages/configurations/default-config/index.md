@@ -198,7 +198,7 @@ import { storiesOf } from '@storybook/react';
 import imageFile from './static/image.png';
 
 storiesOf('<img />', module)
-  .add('with a image', () => (
+  .add('with an image', () => (
     <img src={imageFile} alt="covfefe" />
   ));
 ```
