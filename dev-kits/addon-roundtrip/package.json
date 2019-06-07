@@ -33,7 +33,7 @@
       "common-tags": "^1.8.0",
       "core-js": "^2.6.5",
       "global": "^4.3.2",
-      "react": "^16.8.4"
+      "react": "^16.8.3"
     },
     "devDependencies": {
       "@types/common-tags": "^1.8.0"
@@ -42,4 +42,3 @@
       "access": "public"
     }
   }
-  
