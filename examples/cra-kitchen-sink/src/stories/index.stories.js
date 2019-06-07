@@ -27,9 +27,19 @@ storiesOf('Button', module)
   .add('with text', () => <Button onClick={action('clicked', { depth: 1 })}>Hello Button</Button>, {
     options: { selectedPanel: 'storybook/actions/panel' },
   })
-  .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>, {
-    options: { selectedPanel: 'storybook/actions/panel' },
-  })
+  .add(
+    'with some emoji',
+    () => (
+      <Button onClick={action('clicked')}>
+        <span role="img" aria-label="yolo">
+          😀 😎 👍 💯
+        </span>
+      </Button>
+    ),
+    {
+      options: { selectedPanel: 'storybook/actions/panel' },
+    }
+  )
   .add('with notes', () => <Button>Check my notes in the notes panel</Button>, {
     notes: 'A very simple button',
     options: { selectedPanel: 'storybook/notes/panel' },
@@ -48,7 +58,7 @@ storiesOf('Button', module)
       options: { selectedPanel: 'storybook/info/panel' },
       decorators: [
         withInfo(
-          'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.'
+          'Use the [info addon](https://github.com/storybookjs/storybook/tree/master/addons/info) with its new painless API.'
         ),
       ],
     }

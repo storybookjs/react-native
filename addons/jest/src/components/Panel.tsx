@@ -26,7 +26,8 @@ const NoTests = styled.div({
 });
 
 const FileTitle = styled.h2({
-  margin: 0,
+  marginRight: '6px',
+  marginBottom: '3px',
   fontWeight: 500,
   fontSize: 18,
 });
@@ -64,9 +65,7 @@ const SuiteTotals = styled(({ successNumber, failedNumber, result, className }) 
 
 const SuiteProgress = styled(({ successNumber, result, className }) => (
   <div className={className} role="progressbar">
-    <span style={{ width: `${(successNumber / result.assertionResults.length) * 100}%` }}>
-      {`${(successNumber / result.assertionResults.length) * 100}%`}
-    </span>
+    <span style={{ width: `${(successNumber / result.assertionResults.length) * 100}%` }} />
   </div>
 ))(() => ({
   width: '100%',
@@ -92,6 +91,12 @@ const SuiteProgress = styled(({ successNumber, result, className }) => (
 const SuiteTitle = styled.div({
   display: 'flex',
   alignItems: 'center',
+  marginBottom: '3px',
+});
+
+const PassingRate = styled.div({
+  fontWeight: 500,
+  fontSize: '10px',
 });
 
 interface ContentProps {
@@ -102,29 +107,36 @@ interface ContentProps {
 const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
+      const title = name || 'Result status';
+
       if (!result) {
-        return <NoTests key={name}>This story has tests configured, but no file was found</NoTests>;
+        return (
+          <NoTests key={title}>This story has tests configured, but no file was found</NoTests>
+        );
       }
 
       const successNumber = result.assertionResults.filter(({ status }) => status === 'passed')
         .length;
       const failedNumber = result.assertionResults.length - successNumber;
-
       return (
-        <section key={name}>
+        <section key={title}>
+          <SuiteTitle>
+            <FileTitle>{`${title}:`}</FileTitle>
+            <Indicator
+              color={result.status === 'passed' ? colors.success : colors.error}
+              size={16}
+              styles={{ marginRight: 5 }}
+            >
+              {result.status}
+            </Indicator>
+          </SuiteTitle>
           <SuiteHead>
-            <SuiteTitle>
-              <Indicator
-                color={result.status === 'passed' ? colors.success : colors.error}
-                size={16}
-                styles={{ marginRight: 5 }}
-              >
-                {result.status}
-              </Indicator>
-              <FileTitle>{name}</FileTitle>
-            </SuiteTitle>
-            <SuiteTotals {...{ successNumber, failedNumber, result }} />
+            <PassingRate>{`Passing rate: ${(
+              (successNumber / result.assertionResults.length) *
+              100
+            ).toFixed(2)}%`}</PassingRate>
             <SuiteProgress {...{ successNumber, failedNumber, result }} />
+            <SuiteTotals {...{ successNumber, failedNumber, result }} />
           </SuiteHead>
           <List>
             {result.assertionResults.map(res => (

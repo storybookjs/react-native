@@ -26,6 +26,7 @@ export { Tabs, TabsState, TabBar, TabWrapper } from './tabs/tabs';
 export { IconButton, TabButton } from './bar/button';
 export { Separator, interleaveSeparators } from './bar/separator';
 export { Bar, FlexBar } from './bar/bar';
+export { AddonPanel } from './addon-panel/addon-panel';
 
 // Graphics
 export { Icons } from './icon/icon';

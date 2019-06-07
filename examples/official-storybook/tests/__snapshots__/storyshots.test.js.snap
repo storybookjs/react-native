@@ -11,6 +11,7 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-0 {
@@ -60,6 +61,7 @@ exports[`Storyshots Basics|ActionBar manyItems 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-0 {
@@ -137,6 +139,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-0 {
@@ -186,6 +189,7 @@ exports[`Storyshots Basics|ActionBar singleItem 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-0 {
@@ -2420,6 +2424,7 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #1EA7FD;
+  color: #999999;
 }
 
 .emotion-2 svg path {
@@ -2453,6 +2458,26 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
   position: relative;
   bottom: -0.125em;
   margin-right: 0.4em;
+}
+
+.emotion-2 svg path {
+  fill: #999999;
+}
+
+.emotion-2:hover {
+  color: #666666;
+}
+
+.emotion-2:hover svg path {
+  fill: #666666;
+}
+
+.emotion-2:active {
+  color: #444444;
+}
+
+.emotion-2:active svg path {
+  fill: #444444;
 }
 
 .emotion-4 {
@@ -2473,6 +2498,7 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #1EA7FD;
+  color: #999999;
 }
 
 .emotion-2 svg path {
@@ -2506,6 +2532,26 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
   position: relative;
   bottom: -0.125em;
   margin-right: 0.4em;
+}
+
+.emotion-2 svg path {
+  fill: #999999;
+}
+
+.emotion-2:hover {
+  color: #666666;
+}
+
+.emotion-2:hover svg path {
+  fill: #666666;
+}
+
+.emotion-2:active {
+  color: #444444;
+}
+
+.emotion-2:active svg path {
+  fill: #444444;
 }
 
 <div
@@ -5949,7 +5995,7 @@ exports[`Storyshots UI|Settings/SettingsFooter basic 1`] = `
     </a>
     <a
       class="emotion-1"
-      href="https://github.com/storybooks/storybook"
+      href="https://github.com/storybookjs/storybook"
       target="_blank"
     >
       <span
@@ -7482,7 +7528,7 @@ exports[`Storyshots UI|Settings/ShortcutsScreen default shortcuts 1`] = `
             </a>
             <a
               class="emotion-91"
-              href="https://github.com/storybooks/storybook"
+              href="https://github.com/storybookjs/storybook"
               target="_blank"
             >
               <span
