@@ -3,7 +3,7 @@ id: 'default-config'
 title: 'Default Config'
 ---
 
-Let's learn about the default config comes with Storybook.
+Let's learn about the default config that comes with Storybook.
 
 ## Babel
 
