@@ -287,9 +287,9 @@ Within the `examples` folder of the Storybook repo, you will find kitchen sink e
 Not only do these show many of the options and add-ons available, they are also automatically linked to all the development packages. We highly encourage you to use these to develop/test contributions on.
 
 #### React and Vue
-
-1.  `yarn storybook`
-2.  Verify that your local version works
+1. `cd examples/official-storybook`
+2.  `yarn storybook`
+3.  Verify that your local version works
 
 ### Working with your own app
 
