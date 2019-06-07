@@ -2424,6 +2424,7 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #1EA7FD;
+  color: #999999;
 }
 
 .emotion-2 svg path {
@@ -2457,6 +2458,26 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
   position: relative;
   bottom: -0.125em;
   margin-right: 0.4em;
+}
+
+.emotion-2 svg path {
+  fill: #999999;
+}
+
+.emotion-2:hover {
+  color: #666666;
+}
+
+.emotion-2:hover svg path {
+  fill: #666666;
+}
+
+.emotion-2:active {
+  color: #444444;
+}
+
+.emotion-2:active svg path {
+  fill: #444444;
 }
 
 .emotion-4 {
@@ -2477,6 +2498,7 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #1EA7FD;
+  color: #999999;
 }
 
 .emotion-2 svg path {
@@ -2510,6 +2532,26 @@ exports[`Storyshots Basics|Placeholder twoChildren 1`] = `
   position: relative;
   bottom: -0.125em;
   margin-right: 0.4em;
+}
+
+.emotion-2 svg path {
+  fill: #999999;
+}
+
+.emotion-2:hover {
+  color: #666666;
+}
+
+.emotion-2:hover svg path {
+  fill: #666666;
+}
+
+.emotion-2:active {
+  color: #444444;
+}
+
+.emotion-2:active svg path {
+  fill: #444444;
 }
 
 <div

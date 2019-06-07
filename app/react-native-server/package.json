@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-server",
-  "version": "5.1.0-rc.5",
+  "version": "5.1.1",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -24,16 +24,16 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-rc.5",
-    "@storybook/api": "5.1.0-rc.5",
-    "@storybook/channel-websocket": "5.1.0-rc.5",
-    "@storybook/core": "5.1.0-rc.5",
-    "@storybook/core-events": "5.1.0-rc.5",
-    "@storybook/ui": "5.1.0-rc.5",
+    "@storybook/addons": "5.1.1",
+    "@storybook/api": "5.1.1",
+    "@storybook/channel-websocket": "5.1.1",
+    "@storybook/core": "5.1.1",
+    "@storybook/core-events": "5.1.1",
+    "@storybook/ui": "5.1.1",
     "commander": "^2.19.0",
     "global": "^4.3.2",
     "react": "^16.6.0",
-    "react-dom": "^16.8.4",
+    "react-dom": "^16.8.3",
     "uuid": "^3.3.2",
     "webpack": "^4.23.1",
     "ws": "^6.1.0"

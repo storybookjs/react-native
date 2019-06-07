@@ -15,8 +15,8 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@storybook/components": "5.1.0-rc.5",
-    "@storybook/theming": "5.1.0-rc.5",
+    "@storybook/components": "5.1.1",
+    "@storybook/theming": "5.1.1",
     "babel-loader": "^6.4.1",
     "babel-plugin-styled-components": "^1.10.0",
     "bootstrap": "^4.3.1",
@@ -48,7 +48,7 @@
     "react-stack-grid": "^0.7.1",
     "recompose": "^0.30.0",
     "sitemap": "^2.2.0",
-    "styled-components": "^4.2.0",
+    "styled-components": "^4.3.0",
     "validatorjs": "^3.15.1"
   }
 }

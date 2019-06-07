@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "5.1.0-rc.5",
+  "version": "5.1.1",
   "description": "A Storybook addon to show additional information for your stories.",
   "keywords": [
     "addon",
@@ -22,24 +22,24 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-rc.5",
-    "@storybook/client-logger": "5.1.0-rc.5",
-    "@storybook/components": "5.1.0-rc.5",
-    "@storybook/theming": "5.1.0-rc.5",
+    "@storybook/addons": "5.1.1",
+    "@storybook/client-logger": "5.1.1",
+    "@storybook/components": "5.1.1",
+    "@storybook/theming": "5.1.1",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "marksy": "^7.0.0",
     "nested-object-assign": "^1.0.3",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
+    "react": "^16.8.3",
     "react-addons-create-fragment": "^15.6.2",
     "react-element-to-jsx-string": "^14.0.2",
-    "react-is": "^16.8.4",
+    "react-is": "^16.8.3",
     "react-lifecycles-compat": "^3.0.4",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "react-test-renderer": "^16.8.4"
+    "react-test-renderer": "^16.8.3"
   },
   "peerDependencies": {
     "react": "*"

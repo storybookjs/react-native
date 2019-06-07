@@ -3,7 +3,7 @@ id: 'default-config'
 title: 'Default Config'
 ---
 
-Let's learn about the default config comes with Storybook.
+Let's learn about the default config that comes with Storybook.
 
 ## Babel
 
@@ -198,7 +198,7 @@ import { storiesOf } from '@storybook/react';
 import imageFile from './static/image.png';
 
 storiesOf('<img />', module)
-  .add('with a image', () => (
+  .add('with an image', () => (
     <img src={imageFile} alt="covfefe" />
   ));
 ```
@@ -211,7 +211,7 @@ So, this is a good approach to loading all of your static content.
 ### JSON Loader
 
 You can import `.json` files, as you do with Node.js.
-This will also allow you to use NPM projects, which imports `.json` files inside them.
+This will also allow you to use NPM projects that import `.json` files inside them.
 
 ```js
 import React from 'react';

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "5.1.0-rc.5",
+  "version": "5.1.1",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -21,8 +21,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/client-logger": "5.1.0-rc.5",
-    "@storybook/theming": "5.1.0-rc.5",
+    "@storybook/client-logger": "5.1.1",
+    "@storybook/theming": "5.1.1",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "markdown-to-jsx": "^6.9.1",
@@ -30,8 +30,8 @@
     "polished": "^3.3.1",
     "popper.js": "^1.14.7",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-focus-lock": "^1.18.3",
     "react-helmet-async": "^1.0.2",
     "react-popper-tooltip": "^2.8.3",
