@@ -1,5 +1,7 @@
+import { Path } from '@angular-devkit/core';
 import { getAngularCliWebpackConfigOptions } from '../angular-cli_config';
-import angularJson from './angular.json';
+
+const angularJson = require('./angular.json');
 
 // eslint-disable-next-line global-require
 jest.mock('fs', () => require('../../../../../__mocks__/fs'));
@@ -8,7 +10,7 @@ jest.mock('path', () => ({
   resolve: () => 'tsconfig.json',
 }));
 
-const setupFiles = files => {
+const setupFiles = (files: any) => {
   // eslint-disable-next-line no-underscore-dangle, global-require
   require('fs').__setMockFiles(files);
 };
@@ -18,7 +20,7 @@ describe('angualr-cli_config', () => {
     it('should return have empty `buildOptions.sourceMap` and `buildOptions.optimization` by default', () => {
       setupFiles({ 'angular.json': JSON.stringify(angularJson) });
 
-      const config = getAngularCliWebpackConfigOptions('/');
+      const config = getAngularCliWebpackConfigOptions('/' as Path);
 
       expect(config).toMatchObject({
         buildOptions: {
@@ -45,7 +47,7 @@ describe('angualr-cli_config', () => {
 
       setupFiles({ 'angular.json': JSON.stringify(overrideAngularJson) });
 
-      const config = getAngularCliWebpackConfigOptions('/');
+      const config = getAngularCliWebpackConfigOptions('/' as Path);
 
       // Assure configuration matches values from `storybook` project
       expect(config).toMatchObject({
