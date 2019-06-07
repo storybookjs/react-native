@@ -8,6 +8,7 @@
     "storybook": "start-storybook -p 9011 -c ./"
   },
   "devDependencies": {
+    "@storybook/addon-decorator": "5.1.1",
     "@storybook/addon-roundtrip": "5.1.1",
     "@storybook/addon-parameter": "5.1.1",
     "@storybook/addons": "5.1.1",
