@@ -31,15 +31,15 @@
     "marksy": "^7.0.0",
     "nested-object-assign": "^1.0.3",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
+    "react": "^16.8.3",
     "react-addons-create-fragment": "^15.6.2",
     "react-element-to-jsx-string": "^14.0.2",
-    "react-is": "^16.8.4",
+    "react-is": "^16.8.3",
     "react-lifecycles-compat": "^3.0.4",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "react-test-renderer": "^16.8.4"
+    "react-test-renderer": "^16.8.3"
   },
   "peerDependencies": {
     "react": "*"

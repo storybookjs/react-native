@@ -31,7 +31,7 @@
     "@storybook/core-events": "5.1.3",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "react": "^16.8.4"
+    "react": "^16.8.3"
   },
   "peerDependencies": {
     "react": "*"
