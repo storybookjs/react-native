@@ -211,7 +211,7 @@ So, this is a good approach to loading all of your static content.
 ### JSON Loader
 
 You can import `.json` files, as you do with Node.js.
-This will also allow you to use NPM projects, which imports `.json` files inside them.
+This will also allow you to use NPM projects that import `.json` files inside them.
 
 ```js
 import React from 'react';
