@@ -1,7 +1,8 @@
 import { Path } from '@angular-devkit/core';
 import { getAngularCliWebpackConfigOptions } from '../angular-cli_config';
 
-const angularJson = require('./angular.json');
+// @ts-ignore
+import angularJson from './angular.json';
 
 // eslint-disable-next-line global-require
 jest.mock('fs', () => require('../../../../../__mocks__/fs'));
