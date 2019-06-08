@@ -1,6 +1,22 @@
 import { rgba, lighten, darken } from 'polished';
 
+import { logger } from '@storybook/client-logger';
+
 export const mkColor = (color: string) => ({ color });
+
+// Check if it is a string. This is for the sake of warning users
+// and the successive guarding logics that use String methods.
+const isColorString = (color: string) => {
+  if (typeof color !== 'string') {
+    logger.warn(
+      `Color passed to theme object should be a string. Instead` +
+        `${color}(${typeof color}) was passed.`
+    );
+    return false;
+  }
+
+  return true;
+};
 
 // Passing arguments that can't be converted to RGB such as linear-gradient
 // to library polished's functions such as lighten or darken throws the error
@@ -23,6 +39,10 @@ const applyPolished = (type: string, color: string) => {
 };
 
 const colorFactory = (type: string) => (color: string) => {
+  if (!isColorString(color)) {
+    return color;
+  }
+
   if (isColorVarChangeable(color)) {
     return color;
   }
