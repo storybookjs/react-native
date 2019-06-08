@@ -9,7 +9,7 @@ export const mkColor = (color: string) => ({ color });
 const isColorString = (color: string) => {
   if (typeof color !== 'string') {
     logger.warn(
-      `Color passed to theme object should be a string. Instead` +
+      `Color passed to theme object should be a string. Instead ` +
         `${color}(${typeof color}) was passed.`
     );
     return false;
