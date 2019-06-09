@@ -23,7 +23,11 @@ It is possible to add `info` by default to all or a subsection of stories by usi
 It is important to declare this decorator as **the first decorator**, otherwise it won't work well.
 
 ```js
-addDecorator(withInfo); // Globally in your .storybook/config.js.
+// Globally in your .storybook/config.js.
+import { addDecorator } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+
+addDecorator(withInfo); 
 ```
 
 or
