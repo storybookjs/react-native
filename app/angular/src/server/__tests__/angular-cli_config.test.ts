@@ -7,8 +7,11 @@ import angularJson from './angular.json';
 // eslint-disable-next-line global-require
 jest.mock('fs', () => require('../../../../../__mocks__/fs'));
 jest.mock('path', () => ({
-  join: () => 'angular.json',
-  resolve: () => 'tsconfig.json',
+  join: (...args) =>
+    args[args.length - 1] === 'angular.json'
+      ? 'angular.json'
+      : jest.requireActual('path').join(...args),
+  resolve: (...args) => 'tsconfig.json',
 }));
 
 const setupFiles = (files: any) => {
