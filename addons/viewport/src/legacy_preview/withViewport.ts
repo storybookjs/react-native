@@ -5,7 +5,7 @@ const withViewport = makeDecorator({
   name: 'withViewport',
   parameterName: 'viewport',
   wrapper: deprecate(
-    (getStory, context) => getStory(context),
+    (getStory: any, context: any) => getStory(context),
     'withViewport is no longer supported, use .addParameters({ viewport }) instead'
   ),
 });

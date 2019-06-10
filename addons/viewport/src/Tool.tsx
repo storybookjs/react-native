@@ -26,7 +26,7 @@ const createItem = memoize(1000)((id, name, value, change) => ({
   value,
 }));
 
-const flip = ({ width, height }) => ({ height: width, width: height });
+const flip = ({ width, height }: { width: any; height: any }) => ({ height: width, width: height });
 
 const deprecatedViewportString = deprecate(
   () => 0,
@@ -45,7 +45,7 @@ const getState = memoize(10)((props, state, change) => {
     deprecatedViewportString();
   }
 
-  const { disable, viewports, defaultViewport, onViewportChange } = parameters || {};
+  const { disable, viewports, defaultViewport, onViewportChange } = parameters || ({} as any);
 
   if (onViewportChange) {
     deprecateOnViewportChange();
@@ -56,7 +56,7 @@ const getState = memoize(10)((props, state, change) => {
   const selected =
     state.selected === 'responsive' || list.find(i => i.id === state.selected)
       ? state.selected
-      : list.find(i => i.default) || defaultViewport || DEFAULT_VIEWPORT;
+      : list.find(i => (i as any).default) || defaultViewport || DEFAULT_VIEWPORT;
 
   const resets =
     selected !== 'responsive'
@@ -78,7 +78,9 @@ const getState = memoize(10)((props, state, change) => {
         ]
       : [];
   const items = list.length
-    ? resets.concat(list.map(({ id, name, styles: value }) => createItem(id, name, value, change)))
+    ? resets.concat(
+        list.map(({ id, name, styles: value }: any) => createItem(id, name, value, change))
+      )
     : list;
 
   return {
@@ -116,8 +118,10 @@ const IconButtonLabel = styled.div(({ theme }) => ({
   marginLeft: '10px',
 }));
 
-export default class ViewportTool extends Component {
-  constructor(props) {
+export default class ViewportTool extends Component<any, any> {
+  listener: any;
+
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -144,12 +148,16 @@ export default class ViewportTool extends Component {
     api.off(SET_STORIES, this.listener);
   }
 
-  change = (...args) => this.setState(...args);
+  // @ts-ignore
+  change = (...args: any[]) => this.setState(...args);
 
   flipViewport = () =>
-    this.setState(({ isRotated }) => ({ isRotated: !isRotated, expanded: false }));
+    this.setState(({ isRotated }: { isRotated: boolean }) => ({
+      isRotated: !isRotated,
+      expanded: false,
+    }));
 
-  resetViewport = e => {
+  resetViewport = (e: any) => {
     e.stopPropagation();
     e.nativeEvent.stopImmediatePropagation();
 
@@ -159,7 +167,7 @@ export default class ViewportTool extends Component {
   render() {
     const { expanded } = this.state;
     const { items, selected, isRotated } = getState(this.props, this.state, this.change);
-    const item = items.find(i => i.id === selected);
+    const item: any = items.find(i => i.id === selected);
 
     let viewportX = 0;
     let viewportY = 0;
@@ -225,7 +233,7 @@ export default class ViewportTool extends Component {
   }
 }
 
-ViewportTool.propTypes = {
+(ViewportTool as any).propTypes = {
   api: PropTypes.shape({
     on: PropTypes.func,
   }).isRequired,
