@@ -40,6 +40,7 @@
   "devDependencies": {
     "@types/autoprefixer": "^9.4.0",
     "@types/webpack-env": "^1.13.9"
+    "webpack": "^4.33.0"
   },
   "peerDependencies": {
     "@angular-devkit/core": "^0.6.1 || >=7.0.0",

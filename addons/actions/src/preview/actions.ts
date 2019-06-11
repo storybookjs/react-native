@@ -1,12 +1,16 @@
 import { action } from './action';
 import { ActionOptions, ActionsMap } from '../models';
+import { config } from './configureActions';
 
 export function actions(...args: any[]): ActionsMap {
-  let options: ActionOptions = {};
+  let options: ActionOptions = config;
   const names = args;
   // last argument can be options
   if (names.length !== 1 && typeof args[args.length - 1] !== 'string') {
-    options = names.pop();
+    options = {
+      ...config,
+      ...names.pop(),
+    };
   }
 
   let namesObject = names[0];

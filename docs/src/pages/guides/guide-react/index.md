@@ -37,7 +37,7 @@ npm install react react-dom --save
 npm install babel-loader @babel/core --save-dev 
 ```
 
-## Step 2: Add a npm script
+## Step 2: Add an npm script
 
 Then add the following NPM script to your `package.json` in order to start the storybook later in this guide:
 
