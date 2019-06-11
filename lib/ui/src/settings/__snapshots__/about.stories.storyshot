@@ -990,7 +990,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   padding: 15px;
   margin: 0;
   white-space: pre-wrap;
-  color: #333333;
+  color: inherit;
   font-size: 13px;
   line-height: 19px;
 }
@@ -2519,7 +2519,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   padding: 15px;
   margin: 0;
   white-space: pre-wrap;
-  color: #333333;
+  color: inherit;
   font-size: 13px;
   line-height: 19px;
 }
