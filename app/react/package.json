@@ -1,17 +1,17 @@
 {
   "name": "@storybook/react",
-  "version": "5.1.0-rc.3",
+  "version": "5.1.1",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/app/react",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "app/react"
   },
   "license": "MIT",
@@ -29,8 +29,8 @@
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/core": "5.1.0-rc.3",
-    "@storybook/node-logger": "5.1.0-rc.3",
+    "@storybook/core": "5.1.1",
+    "@storybook/node-logger": "5.1.1",
     "@svgr/webpack": "^4.0.3",
     "babel-plugin-named-asset-import": "^0.3.1",
     "babel-plugin-react-docgen": "^3.0.0",

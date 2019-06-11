@@ -146,9 +146,11 @@ const NotesPanel = ({ active }: Props) => {
             <Fragment>
               Learn how to{' '}
               <Link
-                href="https://github.com/storybooks/storybook/tree/master/addons/notes"
+                href="https://github.com/storybookjs/storybook/tree/master/addons/notes"
                 target="_blank"
                 withArrow
+                secondary
+                cancel={false}
               >
                 document components in Markdown
               </Link>

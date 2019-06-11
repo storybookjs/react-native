@@ -110,7 +110,7 @@ const JSXDescription = (
       libero nulla.
     </p>
     <p>
-      <a href="https://github.com/storybooks/react-storybook-addon-info">This is a link</a>
+      <a href="https://github.com/storybookjs/react-storybook-addon-info">This is a link</a>
     </p>
     <p>
       <img alt="350x150" src="http://placehold.it/350x150" />

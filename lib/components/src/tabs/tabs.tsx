@@ -13,7 +13,7 @@ import { Placeholder } from '../placeholder/placeholder';
 import { FlexBar } from '../bar/bar';
 import { TabButton } from '../bar/button';
 
-interface WrapperProps {
+export interface WrapperProps {
   bordered?: boolean;
   absolute?: boolean;
 }
@@ -50,7 +50,7 @@ export const TabBar = styled.div({
   },
 });
 
-interface ContentProps {
+export interface ContentProps {
   absolute?: boolean;
 }
 
@@ -86,7 +86,7 @@ const Content = styled.div<ContentProps>(
       : {}
 );
 
-interface VisuallyHiddenProps {
+export interface VisuallyHiddenProps {
   active?: boolean;
 }
 
@@ -94,7 +94,7 @@ const VisuallyHidden = styled.div<VisuallyHiddenProps>(({ active }) =>
   active ? { display: 'block' } : { display: 'none' }
 );
 
-interface TabWrapperProps {
+export interface TabWrapperProps {
   active: boolean;
   render?: () => JSX.Element;
   children?: ReactNode;
@@ -126,7 +126,7 @@ const childrenToList = (children: any, selected: string) =>
     };
   });
 
-interface TabsProps {
+export interface TabsProps {
   id?: string;
   children?: ReactNode;
   tools?: ReactNode;
@@ -186,14 +186,14 @@ Tabs.displayName = 'Tabs';
 
 type FuncChilden = () => void;
 
-interface TabsStateProps {
+export interface TabsStateProps {
   children: (ReactNode | FuncChilden)[];
   initial: string;
   absolute: boolean;
   bordered: boolean;
 }
 
-interface TabsStateState {
+export interface TabsStateState {
   selected: string;
 }
 

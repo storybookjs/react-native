@@ -3,11 +3,11 @@ id: 'using-addons'
 title: 'Using Addons'
 ---
 
-Storybook comes with a variety of "core" addons developed and maintained alongside Storybook. Most examples in this site use [actions](https://github.com/storybooks/storybook/tree/master/addons/actions) and [links](https://github.com/storybooks/storybook/tree/master/addons/links). But it's easy to use any third party addons distributed via NPM.
+Storybook comes with a variety of "core" addons developed and maintained alongside Storybook. Most examples in this site use [actions](https://github.com/storybookjs/storybook/tree/master/addons/actions) and [links](https://github.com/storybookjs/storybook/tree/master/addons/links). But it's easy to use any third party addons distributed via NPM.
 
 Here's how to do it.
 
-We are going to use an addon called [Notes](https://github.com/storybooks/storybook/tree/master/addons/notes). Basically, it allows you to write notes for your stories.
+We are going to use an addon called [Notes](https://github.com/storybookjs/storybook/tree/master/addons/notes). Basically, it allows you to write notes for your stories.
 
 First, we need to install the addons:
 
@@ -82,6 +82,6 @@ addParameters({
 });
 ```
 
-Here's an example of a [production-ready config file](https://github.com/storybooks/storybook/blob/next/examples/cra-kitchen-sink/.storybook/config.js) from the cra-kitchen example.
+Here's an example of a [production-ready config file](https://github.com/storybookjs/storybook/blob/next/examples/cra-kitchen-sink/.storybook/config.js) from the cra-kitchen example.
 
 Just like this, you can install any other addon and use it. Have a look at our [addon gallery](https://storybook.js.org/addons/) to discover more addons.

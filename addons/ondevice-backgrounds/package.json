@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-backgrounds",
-  "version": "5.1.0-rc.3",
+  "version": "5.1.1",
   "description": "A react-native storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",
@@ -10,11 +10,11 @@
   ],
   "homepage": "https://storybook.js.org",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/ondevice-backgrounds"
   },
   "license": "MIT",
@@ -24,7 +24,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-rc.3",
+    "@storybook/addons": "5.1.1",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2"
   },
