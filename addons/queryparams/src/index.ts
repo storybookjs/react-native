@@ -19,8 +19,6 @@ export const withQuery = makeDecorator({
     const newQuery = qs.stringify(Object.assign({}, currentQuery, additionalQuery));
     const newLocation = location.href.replace(location.search, `?${newQuery}`);
 
-    console.log({ newLocation });
-
     history.replaceState({}, document.title, newLocation);
 
     return getStory(context);
