@@ -33,6 +33,6 @@
     "storybook-chromatic": "^1.2.6",
     "ts-loader": "^5.3.3",
     "uuid": "^3.3.2",
-    "webpack": "^4.28.0"
+    "webpack": "^4.33.0"
   }
 }

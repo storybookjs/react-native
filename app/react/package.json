@@ -44,7 +44,7 @@
     "react-dev-utils": "^9.0.0",
     "regenerator-runtime": "^0.12.1",
     "semver": "^6.0.0",
-    "webpack": "^4.28.0"
+    "webpack": "^4.33.0"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",

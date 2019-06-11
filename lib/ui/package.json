@@ -55,9 +55,10 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
+    "corejs-upgrade-webpack-plugin": "^1.0.1",
     "flush-promises": "^1.0.2",
     "terser-webpack-plugin": "^1.2.4",
-    "webpack": "^4.28.0"
+    "webpack": "^4.33.0"
   },
   "publishConfig": {
     "access": "public"
