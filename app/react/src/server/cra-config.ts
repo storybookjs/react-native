@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import semver from 'semver';
+import { Configuration, Plugin, RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { normalizeCondition } from 'webpack/lib/RuleSet';
 import { logger } from '@storybook/node-logger';
@@ -13,9 +14,9 @@ const cssExtensions = ['.css', '.scss', '.sass'];
 const cssModuleExtensions = ['.module.css', '.module.scss', '.module.sass'];
 const typeScriptExtensions = ['.ts', '.tsx'];
 
-let reactScriptsPath;
+let reactScriptsPath: string;
 
-export function getReactScriptsPath({ noCache } = {}) {
+export function getReactScriptsPath({ noCache }: { noCache?: boolean } = {}) {
   if (reactScriptsPath && !noCache) return reactScriptsPath;
 
   let reactScriptsScriptPath = fs.realpathSync(
@@ -69,8 +70,8 @@ export function isReactScriptsInstalled(requiredVersion = '2.0.0') {
   }
 }
 
-export const getRules = extensions => rules =>
-  rules.reduce((craRules, rule) => {
+export const getRules = (extensions: string[]) => (rules: RuleSetRule[]) =>
+  rules.reduce((craRules: any, rule: any) => {
     // If at least one extension satisfies the rule test, the rule is one
     // we want to extract
     if (rule.test && extensions.some(normalizeCondition(rule.test))) {
@@ -93,7 +94,7 @@ export const getRules = extensions => rules =>
 
 const getStyleRules = getRules(cssExtensions.concat(cssModuleExtensions));
 
-export const getTypeScriptRules = (webpackConfigRules, configDir) => {
+export const getTypeScriptRules = (webpackConfigRules: RuleSetRule[], configDir: string) => {
   const rules = getRules(typeScriptExtensions)(webpackConfigRules);
   // We know CRA only has one rule targetting TS for now, which is the first rule.
   const babelRule = rules[0];
@@ -126,7 +127,7 @@ export const getModulePath = () => {
   return false;
 };
 
-function mergePlugins(basePlugins, additionalPlugins) {
+function mergePlugins(basePlugins: Plugin[], additionalPlugins: Plugin[]) {
   return [...basePlugins, ...additionalPlugins].reduce((plugins, plugin) => {
     if (
       plugins.some(includedPlugin => includedPlugin.constructor.name === plugin.constructor.name)
@@ -137,7 +138,7 @@ function mergePlugins(basePlugins, additionalPlugins) {
   }, []);
 }
 
-export function getCraWebpackConfig(mode) {
+export function getCraWebpackConfig(mode: 'development' | 'production' | 'none') {
   const pathToReactScripts = getReactScriptsPath();
 
   const craWebpackConfig =
@@ -159,7 +160,7 @@ export function getCraWebpackConfig(mode) {
   return webpackConfig;
 }
 
-export function applyCRAWebpackConfig(baseConfig, configDir) {
+export function applyCRAWebpackConfig(baseConfig: Configuration, configDir: string): Configuration {
   // Check if the user can use TypeScript (react-scripts version 2.1+).
   const hasTsSupport = isReactScriptsInstalled('2.1.0');
 

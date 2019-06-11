@@ -60,10 +60,11 @@ describe('element_check.isReactRenderable', () => {
   const number = 1337;
   const element = <span>what's up</span>;
   const array = [string, number, element];
-  const object = { key: null };
+  const object = { key: null } as any;
 
   it('allows rendering React elements only prior to React Fiber', () => {
     // mutate version for the purpose of the test
+    // @ts-ignore
     React.version = '15.5.4';
 
     expect(isReactRenderable(string)).toBe(false);
@@ -75,6 +76,7 @@ describe('element_check.isReactRenderable', () => {
 
   it('allows rendering string, numbers, arrays and React elements with React Fiber', () => {
     // mutate version for the purpose of the test
+    // @ts-ignore
     React.version = '16.0.0-alpha.13';
 
     expect(isReactRenderable(string)).toBe(true);

@@ -1,3 +1,4 @@
+import { TransformOptions } from '@babel/core';
 import * as preset from './framework-preset-react-docgen';
 
 describe('framework-preset-react-docgen', () => {
@@ -28,10 +29,10 @@ describe('framework-preset-react-docgen', () => {
   });
 
   it('should return the config with the extra plugins when `plugins` is not an array.', () => {
-    const babelConfig = {
+    const babelConfig: TransformOptions = {
       babelrc: false,
       presets: ['env', 'foo-preset'],
-      plugins: 'bar-plugin',
+      plugins: ['bar-plugin'],
     };
 
     const config = preset.babel(babelConfig);

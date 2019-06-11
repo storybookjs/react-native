@@ -2,17 +2,17 @@ import React from 'react';
 import flattenDeep from 'lodash/flattenDeep';
 
 // return true if the element is renderable with react fiber
-export const isValidFiberElement = element =>
+export const isValidFiberElement = (element: React.ReactElement) =>
   typeof element === 'string' || typeof element === 'number' || React.isValidElement(element);
 
-export const isPriorToFiber = version => {
+export const isPriorToFiber = (version: string) => {
   const [majorVersion] = version.split('.');
 
   return Number(majorVersion) < 16;
 };
 
 // accepts an element and return true if renderable else return false
-const isReactRenderable = element => {
+const isReactRenderable = (element: React.ReactElement): boolean => {
   // storybook is running with a version prior to fiber,
   // run a simple check on the element
   if (isPriorToFiber(React.version)) {
