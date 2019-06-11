@@ -16,7 +16,7 @@ export const getDefaultFetcher = (url: string) => {
 };
 
 export const reIndentQuery = (query: string) => {
-  const lines = query.split('\n');
+  const lines = query.trim().split('\n');
   const spaces = lines[lines.length - 1].length - 1;
   return lines.map((l, i) => (i === 0 ? l : l.slice(spaces))).join('\n');
 };
