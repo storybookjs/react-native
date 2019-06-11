@@ -29,6 +29,7 @@ export interface Addon {
   route?: (routeOptions: RouteOptions) => string;
   match?: (matchOptions: MatchOptions) => boolean;
   render: (renderOptions: RenderOptions) => ReactElement<any>;
+  paramKey: string;
 }
 export interface Collection {
   [key: string]: Addon;
@@ -41,8 +42,13 @@ interface Panels {
 export interface SubAPI {
   getElements: (type: Types) => Collection;
   getPanels: () => Collection;
+  getPanelsForStory: (storyParameters: StoryParameters) => Collection;
   getSelectedPanel: () => string;
   setSelectedPanel: (panelName: string) => void;
+}
+
+interface StoryParameters {
+  [key: string]: any;
 }
 
 export function ensurePanel(panels: Panels, selectedPanel?: string, currentPanel?: string) {
@@ -62,6 +68,23 @@ export default ({ provider, store }: Module) => {
   const api: SubAPI = {
     getElements: type => provider.getElements(type),
     getPanels: () => api.getElements(types.PANEL),
+    getPanelsForStory: (storyParameters: StoryParameters) => {
+      const panels = api.getPanels();
+      if (!panels || !storyParameters) {
+        return panels;
+      }
+
+      const filteredPanels: Collection = {};
+      Object.entries(panels).forEach(([id, panel]) => {
+        const { paramKey } = panel;
+        if (paramKey && storyParameters[paramKey] && storyParameters[paramKey].disabled) {
+          return;
+        }
+        filteredPanels[id] = panel;
+      });
+
+      return filteredPanels;
+    },
     getSelectedPanel: () => {
       const { selectedPanel } = store.getState();
       return ensurePanel(api.getPanels(), selectedPanel, selectedPanel);
