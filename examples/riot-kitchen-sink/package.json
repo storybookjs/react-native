@@ -35,7 +35,7 @@
     "raw-loader": "^2.0.0",
     "riot-tag-loader": "^2.1.0",
     "svg-url-loader": "^2.3.2",
-    "webpack": "^4.28.0",
+    "webpack": "^4.33.0",
     "webpack-dev-server": "^3.4.1"
   }
 }
