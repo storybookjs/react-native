@@ -42,7 +42,7 @@ interface Panels {
 export interface SubAPI {
   getElements: (type: Types) => Collection;
   getPanels: () => Collection;
-  getPanelsForStory: (storyParameters: StoryParameters) => Collection;
+  getStoryPanels: (storyId: string) => Collection;
   getSelectedPanel: () => string;
   setSelectedPanel: (panelName: string) => void;
 }
@@ -68,7 +68,8 @@ export default ({ provider, store }: Module) => {
   const api: SubAPI = {
     getElements: type => provider.getElements(type),
     getPanels: () => api.getElements(types.PANEL),
-    getPanelsForStory: (storyParameters: StoryParameters) => {
+    getStoryPanels: storyId => {
+      const storyParameters = provider.getParameters(storyId);
       const panels = api.getPanels();
       if (!panels || !storyParameters) {
         return panels;
