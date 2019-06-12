@@ -1,3 +1,16 @@
+## 5.1.4 (June 13, 2019)
+
+### Bug Fixes
+
+* Core: Fix core-js 3 errors ([#7051](https://github.com/storybookjs/storybook/pull/7051))
+* UI: Fix syntax highlighter plain text not visible ([#7057](https://github.com/storybookjs/storybook/pull/7057))
+* Addon-actions: Add default options to action(s) ([#6438](https://github.com/storybookjs/storybook/pull/6438))
+
+### Dependency Upgrades
+
+* fix: add missing core-js dependency ([#7016](https://github.com/storybookjs/storybook/pull/7016))
+* chore: set react version to 16.8.3 to match react native ([#7008](https://github.com/storybookjs/storybook/pull/7008))
+
 ## 5.1.3 (June 6, 2019)
 
 ### Bug Fixes
