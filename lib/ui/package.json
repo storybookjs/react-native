@@ -1,17 +1,17 @@
 {
   "name": "@storybook/ui",
-  "version": "5.1.0-rc.2",
+  "version": "5.2.0-unreleased.0",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/ui",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/ui",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/ui"
   },
   "license": "MIT",
@@ -22,13 +22,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-rc.2",
-    "@storybook/api": "5.1.0-rc.2",
-    "@storybook/client-logger": "5.1.0-rc.2",
-    "@storybook/components": "5.1.0-rc.2",
-    "@storybook/core-events": "5.1.0-rc.2",
-    "@storybook/router": "5.1.0-rc.2",
-    "@storybook/theming": "5.1.0-rc.2",
+    "@storybook/addons": "5.2.0-unreleased.0",
+    "@storybook/api": "5.2.0-unreleased.0",
+    "@storybook/client-logger": "5.2.0-unreleased.0",
+    "@storybook/components": "5.2.0-unreleased.0",
+    "@storybook/core-events": "5.2.0-unreleased.0",
+    "@storybook/router": "5.2.0-unreleased.0",
+    "@storybook/theming": "5.2.0-unreleased.0",
+    "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
     "fast-deep-equal": "^2.0.1",
@@ -40,12 +41,12 @@
     "polished": "^3.3.1",
     "prop-types": "^15.7.2",
     "qs": "^6.6.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-draggable": "^3.1.1",
     "react-helmet-async": "^1.0.2",
     "react-hotkeys": "2.0.0-pre4",
-    "react-resize-detector": "^4.0.5",
+    "react-sizeme": "^2.6.7",
     "recompose": "^0.30.0",
     "resolve-from": "^5.0.0",
     "semver": "^6.0.0",
@@ -54,9 +55,10 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
+    "corejs-upgrade-webpack-plugin": "^1.0.1",
     "flush-promises": "^1.0.2",
     "terser-webpack-plugin": "^1.2.4",
-    "webpack": "^4.28.0"
+    "webpack": "^4.33.0"
   },
   "publishConfig": {
     "access": "public"

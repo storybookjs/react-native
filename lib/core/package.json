@@ -1,17 +1,17 @@
 {
   "name": "@storybook/core",
-  "version": "5.1.0-rc.2",
+  "version": "5.2.0-unreleased.0",
   "description": "Storybook framework-agnostic API",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/core",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/core"
   },
   "license": "MIT",
@@ -25,15 +25,15 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/preset-env": "^7.4.5",
-    "@storybook/addons": "5.1.0-rc.2",
-    "@storybook/channel-postmessage": "5.1.0-rc.2",
-    "@storybook/client-api": "5.1.0-rc.2",
-    "@storybook/client-logger": "5.1.0-rc.2",
-    "@storybook/core-events": "5.1.0-rc.2",
-    "@storybook/node-logger": "5.1.0-rc.2",
-    "@storybook/router": "5.1.0-rc.2",
-    "@storybook/theming": "5.1.0-rc.2",
-    "@storybook/ui": "5.1.0-rc.2",
+    "@storybook/addons": "5.2.0-unreleased.0",
+    "@storybook/channel-postmessage": "5.2.0-unreleased.0",
+    "@storybook/client-api": "5.2.0-unreleased.0",
+    "@storybook/client-logger": "5.2.0-unreleased.0",
+    "@storybook/core-events": "5.2.0-unreleased.0",
+    "@storybook/node-logger": "5.2.0-unreleased.0",
+    "@storybook/router": "5.2.0-unreleased.0",
+    "@storybook/theming": "5.2.0-unreleased.0",
+    "@storybook/ui": "5.2.0-unreleased.0",
     "airbnb-js-shims": "^1 || ^2",
     "autoprefixer": "^9.4.9",
     "babel-plugin-add-react-displayname": "^0.0.5",
@@ -47,6 +47,7 @@
     "commander": "^2.19.0",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
+    "corejs-upgrade-webpack-plugin": "^1.0.1",
     "css-loader": "^2.1.1",
     "detect-port": "^1.3.0",
     "dotenv-webpack": "^1.7.0",
@@ -81,7 +82,7 @@
     "terser-webpack-plugin": "^1.2.4",
     "url-loader": "^1.1.2",
     "util-deprecate": "^1.0.2",
-    "webpack": "^4.32.0",
+    "webpack": "^4.33.0",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-hot-middleware": "^2.25.0"
   },

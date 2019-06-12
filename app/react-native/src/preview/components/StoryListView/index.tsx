@@ -158,6 +158,7 @@ export default class StoryListView extends Component<Props, State> {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <SearchBar
+          testID="Storybook.ListView.SearchBar"
           clearButtonMode="while-editing"
           disableFullscreenUI
           onChangeText={this.handleChangeSearchText}

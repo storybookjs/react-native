@@ -10,7 +10,7 @@ const match = memoize(1000)((requestes, actual, value, fallback = 0) =>
 
 const ArrowSpacing = 8;
 
-interface ArrowProps {
+export interface ArrowProps {
   color: keyof Color;
   placement: string;
 }
@@ -71,7 +71,7 @@ const Arrow = styled.div<ArrowProps>(
   })
 );
 
-interface WrapperProps {
+export interface WrapperProps {
   color: keyof Color;
   placement: string;
   hidden?: boolean;

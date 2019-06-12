@@ -1,6 +1,6 @@
 import { styled } from '@storybook/theming';
 
-interface SvgProps {
+export interface SvgProps {
   inline?: boolean;
 }
 

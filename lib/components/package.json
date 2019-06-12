@@ -1,17 +1,17 @@
 {
   "name": "@storybook/components",
-  "version": "5.1.0-rc.2",
+  "version": "5.2.0-unreleased.0",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/components",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/components",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/components"
   },
   "license": "MIT",
@@ -21,8 +21,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/client-logger": "5.1.0-rc.2",
-    "@storybook/theming": "5.1.0-rc.2",
+    "@storybook/client-logger": "5.2.0-unreleased.0",
+    "@storybook/theming": "5.2.0-unreleased.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "markdown-to-jsx": "^6.9.1",
@@ -30,8 +30,8 @@
     "polished": "^3.3.1",
     "popper.js": "^1.14.7",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-focus-lock": "^1.18.3",
     "react-helmet-async": "^1.0.2",
     "react-popper-tooltip": "^2.8.3",
