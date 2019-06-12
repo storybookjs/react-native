@@ -337,7 +337,7 @@ exports[`Storyshots Basics|DocumentFormatting withDOM 1`] = `
   padding: 15px;
   margin: 0;
   white-space: pre-wrap;
-  color: #333333;
+  color: inherit;
   font-size: 13px;
   line-height: 19px;
 }
@@ -772,7 +772,7 @@ exports[`Storyshots Basics|DocumentFormatting withDOM 1`] = `
   padding: 15px;
   margin: 0;
   white-space: pre-wrap;
-  color: #333333;
+  color: inherit;
   font-size: 13px;
   line-height: 19px;
 }
@@ -1533,7 +1533,7 @@ exports[`Storyshots Basics|DocumentFormatting withMarkdown 1`] = `
   padding: 15px;
   margin: 0;
   white-space: pre-wrap;
-  color: #333333;
+  color: inherit;
   font-size: 13px;
   line-height: 19px;
 }
@@ -1968,7 +1968,7 @@ exports[`Storyshots Basics|DocumentFormatting withMarkdown 1`] = `
   padding: 15px;
   margin: 0;
   white-space: pre-wrap;
-  color: #333333;
+  color: inherit;
   font-size: 13px;
   line-height: 19px;
 }
