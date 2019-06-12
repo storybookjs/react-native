@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addons|QueryParams mock is 4 1`] = `
+<div>
+  This story should have an extra url query param: ?mock=4
+</div>
+`;
+
+exports[`Storyshots Addons|QueryParams mock is true 1`] = `
+<div>
+  This story should have an extra url query param: ?mock=truehttp://localhost/
+</div>
+`;

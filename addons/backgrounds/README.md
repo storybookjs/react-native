@@ -51,6 +51,8 @@ addParameters({
     { name: 'facebook', value: '#3b5998' },
   ],
 });
+
+// should be before configure()
 ```
 
 If you want to override backgrounds for a single story or group of stories, pass the `backgrounds` parameter:

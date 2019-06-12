@@ -1,6 +1,6 @@
-export default {
+export const style = {
   wrapper: {
-    position: 'absolute',
+    position: 'absolute' as const,
     top: 0,
     right: 0,
     bottom: 0,

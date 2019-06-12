@@ -24,7 +24,7 @@ const themedSyntax = memoize(2)(theme =>
   Object.entries(theme.code || {}).reduce((acc, [key, val]) => ({ ...acc, [`* .${key}`]: val }), {})
 );
 
-interface WrapperProps {
+export interface WrapperProps {
   bordered?: boolean;
   padded?: boolean;
 }
@@ -61,7 +61,7 @@ const Scroller = styled(({ children, className }) => (
   ({ theme }) => themedSyntax(theme)
 );
 
-interface PreProps {
+export interface PreProps {
   padded?: boolean;
 }
 
