@@ -10,25 +10,26 @@ import Events from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
 import { toId } from '@storybook/router/utils';
 
+import { Channel } from '@storybook/channels';
 import pathToId from './pathToId';
 import { getQueryParams } from './queryparams';
+import { IData, IDecorator } from './types';
 
 // TODO: these are copies from components/nav/lib
 // refactor to DRY
-
-const toKey = input =>
+const toKey = (input: string) =>
   input.replace(/[^a-z0-9]+([a-z0-9])/gi, (...params) => params[1].toUpperCase());
 
-const toChild = it => ({ ...it });
+const toChild = (it: {}) => ({ ...it });
 
 let count = 0;
 
-function getId() {
+const getId = (): number => {
   count += 1;
   return count;
-}
+};
 
-const toExtracted = obj =>
+const toExtracted = <T>(obj: T) =>
   Object.entries(obj).reduce((acc, [key, value]) => {
     if (typeof value === 'function') {
       return acc;
@@ -39,11 +40,29 @@ const toExtracted = obj =>
     return Object.assign(acc, { [key]: value });
   }, {});
 
-const getIdFromLegacyQuery = ({ path, selectedKind, selectedStory }) =>
+const getIdFromLegacyQuery = ({
+  path,
+  selectedKind,
+  selectedStory,
+}: {
+  path: string;
+  selectedKind: string;
+  selectedStory: string;
+}) =>
   (path && pathToId(path)) || (selectedKind && selectedStory && toId(selectedKind, selectedStory));
 
 export default class StoryStore extends EventEmitter {
-  constructor(params) {
+  _legacydata: {};
+
+  _data: IData;
+
+  _revision: number;
+
+  _selection: {};
+
+  _channel: Channel;
+
+  constructor(params: { channel: Channel }) {
     super();
 
     this._legacydata = {};
@@ -66,7 +85,7 @@ export default class StoryStore extends EventEmitter {
     });
   }
 
-  setChannel = channel => {
+  setChannel = (channel: Channel) => {
     this._channel = channel;
   };
 
@@ -77,12 +96,12 @@ export default class StoryStore extends EventEmitter {
     return id;
   };
 
-  setPath = (storyId, params = {}) => {
+  setPath = (storyId: string, params = {}) => {
     const path = `${document.location.pathname}?${qs.stringify({ ...params, id: storyId })}`;
     history.replaceState({}, '', path);
   };
 
-  fromId = id => {
+  fromId = (id: string) => {
     try {
       const data = this._data[id];
 
@@ -98,13 +117,12 @@ export default class StoryStore extends EventEmitter {
     }
   };
 
-  setSeparators(data) {
-    this.separators = data;
-  }
-
   raw() {
     return Object.values(this._data)
-      .filter(i => !!i.getDecorated)
+      .filter(i => {
+        console.log('this is unknown??? --> i: ', i);
+        return !!i.getDecorated;
+      })
       .map(({ id }) => this.fromId(id));
   }
 
@@ -116,22 +134,29 @@ export default class StoryStore extends EventEmitter {
     );
   }
 
-  setSelection = data => {
+  setSelection = <U extends object>(data: U) => {
     this._selection = data;
     setTimeout(() => this.emit(Events.STORY_RENDER), 1);
   };
 
   getSelection = () => this._selection;
 
-  remove = id => {
+  remove = (id: string): void => {
     const { _data } = this;
     delete _data[id];
   };
 
   addStory(
-    { id, kind, name, storyFn: original, parameters = {} },
+    { id, kind, name, storyFn: original, parameters = {} }: {id: string, kind: string, name: string, storyFn?: () => any, parameters: },
     { getDecorators, applyDecorators }
   ) {
+    console.log('id: ', id);
+    console.log('kind: ', kind);
+    console.log('name: ', name);
+    console.log('storyFn: ', storyFn);
+    console.log('parameters: ', parameters);
+    console.log('getDecorators: ', getDecorators);
+    console.log('applyDecorators: ', applyDecorators);
     const { _data } = this;
 
     if (_data[id]) {
@@ -156,7 +181,9 @@ export default class StoryStore extends EventEmitter {
     // lazily decorate the story when it's loaded
     const getDecorated = memoize(1)(() => applyDecorators(getOriginal(), getDecorators()));
 
-    const storyFn = p => getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
+    const storyFn = p => {
+      return getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
+    };
 
     _data[id] = toChild({
       ...identification,
@@ -193,7 +220,17 @@ export default class StoryStore extends EventEmitter {
     this._revision += 1;
   }
 
-  addLegacyStory({ kind, name, storyFn, parameters = {} }) {
+  addLegacyStory({
+    kind,
+    name,
+    storyFn,
+    parameters = {},
+  }: {
+    kind: string;
+    name: string;
+    storyFn: () => any;
+    parameters: { fileName: string } | {};
+  }) {
     const k = toKey(kind);
     if (!this._legacydata[k]) {
       this._legacydata[k] = {
@@ -220,8 +257,12 @@ export default class StoryStore extends EventEmitter {
       .map(info => info.kind);
   }
 
-  getStories(kind) {
+  getStories(kind: string) {
     const key = toKey(kind);
+    console.log('-------------------- getStories');
+    console.log('kind: ', kind);
+    console.log(' getStories--------------------');
+
     if (!this._legacydata[key]) {
       return [];
     }
@@ -232,7 +273,7 @@ export default class StoryStore extends EventEmitter {
       .map(info => info.name);
   }
 
-  getStoryFileName(kind) {
+  getStoryFileName(kind: string) {
     const key = toKey(kind);
     const storiesKind = this._legacydata[key];
     if (!storiesKind) {
@@ -242,7 +283,7 @@ export default class StoryStore extends EventEmitter {
     return storiesKind.fileName;
   }
 
-  getStoryAndParameters(kind, name) {
+  getStoryAndParameters(kind: string, name: string) {
     if (!kind || !name) {
       return null;
     }
@@ -264,12 +305,12 @@ export default class StoryStore extends EventEmitter {
     };
   }
 
-  getStory(kind, name) {
+  getStory(kind: string, name: string) {
     const data = this.getStoryAndParameters(kind, name);
     return data && data.story;
   }
 
-  getStoryWithContext(kind, name) {
+  getStoryWithContext(kind: string, name: string) {
     const data = this.getStoryAndParameters(kind, name);
     if (!data) {
       return null;
@@ -279,17 +320,17 @@ export default class StoryStore extends EventEmitter {
     return story;
   }
 
-  removeStoryKind(kind) {
+  removeStoryKind(kind: string) {
     if (this.hasStoryKind(kind)) {
       this._legacydata[toKey(kind)].stories = {};
     }
   }
 
-  hasStoryKind(kind) {
+  hasStoryKind(kind: string) {
     return Boolean(this._legacydata[toKey(kind)]);
   }
 
-  hasStory(kind, name) {
+  hasStory(kind: string, name: string) {
     return Boolean(this.getStory(kind, name));
   }
 

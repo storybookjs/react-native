@@ -1,5 +1,4 @@
 /* eslint no-underscore-dangle: 0 */
-
 import isPlainObject from 'is-plain-object';
 import { logger } from '@storybook/client-logger';
 import addons from '@storybook/addons';
@@ -9,11 +8,12 @@ import { toId } from '@storybook/router/utils';
 import mergeWith from 'lodash/mergeWith';
 import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
-
+import StoryStore from './story_store';
+import { ClientApiParams, IDecoratorParams, IHierarchyObj } from './types';
 import subscriptionsStore from './subscriptions_store';
 
 // merge with concatenating arrays, but no duplicates
-const merge = (a, b) =>
+const merge = (a: IHierarchyObj, b: IHierarchyObj) =>
   mergeWith({}, a, b, (objValue, srcValue) => {
     if (Array.isArray(srcValue) && Array.isArray(objValue)) {
       srcValue.forEach(s => {
@@ -69,7 +69,9 @@ const withSubscriptionTracking = storyFn => {
 };
 
 export default class ClientApi {
-  constructor({ storyStore, decorateStory = defaultDecorateStory } = {}) {
+  _storyStore: StoryStore;
+
+  constructor({ storyStore, decorateStory = defaultDecorateStory }: ClientApiParams) {
     this._storyStore = storyStore;
     this._addons = {};
     this._globalDecorators = [];
@@ -102,7 +104,8 @@ export default class ClientApi {
     this._globalDecorators.push(decorator);
   };
 
-  addParameters = parameters => {
+  addParameters = (parameters: IDecoratorParams[] | { globalParameter: 'string' }) => {
+    console.log('parameters: ', parameters);
     this._globalParameters = {
       ...this._globalParameters,
       ...parameters,
@@ -116,7 +119,8 @@ export default class ClientApi {
     this._globalDecorators = [];
   };
 
-  storiesOf = (kind, m) => {
+  // what are the occasions that "m" is simply a boolean, vs an obj
+  storiesOf = (kind: string, m: any) => {
     if (!kind && typeof kind !== 'string') {
       throw new Error('Invalid or missing kind provided for stories, should be a string');
     }
@@ -126,7 +130,7 @@ export default class ClientApi {
         `Missing 'module' parameter for story with a kind of '${kind}'. It will break your HMR`
       );
     }
-
+    console.log('storyStore: ', this._storyStore);
     if (m && m.hot && m.hot.dispose) {
       m.hot.dispose(() => {
         const { _storyStore } = this;
@@ -223,7 +227,7 @@ export default class ClientApi {
       return api;
     };
 
-    api.addDecorator = decorator => {
+    api.addDecorator = (decorator: () => void) => {
       if (hasAdded) {
         logger.warn(`You have added a decorator to the kind '${kind}' after a story has already been added.
 In Storybook 4 this applied the decorator only to subsequent stories. In Storybook 5+ it applies to all stories.
