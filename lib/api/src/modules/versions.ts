@@ -17,9 +17,9 @@ export interface SubState {
     [key: string]: {
       [key: string]: any;
     };
-    latest?: Version;
-    next?: Version;
-    current?: Version;
+    latest: Version;
+    next: Version;
+    current: Version;
   };
   lastVersionCheck: number;
   dismissedVersionNotification: undefined | string;
