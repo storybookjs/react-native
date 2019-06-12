@@ -39,7 +39,7 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be repor
 Norbert de Langen ~ @ndelangen - `ndelangen@me.com`
 Igor Davydkin ~ @igordv - `davydkin.igor@gmail.com`
 Tom Coleman ~ @tmeasday - `tom@thesnail.org`
-Micheal Shilman ~ @shilman - `michael@lab80.co`
+Michael Shilman ~ @shilman - `michael@lab80.co`
 Philip Riabchun ~ @hypnosphi - `talpa@yandex.ru`
 
 The steering committee will review and investigate all complaints, and will respond in a way that it deems appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
