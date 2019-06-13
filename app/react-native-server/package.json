@@ -31,6 +31,7 @@
     "@storybook/core-events": "5.2.0-alpha.23",
     "@storybook/ui": "5.2.0-alpha.23",
     "commander": "^2.19.0",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
     "react": "^16.6.0",
     "react-dom": "^16.8.3",
