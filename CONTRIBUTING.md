@@ -251,8 +251,6 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 
 ## Development Guide
 
-> If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/storybookjs/storybook/tree/master/lib/ui) page.
-
 ### Prerequisites
 
 Please have the **_latest_** stable versions of the following on your machine
