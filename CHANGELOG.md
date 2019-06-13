@@ -1,3 +1,12 @@
+## 5.1.5 (June 14, 2019)
+
+### Bug Fixes
+
+* Core: Upgrade plugin core-js fix ([#7086](https://github.com/storybookjs/storybook/pull/7086))
+* UI: Fix sidebar loading visibility ([#7073](https://github.com/storybookjs/storybook/pull/7073))
+* UI: Fix unnecessary large bundlesize ([#7091](https://github.com/storybookjs/storybook/pull/7091))
+* Addon-contexts, RN-server: Add core-js dep ([#7094](https://github.com/storybookjs/storybook/pull/7094))
+
 ## 5.1.4 (June 13, 2019)
 
 ### Bug Fixes
