@@ -33,7 +33,7 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
     "global": "^4.4.0",
-    "html-react-parser": "^0.7.0",
+    "html-react-parser": "^0.7.1",
     "is-builtin-module": "^3.0.0",
     "lodash": "^4.17.11",
     "marked": "^0.6.2",
