@@ -29,6 +29,7 @@
     "@storybook/theming": "5.2.0-alpha.23",
     "core-js": "^3.0.1",
     "format-json": "^1.0.3",
+    "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-lifecycles-compat": "^3.0.4",
