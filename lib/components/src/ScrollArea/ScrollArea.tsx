@@ -21,6 +21,7 @@ const Scroll = styled(({ vertical, horizontal, ...rest }: ScrollProps) => <Simpl
         }
       : {
           overflowY: 'auto',
+          height: '100%',
         },
   ({ horizontal }) =>
     !horizontal
@@ -29,6 +30,7 @@ const Scroll = styled(({ vertical, horizontal, ...rest }: ScrollProps) => <Simpl
         }
       : {
           overflowX: 'auto',
+          width: '100%',
         }
 );
 

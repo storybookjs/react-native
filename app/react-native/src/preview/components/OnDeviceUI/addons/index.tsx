@@ -1,9 +1,21 @@
 import React, { PureComponent } from 'react';
-import { View, Text } from 'react-native';
+import styled from '@emotion/native';
 import addons from '@storybook/addons';
 import AddonsList from './list';
 import AddonWrapper from './wrapper';
-import style from '../style';
+import { Label } from '../../Shared/text';
+import { EmotionProps } from '../../Shared/theme';
+
+const NoAddonContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Container = styled.View`
+  flex: 1;
+  background: ${(props: EmotionProps) => props.theme.backgroundColor};
+`;
 
 export default class Addons extends PureComponent<{}, { addonSelected: string }> {
   panels = addons.getElements('panel');
@@ -25,21 +37,21 @@ export default class Addons extends PureComponent<{}, { addonSelected: string }>
 
     if (Object.keys(this.panels).length === 0) {
       return (
-        <View style={[style.flex, style.center]}>
-          <Text style={style.text}>No addons loaded.</Text>
-        </View>
+        <NoAddonContainer>
+          <Label>No addons loaded.</Label>
+        </NoAddonContainer>
       );
     }
 
     return (
-      <View style={style.flex}>
+      <Container>
         <AddonsList
           onPressAddon={this.onPressAddon}
           panels={this.panels}
           addonSelected={addonSelected}
         />
         <AddonWrapper addonSelected={addonSelected} panels={this.panels} />
-      </View>
+      </Container>
     );
   }
 }

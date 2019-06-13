@@ -17,6 +17,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
 .emotion-8 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -194,6 +195,21 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   width: 15px;
 }
 
+.emotion-22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+  font-weight: 700;
+}
+
+.emotion-22 > * + * {
+  margin-left: 20px;
+}
+
 .emotion-14 {
   display: inline-block;
   -webkit-transition: all 150ms ease-out;
@@ -201,6 +217,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #1EA7FD;
+  color: #999999;
 }
 
 .emotion-14 svg path {
@@ -236,81 +253,23 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
   margin-right: 0.4em;
 }
 
-.emotion-22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(0,0,0,.1);
-  font-weight: 700;
-}
-
-.emotion-22 > * + * {
-  margin-left: 20px;
-}
-
-.emotion-17 {
-  display: inline-block;
-  -webkit-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #1EA7FD;
-  color: #999999;
-}
-
-.emotion-17 svg path {
-  fill: #1EA7FD;
-}
-
-.emotion-17:hover,
-.emotion-17:focus {
-  cursor: pointer;
-  color: #0297f5;
-}
-
-.emotion-17:hover svg path,
-.emotion-17:focus svg path {
-  fill: #0297f5;
-}
-
-.emotion-17:active {
-  color: #028ee6;
-}
-
-.emotion-17:active svg path {
-  fill: #028ee6;
-}
-
-.emotion-17 svg {
-  display: inline-block;
-  height: 1em;
-  width: 1em;
-  vertical-align: text-top;
-  position: relative;
-  bottom: -0.125em;
-  margin-right: 0.4em;
-}
-
-.emotion-17 svg path {
+.emotion-14 svg path {
   fill: #999999;
 }
 
-.emotion-17:hover {
+.emotion-14:hover {
   color: #666666;
 }
 
-.emotion-17:hover svg path {
+.emotion-14:hover svg path {
   fill: #666666;
 }
 
-.emotion-17:active {
+.emotion-14:active {
   color: #444444;
 }
 
-.emotion-17:active svg path {
+.emotion-14:active svg path {
   fill: #444444;
 }
 
@@ -397,43 +356,47 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
             class="simplebar-offset"
           >
             <div
-              class="simplebar-content"
+              class="simplebar-content-wrapper"
             >
               <div
-                class="emotion-7"
+                class="simplebar-content"
               >
                 <div
-                  class="emotion-2"
+                  class="emotion-7"
                 >
                   <div
-                    class="emotion-1"
-                    role="tablist"
+                    class="emotion-2"
+                  >
+                    <div
+                      class="emotion-1"
+                      role="tablist"
+                    >
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        About
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="emotion-6"
                   >
                     <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
+                      class="emotion-5"
                     >
-                      About
+                      <svg
+                        class="emotion-4"
+                        viewBox="0 0 1024 1024"
+                      >
+                        <path
+                          class="emotion-3"
+                          d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+                        />
+                      </svg>
                     </button>
                   </div>
-                </div>
-                <div
-                  class="emotion-6"
-                >
-                  <button
-                    class="emotion-5"
-                  >
-                    <svg
-                      class="emotion-4"
-                      viewBox="0 0 1024 1024"
-                    >
-                      <path
-                        class="emotion-3"
-                        d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
-                      />
-                    </svg>
-                  </button>
                 </div>
               </div>
             </div>
@@ -515,7 +478,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
           >
             <a
               class="emotion-14"
-              href="https://github.com/storybooks/storybook/releases"
+              href="https://github.com/storybookjs/storybook/releases"
               target="_blank"
             >
               <span
@@ -538,7 +501,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
             class="emotion-22"
           >
             <a
-              class="emotion-17"
+              class="emotion-14"
               href="https://storybook.js.org"
               target="_blank"
             >
@@ -549,8 +512,8 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
               </span>
             </a>
             <a
-              class="emotion-17"
-              href="https://github.com/storybooks/storybook"
+              class="emotion-14"
+              href="https://github.com/storybookjs/storybook"
               target="_blank"
             >
               <span
@@ -560,7 +523,7 @@ exports[`Storyshots UI|Settings/AboutScreen failed to fetch new version 1`] = `
               </span>
             </a>
             <a
-              class="emotion-17"
+              class="emotion-14"
               href="https://storybook.js.org/support"
               target="_blank"
             >
@@ -595,6 +558,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 .emotion-8 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -1026,7 +990,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   padding: 15px;
   margin: 0;
   white-space: pre-wrap;
-  color: #333333;
+  color: inherit;
   font-size: 13px;
   line-height: 19px;
 }
@@ -1436,13 +1400,16 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
 .emotion-23 {
   position: relative;
   overflow: hidden;
+  color: #333333;
   border: 1px solid rgba(0,0,0,.1);
   background: #FFFFFF;
 }
 
 .emotion-20 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -1627,6 +1594,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-21 {
@@ -1693,43 +1661,47 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
             class="simplebar-offset"
           >
             <div
-              class="simplebar-content"
+              class="simplebar-content-wrapper"
             >
               <div
-                class="emotion-7"
+                class="simplebar-content"
               >
                 <div
-                  class="emotion-2"
+                  class="emotion-7"
                 >
                   <div
-                    class="emotion-1"
-                    role="tablist"
+                    class="emotion-2"
+                  >
+                    <div
+                      class="emotion-1"
+                      role="tablist"
+                    >
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        About
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="emotion-6"
                   >
                     <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
+                      class="emotion-5"
                     >
-                      About
+                      <svg
+                        class="emotion-4"
+                        viewBox="0 0 1024 1024"
+                      >
+                        <path
+                          class="emotion-3"
+                          d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+                        />
+                      </svg>
                     </button>
                   </div>
-                </div>
-                <div
-                  class="emotion-6"
-                >
-                  <button
-                    class="emotion-5"
-                  >
-                    <svg
-                      class="emotion-4"
-                      viewBox="0 0 1024 1024"
-                    >
-                      <path
-                        class="emotion-3"
-                        d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
-                      />
-                    </svg>
-                  </button>
                 </div>
               </div>
             </div>
@@ -1816,7 +1788,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
             </span>
             <a
               class="emotion-15"
-              href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
+              href="https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md"
               target="_blank"
             >
               <span
@@ -1891,40 +1863,44 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
                         class="simplebar-offset"
                       >
                         <div
-                          class="simplebar-content"
+                          class="simplebar-content-wrapper"
                         >
-                          <pre
-                            class="hljs emotion-19"
+                          <div
+                            class="simplebar-content"
                           >
-                            <code
-                              class="emotion-18"
+                            <pre
+                              class="hljs emotion-19"
                             >
-                              npx npm-check-updates 
-                              <span
-                                class="token string"
+                              <code
+                                class="emotion-18"
                               >
-                                '/storybook/'
-                              </span>
-                               -u 
-                              <span
-                                class="token operator"
-                              >
-                                &&
-                              </span>
-                               
-                              <span
-                                class="token function"
-                              >
-                                npm
-                              </span>
-                               
-                              <span
-                                class="token function"
-                              >
-                                install
-                              </span>
-                            </code>
-                          </pre>
+                                npx npm-check-updates 
+                                <span
+                                  class="token string"
+                                >
+                                  '/storybook/'
+                                </span>
+                                 -u 
+                                <span
+                                  class="token operator"
+                                >
+                                  &&
+                                </span>
+                                 
+                                <span
+                                  class="token function"
+                                >
+                                  npm
+                                </span>
+                                 
+                                <span
+                                  class="token function"
+                                >
+                                  install
+                                </span>
+                              </code>
+                            </pre>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1984,22 +1960,26 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
                         class="simplebar-offset"
                       >
                         <div
-                          class="simplebar-content"
+                          class="simplebar-content-wrapper"
                         >
-                          <pre
-                            class="hljs emotion-19"
+                          <div
+                            class="simplebar-content"
                           >
-                            <code
-                              class="emotion-18"
+                            <pre
+                              class="hljs emotion-19"
                             >
-                              <span
-                                class="token function"
+                              <code
+                                class="emotion-18"
                               >
-                                yarn
-                              </span>
-                               upgrade-interactive --latest
-                            </code>
-                          </pre>
+                                <span
+                                  class="token function"
+                                >
+                                  yarn
+                                </span>
+                                 upgrade-interactive --latest
+                              </code>
+                            </pre>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -2050,7 +2030,7 @@ exports[`Storyshots UI|Settings/AboutScreen new version required 1`] = `
             </a>
             <a
               class="emotion-33"
-              href="https://github.com/storybooks/storybook"
+              href="https://github.com/storybookjs/storybook"
               target="_blank"
             >
               <span
@@ -2095,6 +2075,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
 .emotion-8 {
   overflow-y: hidden;
   overflow-x: auto;
+  width: 100%;
   color: #999999;
   width: 100%;
   height: 40px;
@@ -2538,7 +2519,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
   padding: 15px;
   margin: 0;
   white-space: pre-wrap;
-  color: #333333;
+  color: inherit;
   font-size: 13px;
   line-height: 19px;
 }
@@ -2955,43 +2936,47 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
             class="simplebar-offset"
           >
             <div
-              class="simplebar-content"
+              class="simplebar-content-wrapper"
             >
               <div
-                class="emotion-7"
+                class="simplebar-content"
               >
                 <div
-                  class="emotion-2"
+                  class="emotion-7"
                 >
                   <div
-                    class="emotion-1"
-                    role="tablist"
+                    class="emotion-2"
+                  >
+                    <div
+                      class="emotion-1"
+                      role="tablist"
+                    >
+                      <button
+                        class="emotion-0"
+                        role="tab"
+                        type="button"
+                      >
+                        About
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="emotion-6"
                   >
                     <button
-                      class="emotion-0"
-                      role="tab"
-                      type="button"
+                      class="emotion-5"
                     >
-                      About
+                      <svg
+                        class="emotion-4"
+                        viewBox="0 0 1024 1024"
+                      >
+                        <path
+                          class="emotion-3"
+                          d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
+                        />
+                      </svg>
                     </button>
                   </div>
-                </div>
-                <div
-                  class="emotion-6"
-                >
-                  <button
-                    class="emotion-5"
-                  >
-                    <svg
-                      class="emotion-4"
-                      viewBox="0 0 1024 1024"
-                    >
-                      <path
-                        class="emotion-3"
-                        d="M693.022 637.866c15.62 15.622 15.618 40.95 0 56.566-15.622 15.622-40.946 15.624-56.562 0.002l-124.46-124.458-124.456 124.458c-15.622 15.622-40.944 15.622-56.562 0-15.624-15.622-15.624-40.946-0.002-56.568l124.454-124.456-124.452-124.45c-15.622-15.622-15.622-40.946 0-56.564 15.62-15.624 40.944-15.624 56.568-0.002l124.45 124.45 124.454-124.452c15.622-15.62 40.95-15.62 56.566 0 15.622 15.62 15.624 40.944 0.002 56.56l-124.456 124.458 124.456 124.456zM828.784 828.784c-174.956 174.956-458.614 174.956-633.566 0-174.958-174.956-174.958-458.614 0-633.566 174.954-174.958 458.612-174.958 633.566 0 174.954 174.952 174.954 458.612 0 633.566zM880 511.998c-0.002-98.296-38.28-190.708-107.786-260.212s-161.92-107.786-260.214-107.788c-98.296 0.002-190.71 38.282-260.216 107.786-69.506 69.508-107.782 161.918-107.786 260.214 0.002 98.296 38.282 190.71 107.786 260.216 69.508 69.506 161.918 107.784 260.216 107.784 98.296 0 190.708-38.278 260.214-107.784s107.784-161.92 107.786-260.216z"
-                      />
-                    </svg>
-                  </button>
                 </div>
               </div>
             </div>
@@ -3078,7 +3063,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
             </span>
             <a
               class="emotion-15"
-              href="https://github.com/storybooks/storybook/blob/next/CHANGELOG.md"
+              href="https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md"
               target="_blank"
             >
               <span
@@ -3134,7 +3119,7 @@ exports[`Storyshots UI|Settings/AboutScreen up to date 1`] = `
             </a>
             <a
               class="emotion-19"
-              href="https://github.com/storybooks/storybook"
+              href="https://github.com/storybookjs/storybook"
               target="_blank"
             >
               <span

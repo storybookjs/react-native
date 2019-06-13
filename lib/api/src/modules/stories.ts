@@ -26,6 +26,7 @@ export interface SubAPI {
   jumpToStory: (direction: Direction) => void;
   getData: (storyId: StoryId) => Story | Group;
   getParameters: (storyId: StoryId, parameterName?: ParameterName) => Story['parameters'] | any;
+  getCurrentParameter<S>(parameterName?: ParameterName): S;
 }
 
 interface Group {
@@ -98,6 +99,16 @@ const initStoriesApi = ({
     }
 
     return null;
+  };
+
+  const getCurrentParameter = function getCurrentParameter<S>(parameterName: ParameterName) {
+    const { storyId } = store.getState();
+    const parameters = getParameters(storyId, parameterName);
+
+    if (parameters) {
+      return parameters as S;
+    }
+    return undefined;
   };
 
   const jumpToStory = (direction: Direction) => {
@@ -198,7 +209,7 @@ const initStoriesApi = ({
                 `
 Invalid part '${name}', leading to id === parentId ('${id}'), inside kind '${kind}'
 
-Did you create a path that uses the separator char accidentally, such as 'Vue <docs/>' where '/' is a separator char? See https://github.com/storybooks/storybook/issues/6128
+Did you create a path that uses the separator char accidentally, such as 'Vue <docs/>' where '/' is a separator char? See https://github.com/storybookjs/storybook/issues/6128
               `.trim()
               );
             }
@@ -254,7 +265,16 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
 
     const { storyId, viewMode } = store.getState();
 
-    if (!storyId || !storiesHash[storyId]) {
+    if (storyId && storyId.match(/--\*$/)) {
+      const idStart = storyId.slice(0, -1); // drop the * at the end
+      const firstKindLeaf = Object.values(storiesHash).find(
+        (s: Story | Group) => !s.children && s.id.substring(0, idStart.length) === idStart
+      );
+
+      if (viewMode && firstKindLeaf) {
+        navigate(`/${viewMode}/${firstKindLeaf.id}`);
+      }
+    } else if (!storyId || storyId === '*' || !storiesHash[storyId]) {
       // when there's no storyId or the storyId item doesn't exist
       // we pick the first leaf and navigate
       const firstLeaf = Object.values(storiesHash).find((s: Story | Group) => !s.children);
@@ -296,6 +316,7 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       jumpToStory,
       getData,
       getParameters,
+      getCurrentParameter,
     },
     state: {
       storiesHash: {},

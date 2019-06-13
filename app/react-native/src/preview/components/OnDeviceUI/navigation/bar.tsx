@@ -1,19 +1,17 @@
 import React, { PureComponent } from 'react';
-import { StyleSheet, View } from 'react-native';
+import styled from '@emotion/native';
 import Button from './button';
 import { NAVIGATOR, PREVIEW, ADDONS } from './constants';
+import { EmotionProps } from '../../Shared/theme';
 
-const style = StyleSheet.create({
-  bar: {
-    flexDirection: 'row',
-    paddingHorizontal: 8,
-    backgroundColor: 'white',
-    borderBottomWidth: 1,
-    borderTopWidth: 1,
-    borderBottomColor: '#e6e6e6',
-    borderTopColor: '#e6e6e6',
-  },
-});
+const Container = styled.View`
+  flex-direction: row;
+  padding-horizontal: 8;
+  background: ${(props: EmotionProps) => props.theme.backgroundColor};
+  border-top-width: 1;
+  border-bottom-width: 1;
+  border-color: ${(props: EmotionProps) => props.theme.borderColor};
+`;
 
 export interface Props {
   index: number;
@@ -24,7 +22,7 @@ export default class Bar extends PureComponent<Props> {
   render() {
     const { index, onPress } = this.props;
     return (
-      <View style={style.bar}>
+      <Container>
         <Button onPress={onPress} id={NAVIGATOR} active={index === NAVIGATOR}>
           NAVIGATOR
         </Button>
@@ -34,7 +32,7 @@ export default class Bar extends PureComponent<Props> {
         <Button onPress={onPress} id={ADDONS} active={index === ADDONS}>
           ADDONS
         </Button>
-      </View>
+      </Container>
     );
   }
 }

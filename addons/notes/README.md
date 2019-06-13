@@ -2,13 +2,13 @@
 
 Storybook Addon Notes allows you to write notes (text or HTML) for your stories in [Storybook](https://storybook.js.org).
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ![Storybook Addon Notes Demo](docs/demo.png)
 
 ## Getting Started
 
-**NOTE: Documentation on master branch is for alpha version, stable release is on [master](https://github.com/storybooks/storybook/tree/master/addons/)**
+**NOTE: Documentation on master branch is for alpha version, stable release is on [master](https://github.com/storybookjs/storybook/tree/master/addons/)**
 
 ```sh
 yarn add -D @storybook/addon-notes
@@ -46,13 +46,37 @@ import { storiesOf } from '@storybook/vue';
 
 import MyButton from './MyButton.vue';
 
-storiesOf('MyButton', module)
-  .add('with some emoji', () => ({
+storiesOf('MyButton', module).add(
+  'with some emoji',
+  () => ({
     components: { MyButton },
-    template: '<my-button>😀 😎 👍 💯</my-button>'
-  }), {
+    template: '<my-button>😀 😎 👍 💯</my-button>',
+  }),
+  {
     notes: 'A very simple example of addon notes',
-  });
+  }
+);
+```
+
+### With Angular
+
+```js
+import { storiesOf } from '@storybook/vue';
+
+import { ButtonComponent } from './button.component';
+
+storiesOf('Button', module).add(
+  'with some emoji',
+  () => ({
+    component: ButtonComponent,
+    props: {
+      text: '😀 😎 👍 💯'
+    }
+  }),
+  {
+    notes: 'A very simple example of addon notes',
+  }
+);
 ```
 
 ## Using Markdown
@@ -62,9 +86,11 @@ Using Markdown in your notes is supported, Storybook will load Markdown as raw b
 ```js
 import { storiesOf } from '@storybook/react';
 import Component from './Component';
-import notes from './someMarkdownText.md';
+import markdownNotes from './someMarkdownText.md';
 
-storiesOf('Component', module).add('With Markdown', () => <Component />, { notes });
+storiesOf('Component', module).add('With Markdown', () => <Component />, {
+  notes: { markdown: markdownNotes },
+});
 ```
 
 ## Giphy

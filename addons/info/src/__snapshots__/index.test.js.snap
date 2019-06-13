@@ -66,9 +66,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
           >
             <div>
               <h1>
-                function func(x) {
-          return x + 1;
-        }
+                x =&gt; x + 1
               </h1>
               <h2>
                 [object Object]
@@ -1321,9 +1319,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
           >
             <div>
               <h1>
-                function func(x) {
-          return x + 1;
-        }
+                x =&gt; x + 1
               </h1>
               <h2>
                 [object Object]
@@ -2656,9 +2652,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
           >
             <div>
               <h1>
-                function func(x) {
-          return x + 1;
-        }
+                x =&gt; x + 1
               </h1>
               <h2>
                 [object Object]
@@ -3782,6 +3776,7 @@ exports[`addon Info should render component description if story kind matches co
 .emotion-10 {
   position: relative;
   overflow: hidden;
+  color: #333333;
   border: 1px solid rgba(0,0,0,.1);
   background: #FFFFFF;
 }
@@ -3942,7 +3937,9 @@ exports[`addon Info should render component description if story kind matches co
 
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -4127,6 +4124,7 @@ exports[`addon Info should render component description if story kind matches co
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-8 {
@@ -4286,9 +4284,7 @@ exports[`addon Info should render component description if story kind matches co
           >
             <div>
               <h1>
-                function func(x) {
-          return x + 1;
-        }
+                x =&gt; x + 1
               </h1>
               <h2>
                 [object Object]
@@ -4419,6 +4415,7 @@ exports[`addon Info should render component description if story kind matches co
                 theme={
                   Object {
                     "addonActionsTheme": Object {
+                      "ARROW_ANIMATION_DURATION": "0",
                       "ARROW_COLOR": "rgba(0,0,0,0.3)",
                       "ARROW_FONT_SIZE": 8,
                       "ARROW_MARGIN_RIGHT": 4,
@@ -4435,8 +4432,10 @@ exports[`addon Info should render component description if story kind matches co
                       "HTML_TAGNAME_TEXT_TRANSFORM": "lowercase",
                       "HTML_TAG_COLOR": "rgb(168, 148, 166)",
                       "OBJECT_NAME_COLOR": "rgb(136, 19, 145)",
+                      "OBJECT_PREVIEW_ARRAY_MAX_PROPERTIES": 10,
+                      "OBJECT_PREVIEW_OBJECT_MAX_PROPERTIES": 5,
                       "OBJECT_VALUE_BOOLEAN_COLOR": "rgb(28, 0, 207)",
-                      "OBJECT_VALUE_FUNCTION_KEYWORD_COLOR": "rgb(170, 13, 145)",
+                      "OBJECT_VALUE_FUNCTION_PREFIX_COLOR": "rgb(13, 34, 170)",
                       "OBJECT_VALUE_NULL_COLOR": "rgb(128, 128, 128)",
                       "OBJECT_VALUE_NUMBER_COLOR": "rgb(28, 0, 207)",
                       "OBJECT_VALUE_REGEXP_COLOR": "rgb(196, 26, 22)",
@@ -4750,17 +4749,17 @@ exports[`addon Info should render component description if story kind matches co
                                     "insert": [Function],
                                     "inserted": Object {
                                       "110qmus": true,
-                                      "172rjni": true,
+                                      "11xgcgt": true,
                                       "1maezg8": true,
-                                      "1myfomu": true,
+                                      "1si67pu": true,
                                       "4zr3vl": true,
-                                      "67diqj": true,
                                       "esgpkx": true,
+                                      "scc5fi": true,
                                     },
                                     "key": "css",
                                     "nonce": undefined,
                                     "registered": Object {
-                                      "emotion-2": "overflow-y:auto;overflow-x:auto;position:relative;& code{padding-right:10px;}* .token{font-family:\\"Operator Mono\\", \\"Fira Code Retina\\", \\"Fira Code\\", \\"FiraCode-Retina\\", \\"Andale Mono\\", \\"Lucida Console\\", Consolas, Monaco, monospace;-webkit-font-smoothing:antialiased;&.comment{color:#008000;font-style:italic;}&.prolog{color:#008000;font-style:italic;}&.doctype{color:#008000;font-style:italic;}&.cdata{color:#008000;font-style:italic;}&.string{color:#A31515;}&.punctuation{color:#393A34;}&.operator{color:#393A34;}&.url{color:#36acaa;}&.symbol{color:#36acaa;}&.number{color:#36acaa;}&.boolean{color:#36acaa;}&.variable{color:#36acaa;}&.constant{color:#36acaa;}&.inserted{color:#36acaa;}&.atrule{color:#0000ff;}&.keyword{color:#0000ff;}&.attr-value{color:#0000ff;}&.function{color:#393A34;}&.deleted{color:#9a050f;}&.important{font-weight:bold;}&.bold{font-weight:bold;}&.italic{font-style:italic;}&.class-name{color:#2B91AF;}&.tag{color:#800000;}&.selector{color:#800000;}&.attr-name{color:#ff0000;}&.property{color:#ff0000;}&.regex{color:#ff0000;}&.entity{color:#ff0000;}&.directive.tag .tag{background:#ffff00;color:#393A34;}}* .language-json .token.boolean{color:#0000ff;}* .language-json .token.number{color:#0000ff;}* .language-json .token.property{color:#2B91AF;}* .namespace{opacity:0.7;}",
+                                      "emotion-2": "overflow-y:auto;height:100%;overflow-x:auto;width:100%;position:relative;& code{padding-right:10px;}* .token{font-family:\\"Operator Mono\\", \\"Fira Code Retina\\", \\"Fira Code\\", \\"FiraCode-Retina\\", \\"Andale Mono\\", \\"Lucida Console\\", Consolas, Monaco, monospace;-webkit-font-smoothing:antialiased;&.comment{color:#008000;font-style:italic;}&.prolog{color:#008000;font-style:italic;}&.doctype{color:#008000;font-style:italic;}&.cdata{color:#008000;font-style:italic;}&.string{color:#A31515;}&.punctuation{color:#393A34;}&.operator{color:#393A34;}&.url{color:#36acaa;}&.symbol{color:#36acaa;}&.number{color:#36acaa;}&.boolean{color:#36acaa;}&.variable{color:#36acaa;}&.constant{color:#36acaa;}&.inserted{color:#36acaa;}&.atrule{color:#0000ff;}&.keyword{color:#0000ff;}&.attr-value{color:#0000ff;}&.function{color:#393A34;}&.deleted{color:#9a050f;}&.important{font-weight:bold;}&.bold{font-weight:bold;}&.italic{font-style:italic;}&.class-name{color:#2B91AF;}&.tag{color:#800000;}&.selector{color:#800000;}&.attr-name{color:#ff0000;}&.property{color:#ff0000;}&.regex{color:#ff0000;}&.entity{color:#ff0000;}&.directive.tag .tag{background:#ffff00;color:#393A34;}}* .language-json .token.boolean{color:#0000ff;}* .language-json .token.number{color:#0000ff;}* .language-json .token.property{color:#2B91AF;}* .namespace{opacity:0.7;}",
                                       "emotion-5": "position:relative;& code{padding-right:10px;}* .token{font-family:\\"Operator Mono\\", \\"Fira Code Retina\\", \\"Fira Code\\", \\"FiraCode-Retina\\", \\"Andale Mono\\", \\"Lucida Console\\", Consolas, Monaco, monospace;-webkit-font-smoothing:antialiased;&.comment{color:#008000;font-style:italic;}&.prolog{color:#008000;font-style:italic;}&.doctype{color:#008000;font-style:italic;}&.cdata{color:#008000;font-style:italic;}&.string{color:#A31515;}&.punctuation{color:#393A34;}&.operator{color:#393A34;}&.url{color:#36acaa;}&.symbol{color:#36acaa;}&.number{color:#36acaa;}&.boolean{color:#36acaa;}&.variable{color:#36acaa;}&.constant{color:#36acaa;}&.inserted{color:#36acaa;}&.atrule{color:#0000ff;}&.keyword{color:#0000ff;}&.attr-value{color:#0000ff;}&.function{color:#393A34;}&.deleted{color:#9a050f;}&.important{font-weight:bold;}&.bold{font-weight:bold;}&.italic{font-style:italic;}&.class-name{color:#2B91AF;}&.tag{color:#800000;}&.selector{color:#800000;}&.attr-name{color:#ff0000;}&.property{color:#ff0000;}&.regex{color:#ff0000;}&.entity{color:#ff0000;}&.directive.tag .tag{background:#ffff00;color:#393A34;}}* .language-json .token.boolean{color:#0000ff;}* .language-json .token.number{color:#0000ff;}* .language-json .token.property{color:#2B91AF;}* .namespace{opacity:0.7;}",
                                     },
                                     "sheet": StyleSheet {
@@ -4770,7 +4769,7 @@ exports[`addon Info should render component description if story kind matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          [data-simplebar]{position:relative;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}
+                                          [data-simplebar]{position:relative;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -4788,13 +4787,13 @@ exports[`addon Info should render component description if story kind matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-offset{direction:inherit !important;box-sizing:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}
+                                          .simplebar-offset{direction:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-content{direction:inherit;box-sizing:border-box !important;position:relative;display:block;height:100%;width:auto;visibility:visible;overflow:scroll;max-width:100%;max-height:100%;}
+                                          .simplebar-content-wrapper{direction:inherit;position:relative;display:block;visibility:visible;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -4806,43 +4805,49 @@ exports[`addon Info should render component description if story kind matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-height-auto-observer-wrapper{box-sizing:inherit !important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;-webkit-box-flex:inherit;-webkit-flex-grow:inherit;-ms-flex-positive:inherit;flex-grow:inherit;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0;}
+                                          .simplebar-height-auto-observer-wrapper{height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;-webkit-box-flex:inherit;-webkit-flex-grow:inherit;-ms-flex-positive:inherit;flex-grow:inherit;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-height-auto-observer{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}
+                                          .simplebar-height-auto-observer{display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;}
+                                          .simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-scrollbar{position:absolute;right:2px;width:6px;min-height:10px;}
+                                          [data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-scrollbar:before{position:absolute;content:"";border-radius:6px;left:0;right:0;opacity:0;-webkit-transition:opacity 0.2s linear;transition:opacity 0.2s linear;background:#333333;}
+                                          .simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.2;-webkit-transition:opacity 0s linear;transition:opacity 0s linear;}
+                                          .simplebar-scrollbar:before{position:absolute;content:"";border-radius:7px;left:0;right:0;opacity:0;-webkit-transition:opacity 0.2s linear;transition:opacity 0.2s linear;background:#333333;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track.simplebar-vertical{top:0;width:10px;right:0;}
+                                          .simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;-webkit-transition:opacity 0s linear;transition:opacity 0s linear;}
+                                        </style>
+                                        <style
+                                          data-emotion="css-global"
+                                        >
+                                          
+                                          .simplebar-track.simplebar-vertical{top:0;width:11px;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -4854,7 +4859,7 @@ exports[`addon Info should render component description if story kind matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track.simplebar-horizontal{left:0;height:10px;bottom:0;}
+                                          .simplebar-track.simplebar-horizontal{left:0;height:11px;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -4866,7 +4871,7 @@ exports[`addon Info should render component description if story kind matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:6px;min-height:0;min-width:10px;width:auto;}
+                                          .simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -4875,16 +4880,10 @@ exports[`addon Info should render component description if story kind matches co
                                           [data-simplebar-direction="rtl"] .simplebar-track.simplebar-vertical{right:auto;left:0;}
                                         </style>
                                         <style
-                                          data-emotion="css-global"
-                                        >
-                                          
-                                          .hs-dummy-scrollbar-size{direction:rtl;position:fixed;opacity:0;visibility:hidden;height:500px;width:500px;overflow-y:hidden;overflow-x:scroll;}
-                                        </style>
-                                        <style
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-10{position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.1);background:#FFFFFF;}
+                                          .emotion-10{position:relative;overflow:hidden;color:#333333;border:1px solid rgba(0,0,0,.1);background:#FFFFFF;}
                                         </style>
                                         <style
                                           data-emotion="css"
@@ -5112,7 +5111,7 @@ exports[`addon Info should render component description if story kind matches co
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-2{overflow-y:auto;overflow-x:auto;position:relative;}
+                                          .emotion-2{overflow-y:auto;height:100%;overflow-x:auto;width:100%;position:relative;}
                                         </style>
                                         <style
                                           data-emotion="css"
@@ -5346,7 +5345,7 @@ exports[`addon Info should render component description if story kind matches co
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-9{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;}
+                                          .emotion-9{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;z-index:1;}
                                         </style>
                                         <style
                                           data-emotion="css"
@@ -5382,7 +5381,7 @@ exports[`addon Info should render component description if story kind matches co
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-10{position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.1);background:#FFFFFF;}
+                                          .emotion-10{position:relative;overflow:hidden;color:#333333;border:1px solid rgba(0,0,0,.1);background:#FFFFFF;}
                                         </style>,
                                         <style
                                           data-emotion="css"
@@ -5610,7 +5609,7 @@ exports[`addon Info should render component description if story kind matches co
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-2{overflow-y:auto;overflow-x:auto;position:relative;}
+                                          .emotion-2{overflow-y:auto;height:100%;overflow-x:auto;width:100%;position:relative;}
                                         </style>,
                                         <style
                                           data-emotion="css"
@@ -5844,7 +5843,7 @@ exports[`addon Info should render component description if story kind matches co
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-9{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;}
+                                          .emotion-9{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;z-index:1;}
                                         </style>,
                                         <style
                                           data-emotion="css"
@@ -5877,9 +5876,9 @@ exports[`addon Info should render component description if story kind matches co
                                 serialized={
                                   Object {
                                     "map": undefined,
-                                    "name": "6ym4y",
+                                    "name": "nh5djz",
                                     "next": undefined,
-                                    "styles": "[data-simplebar]{position:relative;flex-direction:column;flex-wrap:wrap;justify-content:flex-start;align-content:flex-start;align-items:flex-start;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-wrapper{overflow:hidden;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-mask{direction:inherit;position:absolute;overflow:hidden;padding:0;margin:0;left:0;top:0;bottom:0;right:0;width:auto !important;height:auto !important;z-index:0;}.simplebar-offset{direction:inherit !important;box-sizing:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}.simplebar-content{direction:inherit;box-sizing:border-box !important;position:relative;display:block;height:100% /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */;width:auto;visibility:visible;overflow:scroll;max-width:100% /* Not required for horizontal scroll to trigger */;max-height:100% /* Needed for vertical scroll to trigger */;}.simplebar-placeholder{max-height:100%;max-width:100%;width:100%;pointer-events:none;}.simplebar-height-auto-observer-wrapper{box-sizing:inherit !important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;flex-grow:inherit;flex-shrink:0;flex-basis:0;}.simplebar-height-auto-observer{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}.simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;}.simplebar-scrollbar{position:absolute;right:2px;width:6px;min-height:10px;}.simplebar-scrollbar:before{position:absolute;content:\\"\\";border-radius:6px;left:0;right:0;opacity:0;transition:opacity 0.2s linear;background:#333333;}.simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.2;transition:opacity 0s linear;}.simplebar-track.simplebar-vertical{top:0;width:10px;right:0;}.simplebar-track.simplebar-vertical .simplebar-scrollbar:before{top:2px;bottom:2px;}.simplebar-track.simplebar-horizontal{left:0;height:10px;bottom:0;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before{height:100%;left:2px;right:2px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:6px;min-height:0;min-width:10px;width:auto;}[data-simplebar-direction=\\"rtl\\"] .simplebar-track.simplebar-vertical{right:auto;left:0;}.hs-dummy-scrollbar-size{direction:rtl;position:fixed;opacity:0;visibility:hidden;height:500px;width:500px;overflow-y:hidden;overflow-x:scroll;}",
+                                    "styles": "[data-simplebar]{position:relative;flex-direction:column;flex-wrap:wrap;justify-content:flex-start;align-content:flex-start;align-items:flex-start;}.simplebar-wrapper{overflow:hidden;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-mask{direction:inherit;position:absolute;overflow:hidden;padding:0;margin:0;left:0;top:0;bottom:0;right:0;width:auto !important;height:auto !important;z-index:0;}.simplebar-offset{direction:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}.simplebar-content-wrapper{direction:inherit;position:relative;display:block;visibility:visible;}.simplebar-placeholder{max-height:100%;max-width:100%;width:100%;pointer-events:none;}.simplebar-height-auto-observer-wrapper{height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;flex-grow:inherit;flex-shrink:0;flex-basis:0;}.simplebar-height-auto-observer{display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}.simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}[data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}.simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}.simplebar-scrollbar:before{position:absolute;content:\\"\\";border-radius:7px;left:0;right:0;opacity:0;transition:opacity 0.2s linear;background:#333333;}.simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;transition:opacity 0s linear;}.simplebar-track.simplebar-vertical{top:0;width:11px;}.simplebar-track.simplebar-vertical .simplebar-scrollbar:before{top:2px;bottom:2px;}.simplebar-track.simplebar-horizontal{left:0;height:11px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before{height:100%;left:2px;right:2px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}[data-simplebar-direction=\\"rtl\\"] .simplebar-track.simplebar-vertical{right:auto;left:0;}",
                                   }
                                 }
                               />
@@ -5918,71 +5917,75 @@ exports[`addon Info should render component description if story kind matches co
                                           className="simplebar-offset"
                                         >
                                           <div
-                                            className="simplebar-content"
+                                            className="simplebar-content-wrapper"
                                           >
-                                            <SyntaxHighlighter
-                                              CodeTag={
-                                                Object {
-                                                  "$$typeof": Symbol(react.forward_ref),
-                                                  "__emotion_base": "code",
-                                                  "__emotion_forwardProp": undefined,
-                                                  "__emotion_real": [Circular],
-                                                  "__emotion_styles": Array [
-                                                    Object {
-                                                      "flex": 1,
-                                                      "opacity": 1,
-                                                      "paddingRight": 0,
-                                                    },
-                                                  ],
-                                                  "defaultProps": undefined,
-                                                  "displayName": "Styled(code)",
-                                                  "render": [Function],
-                                                  "withComponent": [Function],
-                                                }
-                                              }
-                                              PreTag={
-                                                Object {
-                                                  "$$typeof": Symbol(react.forward_ref),
-                                                  "__emotion_base": "pre",
-                                                  "__emotion_forwardProp": undefined,
-                                                  "__emotion_real": [Circular],
-                                                  "__emotion_styles": Array [
-                                                    [Function],
-                                                  ],
-                                                  "defaultProps": undefined,
-                                                  "displayName": "Styled(pre)",
-                                                  "render": [Function],
-                                                  "withComponent": [Function],
-                                                }
-                                              }
-                                              language="js"
-                                              lineNumberContainerStyle={Object {}}
-                                              padded={true}
-                                              useInlineStyles={false}
+                                            <div
+                                              className="simplebar-content"
                                             >
-                                              <Styled(pre)
-                                                className="hljs"
+                                              <SyntaxHighlighter
+                                                CodeTag={
+                                                  Object {
+                                                    "$$typeof": Symbol(react.forward_ref),
+                                                    "__emotion_base": "code",
+                                                    "__emotion_forwardProp": undefined,
+                                                    "__emotion_real": [Circular],
+                                                    "__emotion_styles": Array [
+                                                      Object {
+                                                        "flex": 1,
+                                                        "opacity": 1,
+                                                        "paddingRight": 0,
+                                                      },
+                                                    ],
+                                                    "defaultProps": undefined,
+                                                    "displayName": "Styled(code)",
+                                                    "render": [Function],
+                                                    "withComponent": [Function],
+                                                  }
+                                                }
+                                                PreTag={
+                                                  Object {
+                                                    "$$typeof": Symbol(react.forward_ref),
+                                                    "__emotion_base": "pre",
+                                                    "__emotion_forwardProp": undefined,
+                                                    "__emotion_real": [Circular],
+                                                    "__emotion_styles": Array [
+                                                      [Function],
+                                                    ],
+                                                    "defaultProps": undefined,
+                                                    "displayName": "Styled(pre)",
+                                                    "render": [Function],
+                                                    "withComponent": [Function],
+                                                  }
+                                                }
+                                                language="js"
+                                                lineNumberContainerStyle={Object {}}
                                                 padded={true}
+                                                useInlineStyles={false}
                                               >
-                                                <pre
-                                                  className="hljs emotion-1"
+                                                <Styled(pre)
+                                                  className="hljs"
+                                                  padded={true}
                                                 >
-                                                  <Styled(code)>
-                                                    <code
-                                                      className="emotion-0"
-                                                    >
-                                                      a
-                                                      <span
-                                                        className="token punctuation"
-                                                        key="code-segement1"
+                                                  <pre
+                                                    className="hljs emotion-1"
+                                                  >
+                                                    <Styled(code)>
+                                                      <code
+                                                        className="emotion-0"
                                                       >
-                                                        ;
-                                                      </span>
-                                                    </code>
-                                                  </Styled(code)>
-                                                </pre>
-                                              </Styled(pre)>
-                                            </SyntaxHighlighter>
+                                                        a
+                                                        <span
+                                                          className="token punctuation"
+                                                          key="code-segement1"
+                                                        >
+                                                          ;
+                                                        </span>
+                                                      </code>
+                                                    </Styled(code)>
+                                                  </pre>
+                                                </Styled(pre)>
+                                              </SyntaxHighlighter>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -7022,6 +7025,7 @@ exports[`addon Info should render component description if story name matches co
 .emotion-10 {
   position: relative;
   overflow: hidden;
+  color: #333333;
   border: 1px solid rgba(0,0,0,.1);
   background: #FFFFFF;
 }
@@ -7182,7 +7186,9 @@ exports[`addon Info should render component description if story name matches co
 
 .emotion-2 {
   overflow-y: auto;
+  height: 100%;
   overflow-x: auto;
+  width: 100%;
   position: relative;
 }
 
@@ -7367,6 +7373,7 @@ exports[`addon Info should render component description if story name matches co
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-8 {
@@ -7526,9 +7533,7 @@ exports[`addon Info should render component description if story name matches co
           >
             <div>
               <h1>
-                function func(x) {
-          return x + 1;
-        }
+                x =&gt; x + 1
               </h1>
               <h2>
                 [object Object]
@@ -7659,6 +7664,7 @@ exports[`addon Info should render component description if story name matches co
                 theme={
                   Object {
                     "addonActionsTheme": Object {
+                      "ARROW_ANIMATION_DURATION": "0",
                       "ARROW_COLOR": "rgba(0,0,0,0.3)",
                       "ARROW_FONT_SIZE": 8,
                       "ARROW_MARGIN_RIGHT": 4,
@@ -7675,8 +7681,10 @@ exports[`addon Info should render component description if story name matches co
                       "HTML_TAGNAME_TEXT_TRANSFORM": "lowercase",
                       "HTML_TAG_COLOR": "rgb(168, 148, 166)",
                       "OBJECT_NAME_COLOR": "rgb(136, 19, 145)",
+                      "OBJECT_PREVIEW_ARRAY_MAX_PROPERTIES": 10,
+                      "OBJECT_PREVIEW_OBJECT_MAX_PROPERTIES": 5,
                       "OBJECT_VALUE_BOOLEAN_COLOR": "rgb(28, 0, 207)",
-                      "OBJECT_VALUE_FUNCTION_KEYWORD_COLOR": "rgb(170, 13, 145)",
+                      "OBJECT_VALUE_FUNCTION_PREFIX_COLOR": "rgb(13, 34, 170)",
                       "OBJECT_VALUE_NULL_COLOR": "rgb(128, 128, 128)",
                       "OBJECT_VALUE_NUMBER_COLOR": "rgb(28, 0, 207)",
                       "OBJECT_VALUE_REGEXP_COLOR": "rgb(196, 26, 22)",
@@ -7990,17 +7998,17 @@ exports[`addon Info should render component description if story name matches co
                                     "insert": [Function],
                                     "inserted": Object {
                                       "110qmus": true,
-                                      "172rjni": true,
+                                      "11xgcgt": true,
                                       "1maezg8": true,
-                                      "1myfomu": true,
+                                      "1si67pu": true,
                                       "4zr3vl": true,
-                                      "67diqj": true,
                                       "esgpkx": true,
+                                      "scc5fi": true,
                                     },
                                     "key": "css",
                                     "nonce": undefined,
                                     "registered": Object {
-                                      "emotion-2": "overflow-y:auto;overflow-x:auto;position:relative;& code{padding-right:10px;}* .token{font-family:\\"Operator Mono\\", \\"Fira Code Retina\\", \\"Fira Code\\", \\"FiraCode-Retina\\", \\"Andale Mono\\", \\"Lucida Console\\", Consolas, Monaco, monospace;-webkit-font-smoothing:antialiased;&.comment{color:#008000;font-style:italic;}&.prolog{color:#008000;font-style:italic;}&.doctype{color:#008000;font-style:italic;}&.cdata{color:#008000;font-style:italic;}&.string{color:#A31515;}&.punctuation{color:#393A34;}&.operator{color:#393A34;}&.url{color:#36acaa;}&.symbol{color:#36acaa;}&.number{color:#36acaa;}&.boolean{color:#36acaa;}&.variable{color:#36acaa;}&.constant{color:#36acaa;}&.inserted{color:#36acaa;}&.atrule{color:#0000ff;}&.keyword{color:#0000ff;}&.attr-value{color:#0000ff;}&.function{color:#393A34;}&.deleted{color:#9a050f;}&.important{font-weight:bold;}&.bold{font-weight:bold;}&.italic{font-style:italic;}&.class-name{color:#2B91AF;}&.tag{color:#800000;}&.selector{color:#800000;}&.attr-name{color:#ff0000;}&.property{color:#ff0000;}&.regex{color:#ff0000;}&.entity{color:#ff0000;}&.directive.tag .tag{background:#ffff00;color:#393A34;}}* .language-json .token.boolean{color:#0000ff;}* .language-json .token.number{color:#0000ff;}* .language-json .token.property{color:#2B91AF;}* .namespace{opacity:0.7;}",
+                                      "emotion-2": "overflow-y:auto;height:100%;overflow-x:auto;width:100%;position:relative;& code{padding-right:10px;}* .token{font-family:\\"Operator Mono\\", \\"Fira Code Retina\\", \\"Fira Code\\", \\"FiraCode-Retina\\", \\"Andale Mono\\", \\"Lucida Console\\", Consolas, Monaco, monospace;-webkit-font-smoothing:antialiased;&.comment{color:#008000;font-style:italic;}&.prolog{color:#008000;font-style:italic;}&.doctype{color:#008000;font-style:italic;}&.cdata{color:#008000;font-style:italic;}&.string{color:#A31515;}&.punctuation{color:#393A34;}&.operator{color:#393A34;}&.url{color:#36acaa;}&.symbol{color:#36acaa;}&.number{color:#36acaa;}&.boolean{color:#36acaa;}&.variable{color:#36acaa;}&.constant{color:#36acaa;}&.inserted{color:#36acaa;}&.atrule{color:#0000ff;}&.keyword{color:#0000ff;}&.attr-value{color:#0000ff;}&.function{color:#393A34;}&.deleted{color:#9a050f;}&.important{font-weight:bold;}&.bold{font-weight:bold;}&.italic{font-style:italic;}&.class-name{color:#2B91AF;}&.tag{color:#800000;}&.selector{color:#800000;}&.attr-name{color:#ff0000;}&.property{color:#ff0000;}&.regex{color:#ff0000;}&.entity{color:#ff0000;}&.directive.tag .tag{background:#ffff00;color:#393A34;}}* .language-json .token.boolean{color:#0000ff;}* .language-json .token.number{color:#0000ff;}* .language-json .token.property{color:#2B91AF;}* .namespace{opacity:0.7;}",
                                       "emotion-5": "position:relative;& code{padding-right:10px;}* .token{font-family:\\"Operator Mono\\", \\"Fira Code Retina\\", \\"Fira Code\\", \\"FiraCode-Retina\\", \\"Andale Mono\\", \\"Lucida Console\\", Consolas, Monaco, monospace;-webkit-font-smoothing:antialiased;&.comment{color:#008000;font-style:italic;}&.prolog{color:#008000;font-style:italic;}&.doctype{color:#008000;font-style:italic;}&.cdata{color:#008000;font-style:italic;}&.string{color:#A31515;}&.punctuation{color:#393A34;}&.operator{color:#393A34;}&.url{color:#36acaa;}&.symbol{color:#36acaa;}&.number{color:#36acaa;}&.boolean{color:#36acaa;}&.variable{color:#36acaa;}&.constant{color:#36acaa;}&.inserted{color:#36acaa;}&.atrule{color:#0000ff;}&.keyword{color:#0000ff;}&.attr-value{color:#0000ff;}&.function{color:#393A34;}&.deleted{color:#9a050f;}&.important{font-weight:bold;}&.bold{font-weight:bold;}&.italic{font-style:italic;}&.class-name{color:#2B91AF;}&.tag{color:#800000;}&.selector{color:#800000;}&.attr-name{color:#ff0000;}&.property{color:#ff0000;}&.regex{color:#ff0000;}&.entity{color:#ff0000;}&.directive.tag .tag{background:#ffff00;color:#393A34;}}* .language-json .token.boolean{color:#0000ff;}* .language-json .token.number{color:#0000ff;}* .language-json .token.property{color:#2B91AF;}* .namespace{opacity:0.7;}",
                                     },
                                     "sheet": StyleSheet {
@@ -8010,7 +8018,7 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          [data-simplebar]{position:relative;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}
+                                          [data-simplebar]{position:relative;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -8028,13 +8036,13 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-offset{direction:inherit !important;box-sizing:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}
+                                          .simplebar-offset{direction:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-content{direction:inherit;box-sizing:border-box !important;position:relative;display:block;height:100%;width:auto;visibility:visible;overflow:scroll;max-width:100%;max-height:100%;}
+                                          .simplebar-content-wrapper{direction:inherit;position:relative;display:block;visibility:visible;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -8046,43 +8054,49 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-height-auto-observer-wrapper{box-sizing:inherit !important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;-webkit-box-flex:inherit;-webkit-flex-grow:inherit;-ms-flex-positive:inherit;flex-grow:inherit;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0;}
+                                          .simplebar-height-auto-observer-wrapper{height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;-webkit-box-flex:inherit;-webkit-flex-grow:inherit;-ms-flex-positive:inherit;flex-grow:inherit;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-height-auto-observer{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}
+                                          .simplebar-height-auto-observer{display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;}
+                                          .simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-scrollbar{position:absolute;right:2px;width:6px;min-height:10px;}
+                                          [data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-scrollbar:before{position:absolute;content:"";border-radius:6px;left:0;right:0;opacity:0;-webkit-transition:opacity 0.2s linear;transition:opacity 0.2s linear;background:#333333;}
+                                          .simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.2;-webkit-transition:opacity 0s linear;transition:opacity 0s linear;}
+                                          .simplebar-scrollbar:before{position:absolute;content:"";border-radius:7px;left:0;right:0;opacity:0;-webkit-transition:opacity 0.2s linear;transition:opacity 0.2s linear;background:#333333;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track.simplebar-vertical{top:0;width:10px;right:0;}
+                                          .simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;-webkit-transition:opacity 0s linear;transition:opacity 0s linear;}
+                                        </style>
+                                        <style
+                                          data-emotion="css-global"
+                                        >
+                                          
+                                          .simplebar-track.simplebar-vertical{top:0;width:11px;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -8094,7 +8108,7 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track.simplebar-horizontal{left:0;height:10px;bottom:0;}
+                                          .simplebar-track.simplebar-horizontal{left:0;height:11px;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -8106,7 +8120,7 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:6px;min-height:0;min-width:10px;width:auto;}
+                                          .simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -8118,13 +8132,7 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .hs-dummy-scrollbar-size{direction:rtl;position:fixed;opacity:0;visibility:hidden;height:500px;width:500px;overflow-y:hidden;overflow-x:scroll;}
-                                        </style>
-                                        <style
-                                          data-emotion="css-global"
-                                        >
-                                          
-                                          [data-simplebar]{position:relative;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}
+                                          [data-simplebar]{position:relative;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -8142,13 +8150,13 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-offset{direction:inherit !important;box-sizing:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}
+                                          .simplebar-offset{direction:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-content{direction:inherit;box-sizing:border-box !important;position:relative;display:block;height:100%;width:auto;visibility:visible;overflow:scroll;max-width:100%;max-height:100%;}
+                                          .simplebar-content-wrapper{direction:inherit;position:relative;display:block;visibility:visible;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -8160,43 +8168,49 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-height-auto-observer-wrapper{box-sizing:inherit !important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;-webkit-box-flex:inherit;-webkit-flex-grow:inherit;-ms-flex-positive:inherit;flex-grow:inherit;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0;}
+                                          .simplebar-height-auto-observer-wrapper{height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;-webkit-box-flex:inherit;-webkit-flex-grow:inherit;-ms-flex-positive:inherit;flex-grow:inherit;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-height-auto-observer{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}
+                                          .simplebar-height-auto-observer{display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;}
+                                          .simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-scrollbar{position:absolute;right:2px;width:6px;min-height:10px;}
+                                          [data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-scrollbar:before{position:absolute;content:"";border-radius:6px;left:0;right:0;opacity:0;-webkit-transition:opacity 0.2s linear;transition:opacity 0.2s linear;background:#333333;}
+                                          .simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.2;-webkit-transition:opacity 0s linear;transition:opacity 0s linear;}
+                                          .simplebar-scrollbar:before{position:absolute;content:"";border-radius:7px;left:0;right:0;opacity:0;-webkit-transition:opacity 0.2s linear;transition:opacity 0.2s linear;background:#333333;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track.simplebar-vertical{top:0;width:10px;right:0;}
+                                          .simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;-webkit-transition:opacity 0s linear;transition:opacity 0s linear;}
+                                        </style>
+                                        <style
+                                          data-emotion="css-global"
+                                        >
+                                          
+                                          .simplebar-track.simplebar-vertical{top:0;width:11px;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -8208,7 +8222,7 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track.simplebar-horizontal{left:0;height:10px;bottom:0;}
+                                          .simplebar-track.simplebar-horizontal{left:0;height:11px;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
@@ -8220,25 +8234,19 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css-global"
                                         >
                                           
-                                          .simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:6px;min-height:0;min-width:10px;width:auto;}
+                                          .simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}
                                         </style>
                                         <style
                                           data-emotion="css-global"
                                         >
                                           
                                           [data-simplebar-direction="rtl"] .simplebar-track.simplebar-vertical{right:auto;left:0;}
-                                        </style>
-                                        <style
-                                          data-emotion="css-global"
-                                        >
-                                          
-                                          .hs-dummy-scrollbar-size{direction:rtl;position:fixed;opacity:0;visibility:hidden;height:500px;width:500px;overflow-y:hidden;overflow-x:scroll;}
                                         </style>
                                         <style
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-10{position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.1);background:#FFFFFF;}
+                                          .emotion-10{position:relative;overflow:hidden;color:#333333;border:1px solid rgba(0,0,0,.1);background:#FFFFFF;}
                                         </style>
                                         <style
                                           data-emotion="css"
@@ -8466,7 +8474,7 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-2{overflow-y:auto;overflow-x:auto;position:relative;}
+                                          .emotion-2{overflow-y:auto;height:100%;overflow-x:auto;width:100%;position:relative;}
                                         </style>
                                         <style
                                           data-emotion="css"
@@ -8700,7 +8708,7 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-9{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;}
+                                          .emotion-9{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;z-index:1;}
                                         </style>
                                         <style
                                           data-emotion="css"
@@ -8736,7 +8744,7 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-10{position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.1);background:#FFFFFF;}
+                                          .emotion-10{position:relative;overflow:hidden;color:#333333;border:1px solid rgba(0,0,0,.1);background:#FFFFFF;}
                                         </style>,
                                         <style
                                           data-emotion="css"
@@ -8964,7 +8972,7 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-2{overflow-y:auto;overflow-x:auto;position:relative;}
+                                          .emotion-2{overflow-y:auto;height:100%;overflow-x:auto;width:100%;position:relative;}
                                         </style>,
                                         <style
                                           data-emotion="css"
@@ -9198,7 +9206,7 @@ exports[`addon Info should render component description if story name matches co
                                           data-emotion="css"
                                         >
                                           
-                                          .emotion-9{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;}
+                                          .emotion-9{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;z-index:1;}
                                         </style>,
                                         <style
                                           data-emotion="css"
@@ -9231,9 +9239,9 @@ exports[`addon Info should render component description if story name matches co
                                 serialized={
                                   Object {
                                     "map": undefined,
-                                    "name": "6ym4y",
+                                    "name": "nh5djz",
                                     "next": undefined,
-                                    "styles": "[data-simplebar]{position:relative;flex-direction:column;flex-wrap:wrap;justify-content:flex-start;align-content:flex-start;align-items:flex-start;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-wrapper{overflow:hidden;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-mask{direction:inherit;position:absolute;overflow:hidden;padding:0;margin:0;left:0;top:0;bottom:0;right:0;width:auto !important;height:auto !important;z-index:0;}.simplebar-offset{direction:inherit !important;box-sizing:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}.simplebar-content{direction:inherit;box-sizing:border-box !important;position:relative;display:block;height:100% /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */;width:auto;visibility:visible;overflow:scroll;max-width:100% /* Not required for horizontal scroll to trigger */;max-height:100% /* Needed for vertical scroll to trigger */;}.simplebar-placeholder{max-height:100%;max-width:100%;width:100%;pointer-events:none;}.simplebar-height-auto-observer-wrapper{box-sizing:inherit !important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;flex-grow:inherit;flex-shrink:0;flex-basis:0;}.simplebar-height-auto-observer{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}.simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;}.simplebar-scrollbar{position:absolute;right:2px;width:6px;min-height:10px;}.simplebar-scrollbar:before{position:absolute;content:\\"\\";border-radius:6px;left:0;right:0;opacity:0;transition:opacity 0.2s linear;background:#333333;}.simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.2;transition:opacity 0s linear;}.simplebar-track.simplebar-vertical{top:0;width:10px;right:0;}.simplebar-track.simplebar-vertical .simplebar-scrollbar:before{top:2px;bottom:2px;}.simplebar-track.simplebar-horizontal{left:0;height:10px;bottom:0;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before{height:100%;left:2px;right:2px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:6px;min-height:0;min-width:10px;width:auto;}[data-simplebar-direction=\\"rtl\\"] .simplebar-track.simplebar-vertical{right:auto;left:0;}.hs-dummy-scrollbar-size{direction:rtl;position:fixed;opacity:0;visibility:hidden;height:500px;width:500px;overflow-y:hidden;overflow-x:scroll;}",
+                                    "styles": "[data-simplebar]{position:relative;flex-direction:column;flex-wrap:wrap;justify-content:flex-start;align-content:flex-start;align-items:flex-start;}.simplebar-wrapper{overflow:hidden;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-mask{direction:inherit;position:absolute;overflow:hidden;padding:0;margin:0;left:0;top:0;bottom:0;right:0;width:auto !important;height:auto !important;z-index:0;}.simplebar-offset{direction:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}.simplebar-content-wrapper{direction:inherit;position:relative;display:block;visibility:visible;}.simplebar-placeholder{max-height:100%;max-width:100%;width:100%;pointer-events:none;}.simplebar-height-auto-observer-wrapper{height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;flex-grow:inherit;flex-shrink:0;flex-basis:0;}.simplebar-height-auto-observer{display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}.simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}[data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}.simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}.simplebar-scrollbar:before{position:absolute;content:\\"\\";border-radius:7px;left:0;right:0;opacity:0;transition:opacity 0.2s linear;background:#333333;}.simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;transition:opacity 0s linear;}.simplebar-track.simplebar-vertical{top:0;width:11px;}.simplebar-track.simplebar-vertical .simplebar-scrollbar:before{top:2px;bottom:2px;}.simplebar-track.simplebar-horizontal{left:0;height:11px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before{height:100%;left:2px;right:2px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}[data-simplebar-direction=\\"rtl\\"] .simplebar-track.simplebar-vertical{right:auto;left:0;}",
                                   }
                                 }
                               />
@@ -9272,71 +9280,75 @@ exports[`addon Info should render component description if story name matches co
                                           className="simplebar-offset"
                                         >
                                           <div
-                                            className="simplebar-content"
+                                            className="simplebar-content-wrapper"
                                           >
-                                            <SyntaxHighlighter
-                                              CodeTag={
-                                                Object {
-                                                  "$$typeof": Symbol(react.forward_ref),
-                                                  "__emotion_base": "code",
-                                                  "__emotion_forwardProp": undefined,
-                                                  "__emotion_real": [Circular],
-                                                  "__emotion_styles": Array [
-                                                    Object {
-                                                      "flex": 1,
-                                                      "opacity": 1,
-                                                      "paddingRight": 0,
-                                                    },
-                                                  ],
-                                                  "defaultProps": undefined,
-                                                  "displayName": "Styled(code)",
-                                                  "render": [Function],
-                                                  "withComponent": [Function],
-                                                }
-                                              }
-                                              PreTag={
-                                                Object {
-                                                  "$$typeof": Symbol(react.forward_ref),
-                                                  "__emotion_base": "pre",
-                                                  "__emotion_forwardProp": undefined,
-                                                  "__emotion_real": [Circular],
-                                                  "__emotion_styles": Array [
-                                                    [Function],
-                                                  ],
-                                                  "defaultProps": undefined,
-                                                  "displayName": "Styled(pre)",
-                                                  "render": [Function],
-                                                  "withComponent": [Function],
-                                                }
-                                              }
-                                              language="js"
-                                              lineNumberContainerStyle={Object {}}
-                                              padded={true}
-                                              useInlineStyles={false}
+                                            <div
+                                              className="simplebar-content"
                                             >
-                                              <Styled(pre)
-                                                className="hljs"
+                                              <SyntaxHighlighter
+                                                CodeTag={
+                                                  Object {
+                                                    "$$typeof": Symbol(react.forward_ref),
+                                                    "__emotion_base": "code",
+                                                    "__emotion_forwardProp": undefined,
+                                                    "__emotion_real": [Circular],
+                                                    "__emotion_styles": Array [
+                                                      Object {
+                                                        "flex": 1,
+                                                        "opacity": 1,
+                                                        "paddingRight": 0,
+                                                      },
+                                                    ],
+                                                    "defaultProps": undefined,
+                                                    "displayName": "Styled(code)",
+                                                    "render": [Function],
+                                                    "withComponent": [Function],
+                                                  }
+                                                }
+                                                PreTag={
+                                                  Object {
+                                                    "$$typeof": Symbol(react.forward_ref),
+                                                    "__emotion_base": "pre",
+                                                    "__emotion_forwardProp": undefined,
+                                                    "__emotion_real": [Circular],
+                                                    "__emotion_styles": Array [
+                                                      [Function],
+                                                    ],
+                                                    "defaultProps": undefined,
+                                                    "displayName": "Styled(pre)",
+                                                    "render": [Function],
+                                                    "withComponent": [Function],
+                                                  }
+                                                }
+                                                language="js"
+                                                lineNumberContainerStyle={Object {}}
                                                 padded={true}
+                                                useInlineStyles={false}
                                               >
-                                                <pre
-                                                  className="hljs emotion-1"
+                                                <Styled(pre)
+                                                  className="hljs"
+                                                  padded={true}
                                                 >
-                                                  <Styled(code)>
-                                                    <code
-                                                      className="emotion-0"
-                                                    >
-                                                      a
-                                                      <span
-                                                        className="token punctuation"
-                                                        key="code-segement1"
+                                                  <pre
+                                                    className="hljs emotion-1"
+                                                  >
+                                                    <Styled(code)>
+                                                      <code
+                                                        className="emotion-0"
                                                       >
-                                                        ;
-                                                      </span>
-                                                    </code>
-                                                  </Styled(code)>
-                                                </pre>
-                                              </Styled(pre)>
-                                            </SyntaxHighlighter>
+                                                        a
+                                                        <span
+                                                          className="token punctuation"
+                                                          key="code-segement1"
+                                                        >
+                                                          ;
+                                                        </span>
+                                                      </code>
+                                                    </Styled(code)>
+                                                  </pre>
+                                                </Styled(pre)>
+                                              </SyntaxHighlighter>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>

@@ -14,7 +14,7 @@ storiesOf('Addon|Notes', module)
     'Note with HTML',
     () => ({
       Component: ButtonView,
-      data: {
+      props: {
         text: '🤔😳😯😮😄😩😓😱🤓😑😶😊',
       },
     }),

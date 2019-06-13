@@ -11,6 +11,7 @@ const StyledStoryLink = styled(Link)(({ theme }) => ({
   display: 'block',
   textDecoration: 'none',
   borderRadius: theme.appBorderRadius,
+  color: 'inherit',
 
   '&:hover': {
     background: theme.background.hoverable,

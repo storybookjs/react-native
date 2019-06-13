@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-a11y",
-  "version": "5.1.0-alpha.34",
+  "version": "5.2.0-alpha.23",
   "description": "a11y addon for storybook",
   "keywords": [
     "a11y",
@@ -10,13 +10,13 @@
     "valid",
     "verify"
   ],
-  "homepage": "https://github.com/storybooks/storybook#readme",
+  "homepage": "https://github.com/storybookjs/storybook#readme",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git",
+    "url": "git+https://github.com/storybookjs/storybook.git",
     "directory": "addons/a11y"
   },
   "license": "MIT",
@@ -26,19 +26,19 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.34",
-    "@storybook/api": "5.1.0-alpha.34",
-    "@storybook/client-logger": "5.1.0-alpha.34",
-    "@storybook/components": "5.1.0-alpha.34",
-    "@storybook/core-events": "5.1.0-alpha.34",
-    "@storybook/theming": "5.1.0-alpha.34",
+    "@storybook/addons": "5.2.0-alpha.23",
+    "@storybook/api": "5.2.0-alpha.23",
+    "@storybook/client-logger": "5.2.0-alpha.23",
+    "@storybook/components": "5.2.0-alpha.23",
+    "@storybook/core-events": "5.2.0-alpha.23",
+    "@storybook/theming": "5.2.0-alpha.23",
     "axe-core": "^3.2.2",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
     "hoist-non-react-statics": "^3.3.0",
     "memoizerific": "^1.11.3",
-    "react": "^16.8.4",
+    "react": "^16.8.3",
     "react-redux": "^7.0.2",
     "react-sizeme": "^2.5.2",
     "redux": "^4.0.1",
