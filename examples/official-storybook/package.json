@@ -10,9 +10,11 @@
     "graphql": "node ./graphql-server/index.js",
     "image-snapshots": "yarn run build-storybook && yarn run do-image-snapshots",
     "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
-    "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 9011 -c ./ -s built-storybooks --no-dll"
+    "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 9011 -c ./ -s built-storybooks --no-dll",
+    "packtracker": "yarn storybook --smoke-test && packtracker-upload --stats=./node_modules/.cache/storybook/manager-stats.json"
   },
   "devDependencies": {
+    "@packtracker/webpack-plugin": "^2.0.1",
     "@storybook/addon-a11y": "5.2.0-alpha.23",
     "@storybook/addon-actions": "5.2.0-alpha.23",
     "@storybook/addon-backgrounds": "5.2.0-alpha.23",
