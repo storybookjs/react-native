@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { polyfill } from 'react-lifecycles-compat';
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 
 import { styled } from '@storybook/theming';
 import json from 'format-json';
