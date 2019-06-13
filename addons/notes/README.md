@@ -58,6 +58,27 @@ storiesOf('MyButton', module).add(
 );
 ```
 
+### With Angular
+
+```js
+import { storiesOf } from '@storybook/vue';
+
+import { ButtonComponent } from './button.component';
+
+storiesOf('Button', module).add(
+  'with some emoji',
+  () => ({
+    component: ButtonComponent,
+    props: {
+      text: '😀 😎 👍 💯'
+    }
+  }),
+  {
+    notes: 'A very simple example of addon notes',
+  }
+);
+```
+
 ## Using Markdown
 
 Using Markdown in your notes is supported, Storybook will load Markdown as raw by default.
