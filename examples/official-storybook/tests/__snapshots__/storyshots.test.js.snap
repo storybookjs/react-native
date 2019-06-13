@@ -8061,6 +8061,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   padding-left: 9px;
 }
 
+.emotion-11.emotion-11 > svg + span {
+  background: #DDDDDD;
+}
+
 .emotion-11.emotion-11 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
@@ -8091,6 +8095,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   flex: 1;
   background: transparent;
   padding-left: 24px;
+}
+
+.emotion-19.emotion-19 > svg + span {
+  background: #DDDDDD;
 }
 
 .emotion-19.emotion-19 > * {
@@ -8125,6 +8133,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   padding-left: 39px;
 }
 
+.emotion-27.emotion-27 > svg + span {
+  background: #DDDDDD;
+}
+
 .emotion-27.emotion-27 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
@@ -8155,6 +8167,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   flex: 1;
   background: transparent;
   padding-left: 54px;
+}
+
+.emotion-31.emotion-31 > svg + span {
+  background: #DDDDDD;
 }
 
 .emotion-31.emotion-31 > * {
@@ -8421,6 +8437,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   padding-left: 9px;
 }
 
+.emotion-11.emotion-11 > svg + span {
+  background: #DDDDDD;
+}
+
 .emotion-11.emotion-11 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
@@ -8451,6 +8471,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   flex: 1;
   background: transparent;
   padding-left: 24px;
+}
+
+.emotion-19.emotion-19 > svg + span {
+  background: #DDDDDD;
 }
 
 .emotion-19.emotion-19 > * {
@@ -8485,6 +8509,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   padding-left: 39px;
 }
 
+.emotion-27.emotion-27 > svg + span {
+  background: #DDDDDD;
+}
+
 .emotion-27.emotion-27 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
@@ -8515,6 +8543,10 @@ exports[`Storyshots UI|Sidebar/Sidebar loading 1`] = `
   flex: 1;
   background: transparent;
   padding-left: 54px;
+}
+
+.emotion-31.emotion-31 > svg + span {
+  background: #DDDDDD;
 }
 
 .emotion-31.emotion-31 > * {
@@ -13107,6 +13139,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
   padding-left: 9px;
 }
 
+.emotion-3.emotion-3 > svg + span {
+  background: #DDDDDD;
+}
+
 .emotion-3.emotion-3 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
@@ -13209,6 +13245,10 @@ exports[`Storyshots UI|Sidebar/SidebarItem loading 1`] = `
   flex: 1;
   background: transparent;
   padding-left: 9px;
+}
+
+.emotion-3.emotion-3 > svg + span {
+  background: #DDDDDD;
 }
 
 .emotion-3.emotion-3 > * {
@@ -15320,6 +15360,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   padding-left: 9px;
 }
 
+.emotion-3.emotion-3 > svg + span {
+  background: #DDDDDD;
+}
+
 .emotion-3.emotion-3 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
@@ -15350,6 +15394,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   flex: 1;
   background: transparent;
   padding-left: 24px;
+}
+
+.emotion-11.emotion-11 > svg + span {
+  background: #DDDDDD;
 }
 
 .emotion-11.emotion-11 > * {
@@ -15384,6 +15432,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   padding-left: 39px;
 }
 
+.emotion-19.emotion-19 > svg + span {
+  background: #DDDDDD;
+}
+
 .emotion-19.emotion-19 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
@@ -15414,6 +15466,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   flex: 1;
   background: transparent;
   padding-left: 54px;
+}
+
+.emotion-23.emotion-23 > svg + span {
+  background: #DDDDDD;
 }
 
 .emotion-23.emotion-23 > * {
@@ -15528,6 +15584,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   padding-left: 9px;
 }
 
+.emotion-3.emotion-3 > svg + span {
+  background: #DDDDDD;
+}
+
 .emotion-3.emotion-3 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
@@ -15558,6 +15618,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   flex: 1;
   background: transparent;
   padding-left: 24px;
+}
+
+.emotion-11.emotion-11 > svg + span {
+  background: #DDDDDD;
 }
 
 .emotion-11.emotion-11 > * {
@@ -15592,6 +15656,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   padding-left: 39px;
 }
 
+.emotion-19.emotion-19 > svg + span {
+  background: #DDDDDD;
+}
+
 .emotion-19.emotion-19 > * {
   -webkit-animation: animation-0 1.5s ease-in-out infinite;
   animation: animation-0 1.5s ease-in-out infinite;
@@ -15622,6 +15690,10 @@ exports[`Storyshots UI|Sidebar/SidebarStories loading 1`] = `
   flex: 1;
   background: transparent;
   padding-left: 54px;
+}
+
+.emotion-23.emotion-23 > svg + span {
+  background: #DDDDDD;
 }
 
 .emotion-23.emotion-23 > * {
