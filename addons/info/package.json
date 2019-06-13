@@ -28,6 +28,7 @@
     "@storybook/theming": "5.2.0-alpha.23",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
+    "jsx-to-string": "^1.4.0",
     "marksy": "^7.0.0",
     "nested-object-assign": "^1.0.3",
     "prop-types": "^15.7.2",
