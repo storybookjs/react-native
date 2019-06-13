@@ -173,20 +173,20 @@
   dependencies:
     "@ndhoule/map" "^2.0.1"
 
-"@storybook/client-logger@5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.1.1.tgz#e62a214a801079e75b4b101afd73cc66c262701d"
-  integrity sha512-I0j9tGyjQpLC7dKhQuotJzaAl9j6++hJdUT5ieoqVIC4Hya15wIyc63lpa6ugXQLeRpW73x72CTFV8K+132Qow==
+"@storybook/client-logger@5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.1.3.tgz#6d9f45fdac7d3f2f65d1238c35df11170c2f8b68"
+  integrity sha512-/86NGA7NPsAktpA0lSnw0NhgdqS7Grz08wE7Paz+qLDj1AxnttTvMZctWJ8bLAa3EeJ9wHXGak854CmGiVFnWA==
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/components@5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.1.1.tgz#4ca7343009ebd92cdfb79cfa373628d6f3bb12d0"
-  integrity sha512-17rqqxant4zqCNxcESLZR0yAhz1mGHDz6THj8fz5rUncEnSrPYIcdvRKIfeao8yDaiK1Bh48jAjSPdfUO8BngA==
+"@storybook/components@5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.1.3.tgz#9c6898f8f66bf6b9dfdb3ecca73370f2d799e546"
+  integrity sha512-lM+iSdIl/UlmPlgH3vqo8NhMAdPUrWkgp40CVADfXsM6Yxai/23gpg8/HEoHiU5hFjNxowJUt76gTvwt9ak+gg==
   dependencies:
-    "@storybook/client-logger" "5.1.1"
-    "@storybook/theming" "5.1.1"
+    "@storybook/client-logger" "5.1.3"
+    "@storybook/theming" "5.1.3"
     core-js "^3.0.1"
     global "^4.3.2"
     markdown-to-jsx "^6.9.1"
@@ -204,14 +204,14 @@
     recompose "^0.30.0"
     simplebar-react "^1.0.0-alpha.6"
 
-"@storybook/theming@5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.1.1.tgz#605572b650049457dbd102aa5686933ff2202ace"
-  integrity sha512-70Pf6XZnTI4wniItQxIhAOQjVi7fDRzR3xZUIBC+pEatbKD+OoyFOALwkww5uW66jeWBYC5AhRPEHWo7ylcXUQ==
+"@storybook/theming@5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.1.3.tgz#705654392b020ef5654c6c500f4398cc7f067653"
+  integrity sha512-ScBAEMkpwY6pHPuD7SYqAwbQ3M4cOEYY2340HtLNR53M6EJ2mcd87rH2kwpTEgTzeA0VuUln6WXEoBz3WRBLYA==
   dependencies:
     "@emotion/core" "^10.0.9"
     "@emotion/styled" "^10.0.7"
-    "@storybook/client-logger" "5.1.1"
+    "@storybook/client-logger" "5.1.3"
     common-tags "^1.8.0"
     core-js "^3.0.1"
     deep-object-diff "^1.1.0"
