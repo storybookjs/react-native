@@ -23,7 +23,7 @@ const isColorString = (color: string) => {
 // that crashes the entire storybook. It needs to be guarded when arguments
 // of those functions are from user input.
 const isValidColorForPolished = (color: string) => {
-  return /(gradient|var|calc)/.test(color);
+  return !/(gradient|var|calc)/.test(color);
 };
 
 const applyPolished = (type: string, color: string) => {
