@@ -24,6 +24,7 @@
   "dependencies": {
     "@storybook/addons": "5.1.8",
     "@storybook/api": "5.1.8",
+    "@storybook/channels": "5.1.8",
     "@storybook/client-logger": "5.1.8",
     "@storybook/components": "5.1.8",
     "@storybook/core-events": "5.1.8",
