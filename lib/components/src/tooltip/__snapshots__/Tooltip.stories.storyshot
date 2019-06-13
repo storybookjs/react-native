@@ -8,7 +8,7 @@ exports[`Storyshots basics/Tooltip/Tooltip basic, default 1`] = `
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background: rgba(255,255,255,0.95);
+  background: #F6F9FC;
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   border-radius: 8px;
@@ -30,7 +30,7 @@ exports[`Storyshots basics/Tooltip/Tooltip basic, default 1`] = `
   border-top-width: 8px;
   border-right-width: 8px;
   border-left-width: 8px;
-  border-top-color: rgba(255,255,255,0.95);
+  border-top-color: #F6F9FC;
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -77,7 +77,7 @@ exports[`Storyshots basics/Tooltip/Tooltip basic, default, bottom 1`] = `
   margin-top: 10px;
   margin-left: 0px;
   margin-right: 0px;
-  background: rgba(255,255,255,0.95);
+  background: #F6F9FC;
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   border-radius: 8px;
@@ -100,7 +100,7 @@ exports[`Storyshots basics/Tooltip/Tooltip basic, default, bottom 1`] = `
   border-right-width: 8px;
   border-left-width: 8px;
   border-top-color: transparent;
-  border-bottom-color: rgba(255,255,255,0.95);
+  border-bottom-color: #F6F9FC;
   border-left-color: transparent;
   border-right-color: transparent;
 }
@@ -136,7 +136,7 @@ exports[`Storyshots basics/Tooltip/Tooltip basic, default, left 1`] = `
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 10px;
-  background: rgba(255,255,255,0.95);
+  background: #F6F9FC;
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   border-radius: 8px;
@@ -160,7 +160,7 @@ exports[`Storyshots basics/Tooltip/Tooltip basic, default, left 1`] = `
   border-left-width: 8px;
   border-top-color: transparent;
   border-bottom-color: transparent;
-  border-left-color: rgba(255,255,255,0.95);
+  border-left-color: #F6F9FC;
   border-right-color: transparent;
 }
 
@@ -195,7 +195,7 @@ exports[`Storyshots basics/Tooltip/Tooltip basic, default, right 1`] = `
   margin-top: 0px;
   margin-left: 10px;
   margin-right: 0px;
-  background: rgba(255,255,255,0.95);
+  background: #F6F9FC;
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   border-radius: 8px;
@@ -220,7 +220,7 @@ exports[`Storyshots basics/Tooltip/Tooltip basic, default, right 1`] = `
   border-top-color: transparent;
   border-bottom-color: transparent;
   border-left-color: transparent;
-  border-right-color: rgba(255,255,255,0.95);
+  border-right-color: #F6F9FC;
 }
 
 <div
