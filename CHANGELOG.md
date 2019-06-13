@@ -1,3 +1,9 @@
+## 5.1.6 (June 14, 2019)
+
+### Bug Fixes
+
+* UI: Fix warning of loading prop not being a string ([#7080](https://github.com/storybookjs/storybook/pull/7080))
+
 ## 5.1.5 (June 14, 2019)
 
 ### Bug Fixes
