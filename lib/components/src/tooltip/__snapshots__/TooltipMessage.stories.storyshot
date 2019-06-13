@@ -13,7 +13,7 @@ exports[`Storyshots basics/Tooltip/TooltipMessage default 1`] = `
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background: #F6F9FC;
+  background: rgba(255,255,255,0.95);
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   border-radius: 8px;
@@ -35,7 +35,7 @@ exports[`Storyshots basics/Tooltip/TooltipMessage default 1`] = `
   border-top-width: 8px;
   border-right-width: 8px;
   border-left-width: 8px;
-  border-top-color: #F6F9FC;
+  border-top-color: rgba(255,255,255,0.95);
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -108,7 +108,7 @@ exports[`Storyshots basics/Tooltip/TooltipMessage minimal message 1`] = `
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background: #F6F9FC;
+  background: rgba(255,255,255,0.95);
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   border-radius: 8px;
@@ -130,7 +130,7 @@ exports[`Storyshots basics/Tooltip/TooltipMessage minimal message 1`] = `
   border-top-width: 8px;
   border-right-width: 8px;
   border-left-width: 8px;
-  border-top-color: #F6F9FC;
+  border-top-color: rgba(255,255,255,0.95);
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -236,7 +236,7 @@ exports[`Storyshots basics/Tooltip/TooltipMessage with link 1`] = `
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background: #F6F9FC;
+  background: rgba(255,255,255,0.95);
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   border-radius: 8px;
@@ -258,7 +258,7 @@ exports[`Storyshots basics/Tooltip/TooltipMessage with link 1`] = `
   border-top-width: 8px;
   border-right-width: 8px;
   border-left-width: 8px;
-  border-top-color: #F6F9FC;
+  border-top-color: rgba(255,255,255,0.95);
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -397,7 +397,7 @@ exports[`Storyshots basics/Tooltip/TooltipMessage with links 1`] = `
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background: #F6F9FC;
+  background: rgba(255,255,255,0.95);
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.05)) drop-shadow(0 1px 3px rgba(0,0,0,0.1));
   border-radius: 8px;
@@ -419,7 +419,7 @@ exports[`Storyshots basics/Tooltip/TooltipMessage with links 1`] = `
   border-top-width: 8px;
   border-right-width: 8px;
   border-left-width: 8px;
-  border-top-color: #F6F9FC;
+  border-top-color: rgba(255,255,255,0.95);
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-right-color: transparent;

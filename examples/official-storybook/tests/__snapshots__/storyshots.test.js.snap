@@ -5381,7 +5381,7 @@ exports[`Storyshots UI|Notifications/Item longText 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5395,7 +5395,7 @@ exports[`Storyshots UI|Notifications/Item longText 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5421,7 +5421,7 @@ exports[`Storyshots UI|Notifications/Item simple 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5435,7 +5435,7 @@ exports[`Storyshots UI|Notifications/Item simple 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5461,7 +5461,7 @@ exports[`Storyshots UI|Notifications/Item withLink 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5475,7 +5475,7 @@ exports[`Storyshots UI|Notifications/Item withLink 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5502,7 +5502,7 @@ exports[`Storyshots UI|Notifications/Notifications all 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5532,7 +5532,7 @@ exports[`Storyshots UI|Notifications/Notifications all 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5589,7 +5589,7 @@ exports[`Storyshots UI|Notifications/Notifications placement 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5618,7 +5618,7 @@ exports[`Storyshots UI|Notifications/Notifications placement 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5674,7 +5674,7 @@ exports[`Storyshots UI|Notifications/Notifications single 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5704,7 +5704,7 @@ exports[`Storyshots UI|Notifications/Notifications single 1`] = `
   line-height: 16px;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.05);
   color: #FFFFFF;
-  background-color: #F6F9FC;
+  background-color: rgba(0,0,0,0.95);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
