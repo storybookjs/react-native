@@ -1,1 +1,1 @@
-{"version":"5.1.7","info":{"plain":"### Bug Fixes\n\n* UI: Fix warning of loading prop not being a string ([#7080](https://github.com/storybookjs/storybook/pull/7080))"}}
+{"version":"5.1.8","info":{"plain":"### Bug Fixes\n\n* CLI: Fix RN template to not import addons ([#7096](https://github.com/storybookjs/storybook/pull/7096))"}}
