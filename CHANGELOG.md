@@ -1,3 +1,9 @@
+## 5.1.8 (June 14, 2019)
+
+### Bug Fixes
+
+* CLI: Fix RN template to not import addons ([#7096](https://github.com/storybookjs/storybook/pull/7096))
+
 ## 5.1.7 (June 14, 2019)
 
 ### Bug Fixes
