@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-import { Module, State } from '../index';
+import { Module } from '../index';
 import { Options } from '../store';
 
 export enum types {
@@ -31,7 +31,7 @@ export interface Addon {
   route?: (routeOptions: RouteOptions) => string;
   match?: (matchOptions: MatchOptions) => boolean;
   render: (renderOptions: RenderOptions) => ReactElement<any>;
-  paramKey: string;
+  paramKey?: string;
 }
 export interface Collection {
   [key: string]: Addon;
@@ -55,10 +55,6 @@ export interface SubAPI {
     options?: Options
   ): Promise<S>;
   getAddonState<S>(addonId: string): S;
-}
-
-interface StoryParameters {
-  [key: string]: any;
 }
 
 export function ensurePanel(panels: Panels, selectedPanel?: string, currentPanel?: string) {
