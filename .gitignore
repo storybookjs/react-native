@@ -27,3 +27,4 @@ lib/**/dll
 .expo/packager-info.json
 scripts/storage
 htpasswd
+/false
