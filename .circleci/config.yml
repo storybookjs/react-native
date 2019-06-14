@@ -50,6 +50,17 @@ jobs:
       - run:
           name: Run chromatic on the pre-built storybook
           command: yarn chromatic -- -d ./storybook-static
+  packtracker:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Report webpack stats for manager of official storybook
+          command: |
+            cd examples/official-storybook
+            yarn packtracker
   examples:
     <<: *defaults
     steps:
@@ -348,6 +359,9 @@ workflows:
           requires:
             - build
       - smoke-tests:
+          requires:
+            - build
+      - packtracker:
           requires:
             - build
       - native-smoke-tests:
