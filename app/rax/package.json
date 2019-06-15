@@ -1,6 +1,6 @@
 {
   "name": "@storybook/rax",
-  "version": "5.1.1",
+  "version": "5.2.0-alpha.23",
   "description": "Storybook for Rax: Develop Rax Component in isolation.",
   "keywords": [
     "storybook",
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "babel-preset-rax": "^1.0.0-beta.0",
-    "@storybook/core": "5.1.1",
+    "@storybook/core": "5.2.0-alpha.23",
     "common-tags": "^1.8.0",
     "core-js": "^2.6.2",
     "global": "^4.3.2",

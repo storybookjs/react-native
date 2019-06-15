@@ -1,0 +1,44 @@
+{
+  "name": "@storybook/addon-queryparams",
+  "version": "5.2.0-alpha.23",
+  "description": "parameter addon for storybook",
+  "keywords": [
+    "addon",
+    "storybook",
+    "query"
+  ],
+  "homepage": "https://github.com/storybooks/storybook#readme",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storybooks/storybook.git",
+    "directory": "addons/addon-queryparams"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addons": "5.2.0-alpha.23",
+    "@storybook/api": "5.2.0-alpha.23",
+    "@storybook/client-logger": "5.2.0-alpha.23",
+    "@storybook/components": "5.2.0-alpha.23",
+    "@storybook/core-events": "5.2.0-alpha.23",
+    "@storybook/theming": "5.2.0-alpha.23",
+    "common-tags": "^1.8.0",
+    "core-js": "^2.6.5",
+    "global": "^4.3.2",
+    "qs": "^6.6.0",
+    "react": "^16.8.3"
+  },
+  "devDependencies": {
+    "@types/common-tags": "^1.8.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { polyfill } from 'react-lifecycles-compat';
+import isEqual from 'lodash/isEqual';
 
 import { styled } from '@storybook/theming';
 import json from 'format-json';
@@ -133,14 +134,14 @@ class Item extends Component {
   };
 
   static getDerivedStateFromProps = ({ payload }, { prevPayload }) => {
-    if (payload !== prevPayload) {
+    if (!isEqual(payload, prevPayload)) {
       const payloadString = json.plain(payload);
-
+      const refinedPayload = getJSONFromString(payloadString);
       return {
         failed: false,
-        payload: getJSONFromString(payloadString),
+        payload: refinedPayload,
         payloadString,
-        prevPayload,
+        prevPayload: refinedPayload,
       };
     }
     return null;

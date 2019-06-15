@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.1.1",
+  "version": "5.2.0-alpha.23",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -22,13 +22,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.1",
-    "@storybook/api": "5.1.1",
-    "@storybook/client-logger": "5.1.1",
-    "@storybook/components": "5.1.1",
-    "@storybook/core-events": "5.1.1",
-    "@storybook/router": "5.1.1",
-    "@storybook/theming": "5.1.1",
+    "@storybook/addons": "5.2.0-alpha.23",
+    "@storybook/api": "5.2.0-alpha.23",
+    "@storybook/channels": "5.2.0-alpha.23",
+    "@storybook/client-logger": "5.2.0-alpha.23",
+    "@storybook/components": "5.2.0-alpha.23",
+    "@storybook/core-events": "5.2.0-alpha.23",
+    "@storybook/router": "5.2.0-alpha.23",
+    "@storybook/theming": "5.2.0-alpha.23",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
@@ -41,8 +42,8 @@
     "polished": "^3.3.1",
     "prop-types": "^15.7.2",
     "qs": "^6.6.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-draggable": "^3.1.1",
     "react-helmet-async": "^1.0.2",
     "react-hotkeys": "2.0.0-pre4",
@@ -55,9 +56,10 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
+    "corejs-upgrade-webpack-plugin": "^2.0.0",
     "flush-promises": "^1.0.2",
     "terser-webpack-plugin": "^1.2.4",
-    "webpack": "^4.28.0"
+    "webpack": "^4.33.0"
   },
   "publishConfig": {
     "access": "public"

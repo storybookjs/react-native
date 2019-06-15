@@ -149,9 +149,11 @@ const NotesPanel = ({ active }: Props) => {
               <Fragment>
                 Learn how to{' '}
                 <Link
-                  href="https://github.com/storybooks/storybook/tree/master/addons/notes"
+                  href="https://github.com/storybookjs/storybook/tree/master/addons/notes"
                   target="_blank"
                   withArrow
+                  secondary
+                  cancel={false}
                 >
                   document components in Markdown
                 </Link>
@@ -161,12 +163,12 @@ const NotesPanel = ({ active }: Props) => {
         }
 
         if (typeof value === 'string' || Object.keys(value).length === 1) {
+          const md = typeof value === 'object' ? Object.values(value)[0] : value;
+
           return (
             <Panel className="addon-notes-container">
               <DocumentFormatting>
-                <Markdown options={options}>
-                  {typeof value === 'object' ? Object.values(formatter(value))[0] : value}
-                </Markdown>
+                <Markdown options={options}>{formatter(md)}</Markdown>
               </DocumentFormatting>
             </Panel>
           );
@@ -176,6 +178,7 @@ const NotesPanel = ({ active }: Props) => {
 
         Object.entries(value).forEach(([title, docs]) => {
           groups.push({
+            title,
             render: ({ active: isActive }) => (
               <TabWrapper key={title} active={isActive}>
                 <Panel>
@@ -185,7 +188,6 @@ const NotesPanel = ({ active }: Props) => {
                 </Panel>
               </TabWrapper>
             ),
-            title,
           });
         });
 
