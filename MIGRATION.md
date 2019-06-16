@@ -3,6 +3,7 @@
 - [From version 5.0.x to 5.1.x](#from-version-50x-to-51x)
   - [React native server](#react-native-server)
   - [Angular 7](#angular-7)
+  - [CoreJS 3](#corejs-3)
 - [From version 5.0.1 to 5.0.2](#from-version-501-to-502)
   - [Deprecate webpack extend mode](#deprecate-webpack-extend-mode)
 - [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
@@ -100,6 +101,18 @@ Storybook 5.1 relies on `core-js@^3.0.0` and therefore causes a conflict with An
 You should now be able to run Storybook and Angular 7 without any errors.
 
 Reference issue: [https://github.com/angular/angular-cli/issues/13954](https://github.com/angular/angular-cli/issues/13954)
+
+### CoreJS 3
+
+Following the rest of the JS ecosystem, Storybook 5.1 upgrades [CoreJS](https://github.com/zloirock/core-js) 2 to 3, which is a breaking change.
+
+This upgrade is problematic because many apps/libraries still rely on CoreJS 2, and many users get corejs-related errors due to bad resolution. To address this, we're using [corejs-upgrade-webpack-plugin](https://github.com/ndelangen/corejs-upgrade-webpack-plugin), which attempts to automatically upgrade code to CoreJS 3.
+
+After a few iterations, this approach seems to be working. However, there are a few exceptions:
+
+- If your app uses `babel-polyfill`, try to remove it
+
+We'll update this section as we find more problem cases. If you have a `core-js` problem, please file an issue (preferably with a repro), and we'll do our best to get you sorted.
 
 ## From version 5.0.1 to 5.0.2
 

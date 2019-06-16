@@ -249,8 +249,6 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 
 ## Development Guide
 
-> If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/storybookjs/storybook/tree/master/lib/ui) page.
-
 ### Prerequisites
 
 Please have the **_latest_** stable versions of the following on your machine
@@ -285,9 +283,9 @@ Within the `examples` folder of the Storybook repo, you will find kitchen sink e
 Not only do these show many of the options and add-ons available, they are also automatically linked to all the development packages. We highly encourage you to use these to develop/test contributions on.
 
 #### React and Vue
-
-1.  `yarn storybook`
-2.  Verify that your local version works
+1. `cd examples/official-storybook`
+2.  `yarn storybook`
+3.  Verify that your local version works
 
 ### Working with your own app
 
