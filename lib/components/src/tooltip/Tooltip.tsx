@@ -1,8 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import memoize from 'memoizerific';
 
-import { styled, Color } from '@storybook/theming';
-import { rgba, lighten, darken } from 'polished';
+import { styled, Color, lighten, darken } from '@storybook/theming';
 
 const match = memoize(1000)((requestes, actual, value, fallback = 0) =>
   actual.split('-')[0] === requestes ? value : fallback
@@ -40,32 +39,32 @@ const Arrow = styled.div<ArrowProps>(
       'top',
       placement,
       theme.color[color] || color || theme.base === 'light'
-        ? rgba(`${lighten(1, theme.background.app)}`, 0.95)
-        : rgba(`${darken(1, theme.background.app)}`, 0.95),
+        ? lighten(theme.background.app)
+        : darken(theme.background.app),
       'transparent'
     ),
     borderBottomColor: match(
       'bottom',
       placement,
       theme.color[color] || color || theme.base === 'light'
-        ? rgba(`${lighten(1, theme.background.app)}`, 0.95)
-        : rgba(`${darken(1, theme.background.app)}`, 0.95),
+        ? lighten(theme.background.app)
+        : darken(theme.background.app),
       'transparent'
     ),
     borderLeftColor: match(
       'left',
       placement,
       theme.color[color] || color || theme.base === 'light'
-        ? rgba(`${lighten(1, theme.background.app)}`, 0.95)
-        : rgba(`${darken(1, theme.background.app)}`, 0.95),
+        ? lighten(theme.background.app)
+        : darken(theme.background.app),
       'transparent'
     ),
     borderRightColor: match(
       'right',
       placement,
       theme.color[color] || color || theme.base === 'light'
-        ? rgba(`${lighten(1, theme.background.app)}`, 0.95)
-        : rgba(`${darken(1, theme.background.app)}`, 0.95),
+        ? lighten(theme.background.app)
+        : darken(theme.background.app),
       'transparent'
     ),
   })
@@ -93,8 +92,8 @@ const Wrapper = styled.div<WrapperProps>(
 
           background:
             theme.color[color] || color || theme.base === 'light'
-              ? rgba(`${lighten(1, theme.background.app)}`, 0.95)
-              : rgba(`${darken(1, theme.background.app)}`, 0.95),
+              ? lighten(theme.background.app)
+              : darken(theme.background.app),
           filter: `
             drop-shadow(0px 5px 5px rgba(0,0,0,0.05))
             drop-shadow(0 1px 3px rgba(0,0,0,0.1))

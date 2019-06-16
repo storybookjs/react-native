@@ -2895,6 +2895,11 @@ core-js@^2.4.0, core-js@^2.5.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
   integrity sha512-klh/kDpwX8hryYL14M9w/xei6vrv6sE8gTHDG7/T/+SEovB/G4ejwcfE/CBzO6Edsu+OETZMZ3wcX/EjUkrl5A==
 
+core-js@^2.4.1:
+  version "2.6.9"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
+  integrity sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A==
+
 core-js@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.0.1.tgz#1343182634298f7f38622f95e73f54e48ddf4738"
@@ -4307,6 +4312,25 @@ fb-watchman@^2.0.0:
   integrity sha1-VOmr99+i8mzZsWNsWIwa/AXeXVg=
   dependencies:
     bser "^2.0.0"
+
+fbjs-css-vars@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/fbjs-css-vars/-/fbjs-css-vars-1.0.2.tgz#216551136ae02fe255932c3ec8775f18e2c078b8"
+  integrity sha512-b2XGFAFdWZWg0phtAWLHCk836A1Xann+I+Dgd3Gk64MHKZO44FfoD1KxyvbSh0qZsIoXQGGlVztIY+oitJPpRQ==
+
+fbjs@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-1.0.0.tgz#52c215e0883a3c86af2a7a776ed51525ae8e0a5a"
+  integrity sha512-MUgcMEJaFhCaF1QtWGnmq9ZDRAzECTCRAF7O6UZIlAlkTs1SasiX9aP0Iw7wfD2mJ7wDTNfg2w7u5fSCwJk1OA==
+  dependencies:
+    core-js "^2.4.1"
+    fbjs-css-vars "^1.0.0"
+    isomorphic-fetch "^2.1.1"
+    loose-envify "^1.0.0"
+    object-assign "^4.1.0"
+    promise "^7.1.1"
+    setimmediate "^1.0.5"
+    ua-parser-js "^0.7.18"
 
 fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.14, fbjs@^0.8.4, fbjs@^0.8.9:
   version "0.8.17"
@@ -5723,14 +5747,14 @@ html-entities@^1.2.0:
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
   integrity sha1-DfKTUfByEWNRXfueVUPl9u7VFi8=
 
-html-react-parser@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-0.7.0.tgz#943b935ce76705bdbef13eed2fec7eee010e5d06"
-  integrity sha512-CheTifRqOK1mFmtTnFnDUeHPrA19knrus4Hx+7lS/V5ywHvjAl5BMM8phVLWwLo73rqP2QBpnfvraXMMBgHqMw==
+html-react-parser@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-0.7.1.tgz#4230717092e1d2ea486bbe5e6b7f8c955b29cf91"
+  integrity sha512-e1rvyL5F4BjtQ+p89Y00lQem9A6G45WksytIwEpgxr7rVz4tF0vh1+jcQc8JfAjxWh8hOvzt2VCn1rPPpFZsVQ==
   dependencies:
     "@types/domhandler" "2.4.1"
     html-dom-parser "0.2.1"
-    react-dom-core "0.0.4"
+    react-dom-core "0.1.1"
     style-to-object "0.2.2"
 
 html-void-elements@^1.0.0, html-void-elements@^1.0.1:
@@ -8132,6 +8156,11 @@ oauth-sign@~0.9.0:
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.9.0.tgz#47a7b016baa68b5fa0ecf3dee08a85c679ac6455"
   integrity sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==
 
+object-assign@4.1.1, object-assign@^4.0.0, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
+  integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
+
 object-assign@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-2.1.1.tgz#43c36e5d569ff8e4816c4efa8be02d26967c18aa"
@@ -8141,11 +8170,6 @@ object-assign@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
   integrity sha1-m+3VygiXlJvKR+f/QIBi1Un1h/I=
-
-object-assign@^4.0.0, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
-  integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
 object-component@0.0.3:
   version "0.0.3"
@@ -9681,6 +9705,14 @@ rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-15@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-15/-/react-15-0.2.0.tgz#5cc915031b433c50bdec225d3ef8b80a07295175"
+  integrity sha512-9bdNuBo2I+2AerqURa37AcCKwHqjOvWuNrsd8wKXF+Y+ceBbJAJ1GkWeTliZV40RiEiAgRCLOzwCBxihCZvOfg==
+  dependencies:
+    fbjs "1.0.0"
+    object-assign "4.1.1"
+
 react-addons-create-fragment@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react-addons-create-fragment/-/react-addons-create-fragment-15.6.2.tgz#a394de7c2c7becd6b5475ba1b97ac472ce7c74f8"
@@ -9735,12 +9767,14 @@ react-document-title@^2.0.3:
     prop-types "^15.5.6"
     react-side-effect "^1.0.2"
 
-react-dom-core@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/react-dom-core/-/react-dom-core-0.0.4.tgz#26ef74749c1235993b0e570a83308f323a485b2a"
-  integrity sha512-nJoncKG/Ltlv3K7f0uVwX3kEvhrRl3dyKguxpYR3OmFF1REcRHiWWxSkD1hJdgeVfoBFp/DPVp48JZuaQhwLoQ==
+react-dom-core@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-dom-core/-/react-dom-core-0.1.1.tgz#d580a72941f84f7b5b53d95d406b654181fb8021"
+  integrity sha512-06UPgimujyIOsR9owLdLy5731O8rxs/CZrFYX/ZPDLC6VUDwJuTkPWmLVA03es1tO7JqsqsET4rVe0cfKBEQXA==
   dependencies:
-    react "15"
+    fbjs "1.0.0"
+    object-assign "4.1.1"
+    react-15 "0.2.0"
 
 react-dom@^15.6.0:
   version "15.6.2"
@@ -9939,7 +9973,7 @@ react-transition-group@^1.2.0:
     prop-types "^15.5.6"
     warning "^3.0.0"
 
-react@15, react@^15.6.0:
+react@^15.6.0:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
   integrity sha1-26BDSrQ5z+gvEI8PURZjkIF5qnI=
