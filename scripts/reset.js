@@ -23,14 +23,19 @@ cleaningProcess.stdout.on('data', data => {
         const [, uri] = i.match(/Would remove (.*)$/) || [];
 
         if (uri) {
-          if (uri.match(/node_modules/)) {
+          if (uri.match(/node_modules/) || uri.match(/dist/) || uri.match(/\.cache/) || uri.match(/dll/)) {
             del(uri).then(() => {
               console.log(`deleted ${uri}`);
             });
           } else {
-            trash(uri).then(() => {
-              console.log(`trashed ${uri}`);
-            });
+            trash(uri)
+              .then(() => {
+                console.log(`trashed ${uri}`);
+              })
+              .catch(e => {
+                console.log('failed to trash, will try permanent delete');
+                trash(uri);
+              });
           }
         }
       });
