@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "5.1.1",
+  "version": "5.2.0-alpha.23",
   "private": true,
   "description": "Storybook is an open source tool for developing UI components in isolation for React, Vue and Angular. It makes building stunning UIs organized and efficient.",
   "keywords": [
@@ -161,8 +161,10 @@
     "common-tags": "^1.8.0",
     "concurrently": "^4.0.1",
     "core-js": "^3.0.1",
+    "corejs-upgrade-webpack-plugin": "^2.0.0",
     "cross-env": "^5.2.0",
     "danger": "^7.0.15",
+    "del": "^4.1.1",
     "detect-port": "^1.3.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
@@ -217,6 +219,7 @@
     "sort-package-json": "^1.21.0",
     "svelte": "^3.4.1",
     "svelte-jest": "^0.2.0",
+    "trash": "^6.0.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.1",
     "weak": "^1.0.1"

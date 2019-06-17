@@ -11,7 +11,11 @@ Storybook-maintained presets are available in the [Presets repo](https://github.
 
 ### [Typescript](https://github.com/storybookjs/presets/tree/master/packages/preset-typescript)
 
-Write your stories in typescript with a single line of configuration.
+One-line Typescript w/ docgen configuration for storybook.
+
+### [SCSS](https://github.com/storybookjs/presets/tree/master/packages/preset-scss)
+
+One-line SCSS configuration for storybook.
 
 ## Community presets
 
