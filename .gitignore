@@ -28,3 +28,4 @@ lib/**/dll
 scripts/storage
 htpasswd
 /false
+storybook-out
