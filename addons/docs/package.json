@@ -1,0 +1,39 @@
+{
+  "name": "@storybook/addon-docs",
+  "version": "5.2.0-alpha.23",
+  "description": "Superior documentation for your components",
+  "keywords": [
+    "addon",
+    "notes",
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/docs",
+  "bugs": {
+    "url": "https://github.com/storybookjs/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/storybook.git",
+    "directory": "addons/docs"
+  },
+  "license": "MIT",
+  "main": "dist/public_api.js",
+  "types": "dist/public_api.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addons": "5.2.0-alpha.23",
+    "@storybook/api": "5.2.0-alpha.23"
+  },
+  "devDependencies": {
+    "@types/util-deprecate": "^1.0.0",
+    "@types/webpack-env": "^1.13.7"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
