@@ -1,12 +1,16 @@
-import React, { ReactElement, Component, useContext } from 'react';
+/* eslint-disable react/no-multi-comp */
+import React, { ReactElement, Component, useContext, useEffect } from 'react';
 import memoize from 'memoizerific';
+// @ts-ignore shallow-equal is not in DefinitelyTyped
+import shallowEqualObjects from 'shallow-equal/objects';
 
 import Events from '@storybook/core-events';
 import { RenderData as RouterData } from '@storybook/router';
+import { Listener } from '@storybook/channels';
 import initProviderApi, { SubAPI as ProviderAPI, Provider } from './init-provider-api';
 
 import { createContext } from './context';
-import Store from './store';
+import Store, { Options } from './store';
 import getInitialState from './initial-state';
 
 import initAddons, { SubAPI as AddonsAPI } from './modules/addons';
@@ -30,6 +34,8 @@ import initVersions, {
   SubState as VersionsSubState,
   SubAPI as VersionsAPI,
 } from './modules/versions';
+
+export { Options as StoreOptions, Listener as ChannelListener };
 
 const ManagerContext = createContext({ api: undefined, state: getInitialState({}) });
 
@@ -89,6 +95,12 @@ type StatePartial = Partial<State>;
 export type Props = Children & RouterData & ProviderData;
 
 class ManagerProvider extends Component<Props, State> {
+  static displayName = 'Manager';
+
+  api: API;
+
+  modules: any[];
+
   constructor(props: Props) {
     super(props);
     const { provider, location, path, viewMode, storyId, navigate } = props;
@@ -142,6 +154,10 @@ class ManagerProvider extends Component<Props, State> {
 
     api.on(SET_STORIES, (data: { stories: StoriesRaw }) => {
       api.setStories(data.stories);
+      const options = storyId
+        ? api.getParameters(storyId, 'options')
+        : api.getParameters(Object.keys(data.stories)[0], 'options');
+      api.setOptions(options);
     });
     api.on(
       SELECT_STORY,
@@ -153,10 +169,6 @@ class ManagerProvider extends Component<Props, State> {
     this.state = state;
     this.api = api;
   }
-
-  static displayName = 'Manager';
-  api: API;
-  modules: any[];
 
   static getDerivedStateFromProps = (props: Props, state: State) => {
     if (state.path !== props.path) {
@@ -211,6 +223,7 @@ class ManagerProvider extends Component<Props, State> {
 
 interface ConsumerProps<S, C> {
   filter?: (combo: C) => S;
+  pure?: boolean;
   children: (d: S | C) => ReactElement<any> | null;
 }
 
@@ -221,20 +234,33 @@ interface SubState {
 class ManagerConsumer extends Component<ConsumerProps<SubState, Combo>> {
   dataMemory?: (combo: Combo) => SubState;
 
+  prevChildren?: ReactElement<any> | null;
+
+  prevData?: SubState;
+
   constructor(props: ConsumerProps<SubState, Combo>) {
     super(props);
     this.dataMemory = props.filter ? memoize(10)(props.filter) : null;
   }
 
   render() {
-    const { children } = this.props;
+    const { children, pure } = this.props;
 
     return (
       <ManagerContext.Consumer>
         {d => {
           const data = this.dataMemory ? this.dataMemory(d) : d;
-
-          return children(data);
+          if (
+            pure &&
+            this.prevChildren &&
+            this.prevData &&
+            shallowEqualObjects(data, this.prevData)
+          ) {
+            return this.prevChildren;
+          }
+          this.prevChildren = children(data);
+          this.prevData = data;
+          return this.prevChildren;
         }}
       </ManagerContext.Consumer>
     );
@@ -245,5 +271,61 @@ export function useStorybookState(): State {
   const { state } = useContext(ManagerContext);
   return state;
 }
+export function useStorybookApi(): API {
+  const { api } = useContext(ManagerContext);
+  return api;
+}
 
 export { ManagerConsumer as Consumer, ManagerProvider as Provider };
+
+export interface EventMap {
+  [eventId: string]: Listener;
+}
+
+function orDefault<S>(fromStore: S, defaultState: S): S {
+  if (typeof fromStore === 'undefined') {
+    return defaultState;
+  }
+  return fromStore;
+}
+
+type StateMerger<S> = (input: S) => S;
+
+export function useAddonState<S>(addonId: string, defaultState?: S) {
+  const api = useStorybookApi();
+
+  const existingState = api.getAddonState<S>(addonId);
+  const state = orDefault<S>(existingState, defaultState);
+
+  const setState = (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
+    return api.setAddonState<S>(addonId, newStateOrMerger, options);
+  };
+
+  if (typeof existingState === 'undefined') {
+    api.setAddonState<S>(addonId, state);
+  }
+
+  return [state, setState] as [
+    S,
+    (newStateOrMerger: S | StateMerger<S>, options?: Options) => Promise<S>
+  ];
+}
+
+export const useChannel = (eventMap: EventMap) => {
+  const api = useStorybookApi();
+  useEffect(() => {
+    Object.entries(eventMap).forEach(([type, listener]) => api.on(type, listener));
+    return () => {
+      Object.entries(eventMap).forEach(([type, listener]) => api.off(type, listener));
+    };
+  });
+
+  return api.emit;
+};
+
+export function useParameter<S>(parameterKey: string, defaultValue?: S) {
+  const api = useStorybookApi();
+
+  const result = api.getCurrentParameter<S>(parameterKey);
+  return orDefault<S>(result, defaultValue);
+}

@@ -39,7 +39,7 @@ storiesOf('Story|How to create a story', module)
     ],
     template:
       '<SimpleTest hacked={hacked} test={ "with a parameter" } value={"value is mapped to riotValue"}></SimpleTest>',
-    tagConstructor() {
+    tagConstructor: function tagConstructor() {
       this.hacked = true;
     },
   }))

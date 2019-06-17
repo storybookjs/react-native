@@ -1,17 +1,17 @@
 {
   "name": "@storybook/riot",
-  "version": "5.1.0-alpha.20",
+  "version": "5.2.0-alpha.23",
   "description": "Storybook for riot.js: View riot snippets in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/app/riot",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/app/riot",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "app/riot"
   },
   "license": "MIT",
@@ -25,11 +25,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "5.1.0-alpha.20",
+    "@storybook/core": "5.2.0-alpha.23",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "raw-loader": "^1.0.0",
+    "raw-loader": "^2.0.0",
     "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
@@ -44,6 +44,9 @@
     "riot-compiler": "^3.5.1 || ^4.0.0",
     "riot-hot-reload": "^1.0.0",
     "riot-tag-loader": "^2.0.0 || ^3.0.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   },
   "publishConfig": {
     "access": "public"

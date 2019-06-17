@@ -38,10 +38,11 @@ Here are some in alphabetical order:
 
 - [Applitools](https://applitools.com/storybook)
 - [Chromatic](https://www.chromaticqa.com)
+- [Happo](https://happo.io)
 - [Loki](https://loki.js.org/)
 - [Percy](https://docs.percy.io/docs/storybook-for-react)
 - [Screener](https://screener.io/v2/docs)
-- [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) with its [seamless integration](https://github.com/storybooks/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots) with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot)
+- [StoryShots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots) with its [seamless integration](https://github.com/storybookjs/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots) with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot)
 
 ## Custom Solutions
 
@@ -99,7 +100,7 @@ Let's go ahead and add all of these:
 yarn add jest puppeteer jest-puppeteer jest-image-snapshot start-server-and-test --dev
 ```
 
-There's a bit of setup code that needs to run before your tests, so we'll need to configure a Jest setup file to run first, if you haven't already. This is done with the [`setupTestFrameworkScriptFile` config property](https://jestjs.io/docs/en/configuration.html#setuptestframeworkscriptfile-string), either in your package.json or in your `jest.config.js`. We'll also set `"preset": "jest-puppeteer"` so that we get the nice integration from jest-puppeteer.
+There's a bit of setup code that needs to run before your tests, so we'll need to configure a Jest setup file to run first, if you haven't already. This is done with the [`setupFilesAfterEnv` config property](https://jestjs.io/docs/en/configuration.html#setupFilesAfterEnv-string), either in your package.json or in your `jest.config.js`. We'll also set `"preset": "jest-puppeteer"` so that we get the nice integration from jest-puppeteer.
 
 #### `integration/jest.config.js`
 
@@ -107,7 +108,7 @@ There's a bit of setup code that needs to run before your tests, so we'll need t
 module.exports = {
   preset: 'jest-puppeteer',
   testRegex: './*\\.test\\.js$',
-  setupTestFrameworkScriptFile: './setupTests.js'
+  setupFilesAfterEnv: ['./setupTests.js']
 };
 
  ```

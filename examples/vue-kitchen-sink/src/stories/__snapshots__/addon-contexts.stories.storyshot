@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon|Contexts Languages 1`] = `
+<div
+  style="color: white; background: rgb(23, 63, 95); height: 100vh; padding: 10px;"
+>
+  <div>
+    
+        Your locale is unknown, so I say NULL!
+      
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addon|Contexts Simple CSS Theming 1`] = `
+<div
+  style="color: white; background: rgb(23, 63, 95); height: 100vh; padding: 10px;"
+>
+  <span>
+    I'm a children of the injected 'div' (where provides a theming context).
+  </span>
+</div>
+`;
