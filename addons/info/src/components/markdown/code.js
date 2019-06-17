@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { SyntaxHighlighter } from '@storybook/components';
+import { ThemeProvider, convert } from '@storybook/theming';
 
-const Code = ({ language, code }) => (
-  <SyntaxHighlighter bordered copyable language={language}>
-    {code}
-  </SyntaxHighlighter>
+const Code = ({ code, language = 'plaintext', ...rest }) => (
+  <ThemeProvider theme={convert()}>
+    <SyntaxHighlighter bordered copyable language={language} {...rest}>
+      {code}
+    </SyntaxHighlighter>
+  </ThemeProvider>
 );
 Code.propTypes = {
   language: PropTypes.string.isRequired,
