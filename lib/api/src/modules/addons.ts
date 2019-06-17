@@ -43,10 +43,16 @@ interface Panels {
 
 type StateMerger<S> = (input: S) => S;
 
+interface StoryInput {
+  parameters: {
+    [parameterName: string]: any;
+  };
+}
+
 export interface SubAPI {
   getElements: (type: Types) => Collection;
   getPanels: () => Collection;
-  getStoryPanels: (storyId: string) => Collection;
+  getStoryPanels: () => Collection;
   getSelectedPanel: () => string;
   setSelectedPanel: (panelName: string) => void;
   setAddonState<S>(
@@ -74,17 +80,21 @@ export default ({ provider, store }: Module) => {
   const api: SubAPI = {
     getElements: type => provider.getElements(type),
     getPanels: () => api.getElements(types.PANEL),
-    getStoryPanels: storyId => {
-      const storyParameters = provider.getParameters(storyId);
-      const panels = api.getPanels();
-      if (!panels || !storyParameters) {
-        return panels;
+    getStoryPanels: () => {
+      const allPanels = api.getPanels();
+      const { storyId, storiesHash } = store.getState();
+      const storyInput = storyId && (storiesHash[storyId] as StoryInput);
+
+      if (!allPanels || !storyInput) {
+        return allPanels;
       }
 
+      const { parameters } = storyInput;
+
       const filteredPanels: Collection = {};
-      Object.entries(panels).forEach(([id, panel]) => {
+      Object.entries(allPanels).forEach(([id, panel]) => {
         const { paramKey } = panel;
-        if (paramKey && storyParameters[paramKey] && storyParameters[paramKey].disabled) {
+        if (paramKey && parameters[paramKey] && parameters[paramKey].disabled) {
           return;
         }
         filteredPanels[id] = panel;
