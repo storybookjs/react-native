@@ -3,7 +3,7 @@ import { addons, types } from '@storybook/addons';
 import GQL from './manager';
 import { ADDON_ID } from '.';
 
-export function register() {
+export const register = () => {
   addons.register(ADDON_ID, () => {
     addons.add(ADDON_ID, {
       title: 'GraphiQL',
@@ -13,4 +13,4 @@ export function register() {
       render: GQL,
     });
   });
-}
+};
