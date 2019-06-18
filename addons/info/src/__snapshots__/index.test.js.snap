@@ -136,12 +136,12 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
             "background": "white",
             "bottom": 0,
             "display": "none",
+            "height": "100vh",
             "left": 0,
             "overflow": "auto",
-            "padding": "0 40px",
             "position": "fixed",
-            "right": 0,
             "top": 0,
+            "width": "100vw",
             "zIndex": 99999,
           }
         }
@@ -1389,12 +1389,12 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
             "background": "white",
             "bottom": 0,
             "display": "none",
+            "height": "100vh",
             "left": 0,
             "overflow": "auto",
-            "padding": "0 40px",
             "position": "fixed",
-            "right": 0,
             "top": 0,
+            "width": "100vw",
             "zIndex": 99999,
           }
         }
@@ -2722,12 +2722,12 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
             "background": "white",
             "bottom": 0,
             "display": "none",
+            "height": "100vh",
             "left": 0,
             "overflow": "auto",
-            "padding": "0 40px",
             "position": "fixed",
-            "right": 0,
             "top": 0,
+            "width": "100vw",
             "zIndex": 99999,
           }
         }
