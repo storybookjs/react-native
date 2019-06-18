@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { styled } from '@storybook/theming';
-import colors from '../colors';
 
 const patterns = [/^\x08+/, /^\x1b\[[012]?K/, /^\x1b\[?[\d;]{0,3}/];
 
@@ -14,11 +13,11 @@ const Pre = styled.pre({
 });
 
 const Positive = styled.strong({
-  color: colors.success,
+  color: 'green',
   fontWeight: 500,
 });
 const Negative = styled.strong({
-  color: colors.error,
+  color: 'red',
   fontWeight: 500,
 });
 
@@ -40,13 +39,16 @@ const StackTrace = styled(({ trace, className }: StackTraceProps) => (
   </details>
 ))({
   background: '#e2e2e2',
-  padding: 10,
+  paddingTop: '4px',
+  paddingBottom: '4px',
+  paddingLeft: '6px',
+  borderRadius: '2px',
+  marginTop: '10px',
   overflow: 'auto',
 });
 
 const Main = styled(({ msg, className }) => <section className={className}>{msg}</section>)({
-  padding: 10,
-  borderBottom: '1px solid #e2e2e2',
+  padding: 5,
 });
 
 interface SubProps {
@@ -74,7 +76,7 @@ const Sub = styled(({ msg, className }: SubProps) => (
       })}
   </section>
 ))({
-  padding: 10,
+  padding: 5,
 });
 
 interface SubgroupOptions {
@@ -148,6 +150,8 @@ interface MessageProps {
 type MsgElement = string | JSX.Element;
 
 const Message = ({ msg }: MessageProps) => {
+  console.log(msg);
+
   const data = patterns
     .reduce((acc, regex) => acc.replace(regex, ''), msg)
     .split(/\[2m/)
