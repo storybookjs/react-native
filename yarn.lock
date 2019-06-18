@@ -3332,68 +3332,6 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@storybook/client-logger@5.2.0-alpha.27":
-  version "5.2.0-alpha.27"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.2.0-alpha.27.tgz#030fbbf58ed0a9aff773bab2457676df87085a2c"
-  integrity sha512-3ZVK/RCgj3HIvOxaE6fXZML6dsJnlANphu9IkUDD70efWrPGq05YiipznQ8FYZ9z1JsQ/VepPOp0p2p7BLlZnQ==
-  dependencies:
-    core-js "^3.0.1"
-
-"@storybook/components@5.2.0-alpha.27":
-  version "5.2.0-alpha.27"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.2.0-alpha.27.tgz#f88fcebe51b9bfb1eaabbc71f712c3c3fb51ec3d"
-  integrity sha512-FbmIu2FJp8KOggzyBl9+fi7x2319DwQ9ObbZ3DyAJdJp5prQLmEqzde/wrWGD3kjPyt6WxLx5Enx2GFyBUw4TQ==
-  dependencies:
-    "@storybook/client-logger" "5.2.0-alpha.27"
-    "@storybook/router" "5.2.0-alpha.27"
-    "@storybook/theming" "5.2.0-alpha.27"
-    core-js "^3.0.1"
-    global "^4.3.2"
-    markdown-to-jsx "^6.9.1"
-    memoizerific "^1.11.3"
-    polished "^3.3.1"
-    popper.js "^1.14.7"
-    prop-types "^15.7.2"
-    react "^16.8.3"
-    react-addons-create-fragment "^15.6.2"
-    react-dom "^16.8.3"
-    react-focus-lock "^1.18.3"
-    react-helmet-async "^1.0.2"
-    react-popper-tooltip "^2.8.3"
-    react-syntax-highlighter "^8.0.1"
-    react-textarea-autosize "^7.1.0"
-    recompose "^0.30.0"
-    simplebar-react "^1.0.0-alpha.6"
-
-"@storybook/router@5.2.0-alpha.27":
-  version "5.2.0-alpha.27"
-  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.2.0-alpha.27.tgz#2a245b0d54208d7f993f6849a66f83dbbbb4d41d"
-  integrity sha512-w8beZZ7CqUJCsiJ+0p48T0U9leK4MuPt1ho8fJTgXblmj0G18yFGeCSR7ZuLQtG0kwyj9/Q8KvZ7t6NwFegUyg==
-  dependencies:
-    "@reach/router" "^1.2.1"
-    core-js "^3.0.1"
-    global "^4.3.2"
-    memoizerific "^1.11.3"
-    qs "^6.6.0"
-
-"@storybook/theming@5.2.0-alpha.27":
-  version "5.2.0-alpha.27"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.2.0-alpha.27.tgz#d8dd85ca705ef6b613013b2b72f639f68b9279f4"
-  integrity sha512-nBrE2I9oayi0BpDyV0amRJCa5OeI8YDYcJTAWicIzKoYOjVE2p0EdlFiKSM9QA9JKcIwjGkI+eXgJRnxszD8KA==
-  dependencies:
-    "@emotion/core" "^10.0.9"
-    "@emotion/styled" "^10.0.7"
-    "@storybook/client-logger" "5.2.0-alpha.27"
-    common-tags "^1.8.0"
-    core-js "^3.0.1"
-    deep-object-diff "^1.1.0"
-    emotion-theming "^10.0.9"
-    global "^4.3.2"
-    memoizerific "^1.11.3"
-    polished "^3.3.1"
-    prop-types "^15.7.2"
-    resolve-from "^5.0.0"
-
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
