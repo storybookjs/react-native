@@ -150,8 +150,6 @@ interface MessageProps {
 type MsgElement = string | JSX.Element;
 
 const Message = ({ msg }: MessageProps) => {
-  console.log(msg);
-
   const data = patterns
     .reduce((acc, regex) => acc.replace(regex, ''), msg)
     .split(/\[2m/)
