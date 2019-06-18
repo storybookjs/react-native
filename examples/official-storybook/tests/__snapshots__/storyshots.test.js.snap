@@ -5382,6 +5382,7 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
     }
   ],
   "globalParameter": "globalParameter",
+  "framework": "react",
   "chapterParameter": "chapterParameter",
   "storyParameter": "storyParameter",
   "decoratorParameter": "decoratorParameter"
