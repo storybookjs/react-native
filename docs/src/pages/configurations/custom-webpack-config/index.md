@@ -153,7 +153,7 @@ The webpack config [is configurable](/configurations/custom-webpack-config/), an
   <div></div>
 
 - Create a `.storybook/webpack.config.js` file.
-- Edit it's contents:
+- Edit its contents:
   ```js
   module.exports = async ({ config }) => console.dir(config.plugins, { depth: null }) || config;
   ```
