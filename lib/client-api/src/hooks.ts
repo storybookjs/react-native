@@ -1,7 +1,22 @@
 /* eslint-disable import/export */
+import { window } from 'global';
 import { logger } from '@storybook/client-logger';
 import addons from '@storybook/addons';
 import { FORCE_RE_RENDER } from '@storybook/core-events';
+
+interface StoryStore {
+  fromId: (
+    id: string
+  ) => {
+    parameters: {
+      [parameterKey: string]: any;
+    };
+  };
+  getSelection: () => {
+    storyId: string;
+    viewMode: string;
+  };
+}
 
 interface Hook {
   name: string;
@@ -250,4 +265,46 @@ export function useReducer<S, A>(
 export function useEffect(create: () => (() => void) | void, deps?: any[]): void {
   const effect = useMemoLike('useEffect', () => ({ create }), deps);
   currentEffects.push(effect);
+}
+
+export interface Listener {
+  (...args: any[]): void;
+  ignorePeer?: boolean;
+}
+
+export interface EventMap {
+  [eventId: string]: Listener;
+}
+
+export function useChannel(eventMap: EventMap) {
+  const channel = addons.getChannel();
+  useEffect(() => {
+    Object.entries(eventMap).forEach(([type, listener]) => channel.on(type, listener));
+    return () => {
+      Object.entries(eventMap).forEach(([type, listener]) =>
+        channel.removeListener(type, listener)
+      );
+    };
+  }, Object.keys(eventMap));
+
+  return channel.emit;
+}
+
+export function useParameter<S>(parameterKey: string, defaultValue?: S): S | undefined {
+  /*
+    TODO: come up with a better way of reaching the storyStore without a global variable 
+   */
+  // @ts-ignore
+  const { __STORYBOOK_STORY_STORE__ } = window;
+  const api: StoryStore = __STORYBOOK_STORY_STORE__;
+  const { storyId } = api.getSelection();
+
+  if (storyId) {
+    const { parameters } = api.fromId(storyId);
+
+    if (parameterKey) {
+      return parameters[parameterKey] || (defaultValue as S);
+    }
+  }
+  return undefined;
 }
