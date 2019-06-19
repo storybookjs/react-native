@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { useParameter } from '@storybook/api';
 import { addons, types } from '@storybook/addons';
