@@ -35,7 +35,7 @@
     "@storybook/theming": "5.2.0-alpha.23",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "lodash": "^4.171.11",
+    "lodash": "^4.17.11",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
