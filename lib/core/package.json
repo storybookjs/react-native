@@ -63,7 +63,7 @@
     "interpret": "^1.2.0",
     "ip": "^1.1.5",
     "json5": "^2.1.0",
-    "lazy-universal-dotenv": "^2.0.0",
+    "lazy-universal-dotenv": "^3.0.0",
     "node-fetch": "^2.6.0",
     "open": "^6.1.0",
     "pnp-webpack-plugin": "1.4.3",
