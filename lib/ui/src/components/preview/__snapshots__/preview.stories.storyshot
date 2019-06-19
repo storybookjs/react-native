@@ -347,7 +347,7 @@ Array [
           allowfullscreen=""
           id="storybook-preview-iframe"
           scrolling="yes"
-          src="http://example.com?id=string"
+          src="http://example.com?id=string&viewMode=story"
           title="string"
         />
       </div>
@@ -403,7 +403,7 @@ Array [
   margin-left: 0;
 }
 
-.emotion-2 {
+.emotion-0 {
   white-space: normal;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -437,51 +437,6 @@ Array [
   font-size: 13px;
   color: inherit;
   border-bottom-color: transparent;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-2:focus {
-  outline: 0 none;
-  border-bottom-color: #1EA7FD;
-}
-
-.emotion-0 {
-  white-space: normal;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  overflow: hidden;
-  vertical-align: top;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0 15px;
-  text-transform: capitalize;
-  -webkit-transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  transition: color 0.2s linear,border-bottom-color 0.2s linear;
-  height: 40px;
-  line-height: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: 0 solid transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  font-weight: bold;
-  font-size: 13px;
-  color: #1EA7FD;
-  border-bottom-color: #1EA7FD;
 }
 
 .emotion-0:empty {
@@ -644,7 +599,7 @@ Array [
                       href="/?path=/info/string"
                     >
                       <button
-                        class="emotion-2"
+                        class="emotion-0"
                       >
                         Notes
                       </button>
@@ -835,7 +790,7 @@ Array [
           allowfullscreen=""
           id="storybook-preview-iframe"
           scrolling="yes"
-          src="http://example.com?id=string"
+          src="http://example.com?id=string&viewMode=story"
           title="string"
         />
       </div>

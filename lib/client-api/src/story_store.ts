@@ -99,8 +99,8 @@ export default class StoryStore extends EventEmitter {
     );
   }
 
-  setSelection = ({ storyId }: { storyId: string }) => {
-    this._selection = { storyId };
+  setSelection = ({ storyId, viewMode }) => {
+    this._selection = { storyId, viewMode };
     setTimeout(() => this.emit(Events.STORY_RENDER), 1);
   };
 
