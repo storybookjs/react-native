@@ -15,11 +15,17 @@ exception.parameters = {
   chromatic: { disable: true },
 };
 
-export const badComponent = () => <Fragment><div>Hello world</div><BadComponent /></Fragment>;
+export const badComponent = () => (
+  <Fragment>
+    <div>Hello world</div>
+    <BadComponent />
+  </Fragment>
+);
 badComponent.title = 'story errors - variant error';
 badComponent.parameters = {
   notes: 'Story does not return something react can render',
   storyshots: { disable: true },
+  chromatic: { disable: true },
 };
 
 export const badStory = () => false;
@@ -27,5 +33,5 @@ badStory.title = 'story errors - story un-renderable type';
 badStory.parameters = {
   notes: 'Story does not return something react can render',
   storyshots: { disable: true },
+  chromatic: { disable: true },
 };
-
