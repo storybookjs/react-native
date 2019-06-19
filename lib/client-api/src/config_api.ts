@@ -5,8 +5,7 @@ import Events from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
 import { PostmsgTransport } from '@storybook/channel-postmessage';
 import Channel from '@storybook/channels';
-import { StoryStore, ClientApi } from '@storybook/client-api';
-import { IModule } from './types';
+import { ClientApi, StoryStore, IModule } from './types';
 
 interface IChannel {
   events: {
@@ -50,6 +49,7 @@ export default class ConfigApi {
 
   _renderMain() {
     // do initial render of story
+    debugger;
     this._storyStore.emit(Events.STORY_INIT);
   }
 

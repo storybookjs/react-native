@@ -26,7 +26,7 @@ jest.mock('@storybook/client-logger', () => ({
 describe('preview.client_api', () => {
   describe('setAddon', () => {
     it('should register addons', () => {
-      const { clientApi } = getContext();
+      const { clientApi } = getContext(undefined);
       let data;
 
       clientApi.setAddon({
@@ -40,7 +40,7 @@ describe('preview.client_api', () => {
     });
 
     it('should not remove previous addons', () => {
-      const { clientApi } = getContext();
+      const { clientApi } = getContext(undefined);
       const data = [];
 
       clientApi.setAddon({
@@ -63,7 +63,7 @@ describe('preview.client_api', () => {
     });
 
     it('should call with the clientApi context', () => {
-      const { clientApi } = getContext();
+      const { clientApi } = getContext(undefined);
       let data;
 
       clientApi.setAddon({
@@ -77,7 +77,7 @@ describe('preview.client_api', () => {
     });
 
     it('should be able to access addons added previously', () => {
-      const { clientApi } = getContext();
+      const { clientApi } = getContext(undefined);
       let data;
 
       clientApi.setAddon({
@@ -97,7 +97,7 @@ describe('preview.client_api', () => {
     });
 
     it('should be able to access the current kind', () => {
-      const { clientApi } = getContext();
+      const { clientApi } = getContext(undefined);
       const kind = 'dfdwf3e3';
       let data;
 
@@ -114,7 +114,7 @@ describe('preview.client_api', () => {
 
   describe('addParameters', () => {
     it('should add parameters', () => {
-      const { clientApi } = getContext();
+      const { clientApi } = getContext(undefined);
 
       clientApi.addParameters({ a: '1' });
 
@@ -123,7 +123,7 @@ describe('preview.client_api', () => {
     });
 
     it('should merge options', () => {
-      const { clientApi } = getContext();
+      const { clientApi } = getContext(undefined);
 
       clientApi.addParameters({ options: { a: '1' } });
       clientApi.addParameters({ options: { b: '2' } });
@@ -133,7 +133,7 @@ describe('preview.client_api', () => {
     });
 
     it('should override specific properties in options', () => {
-      const { clientApi } = getContext();
+      const { clientApi } = getContext(undefined);
 
       clientApi.addParameters({ backgrounds: ['value'], options: { a: '1', b: '3' } });
       clientApi.addParameters({ options: { a: '2' } });
@@ -146,7 +146,7 @@ describe('preview.client_api', () => {
     });
 
     it('should replace top level properties and override specific properties in options', () => {
-      const { clientApi } = getContext();
+      const { clientApi } = getContext(undefined);
 
       clientApi.addParameters({ backgrounds: ['value'], options: { a: '1', b: '3' } });
       clientApi.addParameters({ backgrounds: [], options: { a: '2' } });
@@ -159,7 +159,7 @@ describe('preview.client_api', () => {
     });
 
     it('should deep merge in options', () => {
-      const { clientApi } = getContext();
+      const { clientApi } = getContext(undefined);
 
       clientApi.addParameters({ options: { a: '1', b: '2', theming: { c: '3' } } });
       clientApi.addParameters({ options: { theming: { c: '4', d: '5' } } });
@@ -176,7 +176,7 @@ describe('preview.client_api', () => {
       const {
         clientApi: { storiesOf },
         storyStore,
-      } = getContext();
+      } = getContext(undefined);
 
       storiesOf('kind', module)
         .addDecorator(fn => `aa-${fn()}`)
@@ -189,7 +189,7 @@ describe('preview.client_api', () => {
       const {
         clientApi: { addDecorator, storiesOf },
         storyStore,
-      } = getContext();
+      } = getContext(undefined);
 
       addDecorator(fn => `bb-${fn()}`);
 
@@ -202,7 +202,7 @@ describe('preview.client_api', () => {
       const {
         clientApi: { addDecorator, storiesOf },
         storyStore,
-      } = getContext();
+      } = getContext(undefined);
 
       addDecorator(fn => `aa-${fn()}`);
 
@@ -217,7 +217,7 @@ describe('preview.client_api', () => {
       const {
         clientApi: { storiesOf },
         storyStore,
-      } = getContext();
+      } = getContext(undefined);
 
       storiesOf('kind', module)
         .addDecorator(fn => `aa-${fn()}`)
@@ -231,7 +231,7 @@ describe('preview.client_api', () => {
       const {
         clientApi: { storiesOf },
         storyStore,
-      } = getContext();
+      } = getContext(undefined);
 
       storiesOf('kind', module)
         .addDecorator((fn, { kind, name }) => `${kind}-${name}-${fn()}`)
@@ -244,7 +244,7 @@ describe('preview.client_api', () => {
 
   describe('clearDecorators', () => {
     it('should remove all global decorators', () => {
-      const { clientApi } = getContext();
+      const { clientApi } = getContext(undefined);
       // eslint-disable-next-line no-underscore-dangle
       clientApi._globalDecorators = 1234;
       clientApi.clearDecorators();
@@ -257,7 +257,7 @@ describe('preview.client_api', () => {
     it('should transform the storybook to an array with filenames', () => {
       const {
         clientApi: { getStorybook, storiesOf },
-      } = getContext();
+      } = getContext(undefined);
 
       let book;
 
@@ -309,7 +309,7 @@ describe('preview.client_api', () => {
     it('reads filename from module', () => {
       const {
         clientApi: { getStorybook, storiesOf },
-      } = getContext();
+      } = getContext(undefined);
 
       const fn = jest.fn();
       storiesOf('kind', { id: 'foo.js' }).add('name', fn);
@@ -333,7 +333,7 @@ describe('preview.client_api', () => {
     it('should stringify ids from module', () => {
       const {
         clientApi: { getStorybook, storiesOf },
-      } = getContext();
+      } = getContext(undefined);
 
       const fn = jest.fn();
       storiesOf('kind', { id: 1211 }).add('name', fn);
@@ -374,7 +374,7 @@ describe('preview.client_api', () => {
       const {
         storyStore,
         clientApi: { storiesOf },
-      } = getContext();
+      } = getContext(undefined);
       const module = new MockModule();
 
       expect(storyStore.getRevision()).toEqual(0);
@@ -389,7 +389,7 @@ describe('preview.client_api', () => {
     it('should replace a kind when the module reloads', () => {
       const {
         clientApi: { storiesOf, getStorybook },
-      } = getContext();
+      } = getContext(undefined);
       const module = new MockModule();
 
       const stories = [jest.fn(), jest.fn()];
@@ -434,7 +434,7 @@ describe('preview.client_api', () => {
       const {
         storyStore,
         clientApi: { storiesOf, addParameters },
-      } = getContext();
+      } = getContext(undefined);
 
       addParameters({ a: 'global', b: 'global', c: 'global' });
 
@@ -456,7 +456,7 @@ describe('preview.client_api', () => {
       const {
         storyStore,
         clientApi: { storiesOf, addParameters },
-      } = getContext();
+      } = getContext(undefined);
 
       addParameters({
         addon1: 'global string value',
@@ -514,7 +514,7 @@ describe('preview.client_api', () => {
 
         const {
           clientApi: { storiesOf, getStorybook },
-        } = getContext();
+        } = getContext(undefined);
 
         expect(getStorybook()).toEqual([]);
 

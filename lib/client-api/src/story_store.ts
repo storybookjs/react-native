@@ -1,19 +1,22 @@
 /* eslint no-underscore-dangle: 0 */
-import { history, document } from 'global';
-import qs from 'qs';
 import EventEmitter from 'eventemitter3';
 import memoize from 'memoizerific';
 import debounce from 'lodash/debounce';
 import { stripIndents } from 'common-tags';
 
+import Channel from '@storybook/channels';
 import Events from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
-import { toId } from '@storybook/router/utils';
-
-import { Channel } from '@storybook/channels';
-import pathToId from './pathToId';
-import { getQueryParams } from './queryparams';
-import { IData, IDecorator } from './types';
+import {
+  DecoratorFunction,
+  HandlerFunction,
+  DecoratorData,
+  Decorator,
+  DecoratorParameters,
+  LegacyData,
+  LegacyItem,
+  Keys,
+} from './types';
 
 // TODO: these are copies from components/nav/lib
 // refactor to DRY
@@ -40,21 +43,10 @@ const toExtracted = <T>(obj: T) =>
     return Object.assign(acc, { [key]: value });
   }, {});
 
-const getIdFromLegacyQuery = ({
-  path,
-  selectedKind,
-  selectedStory,
-}: {
-  path: string;
-  selectedKind: string;
-  selectedStory: string;
-}) =>
-  (path && pathToId(path)) || (selectedKind && selectedStory && toId(selectedKind, selectedStory));
-
 export default class StoryStore extends EventEmitter {
-  _legacydata: {};
+  _legacydata: LegacyData;
 
-  _data: IData;
+  _data: DecoratorData;
 
   _revision: number;
 
@@ -65,24 +57,11 @@ export default class StoryStore extends EventEmitter {
   constructor(params: { channel: Channel }) {
     super();
 
-    this._legacydata = {};
-    this._data = {};
+    this._legacydata = ({} as any) as LegacyData;
+    this._data = ({} as any) as DecoratorData;
     this._revision = 0;
     this._selection = {};
     this._channel = params.channel;
-
-    this.on(Events.STORY_INIT, () => {
-      let storyId = this.getIdOnPath();
-      if (!storyId) {
-        const query = getQueryParams();
-        storyId = getIdFromLegacyQuery(query);
-        if (storyId) {
-          const { path, selectedKind, selectedStory, ...rest } = query;
-          this.setPath(storyId, rest);
-        }
-      }
-      this.setSelection(this.fromId(storyId));
-    });
   }
 
   setChannel = (channel: Channel) => {
@@ -90,20 +69,9 @@ export default class StoryStore extends EventEmitter {
   };
 
   // NEW apis
-
-  getIdOnPath = () => {
-    const { id } = getQueryParams();
-    return id;
-  };
-
-  setPath = (storyId: string, params = {}) => {
-    const path = `${document.location.pathname}?${qs.stringify({ ...params, id: storyId })}`;
-    history.replaceState({}, '', path);
-  };
-
   fromId = (id: string) => {
     try {
-      const data = this._data[id];
+      const data = this._data[id as Keys];
 
       if (!data || !data.getDecorated) {
         return null;
@@ -119,10 +87,7 @@ export default class StoryStore extends EventEmitter {
 
   raw() {
     return Object.values(this._data)
-      .filter(i => {
-        console.log('this is unknown??? --> i: ', i);
-        return !!i.getDecorated;
-      })
+      .filter(i => !!i.getDecorated)
       .map(({ id }) => this.fromId(id));
   }
 
@@ -134,8 +99,8 @@ export default class StoryStore extends EventEmitter {
     );
   }
 
-  setSelection = <U extends object>(data: U) => {
-    this._selection = data;
+  setSelection = ({ storyId }: { storyId: string }) => {
+    this._selection = { storyId };
     setTimeout(() => this.emit(Events.STORY_RENDER), 1);
   };
 
@@ -143,23 +108,34 @@ export default class StoryStore extends EventEmitter {
 
   remove = (id: string): void => {
     const { _data } = this;
-    delete _data[id];
+    delete _data[id as Keys];
   };
 
   addStory(
-    { id, kind, name, storyFn: original, parameters = {} }: {id: string, kind: string, name: string, storyFn?: () => any, parameters: },
-    { getDecorators, applyDecorators }
+    {
+      id,
+      kind,
+      name,
+      storyFn: original,
+      parameters = ({} as any) as DecoratorParameters,
+    }: {
+      id: string;
+      kind: string;
+      name: string;
+      storyFn?: () => any;
+      parameters: DecoratorParameters;
+    },
+    {
+      getDecorators,
+      applyDecorators,
+    }: {
+      getDecorators: () => (...args: any[]) => any[];
+      applyDecorators: (decorators: DecoratorFunction, actionCallback: HandlerFunction) => void;
+    }
   ) {
-    console.log('id: ', id);
-    console.log('kind: ', kind);
-    console.log('name: ', name);
-    console.log('storyFn: ', storyFn);
-    console.log('parameters: ', parameters);
-    console.log('getDecorators: ', getDecorators);
-    console.log('applyDecorators: ', applyDecorators);
     const { _data } = this;
 
-    if (_data[id]) {
+    if (_data[id as Keys]) {
       logger.warn(stripIndents`
         Story with id ${id} already exists in the store!
 
@@ -181,11 +157,11 @@ export default class StoryStore extends EventEmitter {
     // lazily decorate the story when it's loaded
     const getDecorated = memoize(1)(() => applyDecorators(getOriginal(), getDecorators()));
 
-    const storyFn = p => {
+    const storyFn = (p: any) => {
       return getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
     };
 
-    _data[id] = toChild({
+    _data[id as Keys] = toChild({
       ...identification,
 
       getDecorated,
@@ -193,7 +169,7 @@ export default class StoryStore extends EventEmitter {
       storyFn,
 
       parameters,
-    });
+    }) as Decorator;
 
     // LEGACY DATA
     this.addLegacyStory({ kind, name, storyFn, parameters });
@@ -228,12 +204,12 @@ export default class StoryStore extends EventEmitter {
   }: {
     kind: string;
     name: string;
-    storyFn: () => any;
+    storyFn: (p?: any) => any;
     parameters: { fileName: string } | {};
   }) {
     const k = toKey(kind);
-    if (!this._legacydata[k]) {
-      this._legacydata[k] = {
+    if (!this._legacydata[k as Keys]) {
+      this._legacydata[k as Keys] = {
         kind,
         fileName: parameters.fileName,
         index: getId(),
@@ -241,7 +217,7 @@ export default class StoryStore extends EventEmitter {
       };
     }
 
-    this._legacydata[k].stories[toKey(name)] = {
+    this._legacydata[k as Keys].stories[toKey(name)] = {
       name,
       // kind,
       index: getId(),
@@ -252,30 +228,27 @@ export default class StoryStore extends EventEmitter {
 
   getStoryKinds() {
     return Object.values(this._legacydata)
-      .filter(kind => Object.keys(kind.stories).length > 0)
-      .sort((info1, info2) => info1.index - info2.index)
-      .map(info => info.kind);
+      .filter((kind: LegacyItem) => Object.keys(kind.stories).length > 0)
+      .sort((info1: LegacyItem, info2: LegacyItem) => info1.index - info2.index)
+      .map((info: LegacyItem) => info.kind);
   }
 
   getStories(kind: string) {
     const key = toKey(kind);
-    console.log('-------------------- getStories');
-    console.log('kind: ', kind);
-    console.log(' getStories--------------------');
 
-    if (!this._legacydata[key]) {
+    if (!this._legacydata[key as Keys]) {
       return [];
     }
 
-    return Object.keys(this._legacydata[key].stories)
-      .map(name => this._legacydata[key].stories[name])
+    return Object.keys(this._legacydata[key as Keys].stories)
+      .map(name => this._legacydata[key as Keys].stories[name])
       .sort((info1, info2) => info1.index - info2.index)
       .map(info => info.name);
   }
 
   getStoryFileName(kind: string) {
     const key = toKey(kind);
-    const storiesKind = this._legacydata[key];
+    const storiesKind = this._legacydata[key as Keys];
     if (!storiesKind) {
       return null;
     }
@@ -288,7 +261,7 @@ export default class StoryStore extends EventEmitter {
       return null;
     }
 
-    const storiesKind = this._legacydata[toKey(kind)];
+    const storiesKind = this._legacydata[toKey(kind) as Keys];
     if (!storiesKind) {
       return null;
     }
@@ -315,19 +288,18 @@ export default class StoryStore extends EventEmitter {
     if (!data) {
       return null;
     }
-
     const { story } = data;
     return story;
   }
 
   removeStoryKind(kind: string) {
     if (this.hasStoryKind(kind)) {
-      this._legacydata[toKey(kind)].stories = {};
+      this._legacydata[toKey(kind) as Keys].stories = {};
     }
   }
 
   hasStoryKind(kind: string) {
-    return Boolean(this._legacydata[toKey(kind)]);
+    return Boolean(this._legacydata[toKey(kind) as Keys]);
   }
 
   hasStory(kind: string, name: string) {
@@ -348,6 +320,6 @@ export default class StoryStore extends EventEmitter {
   }
 
   clean() {
-    this.getStoryKinds().forEach(kind => delete this._legacydata[toKey(kind)]);
+    this.getStoryKinds().forEach(kind => delete this._legacydata[toKey(kind) as Keys]);
   }
 }

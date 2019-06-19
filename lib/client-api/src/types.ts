@@ -1,4 +1,7 @@
-type DataIndices =
+import { Channel } from '@storybook/channels';
+import Events from '@storybook/core-events';
+
+export type Keys =
   | 'addons-a11y-basebutton--default'
   | 'addons-a11y-basebutton--delayed-render'
   | 'addons-a11y-basebutton--disabled'
@@ -291,7 +294,7 @@ export interface IDecoratorParams {
 }
 
 export interface IDecoratorParamA11y {
-  config: {};
+  config: { [key: string]: any }; // this was empty, not sure what its type is
   options: { [key: string]: string };
 }
 
@@ -300,7 +303,7 @@ export interface IHierarchyObj {
   hierarchySeparator: RegExp;
   theme?: { base: string; brandTitle: string };
 }
-export interface IDecoratorParamOptions {
+export interface IDecoratorParamOptions extends Object {
   hierarchyRootSeparator: string;
   hierarchySeparator: RegExp;
   theme: {
@@ -308,26 +311,43 @@ export interface IDecoratorParamOptions {
     brandTitle: string;
   };
 }
-export interface IDecoratorParameters {
+
+export interface IDecoratorBackgrounds {
+  name: string;
+  value: string;
+  default?: true;
+}
+
+export interface IContext {
+  id: string;
+  kind: string;
+  name: string;
+  options: IDecoratorParamOptions;
+  parameters: DecoratorParameters;
+  story: string;
+}
+
+export interface DecoratorParameters {
   a11y: IDecoratorParamA11y;
-  backgrounds: [];
+  backgrounds: IDecoratorBackgrounds[];
   fileName?: string;
+  globalParameter?: string;
   options: IDecoratorParamOptions;
 }
 
-export interface IDecorator {
-  getDecorated: () => any;
+export type StoryFn = (p?: any) => any;
+export interface Decorator {
+  getDecorated: () => (args: any) => any;
   getOriginal: () => any;
   id: string;
   kind: string;
   name: string;
-  parameters: IDecoratorParameters;
+  parameters: DecoratorParameters;
   story: string;
-  storyFn: (p: any) => any;
-  [key: string]: IDecorator[keyof IDecorator];
+  storyFn: storyFn;
 }
 
-export type IData = { [K in DataIndices]: IDecorator };
+export type DecoratorData = { [K in Keys]: Decorator };
 export interface IModule {
   exports: any;
   id: string;
@@ -336,8 +356,9 @@ export interface IModule {
   hot: any;
 }
 
-export interface IClientApi {
+export interface ClientApi {
   add: (storyName: string, storyFn: () => any, parameters: any) => void;
+  _addons: { [key: string]: any };
   addDecorator: (decorator: any) => any;
   addDecorators: (parameters: any) => any;
   kind: string;
@@ -346,10 +367,53 @@ export interface ClientApiParams {
   storyStore: StoryStore;
   decorateStory: (storyFn: any, decorators: any) => any;
 }
+export type HandlerFunction = (...args: any[]) => void;
+export type DecoratorFunction = (args: any[]) => any[];
 
-export interface ClientApi {}
+export interface LegacyItem {
+  fileName: string;
+  index: number;
+  kind: string;
+  stories: { [key: string]: any };
+  revision?: number;
+  selection?: { storyId: string };
+}
+
+export type LegacyData = { [K in Keys]: LegacyItem };
 export interface StoryStore {
   fromId: (id: string) => any;
-  getIdOnPath: () => any;
   getSelection: () => void;
+  getRevision: () => number;
+  incrementRevision: () => void;
+  addLegacyStory: (p: DecoratorData) => void;
+  pushToManager: () => void;
+  addStory: (p: DecoratorData) => void;
+  remove: (id: string) => void;
+  setChannel: (channel: Channel) => void;
+  setSelection: (ref: any) => void;
+  emit?: (...args: any) => void;
+  raw?: () => [] | {};
+  extract: () => {};
+  getStoryWithContext: () => any;
+  getStoryFileName: (kind: string) => null | string;
+  getStories: (kind: string) => any[];
+  getStoryKinds: () => string[];
+  removeStoryKind: (kind: string) => void;
+  hasStoryKind: (kind: string) => boolean;
+  getStoryAndParameters: (
+    kind: string,
+    name: string
+  ) => {
+    story: any;
+    parameters: any;
+  };
+  getStory: (kind: string, name: string) => any;
+  hasStory: (kind: string, name: string) => boolean;
+  size: () => number;
+  clean: () => void;
+  _channel: Channel;
+  _data: DecoratorData;
+  _events?: Events;
+  _eventsCount?: number;
+  _legacyData?: LegacyData;
 }

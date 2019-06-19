@@ -1,15 +1,14 @@
 /* eslint no-underscore-dangle: 0 */
 import isPlainObject from 'is-plain-object';
 import { logger } from '@storybook/client-logger';
-import addons from '@storybook/addons';
+import addons, { Addon, AddonStore } from '@storybook/addons';
 import Events from '@storybook/core-events';
 import { toId } from '@storybook/router/utils';
 
 import mergeWith from 'lodash/mergeWith';
 import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
-import StoryStore from './story_store';
-import { ClientApiParams, IDecoratorParams, IHierarchyObj } from './types';
+import { ClientApiParams, IDecoratorParams, IHierarchyObj, StoryStore, StoryFn } from './types';
 import subscriptionsStore from './subscriptions_store';
 
 // merge with concatenating arrays, but no duplicates
@@ -32,7 +31,7 @@ const merge = (a: IHierarchyObj, b: IHierarchyObj) =>
     return undefined;
   });
 
-export const defaultDecorateStory = (storyFn, decorators) =>
+export const defaultDecorateStory = (storyFn: StoryFn, decorators: any[]) =>
   decorators.reduce(
     (decorated, decorator) => (context = {}) =>
       decorator(
@@ -57,7 +56,7 @@ const metaSubscription = () => {
     addons.getChannel().removeListener(Events.REGISTER_SUBSCRIPTION, subscriptionsStore.register);
 };
 
-const withSubscriptionTracking = storyFn => {
+const withSubscriptionTracking = (storyFn: StoryFn) => {
   if (!addons.hasChannel()) {
     return storyFn();
   }
@@ -68,12 +67,25 @@ const withSubscriptionTracking = storyFn => {
   return result;
 };
 
+interface Addons {
+  [key: string]: Addon;
+}
+
 export default class ClientApi {
   _storyStore: StoryStore;
+
+  _addons: Addons;
+
+  _globalDecorators: any[];
+
+  _globalParameters: { [key: string]: any };
+
+  _decorateStory: (storyFn: StoryFn, decorators: any) => any;
 
   constructor({ storyStore, decorateStory = defaultDecorateStory }: ClientApiParams) {
     this._storyStore = storyStore;
     this._addons = {};
+
     this._globalDecorators = [];
     this._globalParameters = {};
     this._decorateStory = decorateStory;
@@ -83,7 +95,7 @@ export default class ClientApi {
     }
   }
 
-  setAddon = addon => {
+  setAddon = (addon: any) => {
     this._addons = {
       ...this._addons,
       ...addon,
@@ -100,12 +112,9 @@ export default class ClientApi {
       this._globalParameters.options
     );
 
-  addDecorator = decorator => {
-    this._globalDecorators.push(decorator);
-  };
+  addDecorator = (decorator: () => any) => this._globalDecorators.push(decorator);
 
   addParameters = (parameters: IDecoratorParams[] | { globalParameter: 'string' }) => {
-    console.log('parameters: ', parameters);
     this._globalParameters = {
       ...this._globalParameters,
       ...parameters,
@@ -130,11 +139,11 @@ export default class ClientApi {
         `Missing 'module' parameter for story with a kind of '${kind}'. It will break your HMR`
       );
     }
-    console.log('storyStore: ', this._storyStore);
+
     if (m && m.hot && m.hot.dispose) {
       m.hot.dispose(() => {
         const { _storyStore } = this;
-        _storyStore.remove();
+        _storyStore.remove(undefined);
 
         // TODO: refactor this
         // Maybe not needed at all if stories can just be overwriten ?
@@ -143,7 +152,7 @@ export default class ClientApi {
       });
     }
 
-    const localDecorators = [];
+    const localDecorators: any[] | (() => void)[] = [];
     let localParameters = {};
     let hasAdded = false;
     const api = {
@@ -153,15 +162,16 @@ export default class ClientApi {
     // apply addons
     Object.keys(this._addons).forEach(name => {
       const addon = this._addons[name];
-      api[name] = (...args) => {
+      api[name] = (...args: any[]) => {
         addon.apply(api, args);
         return api;
       };
     });
 
-    api.add = (storyName, storyFn, parameters) => {
+    api.add = (storyName: string, storyFn: StoryFn, parameters: any) => {
       hasAdded = true;
       const { _globalParameters, _globalDecorators } = this;
+
       const id = toId(kind, storyName);
 
       if (typeof storyName !== 'string') {
@@ -238,7 +248,7 @@ This is probably not what you intended. Read more here: https://github.com/story
       return api;
     };
 
-    api.addParameters = parameters => {
+    api.addParameters = (parameters: any) => {
       localParameters = { ...localParameters, ...parameters };
       return api;
     };
@@ -252,7 +262,7 @@ This is probably not what you intended. Read more here: https://github.com/story
       const fileName = this._storyStore.getStoryFileName(kind);
 
       const stories = this._storyStore.getStories(kind).map(name => {
-        const render = this._storyStore.getStoryWithContext(kind, name);
+        const render = this._storyStore.getStoryWithContext();
         return { name, render };
       });
 

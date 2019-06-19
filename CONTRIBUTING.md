@@ -27,7 +27,6 @@ To test your project against the current latest version of storybook, you can cl
 ```sh
 git clone https://github.com/storybookjs/storybook.git
 cd storybook
-yarn install
 yarn bootstrap
 ```
 
@@ -139,7 +138,6 @@ A good way to do that is using the example `cra-kitchen-sink` app embedded in th
 # Download and build this repository:
 git clone https://github.com/storybookjs/storybook.git
 cd storybook
-yarn install
 yarn bootstrap --core
 
 # make changes to try and reproduce the problem, such as adding components + stories
@@ -250,8 +248,6 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 - `discussion`s should be closed at a maintainer's discretion.
 
 ## Development Guide
-
-> If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/storybookjs/storybook/tree/master/lib/ui) page.
 
 ### Prerequisites
 
