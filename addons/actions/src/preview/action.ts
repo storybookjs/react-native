@@ -2,9 +2,11 @@ import uuid from 'uuid/v1';
 import { addons } from '@storybook/addons';
 import { EVENT_ID } from '../constants';
 import { ActionDisplay, ActionOptions, HandlerFunction } from '../models';
+import { config } from './configureActions';
 
 export function action(name: string, options: ActionOptions = {}): HandlerFunction {
   const actionOptions = {
+    ...config,
     ...options,
   };
 

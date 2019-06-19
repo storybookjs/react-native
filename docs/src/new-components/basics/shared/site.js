@@ -46,6 +46,7 @@ export const url = {
     home: `${docsUrl}/basics/introduction/`,
     addonInstruction: `${docsUrl}/addons/writing-addons/`,
   },
+  tutorials: `https://www.learnstorybook.com/`,
   addons: `${homepageUrl}/addons/`,
   community: `${homepageUrl}/community/`,
   useCases: `${homepageUrl}/use-cases/`,
