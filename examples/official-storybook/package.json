@@ -41,6 +41,7 @@
     "@storybook/core-events": "5.2.0-alpha.23",
     "@storybook/node-logger": "5.2.0-alpha.23",
     "@storybook/react": "5.2.0-alpha.23",
+    "@storybook/source-loader": "5.2.0-alpha.23",
     "@storybook/theming": "5.2.0-alpha.23",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",

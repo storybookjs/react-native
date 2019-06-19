@@ -40,6 +40,7 @@
     "@storybook/addon-viewport": "5.2.0-alpha.23",
     "@storybook/addons": "5.2.0-alpha.23",
     "@storybook/rax": "5.2.0-alpha.23",
+    "@storybook/source-loader": "5.2.0-alpha.23",
     "babel-eslint": "^8.2.2",
     "babel-preset-rax": "^1.0.0-beta.0",
     "rax-scripts": "^1.0.0-beta.10",
