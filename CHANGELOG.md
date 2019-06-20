@@ -1,3 +1,16 @@
+## 5.1.9 (June 20, 2019)
+
+### Bug Fixes
+
+* Core: Fix JSON babel config error reporting ([#7104](https://github.com/storybookjs/storybook/pull/7104))
+* UI: Fix about page version check message ([#7105](https://github.com/storybookjs/storybook/pull/7105))
+
+### Dependency Upgrades
+
+* Add missing dependencies to ui/react ([#7081](https://github.com/storybookjs/storybook/pull/7081))
+* UPGRADE lazy-universal-dotenv ([#7151](https://github.com/storybookjs/storybook/pull/7151))
+* Make compatible with yarn Pnp ([#6922](https://github.com/storybookjs/storybook/pull/6922))
+
 ## 5.1.8 (June 14, 2019)
 
 ### Bug Fixes
