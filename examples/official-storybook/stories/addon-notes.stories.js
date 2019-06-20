@@ -30,6 +30,31 @@ storiesOf('Addons|Notes', module)
     }
   )
 ~~~
+
+
+## Code examples for syntax-highlighter to deal with
+
+### classes in javascript
+~~~javascript
+export class FromComponent {
+  form = new FormControl({
+    searchTerm: new FromControl(''),
+    searchDate: new FromControl(''),
+    endDate: new FromControl(''),
+  })
+}
+~~~
+
+### html with special formatting
+~~~html
+<foo-outer property-a="value"
+           property-b="value"
+           property-c="value">
+  <foo-inner property-a="value"
+             property-b="value" />
+</foo-outer>
+~~~
+
 `;
 
 const markdownTable = `

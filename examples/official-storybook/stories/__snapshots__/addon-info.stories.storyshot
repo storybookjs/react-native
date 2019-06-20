@@ -1916,6 +1916,539 @@ exports[`Storyshots Addons|Info/Markdown Displays Markdown in description 1`] = 
           <div
             style="font-size:15px"
           >
+            classes in javascript
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-2"
+              data-simplebar="true"
+            >
+              <div
+                class="simplebar-wrapper"
+              >
+                <div
+                  class="simplebar-height-auto-observer-wrapper"
+                >
+                  <div
+                    class="simplebar-height-auto-observer"
+                  />
+                </div>
+                <div
+                  class="simplebar-mask"
+                >
+                  <div
+                    class="simplebar-offset"
+                  >
+                    <div
+                      class="simplebar-content-wrapper"
+                    >
+                      <div
+                        class="simplebar-content"
+                      >
+                        <pre
+                          class="hljs emotion-1"
+                        >
+                          <code
+                            class="emotion-0"
+                          >
+                            <span
+                              class="token keyword"
+                            >
+                              export
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              class
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromComponent
+                            </span>
+                             
+                            <span
+                              class="token punctuation"
+                            >
+                              {
+                            </span>
+                            
+form 
+                            <span
+                              class="token operator"
+                            >
+                              =
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FormControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              {
+                            </span>
+                            
+  searchTerm
+                            <span
+                              class="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token string"
+                            >
+                              ''
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+  searchDate
+                            <span
+                              class="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token string"
+                            >
+                              ''
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+  endDate
+                            <span
+                              class="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token string"
+                            >
+                              ''
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+
+                            <span
+                              class="token punctuation"
+                            >
+                              }
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            
+
+                            <span
+                              class="token punctuation"
+                            >
+                              }
+                            </span>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="simplebar-placeholder"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-horizontal"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-vertical"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <button
+                class="emotion-3"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <div
+            style="font-size:15px"
+          >
+            html with special formatting
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-2"
+              data-simplebar="true"
+            >
+              <div
+                class="simplebar-wrapper"
+              >
+                <div
+                  class="simplebar-height-auto-observer-wrapper"
+                >
+                  <div
+                    class="simplebar-height-auto-observer"
+                  />
+                </div>
+                <div
+                  class="simplebar-mask"
+                >
+                  <div
+                    class="simplebar-offset"
+                  >
+                    <div
+                      class="simplebar-content-wrapper"
+                    >
+                      <div
+                        class="simplebar-content"
+                      >
+                        <pre
+                          class="hljs emotion-1"
+                        >
+                          <code
+                            class="emotion-0"
+                          >
+                            <span
+                              class="token tag"
+                            >
+                              <span
+                                class="token tag"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  &lt;
+                                </span>
+                                foo-outer
+                              </span>
+                               
+                              <span
+                                class="token attr-name"
+                              >
+                                property-a
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              
+
+                              <span
+                                class="token attr-name"
+                              >
+                                property-b
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              
+
+                              <span
+                                class="token attr-name"
+                              >
+                                property-c
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              <span
+                                class="token punctuation"
+                              >
+                                &gt;
+                              </span>
+                            </span>
+                            
+  
+                            <span
+                              class="token tag"
+                            >
+                              <span
+                                class="token tag"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  &lt;
+                                </span>
+                                foo-inner
+                              </span>
+                               
+                              <span
+                                class="token attr-name"
+                              >
+                                property-a
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              
+  
+                              <span
+                                class="token attr-name"
+                              >
+                                property-b
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                               
+                              <span
+                                class="token punctuation"
+                              >
+                                /&gt;
+                              </span>
+                            </span>
+                            
+
+                            <span
+                              class="token tag"
+                            >
+                              <span
+                                class="token tag"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  &lt;/
+                                </span>
+                                foo-outer
+                              </span>
+                              <span
+                                class="token punctuation"
+                              >
+                                &gt;
+                              </span>
+                            </span>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="simplebar-placeholder"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-horizontal"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-vertical"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <button
+                class="emotion-3"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <div
+            style="font-size:15px"
+          >
             Maybe include a 
             <a
               href="http://storybook.js.org"
@@ -5240,6 +5773,539 @@ exports[`Storyshots Addons|Info/Parameters Overwrite the parameters with markdow
                               class="token punctuation"
                             >
                               ;
+                            </span>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="simplebar-placeholder"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-horizontal"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-vertical"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <button
+                class="emotion-3"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <div
+            style="font-size:15px"
+          >
+            classes in javascript
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-2"
+              data-simplebar="true"
+            >
+              <div
+                class="simplebar-wrapper"
+              >
+                <div
+                  class="simplebar-height-auto-observer-wrapper"
+                >
+                  <div
+                    class="simplebar-height-auto-observer"
+                  />
+                </div>
+                <div
+                  class="simplebar-mask"
+                >
+                  <div
+                    class="simplebar-offset"
+                  >
+                    <div
+                      class="simplebar-content-wrapper"
+                    >
+                      <div
+                        class="simplebar-content"
+                      >
+                        <pre
+                          class="hljs emotion-1"
+                        >
+                          <code
+                            class="emotion-0"
+                          >
+                            <span
+                              class="token keyword"
+                            >
+                              export
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              class
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromComponent
+                            </span>
+                             
+                            <span
+                              class="token punctuation"
+                            >
+                              {
+                            </span>
+                            
+form 
+                            <span
+                              class="token operator"
+                            >
+                              =
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FormControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              {
+                            </span>
+                            
+  searchTerm
+                            <span
+                              class="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token string"
+                            >
+                              ''
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+  searchDate
+                            <span
+                              class="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token string"
+                            >
+                              ''
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+  endDate
+                            <span
+                              class="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token string"
+                            >
+                              ''
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+
+                            <span
+                              class="token punctuation"
+                            >
+                              }
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            
+
+                            <span
+                              class="token punctuation"
+                            >
+                              }
+                            </span>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="simplebar-placeholder"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-horizontal"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-vertical"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <button
+                class="emotion-3"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <div
+            style="font-size:15px"
+          >
+            html with special formatting
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-2"
+              data-simplebar="true"
+            >
+              <div
+                class="simplebar-wrapper"
+              >
+                <div
+                  class="simplebar-height-auto-observer-wrapper"
+                >
+                  <div
+                    class="simplebar-height-auto-observer"
+                  />
+                </div>
+                <div
+                  class="simplebar-mask"
+                >
+                  <div
+                    class="simplebar-offset"
+                  >
+                    <div
+                      class="simplebar-content-wrapper"
+                    >
+                      <div
+                        class="simplebar-content"
+                      >
+                        <pre
+                          class="hljs emotion-1"
+                        >
+                          <code
+                            class="emotion-0"
+                          >
+                            <span
+                              class="token tag"
+                            >
+                              <span
+                                class="token tag"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  &lt;
+                                </span>
+                                foo-outer
+                              </span>
+                               
+                              <span
+                                class="token attr-name"
+                              >
+                                property-a
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              
+
+                              <span
+                                class="token attr-name"
+                              >
+                                property-b
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              
+
+                              <span
+                                class="token attr-name"
+                              >
+                                property-c
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              <span
+                                class="token punctuation"
+                              >
+                                &gt;
+                              </span>
+                            </span>
+                            
+  
+                            <span
+                              class="token tag"
+                            >
+                              <span
+                                class="token tag"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  &lt;
+                                </span>
+                                foo-inner
+                              </span>
+                               
+                              <span
+                                class="token attr-name"
+                              >
+                                property-a
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              
+  
+                              <span
+                                class="token attr-name"
+                              >
+                                property-b
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                               
+                              <span
+                                class="token punctuation"
+                              >
+                                /&gt;
+                              </span>
+                            </span>
+                            
+
+                            <span
+                              class="token tag"
+                            >
+                              <span
+                                class="token tag"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  &lt;/
+                                </span>
+                                foo-outer
+                              </span>
+                              <span
+                                class="token punctuation"
+                              >
+                                &gt;
+                              </span>
                             </span>
                           </code>
                         </pre>
@@ -10134,6 +11200,539 @@ exports[`Storyshots Addons|Info/deprecated Displays Markdown in description 1`] 
                               class="token punctuation"
                             >
                               ;
+                            </span>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="simplebar-placeholder"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-horizontal"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-vertical"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <button
+                class="emotion-3"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <div
+            style="font-size:15px"
+          >
+            classes in javascript
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-2"
+              data-simplebar="true"
+            >
+              <div
+                class="simplebar-wrapper"
+              >
+                <div
+                  class="simplebar-height-auto-observer-wrapper"
+                >
+                  <div
+                    class="simplebar-height-auto-observer"
+                  />
+                </div>
+                <div
+                  class="simplebar-mask"
+                >
+                  <div
+                    class="simplebar-offset"
+                  >
+                    <div
+                      class="simplebar-content-wrapper"
+                    >
+                      <div
+                        class="simplebar-content"
+                      >
+                        <pre
+                          class="hljs emotion-1"
+                        >
+                          <code
+                            class="emotion-0"
+                          >
+                            <span
+                              class="token keyword"
+                            >
+                              export
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              class
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromComponent
+                            </span>
+                             
+                            <span
+                              class="token punctuation"
+                            >
+                              {
+                            </span>
+                            
+form 
+                            <span
+                              class="token operator"
+                            >
+                              =
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FormControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              {
+                            </span>
+                            
+  searchTerm
+                            <span
+                              class="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token string"
+                            >
+                              ''
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+  searchDate
+                            <span
+                              class="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token string"
+                            >
+                              ''
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+  endDate
+                            <span
+                              class="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              class="token keyword"
+                            >
+                              new
+                            </span>
+                             
+                            <span
+                              class="token class-name"
+                            >
+                              FromControl
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              class="token string"
+                            >
+                              ''
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+
+                            <span
+                              class="token punctuation"
+                            >
+                              }
+                            </span>
+                            <span
+                              class="token punctuation"
+                            >
+                              )
+                            </span>
+                            
+
+                            <span
+                              class="token punctuation"
+                            >
+                              }
+                            </span>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="simplebar-placeholder"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-horizontal"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+              <div
+                class="simplebar-track simplebar-vertical"
+              >
+                <div
+                  class="simplebar-scrollbar"
+                />
+              </div>
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <button
+                class="emotion-3"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <div
+            style="font-size:15px"
+          >
+            html with special formatting
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-2"
+              data-simplebar="true"
+            >
+              <div
+                class="simplebar-wrapper"
+              >
+                <div
+                  class="simplebar-height-auto-observer-wrapper"
+                >
+                  <div
+                    class="simplebar-height-auto-observer"
+                  />
+                </div>
+                <div
+                  class="simplebar-mask"
+                >
+                  <div
+                    class="simplebar-offset"
+                  >
+                    <div
+                      class="simplebar-content-wrapper"
+                    >
+                      <div
+                        class="simplebar-content"
+                      >
+                        <pre
+                          class="hljs emotion-1"
+                        >
+                          <code
+                            class="emotion-0"
+                          >
+                            <span
+                              class="token tag"
+                            >
+                              <span
+                                class="token tag"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  &lt;
+                                </span>
+                                foo-outer
+                              </span>
+                               
+                              <span
+                                class="token attr-name"
+                              >
+                                property-a
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              
+
+                              <span
+                                class="token attr-name"
+                              >
+                                property-b
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              
+
+                              <span
+                                class="token attr-name"
+                              >
+                                property-c
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              <span
+                                class="token punctuation"
+                              >
+                                &gt;
+                              </span>
+                            </span>
+                            
+  
+                            <span
+                              class="token tag"
+                            >
+                              <span
+                                class="token tag"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  &lt;
+                                </span>
+                                foo-inner
+                              </span>
+                               
+                              <span
+                                class="token attr-name"
+                              >
+                                property-a
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              
+  
+                              <span
+                                class="token attr-name"
+                              >
+                                property-b
+                              </span>
+                              <span
+                                class="token attr-value"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  =
+                                </span>
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                                value
+                                <span
+                                  class="token punctuation"
+                                >
+                                  "
+                                </span>
+                              </span>
+                               
+                              <span
+                                class="token punctuation"
+                              >
+                                /&gt;
+                              </span>
+                            </span>
+                            
+
+                            <span
+                              class="token tag"
+                            >
+                              <span
+                                class="token tag"
+                              >
+                                <span
+                                  class="token punctuation"
+                                >
+                                  &lt;/
+                                </span>
+                                foo-outer
+                              </span>
+                              <span
+                                class="token punctuation"
+                              >
+                                &gt;
+                              </span>
                             </span>
                           </code>
                         </pre>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { SyntaxHighlighter } from '@storybook/components';
 
 const Code = ({ language, code }) => (
-  <SyntaxHighlighter bordered copyable language={language}>
+  <SyntaxHighlighter format={false} bordered copyable language={language}>
     {code}
   </SyntaxHighlighter>
 );
