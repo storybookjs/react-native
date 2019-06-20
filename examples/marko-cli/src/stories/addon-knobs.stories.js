@@ -3,6 +3,9 @@ import { withKnobs, text, number } from '@storybook/addon-knobs';
 import Hello from '../components/hello/index.marko';
 
 storiesOf('Addons|Knobs/Hello', module)
+  .addParameters({
+    component: Hello,
+  })
   .addParameters({ options: { panelPosition: 'right' } })
   .addDecorator(withKnobs)
   .add('Simple', () => {

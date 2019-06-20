@@ -12,6 +12,9 @@ const image = 'http://placehold.it/350x150';
 const href = 'javascript:void 0';
 
 storiesOf('Addons|A11y/BaseButton', module)
+  .addParameters({
+    component: BaseButton,
+  })
   .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
   .add('Default', () => <BaseButton label="" />)
   .add('Label', () => <BaseButton label={text} />)
@@ -27,6 +30,9 @@ storiesOf('Addons|A11y/BaseButton', module)
   ));
 
 storiesOf('Addons|A11y/Button', module)
+  .addParameters({
+    component: Button,
+  })
   .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
   .add('Default', () => <Button />)
   .add('Content', () => <Button content={text} />)
@@ -35,6 +41,9 @@ storiesOf('Addons|A11y/Button', module)
   .add('Invalid contrast', () => <Button contrast="wrong" content={text} />);
 
 storiesOf('Addons|A11y/Form', module)
+  .addParameters({
+    component: Form,
+  })
   .addParameters({ options: { selectedPanel: 'storybook/a11y/panel' } })
   .add('Without Label', () => (
     <Form.Field label="">

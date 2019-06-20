@@ -13,6 +13,9 @@ export const links = [
 ];
 
 storiesOf('basics/tooltip/TooltipLinkList', module)
+  .addParameters({
+    component: TooltipLinkList,
+  })
   .addDecorator(storyFn => (
     <div style={{ height: '300px' }}>
       <WithTooltip placement="top" trigger="click" startOpen tooltip={storyFn()}>

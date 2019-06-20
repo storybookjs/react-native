@@ -229,6 +229,9 @@ storiesOf('Addons|Info/Options.styles', module)
   });
 
 storiesOf('Addons|Info/Options.TableComponent', module)
+  .addParameters({
+    component: TableComponent,
+  })
   .addDecorator(withInfo)
   .add('Use a custom component for the table', () => <BaseButton label="Button" />, {
     info: {
