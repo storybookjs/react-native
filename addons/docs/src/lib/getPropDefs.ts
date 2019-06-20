@@ -2,12 +2,13 @@
 
 import PropTypes from 'prop-types';
 import { PropDef } from '@storybook/components';
+import { Component } from '../blocks/shared';
 
 interface PropDefMap {
   [p: string]: PropDef;
 }
 
-export type PropDefGetter = (type: any) => PropDef[] | null;
+export type PropDefGetter = (type: Component) => PropDef[] | null;
 
 const propTypesMap = new Map();
 
