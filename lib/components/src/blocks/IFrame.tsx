@@ -27,7 +27,7 @@ export class IFrame extends React.Component<IFrameProps> {
   }
 
   shouldComponentUpdate(nextProps: IFrameProps) {
-    const { src, scale } = nextProps;
+    const { scale } = nextProps;
     // eslint-disable-next-line react/destructuring-assignment
     if (scale !== this.props.scale) {
       this.setIframeBodyStyle({
@@ -61,11 +61,3 @@ export class IFrame extends React.Component<IFrameProps> {
     );
   }
 }
-
-// IFrame.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   title: PropTypes.string.isRequired,
-//   src: PropTypes.string.isRequired,
-//   allowFullScreen: PropTypes.bool.isRequired,
-//   scale: PropTypes.number.isRequired,
-// };

@@ -3,13 +3,25 @@ import { Source, SourceProps as PureSourceProps, SourceError } from '@storybook/
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { CURRENT_SELECTION } from './shared';
 
-interface SourceProps {
+interface CommonProps {
   language?: string;
-  code?: string;
-  id?: string;
-  ids?: string[];
-  name?: string;
 }
+
+type SingleSourceProps = {
+  id: string;
+} & CommonProps;
+
+type MultiSourceProps = {
+  ids: string[];
+} & CommonProps;
+
+type CodeProps = {
+  code: string;
+} & CommonProps;
+
+type NoneProps = CommonProps;
+
+type SourceProps = SingleSourceProps | MultiSourceProps | CodeProps | NoneProps;
 
 interface Location {
   line: number;
@@ -41,13 +53,17 @@ const extract = (targetId: string, { source, locationsMap }: StorySource) => {
 };
 
 export const getSourceProps = (
-  { language, code, name, id, ids }: SourceProps,
-  { id: currentId, mdxKind, storyStore }: DocsContextProps
+  props: SourceProps,
+  { id: currentId, storyStore }: DocsContextProps
 ): PureSourceProps => {
-  let source = code; // prefer user-specified code
+  const codeProps = props as CodeProps;
+  const singleProps = props as SingleSourceProps;
+  const multiProps = props as MultiSourceProps;
+
+  let source = codeProps.code; // prefer user-specified code
   if (!source) {
-    const targetId = id === CURRENT_SELECTION ? currentId : id;
-    const targetIds = ids || [targetId];
+    const targetId = singleProps.id === CURRENT_SELECTION ? currentId : singleProps.id;
+    const targetIds = multiProps.ids || [targetId];
     source = targetIds
       .map(sourceId => {
         const data = storyStore.fromId(sourceId);
@@ -60,7 +76,7 @@ export const getSourceProps = (
       .join('\n\n');
   }
   return source
-    ? { code: source, language: language || 'jsx' }
+    ? { code: source, language: props.language || 'jsx' }
     : { error: SourceError.SOURCE_UNAVAILABLE };
 };
 

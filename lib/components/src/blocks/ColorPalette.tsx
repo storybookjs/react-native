@@ -109,6 +109,10 @@ interface ColorProps {
   colors: string[];
 }
 
+/**
+ * A single color row your styleguide showing title, subtitle and one or more colors, used
+ * as a child of `ColorPalette`.
+ */
 export const ColorItem: React.FunctionComponent<ColorProps> = ({ title, subtitle, colors }) => {
   return (
     <Item>
@@ -143,6 +147,10 @@ export const ColorItem: React.FunctionComponent<ColorProps> = ({ title, subtitle
   );
 };
 
+/**
+ * Styleguide documentation for colors, including names, captions, and color swatches,
+ * all specified as `ColorItem` children of this wrapper component.
+ */
 export const ColorPalette: React.FunctionComponent = ({ children, ...props }) => {
   return (
     <List {...props}>

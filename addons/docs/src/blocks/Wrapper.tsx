@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface WrapperProps {
-  children: React.ReactElement;
+  children: React.ReactNode;
 }
 
 export const Wrapper: React.FunctionComponent<WrapperProps> = ({ children }) => (

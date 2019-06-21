@@ -1,12 +1,12 @@
 import React from 'react';
 import { PropsTable, PropsTableError, PropsTableProps, PropDef } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
-import { CURRENT_SELECTION } from './shared';
+import { Component, CURRENT_SELECTION } from './shared';
 import { getPropDefs as autoPropDefs, PropDefGetter } from '../lib/getPropDefs';
 
 interface PropsProps {
   exclude?: string[];
-  of: any;
+  of: '.' | Component;
 }
 
 const inferPropDefs = (framework: string): PropDefGetter | null => {

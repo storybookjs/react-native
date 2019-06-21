@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Storyshots Addons|Docs default 1`] = `
-<div>
-  Click the docs tab to see the docs
-</div>
-`;

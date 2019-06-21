@@ -30,6 +30,7 @@ const Name = styled.span({ fontWeight: 'bold' });
 const Required = styled.span(({ theme }) => ({
   color: theme.color.negative,
   fontFamily: theme.typography.fonts.mono,
+  cursor: 'help',
 }));
 
 const StyledPropDef = styled.div(({ theme }) => ({

@@ -5,12 +5,20 @@ import { CURRENT_SELECTION } from './shared';
 
 import { DocsContext, DocsContextProps } from './DocsContext';
 
-interface StoryProps {
-  id?: string;
-  name?: string;
-  children?: React.ReactElement;
+interface CommonProps {
   height?: string;
 }
+
+type StoryDefProps = {
+  name: string;
+  children: React.ReactNode;
+} & CommonProps;
+
+type StoryRefProps = {
+  id?: string;
+} & CommonProps;
+
+export type StoryProps = StoryDefProps | StoryRefProps;
 
 const inferInlineStories = (framework: string): boolean => {
   switch (framework) {
@@ -22,10 +30,15 @@ const inferInlineStories = (framework: string): boolean => {
 };
 
 export const getStoryProps = (
-  { id, name, height }: StoryProps,
+  props: StoryProps,
   { id: currentId, storyStore, parameters, mdxKind }: DocsContextProps
 ): PureStoryProps => {
-  const previewId = id === CURRENT_SELECTION ? currentId : id || (name && toId(mdxKind, name));
+  const { id } = props as StoryRefProps;
+  const { name } = props as StoryDefProps;
+  const inputId = id === CURRENT_SELECTION ? currentId : id;
+  const previewId = inputId || toId(mdxKind, name);
+
+  const { height } = props;
   const data = storyStore.fromId(previewId);
   const { framework = null } = parameters || {};
   const { inlineStories = inferInlineStories(framework), iframeHeight = undefined } =
