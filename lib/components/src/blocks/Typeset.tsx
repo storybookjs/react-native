@@ -39,6 +39,10 @@ export interface TypesetProps {
   sampleText?: string;
 }
 
+/**
+ * Convenient tyleguide documentation showing examples of type
+ * with different sizes and weights and configurable sample text.
+ */
 export const Typeset: React.FunctionComponent<TypesetProps> = ({
   fontSizes,
   fontWeight,

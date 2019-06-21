@@ -53,6 +53,11 @@ const PreviewContainer = styled.div({
   margin: '25px 0 40px',
 });
 
+/**
+ * A preview component for showing one or more component `Story`
+ * items. The preview also shows the source for the componnent
+ * as a drop-down.
+ */
 const Preview: React.FunctionComponent<PreviewProps> = ({
   isColumn,
   columns,

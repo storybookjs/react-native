@@ -43,6 +43,9 @@ interface IconItemProps {
   name: string;
 }
 
+/**
+ * An individual icon with a caption and an example (passed as `children`).
+ */
 export const IconItem: React.FunctionComponent<IconItemProps> = ({ name, children }) => {
   return (
     <Item>
@@ -52,6 +55,9 @@ export const IconItem: React.FunctionComponent<IconItemProps> = ({ name, childre
   );
 };
 
+/**
+ * Show a grid of icons, as specified by `IconItem`.
+ */
 export const IconGallery: React.FunctionComponent = ({ children, ...props }) => {
   return <List {...props}>{children}</List>;
 };

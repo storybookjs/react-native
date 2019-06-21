@@ -28,6 +28,9 @@ export interface SourceProps {
   dark?: boolean;
 }
 
+/**
+ * Syntax-highlighted source code for a component (or anything!)
+ */
 const Source: React.FunctionComponent<SourceProps> = ({
   language,
   code,

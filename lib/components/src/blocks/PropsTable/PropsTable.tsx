@@ -127,6 +127,10 @@ export interface PropsTableProps {
   // FIXME: table options
 }
 
+/**
+ * Display the props for a component as a props table. Each row is a collection of
+ * PropDefs, usually derived from docgen info for the component.
+ */
 const PropsTable: React.FunctionComponent<PropsTableProps> = ({ rows, error = null }) => {
   if (error) {
     return <EmptyBlock>{error}</EmptyBlock>;

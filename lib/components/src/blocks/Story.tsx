@@ -57,6 +57,10 @@ const IFrameStory: React.FunctionComponent<IFrameStoryProps> = ({
   </div>
 );
 
+/**
+ * A story element, either renderend inline or in an iframe,
+ * with configurable height.
+ */
 const Story: React.FunctionComponent<StoryProps> = ({
   error,
   height,
