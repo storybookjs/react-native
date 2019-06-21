@@ -1,5 +1,7 @@
 # Migration
 
+- [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
+  - [Docs mode docgen](#docs-mode-docgen)
 - [From version 5.0.x to 5.1.x](#from-version-50x-to-51x)
   - [React native server](#react-native-server)
   - [Angular 7](#angular-7)
@@ -55,6 +57,15 @@
   - [Webpack upgrade](#webpack-upgrade)
   - [Packages renaming](#packages-renaming)
   - [Deprecated embedded addons](#deprecated-embedded-addons)
+
+## From version 5.1.x to 5.2.x
+
+### Docs mode docgen
+
+This isn't a breaking change per se, because `addon-docs` is a new feature. However it's intended to replace `addon-info`, so if you're migrating from `addon-info` there are a few things you should know:
+
+1. Support for only one prop table
+2. Prop table docgen info should be stored on the component and not in the global variable `STORYBOOK_REACT_CLASSES` as before.
 
 ## From version 5.0.x to 5.1.x
 
