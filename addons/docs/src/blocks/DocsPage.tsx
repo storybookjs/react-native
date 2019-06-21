@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { parseKind } from '@storybook/router';
+import { styled } from '@storybook/theming';
 import { DocsPage as PureDocsPage, DocsPageProps } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { DocsContainer } from './DocsContainer';
@@ -51,6 +52,9 @@ const getDocsStories = (type: DocsStoriesType, componentStories: StoryData[]): D
   }));
 };
 
+const StoriesHeading = styled.h2();
+const StoryHeading = styled.h3();
+
 const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   id,
   name,
@@ -58,7 +62,7 @@ const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   expanded = true,
 }) => (
   <>
-    {expanded && <h3>{name}</h3>}
+    {expanded && <StoryHeading>{name}</StoryHeading>}
     {expanded && description && <Description markdown={description} />}
     <Preview>
       <Story id={id} />
@@ -79,7 +83,7 @@ const DocsStories: React.FunctionComponent<DocsStoriesProps> = ({ type = DocsSto
       const expanded = type !== DocsStoriesType.PRIMARY;
       return (
         <>
-          {expanded && <h2>Stories</h2>}
+          {expanded && <StoriesHeading>Stories</StoriesHeading>}
           {stories.map(s => (
             <DocsStory key={s.id} expanded={expanded} {...s} />
           ))}
