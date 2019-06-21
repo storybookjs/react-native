@@ -24,7 +24,7 @@ const StyledTextarea = styled(Textarea)(
     minHeight: '32px',
     resize: 'vertical',
   },
-  ({ shown }) =>
+  ({ shown }: any) =>
     shown
       ? {}
       : {
@@ -67,7 +67,7 @@ const Label = styled.label({
   textAlign: 'right',
   width: 100,
   fontWeight: '600',
-});
+} as any);
 
 const Wrapper = styled.div({
   display: 'flex',
@@ -77,7 +77,7 @@ const Wrapper = styled.div({
   width: '100%',
 });
 
-function getJSONFromString(str) {
+function getJSONFromString(str: any) {
   try {
     return JSON.parse(str);
   } catch (e) {
@@ -85,7 +85,7 @@ function getJSONFromString(str) {
   }
 }
 
-class Item extends Component {
+class Item extends Component<any, any> {
   static propTypes = {
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -98,12 +98,12 @@ class Item extends Component {
     payload: {},
   };
 
-  state = {
+  state: any = {
     isTextAreaShowed: false,
   };
 
-  onChange = ({ target: { value } }) => {
-    const newState = {
+  onChange = ({ target: { value } }: any) => {
+    const newState: any = {
       payloadString: value,
     };
 
@@ -128,12 +128,12 @@ class Item extends Component {
   };
 
   onToggleEditClick = () => {
-    this.setState(({ isTextAreaShowed }) => ({
+    this.setState(({ isTextAreaShowed }: any) => ({
       isTextAreaShowed: !isTextAreaShowed,
     }));
   };
 
-  static getDerivedStateFromProps = ({ payload }, { prevPayload }) => {
+  static getDerivedStateFromProps = ({ payload }: any, { prevPayload }: any) => {
     if (!isEqual(payload, prevPayload)) {
       const payloadString = json.plain(payload);
       const refinedPayload = getJSONFromString(payloadString);

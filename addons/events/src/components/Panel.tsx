@@ -13,7 +13,7 @@ const Wrapper = styled.div({
   minHeight: '100%',
 });
 
-export default class EventsPanel extends Component {
+export default class EventsPanel extends Component<any, any> {
   static propTypes = {
     active: PropTypes.bool.isRequired,
     api: PropTypes.shape({
@@ -23,7 +23,7 @@ export default class EventsPanel extends Component {
     }).isRequired,
   };
 
-  state = {
+  state: any = {
     events: [],
   };
 
@@ -39,11 +39,11 @@ export default class EventsPanel extends Component {
     api.off(EVENTS.ADD, this.onAdd);
   }
 
-  onAdd = events => {
+  onAdd = (events: any) => {
     this.setState({ events });
   };
 
-  onEmit = event => {
+  onEmit = (event: any) => {
     const { api } = this.props;
 
     api.emit(EVENTS.EMIT, event);
@@ -54,7 +54,7 @@ export default class EventsPanel extends Component {
     const { active } = this.props;
     return active ? (
       <Wrapper>
-        {events.map(event => (
+        {events.map((event: any) => (
           <Event key={event.name} {...event} onEmit={this.onEmit} />
         ))}
       </Wrapper>

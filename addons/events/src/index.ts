@@ -4,10 +4,10 @@ import deprecate from 'util-deprecate';
 
 import { EVENTS } from './constants';
 
-let prevEvents;
-let currentEmit;
+let prevEvents: any;
+let currentEmit: any;
 
-const onEmit = event => {
+const onEmit = (event: any) => {
   currentEmit(event.name, event.payload);
 };
 
@@ -21,7 +21,7 @@ const subscription = () => {
   };
 };
 
-const addEvents = ({ emit, events }) => {
+const addEvents = ({ emit, events }: any) => {
   if (prevEvents !== events) {
     addons.getChannel().emit(EVENTS.ADD, events);
     prevEvents = events;
@@ -30,16 +30,16 @@ const addEvents = ({ emit, events }) => {
   addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
 };
 
-const WithEvents = deprecate(({ children, ...options }) => {
+const WithEvents = deprecate(({ children, ...options }: any) => {
   addEvents(options);
   return children;
 }, `<WithEvents> usage is deprecated, use .addDecorator(withEvents({emit, events})) instead`);
 
-export default options => {
+export default (options: any) => {
   if (options.children) {
     return WithEvents(options);
   }
-  return storyFn => {
+  return (storyFn: any) => {
     addEvents(options);
     return storyFn();
   };
