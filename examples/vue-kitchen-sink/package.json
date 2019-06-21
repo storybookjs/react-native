@@ -20,6 +20,7 @@
     "@storybook/addon-backgrounds": "5.2.0-alpha.23",
     "@storybook/addon-centered": "5.2.0-alpha.23",
     "@storybook/addon-contexts": "5.2.0-alpha.23",
+    "@storybook/addon-docs": "5.2.0-alpha.23",
     "@storybook/addon-knobs": "5.2.0-alpha.23",
     "@storybook/addon-links": "5.2.0-alpha.23",
     "@storybook/addon-notes": "5.2.0-alpha.23",
