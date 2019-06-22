@@ -63,7 +63,7 @@ exports[`Storyshots Button with new info 1`] = `
           >
             Use the 
             <a
-              href="https://github.com/storybooks/storybook/tree/master/addons/info"
+              href="https://github.com/storybookjs/storybook/tree/master/addons/info"
               rel="noopener noreferrer"
               style="color:#3498db"
               target="_blank"
