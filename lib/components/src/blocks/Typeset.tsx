@@ -48,23 +48,20 @@ export const Typeset: React.FunctionComponent<TypesetProps> = ({
   fontWeight,
   sampleText,
   ...props
-}) => {
-  const fontSizesReversed = fontSizes.reverse();
-  return (
-    <Wrapper {...props}>
-      {fontSizesReversed.map(num => (
-        <TypeSpecimen key={num}>
-          <Label>{num}px</Label>
-          <Sample
-            style={{
-              fontSize: num,
-              fontWeight,
-            }}
-          >
-            {sampleText || 'Was he a beast if music could move him so?'}
-          </Sample>
-        </TypeSpecimen>
-      ))}
-    </Wrapper>
-  );
-};
+}) => (
+  <Wrapper {...props}>
+    {fontSizes.map(num => (
+      <TypeSpecimen key={num}>
+        <Label>{num}px</Label>
+        <Sample
+          style={{
+            fontSize: num,
+            fontWeight,
+          }}
+        >
+          {sampleText || 'Was he a beast if music could move him so?'}
+        </Sample>
+      </TypeSpecimen>
+    ))}
+  </Wrapper>
+);
