@@ -121,16 +121,27 @@ export enum PropsTableError {
   PROPS_UNSUPPORTED = 'Props unsupported. See Props documentation for your framework.',
 }
 
-export interface PropsTableProps {
-  rows?: PropDef[];
-  error?: PropsTableError;
-  // FIXME: table options
+export interface PropsTableRowsProps {
+  rows: PropDef[];
 }
 
-const PropsTable: React.FunctionComponent<PropsTableProps> = ({ rows, error = null }) => {
+export interface PropsTableErrorProps {
+  error: PropsTableError;
+}
+
+export type PropsTableProps = PropsTableRowsProps | PropsTableErrorProps;
+
+/**
+ * Display the props for a component as a props table. Each row is a collection of
+ * PropDefs, usually derived from docgen info for the component.
+ */
+const PropsTable: React.FunctionComponent<PropsTableProps> = props => {
+  const { error } = props as PropsTableErrorProps;
   if (error) {
     return <EmptyBlock>{error}</EmptyBlock>;
   }
+
+  const { rows } = props as PropsTableRowsProps;
   if (rows.length === 0) {
     return <EmptyBlock>No props found for this component</EmptyBlock>;
   }

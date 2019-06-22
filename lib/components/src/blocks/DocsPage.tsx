@@ -68,6 +68,11 @@ export const DocsPageWrapper: React.FunctionComponent = ({ children }) => (
   </DocsWrapper>
 );
 
+/**
+ * An out-of-the box documentation page for components that shows the
+ * title & subtitle and a collection of blocks including `Description`,
+ * and `Preview`s for each of the component's stories.
+ */
 const DocsPage: React.FunctionComponent<DocsPageProps> = ({ title, subtitle, children }) => (
   <>
     {title && <Title>{title}</Title>}

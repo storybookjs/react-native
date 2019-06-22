@@ -21,30 +21,38 @@ export enum SourceError {
   SOURCE_UNAVAILABLE = 'Oh no! The source is not available.',
 }
 
-export interface SourceProps {
+interface SourceErrorProps {
+  error?: SourceError;
+}
+
+interface SourceCodeProps {
   language?: string;
   code?: string;
-  error?: SourceError;
   dark?: boolean;
 }
 
-const Source: React.FunctionComponent<SourceProps> = ({
-  language,
-  code,
-  error = null,
-  dark,
-  ...props
-}) => {
+// FIXME: Using | causes a typescript error, so stubbing it with & for now
+// and making `error` optional
+export type SourceProps = SourceErrorProps & SourceCodeProps;
+
+/**
+ * Syntax-highlighted source code for a component (or anything!)
+ */
+const Source: React.FunctionComponent<SourceProps> = props => {
+  const { error } = props as SourceErrorProps;
   if (error) {
     return <EmptyBlock {...props}>{error}</EmptyBlock>;
   }
+
+  const { language, code, dark, ...rest } = props as SourceCodeProps;
+
   const syntaxHighlighter = (
     <StyledSyntaxHighlighter
       bordered
       copyable
       language={language}
       className="docblock-source"
-      {...props}
+      {...rest}
     >
       {code}
     </StyledSyntaxHighlighter>

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Description, DescriptionProps as PureDescriptionProps } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
-import { CURRENT_SELECTION } from './shared';
+import { Component, CURRENT_SELECTION } from './shared';
 
 export enum DescriptionType {
   INFO = 'info',
@@ -11,15 +11,14 @@ export enum DescriptionType {
   AUTO = 'auto',
 }
 
+type Notes = string | any;
+type Info = string | any;
+
 interface DescriptionProps {
-  of?: any;
+  of?: '.' | Component;
   type?: DescriptionType;
   markdown?: string;
 }
-
-type Notes = string | any;
-type Info = string | any;
-type Component = any;
 
 const getNotes = (notes?: Notes) =>
   notes && (typeof notes === 'string' ? notes : notes.markdown || notes.text);

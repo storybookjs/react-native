@@ -35,6 +35,7 @@
     "@storybook/theming": "5.2.0-alpha.23",
     "@storybook/ui": "5.2.0-alpha.23",
     "airbnb-js-shims": "^1 || ^2",
+    "ansi-to-html": "^0.6.11",
     "autoprefixer": "^9.4.9",
     "babel-plugin-add-react-displayname": "^0.0.5",
     "babel-plugin-emotion": "^10.0.9",

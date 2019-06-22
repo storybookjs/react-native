@@ -1331,7 +1331,7 @@ exports[`addon Info should render component description if story kind matches co
               bordered={true}
               className={null}
               copyable={true}
-              format={true}
+              format={false}
               language="js"
               padded={false}
             >
@@ -5888,7 +5888,7 @@ exports[`addon Info should render component description if story name matches co
               bordered={true}
               className={null}
               copyable={true}
-              format={true}
+              format={false}
               language="js"
               padded={false}
             >

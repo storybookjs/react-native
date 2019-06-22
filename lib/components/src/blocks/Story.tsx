@@ -9,27 +9,27 @@ export enum StoryError {
   NO_STORY = 'No component or story to display',
 }
 
-interface InlineStoryProps {
+interface CommonProps {
   title: string;
   height?: string;
-  storyFn: () => React.ElementType;
 }
 
-interface IFrameStoryProps {
-  title: string;
-  height?: string;
+type InlineStoryProps = {
+  storyFn: () => React.ElementType;
+} & CommonProps;
+
+type IFrameStoryProps = {
   id: string;
-}
+} & CommonProps;
+
+type ErrorProps = {
+  error?: StoryError;
+} & CommonProps;
 
 // How do you XOR properties in typescript?
-export interface StoryProps {
+export type StoryProps = (InlineStoryProps | IFrameStoryProps | ErrorProps) & {
   inline: boolean;
-  title: string;
-  height?: string;
-  id?: string;
-  storyFn?: () => React.ElementType;
-  error?: StoryError;
-}
+};
 
 const InlineStory: React.FunctionComponent<InlineStoryProps> = ({ storyFn, height }) => (
   <div style={{ height }}>{storyFn()}</div>
@@ -57,19 +57,21 @@ const IFrameStory: React.FunctionComponent<IFrameStoryProps> = ({
   </div>
 );
 
-const Story: React.FunctionComponent<StoryProps> = ({
-  error,
-  height,
-  id,
-  inline,
-  storyFn,
-  title,
-}) => {
+/**
+ * A story element, either renderend inline or in an iframe,
+ * with configurable height.
+ */
+const Story: React.FunctionComponent<StoryProps> = props => {
+  const { error } = props as ErrorProps;
+  const { storyFn } = props as InlineStoryProps;
+  const { id } = props as IFrameStoryProps;
+  const { inline, title, height } = props;
+
   if (error) {
     return <EmptyBlock>{error}</EmptyBlock>;
   }
   return inline ? (
-    <InlineStory title={title} height={height} storyFn={storyFn} />
+    <InlineStory storyFn={storyFn} title={title} height={height} />
   ) : (
     <IFrameStory id={id} title={title} height={height} />
   );
