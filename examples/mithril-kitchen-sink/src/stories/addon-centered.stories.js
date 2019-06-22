@@ -7,6 +7,9 @@ import Centered from '@storybook/addon-centered/mithril';
 import Button from '../Button';
 
 storiesOf('Addons|Centered', module)
+  .addParameters({
+    component: Centered,
+  })
   .addDecorator(Centered)
   .add('button', () => ({
     view: () => <Button>A button</Button>,

@@ -9,9 +9,16 @@ import { linkTo } from '@storybook/addon-links';
 import Welcome from '../Welcome';
 import Button from '../Button';
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf('Welcome', module)
+  .addParameters({
+    component: Welcome,
+  })
+  .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Button', module)
+  .addParameters({
+    component: Button,
+  })
   .add('with text', () => <Button onclick={action('clicked')}>Hello Button</Button>)
   .add('with some emoji', () => (
     <Button onclick={action('clicked')}>
