@@ -6,11 +6,16 @@ import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
 
-storiesOf('Other|Demo/Welcome', module).add('to Storybook', () => (
-  <Welcome showApp={linkTo('Button')} />
-));
+storiesOf('Other|Demo/Welcome', module)
+  .addParameters({
+    component: Welcome,
+  })
+  .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Other|Demo/Button', module)
+  .addParameters({
+    component: Button,
+  })
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
   .add('with some emoji', () => (
     <Button onClick={action('clicked')}>

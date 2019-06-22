@@ -20,7 +20,9 @@ addParameters({
   ],
 });
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />, {
+storiesOf('Welcome', module).addParameters({
+  component: Welcome
+}).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />, {
   notes: `
 # Markdown!\n
 * List Item
@@ -28,7 +30,9 @@ storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo(
 `,
 });
 
-storiesOf('Button', module)
+storiesOf('Button', module).addParameters({
+  component: Button
+})
   .addParameters({
     backgrounds: [
       { name: 'dark', value: '#222222' },
