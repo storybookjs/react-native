@@ -1,6 +1,6 @@
 import React from 'react';
 import notes from './notes/notes.md';
-import mdxNotes from './notes/notes.stories.mdx';
+import mdxNotes from './notes/notes.mdx';
 import DocgenButton from '../components/DocgenButton';
 
 export default {
@@ -27,7 +27,7 @@ withInfo.parameters = {
 export const mdxOverride = () => <div>Click docs tab to see MDX-overridden docs</div>;
 mdxOverride.title = 'mdx override';
 mdxOverride.parameters = {
-  docs: mdxNotes && mdxNotes.parameters && mdxNotes.parameters.docs,
+  docs: mdxNotes,
 };
 
 export const jsxOverride = () => <div>Click docs tab to see JSX-overridden docs</div>;
