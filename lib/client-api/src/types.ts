@@ -344,7 +344,7 @@ export interface Decorator {
   name: string;
   parameters: DecoratorParameters;
   story: string;
-  storyFn: storyFn;
+  storyFn: StoryFn;
 }
 
 export type DecoratorData = { [K in Keys]: Decorator };
