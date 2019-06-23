@@ -39,14 +39,14 @@ const StackTrace = styled(({ trace, className }: StackTraceProps) => (
       ))}
   </details>
 ))({
-  background: 'silver',
+  background: '#e2e2e2',
   padding: 10,
   overflow: 'auto',
 });
 
 const Main = styled(({ msg, className }) => <section className={className}>{msg}</section>)({
   padding: 10,
-  borderBottom: '1px solid silver',
+  borderBottom: '1px solid #e2e2e2',
 });
 
 interface SubProps {

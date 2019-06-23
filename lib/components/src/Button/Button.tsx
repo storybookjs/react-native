@@ -221,7 +221,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
 
 const ButtonLink = ButtonWrapper.withComponent('a');
 
-interface ButtonProps {
+export interface ButtonProps {
   isLink?: boolean;
   primary?: boolean;
   secondary?: boolean;

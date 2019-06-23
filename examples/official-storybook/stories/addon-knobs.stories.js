@@ -42,6 +42,9 @@ let injectedItems = [];
 let injectedIsLoading = false;
 
 storiesOf('Addons|Knobs.withKnobs', module)
+  .addParameters({
+    component: withKnobs,
+  })
   .addDecorator(withKnobs)
   .add('tweaks static values', () => {
     const name = text('Name', 'Storyteller');

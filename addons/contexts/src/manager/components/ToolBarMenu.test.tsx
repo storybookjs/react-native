@@ -53,4 +53,51 @@ describe('Tests on addon-contexts component: ToolBarMenu', () => {
       </lifecycle(WithTooltipPure)>
     `);
   });
+
+  it('should render TabButton with title if the icon is given', () => {
+    // given
+    const someProps = {
+      title: 'Some Context',
+      active: true,
+      expanded: false,
+      setExpanded: jest.fn,
+      optionsProps: {
+        activeName: 'A',
+        list: ['A', 'B'],
+        onSelectOption: jest.fn,
+      },
+    };
+
+    // when
+    const result = shallow(<ToolBarMenu {...someProps} />);
+
+    // then
+    expect(result).toMatchInlineSnapshot(`
+      <lifecycle(WithTooltipPure)
+        closeOnClick={true}
+        onVisibilityChange={[Function]}
+        placement="top"
+        tooltip={
+          <ToolBarMenuOptions
+            activeName="A"
+            list={
+              Array [
+                "A",
+                "B",
+              ]
+            }
+            onSelectOption={[Function]}
+          />
+        }
+        tooltipShown={false}
+        trigger="click"
+      >
+        <TabButton
+          active={true}
+        >
+          Some Context
+        </TabButton>
+      </lifecycle(WithTooltipPure)>
+    `);
+  });
 });

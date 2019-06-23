@@ -9,8 +9,8 @@ It will help you migrate breaking changes & deprecations.
 yarn add jscodeshift @storybook/codemod --dev
 ```
 
--   `@storybook/codemod` is our collection of codemod scripts.
--   `jscodeshift` is a tool we use to apply our codemods.
+- `@storybook/codemod` is our collection of codemod scripts.
+- `jscodeshift` is a tool we use to apply our codemods.
 
 After running the migration commands, you can remove them from your `package.json`, if you added them.
 
@@ -65,23 +65,18 @@ Replaces the Info addon's deprecated `addWithInfo` API with the standard `withIn
 Simple example:
 
 ```js
-storiesOf('Button').addWithInfo(
-  'simple usage',
-  'This is the basic usage of the button.',
-  () => (
-    <Button label="The Button" />
-  )
-)
+storiesOf('Button').addWithInfo('simple usage', 'This is the basic usage of the button.', () => (
+  <Button label="The Button" />
+));
 ```
 
 Becomes
 
 ```js
-storiesOf('Button').add('simple usage', withInfo(
-  'This is the basic usage of the button.'
-)(() => (
-  <Button label="The Button" />
-)))
+storiesOf('Button').add(
+  'simple usage',
+  withInfo('This is the basic usage of the button.')(() => <Button label="The Button" />)
+);
 ```
 
 With options example:
@@ -90,21 +85,50 @@ With options example:
 storiesOf('Button').addWithInfo(
   'simple usage (disable source)',
   'This is the basic usage of the button.',
-  () => (
-    <Button label="The Button" />
-  ),
+  () => <Button label="The Button" />,
   { source: false, inline: true }
-)
+);
 ```
 
 Becomes
 
 ```js
-storiesOf('Button').add('simple usage (disable source)', withInfo({
-  text: 'This is the basic usage of the button.',
-  source: false,
-  inline: true
-})(() => (
-  <Button label="The Button" />
-)))
+storiesOf('Button').add(
+  'simple usage (disable source)',
+  withInfo({
+    text: 'This is the basic usage of the button.',
+    source: false,
+    inline: true,
+  })(() => <Button label="The Button" />)
+);
 ```
+
+### add-component-parameters
+
+This tries to smartly adds "component" parameters to all your existing stories
+for use in SB Docs.
+
+```sh
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/add-component-parameters.js . --ignore-pattern "node_modules|dist"
+```
+
+For example:
+
+```js
+input { Button } from './Button';
+storiesOf('Button', module).add('story', () => <Button label="The Button" />);
+```
+
+Becomes:
+
+```js
+input { Button } from './Button';
+storiesOf('Button', module)
+  .addParameters({ component: Button })
+  .add('story', () => <Button label="The Button" />);
+```
+
+Heuristics:
+
+- The storiesOf "kind" name must be Button
+- Button must be imported in the file

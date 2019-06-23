@@ -3,7 +3,7 @@ import { styled } from '@storybook/theming';
 
 const toNumber = (input: any) => (typeof input === 'number' ? input : Number(input));
 
-interface ContainerProps {
+export interface ContainerProps {
   col?: number;
   row?: number;
   outer?: number;

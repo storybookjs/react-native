@@ -471,6 +471,7 @@ exports[`Storyshots Basics|SyntaxHighlighter bordered & copy-able 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-3 {
@@ -794,14 +795,6 @@ exports[`Storyshots Basics|SyntaxHighlighter dark unsupported 1`] = `
   opacity: 1;
 }
 
-.emotion-5 {
-  position: relative;
-  overflow: hidden;
-  color: #FFFFFF;
-  border: 1px solid rgba(255,255,255,.1);
-  background: #333333;
-}
-
 .emotion-2 {
   overflow-y: auto;
   height: 100%;
@@ -970,6 +963,7 @@ exports[`Storyshots Basics|SyntaxHighlighter dark unsupported 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #333;
+  z-index: 1;
 }
 
 .emotion-3 {
@@ -1007,6 +1001,14 @@ exports[`Storyshots Basics|SyntaxHighlighter dark unsupported 1`] = `
 .emotion-3:focus {
   box-shadow: #1EA7FD 0 -3px 0 0 inset;
   outline: 0 none;
+}
+
+.emotion-5 {
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,.1);
+  background: #333333;
 }
 
 <div
@@ -3843,6 +3845,7 @@ exports[`Storyshots Basics|SyntaxHighlighter unsupported 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-3 {

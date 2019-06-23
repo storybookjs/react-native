@@ -198,7 +198,7 @@ export default class KnobPanel extends PureComponent {
           <Fragment>
             Learn how to{' '}
             <Link
-              href="https://github.com/storybooks/storybook/tree/master/addons/knobs"
+              href="https://github.com/storybookjs/storybook/tree/master/addons/knobs"
               target="_blank"
               withArrow
             >
