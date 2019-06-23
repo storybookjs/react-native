@@ -1,14 +1,14 @@
-import { storiesOf } from '@storybook/html';
+export default {
+  title: 'Addons|Notes',
+};
 
-storiesOf('Addons|Notes', module).add(
-  'Simple note',
-  () =>
-    `<p>
-        <strong>
-          This is a fragment of HTML
-        </strong>
-      </p>`,
-  {
-    notes: 'My notes on some bold text',
-  }
-);
+export const story1 = () =>
+  `<p>
+      <strong>
+        This is a fragment of HTML
+      </strong>
+    </p>`;
+story1.title = 'Simple note';
+story1.parameters = {
+  notes: 'My notes on some bold text',
+};
