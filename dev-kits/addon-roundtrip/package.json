@@ -1,44 +1,44 @@
 {
-    "name": "@storybook/addon-roundtrip",
-    "version": "5.2.0-alpha.23",
-    "description": "roundtrip addon for storybook",
-    "keywords": [
-      "devkit",
-      "addon",
-      "storybook",
-      "roundtrip"
-    ],
-    "homepage": "https://github.com/storybookjs/storybook#readme",
-    "bugs": {
-      "url": "https://github.com/storybookjs/storybook/issues"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/storybookjs/storybook.git",
-      "directory": "dev-kit/addon-roundtrip"
-    },
-    "license": "MIT",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "scripts": {
-      "prepare": "node ../../scripts/prepare.js"
-    },
-    "dependencies": {
-      "@storybook/addons": "5.2.0-alpha.23",
-      "@storybook/api": "5.2.0-alpha.23",
-      "@storybook/client-logger": "5.2.0-alpha.23",
-      "@storybook/components": "5.2.0-alpha.23",
-      "@storybook/core-events": "5.2.0-alpha.23",
-      "@storybook/theming": "5.2.0-alpha.23",
-      "common-tags": "^1.8.0",
-      "core-js": "^2.6.5",
-      "global": "^4.3.2",
-      "react": "^16.8.3"
-    },
-    "devDependencies": {
-      "@types/common-tags": "^1.8.0"
-    },
-    "publishConfig": {
-      "access": "public"
-    }
+  "name": "@storybook/addon-roundtrip",
+  "version": "5.2.0-alpha.23",
+  "description": "roundtrip addon for storybook",
+  "keywords": [
+    "devkit",
+    "addon",
+    "storybook",
+    "roundtrip"
+  ],
+  "homepage": "https://github.com/storybooks/storybook#readme",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storybooks/storybook.git",
+    "directory": "dev-kit/addon-roundtrip"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addons": "5.2.0-alpha.23",
+    "@storybook/api": "5.2.0-alpha.23",
+    "@storybook/client-logger": "5.2.0-alpha.23",
+    "@storybook/components": "5.2.0-alpha.23",
+    "@storybook/core-events": "5.2.0-alpha.23",
+    "@storybook/theming": "5.2.0-alpha.23",
+    "common-tags": "^1.8.0",
+    "core-js": "^3.0.1",
+    "global": "^4.3.2",
+    "react": "^16.8.3"
+  },
+  "devDependencies": {
+    "@types/common-tags": "^1.8.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
+}
