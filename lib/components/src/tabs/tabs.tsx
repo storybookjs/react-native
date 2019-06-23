@@ -109,22 +109,25 @@ export const panelProps = {
 };
 
 const childrenToList = (children: any, selected: string) =>
-  Children.toArray(children).map(({ props: { title, id, children: childrenOfChild } }, index) => {
-    const content = Array.isArray(childrenOfChild) ? childrenOfChild[0] : childrenOfChild;
-    return {
-      active: selected ? id === selected : index === 0,
-      title,
-      id,
-      render:
-        typeof content === 'function'
-          ? content
-          : ({ active, key }: any) => (
-              <VisuallyHidden key={key} active={active} role="tabpanel">
-                {content}
-              </VisuallyHidden>
-            ),
-    };
-  });
+  Children.toArray(children).map(
+    ({ props: { title, id, textColor, children: childrenOfChild } }, index) => {
+      const content = Array.isArray(childrenOfChild) ? childrenOfChild[0] : childrenOfChild;
+      return {
+        active: selected ? id === selected : index === 0,
+        title,
+        id,
+        textColor,
+        render:
+          typeof content === 'function'
+            ? content
+            : ({ active, key }: any) => (
+                <VisuallyHidden key={key} active={active} role="tabpanel">
+                  {content}
+                </VisuallyHidden>
+              ),
+      };
+    }
+  );
 
 export interface TabsProps {
   id?: string;
@@ -146,11 +149,12 @@ export const Tabs = React.memo<TabsProps>(
       <Wrapper absolute={absolute} bordered={bordered} id={htmlId}>
         <FlexBar border>
           <TabBar role="tablist">
-            {list.map(({ title, id, active }) => (
+            {list.map(({ title, id, active, textColor }) => (
               <TabButton
                 type="button"
                 key={id}
                 active={active}
+                textColor={textColor}
                 onClick={(e: MouseEvent) => {
                   e.preventDefault();
                   actions.onSelect(id);
