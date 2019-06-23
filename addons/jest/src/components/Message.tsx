@@ -13,11 +13,11 @@ const Pre = styled.pre({
 });
 
 const Positive = styled.strong({
-  color: 'green',
+  color: '#66BF3C',
   fontWeight: 500,
 });
 const Negative = styled.strong({
-  color: 'red',
+  color: '#FF4400',
   fontWeight: 500,
 });
 
