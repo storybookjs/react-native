@@ -1,6 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
 
-import { location } from 'global';
 import Events from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
 import { PostmsgTransport } from '@storybook/channel-postmessage';
@@ -68,40 +67,29 @@ export default class ConfigApi {
           loaders();
         }
       } catch (e) {
-        logger.error(e);
         errors.push(e);
       }
-      try {
-        this._renderMain();
-      } catch (e) {
-        logger.error(e);
-        errors.push(e);
+
+      if (!errors.length) {
+        try {
+          this._renderMain();
+        } catch (e) {
+          errors.push(e);
+        }
       }
 
       if (errors.length) {
-        if (module.hot && module.hot.status() === 'apply') {
-          // We got this issue, after webpack fixed it and applying it.
-          // Therefore error message is displayed forever even it's being fixed.
-          // So, we'll detect it reload the page.
-          logger.error('RELOAD THE PAGE', 'module.hot.status() === apply');
-          location.reload();
-        } else {
-          // If we are accessing the site, but the error is not fixed yet.
-          // There we can render the error.
-          this._renderError(errors[0]);
+        this._storyStore.setSelection(undefined, errors[0]);
 
-          // Clear out the store as chances as only some of the stories will have
-          // made it in before the error was thrown
-          // this._storyStore.clean();
-        }
+        throw errors[0];
+      } else {
+        this._storyStore.setSelection(undefined, null);
       }
     };
 
-    if (module.hot) {
-      module.hot.accept(() => {
-        setTimeout(render);
-      });
-      module.hot.dispose(() => {
+    if (m.hot) {
+      m.hot.accept();
+      m.hot.dispose(() => {
         this._clearDecorators();
       });
     }

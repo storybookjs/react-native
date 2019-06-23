@@ -382,7 +382,7 @@ export interface LegacyItem {
 export type LegacyData = { [K in Keys]: LegacyItem };
 export interface StoryStore {
   fromId: (id: string) => any;
-  getSelection: () => void;
+  getSelection: (a: any, b: Error) => void;
   getRevision: () => number;
   incrementRevision: () => void;
   addLegacyStory: (p: DecoratorData) => void;
@@ -390,7 +390,7 @@ export interface StoryStore {
   addStory: (p: DecoratorData) => void;
   remove: (id: string) => void;
   setChannel: (channel: Channel) => void;
-  setSelection: (ref: any) => void;
+  setSelection: (ref: any, err: Error) => void;
   emit?: (...args: any) => void;
   raw?: () => [] | {};
   extract: () => {};

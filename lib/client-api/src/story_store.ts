@@ -99,12 +99,18 @@ export default class StoryStore extends EventEmitter {
     );
   }
 
-  setSelection = ({ storyId, viewMode }) => {
-    this._selection = { storyId, viewMode };
+  setSelection = (data: any, error: Error) => {
+    const { storyId, viewMode } = data || {};
+
+    this._selection = data === undefined ? this._selection : { storyId, viewMode };
+    this._error = error === undefined ? this._error : error;
+
     setTimeout(() => this.emit(Events.STORY_RENDER), 1);
   };
 
   getSelection = () => this._selection;
+
+  getError = () => this._error;
 
   remove = (id: string): void => {
     const { _data } = this;

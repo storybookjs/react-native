@@ -74,6 +74,30 @@ Sometimes you might want to manually include some \`code\` examples:
 const Button = () => <button />;
 ~~~
 
+classes in javascript
+
+~~~javascript
+export class FromComponent {
+  form = new FormControl({
+    searchTerm: new FromControl(''),
+    searchDate: new FromControl(''),
+    endDate: new FromControl(''),
+  })
+}
+~~~
+
+html with special formatting
+
+~~~html
+<foo-outer property-a="value"
+           property-b="value"
+           property-c="value">
+  <foo-inner property-a="value"
+             property-b="value" />
+</foo-outer>
+~~~
+
+
 Maybe include a [link](http://storybook.js.org) to your project as well.
 `;
 
@@ -229,6 +253,9 @@ storiesOf('Addons|Info/Options.styles', module)
   });
 
 storiesOf('Addons|Info/Options.TableComponent', module)
+  .addParameters({
+    component: TableComponent,
+  })
   .addDecorator(withInfo)
   .add('Use a custom component for the table', () => <BaseButton label="Button" />, {
     info: {

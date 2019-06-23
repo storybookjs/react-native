@@ -24,6 +24,9 @@ const InfoButton = () => (
 );
 
 storiesOf('Button', module)
+  .addParameters({
+    component: Button,
+  })
   .add('with text', () => <Button onClick={action('clicked', { depth: 1 })}>Hello Button</Button>, {
     options: { selectedPanel: 'storybook/actions/panel' },
   })

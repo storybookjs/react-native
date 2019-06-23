@@ -7,5 +7,8 @@ import Centered from '@storybook/addon-centered/preact';
 import Button from '../Button';
 
 storiesOf('Addons|Centered', module)
+  .addParameters({
+    component: Centered,
+  })
   .addDecorator(Centered)
   .add('Button', () => <Button>A button</Button>);
