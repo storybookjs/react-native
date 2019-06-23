@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '@storybook/theming';
+import { styled, css } from '@storybook/theming';
 import { ScrollArea, TabsState } from '@storybook/components';
 import Result from './Result';
 import provideJestResult, { Test } from '../hoc/provideJestResult';
@@ -39,27 +39,23 @@ const SuiteHead = styled.div({
   position: 'absolute',
   zIndex: 2,
   right: '60px',
-  marginTop: '14px',
-  marginBottom: '14px',
+  marginTop: '13px',
 });
 
 const SuiteTotals = styled(({ successNumber, failedNumber, result, className }) => (
   <div className={className}>
-    {successNumber > 0 && <div style={{ color: 'green' }}>{successNumber} passed</div>}
-    {failedNumber > 0 && <div style={{ color: 'red' }}>{failedNumber} failed</div>}
-    <div>{result.assertionResults.length} total</div>
+    <div>{result.assertionResults.length} tests</div>
     <div>
-      <strong>
-        {result.endTime - result.startTime}
-        ms
-      </strong>
+      {result.endTime - result.startTime}
+      ms
     </div>
+    <div>{((successNumber / (failedNumber + successNumber)) * 100).toFixed(2)}%</div>
   </div>
 ))({
   display: 'flex',
   alignItems: 'center',
-  color: 'grey',
-  fontSize: '10px',
+  color: '#333333',
+  fontSize: '13px',
 
   '& > *': {
     marginRight: 10,
@@ -72,7 +68,7 @@ const SuiteProgress = styled(({ successNumber, result, className }) => (
   </div>
 ))(() => ({
   width: '50px',
-  backgroundColor: 'red',
+  backgroundColor: '#FF4400',
   height: '10px',
   top: 0,
   position: 'absolute',
@@ -82,12 +78,12 @@ const SuiteProgress = styled(({ successNumber, result, className }) => (
   marginTop: '1px',
 
   '& > span': {
-    backgroundColor: 'green',
+    backgroundColor: '#66BF3C',
     bottom: 0,
     position: 'absolute',
     left: 0,
     top: 0,
-    boxShadow: '4px 0 0 white',
+    boxShadow: '1px 0 0 white',
   },
 }));
 
@@ -95,6 +91,12 @@ const PassingRate = styled.div({
   fontWeight: 500,
   fontSize: '10px',
 });
+
+const cssCustom = css`
+  background-color: #ff4400;
+`;
+
+const CustomTabsState = styled(TabsState)([cssCustom]);
 
 interface ContentProps {
   tests: Test[];
@@ -111,20 +113,17 @@ const Content = styled(({ tests, className }: ContentProps) => (
       const successNumber = result.assertionResults.filter(({ status }) => status === 'passed')
         .length;
       const failedNumber = result.assertionResults.length - successNumber;
+      const passingRate = ((successNumber / result.assertionResults.length) * 100).toFixed(2);
       return (
         <section key={name}>
           <SuiteHead>
-            {/* <PassingRate>{`Passing rate: ${(
-              (successNumber / result.assertionResults.length) *
-              100
-            ).toFixed(2)}%`}</PassingRate> */}
-            <SuiteTotals {...{ successNumber, failedNumber, result }} />
+            <SuiteTotals {...{ successNumber, failedNumber, result, passingRate }} />
             <ProgressWrapper>
               <SuiteProgress {...{ successNumber, failedNumber, result }} />
             </ProgressWrapper>
           </SuiteHead>
-          <TabsState initial="failing-tests">
-            <div id="failing-tests" title={`${failedNumber} Failing`}>
+          <CustomTabsState initial="failing-tests">
+            <div id="failing-tests" title={`${failedNumber} Failed`} textColor="#FF4400">
               <List>
                 {result.assertionResults.map(res => {
                   if (res.status === 'failed') {
@@ -137,7 +136,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
                 })}
               </List>
             </div>
-            <div id="passing-tests" title={`${successNumber} Passing`}>
+            <div id="passing-tests" title={`${successNumber} Passed`} textColor="#66BF3C">
               <List>
                 {result.assertionResults.map(res => {
                   if (res.status === 'passed') {
@@ -150,7 +149,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
                 })}
               </List>
             </div>
-          </TabsState>
+          </CustomTabsState>
         </section>
       );
     })}

@@ -6,7 +6,7 @@ import Message from './Message';
 const Wrapper = styled.div(({ theme }) => ({
   display: 'flex',
   width: '100%',
-  borderBottom: `1px solid ${theme.appBorderColor}`,
+  borderTop: `1px solid ${theme.appBorderColor}`,
   '&:hover': {
     background: theme.background.hoverable,
   },
@@ -40,11 +40,11 @@ const Icon = styled<any, any>(Icons)(({ theme }) => ({
   display: 'inline-flex',
 }));
 
-const formatSeverityText = (severity: string) => {
-  return severity
+const capitalizeFirstLetter = (text: string) => {
+  return text
     .charAt(0)
     .toUpperCase()
-    .concat(severity.slice(1));
+    .concat(text.slice(1));
 };
 
 interface ResultProps {
@@ -84,11 +84,11 @@ export class Result extends Component<ResultProps, ResultState> {
                   transform: `rotate(${open ? 0 : -90}deg)`,
                 }}
               />
-              <div>{fullName || title}</div>
+              <div>{capitalizeFirstLetter(fullName) || capitalizeFirstLetter(title)}</div>
             </HeaderBar>
           ) : (
             <HeaderBar>
-              <div>{fullName || title}</div>
+              <div>{capitalizeFirstLetter(fullName) || capitalizeFirstLetter(title)}</div>
             </HeaderBar>
           )}
         </Wrapper>
