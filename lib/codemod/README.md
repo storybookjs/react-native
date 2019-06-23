@@ -137,6 +137,12 @@ Heuristics:
 
 This converts all of your "old-style" `storiesOf` stories into component module format, which uses standard ES6 modules.
 
+```sh
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/convert-to-module-format.js . --ignore-pattern "node_modules|dist"
+```
+
+For example:
+
 ```js
 storiesOf('Button', module)
   .add('story', () => <Button label="Story 1" />)
