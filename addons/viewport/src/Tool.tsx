@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
 import deprecate from 'util-deprecate';
 
@@ -10,23 +9,37 @@ import { SET_STORIES } from '@storybook/core-events';
 
 import { PARAM_KEY } from './constants';
 import { INITIAL_VIEWPORTS, DEFAULT_VIEWPORT } from './defaults';
+import { ViewportAddonParameter, ViewportMap, ViewportStyles } from './models';
 
-const toList = memoize(50)(items =>
+const toList = memoize(50)((items: ViewportMap) =>
   items ? Object.entries(items).map(([id, value]) => ({ ...value, id })) : []
 );
 const iframeId = 'storybook-preview-iframe';
 
-const createItem = memoize(1000)((id, name, value, change) => ({
-  id: id || name,
-  title: name,
-  onClick: () => {
-    change({ selected: id, expanded: false });
-  },
-  right: `${value.width.replace('px', '')}x${value.height.replace('px', '')}`,
-  value,
-}));
+interface ViewportVM {
+  id: string;
+  title: string;
+  onClick: () => void;
+  right: string;
+  value: ViewportStyles;
+}
 
-const flip = ({ width, height }: { width: any; height: any }) => ({ height: width, width: height });
+const createItem = memoize(1000)(
+  (id: string, name: string, value: ViewportStyles, change: (...args: unknown[]) => void) => {
+    const result: ViewportVM = {
+      id: id || name,
+      title: name,
+      onClick: () => {
+        change({ selected: id, expanded: false });
+      },
+      right: `${value.width.replace('px', '')}x${value.height.replace('px', '')}`,
+      value,
+    };
+    return result;
+  }
+);
+
+const flip = ({ width, height }: ViewportStyles) => ({ height: width, width: height });
 
 const deprecatedViewportString = deprecate(
   () => 0,
@@ -37,58 +50,69 @@ const deprecateOnViewportChange = deprecate(
   'The viewport parameter `onViewportChange` is no longer supported'
 );
 
-const getState = memoize(10)((props, state, change) => {
-  const data = props.api.getCurrentStoryData();
-  const parameters = data && data.parameters && data.parameters[PARAM_KEY];
+const getState = memoize(10)(
+  (
+    props: ViewportToolProps,
+    state: ViewportToolState,
+    change: (statePatch: Partial<ViewportToolState>) => void
+  ) => {
+    const data = props.api.getCurrentStoryData();
+    const parameters: ViewportAddonParameter =
+      data && (data as any).parameters && (data as any).parameters[PARAM_KEY];
 
-  if (parameters && typeof parameters !== 'object') {
-    deprecatedViewportString();
-  }
+    if (parameters && typeof parameters !== 'object') {
+      deprecatedViewportString();
+    }
 
-  const { disable, viewports, defaultViewport, onViewportChange } = parameters || ({} as any);
+    const { disable, viewports, defaultViewport, onViewportChange } = parameters || ({} as any);
 
-  if (onViewportChange) {
-    deprecateOnViewportChange();
-  }
+    if (onViewportChange) {
+      deprecateOnViewportChange();
+    }
 
-  const list = disable ? [] : toList(viewports || INITIAL_VIEWPORTS);
+    const list = disable ? [] : toList(viewports || INITIAL_VIEWPORTS);
+    const viewportVMList = list.map(({ id, name, styles: value }) =>
+      createItem(id, name, value, change)
+    );
 
-  const selected =
-    state.selected === 'responsive' || list.find(i => i.id === state.selected)
-      ? state.selected
-      : list.find(i => (i as any).default) || defaultViewport || DEFAULT_VIEWPORT;
+    const selected =
+      state.selected === 'responsive' || list.find(i => i.id === state.selected)
+        ? state.selected
+        : list.find(i => i.default) || defaultViewport || DEFAULT_VIEWPORT;
 
-  const resets =
-    selected !== 'responsive'
-      ? [
-          {
-            id: 'reset',
-            title: 'Reset viewport',
-            onClick: () => {
-              change({ selected: undefined, expanded: false });
+    const resets: ViewportVM[] =
+      selected !== 'responsive'
+        ? [
+            {
+              id: 'reset',
+              title: 'Reset viewport',
+              onClick: () => {
+                change({ selected: undefined, expanded: false });
+              },
+              right: undefined,
+              value: undefined,
             },
-          },
-          {
-            id: 'rotate',
-            title: 'Rotate viewport',
-            onClick: () => {
-              change({ isRotated: !state.isRotated, expanded: false });
+            {
+              id: 'rotate',
+              title: 'Rotate viewport',
+              onClick: () => {
+                change({ isRotated: !state.isRotated, expanded: false });
+              },
+              right: undefined,
+              value: undefined,
             },
-          },
-        ]
-      : [];
-  const items = list.length
-    ? resets.concat(
-        list.map(({ id, name, styles: value }: any) => createItem(id, name, value, change))
-      )
-    : list;
+          ]
+        : [];
 
-  return {
-    isRotated: state.isRotated,
-    items,
-    selected,
-  };
-});
+    const items = viewportVMList.length !== 0 ? resets.concat(viewportVMList) : [];
+
+    return {
+      isRotated: state.isRotated,
+      items,
+      selected,
+    };
+  }
+);
 
 const ActiveViewportSize = styled.div(() => ({
   display: 'inline-flex',
@@ -118,10 +142,20 @@ const IconButtonLabel = styled.div(({ theme }) => ({
   marginLeft: '10px',
 }));
 
-export default class ViewportTool extends Component<any, any> {
-  listener: any;
+interface ViewportToolState {
+  isRotated: boolean;
+  items: any[];
+  selected: string;
+  expanded: boolean;
+}
+interface ViewportToolProps {
+  api: any;
+}
 
-  constructor(props: any) {
+export class ViewportTool extends Component<ViewportToolProps, ViewportToolState> {
+  listener: () => void;
+
+  constructor(props: ViewportToolProps) {
     super(props);
 
     this.state = {
@@ -157,7 +191,7 @@ export default class ViewportTool extends Component<any, any> {
       expanded: false,
     }));
 
-  resetViewport = (e: any) => {
+  resetViewport = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
     e.nativeEvent.stopImmediatePropagation();
 
@@ -167,10 +201,10 @@ export default class ViewportTool extends Component<any, any> {
   render() {
     const { expanded } = this.state;
     const { items, selected, isRotated } = getState(this.props, this.state, this.change);
-    const item: any = items.find(i => i.id === selected);
+    const item = items.find(i => i.id === selected);
 
-    let viewportX = 0;
-    let viewportY = 0;
+    let viewportX = '0';
+    let viewportY = '0';
     let viewportTitle = '';
     if (item) {
       const height = item.value.height.replace('px', '');
@@ -196,7 +230,7 @@ export default class ViewportTool extends Component<any, any> {
                 boxShadow: '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);',
                 boxSizing: 'content-box',
 
-                ...(isRotated ? flip(item.value || {}) : item.value || {}),
+                ...(isRotated ? flip(item.value) : item.value),
               },
             }}
           />
@@ -232,9 +266,3 @@ export default class ViewportTool extends Component<any, any> {
     ) : null;
   }
 }
-
-(ViewportTool as any).propTypes = {
-  api: PropTypes.shape({
-    on: PropTypes.func,
-  }).isRequired,
-};
