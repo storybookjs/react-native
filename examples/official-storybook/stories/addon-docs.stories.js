@@ -1,8 +1,37 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import notes from './notes/notes.md';
+import mdxNotes from './notes/notes.mdx';
+import DocgenButton from '../components/DocgenButton';
 
-storiesOf('Addons|Docs', module)
-  .addParameters({
-    docs: () => <div>Hello docs</div>,
-  })
-  .add('default', () => <div>Click the docs tab to see the docs</div>);
+export default {
+  title: 'Addons|Docs/stories',
+  parameters: {
+    component: DocgenButton,
+  },
+};
+
+export const basic = () => <div>Click docs tab to see basic docs</div>;
+
+export const withNotes = () => <div>Click docs tab to see DocsPage docs</div>;
+withNotes.title = 'with notes';
+withNotes.parameters = {
+  notes,
+};
+
+export const withInfo = () => <div>Click docs tab to see DocsPage docs</div>;
+withInfo.title = 'with info';
+withInfo.parameters = {
+  info: 'some user info string',
+};
+
+export const mdxOverride = () => <div>Click docs tab to see MDX-overridden docs</div>;
+mdxOverride.title = 'mdx override';
+mdxOverride.parameters = {
+  docs: mdxNotes,
+};
+
+export const jsxOverride = () => <div>Click docs tab to see JSX-overridden docs</div>;
+jsxOverride.title = 'jsx override';
+jsxOverride.parameters = {
+  docs: () => <div>Hello docs</div>,
+};
