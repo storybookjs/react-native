@@ -139,16 +139,32 @@ storiesOf('Basics|Tabs', module)
     </TabsState>
   ))
   .add('stateful - static with set button text colors', () => (
-    <TabsState initial="test2" backgroundColor="red">
-      <div id="test1" title="With a function" textColor="red">
-        {({ active, selected }: { active: boolean; selected: string }) =>
-          active ? <div>{selected} is selected</div> : null
-        }
-      </div>
-      <div id="test2" title="With markup" textColor="green">
-        <div>test2 is always active (but visually hidden)</div>
-      </div>
-    </TabsState>
+    <div>
+      <TabsState initial="test2">
+        <div id="test1" title="With a function" textColor="red">
+          {({ active, selected }: { active: boolean; selected: string }) =>
+            active ? <div>{selected} is selected</div> : null
+          }
+        </div>
+        <div id="test2" title="With markup" textColor="green">
+          <div>test2 is always active (but visually hidden)</div>
+        </div>
+      </TabsState>
+    </div>
+  ))
+  .add('stateful - static with set backgroundColor', () => (
+    <div>
+      <TabsState initial="test2" backgroundColor="rgba(0,0,0,.05)">
+        <div id="test1" title="With a function" textColor="red">
+          {({ active, selected }: { active: boolean; selected: string }) =>
+            active ? <div>{selected} is selected</div> : null
+          }
+        </div>
+        <div id="test2" title="With markup" textColor="green">
+          <div>test2 is always active (but visually hidden)</div>
+        </div>
+      </TabsState>
+    </div>
   ))
   .add('stateful - dynamic', () => (
     <TabsState initial="test3">
