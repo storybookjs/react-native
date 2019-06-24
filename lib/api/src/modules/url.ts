@@ -103,7 +103,6 @@ export interface SubAPI {
   setQueryParams: (input: QueryParams) => void;
 }
 
-// export default function({ store, navigate, location, path: initialPath, ...rest }: Module) {
 export default function({ store, navigate, state, provider, ...rest }: Module) {
   const api: SubAPI = {
     getQueryParam: key => {
@@ -144,7 +143,6 @@ export default function({ store, navigate, state, provider, ...rest }: Module) {
 
   return {
     api,
-    // state: initialUrlSupport({ store, navigate, location, path: initialPath, ...rest }),
     state: initialUrlSupport({ store, navigate, state, provider, ...rest }),
   };
 }
