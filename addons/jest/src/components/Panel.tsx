@@ -92,12 +92,6 @@ const PassingRate = styled.div({
   fontSize: '10px',
 });
 
-const cssCustom = css`
-  background-color: #ff4400;
-`;
-
-const CustomTabsState = styled(TabsState)([cssCustom]);
-
 interface ContentProps {
   tests: Test[];
   className?: string;
@@ -122,7 +116,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
               <SuiteProgress {...{ successNumber, failedNumber, result }} />
             </ProgressWrapper>
           </SuiteHead>
-          <CustomTabsState initial="failing-tests">
+          <TabsState initial="failing-tests" backgroundColor="rgba(0,0,0,.05)">
             <div id="failing-tests" title={`${failedNumber} Failed`} textColor="#FF4400">
               <List>
                 {result.assertionResults.map(res => {
@@ -149,7 +143,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
                 })}
               </List>
             </div>
-          </CustomTabsState>
+          </TabsState>
         </section>
       );
     })}
