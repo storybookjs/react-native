@@ -23,6 +23,7 @@
   "dependencies": {
     "core-js": "^3.0.1",
     "jscodeshift": "^0.6.3",
+    "prettier": "^1.16.4",
     "regenerator-runtime": "^0.12.1"
   },
   "publishConfig": {
