@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 
 import React from 'react';
-// import { MDXProvider } from '@mdx-js/react';
+import { MDXProvider } from '@mdx-js/react';
 import { Global, createGlobal, ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
 import { DocumentFormatting, DocsWrapper, DocsContent } from '@storybook/components';
 import { DocsContextProps, DocsContext } from './DocsContext';
@@ -39,13 +39,13 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
     <DocsContext.Provider value={context}>
       <ThemeProvider theme={theme}>
         <Global styles={globalWithOverflow} />
-        {/* <MDXProvider components={components}> */}
-        <DocsWrapper>
-          <DocsContent>
-            <MDXContent components={components} />
-          </DocsContent>
-        </DocsWrapper>
-        {/* </MDXProvider> */}
+        <MDXProvider components={components}>
+          <DocsWrapper>
+            <DocsContent>
+              <MDXContent components={components} />
+            </DocsContent>
+          </DocsWrapper>
+        </MDXProvider>
       </ThemeProvider>
     </DocsContext.Provider>
   );
