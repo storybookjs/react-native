@@ -132,3 +132,51 @@ Heuristics:
 
 - The storiesOf "kind" name must be Button
 - Button must be imported in the file
+
+### convert-to-module-format
+
+This converts all of your "old-style" `storiesOf` stories into component module format, which uses standard ES6 modules.
+
+```sh
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/convert-to-module-format.js . --ignore-pattern "node_modules|dist"
+```
+
+For example:
+
+```js
+storiesOf('Button', module)
+  .add('story', () => <Button label="Story 1" />)
+  .add('second story', () => <Button label="Story 2" onClick={action('click')} />)
+  .add('complex story', () => (
+    <div>
+      <Button label="The Button" onClick={action('onClick')} />
+      <br />
+    </div>
+  ));
+```
+
+Becomes:
+
+```js
+export default {
+  title: 'Button',
+};
+
+export const story = () => <Button label="Story 1" />;
+
+export const story2 = () => <Button label="Story 2" onClick={action('click')} />;
+story2.title = 'second story';
+
+export const story3 = () => (
+  <div>
+    <Button label="The Button" onClick={action('onClick')} />
+    <br />
+  </div>
+);
+story3.title = 'complex story';
+```
+
+Heuristics:
+
+- If a file has any default export, it will be skipped
+- If a file has multiple `storiesOf` declarations, it will convert each one seperately. This generates invalid ES6, but you can edit the file by hand to split it into multiple files (or whatever is appropriate).
