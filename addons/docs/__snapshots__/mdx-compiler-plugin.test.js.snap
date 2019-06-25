@@ -29,7 +29,7 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const componentMeta = {};
+const componentMeta = { includeStories: [] };
 
 const mdxKind = componentMeta.title || componentMeta.displayName;
 const WrappedMDXContent = ({ context }) => (
@@ -105,7 +105,67 @@ const componentMeta = {
       </div>
     ),
   ],
+  includeStories: ['one'],
 };
+
+const mdxKind = componentMeta.title || componentMeta.displayName;
+const WrappedMDXContent = ({ context }) => (
+  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
+);
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = WrappedMDXContent;
+
+export default componentMeta;
+"
+`;
+
+exports[`docs-mdx-compiler-plugin supports non-story exports 1`] = `
+"/* @jsx mdx */
+import { DocsContainer } from '@storybook/addon-docs/blocks';
+
+import { Button } from '@storybook/react/demo';
+import { Story, Meta } from '@storybook/addon-docs/blocks';
+export const two = 2;
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      'Component ' +
+        name +
+        ' was not imported, exported, or provided by MDXProvider as global scope'
+    );
+    return <div {...props} />;
+  };
+
+const layoutProps = {
+  two,
+};
+const MDXLayout = 'wrapper';
+function MDXContent({ components, ...props }) {
+  return (
+    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
+      <Meta title=\\"Button\\" mdxType=\\"Meta\\" />
+      <h1>{\`Story definition\`}</h1>
+      <Story name=\\"one\\" mdxType=\\"Story\\">
+        <Button mdxType=\\"Button\\">One</Button>
+      </Story>
+
+      <Story name=\\"hello story\\" mdxType=\\"Story\\">
+        <Button mdxType=\\"Button\\">Hello button</Button>
+      </Story>
+    </MDXLayout>
+  );
+}
+
+MDXContent.isMDXComponent = true;
+
+export const one = () => <Button>One</Button>;
+one.parameters = { mdxSource: \`<Button>One</Button>\` };
+
+export const helloStory = () => <Button>Hello button</Button>;
+helloStory.title = 'hello story';
+helloStory.parameters = { mdxSource: \`<Button>Hello button</Button>\` };
+
+const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory'] };
 
 const mdxKind = componentMeta.title || componentMeta.displayName;
 const WrappedMDXContent = ({ context }) => (
@@ -182,7 +242,7 @@ toStorybook.parameters = {
 }\`,
 };
 
-const componentMeta = { title: 'MDX|Welcome' };
+const componentMeta = { title: 'MDX|Welcome', includeStories: ['toStorybook'] };
 
 const mdxKind = componentMeta.title || componentMeta.displayName;
 const WrappedMDXContent = ({ context }) => (
@@ -262,6 +322,7 @@ const componentMeta = {
     component: Button,
     notes: 'component notes',
   },
+  includeStories: ['componentNotes', 'storyNotes'],
 };
 
 const mdxKind = componentMeta.title || componentMeta.displayName;
@@ -336,6 +397,7 @@ const componentMeta = {
     component: Button,
     notes: 'component notes',
   },
+  includeStories: ['helloButton', 'two'],
 };
 
 const mdxKind = componentMeta.title || componentMeta.displayName;
@@ -392,7 +454,7 @@ export const helloStory = () => <Button>Hello button</Button>;
 helloStory.title = 'hello story';
 helloStory.parameters = { mdxSource: \`<Button>Hello button</Button>\` };
 
-const componentMeta = { title: 'Button' };
+const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory'] };
 
 const mdxKind = componentMeta.title || componentMeta.displayName;
 const WrappedMDXContent = ({ context }) => (
@@ -434,7 +496,7 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const componentMeta = {};
+const componentMeta = { includeStories: [] };
 
 const mdxKind = componentMeta.title || componentMeta.displayName;
 const WrappedMDXContent = ({ context }) => (
@@ -482,7 +544,7 @@ MDXContent.isMDXComponent = true;
 export const text = () => 'Plain text';
 text.parameters = { mdxSource: \`'Plain text'\` };
 
-const componentMeta = { title: 'Text' };
+const componentMeta = { title: 'Text', includeStories: ['text'] };
 
 const mdxKind = componentMeta.title || componentMeta.displayName;
 const WrappedMDXContent = ({ context }) => (
@@ -525,7 +587,7 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const componentMeta = {};
+const componentMeta = { includeStories: [] };
 
 const mdxKind = componentMeta.title || componentMeta.displayName;
 const WrappedMDXContent = ({ context }) => (
