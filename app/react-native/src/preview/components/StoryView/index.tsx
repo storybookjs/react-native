@@ -63,10 +63,10 @@ export default class StoryView extends Component<Props> {
 
     const selection = stories.getSelection();
 
-    const {kind, story, storyFn} = selection;
+    const {id, storyFn} = selection;
 
     return storyFn ? (
-      <View key={`${kind}:::${story}`} style={{flex: 1}}>
+      <View key={id} style={{flex: 1}}>
         {storyFn()}
       </View>
     ) : (
