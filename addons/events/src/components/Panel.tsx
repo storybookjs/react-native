@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
+import { API } from '@storybook/api';
 
 import { EVENTS } from '../constants';
 import Event from './Event';
+import { Event as EventType, OnEmitEvent } from '../index';
 
 const Wrapper = styled.div({
   width: '100%',
@@ -13,7 +15,15 @@ const Wrapper = styled.div({
   minHeight: '100%',
 });
 
-export default class EventsPanel extends Component<any, any> {
+interface EventsPanelProps {
+  active: boolean;
+  api: API;
+}
+interface EventsPanelState {
+  events: EventType[];
+}
+
+export default class EventsPanel extends Component<EventsPanelProps, EventsPanelState> {
   static propTypes = {
     active: PropTypes.bool.isRequired,
     api: PropTypes.shape({
@@ -23,7 +33,7 @@ export default class EventsPanel extends Component<any, any> {
     }).isRequired,
   };
 
-  state: any = {
+  state: EventsPanelState = {
     events: [],
   };
 
@@ -39,13 +49,12 @@ export default class EventsPanel extends Component<any, any> {
     api.off(EVENTS.ADD, this.onAdd);
   }
 
-  onAdd = (events: any) => {
+  onAdd = (events: EventType[]) => {
     this.setState({ events });
   };
 
-  onEmit = (event: any) => {
+  onEmit = (event: OnEmitEvent) => {
     const { api } = this.props;
-
     api.emit(EVENTS.EMIT, event);
   };
 
@@ -54,7 +63,7 @@ export default class EventsPanel extends Component<any, any> {
     const { active } = this.props;
     return active ? (
       <Wrapper>
-        {events.map((event: any) => (
+        {events.map(event => (
           <Event key={event.name} {...event} onEmit={this.onEmit} />
         ))}
       </Wrapper>
