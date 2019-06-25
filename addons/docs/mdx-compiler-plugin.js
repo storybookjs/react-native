@@ -44,7 +44,7 @@ function genStoryExport(ast, counter) {
   // console.log('genStoryExport', JSON.stringify(ast, null, 2));
 
   const statements = [];
-  const storyFn = getStoryFn(storyName, counter);
+  const storyKey = getStoryFn(storyName, counter);
 
   let body = ast.children.find(n => n.type !== 'JSXText');
   let storyCode = null;
@@ -61,13 +61,13 @@ function genStoryExport(ast, counter) {
     storyCode = code;
   }
   statements.push(
-    `export const ${storyFn} = () => (
+    `export const ${storyKey} = () => (
       ${storyCode}
     );`
   );
 
-  if (storyName !== storyFn) {
-    statements.push(`${storyFn}.title = '${storyName}';`);
+  if (storyName !== storyKey) {
+    statements.push(`${storyKey}.title = '${storyName}';`);
   }
 
   let parameters = getAttr(ast.openingElement, 'parameters');
@@ -76,27 +76,29 @@ function genStoryExport(ast, counter) {
   if (parameters) {
     const { code: params } = generate(parameters, {});
     // FIXME: hack in the story's source as a parameter
-    statements.push(`${storyFn}.parameters = { mdxSource: ${source}, ...${params} };`);
+    statements.push(`${storyKey}.parameters = { mdxSource: ${source}, ...${params} };`);
   } else {
-    statements.push(`${storyFn}.parameters = { mdxSource: ${source} };`);
+    statements.push(`${storyKey}.parameters = { mdxSource: ${source} };`);
   }
 
   // console.log(statements);
 
-  return [statements.join('\n')];
+  return {
+    [storyKey]: statements.join('\n'),
+  };
 }
 
 function genPreviewExports(ast, counter) {
   // console.log('genPreviewExports', JSON.stringify(ast, null, 2));
 
   let localCounter = counter;
-  const previewExports = [];
+  const previewExports = {};
   for (let i = 0; i < ast.children.length; i += 1) {
     const child = ast.children[i];
     if (child.type === 'JSXElement' && child.openingElement.name.name === 'Story') {
       const storyExport = genStoryExport(child, localCounter);
       if (storyExport) {
-        previewExports.push(storyExport);
+        Object.assign(previewExports, storyExport);
         localCounter += 1;
       }
     }
@@ -104,20 +106,24 @@ function genPreviewExports(ast, counter) {
   return previewExports;
 }
 
-function genMetaExport(ast) {
+function genMeta(ast) {
   let title = getAttr(ast.openingElement, 'title');
   let parameters = getAttr(ast.openingElement, 'parameters');
   let decorators = getAttr(ast.openingElement, 'decorators');
-  title = title && `title: '${title.value}',`;
+  title = title && `'${title.value}'`;
   if (parameters && parameters.expression) {
     const { code: params } = generate(parameters.expression, {});
-    parameters = `parameters: ${params},`;
+    parameters = params;
   }
   if (decorators && decorators.expression) {
     const { code: decos } = generate(decorators.expression, {});
-    decorators = `decorators: ${decos},`;
+    decorators = decos;
   }
-  return `const componentMeta = { ${title || ''} ${parameters || ''} ${decorators || ''} };`;
+  return {
+    title,
+    parameters,
+    decorators,
+  };
 }
 
 function getExports(node, counter) {
@@ -127,7 +133,7 @@ function getExports(node, counter) {
       // Single story
       const ast = parser.parseExpression(value, { plugins: ['jsx'] });
       const storyExport = genStoryExport(ast, counter);
-      return storyExport && { stories: [storyExport] };
+      return storyExport && { stories: storyExport };
     }
     if (PREVIEW_REGEX.exec(value)) {
       // Preview, possibly containing multiple stories
@@ -137,7 +143,7 @@ function getExports(node, counter) {
     if (META_REGEX.exec(value)) {
       // Preview, possibly containing multiple stories
       const ast = parser.parseExpression(value, { plugins: ['jsx'] });
-      return { meta: genMetaExport(ast) };
+      return { meta: genMeta(ast) };
     }
   }
   return null;
@@ -152,10 +158,22 @@ componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = WrappedMDXContent;
 `.trim();
 
+function stringifyMeta(meta) {
+  let result = '{ ';
+  Object.entries(meta).forEach(([key, val]) => {
+    if (val) {
+      result += `${key}: ${val}, `;
+    }
+  });
+  result += ' }';
+  return result;
+}
+
 function extractExports(node, options) {
   // we're overriding default export
   const defaultJsx = mdxToJsx.toJSX(node, {}, { ...options, skipExport: true });
   const storyExports = [];
+  const includeStories = [];
   let metaExport = null;
   let counter = 0;
   node.children.forEach(n => {
@@ -163,7 +181,8 @@ function extractExports(node, options) {
     if (exports) {
       const { stories, meta } = exports;
       if (stories) {
-        stories.forEach(story => {
+        Object.entries(stories).forEach(([key, story]) => {
+          includeStories.push(key);
           storyExports.push(story);
           counter += 1;
         });
@@ -177,14 +196,15 @@ function extractExports(node, options) {
     }
   });
   if (!metaExport) {
-    metaExport = 'const componentMeta = { };';
+    metaExport = {};
   }
+  metaExport.includeStories = JSON.stringify(includeStories);
 
   const fullJsx = [
     'import { DocsContainer } from "@storybook/addon-docs/blocks";',
     defaultJsx,
     ...storyExports,
-    metaExport,
+    `const componentMeta = ${stringifyMeta(metaExport)};`,
     wrapperJs,
     'export default componentMeta;',
   ].join('\n\n');

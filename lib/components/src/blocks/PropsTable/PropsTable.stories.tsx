@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropsTable, PropsTableError } from './PropsTable';
 import { DocsPageWrapper } from '../DocsPage';
-import * as rowStories from './PropRow.stories';
+import { stringDef, numberDef } from './PropRow.stories';
 
 export default {
   Component: PropsTable,
@@ -13,6 +13,4 @@ export const error = () => <PropsTable error={PropsTableError.NO_COMPONENT} />;
 
 export const empty = () => <PropsTable rows={[]} />;
 
-const { row: stringRow } = rowStories.string().props;
-const { row: numberRow } = rowStories.number().props;
-export const normal = () => <PropsTable rows={[stringRow, numberRow]} />;
+export const normal = () => <PropsTable rows={[stringDef, numberDef]} />;
