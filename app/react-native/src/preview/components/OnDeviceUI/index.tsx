@@ -60,6 +60,7 @@ const Preview: typeof TouchableOpacity = styled.TouchableOpacity`
 
 export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceUIState> {
   animatedValue: Animated.Value;
+
   channel: Channel;
 
   constructor(props: OnDeviceUIProps) {
@@ -113,12 +114,7 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
       keyboardAvoidingViewVerticalOffset,
     } = this.props;
 
-    const {
-      tabOpen,
-      slideBetweenAnimation,
-      previewWidth,
-      previewHeight,
-    } = this.state;
+    const { tabOpen, slideBetweenAnimation, previewWidth, previewHeight } = this.state;
 
     const previewWrapperStyles = [
       { flex: 1 },
@@ -146,18 +142,12 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
                 disabled={tabOpen === PREVIEW}
                 onPress={this.handleOpenPreview}
               >
-                <StoryView
-                  url={url}
-                  onDevice
-                  stories={stories}
-                />
+                <StoryView url={url} onDevice stories={stories} />
               </Preview>
             </Animated.View>
           </Animated.View>
           <Panel style={getNavigatorPanelPosition(this.animatedValue, previewWidth)}>
-            <StoryListView
-              stories={stories}
-            />
+            <StoryListView stories={stories} />
           </Panel>
           <Panel style={getAddonPanelPosition(this.animatedValue, previewWidth)}>
             <Addons />

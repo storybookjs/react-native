@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
 import styled from '@emotion/native';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
@@ -36,7 +36,7 @@ export default class StoryView extends Component<Props> {
   };
 
   renderHelp = () => {
-    const {url} = this.props;
+    const { url } = this.props;
     return (
       <HelpContainer>
         {url && url.length ? (
@@ -59,19 +59,24 @@ export default class StoryView extends Component<Props> {
   );
 
   render() {
-    const {onDevice, stories} = this.props;
+    const { onDevice, stories } = this.props;
 
     const selection = stories.getSelection();
 
-    const {id, storyFn} = selection;
+    const { id, storyFn } = selection;
 
-    return storyFn ? (
-      <View key={id} style={{flex: 1}}>
-        {storyFn()}
-      </View>
-    ) : (
-      onDevice ? this.renderOnDeviceUIHelp() : this.renderHelp()
-    );
+    if (storyFn) {
+      return (
+        <View key={id} style={{ flex: 1 }}>
+          {storyFn()}
+        </View>
+      );
+    }
 
+    if (onDevice) {
+      return this.renderOnDeviceUIHelp();
+    }
+
+    return this.renderHelp();
   }
 }

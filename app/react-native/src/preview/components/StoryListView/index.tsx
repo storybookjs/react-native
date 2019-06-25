@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { SectionList, TextInput, TouchableOpacity, View, SafeAreaView } from 'react-native';
 import styled from '@emotion/native';
@@ -103,19 +104,23 @@ export default class StoryListView extends Component<Props, State> {
   };
 
   handleStoryAdded = () => {
-    const {stories} = this.props;
+    const { stories } = this.props;
 
     if (stories) {
-      const data = Object.values(stories.raw().reduce((acc: {[kind: string]: {title: string, data: any[]}}, story: any) => {
-        acc[story.kind] = {
-          title: story.kind,
-          data: (acc[story.kind] ? acc[story.kind].data : []).concat(story)
-        };
+      const data = Object.values(
+        stories
+          .raw()
+          .reduce((acc: { [kind: string]: { title: string; data: any[] } }, story: any) => {
+            acc[story.kind] = {
+              title: story.kind,
+              data: (acc[story.kind] ? acc[story.kind].data : []).concat(story),
+            };
 
-        return acc;
-      }, {}));
+            return acc;
+          }, {})
+      );
 
-      this.setState({data, originalData: data});
+      this.setState({ data, originalData: data });
     }
   };
 
@@ -177,7 +182,7 @@ export default class StoryListView extends Component<Props, State> {
             />
           )}
           renderSectionHeader={({ section: { title } }) => (
-            <SectionHeader title={title} selected={title === selectedStory.kind}/>
+            <SectionHeader title={title} selected={title === selectedStory.kind} />
           )}
           keyExtractor={(item, index) => item + index}
           sections={data}

@@ -1,5 +1,5 @@
-import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/constants';
 import { Animated } from 'react-native';
+import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/constants';
 
 const PREVIEW_SCALE = 0.3;
 

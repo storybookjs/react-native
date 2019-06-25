@@ -1,6 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies, no-underscore-dangle */
 import React from 'react';
-import {AsyncStorage} from 'react-native';
-import {ThemeProvider} from 'emotion-theming';
+import { AsyncStorage } from 'react-native';
+import { ThemeProvider } from 'emotion-theming';
 // @ts-ignore
 import getHost from 'rn-host-detect';
 import addons from '@storybook/addons';
@@ -8,10 +9,10 @@ import Events from '@storybook/core-events';
 import Channel from '@storybook/channels';
 import createChannel from '@storybook/channel-websocket';
 // @ts-ignore remove when client-api is migrated to TS
-import {StoryStore, ClientApi} from '@storybook/client-api';
+import { StoryStore, ClientApi } from '@storybook/client-api';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
-import {theme, EmotionProps} from './components/Shared/theme';
+import { theme, EmotionProps } from './components/Shared/theme';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -33,9 +34,13 @@ export type Params = {
 
 export default class Preview {
   _clientApi: ClientApi;
+
   _stories: StoryStore;
+
   _addons: any;
+
   _decorators: any[];
+
   _asyncStorageStoryId: string;
 
   constructor() {
@@ -62,7 +67,7 @@ export default class Preview {
     let channel: Channel = null;
 
     const onDeviceUI = params.onDeviceUI !== false;
-    const {initialSelection, shouldPersistSelection} = params;
+    const { initialSelection, shouldPersistSelection } = params;
 
     try {
       channel = addons.getChannel();
@@ -73,14 +78,14 @@ export default class Preview {
 
     if (!channel || params.resetStorybook) {
       if (onDeviceUI && params.disableWebsockets) {
-        channel = new Channel({async: true});
+        channel = new Channel({ async: true });
         this._setInitialStory(initialSelection, shouldPersistSelection);
       } else {
         const host = getHost(params.host || 'localhost');
         const port = `:${params.port || 7007}`;
 
         const query = params.query || '';
-        const {secured} = params;
+        const { secured } = params;
         const websocketType = secured ? 'wss' : 'ws';
         const httpType = secured ? 'https' : 'http';
 
@@ -110,10 +115,9 @@ export default class Preview {
 
     addons.loadAddons(this._clientApi);
 
-    const appliedTheme = {...theme, ...params.theme};
+    const appliedTheme = { ...theme, ...params.theme };
 
     // react-native hot module loader must take in a Class - https://github.com/facebook/react-native/issues/10991
-    // eslint-disable-next-line react/prefer-stateless-function
     return class StorybookRoot extends React.PureComponent {
       render() {
         if (onDeviceUI) {
@@ -133,7 +137,7 @@ export default class Preview {
 
         return (
           <ThemeProvider theme={appliedTheme}>
-            <StoryView stories={preview._stories} url={webUrl}/>
+            <StoryView stories={preview._stories} url={webUrl} />
           </ThemeProvider>
         );
       }
@@ -163,20 +167,20 @@ export default class Preview {
       try {
         let value = this._asyncStorageStoryId;
         if (!value) {
-          value = JSON.parse((await AsyncStorage.getItem(STORAGE_KEY)));
+          value = JSON.parse(await AsyncStorage.getItem(STORAGE_KEY));
           this._asyncStorageStoryId = value;
         }
 
         if (this._checkStory(value)) {
-            story = value;
+          story = value;
         }
       } catch (e) {
-
+        //
       }
     }
 
     if (story) {
-       return this._getStory(story);
+      return this._getStory(story);
     }
 
     const stories = this._stories.raw();
@@ -191,11 +195,12 @@ export default class Preview {
     return this._stories.fromId(storyId);
   }
 
-  _selectStoryEvent({storyId}: {storyId: string}) {
+  _selectStoryEvent({ storyId }: { storyId: string }) {
     if (storyId) {
       try {
         AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(storyId));
       } catch (e) {
+        //
       }
 
       const story = this._getStory(storyId);
