@@ -1,3 +1,39 @@
+## 5.2.0-alpha.30 (June 25, 2019)
+
+This release merges `release/docs-technical-preview` branch back into `next` through a series of PRs. It also contains other changes that came in on `next` since the last alpha.
+
+### Features
+
+* CLI: Add info command to print environment information ([#6937](https://github.com/storybookjs/storybook/pull/6937))
+* CLI: Use process.env.CI if available ([#7118](https://github.com/storybookjs/storybook/pull/7118))
+* Addon-docs: Source loader library ([#7117](https://github.com/storybookjs/storybook/pull/7117))
+* Addon-docs: Support non-story exports in MDX ([#7188](https://github.com/storybookjs/storybook/pull/7188))
+* Addon-docs: Support non-story exports in module format ([#7185](https://github.com/storybookjs/storybook/pull/7185))
+* Addon-docs: Docs mode with `--docs` flag ([#7154](https://github.com/storybookjs/storybook/pull/7154))
+* Addon-docs: Convert to module format codemod ([#7174](https://github.com/storybookjs/storybook/pull/7174))
+* Addon-docs: MDX support ([#7145](https://github.com/storybookjs/storybook/pull/7145))
+* Addon-docs: Component parameter codemod ([#7155](https://github.com/storybookjs/storybook/pull/7155))
+* Addon-docs: DocsPage and doc blocks ([#7119](https://github.com/storybookjs/storybook/pull/7119))
+* Addon-docs: Module story format & framework param ([#7110](https://github.com/storybookjs/storybook/pull/7110))
+* Addon-docs: Basic skeleton, UI viewMode handling ([#7107](https://github.com/storybookjs/storybook/pull/7107))
+
+### Bug Fixes
+
+* Addon-backgrounds: Fix unstretched preview background wrapper ([#7173](https://github.com/storybookjs/storybook/pull/7173))
+* Addon-notes/info: Fix indenting on markdown code blocks ([#7158](https://github.com/storybookjs/storybook/pull/7158))
+* Core: Improve HMR error reporting, no refreshes needed for error recovery ([#6972](https://github.com/storybookjs/storybook/pull/6972))
+* Addon-info: change stylesheetBase info height from 110vh to 100vh ([#7141](https://github.com/storybookjs/storybook/pull/7141))
+
+### Maintenance
+
+* Typescript: Migrate addon viewport ([#7177](https://github.com/storybookjs/storybook/pull/7177))
+
+### Dependency Upgrades
+
+* Bump css-loader from 2.1.1 to 3.0.0 ([#7122](https://github.com/storybookjs/storybook/pull/7122))
+* Upgrade core-js to 3.x in devkits ([#7171](https://github.com/storybookjs/storybook/pull/7171))
+* UPGRADE lazy-universal-dotenv ([#7151](https://github.com/storybookjs/storybook/pull/7151))
+
 ## 5.2.0-alpha.29 (June 17, 2019)
 
 ### Features
