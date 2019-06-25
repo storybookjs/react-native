@@ -1,6 +1,6 @@
 {
   "name": "@storybook/example-devkits",
-  "version": "5.2.0-alpha.23",
+  "version": "5.2.0-alpha.30",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook -c ./ -s built-storybooks",
@@ -8,14 +8,14 @@
     "storybook": "start-storybook -p 9011 -c ./"
   },
   "devDependencies": {
-    "@storybook/addon-roundtrip": "5.2.0-alpha.23",
-    "@storybook/addon-parameter": "5.2.0-alpha.23",
-    "@storybook/addons": "5.2.0-alpha.23",
-    "@storybook/components": "5.2.0-alpha.23",
-    "@storybook/core-events": "5.2.0-alpha.23",
-    "@storybook/node-logger": "5.2.0-alpha.23",
-    "@storybook/react": "5.2.0-alpha.23",
-    "@storybook/theming": "5.2.0-alpha.23",
+    "@storybook/addon-parameter": "5.2.0-alpha.30",
+    "@storybook/addon-roundtrip": "5.2.0-alpha.30",
+    "@storybook/addons": "5.2.0-alpha.30",
+    "@storybook/components": "5.2.0-alpha.30",
+    "@storybook/core-events": "5.2.0-alpha.30",
+    "@storybook/node-logger": "5.2.0-alpha.30",
+    "@storybook/react": "5.2.0-alpha.30",
+    "@storybook/theming": "5.2.0-alpha.30",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "enzyme-to-json": "^3.3.5",

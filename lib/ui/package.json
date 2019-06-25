@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.2.0-alpha.23",
+  "version": "5.2.0-alpha.30",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -22,14 +22,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.23",
-    "@storybook/api": "5.2.0-alpha.23",
-    "@storybook/channels": "5.2.0-alpha.23",
-    "@storybook/client-logger": "5.2.0-alpha.23",
-    "@storybook/components": "5.2.0-alpha.23",
-    "@storybook/core-events": "5.2.0-alpha.23",
-    "@storybook/router": "5.2.0-alpha.23",
-    "@storybook/theming": "5.2.0-alpha.23",
+    "@storybook/addons": "5.2.0-alpha.30",
+    "@storybook/api": "5.2.0-alpha.30",
+    "@storybook/channels": "5.2.0-alpha.30",
+    "@storybook/client-logger": "5.2.0-alpha.30",
+    "@storybook/components": "5.2.0-alpha.30",
+    "@storybook/core-events": "5.2.0-alpha.30",
+    "@storybook/router": "5.2.0-alpha.30",
+    "@storybook/theming": "5.2.0-alpha.30",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
