@@ -8,7 +8,6 @@ import {
   TouchableOpacityProps,
 } from 'react-native';
 import styled from '@emotion/native';
-import Events from '@storybook/core-events';
 import addons from '@storybook/addons';
 import Channel from '@storybook/channels';
 import StoryListView from '../StoryListView';
@@ -36,14 +35,11 @@ interface OnDeviceUIProps {
   url?: string;
   tabOpen?: number;
   isUIHidden?: boolean;
-  getInitialStory?: (...args: any[]) => any;
   shouldDisableKeyboardAvoidingView?: boolean;
   keyboardAvoidingViewVerticalOffset?: number;
 }
 
 interface OnDeviceUIState {
-  selection: any;
-  storyFn: any;
   tabOpen: number;
   slideBetweenAnimation: boolean;
   previewWidth: number;
@@ -72,31 +68,11 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
     this.state = {
       tabOpen,
       slideBetweenAnimation: false,
-      selection: {},
-      storyFn: null,
       previewWidth: 0,
       previewHeight: 0,
     };
     this.animatedValue = new Animated.Value(tabOpen);
     this.channel = addons.getChannel();
-  }
-
-  async componentWillMount() {
-    const { getInitialStory } = this.props;
-    if (getInitialStory) {
-      const story = await getInitialStory();
-      this.setState({
-        selection: story || {},
-        storyFn: story ? story.storyFn : null,
-      });
-    }
-    this.channel.on(Events.SELECT_STORY, this.handleStoryChange);
-    this.channel.on(Events.FORCE_RE_RENDER, this.forceReRender);
-  }
-
-  componentWillUnmount() {
-    this.channel.removeListener(Events.SELECT_STORY, this.handleStoryChange);
-    this.channel.removeListener(Events.FORCE_RE_RENDER, this.forceReRender);
   }
 
   onLayout = ({ previewWidth, previewHeight }: PreviewDimens) => {
@@ -105,24 +81,6 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
 
   handleOpenPreview = () => {
     this.handleToggleTab(PREVIEW);
-  };
-
-  forceReRender = () => {
-    this.forceUpdate();
-  };
-
-  handleStoryChange = (selection: any) => {
-    const { selection: prevSelection } = this.state;
-    if (selection.kind === prevSelection.kind && selection.story === prevSelection.story) {
-      this.handleToggleTab(PREVIEW);
-    }
-    this.setState({
-      selection: {
-        kind: selection.kind,
-        story: selection.story,
-      },
-      storyFn: selection.storyFn,
-    });
   };
 
   handleToggleTab = (newTabOpen: number) => {
@@ -158,8 +116,6 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
     const {
       tabOpen,
       slideBetweenAnimation,
-      selection,
-      storyFn,
       previewWidth,
       previewHeight,
     } = this.state;
@@ -192,9 +148,8 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
               >
                 <StoryView
                   url={url}
-                  selection={selection}
-                  storyFn={storyFn}
-                  listenToEvents={false}
+                  onDevice
+                  stories={stories}
                 />
               </Preview>
             </Animated.View>
@@ -202,8 +157,6 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
           <Panel style={getNavigatorPanelPosition(this.animatedValue, previewWidth)}>
             <StoryListView
               stories={stories}
-              selectedKind={selection.kind}
-              selectedStory={selection.story}
             />
           </Panel>
           <Panel style={getAddonPanelPosition(this.animatedValue, previewWidth)}>

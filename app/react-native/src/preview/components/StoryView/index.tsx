@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text} from 'react-native';
 import styled from '@emotion/native';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
 
 interface Props {
-  listenToEvents: boolean;
-  selection?: any;
-  storyFn?: any;
+  stories: any;
   url: string;
-}
-
-interface State {
-  storyFn?: any;
-  selection?: any;
+  onDevice?: boolean;
 }
 
 const HelpContainer = styled.View`
@@ -24,35 +18,25 @@ const HelpContainer = styled.View`
   justify-content: center;
 `;
 
-export default class StoryView extends Component<Props, State> {
+export default class StoryView extends Component<Props> {
   componentDidMount() {
-    if (this.props.listenToEvents) {
-      const channel = addons.getChannel();
-      channel.on(Events.SELECT_STORY, this.selectStory);
-      channel.on(Events.FORCE_RE_RENDER, this.forceReRender);
-    }
+    const channel = addons.getChannel();
+    channel.on(Events.STORY_RENDER, this.forceReRender);
+    channel.on(Events.FORCE_RE_RENDER, this.forceReRender);
   }
 
   componentWillUnmount() {
-    const { listenToEvents } = this.props;
-
-    if (listenToEvents) {
-      const channel = addons.getChannel();
-      channel.removeListener(Events.SELECT_STORY, this.selectStory);
-      channel.removeListener(Events.FORCE_RE_RENDER, this.forceReRender);
-    }
+    const channel = addons.getChannel();
+    channel.removeListener(Events.STORY_RENDER, this.forceReRender);
+    channel.removeListener(Events.FORCE_RE_RENDER, this.forceReRender);
   }
 
   forceReRender = () => {
     this.forceUpdate();
   };
 
-  selectStory = (selection: any) => {
-    this.setState({ storyFn: selection.storyFn, selection });
-  };
-
   renderHelp = () => {
-    const { url } = this.props;
+    const {url} = this.props;
     return (
       <HelpContainer>
         {url && url.length ? (
@@ -75,41 +59,19 @@ export default class StoryView extends Component<Props, State> {
   );
 
   render() {
-    const { listenToEvents } = this.props;
+    const {onDevice, stories} = this.props;
 
-    if (listenToEvents) {
-      return this.renderListening();
-    } else {
-      return this.renderOnDevice();
-    }
+    const selection = stories.getSelection();
+
+    const {kind, story, storyFn} = selection;
+
+    return storyFn ? (
+      <View key={`${kind}:::${story}`} style={{flex: 1}}>
+        {storyFn()}
+      </View>
+    ) : (
+      onDevice ? this.renderOnDeviceUIHelp() : this.renderHelp()
+    );
+
   }
-
-  renderListening = () => {
-    if (!this.state) {
-      return null;
-    }
-    const { storyFn, selection } = this.state;
-    const { kind, story } = selection;
-
-    return storyFn ? (
-      <View key={`${kind}:::${story}`} style={{ flex: 1 }}>
-        {storyFn()}
-      </View>
-    ) : (
-      this.renderHelp()
-    );
-  };
-
-  renderOnDevice = () => {
-    const { storyFn, selection } = this.props;
-    const { kind, story } = selection;
-
-    return storyFn ? (
-      <View key={`${kind}:::${story}`} style={{ flex: 1 }}>
-        {storyFn()}
-      </View>
-    ) : (
-      this.renderOnDeviceUIHelp()
-    );
-  };
 }
