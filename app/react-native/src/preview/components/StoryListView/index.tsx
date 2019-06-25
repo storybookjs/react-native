@@ -172,7 +172,7 @@ export default class StoryListView extends Component<Props, State> {
             <ListItem
               title={item.name}
               kind={item.kind}
-              selected={item.kind === selectedStory.kind && item.name === selectedStory.story}
+              selected={item.id === selectedStory.id}
               onPress={() => this.changeStory(item.id)}
             />
           )}
