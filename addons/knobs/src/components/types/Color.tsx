@@ -2,8 +2,7 @@
 import { document } from 'global';
 import PropTypes from 'prop-types';
 import React, { Component, WeakValidationMap } from 'react';
-// @ts-ignore
-import { SketchPicker } from 'react-color';
+import { SketchPicker, ColorResult } from 'react-color';
 
 import { styled } from '@storybook/theming';
 import { Form } from '@storybook/components';
@@ -28,16 +27,6 @@ interface ColorButtonProps {
   size: string;
   active: boolean;
   onClick: () => any;
-}
-
-// TODO: These types should come from @types/react-color once installed
-interface ColorResult {
-  rgb: {
-    a?: number;
-    b: number;
-    g: number;
-    r: number;
-  };
 }
 
 const { Button } = Form;

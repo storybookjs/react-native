@@ -1,7 +1,6 @@
 import React, { Component, ChangeEvent } from 'react';
 import PropTypes from 'prop-types';
 import deepEqual from 'fast-deep-equal';
-// @ts-ignore
 import { polyfill } from 'react-lifecycles-compat';
 import { Form } from '@storybook/components';
 

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
 import ReactSelect from 'react-select';
+import { ValueType } from 'react-select/lib/types';
 import { styled } from '@storybook/theming';
 
 import RadiosType from './Radio';
@@ -35,29 +35,17 @@ interface OptionsTypeProps<T> {
   onChange: (value: T) => T;
 }
 
-const OptionsSelect: React.ComponentType<ReactSelectProps> = styled(ReactSelect)({
+// : React.ComponentType<ReactSelectProps>
+const OptionsSelect = styled(ReactSelect)({
   width: '100%',
   maxWidth: '300px',
   color: 'black',
 });
 
-// TODO: These types should come from @types/react-select once installed.
-type ReactSelectValueType<OptionType = { label: string; value: string }> =
-  | OptionType
-  | OptionsType<OptionType>
-  | null
-  | undefined;
-
-type ReactSelectOnChangeFn<OptionType = { label: string; value: string }> = (
-  value: ReactSelectValueType<OptionType>
+type ReactSelectOnChangeFn<OptionType = OptionsSelectValueItem> = (
+  value: ValueType<OptionType>
 ) => void;
 
-interface ReactSelectProps {
-  value: OptionsSelectValueItem | OptionsSelectValueItem[];
-  options: any;
-  isMulti: boolean;
-  onChange: ReactSelectOnChangeFn;
-}
 interface OptionsSelectValueItem {
   value: any;
   label: string;
