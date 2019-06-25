@@ -1,16 +1,44 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component, ChangeEvent, WeakValidationMap } from 'react';
 
 import { Form } from '@storybook/components';
 
-class TextType extends React.Component {
-  shouldComponentUpdate(nextProps) {
+type TextTypeKnobValue = string;
+
+interface TextTypeProps {
+  knob: {
+    name: string;
+    value: TextTypeKnobValue;
+  };
+  onChange: (value: TextTypeKnobValue) => TextTypeKnobValue;
+}
+
+export default class TextType extends Component<TextTypeProps> {
+  static defaultProps: TextTypeProps = {
+    knob: {} as any,
+    onChange: value => value,
+  };
+
+  static propTypes: WeakValidationMap<TextTypeProps> = {
+    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+    knob: PropTypes.shape({
+      name: PropTypes.string,
+      value: PropTypes.string,
+    }) as any,
+    onChange: PropTypes.func,
+  };
+
+  static serialize = (value: TextTypeKnobValue) => value;
+
+  static deserialize = (value: TextTypeKnobValue) => value;
+
+  shouldComponentUpdate(nextProps: TextTypeProps) {
     const { knob } = this.props;
 
     return nextProps.knob.value !== knob.value;
   }
 
-  handleChange = event => {
+  handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const { onChange } = this.props;
     const { value } = event.target;
 
@@ -31,21 +59,3 @@ class TextType extends React.Component {
     );
   }
 }
-
-TextType.defaultProps = {
-  knob: {},
-  onChange: value => value,
-};
-
-TextType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.string,
-  }),
-  onChange: PropTypes.func,
-};
-
-TextType.serialize = value => value;
-TextType.deserialize = value => value;
-
-export default TextType;

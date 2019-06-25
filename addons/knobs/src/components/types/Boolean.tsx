@@ -1,7 +1,18 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
 import { styled } from '@storybook/theming';
+
+type BooleanTypeKnobValue = boolean;
+
+interface BooleanTypeProps {
+  knob: {
+    name: string;
+    value: BooleanTypeKnobValue;
+    separator: string;
+  };
+  onChange: (value: BooleanTypeKnobValue) => BooleanTypeKnobValue;
+}
 
 const Input = styled.input({
   display: 'table-cell',
@@ -14,7 +25,13 @@ const Input = styled.input({
   color: '#555',
 });
 
-const BooleanType = ({ knob, onChange }) => (
+const serialize = (value: BooleanTypeKnobValue): string | null => (value ? String(value) : null);
+const deserialize = (value: string | null) => value === 'true';
+
+const BooleanType: FunctionComponent<BooleanTypeProps> & {
+  serialize: typeof serialize;
+  deserialize: typeof deserialize;
+} = ({ knob, onChange }) => (
   <Input
     id={knob.name}
     name={knob.name}
@@ -25,19 +42,20 @@ const BooleanType = ({ knob, onChange }) => (
 );
 
 BooleanType.defaultProps = {
-  knob: {},
+  knob: {} as any,
   onChange: value => value,
 };
 
 BooleanType.propTypes = {
+  // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.bool,
-  }),
+  }) as any,
   onChange: PropTypes.func,
 };
 
-BooleanType.serialize = value => (value ? String(value) : null);
-BooleanType.deserialize = value => value === 'true';
+BooleanType.serialize = serialize;
+BooleanType.deserialize = deserialize;
 
 export default BooleanType;

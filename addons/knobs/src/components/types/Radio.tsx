@@ -1,8 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component, WeakValidationMap } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 
-const RadiosWrapper = styled.div(({ isInline }) =>
+type RadiosTypeKnobValue = string;
+
+interface RadiosTypeKnobProp {
+  name: string;
+  value: RadiosTypeKnobValue;
+  defaultValue: RadiosTypeKnobValue;
+  options: {
+    [key: string]: RadiosTypeKnobValue;
+  };
+}
+
+interface RadiosTypeProps {
+  knob: RadiosTypeKnobProp;
+  isInline: boolean;
+  onChange: (value: RadiosTypeKnobValue) => RadiosTypeKnobValue;
+}
+
+interface RadiosWrapperProps {
+  isInline: boolean;
+}
+
+const RadiosWrapper = styled.div(({ isInline }: RadiosWrapperProps) =>
   isInline
     ? {
         display: 'flex',
@@ -21,15 +42,36 @@ const RadioLabel = styled.label({
   display: 'inline-block',
 });
 
-class RadiosType extends Component {
-  renderRadioButtonList({ options }) {
+class RadiosType extends Component<RadiosTypeProps> {
+  static defaultProps: RadiosTypeProps = {
+    knob: {} as any,
+    onChange: value => value,
+    isInline: false,
+  };
+
+  static propTypes: WeakValidationMap<RadiosTypeProps> = {
+    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+    knob: PropTypes.shape({
+      name: PropTypes.string,
+      value: PropTypes.string,
+      options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+    }) as any,
+    onChange: PropTypes.func,
+    isInline: PropTypes.bool,
+  };
+
+  static serialize = (value: RadiosTypeKnobValue) => value;
+
+  static deserialize = (value: RadiosTypeKnobValue) => value;
+
+  renderRadioButtonList({ options }: RadiosTypeKnobProp) {
     if (Array.isArray(options)) {
       return options.map(val => this.renderRadioButton(val, val));
     }
     return Object.keys(options).map(key => this.renderRadioButton(key, options[key]));
   }
 
-  renderRadioButton(label, value) {
+  renderRadioButton(label: string, value: RadiosTypeKnobValue) {
     const opts = { label, value };
     const { onChange, knob } = this.props;
     const { name } = knob;
@@ -56,24 +98,5 @@ class RadiosType extends Component {
     return <RadiosWrapper isInline={isInline}>{this.renderRadioButtonList(knob)}</RadiosWrapper>;
   }
 }
-
-RadiosType.defaultProps = {
-  knob: {},
-  onChange: value => value,
-  isInline: false,
-};
-
-RadiosType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.string,
-    options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  }),
-  onChange: PropTypes.func,
-  isInline: PropTypes.bool,
-};
-
-RadiosType.serialize = value => value;
-RadiosType.deserialize = value => value;
 
 export default RadiosType;

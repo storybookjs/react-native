@@ -1,8 +1,33 @@
-import React, { Component } from 'react';
+import React, { Component, ChangeEvent, WeakValidationMap } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 
-const CheckboxesWrapper = styled.div(({ isInline }) =>
+type CheckboxesTypeKnobValue = string[];
+
+interface CheckboxesWrapperProps {
+  isInline: boolean;
+}
+
+interface CheckboxesTypeKnobProp {
+  name: string;
+  value: CheckboxesTypeKnobValue;
+  defaultValue: CheckboxesTypeKnobValue;
+  options: {
+    [key: string]: string;
+  };
+}
+
+interface CheckboxesTypeProps {
+  knob: CheckboxesTypeKnobProp;
+  isInline: boolean;
+  onChange: (value: CheckboxesTypeKnobValue) => CheckboxesTypeKnobValue;
+}
+
+interface CheckboxesTypeState {
+  values: CheckboxesTypeKnobValue;
+}
+
+const CheckboxesWrapper = styled.div(({ isInline }: CheckboxesWrapperProps) =>
   isInline
     ? {
         display: 'flex',
@@ -27,8 +52,29 @@ const CheckboxLabel = styled.label({
   display: 'inline-block',
 });
 
-class CheckboxesType extends Component {
-  constructor(props) {
+export default class CheckboxesType extends Component<CheckboxesTypeProps, CheckboxesTypeState> {
+  static defaultProps: CheckboxesTypeProps = {
+    knob: {} as any,
+    onChange: value => value,
+    isInline: false,
+  };
+
+  static propTypes: WeakValidationMap<CheckboxesTypeProps> = {
+    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+    knob: PropTypes.shape({
+      name: PropTypes.string,
+      value: PropTypes.array,
+      options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+    }) as any,
+    onChange: PropTypes.func,
+    isInline: PropTypes.bool,
+  };
+
+  static serialize = (value: CheckboxesTypeKnobValue) => value;
+
+  static deserialize = (value: CheckboxesTypeKnobValue) => value;
+
+  constructor(props: CheckboxesTypeProps) {
     super(props);
     const { knob } = props;
 
@@ -37,9 +83,9 @@ class CheckboxesType extends Component {
     };
   }
 
-  handleChange = e => {
+  handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { onChange } = this.props;
-    const currentValue = e.target.value;
+    const currentValue = (e.target as HTMLInputElement).value;
     const { values } = this.state;
 
     if (values.includes(currentValue)) {
@@ -53,10 +99,10 @@ class CheckboxesType extends Component {
     onChange(values);
   };
 
-  renderCheckboxList = ({ options }) =>
+  renderCheckboxList = ({ options }: CheckboxesTypeKnobProp) =>
     Object.keys(options).map(key => this.renderCheckbox(key, options[key]));
 
-  renderCheckbox = (label, value) => {
+  renderCheckbox = (label: string, value: string) => {
     const { knob } = this.props;
     const { name } = knob;
     const id = `${name}-${value}`;
@@ -87,24 +133,3 @@ class CheckboxesType extends Component {
     );
   }
 }
-
-CheckboxesType.defaultProps = {
-  knob: {},
-  onChange: value => value,
-  isInline: false,
-};
-
-CheckboxesType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.array,
-    options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  }),
-  onChange: PropTypes.func,
-  isInline: PropTypes.bool,
-};
-
-CheckboxesType.serialize = value => value;
-CheckboxesType.deserialize = value => value;
-
-export default CheckboxesType;

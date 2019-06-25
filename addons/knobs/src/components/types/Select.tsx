@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { FunctionComponent, ChangeEvent } from 'react';
 import PropTypes from 'prop-types';
 
 import { Form } from '@storybook/components';
 
-const SelectType = ({ knob, onChange }) => {
+type SelectTypeKnobValue = string;
+
+interface SelectTypeProps {
+  knob: {
+    name: string;
+    value: SelectTypeKnobValue;
+    options: {
+      [key: string]: SelectTypeKnobValue;
+    };
+  };
+  onChange: (value: SelectTypeKnobValue) => SelectTypeKnobValue;
+}
+
+const serialize = (value: SelectTypeKnobValue) => value;
+const deserialize = (value: SelectTypeKnobValue) => value;
+
+const SelectType: FunctionComponent<SelectTypeProps> & {
+  serialize: typeof serialize;
+  deserialize: typeof deserialize;
+} = ({ knob, onChange }) => {
   const { options } = knob;
   const entries = Array.isArray(options)
     ? options.reduce((acc, k) => Object.assign(acc, { [k]: k }), {})
@@ -15,7 +34,7 @@ const SelectType = ({ knob, onChange }) => {
     <Form.Select
       value={selectedKey}
       name={knob.name}
-      onChange={e => {
+      onChange={(e: ChangeEvent<HTMLSelectElement>) => {
         onChange(entries[e.target.value]);
       }}
       size="flex"
@@ -30,20 +49,21 @@ const SelectType = ({ knob, onChange }) => {
 };
 
 SelectType.defaultProps = {
-  knob: {},
+  knob: {} as any,
   onChange: value => value,
 };
 
 SelectType.propTypes = {
+  // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.any,
     options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  }),
+  }) as any,
   onChange: PropTypes.func,
 };
 
-SelectType.serialize = value => value;
-SelectType.deserialize = value => value;
+SelectType.serialize = serialize;
+SelectType.deserialize = deserialize;
 
 export default SelectType;

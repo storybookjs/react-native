@@ -1,46 +1,67 @@
+// @ts-ignore
 import { FileReader } from 'global';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { ChangeEvent, FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 
 import { Form } from '@storybook/components';
+
+type DateTypeKnobValue = string[];
+
+interface FilesTypeProps {
+  knob: {
+    name: string;
+    accept: string;
+    value: DateTypeKnobValue;
+  };
+  onChange: (value: DateTypeKnobValue) => DateTypeKnobValue;
+}
 
 const FileInput = styled(Form.Input)({
   paddingTop: 4,
 });
 
-function fileReaderPromise(file) {
-  return new Promise(resolve => {
+function fileReaderPromise(file: File) {
+  return new Promise<string>(resolve => {
     const fileReader = new FileReader();
-    fileReader.onload = e => resolve(e.currentTarget.result);
+    fileReader.onload = (e: Event) => resolve((e.currentTarget as FileReader).result);
     fileReader.readAsDataURL(file);
   });
 }
 
-const FilesType = ({ knob, onChange }) => (
+const serialize = (): undefined => undefined;
+const deserialize = (): undefined => undefined;
+
+const FilesType: FunctionComponent<FilesTypeProps> & {
+  serialize: typeof serialize;
+  deserialize: typeof deserialize;
+} = ({ knob, onChange }) => (
   <FileInput
     type="file"
     name={knob.name}
     multiple
-    onChange={e => Promise.all(Array.from(e.target.files).map(fileReaderPromise)).then(onChange)}
+    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+      Promise.all(Array.from(e.target.files).map(fileReaderPromise)).then(onChange)
+    }
     accept={knob.accept}
     size="flex"
   />
 );
 
 FilesType.defaultProps = {
-  knob: {},
+  knob: {} as any,
   onChange: value => value,
 };
 
 FilesType.propTypes = {
+  // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
   knob: PropTypes.shape({
     name: PropTypes.string,
-  }),
+  }) as any,
   onChange: PropTypes.func,
 };
 
-FilesType.serialize = () => undefined;
-FilesType.deserialize = () => undefined;
+FilesType.serialize = serialize;
+FilesType.deserialize = deserialize;
 
 export default FilesType;

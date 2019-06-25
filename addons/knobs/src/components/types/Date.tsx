@@ -1,7 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, ChangeEvent, WeakValidationMap } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 import { Form } from '@storybook/components';
+
+type DateTypeKnobValue = number;
+
+interface DateTypeProps {
+  knob: {
+    name: string;
+    value: DateTypeKnobValue;
+  };
+  onChange: (value: DateTypeKnobValue) => DateTypeKnobValue;
+}
+
+interface DateTypeState {
+  valid: boolean | undefined;
+}
 
 const FlexSpaced = styled.div({
   flex: 1,
@@ -15,28 +29,53 @@ const FlexSpaced = styled.div({
 });
 const FlexInput = styled(Form.Input)({ flex: 1 });
 
-const formatDate = date => {
+const formatDate = (date: Date) => {
   const year = `000${date.getFullYear()}`.slice(-4);
   const month = `0${date.getMonth() + 1}`.slice(-2);
   const day = `0${date.getDate()}`.slice(-2);
 
   return `${year}-${month}-${day}`;
 };
-const formatTime = date => {
+
+const formatTime = (date: Date) => {
   const hours = `0${date.getHours()}`.slice(-2);
   const minutes = `0${date.getMinutes()}`.slice(-2);
 
   return `${hours}:${minutes}`;
 };
 
-class DateType extends Component {
+export default class DateType extends Component<DateTypeProps, DateTypeState> {
+  static defaultProps: DateTypeProps = {
+    knob: {} as any,
+    onChange: value => value,
+  };
+
+  static propTypes: WeakValidationMap<DateTypeProps> = {
+    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+    knob: PropTypes.shape({
+      name: PropTypes.string,
+      value: PropTypes.number,
+    }) as any,
+    onChange: PropTypes.func,
+  };
+
+  static serialize = (value: DateTypeKnobValue) =>
+    new Date(value).getTime() || new Date().getTime();
+
+  static deserialize = (value: DateTypeKnobValue) =>
+    new Date(value).getTime() || new Date().getTime();
+
   static getDerivedStateFromProps() {
     return { valid: true };
   }
 
-  state = {
+  state: DateTypeState = {
     valid: undefined,
   };
+
+  dateInput: HTMLInputElement;
+
+  timeInput: HTMLInputElement;
 
   componentDidUpdate() {
     const { knob } = this.props;
@@ -49,7 +88,7 @@ class DateType extends Component {
     }
   }
 
-  onDateChange = e => {
+  onDateChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { knob, onChange } = this.props;
     const { state } = this;
 
@@ -70,7 +109,7 @@ class DateType extends Component {
     }
   };
 
-  onTimeChange = e => {
+  onTimeChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { knob, onChange } = this.props;
     const { state } = this;
 
@@ -100,7 +139,7 @@ class DateType extends Component {
         <FlexInput
           type="date"
           max="9999-12-31" // I do this because of a rendering bug in chrome
-          ref={el => {
+          ref={(el: HTMLInputElement) => {
             this.dateInput = el;
           }}
           id={`${name}date`}
@@ -111,7 +150,7 @@ class DateType extends Component {
           type="time"
           id={`${name}time`}
           name={`${name}time`}
-          ref={el => {
+          ref={(el: HTMLInputElement) => {
             this.timeInput = el;
           }}
           onChange={this.onTimeChange}
@@ -121,21 +160,3 @@ class DateType extends Component {
     ) : null;
   }
 }
-
-DateType.defaultProps = {
-  knob: {},
-  onChange: value => value,
-};
-
-DateType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.number,
-  }),
-  onChange: PropTypes.func,
-};
-
-DateType.serialize = value => new Date(value).getTime() || new Date().getTime();
-DateType.deserialize = value => new Date(value).getTime() || new Date().getTime();
-
-export default DateType;
