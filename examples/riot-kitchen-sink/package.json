@@ -29,6 +29,7 @@
     "@storybook/addon-viewport": "5.2.0-alpha.23",
     "@storybook/addons": "5.2.0-alpha.23",
     "@storybook/riot": "5.2.0-alpha.23",
+    "@storybook/source-loader": "5.2.0-alpha.23",
     "babel-loader": "^8.0.4",
     "cross-env": "^5.2.0",
     "file-loader": "^3.0.1",

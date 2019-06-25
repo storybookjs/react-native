@@ -5,7 +5,7 @@ module.exports = async ({ config }: { config: any }) => {
     test: [/\.stories\.tsx?$/, /index\.ts$/],
     loaders: [
       {
-        loader: require.resolve('@storybook/addon-storysource/loader'),
+        loader: require.resolve('@storybook/source-loader'),
         options: {
           parser: 'typescript',
         },

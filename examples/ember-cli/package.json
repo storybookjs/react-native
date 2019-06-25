@@ -27,6 +27,7 @@
     "@storybook/addon-viewport": "5.2.0-alpha.23",
     "@storybook/addons": "5.2.0-alpha.23",
     "@storybook/ember": "5.2.0-alpha.23",
+    "@storybook/source-loader": "5.2.0-alpha.23",
     "babel-loader": "^8",
     "broccoli-asset-rev": "^3.0.0",
     "cross-env": "^5.2.0",
