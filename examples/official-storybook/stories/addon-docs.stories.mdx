@@ -51,6 +51,10 @@ import { Button } from '@storybook/react/demo';
 
 <Button>just a button, not a story</Button>
 
+export const nonStory1 = 'foo'; // a non-story export
+
+export const nonStory2 = () => <Button>Not a story</Button>; // another one
+
 <Preview>
   <Story name="hello story">
     <Button onClick={action('clicked')}>hello world</Button>
@@ -66,6 +70,10 @@ import { Button } from '@storybook/react/demo';
   </Story>
   <Story name="plaintext">Plain text</Story>
 </Preview>
+
+<Story name="solo story">
+  <Button onClick={action('clicked')}>solo</Button>
+</Story>
 
 <Source name="hello story" />
 

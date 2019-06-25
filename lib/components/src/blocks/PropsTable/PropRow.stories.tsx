@@ -7,6 +7,7 @@ import { DocsPageWrapper } from '../DocsPage';
 export default {
   Component: PropRow,
   title: 'Docs|PropRow',
+  excludeStories: /.*Def$/,
   decorators: [
     getStory => (
       <DocsPageWrapper>
@@ -18,7 +19,7 @@ export default {
   ],
 };
 
-const stringDef = {
+export const stringDef = {
   name: 'someString',
   type: { name: 'string' },
   required: true,
@@ -26,17 +27,17 @@ const stringDef = {
   defaultValue: 'fixme',
 };
 
-const longNameDef = {
+export const longNameDef = {
   ...stringDef,
   name: 'reallyLongStringThatTakesUpSpace',
 };
 
-const longDescDef = {
+export const longDescDef = {
   ...stringDef,
   description: 'really long description that takes up a lot of space. sometimes this happens.',
 };
 
-const numberDef = {
+export const numberDef = {
   name: 'someNumber',
   type: { name: 'number' },
   required: false,
@@ -44,7 +45,7 @@ const numberDef = {
   defaultValue: 0,
 };
 
-const objectDef = {
+export const objectDef = {
   name: 'someObject',
   type: { name: 'objectOf', value: { name: 'number' } },
   required: false,
@@ -52,7 +53,7 @@ const objectDef = {
   defaultValue: { value: '{ key: 1 }', computed: false },
 };
 
-const arrayDef = {
+export const arrayDef = {
   name: 'someOArray',
   type: { name: 'arrayOf', value: { name: 'number' } },
   required: false,
@@ -60,7 +61,7 @@ const arrayDef = {
   defaultValue: { value: '[1, 2, 3]', computed: false },
 };
 
-const complexDef = {
+export const complexDef = {
   name: 'someComplex',
   type: {
     name: 'objectOf',

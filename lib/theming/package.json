@@ -1,6 +1,6 @@
 {
   "name": "@storybook/theming",
-  "version": "5.2.0-alpha.23",
+  "version": "5.2.0-alpha.30",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -23,7 +23,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.9",
     "@emotion/styled": "^10.0.7",
-    "@storybook/client-logger": "5.2.0-alpha.23",
+    "@storybook/client-logger": "5.2.0-alpha.30",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "deep-object-diff": "^1.1.0",
