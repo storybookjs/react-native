@@ -11,9 +11,13 @@ import { OnEmitEvent } from '../index';
 interface StyledTextareaProps {
   shown: boolean;
   failed: boolean;
+  value?: string;
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const StyledTextarea = styled(Textarea)<StyledTextareaProps>(
+const StyledTextarea = styled(({ shown, failed, ...rest }: StyledTextareaProps) => (
+  <Textarea {...rest} />
+))(
   {
     flex: '1 0 0',
     boxSizing: 'border-box',
