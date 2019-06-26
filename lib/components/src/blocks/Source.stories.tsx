@@ -9,10 +9,10 @@ export default {
 };
 
 export const noStory = () => <Source error={SourceError.NO_STORY} />;
-noStory.title = 'no story';
+noStory.story = { name: 'no story' };
 
 export const sourceUnavailable = () => <Source error={SourceError.SOURCE_UNAVAILABLE} />;
-sourceUnavailable.title = 'source unavailable';
+sourceUnavailable.story = { name: 'source unavailable' };
 
 const jsxCode = `
 <MyComponent boolProp scalarProp={1} complexProp={{ foo: 1, bar: '2' }}>
