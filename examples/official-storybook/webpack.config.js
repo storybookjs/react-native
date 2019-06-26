@@ -42,7 +42,7 @@ module.exports = async ({ config }) => ({
         test: /\.stories\.[tj]sx?$/,
         use: [
           {
-            loader: require.resolve('@storybook/source-loader'),
+            loader: require.resolve('@storybook/addon-storysource/loader'),
             options: { injectParameters: true },
           },
         ],
