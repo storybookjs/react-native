@@ -4,17 +4,19 @@ import { styled } from '@storybook/theming';
 
 type RadiosTypeKnobValue = string;
 
-interface RadiosTypeKnobProp {
+export interface RadiosTypeKnob {
   name: string;
   value: RadiosTypeKnobValue;
   defaultValue: RadiosTypeKnobValue;
-  options: {
-    [key: string]: RadiosTypeKnobValue;
-  };
+  options: RadiosTypeOptionsProp;
+}
+
+export interface RadiosTypeOptionsProp {
+  [key: string]: RadiosTypeKnobValue;
 }
 
 interface RadiosTypeProps {
-  knob: RadiosTypeKnobProp;
+  knob: RadiosTypeKnob;
   isInline: boolean;
   onChange: (value: RadiosTypeKnobValue) => RadiosTypeKnobValue;
 }
@@ -64,7 +66,7 @@ class RadiosType extends Component<RadiosTypeProps> {
 
   static deserialize = (value: RadiosTypeKnobValue) => value;
 
-  renderRadioButtonList({ options }: RadiosTypeKnobProp) {
+  renderRadioButtonList({ options }: RadiosTypeKnob) {
     if (Array.isArray(options)) {
       return options.map(val => this.renderRadioButton(val, val));
     }

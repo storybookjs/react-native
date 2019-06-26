@@ -5,12 +5,14 @@ import { styled } from '@storybook/theming';
 
 type BooleanTypeKnobValue = boolean;
 
-interface BooleanTypeProps {
-  knob: {
-    name: string;
-    value: BooleanTypeKnobValue;
-    separator: string;
-  };
+export interface BooleanTypeKnob {
+  name: string;
+  value: BooleanTypeKnobValue;
+  separator: string;
+}
+
+export interface BooleanTypeProps {
+  knob: BooleanTypeKnob;
   onChange: (value: BooleanTypeKnobValue) => BooleanTypeKnobValue;
 }
 

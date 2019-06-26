@@ -1,20 +1,64 @@
-const callArg = fn => fn();
-const callAll = fns => fns.forEach(callArg);
+import Types, {
+  TextTypeKnob,
+  NumberTypeKnob,
+  ColorTypeKnob,
+  BooleanTypeKnob,
+  ObjectTypeKnob,
+  SelectTypeKnob,
+  RadiosTypeKnob,
+  ArrayTypeKnob,
+  DateTypeKnob,
+  ButtonTypeOnClickProp,
+  FileTypeKnob,
+  OptionsTypeKnob,
+} from './components/types';
+
+type Callback = () => any;
+
+type KnobPlus<T extends keyof typeof Types, K> = K & { type: T; groupId?: string };
+
+export type Knob =
+  | KnobPlus<'text', Pick<TextTypeKnob, 'value'>>
+  | KnobPlus<'boolean', Pick<BooleanTypeKnob, 'value'>>
+  | KnobPlus<'number', Pick<NumberTypeKnob, 'value' | 'range' | 'min' | 'max' | 'step'>>
+  | KnobPlus<'color', Pick<ColorTypeKnob, 'value'>>
+  | KnobPlus<'object', Pick<ObjectTypeKnob<any>, 'value'>>
+  | KnobPlus<'select', Pick<SelectTypeKnob, 'value' | 'options'> & { selectV2: true }>
+  | KnobPlus<'radios', Pick<RadiosTypeKnob, 'value' | 'options'>>
+  | KnobPlus<'array', Pick<ArrayTypeKnob, 'value' | 'separator'>>
+  | KnobPlus<'date', Pick<DateTypeKnob, 'value'>>
+  | KnobPlus<'files', Pick<FileTypeKnob, 'value' | 'accept'>>
+  | KnobPlus<'button', { value?: unknown; callback: ButtonTypeOnClickProp; hideLabel: true }>
+  | KnobPlus<'options', Pick<OptionsTypeKnob<any>, 'options' | 'value' | 'optionsObj'>>;
+
+export type KnobStoreKnob = Knob & {
+  name: string;
+  used?: boolean;
+  defaultValue?: any;
+  hideLabel?: boolean;
+  callback?: () => any;
+};
+
+const callArg = (fn: Callback) => fn();
+const callAll = (fns: Callback[]) => fns.forEach(callArg);
 
 export default class KnobStore {
-  constructor() {
-    this.store = {};
-    this.callbacks = [];
-  }
+  store: Record<string, KnobStoreKnob> = {};
 
-  has(key) {
+  callbacks: Callback[] = [];
+
+  timer: number;
+
+  has(key: string) {
     return this.store[key] !== undefined;
   }
 
-  set(key, value) {
-    this.store[key] = value;
-    this.store[key].used = true;
-    this.store[key].groupId = value.groupId;
+  set(key: string, value: KnobStoreKnob) {
+    this.store[key] = {
+      ...value,
+      used: true,
+      groupId: value.groupId,
+    };
 
     // debounce the execution of the callbacks for 50 milliseconds
     if (this.timer) {
@@ -23,7 +67,7 @@ export default class KnobStore {
     this.timer = setTimeout(callAll, 50, this.callbacks);
   }
 
-  get(key) {
+  get(key: string) {
     const knob = this.store[key];
     if (knob) {
       knob.used = true;
@@ -45,11 +89,11 @@ export default class KnobStore {
     });
   }
 
-  subscribe(cb) {
+  subscribe(cb: Callback) {
     this.callbacks.push(cb);
   }
 
-  unsubscribe(cb) {
+  unsubscribe(cb: Callback) {
     const index = this.callbacks.indexOf(cb);
     this.callbacks.splice(index, 1);
   }

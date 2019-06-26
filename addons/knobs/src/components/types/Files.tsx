@@ -8,12 +8,14 @@ import { Form } from '@storybook/components';
 
 type DateTypeKnobValue = string[];
 
-interface FilesTypeProps {
-  knob: {
-    name: string;
-    accept: string;
-    value: DateTypeKnobValue;
-  };
+export interface FileTypeKnob {
+  name: string;
+  accept: string;
+  value: DateTypeKnobValue;
+}
+
+export interface FilesTypeProps {
+  knob: FileTypeKnob;
   onChange: (value: DateTypeKnobValue) => DateTypeKnobValue;
 }
 

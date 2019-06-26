@@ -21,16 +21,20 @@ export interface OptionsKnobOptions {
   display?: OptionsKnobOptionsDisplay;
 }
 
-interface OptionsTypeProps<T> {
-  knob: {
-    name: string;
-    value: T;
-    defaultValue: T;
-    options: {
-      [key: string]: T;
-    };
-    optionsObj: OptionsKnobOptions;
-  };
+export interface OptionsTypeKnob<T> {
+  name: string;
+  value: T;
+  defaultValue: T;
+  options: OptionsTypeOptionsProp<T>;
+  optionsObj: OptionsKnobOptions;
+}
+
+export interface OptionsTypeOptionsProp<T> {
+  [key: string]: T;
+}
+
+export interface OptionsTypeProps<T> {
+  knob: OptionsTypeKnob<T>;
   display: OptionsKnobOptionsDisplay;
   onChange: (value: T) => T;
 }

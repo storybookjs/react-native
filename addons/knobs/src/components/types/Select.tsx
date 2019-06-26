@@ -5,14 +5,18 @@ import { Form } from '@storybook/components';
 
 type SelectTypeKnobValue = string;
 
-interface SelectTypeProps {
-  knob: {
-    name: string;
-    value: SelectTypeKnobValue;
-    options: {
-      [key: string]: SelectTypeKnobValue;
-    };
-  };
+export interface SelectTypeKnob {
+  name: string;
+  value: SelectTypeKnobValue;
+  options: SelectTypeOptionsProp;
+}
+
+export interface SelectTypeOptionsProp {
+  [key: string]: SelectTypeKnobValue;
+}
+
+export interface SelectTypeProps {
+  knob: SelectTypeKnob;
   onChange: (value: SelectTypeKnobValue) => SelectTypeKnobValue;
 }
 

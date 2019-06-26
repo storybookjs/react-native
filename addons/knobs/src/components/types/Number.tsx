@@ -6,15 +6,20 @@ import { Form } from '@storybook/components';
 
 type NumberTypeKnobValue = number;
 
+export interface NumberTypeKnobOptions {
+  range?: boolean;
+  min?: number;
+  max?: number;
+  step?: number;
+}
+
+export interface NumberTypeKnob extends NumberTypeKnobOptions {
+  name: string;
+  value: number;
+}
+
 interface NumberTypeProps {
-  knob: {
-    name: string;
-    value: number;
-    range?: boolean;
-    min?: number;
-    max?: number;
-    step?: number;
-  };
+  knob: NumberTypeKnob;
   onChange: (value: NumberTypeKnobValue) => NumberTypeKnobValue;
 }
 

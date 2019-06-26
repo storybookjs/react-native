@@ -8,7 +8,7 @@ interface CheckboxesWrapperProps {
   isInline: boolean;
 }
 
-interface CheckboxesTypeKnobProp {
+export interface CheckboxesTypeKnob {
   name: string;
   value: CheckboxesTypeKnobValue;
   defaultValue: CheckboxesTypeKnobValue;
@@ -18,7 +18,7 @@ interface CheckboxesTypeKnobProp {
 }
 
 interface CheckboxesTypeProps {
-  knob: CheckboxesTypeKnobProp;
+  knob: CheckboxesTypeKnob;
   isInline: boolean;
   onChange: (value: CheckboxesTypeKnobValue) => CheckboxesTypeKnobValue;
 }
@@ -99,7 +99,7 @@ export default class CheckboxesType extends Component<CheckboxesTypeProps, Check
     onChange(values);
   };
 
-  renderCheckboxList = ({ options }: CheckboxesTypeKnobProp) =>
+  renderCheckboxList = ({ options }: CheckboxesTypeKnob) =>
     Object.keys(options).map(key => this.renderCheckbox(key, options[key]));
 
   renderCheckbox = (label: string, value: string) => {

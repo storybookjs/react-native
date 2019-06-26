@@ -25,3 +25,16 @@ export default {
   files: FilesType,
   options: OptionsType,
 };
+
+export { TextTypeKnob } from './Text';
+export { NumberTypeKnob, NumberTypeKnobOptions } from './Number';
+export { ColorTypeKnob } from './Color';
+export { BooleanTypeKnob } from './Boolean';
+export { ObjectTypeKnob } from './Object';
+export { SelectTypeKnob, SelectTypeOptionsProp } from './Select';
+export { RadiosTypeKnob, RadiosTypeOptionsProp } from './Radio';
+export { ArrayTypeKnob } from './Array';
+export { DateTypeKnob } from './Date';
+export { ButtonTypeKnob, ButtonTypeOnClickProp } from './Button';
+export { FileTypeKnob } from './Files';
+export { OptionsTypeKnob, OptionsTypeOptionsProp, OptionsKnobOptions } from './Options';

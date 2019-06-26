@@ -5,12 +5,14 @@ import { Form } from '@storybook/components';
 
 type ArrayTypeKnobValue = string[];
 
+export interface ArrayTypeKnob {
+  name: string;
+  value: ArrayTypeKnobValue;
+  separator: string;
+}
+
 interface ArrayTypeProps {
-  knob: {
-    name: string;
-    value: ArrayTypeKnobValue;
-    separator: string;
-  };
+  knob: ArrayTypeKnob;
   onChange: (value: ArrayTypeKnobValue) => ArrayTypeKnobValue;
 }
 

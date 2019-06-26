@@ -4,11 +4,13 @@ import deepEqual from 'fast-deep-equal';
 import { polyfill } from 'react-lifecycles-compat';
 import { Form } from '@storybook/components';
 
+export interface ObjectTypeKnob<T> {
+  name: string;
+  value: T;
+}
+
 interface ObjectTypeProps<T> {
-  knob: {
-    name: string;
-    value: T;
-  };
+  knob: ObjectTypeKnob<T>;
   onChange: (value: T) => T;
 }
 

@@ -5,11 +5,13 @@ import { Form } from '@storybook/components';
 
 type TextTypeKnobValue = string;
 
+export interface TextTypeKnob {
+  name: string;
+  value: TextTypeKnobValue;
+}
+
 interface TextTypeProps {
-  knob: {
-    name: string;
-    value: TextTypeKnobValue;
-  };
+  knob: TextTypeKnob;
   onChange: (value: TextTypeKnobValue) => TextTypeKnobValue;
 }
 

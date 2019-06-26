@@ -9,11 +9,13 @@ import { Form } from '@storybook/components';
 
 type ColorTypeKnobValue = string;
 
+export interface ColorTypeKnob {
+  name: string;
+  value: ColorTypeKnobValue;
+}
+
 interface ColorTypeProps {
-  knob: {
-    name: string;
-    value: ColorTypeKnobValue;
-  };
+  knob: ColorTypeKnob;
   onChange: (value: ColorTypeKnobValue) => ColorTypeKnobValue;
 }
 

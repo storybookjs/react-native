@@ -5,11 +5,13 @@ import { Form } from '@storybook/components';
 
 type DateTypeKnobValue = number;
 
+export interface DateTypeKnob {
+  name: string;
+  value: DateTypeKnobValue;
+}
+
 interface DateTypeProps {
-  knob: {
-    name: string;
-    value: DateTypeKnobValue;
-  };
+  knob: DateTypeKnob;
   onChange: (value: DateTypeKnobValue) => DateTypeKnobValue;
 }
 

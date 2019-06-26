@@ -1,21 +1,22 @@
-const unconvertable = () => undefined;
+const unconvertable = (): undefined => undefined;
 
 export const converters = {
-  jsonParse: value => JSON.parse(value),
-  jsonStringify: value => JSON.stringify(value),
-  simple: value => value,
-  stringifyIfSet: value => (value === null || value === undefined ? '' : String(value)),
-  stringifyIfTruthy: value => (value ? String(value) : null),
-  toArray: value => {
+  jsonParse: (value: any): any => JSON.parse(value),
+  jsonStringify: (value: any): string => JSON.stringify(value),
+  simple: (value: any): any => value,
+  stringifyIfSet: (value: any): string =>
+    value === null || value === undefined ? '' : String(value),
+  stringifyIfTruthy: (value: any): string | null => (value ? String(value) : null),
+  toArray: (value: any): any[] => {
     if (Array.isArray(value)) {
       return value;
     }
 
     return value.split(',');
   },
-  toBoolean: value => value === 'true',
-  toDate: value => new Date(value).getTime() || new Date().getTime(),
-  toFloat: value => (value === '' ? null : parseFloat(value)),
+  toBoolean: (value: any): boolean => value === 'true',
+  toDate: (value: any): number => new Date(value).getTime() || new Date().getTime(),
+  toFloat: (value: any): number => (value === '' ? null : parseFloat(value)),
 };
 
 export const serializers = {

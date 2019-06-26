@@ -3,13 +3,16 @@ import React, { FunctionComponent, Validator } from 'react';
 
 import { Form } from '@storybook/components';
 
-interface ButtonTypeKnobProp {
+export interface ButtonTypeKnob {
   name: string;
+  value: unknown;
 }
 
-interface ButtonTypeProps {
-  knob: ButtonTypeKnobProp;
-  onClick: (knob: ButtonTypeKnobProp) => any;
+export type ButtonTypeOnClickProp = (knob: ButtonTypeKnob) => any;
+
+export interface ButtonTypeProps {
+  knob: ButtonTypeKnob;
+  onClick: ButtonTypeOnClickProp;
 }
 
 const serialize = (): undefined => undefined;
