@@ -32,3 +32,6 @@ export { AddonPanel } from './addon-panel/addon-panel';
 export { Icons } from './icon/icon';
 export { StorybookLogo } from './brand/StorybookLogo';
 export { StorybookIcon } from './brand/StorybookIcon';
+
+// Doc blocks
+export * from './blocks';

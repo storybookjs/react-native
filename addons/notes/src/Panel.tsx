@@ -68,7 +68,13 @@ export const SyntaxHighlighter = ({ className, children, ...props }: SyntaxHighl
   // className: "lang-jsx"
   const language = className.split('-');
   return (
-    <SyntaxHighlighterBase language={language[1] || 'plaintext'} bordered copyable {...props}>
+    <SyntaxHighlighterBase
+      language={language[1] || 'plaintext'}
+      bordered
+      format={false}
+      copyable
+      {...props}
+    >
       {children}
     </SyntaxHighlighterBase>
   );

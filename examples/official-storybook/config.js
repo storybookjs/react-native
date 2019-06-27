@@ -1,6 +1,7 @@
 import React from 'react';
 import { load, addDecorator, addParameters } from '@storybook/react';
 import { Global, ThemeProvider, themes, createReset, convert } from '@storybook/theming';
+import { DocsPage } from '@storybook/addon-docs/blocks';
 
 import { withCssResources } from '@storybook/addon-cssresources';
 import { withA11y } from '@storybook/addon-a11y';
@@ -49,15 +50,17 @@ addParameters({
   options: {
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: '|',
-    theme: { base: 'light', brandTitle: 'Storybook!' },
+    theme: themes.light, // { base: 'dark', brandTitle: 'Storybook!' },
   },
   backgrounds: [
     { name: 'storybook app', value: themes.light.appBg, default: true },
     { name: 'light', value: '#eeeeee' },
     { name: 'dark', value: '#222222' },
   ],
+  docs: DocsPage,
 });
 
 load(require.context('../../lib/ui/src', true, /\.stories\.js$/), module);
 load(require.context('../../lib/components/src', true, /\.stories\.tsx?$/), module);
 load(require.context('./stories', true, /\.stories\.js$/), module);
+load(require.context('./stories', true, /\.stories\.mdx$/), module);
