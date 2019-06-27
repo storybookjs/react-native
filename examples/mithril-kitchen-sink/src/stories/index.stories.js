@@ -7,11 +7,18 @@ import { linkTo } from '@storybook/addon-links';
 import Button from '../Button';
 import Welcome from '../Welcome';
 
-storiesOf('Welcome', module).add('to Storybook', () => ({
-  view: () => m(Welcome, { showApp: linkTo('Button') }),
-}));
+storiesOf('Welcome', module)
+  .addParameters({
+    component: Welcome,
+  })
+  .add('to Storybook', () => ({
+    view: () => m(Welcome, { showApp: linkTo('Button') }),
+  }));
 
 storiesOf('Button', module)
+  .addParameters({
+    component: Button,
+  })
   .add('with text', () => ({
     view: () => m(Button, { onclick: action('clicked') }, 'Hello Button'),
   }))

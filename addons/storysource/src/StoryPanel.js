@@ -4,13 +4,14 @@ import { styled } from '@storybook/theming';
 import { Link } from '@storybook/router';
 import { SyntaxHighlighter } from '@storybook/components';
 
-import { createElement } from 'react-syntax-highlighter';
+import createElement from 'react-syntax-highlighter/create-element';
 import { EVENT_ID } from './events';
 
 const StyledStoryLink = styled(Link)(({ theme }) => ({
   display: 'block',
   textDecoration: 'none',
   borderRadius: theme.appBorderRadius,
+  color: 'inherit',
 
   '&:hover': {
     background: theme.background.hoverable,

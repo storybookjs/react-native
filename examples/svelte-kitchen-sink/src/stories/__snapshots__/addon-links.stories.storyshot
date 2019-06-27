@@ -10,8 +10,7 @@ exports[`Storyshots Addon|Links Go to welcome view 1`] = `
     <h1>
       Link Action
     </h1>
-    
-  
+     
     <button
       class="link"
     >

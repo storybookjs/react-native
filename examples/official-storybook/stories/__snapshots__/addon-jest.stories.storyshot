@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Storyshots Addons|Jest withTests 1`] = `
-<p>
-  Hello
-</p>
-`;

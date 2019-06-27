@@ -4,6 +4,9 @@ import Centered from '@storybook/addon-centered/vue';
 import MyButton from './Button.vue';
 
 storiesOf('Addon|Centered', module)
+  .addParameters({
+    component: Centered,
+  })
   .addDecorator(Centered)
   .add('rounded', () => ({
     components: { MyButton },

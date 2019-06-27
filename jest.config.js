@@ -2,10 +2,25 @@ module.exports = {
   cacheDirectory: '.cache/jest',
   clearMocks: true,
   moduleNameMapper: {
+    // non-js files
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/fileMock.js',
-    '\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
+    '\\.(css|scss|stylesheet)$': '<rootDir>/__mocks__/styleMock.js',
     '\\.(md)$': '<rootDir>/__mocks__/htmlMock.js',
+
+    // core-js v2 to v3 mapping
+    'core-js/modules/es6.(.*)': 'core-js/modules/es.$1',
+    'core-js/modules/es7.(.*)': 'core-js/modules/esnext.$1',
+    'core-js/library/fn/(.*)': `core-js/features/$1`,
+    'core-js/es5/(.*)': `core-js/es/$1`,
+    'core-js/es6/(.*)': `core-js/es/$1`,
+    'core-js/es7/reflect': `core-js/proposals/reflect-metadata`,
+    'core-js/es7/(.*)': `core-js/proposals/$1`,
+    'core-js/object$/': `core-js/es/object`,
+    'core-js/object/(.*)': `core-js/es/object/$1`,
+    'babel-runtime/core-js/(.*)': `core-js/es/$1`,
+    // 'babel-runtime/core-js/object/assign'
+    'core-js/library/fn/object/assign': 'core-js/es/object/assign',
   },
   projects: [
     '<rootDir>',
@@ -17,6 +32,7 @@ module.exports = {
     '<rootDir>/examples/vue-kitchen-sink',
     '<rootDir>/examples/angular-cli',
     '<rootDir>/examples/preact-kitchen-sink',
+    '<rootDir>/examples/rax-kitchen-sink',
   ],
   roots: [
     '<rootDir>/addons',
@@ -34,8 +50,9 @@ module.exports = {
     '/dist/',
     'addon-jest.test.js',
     '/cli/test/',
-    '/examples/cra-kitchen-sink/src/App.test.js',
-    '/examples/cra-ts-kitchen-sink/src/components/',
+    '/examples/cra-kitchen-sink/src/*',
+    '/examples/cra-react15/src/*',
+    '/examples/cra-ts-kitchen-sink/src/components/*',
     '/examples/angular-cli/src/app/*',
   ],
   collectCoverage: false,
@@ -52,6 +69,9 @@ module.exports = {
     '/dll/',
     '/__mocks__ /',
   ],
+  globals: {
+    DOCS_MODE: false,
+  },
   snapshotSerializers: ['jest-emotion', 'enzyme-to-json/serializer'],
   coverageDirectory: 'coverage',
   setupFilesAfterEnv: ['./scripts/jest.init.js'],

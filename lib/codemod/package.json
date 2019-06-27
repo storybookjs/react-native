@@ -1,17 +1,17 @@
 {
   "name": "@storybook/codemod",
-  "version": "5.1.0-alpha.39",
+  "version": "5.2.0-alpha.30",
   "description": "A collection of codemod scripts written with JSCodeshift",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/codemod",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/codemod",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/codemod"
   },
   "license": "MIT",
@@ -21,8 +21,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "jscodeshift": "^0.6.3",
+    "prettier": "^1.16.4",
     "regenerator-runtime": "^0.12.1"
   },
   "publishConfig": {

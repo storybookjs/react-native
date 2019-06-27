@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
+import { document } from 'global';
 
 import {
   array,
@@ -13,6 +14,7 @@ import {
   number,
 } from '@storybook/addon-knobs';
 
+const cachedContainer = document.createElement('p');
 storiesOf('Addons|Knobs', module)
   .addDecorator(withKnobs)
   .add('Simple', () => {
@@ -24,10 +26,17 @@ storiesOf('Addons|Knobs', module)
   })
   .add('DOM', () => {
     const name = text('Name', 'John Doe');
-    // eslint-disable-next-line
     const container = document.createElement('p');
     container.textContent = name;
     return container;
+  })
+  .add('CSS transitions', () => {
+    const name = text('Name', 'John Doe');
+    const textColor = color('Text color', 'orangered');
+    cachedContainer.textContent = name;
+    cachedContainer.style.transition = 'color 0.5s ease-out';
+    cachedContainer.style.color = textColor;
+    return cachedContainer;
   })
   .add('All knobs', () => {
     const name = text('Name', 'Jane');

@@ -3,7 +3,7 @@ import { styled } from '@storybook/theming';
 import memoize from 'memoizerific';
 import { transparentize } from 'polished';
 
-interface TitleProps {
+export interface TitleProps {
   active?: boolean;
   loading?: boolean;
   disabled?: boolean;
@@ -38,7 +38,7 @@ const Title = styled.span<TitleProps>(
       : {}
 );
 
-interface RightProps {
+export interface RightProps {
   active?: boolean;
 }
 
@@ -79,7 +79,7 @@ const Center = styled.span({
   },
 });
 
-interface CenterTextProps {
+export interface CenterTextProps {
   active?: boolean;
   disabled?: boolean;
 }
@@ -103,7 +103,7 @@ const CenterText = styled.span<CenterTextProps>(
       : {}
 );
 
-interface LeftProps {
+export interface LeftProps {
   active?: boolean;
 }
 
@@ -120,7 +120,7 @@ const Left = styled.span<LeftProps>(({ active, theme }) =>
     : {}
 );
 
-interface ItemProps {
+export interface ItemProps {
   disabled?: boolean;
 }
 

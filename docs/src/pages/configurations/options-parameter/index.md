@@ -5,7 +5,7 @@ title: 'Options Parameter'
 
 Storybook UI is configurable using an options API that allows you to tweak its appearance globally and for each story.
 
-> NOTE: If you've used older versions of Storybook this is formerly [addon-options](https://github.com/storybooks/storybook/tree/next/addons/options), which has been deprecated.
+> NOTE: If you've used older versions of Storybook this is formerly [addon-options](https://github.com/storybookjs/storybook/tree/next/addons/options), which has been deprecated.
 
 ### Global options
 
@@ -37,11 +37,6 @@ addParameters({
      * @type {('bottom'|'right')}
      */
     panelPosition: 'bottom',
-    /**
-     * sorts stories
-     * @type {Boolean}
-     */
-    sortStoriesByKind: false,
     /**
      * regex for finding the hierarchy separator
      * @example:

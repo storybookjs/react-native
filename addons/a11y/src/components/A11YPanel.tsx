@@ -48,7 +48,8 @@ const Incomplete = styled.span(({ theme }) => ({
 
 const Loader = styled(({ className }) => (
   <div className={className}>
-    <Icon inline icon="sync" status="running" /> Please wait while a11y scan is running ...
+    <Icon inline icon="sync" status="running" /> Please wait while the accessibility scan is running
+    ...
   </div>
 ))({
   display: 'flex',

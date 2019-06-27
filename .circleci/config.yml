@@ -38,8 +38,29 @@ jobs:
             - node_modules
             - examples
             - addons
+            - dev-kits
             - app
             - lib
+  chromatic:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run chromatic on the pre-built storybook
+          command: yarn chromatic -- -d ./storybook-static
+  packtracker:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Report webpack stats for manager of official storybook
+          command: |
+            cd examples/official-storybook
+            yarn packtracker
   examples:
     <<: *defaults
     steps:
@@ -110,6 +131,11 @@ jobs:
             cd examples/preact-kitchen-sink
             yarn build-storybook
       - run:
+          name: Build cra react15
+          command: |
+            cd examples/cra-react15
+            yarn build-storybook
+      - run:
           name: Build official-storybook
           command: |
             cd examples/official-storybook
@@ -120,6 +146,14 @@ jobs:
       - store_artifacts:
           path: examples/official-storybook/image-snapshots/__image_snapshots__
           destination: official_storybook_image_snapshots
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+            - examples
+            - addons
+            - app
+            - lib
   smoke-tests:
     <<: *defaults
     steps:
@@ -185,6 +219,11 @@ jobs:
           name: Run preact kitchen-sink (smoke test)
           command: |
             cd examples/preact-kitchen-sink
+            yarn storybook --smoke-test --quiet
+      - run:
+          name: Run cra reac15 (smoke test)
+          command: |
+            cd examples/cra-react15
             yarn storybook --smoke-test --quiet
   native-smoke-tests:
     <<: *defaults
@@ -322,6 +361,9 @@ workflows:
       - smoke-tests:
           requires:
             - build
+      - packtracker:
+          requires:
+            - build
       - native-smoke-tests:
           requires:
             - build
@@ -337,3 +379,6 @@ workflows:
       - cli-test-latest-cra:
           requires:
             - build
+      - chromatic:
+          requires:
+            - examples

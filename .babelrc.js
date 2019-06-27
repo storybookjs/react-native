@@ -1,6 +1,21 @@
-module.exports = {
+const withTests = {
   presets: [
-    ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '2' }],
+    [
+      '@babel/preset-env',
+      { shippedProposals: true, useBuiltIns: 'usage', corejs: '3', targets: { node: 'current' } },
+    ],
+  ],
+  plugins: [
+    'babel-plugin-require-context-hook',
+    'babel-plugin-dynamic-import-node',
+    '@babel/plugin-transform-runtime',
+  ],
+};
+
+module.exports = {
+  ignore: ['./lib/codemod/src/transforms/__testfixtures__'],
+  presets: [
+    ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
     '@babel/preset-typescript',
     '@babel/preset-react',
     '@babel/preset-flow',
@@ -20,26 +35,28 @@ module.exports = {
     ['emotion', { sourceMap: true, autoLabel: true }],
   ],
   env: {
-    test: {
-      presets: [
-        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '2' }],
-      ],
-      plugins: [
-        'babel-plugin-require-context-hook',
-        'babel-plugin-dynamic-import-node',
-        '@babel/plugin-transform-runtime',
-      ],
-    },
+    test: withTests,
   },
   overrides: [
     {
       test: './examples/vue-kitchen-sink',
       presets: ['babel-preset-vue'],
+      env: {
+        test: withTests,
+      },
+    },
+    {
+      test: './examples/rax-kitchen-sink',
+      presets: [
+        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
+        ['babel-preset-rax', { development: process.env.BABEL_ENV === 'development' }],
+      ],
     },
     {
       test: './lib',
+      exclude: './addons/storysource/src/loader',
       presets: [
-        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '2' }],
+        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
         '@babel/preset-react',
       ],
       plugins: [
@@ -52,12 +69,16 @@ module.exports = {
         '@babel/plugin-transform-react-constant-elements',
         'babel-plugin-add-react-displayname',
       ],
+      env: {
+        test: withTests,
+      },
     },
     {
       test: [
         './lib/core/src/server',
         './lib/node-logger',
         './lib/codemod',
+        './lib/source-loader/src',
         './addons/storyshots',
         './addons/storysource/src/loader',
         './app/**/src/server/**',
@@ -72,7 +93,7 @@ module.exports = {
             targets: {
               node: '8.11',
             },
-            corejs: '2',
+            corejs: '3',
           },
         ],
       ],
@@ -83,6 +104,9 @@ module.exports = {
         '@babel/plugin-proposal-object-rest-spread',
         '@babel/plugin-proposal-export-default-from',
       ],
+      env: {
+        test: withTests,
+      },
     },
   ],
 };

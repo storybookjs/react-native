@@ -5,7 +5,6 @@ import { withContexts } from '@storybook/addon-contexts/react';
 // Example A: Simple CSS Theming
 const topLevelContexts = [
   {
-    icon: 'sidebaralt',
     title: 'CSS Themes',
     components: ['div'],
     params: [

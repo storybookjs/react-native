@@ -9,7 +9,6 @@ export function webpackFinal(config, { configDir }) {
   }
 
   logger.info('=> Loading create-react-app config.');
-
   return applyCRAWebpackConfig(config, configDir);
 }
 
