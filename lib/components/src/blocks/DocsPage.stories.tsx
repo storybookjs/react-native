@@ -33,7 +33,7 @@ export const noText = () => (
     {sourceStories.jsx()}
   </DocsPage>
 );
-noText.title = 'no text';
+noText.story = { name: 'no text' };
 
 export const text = () => (
   <DocsPage title="Sensorium">
@@ -55,6 +55,7 @@ export const withSubtitle = () => (
     {sourceStories.jsx()}
   </DocsPage>
 );
+withSubtitle.story = { name: 'with subtitle' };
 
 export const markdown = () => (
   <DocsPage title="markdown">

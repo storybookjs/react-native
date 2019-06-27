@@ -1,3 +1,17 @@
+## 5.2.0-alpha.31 (June 27, 2019)
+
+### Breaking Changes
+
+* Module format: story field for name/parameters annotation ([#7202](https://github.com/storybookjs/storybook/pull/7202))
+
+### Features
+
+* Core: Story sorting ([#6472](https://github.com/storybookjs/storybook/pull/6472))
+
+### Maintenance
+
+* Addon-docs: Fix source-loader CI errors ([#7203](https://github.com/storybookjs/storybook/pull/7203))
+
 ## 5.2.0-alpha.30 (June 25, 2019)
 
 This release merges `release/docs-technical-preview` branch back into `next` through a series of PRs. It also contains other changes that came in on `next` since the last alpha.
