@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { styled } from '@storybook/theming';
 
 const Block = styled.div({
@@ -9,4 +8,8 @@ const Block = styled.div({
   background: 'hotpink',
 });
 
-storiesOf('Addons|Storyshots', module).add('block', () => <Block />);
+export default {
+  title: 'Addons|Storyshots',
+};
+
+export const block = () => <Block />;

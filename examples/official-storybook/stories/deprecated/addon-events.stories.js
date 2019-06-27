@@ -1,8 +1,7 @@
 import React from 'react';
 import EventEmitter from 'eventemitter3';
-
-import withEvents from '@storybook/addon-events';
-import Logger from './Logger';
+import WithEvents from '@storybook/addon-events';
+import Logger from '../Logger';
 
 const EVENTS = {
   TEST_EVENT_1: 'test-event-1',
@@ -67,8 +66,15 @@ const events = [
 ];
 
 export default {
-  title: 'Addons|Events',
-  decorators: [withEvents({ emit, events })],
+  title: 'Addons|Events.deprecated',
+  decorators: [
+    storyFn => (
+      <WithEvents emit={emit} events={events}>
+        {storyFn()}
+      </WithEvents>
+    ),
+  ],
+
   parameters: {
     options: {
       selectedPanel: 'storybook/events/panel',
@@ -77,6 +83,4 @@ export default {
 };
 
 export const logger = () => <Logger emitter={emitter} />;
-logger.story = {
-  name: 'Logger',
-};
+logger.story = { name: 'Logger' };
