@@ -21,8 +21,10 @@ export const story1 = () => ({
   ),
 });
 
-story1.title = 'Simple note';
-story1.parameters = { notes: 'My notes on some bold text' };
+story1.story = {
+  name: 'Simple note',
+  parameters: { notes: 'My notes on some bold text' },
+};
 
 export const story2 = () => ({
   view: () => (
@@ -36,14 +38,15 @@ export const story2 = () => ({
   ),
 });
 
-story2.title = 'Note with HTML';
-
-story2.parameters = {
-  notes: `
+story2.story = {
+  name: 'Note with HTML',
+  parameters: {
+    notes: `
     <h2>My notes on emojies</h2>
 
     <em>It's not all that important to be honest, but..</em>
 
     Emojis are great, I love emojis, in fact I like using them in my Component notes too! 😇
   `,
+  },
 };

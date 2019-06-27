@@ -6,4 +6,4 @@ export default {
 };
 
 export const story1 = () => '<button>I am a Button !</button>';
-story1.title = 'button in center';
+story1.story = { name: 'button in center' };

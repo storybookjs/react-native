@@ -14,7 +14,7 @@ export const story1 = () => (
     </pre>
   </div>
 );
-story1.title = 'story with 100vh padding 1';
+story1.story = { name: 'story with 100vh padding 1' };
 
 export const story2 = () => (
   <div>
@@ -26,4 +26,4 @@ export const story2 = () => (
     </pre>
   </div>
 );
-story2.title = 'story with 100vh padding 2';
+story2.story = { name: 'story with 100vh padding 2' };

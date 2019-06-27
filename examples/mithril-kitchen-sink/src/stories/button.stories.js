@@ -15,7 +15,7 @@ export default {
 export const story1 = () => ({
   view: () => m(Button, { onclick: action('clicked') }, 'Hello Button'),
 });
-story1.title = 'with text';
+story1.story = { name: 'with text' };
 
 export const story2 = () => ({
   view: () =>
@@ -25,4 +25,4 @@ export const story2 = () => ({
       m('span', { role: 'img', ariaLabel: 'so cool' }, '😀 😎 👍 💯')
     ),
 });
-story2.title = 'with some emoji';
+story2.story = { name: 'with some emoji' };

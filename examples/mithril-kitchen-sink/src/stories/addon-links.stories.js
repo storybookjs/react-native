@@ -12,4 +12,4 @@ export default {
 export const story1 = () => ({
   view: () => <Button onclick={linkTo('Welcome')}>This buttons links to Welcome</Button>,
 });
-story1.title = 'Go to welcome';
+story1.story = { name: 'Go to welcome' };

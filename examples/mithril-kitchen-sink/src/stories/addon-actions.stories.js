@@ -11,14 +11,14 @@ export default {
 export const story1 = () => ({
   view: () => <Button onclick={action('logo1')}>Click me to log the action</Button>,
 });
-story1.title = 'Action only';
+story1.story = { name: 'Action only' };
 
 export const story2 = () => ({
   view: () => (
     <Button {...actions('onclick', 'ondblclick')}>(Double) click me to log the action</Button>
   ),
 });
-story2.title = 'Multiple actions';
+story2.story = { name: 'Multiple actions' };
 
 export const story3 = () => ({
   view: () => (
@@ -27,7 +27,7 @@ export const story3 = () => ({
     </Button>
   ),
 });
-story3.title = 'Multiple actions, object';
+story3.story = { name: 'Multiple actions, object' };
 
 export const story4 = () => ({
   view: () => (
@@ -41,4 +41,4 @@ export const story4 = () => ({
     </Button>
   ),
 });
-story4.title = 'Action and method';
+story4.story = { name: 'Action and method' };

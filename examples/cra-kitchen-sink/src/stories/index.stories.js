@@ -32,9 +32,11 @@ export default {
 };
 
 export const story1 = () => <Button onClick={action('clicked', { depth: 1 })}>Hello Button</Button>;
-story1.title = 'with text';
-story1.parameters = {
-  options: { selectedPanel: 'storybook/actions/panel' },
+story1.story = {
+  name: 'with text',
+  parameters: {
+    options: { selectedPanel: 'storybook/actions/panel' },
+  },
 };
 
 export const story2 = () => (
@@ -44,16 +46,20 @@ export const story2 = () => (
     </span>
   </Button>
 );
-story2.title = 'with some emoji';
-story2.parameters = {
-  options: { selectedPanel: 'storybook/actions/panel' },
+story2.story = {
+  name: 'with some emoji',
+  parameters: {
+    options: { selectedPanel: 'storybook/actions/panel' },
+  },
 };
 
 export const story3 = () => <Button>Check my notes in the notes panel</Button>;
-story3.title = 'with notes';
-story3.parameters = {
-  notes: 'A very simple button',
-  options: { selectedPanel: 'storybook/notes/panel' },
+story3.story = {
+  name: 'with notes',
+  parameters: {
+    notes: 'A very simple button',
+    options: { selectedPanel: 'storybook/notes/panel' },
+  },
 };
 
 export const story4 = context => (
@@ -63,13 +69,15 @@ export const story4 = context => (
     </span>
   </Container>
 );
-story4.title = 'with new info';
-story4.parameters = {
-  notes: 'Composition: Info(Notes())',
-  options: { selectedPanel: 'storybook/info/panel' },
-  decorators: [
-    withInfo(
-      'Use the [info addon](https://github.com/storybookjs/storybook/tree/master/addons/info) with its new painless API.'
-    ),
-  ],
+story4.story = {
+  name: 'with new info',
+  parameters: {
+    notes: 'Composition: Info(Notes())',
+    options: { selectedPanel: 'storybook/info/panel' },
+    decorators: [
+      withInfo(
+        'Use the [info addon](https://github.com/storybookjs/storybook/tree/master/addons/info) with its new painless API.'
+      ),
+    ],
+  },
 };

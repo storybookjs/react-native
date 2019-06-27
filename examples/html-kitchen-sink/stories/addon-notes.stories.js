@@ -8,7 +8,9 @@ export const story1 = () =>
         This is a fragment of HTML
       </strong>
     </p>`;
-story1.title = 'Simple note';
-story1.parameters = {
-  notes: 'My notes on some bold text',
+story1.story = {
+  name: 'Simple note',
+  parameters: {
+    notes: 'My notes on some bold text',
+  },
 };

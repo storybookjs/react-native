@@ -42,7 +42,7 @@ export const story3 = () => {
   cachedContainer.style.color = textColor;
   return cachedContainer;
 };
-story3.title = 'CSS transitions';
+story3.story = { name: 'CSS transitions' };
 
 export const story4 = () => {
   const name = text('Name', 'Jane');
@@ -85,7 +85,7 @@ export const story4 = () => {
       </div>
     `;
 };
-story4.title = 'All knobs';
+story4.story = { name: 'All knobs' };
 
 export const story5 = () => text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >');
-story5.title = 'XSS safety';
+story5.story = { name: 'XSS safety' };

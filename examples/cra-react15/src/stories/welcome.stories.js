@@ -10,4 +10,4 @@ export default {
 };
 
 export const story1 = () => <Welcome showApp={linkTo('Button')} />;
-story1.title = 'to Storybook';
+story1.story = { name: 'to Storybook' };

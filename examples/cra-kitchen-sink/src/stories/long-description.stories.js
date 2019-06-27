@@ -9,4 +9,4 @@ export default {
 };
 
 export const story1 = () => <Button onClick={action('clicked')}>Hello Button</Button>;
-story1.title = 'with text';
+story1.story = { name: 'with text' };

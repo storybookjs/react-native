@@ -16,7 +16,7 @@ export const Label = () => `<button>${text}</button>`;
 export const Disabled = () => `<button disabled>${text}</button>`;
 export const story4 = () =>
   `<button style="color: black; background-color: brown;">${text}</button>`;
-story4.title = 'Invalid contrast';
+story4.story = { name: 'Invalid contrast' };
 
 export const story5 = () => {
   const div = document.createElement('div');
@@ -25,4 +25,4 @@ export const story5 = () => {
   }, 1000);
   return div;
 };
-story5.title = 'Delayed render';
+story5.story = { name: 'Delayed render' };

@@ -20,4 +20,4 @@ export const story1 = () => {
   return <Component>Hello Button</Component>;
 };
 
-story1.title = 'Dynamic import';
+story1.story = { name: 'Dynamic import' };

@@ -10,7 +10,7 @@ export default {
 };
 
 export const story1 = () => <Button onClick={action('clicked')}>Hello Button</Button>;
-story1.title = 'with text';
+story1.story = { name: 'with text' };
 
 export const story2 = () => (
   <Button onClick={action('clicked')}>
@@ -19,4 +19,4 @@ export const story2 = () => (
     </span>
   </Button>
 );
-story2.title = 'with some emoji';
+story2.story = { name: 'with some emoji' };

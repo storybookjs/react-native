@@ -9,16 +9,16 @@ export default {
 };
 
 export const story1 = () => withActions('click')(button);
-story1.title = 'Hello World';
+story1.story = { name: 'Hello World' };
 export const story2 = () => withActions('click', 'contextmenu')(button);
-story2.title = 'Multiple actions';
+story2.story = { name: 'Multiple actions' };
 
 export const story3 = () =>
   withActions('click', 'contextmenu', { clearOnStoryChange: false })(button);
-story3.title = 'Multiple actions + config';
+story3.story = { name: 'Multiple actions + config' };
 
 export const story4 = () => withActions({ click: 'clicked', contextmenu: 'right clicked' })(button);
-story4.title = 'Multiple actions, object';
+story4.story = { name: 'Multiple actions, object' };
 
 export const story5 = () =>
   withActions({ 'click .btn': 'clicked', contextmenu: 'right clicked' })(
@@ -28,17 +28,17 @@ export const story5 = () =>
         </div>
       `
   );
-story5.title = 'Multiple actions, selector';
+story5.story = { name: 'Multiple actions, selector' };
 
 export const story6 = () =>
   withActions({ click: 'clicked', contextmenu: 'right clicked' }, { clearOnStoryChange: false })(
     button
   );
-story6.title = 'Multiple actions, object + config';
+story6.story = { name: 'Multiple actions, object + config' };
 
 export const story7 = () => pickTarget.withActions('click', 'contextmenu')(button);
-story7.title = 'Decorated actions';
+story7.story = { name: 'Decorated actions' };
 
 export const story8 = () =>
   pickTarget.withActions('click', 'contextmenu', { clearOnStoryChange: false })(button);
-story8.title = 'Decorated actions + config';
+story8.story = { name: 'Decorated actions + config' };

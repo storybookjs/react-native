@@ -9,4 +9,4 @@ export default {
 
 export const Simple = () => Hello.renderSync({ name: 'abc', age: 20 });
 export const story2 = () => 'NOT A MARKO RENDER_RESULT';
-story2.title = 'with ERROR!';
+story2.story = { name: 'with ERROR!' };
