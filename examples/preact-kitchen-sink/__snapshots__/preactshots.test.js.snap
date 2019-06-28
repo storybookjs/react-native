@@ -1,5 +1,180 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Addons|Actions Action and method 1`] = `
+<button
+  class="button"
+  onclick={[Function]}
+>
+  Click me to log the action
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Action only 1`] = `
+<button
+  class="button"
+  onclick={[Function]}
+>
+  Click me to log the action
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions 1`] = `
+<button
+  class="button"
+  onclick={[Function]}
+  ondblclick={[Function]}
+>
+  (Double) click me to log the action
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
+<button
+  class="button"
+  onclick={[Function]}
+  ondblclick={[Function]}
+>
+  (Double) click me to log the action
+</button>
+`;
+
+exports[`Storyshots Addons|Backgrounds Example 1 1`] = `
+<button
+  class="button"
+>
+  You should be able to switch backgrounds for this story
+</button>
+`;
+
+exports[`Storyshots Addons|Backgrounds Example 2 1`] = `
+<button
+  class="button"
+>
+  This one too!
+</button>
+`;
+
+exports[`Storyshots Addons|Centered Button  1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": "0",
+      "display": "flex",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "maxHeight": "100%",
+      }
+    }
+  >
+    <button
+      class="button"
+    >
+      A button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Contexts Simple CSS Theming 1`] = `
+<div
+  style={
+    Object {
+      "background": "#173F5F",
+      "color": "white",
+      "height": "100vh",
+      "padding": "10px",
+    }
+  }
+>
+  <div>
+    I'm a children of the injected 'div' (where provides a theming context).
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Knobs All knobs 1`] = `
+<div
+  style="border:2px dotted deeppink; padding: 8px 22px; border-radius: 8px"
+>
+  <h1>
+    My name is Jane,
+  </h1>
+  <h3>
+    today is January 20, 2017
+  </h3>
+  <p>
+    I have a stock of 20 apples, costing &dollar;2.25 each.
+  </p>
+  <p>
+    Also, I have:
+  </p>
+  <ul>
+    <li>
+      Laptop
+    </li>
+    <li>
+      Book
+    </li>
+    <li>
+      Whiskey
+    </li>
+  </ul>
+  <p>
+    Nice to meet you!
+  </p>
+</div>
+`;
+
+exports[`Storyshots Addons|Knobs Simple 1`] = `
+<div>
+  I am John Doe and I'm 44 years old.
+</div>
+`;
+
+exports[`Storyshots Addons|Links Go to welcome 1`] = `
+<button
+  class="button"
+  onclick={[Function]}
+>
+  This button links to Welcome
+</button>
+`;
+
+exports[`Storyshots Addons|Notes Note with HTML 1`] = `
+<p>
+  <span>
+    🤔😳😯😮
+  </span>
+  <br />
+  <span>
+    😄😩😓😱
+  </span>
+  <br />
+  <span>
+    🤓😑😶😊
+  </span>
+</p>
+`;
+
+exports[`Storyshots Addons|Notes Simple note 1`] = `
+<p>
+  <strong>
+    Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.
+  </strong>
+</p>
+`;
+
 exports[`Storyshots Button with some emoji 1`] = `
 <button
   class="button"
