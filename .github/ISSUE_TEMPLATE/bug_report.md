@@ -24,7 +24,7 @@ If applicable, add screenshots to help explain your problem.
 If applicable, add code samples to help explain your problem.
 
 **System:**
-Please paste the results of `$storybook info` here.
+Please paste the results of `$ sb info` here.
 
 **Additional context**
 Add any other context about the problem here.
