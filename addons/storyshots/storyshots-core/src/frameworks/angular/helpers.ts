@@ -31,11 +31,14 @@ const createComponentFromTemplate = (template: string) => {
   })(componentClass);
 };
 const extractNgModuleMetadata = (importItem: any): NgModule => {
+  const target = importItem && importItem.ngModule ? importItem.ngModule : importItem;
   const decoratorKey = '__annotations__';
   const decorators: any[] =
-    Reflect && Reflect.getOwnPropertyDescriptor
-      ? Reflect.getOwnPropertyDescriptor(importItem, decoratorKey).value
-      : importItem[decoratorKey];
+    Reflect &&
+    Reflect.getOwnPropertyDescriptor &&
+    Reflect.getOwnPropertyDescriptor(target, decoratorKey)
+      ? Reflect.getOwnPropertyDescriptor(target, decoratorKey).value
+      : target[decoratorKey];
 
   if (!decorators || decorators.length === 0) {
     return null;
@@ -86,7 +89,7 @@ export const initModuleData = (storyObj: NgStory): any => {
     ? createComponentFromTemplate(template)
     : component;
 
-  const componentRequiesDeclaration =
+  const componentRequiresDeclaration =
     isCreatingComponentFromTemplate ||
     !getExistenceOfComponentInModules(
       component,
@@ -94,7 +97,7 @@ export const initModuleData = (storyObj: NgStory): any => {
       moduleMetadata.imports
     );
 
-  const componentDeclarations = componentRequiesDeclaration
+  const componentDeclarations = componentRequiresDeclaration
     ? [AppComponent, AnnotatedComponent]
     : [AppComponent];
 
