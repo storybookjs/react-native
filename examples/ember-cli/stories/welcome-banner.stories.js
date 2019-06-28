@@ -1,8 +1,11 @@
 import hbs from 'htmlbars-inline-precompile';
-import { storiesOf } from '@storybook/ember';
 import { action } from '@storybook/addon-actions';
 
-storiesOf('welcome-banner', module).add('basic', () => ({
+export default {
+  title: 'welcome-banner',
+};
+
+export const basic = () => ({
   template: hbs`
       {{welcome-banner
         backgroundColor=backgroundColor
@@ -21,4 +24,4 @@ storiesOf('welcome-banner', module).add('basic', () => ({
     subtitle: 'This environment is completely editable',
     onClick: action('clicked'),
   },
-}));
+});
