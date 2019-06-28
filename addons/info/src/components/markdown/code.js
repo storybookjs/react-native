@@ -5,7 +5,7 @@ import { ThemeProvider, convert } from '@storybook/theming';
 
 const Code = ({ code, language = 'plaintext', ...rest }) => (
   <ThemeProvider theme={convert()}>
-    <SyntaxHighlighter bordered copyable language={language} {...rest}>
+    <SyntaxHighlighter bordered copyable format={false} language={language} {...rest}>
       {code}
     </SyntaxHighlighter>
   </ThemeProvider>

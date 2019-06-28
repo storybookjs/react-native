@@ -266,7 +266,7 @@ You can learn more about the complete API [here](/addons/api).
 
 ## Packaging
 
-You can package this addon into a NPM module very easily. As an example, have a look at this [package](https://github.com/storybooks/storybook/tree/master/addons/notes).
+You can package this addon into a NPM module very easily. As an example, have a look at this [package](https://github.com/storybookjs/storybook/tree/master/addons/notes).
 
 In addition to moving the above code to a NPM module, we've set `react` and `@storybook/addons` as peer dependencies.
 

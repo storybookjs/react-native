@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-parameter",
-  "version": "5.2.0-alpha.23",
+  "version": "5.2.0-alpha.31",
   "description": "parameter addon for storybook",
   "keywords": [
     "devkit",
@@ -8,13 +8,13 @@
     "storybook",
     "parameter"
   ],
-  "homepage": "https://github.com/storybooks/storybook#readme",
+  "homepage": "https://github.com/storybookjs/storybook#readme",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git",
+    "url": "git+https://github.com/storybookjs/storybook.git",
     "directory": "dev-kit/addon-parameter"
   },
   "license": "MIT",
@@ -24,14 +24,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.23",
-    "@storybook/api": "5.2.0-alpha.23",
-    "@storybook/client-logger": "5.2.0-alpha.23",
-    "@storybook/components": "5.2.0-alpha.23",
-    "@storybook/core-events": "5.2.0-alpha.23",
-    "@storybook/theming": "5.2.0-alpha.23",
+    "@storybook/addons": "5.2.0-alpha.31",
+    "@storybook/api": "5.2.0-alpha.31",
+    "@storybook/client-logger": "5.2.0-alpha.31",
+    "@storybook/components": "5.2.0-alpha.31",
+    "@storybook/core-events": "5.2.0-alpha.31",
+    "@storybook/theming": "5.2.0-alpha.31",
     "common-tags": "^1.8.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
     "react": "^16.8.3"
   },
