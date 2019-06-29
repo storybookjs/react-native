@@ -10,7 +10,7 @@ import { storiesOf } from '@storybook/angular';
 })
 class WithNgContentComponent {}
 
-storiesOf('Custom|ng-content', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add('Default', () => ({
+storiesOf('Custom|ng-content', module).add('Default', () => ({
   template: \`<storybook-with-ng-content><h1>This is rendered in ng-content</h1></storybook-with-ng-content>\`,
   moduleMetadata: {
     declarations: [WithNgContentComponent],
@@ -53,14 +53,13 @@ class Table extends React.Component<Props, State> {
   }
 }
 
-const stories = storiesOf('Table', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__));
+const stories = storiesOf('Table', module);
 stories.add('Flow Class', withInfo('Lorum Ipsum Nem')(() => <Table />));
 "
 `;
 
 exports[`inject-decorator injectDecorator option is false - ts does not inject stories decorator after the all "storiesOf" functions 1`] = `
-"var addSourceDecorator = require(\\"@storybook/source-loader\\").addSource;
-import { Component } from '@angular/core';
+"import { Component } from '@angular/core';
 import { Store, StoreModule } from '@ngrx/store';
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 
@@ -105,7 +104,7 @@ import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
 import TableComponent from '../components/TableComponent';
 
-storiesOf('Addons|Info.React Docgen', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
+storiesOf('Addons|Info.React Docgen', module)
   .add(
     'Comments from PropType declarations',
     withInfo(
@@ -136,12 +135,12 @@ const Button = () => <button />;
 Maybe include a [link](http://storybook.js.org) to your project as well.
 \`;
 
-storiesOf('Addons|Info.Markdown', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Markdown', module).add(
   'Displays Markdown in description',
   withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Options.inline', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.inline', module).add(
   'Inlines component inside story',
   withInfo({
     text: 'Component should be inlined between description and PropType table',
@@ -149,7 +148,7 @@ storiesOf('Addons|Info.Options.inline', module).addDecorator(withSourceLoader(__
   })(() => <BaseButton label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Options.header', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.header', module).add(
   'Shows or hides Info Addon header',
   withInfo({
     text: 'The Info Addon header should be hidden',
@@ -157,7 +156,7 @@ storiesOf('Addons|Info.Options.header', module).addDecorator(withSourceLoader(__
   })(() => <BaseButton label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Options.source', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.source', module).add(
   'Shows or hides Info Addon source',
   withInfo({
     text: 'The Info Addon source section should be hidden',
@@ -165,7 +164,7 @@ storiesOf('Addons|Info.Options.source', module).addDecorator(withSourceLoader(__
   })(() => <BaseButton label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Options.propTables', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.propTables', module).add(
   'Shows additional component prop tables',
   withInfo({
     text: 'There should be a prop table added for a component not included in the story',
@@ -173,7 +172,7 @@ storiesOf('Addons|Info.Options.propTables', module).addDecorator(withSourceLoade
   })(() => <BaseButton label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Options.propTablesExclude', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.propTablesExclude', module).add(
   'Exclude component from prop tables',
   withInfo({
     text: 'This can exclude extraneous components from being displayed in prop tables.',
@@ -186,7 +185,7 @@ storiesOf('Addons|Info.Options.propTablesExclude', module).addDecorator(withSour
   ))
 );
 
-storiesOf('Addons|Info.Options.styles', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
+storiesOf('Addons|Info.Options.styles', module)
   .add(
     'Extend info styles with an object',
     withInfo({
@@ -220,14 +219,14 @@ storiesOf('Addons|Info.Options.styles', module).addDecorator(withSourceLoader(__
     })(() => <BaseButton label=\\"Button\\" />)
   );
 
-storiesOf('Addons|Info.Options.TableComponent', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.TableComponent', module).add(
   'Use a custom component for the table',
   withInfo({
     TableComponent,
   })(() => <BaseButton label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Decorator', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
+storiesOf('Addons|Info.Decorator', module)
   .addDecorator((story, context) =>
     withInfo('Info could be used as a global or local decorator as well.')(story)(context)
   )
@@ -239,7 +238,7 @@ const Input = hoc(() => <input type=\\"text\\" />);
 
 const TextArea = hoc(({ children }) => <textarea>{children}</textarea>);
 
-storiesOf('Addons|Info.GitHub issues', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.GitHub issues', module).add(
   '#1814',
   withInfo('Allow Duplicate DisplayNames for HOC #1814')(() => (
     <div>
@@ -334,11 +333,31 @@ stories.add('Flow Class', withInfo('Lorum Ipsum Nem')(() => <Table />));
 "
 `;
 
-exports[`inject-decorator positive - ts calculates "adds" map 1`] = `Object {}`;
+exports[`inject-decorator positive - ts calculates "adds" map 1`] = `
+Object {
+  "ngrx-store--with-component": Object {
+    "endBody": Object {
+      "col": 3,
+      "line": 32,
+    },
+    "endLoc": Object {
+      "col": 3,
+      "line": 32,
+    },
+    "startBody": Object {
+      "col": 25,
+      "line": 28,
+    },
+    "startLoc": Object {
+      "col": 7,
+      "line": 28,
+    },
+  },
+}
+`;
 
 exports[`inject-decorator positive - ts injects stories decorator after the all "storiesOf" functions 1`] = `
-"var addSourceDecorator = require(\\"@storybook/source-loader\\").addSource;
-import { Component } from '@angular/core';
+"import { Component } from '@angular/core';
 import { Store, StoreModule } from '@ngrx/store';
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 
@@ -358,7 +377,7 @@ class WithStoreComponent {
   }
 }
 
-storiesOf('ngrx|Store', module)
+storiesOf('ngrx|Store', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
   .addDecorator(
     moduleMetadata({
       imports: [StoreModule.forRoot({})],
@@ -787,8 +806,8 @@ storiesOf('Addons|Info.GitHub issues', module).addDecorator(withSourceLoader(__S
 `;
 
 exports[`inject-decorator stories with ugly comments in ts should delete ugly comments from the generated story source 1`] = `
-"/* global window */
-/* eslint-disable global-require, import/no-dynamic-require */
+"
+
 
 import React from 'react';
 
@@ -808,17 +827,13 @@ class WithStoreComponent {
   }
 }
 
-/*
- eslint-disable some kind
- of multi line ignore, though
- I'm not sure it's possible.
-*/
+
 
 import { storiesOf } from '@storybook/react';
 
-/* eslint-disable-line */ const x = 0;
+ const x = 0;
 
-// eslint-disable-line
+
 storiesOf('Foo', module)
   .add('bar', () => <div>baz</div>);
 

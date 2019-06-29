@@ -1,6 +1,10 @@
-import { storiesOf } from '@storybook/vue';
+export default {
+  title: 'Core|Template',
+};
 
-storiesOf('Core|Template', module).add(
-  'string only',
-  () => '<my-button :rounded="false">A Button with square edges</my-button>'
-);
+export const stringOnly = () =>
+  '<my-button :rounded="false">A Button with square edges</my-button>';
+
+stringOnly.story = {
+  name: 'string only',
+};

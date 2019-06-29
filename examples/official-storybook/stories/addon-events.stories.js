@@ -1,6 +1,5 @@
 import React from 'react';
 import EventEmitter from 'eventemitter3';
-import { storiesOf } from '@storybook/react';
 
 import withEvents from '@storybook/addon-events';
 import Logger from './Logger';
@@ -67,25 +66,17 @@ const events = [
   },
 ];
 
-storiesOf('Addons|Events', module)
-  .addParameters({
+export default {
+  title: 'Addons|Events',
+  decorators: [withEvents({ emit, events })],
+  parameters: {
     options: {
       selectedPanel: 'storybook/events/panel',
     },
-  })
-  .addDecorator(withEvents({ emit, events }))
-  .add('Logger', () => <Logger emitter={emitter} />);
+  },
+};
 
-const WithEvents = withEvents;
-storiesOf('Addons|Events.deprecated', module)
-  .addParameters({
-    options: {
-      selectedPanel: 'storybook/events/panel',
-    },
-  })
-  .addDecorator(storyFn => (
-    <WithEvents emit={emit} events={events}>
-      {storyFn()}
-    </WithEvents>
-  ))
-  .add('Logger', () => <Logger emitter={emitter} />);
+export const logger = () => <Logger emitter={emitter} />;
+logger.story = {
+  name: 'Logger',
+};

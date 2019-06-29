@@ -1,4 +1,4 @@
-import { configure, addParameters } from '@storybook/rax';
+import { load, addParameters } from '@storybook/rax';
 
 addParameters({
   options: {
@@ -15,13 +15,4 @@ addParameters({
   },
 });
 
-function loadStories() {
-  // put welcome screen at the top of the list so it's the first one displayed
-  require('../src/stories/index.stories');
-
-  // automatically import all story js files that end with *.stories.js
-  const req = require.context('../src/stories', true, /\.stories\.js$/);
-  req.keys().forEach(filename => req(filename));
-}
-
-configure(loadStories, module);
+load(require.context('../src/stories', true, /\.stories\.js$/), module);
