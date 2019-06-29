@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types, react/destructuring-assignment, import/no-extraneous-dependencies */
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Events from '@storybook/core-events';
@@ -36,10 +37,6 @@ const Instructions = () => (
 );
 
 export default class BackgroundPanel extends Component {
-  setBackgroundFromSwatch = background => {
-    this.props.channel.emit(Constants.UPDATE_BACKGROUND, background);
-  };
-
   componentDidMount() {
     this.props.channel.on(Events.SELECT_STORY, this.onStorySelected);
   }
@@ -47,6 +44,10 @@ export default class BackgroundPanel extends Component {
   componentWillUnmount() {
     this.props.channel.removeListener(Events.SELECT_STORY, this.onStorySelected);
   }
+
+  setBackgroundFromSwatch = background => {
+    this.props.channel.emit(Constants.UPDATE_BACKGROUND, background);
+  };
 
   onStorySelected = selection => {
     this.setState({ selection });

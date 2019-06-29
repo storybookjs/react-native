@@ -1,4 +1,6 @@
-export default from './storybook';
+import StorybookUIRoot from './storybook';
+
+export { StorybookUIRoot as default };
 
 // NOTE: The code below is what CRNA generates out of the box. We currently
 // have no clever way of replacing this with Storybook's UI (Vanilla RN does!)
