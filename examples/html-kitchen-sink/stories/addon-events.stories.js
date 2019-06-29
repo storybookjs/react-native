@@ -1,5 +1,4 @@
 import EventEmitter from 'eventemitter3';
-import { storiesOf } from '@storybook/html';
 import addons from '@storybook/addons';
 import { useEffect, useState } from '@storybook/client-api';
 import CoreEvents from '@storybook/core-events';
@@ -19,8 +18,9 @@ const TEST_EVENTS = {
 const emitter = new EventEmitter();
 const emit = emitter.emit.bind(emitter);
 
-storiesOf('Addons|Events', module)
-  .addDecorator(
+export default {
+  title: 'Addons|Events',
+  decorators: [
     withEvents({
       emit,
       events: [
@@ -70,41 +70,43 @@ storiesOf('Addons|Events', module)
           ],
         },
       ],
-    })
-  )
-  .add('Logger', () => {
-    const [events, setEvents] = useState([]);
-    useEffect(() => {
-      const eventHandlers = Object.values(TEST_EVENTS).map(name => ({
-        name,
-        handler: payload => {
-          setEvents(prevEvents => [...prevEvents, { name, payload }]);
-        },
-      }));
-      eventHandlers.forEach(({ name, handler }) => emitter.on(name, handler));
-      return () =>
-        eventHandlers.forEach(({ name, handler }) => emitter.removeListener(name, handler));
-    }, []);
+    }),
+  ],
+};
 
-    return `
-      <div class="wrapper">
-        <h1 class="title">Logger</h1>
-        <dl>
-          ${events
-            .map(
-              ({ name, payload }) => `
-                <div class="item">
-                  <dt>
-                    <b>Event name:</b> ${name}
-                  </dt>
-                  <dd>
-                    <b>Event payload:</b> ${json.plain(payload)}
-                  </dd>
-                </div>
-              `
-            )
-            .join('')}
-        </dl>
-      </div>
-    `;
-  });
+export const Logger = () => {
+  const [events, setEvents] = useState([]);
+  useEffect(() => {
+    const eventHandlers = Object.values(TEST_EVENTS).map(name => ({
+      name,
+      handler: payload => {
+        setEvents(prevEvents => [...prevEvents, { name, payload }]);
+      },
+    }));
+    eventHandlers.forEach(({ name, handler }) => emitter.on(name, handler));
+    return () =>
+      eventHandlers.forEach(({ name, handler }) => emitter.removeListener(name, handler));
+  }, []);
+
+  return `
+    <div class="wrapper">
+      <h1 class="title">Logger</h1>
+      <dl>
+        ${events
+          .map(
+            ({ name, payload }) => `
+              <div class="item">
+                <dt>
+                  <b>Event name:</b> ${name}
+                </dt>
+                <dd>
+                  <b>Event payload:</b> ${json.plain(payload)}
+                </dd>
+              </div>
+            `
+          )
+          .join('')}
+      </dl>
+    </div>
+  `;
+};

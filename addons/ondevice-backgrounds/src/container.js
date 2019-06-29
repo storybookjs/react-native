@@ -19,9 +19,9 @@ export default class Container extends React.Component {
     channel.removeListener(Constants.UPDATE_BACKGROUND, this.onBackgroundChange);
   }
 
-  onBackgroundChange = (background) => {
+  onBackgroundChange = background => {
     this.setState({ background });
-  }
+  };
 
   render() {
     const { background } = this.state;
