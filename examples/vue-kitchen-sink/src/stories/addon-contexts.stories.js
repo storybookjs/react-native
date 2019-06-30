@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/vue';
 import { withContexts } from '@storybook/addon-contexts/vue';
 
 // Example A: Simple CSS Theming
@@ -39,18 +38,21 @@ const storyLevelContexts = [
   },
 ];
 
-const stories = storiesOf('Addon|Contexts', module).addDecorator(withContexts(topLevelContexts));
+export default {
+  title: 'Addon|Contexts',
+  decorators: [withContexts(topLevelContexts)],
+};
 
-stories.add(
-  'Simple CSS Theming',
-  () => ({
-    template:
-      "<span>I'm a children of the injected 'div' (where provides a theming context).</span>",
-  }),
-  {
+export const simpleCssTheming = () => ({
+  template: "<span>I'm a children of the injected 'div' (where provides a theming context).</span>",
+});
+
+simpleCssTheming.story = {
+  name: 'Simple CSS Theming',
+  parameters: {
     contexts: storyLevelContexts,
-  }
-);
+  },
+};
 
 // Example B: Language (Vue provide/inject API)
 const createContext = initialValue => {
@@ -99,17 +101,17 @@ const NaiveIntlContext = createContext({
   greeting: 'NULL',
 });
 
-stories.add(
-  'Languages',
-  () => ({
-    components: { 'NaiveIntlContext.Consumer': NaiveIntlContext.Consumer },
-    template: `
-      <NaiveIntlContext.Consumer v-slot="{ locale, greeting }">
-        Your locale is {{ locale }}, so I say {{ greeting }}!
-      </NaiveIntlContext.Consumer>
-    `,
-  }),
-  {
+export const Languages = () => ({
+  components: { 'NaiveIntlContext.Consumer': NaiveIntlContext.Consumer },
+  template: `
+    <NaiveIntlContext.Consumer v-slot="{ locale, greeting }">
+      Your locale is {{ locale }}, so I say {{ greeting }}!
+    </NaiveIntlContext.Consumer>
+  `,
+});
+
+Languages.story = {
+  parameters: {
     contexts: [
       {
         icon: 'globe',
@@ -140,5 +142,5 @@ stories.add(
         },
       },
     ],
-  }
-);
+  },
+};

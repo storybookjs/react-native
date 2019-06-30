@@ -1,5 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { Button } from '@storybook/react/demo';
@@ -23,46 +23,61 @@ const InfoButton = () => (
   </span>
 );
 
-storiesOf('Button', module)
-  .addParameters({
+export default {
+  title: 'Button',
+
+  parameters: {
     component: Button,
-  })
-  .add('with text', () => <Button onClick={action('clicked', { depth: 1 })}>Hello Button</Button>, {
+  },
+};
+
+export const story1 = () => <Button onClick={action('clicked', { depth: 1 })}>Hello Button</Button>;
+story1.story = {
+  name: 'with text',
+  parameters: {
     options: { selectedPanel: 'storybook/actions/panel' },
-  })
-  .add(
-    'with some emoji',
-    () => (
-      <Button onClick={action('clicked')}>
-        <span role="img" aria-label="yolo">
-          😀 😎 👍 💯
-        </span>
-      </Button>
-    ),
-    {
-      options: { selectedPanel: 'storybook/actions/panel' },
-    }
-  )
-  .add('with notes', () => <Button>Check my notes in the notes panel</Button>, {
+  },
+};
+
+export const story2 = () => (
+  <Button onClick={action('clicked')}>
+    <span role="img" aria-label="yolo">
+      😀 😎 👍 💯
+    </span>
+  </Button>
+);
+story2.story = {
+  name: 'with some emoji',
+  parameters: {
+    options: { selectedPanel: 'storybook/actions/panel' },
+  },
+};
+
+export const story3 = () => <Button>Check my notes in the notes panel</Button>;
+story3.story = {
+  name: 'with notes',
+  parameters: {
     notes: 'A very simple button',
     options: { selectedPanel: 'storybook/notes/panel' },
-  })
-  .add(
-    'with new info',
-    context => (
-      <Container>
-        <span>
-          click the <InfoButton /> label in top right for info about "{context.name}"
-        </span>
-      </Container>
-    ),
-    {
-      notes: 'Composition: Info(Notes())',
-      options: { selectedPanel: 'storybook/info/panel' },
-      decorators: [
-        withInfo(
-          'Use the [info addon](https://github.com/storybookjs/storybook/tree/master/addons/info) with its new painless API.'
-        ),
-      ],
-    }
-  );
+  },
+};
+
+export const story4 = context => (
+  <Container>
+    <span>
+      click the <InfoButton /> label in top right for info about "{context.name}"
+    </span>
+  </Container>
+);
+story4.story = {
+  name: 'with new info',
+  parameters: {
+    notes: 'Composition: Info(Notes())',
+    options: { selectedPanel: 'storybook/info/panel' },
+    decorators: [
+      withInfo(
+        'Use the [info addon](https://github.com/storybookjs/storybook/tree/master/addons/info) with its new painless API.'
+      ),
+    ],
+  },
+};

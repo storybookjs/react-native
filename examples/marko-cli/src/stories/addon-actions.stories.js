@@ -1,9 +1,11 @@
-import { storiesOf } from '@storybook/marko';
 import { action } from '@storybook/addon-actions';
 import Button from '../components/action-button/index.marko';
 
-storiesOf('Addons|Actions/Button', module)
-  .addParameters({
+export default {
+  title: 'Addons|Actions/Button',
+  parameters: {
     component: Button,
-  })
-  .add('Simple', () => Button.renderSync({ click: action('action logged!') }));
+  },
+};
+
+export const Simple = () => Button.renderSync({ click: action('action logged!') });
