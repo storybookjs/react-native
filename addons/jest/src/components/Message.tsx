@@ -119,8 +119,8 @@ export class Message extends Component<MessageProps, {}> {
           .toLowerCase()
           .indexOf('at') === 0
       ) {
-        stackTrace += getConvertedText(lines[i]);
-        stackTrace += i != lines.length ? '\n' : '';
+        stackTrace += getConvertedText(lines[i]).trim();
+        stackTrace += i !== lines.length ? '\n' : '';
       }
     }
 
