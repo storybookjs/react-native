@@ -44,7 +44,9 @@ const SuiteHead = styled.div({
 
 const SuiteTotals = styled(({ successNumber, failedNumber, result, className }) => (
   <div className={className}>
-    <div>{result.assertionResults.length} tests</div>
+    <div>
+      {result.assertionResults.length} {result.assertionResults.length > 1 ? `tests` : `test`}
+    </div>
     <div>
       {result.endTime - result.startTime}
       ms
