@@ -60,19 +60,6 @@ const getConvertedText: (msg: string) => any = (msg: string) => {
       element.indexOf(failStartToken) > -1 &&
       element.indexOf(failStartToken) < element.indexOf(endToken)
     ) {
-      console.log(
-        element.split(failStartToken),
-        element.split(failStartToken).join(''),
-        element
-          .split(failStartToken)
-          .join('')
-          .split(endToken),
-        element
-          .split(failStartToken)
-          .join('')
-          .split(endToken)
-          .join('')
-      );
       text += element
         .split(failStartToken)
         .join('')
