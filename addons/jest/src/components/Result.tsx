@@ -3,22 +3,22 @@ import { styled } from '@storybook/theming';
 import { Icons } from '@storybook/components';
 import Message from './Message';
 
-const Wrapper = styled.div(({ theme }) => ({
+const Wrapper = styled.div(({ theme, status }) => ({
   display: 'flex',
   width: '100%',
   borderTop: `1px solid ${theme.appBorderColor}`,
   '&:hover': {
-    background: theme.background.hoverable,
+    background: status === `failed` ? theme.background.hoverable : null,
   },
 }));
 
-const HeaderBar = styled.div(({ theme }) => ({
+const HeaderBar = styled.div(({ theme, status }) => ({
   padding: theme.layoutMargin,
   paddingLeft: theme.layoutMargin - 3,
   background: 'none',
   color: 'inherit',
   textAlign: 'left',
-  cursor: 'pointer',
+  cursor: status === `failed` ? 'pointer' : null,
   borderLeft: '3px solid transparent',
   width: '100%',
   display: 'flex',
@@ -51,6 +51,7 @@ interface ResultProps {
   fullName?: string;
   title?: string;
   failureMessages: any;
+  status: string;
 }
 
 interface ResultState {
@@ -68,14 +69,13 @@ export class Result extends Component<ResultProps, ResultState> {
     }));
 
   render() {
-    const { fullName, title, failureMessages } = this.props;
+    const { fullName, title, failureMessages, status } = this.props;
     const { open } = this.state;
-
     return (
       <Fragment>
-        <Wrapper>
-          {failureMessages && failureMessages.length ? (
-            <HeaderBar onClick={this.onToggle} role="button">
+        <Wrapper status={status}>
+          <HeaderBar onClick={this.onToggle} role="button" status={status}>
+            {status === `failed` ? (
               <Icon
                 icon="chevrondown"
                 size={10}
@@ -84,13 +84,9 @@ export class Result extends Component<ResultProps, ResultState> {
                   transform: `rotate(${open ? 0 : -90}deg)`,
                 }}
               />
-              <div>{capitalizeFirstLetter(fullName) || capitalizeFirstLetter(title)}</div>
-            </HeaderBar>
-          ) : (
-            <HeaderBar>
-              <div>{capitalizeFirstLetter(fullName) || capitalizeFirstLetter(title)}</div>
-            </HeaderBar>
-          )}
+            ) : null}
+            <div>{capitalizeFirstLetter(fullName) || capitalizeFirstLetter(title)}</div>
+          </HeaderBar>
         </Wrapper>
         {open ? (
           <Fragment>
