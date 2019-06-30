@@ -21,6 +21,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^1.0.0",
     "core-js": "^3.0.1",
     "jscodeshift": "^0.6.3",
     "lodash": "^4.17.11",
