@@ -1,7 +1,5 @@
 import EventEmitter from 'eventemitter3';
-import addons from '@storybook/addons';
 import { useEffect, useState } from '@storybook/client-api';
-import CoreEvents from '@storybook/core-events';
 import json from 'format-json';
 
 import withEvents from '@storybook/addon-events';

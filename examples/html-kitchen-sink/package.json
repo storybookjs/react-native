@@ -11,7 +11,7 @@
     "build-storybook": "build-storybook",
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
-    "storybook": "start-storybook -p 9006"
+    "storybook": "start-storybook -p 9006 --no-dll"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "5.2.0-alpha.32",
