@@ -148,6 +148,13 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['**/storyshots-puppeteer/**'],
+      rules: {
+        'import/no-unresolved': ignore,
+        'import/extensions': ignore,
+      },
+    },
+    {
       files: [
         '**/__tests__/**',
         '**/*.test.*',
