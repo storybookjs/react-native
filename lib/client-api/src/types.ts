@@ -1,5 +1,5 @@
 import { Channel } from '@storybook/channels';
-import Events from '@storybook/core-events';
+import { Addon } from '@storybook/addons';
 
 export type Keys =
   | 'addons-a11y-basebutton--default'
@@ -304,6 +304,7 @@ export interface IHierarchyObj {
   theme?: { base: string; brandTitle: string };
 }
 export interface IDecoratorParamOptions extends Object {
+  storySort: any;
   hierarchyRootSeparator: string;
   hierarchySeparator: RegExp;
   theme: {
@@ -332,7 +333,7 @@ export interface DecoratorParameters {
   backgrounds: IDecoratorBackgrounds[];
   fileName?: string;
   globalParameter?: string;
-  options: IDecoratorParamOptions;
+  options?: IDecoratorParamOptions;
 }
 
 export type StoryFn = (p?: any) => any;
@@ -347,7 +348,11 @@ export interface Decorator {
   storyFn: StoryFn;
 }
 
-export type DecoratorData = { [K in Keys]: Decorator };
+export type DecoratorData = { 
+  [K in Keys]: Decorator; 
+} & {[key: string]: Decorator};
+
+
 export interface IModule {
   exports: any;
   id: string;
@@ -367,6 +372,30 @@ export interface ClientApiParams {
   storyStore: StoryStore;
   decorateStory: (storyFn: any, decorators: any) => any;
 }
+export interface IStoryContext {
+  kind: string;
+  name: string;
+  parameters: any;
+}
+export interface ICollection {
+  [p: string]: any;
+}
+export interface IStory {
+  props?: ICollection;
+  moduleMetadata?: any;
+  component?: any;
+  template?: string;
+}
+
+export type IGetStory = (context: IStoryContext) => IStory;
+export interface IApi {
+  kind: string;
+  name: string;
+  addDecorator: (decorator: any) => IApi;
+  addParameters: (parameters: any) => IApi;
+  add: (storyName: string, getStory: IGetStory, parameters?: any) => IApi;
+  [key: string]: any;
+}
 export type HandlerFunction = (...args: any[]) => void;
 export type DecoratorFunction = (args: any[]) => any[];
 
@@ -380,6 +409,7 @@ export interface LegacyItem {
 }
 
 export type LegacyData = { [K in Keys]: LegacyItem };
+type _decorator = Partial<Decorator>
 export interface StoryStore {
   fromId: (id: string) => any;
   getSelection: (a: any, b: Error) => void;
@@ -387,7 +417,10 @@ export interface StoryStore {
   incrementRevision: () => void;
   addLegacyStory: (p: DecoratorData) => void;
   pushToManager: () => void;
-  addStory: (p: DecoratorData) => void;
+  addStory: (p: _decorator, cbObj: {
+    applyDecorators: (storyFn: StoryFn, decorators: any) => any;
+    getDecorators: () => any[];
+  }) => void;
   remove: (id: string) => void;
   setChannel: (channel: Channel) => void;
   setSelection: (ref: any, err: Error) => void;
@@ -411,9 +444,14 @@ export interface StoryStore {
   hasStory: (kind: string, name: string) => boolean;
   size: () => number;
   clean: () => void;
+  _error?: undefined;
   _channel: Channel;
   _data: DecoratorData;
-  _events?: Events;
+  _events?: any;
   _eventsCount?: number;
   _legacyData?: LegacyData;
+}
+
+export interface IAddon extends Addon {
+  apply: (a: IApi, b: any[]) => any;
 }

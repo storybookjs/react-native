@@ -1,18 +1,19 @@
 /* eslint no-underscore-dangle: 0 */
 import isPlainObject from 'is-plain-object';
 import { logger } from '@storybook/client-logger';
-import addons, { Addon, AddonStore } from '@storybook/addons';
+import addons, { Addon } from '@storybook/addons';
 import Events from '@storybook/core-events';
 import { toId } from '@storybook/router/utils';
 
 import mergeWith from 'lodash/mergeWith';
 import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
-import { ClientApiParams, IDecoratorParams, IHierarchyObj, StoryStore, StoryFn } from './types';
+import { ClientApiParams, IApi, IDecoratorParams, IHierarchyObj, StoryStore, StoryFn } from './types';
 import subscriptionsStore from './subscriptions_store';
+import { IAddon } from '../dist/types';
 
 // merge with concatenating arrays, but no duplicates
-const merge = (a: IHierarchyObj, b: IHierarchyObj) =>
+const merge = (a: any, b: any) =>
   mergeWith({}, a, b, (objValue, srcValue) => {
     if (Array.isArray(srcValue) && Array.isArray(objValue)) {
       srcValue.forEach(s => {
@@ -33,19 +34,22 @@ const merge = (a: IHierarchyObj, b: IHierarchyObj) =>
 
 export const defaultDecorateStory = (storyFn: StoryFn, decorators: any[]) =>
   decorators.reduce(
-    (decorated, decorator) => (context = {}) =>
+    (decorated, decorator) => (context: { parameters: any; options: any; }) =>
       decorator(
-        (p = {}) =>
-          decorated(
+        (p: { parameters: any; options: any; }) => {
+          console.log('p: ', p);
+          
+          return decorated(
             // MUTATION !
             Object.assign(
               context,
               p,
               { parameters: Object.assign(context.parameters || {}, p.parameters) },
               { options: Object.assign(context.options || {}, p.options) }
-            )
-          ),
-        context
+              )
+              ),
+              context
+            }
       ),
     storyFn
   );
@@ -72,15 +76,15 @@ interface Addons {
 }
 
 export default class ClientApi {
-  _storyStore: StoryStore;
+  private _storyStore: StoryStore;
 
-  _addons: Addons;
+  private _addons: Addons;
 
-  _globalDecorators: any[];
+  private _globalDecorators: any[];
 
-  _globalParameters: { [key: string]: any };
+  private _globalParameters: { [key: string]: any };
 
-  _decorateStory: (storyFn: StoryFn, decorators: any) => any;
+  private _decorateStory: (storyFn: StoryFn, decorators: any) => any;
 
   constructor({ storyStore, decorateStory = defaultDecorateStory }: ClientApiParams) {
     this._storyStore = storyStore;
@@ -157,11 +161,11 @@ export default class ClientApi {
     let hasAdded = false;
     const api = {
       kind,
-    };
+    } as IApi;
 
     // apply addons
     Object.keys(this._addons).forEach(name => {
-      const addon = this._addons[name];
+      const addon = this._addons[name] as IAddon;
       api[name] = (...args: any[]) => {
         addon.apply(api, args);
         return api;

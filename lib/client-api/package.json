@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@storybook/addons": "5.2.0-alpha.32",
+    "@storybook/channels": "^5.1.9",
     "@storybook/client-logger": "5.2.0-alpha.32",
     "@storybook/core-events": "5.2.0-alpha.32",
     "@storybook/router": "5.2.0-alpha.32",

@@ -48,14 +48,13 @@ export default class ConfigApi {
 
   _renderMain() {
     // do initial render of story
-    debugger;
     this._storyStore.emit(Events.STORY_INIT);
   }
 
   _renderError(err: Error) {
     const { stack, message } = err;
     const error = { stack, message };
-    this._storyStore.setSelection({ error });
+    this._storyStore.setSelection({ error }, undefined);
   }
 
   configure = (loaders: () => void, module: IModule) => {
@@ -87,9 +86,9 @@ export default class ConfigApi {
       }
     };
 
-    if (m.hot) {
-      m.hot.accept();
-      m.hot.dispose(() => {
+    if (module.hot) {
+      module.hot.accept();
+      module.hot.dispose(() => {
         this._clearDecorators();
       });
     }

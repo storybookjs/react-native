@@ -32,7 +32,7 @@ describe('preview.story_store', () => {
   describe('raw storage', () => {
     it('stores hash object', () => {
       const store = new StoryStore({ channel });
-      store.addStory(...make('a', '1', () => 0));
+      store.addStory(...make('a', '1', () => 0), undefined);
       store.addStory(...make('a', '2', () => 0));
       store.addStory(...make('b', '1', () => 0));
 
@@ -150,7 +150,7 @@ describe('preview.story_store', () => {
         ...make('kind-2', 'story-2.1', () => 0, { fileName: 'bar.js', options: { storySort } })
       );
 
-      const stories = Object.values(store.extract());
+      const stories = Object.values(store.extract()) as any[];
       expect(stories[0].id).toBe('kind-1--story-1-2');
       expect(stories[1].id).toBe('kind-1--z-story-1-1');
       expect(stories[2].id).toBe('kind-2--a-story-2-1');

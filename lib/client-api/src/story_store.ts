@@ -4,7 +4,7 @@ import memoize from 'memoizerific';
 import debounce from 'lodash/debounce';
 import { stripIndents } from 'common-tags';
 
-import Channel from '@storybook/channels';
+import { Channel } from '@storybook/channels';
 import Events from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
 import {
@@ -53,15 +53,17 @@ export default class StoryStore extends EventEmitter {
   _selection: {};
 
   _channel: Channel;
+  _error?: Error;
 
   constructor(params: { channel: Channel }) {
     super();
 
     this._legacydata = ({} as any) as LegacyData;
-    this._data = ({} as any) as DecoratorData;
+    this._data = ({} as any) as any;
     this._revision = 0;
     this._selection = {};
     this._channel = params.channel;
+    this._error = undefined;
   }
 
   setChannel = (channel: Channel) => {
@@ -107,8 +109,8 @@ export default class StoryStore extends EventEmitter {
     return stories.reduce((a, [k, v]) => Object.assign(a, { [k]: toExtracted(v) }), {});
   }
 
-  setSelection = (data: any, error: Error) => {
-    const { storyId, viewMode } = data || {};
+  setSelection = (data: any, error?: Error) => {
+    const { storyId, viewMode } = data;
 
     this._selection = data === undefined ? this._selection : { storyId, viewMode };
     this._error = error === undefined ? this._error : error;
@@ -177,11 +179,12 @@ export default class StoryStore extends EventEmitter {
     const getOriginal = () => original;
 
     // lazily decorate the story when it's loaded
-    const getDecorated = memoize(1)(() => applyDecorators(getOriginal(), getDecorators()));
+    const getDecorated = memoize(1)(() =>
+      applyDecorators(getOriginal(), getDecorators())
+    ) as () => (args: any) => any;
 
-    const storyFn = (p: any) => {
-      return getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
-    };
+    const storyFn = (p: any) =>
+      getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
 
     _data[id as Keys] = toChild({
       ...identification,
@@ -222,12 +225,12 @@ export default class StoryStore extends EventEmitter {
     kind,
     name,
     storyFn,
-    parameters = {},
+    parameters,
   }: {
     kind: string;
     name: string;
     storyFn: (p?: any) => any;
-    parameters: { fileName: string } | {};
+    parameters: { fileName?: string };
   }) {
     const k = toKey(kind);
     if (!this._legacydata[k as Keys]) {
