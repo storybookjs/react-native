@@ -8,7 +8,7 @@ type Direction = -1 | 1;
 type StoryId = string;
 type ParameterName = string;
 
-type ViewMode = 'story' | 'info' | undefined;
+type ViewMode = 'story' | 'info' | 'settings' | undefined;
 
 export interface SubState {
   storiesHash: StoriesHash;
@@ -306,6 +306,19 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
     }
   };
 
+  // Navigate to settings page by changing the viewMode state and route
+  // to the specific settings page.
+  const showSettingsPage = (storyId: string) => {
+    store.setState(
+      {
+        viewMode: 'settings',
+      },
+      () => {
+        navigate(`/settings/${storyId}`);
+      }
+    );
+  };
+
   return {
     api: {
       storyId: toId,
@@ -317,6 +330,7 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       getData,
       getParameters,
       getCurrentParameter,
+      showSettingsPage,
     },
     state: {
       storiesHash: {},
