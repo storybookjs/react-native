@@ -1,4 +1,4 @@
-/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-underscore-dangle,react/forbid-foreign-prop-types */
 
 import PropTypes from 'prop-types';
 import { PropDef } from '@storybook/components';

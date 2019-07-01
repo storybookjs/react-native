@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { document } from 'global';
 import { useEffect } from '@storybook/client-api';
 
