@@ -1,8 +1,7 @@
 .circleci/ @ndelangen
-.teamcity/ @hypnosphi
 .github/ @danielduan
 
-/addons/a11y/ @jbovenschen
+/addons/a11y/ @jbovenschen @codebyalex
 /addons/actions/ @rhalff
 /addons/backgrounds/ @ndelangen
 /addons/centered/ @kazupon

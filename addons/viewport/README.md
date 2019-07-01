@@ -2,9 +2,9 @@
 
 Storybook Viewport Addon allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybook.js.org). This helps build responsive components inside of Storybook.
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Screenshot](https://github.com/storybooks/storybook/blob/master/addons/viewport/docs/viewport.png)
+![Screenshot](https://github.com/storybookjs/storybook/blob/master/addons/viewport/docs/viewport.png)
 
 ## Installation
 
@@ -25,6 +25,7 @@ Then, add following content to .storybook/addons.js
 ```js
 import '@storybook/addon-viewport/register';
 ```
+You should now be able to see the viewport addon icon in the the toolbar at the top of the screen.
 
 ## Configuration
 

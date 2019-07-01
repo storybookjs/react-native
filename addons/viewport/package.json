@@ -1,18 +1,18 @@
 {
   "name": "@storybook/addon-viewport",
-  "version": "5.1.0-alpha.14",
+  "version": "5.2.0-alpha.32",
   "description": "Storybook addon to change the viewport size to mobile",
   "keywords": [
     "addon",
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/viewport",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/viewport",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/viewport"
   },
   "license": "MIT",
@@ -21,12 +21,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.14",
-    "@storybook/client-logger": "5.1.0-alpha.14",
-    "@storybook/components": "5.1.0-alpha.14",
-    "@storybook/core-events": "5.1.0-alpha.14",
-    "@storybook/theming": "5.1.0-alpha.14",
-    "core-js": "^2.6.5",
+    "@storybook/addons": "5.2.0-alpha.32",
+    "@storybook/api": "5.2.0-alpha.32",
+    "@storybook/client-logger": "5.2.0-alpha.32",
+    "@storybook/components": "5.2.0-alpha.32",
+    "@storybook/core-events": "5.2.0-alpha.32",
+    "@storybook/theming": "5.2.0-alpha.32",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
     "prop-types": "^15.7.2",
@@ -37,5 +38,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@types/util-deprecate": "^1.0.0"
   }
 }

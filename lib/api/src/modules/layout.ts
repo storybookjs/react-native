@@ -1,5 +1,5 @@
 import { document } from 'global';
-import pick from 'lodash.pick';
+import pick from 'lodash/pick';
 
 import deprecate from 'util-deprecate';
 import deepEqual from 'fast-deep-equal';
@@ -23,8 +23,8 @@ export interface UI {
   name?: string;
   url?: string;
   enableShortcuts: boolean;
-  sortStoriesByKind: boolean;
   sidebarAnimations: boolean;
+  docsMode: boolean;
 }
 
 export interface SubState {
@@ -48,7 +48,7 @@ type PartialThemeVars = Partial<ThemeVars>;
 type PartialLayout = Partial<Layout>;
 type PartialUI = Partial<UI>;
 
-interface Options {
+interface Options extends ThemeVars {
   name?: string;
   url?: string;
   goFullScreen: boolean;
@@ -64,11 +64,11 @@ interface OptionsMap {
 }
 
 const deprecatedThemeOptions: {
-  name: 'brandTitle';
-  url: 'brandUrl';
+  name: 'theme.brandTitle';
+  url: 'theme.brandUrl';
 } = {
-  name: 'brandTitle',
-  url: 'brandUrl',
+  name: 'theme.brandTitle',
+  url: 'theme.brandUrl',
 };
 
 const deprecatedLayoutOptions: {
@@ -88,14 +88,14 @@ const deprecationMessage = (optionsMap: OptionsMap, prefix: string = '') =>
     prefix ? `${prefix}'s` : ''
   } { ${Object.values(optionsMap).join(', ')} } instead.`;
 
-const applyDeprecatedThemeOptions = deprecate(
-  ({ name, url }: Options): PartialThemeVars => ({
-    brandTitle: name,
-    brandUrl: url,
-    brandImage: null,
-  }),
-  deprecationMessage(deprecatedThemeOptions)
-);
+const applyDeprecatedThemeOptions = deprecate(({ name, url, theme }: Options): PartialThemeVars => {
+  const { brandTitle, brandUrl, brandImage }: PartialThemeVars = theme || {};
+  return {
+    brandTitle: brandTitle || name,
+    brandUrl: brandUrl || url,
+    brandImage: brandImage || null,
+  };
+}, deprecationMessage(deprecatedThemeOptions));
 
 const applyDeprecatedLayoutOptions = deprecate((options: Options): PartialLayout => {
   const layoutUpdate: PartialLayout = {};
@@ -116,14 +116,14 @@ const applyDeprecatedLayoutOptions = deprecate((options: Options): PartialLayout
 }, deprecationMessage(deprecatedLayoutOptions));
 
 const checkDeprecatedThemeOptions = (options: Options) => {
-  if (Object.values(deprecatedThemeOptions).find(v => !!v)) {
+  if (Object.keys(deprecatedThemeOptions).find(v => v in options)) {
     return applyDeprecatedThemeOptions(options);
   }
   return {};
 };
 
 const checkDeprecatedLayoutOptions = (options: Options) => {
-  if (Object.values(deprecatedLayoutOptions).find(v => typeof v !== 'undefined')) {
+  if (Object.keys(deprecatedLayoutOptions).find(v => v in options)) {
     return applyDeprecatedLayoutOptions(options);
   }
   return {};
@@ -132,8 +132,8 @@ const checkDeprecatedLayoutOptions = (options: Options) => {
 const initial: SubState = {
   ui: {
     enableShortcuts: true,
-    sortStoriesByKind: false,
     sidebarAnimations: true,
+    docsMode: false,
   },
   layout: {
     isToolshown: true,
@@ -157,7 +157,7 @@ export default function({ store }: { store: Store }) {
   const api = {
     toggleFullscreen(toggled?: boolean) {
       return store.setState((state: State) => {
-        const value = typeof toggled !== 'undefined' ? toggled : !state.layout.isFullscreen;
+        const value = typeof toggled === 'boolean' ? toggled : !state.layout.isFullscreen;
 
         return {
           layout: {
@@ -225,6 +225,19 @@ export default function({ store }: { store: Store }) {
       });
     },
 
+    resetLayout() {
+      return store.setState((state: State) => {
+        return {
+          layout: {
+            ...state.layout,
+            showNav: false,
+            showPanel: false,
+            isFullscreen: false,
+          },
+        };
+      });
+    },
+
     focusOnUIElement(elementId?: string) {
       if (!elementId) {
         return;
@@ -241,7 +254,7 @@ export default function({ store }: { store: Store }) {
       // to avoid a FOUC (e.g. initial rendering the wrong theme while we waited for the stories to load)
       // However, we don't want to have a memory about these things, otherwise we see bugs like the
       // user setting a name for their storybook, persisting it, then never being able to unset it
-      // without clearing localstorage. See https://github.com/storybooks/storybook/issues/5857
+      // without clearing localstorage. See https://github.com/storybookjs/storybook/issues/5857
       const { layout, ui, selectedPanel, theme } = hasSetOptions ? store.getState() : initial;
 
       if (options) {

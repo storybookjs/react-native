@@ -14,7 +14,7 @@ npx -p @storybook/cli sb init --type svelte
 
 ## Manual setup
 
-If you want to set up Storybook manually for your React project, this is the guide for you.
+If you want to set up Storybook manually for your Svelte project, this is the guide for you.
 
 > It is very important to remember that Svelte components are precompiled from `.svelte` or `.html` files to vanilla javascript, so there is no 'runtime'.
 
@@ -96,14 +96,14 @@ import MyButton from '../components/MyButton.svelte';
 storiesOf('MyButton', module)
   .add('with text', () => ({
     Component: MyButton,
-    data: {
+    props: {
       buttonText: 'some text',
     },
-  })),
-  .add('with text', () => ({
+  }))
+  .add('with some emojies', () => ({
     Component: MyButton,
 
-    data: {
+    props: {
       buttonText: '😀 😎 👍 💯',
     },
   }));
@@ -116,7 +116,7 @@ So you can create a story "view" file, essentially just a .svelte file to load y
 
 ```html
 <!-- MyButtonView  -->
-<MyButton rounded="{rounded}" on:click>
+<MyButton {rounded} on:click>
   {buttonText}
 </Button>
 ```
@@ -136,7 +136,7 @@ storiesOf('Button', module)
   .add('wrapped component(s) example', () => ({
     Components: MyButtonView,
 
-    data: {
+    props: {
       buttonText: 'some text',
       rounded: true,
     },

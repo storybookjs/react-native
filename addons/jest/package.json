@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-jest",
-  "version": "5.1.0-alpha.14",
+  "version": "5.2.0-alpha.32",
   "description": "React storybook addon that show component jest report",
   "keywords": [
     "addon",
@@ -11,31 +11,31 @@
     "storybook",
     "unit-testing"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/jest",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/jest",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/jest"
   },
   "license": "MIT",
   "author": "Renaud Tertrais <renaud.tertrais@gmail.com> (https://github.com/renaudtertrais)",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.14",
-    "@storybook/components": "5.1.0-alpha.14",
-    "@storybook/core-events": "5.1.0-alpha.14",
-    "@storybook/theming": "5.1.0-alpha.14",
-    "core-js": "^2.6.5",
+    "@storybook/addons": "5.2.0-alpha.32",
+    "@storybook/api": "5.2.0-alpha.32",
+    "@storybook/components": "5.2.0-alpha.32",
+    "@storybook/core-events": "5.2.0-alpha.32",
+    "@storybook/theming": "5.2.0-alpha.32",
+    "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.4",
+    "react": "^16.8.3",
     "upath": "^1.1.0",
     "util-deprecate": "^1.0.2"
   },

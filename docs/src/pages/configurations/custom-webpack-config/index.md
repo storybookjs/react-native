@@ -6,7 +6,7 @@ title: 'Custom Webpack Config'
 You can customize Storybook's webpack setup by providing a `webpack.config.js` file exporting a **webpack 4** compatible config exported as a **commonjs module**.
 
 Storybook has its own Webpack setup and a dev server.
-The webpack config [is configurable](/configurations/webpack), and the default can depend on which framework you're using and whether you've used a generator like [Create React App](https://github.com/facebookincubator/create-react-app) or Angular CLI etc.
+The webpack config [is configurable](/configurations/custom-webpack-config/), and the default can depend on which framework you're using and whether you've used a generator like [Create React App](https://github.com/facebookincubator/create-react-app) or Angular CLI etc.
 
 > We're trying to make storybook more zero-config over time, **help to hook into the config of generators is very welcome**.
 
@@ -83,7 +83,7 @@ The webpack config [is configurable](/configurations/webpack), and the default c
           { loader: 'babel-loader', options:
             { cacheDirectory: './node_modules/.cache/storybook',
               presets: [
-                [ './node_modules/@babel/preset-env/lib/index.js', { shippedProposals: true, useBuiltIns: 'usage' } ],
+                [ './node_modules/@babel/preset-env/lib/index.js', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' } ],
                 './node_modules/@babel/preset-react/lib/index.js',
                 './node_modules/@babel/preset-flow/lib/index.js',
               ],
@@ -148,24 +148,21 @@ The webpack config [is configurable](/configurations/webpack), and the default c
 
 ### Debug the default webpack config
 
-<details>
   <summary>To effectively customise the webpack config, you might need to get the full default config it's using.</summary>
   
   <div></div>
 
 - Create a `.storybook/webpack.config.js` file.
-- Edit it's contents:
+- Edit its contents:
   ```js
   module.exports = async ({ config }) => console.dir(config.plugins, { depth: null }) || config;
   ```
 - Then run storybook:
   ```sh
-  yarn storybook --quiet
+  yarn storybook --debug-webpack
   ```
 
 The console should log the entire config, for you to inspect.
-
-</details>
 
 ## Webpack customisation modes
 
@@ -177,7 +174,7 @@ If your file exports a **function**, it puts Storybook into **full-control-mode*
 
 Storybook will call the function with an object containing `config` and `mode` fields. `config` is Storybook's default configuration, and `mode` allows you to create different configurations for dev and production environments.
 
-For example, here's a `webpack.config.js` to add [SASS](http://sass-lang.com/) support using full-control-mode:
+For example, here's a `webpack.config.js` to add [SASS](http://sass-lang.com/) support using full-control mode:
 
 ```js
 const path = require('path');
@@ -191,7 +188,7 @@ module.exports = async ({ config, mode }) => {
   // Make whatever fine-grained changes you need
   config.module.rules.push({
     test: /\.scss$/,
-    loaders: ['style-loader', 'css-loader', 'sass-loader'],
+    use: ['style-loader', 'css-loader', 'sass-loader'],
     include: path.resolve(__dirname, '../'),
   });
 
@@ -200,18 +197,29 @@ module.exports = async ({ config, mode }) => {
 };
 ```
 
-Storybook uses the config returned from the above function. So edit `config` with care. Make sure to preserve the following config options:
+Storybook uses the config returned from the above function to render your components in Storybook's "preview" iframe. Note that Storybook has a completely separate webpack config for its own UI (also referred to as the "manager"), so the customizations you make only applies to the rendering of your stories, i.e. you can completely replace `config.module.rules` if you want.
+
+Nevertheless, edit `config` with care. Make sure to preserve the following config options:
 
 - entry
 - output
 
-> If your custom webpack config uses a loader that does not explicitly include specific file extensions via the `test` property, it is necessary to `exclude` the `.ejs` file extension from that loader.
+Furthermore, `config` requires the `HtmlWebpackplugin` to generate the preview page, so rather than overwriting `config.plugins` you should probably append to it (or overwrite it with care), see [Issue #6020](https://github.com/storybookjs/storybook/issues/6020) for examples:
 
-### Extend Mode
+```js
+module.exports = async ({ config, mode }) => {
+  config.plugins.push(...)
+  return config;
+}
+```
+
+Finally, if your custom webpack config uses a loader that does not explicitly include specific file extensions via the `test` property, it is necessary to `exclude` the `.ejs` file extension from that loader.
+
+### Extend Mode (**Deprecated**)
 
 If your file exports an **object**, it puts Storybook into **extend-mode**. This mode is deprecated and will be removed in a future version.
 
-Extend-mode _merges_ the exported object with Storybook's [default webpack configuration](../default-config/) which supports a bunch of common file types. The [merge operation](https://github.com/storybooks/storybook/blob/next/lib/core/src/server/utils/merge-webpack-config.js) appends webpack arrays like `rules` and `plugins` and merges objects like `optimization`.
+Extend-mode _merges_ the exported object with Storybook's [default webpack configuration](../default-config/) which supports a bunch of common file types. The [merge operation](https://github.com/storybookjs/storybook/blob/next/lib/core/src/server/utils/merge-webpack-config.js) appends webpack arrays like `rules` and `plugins` and merges objects like `optimization`.
 
 For example, to add [SASS](http://sass-lang.com/) support to Storybook, install `style-loader`, `css-loader`, `sass-loader`, and `node-sass` and add the following snippet to `.storybook/webpack.config.js`:
 
@@ -223,7 +231,7 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
         include: path.resolve(__dirname, '../'),
       },
     ],
@@ -254,6 +262,6 @@ const path = require('path');
 const custom = require('../webpack.config.js');
 
 module.exports = async ({ config, mode }) => {
-  return { ...config, loaders: custom.loaders };
+  return { ...config, module: { ...config.module, rules: custom.module.rules } };
 };
 ```

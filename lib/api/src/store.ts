@@ -1,20 +1,24 @@
-import { localStorage, sessionStorage } from 'global';
-import { parse, stringify } from 'telejson';
-
-export const STORAGE_KEY = '@storybook/ui/store';
+import store, { StoreAPI } from 'store2';
+import storeSetup from './lib/store-setup';
 
 import { State } from './index';
 
-function get(storage: Storage) {
-  const serialized = storage.getItem(STORAGE_KEY);
-  return serialized ? parse(serialized) : {};
+// setting up the store, overriding set and get to use telejson
+// @ts-ignore
+storeSetup(store._);
+
+export const STORAGE_KEY = '@storybook/ui/store';
+
+function get(storage: StoreAPI) {
+  const data = storage.get(STORAGE_KEY);
+  return data || {};
 }
 
-function set(storage: Storage, value: Patch) {
-  storage.setItem(STORAGE_KEY, stringify(value, { maxDepth: 50 }));
+function set(storage: StoreAPI, value: Patch) {
+  storage.set(STORAGE_KEY, value);
 }
 
-function update(storage: Storage, patch: Patch) {
+function update(storage: StoreAPI, patch: Patch) {
   const previous = get(storage);
   // Apply the same behaviour as react here
   set(storage, { ...previous, ...patch });
@@ -22,18 +26,6 @@ function update(storage: Storage, patch: Patch) {
 
 type GetState = () => State;
 type SetState = (a: any, b: any) => any;
-
-interface Storage {
-  getItem(key: string): string | undefined;
-  setItem(
-    key: string,
-    value: string
-  ):
-    | {
-        [key: string]: any;
-      }
-    | undefined;
-}
 
 interface Upstream {
   getState: GetState;
@@ -45,7 +37,7 @@ type Patch = Partial<State>;
 type InputFnPatch = (s: State) => Patch;
 type InputPatch = Patch | InputFnPatch;
 
-interface Options {
+export interface Options {
   persistence: 'none' | 'session' | string;
 }
 type CallBack = (s: State) => void;
@@ -55,6 +47,7 @@ type CallbackOrOptions = CallBack | Options;
 // It has been augmented to persist state to local/sessionStorage
 export default class Store {
   upstreamGetState: GetState;
+
   upstreamSetState: SetState;
 
   constructor({ setState, getState }: Upstream) {
@@ -68,7 +61,7 @@ export default class Store {
     // We don't only merge at the very top level (the same way as React setState)
     // when you set keys, so it makes sense to do the same in combining the two storage modes
     // Really, you shouldn't store the same key in both places
-    return { ...base, ...get(localStorage), ...get(sessionStorage) };
+    return { ...base, ...get(store.local), ...get(store.session) };
   }
 
   getState() {
@@ -76,7 +69,9 @@ export default class Store {
   }
 
   async setState(inputPatch: InputPatch, options?: Options): Promise<State>;
+
   async setState(inputPatch: InputPatch, callback?: CallBack, options?: Options): Promise<State>;
+
   async setState(
     inputPatch: InputPatch,
     cbOrOptions?: CallbackOrOptions,
@@ -112,7 +107,7 @@ export default class Store {
     });
 
     if (persistence !== 'none') {
-      const storage = persistence === 'session' ? sessionStorage : localStorage;
+      const storage = persistence === 'session' ? store.session : store.local;
       await update(storage, delta);
     }
 

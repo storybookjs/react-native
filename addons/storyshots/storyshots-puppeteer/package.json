@@ -1,18 +1,18 @@
 {
   "name": "@storybook/addon-storyshots-puppeteer",
-  "version": "5.1.0-alpha.14",
+  "version": "5.2.0-alpha.32",
   "description": "Image snappshots addition to StoryShots base on puppeteer",
   "keywords": [
     "addon",
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-puppeteer",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/storyshots/storyshots-puppeteer",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/storyshots/storyshots-puppeteer"
   },
   "license": "MIT",
@@ -22,15 +22,18 @@
     "prepare": "node ../../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/node-logger": "5.1.0-alpha.14",
-    "@storybook/router": "5.1.0-alpha.14",
-    "core-js": "^2.6.5",
-    "jest-image-snapshot": "^2.8.1",
-    "puppeteer": "^1.12.2",
+    "@storybook/node-logger": "5.2.0-alpha.32",
+    "@storybook/router": "5.2.0-alpha.32",
+    "core-js": "^3.0.1",
+    "jest-image-snapshot": "^2.8.2",
     "regenerator-runtime": "^0.12.1"
   },
+  "optionalDependencies": {
+    "puppeteer": "^1.12.2"
+  },
   "peerDependencies": {
-    "@storybook/addon-storyshots": "5.1.0-alpha.11"
+    "@storybook/addon-storyshots": "5.2.0-alpha.23",
+    "puppeteer": "^1.12.2"
   },
   "publishConfig": {
     "access": "public"

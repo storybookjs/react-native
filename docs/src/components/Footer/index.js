@@ -20,7 +20,7 @@ const Footer = () => (
               <img src={slackIcon} alt="Storybook Slack" />
             </a>
             <a
-              href="https://github.com/storybooks/storybook"
+              href="https://github.com/storybookjs/storybook"
               target="_blank"
               rel="noreferrer noopener"
             >

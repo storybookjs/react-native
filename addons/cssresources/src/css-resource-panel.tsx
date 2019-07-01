@@ -47,6 +47,7 @@ export class CssResourcePanel extends Component<Props, State> {
 
     if (list && currentStoryId !== id) {
       const existingIds = currentList.reduce((lookup: CssResourceLookup, res) => {
+        // eslint-disable-next-line no-param-reassign
         lookup[res.id] = res;
         return lookup;
       }, {}) as CssResourceLookup;
@@ -87,7 +88,7 @@ export class CssResourcePanel extends Component<Props, State> {
     }
 
     return (
-      <Fragment>
+      <div>
         {list &&
           list.map(({ id, code, picked }) => (
             <div key={id} style={{ padding: 10 }}>
@@ -98,7 +99,7 @@ export class CssResourcePanel extends Component<Props, State> {
               {code ? <SyntaxHighlighter language="html">{code}</SyntaxHighlighter> : null}
             </div>
           ))}
-      </Fragment>
+      </div>
     );
   }
 }

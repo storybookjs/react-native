@@ -8,6 +8,16 @@ import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/comp
 
 const getIframe = memoize(1)(() => document.getElementById('storybook-preview-iframe'));
 
+const getFilter = (filter: string | null) => {
+  if (filter === null) {
+    return 'none';
+  }
+  if (filter === 'mono') {
+    return 'grayscale(100%)';
+  }
+  return `url('#${filter}')`;
+};
+
 const ColorIcon = styled.span(
   {
     background: 'linear-gradient(to right, #F44336, #FF9800, #FFEB3B, #8BC34A, #2196F3, #9C27B0)',
@@ -17,14 +27,14 @@ const ColorIcon = styled.span(
     width: '1rem',
   },
   ({ filter }: { filter: string | null }) => ({
-    filter: filter === 'mono' ? 'grayscale(100%)' : `url('#${filter}')`,
+    filter: getFilter(filter),
   }),
   ({ theme }) => ({
     boxShadow: `${theme.appBorderColor} 0 0 0 1px inset`,
   })
 );
 
-// tslint:disable-next-line:no-empty-interface
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface ColorBlindnessProps {}
 
 interface ColorBlindnessState {
@@ -42,7 +52,7 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
     const iframe = getIframe();
 
     if (iframe) {
-      iframe.style.filter = filter === 'mono' ? 'grayscale(100%)' : `url('#${filter}')`;
+      iframe.style.filter = getFilter(filter);
       this.setState({
         expanded: false,
         filter,
@@ -53,7 +63,8 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
   };
 
   onVisibilityChange = (s: boolean) => {
-    if (this.state.expanded !== s) {
+    const { expanded } = this.state;
+    if (expanded !== s) {
       this.setState({ expanded: s });
     }
   };
@@ -73,11 +84,12 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
       'mono',
     ].map(i => ({
       id: i,
-      title: i,
+      title: i.charAt(0).toUpperCase() + i.slice(1),
       onClick: () => {
         this.setFilter(i);
       },
       right: <ColorIcon filter={i} />,
+      active: filter === i,
     }));
 
     if (filter !== null) {
@@ -89,6 +101,7 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
             this.setFilter(null);
           },
           right: undefined,
+          active: false,
         },
         ...colorList,
       ];
@@ -102,6 +115,7 @@ export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnes
         onVisibilityChange={this.onVisibilityChange}
         tooltip={<TooltipLinkList links={colorList} />}
         closeOnClick
+        onDoubleClick={() => this.setFilter(null)}
       >
         <IconButton key="filter" active={!!filter} title="Color Blindness Emulation">
           <Icons icon="mirror" />

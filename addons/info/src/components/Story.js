@@ -1,19 +1,18 @@
 /* eslint no-underscore-dangle: 0 */
 
-import React, { Component, createElement } from 'react';
+import React, { Fragment, Component, createElement } from 'react';
 import { isForwardRef } from 'react-is';
 import { polyfill } from 'react-lifecycles-compat';
 import PropTypes from 'prop-types';
 import global from 'global';
 
 import marksy from 'marksy';
-import Node from './Node';
-import { Pre } from './markdown';
+import jsxToString from 'react-element-to-jsx-string';
+import { Code } from './markdown';
+import { getDisplayName, getType } from '../react-utils';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
 const { STORYBOOK_REACT_CLASSES } = global;
-
-const getName = type => type.displayName || type.name;
 
 const stylesheetBase = {
   button: {
@@ -23,7 +22,7 @@ const stylesheetBase = {
       display: 'block',
       position: 'fixed',
       border: 'none',
-      background: '#28c',
+      background: '#027ac5',
       color: '#fff',
       padding: '5px 15px',
       cursor: 'pointer',
@@ -38,10 +37,9 @@ const stylesheetBase = {
     position: 'fixed',
     background: 'white',
     top: 0,
-    bottom: 0,
     left: 0,
-    right: 0,
-    padding: '0 40px',
+    height: '100vh',
+    width: '100vw',
     overflow: 'auto',
     zIndex: 99999,
   },
@@ -55,12 +53,9 @@ const stylesheetBase = {
     fontWeight: 300,
     lineHeight: 1.45,
     fontSize: '15px',
-    border: '1px solid #eee',
     padding: '20px 40px 40px',
     borderRadius: '2px',
     backgroundColor: '#fff',
-    marginTop: '20px',
-    marginBottom: '20px',
   },
   infoContent: {
     marginBottom: 0,
@@ -134,7 +129,7 @@ class Story extends Component {
     const { stylesheet } = this.state;
 
     return (
-      <div>
+      <Fragment>
         {this._renderInlineHeader()}
         {this._renderStory()}
         <div style={stylesheet.infoPage}>
@@ -145,7 +140,7 @@ class Story extends Component {
             {this._getPropTables()}
           </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 
@@ -188,7 +183,7 @@ class Story extends Component {
     };
 
     return (
-      <div>
+      <Fragment>
         <div style={stylesheet.children}>{children}</div>
         <button
           type="button"
@@ -198,26 +193,28 @@ class Story extends Component {
         >
           Show Info
         </button>
-        <div style={infoStyle} className="info__overlay">
-          <button
-            type="button"
-            style={buttonStyle}
-            onClick={closeOverlay}
-            className="info__close-button"
-          >
-            ×
-          </button>
-          <div style={stylesheet.infoPage}>
-            <div style={stylesheet.infoBody}>
-              {this._getInfoHeader()}
-              {this._getInfoContent()}
-              {this._getComponentDescription()}
-              {this._getSourceCode()}
-              {this._getPropTables()}
+        {open ? (
+          <div style={infoStyle} className="info__overlay">
+            <button
+              type="button"
+              style={buttonStyle}
+              onClick={closeOverlay}
+              className="info__close-button"
+            >
+              ×
+            </button>
+            <div style={stylesheet.infoPage}>
+              <div style={stylesheet.infoBody}>
+                {this._getInfoHeader()}
+                {this._getInfoContent()}
+                {this._getComponentDescription()}
+                {this._getSourceCode()}
+                {this._getPropTables()}
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        ) : null}
+      </Fragment>
     );
   }
 
@@ -261,7 +258,8 @@ class Story extends Component {
       padding = matches[0].length;
     }
     const source = lines.map(s => s.slice(padding)).join('\n');
-    return <div style={stylesheet.infoContent}>{this.marksy(source).tree}</div>;
+
+    return <Fragment>{this.marksy(source).tree}</Fragment>;
   }
 
   _getComponentDescription() {
@@ -276,7 +274,7 @@ class Story extends Component {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
         if (validMatches.includes(STORYBOOK_REACT_CLASSES[key].name)) {
           const componentDescription = STORYBOOK_REACT_CLASSES[key].docgenInfo.description;
-          retDiv = <div>{this.marksy(componentDescription).tree}</div>;
+          retDiv = <Fragment>{this.marksy(componentDescription).tree}</Fragment>;
         }
       });
     }
@@ -285,14 +283,7 @@ class Story extends Component {
   }
 
   _getSourceCode() {
-    const {
-      showSource,
-      maxPropsIntoLine,
-      maxPropObjectKeys,
-      maxPropArrayLength,
-      maxPropStringLength,
-      children,
-    } = this.props;
+    const { showSource, children } = this.props;
     const { stylesheet } = this.state;
 
     if (!showSource) {
@@ -300,22 +291,10 @@ class Story extends Component {
     }
 
     return (
-      <div>
+      <Fragment>
         <h1 style={stylesheet.source.h1}>Story Source</h1>
-        <Pre>
-          {React.Children.map(children, (root, idx) => (
-            <Node
-              key={idx} // eslint-disable-line react/no-array-index-key
-              node={root}
-              depth={0}
-              maxPropsIntoLine={maxPropsIntoLine}
-              maxPropObjectKeys={maxPropObjectKeys}
-              maxPropArrayLength={maxPropArrayLength}
-              maxPropStringLength={maxPropStringLength}
-            />
-          ))}
-        </Pre>
-      </div>
+        <Code code={jsxToString(children)} language="jsx" format={false} />
+      </Fragment>
     );
   }
 
@@ -359,17 +338,22 @@ class Story extends Component {
         extract(innerChildren.props.children);
       }
       if (isForwardRef(innerChildren)) {
-        extract(innerChildren.type.render(innerChildren.props));
+        try {
+          // this might fail because of hooks being used
+          extract(innerChildren.type.render(innerChildren.props));
+        } catch (e) {
+          // do nothing
+        }
       }
       if (
         typeof innerChildren === 'string' ||
         typeof innerChildren.type === 'string' ||
-        isForwardRef(innerChildren) ||
         (Array.isArray(propTablesExclude) && // also ignore excluded types
           ~propTablesExclude.indexOf(innerChildren.type)) // eslint-disable-line no-bitwise
       ) {
         return;
       }
+
       if (innerChildren.type && !types.has(innerChildren.type)) {
         types.set(innerChildren.type, true);
       }
@@ -379,14 +363,14 @@ class Story extends Component {
     extract(children);
 
     const array = Array.from(types.keys());
-    array.sort((a, b) => (getName(a) > getName(b) ? 1 : -1));
+    array.sort((a, b) => (getDisplayName(a) > getDisplayName(b) ? 1 : -1));
 
     propTables = array.map((type, i) => (
       // eslint-disable-next-line react/no-array-index-key
-      <div key={`${getName(type)}_${i}`}>
-        <h3 style={stylesheet.propTableHead}>"{getName(type)}" Component</h3>
+      <div key={`${getDisplayName(type)}_${i}`}>
+        <h3 style={stylesheet.propTableHead}>"{getDisplayName(type)}" Component</h3>
         <this.props.PropTable
-          type={type}
+          type={getType(type)}
           maxPropObjectKeys={maxPropObjectKeys}
           maxPropArrayLength={maxPropArrayLength}
           maxPropStringLength={maxPropStringLength}
@@ -400,16 +384,15 @@ class Story extends Component {
     }
 
     return (
-      <div>
+      <Fragment>
         <h1 style={stylesheet.source.h1}>Prop Types</h1>
         {propTables}
-      </div>
+      </Fragment>
     );
   }
 
   render() {
     const { showInline } = this.props;
-    // <ThemeProvider theme={stylesheet}></ThemeProvider>
     return showInline ? this._renderInline() : this._renderOverlay();
   }
 }
@@ -433,7 +416,6 @@ Story.propTypes = {
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   components: PropTypes.shape({}),
-  maxPropsIntoLine: PropTypes.number.isRequired,
   maxPropObjectKeys: PropTypes.number.isRequired,
   maxPropArrayLength: PropTypes.number.isRequired,
   maxPropStringLength: PropTypes.number.isRequired,

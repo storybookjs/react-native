@@ -1,6 +1,4 @@
-import { ReactElement } from 'react';
-
-export const ADDON_ID = 'storybooks/notes';
+export const ADDON_ID = 'storybookjs/notes';
 export const PANEL_ID = `${ADDON_ID}/panel`;
 export const PARAM_KEY = `notes`;
 
@@ -13,5 +11,11 @@ interface MarkdownParameter {
 interface DisabledParameter {
   disable: boolean;
 }
+type TabsParameter = Record<string, string>;
 
-export type Parameters = string | TextParameter | MarkdownParameter | DisabledParameter;
+export type Parameters =
+  | string
+  | TextParameter
+  | MarkdownParameter
+  | DisabledParameter
+  | TabsParameter;

@@ -12,14 +12,14 @@ export default function renderMain({
   showError,
   forceRender,
 }) {
-  const { html = {} } = parameters;
   const element = storyFn();
 
   showMain();
   if (typeof element === 'string') {
     rootElement.innerHTML = element;
   } else if (element instanceof Node) {
-    if (html.preventForcedRender === true && forceRender === true) {
+    // Don't re-mount the element if it didn't change and neither did the story
+    if (rootElement.firstChild === element && forceRender === true) {
       return;
     }
 

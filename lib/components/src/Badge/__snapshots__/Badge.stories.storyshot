@@ -3,9 +3,11 @@
 exports[`Storyshots Basics|Badge all badges 1`] = `
 .emotion-0 {
   display: inline-block;
-  vertical-align: top;
   font-size: 11px;
   line-height: 12px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   padding: 4px 12px;
   border-radius: 3em;
   font-weight: 700;
@@ -26,9 +28,11 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
 
 .emotion-1 {
   display: inline-block;
-  vertical-align: top;
   font-size: 11px;
   line-height: 12px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   padding: 4px 12px;
   border-radius: 3em;
   font-weight: 700;
@@ -49,9 +53,11 @@ exports[`Storyshots Basics|Badge all badges 1`] = `
 
 .emotion-2 {
   display: inline-block;
-  vertical-align: top;
   font-size: 11px;
   line-height: 12px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   padding: 4px 12px;
   border-radius: 3em;
   font-weight: 700;

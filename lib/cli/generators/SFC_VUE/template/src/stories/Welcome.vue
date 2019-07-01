@@ -41,7 +41,7 @@
       <br />
       <a
         class="link"
-        href="https://github.com/storybooks/storybook"
+        href="https://github.com/storybookjs/storybook"
         target="_blank"
         rel="noopener noreferrer"
       >

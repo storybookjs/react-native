@@ -157,6 +157,22 @@ storiesOf('Component', module).add('With Markdown', () => <MyComponent />, {
 });
 ```
 
+## Searching
+
+By default, search results will show up based on the file name of your stories. As of storybook 5, you can extend this with `notes` to have certain stories show up when the search input contains matches. For example, if you built a `Callout` component that you want to be found by searching for `popover` or `tooltip` as well, you could use `notes` like this:
+
+```jsx
+.add(
+  "Callout",
+  () => (
+    <Callout>Some children</Callout>
+  ),
+  {
+    notes: "popover tooltip"
+  }
+)
+```
+
 ## Nesting stories
 
 Stories can be organized in a nested structure using "/" as a separator:
@@ -181,11 +197,32 @@ storiesOf('My App/Buttons/Emoji', module).add('with some emoji', () => (
 ));
 ```
 
+## Organising stories with titles
+
+Stories can be organized under a title using "|" as a separator:
+
+```jsx
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import Button from '../components/Button';
+
+/**
+ * The Button stories will show up underneath the 'Components' title.
+ */
+storiesOf('Components|Button', module).add('base', () => (
+  <Button onClick={() => console.log('Clicked')}>Example Button</Button>
+));
+```
+
+If you would prefer to use another character as the separator then you can
+configure it using the `hierarchyRootSeparator` config option. Visit the
+[configuration options parameter](/configurations/options-parameter) page to learn more.
+
 ## Generating nesting path based on \_\_dirname
 
 Nesting paths can be programmatically generated with template literals because story names are strings.
 
-One example would be to use `base` from [`paths.macro`](https://github.com/storybooks/paths.macro):
+One example would be to use `base` from [`paths.macro`](https://github.com/storybookjs/paths.macro):
 
 ```js
 import React from 'react';

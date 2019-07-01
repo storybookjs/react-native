@@ -1,5 +1,7 @@
-import { configure, addParameters } from '@storybook/ember';
+import { load, addParameters, addDecorator } from '@storybook/ember';
+import { withA11y } from '@storybook/addon-a11y';
 
+addDecorator(withA11y);
 addParameters({
   options: {
     hierarchySeparator: /\/|\./,
@@ -7,11 +9,4 @@ addParameters({
   },
 });
 
-function loadStories() {
-  require('../stories/index.stories');
-
-  const req = require.context('../stories', true, /\.stories\.js$/);
-  req.keys().forEach(filename => req(filename));
-}
-
-configure(loadStories, module);
+load(require.context('../stories', true, /\.stories\.js$/), module);

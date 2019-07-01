@@ -4,13 +4,14 @@ import { styled } from '@storybook/theming';
 import { Link } from '@storybook/router';
 import { SyntaxHighlighter } from '@storybook/components';
 
-import { createElement } from 'react-syntax-highlighter';
+import createElement from 'react-syntax-highlighter/create-element';
 import { EVENT_ID } from './events';
 
 const StyledStoryLink = styled(Link)(({ theme }) => ({
   display: 'block',
   textDecoration: 'none',
   borderRadius: theme.appBorderRadius,
+  color: 'inherit',
 
   '&:hover': {
     background: theme.background.hoverable,
@@ -44,9 +45,9 @@ export default class StoryPanel extends Component {
 
   componentDidMount() {
     this.mounted = true;
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.on(EVENT_ID, this.listener);
+    api.on(EVENT_ID, this.listener);
   }
 
   componentDidUpdate() {
@@ -56,9 +57,9 @@ export default class StoryPanel extends Component {
   }
 
   componentWillUnmount() {
-    const { channel } = this.props;
+    const { api } = this.props;
 
-    channel.removeListener(EVENT_ID, this.listener);
+    api.off(EVENT_ID, this.listener);
   }
 
   setSelectedStoryRef = ref => {
@@ -181,10 +182,8 @@ StoryPanel.propTypes = {
   active: PropTypes.bool.isRequired,
   api: PropTypes.shape({
     selectStory: PropTypes.func.isRequired,
-  }).isRequired,
-  channel: PropTypes.shape({
     emit: PropTypes.func,
     on: PropTypes.func,
-    removeListener: PropTypes.func,
+    off: PropTypes.func,
   }).isRequired,
 };

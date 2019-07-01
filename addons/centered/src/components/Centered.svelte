@@ -5,12 +5,6 @@
 </div>
 
 <script>
-  export default {
-    data() {
-      return {
-        style: '',
-        innerStyle: ''
-      };
-    }
-  };
+  export let style = '';
+  export let innerStyle = '';
 </script>

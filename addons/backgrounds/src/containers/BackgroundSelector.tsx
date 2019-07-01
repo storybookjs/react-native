@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import memoize from 'memoizerific';
 
-import { Combo, Consumer } from '@storybook/api';
+import { Combo, Consumer, API } from '@storybook/api';
 import { Global, Theme } from '@storybook/theming';
 
 import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/components';
 
-import { PARAM_KEY } from '../constants';
+import { PARAM_KEY, EVENTS } from '../constants';
 import { ColorIcon } from '../components/ColorIcon';
 
 interface Item {
@@ -31,12 +31,12 @@ const createBackgroundSelectorItem = memoize(1000)(
     name: string,
     value: string,
     hasSwatch: boolean,
-    change: (arg: { selected: string; expanded: boolean }) => void
+    change: (arg: { selected: string; name: string }) => void
   ): Item => ({
     id: id || name,
     title: name,
     onClick: () => {
-      change({ selected: value, expanded: false });
+      change({ selected: value, name });
     },
     value,
     right: hasSwatch ? <ColorIcon background={value} /> : undefined,
@@ -63,14 +63,15 @@ const getSelectedBackgroundColor = (list: Input[], currentSelectedValue: string)
   return 'transparent';
 };
 
-const mapper = ({ api, state }: Combo): { items: Input[] } => {
+const mapper = ({ api, state }: Combo): { items: Input[]; selected: string | null } => {
   const story = state.storiesHash[state.storyId];
   const list = story ? api.getParameters(story.id, PARAM_KEY) : [];
+  const selected = state.addons[PARAM_KEY] || null;
 
-  return { items: list || [] };
+  return { items: list || [], selected };
 };
 
-const getDisplayedItems = memoize(10)((list: Input[], selected: State['selected'], change) => {
+const getDisplayedItems = memoize(10)((list: Input[], selected: string | null, change) => {
   let availableBackgroundSelectorItems: Item[] = [];
 
   if (selected !== 'transparent') {
@@ -91,31 +92,49 @@ const getDisplayedItems = memoize(10)((list: Input[], selected: State['selected'
   return availableBackgroundSelectorItems;
 });
 
+interface GlobalState {
+  name: string | undefined;
+  selected: string | undefined;
+}
+
 interface State {
-  selected: string;
   expanded: boolean;
 }
 
-export class BackgroundSelector extends Component<{}, State> {
+interface Props {
+  api: API;
+}
+
+export class BackgroundSelector extends Component<Props, State> {
   state: State = {
-    selected: null,
     expanded: false,
   };
 
-  change = (args: State) => this.setState(args);
+  change = ({ selected, name }: GlobalState) => {
+    const { api } = this.props;
+    const { expanded } = this.state;
+    if (expanded) {
+      this.setState({ expanded: false });
+    }
+    if (typeof selected === 'string') {
+      api.setAddonState<string>(PARAM_KEY, selected);
+    }
+    api.emit(EVENTS.UPDATE, { selected, name });
+  };
 
   onVisibilityChange = (s: boolean) => {
-    if (this.state.expanded !== s) {
+    const { expanded } = this.state;
+    if (expanded !== s) {
       this.setState({ expanded: s });
     }
   };
 
   render() {
-    const { expanded, selected } = this.state;
+    const { expanded } = this.state;
 
     return (
       <Consumer filter={mapper}>
-        {({ items }: { items: Input[] }) => {
+        {({ items, selected }: ReturnType<typeof mapper>) => {
           const selectedBackgroundColor = getSelectedBackgroundColor(items, selected);
           const links = getDisplayedItems(items, selectedBackgroundColor, this.change);
 

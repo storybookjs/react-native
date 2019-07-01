@@ -2,9 +2,9 @@
 
 This storybook addon can be helpful to make your UI components more accessible.
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![](docs/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/storybookjs/storybook/HEAD/addons/a11y/docs/screenshot.png)
 
 ## Getting started
 
@@ -58,7 +58,7 @@ addParameters({
   a11y: {
     // ... axe options
     element: '#root', // optional selector which element to inspect
-    config: {} // axe-core configurationOptions (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#parameters-1)
+    config: {}, // axe-core configurationOptions (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#parameters-1)
     options: {} // axe-core optionsParameter (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#options-parameter)
   },
 });
