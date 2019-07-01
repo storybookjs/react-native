@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { logger } from '@storybook/client-logger';
 import { mockChannel } from '@storybook/addons';
 import ClientApi from './client_api';
@@ -103,6 +104,7 @@ describe('preview.client_api', () => {
 
       clientApi.setAddon({
         aa() {
+          console.log(this);
           data = this.kind;
         },
       });
@@ -118,7 +120,7 @@ describe('preview.client_api', () => {
 
       clientApi.addParameters({ a: '1' });
 
-      // eslint-disable-next-line no-underscore-dangle
+      // @ts-ignore
       expect(clientApi._globalParameters).toEqual({ a: '1', options: {} });
     });
 
@@ -128,7 +130,7 @@ describe('preview.client_api', () => {
       clientApi.addParameters({ options: { a: '1' } });
       clientApi.addParameters({ options: { b: '2' } });
 
-      // eslint-disable-next-line no-underscore-dangle
+      // @ts-ignore
       expect(clientApi._globalParameters).toEqual({ options: { a: '1', b: '2' } });
     });
 
@@ -138,7 +140,7 @@ describe('preview.client_api', () => {
       clientApi.addParameters({ backgrounds: ['value'], options: { a: '1', b: '3' } });
       clientApi.addParameters({ options: { a: '2' } });
 
-      // eslint-disable-next-line no-underscore-dangle
+      // @ts-ignore
       expect(clientApi._globalParameters).toEqual({
         backgrounds: ['value'],
         options: { a: '2', b: '3' },
@@ -151,7 +153,7 @@ describe('preview.client_api', () => {
       clientApi.addParameters({ backgrounds: ['value'], options: { a: '1', b: '3' } });
       clientApi.addParameters({ backgrounds: [], options: { a: '2' } });
 
-      // eslint-disable-next-line no-underscore-dangle
+      // @ts-ignore
       expect(clientApi._globalParameters).toEqual({
         backgrounds: [],
         options: { a: '2', b: '3' },
@@ -164,7 +166,7 @@ describe('preview.client_api', () => {
       clientApi.addParameters({ options: { a: '1', b: '2', theming: { c: '3' } } });
       clientApi.addParameters({ options: { theming: { c: '4', d: '5' } } });
 
-      // eslint-disable-next-line no-underscore-dangle
+      // @ts-ignore
       expect(clientApi._globalParameters).toEqual({
         options: { a: '1', b: '2', theming: { c: '4', d: '5' } },
       });
@@ -194,6 +196,7 @@ describe('preview.client_api', () => {
       addDecorator(fn => `bb-${fn()}`);
 
       storiesOf('kind', module).add('name', () => 'Hello');
+      const f = storyStore.fromId('x');
 
       expect(storyStore.fromId('kind--name').storyFn()).toBe('bb-Hello');
     });
@@ -245,10 +248,12 @@ describe('preview.client_api', () => {
   describe('clearDecorators', () => {
     it('should remove all global decorators', () => {
       const { clientApi } = getContext(undefined);
-      // eslint-disable-next-line no-underscore-dangle
+
+      // @ts-ignore
       clientApi._globalDecorators = 1234;
       clientApi.clearDecorators();
-      // eslint-disable-next-line no-underscore-dangle
+
+      // @ts-ignore
       expect(clientApi._globalDecorators).toEqual([]);
     });
   });
@@ -537,6 +542,7 @@ describe('preview.client_api', () => {
         }
 
         storiesOf('kind', module).add('story', stories[1]);
+        // @ts-ignore
         expect(logger.warn.mock.calls[0][0]).toMatch(
           /Story with id kind--story already exists in the store/
         );

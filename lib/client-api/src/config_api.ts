@@ -1,22 +1,11 @@
+// /<reference types="webpack-env" />
 /* eslint no-underscore-dangle: 0 */
 
 import Events from '@storybook/core-events';
-import { logger } from '@storybook/client-logger';
-import { PostmsgTransport } from '@storybook/channel-postmessage';
 import Channel from '@storybook/channels';
-import { ClientApi, StoryStore, IModule } from './types';
-
-interface IChannel {
-  events: {
-    forceReRender: [];
-    registerSubscription: [];
-    setCurrentStory: [];
-    'storybook/a11y/request': [];
-  };
-  isAsync: boolean;
-  sender: string;
-  transport: PostmsgTransport;
-}
+import { ErrorLike } from './types';
+import StoryStore from './story_store';
+import ClientApi from './client_api';
 
 export default class ConfigApi {
   _channel: Channel;
@@ -30,13 +19,13 @@ export default class ConfigApi {
   constructor({
     channel,
     storyStore,
-    clearDecorators,
     clientApi,
+    clearDecorators,
   }: {
     channel: Channel | null;
     storyStore: StoryStore;
-    clearDecorators: any;
     clientApi: ClientApi;
+    clearDecorators: () => void;
   }) {
     // channel can be null when running in node
     // always check whether channel is available
@@ -53,11 +42,11 @@ export default class ConfigApi {
 
   _renderError(err: Error) {
     const { stack, message } = err;
-    const error = { stack, message };
-    this._storyStore.setSelection({ error }, undefined);
+    const error: ErrorLike = { stack, message };
+    this._storyStore.setSelection(undefined, error);
   }
 
-  configure = (loaders: () => void, module: IModule) => {
+  configure = (loaders: () => void, module: NodeModule) => {
     const render = () => {
       const errors = [];
 
@@ -82,7 +71,7 @@ export default class ConfigApi {
 
         throw errors[0];
       } else {
-        this._storyStore.setSelection(undefined, null);
+        this._storyStore.setSelection(undefined, undefined);
       }
     };
 

@@ -1,7 +1,7 @@
 /* eslint no-underscore-dangle: 0 */
 import isPlainObject from 'is-plain-object';
 import { logger } from '@storybook/client-logger';
-import addons, { Addon } from '@storybook/addons';
+import addons, { StoryContext, StoryFn, Parameters } from '@storybook/addons';
 import Events from '@storybook/core-events';
 import { toId } from '@storybook/router/utils';
 
@@ -10,14 +10,13 @@ import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
 import {
   ClientApiParams,
-  IApi,
-  IDecoratorParams,
-  IHierarchyObj,
-  StoryStore,
-  StoryFn,
+  StoryApi,
+  ClientApiAddon,
+  DecoratorFunction,
+  ClientApiAddons,
 } from './types';
 import subscriptionsStore from './subscriptions_store';
-import { IAddon } from '../dist/types';
+import StoryStore from './story_store';
 
 // merge with concatenating arrays, but no duplicates
 const merge = (a: any, b: any) =>
@@ -39,25 +38,24 @@ const merge = (a: any, b: any) =>
     return undefined;
   });
 
-export const defaultDecorateStory = (storyFn: StoryFn, decorators: any[]) =>
-  decorators.reduce(
-    (decorated, decorator) => (context: { parameters: any; options: any }) =>
-      decorator((p: { parameters: any; options: any }) => {
-        console.log('p: ', p);
+interface DecoratorPropData {
+  [key: string]: any;
+}
 
-        return (
-          decorated(
-            // MUTATION !
-            Object.assign(
-              context,
-              p,
-              { parameters: Object.assign(context.parameters || {}, p.parameters) },
-              { options: Object.assign(context.options || {}, p.options) }
-            )
-          ),
-          context
+export const defaultDecorateStory = (storyFn: StoryFn, decorators: DecoratorFunction[]) =>
+  decorators.reduce(
+    (decorated, decorator) => (context: StoryContext) =>
+      decorator((p: DecoratorPropData = {}) => {
+        return decorated(
+          // MUTATION !
+          Object.assign(
+            context,
+            p,
+            { parameters: Object.assign(context.parameters || {}, p.parameters) },
+            { options: Object.assign(context.options || {}, p.options) }
+          )
         );
-      }),
+      }, context),
     storyFn
   );
 
@@ -78,20 +76,16 @@ const withSubscriptionTracking = (storyFn: StoryFn) => {
   return result;
 };
 
-interface Addons {
-  [key: string]: Addon;
-}
-
 export default class ClientApi {
   private _storyStore: StoryStore;
 
-  private _addons: Addons;
+  private _addons: ClientApiAddons;
 
-  private _globalDecorators: any[];
+  private _globalDecorators: DecoratorFunction[];
 
-  private _globalParameters: { [key: string]: any };
+  private _globalParameters: Parameters;
 
-  private _decorateStory: (storyFn: StoryFn, decorators: any) => any;
+  private _decorateStory: (storyFn: StoryFn, decorators: DecoratorFunction[]) => any;
 
   constructor({ storyStore, decorateStory = defaultDecorateStory }: ClientApiParams) {
     this._storyStore = storyStore;
@@ -123,9 +117,11 @@ export default class ClientApi {
       this._globalParameters.options
     );
 
-  addDecorator = (decorator: () => any) => this._globalDecorators.push(decorator);
+  addDecorator = (decorator: DecoratorFunction) => {
+    this._globalDecorators.push(decorator);
+  };
 
-  addParameters = (parameters: IDecoratorParams[] | { globalParameter: 'string' }) => {
+  addParameters = (parameters: Parameters | { globalParameter: 'string' }) => {
     this._globalParameters = {
       ...this._globalParameters,
       ...parameters,
@@ -154,32 +150,31 @@ export default class ClientApi {
     if (m && m.hot && m.hot.dispose) {
       m.hot.dispose(() => {
         const { _storyStore } = this;
-        _storyStore.remove(undefined);
-
-        // TODO: refactor this
-        // Maybe not needed at all if stories can just be overwriten ?
-        this._storyStore.removeStoryKind(kind);
-        this._storyStore.incrementRevision();
+        _storyStore.removeStoryKind(kind);
+        _storyStore.incrementRevision();
       });
     }
 
-    const localDecorators: any[] | (() => void)[] = [];
-    let localParameters = {};
+    const localDecorators: DecoratorFunction[] = [];
+    let localParameters: Parameters = {};
     let hasAdded = false;
-    const api = {
+    const api: StoryApi = {
       kind,
-    } as IApi;
+      add: () => api,
+      addDecorator: () => api,
+      addParameters: () => api,
+    };
 
     // apply addons
     Object.keys(this._addons).forEach(name => {
-      const addon = this._addons[name] as IAddon;
+      const addon = this._addons[name] as ClientApiAddon;
       api[name] = (...args: any[]) => {
         addon.apply(api, args);
         return api;
       };
     });
 
-    api.add = (storyName: string, storyFn: StoryFn, parameters: any) => {
+    api.add = (storyName: string, storyFn: StoryFn, parameters: Parameters) => {
       hasAdded = true;
       const { _globalParameters, _globalDecorators } = this;
 
@@ -198,7 +193,7 @@ export default class ClientApi {
       const fileName = m && m.id ? `${m.id}` : undefined;
 
       const { hierarchyRootSeparator, hierarchySeparator } = this.getSeparators();
-      const baseOptions = {
+      const baseOptions: Parameters['options'] = {
         hierarchyRootSeparator,
         hierarchySeparator,
       };
@@ -208,7 +203,7 @@ export default class ClientApi {
         localParameters,
         parameters,
       ].reduce(
-        (acc, p) => {
+        (acc: Parameters, p) => {
           if (p) {
             Object.entries(p).forEach(([key, value]) => {
               const existingValue = acc[key];
@@ -273,7 +268,7 @@ This is probably not what you intended. Read more here: https://github.com/story
       const fileName = this._storyStore.getStoryFileName(kind);
 
       const stories = this._storyStore.getStories(kind).map(name => {
-        const render = this._storyStore.getStoryWithContext();
+        const render = this._storyStore.getStoryWithContext(kind, name);
         return { name, render };
       });
 
