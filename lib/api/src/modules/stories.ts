@@ -27,6 +27,7 @@ export interface SubAPI {
   getData: (storyId: StoryId) => Story | Group;
   getParameters: (storyId: StoryId, parameterName?: ParameterName) => Story['parameters'] | any;
   getCurrentParameter<S>(parameterName?: ParameterName): S;
+  showSettingPage: (pageName: string) => void;
 }
 
 interface Group {
@@ -262,7 +263,7 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
 
     // Now create storiesHash by reordering the above by group
     const storiesHash: StoriesHash = Object.values(storiesHashOutOfOrder).reduce(addItem, {});
-
+    const settingsPageList = ['about', 'shortcuts'];
     const { storyId, viewMode } = store.getState();
 
     if (storyId && storyId.match(/--\*$/)) {
@@ -279,7 +280,11 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       // we pick the first leaf and navigate
       const firstLeaf = Object.values(storiesHash).find((s: Story | Group) => !s.children);
 
-      if (viewMode && firstLeaf) {
+      if (viewMode === 'settings' && settingsPageList.includes(storyId)) {
+        navigate(`/${viewMode}/${storyId}`);
+      } else if (viewMode === 'settings' && !settingsPageList.includes(storyId)) {
+        navigate(`/story/${firstLeaf.id}`);
+      } else if (viewMode && firstLeaf) {
         navigate(`/${viewMode}/${firstLeaf.id}`);
       }
     }
