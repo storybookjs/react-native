@@ -243,12 +243,12 @@ export default function initShortcuts({ store }: Module) {
         }
 
         case 'aboutPage': {
-          fullApi.navigate('/settings/about');
+          fullApi.showSettingsPage('about');
           break;
         }
 
         case 'shortcutsPage': {
-          fullApi.navigate('/settings/shortcuts');
+          fullApi.showSettingsPage('shortcuts');
           break;
         }
 
