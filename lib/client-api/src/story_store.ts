@@ -180,9 +180,7 @@ export default class StoryStore extends EventEmitter {
     const getOriginal = () => original;
 
     // lazily decorate the story when it's loaded
-    const getDecorated = memoize(1)(() =>
-      applyDecorators(getOriginal(), getDecorators())
-    ) as any; // not sure why, but continues to block build if not any
+    const getDecorated = memoize(1)(() => applyDecorators(getOriginal(), getDecorators())) as any; // not sure why, but continues to block build if not any
 
     const storyFn = (p: any) =>
       getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
