@@ -53,6 +53,7 @@ export default class StoryStore extends EventEmitter {
   _selection: {};
 
   _channel: Channel;
+
   _error?: Error;
 
   constructor(params: { channel: Channel }) {
@@ -181,7 +182,7 @@ export default class StoryStore extends EventEmitter {
     // lazily decorate the story when it's loaded
     const getDecorated = memoize(1)(() =>
       applyDecorators(getOriginal(), getDecorators())
-    ) as () => (args: any) => any;
+    ) as any; // not sure why, but continues to block build if not any
 
     const storyFn = (p: any) =>
       getDecorated()({ ...identification, parameters: { ...parameters, ...p } });

@@ -8,7 +8,14 @@ import { toId } from '@storybook/router/utils';
 import mergeWith from 'lodash/mergeWith';
 import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
-import { ClientApiParams, IApi, IDecoratorParams, IHierarchyObj, StoryStore, StoryFn } from './types';
+import {
+  ClientApiParams,
+  IApi,
+  IDecoratorParams,
+  IHierarchyObj,
+  StoryStore,
+  StoryFn,
+} from './types';
 import subscriptionsStore from './subscriptions_store';
 import { IAddon } from '../dist/types';
 
@@ -34,23 +41,23 @@ const merge = (a: any, b: any) =>
 
 export const defaultDecorateStory = (storyFn: StoryFn, decorators: any[]) =>
   decorators.reduce(
-    (decorated, decorator) => (context: { parameters: any; options: any; }) =>
-      decorator(
-        (p: { parameters: any; options: any; }) => {
-          console.log('p: ', p);
-          
-          return decorated(
+    (decorated, decorator) => (context: { parameters: any; options: any }) =>
+      decorator((p: { parameters: any; options: any }) => {
+        console.log('p: ', p);
+
+        return (
+          decorated(
             // MUTATION !
             Object.assign(
               context,
               p,
               { parameters: Object.assign(context.parameters || {}, p.parameters) },
               { options: Object.assign(context.options || {}, p.options) }
-              )
-              ),
-              context
-            }
-      ),
+            )
+          ),
+          context
+        );
+      }),
     storyFn
   );
 

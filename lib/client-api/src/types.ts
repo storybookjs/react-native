@@ -348,10 +348,7 @@ export interface Decorator {
   storyFn: StoryFn;
 }
 
-export type DecoratorData = { 
-  [K in Keys]: Decorator; 
-} & {[key: string]: Decorator};
-
+export type DecoratorData = { [K in Keys]: Decorator } & { [key: string]: Decorator };
 
 export interface IModule {
   exports: any;
@@ -409,7 +406,7 @@ export interface LegacyItem {
 }
 
 export type LegacyData = { [K in Keys]: LegacyItem };
-type _decorator = Partial<Decorator>
+type _decorator = Partial<Decorator>;
 export interface StoryStore {
   fromId: (id: string) => any;
   getSelection: (a: any, b: Error) => void;
@@ -417,10 +414,13 @@ export interface StoryStore {
   incrementRevision: () => void;
   addLegacyStory: (p: DecoratorData) => void;
   pushToManager: () => void;
-  addStory: (p: _decorator, cbObj: {
-    applyDecorators: (storyFn: StoryFn, decorators: any) => any;
-    getDecorators: () => any[];
-  }) => void;
+  addStory: (
+    p: _decorator,
+    cbObj: {
+      applyDecorators: (storyFn: StoryFn, decorators: any) => any;
+      getDecorators: () => any[];
+    }
+  ) => void;
   remove: (id: string) => void;
   setChannel: (channel: Channel) => void;
   setSelection: (ref: any, err: Error) => void;
