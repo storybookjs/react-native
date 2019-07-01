@@ -1,3 +1,18 @@
+## 5.2.0-alpha.32 (June 29, 2019)
+
+### Features
+
+* Addon-docs: Add .story.mdx support to preset ([#7229](https://github.com/storybookjs/storybook/pull/7229))
+
+### Bug Fixes
+
+* React-native: Fix react native server ([#7187](https://github.com/storybookjs/storybook/pull/7187))
+* Addon-docs: Fix source-loader in monorepo examples ([#7214](https://github.com/storybookjs/storybook/pull/7214))
+
+### Maintenance
+
+* Addon-docs: Convert repo stories to new module format ([#7175](https://github.com/storybookjs/storybook/pull/7175))
+
 ## 5.2.0-alpha.31 (June 27, 2019)
 
 ### Breaking Changes
