@@ -10,6 +10,8 @@ import {
 } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
 import { Button } from '@storybook/react/demo';
+import FlowTypeButton from '../components/FlowTypeButton';
+import DocgenButton from '../components/DocgenButton';
 
 <Meta
   title="Addons|Docs/mdx"
@@ -86,3 +88,15 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
 <Description markdown="this is _markdown_" />
 
 <Description of={Button} />
+
+## Props
+
+### Docgen
+
+<Props of={DocgenButton} />
+
+### Flow
+
+Flow types are not officially supported
+
+<Props of={FlowTypeButton} />

@@ -35,6 +35,8 @@
     "babel-loader": "^8.0.5",
     "cross-env": "^5.2.0",
     "file-loader": "^3.0.1",
+    "prop-types": "^15.7.2",
+    "storybook-addon-vue-info": "^1.2.1",
     "svg-url-loader": "^2.3.2",
     "vue-loader": "^15.7.0",
     "webpack": "^4.33.0",
