@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { SectionList, TextInput, TouchableOpacity, View, SafeAreaView } from 'react-native';
 import styled from '@emotion/native';
