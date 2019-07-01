@@ -16,7 +16,8 @@ function integrityTest(integrityOptions, stories2snapsConverter) {
         const possibleStoriesFiles = stories2snapsConverter.getPossibleStoriesFiles(fileName);
         return !possibleStoriesFiles.some(fs.existsSync);
       });
-      expect(abandonedStoryshots.length).toBe(0);
+
+      expect(abandonedStoryshots).toEqual([]);
     });
   });
 }

@@ -71,6 +71,7 @@ module.exports = {
   ],
   globals: {
     DOCS_MODE: false,
+    PREVIEW_URL: undefined,
   },
   snapshotSerializers: ['jest-emotion', 'enzyme-to-json/serializer'],
   coverageDirectory: 'coverage',
