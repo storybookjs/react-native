@@ -27,7 +27,7 @@ export interface SubAPI {
   getData: (storyId: StoryId) => Story | Group;
   getParameters: (storyId: StoryId, parameterName?: ParameterName) => Story['parameters'] | any;
   getCurrentParameter<S>(parameterName?: ParameterName): S;
-  showSettingPage: (pageName: string) => void;
+  showSettingsPage: (storyId: string) => void;
 }
 
 interface Group {
