@@ -14,4 +14,3 @@ export const welcome = () => {
     render: h => h(Welcome, { props: { goToButton: linkTo('Button') } }),
   };
 };
-welcome.story = { name: 'to storybook' };
