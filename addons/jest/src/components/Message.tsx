@@ -43,7 +43,11 @@ const Main = styled(({ msg, className }) => <section className={className}>{msg}
   padding: 5,
 });
 
-const getConvertedText: (msg: string) => any = (msg: string) => {
+type MsgElement = string | JSX.Element;
+
+const getConvertedText: (msg: string) => MsgElement[] = (msg: string) => {
+  let elementArray: MsgElement[] = [];
+
   const endToken = '[39m';
   const failStartToken = '[31m';
   const passStartToken = '[32m';
@@ -53,32 +57,37 @@ const getConvertedText: (msg: string) => any = (msg: string) => {
     .join('')
     .split(/\[22m/);
 
-  let text = '';
   splitDescription.forEach(element => {
-    const modifiedElement = null;
+    const modifiedElement: any = null;
     if (
       element.indexOf(failStartToken) > -1 &&
       element.indexOf(failStartToken) < element.indexOf(endToken)
     ) {
-      text += element
-        .split(failStartToken)
-        .join('')
-        .split(endToken)
-        .join('');
+      elementArray = elementArray.concat(colorizeText(element, 'negative'));
     } else if (
       element.indexOf(passStartToken) > -1 &&
       element.indexOf(passStartToken) < element.indexOf(endToken)
     ) {
-      text += element
-        .split(passStartToken)
-        .join('')
-        .split(endToken)
-        .join('');
+      elementArray = elementArray.concat(colorizeText(element, 'positive'));
     } else {
-      text += element;
+      elementArray = elementArray.concat(element);
     }
   });
-  return text;
+  return elementArray;
+};
+
+const colorizeText: (msg: string, type: string) => MsgElement[] = (msg: string, type: string) => {
+  let elementArray: MsgElement[];
+  if (type === 'positive') {
+    elementArray = msg
+      .split(/\[32m(.*?)\[39m/)
+      .map((i, index) => (index % 2 ? <Positive key={`p_${i}`}>{i}</Positive> : i));
+  } else {
+    elementArray = msg
+      .split(/\[31m(.*?)\[39m/)
+      .map((i, index) => (index % 2 ? <Negative key={`n_${i}`}>{i}</Negative> : i));
+  }
+  return elementArray;
 };
 
 const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
@@ -90,20 +99,20 @@ const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
   const testDetail: TestDetail = new TestDetail();
   testDetail.description = getConvertedText(lines[0]);
   testDetail.stackTrace = '';
-  testDetail.altResult = '';
+  testDetail.altResult = [];
   for (let i = 1; i < lines.length; i++) {
     if (
       lines[i]
         .trim()
         .toLowerCase()
-        .indexOf('expected:') === 0
+        .indexOf('expected') === 0
     ) {
       testDetail.expected = getConvertedText(lines[i]);
     } else if (
       lines[i]
         .trim()
         .toLowerCase()
-        .indexOf('received:') === 0
+        .indexOf('received') === 0
     ) {
       testDetail.received = getConvertedText(lines[i]);
     } else if (
@@ -114,7 +123,7 @@ const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
     ) {
       testDetail.stackTrace += `${lines[i].trim()}\n`;
     } else {
-      testDetail.altResult += getConvertedText(lines[i]);
+      testDetail.altResult = testDetail.altResult.concat(getConvertedText(lines[i]));
     }
   }
   return testDetail;
@@ -125,13 +134,13 @@ interface MessageProps {
 }
 
 class TestDetail {
-  description: string;
+  description: MsgElement[];
 
-  expected: string;
+  expected: MsgElement[];
 
-  received: string;
+  received: MsgElement[];
 
-  altResult: string;
+  altResult: MsgElement[];
 
   stackTrace: string;
 }
@@ -140,10 +149,10 @@ export class Message extends Component<MessageProps, {}> {
   render() {
     const { msg } = this.props;
     const detail: TestDetail = getTestDetail(msg);
-
+    console.log(detail.description);
     return (
       <Fragment>
-        <Description>{detail.description}</Description>
+        {detail.description ? <Description>{detail.description}</Description> : null}
         <Results>
           {detail.expected ? <div>{detail.expected}</div> : null}
           {detail.received ? <div>{detail.received}</div> : null}
