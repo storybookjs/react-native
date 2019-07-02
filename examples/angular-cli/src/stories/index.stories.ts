@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { Welcome, Button } from '@storybook/angular/demo';
 import { linkTo } from '@storybook/addon-links';
