@@ -61,67 +61,6 @@ exports[`Storyshots Addons|Actions Multiple actions, selector 1`] = `
         
 `;
 
-exports[`Storyshots Addons|Actions story1 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions story2 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions story3 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions story4 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions story5 1`] = `
-
-        
-`;
-
-exports[`Storyshots Addons|Actions story6 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions story7 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions story8 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
 exports[`Storyshots Addons|Backgrounds story 1 1`] = `
 <span
   style="color: white"
@@ -131,22 +70,6 @@ exports[`Storyshots Addons|Backgrounds story 1 1`] = `
 `;
 
 exports[`Storyshots Addons|Backgrounds story 2 1`] = `
-<span
-  style="color: white"
->
-  This one too!
-</span>
-`;
-
-exports[`Storyshots Addons|Backgrounds story1 1`] = `
-<span
-  style="color: white"
->
-  You should be able to switch backgrounds for this story
-</span>
-`;
-
-exports[`Storyshots Addons|Backgrounds story2 1`] = `
 <span
   style="color: white"
 >
@@ -170,25 +93,9 @@ exports[`Storyshots Addons|Centered button in center 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addons|Centered story1 1`] = `
-<div
-  id="sb-addon-centered-wrapper"
-  style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; align-items: center; overflow: auto;"
->
-  <div
-    id="sb-addon-centered-inner"
-    style="margin: auto; max-height: 100%;"
-  >
-    <button>
-      I am a Button !
-    </button>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Addons|Events Logger 1`] = `
 
-  
+    
 `;
 
 exports[`Storyshots Addons|Jest withTests 1`] = `This story shows test results`;
@@ -262,78 +169,7 @@ exports[`Storyshots Addons|Knobs Simple 1`] = `
 
 exports[`Storyshots Addons|Knobs XSS safety 1`] = `&lt;img src=x onerror="alert('XSS Attack')" &gt;`;
 
-exports[`Storyshots Addons|Knobs story3 1`] = `
-<p
-  style="transition: color 0.5s ease-out; color: orangered;"
->
-  John Doe
-</p>
-`;
-
-exports[`Storyshots Addons|Knobs story4 1`] = `
-<div
-  style="border: 2px dotted deeppink; padding: 8px 22px; border-radius: 8px"
->
-  
-        
-  <h1>
-    My name is Jane,
-  </h1>
-  
-        
-  <h3>
-    today is January 20, 2017
-  </h3>
-  
-        
-  <p>
-    I have a stock of 20 apples, costing $2.25 each.
-  </p>
-  
-        
-  <p>
-    Also, I have:
-  </p>
-  
-        
-  <ul>
-    <li>
-      Laptop
-    </li>
-    <li>
-      Book
-    </li>
-    <li>
-      Whiskey
-    </li>
-  </ul>
-  
-        
-  <p>
-    Nice to meet you!
-  </p>
-  
-      
-</div>
-`;
-
-exports[`Storyshots Addons|Knobs story5 1`] = `&lt;img src=x onerror="alert('XSS Attack')" &gt;`;
-
 exports[`Storyshots Addons|Notes Simple note 1`] = `
-<p>
-  
-      
-  <strong>
-    
-        This is a fragment of HTML
-      
-  </strong>
-  
-    
-</p>
-`;
-
-exports[`Storyshots Addons|Notes story1 1`] = `
 <p>
   
       
@@ -372,16 +208,6 @@ exports[`Storyshots Addons|a11y Label 1`] = `
   Testing the a11y addon
 </button>
 `;
-
-exports[`Storyshots Addons|a11y story4 1`] = `
-<button
-  style="color: black; background-color: brown;"
->
-  Testing the a11y addon
-</button>
-`;
-
-exports[`Storyshots Addons|a11y story5 1`] = `<div />`;
 
 exports[`Storyshots Demo button 1`] = `
 <button>
