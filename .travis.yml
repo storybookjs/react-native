@@ -6,7 +6,7 @@ cache:
   yarn: true
 
 install:
-    - npm i process-nextick-args util-deprecate delegates gauge path-dirname to-regex array-unique
+    - yarn install
     - yarn bootstrap --core
 
 script:
