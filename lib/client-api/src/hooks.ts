@@ -276,7 +276,7 @@ export interface EventMap {
   [eventId: string]: Listener;
 }
 
-export function useChannel(eventMap: EventMap) {
+export function useChannel(eventMap: EventMap, deps: any[] = []) {
   const channel = addons.getChannel();
   useEffect(() => {
     Object.entries(eventMap).forEach(([type, listener]) => channel.on(type, listener));
@@ -285,7 +285,7 @@ export function useChannel(eventMap: EventMap) {
         channel.removeListener(type, listener)
       );
     };
-  }, Object.keys(eventMap));
+  }, [...Object.keys(eventMap), ...deps]);
 
   return channel.emit.bind(channel);
 }
