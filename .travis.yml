@@ -6,8 +6,12 @@ cache:
   yarn: true
 
 install:
-    - yarn install
-    - yarn bootstrap --core
+  - yarn install
+  - yarn bootstrap --core
 
 script:
-    - yarn test --cli
+
+jobs:
+  include:
+    - script: yarn test --cli
+    - script: yarn test-latest-cra
