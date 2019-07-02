@@ -115,12 +115,12 @@ export const getScrollAreaStyles: (theme: Theme) => Interpolation = (theme: Them
   '.simplebar-scrollbar:before': {
     position: 'absolute',
     content: '""',
-    background: 'black',
     borderRadius: 7,
     left: 0,
     right: 0,
     opacity: 0,
     transition: 'opacity 0.2s linear',
+    background: theme.base === 'light' ? theme.color.darkest : theme.color.lightest,
   },
 
   '.simplebar-track .simplebar-scrollbar.simplebar-visible:before': {

@@ -34,6 +34,6 @@ export const interleaveSeparators = (list: any[]) =>
       ),
     null
   );
-interface SeparatorProps {
+export interface SeparatorProps {
   force?: boolean;
 }

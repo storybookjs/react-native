@@ -1,10 +1,15 @@
 import hbs from 'htmlbars-inline-precompile';
-import { storiesOf } from '@storybook/ember';
 
-storiesOf('Welcome', module)
-  .addParameters({ options: { showPanel: false } })
-  .add('basic', () => ({
-    template: hbs`
+export default {
+  title: 'Welcome',
+
+  parameters: {
+    options: { showPanel: false },
+  },
+};
+
+export const basic = () => ({
+  template: hbs`
         {{welcome-page}}
       `,
-  }));
+});

@@ -11,6 +11,7 @@ const mapper = ({ state, api }) => ({
   api,
   storiesHash: state.storiesHash,
   storyId: state.storyId,
+  viewMode: state.viewMode,
 });
 
 export default class ReactProvider extends Provider {
@@ -48,12 +49,11 @@ export default class ReactProvider extends Provider {
   renderPreview() {
     return (
       <Consumer filter={mapper} pure>
-        {({ storiesHash, storyId, api }) => {
+        {({ storiesHash, storyId, api, viewMode }) => {
           if (storiesHash[storyId]) {
-            const { kind, story } = storiesHash[storyId];
-            api.emit(Events.SET_CURRENT_STORY, { kind, story });
+            api.emit(Events.SET_CURRENT_STORY, { storyId });
           }
-          return <PreviewHelp />;
+          return viewMode === 'story' ? <PreviewHelp /> : null;
         }}
       </Consumer>
     );
@@ -61,12 +61,6 @@ export default class ReactProvider extends Provider {
 
   handleAPI(api) {
     addons.loadAddons(api);
-    api.on(Events.STORY_CHANGED, () => {
-      api.emit(Events.SET_CURRENT_STORY, this.selection);
-    });
-    api.on(Events.GET_CURRENT_STORY, () => {
-      api.emit(Events.SET_CURRENT_STORY, this.selection);
-    });
     api.emit(Events.GET_STORIES);
   }
 }

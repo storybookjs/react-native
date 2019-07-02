@@ -3,9 +3,9 @@ module.exports = {
   clearMocks: true,
   moduleNameMapper: {
     // non-js files
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|mdx)$':
       '<rootDir>/__mocks__/fileMock.js',
-    '\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
+    '\\.(css|scss|stylesheet)$': '<rootDir>/__mocks__/styleMock.js',
     '\\.(md)$': '<rootDir>/__mocks__/htmlMock.js',
 
     // core-js v2 to v3 mapping
@@ -32,6 +32,7 @@ module.exports = {
     '<rootDir>/examples/vue-kitchen-sink',
     '<rootDir>/examples/angular-cli',
     '<rootDir>/examples/preact-kitchen-sink',
+    '<rootDir>/examples/rax-kitchen-sink',
   ],
   roots: [
     '<rootDir>/addons',
@@ -68,6 +69,10 @@ module.exports = {
     '/dll/',
     '/__mocks__ /',
   ],
+  globals: {
+    DOCS_MODE: false,
+    PREVIEW_URL: undefined,
+  },
   snapshotSerializers: ['jest-emotion', 'enzyme-to-json/serializer'],
   coverageDirectory: 'coverage',
   setupFilesAfterEnv: ['./scripts/jest.init.js'],

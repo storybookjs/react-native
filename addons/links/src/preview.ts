@@ -1,5 +1,4 @@
-import { SyntheticEvent } from 'react';
-import { document } from 'global';
+import { document, HTMLElement } from 'global';
 import qs from 'qs';
 import addons from '@storybook/addons';
 import { SELECT_STORY, STORY_CHANGED } from '@storybook/core-events';
@@ -37,8 +36,13 @@ export const hrefTo = (kind: string, name: string): Promise<string> =>
     resolve(generateUrl(toId(kind, name)));
   });
 
-const linksListener = (e: SyntheticEvent<HTMLLinkElement>) => {
-  const { sbKind: kind, sbStory: story } = e.currentTarget.dataset;
+const linksListener = (e: Event) => {
+  const { target } = e;
+  if (!(target instanceof HTMLElement)) {
+    return;
+  }
+  const element = target as HTMLElement;
+  const { sbKind: kind, sbStory: story } = element.dataset;
   if (kind || story) {
     e.preventDefault();
     navigate({ kind, story });

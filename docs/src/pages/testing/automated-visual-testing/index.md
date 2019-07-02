@@ -42,7 +42,7 @@ Here are some in alphabetical order:
 - [Loki](https://loki.js.org/)
 - [Percy](https://docs.percy.io/docs/storybook-for-react)
 - [Screener](https://screener.io/v2/docs)
-- [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) with its [seamless integration](https://github.com/storybooks/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots) with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot)
+- [StoryShots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots) with its [seamless integration](https://github.com/storybookjs/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots) with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot)
 
 ## Custom Solutions
 
