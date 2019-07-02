@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "8"
+
+cache:
+  yarn: true
+
+install:
+    - npm i process-nextick-args util-deprecate delegates gauge path-dirname to-regex array-unique
+    - yarn bootstrap --core
+
+script:
+    - yarn test --cli
