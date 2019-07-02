@@ -7,6 +7,7 @@ export {
   getStorybook,
   forceReRender,
   raw,
+  load,
 } from './preview';
 
 export { moduleMetadata } from './preview/angular/decorators';

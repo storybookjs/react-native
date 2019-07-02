@@ -1,5 +1,4 @@
 import EventEmitter from 'eventemitter3';
-import { storiesOf } from '@storybook/html';
 import addons from '@storybook/addons';
 import CoreEvents from '@storybook/core-events';
 import json from 'format-json';
@@ -32,8 +31,9 @@ const subscription = () => {
   return () => eventHandlers.forEach(({ name, handler }) => emitter.removeListener(name, handler));
 };
 
-storiesOf('Addons|Events', module)
-  .addDecorator(
+export default {
+  title: 'Addons|Events',
+  decorators: [
     withEvents({
       emit,
       events: [
@@ -83,33 +83,32 @@ storiesOf('Addons|Events', module)
           ],
         },
       ],
-    })
-  )
-  .addDecorator(storyFn => {
-    addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
-    return storyFn();
-  })
-  .add(
-    'Logger',
-    () => `
-      <div class="wrapper">
-        <h1 class="title">Logger</h1>
-        <dl>
-          ${events
-            .map(
-              ({ name, payload }) => `
-                <div class="item">
-                  <dt>
-                    <b>Event name:</b> ${name}
-                  </dt>
-                  <dd>
-                    <b>Event payload:</b> ${json.plain(payload)}
-                  </dd>
-                </div>
-              `
-            )
-            .join('')}
-        </dl>
-      </div>
-    `
-  );
+    }),
+    storyFn => {
+      addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
+      return storyFn();
+    },
+  ],
+};
+
+export const Logger = () => `
+  <div class="wrapper">
+    <h1 class="title">Logger</h1>
+    <dl>
+      ${events
+        .map(
+          ({ name, payload }) => `
+            <div class="item">
+              <dt>
+                <b>Event name:</b> ${name}
+              </dt>
+              <dd>
+                <b>Event payload:</b> ${json.plain(payload)}
+              </dd>
+            </div>
+          `
+        )
+        .join('')}
+    </dl>
+  </div>
+`;

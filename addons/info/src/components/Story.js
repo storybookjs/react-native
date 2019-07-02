@@ -38,7 +38,7 @@ const stylesheetBase = {
     background: 'white',
     top: 0,
     left: 0,
-    height: '110vh',
+    height: '100vh',
     width: '100vw',
     overflow: 'auto',
     zIndex: 99999,
