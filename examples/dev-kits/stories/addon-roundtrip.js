@@ -1,8 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import '@storybook/addon-roundtrip';
-
 storiesOf('root|group/component', module).add('variant 1', () => <div>This is variant 1</div>);
 
 storiesOf('addons|parameter', module)

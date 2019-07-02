@@ -287,7 +287,7 @@ export function useChannel(eventMap: EventMap) {
     };
   }, Object.keys(eventMap));
 
-  return channel.emit;
+  return channel.emit.bind(channel);
 }
 
 export function useParameter<S>(parameterKey: string, defaultValue?: S): S | undefined {
