@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-links",
-  "version": "5.2.0-alpha.34",
+  "version": "5.2.0-alpha.35",
   "description": "Story Links addon for storybook",
   "keywords": [
     "addon",
@@ -22,9 +22,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.34",
-    "@storybook/core-events": "5.2.0-alpha.34",
-    "@storybook/router": "5.2.0-alpha.34",
+    "@storybook/addons": "5.2.0-alpha.35",
+    "@storybook/core-events": "5.2.0-alpha.35",
+    "@storybook/router": "5.2.0-alpha.35",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
