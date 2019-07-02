@@ -81,57 +81,75 @@ const getConvertedText: (msg: string) => any = (msg: string) => {
   return text;
 };
 
+const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
+  const lines = patterns
+    .reduce((acc, regex) => acc.replace(regex, ''), msg)
+    .split('\n')
+    .filter(Boolean);
+
+  const testDetail: TestDetail = new TestDetail();
+  testDetail.description = getConvertedText(lines[0]);
+  testDetail.stackTrace = '';
+  testDetail.altResult = '';
+  for (let i = 1; i < lines.length; i++) {
+    if (
+      lines[i]
+        .trim()
+        .toLowerCase()
+        .indexOf('expected:') === 0
+    ) {
+      testDetail.expected = getConvertedText(lines[i]);
+    } else if (
+      lines[i]
+        .trim()
+        .toLowerCase()
+        .indexOf('received:') === 0
+    ) {
+      testDetail.received = getConvertedText(lines[i]);
+    } else if (
+      lines[i]
+        .trim()
+        .toLowerCase()
+        .indexOf('at') === 0
+    ) {
+      testDetail.stackTrace += `${lines[i].trim()}\n`;
+    } else {
+      testDetail.altResult += getConvertedText(lines[i]);
+    }
+  }
+  return testDetail;
+};
+
 interface MessageProps {
   msg: string;
+}
+
+class TestDetail {
+  description: string;
+
+  expected: string;
+
+  received: string;
+
+  altResult: string;
+
+  stackTrace: string;
 }
 
 export class Message extends Component<MessageProps, {}> {
   render() {
     const { msg } = this.props;
-
-    let expected = null;
-    let received = null;
-    let stackTrace = '';
-    const lines = patterns
-      .reduce((acc, regex) => acc.replace(regex, ''), msg)
-      .split('\n')
-      .filter(Boolean);
-    const description = getConvertedText(lines[0]);
-
-    for (let i = 1; i < lines.length; i++) {
-      if (
-        lines[i]
-          .trim()
-          .toLowerCase()
-          .indexOf('expected') === 0
-      ) {
-        expected = getConvertedText(lines[i]);
-      } else if (
-        lines[i]
-          .trim()
-          .toLowerCase()
-          .indexOf('received') === 0
-      ) {
-        received = getConvertedText(lines[i]);
-      } else if (
-        lines[i]
-          .trim()
-          .toLowerCase()
-          .indexOf('at') === 0
-      ) {
-        stackTrace += getConvertedText(lines[i]).trim();
-        stackTrace += i !== lines.length ? '\n' : '';
-      }
-    }
+    const detail: TestDetail = getTestDetail(msg);
 
     return (
       <Fragment>
-        <Description>{description}</Description>
+        <Description>{detail.description}</Description>
         <Results>
-          <div>{expected}</div>
-          <div>{received}</div>
+          {detail.expected ? <div>{detail.expected}</div> : null}
+          {detail.received ? <div>{detail.received}</div> : null}
+          {detail.altResult ? <div>{detail.altResult}</div> : null}
         </Results>
-        <StackTrace>{stackTrace}</StackTrace>
+        <StackTrace>{detail.stackTrace}</StackTrace>
       </Fragment>
     );
   }
