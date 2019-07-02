@@ -1,6 +1,5 @@
 import { ActionOptions } from './ActionOptions';
 import { ActionsMap } from './ActionsMap';
-import { HandlerFunction } from './HandlerFunction';
 
 export interface ActionsFunction {
   <T extends string>(handlerMap: Record<T, string>, options?: ActionOptions): ActionsMap<T>;
@@ -8,10 +7,7 @@ export interface ActionsFunction {
 
   <T extends string>(handler1: T, options?: ActionOptions): ActionsMap<T>;
   <T extends string>(handler1: T, handler2: T, options?: ActionOptions): ActionsMap<T>;
-  <T extends string>(handler1: T, handler2: T, handler3: T, options?: ActionOptions): Record<
-    T,
-    HandlerFunction
-  >;
+  <T extends string>(handler1: T, handler2: T, handler3: T, options?: ActionOptions): ActionsMap<T>;
   <T extends string>(
     handler1: T,
     handler2: T,
