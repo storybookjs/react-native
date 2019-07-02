@@ -1,6 +1,5 @@
 import addons from '@storybook/addons';
-import { action } from '../..';
-// import { configureActions } from '../..';
+import { action, configureActions } from '../..';
 
 jest.mock('@storybook/addons');
 
@@ -29,67 +28,66 @@ describe('Action', () => {
   });
 });
 
-// TODO: This functionality is removed, unsure if to add back or remove
-// describe('Depth config', () => {
-//   it('with global depth configuration', () => {
-//     const channel = createChannel();
+describe('Depth config', () => {
+  it('with global depth configuration', () => {
+    const channel = createChannel();
 
-//     const depth = 1;
+    const depth = 1;
 
-//     configureActions({
-//       depth,
-//     });
+    configureActions({
+      depth,
+    });
 
-//     action('test-action')({
-//       root: {
-//         one: {
-//           two: 'foo',
-//         },
-//       },
-//     });
+    action('test-action')({
+      root: {
+        one: {
+          two: 'foo',
+        },
+      },
+    });
 
-//     expect(getChannelData(channel)[0]).toEqual({
-//       root: {
-//         one: {
-//           two: 'foo',
-//         },
-//       },
-//     });
-//   });
+    expect(getChannelData(channel)[0]).toEqual({
+      root: {
+        one: {
+          two: 'foo',
+        },
+      },
+    });
+  });
 
-//   it('per action depth option overrides global config', () => {
-//     const channel = createChannel();
+  it('per action depth option overrides global config', () => {
+    const channel = createChannel();
 
-//     configureActions({
-//       depth: 1,
-//     });
+    configureActions({
+      depth: 1,
+    });
 
-//     action('test-action', { depth: 3 })({
-//       root: {
-//         one: {
-//           two: {
-//             three: {
-//               four: {
-//                 five: 'foo',
-//               },
-//             },
-//           },
-//         },
-//       },
-//     });
+    action('test-action', { depth: 3 })({
+      root: {
+        one: {
+          two: {
+            three: {
+              four: {
+                five: 'foo',
+              },
+            },
+          },
+        },
+      },
+    });
 
-//     expect(getChannelData(channel)[0]).toEqual({
-//       root: {
-//         one: {
-//           two: {
-//             three: {
-//               four: {
-//                 five: 'foo',
-//               },
-//             },
-//           },
-//         },
-//       },
-//     });
-//   });
-// });
+    expect(getChannelData(channel)[0]).toEqual({
+      root: {
+        one: {
+          two: {
+            three: {
+              four: {
+                five: 'foo',
+              },
+            },
+          },
+        },
+      },
+    });
+  });
+});

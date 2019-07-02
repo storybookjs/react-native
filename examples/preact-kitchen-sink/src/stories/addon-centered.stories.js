@@ -2,10 +2,17 @@
 
 import { h } from 'preact';
 
-import { storiesOf } from '@storybook/preact';
 import Centered from '@storybook/addon-centered/preact';
 import Button from '../Button';
 
-storiesOf('Addons|Centered', module)
-  .addDecorator(Centered)
-  .add('Button', () => <Button>A button</Button>);
+export default {
+  title: 'Addons|Centered',
+  decorators: [Centered],
+
+  parameters: {
+    component: Centered,
+  },
+};
+
+export const button = () => <Button>A button</Button>;
+button.story = { name: 'Button ' };

@@ -1,17 +1,17 @@
 {
   "name": "@storybook/ui",
-  "version": "5.1.0-alpha.34",
+  "version": "5.2.0-alpha.34",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/ui",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/ui",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/ui"
   },
   "license": "MIT",
@@ -22,42 +22,46 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.34",
-    "@storybook/api": "5.1.0-alpha.34",
-    "@storybook/client-logger": "5.1.0-alpha.34",
-    "@storybook/components": "5.1.0-alpha.34",
-    "@storybook/core-events": "5.1.0-alpha.34",
-    "@storybook/router": "5.1.0-alpha.34",
-    "@storybook/theming": "5.1.0-alpha.34",
-    "core-js": "^2.6.5",
+    "@storybook/addons": "5.2.0-alpha.34",
+    "@storybook/api": "5.2.0-alpha.34",
+    "@storybook/channels": "5.2.0-alpha.34",
+    "@storybook/client-logger": "5.2.0-alpha.34",
+    "@storybook/components": "5.2.0-alpha.34",
+    "@storybook/core-events": "5.2.0-alpha.34",
+    "@storybook/router": "5.2.0-alpha.34",
+    "@storybook/theming": "5.2.0-alpha.34",
+    "copy-to-clipboard": "^3.0.8",
+    "core-js": "^3.0.1",
+    "core-js-pure": "^3.0.1",
+    "emotion-theming": "^10.0.10",
     "fast-deep-equal": "^2.0.1",
     "fuse.js": "^3.4.4",
     "global": "^4.3.2",
-    "lodash.debounce": "^4.0.8",
-    "lodash.isequal": "^4.5.0",
-    "lodash.mergewith": "^4.6.1",
-    "lodash.pick": "^4.4.0",
+    "lodash": "^4.17.11",
     "markdown-to-jsx": "^6.9.3",
     "memoizerific": "^1.11.3",
-    "polished": "^3.0.0",
+    "polished": "^3.3.1",
     "prop-types": "^15.7.2",
     "qs": "^6.6.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-draggable": "^3.1.1",
-    "react-helmet-async": "^0.2.0",
+    "react-helmet-async": "^1.0.2",
     "react-hotkeys": "2.0.0-pre4",
-    "react-resize-detector": "^4.0.5",
+    "react-sizeme": "^2.6.7",
     "recompose": "^0.30.0",
+    "regenerator-runtime": "^0.13.2",
+    "resolve-from": "^5.0.0",
     "semver": "^6.0.0",
     "store2": "^2.7.1",
-    "telejson": "^2.1.1",
+    "telejson": "^2.2.1",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
+    "corejs-upgrade-webpack-plugin": "^2.0.0",
     "flush-promises": "^1.0.2",
-    "terser-webpack-plugin": "^1.2.2",
-    "webpack": "^4.28.0"
+    "terser-webpack-plugin": "^1.2.4",
+    "webpack": "^4.33.0"
   },
   "publishConfig": {
     "access": "public"

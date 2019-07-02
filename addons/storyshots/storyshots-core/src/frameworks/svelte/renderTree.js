@@ -12,12 +12,14 @@ import { document } from 'global';
  * i.e. ({ Component, data }).
  */
 function getRenderedTree(story) {
-  const { Component, data } = story.render();
+  const { Component, props } = story.render();
+
+  const DefaultCompatComponent = Component.default || Component;
 
   // We need to create a target to mount onto.
   const target = document.createElement('section');
 
-  new Component({ target, data }); // eslint-disable-line
+  new DefaultCompatComponent({ target, props }); // eslint-disable-line
 
   // Classify the target so that it is clear where the markup
   // originates from, and that it is specific for snapshot tests.

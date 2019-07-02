@@ -1,17 +1,17 @@
 {
   "name": "@storybook/addon-actions",
-  "version": "5.1.0-alpha.34",
+  "version": "5.2.0-alpha.34",
   "description": "Action Logger addon for storybook",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/actions",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/actions",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/actions"
   },
   "license": "MIT",
@@ -21,23 +21,23 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-alpha.34",
-    "@storybook/api": "5.1.0-alpha.34",
-    "@storybook/components": "5.1.0-alpha.34",
-    "@storybook/core-events": "5.1.0-alpha.34",
-    "@storybook/theming": "5.1.0-alpha.34",
-    "core-js": "^2.6.5",
+    "@storybook/addons": "5.2.0-alpha.34",
+    "@storybook/api": "5.2.0-alpha.34",
+    "@storybook/components": "5.2.0-alpha.34",
+    "@storybook/core-events": "5.2.0-alpha.34",
+    "@storybook/theming": "5.2.0-alpha.34",
+    "core-js": "^3.0.1",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
     "lodash": "^4.17.11",
-    "polished": "^3.0.0",
+    "polished": "^3.3.1",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-inspector": "^2.3.1",
+    "react": "^16.8.3",
+    "react-inspector": "^3.0.2",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.123",
+    "@types/lodash": "^4.14.129",
     "@types/uuid": "^3.4.4"
   },
   "publishConfig": {

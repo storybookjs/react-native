@@ -70,10 +70,9 @@ function decorateStory(getStory, decorators) {
   );
 }
 
-const { clientApi, configApi, forceReRender } = start(render, { decorateStory });
+const { load: coreLoad, clientApi, configApi, forceReRender } = start(render, { decorateStory });
 
 export const {
-  storiesOf,
   setAddon,
   addDecorator,
   addParameters,
@@ -81,6 +80,10 @@ export const {
   getStorybook,
   raw,
 } = clientApi;
+
+const framework = 'vue';
+export const storiesOf = (...args) => clientApi.storiesOf(...args).addParameters({ framework });
+export const load = (...args) => coreLoad(...args, framework);
 
 export const { configure } = configApi;
 export { forceReRender };

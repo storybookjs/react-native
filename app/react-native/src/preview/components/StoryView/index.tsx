@@ -1,52 +1,44 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import styled from '@emotion/native';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
-import style from './style';
 
 interface Props {
-  listenToEvents: boolean;
-  selection?: any;
-  storyFn?: any;
+  stories: any;
   url: string;
+  onDevice?: boolean;
 }
 
-interface State {
-  storyFn?: any;
-  selection?: any;
-}
+const HelpContainer = styled.View`
+  flex: 1;
+  padding-horizontal: 15;
+  padding-vertical: 15;
+  align-items: center;
+  justify-content: center;
+`;
 
-export default class StoryView extends Component<Props, State> {
+export default class StoryView extends Component<Props> {
   componentDidMount() {
-    if (this.props.listenToEvents) {
-      const channel = addons.getChannel();
-      channel.on(Events.SELECT_STORY, this.selectStory);
-      channel.on(Events.FORCE_RE_RENDER, this.forceReRender);
-    }
+    const channel = addons.getChannel();
+    channel.on(Events.STORY_RENDER, this.forceReRender);
+    channel.on(Events.FORCE_RE_RENDER, this.forceReRender);
   }
 
   componentWillUnmount() {
-    const { listenToEvents } = this.props;
-
-    if (listenToEvents) {
-      const channel = addons.getChannel();
-      channel.removeListener(Events.SELECT_STORY, this.selectStory);
-      channel.removeListener(Events.FORCE_RE_RENDER, this.forceReRender);
-    }
+    const channel = addons.getChannel();
+    channel.removeListener(Events.STORY_RENDER, this.forceReRender);
+    channel.removeListener(Events.FORCE_RE_RENDER, this.forceReRender);
   }
 
   forceReRender = () => {
     this.forceUpdate();
   };
 
-  selectStory = (selection: any) => {
-    this.setState({ storyFn: selection.storyFn, selection });
-  };
-
   renderHelp = () => {
     const { url } = this.props;
     return (
-      <View style={style.help}>
+      <HelpContainer>
         {url && url.length ? (
           <Text>
             Please open the Storybook UI ({url}) with a web browser and select a story for preview.
@@ -56,52 +48,34 @@ export default class StoryView extends Component<Props, State> {
             Please open the Storybook UI with a web browser and select a story for preview.
           </Text>
         )}
-      </View>
+      </HelpContainer>
     );
   };
 
   renderOnDeviceUIHelp = () => (
-    <View style={style.help}>
+    <HelpContainer>
       <Text>Please open navigator and select a story to preview.</Text>
-    </View>
+    </HelpContainer>
   );
 
   render() {
-    const { listenToEvents } = this.props;
+    const { onDevice, stories } = this.props;
+    const { storyId } = stories.getSelection();
+    const story = stories.fromId(storyId);
 
-    if (listenToEvents) {
-      return this.renderListening();
-    } else {
-      return this.renderOnDevice();
+    if (story && story.storyFn) {
+      const { id, storyFn } = story;
+      return (
+        <View key={id} style={{ flex: 1 }}>
+          {storyFn()}
+        </View>
+      );
     }
+
+    if (onDevice) {
+      return this.renderOnDeviceUIHelp();
+    }
+
+    return this.renderHelp();
   }
-
-  renderListening = () => {
-    if (!this.state) {
-      return null;
-    }
-    const { storyFn, selection } = this.state;
-    const { kind, story } = selection;
-
-    return storyFn ? (
-      <View key={`${kind}:::${story}`} style={style.main}>
-        {storyFn()}
-      </View>
-    ) : (
-      this.renderHelp()
-    );
-  };
-
-  renderOnDevice = () => {
-    const { storyFn, selection } = this.props;
-    const { kind, story } = selection;
-
-    return storyFn ? (
-      <View key={`${kind}:::${story}`} style={style.main}>
-        {storyFn()}
-      </View>
-    ) : (
-      this.renderOnDeviceUIHelp()
-    );
-  };
 }

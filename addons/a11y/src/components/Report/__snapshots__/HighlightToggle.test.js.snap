@@ -21,6 +21,7 @@ exports[`HighlightToggle component should match snapshot 1`] = `
       theme={
         Object {
           "addonActionsTheme": Object {
+            "ARROW_ANIMATION_DURATION": "0",
             "ARROW_COLOR": "rgba(0,0,0,0.3)",
             "ARROW_FONT_SIZE": 8,
             "ARROW_MARGIN_RIGHT": 4,
@@ -37,8 +38,10 @@ exports[`HighlightToggle component should match snapshot 1`] = `
             "HTML_TAGNAME_TEXT_TRANSFORM": "lowercase",
             "HTML_TAG_COLOR": "rgb(168, 148, 166)",
             "OBJECT_NAME_COLOR": "rgb(136, 19, 145)",
+            "OBJECT_PREVIEW_ARRAY_MAX_PROPERTIES": 10,
+            "OBJECT_PREVIEW_OBJECT_MAX_PROPERTIES": 5,
             "OBJECT_VALUE_BOOLEAN_COLOR": "rgb(28, 0, 207)",
-            "OBJECT_VALUE_FUNCTION_KEYWORD_COLOR": "rgb(170, 13, 145)",
+            "OBJECT_VALUE_FUNCTION_PREFIX_COLOR": "rgb(13, 34, 170)",
             "OBJECT_VALUE_NULL_COLOR": "rgb(128, 128, 128)",
             "OBJECT_VALUE_NUMBER_COLOR": "rgb(28, 0, 207)",
             "OBJECT_VALUE_REGEXP_COLOR": "rgb(196, 26, 22)",

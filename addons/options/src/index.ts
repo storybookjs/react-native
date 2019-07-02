@@ -7,7 +7,7 @@ function emitOptions(options: any) {
   const channel = addons.getChannel();
   if (!channel) {
     throw new Error(
-      'Failed to find addon channel. This may be due to https://github.com/storybooks/storybook/issues/1192.'
+      'Failed to find addon channel. This may be due to https://github.com/storybookjs/storybook/issues/1192.'
     );
   }
 
