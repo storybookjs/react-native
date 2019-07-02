@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { withContexts } from '@storybook/addon-contexts/react';
 
 // Example A: Simple CSS Theming
@@ -39,15 +38,20 @@ const storyLevelContexts = [
   },
 ];
 
-const stories = storiesOf('Addons|Contexts', module).addDecorator(withContexts(topLevelContexts));
+export default {
+  title: 'Addons|Contexts',
+  decorators: [withContexts(topLevelContexts)],
+};
 
-stories.add(
-  'Simple CSS Theming',
-  () => <>I'm a children of the injected 'div' (where provides a theming context).</>,
-  {
-    contexts: storyLevelContexts,
-  }
+export const simpleCssTheming = () => (
+  <>I'm a children of the injected 'div' (where provides a theming context).</>
 );
+simpleCssTheming.story = {
+  name: 'Simple CSS Theming',
+  parameters: {
+    contexts: storyLevelContexts,
+  },
+};
 
 // Example B: Language (React Contexts API)
 const NaiveIntlContext = React.createContext({
@@ -55,14 +59,14 @@ const NaiveIntlContext = React.createContext({
   greeting: 'NULL',
 });
 
-stories.add(
-  'Languages',
-  () => (
-    <NaiveIntlContext.Consumer>
-      {({ locale, greeting }) => `Your locale is "${locale}", so I say "${greeting}"!`}
-    </NaiveIntlContext.Consumer>
-  ),
-  {
+export const Languages = () => (
+  <NaiveIntlContext.Consumer>
+    {({ locale, greeting }) => `Your locale is "${locale}", so I say "${greeting}"!`}
+  </NaiveIntlContext.Consumer>
+);
+
+Languages.story = {
+  parameters: {
     contexts: [
       {
         icon: 'globe',
@@ -93,5 +97,5 @@ stories.add(
         },
       },
     ],
-  }
-);
+  },
+};
