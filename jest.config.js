@@ -3,7 +3,7 @@ module.exports = {
   clearMocks: true,
   moduleNameMapper: {
     // non-js files
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|mdx)$':
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(css|scss|stylesheet)$': '<rootDir>/__mocks__/styleMock.js',
     '\\.(md)$': '<rootDir>/__mocks__/htmlMock.js',
@@ -71,6 +71,7 @@ module.exports = {
   ],
   globals: {
     DOCS_MODE: false,
+    PREVIEW_URL: undefined,
   },
   snapshotSerializers: ['jest-emotion', 'enzyme-to-json/serializer'],
   coverageDirectory: 'coverage',

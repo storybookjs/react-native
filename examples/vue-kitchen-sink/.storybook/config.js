@@ -13,8 +13,12 @@ Vue.use(Vuex);
 addParameters({
   options: {
     hierarchyRootSeparator: /\|/,
+    docs: {
+      iframeHeight: '60px',
+    },
   },
   docs: DocsPage,
 });
 
 load(require.context('../src/stories', true, /\.stories\.js$/), module);
+load(require.context('../src/stories', true, /\.stories\.mdx$/), module);

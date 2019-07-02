@@ -9,7 +9,8 @@ export default {
   },
 };
 
-export const welcome = () => ({
-  render: h => h(Welcome, { props: { goToButton: linkTo('Button') } }),
-});
-welcome.story = { welcome };
+export const welcome = () => {
+  return {
+    render: h => h(Welcome, { props: { goToButton: linkTo('Button') } }),
+  };
+};

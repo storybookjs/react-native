@@ -1,3 +1,13 @@
+## 5.2.0-alpha.33 (July 1, 2019)
+
+### Features
+
+* CLI: Add `--preview-url` for custom preview ([#7235](https://github.com/storybookjs/storybook/pull/7235))
+
+### Bug Fixes
+
+* React-Native: Upgrade to new `story_store` API ([#7234](https://github.com/storybookjs/storybook/pull/7234))
+
 ## 5.2.0-alpha.32 (June 29, 2019)
 
 ### Features
