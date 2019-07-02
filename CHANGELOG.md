@@ -1,3 +1,9 @@
+## 5.2.0-alpha.35 (July 3, 2019)
+
+### Bug Fixes
+
+* React-Native: Fix null story check ([#7243](https://github.com/storybookjs/storybook/pull/7243))
+
 ## 5.2.0-alpha.34 (July 2, 2019)
 
 ### Bug Fixes
