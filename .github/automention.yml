@@ -5,7 +5,7 @@
 'app: polymer': ['stijnkoopal', 'ndelangen']
 'app: preact': ['BartWaardenburg']
 'app: react-native': ['benoitdion', 'gongreg']
-'app: react-native-server': ['benoitdion', 'igor-dv']
+'app: react-native-server': ['benoitdion', 'gongreg']
 'app: svelte': ['cam-stitt', 'plumpNation']
 'app: vue': ['backbone87', 'elevatebart', 'pksunkara']
 'api: addons': ['ndelangen']

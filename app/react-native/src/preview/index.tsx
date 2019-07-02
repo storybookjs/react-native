@@ -211,7 +211,7 @@ export default class Preview {
   _selectStory(story: any) {
     const channel = addons.getChannel();
 
-    this._stories.setSelection(story);
+    this._stories.setSelection({ storyId: story.id });
     channel.emit(Events.SELECT_STORY, story);
   }
 
