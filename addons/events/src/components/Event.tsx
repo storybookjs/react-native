@@ -126,7 +126,6 @@ class Item extends Component<ItemProps, ItemState> {
     failed: false,
     payload: null,
     payloadString: '',
-    // eslint-disable-next-line react/no-unused-state,
     prevPayload: null,
   };
 
@@ -142,7 +141,7 @@ class Item extends Component<ItemProps, ItemState> {
       newState.failed = true;
     }
 
-    this.setState(newState as ItemState);
+    this.setState(state => ({ ...state, ...newState }));
   };
 
   onEmitClick = () => {
