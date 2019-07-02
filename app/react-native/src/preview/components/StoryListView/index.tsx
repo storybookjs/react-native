@@ -160,7 +160,6 @@ export default class StoryListView extends Component<Props, State> {
     const { stories } = this.props;
     const { storyId } = stories.getSelection();
     const selectedStory = stories.fromId(storyId);
-
     const { data } = this.state;
 
     return (
@@ -179,12 +178,12 @@ export default class StoryListView extends Component<Props, State> {
             <ListItem
               title={item.name}
               kind={item.kind}
-              selected={item.id === selectedStory.id}
+              selected={selectedStory && item.id === selectedStory.id}
               onPress={() => this.changeStory(item.id)}
             />
           )}
           renderSectionHeader={({ section: { title } }) => (
-            <SectionHeader title={title} selected={title === selectedStory.kind} />
+            <SectionHeader title={title} selected={selectedStory && title === selectedStory.kind} />
           )}
           keyExtractor={(item, index) => item + index}
           sections={data}
