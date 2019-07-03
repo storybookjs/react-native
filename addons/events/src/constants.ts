@@ -1,3 +1,5 @@
+export const PARAM_KEY = 'events';
+
 export const ADDON_ID = 'storybook/events';
 
 export const PANEL_ID = `${ADDON_ID}/panel`;
