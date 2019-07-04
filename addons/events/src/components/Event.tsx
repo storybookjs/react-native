@@ -5,10 +5,19 @@ import isEqual from 'lodash/isEqual';
 
 import { styled } from '@storybook/theming';
 import json from 'format-json';
-
 import Textarea from 'react-textarea-autosize';
+import { OnEmitEvent } from '../index';
 
-const StyledTextarea = styled(Textarea)(
+interface StyledTextareaProps {
+  shown: boolean;
+  failed: boolean;
+  value?: string;
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+}
+
+const StyledTextarea = styled(({ shown, failed, ...rest }: StyledTextareaProps) => (
+  <Textarea {...rest} />
+))(
   {
     flex: '1 0 0',
     boxSizing: 'border-box',
@@ -67,7 +76,7 @@ const Label = styled.label({
   textAlign: 'right',
   width: 100,
   fontWeight: '600',
-});
+} as any);
 
 const Wrapper = styled.div({
   display: 'flex',
@@ -77,15 +86,29 @@ const Wrapper = styled.div({
   width: '100%',
 });
 
-function getJSONFromString(str) {
+function getJSONFromString(str: string) {
   try {
     return JSON.parse(str);
   } catch (e) {
     return str;
   }
 }
+interface ItemProps {
+  name: string;
+  title: string;
+  onEmit: (event: OnEmitEvent) => void;
+  payload: unknown;
+}
 
-class Item extends Component {
+interface ItemState {
+  isTextAreaShowed: boolean;
+  failed: boolean;
+  payload: unknown;
+  payloadString: string;
+  prevPayload: unknown;
+}
+
+class Item extends Component<ItemProps, ItemState> {
   static propTypes = {
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -98,12 +121,16 @@ class Item extends Component {
     payload: {},
   };
 
-  state = {
+  state: ItemState = {
     isTextAreaShowed: false,
+    failed: false,
+    payload: null,
+    payloadString: '',
+    prevPayload: null,
   };
 
-  onChange = ({ target: { value } }) => {
-    const newState = {
+  onChange = ({ target: { value } }: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const newState: Partial<ItemState> = {
       payloadString: value,
     };
 
@@ -114,7 +141,7 @@ class Item extends Component {
       newState.failed = true;
     }
 
-    this.setState(newState);
+    this.setState(state => ({ ...state, ...newState }));
   };
 
   onEmitClick = () => {
@@ -133,7 +160,7 @@ class Item extends Component {
     }));
   };
 
-  static getDerivedStateFromProps = ({ payload }, { prevPayload }) => {
+  static getDerivedStateFromProps = ({ payload }: ItemProps, { prevPayload }: ItemState) => {
     if (!isEqual(payload, prevPayload)) {
       const payloadString = json.plain(payload);
       const refinedPayload = getJSONFromString(payloadString);
@@ -150,7 +177,6 @@ class Item extends Component {
   render() {
     const { title, name } = this.props;
     const { failed, isTextAreaShowed, payloadString } = this.state;
-
     return (
       <Wrapper>
         <Label htmlFor={`addon-event-${name}`}>{title}</Label>

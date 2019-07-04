@@ -19,11 +19,12 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@storybook/api": "5.2.0-alpha.35",
     "@storybook/addons": "5.2.0-alpha.35",
     "@storybook/core-events": "5.2.0-alpha.35",
     "@storybook/theming": "5.2.0-alpha.35",

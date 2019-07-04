@@ -8,7 +8,6 @@ export function register() {
   addons.register(ADDON_ID, api => {
     addons.addPanel(PANEL_ID, {
       title: 'Events',
-      // eslint-disable-next-line react/prop-types
       render: ({ active, key }) => <Panel key={key} api={api} active={active} />,
       paramKey: PARAM_KEY,
     });
