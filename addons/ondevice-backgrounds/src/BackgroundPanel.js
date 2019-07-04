@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Events from '@storybook/core-events';
 import Swatch from './Swatch';
-
 import BackgroundEvents, { PARAM_KEY } from './constants';
+
 const codeSample = `
 import { storiesOf } from '@storybook/react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
