@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Events from '@storybook/core-events';
 import Swatch from './Swatch';
-import Constants from './constants';
+import Constants, { PARAM_KEY } from './constants';
 
 const codeSample = `
 import { storiesOf } from '@storybook/react-native';
@@ -63,7 +63,7 @@ export default class BackgroundPanel extends Component {
     const story = api
       .store()
       .getStoryAndParameters(this.state.selection.kind, this.state.selection.story);
-    const backgrounds = story.parameters[Constants.PARAM_KEY];
+    const backgrounds = story.parameters[PARAM_KEY];
 
     return (
       <View>
