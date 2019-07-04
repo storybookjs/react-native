@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Events from '@storybook/core-events';
 import Swatch from './Swatch';
-import Constants, { PARAM_KEY } from './constants';
 
+import BackgroundEvents, { PARAM_KEY } from './constants';
 const codeSample = `
 import { storiesOf } from '@storybook/react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
@@ -46,7 +46,7 @@ export default class BackgroundPanel extends Component {
   }
 
   setBackgroundFromSwatch = background => {
-    this.props.channel.emit(Constants.UPDATE_BACKGROUND, background);
+    this.props.channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
   };
 
   onStorySelected = selection => {
