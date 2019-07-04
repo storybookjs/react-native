@@ -229,5 +229,3 @@ export const limitActionOutput = () => {
 limitActionOutput.story = {
   name: 'Limit Action Output',
 };
-
-const rerunCI = 'rerunCI';
