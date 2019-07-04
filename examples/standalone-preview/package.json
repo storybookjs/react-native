@@ -1,6 +1,6 @@
 {
   "name": "standalone-preview",
-  "version": "5.2.0-alpha.34",
+  "version": "5.2.0-alpha.35",
   "private": true,
   "scripts": {
     "storybook": "parcel ./storybook.html --port 1337"
