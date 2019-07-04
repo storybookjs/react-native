@@ -1,1 +1,1 @@
-{"version":"5.2.0-alpha.33","info":{"plain":"### Features\n\n* CLI: Add `--preview-url` for custom preview ([#7235](https://github.com/storybookjs/storybook/pull/7235))\n\n### Bug Fixes\n\n* React-Native: Upgrade to new `story_store` API ([#7234](https://github.com/storybookjs/storybook/pull/7234))"}}
+{"version":"5.2.0-alpha.35","info":{"plain":"### Bug Fixes\n\n* React-Native: Fix null story check ([#7243](https://github.com/storybookjs/storybook/pull/7243))"}}

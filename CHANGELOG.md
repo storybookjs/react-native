@@ -1,3 +1,17 @@
+## 5.2.0-alpha.35 (July 3, 2019)
+
+### Bug Fixes
+
+* React-Native: Fix null story check ([#7243](https://github.com/storybookjs/storybook/pull/7243))
+
+## 5.2.0-alpha.34 (July 2, 2019)
+
+### Bug Fixes
+
+* CLI: Fix `--preview-url` for static builds ([#7245](https://github.com/storybookjs/storybook/pull/7245))
+* Addon-docs: Fix non-React support & add Vue example ([#7222](https://github.com/storybookjs/storybook/pull/7222))
+* CLI: Move the free port logic so that loadOptions don't override it ([#7237](https://github.com/storybookjs/storybook/pull/7237))
+
 ## 5.2.0-alpha.33 (July 1, 2019)
 
 ### Features

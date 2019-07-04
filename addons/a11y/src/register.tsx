@@ -2,7 +2,7 @@ import React, { Fragment, FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 
 import { addons, types } from '@storybook/addons';
-import { ADDON_ID, PANEL_ID } from './constants';
+import { ADDON_ID, PANEL_ID, PARAM_KEY } from './constants';
 import { ColorBlindness } from './components/ColorBlindness';
 import { A11YPanel } from './components/A11YPanel';
 
@@ -94,6 +94,7 @@ addons.register(ADDON_ID, api => {
     title: 'Accessibility',
     type: types.PANEL,
     render: ({ active, key }) => <A11YPanel key={key} api={api} active={active} />,
+    paramKey: PARAM_KEY,
   });
 
   addons.add(PANEL_ID, {
