@@ -1,4 +1,5 @@
 // addons, panels and events get unique names using a prefix
+export const PARAM_KEY = 'knobs';
 export const ADDON_ID = 'storybookjs/knobs';
 export const PANEL_ID = `${ADDON_ID}/panel`;
 

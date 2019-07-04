@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI|Addon Panel default 1`] = `
+<div>
+  By default all addon panels are rendered
+</div>
+`;
+
+exports[`Storyshots UI|Addon Panel disable panel 1`] = `
+<div>
+  This story disables Actions and Accessibility panels
+  <pre>
+    storiesOf('UI|Addon Panel', module)
+  .add(
+    'my story',
+    &lt;MyComponent /&gt;,
+    { a11y: { disable: true }, actions: { disable: true } }
+  );
+  </pre>
+</div>
+`;

@@ -24,6 +24,7 @@ export interface Addon {
   route?: (routeOptions: RouteOptions) => string;
   match?: (matchOptions: MatchOptions) => boolean;
   render: (renderOptions: RenderOptions) => ReactElement<any>;
+  paramKey?: string;
 }
 
 export type Loader = (api: API) => void;
