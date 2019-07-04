@@ -39,6 +39,17 @@ module.exports = {
           noquotes: true,
         },
       },
+      {
+        test: /\.stories\.jsx?$/,
+        loader: require.resolve('@storybook/source-loader'),
+        options: {
+          injectParameters: true,
+          inspectLocalDependencies: false,
+          inspectDependencies: false,
+        },
+        include: [path.resolve(__dirname, '../stories')],
+        enforce: 'pre',
+      },
     ],
   },
   resolve: {
