@@ -1,7 +1,6 @@
 /* eslint-disable import/export */
-import { window } from 'global';
 import { logger } from '@storybook/client-logger';
-import addons from '@storybook/addons';
+import addons, { StoryGetter, StoryContext } from '@storybook/addons';
 import { FORCE_RE_RENDER } from '@storybook/core-events';
 
 interface StoryStore {
@@ -29,6 +28,7 @@ interface Effect {
   destroy?: (() => void) | void;
 }
 
+type Decorator = (getStory: StoryGetter, context: StoryContext) => any;
 type AbstractFunction = (...args: any[]) => any;
 
 const hookListsMap = new WeakMap<AbstractFunction, Hook[]>();
@@ -46,6 +46,7 @@ let currentEffects: Effect[] = [];
 let prevEffects: Effect[] = [];
 let currentDecoratorName: string | null = null;
 let hasUpdates = false;
+let currentContext: StoryContext | null = null;
 
 const triggerEffects = () => {
   // destroy removed effects
@@ -101,17 +102,18 @@ const hookify = (fn: AbstractFunction) => (...args: any[]) => {
 let numberOfRenders = 0;
 const RENDER_LIMIT = 25;
 export const applyHooks = (
-  applyDecorators: (storyFn: AbstractFunction, decorators: AbstractFunction[]) => any
-) => (storyFn: AbstractFunction, decorators: AbstractFunction[]) => {
-  const decorated = applyDecorators(hookify(storyFn), decorators.map(hookify));
-  return (...args: any[]) => {
+  applyDecorators: (getStory: StoryGetter, decorators: Decorator[]) => StoryGetter
+) => (getStory: StoryGetter, decorators: Decorator[]) => {
+  const decorated = applyDecorators(hookify(getStory), decorators.map(hookify));
+  return (context: StoryContext) => {
+    currentContext = context;
     hasUpdates = false;
-    let result = decorated(...args);
-    mountedDecorators = new Set([storyFn, ...decorators]);
+    let result = decorated(context);
+    mountedDecorators = new Set([getStory, ...decorators]);
     numberOfRenders = 1;
     while (hasUpdates) {
       hasUpdates = false;
-      result = decorated(...args);
+      result = decorated(context);
       numberOfRenders += 1;
       if (numberOfRenders > RENDER_LIMIT) {
         throw new Error(
@@ -120,6 +122,7 @@ export const applyHooks = (
       }
     }
     triggerEffects();
+    currentContext = null;
     return result;
   };
 };
@@ -207,7 +210,7 @@ export function useRef<T>(initialValue: T): { current: T } {
 }
 
 function triggerUpdate() {
-  // Rerun storyFn if updates were triggered synchronously, force rerender otherwise
+  // Rerun getStory if updates were triggered synchronously, force rerender otherwise
   if (currentPhase !== 'NONE') {
     hasUpdates = true;
   } else {
@@ -290,21 +293,20 @@ export function useChannel(eventMap: EventMap, deps: any[] = []) {
   return channel.emit.bind(channel);
 }
 
+export function useStoryContext(): StoryContext {
+  if (currentContext == null) {
+    throw new Error(
+      'Storybook preview hooks can only be called inside decorators and story functions.'
+    );
+  }
+
+  return currentContext;
+}
+
 export function useParameter<S>(parameterKey: string, defaultValue?: S): S | undefined {
-  /*
-    TODO: come up with a better way of reaching the storyStore without a global variable 
-   */
-  // @ts-ignore
-  const { __STORYBOOK_STORY_STORE__ } = window;
-  const api: StoryStore = __STORYBOOK_STORY_STORE__;
-  const { storyId } = api.getSelection();
-
-  if (storyId) {
-    const { parameters } = api.fromId(storyId);
-
-    if (parameterKey) {
-      return parameters[parameterKey] || (defaultValue as S);
-    }
+  const { parameters } = useStoryContext();
+  if (parameterKey) {
+    return parameters[parameterKey] || (defaultValue as S);
   }
   return undefined;
 }

@@ -1,6 +1,7 @@
 node_modules
 *.log
 .idea
+*.iml
 .vscode
 *.sw*
 npm-shrinkwrap.json
