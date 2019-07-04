@@ -193,10 +193,12 @@ function useMemoLike<T>(name: string, nextCreate: () => T, deps: any[] | undefin
   return memoizedState;
 }
 
+/* Returns a memoized value, see https://reactjs.org/docs/hooks-reference.html#usememo */
 export function useMemo<T>(nextCreate: () => T, deps?: any[]): T {
   return useMemoLike('useMemo', nextCreate, deps);
 }
 
+/* Returns a memoized callback, see https://reactjs.org/docs/hooks-reference.html#usecallback */
 export function useCallback<T>(callback: T, deps?: any[]): T {
   return useMemoLike('useCallback', () => callback, deps);
 }
@@ -205,6 +207,7 @@ function useRefLike<T>(name: string, initialValue: T): { current: T } {
   return useMemoLike(name, () => ({ current: initialValue }), []);
 }
 
+/* Returns a mutable ref object, see https://reactjs.org/docs/hooks-reference.html#useref */
 export function useRef<T>(initialValue: T): { current: T } {
   return useRefLike('useRef', initialValue);
 }
@@ -239,12 +242,14 @@ function useStateLike<S>(
   return [stateRef.current, setState];
 }
 
+/* Returns a stateful value, and a function to update it, see https://reactjs.org/docs/hooks-reference.html#usestate */
 export function useState<S>(
   initialState: (() => S) | S
 ): [S, (update: ((prevState: S) => S) | S) => void] {
   return useStateLike('useState', initialState);
 }
 
+/* A redux-like alternative to useState, see https://reactjs.org/docs/hooks-reference.html#usereducer */
 export function useReducer<S, A>(
   reducer: (state: S, action: A) => S,
   initialState: S
@@ -265,6 +270,10 @@ export function useReducer<S, A>(
   return [state, dispatch];
 }
 
+/*
+  Triggers a side effect, see https://reactjs.org/docs/hooks-reference.html#usestate
+  Effects are triggered synchronously after calling the decorated story function
+*/
 export function useEffect(create: () => (() => void) | void, deps?: any[]): void {
   const effect = useMemoLike('useEffect', () => ({ create }), deps);
   currentEffects.push(effect);
@@ -279,6 +288,7 @@ export interface EventMap {
   [eventId: string]: Listener;
 }
 
+/* Accepts a map of Storybook channel event listeners, returns an emit function */
 export function useChannel(eventMap: EventMap, deps: any[] = []) {
   const channel = addons.getChannel();
   useEffect(() => {
@@ -293,6 +303,7 @@ export function useChannel(eventMap: EventMap, deps: any[] = []) {
   return channel.emit.bind(channel);
 }
 
+/* Returns current story context */
 export function useStoryContext(): StoryContext {
   if (currentContext == null) {
     throw new Error(
@@ -303,6 +314,7 @@ export function useStoryContext(): StoryContext {
   return currentContext;
 }
 
+/* Returns current value of a story parameter */
 export function useParameter<S>(parameterKey: string, defaultValue?: S): S | undefined {
   const { parameters } = useStoryContext();
   if (parameterKey) {
