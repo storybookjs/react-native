@@ -8,13 +8,7 @@ import { toId } from '@storybook/router/utils';
 import mergeWith from 'lodash/mergeWith';
 import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
-import {
-  ClientApiParams,
-  StoryApi,
-  ClientApiAddon,
-  DecoratorFunction,
-  ClientApiAddons,
-} from './types';
+import { ClientApiParams, DecoratorFunction, ClientApiAddons, StoryApi } from './types';
 import subscriptionsStore from './subscriptions_store';
 import StoryStore from './story_store';
 
@@ -79,7 +73,7 @@ const withSubscriptionTracking = (storyFn: StoryFn) => {
 export default class ClientApi {
   private _storyStore: StoryStore;
 
-  private _addons: ClientApiAddons;
+  private _addons: ClientApiAddons<unknown>;
 
   private _globalDecorators: DecoratorFunction[];
 
@@ -136,7 +130,7 @@ export default class ClientApi {
   };
 
   // what are the occasions that "m" is simply a boolean, vs an obj
-  storiesOf = (kind: string, m: any) => {
+  storiesOf = <TApi = unknown>(kind: string, m: NodeModule): StoryApi<TApi> => {
     if (!kind && typeof kind !== 'string') {
       throw new Error('Invalid or missing kind provided for stories, should be a string');
     }
@@ -158,8 +152,8 @@ export default class ClientApi {
     const localDecorators: DecoratorFunction[] = [];
     let localParameters: Parameters = {};
     let hasAdded = false;
-    const api: StoryApi = {
-      kind,
+    const api: StoryApi<TApi> = {
+      kind: kind.toString(),
       add: () => api,
       addDecorator: () => api,
       addParameters: () => api,
@@ -167,14 +161,14 @@ export default class ClientApi {
 
     // apply addons
     Object.keys(this._addons).forEach(name => {
-      const addon = this._addons[name] as ClientApiAddon;
+      const addon = this._addons[name];
       api[name] = (...args: any[]) => {
         addon.apply(api, args);
         return api;
       };
     });
 
-    api.add = (storyName: string, storyFn: StoryFn, parameters: Parameters) => {
+    api.add = (storyName, storyFn, parameters) => {
       hasAdded = true;
       const { _globalParameters, _globalDecorators } = this;
 
@@ -243,7 +237,7 @@ export default class ClientApi {
       return api;
     };
 
-    api.addDecorator = (decorator: () => void) => {
+    api.addDecorator = (decorator: DecoratorFunction) => {
       if (hasAdded) {
         logger.warn(`You have added a decorator to the kind '${kind}' after a story has already been added.
 In Storybook 4 this applied the decorator only to subsequent stories. In Storybook 5+ it applies to all stories.
@@ -254,7 +248,7 @@ This is probably not what you intended. Read more here: https://github.com/story
       return api;
     };
 
-    api.addParameters = (parameters: any) => {
+    api.addParameters = (parameters: Parameters) => {
       localParameters = { ...localParameters, ...parameters };
       return api;
     };

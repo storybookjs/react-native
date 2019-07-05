@@ -22,13 +22,16 @@ export interface ClientApiParams {
   decorateStory: (storyFn: any, decorators: any) => any;
 }
 
-export interface StoryApi {
-  addDecorator: (decorator: any) => StoryApi;
-  addParameters: (parameters: any) => StoryApi;
-  add: (storyName: string, getStory: StoryFn, parameters?: Parameters) => StoryApi;
+export type ClientApiReturnFn<TApi> = (...args: any[]) => StoryApi<TApi>;
+
+export interface StoryApi<TApi> {
   kind: string;
-  [key: string]: any;
+  add: (storyName: string, storyFn: StoryFn, parameters: Parameters) => StoryApi<TApi>;
+  addDecorator: (decorator: DecoratorFunction) => StoryApi<TApi>;
+  addParameters: (parameters: Parameters) => StoryApi<TApi>;
+  [k: string]: string | ClientApiReturnFn<TApi>;
 }
+
 export type DecoratorFunction = (fn: StoryFn, c: StoryContext) => ReturnType<StoryFn>;
 
 export interface LegacyItem {
@@ -52,9 +55,9 @@ export interface LegacyData {
   [K: string]: LegacyItem;
 }
 
-export interface ClientApiAddon extends Addon {
-  apply: (a: StoryApi, b: any[]) => any;
+export interface ClientApiAddon<TApi = unknown> extends Addon {
+  apply: (a: StoryApi<TApi>, b: any[]) => any;
 }
-export interface ClientApiAddons {
-  [key: string]: ClientApiAddon;
+export interface ClientApiAddons<TApi> {
+  [key: string]: ClientApiAddon<TApi>;
 }
