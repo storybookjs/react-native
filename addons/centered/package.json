@@ -28,9 +28,12 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/mithril": "^1.1.16"
+    "@types/mithril": "^1.1.16",
+    "mithril": "*",
+    "preact": "*",
+    "react": "*"
   },
-  "optionalDependencies": {
+  "peerDependencies": {
     "mithril": "*",
     "preact": "*",
     "react": "*"

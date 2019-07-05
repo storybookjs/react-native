@@ -36,9 +36,12 @@
   },
   "peerDependencies": {
     "global": "*",
-    "qs": "*"
+    "qs": "*",
+    "preact": "*",
+    "react": "*",
+    "vue": "*"
   },
-  "optionalDependencies": {
+  "devDependencies": {
     "preact": "*",
     "react": "*",
     "vue": "*"
