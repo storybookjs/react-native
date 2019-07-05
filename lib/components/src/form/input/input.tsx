@@ -1,5 +1,5 @@
+import React from 'react';
 import { styled, Theme } from '@storybook/theming';
-import { withProps } from 'recompose';
 
 import TextareaAutoResize from 'react-textarea-autosize';
 
@@ -119,17 +119,19 @@ export const Textarea = styled(TextareaAutoResize)(
 ) as any;
 Textarea.displayName = 'Textarea';
 
-export const Button = withProps({ tertiary: true, small: true, inForm: true })(
-  styled(StyledButton)(sizes as any, validation as any, {
-    // Custom styling for color widget nested in buttons
-    userSelect: 'none',
-    overflow: 'visible',
-    zIndex: 2,
+const ButtonStyled = styled(StyledButton)(sizes, validation, {
+  // Custom styling for color widget nested in buttons
+  userSelect: 'none',
+  overflow: 'visible',
+  zIndex: 2,
 
-    // overrides the default hover from Button
-    '&:hover': {
-      transform: 'none',
-    },
-  })
-) as any;
+  // overrides the default hover from Button
+  '&:hover': {
+    transform: 'none',
+  },
+});
+
+export const Button = (props: JSX.IntrinsicAttributes) => (
+  <ButtonStyled {...props} {...{ tertiary: true, small: true, inForm: true }} />
+);
 Button.displayName = 'Button';

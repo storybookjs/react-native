@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import TooltipTrigger from 'react-popper-tooltip';
-import { withState } from 'recompose';
 
 import Tooltip from './Tooltip';
 
@@ -27,10 +26,12 @@ function WithTooltip({
   hasChrome,
   tooltip,
   children,
-  tooltipShown,
-  onVisibilityChange,
+  startOpen,
+  // tooltipShown,
+  // onVisibilityChange,
   ...props
 }) {
+  const [tooltipShown, onVisibilityChange] = useState(startOpen);
   const Container = svg ? TargetSvgContainer : TargetContainer;
   return (
     <TooltipTrigger
@@ -90,6 +91,4 @@ WithTooltip.defaultProps = {
   hasChrome: true,
 };
 
-export default withState('tooltipShown', 'onVisibilityChange', ({ startOpen }) => startOpen)(
-  WithTooltip
-);
+export default WithTooltip;
