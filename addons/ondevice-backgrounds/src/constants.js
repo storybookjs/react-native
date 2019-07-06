@@ -6,5 +6,4 @@ export default {
   SET: `${ADDON_ID}:set`,
   UNSET: `${ADDON_ID}:unset`,
   UPDATE_BACKGROUND: `${ADDON_ID}:update`,
-  PARAM_KEY: 'backgrounds',
 };

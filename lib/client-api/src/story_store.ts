@@ -140,7 +140,16 @@ export default class StoryStore extends EventEmitter {
 
   remove = (id: string): void => {
     const { _data } = this;
+    const story = _data[id];
     delete _data[id];
+
+    if (story) {
+      const { kind, name } = story;
+      const kindData = this._legacydata[toKey(kind)];
+      if (kindData) {
+        delete kindData.stories[toKey(name)];
+      }
+    }
   };
 
   addStory(
@@ -315,7 +324,14 @@ export default class StoryStore extends EventEmitter {
 
   removeStoryKind(kind: string) {
     if (this.hasStoryKind(kind)) {
-      this._legacydata[toKey(kind) as string].stories = {};
+      this._legacydata[toKey(kind)].stories = {};
+
+      this._data = Object.entries(this._data).reduce((acc, [id, story]) => {
+        if (story.kind !== kind) {
+          Object.assign(acc, { [id]: story });
+        }
+        return acc;
+      }, {});
     }
   }
 

@@ -95,6 +95,41 @@ describe('preview.story_store', () => {
       const store = new StoryStore({ channel });
       store.removeStoryKind('kind');
     });
+    it('should remove the kind in both modern and legacy APIs', () => {
+      const store = new StoryStore({ channel });
+      store.addStory(...make('kind-1', 'story-1.1', () => 0));
+      store.addStory(...make('kind-1', 'story-1.2', () => 0));
+      store.addStory(...make('kind-2', 'story-2.1', () => 0));
+      store.addStory(...make('kind-2', 'story-2.2', () => 0));
+
+      store.removeStoryKind('kind-1');
+
+      // _legacydata
+      expect(store.hasStory('kind-1', 'story-1.1')).toBeFalsy();
+      expect(store.hasStory('kind-2', 'story-2.1')).toBeTruthy();
+
+      // _data
+      expect(store.fromId(toId('kind-1', 'story-1.1'))).toBeFalsy();
+      expect(store.fromId(toId('kind-2', 'story-2.1'))).toBeTruthy();
+    });
+  });
+
+  describe('remove', () => {
+    it('should remove the kind in both modern and legacy APIs', () => {
+      const store = new StoryStore({ channel });
+      store.addStory(...make('kind-1', 'story-1.1', () => 0));
+      store.addStory(...make('kind-1', 'story-1.2', () => 0));
+
+      store.remove(toId('kind-1', 'story-1.1'));
+
+      // _legacydata
+      expect(store.hasStory('kind-1', 'story-1.1')).toBeFalsy();
+      expect(store.hasStory('kind-1', 'story-1.2')).toBeTruthy();
+
+      // _data
+      expect(store.fromId(toId('kind-1', 'story-1.1'))).toBeFalsy();
+      expect(store.fromId(toId('kind-1', 'story-1.2'))).toBeTruthy();
+    });
   });
 
   describe('getStoryAndParameters', () => {
