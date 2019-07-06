@@ -36,6 +36,7 @@ FilesType.defaultProps = {
 FilesType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
+    accept: PropTypes.any,
   }),
   onChange: PropTypes.func,
 };

@@ -175,8 +175,6 @@ export default class KnobPanel extends PureComponent {
         render: ({ active }) => (
           <TabWrapper key={knobKeyGroupId} active={active}>
             <PropForm
-              // false positive
-              // eslint-disable-next-line no-use-before-define
               knobs={knobsArray.filter(
                 knob => (knob.groupId || DEFAULT_GROUP_ID) === knobKeyGroupId
               )}
@@ -257,6 +255,8 @@ KnobPanel.propTypes = {
   onReset: PropTypes.object, // eslint-disable-line
   api: PropTypes.shape({
     on: PropTypes.func,
+    off: PropTypes.func,
+    emit: PropTypes.func,
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,
   }).isRequired,

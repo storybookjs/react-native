@@ -98,6 +98,7 @@ CheckboxesType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.array,
+    defaultValue: PropTypes.any,
     options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   }),
   onChange: PropTypes.func,
