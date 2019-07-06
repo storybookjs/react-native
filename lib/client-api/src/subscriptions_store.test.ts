@@ -12,7 +12,7 @@ const mockSubscription = () => {
         listening = false;
       };
     },
-    trigger(value) {
+    trigger(value?) {
       if (listening) {
         listener(value);
       }

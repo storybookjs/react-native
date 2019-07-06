@@ -1,9 +1,32 @@
+// /<reference types="webpack-env" />
 /* eslint no-underscore-dangle: 0 */
 
 import Events from '@storybook/core-events';
+import Channel from '@storybook/channels';
+import { ErrorLike } from './types';
+import StoryStore from './story_store';
+import ClientApi from './client_api';
 
 export default class ConfigApi {
-  constructor({ channel, storyStore, clearDecorators, clientApi }) {
+  _channel: Channel;
+
+  _storyStore: StoryStore;
+
+  _clearDecorators: () => void;
+
+  clientApi: ClientApi;
+
+  constructor({
+    channel,
+    storyStore,
+    clientApi,
+    clearDecorators,
+  }: {
+    channel: Channel | null;
+    storyStore: StoryStore;
+    clientApi: ClientApi;
+    clearDecorators: () => void;
+  }) {
     // channel can be null when running in node
     // always check whether channel is available
     this._channel = channel;
@@ -17,7 +40,13 @@ export default class ConfigApi {
     this._storyStore.emit(Events.STORY_INIT);
   }
 
-  configure = (loaders, m) => {
+  _renderError(err: Error) {
+    const { stack, message } = err;
+    const error: ErrorLike = { stack, message };
+    this._storyStore.setSelection(undefined, error);
+  }
+
+  configure = (loaders: () => void, module: NodeModule) => {
     const render = () => {
       const errors = [];
 
@@ -42,13 +71,13 @@ export default class ConfigApi {
 
         throw errors[0];
       } else {
-        this._storyStore.setSelection(undefined, null);
+        this._storyStore.setSelection(undefined, undefined);
       }
     };
 
-    if (m.hot) {
-      m.hot.accept();
-      m.hot.dispose(() => {
+    if (module.hot) {
+      module.hot.accept();
+      module.hot.dispose(() => {
         this._clearDecorators();
       });
     }

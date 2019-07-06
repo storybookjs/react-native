@@ -5,6 +5,7 @@
   "keywords": [
     "storybook"
   ],
+  "types": "dist/public_api.d.ts",
   "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/client-api",
   "bugs": {
     "url": "https://github.com/storybookjs/storybook/issues"
@@ -21,6 +22,8 @@
   },
   "dependencies": {
     "@storybook/addons": "5.2.0-alpha.36",
+    "@storybook/channel-postmessage": "5.2.0-alpha.36",
+    "@storybook/channels": "5.2.0-alpha.36",
     "@storybook/client-logger": "5.2.0-alpha.36",
     "@storybook/core-events": "5.2.0-alpha.36",
     "@storybook/router": "5.2.0-alpha.36",

@@ -9,7 +9,8 @@ export const getQueryParams = () => {
   return {};
 };
 
-export const getQueryParam = key => {
+export const getQueryParam = (key: string): string | void => {
   const params = getQueryParams();
+
   return params[key];
 };

@@ -4,25 +4,35 @@ import memoize from 'memoizerific';
 import debounce from 'lodash/debounce';
 import { stripIndents } from 'common-tags';
 
+import { Channel } from '@storybook/channels';
 import Events from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
+import { StoryContext, StoryFn, Parameters } from '@storybook/addons';
+import {
+  DecoratorFunction,
+  LegacyData,
+  LegacyItem,
+  StoreData,
+  AddStoryArgs,
+  StoreItem,
+  ErrorLike,
+} from './types';
 
 // TODO: these are copies from components/nav/lib
 // refactor to DRY
-
-const toKey = input =>
+const toKey = (input: string) =>
   input.replace(/[^a-z0-9]+([a-z0-9])/gi, (...params) => params[1].toUpperCase());
 
-const toChild = it => ({ ...it });
+const toChild = (it: {}) => ({ ...it });
 
 let count = 0;
 
-function getId() {
+const getId = (): number => {
   count += 1;
   return count;
-}
+};
 
-const toExtracted = obj =>
+const toExtracted = <T>(obj: T) =>
   Object.entries(obj).reduce((acc, [key, value]) => {
     if (typeof value === 'function') {
       return acc;
@@ -33,25 +43,45 @@ const toExtracted = obj =>
     return Object.assign(acc, { [key]: value });
   }, {});
 
+interface Selection {
+  storyId: string;
+  viewMode: string;
+}
+
 export default class StoryStore extends EventEmitter {
-  constructor(params) {
+  _error?: ErrorLike;
+
+  _channel: Channel;
+
+  _data: StoreData;
+
+  _legacyData?: LegacyData;
+
+  _legacydata: LegacyData;
+
+  _revision: number;
+
+  _selection: Selection;
+
+  constructor(params: { channel: Channel }) {
     super();
 
-    this._legacydata = {};
-    this._data = {};
+    this._legacydata = ({} as any) as LegacyData;
+    this._data = ({} as any) as StoreData;
     this._revision = 0;
-    this._selection = {};
+    this._selection = ({} as any) as Selection;
     this._channel = params.channel;
+    this._error = undefined;
   }
 
-  setChannel = channel => {
+  setChannel = (channel: Channel) => {
     this._channel = channel;
   };
 
   // NEW apis
-  fromId = id => {
+  fromId = (id: string): StoreItem | null => {
     try {
-      const data = this._data[id];
+      const data = this._data[id as string];
 
       if (!data || !data.getDecorated) {
         return null;
@@ -61,13 +91,9 @@ export default class StoryStore extends EventEmitter {
     } catch (e) {
       logger.warn('failed to get story:', this._data);
       logger.error(e);
-      return {};
+      return null;
     }
   };
-
-  setSeparators(data) {
-    this.separators = data;
-  }
 
   raw() {
     return Object.values(this._data)
@@ -80,7 +106,8 @@ export default class StoryStore extends EventEmitter {
     // determine if we should apply a sort to the stories or just use default import order
     if (Object.values(this._data).length > 0) {
       const index = Object.keys(this._data).find(
-        key => this._data[key] && this._data[key].parameters && this._data[key].parameters.options
+        key =>
+          !!(this._data[key] && this._data[key].parameters && this._data[key].parameters.options)
       );
       if (index && this._data[index].parameters.options.storySort) {
         const sortFn = this._data[index].parameters.options.storySort;
@@ -91,10 +118,9 @@ export default class StoryStore extends EventEmitter {
     return stories.reduce((a, [k, v]) => Object.assign(a, { [k]: toExtracted(v) }), {});
   }
 
-  setSelection = (data, error) => {
-    const { storyId, viewMode } = data || {};
-
-    this._selection = data === undefined ? this._selection : { storyId, viewMode };
+  setSelection(data: Selection | undefined, error: ErrorLike): void {
+    this._selection =
+      data === undefined ? this._selection : { storyId: data.storyId, viewMode: data.viewMode };
     this._error = error === undefined ? this._error : error;
 
     setTimeout(() => {
@@ -106,13 +132,13 @@ export default class StoryStore extends EventEmitter {
       // should be deprecated in future.
       this.emit(Events.STORY_RENDER);
     }, 1);
-  };
+  }
 
-  getSelection = () => this._selection;
+  getSelection = (): Selection => this._selection;
 
-  getError = () => this._error;
+  getError = (): ErrorLike | undefined => this._error;
 
-  remove = id => {
+  remove = (id: string): void => {
     const { _data } = this;
     const story = _data[id];
     delete _data[id];
@@ -127,8 +153,14 @@ export default class StoryStore extends EventEmitter {
   };
 
   addStory(
-    { id, kind, name, storyFn: original, parameters = {} },
-    { getDecorators, applyDecorators }
+    { id, kind, name, storyFn: original, parameters = {} }: AddStoryArgs,
+    {
+      getDecorators,
+      applyDecorators,
+    }: {
+      getDecorators: () => DecoratorFunction[];
+      applyDecorators: (fn: StoryFn, decorators: DecoratorFunction[]) => any;
+    }
   ) {
     const { _data } = this;
 
@@ -152,11 +184,14 @@ export default class StoryStore extends EventEmitter {
     const getOriginal = () => original;
 
     // lazily decorate the story when it's loaded
-    const getDecorated = memoize(1)(() => applyDecorators(getOriginal(), getDecorators()));
+    const getDecorated: () => StoryFn = memoize(1)(() =>
+      applyDecorators(getOriginal(), getDecorators())
+    );
 
-    const storyFn = p => getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
+    const storyFn: StoryFn = (p: StoryContext) =>
+      getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
 
-    _data[id] = toChild({
+    _data[id] = {
       ...identification,
 
       getDecorated,
@@ -164,7 +199,7 @@ export default class StoryStore extends EventEmitter {
       storyFn,
 
       parameters,
-    });
+    };
 
     // LEGACY DATA
     this.addLegacyStory({ kind, name, storyFn, parameters });
@@ -191,10 +226,20 @@ export default class StoryStore extends EventEmitter {
     this._revision += 1;
   }
 
-  addLegacyStory({ kind, name, storyFn, parameters = {} }) {
+  addLegacyStory({
+    kind,
+    name,
+    storyFn,
+    parameters,
+  }: {
+    kind: string;
+    name: string;
+    storyFn: StoryFn;
+    parameters: Parameters;
+  }) {
     const k = toKey(kind);
-    if (!this._legacydata[k]) {
-      this._legacydata[k] = {
+    if (!this._legacydata[k as string]) {
+      this._legacydata[k as string] = {
         kind,
         fileName: parameters.fileName,
         index: getId(),
@@ -202,7 +247,7 @@ export default class StoryStore extends EventEmitter {
       };
     }
 
-    this._legacydata[k].stories[toKey(name)] = {
+    this._legacydata[k as string].stories[toKey(name)] = {
       name,
       // kind,
       index: getId(),
@@ -213,26 +258,27 @@ export default class StoryStore extends EventEmitter {
 
   getStoryKinds() {
     return Object.values(this._legacydata)
-      .filter(kind => Object.keys(kind.stories).length > 0)
-      .sort((info1, info2) => info1.index - info2.index)
-      .map(info => info.kind);
+      .filter((kind: LegacyItem) => Object.keys(kind.stories).length > 0)
+      .sort((info1: LegacyItem, info2: LegacyItem) => info1.index - info2.index)
+      .map((info: LegacyItem) => info.kind);
   }
 
-  getStories(kind) {
+  getStories(kind: string) {
     const key = toKey(kind);
-    if (!this._legacydata[key]) {
+
+    if (!this._legacydata[key as string]) {
       return [];
     }
 
-    return Object.keys(this._legacydata[key].stories)
-      .map(name => this._legacydata[key].stories[name])
+    return Object.keys(this._legacydata[key as string].stories)
+      .map(name => this._legacydata[key as string].stories[name])
       .sort((info1, info2) => info1.index - info2.index)
       .map(info => info.name);
   }
 
-  getStoryFileName(kind) {
+  getStoryFileName(kind: string) {
     const key = toKey(kind);
-    const storiesKind = this._legacydata[key];
+    const storiesKind = this._legacydata[key as string];
     if (!storiesKind) {
       return null;
     }
@@ -240,12 +286,12 @@ export default class StoryStore extends EventEmitter {
     return storiesKind.fileName;
   }
 
-  getStoryAndParameters(kind, name) {
+  getStoryAndParameters(kind: string, name: string) {
     if (!kind || !name) {
       return null;
     }
 
-    const storiesKind = this._legacydata[toKey(kind)];
+    const storiesKind = this._legacydata[toKey(kind) as string];
     if (!storiesKind) {
       return null;
     }
@@ -262,22 +308,21 @@ export default class StoryStore extends EventEmitter {
     };
   }
 
-  getStory(kind, name) {
+  getStory(kind: string, name: string) {
     const data = this.getStoryAndParameters(kind, name);
     return data && data.story;
   }
 
-  getStoryWithContext(kind, name) {
+  getStoryWithContext(kind: string, name: string) {
     const data = this.getStoryAndParameters(kind, name);
     if (!data) {
       return null;
     }
-
     const { story } = data;
     return story;
   }
 
-  removeStoryKind(kind) {
+  removeStoryKind(kind: string) {
     if (this.hasStoryKind(kind)) {
       this._legacydata[toKey(kind)].stories = {};
 
@@ -290,11 +335,11 @@ export default class StoryStore extends EventEmitter {
     }
   }
 
-  hasStoryKind(kind) {
-    return Boolean(this._legacydata[toKey(kind)]);
+  hasStoryKind(kind: string) {
+    return Boolean(this._legacydata[toKey(kind) as string]);
   }
 
-  hasStory(kind, name) {
+  hasStory(kind: string, name: string) {
     return Boolean(this.getStory(kind, name));
   }
 
@@ -312,6 +357,6 @@ export default class StoryStore extends EventEmitter {
   }
 
   clean() {
-    this.getStoryKinds().forEach(kind => delete this._legacydata[toKey(kind)]);
+    this.getStoryKinds().forEach(kind => delete this._legacydata[toKey(kind) as string]);
   }
 }
