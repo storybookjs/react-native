@@ -96,7 +96,7 @@ export default class KnobManager {
       return this.getKnobValue(existingKnob);
     }
 
-    const knobInfo: Knob & { name: string; defaultValue?: any } = {
+    const knobInfo: Knob & { name: string; label: string; defaultValue?: any } = {
       ...options,
       name: knobName,
       label: name,

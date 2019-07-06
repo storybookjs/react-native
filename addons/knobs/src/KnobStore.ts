@@ -33,6 +33,7 @@ export type Knob =
 
 export type KnobStoreKnob = Knob & {
   name: string;
+  label: string;
   used?: boolean;
   defaultValue?: any;
   hideLabel?: boolean;
