@@ -1,4 +1,3 @@
-// /<reference types="webpack-env" />
 /* eslint no-underscore-dangle: 0 */
 
 import Events from '@storybook/core-events';

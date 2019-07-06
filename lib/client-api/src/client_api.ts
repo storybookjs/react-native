@@ -1,7 +1,7 @@
 /* eslint no-underscore-dangle: 0 */
 import isPlainObject from 'is-plain-object';
 import { logger } from '@storybook/client-logger';
-import addons, { StoryContext, StoryFn, Parameters } from '@storybook/addons';
+import addons, { StoryContext, StoryFn, Parameters, OptionsParameter } from '@storybook/addons';
 import Events from '@storybook/core-events';
 import { toId } from '@storybook/router/utils';
 
@@ -187,7 +187,7 @@ export default class ClientApi {
       const fileName = m && m.id ? `${m.id}` : undefined;
 
       const { hierarchyRootSeparator, hierarchySeparator } = this.getSeparators();
-      const baseOptions: Parameters['options'] = {
+      const baseOptions: OptionsParameter = {
         hierarchyRootSeparator,
         hierarchySeparator,
       };
