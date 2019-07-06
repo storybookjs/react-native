@@ -58,8 +58,10 @@ export default class KnobManager {
   knob(name, options) {
     this._mayCallChannel();
 
+    const knobName = options.groupId ? `${name}_${options.groupId}` : name;
+
     const { knobStore } = this;
-    const existingKnob = knobStore.get(name);
+    const existingKnob = knobStore.get(knobName);
 
     // We need to return the value set by the knob editor via this.
     // Normally the knobs are reset and so re-use is safe as long as the types match
@@ -77,22 +79,23 @@ export default class KnobManager {
 
     const knobInfo = {
       ...options,
-      name,
+      name: knobName,
+      label: name,
     };
 
-    if (knobValuesFromUrl[name]) {
-      const value = deserializers[options.type](knobValuesFromUrl[name]);
+    if (knobValuesFromUrl[knobName]) {
+      const value = deserializers[options.type](knobValuesFromUrl[knobName]);
 
       knobInfo.defaultValue = value;
       knobInfo.value = value;
 
-      delete knobValuesFromUrl[name];
+      delete knobValuesFromUrl[knobName];
     } else {
       knobInfo.defaultValue = options.value;
     }
 
-    knobStore.set(name, knobInfo);
-    return this.getKnobValue(knobStore.get(name));
+    knobStore.set(knobName, knobInfo);
+    return this.getKnobValue(knobStore.get(knobName));
   }
 
   _mayCallChannel() {

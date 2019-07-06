@@ -1,6 +1,5 @@
 /** @jsx h */
 import { h } from 'preact';
-import { storiesOf } from '@storybook/preact';
 import { withContexts } from '@storybook/addon-contexts/preact';
 
 // Example A: Simple CSS Theming
@@ -41,60 +40,19 @@ const storyLevelContexts = [
   },
 ];
 
-const stories = storiesOf('Addons|Contexts', module).addDecorator(withContexts(topLevelContexts));
+export default {
+  title: 'Addons|Contexts',
+  decorators: [withContexts(topLevelContexts)],
+};
 
-stories.add(
-  'Simple CSS Theming',
-  () => <div>I'm a children of the injected 'div' (where provides a theming context).</div>,
-  {
-    contexts: storyLevelContexts,
-  }
+export const simpleCssTheming = () => (
+  <div>I'm a children of the injected 'div' (where provides a theming context).</div>
 );
 
-// TODO: uncomment code block after the adaption of Preact X (need to be imported)
-// Example B: Language (Preact X contextAPI)
-// const NaiveIntlContext = createContext({
-//   locale: 'unknown',
-//   greeting: 'NULL',
-// });
-//
-// stories.add(
-//   'Languages',
-//   () => (
-//     <NaiveIntlContext.Consumer>
-//       {({ locale, greeting }) => `Your locale is "${locale}", so I say "${greeting}"!`}
-//     </NaiveIntlContext.Consumer>
-//   ),
-//   {
-//     contexts: [
-//       {
-//         icon: 'globe',
-//         title: 'Languages',
-//         components: [NaiveIntlContext.Provider],
-//         params: [
-//           {
-//             name: 'English',
-//             props: {
-//               value: { locale: 'en', greeting: 'Hello' },
-//             },
-//           },
-//           {
-//             name: 'French',
-//             props: {
-//               value: { locale: 'fr', greeting: 'Bonjour' },
-//             },
-//           },
-//           {
-//             name: 'Chinese',
-//             props: {
-//               value: { locale: 'cn', greeting: '你好' },
-//             },
-//           },
-//         ],
-//         options: {
-//           cancelable: true,
-//         },
-//       },
-//     ],
-//   }
-// );
+simpleCssTheming.story = {
+  name: 'Simple CSS Theming',
+
+  parameters: {
+    contexts: storyLevelContexts,
+  },
+};

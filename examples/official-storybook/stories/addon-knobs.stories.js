@@ -42,9 +42,6 @@ let injectedItems = [];
 let injectedIsLoading = false;
 
 storiesOf('Addons|Knobs.withKnobs', module)
-  .addParameters({
-    component: withKnobs,
-  })
   .addDecorator(withKnobs)
   .add('tweaks static values', () => {
     const name = text('Name', 'Storyteller');
@@ -141,12 +138,14 @@ storiesOf('Addons|Knobs.withKnobs', module)
       GROUP_IDS.GENERAL
     );
     const years = number('Years in NY', 9, {}, GROUP_IDS.GENERAL);
+    const generalNotes = text('Notes', '', GROUP_IDS.GENERAL);
 
     // Favorites
     const nice = boolean('Nice', true, GROUP_IDS.FAVORITES);
     const fruit = select('Fruit', fruits, 'apple', GROUP_IDS.FAVORITES);
     const otherFruit = radios('Other Fruit', otherFruits, 'watermelon', GROUP_IDS.FAVORITES);
     const items = array('Items', ['Laptop', 'Book', 'Whiskey'], ',', GROUP_IDS.FAVORITES);
+    const favoritesNotes = text('Notes', '', GROUP_IDS.FAVORITES);
 
     // Display
     const backgroundColor = color('Color', 'rgba(126, 211, 33, 0.22)', GROUP_IDS.DISPLAY);
@@ -173,6 +172,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
         <p>Birthday: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}</p>
         <p>Account Balance: {dollars}</p>
         <p>Years in NY: {years}</p>
+        <p>Notes: {generalNotes}</p>
         <hr />
         <h1>Favorites</h1>
         <p>Catchphrase: {salutation}</p>
@@ -185,6 +185,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
           ))}
         </ul>
         <p>When I'm by myself, I say: "{ungrouped}"</p>
+        <p>Notes: {favoritesNotes}</p>
       </div>
     );
   })

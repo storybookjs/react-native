@@ -1,9 +1,5 @@
-import { configure, addParameters } from '@storybook/react';
+import { load, addParameters } from '@storybook/react';
 import { create } from '@storybook/theming/create';
-
-function loadStories() {
-  require('../src/stories');
-}
 
 addParameters({
   options: {
@@ -11,4 +7,4 @@ addParameters({
   },
 });
 
-configure(loadStories, module);
+load(require.context('../src/stories', true, /\.stories\.js$/), module);

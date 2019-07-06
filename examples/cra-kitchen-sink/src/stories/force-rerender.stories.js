@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, forceReRender } from '@storybook/react';
+import { forceReRender } from '@storybook/react';
 
 let count = 0;
 const increment = () => {
@@ -7,8 +7,12 @@ const increment = () => {
   forceReRender();
 };
 
-storiesOf('Force ReRender', module).add('button', () => (
+export default {
+  title: 'Force ReRender',
+};
+
+export const button = () => (
   <button type="button" onClick={increment}>
     Click me to increment: {count}
   </button>
-));
+);

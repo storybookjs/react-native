@@ -65,9 +65,10 @@ function genStoryExport(ast, counter) {
       ${storyCode}
     );`
   );
+  statements.push(`${storyKey}.story = {};`);
 
   if (storyName !== storyKey) {
-    statements.push(`${storyKey}.title = '${storyName}';`);
+    statements.push(`${storyKey}.story.name = '${storyName}';`);
   }
 
   let parameters = getAttr(ast.openingElement, 'parameters');
@@ -76,9 +77,9 @@ function genStoryExport(ast, counter) {
   if (parameters) {
     const { code: params } = generate(parameters, {});
     // FIXME: hack in the story's source as a parameter
-    statements.push(`${storyKey}.parameters = { mdxSource: ${source}, ...${params} };`);
+    statements.push(`${storyKey}.story.parameters = { mdxSource: ${source}, ...${params} };`);
   } else {
-    statements.push(`${storyKey}.parameters = { mdxSource: ${source} };`);
+    statements.push(`${storyKey}.story.parameters = { mdxSource: ${source} };`);
   }
 
   // console.log(statements);
