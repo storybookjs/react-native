@@ -7,7 +7,7 @@ import { stripIndents } from 'common-tags';
 import { Channel } from '@storybook/channels';
 import Events from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
-import { StoryContext, StoryFn, Parameters } from '@storybook/addons';
+import { StoryFn, Parameters } from '@storybook/addons';
 import {
   DecoratorFunction,
   LegacyData,
