@@ -44,8 +44,9 @@ function knobChanged(change) {
 
 function knobClicked(clicked) {
   const knobOptions = knobStore.get(clicked.name);
-  knobOptions.callback();
-  forceReRender();
+  if (knobOptions.callback() !== false) {
+    forceReRender();
+  }
 }
 
 function resetKnobs() {
