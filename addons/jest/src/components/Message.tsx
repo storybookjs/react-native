@@ -104,27 +104,29 @@ const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
   testDetail.description = getConvertedText(lines[0]);
   testDetail.stackTrace = '';
   testDetail.result = [];
-  for (let i = 1; i < lines.length; i++) {
+
+  for (let index = 1; index < lines.length; index++) {
     if (
-      lines[i]
+      lines[index]
         .trim()
         .toLowerCase()
         .indexOf('at') === 0
     ) {
-      testDetail.stackTrace += `${lines[i].trim()}\n`;
-    } else if (lines[i].trim().length === lines[i].trim().indexOf(':') + 1) {
+      testDetail.stackTrace += `${lines[index].trim()}\n`;
+    } else if (lines[index].trim().length === lines[index].trim().indexOf(':') + 1) {
       testDetail.result = [
         testDetail.result,
-        getConvertedText(lines[i]),
+        getConvertedText(lines[index]),
         ' ',
-        getConvertedText(lines[i + 1]),
-        <br key={i} />,
+        getConvertedText(lines[index + 1]),
+        <br key={index} />,
       ];
-      i++;
+      index++;
     } else {
-      testDetail.result = [testDetail.result, ' ', getConvertedText(lines[i])];
+      testDetail.result = [testDetail.result, ' ', getConvertedText(lines[index])];
     }
   }
+
   return testDetail;
 };
 
