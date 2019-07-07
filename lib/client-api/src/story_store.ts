@@ -188,7 +188,7 @@ export default class StoryStore extends EventEmitter {
       applyDecorators(getOriginal(), getDecorators())
     );
 
-    const storyFn: StoryFn = (p: StoryContext) =>
+    const storyFn: StoryFn = (p: object) =>
       getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
 
     _data[id] = {
