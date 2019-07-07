@@ -1,3 +1,22 @@
+## 5.2.0-alpha.36 (July 5, 2019)
+
+### Features
+
+* Addon-docs: Added inline option to Story block ([#7308](https://github.com/storybookjs/storybook/pull/7308))
+* Addon-knobs: Ensure unique knob names across groups ([#6793](https://github.com/storybookjs/storybook/pull/6793))
+* Core: Enable webpack to rebuild changes in node_modules ([#6265](https://github.com/storybooorybook/pull/6265))
+* Addons: Disable option for addon tab ([#6923](https://github.com/storybookjs/storybook/pull/6923))
+
+### Bug Fixes
+
+* Fix lint error from #6923 ([#7311](https://github.com/storybookjs/storybook/pull/7311))
+* Addon-actions: fix serialization performance ([#7256](https://github.com/storybookjs/storybook/pull/7256))
+
+### Maintenance
+
+* Typescript: Migrate @storybook/addon-event ([#7190](https://github.com/storybookjs/storybook/pull/7190))
+* Typescript: Improve actions type ([#7012](https://github.com/storybookjs/storybook/pull/7012))
+
 ## 5.2.0-alpha.35 (July 3, 2019)
 
 ### Bug Fixes
