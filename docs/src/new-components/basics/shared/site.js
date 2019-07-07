@@ -35,6 +35,7 @@ export const url = {
     html: `${npmApiBase}/@storybook/html`,
     svelte: `${npmApiBase}/@storybook/svelte`,
     mithril: `${npmApiBase}/@storybook/mithril`,
+    marko: `${npmApiBase}/@storybook/marko`,
     riot: `${npmApiBase}/@storybook/riot`,
     polymer: `${npmApiBase}/@storybook/polymer`,
     preact: `${npmApiBase}/@storybook/preact`,
@@ -76,6 +77,7 @@ export const url = {
     html: `${docsUrl}/guides/guide-html/`,
     svelte: `${docsUrl}/guides/guide-svelte/`,
     mithril: `${docsUrl}/guides/guide-mithril/`,
+    marko: `${docsUrl}/guides/guide-marko/`,
     riot: `${docsUrl}/guides/guide-riot/`,
   },
 
