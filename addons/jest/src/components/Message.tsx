@@ -16,7 +16,7 @@ const StackTrace = styled.pre({
 
 const Results = styled.div({
   paddingTop: '10px',
-  marginLeft: '35px',
+  marginLeft: '31px',
   marginRight: '30px',
 });
 
@@ -24,7 +24,7 @@ const Description = styled.div({
   paddingBottom: '10px',
   paddingTop: '10px',
   borderBottom: '1px solid rgb(226, 226, 226)',
-  marginLeft: '35px',
+  marginLeft: '31px',
   marginRight: '30px',
   overflowWrap: 'break-word',
 });
@@ -48,6 +48,8 @@ type MsgElement = string | JSX.Element;
 const getConvertedText: (msg: string) => MsgElement[] = (msg: string) => {
   let elementArray: MsgElement[] = [];
 
+  if (!msg) return elementArray;
+
   const endToken = '[39m';
   const failStartToken = '[31m';
   const passStartToken = '[32m';
@@ -59,18 +61,20 @@ const getConvertedText: (msg: string) => MsgElement[] = (msg: string) => {
 
   splitDescription.forEach(element => {
     const modifiedElement: any = null;
-    if (
-      element.indexOf(failStartToken) > -1 &&
-      element.indexOf(failStartToken) < element.indexOf(endToken)
-    ) {
-      elementArray = elementArray.concat(colorizeText(element, 'negative'));
-    } else if (
-      element.indexOf(passStartToken) > -1 &&
-      element.indexOf(passStartToken) < element.indexOf(endToken)
-    ) {
-      elementArray = elementArray.concat(colorizeText(element, 'positive'));
-    } else {
-      elementArray = elementArray.concat(element);
+    if (element && element.trim()) {
+      if (
+        element.indexOf(failStartToken) > -1 &&
+        element.indexOf(failStartToken) < element.indexOf(endToken)
+      ) {
+        elementArray = elementArray.concat(colorizeText(element, 'negative'));
+      } else if (
+        element.indexOf(passStartToken) > -1 &&
+        element.indexOf(passStartToken) < element.indexOf(endToken)
+      ) {
+        elementArray = elementArray.concat(colorizeText(element, 'positive'));
+      } else {
+        elementArray = elementArray.concat(element);
+      }
     }
   });
   return elementArray;
@@ -99,31 +103,26 @@ const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
   const testDetail: TestDetail = new TestDetail();
   testDetail.description = getConvertedText(lines[0]);
   testDetail.stackTrace = '';
-  testDetail.altResult = [];
+  testDetail.result = [];
   for (let i = 1; i < lines.length; i++) {
     if (
-      lines[i]
-        .trim()
-        .toLowerCase()
-        .indexOf('expected') === 0
-    ) {
-      testDetail.expected = getConvertedText(lines[i]);
-    } else if (
-      lines[i]
-        .trim()
-        .toLowerCase()
-        .indexOf('received') === 0
-    ) {
-      testDetail.received = getConvertedText(lines[i]);
-    } else if (
       lines[i]
         .trim()
         .toLowerCase()
         .indexOf('at') === 0
     ) {
       testDetail.stackTrace += `${lines[i].trim()}\n`;
+    } else if (lines[i].trim().length === lines[i].trim().indexOf(':') + 1) {
+      testDetail.result = [
+        testDetail.result,
+        getConvertedText(lines[i]),
+        ' ',
+        getConvertedText(lines[i + 1]),
+        <br key={i} />,
+      ];
+      i++;
     } else {
-      testDetail.altResult = testDetail.altResult.concat(getConvertedText(lines[i]));
+      testDetail.result = [testDetail.result, ' ', getConvertedText(lines[i])];
     }
   }
   return testDetail;
@@ -136,11 +135,7 @@ interface MessageProps {
 class TestDetail {
   description: MsgElement[];
 
-  expected: MsgElement[];
-
-  received: MsgElement[];
-
-  altResult: MsgElement[];
+  result: MsgElement[];
 
   stackTrace: string;
 }
@@ -149,15 +144,11 @@ export class Message extends Component<MessageProps, {}> {
   render() {
     const { msg } = this.props;
     const detail: TestDetail = getTestDetail(msg);
-    console.log(detail.description);
+
     return (
       <Fragment>
         {detail.description ? <Description>{detail.description}</Description> : null}
-        <Results>
-          {detail.expected ? <div>{detail.expected}</div> : null}
-          {detail.received ? <div>{detail.received}</div> : null}
-          {detail.altResult ? <div>{detail.altResult}</div> : null}
-        </Results>
+        <Results>{detail.result ? <div>{detail.result}</div> : null}</Results>
         <StackTrace>{detail.stackTrace}</StackTrace>
       </Fragment>
     );
