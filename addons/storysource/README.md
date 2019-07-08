@@ -140,7 +140,7 @@ module.exports = function({ config }) {
 
 ### injectDecorator
 
-Tell storysource whether you need inject decorator.If false, you need to add the decorator by yourself;
+Tell storysource whether you need inject decorator. If false, you need to add the decorator by yourself;
 
 Defaults: true
 

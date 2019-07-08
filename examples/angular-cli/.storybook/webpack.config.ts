@@ -6,9 +6,6 @@ module.exports = async ({ config }: { config: any }) => {
     loaders: [
       {
         loader: require.resolve('@storybook/source-loader'),
-        options: {
-          parser: 'typescript',
-        },
       },
     ],
     include: [resolve(__dirname, '../src')],
