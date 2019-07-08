@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent, Fragment, ComponentType } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
@@ -18,6 +18,7 @@ import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
 import Types from './types';
 import PropForm from './PropForm';
+import { KnobStoreKnob } from '../KnobStore';
 
 const getTimestamp = () => +new Date();
 
@@ -32,17 +33,60 @@ const PanelWrapper = styled(({ children, className }) => (
   width: '100%',
 });
 
-export default class KnobPanel extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      knobs: {},
-    };
-    this.options = {};
+interface PanelKnobGroups {
+  title: string;
+  render: (knob: any) => any;
+}
 
-    this.lastEdit = getTimestamp();
-    this.loadedFromUrl = false;
-  }
+interface KnobPanelProps {
+  active: boolean;
+  onReset?: object;
+  api: {
+    on: Function;
+    off: Function;
+    emit: Function;
+    getQueryParam: Function;
+    setQueryParams: Function;
+  };
+}
+
+interface KnobPanelState {
+  knobs: Record<string, KnobStoreKnob>;
+}
+
+interface KnobPanelOptions {
+  timestamps?: boolean;
+}
+
+type KnobControlType = ComponentType<any> & {
+  serialize: (v: any) => any;
+  deserialize: (v: any) => any;
+};
+
+export default class KnobPanel extends PureComponent<KnobPanelProps> {
+  static propTypes = {
+    active: PropTypes.bool.isRequired,
+    onReset: PropTypes.object, // eslint-disable-line
+    api: PropTypes.shape({
+      on: PropTypes.func,
+      getQueryParam: PropTypes.func,
+      setQueryParams: PropTypes.func,
+    }).isRequired,
+  };
+
+  state: KnobPanelState = {
+    knobs: {},
+  };
+
+  options: KnobPanelOptions = {};
+
+  lastEdit: number = getTimestamp();
+
+  loadedFromUrl = false;
+
+  mounted = false;
+
+  stopListeningOnStory: Function;
 
   componentDidMount() {
     this.mounted = true;
@@ -66,12 +110,18 @@ export default class KnobPanel extends PureComponent {
     this.stopListeningOnStory();
   }
 
-  setOptions = (options = { timestamps: false }) => {
+  setOptions = (options: KnobPanelOptions = { timestamps: false }) => {
     this.options = options;
   };
 
-  setKnobs = ({ knobs, timestamp }) => {
-    const queryParams = {};
+  setKnobs = ({
+    knobs,
+    timestamp,
+  }: {
+    knobs: Record<string, KnobStoreKnob>;
+    timestamp?: number;
+  }) => {
+    const queryParams: Record<string, any> = {};
     const { api } = this.props;
 
     if (!this.options.timestamps || !timestamp || this.lastEdit <= timestamp) {
@@ -83,9 +133,9 @@ export default class KnobPanel extends PureComponent {
 
           // If the knob value present in url
           if (urlValue !== undefined) {
-            const value = Types[knob.type].deserialize(urlValue);
+            const value = (Types[knob.type] as KnobControlType).deserialize(urlValue);
             knob.value = value;
-            queryParams[`knob-${name}`] = Types[knob.type].serialize(value);
+            queryParams[`knob-${name}`] = (Types[knob.type] as KnobControlType).serialize(value);
 
             api.emit(CHANGE, knob);
           }
@@ -111,7 +161,7 @@ export default class KnobPanel extends PureComponent {
     const { knobs } = this.state;
 
     Object.entries(knobs).forEach(([name, knob]) => {
-      query[`knob-${name}`] = Types[knob.type].serialize(knob.value);
+      query[`knob-${name}`] = (Types[knob.type] as KnobControlType).serialize(knob.value);
     });
 
     copy(`${location.origin + location.pathname}?${qs.stringify(query, { encode: false })}`);
@@ -119,13 +169,13 @@ export default class KnobPanel extends PureComponent {
     // TODO: show some notification of this
   };
 
-  emitChange = changedKnob => {
+  emitChange = (changedKnob: KnobStoreKnob) => {
     const { api } = this.props;
 
     api.emit(CHANGE, changedKnob);
   };
 
-  handleChange = changedKnob => {
+  handleChange = (changedKnob: KnobStoreKnob) => {
     this.lastEdit = getTimestamp();
     const { api } = this.props;
     const { knobs } = this.state;
@@ -139,18 +189,18 @@ export default class KnobPanel extends PureComponent {
     this.setState({ knobs: newKnobs }, () => {
       this.emitChange(changedKnob);
 
-      const queryParams = {};
+      const queryParams: { [key: string]: any } = {};
 
       Object.keys(newKnobs).forEach(n => {
         const knob = newKnobs[n];
-        queryParams[`knob-${n}`] = Types[knob.type].serialize(knob.value);
+        queryParams[`knob-${n}`] = (Types[knob.type] as KnobControlType).serialize(knob.value);
       });
 
       api.setQueryParams(queryParams);
     });
   };
 
-  handleClick = knob => {
+  handleClick = (knob: KnobStoreKnob) => {
     const { api } = this.props;
 
     api.emit(CLICK, knob);
@@ -163,8 +213,8 @@ export default class KnobPanel extends PureComponent {
       return null;
     }
 
-    const groups = {};
-    const groupIds = [];
+    const groups: Record<string, PanelKnobGroups> = {};
+    const groupIds: string[] = [];
 
     const knobKeysArray = Object.keys(knobs).filter(key => knobs[key].used);
 
@@ -175,6 +225,8 @@ export default class KnobPanel extends PureComponent {
         render: ({ active }) => (
           <TabWrapper key={knobKeyGroupId} active={active}>
             <PropForm
+              // false positive
+              // eslint-disable-next-line no-use-before-define
               knobs={knobsArray.filter(
                 knob => (knob.groupId || DEFAULT_GROUP_ID) === knobKeyGroupId
               )}
@@ -208,12 +260,12 @@ export default class KnobPanel extends PureComponent {
     }
 
     // Always sort DEFAULT_GROUP_ID (ungrouped) tab last without changing the remaining tabs
-    const sortEntries = g => {
+    const sortEntries = (g: Record<string, PanelKnobGroups>): [string, PanelKnobGroups][] => {
       const unsortedKeys = Object.keys(g);
       if (unsortedKeys.indexOf(DEFAULT_GROUP_ID) !== -1) {
         const sortedKeys = unsortedKeys.filter(key => key !== DEFAULT_GROUP_ID);
         sortedKeys.push(DEFAULT_GROUP_ID);
-        return sortedKeys.map(key => [key, g[key]]);
+        return sortedKeys.map<[string, PanelKnobGroups]>(key => [key, g[key]]);
       }
       return Object.entries(g);
     };
@@ -249,15 +301,3 @@ export default class KnobPanel extends PureComponent {
     );
   }
 }
-
-KnobPanel.propTypes = {
-  active: PropTypes.bool.isRequired,
-  onReset: PropTypes.object, // eslint-disable-line
-  api: PropTypes.shape({
-    on: PropTypes.func,
-    off: PropTypes.func,
-    emit: PropTypes.func,
-    getQueryParam: PropTypes.func,
-    setQueryParams: PropTypes.func,
-  }).isRequired,
-};

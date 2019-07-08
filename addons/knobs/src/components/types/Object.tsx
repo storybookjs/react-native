@@ -1,17 +1,42 @@
-import React, { Component } from 'react';
+import React, { Component, ChangeEvent } from 'react';
 import PropTypes from 'prop-types';
 import deepEqual from 'fast-deep-equal';
 import { polyfill } from 'react-lifecycles-compat';
 import { Form } from '@storybook/components';
 
-class ObjectType extends Component {
-  state = {
-    value: {},
-    failed: false,
-    json: '',
+export interface ObjectTypeKnob<T> {
+  name: string;
+  value: T;
+}
+
+interface ObjectTypeProps<T> {
+  knob: ObjectTypeKnob<T>;
+  onChange: (value: T) => T;
+}
+
+interface ObjectTypeState<T> {
+  value: string;
+  failed: boolean;
+  json?: T;
+}
+
+class ObjectType<T> extends Component<ObjectTypeProps<T>> {
+  static propTypes = {
+    knob: PropTypes.shape({
+      name: PropTypes.string,
+      value: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    }).isRequired,
+    onChange: PropTypes.func.isRequired,
   };
 
-  static getDerivedStateFromProps(props, state) {
+  static serialize: { <T>(object: T): string } = object => JSON.stringify(object);
+
+  static deserialize: { <T>(value: string): T } = value => (value ? JSON.parse(value) : {});
+
+  static getDerivedStateFromProps<T>(
+    props: ObjectTypeProps<T>,
+    state: ObjectTypeState<T>
+  ): ObjectTypeState<T> {
     if (!deepEqual(props.knob.value, state.json)) {
       try {
         return {
@@ -26,7 +51,13 @@ class ObjectType extends Component {
     return null;
   }
 
-  handleChange = e => {
+  state: ObjectTypeState<T> = {
+    value: '',
+    failed: false,
+    json: {} as any,
+  };
+
+  handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = e.target;
     const { json: stateJson } = this.state;
     const { knob, onChange } = this.props;
@@ -64,17 +95,6 @@ class ObjectType extends Component {
     );
   }
 }
-
-ObjectType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  }).isRequired,
-  onChange: PropTypes.func.isRequired,
-};
-
-ObjectType.serialize = object => JSON.stringify(object);
-ObjectType.deserialize = value => (value ? JSON.parse(value) : {});
 
 polyfill(ObjectType);
 

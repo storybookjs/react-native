@@ -7,7 +7,7 @@ import { stripIndents } from 'common-tags';
 import { Channel } from '@storybook/channels';
 import Events from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
-import { StoryContext, StoryFn, Parameters } from '@storybook/addons';
+import { StoryFn, Parameters } from '@storybook/addons';
 import {
   DecoratorFunction,
   LegacyData,
@@ -188,7 +188,7 @@ export default class StoryStore extends EventEmitter {
       applyDecorators(getOriginal(), getDecorators())
     );
 
-    const storyFn: StoryFn = (p: StoryContext) =>
+    const storyFn: StoryFn = (p: object) =>
       getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
 
     _data[id] = {

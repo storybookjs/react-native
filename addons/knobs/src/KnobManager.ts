@@ -1,25 +1,33 @@
 /* eslint no-underscore-dangle: 0 */
+
 import { navigator } from 'global';
 import escape from 'escape-html';
-
 import { getQueryParams } from '@storybook/client-api';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Channel } from '@storybook/channels';
 
-import KnobStore from './KnobStore';
+import KnobStore, { Knob } from './KnobStore';
 import { SET } from './shared';
 
 import { deserializers } from './converters';
 
-const knobValuesFromUrl = Object.entries(getQueryParams()).reduce((acc, [k, v]) => {
-  if (k.includes('knob-')) {
-    return { ...acc, [k.replace('knob-', '')]: v };
-  }
-  return acc;
-}, {});
+const knobValuesFromUrl: Record<string, string> = Object.entries(getQueryParams()).reduce(
+  (acc, [k, v]) => {
+    if (k.includes('knob-')) {
+      return { ...acc, [k.replace('knob-', '')]: v };
+    }
+    return acc;
+  },
+  {}
+);
 
 // This is used by _mayCallChannel to determine how long to wait to before triggering a panel update
 const PANEL_UPDATE_INTERVAL = 400;
 
-const escapeStrings = obj => {
+function escapeStrings(obj: { [key: string]: string }): { [key: string]: string };
+function escapeStrings(obj: (string | string[])[]): (string | string[])[];
+function escapeStrings(obj: string): string;
+function escapeStrings(obj: any): any {
   if (typeof obj === 'string') {
     return escape(obj);
   }
@@ -31,31 +39,39 @@ const escapeStrings = obj => {
     const didChange = newArray.some((newValue, key) => newValue !== obj[key]);
     return didChange ? newArray : obj;
   }
-  return Object.entries(obj).reduce((acc, [key, oldValue]) => {
+  return Object.entries<{ [key: string]: string }>(obj).reduce((acc, [key, oldValue]) => {
     const newValue = escapeStrings(oldValue);
     return newValue === oldValue ? acc : { ...acc, [key]: newValue };
   }, obj);
-};
+}
+
+interface KnobManagerOptions {
+  escapeHTML?: boolean;
+  disableDebounce?: boolean;
+}
 
 export default class KnobManager {
-  constructor() {
-    this.knobStore = new KnobStore();
-    this.options = {};
-  }
+  knobStore = new KnobStore();
 
-  setChannel(channel) {
+  channel: Channel;
+
+  options: KnobManagerOptions = {};
+
+  calling: boolean;
+
+  setChannel(channel: Channel) {
     this.channel = channel;
   }
 
-  setOptions(options) {
+  setOptions(options: KnobManagerOptions) {
     this.options = options;
   }
 
-  getKnobValue({ value }) {
+  getKnobValue({ value }: Knob) {
     return this.options.escapeHTML ? escapeStrings(value) : value;
   }
 
-  knob(name, options) {
+  knob(name: string, options: Knob) {
     this._mayCallChannel();
 
     const knobName = options.groupId ? `${name}_${options.groupId}` : name;
@@ -77,7 +93,7 @@ export default class KnobManager {
       return this.getKnobValue(existingKnob);
     }
 
-    const knobInfo = {
+    const knobInfo: Knob & { name: string; label: string; defaultValue?: any } = {
       ...options,
       name: knobName,
       label: name,

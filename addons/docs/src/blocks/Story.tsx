@@ -49,7 +49,7 @@ export const getStoryProps = (
   return {
     inline: typeof inline === 'boolean' ? inline : inlineStories,
     id: previewId,
-    storyFn: data && data.getDecorated(),
+    storyFn: data && data.storyFn,
     height: height || iframeHeight,
     title: data && data.name,
   };
