@@ -1,23 +1,39 @@
 import deprecate from 'util-deprecate';
 
+export interface Parameters {
+  fileName?: string;
+  options?: OptionsParameter;
+  [key: string]: any;
+}
+
 export interface StoryContext {
+  id: string;
   name: string;
   kind: string;
-  parameters: {
-    [key: string]: any;
-  };
+  [key: string]: any;
+  parameters: Parameters;
 }
 
 export interface WrapperSettings {
-  options: {
-    [key: string]: any;
-  };
+  options: OptionsParameter;
   parameters: {
     [key: string]: any;
   };
 }
 
+export interface OptionsParameter extends Object {
+  storySort?: any;
+  hierarchyRootSeparator?: string;
+  hierarchySeparator?: RegExp;
+  theme?: {
+    base: string;
+    brandTitle?: string;
+  };
+  [key: string]: any;
+}
+
 export type StoryGetter = (context: StoryContext) => any;
+export type StoryFn = (p?: StoryContext) => any;
 
 export type StoryWrapper = (
   getStory: StoryGetter,

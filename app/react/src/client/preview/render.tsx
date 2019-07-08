@@ -54,6 +54,7 @@ export default function renderMain({
   if (!forceRender) {
     ReactDOM.unmountComponentAtNode(rootEl);
   }
-  showMain();
+
   render(element, rootEl);
+  showMain();
 }

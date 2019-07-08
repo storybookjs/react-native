@@ -47,5 +47,7 @@ export const ToolBarControl: ToolBarControl = ({
     },
   };
 
-  return icon && list.length && !options.disable ? <ToolBarMenu icon={icon} {...props} /> : null;
+  return Array.isArray(list) && list.length && !options.disable ? (
+    <ToolBarMenu icon={icon} {...props} />
+  ) : null;
 };

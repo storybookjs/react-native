@@ -2,11 +2,18 @@
 
 import { h } from 'preact';
 
-import { storiesOf } from '@storybook/preact';
 import { linkTo } from '@storybook/addon-links';
 
 import Button from '../Button';
 
-storiesOf('Addons|Links', module).add('Go to welcome', () => (
+export default {
+  title: 'Addons|Links',
+};
+
+export const goToWelcome = () => (
   <Button onclick={linkTo('Welcome')}>This button links to Welcome</Button>
-));
+);
+
+goToWelcome.story = {
+  name: 'Go to welcome',
+};
