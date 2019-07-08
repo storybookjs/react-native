@@ -121,7 +121,7 @@ export default class KnobManager {
     // triggering a panel re-render.
     
     if (!_this.channel) {
-      // to prevent call to undefined channel and therefor throwing TypeError
+      // to prevent call to undefined channel and therefore throwing TypeError
       return;
     }
     
