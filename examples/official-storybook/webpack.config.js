@@ -1,5 +1,4 @@
 const path = require('path');
-const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = async ({ config }) => ({
   ...config,
@@ -54,22 +53,5 @@ module.exports = async ({ config }) => ({
   resolve: {
     ...config.resolve,
     extensions: [...(config.resolve.extensions || []), '.ts', '.tsx'],
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-    runtimeChunk: true,
-    minimizer: [
-      new TerserWebpackPlugin({
-        cache: false,
-        parallel: false,
-        sourceMap: false,
-        terserOptions: {
-          mangle: false,
-          keep_fnames: true,
-        },
-      }),
-    ],
   },
 });
