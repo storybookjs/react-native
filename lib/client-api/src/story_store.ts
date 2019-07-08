@@ -23,8 +23,6 @@ import {
 const toKey = (input: string) =>
   input.replace(/[^a-z0-9]+([a-z0-9])/gi, (...params) => params[1].toUpperCase());
 
-const toChild = (it: {}) => ({ ...it });
-
 let count = 0;
 
 const getId = (): number => {
@@ -188,8 +186,12 @@ export default class StoryStore extends EventEmitter {
       applyDecorators(getOriginal(), getDecorators())
     );
 
-    const storyFn: StoryFn = (p: object) =>
-      getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
+    const storyFn: StoryFn = p =>
+      getDecorated()({
+        ...identification,
+        ...p,
+        parameters: { ...parameters, ...(p && p.parameters) },
+      });
 
     _data[id] = {
       ...identification,

@@ -32,31 +32,25 @@ const merge = (a: any, b: any) =>
     return undefined;
   });
 
-interface DecoratorPropData {
-  [key: string]: any;
-}
+const defaultContext: StoryContext = {
+  id: 'unspecified',
+  name: 'unspecified',
+  kind: 'unspecified',
+  parameters: {},
+};
 
 export const defaultDecorateStory = (storyFn: StoryFn, decorators: DecoratorFunction[]) =>
   decorators.reduce(
-    (decorated, decorator) => (
-      context: StoryContext = {
-        id: 'unspecified',
-        name: 'unspecified',
-        kind: 'unspecified',
-        parameters: null,
-      }
-    ) =>
-      decorator((p: DecoratorPropData = {}) => {
-        return decorated(
-          // MUTATION !
-          Object.assign(
-            context,
-            p,
-            { parameters: Object.assign(context.parameters || {}, p.parameters) },
-            { options: Object.assign(context.options || {}, p.options) }
-          )
-        );
-      }, context),
+    (decorated, decorator) => (context: StoryContext = defaultContext) =>
+      decorator(
+        p =>
+          decorated({
+            ...context,
+            ...p,
+            parameters: { ...context.parameters, ...(p && p.parameters) },
+          }),
+        context
+      ),
     storyFn
   );
 
