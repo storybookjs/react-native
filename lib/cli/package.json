@@ -61,6 +61,7 @@
     "@storybook/channels": "5.2.0-alpha.35",
     "@storybook/ember": "5.2.0-alpha.35",
     "@storybook/html": "5.2.0-alpha.35",
+    "@storybook/marionette": "file:./../../app/marionette",
     "@storybook/marko": "5.2.0-alpha.35",
     "@storybook/mithril": "5.2.0-alpha.35",
     "@storybook/polymer": "5.2.0-alpha.35",
