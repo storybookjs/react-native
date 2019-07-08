@@ -1,17 +1,30 @@
 import { document, Node } from 'global';
 import { stripIndents } from 'common-tags';
 
+export interface ShowErrorArgs {
+  title: string;
+  description: string;
+}
+
+export interface RenderMainArgs {
+  storyFn: () => string | Node | undefined;
+  selectedKind: string;
+  selectedStory: string;
+  showMain: () => void;
+  showError: (args: ShowErrorArgs) => void;
+  forceRender: boolean;
+}
+
 const rootElement = document.getElementById('root');
 
 export default function renderMain({
-  parameters = {},
   storyFn,
   selectedKind,
   selectedStory,
   showMain,
   showError,
   forceRender,
-}) {
+}: RenderMainArgs) {
   const element = storyFn();
 
   showMain();
