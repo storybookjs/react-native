@@ -4,6 +4,7 @@ import debounce from 'lodash/debounce';
 
 import KnobManager from './KnobManager';
 import { CHANGE, CLICK, RESET, SET } from './shared';
+import { KnobStoreKnob } from './KnobStore';
 
 export const manager = new KnobManager();
 const { knobStore } = manager;
@@ -13,7 +14,7 @@ function forceReRender() {
   addons.getChannel().emit(FORCE_RE_RENDER);
 }
 
-function setPaneKnobs(timestamp = +new Date()) {
+function setPaneKnobs(timestamp: boolean | number = +new Date()) {
   const channel = addons.getChannel();
   channel.emit(SET, { knobs: knobStore.getAll(), timestamp });
 }
@@ -29,7 +30,7 @@ const debouncedResetAndForceUpdate = debounce(
   COMPONENT_FORCE_RENDER_DEBOUNCE_DELAY_MS
 );
 
-function knobChanged(change) {
+function knobChanged(change: KnobStoreKnob) {
   const { name } = change;
   const { value } = change; // Update the related knob and it's value.
   const knobOptions = knobStore.get(name);
@@ -42,10 +43,11 @@ function knobChanged(change) {
   }
 }
 
-function knobClicked(clicked) {
+function knobClicked(clicked: KnobStoreKnob) {
   const knobOptions = knobStore.get(clicked.name);
-  knobOptions.callback();
-  forceReRender();
+  if (knobOptions.callback() !== false) {
+    forceReRender();
+  }
 }
 
 function resetKnobs() {
