@@ -30,8 +30,10 @@ const inferInlineStories = (framework: string): boolean => {
   }
 };
 
-export const getStoryProps = (props: StoryProps, context: DocsContextProps): PureStoryProps => {
-  const { id: currentId, storyStore, parameters, mdxKind } = context;
+export const getStoryProps = (
+  props: StoryProps,
+  { id: currentId, storyStore, parameters, mdxKind }: DocsContextProps
+): PureStoryProps => {
   const { id } = props as StoryRefProps;
   const { name } = props as StoryDefProps;
   const inputId = id === CURRENT_SELECTION ? currentId : id;
@@ -47,7 +49,7 @@ export const getStoryProps = (props: StoryProps, context: DocsContextProps): Pur
   return {
     inline: typeof inline === 'boolean' ? inline : inlineStories,
     id: previewId,
-    storyFn: data && data.getDecorated(context),
+    storyFn: data && data.getDecorated(),
     height: height || iframeHeight,
     title: data && data.name,
   };
