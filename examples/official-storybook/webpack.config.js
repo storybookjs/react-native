@@ -1,5 +1,4 @@
 const path = require('path');
-const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = async ({ config }) => ({
   ...config,
@@ -40,13 +39,8 @@ module.exports = async ({ config }) => ({
         exclude: [/node_modules/, /dist/],
       },
       {
-        test: /\.stories\.jsx?$/,
+        test: /\.stories\.[tj]sx?$/,
         loader: require.resolve('@storybook/source-loader'),
-        options: {
-          injectParameters: true,
-          inspectLocalDependencies: false,
-          inspectDependencies: false,
-        },
         include: [
           path.resolve(__dirname, './stories'),
           path.resolve(__dirname, '../../lib/ui/src'),
@@ -59,22 +53,5 @@ module.exports = async ({ config }) => ({
   resolve: {
     ...config.resolve,
     extensions: [...(config.resolve.extensions || []), '.ts', '.tsx'],
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-    runtimeChunk: true,
-    minimizer: [
-      new TerserWebpackPlugin({
-        cache: false,
-        parallel: false,
-        sourceMap: false,
-        terserOptions: {
-          mangle: false,
-          keep_fnames: true,
-        },
-      }),
-    ],
   },
 });

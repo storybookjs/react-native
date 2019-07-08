@@ -35,7 +35,8 @@
     "regenerator-runtime": "^0.12.1"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "@storybook/source-loader": "*"
   },
   "publishConfig": {
     "access": "public"
