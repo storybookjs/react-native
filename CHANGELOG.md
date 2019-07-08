@@ -1,3 +1,17 @@
+## 5.2.0-alpha.37 (July 8, 2019)
+
+### Bug Fixes
+
+* Addon-knobs: Prevent rerender when a button callback returns false. ([#7197](https://github.com/storybookjs/storybook/pull/7197))
+* Addons: Fix null parameters in disable addons tab logic ([#7333](https://github.com/storybookjs/storybook/pull/7333))
+* Addon-docs: Fix renaming stories on module / MDX format ([#7319](https://github.com/storybookjs/storybook/pull/7319))
+* Addon-centered/contexts: Move optionalDependencies to peerDependencies ([#7315](https://github.com/storybookjs/storybook/pull/7315))
+
+### Maintenance
+
+* Typescript: migrate client api ([#7147](https://github.com/storybookjs/storybook/pull/7147))
+* Angular-cli: Add addon-docs example ([#7257](https://github.com/storybookjs/storybook/pull/7257))
+
 ## 5.2.0-alpha.36 (July 5, 2019)
 
 ### Features
