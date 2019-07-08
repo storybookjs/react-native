@@ -34,15 +34,15 @@ const Icon = styled(Icons)(
       : {}
 );
 
-const Passes = styled.span(({ theme }) => ({
+const Passes = styled.span<{}>(({ theme }) => ({
   color: theme.color.positive,
 }));
 
-const Violations = styled.span(({ theme }) => ({
+const Violations = styled.span<{}>(({ theme }) => ({
   color: theme.color.negative,
 }));
 
-const Incomplete = styled.span(({ theme }) => ({
+const Incomplete = styled.span<{}>(({ theme }) => ({
   color: theme.color.warning,
 }));
 

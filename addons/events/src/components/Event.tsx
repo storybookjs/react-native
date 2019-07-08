@@ -17,7 +17,7 @@ interface StyledTextareaProps {
 
 const StyledTextarea = styled(({ shown, failed, ...rest }: StyledTextareaProps) => (
   <Textarea {...rest} />
-))(
+))<{ shown: boolean; failed: boolean }>(
   {
     flex: '1 0 0',
     boxSizing: 'border-box',
