@@ -38,7 +38,14 @@ interface DecoratorPropData {
 
 export const defaultDecorateStory = (storyFn: StoryFn, decorators: DecoratorFunction[]) =>
   decorators.reduce(
-    (decorated, decorator) => (context: StoryContext) =>
+    (decorated, decorator) => (
+      context: StoryContext = {
+        id: 'unspecified',
+        name: 'unspecified',
+        kind: 'unspecified',
+        parameters: null,
+      }
+    ) =>
       decorator((p: DecoratorPropData = {}) => {
         return decorated(
           // MUTATION !
