@@ -52,7 +52,7 @@ function decorateStory(getStory, decorators) {
                 ...p,
                 parameters: {
                   ...context.parameters,
-                  ...(p && p.parameters),
+                  ...p.parameters,
                 },
               }
             : context

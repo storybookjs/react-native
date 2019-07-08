@@ -44,11 +44,15 @@ export const defaultDecorateStory = (storyFn: StoryFn, decorators: DecoratorFunc
     (decorated, decorator) => (context: StoryContext = defaultContext) =>
       decorator(
         p =>
-          decorated({
-            ...context,
-            ...p,
-            parameters: { ...context.parameters, ...(p && p.parameters) },
-          }),
+          decorated(
+            p
+              ? {
+                  ...context,
+                  ...p,
+                  parameters: { ...context.parameters, ...p.parameters },
+                }
+              : context
+          ),
         context
       ),
     storyFn
