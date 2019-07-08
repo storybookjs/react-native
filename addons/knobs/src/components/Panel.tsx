@@ -225,8 +225,6 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
         render: ({ active }) => (
           <TabWrapper key={knobKeyGroupId} active={active}>
             <PropForm
-              // false positive
-              // eslint-disable-next-line no-use-before-define
               knobs={knobsArray.filter(
                 knob => (knob.groupId || DEFAULT_GROUP_ID) === knobKeyGroupId
               )}
