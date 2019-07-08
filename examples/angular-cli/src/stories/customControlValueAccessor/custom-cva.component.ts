@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import { Component, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 

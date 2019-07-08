@@ -4,11 +4,11 @@ import { transparentize } from 'polished';
 
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 
-const ItemTitle = styled.div(({ theme }) => ({
+const ItemTitle = styled.div<{}>(({ theme }) => ({
   fontWeight: theme.typography.weight.bold,
 }));
 
-const ItemSubtitle = styled.div(({ theme }) => ({
+const ItemSubtitle = styled.div<{}>(({ theme }) => ({
   color:
     theme.base === 'light'
       ? transparentize(0.2, theme.color.defaultText)
@@ -21,7 +21,7 @@ const ItemDescription = styled.div({
   marginTop: 5,
 });
 
-const SwatchLabel = styled.div(({ theme }) => ({
+const SwatchLabel = styled.div<{}>(({ theme }) => ({
   flex: 1,
   textAlign: 'center',
   fontFamily: theme.typography.fonts.mono,
@@ -49,7 +49,7 @@ const Swatch = styled.div({
   flex: 1,
 });
 
-const SwatchColors = styled.div(({ theme }) => ({
+const SwatchColors = styled.div<{}>(({ theme }) => ({
   ...getBlockBackgroundStyle(theme),
   display: 'flex',
   flexDirection: 'row',
@@ -85,7 +85,7 @@ const ListSwatches = styled.div({
   flex: 1,
 });
 
-const ListHeading = styled.div(({ theme }) => ({
+const ListHeading = styled.div<{}>(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',

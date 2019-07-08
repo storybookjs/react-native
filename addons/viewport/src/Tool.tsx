@@ -118,7 +118,7 @@ const ActiveViewportSize = styled.div(() => ({
   display: 'inline-flex',
 }));
 
-const ActiveViewportLabel = styled.div(({ theme }) => ({
+const ActiveViewportLabel = styled.div<{}>(({ theme }) => ({
   display: 'inline-block',
   textDecoration: 'none',
   padding: '10px',
@@ -137,7 +137,7 @@ const IconButtonWithLabel = styled(IconButton)(() => ({
   alignItems: 'center',
 }));
 
-const IconButtonLabel = styled.div(({ theme }) => ({
+const IconButtonLabel = styled.div<{}>(({ theme }) => ({
   fontSize: theme.typography.size.s2 - 1,
   marginLeft: '10px',
 }));
