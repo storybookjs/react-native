@@ -1,4 +1,3 @@
-// @ts-ignore
 import { document } from 'global';
 import PropTypes from 'prop-types';
 import React, { Component, WeakValidationMap } from 'react';

@@ -1,7 +1,6 @@
 import React, { PureComponent, Fragment, ComponentType } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
-// @ts-ignore
 import { document } from 'global';
 import { styled } from '@storybook/theming';
 import copy from 'copy-to-clipboard';

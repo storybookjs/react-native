@@ -1,4 +1,3 @@
-// @ts-ignore
 import { FileReader } from 'global';
 import PropTypes from 'prop-types';
 import React, { ChangeEvent, FunctionComponent } from 'react';
@@ -26,7 +25,7 @@ const FileInput = styled(Form.Input)({
 function fileReaderPromise(file: File) {
   return new Promise<string>(resolve => {
     const fileReader = new FileReader();
-    fileReader.onload = (e: Event) => resolve((e.currentTarget as FileReader).result);
+    fileReader.onload = (e: Event) => resolve((e.currentTarget as FileReader).result as string);
     fileReader.readAsDataURL(file);
   });
 }

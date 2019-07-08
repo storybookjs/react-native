@@ -1,15 +1,12 @@
 /* eslint no-underscore-dangle: 0 */
 
-// @ts-ignore
 import { navigator } from 'global';
 import escape from 'escape-html';
-// TODO: remove ts-ignore once client-api is typed
-// @ts-ignore
 import { getQueryParams } from '@storybook/client-api';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Channel } from '@storybook/channels';
 
-import KnobStore, { Knob, KnobStoreKnob } from './KnobStore';
+import KnobStore, { Knob } from './KnobStore';
 import { SET } from './shared';
 
 import { deserializers } from './converters';
