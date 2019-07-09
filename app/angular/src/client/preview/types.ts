@@ -31,7 +31,7 @@ export interface IStorybookSection {
 
 export interface StoryFnAngularReturnType {
   component?: any;
-  props: ICollection;
+  props?: ICollection;
   propsMeta?: ICollection;
   moduleMetadata?: NgModuleMetadata;
   template?: string;
