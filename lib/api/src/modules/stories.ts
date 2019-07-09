@@ -27,7 +27,6 @@ export interface SubAPI {
   getData: (storyId: StoryId) => Story | Group;
   getParameters: (storyId: StoryId, parameterName?: ParameterName) => Story['parameters'] | any;
   getCurrentParameter<S>(parameterName?: ParameterName): S;
-  showSettingsPage: (storyId: string) => void;
 }
 
 interface Group {
@@ -311,19 +310,6 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
     }
   };
 
-  // Navigate to settings page by changing the viewMode state and route
-  // to the specific settings page.
-  const showSettingsPage = (storyId: string) => {
-    store.setState(
-      {
-        viewMode: 'settings',
-      },
-      () => {
-        navigate(`/settings/${storyId}`);
-      }
-    );
-  };
-
   return {
     api: {
       storyId: toId,
@@ -335,7 +321,6 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       getData,
       getParameters,
       getCurrentParameter,
-      showSettingsPage,
     },
     state: {
       storiesHash: {},
