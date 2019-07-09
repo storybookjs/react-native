@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Storyshots Addons|GraphQL get Pickachu 1`] = `
-<div>
-  hello
-</div>
-`;

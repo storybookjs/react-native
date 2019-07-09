@@ -410,6 +410,9 @@ const groupId = 'GROUP-ID1';
 button(label, handler, groupId);
 ```
 
+Button knobs cause the story to re-render after the handler fires, you can prevent
+this by having the handler return false.
+
 ### withKnobs options
 
 withKnobs also accepts two optional options as story parameters.

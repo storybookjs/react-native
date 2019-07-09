@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { PureComponent } from 'react';
 import { View, SafeAreaView, StyleSheet } from 'react-native';
 import GestureRecognizer, { GestureRecognizerConfig } from 'react-native-swipe-gestures';

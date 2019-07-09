@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.1.1",
+  "version": "5.2.0-alpha.38",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -22,16 +22,18 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.1",
-    "@storybook/api": "5.1.1",
-    "@storybook/client-logger": "5.1.1",
-    "@storybook/components": "5.1.1",
-    "@storybook/core-events": "5.1.1",
-    "@storybook/router": "5.1.1",
-    "@storybook/theming": "5.1.1",
+    "@storybook/addons": "5.2.0-alpha.38",
+    "@storybook/api": "5.2.0-alpha.38",
+    "@storybook/channels": "5.2.0-alpha.38",
+    "@storybook/client-logger": "5.2.0-alpha.38",
+    "@storybook/components": "5.2.0-alpha.38",
+    "@storybook/core-events": "5.2.0-alpha.38",
+    "@storybook/router": "5.2.0-alpha.38",
+    "@storybook/theming": "5.2.0-alpha.38",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
+    "emotion-theming": "^10.0.10",
     "fast-deep-equal": "^2.0.1",
     "fuse.js": "^3.4.4",
     "global": "^4.3.2",
@@ -48,6 +50,7 @@
     "react-hotkeys": "2.0.0-pre4",
     "react-sizeme": "^2.6.7",
     "recompose": "^0.30.0",
+    "regenerator-runtime": "^0.13.2",
     "resolve-from": "^5.0.0",
     "semver": "^6.0.0",
     "store2": "^2.7.1",
@@ -55,7 +58,7 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "corejs-upgrade-webpack-plugin": "^1.0.1",
+    "corejs-upgrade-webpack-plugin": "^2.0.0",
     "flush-promises": "^1.0.2",
     "terser-webpack-plugin": "^1.2.4",
     "webpack": "^4.33.0"

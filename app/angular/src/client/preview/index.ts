@@ -1,32 +1,37 @@
+/* eslint-disable prefer-destructuring */
 import { start } from '@storybook/core/client';
+import { ClientStoryApi } from '@storybook/addons';
 
 import './globals';
 import render from './render';
-import { IApi, IStoribookSection } from './types';
+import { IStorybookSection, StoryFnAngularReturnType } from './types';
 
-interface ClientApi {
-  storiesOf(kind: string, module: NodeModule): IApi;
+const framework = 'angular';
+
+interface ClientApi extends ClientStoryApi<StoryFnAngularReturnType> {
   setAddon(addon: any): void;
-  addDecorator(decorator: any): IApi;
-  addParameters(parameter: any): IApi;
   configure(loaders: () => void, module: NodeModule): void;
-  getStorybook(): IStoribookSection[];
+  getStorybook(): IStorybookSection[];
   clearDecorators(): void;
   forceReRender(): void;
-  raw: any; // todo add type
+  raw: () => any; // todo add type
+  load: (...args: any[]) => void;
 }
 
-const { clientApi, configApi, forceReRender } = start(render);
+const api = start(render);
 
-export const {
-  storiesOf,
-  setAddon,
-  addDecorator,
-  addParameters,
-  clearDecorators,
-  getStorybook,
-  raw,
-}: ClientApi = clientApi;
+export const storiesOf: ClientApi['storiesOf'] = (kind, m) => {
+  return (api.clientApi.storiesOf(kind, m) as ReturnType<ClientApi['storiesOf']>).addParameters({
+    framework,
+  });
+};
 
-export const { configure } = configApi;
-export { forceReRender };
+export const load: ClientApi['load'] = (...args) => api.load(...args, framework);
+export const addDecorator: ClientApi['addDecorator'] = api.clientApi.addDecorator;
+export const addParameters: ClientApi['addParameters'] = api.clientApi.addParameters;
+export const clearDecorators: ClientApi['clearDecorators'] = api.clientApi.clearDecorators;
+export const setAddon: ClientApi['setAddon'] = api.clientApi.setAddon;
+export const configure: ClientApi['configure'] = api.configApi.configure;
+export const forceReRender: ClientApi['forceReRender'] = api.forceReRender;
+export const getStorybook: ClientApi['getStorybook'] = api.clientApi.getStorybook;
+export const raw: ClientApi['raw'] = api.clientApi.raw;

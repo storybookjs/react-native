@@ -1,0 +1,372 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon|Actions Action only 1`] = `
+<div
+  data-is="my-button"
+  id="root"
+>
+  <button
+    class="button"
+    style="color: #42b983; border-color: #42b983"
+  >
+    Click me to log the action!
+  </button>
+</div>
+`;
+
+exports[`Storyshots Addon|Actions Multiple actions 1`] = `
+<div
+  data-is="my-button"
+  id="root"
+>
+  <button
+    class="button"
+    style="color: #42b983; border-color: #42b983"
+  >
+    Double Click me to log the action!
+  </button>
+</div>
+`;
+
+exports[`Storyshots Addon|Backgrounds story 1 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <my-button>
+    <button
+      class="button"
+      style="color: #42b983; border-color: #42b983"
+    >
+      You should be able to switch backgrounds for this story!
+    </button>
+  </my-button>
+</div>
+`;
+
+exports[`Storyshots Addon|Backgrounds story 2 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <my-button>
+    <button
+      class="button"
+      style="color: #42b983; border-color: #42b983"
+    >
+      This one too!!
+    </button>
+  </my-button>
+</div>
+`;
+
+exports[`Storyshots Addon|Knobs All knobs 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <whatigot>
+    <div
+      style="border:2px dotted deeppink; padding: 8px 22px; border-radius: 8px"
+    >
+       
+      <h1>
+        My name is Jane,
+      </h1>
+       
+      <h3>
+        today is January 20, 2017
+      </h3>
+       
+      <p>
+        I have a stock of 20 apples, costing $2.25 each.
+      </p>
+       
+      <p>
+        Also, I have:
+      </p>
+       
+      <ul>
+         
+        <li
+          key="Laptop"
+        >
+          Laptop
+        </li>
+        <li
+          key="Book"
+        >
+          Book
+        </li>
+        <li
+          key="Whiskey"
+        >
+          Whiskey
+        </li>
+         
+      </ul>
+       
+      <p>
+        Nice to meet you!
+      </p>
+       
+    </div>
+  </whatigot>
+</div>
+`;
+
+exports[`Storyshots Addon|Knobs Simple 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <div>
+    I am John Doe and I'm 44 years old.
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addon|Knobs XSS safety 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <div>
+     &lt;img src=x onerror="alert('XSS Attack')" &gt; 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addon|Links Go to welcome 1`] = `
+<div
+  data-is="my-button"
+  id="root"
+>
+  <button
+    class="rounded button"
+    style="color: #42b983; border-color: #42b983"
+  >
+    This button links to Welcome!
+  </button>
+</div>
+`;
+
+exports[`Storyshots Addon|Notes Note with HTML 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <div>
+    <p>
+      🤔😳😯😮
+      <br />
+      😄😩😓😱
+      <br />
+      🤓😑😶😊
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addon|Notes Simple note 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <p>
+    <strong>
+      Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.
+    </strong>
+  </p>
+</div>
+`;
+
+exports[`Storyshots Core|Parameters passed to story 1`] = `
+<div
+  data-is="parameters"
+  id="root"
+>
+  <div>
+    Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"globalParameter":"globalParameter","framework":"riot","chapterParameter":"chapterParameter","storyParameter":"storyParameter","id":"root","dataIs":"parameters"}
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story built as string 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <test>
+    <div>
+      simple test
+    </div>
+  </test>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story built from raw import 1`] = `
+<div
+  data-is="simpletest"
+  id="root"
+>
+  <div>
+    simple test (without parameter). Oh, by the way (... well, nothing)
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story built from tags and template 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <simpletest
+    test="with a parameter"
+  >
+    <div>
+      simple test (with a parameter). Oh, by the way (value is mapped to riotValue)
+    </div>
+  </simpletest>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story built from the precompilation 1`] = `
+<div
+  data-is="anothertest"
+  id="root"
+>
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story built with tag 1`] = `
+<div
+  data-is="test"
+  id="root"
+>
+  <div>
+    simple test (with a parameter)
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story tags, template and tagConstructor at once 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <simpletest
+    hacked="true"
+    test="with a parameter"
+  >
+    <div>
+      HACKED : true ; simple test (with a parameter). Oh, by the way (value is mapped to riotValue)
+    </div>
+  </simpletest>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story the mount instruction is not necessary 1`] = `
+<div
+  data-is="anothertest"
+  id="root"
+>
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story the opts value is not necessary 1`] = `
+<div
+  data-is="anothertest"
+  id="root"
+>
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story|Nest tags Matriochka 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <matriochka>
+    <div>
+      <tag1>
+        <div>
+          Inside tag1:
+          <ul>
+            <li>
+              <tag2>
+                <div>
+                  Inside tag2:
+                  <ul>
+                    <li>
+                      <tag3>
+                        <div>
+                          Inside tag3:
+                          <ul>
+                            <li>
+                              <tag4>
+                                <div>
+                                  Inside tag4:
+                                  <ul>
+                                    <li>
+                                      <tag5>
+                                        <div>
+                                          Inside tag5:
+                                          <ul>
+                                            <li>
+                                              Content
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </tag5>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </tag4>
+                            </li>
+                          </ul>
+                        </div>
+                      </tag3>
+                    </li>
+                  </ul>
+                </div>
+              </tag2>
+            </li>
+          </ul>
+        </div>
+      </tag1>
+    </div>
+  </matriochka>
+</div>
+`;
+
+exports[`Storyshots Story|Nest tags Three tags 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <webpage>
+    <pageheader>
+      <h1>
+        Simple title
+      </h1>
+    </pageheader>
+    <pagebody>
+      <div
+        style="border-radius: 1em;border-right: solid 1px #cac9c9;border-bottom: solid 1px #cac9c9;box-shadow: 1em 1em 2em #eae9e9; margin: 3em; padding: 3em;min-height: 10em;min-width: 30em"
+      >
+        Simple Content
+      </div>
+    </pagebody>
+  </webpage>
+</div>
+`;

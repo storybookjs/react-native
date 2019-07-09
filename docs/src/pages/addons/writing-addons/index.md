@@ -89,6 +89,7 @@ addons.register(ADDON_ID, api => {
     type: types.PANEL,
     title,
     render,
+    paramKey: PARAM_KEY,
   });
 });
 ```
@@ -246,6 +247,34 @@ storiesOf('Button', module)
   });
 ```
 
+### Disabling an addon panel
+
+It's possible to disable an addon panel for a particular story.
+ 
+To offer that capability, you need to pass the paramKey when you register the panel
+```js
+addons.register(ADDON_ID, () => {
+  addons.add(PANEL_ID, {
+    type: types.PANEL,
+    title: 'My Addon',
+    render: () => <div>Addon tab content</div>,
+    paramKey: 'myAddon',
+  });
+});
+```
+
+While adding a story, you can then pass a `disabled` parameter.
+
+```js
+storiesOf('Button', module)
+  .add('with text', () => <Button>Hello Button</Button>, {
+    myAddon: {
+      disabled: true,
+    },
+  });
+```
+
+
 ## Styling your addon
 
 We use [emotion](https://emotion.sh) for styling, AND we provide a theme which can be set by the user!
@@ -266,7 +295,7 @@ You can learn more about the complete API [here](/addons/api).
 
 ## Packaging
 
-You can package this addon into a NPM module very easily. As an example, have a look at this [package](https://github.com/storybooks/storybook/tree/master/addons/notes).
+You can package this addon into a NPM module very easily. As an example, have a look at this [package](https://github.com/storybookjs/storybook/tree/master/addons/notes).
 
 In addition to moving the above code to a NPM module, we've set `react` and `@storybook/addons` as peer dependencies.
 

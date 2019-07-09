@@ -7,6 +7,7 @@ jest.mock('fs', () => require('../../../../../__mocks__/fs'));
 jest.mock('path', () => ({
   resolve: () => 'tsconfig.json',
 }));
+jest.mock('@storybook/node-logger');
 
 const setupFiles = (files: any) => {
   // eslint-disable-next-line no-underscore-dangle, global-require

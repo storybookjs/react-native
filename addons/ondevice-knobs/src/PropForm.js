@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import PropField from './PropField';
 
-export default class propForm extends React.Component {
+export default class PropForm extends React.Component {
   makeChangeHandler(name, type) {
     return value => {
       const { onFieldChange } = this.props;
@@ -38,13 +38,13 @@ export default class propForm extends React.Component {
   }
 }
 
-propForm.displayName = 'propForm';
+PropForm.displayName = 'PropForm';
 
-propForm.defaultProps = {
+PropForm.defaultProps = {
   knobs: [],
 };
 
-propForm.propTypes = {
+PropForm.propTypes = {
   knobs: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,

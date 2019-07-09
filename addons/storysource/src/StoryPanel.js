@@ -4,7 +4,7 @@ import { styled } from '@storybook/theming';
 import { Link } from '@storybook/router';
 import { SyntaxHighlighter } from '@storybook/components';
 
-import { createElement } from 'react-syntax-highlighter';
+import createElement from 'react-syntax-highlighter/create-element';
 import { EVENT_ID } from './events';
 
 const StyledStoryLink = styled(Link)(({ theme }) => ({
@@ -66,9 +66,8 @@ export default class StoryPanel extends Component {
     this.selectedStoryRef = ref;
   };
 
-  listener = ({ source, currentLocation, locationsMap }) => {
+  listener = ({ edition: { source }, location: { currentLocation, locationsMap } }) => {
     const locationsKeys = getLocationKeys(locationsMap);
-
     this.setState({
       source,
       currentLocation,

@@ -1,6 +1,8 @@
+import { StoryFn } from '@storybook/addons';
+
 export declare const moduleMetadata: (
   metadata: Partial<NgModuleMetadata>
-) => (storyFn: () => any) => any;
+) => (storyFn: StoryFn) => any;
 
 export interface NgModuleMetadata {
   declarations?: any[];
@@ -27,24 +29,9 @@ export interface IStorybookSection {
   stories: IStorybookStory[];
 }
 
-export interface IStoryContext {
-  kind: string;
-  name: string;
-  parameters: any;
-}
-
-export interface IStory {
+export interface StoryFnAngularReturnType {
   props?: ICollection;
   moduleMetadata?: Partial<NgModuleMetadata>;
   component?: any;
   template?: string;
-}
-
-export type IGetStory = (context: IStoryContext) => IStory;
-
-export interface IApi {
-  kind: string;
-  addDecorator: (decorator: any) => IApi;
-  addParameters: (parameters: any) => IApi;
-  add: (storyName: string, getStory: IGetStory, parameters?: any) => IApi;
 }

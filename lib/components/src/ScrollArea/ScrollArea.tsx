@@ -13,7 +13,9 @@ export interface ScrollProps {
   [key: string]: any;
 }
 
-const Scroll = styled(({ vertical, horizontal, ...rest }: ScrollProps) => <SimpleBar {...rest} />)(
+const Scroll = styled(({ vertical, horizontal, ...rest }: ScrollProps) => <SimpleBar {...rest} />)<
+  ScrollProps
+>(
   ({ vertical }) =>
     !vertical
       ? {

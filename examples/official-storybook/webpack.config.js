@@ -39,8 +39,8 @@ module.exports = async ({ config }) => ({
         exclude: [/node_modules/, /dist/],
       },
       {
-        test: /\.stories\.jsx?$/,
-        use: require.resolve('@storybook/addon-storysource/loader'),
+        test: /\.stories\.[tj]sx?$/,
+        loader: require.resolve('@storybook/source-loader'),
         include: [
           path.resolve(__dirname, './stories'),
           path.resolve(__dirname, '../../lib/ui/src'),
