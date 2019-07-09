@@ -2,7 +2,7 @@ import { StoryFn } from '@storybook/addons';
 
 export declare const moduleMetadata: (
   metadata: Partial<NgModuleMetadata>
-) => (storyFn: StoryFn) => any;
+) => (storyFn: StoryFn<StoryFnAngularReturnType>) => any;
 
 export interface NgModuleMetadata {
   declarations?: any[];
@@ -30,8 +30,10 @@ export interface IStorybookSection {
 }
 
 export interface StoryFnAngularReturnType {
-  props?: ICollection;
-  moduleMetadata?: Partial<NgModuleMetadata>;
   component?: any;
+  props: ICollection;
+  propsMeta?: ICollection;
+  moduleMetadata?: NgModuleMetadata;
   template?: string;
+  styles?: string[];
 }
