@@ -11,7 +11,13 @@ const styles = {
   margin: 10,
 };
 
-const Button = ({ children, onClick }) => (
+const Button = ({
+  children,
+  onClick,
+}: {
+  children: React.ReactChildren;
+  onClick: (event: React.MouseEvent<HTMLElement>) => void;
+}) => (
   <button onClick={onClick} style={styles} type="button">
     {children}
   </button>

@@ -1,4 +1,4 @@
-import packageJson from '../../package.json';
+const packageJson = require('../../package.json');
 
 export default {
   packageJson,

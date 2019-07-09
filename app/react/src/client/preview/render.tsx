@@ -3,10 +3,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { stripIndents } from 'common-tags';
 import isReactRenderable from './element_check';
+import { RenderMainArgs } from './types';
 
 const rootEl = document ? document.getElementById('root') : null;
 
-function render(node, el) {
+function render(node: React.ReactElement, el: Element) {
   ReactDOM.render(
     process.env.STORYBOOK_EXAMPLE_APP ? <React.StrictMode>{node}</React.StrictMode> : node,
     el
@@ -20,7 +21,7 @@ export default function renderMain({
   showMain,
   showError,
   forceRender,
-}) {
+}: RenderMainArgs) {
   const element = storyFn();
 
   if (!element) {

@@ -1,8 +1,9 @@
 import path from 'path';
+import { Configuration } from 'webpack';
 import { logger } from '@storybook/node-logger';
 import { applyCRAWebpackConfig, getReactScriptsPath, isReactScriptsInstalled } from './cra-config';
 
-export function webpackFinal(config, { configDir }) {
+export function webpackFinal(config: Configuration, { configDir }: { configDir: string }) {
   if (!isReactScriptsInstalled()) {
     logger.info('=> Using base config because react-scripts is not installed.');
     return config;
@@ -12,7 +13,7 @@ export function webpackFinal(config, { configDir }) {
   return applyCRAWebpackConfig(config, configDir);
 }
 
-export function managerWebpack(config) {
+export function managerWebpack(config: Configuration) {
   if (!isReactScriptsInstalled()) {
     return config;
   }
@@ -25,7 +26,7 @@ export function managerWebpack(config) {
   };
 }
 
-export function babelDefault(config) {
+export function babelDefault(config: Configuration) {
   if (!isReactScriptsInstalled()) {
     return config;
   }

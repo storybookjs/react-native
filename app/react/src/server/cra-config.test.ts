@@ -18,7 +18,7 @@ jest.mock('mini-css-extract-plugin', () => {});
 
 const SCRIPT_PATH = '.bin/react-scripts';
 
-const stripCwd = loaderPath => loaderPath.replace(process.cwd(), '');
+const stripCwd = (loaderPath: string) => loaderPath.replace(process.cwd(), '');
 
 describe('cra-config', () => {
   describe('when used with the default react-scripts package', () => {
@@ -92,7 +92,9 @@ exit $ret`
     // Allows using TypeScript in the `.storybook` (or config) folder.
     it('should add the Storybook config directory to `include`', () => {
       const rules = getTypeScriptRules(mockRules, './.storybook');
-      expect(rules[0].include.findIndex(string => string.includes('.storybook'))).toEqual(1);
+      expect(rules[0].include.findIndex((string: string) => string.includes('.storybook'))).toEqual(
+        1
+      );
     });
 
     it('should get the baseUrl from a tsconfig.json', () => {

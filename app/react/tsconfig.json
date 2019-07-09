@@ -2,9 +2,13 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "rootDir": "./src",
-    "types": ["webpack-env"]
+    "types": ["webpack-env"],
+    "resolveJsonModule": true
   },
   "include": [
     "src/**/*"
+  ],
+  "exclude": [
+    "src/**/*.test.*"
   ]
 }

@@ -68,6 +68,7 @@ module.exports = {
     '/generators/',
     '/dll/',
     '/__mocks__ /',
+    '/__testfixtures__/',
   ],
   globals: {
     DOCS_MODE: false,

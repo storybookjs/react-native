@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "main": "dist/client/index.js",
-  "jsnext:main": "src/client/index.js",
+  "types": "dist/client/index.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
@@ -29,6 +29,7 @@
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addons": "5.2.0-alpha.38",
     "@storybook/core": "5.2.0-alpha.38",
     "@storybook/node-logger": "5.2.0-alpha.38",
     "@svgr/webpack": "^4.0.3",
@@ -49,8 +50,14 @@
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
+    "@babel/core": "^7.0.1",
     "react": "*",
     "react-dom": "*"
+  },
+  "devDependencies": {
+    "@types/mini-css-extract-plugin": "^0.2.1",
+    "@types/node": "^12.0.8",
+    "@types/webpack": "^4.4.32"
   },
   "engines": {
     "node": ">=8.0.0"

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Main = props => (
+const Main = (props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>) => (
   <article
     {...props}
     style={{
@@ -13,7 +13,13 @@ const Main = props => (
   />
 );
 
-const Title = ({ children, ...props }) => <h1 {...props}>{children}</h1>;
+const Title = ({
+  children,
+  ...props
+}: {
+  children: string;
+  props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
+}) => <h1 {...props}>{children}</h1>;
 Title.propTypes = {
   children: PropTypes.node,
 };
@@ -21,7 +27,9 @@ Title.defaultProps = {
   children: undefined,
 };
 
-const Note = props => (
+const Note = (
+  props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>
+) => (
   <p
     {...props}
     style={{
@@ -30,7 +38,9 @@ const Note = props => (
   />
 );
 
-const InlineCode = props => (
+const InlineCode = (
+  props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+) => (
   <code
     {...props}
     style={{
@@ -45,7 +55,18 @@ const InlineCode = props => (
   />
 );
 
-const Link = ({ children, href, ...props }) => (
+const Link = ({
+  children,
+  href,
+  target,
+  ...props
+}: {
+  children: string;
+  href: string;
+  target: string;
+  rel: string;
+  props?: React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
+}) => (
   <a
     href={href}
     {...props}
@@ -68,7 +89,15 @@ Link.defaultProps = {
   children: undefined,
 };
 
-const NavButton = ({ children, ...props }) => (
+const NavButton = ({
+  children,
+  onClick,
+  ...props
+}: {
+  children: string;
+  onClick: (event: React.MouseEvent<HTMLElement>) => void;
+  props?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+}) => (
   <button
     {...props}
     type="button"
@@ -97,7 +126,7 @@ NavButton.defaultProps = {
   children: undefined,
 };
 
-const Welcome = ({ showApp }) => (
+const Welcome = ({ showApp }: { showApp: () => void }) => (
   <Main>
     <Title>Welcome to storybook</Title>
     <p>This is a UI component dev environment for your app.</p>

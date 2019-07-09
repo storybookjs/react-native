@@ -24,10 +24,8 @@ const ignore = [
   '__snapshots__',
   '__tests__',
   '/tests/',
-  // '/stories/',
   /.+\.test\..+/,
-  // /\/.+\.story\..+/,
-  // /\/.+\.stories\..+/,
+
 ];
 
 function cleanup() {

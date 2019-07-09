@@ -1,4 +1,6 @@
-export function babel(config) {
+import { TransformOptions } from '@babel/core';
+
+export function babel(config: TransformOptions) {
   // Ensure plugins are defined or fallback to an array to avoid empty values.
   const babelConfigPlugins = config.plugins || [];
 
