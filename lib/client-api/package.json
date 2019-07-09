@@ -1,10 +1,11 @@
 {
   "name": "@storybook/client-api",
-  "version": "5.2.0-alpha.35",
+  "version": "5.2.0-alpha.38",
   "description": "Storybook Client API",
   "keywords": [
     "storybook"
   ],
+  "types": "dist/public_api.d.ts",
   "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/client-api",
   "bugs": {
     "url": "https://github.com/storybookjs/storybook/issues"
@@ -20,10 +21,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.35",
-    "@storybook/client-logger": "5.2.0-alpha.35",
-    "@storybook/core-events": "5.2.0-alpha.35",
-    "@storybook/router": "5.2.0-alpha.35",
+    "@storybook/addons": "5.2.0-alpha.38",
+    "@storybook/channel-postmessage": "5.2.0-alpha.38",
+    "@storybook/channels": "5.2.0-alpha.38",
+    "@storybook/client-logger": "5.2.0-alpha.38",
+    "@storybook/core-events": "5.2.0-alpha.38",
+    "@storybook/router": "5.2.0-alpha.38",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "eventemitter3": "^3.1.0",

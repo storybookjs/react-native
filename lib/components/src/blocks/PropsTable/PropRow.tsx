@@ -27,13 +27,13 @@ interface PropRowProps {
 
 const Name = styled.span({ fontWeight: 'bold' });
 
-const Required = styled.span(({ theme }) => ({
+const Required = styled.span<{}>(({ theme }) => ({
   color: theme.color.negative,
   fontFamily: theme.typography.fonts.mono,
   cursor: 'help',
 }));
 
-const StyledPropDef = styled.div(({ theme }) => ({
+const StyledPropDef = styled.div<{}>(({ theme }) => ({
   color:
     theme.base === 'light'
       ? transparentize(0.4, theme.color.defaultText)
