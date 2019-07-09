@@ -22,7 +22,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/native": "^10.0.10",
+    "@emotion/native": "^10.0.14",
+    "@emotion/core": "^10.0.14",
+    "emotion-theming": "^10.0.14",
     "@storybook/addons": "5.2.0-alpha.38",
     "@storybook/channel-websocket": "5.2.0-alpha.38",
     "@storybook/channels": "5.2.0-alpha.38",
