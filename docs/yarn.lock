@@ -261,20 +261,20 @@
   dependencies:
     "@ndhoule/map" "^2.0.1"
 
-"@storybook/client-logger@5.2.0-alpha.36":
-  version "5.2.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.2.0-alpha.36.tgz#aff65cf246982176803e751c418d0052f507aa20"
-  integrity sha512-5gTBxaASFAgXh12m5GX0cvbSrIJWXhfcOuXSD48g6PuHHRup9PaoM9PNwgnB1HolJFYl8CG6jC5I/hnaBQr/QQ==
+"@storybook/client-logger@5.2.0-alpha.37":
+  version "5.2.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.2.0-alpha.37.tgz#b0e845f5dd3e2630ba431bea3ba03cca4376f40f"
+  integrity sha512-AkiOL/aCr1t2gOKwqsdspAyUyuO67MzBLL/28KxYDYS66DrsWrk/iMaozuGyk4JLDdc/xCJC3NJcGZfliyb40w==
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/components@5.2.0-alpha.36":
-  version "5.2.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.2.0-alpha.36.tgz#370e3e593923ce6e5698d560156bd84c4a3c78cd"
-  integrity sha512-H/Z9wLV/ZJH73Ko1R3Anw4oVodf4z/hcQP0UK3XRIOejv1iI/2ZoRWyIkD/b5IoouHPIXlWkplTkLp2eCFDvPA==
+"@storybook/components@5.2.0-alpha.37":
+  version "5.2.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.2.0-alpha.37.tgz#e3274ae7030d700cf5443e7b8e83280d0922f332"
+  integrity sha512-gsroM+KBWT4nKluvRrEcAVqEaIzYVFeUGUQou3Cst9iOnkHuxB6Enljg5gNrDIjcPpzRLkouYJdZhZEkGAlUPA==
   dependencies:
-    "@storybook/client-logger" "5.2.0-alpha.36"
-    "@storybook/theming" "5.2.0-alpha.36"
+    "@storybook/client-logger" "5.2.0-alpha.37"
+    "@storybook/theming" "5.2.0-alpha.37"
     core-js "^3.0.1"
     global "^4.3.2"
     markdown-to-jsx "^6.9.1"
@@ -292,14 +292,14 @@
     recompose "^0.30.0"
     simplebar-react "^1.0.0-alpha.6"
 
-"@storybook/theming@5.2.0-alpha.36":
-  version "5.2.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.2.0-alpha.36.tgz#52c963d9697740762ef1f5e14edae30885a8fce5"
-  integrity sha512-nDLK6j0rR2lmNuOsvySuv2QsCbLf+u/CWsSHcIAajGIQWyVqoXAHf/bbDOPNxUPIWMj9noZ2zOxakVQ69Ksl3w==
+"@storybook/theming@5.2.0-alpha.37":
+  version "5.2.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.2.0-alpha.37.tgz#9bdc0992f01516c8aa333517150393637a5a539e"
+  integrity sha512-NgpxIOikDrtnVYX9N70Gq75O/y4Wvbfq+qWn7wmazQzNsSG41un6VVR/yb7rJMxh/KxlfMP8cyB2l7S8lglxuw==
   dependencies:
     "@emotion/core" "^10.0.9"
     "@emotion/styled" "^10.0.7"
-    "@storybook/client-logger" "5.2.0-alpha.36"
+    "@storybook/client-logger" "5.2.0-alpha.37"
     common-tags "^1.8.0"
     core-js "^3.0.1"
     deep-object-diff "^1.1.0"
@@ -5793,10 +5793,10 @@ html-entities@^1.2.0:
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
   integrity sha1-DfKTUfByEWNRXfueVUPl9u7VFi8=
 
-html-react-parser@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-0.8.0.tgz#691a9d31153a87a16eb5ed4d6a08da5b18e0c9de"
-  integrity sha512-R5tkVKQ5pZzPzYUG5GlSoGvrDi46/K04JDwK9iRYVSVkvcF/3fN5JDEwnMmcnh8d9o8moSV7WaU/49TJGghYWg==
+html-react-parser@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-0.8.1.tgz#f42197e910995bdc7979f0a04267e85e34f52834"
+  integrity sha512-XUU/7JZuXehhLwnw0Vtpr8dxDEKwTrCFSRDUFmfKPA786vb7gIimvYXyIcxhrtg0Z8ZGEaYRUwL+fYUB8AbAhQ==
   dependencies:
     "@types/domhandler" "2.4.1"
     html-dom-parser "0.2.2"
@@ -7143,6 +7143,11 @@ lodash.camelcase@^4.3.0:
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
 
+lodash.chunk@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.chunk/-/lodash.chunk-4.2.0.tgz#66e5ce1f76ed27b4303d8c6512e8d1216e8106bc"
+  integrity sha1-ZuXOH3btJ7QwPYxlEujRIW6BBrw=
+
 lodash.clonedeep@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
@@ -7271,7 +7276,7 @@ lodash.padend@^4.1.0:
   resolved "https://registry.yarnpkg.com/lodash.padend/-/lodash.padend-4.6.1.tgz#53ccba047d06e158d311f45da625f4e49e6f166e"
   integrity sha1-U8y6BH0G4VjTEfRdpiX05J5vFm4=
 
-lodash.padstart@^4.1.0:
+lodash.padstart@^4.1.0, lodash.padstart@^4.6.1:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.padstart/-/lodash.padstart-4.6.1.tgz#d2e3eebff0d9d39ad50f5cbd1b52a7bce6bb611b"
   integrity sha1-0uPuv/DZ05rVD1y9G1KnvOa7YRs=
@@ -7528,10 +7533,10 @@ markdown-to-jsx@^6.9.1:
     prop-types "^15.6.2"
     unquote "^1.1.0"
 
-marked@^0.6.3:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.6.3.tgz#79babad78af638ba4d522a9e715cdfdd2429e946"
-  integrity sha512-Fqa7eq+UaxfMriqzYLayfqAE40WN03jf+zHjT18/uXNuzjq3TY0XTbrAoPeqSJrAmPz11VuUA+kBPYOhHt9oOQ==
+marked@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.7.0.tgz#b64201f051d271b1edc10a04d1ae9b74bb8e5c0e"
+  integrity sha512-c+yYdCZJQrsRjTPhUx7VKkApw9bwDkNbHUKo1ovgcfDjb2kc8rLuRbIFyXL5WOEUwzSSKo3IXpph2K6DqB/KZg==
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
@@ -11182,12 +11187,13 @@ simplebar@^4.0.0-alpha.9:
     resize-observer-polyfill "^1.5.1"
     scrollbarwidth "^0.1.3"
 
-sitemap@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-3.0.0.tgz#8533913a282b0da341a1cef86db1b3402ba6fb92"
-  integrity sha512-sI8X+/9OYNcmTqBxt/i8/fICFuiLAGzxQPdiu5CBCLfLwy2utRlqPpEvVsN9PM618DkX0amiX2vZ8IErhTMlSA==
+sitemap@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-3.2.1.tgz#422ec208f5c0c70cb3a45c307ba5ec2782419636"
+  integrity sha512-n033QgXR8iBQu66hnpFXMHHRZhr7BTeTmRXhzqSsb1e5AMIkUxDcPpj+Nr9gtT1QpmeZIMR+mq2JHOEOgyZmaA==
   dependencies:
-    lodash "^4.17.11"
+    lodash.chunk "^4.2.0"
+    lodash.padstart "^4.6.1"
     whatwg-url "^7.0.0"
     xmlbuilder "^13.0.0"
 
