@@ -5793,10 +5793,10 @@ html-entities@^1.2.0:
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
   integrity sha1-DfKTUfByEWNRXfueVUPl9u7VFi8=
 
-html-react-parser@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-0.8.0.tgz#691a9d31153a87a16eb5ed4d6a08da5b18e0c9de"
-  integrity sha512-R5tkVKQ5pZzPzYUG5GlSoGvrDi46/K04JDwK9iRYVSVkvcF/3fN5JDEwnMmcnh8d9o8moSV7WaU/49TJGghYWg==
+html-react-parser@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-0.8.1.tgz#f42197e910995bdc7979f0a04267e85e34f52834"
+  integrity sha512-XUU/7JZuXehhLwnw0Vtpr8dxDEKwTrCFSRDUFmfKPA786vb7gIimvYXyIcxhrtg0Z8ZGEaYRUwL+fYUB8AbAhQ==
   dependencies:
     "@types/domhandler" "2.4.1"
     html-dom-parser "0.2.2"
