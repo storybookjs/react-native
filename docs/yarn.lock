@@ -261,20 +261,20 @@
   dependencies:
     "@ndhoule/map" "^2.0.1"
 
-"@storybook/client-logger@5.2.0-alpha.36":
-  version "5.2.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.2.0-alpha.36.tgz#aff65cf246982176803e751c418d0052f507aa20"
-  integrity sha512-5gTBxaASFAgXh12m5GX0cvbSrIJWXhfcOuXSD48g6PuHHRup9PaoM9PNwgnB1HolJFYl8CG6jC5I/hnaBQr/QQ==
+"@storybook/client-logger@5.2.0-alpha.37":
+  version "5.2.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.2.0-alpha.37.tgz#b0e845f5dd3e2630ba431bea3ba03cca4376f40f"
+  integrity sha512-AkiOL/aCr1t2gOKwqsdspAyUyuO67MzBLL/28KxYDYS66DrsWrk/iMaozuGyk4JLDdc/xCJC3NJcGZfliyb40w==
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/components@5.2.0-alpha.36":
-  version "5.2.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.2.0-alpha.36.tgz#370e3e593923ce6e5698d560156bd84c4a3c78cd"
-  integrity sha512-H/Z9wLV/ZJH73Ko1R3Anw4oVodf4z/hcQP0UK3XRIOejv1iI/2ZoRWyIkD/b5IoouHPIXlWkplTkLp2eCFDvPA==
+"@storybook/components@5.2.0-alpha.37":
+  version "5.2.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.2.0-alpha.37.tgz#e3274ae7030d700cf5443e7b8e83280d0922f332"
+  integrity sha512-gsroM+KBWT4nKluvRrEcAVqEaIzYVFeUGUQou3Cst9iOnkHuxB6Enljg5gNrDIjcPpzRLkouYJdZhZEkGAlUPA==
   dependencies:
-    "@storybook/client-logger" "5.2.0-alpha.36"
-    "@storybook/theming" "5.2.0-alpha.36"
+    "@storybook/client-logger" "5.2.0-alpha.37"
+    "@storybook/theming" "5.2.0-alpha.37"
     core-js "^3.0.1"
     global "^4.3.2"
     markdown-to-jsx "^6.9.1"
@@ -292,14 +292,14 @@
     recompose "^0.30.0"
     simplebar-react "^1.0.0-alpha.6"
 
-"@storybook/theming@5.2.0-alpha.36":
-  version "5.2.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.2.0-alpha.36.tgz#52c963d9697740762ef1f5e14edae30885a8fce5"
-  integrity sha512-nDLK6j0rR2lmNuOsvySuv2QsCbLf+u/CWsSHcIAajGIQWyVqoXAHf/bbDOPNxUPIWMj9noZ2zOxakVQ69Ksl3w==
+"@storybook/theming@5.2.0-alpha.37":
+  version "5.2.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.2.0-alpha.37.tgz#9bdc0992f01516c8aa333517150393637a5a539e"
+  integrity sha512-NgpxIOikDrtnVYX9N70Gq75O/y4Wvbfq+qWn7wmazQzNsSG41un6VVR/yb7rJMxh/KxlfMP8cyB2l7S8lglxuw==
   dependencies:
     "@emotion/core" "^10.0.9"
     "@emotion/styled" "^10.0.7"
-    "@storybook/client-logger" "5.2.0-alpha.36"
+    "@storybook/client-logger" "5.2.0-alpha.37"
     common-tags "^1.8.0"
     core-js "^3.0.1"
     deep-object-diff "^1.1.0"
