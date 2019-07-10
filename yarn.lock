@@ -24408,6 +24408,13 @@ rax-text@^0.6.5:
   dependencies:
     universal-env "^0.6.5"
 
+rax-text@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/rax-text/-/rax-text-1.0.0.tgz#81be12a97c8dc406f934456d75e060e52dd26104"
+  integrity sha512-eLMOkvmlSLFf6XlvHvS+PIBL0bo/rDNilVyONkb77s+NGL/zz2/8OnBCasg4NzjulUJ6MJYE0k/DgJ4GHCdPDw==
+  dependencies:
+    universal-env "^0.6.5"
+
 rax-touchable@^0.6.5:
   version "0.6.5"
   resolved "https://registry.yarnpkg.com/rax-touchable/-/rax-touchable-0.6.5.tgz#f4b9db897ec73a47faf8b3af52f0fae3749e99ea"
