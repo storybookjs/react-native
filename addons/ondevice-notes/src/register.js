@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { View } from 'react-native';
 import Markdown from 'react-native-simple-markdown';
@@ -7,10 +10,6 @@ import Events from '@storybook/core-events';
 export const PARAM_KEY = `notes`;
 
 class Notes extends React.Component {
-  setBackgroundFromSwatch = background => {
-    this.props.channel.emit(Constants.UPDATE_BACKGROUND, background);
-  };
-
   componentDidMount() {
     this.props.channel.on(Events.SELECT_STORY, this.onStorySelected);
   }
@@ -50,5 +49,6 @@ addons.register('storybook/notes', api => {
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
     render: ({ active, key }) => <Notes key={key} channel={channel} api={api} active={active} />,
+    paramKey: PARAM_KEY,
   });
 });

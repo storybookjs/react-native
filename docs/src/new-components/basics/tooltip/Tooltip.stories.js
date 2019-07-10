@@ -16,6 +16,9 @@ const Content = styled.div`
 `;
 
 storiesOf('basics/tooltip/Tooltip', module)
+  .addParameters({
+    component: Tooltip,
+  })
   .add('basic, default', () => (
     <Tooltip hasChrome {...mockPopperProps}>
       <Content>Text</Content>

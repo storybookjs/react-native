@@ -310,7 +310,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
       <div>
         It's a 
          story:
-        <TestComponent
+        <Memo(TestComponent)
           array={
             Array [
               1,
@@ -368,7 +368,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
               </li>
             </ul>
           </div>
-        </TestComponent>
+        </Memo(TestComponent)>
       </div>
     </div>
     <button
@@ -1331,7 +1331,7 @@ exports[`addon Info should render component description if story kind matches co
               bordered={true}
               className={null}
               copyable={true}
-              format={true}
+              format={false}
               language="js"
               padded={false}
             >
@@ -5888,7 +5888,7 @@ exports[`addon Info should render component description if story name matches co
               bordered={true}
               className={null}
               copyable={true}
-              format={true}
+              format={false}
               language="js"
               padded={false}
             >

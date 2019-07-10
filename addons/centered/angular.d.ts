@@ -1,3 +1,5 @@
+import { StoryFn } from "@storybook/addons";
+
 export interface ICollection {
   [p: string]: any;
 }
@@ -11,11 +13,13 @@ export interface NgModuleMetadata {
 }
 
 export interface IStory {
-  props?: ICollection;
-  moduleMetadata?: Partial<NgModuleMetadata>;
   component?: any;
+  props?: ICollection;
+  propsMeta?: ICollection;
+  moduleMetadata?: NgModuleMetadata;
   template?: string;
+  styles?: string[];
 }
 declare module '@storybook/addon-centered/angular' {
-  export function centered(story: IStory): IStory;
+  export function centered(story: StoryFn<IStory>): IStory;
 }
