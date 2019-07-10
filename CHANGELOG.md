@@ -1,3 +1,21 @@
+## 5.2.0-alpha.41 (July 11, 2019)
+
+### Features
+
+* API: Preview hooks ([#6916](https://github.com/storybookjs/storybook/pull/6916))
+* Core: Custom webpack option for standalone storybook ([#6886](https://github.com/storybookjs/storybook/pull/6886))
+
+### Bug Fixes
+
+* Addon-knobs: Fix TypeError on KnobManager channel ([#7341](https://github.com/storybookjs/storybook/pull/7341))
+* React-native: Explicitly depend on emotion core and theming ([#7362](https://github.com/storybookjs/storybook/pull/7362))
+
+### Dependency Upgrades
+
+* Bump @babel/preset-env from 7.5.0 to 7.5.4 ([#7364](https://github.com/storybookjs/storybook/pull/7364))
+* Update react-test-renderer requirement from 16.5.1 to 16.8.6 in /examples-native/crna-kitchen-sink ([#6372](https://github.com/storybookjs/storybook/pull/6372))
+* Bump rax-text from 0.6.5 to 1.0.0 ([#7346](https://github.com/storybookjs/storybook/pull/7346))
+
 ## 5.2.0-alpha.40 (July 10, 2019)
 
 ### Bug Fixes
