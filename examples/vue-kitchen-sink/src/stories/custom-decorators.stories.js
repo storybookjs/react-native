@@ -30,10 +30,9 @@ export const template = () => ({
   template: '<my-button>MyButton with template</my-button>',
 });
 
-export const withData = ({ parameters, ...rest }) =>
-  console.log(parameters) || {
-    template: `<pre>${JSON.stringify({ ...rest, parameters }, null, 2)}</pre>`,
-  };
+export const withData = ({ parameters, ...rest }) => ({
+  template: `<pre>${JSON.stringify({ ...rest, parameters }, null, 2)}</pre>`,
+});
 
 export const render = () => ({
   render(h) {
