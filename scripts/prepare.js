@@ -19,14 +19,7 @@ function removeDist() {
   shell.rm('-rf', 'dist');
 }
 
-const ignore = [
-  '__mocks__',
-  '__snapshots__',
-  '__tests__',
-  '/tests/',
-  /.+\.test\..+/,
-
-];
+const ignore = ['__mocks__', '__snapshots__', '__tests__', '/tests/', /.+\.test\..+/];
 
 function cleanup() {
   // remove files after babel --copy-files output

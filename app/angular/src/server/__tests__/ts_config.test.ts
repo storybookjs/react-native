@@ -1,13 +1,13 @@
-import getTsLoaderOptions from './ts_config';
+import getTsLoaderOptions from '../ts_config';
 
 // eslint-disable-next-line global-require
-jest.mock('fs', () => require('../../../../__mocks__/fs'));
+jest.mock('fs', () => require('../../../../../__mocks__/fs'));
 jest.mock('path', () => ({
   resolve: () => 'tsconfig.json',
 }));
 jest.mock('@storybook/node-logger');
 
-const setupFiles = files => {
+const setupFiles = (files: any) => {
   // eslint-disable-next-line no-underscore-dangle, global-require
   require('fs').__setMockFiles(files);
 };

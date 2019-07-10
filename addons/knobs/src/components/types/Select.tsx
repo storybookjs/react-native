@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Form } from '@storybook/components';
 
-type SelectTypeKnobValue = string;
+export type SelectTypeKnobValue = string | number | null | undefined;
 
 export interface SelectTypeKnob {
   name: string;
@@ -11,9 +11,9 @@ export interface SelectTypeKnob {
   options: SelectTypeOptionsProp;
 }
 
-export interface SelectTypeOptionsProp {
-  [key: string]: SelectTypeKnobValue;
-}
+export type SelectTypeOptionsProp =
+  | Record<string, SelectTypeKnobValue>
+  | NonNullable<SelectTypeKnobValue>[];
 
 export interface SelectTypeProps {
   knob: SelectTypeKnob;

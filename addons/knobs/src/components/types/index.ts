@@ -31,7 +31,7 @@ export { NumberTypeKnob, NumberTypeKnobOptions } from './Number';
 export { ColorTypeKnob } from './Color';
 export { BooleanTypeKnob } from './Boolean';
 export { ObjectTypeKnob } from './Object';
-export { SelectTypeKnob, SelectTypeOptionsProp } from './Select';
+export { SelectTypeKnob, SelectTypeOptionsProp, SelectTypeKnobValue } from './Select';
 export { RadiosTypeKnob, RadiosTypeOptionsProp } from './Radio';
 export { ArrayTypeKnob } from './Array';
 export { DateTypeKnob } from './Date';

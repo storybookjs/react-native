@@ -7,6 +7,7 @@ import {
   ButtonTypeOnClickProp,
   RadiosTypeOptionsProp,
   SelectTypeOptionsProp,
+  SelectTypeKnobValue,
   OptionsTypeOptionsProp,
   OptionsKnobOptions,
 } from './components/types';
@@ -63,7 +64,7 @@ export function object<T>(name: string, value: T, groupId?: string) {
 export function select(
   name: string,
   options: SelectTypeOptionsProp,
-  value: string,
+  value: SelectTypeKnobValue,
   groupId?: string
 ) {
   return manager.knob(name, { type: 'select', selectV2: true, options, value, groupId });
