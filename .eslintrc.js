@@ -135,7 +135,13 @@ module.exports = {
     ],
     'no-underscore-dangle': [
       error,
-      { allow: ['__STORYBOOK_CLIENT_API__', '__STORYBOOK_ADDONS_CHANNEL__'] },
+      {
+        allow: [
+          '__STORYBOOK_CLIENT_API__',
+          '__STORYBOOK_ADDONS_CHANNEL__',
+          '__STORYBOOK_STORY_STORE__',
+        ],
+      },
     ],
     '@typescript-eslint/no-var-requires': ignore,
     '@typescript-eslint/camelcase': ignore,

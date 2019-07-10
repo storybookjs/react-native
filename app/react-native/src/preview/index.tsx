@@ -46,7 +46,7 @@ export default class Preview {
   constructor() {
     this._addons = {};
     this._decorators = [];
-    this._stories = new StoryStore({});
+    this._stories = new StoryStore({ channel: null });
     this._clientApi = new ClientApi({ storyStore: this._stories });
   }
 
@@ -211,7 +211,7 @@ export default class Preview {
   _selectStory(story: any) {
     const channel = addons.getChannel();
 
-    this._stories.setSelection({ storyId: story.id });
+    this._stories.setSelection({ storyId: story.id, viewMode: 'story' }, null);
     channel.emit(Events.SELECT_STORY, story);
   }
 

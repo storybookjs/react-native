@@ -1,9 +1,12 @@
 {
-  "name": "@storybook/addon-actions",
+  "name": "@storybook/addon-decorator",
   "version": "5.2.0-alpha.40",
-  "description": "Action Logger addon for storybook",
+  "description": "decorator addon for storybook",
   "keywords": [
-    "storybook"
+    "devkit",
+    "addon",
+    "storybook",
+    "decorator"
   ],
   "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/actions",
   "bugs": {
@@ -22,23 +25,9 @@
   },
   "dependencies": {
     "@storybook/addons": "5.2.0-alpha.40",
-    "@storybook/api": "5.2.0-alpha.40",
     "@storybook/client-api": "5.2.0-alpha.40",
-    "@storybook/components": "5.2.0-alpha.40",
-    "@storybook/core-events": "5.2.0-alpha.40",
-    "@storybook/theming": "5.2.0-alpha.40",
-    "core-js": "^3.0.1",
-    "fast-deep-equal": "^2.0.1",
-    "global": "^4.3.2",
-    "polished": "^3.3.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-inspector": "^3.0.2",
-    "uuid": "^3.3.2"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.129",
-    "@types/uuid": "^3.4.4"
+    "global": "^3.0.1",
+    "core-js": "^3.0.1"
   },
   "publishConfig": {
     "access": "public"
