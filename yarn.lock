@@ -24822,12 +24822,12 @@ react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
   resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
 
-react-native-modal-datetime-picker@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-modal-datetime-picker/-/react-native-modal-datetime-picker-6.1.0.tgz#246563ed582e68a886134ba1e2a3226504590819"
-  integrity sha512-QIhWcaUli+KpezHJhBfeH2x3E1yBcn8R44ZHsGb6598v+k2rV6JB/Kvn9CDFRFDbr7nsTnsHMqz5eUMxiTXNdQ==
+react-native-modal-datetime-picker@^7.4.2:
+  version "7.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-modal-datetime-picker/-/react-native-modal-datetime-picker-7.4.2.tgz#d000c4c9675ca8add779820f2947c814e0aa2e53"
+  integrity sha512-RzQiYvbtBE/FJdaPhFcyc4tjw4LZ6AuE3uWPRqiTy4WSoE9pGV1QzrJzPIYhrJfmKWLF72ntnzG8uQyUAx/Znw==
   dependencies:
-    prop-types "^15.6.2"
+    prop-types "^15.7.2"
     react-native-modal "^9.0.0"
 
 react-native-modal-selector@^1.0.2:
