@@ -32,7 +32,7 @@ interface ColorButtonProps {
 
 const { Button } = Form;
 
-const Swatch = styled.div(({ theme }) => ({
+const Swatch = styled.div<{}>(({ theme }) => ({
   position: 'absolute',
   top: '50%',
   transform: 'translateY(-50%)',

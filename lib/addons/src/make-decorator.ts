@@ -1,45 +1,5 @@
 import deprecate from 'util-deprecate';
-
-export interface Parameters {
-  fileName?: string;
-  options?: OptionsParameter;
-  [key: string]: any;
-}
-
-export interface StoryContext {
-  id: string;
-  name: string;
-  kind: string;
-  [key: string]: any;
-  parameters: Parameters;
-}
-
-export interface WrapperSettings {
-  options: OptionsParameter;
-  parameters: {
-    [key: string]: any;
-  };
-}
-
-export interface OptionsParameter extends Object {
-  storySort?: any;
-  hierarchyRootSeparator?: string;
-  hierarchySeparator?: RegExp;
-  theme?: {
-    base: string;
-    brandTitle?: string;
-  };
-  [key: string]: any;
-}
-
-export type StoryGetter = (context: StoryContext) => any;
-export type StoryFn = (p?: StoryContext) => any;
-
-export type StoryWrapper = (
-  getStory: StoryGetter,
-  context: StoryContext,
-  settings: WrapperSettings
-) => any;
+import { StoryWrapper, StoryGetter, StoryContext } from './types';
 
 type MakeDecoratorResult = (...args: any) => any;
 

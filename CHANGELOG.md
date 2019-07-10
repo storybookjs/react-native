@@ -1,3 +1,48 @@
+## 5.2.0-alpha.40 (July 10, 2019)
+
+### Bug Fixes
+
+* Addon-knobs: Revert entrypoint deletion ([#7369](https://github.com/storybookjs/storybook/pull/7369))
+* Typescript: Fix types in api package ([#7072](https://github.com/storybookjs/storybook/pull/7072))
+* UI: Fix settings page route (about, shortcuts) ([#7241](https://github.com/storybookjs/storybook/pull/7241))
+
+### Maintenance
+
+* Linting: ADD an ignore for an eslint error about a missing dependency (puppeteer) ([#7239](https://github.com/storybookjs/storybook/pull/7239))
+* CI: ADD travis ([#7252](https://github.com/storybookjs/storybook/pull/7252))
+* Typescript: Migrate @storybook/angular ([#6570](https://github.com/storybookjs/storybook/pull/6570))
+
+### Dependency Upgrades
+
+* Bump express-graphql from 0.7.1 to 0.8.0 ([#7345](https://github.com/storybookjs/storybook/pull/7345))
+* Bump react-native-modal-datetime-picker from 6.1.0 to 7.4.2 ([#6844](https://github.com/storybookjs/storybook/pull/6844))
+
+## 5.2.0-alpha.39 (July 10, 2019)
+
+### Bug Fixes
+
+* UI: Fix Sidebar input refresh on 'Enter' ([#7342](https://github.com/storybookjs/storybook/pull/7342))
+* Addon-knobs: Fix select options types to allow string[] and null ([#7356](https://github.com/storybookjs/storybook/pull/7356))
+
+### Maintenance
+
+* Typescript: Migrate @storybook/react ([#7054](https://github.com/storybookjs/storybook/pull/7054))
+* Build: delete tests & snapshots from dist ([#7358](https://github.com/storybookjs/storybook/pull/7358))
+
+## 5.2.0-alpha.38 (July 9, 2019)
+
+### Bug Fixes
+
+* Addon-storysource: Replace loader with source-loader ([#7272](https://github.com/storybookjs/storybook/pull/7272))
+
+### Maintenance
+
+* Typescript: Migrate @storybook/addon-knobs ([#7180](https://github.com/storybookjs/storybook/pull/7180))
+
+### Dependency Upgrades
+
+* Upgrade all dependencies ([#7329](https://github.com/storybookjs/storybook/pull/7329))
+
 ## 5.2.0-alpha.37 (July 8, 2019)
 
 ### Bug Fixes
@@ -458,7 +503,7 @@ Publish failed
 - Addon-docs: Docs page bugfix
 - Addon-docs: Fix source block for legacy stories
 
-NOTE: use `@storybook/addon-storysource/loader` with option `injectParameters: true` for legacy source
+NOTE: use `@storybook/source-loader` with option `injectParameters: true` for legacy source
 
 ## 5.2.0-alpha.6 (May 14, 2019)
 

@@ -48,7 +48,7 @@ export default class KnobStore {
 
   callbacks: Callback[] = [];
 
-  timer: number;
+  timer: NodeJS.Timeout;
 
   has(key: string) {
     return this.store[key] !== undefined;

@@ -104,7 +104,6 @@ describe('preview.client_api', () => {
 
       clientApi.setAddon({
         aa() {
-          console.log(this);
           data = this.kind;
         },
       });

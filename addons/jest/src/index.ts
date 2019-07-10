@@ -1,9 +1,9 @@
-import addons from '@storybook/addons';
+import addons, { Parameters } from '@storybook/addons';
 import deprecate from 'util-deprecate';
 import { normalize, sep } from 'upath';
 import { ADD_TESTS } from './shared';
 
-interface AddonParameters {
+interface AddonParameters extends Parameters {
   jest?: string | string[] | { disable: true };
 }
 

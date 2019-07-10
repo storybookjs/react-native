@@ -1,1 +1,6 @@
-{"version":"5.2.0-alpha.37","info":{"plain":"### Bug Fixes\n\n* Addon-docs: Use storyFn instead of getDecorated ([#7334](https://github.com/storybookjs/storybook/pull/7334))\n* Addon-knobs: Prevent rerender when a button callback returns false. ([#7197](https://github.com/storybookjs/storybook/pull/7197))\n* Addons: Fix null parameters in disable addons tab logic ([#7333](https://github.com/storybookjs/storybook/pull/7333))\n* Addon-docs: Fix renaming stories on module / MDX format ([#7319](https://github.com/storybookjs/storybook/pull/7319))\n* Addon-centered/contexts: Move optionalDependencies to peerDependencies ([#7315](https://github.com/storybookjs/storybook/pull/7315))\n\n### Maintenance\n\n* Typescript: migrate client api ([#7147](https://github.com/storybookjs/storybook/pull/7147))\n* Angular-cli: Add addon-docs example ([#7257](https://github.com/storybookjs/storybook/pull/7257))"}}
+{
+  "version": "5.2.0-alpha.39",
+  "info": {
+    "plain": "### Bug Fixes\n\n* UI: Fix Sidebar input refresh on 'Enter' ([#7342](https://github.com/storybookjs/storybook/pull/7342))\n* Addon-knobs: Fix select options types to allow string[] and null ([#7356](https://github.com/storybookjs/storybook/pull/7356))\n\n### Maintenance\n\n* Typescript: Migrate @storybook/react ([#7054](https://github.com/storybookjs/storybook/pull/7054))\n* Build: delete tests & snapshots from dist ([#7358](https://github.com/storybookjs/storybook/pull/7358))"
+  }
+}
