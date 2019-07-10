@@ -1,3 +1,15 @@
+## 5.2.0-alpha.39 (July 10, 2019)
+
+### Bug Fixes
+
+* UI: Fix Sidebar input refresh on 'Enter' ([#7342](https://github.com/storybookjs/storybook/pull/7342))
+* Addon-knobs: Fix select options types to allow string[] and null ([#7356](https://github.com/storybookjs/storybook/pull/7356))
+
+### Maintenance
+
+* Typescript: Migrate @storybook/react ([#7054](https://github.com/storybookjs/storybook/pull/7054))
+* Build: delete tests & snapshots from dist ([#7358](https://github.com/storybookjs/storybook/pull/7358))
+
 ## 5.2.0-alpha.38 (July 9, 2019)
 
 ### Bug Fixes
