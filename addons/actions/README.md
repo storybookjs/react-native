@@ -26,7 +26,7 @@ Import the `action` function and use it to create actions handlers. When creatin
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { action, configureActions } from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions';
 
 import Button from './button';
 
