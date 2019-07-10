@@ -38,10 +38,11 @@
     "react-syntax-highlighter": "^8.0.1",
     "react-textarea-autosize": "^7.1.0",
     "recompose": "^0.30.0",
-    "simplebar-react": "^1.0.0-alpha.6"
+    "simplebar-react": "^1.0.0-alpha.6",
+    "@types/react-syntax-highlighter": "10.1.0"
+
   },
   "devDependencies": {
-    "@types/react-syntax-highlighter": "10.1.0",
     "@types/react-textarea-autosize": "^4.3.3",
     "@types/recompose": "^0.30.5",
     "enzyme": "^3.9.0",
