@@ -3,7 +3,7 @@ import { styled } from '@storybook/theming';
 
 import ListItem, { LinkWrapperType } from './ListItem';
 
-const List = styled.div(
+const List = styled.div<{}>(
   {
     minWidth: 180,
     overflow: 'hidden',

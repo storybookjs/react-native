@@ -19,15 +19,23 @@ function removeDist() {
   shell.rm('-rf', 'dist');
 }
 
+const ignore = ['__mocks__', '__snapshots__', '__tests__', '/tests/', /.+\.test\..+/];
+
 function cleanup() {
-  // add .ts filtering to babel args and remove after babel - 7 is adopted
+  // remove files after babel --copy-files output
   // --copy-files option doesn't work with --ignore
-  // https://github.com/babel/babel/issues/5404
+  // https://github.com/babel/babel/issues/6226
   if (fs.existsSync(path.join(process.cwd(), 'dist'))) {
-    // ^(?!.*\.d\.ts$).*\.(ts|tsx)$ => Remove everything except .d.ts files https://regex101.com/r/gEBQ0U/16
-    const files = shell.find('dist').filter(tsFile => tsFile.match(/^(?!.*\.d\.ts$).*\.(ts|tsx)$/));
+    const files = shell.find('dist').filter(filePath => {
+      if (fs.lstatSync(filePath).isDirectory()) {
+        return false;
+      }
+      return ignore.reduce((acc, pattern) => {
+        return acc || !!filePath.match(pattern);
+      }, false);
+    });
     if (files.length) {
-      shell.rm(files);
+      shell.rm('-f', ...files);
     }
   }
 }
@@ -42,9 +50,10 @@ function logError(type, packageJson, errorLogs) {
 const packageJson = getPackageJson();
 
 removeDist();
-babelify({ errorCallback: errorLogs => logError('js', packageJson, errorLogs) });
-cleanup();
 
+babelify({ errorCallback: errorLogs => logError('js', packageJson, errorLogs) });
 tscfy({ errorCallback: errorLogs => logError('ts', packageJson, errorLogs) });
+
+cleanup();
 
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));

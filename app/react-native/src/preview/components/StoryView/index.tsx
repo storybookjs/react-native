@@ -60,11 +60,11 @@ export default class StoryView extends Component<Props> {
 
   render() {
     const { onDevice, stories } = this.props;
-
     const { storyId } = stories.getSelection();
-    const { id, storyFn } = stories.fromId(storyId);
+    const story = stories.fromId(storyId);
 
-    if (storyFn) {
+    if (story && story.storyFn) {
+      const { id, storyFn } = story;
       return (
         <View key={id} style={{ flex: 1 }}>
           {storyFn()}
