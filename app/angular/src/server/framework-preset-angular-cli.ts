@@ -1,3 +1,5 @@
+import { Configuration } from 'webpack';
+import { Path } from '@angular-devkit/core';
 import { logger } from '@storybook/node-logger';
 
 import {
@@ -5,8 +7,8 @@ import {
   applyAngularCliWebpackConfig,
 } from './angular-cli_config';
 
-export function webpackFinal(config) {
-  const cwd = process.cwd();
+export function webpackFinal(config: Configuration) {
+  const cwd = process.cwd() as Path;
   const cliWebpackConfigOptions = getAngularCliWebpackConfigOptions(cwd);
 
   if (cliWebpackConfigOptions) {

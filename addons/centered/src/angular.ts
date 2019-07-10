@@ -1,3 +1,5 @@
+import { StoryFn } from '@storybook/addons';
+import { IStory } from '../angular.d';
 import styles from './styles';
 
 function getComponentSelector(component: any) {
@@ -43,7 +45,7 @@ function getModuleMetadata(metadata: any) {
   return moduleMetadata;
 }
 
-export default function(metadataFn: any) {
+export default function(metadataFn: StoryFn<IStory>) {
   const metadata = metadataFn();
 
   return {
