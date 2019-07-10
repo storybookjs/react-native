@@ -1,3 +1,5 @@
+import { CompilerOptions } from 'typescript';
+import { Path } from '@angular-devkit/core';
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@storybook/node-logger';
@@ -9,8 +11,18 @@ import {
   getAngularCliParts,
 } from './angular-cli_utils';
 
-function getTsConfigOptions(tsConfigPath) {
-  const basicOptions = {
+// todo add more accurate typings
+interface BasicOptions {
+  options: {
+    baseUrl?: string | undefined;
+  };
+  raw: object;
+  fileNames: string[];
+  errors: any[];
+}
+
+function getTsConfigOptions(tsConfigPath: Path) {
+  const basicOptions: BasicOptions = {
     options: {},
     raw: {},
     fileNames: [],
@@ -22,7 +34,8 @@ function getTsConfigOptions(tsConfigPath) {
   }
 
   const tsConfig = JSON.parse(fs.readFileSync(tsConfigPath, 'utf8'));
-  const { baseUrl } = tsConfig.compilerOptions || {};
+
+  const { baseUrl } = tsConfig.compilerOptions as CompilerOptions;
 
   if (baseUrl) {
     const tsConfigDirName = path.dirname(tsConfigPath);
@@ -32,7 +45,7 @@ function getTsConfigOptions(tsConfigPath) {
   return basicOptions;
 }
 
-export function getAngularCliWebpackConfigOptions(dirToSearch) {
+export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
   const fname = path.join(dirToSearch, 'angular.json');
 
   if (!fs.existsSync(fname)) {
@@ -59,7 +72,7 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
   );
 
   const projectRoot = path.resolve(dirToSearch, project.root);
-  const tsConfigPath = path.resolve(dirToSearch, projectOptions.tsConfig);
+  const tsConfigPath = path.resolve(dirToSearch, projectOptions.tsConfig) as Path;
   const tsConfig = getTsConfigOptions(tsConfigPath);
 
   return {
@@ -77,7 +90,8 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
   };
 }
 
-export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions) {
+// todo add types
+export function applyAngularCliWebpackConfig(baseConfig: any, cliWebpackConfigOptions: any) {
   if (!cliWebpackConfigOptions) {
     return baseConfig;
   }
@@ -103,9 +117,10 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
   const rulesExcludingStyles = filterOutStylingRules(baseConfig);
 
   // cliStyleConfig.entry adds global style files to the webpack context
+  // todo add type for acc
   const entry = [
     ...baseConfig.entry,
-    ...Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), []),
+    ...Object.values(cliStyleConfig.entry).reduce((acc: any, item) => acc.concat(item), []),
   ];
 
   const module = {

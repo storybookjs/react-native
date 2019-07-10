@@ -1,7 +1,13 @@
 import fs from 'fs';
-import { basename, dirname, normalize, relative, resolve } from '@angular-devkit/core';
+import { basename, dirname, normalize, relative, resolve, Path } from '@angular-devkit/core';
+import {
+  getCommonConfig,
+  getStylesConfig,
+} from '@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs';
 
-function isDirectory(assetPath) {
+import { RuleSetRule, Configuration } from 'webpack';
+
+function isDirectory(assetPath: string) {
   try {
     return fs.statSync(assetPath).isDirectory();
   } catch (e) {
@@ -9,7 +15,7 @@ function isDirectory(assetPath) {
   }
 }
 
-function getAssetsParts(resolvedAssetPath, assetPath) {
+function getAssetsParts(resolvedAssetPath: Path, assetPath: Path) {
   if (isDirectory(resolvedAssetPath)) {
     return {
       glob: '**/*', // Folders get a recursive star glob.
@@ -23,7 +29,7 @@ function getAssetsParts(resolvedAssetPath, assetPath) {
   };
 }
 
-function isStylingRule(rule) {
+function isStylingRule(rule: RuleSetRule) {
   const { test } = rule;
 
   if (!test) {
@@ -37,7 +43,7 @@ function isStylingRule(rule) {
   return test.test('.css') || test.test('.scss') || test.test('.sass');
 }
 
-export function filterOutStylingRules(config) {
+export function filterOutStylingRules(config: Configuration) {
   return config.module.rules.filter(rule => !isStylingRule(rule));
 }
 
@@ -50,26 +56,26 @@ export function isBuildAngularInstalled() {
   }
 }
 
-export function getAngularCliParts(cliWebpackConfigOptions) {
-  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  const ngCliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
-
+// todo add type
+export function getAngularCliParts(cliWebpackConfigOptions: any) {
   try {
     return {
-      cliCommonConfig: ngCliConfigFactory.getCommonConfig(cliWebpackConfigOptions),
-      cliStyleConfig: ngCliConfigFactory.getStylesConfig(cliWebpackConfigOptions),
+      cliCommonConfig: getCommonConfig(cliWebpackConfigOptions),
+      cliStyleConfig: getStylesConfig(cliWebpackConfigOptions),
     };
   } catch (e) {
     return null;
   }
 }
 
-export function normalizeAssetPatterns(assetPatterns, dirToSearch, sourceRoot) {
+// todo fix any
+export function normalizeAssetPatterns(assetPatterns: any, dirToSearch: Path, sourceRoot: Path) {
   if (!assetPatterns || !assetPatterns.length) {
     return [];
   }
 
-  return assetPatterns.map(assetPattern => {
+  // todo fix any
+  return assetPatterns.map((assetPattern: any) => {
     if (typeof assetPattern === 'object') {
       return assetPattern;
     }
