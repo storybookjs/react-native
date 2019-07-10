@@ -5,7 +5,7 @@ import { PropRow } from './PropRow';
 import { PropDef } from './PropDef';
 import { EmptyBlock } from '../EmptyBlock';
 
-export const Table = styled.table(({ theme }) => ({
+export const Table = styled.table<{}>(({ theme }) => ({
   '&&': {
     // Resets for cascading/system styles
     borderCollapse: 'collapse',

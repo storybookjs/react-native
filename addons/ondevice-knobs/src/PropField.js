@@ -31,6 +31,18 @@ PropField.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.any,
+    hideLabel: PropTypes.bool,
+    type: PropTypes.oneOf([
+      'text',
+      'number',
+      'color',
+      'boolean',
+      'object',
+      'select',
+      'array',
+      'date',
+      'button',
+    ]),
   }).isRequired,
   onChange: PropTypes.func.isRequired,
   onPress: PropTypes.func.isRequired,

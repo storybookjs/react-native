@@ -310,7 +310,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
       <div>
         It's a 
          story:
-        <TestComponent
+        <Memo(TestComponent)
           array={
             Array [
               1,
@@ -368,7 +368,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
               </li>
             </ul>
           </div>
-        </TestComponent>
+        </Memo(TestComponent)>
       </div>
     </div>
     <button

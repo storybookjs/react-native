@@ -1,5 +1,4 @@
 /* eslint-disable no-shadow */
-/* eslint-disable no-use-before-define */
 /* eslint-disable no-bitwise */
 /* eslint-disable no-underscore-dangle */
 import { OperatingSystem } from './platform';

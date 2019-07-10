@@ -321,7 +321,7 @@ exports[`HighlightToggle component should match snapshot 1`] = `
         }
       }
     >
-      <ConnectFunction>
+      <Connect(HighlightToggle)>
         <HighlightToggle
           addElement={[Function]}
           elementsToHighlight={Array []}
@@ -346,7 +346,7 @@ exports[`HighlightToggle component should match snapshot 1`] = `
             />
           </Styled(input)>
         </HighlightToggle>
-      </ConnectFunction>
+      </Connect(HighlightToggle)>
     </ThemeProvider>
   </ThemedHighlightToggle>
 </Provider>
