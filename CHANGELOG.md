@@ -12,6 +12,11 @@
 * CI: ADD travis ([#7252](https://github.com/storybookjs/storybook/pull/7252))
 * Typescript: Migrate @storybook/angular ([#6570](https://github.com/storybookjs/storybook/pull/6570))
 
+### Dependency Upgrades
+
+* Bump express-graphql from 0.7.1 to 0.8.0 ([#7345](https://github.com/storybookjs/storybook/pull/7345))
+* Bump react-native-modal-datetime-picker from 6.1.0 to 7.4.2 ([#6844](https://github.com/storybookjs/storybook/pull/6844))
+
 ## 5.2.0-alpha.39 (July 10, 2019)
 
 ### Bug Fixes
