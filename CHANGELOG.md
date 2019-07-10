@@ -1,3 +1,17 @@
+## 5.2.0-alpha.40 (July 10, 2019)
+
+### Bug Fixes
+
+* Addon-knobs: Revert entrypoint deletion ([#7369](https://github.com/storybookjs/storybook/pull/7369))
+* Typescript: Fix types in api package ([#7072](https://github.com/storybookjs/storybook/pull/7072))
+* UI: Fix settings page route (about, shortcuts) ([#7241](https://github.com/storybookjs/storybook/pull/7241))
+
+### Maintenance
+
+* Linting: ADD an ignore for an eslint error about a missing dependency (puppeteer) ([#7239](https://github.com/storybookjs/storybook/pull/7239))
+* CI: ADD travis ([#7252](https://github.com/storybookjs/storybook/pull/7252))
+* Typescript: Migrate @storybook/angular ([#6570](https://github.com/storybookjs/storybook/pull/6570))
+
 ## 5.2.0-alpha.39 (July 10, 2019)
 
 ### Bug Fixes
