@@ -1,1 +1,6 @@
-{"version":"5.2.0-alpha.35","info":{"plain":"### Bug Fixes\n\n* React-Native: Fix null story check ([#7243](https://github.com/storybookjs/storybook/pull/7243))"}}
+{
+  "version": "5.2.0-alpha.40",
+  "info": {
+    "plain": "### Bug Fixes\n\n* UI: Fix Sidebar input refresh on 'Enter' ([#7342](https://github.com/storybookjs/storybook/pull/7342))\n* Addon-knobs: Fix select options types to allow string[] and null ([#7356](https://github.com/storybookjs/storybook/pull/7356))\n\n### Maintenance\n\n* Typescript: Migrate @storybook/react ([#7054](https://github.com/storybookjs/storybook/pull/7054))\n* Build: delete tests & snapshots from dist ([#7358](https://github.com/storybookjs/storybook/pull/7358))"
+  }
+}

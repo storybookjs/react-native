@@ -1,3 +1,82 @@
+## 5.2.0-alpha.40 (July 10, 2019)
+
+### Bug Fixes
+
+* Addon-knobs: Revert entrypoint deletion ([#7369](https://github.com/storybookjs/storybook/pull/7369))
+* Typescript: Fix types in api package ([#7072](https://github.com/storybookjs/storybook/pull/7072))
+* UI: Fix settings page route (about, shortcuts) ([#7241](https://github.com/storybookjs/storybook/pull/7241))
+
+### Maintenance
+
+* Linting: ADD an ignore for an eslint error about a missing dependency (puppeteer) ([#7239](https://github.com/storybookjs/storybook/pull/7239))
+* CI: ADD travis ([#7252](https://github.com/storybookjs/storybook/pull/7252))
+* Typescript: Migrate @storybook/angular ([#6570](https://github.com/storybookjs/storybook/pull/6570))
+
+### Dependency Upgrades
+
+* Bump express-graphql from 0.7.1 to 0.8.0 ([#7345](https://github.com/storybookjs/storybook/pull/7345))
+* Bump react-native-modal-datetime-picker from 6.1.0 to 7.4.2 ([#6844](https://github.com/storybookjs/storybook/pull/6844))
+
+## 5.2.0-alpha.39 (July 10, 2019)
+
+### Bug Fixes
+
+* UI: Fix Sidebar input refresh on 'Enter' ([#7342](https://github.com/storybookjs/storybook/pull/7342))
+* Addon-knobs: Fix select options types to allow string[] and null ([#7356](https://github.com/storybookjs/storybook/pull/7356))
+
+### Maintenance
+
+* Typescript: Migrate @storybook/react ([#7054](https://github.com/storybookjs/storybook/pull/7054))
+* Build: delete tests & snapshots from dist ([#7358](https://github.com/storybookjs/storybook/pull/7358))
+
+## 5.2.0-alpha.38 (July 9, 2019)
+
+### Bug Fixes
+
+* Addon-storysource: Replace loader with source-loader ([#7272](https://github.com/storybookjs/storybook/pull/7272))
+
+### Maintenance
+
+* Typescript: Migrate @storybook/addon-knobs ([#7180](https://github.com/storybookjs/storybook/pull/7180))
+
+### Dependency Upgrades
+
+* Upgrade all dependencies ([#7329](https://github.com/storybookjs/storybook/pull/7329))
+
+## 5.2.0-alpha.37 (July 8, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Use storyFn instead of getDecorated ([#7334](https://github.com/storybookjs/storybook/pull/7334))
+* Addon-knobs: Prevent rerender when a button callback returns false. ([#7197](https://github.com/storybookjs/storybook/pull/7197))
+* Addons: Fix null parameters in disable addons tab logic ([#7333](https://github.com/storybookjs/storybook/pull/7333))
+* Addon-docs: Fix renaming stories on module / MDX format ([#7319](https://github.com/storybookjs/storybook/pull/7319))
+* Addon-centered/contexts: Move optionalDependencies to peerDependencies ([#7315](https://github.com/storybookjs/storybook/pull/7315))
+
+### Maintenance
+
+* Typescript: migrate client api ([#7147](https://github.com/storybookjs/storybook/pull/7147))
+* Angular-cli: Add addon-docs example ([#7257](https://github.com/storybookjs/storybook/pull/7257))
+
+## 5.2.0-alpha.36 (July 5, 2019)
+
+### Features
+
+* Addon-docs: Added inline option to Story block ([#7308](https://github.com/storybookjs/storybook/pull/7308))
+* Addon-knobs: Ensure unique knob names across groups ([#6793](https://github.com/storybookjs/storybook/pull/6793))
+* Core: Enable webpack to rebuild changes in node_modules ([#6265](https://github.com/storybooorybook/pull/6265))
+* Addons: Disable option for addon tab ([#6923](https://github.com/storybookjs/storybook/pull/6923))
+
+### Bug Fixes
+
+* Fix lint error from #6923 ([#7311](https://github.com/storybookjs/storybook/pull/7311))
+* Addon-actions: fix serialization performance ([#7256](https://github.com/storybookjs/storybook/pull/7256))
+
+### Maintenance
+
+* Typescript: Migrate @storybook/addon-event ([#7190](https://github.com/storybookjs/storybook/pull/7190))
+* Typescript: Improve actions type ([#7012](https://github.com/storybookjs/storybook/pull/7012))
+
 ## 5.2.0-alpha.35 (July 3, 2019)
 
 ### Bug Fixes
@@ -424,7 +503,7 @@ Publish failed
 - Addon-docs: Docs page bugfix
 - Addon-docs: Fix source block for legacy stories
 
-NOTE: use `@storybook/addon-storysource/loader` with option `injectParameters: true` for legacy source
+NOTE: use `@storybook/source-loader` with option `injectParameters: true` for legacy source
 
 ## 5.2.0-alpha.6 (May 14, 2019)
 

@@ -283,7 +283,7 @@ import { storiesOf } from '@storybook/angular';
 })
 class WithNgContentComponent {}
 
-storiesOf('Custom|ng-content', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add('Default', () => ({
+storiesOf('Custom|ng-content', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add('Default', () => ({
   template: \`<storybook-with-ng-content><h1>This is rendered in ng-content</h1></storybook-with-ng-content>\`,
   moduleMetadata: {
     declarations: [WithNgContentComponent],
@@ -328,7 +328,7 @@ class Table extends React.Component<Props, State> {
   }
 }
 
-const stories = storiesOf('Table', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__));
+const stories = storiesOf('Table', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__));
 stories.add('Flow Class', withInfo('Lorum Ipsum Nem')(() => <Table />));
 "
 `;
@@ -377,7 +377,7 @@ class WithStoreComponent {
   }
 }
 
-storiesOf('ngrx|Store', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
+storiesOf('ngrx|Store', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
   .addDecorator(
     moduleMetadata({
       imports: [StoreModule.forRoot({})],
@@ -659,7 +659,7 @@ import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
 import TableComponent from '../components/TableComponent';
 
-storiesOf('Addons|Info.React Docgen', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
+storiesOf('Addons|Info.React Docgen', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
   .add(
     'Comments from PropType declarations',
     withInfo(
@@ -690,12 +690,12 @@ const Button = () => <button />;
 Maybe include a [link](http://storybook.js.org) to your project as well.
 \`;
 
-storiesOf('Addons|Info.Markdown', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Markdown', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
   'Displays Markdown in description',
   withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Options.inline', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.inline', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
   'Inlines component inside story',
   withInfo({
     text: 'Component should be inlined between description and PropType table',
@@ -703,7 +703,7 @@ storiesOf('Addons|Info.Options.inline', module).addDecorator(withSourceLoader(__
   })(() => <BaseButton label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Options.header', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.header', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
   'Shows or hides Info Addon header',
   withInfo({
     text: 'The Info Addon header should be hidden',
@@ -711,7 +711,7 @@ storiesOf('Addons|Info.Options.header', module).addDecorator(withSourceLoader(__
   })(() => <BaseButton label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Options.source', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.source', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
   'Shows or hides Info Addon source',
   withInfo({
     text: 'The Info Addon source section should be hidden',
@@ -719,7 +719,7 @@ storiesOf('Addons|Info.Options.source', module).addDecorator(withSourceLoader(__
   })(() => <BaseButton label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Options.propTables', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.propTables', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
   'Shows additional component prop tables',
   withInfo({
     text: 'There should be a prop table added for a component not included in the story',
@@ -727,7 +727,7 @@ storiesOf('Addons|Info.Options.propTables', module).addDecorator(withSourceLoade
   })(() => <BaseButton label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Options.propTablesExclude', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.propTablesExclude', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
   'Exclude component from prop tables',
   withInfo({
     text: 'This can exclude extraneous components from being displayed in prop tables.',
@@ -740,7 +740,7 @@ storiesOf('Addons|Info.Options.propTablesExclude', module).addDecorator(withSour
   ))
 );
 
-storiesOf('Addons|Info.Options.styles', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
+storiesOf('Addons|Info.Options.styles', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
   .add(
     'Extend info styles with an object',
     withInfo({
@@ -774,14 +774,14 @@ storiesOf('Addons|Info.Options.styles', module).addDecorator(withSourceLoader(__
     })(() => <BaseButton label=\\"Button\\" />)
   );
 
-storiesOf('Addons|Info.Options.TableComponent', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.Options.TableComponent', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
   'Use a custom component for the table',
   withInfo({
     TableComponent,
   })(() => <BaseButton label=\\"Button\\" />)
 );
 
-storiesOf('Addons|Info.Decorator', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
+storiesOf('Addons|Info.Decorator', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__))
   .addDecorator((story, context) =>
     withInfo('Info could be used as a global or local decorator as well.')(story)(context)
   )
@@ -793,7 +793,7 @@ const Input = hoc(() => <input type=\\"text\\" />);
 
 const TextArea = hoc(({ children }) => <textarea>{children}</textarea>);
 
-storiesOf('Addons|Info.GitHub issues', module).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
+storiesOf('Addons|Info.GitHub issues', module).addParameters({ storySource: { source: __STORY__, locationsMap: __ADDS_MAP__ } }).addDecorator(withSourceLoader(__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__)).add(
   '#1814',
   withInfo('Allow Duplicate DisplayNames for HOC #1814')(() => (
     <div>
@@ -866,7 +866,7 @@ storiesOf('Foo', module)
 `;
 
 exports[`inject-decorator will not change the source when there are no "storiesOf" functions 1`] = `
-"var addSourceDecorator = require(\\"@storybook/source-loader\\").addSource;
+"var addSourceDecorator = require(\\"@storybook/source-loader/dist/preview\\").addSource;
 while(true) {
   console.log(\\"it's a kind of magic\\");
 }"

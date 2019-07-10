@@ -94,7 +94,7 @@ export default ({ provider, store }: Module) => {
       const filteredPanels: Collection = {};
       Object.entries(allPanels).forEach(([id, panel]) => {
         const { paramKey } = panel;
-        if (paramKey && parameters[paramKey] && parameters[paramKey].disabled) {
+        if (paramKey && parameters && parameters[paramKey] && parameters[paramKey].disabled) {
           return;
         }
         filteredPanels[id] = panel;

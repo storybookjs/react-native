@@ -1,29 +1,5 @@
 import deprecate from 'util-deprecate';
-
-export interface StoryContext {
-  name: string;
-  kind: string;
-  parameters: {
-    [key: string]: any;
-  };
-}
-
-export interface WrapperSettings {
-  options: {
-    [key: string]: any;
-  };
-  parameters: {
-    [key: string]: any;
-  };
-}
-
-export type StoryGetter = (context: StoryContext) => any;
-
-export type StoryWrapper = (
-  getStory: StoryGetter,
-  context: StoryContext,
-  settings: WrapperSettings
-) => any;
+import { StoryWrapper, StoryGetter, StoryContext } from './types';
 
 type MakeDecoratorResult = (...args: any) => any;
 

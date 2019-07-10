@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "5.2.0-alpha.35",
+  "version": "5.2.0-alpha.40",
   "description": "Storybook Addon Prop Editor Component",
   "keywords": [
     "addon",
@@ -17,16 +17,16 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.35",
-    "@storybook/client-api": "5.2.0-alpha.35",
-    "@storybook/components": "5.2.0-alpha.35",
-    "@storybook/core-events": "5.2.0-alpha.35",
-    "@storybook/theming": "5.2.0-alpha.35",
+    "@storybook/addons": "5.2.0-alpha.40",
+    "@storybook/client-api": "5.2.0-alpha.40",
+    "@storybook/components": "5.2.0-alpha.40",
+    "@storybook/core-events": "5.2.0-alpha.40",
+    "@storybook/theming": "5.2.0-alpha.40",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "escape-html": "^1.0.3",
@@ -44,5 +44,11 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@types/escape-html": "0.0.20",
+    "@types/react-color": "^3.0.1",
+    "@types/react-lifecycles-compat": "^3.0.1",
+    "@types/react-select": "^2.0.19"
   }
 }

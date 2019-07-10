@@ -7,6 +7,7 @@ import { DocsContext, DocsContextProps } from './DocsContext';
 
 interface CommonProps {
   height?: string;
+  inline?: boolean;
 }
 
 type StoryDefProps = {
@@ -38,15 +39,17 @@ export const getStoryProps = (
   const inputId = id === CURRENT_SELECTION ? currentId : id;
   const previewId = inputId || toId(mdxKind, name);
 
-  const { height } = props;
+  const { height, inline } = props;
   const data = storyStore.fromId(previewId);
   const { framework = null } = parameters || {};
+
+  // prefer props, then global options, then framework-inferred values
   const { inlineStories = inferInlineStories(framework), iframeHeight = undefined } =
     (parameters && parameters.options && parameters.options.docs) || {};
   return {
-    inline: inlineStories,
+    inline: typeof inline === 'boolean' ? inline : inlineStories,
     id: previewId,
-    storyFn: data && data.getDecorated(),
+    storyFn: data && data.storyFn,
     height: height || iframeHeight,
     title: data && data.name,
   };

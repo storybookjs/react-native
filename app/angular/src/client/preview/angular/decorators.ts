@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { NgModuleMetadata } from './types';
+import { NgModuleMetadata } from '../types';
 
 export const moduleMetadata = (metadata: Partial<NgModuleMetadata>) => (storyFn: () => any) => {
   const story = storyFn();
