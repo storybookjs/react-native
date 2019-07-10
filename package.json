@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "5.2.0-alpha.37",
+  "version": "5.2.0-alpha.40",
   "private": true,
   "description": "Storybook is an open source tool for developing UI components in isolation for React, Vue and Angular. It makes building stunning UIs organized and efficient.",
   "keywords": [
@@ -150,7 +150,7 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-add-react-displayname": "^0.0.5",
     "babel-plugin-dynamic-import-node": "^2.2.0",
-    "babel-plugin-emotion": "^10.0.9",
+    "babel-plugin-emotion": "^10.0.14",
     "babel-plugin-macros": "^2.4.5",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-preset-vue": "^2.0.2",
@@ -187,7 +187,7 @@
     "jest-cli": "^24.7.1",
     "jest-config": "^24.0.0",
     "jest-diff": "^24.7.0",
-    "jest-emotion": "^10.0.10",
+    "jest-emotion": "^10.0.14",
     "jest-environment-jsdom": "^24.7.1",
     "jest-environment-jsdom-thirteen": "^1.0.1",
     "jest-enzyme": "^7.0.2",

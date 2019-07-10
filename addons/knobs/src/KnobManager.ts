@@ -120,6 +120,11 @@ export default class KnobManager {
     // unused knobs from the panel. This function sends the `setKnobs` message to the channel
     // triggering a panel re-render.
 
+    if (!this.channel) {
+      // to prevent call to undefined channel and therefore throwing TypeError
+      return;
+    }
+
     if (this.calling) {
       // If a call to channel has already registered ignore this call.
       // Once the previous call is completed all the changes to knobStore including the one that

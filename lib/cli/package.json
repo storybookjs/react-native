@@ -40,6 +40,7 @@
     "inquirer": "^6.2.0",
     "jscodeshift": "^0.6.3",
     "json5": "^2.1.0",
+    "pkg-add-deps": "^0.1.0",
     "semver": "^6.0.0",
     "shelljs": "^0.8.3",
     "update-notifier": "^3.0.0"
