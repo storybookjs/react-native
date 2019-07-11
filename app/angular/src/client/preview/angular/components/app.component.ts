@@ -21,7 +21,7 @@ import {
 import { Observable, Subscription } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { STORY } from '../app.token';
-import { NgStory, ICollection } from '../types';
+import { StoryFnAngularReturnType, ICollection } from '../../types';
 
 @Component({
   selector: 'storybook-dynamic-app-root',
@@ -36,11 +36,11 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private cfr: ComponentFactoryResolver,
     private changeDetectorRef: ChangeDetectorRef,
-    @Inject(STORY) private data: Observable<NgStory>
+    @Inject(STORY) private data: Observable<StoryFnAngularReturnType>
   ) {}
 
   ngOnInit(): void {
-    this.data.pipe(first()).subscribe((data: NgStory) => {
+    this.data.pipe(first()).subscribe((data: StoryFnAngularReturnType) => {
       this.target.clear();
       const compFactory = this.cfr.resolveComponentFactory(data.component);
       const componentRef = this.target.createComponent(compFactory);
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit, OnDestroy {
   /**
    * Set inputs and outputs
    */
-  private setProps(instance: any, { props = {} }: NgStory): void {
+  private setProps(instance: any, { props = {} }: StoryFnAngularReturnType): void {
     const changes: SimpleChanges = {};
     const hasNgOnChangesHook = !!instance.ngOnChanges;
 

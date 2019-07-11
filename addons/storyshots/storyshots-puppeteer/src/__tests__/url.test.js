@@ -1,5 +1,7 @@
 import { constructUrl } from '../url';
 
+jest.mock('@storybook/node-logger');
+
 describe('Construct URL for Storyshots', () => {
   it('can use a url without path and without query params', () => {
     expect(constructUrl('http://localhost:9001', 'someKind', 'someStory')).toEqual(

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-multi-comp */
 import React, { ReactElement, Component, useContext, useEffect } from 'react';
 import memoize from 'memoizerific';
 // @ts-ignore shallow-equal is not in DefinitelyTyped

@@ -12,7 +12,7 @@ export interface DocsPageProps {
   subtitle?: string;
 }
 
-const Title = styled.h1(({ theme }) => ({
+const Title = styled.h1<{}>(({ theme }) => ({
   // overrides h1 in DocumentFormatting
   '&&': {
     fontSize: theme.typography.size.m3,
@@ -25,7 +25,7 @@ const Title = styled.h1(({ theme }) => ({
   },
 }));
 
-const Subtitle = styled.h2(({ theme }) => ({
+const Subtitle = styled.h2<{}>(({ theme }) => ({
   // overrides h2 in DocumentFormatting
   '&&': {
     fontWeight: theme.typography.weight.regular,
@@ -52,7 +52,7 @@ export const DocsContent = styled(DocumentFormatting)({
   width: '100%',
 });
 
-export const DocsWrapper = styled.div(({ theme }) => ({
+export const DocsWrapper = styled.div<{}>(({ theme }) => ({
   background: theme.background.content,
   display: 'flex',
   justifyContent: 'center',

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.2.0-alpha.35",
+  "version": "5.2.0-alpha.41",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -22,18 +22,18 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.35",
-    "@storybook/api": "5.2.0-alpha.35",
-    "@storybook/channels": "5.2.0-alpha.35",
-    "@storybook/client-logger": "5.2.0-alpha.35",
-    "@storybook/components": "5.2.0-alpha.35",
-    "@storybook/core-events": "5.2.0-alpha.35",
-    "@storybook/router": "5.2.0-alpha.35",
-    "@storybook/theming": "5.2.0-alpha.35",
+    "@storybook/addons": "5.2.0-alpha.41",
+    "@storybook/api": "5.2.0-alpha.41",
+    "@storybook/channels": "5.2.0-alpha.41",
+    "@storybook/client-logger": "5.2.0-alpha.41",
+    "@storybook/components": "5.2.0-alpha.41",
+    "@storybook/core-events": "5.2.0-alpha.41",
+    "@storybook/router": "5.2.0-alpha.41",
+    "@storybook/theming": "5.2.0-alpha.41",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
-    "emotion-theming": "^10.0.10",
+    "emotion-theming": "^10.0.14",
     "fast-deep-equal": "^2.0.1",
     "fuse.js": "^3.4.4",
     "global": "^4.3.2",

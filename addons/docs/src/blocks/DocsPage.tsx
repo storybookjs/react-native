@@ -37,13 +37,8 @@ interface StoryData {
 const getDocsStories = (type: DocsStoriesType, componentStories: StoryData[]): DocsStoryProps[] => {
   let stories = componentStories;
   if (type !== DocsStoriesType.ALL) {
-    const primary = stories.find(s => s.parameters && s.parameters.primary);
     const [first, ...rest] = stories;
-    if (type === DocsStoriesType.PRIMARY) {
-      stories = [primary || first];
-    } else {
-      stories = primary ? stories.filter(s => !s.parameters || !s.parameters.primary) : rest;
-    }
+    stories = type === DocsStoriesType.PRIMARY ? [first] : rest;
   }
   return stories.map(({ id, name, parameters: { notes, info } }) => ({
     id,
@@ -100,7 +95,7 @@ const getDocsPageProps = (context: DocsContextProps): DocsPageProps => {
     hierarchySeparator: groupSeparator,
   } = (parameters && parameters.options) || {
     hierarchyRootSeparator: '|',
-    hierarchySeparator: '/',
+    hierarchySeparator: /\/|\./,
   };
 
   const { groups } = parseKind(selectedKind, { rootSeparator, groupSeparator });
